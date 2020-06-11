@@ -13,8 +13,8 @@ CORWIN = Class(TAunit) {
 			fan = CreateRotator(self, 'fan', 'z', nil, 0, 0, 0),
 			cradle = CreateRotator(self, 'cradle', 'y', nil, 0, 0, 0),
 		}
-		self.Trash:Add(self.Spinners.fan)
-		self.Trash:Add(self.Spinners.cradle)
+		self.Trash:Add(self.Spinners.blades)
+		self.Trash:Add(self.Spinners.post)
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
@@ -25,10 +25,10 @@ CORWIN = Class(TAunit) {
 
 	OnWindChange = function(self, direction, amount)
 		if self:GetFractionComplete() == 1 then
-			--SPIN fan around z-axis SPEED lastfanspeed (lastfanspeed = <10>, but too slow ie. when no wind)
+			--SPIN blades around z-axis SPEED lastfanspeed (lastfanspeed = <10>, but too slow ie. when no wind)
 			self.Spinners.fan:SetSpeed((amount / 182) * 5)
 	
-			--TURN cradle to y-axis lastdir SPEED <20> (lastdir = wind direction)
+			--TURN post to y-axis lastdir SPEED <20> (lastdir = wind direction)
 			self.Spinners.cradle:SetGoal(direction + self.buildAngle)
 
 			self:SetProductionPerSecondEnergy(worldData.GetWindEnergy())

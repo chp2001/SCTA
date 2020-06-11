@@ -131,7 +131,6 @@ UnitBlueprint {
             Label = 'SuicideWeapon',
         },
     },
---[[
     Wreckage = {
 	UseCustomMesh = true,
         Blueprint = '/mods/SCTA/units/CORTIDE/CORTIDE_dead_prop.bp',
@@ -141,5 +140,4 @@ UnitBlueprint {
             Sub = true,
         },
     },
---]]
 }

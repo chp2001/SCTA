@@ -1,6 +1,6 @@
 TAunitkeygroups = {
     ["Experimental"]= {
-        "corkrog",
+        "corkog",
         "armvulc",
     }, 
     ["Land_Factory"]= {

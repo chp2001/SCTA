@@ -3,13 +3,13 @@
 #
 #Blueprint created by Raevn
 UnitBlueprint {
-    Audio = {
-        UISelection = Sound {
+  Audio = {
+  UISelection = Sound {
             Bank = 'TA_Sound',
             Cue = 'WINDGEN2',
             LodCutoff = 'UnitMove_LodCutoff',
         },
-	Destroyed = Sound {
+  Destroyed = Sound {
             Bank = 'TA_Sound',
             Cue = 'XPLOSML3',
             LodCutoff = 'UnitMove_LodCutoff',

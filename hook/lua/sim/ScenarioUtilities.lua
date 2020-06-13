@@ -1,8 +1,10 @@
 do
     local OldCreateInitialArmyGroup = CreateInitialArmyGroup
     function CreateInitialArmyGroup(strArmy, createCommander)
+        if createCommander then
+            local AIBrain = GetArmyBrain(strArmy)
+        end
         return OldCreateInitialArmyGroup(strArmy, createCommander)
-
     end
 
     local OldCreateResources = CreateResources

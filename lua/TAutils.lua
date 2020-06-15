@@ -507,5 +507,4 @@ function Cobler(script, spinners, sliders)
             end
         end
     end
-
 end

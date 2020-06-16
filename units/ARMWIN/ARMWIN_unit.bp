@@ -30,7 +30,7 @@ UnitBlueprint {
 
 	--Additional Categories
 	'STRUCTURE',
-        'ECONOMIC',
+    'ECONOMIC',
 	'ENERGYPRODUCTION',
 	'WIND',
 

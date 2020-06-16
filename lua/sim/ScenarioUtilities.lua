@@ -1,4 +1,3 @@
-    hook/lua/sim/ScenarioUtilities.lua
     local OldCreateResources = CreateResources
     
     function CreateInitialArmyGroup(strArmy, createCommander)

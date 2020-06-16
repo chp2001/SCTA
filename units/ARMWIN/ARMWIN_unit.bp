@@ -13,7 +13,7 @@ UnitBlueprint {
             Bank = 'TA_Sound',
             Cue = 'XPLOSML3',
             LodCutoff = 'UnitMove_LodCutoff',
-	},
+	    },
     },
     BuildIconSortPriority = 1,
     Categories = {

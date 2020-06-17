@@ -1,15 +1,15 @@
-#COR Anaconda - Hovertank
-#CORANAC
+#COR Snapper - Hovertank
+#CORSNAP
 #
 #Script created by Raevn
 
 local TAunit = import('/mods/SCTA/lua/TAunit.lua').TAunit
 local TAweapon = import('/mods/SCTA/lua/TAweapon.lua').TAweapon
 
-CORAH = Class(TAunit) {
+CORSNAP = Class(TAunit) {
 
 	Weapons = {
-		CORANAC_WEAPON = Class(TAweapon) {
+		CORSNAP_WEAPON = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
 				TAunit.ShowMuzzleFlare(self, 0.15)
@@ -18,4 +18,4 @@ CORAH = Class(TAunit) {
 	},
 }
 
-TypeClass = CORAH
+TypeClass = CORSNAP

@@ -1,5 +1,5 @@
-#COR Anaconda - Hovertank
-#CORANAC
+#COR Snapper - Hovertank
+#CORSNAP
 #
 #Blueprint created by Raevn
 
@@ -113,7 +113,7 @@ UnitBlueprint {
         },
         FactionName = 'CORE',
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = 'Anaconda',
+        UnitName = 'Snapper',
     },
     Intel = {
         VisionRadius = 18,
@@ -173,7 +173,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 21.875,
-            ProjectileId = '/mods/SCTA/projectiles/CORANAC_WEAPON/CORANAC_WEAPON_proj.bp',
+            ProjectileId = '/mods/SCTA/projectiles/ARMANAC_WEAPON/ARMANAC_WEAPON_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -223,7 +223,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/CORANAC/CORANAC_dead_prop.bp',
+        Blueprint = '/mods/SCTA/units/CORSNAP/CORSNAP_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Water = true,

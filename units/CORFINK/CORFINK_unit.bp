@@ -54,7 +54,7 @@ UnitBlueprint {
 	'AIR',
 	'SCOUT',
 
-	--TA Categories
+	
         'CORE',
         'VTOL',
 	'CTRL_V',

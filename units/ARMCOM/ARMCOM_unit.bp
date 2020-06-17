@@ -88,7 +88,7 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'OVERLAYSONAR',
 
-	--TA Categories
+	
         'ARM',
         'COMMANDER',
 	'LEVEL10',

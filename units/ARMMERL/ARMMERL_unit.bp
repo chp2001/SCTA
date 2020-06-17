@@ -40,7 +40,7 @@ UnitBlueprint {
 	'ROCKET',
         'OVERLAYINDIRECTFIRE',
 
-	--TA Categories
+	
         'ARM',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL2',

@@ -33,7 +33,7 @@ UnitBlueprint {
 	'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
 
-	--TA Categories
+	
 	'ARM',
 	'LEVEL3',
 	'STRATEGIC',

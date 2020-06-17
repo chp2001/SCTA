@@ -45,7 +45,7 @@ UnitBlueprint {
         'OVERLAYANTIAIR',
         'CORKROG',
 
-        --TA Categories
+        
         'CORE',
         'KBOT',
         'WEAPON',

@@ -35,7 +35,7 @@ UnitBlueprint {
 	'NOCUSTOMTARGET',
         'OVERLAYDEFENSE',
 
-	--TA Categories
+	
 	'ARM',
 	'SPECIAL',
 	'DEFENSIVE',

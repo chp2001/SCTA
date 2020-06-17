@@ -34,7 +34,7 @@ UnitBlueprint {
 	'NOSMOKE',
 	'TEXTUREANIM',
 
-	--TA Categories
+	
 	'ARM',
     'CORE', -- in lieu of core storage
 	'ENERGY',

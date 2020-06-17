@@ -49,7 +49,7 @@ UnitBlueprint {
         'AIRSTAGINGPLATFORM',
         'OVERLAYMISC',
 
-	--TA Categories
+	
 	'CORE',
 	'REPAIRPAD',
 	'LEVEL3',

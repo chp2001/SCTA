@@ -23,7 +23,7 @@ UnitBlueprint {
 	'NOEXPLOSION',
 	'NOSMOKE',
 
-	--TA Categories
+	
 	'ARM',
     'CORE', -- in lieu of core walls
 	'METAL',

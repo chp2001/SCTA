@@ -48,7 +48,7 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'TEXTUREANIM',
 
-	--TA Categories
+	
 	'CORE',
 	'PLANT',
 	'CTRL_F',

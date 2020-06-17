@@ -43,7 +43,7 @@ UnitBlueprint {
 	'TEXTUREANIM',
         'OVERLAYSONAR',
 
-	--TA Categories
+	
 	'ARM',
 	'SPECIAL',
 	'SONAR',

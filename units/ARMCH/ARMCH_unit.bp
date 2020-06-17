@@ -58,7 +58,7 @@ UnitBlueprint {
 	'CONSTRUCTION',
         'LAND',
 
-	--TA Categories
+	
         'ARM',
         'HOVER',
 	'LEVEL1',

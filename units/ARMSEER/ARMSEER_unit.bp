@@ -40,7 +40,7 @@ UnitBlueprint {
 	'RADAR',
         'OVERLAYRADAR',
 
-	--TA Categories
+	
         'ARM',
         'VEHICLE',	#'TANK' in TA
 	'NOWEAPON',

@@ -41,7 +41,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',
 
-	--TA Categories
+	
         'ARM',
         'CORE', -- in lieu of core shredder
         'SHIP',

@@ -34,7 +34,7 @@ UnitBlueprint {
 	'TEXTUREANIM',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
 	'ARM',
 	'SPECIAL',
 	'WEAPON',

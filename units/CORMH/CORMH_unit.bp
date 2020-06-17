@@ -39,7 +39,7 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'LAND',
 
-	--TA Categories
+	
         'CORE',
         'HOVER',
 	'WEAPON',

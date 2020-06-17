@@ -29,7 +29,7 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'CORE',
         'MINE',
 	'WEAPON',

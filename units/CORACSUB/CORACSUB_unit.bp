@@ -55,7 +55,7 @@ UnitBlueprint {
         'SHIP',
         'OVERLAYSONAR',
 
-	--TA Categories
+	
         'CORE', 
 	    'UNDERWATER',
 	    'LEVEL2',

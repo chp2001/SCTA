@@ -33,7 +33,7 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
 	'CORE',
 	'SPECIAL',
 	'WEAPON',

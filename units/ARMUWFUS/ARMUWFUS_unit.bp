@@ -31,7 +31,7 @@ UnitBlueprint {
 	'ENERGYPRODUCTION',
 	'UNDERWATER',
 
-	--TA Categories
+	
 	'ARM',
 	'ENERGY',
 	'LEVEL3',

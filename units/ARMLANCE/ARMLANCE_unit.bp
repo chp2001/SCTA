@@ -76,7 +76,7 @@ UnitBlueprint {
 	'AIR',
         'OVERLAYANTINAVY',
 
-	--TA Categories
+	
         'ARM',
         'VTOL',
 	'CTRL_V',

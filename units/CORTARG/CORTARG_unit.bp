@@ -43,7 +43,7 @@ UnitBlueprint {
 	'TARGETING',
 	'TEXTUREANIM',
 
-	--TA Categories
+	
 	'CORE',
 	'SPECIAL',
 	'LEVEL3',

@@ -53,7 +53,7 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'LAND',
 
-	--TA Categories
+	
         'CORE',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL2',

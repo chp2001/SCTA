@@ -50,7 +50,7 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'LAND',
 
-	--TA Categories
+	
         'ARM',
         'VEHICLE',	#'TANK' in TA
 	'MINELAYER',

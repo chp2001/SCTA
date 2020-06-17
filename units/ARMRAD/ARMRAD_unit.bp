@@ -45,7 +45,7 @@ UnitBlueprint {
 	'RADAR',
         'OVERLAYRADAR',
 
-	--TA Categories
+	
 	'ARM',
 	'SPECIAL',
 	'RAD',

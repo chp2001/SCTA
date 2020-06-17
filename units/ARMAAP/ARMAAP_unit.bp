@@ -44,7 +44,7 @@ UnitBlueprint {
 	'TEXTUREANIM',
         'OVERLAYRADAR',
 
-	--TA Categories
+	
 	'ARM',
 	'PLANT',
 	'CTRL_F',

@@ -40,7 +40,7 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'ARM',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL2',

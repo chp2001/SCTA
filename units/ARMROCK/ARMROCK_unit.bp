@@ -39,7 +39,7 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'ARM',
         'KBOT',
 	'LEVEL1',

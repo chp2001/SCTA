@@ -24,7 +24,7 @@ UnitBlueprint {
 	'NOEXPLOSION',
 	'NOSMOKE',
 
-	--TA Categories
+	
 	'ARM',
 	'METAL',
 	'LEVEL2',

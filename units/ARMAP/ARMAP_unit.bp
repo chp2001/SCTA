@@ -49,7 +49,7 @@ UnitBlueprint {
 	'TEXTUREANIM',
         'OVERLAYRADAR',
 
-	--TA Categories
+	
 	'ARM',
 	'PLANT',
 	'LEVEL1',

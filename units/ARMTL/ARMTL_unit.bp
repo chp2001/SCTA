@@ -36,7 +36,7 @@ UnitBlueprint {
         'OVERLAYSONAR',
         'OVERLAYANTINAVY',
 
-	--TA Categories
+	
 	'ARM',
 	'SPECIAL',
 	'WEAPON',

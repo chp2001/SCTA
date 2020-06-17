@@ -45,7 +45,7 @@ UnitBlueprint {
 	'STRUCTURE',
 	'CONSTRUCTION',
 
-	--TA Categories
+	
 	'ARM',
 	'PLANT',
 	'LEVEL2',

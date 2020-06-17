@@ -34,7 +34,7 @@ UnitBlueprint {
         'METALSTORAGE',
         'ECONOMIC',
 
-	--TA Categories
+	
 	'ARM',
 	'METAL',
 	'LEVEL1',

@@ -49,7 +49,7 @@ UnitBlueprint {
 	'INTELLIGENCE',
         'OVERLAYCOUNTERINTEL',
 
-	--TA Categories
+	
         'CORE',
 	'TANK',
         'VEHICLE',

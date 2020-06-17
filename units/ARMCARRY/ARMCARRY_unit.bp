@@ -50,7 +50,7 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'OVERLAYMISC',
 
-	--TA Categories
+	
 	'ARM',
 	'SHIP',
 	'LEVEL2',	#Bug in TA: 'LEVEL1'

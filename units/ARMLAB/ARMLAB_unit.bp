@@ -47,7 +47,7 @@ UnitBlueprint {
 	'STRUCTURE',
 	'CONSTRUCTION',
 
-	--TA Categories
+	
 	'ARM',
 	'PLANT',
 	'CTRL_F',

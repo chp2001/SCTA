@@ -43,7 +43,7 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'NAVAL',
 
-	--TA Categories
+	
 	'ARM',
 	'PLANT',
 	'LEVEL2',	#Bug in TA: 'LEVEL1'

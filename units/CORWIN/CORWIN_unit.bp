@@ -34,7 +34,7 @@ UnitBlueprint {
 	'ENERGYPRODUCTION',
 	'WIND',
 
-	--TA Categories
+	
 	'CORE',
 	'ENERGY',
 	'LEVEL1',

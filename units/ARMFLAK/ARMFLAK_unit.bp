@@ -33,7 +33,7 @@ UnitBlueprint {
 	'ANTIAIR',
         'OVERLAYANTIAIR',
 
-	--TA Categories
+	
 	'ARM',
     'CORE', -- in lieu of core flakker
 	'LEVEL3',

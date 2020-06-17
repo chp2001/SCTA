@@ -39,7 +39,7 @@ UnitBlueprint {
         'ECONOMIC',
 	'ENERGYPRODUCTION',
 
-	--TA Categories
+	
 	'ARM',
 	'ENERGY',
 	'LEVEL1',

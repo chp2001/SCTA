@@ -48,7 +48,7 @@ UnitBlueprint {
 	'CONSTRUCTION',
         'OVERLAYRADAR',
 
-	--TA Categories
+	
 	'CORE',
 	'PLANT',
 	'LEVEL1',

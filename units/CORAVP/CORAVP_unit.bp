@@ -43,7 +43,7 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'TEXTUREANIM',
 
-	--TA Categories
+	
 	'CORE',
 	'PLANT',
 	'LEVEL2',

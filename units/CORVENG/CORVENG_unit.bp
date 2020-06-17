@@ -81,7 +81,7 @@ UnitBlueprint {
 	'OVERLAYDIRECTFIRE',
 	'DIRECTFIRE',
 
-	--TA Categories
+	
         'CORE',
         'VTOL',
 	'CTRL_V',

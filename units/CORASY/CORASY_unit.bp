@@ -43,7 +43,7 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'NAVAL',
 
-	--TA Categories
+	
 	'CORE',
 	'PLANT',
 	'LEVEL2',

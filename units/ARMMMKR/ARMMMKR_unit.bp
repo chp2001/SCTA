@@ -45,7 +45,7 @@ UnitBlueprint {
         'ECONOMIC',
 	'TEXTUREANIM',
 
-	--TA Categories
+	
 	'ARM',
     'CORE', -- in lieu of core mmm
 	'ENERGY',

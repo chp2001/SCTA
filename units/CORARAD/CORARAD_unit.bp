@@ -43,7 +43,7 @@ UnitBlueprint {
 	'RADAR',
         'OVERLAYRADAR',
 
-	--TA Categories
+	
 	'CORE',
 	'SPECIAL',
 	'LEVEL3',

@@ -33,7 +33,7 @@ UnitBlueprint {
 	'ENERGYPRODUCTION',
 	'NAVAL',
 
-	--TA Categories
+	
 	'CORE',
 	'ENERGY',
 	'LEVEL1',

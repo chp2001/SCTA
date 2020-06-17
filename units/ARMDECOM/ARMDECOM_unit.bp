@@ -64,7 +64,7 @@ UnitBlueprint {
 	'LEVEL2',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'ARM',
 	'WEAPON',
 	'NOTAIR',

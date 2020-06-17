@@ -34,7 +34,7 @@ UnitBlueprint {
 	'NOSMOKE',
 	'UNDERWATER',
 
-	--TA Categories
+	
 	'ARM',
     'CORE', -- in lieu of core storage
 	'METAL',

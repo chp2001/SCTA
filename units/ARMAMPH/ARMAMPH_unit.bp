@@ -40,7 +40,7 @@ UnitBlueprint {
         'LAND',
         'BOT',
 
-	--TA Categories
+	
         'ARM',
         'HOVER',
 	'WEAPON',

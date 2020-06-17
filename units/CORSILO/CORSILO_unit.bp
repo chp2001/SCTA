@@ -34,7 +34,7 @@ UnitBlueprint {
         'NUKE',
         'SILO',
 
-	--TA Categories
+	
 	'CORE',
 	'SPECIAL',
 	'WEAPON',

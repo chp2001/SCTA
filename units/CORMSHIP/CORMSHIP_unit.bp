@@ -45,7 +45,7 @@ UnitBlueprint {
         'OVERLAYRADAR',
 	'OVERLAYANTIAIR',
 
-	--TA Categories
+	
         'CORE',
         'SHIP',
 	'LEVEL2',

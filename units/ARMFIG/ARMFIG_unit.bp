@@ -80,7 +80,7 @@ UnitBlueprint {
         'OVERLAYANTIAIR',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'ARM',
         'VTOL',
 	'CTRL_V',

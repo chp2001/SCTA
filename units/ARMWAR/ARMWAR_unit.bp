@@ -40,7 +40,7 @@ UnitBlueprint {
 	'ARMWAR',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'ARM',
         'KBOT',
 	'LEVEL1',

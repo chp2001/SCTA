@@ -42,7 +42,7 @@ UnitBlueprint {
 	'INTELLIGENCE',
 	'TARGETING',
 
-	--TA Categories
+	
 	'ARM',
 	'SPECIAL',
 	'LEVEL3',

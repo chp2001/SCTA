@@ -40,7 +40,7 @@ UnitBlueprint {
 	'BATTLESHIP',
         'OVERLAYINDIRECTFIRE',
 
-	--TA Categories
+	
         'ARM',
         'SHIP',
 	'LEVEL2',

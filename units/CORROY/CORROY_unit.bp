@@ -42,7 +42,7 @@ UnitBlueprint {
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',
 
-	--TA Categories
+	
         'CORE',
         'SHIP',
 	'LEVEL1', #BUG: LEVEL2 in TA

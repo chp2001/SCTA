@@ -44,7 +44,7 @@ UnitBlueprint {
 	--Weapon Damage Category
 	'NORMALSUB',
 
-	--TA Categories
+	
         'CORE',
         'UNDERWATER',
 	'LEVEL1',

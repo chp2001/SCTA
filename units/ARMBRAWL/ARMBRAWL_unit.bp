@@ -63,7 +63,7 @@ UnitBlueprint {
 	'GROUNDATTACK',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'ARM',
         'VTOL',
 	'CTRL_V',

@@ -69,7 +69,7 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'AIR',
 
-	--TA Categories
+	
         'CORE',
         'VTOL',
 	'CTRL_V',

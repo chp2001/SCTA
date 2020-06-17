@@ -42,7 +42,7 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'OVERLAYANTINAVY',
 
-	--TA Categories
+	
         'CORE',
         'SHIP',
 	'LEVEL2',

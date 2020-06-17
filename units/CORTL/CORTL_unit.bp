@@ -35,7 +35,7 @@ UnitBlueprint {
 	'NAVAL',
         'OVERLAYANTINAVY',
 
-	--TA Categories
+	
 	'CORE',
 	'SPECIAL',
 	'WEAPON',

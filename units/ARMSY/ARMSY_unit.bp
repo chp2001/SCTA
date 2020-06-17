@@ -50,7 +50,7 @@ UnitBlueprint {
 	'NAVAL',
 	'TEXTUREANIM',
 
-	--TA Categories
+	
 	'ARM',
 	'PLANT',
 	'CTRL_F',

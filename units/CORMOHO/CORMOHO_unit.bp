@@ -44,7 +44,7 @@ UnitBlueprint {
         'MASSEXTRACTION',
         'ECONOMIC',
 
-	--TA Categories
+	
 	'CORE',
 	'METAL',
 	'EXTRACTOR',

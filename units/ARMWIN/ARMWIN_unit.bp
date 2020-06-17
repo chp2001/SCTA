@@ -9,7 +9,7 @@ UnitBlueprint {
             Cue = 'WINDGEN1',
             LodCutoff = 'UnitMove_LodCutoff',
         },
-	Destroyed = Sound {
+       Destroyed = Sound {
             Bank = 'TA_Sound',
             Cue = 'XPLOSML3',
             LodCutoff = 'UnitMove_LodCutoff',
@@ -27,14 +27,10 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-
-	
 	'STRUCTURE',
-    'ECONOMIC',
+                 'ECONOMIC',
 	'ENERGYPRODUCTION',
 	'WIND',
-
-	
 	'ARM',
 	'ENERGY',
 	'LEVEL1',

@@ -1,4 +1,4 @@
-#ARM Adv Construction Sbu - Tech Level 2
+#ARM Adv Construction Sub - Tech Level 2
 #ARMACSUB
 #
 #Blueprint created by Raevn
@@ -47,17 +47,13 @@ UnitBlueprint {
         'RECLAIMABLE',
         'PATROLHELPER',
         'SHOWQUEUE',
-
-	
         'MOBILE',
-	'CONSTRUCTION',
-	'NAVAL',
+        'CONSTRUCTION',
+        'NAVAL',
         'SHIP',
-        'OVERLAYSONAR',
-
-	
-        'ARM',
-        'CORE', -- in lieu of core adv construction sub
+        'OVERLAYSONAR',	
+           'ARM',
+            'CORE', -- in lieu of core adv construction sub
 	'UNDERWATER',
 	'LEVEL2',
 	'CONSTR',

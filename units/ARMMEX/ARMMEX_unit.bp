@@ -20,7 +20,6 @@ UnitBlueprint {
             Cue = 'MEXOFF1',
             LodCutoff = 'UnitMove_LodCutoff',
         },
-
 	Destroyed = Sound {
             Bank = 'TA_Sound',
             Cue = 'XPLOSML3',

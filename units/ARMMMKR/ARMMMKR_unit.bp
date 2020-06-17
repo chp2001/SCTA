@@ -39,7 +39,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH3',
 
-	--Additional Categories
+	
 	'STRUCTURE',
         'MASSPRODUCTION',
         'ECONOMIC',

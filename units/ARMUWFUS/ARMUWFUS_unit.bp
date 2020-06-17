@@ -25,7 +25,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH3',
 
-	--Additional Categories
+	
 	'STRUCTURE',
         'ECONOMIC',
 	'ENERGYPRODUCTION',

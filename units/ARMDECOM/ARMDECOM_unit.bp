@@ -56,7 +56,7 @@ UnitBlueprint {
         'RECLAIM',
         'REPAIR',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',

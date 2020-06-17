@@ -33,7 +33,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'ANTIAIR',
         'OVERLAYDIRECTFIRE',

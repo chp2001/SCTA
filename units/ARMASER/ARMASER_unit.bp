@@ -43,7 +43,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'INTELLIGENCE',

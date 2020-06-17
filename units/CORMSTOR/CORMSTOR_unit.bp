@@ -29,7 +29,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH1',
 
-	--Additional Categories
+	
 	'STRUCTURE',
         'METALSTORAGE',
         'ECONOMIC',

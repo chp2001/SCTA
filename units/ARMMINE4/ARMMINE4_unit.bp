@@ -24,7 +24,7 @@ UnitBlueprint {
         'RECLAIMABLE',
 	'BUILTBYT1MINELAYER',
 
-	--Additional Categories
+	
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',

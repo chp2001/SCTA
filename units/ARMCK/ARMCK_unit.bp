@@ -53,7 +53,7 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'CONSTRUCTION',
 	'LAND',

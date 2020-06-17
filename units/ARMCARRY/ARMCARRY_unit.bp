@@ -41,7 +41,7 @@ UnitBlueprint {
         'TECH2',
         'REPAIR',
 
-	--Additional Categories
+	
 	'NAVAL',
 	'MOBILE',
 	#'STRATEGIC',

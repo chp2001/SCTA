@@ -147,9 +147,9 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #SMALL_BUILDING
-            Damage = 900,
-            DamageRadius = 6.406,
+         { #SMALL_BUILDING
+            Damage = 50,
+            DamageRadius = 2,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

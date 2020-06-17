@@ -43,7 +43,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH3',
 
-	--Additional Categories
+	
 	'STRUCTURE',
 	'STRATEGIC',
         'AIRSTAGINGPLATFORM',

@@ -15,7 +15,7 @@ UnitBlueprint {
         'TECH2',
         'BENIGN',
 
-	--Additional Categories
+	
 	'STRUCTURE',
         'DEFENSE',
         'WALL',

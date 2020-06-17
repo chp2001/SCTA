@@ -26,7 +26,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH2',
 
-	--Additional Categories
+	
 	'STRUCTURE',
 	'DEFENSE',
 	'ANTIAIR',

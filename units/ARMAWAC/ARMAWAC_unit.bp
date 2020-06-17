@@ -49,7 +49,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'AIR',
 	'INTELLIGENCE',

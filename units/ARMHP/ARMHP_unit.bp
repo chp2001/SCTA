@@ -41,7 +41,7 @@ UnitBlueprint {
         'RALLYPOINT',
         'SHOWQUEUE',
 
-	--Additional Categories
+	
 	'STRUCTURE',
 	'CONSTRUCTION',
 

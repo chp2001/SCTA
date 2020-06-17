@@ -35,7 +35,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH3',
 
-	--Additional Categories
+	
 	'STRUCTURE',
 	'INTELLIGENCE',
 	'SONAR',

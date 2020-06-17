@@ -3,17 +3,17 @@
 #
 #Blueprint created by Raevn
 UnitBlueprint {
-    Audio = {
-        UISelection = Sound {
+   Audio = {
+  UISelection = Sound {
             Bank = 'TA_Sound',
             Cue = 'WINDGEN1',
             LodCutoff = 'UnitMove_LodCutoff',
         },
-       Destroyed = Sound {
+	Destroyed = Sound {
             Bank = 'TA_Sound',
             Cue = 'XPLOSML3',
             LodCutoff = 'UnitMove_LodCutoff',
-	    },
+	},
     },
     BuildIconSortPriority = 1,
     Categories = {
@@ -137,9 +137,9 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #SMALL_BUILDING
-            Damage = 900,
-            DamageRadius = 6.406,
+         { #SMALL_BUILDING
+            Damage = 50,
+            DamageRadius = 2,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

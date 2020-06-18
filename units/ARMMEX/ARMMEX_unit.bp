@@ -38,21 +38,17 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-
-	
-	'STRUCTURE',
+	    'STRUCTURE',
         'MASSPRODUCTION',
         'MASSEXTRACTION',
         'ECONOMIC',
-
-	
-	'ARM',
-	'ENERGY',
-	'LEVEL1',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'STORAGE',
+	    'ARM',
+	    'ENERGY',
+	    'LEVEL1',
+	    'NOWEAPON',
+	    'NOTAIR',
+	    'NOTSUB',
+	    'STORAGE',
     },
     Defense = {
         ArmorType = 'Normal',

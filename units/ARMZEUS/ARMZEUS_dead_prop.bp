@@ -39,7 +39,7 @@ PropBlueprint {
         BlockPath = true,
     },
     Wreckage = {
-	Blueprint = '/units/ARMZEUS/ARMZEUS_heap_prop.bp',
+	Blueprint = 'mods/SCTA/units/ARMZEUS/ARMZEUS_heap_prop.bp',
     },
     ScriptClass = 'TAWreckage',
     ScriptModule = '/mods/SCTA/lua/TAWreckage.lua',

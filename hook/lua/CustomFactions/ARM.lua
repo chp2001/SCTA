@@ -3,8 +3,8 @@ do
         {
             Key = 'arm',
             Category = 'ARM',
-            FactionInUnitBp = 'arm',
-            IsCustomFaction = true,
+            FactionInUnitBp = 'ARM',
+            IsCustomFaction = 'true',
             DisplayName = "ARM",
             SoundPrefix = 'ta',
             InitialUnit = 'ARMCOM',

@@ -3,8 +3,8 @@ do
         {
             Key = 'core',
             Category = 'CORE',            
-            FactionInUnitBp = 'core',
-            IsCustomFaction = true,
+            FactionInUnitBp = 'CORE',
+            IsCustomFaction = 'true',
             DisplayName = "CORE",
             SoundPrefix = 'ta',
             InitialUnit = 'CORCOM',

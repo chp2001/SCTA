@@ -55,7 +55,7 @@ UnitBlueprint {
     Description = 'Hovertank',
     Display = {
 	DestructionEffects = {
-		DefaultProjectileCategories = {'MetalBarrel','ARMHover'},
+		DefaultProjectileCategories = {'MetalBarrel','ArmHover'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},

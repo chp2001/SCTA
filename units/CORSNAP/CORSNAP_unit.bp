@@ -55,7 +55,7 @@ UnitBlueprint {
     Description = 'Hovertank',
     Display = {
 	DestructionEffects = {
-		DefaultProjectileCategories = {'MetalBarrel','CorHover'},
+		DefaultProjectileCategories = {'MetalBarrel','ARMHover'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
@@ -162,13 +162,13 @@ UnitBlueprint {
             AlternateDamageRadius = 0.5,
             FiringRandomness = 0,
             DamageType = 'Normal',
-            DisplayName = 'CORANAC_WEAPON',
+            DisplayName = 'CORSNAP_WEAPON',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Water = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            Label = 'CORANAC_WEAPON',
+            Label = 'CORSNAP_WEAPON',
             MaxRadius = 18.75,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,

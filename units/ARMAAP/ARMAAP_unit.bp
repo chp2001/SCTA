@@ -37,14 +37,10 @@ UnitBlueprint {
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-
-	
 	'STRUCTURE',
 	'CONSTRUCTION',
 	'TEXTUREANIM',
         'OVERLAYRADAR',
-
-	
 	'ARM',
 	'PLANT',
 	'CTRL_F',

@@ -64,7 +64,6 @@ UnitBlueprint {
     },
     Categories = {
         'SELECTABLE',
-        'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'ENGINEER',
@@ -73,12 +72,10 @@ UnitBlueprint {
         'CAPTURE',
         'REPAIR',
         'SHOWQUEUE',
-
-	
         'MOBILE',
-	'LAND',
-	'MOBILE',
-	'DIRECTFIRE',
+        'LAND',
+        'MOBILE',
+         'DIRECTFIRE',
         'ECONOMIC',
         'COMMAND',
         'MASSPRODUCTION',
@@ -86,9 +83,7 @@ UnitBlueprint {
         'CONSTRUCTION',
         'OVERLAYDIRECTFIRE',
         'OVERLAYRADAR',
-        'OVERLAYSONAR',
-
-	
+        'OVERLAYSONAR',	
         'ARM',
         'COMMANDER',
 	'LEVEL10',

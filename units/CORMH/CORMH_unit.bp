@@ -174,11 +174,17 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 0,
-            ProjectileId = '/mods/SCTA/projectiles/CORMH_WEAPON/CORMH_WEAPON_proj.bp',
+            ProjectileId = '/mods/SCTA/projectiles/ARMMH_WEAPON/ARMMH_WEAPON_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
-                        'muzzle',
+                        'muzzle_01',
+                    },
+                    RackBone = 'box',
+                },
+               {
+                    MuzzleBones = {
+                        'muzzle_02',
                     },
                     RackBone = 'box',
                 },

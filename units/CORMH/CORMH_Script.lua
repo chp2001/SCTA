@@ -11,7 +11,7 @@ CORMH = Class(TAunit) {
 		TAunit.OnCreate(self)
 		self.Spinners = {
 			box = CreateRotator(self, 'box', 'x', nil, 0, 0, 0),
-			base = CreateRotator(self, 'ARMMH', 'x', nil, 0, 0, 0),
+			base = CreateRotator(self, 'CORMH', 'x', nil, 0, 0, 0),
 		}
 		for k, v in self.Spinners do
 			self.Trash:Add(v)

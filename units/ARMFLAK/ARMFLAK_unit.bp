@@ -26,14 +26,10 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	
 	'STRUCTURE',
 	'DEFENSE',
 	'ANTIAIR',
         'OVERLAYANTIAIR',
-
-	
 	'ARM',
     'CORE', -- in lieu of core flakker
 	'LEVEL3',
@@ -192,9 +188,9 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #MEDIUM_BUILDING
-            Damage = 1400,
-            DamageRadius = 10.16,
+         { #MEDIUM_BUILDING
+            Damage = 100,
+            DamageRadius = 5,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

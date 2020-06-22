@@ -31,16 +31,12 @@ UnitBlueprint {
         'SELECTABLE',
         'TECH1',
         'VISIBLETORECON',
-        'RECLAIMABLE',
-
-	
+        'RECLAIMABLE',	
         'MOBILE',
 	'ANTIAIR',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
         'LAND',
-
-	
         'CORE',
         'HOVER',
 	'WEAPON',
@@ -57,7 +53,7 @@ UnitBlueprint {
     Description = 'Anti-Air Hovercraft',
     Display = {
 	DestructionEffects = {
-		DefaultProjectileCategories = {'CorCockpit','CorHover'},
+		DefaultProjectileCategories = {'CorCockpit','ArmHover'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
@@ -176,7 +172,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 28.125,
-            ProjectileId = '/mods/SCTA/projectiles/CORAH_WEAPON/CORAH_WEAPON_proj.bp',
+            ProjectileId = '/mods/SCTA/projectiles/ARMAH_WEAPON/ARMAH_WEAPON_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

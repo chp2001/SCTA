@@ -52,13 +52,9 @@ UnitBlueprint {
         'RECLAIMABLE',
         'PATROLHELPER',
         'SHOWQUEUE',
-
-	
         'MOBILE',
 	'CONSTRUCTION',
         'LAND',
-
-	
         'CORE',
         'HOVER',
 	'LEVEL1',
@@ -79,7 +75,7 @@ UnitBlueprint {
             'Construction Unit',
         },
 	DestructionEffects = {
-		DefaultProjectileCategories = {'Construction','CorCockpit','CorHover','BuildMuzzle'},
+		DefaultProjectileCategories = {'Construction','ArmCockpit','ArmHover','BuildMuzzle'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},

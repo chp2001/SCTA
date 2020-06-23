@@ -32,13 +32,9 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'DIRECTFIRE',
         'LAND',
-
-	
         'CORE',
         'HOVER',
 	'WEAPON',
@@ -135,7 +131,7 @@ UnitBlueprint {
         MaxSteerForce = 100,
 	RotateOnSpot = true,
 	TurnFacingRate = 41,
-	WobbleFactor = 0.5,
+	WobbleFactor = 0.2,
 	WobbleSpeed = 0.25,
     },
     SelectionSizeX = 1.25,

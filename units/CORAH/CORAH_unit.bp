@@ -24,7 +24,7 @@ UnitBlueprint {
             Bank = 'TA_Sound',
             Cue = 'XPLOLRG3',
             LodCutoff = 'UnitMove_LodCutoff',
-	},
+	    },
     },
     BuildIconSortPriority = 3,
     Categories = {
@@ -52,8 +52,9 @@ UnitBlueprint {
     },
     Description = 'Anti-Air Hovercraft',
     Display = {
+        AnimationOpen = '/mods/SCTA/units/CORAH/CORAH_lod0_unpack.sca',
 	DestructionEffects = {
-		DefaultProjectileCategories = {'CorCockpit','ArmHover'},
+		DefaultProjectileCategories = {'ArmCockpit','ArmHover'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
@@ -216,7 +217,11 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 250,
             Turreted = true,
-	    WeaponUnpacks = true,
+            WeaponUnpackAnimationRate = 1,
+            WeaponPackAnimationRate = 1,
+            WeaponPackAnimation  = '/mods/SCTA/units/CORAH/CORAH_lod0_pack.sca',
+            WeaponUnpackAnimation = '/mods/SCTA/units/CORAH/CORAH_lod0_unpack.sca',
+            WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
         },
         { #DUMMY WEAPON FOR ANTI AIR ATTACK RINGS

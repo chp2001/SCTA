@@ -75,7 +75,7 @@ UnitBlueprint {
             'Construction Unit',
         },
 	DestructionEffects = {
-		DefaultProjectileCategories = {'Construction','ArmCockpit','ArmHover','BuildMuzzle'},
+		DefaultProjectileCategories = {'Construction','CorCockpit','CorHover','BuildMuzzle'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
@@ -107,12 +107,12 @@ UnitBlueprint {
 	IdleEffects = {
 		Emitter = '/mods/SCTA/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04','Wake_05','Wake_06'},
+		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
 	},
 	MovementEffects = {
 		Emitter = '/mods/SCTA/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04','Wake_05','Wake_06'},
+		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
 	},
         UniformScale = 0.16,
     },

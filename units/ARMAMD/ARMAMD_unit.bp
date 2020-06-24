@@ -26,8 +26,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	
 	'STRUCTURE',
 	'DEFENSE',
         'ANTIMISSILE',
@@ -178,7 +176,6 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             WeaponRepackTimeout = 4,
             WeaponUnpacks = true,
-
             ForceSingleFire = true,
             CountedProjectile = true,
             InitialProjectileStorage = 0,
@@ -189,8 +186,6 @@ UnitBlueprint {
             TrackingRadius = 2048,
             WeaponCategory = 'Missile',
             Turreted = false,
-
-
         },
         { #ATOMIC_BLAST
             Damage = 2000,

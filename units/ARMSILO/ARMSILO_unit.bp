@@ -25,17 +25,13 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH3',
-
-	
+        'EXPERIMENTAL',
 	'STRUCTURE',
 	'DEFENSE',
 	'INDIRECTFIRE',
         'NUKE',
         'SILO',
-	'NOCUSTOMTARGET',
-
-	
+	'NOCUSTOMTARGET',	
 	'ARM',
 	'SPECIAL',
 	'WEAPON',
@@ -86,6 +82,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 52134,
         BuildCostMass = 1010,
+        BuildRate = 2160,
         BuildTime = 178453,
     },
     Footprint = {
@@ -130,7 +127,7 @@ UnitBlueprint {
     SizeX = 5,
     SizeY = 3,
     SizeZ = 5,
-    StrategicIconName = 'icon_structure3_missile',
+    StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -144,8 +141,6 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 5500,
-            DamageRadius = 16, 
             DamageType = 'Normal',
             DisplayName = 'NUCLEAR_MISSILE',
             FireTargetLayerCapsTable = {
@@ -180,13 +175,20 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             WeaponRepackTimeout = 4,
             WeaponUnpacks = true,
-
-	    NukeWeapon = true,
+            NukeInnerRingDamage = 1000001,
+            NukeInnerRingRadius = 45,
+            NukeInnerRingTicks = 24,
+            NukeInnerRingTotalTime = 12,
+            NukeOuterRingDamage = 7500,
+            NukeOuterRingRadius = 60,
+            NukeOuterRingTicks = 20,
+            NukeOuterRingTotalTime = 5,
+            NukeWeapon = true,
             ManualFire = 1,
             CountedProjectile = true,
             ForceSingleFire = true,
             InitialProjectileStorage = 0,
-            MaxProjectileStorage = 99,
+            MaxProjectileStorage = 4,
             ForceSingleFire = true,
         },
         { #ATOMIC_BLASTSML

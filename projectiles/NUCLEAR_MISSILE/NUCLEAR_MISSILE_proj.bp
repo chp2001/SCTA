@@ -39,8 +39,8 @@ ProjectileBlueprint {
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 1,
-        MaxHealth = 1,
+        Health = 60,
+        MaxHealth = 60,
     },
     Display = {
         MeshBlueprint = '/mods/SCTA/meshes/projectiles/ballmiss_mesh.bp',
@@ -49,9 +49,9 @@ ProjectileBlueprint {
     },
     #DesiredShooterCap = 1,
     Economy = {
-        BuildCostEnergy = 180000,
-        BuildCostMass = 2000,
-        BuildTime = 180,
+        BuildCostEnergy = 700000,
+        BuildCostMass = 12000,
+        BuildTime = 324000,
     },
     General = {
         Category = 'Anti Air',
@@ -71,7 +71,7 @@ ProjectileBlueprint {
     Physics = {
         Acceleration = 3.125,
         DestroyOnWater = true,
-	InitialSpeed = 0,
+        InitialSpeed = 0,
         LeadTarget = false,
         Lifetime = 999,
         MaxSpeed = 21.875,

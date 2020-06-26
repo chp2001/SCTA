@@ -33,8 +33,8 @@ TAair = Class(TAunit)
 	CloseWings = function(self)
 	end,
 
-    	OnRunOutOfFuel = function(self)
-    	end,
+    OnRunOutOfFuel = function(self)
+	end,
 }
 
 TypeClass = TAair

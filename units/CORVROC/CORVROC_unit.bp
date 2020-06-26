@@ -32,15 +32,11 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'INDIRECTFIRE',
 	'ROCKET',
         'OVERLAYINDIRECTFIRE',
-
-	
         'CORE',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL2',
@@ -193,7 +189,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            WeaponCategory = 'Indirect Fire',
+            WeaponCategory = 'MISSILE',
 	    WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
         },

@@ -25,16 +25,12 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH3',
-
-	
+        'EXPERIMENTAL',
 	'STRUCTURE',
 	'DEFENSE',
 	'INDIRECTFIRE',
         'NUKE',
         'SILO',
-
-	
 	'CORE',
 	'SPECIAL',
 	'WEAPON',
@@ -46,6 +42,7 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 2560,
         MaxHealth = 2560,
+        BuildRate = 2160,
     },
     Description = 'Nuclear Missile Launcher',
     Display = {
@@ -86,6 +83,7 @@ UnitBlueprint {
         BuildCostEnergy = 48768,
         BuildCostMass = 975,
         BuildTime = 181243,
+        BuildRate = 2160,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -129,7 +127,7 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 3,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure3_missile',
+    StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -143,8 +141,6 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 5500,
-            DamageRadius = 16, 
             DamageType = 'Normal',
             DisplayName = 'CRBLMSSL',
             FireTargetLayerCapsTable = {
@@ -161,7 +157,7 @@ UnitBlueprint {
                     MuzzleBones = {
                         'missile',
                     },
-		    HideMuzzle = true,
+                    HideMuzzle = true,
                     RackBone = 'missile',
                 },
             },
@@ -178,13 +174,20 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             WeaponRepackTimeout = 4,
             WeaponUnpacks = true,
-
+            NukeInnerRingDamage = 1000001,
+            NukeInnerRingRadius = 45,
+            NukeInnerRingTicks = 24,
+            NukeInnerRingTotalTime = 12,
+            NukeOuterRingDamage = 7500,
+            NukeOuterRingRadius = 60,
+            NukeOuterRingTicks = 20,
+            NukeOuterRingTotalTime = 5,
 	    NukeWeapon = true,
             ManualFire = 1,
             CountedProjectile = true,
             ForceSingleFire = true,
             InitialProjectileStorage = 0,
-            MaxProjectileStorage = 99,
+            MaxProjectileStorage = 4,
             ForceSingleFire = true,
 
         },

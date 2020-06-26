@@ -49,9 +49,9 @@ ProjectileBlueprint {
     },
     #DesiredShooterCap = 1,
     Economy = {
-        BuildCostEnergy = 180000,
-        BuildCostMass = 2000,
-        BuildTime = 180,
+        BuildCostEnergy = 700000,
+        BuildCostMass = 12000,
+        BuildTime = 324000,
     },
     General = {
         Category = 'Anti Air',

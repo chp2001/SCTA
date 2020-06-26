@@ -87,6 +87,7 @@ UnitBlueprint {
         BuildCostEnergy = 92321,
         BuildCostMass = 1508,
         BuildTime = 96450,
+        BuildRate = 1080,
     },
     Footprint = {
         SizeX = 4,
@@ -99,7 +100,7 @@ UnitBlueprint {
         CommandCaps = {
             RULEUCC_SiloBuildTactical = true,
             RULEUCC_Stop = true,
-            RULEUCC_RetaliateToggle = true,
+            RULEUCC_RetaliateToggle = false,
         },
         SelectionPriority = 5,
         FactionName = 'CORE',
@@ -143,7 +144,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 100,
+            Damage = 30,
             EdgeEffectiveness = 1,
             DamageRadius = 10, 
             DamageType = 'Normal',
@@ -158,8 +159,8 @@ UnitBlueprint {
             FiringTolerance = 360,
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 1,
-            ProjectileId = '/mods/SCTA/projectiles/FMD_ROCKET/FMD_ROCKET_proj.bp',
+            MuzzleVelocity = 90,
+            ProjectileId =  '/projectiles/TIMMissileIntercerptor01/TIMMissileIntercerptor01_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -178,7 +179,6 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             WeaponRepackTimeout = 4,
             WeaponUnpacks = true,
-
             AlwaysRecheckTarget = true,
             CountedProjectile = true,
             InitialProjectileStorage = 0,

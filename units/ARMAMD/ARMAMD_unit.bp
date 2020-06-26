@@ -86,6 +86,7 @@ UnitBlueprint {
         BuildCostEnergy = 88000,
         BuildCostMass = 1437,
         BuildTime = 95678,
+        BuildRate = 1080,
     },
     Footprint = {
         SizeX = 4,
@@ -98,7 +99,7 @@ UnitBlueprint {
         CommandCaps = {
             RULEUCC_SiloBuildTactical = true,
             RULEUCC_Stop = true,
-            RULEUCC_RetaliateToggle = true,
+            RULEUCC_RetaliateToggle = false,
         },
         SelectionPriority = 5,
         FactionName = 'ARM',
@@ -141,7 +142,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 100,
+            Damage = 30,
             EdgeEffectiveness = 1,
             DamageRadius = 10,
             DamageType = 'Normal',
@@ -156,8 +157,8 @@ UnitBlueprint {
             FiringTolerance = 360,
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 1,
-            ProjectileId = '/mods/SCTA/projectiles/AMD_ROCKET/AMD_ROCKET_proj.bp',
+            MuzzleVelocity = 90,
+            ProjectileId =  '/projectiles/TIMMissileIntercerptor01/TIMMissileIntercerptor01_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -184,7 +185,7 @@ UnitBlueprint {
             TargetType = 'RULEWTT_Projectile',
             EffectiveRadius = 125,
             TrackingRadius = 2048,
-            WeaponCategory = 'Missile',
+            WeaponCategory = 'Defense',
             Turreted = false,
         },
         { #ATOMIC_BLAST

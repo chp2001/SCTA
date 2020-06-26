@@ -71,6 +71,7 @@ UnitBlueprint {
     },
     Description = 'Tech Level 1',
     Display = {
+        AnimationOpen = '/mods/SCTA/units/CORCH/CORCH_aopen.sca',
         Abilities = {
             'Construction Unit',
         },
@@ -93,7 +94,7 @@ UnitBlueprint {
 			},
 		},
 	},
-	BuildBones = {'muzzle'},
+	BuildBones = {'nanogun'},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

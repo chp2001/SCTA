@@ -95,7 +95,8 @@ UnitBlueprint {
         CommandCaps = {
             RULEUCC_SiloBuildTactical = true,
             RULEUCC_Stop = true,
-            RULEUCC_RetaliateToggle = true,
+            RULEUCC_RetaliateToggle = false,
+            RULEUCC_Pause = true,
         },
         SelectionPriority = 5,
         FactionName = 'CORE',

@@ -92,11 +92,12 @@ UnitBlueprint {
     },
     General = {
 	BuildAngle = 8192,
-        Category = 'Defense',
+        Category = 'Strategic',
         Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_SiloBuildNuke = true,
             RULEUCC_Stop = true,
+            RULEUCC_Pause = true,
             RULEUCC_Nuke = true,
             RULEUCC_RetaliateToggle = true,
         },

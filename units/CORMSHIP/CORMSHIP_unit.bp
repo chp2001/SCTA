@@ -32,8 +32,6 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'NAVAL',
 	'INDIRECTFIRE',
@@ -44,8 +42,6 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'OVERLAYRADAR',
 	'OVERLAYANTIAIR',
-
-	
         'CORE',
         'SHIP',
 	'LEVEL2',

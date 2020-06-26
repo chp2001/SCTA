@@ -33,7 +33,7 @@ CORVROC = Class(TAunit) {
 				self.unit.Spinners.cradle:SetGoal(-90)
 				self.unit.Spinners.cradle:SetSpeed(45)
 
-				WaitFor(self.Spinners.cradle)
+				WaitFor(self.unit.Spinners.cradle)
 
 				TAweapon.PlayFxRackReloadSequence(self)
 			end,

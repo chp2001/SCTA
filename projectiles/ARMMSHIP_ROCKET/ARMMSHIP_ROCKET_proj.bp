@@ -36,17 +36,21 @@ ProjectileBlueprint {
         'PROJECTILE',
         'ROCKET',
     },
+    Defense = {
+        Health = 1,
+        MaxHealth = 1,
+    },
     Display = {
         MeshBlueprint = '/mods/SCTA/meshes/projectiles/rocket_mesh.bp',
         StrategicIconSize = 1,
         UniformScale = 0.16,
     },
     General = {
-        Category = 'Anti Air',
+        Category = 'Missile',
         EntityCategory = {
        	    'ARM',
             'PROJECTILE',
-   	    'ROCKET',
+   	        'ROCKET',
         },
         Faction = 'ARM',
         Weapon = 'ARMMSHIP_ROCKET',

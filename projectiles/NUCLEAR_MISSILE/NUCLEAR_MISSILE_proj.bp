@@ -54,7 +54,7 @@ ProjectileBlueprint {
         BuildTime = 324000,
     },
     General = {
-        Category = 'Anti Air',
+        Category = 'MISSILE',
         EntityCategory = {
        	    'ARM',
             'PROJECTILE',
@@ -80,5 +80,5 @@ ProjectileBlueprint {
         UseGravity = false,
         VelocityAlign = true,
     },
-    StrategicIconName = '/mods/SCTA/textures/ui/common/game/strategicicons/projectiles/icon_strategic_nuke.dds',
+    StrategicIconName = '/textures/ui/common/game/unit-over/icon-nuke_bmp.dds',
 }

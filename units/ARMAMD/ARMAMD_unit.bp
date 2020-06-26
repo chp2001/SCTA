@@ -158,7 +158,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 90,
-            ProjectileId =  '/projectiles/TIMMissileIntercerptor01/TIMMissileIntercerptor01_proj.bp',
+            ProjectileId =   '/mods/SCTA/projectiles/AMD_ROCKET/AMD_ROCKET_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

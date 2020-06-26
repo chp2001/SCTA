@@ -17,7 +17,7 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
 		if self.Smoke == true then
 			self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
 		end
-        	#self:SetCollisionShape('Sphere', 0, 0, 0, 1)
+        	self:SetCollisionShape('Sphere', 0, 0, 0, 1)
 	end,
 
 	TrackingThread = function(self)
@@ -271,6 +271,10 @@ TALightCannonProjectile = Class(TAProjectile) {
 
 TAMissileProjectile = Class(TAMediumCannonProjectile) {
 	Smoke = true,
+	OnCreate = function(self)
+	self:SetCollisionShape('Sphere', 0, 0, 0, 2)
+	TAMediumCannonProjectile.OnCreate(self)
+	end,
 }
 
 

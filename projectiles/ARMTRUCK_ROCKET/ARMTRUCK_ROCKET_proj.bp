@@ -34,9 +34,11 @@ ProjectileBlueprint {
     Categories = {
         'ARM',
         'PROJECTILE',
-        'ROCKET',
+        'TACTICAL',
+        'MISSILE',
     },
     Defense = {
+        ArmorType = 'Normal',
         Health = 1,
         MaxHealth = 1,
     },
@@ -48,13 +50,12 @@ ProjectileBlueprint {
     General = {
         Category = 'Missile',
         EntityCategory = {
-       	    'ARM',
+            'ARM',
             'PROJECTILE',
             'TACTICAL',
             'MISSILE',   
         },
         Faction = 'ARM',
-        Weapon = 'ARMTRUCK_ROCKET',
     },
     Interface = {
         HelpText = 0,
@@ -62,7 +63,7 @@ ProjectileBlueprint {
     Physics = {
         Acceleration = 2.5,
         DestroyOnWater = true,
-	InitialSpeed = 0,
+	    InitialSpeed = 0,
         LeadTarget = false,
         Lifetime = 30,
         MaxSpeed = 25,

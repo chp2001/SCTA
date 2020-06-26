@@ -32,8 +32,8 @@ ProjectileBlueprint {
         },
     },
     Categories = {
-        'ARM',
-        'PROJECTILE',
+               'ARM',
+                'PROJECTILE',
 	'STRATEGIC',
 	'MISSILE',
     },
@@ -57,7 +57,7 @@ ProjectileBlueprint {
         Category = 'MISSILE',
         EntityCategory = {
        	    'ARM',
-            'PROJECTILE',
+                    'PROJECTILE',
 	    'STRATEGIC',
 	    'MISSILE',
         },

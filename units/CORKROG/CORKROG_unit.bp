@@ -33,8 +33,6 @@ UnitBlueprint {
         'EXPERIMENTAL',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-        
         'MOBILE',
         'LAND',
         'DIRECTFIRE',
@@ -43,9 +41,7 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',
-        'CORKROG',
-
-        
+        'CORKROG',        
         'CORE',
         'KBOT',
         'WEAPON',

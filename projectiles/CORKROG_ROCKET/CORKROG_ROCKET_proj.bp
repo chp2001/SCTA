@@ -31,6 +31,11 @@ ProjectileBlueprint {
             LodCutoff = 'Weapon_LodCutoff',
         },
     },
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 1,
+        MaxHealth = 1,
+    },
     Categories = {
         'CORE',
         'PROJECTILE',
@@ -42,11 +47,12 @@ ProjectileBlueprint {
         UniformScale = 0.16,
     },
     General = {
-        Category = 'Anti Air',
+        Category = 'MISSILE',
         EntityCategory = {
        	    'CORE',
             'PROJECTILE',
-   	    'ROCKET',
+            'MISSILE',
+            'TACTICAL',   
         },
         Faction = 'CORE',
         Weapon = 'CORKROG_ROCKET',

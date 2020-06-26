@@ -32,15 +32,11 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'PARALYZER',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-
-	
         'ARM',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL2',
@@ -97,7 +93,7 @@ UnitBlueprint {
         BuildCostEnergy = 2200,
         BuildCostMass = 230,
         BuildTime = 6075,
-	NaturalProducer=true,
+	NaturalProducer = true,
         MaintenanceConsumptionPerSecondEnergy = 0.7,
         ProductionPerSecondEnergy = 0.7,
     },
@@ -166,16 +162,16 @@ UnitBlueprint {
                     },
                     AppliedToTarget = true,
                     BuffType = 'STUN',
-                    Duration = 1, #0.9,
-                    Radius = 2, #0.25,
-                    TargetAllow = 'TECH1',
+                    Duration = 1, 0.9,
+                    Radius = 2, 0.25,
+                    TargetAllow = 'TECH1, TECH2',
                 },
 	    },
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 0,
-	    AlternateDamageRadius = 1, #0.25,
+            Damage = 10,
+	    AlternateDamageRadius = 1, 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARM_PARALYZER',
             FireTargetLayerCapsTable = {
@@ -241,7 +237,6 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
-
     },
     Wreckage = {
 	UseCustomMesh = true,

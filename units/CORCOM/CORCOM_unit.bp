@@ -332,7 +332,6 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 300,
             Turreted = true,
-
 	    OverChargeWeapon = true,
 	    ManualFire = true,
         },

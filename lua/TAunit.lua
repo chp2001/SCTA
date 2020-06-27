@@ -10,8 +10,6 @@ local WreckShield = import('/mods/SCTA/lua/TAshield.lua').WreckShield
 
 TAunit = Class(Unit) 
 {
-
-
 	lastHitVector = nil,
 	buildAngle = 0,
 	textureAnimation = false,
@@ -27,11 +25,9 @@ TAunit = Class(Unit)
 
 	OnCreate = function(self)
         Unit.OnCreate(self)
-
         if not TAutils.wind.threadStarted then
             ForkThread(TAutils.WindChangeThread, self)
         end
-
 		self:SetFireState(2)
 		local bp = self:GetBlueprint()
 		if bp.General.BuildAngle then

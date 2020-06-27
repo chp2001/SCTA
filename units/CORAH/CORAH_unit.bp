@@ -32,15 +32,11 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'ANTIAIR',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
         'LAND',
-
-	
         'CORE',
         'HOVER',
 	'WEAPON',
@@ -57,7 +53,7 @@ UnitBlueprint {
     Description = 'Anti-Air Hovercraft',
     Display = {
 	DestructionEffects = {
-		DefaultProjectileCategories = {'ArmCockpit','ArmHover'},
+		DefaultProjectileCategories = {'CorCockpit','CorHover'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
@@ -182,19 +178,19 @@ UnitBlueprint {
                     MuzzleBones = {
                         'muzzle_01',
                     },
-                    RackBone = 'box',
+                    RackBone = 'turret',
                 },
                 {
                     MuzzleBones = {
                         'muzzle_02',
                     },
-                    RackBone = 'box',
+                    RackBone = 'turret',
                 },
                 {
                     MuzzleBones = {
                         'muzzle_03',
                     },
-                    RackBone = 'box',
+                    RackBone = 'turret',
                 },
             },
             RackRecoilDistance = 0,
@@ -210,8 +206,8 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
             TurretBoneMuzzle = 'muzzle_02',
-            TurretBonePitch = 'box',
-            TurretBoneYaw = 'box',
+            TurretBonePitch = 'turret',
+            TurretBoneYaw = 'turret',
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 360,
@@ -220,11 +216,12 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 250,
             Turreted = true,
-			WeaponUnpackAnimation = '/mods/scta/units/CORAH/CORAH_lod0_unfold.sca',
-            WeaponRepackTimeout = 3,
-			WeaponUnpackAnimationRate = 1.5,
-			WeaponUnpackLocksMotion = false,
 			WeaponUnpacks = true,
+			WeaponRepackTimeout = 3,
+			WeaponUnpackAnimation = '/mods/scta/units/CORAH/CORAH_lod0_Bunpack.sca',
+            WeaponUnpackAnimationRate = 3,
+			WeaponUnpackLocksMotion = false,
+			
 
         },
         { #DUMMY WEAPON FOR ANTI AIR ATTACK RINGS

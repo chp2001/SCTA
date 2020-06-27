@@ -400,52 +400,6 @@ TAunit = Class(Unit)
         self:PlayUnitSound('Destroyed')
         self:Destroy()
     end,
-
-    ##########################################################################################
-    ## VETERANCY
-    ##########################################################################################
-
-
-    #Check to see if we should veteran up.
-    CheckVeteranLevel = function(self)
-        local bp = self:GetBlueprint().Veteran
-        if not bp then
-            bp = Game.VeteranDefault
-        end
-        local unitKills = self:GetStat('KILLS', 0).Value + 1
-        if self.VeteranLevel == table.getsize(bp) then
-            #return # Don't stop at level 5
-        end
-
-        local nextLvl = self.VeteranLevel + 1
-        local nextKills = bp[('Level' .. nextLvl)]
-        if unitKills >= nextKills then
-            self:SetVeteranLevel(nextLvl)
-        end
-    end,
-
-    SetVeteranLevel = function(self, level)
-        local old = self.VeteranLevel
-        self.VeteranLevel = level
-
-      
-        for i = 1, self:GetWeaponCount() do
-            local wep = self:GetWeapon(i)
-            wep:OnVeteranLevel(old, level)
-        end
-
-        local bp = self:GetBlueprint().Buffs
-        if bp then
-            local lvlkey = 'VeteranLevel' .. level
-            for k, v in bp do
-                if v.Add[lvlkey] == true then
-                    self:AddBuff(v)
-                end
-            end
-        end
-        self:GetAIBrain():OnBrainUnitVeterancyLevel(self, level)
-        self:DoUnitCallbacks('OnVeteran')
-    end,
 }
 
 TypeClass = TAunit

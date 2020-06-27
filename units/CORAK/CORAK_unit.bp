@@ -84,12 +84,6 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 0.3,
         ProductionPerSecondEnergy = 0.3,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-	MaxSlope = 1.0625,
-	MaxWaterDepth = 0.0625,
-    },
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',

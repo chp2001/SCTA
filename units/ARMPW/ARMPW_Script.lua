@@ -12,7 +12,6 @@ ARMPW = Class(TAunit) {
 		EMG = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.1)
 			end,
 		},
 	},

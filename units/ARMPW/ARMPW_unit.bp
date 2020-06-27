@@ -32,15 +32,11 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
 	'ARMPW',
         'OVERLAYDIRECTFIRE',
-
-	
         'ARM',
         'KBOT',
 	'LEVEL1',
@@ -85,10 +81,6 @@ UnitBlueprint {
 	BuildTime = 1452,
         MaintenanceConsumptionPerSecondEnergy = 0.3,
         ProductionPerSecondEnergy = 0.3,
-    },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
     },
     General = {
         Category = 'Direct Fire',

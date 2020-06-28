@@ -40,14 +40,10 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-
-	
 	'STRUCTURE',
         'MASSPRODUCTION',
         'ECONOMIC',
 	'TEXTUREANIM',
-
-	
 	'ARM',
 	'ENERGY',
 	'LEVEL1',

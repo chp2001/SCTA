@@ -42,13 +42,9 @@ UnitBlueprint {
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-
-	
 	'STRUCTURE',
 	'CONSTRUCTION',
 	'TEXTUREANIM',
-
-	
 	'CORE',
 	'PLANT',
 	'CTRL_F',

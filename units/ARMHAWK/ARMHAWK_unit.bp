@@ -72,15 +72,12 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'ANTIAIR',
 	'AIR',
         'OVERLAYANTIAIR',
 	'OVERLAYDIRECTFIRE',
-
-	
+       'HIGHALTAIR',
         'ARM',
         'VTOL',
 	'CTRL_V',

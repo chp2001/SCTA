@@ -25,15 +25,11 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH3',
-
-	
+        'EXPERIMENTAL',
 	'STRUCTURE',
 	'DEFENSE',
 	'INDIRECTFIRE',
-        'OVERLAYINDIRECTFIRE',
-
-	
+        'OVERLAYINDIRECTFIRE',	
 	'ARM',
     'CORE', -- in lieu of buzzsaw
 	'LEVEL3',
@@ -127,7 +123,7 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 3,
     SizeZ = 3,
-    StrategicIconName = 'icon_structure3_artillery',
+    StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 0,
     Weapon = {
         {

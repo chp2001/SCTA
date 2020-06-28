@@ -153,7 +153,7 @@ UnitBlueprint {
 	MaxSpeedReverse = 0,
         MaxAcceleration = 5.04,
         MaxBrake = 108,
-        MaxSpeed = 14.305,
+        MaxSpeed = 10,
         TurnRate = 99,
 	RotateOnSpot = true,
 	RotateOnSpotThreshold = 0,

@@ -56,14 +56,10 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'AIR',
 	'GROUNDATTACK',
-        'OVERLAYDIRECTFIRE',
-
-	
+        'OVERLAYDIRECTFIRE',	
         'ARM',
         'VTOL',
 	'CTRL_V',
@@ -153,7 +149,7 @@ UnitBlueprint {
 	MaxSpeedReverse = 0,
         MaxAcceleration = 5.76,
         MaxBrake = 144,
-        MaxSpeed = 12.375,
+        MaxSpeed = 10,
         TurnRate = 132,
 	RotateOnSpot = true,
 	RotateOnSpotThreshold = 0,

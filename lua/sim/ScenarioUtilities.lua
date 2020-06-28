@@ -1,12 +1,12 @@
     local OldCreateResources = CreateResources
     
     function CreateInitialArmyGroup(strArmy, createCommander)
-        local tblGroup = CreateArmyGroup( strArmy, 'INITIAL')
+        local tblGroup = CreateArmyGroup(strArmy, 'INITIAL')
         local cdrUnit = false
     
-        if createCommander and ( tblGroup == nil or 0 == table.getn(tblGroup) ) then
+        if createCommander and (tblGroup == nil or 0 == table.getn(tblGroup) ) then
             local factionIndex = GetArmyBrain(strArmy):GetFactionIndex()
-            local initialUnitName = import('/lua/factions.lua').Factions[factionIndex].InitialUnit
+            local initialUnitName = import('mods/SCTA/hook/lua/factions.lua').Factions[factionIndex].InitialUnit
             cdrUnit = CreateInitialArmyUnit(strArmy, initialUnitName)
             if EntityCategoryContains(categories.COMMAND, cdrUnit) then
                 if ScenarioInfo.Options['PrebuiltUnits'] == 'Off' then

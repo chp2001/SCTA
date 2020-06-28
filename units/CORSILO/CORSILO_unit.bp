@@ -42,7 +42,6 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 2560,
         MaxHealth = 2560,
-        BuildRate = 2160,
     },
     Description = 'Nuclear Missile Launcher',
     Display = {

@@ -8,7 +8,6 @@ UnitBlueprint {
         GuardReturnRadius = 75,
         GuardScanRadius = 60,
     },
-
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
@@ -72,15 +71,12 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
+        'HIGHALTAIR',
         'MOBILE',
 	'ANTIAIR',
 	'AIR',
         'OVERLAYANTIAIR',
 	'OVERLAYDIRECTFIRE',
-
-	
         'CORE',
         'VTOL',
 	'CTRL_V',

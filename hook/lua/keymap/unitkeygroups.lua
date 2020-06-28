@@ -6,26 +6,18 @@ TAunitkeygroups = {
     ["Land_Factory"]= {
         "armvp",
         "armlab",
-        "armavp",
-        "armalab",
         "armhp",
         "corvp",
         "corlab",
-        "coravp",
-        "coralab",
         "corhp",
     },    
     ["Air_Factory"]= {
         "armap",
-        "armaap",
         "corap",
-        "coraap",
     },
     ["Naval_Factory"]= {
         "armsy",
-        "armasy",
         "corsy",
-        "corasy",
     },
     ["Power_Generator"]= {
         "armfus",

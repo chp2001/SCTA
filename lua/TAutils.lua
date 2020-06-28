@@ -327,7 +327,7 @@ function CreateDelayedWreckage(self,overkillRatio, bp, completed, pos, orientati
 		prop:SetMaxReclaimValues(time, mass, energy)
 
 		prop.OriginalUnit = self.OriginalUnit or self
-		if pbp.Physics.BlockPath == true then
+		if pbp.Physics.BlockPath == false then
 		        prop.myShield = WreckShield {
         	        	Owner = self,
                			FactionName = bp.General.FactionName,

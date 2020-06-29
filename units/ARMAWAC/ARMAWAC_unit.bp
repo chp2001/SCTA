@@ -55,8 +55,6 @@ UnitBlueprint {
 	'INTELLIGENCE',
 	'RADAR',
         'OVERLAYRADAR',
-
-	
         'ARM',
         'CORE', -- in lieu of core vulture
         'VTOL',
@@ -73,6 +71,9 @@ UnitBlueprint {
     },
     Description = 'Radar Plane',
     Display = {
+        Abilities = {
+            '<LOC ability_radar>Radar',
+        },
 	DestructionEffects = {
 		DefaultFlamingProjectileCountMin = 0,
 		DefaultFlamingProjectileCountMax = 0,
@@ -122,13 +123,16 @@ UnitBlueprint {
             RULEUCC_Patrol = true,
             RULEUCC_Stop = true,
         },
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
+        },
         FactionName = 'ARM',
         TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Eagle',
     },
     Intel = {
-        VisionRadius = 22,
-	FreeIntel = true,
+    VisionRadius = 22,
+	FreeIntel = false,
 	RadarRadius = 103, 
     },
     Interface = {

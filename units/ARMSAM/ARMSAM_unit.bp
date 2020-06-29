@@ -32,19 +32,15 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
 	'ANTIAIR',
         'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',
-
-	
         'ARM',
         'VEHICLE',	#'TANK' in TA
-	'LEVEL1',	#Bug in TA: 'LEVEL2'
+	'LEVEL1',
 	'WEAPON',
 	'NOTAIR',
 	'NOTSUB',
@@ -58,7 +54,7 @@ UnitBlueprint {
     Description = 'Mobile Missile Launcher',
     Display = {
         Abilities = {
-            'Anti-Air',
+            '<LOC ability_aa>Anti-Air',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Tredside','ArmCockpit'},

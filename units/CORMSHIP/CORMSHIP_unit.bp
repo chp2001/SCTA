@@ -59,7 +59,8 @@ UnitBlueprint {
     Description = 'Missile Ship',
     Display = {
         Abilities = {
-            'Anti-Air',
+            '<LOC ability_aa>Anti-Air',
+            '<LOC ability_radar>Radar',
         },
 	DestructionEffects = {
 		#DefaultProjectileCategories = {'ArmShip','ArmBui'},
@@ -101,9 +102,9 @@ UnitBlueprint {
         BuildCostEnergy = 7628,
         BuildCostMass = 2283,
         BuildTime = 22126,
-        ProductionPerSecondEnergy = 0.9,
-        MaintenanceConsumptionPerSecondEnergy = 0.9,
-	NaturalProducer = true,
+        ProductionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 25,
+	    NaturalProducer = true,
     },
     Footprint = {
         SizeX = 6,
@@ -126,9 +127,9 @@ UnitBlueprint {
         UnitName = 'Hydra',
     },
     Intel = {
-	FreeIntel = true, 
+	FreeIntel = false, 
         VisionRadius = 15,
-	RadarRadius = 78,
+	    RadarRadius = 78,
     },
     Interface = {
         HelpText = 'Missile Ship',

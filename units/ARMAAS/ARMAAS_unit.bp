@@ -32,16 +32,12 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'NAVAL',
 	'ANTIAIR',
 	'LIGHTBOAT',
         'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',
-
-	
         'ARM',
         'CORE', -- in lieu of core shredder
         'SHIP',
@@ -60,7 +56,7 @@ UnitBlueprint {
     Description = 'Anti-Air Ship',
     Display = {
         Abilities = {
-            'Anti-Air',
+            '<LOC ability_aa>Anti-Air',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'ArmShip','MetalBarrel'},

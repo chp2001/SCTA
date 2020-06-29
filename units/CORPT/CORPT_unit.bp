@@ -60,7 +60,7 @@ UnitBlueprint {
     Description = 'Scout Ship',
     Display = {
         Abilities = {
-            'Anti-Air',
+            '<LOC ability_aa>Anti-Air',
         },
 	DestructionEffects = {
 #		DefaultProjectileCategories = {'ArmShip','ArmCockpit'},

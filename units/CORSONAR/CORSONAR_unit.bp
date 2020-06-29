@@ -36,15 +36,11 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-
-	
 	'STRUCTURE',
 	'INTELLIGENCE',
 	'SONAR',
 	'NAVAL',
         'OVERLAYSONAR',
-
-	
 	'CORE',
 	'SPECIAL',
 	'SONAR',
@@ -63,7 +59,8 @@ UnitBlueprint {
     Description = 'Sonar Station',
     Display = {
         Abilities = {
-            'Sonar',
+            '<LOC ability_sonar>Sonar',
+            '<LOC ability_upgradable>Upgradeable',
         },
 	DestructionEffects = {
 		DestructionEmitters = {
@@ -91,7 +88,7 @@ UnitBlueprint {
         BuildCostMass = 20,
         BuildTime = 900,
 	NaturalProducer = true,
-        ProductionPerSecondEnergy = 8,
+    ProductionPerSecondEnergy = 0,
 	MaintenanceConsumptionPerSecondEnergy = 8,
     },
     Footprint = {
@@ -112,8 +109,8 @@ UnitBlueprint {
         UnitName = 'Sonar Station',
     },
     Intel = {
-	FreeIntel = true,
-        VisionRadius = 11,
+	FreeIntel = false,
+    VisionRadius = 11,
 	SonarRadius = 76,
 	WaterVisionRadius = 11,
     },

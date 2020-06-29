@@ -57,7 +57,7 @@ UnitBlueprint {
     Description = 'Produces Aircraft',
     Display = {
         Abilities = {
-            'Radar',
+            '<LOC ability_radar>Radar',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate','CorBld','Runway','Circuits'},

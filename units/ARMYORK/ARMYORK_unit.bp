@@ -32,14 +32,10 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'ANTIAIR',
         'OVERLAYANTIAIR',
-
-	
         'ARM',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL2',	#Bug in TA: 'LEVEL2'
@@ -56,7 +52,7 @@ UnitBlueprint {
     Description = 'Mobile Flak Vehicle',
     Display = {
         Abilities = {
-            'Anti-Air',
+            '<LOC ability_aa>Anti-Air',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel'},

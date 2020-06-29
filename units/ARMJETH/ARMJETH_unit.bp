@@ -32,16 +32,12 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
 	'ANTIAIR',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
-
-	
         'ARM',
         'KBOT',
 	'LEVEL1',
@@ -58,8 +54,8 @@ UnitBlueprint {
     Description = 'Anti-Air Kbot',
     Display = {
         Abilities = {
-            'Anti-Air',
-        },
+                '<LOC ability_aa>Anti-Air',
+            },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{

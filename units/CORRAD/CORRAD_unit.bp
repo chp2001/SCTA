@@ -60,7 +60,7 @@ UnitBlueprint {
     Description = 'Radar Tower',
     Display = {
         Abilities = {
-            'Radar',
+            '<LOC ability_radar>Radar',
         },
 	DestructionEffects = {
 		#DefaultProjectileCategories = {'CamoflageC','MetalBarrel'},
@@ -88,9 +88,8 @@ UnitBlueprint {
         BuildCostEnergy = 800,
         BuildCostMass = 50,
         BuildTime = 1137,
-	NaturalProducer = true,
+	    NaturalProducer = false,
         MaintenanceConsumptionPerSecondEnergy = 6,
-	ProductionPerSecondEnergy = 6,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -125,7 +124,7 @@ UnitBlueprint {
 	UnitName = 'Radar Tower',
     },
     Intel = {
-	FreeIntel = true,
+	FreeIntel = false,
         VisionRadius = 22, 
 	RadarRadius = 90,
     },

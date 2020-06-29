@@ -92,7 +92,7 @@ UnitBlueprint {
         BuildCostEnergy = 1830,
         BuildCostMass = 125,
         BuildTime = 4800,
-	NaturalProducer = true,
+	    NaturalProducer = false,
         MaintenanceConsumptionPerSecondEnergy = 18,
 	ProductionPerSecondEnergy = 18,
     },

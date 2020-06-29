@@ -36,13 +36,9 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	
 	'STRUCTURE',
 	'INTELLIGENCE',
 	'TARGETING',
-
-	
 	'ARM',
 	'SPECIAL',
 	'LEVEL3',
@@ -86,7 +82,7 @@ UnitBlueprint {
         BuildCostMass = 15130,
         BuildTime = 154785,
 	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 1250,
+        MaintenanceConsumptionPerSecondEnergy = 700,
 	ProductionPerSecondEnergy = 0,
     },
     Footprint = {

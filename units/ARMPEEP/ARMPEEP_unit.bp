@@ -48,13 +48,10 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
+        'OVERLAYRADAR',
 	'AIR',
 	'SCOUT',
-
-	
         'ARM',
         'VTOL',
 	'CTRL_V',
@@ -69,6 +66,9 @@ UnitBlueprint {
     },
     Description = 'Air Scout',
     Display = {
+        Abilities = {
+            '<LOC ability_radar>Radar',
+        },  
 	DestructionEffects = {
 		DestructionDebrisUseLocalVelocity = true,
 		DefaultFlamingProjectileCountMin = 0,

@@ -60,7 +60,7 @@ UnitBlueprint {
     Description = 'Radar Tower',
     Display = {
         Abilities = {
-            'Radar',
+            '<LOC ability_radar>Radar',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'CamoflageC','MetalBarrel'},

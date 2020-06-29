@@ -42,14 +42,10 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'INTELLIGENCE',
         'OVERLAYCOUNTERINTEL',
-
-	
         'ARM',
         'TANK',
         'VEHICLE',
@@ -68,7 +64,7 @@ UnitBlueprint {
     Description = 'Mobile Radar Jammer',
     Display = {
         Abilities = {
-            'Radar Jammer',
+            '<LOC ability_stealthfield>Stealth Field',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Tredside','ArmCockpit'},
@@ -132,9 +128,8 @@ UnitBlueprint {
         UnitWeight = 1,
     },
     Intel = {
-	FreeIntel = true,
-        VisionRadius = 15,
-	RadarStealth = true,
+	FreeIntel = false,
+    VisionRadius = 15,
 	RadarStealthFieldRadius = 25,
     },
     Interface = {

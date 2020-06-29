@@ -52,7 +52,7 @@ UnitBlueprint {
 	'NOTSUB',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 1800,
         MaxHealth = 1800,
     },
@@ -88,7 +88,7 @@ UnitBlueprint {
         BuildCostMass = 14982,
         BuildTime = 161287,
 	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 1300,
+        MaintenanceConsumptionPerSecondEnergy = 700,
 	ProductionPerSecondEnergy = 0,
     },
     Footprint = {

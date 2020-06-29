@@ -68,7 +68,7 @@ UnitBlueprint {
     Description = 'Light Carrier',
     Display = {
         Abilities = {
-            'Air Repair Pad',
+            '<LOC ability_airstaging>Air Staging',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'ArmShip','ArmBui','Helipad'},
@@ -112,7 +112,7 @@ UnitBlueprint {
         BuildTime = 25394,
 	BuildRate = 200,
 	NaturalProducer = true,
-        ProductionPerSecondEnergy = 370,
+        ProductionPerSecondEnergy = 180,
         MaintenanceConsumptionPerSecondEnergy = 40,
     },
     Footprint = {
@@ -133,13 +133,19 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
+        OrderOverrides = {
+            RULEUCC_Transport = {
+                bitmapId = 'deploy',
+                helpText = 'deploy',
+            },
+        },
         FactionName = 'ARM',
         TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Colossus',
     },
     Intel = {
-	FreeIntel = true,
-        VisionRadius = 22,
+	FreeIntel = false,
+    VisionRadius = 22,
 	RadarRadius = 113,
     },
     Interface = {
@@ -171,7 +177,7 @@ UnitBlueprint {
         Class2AttachSize = 1,
         Class3AttachSize = 1,
         RepairRate = 200,
-	StorageSlots = 0,
+	    StorageSlots = 50,
     },
     Weapon = {
         { #ATOMIC_BLAST

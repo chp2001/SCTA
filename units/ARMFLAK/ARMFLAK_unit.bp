@@ -45,6 +45,9 @@ UnitBlueprint {
     },
     Description = 'Anti-Air Flak Gun',
     Display = {
+        Abilities = {
+            '<LOC ability_aa>Anti-Air',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel'},
 		DestructionEmitters = {

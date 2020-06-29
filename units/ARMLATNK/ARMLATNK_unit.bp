@@ -58,7 +58,7 @@ UnitBlueprint {
     Description = 'Lightning Tank',
     Display = {
         Abilities = {
-            'Anti-Air',
+            '<LOC ability_aa>Anti-Air',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Tredside'},

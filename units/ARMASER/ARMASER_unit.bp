@@ -42,14 +42,10 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'INTELLIGENCE',
         'OVERLAYCOUNTERINTEL',
-
-	
         'ARM',
         'KBOT',
 	'NOWEAPON',
@@ -67,7 +63,7 @@ UnitBlueprint {
     Description = 'Radar Jammer',
     Display = {
         Abilities = {
-            'Radar Jammer',
+            '<LOC ability_stealthfield>Stealth Field',
         },
 	DestructionEffects = {
 		DestructionEmitters = {
@@ -131,9 +127,9 @@ UnitBlueprint {
         UnitName = 'Eraser',
     },
     Intel = {
-	FreeIntel = true,
+	FreeIntel = false,
 	RadarStealth = true,
-        VisionRadius = 13,
+    VisionRadius = 13,
 	RadarStealthFieldRadius = 31,
     },
     Interface = {

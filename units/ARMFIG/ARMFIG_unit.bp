@@ -95,7 +95,7 @@ UnitBlueprint {
     Description = 'Fighter',
     Display = {
         Abilities = {
-            'Anti-Air',
+            '<LOC ability_aa>Anti-Air',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'ArmCockpit'},

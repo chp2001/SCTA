@@ -32,15 +32,11 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'ANTIAIR',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
         'LAND',
-
-	
         'ARM',
         'HOVER',
 	'WEAPON',
@@ -56,6 +52,9 @@ UnitBlueprint {
     },
     Description = 'Anti-Air Hovercraft',
     Display = {
+        Abilities = {
+            '<LOC ability_aa>Anti-Air',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'ArmCockpit','ArmHover'},
 		DestructionEmitters = {

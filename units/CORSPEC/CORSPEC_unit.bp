@@ -42,14 +42,10 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'INTELLIGENCE',
         'OVERLAYCOUNTERINTEL',
-
-	
         'CORE',
         'KBOT',
 	'NOWEAPON',
@@ -67,7 +63,7 @@ UnitBlueprint {
     Description = 'Radar Jammer',
     Display = {
         Abilities = {
-            'Radar Jammer',
+            '<LOC ability_stealthfield>Stealth Field',
         },
 	DestructionEffects = {
 		DestructionEmitters = {
@@ -131,9 +127,9 @@ UnitBlueprint {
         UnitName = 'Spectre',
     },
     Intel = {
-	FreeIntel = true,
-	RadarStealth = true,
-        VisionRadius = 13,
+	FreeIntel = false,
+	RadarStealth = false,
+    VisionRadius = 13,
 	RadarStealthFieldRadius = 31,
     },
     Interface = {

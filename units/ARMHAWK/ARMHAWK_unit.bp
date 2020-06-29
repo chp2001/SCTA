@@ -96,8 +96,8 @@ UnitBlueprint {
     Description = 'Stealth Fighter',
     Display = {
         Abilities = {
-            'Anti-Air',
-            'Radar Stealth',
+            '<LOC ability_aa>Anti-Air',
+            '<LOC ability_personalstealth>Personal Stealth',
         },
 	DestructionEffects = {
 		DefaultFlamingProjectileCountMin = 0,
@@ -157,7 +157,7 @@ UnitBlueprint {
         UnitName = 'Hawk',
     },
     Intel = {
-        VisionRadius = 22,
+    VisionRadius = 22,
 	RadarStealth = true,
 	FreeIntel = true,
     },

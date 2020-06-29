@@ -62,7 +62,7 @@ UnitBlueprint {
     Description = 'Missile Ship',
     Display = {
         Abilities = {
-            'Anti-Air',
+            '<LOC ability_aa>Anti-Air',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'ArmShip','ArmBui'},

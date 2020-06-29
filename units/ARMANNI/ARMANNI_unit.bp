@@ -26,15 +26,11 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
 	'TEXTUREANIM',
         'OVERLAYDIRECTFIRE',
-
-	
 	'ARM',
 	'SPECIAL',
 	'WEAPON',

@@ -24,7 +24,7 @@ UnitBlueprint {
             Bank = 'TA_Sound',
             Cue = 'XPLOLRG3',
             LodCutoff = 'UnitMove_LodCutoff',
-	},
+	    },
     },
     BuildIconSortPriority = 3,
     Categories = {
@@ -52,6 +52,9 @@ UnitBlueprint {
     },
     Description = 'Anti-Air Hovercraft',
     Display = {
+        Abilities = {
+            '<LOC ability_aa>Anti-Air',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'CorCockpit','CorHover'},
 		DestructionEmitters = {

@@ -48,8 +48,6 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'AIR',
 	'INTELLIGENCE',

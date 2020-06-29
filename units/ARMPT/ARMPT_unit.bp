@@ -32,8 +32,6 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'NAVAL',
 	'DIRECTFIRE',
@@ -41,8 +39,6 @@ UnitBlueprint {
 	'LIGHTBOAT',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
-
-	
         'ARM',
         'SHIP',
 	'LEVEL1',
@@ -60,7 +56,7 @@ UnitBlueprint {
     Description = 'Scout Ship',
     Display = {
         Abilities = {
-            'Anti-Air',
+            '<LOC ability_aa>Anti-Air',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'ArmShip','ArmCockpit'},

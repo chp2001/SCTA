@@ -40,8 +40,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH2',
         'REPAIR',
-
-	
 	'NAVAL',
 	'MOBILE',
 	#'STRATEGIC',
@@ -49,11 +47,9 @@ UnitBlueprint {
 	#'CARRIER',
         'OVERLAYRADAR',
         'OVERLAYMISC',
-
-	
 	'ARM',
 	'SHIP',
-	'LEVEL2',	#Bug in TA: 'LEVEL1'
+	'LEVEL2',	
 	'CARRY',
 	'NOWEAPON',
 	'NOTAIR',

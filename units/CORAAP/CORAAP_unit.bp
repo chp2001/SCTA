@@ -37,14 +37,10 @@ UnitBlueprint {
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-
-	
 	'STRUCTURE',
 	'CONSTRUCTION',
 	'TEXTUREANIM',
         'OVERLAYRADAR',
-
-	
 	'CORE',
 	'PLANT',
 	'CTRL_F',
@@ -61,7 +57,7 @@ UnitBlueprint {
     Description = 'Produces Aircraft',
     Display = {
         Abilities = {
-            'Radar',
+            '<LOC ability_radar>Radar',
         },
 	DestructionEffects = {
 		#DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate','CorBld','Runway','Circuits'},

@@ -32,15 +32,11 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'INTELLIGENCE',
 	'RADAR',
         'OVERLAYRADAR',
-
-	
         'ARM',
         'VEHICLE',	#'TANK' in TA
 	'NOWEAPON',
@@ -58,7 +54,7 @@ UnitBlueprint {
     Description = 'Mobile Radar',
     Display = {
         Abilities = {
-            'Radar',
+            '<LOC ability_radar>Radar',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Tredside','ArmCockpit'},
@@ -121,7 +117,7 @@ UnitBlueprint {
     },
     Intel = {
 	FreeIntel = true,
-        VisionRadius = 16,
+    VisionRadius = 16,
 	RadarRadius = 70,
     },
     Interface = {

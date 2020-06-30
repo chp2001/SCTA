@@ -43,7 +43,7 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.5,
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 253,
         MaxHealth = 253,
     },
@@ -75,7 +75,7 @@ UnitBlueprint {
         BuildCostMass = 81,
         BuildTime = 2094,
         ProductionPerSecondEnergy = 20,
-	NaturalProducer = true,
+	    NaturalProducer = true,
     },
     Footprint = {
         SizeX = 4,

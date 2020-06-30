@@ -33,13 +33,9 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-
-	
 	'STRUCTURE',
         'ECONOMIC',
 	'ENERGYPRODUCTION',
-
-	
 	'CORE',
 	'ENERGY',
 	'LEVEL1',
@@ -48,7 +44,7 @@ UnitBlueprint {
 	'NOTSUB',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 320,
         MaxHealth = 320,
     },

@@ -47,15 +47,12 @@ UnitBlueprint {
         'RECLAIMABLE',
         'PATROLHELPER',
         'SHOWQUEUE',
-
-	
+        'SELECTION',
         'MOBILE',
 	    'CONSTRUCTION',
 	    'NAVAL',
         'SHIP',
         'OVERLAYSONAR',
-
-	
         'CORE', 
 	    'UNDERWATER',
 	    'LEVEL2',

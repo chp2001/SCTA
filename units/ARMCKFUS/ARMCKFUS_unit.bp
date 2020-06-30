@@ -26,13 +26,9 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	
 	'STRUCTURE',
         'ECONOMIC',
 	'ENERGYPRODUCTION',
-
-	
 	'ARM',
     'CORE', -- in lieu of core cloaker
 	'ENERGY',
@@ -42,7 +38,7 @@ UnitBlueprint {
 	'NOTSUB',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 2200,
         MaxHealth = 2200,
     },

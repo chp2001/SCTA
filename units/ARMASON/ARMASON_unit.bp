@@ -34,16 +34,12 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	
 	'STRUCTURE',
 	'INTELLIGENCE',
 	'SONAR',
 	'NAVAL',
 	'TEXTUREANIM',
         'OVERLAYSONAR',
-
-	
 	'ARM',
 	'SPECIAL',
 	'SONAR',
@@ -115,8 +111,8 @@ UnitBlueprint {
         UnitName = 'Advanced Sonar Station',
     },
     Intel = {
-	FreeIntel = true,
-        VisionRadius = 11,
+	FreeIntel = false,
+    VisionRadius = 11,
 	SonarRadius = 140,
 	WaterVisionRadius = 11,
     },

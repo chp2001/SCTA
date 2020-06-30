@@ -63,13 +63,10 @@ UnitBlueprint {
         'RECLAIMABLE',
         'PATROLHELPER',
         'SHOWQUEUE',
-
-	
+        'SELECTION',
         'MOBILE',
 	'CONSTRUCTION',
 	'AIR',
-
-	
         'CORE',
         'VTOL',
 	'CTRL_V',

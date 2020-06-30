@@ -47,13 +47,10 @@ UnitBlueprint {
         'RECLAIMABLE',
         'PATROLHELPER',
         'SHOWQUEUE',
-
-	
         'MOBILE',
 	'CONSTRUCTION',
 	'LAND',
-
-	
+	'SELECTION', 
         'ARM',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL2',

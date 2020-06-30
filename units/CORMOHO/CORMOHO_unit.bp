@@ -95,7 +95,6 @@ UnitBlueprint {
         BuildCostMass = 1450,
         BuildTime = 32500,
         MaintenanceConsumptionPerSecondEnergy = 12,
-	#TODO: proper value?
         ProductionPerSecondMass = 6.6,
     },
     Footprint = {

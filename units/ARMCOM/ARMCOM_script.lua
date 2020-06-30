@@ -75,7 +75,27 @@ ARMCOM = Class(TAconstructor) {
 	end,
 
 	PlayCommanderWarpInEffect = function(self)
-	end,
+        self:HideBone(0, true)
+        self:SetUnSelectable(true)
+        self:SetBusy(true)
+        self:SetBlockCommandQueue(true)
+        self:ForkThread(self.WarpInEffectThread)
+    end,
+
+    WarpInEffectThread = function(self)
+        self:PlayUnitSound('CommanderArrival')
+        self:CreateProjectile( '/effects/entities/UnitTeleport01/UnitTeleport01_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
+        WaitSeconds(2.1)
+		self:ShowBone(0, true)
+		self:HideBone('DGunMuzzle', true)
+        self:HideBone('LaserMuzzle', true)
+        self:SetUnSelectable(false)
+        self:SetBusy(false)
+        self:SetBlockCommandQueue(false)
+
+        WaitSeconds(6)
+        self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
+    end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAconstructor.OnStopBeingBuilt(self,builder,layer)

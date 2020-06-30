@@ -32,16 +32,12 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
 	'ANTIAIR',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
-
-	
         'CORE',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL1',	#Bug in TA: 'LEVEL2'
@@ -58,7 +54,7 @@ UnitBlueprint {
     Description = 'Missile Launcher',
     Display = {
         Abilities = {
-            'Anti-Air',
+            '<LOC ability_aa>Anti-Air', 'Anti-Air',
         },
 	DestructionEffects = {
 		DestructionEmitters = {

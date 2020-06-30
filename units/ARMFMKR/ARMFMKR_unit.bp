@@ -38,14 +38,10 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-
-	
 	'STRUCTURE',
         'MASSPRODUCTION',
         'ECONOMIC',
 	'TEXTUREANIM',
-
-	
 	'ARM',
     'CORE', -- in lieu of core float mm
 	'METAL',

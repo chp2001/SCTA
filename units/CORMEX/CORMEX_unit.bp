@@ -53,7 +53,7 @@ UnitBlueprint {
 	'STORAGE',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 175,
         MaxHealth = 175,
     },

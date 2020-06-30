@@ -1,12 +1,10 @@
 faCompatibility = false
 
 function GetDistanceBetweenTwoPoints(x1, z1, x2, z2)
-	#lol ^ is broken :P
 	local dx = (x2-x1)*(x2 - x1)
 	local dz = (z2-z1)*(z2 - z1)
 	local distance = math.sqrt(dx + dz)
-
-	return ( distance )
+	return (distance)
 end
 
 function VDist2(u,v)
@@ -350,43 +348,6 @@ function CreateDelayedWreckage(self,overkillRatio, bp, completed, pos, orientati
 		end
 		prop:DoTakeDamage(prop, overkillRatio * health, Vector(0,0,0), 'Normal')
         	prop.AssociatedBP = pbp.BlueprintId
-	end
-end
-
-
-
-wind = {
-	direction = 0,
-	amount = 0,
-    threadStarted = false
-}
-
-function WindChangeThread()
-
-    if wind.threadStarted then
-        return
-    end
-    wind.threadStarted = true
-    LOG('Started WindChangeThread')
-
-	worldData = import('sim/worldData.lua')
-	if worldData.GetMap().maxWind > 0 then
-		while true do
-
-			wind.direction = math.random(360)
-			wind.amount = math.random(worldData.GetMap().maxWind - worldData.GetMap().minWind) + worldData.GetMap().minWind
-
-			for bk,bv in ArmyBrains do
-				local generators = bv:GetListOfUnits(categories.WIND, false)
-				if generators then
-					for k,v in generators do
-						v.OnWindChange(v, wind.direction, wind.amount)
-					end
-				end
-			end
-
-			WaitSeconds(15)
-		end
 	end
 end
 

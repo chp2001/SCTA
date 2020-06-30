@@ -25,9 +25,6 @@ TAunit = Class(Unit)
 
 	OnCreate = function(self)
         Unit.OnCreate(self)
-        if not TAutils.wind.threadStarted then
-            ForkThread(TAutils.WindChangeThread, self)
-        end
 		self:SetFireState(2)
 		local bp = self:GetBlueprint()
 		if bp.General.BuildAngle then

@@ -63,6 +63,7 @@ UnitBlueprint {
     },
     Categories = {
         'SELECTABLE',
+        'SELECTION', 
         'VISIBLETORECON',
         'RECLAIMABLE',
         'ENGINEER',
@@ -337,7 +338,7 @@ UnitBlueprint {
 	    ManualFire = true,
         },
         {
-            Damage = 9999,
+            Damage = 3000,
             DamageFriendly = true,
             DamageRadius = 29.6875,
             DamageType = 'Normal',
@@ -347,7 +348,7 @@ UnitBlueprint {
 	    EdgeEffectiveness=0.75,
         },
         {
-            Damage = 9999,
+            Damage = 3000,
             DamageFriendly = true,
             DamageRadius = 29.6875,
             DamageType = 'Normal',

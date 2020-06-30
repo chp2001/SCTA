@@ -53,7 +53,7 @@ UnitBlueprint {
         'SHIP',
         'OVERLAYSONAR',	
            'ARM',
-            'CORE', -- in lieu of core adv construction sub
+        'SELECTION',
 	'UNDERWATER',
 	'LEVEL2',
 	'CONSTR',
@@ -151,9 +151,9 @@ UnitBlueprint {
         UnitName = 'Advanced Construction Sub',
     },
     Intel = {
-        VisionRadius = 8,
-        WaterVisionRadius = 8,
-	SonarRadius = 25,
+        VisionRadius = 15,
+        WaterVisionRadius = 10,
+	SonarRadius = 30,
 	FreeIntel = true,
     },
     Interface = {

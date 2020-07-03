@@ -70,7 +70,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -82,7 +82,6 @@ UnitBlueprint {
         BuildCostEnergy = 987,
         BuildCostMass = 71,
         BuildTime = 2163,
-	MaintenanceConsumptionPerSecondEnergy = 0.1,
     },
     Footprint = {
         SizeX = 4,
@@ -148,7 +147,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 43.96,
+            FiringTolerance = 8,
             Label = 'ARMFRT_MISSILE',
             MaxRadius = 43.75,
             MuzzleSalvoDelay = 0,

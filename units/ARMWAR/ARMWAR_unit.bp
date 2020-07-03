@@ -70,7 +70,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -82,9 +82,6 @@ UnitBlueprint {
         BuildCostEnergy = 2236,
         BuildCostMass = 196,
         BuildTime = 5709,
-	NaturalProducer=true,
-        MaintenanceConsumptionPerSecondEnergy = 0.5,
-        ProductionPerSecondEnergy = 0.5,
     },
     Footprint = {
         SizeX = 2,
@@ -159,7 +156,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 27.47,
+            FiringTolerance = 4,
             Label = 'ARMWAR_EMG',
             MaxRadius = 11.25,
             MuzzleSalvoDelay = 0.1,
@@ -218,7 +215,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 16.48,
+            FiringTolerance = 2,
             Label = 'ARMWAR_LCANNON',
             MaxRadius = 15,
             MuzzleSalvoDelay = 0,

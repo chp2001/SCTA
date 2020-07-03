@@ -81,7 +81,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -97,9 +97,6 @@ UnitBlueprint {
         BuildCostEnergy = 20731,
         BuildCostMass = 4404,
         BuildTime = 42730,
-	NaturalProducer = true,
-        ProductionPerSecondEnergy = 50,
-        MaintenanceConsumptionPerSecondEnergy = 48,
     },
     Footprint = {
         SizeX = 6,

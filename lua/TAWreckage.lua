@@ -1,5 +1,5 @@
 local Prop = import('/lua/sim/Prop.lua').Prop
-#local WreckShield = import('/mods/SCTA/lua/TAshield.lua').WreckShield
+local WreckShield = import('/mods/SCTA/lua/TAshield.lua').WreckShield
 local TAutils = import('/mods/SCTA/lua/TAutils.lua')
 
 TAWreckage = Class(Prop) {

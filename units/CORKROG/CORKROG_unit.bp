@@ -80,7 +80,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
                     NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -92,9 +92,6 @@ UnitBlueprint {
         BuildCostEnergy = 116664,
         BuildCostMass = 29489,
         BuildTime = 382193,
-        NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 1.1,
-        ProductionPerSecondEnergy = 1.1,
     },
     Footprint = {
         SizeX = 3,
@@ -294,7 +291,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
-            FiringTolerance = 360,
+            FiringTolerance = 10,
             Label = 'CORKROG_FIRE',
             MaxRadius = 56.25,
             MuzzleSalvoDelay = 0,

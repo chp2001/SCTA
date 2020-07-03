@@ -17,7 +17,7 @@ ARMCKFUS = Class(TAunit) {
 	end,
 
 	OnIntelEnabled = function(self)
-		self:SetMesh('/units/ARMCKFUS/ARMCKFUS_cloak_mesh', true)
+		self:SetMesh('/mods/SCTA/units/ARMCKFUS/ARMCKFUS_cloak_mesh', true)
 	end,
 }
 

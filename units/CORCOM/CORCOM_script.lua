@@ -67,7 +67,7 @@ CORCOM = Class(TAconstructor) {
 				if self.cloakSet == true then
 					self.cloakOn = true
 					self:EnableIntel('Cloak')
-					self:SetMesh('/units/CORCOM/CORCOM_cloak_mesh', true)
+					self:SetMesh('/mods/SCTA/units/CORCOM/CORCOM_cloak_mesh', true)
 				end
 			end
 		end
@@ -129,7 +129,7 @@ CORCOM = Class(TAconstructor) {
 		self.cloakOn = true
 		self.cloakSet = true
         	self:PlayUnitSound('Cloak')
-		self:SetMesh('/units/CORCOM/CORCOM_cloak_mesh', true)
+		self:SetMesh('/mods/SCTA/units/CORCOM/CORCOM_cloak_mesh', true)
 	end,
 
 

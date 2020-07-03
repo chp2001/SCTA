@@ -78,7 +78,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -90,9 +90,6 @@ UnitBlueprint {
         BuildCostEnergy = 2200,
         BuildCostMass = 260,
         BuildTime = 3750,
-	NaturalProducer=true,
-        MaintenanceConsumptionPerSecondEnergy = 1.1,
-        ProductionPerSecondEnergy = 1.1,
     },
     Footprint = {
 	SizeX = 2,
@@ -225,7 +222,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/units/ARMZEUS/ARMZEUS_dead_prop.bp',
+        Blueprint = '/mods/SCTA/units/ARMZEUS/ARMZEUS_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Seabed = true,

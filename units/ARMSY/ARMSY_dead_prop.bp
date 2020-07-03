@@ -17,7 +17,7 @@ PropBlueprint {
 		    SpecularName = '/mods/SCTA/meshes/wrecks/Wreck_SpecTeam.dds',
 		    AlbedoName = '/mods/SCTA/meshes/wrecks/Wreck_Albedo.dds',
 		    MeshName = 'ARMSY_dead_lod0.scm',
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
                 },
             },
         },
@@ -37,7 +37,7 @@ PropBlueprint {
         HelpText = 'Wreckage',
     },
     Physics = {
-        BlockPath = true,
+        BlockPath = false, 
     },
     SeabedOffset = 2,
     ScriptClass = 'TAWreckage',

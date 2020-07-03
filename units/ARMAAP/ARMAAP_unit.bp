@@ -99,7 +99,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -143,8 +143,8 @@ UnitBlueprint {
 	UnitName = 'Adv. Aircraft Plant',
     },
     Intel = {
-        VisionRadius = 15,
-	RadarRadius = 75,
+    VisionRadius = 15,
+	RadarRadius = 30,
 	FreeIntel = true,
     },
     Interface = {

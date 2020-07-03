@@ -115,7 +115,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -126,9 +126,6 @@ UnitBlueprint {
         BuildCostEnergy = 8050,
         BuildCostMass = 220,
         BuildTime = 16269,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 0.6,
-        ProductionPerSecondEnergy = 0.6,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -212,7 +209,7 @@ UnitBlueprint {
                 Land = 'Land|Water',
             },
             RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 10,
+            FiringTolerance = 5,
             HeadingArcCenter = 0,
             HeadingArcRange = 10,
             Label = 'CORADVBOMB',

@@ -106,7 +106,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -117,9 +117,6 @@ UnitBlueprint {
         BuildCostEnergy = 5779,
         BuildCostMass = 294,
         BuildTime = 13294,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 0.6,
-        ProductionPerSecondEnergy = 0.6,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -203,7 +200,7 @@ UnitBlueprint {
             },
 	    RangeCategory = 'UWRC_DirectFire',
             Label = 'VTOL_ROCKET',
-            FiringTolerance = 44,
+            FiringTolerance = 3,
             MaxRadius = 28.125,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -261,7 +258,7 @@ UnitBlueprint {
             },
 	    RangeCategory = 'UWRC_DirectFire',
             Label = 'VTOL_ROCKET2',
-            FiringTolerance = 44,
+            FiringTolerance = 3,
             MaxRadius = 28.125,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,

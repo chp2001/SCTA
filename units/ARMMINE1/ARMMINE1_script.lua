@@ -37,7 +37,7 @@ ARMMINE1 = Class(TAunit) {
 	end,
 
 	OnIntelEnabled = function(self)
-		self:SetMesh('/units/ARMMINE1/ARMMINE1_cloak_mesh', true)
+		self:SetMesh('/mods/SCTA/units/ARMMINE1/ARMMINE1_cloak_mesh', true)
 	end,
 }
 TypeClass = ARMMINE1

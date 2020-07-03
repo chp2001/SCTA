@@ -5,6 +5,27 @@ TAweapon = Class(DefaultWeapon) {
     FxMuzzleFlash = {},
 
     StartEconomyDrain = function(self)
+        if self.FirstShot then return end
+        if self.unit:GetFractionComplete() ~= 1 then return end
+
+        local bp = self:GetBlueprint()
+        if not self.EconDrain and bp.EnergyRequired and bp.EnergyDrainPerSecond then
+            local nrgReq = self:GetWeaponEnergyRequired()
+            local nrgDrain = self:GetWeaponEnergyDrain()
+            if nrgReq > 0 and nrgDrain > 0 then
+                local time = nrgReq / nrgDrain
+                if time < 0.1 then
+                    time = 0.1
+                end
+                self.EconDrain = CreateEconomyEvent(self.unit, nrgReq, 0, time)
+                self.FirstShot = true
+                self.unit:ForkThread(function()
+                    WaitFor(self.EconDrain)
+                    RemoveEconomyEvent(self.unit, self.EconDrain)
+                    self.EconDrain = nil
+                end)
+            end
+        end
     end,
 
     OnGotTargetCheck = function(self)

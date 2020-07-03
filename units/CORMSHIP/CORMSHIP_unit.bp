@@ -86,7 +86,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -102,9 +102,7 @@ UnitBlueprint {
         BuildCostEnergy = 7628,
         BuildCostMass = 2283,
         BuildTime = 22126,
-        ProductionPerSecondEnergy = 0,
         MaintenanceConsumptionPerSecondEnergy = 25,
-	    NaturalProducer = true,
     },
     Footprint = {
         SizeX = 6,
@@ -176,7 +174,7 @@ UnitBlueprint {
             },
 	    RangeCategory = 'UWRC_IndirectFire',
             Label = 'CORMSHIP_ROCKET',
-	    FiringTolerance = 21.98,
+	    FiringTolerance = 10,
             MaxRadius = 81.25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -233,7 +231,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 43.96,
+            FiringTolerance = 4,
             Label = 'CORSHIP_MISSILE',
             MaxRadius = 43.75,
             MuzzleSalvoDelay = 0,

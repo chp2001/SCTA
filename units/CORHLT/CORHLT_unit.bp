@@ -73,7 +73,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -150,7 +150,7 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 43.96,
+            FiringTolerance = 3,
             Label = 'CORE_LASERH1',
             MaxRadius = 26.875,
             MuzzleSalvoDelay = 0,

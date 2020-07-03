@@ -115,7 +115,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -126,9 +126,6 @@ UnitBlueprint {
         BuildCostEnergy = 7624,
         BuildCostMass = 209,
         BuildTime = 16064,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 1.8,
-        ProductionPerSecondEnergy = 1.8,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -212,7 +209,7 @@ UnitBlueprint {
                 Land = 'Land|Water',
             },
             RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 10,
+            FiringTolerance = 2,
             HeadingArcCenter = 0,
             HeadingArcRange = 10,
             Label = 'ARMADVBOMB',
@@ -257,7 +254,7 @@ UnitBlueprint {
             AlternateDamageRadius = 0.25, 
             DamageType = 'Normal',
             DisplayName = 'ARMAIR2AIRLASER',
-	    FiringTolerance = 20,
+	    FiringTolerance = 2,
             FireTargetLayerCapsTable = {
                 Air = 'Land|Water|Air|Seabed',
                 Land = 'Land|Water|Air|Seabed',

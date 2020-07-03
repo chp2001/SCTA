@@ -16,7 +16,7 @@ PropBlueprint {
                     SpecularName = '/mods/SCTA/meshes/wrecks/Wreck_SpecTeam.dds',
                     AlbedoName = '/mods/SCTA/meshes/wrecks/Wreck_Albedo.dds',
                     MeshName = '/mods/SCTA/meshes/wrecks/2x2c_lod0.scm',
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
                 },
             },
         },

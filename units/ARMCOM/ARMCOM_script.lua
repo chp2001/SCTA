@@ -68,7 +68,7 @@ ARMCOM = Class(TAconstructor) {
 				if self.cloakSet == true then
 					self.cloakOn = true
 					self:EnableIntel('Cloak')
-					self:SetMesh('/units/ARMCOM/ARMCOM_cloak_mesh', true)
+					self:SetMesh('/mods/SCTA/units/ARMCOM/ARMCOM_cloak_mesh', true)
 				end
 			end
 		end
@@ -130,7 +130,7 @@ ARMCOM = Class(TAconstructor) {
 		self.cloakOn = true
 		self.cloakSet = true
         	self:PlayUnitSound('Cloak')
-		self:SetMesh('/units/ARMCOM/ARMCOM_cloak_mesh', true)
+		self:SetMesh('/mods/SCTA/units/ARMCOM/ARMCOM_cloak_mesh', true)
 	end,
 
 

@@ -16,7 +16,7 @@ PropBlueprint {
 		    SpecularName = '/mods/SCTA/meshes/wrecks/Wreck_SpecTeam.dds',
 		    AlbedoName = '/mods/SCTA/meshes/wrecks/Wreck_Albedo.dds',
 		    MeshName = 'CORPUN_dead_lod0.scm',
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
                 },
             },
         },
@@ -36,10 +36,10 @@ PropBlueprint {
         HelpText = 'Wreckage',
     },
     Physics = {
-        BlockPath = true,
+        BlockPath = false, 
     },
     Wreckage = {
-	Blueprint = '/units/CORPUN/CORPUN_heap_prop.bp',
+	Blueprint = '/mods/SCTA/units/CORPUN/CORPUN_heap_prop.bp',
     },
     ScriptClass = 'TAWreckage',
     ScriptModule = '/mods/SCTA/lua/TAWreckage.lua',

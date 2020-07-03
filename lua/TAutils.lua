@@ -1,26 +1,223 @@
-faCompatibility = false
-
-function GetDistanceBetweenTwoPoints(x1, z1, x2, z2)
-	local dx = (x2-x1)*(x2 - x1)
-	local dz = (z2-z1)*(z2 - z1)
-	local distance = math.sqrt(dx + dz)
-	return (distance)
+function GetDistanceBetweenTwoEntities(entity1, entity2)
+    return VDist3(entity1:GetPosition(),entity2:GetPosition())
 end
 
-function VDist2(u,v)
-    local dx = u.x-v.x
-    local dz = u.z-v.z
-    return math.sqrt(dx*dx + dz*dz)
+-- Function originally created to check if a Mass Storage can be queued in a location without overlapping
+function CanBuildInSpot(originUnit, unitId, pos)
+    local bp = __blueprints[unitId]
+    local mySkirtX = bp.Physics.SkirtSizeX / 2
+    local mySkirtZ = bp.Physics.SkirtSizeZ / 2
+
+    -- Find the distance between my skirt and the skirt of a potential Quantum Gateway
+    local xDiff = mySkirtX + 5 -- Using 5 because that's half the size of a Quantum Gateway, the largest stock structure
+    local zDiff = mySkirtZ + 5
+
+    -- Full extent of search rectangle
+    local x1 = pos.x - xDiff
+    local z1 = pos.z - zDiff
+    local x2 = pos.x + xDiff
+    local z2 = pos.z + zDiff
+
+    -- Find all the units in that rectangle
+    local units = GetUnitsInRect(Rect(x1, z1, x2, z2))
+
+    -- Filter it down to structures and experimentals only
+    units = EntityCategoryFilterDown(categories.STRUCTURE + categories.EXPERIMENTAL, units)
+
+    -- Bail if there's nothing in range
+    if not units[1] then return false end
+
+    for _, struct in units do
+        if struct ~= originUnit then
+            local structPhysics = struct:GetBlueprint().Physics
+            local structPos = struct:GetPosition()
+
+            -- These can be positive or negative, so we need to make them positive using math.abs
+            local xDist = math.abs(pos.x - structPos.x)
+            local zDist = math.abs(pos.z - structPos.z)
+
+            local skirtDiffx = mySkirtX + (structPhysics.SkirtSizeX / 2)
+            local skirtDiffz = mySkirtZ + (structPhysics.SkirtSizeZ / 2)
+
+            -- Check if the axis difference is smaller than the combined skirt distance
+            -- If it is, we overlap, and can't build here
+            if xDist < skirtDiffx and zDist < skirtDiffz then
+                return false
+            end
+        end
+    end
+
+    return true
 end
 
-function getUnitChat()
-	return -1
+-- Note: Includes allied units in selection!!
+function GetEnemyUnitsInSphere(unit, position, radius)
+    local x1 = position.x - radius
+    local y1 = position.y - radius
+    local z1 = position.z - radius
+    local x2 = position.x + radius
+    local y2 = position.y + radius
+    local z2 = position.z + radius
+    local UnitsinRec = GetUnitsInRect(Rect(x1, z1, x2, z2))
+
+    -- Check for empty rectangle
+    if not UnitsinRec then
+        return UnitsinRec
+    end
+
+    local RadEntities = {}
+    for _, v in UnitsinRec do
+        local dist = VDist3(position, v:GetPosition())
+        if unit.Army ~= v.Army and dist <= radius then
+            table.insert(RadEntities, v)
+        end
+    end
+
+    return RadEntities
 end
 
-function DisplayMessage(message, importance)
-	if getUnitChat() >= importance then
-		print(message)
-	end
+-- This function is like the one above, but filters out Allied units
+function GetTrueEnemyUnitsInSphere(unit, position, radius, categories)
+    local x1 = position.x - radius
+    local y1 = position.y - radius
+    local z1 = position.z - radius
+    local x2 = position.x + radius
+    local y2 = position.y + radius
+    local z2 = position.z + radius
+    local UnitsinRec = GetUnitsInRect(Rect(x1, z1, x2, z2))
+
+    -- Check for empty rectangle
+    if not UnitsinRec then
+        return UnitsinRec
+    end
+
+    local RadEntities = {}
+    for _, v in UnitsinRec do
+        local dist = VDist3(position, v:GetPosition())
+        local vArmy = v.Army
+        if unit.Army ~= vArmy and not IsAlly(unit.Army, vArmy) and dist <= radius and EntityCategoryContains(categories or categories.ALLUNITS, v) then
+            table.insert(RadEntities, v)
+        end
+    end
+
+    return RadEntities
+end
+
+function GetDistanceBetweenTwoPoints(x1, y1, z1, x2, y2, z2)
+    return (math.sqrt((x1-x2)^2 + (y1-y2)^2 + (z1-z2)^2))
+end
+
+function GetDistanceBetweenTwoVectors(v1, v2)
+    return VDist3(v1, v2)
+end
+
+function XZDistanceTwoVectors(v1, v2)
+    return VDist2(v1[1], v1[3], v2[1], v2[3])
+end
+
+function GetVectorLength(v)
+    return math.sqrt(math.pow(v.x, 2) + math.pow(v.y, 2) + math.pow(v.z, 2))
+end
+
+function NormalizeVector(v)
+    local length = GetVectorLength(v)
+    if length > 0 then
+        local invlength = 1 / length
+        return Vector(v.x * invlength, v.y * invlength, v.z * invlength)
+    else
+        return Vector(0,0,0)
+    end
+end
+
+function GetDifferenceVector(v1, v2)
+    return Vector(v1.x - v2.x, v1.y - v2.y, v1.z - v2.z)
+end
+
+function GetDirectionVector(v1, v2)
+    return NormalizeVector(Vector(v1.x - v2.x, v1.y - v2.y, v1.z - v2.z))
+end
+
+function GetScaledDirectionVector(v1, v2, scale)
+    local vec = GetDirectionVector(v1, v2)
+    return Vector(vec.x * scale, vec.y * scale, vec.z * scale)
+end
+
+function GetMidPoint(v1, v2)
+    return Vector((v1.x + v2.x) * 0.5, (v1.y + v2.y) * 0.5, (v1.z + v2.z) * 0.5)
+end
+
+function GetRandomFloat(nmin, nmax)
+    return (Random() * (nmax - nmin) + nmin)
+end
+
+function GetRandomInt(nmin, nmax)
+    return math.floor(Random() * (nmax - nmin + 1) + nmin)
+end
+
+function GetRandomOffset(sx, sy, sz, scalar)
+    sx = sx * scalar
+    sy = sy * scalar
+    sz = sz * scalar
+    local x = Random() * sx - (sx * 0.5)
+    local y = Random() * sy
+    local z = Random() * sz - (sz * 0.5)
+
+    return x, y, z
+end
+
+function GetRandomOffset2(sx, sy, sz, scalar)
+    sx = sx * scalar
+    sy = sy * scalar
+    sz = sz * scalar
+    local x = Random(-1.0, 1.0) * sx - (sx * 0.5)
+    local y = Random(-1.0, 1.0) * sy
+    local z = Random(-1.0, 1.0) * sz - (sz * 0.5)
+
+    return x, y, z
+end
+
+function GetClosestVector(vFrom, vToList)
+    local dist, cDist, retVec = 0
+    if vToList then
+        dist = GetDistanceBetweenTwoVectors(vFrom, vToList[1])
+        retVec = vToList[1]
+    end
+
+    for kTo, vTo in vToList do
+        cDist = GetDistanceBetweenTwoVectors(vFrom, vTo)
+        if dist > cDist then
+            dist = cDist
+            retVec = vTo
+        end
+    end
+
+    return retVec
+end
+
+function Cross(v1, v2)
+    return Vector((v1.y * v2.z) - (v1.z * v2.y), (v1.z * v2.x) - (v1.x * v2.z), (v1.x * v2.y) - (v1.y - v2.x))
+end
+
+function DotP(v1, v2)
+    return (v1.x * v2.x) + (v1.y * v2.y) + (v1.z * v2.z)
+end
+
+function GetAngleInBetween(v1, v2)
+    -- Normalize the vectors
+    local vec1 = {}
+    local vec2 = {}
+    vec1 = NormalizeVector(v1)
+    vec2 = NormalizeVector(v2)
+    local dotp = DotP(vec1, vec2)
+
+    return math.acos(dotp) * (360 / (math.pi * 2))
+end
+
+function UserConRequest(string)
+    if not Sync.UserConRequests then
+        Sync.UserConRequests = {}
+    end
+    table.insert(Sync.UserConRequests, string)
 end
 
 function GetAngle(x1, z1, x2, z2)
@@ -52,7 +249,6 @@ function GetAngle(x1, z1, x2, z2)
 	end
 	return (angle / math.pi) * 180 + 90
 end
-
 
 function CalcDamageTaper(positionEpicentre, positionEntity, radius, edgeEffectiveness)
     # spherical above, cylindrical below
@@ -198,101 +394,6 @@ function DoTaperedAreaDamageRaevn(instigator, position, radius, damage, projecti
 		Damage(instigator, position, targetEntity, damage, damageType)
 	end
 end
-
-
-
-textureChange = {
-	{
-		currentAnim = 1,
-		frames = 8,
-		bones = {
-			{
-			'a',
-			'b',
-			'c',
-			'd',
-			'e',
-			'd',
-			'c',
-			'b',
-			},
-			{
-			'a2',
-			'b2',
-			'c2',
-			'd2',
-			'e2',
-			'd2',
-			'c2',
-			'b2',
-			},
-		},
-	},
-	{
-		currentAnim = 1,
-		frames = 6,
-		bones = {
-			{
-			'a',
-			'b',
-			'c',
-			'd',
-			'c',
-			'b',
-			},
-			{
-			'a2',
-			'b2',
-			'c2',
-			'd2',
-			'c2',
-			'b2',
-			},
-		}
-	},
-}
-
-function TextureChangeCall()
-	while true do
-		for k,v in textureChange do
-			local hide1 = v.bones[1][v.currentAnim]
-			local hide2 = v.bones[2][v.currentAnim]
-			v.currentAnim = v.currentAnim + 1
-			if v.currentAnim > v.frames then
-				v.currentAnim = 1
-			end
-			for bk,bv in ArmyBrains do
-				local units = bv:GetListOfUnits(categories.TEXTUREANIM, false)
-
-				if units then
-					for uk,uv in units do
-						if uv:GetFractionComplete() == 1 then
-							if uv:GetBlueprint().Display.TextureAnimationFrames == v.frames then
-								if uv.textureAnimation == true then
-									uv:ShowBone(v.bones[1][v.currentAnim], true)
-									uv:HideBone(hide1, true)
-									if (uv:GetBlueprint().Display.TextureAnimationSets == 2) then
-										uv:ShowBone(v.bones[2][v.currentAnim], true)
-										uv:HideBone(hide2, true)
-									end
-								else
-									uv:HideBone(hide1, true)
-									uv:ShowBone(v.bones[1][v.currentAnim], true)
-									if (uv:GetBlueprint().Display.TextureAnimationSets == 2) then
-										uv:HideBone(hide2, true)
-										uv:ShowBone(v.bones[2][v.currentAnim], true)
-									end
-								end
-							end
-						end
-					end
-				end
-			end
-		end
-		WaitSeconds(0.5)
-	end
-end
-
 
 function QueueDelayedWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
 	ForkThread(CreateDelayedWreckage, self, overkillRatio, bp, completed, pos, orientation, health)

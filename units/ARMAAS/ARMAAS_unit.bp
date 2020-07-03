@@ -82,7 +82,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -98,9 +98,6 @@ UnitBlueprint {
         BuildCostEnergy = 17058,
         BuildCostMass = 1358,
         BuildTime = 38628,
-	NaturalProducer = true,
-        ProductionPerSecondEnergy = 7,
-        MaintenanceConsumptionPerSecondEnergy = 7,
     },
     Footprint = {
         SizeX = 3,
@@ -165,7 +162,7 @@ UnitBlueprint {
             AlternateDamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'ARMAAS_WEAPON1',
-	    FiringTolerance = 43.95,
+	    FiringTolerance = 1,
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Air|Seabed',
             },
@@ -246,7 +243,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-	    FiringTolerance = 43.95,
+	    FiringTolerance = 1,
             Label = 'ARMAAS_WEAPON2',
             MaxRadius = 44.375,
             MuzzleSalvoDelay = 0,
@@ -323,7 +320,7 @@ UnitBlueprint {
                 Water = 'Air',
             },
 	    RangeCategory = 'UWRC_AntiAir',
-            FiringTolerance = 4.214,	
+            FiringTolerance = 0.5,	
 	    FiringRandomness = 0.5,
 	    EdgeEffectiveness = 0.9,
             Label = 'ARMAAS_WEAPON3',

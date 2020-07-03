@@ -24,11 +24,9 @@ TAunitkeygroups = {
         "armsolar",
         "armtide",
         "armuwfus",
-        "armwin",
         "corfus",
         "corsolar",
         "cortide",
-        "corwin",
     },
     ["Hydrocarbon_Power_Plant"]= {
         "armgeo",

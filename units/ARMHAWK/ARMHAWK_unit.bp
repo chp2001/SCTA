@@ -119,7 +119,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -130,9 +130,7 @@ UnitBlueprint {
         BuildCostEnergy = 6893,
         BuildCostMass = 254,
         BuildTime = 15285,
-	NaturalProducer = true,
         MaintenanceConsumptionPerSecondEnergy = 20,
-        ProductionPerSecondEnergy = 20,
     },
     Footprint = {
 	MaxSlope = 0.25,
@@ -217,7 +215,7 @@ UnitBlueprint {
                 Land = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_AntiAir',
-            FiringTolerance = 43.96,
+            FiringTolerance = 4,
 	    HeadingArcCenter = 0,
     	    HeadingArcRange = 43.96,
             Label = 'ARMVTOL_ADVMISSILE',
@@ -269,7 +267,7 @@ UnitBlueprint {
                 Land = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_AntiAir',
-            FiringTolerance = 43.96,
+            FiringTolerance = 4,
 	    HeadingArcCenter = 0,
     	    HeadingArcRange = 21.98,
             Label = 'ARMVTOL_ADVMISSILE2',

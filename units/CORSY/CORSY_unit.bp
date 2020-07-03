@@ -94,7 +94,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -106,8 +106,6 @@ UnitBlueprint {
         BuildCostMass = 600, 
         BuildTime = 6000,
 	BuildRate = 100,
-	ProductionPerSecondMass = 0.5,
-	NaturalProducer = true,
         BuildableCategory = {
             'SHIP LEVEL1 CORE',
             'NORMALSUB LEVEL1 CORE',

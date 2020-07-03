@@ -80,7 +80,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -91,9 +91,7 @@ UnitBlueprint {
         BuildCostEnergy = 1209,
         BuildCostMass = 86,
         BuildTime = 4223,
-	NaturalProducer = true,
-	MaintenanceConsumptionPerSecondEnergy = 11,
-	ProductionPerSecondEnergy = 11,
+	MaintenanceConsumptionPerSecondEnergy = 8,
     },
     Footprint = {
 	SizeX = 3,
@@ -116,7 +114,7 @@ UnitBlueprint {
         UnitName = 'Informer',
     },
     Intel = {
-	FreeIntel = true,
+	FreeIntel = false,
         VisionRadius = 13,
 	    RadarRadius = 70,
     },

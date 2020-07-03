@@ -77,7 +77,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -93,9 +93,6 @@ UnitBlueprint {
         BuildCostEnergy = 917,
         BuildCostMass = 95,
         BuildTime = 1877,
-	NaturalProducer = true,
-        ProductionPerSecondEnergy = 0.2,
-        MaintenanceConsumptionPerSecondEnergy = 0.2,
     },
     Footprint = {
         SizeX = 4,
@@ -165,7 +162,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 49.45,
+            FiringTolerance = 8,
             Label = 'CORKBOT_MISSILE',
             MaxRadius = 36.875,
             MuzzleSalvoDelay = 0,

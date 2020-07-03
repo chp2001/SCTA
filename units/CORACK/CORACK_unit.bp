@@ -101,7 +101,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -120,10 +120,9 @@ UnitBlueprint {
         MaxBuildDistance = 3.75,
         StorageEnergy = 100,
         StorageMass = 100,
+        NaturalProducer = true,
 	ProductionPerSecondEnergy = 19,
-	ProductionPerSecondMass = 0.5,
-	NaturalProducer = true,
-	MaintenanceConsumptionPerSecondEnergy = 0.2,
+	ProductionPerSecondMass = 1,
     },
     Footprint = {
 	MaxSlope = 1.25,

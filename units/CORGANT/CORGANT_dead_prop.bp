@@ -15,7 +15,7 @@ PropBlueprint {
 		    NormalName = '/mods/SCTA/meshes/wrecks/Wreck_NormalsTS.dds',
 		    SpecularName = '/mods/SCTA/meshes/wrecks/Wreck_SpecTeam.dds',
 		    MeshName = 'CORGANT_dead_lod0.scm',
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
                 },
             },
         },
@@ -35,7 +35,7 @@ PropBlueprint {
         HelpText = 'Wreckage',
     },
     Physics = {
-        BlockPath = true,
+        BlockPath = false, 
     },
     Wreckage = {
 	Blueprint = '/mods/SCTA/units/CORGANT/CORGANT_heap_prop.bp',

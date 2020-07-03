@@ -88,7 +88,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -104,9 +104,6 @@ UnitBlueprint {
         BuildCostEnergy = 8608,
         BuildCostMass = 1719,
         BuildTime = 17789,
-	NaturalProducer = true,
-        ProductionPerSecondEnergy = 2.5,
-        MaintenanceConsumptionPerSecondEnergy = 2.5,
     },
     Footprint = {
 	MinWaterDepth = 1.875,
@@ -244,7 +241,7 @@ UnitBlueprint {
                 Water = 'Water|Sub|Seabed',
             },
             RangeCategory = 'UWRC_AntiNavy',
-	    FiringTolerance = 360,
+	    FiringTolerance = 3,
             Label = 'ARMDEPTHCHARGE',
             MaxRadius = 25.625,
             MuzzleSalvoDelay = 0,

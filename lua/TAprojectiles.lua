@@ -4,7 +4,7 @@ local TAutils = import('/mods/SCTA/lua/TAutils.lua')
 TAProjectile = Class(SinglePolyTrailProjectile) {
 	Smoke = false,
 
-	FxSmoke = '/mods/SCTA/effects/emitters/smoke_emit.bp',
+	FxSmoke = '/effects/emitters/smoke_emit.bp',
 	FxSmokeScale = 1,
 
 	PolyTrail = '',
@@ -27,41 +27,43 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
 	end,
 
 
-    AdjustDamageForTarget = function(self, targetEntity, defaultDamage)
-        if targetEntity and defaultDamage and IsUnit(targetEntity) then
-            if self.AirDamage and EntityCategoryContains(categories.AIR, targetEntity) then
-                return self.AirDamage
-            elseif self.CommanderDamage and EntityCategoryContains(categories.COMMANDER, targetEntity) then
-                return self.CommanderDamage
-            elseif self.NormalSubDamage and EntityCategoryContains(categories.NORMALSUB, targetEntity) then
-                return self.NormalSubDamage
-            elseif self.AdvancedSubDamage and EntityCategoryContains(categories.ADVANCEDSUB, targetEntity) then
-                return self.AdvancedSubDamage
-            elseif self.FlashDamage and EntityCategoryContains(categories.ARMFLASH, targetEntity) then
-                return self.FlashDamage
-            elseif self.PeeweeDamage and EntityCategoryContains(categories.ARMPW, targetEntity) then
-                return self.PeeweeDamage
-            elseif self.WarriorDamage and EntityCategoryContains(categories.ARMWAR, targetEntity) then
-                return self.WarriorDamage
-            elseif self.PyroDamage and EntityCategoryContains(categories.CORPYRO, targetEntity) then
-                return self.PyroDamage
-            end
-        end
-        return defaultDamage
-    end,
+	DoDamage = function(self, instigator, damageData, targetEntity)
+		if targetEntity then
+			if IsUnit(targetEntity) then
+				if self.AirDamage and EntityCategoryContains(categories.AIR, targetEntity) then
+					damageData.DamageAmount = self.AirDamage
+				end
+				if self.CommanderDamage and EntityCategoryContains(categories.COMMANDER, targetEntity) then
+					damageData.DamageAmount = self.CommanderDamage
+				end
+				if self.NormalSubDamage and EntityCategoryContains(categories.NORMALSUB, targetEntity) then
+					damageData.DamageAmount = self.NormalSubDamage
+				end
+				if self.AdvancedSubDamage and EntityCategoryContains(categories.ADVANCEDSUB, targetEntity) then
+					damageData.DamageAmount = self.AdvancedSubDamage
+				end
 
-    DoDamage = function(self, instigator, damageData, targetEntity)
-        local radius
-        if damageData.AlternateDamageRadius and damageData.AlternateDamageRadius > 0 then
-            radius = damageData.AlternateDamageRadius 
-        else
-            radius = damageData.DamageRadius
-        end
-        TAutils.DoTaperedAreaDamage(
-            instigator, self:GetPosition(), radius, damageData.DamageAmount, self, targetEntity,
-            damageData.DamageType, damageData.DamageFriendly, damageData.DamageSelf, damageData.EdgeEffectiveness)
-    end,
+				if self.FlashDamage and EntityCategoryContains(categories.ARMFLASH, targetEntity) then
+					damageData.DamageAmount = self.FlashDamage
+				end
+				if self.PeeweeDamage and EntityCategoryContains(categories.ARMPW, targetEntity) then
+					damageData.DamageAmount = self.PeeweeDamage
+				end
+				if self.WarriorDamage and EntityCategoryContains(categories.ARMWAR, targetEntity) then
+					damageData.DamageAmount = self.WarriorDamage
+				end
+				if self.PyroDamage and EntityCategoryContains(categories.CORPYRO, targetEntity) then
+					damageData.DamageAmount = self.PyroDamage
+				end
+			end
+		end
 
+		if damageData.AlternateDamageRadius and damageData.AlternateDamageRadius > 0 then
+			TAutils.DoTaperedAreaDamage(damageData.AlternateDamageRadius, damageData.DamageAmount, self:GetPosition(), instigator, targetEntity, damageData.DamageType, damageData.DamageFriendly, damageData.DamageSelf, damageData.EdgeEffectiveness)
+		else
+			TAutils.DoTaperedAreaDamage(damageData.DamageRadius, damageData.DamageAmount, self:GetPosition(), instigator, targetEntity, damageData.DamageType, damageData.DamageFriendly, damageData.DamageSelf, damageData.EdgeEffectiveness)
+		end
+	end,
 	PassDamageData = function(self, damageData)
 		self.DamageData.DamageRadius = damageData.DamageRadius
 		self.DamageData.DamageAmount = damageData.DamageAmount
@@ -156,7 +158,7 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 		'/mods/SCTA/effects/emitters/napalm_03_emit.bp',
 		'/mods/SCTA/effects/emitters/napalm_03_emit.bp',
 		'/mods/SCTA/effects/emitters/napalm_03_emit.bp',
-    		'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
+    	'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
 	},
 	FxLandHitScale = 2,
 	FxImpactWater = {

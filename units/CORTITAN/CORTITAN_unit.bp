@@ -55,8 +55,8 @@ UnitBlueprint {
         KTurn = 0.7,
         KTurnDamping = 1,
         LiftFactor = 7,
-        MaxAirspeed = 10,
-        MinAirspeed = 10,
+        MaxAirspeed = 12,
+        MinAirspeed = 15,
         PredictAheadForBombDrop = 2.7,
         StartTurnDistance = 5,
         TightTurnMultiplier = 0,
@@ -69,14 +69,10 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'ANTINAVY',
 	'AIR',
         'OVERLAYANTINAVY',
-
-	
         'CORE',
         'VTOL',
 	'CTRL_V',
@@ -154,6 +150,8 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 22,
+        SonarRadius = 30, 
+		WaterVisionRadius = 15,
     },
     Interface = {
         HelpText = 'Torpedo Bomber',
@@ -165,15 +163,8 @@ UnitBlueprint {
         Elevation = 9.375,
         MotionType = 'RULEUMT_Air',
 	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
-        MaxAcceleration = 5.4,
-        MaxBrake = 180,
-        MaxSpeed = 17.8125,
-        TurnRate = 67,
-	RotateOnSpot = true,
-	MinSpeedPercent = 0,
-	MaxSteerForce = 10,
-	TurnRadius = 0,
+    MaxSpeed = 0.5, 
+    RotateOnSpot = true,
 	FuelRechargeRate = 999999,
 	FuelUseTime = 999999,
     },

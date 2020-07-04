@@ -69,14 +69,10 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'BOMBER',
 	'AIR',
         'OVERLAYDIRECTFIRE',
-
-	
         'CORE',
         'VTOL',
 	'CTRL_V',
@@ -160,16 +156,8 @@ UnitBlueprint {
     Physics = {
         Elevation = 12.8125,
         MotionType = 'RULEUMT_Air',
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
-        MaxAcceleration = 2.52,
-        MaxBrake = 43.2,
-        MaxSpeed = 15,
-        TurnRate = 55,
-	RotateOnSpot = true,
-	MinSpeedPercent = 0,
-	MaxSteerForce = 10,
-	TurnRadius = 0,
+    MaxSpeed = 0.5, 
+    RotateOnSpot = true,
 	FuelRechargeRate = 999999,
 	FuelUseTime = 999999,
     },

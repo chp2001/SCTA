@@ -156,7 +156,8 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 62.5,
             EnergyChargeForFirstShot = false,
-            EnergyRequired = 2000,
+            EnergyRequired = 1500,
+            EnergyDrainPerSecond = 200,
             ProjectileId = '/mods/SCTA/projectiles/CORE_INTIMIDATOR/CORE_INTIMIDATOR_proj.bp',
             RackBones = {
                 {
@@ -187,6 +188,7 @@ UnitBlueprint {
             TurretYaw = 0,
             TurretYawRange = 360,
             TurretYawSpeed = 5,
+            WeaponCategory = 'Artillery',
             Turreted = true,
         },
         { #ATOMIC_BLAST

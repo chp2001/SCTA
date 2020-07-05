@@ -32,14 +32,10 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-
-	
         'ARM',
         'KBOT',
 	'LEVEL1',
@@ -206,8 +202,8 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 90,
             Turreted = true,
-            WeaponCategory = 'Direct Fire',
-	    WeaponUnpacks = true,
+            WeaponCategory = 'Artillery',
+	        WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
         },
         { #BIG_UNITEX

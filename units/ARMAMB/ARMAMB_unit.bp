@@ -26,14 +26,10 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
-
-	
 	'ARM',
 	'LEVEL2',
 	'STRATEGIC',
@@ -140,7 +136,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 310,
+            Damage = 400,
             AlternateDamageRadius = 3.125, 
             DamageType = 'Normal',
             DisplayName = 'ARMAMB_GUN',

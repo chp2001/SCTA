@@ -170,7 +170,7 @@ UnitBlueprint {
             MaxRadius = 30,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 0,
-	    MuzzleVelocity = 28.125,
+	        MuzzleVelocity = 28.125,
             ProjectileId = '/mods/SCTA/projectiles/CORKROG_FIRE/CORKROG_FIRE_proj.bp',
             RackBones = {
                 {
@@ -191,7 +191,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.625,
+            RateOfFire = 0.2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

@@ -172,7 +172,7 @@ TAunit = Class(Unit)
 			self:PlayUnitSound('StopMove')
 		end
 		self.CurrentSpeed = new
-	        self:StopRocking()
+			self:StopRocking()
 	end,
 
 				

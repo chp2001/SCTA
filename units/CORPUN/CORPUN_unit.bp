@@ -141,8 +141,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 320,
+            Damage = 1500,
             AlternateDamageRadius = 2.65, 
+            WeaponCategory = 'Artillery',
             DamageType = 'Normal',
             DisplayName = 'CORFIXED_GUN',
             FireTargetLayerCapsTable = {
@@ -154,6 +155,9 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 21.875,
+            EnergyChargeForFirstShot = false,
+            EnergyRequired = 750,
+            EnergyDrainPerSecond = 500,
             ProjectileId = '/mods/SCTA/projectiles/CORFIXED_GUN/CORFIXED_GUN_proj.bp',
             RackBones = {
                 {

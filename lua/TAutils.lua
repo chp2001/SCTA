@@ -358,18 +358,25 @@ end
 
 
 function DoTaperedAreaDamage(instigator, location, radius, damage, projectile, targetEntity, damageType, damageAllies, damageSelf, edgeEffectiveness)
-
-    if radius and radius > 0 then
+    local precision = math.floor(radius * 2) + 1
+	local pulse = 0
+	local edge = edgeEffectiveness or 0
+        if radius and radius > 0 then
+		if edge * damage > 0 then
         -- Get rid of trees
         DamageArea(instigator, location, radius, 1, 'Force', false, false)
-
+        end 
+        while pulse < precision do
+			local factor = (pulse + 1) / precision
+       			if damage and damage - edge > 0 then
         TADamageUnitsInArea(instigator, location, radius, damage, projectile, damageType, damageAllies, damageSelf, edgeEffectiveness)
         TADamageReclaimablesInArea(instigator, location, radius, damage, projectile, damageType, edgeEffectiveness)
-
+    end
+    pulse = pulse + 1
+end
     elseif targetEntity then
         TADamageEntity(instigator, location, targetEntity, damage, projectile, damageType)
     end
-
 end
 
 

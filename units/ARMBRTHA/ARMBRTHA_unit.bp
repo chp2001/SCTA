@@ -157,6 +157,7 @@ UnitBlueprint {
             MuzzleVelocity = 50,
             EnergyChargeForFirstShot = false,
             EnergyRequired = 1500,
+            EnergyDrainPerSecond = 200,
             ProjectileId = '/mods/SCTA/projectiles/ARM_BERTHACANNON/ARM_BERTHACANNON_proj.bp',
             RackBones = {
                 {
@@ -188,6 +189,7 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 5,
             Turreted = true,
+            WeaponCategory = 'Artillery',
         },
         { #ATOMIC_BLAST
             Damage = 2000,

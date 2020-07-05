@@ -199,6 +199,7 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 50,
             Turreted = true,
+            WeaponCategory = 'Artillery',
         },
         { #BIG_UNITEX
             Damage = 50,

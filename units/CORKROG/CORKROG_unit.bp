@@ -222,7 +222,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 2500,
+            Damage = 4000,
             AlternateDamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'CORKROG_HEAD',

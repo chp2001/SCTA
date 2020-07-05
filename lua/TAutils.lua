@@ -281,27 +281,97 @@ function Clamp(x,lb,ub)
     end
 end
 
+function TADamageUnitsInArea(instigator, location, radius, damage, projectile, damageType, damageAllies, damageSelf, edgeEffectiveness)
 
-function DoTaperedAreaDamage(radius, damage, position, instigator, targetEntity, damageType, damageFriendly, damageSelf, edgeEffectiveness)
-	local precision = math.floor(radius * 2) + 1
-	local pulse = 0
-	local edge = edgeEffectiveness or 0
+    local rect = Rect(location[1]-radius-1, location[3]-radius-1, location[1]+radius+1, location[3]+radius+1)
+    local units = GetUnitsInRect(rect) or {}
 
-        if radius and radius > 0 then
-		if edge * damage > 0 then
-			DamageArea(instigator, position, radius, damage * edge, damageType, damageFriendly, damageSelf or false)
-		end
-		while pulse < precision do
-			local factor = (pulse + 1) / precision
-       			if damage and damage - edge > 0 then
-	            		DamageArea(instigator, position, radius * factor, damage / precision + (1 - factor) * damage * edge, damageType, damageFriendly, damageSelf or false)
-        		end
-			pulse = pulse + 1
-		end
-	elseif damage and targetEntity then
-		Damage(instigator, position, targetEntity, damage, damageType)
-	end
+    for _, u in units do
+
+        local collisionExtents = u:GetCollisionExtents()
+        local damagePosition = {
+            x=Clamp(location[1],collisionExtents.Min[1],collisionExtents.Max[1]),
+            y=Clamp(location[2],collisionExtents.Min[2],collisionExtents.Max[2]),
+            z=Clamp(location[3],collisionExtents.Min[3],collisionExtents.Max[3]),
+            }
+
+        local taper = CalcDamageTaper(location, damagePosition, radius, edgeEffectiveness)
+        #LOG("--collisionExtents="..repr(collisionExtents))
+        #LOG("  damagePosition="..damagePosition.x..","..damagePosition.y..","..damagePosition.z)
+        #LOG("  epiPosition="..location.x..","..location.y..","..location.z)
+        #LOG("  taper="..repr(taper)..", edgeEffectiveness="..repr(edgeEffectiveness))
+
+        if taper<=0 then continue end
+
+        local dmg1 = damage
+        if projectile then
+            dmg1 = projectile:AdjustDamageForTarget(u, damage)
+        end
+        local dmg2 = dmg1 * taper
+
+        army = instigator:GetArmy() or nil
+        if instigator == u then
+            if damageSelf then
+                local vector = import('/lua/utilities.lua').GetDirectionVector(location, u:GetPosition())
+                -- need this ugliness due to Damage() refuse to damage when instigator == u
+                instigator:OnDamage(instigator, dmg2, vector, damageType)
+            end
+
+        elseif damageAllies or not IsAlly(army, u:GetArmy()) then
+            #bp = u:GetBlueprint()
+            #LOG("  TADamageUnitsInArea, UnitName="..repr(bp.General.UnitName)..", dmg1="..dmg1..", taper="..taper..", dmg2="..dmg2)
+            Damage(instigator, location, u, dmg2, damageType)
+        end
+    end
+
 end
+
+
+function TADamageReclaimablesInArea(instigator, location, radius, damage, projectile, damageType, edgeEffectiveness)
+
+    local rect = Rect(location[1]-radius, location[3]-radius, location[1]+radius, location[3]+radius)
+    local reclaimables = GetReclaimablesInRect(rect) or {}
+
+    for _, reclaimable in reclaimables do
+        -- nobody cares about accurate replication of TA damage to reclaimables so just calculate taper based on centre of entity
+        local taper = CalcDamageTaper(location, reclaimable:GetPosition(), radius, edgeEffectiveness)
+        if taper<=0 then continue end
+
+        local dmg = damage * taper
+        if IsProp(reclaimable) and dmg > 0.0 then
+            Damage(instigator, location, reclaimable, dmg, damageType)
+        end
+    end
+end
+
+
+function TADamageEntity(instigator, location, targetEntity, damage, projectile, damageType)
+    local dmg = damage
+    if projectile then
+        dmg = projectile:AdjustDamageForTarget(targetEntity, damage)
+    end
+
+    if dmg and dmg>0 then
+        Damage(instigator, location, targetEntity, dmg, damageType)
+    end
+end
+
+
+function DoTaperedAreaDamage(instigator, location, radius, damage, projectile, targetEntity, damageType, damageAllies, damageSelf, edgeEffectiveness)
+
+    if radius and radius > 0 then
+        -- Get rid of trees
+        DamageArea(instigator, location, radius, 1, 'Force', false, false)
+
+        TADamageUnitsInArea(instigator, location, radius, damage, projectile, damageType, damageAllies, damageSelf, edgeEffectiveness)
+        TADamageReclaimablesInArea(instigator, location, radius, damage, projectile, damageType, edgeEffectiveness)
+
+    elseif targetEntity then
+        TADamageEntity(instigator, location, targetEntity, damage, projectile, damageType)
+    end
+
+end
+
 
 function QueueDelayedWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
 	ForkThread(CreateDelayedWreckage, self, overkillRatio, bp, completed, pos, orientation, health)

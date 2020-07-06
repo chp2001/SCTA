@@ -148,7 +148,7 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
-            BallisticArc = 'RULEUBA_None',
+            BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 85,
@@ -205,6 +205,9 @@ UnitBlueprint {
             WeaponCategory = 'Artillery',
 	        WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
+            EnergyChargeForFirstShot = false,
+            EnergyRequired = 20,
+            EnergyDrainPerSecond = 2,
         },
         { #BIG_UNITEX
             Damage = 50,

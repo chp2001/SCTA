@@ -150,7 +150,7 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
-            BallisticArc = 'RULEUBA_None',
+            BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 130,
@@ -200,6 +200,9 @@ UnitBlueprint {
             TurretYawSpeed = 50,
             Turreted = true,            
             WeaponCategory = 'Artillery',
+            EnergyChargeForFirstShot = false,
+            EnergyRequired = 20,
+            EnergyDrainPerSecond = 5,
         },
         { #BIG_UNITEX
             Damage = 50,

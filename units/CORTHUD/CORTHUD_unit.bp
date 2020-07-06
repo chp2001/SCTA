@@ -207,6 +207,9 @@ UnitBlueprint {
             TurretYawSpeed = 90,
             Turreted = true,
             WeaponCategory = 'Artillery',
+            EnergyChargeForFirstShot = false,
+            EnergyRequired = 20,
+            EnergyDrainPerSecond = 1,
         },
         { #BIG_UNITEX
             Damage = 50,

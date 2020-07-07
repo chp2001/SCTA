@@ -152,7 +152,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 45,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'ARMSH_WEAPON',

@@ -153,7 +153,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 196,
-	    AlternateDamageRadius = 2,
+	    DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'COR_GOL',
             FireTargetLayerCapsTable = {

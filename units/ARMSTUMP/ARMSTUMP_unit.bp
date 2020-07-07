@@ -145,7 +145,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 50,
-	    AlternateDamageRadius = 1,
+	    DamageRadius = 1,
             DamageType = 'Normal',
             DisplayName = 'ARM_LIGHTCANNON',
             FireTargetLayerCapsTable = {
@@ -158,7 +158,7 @@ UnitBlueprint {
             MaxRadius = 15,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 10.625,
+	    MuzzleVelocity = 23,
             ProjectileId = '/mods/SCTA/projectiles/ARM_LIGHTCANNON/ARM_LIGHTCANNON_proj.bp',
             RackBones = {
                 {

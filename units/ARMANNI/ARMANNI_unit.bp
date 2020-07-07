@@ -146,7 +146,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 2500,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARM_TOTAL_ANNIHILATOR',
             FireTargetLayerCapsTable = {

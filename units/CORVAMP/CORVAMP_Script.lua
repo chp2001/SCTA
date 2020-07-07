@@ -20,6 +20,17 @@ CORVAMP = Class(TAair) {
 			self.Trash:Add(v)
 		end
 	end,
+	
+	OnMotionVertEventChange = function(self, new, old )
+		if (new == 'Down' or new == 'Bottom') then
+                	self:PlayUnitSound('Landing')
+			self:CloseWings(self)
+		elseif (new == 'Up' or new == 'Top') then
+                	self:PlayUnitSound('TakeOff')
+			self:OpenWings(self)
+		end
+	end,
+
 
 	RollThread = function(self)
 		while not IsDestroyed(self) do

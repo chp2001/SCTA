@@ -187,7 +187,7 @@ UnitBlueprint {
             DamageFriendly = true,
             Damage = 158,
             BombDropThreshold = 3,					
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'ARMBOMB',
             FireTargetLayerCapsTable = {

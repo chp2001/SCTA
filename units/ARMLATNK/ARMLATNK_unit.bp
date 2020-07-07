@@ -150,7 +150,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 120,
-            AlternateDamageRadius = 0.25, 
+            DamageRadius = 0.25, 
             DamageType = 'Normal',
             DisplayName = 'ARMLATNK_WEAPON',
             FireTargetLayerCapsTable = {
@@ -208,7 +208,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 31,
-            AlternateDamageRadius = 1.5, 
+            DamageRadius = 1.5, 
             DamageType = 'Normal',
             DisplayName = 'ARMKBOT_MISSILE',
             FireTargetLayerCapsTable = {

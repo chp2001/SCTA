@@ -140,7 +140,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 30,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'CORE_LASER',

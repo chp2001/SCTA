@@ -1,5 +1,3 @@
-    local OldCreateResources = CreateResources
-    
     function CreateInitialArmyGroup(strArmy, createCommander)
         local tblGroup = CreateArmyGroup(strArmy, 'INITIAL')
         local cdrUnit = false

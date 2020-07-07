@@ -156,8 +156,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 3000,
-            AlternateDamageRadius = 0.25,
+            Damage = 2000,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'CORKROG_FIRE',
             FireTargetLayerCapsTable = {
@@ -223,7 +223,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 6000,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'CORKROG_HEAD',
             EnergyChargeForFirstShot = false,
@@ -283,7 +283,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 131,
-            AlternateDamageRadius = 2.5,
+            DamageRadius = 2.5,
             DamageType = 'Normal',
             DisplayName = 'CORKROG_ROCKET',
             FireTargetLayerCapsTable = {

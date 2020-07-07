@@ -144,7 +144,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 0,
-            AlternateDamageRadius = 3.28,
+            DamageRadius = 3.28,
 	    EdgeEffectiveness = 0.9,
             FiringRandomness = 0,
             DamageType = 'Normal',

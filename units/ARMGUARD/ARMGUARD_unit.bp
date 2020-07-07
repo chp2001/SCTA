@@ -139,7 +139,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 1500,
-            AlternateDamageRadius = 2, 
+            DamageRadius = 2, 
             DamageType = 'Normal',
             DisplayName = 'ARMFIXED_GUN',
             FireTargetLayerCapsTable = {

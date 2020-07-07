@@ -53,7 +53,6 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
     DoDamage = function(self, instigator, damageData, targetEntity)
         local radius
             radius = damageData.DamageRadius
-        end
         TAutils.DoTaperedAreaDamage(
             instigator, self:GetPosition(), radius, damageData.DamageAmount, self, targetEntity,
             damageData.DamageType, damageData.DamageFriendly, damageData.DamageSelf, damageData.EdgeEffectiveness)

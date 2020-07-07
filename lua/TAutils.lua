@@ -358,7 +358,7 @@ end
 
 
 function DoTaperedAreaDamage(instigator, location, radius, damage, projectile, targetEntity, damageType, damageAllies, damageSelf, edgeEffectiveness)
-    local precision = math.floor(radius * 2) + 1
+    local precision = math.floor(radius)
 	local pulse = 0
 	local edge = edgeEffectiveness or 0
         if radius and radius > 0 then

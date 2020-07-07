@@ -146,7 +146,7 @@ UnitBlueprint {
             DamageFriendly = true,
             EnergyRequired = 10,
             Damage = 60,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARM_LIGHTLASER',
             FireTargetLayerCapsTable = {

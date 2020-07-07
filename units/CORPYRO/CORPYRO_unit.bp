@@ -158,7 +158,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 0, #damage is caused in script
-	    AlternateDamageRadius = 1,
+	    DamageRadius = 1,
             DamageType = 'Normal',
             DisplayName = 'FLAMETHROWER',
             FireTargetLayerCapsTable = {

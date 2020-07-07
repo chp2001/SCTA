@@ -155,7 +155,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 55,
-            AlternateDamageRadius = 1.125,
+            DamageRadius = 1.125,
             DamageType = 'Normal',
             DisplayName = 'CORE_MORT',
             FireTargetLayerCapsTable = {

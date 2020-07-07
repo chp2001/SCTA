@@ -168,7 +168,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 208,
-            AlternateDamageRadius = 2,
+            DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'ARM_CRUS',
             FireTargetLayerCapsTable = {
@@ -234,7 +234,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 70,
-            AlternateDamageRadius = 0.5,
+            DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'ARMDEPTHCHARGE',
             FireTargetLayerCapsTable = {

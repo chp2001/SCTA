@@ -138,7 +138,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 8,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             FiringRandomness = 1,
             DamageType = 'Normal',
             DisplayName = 'EMG',
@@ -152,7 +152,7 @@ UnitBlueprint {
             MaxRadius = 11.25,
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 3,
-	    MuzzleVelocity = 18.75,
+	        MuzzleVelocity = 18.75,
             ProjectileId = '/mods/SCTA/projectiles/EMG/EMG_proj.bp',
             RackBones = {
                 {

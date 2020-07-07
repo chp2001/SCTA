@@ -196,7 +196,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 60,
-            AlternateDamageRadius = 0.5,
+            DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'ARMCOMLASER',
             FireTargetLayerCapsTable = {

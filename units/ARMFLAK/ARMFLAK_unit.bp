@@ -131,7 +131,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 0,
-            AlternateDamageRadius = 3.75, 
+            DamageRadius = 3.75, 
             DamageType = 'Normal',
             DisplayName = 'ARMFLAK_GUN',
             FireTargetLayerCapsTable = {

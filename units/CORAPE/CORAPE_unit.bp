@@ -185,7 +185,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 125,
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'VTOL_ROCKET',
             FireTargetLayerCapsTable = {
@@ -243,7 +243,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 125,
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'VTOL_ROCKET2',
             FireTargetLayerCapsTable = {

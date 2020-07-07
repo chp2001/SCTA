@@ -145,7 +145,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 180,
-	    AlternateDamageRadius = 2.625,
+	    DamageRadius = 2.625,
             DamageType = 'Normal',
             DisplayName = 'CORLEVLR_WEAPON',
             FireTargetLayerCapsTable = {

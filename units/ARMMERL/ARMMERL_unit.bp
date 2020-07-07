@@ -155,7 +155,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 500,
-	    AlternateDamageRadius = 3,
+	    DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'ARMTRUCK_ROCKET',
             FireTargetLayerCapsTable = {

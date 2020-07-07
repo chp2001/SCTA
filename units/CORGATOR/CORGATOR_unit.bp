@@ -145,7 +145,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 44,
-	    AlternateDamageRadius = 0.25,
+	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'GATOR_LASER',
             FireTargetLayerCapsTable = {

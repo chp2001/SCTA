@@ -185,7 +185,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 11,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             FiringRandomness = 0.25, 
             DamageType = 'Normal',
             DisplayName = 'VTOL_EMG',

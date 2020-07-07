@@ -163,7 +163,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 210,
-	    AlternateDamageRadius = 0.5,
+	    DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'CORSMART_TORPEDO',
             FireTargetLayerCapsTable = {

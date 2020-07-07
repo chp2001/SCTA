@@ -168,7 +168,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 10,
-	    AlternateDamageRadius = 1, 0.25,
+	    DamageRadius = 1, 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARM_PARALYZER',
             FireTargetLayerCapsTable = {

@@ -235,7 +235,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 70,
-            AlternateDamageRadius = 0.5,
+            DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'CORCOMLASER',
             FireTargetLayerCapsTable = {
@@ -291,7 +291,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 999999,
-            AlternateDamageRadius = 0.5,
+            DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'CORE_DISINTEGRATOR',
             FireTargetLayerCapsTable = {

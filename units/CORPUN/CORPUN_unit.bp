@@ -142,7 +142,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 1500,
-            AlternateDamageRadius = 2.65, 
+            DamageRadius = 2.65, 
             WeaponCategory = 'Artillery',
             DamageType = 'Normal',
             DisplayName = 'CORFIXED_GUN',

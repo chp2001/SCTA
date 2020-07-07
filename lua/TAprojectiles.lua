@@ -52,9 +52,6 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
 
     DoDamage = function(self, instigator, damageData, targetEntity)
         local radius
-        if damageData.AlternateDamageRadius and damageData.AlternateDamageRadius > 0 then
-            radius = damageData.AlternateDamageRadius 
-        else
             radius = damageData.DamageRadius
         end
         TAutils.DoTaperedAreaDamage(

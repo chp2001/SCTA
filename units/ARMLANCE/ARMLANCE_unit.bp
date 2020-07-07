@@ -197,7 +197,7 @@ UnitBlueprint {
             DamageFriendly = true,
             Damage = 750,
             BombDropThreshold = 3,
-            AlternateDamageRadius = 0.5,
+            DamageRadius = 0.5,
             FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'ARMAIR_TORPEDO',

@@ -164,7 +164,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 350,
-	    AlternateDamageRadius = 0.5,
+	    DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'ARM_TORPEDO',
             FireTargetLayerCapsTable = {

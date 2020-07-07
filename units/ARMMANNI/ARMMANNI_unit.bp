@@ -156,7 +156,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 1300,
-	    AlternateDamageRadius = 0.5,
+	    DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'ARMMANNI_WEAPON',
             EnergyChargeForFirstShot = false,

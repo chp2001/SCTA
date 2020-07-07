@@ -158,7 +158,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 260,
-            AlternateDamageRadius = 2,
+            DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'ARM_BATS',
             FireTargetLayerCapsTable = {

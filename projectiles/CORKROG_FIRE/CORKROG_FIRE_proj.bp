@@ -58,6 +58,6 @@ ProjectileBlueprint {
         DestroyOnWater = true,
         InitialSpeed = 28.125,
         Lifetime = 4,
-        UseGravity = false,
+        UseGravity = true,
     },
 }

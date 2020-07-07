@@ -143,7 +143,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 46,
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'ARMRL_MISSILE',
             FireTargetLayerCapsTable = {

@@ -54,7 +54,6 @@ UnitBlueprint {
 	'RADAR',
         'OVERLAYRADAR',
         'ARM',
-        'CORE', -- in lieu of core vulture
         'VTOL',
 	'CTRL_V',
 	'LEVEL2',

@@ -270,7 +270,7 @@ TAconstructor = Class(TAunit) {
 
 	Open = function(self)
 	end,
-
+	
 	Aim = function(self, target)
 	end,
 

@@ -56,7 +56,7 @@ TAweapon = Class(DefaultWeapon) {
             return false
         end
     end,
-
+    
     IdleState = State(DefaultWeapon.IdleState) {
         OnGotTarget = function(self)
             if (self:OnGotTargetCheck() == true) then

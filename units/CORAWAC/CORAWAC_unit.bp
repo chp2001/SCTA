@@ -1,5 +1,5 @@
-#ARM Eagle - Radar Plane
-#ARMAWAC
+#COR Vulture - Radar Plane
+#CORAWAC
 #
 #Blueprint created by Raevn
 
@@ -69,7 +69,7 @@ UnitBlueprint {
 	'INTELLIGENCE',
 	'RADAR',
         'OVERLAYRADAR',
-        'ARM',
+        'CORE',
         'VTOL',
 	'CTRL_V',
 	'LEVEL2',
@@ -137,9 +137,9 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
-        FactionName = 'ARM',
+        FactionName = 'CORE',
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = 'Eagle',
+        UnitName = 'Vulture',
     },
     Intel = {
     VisionRadius = 22,

@@ -26,30 +26,6 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
 		self.Smoke = false
 	end,
 
-
-    AdjustDamageForTarget = function(self, targetEntity, defaultDamage)
-        if targetEntity and defaultDamage and IsUnit(targetEntity) then
-            if self.AirDamage and EntityCategoryContains(categories.AIR, targetEntity) then
-                return self.AirDamage
-            elseif self.CommanderDamage and EntityCategoryContains(categories.COMMANDER, targetEntity) then
-                return self.CommanderDamage
-            elseif self.NormalSubDamage and EntityCategoryContains(categories.NORMALSUB, targetEntity) then
-                return self.NormalSubDamage
-            elseif self.AdvancedSubDamage and EntityCategoryContains(categories.ADVANCEDSUB, targetEntity) then
-                return self.AdvancedSubDamage
-            elseif self.FlashDamage and EntityCategoryContains(categories.ARMFLASH, targetEntity) then
-                return self.FlashDamage
-            elseif self.PeeweeDamage and EntityCategoryContains(categories.ARMPW, targetEntity) then
-                return self.PeeweeDamage
-            elseif self.WarriorDamage and EntityCategoryContains(categories.ARMWAR, targetEntity) then
-                return self.WarriorDamage
-            elseif self.PyroDamage and EntityCategoryContains(categories.CORPYRO, targetEntity) then
-                return self.PyroDamage
-            end
-        end
-        return defaultDamage
-    end,
-
     PassDamageData = function(self, DamageData)
         self.DamageData.DamageRadius = DamageData.DamageRadius
         self.DamageData.DamageAmount = DamageData.DamageAmount
@@ -114,7 +90,6 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
 
 TANuclearProjectile = Class(TAProjectile) {
 	Smoke = true,
-
 	FxImpactAirUnit = {
 		'/mods/SCTA/effects/emitters/COMBOOM_emit.bp',
 	},
@@ -141,7 +116,7 @@ TANuclearProjectile = Class(TAProjectile) {
 		'/effects/emitters/destruction_water_splash_plume_01_emit.bp',
 	},
     	FxWaterHitScale = 15,
-	FxImpactProjectile = {
+	    FxImpactProjectile = {
     		'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
     		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
     		'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',

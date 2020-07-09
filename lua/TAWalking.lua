@@ -2,6 +2,7 @@ local explosion = import('/lua/defaultexplosions.lua')
 local scenarioUtils = import('/lua/sim/ScenarioUtilities.lua')
 local TAutils = import('/mods/SCTA/lua/TAutils.lua')
 local Game = import('/lua/game.lua')
+local TAunit = import('/mods/SCTA/lua/TAunit.lua').TAunit
 local util = import('/lua/utilities.lua')
 local debrisCat = import('/mods/SCTA/lua/TAdebrisCategories.lua')
 local WreckShield = import('/mods/SCTA/lua/TAshield.lua').WreckShield

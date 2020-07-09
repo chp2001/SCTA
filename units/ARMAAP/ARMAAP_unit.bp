@@ -50,7 +50,7 @@ UnitBlueprint {
 	'NOTSUB',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 2100,
         MaxHealth = 2100,
     },

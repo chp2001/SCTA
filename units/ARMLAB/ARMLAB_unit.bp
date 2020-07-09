@@ -42,12 +42,8 @@ UnitBlueprint {
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-
-	--Additional Categories
 	'STRUCTURE',
 	'CONSTRUCTION',
-
-	--TA Categories
 	'ARM',
 	'PLANT',
 	'CTRL_F',
@@ -123,7 +119,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -218,16 +214,16 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 300,
+            Damage = 20,
             DamageFriendly = true,
-            DamageRadius = 3.75,
+            DamageRadius = 1,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
         { #LARGE_BUILDING
-            Damage = 1800,
-            DamageRadius = 12.5,
+            Damage = 50,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

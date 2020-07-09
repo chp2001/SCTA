@@ -26,61 +26,70 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
 		self.Smoke = false
 	end,
 
+    PassDamageData = function(self, DamageData)
+        self.DamageData.DamageRadius = DamageData.DamageRadius
+        self.DamageData.DamageAmount = DamageData.DamageAmount
+        self.DamageData.DamageType = DamageData.DamageType
+        self.DamageData.DamageFriendly = DamageData.DamageFriendly
+        self.DamageData.CollideFriendly = DamageData.CollideFriendly
+        self.DamageData.DoTTime = DamageData.DoTTime
+        self.DamageData.DoTPulses = DamageData.DoTPulses
+        self.DamageData.MetaImpactAmount = DamageData.MetaImpactAmount
+        self.DamageData.MetaImpactRadius = DamageData.MetaImpactRadius
+        self.DamageData.Buffs = DamageData.Buffs
+        self.DamageData.ArtilleryShieldBlocks = DamageData.ArtilleryShieldBlocks
+        self.DamageData.InitialDamageAmount = DamageData.InitialDamageAmount
+        self.CollideFriendly = self.DamageData.CollideFriendly
+    end,
 
-    AdjustDamageForTarget = function(self, targetEntity, defaultDamage)
-        if targetEntity and defaultDamage and IsUnit(targetEntity) then
-            if self.AirDamage and EntityCategoryContains(categories.AIR, targetEntity) then
-                return self.AirDamage
-            elseif self.CommanderDamage and EntityCategoryContains(categories.COMMANDER, targetEntity) then
-                return self.CommanderDamage
-            elseif self.NormalSubDamage and EntityCategoryContains(categories.NORMALSUB, targetEntity) then
-                return self.NormalSubDamage
-            elseif self.AdvancedSubDamage and EntityCategoryContains(categories.ADVANCEDSUB, targetEntity) then
-                return self.AdvancedSubDamage
-            elseif self.FlashDamage and EntityCategoryContains(categories.ARMFLASH, targetEntity) then
-                return self.FlashDamage
-            elseif self.PeeweeDamage and EntityCategoryContains(categories.ARMPW, targetEntity) then
-                return self.PeeweeDamage
-            elseif self.WarriorDamage and EntityCategoryContains(categories.ARMWAR, targetEntity) then
-                return self.WarriorDamage
-            elseif self.PyroDamage and EntityCategoryContains(categories.CORPYRO, targetEntity) then
-                return self.PyroDamage
+    DoDamage = function(self, instigator, DamageData, targetEntity)
+        local damage = DamageData.DamageAmount
+        if damage and damage > 0 then
+            local radius = DamageData.DamageRadius
+            if radius and radius > 0 then
+                if not DamageData.DoTTime or DamageData.DoTTime <= 0 then
+                    DamageArea(instigator, self:GetPosition(), radius, damage, DamageData.DamageType, DamageData.DamageFriendly, DamageData.DamageSelf or false)
+                else
+                    -- DoT damage - check for initial damage
+                    local initialDmg = DamageData.InitialDamageAmount or 0
+                    if initialDmg > 0 then
+                        if radius > 0 then
+                            DamageArea(instigator, self:GetPosition(), radius, initialDmg, DamageData.DamageType, DamageData.DamageFriendly, DamageData.DamageSelf or false)
+                        elseif targetEntity then
+                            Damage(instigator, self:GetPosition(), targetEntity, initialDmg, DamageData.DamageType)
+                        end
+                    end
+
+                    ForkThread(DefaultDamage.AreaDoTThread, instigator, self:GetPosition(), DamageData.DoTPulses or 1, (DamageData.DoTTime / (DamageData.DoTPulses or 1)), radius, damage, DamageData.DamageType, DamageData.DamageFriendly)
+                end
+            elseif DamageData.DamageAmount and targetEntity then
+                if not DamageData.DoTTime or DamageData.DoTTime <= 0 then
+                    Damage(instigator, self:GetPosition(), targetEntity, DamageData.DamageAmount, DamageData.DamageType)
+                else
+                    -- DoT damage - check for initial damage
+                    local initialDmg = DamageData.InitialDamageAmount or 0
+                    if initialDmg > 0 then
+                        if radius > 0 then
+                            DamageArea(instigator, self:GetPosition(), radius, initialDmg, DamageData.DamageType, DamageData.DamageFriendly, DamageData.DamageSelf or false)
+                        elseif targetEntity then
+                            Damage(instigator, self:GetPosition(), targetEntity, initialDmg, DamageData.DamageType)
+                        end
+                    end
+
+                    ForkThread(DefaultDamage.UnitDoTThread, instigator, targetEntity, DamageData.DoTPulses or 1, (DamageData.DoTTime / (DamageData.DoTPulses or 1)), damage, DamageData.DamageType, DamageData.DamageFriendly)
+                end
             end
         end
-        return defaultDamage
-    end,
-
-    DoDamage = function(self, instigator, damageData, targetEntity)
-        local radius
-        if damageData.AlternateDamageRadius and damageData.AlternateDamageRadius > 0 then
-            radius = damageData.AlternateDamageRadius 
-        else
-            radius = damageData.DamageRadius
+        if self.InnerRing and self.OuterRing then
+            local pos = self:GetPosition()
+            self.InnerRing:DoNukeDamage(self.Launcher, pos, self.Brain, self.Army, DamageData.DamageType or 'Nuke')
+            self.OuterRing:DoNukeDamage(self.Launcher, pos, self.Brain, self.Army, DamageData.DamageType or 'Nuke')
         end
-        TAutils.DoTaperedAreaDamage(
-            instigator, self:GetPosition(), radius, damageData.DamageAmount, self, targetEntity,
-            damageData.DamageType, damageData.DamageFriendly, damageData.DamageSelf, damageData.EdgeEffectiveness)
     end,
-
-	PassDamageData = function(self, damageData)
-		self.DamageData.DamageRadius = damageData.DamageRadius
-		self.DamageData.DamageAmount = damageData.DamageAmount
-		self.DamageData.DamageType = damageData.DamageType
-		self.DamageData.DamageFriendly = damageData.DamageFriendly
-		self.DamageData.CollideFriendly = damageData.CollideFriendly
-		self.DamageData.DoTTime = damageData.DoTTime
-		self.DamageData.DoTPulses = damageData.DoTPulses
-		self.DamageData.MetaImpactAmount = damageData.MetaImpactAmount
-		self.DamageData.MetaImpactRadius = damageData.MetaImpactRadius
-		self.DamageData.Buffs = damageData.Buffs
-		self.DamageData.ArtilleryShieldBlocks = damageData.ArtilleryShieldBlocks
-		self.DamageData.AlternateDamageRadius = damageData.AlternateDamageRadius
-	end,
 }
 
 TANuclearProjectile = Class(TAProjectile) {
 	Smoke = true,
-
 	FxImpactAirUnit = {
 		'/mods/SCTA/effects/emitters/COMBOOM_emit.bp',
 	},
@@ -107,7 +116,7 @@ TANuclearProjectile = Class(TAProjectile) {
 		'/effects/emitters/destruction_water_splash_plume_01_emit.bp',
 	},
     	FxWaterHitScale = 15,
-	FxImpactProjectile = {
+	    FxImpactProjectile = {
     		'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
     		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
     		'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
@@ -156,7 +165,7 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 		'/mods/SCTA/effects/emitters/napalm_03_emit.bp',
 		'/mods/SCTA/effects/emitters/napalm_03_emit.bp',
 		'/mods/SCTA/effects/emitters/napalm_03_emit.bp',
-    		'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
+    	'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
 	},
 	FxLandHitScale = 2,
 	FxImpactWater = {
@@ -271,6 +280,10 @@ TALightCannonProjectile = Class(TAProjectile) {
 
 TAMissileProjectile = Class(TAMediumCannonProjectile) {
 	Smoke = true,
+	OnCreate = function(self)
+	self:SetCollisionShape('Sphere', 0, 0, 0, 2)
+	TAMediumCannonProjectile.OnCreate(self)
+	end,
 }
 
 

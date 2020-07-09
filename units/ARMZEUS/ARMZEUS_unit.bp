@@ -33,13 +33,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'ARM',
         'KBOT',
 	'LEVEL2',
@@ -78,7 +78,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -90,9 +90,6 @@ UnitBlueprint {
         BuildCostEnergy = 2228,
         BuildCostMass = 267,
         BuildTime = 5478,
-	NaturalProducer=true,
-        MaintenanceConsumptionPerSecondEnergy = 1.1,
-        ProductionPerSecondEnergy = 1.1,
     },
     Footprint = {
 	SizeX = 2,
@@ -157,7 +154,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 180,
-	    AlternateDamageRadius = 0.25,
+	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'LIGHTNING',
             FireTargetLayerCapsTable = {

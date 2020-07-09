@@ -5,7 +5,6 @@
 
 local TAunit = import('/mods/SCTA/lua/TAunit.lua').TAunit
 local ScenarioUtils = import('/lua/sim/ScenarioUtilities.lua')
-local worldData = import('/mods/SCTA/lua/sim/worldData.lua')
 
 CORMEX = Class(TAunit) {
 	onMetalSpot = false,
@@ -34,13 +33,11 @@ CORMEX = Class(TAunit) {
 		TAunit.OnStopBeingBuilt(self, builder, layer)
 		local markers = ScenarioUtils.GetMarkers() 
 		local unitPosition = self:GetPosition() 
-		self:SetProductionPerSecondMass(worldData:GetMap().surfaceMetal) 
 		for k, v in pairs(markers) do 
 			if(v.type == 'Mass') then 
                 		local massPosition = v.position 
                 		if (massPosition[1] < unitPosition[1] + 1) and (massPosition[1] > unitPosition[1] - 1) then 
 	                    		if (massPosition[3] < unitPosition[3] + 1) and (massPosition[3] > unitPosition[3] - 1) then 
-               		   			self:SetProductionPerSecondMass(worldData:GetMap().patchMetal) 
 						self.onMetalSpot = true
 	                    			break 
 					end

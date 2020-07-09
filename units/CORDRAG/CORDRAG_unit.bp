@@ -17,14 +17,14 @@ UnitBlueprint {
         'TECH2',
         'BENIGN',
 
-	--Additional Categories
+	
 	'STRUCTURE',
         'DEFENSE',
         'WALL',
 	'NOEXPLOSION',
 	'NOSMOKE',
 
-	--TA Categories
+	
 	'CORE',
 	'METAL',
 	'LEVEL2',
@@ -53,7 +53,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },

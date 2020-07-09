@@ -27,14 +27,14 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH1',
 
-	--Additional Categories
+	
 	'STRUCTURE',
         'ENERGYSTORAGE',
         'ECONOMIC',
 	'NOSMOKE',
 	'TEXTUREANIM',
 
-	--TA Categories
+	
 	'ARM',
     'CORE', -- in lieu of core storage
 	'ENERGY',
@@ -69,7 +69,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },

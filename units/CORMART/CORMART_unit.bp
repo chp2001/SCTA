@@ -33,13 +33,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
 
-	--TA Categories
+	
         'CORE',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL2',
@@ -79,7 +79,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -90,9 +90,6 @@ UnitBlueprint {
         BuildCostEnergy = 1535,
         BuildCostMass = 251,
         BuildTime = 4523,
-	NaturalProducer=true,
-        MaintenanceConsumptionPerSecondEnergy = 0.5,
-        ProductionPerSecondEnergy = 0.5,
     },
     Footprint = {
 	SizeX = 3,
@@ -153,11 +150,11 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
-            BallisticArc = 'RULEUBA_None',
+            BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 140,
-	    AlternateDamageRadius = 1.5,
+	    DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'CORE_ARTILLERY',
             FireTargetLayerCapsTable = {
@@ -202,6 +199,10 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 50,
             Turreted = true,
+            WeaponCategory = 'Artillery',
+            EnergyChargeForFirstShot = false,
+            EnergyRequired = 20,
+            EnergyDrainPerSecond = 2,
         },
         { #BIG_UNITEX
             Damage = 50,

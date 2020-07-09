@@ -52,13 +52,10 @@ UnitBlueprint {
         'RECLAIMABLE',
         'PATROLHELPER',
         'SHOWQUEUE',
-
-	--Additional Categories
+        'SELECTION',
         'MOBILE',
 	'CONSTRUCTION',
 	'LAND',
-
-	--TA Categories
         'CORE',
         'KBOT',
 	'LEVEL2',
@@ -104,7 +101,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -123,10 +120,9 @@ UnitBlueprint {
         MaxBuildDistance = 3.75,
         StorageEnergy = 100,
         StorageMass = 100,
+        NaturalProducer = true,
 	ProductionPerSecondEnergy = 19,
-	ProductionPerSecondMass = 0.5,
-	NaturalProducer = true,
-	MaintenanceConsumptionPerSecondEnergy = 0.2,
+	ProductionPerSecondMass = 1,
     },
     Footprint = {
 	MaxSlope = 1.25,
@@ -190,10 +186,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

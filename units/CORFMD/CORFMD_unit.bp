@@ -26,23 +26,19 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	--Additional Categories
 	'STRUCTURE',
 	'DEFENSE',
         'ANTIMISSILE',
         'SILO',
 	'NOCUSTOMTARGET',
         'OVERLAYDEFENSE',
-
-	--TA Categories
 	'CORE',
 	'SPECIAL',
 	'WEAPON',
 	'LEVEL3',
 	'NOTAIR',
 	'NOTSUB',
-    },
+   },
     Defense = {
         ArmorType = 'Normal',
         Health = 780,
@@ -76,7 +72,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -95,11 +91,12 @@ UnitBlueprint {
     General = {
 	BuildAngle = 4096,
         Category = 'Defense',
-        Classification = 'RULEUC_Weapon',
+        Classification = 'RULEUC_CounterMeasure',
         CommandCaps = {
             RULEUCC_SiloBuildTactical = true,
             RULEUCC_Stop = true,
-            RULEUCC_RetaliateToggle = true,
+            RULEUCC_RetaliateToggle = false,
+            RULEUCC_Pause = true,
         },
         SelectionPriority = 5,
         FactionName = 'CORE',

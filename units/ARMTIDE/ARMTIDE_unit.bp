@@ -27,13 +27,13 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH1',
 
-	--Additional Categories
+	
 	'STRUCTURE',
         'ECONOMIC',
 	'ENERGYPRODUCTION',
 	'NAVAL',
 
-	--TA Categories
+	
 	'ARM',
 	'ENERGY',
 	'LEVEL1',
@@ -63,7 +63,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -124,9 +124,9 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #SMALL_BUILDING
-            Damage = 900,
-            DamageRadius = 6.406,
+         { #SMALL_BUILDING
+            Damage = 50,
+            DamageRadius = 2,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

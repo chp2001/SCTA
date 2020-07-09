@@ -47,13 +47,10 @@ UnitBlueprint {
         'RECLAIMABLE',
         'PATROLHELPER',
         'SHOWQUEUE',
-
-	--Additional Categories
+        'SELECTION',
         'MOBILE',
 	'CONSTRUCTION',
 	'LAND',
-
-	--TA Categories
         'CORE',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL1',
@@ -97,7 +94,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -115,10 +112,8 @@ UnitBlueprint {
         MaxBuildDistance = 2.5,
         StorageEnergy = 50,
         StorageMass = 50,
-	ProductionPerSecondEnergy = 9.2,
-	ProductionPerSecondMass = 0.25,
+	ProductionPerSecondEnergy = 9,
 	NaturalProducer = true,
-	MaintenanceConsumptionPerSecondEnergy = 0.2,
     },
     Footprint = {
 	MaxSlope = 1,
@@ -182,10 +177,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

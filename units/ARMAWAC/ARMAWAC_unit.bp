@@ -38,9 +38,25 @@ UnitBlueprint {
     },
     Air = {
         AutoLandTime = 1,
-        BankFactor = 0,
-	BankForward = false,
+        BankFactor = 1,
+        BankForward = false,
         CanFly = true,
+        CombatTurnSpeed = 1.5,
+        KLift = 3,
+        KLiftDamping = 2.5,
+        KMove = 1,
+        KMoveDamping = 1,
+        KRoll = 2,
+        KRollDamping = 1,
+        KTurn = 1,
+        KTurnDamping = 1.5,
+        LiftFactor = 7,
+        MinAirspeed = 18,
+        MaxAirspeed = 25,
+        StartTurnDistance = 5,
+        TightTurnMultiplier = 1.02,
+        TurnSpeed = 1.5,
+        Winged = true,
     },
     BuildIconSortPriority = 6,
     Categories = {
@@ -48,17 +64,12 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'AIR',
 	'INTELLIGENCE',
 	'RADAR',
         'OVERLAYRADAR',
-
-	--TA Categories
         'ARM',
-        'CORE', -- in lieu of core vulture
         'VTOL',
 	'CTRL_V',
 	'LEVEL2',
@@ -73,6 +84,9 @@ UnitBlueprint {
     },
     Description = 'Radar Plane',
     Display = {
+        Abilities = {
+            '<LOC ability_radar>Radar',
+        },
 	DestructionEffects = {
 		DefaultFlamingProjectileCountMin = 0,
 		DefaultFlamingProjectileCountMax = 0,
@@ -93,7 +107,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -104,9 +118,7 @@ UnitBlueprint {
         BuildCostEnergy = 8062,
         BuildCostMass = 165,
         BuildTime = 12819,
-	NaturalProducer = true,
         MaintenanceConsumptionPerSecondEnergy = 23,
-        ProductionPerSecondEnergy = 23,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -122,13 +134,16 @@ UnitBlueprint {
             RULEUCC_Patrol = true,
             RULEUCC_Stop = true,
         },
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
+        },
         FactionName = 'ARM',
         TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Eagle',
     },
     Intel = {
-        VisionRadius = 22,
-	FreeIntel = true,
+    VisionRadius = 22,
+	FreeIntel = false,
 	RadarRadius = 103, 
     },
     Interface = {
@@ -173,10 +188,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

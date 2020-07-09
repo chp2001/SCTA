@@ -25,16 +25,12 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH3',
-
-	--Additional Categories
+        'EXPERIMENTAL',
 	'STRUCTURE',
 	'DEFENSE',
 	'INDIRECTFIRE',
         'NUKE',
         'SILO',
-
-	--TA Categories
 	'CORE',
 	'SPECIAL',
 	'WEAPON',
@@ -75,7 +71,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -86,6 +82,7 @@ UnitBlueprint {
         BuildCostEnergy = 48768,
         BuildCostMass = 975,
         BuildTime = 181243,
+        BuildRate = 2160,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -94,11 +91,12 @@ UnitBlueprint {
     },
     General = {
 	BuildAngle = 8192,
-        Category = 'Defense',
+        Category = 'Strategic',
         Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_SiloBuildNuke = true,
             RULEUCC_Stop = true,
+            RULEUCC_Pause = true,
             RULEUCC_Nuke = true,
             RULEUCC_RetaliateToggle = true,
         },
@@ -129,7 +127,7 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 3,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure3_missile',
+    StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -143,15 +141,12 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 5500,
-            DamageRadius = 16, 
             DamageType = 'Normal',
             DisplayName = 'CRBLMSSL',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water',
             },
             Label = 'CRBLMSSL',
-            MaxRadius = 4096, 
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 0,
@@ -161,10 +156,11 @@ UnitBlueprint {
                     MuzzleBones = {
                         'missile',
                     },
-		    HideMuzzle = true,
+                    HideMuzzle = true,
                     RackBone = 'missile',
                 },
             },
+            RackFireTogether = false,
             RackRecoilDistance = 0,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
@@ -172,21 +168,34 @@ UnitBlueprint {
             RackSalvoSize = 1,
             RateOfFire = 1,
             TargetCheckInterval = 1,
-            TargetPriorities = {
-                'ALLUNITS',
-            },
-            TargetRestrictDisallow = 'UNTARGETABLE',
-            WeaponRepackTimeout = 4,
-            WeaponUnpacks = true,
-
-	    NukeWeapon = true,
-            ManualFire = 1,
+            EnergyDrainPerSecond = 0,
+            EnergyRequired = 0,
             CountedProjectile = true,
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            FiringTolerance = 2,
             ForceSingleFire = true,
             InitialProjectileStorage = 0,
-            MaxProjectileStorage = 99,
-            ForceSingleFire = true,
-
+            ManualFire = 1,
+            Damage = 0,
+            MaxProjectileStorage = 5,
+            MaxRadius = 20000,
+            MinRadius = 0,
+            MuzzleChargeDelay = 5,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 0,
+            NukeInnerRingDamage = 1000001,
+            NukeInnerRingRadius = 45,
+            NukeInnerRingTicks = 24,
+            NukeInnerRingTotalTime = 12,
+            NukeOuterRingDamage = 7500,
+            NukeOuterRingRadius = 60,
+            NukeOuterRingTicks = 20,
+            NukeOuterRingTotalTime = 5,
+            NukeWeapon = true,            
+            WeaponCategory = 'Missile',
+            WeaponRepackTimeout = 32.5,
+            WeaponUnpacks = true,
         },
         { #ATOMIC_BLASTSML
             Damage = 1000,

@@ -32,15 +32,11 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
 	'ARMPW',
         'OVERLAYDIRECTFIRE',
-
-	--TA Categories
         'ARM',
         'KBOT',
 	'LEVEL1',
@@ -71,7 +67,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -83,12 +79,6 @@ UnitBlueprint {
 	BuildCostEnergy = 697,
 	BuildCostMass = 53,
 	BuildTime = 1452,
-        MaintenanceConsumptionPerSecondEnergy = 0.3,
-        ProductionPerSecondEnergy = 0.3,
-    },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
     },
     General = {
         Category = 'Direct Fire',
@@ -148,7 +138,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 8,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             FiringRandomness = 1,
             DamageType = 'Normal',
             DisplayName = 'EMG',
@@ -157,12 +147,12 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 32.97,
+            FiringTolerance = 2,
             Label = 'EMG',
             MaxRadius = 11.25,
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 3,
-	    MuzzleVelocity = 18.75,
+	        MuzzleVelocity = 18.75,
             ProjectileId = '/mods/SCTA/projectiles/EMG/EMG_proj.bp',
             RackBones = {
                 {
@@ -204,7 +194,7 @@ UnitBlueprint {
             Turreted = true,
         },
         { #SMALL_UNITEX
-            Damage = 30,
+            Damage = 10,
             DamageFriendly = true,
             DamageRadius = 0.9375,
             DamageType = 'Normal',
@@ -212,8 +202,8 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         },
         { #SMALL_UNIT
-            Damage = 200,
-            DamageRadius = 2.34375,
+            Damage = 10,
+            DamageRadius = 0.9375,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

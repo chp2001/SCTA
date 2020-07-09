@@ -33,13 +33,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'ARM',
         'KBOT',
 	'LEVEL2',
@@ -78,7 +78,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -90,9 +90,6 @@ UnitBlueprint {
         BuildCostEnergy = 2221,
         BuildCostMass = 151,
         BuildTime = 6768,
-	NaturalProducer=true,
-        MaintenanceConsumptionPerSecondEnergy = 0.4,
-        ProductionPerSecondEnergy = 0.4,
     },
     Footprint = {
 	SizeX = 2,
@@ -158,7 +155,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 40,
-	    AlternateDamageRadius = 0.25,
+	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARM_FAST',
             FireTargetLayerCapsTable = {
@@ -206,7 +203,7 @@ UnitBlueprint {
             Turreted = true,
         },
         { #SMALL_UNITEX
-            Damage = 30,
+            Damage = 10,
             DamageFriendly = true,
             DamageRadius = 0.9375,
             DamageType = 'Normal',
@@ -214,8 +211,8 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         },
         { #SMALL_UNIT
-            Damage = 200,
-            DamageRadius = 2.34375,
+            Damage = 10,
+            DamageRadius = 0.9375,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

@@ -26,13 +26,9 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	--Additional Categories
 	'STRUCTURE',
         'ECONOMIC',
 	'ENERGYPRODUCTION',
-
-	--TA Categories
 	'ARM',
 	'ENERGY',
 	'LEVEL3',
@@ -41,7 +37,7 @@ UnitBlueprint {
 	'NOTSUB',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 3100,
         MaxHealth = 3100,
     },
@@ -62,7 +58,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -73,7 +69,7 @@ UnitBlueprint {
         BuildCostEnergy = 36058,
         BuildCostMass = 5130,
         BuildTime = 93768,
-	NaturalProducer = true,
+	    NaturalProducer = true,
         ProductionPerSecondEnergy = 1000,
     },
     Footprint = {

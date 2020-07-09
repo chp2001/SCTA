@@ -44,13 +44,13 @@ UnitBlueprint {
         'RALLYPOINT',
         'SHOWQUEUE',
 
-	--Additional Categories
+	
 	'STRUCTURE',
 	'CONSTRUCTION',
 	'NAVAL',
 	'TEXTUREANIM',
 
-	--TA Categories
+	
 	'CORE',
 	'PLANT',
 	'CTRL_F',
@@ -61,7 +61,7 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.5,
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 2490,
         MaxHealth = 2490,
     },
@@ -94,7 +94,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -106,8 +106,6 @@ UnitBlueprint {
         BuildCostMass = 600, 
         BuildTime = 6000,
 	BuildRate = 100,
-	ProductionPerSecondMass = 0.5,
-	NaturalProducer = true,
         BuildableCategory = {
             'SHIP LEVEL1 CORE',
             'NORMALSUB LEVEL1 CORE',
@@ -191,16 +189,16 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 300,
+            Damage = 20,
             DamageFriendly = true,
-            DamageRadius = 3.75,
+            DamageRadius = 1,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
         { #LARGE_BUILDING
-            Damage = 1800,
-            DamageRadius = 12.5,
+            Damage = 50,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

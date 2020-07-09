@@ -42,14 +42,10 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'LAND',
 	'INTELLIGENCE',
         'OVERLAYCOUNTERINTEL',
-
-	--TA Categories
         'ARM',
         'TANK',
         'VEHICLE',
@@ -68,7 +64,7 @@ UnitBlueprint {
     Description = 'Mobile Radar Jammer',
     Display = {
         Abilities = {
-            'Radar Jammer',
+            '<LOC ability_stealthfield>Stealth Field',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Tredside','ArmCockpit'},
@@ -94,7 +90,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -105,9 +101,7 @@ UnitBlueprint {
         BuildCostEnergy = 1621,
         BuildCostMass = 97,
         BuildTime = 5933,
-	NaturalProducer = true,
-	MaintenanceConsumptionPerSecondEnergy = 16,
-	ProductionPerSecondEnergy = 16,
+	MaintenanceConsumptionPerSecondEnergy = 12,
     },
     Footprint = {
 	SizeX = 2,
@@ -132,9 +126,8 @@ UnitBlueprint {
         UnitWeight = 1,
     },
     Intel = {
-	FreeIntel = true,
-        VisionRadius = 15,
-	RadarStealth = true,
+	FreeIntel = false,
+    VisionRadius = 15,
 	RadarStealthFieldRadius = 25,
     },
     Interface = {
@@ -169,10 +162,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

@@ -24,14 +24,11 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	--Additional Categories
 	'STRUCTURE',
         'ECONOMIC',
 	'ENERGYPRODUCTION',
 	'UNDERWATER',
-
-	--TA Categories
+	'CORE',
 	'ARM',
 	'ENERGY',
 	'LEVEL3',
@@ -40,7 +37,7 @@ UnitBlueprint {
 	'NOTSUB',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 1231,
         MaxHealth = 1231,
     },
@@ -64,7 +61,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },

@@ -32,15 +32,11 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
 	'ARMFLASH',
         'OVERLAYDIRECTFIRE',
-
-	--TA Categories
         'ARM',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL1',
@@ -71,7 +67,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -82,9 +78,6 @@ UnitBlueprint {
         BuildCostEnergy = 870,
         BuildCostMass = 106,
         BuildTime = 1676,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 0.5,
-        ProductionPerSecondEnergy = 0.5,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -149,7 +142,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 8,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             FiringRandomness = 1,
             DamageType = 'Normal',
             DisplayName = 'EMG',
@@ -158,7 +151,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 32.97,
+            FiringTolerance = 3,
             Label = 'EMG',
             MaxRadius = 11.25,
             MuzzleSalvoDelay = 0.1,
@@ -209,10 +202,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

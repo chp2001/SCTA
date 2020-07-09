@@ -5,6 +5,27 @@ TAweapon = Class(DefaultWeapon) {
     FxMuzzleFlash = {},
 
     StartEconomyDrain = function(self)
+        if self.FirstShot then return end
+        if self.unit:GetFractionComplete() ~= 1 then return end
+
+        local bp = self:GetBlueprint()
+        if not self.EconDrain and bp.EnergyRequired and bp.EnergyDrainPerSecond then
+            local nrgReq = self:GetWeaponEnergyRequired()
+            local nrgDrain = self:GetWeaponEnergyDrain()
+            if nrgReq > 0 and nrgDrain > 0 then
+                local time = nrgReq / nrgDrain
+                if time < 0.1 then
+                    time = 0.1
+                end
+                self.EconDrain = CreateEconomyEvent(self.unit, nrgReq, 0, time)
+                self.FirstShot = true
+                self.unit:ForkThread(function()
+                    WaitFor(self.EconDrain)
+                    RemoveEconomyEvent(self.unit, self.EconDrain)
+                    self.EconDrain = nil
+                end)
+            end
+        end
     end,
 
     OnGotTargetCheck = function(self)
@@ -35,7 +56,7 @@ TAweapon = Class(DefaultWeapon) {
             return false
         end
     end,
-
+    
     IdleState = State(DefaultWeapon.IdleState) {
         OnGotTarget = function(self)
             if (self:OnGotTargetCheck() == true) then
@@ -122,7 +143,7 @@ TAweapon = Class(DefaultWeapon) {
         local damageTable = {}
         damageTable.EdgeEffectiveness = weaponBlueprint.EdgeEffectiveness
         damageTable.DamageRadius = weaponBlueprint.DamageRadius + (self.DamageRadiusMod or 0)
-        damageTable.AlternateDamageRadius = weaponBlueprint.AlternateDamageRadius or 0
+        damageTable.DamageRadius = weaponBlueprint.DamageRadius or 0
         damageTable.DamageAmount = weaponBlueprint.Damage + (self.DamageMod or 0)
         damageTable.DamageType = weaponBlueprint.DamageType
         damageTable.DamageFriendly = weaponBlueprint.DamageFriendly

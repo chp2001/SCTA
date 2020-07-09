@@ -24,7 +24,7 @@ UnitBlueprint {
             Bank = 'TA_Sound',
             Cue = 'XPLOLRG3',
             LodCutoff = 'UnitMove_LodCutoff',
-	},
+	    },
     },
     BuildIconSortPriority = 3,
     Categories = {
@@ -32,15 +32,11 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'ANTIAIR',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
         'LAND',
-
-	--TA Categories
         'CORE',
         'HOVER',
 	'WEAPON',
@@ -56,6 +52,9 @@ UnitBlueprint {
     },
     Description = 'Anti-Air Hovercraft',
     Display = {
+        Abilities = {
+            '<LOC ability_aa>Anti-Air',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'CorCockpit','CorHover'},
 		DestructionEmitters = {
@@ -71,7 +70,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -92,9 +91,6 @@ UnitBlueprint {
         BuildCostEnergy = 1444,
         BuildCostMass = 120,
         BuildTime = 3747,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 2.6,
-        ProductionPerSecondEnergy = 2.6,
     },
     Footprint = {
 	MaxSlope = 1,
@@ -161,7 +157,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 49,
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'CORAH_WEAPON',
@@ -170,31 +166,31 @@ UnitBlueprint {
                 Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-	    FiringTolerance = 55,
+	    FiringTolerance = 1,
             Label = 'CORAH_WEAPON',
             MaxRadius = 40.625,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 28.125,
-            ProjectileId = '/mods/SCTA/projectiles/CORAH_WEAPON/CORAH_WEAPON_proj.bp',
+            ProjectileId = '/mods/SCTA/projectiles/ARMAH_WEAPON/ARMAH_WEAPON_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
                         'muzzle_01',
                     },
-                    RackBone = 'box',
+                    RackBone = 'turret',
                 },
                 {
                     MuzzleBones = {
                         'muzzle_02',
                     },
-                    RackBone = 'box',
+                    RackBone = 'turret',
                 },
                 {
                     MuzzleBones = {
                         'muzzle_03',
                     },
-                    RackBone = 'box',
+                    RackBone = 'turret',
                 },
             },
             RackRecoilDistance = 0,
@@ -210,8 +206,8 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
             TurretBoneMuzzle = 'muzzle_02',
-            TurretBonePitch = 'box',
-            TurretBoneYaw = 'box',
+            TurretBonePitch = 'turret',
+            TurretBoneYaw = 'turret',
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 360,
@@ -220,8 +216,13 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 250,
             Turreted = true,
-	    WeaponUnpacks = true,
-            WeaponRepackTimeout = 3,
+			WeaponUnpacks = true,
+			WeaponRepackTimeout = 3,
+			WeaponUnpackAnimation = '/mods/SCTA/units/CORAH/CORAH_lod0_Bunpack.sca',
+            WeaponUnpackAnimationRate = 3,
+			WeaponUnpackLocksMotion = false,
+			
+
         },
         { #DUMMY WEAPON FOR ANTI AIR ATTACK RINGS
             Fake = true,
@@ -240,10 +241,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

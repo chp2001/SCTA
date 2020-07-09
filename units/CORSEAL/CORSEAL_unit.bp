@@ -33,14 +33,14 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'AMPHIBIOUS',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'CORE',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL2',
@@ -84,7 +84,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -95,9 +95,6 @@ UnitBlueprint {
         BuildCostEnergy = 2310,
         BuildCostMass = 295,
         BuildTime = 6119,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 0.5,
-        ProductionPerSecondEnergy = 0.5,
     },
     Footprint = {
 	MaxSlope = 0.75,
@@ -162,7 +159,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 127,
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'CORE_MEDIUMCANNON',
             FireTargetLayerCapsTable = {

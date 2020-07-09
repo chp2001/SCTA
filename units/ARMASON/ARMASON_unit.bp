@@ -34,16 +34,12 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	--Additional Categories
 	'STRUCTURE',
 	'INTELLIGENCE',
 	'SONAR',
 	'NAVAL',
 	'TEXTUREANIM',
         'OVERLAYSONAR',
-
-	--TA Categories
 	'ARM',
 	'SPECIAL',
 	'SONAR',
@@ -82,7 +78,7 @@ UnitBlueprint {
             LODs = {
                 {
                   LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -93,9 +89,8 @@ UnitBlueprint {
         BuildCostEnergy = 2469,
         BuildCostMass = 163,
         BuildTime = 6152,
-	NaturalProducer = true,
-        ProductionPerSecondEnergy = 22,
-	MaintenanceConsumptionPerSecondEnergy = 22,
+	NaturalProducer = false,
+	MaintenanceConsumptionPerSecondEnergy = 10,
     },
     Footprint = {
         SizeX = 4,
@@ -115,8 +110,8 @@ UnitBlueprint {
         UnitName = 'Advanced Sonar Station',
     },
     Intel = {
-	FreeIntel = true,
-        VisionRadius = 11,
+	FreeIntel = false,
+    VisionRadius = 11,
 	SonarRadius = 140,
 	WaterVisionRadius = 11,
     },
@@ -150,9 +145,9 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #SMALL_BUILDING
-            Damage = 900,
-            DamageRadius = 6.406,
+         { #SMALL_BUILDING
+            Damage = 50,
+            DamageRadius = 2,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

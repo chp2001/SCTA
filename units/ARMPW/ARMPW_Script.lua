@@ -7,12 +7,10 @@ local TAunit = import('/mods/SCTA/lua/TAunit.lua').TAunit
 local TAweapon = import('/mods/SCTA/lua/TAweapon.lua').TAweapon
 
 ARMPW = Class(TAunit) {
-	
-	Weapons = {
+		Weapons = {
 		EMG = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.1)
 			end,
 		},
 	},

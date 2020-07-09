@@ -55,8 +55,8 @@ UnitBlueprint {
         KTurn = 0.7,
         KTurnDamping = 1,
         LiftFactor = 7,
-        MaxAirspeed = 10,
-        MinAirspeed = 10,
+        MaxAirspeed = 14,
+        MinAirspeed = 12,
         PredictAheadForBombDrop = 2.7,
         StartTurnDistance = 5,
         TightTurnMultiplier = 0,
@@ -70,13 +70,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'ANTINAVY',
 	'AIR',
         'OVERLAYANTINAVY',
 
-	--TA Categories
+	
         'ARM',
         'VTOL',
 	'CTRL_V',
@@ -118,7 +118,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -129,9 +129,6 @@ UnitBlueprint {
         BuildCostEnergy = 6438,
         BuildCostMass = 378,
         BuildTime = 14096,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 1.5,
-        ProductionPerSecondEnergy = 1.5,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -157,6 +154,8 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 22,
+        SonarRadius = 30, 
+		WaterVisionRadius = 15,
     },
     Interface = {
         HelpText = 'Torpedo Bomber',
@@ -167,16 +166,8 @@ UnitBlueprint {
     Physics = {
         Elevation = 9.375,
         MotionType = 'RULEUMT_Air',
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
-        MaxAcceleration = 7.2,
-        MaxBrake = 216,
-        MaxSpeed = 18.1875,
-        TurnRate = 69,
-	RotateOnSpot = true,
-	MinSpeedPercent = 0,
-	MaxSteerForce = 10,
-	TurnRadius = 0,
+    MaxSpeed = 0.5, 
+    RotateOnSpot = true,
 	FuelRechargeRate = 999999,
 	FuelUseTime = 999999,
     },
@@ -206,7 +197,7 @@ UnitBlueprint {
             DamageFriendly = true,
             Damage = 750,
             BombDropThreshold = 3,
-            AlternateDamageRadius = 0.5,
+            DamageRadius = 0.5,
             FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'ARMAIR_TORPEDO',
@@ -215,7 +206,7 @@ UnitBlueprint {
                 Land = 'Water|Seabed|Sub|Seabed',
             },
             RangeCategory = 'UWRC_AntiNavy',
-            FiringTolerance = 33,
+            FiringTolerance = 8,
 	    HeadingArcCenter = 0,
     	    HeadingArcRange = 16.5,
             Label = 'ARMAIR_TORPEDO',

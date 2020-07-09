@@ -47,13 +47,10 @@ UnitBlueprint {
         'RECLAIMABLE',
         'PATROLHELPER',
         'SHOWQUEUE',
-
-	--Additional Categories
+        'SELECTION',
         'MOBILE',
 	'CONSTRUCTION',
 	'NAVAL',
-
-	--TA Categories
         'ARM',
         'SHIP',
 	'LEVEL1',
@@ -99,7 +96,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -124,8 +121,6 @@ UnitBlueprint {
         StorageMass = 50,
 	NaturalProducer = true,
 	ProductionPerSecondEnergy = 7,
-	ProductionPerSecondMass = 0.3,
-	MaintenanceConsumptionPerSecondEnergy = 0.1,
     },
     Footprint = {
         SizeX = 4,
@@ -186,10 +181,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

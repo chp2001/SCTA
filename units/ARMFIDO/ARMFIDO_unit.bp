@@ -33,13 +33,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'ARM',
         'KBOT',
 	'LEVEL2',
@@ -79,7 +79,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -91,9 +91,6 @@ UnitBlueprint {
         BuildCostEnergy = 3556,
         BuildCostMass = 398,
         BuildTime = 10827,
-	NaturalProducer=true,
-        MaintenanceConsumptionPerSecondEnergy = 0.8,
-        ProductionPerSecondEnergy = 0.8,
     },
     Footprint = {
 	SizeX = 2,
@@ -158,7 +155,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 120,
-	    AlternateDamageRadius = 0.25,
+	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'GAUSS',
             FireTargetLayerCapsTable = {

@@ -8,7 +8,6 @@ UnitBlueprint {
         GuardReturnRadius = 75,
         GuardScanRadius = 60,
     },
-
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
@@ -72,15 +71,12 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
+        'HIGHALTAIR',
         'MOBILE',
 	'ANTIAIR',
 	'AIR',
         'OVERLAYANTIAIR',
 	'OVERLAYDIRECTFIRE',
-
-	--TA Categories
         'CORE',
         'VTOL',
 	'CTRL_V',
@@ -99,8 +95,8 @@ UnitBlueprint {
     Description = 'Stealth Fighter',
     Display = {
         Abilities = {
-            'Anti-Air',
-            'Radar Stealth',
+            '<LOC ability_aa>Anti-Air',
+            '<LOC ability_personalstealth>Personal Stealth',
         },
 	DestructionEffects = {
 		DefaultFlamingProjectileCountMin = 0,
@@ -122,7 +118,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -133,9 +129,7 @@ UnitBlueprint {
         BuildCostEnergy = 6973,
         BuildCostMass = 257,
         BuildTime = 15924,
-	NaturalProducer = true,
         MaintenanceConsumptionPerSecondEnergy = 15,
-        ProductionPerSecondEnergy = 15,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -160,9 +154,9 @@ UnitBlueprint {
         UnitName = 'Vamp',
     },
     Intel = {
-        VisionRadius = 22,
+    VisionRadius = 22,
 	RadarStealth = true,
-	FreeIntel = true,
+	FreeIntel = false,
     },
     Interface = {
         HelpText = 'Stealth Fighter',
@@ -211,7 +205,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 68, 						
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'CORVTOL_ADVMISSILE',
@@ -220,7 +214,7 @@ UnitBlueprint {
                 Land = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_AntiAir',
-            FiringTolerance = 43.96,
+            FiringTolerance = 4,
 	    HeadingArcCenter = 0,
     	    HeadingArcRange = 43.96,
             Label = 'CORVTOL_ADVMISSILE',
@@ -262,7 +256,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 68, 						
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'CORVTOL_ADVMISSILE2',
@@ -270,7 +264,7 @@ UnitBlueprint {
                 Air = 'Land|Water|Air|Seabed',
                 Land = 'Land|Water|Air|Seabed',
             },
-            FiringTolerance = 43.96,
+            FiringTolerance = 4,
 	    HeadingArcCenter = 0,
     	    HeadingArcRange = 43.96,
             Label = 'CORVTOL_ADVMISSILE2',
@@ -335,10 +329,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

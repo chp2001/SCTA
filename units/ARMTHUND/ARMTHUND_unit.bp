@@ -69,14 +69,10 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'BOMBER',
 	'AIR',
         'OVERLAYDIRECTFIRE',
-
-	--TA Categories
         'ARM',
         'VTOL',
 	'CTRL_V',
@@ -114,7 +110,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -125,9 +121,6 @@ UnitBlueprint {
         BuildCostEnergy = 5496,
         BuildCostMass = 130,
         BuildTime = 10155,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 1.1,
-        ProductionPerSecondEnergy = 1.1,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -163,16 +156,8 @@ UnitBlueprint {
     Physics = {
         Elevation = 12.5,
         MotionType = 'RULEUMT_Air',
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
-        MaxAcceleration = 2.88,
-        MaxBrake = 14.4,
-        MaxSpeed = 16.875,
-        TurnRate = 58,
-	RotateOnSpot = true,
-	MinSpeedPercent = 0,
-	MaxSteerForce = 10,
-	TurnRadius = 0,
+    MaxSpeed = 0.5, 
+    RotateOnSpot = true,
 	FuelRechargeRate = 999999,
 	FuelUseTime = 999999,
     },
@@ -202,7 +187,7 @@ UnitBlueprint {
             DamageFriendly = true,
             Damage = 158,
             BombDropThreshold = 3,					
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'ARMBOMB',
             FireTargetLayerCapsTable = {

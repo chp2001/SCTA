@@ -36,14 +36,10 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	--Additional Categories
 	'STRUCTURE',
 	'INTELLIGENCE',
 	'RADAR',
         'OVERLAYRADAR',
-
-	--TA Categories
 	'ARM',
 	'SPECIAL',
 	'LEVEL3',
@@ -60,7 +56,7 @@ UnitBlueprint {
     Description = 'Long Range Radar Tower',
     Display = {
         Abilities = {
-            'Radar',
+            '<LOC ability_radar>Radar',
         },
 	DestructionEffects = {
 		DestructionEmitters = {
@@ -85,7 +81,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -96,8 +92,8 @@ UnitBlueprint {
         BuildCostEnergy = 1830,
         BuildCostMass = 125,
         BuildTime = 4800,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 18,
+	    NaturalProducer = false,
+    MaintenanceConsumptionPerSecondEnergy = 18,
 	ProductionPerSecondEnergy = 18,
     },
     Footprint = {
@@ -118,8 +114,8 @@ UnitBlueprint {
 	UnitName = 'Advanced Radar Tower',
     },
     Intel = {
-	FreeIntel = true,
-        VisionRadius = 22, 
+	FreeIntel = false,
+    VisionRadius = 22, 
 	RadarRadius = 180,
     },
     Interface = {
@@ -152,9 +148,9 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #SMALL_BUILDING
-            Damage = 900,
-            DamageRadius = 6.406,
+         { #SMALL_BUILDING
+            Damage = 50,
+            DamageRadius = 2,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

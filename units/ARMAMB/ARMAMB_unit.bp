@@ -26,14 +26,10 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	--Additional Categories
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
-
-	--TA Categories
 	'ARM',
 	'LEVEL2',
 	'STRATEGIC',
@@ -72,7 +68,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -140,8 +136,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 310,
-            AlternateDamageRadius = 3.125, 
+            Damage = 400,
+            DamageRadius = 3.125, 
             DamageType = 'Normal',
             DisplayName = 'ARMAMB_GUN',
             FireTargetLayerCapsTable = {

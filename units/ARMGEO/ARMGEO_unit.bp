@@ -27,13 +27,13 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH2',
 
-	--Additional Categories
+	
 	'STRUCTURE',
         'ECONOMIC',
 	'ENERGYPRODUCTION',
 	'HYDROCARBON',
 
-	--TA Categories
+	
 	'ARM',
 	'ENERGY',
 	'LEVEL2',
@@ -65,7 +65,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },

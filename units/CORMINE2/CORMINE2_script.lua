@@ -37,7 +37,7 @@ CORMINE2 = Class(TAunit) {
 	end,
 
 	OnIntelEnabled = function(self)
-		self:SetMesh('/units/CORMINE2/CORMINE2_cloak_mesh', true)
+		self:SetMesh('/mods/SCTA/units/CORMINE2/CORMINE2_cloak_mesh', true)
 	end,
 }
 TypeClass = CORMINE2

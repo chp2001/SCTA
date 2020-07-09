@@ -10,8 +10,6 @@ local WreckShield = import('/mods/SCTA/lua/TAshield.lua').WreckShield
 
 TAunit = Class(Unit) 
 {
-
-
 	lastHitVector = nil,
 	buildAngle = 0,
 	textureAnimation = false,
@@ -27,11 +25,6 @@ TAunit = Class(Unit)
 
 	OnCreate = function(self)
         Unit.OnCreate(self)
-
-        if not TAutils.wind.threadStarted then
-            ForkThread(TAutils.WindChangeThread, self)
-        end
-
 		self:SetFireState(2)
 		local bp = self:GetBlueprint()
 		if bp.General.BuildAngle then
@@ -179,7 +172,7 @@ TAunit = Class(Unit)
 			self:PlayUnitSound('StopMove')
 		end
 		self.CurrentSpeed = new
-	        self:StopRocking()
+			self:StopRocking()
 	end,
 
 				
@@ -229,21 +222,8 @@ TAunit = Class(Unit)
 	end,
 
 	OnKilled = function(self, instigator, type, overkillRatio)
-		local bp = self:GetBlueprint()
-		if self:GetFractionComplete() == 1 then
-			for k, weapon in bp.Weapon do
-				#Self Destruct
-				if ((self == instigator and weapon.Label == 'SuicideWeapon') or (self != instigator and weapon.Label == 'DeathWeapon') and type ~= "Reclaimed")then
-					TAutils.DoTaperedAreaDamage(self, self:GetPosition(), weapon.DamageRadius, weapon.Damage, nil, nil, 'Normal', true, false, weapon.EdgeEffectiveness)
-					if (self == instigator and weapon.Label == 'SuicideWeapon') then
-						self:CreateDebrisProjectiles()
-						self.Suicide = true
-					end
-				end
-			end
-		end
-		Unit.OnKilled(self, instigator, type, overkillRatio)
-	end,
+        Unit.OnKilled(self, instigator, type, overkillRatio)
+    end,
 
 	CreateWreckage = function( self, overkillRatio )
 
@@ -381,11 +361,6 @@ TAunit = Class(Unit)
         end
 
         self:CreateWreckage( overkillRatio )
-
-        # CURRENTLY DISABLED UNTIL DESTRUCTION
-        # Create destruction debris out of the mesh, currently these projectiles look like crap,
-        # since projectile rotation and terrain collision doesn't work that great. These are left in
-        # hopes that this will look better in the future.. =)
         if( self.ShowUnitDestructionDebris and overkillRatio ) then
             if overkillRatio <= 1 then
                 self.CreateUnitDestructionDebris( self, true, true, false )
@@ -403,53 +378,7 @@ TAunit = Class(Unit)
 
         self:PlayUnitSound('Destroyed')
         self:Destroy()
-    end,
-
-    ##########################################################################################
-    ## VETERANCY
-    ##########################################################################################
-
-
-    #Check to see if we should veteran up.
-    CheckVeteranLevel = function(self)
-        local bp = self:GetBlueprint().Veteran
-        if not bp then
-            bp = Game.VeteranDefault
-        end
-        local unitKills = self:GetStat('KILLS', 0).Value + 1
-        if self.VeteranLevel == table.getsize(bp) then
-            #return # Don't stop at level 5
-        end
-
-        local nextLvl = self.VeteranLevel + 1
-        local nextKills = bp[('Level' .. nextLvl)]
-        if unitKills >= nextKills then
-            self:SetVeteranLevel(nextLvl)
-        end
-    end,
-
-    SetVeteranLevel = function(self, level)
-        local old = self.VeteranLevel
-        self.VeteranLevel = level
-
-      
-        for i = 1, self:GetWeaponCount() do
-            local wep = self:GetWeapon(i)
-            wep:OnVeteranLevel(old, level)
-        end
-
-        local bp = self:GetBlueprint().Buffs
-        if bp then
-            local lvlkey = 'VeteranLevel' .. level
-            for k, v in bp do
-                if v.Add[lvlkey] == true then
-                    self:AddBuff(v)
-                end
-            end
-        end
-        self:GetAIBrain():OnBrainUnitVeterancyLevel(self, level)
-        self:DoUnitCallbacks('OnVeteran')
-    end,
+	end,
 }
 
 TypeClass = TAunit

@@ -63,8 +63,8 @@ UnitBlueprint {
 	},
     },
     Categories = {
+        'SELECTION', 
         'SELECTABLE',
-        'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'ENGINEER',
@@ -73,12 +73,10 @@ UnitBlueprint {
         'CAPTURE',
         'REPAIR',
         'SHOWQUEUE',
-
-	--Additional Categories
         'MOBILE',
-	'LAND',
-	'MOBILE',
-	'DIRECTFIRE',
+        'LAND',
+        'MOBILE',
+         'DIRECTFIRE',
         'ECONOMIC',
         'COMMAND',
         'MASSPRODUCTION',
@@ -86,9 +84,9 @@ UnitBlueprint {
         'CONSTRUCTION',
         'OVERLAYDIRECTFIRE',
         'OVERLAYRADAR',
-        'OVERLAYSONAR',
-
-	--TA Categories
+        'OVERLAYOMNI', 
+        'OMNI',
+        'OVERLAYSONAR',	
         'ARM',
         'COMMANDER',
 	'LEVEL10',
@@ -106,12 +104,11 @@ UnitBlueprint {
     Description = 'Commander',
     Display = {
         Abilities = {
-            'Commander',
-            'Radar',
-            'Sonar',
-            'Cloak',
-            'Capture',
-            'Amphibious',
+            '<LOC ability_amphibious>Amphibious',
+            '<LOC ability_customizable>Customizable',
+            '<LOC ability_notcap>Not Capturable',
+            '<LOC ability_omni>Omni Sensor',
+            '<LOC ability_cloak>Cloaking',
             'D-Gun',
             'Construction Unit',
         },
@@ -138,7 +135,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -239,7 +236,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 60,
-            AlternateDamageRadius = 0.5,
+            DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'ARMCOMLASER',
             FireTargetLayerCapsTable = {
@@ -295,7 +292,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 999999,
-            AlternateDamageRadius = 0.5,
+            DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'ARM_DISINTEGRATOR',
             FireTargetLayerCapsTable = {
@@ -343,7 +340,7 @@ UnitBlueprint {
 	    ManualFire = true,
         },
         {
-            Damage = 9999,
+            Damage = 3000,
             DamageFriendly = true,
             DamageRadius = 29.6875,
             DamageType = 'Normal',
@@ -353,7 +350,7 @@ UnitBlueprint {
 	    EdgeEffectiveness=0.75,
         },
         {
-            Damage = 9999,
+            Damage = 3000,
             DamageFriendly = true,
             DamageRadius = 29.6875,
             DamageType = 'Normal',

@@ -33,7 +33,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'NAVAL',
     'T1SUBMARINE',
@@ -44,7 +44,7 @@ UnitBlueprint {
 	--Weapon Damage Category
 	'NORMALSUB',
 
-	--TA Categories
+	
         'CORE',
         'UNDERWATER',
 	'LEVEL1',
@@ -83,7 +83,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -99,9 +99,6 @@ UnitBlueprint {
         BuildCostEnergy = 3902,
         BuildCostMass = 1199,
         BuildTime = 9729,
-	ProductionPerSecondEnergy = 0.4,
-	MaintenanceConsumptionPerSecondEnergy = 0.4,
-	NaturalProducer = true,
     },
     Footprint = {
         SizeX = 3,
@@ -167,7 +164,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 370,
-	    AlternateDamageRadius = 0.5,
+	    DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'CORE_TORPEDO',
             FireTargetLayerCapsTable = {
@@ -214,7 +211,7 @@ UnitBlueprint {
             Turreted = true,
         },
         { #SMALL_UNITEX
-            Damage = 30,
+            Damage = 10,
             DamageFriendly = true,
             DamageRadius = 0.9375,
             DamageType = 'Normal',
@@ -222,8 +219,8 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         },
         { #SMALL_UNIT
-            Damage = 200,
-            DamageRadius = 2.34375,
+            Damage = 10,
+            DamageRadius = 0.9375,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

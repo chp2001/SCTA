@@ -32,13 +32,9 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'DIRECTFIRE',
         'LAND',
-
-	--TA Categories
         'ARM',
         'HOVER',
 	'WEAPON',
@@ -69,7 +65,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -90,9 +86,6 @@ UnitBlueprint {
         BuildCostEnergy = 2856,
         BuildCostMass = 272,
         BuildTime = 8115,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 2.6,
-        ProductionPerSecondEnergy = 2.6,
     },
     Footprint = {
 	MaxSlope = 1,
@@ -159,7 +152,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 80,
-            AlternateDamageRadius = 0.5,
+            DamageRadius = 0.5,
             FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'ARMANAC_WEAPON',
@@ -213,10 +206,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

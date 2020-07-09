@@ -27,13 +27,13 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH3',
 
-	--Additional Categories
+	
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
 	'CORE',
 	'SPECIAL',
 	'WEAPON',
@@ -71,7 +71,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -139,7 +139,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 2500,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'CORE_DOOMSDAY',
             FireTargetLayerCapsTable = {
@@ -200,7 +200,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 60,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'CORE_LIGHTLASER',
             FireTargetLayerCapsTable = {
@@ -262,7 +262,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 180,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'CORE_LASERH1',
             FireTargetLayerCapsTable = {

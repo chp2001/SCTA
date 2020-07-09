@@ -27,7 +27,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH1',
 
-	--Additional Categories
+	
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
@@ -36,7 +36,7 @@ UnitBlueprint {
         'OVERLAYSONAR',
         'OVERLAYANTINAVY',
 
-	--TA Categories
+	
 	'ARM',
 	'SPECIAL',
 	'WEAPON',
@@ -71,7 +71,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -82,9 +82,6 @@ UnitBlueprint {
         BuildCostEnergy = 2658,
         BuildCostMass = 804,
         BuildTime = 4120,
-	NaturalProducer = true,
-	ProductionPerSecondEnergy = 0.1,
-	MaintenanceConsumptionPerSecondEnergy = 0.1,
     },
     Footprint = {
         MinWaterDepth = 1.25,
@@ -144,7 +141,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             Damage = 400,
-            AlternateDamageRadius = 0.5,
+            DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'COAX_TORPEDO',
             FireTargetLayerCapsTable = {
@@ -188,7 +185,7 @@ UnitBlueprint {
 	    Turreted = true,
         },
         { #SMALL_UNITEX
-            Damage = 30,
+            Damage = 10,
             DamageFriendly = true,
             DamageRadius = 0.9375,
             DamageType = 'Normal',
@@ -196,8 +193,8 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         },
         { #SMALL_UNIT
-            Damage = 200,
-            DamageRadius = 2.34375,
+            Damage = 10,
+            DamageRadius = 0.9375,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

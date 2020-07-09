@@ -32,14 +32,10 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'SCOUT',
         'OVERLAYDIRECTFIRE',
         'LAND',
-
-	--TA Categories
         'CORE',
         'HOVER',
 	'LEVEL1',
@@ -55,10 +51,10 @@ UnitBlueprint {
     Description = 'Scout Hovercraft',
     Display = {
 	DestructionEffects = {
-		DefaultProjectileCategories = {'CorCockpit','CorHover'},
+		DefaultProjectileCategories = {'ArmCockpit','ArmHover'},
 		DestructionEmitters = {
 			{
-				EmitterBone = {'Turret'},
+				EmitterBone = {'turret'},
 				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
@@ -69,7 +65,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -77,12 +73,12 @@ UnitBlueprint {
 	IdleEffects = {
 		Emitter = '/mods/SCTA/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
+		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04','Wake_05','Wake_06'},
 	},
 	MovementEffects = {
 		Emitter = '/mods/SCTA/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
+		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04','Wake_05','Wake_06'},
 	},
         UniformScale = 0.16,
     },
@@ -90,9 +86,6 @@ UnitBlueprint {
         BuildCostEnergy = 1169,
         BuildCostMass = 76,
         BuildTime = 3388,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 2.6,
-        ProductionPerSecondEnergy = 2.6,
     },
     Footprint = {
 	MaxSlope = 1,
@@ -159,7 +152,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 45,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'CORSH_WEAPON',
@@ -173,13 +166,13 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 28.125,
-            ProjectileId = '/mods/SCTA/projectiles/CORSH_WEAPON/CORSH_WEAPON_proj.bp',
+            ProjectileId = '/mods/SCTA/projectiles/ARMSH_WEAPON/ARMSH_WEAPON_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Muzzle',
+                        'muzzle',
                     },
-                    RackBone = 'Turret',
+                    RackBone = 'turret',
                 },
             },
             RackRecoilDistance = 0,
@@ -194,9 +187,9 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'Muzzle',
-            TurretBonePitch = 'Turret',
-            TurretBoneYaw = 'Turret',
+            TurretBoneMuzzle = 'muzzle',
+            TurretBonePitch = 'turret',
+            TurretBoneYaw = 'turret',
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 360,
@@ -213,16 +206,16 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
     },
     Wreckage = {
-	UseCustomMesh = true,
+        UseCustomMesh = true,
         Blueprint = '/mods/SCTA/units/CORSH/CORSH_dead_prop.bp',
         WreckageLayers = {
             Land = true,

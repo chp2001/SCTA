@@ -52,13 +52,10 @@ UnitBlueprint {
         'RECLAIMABLE',
         'PATROLHELPER',
         'SHOWQUEUE',
-
-	--Additional Categories
         'MOBILE',
+        'SELECTION',
 	'CONSTRUCTION',
         'LAND',
-
-	--TA Categories
         'CORE',
         'HOVER',
 	'LEVEL1',
@@ -75,6 +72,7 @@ UnitBlueprint {
     },
     Description = 'Tech Level 1',
     Display = {
+        AnimationOpen = '/mods/SCTA/units/CORCH/CORCH_aopen.sca',
         Abilities = {
             'Construction Unit',
         },
@@ -97,13 +95,13 @@ UnitBlueprint {
 			},
 		},
 	},
-	BuildBones = {'muzzle'},
+	BuildBones = {'nanogun'},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -111,12 +109,12 @@ UnitBlueprint {
 	IdleEffects = {
 		Emitter = '/mods/SCTA/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04','Wake_05','Wake_06'},
+		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
 	},
 	MovementEffects = {
 		Emitter = '/mods/SCTA/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04','Wake_05','Wake_06'},
+		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
 	},
         UniformScale = 0.16,
     },
@@ -132,9 +130,7 @@ UnitBlueprint {
         StorageEnergy = 80,
         StorageMass = 50,
 	ProductionPerSecondEnergy = 16,
-	ProductionPerSecondMass = 0.3,
 	NaturalProducer = true,
-	MaintenanceConsumptionPerSecondEnergy = 1,
     },
     Footprint = {
 	MaxSlope = 1,
@@ -199,10 +195,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

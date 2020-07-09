@@ -30,13 +30,13 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH1',
 
-	--Additional Categories
+	
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
 	'ARM',
 	'DEFENSIVE',
 	'WEAPON',
@@ -75,7 +75,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -146,7 +146,7 @@ UnitBlueprint {
             DamageFriendly = true,
             EnergyRequired = 10,
             Damage = 60,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARM_LIGHTLASER',
             FireTargetLayerCapsTable = {

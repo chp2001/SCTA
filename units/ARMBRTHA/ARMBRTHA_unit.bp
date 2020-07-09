@@ -7,7 +7,7 @@ UnitBlueprint {
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'SRVLRG3',
+            Cue = 'SERVLRG3',
             LodCutoff = 'UnitMove_LodCutoff',
         },
 	Destroyed = Sound {
@@ -27,13 +27,13 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH3',
 
-	--Additional Categories
+	
 	'STRUCTURE',
 	'DEFENSE',
 	'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
 
-	--TA Categories
+	
 	'ARM',
 	'LEVEL3',
 	'STRATEGIC',
@@ -72,7 +72,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -141,7 +141,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 2000,
-            AlternateDamageRadius = 2.5, 
+            DamageRadius = 2.5, 
             DamageType = 'Normal',
             DisplayName = 'ARM_BERTHACANNON',
             FireTargetLayerCapsTable = {
@@ -157,6 +157,7 @@ UnitBlueprint {
             MuzzleVelocity = 50,
             EnergyChargeForFirstShot = false,
             EnergyRequired = 1500,
+            EnergyDrainPerSecond = 200,
             ProjectileId = '/mods/SCTA/projectiles/ARM_BERTHACANNON/ARM_BERTHACANNON_proj.bp',
             RackBones = {
                 {
@@ -188,6 +189,7 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 5,
             Turreted = true,
+            WeaponCategory = 'Artillery',
         },
         { #ATOMIC_BLAST
             Damage = 2000,

@@ -1,4 +1,4 @@
-#ARM Adv Construction Sbu - Tech Level 2
+#ARM Adv Construction Sub - Tech Level 2
 #ARMACSUB
 #
 #Blueprint created by Raevn
@@ -47,17 +47,13 @@ UnitBlueprint {
         'RECLAIMABLE',
         'PATROLHELPER',
         'SHOWQUEUE',
-
-	--Additional Categories
         'MOBILE',
-	'CONSTRUCTION',
-	'NAVAL',
+        'CONSTRUCTION',
+        'NAVAL',
         'SHIP',
-        'OVERLAYSONAR',
-
-	--TA Categories
-        'ARM',
-        'CORE', -- in lieu of core adv construction sub
+        'OVERLAYSONAR',	
+           'ARM',
+        'SELECTION',
 	'UNDERWATER',
 	'LEVEL2',
 	'CONSTR',
@@ -103,7 +99,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -128,8 +124,7 @@ UnitBlueprint {
         StorageMass = 50,
 	NaturalProducer = true,
 	ProductionPerSecondEnergy = 17,
-	ProductionPerSecondMass = 0.9,
-	MaintenanceConsumptionPerSecondEnergy = 0.1,
+	ProductionPerSecondMass = 1,
     },
     Footprint = {
         SizeX = 4,
@@ -155,9 +150,9 @@ UnitBlueprint {
         UnitName = 'Advanced Construction Sub',
     },
     Intel = {
-        VisionRadius = 8,
-        WaterVisionRadius = 8,
-	SonarRadius = 25,
+        VisionRadius = 15,
+        WaterVisionRadius = 10,
+	SonarRadius = 30,
 	FreeIntel = true,
     },
     Interface = {
@@ -187,7 +182,7 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_UNITEX
-            Damage = 30,
+            Damage = 10,
             DamageFriendly = true,
             DamageRadius = 0.9375,
             DamageType = 'Normal',
@@ -195,8 +190,8 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         },
         { #SMALL_UNIT
-            Damage = 200,
-            DamageRadius = 2.34375,
+            Damage = 10,
+            DamageRadius = 0.9375,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

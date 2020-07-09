@@ -27,13 +27,13 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH3',
 
-	--Additional Categories
+	
 	'STRUCTURE',
 	'DEFENSE',
 	'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
 
-	--TA Categories
+	
 	'CORE',
 	'LEVEL3',
 	'STRATEGIC',
@@ -72,7 +72,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -141,7 +141,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 2400,
-            AlternateDamageRadius = 3.125, 
+            DamageRadius = 3.125, 
             DamageType = 'Normal',
             DisplayName = 'CORE_INTIMIDATOR',
             FireTargetLayerCapsTable = {
@@ -156,7 +156,8 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 62.5,
             EnergyChargeForFirstShot = false,
-            EnergyRequired = 2000,
+            EnergyRequired = 1500,
+            EnergyDrainPerSecond = 200,
             ProjectileId = '/mods/SCTA/projectiles/CORE_INTIMIDATOR/CORE_INTIMIDATOR_proj.bp',
             RackBones = {
                 {
@@ -187,6 +188,7 @@ UnitBlueprint {
             TurretYaw = 0,
             TurretYawRange = 360,
             TurretYawSpeed = 5,
+            WeaponCategory = 'Artillery',
             Turreted = true,
         },
         { #ATOMIC_BLAST

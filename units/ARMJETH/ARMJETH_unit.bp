@@ -32,16 +32,12 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
 	'ANTIAIR',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
-
-	--TA Categories
         'ARM',
         'KBOT',
 	'LEVEL1',
@@ -58,8 +54,8 @@ UnitBlueprint {
     Description = 'Anti-Air Kbot',
     Display = {
         Abilities = {
-            'Anti-Air',
-        },
+                '<LOC ability_aa>Anti-Air',
+            },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{
@@ -83,7 +79,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -95,9 +91,6 @@ UnitBlueprint {
         BuildCostEnergy = 1219,
         BuildCostMass = 128,
         BuildTime = 2631,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 0.4,
-        ProductionPerSecondEnergy = 0.4,
     },
     Footprint = {
         SizeX = 2,
@@ -163,7 +156,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 31,
-            AlternateDamageRadius = 1.5, 
+            DamageRadius = 1.5, 
             DamageType = 'Normal',
             DisplayName = 'ARMKBOT_MISSILE',
             FireTargetLayerCapsTable = {
@@ -171,7 +164,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 49.45,
+            FiringTolerance = 1,
             Label = 'ARMKBOT_MISSILE',
             MaxRadius = 37.75,
             MuzzleSalvoDelay = 0,
@@ -235,10 +228,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

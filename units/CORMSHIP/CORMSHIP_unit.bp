@@ -32,8 +32,6 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'NAVAL',
 	'INDIRECTFIRE',
@@ -44,8 +42,6 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'OVERLAYRADAR',
 	'OVERLAYANTIAIR',
-
-	--TA Categories
         'CORE',
         'SHIP',
 	'LEVEL2',
@@ -63,7 +59,8 @@ UnitBlueprint {
     Description = 'Missile Ship',
     Display = {
         Abilities = {
-            'Anti-Air',
+            '<LOC ability_aa>Anti-Air',
+            '<LOC ability_radar>Radar',
         },
 	DestructionEffects = {
 		#DefaultProjectileCategories = {'ArmShip','ArmBui'},
@@ -89,7 +86,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -105,9 +102,7 @@ UnitBlueprint {
         BuildCostEnergy = 7628,
         BuildCostMass = 2283,
         BuildTime = 22126,
-        ProductionPerSecondEnergy = 0.9,
-        MaintenanceConsumptionPerSecondEnergy = 0.9,
-	NaturalProducer = true,
+        MaintenanceConsumptionPerSecondEnergy = 25,
     },
     Footprint = {
         SizeX = 6,
@@ -130,9 +125,9 @@ UnitBlueprint {
         UnitName = 'Hydra',
     },
     Intel = {
-	FreeIntel = true, 
+	FreeIntel = false, 
         VisionRadius = 15,
-	RadarRadius = 78,
+	    RadarRadius = 78,
     },
     Interface = {
         HelpText = 'Missile Ship',
@@ -171,7 +166,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 500,
-            AlternateDamageRadius = 3,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'CORMSHIP_ROCKET',
             FireTargetLayerCapsTable = {
@@ -179,7 +174,7 @@ UnitBlueprint {
             },
 	    RangeCategory = 'UWRC_IndirectFire',
             Label = 'CORMSHIP_ROCKET',
-	    FiringTolerance = 21.98,
+	    FiringTolerance = 10,
             MaxRadius = 81.25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -229,14 +224,14 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 62,
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'CORSHIP_MISSILE',
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 43.96,
+            FiringTolerance = 4,
             Label = 'CORSHIP_MISSILE',
             MaxRadius = 43.75,
             MuzzleSalvoDelay = 0,
@@ -305,10 +300,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

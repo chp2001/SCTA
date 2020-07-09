@@ -25,17 +25,13 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH3',
-
-	--Additional Categories
+        'EXPERIMENTAL',
 	'STRUCTURE',
 	'DEFENSE',
 	'INDIRECTFIRE',
         'NUKE',
-        'SILO',
-	'NOCUSTOMTARGET',
-
-	--TA Categories
+        'SILO',	
+        'NOCUSTOMTARGET',
 	'ARM',
 	'SPECIAL',
 	'WEAPON',
@@ -50,8 +46,10 @@ UnitBlueprint {
     },
     Description = 'Nuclear Missile Launcher',
     Display = {
+        AttackReticleSize = 60,
         Abilities = {
-            'Nuke',
+            '<LOC ability_manuallaunch>Manual Launch',
+            '<LOC ability_deathaoe>Volatile',
         },
 	DestructionEffects = {
 		DestructionEmitters = {
@@ -76,7 +74,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -86,6 +84,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 52134,
         BuildCostMass = 1010,
+        BuildRate = 2160,
         BuildTime = 178453,
     },
     Footprint = {
@@ -95,13 +94,23 @@ UnitBlueprint {
     },
     General = {
 	BuildAngle = 8192,
-        Category = 'Defense',
+        Category = 'Strategic',
         Classification = 'RULEUC_Weapon',
         CommandCaps = {
+            RULEUCC_Attack = false,
+            RULEUCC_CallTransport = false,
+            RULEUCC_Capture = false,
+            RULEUCC_Guard = false,
+            RULEUCC_Move = false,
+            RULEUCC_Nuke = true,
+            RULEUCC_Patrol = false,
+            RULEUCC_Pause = true,
+            RULEUCC_Reclaim = false,
+            RULEUCC_Repair = false,
+            RULEUCC_RetaliateToggle = false,
             RULEUCC_SiloBuildNuke = true,
             RULEUCC_Stop = true,
-            RULEUCC_Nuke = true,
-            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Transport = false,
         },
         SelectionPriority = 5,
         FactionName = 'ARM',
@@ -130,10 +139,11 @@ UnitBlueprint {
     SizeX = 5,
     SizeY = 3,
     SizeZ = 5,
-    StrategicIconName = 'icon_structure3_missile',
+    StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
@@ -142,17 +152,18 @@ UnitBlueprint {
                 },
             },
             BallisticArc = 'RULEUBA_None',
+            RangeCategory = 'UWRC_IndirectFire',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 5500,
-            DamageRadius = 16, 
             DamageType = 'Normal',
             DisplayName = 'NUCLEAR_MISSILE',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water',
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Sub = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
             },
             Label = 'NUCLEAR_MISSILE',
-            MaxRadius = 4096, 
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 0,
@@ -174,20 +185,34 @@ UnitBlueprint {
             RackSalvoSize = 1,
             RateOfFire = 1,
             TargetCheckInterval = 1,
-            TargetPriorities = {
-                'ALLUNITS',
-            },
-            TargetRestrictDisallow = 'UNTARGETABLE',
-            WeaponRepackTimeout = 4,
-            WeaponUnpacks = true,
-
-	    NukeWeapon = true,
-            ManualFire = 1,
+            EnergyDrainPerSecond = 0,
+            EnergyRequired = 0,
             CountedProjectile = true,
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            FiringTolerance = 2,
             ForceSingleFire = true,
             InitialProjectileStorage = 0,
-            MaxProjectileStorage = 99,
-            ForceSingleFire = true,
+            ManualFire = 1,
+            Damage = 0,
+            MaxProjectileStorage = 5,
+            MaxRadius = 20000,
+            MinRadius = 0,
+            MuzzleChargeDelay = 5,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 0,
+            NukeInnerRingDamage = 1000001,
+            NukeInnerRingRadius = 45,
+            NukeInnerRingTicks = 24,
+            NukeInnerRingTotalTime = 12,
+            NukeOuterRingDamage = 7500,
+            NukeOuterRingRadius = 60,
+            NukeOuterRingTicks = 20,
+            NukeOuterRingTotalTime = 5,
+            NukeWeapon = true,            
+            WeaponCategory = 'Missile',
+            WeaponRepackTimeout = 32.5,
+            WeaponUnpacks = true,
         },
         { #ATOMIC_BLASTSML
             Damage = 1000,

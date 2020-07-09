@@ -33,13 +33,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'CORE',
         'KBOT',
 	'LEVEL2',
@@ -78,7 +78,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -90,9 +90,6 @@ UnitBlueprint {
         BuildCostEnergy = 2200,
         BuildCostMass = 260,
         BuildTime = 3750,
-	NaturalProducer=true,
-        MaintenanceConsumptionPerSecondEnergy = 1.1,
-        ProductionPerSecondEnergy = 1.1,
     },
     Footprint = {
 	SizeX = 2,
@@ -161,7 +158,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 0, #damage is caused in script
-	    AlternateDamageRadius = 1,
+	    DamageRadius = 1,
             DamageType = 'Normal',
             DisplayName = 'FLAMETHROWER',
             FireTargetLayerCapsTable = {
@@ -225,7 +222,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/units/ARMZEUS/ARMZEUS_dead_prop.bp',
+        Blueprint = '/mods/SCTA/units/ARMZEUS/ARMZEUS_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Seabed = true,

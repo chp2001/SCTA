@@ -56,7 +56,7 @@ UnitBlueprint {
         'RECLAIM',
         'REPAIR',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
@@ -64,7 +64,7 @@ UnitBlueprint {
 	'LEVEL2',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'ARM',
 	'WEAPON',
 	'NOTAIR',
@@ -114,7 +114,7 @@ UnitBlueprint {
 		    NormalName = '/mods/SCTA/textures/common/normalsTS.dds',
 		    SpecularName = '/mods/SCTA/units/ARMCOM/ARMCOM_SpecTeam.dds',
 		    AlbedoName = '/mods/SCTA/units/ARMCOM/ARMCOM_Albedo.dds',
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
                 },
             },
         },
@@ -196,7 +196,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 60,
-            AlternateDamageRadius = 0.5,
+            DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'ARMCOMLASER',
             FireTargetLayerCapsTable = {

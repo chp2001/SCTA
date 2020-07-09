@@ -33,13 +33,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'CORE',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL1',
@@ -69,7 +69,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -80,9 +80,6 @@ UnitBlueprint {
         BuildCostEnergy = 887,
         BuildCostMass = 110,
         BuildTime = 1737,
-	NaturalProducer=true,
-        MaintenanceConsumptionPerSecondEnergy = 0.5,
-        ProductionPerSecondEnergy = 0.5,
     },
     Footprint = {
 	SizeX = 2,
@@ -148,7 +145,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 44,
-	    AlternateDamageRadius = 0.25,
+	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'GATOR_LASER',
             FireTargetLayerCapsTable = {
@@ -203,10 +200,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

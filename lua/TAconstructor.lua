@@ -103,7 +103,6 @@ TAconstructor = Class(TAunit) {
 
 
     OnKilled = function(self, instigator, type, overkillRatio)
-        #If factory, destory what I'm building if I die
         TAunit.OnKilled(self, instigator, type, overkillRatio)
         if self.isFactory then
             if self.currentTarget and not self.currentTarget:IsDead() and self.currentTarget:GetFractionComplete() != 1 then
@@ -266,9 +265,12 @@ TAconstructor = Class(TAunit) {
 		end
 	end,
 
-	Open = function(self)
+	Unpack = function(self)
 	end,
 
+	Open = function(self)
+	end,
+	
 	Aim = function(self, target)
 	end,
 

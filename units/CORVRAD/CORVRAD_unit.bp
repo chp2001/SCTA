@@ -32,15 +32,11 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'LAND',
 	'INTELLIGENCE',
 	'RADAR',
         'OVERLAYRADAR',
-
-	--TA Categories
         'CORE',
         'VEHICLE',	#'TANK' in TA
 	'NOWEAPON',
@@ -58,7 +54,7 @@ UnitBlueprint {
     Description = 'Mobile Radar',
     Display = {
         Abilities = {
-            'Radar',
+            '<LOC ability_radar>Radar',
         },
 	DestructionEffects = {
 		#DefaultProjectileCategories = {'Tredside','ArmCockpit'},
@@ -84,7 +80,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -95,9 +91,7 @@ UnitBlueprint {
         BuildCostEnergy = 1209,
         BuildCostMass = 86,
         BuildTime = 4223,
-	NaturalProducer = true,
-	MaintenanceConsumptionPerSecondEnergy = 11,
-	ProductionPerSecondEnergy = 11,
+	MaintenanceConsumptionPerSecondEnergy = 8,
     },
     Footprint = {
 	SizeX = 3,
@@ -120,9 +114,9 @@ UnitBlueprint {
         UnitName = 'Informer',
     },
     Intel = {
-	FreeIntel = true,
+	FreeIntel = false,
         VisionRadius = 13,
-	RadarRadius = 70,
+	    RadarRadius = 70,
     },
     Interface = {
         HelpText = 'Mobile Radar',
@@ -156,10 +150,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

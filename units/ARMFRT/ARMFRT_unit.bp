@@ -26,14 +26,14 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH2',
 
-	--Additional Categories
+	
 	'STRUCTURE',
 	'DEFENSE',
 	'ANTIAIR',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
 
-	--TA Categories
+	
 	'ARM',
     'CORE', -- in lieu of core floating mt
 	'SPECIAL',
@@ -70,7 +70,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -82,7 +82,6 @@ UnitBlueprint {
         BuildCostEnergy = 987,
         BuildCostMass = 71,
         BuildTime = 2163,
-	MaintenanceConsumptionPerSecondEnergy = 0.1,
     },
     Footprint = {
         SizeX = 4,
@@ -141,14 +140,14 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 46,
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'ARMFRT_MISSILE',
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 43.96,
+            FiringTolerance = 8,
             Label = 'ARMFRT_MISSILE',
             MaxRadius = 43.75,
             MuzzleSalvoDelay = 0,
@@ -206,10 +205,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

@@ -33,14 +33,14 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'SCOUT',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'ARM',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL1',
@@ -71,7 +71,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -82,9 +82,6 @@ UnitBlueprint {
         BuildCostEnergy = 564,
         BuildCostMass = 37,
         BuildTime = 1465,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 0.2,
-        ProductionPerSecondEnergy = 0.2,
     },
     Footprint = {
 	MaxSlope = 1,
@@ -148,7 +145,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 30,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARM_LASER',
             FireTargetLayerCapsTable = {
@@ -199,7 +196,7 @@ UnitBlueprint {
             Turreted = true,
         },
         { #SMALL_UNITEX
-            Damage = 30,
+            Damage = 10,
             DamageFriendly = true,
             DamageRadius = 0.9375,
             DamageType = 'Normal',
@@ -207,8 +204,8 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         },
         { #SMALL_UNIT
-            Damage = 200,
-            DamageRadius = 2.34375,
+            Damage = 10,
+            DamageRadius = 0.9375,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

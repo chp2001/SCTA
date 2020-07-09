@@ -46,6 +46,5 @@ SpecFootprints {
     { Name = 'Water11x11', SizeX=11, SizeZ=11, Caps=WATER, MinWaterDepth=1.5, Flags=0 },
 
 --SCTA needed footprints
-    { Name = 'Commander2x2',   SizeX=2,  SizeZ=2,  Caps=LAND|SEABED, MaxWaterDepth=15, MaxSlope=1.25, Flags=0 },
     { Name = 'Vehicle3x3',   SizeX=3,  SizeZ=3,  Caps=LAND, MaxWaterDepth=1.5, MaxSlope=0.75, Flags=0 },
 }

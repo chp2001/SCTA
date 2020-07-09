@@ -33,7 +33,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'NAVAL',
 	'DIRECTFIRE',
@@ -42,7 +42,7 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'OVERLAYANTINAVY',
 
-	--TA Categories
+	
         'CORE',
         'SHIP',
 	'LEVEL2',
@@ -88,7 +88,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -104,9 +104,6 @@ UnitBlueprint {
         BuildCostEnergy = 8551,
         BuildCostMass = 1724,
         BuildTime = 17050,
-	NaturalProducer = true,
-        ProductionPerSecondEnergy = 2.2,
-        MaintenanceConsumptionPerSecondEnergy = 2.2,
     },
     Footprint = {
 	MinWaterDepth = 1.875,
@@ -171,7 +168,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 220,
-            AlternateDamageRadius = 2,
+            DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'COR_CRUS',
             FireTargetLayerCapsTable = {
@@ -237,7 +234,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 80,
-            AlternateDamageRadius = 0.5,
+            DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'COREDEPTHCHARGE',
             FireTargetLayerCapsTable = {

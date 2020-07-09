@@ -38,13 +38,13 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH3',
 
-	--Additional Categories
+	
 	'STRUCTURE',
         'MASSPRODUCTION',
         'MASSEXTRACTION',
         'ECONOMIC',
 
-	--TA Categories
+	
 	'CORE',
 	'METAL',
 	'EXTRACTOR',
@@ -83,7 +83,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -95,7 +95,6 @@ UnitBlueprint {
         BuildCostMass = 1450,
         BuildTime = 32500,
         MaintenanceConsumptionPerSecondEnergy = 12,
-	#TODO: proper value?
         ProductionPerSecondMass = 6.6,
     },
     Footprint = {
@@ -150,9 +149,9 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #SMALL_BUILDING
-            Damage = 900,
-            DamageRadius = 6.406,
+         { #SMALL_BUILDING
+            Damage = 50,
+            DamageRadius = 2,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

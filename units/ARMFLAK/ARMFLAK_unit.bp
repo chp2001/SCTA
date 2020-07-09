@@ -26,14 +26,10 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	--Additional Categories
 	'STRUCTURE',
 	'DEFENSE',
 	'ANTIAIR',
         'OVERLAYANTIAIR',
-
-	--TA Categories
 	'ARM',
     'CORE', -- in lieu of core flakker
 	'LEVEL3',
@@ -49,6 +45,9 @@ UnitBlueprint {
     },
     Description = 'Anti-Air Flak Gun',
     Display = {
+        Abilities = {
+            '<LOC ability_aa>Anti-Air',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel'},
 		DestructionEmitters = {
@@ -64,7 +63,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -132,7 +131,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 0,
-            AlternateDamageRadius = 3.75, 
+            DamageRadius = 3.75, 
             DamageType = 'Normal',
             DisplayName = 'ARMFLAK_GUN',
             FireTargetLayerCapsTable = {
@@ -192,9 +191,9 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #MEDIUM_BUILDING
-            Damage = 1400,
-            DamageRadius = 10.16,
+         { #MEDIUM_BUILDING
+            Damage = 100,
+            DamageRadius = 5,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

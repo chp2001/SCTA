@@ -28,13 +28,13 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH2',
 
-	--Additional Categories
+	
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
 	'CORE',
 	'DEFENSIVE',
 	'WEAPON',
@@ -73,7 +73,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -143,14 +143,14 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 180,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'CORE_LASERH1',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 43.96,
+            FiringTolerance = 3,
             Label = 'CORE_LASERH1',
             MaxRadius = 26.875,
             MuzzleSalvoDelay = 0,
@@ -199,9 +199,9 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #MEDIUM_BUILDING
-            Damage = 1400,
-            DamageRadius = 10.16,
+         { #MEDIUM_BUILDING
+            Damage = 100,
+            DamageRadius = 5,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

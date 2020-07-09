@@ -33,13 +33,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'CORE',
         'KBOT',
 	'LEVEL1',
@@ -69,7 +69,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -81,14 +81,6 @@ UnitBlueprint {
         BuildCostEnergy = 696,
         BuildCostMass = 56,
         BuildTime = 1523,
-        MaintenanceConsumptionPerSecondEnergy = 0.3,
-        ProductionPerSecondEnergy = 0.3,
-    },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-	MaxSlope = 1.0625,
-	MaxWaterDepth = 0.0625,
     },
     General = {
         Category = 'Direct Fire',
@@ -148,7 +140,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 30,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'CORE_LASER',
@@ -204,7 +196,7 @@ UnitBlueprint {
             Turreted = true,
         },
         { #SMALL_UNITEX
-            Damage = 30,
+            Damage = 10,
             DamageFriendly = true,
             DamageRadius = 0.9375,
             DamageType = 'Normal',
@@ -212,8 +204,8 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         },
         { #SMALL_UNIT
-            Damage = 200,
-            DamageRadius = 2.34375,
+            Damage = 10,
+            DamageRadius = 0.9375,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

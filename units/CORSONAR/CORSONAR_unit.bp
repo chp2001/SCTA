@@ -36,15 +36,11 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-
-	--Additional Categories
 	'STRUCTURE',
 	'INTELLIGENCE',
 	'SONAR',
 	'NAVAL',
         'OVERLAYSONAR',
-
-	--TA Categories
 	'CORE',
 	'SPECIAL',
 	'SONAR',
@@ -63,7 +59,8 @@ UnitBlueprint {
     Description = 'Sonar Station',
     Display = {
         Abilities = {
-            'Sonar',
+            '<LOC ability_sonar>Sonar',
+            '<LOC ability_upgradable>Upgradeable',
         },
 	DestructionEffects = {
 		DestructionEmitters = {
@@ -79,7 +76,7 @@ UnitBlueprint {
             LODs = {
                 {
                   LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -90,8 +87,6 @@ UnitBlueprint {
         BuildCostEnergy = 399,
         BuildCostMass = 20,
         BuildTime = 900,
-	NaturalProducer = true,
-        ProductionPerSecondEnergy = 8,
 	MaintenanceConsumptionPerSecondEnergy = 8,
     },
     Footprint = {
@@ -112,8 +107,8 @@ UnitBlueprint {
         UnitName = 'Sonar Station',
     },
     Intel = {
-	FreeIntel = true,
-        VisionRadius = 11,
+	FreeIntel = false,
+    VisionRadius = 11,
 	SonarRadius = 76,
 	WaterVisionRadius = 11,
     },
@@ -147,9 +142,9 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #SMALL_BUILDING
-            Damage = 900,
-            DamageRadius = 6.406,
+         { #SMALL_BUILDING
+            Damage = 50,
+            DamageRadius = 2,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

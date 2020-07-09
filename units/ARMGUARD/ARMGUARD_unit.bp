@@ -27,14 +27,10 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-
-	--Additional Categories
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
-
-	--TA Categories
 	'ARM',
 	'LEVEL2',
 	'STRATEGIC',
@@ -73,7 +69,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -142,8 +138,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 360,
-            AlternateDamageRadius = 2, 
+            Damage = 1500,
+            DamageRadius = 2, 
             DamageType = 'Normal',
             DisplayName = 'ARMFIXED_GUN',
             FireTargetLayerCapsTable = {
@@ -155,6 +151,9 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 21.875,
+            EnergyChargeForFirstShot = false,
+            EnergyRequired = 750,
+            EnergyDrainPerSecond = 500,
             ProjectileId = '/mods/SCTA/projectiles/ARMFIXED_GUN/ARMFIXED_GUN_proj.bp',
             RackBones = {
                 {
@@ -201,9 +200,9 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #MEDIUM_BUILDING
-            Damage = 1400,
-            DamageRadius = 10.16,
+         { #MEDIUM_BUILDING
+            Damage = 100,
+            DamageRadius = 5,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

@@ -33,14 +33,14 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
 	'TEXTUREANIM',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'ARM',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL2',
@@ -79,7 +79,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -91,9 +91,6 @@ UnitBlueprint {
         BuildCostEnergy = 17477,
         BuildCostMass = 2604,
         BuildTime = 35706,
-	NaturalProducer=true,
-        MaintenanceConsumptionPerSecondEnergy = 5.2,
-        ProductionPerSecondEnergy = 5.2,
     },
     Footprint = {
 	SizeX = 3,
@@ -159,7 +156,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 1300,
-	    AlternateDamageRadius = 0.5,
+	    DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'ARMMANNI_WEAPON',
             EnergyChargeForFirstShot = false,

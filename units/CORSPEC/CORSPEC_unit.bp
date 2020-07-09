@@ -42,14 +42,10 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'LAND',
 	'INTELLIGENCE',
         'OVERLAYCOUNTERINTEL',
-
-	--TA Categories
         'CORE',
         'KBOT',
 	'NOWEAPON',
@@ -67,7 +63,7 @@ UnitBlueprint {
     Description = 'Radar Jammer',
     Display = {
         Abilities = {
-            'Radar Jammer',
+            '<LOC ability_stealthfield>Stealth Field',
         },
 	DestructionEffects = {
 		DestructionEmitters = {
@@ -92,7 +88,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -104,9 +100,7 @@ UnitBlueprint {
         BuildCostEnergy = 1453,
         BuildCostMass = 70,
         BuildTime = 5439,
-	NaturalProducer = true,
-	MaintenanceConsumptionPerSecondEnergy = 10,
-	ProductionPerSecondEnergy = 10,
+	MaintenanceConsumptionPerSecondEnergy = 15,
     },
     Footprint = {
 	SizeX = 2,
@@ -131,9 +125,9 @@ UnitBlueprint {
         UnitName = 'Spectre',
     },
     Intel = {
-	FreeIntel = true,
-	RadarStealth = true,
-        VisionRadius = 13,
+	FreeIntel = false,
+	RadarStealth = false,
+    VisionRadius = 13,
 	RadarStealthFieldRadius = 31,
     },
     Interface = {
@@ -168,10 +162,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

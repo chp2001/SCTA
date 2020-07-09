@@ -32,14 +32,10 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'LAND',
 	'ANTIAIR',
         'OVERLAYANTIAIR',
-
-	--TA Categories
         'ARM',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL2',	#Bug in TA: 'LEVEL2'
@@ -56,7 +52,7 @@ UnitBlueprint {
     Description = 'Mobile Flak Vehicle',
     Display = {
         Abilities = {
-            'Anti-Air',
+            '<LOC ability_aa>Anti-Air',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel'},
@@ -73,7 +69,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -84,9 +80,6 @@ UnitBlueprint {
         BuildCostEnergy = 10500,
         BuildCostMass = 830,
         BuildTime = 20380,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 0.5,
-        ProductionPerSecondEnergy = 0.5,
     },
     Footprint = {
 	MaxSlope = 1,
@@ -151,7 +144,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 0,
-            AlternateDamageRadius = 3.28,
+            DamageRadius = 3.28,
 	    EdgeEffectiveness = 0.9,
             FiringRandomness = 0,
             DamageType = 'Normal',
@@ -225,10 +218,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

@@ -33,14 +33,14 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'INDIRECTFIRE',
 	'ROCKET',
         'OVERLAYINDIRECTFIRE',
 
-	--TA Categories
+	
         'ARM',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL2',
@@ -80,7 +80,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -91,9 +91,6 @@ UnitBlueprint {
         BuildCostEnergy = 2746,
         BuildCostMass = 462,
         BuildTime = 8592,
-	NaturalProducer=true,
-        MaintenanceConsumptionPerSecondEnergy = 0.5,
-        ProductionPerSecondEnergy = 0.5,
     },
     Footprint = {
 	SizeX = 3,
@@ -158,7 +155,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 500,
-	    AlternateDamageRadius = 3,
+	    DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'ARMTRUCK_ROCKET',
             FireTargetLayerCapsTable = {
@@ -166,7 +163,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
-            FiringTolerance = 21.98,
+            FiringTolerance = 7,
             Label = 'ARMTRUCK_ROCKET',
             MaxRadius = 50,
             MuzzleSalvoDelay = 0,
@@ -193,7 +190,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            WeaponCategory = 'Indirect Fire',
+            WeaponCategory = 'MISSILE',
 	    WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
         },

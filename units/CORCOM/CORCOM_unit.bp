@@ -63,7 +63,7 @@ UnitBlueprint {
     },
     Categories = {
         'SELECTABLE',
-        'TECH1',
+        'SELECTION', 
         'VISIBLETORECON',
         'RECLAIMABLE',
         'ENGINEER',
@@ -72,8 +72,6 @@ UnitBlueprint {
         'CAPTURE',
         'REPAIR',
         'SHOWQUEUE',
-
-	--Additional Categories
         'MOBILE',
 	'LAND',
 	'MOBILE',
@@ -85,9 +83,9 @@ UnitBlueprint {
         'CONSTRUCTION',
         'OVERLAYDIRECTFIRE',
         'OVERLAYRADAR',
+        'OVERLAYOMNI',
+        'OMNI', 
         'OVERLAYSONAR',
-
-	--TA Categories
         'CORE',
         'COMMANDER',
 	'LEVEL10',
@@ -105,12 +103,11 @@ UnitBlueprint {
     Description = 'Commander',
     Display = {
         Abilities = {
-            'Commander',
-            'Radar',
-            'Sonar',
-            'Cloak',
-            'Capture',
-            'Amphibious',
+            '<LOC ability_amphibious>Amphibious',
+            '<LOC ability_customizable>Customizable',
+            '<LOC ability_notcap>Not Capturable',
+            '<LOC ability_omni>Omni Sensor',
+            '<LOC ability_cloak>Cloaking',
             'D-Gun',
             'Construction Unit',
         },
@@ -137,7 +134,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -238,7 +235,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 70,
-            AlternateDamageRadius = 0.5,
+            DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'CORCOMLASER',
             FireTargetLayerCapsTable = {
@@ -294,7 +291,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 999999,
-            AlternateDamageRadius = 0.5,
+            DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'CORE_DISINTEGRATOR',
             FireTargetLayerCapsTable = {
@@ -337,12 +334,11 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 300,
             Turreted = true,
-
 	    OverChargeWeapon = true,
 	    ManualFire = true,
         },
         {
-            Damage = 9999,
+            Damage = 3000,
             DamageFriendly = true,
             DamageRadius = 29.6875,
             DamageType = 'Normal',
@@ -352,7 +348,7 @@ UnitBlueprint {
 	    EdgeEffectiveness=0.75,
         },
         {
-            Damage = 9999,
+            Damage = 3000,
             DamageFriendly = true,
             DamageRadius = 29.6875,
             DamageType = 'Normal',

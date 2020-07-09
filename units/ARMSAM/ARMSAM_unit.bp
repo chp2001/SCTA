@@ -32,19 +32,15 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
 	'ANTIAIR',
         'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',
-
-	--TA Categories
         'ARM',
         'VEHICLE',	#'TANK' in TA
-	'LEVEL1',	#Bug in TA: 'LEVEL2'
+	'LEVEL1',
 	'WEAPON',
 	'NOTAIR',
 	'NOTSUB',
@@ -58,7 +54,7 @@ UnitBlueprint {
     Description = 'Mobile Missile Launcher',
     Display = {
         Abilities = {
-            'Anti-Air',
+            '<LOC ability_aa>Anti-Air',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Tredside','ArmCockpit'},
@@ -75,7 +71,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -86,9 +82,6 @@ UnitBlueprint {
         BuildCostEnergy = 1027,
         BuildCostMass = 119,
         BuildTime = 1941,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 0.5,
-        ProductionPerSecondEnergy = 0.5,
     },
     Footprint = {
 	MaxSlope = 1,
@@ -153,7 +146,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 40,
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'ARMTRUCK_MISSILE',
@@ -162,7 +155,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 45.96,
+            FiringTolerance = 5,
             Label = 'ARMTRUCK_MISSILE',
             MaxRadius = 37.5,
             MuzzleSalvoDelay = 0,
@@ -224,10 +217,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

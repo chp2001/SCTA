@@ -15,14 +15,14 @@ UnitBlueprint {
         'TECH2',
         'BENIGN',
 
-	--Additional Categories
+	
 	'STRUCTURE',
         'DEFENSE',
         'WALL',
 	'NOEXPLOSION',
 	'NOSMOKE',
 
-	--TA Categories
+	
 	'ARM',
     'CORE', -- in lieu of core floating teeth
 	'LEVEL2',
@@ -52,7 +52,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },

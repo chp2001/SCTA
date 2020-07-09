@@ -33,14 +33,14 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
 	'ARMWAR',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'ARM',
         'KBOT',
 	'LEVEL1',
@@ -70,7 +70,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -82,9 +82,6 @@ UnitBlueprint {
         BuildCostEnergy = 2236,
         BuildCostMass = 196,
         BuildTime = 5709,
-	NaturalProducer=true,
-        MaintenanceConsumptionPerSecondEnergy = 0.5,
-        ProductionPerSecondEnergy = 0.5,
     },
     Footprint = {
         SizeX = 2,
@@ -150,7 +147,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 12,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             FiringRandomness = 1,
             DamageType = 'Normal',
             DisplayName = 'ARMWAR_EMG',
@@ -159,7 +156,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 27.47,
+            FiringTolerance = 4,
             Label = 'ARMWAR_EMG',
             MaxRadius = 11.25,
             MuzzleSalvoDelay = 0.1,
@@ -209,7 +206,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 60,
-            AlternateDamageRadius = 2,
+            DamageRadius = 2,
             FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'ARMWAR_LCANNON',
@@ -218,7 +215,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 16.48,
+            FiringTolerance = 2,
             Label = 'ARMWAR_LCANNON',
             MaxRadius = 15,
             MuzzleSalvoDelay = 0,
@@ -257,7 +254,7 @@ UnitBlueprint {
             Turreted = true,
         },
         { #SMALL_UNITEX
-            Damage = 30,
+            Damage = 10,
             DamageFriendly = true,
             DamageRadius = 0.9375,
             DamageType = 'Normal',
@@ -265,8 +262,8 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         },
         { #SMALL_UNIT
-            Damage = 200,
-            DamageRadius = 2.34375,
+            Damage = 10,
+            DamageRadius = 0.9375,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

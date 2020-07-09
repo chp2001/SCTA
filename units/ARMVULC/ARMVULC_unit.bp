@@ -7,14 +7,14 @@ UnitBlueprint {
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'SRVLRG3',
+            Cue = 'SERVLRG3',
             LodCutoff = 'UnitMove_LodCutoff',
         },
 	Destroyed = Sound {
             Bank = 'TA_Sound',
             Cue = 'XPLONUK3',
             LodCutoff = 'UnitMove_LodCutoff',
-	},
+	    },
     },
     BuildIconSortPriority = 27,
     Categories = {
@@ -25,15 +25,11 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH3',
-
-	--Additional Categories
+        'EXPERIMENTAL',
 	'STRUCTURE',
 	'DEFENSE',
 	'INDIRECTFIRE',
-        'OVERLAYINDIRECTFIRE',
-
-	--TA Categories
+        'OVERLAYINDIRECTFIRE',	
 	'ARM',
     'CORE', -- in lieu of buzzsaw
 	'LEVEL3',
@@ -73,7 +69,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -127,7 +123,7 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 3,
     SizeZ = 3,
-    StrategicIconName = 'icon_structure3_artillery',
+    StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -142,7 +138,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 1000,
-            AlternateDamageRadius = 3.125, 
+            DamageRadius = 3.125, 
             DamageType = 'Normal',
             DisplayName = 'ARMVULC_WEAPON',
             FireTargetLayerCapsTable = {

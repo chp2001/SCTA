@@ -33,13 +33,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'CORE',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL2',	#'LEVEL1' in TA
@@ -79,7 +79,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -90,9 +90,6 @@ UnitBlueprint {
         BuildCostEnergy = 3048,
         BuildCostMass = 473,
         BuildTime = 8730,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 0.8,
-        ProductionPerSecondEnergy = 0.8,
     },
     Footprint = {
 	SizeX = 3,
@@ -158,7 +155,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 143,
-	    AlternateDamageRadius = 1.5,
+	    DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'CORE_REAP',
             FireTargetLayerCapsTable = {

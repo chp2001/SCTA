@@ -33,7 +33,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'NAVAL',
 	'DIRECTFIRE',
@@ -42,7 +42,7 @@ UnitBlueprint {
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',
 
-	--TA Categories
+	
         'ARM',
         'SHIP',
 	'LEVEL2',
@@ -88,7 +88,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -104,9 +104,6 @@ UnitBlueprint {
         BuildCostEnergy = 8608,
         BuildCostMass = 1719,
         BuildTime = 17789,
-	NaturalProducer = true,
-        ProductionPerSecondEnergy = 2.5,
-        MaintenanceConsumptionPerSecondEnergy = 2.5,
     },
     Footprint = {
 	MinWaterDepth = 1.875,
@@ -171,7 +168,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 208,
-            AlternateDamageRadius = 2,
+            DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'ARM_CRUS',
             FireTargetLayerCapsTable = {
@@ -237,14 +234,14 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 70,
-            AlternateDamageRadius = 0.5,
+            DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'ARMDEPTHCHARGE',
             FireTargetLayerCapsTable = {
                 Water = 'Water|Sub|Seabed',
             },
             RangeCategory = 'UWRC_AntiNavy',
-	    FiringTolerance = 360,
+	    FiringTolerance = 3,
             Label = 'ARMDEPTHCHARGE',
             MaxRadius = 25.625,
             MuzzleSalvoDelay = 0,
@@ -290,10 +287,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

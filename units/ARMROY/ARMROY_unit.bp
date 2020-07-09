@@ -32,8 +32,6 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'NAVAL',
 	'DIRECTFIRE',
@@ -41,8 +39,6 @@ UnitBlueprint {
         'OVERLAYANTINAVY',
         'OVERLAYINDIRECTFIRE',
         'OVERLAYSONAR',
-
-	--TA Categories
         'ARM',
         'SHIP',
 	'LEVEL1',
@@ -62,7 +58,7 @@ UnitBlueprint {
     Display = {
         Abilities = {
             'Anti-Sub',
-            'Sonar',
+            '<LOC ability_sonar>Sonar',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'ArmShip','ArmPanel3','MetalBarrel'},
@@ -88,7 +84,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
@@ -104,9 +100,6 @@ UnitBlueprint {
         BuildCostEnergy = 4537,
         BuildCostMass = 898,
         BuildTime = 13391,
-        ProductionPerSecondEnergy = 2,
-        MaintenanceConsumptionPerSecondEnergy = 2,
-	NaturalProducer = true,
     },
     Footprint = {
         SizeX = 4,
@@ -170,7 +163,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 165,
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'ARM_ROY',
             FireTargetLayerCapsTable = {
@@ -233,14 +226,14 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 70,
-            AlternateDamageRadius = 0.5,
+            DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'ARMDEPTHCHARGE',
             FireTargetLayerCapsTable = {
                 Water = 'Water|Sub|Seabed',
             },
             RangeCategory = 'UWRC_AntiNavy',
-	    FiringTolerance = 360,
+	    FiringTolerance = 1,
             Label = 'ARMDEPTHCHARGE',
             MaxRadius = 25.625,
             MuzzleSalvoDelay = 0,
@@ -286,10 +279,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

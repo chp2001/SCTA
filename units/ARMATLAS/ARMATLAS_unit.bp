@@ -180,9 +180,9 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Transport = {
         AirClass = true,
-        Class2AttachSize = 1,
-        Class3AttachSize = 1,
-        TransportClass = 1,
+        Class2AttachSize = 2,
+        Class3AttachSize = 4,
+        TransportClass = 10,
     },
     Weapon = {
         { #SMALL_UNITEX

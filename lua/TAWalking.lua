@@ -1,5 +1,4 @@
 local TAunit = import('/mods/SCTA/lua/TAunit.lua').TAunit
-local util = import('/lua/utilities.lua')
 
 TAWalking = Class(TAunit) 
 {

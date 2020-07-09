@@ -63,7 +63,9 @@ UnitBlueprint {
 				EmitterSize = 1.25,
 			},
 		},
-	},
+    },
+    AnimationWalk = '/mods/SCTA/units/CORAK/CORAK_lod0_Awalk.sca',
+    AnimationWalkRate = 1,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

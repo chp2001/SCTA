@@ -121,7 +121,7 @@ UnitBlueprint {
         StorageEnergy = 100,
         StorageMass = 100,
         NaturalProducer = true,
-	ProductionPerSecondEnergy = 19,
+	ProductionPerSecondEnergy = 20,
 	ProductionPerSecondMass = 1,
     },
     Footprint = {

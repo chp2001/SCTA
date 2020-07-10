@@ -119,7 +119,7 @@ UnitBlueprint {
         MaxBuildDistance = 2.5,
         StorageEnergy = 50,
         StorageMass = 50,
-	ProductionPerSecondEnergy = 8,
+	ProductionPerSecondEnergy = 10,
 	NaturalProducer = true,
     },
     Footprint = {

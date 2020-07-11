@@ -103,7 +103,7 @@ UnitBlueprint {
         UnitName = 'Doomsday Machine',
     },
     Intel = {
-        VisionRadius = 24,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Energy Weapon',
@@ -168,6 +168,7 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             EnergyChargeForFirstShot = false,
             EnergyRequired = 800,
+            EnergyDrainPerSecond = 800,
             RateOfFire = 0.125,
             TargetCheckInterval = 1,
             TargetPriorities = {

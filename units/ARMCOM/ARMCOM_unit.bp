@@ -307,6 +307,7 @@ UnitBlueprint {
             MuzzleVelocity = 12.5,
 	    NeedPrep = true,
             EnergyRequired = 400,
+            EnergyDrainPerSecond = 400,
             ProjectileId = '/mods/SCTA/projectiles/ARM_DISINTEGRATOR/ARM_DISINTEGRATOR_proj.bp',
             RackBones = {
                 {

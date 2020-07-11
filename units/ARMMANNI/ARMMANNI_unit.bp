@@ -115,7 +115,7 @@ UnitBlueprint {
         UnitName = 'Penetrator',
     },
     Intel = {
-        VisionRadius = 16,
+        VisionRadius = 12,
     },
     Interface = {
         HelpText = 'Mobile Energy Weapon',
@@ -155,12 +155,13 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 1300,
+            Damage = 1000,
 	    DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'ARMMANNI_WEAPON',
             EnergyChargeForFirstShot = false,
-            EnergyRequired = 1500,
+            EnergyRequired = 500,
+            EnergyDrainPerSecond = 500,
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Seabed = 'Land|Water|Seabed',

@@ -109,7 +109,7 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 3.225,
+        MaxAcceleration = 3.3,
         MaxBrake = 6.592,
         MaxSpeed = 3.296,
         MotionType = 'RULEUMT_Land',

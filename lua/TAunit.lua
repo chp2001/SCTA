@@ -29,7 +29,6 @@ TAunit = Class(Unit)
 		local bp = self:GetBlueprint()
 		if bp.General.BuildAngle then
 		 	local angle = bp.General.BuildAngle / 182
- 			self.buildAngle = (math.random(angle) - (angle / 2))
 			angle = (180 + self.buildAngle) * (math.pi / 180)
 	 		local x = math.cos(angle / 2) 
 	  		local z = math.sin(angle / 2) 

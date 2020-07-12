@@ -103,7 +103,7 @@ UnitBlueprint {
         BuildCostEnergy = 2540,
         BuildCostMass = 130,
         BuildRate = 80,
-        BuildTime = 5818,
+        BuildTime = 6800,
         BuildableCategory = {
             'BUILTBYT1KBOT CORE',
         },

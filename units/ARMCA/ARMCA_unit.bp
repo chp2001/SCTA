@@ -128,7 +128,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 4320,
         BuildCostMass = 105,
-        BuildTime = 8844,        
+        BuildTime = 10000,        
 	BuildRate = 50,
         BuildableCategory = {
             'BUILTBYT1AIR ARM',

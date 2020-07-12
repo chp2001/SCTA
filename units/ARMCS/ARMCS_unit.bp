@@ -112,7 +112,7 @@ UnitBlueprint {
         BuildCostEnergy = 2130,
         BuildCostMass = 255,
         BuildRate = 125,
-        BuildTime = 5121,
+        BuildTime = 6200,
         BuildableCategory = {
             'BUILTBYT1SHIP ARM',
         },

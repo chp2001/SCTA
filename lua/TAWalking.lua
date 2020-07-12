@@ -1,11 +1,11 @@
 local explosion = import('/lua/defaultexplosions.lua')
 local scenarioUtils = import('/lua/sim/ScenarioUtilities.lua')
-local TAutils = import('/mods/SCTA/lua/TAutils.lua')
+local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local Game = import('/lua/game.lua')
-local TAunit = import('/mods/SCTA/lua/TAunit.lua').TAunit
+local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 local util = import('/lua/utilities.lua')
-local debrisCat = import('/mods/SCTA/lua/TAdebrisCategories.lua')
-local WreckShield = import('/mods/SCTA/lua/TAshield.lua').WreckShield
+local debrisCat = import('/mods/SCTA-master/lua/TAdebrisCategories.lua')
+local WreckShield = import('/mods/SCTA-master/lua/TAshield.lua').WreckShield
 
 TAWalking = Class(TAunit) 
 {
@@ -50,7 +50,7 @@ TAWalking = Class(TAunit)
 	    for i = 1, partamounts do
 	        local xpos, ypos, zpos = util.GetRandomOffset( sx, sy, sz, 1)
         	local xdir,ydir,zdir = util.GetRandomOffset( sx, sy, sz, 10)
-        	self:CreateProjectile('/mods/SCTA/effects/entities/Debris/Flame/DefaultFlameProjectileDebris_proj.bp',xpos,ypos,zpos,xdir,ydir + 5,zdir)
+        	self:CreateProjectile('/mods/SCTA-master/effects/entities/Debris/Flame/DefaultFlameProjectileDebris_proj.bp',xpos,ypos,zpos,xdir,ydir + 5,zdir)
 	    end
 	    partamounts = util.GetRandomInt( bp.Display.DestructionEffects.DefaultProjectileCountMin or 5, bp.Display.DestructionEffects.DefaultProjectileCountMax or (sx * sz + 4)) 
 		LOG("PartAmounts: ",partamounts)

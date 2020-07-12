@@ -12,7 +12,7 @@ IgnoreStructures = 0x01
 #TA only footprints
 #Some depth values are x2
 
-LOG("Loading SCTA Footprints")
+LOG("Loading SCTA-master Footprints")
 
 SpecFootprints {
     { Name = 'Vehicle3x3',   SizeX=3,  SizeZ=3,  Caps=LAND, MaxWaterDepth=1.5, MaxSlope=0.75, Flags=0 },

@@ -54,7 +54,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 500,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -104,7 +104,7 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/ARMFORT/ARMFORT_heap_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMFORT/ARMFORT_heap_prop.bp',
         WreckageLayers = {
             Land = true,
         },

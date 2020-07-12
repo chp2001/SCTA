@@ -16,7 +16,7 @@ IgnoreStructures = 0x01
 # The script "data/lua/tests/dump_footprints.lua" can be used to figure out what footprint shapes
 # the blueprints are currently expecting.
 
-LOG("Loading SCTA (FA Compatibility) Footprints")
+LOG("Loading SCTA-master (FA Compatibility) Footprints")
 
 SpecFootprints {
 
@@ -45,6 +45,6 @@ SpecFootprints {
     { Name = 'Water8x8',   SizeX=8,  SizeZ=8,  Caps=WATER, MinWaterDepth=1.5, Flags=0 },
     { Name = 'Water11x11', SizeX=11, SizeZ=11, Caps=WATER, MinWaterDepth=1.5, Flags=0 },
 
---SCTA needed footprints
+--SCTA-master needed footprints
     { Name = 'Vehicle3x3',   SizeX=3,  SizeZ=3,  Caps=LAND, MaxWaterDepth=1.5, MaxSlope=0.75, Flags=0 },
 }

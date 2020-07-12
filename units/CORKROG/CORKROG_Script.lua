@@ -3,9 +3,9 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA/lua/TAunit.lua').TAunit
+local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 local Projectile = import('/lua/sim/DefaultWeapons.lua').DefaultProjectileWeapon
-local TAweapon = import('/mods/SCTA/lua/TAweapon.lua').TAweapon
+local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 CORKROG = Class(TAunit) {
 	

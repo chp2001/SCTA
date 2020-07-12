@@ -287,7 +287,7 @@ end
 
 
 function CreateDelayedWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
-	local WreckShield = import('/mods/SCTA/lua/TAshield.lua').WreckShield
+	local WreckShield = import('/mods/SCTA-master/lua/TAshield.lua').WreckShield
 
 	#see if we can reduce this?
 	while not IsDestroyed(self) do

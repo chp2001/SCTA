@@ -200,7 +200,6 @@ TAunitkeygroups = {
     },
     ["T1_Tank"]= {
         "armstump",
-        "armwar", 
         "corraid",
     },
     ["T2_Heavy_Tank"]= {

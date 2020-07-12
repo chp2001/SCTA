@@ -52,15 +52,15 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {'turreta','CORDOOM', 'turretb','turretc'},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
 				EmitterBone = {'shell1a','shell2a','shell3a','shell3a','hatch'},
 				EmitterBlueprint = {
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
@@ -72,7 +72,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 500,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -151,7 +151,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 62.5,
-            ProjectileId = '/mods/SCTA/projectiles/CORE_DOOMSDAY/CORE_DOOMSDAY_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORE_DOOMSDAY/CORE_DOOMSDAY_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -214,7 +214,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 62.5,
-            ProjectileId = '/mods/SCTA/projectiles/CORE_LIGHTLASER/CORE_LIGHTLASER_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORE_LIGHTLASER/CORE_LIGHTLASER_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -276,7 +276,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 43.75,
-            ProjectileId = '/mods/SCTA/projectiles/CORE_LASERH1/CORE_LASERH1_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORE_LASERH1/CORE_LASERH1_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -336,7 +336,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/CORDOOM/CORDOOM_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/CORDOOM/CORDOOM_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

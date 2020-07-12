@@ -105,7 +105,7 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 		},
@@ -116,7 +116,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 500,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -208,7 +208,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0.15, -- OTA=0.16
             MuzzleSalvoSize = 10,
             MuzzleVelocity = 0,
-            ProjectileId = '/mods/SCTA/projectiles/CORADVBOMB/CORADVBOMB_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORADVBOMB/CORADVBOMB_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -256,7 +256,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
 	    MuzzleSalvoDelay = 0,
 	    MuzzleVelocity = 56.25,
-            ProjectileId = '/mods/SCTA/projectiles/CORAIR2AIRLASER/CORAIR2AIRLASER_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORAIR2AIRLASER/CORAIR2AIRLASER_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -304,7 +304,7 @@ UnitBlueprint {
             MaxRadius = 22,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            ProjectileId = '/mods/SCTA/projectiles/DUMMY/DUMMY_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/DUMMY/DUMMY_proj.bp',
             RackBones = {{MuzzleBones = {}}},
             RackRecoilDistance = 0,
             TargetCheckInterval = 1,

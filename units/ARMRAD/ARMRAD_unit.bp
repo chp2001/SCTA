@@ -66,18 +66,18 @@ UnitBlueprint {
 		DefaultProjectileCategories = {'CamoflageC','MetalBarrel'},
 		DestructionProjectiles = {
 			{
-				ProjectileBlueprint = '/mods/SCTA/effects/entities/Debris/Pieces/ARMRAD_debris01_proj.bp',
+				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMRAD_debris01_proj.bp',
 				Bone = 'Dish_01',
 			},
 			{
-				ProjectileBlueprint = '/mods/SCTA/effects/entities/Debris/Pieces/ARMRAD_debris01_proj.bp',
+				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMRAD_debris01_proj.bp',
 				Bone = 'Dish_02',
 			},
 		},
 		DestructionEmitters = {
 			{
 				EmitterBone = {0, 'Radar'},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 		},
@@ -88,7 +88,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 500,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -178,7 +178,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/ARMRAD/ARMRAD_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMRAD/ARMRAD_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

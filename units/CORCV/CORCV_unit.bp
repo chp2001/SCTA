@@ -105,7 +105,7 @@ UnitBlueprint {
         BuildCostEnergy = 2145,
         BuildCostMass = 175,
         BuildRate = 100,
-        BuildTime = 5146,
+        BuildTime = 6100,
         BuildableCategory = {
             'BUILTBYT1VEHICLE CORE',
         },

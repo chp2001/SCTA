@@ -112,7 +112,7 @@ UnitBlueprint {
         BuildCostEnergy = 2410,
         BuildCostMass = 120,
         BuildRate = 80,
-        BuildTime = 5597,
+        BuildTime = 6800,
         BuildableCategory = {
             'BUILTBYT1KBOT ARM',
         },

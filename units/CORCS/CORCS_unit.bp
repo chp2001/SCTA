@@ -112,7 +112,7 @@ UnitBlueprint {
         BuildCostEnergy = 2375,
         BuildCostMass = 260,
         BuildRate = 125,
-        BuildTime = 5537,
+        BuildTime = 6200,
         BuildableCategory = {
             'BUILTBYT1SHIP CORE',
         },

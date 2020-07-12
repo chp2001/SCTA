@@ -196,6 +196,8 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 130,
             Turreted = true,
+            EnergyRequired = 5,
+            EnergyDrainPerSecond = 5,
             WeaponCategory = 'Direct Fire',
         },
         { #BIG_UNITEX

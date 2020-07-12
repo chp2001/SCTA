@@ -165,6 +165,8 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 0,
+            EnergyRequired = 5,
+            EnergyDrainPerSecond = 5,
             ProjectileId = '/mods/SCTA-master/projectiles/CORTRUCK_ROCKET/CORTRUCK_ROCKET_proj.bp',
             RackBones = {
                 {
@@ -180,7 +182,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.077,
+            RateOfFire = 0.18,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

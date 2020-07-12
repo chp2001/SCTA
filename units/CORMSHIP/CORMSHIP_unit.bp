@@ -205,6 +205,8 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RateOfFire = 0.083,
             TargetCheckInterval = 1,
+            EnergyRequired = 5,
+            EnergyDrainPerSecond = 5,
             TargetPriorities = {
                 'ALLUNITS',
             },

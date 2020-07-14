@@ -1,8 +1,8 @@
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
 local Unit = import('/lua/sim/Unit.lua').Unit
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
-TAconstructor = Class(TAunit) {
+TAconstructor = Class(TAWalking) {
 	currentState = "closed",
 	desiredState = "closed",
     currentTarget = nil,
@@ -72,7 +72,7 @@ TAconstructor = Class(TAunit) {
 
 							if (self.isBuilding == true) then
 								self:SetBuildRate(self:GetBlueprint().Economy.BuildRate)
-								TAunit.OnStartBuild(self, self.currentTarget, self.order)
+								TAWalking.OnStartBuild(self, self.currentTarget, self.order)
 							end
 							if (self.isReclaiming == true) then
 								self:SetReclaimTimeMultiplier(1)
@@ -103,7 +103,7 @@ TAconstructor = Class(TAunit) {
 
 
     OnKilled = function(self, instigator, type, overkillRatio)
-        TAunit.OnKilled(self, instigator, type, overkillRatio)
+        TAWalking.OnKilled(self, instigator, type, overkillRatio)
         if self.isFactory then
             if self.currentTarget and not self.currentTarget:IsDead() and self.currentTarget:GetFractionComplete() != 1 then
                 self.currentTarget:Kill()
@@ -142,7 +142,7 @@ TAconstructor = Class(TAunit) {
 	end,
 
 	OnStopBuild = function(self, unitBeingBuilt, order )
-		TAunit.OnStopBuild(self, unitBeingBuilt, order )
+		TAWalking.OnStopBuild(self, unitBeingBuilt, order )
 		self.desiredTarget = nil
 		self.isBuilding = false
 		self.countdown = self.pauseTime
@@ -169,7 +169,7 @@ TAconstructor = Class(TAunit) {
 	OnStartReclaim = function(self, target)
 		self:SetReclaimTimeMultiplier(20)
 		self:SetBuildRate(self:GetBlueprint().Economy.BuildRate)
-		TAunit.OnStartReclaim(self, target)
+		TAWalking.OnStartReclaim(self, target)
 		self.desiredTarget = target
 		if (self.currentState == "aimed") then
 			self.currentState = "opened"
@@ -188,7 +188,7 @@ TAconstructor = Class(TAunit) {
 
 
 	OnStopReclaim = function(self, target)
-		TAunit.OnStopReclaim(self, target)
+		TAWalking.OnStopReclaim(self, target)
 		self.desiredTarget = nil
 		self.isReclaiming = false
 		self.countdown = self.pauseTime

@@ -26,6 +26,10 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
 		self.Smoke = false
 	end,
 
+    PassData = function(self, data)
+        self.Data = data
+    end,
+
     PassDamageData = function(self, DamageData)
         self.DamageData.DamageRadius = DamageData.DamageRadius
         self.DamageData.DamageAmount = DamageData.DamageAmount
@@ -40,11 +44,35 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
         self.DamageData.ArtilleryShieldBlocks = DamageData.ArtilleryShieldBlocks
         self.DamageData.InitialDamageAmount = DamageData.InitialDamageAmount
         self.CollideFriendly = self.DamageData.CollideFriendly
+	end,
+	
+	AdjustDamageForTarget = function(self, targetEntity, damage)
+        if targetEntity and damage and IsUnit(targetEntity) then
+            if self.AirDamage and EntityCategoryContains(categories.AIR, targetEntity) then
+                return self.AirDamage
+            elseif self.CommanderDamage and EntityCategoryContains(categories.COMMANDER, targetEntity) then
+                return self.CommanderDamage
+            elseif self.NormalSubDamage and EntityCategoryContains(categories.NORMALSUB, targetEntity) then
+                return self.NormalSubDamage
+            elseif self.AdvancedSubDamage and EntityCategoryContains(categories.ADVANCEDSUB, targetEntity) then
+                return self.AdvancedSubDamage
+            elseif self.FlashDamage and EntityCategoryContains(categories.ARMFLASH, targetEntity) then
+                return self.FlashDamage
+            elseif self.PeeweeDamage and EntityCategoryContains(categories.ARMPW, targetEntity) then
+                return self.PeeweeDamage
+            elseif self.WarriorDamage and EntityCategoryContains(categories.ARMWAR, targetEntity) then
+                return self.WarriorDamage
+            elseif self.PyroDamage and EntityCategoryContains(categories.CORPYRO, targetEntity) then
+                return self.PyroDamage
+            end
+        end
+        return damage
     end,
 
-    DoDamage = function(self, instigator, DamageData, targetEntity)
-        local damage = DamageData.DamageAmount
-        if damage and damage > 0 then
+	DoDamage = function(self, instigator, DamageData, targetEntity)
+		local damage = DamageData.DamageAmount
+		if damage and damage > 0 then
+			damage = self.AdjustDamageForTarget(self, targetEntity, damage)
             local radius = DamageData.DamageRadius
             if radius and radius > 0 then
                 if not DamageData.DoTTime or DamageData.DoTTime <= 0 then
@@ -74,8 +102,8 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
                         elseif targetEntity then
                             Damage(instigator, self:GetPosition(), targetEntity, initialDmg, DamageData.DamageType)
                         end
-                    end
-
+					end
+					
                     ForkThread(DefaultDamage.UnitDoTThread, instigator, targetEntity, DamageData.DoTPulses or 1, (DamageData.DoTTime / (DamageData.DoTPulses or 1)), damage, DamageData.DamageType, DamageData.DamageFriendly)
                 end
             end

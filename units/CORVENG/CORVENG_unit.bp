@@ -201,7 +201,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 150,
+            Damage = 50,
             DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'CORVTOL_MISSILE',

@@ -102,6 +102,8 @@ UnitBlueprint {
     },
     Description = 'Commander',
     Display = {
+			AnimationWalk = '/mods/SCTA-master/units/CORCOM/CORCOM_lod0_Awalk.sca',
+			AnimationWalkRate = 1,
         Abilities = {
             '<LOC ability_amphibious>Amphibious',
             '<LOC ability_customizable>Customizable',
@@ -128,17 +130,19 @@ UnitBlueprint {
 			},
 		},
 	},
-	BuildBones = {'NanoMuzzle'},
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
-                {
-                    LODCutoff = 500,
-                    ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
-                },
+    BuildBones = {'NanoMuzzle'},
+    Mesh = {
+        IconFadeInZoom = 130,
+        LODs = {
+            {
+                LODCutoff = 500,
+        NormalName = '/mods/SCTA-master/textures/common/normalsTS.dds',
+        SpecularName = '/mods/SCTA-master/units/CORCOM/CORCOM_SpecTeam.dds',
+        AlbedoName = '/mods/SCTA-master/units/CORCOM/CORCOM_Albedo.dds',
+                ShaderName = 'Unit', 
             },
         },
+    },
 	SmokeBone = 'Torso',
         UniformScale = 0.16,
     },

@@ -54,7 +54,7 @@ ProjectileBlueprint {
         BuildTime = 324000,
     },
     General = {
-        Category = 'MISSILE',
+        Category = 'Missile',
         EntityCategory = {
             'CORE',
             'PROJECTILE',
@@ -64,7 +64,6 @@ ProjectileBlueprint {
         },
         Faction = 'CORE',
         Weapon = 'CRBLMSSL',
-	EdgeEffectiveness = 0.25,
     },
     Interface = {
         HelpText = 0,

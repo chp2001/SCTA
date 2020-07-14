@@ -37,7 +37,8 @@ UnitBlueprint {
 	'WEAPON',
 	'LEVEL3',
 	'NOTAIR',
-	'NOTSUB',
+    'NOTSUB',
+    'SHOWATTACKRETICLE',
     },
     Defense = {
         ArmorType = 'Normal',

@@ -34,14 +34,17 @@ TAweapon = Class(DefaultWeapon) {
         ###object currently targeting
         local target = self:GetCurrentTarget()
         if (target) then
+            if (IsUnit(target)) then
+                LOG('This is a unit')
+                canSee = target:GetBlip(army):IsSeenNow(army)
+            else
             if (IsBlip(target)) then
                 target = target:GetSource()
             end
-            if (IsUnit(target)) then
-                LOG('This is a unit')
-                canSee = target:IsSeenNow(army):GetBlip(army)
-            end
         end
+     end 
+
+        ###object (if any) currently ordered to target
         local currentTarget = self.unit:GetTargetEntity()
         if (currentTarget and IsBlip(currentTarget)) then
             currentTarget = currentTarget:GetSource()

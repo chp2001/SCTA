@@ -159,10 +159,11 @@ CORSILO = Class(TAnoassistbuild) {
 				if (target) then
 					if (IsBlip(target)) then
 						target = target:GetSource()
-					end
-					if (IsUnit(target)) then
-						LOG('This is a unit')
-						canSee = target:GetBlip(army)
+					else
+						if (IsUnit(target)) then
+							LOG('This is a unit')
+							canSee = target:GetBlip(army)
+						end
 					end
 				end
 				local currentTarget = self.unit:GetTargetEntity()

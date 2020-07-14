@@ -39,8 +39,8 @@ ProjectileBlueprint {
     'INDIRECTFIRE',
     },
     Defense = {
-        Health = 60,
-        MaxHealth = 60,
+        Health = 1,
+        MaxHealth = 1,
     },
     Display = {
         CameraFollowTimeout = 5,
@@ -57,7 +57,7 @@ ProjectileBlueprint {
         BuildTime = 324000,
     },
     General = {
-        Category = 'MISSILE',
+        Category = 'Missile',
         EntityCategory = {
        	'ARM',
         'PROJECTILE',

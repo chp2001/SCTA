@@ -32,6 +32,7 @@ TAweapon = Class(DefaultWeapon) {
         local army = self.unit:GetArmy()
         local canSee = true
 
+
         ###object currently targeting
         local target = self:GetCurrentTarget()
         if (target) then
@@ -102,7 +103,6 @@ TAweapon = Class(DefaultWeapon) {
                 aiBrain:TakeResource('Energy', bp.EnergyRequired)
                 self.WeaponCanFire = true
             end
-            #We change the state on counted projectiles because we won't get another OnFire call.
             if bp.CountedProjectile == true then
                 ChangeState(self, self.RackSalvoFiringState)
             end

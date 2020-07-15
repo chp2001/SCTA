@@ -37,13 +37,9 @@ UnitBlueprint {
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-
-	
 	'STRUCTURE',
 	'CONSTRUCTION',
 	'TEXTUREANIM',
-
-	
 	'CORE',
 	'PLANT',
 	'LEVEL2',
@@ -141,6 +137,7 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
+        FlattenSkirt = true,
         SkirtSizeX = 8,
         SkirtSizeZ = 6,
 	BuildAreaX = 4,

@@ -142,6 +142,7 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
+        FlattenSkirt = true,
         SkirtSizeX = 8,
         SkirtSizeZ = 7,
 	BuildAreaX = 4,

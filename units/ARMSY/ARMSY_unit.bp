@@ -54,7 +54,7 @@ UnitBlueprint {
 	'ARM',
 	'PLANT',
 	'CTRL_F',
-	'LEVEL1',	#Bug in TA: 'LEVEL1'
+	'LEVEL1',	
 	'NOWEAPON',
 	'NOTAIR',
 	'NOTSUB',
@@ -150,6 +150,7 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Water = true,
         },
+        FlattenSkirt = true,
         SkirtSizeX = 8,
         SkirtSizeZ = 8,
 	BuildAreaX = 6,

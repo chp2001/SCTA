@@ -3,8 +3,7 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA/lua/TAunit.lua').TAunit
-local worldData = import('/mods/SCTA/lua/sim/worldData.lua')
+local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 
 ARMTIDE = Class(TAunit) {
 	OnCreate = function(self)
@@ -20,8 +19,6 @@ ARMTIDE = Class(TAunit) {
 
 		--SPIN wheel around y-axis SPEED <35.00>
 		self.Spinners.wheel:SetSpeed(35)
-		
-		self:SetProductionPerSecondEnergy(worldData.GetTidalEnergy())
 	end,
 
 

@@ -25,22 +25,20 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH3',
-
-	--Additional Categories
+        'EXPERIMENTAL',
 	'STRUCTURE',
 	'DEFENSE',
 	'INDIRECTFIRE',
         'NUKE',
         'SILO',
-
-	--TA Categories
 	'CORE',
 	'SPECIAL',
 	'WEAPON',
 	'LEVEL3',
 	'NOTAIR',
-	'NOTSUB',
+    'NOTSUB',
+    'SHOWATTACKRETICLE',
+    'NOCUSTOMTARGET',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -56,15 +54,15 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
 				EmitterBone = {'doora1','doora2'},
 				EmitterBlueprint = {
-	    				'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+	    				'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
@@ -75,8 +73,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -86,6 +84,7 @@ UnitBlueprint {
         BuildCostEnergy = 48768,
         BuildCostMass = 975,
         BuildTime = 181243,
+        BuildRate = 2160,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -94,11 +93,12 @@ UnitBlueprint {
     },
     General = {
 	BuildAngle = 8192,
-        Category = 'Defense',
+        Category = 'Strategic',
         Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_SiloBuildNuke = true,
             RULEUCC_Stop = true,
+            RULEUCC_Pause = true,
             RULEUCC_Nuke = true,
             RULEUCC_RetaliateToggle = true,
         },
@@ -129,7 +129,7 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 3,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure3_missile',
+    StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -143,28 +143,26 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 5500,
-            DamageRadius = 16, 
             DamageType = 'Normal',
             DisplayName = 'CRBLMSSL',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water',
             },
             Label = 'CRBLMSSL',
-            MaxRadius = 4096, 
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 0,
-            ProjectileId = '/mods/SCTA/projectiles/CRBLMSSL/CRBLMSSL_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CRBLMSSL/CRBLMSSL_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
                         'missile',
                     },
-		    HideMuzzle = true,
+                    HideMuzzle = true,
                     RackBone = 'missile',
                 },
             },
+            RackFireTogether = false,
             RackRecoilDistance = 0,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
@@ -172,21 +170,34 @@ UnitBlueprint {
             RackSalvoSize = 1,
             RateOfFire = 1,
             TargetCheckInterval = 1,
-            TargetPriorities = {
-                'ALLUNITS',
-            },
-            TargetRestrictDisallow = 'UNTARGETABLE',
-            WeaponRepackTimeout = 4,
-            WeaponUnpacks = true,
-
-	    NukeWeapon = true,
-            ManualFire = 1,
+            EnergyDrainPerSecond = 0,
+            EnergyRequired = 0,
             CountedProjectile = true,
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            FiringTolerance = 2,
             ForceSingleFire = true,
             InitialProjectileStorage = 0,
-            MaxProjectileStorage = 99,
-            ForceSingleFire = true,
-
+            ManualFire = 1,
+            Damage = 0,
+            MaxProjectileStorage = 5,
+            MaxRadius = 20000,
+            MinRadius = 0,
+            MuzzleChargeDelay = 5,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 0,
+            NukeInnerRingDamage = 1000001,
+            NukeInnerRingRadius = 45,
+            NukeInnerRingTicks = 24,
+            NukeInnerRingTotalTime = 12,
+            NukeOuterRingDamage = 7500,
+            NukeOuterRingRadius = 60,
+            NukeOuterRingTicks = 20,
+            NukeOuterRingTotalTime = 5,
+            NukeWeapon = true,            
+            WeaponCategory = 'Missile',
+            WeaponRepackTimeout = 32.5,
+            WeaponUnpacks = true,
         },
         { #ATOMIC_BLASTSML
             Damage = 1000,
@@ -205,7 +216,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/CORSILO/CORSILO_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/CORSILO/CORSILO_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

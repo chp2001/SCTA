@@ -26,14 +26,14 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH2',
 
-	--Additional Categories
+	
 	'STRUCTURE',
 	'DEFENSE',
 	'ANTIAIR',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
 
-	--TA Categories
+	
 	'ARM',
     'CORE', -- in lieu of core floating mt
 	'SPECIAL',
@@ -53,14 +53,14 @@ UnitBlueprint {
 	DestructionEffects = {
 		DestructionProjectiles = {
 			{
-				ProjectileBlueprint = '/mods/SCTA/effects/entities/Debris/Pieces/ARMRL_debris01_proj.bp',
+				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMRL_debris01_proj.bp',
 				Bone = 'barrel',
 			},
 		},
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 		},
@@ -70,8 +70,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -82,7 +82,6 @@ UnitBlueprint {
         BuildCostEnergy = 987,
         BuildCostMass = 71,
         BuildTime = 2163,
-	MaintenanceConsumptionPerSecondEnergy = 0.1,
     },
     Footprint = {
         SizeX = 4,
@@ -141,20 +140,20 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 46,
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'ARMFRT_MISSILE',
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 43.96,
+            FiringTolerance = 8,
             Label = 'ARMFRT_MISSILE',
             MaxRadius = 43.75,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 29.375,
-            ProjectileId = '/mods/SCTA/projectiles/ARMFRT_MISSILE/ARMFRT_MISSILE_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMFRT_MISSILE/ARMFRT_MISSILE_proj.bp',
             ProjectileLifetime = 1,
 
             RackBones = {
@@ -206,17 +205,17 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/ARMFRT/ARMFRT_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMFRT/ARMFRT_dead_prop.bp',
         WreckageLayers = {
             Water = true,
         },

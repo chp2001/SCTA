@@ -35,10 +35,9 @@ ProjectileBlueprint {
         'CORE',
         'PROJECTILE',
         'ANTIAIR',
-        'MISSILE',
-    },
+    },    
     Display = {
-        MeshBlueprint = '/mods/SCTA/meshes/projectiles/missile_mesh.bp',
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/missile_mesh.bp',
         StrategicIconSize = 1,
         UniformScale = 0.16,
     },
@@ -47,8 +46,7 @@ ProjectileBlueprint {
         EntityCategory = {
        	    'CORE',
             'PROJECTILE',
-   	    'ANTIAIR',
-       	    'MISSILE',
+            'ANTIAIR',
         },
         Faction = 'CORE',
         Weapon = 'CORSHIP_MISSILE',

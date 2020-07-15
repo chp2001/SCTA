@@ -32,8 +32,6 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'NAVAL',
 	'DIRECTFIRE',
@@ -41,8 +39,6 @@ UnitBlueprint {
         'OVERLAYANTINAVY',
         'OVERLAYINDIRECTFIRE',
         'OVERLAYSONAR',
-
-	--TA Categories
         'ARM',
         'SHIP',
 	'LEVEL1',
@@ -62,22 +58,22 @@ UnitBlueprint {
     Display = {
         Abilities = {
             'Anti-Sub',
-            'Sonar',
+            '<LOC ability_sonar>Sonar',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'ArmShip','ArmPanel3','MetalBarrel'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {'Turret','DepthCharge'},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
 				EmitterBone = {'Barrel_01','Barrel_02'},
 				EmitterBlueprint = {
-	    				'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+	    				'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
@@ -88,13 +84,13 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
 	MovementEffects = {
-		Emitter = '/mods/SCTA/effects/emitters/wake_emit.bp',
+		Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
 		Scale = 0.5,
 		Bones = {'Wake_01','Wake_02'},
 	},
@@ -104,9 +100,6 @@ UnitBlueprint {
         BuildCostEnergy = 4537,
         BuildCostMass = 898,
         BuildTime = 13391,
-        ProductionPerSecondEnergy = 2,
-        MaintenanceConsumptionPerSecondEnergy = 2,
-	NaturalProducer = true,
     },
     Footprint = {
         SizeX = 4,
@@ -170,7 +163,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 165,
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'ARM_ROY',
             FireTargetLayerCapsTable = {
@@ -184,7 +177,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 18.75,
-            ProjectileId = '/mods/SCTA/projectiles/ARM_ROY/ARM_ROY_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARM_ROY/ARM_ROY_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -233,20 +226,20 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 70,
-            AlternateDamageRadius = 0.5,
+            DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'ARMDEPTHCHARGE',
             FireTargetLayerCapsTable = {
                 Water = 'Water|Sub|Seabed',
             },
             RangeCategory = 'UWRC_AntiNavy',
-	    FiringTolerance = 360,
+	    FiringTolerance = 1,
             Label = 'ARMDEPTHCHARGE',
             MaxRadius = 25.625,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 6.25,
-            ProjectileId = '/mods/SCTA/projectiles/ARMDEPTHCHARGE/ARMDEPTHCHARGE_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMDEPTHCHARGE/ARMDEPTHCHARGE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -286,17 +279,17 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/ARMROY/ARMROY_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMROY/ARMROY_dead_prop.bp',
         WreckageLayers = {
             Water = true,
 	    Sub = true,

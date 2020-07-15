@@ -3,11 +3,11 @@
 #
 #Script created by Raevn
 
-local TALaserProjectile = import('/mods/SCTA/lua/TAProjectiles.lua').TALaserProjectile
+local TALaserProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TALaserProjectile
 
 CORKROG_HEAD = Class(TALaserProjectile) 
 {
-	PolyTrail = '/mods/SCTA/effects/emitters/PURPLE_LASER_emit.bp',
+	PolyTrail = '/mods/SCTA-master/effects/emitters/PURPLE_LASER_emit.bp',
 }
 
 TypeClass = CORKROG_HEAD

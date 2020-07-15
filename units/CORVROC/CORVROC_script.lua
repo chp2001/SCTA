@@ -3,8 +3,8 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA/lua/TAunit.lua').TAunit
-local TAweapon = import('/mods/SCTA/lua/TAweapon.lua').TAweapon
+local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 CORVROC = Class(TAunit) {
 	
@@ -33,7 +33,7 @@ CORVROC = Class(TAunit) {
 				self.unit.Spinners.cradle:SetGoal(-90)
 				self.unit.Spinners.cradle:SetSpeed(45)
 
-				WaitFor(self.Spinners.cradle)
+				WaitFor(self.unit.Spinners.cradle)
 
 				TAweapon.PlayFxRackReloadSequence(self)
 			end,

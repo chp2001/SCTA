@@ -52,13 +52,10 @@ UnitBlueprint {
         'RECLAIMABLE',
         'PATROLHELPER',
         'SHOWQUEUE',
-
-	--Additional Categories
+	'SELECTION',
         'MOBILE',
 	'CONSTRUCTION',
 	'LAND',
-
-	--TA Categories
         'ARM',
         'KBOT',
 	'LEVEL1',
@@ -83,15 +80,15 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {'Torso'},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
 				EmitterBone = {'RightFlap','LeftFlap'},
 				EmitterBlueprint = {
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
@@ -103,8 +100,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -115,17 +112,15 @@ UnitBlueprint {
         BuildCostEnergy = 2410,
         BuildCostMass = 120,
         BuildRate = 80,
-        BuildTime = 5597,
+        BuildTime = 6800,
         BuildableCategory = {
             'BUILTBYT1KBOT ARM',
         },
         MaxBuildDistance = 2.5,
         StorageEnergy = 50,
         StorageMass = 50,
-	ProductionPerSecondEnergy = 8,
-	ProductionPerSecondMass = 0.25,
+	ProductionPerSecondEnergy = 10,
 	NaturalProducer = true,
-	MaintenanceConsumptionPerSecondEnergy = 0.1,
     },
     Footprint = {
 	MaxSlope = 1.25,
@@ -189,17 +184,17 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/ARMCK/ARMCK_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMCK/ARMCK_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Seabed = true,

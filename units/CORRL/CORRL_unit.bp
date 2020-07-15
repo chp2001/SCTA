@@ -27,16 +27,12 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-
-	--Additional Categories
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
 	'ANTIAIR',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
-
-	--TA Categories
 	'CORE',
 	'SPECIAL',
 	'LEVEL2',
@@ -52,13 +48,13 @@ UnitBlueprint {
     Description = 'Missile Tower',
     Display = {
         Abilities = {
-            'Anti-Air',
+            '<LOC ability_aa>Anti-Air',
         },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{
 				EmitterBone = {'Turret', 0},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 		},
@@ -68,8 +64,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -137,20 +133,20 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 45,
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'CORRL_MISSILE',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 55,
+            FiringTolerance = 8,
             Label = 'CORRL_MISSILE',
             MaxRadius = 43.75,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 28.75,
-            ProjectileId = '/mods/SCTA/projectiles/CORRL_MISSILE/CORRL_MISSILE_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORRL_MISSILE/CORRL_MISSILE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -222,7 +218,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/CORRL/CORRL_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/CORRL/CORRL_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

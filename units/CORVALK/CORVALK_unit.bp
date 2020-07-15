@@ -41,10 +41,28 @@ UnitBlueprint {
     },
     Air = {
         AutoLandTime = 1,
-        BankFactor = 0,
-	BankForward = false,
+        BankFactor = 0.1,
+        BankForward = false,
         CanFly = true,
-        TransportHoverHeight = 5,
+        CirclingDirChange = false,
+        CirclingElevationChangeRatio = 0.25,
+        CirclingFlightChangeFrequency = 15,
+        CirclingRadiusChangeMaxRatio = 0.4,
+        CirclingRadiusChangeMinRatio = 0.3,
+        CirclingTurnMult = 1,
+        KLift = 2,
+        KLiftDamping = 2,
+        KMove = 0.95,
+        KMoveDamping = 2,
+        KRoll = 1,
+        KRollDamping = 1,
+        KTurn = 1,
+        KTurnDamping = 1,
+        LiftFactor = 8,
+        MaxAirspeed = 10,
+        StartTurnDistance = 5,
+		TurnSpeed = 0.7,
+        TransportHoverHeight = 3,
     },
     BuildIconSortPriority = 4,
     Categories = {
@@ -52,15 +70,11 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'AIR',
         'TRANSPORTATION',
         'TRANSPORTFOCUS',
         'CANTRANSPORTCOMMANDER',
-
-	--TA Categories
         'CORE',
         'VTOL',
 	'CTRL_V',
@@ -83,13 +97,13 @@ UnitBlueprint {
 		DefaultFlamingProjectileCountMin = 0,
 		DefaultFlamingProjectileCountMax = 0,
 		DestructionDebrisUseLocalVelocity = true,
-#		DefaultProjectileCategories = {'ArmCockpit'},
+		DefaultProjectileCategories = {'ArmCockpit'},
 		FlashSize = 10,
 		FlashTime = 10,
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 		},
@@ -99,13 +113,13 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
 	MovementEffects = {
-		Emitter = '/mods/SCTA/effects/emitters/fire_smoke_emit.bp',
+		Emitter = '/mods/SCTA-master/effects/emitters/fire_smoke_emit.bp',
 		Scale = 1,
 		Bones = {'firepoint1','firepoint2','firepoint3','firepoint4'},
 	},
@@ -115,9 +129,6 @@ UnitBlueprint {
         BuildCostEnergy = 2695,
         BuildCostMass = 115,
         BuildTime = 5889,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 0.7,
-        ProductionPerSecondEnergy = 0.7,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -152,16 +163,8 @@ UnitBlueprint {
     Physics = {
         Elevation = 5,
         MotionType = 'RULEUMT_Air',
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
-        MaxAcceleration = 0.72,
-        MaxBrake = 144,
-        MaxSpeed = 13.125,
-        TurnRate = 24,
-	RotateOnSpot = true,
-	MinSpeedPercent = 0,
-	MaxSteerForce = 100,
-	TurnRadius = 0,
+    MaxSpeed = 0.5, 
+    RotateOnSpot = true,
 	FuelRechargeRate = 999999,
 	FuelUseTime = 999999,
     },
@@ -175,9 +178,9 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Transport = {
         AirClass = true,
-        Class2AttachSize = 1,
-        Class3AttachSize = 1,
-        TransportClass = 1,
+        Class2AttachSize = 2,
+        Class3AttachSize = 4,
+        TransportClass = 10,
     },
     Weapon = {
         { #BIG_UNITEX
@@ -187,10 +190,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

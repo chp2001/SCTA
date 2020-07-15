@@ -3,9 +3,8 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA/lua/TAunit.lua').TAunit
+local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 local ScenarioUtils = import('/lua/sim/ScenarioUtilities.lua')
-local worldData = import('/mods/SCTA/lua/sim/worldData.lua')
 
 ARMMOHO = Class(TAunit) {
 	onMetalSpot = false,
@@ -29,15 +28,13 @@ ARMMOHO = Class(TAunit) {
 	OnStopBeingBuilt = function(self, builder, layer)
 		TAunit.OnStopBeingBuilt(self, builder, layer)
 		local markers = ScenarioUtils.GetMarkers() 
-		local unitPosition = self:GetPosition() 
-		self:SetProductionPerSecondMass(worldData:GetMap().mohoSurfaceMetal) 
+		local unitPosition = self:GetPosition()  
 		for k, v in pairs(markers) do 
 			if(v.type == 'Mass') then 
                 		local massPosition = v.position 
                 		if (massPosition[1] < unitPosition[1] + 1) and (massPosition[1] > unitPosition[1] - 1) then 
 	                    		if (massPosition[2] < unitPosition[2] + 1) and (massPosition[2] > unitPosition[2] - 1) then 
 		                    		if (massPosition[3] < unitPosition[3] + 1) and (massPosition[3] > unitPosition[3] - 1) then 
-                		   			self:SetProductionPerSecondMass(worldData:GetMap().mohoMetal) 
 							self.onMetalSpot = true
 		                    			break 
 						end

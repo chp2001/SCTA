@@ -33,8 +33,6 @@ UnitBlueprint {
         'EXPERIMENTAL',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-        --Additional Categories
         'MOBILE',
         'LAND',
         'DIRECTFIRE',
@@ -43,9 +41,7 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',
-        'CORKROG',
-
-        --TA Categories
+        'CORKROG',        
         'CORE',
         'KBOT',
         'WEAPON',
@@ -65,15 +61,15 @@ UnitBlueprint {
             DestructionEmitters = {
                 {
                     EmitterBone = {'torso','head','hips','rleg','lleg'},
-                    EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+                    EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
                     EmitterSize = 1.25,
                 },
                 {
                     EmitterBone = {'larm','rarm','lthigh','rthigh'},
                     EmitterBlueprint = {
-                            '/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-                            '/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-                            '/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+                            '/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+                            '/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+                            '/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
                     },
                     EmitterSize = 0.35,
                 },
@@ -84,8 +80,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-                    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+                    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -96,9 +92,6 @@ UnitBlueprint {
         BuildCostEnergy = 116664,
         BuildCostMass = 29489,
         BuildTime = 382193,
-        NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 1.1,
-        ProductionPerSecondEnergy = 1.1,
     },
     Footprint = {
         SizeX = 3,
@@ -163,8 +156,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 480,
-            AlternateDamageRadius = 0.25,
+            Damage = 2000,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'CORKROG_FIRE',
             FireTargetLayerCapsTable = {
@@ -174,11 +167,11 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_DirectFire',
             FiringTolerance = 2.75,
             Label = 'CORKROG_FIRE',
-            MaxRadius = 18.75,
+            MaxRadius = 30,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 0,
-	    MuzzleVelocity = 28.125,
-            ProjectileId = '/mods/SCTA/projectiles/CORKROG_FIRE/CORKROG_FIRE_proj.bp',
+	        MuzzleVelocity = 28.125,
+            ProjectileId = '/mods/SCTA-master/projectiles/CORKROG_FIRE/CORKROG_FIRE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -198,7 +191,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.625,
+            RateOfFire = 0.5,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
@@ -229,12 +222,13 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 2500,
-            AlternateDamageRadius = 0.25,
+            Damage = 6000,
+            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'CORKROG_HEAD',
             EnergyChargeForFirstShot = false,
-            EnergyRequired = 2000,
+            EnergyRequired = 3000,
+            EnergyDrainPerSecond = 3000,
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air|Seabed',
                 Seabed = 'Land|Water|Air|Seabed',
@@ -246,7 +240,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 0,
 	    MuzzleVelocity = 62.5,
-            ProjectileId = '/mods/SCTA/projectiles/CORKROG_HEAD/CORKROG_HEAD_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORKROG_HEAD/CORKROG_HEAD_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -289,8 +283,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 131,
-            AlternateDamageRadius = 2.5,
+            Damage = 400,
+            DamageRadius = 2.5,
             DamageType = 'Normal',
             DisplayName = 'CORKROG_ROCKET',
             FireTargetLayerCapsTable = {
@@ -298,13 +292,13 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
-            FiringTolerance = 360,
+            FiringTolerance = 10,
             Label = 'CORKROG_FIRE',
             MaxRadius = 56.25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 0,
 	    MuzzleVelocity = 15.625,
-            ProjectileId = '/mods/SCTA/projectiles/CORKROG_ROCKET/CORKROG_ROCKET_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORKROG_ROCKET/CORKROG_ROCKET_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -369,7 +363,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/CORKROG/CORKROG_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/CORKROG/CORKROG_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Seabed = true,

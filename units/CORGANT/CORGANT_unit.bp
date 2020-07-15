@@ -38,11 +38,11 @@ UnitBlueprint {
         'RALLYPOINT',
         'SHOWQUEUE',
 
-        --Additional Categories
+        
         'STRUCTURE',
         'CONSTRUCTION',
 
-        --TA Categories
+        
         'CORE',
         'PLANT',
         'LEVEL3',
@@ -63,15 +63,15 @@ UnitBlueprint {
             DestructionEmitters = {
                 {
                     EmitterBone = {0, 'cranetop','clamp1','clamp2','clamp3','clamp4'},
-                    EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+                    EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
                     EmitterSize = 1.25,
                 },
                 {
                     EmitterBone = {'arm1a','arm2a','arm3a','arm4a'},
                     EmitterBlueprint = {
-                            '/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-                            '/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-                            '/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+                            '/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+                            '/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+                            '/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
                     },
                     EmitterSize = 0.35,
                 },
@@ -84,8 +84,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-                    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+                    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -171,23 +171,23 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 300,
+            Damage = 20,
             DamageFriendly = true,
-            DamageRadius = 3.75,
+            DamageRadius = 1,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
         { #LARGE_BUILDING
-            Damage = 1800,
-            DamageRadius = 12.5,
+            Damage = 50,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/CORGANT/CORGANT_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/CORGANT/CORGANT_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

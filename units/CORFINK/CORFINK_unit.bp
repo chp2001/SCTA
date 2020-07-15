@@ -38,9 +38,25 @@ UnitBlueprint {
     },
     Air = {
         AutoLandTime = 1,
-        BankFactor = 0,
-	BankForward = false,
+        BankFactor = 1,
+        BankForward = false,
         CanFly = true,
+        CombatTurnSpeed = 1.5,
+        KLift = 3,
+        KLiftDamping = 2.5,
+        KMove = 1,
+        KMoveDamping = 1,
+        KRoll = 2,
+        KRollDamping = 1,
+        KTurn = 1,
+        KTurnDamping = 1.5,
+        LiftFactor = 7,
+        MinAirspeed = 14,
+        MaxAirspeed = 18,
+        StartTurnDistance = 5,
+        TightTurnMultiplier = 1.02,
+        TurnSpeed = 1.5,
+        Winged = true,
     },
     BuildIconSortPriority = 1,
     Categories = {
@@ -48,13 +64,10 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
+    'OVERLAYRADAR',
         'MOBILE',
 	'AIR',
-	'SCOUT',
-
-	--TA Categories
+	'SCOUT', 
         'CORE',
         'VTOL',
 	'CTRL_V',
@@ -69,6 +82,9 @@ UnitBlueprint {
     },
     Description = 'Air Scout',
     Display = {
+        Abilities = {
+            '<LOC ability_radar>Radar',
+        },
 	DestructionEffects = {
 		DestructionDebrisUseLocalVelocity = true,
 		DefaultFlamingProjectileCountMin = 0,
@@ -79,7 +95,7 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 		},
@@ -89,8 +105,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -100,9 +116,6 @@ UnitBlueprint {
         BuildCostEnergy = 1369,
         BuildCostMass = 36,
         BuildTime = 2156,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 0.2,
-        ProductionPerSecondEnergy = 0.2,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -136,16 +149,8 @@ UnitBlueprint {
     Physics = {
         Elevation = 12.5,
         MotionType = 'RULEUMT_Air',
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
-        MaxAcceleration = 14.4,
-        MaxBrake = 360,
-        MaxSpeed = 19.25,
-        TurnRate = 112,
-	RotateOnSpot = true,
-	MinSpeedPercent = 0,
-	MaxSteerForce = 100,
-	TurnRadius = 0,
+    MaxSpeed = 0.5, 
+    RotateOnSpot = true,
 	FuelRechargeRate = 999999,
 	FuelUseTime = 999999,
     },
@@ -163,7 +168,7 @@ UnitBlueprint {
     },
     Weapon = {
         { #SMALL_UNITEX
-            Damage = 30,
+            Damage = 10,
             DamageFriendly = true,
             DamageRadius = 0.9375,
             DamageType = 'Normal',
@@ -171,8 +176,8 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         },
         { #SMALL_UNIT
-            Damage = 200,
-            DamageRadius = 2.34375,
+            Damage = 10,
+            DamageRadius = 0.9375,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

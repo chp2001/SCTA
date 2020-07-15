@@ -36,13 +36,9 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	--Additional Categories
 	'STRUCTURE',
 	'INTELLIGENCE',
 	'TARGETING',
-
-	--TA Categories
 	'ARM',
 	'SPECIAL',
 	'LEVEL3',
@@ -64,7 +60,7 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 		},
@@ -74,8 +70,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -85,9 +81,7 @@ UnitBlueprint {
         BuildCostEnergy = 136058,
         BuildCostMass = 15130,
         BuildTime = 154785,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 1250,
-	ProductionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 700,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -132,23 +126,23 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 300,
+            Damage = 20,
             DamageFriendly = true,
-            DamageRadius = 3.75,
+            DamageRadius = 1,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
         { #LARGE_BUILDING
-            Damage = 1800,
-            DamageRadius = 12.5,
+            Damage = 50,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/ARMTARG/ARMTARG_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMTARG/ARMTARG_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

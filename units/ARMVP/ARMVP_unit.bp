@@ -43,11 +43,11 @@ UnitBlueprint {
         'RALLYPOINT',
         'SHOWQUEUE',
 
-	--Additional Categories
+	
 	'STRUCTURE',
 	'CONSTRUCTION',
 
-	--TA Categories
+	
 	'ARM',
 	'PLANT',
 	'CTRL_F',
@@ -68,15 +68,15 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {'Side_01','Side_02', 0},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
 				EmitterBone = {'Build_Plate_01', 'Build_Plate_02'},
 				EmitterBlueprint = {
-	    				'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+	    				'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
@@ -89,8 +89,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -179,23 +179,23 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 300,
+            Damage = 20,
             DamageFriendly = true,
-            DamageRadius = 3.75,
+            DamageRadius = 1,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
         { #LARGE_BUILDING
-            Damage = 1800,
-            DamageRadius = 12.5,
+            Damage = 50,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/ARMVP/ARMVP_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMVP/ARMVP_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

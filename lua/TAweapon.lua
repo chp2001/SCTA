@@ -1,12 +1,32 @@
 local DefaultWeapon = import('/lua/sim/DefaultWeapons.lua').DefaultProjectileWeapon
-TAutils = import('/mods/SCTA/lua/TAutils.lua')
+TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 TAweapon = Class(DefaultWeapon) {
     FxMuzzleFlash = {},
 
     StartEconomyDrain = function(self)
-    end,
+        if self.FirstShot then return end
+        if self.unit:GetFractionComplete() ~= 1 then return end
 
+        local bp = self:GetBlueprint()
+        if not self.EconDrain and bp.EnergyRequired and bp.EnergyDrainPerSecond then
+            local nrgReq = self:GetWeaponEnergyRequired()
+            local nrgDrain = self:GetWeaponEnergyDrain()
+            if nrgReq > 0 and nrgDrain > 0 then
+                local time = nrgReq / nrgDrain
+                if time < 0.1 then
+                    time = 0.1
+                end
+                self.EconDrain = CreateEconomyEvent(self.unit, nrgReq, 0, time)
+                self.FirstShot = true
+                self.unit:ForkThread(function()
+                    WaitFor(self.EconDrain)
+                    RemoveEconomyEvent(self.unit, self.EconDrain)
+                    self.EconDrain = nil
+                end)
+            end
+        end
+    end,
     OnGotTargetCheck = function(self)
         local army = self.unit:GetArmy()
         local canSee = true
@@ -15,12 +35,14 @@ TAweapon = Class(DefaultWeapon) {
         local target = self:GetCurrentTarget()
         if (target) then
             if (IsUnit(target)) then
+                LOG('This is a unit')
                 canSee = target:GetBlip(army):IsSeenNow(army)
-            end
+            else
             if (IsBlip(target)) then
                 target = target:GetSource()
             end
         end
+     end 
 
         ###object (if any) currently ordered to target
         local currentTarget = self.unit:GetTargetEntity()
@@ -35,7 +57,7 @@ TAweapon = Class(DefaultWeapon) {
             return false
         end
     end,
-
+    
     IdleState = State(DefaultWeapon.IdleState) {
         OnGotTarget = function(self)
             if (self:OnGotTargetCheck() == true) then
@@ -81,7 +103,6 @@ TAweapon = Class(DefaultWeapon) {
                 aiBrain:TakeResource('Energy', bp.EnergyRequired)
                 self.WeaponCanFire = true
             end
-            #We change the state on counted projectiles because we won't get another OnFire call.
             if bp.CountedProjectile == true then
                 ChangeState(self, self.RackSalvoFiringState)
             end
@@ -122,7 +143,7 @@ TAweapon = Class(DefaultWeapon) {
         local damageTable = {}
         damageTable.EdgeEffectiveness = weaponBlueprint.EdgeEffectiveness
         damageTable.DamageRadius = weaponBlueprint.DamageRadius + (self.DamageRadiusMod or 0)
-        damageTable.AlternateDamageRadius = weaponBlueprint.AlternateDamageRadius or 0
+        damageTable.DamageRadius = weaponBlueprint.DamageRadius or 0
         damageTable.DamageAmount = weaponBlueprint.Damage + (self.DamageMod or 0)
         damageTable.DamageType = weaponBlueprint.DamageType
         damageTable.DamageFriendly = weaponBlueprint.DamageFriendly

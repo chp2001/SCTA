@@ -72,16 +72,13 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
+'HIGHALTAIR',
         'MOBILE',
 	'ANTIAIR',
 	'AIR',
         'OVERLAYANTIAIR',
 	'OVERLAYDIRECTFIRE',
 	'DIRECTFIRE',
-
-	--TA Categories
         'CORE',
         'VTOL',
 	'CTRL_V',
@@ -99,7 +96,7 @@ UnitBlueprint {
     Description = 'Fighter',
     Display = {
         Abilities = {
-            'Anti-Air',
+            '<LOC ability_aa>Anti-Air',
         },
 	DestructionEffects = {
 		#DefaultProjectileCategories = {'ArmCockpit'},
@@ -111,7 +108,7 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 		},
@@ -121,8 +118,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -132,9 +129,6 @@ UnitBlueprint {
         BuildCostEnergy = 3181,
         BuildCostMass = 101,
         BuildTime = 9196,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 0.8,
-        ProductionPerSecondEnergy = 0.8,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -207,8 +201,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 46,
-            AlternateDamageRadius = 1.5,
+            Damage = 50,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'CORVTOL_MISSILE',
             FireTargetLayerCapsTable = {
@@ -216,7 +210,7 @@ UnitBlueprint {
                 Land = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_AntiAir',
-            FiringTolerance = 43.96,
+            FiringTolerance = 2,
 	    HeadingArcCenter = 0,
     	    HeadingArcRange = 43.96,
             Label = 'CORVTOL_MISSILE',
@@ -224,7 +218,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 26.5625,
-            ProjectileId = '/mods/SCTA/projectiles/CORVTOL_MISSILE/CORVTOL_MISSILE_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORVTOL_MISSILE/CORVTOL_MISSILE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -262,7 +256,7 @@ UnitBlueprint {
             MaxRadius = 22,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            ProjectileId = '/mods/SCTA/projectiles/DUMMY/DUMMY_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/DUMMY/DUMMY_proj.bp',
             RackBones = {{MuzzleBones = {}}},
             RackRecoilDistance = 0,
             TargetCheckInterval = 1,

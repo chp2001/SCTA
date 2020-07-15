@@ -24,14 +24,11 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	--Additional Categories
 	'STRUCTURE',
         'ECONOMIC',
 	'ENERGYPRODUCTION',
 	'UNDERWATER',
-
-	--TA Categories
+	'CORE',
 	'ARM',
 	'ENERGY',
 	'LEVEL3',
@@ -40,7 +37,7 @@ UnitBlueprint {
 	'NOTSUB',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 1231,
         MaxHealth = 1231,
     },
@@ -54,7 +51,7 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 		},
@@ -64,13 +61,13 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
 	IdleEffects = {
-		Emitter = '/mods/SCTA/effects/emitters/uwfus_wake_emit.bp',
+		Emitter = '/mods/SCTA-master/effects/emitters/uwfus_wake_emit.bp',
 		Scale = 0.5,
 		Bones = {'Emitter'},
 	},
@@ -139,7 +136,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/ARMUWFUS/ARMUWFUS_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMUWFUS/ARMUWFUS_dead_prop.bp',
         WreckageLayers = {
             Seabed = true,
         },

@@ -27,14 +27,14 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH1',
 
-	--Additional Categories
+	
 	'STRUCTURE',
         'ENERGYSTORAGE',
         'ECONOMIC',
 	'NOSMOKE',
 	'TEXTUREANIM',
 
-	--TA Categories
+	
 	'ARM',
     'CORE', -- in lieu of core storage
 	'ENERGY',
@@ -59,7 +59,7 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 		},
@@ -69,8 +69,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -139,7 +139,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/ARMUWES/ARMUWES_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMUWES/ARMUWES_dead_prop.bp',
         WreckageLayers = {
             Seabed = true,
         },

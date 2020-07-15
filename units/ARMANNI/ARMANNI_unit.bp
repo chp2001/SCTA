@@ -26,15 +26,11 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	--Additional Categories
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
 	'TEXTUREANIM',
         'OVERLAYDIRECTFIRE',
-
-	--TA Categories
 	'ARM',
 	'SPECIAL',
 	'WEAPON',
@@ -53,22 +49,22 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {'Turret_Top','ARMANNI', 'Lower_Turret'},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
 				EmitterBone = {'Case_01','Case_02','Case_03','Case_04','Barrel'},
 				EmitterBlueprint = {
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
 			{
 				EmitterBone = {'Barrel_Muzzle','Container_01','Container_02'},
 				EmitterBlueprint = {
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.25,
 			},
@@ -80,8 +76,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -112,9 +108,9 @@ UnitBlueprint {
         UnitName = 'Annihilator',
     },
     Intel = {
-        VisionRadius = 24,
-	RadarRadius = 75,
-	FreeIntel = true,
+        VisionRadius = 12,
+	RadarRadius = 30,
+	FreeIntel = false,
     },
     Interface = {
         HelpText = 'Energy Weapon',
@@ -150,7 +146,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 2500,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARM_TOTAL_ANNIHILATOR',
             FireTargetLayerCapsTable = {
@@ -163,7 +159,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 62.5,
-            ProjectileId = '/mods/SCTA/projectiles/ARM_TOTAL_ANNIHILATOR/ARM_TOTAL_ANNIHILATOR_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARM_TOTAL_ANNIHILATOR/ARM_TOTAL_ANNIHILATOR_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -218,7 +214,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/ARMANNI/ARMANNI_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMANNI/ARMANNI_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

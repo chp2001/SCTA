@@ -33,7 +33,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'NAVAL',
 	'DIRECTFIRE',
@@ -42,7 +42,7 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'OVERLAYANTINAVY',
 
-	--TA Categories
+	
         'CORE',
         'SHIP',
 	'LEVEL2',
@@ -69,15 +69,15 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {'turret','box'},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
 				EmitterBone = {'barrel1','barrel2'},
 				EmitterBlueprint = {
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
@@ -88,13 +88,13 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
 	MovementEffects = {
-		Emitter = '/mods/SCTA/effects/emitters/wake_emit.bp',
+		Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
 		Scale = 0.5,
 		Bones = {'wake1','wake2'},
 	},
@@ -104,9 +104,6 @@ UnitBlueprint {
         BuildCostEnergy = 8551,
         BuildCostMass = 1724,
         BuildTime = 17050,
-	NaturalProducer = true,
-        ProductionPerSecondEnergy = 2.2,
-        MaintenanceConsumptionPerSecondEnergy = 2.2,
     },
     Footprint = {
 	MinWaterDepth = 1.875,
@@ -171,7 +168,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 220,
-            AlternateDamageRadius = 2,
+            DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'COR_CRUS',
             FireTargetLayerCapsTable = {
@@ -185,7 +182,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 21.875,
-            ProjectileId = '/mods/SCTA/projectiles/COR_CRUS/COR_CRUS_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/COR_CRUS/COR_CRUS_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -237,7 +234,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 80,
-            AlternateDamageRadius = 0.5,
+            DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'COREDEPTHCHARGE',
             FireTargetLayerCapsTable = {
@@ -250,7 +247,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 6.25,
-            ProjectileId = '/mods/SCTA/projectiles/COREDEPTHCHARGE/COREDEPTHCHARGE_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/COREDEPTHCHARGE/COREDEPTHCHARGE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -300,7 +297,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/CORCRUS/CORCRUS_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/CORCRUS/CORCRUS_dead_prop.bp',
         WreckageLayers = {
             Water = true,
 	    Sub = true,

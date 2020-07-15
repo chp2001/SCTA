@@ -44,13 +44,13 @@ UnitBlueprint {
         'RALLYPOINT',
         'SHOWQUEUE',
 
-	--Additional Categories
+	
 	'STRUCTURE',
 	'CONSTRUCTION',
 	'NAVAL',
 	'TEXTUREANIM',
 
-	--TA Categories
+	
 	'CORE',
 	'PLANT',
 	'CTRL_F',
@@ -72,15 +72,15 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
 				EmitterBone = {'turreta','turretb','a'},
 				EmitterBlueprint = {
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
@@ -94,8 +94,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -106,8 +106,6 @@ UnitBlueprint {
         BuildCostMass = 600, 
         BuildTime = 6000,
 	BuildRate = 100,
-	ProductionPerSecondMass = 0.5,
-	NaturalProducer = true,
         BuildableCategory = {
             'SHIP LEVEL1 CORE',
             'NORMALSUB LEVEL1 CORE',
@@ -191,23 +189,23 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 300,
+            Damage = 20,
             DamageFriendly = true,
-            DamageRadius = 3.75,
+            DamageRadius = 1,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
         { #LARGE_BUILDING
-            Damage = 1800,
-            DamageRadius = 12.5,
+            Damage = 50,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/CORSY/CORSY_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/CORSY/CORSY_dead_prop.bp',
         WreckageLayers = {
             Water = true,
             Seabed = true,

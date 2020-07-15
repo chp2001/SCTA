@@ -24,12 +24,12 @@ UnitBlueprint {
         'RECLAIMABLE',
 	'BUILTBYT1MINELAYER',
 
-	--Additional Categories
+	
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'ARM',
         'MINE',
 	'WEAPON',
@@ -54,14 +54,14 @@ UnitBlueprint {
 			{
 				EmitterBone = {0},
 				EmitterBlueprint = {
-					'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp'
+					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp'
 				},
 				EmitterSize = 15,
 			},
 			{
 				EmitterBone = {0},
 				EmitterBlueprint = {
-					'/mods/SCTA/effects/emitters/COMBOOM_emit.bp',
+					'/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
 				},
 				EmitterSize = 1.35,
 			},
@@ -72,8 +72,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -150,7 +150,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
 	    MuzzleVelocity = 1,
-	    ProjectileId = '/mods/SCTA/projectiles/ARMMINE6/ARMMINE6_proj.bp',
+	    ProjectileId = '/mods/SCTA-master/projectiles/ARMMINE6/ARMMINE6_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

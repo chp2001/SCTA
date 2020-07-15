@@ -33,13 +33,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'CORE',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL2',	#'LEVEL1' in TA
@@ -60,15 +60,15 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {'turret'},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
 				EmitterBone = {'barrel1','muzzle2'},
 				EmitterBlueprint = {
-	    				'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+	    				'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
@@ -79,8 +79,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -90,9 +90,6 @@ UnitBlueprint {
         BuildCostEnergy = 3048,
         BuildCostMass = 473,
         BuildTime = 8730,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 0.8,
-        ProductionPerSecondEnergy = 0.8,
     },
     Footprint = {
 	SizeX = 3,
@@ -158,7 +155,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 143,
-	    AlternateDamageRadius = 1.5,
+	    DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'CORE_REAP',
             FireTargetLayerCapsTable = {
@@ -171,7 +168,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 13.125,
-            ProjectileId = '/mods/SCTA/projectiles/CORE_REAP/CORE_REAP_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORE_REAP/CORE_REAP_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -229,7 +226,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/CORREAP/CORREAP_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/CORREAP/CORREAP_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Seabed = true,

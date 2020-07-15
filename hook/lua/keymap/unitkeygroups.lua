@@ -1,42 +1,35 @@
 TAunitkeygroups = {
     ["Experimental"]= {
         "corkrog",
+        "armdrake",
+        "armgant",
+        "corgant",
         "armvulc",
     }, 
     ["Land_Factory"]= {
         "armvp",
         "armlab",
-        "armavp",
-        "armalab",
         "armhp",
         "corvp",
         "corlab",
-        "coravp",
-        "coralab",
         "corhp",
     },    
     ["Air_Factory"]= {
         "armap",
-        "armaap",
         "corap",
-        "coraap",
     },
     ["Naval_Factory"]= {
         "armsy",
-        "armasy",
         "corsy",
-        "corasy",
     },
     ["Power_Generator"]= {
         "armfus",
         "armsolar",
         "armtide",
         "armuwfus",
-        "armwin",
         "corfus",
         "corsolar",
         "cortide",
-        "corwin",
     },
     ["Hydrocarbon_Power_Plant"]= {
         "armgeo",
@@ -155,6 +148,7 @@ TAunitkeygroups = {
     },
     ["T3_Spy_Plane"]= {
         "armawac",
+        "corawac", 
     },
     ["T3_Air_Superiority_Fighter"]= {
         "armhawk",
@@ -196,6 +190,8 @@ TAunitkeygroups = {
     ["T1_Light_Assault_Bot"]= {
         "armpw",
         "corak",
+        "armflash",
+        "corgator",
     },
     ["T2_Mobile_Missile_Launcher"]= {
         "armmerl",
@@ -203,8 +199,8 @@ TAunitkeygroups = {
         "corvroc",
     },
     ["T1_Tank"]= {
-        "armflash",
-        "corgator",
+        "armstump",
+        "corraid",
     },
     ["T2_Heavy_Tank"]= {
         "armbull",

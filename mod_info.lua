@@ -1,10 +1,10 @@
 name = "SCTA"
-uid = "8E704ECC-12EC-11EA-A6CA-D6DA930038A1"
-version = 18
-description = "Total Annihilation for Supreme Commander! See where it all began, or take a trip down memory lane. Choose UEF to spawn an Arm commander, cybran to spawn Core. Add an Aeon or Sera AI for an opponent.  Mod by Raevn, ported to FAForever by Axle.  v16 adds Core Krogoth, Core Morty and Arm Pelican. v17-v18 bugfixes."
-author = "Raevn"
+uid = "8E704ECC-12EC-11EA-A6CA-D6DA930038A2"
+version = 19
+description = "Total Annihilation for Supreme Commander! Updated and bugfixed by Dragun123, with permission from Raevn, coding fix help from Balth. New Models from Gamma of TA Total Mayham and Madmax of FAF"
+author = "Raevn. Updated by Dragun"
 url = ""
-icon = "/mods/SCTA/Core_Commander.png"
+icon = "/mods/SCTA-master/Core_Commander.png"
 selectable = true
 enabled = true
 exclusive = false

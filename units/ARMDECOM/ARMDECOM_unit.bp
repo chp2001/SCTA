@@ -56,7 +56,7 @@ UnitBlueprint {
         'RECLAIM',
         'REPAIR',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
@@ -64,7 +64,7 @@ UnitBlueprint {
 	'LEVEL2',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'ARM',
 	'WEAPON',
 	'NOTAIR',
@@ -79,6 +79,8 @@ UnitBlueprint {
     },
     Description = 'Decoy Commander',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMCOM/ARMCOM_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             'Decoy',
             'Construction Unit',
@@ -92,14 +94,14 @@ UnitBlueprint {
 			{
 				EmitterBone = {0},
 				EmitterBlueprint = {
-					'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
+					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 				},
 				EmitterSize = 15,
 			},
 			{
 				EmitterBone = {0},
 				EmitterBlueprint = {
-					'/mods/SCTA/effects/emitters/COMBOOM_emit.bp',
+					'/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
 				},
 				EmitterSize = 1.35,
 			},
@@ -111,10 +113,10 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-		    NormalName = '/mods/SCTA/textures/common/normalsTS.dds',
-		    SpecularName = '/mods/SCTA/units/ARMCOM/ARMCOM_SpecTeam.dds',
-		    AlbedoName = '/mods/SCTA/units/ARMCOM/ARMCOM_Albedo.dds',
-                    ShaderName = 'Unit',
+		    NormalName = '/mods/SCTA-master/textures/common/normalsTS.dds',
+		    SpecularName = '/mods/SCTA-master/units/ARMCOM/ARMCOM_SpecTeam.dds',
+		    AlbedoName = '/mods/SCTA-master/units/ARMCOM/ARMCOM_Albedo.dds',
+                    ShaderName = 'Unit', 
                 },
             },
         },
@@ -196,7 +198,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 60,
-            AlternateDamageRadius = 0.5,
+            DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'ARMCOMLASER',
             FireTargetLayerCapsTable = {
@@ -209,7 +211,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 25,
-            ProjectileId = '/mods/SCTA/projectiles/ARMCOMLASER/ARMCOMLASER_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMCOMLASER/ARMCOMLASER_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

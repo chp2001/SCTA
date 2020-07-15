@@ -36,14 +36,10 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	--Additional Categories
 	'STRUCTURE',
 	'INTELLIGENCE',
 	'RADAR',
         'OVERLAYRADAR',
-
-	--TA Categories
 	'ARM',
 	'SPECIAL',
 	'LEVEL3',
@@ -60,21 +56,21 @@ UnitBlueprint {
     Description = 'Long Range Radar Tower',
     Display = {
         Abilities = {
-            'Radar',
+            '<LOC ability_radar>Radar',
         },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{
 				EmitterBone = {0, 'Turret'},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
 				EmitterBone = {'Dish_01','Dish_02'},
 				EmitterBlueprint = {
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
@@ -85,8 +81,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -96,8 +92,8 @@ UnitBlueprint {
         BuildCostEnergy = 1830,
         BuildCostMass = 125,
         BuildTime = 4800,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 18,
+	    NaturalProducer = false,
+    MaintenanceConsumptionPerSecondEnergy = 18,
 	ProductionPerSecondEnergy = 18,
     },
     Footprint = {
@@ -118,8 +114,8 @@ UnitBlueprint {
 	UnitName = 'Advanced Radar Tower',
     },
     Intel = {
-	FreeIntel = true,
-        VisionRadius = 22, 
+	FreeIntel = false,
+    VisionRadius = 22, 
 	RadarRadius = 180,
     },
     Interface = {
@@ -152,16 +148,16 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #SMALL_BUILDING
-            Damage = 900,
-            DamageRadius = 6.406,
+         { #SMALL_BUILDING
+            Damage = 50,
+            DamageRadius = 2,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/ARMARAD/ARMARAD_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMARAD/ARMARAD_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

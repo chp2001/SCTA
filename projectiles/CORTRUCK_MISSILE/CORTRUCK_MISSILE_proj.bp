@@ -36,18 +36,22 @@ ProjectileBlueprint {
         'PROJECTILE',
         'ANTIAIR',
         'MISSILE',
+    },    
+    Defense = {
+        Health = 1,
+        MaxHealth = 1,
     },
     Display = {
-        MeshBlueprint = '/mods/SCTA/meshes/projectiles/missile_mesh.bp',
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/missile_mesh.bp',
         StrategicIconSize = 1,
         UniformScale = 0.16,
     },
     General = {
-        Category = 'Anti Air',
+        Category = 'MISSILE',
         EntityCategory = {
        	    'CORE',
             'PROJECTILE',
-   	    'ANTIAIR',
+   	        'TACTICAL', 
        	    'MISSILE',
         },
         Faction = 'CORE',

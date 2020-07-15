@@ -28,13 +28,13 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH2',
 
-	--Additional Categories
+	
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
 
-	--TA Categories
+	
 	'CORE',
 	'LEVEL2',
 	'STRATEGIC',
@@ -53,15 +53,15 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
 				EmitterBone = {'barrel1', 'barrel2'},
 				EmitterBlueprint = {
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
@@ -72,8 +72,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -141,8 +141,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 320,
-            AlternateDamageRadius = 2.65, 
+            Damage = 1500,
+            DamageRadius = 2.65, 
+            WeaponCategory = 'Artillery',
             DamageType = 'Normal',
             DisplayName = 'CORFIXED_GUN',
             FireTargetLayerCapsTable = {
@@ -154,7 +155,10 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 21.875,
-            ProjectileId = '/mods/SCTA/projectiles/CORFIXED_GUN/CORFIXED_GUN_proj.bp',
+            EnergyChargeForFirstShot = false,
+            EnergyRequired = 750,
+            EnergyDrainPerSecond = 500,
+            ProjectileId = '/mods/SCTA-master/projectiles/CORFIXED_GUN/CORFIXED_GUN_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -200,16 +204,16 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #MEDIUM_BUILDING
-            Damage = 1400,
-            DamageRadius = 10.16,
+         { #MEDIUM_BUILDING
+            Damage = 100,
+            DamageRadius = 5,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/CORPUN/CORPUN_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/CORPUN/CORPUN_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

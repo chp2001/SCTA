@@ -7,7 +7,7 @@ UnitBlueprint {
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'SRVLRG3',
+            Cue = 'SERVLRG3',
             LodCutoff = 'UnitMove_LodCutoff',
         },
 	Destroyed = Sound {
@@ -27,13 +27,13 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH3',
 
-	--Additional Categories
+	
 	'STRUCTURE',
 	'DEFENSE',
 	'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
 
-	--TA Categories
+	
 	'ARM',
 	'LEVEL3',
 	'STRATEGIC',
@@ -53,15 +53,15 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {'Turret','Turret_Barrel', 0},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
 				EmitterBone = {'Turret_Muzzle'},
 				EmitterBlueprint = {
-	    				'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+	    				'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
@@ -72,8 +72,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -141,7 +141,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 2000,
-            AlternateDamageRadius = 2.5, 
+            DamageRadius = 2.5, 
             DamageType = 'Normal',
             DisplayName = 'ARM_BERTHACANNON',
             FireTargetLayerCapsTable = {
@@ -151,13 +151,14 @@ UnitBlueprint {
             FiringTolerance = 1.65,	
 	    FiringRandomness = 0.5,
             Label = 'ARM_BERTHACANNON',
-            MaxRadius = 256,
+            MaxRadius = 140,
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 50,
             EnergyChargeForFirstShot = false,
             EnergyRequired = 1500,
-            ProjectileId = '/mods/SCTA/projectiles/ARM_BERTHACANNON/ARM_BERTHACANNON_proj.bp',
+            EnergyDrainPerSecond = 200,
+            ProjectileId = '/mods/SCTA-master/projectiles/ARM_BERTHACANNON/ARM_BERTHACANNON_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -188,6 +189,7 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 5,
             Turreted = true,
+            WeaponCategory = 'Artillery',
         },
         { #ATOMIC_BLAST
             Damage = 2000,
@@ -206,7 +208,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/ARMBRTHA/ARMBRTHA_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMBRTHA/ARMBRTHA_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

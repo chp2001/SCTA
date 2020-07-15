@@ -33,13 +33,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'CORE',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL1',
@@ -59,7 +59,7 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {'Turret'},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 		},
@@ -69,8 +69,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -80,9 +80,6 @@ UnitBlueprint {
         BuildCostEnergy = 1887,
         BuildCostMass = 375,
         BuildTime = 4209,
-	NaturalProducer=true,
-        MaintenanceConsumptionPerSecondEnergy = 0.3,
-        ProductionPerSecondEnergy = 0.3,
     },
     Footprint = {
 	SizeX = 2,
@@ -148,7 +145,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 180,
-	    AlternateDamageRadius = 2.625,
+	    DamageRadius = 2.625,
             DamageType = 'Normal',
             DisplayName = 'CORLEVLR_WEAPON',
             FireTargetLayerCapsTable = {
@@ -156,13 +153,13 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 10.99,
+            FiringTolerance = 3,
             Label = 'CORLEVLR_WEAPON',
             MaxRadius = 16.25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
 	    MuzzleVelocity = 17.5,
-            ProjectileId = '/mods/SCTA/projectiles/CORLEVLR_WEAPON/CORLEVLR_WEAPON_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORLEVLR_WEAPON/CORLEVLR_WEAPON_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -214,7 +211,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/CORLEVLR/CORLEVLR_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/CORLEVLR/CORLEVLR_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Seabed = true,

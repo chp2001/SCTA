@@ -32,16 +32,12 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'NAVAL',
 	'ANTIAIR',
 	'LIGHTBOAT',
         'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',
-
-	--TA Categories
         'ARM',
         'CORE', -- in lieu of core shredder
         'SHIP',
@@ -60,22 +56,22 @@ UnitBlueprint {
     Description = 'Anti-Air Ship',
     Display = {
         Abilities = {
-            'Anti-Air',
+            '<LOC ability_aa>Anti-Air',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'ArmShip','MetalBarrel'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {0, 'turret'},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
 				EmitterBone = {'launcher1','launcher2'},
 				EmitterBlueprint = {
-	    				'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+	    				'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
@@ -86,13 +82,13 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
 	MovementEffects = {
-		Emitter = '/mods/SCTA/effects/emitters/wake_emit.bp',
+		Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
 		Scale = 0.5,
 		Bones = {'Wake_01','Wake_02'},
 	},
@@ -102,9 +98,6 @@ UnitBlueprint {
         BuildCostEnergy = 17058,
         BuildCostMass = 1358,
         BuildTime = 38628,
-	NaturalProducer = true,
-        ProductionPerSecondEnergy = 7,
-        MaintenanceConsumptionPerSecondEnergy = 7,
     },
     Footprint = {
         SizeX = 3,
@@ -166,10 +159,10 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 57,
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'ARMAAS_WEAPON1',
-	    FiringTolerance = 43.95,
+	    FiringTolerance = 1,
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Air|Seabed',
             },
@@ -179,7 +172,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 26.875,
-            ProjectileId = '/mods/SCTA/projectiles/ARMAAS_WEAPON1/ARMAAS_WEAPON1_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMAAS_WEAPON1/ARMAAS_WEAPON1_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -243,20 +236,20 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 57,
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'ARMAAS_WEAPON2',
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-	    FiringTolerance = 43.95,
+	    FiringTolerance = 1,
             Label = 'ARMAAS_WEAPON2',
             MaxRadius = 44.375,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 26.875,
-            ProjectileId = '/mods/SCTA/projectiles/ARMAAS_WEAPON1/ARMAAS_WEAPON1_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMAAS_WEAPON1/ARMAAS_WEAPON1_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -320,14 +313,14 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 0,
-            AlternateDamageRadius = 3.75, 
+            DamageRadius = 3.75, 
             DamageType = 'Normal',
             DisplayName = 'ARMAAS_WEAPON3',
             FireTargetLayerCapsTable = {
                 Water = 'Air',
             },
 	    RangeCategory = 'UWRC_AntiAir',
-            FiringTolerance = 4.214,	
+            FiringTolerance = 0.5,	
 	    FiringRandomness = 0.5,
 	    EdgeEffectiveness = 0.9,
             Label = 'ARMAAS_WEAPON3',
@@ -335,7 +328,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 59.375,
-            ProjectileId = '/mods/SCTA/projectiles/ARMAAS_WEAPON3/ARMAAS_WEAPON3_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMAAS_WEAPON3/ARMAAS_WEAPON3_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -380,17 +373,17 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/ARMAAS/ARMAAS_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMAAS/ARMAAS_dead_prop.bp',
         WreckageLayers = {
             Water = true,
 	    Sub = true,

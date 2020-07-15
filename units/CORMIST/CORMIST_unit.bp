@@ -32,16 +32,12 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
 	'ANTIAIR',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
-
-	--TA Categories
         'CORE',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL1',	#Bug in TA: 'LEVEL2'
@@ -58,13 +54,13 @@ UnitBlueprint {
     Description = 'Missile Launcher',
     Display = {
         Abilities = {
-            'Anti-Air',
+            '<LOC ability_aa>Anti-Air', 'Anti-Air',
         },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{
 				EmitterBone = {'Turret'},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 		},
@@ -74,8 +70,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -85,9 +81,6 @@ UnitBlueprint {
         BuildCostEnergy = 947,
         BuildCostMass = 116,
         BuildTime = 1820,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 0.5,
-        ProductionPerSecondEnergy = 0.5,
     },
     Footprint = {
 	MaxSlope = 1,
@@ -153,7 +146,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 41,
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'CORTRUCK_MISSILE',
@@ -162,13 +155,13 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 43.96,
+            FiringTolerance = 10,
             Label = 'CORTRUCK_MISSILE',
             MaxRadius = 37.5,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 28.125,
-            ProjectileId = '/mods/SCTA/projectiles/CORTRUCK_MISSILE/CORTRUCK_MISSILE_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORTRUCK_MISSILE/CORTRUCK_MISSILE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -232,17 +225,17 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/CORMIST/CORMIST_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/CORMIST/CORMIST_dead_prop.bp',
         WreckageLayers = {
             Seabed = true,
             Land = true,

@@ -26,14 +26,10 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	--Additional Categories
 	'STRUCTURE',
 	'DEFENSE',
 	'ANTIAIR',
         'OVERLAYANTIAIR',
-
-	--TA Categories
 	'ARM',
     'CORE', -- in lieu of core flakker
 	'LEVEL3',
@@ -49,12 +45,15 @@ UnitBlueprint {
     },
     Description = 'Anti-Air Flak Gun',
     Display = {
+        Abilities = {
+            '<LOC ability_aa>Anti-Air',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {'Turret', 0},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 		},
@@ -64,8 +63,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -132,7 +131,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 0,
-            AlternateDamageRadius = 3.75, 
+            DamageRadius = 3.75, 
             DamageType = 'Normal',
             DisplayName = 'ARMFLAK_GUN',
             FireTargetLayerCapsTable = {
@@ -146,7 +145,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 59.375,
-            ProjectileId = '/mods/SCTA/projectiles/ARMFLAK_GUN/ARMFLAK_GUN_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMFLAK_GUN/ARMFLAK_GUN_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -192,16 +191,16 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #MEDIUM_BUILDING
-            Damage = 1400,
-            DamageRadius = 10.16,
+         { #MEDIUM_BUILDING
+            Damage = 100,
+            DamageRadius = 5,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/ARMFLAK/ARMFLAK_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMFLAK/ARMFLAK_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

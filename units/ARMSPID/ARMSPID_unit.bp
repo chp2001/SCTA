@@ -32,15 +32,11 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'LAND',
 	'PARALYZER',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-
-	--TA Categories
         'ARM',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL2',
@@ -66,15 +62,15 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {0, 'Turret'},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
 				EmitterBone = {'Leg1','Leg2','Leg3','Leg4','Leg5','Leg6'},
 				EmitterBlueprint = {
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 			EmitterSize = 0.35,
 			},
@@ -85,8 +81,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -97,9 +93,6 @@ UnitBlueprint {
         BuildCostEnergy = 2200,
         BuildCostMass = 230,
         BuildTime = 6075,
-	NaturalProducer=true,
-        MaintenanceConsumptionPerSecondEnergy = 0.7,
-        ProductionPerSecondEnergy = 0.7,
     },
     Footprint = {
 	SizeX = 1,
@@ -166,16 +159,16 @@ UnitBlueprint {
                     },
                     AppliedToTarget = true,
                     BuffType = 'STUN',
-                    Duration = 1, #0.9,
-                    Radius = 2, #0.25,
-                    TargetAllow = 'TECH1',
+                    Duration = 1, 0.9,
+                    Radius = 2, 0.25,
+                    TargetAllow = 'TECH1, TECH2',
                 },
 	    },
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 0,
-	    AlternateDamageRadius = 1, #0.25,
+            Damage = 10,
+	    DamageRadius = 1, 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARM_PARALYZER',
             FireTargetLayerCapsTable = {
@@ -189,7 +182,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 37.5,
-            ProjectileId = '/mods/SCTA/projectiles/ARM_PARALYZER/ARM_PARALYZER_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARM_PARALYZER/ARM_PARALYZER_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -241,11 +234,10 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
-
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/ARMSPID/ARMSPID_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMSPID/ARMSPID_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Seabed = true,

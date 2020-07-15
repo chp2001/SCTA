@@ -1,5 +1,5 @@
 #Generic TA Air unit
-local TAunit = import('/mods/SCTA/lua/TAunit.lua').TAunit
+local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 
 TAair = Class(TAunit) 
 {
@@ -23,8 +23,15 @@ TAair = Class(TAunit)
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAunit.OnStopBeingBuilt(self,builder,layer)
 		self:OpenWings(self)
-		#TODO: is this needed?
-                self:PlayUnitSound('TakeOff')
+				self:PlayUnitSound('TakeOff')
+				local bp = self:GetBlueprint()
+				self:SetCollisionShape(
+					'Sphere', 
+					bp.CollisionSphereOffsetX or 0, 
+					bp.CollisionSphereOffsetY or 0, 
+					bp.CollisionSphereOffsetZ or 0, 
+					bp.SizeSphere or 1.5 
+				)      
 	end,
 
 	OpenWings = function(self)
@@ -33,8 +40,21 @@ TAair = Class(TAunit)
 	CloseWings = function(self)
 	end,
 
-    	OnRunOutOfFuel = function(self)
-    	end,
+    OnRunOutOfFuel = function(self)
+        TAunit.OnRunOutOfFuel(self)
+        # penalize movement for running out of fuel
+        self:SetSpeedMult(0.25)     # change the speed of the unit by this mult
+        self:SetAccMult(0.25)       # change the acceleration of the unit by this mult
+        self:SetTurnMult(0.25)      # change the turn ability of the unit by this mult
+    end,
+
+    OnGotFuel = function(self)
+        TAunit.OnGotFuel(self)
+        # revert these values to the blueprint values
+        self:SetSpeedMult(1)
+        self:SetAccMult(1)
+        self:SetTurnMult(1)
+    end,
 }
 
 TypeClass = TAair

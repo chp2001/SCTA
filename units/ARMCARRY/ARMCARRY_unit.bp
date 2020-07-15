@@ -40,8 +40,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH2',
         'REPAIR',
-
-	--Additional Categories
 	'NAVAL',
 	'MOBILE',
 	#'STRATEGIC',
@@ -49,11 +47,9 @@ UnitBlueprint {
 	#'CARRIER',
         'OVERLAYRADAR',
         'OVERLAYMISC',
-
-	--TA Categories
 	'ARM',
 	'SHIP',
-	'LEVEL2',	#Bug in TA: 'LEVEL1'
+	'LEVEL2',	
 	'CARRY',
 	'NOWEAPON',
 	'NOTAIR',
@@ -68,22 +64,22 @@ UnitBlueprint {
     Description = 'Light Carrier',
     Display = {
         Abilities = {
-            'Air Repair Pad',
+            '<LOC ability_airstaging>Air Staging',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'ArmShip','ArmBui','Helipad'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {'Attachpoint01','Attachpoint02'},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
 				EmitterBone = {'Radar'},
 				EmitterBlueprint = {
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
@@ -94,13 +90,13 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
 	MovementEffects = {
-		Emitter = '/mods/SCTA/effects/emitters/wake_emit.bp',
+		Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
 		Scale = 0.5,
 		Bones = {'Wake_01','Wake_02'},
 	},
@@ -111,9 +107,6 @@ UnitBlueprint {
         BuildCostMass = 1372,
         BuildTime = 25394,
 	BuildRate = 200,
-	NaturalProducer = true,
-        ProductionPerSecondEnergy = 370,
-        MaintenanceConsumptionPerSecondEnergy = 40,
     },
     Footprint = {
         SizeX = 6,
@@ -133,13 +126,19 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
+        OrderOverrides = {
+            RULEUCC_Transport = {
+                bitmapId = 'deploy',
+                helpText = 'deploy',
+            },
+        },
         FactionName = 'ARM',
         TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Colossus',
     },
     Intel = {
-	FreeIntel = true,
-        VisionRadius = 22,
+	FreeIntel = false,
+    VisionRadius = 22,
 	RadarRadius = 113,
     },
     Interface = {
@@ -171,7 +170,7 @@ UnitBlueprint {
         Class2AttachSize = 1,
         Class3AttachSize = 1,
         RepairRate = 200,
-	StorageSlots = 0,
+	    StorageSlots = 50,
     },
     Weapon = {
         { #ATOMIC_BLAST
@@ -191,7 +190,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/ARMCARRY/ARMCARRY_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMCARRY/ARMCARRY_dead_prop.bp',
         WreckageLayers = {
             Water = true,
 	    Sub = true,

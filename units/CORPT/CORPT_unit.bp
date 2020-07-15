@@ -33,7 +33,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'NAVAL',
 	'DIRECTFIRE',
@@ -42,7 +42,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
 
-	--TA Categories
+	
         'CORE',
         'SHIP',
 	'LEVEL1',
@@ -60,14 +60,14 @@ UnitBlueprint {
     Description = 'Scout Ship',
     Display = {
         Abilities = {
-            'Anti-Air',
+            '<LOC ability_aa>Anti-Air',
         },
 	DestructionEffects = {
 #		DefaultProjectileCategories = {'ArmShip','ArmCockpit'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {'turret'},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 		},
@@ -77,13 +77,13 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
 	MovementEffects = {
-		Emitter = '/mods/SCTA/effects/emitters/wake_emit.bp',
+		Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
 		Scale = 0.5,
 		Bones = {'wake1','wake2'},
 	},
@@ -93,9 +93,6 @@ UnitBlueprint {
         BuildCostEnergy = 917,
         BuildCostMass = 95,
         BuildTime = 1877,
-	NaturalProducer = true,
-        ProductionPerSecondEnergy = 0.2,
-        MaintenanceConsumptionPerSecondEnergy = 0.2,
     },
     Footprint = {
         SizeX = 4,
@@ -158,20 +155,20 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 32,
-            AlternateDamageRadius = 1.5, 
+            DamageRadius = 1.5, 
             DamageType = 'Normal',
             DisplayName = 'CORKBOT_MISSILE',
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 49.45,
+            FiringTolerance = 8,
             Label = 'CORKBOT_MISSILE',
             MaxRadius = 36.875,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 28.125,
-            ProjectileId = '/mods/SCTA/projectiles/CORKBOT_MISSILE/CORKBOT_MISSILE_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORKBOT_MISSILE/CORKBOT_MISSILE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -216,7 +213,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 10,
-            AlternateDamageRadius = 0.25,
+            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'CORPT_LASER',
             FireTargetLayerCapsTable = {
@@ -228,7 +225,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 25,
-            ProjectileId = '/mods/SCTA/projectiles/CORPT_LASER/CORPT_LASER_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORPT_LASER/CORPT_LASER_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -279,7 +276,7 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_AntiAir',
         },
         { #SMALL_UNITEX
-            Damage = 30,
+            Damage = 10,
             DamageFriendly = true,
             DamageRadius = 0.9375,
             DamageType = 'Normal',
@@ -287,15 +284,15 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         },
         { #SMALL_UNIT
-            Damage = 200,
-            DamageRadius = 2.34375,
+            Damage = 10,
+            DamageRadius = 0.9375,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/CORPT/CORPT_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/CORPT/CORPT_dead_prop.bp',
         WreckageLayers = {
             Water = true,
 	    Sub = true,

@@ -18,7 +18,7 @@ ProjectileBlueprint {
 	'DISINTEGRATOR',
     },
     Display = {
-        MeshBlueprint = '/mods/SCTA/meshes/projectiles/dgun_mesh.bp',
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/dgun_mesh.bp',
         UniformScale = 0.16,
         StrategicIconSize = 1,
     },
@@ -46,7 +46,7 @@ ProjectileBlueprint {
         TrackTarget = true,
         TrackTargetGround = true,
         VelocityAlign = true,
-        UseGravity = false,
+        UseGravity = true,
         TurnRate = 360,
     },
 }

@@ -2,16 +2,14 @@
 local Unit = import('/lua/sim/Unit.lua').Unit
 local explosion = import('/lua/defaultexplosions.lua')
 local scenarioUtils = import('/lua/sim/ScenarioUtilities.lua')
-local TAutils = import('/mods/SCTA/lua/TAutils.lua')
+local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local Game = import('/lua/game.lua')
 local util = import('/lua/utilities.lua')
-local debrisCat = import('/mods/SCTA/lua/TAdebrisCategories.lua')
-#local WreckShield = import('/mods/SCTA/lua/TAshield.lua').WreckShield
+local debrisCat = import('/mods/SCTA-master/lua/TAdebrisCategories.lua')
+local WreckShield = import('/mods/SCTA-master/lua/TAshield.lua').WreckShield
 
 TAunit = Class(Unit) 
 {
-
-
 	lastHitVector = nil,
 	buildAngle = 0,
 	textureAnimation = false,
@@ -27,16 +25,10 @@ TAunit = Class(Unit)
 
 	OnCreate = function(self)
         Unit.OnCreate(self)
-
-        if not TAutils.wind.threadStarted then
-            ForkThread(TAutils.WindChangeThread, self)
-        end
-
 		self:SetFireState(2)
 		local bp = self:GetBlueprint()
 		if bp.General.BuildAngle then
 		 	local angle = bp.General.BuildAngle / 182
- 			self.buildAngle = (math.random(angle) - (angle / 2))
 			angle = (180 + self.buildAngle) * (math.pi / 180)
 	 		local x = math.cos(angle / 2) 
 	  		local z = math.sin(angle / 2) 
@@ -179,7 +171,7 @@ TAunit = Class(Unit)
 			self:PlayUnitSound('StopMove')
 		end
 		self.CurrentSpeed = new
-	        self:StopRocking()
+			self:StopRocking()
 	end,
 
 				
@@ -206,13 +198,13 @@ TAunit = Class(Unit)
 		while not IsDestroyed(self) do
 			if self:GetFractionComplete() == 1 then
 				if self:GetHealth()/self:GetMaxHealth() < 0.25 then
-					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA/effects/emitters/damage_bad_smoke_emit.bp' )
-					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA/effects/emitters/damage_bad_smoke_emit.bp' )
+					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA-master/effects/emitters/damage_bad_smoke_emit.bp' )
+					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA-master/effects/emitters/damage_bad_smoke_emit.bp' )
 				elseif self:GetHealth()/self:GetMaxHealth() < 0.5 then
-					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA/effects/emitters/damage_smoke_emit.bp' )
-					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA/effects/emitters/damage_bad_smoke_emit.bp' )
+					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA-master/effects/emitters/damage_smoke_emit.bp' )
+					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA-master/effects/emitters/damage_bad_smoke_emit.bp' )
 				elseif self:GetHealth()/self:GetMaxHealth() < 0.75 then
-					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA/effects/emitters/damage_smoke_emit.bp' )
+					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA-master/effects/emitters/damage_smoke_emit.bp' )
 				end
 			end
 			WaitSeconds(0.5)
@@ -229,21 +221,8 @@ TAunit = Class(Unit)
 	end,
 
 	OnKilled = function(self, instigator, type, overkillRatio)
-		local bp = self:GetBlueprint()
-		if self:GetFractionComplete() == 1 then
-			for k, weapon in bp.Weapon do
-				#Self Destruct
-				if ((self == instigator and weapon.Label == 'SuicideWeapon') or (self != instigator and weapon.Label == 'DeathWeapon') and type ~= "Reclaimed")then
-					TAutils.DoTaperedAreaDamage(self, self:GetPosition(), weapon.DamageRadius, weapon.Damage, nil, nil, 'Normal', true, false, weapon.EdgeEffectiveness)
-					if (self == instigator and weapon.Label == 'SuicideWeapon') then
-						self:CreateDebrisProjectiles()
-						self.Suicide = true
-					end
-				end
-			end
-		end
-		Unit.OnKilled(self, instigator, type, overkillRatio)
-	end,
+        Unit.OnKilled(self, instigator, type, overkillRatio)
+    end,
 
 	CreateWreckage = function( self, overkillRatio )
 
@@ -292,7 +271,7 @@ TAunit = Class(Unit)
 	    for i = 1, partamounts do
 	        local xpos, ypos, zpos = util.GetRandomOffset( sx, sy, sz, 1)
         	local xdir,ydir,zdir = util.GetRandomOffset( sx, sy, sz, 10)
-        	self:CreateProjectile('/mods/SCTA/effects/entities/Debris/Flame/DefaultFlameProjectileDebris_proj.bp',xpos,ypos,zpos,xdir,ydir + 5,zdir)
+        	self:CreateProjectile('/mods/SCTA-master/effects/entities/Debris/Flame/DefaultFlameProjectileDebris_proj.bp',xpos,ypos,zpos,xdir,ydir + 5,zdir)
 	    end
 	    partamounts = util.GetRandomInt( bp.Display.DestructionEffects.DefaultProjectileCountMin or 5, bp.Display.DestructionEffects.DefaultProjectileCountMax or (sx * sz + 4)) 
 		LOG("PartAmounts: ",partamounts)
@@ -381,11 +360,6 @@ TAunit = Class(Unit)
         end
 
         self:CreateWreckage( overkillRatio )
-
-        # CURRENTLY DISABLED UNTIL DESTRUCTION
-        # Create destruction debris out of the mesh, currently these projectiles look like crap,
-        # since projectile rotation and terrain collision doesn't work that great. These are left in
-        # hopes that this will look better in the future.. =)
         if( self.ShowUnitDestructionDebris and overkillRatio ) then
             if overkillRatio <= 1 then
                 self.CreateUnitDestructionDebris( self, true, true, false )
@@ -403,53 +377,7 @@ TAunit = Class(Unit)
 
         self:PlayUnitSound('Destroyed')
         self:Destroy()
-    end,
-
-    ##########################################################################################
-    ## VETERANCY
-    ##########################################################################################
-
-
-    #Check to see if we should veteran up.
-    CheckVeteranLevel = function(self)
-        local bp = self:GetBlueprint().Veteran
-        if not bp then
-            bp = Game.VeteranDefault
-        end
-        local unitKills = self:GetStat('KILLS', 0).Value + 1
-        if self.VeteranLevel == table.getsize(bp) then
-            #return # Don't stop at level 5
-        end
-
-        local nextLvl = self.VeteranLevel + 1
-        local nextKills = bp[('Level' .. nextLvl)]
-        if unitKills >= nextKills then
-            self:SetVeteranLevel(nextLvl)
-        end
-    end,
-
-    SetVeteranLevel = function(self, level)
-        local old = self.VeteranLevel
-        self.VeteranLevel = level
-
-      
-        for i = 1, self:GetWeaponCount() do
-            local wep = self:GetWeapon(i)
-            wep:OnVeteranLevel(old, level)
-        end
-
-        local bp = self:GetBlueprint().Buffs
-        if bp then
-            local lvlkey = 'VeteranLevel' .. level
-            for k, v in bp do
-                if v.Add[lvlkey] == true then
-                    self:AddBuff(v)
-                end
-            end
-        end
-        self:GetAIBrain():OnBrainUnitVeterancyLevel(self, level)
-        self:DoUnitCallbacks('OnVeteran')
-    end,
+	end,
 }
 
 TypeClass = TAunit

@@ -55,8 +55,8 @@ UnitBlueprint {
         KTurn = 0.7,
         KTurnDamping = 1,
         LiftFactor = 7,
-        MaxAirspeed = 10,
-        MinAirspeed = 10,
+        MaxAirspeed = 18,
+        MinAirspeed = 14,
         PredictAheadForBombDrop = 2.7,
         StartTurnDistance = 5,
         TightTurnMultiplier = 0,
@@ -70,14 +70,14 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'BOMBER',
 	'AIR',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
 
-	--TA Categories
+	
         'CORE',
         'VTOL',
 	'CTRL_V',
@@ -105,7 +105,7 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 		},
@@ -115,8 +115,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -126,9 +126,6 @@ UnitBlueprint {
         BuildCostEnergy = 8050,
         BuildCostMass = 220,
         BuildTime = 16269,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 0.6,
-        ProductionPerSecondEnergy = 0.6,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -164,17 +161,8 @@ UnitBlueprint {
     Physics = {
         Elevation = 10,
         MotionType = 'RULEUMT_Air',
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
-        MaxAcceleration = 1.8,
-        MaxBrake = 18,
-        MaxSpeed = 17.0625,
-        TurnRate = 42,
-	RotateOnSpot = true,
-	RotateOnSpotThreshold = 0,
-	MinSpeedPercent = 0,
-	MaxSteerForce = 10,
-	TurnRadius = 0,
+    MaxSpeed = 0.5, 
+    RotateOnSpot = true,
 	FuelRechargeRate = 999999,
 	FuelUseTime = 999999,
     },
@@ -204,7 +192,7 @@ UnitBlueprint {
             DamageFriendly = true,
             Damage = 187,
             BombDropThreshold = 3,		
-            AlternateDamageRadius = 2,
+            DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'CORADVBOMB',
             FireTargetLayerCapsTable = {
@@ -212,7 +200,7 @@ UnitBlueprint {
                 Land = 'Land|Water',
             },
             RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 10,
+            FiringTolerance = 5,
             HeadingArcCenter = 0,
             HeadingArcRange = 10,
             Label = 'CORADVBOMB',
@@ -220,7 +208,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0.15, -- OTA=0.16
             MuzzleSalvoSize = 10,
             MuzzleVelocity = 0,
-            ProjectileId = '/mods/SCTA/projectiles/CORADVBOMB/CORADVBOMB_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORADVBOMB/CORADVBOMB_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -254,7 +242,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 5,
-            AlternateDamageRadius = 0.25, 
+            DamageRadius = 0.25, 
             DamageType = 'Normal',
             DisplayName = 'CORAIR2AIRLASER',
 	    FiringTolerance = 0,
@@ -268,7 +256,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
 	    MuzzleSalvoDelay = 0,
 	    MuzzleVelocity = 56.25,
-            ProjectileId = '/mods/SCTA/projectiles/CORAIR2AIRLASER/CORAIR2AIRLASER_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORAIR2AIRLASER/CORAIR2AIRLASER_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -316,7 +304,7 @@ UnitBlueprint {
             MaxRadius = 22,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            ProjectileId = '/mods/SCTA/projectiles/DUMMY/DUMMY_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/DUMMY/DUMMY_proj.bp',
             RackBones = {{MuzzleBones = {}}},
             RackRecoilDistance = 0,
             TargetCheckInterval = 1,
@@ -330,10 +318,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

@@ -33,13 +33,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 
-	--Additional Categories
+	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 
-	--TA Categories
+	
         'ARM',
         'KBOT',
 	'LEVEL2',
@@ -59,15 +59,15 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {'Torso'},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
 				EmitterBone = {'Gun', 'LeftElbow'},
 				EmitterBlueprint = {
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
@@ -78,8 +78,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -90,9 +90,6 @@ UnitBlueprint {
         BuildCostEnergy = 2228,
         BuildCostMass = 267,
         BuildTime = 5478,
-	NaturalProducer=true,
-        MaintenanceConsumptionPerSecondEnergy = 1.1,
-        ProductionPerSecondEnergy = 1.1,
     },
     Footprint = {
 	SizeX = 2,
@@ -157,7 +154,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 180,
-	    AlternateDamageRadius = 0.25,
+	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'LIGHTNING',
             FireTargetLayerCapsTable = {
@@ -170,7 +167,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
 	    MuzzleVelocity = 25,
-            ProjectileId = '/mods/SCTA/projectiles/LIGHTNING/LIGHTNING_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/LIGHTNING/LIGHTNING_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -221,7 +218,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/ARMZEUS/ARMZEUS_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMZEUS/ARMZEUS_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Seabed = true,

@@ -72,15 +72,12 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'ANTIAIR',
 	'AIR',
         'OVERLAYANTIAIR',
 	'OVERLAYDIRECTFIRE',
-
-	--TA Categories
+       'HIGHALTAIR',
         'ARM',
         'VTOL',
 	'CTRL_V',
@@ -99,8 +96,8 @@ UnitBlueprint {
     Description = 'Stealth Fighter',
     Display = {
         Abilities = {
-            'Anti-Air',
-            'Radar Stealth',
+            '<LOC ability_aa>Anti-Air',
+            '<LOC ability_personalstealth>Personal Stealth',
         },
 	DestructionEffects = {
 		DefaultFlamingProjectileCountMin = 0,
@@ -112,7 +109,7 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 		},
@@ -122,8 +119,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -133,9 +130,7 @@ UnitBlueprint {
         BuildCostEnergy = 6893,
         BuildCostMass = 254,
         BuildTime = 15285,
-	NaturalProducer = true,
         MaintenanceConsumptionPerSecondEnergy = 20,
-        ProductionPerSecondEnergy = 20,
     },
     Footprint = {
 	MaxSlope = 0.25,
@@ -160,7 +155,7 @@ UnitBlueprint {
         UnitName = 'Hawk',
     },
     Intel = {
-        VisionRadius = 22,
+    VisionRadius = 22,
 	RadarStealth = true,
 	FreeIntel = true,
     },
@@ -211,7 +206,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 70, 						
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'ARMVTOL_ADVMISSILE',
@@ -220,7 +215,7 @@ UnitBlueprint {
                 Land = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_AntiAir',
-            FiringTolerance = 43.96,
+            FiringTolerance = 4,
 	    HeadingArcCenter = 0,
     	    HeadingArcRange = 43.96,
             Label = 'ARMVTOL_ADVMISSILE',
@@ -228,7 +223,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 28.125,
-            ProjectileId = '/mods/SCTA/projectiles/ARMVTOL_ADVMISSILE/ARMVTOL_ADVMISSILE_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMVTOL_ADVMISSILE/ARMVTOL_ADVMISSILE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -263,7 +258,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 70, 						
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'ARMVTOL_ADVMISSILE2',
@@ -272,7 +267,7 @@ UnitBlueprint {
                 Land = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_AntiAir',
-            FiringTolerance = 43.96,
+            FiringTolerance = 4,
 	    HeadingArcCenter = 0,
     	    HeadingArcRange = 21.98,
             Label = 'ARMVTOL_ADVMISSILE2',
@@ -280,7 +275,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 28.125,
-            ProjectileId = '/mods/SCTA/projectiles/ARMVTOL_ADVMISSILE2/ARMVTOL_ADVMISSILE2_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMVTOL_ADVMISSILE2/ARMVTOL_ADVMISSILE2_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -313,7 +308,7 @@ UnitBlueprint {
             MaxRadius = 22,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            ProjectileId = '/mods/SCTA/projectiles/DUMMY/DUMMY_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/DUMMY/DUMMY_proj.bp',
             RackBones = {{MuzzleBones = {}}},
             RackRecoilDistance = 0,
             TargetCheckInterval = 1,
@@ -337,10 +332,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

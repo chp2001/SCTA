@@ -32,15 +32,11 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'ANTIAIR',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
         'LAND',
-
-	--TA Categories
         'ARM',
         'HOVER',
 	'WEAPON',
@@ -56,12 +52,15 @@ UnitBlueprint {
     },
     Description = 'Anti-Air Hovercraft',
     Display = {
+        Abilities = {
+            '<LOC ability_aa>Anti-Air',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'ArmCockpit','ArmHover'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 		},
@@ -71,18 +70,18 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
 	IdleEffects = {
-		Emitter = '/mods/SCTA/effects/emitters/hover_wake_emit.bp',
+		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
 		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
 	},
 	MovementEffects = {
-		Emitter = '/mods/SCTA/effects/emitters/hover_wake_emit.bp',
+		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
 		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
 	},
@@ -92,9 +91,6 @@ UnitBlueprint {
         BuildCostEnergy = 1444,
         BuildCostMass = 120,
         BuildTime = 3747,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 2.6,
-        ProductionPerSecondEnergy = 2.6,
     },
     Footprint = {
 	MaxSlope = 1,
@@ -161,7 +157,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 49,
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'ARMAH_WEAPON',
@@ -170,13 +166,13 @@ UnitBlueprint {
                 Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-	    FiringTolerance = 55,
+	    FiringTolerance = 1,
             Label = 'ARMAH_WEAPON',
             MaxRadius = 40.625,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 28.125,
-            ProjectileId = '/mods/SCTA/projectiles/ARMAH_WEAPON/ARMAH_WEAPON_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMAH_WEAPON/ARMAH_WEAPON_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -240,17 +236,17 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/ARMAH/ARMAH_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMAH/ARMAH_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Water = true,

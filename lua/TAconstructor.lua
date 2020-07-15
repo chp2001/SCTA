@@ -1,8 +1,8 @@
-local TAunit = import('/mods/SCTA/lua/TAunit.lua').TAunit
+local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
 local Unit = import('/lua/sim/Unit.lua').Unit
-local TAutils = import('/mods/SCTA/lua/TAutils.lua')
+local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
-TAconstructor = Class(TAunit) {
+TAconstructor = Class(TAWalking) {
 	currentState = "closed",
 	desiredState = "closed",
     currentTarget = nil,
@@ -72,7 +72,7 @@ TAconstructor = Class(TAunit) {
 
 							if (self.isBuilding == true) then
 								self:SetBuildRate(self:GetBlueprint().Economy.BuildRate)
-								TAunit.OnStartBuild(self, self.currentTarget, self.order)
+								TAWalking.OnStartBuild(self, self.currentTarget, self.order)
 							end
 							if (self.isReclaiming == true) then
 								self:SetReclaimTimeMultiplier(1)
@@ -103,8 +103,7 @@ TAconstructor = Class(TAunit) {
 
 
     OnKilled = function(self, instigator, type, overkillRatio)
-        #If factory, destory what I'm building if I die
-        TAunit.OnKilled(self, instigator, type, overkillRatio)
+        TAWalking.OnKilled(self, instigator, type, overkillRatio)
         if self.isFactory then
             if self.currentTarget and not self.currentTarget:IsDead() and self.currentTarget:GetFractionComplete() != 1 then
                 self.currentTarget:Kill()
@@ -143,7 +142,7 @@ TAconstructor = Class(TAunit) {
 	end,
 
 	OnStopBuild = function(self, unitBeingBuilt, order )
-		TAunit.OnStopBuild(self, unitBeingBuilt, order )
+		TAWalking.OnStopBuild(self, unitBeingBuilt, order )
 		self.desiredTarget = nil
 		self.isBuilding = false
 		self.countdown = self.pauseTime
@@ -170,7 +169,7 @@ TAconstructor = Class(TAunit) {
 	OnStartReclaim = function(self, target)
 		self:SetReclaimTimeMultiplier(20)
 		self:SetBuildRate(self:GetBlueprint().Economy.BuildRate)
-		TAunit.OnStartReclaim(self, target)
+		TAWalking.OnStartReclaim(self, target)
 		self.desiredTarget = target
 		if (self.currentState == "aimed") then
 			self.currentState = "opened"
@@ -189,7 +188,7 @@ TAconstructor = Class(TAunit) {
 
 
 	OnStopReclaim = function(self, target)
-		TAunit.OnStopReclaim(self, target)
+		TAWalking.OnStopReclaim(self, target)
 		self.desiredTarget = nil
 		self.isReclaiming = false
 		self.countdown = self.pauseTime
@@ -266,9 +265,12 @@ TAconstructor = Class(TAunit) {
 		end
 	end,
 
-	Open = function(self)
+	Unpack = function(self)
 	end,
 
+	Open = function(self)
+	end,
+	
 	Aim = function(self, target)
 	end,
 
@@ -308,10 +310,10 @@ TAconstructor = Class(TAunit) {
 						local bp
 						if (self.isBuilding == true) then
 							bp = self:GetBlueprint().Display.BuildEmitter or 'nanolathe.bp'
-							CreateEmitterAtBone(self, v, self:GetArmy(), '/mods/SCTA/effects/emitters/' .. bp ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',time,0)
+							CreateEmitterAtBone(self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/' .. bp ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',time,0)
 						else
 							bp = self:GetBlueprint().Display.ReclaimEmitter or 'reclaimnanolathe.bp'
-							CreateEmitterAtBone(self, v, self:GetArmy(), '/mods/SCTA/effects/emitters/' .. bp ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',time,0):SetEmitterCurveParam('Z_POSITION_CURVE',distance * 10,0)
+							CreateEmitterAtBone(self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/' .. bp ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',time,0):SetEmitterCurveParam('Z_POSITION_CURVE',distance * 10,0)
 						end
 						
 

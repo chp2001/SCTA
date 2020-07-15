@@ -32,16 +32,12 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
 	'ANTIAIR',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
-
-	--TA Categories
         'ARM',
         'KBOT',
 	'LEVEL1',
@@ -58,21 +54,21 @@ UnitBlueprint {
     Description = 'Anti-Air Kbot',
     Display = {
         Abilities = {
-            'Anti-Air',
-        },
+                '<LOC ability_aa>Anti-Air',
+            },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{
 				EmitterBone = {'Torso'},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
 				EmitterBone = {'LeftLauncher', 'RightLauncher'},
 				EmitterBlueprint = {
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
@@ -83,8 +79,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -95,9 +91,6 @@ UnitBlueprint {
         BuildCostEnergy = 1219,
         BuildCostMass = 128,
         BuildTime = 2631,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 0.4,
-        ProductionPerSecondEnergy = 0.4,
     },
     Footprint = {
         SizeX = 2,
@@ -163,7 +156,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 31,
-            AlternateDamageRadius = 1.5, 
+            DamageRadius = 1.5, 
             DamageType = 'Normal',
             DisplayName = 'ARMKBOT_MISSILE',
             FireTargetLayerCapsTable = {
@@ -171,13 +164,13 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 49.45,
+            FiringTolerance = 1,
             Label = 'ARMKBOT_MISSILE',
             MaxRadius = 37.75,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 28.125,
-            ProjectileId = '/mods/SCTA/projectiles/ARMKBOT_MISSILE/ARMKBOT_MISSILE_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMKBOT_MISSILE/ARMKBOT_MISSILE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -235,17 +228,17 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/ARMJETH/ARMJETH_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMJETH/ARMJETH_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Seabed = true,

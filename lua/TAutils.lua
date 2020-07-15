@@ -1,28 +1,223 @@
-faCompatibility = false
-
-function GetDistanceBetweenTwoPoints(x1, z1, x2, z2)
-	#lol ^ is broken :P
-	local dx = (x2-x1)*(x2 - x1)
-	local dz = (z2-z1)*(z2 - z1)
-	local distance = math.sqrt(dx + dz)
-
-	return ( distance )
+function GetDistanceBetweenTwoEntities(entity1, entity2)
+    return VDist3(entity1:GetPosition(),entity2:GetPosition())
 end
 
-function VDist2(u,v)
-    local dx = u.x-v.x
-    local dz = u.z-v.z
-    return math.sqrt(dx*dx + dz*dz)
+-- Function originally created to check if a Mass Storage can be queued in a location without overlapping
+function CanBuildInSpot(originUnit, unitId, pos)
+    local bp = __blueprints[unitId]
+    local mySkirtX = bp.Physics.SkirtSizeX / 2
+    local mySkirtZ = bp.Physics.SkirtSizeZ / 2
+
+    -- Find the distance between my skirt and the skirt of a potential Quantum Gateway
+    local xDiff = mySkirtX + 5 -- Using 5 because that's half the size of a Quantum Gateway, the largest stock structure
+    local zDiff = mySkirtZ + 5
+
+    -- Full extent of search rectangle
+    local x1 = pos.x - xDiff
+    local z1 = pos.z - zDiff
+    local x2 = pos.x + xDiff
+    local z2 = pos.z + zDiff
+
+    -- Find all the units in that rectangle
+    local units = GetUnitsInRect(Rect(x1, z1, x2, z2))
+
+    -- Filter it down to structures and experimentals only
+    units = EntityCategoryFilterDown(categories.STRUCTURE + categories.EXPERIMENTAL, units)
+
+    -- Bail if there's nothing in range
+    if not units[1] then return false end
+
+    for _, struct in units do
+        if struct ~= originUnit then
+            local structPhysics = struct:GetBlueprint().Physics
+            local structPos = struct:GetPosition()
+
+            -- These can be positive or negative, so we need to make them positive using math.abs
+            local xDist = math.abs(pos.x - structPos.x)
+            local zDist = math.abs(pos.z - structPos.z)
+
+            local skirtDiffx = mySkirtX + (structPhysics.SkirtSizeX / 2)
+            local skirtDiffz = mySkirtZ + (structPhysics.SkirtSizeZ / 2)
+
+            -- Check if the axis difference is smaller than the combined skirt distance
+            -- If it is, we overlap, and can't build here
+            if xDist < skirtDiffx and zDist < skirtDiffz then
+                return false
+            end
+        end
+    end
+
+    return true
 end
 
-function getUnitChat()
-	return -1
+-- Note: Includes allied units in selection!!
+function GetEnemyUnitsInSphere(unit, position, radius)
+    local x1 = position.x - radius
+    local y1 = position.y - radius
+    local z1 = position.z - radius
+    local x2 = position.x + radius
+    local y2 = position.y + radius
+    local z2 = position.z + radius
+    local UnitsinRec = GetUnitsInRect(Rect(x1, z1, x2, z2))
+
+    -- Check for empty rectangle
+    if not UnitsinRec then
+        return UnitsinRec
+    end
+
+    local RadEntities = {}
+    for _, v in UnitsinRec do
+        local dist = VDist3(position, v:GetPosition())
+        if unit.Army ~= v.Army and dist <= radius then
+            table.insert(RadEntities, v)
+        end
+    end
+
+    return RadEntities
 end
 
-function DisplayMessage(message, importance)
-	if getUnitChat() >= importance then
-		print(message)
-	end
+-- This function is like the one above, but filters out Allied units
+function GetTrueEnemyUnitsInSphere(unit, position, radius, categories)
+    local x1 = position.x - radius
+    local y1 = position.y - radius
+    local z1 = position.z - radius
+    local x2 = position.x + radius
+    local y2 = position.y + radius
+    local z2 = position.z + radius
+    local UnitsinRec = GetUnitsInRect(Rect(x1, z1, x2, z2))
+
+    -- Check for empty rectangle
+    if not UnitsinRec then
+        return UnitsinRec
+    end
+
+    local RadEntities = {}
+    for _, v in UnitsinRec do
+        local dist = VDist3(position, v:GetPosition())
+        local vArmy = v.Army
+        if unit.Army ~= vArmy and not IsAlly(unit.Army, vArmy) and dist <= radius and EntityCategoryContains(categories or categories.ALLUNITS, v) then
+            table.insert(RadEntities, v)
+        end
+    end
+
+    return RadEntities
+end
+
+function GetDistanceBetweenTwoPoints(x1, y1, z1, x2, y2, z2)
+    return (math.sqrt((x1-x2)^2 + (y1-y2)^2 + (z1-z2)^2))
+end
+
+function GetDistanceBetweenTwoVectors(v1, v2)
+    return VDist3(v1, v2)
+end
+
+function XZDistanceTwoVectors(v1, v2)
+    return VDist2(v1[1], v1[3], v2[1], v2[3])
+end
+
+function GetVectorLength(v)
+    return math.sqrt(math.pow(v.x, 2) + math.pow(v.y, 2) + math.pow(v.z, 2))
+end
+
+function NormalizeVector(v)
+    local length = GetVectorLength(v)
+    if length > 0 then
+        local invlength = 1 / length
+        return Vector(v.x * invlength, v.y * invlength, v.z * invlength)
+    else
+        return Vector(0,0,0)
+    end
+end
+
+function GetDifferenceVector(v1, v2)
+    return Vector(v1.x - v2.x, v1.y - v2.y, v1.z - v2.z)
+end
+
+function GetDirectionVector(v1, v2)
+    return NormalizeVector(Vector(v1.x - v2.x, v1.y - v2.y, v1.z - v2.z))
+end
+
+function GetScaledDirectionVector(v1, v2, scale)
+    local vec = GetDirectionVector(v1, v2)
+    return Vector(vec.x * scale, vec.y * scale, vec.z * scale)
+end
+
+function GetMidPoint(v1, v2)
+    return Vector((v1.x + v2.x) * 0.5, (v1.y + v2.y) * 0.5, (v1.z + v2.z) * 0.5)
+end
+
+function GetRandomFloat(nmin, nmax)
+    return (Random() * (nmax - nmin) + nmin)
+end
+
+function GetRandomInt(nmin, nmax)
+    return math.floor(Random() * (nmax - nmin + 1) + nmin)
+end
+
+function GetRandomOffset(sx, sy, sz, scalar)
+    sx = sx * scalar
+    sy = sy * scalar
+    sz = sz * scalar
+    local x = Random() * sx - (sx * 0.5)
+    local y = Random() * sy
+    local z = Random() * sz - (sz * 0.5)
+
+    return x, y, z
+end
+
+function GetRandomOffset2(sx, sy, sz, scalar)
+    sx = sx * scalar
+    sy = sy * scalar
+    sz = sz * scalar
+    local x = Random(-1.0, 1.0) * sx - (sx * 0.5)
+    local y = Random(-1.0, 1.0) * sy
+    local z = Random(-1.0, 1.0) * sz - (sz * 0.5)
+
+    return x, y, z
+end
+
+function GetClosestVector(vFrom, vToList)
+    local dist, cDist, retVec = 0
+    if vToList then
+        dist = GetDistanceBetweenTwoVectors(vFrom, vToList[1])
+        retVec = vToList[1]
+    end
+
+    for kTo, vTo in vToList do
+        cDist = GetDistanceBetweenTwoVectors(vFrom, vTo)
+        if dist > cDist then
+            dist = cDist
+            retVec = vTo
+        end
+    end
+
+    return retVec
+end
+
+function Cross(v1, v2)
+    return Vector((v1.y * v2.z) - (v1.z * v2.y), (v1.z * v2.x) - (v1.x * v2.z), (v1.x * v2.y) - (v1.y - v2.x))
+end
+
+function DotP(v1, v2)
+    return (v1.x * v2.x) + (v1.y * v2.y) + (v1.z * v2.z)
+end
+
+function GetAngleInBetween(v1, v2)
+    -- Normalize the vectors
+    local vec1 = {}
+    local vec2 = {}
+    vec1 = NormalizeVector(v1)
+    vec2 = NormalizeVector(v2)
+    local dotp = DotP(vec1, vec2)
+
+    return math.acos(dotp) * (360 / (math.pi * 2))
+end
+
+function UserConRequest(string)
+    if not Sync.UserConRequests then
+        Sync.UserConRequests = {}
+    end
+    table.insert(Sync.UserConRequests, string)
 end
 
 function GetAngle(x1, z1, x2, z2)
@@ -55,7 +250,6 @@ function GetAngle(x1, z1, x2, z2)
 	return (angle / math.pi) * 180 + 90
 end
 
-
 function CalcDamageTaper(positionEpicentre, positionEntity, radius, edgeEffectiveness)
     # spherical above, cylindrical below
 
@@ -87,222 +281,13 @@ function Clamp(x,lb,ub)
     end
 end
 
-
-function TADamageUnitsInArea(instigator, location, radius, damage, projectile, damageType, damageAllies, damageSelf, edgeEffectiveness)
-
-    local rect = Rect(location[1]-radius-1, location[3]-radius-1, location[1]+radius+1, location[3]+radius+1)
-    local units = GetUnitsInRect(rect) or {}
-
-    for _, u in units do
-
-        local collisionExtents = u:GetCollisionExtents()
-        local damagePosition = {
-            x=Clamp(location[1],collisionExtents.Min[1],collisionExtents.Max[1]),
-            y=Clamp(location[2],collisionExtents.Min[2],collisionExtents.Max[2]),
-            z=Clamp(location[3],collisionExtents.Min[3],collisionExtents.Max[3]),
-            }
-
-        local taper = CalcDamageTaper(location, damagePosition, radius, edgeEffectiveness)
-        #LOG("--collisionExtents="..repr(collisionExtents))
-        #LOG("  damagePosition="..damagePosition.x..","..damagePosition.y..","..damagePosition.z)
-        #LOG("  epiPosition="..location.x..","..location.y..","..location.z)
-        #LOG("  taper="..repr(taper)..", edgeEffectiveness="..repr(edgeEffectiveness))
-
-        if taper<=0 then continue end
-
-        local dmg1 = damage
-        if projectile then
-            dmg1 = projectile:AdjustDamageForTarget(u, damage)
-        end
-        local dmg2 = dmg1 * taper
-
-        army = instigator:GetArmy() or nil
-        if instigator == u then
-            if damageSelf then
-                local vector = import('/lua/utilities.lua').GetDirectionVector(location, u:GetPosition())
-                -- need this ugliness due to Damage() refuse to damage when instigator == u
-                instigator:OnDamage(instigator, dmg2, vector, damageType)
-            end
-
-        elseif damageAllies or not IsAlly(army, u:GetArmy()) then
-            #bp = u:GetBlueprint()
-            #LOG("  TADamageUnitsInArea, UnitName="..repr(bp.General.UnitName)..", dmg1="..dmg1..", taper="..taper..", dmg2="..dmg2)
-            Damage(instigator, location, u, dmg2, damageType)
-        end
-    end
-
-end
-
-
-function TADamageReclaimablesInArea(instigator, location, radius, damage, projectile, damageType, edgeEffectiveness)
-
-    local rect = Rect(location[1]-radius, location[3]-radius, location[1]+radius, location[3]+radius)
-    local reclaimables = GetReclaimablesInRect(rect) or {}
-
-    for _, reclaimable in reclaimables do
-        -- nobody cares about accurate replication of TA damage to reclaimables so just calculate taper based on centre of entity
-        local taper = CalcDamageTaper(location, reclaimable:GetPosition(), radius, edgeEffectiveness)
-        if taper<=0 then continue end
-
-        local dmg = damage * taper
-        if IsProp(reclaimable) and dmg > 0.0 then
-            Damage(instigator, location, reclaimable, dmg, damageType)
-        end
-    end
-end
-
-
-function TADamageEntity(instigator, location, targetEntity, damage, projectile, damageType)
-    local dmg = damage
-    if projectile then
-        dmg = projectile:AdjustDamageForTarget(targetEntity, damage)
-    end
-
-    if dmg and dmg>0 then
-        Damage(instigator, location, targetEntity, dmg, damageType)
-    end
-end
-
-
-function DoTaperedAreaDamage(instigator, location, radius, damage, projectile, targetEntity, damageType, damageAllies, damageSelf, edgeEffectiveness)
-
-    if radius and radius > 0 then
-        -- Get rid of trees
-        DamageArea(instigator, location, radius, 1, 'Force', false, false)
-
-        TADamageUnitsInArea(instigator, location, radius, damage, projectile, damageType, damageAllies, damageSelf, edgeEffectiveness)
-        TADamageReclaimablesInArea(instigator, location, radius, damage, projectile, damageType, edgeEffectiveness)
-
-    elseif targetEntity then
-        TADamageEntity(instigator, location, targetEntity, damage, projectile, damageType)
-    end
-
-end
-
--- Raevn's original tapered damage function. doesn't account for y differential or collision box or specific projectile/target damage
-function DoTaperedAreaDamageRaevn(instigator, position, radius, damage, projectile, targetEntity, damageType, damageFriendly, damageSelf, edgeEffectiveness)
-	local precision = math.floor(radius * 2) + 1
-	local pulse = 0
-	local edge = edgeEffectiveness or 0
-
-        if radius and radius > 0 then
-		if edge * damage > 0 then
-			DamageArea(instigator, position, radius, damage * edge, damageType, damageFriendly, damageSelf or false)
-		end
-		while pulse < precision do
-			local factor = (pulse + 1) / precision
-       			if damage and damage - edge > 0 then
-	            		DamageArea(instigator, position, radius * factor, damage / precision + (1 - factor) * damage * edge, damageType, damageFriendly, damageSelf or false)
-        		end
-			pulse = pulse + 1
-		end
-	elseif damage and targetEntity then
-		Damage(instigator, position, targetEntity, damage, damageType)
-	end
-end
-
-
-
-textureChange = {
-	{
-		currentAnim = 1,
-		frames = 8,
-		bones = {
-			{
-			'a',
-			'b',
-			'c',
-			'd',
-			'e',
-			'd',
-			'c',
-			'b',
-			},
-			{
-			'a2',
-			'b2',
-			'c2',
-			'd2',
-			'e2',
-			'd2',
-			'c2',
-			'b2',
-			},
-		},
-	},
-	{
-		currentAnim = 1,
-		frames = 6,
-		bones = {
-			{
-			'a',
-			'b',
-			'c',
-			'd',
-			'c',
-			'b',
-			},
-			{
-			'a2',
-			'b2',
-			'c2',
-			'd2',
-			'c2',
-			'b2',
-			},
-		}
-	},
-}
-
-function TextureChangeCall()
-	while true do
-		for k,v in textureChange do
-			local hide1 = v.bones[1][v.currentAnim]
-			local hide2 = v.bones[2][v.currentAnim]
-			v.currentAnim = v.currentAnim + 1
-			if v.currentAnim > v.frames then
-				v.currentAnim = 1
-			end
-			for bk,bv in ArmyBrains do
-				local units = bv:GetListOfUnits(categories.TEXTUREANIM, false)
-
-				if units then
-					for uk,uv in units do
-						if uv:GetFractionComplete() == 1 then
-							if uv:GetBlueprint().Display.TextureAnimationFrames == v.frames then
-								if uv.textureAnimation == true then
-									uv:ShowBone(v.bones[1][v.currentAnim], true)
-									uv:HideBone(hide1, true)
-									if (uv:GetBlueprint().Display.TextureAnimationSets == 2) then
-										uv:ShowBone(v.bones[2][v.currentAnim], true)
-										uv:HideBone(hide2, true)
-									end
-								else
-									uv:HideBone(hide1, true)
-									uv:ShowBone(v.bones[1][v.currentAnim], true)
-									if (uv:GetBlueprint().Display.TextureAnimationSets == 2) then
-										uv:HideBone(hide2, true)
-										uv:ShowBone(v.bones[2][v.currentAnim], true)
-									end
-								end
-							end
-						end
-					end
-				end
-			end
-		end
-		WaitSeconds(0.5)
-	end
-end
-
-
 function QueueDelayedWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
 	ForkThread(CreateDelayedWreckage, self, overkillRatio, bp, completed, pos, orientation, health)
 end
 
 
 function CreateDelayedWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
-	local WreckShield = import('/mods/SCTA/lua/TAshield.lua').WreckShield
+	local WreckShield = import('/mods/SCTA-master/lua/TAshield.lua').WreckShield
 
 	#see if we can reduce this?
 	while not IsDestroyed(self) do
@@ -327,7 +312,7 @@ function CreateDelayedWreckage(self,overkillRatio, bp, completed, pos, orientati
 		prop:SetMaxReclaimValues(time, mass, energy)
 
 		prop.OriginalUnit = self.OriginalUnit or self
-		if pbp.Physics.BlockPath == true then
+		if pbp.Physics.BlockPath == false then
 		        prop.myShield = WreckShield {
         	        	Owner = self,
                			FactionName = bp.General.FactionName,
@@ -350,43 +335,6 @@ function CreateDelayedWreckage(self,overkillRatio, bp, completed, pos, orientati
 		end
 		prop:DoTakeDamage(prop, overkillRatio * health, Vector(0,0,0), 'Normal')
         	prop.AssociatedBP = pbp.BlueprintId
-	end
-end
-
-
-
-wind = {
-	direction = 0,
-	amount = 0,
-    threadStarted = false
-}
-
-function WindChangeThread()
-
-    if wind.threadStarted then
-        return
-    end
-    wind.threadStarted = true
-    LOG('Started WindChangeThread')
-
-	worldData = import('sim/worldData.lua')
-	if worldData.GetMap().maxWind > 0 then
-		while true do
-
-			wind.direction = math.random(360)
-			wind.amount = math.random(worldData.GetMap().maxWind - worldData.GetMap().minWind) + worldData.GetMap().minWind
-
-			for bk,bv in ArmyBrains do
-				local generators = bv:GetListOfUnits(categories.WIND, false)
-				if generators then
-					for k,v in generators do
-						v.OnWindChange(v, wind.direction, wind.amount)
-					end
-				end
-			end
-
-			WaitSeconds(15)
-		end
 	end
 end
 
@@ -507,5 +455,4 @@ function Cobler(script, spinners, sliders)
             end
         end
     end
-
 end

@@ -3,8 +3,8 @@
 #
 #Blueprint created by Raevn
 
-local TAair = import('/mods/SCTA/lua/TAair.lua').TAair
-local TAweapon = import('/mods/SCTA/lua/TAweapon.lua').TAweapon
+local TAair = import('/mods/SCTA-master/lua/TAair.lua').TAair
+local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 CORSHAD = Class(TAair) {
 
@@ -16,6 +16,16 @@ CORSHAD = Class(TAair) {
 		}
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
+		end
+	end,
+
+	OnMotionVertEventChange = function(self, new, old )
+		if (new == 'Down' or new == 'Bottom') then
+                	self:PlayUnitSound('Landing')
+			self:CloseWings(self)
+		elseif (new == 'Up' or new == 'Top') then
+                	self:PlayUnitSound('TakeOff')
+			self:OpenWings(self)
 		end
 	end,
 

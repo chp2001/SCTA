@@ -32,8 +32,6 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	--Additional Categories
         'MOBILE',
 	'NAVAL',
 	'INDIRECTFIRE',
@@ -44,8 +42,6 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'OVERLAYRADAR',
 	'OVERLAYANTIAIR',
-
-	--TA Categories
         'CORE',
         'SHIP',
 	'LEVEL2',
@@ -63,22 +59,23 @@ UnitBlueprint {
     Description = 'Missile Ship',
     Display = {
         Abilities = {
-            'Anti-Air',
+            '<LOC ability_aa>Anti-Air',
+            '<LOC ability_radar>Radar',
         },
 	DestructionEffects = {
 		#DefaultProjectileCategories = {'ArmShip','ArmBui'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {'stand','gun','CORMSHIP'},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
 				EmitterBone = {'dish','door1a', 'door2b'},
 				EmitterBlueprint = {
-	    				'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+	    				'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
@@ -89,13 +86,13 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
 	MovementEffects = {
-		Emitter = '/mods/SCTA/effects/emitters/wake_emit.bp',
+		Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
 		Scale = 0.5,
 		Bones = {'wake1','wake2'},
 	},
@@ -105,9 +102,7 @@ UnitBlueprint {
         BuildCostEnergy = 7628,
         BuildCostMass = 2283,
         BuildTime = 22126,
-        ProductionPerSecondEnergy = 0.9,
-        MaintenanceConsumptionPerSecondEnergy = 0.9,
-	NaturalProducer = true,
+        MaintenanceConsumptionPerSecondEnergy = 25,
     },
     Footprint = {
         SizeX = 6,
@@ -130,9 +125,9 @@ UnitBlueprint {
         UnitName = 'Hydra',
     },
     Intel = {
-	FreeIntel = true, 
+	FreeIntel = false, 
         VisionRadius = 15,
-	RadarRadius = 78,
+	    RadarRadius = 78,
     },
     Interface = {
         HelpText = 'Missile Ship',
@@ -171,7 +166,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 500,
-            AlternateDamageRadius = 3,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'CORMSHIP_ROCKET',
             FireTargetLayerCapsTable = {
@@ -179,12 +174,12 @@ UnitBlueprint {
             },
 	    RangeCategory = 'UWRC_IndirectFire',
             Label = 'CORMSHIP_ROCKET',
-	    FiringTolerance = 21.98,
+	    FiringTolerance = 10,
             MaxRadius = 81.25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 0,
-            ProjectileId = '/mods/SCTA/projectiles/CORMSHIP_ROCKET/CORMSHIP_ROCKET_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORMSHIP_ROCKET/CORMSHIP_ROCKET_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -210,6 +205,8 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RateOfFire = 0.083,
             TargetCheckInterval = 1,
+            EnergyRequired = 5,
+            EnergyDrainPerSecond = 5,
             TargetPriorities = {
                 'ALLUNITS',
             },
@@ -229,20 +226,20 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 62,
-            AlternateDamageRadius = 1.5,
+            DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'CORSHIP_MISSILE',
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 43.96,
+            FiringTolerance = 4,
             Label = 'CORSHIP_MISSILE',
             MaxRadius = 43.75,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 25,
-            ProjectileId = '/mods/SCTA/projectiles/CORSHIP_MISSILE/CORSHIP_MISSILE_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORSHIP_MISSILE/CORSHIP_MISSILE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -305,17 +302,17 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
+        }, 
         { #BIG_UNIT
-            Damage = 350,
-            DamageRadius = 3.4375,
+            Damage = 20,
+            DamageRadius = 1,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/CORMSHIP/CORMSHIP_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/CORMSHIP/CORMSHIP_dead_prop.bp',
         WreckageLayers = {
             Water = true,
 	    Sub = true,

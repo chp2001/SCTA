@@ -31,23 +31,30 @@ ProjectileBlueprint {
             LodCutoff = 'Weapon_LodCutoff',
         },
     },
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 1,
+        MaxHealth = 1,
+    },
     Categories = {
-        'ARM',
+        'CORE',
         'PROJECTILE',
-        'ROCKET',
+        'MISSILE',
+        'TACTICAL',
     },
     Display = {
 	#TODO: corshiprckt1
-        MeshBlueprint = '/mods/SCTA/meshes/projectiles/corshiprckt1_mesh.bp',
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/corshiprckt1_mesh.bp',
         StrategicIconSize = 1,
         UniformScale = 0.16,
     },
     General = {
-        Category = 'Anti Air',
+        Category = 'MISSILE',
         EntityCategory = {
        	    'CORE',
             'PROJECTILE',
-   	    'ROCKET',
+               'TACTICAL',
+               'MISSILE',
         },
         Faction = 'CORE',
         Weapon = 'CORMSHIP_ROCKET',

@@ -12,10 +12,10 @@ PropBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-		    NormalName = '/mods/SCTA/meshes/wrecks/Wreck_NormalsTS.dds',
-		    SpecularName = '/mods/SCTA/meshes/wrecks/Wreck_SpecTeam.dds',
+		    NormalName = '/mods/SCTA-master/meshes/wrecks/Wreck_NormalsTS.dds',
+		    SpecularName = '/mods/SCTA-master/meshes/wrecks/Wreck_SpecTeam.dds',
 		    MeshName = 'ARMTARG_dead_lod0.scm',
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
                 },
             },
         },
@@ -35,13 +35,13 @@ PropBlueprint {
         HelpText = 'Wreckage',
     },
     Physics = {
-        BlockPath = true,
+        BlockPath = false, 
     },
     Wreckage = {
-	Blueprint = '/units/ARMTARG/ARMTARG_heap_prop.bp',
+	Blueprint = '/mods/SCTA-master/units/ARMTARG/ARMTARG_heap_prop.bp',
     },
     ScriptClass = 'TAWreckage',
-    ScriptModule = '/mods/SCTA/lua/TAWreckage.lua',
+    ScriptModule = '/mods/SCTA-master/lua/TAWreckage.lua',
     SizeX = 5,
     SizeY = 2.5,
     SizeZ = 4,

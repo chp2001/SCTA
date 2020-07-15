@@ -26,23 +26,19 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	--Additional Categories
 	'STRUCTURE',
 	'DEFENSE',
         'ANTIMISSILE',
         'SILO',
 	'NOCUSTOMTARGET',
         'OVERLAYDEFENSE',
-
-	--TA Categories
 	'CORE',
 	'SPECIAL',
 	'WEAPON',
 	'LEVEL3',
 	'NOTAIR',
 	'NOTSUB',
-    },
+   },
     Defense = {
         ArmorType = 'Normal',
         Health = 780,
@@ -57,15 +53,15 @@ UnitBlueprint {
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
 				EmitterBone = {'collar'},
 				EmitterBlueprint = {
-	    				'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+	    				'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
@@ -76,8 +72,8 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -95,11 +91,12 @@ UnitBlueprint {
     General = {
 	BuildAngle = 4096,
         Category = 'Defense',
-        Classification = 'RULEUC_Weapon',
+        Classification = 'RULEUC_CounterMeasure',
         CommandCaps = {
             RULEUCC_SiloBuildTactical = true,
             RULEUCC_Stop = true,
-            RULEUCC_RetaliateToggle = true,
+            RULEUCC_RetaliateToggle = false,
+            RULEUCC_Pause = true,
         },
         SelectionPriority = 5,
         FactionName = 'CORE',
@@ -159,7 +156,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 1,
-            ProjectileId = '/mods/SCTA/projectiles/FMD_ROCKET/FMD_ROCKET_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/FMD_ROCKET/FMD_ROCKET_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -206,7 +203,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA/units/CORFMD/CORFMD_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/CORFMD/CORFMD_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

@@ -65,7 +65,6 @@ UnitBlueprint {
         'SELECTABLE',
         'SELECTION', 
         'VISIBLETORECON',
-        'RECLAIMABLE',
         'ENGINEER',
         'PATROLHELPER',
         'RECLAIM',

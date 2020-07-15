@@ -79,6 +79,8 @@ UnitBlueprint {
     },
     Description = 'Decoy Commander',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMCOM/ARMCOM_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             'Decoy',
             'Construction Unit',

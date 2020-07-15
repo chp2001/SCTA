@@ -103,6 +103,8 @@ UnitBlueprint {
     },
     Description = 'Commander',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMCOM/ARMCOM_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             '<LOC ability_amphibious>Amphibious',
             '<LOC ability_customizable>Customizable',

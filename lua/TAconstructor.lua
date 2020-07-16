@@ -158,6 +158,22 @@ TAconstructor = Class(TAWalking) {
 		end
 	end,
 
+	DestroyUnitBeingBuilt = function(self)
+        if self.UnitBeingBuilt and not self.UnitBeingBuilt.Dead and self.UnitBeingBuilt:GetFractionComplete() < 1 then
+            if self.UnitBeingBuilt:GetFractionComplete() > 0.5 then
+                self.UnitBeingBuilt:Kill()
+            else
+                self.UnitBeingBuilt:Destroy()
+            end
+        end
+    end,
+
+	OnFailedToBuild = function(self)
+        self.FactoryBuildFailed = true
+        TAWalking.OnFailedToBuild(self)
+        ChangeState(self, self.IdleState)
+    end,
+
 
 	StopSpin = function(self, unitBeingBuilt)
 		if self.isFactory == true and unitBeingBuilt then

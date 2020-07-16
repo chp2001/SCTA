@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 7,
+    BuildIconSortPriority = 2,
     Categories = {
         'BUILTBYT2VEHICLE',
         'BUILTBYT1VEHICLE',
@@ -42,12 +42,8 @@ UnitBlueprint {
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-
-	
 	'STRUCTURE',
 	'CONSTRUCTION',
-
-	
 	'ARM',
 	'PLANT',
 	'CTRL_F',

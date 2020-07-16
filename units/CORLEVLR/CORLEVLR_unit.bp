@@ -1,4 +1,4 @@
-#CORE Leveler - Riot Tank
+#CORE Leveler - Riot Tank Artillery
 #CORLEVLR
 #
 #Blueprint created by Raevn
@@ -88,7 +88,7 @@ UnitBlueprint {
 	MaxWaterDepth = 0.75,
     },
     General = {
-        Category = 'Direct Fire',
+        Category = 'Indirect Fire',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
@@ -130,7 +130,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 0.75,
     SizeZ = 2,
-    StrategicIconName = 'icon_land1_directfire',
+    StrategicIconName = 'icon_land1_artillery',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -141,7 +141,7 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
-            BallisticArc = 'RULEUBA_None',
+            BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 180,
@@ -152,10 +152,10 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
                 Seabed = 'Land|Water|Seabed',
             },
-	    RangeCategory = 'UWRC_DirectFire',
+            RangeCategory = 'UWRC_IndirectFire',
             FiringTolerance = 3,
             Label = 'CORLEVLR_WEAPON',
-            MaxRadius = 16.25,
+            MaxRadius = 30,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
 	    MuzzleVelocity = 17.5,
@@ -192,8 +192,9 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 20,
             Turreted = true,
+            EnergyRequired = 5,
+            EnergyDrainPerSecond = 5,
         },
-
         { #MEDIUM_UNITEX #Does not exist, values guessed
             Damage = 40,
             DamageFriendly = true,

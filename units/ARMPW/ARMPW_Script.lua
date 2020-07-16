@@ -1,5 +1,4 @@
 #ARM Peewee - Infantry Kbot
-#ARMFLASH
 #
 #Script created by Raevn
 

@@ -26,20 +26,16 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 3,
+    BuildIconSortPriority = 9,
     Categories = {
         'SELECTABLE',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-
-	
         'CORE',
         'KBOT',
 	'LEVEL1',
@@ -98,7 +94,7 @@ UnitBlueprint {
 	MaxWaterDepth = 0.75,
     },
     General = {
-        Category = 'Direct Fire',
+        Category = 'Indirect Fire',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
@@ -141,7 +137,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 1.75,
     SizeZ = 2,
-    StrategicIconName = 'icon_bot1_directfire',
+    StrategicIconName = 'icon_land1_artillery',
     StrategicIconSortPriority = 0,
     Weapon = {
         {

@@ -62,7 +62,7 @@ UnitBlueprint {
             MinAirspeed = 4,
             StartTurnDistance = 5,
     },
-    BuildIconSortPriority = 0,
+    BuildIconSortPriority = 1,
     Categories = {
         'SELECTABLE',
         'TECH1',

@@ -118,7 +118,7 @@ UnitBlueprint {
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
         },
-        SelectionPriority = 5,
+        SelectionPriority = 2,
         ConstructionBar = true,
         FactionName = 'CORE',
         TechLevel = 'RULEUTL_Advanced',

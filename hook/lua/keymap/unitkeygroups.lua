@@ -240,7 +240,7 @@ TAunitkeygroups = {
         "corseal",
     },
     ["T1_Assault_Bot"]= {
-        "armrock",
+        "armwar",
         "corstorm",
     },
     ["T2_Submarine_Hunter"]= {

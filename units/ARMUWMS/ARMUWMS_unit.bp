@@ -16,7 +16,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 15,
+    BuildIconSortPriority = 8,
     Categories = {
         'BUILTBYT1SHIP',
         'BUILTBYT1HOVER',

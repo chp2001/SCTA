@@ -17,7 +17,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 2,
+    BuildIconSortPriority = 10,
     Categories = {
         'BUILTBYT1AIR',
         'BUILTBYT1KBOT',
@@ -29,14 +29,10 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-
-	
 	'STRUCTURE',
         'ENERGYSTORAGE',
         'ECONOMIC',
 	'TEXTUREANIM',
-
-	
 	'CORE',
 	'ENERGY',
 	'LEVEL1',

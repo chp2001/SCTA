@@ -37,16 +37,12 @@ UnitBlueprint {
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-
-	
 	'STRUCTURE',
 	'CONSTRUCTION',
 	'NAVAL',
-
-	
 	'ARM',
 	'PLANT',
-	'LEVEL2',	#Bug in TA: 'LEVEL1'
+	'LEVEL2',
 	'NOWEAPON',
 	'NOTAIR',
 	'NOTSUB',

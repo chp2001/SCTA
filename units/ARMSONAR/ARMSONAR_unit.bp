@@ -24,9 +24,9 @@ UnitBlueprint {
             Bank = 'TA_Sound',
             Cue = 'XPLOSML3',
             LodCutoff = 'UnitMove_LodCutoff',
-	},
+	    },
     },
-    BuildIconSortPriority = 12,
+    BuildIconSortPriority = 16,
     Categories = {
         'BUILTBYT1SHIP',
         'BUILTBYT1HOVER',
@@ -36,16 +36,12 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-
-	
 	'STRUCTURE',
 	'INTELLIGENCE',
 	'SONAR',
 	'NAVAL',
 	'TEXTUREANIM',
         'OVERLAYSONAR',
-
-	
 	'ARM',
 	'SPECIAL',
 	'SONAR',

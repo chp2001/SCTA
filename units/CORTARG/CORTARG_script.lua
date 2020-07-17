@@ -105,7 +105,7 @@ CORTARG = Class(TAunit) {
 		--SLEEP <112>;
                 WaitSeconds(1.2)
 
-		self:SetConsumptionActive(true)
+		self:SetMaintenanceConsumptionActive()
 	end,
 
 	Close = function(self)
@@ -151,7 +151,7 @@ CORTARG = Class(TAunit) {
                 WaitSeconds(1.2)
 
 		self.damageReduction = 0.7
-		self:SetConsumptionActive(false)
+		self:SetMaintenanceConsumptionInactive()
 	end,
 }
 

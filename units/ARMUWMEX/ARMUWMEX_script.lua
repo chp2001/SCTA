@@ -52,7 +52,7 @@ ARMUWMEX = Class(TAunit) {
 		TAunit.OnProductionPaused(self)
 		self.Spinners.arms:SetAccel(182)
 		self.Spinners.arms:SetTargetSpeed(0)
-		self:SetConsumptionActive(false)
+		self:SetMaintenanceConsumptionInactive()
 		self:PlayUnitSound('Deactivate')
 	end,
 
@@ -60,7 +60,7 @@ ARMUWMEX = Class(TAunit) {
 		TAunit.OnProductionUnpaused(self)
 		self.Spinners.arms:SetAccel(91)
 		self.Spinners.arms:SetTargetSpeed(self:GetProductionPerSecondMass() * 45)
-		self:SetConsumptionActive(true)
+		self:SetMaintenanceConsumptionActive()
 		self:PlayUnitSound('Activate')
 	end,
 }

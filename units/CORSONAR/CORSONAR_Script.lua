@@ -19,7 +19,7 @@ CORSONAR = Class(TAunit) {
 		--SPIN base around y-axis  SPEED <0>;
 		self.Spinners.dish:SetSpeed(0)
 
-		self:SetConsumptionActive(false)
+		self:SetMaintenanceConsumptionInactive()
 		self.textureAnimation = false
 		TAunit.OnIntelDisabled(self)
 		self:PlayUnitSound('Deactivate')
@@ -29,7 +29,7 @@ CORSONAR = Class(TAunit) {
 		--SPIN base around y-axis  SPEED <60.01>;
 		self.Spinners.dish:SetSpeed(60)
 
-		self:SetConsumptionActive(true)
+		self:SetMaintenanceConsumptionActive()
 		self.textureAnimation = true
 		TAunit.OnIntelEnabled(self)
 		self:PlayUnitSound('Activate')

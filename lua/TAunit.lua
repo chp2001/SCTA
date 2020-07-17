@@ -119,7 +119,7 @@ TAunit = Class(Unit)
         self:SetConsumptionPerSecondEnergy(energy_rate)
         self:SetConsumptionPerSecondMass(mass_rate)
         self:SetConsumptionActive(energy_rate > 0 or mass_rate > 0)
-    end,
+	end,
 
 
 	OnStopBeingBuilt = function(self,builder,layer)
@@ -128,7 +128,6 @@ TAunit = Class(Unit)
 		self.textureAnimation = true
 		ForkThread(self.IdleEffects, self)
 	end,
-	
 	OnMotionVertEventChange = function(self, new, old )
 		local bp = self:GetBlueprint()
 		if (old == 'Bottom') then
@@ -192,7 +191,6 @@ TAunit = Class(Unit)
 			end
 		end
 	end,
-
 	Smoke = function(self)
 		local bone = self:GetBlueprint().Display.SmokeBone or -1
 		while not IsDestroyed(self) do
@@ -213,7 +211,6 @@ TAunit = Class(Unit)
 
 	ShowMuzzleFlare = function(self, duration)
 		local bp = self:GetBlueprint()
-
 		#Show flare bone for pre-determined time
 		self.unit:ShowBone(bp.RackBones[self.CurrentRackSalvoNumber - 1].MuzzleBones[1], true)
 		WaitSeconds(duration)

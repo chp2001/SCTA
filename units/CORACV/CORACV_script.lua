@@ -53,7 +53,7 @@ CORACV = Class(TAconstructor) {
 		WaitSeconds(0.3)
 
 		--MOVE stand to y-axis <4.09> SPEED <12.00>;
-		self.Sliders.stand:SetGoal(0,4.1,0)
+		self.Sliders.stand:SetGoal(0,3.5,0)
 		self.Sliders.stand:SetSpeed(12)
 
 		--MOVE gun to y-axis <0.70> SPEED <2.00>;

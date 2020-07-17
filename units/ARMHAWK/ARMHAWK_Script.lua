@@ -10,7 +10,7 @@ ARMHAWK = Class(TAair) {
 
 	OnCreate = function(self)
 		TAair.OnCreate(self)
-		self:SetConsumptionActive(true)
+		self:SetMaintenanceConsumptionActive()
 		self.Sliders = {
 			wing1 = CreateSlider(self, 'Wing_01'),
 			wing2 = CreateSlider(self, 'Wing_02'),

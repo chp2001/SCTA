@@ -18,7 +18,7 @@ ARMSEER = Class(TAunit) {
 		TAunit.OnStopBeingBuilt(self,builder,layer)
 		--spin dish around y-axis speed <100>;
 		self.Spinners.dish:SetTargetSpeed(100)
-		self:SetConsumptionActive(true)
+		self:SetMaintenanceConsumptionActive()
 	end,
 
 
@@ -26,7 +26,7 @@ ARMSEER = Class(TAunit) {
 		if bit == 3 then
 			--spin dish around z-axis speed <0> (Bug in TA: meant to be y-axis)
 			self.Spinners.dish:SetTargetSpeed(0)
-			self:SetConsumptionActive(false)
+			self:SetMaintenanceConsumptionInactive()
 		end
 		TAunit.OnScriptBitSet(self, bit)
 	end,
@@ -36,7 +36,7 @@ ARMSEER = Class(TAunit) {
 		if bit == 3 then
 			--spin dish around y-axis speed <100>;
 			self.Spinners.dish:SetTargetSpeed(100)
-			self:SetConsumptionActive(true)
+			self:SetMaintenanceConsumptionActive()
 		end
 		TAunit.OnScriptBitClear(self, bit)
 	end,

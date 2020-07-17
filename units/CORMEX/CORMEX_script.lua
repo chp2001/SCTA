@@ -51,13 +51,13 @@ CORMEX = Class(TAunit) {
 	OnProductionPaused = function(self)
 		TAunit.OnProductionPaused(self)
 		self:PlayUnitSound('Deactivate')
-		self:SetConsumptionActive(false)
+		self:SetMaintenanceConsumptionInactive()
 		ForkThread(self.StopSpin,self)
 	end,
 
 	OnProductionUnpaused = function(self)
 		TAunit.OnProductionUnpaused(self)
-		self:SetConsumptionActive(true)
+		self:SetMaintenanceConsumptionActive()
 		self:PlayUnitSound('Activate')
 		ForkThread(self.StartSpin,self)
 	end,

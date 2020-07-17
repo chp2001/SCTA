@@ -60,14 +60,14 @@ CORMOHO = Class(TAunit) {
 	OnProductionPaused = function(self)
 		TAunit.OnProductionPaused(self)
 		ForkThread(self.Close, self)
-                self:SetConsumptionActive(false)
+                self:SetMaintenanceConsumptionInactive()
 		self:PlayUnitSound('Deactivate')
 	end,
 
 	OnProductionUnpaused = function(self)
 		TAunit.OnProductionUnpaused(self)
 		ForkThread(self.Open, self)
-                self:SetConsumptionActive(true)
+                self:SetMaintenanceConsumptionActive()
 		self:PlayUnitSound('Activate')
 	end,
 

@@ -24,7 +24,7 @@ CORARAD = Class(TAunit) {
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAunit.OnStopBeingBuilt(self,builder,layer)
 		self.intelIsActive = true
-		self:SetConsumptionActive(true)
+		self:SetMaintenanceConsumptionActive()
 		self:PlayUnitSound('Activate')
 		ChangeState(self, self.OpeningState)
 	end,
@@ -113,7 +113,7 @@ CORARAD = Class(TAunit) {
 	OnScriptBitSet = function(self, bit)
 		if bit == 3 then
 			self.intelIsActive = false
-			self:SetConsumptionActive(false)
+			self:SetMaintenanceConsumptionInactive()
 			ChangeState(self, self.ClosingState)
 		end
 		TAunit.OnScriptBitSet(self, bit)
@@ -123,7 +123,7 @@ CORARAD = Class(TAunit) {
 	OnScriptBitClear = function(self, bit)
 		if bit == 3 then
 			self.intelIsActive = true
-			self:SetConsumptionActive(true)
+			self:SetMaintenanceConsumptionActive()
 			ChangeState(self, self.OpeningState)
 		end
 		TAunit.OnScriptBitClear(self, bit)

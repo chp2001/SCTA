@@ -18,7 +18,7 @@ ARMJAM = Class(TAunit) {
 		TAunit.OnStopBeingBuilt(self,builder,layer)
 		--spin fork around z-axis speed <100>
 		self.Spinners.fork:SetSpeed(100)
-		self:SetConsumptionActive(true)
+		self:SetMaintenanceConsumptionActive()
 	end,
 
 
@@ -26,7 +26,7 @@ ARMJAM = Class(TAunit) {
 		if bit == 5 then
 			--spin fork around z-axis speed <0>
 			self.Spinners.fork:SetSpeed(0)
-			self:SetConsumptionActive(false)
+			self:SetMaintenanceConsumptionInactive()
 			self:PlayUnitSound('Deactivate')
 		end
 		TAunit.OnScriptBitSet(self, bit)
@@ -37,7 +37,7 @@ ARMJAM = Class(TAunit) {
 		if bit == 5 then
 			--spin fork around z-axis speed <100>
 			self.Spinners.fork:SetSpeed(100)
-			self:SetConsumptionActive(true)
+			self:SetMaintenanceConsumptionActive()
 			self:PlayUnitSound('Activate')
 		end
 		TAunit.OnScriptBitClear(self, bit)

@@ -7,7 +7,7 @@ local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 ARMPW = Class(TAunit) {
 		Weapons = {
-		EMG = Class(TAweapon) {
+			EMG = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
 			end,

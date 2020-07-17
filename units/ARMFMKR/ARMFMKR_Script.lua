@@ -27,7 +27,7 @@ ARMFMKR = Class(TAunit) {
 
 	OnProductionUnpaused = function(self)
 		TAunit.OnProductionUnpaused(self)
-		self:SetConsumptionActive(true)
+		self:SetMaintenanceConsumptionActive()
 		self.textureAnimation = true
 		self:PlayUnitSound('Activate')
 
@@ -38,7 +38,7 @@ ARMFMKR = Class(TAunit) {
 
 	OnProductionPaused = function(self)
 		TAunit.OnProductionPaused(self)
-		self:SetConsumptionActive(false)
+		self:SetMaintenanceConsumptionInactive()
 		self.textureAnimation = false
 		self:PlayUnitSound('Deactivate')
 

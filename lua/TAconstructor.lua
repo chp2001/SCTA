@@ -71,6 +71,7 @@ TAconstructor = Class(TAWalking) {
 							end
 
 							if (self.isBuilding == true) then
+								self.currentTarget:HideFlares()
 								self:SetBuildRate(self:GetBlueprint().Economy.BuildRate)
 								TAWalking.OnStartBuild(self, self.currentTarget, self.order)
 							end

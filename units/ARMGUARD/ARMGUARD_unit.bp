@@ -84,8 +84,8 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 3,
-        SizeZ = 3,
+        SizeX = 1,
+        SizeZ = 1,
     },
     General = {
 	BuildAngle = 8192,
@@ -111,19 +111,19 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        SkirtSizeX = 3, 
-        SkirtSizeZ = 3,  
+        SkirtSizeX = 1, 
+        SkirtSizeZ = 1,  
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
     },
     SelectionSizeX = 1.5,
-    SelectionCenterOffsetZ = -0.75,
+    SelectionCenterOffsetZ = -0.5,
     SelectionSizeZ = 1.5,
     SelectionThickness = 0.25,
-    SizeX = 3,
-    SizeY = 2,
-    SizeZ = 3,
+    SizeX = 1.5,
+    SizeY = 1,
+    SizeZ = 1.5,
     StrategicIconName = 'icon_structure2_artillery',
     StrategicIconSortPriority = 0,
     Weapon = {

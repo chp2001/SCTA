@@ -21,7 +21,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 8,
+    BuildIconSortPriority = 9,
     Categories = {
         'BUILTBYT1KBOT',
         'BUILTBYT1VEHICLE',

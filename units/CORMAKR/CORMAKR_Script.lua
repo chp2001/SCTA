@@ -27,7 +27,7 @@ CORMAKR = Class(TAunit) {
 	OnProductionPaused = function(self)
 		#Close Animation		
 		TAunit.OnProductionPaused(self)
-		self:SetConsumptionActive(false)
+		self:SetMaintenanceConsumptionInactive()
 		self.textureAnimation = false
 		self:PlayUnitSound('Deactivate')
 		ForkThread(self.Close, self)
@@ -40,7 +40,7 @@ CORMAKR = Class(TAunit) {
 		WaitFor(self.Spinners.plug)
 
 		TAunit.OnProductionUnpaused(self)
-		self:SetConsumptionActive(true)
+		self:SetMaintenanceConsumptionActive()
 		self.textureAnimation = true
 	end,
 

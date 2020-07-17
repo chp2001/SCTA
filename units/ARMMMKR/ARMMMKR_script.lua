@@ -98,7 +98,7 @@ ARMMMKR = Class(TAunit) {
 			WaitSeconds(0.75)
 
 			self:SetProductionActive(true)
-			self:SetConsumptionActive(true)
+			self:SetMaintenanceConsumptionActive()
 
 			ChangeState(self, self.IdleOpenState)
 		end,
@@ -109,7 +109,7 @@ ARMMMKR = Class(TAunit) {
 		Main = function(self)
 			self:SetProductionActive(false)
 			self:PlayUnitSound('Activate')
-			self:SetConsumptionActive(false)
+			self:SetMaintenanceConsumptionInactive()
 
 			--MOVE mmakercore to y-axis <5.05> SPEED <15.00>;
 			self.Sliders.core:SetGoal(0,5.05,0)

@@ -64,8 +64,7 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 1220,
         MaxHealth = 1220,
-    },
-									
+    },				
     Description = 'Tech Level 2',
     Display = {
         Abilities = {
@@ -97,7 +96,8 @@ UnitBlueprint {
                 {
                     LODCutoff = 500,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                    Scrolling = true,
+                    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },

@@ -128,6 +128,7 @@ TAunit = Class(Unit)
 		self.textureAnimation = true
 		ForkThread(self.IdleEffects, self)
 	end,
+	
 	OnMotionVertEventChange = function(self, new, old )
 		local bp = self:GetBlueprint()
 		if (old == 'Bottom') then

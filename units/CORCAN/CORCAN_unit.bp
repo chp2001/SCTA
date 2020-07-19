@@ -165,7 +165,7 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_DirectFire',
             FiringTolerance = 0,
             Label = 'CORE_CANLASER',
-            MaxRadius = 12.5,
+            MaxRadius = 28,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
 	    MuzzleVelocity = 43.75,

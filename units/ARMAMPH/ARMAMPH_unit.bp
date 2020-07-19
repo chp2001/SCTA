@@ -231,7 +231,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_DirectFire',
             FiringTolerance = 2.75,
             Label = 'armamph_weapon2',
-            MaxRadius = 16.25,
+            MaxRadius = 18,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 56.25,

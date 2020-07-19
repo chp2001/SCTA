@@ -152,7 +152,7 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_DirectFire',
             FiringTolerance = 2,
             Label = 'EMG',
-            MaxRadius = 11.25,
+            MaxRadius = 13,
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 3,
 	        MuzzleVelocity = 18.75,

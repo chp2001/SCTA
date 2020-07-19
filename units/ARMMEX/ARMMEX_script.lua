@@ -11,6 +11,7 @@ ARMMEX = Class(TAunit) {
 
 	OnCreate = function(self)
 		TAunit.OnCreate(self)
+		self:SetMaintenanceConsumptionActive()
 		self.Spinners = {
 			arms = CreateRotator(self, 'Extractor', 'y', nil, 0, 91, 0),
 		}

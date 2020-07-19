@@ -177,12 +177,10 @@ TAunitkeygroups = {
     },
     ["T1_Engineer"]= {
         "armca",
-        "armch",
         "armck",
         "armcs",
         "armcv",
         "corca",
-        "corhp",
         "corck",
         "corcs",
         "corcv",

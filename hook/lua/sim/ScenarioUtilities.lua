@@ -17,9 +17,9 @@ function doGateSpawn(strArmy, createCommander)
 			local initialUnitName = 'mas0001'
 			cdrUnit = CreateInitialArmyUnit(strArmy, initialUnitName)
 			--cdrUnit:SetUnSelectable(true)
-			cdrUnit:SetBusy(true)
+			cdrUnit:SetBusy(false)
 			--cdrUnit:SetBlockCommandQueue(true)
-			ForkThread(ControlDelay, cdrUnit, 5)
+			ForkThread(ControlDelay, cdrUnit, 3)
 			--UISelectAndZoomTo(cdrUnit,0.1)
 			
 			ABrain.PreBuilt = true

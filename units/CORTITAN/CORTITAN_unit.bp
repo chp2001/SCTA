@@ -98,7 +98,7 @@ UnitBlueprint {
 		DefaultFlamingProjectileCountMin = 0,
 		DefaultFlamingProjectileCountMax = 0,
 		DestructionDebrisUseLocalVelocity = true,
-#		DefaultProjectileCategories = {'ArmCockpit'},
+		DefaultProjectileCategories = {'ArmCockpit'},
 		FlashSize = 10,
 		FlashTime = 10,
 		DestructionEmitters = {
@@ -193,7 +193,8 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 780,
-            BombDropThreshold = 3,
+            NeedToComputeBombDrop = true,
+            BombDropThreshold = 1.5,
             DamageRadius = 0.5,
             FiringRandomness = 0,
             DamageType = 'Normal',

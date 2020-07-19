@@ -32,7 +32,7 @@ UnitBlueprint {
 	StagingPlatformScanRadius = 300,
         ShowAssistRangeOnSelect = true,
     },
-    BuildIconSortPriority = 8,
+    BuildIconSortPriority = 19,
     Categories = {
         'BUILTBYT2VEHICLE',
         'BUILTBYT2KBOT',
@@ -107,8 +107,8 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 4,
-        SizeZ = 4,
+        SizeX = 2,
+        SizeZ = 2,
     },
     General = {
 	BuildAngle = 1024,
@@ -135,8 +135,8 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
-        SkirtSizeX = 4,
-        SkirtSizeZ = 4,
+        SkirtSizeX = 2,
+        SkirtSizeZ = 2,
     },
     SelectionSizeX = 2.5,
     SelectionSizeZ = 2.5,

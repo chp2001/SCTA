@@ -16,7 +16,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 4,
+    BuildIconSortPriority = 17,
     Categories = {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
@@ -26,14 +26,10 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	
 	'STRUCTURE',
 	'DEFENSE',
 	'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
-
-	
 	'CORE',
 	'LEVEL3',
 	'STRATEGIC',
@@ -157,7 +153,7 @@ UnitBlueprint {
             MuzzleVelocity = 62.5,
             EnergyChargeForFirstShot = false,
             EnergyRequired = 1500,
-            EnergyDrainPerSecond = 200,
+            EnergyDrainPerSecond = 1500,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_INTIMIDATOR/CORE_INTIMIDATOR_proj.bp',
             RackBones = {
                 {

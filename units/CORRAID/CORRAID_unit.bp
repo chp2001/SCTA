@@ -155,7 +155,7 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_DirectFire',
             FiringTolerance = 0,
             Label = 'CORE_LIGHTCANNON',
-            MaxRadius = 15,
+            MaxRadius = 18,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
 	    MuzzleVelocity = 10.625,

@@ -154,7 +154,7 @@ UnitBlueprint {
             },
 	    RangeCategory = 'UWRC_DirectFire',
             Label = 'ARM_LASER',
-            MaxRadius = 11.25,
+            MaxRadius = 24,
             MuzzleSalvoSize = 1,
 	    MuzzleSalvoDelay = 0,
 	    MuzzleVelocity = 25,

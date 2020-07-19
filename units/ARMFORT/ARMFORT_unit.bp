@@ -4,7 +4,7 @@
 #Blueprint created by Raevn
 
 UnitBlueprint {
-    BuildIconSortPriority = 22,
+    BuildIconSortPriority = 8,
     Categories = {
         'BUILTBYT2VEHICLE',
         'BUILTBYT2KBOT',

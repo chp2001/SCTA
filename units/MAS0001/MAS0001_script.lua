@@ -15,9 +15,7 @@ local Entity = import('/lua/sim/Entity.lua').Entity
 MAS0001 = Class(AWalkingLandUnit) {
     OnCreate = function(self)
     AWalkingLandUnit.OnCreate(self)
-    self:SetUnSelectable(true)
-    self:SetBusy(true)
-    self:SetBlockCommandQueue(true)
+	
     end,
 
     OnStopBeingBuilt = function(self,builder,layer)
@@ -31,33 +29,43 @@ MAS0001 = Class(AWalkingLandUnit) {
     end,
 	
     OnStartBuild = function(self, unitBeingBuilt, order)
-        AWalkingLandUnit.OnStartBuild(self, unitBeingBuilt, order)
+		local gtime = GetGameTimeSeconds()
+		
+		if gtime < 5 then
+			LOG('*DEBUG----------------------: ', gtime)
+			LOG('*DEBUG----------------------: ', 10)
+			ForkThread(self.Spawn,self, unitBeingBuilt, order)
+		else
+			AWalkingLandUnit.OnStartBuild(self, unitBeingBuilt, order)
+			local cdrUnit = false
+			local army = self:GetArmy()
+			cdrUnit = CreateInitialArmyUnit(army, unitBeingBuilt.UnitId)
+			self:AddBuildRestriction(categories.COMMAND)
+			self:Destroy()
+			unitBeingBuilt:Destroy()
+		end
+
+		--ForkThread(self:Spawn,self, unitBeingBuilt, order)
+
+    end,
+
+	Spawn = function(self, unitBeingBuilt, order)
+		local gtime = GetGameTimeSeconds()
+		
+		while gtime < 5 do
+			LOG('*DEBUG----------------------: ', gtime)
+			LOG('*DEBUG----------------------: ', 10)
+			WaitSeconds(0.2)
+			gtime = GetGameTimeSeconds()
+		end
+		AWalkingLandUnit.OnStartBuild(self, unitBeingBuilt, order)
 		local cdrUnit = false
 		local army = self:GetArmy()
 		cdrUnit = CreateInitialArmyUnit(army, unitBeingBuilt.UnitId)
         self:AddBuildRestriction(categories.COMMAND)
 		self:Destroy()
 		unitBeingBuilt:Destroy()
-    end,
-
-    PlayCommanderWarpInEffect = function(self, bones)
-        self:HideBone(0, true)
-        self:SetUnSelectable(false)
-        self:SetBusy(true)
-        self:ForkThread(self.WarpInEffectThread, bones)
-    end,
-
-    WarpInEffectThread = function(self)
-        self:PlayUnitSound('CommanderArrival')
-        self:CreateProjectile( '/effects/entities/UnitTeleport01/UnitTeleport01_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
-        WaitSeconds(2.1)
-		self:ShowBone(0, true)
-        self:SetUnSelectable(false)
-        self:SetBusy(false)
-        self:SetBlockCommandQueue(false)
-        WaitSeconds(6)
-        self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-    end,
+	end
 }
 
 

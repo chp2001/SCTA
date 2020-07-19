@@ -16,7 +16,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 19,
+    BuildIconSortPriority = 18,
     Categories = {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
@@ -85,8 +85,8 @@ UnitBlueprint {
         BuildTime = 96450,
     },
     Footprint = {
-        SizeX = 4,
-        SizeZ = 4,
+        SizeX = 2,
+        SizeZ = 2,
     },
     General = {
 	BuildAngle = 4096,

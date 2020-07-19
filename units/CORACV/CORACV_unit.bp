@@ -72,7 +72,6 @@ UnitBlueprint {
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Construction','Tredside','ArmCockpit','BuildMuzzle'},
-
 		DestructionEmitters = {		{
 				EmitterBone = {0},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
@@ -90,17 +89,23 @@ UnitBlueprint {
 		},
 	},
 	BuildBones = {'nozzle'},
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
-                {
-                    LODCutoff = 500,
-                    ShaderName = 'Unit', 
-                    Scrolling = true,
-                    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
-                },
+    Mesh = {
+        IconFadeInZoom = 130,
+        LODs = {
+            {
+                LODCutoff = 120,
+                Scrolling = true,
+                ShaderName = 'Unit',
+            },
+            {
+                AlbedoName = 'coracv_albedo.dds',
+                LODCutoff = 215,
+                ShaderName = 'Unit',
+                SpecularName = 'coracv_specteam.dds',
+                NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
             },
         },
+    },
         UniformScale = 0.16,
     },
     Economy = {

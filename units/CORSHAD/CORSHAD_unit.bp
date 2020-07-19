@@ -194,8 +194,7 @@ UnitBlueprint {
                 Air = 'Land|Water|Seabed',
                 Land = 'Land|Water|Seabed',
             },
-            RangeCategory = 'UWRC_DirectFire',
-            FiringTolerance = 10,
+            FiringTolerance = 5,
             HeadingArcCenter = 0,
             HeadingArcRange = 10,
             Label = 'CORBOMB',
@@ -218,6 +217,8 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
+            NeedToComputeBombDrop = true,
+            BombDropThreshold = 1.5,
             RateOfFire = 0.1,
             TargetCheckInterval = 1,
             TargetPriorities = {

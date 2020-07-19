@@ -32,8 +32,6 @@ MAS0001 = Class(AWalkingLandUnit) {
 		local gtime = GetGameTimeSeconds()
 		
 		if gtime < 5 then
-			LOG('*DEBUG----------------------: ', gtime)
-			LOG('*DEBUG----------------------: ', 10)
 			ForkThread(self.Spawn,self, unitBeingBuilt, order)
 		else
 			AWalkingLandUnit.OnStartBuild(self, unitBeingBuilt, order)
@@ -53,8 +51,6 @@ MAS0001 = Class(AWalkingLandUnit) {
 		local gtime = GetGameTimeSeconds()
 		
 		while gtime < 5 do
-			LOG('*DEBUG----------------------: ', gtime)
-			LOG('*DEBUG----------------------: ', 10)
 			WaitSeconds(0.2)
 			gtime = GetGameTimeSeconds()
 		end

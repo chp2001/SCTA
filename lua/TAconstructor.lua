@@ -216,16 +216,9 @@ TAconstructor = Class(TAWalking) {
 	DelayedClose = function(self)
 		if self.isFactory then
 			# Wait until unit factory is clear to close
-			local onlySelf = false
-			while onlySelf == false do
-				onlySelf = self:AreaClear(self:GetCloseArea())
-				if not onlySelf then	
-					WaitSeconds(0.5)
-				end
 				if self.isBuilding == true then
 					return
 				end
-			end
 		end
 	end,
 
@@ -234,9 +227,9 @@ TAconstructor = Class(TAWalking) {
 		local pos = self:GetPosition(bp.Display.BuildAttachBone)
 		local area = nil
 		if bp.Physics.CloseAreaX and bp.Physics.CloseAreaZ then
-			area = Rect(pos.x - bp.Physics.CloseAreaX / 2, pos.z - bp.Physics.CloseAreaZ / 2, pos.x + bp.Physics.CloseAreaX / 2, pos.z + bp.Physics.CloseAreaX / 2)
+			area = Rect(pos.x - bp.Physics.CloseAreaX,bp.Physics.CloseAreaZ, bp.Physics.CloseAreaX, bp.Physics.CloseAreaX)
 		else
-			area = Rect(pos.x - bp.SizeX / 2, pos.z - bp.SizeZ / 2, pos.x + bp.SizeX / 2, pos.z + bp.SizeZ / 2)
+			area = Rect(pos.x - bp.SizeX,bp.SizeZ, bp.SizeX, bp.SizeZ)
 		end
 		return area
 	end,
@@ -246,40 +239,18 @@ TAconstructor = Class(TAWalking) {
 		local pos = self:GetPosition(bp.Display.BuildAttachBone)
 		local area = nil
 		if bp.Physics.BuildAreaX and bp.Physics.BuildAreaZ then
-			area = Rect(pos.x - bp.Physics.BuildAreaX / 2, pos.z - bp.Physics.BuildAreaZ / 2, pos.x + bp.Physics.BuildAreaX / 2, pos.z + bp.Physics.BuildAreaX / 2)
+			area = Rect(bp.Physics.BuildAreaX, bp.Physics.BuildAreaZ, bp.Physics.BuildAreaX, bp.Physics.BuildAreaX)
 		else
-			area = Rect(pos.x - bp.SizeX / 2, pos.z - bp.SizeZ / 2, pos.x + bp.SizeX / 2, pos.z + bp.SizeZ / 2)
+			area = Rect(bp.SizeX,bp.SizeZ, bp.SizeX, bp.SizeZ)
 		end
 		return area
 	end,
 
-	AreaClear = function(self, area)
-		local unitsInRect = GetUnitsInRect(area)
-		for k, v in unitsInRect do
-			if v != self and v != self.desiredTarget then
-				if (v:GetPosition().x > area.x0) and (v:GetPosition().x < area.x1) and (v:GetPosition().z > area.y0) and (v:GetPosition().z < area.y1) then
-					if v:GetPosition().y < self:GetPosition().y + 2 then
-						return false
-					end
-				end
-			end
-		end
-		return true
-	end,
-
 	RollOff = function(self)
 		if self.isFactory then
-			# Wait until unit has left the factory
-			local onlySelf = false
-			while onlySelf == false do
-				onlySelf = self.AreaClear(self, self.GetBuildArea(self))
-				if not onlySelf then
-					WaitSeconds(0.5)
-				end
-			end
+		end
 			self:SetBusy(false)
 			self:SetBlockCommandQueue(false)
-		end
 	end,
 
 	Unpack = function(self)

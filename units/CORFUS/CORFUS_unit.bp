@@ -21,6 +21,7 @@ UnitBlueprint {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
         'BUILTBYT2VEHICLE',
+        'BUILTBYT2SUB',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -101,6 +102,7 @@ UnitBlueprint {
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
+            LAYER_Seabed = true,
         },
         SkirtSizeX = 5,
         SkirtSizeZ = 5,

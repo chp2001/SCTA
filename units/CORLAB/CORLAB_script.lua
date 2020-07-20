@@ -9,7 +9,7 @@ CORLAB = Class(TAconstructor) {
 	pauseTime = 5,
 	hideUnit = true,
 	isFactory = true,
-	spinUnit = true,
+	spinUnit = false,
 
 	OnCreate = function(self)
 		self.Spinners = {
@@ -160,7 +160,7 @@ CORLAB = Class(TAconstructor) {
 			--SLEEP <29>;
 
 			--SPIN pad around y-axis  SPEED <30.00>
-			self.Spinners.pad:SetSpeed(30)
+			self.Spinners.pad:SetSpeed(0)
 			TAconstructor.Open(self)
 		end,
 

@@ -32,6 +32,7 @@ UnitBlueprint {
         'BUILTBYT1KBOT',
         'BUILTBYT1VEHICLE',
         'BUILTBYT1HOVER',
+        'BUILTBYT1SHIP',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',        
@@ -141,6 +142,7 @@ UnitBlueprint {
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
+            LAYER_Seabed = true,
         },
         FlattenSkirt = true,
         MeshExtentsX = 1.25,

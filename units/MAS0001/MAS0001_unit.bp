@@ -33,6 +33,7 @@ UnitBlueprint {
         'CONSTRUCTION',
         'FACTORY',
         'LAND',
+        'TECH1',
         'SHOWQUEUE',
         'DEFENSE',
         'VISIBLETORECON',

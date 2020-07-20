@@ -3,7 +3,7 @@ do
 local TAupgrades =
 {
     -- TAs
-    ['armlab'] = 'armalab', 
+    ['armlab'] = 'armdlab', 
     ['corlab'] = 'coralab', 
     ['armap'] = 'armaap',
     ['corap'] = 'coraap',

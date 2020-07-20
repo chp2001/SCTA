@@ -34,6 +34,7 @@ UnitBlueprint {
         'BUILTBYT1KBOT',
         'BUILTBYT1VEHICLE',
         'BUILTBYT1HOVER',
+        'BUILTBYT1SHIP',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
@@ -120,6 +121,7 @@ UnitBlueprint {
         SkirtSizeZ = 3, 
         BuildOnLayerCaps = {
             LAYER_Land = true,
+            LAYER_Water = true,
         },
     },
     SelectionSizeX = 1.5,

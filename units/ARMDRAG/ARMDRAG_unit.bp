@@ -1,7 +1,4 @@
-#ARM Dragon's Teeth - Perimeter Defence
-#ARMDRAG
-#
-#Blueprint created by Raevn
+
 
 UnitBlueprint {
     BuildIconSortPriority = 17,
@@ -10,6 +7,7 @@ UnitBlueprint {
         'BUILTBYT1KBOT',
         'BUILTBYT1AIR',
         'BUILTBYT1HOVER',
+        'BUILTBYT1SHIP',
 	'UNSELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -93,6 +91,7 @@ UnitBlueprint {
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
+            LAYER_Water = true,
         },
         SkirtSizeX = 2,
         SkirtSizeZ = 2,

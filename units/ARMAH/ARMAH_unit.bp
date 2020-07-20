@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 3,
+    BuildIconSortPriority = 8,
     Categories = {
         'SELECTABLE',
         'TECH1',
@@ -142,7 +142,7 @@ UnitBlueprint {
     SizeX = 3,
     SizeZ = 3,
     SizeZ = 3,
-    StrategicIconName = 'icon_land2_antiair',
+    StrategicIconName = 'icon_land1_antiair',
     StrategicIconSortPriority = 0,
     Weapon = {
         {

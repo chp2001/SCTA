@@ -21,6 +21,7 @@ UnitBlueprint {
         'BUILTBYT1AIR',
         'BUILTBYT1KBOT',
         'BUILTBYT1VEHICLE',
+        'BUILTBYT1SHIP',
         'BUILTBYT1HOVER',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
@@ -104,6 +105,7 @@ UnitBlueprint {
         SkirtSizeZ = 4, 
         BuildOnLayerCaps = {
             LAYER_Land = true,
+            LAYER_Seabed = true,
         },
     },
     SelectionSizeX = 2.5,

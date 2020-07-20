@@ -26,7 +26,6 @@ TAunitkeygroups = {
         "armfus",
         "armsolar",
         "armtide",
-        "armuwfus",
         "corfus",
         "corsolar",
         "cortide",
@@ -38,19 +37,16 @@ TAunitkeygroups = {
     ["Mass_Extractor"]= {
         "armmex",
         "cormex",
-        "armuwmex",
         "armmoho",
         "cormoho",
     },
     ["Mass_Fabricator"]= {
-        "armfmkr",
         "armmakr",
         "armmmkr",
         "cormakr",
     },
     ["Energy_Storage"]= {
         "armestor",
-        "armuwes",
         "corestor",
     },
     ["Mass_Storage"]= {
@@ -63,7 +59,6 @@ TAunitkeygroups = {
         "corllt",
     },
     ["Anti_Air"]= {
-        "armfrt",
         "armrl",
         "corrl",
         "armflak",
@@ -105,7 +100,6 @@ TAunitkeygroups = {
     },
     ["Wall_Section"]= {
         "armdrag",
-        "armfdrag",
         "cordrag",
         "armfort",
     },
@@ -117,7 +111,6 @@ TAunitkeygroups = {
         "armason",
     },    
     ["Heavy_Point_Defense"]= {
-        "armfhlt",
         "armhlt",
         "corhlt",
         "corplas",
@@ -162,7 +155,6 @@ TAunitkeygroups = {
         "armfav",
         "armflea",
         "corfav",
-        "armsh",
     },
     ["T1_Mobile_Light_Artillery"]= {
         "armham",
@@ -173,7 +165,6 @@ TAunitkeygroups = {
         "armjeth",
         "cormist",
         "corcrash",
-        "armah",
     },
     ["T1_Engineer"]= {
         "armca",

@@ -63,21 +63,21 @@ WreckShield = Class(Shield){
 
     OnGetDamageAbsorption = function(self,instigator,amount,type)
 
-	if self.Owner then
-	        amount = amount * (self.Owner:GetArmorMult(type))
-       	amount = amount * ( 1.0 - ArmyGetHandicap(self:GetArmy()) )
-	        return math.min( self:GetHealth(), amount )
-	else
-	        return math.min(0)
-	end
-	return 0
-    end,
-
-    UpdateShieldRatio = function(self, value)     
-        if value >= 0 then
-            self.Owner:SetShieldRatio(value)
-        else
-            self.Owner:SetShieldRatio(self:GetHealth() / self:GetMaxHealth())
-        end
-    end,
+        #	if self.Owner then
+        #	        amount = amount * (self.Owner:GetArmorMult(type))
+        #       	amount = amount * ( 1.0 - ArmyGetHandicap(self:GetArmy()) )
+        #	        return math.min( self:GetHealth(), amount )
+        #	else
+        #	        return math.min(0)
+        #	end
+            return 0
+            end,
+        
+            UpdateShieldRatio = function(self, value)     
+        #        if value >= 0 then
+        #            self.Owner:SetShieldRatio(value)
+        #        else
+        #            self.Owner:SetShieldRatio(self:GetHealth() / self:GetMaxHealth())
+        #        end
+            end,
 }

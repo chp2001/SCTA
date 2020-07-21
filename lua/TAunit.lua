@@ -36,6 +36,7 @@ TAunit = Class(Unit)
 		end
 		self:SetReclaimTimeMultiplier(50)
 		self:SetDeathWeaponEnabled(false)
+		#WaitSeconds(1)
 		self:HideFlares()
 		self.FxMovement = TrashBag()
 		if not EntityCategoryContains(categories.NOSMOKE, self) then
@@ -333,7 +334,7 @@ TAunit = Class(Unit)
 
     OnReclaimed = function(self, entity)
         self:DoUnitCallbacks('OnReclaimed', entity)
-        self.CreateReclaimEndEffects( entity, self )
+		self.CreateReclaimEndEffects( entity, self )
 	#OnKilled = function(self, instigator, type, overkillRatio)
         self:OnKilled(entity, "Reclaimed", 0.0)
     end,

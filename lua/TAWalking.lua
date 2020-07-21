@@ -18,7 +18,7 @@ TAWalking = Class(TAunit)
 
     OnMotionHorzEventChange = function( self, new, old )
         TAunit.OnMotionHorzEventChange(self, new, old)
-        
+       
         if ( old == 'Stopped' ) then
             if (not self.Animator) then
                 self.Animator = CreateAnimator(self, true)
@@ -59,7 +59,6 @@ TAWalking = Class(TAunit)
 	    for i = 1, partamounts do
 	        local xpos, ypos, zpos = util.GetRandomOffset( sx, sy, sz, 1)
         	local xdir,ydir,zdir = util.GetRandomOffset( sx, sy, sz, 10)
-
 		local debrisList = {}
 		if bp.Display.DestructionEffects.DefaultProjectileCategories then
 			for k, v in bp.Display.DestructionEffects.DefaultProjectileCategories do

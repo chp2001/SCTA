@@ -35,12 +35,12 @@ TAweapon = Class(DefaultWeapon) {
         local target = self:GetCurrentTarget()
         if (target) then
             if (IsUnit(target)) then
-                LOG('This is a unit')
                 canSee = target:GetBlip(army):IsSeenNow(army)
             else
             if (IsBlip(target)) then
                 target = target:GetSource()
             end
+            
         end
      end 
 
@@ -174,7 +174,7 @@ TAweapon = Class(DefaultWeapon) {
                 end
             end  
         end  
-
+        
         return damageTable
     end,
 }

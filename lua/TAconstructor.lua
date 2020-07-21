@@ -30,7 +30,7 @@ TAconstructor = Class(TAWalking) {
 					self.desiredState = "closed"
 				end
 			end
-
+			#WaitSeconds(1)
 			if (self.currentState ~= self.desiredState) then
 				if (self.currentState == "closed") then
 					#desiredState will only ever be "opened" from this state
@@ -40,7 +40,7 @@ TAconstructor = Class(TAWalking) {
 				elseif(self.currentState == "opened") then
 					if (self.desiredState == "closed") then
 						self:DelayedClose()
-
+						#WaitSeconds(0.2)
 						--Check to make sure we still want to close
 						if (self.desiredState == "closed") then	
 							self:Close()
@@ -53,13 +53,13 @@ TAconstructor = Class(TAWalking) {
 						self:RollOff()
 						self.currentTarget = self.desiredTarget
 						self.currentState = "aimed"
-						
+						#WaitSeconds(0.2)
 						if (self.currentTarget) then
 							self:Aim(self.currentTarget)
 						else
 							self.desiredState = "rolloff"
 						end
-
+						#WaitSeconds(0.2)
 						if (IsDestroyed(self.currentTarget) == false) then
 							if self.isFactory == true and IsDestroyed(self.currentTarget) == false then
 								local bone = self:GetBlueprint().Display.BuildAttachBone or 0
@@ -115,7 +115,7 @@ TAconstructor = Class(TAWalking) {
 
 
 	OnStartBuild = function(self, unitBeingBuilt, order )
-
+		#WaitSeconds(1)
         if unitBeingBuilt.noassistbuild and unitBeingBuilt:GetHealth()==unitBeingBuilt:GetMaxHealth() then
             return
         end
@@ -148,6 +148,7 @@ TAconstructor = Class(TAWalking) {
 		self.isBuilding = false
 		self.countdown = self.pauseTime
 		if (self.currentState == "aimed") then
+			#WaitSeconds(1)
 			self.desiredState = "rolloff"
 		else
 			self.desiredState = "closed"
@@ -171,13 +172,15 @@ TAconstructor = Class(TAWalking) {
 
 	OnFailedToBuild = function(self)
         self.FactoryBuildFailed = true
-        TAWalking.OnFailedToBuild(self)
+		TAWalking.OnFailedToBuild(self)
+		#WaitSeconds(1)
         ChangeState(self, self.IdleState)
     end,
 
 
 	StopSpin = function(self, unitBeingBuilt)
 		if self.isFactory == true and unitBeingBuilt then
+			#WaitSeconds(1)
 			unitBeingBuilt:DetachFrom(true)
 		end
 	end,
@@ -219,6 +222,7 @@ TAconstructor = Class(TAWalking) {
 				if self.isBuilding == true then
 					return
 				end
+			WaitSeconds(0.5)
 		end
 	end,
 
@@ -231,6 +235,7 @@ TAconstructor = Class(TAWalking) {
 		else
 			area = Rect(pos.x - bp.SizeX,bp.SizeZ, bp.SizeX, bp.SizeZ)
 		end
+		WaitSeconds(1)
 		return area
 	end,
 
@@ -243,11 +248,13 @@ TAconstructor = Class(TAWalking) {
 		else
 			area = Rect(bp.SizeX,bp.SizeZ, bp.SizeX, bp.SizeZ)
 		end
+		WaitSeconds(1)
 		return area
 	end,
 
 	RollOff = function(self)
 		if self.isFactory then
+			WaitSeconds(0.5)
 		end
 			self:SetBusy(false)
 			self:SetBlockCommandQueue(false)

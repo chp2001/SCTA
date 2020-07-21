@@ -84,7 +84,7 @@ UnitBlueprint {
 	'NOTSUB',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Light',
         Health = 160,
         MaxHealth = 160,
     },
@@ -161,7 +161,7 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        Elevation = 5,
+        Elevation = 7,
         MotionType = 'RULEUMT_Air',
     MaxSpeed = 0.5, 
     RotateOnSpot = true,

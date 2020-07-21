@@ -307,7 +307,7 @@ TALightCannonProjectile = Class(TAProjectile) {
 TAMissileProjectile = Class(TAMediumCannonProjectile) {
 	Smoke = true,
 	OnCreate = function(self)
-	self:SetCollisionShape('Sphere', 0, 0, 0, 2)
+	self:SetCollisionShape('Sphere', 0, 0, 0, 1)
 	TAMediumCannonProjectile.OnCreate(self)
 	end,
 }

@@ -122,8 +122,8 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 3.6,
-        MaxBrake = 6.591796884,
+        MaxAcceleration = 2.06,
+        MaxBrake = 2.06,
         MaxSpeed = 2.0625,
         MotionType = 'RULEUMT_Land',
         TurnRate = 164,
@@ -137,7 +137,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_land1_artillery',
+    StrategicIconName = 'icon_bot1_artillery',
     StrategicIconSortPriority = 0,
     Weapon = {
         {

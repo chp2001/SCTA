@@ -30,7 +30,6 @@ TAconstructor = Class(TAWalking) {
 					self.desiredState = "closed"
 				end
 			end
-			#WaitSeconds(1)
 			if (self.currentState ~= self.desiredState) then
 				if (self.currentState == "closed") then
 					#desiredState will only ever be "opened" from this state
@@ -40,7 +39,6 @@ TAconstructor = Class(TAWalking) {
 				elseif(self.currentState == "opened") then
 					if (self.desiredState == "closed") then
 						self:DelayedClose()
-						#WaitSeconds(0.2)
 						--Check to make sure we still want to close
 						if (self.desiredState == "closed") then	
 							self:Close()
@@ -53,13 +51,11 @@ TAconstructor = Class(TAWalking) {
 						self:RollOff()
 						self.currentTarget = self.desiredTarget
 						self.currentState = "aimed"
-						#WaitSeconds(0.2)
 						if (self.currentTarget) then
 							self:Aim(self.currentTarget)
 						else
 							self.desiredState = "rolloff"
 						end
-						#WaitSeconds(0.2)
 						if (IsDestroyed(self.currentTarget) == false) then
 							if self.isFactory == true and IsDestroyed(self.currentTarget) == false then
 								local bone = self:GetBlueprint().Display.BuildAttachBone or 0
@@ -88,14 +84,13 @@ TAconstructor = Class(TAWalking) {
 						if (self.isBuilding == false and self.isReclaiming == false) then
 							self.wantStopAnimation = true
 						end
-					elseif (self.desiredState == "rolloff") then
+					elseif (self.desiredState == "rolloff") and not self.isDestroyed then
 						self:StopSpin(self.currentTarget)
 						self:RollOff()
 						self.currentState = "rolloff"
 					end
 				end
 			end
-
 			WaitSeconds(0.2)
 		end
 		self.animating = false
@@ -115,7 +110,6 @@ TAconstructor = Class(TAWalking) {
 
 
 	OnStartBuild = function(self, unitBeingBuilt, order )
-		#WaitSeconds(1)
         if unitBeingBuilt.noassistbuild and unitBeingBuilt:GetHealth()==unitBeingBuilt:GetMaxHealth() then
             return
         end
@@ -254,6 +248,8 @@ TAconstructor = Class(TAWalking) {
 	RollOff = function(self)
 		if self.isFactory then
 			WaitSeconds(0.5)
+		end
+			if self.isDestroyed then
 		end
 			self:SetBusy(false)
 			self:SetBlockCommandQueue(false)

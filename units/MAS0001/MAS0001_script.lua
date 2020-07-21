@@ -15,7 +15,7 @@ local Entity = import('/lua/sim/Entity.lua').Entity
 MAS0001 = Class(AWalkingLandUnit) {
     OnCreate = function(self)
     AWalkingLandUnit.OnCreate(self)
-	
+	#WaitSeconds(1)
     end,
 
     OnStopBeingBuilt = function(self,builder,layer)
@@ -23,7 +23,7 @@ MAS0001 = Class(AWalkingLandUnit) {
     end,
 
    GiveInitialResources = function(self)
-       WaitTicks(2)
+       #WaitTicks(2)
         self:GetAIBrain():GiveResource('Energy', self:GetBlueprint().Economy.StorageEnergy)
         self:GetAIBrain():GiveResource('Mass', self:GetBlueprint().Economy.StorageMass)
     end,
@@ -49,7 +49,6 @@ MAS0001 = Class(AWalkingLandUnit) {
 
 	Spawn = function(self, unitBeingBuilt, order)
 		local gtime = GetGameTimeSeconds()
-		
 		while gtime < 5 do
 			WaitSeconds(0.2)
 			gtime = GetGameTimeSeconds()

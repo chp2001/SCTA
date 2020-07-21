@@ -139,7 +139,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 70,
+            Damage = 100,
             DamageRadius = 2.1875,
             DamageType = 'Normal',
             DisplayName = 'CORPLAS_WEAPON',
@@ -174,7 +174,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 1.25,
+            RateOfFire = 2.5,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS'

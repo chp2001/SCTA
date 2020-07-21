@@ -53,7 +53,7 @@ UnitBlueprint {
         Health = 1000,
         MaxHealth = 1000,
     },
-    Description = 'Assault Kbot',
+    Description = 'Skirmish Kbot',
     Display = {
 	DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel'},
@@ -127,8 +127,8 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 3.6,
-        MaxBrake = 10.8,
+        MaxAcceleration = 3.28,
+        MaxBrake = 3.28,
         MaxSpeed = 3.28125,
         MotionType = 'RULEUMT_Land',
         TurnRate = 148,

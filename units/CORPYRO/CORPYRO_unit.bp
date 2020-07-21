@@ -126,9 +126,9 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 3.6,
-        MaxBrake = 6.59,
-        MaxSpeed = 2.86,
+        MaxAcceleration = 3,
+        MaxBrake = 3,
+        MaxSpeed = 3,
         MotionType = 'RULEUMT_Land',
         TurnRate = 156,
         MaxSteerForce = 10,
@@ -143,9 +143,6 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         {
-
-# Sound Played via script
---[[
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
@@ -153,11 +150,10 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
---]]
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 0, #damage is caused in script
+            Damage = 1, #damage is caused in script
 	    DamageRadius = 1,
             DamageType = 'Normal',
             DisplayName = 'FLAMETHROWER',
@@ -187,7 +183,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1, 
-            RateOfFire = 0.83, #Should be 25, but can't go that high
+            RateOfFire = 10,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

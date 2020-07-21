@@ -127,8 +127,8 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 3.6,
-        MaxBrake = 5.4,
+        MaxAcceleration = 2.6,
+        MaxBrake = 2.6,
         MaxSpeed = 2.625,
         MotionType = 'RULEUMT_Land',
         TurnRate = 167,
@@ -141,7 +141,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_land1_antiair',
+    StrategicIconName = 'icon_bot1_antiair',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -166,7 +166,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
             FiringTolerance = 1,
             Label = 'ARMKBOT_MISSILE',
-            MaxRadius = 37.75,
+            MaxRadius = 20,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 28.125,

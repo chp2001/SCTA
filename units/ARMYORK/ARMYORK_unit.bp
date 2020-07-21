@@ -38,7 +38,7 @@ UnitBlueprint {
         'OVERLAYANTIAIR',
         'ARM',
         'VEHICLE',	#'TANK' in TA
-	'LEVEL2',	#Bug in TA: 'LEVEL2'
+	'LEVEL2',
 	'WEAPON',
 	'NOTAIR',
 	'NOTSUB',
@@ -116,9 +116,9 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 1.08,
-        MaxBrake = 0.432,
-        MaxSpeed = 2.26875,
+        MaxAcceleration = 1.1,
+        MaxBrake = 1.1,
+        MaxSpeed = 2.1,
         MotionType = 'RULEUMT_Land',
         TurnRate = 84,
         MaxSteerForce = 10,

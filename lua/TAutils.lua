@@ -281,46 +281,6 @@ function Clamp(x,lb,ub)
     end
 end
 
-function TextureChangeCall()
-	while true do
-		for k,v in textureChange do
-			local hide1 = v.bones[1][v.currentAnim]
-			local hide2 = v.bones[2][v.currentAnim]
-			v.currentAnim = v.currentAnim + 1
-			if v.currentAnim > v.frames then
-				v.currentAnim = 1
-			end
-			for bk,bv in ArmyBrains do
-				local units = bv:GetListOfUnits(categories.TEXTUREANIM, false)
-
-				if units then
-					for uk,uv in units do
-						if uv:GetFractionComplete() == 1 then
-							if uv:GetBlueprint().Display.TextureAnimationFrames == v.frames then
-								if uv.textureAnimation == true then
-									uv:ShowBone(v.bones[1][v.currentAnim], true)
-									uv:HideBone(hide1, true)
-									if (uv:GetBlueprint().Display.TextureAnimationSets == 2) then
-										uv:ShowBone(v.bones[2][v.currentAnim], true)
-										uv:HideBone(hide2, true)
-									end
-								else
-									uv:HideBone(hide1, true)
-									uv:ShowBone(v.bones[1][v.currentAnim], true)
-									if (uv:GetBlueprint().Display.TextureAnimationSets == 2) then
-										uv:HideBone(hide2, true)
-										uv:ShowBone(v.bones[2][v.currentAnim], true)
-									end
-								end
-							end
-						end
-					end
-				end
-			end
-		end
-		WaitSeconds(0.5)
-	end
-end
 
 function QueueDelayedWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
 	ForkThread(CreateDelayedWreckage, self, overkillRatio, bp, completed, pos, orientation, health)

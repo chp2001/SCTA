@@ -84,7 +84,7 @@ UnitBlueprint {
 	'CTRL_P',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Light',
         Health = 375,
         MaxHealth = 375,
     },
@@ -160,9 +160,8 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        Elevation = 9.375,
+        Elevation = 16,
         MotionType = 'RULEUMT_Air',
-	BackUpDistance = 0,
     MaxSpeed = 0.5, 
     RotateOnSpot = true,
 	FuelRechargeRate = 999999,

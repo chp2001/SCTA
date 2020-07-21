@@ -148,7 +148,6 @@ TAconstructor = Class(TAWalking) {
 		self.isBuilding = false
 		self.countdown = self.pauseTime
 		if (self.currentState == "aimed") then
-			#WaitSeconds(1)
 			self.desiredState = "rolloff"
 		else
 			self.desiredState = "closed"

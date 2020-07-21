@@ -36,7 +36,6 @@ TAunit = Class(Unit)
 		end
 		self:SetReclaimTimeMultiplier(50)
 		self:SetDeathWeaponEnabled(false)
-		#WaitSeconds(1)
 		self:HideFlares()
 		self.FxMovement = TrashBag()
 		if not EntityCategoryContains(categories.NOSMOKE, self) then
@@ -193,6 +192,7 @@ TAunit = Class(Unit)
 			end
 		end
 	end,
+	
 	Smoke = function(self)
 		local bone = self:GetBlueprint().Display.SmokeBone or -1
 		while not IsDestroyed(self) do

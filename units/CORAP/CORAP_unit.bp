@@ -64,7 +64,7 @@ UnitBlueprint {
             '<LOC ability_radar>Radar',
         },
 	DestructionEffects = {
-		#DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate','Runway'},
+		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate','Runway'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {'section1','section2', 0},
@@ -87,8 +87,8 @@ UnitBlueprint {
 				},
 				EmitterSize = 0.25,
 			},
-		},
-	},
+        },
+    },
 	BuildBones = {'muzzlea','muzzleb'},
 	BuildAttachBone = 'pad',
         Mesh = {
@@ -96,12 +96,16 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit',
                 },
+                {
+                LODCutoff = 300,
+                AlbedoName = 'corap_lod1_albedo.dds',
+                SpecularName = 'corap_lod1_specteam.dds',
             },
         },
         UniformScale = 0.16,
+        },
     },
     Economy = {
         BuildCostEnergy = 1340,

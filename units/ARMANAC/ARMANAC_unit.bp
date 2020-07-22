@@ -50,6 +50,9 @@ UnitBlueprint {
     },
     Description = 'Hovertank',
     Display = {
+        Abilities = {
+            '<LOC ability_hover>Hover',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel','ArmHover'},
 		DestructionEmitters = {

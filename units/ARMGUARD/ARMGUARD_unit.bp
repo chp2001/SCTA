@@ -124,7 +124,7 @@ UnitBlueprint {
     SizeX = 1.5,
     SizeY = 1,
     SizeZ = 1.5,
-    StrategicIconName = 'icon_structure2_artillery',
+    StrategicIconName = 'icon_structure2_directfire',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -138,7 +138,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 1500,
+            Damage = 500,
             DamageRadius = 2, 
             DamageType = 'Normal',
             DisplayName = 'ARMFIXED_GUN',
@@ -147,13 +147,13 @@ UnitBlueprint {
             },
 	    RangeCategory = 'UWRC_IndirectFire',
             Label = 'ARMFIXED_GUN',
-            MaxRadius = 78.125, 
+            MaxRadius = 60, 
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 21.875,
             EnergyChargeForFirstShot = false,
-            EnergyRequired = 750,
-            EnergyDrainPerSecond = 500,
+            EnergyRequired = 200,
+            EnergyDrainPerSecond = 200,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMFIXED_GUN/ARMFIXED_GUN_proj.bp',
             RackBones = {
                 {
@@ -175,7 +175,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.333,
+            RateOfFire = 1,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

@@ -50,6 +50,9 @@ UnitBlueprint {
     },
     Description = 'Scout Hovercraft',
     Display = {
+        Abilities = {
+            '<LOC ability_hover>Hover',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'ArmCockpit','ArmHover'},
 		DestructionEmitters = {

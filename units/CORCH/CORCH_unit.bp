@@ -75,6 +75,7 @@ UnitBlueprint {
         AnimationOpen = '/mods/SCTA-master/units/CORCH/CORCH_aopen.sca',
         Abilities = {
             'Construction Unit',
+            '<LOC ability_hover>Hover',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Construction','CorCockpit','CorHover','BuildMuzzle'},

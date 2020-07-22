@@ -55,16 +55,12 @@ UnitBlueprint {
         'PATROLHELPER',
         'RECLAIM',
         'REPAIR',
-
-	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
 	'KBOT',
 	'LEVEL2',
         'OVERLAYDIRECTFIRE',
-
-	
         'ARM',
 	'WEAPON',
 	'NOTAIR',
@@ -72,12 +68,12 @@ UnitBlueprint {
 	'CTRL_W',
     },
     Defense = {
-        ArmorType = 'Normal',
-        Health = 1420,
-        MaxHealth = 1420,
+        ArmorType = 'Commander',
+        Health = 3000,
+        MaxHealth = 3000,
         RegenRate = 0,
     },
-    Description = 'Decoy Commander',
+    Description = 'Commander',
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/ARMCOM/ARMCOM_lod0_Awalk.sca',
         AnimationWalkRate = 1,
@@ -153,7 +149,7 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 3,
         FactionName = 'ARM',
-        UnitName = 'Decoy Commander',
+        UnitName = 'Commander',
         TechLevel = 'RULEUTL_Advanced',
     },
     Intel = {

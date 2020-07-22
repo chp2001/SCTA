@@ -51,7 +51,7 @@ UnitBlueprint {
         Health = 650,
         MaxHealth = 650,
     },
-    Description = 'Mobile Missile Launcher',
+    Description = 'Mobile SAM Launcher',
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',

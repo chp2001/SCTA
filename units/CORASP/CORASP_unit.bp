@@ -31,28 +31,27 @@ UnitBlueprint {
 	RefuelingRepairAmount = 200,
 	StagingPlatformScanRadius = 300,
         ShowAssistRangeOnSelect = true,
+        RepairConsumeEnergy = 5,
+        RepairConsumeMass = 0.5,
     },
-    BuildIconSortPriority = 19,
+    BuildIconSortPriority = 15,
     Categories = {
-        'BUILTBYT2VEHICLE',
-        'BUILTBYT2KBOT',
-        'BUILTBYT2AIR',
+        'BUILTBYT1VEHICLE',
+        'BUILTBYT1KBOT',
+        'BUILTBYT1AIR',
+        'BUILTBYT1HOVER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH3',
-
-	
+        'TECH1',
 	'STRUCTURE',
 	'STRATEGIC',
         'AIRSTAGINGPLATFORM',
         'OVERLAYMISC',
-
-	
 	'CORE',
 	'REPAIRPAD',
-	'LEVEL3',
+	'LEVEL1',
 	'NOWEAPON',
 	'NOTAIR',
 	'NOTSUB',
@@ -65,7 +64,7 @@ UnitBlueprint {
     Description = 'Automatically repairs aircraft',
     Display = {
 	DestructionEffects = {
-		#DefaultProjectileCategories = {'Stone','Helipad','BuildMuzzle'},
+		DefaultProjectileCategories = {'Stone','Helipad','BuildMuzzle'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {'Attachpoint01'},
@@ -144,7 +143,7 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 2,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure3_air',
+    StrategicIconName = 'icon_structure1_air',
     StrategicIconSortPriority = 0,
     Transport = {
         Class1AttachSize = 1,

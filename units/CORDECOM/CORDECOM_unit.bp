@@ -73,9 +73,9 @@ UnitBlueprint {
 	'CTRL_W',
     },
     Defense = {
-        ArmorType = 'Normal',
-        Health = 1420,
-        MaxHealth = 1420,
+        ArmorType = 'Commander',
+        Health = 3000,
+        MaxHealth = 3000,
         RegenRate = 0,
     },
     Description = 'Decoy Commander',

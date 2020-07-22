@@ -51,7 +51,6 @@ TAunitkeygroups = {
     },
     ["Mass_Storage"]= {
         "armmstor",
-        "armuwms",
         "cormstor",
     },
     ["Point_Defense"]= {
@@ -118,6 +117,16 @@ TAunitkeygroups = {
     ["T1_Air_Scout"]= {
         "armpeep",
         "corfink",
+    },
+    ["T2_Mobile_Stealth_Field_System"] = {
+        'armaser',
+        'armjam',
+        'coreter',
+        'corspec',
+    },
+    ["T2_Gatling_Bot"] = {
+        "corpyro",
+        "armfido",
     },
     ["T1_Interceptor"]= {
         "armfig",
@@ -193,10 +202,16 @@ TAunitkeygroups = {
     },
     ["T2_Heavy_Tank"]= {
         "armbull",
+        "armzeus",
         "corgol",
+        "corcan",
     },
     ["T2_Mobile_AA_Flak_Artillery"]= {
         "armyork",
+    },
+
+    ["T2_Field_Engineer"]= {
+        "armfark", 
     },
     ["T2_Engineer"]= {
         "armaca",
@@ -227,6 +242,7 @@ TAunitkeygroups = {
     ["T2_Amphibious_Tank"]= {
         "armcroc",
         "corseal",
+        "armamph",
     },
     ["T1_Assault_Bot"]= {
         "armwar",

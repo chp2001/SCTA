@@ -133,7 +133,7 @@ UnitBlueprint {
 	UnitName = 'FARK',
     },
     Intel = {
-        VisionRadius = 18,
+        VisionRadius = 12,
     },
     Interface = {
         HelpText = 'Fast Assist-Repair Kbot',

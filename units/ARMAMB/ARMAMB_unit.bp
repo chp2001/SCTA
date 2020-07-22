@@ -38,7 +38,7 @@ UnitBlueprint {
 	'NOTSUB',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 1658,
         MaxHealth = 1658,
     },
@@ -122,7 +122,7 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 2,
     SizeZ = 3,
-    StrategicIconName = 'icon_land3_artillery',
+    StrategicIconName = 'icon_structure3_directfire',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -145,7 +145,7 @@ UnitBlueprint {
             },
 	    RangeCategory = 'UWRC_IndirectFire',
             Label = 'ARMAMB_GUN',
-            MaxRadius = 56.875, 
+            MaxRadius = 60, 
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 21.875,
@@ -180,7 +180,7 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 100,
             Turreted = true,
-	    WeaponUnpacks = true,
+	        WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
         },
         { #LARGE_BUILDINGEX

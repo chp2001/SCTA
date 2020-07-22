@@ -163,7 +163,7 @@ UnitBlueprint {
     SizeX = 8,
     SizeY = 2.5,
     SizeZ = 7,
-    StrategicIconName = 'icon_factory2_land',
+    StrategicIconName = 'icon_factory1_land',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX

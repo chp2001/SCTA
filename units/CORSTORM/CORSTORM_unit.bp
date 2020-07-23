@@ -136,7 +136,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_bot1_sniper',
+    StrategicIconName = 'icon_land1_missile',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -203,7 +203,7 @@ UnitBlueprint {
             TurretYawSpeed = 90,
             Turreted = true,
             EnergyRequired = 5,
-            EnergyDrainPerSecond = 5,
+            EnergyDrainPerSecond = 0,
             WeaponCategory = 'Direct Fire',
         },
         { #BIG_UNITEX

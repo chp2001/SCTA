@@ -157,7 +157,7 @@ UnitBlueprint {
             MuzzleVelocity = 50,
             EnergyChargeForFirstShot = false,
             EnergyRequired = 1500,
-            EnergyDrainPerSecond = 200,
+            EnergyDrainPerSecond = 0,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_BERTHACANNON/ARM_BERTHACANNON_proj.bp',
             RackBones = {
                 {

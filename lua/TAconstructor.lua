@@ -173,7 +173,9 @@ TAconstructor = Class(TAWalking) {
 
 	StopSpin = function(self, unitBeingBuilt)
 		if self.isFactory == true and unitBeingBuilt then
-			#WaitSeconds(1)
+			WaitSeconds(0.5)
+			if self.isDestroyed then
+			end
 			unitBeingBuilt:DetachFrom(true)
 		end
 	end,

@@ -335,7 +335,6 @@ TAunit = Class(Unit)
     OnReclaimed = function(self, entity)
         self:DoUnitCallbacks('OnReclaimed', entity)
 		self.CreateReclaimEndEffects( entity, self )
-	#OnKilled = function(self, instigator, type, overkillRatio)
         self:OnKilled(entity, "Reclaimed", 0.0)
     end,
 

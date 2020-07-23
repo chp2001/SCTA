@@ -316,7 +316,6 @@ TAweapon = Class(DefaultWeapon) {
         local weaponBlueprint = self:GetBlueprint()
         local damageTable = {}
         damageTable.EdgeEffectiveness = weaponBlueprint.EdgeEffectiveness
-        damageTable.DamageRadius = weaponBlueprint.DamageRadius + (self.DamageRadiusMod or 0)
         damageTable.DamageRadius = weaponBlueprint.DamageRadius or 0
         damageTable.DamageAmount = weaponBlueprint.Damage + (self.DamageMod or 0)
         damageTable.DamageType = weaponBlueprint.DamageType

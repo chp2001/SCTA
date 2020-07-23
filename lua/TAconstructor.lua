@@ -84,7 +84,7 @@ TAconstructor = Class(TAWalking) {
 						if (self.isBuilding == false and self.isReclaiming == false) then
 							self.wantStopAnimation = true
 						end
-					elseif (self.desiredState == "rolloff") and not self.isDestroyed then
+					elseif (self.desiredState == "rolloff") then
 						self:StopSpin(self.currentTarget)
 						self:RollOff()
 						self.currentState = "rolloff"
@@ -172,13 +172,11 @@ TAconstructor = Class(TAWalking) {
 
 
 	StopSpin = function(self, unitBeingBuilt)
-		if self.isFactory == true and unitBeingBuilt then
-			WaitSeconds(0.5)
-			if self.isDestroyed then
-			end
-			unitBeingBuilt:DetachFrom(true)
-		end
-	end,
+        if not IsDestroyed(self) and self.isFactory == true and unitBeingBuilt  then
+            WaitSeconds(0.5)
+            unitBeingBuilt:DetachFrom(true)
+        end
+    end,
 
 
 	OnStartReclaim = function(self, target)
@@ -248,13 +246,11 @@ TAconstructor = Class(TAWalking) {
 	end,
 
 	RollOff = function(self)
-		if self.isFactory then
-			WaitSeconds(0.5)
-		end
-			if self.isDestroyed then
-		end
+        if not IsDestroyed(self) and self.isFactory == true then
+            WaitSeconds(0.5)
 			self:SetBusy(false)
 			self:SetBlockCommandQueue(false)
+		end 
 	end,
 
 	Unpack = function(self)

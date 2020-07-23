@@ -46,6 +46,7 @@ UnitBlueprint {
 	'LAND',
 	'INTELLIGENCE',
         'OVERLAYCOUNTERINTEL',
+        'COUNTERINTELLIGENCE',
         'ARM',
         'TANK',
         'VEHICLE',
@@ -153,7 +154,7 @@ UnitBlueprint {
     SizeY = 1,
     SizeZ = 2,
     StrategicIconName = 'icon_land2_counterintel',
-    StrategicIconSortPriority = 0,
+    StrategicIconSortPriority = 20,
     Weapon = {
         { #BIG_UNITEX
             Damage = 50,

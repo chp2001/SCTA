@@ -195,6 +195,7 @@ TAunitkeygroups = {
         "armmerl",
         "armmh",
         "corvroc",
+        "cormort",
     },
     ["T1_Tank"]= {
         "armstump",

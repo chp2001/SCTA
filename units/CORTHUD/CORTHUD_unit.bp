@@ -205,7 +205,7 @@ UnitBlueprint {
             WeaponCategory = 'Artillery',
             EnergyChargeForFirstShot = false,
             EnergyRequired = 5,
-            EnergyDrainPerSecond = 5,
+            EnergyDrainPerSecond = 0,
         },
         { #BIG_UNITEX
             Damage = 50,

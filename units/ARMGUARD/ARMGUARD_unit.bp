@@ -153,7 +153,7 @@ UnitBlueprint {
             MuzzleVelocity = 21.875,
             EnergyChargeForFirstShot = false,
             EnergyRequired = 200,
-            EnergyDrainPerSecond = 200,
+            EnergyDrainPerSecond = 0,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMFIXED_GUN/ARMFIXED_GUN_proj.bp',
             RackBones = {
                 {

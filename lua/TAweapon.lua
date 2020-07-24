@@ -3,9 +3,15 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 TAweapon = Class(DefaultWeapon) {
 
-    FxMuzzleFlashScale = {},
+    FxRackChargeMuzzleFlash = {},
+    FxRackChargeMuzzleFlashScale = 1,
+    FxChargeMuzzleFlash = {},
+    FxChargeMuzzleFlashScale = 1,
+    FxMuzzleFlash = {
+        '/effects/emitters/default_muzzle_flash_01_emit.bp',
+        '/effects/emitters/default_muzzle_flash_02_emit.bp',
+    },
 
-    -- Called when the weapon is created, almost always when the owning unit is created
     OnCreate = function(self)
 
         DefaultWeapon.OnCreate(self)

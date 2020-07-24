@@ -100,8 +100,8 @@ UnitBlueprint {
                 },
                 {
                 LODCutoff = 300,
-                AlbedoName = 'corap_lod1_albedo.dds',
-                SpecularName = 'corap_lod1_specteam.dds',
+                AlbedoName = 'CORAP_albedo.dds',
+                SpecularName = 'CORAP_SpecTeam.dds',
             },
         },
         UniformScale = 0.16,

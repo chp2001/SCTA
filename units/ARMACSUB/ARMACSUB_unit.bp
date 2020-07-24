@@ -51,6 +51,7 @@ UnitBlueprint {
         'CONSTRUCTION',
         'NAVAL',
         'SHIP',
+        'T2SUBMARINE',
         'OVERLAYSONAR',	
            'ARM',
         'SELECTION',

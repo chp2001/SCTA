@@ -117,8 +117,8 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        SkirtSizeX = 3, 
-        SkirtSizeZ = 3, 
+        SkirtSizeX = 2, 
+        SkirtSizeZ = 2, 
         BuildOnLayerCaps = {
             LAYER_Land = true,
             LAYER_Water = true,
@@ -127,9 +127,9 @@ UnitBlueprint {
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
     SelectionThickness = 0.25,
-    SizeX = 3,
+    SizeX = 2,
     SizeY = 1.5,
-    SizeZ = 3,
+    SizeZ = 2,
     StrategicIconName = 'icon_structure1_mass',
     StrategicIconSortPriority = 0,
     Weapon = {

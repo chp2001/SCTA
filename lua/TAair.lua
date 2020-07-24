@@ -3,6 +3,11 @@ local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 
 TAair = Class(TAunit) 
 {
+	OnCreate = function(self)
+        TAunit.OnCreate(self)
+        self.HasFuel = true
+    end,
+
 	OnMotionVertEventChange = function(self, new, old )
 		if (new == 'Bottom' and old == 'Down' and EntityCategoryContains(categories.TRANSPORTATION, self)) then
 	                self:PlayUnitSound('Landing')
@@ -40,16 +45,16 @@ TAair = Class(TAunit)
 	CloseWings = function(self)
 	end,
 
-    OnRunOutOfFuel = function(self)
-        TAunit.OnRunOutOfFuel(self)
+	OnRunOutOfFuel = function(self)
+		self.HasFuel = false
         # penalize movement for running out of fuel
         self:SetSpeedMult(0.25)     # change the speed of the unit by this mult
         self:SetAccMult(0.25)       # change the acceleration of the unit by this mult
         self:SetTurnMult(0.25)      # change the turn ability of the unit by this mult
     end,
 
-    OnGotFuel = function(self)
-        TAunit.OnGotFuel(self)
+	OnGotFuel = function(self)
+		self.HasFuel = true
         # revert these values to the blueprint values
         self:SetSpeedMult(1)
         self:SetAccMult(1)

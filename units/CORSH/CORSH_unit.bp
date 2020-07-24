@@ -17,7 +17,7 @@ UnitBlueprint {
         },
         StopMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'HOVSMOF1',
+            Cue = 'HOVSMOF2',
             LodCutoff = 'UnitMove_LodCutoff',
         },
 	Destroyed = Sound {
@@ -131,7 +131,7 @@ UnitBlueprint {
         MaxSteerForce = 100,
 	RotateOnSpot = true,
 	TurnFacingRate = 51,
-	WobbleFactor = 0.5,
+	WobbleFactor = 0.2,
 	WobbleSpeed = 0.25,
     },
     SelectionSizeX = 1.25,

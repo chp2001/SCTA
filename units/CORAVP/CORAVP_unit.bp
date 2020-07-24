@@ -51,7 +51,7 @@ UnitBlueprint {
     Defense = {
         ArmorType = 'Normal',
         Health = 2580,
-        MaxHealth = 2280,
+        MaxHealth = 2580,
     },
     Description = 'Produces Vehicles',
     Display = {

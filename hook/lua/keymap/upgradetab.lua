@@ -4,13 +4,13 @@ local TAupgrades =
 {
     -- TAs
     ['armlab'] = 'armdlab', 
-    ['corlab'] = 'coralab', 
+    ['corlab'] = 'cordlab', 
     ['armap'] = 'armaap',
     ['corap'] = 'coraap',
     ['armsy'] = 'armasy',
     ['corsy'] = 'corasy',  
     ['armvp'] = 'armdvp',  
-    ['corvp'] = 'coravp',
+    ['corvp'] = 'cordvp',
     ['armmex'] = 'armmoho', 
     ['cormex'] = 'cormoho',
     ['armrad'] = 'armarad',

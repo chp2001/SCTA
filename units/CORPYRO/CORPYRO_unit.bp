@@ -143,6 +143,7 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         {
+--[[
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
@@ -150,11 +151,12 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
+--]]
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-	    DamageFriendly = true,
-            Damage = 1, #damage is caused in script
-	    DamageRadius = 1,
+	        DamageFriendly = true,
+            Damage = 1, 
+	        DamageRadius = 1,
             DamageType = 'Normal',
             DisplayName = 'FLAMETHROWER',
             FireTargetLayerCapsTable = {

@@ -12,12 +12,12 @@ UnitBlueprint {
         },
         StartMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'KBCORMOVE',
+            Cue = 'KBCORMOV',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StopMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'KBCORST0P',
+            Cue = 'KBCORSTP',
             LodCutoff = 'UnitMove_LodCutoff',
         },
 	Destroyed = Sound {

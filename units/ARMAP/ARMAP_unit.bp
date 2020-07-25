@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 8,
+    BuildIconSortPriority = 4,
     Categories = {
         'BUILTBYT2AIR',
         'BUILTBYT1AIR',
@@ -155,6 +155,7 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
+        FlattenSkirt = true,
         SkirtSizeX = 7,
         SkirtSizeZ = 6,
     },

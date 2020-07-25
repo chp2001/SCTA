@@ -11,6 +11,7 @@ CORMEX = Class(TAunit) {
 
 	OnCreate = function(self)
 		TAunit.OnCreate(self)
+		self:SetMaintenanceConsumptionActive()
 		self.Spinners = {
 			arms = CreateRotator(self, 'arms', 'y', nil, 0, 91, 0),
 		}
@@ -51,13 +52,13 @@ CORMEX = Class(TAunit) {
 	OnProductionPaused = function(self)
 		TAunit.OnProductionPaused(self)
 		self:PlayUnitSound('Deactivate')
-		self:SetConsumptionActive(false)
+		self:SetMaintenanceConsumptionInactive()
 		ForkThread(self.StopSpin,self)
 	end,
 
 	OnProductionUnpaused = function(self)
 		TAunit.OnProductionUnpaused(self)
-		self:SetConsumptionActive(true)
+		self:SetMaintenanceConsumptionActive()
 		self:PlayUnitSound('Activate')
 		ForkThread(self.StartSpin,self)
 	end,

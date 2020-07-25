@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 3,
+    BuildIconSortPriority = 11,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -112,9 +112,9 @@ UnitBlueprint {
         MotionType = 'RULEUMT_Amphibious',
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 3.96,
-        MaxBrake = 4.68,
-        MaxSpeed = 0.7875,
+        MaxAcceleration = 3.6,
+        MaxBrake = 3.6,
+        MaxSpeed = 3.6,
         TurnRate = 230,
         MaxSteerForce = 10,
     },
@@ -123,7 +123,7 @@ UnitBlueprint {
     SelectionThickness = 0.25,
     SizeX = 1,
     SizeZ = 1,
-    StrategicIconName = 'icon_land2_bomb', --'icon_bot2_bomb',
+    StrategicIconName = 'icon_land2_bomb',
     StrategicIconSortPriority = 0,
     Weapon = {
         {

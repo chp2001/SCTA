@@ -28,7 +28,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 25,
+    BuildIconSortPriority = 2,
     Categories = {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
@@ -89,8 +89,8 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 4,
-        SizeZ = 4,
+        SizeX = 2,
+        SizeZ = 2,
     },
     General = {
 	BuildAngle = 8192,
@@ -114,8 +114,8 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        SkirtSizeX = 4, 
-        SkirtSizeZ = 4, 
+        SkirtSizeX = 2, 
+        SkirtSizeZ = 2, 
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },

@@ -36,7 +36,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 14,
+    BuildIconSortPriority = 1,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -133,7 +133,7 @@ UnitBlueprint {
 	UnitName = 'FARK',
     },
     Intel = {
-        VisionRadius = 18,
+        VisionRadius = 12,
     },
     Interface = {
         HelpText = 'Fast Assist-Repair Kbot',
@@ -145,8 +145,8 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 6.48,
-        MaxBrake = 21.6,
+        MaxAcceleration = 3.9375,
+        MaxBrake = 3.9375,
         MaxSpeed = 3.9375,
         MotionType = 'RULEUMT_Land',
         TurnRate = 166,

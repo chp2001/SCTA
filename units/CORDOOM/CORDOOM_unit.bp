@@ -16,7 +16,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 18,
+    BuildIconSortPriority = 7,
     Categories = {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
@@ -42,7 +42,7 @@ UnitBlueprint {
 	'NOTSUB',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 3140,
         MaxHealth = 3140,
     },
@@ -168,7 +168,7 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             EnergyChargeForFirstShot = false,
             EnergyRequired = 800,
-            EnergyDrainPerSecond = 800,
+            EnergyDrainPerSecond = 0,
             RateOfFire = 0.125,
             TargetCheckInterval = 1,
             TargetPriorities = {

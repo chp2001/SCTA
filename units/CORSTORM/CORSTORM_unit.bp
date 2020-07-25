@@ -26,20 +26,16 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 2,
+    BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-
-	
         'CORE',
         'KBOT',
 	'LEVEL1',
@@ -114,7 +110,7 @@ UnitBlueprint {
         UnitName = 'Storm',
     },
     Intel = {
-        VisionRadius = 16,
+        VisionRadius = 10,
     },
     Interface = {
         HelpText = 'Rocket Kbot',
@@ -126,9 +122,9 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 3.296,
-        MaxBrake = 5.4,
-        MaxSpeed = 2.34375,
+        MaxAcceleration = 2.8,
+        MaxBrake =2.8,
+        MaxSpeed = 2.8,
         MotionType = 'RULEUMT_Land',
         TurnRate = 165,
         StandUpright = true,
@@ -140,7 +136,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_bot1_directfire',
+    StrategicIconName = 'icon_land1_missile',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -207,7 +203,7 @@ UnitBlueprint {
             TurretYawSpeed = 90,
             Turreted = true,
             EnergyRequired = 5,
-            EnergyDrainPerSecond = 5,
+            EnergyDrainPerSecond = 0,
             WeaponCategory = 'Direct Fire',
         },
         { #BIG_UNITEX

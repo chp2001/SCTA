@@ -30,7 +30,6 @@ TAconstructor = Class(TAWalking) {
 					self.desiredState = "closed"
 				end
 			end
-
 			if (self.currentState ~= self.desiredState) then
 				if (self.currentState == "closed") then
 					#desiredState will only ever be "opened" from this state
@@ -40,7 +39,6 @@ TAconstructor = Class(TAWalking) {
 				elseif(self.currentState == "opened") then
 					if (self.desiredState == "closed") then
 						self:DelayedClose()
-
 						--Check to make sure we still want to close
 						if (self.desiredState == "closed") then	
 							self:Close()
@@ -53,13 +51,11 @@ TAconstructor = Class(TAWalking) {
 						self:RollOff()
 						self.currentTarget = self.desiredTarget
 						self.currentState = "aimed"
-						
 						if (self.currentTarget) then
 							self:Aim(self.currentTarget)
 						else
 							self.desiredState = "rolloff"
 						end
-
 						if (IsDestroyed(self.currentTarget) == false) then
 							if self.isFactory == true and IsDestroyed(self.currentTarget) == false then
 								local bone = self:GetBlueprint().Display.BuildAttachBone or 0
@@ -71,6 +67,7 @@ TAconstructor = Class(TAWalking) {
 							end
 
 							if (self.isBuilding == true) then
+								self.currentTarget:HideFlares()
 								self:SetBuildRate(self:GetBlueprint().Economy.BuildRate)
 								TAWalking.OnStartBuild(self, self.currentTarget, self.order)
 							end
@@ -94,7 +91,6 @@ TAconstructor = Class(TAWalking) {
 					end
 				end
 			end
-
 			WaitSeconds(0.2)
 		end
 		self.animating = false
@@ -114,7 +110,6 @@ TAconstructor = Class(TAWalking) {
 
 
 	OnStartBuild = function(self, unitBeingBuilt, order )
-
         if unitBeingBuilt.noassistbuild and unitBeingBuilt:GetHealth()==unitBeingBuilt:GetMaxHealth() then
             return
         end
@@ -158,12 +153,32 @@ TAconstructor = Class(TAWalking) {
 		end
 	end,
 
+	DestroyUnitBeingBuilt = function(self)
+        if self.UnitBeingBuilt and not self.UnitBeingBuilt.Dead and self.UnitBeingBuilt:GetFractionComplete() < 1 then
+            if self.UnitBeingBuilt:GetFractionComplete() > 0.5 then
+                self.UnitBeingBuilt:Kill()
+            else
+                self.UnitBeingBuilt:Destroy()
+            end
+        end
+    end,
+
+	OnFailedToBuild = function(self)
+        self.FactoryBuildFailed = true
+		TAWalking.OnFailedToBuild(self)
+		#WaitSeconds(1)
+        ChangeState(self, self.IdleState)
+    end,
+
 
 	StopSpin = function(self, unitBeingBuilt)
-		if self.isFactory == true and unitBeingBuilt then
-			unitBeingBuilt:DetachFrom(true)
+		if not IsDestroyed(self) and self.isFactory == true and unitBeingBuilt then
+			WaitSeconds(0.5)
+			if IsDestroyed(unitBeingBuilt) == false then
+            unitBeingBuilt:DetachFrom(true)
 		end
-	end,
+	end
+    end,
 
 
 	OnStartReclaim = function(self, target)
@@ -199,16 +214,10 @@ TAconstructor = Class(TAWalking) {
 	DelayedClose = function(self)
 		if self.isFactory then
 			# Wait until unit factory is clear to close
-			local onlySelf = false
-			while onlySelf == false do
-				onlySelf = self:AreaClear(self:GetCloseArea())
-				if not onlySelf then	
-					WaitSeconds(0.5)
-				end
 				if self.isBuilding == true then
 					return
 				end
-			end
+			WaitSeconds(0.5)
 		end
 	end,
 
@@ -217,10 +226,11 @@ TAconstructor = Class(TAWalking) {
 		local pos = self:GetPosition(bp.Display.BuildAttachBone)
 		local area = nil
 		if bp.Physics.CloseAreaX and bp.Physics.CloseAreaZ then
-			area = Rect(pos.x - bp.Physics.CloseAreaX / 2, pos.z - bp.Physics.CloseAreaZ / 2, pos.x + bp.Physics.CloseAreaX / 2, pos.z + bp.Physics.CloseAreaX / 2)
+			area = Rect(pos.x - bp.Physics.CloseAreaX,bp.Physics.CloseAreaZ, bp.Physics.CloseAreaX, bp.Physics.CloseAreaX)
 		else
-			area = Rect(pos.x - bp.SizeX / 2, pos.z - bp.SizeZ / 2, pos.x + bp.SizeX / 2, pos.z + bp.SizeZ / 2)
+			area = Rect(pos.x - bp.SizeX,bp.SizeZ, bp.SizeX, bp.SizeZ)
 		end
+		WaitSeconds(1)
 		return area
 	end,
 
@@ -229,40 +239,20 @@ TAconstructor = Class(TAWalking) {
 		local pos = self:GetPosition(bp.Display.BuildAttachBone)
 		local area = nil
 		if bp.Physics.BuildAreaX and bp.Physics.BuildAreaZ then
-			area = Rect(pos.x - bp.Physics.BuildAreaX / 2, pos.z - bp.Physics.BuildAreaZ / 2, pos.x + bp.Physics.BuildAreaX / 2, pos.z + bp.Physics.BuildAreaX / 2)
+			area = Rect(bp.Physics.BuildAreaX, bp.Physics.BuildAreaZ, bp.Physics.BuildAreaX, bp.Physics.BuildAreaX)
 		else
-			area = Rect(pos.x - bp.SizeX / 2, pos.z - bp.SizeZ / 2, pos.x + bp.SizeX / 2, pos.z + bp.SizeZ / 2)
+			area = Rect(bp.SizeX,bp.SizeZ, bp.SizeX, bp.SizeZ)
 		end
+		WaitSeconds(1)
 		return area
 	end,
 
-	AreaClear = function(self, area)
-		local unitsInRect = GetUnitsInRect(area)
-		for k, v in unitsInRect do
-			if v != self and v != self.desiredTarget then
-				if (v:GetPosition().x > area.x0) and (v:GetPosition().x < area.x1) and (v:GetPosition().z > area.y0) and (v:GetPosition().z < area.y1) then
-					if v:GetPosition().y < self:GetPosition().y + 2 then
-						return false
-					end
-				end
-			end
-		end
-		return true
-	end,
-
 	RollOff = function(self)
-		if self.isFactory then
-			# Wait until unit has left the factory
-			local onlySelf = false
-			while onlySelf == false do
-				onlySelf = self.AreaClear(self, self.GetBuildArea(self))
-				if not onlySelf then
-					WaitSeconds(0.5)
-				end
-			end
+        if not IsDestroyed(self) and self.isFactory == true then
+            WaitSeconds(0.5)
 			self:SetBusy(false)
 			self:SetBlockCommandQueue(false)
-		end
+		end 
 	end,
 
 	Unpack = function(self)

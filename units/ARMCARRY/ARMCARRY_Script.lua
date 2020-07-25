@@ -18,7 +18,7 @@ ARMCARRY = Class(TAunit) {
 		TAunit.OnStopBeingBuilt(self,builder,layer)
 		--SPIN radar around y-axis SPEED <60.01>
 		self.Spinners.radar:SetSpeed(60)
-		self:SetConsumptionActive(true)
+		self:SetMaintenanceConsumptionActive()
 	end,
 
 
@@ -27,7 +27,7 @@ ARMCARRY = Class(TAunit) {
 
 			self.Spinners.radar:SetSpeed(0)
 
-			self:SetConsumptionActive(false)
+			self:SetMaintenanceConsumptionInactive()
 		end
 		TAunit.OnScriptBitSet(self, bit)
 	end,
@@ -37,7 +37,7 @@ ARMCARRY = Class(TAunit) {
 		if bit == 3 then
 			--SPIN radar around y-axis SPEED <60.01>
 			self.Spinners.radar:SetSpeed(60)
-			self:SetConsumptionActive(true)
+			self:SetMaintenanceConsumptionActive()
 		end
 		TAunit.OnScriptBitClear(self, bit)
 	end,

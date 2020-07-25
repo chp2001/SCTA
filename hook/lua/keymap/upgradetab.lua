@@ -3,18 +3,20 @@ do
 local TAupgrades =
 {
     -- TAs
-    ['armlab'] = 'armalab', 
-    ['corlab'] = 'coralab', 
+    ['armlab'] = 'armdlab', 
+    ['corlab'] = 'cordlab', 
     ['armap'] = 'armaap',
     ['corap'] = 'coraap',
     ['armsy'] = 'armasy',
     ['corsy'] = 'corasy',  
-    ['armvp'] = 'armavp',  
-    ['corvp'] = 'coravp',
+    ['armvp'] = 'armdvp',  
+    ['corvp'] = 'cordvp',
     ['armmex'] = 'armmoho', 
     ['cormex'] = 'cormoho',
     ['armrad'] = 'armarad',
     ['corrad'] = 'corarad',
+    ['armarad'] = 'armtarg',
+    ['corarad'] = 'cortarg',
 }
 
 upgradeTab = table.merged(upgradeTab, TAupgrades)

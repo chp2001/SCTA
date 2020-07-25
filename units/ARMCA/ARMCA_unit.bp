@@ -62,7 +62,7 @@ UnitBlueprint {
             MinAirspeed = 3,
             StartTurnDistance = 5,
     },
-    BuildIconSortPriority = 0,
+    BuildIconSortPriority = 1,
     Categories = {
         'SELECTABLE',
         'TECH1',
@@ -186,7 +186,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 1,
     SizeZ = 2,
-    StrategicIconName = 'icon_land1_engineer', --'icon_fighter1_engineer',
+    StrategicIconName = 'icon_land1_engineer',
     StrategicIconSortPriority = 0,
     Transport = {
         AirClass = true,

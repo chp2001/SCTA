@@ -43,14 +43,14 @@ CORRAD = Class(TAunit) {
 		--SPIN dish around y-axis SPEED <40>
 		self.Spinners.dish:SetSpeed(40)
 
-		self:SetConsumptionActive(true)
+		self:SetMaintenanceConsumptionActive()
 	end,
 
 	StopSpin = function(self)
 		--SPIN dish around y-axis SPEED <0>
 		self.Spinners.dish:SetSpeed(0)
 
-		self:SetConsumptionActive(false)
+		self:SetMaintenanceConsumptionInactive()
 	end,
 }
 

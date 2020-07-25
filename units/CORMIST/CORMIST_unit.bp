@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 4,
+    BuildIconSortPriority = 5,
     Categories = {
         'SELECTABLE',
         'TECH1',
@@ -40,7 +40,7 @@ UnitBlueprint {
 	'OVERLAYANTIAIR',
         'CORE',
         'VEHICLE',	#'TANK' in TA
-	'LEVEL1',	#Bug in TA: 'LEVEL2'
+	'LEVEL1',
 	'WEAPON',
 	'NOTAIR',
 	'NOTSUB',
@@ -54,7 +54,7 @@ UnitBlueprint {
     Description = 'Missile Launcher',
     Display = {
         Abilities = {
-            '<LOC ability_aa>Anti-Air', 'Anti-Air',
+            '<LOC ability_aa>Anti-Air', 
         },
 	DestructionEffects = {
 		DestructionEmitters = {
@@ -117,9 +117,9 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 0.972,
-        MaxBrake = 0.432,
-        MaxSpeed = 2.71875,
+        MaxAcceleration = 1.4,
+        MaxBrake = 1.2,
+        MaxSpeed = 2.8,
         MotionType = 'RULEUMT_Land',
         TurnRate = 84,
         MaxSteerForce = 10,

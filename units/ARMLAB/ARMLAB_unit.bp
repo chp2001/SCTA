@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 6,
+    BuildIconSortPriority = 1,
     Categories = {
         'BUILTBYT1AIR',
         'BUILTBYT1KBOT',
@@ -175,6 +175,7 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
+        FlattenSkirt = true,
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
 	BuildAreaX = 2,
@@ -210,7 +211,7 @@ UnitBlueprint {
     SizeX = 6,
     SizeY = 2.5,
     SizeZ = 6,
-    StrategicIconName = 'icon_factory1_land', --'icon_factory1_bot',
+    StrategicIconName = 'icon_factory1_land',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX

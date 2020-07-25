@@ -119,7 +119,7 @@ TAunit = Class(Unit)
         self:SetConsumptionPerSecondEnergy(energy_rate)
         self:SetConsumptionPerSecondMass(mass_rate)
         self:SetConsumptionActive(energy_rate > 0 or mass_rate > 0)
-    end,
+	end,
 
 
 	OnStopBeingBuilt = function(self,builder,layer)
@@ -192,7 +192,7 @@ TAunit = Class(Unit)
 			end
 		end
 	end,
-
+	
 	Smoke = function(self)
 		local bone = self:GetBlueprint().Display.SmokeBone or -1
 		while not IsDestroyed(self) do
@@ -213,7 +213,6 @@ TAunit = Class(Unit)
 
 	ShowMuzzleFlare = function(self, duration)
 		local bp = self:GetBlueprint()
-
 		#Show flare bone for pre-determined time
 		self.unit:ShowBone(bp.RackBones[self.CurrentRackSalvoNumber - 1].MuzzleBones[1], true)
 		WaitSeconds(duration)
@@ -335,8 +334,7 @@ TAunit = Class(Unit)
 
     OnReclaimed = function(self, entity)
         self:DoUnitCallbacks('OnReclaimed', entity)
-        self.CreateReclaimEndEffects( entity, self )
-	#OnKilled = function(self, instigator, type, overkillRatio)
+		self.CreateReclaimEndEffects( entity, self )
         self:OnKilled(entity, "Reclaimed", 0.0)
     end,
 
@@ -378,6 +376,63 @@ TAunit = Class(Unit)
         self:PlayUnitSound('Destroyed')
         self:Destroy()
 	end,
+
+	AddBuff = function(self, buffTable, PosEntity)
+        local bt = buffTable.BuffType
+
+        if not bt then
+            error('*ERROR: Tried to add a unit buff in unit.lua but got no buff table.  Wierd.', 1)
+            return
+        end
+        #When adding debuffs we have to make sure that we check for permissions
+        local allow = categories.ALLUNITS
+        if buffTable.TargetAllow then
+            allow = ParseEntityCategory(buffTable.TargetAllow)
+        end
+        local disallow
+        if buffTable.TargetDisallow then
+            disallow = ParseEntityCategory(buffTable.TargetDisallow)
+        end
+
+        if bt == 'STUN' then
+           if buffTable.Radius and buffTable.Radius > 0 then
+                #if the radius is bigger than 0 then we will use the unit as the center of the stun blast
+                #and collect all targets from that point
+                local targets = {}
+                if PosEntity then
+                    targets = util.GetEnemyUnitsInSphere(self, PosEntity, buffTable.Radius)
+                else
+                    targets = util.GetEnemyUnitsInSphere(self, self:GetPosition(), buffTable.Radius)
+                end
+                if not targets then
+                    #LOG('*DEBUG: No targets in radius to buff')
+                    return
+                end
+                for k, v in targets do
+                    if EntityCategoryContains(allow, v) and (not disallow or not EntityCategoryContains(disallow, v)) then
+                        v:SetStunned(buffTable.Duration or 1)
+                    end
+                end
+            else
+                #The buff will be applied to the unit only
+                if EntityCategoryContains(allow, self) and (not disallow or not EntityCategoryContains(disallow, self)) then
+                    self:SetStunned(buffTable.Duration or 1)
+                end
+            end
+        elseif bt == 'MAXHEALTH' then
+            self:SetMaxHealth(self:GetMaxHealth() + (buffTable.Value or 0))
+        elseif bt == 'HEALTH' then
+            self:SetHealth(self, self:GetHealth() + (buffTable.Value or 0))
+        elseif bt == 'SPEEDMULT' then
+            self:SetSpeedMult(buffTable.Value or 0)
+        elseif bt == 'MAXFUEL' then
+            self:SetFuelUseTime(buffTable.Value or 0)
+        elseif bt == 'FUELRATIO' then
+            self:SetFuelRatio(buffTable.Value or 0)
+        elseif bt == 'HEALTHREGENRATE' then
+            self:SetRegenRate(buffTable.Value or 0)
+        end
+    end,
 }
 
 TypeClass = TAunit

@@ -123,6 +123,7 @@ UnitBlueprint {
         SkirtSizeZ = 3, 
         BuildOnLayerCaps = {
             LAYER_Land = true,
+            LAYER_Water = true,
         },
     },
     SelectionSizeX = 2,

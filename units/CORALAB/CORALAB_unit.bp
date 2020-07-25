@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 12,
+    BuildIconSortPriority = 0,
     Categories = {
         'BUILTBYT1KBOT',
         'SELECTABLE',
@@ -37,12 +37,8 @@ UnitBlueprint {
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-
-	
 	'STRUCTURE',
 	'CONSTRUCTION',
-
-	
 	'CORE',
 	'PLANT',
 	'LEVEL2',
@@ -140,6 +136,7 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
+        FlattenSkirt = true,
         SkirtSizeX = 7,
         SkirtSizeZ = 6,
 	BuildAreaX = 3,

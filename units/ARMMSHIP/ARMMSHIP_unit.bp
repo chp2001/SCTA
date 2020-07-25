@@ -211,7 +211,7 @@ UnitBlueprint {
 	    WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
             EnergyRequired = 5,
-            EnergyDrainPerSecond = 5,
+            EnergyDrainPerSecond = 0,
         },
         {
             Audio = {

@@ -16,7 +16,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 10,
+    BuildIconSortPriority = 12,
     Categories = {
         'BUILTBYT1AIR',
         'BUILTBYT1KBOT',
@@ -84,8 +84,8 @@ UnitBlueprint {
         BuildTime = 4094,
     },
     Footprint = {
-        SizeX = 3,
-        SizeZ = 3,
+        SizeX = 1,
+        SizeZ = 1,
 	MaxSlope = 0.625,
     },
     General = {
@@ -112,15 +112,15 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        SkirtSizeX = 3, 
-        SkirtSizeZ = 3,  
+        SkirtSizeX = 1, 
+        SkirtSizeZ = 1,  
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
     },
     SelectionSizeX = 1.6,
     SelectionSizeZ = 1.6,
-    SelectionCenterOffsetZ = -0.5,
+    SelectionCenterOffsetZ = -0.2,
     SelectionThickness = 0.25,
     SizeX = 3,
     SizeY = 4,
@@ -139,7 +139,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 70,
+            Damage = 100,
             DamageRadius = 2.1875,
             DamageType = 'Normal',
             DisplayName = 'CORPLAS_WEAPON',
@@ -149,7 +149,7 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_DirectFire',
             FiringTolerance = 0,
             Label = 'CORPLAS_WEAPON',
-            MaxRadius = 20,
+            MaxRadius = 25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 19.375,
@@ -174,7 +174,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 1.25,
+            RateOfFire = 2.5,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS'

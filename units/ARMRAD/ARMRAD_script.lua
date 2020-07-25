@@ -6,6 +6,8 @@
 local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 
 ARMRAD = Class(TAunit) {
+	intelIsActive = true,
+
 	OnCreate = function(self)
 		TAunit.OnCreate(self)
 		self.Spinners = {
@@ -20,6 +22,7 @@ ARMRAD = Class(TAunit) {
 
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAunit.OnStopBeingBuilt(self,builder,layer)
+		self.intelIsActive = true
 		self.StartSpin(self)
 		self:PlayUnitSound('Activate')
 	end,
@@ -51,7 +54,7 @@ ARMRAD = Class(TAunit) {
 		--SPIN ear2 around y-axis SPEED <-120>
 		self.Spinners.ear2:SetSpeed(-120)
 
-		self:SetConsumptionActive(true)
+		self:SetMaintenanceConsumptionActive()
 	end,
 
 	StopSpin = function(self)
@@ -64,7 +67,7 @@ ARMRAD = Class(TAunit) {
 		--SPIN ear2 around y-axis SPEED <0>
 		self.Spinners.ear2:SetSpeed(0)
 
-		self:SetConsumptionActive(false)
+		self:SetMaintenanceConsumptionInactive()
 	end,
 }
 

@@ -16,7 +16,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 19,
+    BuildIconSortPriority = 18,
     Categories = {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
@@ -32,8 +32,7 @@ UnitBlueprint {
         'SILO',
 	'NOCUSTOMTARGET',
         'OVERLAYDEFENSE',
-
-	
+        'SHOWQUEUE',
 	'ARM',
 	'SPECIAL',
 	'DEFENSIVE',
@@ -89,13 +88,13 @@ UnitBlueprint {
         BuildRate = 1080,
     },
     Footprint = {
-        SizeX = 4,
-        SizeZ = 4,
+        SizeX = 2,
+        SizeZ = 2,
     },
     General = {
 	BuildAngle = 4096,
-        Category = 'Defense',
-        Classification = 'RULEUC_Weapon',
+    Category = 'Defense',
+    Classification = 'RULEUC_CounterMeasure',
         CommandCaps = {
             RULEUCC_SiloBuildTactical = true,
             RULEUCC_Stop = true,
@@ -117,8 +116,8 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        SkirtSizeX = 4, 
-        SkirtSizeZ = 4,  
+        SkirtSizeX = 2, 
+        SkirtSizeZ = 2,  
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
@@ -181,7 +180,7 @@ UnitBlueprint {
             ForceSingleFire = true,
             CountedProjectile = true,
             InitialProjectileStorage = 0,
-            MaxProjectileStorage = 99,
+            MaxProjectileStorage = 10,
             TargetRestrictOnlyAllow = 'STRATEGIC MISSILE',
             TargetType = 'RULEWTT_Projectile',
             EffectiveRadius = 125,

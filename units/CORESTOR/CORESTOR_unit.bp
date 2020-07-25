@@ -17,26 +17,23 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 2,
+    BuildIconSortPriority = 10,
     Categories = {
         'BUILTBYT1AIR',
         'BUILTBYT1KBOT',
         'BUILTBYT1VEHICLE',
         'BUILTBYT1HOVER',
+        'BUILTBYT1SHIP',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-
-	
 	'STRUCTURE',
         'ENERGYSTORAGE',
         'ECONOMIC',
 	'TEXTUREANIM',
-
-	
 	'CORE',
 	'ENERGY',
 	'LEVEL1',
@@ -108,6 +105,7 @@ UnitBlueprint {
         SkirtSizeZ = 4, 
         BuildOnLayerCaps = {
             LAYER_Land = true,
+            LAYER_Seabed = true,
         },
     },
     SelectionSizeX = 2.5,

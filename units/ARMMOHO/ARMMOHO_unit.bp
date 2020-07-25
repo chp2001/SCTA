@@ -27,24 +27,21 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 15,
+    BuildIconSortPriority = 1,
     Categories = {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
         'BUILTBYT2VEHICLE',
+        'BUILTBYT2SUB',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	
 	'STRUCTURE',
         'MASSPRODUCTION',
         'MASSEXTRACTION',
         'ECONOMIC',
-
-	
 	'ARM',
 	'ENERGY',
 	'LEVEL3',
@@ -126,6 +123,7 @@ UnitBlueprint {
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
+            LAYER_Seabed = true,
         },
         FlattenSkirt = true,
         SkirtSizeX = 5,
@@ -138,7 +136,7 @@ UnitBlueprint {
     SizeX = 5,
     SizeY = 3,
     SizeZ = 5,
-    StrategicIconName = 'icon_structure3_mass',
+    StrategicIconName = 'icon_structure2_mass',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_BUILDINGEX

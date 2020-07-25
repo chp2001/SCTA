@@ -65,7 +65,7 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
             elseif self.PyroDamage and EntityCategoryContains(categories.CORPYRO, targetEntity) then
                 return self.PyroDamage
             end
-        end
+		end
         return damage
     end,
 
@@ -87,7 +87,6 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
                             Damage(instigator, self:GetPosition(), targetEntity, initialDmg, DamageData.DamageType)
                         end
                     end
-
                     ForkThread(DefaultDamage.AreaDoTThread, instigator, self:GetPosition(), DamageData.DoTPulses or 1, (DamageData.DoTTime / (DamageData.DoTPulses or 1)), radius, damage, DamageData.DamageType, DamageData.DamageFriendly)
                 end
             elseif DamageData.DamageAmount and targetEntity then
@@ -103,7 +102,6 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
                             Damage(instigator, self:GetPosition(), targetEntity, initialDmg, DamageData.DamageType)
                         end
 					end
-					
                     ForkThread(DefaultDamage.UnitDoTThread, instigator, targetEntity, DamageData.DoTPulses or 1, (DamageData.DoTTime / (DamageData.DoTPulses or 1)), damage, DamageData.DamageType, DamageData.DamageFriendly)
                 end
             end
@@ -309,7 +307,7 @@ TALightCannonProjectile = Class(TAProjectile) {
 TAMissileProjectile = Class(TAMediumCannonProjectile) {
 	Smoke = true,
 	OnCreate = function(self)
-	self:SetCollisionShape('Sphere', 0, 0, 0, 2)
+	self:SetCollisionShape('Sphere', 0, 0, 0, 1)
 	TAMediumCannonProjectile.OnCreate(self)
 	end,
 }

@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 7,
+    BuildIconSortPriority = 0,
     Categories = {
         'BUILTBYT2VEHICLE',
         'BUILTBYT1VEHICLE',
@@ -42,13 +42,9 @@ UnitBlueprint {
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-
-	
 	'STRUCTURE',
 	'CONSTRUCTION',
 	'TEXTUREANIM',
-
-	
 	'CORE',
 	'PLANT',
 	'CTRL_F',
@@ -146,6 +142,7 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
+        FlattenSkirt = true,
         SkirtSizeX = 7,
         SkirtSizeZ = 7,
 	BuildAreaX = 3,

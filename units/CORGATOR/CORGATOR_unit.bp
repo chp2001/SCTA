@@ -20,26 +20,22 @@ UnitBlueprint {
             Cue = 'TCORST0P',
             LodCutoff = 'UnitMove_LodCutoff',
         },
-	Destroyed = Sound {
+	    Destroyed = Sound {
             Bank = 'TA_Sound',
             Cue = 'XPLOLRG3',
             LodCutoff = 'UnitMove_LodCutoff',
-	},
+	    },
     },
-    BuildIconSortPriority = 2,
+    BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-
-	
         'CORE',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL1',
@@ -70,7 +66,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 500,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+		            NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -116,9 +112,9 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 0.72,
-        MaxBrake = 0.352,
-        MaxSpeed = 3.5625,
+        MaxAcceleration = 1.2,
+        MaxBrake = 1.2,
+        MaxSpeed = 2.4,
         MotionType = 'RULEUMT_Land',
         TurnRate = 78,
         MaxSteerForce = 10,
@@ -155,7 +151,7 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_DirectFire',
             FiringTolerance = 0,
             Label = 'GATOR_LASER',
-            MaxRadius = 11.25,
+            MaxRadius = 18,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
 	    MuzzleVelocity = 25,

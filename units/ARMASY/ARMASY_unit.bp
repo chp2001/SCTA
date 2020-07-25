@@ -37,16 +37,12 @@ UnitBlueprint {
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-
-	
 	'STRUCTURE',
 	'CONSTRUCTION',
 	'NAVAL',
-
-	
 	'ARM',
 	'PLANT',
-	'LEVEL2',	#Bug in TA: 'LEVEL1'
+	'LEVEL2',
 	'NOWEAPON',
 	'NOTAIR',
 	'NOTSUB',
@@ -54,7 +50,7 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.5,
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 2820,
         MaxHealth = 2820,
     },

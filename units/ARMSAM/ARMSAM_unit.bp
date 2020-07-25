@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 4,
+    BuildIconSortPriority = 5,
     Categories = {
         'SELECTABLE',
         'TECH1',
@@ -51,7 +51,7 @@ UnitBlueprint {
         Health = 650,
         MaxHealth = 650,
     },
-    Description = 'Mobile Missile Launcher',
+    Description = 'Mobile SAM Launcher',
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
@@ -118,9 +118,9 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 1.08,
-        MaxBrake = 0.432,
-        MaxSpeed = 2.8125,
+        MaxAcceleration = 1.4,
+        MaxBrake = 1.2,
+        MaxSpeed = 2.8,
         MotionType = 'RULEUMT_Land',
         TurnRate = 84,
         MaxSteerForce = 10,

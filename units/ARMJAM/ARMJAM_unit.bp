@@ -36,7 +36,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
-    BuildIconSortPriority = 3,
+    BuildIconSortPriority = 10,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -46,6 +46,7 @@ UnitBlueprint {
 	'LAND',
 	'INTELLIGENCE',
         'OVERLAYCOUNTERINTEL',
+        'COUNTERINTELLIGENCE',
         'ARM',
         'TANK',
         'VEHICLE',
@@ -140,9 +141,9 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 1.26,
-        MaxBrake = 0.432,
-        MaxSpeed = 1.875,
+        MaxAcceleration = 1.2,
+        MaxBrake = 1.2,
+        MaxSpeed = 2.4,
         MotionType = 'RULEUMT_Land',
         TurnRate = 83,
     },
@@ -153,7 +154,7 @@ UnitBlueprint {
     SizeY = 1,
     SizeZ = 2,
     StrategicIconName = 'icon_land2_counterintel',
-    StrategicIconSortPriority = 0,
+    StrategicIconSortPriority = 20,
     Weapon = {
         { #BIG_UNITEX
             Damage = 50,

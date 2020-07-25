@@ -21,7 +21,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 25,
+    BuildIconSortPriority = 0,
     Categories = {
         'BUILTBYT1VEHICLE',
         'BUILTBYT1KBOT',
@@ -118,7 +118,7 @@ UnitBlueprint {
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
         },
-        SelectionPriority = 5,
+        SelectionPriority = 2,
         ConstructionBar = true,
         FactionName = 'CORE',
         TechLevel = 'RULEUTL_Advanced',
@@ -137,6 +137,7 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
+        FlattenSkirt = true,
         SkirtSizeX = 8,
         SkirtSizeZ = 7,
 	BuildAreaX = 4,
@@ -162,7 +163,7 @@ UnitBlueprint {
     SizeX = 8,
     SizeY = 2.5,
     SizeZ = 7,
-    StrategicIconName = 'icon_factory2_land',
+    StrategicIconName = 'icon_factory1_land',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX

@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 15,
+    BuildIconSortPriority = 0,
     Categories = {
         'BUILTBYT2KBOT',
         'SELECTABLE',
@@ -137,6 +137,7 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
+        FlattenSkirt = true,
         SkirtSizeX = 9,
         SkirtSizeZ = 9,
 	BuildAreaX = 3,

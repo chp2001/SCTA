@@ -18,7 +18,7 @@ TAWalking = Class(TAunit)
 
     OnMotionHorzEventChange = function( self, new, old )
         TAunit.OnMotionHorzEventChange(self, new, old)
-        
+       
         if ( old == 'Stopped' ) then
             if (not self.Animator) then
                 self.Animator = CreateAnimator(self, true)
@@ -29,8 +29,6 @@ TAWalking = Class(TAunit)
                 self.Animator:SetRate(bpDisplay.AnimationWalkRate or 1)
             end
         elseif ( new == 'Stopped' ) then
-            # only keep the animator around if we are dying and playing a death anim
-            # or if we have an idle anim
             if(self.IdleAnim and not self:IsDead()) then
                 self.Animator:PlayAnim(self.IdleAnim, true)
             elseif(not self.DeathAnim or not self:IsDead()) then
@@ -59,7 +57,6 @@ TAWalking = Class(TAunit)
 	    for i = 1, partamounts do
 	        local xpos, ypos, zpos = util.GetRandomOffset( sx, sy, sz, 1)
         	local xdir,ydir,zdir = util.GetRandomOffset( sx, sy, sz, 10)
-
 		local debrisList = {}
 		if bp.Display.DestructionEffects.DefaultProjectileCategories then
 			for k, v in bp.Display.DestructionEffects.DefaultProjectileCategories do
@@ -114,8 +111,7 @@ TAWalking = Class(TAunit)
 
     OnReclaimed = function(self, entity)
         self:DoUnitCallbacks('OnReclaimed', entity)
-        self.CreateReclaimEndEffects( entity, self )
-	#OnKilled = function(self, instigator, type, overkillRatio)
+		self.CreateReclaimEndEffects( entity, self )
         self:OnKilled(entity, "Reclaimed", 0.0)
     end,
 
@@ -153,7 +149,6 @@ TAWalking = Class(TAunit)
 
         #LOG('*DEBUG: DeathThread Destroying in ',  self.DeathThreadDestructionWaitTime )
         WaitSeconds(self.DeathThreadDestructionWaitTime)
-
         self:PlayUnitSound('Destroyed')
         self:Destroy()
 	end,

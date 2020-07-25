@@ -64,7 +64,7 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 1220,
         MaxHealth = 1220,
-    },
+    },				
     Description = 'Tech Level 2',
     Display = {
         Abilities = {
@@ -72,7 +72,6 @@ UnitBlueprint {
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Construction','Tredside','ArmCockpit','BuildMuzzle'},
-
 		DestructionEmitters = {		{
 				EmitterBone = {0},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
@@ -90,16 +89,23 @@ UnitBlueprint {
 		},
 	},
 	BuildBones = {'nozzle'},
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
-                {
-                    LODCutoff = 500,
-                    ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
-                },
+    Mesh = {
+        IconFadeInZoom = 130,
+        LODs = {
+            {
+                LODCutoff = 120,
+                Scrolling = true,
+                ShaderName = 'Unit',
+            },
+            {
+                AlbedoName = 'coracv_albedo.dds',
+                LODCutoff = 215,
+                ShaderName = 'Unit',
+                SpecularName = 'coracv_specteam.dds',
+                NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
             },
         },
+    },
         UniformScale = 0.16,
     },
     Economy = {
@@ -155,9 +161,9 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 0.576,
-        MaxBrake = 1.08,
-        MaxSpeed = 2.8125,
+        MaxAcceleration = 1.4,
+        MaxBrake = 1.2,
+        MaxSpeed = 2.4,
         MotionType = 'RULEUMT_Land',
         TurnRate = 35,
         MaxSteerForce = 10,

@@ -110,7 +110,7 @@ ARMTARG = Class(TAunit) {
 		--SLEEP <53>;
                 WaitSeconds(1.2)
 
-		self:SetConsumptionActive(true)
+		self:SetMaintenanceConsumptionActive()
 	end,
 
 	Close = function(self)
@@ -154,7 +154,7 @@ ARMTARG = Class(TAunit) {
                 WaitSeconds(1.3)
 
 		self.damageReduction = 0.7
-		self:SetConsumptionActive(false)
+		self:SetMaintenanceConsumptionInactive()
 	end,
 }
 

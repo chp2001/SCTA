@@ -32,19 +32,15 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
 	'ANTIAIR',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
-
-	
         'ARM',
-        'VEHICLE',	#'TANK' in TA
-	'LEVEL2',	#Bug in TA: 'LEVEL2'
+        'VEHICLE',
+	'LEVEL2',
 	'WEAPON',
 	'NOTAIR',
 	'NOTSUB',
@@ -122,8 +118,8 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 2.52,
-        MaxBrake = 0.72,
+        MaxAcceleration = 1.2,
+        MaxBrake = 1.2,
         MaxSpeed = 2.4375,
         MotionType = 'RULEUMT_Land',
 	TurnRate = 78,
@@ -135,7 +131,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeZ = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_land2_directfire',
+    StrategicIconName = 'icon_land2_antiair',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -159,7 +155,7 @@ UnitBlueprint {
             },
 	    RangeCategory = 'UWRC_DirectFire',
             Label = 'ARMLATNK_WEAPON',
-            MaxRadius = 13.125,
+            MaxRadius = 25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 25,

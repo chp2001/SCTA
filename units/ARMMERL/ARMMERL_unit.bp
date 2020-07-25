@@ -127,8 +127,8 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 0.54,
-        MaxBrake = 0.972,
+        MaxAcceleration = 1.2,
+        MaxBrake = 1,
         MaxSpeed = 2.25,
         MotionType = 'RULEUMT_Land',
         TurnRate = 71,
@@ -170,7 +170,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 0,
             EnergyRequired = 5,
-            EnergyDrainPerSecond = 5,
+            EnergyDrainPerSecond = 0,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMTRUCK_ROCKET/ARMTRUCK_ROCKET_proj.bp',
             RackBones = {
                 {

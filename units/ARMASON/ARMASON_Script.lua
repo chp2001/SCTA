@@ -79,7 +79,7 @@ ARMSONAR = Class(TAunit) {
 
 
 
-		self:SetConsumptionActive(false)
+		self:SetMaintenanceConsumptionInactive()
 		self.textureAnimation = false
 		TAunit.OnIntelDisabled(self)
 		self:PlayUnitSound('Deactivate')
@@ -126,7 +126,7 @@ ARMSONAR = Class(TAunit) {
 		--SPIN wheel around y-axis  SPEED <60.01>;
 		self.Spinners.wheel:SetSpeed(60)
 
-		self:SetConsumptionActive(true)
+		self:SetMaintenanceConsumptionActive()
 		self.textureAnimation = true
 		TAunit.OnIntelEnabled(self)
 		self:PlayUnitSound('Activate')

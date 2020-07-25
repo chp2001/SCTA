@@ -1,11 +1,6 @@
-#ARM Advanced Sonar Station - Extended Sonar
-#ARMASON
-#
-#Script created by Raevn
-
 local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 
-ARMASON = Class(TAunit) {
+CORASON = Class(TAunit) {
 	damageReduction = 1,
 
 	OnDamage = function(self, instigator, amount, vector, damageType)
@@ -27,7 +22,7 @@ ARMASON = Class(TAunit) {
 			wheel = CreateRotator(self, 'wheel', 'y', nil, 0, 0, 0),
 		}
 		self.Sliders = {
-			base = CreateSlider(self, 'ARMASON'),
+			base = CreateSlider(self, 'CORMASON'),
 		}
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
@@ -139,4 +134,4 @@ ARMASON = Class(TAunit) {
 	end,
 }
 
-TypeClass = ARMASON
+TypeClass = CORASON

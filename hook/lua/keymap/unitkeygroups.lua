@@ -26,9 +26,11 @@ TAunitkeygroups = {
         "armfus",
         "armsolar",
         "armtide",
+        "armckfus", 
         "corfus",
         "corsolar",
         "cortide",
+        "corckfus", 
     },
     ["Hydrocarbon_Power_Plant"]= {
         "armgeo",
@@ -108,6 +110,7 @@ TAunitkeygroups = {
     },
     ["Sonar_Platform"]= {
         "armason",
+        "corason",
     },    
     ["Heavy_Point_Defense"]= {
         "armhlt",

@@ -6,7 +6,6 @@
 local TANuclearProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TANuclearProjectile
 
 NUCLEAR_MISSILE = Class(TANuclearProjectile) {
-	CommanderDamage = 20000,	
 
 	OnCreate = function(self)
 		TANuclearProjectile.OnCreate(self)

@@ -233,7 +233,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 70,
+            Damage = 200,
             DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'ARMDEPTHCHARGE',

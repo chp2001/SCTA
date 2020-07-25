@@ -293,7 +293,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = true,
             DamageFriendly = true,
-            Damage = 5000,
+            Damage = 500,
             DamageRadius = 1,
             DamageType = 'Overcharge',
             DisplayName = 'CORE_DISINTEGRATOR',
@@ -308,7 +308,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 12.5,
             NeedPrep = true,
-            EnergyRequired = 3000,
+            EnergyRequired = 500,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_DISINTEGRATOR/CORE_DISINTEGRATOR_proj.bp',
             RackBones = {
                 {

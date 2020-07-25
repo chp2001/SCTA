@@ -6,7 +6,6 @@
 local TAMediumCannonProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TAMediumCannonProjectile
 
 ARMYORK_GUN = Class(TAMediumCannonProjectile) {
-	AirDamage = 128,
 }
 
 TypeClass = ARMYORK_GUN

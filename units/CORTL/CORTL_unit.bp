@@ -139,7 +139,7 @@ UnitBlueprint {
             },
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-            Damage = 400,
+            Damage = 500,
             DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'COAX_TORPEDO',

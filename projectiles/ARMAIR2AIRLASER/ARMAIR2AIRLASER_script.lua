@@ -6,7 +6,6 @@
 local TALaserProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TALaserProjectile
 
 ARMAIR2AIRLASER = Class(TALaserProjectile) {
-	AirDamage = 32,
 	PolyTrail = '/mods/SCTA-master/effects/emitters/YELLOW_LASER_emit.bp',
 }
 

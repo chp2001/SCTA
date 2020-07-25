@@ -7,7 +7,6 @@ local TAMissileProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TA
 
 CORKROG_ROCKET = Class(TAMissileProjectile) {
 	TrackTime = 15,
-	AirDamage = 383,
 
 	OnCreate = function(self)
 		TAMissileProjectile.OnCreate(self)

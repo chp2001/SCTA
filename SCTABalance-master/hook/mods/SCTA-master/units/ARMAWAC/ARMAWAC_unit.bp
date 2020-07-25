@@ -1,7 +1,7 @@
 UnitBlueprint {
     Merge = true,
     Economy = {
-        MaintenanceConsumptionPerSecondEnergy = 5,
+        MaintenanceConsumptionPerSecondEnergy = 2,
     },
     General = {
         OrderOverrides = {

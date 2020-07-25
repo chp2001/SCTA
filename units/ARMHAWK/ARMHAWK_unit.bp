@@ -256,7 +256,7 @@ UnitBlueprint {
             Damage = 70, 						
             DamageRadius = 1.5,
             FiringRandomness = 0,
-            DamageType = 'Normal',
+            DamageType = 'AntiAir',
             DisplayName = 'ARMVTOL_ADVMISSILE2',
             FireTargetLayerCapsTable = {
                 Air = 'Land|Water|Air|Seabed',

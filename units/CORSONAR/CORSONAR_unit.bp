@@ -87,7 +87,7 @@ UnitBlueprint {
         BuildCostEnergy = 399,
         BuildCostMass = 20,
         BuildTime = 900,
-	MaintenanceConsumptionPerSecondEnergy = 8,
+	MaintenanceConsumptionPerSecondEnergy = 10,
     },
     Footprint = {
         SizeX = 2,

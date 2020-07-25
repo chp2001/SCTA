@@ -137,7 +137,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 0, #Doubles up with death, so death damage subtracted
+            Damage = 1, #Doubles up with death, so death damage subtracted
 	    DamageRadius = 8.59375,
             DamageType = 'Normal',
             DisplayName = 'CRAWL_BLAST',

@@ -1,0 +1,11 @@
+UnitBlueprint {
+    Merge = true,
+    Economy = {
+        BuildableCategory = {
+            'BUILTBYT1VEHICLE CORE',
+            'BUILTBYT2VEHICLE CORE',
+        },
+        MaxBuildDistance = 7,
+        ProductionPerSecondMass = 0,
+    },
+}

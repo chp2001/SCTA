@@ -1,0 +1,38 @@
+UnitBlueprint {
+    Merge = true, 
+    Categories = {
+        'SELECTABLE',
+        'TECH1',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	'NAVAL',
+	'DIRECTFIRE',
+	'DESTROYER',
+        'OVERLAYANTINAVY',
+        'OVERLAYINDIRECTFIRE',
+        'OVERLAYSONAR',
+        'OVERLAYRADAR', 
+        'CORE',
+        'SHIP',
+	'LEVEL1',
+	'WEAPON',
+	'ANTISUB',
+	'NOTAIR',
+	'NOTSUB',
+	'CTRL_W',
+    },
+    Display = {
+        Abilities = {
+              'Anti-Sub',
+              '<LOC ability_sonar>Sonar',
+              '<LOC ability_radar>Radar',
+        },
+     },
+    Intel = {
+        VisionRadius = 21, 
+        WaterVisionRadius = 19, 
+	SonarRadius = 24,
+               RadarRadius = 24,
+    },
+}

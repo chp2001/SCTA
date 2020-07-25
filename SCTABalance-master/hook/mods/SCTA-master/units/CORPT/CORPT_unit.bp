@@ -1,0 +1,34 @@
+UnitBlueprint {
+    Merge = true, 
+    Categories = {
+        'SELECTABLE',
+        'TECH1',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	'NAVAL',
+	'DIRECTFIRE',
+	'ANTIAIR',
+	'LIGHTBOAT',
+        'OVERLAYDIRECTFIRE',
+        'RADAR',
+    'OVERLAYANTIAIR',
+    'OVERLAYRADAR',
+        'CORE',
+        'SHIP',
+	'LEVEL1',
+	'WEAPON',
+	'NOTAIR',
+	'NOTSUB',
+	'CTRL_W',
+    },
+    Display = {
+        Abilities = {
+            '<LOC ability_aa>Anti-Air',
+            '<LOC ability_radar>Radar',
+        },
+      },
+    Intel = {
+    RadarRadius = 60,
+    },
+}

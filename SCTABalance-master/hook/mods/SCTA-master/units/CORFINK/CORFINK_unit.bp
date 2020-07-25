@@ -1,0 +1,6 @@
+UnitBlueprint {
+    Merge = true,
+    Intel = {
+    RadarRadius = 60,
+    },
+}

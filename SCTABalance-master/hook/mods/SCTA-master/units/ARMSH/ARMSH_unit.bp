@@ -1,0 +1,29 @@
+UnitBlueprint {
+   Merge = true,
+   Categories = {
+    'SELECTABLE',
+    'TECH1',
+    'VISIBLETORECON',
+    'RECLAIMABLE',
+    'MOBILE',
+'SCOUT',
+    'OVERLAYDIRECTFIRE',
+    'OVERLAYRADAR',
+    'LAND',
+    'ARM',
+    'HOVER',
+'LEVEL1',
+'NOTAIR',
+'NOTSUB',
+'CTRL_W',
+},
+    Display = {
+       Abilities = {
+        '<LOC ability_radar>Radar',
+        },
+    },
+    Intel = {
+        RadarRadius = 50,
+        VisionRadius = 25,
+    },
+}

@@ -1,0 +1,12 @@
+UnitBlueprint {
+    Merge = true,
+    Physics = {
+        TurnRate = 51,
+        MaxSteerForce = 100,
+	RotateOnSpot = true,
+	TurnFacingRate = 51,
+    },
+    Economy = {
+        MaxBuildDistance = 6,
+    },
+}

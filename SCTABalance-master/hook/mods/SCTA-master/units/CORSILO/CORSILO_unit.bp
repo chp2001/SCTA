@@ -1,0 +1,20 @@
+UnitBlueprint {
+    Merge = true,
+    Display = {
+        UniformScale = 0.60,
+    },
+    Economy = {
+        BuildCostEnergy = 100000,
+        BuildCostMass = 12000,
+        BuildTime = 540000,
+    },
+  Defense = {
+        ArmorType = 'Structure',
+        Health = 30000,
+        MaxHealth = 30000,
+    },
+    Intel = {
+        VisionRadius = 14,
+    },
+    LifeBarSize = 10,
+}

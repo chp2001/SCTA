@@ -1,0 +1,58 @@
+#ARM Defender - Missile Tower
+#ARMRL
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true, 
+    BuildIconSortPriority = 13,
+    Categories = {
+        'BUILTBYT1AIR',
+        'BUILTBYT1KBOT',
+        'BUILTBYT1VEHICLE',
+        'BUILTBYT1HOVER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH1',
+        'BUILTBYCOMMANDER',
+	'STRUCTURE',
+	'DEFENSE',
+	'DIRECTFIRE',
+	'ANTIAIR',
+    'OVERLAYDIRECTFIRE',
+	'OVERLAYANTIAIR',
+	'CORE',
+	'SPECIAL',
+	'LEVEL1',
+	'WEAPON',
+	'NOTAIR',
+	'NOTSUB',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 295,
+        MaxHealth = 295,
+    },
+    Description = 'Missile Tower',
+    Display = {
+        Abilities = {
+            '<LOC ability_aa>Anti-Air', 
+        },
+        UniformScale = 0.08,
+    },
+    Footprint = {
+    SizeX = 1,
+    SizeZ = 1,
+    MaxSlope = 0.875,
+},
+Physics = {
+    SkirtSizeX = 1, 
+    SkirtSizeZ = 1,  
+    BuildOnLayerCaps = {
+        LAYER_Land = true,
+    },
+  },
+  StrategicIconName = 'icon_structure1_antiair',
+}

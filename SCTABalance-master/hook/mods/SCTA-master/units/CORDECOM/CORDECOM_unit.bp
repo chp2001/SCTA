@@ -1,0 +1,7 @@
+UnitBlueprint {
+   Merge = true,
+   Display = {
+       UniformScale = 0.28,
+    },
+   SizeY = 3.4,
+}

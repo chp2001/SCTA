@@ -1,0 +1,21 @@
+UnitBlueprint {
+    Merge = true,
+    Defense = {
+        Health = 800,
+        MaxHealth = 800,
+    },
+    Display = {
+    Abilities = {
+        '<LOC ability_upgradable>Upgradeable',
+    },
+}, 
+      Economy = {
+        BuildRate = 100,
+        BuildableCategory = {
+               'cormoho',
+        },
+    },
+    General = {
+        UpgradesTo = 'cormoho',
+    },
+}

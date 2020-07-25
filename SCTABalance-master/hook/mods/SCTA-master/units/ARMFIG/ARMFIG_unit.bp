@@ -1,0 +1,15 @@
+#ARM Freedom Fighter - Fighter
+#ARMFIG
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true, 
+    Defense = {
+        Health = 400,
+        MaxHealth = 400,
+    },
+    SizeX = 4,
+    SizeY = 2,
+    SizeZ = 4,
+}

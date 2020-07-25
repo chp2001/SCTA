@@ -1,0 +1,20 @@
+#Nuclear Missile Rocket
+#NUCLEAR_MISSILE
+#
+#Projectile created by Raevn
+
+ProjectileBlueprint {
+    Merge = true,
+    Defense = {
+        Health = 60,
+        MaxHealth = 60,
+    },
+    Display = {
+        UniformScale = 0.60,
+    },
+    Economy = {
+        BuildCostEnergy = 1500000,
+        BuildCostMass = 24000,
+        BuildTime = 600000,
+    },
+}

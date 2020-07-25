@@ -1,0 +1,22 @@
+UnitBlueprint {
+    Merge = true,
+    Economy = {
+        MaintenanceConsumptionPerSecondEnergy = 5,
+    },
+    General = {
+        OrderOverrides = {
+                RULEUTC_IntelToggle = {
+                bitmapId = 'radar',
+                helpText = 'toggle_radar',
+                     },
+                 },
+               ToggleCaps = {
+               RULEUTC_IntelToggle = true,
+            },
+    },
+    Intel = {
+        VisionRadius = 15,
+	FreeIntel = false,
+	RadarRadius = 50, 
+    },
+}

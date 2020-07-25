@@ -1,0 +1,20 @@
+UnitBlueprint {
+   Merge = true, 
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 900,
+        MaxHealth = 900,
+        },
+    Economy = {
+        BuildCostEnergy = 2236,
+        BuildCostMass = 160,
+        BuildTime = 4800,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
+    },
+    Intel = {
+        VisionRadius = 10,
+    },
+}

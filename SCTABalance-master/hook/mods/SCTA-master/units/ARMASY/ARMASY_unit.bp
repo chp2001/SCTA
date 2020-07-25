@@ -1,0 +1,46 @@
+UnitBlueprint {
+    Merge = true,
+    Categories = {
+        'BUILTBYT1SHIP',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH2',
+	'FACTORY',
+        'RALLYPOINT',
+        'SHOWQUEUE',
+	'STRUCTURE',
+	'CONSTRUCTION',
+	'NAVAL',
+	'CONSTRUCTIONSORTDOWN',
+	'ARM',
+	'PLANT',
+	'LEVEL2',
+	'NOWEAPON',
+	'NOTAIR',
+	'NOTSUB',
+	'CTRL_F',
+    },
+        Display = {
+        UniformScale = 0.32,
+    },
+    Economy = {
+        BuildableCategory = {
+            'HOVER LEVEL1 ARM',
+            'SHIP LEVEL1 ARM',
+            'NORMALSUB LEVEL1 ARM',
+            'SHIP LEVEL2 ARM',
+            'ADVANCEDSUB LEVEL2 ARM',
+        },
+    },
+    LifeBarSize = 8,
+    General = {
+        UpgradesFrom = 'armsy'
+    },
+    SelectionSizeX = 9.9,
+    SelectionSizeZ = 6.8,
+    SizeX = 12,
+    SizeY = 5,
+    SizeZ = 12,
+}

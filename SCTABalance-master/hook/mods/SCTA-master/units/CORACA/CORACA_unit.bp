@@ -1,0 +1,11 @@
+UnitBlueprint {
+   Merge = true,
+    Economy = {
+        BuildableCategory = {
+            'BUILTBYT1AIR CORE',
+            'BUILTBYT2AIR CORE',
+        },
+        MaxBuildDistance = 7,
+        ProductionPerSecondMass = 0,
+    },
+}

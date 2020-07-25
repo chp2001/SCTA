@@ -1,0 +1,11 @@
+UnitBlueprint {
+    Merge = true,
+    Economy = {
+        BuildableCategory = {
+            'BUILTBYT1KBOT ARM',
+            'BUILTBYT2KBOT ARM',
+        },
+        MaxBuildDistance = 7,
+        ProductionPerSecondMass = 0,
+    },
+}

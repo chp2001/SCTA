@@ -1,0 +1,22 @@
+UnitBlueprint {
+    Merge = true,
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 800,
+        MaxHealth = 800,
+    },
+    Display = {
+    Abilities = {
+        '<LOC ability_upgradable>Upgradeable',
+    },
+  },  
+      Economy = {
+        BuildRate = 100,
+        BuildableCategory = {
+               'armmoho',
+        },
+    },
+    General = {
+        UpgradesTo = 'armmoho',
+    },
+}

@@ -1,0 +1,29 @@
+UnitBlueprint {
+    Merge = true,
+    Categories = {
+        'BUILTBYT2SUB',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH3',
+
+	
+	'STRUCTURE',
+	'INTELLIGENCE',
+	'SONAR',
+	'NAVAL',
+	'TEXTUREANIM',
+        'OVERLAYSONAR',
+
+	
+	'ARM',
+        'CORE',
+	'SPECIAL',
+	'SONAR',
+	'LEVEL2',
+	'NOTAIR',
+	'NOTSUB',
+	'CTRL_R',
+    },
+}

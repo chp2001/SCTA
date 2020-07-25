@@ -1,0 +1,26 @@
+UnitBlueprint {
+    Merge = true,
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 20000,
+        MaxHealth = 20000,
+    },
+    Display = {
+        UniformScale = 0.32,
+    },
+       Economy = {
+        BuildCostEnergy = 40000,
+        BuildCostMass = 8000,
+        BuildTime = 80000,
+        NaturalProducer = true,
+        ProductionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 0,
+    },
+    Physics = {
+        MaxAcceleration = 0.3,
+        MaxSpeed = 4,
+    },
+    Intel = {
+        VisionRadius = 22, 
+    },
+}

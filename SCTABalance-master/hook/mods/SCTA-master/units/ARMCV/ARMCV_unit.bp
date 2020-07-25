@@ -1,0 +1,10 @@
+UnitBlueprint {
+    Merge = true, 
+    Physics = {
+        MaxAcceleration = 1.5,
+        MaxSpeed = 1.5,
+    }, 
+        Economy = {
+        MaxBuildDistance = 6,
+    },
+}

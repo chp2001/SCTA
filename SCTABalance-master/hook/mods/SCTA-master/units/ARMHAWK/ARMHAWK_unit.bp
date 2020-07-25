@@ -1,0 +1,42 @@
+UnitBlueprint {
+    Merge = true, 
+    Air = {
+      BreakOffDistance = 17,
+      BreakOffTrigger = 12,
+      CombatTurnSpeed = 1.5,
+      MaxAirspeed = 20,
+      MinAirspeed = 10,
+      StartTurnDistance = 5,
+      TightTurnMultiplier = 1.02,
+      TurnSpeed = 1.5,
+  },
+    Display = {
+        Abilities = {
+            '<LOC ability_aa>Anti-Air',
+            '<LOC ability_personalstealth>Personal Stealth',
+                    },
+              },
+    Defense = {
+          Health = 2000,
+          MaxHealth = 2000,
+              },
+    Economy = {
+        MaintenanceConsumptionPerSecondEnergy = 3,
+        },
+    General = {
+ 	          OrderOverrides = {
+                RULEUTC_StealthToggle = {
+                bitmapId = 'stealth',
+                helpText = 'toggle_stealth',
+                                        },
+                            },
+            ToggleCaps = {
+                RULEUTC_StealthToggle = true,
+                          },
+              },
+        Intel = {
+      VisionRadius = 10,
+	    RadarStealth = true,
+	    FreeIntel = false,
+    },
+  }

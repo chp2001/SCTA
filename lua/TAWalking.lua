@@ -2,12 +2,12 @@ local explosion = import('/lua/defaultexplosions.lua')
 local scenarioUtils = import('/lua/sim/ScenarioUtilities.lua')
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local Game = import('/lua/game.lua')
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TATreads = import('/mods/SCTA-master/lua/TATread.lua').TATreads
 local util = import('/lua/utilities.lua')
 local debrisCat = import('/mods/SCTA-master/lua/TAdebrisCategories.lua')
 local WreckShield = import('/mods/SCTA-master/lua/TAshield.lua').WreckShield
 
-TAWalking = Class(TAunit) 
+TAWalking = Class(TATreads) 
 {
     WalkingAnim = nil,
     WalkingAnimRate = 1,
@@ -17,7 +17,7 @@ TAWalking = Class(TAunit)
     DisabledBones = {},
 
     OnMotionHorzEventChange = function( self, new, old )
-        TAunit.OnMotionHorzEventChange(self, new, old)
+        TATreads.OnMotionHorzEventChange(self, new, old)
        
         if ( old == 'Stopped' ) then
             if (not self.Animator) then

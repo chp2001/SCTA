@@ -100,7 +100,7 @@ UnitBlueprint {
             RULEUTC_IntelToggle = true,
         },
         SelectionPriority = 5,
-        FactionName = 'ARM',
+        FactionName = 'CORE',
         TechLevel = 'RULEUTL_Secret',
         UnitName = 'Advanced Sonar Station',
     },
@@ -149,7 +149,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/CORMASON/CORMASON_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/CORASON/CORASON_dead_prop.bp',
         WreckageLayers = {
             Water = true,
             Seabed = true,

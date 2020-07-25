@@ -22,7 +22,7 @@ CORASON = Class(TAunit) {
 			wheel = CreateRotator(self, 'wheel', 'y', nil, 0, 0, 0),
 		}
 		self.Sliders = {
-			base = CreateSlider(self, 'CORMASON'),
+			base = CreateSlider(self, 'CORASON'),
 		}
 		for k, v in self.Spinners do
 			self.Trash:Add(v)

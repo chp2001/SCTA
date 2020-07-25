@@ -16,6 +16,7 @@ UnitBlueprint {
     ProductionPerSecondEnergy = 2000,
 	MaintenanceConsumptionPerSecondEnergy = 100,
     },
+    LifeBarSize = 6,
     Physics = {
         SkirtSizeX = 0,
         SkirtSizeZ = 0,

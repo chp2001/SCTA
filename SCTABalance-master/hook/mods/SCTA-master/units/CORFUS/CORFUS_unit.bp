@@ -39,6 +39,7 @@ UnitBlueprint {
 	    NaturalProducer = true,
         ProductionPerSecondEnergy = 750,
     },
+    LifeBarSize = 4,
     Physics = {
         SkirtSizeX = 0,
         SkirtSizeZ = 0,

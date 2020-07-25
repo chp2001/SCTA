@@ -35,7 +35,7 @@ UnitBlueprint {
         SizeZ = 1,
     },
     Economy = {
-        MaintenanceConsumptionPerSecondEnergy = 10,
+        MaintenanceConsumptionPerSecondEnergy = 5,
         ProductionPerSecondMass = 8,
     },
     General = {

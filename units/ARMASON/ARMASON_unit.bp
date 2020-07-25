@@ -40,7 +40,8 @@ UnitBlueprint {
 	'NAVAL',
 	'TEXTUREANIM',
         'OVERLAYSONAR',
-	'ARM',
+    'ARM',
+    'CORE',
 	'SPECIAL',
 	'SONAR',
 	'LEVEL2',
@@ -57,7 +58,7 @@ UnitBlueprint {
     Description = 'Extended Sonar',
     Display = {
         Abilities = {
-            'Sonar',
+            '<LOC ability_sonar>Sonar',
         },
 	DestructionEffects = {
 		DefaultFlamingProjectileCountMin = 0,
@@ -90,11 +91,11 @@ UnitBlueprint {
         BuildCostMass = 163,
         BuildTime = 6152,
 	NaturalProducer = false,
-	MaintenanceConsumptionPerSecondEnergy = 10,
+	MaintenanceConsumptionPerSecondEnergy = 25,
     },
     Footprint = {
-        SizeX = 4,
-        SizeZ = 4,
+        SizeX = 2,
+        SizeZ = 2,
 	MinWaterDepth = 1.5,
     },
     General = {
@@ -122,8 +123,8 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        SkirtSizeX = 4, 
-        SkirtSizeZ = 4, 
+        SkirtSizeX = 1, 
+        SkirtSizeZ = 1, 
         BuildOnLayerCaps = {
             LAYER_Water = true,
         },

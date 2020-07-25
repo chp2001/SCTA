@@ -130,7 +130,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 40,
+            Damage = 60,
             DamageRadius = 3.75, 
             DamageType = 'AntiAir',
             DisplayName = 'ARMFLAK_GUN',

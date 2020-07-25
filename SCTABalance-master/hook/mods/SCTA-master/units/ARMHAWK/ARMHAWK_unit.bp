@@ -13,7 +13,7 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
-            '<LOC ability_personalstealth>Personal Stealth',
+            '<LOC ability_jamming>Jamming',
                     },
               },
     Defense = {
@@ -24,19 +24,24 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 3,
         },
     General = {
- 	          OrderOverrides = {
-                RULEUTC_StealthToggle = {
-                bitmapId = 'stealth',
-                helpText = 'toggle_stealth',
-                                        },
-                            },
-            ToggleCaps = {
-                RULEUTC_StealthToggle = true,
+      OrderOverrides = {
+        RULEUTC_JammingToggle = {
+            bitmapId = 'jamming',
+            helpText = 'toggle_jamming',
+                                },
+                        },
+              ToggleCaps = {
+                RULEUTC_JammingToggle = true,
                           },
               },
         Intel = {
       VisionRadius = 10,
-	    RadarStealth = true,
+      JamRadius = {
+        Max = 4,
+        Min = 4,
+      },
+      JammerBlips = 3,
+      RadarStealth = false,
 	    FreeIntel = false,
     },
   }

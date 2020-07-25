@@ -312,9 +312,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 0,
+            Damage = 80,
             DamageRadius = 3.75, 
-            DamageType = 'Normal',
+            DamageType = 'AntiAir',
             DisplayName = 'ARMAAS_WEAPON3',
             FireTargetLayerCapsTable = {
                 Water = 'Air',

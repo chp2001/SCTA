@@ -1,5 +1,5 @@
 #ARM Cloakable Fusion Reactor - Produces Energy
-#ARMCKFUS
+#CORCKFUS
 #
 #Blueprint created by Raevn
 
@@ -29,7 +29,7 @@ UnitBlueprint {
 	'STRUCTURE',
         'ECONOMIC',
 	'ENERGYPRODUCTION',
-	'ARM',
+    'CORE',
 	'ENERGY',
 	'LEVEL3',
 	'NOWEAPON',
@@ -89,7 +89,7 @@ UnitBlueprint {
 		RULEUTC_CloakToggle = true,
 	},
         SelectionPriority = 5,
-        FactionName = 'ARM',
+        FactionName = 'CORE',
         TechLevel = 'RULEUTL_Secret',
 	UnitName = 'Cloakable Fusion Reactor',
     },
@@ -137,7 +137,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/ARMCKFUS/ARMCKFUS_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/CORCKFUS/CORCKFUS_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

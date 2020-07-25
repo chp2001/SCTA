@@ -17,6 +17,8 @@ local TAupgrades =
     ['corrad'] = 'corarad',
     ['armarad'] = 'armtarg',
     ['corarad'] = 'cortarg',
+    ['armsonar'] = 'armason',
+    ['corsonar'] = 'corason',
 }
 
 upgradeTab = table.merged(upgradeTab, TAupgrades)

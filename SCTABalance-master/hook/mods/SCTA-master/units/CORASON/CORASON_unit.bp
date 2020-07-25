@@ -1,0 +1,23 @@
+UnitBlueprint {
+    Merge = true, 
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 320,
+        MaxHealth = 320,
+    },
+    Economy = {
+        BuildCostEnergy = 2469,
+        BuildCostMass = 163,
+        BuildTime = 6152,
+	NaturalProducer = false,
+	MaintenanceConsumptionPerSecondEnergy = 25,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
+	MinWaterDepth = 1.5,
+    },
+    General = {
+        UpgradesFrom = 'corsonar',
+    },
+}

@@ -13,7 +13,12 @@ UnitBlueprint {
     Economy = {
 	NaturalProducer = false,
     ProductionPerSecondEnergy = 0,
-	MaintenanceConsumptionPerSecondEnergy = 10,
+    BuildRate = 80, 
+    MaintenanceConsumptionPerSecondEnergy = 10,
+    ProductionPerSecondEnergy = 0,
+    BuildableCategory = {
+        'armason',
+        },
     },
     Footprint = {
         SizeX = 1,
@@ -21,25 +26,16 @@ UnitBlueprint {
 	MinWaterDepth = 0.5,
     },
     General = {
-	BuildAngle = 8192,
-        Category = 'Intelligence',
-        Classification = 'RULEUC_Sensor',
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
-        SelectionPriority = 5,
-        FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Basic',
-        UnitName = 'Sonar Station',
+        UpgradesTo = 'armason',
     },
     Intel = {
 	FreeIntel = false,
     VisionRadius = 11,
 	SonarRadius = 74,
 	WaterVisionRadius = 11,
-    },
-    Interface = {
-        HelpText = 'Locates Water Units',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

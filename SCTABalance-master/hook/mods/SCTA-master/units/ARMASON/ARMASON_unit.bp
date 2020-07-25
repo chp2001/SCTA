@@ -1,29 +1,16 @@
 UnitBlueprint {
     Merge = true,
-    Categories = {
-        'BUILTBYT2SUB',
-        'SELECTABLE',
-        'DRAGBUILD',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH3',
-
-	
-	'STRUCTURE',
-	'INTELLIGENCE',
-	'SONAR',
-	'NAVAL',
-	'TEXTUREANIM',
-        'OVERLAYSONAR',
-
-	
-	'ARM',
-        'CORE',
-	'SPECIAL',
-	'SONAR',
-	'LEVEL2',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_R',
+	Defense = {
+        ArmorType = 'Structure',
+        Health = 320,
+        MaxHealth = 320,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
+	MinWaterDepth = 1.5,
+    },
+    General = {
+        UpgradesFrom = 'armsonar',
     },
 }

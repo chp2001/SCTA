@@ -210,7 +210,7 @@ UnitBlueprint {
             MaxRadius = 40,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 0, 	#100 - done in projectile
+            MuzzleVelocity = 0, 	
             ProjectileId = '/mods/SCTA-master/projectiles/CORAIR_TORPEDO/CORAIR_TORPEDO_proj.bp',
             RackBones = {
                 {

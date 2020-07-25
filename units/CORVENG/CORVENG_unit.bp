@@ -196,7 +196,7 @@ UnitBlueprint {
             DamageFriendly = true,
             Damage = 50,
             DamageRadius = 1.5,
-            DamageType = 'Normal',
+            DamageType = 'AntiAir',
             DisplayName = 'CORVTOL_MISSILE',
             FireTargetLayerCapsTable = {
                 Air = 'Land|Water|Air|Seabed',

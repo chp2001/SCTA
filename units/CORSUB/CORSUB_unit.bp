@@ -163,7 +163,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 370,
+            Damage = 500,
 	    DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'CORE_TORPEDO',

@@ -7,7 +7,6 @@ local TAUnderWaterProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua')
 
 CORSMART_TORPEDO = Class(TAUnderWaterProjectile) {
 	TrackTime = 3,
-	NormalSubDamage = 600,
 }
 
 TypeClass = CORSMART_TORPEDO

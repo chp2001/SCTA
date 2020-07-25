@@ -130,9 +130,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 0,
+            Damage = 40,
             DamageRadius = 3.75, 
-            DamageType = 'Normal',
+            DamageType = 'AntiAir',
             DisplayName = 'ARMFLAK_GUN',
             FireTargetLayerCapsTable = {
                 Land = 'Air',
@@ -166,7 +166,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 1.67,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

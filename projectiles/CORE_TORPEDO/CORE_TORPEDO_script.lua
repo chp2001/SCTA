@@ -7,7 +7,6 @@ local TAUnderWaterProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua')
 
 CORE_TORPEDO = Class(TAUnderWaterProjectile) {
 	TrackTime = 3,
-	AdvancedSubDamage = 130,
 }
 
 TypeClass = CORE_TORPEDO

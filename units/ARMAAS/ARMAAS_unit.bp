@@ -160,7 +160,7 @@ UnitBlueprint {
             DamagesFriendly = true,
             Damage = 57,
             DamageRadius = 1.5,
-            DamageType = 'Normal',
+            DamageType = 'AntiAir',
             DisplayName = 'ARMAAS_WEAPON1',
 	    FiringTolerance = 1,
             FireTargetLayerCapsTable = {

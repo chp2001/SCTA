@@ -46,33 +46,9 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
         self.CollideFriendly = self.DamageData.CollideFriendly
 	end,
 	
-	AdjustDamageForTarget = function(self, targetEntity, damage)
-        if targetEntity and damage and IsUnit(targetEntity) then
-            if self.AirDamage and EntityCategoryContains(categories.AIR, targetEntity) then
-                return self.AirDamage
-            elseif self.CommanderDamage and EntityCategoryContains(categories.COMMANDER, targetEntity) then
-                return self.CommanderDamage
-            elseif self.NormalSubDamage and EntityCategoryContains(categories.NORMALSUB, targetEntity) then
-                return self.NormalSubDamage
-            elseif self.AdvancedSubDamage and EntityCategoryContains(categories.ADVANCEDSUB, targetEntity) then
-                return self.AdvancedSubDamage
-            elseif self.FlashDamage and EntityCategoryContains(categories.ARMFLASH, targetEntity) then
-                return self.FlashDamage
-            elseif self.PeeweeDamage and EntityCategoryContains(categories.ARMPW, targetEntity) then
-                return self.PeeweeDamage
-            elseif self.WarriorDamage and EntityCategoryContains(categories.ARMWAR, targetEntity) then
-                return self.WarriorDamage
-            elseif self.PyroDamage and EntityCategoryContains(categories.CORPYRO, targetEntity) then
-                return self.PyroDamage
-            end
-		end
-        return damage
-    end,
-
 	DoDamage = function(self, instigator, DamageData, targetEntity)
-		local damage = DamageData.DamageAmount
-		if damage and damage > 0 then
-			damage = self.AdjustDamageForTarget(self, targetEntity, damage)
+        local damage = DamageData.DamageAmount
+        if damage and damage > 0 then
             local radius = DamageData.DamageRadius
             if radius and radius > 0 then
                 if not DamageData.DoTTime or DamageData.DoTTime <= 0 then
@@ -87,8 +63,10 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
                             Damage(instigator, self:GetPosition(), targetEntity, initialDmg, DamageData.DamageType)
                         end
                     end
+
                     ForkThread(DefaultDamage.AreaDoTThread, instigator, self:GetPosition(), DamageData.DoTPulses or 1, (DamageData.DoTTime / (DamageData.DoTPulses or 1)), radius, damage, DamageData.DamageType, DamageData.DamageFriendly)
                 end
+            -- ONLY DO DAMAGE IF THERE IS DAMAGE DATA.  SOME PROJECTILE DO NOT DO DAMAGE WHEN THEY IMPACT.
             elseif DamageData.DamageAmount and targetEntity then
                 if not DamageData.DoTTime or DamageData.DoTTime <= 0 then
                     Damage(instigator, self:GetPosition(), targetEntity, DamageData.DamageAmount, DamageData.DamageType)
@@ -101,7 +79,8 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
                         elseif targetEntity then
                             Damage(instigator, self:GetPosition(), targetEntity, initialDmg, DamageData.DamageType)
                         end
-					end
+                    end
+
                     ForkThread(DefaultDamage.UnitDoTThread, instigator, targetEntity, DamageData.DoTPulses or 1, (DamageData.DoTTime / (DamageData.DoTPulses or 1)), damage, DamageData.DamageType, DamageData.DamageFriendly)
                 end
             end

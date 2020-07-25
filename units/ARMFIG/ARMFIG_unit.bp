@@ -194,7 +194,7 @@ UnitBlueprint {
             DamageFriendly = true,
             Damage = 40,
             DamageRadius = 1.5,
-            DamageType = 'Normal',
+            DamageType = 'AntiAir',
             DisplayName = 'ARMVTOL_MISSILE',
             FireTargetLayerCapsTable = {
                 Air = 'Land|Water|Air|Seabed',

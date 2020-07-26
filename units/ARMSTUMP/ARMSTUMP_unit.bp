@@ -55,6 +55,27 @@ UnitBlueprint {
     },
     Description = 'Medium Assault Tank',
     Display = {
+        MovementEffects = {
+            Land = {
+                Treads = {
+                    ScrollMultiplier = 0.75,
+                    ScrollTreads = true,
+                    TreadMarks = {
+                        {
+                            TreadMarks = 'tank_treads_albedo',
+                            TreadMarksInterval = 0.2,
+                            TreadMarksSizeX = 1,
+                            TreadMarksSizeZ = 0.5,
+                            TreadOffset = {
+                                0,
+                                0,
+                                0,
+                            },
+                        },
+                    },
+                },
+            },
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Tredside','MetalBarrel'},
 		DestructionEmitters = {
@@ -68,6 +89,11 @@ UnitBlueprint {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
+                    {
+                        LODCutoff = 120,
+                        Scrolling = true,
+                        ShaderName = 'Unit',
+                    },
                 {
                     LODCutoff = 500,
                     ShaderName = 'Unit', 

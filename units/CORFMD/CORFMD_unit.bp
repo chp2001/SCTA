@@ -177,7 +177,6 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             WeaponRepackTimeout = 4,
             WeaponUnpacks = true,
-
             AlwaysRecheckTarget = true,
             CountedProjectile = true,
             InitialProjectileStorage = 0,
@@ -185,7 +184,7 @@ UnitBlueprint {
             TargetRestrictOnlyAllow = 'STRATEGIC MISSILE',
             TargetType = 'RULEWTT_Projectile',
             EffectiveRadius = 125,
-            TrackingRadius = 2048,
+            TrackingRadius = 200,
             WeaponCategory = 'Missile',
         },
         { #ATOMIC_BLAST

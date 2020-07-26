@@ -3,16 +3,16 @@
 #
 #Blueprint created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TATreads = import('/mods/SCTA-master/lua/TATread.lua').TATreads
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-CORFAV = Class(TAunit) {
+CORFAV = Class(TATreads) {
 
 	Weapons = {
 		CORE_LASER = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.15)
+				TATreads.ShowMuzzleFlare(self, 0.15)
 			end,
 		},
 	},

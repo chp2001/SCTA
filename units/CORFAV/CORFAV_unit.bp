@@ -52,6 +52,27 @@ UnitBlueprint {
     },
     Description = 'Scout',
     Display = {
+        MovementEffects = {
+            Land = {
+                Treads = {
+                    ScrollMultiplier = 0.75,
+                    ScrollTreads = true,
+                    TreadMarks = {
+                        {
+                            TreadMarks = 'tank_treads_albedo',
+                            TreadMarksInterval = 0.2,
+                            TreadMarksSizeX = 1,
+                            TreadMarksSizeZ = 0.5,
+                            TreadOffset = {
+                                0,
+                                0,
+                                0,
+                            },
+                        },
+                    },
+                },
+            },
+        },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{
@@ -63,6 +84,11 @@ UnitBlueprint {
 	},
         Mesh = {
             IconFadeInZoom = 130,
+            {
+                LODCutoff = 120,
+                Scrolling = true,
+                ShaderName = 'Unit',
+            },
             LODs = {
                 {
                     LODCutoff = 500,

@@ -43,6 +43,14 @@ Factions = {
                 '/icons/units/ueb0303_icon.dds',
             },
         },
+        GAZ_UI_Info = {
+            BuildingIdPrefixes = {
+                'ueb',
+                'xeb',
+                'deb',
+                'zeb',
+            },
+        },
     },
 
     {
@@ -84,6 +92,14 @@ Factions = {
                 '/icons/units/uab0103_icon.dds',
                 '/icons/units/uab0203_icon.dds',
                 '/icons/units/uab0303_icon.dds',
+            },
+        },
+        GAZ_UI_Info = {
+            BuildingIdPrefixes = {
+                'uab',
+                'xab',
+                'dab',
+                'zab',
             },
         },
     },
@@ -129,6 +145,14 @@ Factions = {
                 '/icons/units/urb0303_icon.dds',
             },
         },
+        GAZ_UI_Info = {
+            BuildingIdPrefixes = {
+                'urb',
+                'xrb',
+                'drb',
+                'zrb',
+            },
+        },
     },
 
     {
@@ -172,6 +196,14 @@ Factions = {
                 '/icons/units/xsb0303_icon.dds',
             },
         },
+        GAZ_UI_Info = {
+            BuildingIdPrefixes = {
+                'xsb',
+                'usb',
+                'dsb',
+                'zsb',
+            },
+        },
     },
     {
         Key = 'nomads',
@@ -182,13 +214,13 @@ Factions = {
         InitialUnit = 'XNL0001',
         CampaignFileDesignator = 'N',
         TransmissionLogColor = 'ff0000ff',
-        Icon = "/widgets/faction-icons-alpha_bmp/uef_ico.dds",
-        VeteranIcon = "/game/veteran-logo_bmp/uef-veteran_bmp.dds",
-        SmallIcon = "/faction_icon-sm/uef_ico.dds",
-        LargeIcon = "/faction_icon-lg/uef_ico.dds",
+        Icon = "/widgets/faction-icons-alpha_bmp/nomad_ico.dds",
+        VeteranIcon = "/game/veteran-logo_bmp/nomad-veteran_bmp.dds",
+        SmallIcon = "/faction_icon-sm/nomad_ico.dds",
+        LargeIcon = "/faction_icon-lg/nomad_ico.dds",
         TooltipID = 'lob_nomads',
         DefaultSkin = 'nomads',
-        loadingMovie = '/uef_load.sfd',
+        loadingMovie = '/nomad_load.sfd',
         loadingColor = 'FFbadbdb',
         loadingTexture = '/uef_load.dds',
         IdleEngTextures = {
@@ -213,6 +245,17 @@ Factions = {
                 '/icons/units/xnb0103_icon.dds',
                 '/icons/units/xnb0203_icon.dds',
                 '/icons/units/xnb0303_icon.dds',
+            },
+        },
+        GAZ_UI_Info = {
+            BuildingIdPrefixes = { 'xnb', },
+            TexEnhancementPrefix = {
+                char = 'n',
+                prefix = '/game/nomads-enhancements/',
+            },
+            SCUEnhancementPaths = {
+                Combat = { 'GunRight', 'GunRightUpgrade', 'GunLeft', 'MovementSpeedIncrease', },
+                Engineer = { 'EngineeringLeft', 'ResourceAllocation', 'EngineeringRight', },
             },
         },
     },
@@ -257,6 +300,11 @@ Factions = {
                 '/icons/units/xsb0303_icon.dds',
             },
         },
+        GAZ_UI_Info = {
+            BuildingIdPrefixes = {
+                'arm',
+            },
+        },
     },
     {
         Key = 'core',
@@ -297,6 +345,11 @@ Factions = {
                 '/mods/SCTA-master/textures/ui/common/icons/units/corsy_icon.dds',
                 '/mods/SCTA-master/textures/ui/common/icons/units/corasy_icon.dds',
                 '/icons/units/xsb0303_icon.dds',
+            },
+        },
+        GAZ_UI_Info = {
+            BuildingIdPrefixes = {
+                'cor',
             },
         },
     },

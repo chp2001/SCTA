@@ -90,7 +90,7 @@ UnitBlueprint {
 			{
 				EmitterBone = {0},
 				EmitterBlueprint = {
-					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+					'/mods/SCTA-master/effects/emitters/total_missile_hit_01_emit.bp',
 				},
 				EmitterSize = 15,
 			},

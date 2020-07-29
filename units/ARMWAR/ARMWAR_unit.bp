@@ -32,15 +32,11 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
 	'ARMWAR',
         'OVERLAYDIRECTFIRE',
-
-	
         'ARM',
         'KBOT',
 	'LEVEL1',
@@ -146,7 +142,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 20,
+            Damage = 5,
             DamageRadius = 0.25,
             FiringRandomness = 1,
             DamageType = 'Normal',

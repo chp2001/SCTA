@@ -1,5 +1,3 @@
-
-
 function CreateInitialArmyGroup(strArmy, createCommander)
 	local tblGroup, cdrUnit = doGateSpawn(strArmy, createCommander)
     return tblGroup, cdrUnit

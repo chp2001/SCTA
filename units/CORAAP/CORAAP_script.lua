@@ -27,8 +27,6 @@ CORAAP = Class(TAconstructor) {
 			pedistal = CreateSlider(self, 'pedistal'),
 			sleeve1 = CreateSlider(self, 'sleeve1'),
 			sleeve2 = CreateSlider(self, 'sleeve2'),
-			bump1 = CreateSlider(self, 'bump1'),
-			bump2 = CreateSlider(self, 'bump2'),
 			conduit1 = CreateSlider(self, 'conduit1'),
 			conduit2 = CreateSlider(self, 'conduit2'),
 		}
@@ -101,8 +99,7 @@ CORAAP = Class(TAconstructor) {
 
 		--MOVE bump2 to x-axis <2.40> SPEED <6.00>;
 		--MOVE bump2 to y-axis <0.40> SPEED <1.00>;
-		self.Sliders.bump2:SetGoal(-2.4,0.4,0)
-		self.Sliders.bump2:SetSpeed(6)
+
 
 		--MOVE conduit2 to x-axis <-3.74> SPEED <10.00>;
 		self.Sliders.conduit2:SetGoal(3.7,0,0)
@@ -110,8 +107,7 @@ CORAAP = Class(TAconstructor) {
 
 		--MOVE bump1 to x-axis <-2.40> SPEED <6.00>;
 		--MOVE bump1 to y-axis <0.40> SPEED <1.00>;
-		self.Sliders.bump1:SetGoal(2.4,0.4,0)
-		self.Sliders.bump1:SetSpeed(6)
+
 
 		--MOVE conduit1 to x-axis <3.69> SPEED <10.00>;
 		self.Sliders.conduit1:SetGoal(-3.7,0,0)
@@ -155,8 +151,7 @@ CORAAP = Class(TAconstructor) {
 
 		--MOVE bump2 to x-axis <0> SPEED <6.00>;
 		--MOVE bump2 to y-axis <0> SPEED <1.00>;
-		self.Sliders.bump2:SetGoal(0,0,0)
-		self.Sliders.bump2:SetSpeed(6)
+
 
 		--MOVE conduit2 to x-axis <0> SPEED <9.00>;
 		self.Sliders.conduit2:SetGoal(0,0,0)
@@ -164,8 +159,7 @@ CORAAP = Class(TAconstructor) {
 
 		--MOVE bump1 to x-axis <0> SPEED <6.00>;
 		--MOVE bump1 to y-axis <0> SPEED <1.00>;
-		self.Sliders.bump1:SetGoal(0,0,0)
-		self.Sliders.bump1:SetSpeed(6)
+
 
 		--MOVE conduit1 to x-axis <0> SPEED <9.00>;
 		self.Sliders.conduit1:SetGoal(0,0,0)

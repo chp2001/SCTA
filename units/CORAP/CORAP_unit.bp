@@ -104,8 +104,8 @@ UnitBlueprint {
                 SpecularName = 'CORAP_SpecTeam.dds',
             },
         },
-        UniformScale = 0.16,
         },
+        UniformScale = 0.16,
     },
     Economy = {
         BuildCostEnergy = 1340,

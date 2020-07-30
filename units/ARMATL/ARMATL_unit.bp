@@ -33,6 +33,7 @@ UnitBlueprint {
 	'UNDERWATER',
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',
+    'CORE',
 	'ARM',
 	'SPECIAL',
 	'WEAPON',
@@ -43,6 +44,10 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0,
     Defense = {
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 5,
+        SubThreatLevel = 30,
+        SurfaceThreatLevel = 0,
         ArmorType = 'Structure',
         Health = 520,
         MaxHealth = 520,

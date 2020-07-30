@@ -33,9 +33,13 @@ UnitBlueprint {
 	'NOTSUB',
     },
     Defense = {
-        ArmorType = 'Normal',
-        Health = 2000,
-        MaxHealth = 2000,
+        ArmorType = 'Structure',
+        Health = 6000,
+        MaxHealth = 6000,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Perimeter Defence',
     Display = {

@@ -45,6 +45,10 @@ UnitBlueprint {
         ArmorType = 'Structure',
         Health = 880,
         MaxHealth = 880,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 2,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Produces Energy',
     Display = {

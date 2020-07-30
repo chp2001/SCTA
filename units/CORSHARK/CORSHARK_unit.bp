@@ -32,19 +32,13 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'NAVAL',
     'T2SUBMARINE',
 	'ANTINAVY',
 	'NOSMOKE',
         'OVERLAYANTINAVY',
-
-	--Weapon Damage Category
 	'ADVANCEDSUB',
-
-	
         'CORE',
         'UNDERWATER',
 	'LEVEL2',
@@ -57,6 +51,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 276,
         MaxHealth = 276,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 10,
+        SurfaceThreatLevel = 5,
     },
     Description = 'Submarine Killer ',
     Display = {

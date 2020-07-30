@@ -53,9 +53,13 @@ UnitBlueprint {
 	    'STORAGE',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 170,
         MaxHealth = 170,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 1000,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Extracts Metal',
     Display = {

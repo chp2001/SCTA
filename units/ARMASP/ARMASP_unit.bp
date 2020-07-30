@@ -60,6 +60,10 @@ UnitBlueprint {
         ArmorType = 'Structure',
         Health = 680,
         MaxHealth = 680,
+        AirThreatLevel = 1,
+        EconomyThreatLevel = 5,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Automatically repairs aircraft',
     Display = {

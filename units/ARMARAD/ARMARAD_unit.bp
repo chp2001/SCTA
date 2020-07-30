@@ -49,7 +49,11 @@ UnitBlueprint {
 	'CTRL_R',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 40,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
         Health = 120,
         MaxHealth = 120,
     },

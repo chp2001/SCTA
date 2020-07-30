@@ -52,6 +52,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 560,
         MaxHealth = 560,
+        AirThreatLevel = 10,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 1,
     },
     Description = 'Scout Ship',
     Display = {

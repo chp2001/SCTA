@@ -55,6 +55,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 1250,
         MaxHealth = 1250,
+        AirThreatLevel = 15,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Missile Ship',
     Display = {

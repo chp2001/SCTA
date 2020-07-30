@@ -45,7 +45,7 @@ UnitBlueprint {
 	
         'CORE',
         'SHIP',
-	'LEVEL1', #BUG: LEVEL2 in TA
+	'LEVEL1', 
 	'WEAPON',
 	'ANTISUB',
 	'NOTAIR',
@@ -57,6 +57,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 2870,
         MaxHealth = 2870,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 20,
+        SurfaceThreatLevel = 5,
     },
     Description = 'Destroyer',
     Display = {
@@ -64,9 +68,8 @@ UnitBlueprint {
             'Anti-Sub',
             'Sonar',
         },
-
 	DestructionEffects = {
-#		DefaultProjectileCategories = {'ArmShip','ArmPanel3','MetalBarrel'},
+		DefaultProjectileCategories = {'ArmShip','ArmPanel3','MetalBarrel'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {'turret','CORROY'},

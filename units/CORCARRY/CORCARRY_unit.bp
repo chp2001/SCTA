@@ -62,6 +62,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 3500,
         MaxHealth = 3500,
+        AirThreatLevel = 50,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Light Carrier',
     Display = {

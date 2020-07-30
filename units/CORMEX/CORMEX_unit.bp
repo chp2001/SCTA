@@ -57,6 +57,10 @@ UnitBlueprint {
         ArmorType = 'Structure',
         Health = 175,
         MaxHealth = 175,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 1000,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Extracts Metal',
     Display = {

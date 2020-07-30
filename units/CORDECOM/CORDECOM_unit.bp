@@ -1,5 +1,5 @@
-#ARM Decoy Commander - Decoy Commander
-#ARMDECOM
+#CORE Decoy Commander - Decoy Commander
+#CORDECOM
 #
 #Blueprint created by Raevn
 
@@ -77,8 +77,12 @@ UnitBlueprint {
         Health = 3000,
         MaxHealth = 3000,
         RegenRate = 0,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 5,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 75,
     },
-    Description = 'Decoy Commander',
+    Description = 'Commander',
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORDECOM/CORDECOM_lod0_Awalk.sca',
         AnimationWalkRate = 1,
@@ -149,7 +153,7 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 3,
         FactionName = 'CORE',
-        UnitName = 'Decoy Commander',
+        UnitName = 'Commander',
         TechLevel = 'RULEUTL_Advanced',
     },
     Intel = {
@@ -157,7 +161,7 @@ UnitBlueprint {
         VisionRadius = 18,
     },
     Interface = {
-        HelpText = 'Decoy Commander',
+        HelpText = 'Commander',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

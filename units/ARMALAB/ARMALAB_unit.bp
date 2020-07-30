@@ -51,6 +51,10 @@ UnitBlueprint {
         ArmorType = 'Structure',
         Health = 3005,
         MaxHealth = 3005,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 11,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Produces Kbots',
     Display = {

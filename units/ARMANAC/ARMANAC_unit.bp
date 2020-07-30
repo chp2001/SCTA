@@ -47,6 +47,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 880,
         MaxHealth = 880,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 3,
     },
     Description = 'Hovertank',
     Display = {

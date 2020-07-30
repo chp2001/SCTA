@@ -52,9 +52,13 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.75,
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 52,
         MaxHealth = 52,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 3,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Sonar Station',
     Display = {

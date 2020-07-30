@@ -61,6 +61,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 520,
         MaxHealth = 520,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 9,
     },
     Description = 'Mobile Radar Jammer',
     Display = {

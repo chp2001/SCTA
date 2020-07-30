@@ -55,9 +55,13 @@ UnitBlueprint {
 	'CTRL_F',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 1850,
         MaxHealth = 1850,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 3,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Produces Aircraft',
     Display = {

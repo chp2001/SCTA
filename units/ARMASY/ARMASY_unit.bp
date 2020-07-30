@@ -53,6 +53,10 @@ UnitBlueprint {
         ArmorType = 'Structure',
         Health = 2820,
         MaxHealth = 2820,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 11,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Produces Ships',
     Display = {

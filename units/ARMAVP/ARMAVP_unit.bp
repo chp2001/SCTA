@@ -52,9 +52,13 @@ UnitBlueprint {
 	'CTRL_F',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 2435,
         MaxHealth = 2435,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 11,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Produces Vehicles',
     Display = {

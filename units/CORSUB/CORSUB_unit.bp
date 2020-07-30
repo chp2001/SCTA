@@ -40,11 +40,7 @@ UnitBlueprint {
 	'ANTINAVY',
 	'NOSMOKE',
         'OVERLAYANTINAVY',
-
-	--Weapon Damage Category
 	'NORMALSUB',
-
-	
         'CORE',
         'UNDERWATER',
 	'LEVEL1',
@@ -58,6 +54,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 590,
         MaxHealth = 590,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 3,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Submarine',
     Display = {

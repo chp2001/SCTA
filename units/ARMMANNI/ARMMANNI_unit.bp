@@ -32,17 +32,13 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
 	'TEXTUREANIM',
         'OVERLAYDIRECTFIRE',
-
-	
         'ARM',
-        'VEHICLE',	#'TANK' in TA
+        'VEHICLE',	
 	'LEVEL2',
 	'WEAPON',
 	'NOTAIR',

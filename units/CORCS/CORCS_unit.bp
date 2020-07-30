@@ -66,6 +66,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 1150,
         MaxHealth = 1150,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Tech Level 1',
     Display = {
@@ -73,7 +77,7 @@ UnitBlueprint {
             'Construction Unit',
         },
 	DestructionEffects = {
-#		DefaultProjectileCategories = {'Construction','ArmShip','BuildMuzzle'},
+		DefaultProjectileCategories = {'Construction','ArmShip','BuildMuzzle'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {'turret'},

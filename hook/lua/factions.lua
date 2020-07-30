@@ -300,11 +300,6 @@ Factions = {
                 '/icons/units/xsb0303_icon.dds',
             },
         },
-        GAZ_UI_Info = {
-            BuildingIdPrefixes = {
-                'arm',
-            },
-        },
     },
     {
         Key = 'core',
@@ -345,11 +340,6 @@ Factions = {
                 '/mods/SCTA-master/textures/ui/common/icons/units/corsy_icon.dds',
                 '/mods/SCTA-master/textures/ui/common/icons/units/corasy_icon.dds',
                 '/icons/units/xsb0303_icon.dds',
-            },
-        },
-        GAZ_UI_Info = {
-            BuildingIdPrefixes = {
-                'cor',
             },
         },
     },

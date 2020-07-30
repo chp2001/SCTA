@@ -50,6 +50,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 450,
         MaxHealth = 450,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 4,
     },
     Description = 'Spider Assault Vehicle',
     Display = {

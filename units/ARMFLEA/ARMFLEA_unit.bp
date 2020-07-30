@@ -48,6 +48,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 75,
         MaxHealth = 75,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0.1,
     },
     Description = 'Fast Light Scout Kbot',
     Display = {

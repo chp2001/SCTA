@@ -87,6 +87,10 @@ UnitBlueprint {
         ArmorType = 'Light',
         Health = 375,
         MaxHealth = 375,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 6,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Torpedo Bomber',
     Display = {

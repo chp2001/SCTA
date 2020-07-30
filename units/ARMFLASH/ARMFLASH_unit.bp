@@ -49,6 +49,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 625,
         MaxHealth = 625,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0.33,
     },
     Description = 'Fast Assault Tank',
     Display = {

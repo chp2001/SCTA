@@ -76,9 +76,13 @@ UnitBlueprint {
 	'NOTSUB',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Light',
         Health = 90,
         MaxHealth = 90,
+        AirThreatLevel = 0.1,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Air Scout',
     Display = {

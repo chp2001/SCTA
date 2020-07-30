@@ -53,6 +53,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 79,
         MaxHealth = 79,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0.1,
     },
     Description = 'Fast Attack Vehicle',
     Display = {

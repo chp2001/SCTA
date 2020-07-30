@@ -48,6 +48,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 621,
         MaxHealth = 621,
+        AirThreatLevel = 20,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 4,
     },
     Description = 'Mobile Flak Vehicle',
     Display = {

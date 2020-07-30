@@ -50,6 +50,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 650,
         MaxHealth = 650,
+        AirThreatLevel = 4,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0.1,
     },
     Description = 'Mobile SAM Launcher',
     Display = {

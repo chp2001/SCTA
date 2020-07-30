@@ -92,6 +92,10 @@ UnitBlueprint {
         ArmorType = 'Light',
         Health = 510,
         MaxHealth = 510,
+        AirThreatLevel = 4,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Stealth Fighter',
     Display = {

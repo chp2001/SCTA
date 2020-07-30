@@ -52,6 +52,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 875,
         MaxHealth = 875,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 5,
     },
     Description = 'Assault Kbot',
     Display = {

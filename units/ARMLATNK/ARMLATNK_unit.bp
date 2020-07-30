@@ -50,6 +50,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 1100,
         MaxHealth = 1100,
+        AirThreatLevel = 20,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Lightning Tank',
     Display = {

@@ -39,7 +39,7 @@ UnitBlueprint {
 	'INDIRECTFIRE',
 	'ROCKET',
         'OVERLAYINDIRECTFIRE',
-
+        'ARTILLERY',
 	
         'ARM',
         'VEHICLE',	#'TANK' in TA
@@ -53,6 +53,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 540,
         MaxHealth = 540,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 24,
     },
     Description = 'Mobile Rocket Launcher',
     Display = {

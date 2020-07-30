@@ -133,14 +133,14 @@ UnitBlueprint {
             Damage = 1, #Doubles up with death, so death damage subtracted
 	    DamageRadius = 8.125,
             DamageType = 'Normal',
-            DisplayName = 'CORMINE3',
+            DisplayName = 'ARMMINE3',
 	    EdgeEffectiveness = 0.1,
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water',
             },
 	    RangeCategory = 'UWRC_DirectFire',
             FiringTolerance = 360,
-            Label = 'CORMINE3',
+            Label = 'ARMMINE3',
             MaxRadius = 4,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,

@@ -12,7 +12,7 @@ UnitBlueprint {
         },
         StartMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'VARMMOV',
+            Cue = 'VARMMOVE',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StopMove = Sound {

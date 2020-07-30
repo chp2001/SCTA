@@ -49,6 +49,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 602,
         MaxHealth = 602,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 24,
     },
     Description = 'Mobile Rocket Launcher',
     Display = {

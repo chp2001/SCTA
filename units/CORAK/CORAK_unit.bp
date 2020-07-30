@@ -48,6 +48,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 265,
         MaxHealth = 265,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0.5,
     },
     Description = 'Infantry Kbot',
     Display = {

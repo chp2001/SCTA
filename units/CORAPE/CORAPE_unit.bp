@@ -86,6 +86,10 @@ UnitBlueprint {
         ArmorType = 'Light',
         Health = 940,
         MaxHealth = 940,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 4,
     },
     Description = 'Gunship',
     Display = {

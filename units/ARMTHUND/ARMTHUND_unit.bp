@@ -87,6 +87,10 @@ UnitBlueprint {
         ArmorType = 'Light',
         Health = 320,
         MaxHealth = 320,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 2,
     },
     Description = 'Bomber',
     Display = {

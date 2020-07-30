@@ -90,6 +90,10 @@ UnitBlueprint {
         ArmorType = 'Light',
         Health = 150,
         MaxHealth = 150,
+        AirThreatLevel = 4,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Air Transport',
     Display = {

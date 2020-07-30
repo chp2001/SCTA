@@ -50,8 +50,12 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 655,
         MaxHealth = 655,
+        AirThreatLevel = 4,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0.1,
     },
-    Description = 'Missile Launcher',
+    Description = 'Mobile SAM Launcher',
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air', 

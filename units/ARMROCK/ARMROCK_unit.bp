@@ -48,6 +48,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 610,
         MaxHealth = 610,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 1.5,
     },
     Description = 'Rocket Kbot',
     Display = {

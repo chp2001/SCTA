@@ -81,6 +81,10 @@ UnitBlueprint {
         ArmorType = 'Light',
         Health = 110,
         MaxHealth = 110,
+        AirThreatLevel = 0.1,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Radar Plane',
     Display = {

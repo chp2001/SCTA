@@ -53,6 +53,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 650,
         MaxHealth = 650,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 20,
     },
     Description = 'Mobile Energy Weapon',
     Display = {

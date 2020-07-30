@@ -48,6 +48,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 653,
         MaxHealth = 653,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0.33,
     },
     Description = 'Assault Tank',
     Display = {

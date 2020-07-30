@@ -3,13 +3,13 @@
 #
 #Script created by Raevn
 
-local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstructor
+local TAAirConstructor = import('/mods/SCTA-master/lua/TAAirConstructor.lua').TAAirConstructor
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
-CORCA = Class(TAconstructor) {
+CORCA = Class(TAAirConstructor) {
 
 	OnCreate = function(self)
-		TAconstructor.OnCreate(self)
+		TAAirConstructor.OnCreate(self)
 		self.Spinners = {
 			nozzle = CreateRotator(self, 'nozzle', 'x', nil, 0, 0, 0),
 			winga = CreateRotator(self, 'winga', 'z', nil, 0, 0, 0),
@@ -31,7 +31,7 @@ CORCA = Class(TAconstructor) {
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAconstructor.OnStopBeingBuilt(self,builder,layer)
+		TAAirConstructor.OnStopBeingBuilt(self,builder,layer)
 		self:OpenWings(self)
 	end,
 
@@ -64,7 +64,7 @@ CORCA = Class(TAconstructor) {
 		self.Spinners.nozzle:SetSpeed(160.03)
 
 		WaitFor(self.Spinners.nozzle)
-		TAconstructor.Aim(self, target)
+		TAAirConstructor.Aim(self, target)
 	end,
 
 }

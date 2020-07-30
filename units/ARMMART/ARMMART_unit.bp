@@ -38,7 +38,7 @@ UnitBlueprint {
 	'LAND',
 	'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
-
+        'ARTILLERY',
 	
         'ARM',
         'VEHICLE',	#'TANK' in TA
@@ -52,6 +52,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 525,
         MaxHealth = 525,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 24,
     },
     Description = 'Mobile Artillery',
     Display = {

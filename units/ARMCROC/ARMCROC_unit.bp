@@ -54,6 +54,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 1230,
         MaxHealth = 1230,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 3,
     },
     Description = 'Amphibious Tank',
     Display = {

@@ -48,7 +48,11 @@ UnitBlueprint {
         'CTRL_W',
     },
     Defense = {
+        AirThreatLevel = 0,
         ArmorType = 'Experimental',
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 500,
         Health = 90000,
         MaxHealth = 90000,
     },

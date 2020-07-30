@@ -41,7 +41,7 @@ UnitBlueprint {
         'ARTILLERY',
 	
         'ARM',
-        'VEHICLE',	#'TANK' in TA
+        'VEHICLE',
 	'LEVEL2',
 	'WEAPON',
 	'NOTAIR',

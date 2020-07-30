@@ -47,9 +47,13 @@ UnitBlueprint {
     },
     CollisionOffsetY = -1,
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 1450,
         MaxHealth = 1450,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 10,
+        SubThreatLevel = 20,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Torpedo Launcher',
     Display = {

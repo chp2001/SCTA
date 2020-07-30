@@ -43,6 +43,7 @@ UnitBlueprint {
 	
         'CORE',
         'VEHICLE',	#'TANK' in TA
+        'HOVER',
 	'LEVEL2',
 	'WEAPON',
 	'PHIB',

@@ -54,9 +54,13 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.5,
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 2325,
         MaxHealth = 2325,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 11,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Produces Ships',
     Display = {

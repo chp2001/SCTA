@@ -47,6 +47,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 200,
         MaxHealth = 200,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0.33,
     },
     Description = 'Scout Hovercraft',
     Display = {

@@ -57,6 +57,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 4170,
         MaxHealth = 4170,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 40,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Cruiser',
     Display = {

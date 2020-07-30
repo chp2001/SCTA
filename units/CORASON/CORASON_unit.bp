@@ -48,6 +48,10 @@ UnitBlueprint {
         ArmorType = 'Structure',
         Health = 320,
         MaxHealth = 320,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 10,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Extended Sonar',
     Display = {

@@ -53,9 +53,13 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.75,
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 50,
         MaxHealth = 50,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 3,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Locates Water Units',
     Display = {

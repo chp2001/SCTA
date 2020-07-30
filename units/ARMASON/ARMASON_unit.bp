@@ -50,9 +50,13 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.5,
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 320,
         MaxHealth = 320,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 3,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Extended Sonar',
     Display = {

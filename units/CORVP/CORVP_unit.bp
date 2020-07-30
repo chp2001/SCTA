@@ -54,9 +54,13 @@ UnitBlueprint {
 	'NOTSUB',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 2550,
         MaxHealth = 2550,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 11,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Produces Vehicles',
     Display = {

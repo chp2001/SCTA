@@ -95,10 +95,14 @@ UnitBlueprint {
 	'CTRL_C',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Commander',
         Health = 3000,
         MaxHealth = 3000,
         RegenRate = 3.7,  # TA HealTime=27, which appears to be 27 units of 30sec
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 5,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 75,
     },
     Description = 'Commander',
     Display = {
@@ -198,7 +202,7 @@ UnitBlueprint {
         RadarRadius = 25,
 	SonarRadius = 25,
 	Cloak = true,
-	OmniRadius = 3,
+    OmniRadius = 3,
     },
     Interface = {
         HelpText = 'Commander',

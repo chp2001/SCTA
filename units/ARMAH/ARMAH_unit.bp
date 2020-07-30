@@ -49,6 +49,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 375,
         MaxHealth = 375,
+        AirThreatLevel = 4,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 1,
     },
     Description = 'Anti-Air Hovercraft',
     Display = {

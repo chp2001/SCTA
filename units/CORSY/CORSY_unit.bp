@@ -54,16 +54,20 @@ UnitBlueprint {
 	'CORE',
 	'PLANT',
 	'CTRL_F',
-	'LEVEL1',	#Bug in TA: 'LEVEL1'
+	'LEVEL1',
 	'NOWEAPON',
 	'NOTAIR',
 	'NOTSUB',
     },
     CollisionOffsetY = -0.5,
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 2490,
         MaxHealth = 2490,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 3,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Produces Ships',
     Display = {

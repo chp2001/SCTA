@@ -55,9 +55,13 @@ UnitBlueprint {
 	'CTRL_F',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
         Health = 3005,
         MaxHealth = 3005,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 8,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Builds Hovercraft',
     Display = {

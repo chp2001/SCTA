@@ -41,7 +41,11 @@ UnitBlueprint {
 	'NOTSUB',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Structure',
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 3,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 6,
         Health = 842,
         MaxHealth = 842,
     },

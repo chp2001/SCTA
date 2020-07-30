@@ -50,6 +50,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 480,
         MaxHealth = 480,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 3,
     },
     Description = 'Mobile Radar',
     Display = {

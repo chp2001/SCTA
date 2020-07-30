@@ -55,6 +55,10 @@ UnitBlueprint {
         ArmorType = 'Structure',
         Health = 1800,
         MaxHealth = 1800,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 100,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Automatic Radar Targeting',
     Display = {

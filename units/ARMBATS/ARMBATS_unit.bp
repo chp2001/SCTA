@@ -32,15 +32,11 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'NAVAL',
 	'DIRECTFIRE',
 	'BATTLESHIP',
         'OVERLAYINDIRECTFIRE',
-
-	
         'ARM',
         'SHIP',
 	'LEVEL2',
@@ -54,6 +50,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 5720,
         MaxHealth = 5720,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 150,
     },
     Description = 'Battleship',
     Display = {

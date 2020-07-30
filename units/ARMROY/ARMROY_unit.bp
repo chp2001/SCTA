@@ -53,6 +53,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 2870,
         MaxHealth = 2870,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 70,
+        SurfaceThreatLevel = 10,
     },
     Description = 'Destroyer',
     Display = {

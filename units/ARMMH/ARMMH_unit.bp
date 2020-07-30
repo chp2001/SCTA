@@ -52,6 +52,10 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 450,
         MaxHealth = 450,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 20,
     },
     Description = 'Hovercraft Rocket Launcher',
     Display = {

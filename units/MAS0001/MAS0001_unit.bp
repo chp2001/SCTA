@@ -61,12 +61,6 @@ UnitBlueprint {
                     LODCutoff = 380,
                     ShaderName = 'Insect',
                 },
-                {
-                    AlbedoName = 'MAS0001_lod1_albedo.dds',
-                    LODCutoff = 415,
-                    ShaderName = 'Insect',
-                    SpecularName = 'MAS0001_lod1_specteam.dds',
-                },
             },
         },
         SpawnRandomRotation = true,

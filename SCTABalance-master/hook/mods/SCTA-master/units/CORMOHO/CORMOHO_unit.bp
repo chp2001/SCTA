@@ -28,7 +28,7 @@ UnitBlueprint {
         MaxHealth = 2000,
     },
     Display = {
-        UniformScale = 0.08,
+        UniformScale = 0.1,
     },
     Economy = {
         MaintenanceConsumptionPerSecondEnergy = 10,

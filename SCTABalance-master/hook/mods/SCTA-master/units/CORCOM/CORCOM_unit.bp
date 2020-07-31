@@ -2,8 +2,8 @@ UnitBlueprint {
     Merge = true,
     Defense = {
         ArmorType = 'Commander',
-        Health = 20000,
-        MaxHealth = 20000,
+        Health = 18000,
+        MaxHealth = 18000,
     },
         Display = {
             Abilities = {

@@ -1,11 +1,11 @@
-#CORE Commander Disintegrator
-#CORE_DISINTEGRATOR
+#ARM Commander Disintegrator
+#ARM_DISINTEGRATOR
 #
 #Script created by Raevn
 
 local TALightCannonProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TALightCannonProjectile
 
-CORE_DISINTEGRATOR = Class(TALightCannonProjectile) {
+ARM_DISINTEGRATOR = Class(TALightCannonProjectile) {
 	OnCreate = function(self)
 		TALightCannonProjectile.OnCreate(self)
 		ForkThread(self.MovementThread,self)
@@ -17,7 +17,7 @@ CORE_DISINTEGRATOR = Class(TALightCannonProjectile) {
 			if pos.y < GetTerrainHeight(pos.x, pos.z) then
 				self:SetTurnRate(0)
 				pos.y = GetTerrainHeight(pos.x, pos.z)
-				DamageArea(self, pos, 1.5, 99999, 'Normal', true)
+				DamageArea(self, pos, 1, 1250, 'Normal', true)
 				self:SetPosition(pos, true)
 				self:PlaySound(Sound({Cue = 'XPLOMAS2', Bank = 'TA_Sound', LodCutoff = 'Weapon_LodCutoff'}))
 				CreateEmitterAtEntity(self, self:GetArmy(), '/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp' ):ScaleEmitter(0.5)
@@ -27,4 +27,4 @@ CORE_DISINTEGRATOR = Class(TALightCannonProjectile) {
 	end,
 }
 
-TypeClass = CORE_DISINTEGRATOR
+TypeClass = ARM_DISINTEGRATOR

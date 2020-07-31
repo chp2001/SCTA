@@ -32,8 +32,8 @@ do
             LifeBarOffset = 0.5,
             LifeBarSize = 0.5,
             Physics = {
-                MaxAcceleration = 1.3,
-                MaxSpeed = 1.5,
+                MaxAcceleration = 1.0,
+                MaxSpeed = 1.2,
                 FuelRechargeRate = 0.0001,
                 FuelUseTime = 0.0006,
                 SkirtSizeX = 1,

@@ -7,6 +7,7 @@ armordefinition = {
         # Armor Definition
         'Normal 1.0',
         'AntiAir 1.0',
+        'DGun 1.0',
     },
     {   # Armor Type Name
         'Normal',
@@ -14,12 +15,14 @@ armordefinition = {
         # Armor Definition
         'Normal 1.0',
         'AntiAir 1.0',
+        'DGun 1.0',
     },
     {   # Armor Type Name
         'Light',
 
         # Armor Definition
         'Normal 1.0',
+        'DGun 1.0',
         'AntiAir 3.0',
     },
     {   # Armor Type Name
@@ -28,6 +31,8 @@ armordefinition = {
         # Armor Definition
         'Normal 1.0',
         'Deathnuke 1.0',
+        'DGun 0.2',
+        'Overcharge 0.25',
         'AntiAir 1.0',
     },
     {   # Armor Type Name
@@ -37,6 +42,7 @@ armordefinition = {
         'Normal 1.0',
         'AntiAir 1.0',
         'Overcharge 0.25',
+        'DGun 0.2',
         'Deathnuke 0.032',
     },
     {
@@ -53,6 +59,7 @@ armordefinition = {
         # Armor Definition
         'Normal 1.0',
         'AntiAir 1.0',
+        'DGun 1.0',
         'FireBeetleExplosion 0.0',
     },
     {
@@ -63,6 +70,7 @@ armordefinition = {
         'Normal 1.0',
         'AntiAir 3.0',
         'CzarBeam 0.25',
+        'DGun 1.0',
         'OtheTacticalBomb 0.1',
     },
     {
@@ -72,6 +80,7 @@ armordefinition = {
         # Armor Definition
         'Normal 1.0',
         'AntiAir 1.0',
+        'DGun 1.0',
         'TacticalMissile 0.55',
     },
 }

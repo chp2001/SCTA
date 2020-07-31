@@ -239,7 +239,7 @@ UnitBlueprint {
             DamageFriendly = true,
             Damage = 200,
             DamageRadius = 1,
-            DamageType = 'Normal',
+            DamageType = 'DGun',
             DisplayName = 'CORCOMLASER',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air|Seabed',
@@ -323,7 +323,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 10,
             RackSalvoSize = 1,
-            RateOfFire = 0.833,
+            RateOfFire = 3,
             TargetCheckInterval = 1,
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
             TurretBoneMuzzle = 'BigFlsh',

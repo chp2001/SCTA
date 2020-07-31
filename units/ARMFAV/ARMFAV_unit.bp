@@ -39,7 +39,7 @@ UnitBlueprint {
 	'SCOUT',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-
+        'OVERLAYRADAR',
 	
         'ARM',
         'VEHICLE',	#'TANK' in TA

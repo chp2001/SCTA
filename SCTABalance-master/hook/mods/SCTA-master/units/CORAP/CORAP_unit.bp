@@ -34,6 +34,10 @@ UnitBlueprint {
                 },
         UniformScale = 0.32,
     },
+    Defense = {
+        Health = 2400,
+        MaxHealth = 2400,
+    },
     Economy = {
         BuildCostEnergy = 2600,
         BuildRate = 150,
@@ -45,6 +49,11 @@ UnitBlueprint {
     LifeBarSize = 8,
     General = {
         UpgradesTo = 'coraap', 
+    },
+    Intel = {
+        VisionRadius = 10,
+        RadarRadius = 30,
+        FreeIntel = true,
     },
     SelectionSizeX = 9.9,
     SelectionSizeZ = 6.8,

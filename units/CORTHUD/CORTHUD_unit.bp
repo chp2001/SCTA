@@ -89,7 +89,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 1161,
-        BuildCostMass = 147,
+        BuildCostMass = 120,
         BuildTime = 2171,
     },
     Footprint = {
@@ -167,6 +167,7 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_IndirectFire',
             Label = 'CORE_THUD',
             MaxRadius = 30,
+            MinRadius = 5, 
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 13.125,

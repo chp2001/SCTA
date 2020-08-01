@@ -28,6 +28,10 @@ UnitBlueprint {
 	'NOTSUB',
 	'CTRL_F',
     },
+    Defense = {
+        Health = 2400,
+        MaxHealth = 2400,
+    },
         Display = {
              Abilities = {
             '<LOC ability_radar>Radar',
@@ -47,6 +51,11 @@ UnitBlueprint {
     General = {
         UpgradesTo = 'armaap', 
     },
+    Intel = {
+        VisionRadius = 10,
+        RadarRadius = 30,
+        FreeIntel = true,
+        },
     SizeX = 12,
     SizeY = 5,
     SizeZ = 12,

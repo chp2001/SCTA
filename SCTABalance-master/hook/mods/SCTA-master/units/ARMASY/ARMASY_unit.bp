@@ -22,6 +22,10 @@ UnitBlueprint {
 	'NOTSUB',
 	'CTRL_F',
     },
+    Defense = {
+        Health = 6000,
+        MaxHealth = 6000,
+    },
         Display = {
         UniformScale = 0.32,
     },
@@ -37,6 +41,10 @@ UnitBlueprint {
     LifeBarSize = 8,
     General = {
         UpgradesFrom = 'armsy',
+    },
+    Intel = {
+        VisionRadius = 10,
+        WaterVisionRadius = 5,
     },
     SelectionSizeX = 9.9,
     SelectionSizeZ = 6.8,

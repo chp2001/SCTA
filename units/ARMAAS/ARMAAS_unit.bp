@@ -124,7 +124,7 @@ UnitBlueprint {
         UnitName = 'Archer',
     },
     Intel = {
-        VisionRadius = 22,
+        VisionRadius = 10,
     },
     Interface = {
         HelpText = 'Anti-Air Ship',

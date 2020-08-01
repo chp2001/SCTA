@@ -27,6 +27,10 @@ UnitBlueprint {
         Display = {
         UniformScale = 0.32,
         },
+        Defense = {
+            Health = 3800,
+            MaxHealth = 3800,
+        },
     Economy = {
         BuildableCategory = {
         'AIR LEVEL2 ARM',
@@ -37,6 +41,11 @@ UnitBlueprint {
     General = {
         UpgradesFrom = 'armap',
     },
+    Intel = {
+        VisionRadius = 10,
+        RadarRadius = 30,
+        FreeIntel = true,
+        },
     SelectionSizeX = 9.9,
     SelectionSizeZ = 6.8,
     SizeX = 12,

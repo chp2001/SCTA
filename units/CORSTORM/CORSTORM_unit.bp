@@ -88,7 +88,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 985,
-        BuildCostMass = 118,
+        BuildCostMass = 160,
         BuildTime = 1969,
     },
     Footprint = {
@@ -190,7 +190,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.27,
+            RateOfFire = 0.4,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

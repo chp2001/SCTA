@@ -27,6 +27,10 @@ UnitBlueprint {
 	'NOTAIR',
 	'NOTSUB',
     },
+    Defense = {
+        Health = 2200,
+        MaxHealth = 2200,
+    },
         Display = {
                 Abilities = {
                     '<LOC ability_upgradable>Upgradeable',

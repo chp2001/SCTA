@@ -23,6 +23,10 @@ UnitBlueprint {
 	'NOTSUB',
 	'CTRL_F',
     },
+    Defense = {
+        Health = 4800,
+        MaxHealth = 4800,
+    },
         Display = {
         UniformScale = 0.32,
     },
@@ -36,6 +40,9 @@ UnitBlueprint {
     LifeBarSize = 8,
     General = {
         UpgradesFrom = 'corvp', 
+    },
+    Intel = {
+        VisionRadius = 10,
     },
     SelectionSizeX = 9.9,
     SelectionSizeZ = 6.8,

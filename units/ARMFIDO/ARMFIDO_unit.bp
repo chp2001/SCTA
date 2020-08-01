@@ -119,7 +119,7 @@ UnitBlueprint {
         UnitName = 'Fido',
     },
     Intel = {
-        VisionRadius = 15,
+        VisionRadius = 10,
     },
     Interface = {
         HelpText = 'Assault Kbot',
@@ -158,7 +158,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 120,
+            Damage = 240,
 	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'GAUSS',
@@ -169,7 +169,7 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_DirectFire',
             FiringTolerance = 0,
             Label = 'GAUSS',
-            MaxRadius = 32,
+            MaxRadius = 24,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
 	    MuzzleVelocity = 28.125,

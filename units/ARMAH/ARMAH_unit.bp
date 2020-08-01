@@ -118,7 +118,7 @@ UnitBlueprint {
         UnitName = 'Swatter',
     },
     Intel = {
-        VisionRadius = 18,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Anti-Air Hovercraft',

@@ -50,8 +50,8 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Structure',
-        Health = 3000,
-        MaxHealth = 3000,
+        Health = 3600,
+        MaxHealth = 3600,
         AirThreatLevel = 0,
         EconomyThreatLevel = 11,
         SubThreatLevel = 0,
@@ -131,7 +131,7 @@ UnitBlueprint {
         UpgradesFrom = 'armvp', 
     },
     Intel = {
-        VisionRadius = 13,
+        VisionRadius = 10,
     },
     Interface = {
         HelpText = 'Produces Vehicles',

@@ -28,6 +28,10 @@ UnitBlueprint {
 	'NOTAIR',
 	'NOTSUB',
     },
+    Defense = {
+        Health = 4200,
+        MaxHealth = 4200,
+    },
         Display = {
                 Abilities = {
                     '<LOC ability_upgradable>Upgradeable',
@@ -47,6 +51,10 @@ UnitBlueprint {
     LifeBarSize = 8,
     General = {
         UpgradesTo = 'corasy', 
+    },
+    Intel = {
+        VisionRadius = 10,
+        WaterVisionRadius = 5,
     },
     SelectionSizeX = 9.9,
     SelectionSizeZ = 6.8,

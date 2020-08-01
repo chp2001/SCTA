@@ -35,6 +35,7 @@ UnitBlueprint {
         UniformScale = 0.32,
     },
     Economy = {
+        BuildCostEnergy = 4800,
         BuildRate = 125,
         BuildableCategory = {
             'HOVER LEVEL1 CORE',

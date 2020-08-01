@@ -36,6 +36,7 @@ UnitBlueprint {
         ArmorType = 'Structure',
     },
     Economy = {
+        BuildCostEnergy = 1800,
         BuildRate = 125,
         BuildableCategory = {
             'armdlab', 
@@ -46,6 +47,8 @@ UnitBlueprint {
     General = {
         UpgradesTo = 'armdlab', 
     },
+    SelectionSizeX = 9.9,
+    SelectionSizeZ = 6.8,
     SizeX = 12,
     SizeY = 5,
     SizeZ = 12,

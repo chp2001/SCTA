@@ -36,6 +36,7 @@ UnitBlueprint {
         UniformScale = 0.32,
     },
     Economy = {
+        BuildCostEnergy = 6000,
         BuildRate = 150,
         BuildableCategory = {
             'AIR LEVEL1 ARM',
@@ -46,8 +47,6 @@ UnitBlueprint {
     General = {
         UpgradesTo = 'armaap', 
     },
-    SelectionSizeX = 9.9,
-    SelectionSizeZ = 6.8,
     SizeX = 12,
     SizeY = 5,
     SizeZ = 12,

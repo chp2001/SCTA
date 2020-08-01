@@ -50,8 +50,8 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 800,
-        MaxHealth = 800,
+        Health = 700,
+        MaxHealth = 700,
         AirThreatLevel = 0,
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,
@@ -101,7 +101,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 500,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+		            NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -145,8 +145,8 @@ UnitBlueprint {
     LifeBarSize = 2,
     Physics = {
         LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+	    BackUpDistance = 0,
+	    MaxSpeedReverse = 0,
         MaxAcceleration = 1.2,
         MaxBrake = 1.1,
         MaxSpeed = 2.4,
@@ -174,7 +174,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 50,
+            Damage = 30,
 	    DamageRadius = 1,
             DamageType = 'Normal',
             DisplayName = 'ARM_LIGHTCANNON',

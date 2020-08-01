@@ -22,9 +22,9 @@ do
                 WaterVisionRadius = 3,
                 },
             Economy = {
-                BuildCostEnergy = 0.25,
+                BuildCostEnergy = 0.3,
                 BuildCostMass = 0.5,
-                BuildTime = 0.07,
+                BuildTime = 0.10,
                 BuildRate = 0.15,
                 MaintenanceConsumptionPerSecondEnergy = 3,
             },

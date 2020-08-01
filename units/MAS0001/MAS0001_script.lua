@@ -10,13 +10,13 @@
 #****************************************************************************
 local AWalkingLandUnit = import('/lua/aeonunits.lua').AWalkingLandUnit
 local Entity = import('/lua/sim/Entity.lua').Entity
-
+local EffectUtil = import('/lua/EffectUtilities.lua')
 
 MAS0001 = Class(AWalkingLandUnit) {
     OnCreate = function(self)
-    AWalkingLandUnit.OnCreate(self)
+	AWalkingLandUnit.OnCreate(self)
 	#WaitSeconds(1)
-    end,
+	end,
 
     OnStopBeingBuilt = function(self,builder,layer)
         AWalkingLandUnit.OnStopBeingBuilt(self,builder,layer)
@@ -30,7 +30,6 @@ MAS0001 = Class(AWalkingLandUnit) {
 	
     OnStartBuild = function(self, unitBeingBuilt, order)
 		local gtime = GetGameTimeSeconds()
-		
 		if gtime < 5 then
 			ForkThread(self.Spawn,self, unitBeingBuilt, order)
 		else

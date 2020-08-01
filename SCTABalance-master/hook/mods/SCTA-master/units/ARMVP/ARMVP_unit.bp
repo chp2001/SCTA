@@ -33,6 +33,7 @@ UnitBlueprint {
         UniformScale = 0.32,
     },
     Economy = {
+        BuildCostEnergy = 2000,
         BuildRate = 125,
         BuildableCategory = {
             'armdvp',

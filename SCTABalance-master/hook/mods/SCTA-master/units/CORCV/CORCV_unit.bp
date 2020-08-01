@@ -1,5 +1,9 @@
 UnitBlueprint {
     Merge = true, 
+    Defense = {
+        Health = 440,
+        MaxHealth = 440,
+        },
     Physics = {
         MaxAcceleration = 1.2,
         MaxSpeed = 1.5, 
@@ -8,5 +12,8 @@ UnitBlueprint {
         BuildCostEnergy = 1200,
         BuildTime = 3700,
         MaxBuildDistance = 6,
+    },
+    Intel = {
+        VisionRadius = 8,
     },
 }

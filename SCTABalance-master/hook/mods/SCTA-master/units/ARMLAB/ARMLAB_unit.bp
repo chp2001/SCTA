@@ -34,6 +34,8 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Structure',
+        Health = 2400,
+        MaxHealth = 2400,
     },
     Economy = {
         BuildCostEnergy = 1800,
@@ -46,6 +48,9 @@ UnitBlueprint {
     LifeBarSize = 8,
     General = {
         UpgradesTo = 'armdlab', 
+    },
+    Intel = {
+        VisionRadius = 10,
     },
     SelectionSizeX = 9.9,
     SelectionSizeZ = 6.8,

@@ -25,12 +25,19 @@ UnitBlueprint {
         Display = {
         UniformScale = 0.32,
     },
+    Defense = {
+        Health = 4500,
+        MaxHealth = 4500,
+    },
     Economy = {
         BuildableCategory = {
             'HOVER LEVEL1 ARM',
             'KBOT LEVEL1 ARM',
             'KBOT LEVEL2 ARM',
         },
+    },
+    Intel = {
+        VisionRadius = 10,
     },
     LifeBarSize = 8,
     SelectionSizeX = 9.9,

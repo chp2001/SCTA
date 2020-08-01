@@ -3,11 +3,14 @@ UnitBlueprint {
     Display = {
         UniformScale = 0.08,
     },
+    Economy = {
+        BuildCostMass = 70,
+    },
     Intel = {
         VisionRadius = 9,
     },
     Defense = {
-        Health = 180,
-        MaxHealth = 180,
+        Health = 160,
+        MaxHealth = 160,
     },
 }

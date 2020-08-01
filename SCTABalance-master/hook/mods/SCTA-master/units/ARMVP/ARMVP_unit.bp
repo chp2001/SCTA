@@ -26,6 +26,10 @@ UnitBlueprint {
 	'NOTAIR',
 	'NOTSUB',
     },
+    Defense = {
+        Health = 2000,
+        MaxHealth = 2000,
+    },
         Display = {
             Abilities = {
                 '<LOC ability_upgradable>Upgradeable',
@@ -43,6 +47,9 @@ UnitBlueprint {
     LifeBarSize = 8,
     General = {
         UpgradesTo = 'armdvp', 
+    },
+    Intel = {
+        VisionRadius = 10,
     },
     SelectionSizeX = 9.9,
     SelectionSizeZ = 6.8,

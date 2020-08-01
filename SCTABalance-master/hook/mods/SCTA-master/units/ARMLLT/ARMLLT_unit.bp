@@ -12,5 +12,8 @@ UnitBlueprint {
         SkirtSizeX = 1, 
         SkirtSizeZ = 1,  
     },
+    Intel = {
+        VisionRadius = 11,
+    },
     SelectionCenterOffsetZ = 0,
 }

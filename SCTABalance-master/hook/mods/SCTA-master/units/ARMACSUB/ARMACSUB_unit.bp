@@ -26,6 +26,10 @@ UnitBlueprint {
 	'NOTAIR',
 	'CTRL_B',
     },
+    Defense = {
+        Health = 900,
+        MaxHealth = 900,
+        },
     Economy = {
         BuildCostEnergy = 3600,
         BuildableCategory = {
@@ -34,5 +38,8 @@ UnitBlueprint {
         },
         MaxBuildDistance = 7,
         ProductionPerSecondMass = 0,
+    },
+    Intel = {
+        VisionRadius = 11,
     },
 }

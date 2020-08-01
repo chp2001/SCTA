@@ -50,8 +50,8 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Structure',
-        Health = 3000,
-        MaxHealth = 3000,
+        Health = 4000,
+        MaxHealth = 4000,
         AirThreatLevel = 0,
         EconomyThreatLevel = 11,
         SubThreatLevel = 0,
@@ -166,7 +166,7 @@ UnitBlueprint {
         UpgradesFrom = 'armlab',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 10,
     },
     Interface = {
         HelpText = 'Produces Kbots',

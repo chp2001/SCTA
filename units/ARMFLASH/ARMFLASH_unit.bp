@@ -86,8 +86,8 @@ UnitBlueprint {
     Footprint = {
 	MaxSlope = 0.625,
 	MaxWaterDepth = 0.75,
-        SizeX = 2,
-        SizeZ = 2,
+        SizeX = 1,
+        SizeZ = 1,
     },
     General = {
         Category = 'Direct Fire',
@@ -106,7 +106,7 @@ UnitBlueprint {
         UnitName = 'Flash',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 10,
     },
     Interface = {
         HelpText = 'Fast Assault Tank',
@@ -145,7 +145,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 8,
+            Damage = 4,
             DamageRadius = 0.25,
             FiringRandomness = 1,
             DamageType = 'Normal',
@@ -176,12 +176,12 @@ UnitBlueprint {
                     RackBone = 'Turret_Recoil_02',
                 },
             },
-            RackRecoilDistance = 0, #-1.4,
+            RackRecoilDistance = 0, 
             RackReloadTimeout = 0.4,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
-            RackSalvoSize = 3,
-            RateOfFire = 10,
+            RackSalvoSize = 2,
+            RateOfFire = 5,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

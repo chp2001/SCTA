@@ -167,6 +167,7 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_IndirectFire',
             Label = 'ARM_HAM',
             MaxRadius = 30,
+            MinRadius = 5, 
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 13.125,
@@ -191,7 +192,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.51,
+            RateOfFire = 0.8,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

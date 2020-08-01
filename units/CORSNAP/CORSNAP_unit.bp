@@ -45,8 +45,8 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 880,
-        MaxHealth = 880,
+        Health = 800,
+        MaxHealth = 800,
         AirThreatLevel = 0,
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,
@@ -96,8 +96,8 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 1,
-        SizeX = 3,
-        SizeZ = 3,
+        SizeX = 1,
+        SizeZ = 1,
     },
     General = {
         Category = 'Direct Fire',
@@ -158,7 +158,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 200,
+            Damage = 40,
             DamageRadius = 0.5,
             FiringRandomness = 0,
             DamageType = 'Normal',
@@ -188,7 +188,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 3,
+            RateOfFire = 1,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

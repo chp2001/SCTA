@@ -1,5 +1,9 @@
 UnitBlueprint {
     Merge = true,
+    Defense = {
+        Health = 500,
+        MaxHealth = 500,
+        },
     Physics = {
         TurnRate = 51,
         MaxSteerForce = 100,
@@ -9,5 +13,8 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 1600,
         MaxBuildDistance = 6,
+    },
+    Intel = {
+        VisionRadius = 8,
     },
 }

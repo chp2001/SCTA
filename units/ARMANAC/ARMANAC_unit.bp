@@ -116,7 +116,7 @@ UnitBlueprint {
         UnitName = 'Anaconda',
     },
     Intel = {
-        VisionRadius = 18,
+        VisionRadius = 15,
     },
     Interface = {
         HelpText = 'Hovertank',
@@ -188,7 +188,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.83,
+            RateOfFire = 0.5,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

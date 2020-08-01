@@ -1,5 +1,9 @@
 UnitBlueprint {
     Merge = true,
+    Defense = {
+        Health = 1100,
+        MaxHealth = 1100,
+        },
     Economy = {
         BuildCostEnergy = 2400,
         BuildableCategory = {
@@ -8,5 +12,8 @@ UnitBlueprint {
         },
         MaxBuildDistance = 7,
         ProductionPerSecondMass = 0,
+    },
+    Intel = {
+        VisionRadius = 11,
     },
 }

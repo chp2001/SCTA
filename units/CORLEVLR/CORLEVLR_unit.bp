@@ -47,8 +47,8 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 360,
-        MaxHealth = 360,
+        Health = 500,
+        MaxHealth = 500,
         AirThreatLevel = 0,
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,
@@ -79,7 +79,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 1887,
-        BuildCostMass = 375,
+        BuildCostMass = 200,
         BuildTime = 4209,
     },
     Footprint = {
@@ -145,7 +145,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 180,
+            Damage = 200,
 	    DamageRadius = 2.625,
             DamageType = 'Normal',
             DisplayName = 'CORLEVLR_WEAPON',
@@ -157,6 +157,7 @@ UnitBlueprint {
             FiringTolerance = 3,
             Label = 'CORLEVLR_WEAPON',
             MaxRadius = 30,
+            MinRadius = 5, 
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
 	    MuzzleVelocity = 17.5,

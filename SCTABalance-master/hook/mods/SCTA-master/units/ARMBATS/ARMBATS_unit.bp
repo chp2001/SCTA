@@ -18,6 +18,6 @@ UnitBlueprint {
         MaxSpeed = 4,
     },
     Intel = {
-        VisionRadius = 22, 
+        VisionRadius = 12, 
     },
 }

@@ -169,7 +169,7 @@ UnitBlueprint {
         UnitName = 'Adv. Construction Aircraft',
     },
     Intel = {
-        VisionRadius = 18,
+        VisionRadius = 12,
     },
     Interface = {
         HelpText = 'Tech Level 2',

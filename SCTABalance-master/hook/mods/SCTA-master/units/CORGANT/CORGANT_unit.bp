@@ -21,6 +21,10 @@ UnitBlueprint {
         'NOTSUB',
         'CTRL_F',
     },
+    Defense = {
+    Health = 24000,
+    MaxHealth = 24000,
+    },
         Display = {
         UniformScale = 0.38,
     },

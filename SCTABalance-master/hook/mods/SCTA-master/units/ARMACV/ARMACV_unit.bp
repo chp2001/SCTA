@@ -1,6 +1,7 @@
 UnitBlueprint {
     Merge = true,
     Economy = {
+        BuildCostEnergy = 2400,
         BuildableCategory = {
             'BUILTBYT1VEHICLE ARM',
             'BUILTBYT2VEHICLE ARM',

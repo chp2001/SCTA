@@ -1,6 +1,7 @@
 UnitBlueprint {
     Merge = true,
     Economy = {
+        BuildCostEnergy = 1800,
         MaxBuildDistance = 6,
     },
 }

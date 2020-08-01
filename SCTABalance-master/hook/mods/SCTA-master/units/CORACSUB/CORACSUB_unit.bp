@@ -1,6 +1,7 @@
 UnitBlueprint {
     Merge = true,
     Economy = {
+        BuildCostEnergy = 3600,
         BuildableCategory = {
             'BUILTBYT1SHIP CORE',
             'BUILTBYT2SUB CORE',

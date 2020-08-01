@@ -27,6 +27,7 @@ UnitBlueprint {
 	'CTRL_B',
     },
     Economy = {
+        BuildCostEnergy = 3600,
         BuildableCategory = {
             'BUILTBYT1SHIP ARM',
             'BUILTBYT2SUB ARM',

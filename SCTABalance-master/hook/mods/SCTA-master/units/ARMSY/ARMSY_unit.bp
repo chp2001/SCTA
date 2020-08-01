@@ -36,6 +36,7 @@ UnitBlueprint {
     },
     LifeBarSize = 8,
     Economy = {
+        BuildCostEnergy = 4800,
         BuildRate = 125,
         BuildableCategory = {
             'HOVER LEVEL1 ARM',

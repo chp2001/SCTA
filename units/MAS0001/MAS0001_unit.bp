@@ -39,7 +39,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'SORTDEFENSE',
     },
-    CollisionOffsetY = -8.25,
+    CollisionOffsetY = -0.05,
     Defense = {
         AirThreatLevel = 5,
         ArmorType = 'Structure',
@@ -65,6 +65,7 @@ UnitBlueprint {
         },
         SpawnRandomRotation = true,
         UniformScale = 0.17,
+        AnimationOpen = '/mods/SCTA-master/units/MAS0001/MAS0001_LOD0unpack.sca',
     },
     Economy = {
         BuildCostEnergy = 1500,

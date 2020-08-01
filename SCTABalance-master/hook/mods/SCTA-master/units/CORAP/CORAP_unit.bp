@@ -39,7 +39,7 @@ UnitBlueprint {
         MaxHealth = 2400,
     },
     Economy = {
-        BuildCostEnergy = 2600,
+        BuildCostEnergy = 5400,
         BuildRate = 150,
         BuildableCategory = {
             'AIR LEVEL1 CORE',

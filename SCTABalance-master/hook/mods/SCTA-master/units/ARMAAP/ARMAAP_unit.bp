@@ -32,6 +32,7 @@ UnitBlueprint {
             MaxHealth = 3800,
         },
     Economy = {
+        BuildCostEnergy = 10200,
         BuildableCategory = {
         'AIR LEVEL2 ARM',
 	    'AIR LEVEL1 ARM', 

@@ -38,7 +38,7 @@ UnitBlueprint {
         MaxHealth = 2400,
     },
     Economy = {
-        BuildCostEnergy = 1800,
+        BuildCostEnergy = 3600,
         BuildRate = 125,
         BuildableCategory = {
             'armdlab', 

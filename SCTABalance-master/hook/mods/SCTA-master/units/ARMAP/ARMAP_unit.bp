@@ -40,7 +40,7 @@ UnitBlueprint {
         UniformScale = 0.32,
     },
     Economy = {
-        BuildCostEnergy = 6000,
+        BuildCostEnergy = 5100,
         BuildRate = 150,
         BuildableCategory = {
             'AIR LEVEL1 ARM',

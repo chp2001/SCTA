@@ -43,7 +43,7 @@ ARMCOM = Class(TAconstructor) {
 			self.Trash:Add(v)
 		end
 		TAconstructor.OnCreate(self)
-            	self:SetIntelRadius('Omni', 0)
+        self:SetIntelRadius('Omni', 0)
 		ForkThread(self.CloakDetection, self)
 	end,
 
@@ -93,15 +93,14 @@ ARMCOM = Class(TAconstructor) {
         self:SetBusy(false)
         self:SetBlockCommandQueue(false)
         WaitSeconds(6)
-        self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
+		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
     end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAconstructor.OnStopBeingBuilt(self,builder,layer)
 		ForkThread(self.GiveInitialResources, self)
-	        self:SetScriptBit('RULEUTC_CloakToggle', true)
+			self:SetScriptBit('RULEUTC_CloakToggle', true)
 	end,
-
 	OnMotionHorzEventChange = function( self, new, old )
 		TAconstructor.OnMotionHorzEventChange(self, new, old)
 		if old == 'Stopped' then
@@ -146,7 +145,6 @@ ARMCOM = Class(TAconstructor) {
 		end
 		TAconstructor.OnScriptBitClear(self, bit)
 	end,
-
 
 	GiveInitialResources = function(self)
 		#need to convert options to ints - they are strings

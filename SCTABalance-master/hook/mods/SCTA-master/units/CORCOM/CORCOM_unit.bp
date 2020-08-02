@@ -2,8 +2,8 @@ UnitBlueprint {
     Merge = true,
     Defense = {
         ArmorType = 'Commander',
-        Health = 18000,
-        MaxHealth = 18000,
+        Health = 20000,
+        MaxHealth = 20000,
     },
         Display = {
             Abilities = {
@@ -19,7 +19,7 @@ UnitBlueprint {
         UniformScale = 0.28,
     },
     Intel = {
-        FreeIntel = true,
+        FreeIntel = false,
         VisionRadius = 12,
         WaterVisionRadius = 9,
         RadarRadius = 40,

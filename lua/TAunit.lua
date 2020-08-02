@@ -224,12 +224,16 @@ TAunit = Class(Unit)
     end,
 
 	CreateWreckage = function( self, overkillRatio )
+
+		# if overkill ratio is high, the wreck is vaporized! No wreakage for you!
 		if overkillRatio then
 			if overkillRatio > 0.075 then
 				self:CreateDebrisProjectiles()
 				return
 			end
 		end
+
+		# generate wreakage in place of the dead unit
 	        if self:GetBlueprint().Wreckage.WreckageLayers[self:GetCurrentLayer()] and self.Suicide == false then
 			TAutils.QueueDelayedWreckage(self, overkillRatio, self:GetBlueprint(), self:GetFractionComplete(), self:GetPosition(), self:GetOrientation(), self:GetMaxHealth())
 		end

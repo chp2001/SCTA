@@ -49,8 +49,6 @@ TAWreckage = Class(Prop) {
 			self.wreckageDead = true
 			TAutils.QueueDelayedWreckage(self, amount / maxHealth, self:GetBlueprint(), 1, self:GetPosition(), self:GetOrientation(), self:GetMaxHealth())
 			if not self:GetBlueprint().Wreckage then
-				#Make duration limited?
-				CreateSplat(self:GetPosition(), 0, 'Smudge', 1, 1, 130, 0, -1, 0)
 			end
 			self:Destroy()			
 		end

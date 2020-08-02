@@ -283,11 +283,11 @@ end
 
 
 function QueueDelayedWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
-	ForkThread(CreateDelayedWreckage, self, overkillRatio, bp, completed, pos, orientation, health)
+	ForkThread(CreateWreckage, self, overkillRatio, bp, completed, pos, orientation, health)
 end
 
 
-function CreateDelayedWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
+function CreateWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
 	local WreckShield = import('/mods/SCTA-master/lua/TAshield.lua').WreckShield
 	while not IsDestroyed(self) do
 		WaitSeconds(0.4)

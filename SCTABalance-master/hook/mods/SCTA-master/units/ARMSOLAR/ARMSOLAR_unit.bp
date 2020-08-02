@@ -8,7 +8,7 @@ UnitBlueprint {
         UniformScale = 0.16,
     },
   Economy = {
-        BuildCostEnergy = 2000,
+        BuildCostEnergy = 1050,
         ProductionPerSecondEnergy = 30,
     },
     Footprint = {

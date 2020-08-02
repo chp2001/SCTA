@@ -10,6 +10,7 @@ UnitBlueprint {
     },
 }, 
       Economy = {
+        MaintenanceConsumptionPerSecondEnergy = 2,
         BuildRate = 100,
         BuildableCategory = {
                'cormoho',

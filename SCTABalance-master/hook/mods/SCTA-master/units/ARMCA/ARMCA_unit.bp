@@ -6,6 +6,7 @@ UnitBlueprint {
         },
     Economy = {
         BuildCostEnergy = 2100,
+        ProductionPerSecondEnergy = 2,
         MaxBuildDistance = 6,
     },
     Intel = {

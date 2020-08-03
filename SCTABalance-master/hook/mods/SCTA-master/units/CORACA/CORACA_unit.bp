@@ -11,6 +11,7 @@ UnitBlueprint {
             'BUILTBYT2AIR CORE',
         },
         MaxBuildDistance = 7,
+        ProductionPerSecondEnergy = 3,
         ProductionPerSecondMass = 0,
     },
     Intel = {

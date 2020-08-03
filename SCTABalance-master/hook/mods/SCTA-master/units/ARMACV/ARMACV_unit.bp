@@ -11,6 +11,7 @@ UnitBlueprint {
             'BUILTBYT2VEHICLE ARM',
         },
         MaxBuildDistance = 7,
+        ProductionPerSecondEnergy = 2,
         ProductionPerSecondMass = 0,
     },
     Intel = {

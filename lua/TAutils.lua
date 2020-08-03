@@ -283,12 +283,12 @@ end
 
 
 function QueueDelayedWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
-	ForkThread(CreateDelayedWreckage, self, overkillRatio, bp, completed, pos, orientation, health)
+	ForkThread(CreateWreckage, self, overkillRatio, bp, completed, pos, orientation, health)
 end
 
 
-function CreateDelayedWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
-	local WreckShield = import('/mods/SCTA-master/lua/TAshield.lua').WreckShield
+function CreateWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
+	local TAWreckage = import('/mods/SCTA-master/lua/TAWreckage.lua').TAWreckage
 	while not IsDestroyed(self) do
 		WaitSeconds(0.4)
 	end
@@ -312,25 +312,6 @@ function CreateDelayedWreckage(self,overkillRatio, bp, completed, pos, orientati
 
 		prop.OriginalUnit = self.OriginalUnit or self
 		if pbp.Physics.BlockPath == false then
-		        prop.myShield = WreckShield {
-        	        	Owner = self,
-               			FactionName = bp.General.FactionName,
-               			CollisionSizeX = (pbp.CollisionSizeX or (pbp.SizeX or 2)) / 2,
-	               		CollisionSizeY = (pbp.CollisionSizeY or (pbp.SizeY or 2)) / 2,
-	       	        	CollisionSizeZ = (pbp.CollisionSizeZ or (pbp.SizeZ or 2)) / 2,
-                		CollisionCenterX = pbp.CollisionOffsetX or 0,
-               			CollisionCenterY = pbp.SizeY / 2 + pbp.CollisionOffsetY or 0,
-	               		CollisionCenterZ = pbp.CollisionOffsetZ or 0,
-                		OwnerShieldMesh = pbp.Display.MeshBlueprint,
-	               		ShieldMaxHealth = prop:GetHealth(),
-                		ShieldRechargeTime = 999,
-	       	        	ShieldEnergyDrainRechargeTime = 0,
-                		ShieldRegenRate = 0,
-               			ShieldRegenStartTime = 999,
-				Wreck = prop,
-				Orientation = orientation,
-				Position = pos,
-	                }
 		end
 		prop:DoTakeDamage(prop, overkillRatio * health, Vector(0,0,0), 'Normal')
         	prop.AssociatedBP = pbp.BlueprintId

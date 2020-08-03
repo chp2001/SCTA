@@ -1,5 +1,5 @@
 local Prop = import('/lua/sim/Prop.lua').Prop
-local WreckShield = import('/mods/SCTA-master/lua/TAshield.lua').WreckShield
+
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 TAWreckage = Class(Prop) {
@@ -9,38 +9,17 @@ TAWreckage = Class(Prop) {
 	OriginalUnit = nil,
 
 	OnCreate = function(self)
-		Prop.OnCreate(self)
-		bp = self:GetBlueprint()
-		ForkThread(self.SinkThread, self)
-		if self:GetPosition().y >= GetSurfaceHeight(self:GetPosition().x, self:GetPosition().z) then
-			if not EntityCategoryContains(categories.NOSMOKE, self) then
-				self.smokeEmitter = CreateAttachedEmitter(self, 0, -1, '/mods/SCTA-master/effects/emitters/wreckage_smoke_emit.bp' )
-			end
-		end
-	end,
+        Prop.OnCreate(self)
+        self.IsWreckage = true
+        self.OrientationCache = self:GetOrientation()
+    end,
 
-	SinkThread = function(self)
-		local sinkSpeed = 0.015
-		local sinkAccel = 0.0025
-		while not IsDestroyed(self) and self:GetPosition().y > GetTerrainHeight(self:GetPosition().x, self:GetPosition().z) + (self:GetBlueprint().SeabedOffset or 0) do
-			local pos = self:GetPosition()
-			Warp(self, Vector(pos[1], pos[2] - sinkSpeed, pos[3]))
-			if self.myShield then
-				Warp(self.myShield, Vector(pos[1], pos[2] - sinkSpeed, pos[3]))
-			end
-			WaitTicks(1)
-			sinkSpeed = sinkSpeed + sinkAccel
-			if self.smokeEmitter then
-				self.smokeEmitter:Destroy()
-			end
-		end
-	end,
+    OnDamage = function(self, instigator, amount, vector, damageType)
+        if not self.CanTakeDamage then return end
+        self:DoTakeDamage(instigator, amount, vector, damageType)
+    end,
 
-	OnDamage = function(self, instigator, amount, vector, damageType)
-		self:DoTakeDamage(instigator, amount, vector, damageType)
-	end,
-
-	DoTakeDamage = function(self, instigator, amount, vector, damageType)
+    DoTakeDamage = function(self, instigator, amount, vector, damageType)
 		local maxHealth = self:GetMaxHealth()
 		local preHealth = self:GetHealth()
 		self:AdjustHealth(instigator, -amount)
@@ -48,16 +27,89 @@ TAWreckage = Class(Prop) {
 		if health <= 0 and self.wreckageDead == false then
 			self.wreckageDead = true
 			TAutils.QueueDelayedWreckage(self, amount / maxHealth, self:GetBlueprint(), 1, self:GetPosition(), self:GetOrientation(), self:GetMaxHealth())
-			if not self:GetBlueprint().Wreckage then
+            if not self:GetBlueprint().Wreckage then
 			end
 			self:Destroy()			
-		end
-	end,
+		else
+            self:UpdateReclaimLeft()
+        end
+    end,
 
-	OnDestroy = function(self)
-		if self.myShield then
-			self.myShield:Destroy()
-		end
+    OnCollisionCheck = function(self, other)
+        if IsUnit(other) then
+            return false
+        else
+            return true
+        end
+    end,
 
-	end,
+    --- Create and return an identical wreckage prop. Useful for replacing this one when something
+    -- (a stupid engine bug) deleted it when we don't want it to.
+    -- This function has the handle the case when *this* unit has already been destroyed. Notably,
+    -- this means we have to calculate the health from the reclaim values, instead of going the
+    -- other way.
+    Clone = function(self)
+        local clone = CreateWreckage(__blueprints[self.AssociatedBP], self.CachePosition, self.OrientationCache, self.MaxMassReclaim, self.MaxEnergyReclaim, self.TimeReclaim)
+
+        -- Figure out the health this wreck had before it was deleted. We can't use any native
+        -- functions like GetHealth(), so we use the latest known value
+
+        clone:SetHealth(nil, clone:GetMaxHealth() * (self.ReclaimLeft or 1))
+        clone:UpdateReclaimLeft()
+
+        return clone
+    end,
+
+    Rebuild = function(self, units)
+        local rebuilders = {}
+        local assisters = {}
+        local bpid = self.AssociatedBP
+
+        for _, u in units do
+            if u:CanBuild(bpid) then
+                table.insert(rebuilders, u)
+            else
+                table.insert(assisters, u)
+            end
+        end
+
+        if not rebuilders[1] then return end
+        local pos = self:GetPosition()
+        for _, u in rebuilders do
+            IssueBuildMobile({u}, pos, bpid, {})
+        end
+        if assisters[1] then
+            IssueGuard(assisters, pos)
+        end
+    end,
+}
+
+--- Create a wreckage prop.
+function CreateWreckage(bp, position, orientation, mass, energy, time)
+    local bpWreck = bp.Wreckage.Blueprint
+
+    local prop = CreateProp(position, bpWreck)
+    prop:SetOrientation(orientation, true)
+
+    prop:SetScale(bp.Display.UniformScale)
+    prop:SetPropCollision('Box', bp.CollisionOffsetX, bp.CollisionOffsetY, bp.CollisionOffsetZ, bp.SizeX * 0.5, bp.SizeY * 0.5, bp.SizeZ * 0.5)
+
+    prop:SetMaxHealth(bp.Defense.Health)
+    prop:SetHealth(nil, bp.Defense.Health * (bp.Wreckage.HealthMult or 1))
+    prop:SetMaxReclaimValues(time, mass, energy)
+
+    --FIXME: SetVizToNeurals('Intel') is correct here, so you can't see enemy wreckage appearing
+    -- under the fog. However the engine has a bug with prop intel that makes the wreckage
+    -- never appear at all, even when you drive up to it, so this is disabled for now.
+    --prop:SetVizToNeutrals('Intel')
+    if not bp.Wreckage.UseCustomMesh then
+        prop:SetMesh(bp.Display.MeshBlueprintWrecked)
+    end
+
+    -- This field cannot be renamed or the magical native code that detects rebuild bonuses breaks.
+    prop.AssociatedBP = bp.Wreckage.IdHook or bp.BlueprintId
+
+    return prop
+end
+
 }

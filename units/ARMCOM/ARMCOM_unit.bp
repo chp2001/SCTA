@@ -141,7 +141,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 500,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/units/ARMCOM/ARMCOM_normalsTS.dds'
                 },
             },
         },

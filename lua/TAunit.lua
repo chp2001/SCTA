@@ -6,7 +6,7 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local Game = import('/lua/game.lua')
 local util = import('/lua/utilities.lua')
 local debrisCat = import('/mods/SCTA-master/lua/TAdebrisCategories.lua')
-local WreckShield = import('/mods/SCTA-master/lua/TAshield.lua').WreckShield
+
 
 TAunit = Class(Unit) 
 {

@@ -1,5 +1,5 @@
 local Prop = import('/lua/sim/Prop.lua').Prop
-local WreckShield = import('/mods/SCTA-master/lua/TAshield.lua').WreckShield
+
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 TAWreckage = Class(Prop) {
@@ -20,13 +20,17 @@ TAWreckage = Class(Prop) {
     end,
 
     DoTakeDamage = function(self, instigator, amount, vector, damageType)
-        self:AdjustHealth(instigator, -amount)
-        local health = self:GetHealth()
-
-        if health <= 0 then
-            self:DoPropCallbacks('OnKilled')
-            self:Destroy()
-        else
+		local maxHealth = self:GetMaxHealth()
+		local preHealth = self:GetHealth()
+		self:AdjustHealth(instigator, -amount)
+		local health = self:GetHealth()
+		if health <= 0 and self.wreckageDead == false then
+			self.wreckageDead = true
+			TAutils.QueueDelayedWreckage(self, amount / maxHealth, self:GetBlueprint(), 1, self:GetPosition(), self:GetOrientation(), self:GetMaxHealth())
+            if not self:GetBlueprint().Wreckage then
+			end
+			self:Destroy()			
+		else
             self:UpdateReclaimLeft()
         end
     end,

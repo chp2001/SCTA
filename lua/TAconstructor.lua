@@ -189,8 +189,8 @@ TAconstructor = Class(TAWalking) {
 
 
 	OnStartReclaim = function(self, target)
-		self:SetReclaimTimeMultiplier(20)
-		self:SetBuildRate(self:GetBlueprint().Economy.BuildRate)
+		self:SetReclaimTimeMultiplier(1)
+		self:SetBuildRate(self:GetBlueprint().Economy.BuildRate * 0.3)
 		TAWalking.OnStartReclaim(self, target)
 		self.desiredTarget = target
 		if (self.currentState == "aimed") then

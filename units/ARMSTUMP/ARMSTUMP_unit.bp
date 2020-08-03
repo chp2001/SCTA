@@ -135,7 +135,7 @@ UnitBlueprint {
         UnitName = 'Stumpy',
     },
     Intel = {
-        VisionRadius = 16,
+        VisionRadius = 10,
     },
     Interface = {
         HelpText = 'Medium Assault Tank',

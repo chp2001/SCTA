@@ -47,6 +47,27 @@ ARMCOM = Class(TAconstructor) {
 		ForkThread(self.CloakDetection, self)
 	end,
 
+	OnStartCapture = function(self, target)
+		self:SetCaptureTimeMultiplier(1)
+		self:SetBuildRate(self:GetBlueprint().Economy.BuildRate * 0.4)
+		TAconstructor.OnStartCapture(self, target)
+		self.desiredTarget = target
+		if (self.currentState == "aimed") then
+			self.currentState = "opened"
+			self.desiredState = "aimed"
+		else
+			self.desiredState = "opened"
+		end
+		self:SetAllWeaponsEnabled(false)
+		self.isReclaiming = false
+		self.isBuilding = false
+		self.isCapturing = true
+		self.wantStopAnimation = false
+		if (self.animating == false) then
+			ForkThread(self.AnimationThread, self)
+		end
+	end,
+
 	CloakDetection = function(self)
 		while not IsDestroyed(self) and self:IsDead() do
 			WaitSeconds(1)

@@ -64,7 +64,7 @@ UnitBlueprint {
             '<LOC ability_radar>Radar',
         },
 	DestructionEffects = {
-		#DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate','CorBld','Runway','Circuits'},
+		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate','CorBld','Runway','Circuits'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {'pad','CORAAP'},
@@ -91,7 +91,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 500,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },

@@ -76,7 +76,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 500,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -159,12 +158,12 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'flarea',
+                        'flare',
                     },
                     RackBone = 'barrela',
                 },
             },
-            RackRecoilDistance = -3.65,
+            RackRecoilDistance = 0,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
@@ -179,8 +178,8 @@ UnitBlueprint {
                 'ALLUNITS'
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'flarea',
-            TurretBonePitch = 'sleevea',
+            TurretBoneMuzzle = 'flare',
+            TurretBonePitch = 'barrela',
             TurretBoneYaw = 'turreta',
             TurretDualManipulators = false,
             TurretPitch = 0,
@@ -207,7 +206,7 @@ UnitBlueprint {
             Damage = 60,
             DamageRadius = 0.25,
             DamageType = 'Normal',
-            DisplayName = 'CORE_LIGHTLASER',
+            DisplayName = 'CORE_LASERH1',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
             },
@@ -218,7 +217,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 62.5,
-            ProjectileId = '/mods/SCTA-master/projectiles/CORE_LIGHTLASER/CORE_LIGHTLASER_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORE_LASERH1/CORE_LASERH1_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -242,7 +241,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
             TurretBoneMuzzle = 'flareb',
-            TurretBonePitch = 'sleeveb',
+            TurretBonePitch = 'barrelb',
             TurretBoneYaw = 'turretb',
             TurretDualManipulators = false,
             TurretPitch = 0,
@@ -269,7 +268,7 @@ UnitBlueprint {
             Damage = 180,
             DamageRadius = 0.25,
             DamageType = 'Normal',
-            DisplayName = 'CORE_LASERH1',
+            DisplayName = 'CORE_LIGHTLASER',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
             },
@@ -280,7 +279,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 43.75,
-            ProjectileId = '/mods/SCTA-master/projectiles/CORE_LASERH1/CORE_LASERH1_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORE_LIGHTLASER/CORE_LIGHTLASER_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -292,7 +291,7 @@ UnitBlueprint {
                     MuzzleBones = {
                         'flarec2',
                     },
-                    RackBone = 'barrelc2',
+                    RackBone = 'barrelc1',
                 },
             },
             RackRecoilDistance = 0,
@@ -309,8 +308,8 @@ UnitBlueprint {
                 'ALLUNITS'
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'sleevec',
-            TurretBonePitch = 'sleevec',
+            TurretBoneMuzzle = 'flarec1',
+            TurretBonePitch = 'barrelc1',
             TurretBoneYaw = 'turretc',
             TurretDualManipulators = false,
             TurretPitch = 0,

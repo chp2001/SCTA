@@ -14,7 +14,6 @@ CORDOOM = Class(TAunit) {
 		TAunit.OnCreate(self)
 		self.Spinners = {
 			hatch = CreateRotator(self, 'hatch', 'z', nil, 0, 0, 0),
-			hatchb = CreateRotator(self, 'hatchb', 'y', nil, 0, 0, 0),
 		}
 		self.Sliders = {
 			hatch = CreateSlider(self, 'hatch'),
@@ -29,14 +28,10 @@ CORDOOM = Class(TAunit) {
 			turreta = CreateSlider(self, 'turreta'),
 			turretb = CreateSlider(self, 'turretb'),
 			turretc = CreateSlider(self, 'turretc'),
-			hatchb = CreateSlider(self, 'hatchb'),
-			hatchc = CreateSlider(self, 'hatchc'),
 			barrela = CreateSlider(self, 'barrela'),
 			barrelb = CreateSlider(self, 'barrelb'),
 			barrelc1 = CreateSlider(self, 'barrelc1'),
-			barrelc2 = CreateSlider(self, 'barrelc2'),
-			collarb = CreateSlider(self, 'collarb'),
-			sleevec = CreateSlider(self, 'sleevec'),
+
 		}
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
@@ -167,29 +162,6 @@ CORDOOM = Class(TAunit) {
 				self.unit.Sliders.turretc:SetGoal(0,2.65,0)
 				self.unit.Sliders.turretc:SetSpeed(3)
 
-				--SLEEP <673>;
-				WaitSeconds(0.7)
-
-				--MOVE hatchc to y-axis <1.70> SPEED <2.00>;
-				--MOVE hatchc to z-axis <-0.69> SPEED <1.00>;
-				self.unit.Sliders.hatchc:SetGoal(0,1.7,-0.69)
-				self.unit.Sliders.hatchc:SetSpeed(1.5)
-
-				--SLEEP <673>;
-				WaitSeconds(0.7)
-
-				--MOVE sleevec to z-axis <4.10> SPEED <6.00>;
-				self.unit.Sliders.sleevec:SetGoal(0,0,4.1)
-				self.unit.Sliders.sleevec:SetSpeed(6)
-
-				--MOVE hatchb to x-axis <2.95> SPEED <4.00>;
-				--MOVE hatchb to z-axis <-3.35> SPEED <4.00>;
-				self.unit.Sliders.hatchb:SetGoal(2.95,0,-3.35)
-				self.unit.Sliders.hatchb:SetSpeed(4)
-
-				--TURN hatchb to y-axis <-46.91> SPEED <68.70>;
-				self.unit.Spinners.hatchb:SetGoal(-47)
-				self.unit.Spinners.hatchb:SetSpeed(69)
 
 				--SLEEP <683>;
 				WaitSeconds(0.7)
@@ -197,14 +169,6 @@ CORDOOM = Class(TAunit) {
 				--MOVE barrelc1 to z-axis <3.15> SPEED <4.00>;
 				self.unit.Sliders.barrelc1:SetGoal(0,0,3.15)
 				self.unit.Sliders.barrelc1:SetSpeed(4)
-
-				--MOVE barrelc2 to z-axis <3.14> SPEED <4.00>;
-				self.unit.Sliders.barrelc2:SetGoal(0,0,3.15)
-				self.unit.Sliders.barrelc2:SetSpeed(4)
-
-				--MOVE collarb to z-axis <3.40> SPEED <4.00>;
-				self.unit.Sliders.collarb:SetGoal(0,0,3.4)
-				self.unit.Sliders.collarb:SetSpeed(4)
 
 				--SLEEP <683>;
 				WaitSeconds(0.7)
@@ -216,9 +180,6 @@ CORDOOM = Class(TAunit) {
 				--SLEEP <683>;
 				WaitSeconds(0.7)
 
-				--MOVE barrela to z-axis <3.64> SPEED <5.00>;
-				self.unit.Sliders.barrela:SetGoal(0,0,3.64)
-				self.unit.Sliders.barrela:SetSpeed(5)
 
 				--SLEEP <683>;
 				--SLEEP <43>;
@@ -250,37 +211,13 @@ CORDOOM = Class(TAunit) {
 				self.unit.Sliders.barrelc1:SetGoal(0,0,0)
 				self.unit.Sliders.barrelc1:SetSpeed(4)
 
-				--MOVE barrelc2 to z-axis <0> SPEED <4.00>;
-				self.unit.Sliders.barrelc2:SetGoal(0,0,0)
-				self.unit.Sliders.barrelc2:SetSpeed(4)
 
-				--MOVE collarb to z-axis <0> SPEED <4.00>;
-				self.unit.Sliders.collarb:SetGoal(0,0,0)
-				self.unit.Sliders.collarb:SetSpeed(4)
+
 
 				--SLEEP <681>;
 				WaitSeconds(0.7)
 
-				--MOVE sleevec to z-axis <0> SPEED <6.00>;
-				self.unit.Sliders.sleevec:SetGoal(0,0,0)
-				self.unit.Sliders.sleevec:SetSpeed(6)
 
-				--MOVE hatchb to x-axis <0> SPEED <4.00>;
-				--MOVE hatchb to z-axis <0> SPEED <4.00>;
-				self.unit.Sliders.hatchb:SetGoal(0,0,0)
-				self.unit.Sliders.hatchb:SetSpeed(4)
-
-				--TURN hatchb to y-axis <0> SPEED <68.90>;
-				self.unit.Spinners.hatchb:SetGoal(0)
-				self.unit.Spinners.hatchb:SetSpeed(69)
-
-				--SLEEP <681>;
-				WaitSeconds(0.7)
-
-				--MOVE hatchc to y-axis <0> SPEED <2.00>;
-				--MOVE hatchc to z-axis <0> SPEED <1.00>;
-				self.unit.Sliders.hatchc:SetGoal(0,0,0)
-				self.unit.Sliders.hatchc:SetSpeed(1.5)
 
 				--SLEEP <684>;
 				WaitSeconds(0.7)

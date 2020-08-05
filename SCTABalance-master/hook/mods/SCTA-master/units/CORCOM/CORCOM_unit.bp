@@ -4,6 +4,7 @@ UnitBlueprint {
         ArmorType = 'Commander',
         Health = 20000,
         MaxHealth = 20000,
+        RegenRate = 8,
     },
         Display = {
             Abilities = {

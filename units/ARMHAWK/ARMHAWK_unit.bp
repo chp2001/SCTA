@@ -161,7 +161,7 @@ UnitBlueprint {
     Intel = {
     VisionRadius = 22,
 	RadarStealth = true,
-	FreeIntel = true,
+	FreeIntel = false,
     },
     Interface = {
         HelpText = 'Stealth Fighter',

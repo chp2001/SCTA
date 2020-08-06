@@ -35,7 +35,6 @@ UnitBlueprint {
         'MOBILE',
 	'LAND',
 	'ANTIAIR',
-        'ARM',
         'CORE',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL2',

@@ -1,0 +1,256 @@
+#ARM Jeffy - Fast Attack Vehicle
+#CORMABM
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'VARMSEL',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StartMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'VARMMOVE',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StopMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'VARMSTOP',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED2',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 2,
+    Categories = {
+        'SELECTABLE',
+        'TECH2',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	'LAND',
+	'ANTIAIR',
+        'ARM',
+        'VEHICLE',
+	'LEVEL2',
+	'WEAPON',
+	'NOTAIR',
+	'NOTSUB',
+	'CTRL_W',
+    },
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 1400,
+        MaxHealth = 1400,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Missile Defense',
+    Display = {
+        Abilities = {
+        '<LOC ability_tacmissiledef>Tactical Missile Defense',
+        },
+        MovementEffects = {
+            Land = {
+                Treads = {
+                    ScrollMultiplier = 0.75,
+                    ScrollTreads = true,
+                    TreadMarks = {
+                        {
+                            TreadMarks = 'tank_treads_albedo',
+                            TreadMarksInterval = 0.2,
+                            TreadMarksSizeX = 1,
+                            TreadMarksSizeZ = 0.5,
+                            TreadOffset = {
+                                0,
+                                0,
+                                0,
+                            },
+                        },
+                    },
+                },
+            },
+        },
+	DestructionEffects = {
+		DefaultProjectileCategories = {'ArmCockpit'},
+		DestructionEmitters = {
+			{
+				EmitterBone = {0},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+				EmitterSize = 1.25,
+			},
+		},
+	},
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 120,
+                    Scrolling = true,
+                    ShaderName = 'Unit',
+                },
+                {
+                    LODCutoff = 500,
+                    ShaderName = 'Unit', 
+		            NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 6000,
+        BuildCostMass = 400,
+        BuildTime = 1465,
+    },
+    Footprint = {
+	MaxSlope = 1,
+	MaxWaterDepth = 0.75,
+        SizeX = 1,
+        SizeZ = 1,
+    },
+    General = {
+        Category = 'Utility',
+        Classification = 'RULEUC_MilitaryVehicle',
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'ARM',
+        TechLevel = 'RULEUTL_Basic',
+        UnitName = 'Scarab',
+    },
+    Intel = {
+        VisionRadius = 12, 
+    },
+    Interface = {
+        HelpText = 'Missile Defense Vehicle',
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        LayerChangeOffsetHeight = -2.00,
+	BackUpDistance = 0,
+	MaxSpeedReverse = 0,
+        MaxAcceleration = 1,
+        MaxBrake = 1,
+        MaxSpeed = 2,
+        MotionType = 'RULEUMT_Land',
+        TurnRate = 82,
+    },
+    SelectionSizeX = 1.25,
+    SelectionSizeZ = 1.25,
+    SelectionThickness = 0.25,
+    SizeX = 2,
+    SizeY = 1,
+    SizeZ = 2,
+    StrategicIconName = 'icon_land2_shield',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        {
+            AimsStraightOnDisable = false,
+            Audio = {
+                Fire = Sound {
+                    Bank = 'TA_Sound',
+                    Cue = 'ROCKHVY2',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+            Damage = 30,
+            DamageType = 'Normal',
+            DamageRadius = 2,
+            FiringRandomness = 0,
+            DisplayName = 'AAMWillOWisp',
+            Flare = {
+                Category = 'MISSILE',
+                Radius = 15,
+            },
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Water = 'Air',
+            },
+            Label = 'Turret01',
+            MaxRadius = 30,
+            FiringTolerance = 360,
+            MuzzleSalvoDelay = 0, 
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 20,
+            ProjectileId = '/mods/SCTA-master/projectiles/CORMABM_WEAPON/CORMABM_WEAPON_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.1,
+            ProjectilesPerOnFire = 1,
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'fire',
+                    },
+                    RackBone = 'box',
+                },
+            },
+            RackFireTogether = false,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 10,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RangeCategory = 'UWRC_Countermeasure',
+            RateOfFire = 1,
+            TargetCheckInterval = 0.5,
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictOnlyAllow = 'TACTICAL MISSILE',
+            TargetType = 'RULEWTT_Projectile',
+            EffectiveRadius = 10,
+            TrackingRadius = 5,
+            TurretBoneMuzzle = 'fire',
+            TurretBonePitch = 'box',
+            TurretBoneYaw = 'box',
+            TurretDualManipulators = false,
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 40,
+            TurretYaw = 0,
+            TurretYawRange = 0,
+            TurretYawSpeed = 0,
+            Turreted = true,
+            WeaponCategory = 'Defense',
+            WeaponRepackTimeout = 1,
+            WeaponUnpacks = true,
+        },
+        { #SMALL_UNITEX
+            Damage = 10,
+            DamageFriendly = true,
+            DamageRadius = 0.9375,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+        { #SMALL_UNIT
+            Damage = 10,
+            DamageRadius = 0.9375,
+            DummyWeapon = true,
+            Label = 'SuicideWeapon',
+        },
+    },
+    Wreckage = {
+	UseCustomMesh = true,
+        Blueprint = '/mods/SCTA-master/units/ARMSCAB/ARMSCAB_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+            Seabed = true,
+        },
+    },
+}

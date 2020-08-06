@@ -95,7 +95,6 @@ UnitBlueprint {
         BuildCostEnergy = 1209,
         BuildCostMass = 86,
         BuildTime = 4223,
-	MaintenanceConsumptionPerSecondEnergy = 3,
     },
     Footprint = {
 	SizeX = 3,
@@ -118,7 +117,7 @@ UnitBlueprint {
         UnitName = 'Informer',
     },
     Intel = {
-	FreeIntel = false,
+	FreeIntel = true,
         VisionRadius = 13,
 	    RadarRadius = 70,
     },

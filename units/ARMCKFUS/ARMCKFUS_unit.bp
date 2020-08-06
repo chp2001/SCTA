@@ -98,7 +98,7 @@ UnitBlueprint {
 	UnitName = 'Cloakable Fusion Reactor',
     },
     Intel = {
-        FreeIntel = true,
+        FreeIntel = false,
         VisionRadius = 13,
 	Cloak = true,
     },

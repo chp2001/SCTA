@@ -15,17 +15,12 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH3',
         'BENIGN',
-
-	
 	'STRUCTURE',
         'DEFENSE',
         'WALL',
 	'NOEXPLOSION',
 	'NOSMOKE',
-
-	
 	'ARM',
-    'CORE', -- in lieu of core walls
 	'METAL',
 	'LEVEL2',
 	'NOWEAPON',

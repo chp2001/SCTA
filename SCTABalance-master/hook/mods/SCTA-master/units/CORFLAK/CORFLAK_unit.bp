@@ -1,0 +1,6 @@
+UnitBlueprint {
+    Merge = true,
+    Economy = {
+        BuildTime = 19000,
+    },
+  }    

@@ -51,140 +51,6 @@ CORDOOM = Class(TAunit) {
 
 			PlayFxWeaponUnpackSequence = function(self)
 				self.unit.damageReduction = 1
-
-				#Altered to work in FA
-				--TURN hatch to z-axis <-31.58> SPEED <47.01>;
-				self.unit.Spinners.hatch:SetGoal(180)
-				self.unit.Spinners.hatch:SetSpeed(47)
-
-				--SLEEP <672>;
-				WaitSeconds(0.7)
-
-				#Altered to work in FA
-				--MOVE hatch to x-axis <3.20> SPEED <4.00>;
-				--MOVE hatch to y-axis <-3.65> SPEED <5.00>;
-				#self.unit.Sliders.hatch:SetGoal(0,-3.65,0)
-				#self.unit.Sliders.hatch:SetSpeed(4.5)
-
-				#Altered to work in FA
-				--TURN hatch to z-axis <-49.23> SPEED <26.23>;
-				self.unit.Spinners.hatch:SetGoal(229)
-				self.unit.Spinners.hatch:SetSpeed(26)
-
-				--SLEEP <673>;
-				WaitSeconds(0.7)
-
-				--MOVE shell4b to x-axis <-4.15> SPEED <6.00>;
-				self.unit.Sliders.shell4b:SetGoal(4,0,0)
-				self.unit.Sliders.shell4b:SetSpeed(6)
-
-				--MOVE shell3b to z-axis <-4.05> SPEED <6.00>;
-				self.unit.Sliders.shell3b:SetGoal(0,0,-4)
-				self.unit.Sliders.shell3b:SetSpeed(6)
-
-				--MOVE shell2b to x-axis <4.00> SPEED <5.00>;
-				self.unit.Sliders.shell2b:SetGoal(-4,0,0)
-				self.unit.Sliders.shell2b:SetSpeed(5)
-
-				--MOVE shell1b to z-axis <3.94> SPEED <5.00>;
-				self.unit.Sliders.shell1b:SetGoal(0,0,4)
-				self.unit.Sliders.shell1b:SetSpeed(5)
-
-				--SLEEP <673>;
-				WaitSeconds(0.7)
-
-				--MOVE shell1a to x-axis <3.30> SPEED <4.00>;
-				self.unit.Sliders.shell1a:SetGoal(-3.3,0,0)
-				self.unit.Sliders.shell1a:SetSpeed(4)
-
-				--MOVE shell2a to z-axis <-3.30> SPEED <4.00>;
-				self.unit.Sliders.shell2a:SetGoal(0,0,-3.3)
-				self.unit.Sliders.shell2a:SetSpeed(4)
-
-				--MOVE shell3a to x-axis <-3.30> SPEED <4.00>;
-				self.unit.Sliders.shell3a:SetGoal(3.3,0,0)
-				self.unit.Sliders.shell3a:SetSpeed(4)
-
-				--MOVE shell4a to z-axis <3.30> SPEED <4.00>;
-				self.unit.Sliders.shell4a:SetGoal(0,0,3.3)
-				self.unit.Sliders.shell4a:SetSpeed(4)
-
-				--SLEEP <663>;
-				WaitSeconds(0.7)
-
-				--MOVE shell1a to y-axis <-11.45> SPEED <17.00>;
-				self.unit.Sliders.shell1a:SetGoal(-3.3,-11.4,0)
-				self.unit.Sliders.shell1a:SetSpeed(17)
-
-				--MOVE shell2a to y-axis <-11.45> SPEED <17.00>;
-				self.unit.Sliders.shell2a:SetGoal(0,-11.4,-3.3)
-				self.unit.Sliders.shell2a:SetSpeed(17)
-
-				--MOVE shell3a to y-axis <-11.40> SPEED <16.00>;
-				self.unit.Sliders.shell3a:SetGoal(3.3,-11.4,0)
-				self.unit.Sliders.shell3a:SetSpeed(16)
-
-				--MOVE shell4a to y-axis <-11.40> SPEED <16.00>;
-				self.unit.Sliders.shell4a:SetGoal(0,-11.4,3.3)
-				self.unit.Sliders.shell4a:SetSpeed(16)
-
-				--SLEEP <673>;
-				--SLEEP <223>;
-				WaitSeconds(0.9)
-
-				--MOVE turreta to y-axis <4.30> SPEED <6.00>;
-				self.unit.Sliders.turreta:SetGoal(0,4.3,0)
-				self.unit.Sliders.turreta:SetSpeed(6)
-
-				--SLEEP <633>;
-				WaitSeconds(0.6)
-
-				--MOVE turreta to y-axis <8.85> SPEED <6.00>;
-				self.unit.Sliders.turreta:SetGoal(0,8.85,0)
-				self.unit.Sliders.turreta:SetSpeed(6)
-
-				--MOVE turretb to y-axis <4.45> SPEED <6.00>;
-				self.unit.Sliders.turretb:SetGoal(0,4.45,0)
-				self.unit.Sliders.turretb:SetSpeed(6)
-
-				--SLEEP <673>;
-				WaitSeconds(0.7)
-
-				--MOVE turreta to y-axis <11.54> SPEED <4.00>;
-				self.unit.Sliders.turreta:SetGoal(0,11.54,0)
-				self.unit.Sliders.turreta:SetSpeed(4)
-
-				--MOVE turretb to y-axis <7.10> SPEED <3.00>;
-				self.unit.Sliders.turretb:SetGoal(0,7.1,0)
-				self.unit.Sliders.turretb:SetSpeed(3)
-
-				--MOVE turretc to y-axis <2.65> SPEED <3.00>;
-				self.unit.Sliders.turretc:SetGoal(0,2.65,0)
-				self.unit.Sliders.turretc:SetSpeed(3)
-
-
-				--SLEEP <683>;
-				WaitSeconds(0.7)
-
-				--MOVE barrelc1 to z-axis <3.15> SPEED <4.00>;
-				self.unit.Sliders.barrelc1:SetGoal(0,0,3.15)
-				self.unit.Sliders.barrelc1:SetSpeed(4)
-
-				--SLEEP <683>;
-				WaitSeconds(0.7)
-
-				--MOVE barrelb to z-axis <3.50> SPEED <5.00>;
-				self.unit.Sliders.barrelb:SetGoal(0,0,3.5)
-				self.unit.Sliders.barrelb:SetSpeed(5)
-
-				--SLEEP <683>;
-				WaitSeconds(0.7)
-
-
-				--SLEEP <683>;
-				--SLEEP <43>;
-				WaitSeconds(0.7)
-
 				self.unit.unpacked = true
 				TAweapon.PlayFxWeaponUnpackSequence(self)
 			end,	
@@ -345,6 +211,8 @@ CORDOOM = Class(TAunit) {
 				TAweapon.PlayFxWeaponUnpackSequence(self)
                         end,
                 },
+	
+
 
 		CORE_LASERH1 = Class(TAweapon) {
 			PlayFxWeaponUnpackSequence = function(self)

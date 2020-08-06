@@ -111,7 +111,7 @@ ARMAH = Class(TAunit) {
 				--SLEEP <7>
 				TAweapon.PlayFxWeaponPackSequence(self)
 			end,
-},
+		},
 	},
 }
 

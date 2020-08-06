@@ -43,7 +43,6 @@ UnitBlueprint {
         'ECONOMIC',
 	'TEXTUREANIM',
 	'ARM',
-    'CORE', -- in lieu of core mmm
 	'ENERGY',
 	'LEVEL2',
 	'NOWEAPON',

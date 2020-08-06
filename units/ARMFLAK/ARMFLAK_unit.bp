@@ -31,7 +31,6 @@ UnitBlueprint {
 	'ANTIAIR',
         'OVERLAYANTIAIR',
 	'ARM',
-    'CORE', -- in lieu of core flakker
 	'LEVEL3',
 	'STRATEGIC',
 	'WEAPON',

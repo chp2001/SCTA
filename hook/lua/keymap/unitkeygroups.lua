@@ -2,6 +2,7 @@ TAunitkeygroups = {
     ["Experimental"]= {
         "corkrog",
         "armdrake",
+        "corbuzz",
         "armgant",
         "corgant",
         "armvulc",
@@ -46,6 +47,7 @@ TAunitkeygroups = {
         "armmakr",
         "armmmkr",
         "cormakr",
+        "cormmakr", 
     },
     ["Energy_Storage"]= {
         "armestor",
@@ -63,9 +65,11 @@ TAunitkeygroups = {
         "armrl",
         "corrl",
         "armflak",
+        "corflak",
     },
     ["Torpedo_Launcher"]= {
         "armatl",
+        "coratl",
         "armtl",
         "cortl",
     },
@@ -103,6 +107,7 @@ TAunitkeygroups = {
         "armdrag",
         "cordrag",
         "armfort",
+        "corfort",
     },
     ["Air_Staging"]= {
         "armasp",
@@ -121,11 +126,11 @@ TAunitkeygroups = {
         "armpeep",
         "corfink",
     },
-    ["T2_Mobile_Stealth_Field_System"] = {
-        'armaser',
-        'armjam',
-        'coreter',
-        'corspec',
+    ["T2_Mobile_Stealth_Field_System"]= {
+        "armaser",
+        "armjam",
+        "coreter",
+        "corspec",
     },
     ["T2_Gatling_Bot"] = {
         "corpyro",
@@ -247,6 +252,7 @@ TAunitkeygroups = {
         "armcroc",
         "corseal",
         "armamph",
+        "coramph",
     },
     ["T1_Assault_Bot"]= {
         "armwar",

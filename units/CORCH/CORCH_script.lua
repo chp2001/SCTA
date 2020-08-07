@@ -79,15 +79,15 @@ CORCH = Class(TAconstructor) {
 		local targetPosition = target:GetPosition()
 			
 		--TURN turret to y-axis buildheading SPEED <160.03>;
-		self.Spinners.turret:SetGoal(TAutils.GetAngle(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
-		self.Spinners.turret:SetSpeed(160.03)
-		WaitFor(self.Spinners.turret)
+		self.Spinners.nanogun:SetGoal(TAutils.GetAngle(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
+		self.Spinners.nanogun:SetSpeed(160.03)
+		WaitFor(self.Spinners.nanogun)
 
 		local distance = VDist2(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z)
-		selfPosition = self:GetPosition('nanogun') 
+		selfPosition = self:GetPosition('turret') 
 
-		self.Spinners.nanogun:SetGoal(-180 + TAutils.GetAngle(0, selfPosition.y, distance, targetPosition.y))
-		self.Spinners.nanogun:SetSpeed(45.01)
+		self.Spinners.turret:SetGoal(-180 + TAutils.GetAngle(0, selfPosition.y, distance, targetPosition.y))
+		self.Spinners.turret:SetSpeed(45.01)
 
 		WaitFor(self.Spinners.nanogun)
 		TAconstructor.Aim(self, target)

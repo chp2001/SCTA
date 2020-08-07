@@ -42,7 +42,7 @@ UnitBlueprint {
 	'NOTAIR',
 	'NOTSUB',
     },
-    CollisionOffsetY = -0,
+    CollisionOffsetY = -1,
     Defense = {
         AirThreatLevel = 0,
         EconomyThreatLevel = 5,
@@ -122,7 +122,7 @@ UnitBlueprint {
     Physics = {
         Elevation = -3,
         BuildOnLayerCaps = {
-            LAYER_Sub = true,
+            LAYER_Water = true,
         },
         SkirtSizeX = 4,
         SkirtSizeZ = 4,
@@ -150,11 +150,13 @@ UnitBlueprint {
             DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'ARMATL_TORPEDO',
+            ProjectileLifetime = 12,
+            ProjectilesPerOnFire = 1,
             FireTargetLayerCapsTable = {
-                Sub = 'Seabed|Sub|Water',
+                Water = 'Seabed|Sub|Water',
             },
             RangeCategory = 'UWRC_AntiNavy',
-	    FiringTolerance = 25,
+	    FiringTolerance = 60,
             Label = 'ARMATL_TORPEDO',
             MaxRadius = 40.625,
             MuzzleSalvoDelay = 0,
@@ -169,6 +171,7 @@ UnitBlueprint {
                     RackBone = 'launcher',
                 },
             },
+            TrackingRadius = 1.15,
             RackRecoilDistance = -5,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,

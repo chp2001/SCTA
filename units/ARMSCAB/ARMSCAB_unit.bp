@@ -60,7 +60,7 @@ UnitBlueprint {
         MovementEffects = {
             Land = {
                 Treads = {
-                    ScrollMultiplier = 0.75,
+                    ScrollMultiplier = 2,
                     ScrollTreads = true,
                     TreadMarks = {
                         {
@@ -99,7 +99,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 500,
                     ShaderName = 'Unit', 
-		            NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },

@@ -6,6 +6,8 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 2700,
+        BuildRate = 200,
+        BuildTime = 4000, 
         BuildableCategory = {
             'BUILTBYT1AIR CORE',
             'BUILTBYT2AIR CORE',

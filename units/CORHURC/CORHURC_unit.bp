@@ -196,7 +196,7 @@ UnitBlueprint {
             DamageFriendly = true,
             Damage = 380,
             NeedToComputeBombDrop = true,
-            BombDropThreshold = 1.5,		
+            BombDropThreshold = 3,		
             DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'CORADVBOMB',

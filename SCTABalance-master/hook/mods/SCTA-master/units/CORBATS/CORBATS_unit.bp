@@ -2,15 +2,15 @@ UnitBlueprint {
     Merge = true,
     Defense = {
         ArmorType = 'Normal',
-        Health = 20000,
-        MaxHealth = 20000,
+        Health = 25000,
+        MaxHealth = 25000,
     },
     Display = {
         UniformScale = 0.32,
     },
        Economy = {
-        BuildCostEnergy = 40000,
-        BuildCostMass = 8000,
+        BuildCostEnergy = 180000,
+        BuildCostMass = 18000,
         BuildTime = 80000,
         NaturalProducer = true,
         ProductionPerSecondEnergy = 0,

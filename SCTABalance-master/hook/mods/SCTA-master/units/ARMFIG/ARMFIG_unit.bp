@@ -9,6 +9,10 @@ UnitBlueprint {
         Health = 400,
         MaxHealth = 400,
     },
+    Economy = {
+        BuildCostEnergy = 6200,
+        BuildTime = 4500,
+    },
     SizeX = 4,
     SizeY = 2,
     SizeZ = 4,

@@ -21,6 +21,8 @@ UnitBlueprint {
           MaxHealth = 2000,
               },
     Economy = {
+      BuildCostMass = 600,
+        BuildCostEnergy = 21000,
         MaintenanceConsumptionPerSecondEnergy = 3,
         },
     General = {

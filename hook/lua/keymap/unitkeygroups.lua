@@ -233,12 +233,12 @@ TAunitkeygroups = {
         "coracsub",
     },
     ["T1_Frigate"]= {
-        "armpt",
-        "corpt",
-    },
-    ["T2_Destroyer"]= {
         "armroy",
         "corroy",
+    },
+    ["T2_Destroyer"]= {
+        "armcrus",
+        "corcrus",
     },
     ["T2_Cruiser"]= {
         "armmship",

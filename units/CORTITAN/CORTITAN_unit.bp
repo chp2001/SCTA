@@ -95,6 +95,7 @@ UnitBlueprint {
     Description = 'Torpedo Bomber',
     Display = {
         Abilities = {
+            '<LOC ability_sonar>Sonar',
             'Torpedo Bomber',
             'Anti-Sub',
         },
@@ -196,18 +197,17 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 780,
-            NeedToComputeBombDrop = true,
-            BombDropThreshold = 1.5,
             DamageRadius = 0.5,
             FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'CORAIR_TORPEDO',
+            EffectiveRadius = 19,
             FireTargetLayerCapsTable = {
                 Air = 'Water|Seabed|Sub|Seabed',
                 Land = 'Water|Seabed|Sub|Seabed',
             },
             RangeCategory = 'UWRC_AntiNavy',
-            FiringTolerance = 2,
+            FiringTolerance = 3,
 	    HeadingArcCenter = 0,
     	    HeadingArcRange = 16.5,
             Label = 'CORAIR_TORPEDO',
@@ -231,6 +231,7 @@ UnitBlueprint {
             RackSalvoSize = 1,
             RateOfFire = 0.11,
             TargetCheckInterval = 1,
+            WeaponCategory = 'Anti Navy',
             TargetPriorities = {
                 'ALLUNITS',
             },

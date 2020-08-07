@@ -26,10 +26,14 @@ Categories = {
         SizeX = 1,
         SizeZ = 1,
     },
+    Defense = {
+        Health = 450,
+        MaxHealth = 450,
+        },
     Economy = {
-        BuildCostEnergy = 2400,
-        BuildCostMass = 300,
-        BuildTime = 2605,
+        BuildCostEnergy = 20000,
+        BuildCostMass = 1800,
+        BuildTime = 15000,
         ProductionPerSecondMass = 3,
 	MaintenanceConsumptionPerSecondEnergy = 75,
     },

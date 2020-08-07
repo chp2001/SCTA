@@ -56,7 +56,9 @@ UnitBlueprint {
         RadarRadius = 30,
         FreeIntel = true,
         },
-    SizeX = 12,
-    SizeY = 5,
-    SizeZ = 12,
+        SelectionSizeX = 9.9,
+        SelectionSizeZ = 6.8,
+        SizeX = 12,
+        SizeY = 5,
+        SizeZ = 12,
 }

@@ -189,8 +189,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 150,
-            BombDropThreshold = 3,		
+            Damage = 140,
             DamageRadius = 1.75,
             DamageType = 'Normal',
             DisplayName = 'CORBOMB',
@@ -223,7 +222,7 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             NeedToComputeBombDrop = true,
             BombDropThreshold = 1.5,
-            RateOfFire = 0.1,
+            RateOfFire = 0.5,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',

@@ -50,8 +50,8 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Structure',
-        Health = 20000,
-        MaxHealth = 20000,
+        Health = 40000,
+        MaxHealth = 40000,
         AirThreatLevel = 0,
         EconomyThreatLevel = 11,
         SubThreatLevel = 0,
@@ -93,8 +93,8 @@ UnitBlueprint {
         UniformScale = 0.38,
     },
     Economy = {
-        BuildCostEnergy = 9574,
-        BuildCostMass = 6587, 
+        BuildCostEnergy = 20000,
+        BuildCostMass = 13000, 
         BuildTime = 41937,
         BuildRate = 200,
         BuildableCategory = {

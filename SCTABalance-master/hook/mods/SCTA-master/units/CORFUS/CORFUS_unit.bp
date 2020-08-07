@@ -44,4 +44,5 @@ UnitBlueprint {
         SkirtSizeX = 0,
         SkirtSizeZ = 0,
     },
+    StrategicIconName = 'icon_structure2_energy',
 }

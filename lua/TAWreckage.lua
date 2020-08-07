@@ -85,7 +85,7 @@ TAWreckage = Class(Prop) {
 }
 
 --- Create a wreckage prop.
-function CreateWreckage(bp, position, orientation, mass, energy, time)
+function CreateWreckage(bp, position, orientation, mass, energy, time) 
     local bpWreck = bp.Wreckage.Blueprint
 
     local prop = CreateProp(position, bpWreck)

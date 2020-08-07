@@ -1,0 +1,21 @@
+UnitBlueprint {
+    Merge = true, 
+    Footprint = {
+        MinWaterDepth = 3,
+        SizeX = 1,
+        SizeZ = 1,
+    },
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Water = true,
+        },
+        SkirtSizeX = 0,
+        SkirtSizeZ = 0,
+    },
+    SelectionSizeX = 2,
+    SelectionSizeZ = 2,
+    SelectionThickness = 0.5,
+    SizeX = 2,
+    SizeY = 1,
+    SizeZ = 2,
+}

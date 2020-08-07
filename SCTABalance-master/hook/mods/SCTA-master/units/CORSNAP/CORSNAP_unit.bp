@@ -1,0 +1,11 @@
+UnitBlueprint {
+    Merge = true,
+    Economy = {
+        BuildTime = 2400,
+    },
+    Footprint = {
+	MaxSlope = 1,
+        SizeX = 1,
+        SizeZ = 1,
+    },
+}

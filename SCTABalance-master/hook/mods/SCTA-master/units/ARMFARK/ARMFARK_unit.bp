@@ -5,7 +5,8 @@ UnitBlueprint {
         MaxHealth = 1200,
         },
     Economy = {
-    BuildCostEnergy = 2400,
+    BuildCostEnergy = 3800,
+    BuildRate = 360,
     MaxBuildDistance = 7,
 	ProductionPerSecondEnergy = 3,
 	ProductionPerSecondMass = 0,

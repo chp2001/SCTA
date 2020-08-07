@@ -1,0 +1,16 @@
+#ARM Wombat - Hovercraft Rocket Launcher
+#ARMMH
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Economy = {
+        BuildTime = 3000,
+    },
+    Footprint = {
+	MaxSlope = 1,
+        SizeX = 1,
+        SizeZ = 1,
+    },
+}

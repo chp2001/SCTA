@@ -10,6 +10,7 @@ UnitBlueprint {
             'BUILTBYT1SHIP CORE',
             'BUILTBYT2SUB CORE',
         },
+        BuildTime = 5000,
         MaxBuildDistance = 7,
         ProductionPerSecondEnergy = 2,
         ProductionPerSecondMass = 0,

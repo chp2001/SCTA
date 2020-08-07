@@ -101,6 +101,7 @@ UnitBlueprint {
         Abilities = {
             'Torpedo Bomber',
             'Anti-Sub',
+            '<LOC ability_sonar>Sonar',
         },
 	DestructionEffects = {
 		DefaultFlamingProjectileCountMin = 0,
@@ -200,8 +201,6 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 750,
-            NeedToComputeBombDrop = true,
-            BombDropThreshold = 1.5,
             DamageRadius = 0.5,
             FiringRandomness = 0,
             DamageType = 'Normal',
@@ -215,7 +214,9 @@ UnitBlueprint {
 	    HeadingArcCenter = 0,
     	    HeadingArcRange = 16.5,
             Label = 'ARMAIR_TORPEDO',
+            WeaponCategory = 'Anti Navy',
             MaxRadius = 40,
+            EffectiveRadius = 19,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 0, 	#100 - done in projectile

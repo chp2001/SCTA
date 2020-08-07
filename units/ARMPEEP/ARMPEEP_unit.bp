@@ -63,7 +63,7 @@ UnitBlueprint {
         TurnSpeed = 0.7,
         Winged = true,
     },
-    BuildIconSortPriority = 1,
+    BuildIconSortPriority = 2,
     Categories = {
         'SELECTABLE',
         'TECH1',

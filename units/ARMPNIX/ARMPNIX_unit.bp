@@ -93,7 +93,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 4,
     },
-    Description = 'Bomber',
+    Description = 'Strategic Bomber',
     Display = {
 	DestructionEffects = {
 		DefaultFlamingProjectileCountMin = 0,

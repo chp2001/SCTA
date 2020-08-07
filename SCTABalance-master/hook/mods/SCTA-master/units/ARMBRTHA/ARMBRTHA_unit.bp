@@ -28,5 +28,8 @@ UnitBlueprint {
     Display = {
         UniformScale = 0.25,
     },
+    Economy = {
+        BuildTime = 21000,
+    },
     StrategicIconName = 'icon_structure2_artillery',
 }

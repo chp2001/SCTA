@@ -6,6 +6,7 @@ UnitBlueprint {
         },
     Economy = {
         BuildCostEnergy = 1800,
+        BuildTime = 4000,
         ProductionPerSecondEnergy = 1,
         MaxBuildDistance = 6,
     },

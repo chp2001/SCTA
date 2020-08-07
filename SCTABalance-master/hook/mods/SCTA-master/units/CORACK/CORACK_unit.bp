@@ -5,7 +5,9 @@ UnitBlueprint {
         MaxHealth = 1000,
         },
     Economy = {
-        BuildCostEnergy = 2400,
+        BuildCostEnergy = 4800,
+        BuildTime = 6000,
+        BuildRate = 320,
         BuildableCategory = {
             'BUILTBYT1KBOT CORE',
             'BUILTBYT2KBOT CORE',

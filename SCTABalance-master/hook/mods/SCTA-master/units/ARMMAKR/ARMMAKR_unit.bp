@@ -22,14 +22,18 @@ UnitBlueprint {
 	'NOTSUB',
 	'STORAGE',
     },
+    Defense = {
+        Health = 400,
+        MaxHealth = 400,
+        },
     Footprint = {
         SizeX = 1,
         SizeZ = 1,
     },
     Economy = {
-        BuildCostEnergy = 2400,
-        BuildCostMass = 300,
-        BuildTime = 2605,
+        BuildCostEnergy = 18000,
+        BuildCostMass = 19000,
+        BuildTime = 15000,
         ProductionPerSecondMass = 3,
 	MaintenanceConsumptionPerSecondEnergy = 75,
     },

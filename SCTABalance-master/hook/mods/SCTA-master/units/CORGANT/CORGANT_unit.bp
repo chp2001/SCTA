@@ -22,8 +22,12 @@ UnitBlueprint {
         'CTRL_F',
     },
     Defense = {
-    Health = 24000,
-    MaxHealth = 24000,
+    Health = 48000,
+    MaxHealth = 48000,
+    },
+    Economy = {
+        BuildCostEnergy = 18000,
+        BuildCostMass = 11000, 
     },
         Display = {
         UniformScale = 0.38,

@@ -5,6 +5,10 @@ UnitBlueprint {
         SizeX = 1,
         SizeZ = 1,
     },
+    Defense = {
+        Health = 2000,
+        MaxHealth = 2000,
+    },
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Water = true,

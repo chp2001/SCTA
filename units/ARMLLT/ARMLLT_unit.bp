@@ -150,6 +150,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             EnergyRequired = 10,
+            EnergyDrainPerSecond = 0,
             Damage = 60,
             DamageRadius = 0.25,
             DamageType = 'Normal',
@@ -165,7 +166,6 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 56.25,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_LIGHTLASER/ARM_LIGHTLASER_proj.bp',
-            EnergyRequired = 10,
             RackBones = {
                 {
                     MuzzleBones = {

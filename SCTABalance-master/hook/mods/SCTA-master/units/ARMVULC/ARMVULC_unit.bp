@@ -52,6 +52,7 @@ UnitBlueprint {
             MuzzleVelocity = 50,
             EnergyChargeForFirstShot = false,
             EnergyRequired = 2000,
+            EnergyDrainPerSecond = 0,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMVULC_WEAPON/ARMVULC_WEAPON_proj.bp',
             RackBones = {
                 {

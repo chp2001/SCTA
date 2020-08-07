@@ -48,7 +48,7 @@ CORCOM = Class(TAconstructor) {
 
 	OnStartCapture = function(self, target)
 		self:SetCaptureTimeMultiplier(1)
-		self:SetBuildRate(self:GetBlueprint().Economy.BuildRate * 0.4)
+		self:SetBuildRate(self:GetBlueprint().Economy.BuildRate * 0.6)
 		TAconstructor.OnStartCapture(self, target)
 		self.desiredTarget = target
 		if (self.currentState == "aimed") then
@@ -60,6 +60,7 @@ CORCOM = Class(TAconstructor) {
 		self:SetAllWeaponsEnabled(false)
 		self.isReclaiming = false
 		self.isBuilding = false
+		self.cloakOn = false
 		self.isCapturing = true
 		self.wantStopAnimation = false
 		if (self.animating == false) then

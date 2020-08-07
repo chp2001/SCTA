@@ -190,7 +190,7 @@ TAconstructor = Class(TAWalking) {
 
 	OnStartReclaim = function(self, target)
 		self:SetReclaimTimeMultiplier(1)
-		self:SetBuildRate(self:GetBlueprint().Economy.BuildRate * 0.3)
+		self:SetBuildRate(self:GetBlueprint().Economy.BuildRate * 0.60)
 		TAWalking.OnStartReclaim(self, target)
 		self.desiredTarget = target
 		if (self.currentState == "aimed") then
@@ -202,6 +202,8 @@ TAconstructor = Class(TAWalking) {
 		self:SetAllWeaponsEnabled(false)
 		self.isReclaiming = true
 		self.isBuilding = false
+		self.cloakOn = false
+		self.isCapturing = false
 		self.wantStopAnimation = false
 		if (self.animating == false) then
 			ForkThread(self.AnimationThread, self)

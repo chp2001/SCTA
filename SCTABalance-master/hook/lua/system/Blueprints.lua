@@ -24,8 +24,8 @@ do
             Economy = {
                 BuildCostEnergy = 0.3,
                 BuildCostMass = 0.5,
-                BuildTime = 0.10,
-                BuildRate = 0.15,
+                BuildTime = 0.05,
+                BuildRate = 0.075,
                 MaintenanceConsumptionPerSecondEnergy = 3,
             },
             LifeBarHeight = 0.5,

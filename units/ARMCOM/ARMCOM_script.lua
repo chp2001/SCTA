@@ -49,7 +49,7 @@ ARMCOM = Class(TAconstructor) {
 
 	OnStartCapture = function(self, target)
 		self:SetCaptureTimeMultiplier(1)
-		self:SetBuildRate(self:GetBlueprint().Economy.BuildRate * 0.4)
+		self:SetBuildRate(self:GetBlueprint().Economy.BuildRate * 0.6)
 		TAconstructor.OnStartCapture(self, target)
 		self.desiredTarget = target
 		if (self.currentState == "aimed") then
@@ -61,6 +61,7 @@ ARMCOM = Class(TAconstructor) {
 		self:SetAllWeaponsEnabled(false)
 		self.isReclaiming = false
 		self.isBuilding = false
+		self.cloakOn = false
 		self.isCapturing = true
 		self.wantStopAnimation = false
 		if (self.animating == false) then
@@ -122,6 +123,7 @@ ARMCOM = Class(TAconstructor) {
 		ForkThread(self.GiveInitialResources, self)
 			self:SetScriptBit('RULEUTC_CloakToggle', true)
 	end,
+	
 	OnMotionHorzEventChange = function( self, new, old )
 		TAconstructor.OnMotionHorzEventChange(self, new, old)
 		if old == 'Stopped' then

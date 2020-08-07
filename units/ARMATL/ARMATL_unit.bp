@@ -12,7 +12,7 @@ UnitBlueprint {
         },
 	Destroyed = Sound {
             Bank = 'TA_Sound',
-            Cue = 'TORPADV1',
+            Cue = 'XPLOSML3',
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },

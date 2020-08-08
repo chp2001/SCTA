@@ -64,8 +64,7 @@ UnitBlueprint {
             },
         },
         SpawnRandomRotation = true,
-        UniformScale = 0.17,
-        AnimationOpen = '/mods/SCTA-master/units/MAS0001/MAS0001_LOD0unpack.sca',
+        UniformScale = 0.06,
     },
     Economy = {
         BuildCostEnergy = 1500,

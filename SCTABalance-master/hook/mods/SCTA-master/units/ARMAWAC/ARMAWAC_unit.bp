@@ -8,7 +8,7 @@ UnitBlueprint {
         BuildCostEnergy = 16000,
         BuildCostMass = 330,
         BuildTime = 2800,
-        MaintenanceConsumptionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 15,
     },
     General = {
         OrderOverrides = {
@@ -23,7 +23,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 15,
-	FreeIntel = true,
+	FreeIntel = false,
 	RadarRadius = 50, 
     },
 }

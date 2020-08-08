@@ -37,7 +37,7 @@ UnitBlueprint {
         BuildCostMass = 3000,
         BuildTime = 60000,
 	    NaturalProducer = true,
-        ProductionPerSecondEnergy = 700,
+        ProductionPerSecondEnergy = 500,
     },
     LifeBarSize = 4,
     Physics = {

@@ -124,7 +124,7 @@ CORCOM = Class(TAconstructor) {
 	        self:SetScriptBit('RULEUTC_CloakToggle', true)
 	end,
 
-	OnMotionHorzEventChange = function( self, new, old )
+	OnMotionHorzEventChange = function(self, new, old )
 		TAconstructor.OnMotionHorzEventChange(self, new, old)
 		if old == 'Stopped' then
 			self:SetConsumptionPerSecondEnergy(1000)

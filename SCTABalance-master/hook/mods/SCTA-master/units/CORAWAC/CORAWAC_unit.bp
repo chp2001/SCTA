@@ -8,7 +8,7 @@ UnitBlueprint {
         BuildCostEnergy = 15000,
         BuildCostMass = 320,
         BuildTime = 3000,
-        MaintenanceConsumptionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 15,
     },
     General = {
         OrderOverrides = {

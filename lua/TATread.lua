@@ -58,45 +58,6 @@ DestroyIdleEffects = function( self )
     EffectUtilities.CleanupEffectBag(self,'IdleEffectsBag')
 end,
 
-UpdateBeamExhaust = function( self, motionState )
-    local bpTable = self:GetBlueprint().Display.MovementEffects.BeamExhaust
-    if not bpTable then
-        return false
-    end
-
-    if motionState == 'Idle' then
-        if self.BeamExhaustCruise  then
-            self:DestroyBeamExhaust()
-        end
-        if self.BeamExhaustIdle and (table.getn(self.BeamExhaustEffectsBag) == 0) and (bpTable.Idle != false) then
-            self:CreateBeamExhaust( bpTable, self.BeamExhaustIdle )
-        end
-    elseif motionState == 'Cruise' then
-        if self.BeamExhaustIdle and self.BeamExhaustCruise then
-            self:DestroyBeamExhaust()
-        end
-        if self.BeamExhaustCruise and (bpTable.Cruise != false) then
-            self:CreateBeamExhaust( bpTable, self.BeamExhaustCruise )
-        end
-    elseif motionState == 'Landed' then
-        if not bpTable.Landed then
-            self:DestroyBeamExhaust()
-        end
-    end
-end,
-
-CreateBeamExhaust = function( self, bpTable, beamBP )
-    local effectBones = bpTable.Bones
-    if not effectBones or (effectBones and (table.getn(effectBones) == 0)) then
-        LOG('*WARNING: No beam exhaust effect bones defined for unit ',repr(self:GetUnitId()),', Effect Bones must be defined to play beam exhaust effects. Add these to the Display.MovementEffects.BeamExhaust.Bones table in unit blueprint.' )
-        return false
-    end
-    local army = self:GetArmy()
-    for kb, vb in effectBones do
-        table.insert( self.BeamExhaustEffectsBag, CreateBeamEmitterOnEntity(self, vb, army, beamBP ))
-    end
-end,
-
 
 CreateTreads = function(self, treads)
     if treads.ScrollTreads then

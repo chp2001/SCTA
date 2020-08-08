@@ -8,8 +8,6 @@ local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 ARMSOLAR = Class(TAunit) {
 	closeDueToDamage = false,
 	damageReduction = 1,
-
-	#must be a better way, but couldn't find it
 	productionIsActive = true,
 
 	OnCreate = function(self)

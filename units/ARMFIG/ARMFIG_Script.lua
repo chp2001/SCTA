@@ -103,7 +103,7 @@ ARMFIG = Class(TAair) {
 
 	Weapons = {
 		ARMVTOL_MISSILE = Class(TAweapon) {},
-		AUTO_ATTACK = Class(TAweapon) {},
+		
 	},
 }
 

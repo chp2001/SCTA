@@ -75,7 +75,7 @@ CORHURC = Class(TAair) {
 				TAair.ShowMuzzleFlare(self, 0.15)
 			end,
 		},
-		AUTO_ATTACK = Class(TAweapon) {},
+		
 	},
 }
 

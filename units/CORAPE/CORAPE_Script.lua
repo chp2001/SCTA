@@ -82,7 +82,7 @@ CORAPE = Class(TAair) {
 				self.unit.Spinners.gun2:SetSpeed(200)
 			end,
 		},
-		AUTO_ATTACK = Class(TAweapon) {},
+		
 	},
 }
 

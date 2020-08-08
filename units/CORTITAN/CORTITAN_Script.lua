@@ -51,7 +51,7 @@ CORTITAN = Class(TAair) {
 
 	Weapons = {
 		CORAIR_TORPEDO = Class(TAweapon) {},
-		AUTO_ATTACK = Class(TAweapon) {},
+		
 	},
 }
 

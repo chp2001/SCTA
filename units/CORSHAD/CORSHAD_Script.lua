@@ -52,7 +52,7 @@ CORSHAD = Class(TAair) {
 
 	Weapons = {
 		CORBOMB = Class(TAweapon) {},
-		AUTO_ATTACK = Class(TAweapon) {},
+		
 	},
 }
 

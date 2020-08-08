@@ -90,7 +90,6 @@ CORVAMP = Class(TAair) {
 	Weapons = {
 		CORVTOL_ADVMISSILE = Class(TAweapon) {},
 		CORVTOL_ADVMISSILE2 = Class(TAweapon) {},
-		AUTO_ATTACK = Class(TAweapon) {},
 	},
 }
 

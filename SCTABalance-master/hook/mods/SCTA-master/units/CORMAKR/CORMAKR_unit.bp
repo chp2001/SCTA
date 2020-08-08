@@ -27,8 +27,8 @@ Categories = {
         SizeZ = 1,
     },
     Defense = {
-        Health = 450,
-        MaxHealth = 450,
+        Health = 1500,
+        MaxHealth = 1500,
         },
     Economy = {
         BuildCostEnergy = 20000,

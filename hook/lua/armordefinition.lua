@@ -14,7 +14,7 @@ armordefinition = {
 
         # Armor Definition
         'Normal 1.0',
-        'AntiAir 1.0',
+        'AntiAir 0.5',
         'DGun 1.0',
     },
     {   # Armor Type Name

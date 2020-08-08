@@ -8,7 +8,8 @@
         MaxHealth = 300,
     },
   Economy = {
-        BuildCostEnergy = 700,
+        BuildCostMass = 140,
+        BuildCostEnergy = 3000,
     },
      Footprint = {
         SizeX = 1,

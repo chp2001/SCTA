@@ -1,11 +1,11 @@
 #ARM Scarab - Anti Missile
-#CORMABM
+#ARMSCAB
 #
-#Blueprint created by Raevn
+#Blueprint created by Dragun
 
-local TATreads = import('/mods/SCTA-master/lua/TATread.lua').TATreads
+local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 local AAMWillOWisp = import('/lua/aeonweapons.lua').AAMWillOWisp
-ARMSCAB = Class(TATreads) {
+ARMSCAB = Class(TAunit) {
 	Weapons = {
 			Turret01 = Class(AAMWillOWisp) {}
 	},

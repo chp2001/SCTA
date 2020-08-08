@@ -23,8 +23,8 @@ UnitBlueprint {
 	'STORAGE',
     },
     Defense = {
-        Health = 400,
-        MaxHealth = 400,
+        Health = 1400,
+        MaxHealth = 1400,
         },
     Footprint = {
         SizeX = 1,

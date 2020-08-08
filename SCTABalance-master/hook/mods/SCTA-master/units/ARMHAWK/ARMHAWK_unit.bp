@@ -17,12 +17,12 @@ UnitBlueprint {
                     },
               },
     Defense = {
-          Health = 2000,
-          MaxHealth = 2000,
+          Health = 2100,
+          MaxHealth = 2100,
               },
     Economy = {
-      BuildCostMass = 600,
-        BuildCostEnergy = 21000,
+      BuildCostMass = 480,
+        BuildCostEnergy = 66000,
         MaintenanceConsumptionPerSecondEnergy = 3,
         },
     General = {

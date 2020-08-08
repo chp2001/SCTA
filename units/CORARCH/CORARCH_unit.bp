@@ -1,4 +1,4 @@
-#ARM Archer - Anti-Air Ship
+#ARM Shredder - Anti-Air Ship
 #ARMAAS
 #
 #Blueprint created by Raevn
@@ -120,7 +120,7 @@ UnitBlueprint {
         },
         FactionName = 'CORE',
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = 'Archer',
+        UnitName = 'Shredder',
     },
     Intel = {
         VisionRadius = 10,

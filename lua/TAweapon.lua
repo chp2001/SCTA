@@ -13,7 +13,6 @@ TAweapon = Class(DefaultWeapon) {
     },
 
     OnCreate = function(self)
-
         DefaultWeapon.OnCreate(self)
 
         local bp = self:GetBlueprint()

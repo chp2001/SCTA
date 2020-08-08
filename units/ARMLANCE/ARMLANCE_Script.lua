@@ -82,7 +82,7 @@ ARMLANCE = Class(TAair) {
 
 	Weapons = {
 		ARMAIR_TORPEDO = Class(TAweapon) {},
-		AUTO_ATTACK = Class(TAweapon) {},
+		
 	},
 }
 

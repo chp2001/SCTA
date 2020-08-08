@@ -23,13 +23,6 @@ TAAirConstructor = Class(TAair) {
 	AnimationThread = function(self)
 		self.animating = true
 		while not IsDestroyed(self) and self.wantStopAnimation == false do
-			if(self.currentState == "rolloff") then
-				self.currentTarget = nil
-				self.countdown = self.countdown - 0.2
-				if (self.countdown <= 0) then
-					self.desiredState = "closed"
-				end
-			end
 			if (self.currentState ~= self.desiredState) then
 				if (self.currentState == "closed") then
 					#desiredState will only ever be "opened" from this state
@@ -48,24 +41,17 @@ TAAirConstructor = Class(TAair) {
 						if (self.currentTarget and not IsDestroyed(self.currentTarget)) then
 							self:StopSpin(self.currentTarget)
 						end
-						self:RollOff()
 						self.currentTarget = self.desiredTarget
 						self.currentState = "aimed"
 						if (self.currentTarget) then
 							self:Aim(self.currentTarget)
-						else
-							self.desiredState = "rolloff"
 						end
 						if (IsDestroyed(self.currentTarget) == false) then
-							if self.isFactory == true and IsDestroyed(self.currentTarget) == false then
-								local bone = self:GetBlueprint().Display.BuildAttachBone or 0
-								self.currentTarget:AttachBoneTo(-2, self, bone)
 							end
 							if self.hideUnit and IsDestroyed(self.currentTarget) == false  then
 								self.currentTarget:ShowBone(0, true)
 								#Need to Show Life Bar here once implemented
 							end
-
 							if (self.isBuilding == true) then
 								self.currentTarget:HideFlares()
 								self:SetBuildRate(self:GetBlueprint().Economy.BuildRate)
@@ -84,11 +70,6 @@ TAAirConstructor = Class(TAair) {
 						if (self.isBuilding == false and self.isReclaiming == false) then
 							self.wantStopAnimation = true
 						end
-					elseif (self.desiredState == "rolloff") then
-						self:StopSpin(self.currentTarget)
-						self:RollOff()
-						self.currentState = "rolloff"
-					end
 				end
 			end
 			WaitSeconds(0.2)
@@ -100,12 +81,6 @@ TAAirConstructor = Class(TAair) {
 
     OnKilled = function(self, instigator, type, overkillRatio)
         TAair.OnKilled(self, instigator, type, overkillRatio)
-        if self.isFactory then
-            if self.currentTarget and not self.currentTarget:IsDead() and self.currentTarget:GetFractionComplete() != 1 then
-                self.currentTarget:Kill()
-                self.currentTarget:Destroy()
-            end
-        end
     end,
 
 
@@ -164,20 +139,9 @@ TAAirConstructor = Class(TAair) {
     end,
 
 	OnFailedToBuild = function(self)
-        self.FactoryBuildFailed = true
 		TAair.OnFailedToBuild(self)
 		#WaitSeconds(1)
         ChangeState(self, self.IdleState)
-    end,
-
-
-	StopSpin = function(self, unitBeingBuilt)
-		if not IsDestroyed(self) and self.isFactory == true and unitBeingBuilt then
-			WaitSeconds(0.5)
-			if IsDestroyed(unitBeingBuilt) == false then
-            unitBeingBuilt:DetachFrom(true)
-		end
-	end
     end,
 
 
@@ -211,16 +175,6 @@ TAAirConstructor = Class(TAair) {
 		self:SetAllWeaponsEnabled(true)
 	end,
 
-	DelayedClose = function(self)
-		if self.isFactory then
-			# Wait until unit factory is clear to close
-				if self.isBuilding == true then
-					return
-				end
-			WaitSeconds(0.5)
-		end
-	end,
-
 	GetCloseArea = function(self)
 		local bp = self:GetBlueprint()
 		local pos = self:GetPosition(bp.Display.BuildAttachBone)
@@ -245,14 +199,6 @@ TAAirConstructor = Class(TAair) {
 		end
 		WaitSeconds(1)
 		return area
-	end,
-
-	RollOff = function(self)
-        if not IsDestroyed(self) and self.isFactory == true then
-            WaitSeconds(0.5)
-			self:SetBusy(false)
-			self:SetBlockCommandQueue(false)
-		end 
 	end,
 
 	Unpack = function(self)

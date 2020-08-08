@@ -51,7 +51,7 @@ ARMTHUND = Class(TAair) {
 
 	Weapons = {
 		ARMBOMB = Class(TAweapon) {},
-		AUTO_ATTACK = Class(TAweapon) {},
+		
 	},
 }
 

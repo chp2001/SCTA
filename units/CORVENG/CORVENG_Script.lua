@@ -58,7 +58,7 @@ CORVENG = Class(TAair) {
 
 	Weapons = {
 		CORVTOL_MISSILE = Class(TAweapon) {},
-		AUTO_ATTACK = Class(TAweapon) {},
+		
 	},
 }
 

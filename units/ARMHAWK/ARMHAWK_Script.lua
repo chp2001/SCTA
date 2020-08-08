@@ -44,7 +44,7 @@ ARMHAWK = Class(TAair) {
 	Weapons = {
 		ARMVTOL_ADVMISSILE = Class(TAweapon) {},
 		ARMVTOL_ADVMISSILE2 = Class(TAweapon) {},
-		AUTO_ATTACK = Class(TAweapon) {},
+		
 	},
 }
 

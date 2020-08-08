@@ -87,7 +87,7 @@ ARMBRAWL = Class(TAair) {
 
 	Weapons = {
 		VTOL_EMG = Class(TAweapon) {},
-		AUTO_ATTACK = Class(TAweapon) {},
+		
 	},
 }
 

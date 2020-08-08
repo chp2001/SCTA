@@ -12,6 +12,7 @@ UnitBlueprint {
   },  
       Economy = {
         BuildRate = 100,
+        BuildCostMass = 80,
         MaintenanceConsumptionPerSecondEnergy = 2,
         BuildableCategory = {
                'armmoho',

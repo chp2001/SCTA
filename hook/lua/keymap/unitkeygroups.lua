@@ -26,10 +26,12 @@ TAunitkeygroups = {
     ["Power_Generator"]= {
         "armfus",
         "armsolar",
+        "armwin",
         "armtide",
         "armckfus", 
         "corfus",
         "corsolar",
+        "corwin",
         "cortide",
         "corckfus", 
     },

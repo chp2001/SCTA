@@ -1,85 +1,93 @@
-#CORE Energy Storage - Increases Energy Storage
-#CORESTOR
+#ARM Wind Generator - Produces Energy
+#ARMWIN
 #
 #Blueprint created by Raevn
-
-
 UnitBlueprint {
-    Audio = {
-        UISelection = Sound {
+   Audio = {
+  UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'STORNGY2',
+            Cue = 'WINDGEN1',
             LodCutoff = 'UnitMove_LodCutoff',
         },
 	Destroyed = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLONUK3',
+            Cue = 'XPLOSML3',
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 11,
+    BuildIconSortPriority = 9,
     Categories = {
-        'BUILTBYT1AIR',
         'BUILTBYT1KBOT',
         'BUILTBYT1VEHICLE',
+        'BUILTBYT1AIR',
         'BUILTBYT1HOVER',
-        'BUILTBYT1SHIP',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-	'STRUCTURE',
-        'ENERGYSTORAGE',
+	    'STRUCTURE',
         'ECONOMIC',
-	'TEXTUREANIM',
-	'CORE',
-	'ENERGY',
-	'LEVEL1',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'STORAGE',
+	    'ENERGYPRODUCTION',
+	    'WIND',
+	    'ARM',
+	    'ENERGY',
+	    'LEVEL1',
+	    'NOWEAPON',
+	    'NOTAIR',
+	    'NOTSUB',
     },
     Defense = {
         ArmorType = 'Structure',
-        AirThreatLevel = 0,
-        EconomyThreatLevel = 2,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
-        Health = 1070,
-        MaxHealth = 1070,
+        Health = 176,
+        MaxHealth = 176,
     },
-    Description = 'Increases Energy Storage',
+    Description = 'Produces Energy',
     Display = {
 	DestructionEffects = {
+		DefaultProjectileCategories = {'CamoflageC'},
+		DestructionProjectiles = {
+			{
+				ProjectileBlueprint = '/mods/SCTA/effects/entities/Debris/Pieces/ARMWIN_debris01_proj.bp',
+				Bone = 'Blades',
+			},
+		},
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+				EmitterBlueprint = {'/mods/SCTA/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
+			},
+			{
+				EmitterBone = {'Blades','Turret'},
+				EmitterBlueprint = {
+    					'/mods/SCTA/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA/effects/emitters/terran_missile_hit_04_emit.bp',
+				},
+				EmitterSize = 0.35,
 			},
 		},
 	},
-	TextureAnimationFrames = 8,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 500,
-                    ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                    ShaderName = 'Unit',
+		    NormalsName = '/mods/SCTA/textures/common/normalsTS.dds'
                 },
             },
         },
         UniformScale = 0.16,
     },
     Economy = {
-        BuildCostEnergy = 2490,
-        BuildCostMass = 250,
-        BuildTime = 12750,
-        StorageEnergy = 3000,
+        BuildCostEnergy = 509,
+        BuildCostMass = 52,
+        BuildTime = 1603,
+	    NaturalProducer = false,
+        ProductionPerSecondEnergy = 20,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -87,19 +95,19 @@ UnitBlueprint {
         SizeZ = 4,
     },
     General = {
-	BuildAngle = 8196,
+	BuildAngle = 8192,
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,
-        FactionName = 'CORE',
+        FactionName = 'ARM',
         TechLevel = 'RULEUTL_Basic',
-        UnitName = 'Energy Storage',
+        UnitName = 'Wind Generator',
     },
     Intel = {
         VisionRadius = 13,
     },
     Interface = {
-        HelpText = 'Increases Energy Storage',
+        HelpText = 'Produces Energy',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -109,36 +117,36 @@ UnitBlueprint {
         SkirtSizeZ = 4, 
         BuildOnLayerCaps = {
             LAYER_Land = true,
-            LAYER_Seabed = true,
         },
     },
-    SelectionSizeX = 2.5,
-    SelectionSizeZ = 2.5,
+    SelectionCenterOffsetX = -0.4,
+    SelectionSizeX = 2.25,
+    SelectionSizeZ = 2.25,
     SelectionThickness = 0.25,
     SizeX = 4,
-    SizeY = 2.25,
+    SizeY = 6,
     SizeZ = 4,
     StrategicIconName = 'icon_structure1_energy',
     StrategicIconSortPriority = 0,
     Weapon = {
-        { #ESTOR_BUILDINGEX
-            Damage = 900,
+        { #SMALL_BUILDINGEX
+            Damage = 40,
             DamageFriendly = true,
-            DamageRadius = 4.6875,
+            DamageRadius = 6.406,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #CRAWL_BLASTSML
-            Damage = 1200,
-            DamageRadius = 8.59375,
+         { #SMALL_BUILDING
+            Damage = 50,
+            DamageRadius = 2,
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/CORESTOR/CORESTOR_dead_prop.bp',
+        Blueprint = '/mods/SCTA/units/ARMWIN/ARMWIN_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

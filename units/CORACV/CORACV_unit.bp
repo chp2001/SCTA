@@ -83,8 +83,8 @@ UnitBlueprint {
                         {
                             TreadMarks = 'tank_treads_albedo',
                             TreadMarksInterval = 0.2,
-                            TreadMarksSizeX = 0.5,
-                            TreadMarksSizeZ = 0.5,
+                            TreadMarksSizeX = 1,
+                            TreadMarksSizeZ = 1,
                             TreadOffset = {
                                 0,
                                 0,

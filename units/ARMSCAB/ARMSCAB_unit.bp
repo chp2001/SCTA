@@ -68,7 +68,7 @@ UnitBlueprint {
 		},
     },
     AnimationWalk = '/mods/SCTA-master/units/ARMSCAB/ARMSCAB_lod0_WALK.sca',
-    AnimationWalkRate = 0.2,
+    AnimationWalkRate = 1,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -122,7 +122,7 @@ UnitBlueprint {
 	MaxSpeedReverse = 0,
         MaxAcceleration = 1,
         MaxBrake = 1,
-        MaxSpeed = 2,
+        MaxSpeed = 1.2,
         MotionType = 'RULEUMT_Land',
         TurnRate = 82,
     },

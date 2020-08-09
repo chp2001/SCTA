@@ -66,7 +66,9 @@ UnitBlueprint {
 				EmitterSize = 1.25,
 			},
 		},
-	},
+    },
+    AnimationWalk = '/mods/SCTA-master/units/ARMSCAB/ARMSCAB_lod0_WALK.sca',
+    AnimationWalkRate = 0.2,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -200,9 +202,10 @@ UnitBlueprint {
             TurretYawSpeed = 0,
             Turreted = false,
             WeaponCategory = 'Defense',
-            --WeaponUnpackAnimation = '/mods/SCTA-master/units/ARMSCAB/ARMSCAB_lod0_unpack.sca',
-            --WeaponUnpackAnimationRate = 2,
-            WeaponRepackTimeout = 1,
+            WeaponUnpackLocksMotion = true,
+            WeaponUnpackAnimation = '/mods/SCTA-master/units/ARMSCAB/ARMSCAB_lod0_unpack.sca',
+            WeaponUnpackAnimationRate = 2,
+            WeaponRepackTimeout = 0.5,
             WeaponUnpacks = true,
         },
         { #SMALL_UNITEX

@@ -34,7 +34,7 @@ do
             Physics = {
                 MaxAcceleration = 1.0,
                 MaxSpeed = 1.2,
-                FuelRechargeRate = 0.0001,
+                FuelRechargeRate = 0.000005,
                 FuelUseTime = 0.0006,
                 SkirtSizeX = 1,
                 SkirtSizeZ = 1,

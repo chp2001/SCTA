@@ -32,7 +32,7 @@ UnitBlueprint {
     },
     Description = 'Perimeter Defence',
     Display = {
-        UniformScale = 0.16,
+        UniformScale = 0.08,
     },
     Economy = {
         BuildCostEnergy = 40,

@@ -3,9 +3,9 @@
 #
 #Blueprint created by Dragun
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
 local AAMWillOWisp = import('/lua/aeonweapons.lua').AAMWillOWisp
-ARMSCAB = Class(TAunit) {
+ARMSCAB = Class(TAWalking) {
 	Weapons = {
 			Turret01 = Class(AAMWillOWisp) {}
 	},

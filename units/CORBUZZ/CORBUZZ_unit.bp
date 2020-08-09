@@ -151,7 +151,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 50,
             EnergyChargeForFirstShot = false,
-            EnergyRequired = 2000,
+            EnergyRequired = 1000, --might be to high no rapids
             EnergyDrainPerSecond = 0,
             ProjectileId = '/mods/SCTA-master/projectiles/CORBUZZ_WEAPON/CORBUZZ_WEAPON_proj.bp',
                 RackBones = {
@@ -192,13 +192,13 @@ UnitBlueprint {
                         RackBone = 'muzzle6',
                     },
                 },
-            RackRecoilDistance = -10,
+            RackRecoilDistance = 0,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 6,
             RackSlavedToTurret = false,
-            RateOfFire = 6,
+            RateOfFire = 12,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

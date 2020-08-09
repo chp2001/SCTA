@@ -50,15 +50,6 @@ DestroyMovementEffects = function( self )
     end
 end,
 
-DestroyTopSpeedEffects = function( self )
-    EffectUtilities.CleanupEffectBag(self,'TopSpeedEffectsBag')
-end,
-
-DestroyIdleEffects = function( self )
-    EffectUtilities.CleanupEffectBag(self,'IdleEffectsBag')
-end,
-
-
 CreateTreads = function(self, treads)
     if treads.ScrollTreads then
         self:AddThreadScroller(1.0, treads.ScrollMultiplier or 0.2)

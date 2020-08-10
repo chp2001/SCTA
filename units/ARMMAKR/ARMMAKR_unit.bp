@@ -53,6 +53,7 @@ UnitBlueprint {
 	'NOTSUB',
 	'STORAGE',
     },
+    CollisionOffsetY = -1,
     Defense = {
         ArmorType = 'Structure',
         AirThreatLevel = 0,

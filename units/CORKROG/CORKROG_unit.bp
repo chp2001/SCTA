@@ -79,6 +79,8 @@ UnitBlueprint {
                 },
             },
         },
+        AnimationWalk = '/mods/SCTA-master/units/CORKROG/CORKROG_lod0_Walk.sca',
+        AnimationWalkRate = 0.6,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -206,12 +208,17 @@ UnitBlueprint {
             TurretBoneDualPitch = 'larm',
             TurretBoneYaw = 'torso',
             TurretDualManipulators = true,
-            TurretPitch = 90,
-            TurretPitchRange = 90,
+            TurretPitch = 0,
+            TurretPitchRange = 45,
             TurretPitchSpeed = 120,
             TurretYaw = 0,
             TurretYawRange = 360,
             TurretYawSpeed = 100,
+            WeaponUnpacks = true,
+            WeaponUnpackAnimation = '/mods/SCTA-master/units/CORKROG/CORKROG_lod_UNPACK.sca',
+            WeaponUnpackAnimationRate = 1,
+            WeaponUnpackTimeout = 1,
+			WeaponRepackTimeout = 1,
             Turreted = true,
         },
         {

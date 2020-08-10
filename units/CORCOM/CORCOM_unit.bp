@@ -258,9 +258,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 200,
+            Damage = 100,
             DamageRadius = 1,
-            DamageType = 'DGun',
+            DamageType = 'Normal',
             DisplayName = 'CORCOMLASER',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air|Seabed',
@@ -314,9 +314,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = true,
             DamageFriendly = true,
-            Damage = 500,
+            Damage = 50,
             DamageRadius = 1,
-            DamageType = 'Overcharge',
+            DamageType = 'DGun',
             DisplayName = 'CORE_DISINTEGRATOR',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
@@ -362,13 +362,6 @@ UnitBlueprint {
             OverChargeWeapon = true,
             UseFiringSolutionInsteadOfAimBone = true,
             ManualFire = true,
-        Overcharge = {
-            energyMult = 0.9,
-            commandDamage = 400,
-            structureDamage = 800,
-            maxDamage = 30000,
-            minDamage = 10000,
-            },
         },
         {
             Damage = 3000,

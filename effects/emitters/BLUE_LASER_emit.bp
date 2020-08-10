@@ -7,6 +7,6 @@ TrailEmitterBlueprint {
 	TextureRepeatRate = 1,
 	LODCutoff = 250,
 	RepeatTexture = [[/mods/SCTA-master/textures/particles/trail_laser.dds]],
-	RampTexture = [[/mods/SCTA-master/textures/particles/ramp_laser_purple.dds]],
+	RampTexture = [[/mods/SCTA-master/textures/particles/ramp_laser_blue.dds]],
 }
 

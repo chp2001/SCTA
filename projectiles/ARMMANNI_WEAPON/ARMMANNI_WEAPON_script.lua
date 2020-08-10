@@ -7,7 +7,7 @@ local TALaserProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TALa
 
 ARMMANNI_WEAPON = Class(TALaserProjectile) 
 {
-	PolyTrail = '/mods/SCTA-master/effects/emitters/PURPLE_LASER_emit.bp',
+	PolyTrail = '/mods/SCTA-master/effects/emitters/BLUE_LASER_emit.bp',
 }
 
 TypeClass = ARMMANNI_WEAPON

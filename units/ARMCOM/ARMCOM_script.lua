@@ -24,11 +24,11 @@ ARMCOM = Class(TAconstructor) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
 				TAconstructor.ShowMuzzleFlare(self, 0.1)
-				#self.unit:SetWeaponEnabledByLabel('ARMCOMLASER', true)
+				self.unit:SetWeaponEnabledByLabel('ARM_DISINTEGRATOR', true)
 			end,
 
 		        OnLostTarget = function(self)
-				#self.unit:SetWeaponEnabledByLabel('ARMCOMLASER', true)
+				self.unit:SetWeaponEnabledByLabel('ARM_DISINTEGRATOR', true)
 				TAweapon.OnLostTarget(self)
 		        end,
 		},

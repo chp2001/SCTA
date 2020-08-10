@@ -263,7 +263,7 @@ UnitBlueprint {
             DamageFriendly = true,
             Damage = 50,
             DamageRadius = 1,
-            DamageType = 'DGun',
+            DamageType = 'Normal',
             DisplayName = 'ARMCOMLASER',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air|Seabed',
@@ -317,9 +317,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 500,
+            Damage = 50,
             DamageRadius = 1,
-            DamageType = 'Overcharge',
+            DamageType = 'DGun',
             DisplayName = 'ARM_DISINTEGRATOR',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
@@ -364,13 +364,6 @@ UnitBlueprint {
             Turreted = true,
 	    OverChargeWeapon = true,
         ManualFire = true,
-        Overcharge = {
-            energyMult = 0.9,
-            commandDamage = 400,
-            structureDamage = 800,
-            maxDamage = 30000,
-            minDamage = 10000,
-          },
         },
         {
             Damage = 3000,

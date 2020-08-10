@@ -23,11 +23,11 @@ CORCOM = Class(TAconstructor) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
 				TAconstructor.ShowMuzzleFlare(self, 0.1)
-				#self.unit:SetWeaponEnabledByLabel('CORCOMLASER', true)
+				self.unit:SetWeaponEnabledByLabel('CORE_DISINTEGRATOR', true)
 			end,
 
 		        OnLostTarget = function(self)
-				#self.unit:SetWeaponEnabledByLabel('CORCOMLASER', true)
+				self.unit:SetWeaponEnabledByLabel('CORE_DISINTEGRATOR', true)
 				TAweapon.OnLostTarget(self)
 		        end,
 		},

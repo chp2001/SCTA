@@ -13,7 +13,6 @@ CORKROG = Class(TAunit) {
 		CORKROG_FIRE = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.15)
 			end,
 		},
 		CORKROG_HEAD = Class(TAweapon) {

@@ -3,11 +3,11 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
 local Projectile = import('/lua/sim/DefaultWeapons.lua').DefaultProjectileWeapon
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-CORKROG = Class(TAunit) {
+CORKROG = Class(TAWalking) {
 	
 	Weapons = {
 		CORKROG_FIRE = Class(TAweapon) {
@@ -18,7 +18,7 @@ CORKROG = Class(TAunit) {
 		CORKROG_HEAD = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.15)
+				TAWalking.ShowMuzzleFlare(self, 0.15)
 			end,
 		},
 		CORKROG_ROCKET = Class(TAweapon) {},

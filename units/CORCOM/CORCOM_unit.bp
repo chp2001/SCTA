@@ -134,7 +134,7 @@ UnitBlueprint {
         IconFadeInZoom = 130,
         LODs = {
             {
-                LODCutoff = 500,
+                LODCutoff = 100,
         SpecularName = '/mods/SCTA-master/units/CORCOM/CORCOM_SpecTeam.dds',
         AlbedoName = '/mods/SCTA-master/units/CORCOM/CORCOM_Albedo.dds',
                 ShaderName = 'Unit', 

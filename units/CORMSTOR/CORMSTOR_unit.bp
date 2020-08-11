@@ -96,7 +96,7 @@ UnitBlueprint {
         UnitName = 'Metal Storage',
     },
     Intel = {
-        VisionRadius = 13,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Increases Metal Storage',

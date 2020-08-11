@@ -142,7 +142,7 @@ UnitBlueprint {
 	UnitName = 'Shipyard',
     },
     Intel = {
-        VisionRadius = 13,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Produces Ships',

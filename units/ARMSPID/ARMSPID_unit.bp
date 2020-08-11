@@ -120,7 +120,7 @@ UnitBlueprint {
         UnitName = 'Spider',
     },
     Intel = {
-        VisionRadius = 13,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Spider Assault Vehicle',

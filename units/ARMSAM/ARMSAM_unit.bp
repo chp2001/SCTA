@@ -110,7 +110,7 @@ UnitBlueprint {
         UnitName = 'Samson',
     },
     Intel = {
-        VisionRadius = 15,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Mobile Missile Launcher',

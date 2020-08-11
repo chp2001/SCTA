@@ -126,7 +126,7 @@ UnitBlueprint {
         UnitName = 'Air Repair Pad',
     },
     Intel = {
-        VisionRadius = 11,
+        VisionRadius = 12,
     },
     Interface = {
         HelpText = 'Automatically repairs aircraft',

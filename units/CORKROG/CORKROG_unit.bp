@@ -237,8 +237,9 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'CORKROG_HEAD',
             EnergyChargeForFirstShot = false,
+            EnergyDrainPerSecond = 0,
             EnergyRequired = 3000,
-            EnergyDrainPerSecond = 5,
+            
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air|Seabed',
                 Seabed = 'Land|Water|Air|Seabed',

@@ -161,7 +161,7 @@ UnitBlueprint {
         UnitName = 'Construction Hovercraft',
     },
     Intel = {
-        VisionRadius = 17,
+        VisionRadius = 18,
     },
     Interface = {
         HelpText = 'Tech Level 1',

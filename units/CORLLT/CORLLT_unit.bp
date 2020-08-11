@@ -163,8 +163,9 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 50,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_LIGHTLASER/CORE_LIGHTLASER_proj.bp',
+            EnergyDrainPerSecond = 0,
             EnergyRequired = 10,
-            EnergyDrainPerSecond = 5,
+            
             RackBones = {
                 {
                     MuzzleBones = {

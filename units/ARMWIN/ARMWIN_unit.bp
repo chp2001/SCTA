@@ -106,7 +106,7 @@ UnitBlueprint {
         UnitName = 'Wind Generator',
     },
     Intel = {
-        VisionRadius = 13,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Produces Energy',

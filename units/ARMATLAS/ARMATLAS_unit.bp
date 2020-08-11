@@ -158,7 +158,7 @@ UnitBlueprint {
         UnitName = 'Atlas',
     },
     Intel = {
-        VisionRadius = 15,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Air Transport',

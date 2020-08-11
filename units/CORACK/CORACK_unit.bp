@@ -154,7 +154,7 @@ UnitBlueprint {
         UnitName = 'Construction Kbot',
     },
     Intel = {
-        VisionRadius = 13,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Tech Level 2',

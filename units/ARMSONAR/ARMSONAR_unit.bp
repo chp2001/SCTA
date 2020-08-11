@@ -115,9 +115,9 @@ UnitBlueprint {
     },
     Intel = {
 	FreeIntel = true,
-        VisionRadius = 11,
+        VisionRadius = 12,
 	SonarRadius = 74,
-	WaterVisionRadius = 11,
+	WaterVisionRadius = 12,
     },
     Interface = {
         HelpText = 'Locates Water Units',

@@ -22,7 +22,7 @@ UnitBlueprint {
     Intel = {
       FreeIntel = false,
       VisionRadius = 12,
-      WaterVisionRadius = 9,
+      WaterVisionRadius = 10,
       RadarRadius = 40,
 	    SonarRadius = 40,
       Cloak = true,

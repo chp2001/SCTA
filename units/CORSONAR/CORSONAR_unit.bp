@@ -112,9 +112,9 @@ UnitBlueprint {
     },
     Intel = {
 	FreeIntel = false,
-    VisionRadius = 11,
+    VisionRadius = 12,
 	SonarRadius = 76,
-	WaterVisionRadius = 11,
+	WaterVisionRadius = 12,
     },
     Interface = {
         HelpText = 'Sonar Station',

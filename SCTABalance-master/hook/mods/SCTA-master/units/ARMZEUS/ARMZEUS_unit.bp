@@ -1,0 +1,24 @@
+#ARM Zeus - Assault Kbot
+#ARMZEUS
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+   Merge = true, 
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 1500,
+        MaxHealth = 1500,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 5,
+    },
+    Footprint = {
+	SizeX = 1,
+	SizeZ = 1,
+    },
+    Intel = {
+        VisionRadius = 12,
+    },
+}

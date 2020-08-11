@@ -126,7 +126,7 @@ UnitBlueprint {
 	UnitName = 'Drake Gantry',
     },
     Intel = {
-        VisionRadius = 13,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Builds Drake',

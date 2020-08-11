@@ -100,7 +100,7 @@ UnitBlueprint {
         UnitName = 'A.K.',
     },
     Intel = {
-        VisionRadius = 17,
+        VisionRadius = 18,
     },
     Interface = {
         HelpText = 'Infantry Kbot',

@@ -24,13 +24,37 @@ ARMCOM = Class(TAconstructor) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
 				TAconstructor.ShowMuzzleFlare(self, 0.1)
-				self.unit:SetWeaponEnabledByLabel('ARM_DISINTEGRATOR', true)
+				self.unit:SetWeaponEnabledByLabel('ARM_DISINTEGRATOR', false)
+                self.AimControl:SetEnabled(false)
+                self.AimControl:SetPrecedence(0)
+				self.unit:SetOverchargePaused(false)
 			end,
 
+            OnEnableWeapon = function(self)
+                if self:BeenDestroyed() then return end
+                TAweapon.OnEnableWeapon(self)
+                self:SetWeaponEnabled(true)
+                self.unit:SetWeaponEnabledByLabel('ARM_DISINTEGRATOR', false)
+                self.unit:BuildManipulatorSetEnabled(false)
+                self.AimControl:SetEnabled(true)
+                self.AimControl:SetPrecedence(20)
+                self.unit.BuildArmManipulator:SetPrecedence(0)
+                self.AimControl:SetHeadingPitch( self.unit:GetWeaponManipulatorByLabel('ARM_DISINTEGRATOR'):GetHeadingPitch() )
+            end,
+
+
 		        OnLostTarget = function(self)
-				self.unit:SetWeaponEnabledByLabel('ARM_DISINTEGRATOR', true)
+				self.unit:SetWeaponEnabledByLabel('ARM_DISINTEGRATOR', false)
 				TAweapon.OnLostTarget(self)
-		        end,
+				end,
+				
+				PauseOvercharge = function(self)
+					if not self.unit:IsOverchargePaused() then
+						self.unit:SetOverchargePaused(true)
+						WaitSeconds(1/self:GetBlueprint().RateOfFire)
+						self.unit:SetOverchargePaused(false)
+					end
+				end,
 		},
 	},
 

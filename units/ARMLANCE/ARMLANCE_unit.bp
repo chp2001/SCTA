@@ -160,7 +160,7 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 22,
         SonarRadius = 30, 
-		WaterVisionRadius = 15,
+		WaterVisionRadius = 14,
     },
     Interface = {
         HelpText = 'Torpedo Bomber',

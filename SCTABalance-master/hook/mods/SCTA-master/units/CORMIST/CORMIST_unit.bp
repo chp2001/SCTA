@@ -1,0 +1,15 @@
+#CORE Slasher - Missile Launcher
+#CORMIST
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true, 
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
+    },
+    Intel = {
+        VisionRadius = 10,
+    },
+}

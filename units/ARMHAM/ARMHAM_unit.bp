@@ -212,8 +212,9 @@ UnitBlueprint {
 	        WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
             EnergyChargeForFirstShot = false,
+            EnergyDrainPerSecond = 0,
             EnergyRequired = 5,
-            EnergyDrainPerSecond = 5,
+            
         },
         { #BIG_UNITEX
             Damage = 50,

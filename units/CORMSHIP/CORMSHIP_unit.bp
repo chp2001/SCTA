@@ -130,7 +130,7 @@ UnitBlueprint {
     },
     Intel = {
 	FreeIntel = false, 
-        VisionRadius = 15,
+        VisionRadius = 14,
 	    RadarRadius = 78,
     },
     Interface = {
@@ -209,8 +209,9 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RateOfFire = 0.083,
             TargetCheckInterval = 1,
+            EnergyDrainPerSecond = 0,
             EnergyRequired = 5,
-            EnergyDrainPerSecond = 5,
+            
             TargetPriorities = {
                 'ALLUNITS',
             },

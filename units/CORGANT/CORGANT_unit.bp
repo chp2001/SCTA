@@ -129,7 +129,7 @@ UnitBlueprint {
 	UnitName = 'Krogoth Gantry',
     },
     Intel = {
-        VisionRadius = 13,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Builds Krogoth',

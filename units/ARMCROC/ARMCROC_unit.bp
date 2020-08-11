@@ -123,7 +123,7 @@ UnitBlueprint {
         UnitName = 'Triton',
     },
     Intel = {
-        VisionRadius = 15,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Amphibious Tank',

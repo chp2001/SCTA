@@ -116,7 +116,7 @@ UnitBlueprint {
         UnitName = 'Moho Mine',
     },
     Intel = {
-        VisionRadius = 13,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Advanced Metal Extractor',

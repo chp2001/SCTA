@@ -104,7 +104,7 @@ UnitBlueprint {
         UnitName = 'Instigator',
     },
     Intel = {
-        VisionRadius = 13,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Assault Tank',

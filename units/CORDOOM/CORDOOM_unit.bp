@@ -172,8 +172,9 @@ UnitBlueprint {
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
             EnergyChargeForFirstShot = false,
+            EnergyDrainPerSecond = 0,
             EnergyRequired = 800,
-            EnergyDrainPerSecond = 5,
+            
             RateOfFire = 0.125,
             TargetCheckInterval = 1,
             TargetPriorities = {
@@ -235,8 +236,9 @@ UnitBlueprint {
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
             EnergyChargeForFirstShot = false,
+            EnergyDrainPerSecond = 0,
             EnergyRequired = 50,
-            EnergyDrainPerSecond = 5,
+            
             RateOfFire = 1.92,
             TargetCheckInterval = 1,
             TargetPriorities = {
@@ -304,8 +306,9 @@ UnitBlueprint {
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
             EnergyChargeForFirstShot = false,
+            EnergyDrainPerSecond = 0,
             EnergyRequired = 10,
-            EnergyDrainPerSecond = 5,
+            
             RateOfFire = 1.04,
             TargetCheckInterval = 1,
             TargetPriorities = {

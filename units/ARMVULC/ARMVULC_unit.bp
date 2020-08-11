@@ -104,7 +104,7 @@ UnitBlueprint {
         UnitName = 'Vulcan',
     },
     Intel = {
-        VisionRadius = 13,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Rapid Fire Plasma Cannon',
@@ -156,8 +156,9 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 50,
             EnergyChargeForFirstShot = false,
+            EnergyDrainPerSecond = 0,
             EnergyRequired = 2000,
-            EnergyDrainPerSecond = 5,
+            
             ProjectileId = '/mods/SCTA-master/projectiles/ARMVULC_WEAPON/ARMVULC_WEAPON_proj.bp',
             RackBones = {
                 {

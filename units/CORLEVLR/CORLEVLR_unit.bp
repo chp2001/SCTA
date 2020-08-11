@@ -194,8 +194,9 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 20,
             Turreted = true,
+            EnergyDrainPerSecond = 0,
             EnergyRequired = 5,
-            EnergyDrainPerSecond = 5,
+            
         },
         { #MEDIUM_UNITEX #Does not exist, values guessed
             Damage = 40,

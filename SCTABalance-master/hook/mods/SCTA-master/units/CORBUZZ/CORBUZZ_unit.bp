@@ -51,8 +51,9 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 50,
             EnergyChargeForFirstShot = false,
+            EnergyDrainPerSecond = 0,
             EnergyRequired = 2000,
-            EnergyDrainPerSecond = 5,
+            
             ProjectileId = '/mods/SCTA-master/projectiles/CORBUZZ_WEAPON/CORBUZZ_WEAPON_proj.bp',
             RackBones = {
                 {

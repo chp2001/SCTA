@@ -7,7 +7,7 @@ UnitBlueprint {
         BuildCostMass = 80,
     },
     Intel = {
-        VisionRadius = 9,
+        VisionRadius = 10,
     },
     Defense = {
         Health = 140,

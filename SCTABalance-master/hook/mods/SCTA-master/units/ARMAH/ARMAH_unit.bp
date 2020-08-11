@@ -1,0 +1,19 @@
+#ARM Swatter - Anti-Air Hovercraft
+#ARMAH
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+   Merge = true,
+    Defense = {
+        Health = 800,
+        MaxHealth = 800,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
+    },
+    Intel = {
+        VisionRadius = 14,
+    },
+}

@@ -205,8 +205,9 @@ UnitBlueprint {
             Turreted = true,
             WeaponCategory = 'Artillery',
             EnergyChargeForFirstShot = false,
+            EnergyDrainPerSecond = 0,
             EnergyRequired = 20,
-            EnergyDrainPerSecond = 5,
+            
         },
         { #BIG_UNITEX
             Damage = 50,

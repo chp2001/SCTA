@@ -33,7 +33,7 @@ UnitBlueprint {
         Min = 18,
     },
     JammerBlips = 8,
-    VisionRadius = 15,
+    VisionRadius = 14,
 	RadarStealthFieldRadius = 0,
     },
 }

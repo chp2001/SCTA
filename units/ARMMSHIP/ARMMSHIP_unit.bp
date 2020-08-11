@@ -130,7 +130,7 @@ UnitBlueprint {
         UnitName = 'Ranger',
     },
     Intel = {
-        VisionRadius = 15,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Missile Ship',
@@ -214,8 +214,9 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
 	    WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
+            EnergyDrainPerSecond = 0,
             EnergyRequired = 5,
-            EnergyDrainPerSecond = 5,
+            
         },
         {
             Audio = {

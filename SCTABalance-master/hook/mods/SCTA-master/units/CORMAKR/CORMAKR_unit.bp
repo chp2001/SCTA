@@ -36,6 +36,9 @@ Categories = {
         BuildTime = 15000,
         ProductionPerSecondMass = 3,
 	MaintenanceConsumptionPerSecondEnergy = 75,
+    },   
+     Intel = {
+        VisionRadius = 0,
     },
       Physics = {
         SkirtSizeX = 1, 

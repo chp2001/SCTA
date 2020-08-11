@@ -147,7 +147,7 @@ TAAirConstructor = Class(TAair) {
 
 	OnStartReclaim = function(self, target)
 		self:SetReclaimTimeMultiplier(1)
-		self:SetBuildRate(self:GetBlueprint().Economy.BuildRate * 0.3)
+		self:SetBuildRate(self:GetBlueprint().Economy.BuildRate)
 		TAair.OnStartReclaim(self, target)
 		self.desiredTarget = target
 		if (self.currentState == "aimed") then

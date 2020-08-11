@@ -7,7 +7,7 @@ MeshBlueprint {
             NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds',
             SpecularName = 'CORMINE2_Specteam.dds',
             ShaderName = 'CommandFeedback', -- TACloak
-            LODCutoff = 500,
+            LODCutoff = 100,
         },
     },
 }

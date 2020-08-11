@@ -4,6 +4,9 @@ UnitBlueprint {
         Health = 420,
         MaxHealth = 420,
     },
+    Intel = {
+        VisionRadius = 12,
+        }, 
     Economy = {
         BuildCostEnergy = 6800,
         BuildTime = 4500,

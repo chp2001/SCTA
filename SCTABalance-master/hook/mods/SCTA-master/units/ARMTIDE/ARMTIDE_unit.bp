@@ -10,7 +10,6 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 1500,
-        ProductionPerSecondEnergy = 15,
 	    NaturalProducer = true,
     },
     Footprint = {

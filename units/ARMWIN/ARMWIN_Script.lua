@@ -3,25 +3,26 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAWin = import('/mods/SCTA-master/lua/TAWin.lua').TAWin
 
-ARMWIN = Class(TAunit) {
-	OnCreate = function(self)
-		TAunit.OnCreate(self)
+ARMWIN = Class(TAWin) {
+	OnCreate = function(self,builder,layer)
+		TAWin.OnCreate(self,builder,layer)
+		self:SetProductionPerSecondEnergy(0)
 		self.Spinners = {
-			blades = CreateRotator(self, 'Blades', 'z', nil, 0, 0, 0),
-			post = CreateRotator(self, 'Turret', 'y', nil, 0, 0, 0),
-		}
-		self.Trash:Add(self.Spinners.blades)
+		   --CreateRotator(Win, bone, axis, [goal], [speed], [accel], [goalspeed])
+		   blades = CreateRotator(self, 'Blades', 'z', nil, 0, 0, 0),
+		   post = CreateRotator(self, 'Turret', 'y', nil, 0, 0, 0),
+	   }
+	   	self.Trash:Add(self.Spinners.blades)
 		self.Trash:Add(self.Spinners.post)
 	end,
 
-	OnStopBeingBuilt = function(self, builder, layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
-		self.Spinners.post:SetSpeed(40)
-		self.Spinners.blades:SetSpeed(60)
+	OnStopBeingBuilt = function(self,builder,layer)
+		TAWin.OnStopBeingBuilt(self,builder,layer)
+		self.Spinners.post:SetSpeed(35)
+		self.Spinners.blades:SetSpeed(50)
 	end,
-
 }
 
 TypeClass = ARMWIN

@@ -131,7 +131,7 @@ UnitBlueprint {
         UnitName = 'Weasel',
     },
     Intel = {
-        VisionRadius = 19, 
+        VisionRadius = 18, 
     },
     Interface = {
         HelpText = 'Scout',

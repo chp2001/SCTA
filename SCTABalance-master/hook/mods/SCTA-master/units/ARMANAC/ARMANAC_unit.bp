@@ -3,6 +3,9 @@ UnitBlueprint {
     Economy = {
         BuildTime = 2400,
     },
+    Intel = {
+        VisionRadius = 10,
+    },
     Footprint = {
 	MaxSlope = 1,
         SizeX = 1,

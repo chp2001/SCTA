@@ -226,8 +226,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
+            EnergyDrainPerSecond = 10,
             EnergyRequired = 10,
-            EnergyDrainPerSecond = 5,
+            
             Damage = 60,
             DamageRadius = 0.25,
             DamageType = 'Normal',
@@ -244,8 +245,9 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 56.25,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_LIGHTLASER/ARM_LIGHTLASER_proj.bp',
+            EnergyDrainPerSecond = 10,
             EnergyRequired = 10,
-            EnergyDrainPerSecond = 5,
+            
             RackBones = {
                 {
                     MuzzleBones = {

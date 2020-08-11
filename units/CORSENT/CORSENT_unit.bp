@@ -108,7 +108,7 @@ UnitBlueprint {
         UnitName = 'Copperhead',
     },
     Intel = {
-        VisionRadius = 19,
+        VisionRadius = 18,
     },
     Interface = {
         HelpText = 'Mobile Flak Vehicle',

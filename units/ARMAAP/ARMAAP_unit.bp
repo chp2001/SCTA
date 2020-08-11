@@ -147,7 +147,7 @@ UnitBlueprint {
 	UnitName = 'Adv. Aircraft Plant',
     },
     Intel = {
-    VisionRadius = 15,
+    VisionRadius = 14,
 	RadarRadius = 30,
 	FreeIntel = true,
     },

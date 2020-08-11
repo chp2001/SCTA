@@ -108,7 +108,7 @@ UnitBlueprint {
         UnitName = 'Big Bertha',
     },
     Intel = {
-        VisionRadius = 13,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Long Range Plasma Cannon',
@@ -160,8 +160,9 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 50,
             EnergyChargeForFirstShot = false,
+            EnergyDrainPerSecond = 0,
             EnergyRequired = 1500,
-            EnergyDrainPerSecond = 5,
+            
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_BERTHACANNON/ARM_BERTHACANNON_proj.bp',
             RackBones = {
                 {

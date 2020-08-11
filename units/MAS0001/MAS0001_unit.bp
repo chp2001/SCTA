@@ -108,7 +108,7 @@ UnitBlueprint {
         UnitWeight = 1,
     },
     Intel = {
-        VisionRadius = 5,
+        VisionRadius = 6,
     },
     Interface = {
         HelpText = '<LOC urb5101_help>Gateway',

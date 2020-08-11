@@ -99,7 +99,7 @@ UnitBlueprint {
     },
     Intel = {
         FreeIntel = false,
-        VisionRadius = 13,
+        VisionRadius = 14,
 	Cloak = true,
     },
     Interface = {

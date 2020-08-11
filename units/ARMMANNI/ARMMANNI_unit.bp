@@ -160,8 +160,9 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'ARMMANNI_WEAPON',
             EnergyChargeForFirstShot = false,
+            EnergyDrainPerSecond = 0,
             EnergyRequired = 500,
-            EnergyDrainPerSecond = 5,
+            
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Seabed = 'Land|Water|Seabed',

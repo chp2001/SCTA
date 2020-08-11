@@ -104,7 +104,7 @@ UnitBlueprint {
         UnitName = 'Ambusher',
     },
     Intel = {
-        VisionRadius = 15,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Pop-up Heavy Cannon',

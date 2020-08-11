@@ -50,9 +50,9 @@ Footprint = {
 Physics = {
     SkirtSizeX = 1, 
     SkirtSizeZ = 1,  
-    BuildOnLayerCaps = {
-        LAYER_Land = true,
-    },
   },
+  Intel = {
+    VisionRadius = 12,
+},
   StrategicIconName = 'icon_structure1_antiair',
 }

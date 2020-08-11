@@ -118,7 +118,7 @@ UnitBlueprint {
         UnitName = 'Reaper',
     },
     Intel = {
-        VisionRadius = 15,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Heavy Assault Tank',

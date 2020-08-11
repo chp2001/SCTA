@@ -117,7 +117,7 @@ UnitBlueprint {
         UnitName = 'Goliath',
     },
     Intel = {
-        VisionRadius = 13,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Very Heavy Assault Tank',

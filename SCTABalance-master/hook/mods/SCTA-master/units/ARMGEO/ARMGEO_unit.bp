@@ -11,6 +11,9 @@ UnitBlueprint {
         SizeX = 3,
         SizeZ = 3,
     },
+    Intel = {
+        VisionRadius = 0,
+    },
     Economy = {
         BuildCostEnergy = 2200,
         BuildCostMass = 520,

@@ -106,7 +106,7 @@ UnitBlueprint {
         UnitName = 'Warrior',
     },
     Intel = {
-        VisionRadius = 15,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Medium Infantry Kbot',

@@ -100,7 +100,7 @@ UnitBlueprint {
         UnitName = 'Precision Mine',
     },
     Intel = {
-        VisionRadius = 3,
+        VisionRadius = 4,
     },
     Interface = {
         HelpText = 'High Damage, Small Range Mine',

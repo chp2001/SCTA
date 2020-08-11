@@ -115,7 +115,7 @@ UnitBlueprint {
         UnitName = 'Thud',
     },
     Intel = {
-        VisionRadius = 15,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Artillery Kbot',
@@ -210,8 +210,9 @@ UnitBlueprint {
             Turreted = true,
             WeaponCategory = 'Artillery',
             EnergyChargeForFirstShot = false,
+            EnergyDrainPerSecond = 10,
             EnergyRequired = 10,
-            EnergyDrainPerSecond = 5,
+            
         },
         { #BIG_UNITEX
             Damage = 50,

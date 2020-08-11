@@ -98,7 +98,7 @@ UnitBlueprint {
 	UnitName = 'Geothermal Powerplant',
     },
     Intel = {
-        VisionRadius = 13,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Produces Energy',

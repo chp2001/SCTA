@@ -130,8 +130,8 @@ UnitBlueprint {
         UnitName = 'Enforcer',
     },
     Intel = {
-        VisionRadius = 21, 
-        WaterVisionRadius = 19, 
+        VisionRadius = 20, 
+        WaterVisionRadius = 18, 
 	SonarRadius = 19,
     },
     Interface = {

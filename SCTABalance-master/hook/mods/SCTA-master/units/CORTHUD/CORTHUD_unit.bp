@@ -5,6 +5,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     Intel = {
-        VisionRadius = 7,
+        VisionRadius = 12,
     },
 }

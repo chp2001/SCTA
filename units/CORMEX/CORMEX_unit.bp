@@ -128,7 +128,7 @@ UnitBlueprint {
         UnitName = 'Metal Extractor',
     },
     Intel = {
-        VisionRadius = 13,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Extracts Metal',

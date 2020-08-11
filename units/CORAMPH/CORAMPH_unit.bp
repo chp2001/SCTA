@@ -179,8 +179,9 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 56.25,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_LASERH1/CORE_LASERH1_proj.bp',
+            EnergyDrainPerSecond = 0,
             EnergyRequired = 100,
-            EnergyDrainPerSecond = 5,
+            
             RackBones = {
                 {
                     MuzzleBones = {

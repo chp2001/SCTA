@@ -179,8 +179,9 @@ UnitBlueprint {
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
             EnergyChargeForFirstShot = false,
+            EnergyDrainPerSecond = 0,
             EnergyRequired = 2000,
-            EnergyDrainPerSecond = 5,
+            
             RateOfFire = 0.2,
             TargetCheckInterval = 1,
             TargetPriorities = {

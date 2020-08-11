@@ -164,8 +164,9 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 50,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_LASERH1/ARM_LASERH1_proj.bp',
+            EnergyDrainPerSecond = 0,
             EnergyRequired = 75,
-            EnergyDrainPerSecond = 5,
+            
             ProjectileLifetime = 1,
             RackBones = {
                 {

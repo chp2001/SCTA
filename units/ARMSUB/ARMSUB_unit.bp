@@ -123,8 +123,8 @@ UnitBlueprint {
     Intel = {
 	FreeIntel = true,
         SonarRadius = 25,
-        VisionRadius = 7,
-        WaterVisionRadius = 7,
+        VisionRadius = 12,
+        WaterVisionRadius = 12,
     },
     Interface = {
         HelpText = 'Submarine',

@@ -108,7 +108,7 @@ UnitBlueprint {
         UnitName = 'Moho Metal Maker',
     },
     Intel = {
-        VisionRadius = 13,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Converts Energy into Metal',

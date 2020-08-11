@@ -135,7 +135,7 @@ UnitBlueprint {
         UnitName = 'Jeffy',
     },
     Intel = {
-        VisionRadius = 19, 
+        VisionRadius = 18, 
     },
     Interface = {
         HelpText = 'Fast Attack Vehicle',

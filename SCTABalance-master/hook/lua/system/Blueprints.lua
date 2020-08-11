@@ -18,7 +18,7 @@ do
                 UniformScale = 0.5,
             },
             Intel = {
-                VisionRadius = 2, 
+                VisionRadius = 1.5, 
                 WaterVisionRadius = 3,
                 },
             Economy = {

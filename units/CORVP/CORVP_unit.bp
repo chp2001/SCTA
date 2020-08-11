@@ -134,7 +134,7 @@ UnitBlueprint {
 	UnitName = 'Vehicle Plant',
     },
     Intel = {
-        VisionRadius = 13,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Produces Vehicles',

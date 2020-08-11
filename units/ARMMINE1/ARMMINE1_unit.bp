@@ -100,7 +100,7 @@ UnitBlueprint {
         UnitName = 'Tiny',
     },
     Intel = {
-        VisionRadius = 3,
+        VisionRadius = 4,
     },
     Interface = {
         HelpText = 'Low Damage, Med. Range Mine',

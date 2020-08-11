@@ -205,7 +205,7 @@ UnitBlueprint {
             TurretYawSpeed = 180,
             Turreted = true,
             EnergyRequired = 5,
-            EnergyDrainPerSecond = 0,
+            EnergyDrainPerSecond = 5,
         },
         { #BIG_UNITEX
             Damage = 50,

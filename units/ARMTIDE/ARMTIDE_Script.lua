@@ -3,11 +3,11 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TATidal = import('/mods/SCTA-master/lua/TATidal.lua').TATidal
 
-ARMTIDE = Class(TAunit) {
+ARMTIDE = Class(TATidal) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TATidal.OnCreate(self)
 		self.Spinners = {
 			wheel = CreateRotator(self, 'Turbine', 'y', nil, 0, 0, 0),
 		}
@@ -15,8 +15,7 @@ ARMTIDE = Class(TAunit) {
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
-
+		TATidal.OnStopBeingBuilt(self,builder,layer)
 		--SPIN wheel around y-axis SPEED <35.00>
 		self.Spinners.wheel:SetSpeed(35)
 	end,
@@ -25,7 +24,7 @@ ARMTIDE = Class(TAunit) {
 
 	OnKilled = function(self, instigator, type, overkillRatio)
 		self.Spinners.wheel:SetSpeed(0)
-		TAunit.OnKilled(self, instigator, type, overkillRatio)
+		TATidal.OnKilled(self, instigator, type, overkillRatio)
 	end,
 }
 

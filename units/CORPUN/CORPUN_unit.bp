@@ -157,7 +157,7 @@ UnitBlueprint {
             MuzzleVelocity = 21.875,
             EnergyChargeForFirstShot = false,
             EnergyRequired = 750,
-            EnergyDrainPerSecond = 0,
+            EnergyDrainPerSecond = 5,
             ProjectileId = '/mods/SCTA-master/projectiles/CORFIXED_GUN/CORFIXED_GUN_proj.bp',
             RackBones = {
                 {

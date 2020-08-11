@@ -214,9 +214,8 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
 	    WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
-            EnergyDrainPerSecond = 0,
+            EnergyDrainPerSecond = 5,
             EnergyRequired = 5,
-            
         },
         {
             Audio = {

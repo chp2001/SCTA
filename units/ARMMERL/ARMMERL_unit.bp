@@ -173,7 +173,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 0,
-            EnergyDrainPerSecond = 0,
+            EnergyDrainPerSecond = 5,
             EnergyRequired = 5,
             
             ProjectileId = '/mods/SCTA-master/projectiles/ARMTRUCK_ROCKET/ARMTRUCK_ROCKET_proj.bp',

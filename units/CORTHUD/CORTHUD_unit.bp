@@ -210,7 +210,7 @@ UnitBlueprint {
             Turreted = true,
             WeaponCategory = 'Artillery',
             EnergyChargeForFirstShot = false,
-            EnergyDrainPerSecond = 0,
+            EnergyDrainPerSecond = 10,
             EnergyRequired = 10,
             
         },

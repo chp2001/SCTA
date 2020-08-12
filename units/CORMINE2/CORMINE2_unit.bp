@@ -119,7 +119,6 @@ UnitBlueprint {
     StrategicIconName = 'icon_land1_bomb', --'icon_structure2_bomb',
     StrategicIconSortPriority = 0,
     Weapon = {
---[[
         {
             Audio = {
                 Fire = Sound {
@@ -179,10 +178,11 @@ UnitBlueprint {
         { #ARMMINE2
             Damage = 600,
             DamageRadius = 12.5,
+            DamageFriendly = true,
             DummyWeapon = true,
+            DamageType = 'Normal',
 	    EdgeEffectiveness = 0.05,
             Label = 'SuicideWeapon',
         },
---]]
     },
 }

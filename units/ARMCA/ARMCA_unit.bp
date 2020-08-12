@@ -207,8 +207,10 @@ UnitBlueprint {
         },
         { #SMALL_UNIT
             Damage = 10,
-            DamageRadius = 0.9375,
+                       DamageFriendly = true,
+            DamageRadius = 1,
             DummyWeapon = true,
+            DamageType = 'Normal',
             Label = 'SuicideWeapon',
         },
     },

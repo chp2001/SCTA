@@ -189,8 +189,10 @@ UnitBlueprint {
         },
         { #ATOMIC_BLAST
             Damage = 2000,
-            DamageRadius = 16.125, 					#TO DO (damage tapering)
+            DamageFriendly = true,
+            DamageRadius = 16,
             DummyWeapon = true,
+            DamageType = 'Normal',
             Label = 'SuicideWeapon',
         },
     },

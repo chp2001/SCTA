@@ -197,8 +197,10 @@ UnitBlueprint {
         },
         { #LARGE_BUILDING
             Damage = 1800,
-            DamageRadius = 12.5,
+            DamageFriendly = true,
+            DamageRadius = 13,
             DummyWeapon = true,
+            DamageType = 'Normal',
             Label = 'SuicideWeapon',
         },
     },

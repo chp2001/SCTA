@@ -220,8 +220,21 @@ TAunit = Class(Unit)
 	end,
 
 	OnKilled = function(self, instigator, type, overkillRatio)
-        Unit.OnKilled(self, instigator, type, overkillRatio)
-    end,
+		local bp = self:GetBlueprint()
+		if self:GetFractionComplete() == 1 then
+			for k, weapon in bp.Weapon do
+				#Self Destruct
+				if ((self == instigator and weapon.Label == 'SuicideWeapon') or (self != instigator and weapon.Label == 'DeathWeapon') and type ~= "Reclaimed")then
+					TAutils.DoTaperedAreaDamage(self, self:GetPosition(), weapon.DamageRadius, weapon.Damage, nil, nil, 'Normal', true, false, weapon.EdgeEffectiveness)
+					if (self == instigator and weapon.Label == 'SuicideWeapon') then
+						self:CreateDebrisProjectiles()
+						self.Suicide = true
+					end
+				end
+			end
+		end
+		Unit.OnKilled(self, instigator, type, overkillRatio)
+	end,
 
 	CreateWreckage = function( self, overkillRatio )
 

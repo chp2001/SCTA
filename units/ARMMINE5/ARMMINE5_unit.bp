@@ -178,7 +178,9 @@ UnitBlueprint {
         { #ARMMINE5
             Damage = 2000,
             DamageRadius = 8.125,
+            DamageFriendly = true,
             DummyWeapon = true,
+            DamageType = 'Normal',
 	    EdgeEffectiveness = 0.1,
             Label = 'SuicideWeapon',
         },

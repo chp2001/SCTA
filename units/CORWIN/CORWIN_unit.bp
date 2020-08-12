@@ -49,7 +49,7 @@ UnitBlueprint {
 		#DefaultProjectileCategories = {'CamoflageC'},
 		DestructionProjectiles = {
 			{
-				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMWIN_debris01_proj.bp',
+				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/CORWIN_debris01_proj.bp',
 				Bone = 'fan',
 			},
 		},

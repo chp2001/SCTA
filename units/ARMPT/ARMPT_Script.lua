@@ -11,7 +11,7 @@ ARMPT = Class(TAunit) {
 		ARMPT_LASER = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.15)
+				
 			end,
 		},
 		ARMKBOT_MISSILE = Class(TAweapon) {},

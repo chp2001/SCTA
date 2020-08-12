@@ -12,7 +12,6 @@ CORFAV = Class(TATreads) {
 		CORE_LASER = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TATreads.ShowMuzzleFlare(self, 0.15)
 			end,
 		},
 	},

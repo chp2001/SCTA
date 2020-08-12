@@ -11,7 +11,7 @@ ARMBRTHA = Class(TAunit) {
 		ARM_BERTHACANNON = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.25)
+				
 			end,
 		},
 	},

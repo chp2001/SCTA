@@ -24,7 +24,7 @@ CORHLT = Class(TAunit) {
 		{
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.15)
+				
 				self.unit.currentBarrel = self.unit.currentBarrel + 1
 				if self.unit.currentBarrel == 3 then
 					self.unit.currentBarrel = 0

@@ -12,7 +12,7 @@ CORGOL = Class(TAunit) {
 		COR_GOL = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.15)
+				
 			end,
 		},
 	},

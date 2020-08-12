@@ -13,7 +13,7 @@ ARMDECOM = Class(TAconstructor) {
 		ARMCOMLASER = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAconstructor.ShowMuzzleFlare(self, 0.1)
+				
 			end,
 		},
 	},

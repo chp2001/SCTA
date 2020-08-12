@@ -11,7 +11,7 @@ ARMFLASH = Class(TAunit) {
 		EMG = Class(Projectile) {
 			OnWeaponFired = function(self)
 				Projectile.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.15)
+				
 			end,
 		},
 	},

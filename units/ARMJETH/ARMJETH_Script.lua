@@ -25,7 +25,7 @@ ARMJETH = Class(TAunit) {
 		ARMKBOT_MISSILE = Class(TAweapon) {
 
 			OnWeaponFired = function(self)
-				TAunit.ShowMuzzleFlare(self, 0.15)
+				
 				TAweapon.OnWeaponFired(self)
 			end,
 

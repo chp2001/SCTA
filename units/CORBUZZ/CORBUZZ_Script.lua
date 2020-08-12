@@ -18,7 +18,7 @@ CORBUZZ = Class(TAunit) {
 		CORBUZZ_WEAPON = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.25)
+				
 				self.unit.currentBarrel = self.unit.currentBarrel + 1
 				if self.unit.currentBarrel == 6 then
 					self.unit.currentBarrel = 0

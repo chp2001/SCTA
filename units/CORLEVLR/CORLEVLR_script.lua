@@ -12,7 +12,7 @@ CORLEVLR = Class(TAunit) {
 		CORLEVLR_WEAPON = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.15)
+				
 			end,
 		},
 	},

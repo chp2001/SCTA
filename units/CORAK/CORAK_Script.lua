@@ -12,7 +12,7 @@ CORAK = Class(TAWalking) {
 		CORE_LASER = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAWalking.ShowMuzzleFlare(self, 0.1)
+				
 			end,
 		},
 	},

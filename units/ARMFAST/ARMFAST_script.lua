@@ -22,7 +22,7 @@ ARMFAST = Class(TAunit) {
 		ARM_FAST = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.1)
+				
 				ForkThread(self.RecoilThread,self)
 			end,
 

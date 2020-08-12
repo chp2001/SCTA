@@ -1,15 +1,15 @@
 
-local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
+local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstructor
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
-CORDECOM = Class(TAWalking) {
+CORDECOM = Class(TAconstructor) {
 
 	Weapons = {
 		CORCOMLASER = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAWalking.ShowMuzzleFlare(self, 0.1)
+				
 			end,
 		},
 	},
@@ -22,7 +22,7 @@ CORDECOM = Class(TAWalking) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
-		TAWalking.OnCreate(self)
+		TAconstructor.OnCreate(self)
 	end,
 
 
@@ -44,7 +44,7 @@ CORDECOM = Class(TAWalking) {
 
 		WaitFor(self.Spinners.Torso)
 		WaitFor(self.Spinners.Nanogun)
-		TAWalking.Aim(self, target)
+		TAconstructor.Aim(self, target)
 	end,
 
 
@@ -58,7 +58,7 @@ CORDECOM = Class(TAWalking) {
 		WaitFor(self.Spinners.Torso)
 		WaitFor(self.Spinners.Nanogun)
 
-		TAWalking.Close(self)
+		TAconstructor.Close(self)
 	end,
 }
 

@@ -12,7 +12,7 @@ PropBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 100,
+                    LODCutoff = 150,
 		    NormalName = '/mods/SCTA-master/units/ARMDRAG/ARMDRAG_dead_NormalsTS.dds',
 		    SpecularName = '/mods/SCTA-master/units/ARMDRAG/ARMDRAG_dead_SpecTeam.dds',
 		    AlbedoName = '/mods/SCTA-master/units/ARMDRAG/ARMDRAG_dead_Albedo.dds',

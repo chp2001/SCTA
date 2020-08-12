@@ -62,7 +62,7 @@ UnitBlueprint {
                     MeshName = '/units/URB2301/URB2301_lod0.scm',
                     NormalsName = '/units/URB2301/URB2301_normalsTS.dds',
                     AlbedoName = '/units/URB2301/URB2301_albedo.dds',
-                    LODCutoff = 100,
+                    LODCutoff = 150,
                     ShaderName = 'Insect',
                     SpecularName = '/units/URB2301/URB2301_specteam.dds',
                 },

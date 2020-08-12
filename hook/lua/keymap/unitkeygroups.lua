@@ -178,6 +178,7 @@ TAunitkeygroups = {
     ["T1_Mobile_Light_Artillery"]= {
         "armham",
         "corthud",
+        "corlevlr",
     },
     ["T1_Mobile_Anti_Air_Gun"]= {
         "armsam",

@@ -140,8 +140,10 @@ UnitBlueprint {
         },
          { #SMALL_BUILDING
             Damage = 50,
+            DamageFriendly = true,
             DamageRadius = 2,
             DummyWeapon = true,
+            DamageType = 'Normal',
             Label = 'SuicideWeapon',
         },
     },

@@ -210,8 +210,10 @@ UnitBlueprint {
         },
          { #MEDIUM_BUILDING
             Damage = 100,
+            DamageFriendly = true,
             DamageRadius = 5,
             DummyWeapon = true,
+            DamageType = 'Normal',
             Label = 'SuicideWeapon',
         },
     },

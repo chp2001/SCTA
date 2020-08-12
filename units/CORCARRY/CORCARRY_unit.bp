@@ -185,8 +185,10 @@ UnitBlueprint {
         },
         { #CRAWL_BLAST
             Damage = 2500,
-            DamageRadius = 8.59375,
+                        DamageFriendly = true,
+            DamageRadius = 9,
             DummyWeapon = true,
+            DamageType = 'Normal',
             Label = 'SuicideWeapon',
         },
     },

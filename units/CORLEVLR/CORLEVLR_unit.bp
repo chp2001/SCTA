@@ -208,8 +208,10 @@ UnitBlueprint {
         },
         { #MEDIUM_UNIT
             Damage = 250,
-            DamageRadius = 2.97,
+            DamageFriendly = true,
+            DamageRadius = 3,
             DummyWeapon = true,
+            DamageType = 'Normal',
             Label = 'SuicideWeapon',
         },
     },

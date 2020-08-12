@@ -144,6 +144,7 @@ UnitBlueprint {
             Damage = 50,
             DamageRadius = 1,
             DummyWeapon = true,
+            DamageType = 'Normal',        
             Label = 'SuicideWeapon',
         },
     },

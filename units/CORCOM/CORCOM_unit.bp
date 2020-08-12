@@ -258,7 +258,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 100,
+            Damage = 125,
             DamageRadius = 1,
             DamageType = 'Normal',
             DisplayName = 'CORCOMLASER',

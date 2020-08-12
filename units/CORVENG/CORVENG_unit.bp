@@ -255,6 +255,8 @@ UnitBlueprint {
         },
         { #SMALL_UNIT #was big_unit
             Damage = 200,
+            DamageFriendly = true,
+            DamageType = 'Normal',
             DamageRadius = 2.34375,
             DummyWeapon = true,
             Label = 'SuicideWeapon',

@@ -250,6 +250,27 @@ function GetAngle(x1, z1, x2, z2)
 	return (angle / math.pi) * 180 + 90
 end
 
+function DoTaperedAreaDamage(instigator, position, radius, damage, projectile, targetEntity, damageType, damageFriendly, damageSelf, edgeEffectiveness)
+	local precision = math.floor(radius * 2) + 1
+	local pulse = 0
+	local edge = edgeEffectiveness or 0
+
+        if radius and radius > 0 then
+		if edge * damage > 0 then
+			DamageArea(instigator, position, radius, damage * edge, damageType, damageFriendly, damageSelf or false)
+		end
+		while pulse < precision do
+			local factor = (pulse + 1) / precision
+       			if damage and damage - edge > 0 then
+	            		DamageArea(instigator, position, radius * factor, damage / precision + (1 - factor) * damage * edge, damageType, damageFriendly, damageSelf or false)
+        		end
+			pulse = pulse + 1
+		end
+	elseif targetEntity then
+		Damage(instigator, position, targetEntity, damage, damageType)
+	end
+end
+
 function CalcDamageTaper(positionEpicentre, positionEntity, radius, edgeEffectiveness)
     # spherical above, cylindrical below
 

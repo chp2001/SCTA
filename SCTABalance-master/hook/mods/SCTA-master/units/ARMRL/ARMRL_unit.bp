@@ -54,5 +54,8 @@ Physics = {
   Intel = {
     VisionRadius = 12,
 },
+SizeX = 2,
+SizeY = 2,
+SizeZ = 2,
   StrategicIconName = 'icon_structure1_antiair',
 }

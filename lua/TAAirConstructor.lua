@@ -39,7 +39,7 @@ TAAirConstructor = Class(TAair) {
 						end
 					elseif (self.desiredState == "aimed") then
 						if (self.currentTarget and not IsDestroyed(self.currentTarget)) then
-							self:StopSpin(self.currentTarget)
+							--self:StopSpin(self.currentTarget)
 						end
 						self.currentTarget = self.desiredTarget
 						self.currentState = "aimed"
@@ -88,8 +88,6 @@ TAAirConstructor = Class(TAair) {
         if unitBeingBuilt.noassistbuild and unitBeingBuilt:GetHealth()==unitBeingBuilt:GetMaxHealth() then
             return
         end
-
-		self:SetBuildRate(0)
 		self.desiredTarget = unitBeingBuilt
 		if (self.currentState == "aimed" or self.currentState == "opened" or self.currentState == "rolloff") then
 			self.currentState = "opened"

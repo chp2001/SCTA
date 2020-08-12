@@ -12,13 +12,13 @@ ARMWAR = Class(TAunit) {
 		ARMWAR_EMG = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.1)
+				
 			end,
 		},
 		ARMWAR_LCANNON = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.1)
+				
 			end,
 		},
 	},

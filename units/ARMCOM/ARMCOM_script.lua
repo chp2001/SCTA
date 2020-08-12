@@ -19,13 +19,13 @@ ARMCOM = Class(TAconstructor) {
 		ARMCOMLASER = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAconstructor.ShowMuzzleFlare(self, 0.1)
+				
 			end,
 		},
 		ARM_DISINTEGRATOR = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAconstructor.ShowMuzzleFlare(self, 0.1)
+				
 				self.unit:SetWeaponEnabledByLabel('ARM_DISINTEGRATOR', true)
 			end,
 

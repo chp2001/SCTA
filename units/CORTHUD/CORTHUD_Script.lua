@@ -13,7 +13,7 @@ CORTHUD = Class(TAunit) {
 		CORE_THUD = Class(TAweapon) {
 
 			OnWeaponFired = function(self)
-				TAunit.ShowMuzzleFlare(self, 0.1)
+				
 				TAweapon.OnWeaponFired(self)
 			end,
 		},

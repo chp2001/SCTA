@@ -11,7 +11,7 @@ ARMCRUS = Class(TAunit) {
 		ARM_CRUS = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.15)
+				
 			end,
 		},
 		ARMDEPTHCHARGE = Class(TAweapon) {},

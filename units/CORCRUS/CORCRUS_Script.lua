@@ -11,7 +11,7 @@ CORCRUS = Class(TAunit) {
 		COR_CRUS = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.15)
+				
 			end,
 		},
 		COREDEPTHCHARGE = Class(TAweapon) {},

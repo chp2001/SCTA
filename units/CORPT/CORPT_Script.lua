@@ -11,7 +11,7 @@ CORPT = Class(TAunit) {
 		CORPT_LASER = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.15)
+				
 			end,
 		},
 		CORKBOT_MISSILE = Class(TAweapon) {},

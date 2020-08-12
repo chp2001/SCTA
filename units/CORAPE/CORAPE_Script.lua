@@ -57,7 +57,7 @@ CORAPE = Class(TAair) {
 		VTOL_ROCKET = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAair.ShowMuzzleFlare(self, 0.15)
+				
 
 				self.unit.currentBarrel = self.unit.currentBarrel + 1
 				if self.unit.currentBarrel == 3 then
@@ -71,7 +71,7 @@ CORAPE = Class(TAair) {
 		VTOL_ROCKET2 = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAair.ShowMuzzleFlare(self, 0.15)
+				
 
 				self.unit.currentBarrel2 = self.unit.currentBarrel2 + 1
 				if self.unit.currentBarrel2 == 3 then

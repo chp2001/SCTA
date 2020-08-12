@@ -24,7 +24,7 @@ ARMYORK = Class(TAunit) {
 		ARMYORK_GUN = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.15)
+				
 			end,
 		},
 	},

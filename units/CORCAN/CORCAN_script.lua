@@ -12,7 +12,7 @@ CORCAN = Class(TAunit) {
 		CORE_CANLASER = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.15) #check flare time
+				 #check flare time
 			end,
 		},
 	},

@@ -11,7 +11,7 @@ CORROY = Class(TAunit) {
 		CORE_ROY = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.15)
+				
 			end,
 		},
 		COREDEPTHCHARGE = Class(TAweapon) {},

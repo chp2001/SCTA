@@ -37,7 +37,7 @@ CORBATS = Class(TAunit) {
 		COR_BATS = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.15)
+				
 			end,
 		},
 

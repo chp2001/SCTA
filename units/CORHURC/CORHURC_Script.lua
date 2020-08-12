@@ -72,7 +72,7 @@ CORHURC = Class(TAair) {
 		CORAIR2AIRLASER = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAair.ShowMuzzleFlare(self, 0.15)
+				
 			end,
 		},
 		

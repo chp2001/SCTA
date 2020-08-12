@@ -137,7 +137,7 @@ ARMAMB = Class(TAunit) {
 		ARMAMB_GUN = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.25)
+				
 			end,
 
 			PlayFxWeaponUnpackSequence = function(self)

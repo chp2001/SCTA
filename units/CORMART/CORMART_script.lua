@@ -12,7 +12,7 @@ CORMART = Class(TAunit) {
 		CORE_ARTILLERY = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				TAunit.ShowMuzzleFlare(self, 0.15)
+				
 			end,
 		},
 	},

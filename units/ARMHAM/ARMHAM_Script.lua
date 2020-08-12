@@ -31,7 +31,7 @@ ARMHAM = Class(TAunit) {
 		ARM_HAM = Class(TAweapon) {
 
 			OnWeaponFired = function(self)
-				TAunit.ShowMuzzleFlare(self, 0.1)
+				
 				TAweapon.OnWeaponFired(self)
 			end,
 

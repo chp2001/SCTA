@@ -30,9 +30,8 @@ UnitBlueprint {
         Health = 4000,
         MaxHealth = 4000,
     },
-    Description = 'Perimeter Defence',
     Display = {
-        UniformScale = 0.16,
+        UniformScale = 0.22,
     },
     Economy = {
         BuildCostEnergy = 40,

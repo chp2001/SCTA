@@ -3,6 +3,10 @@ UnitBlueprint {
     Display = {
         UniformScale = 0.60,
     },
+    Footprint = {
+        SizeX = 7,
+        SizeZ = 7,
+    },
     Economy = {
         BuildCostEnergy = 100000,
         BuildCostMass = 12000,
@@ -17,4 +21,7 @@ UnitBlueprint {
         VisionRadius = 14,
     },
     LifeBarSize = 10,
+    SizeX = 14,
+    SizeY = 6,
+    SizeZ = 14,
 }

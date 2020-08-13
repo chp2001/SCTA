@@ -20,4 +20,5 @@ UnitBlueprint {
   Intel = {
     FreeIntel = false,
   }, 
+  SizeY = 6,
 }

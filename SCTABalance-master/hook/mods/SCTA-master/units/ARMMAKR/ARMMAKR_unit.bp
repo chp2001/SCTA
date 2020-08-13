@@ -38,10 +38,10 @@ UnitBlueprint {
 	MaintenanceConsumptionPerSecondEnergy = 75,
     },
     Physics = {
-        SkirtSizeX = 1, 
-        SkirtSizeZ = 1, 
+        SkirtSizeX = 0, 
+        SkirtSizeZ = 0, 
     },
     SizeX = 2,
     SizeY = 2,
-    SizeZ = 1,
+    SizeZ = 2,
 }

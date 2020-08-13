@@ -16,4 +16,7 @@ UnitBlueprint {
         VisionRadius = 12,
     },
     SelectionCenterOffsetZ = 0,
+    SizeX = 1,
+    SizeY = 3.5,
+    SizeZ = 1,
 }

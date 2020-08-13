@@ -320,15 +320,15 @@ Factions = {
         loadingColor = 'FFe24f2d',
         loadingTexture = '/cybran_load.dds',
         IdleEngTextures = {
-            T1 = '/mods/SCTA-master/textures/ui/common/icons/units/corck_icon.dds',
-            T2 = '/mods/SCTA-master/textures/ui/common/icons/units/corack_icon.dds',
+            T1 = '/mods/SCTA-master/textures/ui/common/icons/units/corcv_icon.dds',
+            T2 = '/mods/SCTA-master/textures/ui/common/icons/units/coracv_icon.dds',
             T3 = '/icons/units/xsl0309_icon.dds',
             SCU = '/icons/units/xsl0301_icon.dds',
         },
         IdleFactoryTextures = {
             LAND = {
-                '/mods/SCTA-master/textures/ui/common/icons/units/corlab_icon.dds',
-                '/mods/SCTA-master/textures/ui/common/icons/units/coralab_icon.dds',
+                '/mods/SCTA-master/textures/ui/common/icons/units/corvp_icon.dds',
+                '/mods/SCTA-master/textures/ui/common/icons/units/coravp_icon.dds',
                 '/icons/units/xsb0301_icon.dds',
             },
             AIR = {

@@ -69,7 +69,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = 'Fast Assist-Repair Kbot',
+    Description = 'Resurrection Kbot',
     Display = {
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Construction','BuildMuzzle'},
@@ -135,13 +135,13 @@ UnitBlueprint {
         },
         FactionName = 'CORE',
         TechLevel = 'RULEUTL_Advanced',
-	UnitName = 'NECRO',
+	UnitName = 'Necro',
     },
     Intel = {
         VisionRadius = 12,
     },
     Interface = {
-        HelpText = 'Fast Assist-Repair Kbot',
+        HelpText = 'Resurrection Kbot',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

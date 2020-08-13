@@ -113,15 +113,11 @@ ARMFARK = Class(TAconstructor) {
 		self.Spinners.torsoy:SetGoal(TAutils.GetAngle(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
 		self.Spinners.torsoy:SetSpeed(160.03)
 		WaitFor(self.Spinners.torsoy)
---[[
 		local distance = VDist2(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z)
-		selfPosition = self:GetPosition('Joint') 
 
 		self.Spinners.Rarmx:SetGoal(159.97 + TAutils.GetAngle(0, selfPosition.y, distance, targetPosition.y) - 90)
 		self.Spinners.Rarmx:SetSpeed(45.01)
 
-		WaitFor(self.Spinners.nanojoint)
---]]
 		TAconstructor.Aim(self, target)
 	end,
 

@@ -45,6 +45,6 @@ UnitBlueprint {
         TurnRate = 0,
     },
     SizeX = 3,
-    SizeY = 1.2,
+    SizeY = 4,
     SizeZ = 3,
 }

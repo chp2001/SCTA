@@ -48,14 +48,15 @@ UnitBlueprint {
     MaxSlope = 0.875,
 },
 Physics = {
-    SkirtSizeX = 1, 
-    SkirtSizeZ = 1,  
+    SkirtSizeX = 0, 
+    SkirtSizeZ = 0,  
   },
   Intel = {
     VisionRadius = 12,
 },
-SizeX = 2,
+SelectionCenterOffsetZ = 0,
+SizeX = 1,
 SizeY = 2,
-SizeZ = 2,
+SizeZ = 1,
   StrategicIconName = 'icon_structure1_antiair',
 }

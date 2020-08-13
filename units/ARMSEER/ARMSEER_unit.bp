@@ -104,6 +104,7 @@ UnitBlueprint {
         Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
+            RULEUCC_Guard = true,
             RULEUCC_CallTransport = true,
             RULEUCC_Move = true,
             RULEUCC_Patrol = true,

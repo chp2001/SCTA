@@ -61,7 +61,7 @@ UnitBlueprint {
             '<LOC ability_radar>Radar',
         },
 	DestructionEffects = {
-		#DefaultProjectileCategories = {'Tredside','ArmCockpit'},
+		DefaultProjectileCategories = {'Tredside','ArmCockpit'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
@@ -104,6 +104,7 @@ UnitBlueprint {
         Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
+            RULEUCC_Guard = true,
             RULEUCC_CallTransport = true,
             RULEUCC_Move = true,
             RULEUCC_Patrol = true,

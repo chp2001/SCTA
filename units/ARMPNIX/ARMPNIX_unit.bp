@@ -114,7 +114,7 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 150,
+                    LODCutoff = 230,
                     ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },

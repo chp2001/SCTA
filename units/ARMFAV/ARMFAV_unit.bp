@@ -100,7 +100,7 @@ UnitBlueprint {
                     ShaderName = 'Unit',
                 },
                 {
-                    LODCutoff = 150,
+                    LODCutoff = 230,
                     ShaderName = 'Unit', 
                 },
             },

@@ -49,7 +49,7 @@ TAunitkeygroups = {
         "armmakr",
         "armmmkr",
         "cormakr",
-        "cormmakr", 
+        "cormmkr", 
     },
     ["Energy_Storage"]= {
         "armestor",

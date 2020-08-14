@@ -7,7 +7,7 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
 	FxSmoke = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
 	FxSmokeScale = 1,
 
-	PolyTrail = '',
+	PolyTrail =  '/effects/emitters/aeon_laser_trail_02_emit.bp',
 
 	OnCreate = function(self)
 		SinglePolyTrailProjectile.OnCreate(self)

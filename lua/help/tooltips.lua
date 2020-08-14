@@ -1,11 +1,11 @@
 TATooltips = {
     lob_arm = { 
         title = "<LOC ARM>", 
-	description = ""
+	description = "Faction devoted Human Conscious free of Machine"
     }, 
     lob_core = { 
         title = "<LOC CORE>", 
-	description = ""
+	description = "Faction goal of achieving immortality for mankind via transferring mind to machine"
     }, 
 }
 --since we are merging unordered tables that contain ordered tables, we need to merge them manually instead of table.merged or whatever

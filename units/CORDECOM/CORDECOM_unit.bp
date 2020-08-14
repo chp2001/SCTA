@@ -112,7 +112,7 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 150,
+                    LODCutoff = 230,
 		    NormalName = '/mods/SCTA-master/units/CORCOM/CORCOM_normalsTS.dds',
 		    SpecularName = '/mods/SCTA-master/units/CORCOM/CORCOM_SpecTeam.dds',
 		    AlbedoName = '/mods/SCTA-master/units/CORCOM/CORCOM_Albedo.dds',

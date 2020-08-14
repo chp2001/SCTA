@@ -8,7 +8,7 @@ UnitBlueprint {
           SizeZ = 3,
       },
       Intel = {
-        VisionRadius = 0,
+        VisionRadius = 10,
     },
       LifeBarSize = 4,
     Economy = {

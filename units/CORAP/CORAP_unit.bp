@@ -99,13 +99,10 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 150,
-                    ShaderName = 'Unit',
-                },
-                {
-                LODCutoff = 300,
-                AlbedoName = 'CORAP_albedo.dds',
+                LODCutoff = 400,
+                AlbedoName = 'CORAP_Albedo.dds',
                 SpecularName = 'CORAP_SpecTeam.dds',
+                ShaderName = 'Unit',
             },
         },
         },

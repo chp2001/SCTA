@@ -8,7 +8,7 @@ UnitBlueprint {
         MaxHealth = 2000,
     },
     Intel = {
-        VisionRadius = 0,
+        VisionRadius = 10,
     },
     LifeBarSize = 6,
     Economy = {

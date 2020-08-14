@@ -3,15 +3,15 @@
 #
 #Script created by Raevn
 
-local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstructor
+local TANecro = import('/mods/SCTA-master/lua/TANecro.lua').TANecro
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
-CORNECRO = Class(TAconstructor) {
+CORNECRO = Class(TANecro) {
 
 	OnCreate = function(self)
 		self.Spinners = {
-			Lshoulder = CreateRotator(self, 'Lshoulder', 'x', nil, 0, 0, 0),
-			Rshoulder = CreateRotator(self, 'Rshoulder', 'x', nil, 0, 0, 0),
+			Lshoulder = CreateRotator(self, 'Llathe', 'x', nil, 0, 0, 0),
+			Rshoulder = CreateRotator(self, 'Rlathe', 'x', nil, 0, 0, 0),
 			Larmx = CreateRotator(self, 'Larm', 'x', nil, 0, 0, 0),
 			Rarmx = CreateRotator(self, 'Rarm', 'x', nil, 0, 0, 0),
 			torsox = CreateRotator(self, 'torso', 'z', nil, 0, 0, 0),
@@ -19,13 +19,13 @@ CORNECRO = Class(TAconstructor) {
 
 			Larmz = CreateRotator(self, 'Larm', 'z', nil, 0, 0, 0),
 			Rarmz = CreateRotator(self, 'Rarm', 'z', nil, 0, 0, 0),
-			Llathe = CreateRotator(self, 'Llathe', 'z', nil, 0, 0, 0),
-			Rlathe = CreateRotator(self, 'Rlathe', 'z', nil, 0, 0, 0),
+			Llathe = CreateRotator(self, 'nozzle2', 'z', nil, 0, 0, 0),
+			Rlathe = CreateRotator(self, 'nozzle1', 'z', nil, 0, 0, 0),
 		}
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
-		TAconstructor.OnCreate(self)
+		TANecro.OnCreate(self)
 	end,
 
 	Open = function(self)
@@ -102,7 +102,7 @@ CORNECRO = Class(TAconstructor) {
 		--SLEEP <10>;
 		WaitSeconds(0.2)
 
-		TAconstructor.Open(self)
+		TANecro.Open(self)
 	end,
 
 	Aim = function(self, target)
@@ -122,7 +122,7 @@ CORNECRO = Class(TAconstructor) {
 
 		WaitFor(self.Spinners.nanojoint)
 --]]
-		TAconstructor.Aim(self, target)
+		TANecro.Aim(self, target)
 	end,
 
 	Close = function(self)
@@ -202,7 +202,7 @@ CORNECRO = Class(TAconstructor) {
 		--SLEEP <10>;
 		WaitSeconds(0.2)
 
-		TAconstructor.Close(self)
+		TANecro.Close(self)
 	end,
 }
 

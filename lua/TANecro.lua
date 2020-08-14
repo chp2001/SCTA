@@ -1,10 +1,12 @@
+local TAConstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstructor
+local Unit = import('/lua/sim/Unit.lua').Unit
+local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local oldPosition={1,1,1}
 
-local unitOld=Unit
-Unit=Class(unitOld){
+TANecro = Class(TAConstructor) {
 
-    OnStartReclaim = function(self, target)
-        if EntityCategoryContains(categories.NECRO,self) then
+    OnStartReclaim = function(self, target, oldPosition)
+        if EntityCategoryContains(categories.NECRO, self) then
             if not target.ReclaimInProgress then
                 LOG('* Necro: OnStartReclaim:  I am a necro! no ReclaimInProgress; starting Necroing')
                 target.NecroingInProgress = true
@@ -31,13 +33,13 @@ Unit=Class(unitOld){
                 return
             end
         end
-        unitOld.OnStartReclaim(self, target)
+        TAConstructor.OnStartReclaim(self, target, oldPosition)
     end,
 
-    OnStopReclaim = function(self, target)
-        unitOld.OnStopReclaim(self, target)
+    OnStopReclaim = function(self, target, oldPosition)
+        TAConstructor.OnStopReclaim(self, target, oldPosition)
         if not target then
-            if self.RecBP and EntityCategoryContains(categories.NECRO,self) and oldPosition ~= self.RecPosition then
+            if self.RecBP and EntityCategoryContains(categories.NECRO, self) and oldPosition ~= self.RecPosition then
                 LOG('* Necro: OnStopReclaim:  I am a necro! and RecBP = true ')
                 oldPosition = self.RecPosition
                 self:ForkThread( self.RespawnUnit, self.RecBP, self:GetArmy(), self.RecPosition, self.ReclaimLeft )
@@ -45,7 +47,7 @@ Unit=Class(unitOld){
                 LOG('* Necro: OnStopReclaim: no necro or no RecBP')
             end
         else
-            if EntityCategoryContains(categories.NECRO,self) then
+            if EntityCategoryContains(categories.NECRO, self) then
                 LOG('* Necro: OnStopReclaim:  Wreck still exist. Removing target data from Necro')
                 self.RecBP = nil
                 self.ReclaimLeft = nil
@@ -59,7 +61,7 @@ Unit=Class(unitOld){
     RespawnUnit = function(self, RecBP, army, pos, ReclaimLeft)
         LOG('* Necro: RespawnUnit: ReclaimLeft '..ReclaimLeft)
         WaitTicks(3)
-        local newUnit = CreateUnitHPR(RecBP,army,pos[1],pos[2],pos[3],0,0,0)
+        local newUnit = CreateUnitHPR(RecBP, army, pos[1], pos[2], pos[3], 0, 0, 0)
         newUnit:SetHealth(nil, newUnit:GetMaxHealth() * ReclaimLeft )
     end,
 

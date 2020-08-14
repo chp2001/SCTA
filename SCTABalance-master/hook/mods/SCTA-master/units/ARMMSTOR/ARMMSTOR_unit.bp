@@ -8,7 +8,7 @@ UnitBlueprint {
         SizeZ = 1,
     },
     Intel = {
-        VisionRadius = 0,
+        VisionRadius = 10,
     },
    Physics = {
         MeshExtentsX = 1.25,

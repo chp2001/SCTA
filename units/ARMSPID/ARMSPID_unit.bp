@@ -101,7 +101,7 @@ UnitBlueprint {
     Footprint = {
 	SizeX = 1,
 	SizeZ = 1,
-	MaxSlope=255,
+	MaxSlope= 255,
     },
     General = {
         Category = 'Utility',

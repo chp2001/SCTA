@@ -99,7 +99,7 @@ UnitBlueprint {
 	BuildAttachBone = 'pad',
 	TextureAnimationFrames = 6,
         Mesh = {
-            IconFadeInZoom = 130,
+            IconFadeInZoom = 400,
             LODs = {
                 {
                     LODCutoff = 150,

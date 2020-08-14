@@ -38,7 +38,7 @@ Categories = {
 	MaintenanceConsumptionPerSecondEnergy = 75,
     },   
      Intel = {
-        VisionRadius = 0,
+        VisionRadius = 10,
     },
     Physics = {
         SkirtSizeX = 0, 

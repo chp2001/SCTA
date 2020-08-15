@@ -74,6 +74,7 @@ Factions = {
         IdleEngTextures = {
             T1 = '/icons/units/ual0105_icon.dds',
             T2 = '/icons/units/ual0208_icon.dds',
+            T2F = '/icons/units/xel0209_icon.dds',
             T3 = '/icons/units/ual0309_icon.dds',
             SCU = '/icons/units/ual0301_icon.dds',
         },
@@ -125,6 +126,7 @@ Factions = {
         IdleEngTextures = {
             T1 = '/icons/units/url0105_icon.dds',
             T2 = '/icons/units/url0208_icon.dds',
+            T2F = '/icons/units/xel0209_icon.dds',
             T3 = '/icons/units/url0309_icon.dds',
             SCU = '/icons/units/url0301_icon.dds',
         },
@@ -176,6 +178,7 @@ Factions = {
         IdleEngTextures = {
             T1 = '/icons/units/xsl0105_icon.dds',
             T2 = '/icons/units/xsl0208_icon.dds',
+            T2F = '/icons/units/xel0209_icon.dds',
             T3 = '/icons/units/xsl0309_icon.dds',
             SCU = '/icons/units/xsl0301_icon.dds',
         },
@@ -280,8 +283,9 @@ Factions = {
         IdleEngTextures = {
             T1 = '/mods/SCTA-master/textures/ui/common/icons/units/armck_icon.dds',
             T2 = '/mods/SCTA-master/textures/ui/common/icons/units/armack_icon.dds',
+            T2F = '/mods/SCTA-master/textures/ui/common/icons/units/armfark_icon.dds',
             T3 = '/icons/units/xsl0309_icon.dds',
-            SCU = '/icons/units/xsl0301_icon.dds',
+            SCU = '/mods/SCTA-master/textures/ui/common/icons/units/armdecom_icon.dds',
         },
         IdleFactoryTextures = {
             LAND = {
@@ -322,8 +326,9 @@ Factions = {
         IdleEngTextures = {
             T1 = '/mods/SCTA-master/textures/ui/common/icons/units/corcv_icon.dds',
             T2 = '/mods/SCTA-master/textures/ui/common/icons/units/coracv_icon.dds',
+            T2F = '/mods/SCTA-master/textures/ui/common/icons/units/cornecro_icon.dds',
             T3 = '/icons/units/xsl0309_icon.dds',
-            SCU = '/icons/units/xsl0301_icon.dds',
+            SCU = '/mods/SCTA-master/textures/ui/common/icons/units/cordecom_icon.dds',
         },
         IdleFactoryTextures = {
             LAND = {

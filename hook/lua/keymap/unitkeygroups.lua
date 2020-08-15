@@ -224,6 +224,7 @@ TAunitkeygroups = {
 
     ["T2_Field_Engineer"]= {
         "armfark", 
+        "cornecro",
     },
     ["T2_Engineer"]= {
         "armaca",

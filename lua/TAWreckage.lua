@@ -83,31 +83,3 @@ TAWreckage = Class(Prop) {
         end
     end,
 }
-
---- Create a wreckage prop.
-function CreateWreckage(bp, position, orientation, mass, energy, time) 
-    local bpWreck = bp.Wreckage.Blueprint
-
-    local prop = CreateProp(position, bpWreck)
-    prop:SetOrientation(orientation, true)
-
-    prop:SetScale(bp.Display.UniformScale)
-    prop:SetPropCollision('Box', bp.CollisionOffsetX, bp.CollisionOffsetY, bp.CollisionOffsetZ, bp.SizeX * 0.5, bp.SizeY * 0.5, bp.SizeZ * 0.5)
-
-    prop:SetMaxHealth(bp.Defense.Health)
-    prop:SetHealth(nil, bp.Defense.Health * (bp.Wreckage.HealthMult or 1))
-    prop:SetMaxReclaimValues(time, mass, energy)
-
-    --FIXME: SetVizToNeurals('Intel') is correct here, so you can't see enemy wreckage appearing
-    -- under the fog. However the engine has a bug with prop intel that makes the wreckage
-    -- never appear at all, even when you drive up to it, so this is disabled for now.
-    --prop:SetVizToNeutrals('Intel')
-    if not bp.Wreckage.UseCustomMesh then
-        prop:SetMesh(bp.Display.MeshBlueprintWrecked)
-    end
-
-    -- This field cannot be renamed or the magical native code that detects rebuild bonuses breaks.
-    prop.AssociatedBP = bp.Wreckage.IdHook or bp.BlueprintId
-
-    return prop
-end

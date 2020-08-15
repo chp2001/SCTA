@@ -39,8 +39,8 @@ ProjectileBlueprint {
     'INDIRECTFIRE',
     },
     Defense = {
-        Health = 1,
-        MaxHealth = 1,
+        Health = 30,
+        MaxHealth = 30,
     },
     Display = {
         CameraFollowTimeout = 5,

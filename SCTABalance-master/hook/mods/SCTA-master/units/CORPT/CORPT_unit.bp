@@ -12,8 +12,10 @@ UnitBlueprint {
 	'LIGHTBOAT',
         'OVERLAYDIRECTFIRE',
         'RADAR',
+        'SONAR',
     'OVERLAYANTIAIR',
     'OVERLAYRADAR',
+    'OVERLAYSONAR',
         'CORE',
         'SHIP',
 	'LEVEL1',
@@ -22,13 +24,23 @@ UnitBlueprint {
 	'NOTSUB',
 	'CTRL_W',
     },
+    Defense = {
+        Health = 400,
+        MaxHealth = 400,
+    },    
+    Economy = {
+        MaintenanceConsumptionPerSecondEnergy = 10,
+    },
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
             '<LOC ability_radar>Radar',
+            '<LOC ability_sonar>Sonar',
         },
       },
     Intel = {
-    RadarRadius = 60,
+    FreeIntel = false,
+    RadarRadius = 100,
+    SonarRadius = 50,
     },
 }

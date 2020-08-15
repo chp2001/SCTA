@@ -97,7 +97,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 3902,
-        BuildCostMass = 1199,
+        BuildCostMass = 720,
         BuildTime = 9729,
     },
     Footprint = {
@@ -122,8 +122,8 @@ UnitBlueprint {
     },
     Intel = {
 	FreeIntel = true,
-        SonarRadius = 25,
-        VisionRadius = 12,
+        SonarRadius = 50,
+        VisionRadius = 20,
         WaterVisionRadius = 12,
     },
     Interface = {
@@ -163,7 +163,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 500,
+            Damage = 80,
 	    DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'CORE_TORPEDO',
@@ -172,7 +172,8 @@ UnitBlueprint {
             },
             RangeCategory = 'UWRC_AntiNavy',
             Label = 'CORE_TORPEDO',
-            MaxRadius = 25,
+            MaxRadius = 38,
+            FiringTolerance = 2,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 6.25,

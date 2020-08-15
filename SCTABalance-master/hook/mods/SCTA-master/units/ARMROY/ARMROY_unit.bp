@@ -31,8 +31,13 @@ UnitBlueprint {
         },
     Intel = {
     VisionRadius = 14, 
-    WaterVisionRadius = 18, 
+    WaterVisionRadius = 8, 
 	SonarRadius = 24,
     RadarRadius = 24,
+    },
+    Economy = {
+        BuildCostEnergy = 4505,
+        BuildCostMass = 800,
+        BuildTime = 13368,
     },
 }

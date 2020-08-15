@@ -38,6 +38,7 @@ UnitBlueprint {
             'SHIP LEVEL2 CORE',
             'ADVANCEDSUB LEVEL2 CORE',
         },
+        ProductionPerSecondMass = 0,
     },
     LifeBarSize = 8,
     General = {

@@ -22,6 +22,10 @@ UnitBlueprint {
 	'NOTSUB',
 	'CTRL_W',
     },
+    Defense = {
+        Health = 3300,
+        MaxHealth = 3300,
+    },
     Display = {
         Abilities = {
               'Anti-Sub',
@@ -31,8 +35,13 @@ UnitBlueprint {
      },
     Intel = {
         VisionRadius = 20, 
-        WaterVisionRadius = 18, 
-	SonarRadius = 24,
-               RadarRadius = 24,
+        WaterVisionRadius = 8, 
+	    SonarRadius = 24,
+        RadarRadius = 24,
+    },
+    Economy = {
+        BuildCostEnergy = 4505,
+        BuildCostMass = 800,
+        BuildTime = 13368,
     },
 }

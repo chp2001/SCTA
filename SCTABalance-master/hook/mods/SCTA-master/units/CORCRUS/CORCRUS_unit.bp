@@ -1,0 +1,19 @@
+#ARM Conqueror - Cruiser
+#ARMCRUS
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 6000,
+        MaxHealth = 6000,
+    },
+    Economy = {
+        BuildCostMass = 1719,
+    },
+    Intel = {
+        WaterVisionRadius = 15,
+    },
+}

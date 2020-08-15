@@ -335,7 +335,7 @@ function CreateWreckage(self,overkillRatio, bp, completed, pos, orientation, hea
 		if pbp.Physics.BlockPath == false then
 		end
 		prop:DoTakeDamage(prop, overkillRatio * health, Vector(0,0,0), 'Normal')
-        	prop.AssociatedBP = pbp.BlueprintId
+        	prop.AssociatedBP = bp.BlueprintId
 	end
 end
 

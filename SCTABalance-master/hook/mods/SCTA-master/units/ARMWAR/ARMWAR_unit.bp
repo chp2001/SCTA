@@ -1,9 +1,11 @@
 UnitBlueprint {
    Merge = true, 
     Defense = {
-        ArmorType = 'Normal',
         Health = 560,
         MaxHealth = 560,
+        },
+        Display = {
+            UniformScale = 0.10,
         },
     Economy = {
         BuildCostEnergy = 2236,

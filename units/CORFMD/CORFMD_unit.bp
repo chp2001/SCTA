@@ -189,7 +189,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             WeaponRepackTimeout = 4,
             WeaponUnpacks = true,
-            WeaponUnpackAnimation = '/mods/SCTA-master/units/CORFMD/CORFMD_lod0_unpack.sca',
+            WeaponUnpackAnimation = '/mods/SCTA-master/units/CORFMD/CORFMD_lod0_Aunpack.sca',
             WeaponUnpackAnimationRate = 0.5,
             AlwaysRecheckTarget = true,
             CountedProjectile = true,

@@ -74,5 +74,5 @@ ProjectileBlueprint {
         VelocityAlign = true,
     	HitAssignedTarget = true,
     },
-    StrategicIconName = '/mods/SCTA-master/textures/ui/common/game/strategicicons/projectiles/icon_strategic_antinuke.dds',
+    StrategicIconName = '/textures/ui/common/game/strategicicons/icon_strategic_antinuke.dds',
 }

@@ -363,7 +363,7 @@ UnitBlueprint {
             Turreted = true,
             OverChargeWeapon = true,
             UseFiringSolutionInsteadOfAimBone = true,
-            ManualFire = true,
+            ManualFire = 1,
             WeaponCategory = 'Direct Fire',
         },
         {

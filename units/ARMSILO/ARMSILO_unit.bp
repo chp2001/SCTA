@@ -14,7 +14,11 @@ UnitBlueprint {
             Bank = 'TA_Sound',
             Cue = 'XPLONUK3',
             LodCutoff = 'UnitMove_LodCutoff',
-	},
+    },
+    NuclearLaunchDetected = Sound {
+        Bank = 'XGG',
+        Cue = 'Computer_Computer_MissileLaunch_01351',
+    },
     },
     BuildIconSortPriority = 17,
     Categories = {
@@ -144,6 +148,12 @@ UnitBlueprint {
     SizeX = 5,
     SizeY = 3,
     SizeZ = 5,
+    SpecialAbilities = {
+        LaunchNuke = {
+            AreaOfEffect = 40,
+            MaxRadius = -1,
+        },
+    },
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 0,
     Weapon = {

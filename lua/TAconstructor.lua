@@ -199,7 +199,6 @@ TAconstructor = Class(TAWalking) {
 		else
 			self.desiredState = "opened"
 		end
-		self:SetAllWeaponsEnabled(false)
 		self.isReclaiming = true
 		self.isBuilding = false
 		self.cloakOn = false

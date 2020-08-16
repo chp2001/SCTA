@@ -57,7 +57,6 @@ CORCOM = Class(TAconstructor) {
 		else
 			self.desiredState = "opened"
 		end
-		self:SetAllWeaponsEnabled(false)
 		self.isReclaiming = false
 		self.isBuilding = false
 		self.cloakOn = false

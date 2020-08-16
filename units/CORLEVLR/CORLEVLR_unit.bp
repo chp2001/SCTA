@@ -145,7 +145,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 200,
+            Damage = 180,
 	    DamageRadius = 2.625,
             DamageType = 'Normal',
             DisplayName = 'CORLEVLR_WEAPON',
@@ -177,7 +177,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.55,
+            RateOfFire = 0.4,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

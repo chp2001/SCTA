@@ -36,7 +36,7 @@ CORDECOM = Class(TAconstructor) {
 		self.Spinners.torso:SetSpeed(300)
 
 		local distance = VDist2(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z)
-		selfPosition = self:GetPosition('LaserMuzzle') 
+		selfPosition = self:GetPosition('NanoMuzzle') 
 
 		--TURN Nanogun to x-axis (0 - pitch - 29.99) SPEED <45.01>;
 		self.Spinners.Nanogun:SetGoal(-180 + TAutils.GetAngle(0, selfPosition.y, distance, targetPosition.y))

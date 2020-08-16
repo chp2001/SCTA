@@ -295,7 +295,7 @@ UnitBlueprint {
             TurretBoneMuzzle = 'Mlasflsh',
             TurretBonePitch = 'Nanogun',
             TurretBoneYaw = 'Torso',
-            TurretPitch = 0,
+            TurretPitch = 90,
             TurretPitchRange = 360,
             TurretPitchSpeed = 45,
             TurretYaw = 0,

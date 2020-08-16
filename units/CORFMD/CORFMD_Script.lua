@@ -24,10 +24,11 @@ CORFMD = Class(TAnoassistbuild) {
 
 	Weapons = {
 		FMD_ROCKET = Class(TAweapon) {
+		OnWeaponFired = function(self)
+			self.unit:ShowBone('dummy', true)
+			TAweapon.OnWeaponFired(self)
+		end,
 
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-			end,
 		},
 	},
 }

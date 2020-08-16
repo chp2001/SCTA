@@ -62,7 +62,7 @@ UnitBlueprint {
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'collar'},
+				EmitterBone = {'wedge'},
 				EmitterBlueprint = {
 	    				'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -190,10 +190,10 @@ UnitBlueprint {
             WeaponRepackTimeout = 4,
             WeaponUnpacks = true,
             WeaponUnpackAnimation = '/mods/SCTA-master/units/CORFMD/CORFMD_lod0_Aunpack.sca',
-            WeaponUnpackAnimationRate = 0.5,
+            WeaponUnpackAnimationRate = 2,
             AlwaysRecheckTarget = true,
             CountedProjectile = true,
-            InitialProjectileStorage = 0,
+            InitialProjectileStorage = 1,
             MaxProjectileStorage = 10,
             TargetRestrictOnlyAllow = 'STRATEGIC MISSILE',
             TargetType = 'RULEWTT_Projectile',

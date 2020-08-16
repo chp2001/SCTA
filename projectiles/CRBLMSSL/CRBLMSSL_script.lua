@@ -60,12 +60,7 @@ CRBLMSSL = Class(TANuclearProjectile) {
 
     OnImpact = function(self, TargetType, TargetEntity)
         if not TargetEntity or not EntityCategoryContains(categories.PROJECTILE, TargetEntity) then
-            # Play the explosion sound
             local myBlueprint = self:GetBlueprint()
-            if myBlueprint.Audio.Explosion then
-                self:PlaySound(myBlueprint.Audio.Explosion)
-            end
-           
 			nukeProjectile = self:CreateProjectile('/effects/Entities/UEFNukeEffectController01/UEFNukeEffectController01_proj.bp', 0, 0, 0, nil, nil, nil):SetCollision(false)
             nukeProjectile:PassDamageData(self.DamageData)
             nukeProjectile:PassData(self.Data)

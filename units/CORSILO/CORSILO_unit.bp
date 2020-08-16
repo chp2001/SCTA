@@ -192,7 +192,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             FiringTolerance = 2,
             ForceSingleFire = true,
-            InitialProjectileStorage = 0,
+            InitialProjectileStorage = 1,
             ManualFire = 1,
             Damage = 0,
             MaxProjectileStorage = 5,

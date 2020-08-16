@@ -154,6 +154,7 @@ UnitBlueprint {
             DisplayName = 'ARM_LASERH1',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
             FiringTolerance = 1,

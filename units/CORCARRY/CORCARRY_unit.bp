@@ -73,7 +73,7 @@ UnitBlueprint {
             '<LOC ability_airstaging>Air Staging',
         },
 	DestructionEffects = {
-		#DefaultProjectileCategories = {'ArmShip','ArmBui','Helipad'},
+		DefaultProjectileCategories = {'ArmShip','ArmBui','Helipad'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {'CORCARRY','Attachpoint01','Attachpoint02'},
@@ -152,9 +152,9 @@ UnitBlueprint {
     Physics = {
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 0.36,
-        MaxBrake = 0.72,
-        MaxSpeed = 4.125,
+        MaxAcceleration = 2.5,
+        MaxBrake = 2.5,
+        MaxSpeed = 3,
         TurnRate = 10.5,
         MotionType = 'RULEUMT_Water',
         MaxSteerForce = 10,

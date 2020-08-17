@@ -1,0 +1,45 @@
+ FactionList = {
+ {
+    Key = 'arm',
+    Category = 'ARM',
+    FactionInUnitBp = 'ARM',
+    DisplayName = "ARM",
+    SoundPrefix = 'UEF',
+    InitialUnit = 'armcom',
+    CampaignFileDesignator = 'E',
+    TransmissionLogColor = 'ff0000ff',
+    Icon = "/mods/SCTA-master/textures/ui/common/widgets/faction-icons-alpha_bmp/arm_ico.dds",
+    VeteranIcon = "/mods/SCTA-master/textures/ui/common/game/veteran-logo_bmp/arm-veteran_bmp.dds",
+    SmallIcon = "/mods/SCTA-master/textures/ui/common/faction_icon-sm/arm_ico.dds",
+    LargeIcon = "/mods/SCTA-master/textures/ui/common/faction_icon-lg/arm_ico.dds",
+    TooltipID = 'lob_arm',
+    DefaultSkin = 'uef',
+    loadingMovie = '/movies/UEF_load.sfd',
+    loadingColor = 'FFbadbdb',
+    loadingTexture = '/UEF_load.dds',
+    IdleEngTextures = {
+        T1 = '/mods/SCTA-master/textures/ui/common/icons/units/armck_icon.dds',
+        T2 = '/mods/SCTA-master/textures/ui/common/icons/units/armack_icon.dds',
+        T2F = '/mods/SCTA-master/textures/ui/common/icons/units/armfark_icon.dds',
+        T3 = '/icons/units/xsl0309_icon.dds',
+        SCU = '/mods/SCTA-master/textures/ui/common/icons/units/armdecom_icon.dds',
+    },
+    IdleFactoryTextures = {
+        LAND = {
+            '/mods/SCTA-master/textures/ui/common/icons/units/armlab_icon.dds',
+            '/mods/SCTA-master/textures/ui/common/icons/units/armalab_icon.dds',
+            '/icons/units/xsb0301_icon.dds',
+        },
+        AIR = {
+            '/mods/SCTA-master/textures/ui/common/icons/units/armap_icon.dds',
+            '/mods/SCTA-master/textures/ui/common/icons/units/armaap_icon.dds',
+            '/icons/units/xsb0302_icon.dds',
+        },
+        NAVAL = {
+            '/mods/SCTA-master/textures/ui/common/icons/units/armsy_icon.dds',
+            '/mods/SCTA-master/textures/ui/common/icons/units/armasy_icon.dds',
+            '/icons/units/xsb0303_icon.dds',
+        },
+    },
+},
+ }

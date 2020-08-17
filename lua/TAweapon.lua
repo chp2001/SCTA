@@ -1,5 +1,7 @@
-local DefaultWeapon = import('/lua/sim/DefaultWeapons.lua').DefaultProjectileWeapon
+local WeaponFile = import('/lua/sim/DefaultWeapons.lua')
+local DefaultWeapon = WeaponFile.DefaultProjectileWeapon
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+local BareBonesWeapon = WeaponFile.BareBonesWeapon
 
 TAweapon = Class(DefaultWeapon) {
 
@@ -346,5 +348,69 @@ TAweapon = Class(DefaultWeapon) {
         end  
         
         return damageTable
+    end,
+}
+
+TACommanderDeathWeapon = Class(BareBonesWeapon) {
+    OnCreate = function(self)
+        BareBonesWeapon.OnCreate(self)
+
+        local myBlueprint = self:GetBlueprint()
+        self.Data = {
+            NukeOuterRingDamage = myBlueprint.NukeOuterRingDamage or 10,
+            NukeOuterRingRadius = myBlueprint.NukeOuterRingRadius or 40,
+            NukeOuterRingTicks = myBlueprint.NukeOuterRingTicks or 20,
+            NukeOuterRingTotalTime = myBlueprint.NukeOuterRingTotalTime or 10,
+
+            NukeInnerRingDamage = myBlueprint.NukeInnerRingDamage or 1000,
+            NukeInnerRingRadius = myBlueprint.NukeInnerRingRadius or 30,
+            NukeInnerRingTicks = myBlueprint.NukeInnerRingTicks or 24,
+            NukeInnerRingTotalTime = myBlueprint.NukeInnerRingTotalTime or 24,
+        }
+    end,
+
+
+    OnFire = function(self)
+    end,
+
+    Fire = function(self)
+        local myBlueprint = self:GetBlueprint()
+        local myProjectile = self.unit:CreateProjectile( myBlueprint.ProjectileId, 0, 0, 0, nil, nil, nil):SetCollision(false)
+        myProjectile:PassDamageData(self:GetDamageTable())
+        if self.Data then
+            myProjectile:PassData(self.Data)
+        end
+    end,
+}
+
+TACommanderSuicideWeapon = Class(BareBonesWeapon) {
+    OnCreate = function(self)
+        BareBonesWeapon.OnCreate(self)
+
+        local myBlueprint = self:GetBlueprint()
+        self.Data = {
+            NukeOuterRingDamage = myBlueprint.NukeOuterRingDamage or 10,
+            NukeOuterRingRadius = myBlueprint.NukeOuterRingRadius or 40,
+            NukeOuterRingTicks = myBlueprint.NukeOuterRingTicks or 20,
+            NukeOuterRingTotalTime = myBlueprint.NukeOuterRingTotalTime or 10,
+
+            NukeInnerRingDamage = myBlueprint.NukeInnerRingDamage or 500,
+            NukeInnerRingRadius = myBlueprint.NukeInnerRingRadius or 30,
+            NukeInnerRingTicks = myBlueprint.NukeInnerRingTicks or 24,
+            NukeInnerRingTotalTime = myBlueprint.NukeInnerRingTotalTime or 24,
+        }
+    end,
+
+
+    OnFire = function(self)
+    end,
+
+    Fire = function(self)
+        local myBlueprint = self:GetBlueprint()
+        local myProjectile = self.unit:CreateProjectile( myBlueprint.ProjectileId, 0, 0, 0, nil, nil, nil):SetCollision(false)
+        myProjectile:PassDamageData(self:GetDamageTable())
+        if self.Data then
+            myProjectile:PassData(self.Data)
+        end
     end,
 }

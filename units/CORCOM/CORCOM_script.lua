@@ -6,6 +6,7 @@
 local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstructor
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+local TACommanderDeathWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TACommanderDeathWeapon
 
 CORCOM = Class(TAconstructor) {
 	motion = 'Stopped',
@@ -31,6 +32,7 @@ CORCOM = Class(TAconstructor) {
 				TAweapon.OnLostTarget(self)
 		        end,
 		},
+		DeathWeapon = Class(TACommanderDeathWeapon) {},
 	},
 
 	OnCreate = function(self)

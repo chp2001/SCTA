@@ -39,11 +39,11 @@ function doGateSpawn(strArmy, createCommander)
 		
 		end
 		local focusarmy = GetFocusArmy()
-		LOG('*DEBUG----------------------: InitializeArmies, army = ', string.sub(strArmy, 6,-1))
+		LOG('*DEBUG----------------------: InitializeArmies, army = ', string.sub(strArmy, 6, -1))
 		for aK, aV in pairs(GetArmyBrain(strArmy)) do
 			LOG(aK,aV)
 		end
-		if(focusarmy == tonumber(string.sub(strArmy, 6,-1))) then
+		if(focusarmy == tonumber(string.sub(strArmy, 6, -1))) then
 			local cam = import('/lua/simcamera.lua').SimCamera('WorldCamera')
 			local position = cdrUnit:GetPosition()
 			local heading = cdrUnit:GetHeading()

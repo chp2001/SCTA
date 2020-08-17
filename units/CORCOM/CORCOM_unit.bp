@@ -367,7 +367,7 @@ UnitBlueprint {
             WeaponCategory = 'Direct Fire',
         },
         {
-            Damage = 3000,
+            Damage = 500,
             DamageFriendly = true,
             DamageRadius = 29.6875,
             DamageType = 'Normal',
@@ -377,7 +377,7 @@ UnitBlueprint {
 	    EdgeEffectiveness=0.75,
         },
         {
-            Damage = 3000,
+            Damage = 250,
             DamageFriendly = true,
             DamageRadius = 29.6875,
             DamageType = 'Normal',

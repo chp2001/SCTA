@@ -6,7 +6,8 @@
 local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstructor
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
-local DefaultWeapon = import('/lua/sim/DefaultWeapons.lua').DefaultProjectileWeapon
+local TACommanderDeathWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TACommanderDeathWeapon
+local TACommanderSuicideWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TACommanderSuicideWeapon
 
 #ARM Commander - Commander
 
@@ -34,6 +35,8 @@ ARMCOM = Class(TAconstructor) {
 				TAweapon.OnLostTarget(self)
 		        end,
 		},
+		DeathWeapon = Class(TACommanderDeathWeapon) {},
+		SuicideWeapon = Class(TACommanderSuicideWeapon) {},
 	},
 
 	OnCreate = function(self)

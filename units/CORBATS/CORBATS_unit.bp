@@ -134,9 +134,9 @@ UnitBlueprint {
     Physics = {
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 0.162,
-        MaxBrake = 0.659,
-        MaxSpeed = 4.03,
+        MaxAcceleration = 2,
+        MaxBrake = 2.1,
+        MaxSpeed = 2.3,
         TurnRate = 11,
         MotionType = 'RULEUMT_Water',
         MaxSteerForce = 10,

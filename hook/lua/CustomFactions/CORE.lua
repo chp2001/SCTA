@@ -1,0 +1,45 @@
+FactionList = {
+    {
+        Key = 'core',
+        Category = 'CORE',
+        DisplayName = "CORE",
+        SoundPrefix = 'CORE',
+        FactionInUnitBp = 'CORE',
+        InitialUnit = 'corcom',
+        CampaignFileDesignator = 'K',
+        TransmissionLogColor = 'ffff0000',
+        Icon = "/mods/SCTA-master/textures/ui/common/widgets/faction-icons-alpha_bmp/core_ico.dds",
+        VeteranIcon = "/mods/SCTA-master/textures/ui/common/game/veteran-logo_bmp/core-veteran_bmp.dds",
+        SmallIcon = "/mods/SCTA-master/textures/ui/common/faction_icon-sm/core_ico.dds",
+        LargeIcon = "/mods/SCTA-master/textures/ui/common/faction_icon-lg/core_ico.dds",
+        TooltipID = 'lob_core',
+        DefaultSkin = 'cybran',
+        loadingMovie = '/movies/cybran_load.sfd',
+        loadingColor = 'FFe24f2d',
+        loadingTexture = '/cybran_load.dds',
+        IdleEngTextures = {
+            T1 = '/mods/SCTA-master/textures/ui/common/icons/units/corcv_icon.dds',
+            T2 = '/mods/SCTA-master/textures/ui/common/icons/units/coracv_icon.dds',
+            T2F = '/mods/SCTA-master/textures/ui/common/icons/units/cornecro_icon.dds',
+            T3 = '/icons/units/xsl0309_icon.dds',
+            SCU = '/mods/SCTA-master/textures/ui/common/icons/units/cordecom_icon.dds',
+        },
+        IdleFactoryTextures = {
+            LAND = {
+                '/mods/SCTA-master/textures/ui/common/icons/units/corvp_icon.dds',
+                '/mods/SCTA-master/textures/ui/common/icons/units/coravp_icon.dds',
+                '/icons/units/xsb0301_icon.dds',
+            },
+            AIR = {
+                '/mods/SCTA-master/textures/ui/common/icons/units/corap_icon.dds',
+                '/mods/SCTA-master/textures/ui/common/icons/units/coraap_icon.dds',
+                '/icons/units/xsb0302_icon.dds',
+            },
+            NAVAL = {
+                '/mods/SCTA-master/textures/ui/common/icons/units/corsy_icon.dds',
+                '/mods/SCTA-master/textures/ui/common/icons/units/corasy_icon.dds',
+                '/icons/units/xsb0303_icon.dds',
+            },
+        },
+    },
+}

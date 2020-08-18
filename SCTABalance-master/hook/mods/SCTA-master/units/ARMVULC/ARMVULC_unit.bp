@@ -19,8 +19,8 @@ UnitBlueprint {
     },
     SelectionThickness = 0.3,
     SizeX = 9,
-    SizeY = 9,
-    SizeZ = 9,
+    SizeY = 18,
+    SizeZ = 14,
     LifeBarSize = 10,
     Weapon = {
         {

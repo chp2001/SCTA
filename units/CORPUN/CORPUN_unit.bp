@@ -88,7 +88,7 @@ UnitBlueprint {
     Footprint = {
 	MaxSlope = 0.625,
         SizeX = 2,
-        SizeZ = 1,
+        SizeZ = 2,
     },
     General = {
 	BuildAngle = 8192,

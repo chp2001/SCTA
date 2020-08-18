@@ -12,6 +12,6 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 10,
     SizeX = 6,
-    SizeY = 8,
+    SizeY = 12,
     SizeZ = 6,
 }

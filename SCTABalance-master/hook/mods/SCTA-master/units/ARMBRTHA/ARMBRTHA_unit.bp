@@ -31,5 +31,6 @@ UnitBlueprint {
     Economy = {
         BuildTime = 21000,
     },
+    SizeY = 6,
     StrategicIconName = 'icon_structure2_artillery',
 }

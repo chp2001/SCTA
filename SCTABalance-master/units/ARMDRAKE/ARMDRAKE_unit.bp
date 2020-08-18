@@ -144,7 +144,7 @@ UnitBlueprint {
     SelectionSizeZ = 4,
     SelectionThickness = 0.25,
     SizeX = 6,
-    SizeY = 8,
+    SizeY = 12,
     SizeZ = 6,
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 0,

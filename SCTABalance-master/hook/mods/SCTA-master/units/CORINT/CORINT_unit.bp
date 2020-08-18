@@ -31,5 +31,6 @@ UnitBlueprint {
     Display = {
         UniformScale = 0.25,
     },
+    SizeY = 6,
     StrategicIconName = 'icon_structure2_artillery',
 }

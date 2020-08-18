@@ -12,4 +12,5 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 16,
     },
+    SelectionCenterOffsetZ = 0,
 }

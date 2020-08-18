@@ -15,12 +15,12 @@ UnitBlueprint {
         SizeZ = 8,
     },
         Display = {
-        UniformScale = 0.80,
+        UniformScale = 0.60,
     },
     SelectionThickness = 0.3,
-    SizeX = 9,
-    SizeY = 9,
-    SizeZ = 9,
+    SizeX = 12,
+    SizeY = 20,
+    SizeZ = 12,
     LifeBarSize = 10,
     Weapon = {
         {

@@ -93,7 +93,7 @@ UnitBlueprint {
         BuildCostEnergy = 24000,
         BuildCostMass = 2000,
         BuildTime = 60000,
-        BuildRate = 100,
+        BuildRate = 10,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -142,7 +142,7 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     SpecialAbilities = {
         LaunchNuke = {
-            AreaOfEffect = 40,
+            AreaOfEffect = 30,
             MaxRadius = -1,
         },
     },
@@ -163,7 +163,7 @@ UnitBlueprint {
                     AppliedToTarget = true,
                     BuffType = 'STUN',
                     Duration = 30, 25, 20, 
-                    Radius = 30, 20, 10, 
+                    Radius = 25, 15, 10, 
                     TargetAllow = 'TECH1, TECH2', 'TECH3',
                 },
 	    },
@@ -217,7 +217,7 @@ UnitBlueprint {
             NukeInnerRingTicks = 10,
             NukeInnerRingTotalTime = 12,
             NukeOuterRingDamage = 50,
-            NukeOuterRingRadius = 35,
+            NukeOuterRingRadius = 25,
             NukeOuterRingTicks = 20,
             NukeOuterRingTotalTime = 5,
             NukeWeapon = true,            

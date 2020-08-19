@@ -173,7 +173,7 @@ UnitBlueprint {
                     MuzzleBones = {
                         'missile',
                     },
-                    HideMuzzle = true,
+                    VisibleMuzzle = true,
                     RackBone = 'missile',
                 },
             },

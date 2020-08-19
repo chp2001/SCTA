@@ -189,14 +189,14 @@ UnitBlueprint {
                     MuzzleBones = {
                         'rocket1',
                     },
-		    HideMuzzle = true,
+		    VisibleMuzzle = true,
                     RackBone = 'hamper',
                 },
                 {
                     MuzzleBones = {
                         'rocket2',
                     },
-		    HideMuzzle = true,
+		    VisibleMuzzle = true,
                     RackBone = 'hamper',
                 },
             },

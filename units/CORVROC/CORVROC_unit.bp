@@ -178,7 +178,7 @@ UnitBlueprint {
                     MuzzleBones = {
                         'dummy',
                     },
-		    HideMuzzle = true,
+		    VisibleMuzzle = true,
                     RackBone = 'cradle',
                 },
             },

@@ -330,20 +330,28 @@ TAunit = Class(Unit)
 	    end
 	end,
 
-	HideFlares = function(self)
-		local bp = self:GetBlueprint()
-		if bp.Weapon then
-			for w, weapon in bp.Weapon do
-				if weapon.RackBones and weapon.Fake ~= true then
-					for k, flare in weapon.RackBones do
-						if not flare.HideMuzzle or flare.HideMuzzle == false then
-							self:HideBone(flare.MuzzleBones[1], true)
-						end
-					end
-				end
-			end
-		end
-	end,
+    HideFlares = function(self, bp)
+        if not bp then bp = self:GetBlueprint().Weapon end
+        if bp then
+            for i, weapon in bp do
+                if weapon.RackBones then
+                    for j, rack in weapon.RackBones do
+                        if not rack.VisibleMuzzle then
+                            if rack.MuzzleBones[1] and not rack.MuzzleBones[2] and self:IsValidBone(rack.MuzzleBones[1]) then
+                                self:HideBone(rack.MuzzleBones[1], true)
+                            elseif rack.MuzzleBones[2] then
+                                for mi, muzzle in rack.MuzzleBones do
+                                    if self:IsValidBone(muzzle) then
+                                        self:HideBone(muzzle, true)
+                                    end
+                                end
+                            end    
+                        end
+                    end
+                end
+            end
+        end
+    end,
 
     OnReclaimed = function(self, entity)
         self:DoUnitCallbacks('OnReclaimed', entity)

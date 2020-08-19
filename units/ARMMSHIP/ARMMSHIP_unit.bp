@@ -188,14 +188,14 @@ UnitBlueprint {
                     MuzzleBones = {
                         'Rocket_01',
                     },
-		    HideMuzzle = true,
+		    VisibleMuzzle = true,
                     RackBone = 'Launcher_01',
                 },
                 {
                     MuzzleBones = {
                         'Rocket_02',
                     },
-		    HideMuzzle = true,
+		    VisibleMuzzle = true,
                     RackBone = 'Launcher_01',
                 },
             },

@@ -11,7 +11,7 @@ UnitBlueprint {
     },
   },  
       Economy = {
-        BuildRate = 100,
+        BuildRate = 120,
         BuildCostMass = 50,
         MaintenanceConsumptionPerSecondEnergy = 2,
         BuildableCategory = {
@@ -27,6 +27,8 @@ UnitBlueprint {
         SkirtSizeX = 0,
         SkirtSizeZ = 0,
     },
+    SelectionSizeX = 1.3,
+    SelectionSizeZ = 1.3,
     SizeX = 1.5,
     SizeZ = 1.5,
 }

@@ -34,6 +34,7 @@ UnitBlueprint {
         BuildCostMass = 2600,
         BuildCostEnergy = 24000,
         MaintenanceConsumptionPerSecondEnergy = 10,
+        BuildTime = 17500,
         ProductionPerSecondMass = 8,
     },
    Footprint = {
@@ -52,11 +53,11 @@ UnitBlueprint {
         SkirtSizeX = 2,
         SkirtSizeZ = 2,
     },
-    SelectionSizeX = 0.65,
-    SelectionSizeZ = 0.65,
+    SelectionSizeX = 1.3,
+    SelectionSizeZ = 1.3,
     SelectionThickness = 0.6,
-    SizeX = 2,
+    SizeX = 3,
     SizeY = 1.6,
-    SizeZ = 2,
+    SizeZ = 3,
     StrategicIconName = 'icon_structure2_mass',
 }

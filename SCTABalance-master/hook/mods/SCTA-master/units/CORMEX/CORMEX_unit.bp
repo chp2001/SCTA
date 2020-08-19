@@ -12,7 +12,7 @@ UnitBlueprint {
       Economy = {
         BuildCostMass = 50,
         MaintenanceConsumptionPerSecondEnergy = 2,
-        BuildRate = 100,
+        BuildRate = 120,
         BuildableCategory = {
                'cormoho',
         },
@@ -26,6 +26,8 @@ UnitBlueprint {
         SkirtSizeX = 0,
         SkirtSizeZ = 0,
     },
-    SizeX = 1.5,
-    SizeZ = 1.5,
+    SelectionSizeX = 1.6,
+    SelectionSizeZ = 1.6,
+    SizeX = 2,
+    SizeZ = 2,
 }

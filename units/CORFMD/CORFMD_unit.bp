@@ -193,7 +193,7 @@ UnitBlueprint {
             WeaponUnpackAnimationRate = 2,
             AlwaysRecheckTarget = true,
             CountedProjectile = true,
-            InitialProjectileStorage = 1,
+            InitialProjectileStorage = 0,
             MaxProjectileStorage = 10,
             TargetRestrictOnlyAllow = 'STRATEGIC MISSILE',
             TargetType = 'RULEWTT_Projectile',

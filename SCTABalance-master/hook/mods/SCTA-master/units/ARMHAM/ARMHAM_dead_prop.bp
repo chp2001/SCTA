@@ -1,5 +1,4 @@
-
-UnitBlueprint {
+PropBlueprint {
     Merge = true, 
     Display = {
         UniformScale = 0.10,
@@ -8,10 +7,4 @@ UnitBlueprint {
         SizeX = 1,
         SizeZ = 1,
     },
-    Intel = {
-        VisionRadius = 10,
-    },
-    SizeX = 1,
-    SizeY = 1,
-    SizeZ = 1.4,
 }

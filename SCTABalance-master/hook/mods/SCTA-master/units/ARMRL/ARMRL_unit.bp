@@ -32,8 +32,8 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Structure',
-        Health = 295,
-        MaxHealth = 295,
+        Health = 400,
+        MaxHealth = 400,
     },
     Description = 'Missile Tower',
     Display = {
@@ -54,6 +54,8 @@ Physics = {
   Intel = {
     VisionRadius = 12,
 },
+SelectionSizeX = 1,
+SelectionSizeZ = 1,
 SelectionCenterOffsetZ = 0,
 SizeX = 1,
 SizeY = 2,

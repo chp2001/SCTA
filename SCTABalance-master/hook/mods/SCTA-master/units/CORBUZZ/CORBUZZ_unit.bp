@@ -18,6 +18,9 @@ UnitBlueprint {
         UniformScale = 0.60,
     },
     SelectionThickness = 0.3,
+    SelectionSizeX = 10,
+    SelectionCenterOffsetZ = 0,
+    SelectionSizeZ = 10,
     SizeX = 12,
     SizeY = 20,
     SizeZ = 12,
@@ -31,11 +34,11 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
-            BallisticArc = 'RULEUBA_LowArc',
+            BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 1500,
-            DamageRadius = 3.125, 
+            DamageRadius = 15, 
             DamageType = 'Normal',
             DisplayName = 'CORBUZZ_WEAPON',
             FireTargetLayerCapsTable = {
@@ -52,48 +55,48 @@ UnitBlueprint {
             MuzzleVelocity = 50,
             EnergyChargeForFirstShot = false,
             EnergyDrainPerSecond = 0,
-            EnergyRequired = 2000,
+            EnergyRequired = 1000,
             
             ProjectileId = '/mods/SCTA-master/projectiles/CORBUZZ_WEAPON/CORBUZZ_WEAPON_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Flare',
+                        'flare',
                     },
                     RackBone = 'muzzle1',
                 },
                 {
                     MuzzleBones = {
-                        'Flare',
+                        'flare',
                     },
                     RackBone = 'muzzle2',
                 },
                 {
                     MuzzleBones = {
-                        'Flare',
+                        'flare',
                     },
                     RackBone = 'muzzle3',
                 },
                 {
                     MuzzleBones = {
-                        'Flare',
+                        'flare',
                     },
                     RackBone = 'muzzle4',
                 },
                 {
                     MuzzleBones = {
-                        'Flare',
+                        'flare',
                     },
                     RackBone = 'muzzle5',
                 },
                 {
                     MuzzleBones = {
-                        'Flare',
+                        'flare',
                     },
                     RackBone = 'muzzle6',
                 },
             },
-            RackRecoilDistance = -10,
+            RackRecoilDistance = -5,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
@@ -105,7 +108,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'Flare',
+            TurretBoneMuzzle = 'flare',
             TurretBonePitch = 'Spindle',
             TurretBoneYaw = 'Turret',
             TurretPitch = 0,

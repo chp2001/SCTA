@@ -113,8 +113,8 @@ UnitBlueprint {
         BuildTime = 2404,
     },
     Footprint = {
-	SizeX = 1,
-	SizeZ = 1,
+	SizeX = 2,
+	SizeZ = 2,
 	MaxSlope = 0.625,
 	MaxWaterDepth = 0.75,
     },
@@ -160,6 +160,7 @@ UnitBlueprint {
     SelectionThickness = 0.25,
     SizeX = 2,
     SizeZ = 2,
+    SizeY = 2, 
     StrategicIconName = 'icon_land1_directfire',
     StrategicIconSortPriority = 0,
     Weapon = {

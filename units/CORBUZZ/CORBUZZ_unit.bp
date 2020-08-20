@@ -52,7 +52,7 @@ UnitBlueprint {
 				EmitterSize = 1.25,
             },
             {
-				EmitterBone = {'Flare'},
+				EmitterBone = {'flare'},
 				EmitterBlueprint = {
     					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -148,7 +148,7 @@ UnitBlueprint {
             Label = 'CORBUZZ_WEAPON',
             MaxRadius = 193,
             MuzzleSalvoDelay = 0, 
-            MuzzleSalvoSize = 1,
+            MuzzleSalvoSize = 6,
             MuzzleVelocity = 50,
             EnergyChargeForFirstShot = false,
             EnergyDrainPerSecond = 0,
@@ -158,37 +158,37 @@ UnitBlueprint {
                 RackBones = {
                     {
                         MuzzleBones = {
-                            'Flare',
+                            'flare',
                         },
                         RackBone = 'muzzle1',
                     },
                     {
                         MuzzleBones = {
-                            'Flare',
+                            'flare',
                         },
                         RackBone = 'muzzle2',
                     },
                     {
                         MuzzleBones = {
-                            'Flare',
+                            'flare',
                         },
                         RackBone = 'muzzle3',
                     },
                     {
                         MuzzleBones = {
-                            'Flare',
+                            'flare',
                         },
                         RackBone = 'muzzle4',
                     },
                     {
                         MuzzleBones = {
-                            'Flare',
+                            'flare',
                         },
                         RackBone = 'muzzle5',
                     },
                     {
                         MuzzleBones = {
-                            'Flare',
+                            'flare',
                         },
                         RackBone = 'muzzle6',
                     },
@@ -205,7 +205,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'Flare',
+            TurretBoneMuzzle = 'flare',
             TurretBonePitch = 'Spindle',
             TurretBoneYaw = 'Turret',
             TurretPitch = 0,

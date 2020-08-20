@@ -141,7 +141,7 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
-            BallisticArc = 'RULEUBA_LowArc',
+            BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 2000,
@@ -150,6 +150,7 @@ UnitBlueprint {
             DisplayName = 'ARM_BERTHACANNON',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
             FiringTolerance = 1.65,	

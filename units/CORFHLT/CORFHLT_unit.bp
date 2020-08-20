@@ -133,7 +133,7 @@ UnitBlueprint {
             DisplayName = 'CORFHLT_LASER',
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Air|Seabed',
-                Land = 'Land|Water|Seabed',
+                Land = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
             FiringTolerance = 3,

@@ -3,5 +3,8 @@ UnitBlueprint {
    Display = {
        UniformScale = 0.28,
     },
-   SizeY = 3.4,
+    SelectionSizeX = 2,
+    SelectionSizeZ = 2,
+    SizeY = 4.3,
+    SizeX = 2.8,
 }

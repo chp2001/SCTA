@@ -41,7 +41,7 @@ do
             },    
             SelectionSizeX = 0.5,
             SelectionSizeZ = 0.5,
-            SelectionThickness = 0.5,
+            SelectionThickness = 1,
             SizeX = 0.5,
             SizeY = 0.5,
             SizeZ = 0.5,

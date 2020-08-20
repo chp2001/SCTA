@@ -7,4 +7,5 @@ UnitBlueprint {
 	SizeX = 1,
 	SizeZ = 1,
     },
+    SelectionCenterOffsetZ = -0.25,
 }

@@ -19,4 +19,7 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 10,
     },
+    SizeX = 1,
+    SizeY = 1.4,
+    SizeZ = 1,
 }

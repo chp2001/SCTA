@@ -13,4 +13,7 @@ UnitBlueprint {
         Health = 140,
         MaxHealth = 140,
     },
+    SizeX = 1,
+    SizeY = 1,
+    SizeZ = 1,
 }

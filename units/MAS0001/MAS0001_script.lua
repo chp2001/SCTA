@@ -15,6 +15,8 @@ local EffectUtil = import('/lua/EffectUtilities.lua')
 MAS0001 = Class(AWalkingLandUnit) {
     OnCreate = function(self)
 	AWalkingLandUnit.OnCreate(self)
+	self.AnimManip = CreateAnimator(self)
+	self.Trash:Add(self.AnimManip)
 	#WaitSeconds(1)
 	end,
 
@@ -28,10 +30,10 @@ MAS0001 = Class(AWalkingLandUnit) {
         self:GetAIBrain():GiveResource('Mass', self:GetBlueprint().Economy.StorageMass)
     end,
 	
-    OnStartBuild = function(self, unitBeingBuilt, order)
+	OnStartBuild = function(self, unitBeingBuilt, order)
 		local gtime = GetGameTimeSeconds()
 		if gtime < 5 then
-			ForkThread(self.Spawn,self, unitBeingBuilt, order)
+			ForkThread(self.Spawn, self, unitBeingBuilt, order)
 		else
 			AWalkingLandUnit.OnStartBuild(self, unitBeingBuilt, order)
 			local cdrUnit = false
@@ -47,16 +49,18 @@ MAS0001 = Class(AWalkingLandUnit) {
     end,
 
 	Spawn = function(self, unitBeingBuilt, order)
+		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationOpen):SetRate(0.8)
 		local gtime = GetGameTimeSeconds()
 		while gtime < 5 do
 			WaitSeconds(0.2)
 			gtime = GetGameTimeSeconds()
 		end
-		AWalkingLandUnit.OnStartBuild(self, unitBeingBuilt, order)
+		---AWalkingLandUnit.OnStartBuild(self, unitBeingBuilt, order)
 		local cdrUnit = false
 		local army = self:GetArmy()
 		cdrUnit = CreateInitialArmyUnit(army, unitBeingBuilt.UnitId)
-        self:AddBuildRestriction(categories.COMMAND)
+		self:AddBuildRestriction(categories.COMMAND)
+		WaitSeconds(2)
 		self:Destroy()
 		unitBeingBuilt:Destroy()
 	end

@@ -55,11 +55,12 @@ MAS0001 = Class(AWalkingLandUnit) {
 			WaitSeconds(0.2)
 			gtime = GetGameTimeSeconds()
 		end
-		AWalkingLandUnit.OnStartBuild(self, unitBeingBuilt, order)
+		---AWalkingLandUnit.OnStartBuild(self, unitBeingBuilt, order)
 		local cdrUnit = false
 		local army = self:GetArmy()
 		cdrUnit = CreateInitialArmyUnit(army, unitBeingBuilt.UnitId)
 		self:AddBuildRestriction(categories.COMMAND)
+		WaitSeconds(2)
 		self:Destroy()
 		unitBeingBuilt:Destroy()
 	end

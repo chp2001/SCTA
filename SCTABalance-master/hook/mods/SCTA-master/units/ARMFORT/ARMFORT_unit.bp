@@ -34,7 +34,7 @@ UnitBlueprint {
         MaxGroundVariation = 50,
         MaxSteerForce = 0,
         MeshExtentsX = 2.4,
-        MeshExtentsY = 1.3,
+        MeshExtentsY = 2,
         MeshExtentsZ = 2.4,
         MinSpeedPercent = 0,
         MotionType = 'RULEUMT_None',
@@ -44,7 +44,7 @@ UnitBlueprint {
         SkirtSizeZ = 1,
         TurnRate = 0,
     },
-    SizeX = 3,
+    SizeX = 4,
     SizeY = 4,
-    SizeZ = 3,
+    SizeZ = 4,
 }

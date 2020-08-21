@@ -223,7 +223,7 @@ UnitBlueprint {
             NukeWeapon = true,            
             WeaponCategory = 'Missile',
             WeaponUnpacks = true,
-            WeaponUnpackAnimation = '/mods/SCTA-master/units/ARMEMP/ARMEMP_lod0_Bunpack.sca',
+            WeaponUnpackAnimation = '/mods/SCTA-master/units/ARMEMP/ARMEMP_lod0_unpack.sca',
             WeaponUnpackAnimationRate = 1,
             WeaponUnpackTimeout = 1,
 			WeaponRepackTimeout = 1,

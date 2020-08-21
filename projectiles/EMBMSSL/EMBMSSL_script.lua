@@ -3,12 +3,12 @@
 #
 #Script created by Raevn
 
-local TANuclearProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TANuclearProjectile
+local TAEMPNuclearProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TAEMPNuclearProjectile
 
-EMBMSSL = Class(TANuclearProjectile) {
+EMBMSSL = Class(TAEMPNuclearProjectile) {
 
 	OnCreate = function(self)
-		TANuclearProjectile.OnCreate(self)
+		TAEMPNuclearProjectile.OnCreate(self)
         self:SetCollisionShape('Sphere', 0, 0, 0, 2)
 		self:ForkThread( self.MovementThread )
 	end,
@@ -65,7 +65,7 @@ EMBMSSL = Class(TANuclearProjectile) {
             nukeProjectile:PassDamageData(self.DamageData)
             nukeProjectile:PassData(self.Data)
         end
-        TANuclearProjectile.OnImpact(self, TargetType, TargetEntity)
+        TAEMPNuclearProjectile.OnImpact(self, TargetType, TargetEntity)
     end,
 
 }

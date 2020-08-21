@@ -26,6 +26,7 @@ UnitBlueprint {
  Display = {
   Abilities = {
             '<LOC ability_radar>Radar',
+            'Radar Targeting',
             '<LOC ability_upgradable>Upgradeable',
         },
      }, 

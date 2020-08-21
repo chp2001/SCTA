@@ -48,7 +48,7 @@ CORTARG = Class(TAunit) {
 	OnScriptBitSet = function(self, bit)
 		if bit == 3 then
 			self:PlayUnitSound('Deactivate')
-    		        ForkThread(self.Close, self)
+    		ForkThread(self.Close, self)
 			TAutils.unregisterTargetingFacility(self:GetArmy())
 		end
 		TAunit.OnScriptBitSet(self, bit)

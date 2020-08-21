@@ -3,6 +3,10 @@ UnitBlueprint {
     Display = {
         UniformScale = 0.08,
     },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
+    },
     Economy = {
         BuildCostMass = 70,
     },
@@ -13,6 +17,8 @@ UnitBlueprint {
         Health = 160,
         MaxHealth = 160,
     },
+    SelectionSizeX = 0.5,
+    SelectionSizeZ = 0.5,
     SizeX = 1,
     SizeY = 1,
     SizeZ = 1,

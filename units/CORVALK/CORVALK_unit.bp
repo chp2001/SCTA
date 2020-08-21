@@ -95,7 +95,7 @@ UnitBlueprint {
     Description = 'Air Transport',
     Display = {
         Abilities = {
-            'Transport',
+            '<LOC ability_transport>Transport',
         },
 	DestructionEffects = {
 		DefaultFlamingProjectileCountMin = 0,

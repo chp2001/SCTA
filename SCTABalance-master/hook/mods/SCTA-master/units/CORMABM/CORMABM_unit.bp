@@ -7,6 +7,9 @@ UnitBlueprint {
         SizeX = 3,
         SizeZ = 3,
     },
+    Economy = {
+        BuildTime = 5000,
+    },
     SizeX = 4,
     SizeY = 2,
     SizeZ = 4,

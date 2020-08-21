@@ -15,6 +15,7 @@ UnitBlueprint {
     General = {
         ToggleCaps = {
             RULEUTC_JammingToggle = true,
+            RULEUTC_StealthToggle = false,
         },
         Icon = 'land',
         OrderOverrides = {

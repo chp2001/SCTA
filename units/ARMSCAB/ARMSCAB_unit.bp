@@ -167,7 +167,7 @@ UnitBlueprint {
             MuzzleVelocity = 20,
             ProjectileId = '/mods/SCTA-master/projectiles/CORMABM_WEAPON/CORMABM_WEAPON_proj.bp',
             ProjectileLifetimeUsesMultiplier = 1.1,
-            ProjectilesPerOnFire = 3,
+            ProjectilesPerOnFire = 2,
             RackBones = {
                 {
                     MuzzleBones = {

@@ -132,6 +132,45 @@ TANuclearProjectile = Class(TAProjectile) {
 
 }
 
+TAEMPNuclearProjectile = Class(TAProjectile) {
+	Smoke = true,
+	FxImpactAirUnit = {
+		'/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp',
+	},
+	FxAirUnitHitScale = 15,
+	FxImpactShield = {
+		'/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp',
+	},
+	FxShieldHitScale = 15,
+	FxImpactUnit = {
+		'/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp',
+	},
+	FxUnitHitScale = 15,
+	FxImpactProp = {
+		'/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp',
+	},
+	FxPropHitScale = 15,
+	FxImpactLand = {
+		'/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp',
+	},
+	FxLandHitScale = 15,
+	FxImpactWater = {
+		'/effects/emitters/destruction_water_splash_ripples_01_emit.bp',
+		'/effects/emitters/destruction_water_splash_wash_01_emit.bp',
+		'/effects/emitters/destruction_water_splash_plume_01_emit.bp',
+	},
+    	FxWaterHitScale = 15,
+	    FxImpactProjectile = {
+    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
+	},
+	FxProjectileHitScale = 1.5,
+    
+    FxImpactTrajectoryAligned = false,
+
+}
+
 TAHeavyCannonProjectile = Class(TAProjectile) {
 	FxImpactAirUnit = {
 		'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp',

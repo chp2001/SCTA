@@ -6,6 +6,6 @@
 UnitBlueprint {
     Merge = true, 
     Economy = {
-        BuildRate = 300,
+        BuildRate = 150,
     },
 }

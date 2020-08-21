@@ -107,7 +107,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 6000,
         BuildCostMass = 400,
-        BuildTime = 1465,
+        BuildTime = 1500,
     },
     Footprint = {
 	MaxSlope = 1,
@@ -191,7 +191,7 @@ UnitBlueprint {
             MuzzleVelocity = 20,
             ProjectileId = '/mods/SCTA-master/projectiles/CORMABM_WEAPON/CORMABM_WEAPON_proj.bp',
             ProjectileLifetimeUsesMultiplier = 1.1,
-            ProjectilesPerOnFire = 1,
+            ProjectilesPerOnFire = 3,
             RackBones = {
                 {
                     MuzzleBones = {
@@ -212,7 +212,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'TACTICAL MISSILE',
             TargetType = 'RULEWTT_Projectile',
-            EffectiveRadius = 10,
+            EffectiveRadius = 20,
             TrackingRadius = 5,
             TurretBoneMuzzle = 'fire',
             TurretBonePitch = 'box',
@@ -226,7 +226,7 @@ UnitBlueprint {
             TurretYawSpeed = 0,
             Turreted = true,
             WeaponUnpackAnimation = '/mods/SCTA-master/units/CORMABM/CORMABM_lod0_Aunpack.sca',
-            WeaponUnpackAnimationRate = 1,
+            WeaponUnpackAnimationRate = 2,
             WeaponCategory = 'Defense',
             WeaponRepackTimeout = 1,
             WeaponUnpacks = true,

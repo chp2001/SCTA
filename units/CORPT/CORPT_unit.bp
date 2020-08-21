@@ -216,7 +216,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 10,
+            Damage = 50,
             DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'CORPT_LASER',

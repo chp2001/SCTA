@@ -34,6 +34,7 @@ UnitBlueprint {
                         },
               ToggleCaps = {
                 RULEUTC_JammingToggle = true,
+                RULEUTC_StealthToggle = false,
                           },
               },
         Intel = {

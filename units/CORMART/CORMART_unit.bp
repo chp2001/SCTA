@@ -168,7 +168,7 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_IndirectFire',
 	    FiringRandomness = 2,
             Label = 'CORE_ARTILLERY',
-            MaxRadius = 55,
+            MaxRadius = 60,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 19.375,

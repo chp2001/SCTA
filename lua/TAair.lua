@@ -59,7 +59,7 @@ TAair = Class(TAunit)
         self:SetSpeedMult(1)
         self:SetAccMult(1)
         self:SetTurnMult(1)
-    end,
+	end,
 }
 
 TypeClass = TAair

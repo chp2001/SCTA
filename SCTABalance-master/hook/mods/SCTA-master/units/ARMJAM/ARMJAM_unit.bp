@@ -17,6 +17,7 @@ UnitBlueprint {
     General = {
         ToggleCaps = {
             RULEUTC_JammingToggle = true,
+            RULEUTC_StealthToggle = false,
         },
         OrderOverrides = {
             RULEUTC_JammingToggle = {

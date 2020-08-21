@@ -318,21 +318,21 @@ function CreateWreckage(self,overkillRatio, bp, completed, pos, orientation, hea
 	if wreck and completed == 1 then
 			
 		local prop = CreateProp( pos, wreck )
-		pbp = prop:GetBlueprint()
+		bp = prop:GetBlueprint()
 
 
-		prop:SetScale(pbp.Display.UniformScale)
+		prop:SetScale(bp.Display.UniformScale)
 		prop:SetOrientation(orientation, true)
 
-		local mass = (pbp.Economy.ReclaimMassMax or 0)
-		local energy = (pbp.Economy.ReclaimEnergyMax or 0)
+		local mass = (bp.Economy.ReclaimMassMax or 0)
+		local energy = (bp.Economy.ReclaimEnergyMax or 0)
 		#change this to point to the wreckage prop intead of the unit blueprint?
 		local time = (bp.Wreckage.ReclaimTimeMultiplier or 1) 
 
 		prop:SetMaxReclaimValues(time, mass, energy)
 
 		prop.OriginalUnit = self.OriginalUnit or self
-		if pbp.Physics.BlockPath == false then
+		if bp.Physics.BlockPath == false then
 		end
 		prop:DoTakeDamage(prop, overkillRatio * health, Vector(0,0,0), 'Normal')
         	prop.AssociatedBP = bp.BlueprintId

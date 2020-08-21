@@ -27,6 +27,7 @@ UnitBlueprint {
   Abilities = {
             '<LOC ability_radar>Radar',
             '<LOC ability_upgradable>Upgradeable',
+            'Radar Targeting',
         },
      }, 
      Economy = {

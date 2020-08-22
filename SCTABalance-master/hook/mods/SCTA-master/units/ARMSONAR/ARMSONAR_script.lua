@@ -7,6 +7,12 @@ ARMSONAR = Class(oldARMSONAR) {
 			 self:Destroy()
 		 end
 	 end,
+
+	 OnStopBeingBuilt = function(self,builder,layer)
+		oldARMSONAR.OnStopBeingBuilt(self,builder,layer)
+		self:PlayUnitSound('Activate')
+		TAutils.registerTargetingFacility(self:GetArmy())
+	end,
 }
 
 TypeClass = ARMSONAR

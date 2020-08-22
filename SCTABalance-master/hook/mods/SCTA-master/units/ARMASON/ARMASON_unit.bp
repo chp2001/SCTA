@@ -2,8 +2,14 @@ UnitBlueprint {
     Merge = true,
 	Defense = {
         ArmorType = 'Structure',
-        Health = 320,
-        MaxHealth = 320,
+        Health = 1000,
+        MaxHealth = 1000,
+    },
+    Display = {
+        Abilities = {
+            'Sonar',
+            'Radar Targeting',
+        },
     },
     Footprint = {
         SizeX = 1,
@@ -13,4 +19,8 @@ UnitBlueprint {
     General = {
         UpgradesFrom = 'armsonar',
     },
+    Economy = {
+        NaturalProducer = false,
+        MaintenanceConsumptionPerSecondEnergy = 50,
+        },
 }

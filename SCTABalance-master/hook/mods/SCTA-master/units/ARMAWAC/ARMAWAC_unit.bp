@@ -1,14 +1,39 @@
 UnitBlueprint {
     Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH2',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	'AIR',
+	'INTELLIGENCE',
+	'RADAR',
+        'OVERLAYRADAR',
+        'OVERLAYOMNI',
+        'ARM',
+        'VTOL',
+	'CTRL_V',
+	'LEVEL2',
+	'NOWEAPON',
+	'NOTSUB',
+	'CTRL_R',
+    },
     Defense = {
         Health = 800,
         MaxHealth = 800,
+    },
+    Display = {
+        Abilities = {
+            '<LOC ability_omni>Omni Sensor',
+            '<LOC ability_radar>Radar',
+        },
     },
     Economy = {
         BuildCostEnergy = 16000,
         BuildCostMass = 330,
         BuildTime = 2800,
-        MaintenanceConsumptionPerSecondEnergy = 15,
+        MaintenanceConsumptionPerSecondEnergy = 10,
     },
     General = {
         OrderOverrides = {
@@ -23,6 +48,7 @@ UnitBlueprint {
     },
     Intel = {
 	FreeIntel = false,
-	RadarRadius = 50, 
+    RadarRadius = 100, 
+    OmniRadius = 20,
     },
 }

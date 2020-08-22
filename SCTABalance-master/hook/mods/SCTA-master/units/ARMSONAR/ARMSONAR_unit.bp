@@ -5,10 +5,41 @@
 
 UnitBlueprint {
     Merge = true,
+    Categories = {
+        'BUILTBYT2SUB',
+        'BUILTBYT1HOVER',
+        'BUILTBYT2AIR',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH1',
+	'STRUCTURE',
+	'INTELLIGENCE',
+	'SONAR',
+	'NAVAL',
+	'TEXTUREANIM',
+        'OVERLAYSONAR',
+	'ARM',
+	'SPECIAL',
+	'SONAR',
+	'LEVEL2',
+	'NOWEAPON',
+	'NOTAIR',
+	'NOTSUB',
+	'CTRL_R',
+    },
     Defense = {
         ArmorType = 'Structure',
         Health = 300,
         MaxHealth = 300,
+    },
+    Display = {
+        Abilities = {
+            'Sonar',
+            '<LOC ability_upgradable>Upgradeable',
+            'Radar Targeting',
+        },
     },
     Economy = {
 	NaturalProducer = false,

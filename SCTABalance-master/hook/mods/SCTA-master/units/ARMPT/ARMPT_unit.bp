@@ -29,7 +29,7 @@ UnitBlueprint {
         MaxHealth = 800,
     },
     Economy = {
-        MaintenanceConsumptionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 5,
     },
     Display = {
         Abilities = {
@@ -39,7 +39,7 @@ UnitBlueprint {
         },
        },
     Intel = {
-    FreeIntel = true,
+    FreeIntel = false,
     RadarRadius = 50,
     SonarRadius = 80,
     },
@@ -55,7 +55,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 10,
+            Damage = 40,
             DamageRadius = 1.5, 
             DamageType = 'AntiAir',
             DisplayName = 'ARMKBOT_MISSILE',
@@ -118,7 +118,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 10,
+            Damage = 30,
             DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARMPT_LASER',

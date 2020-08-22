@@ -29,7 +29,7 @@ UnitBlueprint {
         MaxHealth = 400,
     },    
     Economy = {
-        MaintenanceConsumptionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 1,
     },
     Display = {
         Abilities = {
@@ -39,7 +39,7 @@ UnitBlueprint {
         },
       },
     Intel = {
-    FreeIntel = true,
+    FreeIntel = false,
     RadarRadius = 100,
     SonarRadius = 50,
     },

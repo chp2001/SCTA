@@ -131,6 +131,7 @@ UnitBlueprint {
     Intel = {
 	FreeIntel = false, 
         VisionRadius = 14,
+        WaterVisionRadius = 4, 
 	    RadarRadius = 78,
     },
     Interface = {
@@ -243,7 +244,7 @@ UnitBlueprint {
             MaxRadius = 43.75,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 25,
+            MuzzleVelocity = 35,
             ProjectileId = '/mods/SCTA-master/projectiles/CORSHIP_MISSILE/CORSHIP_MISSILE_proj.bp',
             RackBones = {
                 {

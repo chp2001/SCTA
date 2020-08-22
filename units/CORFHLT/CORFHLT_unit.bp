@@ -92,6 +92,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 24,
+        WaterVisionRadius = 10, 
     },
     Interface = {
         HelpText = 'Floating Heavy Laser Tower',

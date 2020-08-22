@@ -150,6 +150,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 22,
+        WaterVisionRadius = 4, 
     },
     Interface = {
         HelpText = 'Bomber',
@@ -192,7 +193,7 @@ UnitBlueprint {
             CollideFriendly = false,
             Damage = 158,
             DamageFriendly = true,
-            DamageRadius = 1.5,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'ARMBOMB',
             FireTargetLayerCapsTable = {
@@ -200,8 +201,8 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
             FiringRandomness = 3,
-            FiringTolerance = 3,
-            Label = 'Bomb',
+            FiringTolerance = 6,
+            Label = 'ARMBOMB',
             MaxRadius = 40,
             MuzzleSalvoDelay = 0.2,
             MuzzleSalvoSize = 4,

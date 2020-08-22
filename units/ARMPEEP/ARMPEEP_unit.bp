@@ -71,6 +71,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'MOBILE',
         'OVERLAYRADAR',
+        'OVERLAYSONAR',
 	'AIR',
 	'SCOUT',
         'ARM',
@@ -93,6 +94,7 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_radar>Radar',
+            'Sonar',
         },  
 	DestructionEffects = {
 		DestructionDebrisUseLocalVelocity = true,
@@ -147,8 +149,10 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 22,
+        WaterVisionRadius = 4, 
 	FreeIntel = true,
-	RadarRadius = 44, 
+    RadarRadius = 44, 
+    SonarRadius = 44, 
     },
     Interface = {
         HelpText = 'Air Scout',

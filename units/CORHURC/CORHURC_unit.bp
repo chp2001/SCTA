@@ -154,6 +154,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 22,
+        WaterVisionRadius = 4, 
     },
     Interface = {
         HelpText = 'Bomber',
@@ -195,7 +196,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             BombDropThreshold = 3.5,
             CollideFriendly = false,
-            Damage = 500,
+            Damage = 2000,
             DamageFriendly = true,
             DamageRadius = 4,
             DamageType = 'Normal',
@@ -206,7 +207,7 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
             FiringRandomness = 0,
-            FiringTolerance = 3,
+            FiringTolerance = 6,
             Label = 'CORADVBOMB',
             MaxRadius = 60,
             MuzzleSalvoDelay = 0,

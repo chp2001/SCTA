@@ -151,6 +151,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 22,
+        WaterVisionRadius = 4, 
     },
     Interface = {
         HelpText = 'Bomber',
@@ -193,7 +194,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             BombDropThreshold = 3.5,
             CollideFriendly = false,
-            Damage = 400,
+            Damage = 1500,
             DamageFriendly = true,
             DamageRadius = 3,
             DamageType = 'Normal',
@@ -204,7 +205,7 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
             FiringRandomness = 0,
-            FiringTolerance = 3,
+            FiringTolerance = 6,
             Label = 'ARMADVBOMB',
             MaxRadius = 60,
             MuzzleSalvoDelay = 0,
@@ -216,9 +217,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'bombDrop',
+                        'BombDrop',
                     },
-                    RackBone = 'bombDrop',
+                    RackBone = 'BombDrop',
                 },
             },
             RackFireTogether = false,

@@ -164,7 +164,7 @@ UnitBlueprint {
             MaxRadius = 37.5,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 28.125,
+            MuzzleVelocity = 35,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMTRUCK_MISSILE/ARMTRUCK_MISSILE_proj.bp',
             RackBones = {
                 {

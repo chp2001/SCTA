@@ -169,6 +169,7 @@ UnitBlueprint {
             DisplayName = 'ARM_TORPEDO',
             FireTargetLayerCapsTable = {
                 Sub = 'Seabed|Sub|Water',
+                Water = 'Seabed|Sub|Water',
             },
             RangeCategory = 'UWRC_AntiNavy',
             Label = 'ARM_TORPEDO',
@@ -191,13 +192,14 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
+            TrackingRadius = 1.15,
             RackSlavedToTurret = false,
             RateOfFire = 0.37,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
-            FiringTolerance = 2,
+            FiringTolerance = 360,
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
             TurretBoneMuzzle = 'Generic_Muzzle',
             TurretBonePitch = 'Generic_Turret',

@@ -17,10 +17,15 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 0,
     },
     Physics = {
-        MaxAcceleration = 0.3,
+        MaxAcceleration = 3,
         MaxSpeed = 4,
     },
     Intel = {
         VisionRadius = 12, 
     },
+    SelectionSizeX = 6,
+    SelectionSizeZ = 12,
+    SizeX = 8,
+    SizeY = 7,
+    SizeZ = 16,
 }

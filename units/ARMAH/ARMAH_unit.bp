@@ -119,6 +119,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 14,
+        WaterVisionRadius = 6,
     },
     Interface = {
         HelpText = 'Anti-Air Hovercraft',
@@ -175,7 +176,7 @@ UnitBlueprint {
             MaxRadius = 40.625,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 28.125,
+            MuzzleVelocity = 35,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMAH_WEAPON/ARMAH_WEAPON_proj.bp',
             RackBones = {
                 {

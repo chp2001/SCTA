@@ -38,7 +38,6 @@ UnitBlueprint {
                           },
               },
         Intel = {
-      VisionRadius = 10,
       JamRadius = {
         Max = 4,
         Min = 4,

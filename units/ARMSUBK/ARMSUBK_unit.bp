@@ -166,10 +166,11 @@ UnitBlueprint {
             DisplayName = 'ARMSMART_TORPEDO',
             FireTargetLayerCapsTable = {
                 Sub = 'Seabed|Sub|Water',
+                Water = 'Seabed|Sub|Water',
             },
             RangeCategory = 'UWRC_AntiNavy',
             Label = 'ARMSMART_TORPEDO',
-            MaxRadius = 23.4375,
+            MaxRadius = 28,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 6.25,

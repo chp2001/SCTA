@@ -43,10 +43,6 @@ UnitBlueprint {
     General = {
         UpgradesFrom = 'armsy',
     },
-    Intel = {
-        VisionRadius = 10,
-        WaterVisionRadius = 6,
-    },
     SelectionSizeX = 9.9,
     SelectionSizeZ = 6.8,
     SizeX = 12,

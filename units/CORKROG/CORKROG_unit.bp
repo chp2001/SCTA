@@ -122,6 +122,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 16,
+        WaterVisionRadius = 8,
     },
     Interface = {
         HelpText = 'Experimental Kbot',
@@ -308,7 +309,7 @@ UnitBlueprint {
             MaxRadius = 56.25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 0,
-	    MuzzleVelocity = 15.625,
+	    MuzzleVelocity = 40,
             ProjectileId = '/mods/SCTA-master/projectiles/CORKROG_ROCKET/CORKROG_ROCKET_proj.bp',
             RackBones = {
                 {

@@ -158,6 +158,7 @@ UnitBlueprint {
     },
     Intel = {
     VisionRadius = 22,
+    WaterVisionRadius = 4, 
 	RadarStealth = true,
 	FreeIntel = false,
     },
@@ -217,7 +218,7 @@ UnitBlueprint {
             MaxRadius = 40.625,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 28.125,
+            MuzzleVelocity = 100,
             ProjectileId = '/mods/SCTA-master/projectiles/CORVTOL_ADVMISSILE/CORVTOL_ADVMISSILE_proj.bp',
             RackBones = {
                 {
@@ -275,7 +276,7 @@ UnitBlueprint {
             MaxRadius = 40.625,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 28.125,
+            MuzzleVelocity = 100,
             ProjectileId = '/mods/SCTA-master/projectiles/CORVTOL_ADVMISSILE2/CORVTOL_ADVMISSILE2_proj.bp',
             RackBones = {
                 {

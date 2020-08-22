@@ -171,7 +171,7 @@ UnitBlueprint {
             MaxRadius = 20,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 13.125,
+            MuzzleVelocity = 25,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_REAP/CORE_REAP_proj.bp',
             RackBones = {
                 {

@@ -149,6 +149,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 22,
+        WaterVisionRadius = 4, 
     },
     Interface = {
         HelpText = 'Bomber',
@@ -191,7 +192,7 @@ UnitBlueprint {
             CollideFriendly = false,
             Damage = 140,
             DamageFriendly = true,
-            DamageRadius = 1.75,
+            DamageRadius = 4,
             DamageType = 'Normal',
             DisplayName = 'CORBOMB',
             FireTargetLayerCapsTable = {
@@ -199,7 +200,7 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
             FiringRandomness = 3,
-            FiringTolerance = 3,
+            FiringTolerance = 6,
             Label = 'CORBOMB',
             MaxRadius = 40,
             MuzzleSalvoDelay = 0.2,

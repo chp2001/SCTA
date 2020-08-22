@@ -156,6 +156,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 14,
+        WaterVisionRadius = 7,
     },
     Interface = {
         HelpText = 'Air Transport',

@@ -113,7 +113,7 @@ UnitBlueprint {
         BuildCostMass = 1379,
         BuildTime = 25271,
         BuildRate = 200,
-        ProductionPerSecondEnergy = 200,
+        ProductionPerSecondEnergy = 600,
         MaintenanceConsumptionPerSecondEnergy = 35,
     },
     Footprint = {
@@ -141,6 +141,7 @@ UnitBlueprint {
     Intel = {
 	FreeIntel = false,
         VisionRadius = 22,
+        WaterVisionRadius = 6,
 	    RadarRadius = 111,
     },
     Interface = {

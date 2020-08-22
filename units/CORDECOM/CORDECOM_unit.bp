@@ -159,6 +159,7 @@ UnitBlueprint {
     Intel = {
         FreeIntel = true,
         VisionRadius = 18,
+        WaterVisionRadius = 4, 
     },
     Interface = {
         HelpText = 'Commander',

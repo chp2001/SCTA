@@ -170,6 +170,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 12,
+        WaterVisionRadius = 6,
     },
     Interface = {
         HelpText = 'Tech Level 2',

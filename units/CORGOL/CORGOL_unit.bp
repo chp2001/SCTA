@@ -169,7 +169,7 @@ UnitBlueprint {
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 15.625,
+            MuzzleVelocity = 20,
             ProjectileId = '/mods/SCTA-master/projectiles/COR_GOL/COR_GOL_proj.bp',
             RackBones = {
                 {

@@ -124,6 +124,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 10,
+        WaterVisionRadius = 12,
     },
     Interface = {
         HelpText = 'Anti-Air Ship',
@@ -174,7 +175,7 @@ UnitBlueprint {
             MaxRadius = 44.375,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 26.875,
+            MuzzleVelocity = 40,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMAAS_WEAPON1/ARMAAS_WEAPON1_proj.bp',
             RackBones = {
                 {
@@ -251,7 +252,7 @@ UnitBlueprint {
             MaxRadius = 44.375,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 26.875,
+            MuzzleVelocity = 40,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMAAS_WEAPON1/ARMAAS_WEAPON1_proj.bp',
             RackBones = {
                 {
@@ -320,7 +321,7 @@ UnitBlueprint {
             DamageType = 'AntiAir',
             DisplayName = 'ARMAAS_WEAPON3',
             FireTargetLayerCapsTable = {
-                Water = 'Air',
+                Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_AntiAir',
             FiringTolerance = 0.5,	
@@ -330,7 +331,7 @@ UnitBlueprint {
             MaxRadius = 46.875, 
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 59.375,
+            MuzzleVelocity = 40,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMAAS_WEAPON3/ARMAAS_WEAPON3_proj.bp',
             RackBones = {
                 {

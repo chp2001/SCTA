@@ -150,6 +150,7 @@ UnitBlueprint {
             DisplayName = 'COAX_TORPEDO',
             FireTargetLayerCapsTable = {
                 Water = 'Seabed|Sub|Water',
+                Sub = 'Seabed|Sub|Water',
             },
             RangeCategory = 'UWRC_AntiNavy',
             Label = 'COAX_TORPEDO',

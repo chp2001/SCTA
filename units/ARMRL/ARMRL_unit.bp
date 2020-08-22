@@ -112,6 +112,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 22,
+        WaterVisionRadius = 9,
     },
     Interface = {
         HelpText = 'Missile Tower',

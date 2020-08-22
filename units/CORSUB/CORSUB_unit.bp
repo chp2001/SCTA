@@ -169,11 +169,12 @@ UnitBlueprint {
             DisplayName = 'CORE_TORPEDO',
             FireTargetLayerCapsTable = {
                 Sub = 'Seabed|Sub|Water',
+                Water = 'Seabed|Sub|Water',
             },
             RangeCategory = 'UWRC_AntiNavy',
             Label = 'CORE_TORPEDO',
             MaxRadius = 38,
-            FiringTolerance = 2,
+            FiringTolerance = 360,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 6.25,

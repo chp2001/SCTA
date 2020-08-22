@@ -120,6 +120,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 18,
+        WaterVisionRadius = 4, 
     },
     Interface = {
         HelpText = 'Scout Ship',
@@ -216,7 +217,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 3,
+            Damage = 20,
             DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'CORPT_LASER',

@@ -125,6 +125,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 14,
+        WaterVisionRadius = 8,
     },
     Interface = {
         HelpText = 'Amphibious Tank',
@@ -176,7 +177,7 @@ UnitBlueprint {
             MaxRadius = 20,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 13.75, 
+            MuzzleVelocity = 20, 
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_MEDIUMCANNON/CORE_MEDIUMCANNON_proj.bp',
             RackBones = {
                 {

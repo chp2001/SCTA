@@ -115,6 +115,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 14,
+        WaterVisionRadius = 4, 
     },
     Interface = {
         HelpText = 'Metal Maker',

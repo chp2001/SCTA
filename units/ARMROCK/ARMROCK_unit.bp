@@ -169,7 +169,7 @@ UnitBlueprint {
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 15.625,
+            MuzzleVelocity = 24,
             ProjectileId = '/mods/SCTA-master/projectiles/KBOT_ROCKET/KBOT_ROCKET_proj.bp',
             RackBones = {
                 {

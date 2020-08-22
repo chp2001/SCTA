@@ -149,6 +149,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 22,
+        WaterVisionRadius = 4, 
     },
     Interface = {
         HelpText = 'Bomber',

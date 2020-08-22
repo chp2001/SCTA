@@ -116,6 +116,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 18,
+        WaterVisionRadius = 4, 
     },
     Interface = {
         HelpText = 'Hovertank',

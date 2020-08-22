@@ -123,6 +123,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 18,
+        WaterVisionRadius = 8,
     },
     Interface = {
         HelpText = 'Amphibious Kbot',

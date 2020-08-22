@@ -64,7 +64,8 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-    'OVERLAYRADAR',
+        'OVERLAYRADAR',
+        'OVERLAYSONAR',
         'MOBILE',
 	'AIR',
 	'SCOUT', 
@@ -88,6 +89,7 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_radar>Radar',
+            'Sonar',
         },
 	DestructionEffects = {
 		DestructionDebrisUseLocalVelocity = true,
@@ -141,8 +143,10 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 22,
+        WaterVisionRadius = 6,
 	FreeIntel = true,
-	RadarRadius = 41, 
+    RadarRadius = 41, 
+    SonarRadius = 41, 
     },
     Interface = {
         HelpText = 'Air Scout',

@@ -124,6 +124,8 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 22, 
+        WaterVisionRadius = 12,
+        SonarRadius = 20,
     },
     Interface = {
         HelpText = 'Battleship',

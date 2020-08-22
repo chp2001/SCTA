@@ -9,6 +9,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 10,
+        WaterVisionRadius = 4, 
     },
    Physics = {
         MeshExtentsX = 1.25,

@@ -204,7 +204,7 @@ UnitBlueprint {
                 Land = 'Water|Seabed|Sub|Seabed',
             },
             FiringRandomness = 3,
-            FiringTolerance = 2,
+            FiringTolerance = 6,
             HeadingArcCenter = 0,
             HeadingArcRange = 30,
             Label = 'CORAIR_TORPEDO',

@@ -202,7 +202,7 @@ UnitBlueprint {
             },
             FiringRandomness = 3,
             FiringTolerance = 6,
-            Label = 'Bomb',
+            Label = 'ARMBOMB',
             MaxRadius = 40,
             MuzzleSalvoDelay = 0.2,
             MuzzleSalvoSize = 4,

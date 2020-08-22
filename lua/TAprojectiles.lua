@@ -373,6 +373,11 @@ TAEMGProjectile = Class(TALaserProjectile ) {
 }
 
 TAUnderWaterProjectile = Class(TAMediumCannonProjectile) {
+	OnCreate = function(self)
+		self:SetCollisionShape('Sphere', 0, 0, 0, 1)
+		TAMediumCannonProjectile.OnCreate(self)
+		end,
+		
 	OnEnterWater = function(self)
 		for k,v in self.FxImpactWater do
 			CreateEmitterAtEntity(self, self:GetArmy(), v):ScaleEmitter(self.FxWaterHitScale)
@@ -401,5 +406,5 @@ TAUnderWaterProjectile = Class(TAMediumCannonProjectile) {
 	FxImpactWater = {
 		'/effects/emitters/destruction_water_splash_ripples_01_emit.bp',
 	},
-    	FxWaterHitScale = 0.35,
+		FxWaterHitScale = 0.35,
 }

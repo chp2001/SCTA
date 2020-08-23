@@ -25,10 +25,12 @@ UnitBlueprint {
 	'CTRL_W',
     },
     Defense = {
-        Health = 400,
-        MaxHealth = 400,
+        Health = 300,
+        MaxHealth = 300,
     },    
     Economy = {
+        BuildCostEnergy = 630,
+        BuildCostMass = 50,
         MaintenanceConsumptionPerSecondEnergy = 1,
     },
     Display = {
@@ -55,7 +57,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 20,
+            Damage = 50,
             DamageRadius = 1.5, 
             DamageType = 'AntiAir',
             DisplayName = 'CORKBOT_MISSILE',
@@ -84,7 +86,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.4,
+            RateOfFire = 1,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
@@ -113,7 +115,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 10,
+            Damage = 100,
             DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'CORPT_LASER',
@@ -146,9 +148,9 @@ UnitBlueprint {
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
-            RackSalvoSize = 1,
+            RackSalvoSize = 25,
             RackSlavedToTurret = false,
-            RateOfFire = 1.05,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

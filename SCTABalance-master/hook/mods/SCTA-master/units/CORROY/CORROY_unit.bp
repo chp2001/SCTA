@@ -23,8 +23,8 @@ UnitBlueprint {
 	'CTRL_W',
     },
     Defense = {
-        Health = 4000,
-        MaxHealth = 4000,
+        Health = 3500,
+        MaxHealth = 3500,
     },
     Display = {
         Abilities = {
@@ -41,8 +41,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 4505,
-        BuildCostMass = 800,
-        BuildTime = 13368,
+        BuildCostMass = 400,
     },
     Weapon = {
         {
@@ -56,7 +55,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 250,
+            Damage = 100,
             DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'CORE_ROY',
@@ -67,7 +66,7 @@ UnitBlueprint {
             FiringRandomness = 5,
             FiringTolerance = 2,
             Label = 'CORE_ROY',
-            MaxRadius = 42.25,
+            MaxRadius = 28,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 42,
@@ -91,7 +90,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.5,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
@@ -164,6 +163,7 @@ UnitBlueprint {
             TurretYaw = 0,
             TurretYawRange = 360,
             TurretYawSpeed = 3600,
+            TrackingRadius = 1.25,
             Turreted = true,
         },
         { #SMALL_UNITEX

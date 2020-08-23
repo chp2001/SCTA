@@ -42,7 +42,6 @@ UnitBlueprint {
         BuildCostEnergy = 4800,
         BuildRate = 125,
         BuildableCategory = {
-            'HOVER LEVEL1 CORE',
             'SHIP LEVEL1 CORE',
             'NORMALSUB LEVEL1 CORE',
             'corasy',

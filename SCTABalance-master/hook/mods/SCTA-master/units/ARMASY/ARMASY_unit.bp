@@ -31,7 +31,6 @@ UnitBlueprint {
     },
     Economy = {
         BuildableCategory = {
-            'HOVER LEVEL1 ARM',
             'SHIP LEVEL1 ARM',
             'NORMALSUB LEVEL1 ARM',
             'SHIP LEVEL2 ARM',

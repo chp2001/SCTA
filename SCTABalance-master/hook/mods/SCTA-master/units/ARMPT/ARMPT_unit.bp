@@ -25,10 +25,12 @@ UnitBlueprint {
 	'CTRL_W',
     },
     Defense = {
-        Health = 800,
-        MaxHealth = 800,
+        Health = 400,
+        MaxHealth = 400,
     },
     Economy = {
+        BuildCostEnergy = 720,
+        BuildCostMass = 80,
         MaintenanceConsumptionPerSecondEnergy = 1,
     },
     Display = {
@@ -65,7 +67,7 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_AntiAir',
             FiringTolerance = 2,
             Label = 'ARMKBOT_MISSILE',
-            MaxRadius = 37.75,
+            MaxRadius = 38,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 40,
@@ -89,7 +91,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.42,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
@@ -118,7 +120,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 30,
+            Damage = 50,
             DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARMPT_LASER',
@@ -153,7 +155,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 1,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

@@ -43,7 +43,6 @@ UnitBlueprint {
         BuildCostEnergy = 4800,
         BuildRate = 125,
         BuildableCategory = {
-            'HOVER LEVEL1 ARM',
             'SHIP LEVEL1 ARM',
             'NORMALSUB LEVEL1 ARM',
             'armasy',

@@ -23,8 +23,8 @@ UnitBlueprint {
 	'CTRL_W',
     },
     Defense = {
-        Health = 5000,
-        MaxHealth = 5000,
+        Health = 3000,
+        MaxHealth = 3000,
     },
     Display = {
         Abilities = {
@@ -41,7 +41,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 4505,
-        BuildCostMass = 800,
+        BuildCostMass = 300,
         BuildTime = 13368,
     },
     Weapon = {
@@ -56,7 +56,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 200,
+            Damage = 100,
             DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'ARM_ROY',
@@ -70,7 +70,7 @@ UnitBlueprint {
             MaxRadius = 41,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 40,
+            MuzzleVelocity = 30,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_ROY/ARM_ROY_proj.bp',
             RackBones = {
                 {
@@ -91,7 +91,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.5,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

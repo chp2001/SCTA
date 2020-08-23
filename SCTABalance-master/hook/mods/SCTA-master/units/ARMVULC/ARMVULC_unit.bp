@@ -53,8 +53,8 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 50,
-            EnergyChargeForFirstShot = false,
-            EnergyDrainPerSecond = 0,
+            EnergyChargeForFirstShot = true,
+            EnergyDrainPerSecond = 500,
             EnergyRequired = 2000,
             
             ProjectileId = '/mods/SCTA-master/projectiles/ARMVULC_WEAPON/ARMVULC_WEAPON_proj.bp',

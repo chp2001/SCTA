@@ -237,8 +237,8 @@ UnitBlueprint {
             DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'CORKROG_HEAD',
-            EnergyChargeForFirstShot = false,
-            EnergyDrainPerSecond = 0,
+            EnergyChargeForFirstShot = true,
+            EnergyDrainPerSecond = 500,
             EnergyRequired = 2000,
             
             FireTargetLayerCapsTable = {

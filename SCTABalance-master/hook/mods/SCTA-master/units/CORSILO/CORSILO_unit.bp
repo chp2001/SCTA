@@ -11,6 +11,7 @@ UnitBlueprint {
         BuildCostEnergy = 100000,
         BuildCostMass = 12000,
         BuildTime = 540000,
+        BuildRate = 12000,
     },
   Defense = {
         ArmorType = 'Structure',
@@ -20,6 +21,8 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 14,
     },
+    SelectionSizeX = 8,
+    SelectionSizeZ = 8,
     LifeBarSize = 10,
     SizeX = 14,
     SizeY = 6,

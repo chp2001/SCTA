@@ -211,7 +211,7 @@ UnitBlueprint {
             WeaponCategory = 'Artillery',
 	        WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
-            EnergyChargeForFirstShot = false,
+            EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 5,
             EnergyRequired = 5,
         },

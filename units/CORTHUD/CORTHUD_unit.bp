@@ -209,7 +209,7 @@ UnitBlueprint {
             TurretYawSpeed = 90,
             Turreted = true,
             WeaponCategory = 'Artillery',
-            EnergyChargeForFirstShot = false,
+            EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 10,
             EnergyRequired = 10,
             

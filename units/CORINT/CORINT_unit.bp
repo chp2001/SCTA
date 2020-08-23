@@ -155,8 +155,8 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 62.5,
-            EnergyChargeForFirstShot = false,
-            EnergyDrainPerSecond = 0,
+            EnergyChargeForFirstShot = true,
+            EnergyDrainPerSecond = 500,
             EnergyRequired = 1500,
             
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_INTIMIDATOR/CORE_INTIMIDATOR_proj.bp',

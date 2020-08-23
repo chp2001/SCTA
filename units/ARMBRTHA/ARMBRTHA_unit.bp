@@ -160,8 +160,8 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 50,
-            EnergyChargeForFirstShot = false,
-            EnergyDrainPerSecond = 0,
+            EnergyChargeForFirstShot = true,
+            EnergyDrainPerSecond = 500,
             EnergyRequired = 1500,
             
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_BERTHACANNON/ARM_BERTHACANNON_proj.bp',

@@ -29,7 +29,7 @@ UnitBlueprint {
         MaxHealth = 800,
     },
     Economy = {
-        MaintenanceConsumptionPerSecondEnergy = 5,
+        MaintenanceConsumptionPerSecondEnergy = 1,
     },
     Display = {
         Abilities = {

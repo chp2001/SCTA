@@ -144,8 +144,6 @@ do
                     mul = 3
                 elseif table.find(bp.Categories, 'EXPERIMENTAL') then
                     mul = 4
-                elseif table.find(bp.Categories, 'COMMAND') then
-                    mul = 5
                 end
                 if not bp.Buffs then bp.Buffs = {} end
                 if not bp.Buffs.Regen then

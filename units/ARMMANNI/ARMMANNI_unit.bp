@@ -159,8 +159,8 @@ UnitBlueprint {
 	    DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'ARMMANNI_WEAPON',
-            EnergyChargeForFirstShot = false,
-            EnergyDrainPerSecond = 0,
+            EnergyChargeForFirstShot = true,
+            EnergyDrainPerSecond = 100,
             EnergyRequired = 500,
             
             FireTargetLayerCapsTable = {

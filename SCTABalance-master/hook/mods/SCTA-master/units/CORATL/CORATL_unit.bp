@@ -2,8 +2,8 @@ UnitBlueprint {
     Merge = true, 
     Footprint = {
         MinWaterDepth = 3,
-        SizeX = 1,
-        SizeZ = 1,
+        SizeX = 2,
+        SizeZ = 2,
     },
     Defense = {
         Health = 2500,
@@ -19,7 +19,7 @@ UnitBlueprint {
     SelectionSizeX = 2,
     SelectionSizeZ = 2,
     SelectionThickness = 0.5,
-    SizeX = 2,
-    SizeY = 1,
-    SizeZ = 2,
+    SizeX = 4,
+    SizeY = 2.5,
+    SizeZ = 4,
 }

@@ -69,7 +69,7 @@ UnitBlueprint {
             'Sonar',
         },
 	DestructionEffects = {
-#		DefaultProjectileCategories = {'ArmShip','ArmPanel3','MetalBarrel'},
+		DefaultProjectileCategories = {'ArmShip','ArmPanel3','MetalBarrel'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {'turret','box'},
@@ -237,8 +237,10 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 140,
+            Damage = 20,
             DamageRadius = 0.5,
+            DamageWater = 220,
+            DamageRadiusWater = 0.5,
             DamageType = 'Normal',
             DisplayName = 'COREDEPTHCHARGE',
             FireTargetLayerCapsTable = {

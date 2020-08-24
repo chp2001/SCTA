@@ -160,8 +160,10 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 600,
-	    DamageRadius = 0.5,
+            Damage = 100,
+        DamageRadius = 0.5,
+        DamageWater = 1500,
+        DamageRadiusWater = 0.5,
             DamageType = 'Normal',
             DisplayName = 'ARMSMART_TORPEDO',
             FireTargetLayerCapsTable = {

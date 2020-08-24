@@ -49,7 +49,6 @@ UnitBlueprint {
 	'NOTAIR',
 	'CTRL_W',
     },
-    CollisionOffsetY = -0.5,
     Defense = {
         ArmorType = 'Normal',
         Health = 590,
@@ -164,7 +163,9 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 80,
-	    DamageRadius = 0.5,
+        DamageRadius = 0.5,
+        DamageWater = 220,
+        DamageRadiusWater = 0.5,
             DamageType = 'Normal',
             DisplayName = 'CORE_TORPEDO',
             FireTargetLayerCapsTable = {

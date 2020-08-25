@@ -149,7 +149,7 @@ UnitBlueprint {
 	MaxSpeedReverse = 0,
         MaxAcceleration = 2,
         MaxBrake = 2,
-        MaxSpeed = 3,
+        MaxSpeed = 4,
         MotionType = 'RULEUMT_Land',
         TurnRate = 82,
     },

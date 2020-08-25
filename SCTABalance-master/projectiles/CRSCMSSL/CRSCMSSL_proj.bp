@@ -40,8 +40,8 @@ ProjectileBlueprint {
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 25,
-        MaxHealth = 25,
+        Health = 60,
+        MaxHealth = 60,
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/crblmssl_mesh.bp',
@@ -63,7 +63,7 @@ ProjectileBlueprint {
             'INDIRECTFIRE',
         },
         Faction = 'CORE',
-        Weapon = 'CRBLMSSL',
+        Weapon = 'CRSCMSSL',
     },
     Interface = {
         HelpText = 0,

@@ -329,8 +329,9 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 12.5,
             NeedPrep = true,
+            EnergyChargeForFirstShot = false,
             EnergyRequired = 1000,
-            EnergyDrainPerSecond = 0,
+            EnergyDrainPerSecond = 1000,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_DISINTEGRATOR/CORE_DISINTEGRATOR_proj.bp',
             RackBones = {
                 {

@@ -73,7 +73,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -184,6 +183,8 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 100,
             Turreted = true,
+            WeaponUnpackAnimation = '/mods/SCTA-master/units/CORTOAST/CORTOAST_lod0_unpack.sca',
+            WeaponUnpackAnimationRate = 1,
 	        WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
         },

@@ -17,6 +17,10 @@ UnitBlueprint {
         Display = {
         UniformScale = 0.80,
     },
+    Physics = {
+    SkirtSizeX = 0, 
+    SkirtSizeZ = 0,  
+    }, 
     SelectionThickness = 0.3,
     SelectionSizeX = 10,
     SelectionCenterOffsetZ = 0,

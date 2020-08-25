@@ -151,7 +151,7 @@ UnitBlueprint {
             DamageFriendly = true,
             EnergyDrainPerSecond = 10,
             EnergyRequired = 10,
-            
+            EnergyChargeForFirstShot = true,
             Damage = 60,
             DamageRadius = 0.25,
             DamageType = 'Normal',

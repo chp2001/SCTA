@@ -28,7 +28,7 @@ ProjectileBlueprint {
         },
     },
     Categories = {
-        'CORE',
+        'ARM',
         'PROJECTILE',
         'ANTIMISSILE',
     },
@@ -42,11 +42,11 @@ ProjectileBlueprint {
     General = {
         Category = 'Defense',
         Categories = {
-            'CORE',
+            'ARM',
             'PROJECTILE',
             'ANTIMISSILE',
         },
-        Faction = 'CORE',
+        Faction = 'ARM',
     },
     Interface = {
         HelpText = 0,
@@ -56,8 +56,7 @@ ProjectileBlueprint {
         CollideEntity = true,
         CollideSurface = true,
         DestroyOnWater = true,
-        FlareRadius = 15,
-        MaxSpeed = 20,
+        MaxSpeed = 80,
         TrackTarget = true,
         TurnRate = 360,
         UseGravity = false,

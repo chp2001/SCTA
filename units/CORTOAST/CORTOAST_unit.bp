@@ -184,7 +184,7 @@ UnitBlueprint {
             TurretYawSpeed = 100,
             Turreted = true,
             WeaponUnpackAnimation = '/mods/SCTA-master/units/CORTOAST/CORTOAST_lod0_unpack.sca',
-            WeaponUnpackAnimationRate = 1,
+            WeaponUnpackAnimationRate = 0.5,
 	        WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
         },

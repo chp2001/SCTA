@@ -166,10 +166,9 @@ UnitBlueprint {
             Damage = 500,
             DamageType = 'Normal',
             DisplayName = 'COR_BATSLASER',
-            EnergyDrainPerSecond = 25,
-            MaximumBeamLength = 20,
-            EnergyRequired = 75,
-            
+            EnergyDrainPerSecond = 50,
+            EnergyRequired = 200,
+            EnergyChargeForFirstShot = true,
             FireTargetLayerCapsTable = {
                 Water = 'Air|Land|Water|Seabed',
             },

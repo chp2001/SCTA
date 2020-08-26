@@ -1,4 +1,6 @@
 local oldCORSONAR = CORSONAR
+local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+
 CORSONAR = Class(oldCORSONAR) {
 	OnStopBuild = function(self, unitBuilding)
 		 oldCORSONAR.OnStopBuild(self, unitBuilding)
@@ -7,6 +9,12 @@ CORSONAR = Class(oldCORSONAR) {
 			 self:Destroy()
 		 end
 	 end,
+
+	 OnStopBeingBuilt = function(self,builder,layer)
+		oldCORSONAR.OnStopBeingBuilt(self,builder,layer)
+		self:PlayUnitSound('Activate')
+		TAutils.registerTargetingFacility(self:GetArmy())
+	end,
 }
 
 TypeClass = CORSONAR

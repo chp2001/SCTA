@@ -33,7 +33,7 @@ UnitBlueprint {
      Economy = {
         NaturalProducer = false,
         BuildRate = 120, 
-        MaintenanceConsumptionPerSecondEnergy = 100,
+        MaintenanceConsumptionPerSecondEnergy = 50,
         ProductionPerSecondEnergy = 0,
         BuildableCategory = {
             'cortarg',

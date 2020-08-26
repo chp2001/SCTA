@@ -23,8 +23,8 @@ UnitBlueprint {
 	'CTRL_W',
     },
     Defense = {
-        Health = 3000,
-        MaxHealth = 3000,
+        Health = 2600,
+        MaxHealth = 2600,
     },
     Display = {
         Abilities = {
@@ -41,7 +41,8 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 4505,
-        BuildCostMass = 350,
+        BuildCostMass = 400,
+        BuildTime = 6500,
     },
     Weapon = {
         {
@@ -55,7 +56,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 80,
+            Damage = 15,
             DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'ARM_ROY',
@@ -120,7 +121,7 @@ UnitBlueprint {
             DamagesFriendly = true,
             Damage = 100,
             DamageRadius = 0.5,
-            DamageWater = 600,
+            DamageWater = 200,
             DamageRadiusWater = 0.5,
             DamageType = 'Normal',
             DisplayName = 'ARMDEPTHCHARGE',
@@ -128,7 +129,7 @@ UnitBlueprint {
                 Water = 'Water|Sub|Seabed',
             },
             RangeCategory = 'UWRC_AntiNavy',
-	    FiringTolerance = 360,
+	    FiringTolerance = 10,
             Label = 'ARMDEPTHCHARGE',
             MaxRadius = 20,
             MuzzleSalvoDelay = 0,
@@ -150,7 +151,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.25,
+            RateOfFire = 0.33, 
             TargetCheckInterval = 1,
             TrackingRadius = 1.25,
             TargetPriorities = {

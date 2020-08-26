@@ -45,6 +45,7 @@ UnitBlueprint {
     RadarRadius = 50,
     SonarRadius = 80,
     },
+    SizeY = 2.4,
     Weapon = {
         {
             Audio = {
@@ -57,7 +58,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 40,
+            Damage = 2,
             DamageRadius = 1.5, 
             DamageType = 'AntiAir',
             DisplayName = 'ARMKBOT_MISSILE',
@@ -120,7 +121,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 50,
+            Damage = 15,
             DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARMPT_LASER',
@@ -129,7 +130,7 @@ UnitBlueprint {
             },
 	    RangeCategory = 'UWRC_DirectFire',
             Label = 'ARMPT_LASER',
-            MaxRadius = 20,
+            MaxRadius = 10,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 25,

@@ -43,8 +43,7 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
-
-	
+	'OVERLAYRADAR',
         'ARM',
         'SHIP',
 	'LEVEL2',
@@ -56,8 +55,8 @@ UnitBlueprint {
     CollisionOffsetY = -0.5,
     Defense = {
         ArmorType = 'Normal',
-        Health = 1200,
-        MaxHealth = 1200,
+        Health = 1600,
+        MaxHealth = 1600,
         AirThreatLevel = 10,
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,
@@ -67,6 +66,7 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
+            '<LOC ability_radar>Radar',
         },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'ArmShip','ArmBui'},
@@ -130,8 +130,10 @@ UnitBlueprint {
         UnitName = 'Ranger',
     },
     Intel = {
+        FreeIntel = true, 
         VisionRadius = 14,
         WaterVisionRadius = 4, 
+        RadarRadius = 78,
     },
     Interface = {
         HelpText = 'Missile Ship',
@@ -207,7 +209,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 2,
             RackSlavedToTurret = false,
-            RateOfFire = 0.083,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

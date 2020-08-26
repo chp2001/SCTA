@@ -97,7 +97,7 @@ UnitBlueprint {
         BuildCostEnergy = 8000,
         BuildCostMass = 1947, 
         BuildTime = 15410,
-	    BuildRate = 200,
+	    BuildRate = 180,
     BuildableCategory = {
         'HOVER LEVEL1 CORE',
         'VEHICLE LEVEL1 CORE', 

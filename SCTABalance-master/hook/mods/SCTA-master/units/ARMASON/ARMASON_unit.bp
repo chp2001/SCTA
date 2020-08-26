@@ -21,6 +21,6 @@ UnitBlueprint {
     },
     Economy = {
         NaturalProducer = false,
-        MaintenanceConsumptionPerSecondEnergy = 50,
+        MaintenanceConsumptionPerSecondEnergy = 100,
         },
 }

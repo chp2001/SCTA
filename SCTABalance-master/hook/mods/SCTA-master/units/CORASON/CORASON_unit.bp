@@ -13,7 +13,7 @@ UnitBlueprint {
     },
     Economy = {
 	NaturalProducer = false,
-	MaintenanceConsumptionPerSecondEnergy = 50,
+	MaintenanceConsumptionPerSecondEnergy = 100,
     },
     Footprint = {
         SizeX = 1,

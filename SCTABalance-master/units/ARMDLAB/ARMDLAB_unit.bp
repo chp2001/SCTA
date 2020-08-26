@@ -130,9 +130,8 @@ UnitBlueprint {
         BuildCostEnergy = 8000,
         BuildCostMass = 2007, 
         BuildTime = 13520,
-	    BuildRate = 200,
+	    BuildRate = 180,
         BuildableCategory = {
-            'HOVER LEVEL1 ARM',
             'KBOT LEVEL1 ARM',
             'KBOT LEVEL2 ARM',
         },

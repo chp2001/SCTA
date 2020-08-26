@@ -1,4 +1,6 @@
 local oldARMSONAR = ARMSONAR
+local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+
 ARMSONAR = Class(oldARMSONAR) {
 	OnStopBuild = function(self, unitBuilding)
 		 oldARMSONAR.OnStopBuild(self, unitBuilding)

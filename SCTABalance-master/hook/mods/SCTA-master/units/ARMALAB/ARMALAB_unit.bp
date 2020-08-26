@@ -32,7 +32,6 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 7200,
         BuildableCategory = {
-            'HOVER LEVEL1 ARM',
             'KBOT LEVEL1 ARM',
             'KBOT LEVEL2 ARM',
         },

@@ -53,8 +53,8 @@ UnitBlueprint {
     CollisionOffsetY = -0.5,
     Defense = {
         ArmorType = 'Normal',
-        Health = 1250,
-        MaxHealth = 1250,
+        Health = 1700,
+        MaxHealth = 1700,
         AirThreatLevel = 15,
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,
@@ -105,8 +105,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 7628,
         BuildCostMass = 2283,
-        BuildTime = 22126,
-        MaintenanceConsumptionPerSecondEnergy = 25,
+        BuildTime = 22126,,
     },
     Footprint = {
         SizeX = 6,
@@ -129,7 +128,7 @@ UnitBlueprint {
         UnitName = 'Hydra',
     },
     Intel = {
-	FreeIntel = false, 
+	FreeIntel = true, 
         VisionRadius = 14,
         WaterVisionRadius = 4, 
 	    RadarRadius = 78,
@@ -208,7 +207,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 2,
             RackSlavedToTurret = false,
-            RateOfFire = 0.083,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             EnergyDrainPerSecond = 5,
             EnergyRequired = 5,

@@ -1,4 +1,6 @@
 local oldCORASON = CORASON
+local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+
 CORASON = Class(oldCORASON) {
 	 OnStopBeingBuilt = function(self,builder,layer)
 		oldCORASON.OnStopBeingBuilt(self,builder,layer)

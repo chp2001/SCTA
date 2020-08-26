@@ -8,7 +8,9 @@ UnitBlueprint {
         SizeZ = 3,
     },
     Economy = {
-        BuildTime = 5000,
+        BuildCostEnergy = 12000,
+        BuildCostMass = 800,
+        BuildTime = 10000,
     },
     SizeX = 4,
     SizeY = 2,

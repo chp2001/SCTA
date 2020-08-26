@@ -1,4 +1,6 @@
 local oldARMASON = ARMASON
+local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+
 ARMASON = Class(oldARMASON) {
 	 OnStopBeingBuilt = function(self,builder,layer)
 		oldARMASON.OnStopBeingBuilt(self,builder,layer)

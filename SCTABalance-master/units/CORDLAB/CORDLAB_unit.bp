@@ -96,7 +96,7 @@ UnitBlueprint {
         BuildCostEnergy = 9000,
         BuildCostMass = 1972, 
         BuildTime = 14000,
-	BuildRate = 200,
+	BuildRate = 170,
         BuildableCategory = {
             'KBOT LEVEL2 CORE',
             'KBOT LEVEL1 CORE',

@@ -3,10 +3,10 @@
 #
 #Script created by Raevn
 
-local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstructor
+local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
-ARMAVP = Class(TAconstructor) {
+ARMAVP = Class(TAFactory) {
 	pauseTime = 5,
 	hideUnit = true,
 	isFactory = true,
@@ -38,7 +38,7 @@ ARMAVP = Class(TAconstructor) {
 		for k, v in self.Sliders do
 			self.Trash:Add(v)
 		end
-		TAconstructor.OnCreate(self)
+		TAFactory.OnCreate(self)
 	end,
 
 
@@ -104,7 +104,7 @@ ARMAVP = Class(TAconstructor) {
 		--SPIN pad around y-axis  SPEED <30.00>
 		self.Spinners.pad:SetSpeed(0)
 
-		TAconstructor.Open(self)
+		TAFactory.Open(self)
 	end,
 
 	Aim = function(self,target)
@@ -121,7 +121,7 @@ ARMAVP = Class(TAconstructor) {
 
 		WaitFor(self.Spinners.nanoAim1)
 		WaitFor(self.Spinners.nanoAim2)
-		TAconstructor.Aim(self, target)
+		TAFactory.Aim(self, target)
 	end,
 
 	Close = function(self)
@@ -185,7 +185,7 @@ ARMAVP = Class(TAconstructor) {
 		WaitSeconds(0.25)
 
 		--SLEEP <20>;
-		TAconstructor.Close(self)
+		TAFactory.Close(self)
 	end,
 }
 

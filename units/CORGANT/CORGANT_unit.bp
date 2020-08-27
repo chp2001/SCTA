@@ -124,6 +124,7 @@ UnitBlueprint {
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
         },
+        SelectionPriority = 5,
         FactionName = 'CORE',
         TechLevel = 'RULEUTL_Advanced',
 	UnitName = 'Krogoth Gantry',
@@ -173,7 +174,7 @@ UnitBlueprint {
     SizeY = 2.5,
     SizeZ = 9,
     StrategicIconName = 'icon_factory3_land',
-    StrategicIconSortPriority = 0,
+    StrategicIconSortPriority = 5,
     Weapon = {
         { #LARGE_BUILDINGEX
             Damage = 20,

@@ -3,15 +3,15 @@
 #
 #Script created by Raevn
 
-local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstructor
+local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 
-CORSY = Class(TAconstructor) {
+CORSY = Class(TAFactory) {
 	pauseTime = 5,
 	hideUnit = true,
 	isFactory = true,
 
 	OnCreate = function(self)
-		TAconstructor.OnCreate(self)
+		TAFactory.OnCreate(self)
 		self.Spinners = {
 			turreta = CreateRotator(self, 'turreta', 'y', nil, 0, 0, 0),
 			turretb = CreateRotator(self, 'turretb', 'y', nil, 0, 0, 0),
@@ -74,7 +74,7 @@ CORSY = Class(TAconstructor) {
 
 		--SLEEP <11>;
 
-		TAconstructor.Open(self)
+		TAFactory.Open(self)
 	end,
 
 
@@ -119,7 +119,7 @@ CORSY = Class(TAconstructor) {
 		WaitSeconds(1.2)
 		--SLEEP <7>;
 
-		TAconstructor.Close(self)
+		TAFactory.Close(self)
 	end,
 }
 

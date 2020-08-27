@@ -3,9 +3,9 @@
 #
 #Script created by Raevn
 
-local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstructor
+local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 
-CORVP = Class(TAconstructor) {
+CORVP = Class(TAFactory) {
 	pauseTime = 5,
 	hideUnit = true,
 	isFactory = true,
@@ -52,7 +52,7 @@ CORVP = Class(TAconstructor) {
 		for k, v in self.Sliders do
 			self.Trash:Add(v)
 		end
-		TAconstructor.OnCreate(self)
+		TAFactory.OnCreate(self)
 	end,
 
 
@@ -212,7 +212,7 @@ CORVP = Class(TAconstructor) {
 		#Needs to be moved
 		--SPIN pad around y-axis  SPEED <30.00>
 		self.Spinners.pad:SetSpeed(0)
-		TAconstructor.Open(self)
+		TAFactory.Open(self)
 	end,
 
 	Close = function(self)
@@ -371,7 +371,7 @@ CORVP = Class(TAconstructor) {
 
 		--SLEEP <12>;
 
-		TAconstructor.Close(self)
+		TAFactory.Close(self)
 	end,
 }
 

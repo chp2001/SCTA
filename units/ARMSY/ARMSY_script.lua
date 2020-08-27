@@ -3,15 +3,15 @@
 #
 #Script created by Raevn
 
-local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstructor
+local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 
-ARMSY = Class(TAconstructor) {
+ARMSY = Class(TAFactory) {
 	pauseTime = 5,
 	hideUnit = true,
 	isFactory = true,
 
 	OnCreate = function(self)
-		TAconstructor.OnCreate(self)
+		TAFactory.OnCreate(self)
 		self.Spinners = {
 			nano1 = CreateRotator(self, 'Build_Tower_01', 'y', nil, 0, 0, 0),
 			nano2 = CreateRotator(self, 'Build_Tower_02', 'y', nil, 0, 0, 0),
@@ -31,7 +31,7 @@ ARMSY = Class(TAconstructor) {
 	end,
 
 	OnKilled = function(self, instigator, type, overkillRatio)
-		TAconstructor.OnKilled(self, instigator, type, overkillRatio)
+		TAFactory.OnKilled(self, instigator, type, overkillRatio)
 		self.textureAnimation = false
 	end,
 
@@ -73,7 +73,7 @@ ARMSY = Class(TAconstructor) {
 
 		--SLEEP <37>;
 
-		TAconstructor.Open(self)
+		TAFactory.Open(self)
 	end,
 
 
@@ -113,7 +113,7 @@ ARMSY = Class(TAconstructor) {
 		--SLEEP <760>;
 		WaitSeconds(0.75)
 
-		TAconstructor.Close(self)
+		TAFactory.Close(self)
 	end,
 }
 

@@ -3,9 +3,9 @@
 #
 #Script created by Raevn
 
-local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstructor
+local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 
-CORALAB = Class(TAconstructor) {
+CORALAB = Class(TAFactory) {
 	pauseTime = 5,
 	hideUnit = true,
 	isFactory = true,
@@ -32,7 +32,7 @@ CORALAB = Class(TAconstructor) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
-		TAconstructor.OnCreate(self)
+		TAFactory.OnCreate(self)
 	end,
 
 
@@ -86,7 +86,7 @@ CORALAB = Class(TAconstructor) {
 		--SPIN pad around y-axis  SPEED <30.00>
 		self.Spinners.pad:SetSpeed(0)
 
-		TAconstructor.Open(self)
+		TAFactory.Open(self)
 	end,
 
 	Close = function(self)
@@ -139,7 +139,7 @@ CORALAB = Class(TAconstructor) {
 		--SLEEP <30>;
 		WaitSeconds(1.0)
 
-		TAconstructor.Close(self)
+		TAFactory.Close(self)
 	end,
 }
 

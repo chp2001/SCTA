@@ -3,10 +3,10 @@
 #
 #Script created by Raevn
 
-local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstructor
+local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
-CORGANT = Class(TAconstructor) {
+CORGANT = Class(TAFactory) {
 	pauseTime = 5,
 	hideUnit = true,
 	isFactory = true,
@@ -54,7 +54,7 @@ CORGANT = Class(TAconstructor) {
 			self.Trash:Add(v)
 		end
 
-		TAconstructor.OnCreate(self)
+		TAFactory.OnCreate(self)
 	end,
 
 
@@ -525,7 +525,7 @@ CORGANT = Class(TAconstructor) {
 		--SLEEP <703>;
 		WaitSeconds(1.3)
 
-		TAconstructor.Open(self)
+		TAFactory.Open(self)
 	end,
 
     close_script = [[

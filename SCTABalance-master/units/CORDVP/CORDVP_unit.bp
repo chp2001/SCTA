@@ -99,7 +99,6 @@ UnitBlueprint {
         BuildTime = 15410,
 	    BuildRate = 180,
     BuildableCategory = {
-        'HOVER LEVEL1 CORE',
         'VEHICLE LEVEL1 CORE', 
         'VEHICLE LEVEL2 CORE',
     },

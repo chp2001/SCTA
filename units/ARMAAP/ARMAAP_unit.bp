@@ -118,8 +118,8 @@ UnitBlueprint {
         BuildableCategory = {
             'AIR LEVEL2 ARM',
         },
-	InitialRallyX = 0,
-	InitialRallyZ = 0,
+	InitialRallyX = 1,
+	InitialRallyZ = 1,
         StorageMass = 200,
         StorageEnergy = 200,
     },

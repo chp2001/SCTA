@@ -173,16 +173,22 @@ TAunitkeygroups = {
     ["T1_Land_Scout"]= {
         "armfav",
         "armflea",
+        "armsh",
         "corfav",
+        "corsh", 
     },
     ["T1_Mobile_Light_Artillery"]= {
         "armham",
+        "armmh",
         "corthud",
         "corlevlr",
+        "cormh",
     },
     ["T1_Mobile_Anti_Air_Gun"]= {
         "armsam",
         "armjeth",
+        "armah",
+        "corah",
         "cormist",
         "corcrash",
     },
@@ -191,10 +197,12 @@ TAunitkeygroups = {
         "armck",
         "armcs",
         "armcv",
+        "armch",
         "corca",
         "corck",
         "corcs",
         "corcv",
+        "corch",
     },
     ["T1_Light_Assault_Bot"]= {
         "armpw",
@@ -211,6 +219,8 @@ TAunitkeygroups = {
     ["T1_Tank"]= {
         "armstump",
         "corraid",
+        "armanac",
+        "corsnap",
     },
     ["T2_Heavy_Tank"]= {
         "armbull",

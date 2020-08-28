@@ -46,7 +46,7 @@ ProjectileBlueprint {
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/crblmssl_mesh.bp',
         StrategicIconSize = 1,
-        UniformScale = 0.60,
+        UniformScale = 0.16,
     },
     Economy = {
         BuildCostEnergy = 700000,

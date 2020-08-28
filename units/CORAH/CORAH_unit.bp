@@ -115,7 +115,7 @@ UnitBlueprint {
         },
         FactionName = 'CORE',
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = 'Swatter',
+        UnitName = 'Slinger',
     },
     Intel = {
         VisionRadius = 18,

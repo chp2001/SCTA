@@ -59,6 +59,9 @@ UnitBlueprint {
     },
     Description = 'Hovercraft Rocket Launcher',
     Display = {
+        Abilities = {
+            '<LOC ability_hover>Hover',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'CorCockpit','CorHover'},
 		DestructionEmitters = {
@@ -114,7 +117,7 @@ UnitBlueprint {
         },
         FactionName = 'CORE',
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = 'Wombat',
+        UnitName = 'Nixer',
     },
     Intel = {
         VisionRadius = 18,

@@ -112,7 +112,7 @@ UnitBlueprint {
         },
         FactionName = 'CORE',
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = 'Skimmer',
+        UnitName = 'Scrubber',
     },
     Intel = {
         VisionRadius = 18,

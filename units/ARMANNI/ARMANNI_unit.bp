@@ -136,7 +136,7 @@ UnitBlueprint {
     SizeY = 3,
     SizeZ = 4,
     StrategicIconName = 'icon_structure3_directfire',
-    StrategicIconSortPriority = 0,
+    StrategicIconSortPriority = 5,
     Weapon = {
         {
             Audio = {
@@ -156,7 +156,8 @@ UnitBlueprint {
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
             },
-	    RangeCategory = 'UWRC_DirectFire',
+            RangeCategory = 'UWRC_DirectFire',
+            WeaponCategory = 'Direct Fire',
             FiringTolerance = 2.75,
             Label = 'ARM_TOTAL_ANNIHILATOR',
             MaxRadius = 75,
@@ -179,9 +180,8 @@ UnitBlueprint {
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
             EnergyChargeForFirstShot = true,
-            EnergyDrainPerSecond = 500,
+            EnergyDrainPerSecond = 1000,
             EnergyRequired = 2000,
-            
             RateOfFire = 0.2,
             TargetCheckInterval = 1,
             TargetPriorities = {
@@ -201,7 +201,6 @@ UnitBlueprint {
             Turreted = true,
 	    WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
-	    
         },
         { #ATOMIC_BLAST
             Damage = 2000,

@@ -28,7 +28,7 @@ UnitBlueprint {
     },
     AI = {
         RefuelingMultiplier = 50,
-	RefuelingRepairAmount = 200,
+	RefuelingRepairAmount = 500,
 	StagingPlatformScanRadius = 300,
         ShowAssistRangeOnSelect = true,
         RepairConsumeEnergy = 5,
@@ -76,7 +76,7 @@ UnitBlueprint {
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'beam1','beam2'},
+				EmitterBone = {},
 				EmitterBlueprint = {
     					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -86,14 +86,13 @@ UnitBlueprint {
 			},
 		},
 	},
-	BuildBones = {'nozzle1','nozzle2'},
+	BuildBones = {},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -114,7 +113,7 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-	BuildAngle = 1024,
+	BuildAngle = 1,
         Category = 'Strategic',
         Classification = 'RULEUC_MiscSupport',
         CommandCaps = {

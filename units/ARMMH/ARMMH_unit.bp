@@ -198,7 +198,7 @@ UnitBlueprint {
             TargetCheckInterval = 1,
             EnergyDrainPerSecond = 5,
             EnergyRequired = 5,
-            
+            EnergyChargeForFirstShot = true,
             TargetPriorities = {
                 'ALLUNITS',
             },

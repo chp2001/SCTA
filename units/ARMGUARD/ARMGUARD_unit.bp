@@ -49,6 +49,9 @@ UnitBlueprint {
     },
     Description = 'Plasma Battery',
     Display = {
+        Abilities = {
+            'Defense',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel'},
 		DestructionEmitters = {

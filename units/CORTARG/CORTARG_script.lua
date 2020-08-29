@@ -11,19 +11,8 @@ CORTARG = Class(TAunit) {
 
 	OnCreate = function(self)
 		TAunit.OnCreate(self)
-		self.Sliders = {
-			arm1 = CreateSlider(self, 'arm1'),
-			arm2 = CreateSlider(self, 'arm2'),
-			arm3 = CreateSlider(self, 'arm3'),
-			arm4 = CreateSlider(self, 'arm4'),
-			light1 = CreateSlider(self, 'light1'),
-			light2 = CreateSlider(self, 'light2'),
-			light3 = CreateSlider(self, 'light3'),
-			light4 = CreateSlider(self, 'light4'),
-		}
-		for k, v in self.Sliders do
-			self.Trash:Add(v)
-		end
+		self.AnimManip = CreateAnimator(self)
+		self.Trash:Add(self.AnimManip)
 	end,
 
 	OnDamage = function(self, instigator, amount, vector, damageType)
@@ -64,94 +53,21 @@ CORTARG = Class(TAunit) {
 	end,
 
 	Open = function(self)
+		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
+		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 		self.damageReduction = 1
-
-		--MOVE arm1 to z-axis <-5.35> SPEED <4.00>;
-		self.Sliders.arm1:SetGoal(0,0,-5.5)
-		self.Sliders.arm1:SetSpeed(4)
-
-		--MOVE arm2 to z-axis <5.30> SPEED <4.00>;
-		self.Sliders.arm2:SetGoal(0,0,5.5)
-		self.Sliders.arm2:SetSpeed(4)
-
-		--MOVE arm3 to x-axis <-5.50> SPEED <5.00>;
-		self.Sliders.arm3:SetGoal(5.5,0,0)
-		self.Sliders.arm3:SetSpeed(4)
-
-		--MOVE arm4 to x-axis <5.45> SPEED <4.00>;
-		self.Sliders.arm4:SetGoal(-5.5,0,0)
-		self.Sliders.arm4:SetSpeed(4)
-
-		--SLEEP <1094>;
-                WaitSeconds(1.1)
-
-		--MOVE light4 to y-axis <1.20> SPEED <1.00>;
-		self.Sliders.light4:SetGoal(0,1.2,0)
-		self.Sliders.light4:SetSpeed(1)
-
-		--MOVE light3 to y-axis <1.20> SPEED <1.00>;
-		self.Sliders.light3:SetGoal(0,1.2,0)
-		self.Sliders.light3:SetSpeed(1)
-
-		--MOVE light2 to y-axis <1.20> SPEED <1.00>;
-		self.Sliders.light2:SetGoal(0,1.2,0)
-		self.Sliders.light2:SetSpeed(1)
-
-		--MOVE light1 to y-axis <1.15> SPEED <1.00>;
-		self.Sliders.light1:SetGoal(0,1.2,0)
-		self.Sliders.light1:SetSpeed(1)
-
-		--SLEEP <1109>;
-		--SLEEP <112>;
                 WaitSeconds(1.2)
-
 		self:SetMaintenanceConsumptionActive()
 	end,
 
 	Close = function(self)
-
-		#BUG in TA, lights never lower again
-		--MOVE light4 to y-axis <0> SPEED <0>;
-		self.Sliders.light4:SetGoal(0,0,0)
-		self.Sliders.light4:SetSpeed(1)
-
-		--MOVE light3 to y-axis <0> SPEED <0>;
-		self.Sliders.light3:SetGoal(0,0,0)
-		self.Sliders.light3:SetSpeed(1)
-
-		--MOVE light2 to y-axis <0> SPEED <0>;
-		self.Sliders.light2:SetGoal(0,0,0)
-		self.Sliders.light2:SetSpeed(1)
-
-		--MOVE light1 to y-axis <0> SPEED <0>;
-		self.Sliders.light1:SetGoal(0,0,0)
-		self.Sliders.light1:SetSpeed(1)
-
-		--SLEEP <1201>;
-                WaitSeconds(1.2)
-
-		--MOVE arm1 to z-axis <0> SPEED <4.00>;
-		self.Sliders.arm1:SetGoal(0,0,0)
-		self.Sliders.arm1:SetSpeed(4)
-
-		--MOVE arm2 to z-axis <0> SPEED <4.00>;
-		self.Sliders.arm2:SetGoal(0,0,0)
-		self.Sliders.arm2:SetSpeed(4)
-
-		--MOVE arm3 to x-axis <0> SPEED <4.00>;
-		self.Sliders.arm3:SetGoal(0,0,0)
-		self.Sliders.arm3:SetSpeed(4)
-
-		--MOVE arm4 to x-axis <0> SPEED <4.00>;
-		self.Sliders.arm4:SetGoal(0,0,0)
-		self.Sliders.arm4:SetSpeed(4)
-
-		--SLEEP <1220>;
-		--SLEEP <59>;
-                WaitSeconds(1.2)
-
+		if self.AnimManip then
+		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
+		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
+                WaitFor(self.AnimManip)
 		self.damageReduction = 0.7
 		self:SetMaintenanceConsumptionInactive()
+		end
 	end,
 }
 

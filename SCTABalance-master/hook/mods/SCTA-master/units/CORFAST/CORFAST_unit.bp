@@ -1,0 +1,16 @@
+#ARM Zipper - Fast Attack Kbot
+#ARMFAST
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true, 
+    Economy = {
+        BuildCostEnergy = 3000,
+        BuildCostMass = 400,
+    },
+    Footprint = {
+	SizeX = 1,
+	SizeZ = 1,
+    },
+}

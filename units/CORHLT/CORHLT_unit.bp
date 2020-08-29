@@ -53,6 +53,9 @@ UnitBlueprint {
     },
     Description = 'Heavy Laser Tower',
     Display = {
+        Abilities = {
+            'Defense',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel'},
 		DestructionEmitters = {

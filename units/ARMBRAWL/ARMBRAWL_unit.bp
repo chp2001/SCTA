@@ -93,6 +93,9 @@ UnitBlueprint {
     },
     Description = 'Gunship',
     Display = {
+        Abilities = {
+            'Gunship',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'ArmCockpit'},
 		DestructionDebrisUseLocalVelocity = true,

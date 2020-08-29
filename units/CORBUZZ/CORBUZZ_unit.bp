@@ -43,6 +43,9 @@ UnitBlueprint {
     },
     Description = 'Rapid Fire Plasma Cannon',
     Display = {
+        Abilities = {
+            'Game Ender',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel','Stone','BuildPlate'},
 		DestructionEmitters = {

@@ -86,10 +86,10 @@ UnitBlueprint {
         SkirtSizeX = 4,
         SkirtSizeZ = 4,
     },
-    SelectionSizeX = 1,
-    SelectionSizeZ = 1,
+    SelectionSizeX = 4,
+    SelectionSizeZ = 4,
     SelectionThickness = 0.25,
     SizeX = 8,
-    SizeY = 8,
+    SizeY = 6,
     SizeZ = 8,
 }

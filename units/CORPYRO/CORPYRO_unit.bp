@@ -55,6 +55,9 @@ UnitBlueprint {
     },
     Description = 'Assault Kbot',
     Display = {
+        Abilities = {
+            'Flame Bot',
+        },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{

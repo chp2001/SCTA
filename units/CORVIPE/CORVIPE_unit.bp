@@ -48,6 +48,9 @@ UnitBlueprint {
     },
     Description = 'Pop-up Heavy Cannon',
     Display = {
+        Abilities = {
+            'Defense',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel'},
 		DestructionEmitters = {
@@ -100,7 +103,7 @@ UnitBlueprint {
         SelectionPriority = 5,
         FactionName = 'CORE',
         TechLevel = 'RULEUTL_Secret',
-        UnitName = 'Toaster',
+        UnitName = 'Viper',
     },
     Intel = {
         VisionRadius = 14,

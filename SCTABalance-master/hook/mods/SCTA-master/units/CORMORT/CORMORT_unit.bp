@@ -1,0 +1,20 @@
+#CORE Morty - Mobile Mortar Kbot
+#CORMORT
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Defense = {
+        Health = 1200,
+        MaxHealth = 1200,
+    },
+    Economy = {
+        BuildCostEnergy = 3600,
+        BuildCostMass = 400,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
+    },
+}

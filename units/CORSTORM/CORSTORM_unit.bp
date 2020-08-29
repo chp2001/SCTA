@@ -55,6 +55,9 @@ UnitBlueprint {
     },
     Description = 'Rocket Kbot',
     Display = {
+        Abilities = {
+            'Rocket',
+        },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{

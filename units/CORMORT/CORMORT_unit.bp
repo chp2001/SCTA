@@ -56,6 +56,9 @@ UnitBlueprint {
     },
     Description = 'Mobile Mortar Kbot',
     Display = {
+        Abilities = {
+            'Indirect',
+        },
         DestructionEffects = {
             DestructionEmitters = {
                 {
@@ -155,7 +158,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 1500,
+            Damage = 400,
             DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'CORE_MORT',
@@ -206,7 +209,6 @@ UnitBlueprint {
             Turreted = true,
             EnergyDrainPerSecond = 5,
             EnergyRequired = 5,
-            
         },
         { #BIG_UNITEX
             Damage = 50,

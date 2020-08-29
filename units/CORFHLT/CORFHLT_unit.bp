@@ -44,6 +44,9 @@ UnitBlueprint {
     },
     Description = 'Floating Heavy Laser Tower',
     Display = {
+        Abilities = {
+            'Floating',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel'},
 		DestructionEmitters = {

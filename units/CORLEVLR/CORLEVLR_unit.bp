@@ -56,6 +56,9 @@ UnitBlueprint {
     },
     Description = 'Riot Tank',
     Display = {
+        Abilities = {
+            'Artillery',
+        },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{
@@ -156,6 +159,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_IndirectFire',
             WeaponCategory = 'IndirectFire',
             FiringTolerance = 3,
+            FiringRandomness = 5,
             Label = 'CORLEVLR_WEAPON',
             MaxRadius = 30,
             MinRadius = 5, 

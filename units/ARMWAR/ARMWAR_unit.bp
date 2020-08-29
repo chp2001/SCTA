@@ -56,6 +56,9 @@ UnitBlueprint {
     },
     Description = 'Medium Infantry Kbot',
     Display = {
+        Abilities = {
+            'Infantry',
+        },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{
@@ -134,6 +137,9 @@ UnitBlueprint {
     SizeZ = 2,
     StrategicIconName = 'icon_bot1_directfire',
     StrategicIconSortPriority = 0,
+    ---Transport = {
+        --CanFireFromTransport = true,
+    --},
     Weapon = {
         {
             Audio = {

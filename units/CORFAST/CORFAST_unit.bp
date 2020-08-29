@@ -59,6 +59,9 @@ UnitBlueprint {
     },
     Description = 'Fast Attack Kbot',
     Display = {
+        Abilities = {
+            'Fast Bot',
+        },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{
@@ -130,9 +133,9 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 4.74,
-        MaxBrake = 4.74,
-        MaxSpeed = 4.74375,
+        MaxAcceleration = 3,
+        MaxBrake = 3.1,
+        MaxSpeed = 3.1,
         MotionType = 'RULEUMT_Land',
         TurnRate = 214,
         MaxSteerForce = 10,

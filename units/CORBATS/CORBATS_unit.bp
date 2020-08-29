@@ -62,6 +62,9 @@ UnitBlueprint {
     },
     Description = 'Battleship',
     Display = {
+        Abilities = {
+            'Battleship',
+        },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{

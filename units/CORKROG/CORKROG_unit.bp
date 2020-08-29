@@ -60,6 +60,10 @@ UnitBlueprint {
     },
     Description = 'Experimental Kbot',
     Display = {
+        Abilities = {
+            'AntiAir',
+            'Amphibious',
+        },
         TextureAnimationFrames = 8,
         DestructionEffects = {
             DestructionEmitters = {

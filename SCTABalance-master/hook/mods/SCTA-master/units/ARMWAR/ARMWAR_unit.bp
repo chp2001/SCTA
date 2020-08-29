@@ -22,4 +22,11 @@ UnitBlueprint {
     SizeX = 1,
     SizeY = 1.4,
     SizeZ = 1,
+    Physics = {
+        MaxBrake = 2.4,
+        MaxSpeed = 2.4,
+        TurnRate = 80,
+        StandUpright = true,
+        MaxSteerForce = 10,
+    },
 }

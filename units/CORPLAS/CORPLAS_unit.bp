@@ -51,8 +51,11 @@ UnitBlueprint {
     },
     Description = 'Plasma Tower',
     Display = {
+        Abilities = {
+            'Defense',
+        },
 	DestructionEffects = {
-		#DefaultProjectileCategories = {'MetalBarrel'},
+		DefaultProjectileCategories = {'MetalBarrel'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {'turret', 0},

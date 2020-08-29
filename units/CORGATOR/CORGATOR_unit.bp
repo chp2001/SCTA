@@ -55,6 +55,9 @@ UnitBlueprint {
     },
     Description = 'Assault Tank',
     Display = {
+        Abilities = {
+            'Assault Tank',
+        },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{

@@ -48,6 +48,9 @@ UnitBlueprint {
     },
     Description = 'Long Range Plasma Cannon',
     Display = {
+        Abilities = {
+            'Artillery',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel'},
 		DestructionEmitters = {

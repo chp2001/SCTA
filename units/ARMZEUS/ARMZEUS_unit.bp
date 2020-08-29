@@ -59,6 +59,9 @@ UnitBlueprint {
     },
     Description = 'Assault Kbot',
     Display = {
+        Abilities = {
+            'Heavy Infantry',
+        },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{
@@ -157,7 +160,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 180,
+            Damage = 80,
 	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'LIGHTNING',
@@ -168,7 +171,7 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
             Label = 'LIGHTNING',
-            MaxRadius = 22,
+            MaxRadius = 24,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
 	    MuzzleVelocity = 25,
@@ -186,7 +189,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.69,
+            RateOfFire = 1,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

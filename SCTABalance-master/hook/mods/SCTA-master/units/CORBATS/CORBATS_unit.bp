@@ -6,6 +6,9 @@ UnitBlueprint {
         MaxHealth = 25000,
     },
     Display = {
+        Abilities = {
+            '<LOC ability_tacmissiledef>Tactical Missile Defense',
+            },
         UniformScale = 0.32,
     },
        Economy = {
@@ -55,7 +58,7 @@ UnitBlueprint {
                 Water = 'Air|Land|Water|Seabed',
             },
             RangeCategory = 'UWRC_Countermeasure',
-            WeaponCategory = 'CounterMeasure'
+            WeaponCategory = 'CounterMeasure',
             Label = 'COR_BATSLASER',
             MaxRadius = 30,
             MuzzleSalvoDelay = 0,
@@ -116,7 +119,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
         RangeCategory = 'UWRC_IndirectFire',
-        WeaponCategory = 'IndirectFire'
+        WeaponCategory = 'IndirectFire',
             FiringRandomness = 3,
             FiringTolerance = 0,
             Label = 'COR_BATS',

@@ -59,6 +59,9 @@ UnitBlueprint {
     },
     Description = 'Heavy Assault Tank',
     Display = {
+        Abilities = {
+            'Heavy Tank',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Tredside','MetalBarrel'},
 		DestructionEmitters = {

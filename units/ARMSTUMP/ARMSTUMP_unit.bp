@@ -59,6 +59,9 @@ UnitBlueprint {
     },
     Description = 'Medium Assault Tank',
     Display = {
+        Abilities = {
+            'Tank',
+        },
         MovementEffects = {
             Land = {
                 Treads = {

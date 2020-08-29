@@ -48,6 +48,9 @@ UnitBlueprint {
     },
     Description = 'Pop-up Heavy Cannon',
     Display = {
+        Abilities = {
+            'Defense',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel'},
 		DestructionEmitters = {
@@ -174,7 +177,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'barrel',
+            TurretBoneMuzzle = 'flare',
             TurretBonePitch = 'gun',
             TurretBoneYaw = 'turret',
             TurretPitch = 0,

@@ -59,6 +59,9 @@ UnitBlueprint {
     },
     Description = 'Armored Assault Kbot',
     Display = {
+        Abilities = {
+            'Heavy Bot',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel'},
 		DestructionEmitters = {

@@ -94,6 +94,9 @@ UnitBlueprint {
     },
     Description = 'Bomber',
     Display = {
+        Abilities = {
+            'Bomber',
+        },
 	DestructionEffects = {
 		DefaultFlamingProjectileCountMin = 0,
 		DefaultFlamingProjectileCountMax = 0,

@@ -57,6 +57,9 @@ UnitBlueprint {
     },
     Description = 'Battleship',
     Display = {
+        Abilities = {
+            'Battleship',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'ArmShip','ArmBui', 'MetalBarrel'},
 		DestructionEmitters = {

@@ -59,6 +59,9 @@ UnitBlueprint {
     },
     Description = 'Skirmish Kbot',
     Display = {
+        Abilities = {
+            'Assault Bot',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel'},
 		DestructionEmitters = {
@@ -132,8 +135,8 @@ UnitBlueprint {
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
         MaxAcceleration = 3.28,
-        MaxBrake = 3.28,
-        MaxSpeed = 3.28125,
+        MaxBrake = 3,
+        MaxSpeed = 3,
         MotionType = 'RULEUMT_Land',
         TurnRate = 148,
         MaxSteerForce = 10,

@@ -48,6 +48,9 @@ UnitBlueprint {
     },
     Description = 'Pop-up Heavy Cannon',
     Display = {
+        Abilities = {
+            'Defense',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel'},
 		DestructionEmitters = {

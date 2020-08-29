@@ -52,6 +52,9 @@ UnitBlueprint {
     },
     Description = 'Energy Weapon',
     Display = {
+        Abilities = {
+            'Defense',
+        },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{

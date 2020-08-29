@@ -14,7 +14,7 @@ header = """do\n\n-- TODO: make sure all descriptions are up to date\n\nDescript
 footer = """\n} )\n\nend\n"""
 
 def generateDescription(unitID):
-    return "    ['{}'] = \"<LOC {}_help>.\"\n".format(unitID, unitID)
+    return "\n    ['{}'] = \"<LOC {}_help>.\"".format(unitID, unitID)
 
 
 currentDir = '.' 
@@ -22,9 +22,12 @@ f = open("unitdescription.lua", "w")
 
 f.write(header)
 
-f.writelines([generateDescription(Dir.lower()) \
+unitIDs = [Dir.lower() \
  for Dir in os.listdir(currentDir) \
- if os.path.isdir(os.path.join(currentDir,Dir))])
+ if os.path.isdir(os.path.join(currentDir,Dir))]
+
+# comma delimit lines and write out each one
+f.write(','.join(generateDescription(id) for id in unitIDs))
 
 f.write(footer)
 

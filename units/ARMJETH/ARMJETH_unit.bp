@@ -168,6 +168,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Air|Seabed',
             },
             RangeCategory = 'UWRC_AntiAir',
+            WeaponCategory = 'AntiAir',
             FiringTolerance = 1,
             Label = 'ARMKBOT_MISSILE',
             MaxRadius = 20,

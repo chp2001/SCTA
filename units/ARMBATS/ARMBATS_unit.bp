@@ -166,7 +166,8 @@ UnitBlueprint {
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Seabed',
             },
-	    RangeCategory = 'UWRC_IndirectFire',
+        RangeCategory = 'UWRC_IndirectFire',
+        WeaponCategory = 'IndirectFire',
             FiringRandomness = 3,
             FiringTolerance = 0,
             Label = 'ARM_BATSa',
@@ -235,7 +236,8 @@ UnitBlueprint {
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water',
             },
-	    RangeCategory = 'UWRC_IndirectFire',
+        RangeCategory = 'UWRC_IndirectFire',
+        WeaponCategory = 'IndirectFire',
             FiringRandomness = 3,
             FiringTolerance = 0,
             Label = 'ARM_BATSb',

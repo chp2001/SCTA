@@ -17,13 +17,13 @@ UnitBlueprint {
 	'CTRL_W',
     },
     Defense = {
-        Health = 8000,
-        MaxHealth = 8000,
+        Health = 8500,
+        MaxHealth = 8500,
         SurfaceThreatLevel = 12,
     },
     Economy = {
         BuildCostEnergy = 12000,
-        BuildCostMass = 2500,
+        BuildCostMass = 2200,
         BuildTime = 7200,
     },
     Footprint = {

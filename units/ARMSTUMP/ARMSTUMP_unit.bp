@@ -184,6 +184,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
             FiringTolerance = 0,
             Label = 'ARM_LIGHTCANNON',
             MaxRadius = 18,

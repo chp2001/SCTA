@@ -148,6 +148,7 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
+     WeaponCategory = 'IndirectFire',
             FiringTolerance = 1.65,	
 	    FiringRandomness = 2,
             Label = 'ARMVULC_WEAPON',

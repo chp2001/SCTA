@@ -156,6 +156,7 @@ UnitBlueprint {
                 Air = 'Air',
             },
 	    RangeCategory = 'UWRC_Countermeasure',
+     WeaponCategory = 'Countermeasure',
             Label = 'AMD_ROCKET',
             MaxRadius = 125,
             FiringTolerance = 360,

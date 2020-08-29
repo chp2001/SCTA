@@ -167,6 +167,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
             Label = 'ARM_FAST',
             MaxRadius = 20,
             MuzzleSalvoDelay = 0,

@@ -56,7 +56,6 @@ ProjectileBlueprint {
            'TACTICAL', 
         },
         Faction = 'ARM',
-        Weapon = 'ARMMH_WEAPON',
     },
     Interface = {
         HelpText = 0,

@@ -152,6 +152,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
             FiringTolerance = 0,
             Label = 'GATOR_LASER',
             MaxRadius = 18,

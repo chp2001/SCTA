@@ -168,6 +168,7 @@ UnitBlueprint {
             },
             BallisticArc = 'RULEUBA_None',
             RangeCategory = 'UWRC_IndirectFire',
+            WeaponCategory = 'IndirectFire',
             CollideFriendly = false,
             DamageFriendly = true,
             DamageType = 'Normal',

@@ -59,6 +59,9 @@ UnitBlueprint {
     },
     Description = 'Hovercraft Rocket Launcher',
     Display = {
+        Abilities = {
+            '<LOC ability_hover>Hover',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'CorCockpit','CorHover'},
 		DestructionEmitters = {
@@ -114,7 +117,7 @@ UnitBlueprint {
         },
         FactionName = 'CORE',
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = 'Wombat',
+        UnitName = 'Nixer',
     },
     Intel = {
         VisionRadius = 18,
@@ -169,6 +172,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
 	    FiringTolerance = 8,
             Label = 'CORMH_WEAPON',
             MaxRadius = 41.875,

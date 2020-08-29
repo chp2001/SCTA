@@ -207,6 +207,7 @@ UnitBlueprint {
                 Land = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_AntiAir',
+     WeaponCategory = 'AntiAir',
             FiringTolerance = 8,
 	    HeadingArcCenter = 0,
     	    HeadingArcRange = 43.96,

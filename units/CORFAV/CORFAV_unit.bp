@@ -178,6 +178,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
             Label = 'CORE_LASER',
             MaxRadius = 22,
             MuzzleSalvoSize = 1,

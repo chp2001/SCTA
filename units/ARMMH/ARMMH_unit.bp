@@ -173,6 +173,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
 	    FiringTolerance = 7,
             Label = 'ARMMH_WEAPON',
             MaxRadius = 41.875,

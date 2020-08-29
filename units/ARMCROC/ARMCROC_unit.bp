@@ -172,6 +172,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
             Label = 'ARM_MEDIUMCANNON',
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,

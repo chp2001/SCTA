@@ -54,6 +54,9 @@ UnitBlueprint {
     },
     Description = 'Heavy Laser Tower',
     Display = {
+        Abilities = {
+            'Defense',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel'},
 		DestructionEmitters = {
@@ -158,6 +161,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
             FiringTolerance = 1,
             Label = 'ARM_LASERH1',
             MaxRadius = 48,

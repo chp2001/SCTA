@@ -169,6 +169,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
             Label = 'ARMANAC_WEAPON',
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
@@ -206,6 +207,7 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 170,
             Turreted = true,
+            WeaponCategory = 'Direct Fire',
         },
         { #BIG_UNITEX
             Damage = 50,

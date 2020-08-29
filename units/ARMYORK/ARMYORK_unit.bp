@@ -158,6 +158,7 @@ UnitBlueprint {
                 Seabed = 'Air',
             },
 	    RangeCategory = 'UWRC_AntiAir',
+     WeaponCategory = 'AntiAir',
             FiringTolerance = 4.2,
             Label = 'ARMYORK_GUN',
             MaxRadius = 42.5,

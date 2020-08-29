@@ -206,6 +206,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
             Label = 'ARMCOMLASER',
             MaxRadius = 12.5,
             MuzzleSalvoDelay = 0,

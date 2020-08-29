@@ -56,6 +56,9 @@ UnitBlueprint {
     },
     Description = 'Mobile Energy Weapon',
     Display = {
+        Abilities = {
+            'Artillery',
+        },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{
@@ -168,6 +171,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
             Label = 'ARMMANNI_WEAPON',
             MaxRadius = 43.75,
             MuzzleSalvoDelay = 0,

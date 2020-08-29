@@ -149,6 +149,7 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
+     WeaponCategory = 'IndirectFire',
             Label = 'CORFIXED_GUN',
             MaxRadius = 75, 
             MuzzleSalvoDelay = 0, 

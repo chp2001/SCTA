@@ -172,6 +172,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
 	    FiringTolerance = 8,
             Label = 'CORMH_WEAPON',
             MaxRadius = 41.875,

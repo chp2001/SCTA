@@ -168,6 +168,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
             Label = 'CORSH_WEAPON',
             MaxRadius = 20,
             MuzzleSalvoDelay = 0,

@@ -56,6 +56,9 @@ UnitBlueprint {
     },
     Description = 'Light Laser Tower',
     Display = {
+        Abilities = {
+            'Defense',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel'},
 		DestructionEmitters = {
@@ -161,6 +164,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
             FiringTolerance = 2.75,
             Label = 'ARM_LIGHTLASER',
             MaxRadius = 25,

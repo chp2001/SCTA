@@ -157,7 +157,7 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
             RangeCategory = 'UWRC_DirectFire',
-            WeaponCategory = 'Direct Fire',
+            WeaponCategory = 'DirectFire',
             FiringTolerance = 2.75,
             Label = 'ARM_TOTAL_ANNIHILATOR',
             MaxRadius = 75,

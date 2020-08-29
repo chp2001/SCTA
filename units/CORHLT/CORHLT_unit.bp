@@ -154,6 +154,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
             FiringTolerance = 3,
             Label = 'CORE_LASERH1',
             MaxRadius = 48,

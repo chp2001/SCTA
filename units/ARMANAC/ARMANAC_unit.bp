@@ -169,6 +169,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
             Label = 'ARMANAC_WEAPON',
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,

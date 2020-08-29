@@ -60,6 +60,9 @@ UnitBlueprint {
     },
     Description = 'Mobile Rocket Launcher',
     Display = {
+        Abilities = {
+            'Missile',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Tredside','ArmCockpit'},
 		DestructionEmitters = {
@@ -167,6 +170,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
+     WeaponCategory = 'IndirectFire',
             FiringTolerance = 7,
             Label = 'ARMTRUCK_ROCKET',
             MaxRadius = 50,

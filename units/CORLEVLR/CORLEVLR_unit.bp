@@ -154,6 +154,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
             RangeCategory = 'UWRC_IndirectFire',
+            WeaponCategory = 'IndirectFire',
             FiringTolerance = 3,
             Label = 'CORLEVLR_WEAPON',
             MaxRadius = 30,

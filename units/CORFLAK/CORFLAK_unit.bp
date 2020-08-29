@@ -140,6 +140,7 @@ UnitBlueprint {
                 Land = 'Air',
             },
 	    RangeCategory = 'UWRC_AntiAir',
+     WeaponCategory = 'AntiAir',
             FiringTolerance = 4.214,	
 	    FiringRandomness = 0.5,
             Label = 'ARMFLAK_GUN',

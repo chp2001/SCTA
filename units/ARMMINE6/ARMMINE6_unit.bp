@@ -148,6 +148,7 @@ UnitBlueprint {
                 Land = 'Land|Water',
             },
 	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
             FiringTolerance = 360,
             Label = 'ARMMINE6',
             MaxRadius = 10.935,

@@ -59,6 +59,9 @@ UnitBlueprint {
     },
     Description = 'Mobile Artillery',
     Display = {
+        Abilities = {
+            'Indirect',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Tredside','MetalBarrel'},
 		DestructionEmitters = {
@@ -166,6 +169,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
+     WeaponCategory = 'IndirectFire',
 	    FiringRandomness = 2,
             Label = 'ARM_ARTILLERY',
             MaxRadius = 55,

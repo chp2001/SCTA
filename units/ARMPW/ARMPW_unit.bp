@@ -56,6 +56,9 @@ UnitBlueprint {
     },
     Description = 'Infantry Kbot',
     Display = {
+        Abilities = {
+            'Infantry',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Test'},
 		DestructionEmitters = {
@@ -154,6 +157,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
             FiringTolerance = 2,
             Label = 'EMG',
             MaxRadius = 14,

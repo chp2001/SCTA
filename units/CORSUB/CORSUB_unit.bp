@@ -173,6 +173,7 @@ UnitBlueprint {
                 Water = 'Seabed|Sub|Water',
             },
             RangeCategory = 'UWRC_AntiNavy',
+            WeaponCategory = 'AntiNavy',
             Label = 'CORE_TORPEDO',
             MaxRadius = 38,
             FiringTolerance = 360,

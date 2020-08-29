@@ -147,6 +147,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Air|Seabed',
             },
             RangeCategory = 'UWRC_AntiAir',
+            WeaponCategory = 'AntiAir',
             FiringTolerance = 8,
             Label = 'CORRL_MISSILE',
             MaxRadius = 43.75,

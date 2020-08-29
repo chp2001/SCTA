@@ -166,6 +166,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
+     WeaponCategory = 'IndirectFire',
 	    FiringRandomness = 2,
             Label = 'CORE_ARTILLERY',
             MaxRadius = 60,

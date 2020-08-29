@@ -164,6 +164,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
             FiringTolerance = 0,
             FiringRandomness = 1, #Correct Value?
             Label = 'FLAMETHROWER',

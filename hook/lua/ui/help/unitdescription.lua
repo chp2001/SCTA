@@ -239,8 +239,14 @@ Description = table.merged( Description, {
     ['mss0004'] = "<LOC mss0004_help>."         ,
     ['mss0005'] = "<LOC mss0005_help>."         ,
     ['mss0006'] = "<LOC mss0006_help>."         ,
-    ['mss0007'] = "<LOC mss0007_help>."
+    ['mss0007'] = "<LOC mss0007_help>."         ,
 
+    ['armdrake'] = "<LOC armdrake_help> ARM KBot invoking Dragons of Bygone Eras. SCTABalance Only",
+    ['armgant'] = "<LOC armgant_help> ARM Factory, that ARM Drakes. SCTABalance Only",
+    ['armdvp'] = "<LOC armdvp_help>. For SCTABalance, an upgrade from ARMVP to access T2.",
+    ['armdlab'] = "<LOC armdlab_help>. For SCTABalance, an upgrade from ARMLAB, to access T2.",
+    ['cordlab'] = "<LOC cordvp_help>. For SCTABalance, an upgrade from CORVP, to access T2",
+    ['cordvp'] = "<LOC cordlab_help>. For SCTABalance, an upgrade from CORLAB, to access T2",
 } )
 
 end

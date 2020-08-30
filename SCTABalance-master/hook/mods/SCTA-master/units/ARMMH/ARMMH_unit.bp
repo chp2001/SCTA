@@ -20,11 +20,11 @@ UnitBlueprint {
 	
         'ARM',
         'HOVER',
-	'WEAPON',
+	
 	'LEVEL1',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_W',
+	
+	
+	
     },
     Defense = {
         Health = 2700,

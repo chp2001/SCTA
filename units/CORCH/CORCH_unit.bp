@@ -59,11 +59,11 @@ UnitBlueprint {
         'CORE',
         'HOVER',
 	'LEVEL1',
-	'CONSTR',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_B',
+	
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Normal',

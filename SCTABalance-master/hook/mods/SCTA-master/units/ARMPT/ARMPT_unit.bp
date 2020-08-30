@@ -19,10 +19,10 @@ UnitBlueprint {
         'ARM',
         'SHIP',
 	'LEVEL1',
-	'WEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_W',
+	
+	
+	
+	
     },
     Defense = {
         Health = 400,

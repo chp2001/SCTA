@@ -79,12 +79,12 @@ UnitBlueprint {
 
 	
         'ARM',
-        'VTOL',
-	'CTRL_V',
+        
+	
 	'TPORT',
 	'LEVEL1',
-	'NOWEAPON',
-	'NOTSUB',
+	
+	
     },
     Defense = {
         ArmorType = 'Light',

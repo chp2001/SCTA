@@ -74,14 +74,14 @@ UnitBlueprint {
 	'AIR',
         'OVERLAYDIRECTFIRE',
         'ARM',
-        'VTOL',
-	'CTRL_V',
+        
+	
 	'LEVEL1',
-	'WEAPON',
-	'TORP',
-	'NOTSUB',
-	'CTRL_W',
-	'CTRL_P',
+	
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Light',

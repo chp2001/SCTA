@@ -43,11 +43,11 @@ UnitBlueprint {
         'OVERLAYRADAR',
 	'ARM',
 	'PLANT',
-	'CTRL_F',
+	
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',

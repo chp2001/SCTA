@@ -17,9 +17,9 @@ Categories = {
 	'CORE',
 	'ENERGY',
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
 	'STORAGE',
     },
     Footprint = {

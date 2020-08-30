@@ -22,11 +22,11 @@ UnitBlueprint {
 	'TEXTUREANIM',
 	'CORE',
 	'PLANT',
-	'CTRL_F',
+	
 	'LEVEL1',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         Health = 4200,

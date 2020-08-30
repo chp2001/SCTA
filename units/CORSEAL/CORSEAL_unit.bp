@@ -45,11 +45,11 @@ UnitBlueprint {
         'VEHICLE',	#'TANK' in TA
         'HOVER',
 	'LEVEL2',
-	'WEAPON',
-	'PHIB',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_W',
+	
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Normal',

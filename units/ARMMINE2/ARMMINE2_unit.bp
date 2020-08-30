@@ -32,12 +32,12 @@ UnitBlueprint {
 	
         'ARM',
         'MINE',
-	'WEAPON',
+	
 	'LEVEL2',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
 	'KAMIKAZI',
-	'CTRL_M',
+	
     },
     Defense = {        
         ArmorType = 'Structure',

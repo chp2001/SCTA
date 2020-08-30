@@ -39,12 +39,12 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'ARM',
         'VEHICLE',	#'TANK' in TA
-	'NOWEAPON',
-	'RAD',
+	
+	
 	'LEVEL2',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_R',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Normal',

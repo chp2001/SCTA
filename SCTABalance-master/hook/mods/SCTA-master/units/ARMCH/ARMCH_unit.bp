@@ -17,11 +17,11 @@ UnitBlueprint {
         'ARM',
         'HOVER',
 	'LEVEL1',
-	'CONSTR',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_B',
+	
+	
+	
+	
+	
     },
     Description = 'Tech Level 3',
     Defense = {

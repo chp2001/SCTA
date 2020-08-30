@@ -76,12 +76,12 @@ UnitBlueprint {
         'TRANSPORTFOCUS',
         'CANTRANSPORTCOMMANDER',
         'CORE',
-        'VTOL',
-	'CTRL_V',
+        
+	
 	'TPORT',
 	'LEVEL1',
-	'NOWEAPON',
-	'NOTSUB',
+	
+	
     },
     Defense = {
         ArmorType = 'Light',

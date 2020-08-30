@@ -55,12 +55,12 @@ UnitBlueprint {
         'OVERLAYSONAR',	
            'ARM',
         'SELECTION',
-	'UNDERWATER',
+	
 	'LEVEL2',
-	'CONSTR',
-	'NOWEAPON',
-	'NOTAIR',
-	'CTRL_B',
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Normal',

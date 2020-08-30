@@ -17,9 +17,9 @@ UnitBlueprint {
 	'CORE',
 	'ENERGY',
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         Health = 5000,

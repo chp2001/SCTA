@@ -26,9 +26,9 @@ UnitBlueprint {
 	'CORE',
 	'SPECIAL',
 	'LEVEL1',
-	'WEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         Health = 400,

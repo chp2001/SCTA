@@ -16,11 +16,11 @@ UnitBlueprint {
 	'LAND',
         'ARM',
 	'LEVEL1',
-	'CONSTR',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_B',
+	
+	
+	
+	
+	
     },
     Defense = {
         Health = 420,

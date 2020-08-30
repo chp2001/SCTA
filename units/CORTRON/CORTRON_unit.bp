@@ -38,10 +38,10 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'CORE',
 	'SPECIAL',
-	'WEAPON',
+	
 	'LEVEL3',
-	'NOTAIR',
-    'NOTSUB',
+	
+    
     'SHOWATTACKRETICLE',
     'NOCUSTOMTARGET',
     },

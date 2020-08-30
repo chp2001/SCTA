@@ -22,9 +22,16 @@ CORAIR_TORPEDO = Class(TAUnderWaterProjectile) {
 			if target and IsUnit(target) then
 				local layer = target:GetCurrentLayer()
 				if layer == 'Sub' then
-					self:ForkThread(TAUnderWaterProjectile.PassDamageThread)
+					self:ForkThread(self.PassDamageThread)
 				end
 			end
+	end,
+
+	PassDamageThread = function(self)
+		local bp = self:GetLauncher():GetBlueprint().Weapon
+		WaitSeconds(0.1)
+		self.DamageData.DamageAmount = bp.DamageWater or 800
+		self.DamageData.DamageRadius = bp.DamageRadiusWater or 0.2
 	end,
 }
 

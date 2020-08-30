@@ -30,16 +30,16 @@ UnitBlueprint {
 	'ANTINAVY',
 	'NAVAL',
 	'NOSMOKE',
-	'UNDERWATER',
+	
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',
     'CORE',
 	'SPECIAL',
-	'WEAPON',
-	'TORP',
+	
+	
 	'LEVEL2',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
     },
     CollisionOffsetY = -0.9,
     Defense = {

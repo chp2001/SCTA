@@ -18,11 +18,11 @@ UnitBlueprint {
         'CONSTRUCTIONSORTDOWN',
 	'ARM',
 	'PLANT',
-	'CTRL_F',
+	
 	'LEVEL3',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
         Display = {
         UniformScale = 0.32,

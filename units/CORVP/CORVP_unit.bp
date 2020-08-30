@@ -47,11 +47,11 @@ UnitBlueprint {
 	'TEXTUREANIM',
 	'CORE',
 	'PLANT',
-	'CTRL_F',
+	
 	'LEVEL1',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',

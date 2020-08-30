@@ -39,9 +39,9 @@ UnitBlueprint {
 	'ARM',
 	'METAL',
 	'LEVEL1',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
 	'STORAGE',
     },
     Defense = {

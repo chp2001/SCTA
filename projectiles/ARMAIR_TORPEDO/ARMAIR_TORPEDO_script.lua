@@ -9,14 +9,14 @@ ARMAIR_TORPEDO = Class(TAUnderWaterProjectile) {
 	TrackTime = 10,
 
 	OnEnterWater = function(self)
-		ForkThread(self.MovementThread,self)
+		ForkThread(self.MovementThread, self)
 		TAUnderWaterProjectile.OnEnterWater(self)
 	end,
 
 	MovementThread = function(self)
 		self:TrackTarget(true)
 		WaitSeconds(0.1)
-		self:SetTurnRate(55)
+		self:SetTurnRate(50)
 	end,
 }
 

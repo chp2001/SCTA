@@ -420,7 +420,7 @@ TAUnderWaterProjectile = Class(TAMediumCannonProjectile) {
 		PassDamageThread = function(self)
 			local bp = self:GetLauncher():GetBlueprint().Weapon
 			WaitSeconds(0.1)
-			self.DamageData.DamageAmount = bp[1].DamageWater or 100
-			self.DamageData.DamageRadius = bp[1].DamageRadiusWater or 0
+			self.DamageData.DamageAmount = bp.DamageWater or 100
+			self.DamageData.DamageRadius = bp.DamageRadiusWater or 0
 		end,
 }

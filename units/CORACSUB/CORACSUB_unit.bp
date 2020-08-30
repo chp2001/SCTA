@@ -105,7 +105,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -167,7 +166,7 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        Elevation = -2.5,
+        Elevation = -1.5,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
         MaxAcceleration = 3.5,

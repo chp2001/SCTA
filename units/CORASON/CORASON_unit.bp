@@ -39,9 +39,9 @@ UnitBlueprint {
 	'SPECIAL',
 	'SONAR',
 	'LEVEL2',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_R',
+	
+	
+	
     },
     CollisionOffsetY = -0.5,
     Defense = {

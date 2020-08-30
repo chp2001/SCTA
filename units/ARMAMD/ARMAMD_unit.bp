@@ -36,10 +36,10 @@ UnitBlueprint {
 	'ARM',
 	'SPECIAL',
 	'DEFENSIVE',
-	'WEAPON',
+	
 	'LEVEL3',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',

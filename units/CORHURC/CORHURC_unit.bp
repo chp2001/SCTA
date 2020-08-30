@@ -38,11 +38,11 @@ UnitBlueprint {
     },
     Air = {
         AutoLandTime = 1,
-        BankFactor = 3,
+        BankFactor = 2.5,
         BankForward = false,
-        BreakOffDistance = 20,
+        BreakOffDistance = 80,
         BreakOffIfNearNewTarget = true,
-        BreakOffTrigger = 10,
+        BreakOffTrigger = 30,
         CanFly = true,
         CombatTurnSpeed = 0.7,
         EngageDistance = 50,
@@ -79,14 +79,14 @@ UnitBlueprint {
 
 	
         'CORE',
-        'VTOL',
-	'CTRL_V',
+        
+	
 	'LEVEL2',
-	'WEAPON',
-	'TORP',
-	'NOTSUB',
-	'CTRL_W',
-	'CTRL_P',
+	
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Light',
@@ -139,7 +139,7 @@ UnitBlueprint {
         SizeZ = 3,
     },
     General = {
-        Category = 'Direct Fire',
+        Category = 'Bomber',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_CallTransport = true,
@@ -199,7 +199,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             BombDropThreshold = 3.5,
             CollideFriendly = false,
-            Damage = 2000,
+            Damage = 300,
             DamageFriendly = true,
             DamageRadius = 4,
             DamageType = 'Normal',
@@ -214,7 +214,7 @@ UnitBlueprint {
             Label = 'CORADVBOMB',
             MaxRadius = 60,
             MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 10,
+            MuzzleSalvoSize = 6,
             MuzzleVelocity = 0,
             NeedToComputeBombDrop = true,
             ProjectileId = '/mods/SCTA-master/projectiles/CORADVBOMB/CORADVBOMB_proj.bp',
@@ -234,7 +234,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 5,
             RackSlavedToTurret = false,
-            RateOfFire = 0.2,
+            RateOfFire = 1,
             TargetCheckInterval = 2.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -265,14 +265,14 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 20,
+            Damage = 50,
             DamageRadius = 0.25, 
             DamageType = 'AntiAir',
             DisplayName = 'CORAIR2AIRLASER',
 	    FiringTolerance = 0,
             FireTargetLayerCapsTable = {
-                Air = 'Land|Water|Air|Seabed',
-                Land = 'Land|Water|Air|Seabed',
+                Air = 'Air',
+                Land = 'Air',
             },
 	    RangeCategory = 'UWRC_AntiAir',
      WeaponCategory = 'AntiAir',
@@ -301,7 +301,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 2.56,
+            RateOfFire = 1,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',

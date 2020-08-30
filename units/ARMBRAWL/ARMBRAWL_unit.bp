@@ -74,13 +74,13 @@ UnitBlueprint {
 	'GROUNDATTACK',
         'OVERLAYDIRECTFIRE',	
         'ARM',
-        'VTOL',
-	'CTRL_V',
+        
+	
 	'LEVEL2',
-	'WEAPON',
-	'NOTSUB',
-	'CTRL_W',
-	'CTRL_P',
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Light',

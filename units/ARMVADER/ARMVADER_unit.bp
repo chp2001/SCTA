@@ -42,10 +42,10 @@ UnitBlueprint {
 	
         'ARM',
         'KBOT',
-	'WEAPON',
+	
 	'LEVEL2',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
 	'KAMIKAZI',
     },
     Defense = {

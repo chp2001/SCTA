@@ -20,11 +20,11 @@ UnitBlueprint {
         'LAND', 
 	'ARM',
 	'PLANT',
-	'CTRL_F',
+	
 	'LEVEL1',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
         Display = {
              Abilities = {

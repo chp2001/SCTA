@@ -78,13 +78,13 @@ UnitBlueprint {
 	'AIR',
     'SELECTION',
         'ARM',
-        'VTOL',
-	'CTRL_V',
+        
+	
 	'LEVEL1',
-	'CONSTR',
-	'NOWEAPON',
-	'NOTSUB',
-	'CTRL_B',
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Light',

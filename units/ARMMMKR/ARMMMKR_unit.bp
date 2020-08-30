@@ -45,9 +45,9 @@ UnitBlueprint {
 	'ARM',
 	'ENERGY',
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',

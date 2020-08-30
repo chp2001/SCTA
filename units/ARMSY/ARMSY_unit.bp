@@ -53,11 +53,11 @@ UnitBlueprint {
 	
 	'ARM',
 	'PLANT',
-	'CTRL_F',
+	
 	'LEVEL1',	
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     CollisionOffsetY = -0.5,
     Defense = {

@@ -74,13 +74,13 @@ UnitBlueprint {
 	'GROUNDATTACK',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'VTOL',
-	'CTRL_V',
+        
+	
 	'LEVEL2',
-	'WEAPON',
-	'NOTSUB',
-	'CTRL_W',
-	'CTRL_P',
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Light',
@@ -261,7 +261,8 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
             Label = 'VTOL_ROCKET2',
-            FiringTolerance = 3,
+            FiringTolerance = 1,
+            FiringRandomness = 0.2,
             MaxRadius = 28.125,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,

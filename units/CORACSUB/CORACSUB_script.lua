@@ -6,17 +6,16 @@
 local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstructor
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
-ARMACSUB = Class(TAconstructor) {
+CORACSUB = Class(TAconstructor) {
 
 	OnCreate = function(self)
 		self.Spinners = {
 			door1 = CreateRotator(self, 'door1', 'z', nil, 0, 0, 0),
 			door2 = CreateRotator(self, 'door2', 'z', nil, 0, 0, 0),
 			post = CreateRotator(self, 'post', 'y', nil, 0, 0, 0),
-			nanogun = CreateRotator(self, 'nanogun', 'x', nil, 0, 0, 0),
+			nanogun = CreateRotator(self, 'muzzle', 'x', nil, 0, 0, 0),
 		}
 		self.Sliders = {
-			plate = CreateSlider(self, 'plate'),
 			door1 = CreateSlider(self, 'door1'),
 			door2 = CreateSlider(self, 'door2'),
 		}
@@ -53,13 +52,6 @@ ARMACSUB = Class(TAconstructor) {
 		--SLEEP <627>;
 		WaitSeconds(0.6)
 
-		--MOVE plate to y-axis <5.65> SPEED <8.00>;
-		self.Sliders.plate:SetGoal(0,5,0) #5.65 is too high
-		self.Sliders.plate:SetSpeed(8)
-
-		--SLEEP <628>;
-		WaitSeconds(0.6)
-
 		--SLEEP <31>;
 
 		TAconstructor.Open(self)
@@ -92,14 +84,6 @@ ARMACSUB = Class(TAconstructor) {
 		self.Spinners.nanogun:SetSpeed(160.03)
 		WaitFor(self.Spinners.nanogun)
 		WaitFor(self.Spinners.post)
-
-		--MOVE plate to y-axis <0> SPEED <9.00>;
-		self.Sliders.plate:SetGoal(0,0,0)
-
-		self.Sliders.plate:SetSpeed(9)
-		--SLEEP <621>;
-		WaitSeconds(0.6)
-
 		--MOVE door1 to y-axis <0> SPEED <5.00>;
 		self.Sliders.door1:SetGoal(0,0,0)
 		self.Sliders.door1:SetSpeed(4.5)
@@ -128,4 +112,4 @@ ARMACSUB = Class(TAconstructor) {
 	end,
 }
 
-TypeClass = ARMACSUB
+TypeClass = CORACSUB

@@ -89,10 +89,10 @@ UnitBlueprint {
         'ARM',
         'COMMANDER',
 	'LEVEL10',
-	'WEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_C',
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Commander',

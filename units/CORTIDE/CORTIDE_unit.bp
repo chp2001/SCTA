@@ -37,9 +37,9 @@ UnitBlueprint {
 	'CORE',
 	'ENERGY',
 	'LEVEL1',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     CollisionOffsetY = -0.5,
     Defense = {

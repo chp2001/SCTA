@@ -42,12 +42,12 @@ UnitBlueprint {
         'OVERLAYANTINAVY',
 	'NORMALSUB',
         'CORE',
-        'UNDERWATER',
+        
 	'LEVEL1',
-	'TORP',
-	'WEAPON',
-	'NOTAIR',
-	'CTRL_W',
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Normal',

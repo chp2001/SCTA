@@ -14,9 +14,9 @@ UnitBlueprint {
     'ARM',
     'HOVER',
 'LEVEL1',
-'NOTAIR',
-'NOTSUB',
-'CTRL_W',
+
+
+
 },
     Display = {
        Abilities = {

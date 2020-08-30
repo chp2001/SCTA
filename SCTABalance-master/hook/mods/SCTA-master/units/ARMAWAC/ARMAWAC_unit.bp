@@ -12,12 +12,12 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'OVERLAYOMNI',
         'ARM',
-        'VTOL',
-	'CTRL_V',
+        
+	
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTSUB',
-	'CTRL_R',
+	
+	
+	
     },
     Defense = {
         Health = 800,

@@ -17,10 +17,10 @@ UnitBlueprint {
 	'ARM',
 	'PLANT',
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_F',
+	
+	
+	
+	
     },
     Defense = {
         Health = 6000,

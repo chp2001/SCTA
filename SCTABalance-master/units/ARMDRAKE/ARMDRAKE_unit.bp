@@ -42,10 +42,10 @@ UnitBlueprint {
         'ARMDRAKE',        
         'ARM',
         'KBOT',
-        'WEAPON',
-        'NOTAIR',
-        'NOTSUB',
-        'CTRL_W',
+        
+        
+        
+        
     },
     Defense = {
         AirThreatLevel = 0,

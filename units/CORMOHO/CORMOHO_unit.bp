@@ -50,9 +50,9 @@ UnitBlueprint {
 	'METAL',
 	'EXTRACTOR',
 	'LEVEL3',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',

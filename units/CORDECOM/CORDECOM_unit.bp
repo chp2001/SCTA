@@ -67,10 +67,10 @@ UnitBlueprint {
 	'LEVEL2',
         'OVERLAYDIRECTFIRE',
         'CORE',
-	'WEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_W',
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Commander',

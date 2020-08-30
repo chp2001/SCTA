@@ -21,11 +21,11 @@ UnitBlueprint {
 	'LAND',
 	'CORE',
 	'PLANT',
-	'CTRL_F',
+	
 	'LEVEL1',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         Health = 2600,

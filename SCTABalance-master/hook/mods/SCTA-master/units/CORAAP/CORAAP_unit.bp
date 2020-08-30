@@ -18,11 +18,11 @@ UnitBlueprint {
         'CONSTRUCTIONSORTDOWN',
 	'CORE',
 	'PLANT',
-	'CTRL_F',
+	
 	'LEVEL3',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         Health = 4000,

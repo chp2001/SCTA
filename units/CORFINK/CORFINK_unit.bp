@@ -70,11 +70,11 @@ UnitBlueprint {
 	'AIR',
 	'SCOUT', 
         'CORE',
-        'VTOL',
-	'CTRL_V',
+        
+	
 	'LEVEL1',
-	'NOWEAPON',
-	'NOTSUB',
+	
+	
     },
     Defense = {
         ArmorType = 'Light',

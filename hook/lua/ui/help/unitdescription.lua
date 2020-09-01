@@ -5,29 +5,50 @@ do
 
 Description = table.merged( Description, {
 
- 
-    ['armcom'] = "A Freedom Fighter for Humanity, who seeks to take down the CORE Tyrants",
-    ['corcom'] = "A Hero for Collective Conscious, who seeks to bring defeat to ARM Vermin",
-    ['corck'] = "An Engineering Bot Builds T1 Economic, and T2 Military",
-    ['armck'] = "An Engineering Bot Builds T1 Economic, and T2 Military",
-    ['corack'] = "An Advanced Engineering Bot can build T2 and T3 but not T1 building",
-    ['armack'] = "An Advanced Engineering Bot can build T2 and T3 but not T1 building",
-    ['armcv'] = "An Engineering Vehicle Builds T1 Economic, and T2 Military",
-    ['corcv'] = "An Engineering Vehicle Builds T1 Economic, and T2 Military",
-    ['coracv'] = "An Advanced Engineering Vehicle can build T2 and T3 but not T1 building",
-    ['armacv'] = "An Advanced Engineering Vehicle can build T2 and T3 but not T1 building",
-    ['corcs'] = "An Engineering Ship Builds Naval T1 Economic, and T2 Military",
-    ['armcs'] = "An Engineering Ship Builds Naval T1 Economic, and T2 Military",
-    ['coraca'] = "An Advanced Engineering Aircraft can build T2 and T3 but not T1 building",
-    ['armaca'] = "An Advanced Engineering Aircraft can build T2 and T3 but not T1 building",
-    ['armca'] = "An Engineering Aircraft Builds T1 Economic, and T2 Military",
-    ['corca'] = "An Engineering Aircraft Builds T1 Economic, and T2 Military",
-    ['coracsub'] = "An Advanced Engineering Sub can build most naval based T2 and T3 but not T1 building",
-    ['armacsub'] = "An Advanced Engineering Sub can build most naval based T2 and T3 but not T1 building",
-    ['corch'] = "An Engineering Hovercraft Builds T1 Economic, and T2 Military",
-    ['armch'] = "An Engineering Hovercraft Builds T1 Economic, and T2 Military",
+    -- Commanders
+    ['corcom'] = "Towering Kbot with basic engineering suite, armed with the Disintigration Gun and a personal cloaking device. A Hero for Collective Conscious, who seeks to bring defeat to ARM Vermin",
+    ['armcom'] = "Towering Kbot with basic engineering suite, armed with the Disintigration Gun and a personal cloaking device. A Freedom Fighter for Humanity, who seeks to take down the CORE Tyrants",
+    
+    -- Engineers
+      -- T1 Con Kbot
+    ['corck'] = "A CORE Engineering Kbot. Includes a Tech Level 2 military engineering suite, including the Advanced Kbot Lab.",
+    ['armck'] = "An ARM Engineering Kbot. Includes a Tech Level 2 military engineering suite, including the Advanced Kbot Lab.",
+    
+      -- T2 Con Kbot
+    ['corack'] = "A CORE Advanced Engineering Kbot. Builds Tech Level 2 and 3 structures, including the Krogoth Gantry",
+    ['armack'] = "An ARM Advanced Engineering Kbot. Builds Tech Level 2 and 3 structures, including the Drake Gantry",
+    
+      -- T2 Specialist KBot
     ['cornecro'] = "An Advanced Engineer Unit. No engineering suite. Quickly rebuilds dead units instead of reclaiming them.",
     ['armfark'] = "An Advanced Engineer Unit. No engineering suite. The Fast Assist/Repair Kbot. Small, mobile frame for reclaiming wrecks and assisting factories",
+    
+      -- T1 Vehicle Con
+    ['armcv'] = "An Engineering Vehicle. Includes a Tech Level 2 military engineering suite, including the Advanced Vehicle Plant.",
+    ['corcv'] = "An Engineering Vehicle. Includes a Tech Level 2 military engineering suite, including the Advanced Vehicle Plant.",
+    
+      -- T2 Vehicle Con
+    ['coracv'] = "An Advanced Engineering Vehicle. Includes a Tech Level 3 engineering suite, including the Krogoth Gantry",
+    ['armacv'] = "An Advanced Engineering Vehicle. Includes a Tech Level 3 engineering suite, including the Drake Gantry",
+    
+      -- T1 Naval Con Ship
+    ['corcs'] = "An Engineering Ship. Includes a naval engineering suite and may construct the Advanced Ship Yard",
+    ['armcs'] = "An Engineering Ship. Includes a naval engineering suite and may construct the Advanced Ship Yard",
+    
+      -- T2 Naval Con Sub
+    ['coracsub'] = "An Advanced Engineering Sub. Includes a T2 naval engineering suite and may construct the Seaplane Platform",
+    ['armacsub'] = "An Advanced Engineering Sub. Includes a T2 naval engineering suite and may construct the Seaplane Platform",
+    
+      -- T1 Air Con
+    ['armca'] = "An Engineering Aircraft Builds T1 Economic, and T2 Military",
+    ['corca'] = "An Engineering Aircraft Builds T1 Economic, and T2 Military",
+    
+      -- T2 Air Con
+    ['coraca'] = "An Advanced Engineering Aircraft can build T2 and T3 but not T1 building",
+    ['armaca'] = "An Advanced Engineering Aircraft can build T2 and T3 but not T1 building",
+    
+      -- Hover Con
+    ['corch'] = "An Engineering Hovercraft Builds T1 Economic, and T2 Military",
+    ['armch'] = "An Engineering Hovercraft Builds T1 Economic, and T2 Military",
     
     ['armaap'] = "<LOC armaap_help>."           ,
     ['armaas'] = "<LOC armaas_help>."           ,
@@ -39,13 +60,13 @@ Description = table.merged( Description, {
     ['armanac'] = "<LOC armanac_help>."         ,
     ['armanni'] = "<LOC armanni_help>."         ,
     ['armap'] = "<LOC armap_help>."             ,
-    ['armarad'] = "<LOC armarad_help>."         ,
+    ['armarad'] = "<LOC armarad_help> With a much larger tranceiver, the advanced radar tower can detect approaching CORE forces far in advance, but is easily fooled by jamming and stealth."         ,
     ['armaser'] = "<LOC armaser_help>."         ,
     ['armason'] = "<LOC armason_help>."         ,
     ['armasp'] = "<LOC armasp_help>."           ,
     ['armasy'] = "<LOC armasy_help>."           ,
     ['armatl'] = "<LOC armatl_help>."           ,
-    ['armatlas'] = "<LOC armatlas_help>."       ,
+    ['armatlas'] = "<LOC armatlas_help> Rapid air transport capable of ferrying ARM raiding forces deep within CORE territory. Carries 4 T1 land units.",
     ['armavp'] = "<LOC armavp_help>."           ,
     ['armawac'] = "<LOC armawac_help>."         ,
     ['armbats'] = "<LOC armbats_help>."         ,
@@ -54,18 +75,18 @@ Description = table.merged( Description, {
     ['armbull'] = "<LOC armbull_help>."         ,
     ['armcarry'] = "<LOC armcarry_help>."       ,
     ['armckfus'] = "<LOC armckfus_help>."       ,
-    ['armcroc'] = "<LOC armcroc_help>."         ,
-    ['armcrus'] = "<LOC armcrus_help>."         ,
-    ['armdecom'] = "<LOC armdecom_help>."       ,
+    ['armcroc'] = "<LOC armcroc_help>Capable of trundling the seabed, the Triton amphibious tank may take CORE coastal bases by surprise. Lacks any weaponry while beneath the water and is detectable by sonar."         ,
+    ['armcrus'] = "<LOC armcrus_help>Armed with a twin plasma battery and depth charges, the Crusader is the mainstay ARM naval unit, capable of engaging ship and sub alike."         ,
+    ['armdecom'] = "<LOC armdecom_help> When CORE forces detected the prescence of the lone ARM commander on their icy shores, a facimile commander had been constructed by the ARM in deception. Reclaims, repairs, and assists. No engineering suite nor Disintigration Gun. Explodes violently on death"       ,
     ['armdrag'] = "<LOC armdrag_help>."         ,
     ['armemp'] = "<LOC armemp_help>."           ,
     ['armestor'] = "<LOC armestor_help>."       ,
     ['armfast'] = "<LOC armfast_help>."         ,
     ['armfav'] = "<LOC armfav_help>."           ,
-    ['armfido'] = "<LOC armfido_help>."         ,
+    ['armfido'] = "<LOC armfido_help>This four-legged friend of ARM packs a large main cannon atop its frame."         ,
     ['armfig'] = "<LOC armfig_help>."           ,
     ['armflak'] = "<LOC armflak_help>."         ,
-    ['armflash'] = "<LOC armflash_help>."       ,
+    ['armflash'] = "<LOC armflash_help>Light tank armed with an EMG with devastating small-arms firepower. ARM's choice in disrupting CORE expansion."       ,
     ['armflea'] = "<LOC armflea_help>."         ,
     ['armfort'] = "<LOC armfort_help>."         ,
     ['armfus'] = "<LOC armfus_help>."           ,
@@ -81,7 +102,7 @@ Description = table.merged( Description, {
     ['armlance'] = "<LOC armlance_help>."       ,
     ['armlatnk'] = "<LOC armlatnk_help>."       ,
     ['armllt'] = "<LOC armllt_help>."           ,
-    ['armmakr'] = "<LOC armmakr_help>."         ,
+    ['armmakr'] = "<LOC armmakr_help>Consumes energy to create metal. Useful in locations where deposits are scarce but requires immense energy to create and maintain."         ,
     ['armmanni'] = "<LOC armmanni_help>."       ,
     ['armmart'] = "<LOC armmart_help>."         ,
     ['armmerl'] = "<LOC armmerl_help>."         ,

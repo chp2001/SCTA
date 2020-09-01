@@ -9,12 +9,11 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 CORCS = Class(TAconstructor) {
 
 	OnCreate = function(self)
-
 		self.Spinners = {
 			door1 = CreateRotator(self, 'door1', 'z', nil, 0, 0, 0),
 			door2 = CreateRotator(self, 'door2', 'z', nil, 0, 0, 0),
-			fork = CreateRotator(self, 'fork', 'x', nil, 0, 0, 0),
-			gun = CreateRotator(self, 'gun', 'x', nil, 0, 0, 0),
+			fork = CreateRotator(self, 'pivot', 'x', nil, 0, 0, 0),
+			gun = CreateRotator(self, 'nano', 'x', nil, 0, 0, 0),
 			turret = CreateRotator(self, 'turret', 'y', nil, 0, 0, 0),
 		}
 		for k, v in self.Spinners do
@@ -70,7 +69,7 @@ CORCS = Class(TAconstructor) {
 		WaitFor(self.Spinners.turret)
 
 		local distance = VDist2(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z)
-		selfPosition = self:GetPosition('gun') 
+		selfPosition = self:GetPosition('nano') 
 
 		self.Spinners.gun:SetGoal(-180 + TAutils.GetAngle(0, selfPosition.y, distance, targetPosition.y))
 		self.Spinners.gun:SetSpeed(160.03)

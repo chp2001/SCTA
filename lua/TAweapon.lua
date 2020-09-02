@@ -210,12 +210,11 @@ TAweapon = Class(DefaultWeapon) {
         if (target) then
             if (IsUnit(target)) then
                 canSee = target:GetBlip(army):IsSeenNow(army)
-            else
+            end
             if (IsBlip(target)) then
                 target = target:GetSource()
             end
             
-        end
      end 
 
         ###object (if any) currently ordered to target

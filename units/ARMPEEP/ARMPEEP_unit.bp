@@ -75,11 +75,7 @@ UnitBlueprint {
 	'AIR',
 	'SCOUT',
         'ARM',
-        
-	
 	'LEVEL1',
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',

@@ -74,13 +74,7 @@ UnitBlueprint {
 	'GROUNDATTACK',
         'OVERLAYDIRECTFIRE',	
         'ARM',
-        
-	
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Light',

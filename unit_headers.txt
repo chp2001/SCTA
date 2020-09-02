@@ -195,7 +195,3 @@ CORVP:      #CORE Vehicle Plant - Produces Vehicles
 CORVRAD:    #CORE Informer - Mobile Radar
 CORVROC:    #CORE Diplomat - Mobile Rocket Launcher
 CORWIN:     #CORE Wind Generator - Produces Energy
-UAL0001:    #ARM Commander - Commander
-UEL0001:    #ARM Commander - Commander
-URL0001:    #CORE Commander - Commander
-XSL0001:    #CORE Commander - Commander

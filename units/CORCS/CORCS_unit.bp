@@ -74,7 +74,7 @@ UnitBlueprint {
     Description = 'Tech Level 1',
     Display = {
         AnimationOpen = '/mods/SCTA-master/units/CORCS/CORCS_lod0_unpack.sca',
-        AnimationOpenRate = 0.5, 
+        AnimationOpenRate = 1, 
         Abilities = {
             'Construction Unit',
         },

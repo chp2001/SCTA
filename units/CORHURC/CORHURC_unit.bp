@@ -69,24 +69,14 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
+        'HIGHALTAIR',
         'MOBILE',
 	'BOMBER',
 	'AIR',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
-
-	
         'CORE',
-        
-	
 	'LEVEL2',
-	
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Light',

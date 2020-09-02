@@ -80,13 +80,7 @@ UnitBlueprint {
 	'OVERLAYDIRECTFIRE',
 	'DIRECTFIRE',
         'CORE',
-        
-	
 	'LEVEL1',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Light',

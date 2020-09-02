@@ -69,22 +69,13 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'AIR',
         'TRANSPORTATION',
         'TRANSPORTFOCUS',
         'CANTRANSPORTCOMMANDER',
-
-	
         'ARM',
-        
-	
-	'TPORT',
 	'LEVEL1',
-	
-	
     },
     Defense = {
         ArmorType = 'Light',

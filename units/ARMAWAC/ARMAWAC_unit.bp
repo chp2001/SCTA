@@ -71,12 +71,7 @@ UnitBlueprint {
 	'RADAR',
         'OVERLAYRADAR',
         'ARM',
-        
-	
 	'LEVEL2',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Light',

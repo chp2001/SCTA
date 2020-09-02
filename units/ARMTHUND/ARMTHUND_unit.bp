@@ -74,14 +74,8 @@ UnitBlueprint {
 	'AIR',
         'OVERLAYDIRECTFIRE',
         'ARM',
-        
-	
+        'HIGHALTAIR',
 	'LEVEL1',
-	
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Light',

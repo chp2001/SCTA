@@ -11,7 +11,7 @@ CORCS = Class(TAconstructor) {
 	OnCreate = function(self)
 		self.AnimManip = CreateAnimator(self)
 		self.Spinners = {
-			gun = CreateRotator(self, 'pivot', 'y', nil, 0, 0, 0),
+			gun = CreateRotator(self, 'turret', 'y', nil, 0, 0, 0),
 		}
 		self.Trash:Add(self.AnimManip)
 		for k, v in self.Spinners do

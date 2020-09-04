@@ -45,7 +45,7 @@ UnitBlueprint {
         'OVERLAYRADAR',	
 	'CORE',
 	'SPECIAL',
-	
+	'SORTINTEL',
 	'LEVEL1',
 	
 	

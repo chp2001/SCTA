@@ -36,20 +36,14 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	
+        'SORTINTEL',
 	'STRUCTURE',
 	'INTELLIGENCE',
 	'TARGETING',
 	'TEXTUREANIM',
-
-	
 	'CORE',
 	'SPECIAL',
 	'LEVEL3',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',

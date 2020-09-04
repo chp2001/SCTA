@@ -33,7 +33,8 @@ UnitBlueprint {
 	
 	'STRUCTURE',
         'METALSTORAGE',
-        'ECONOMIC',
+                'ECONOMIC',
+        'SORTECONOMY',
 
 	
 	'CORE',

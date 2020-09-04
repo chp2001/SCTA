@@ -17,7 +17,7 @@ UnitBlueprint {
 	'CORE',
 	'ENERGY',
 	'LEVEL2',
-	
+	'SORTECONOMY',
 	
 	
     },

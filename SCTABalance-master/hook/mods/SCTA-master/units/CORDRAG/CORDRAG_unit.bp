@@ -21,7 +21,7 @@ UnitBlueprint {
 	'CORE',
 	'METAL',
 	'LEVEL1',
-	
+	'SORTDEFENSE',
 	
 	
     },

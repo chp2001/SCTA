@@ -31,14 +31,14 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 	'STRUCTURE',
-	'DEFENSE',
+	'STRATEGIC',
 	'INDIRECTFIRE',
         'NUKE',
         'SILO',
         'SHOWQUEUE',
 	'CORE',
 	'SPECIAL',
-	
+	'SORTSTRATEGIC',
 	'LEVEL3',
 	
     

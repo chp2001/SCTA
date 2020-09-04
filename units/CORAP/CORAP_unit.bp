@@ -46,7 +46,8 @@ UnitBlueprint {
 	'CONSTRUCTION',
         'OVERLAYRADAR',
 	'CORE',
-	'PLANT',
+		'PLANT',
+	'SORTCONSTRUCTION',
 	'LEVEL1',
 	
 	

@@ -29,20 +29,14 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-
-	
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-
-	
 	'CORE',
-	'DEFENSIVE',
-	
+		'DEFENSIVE',
+	'SORTDEFENSE',
 	'LEVEL1',
-	
-	
     },
     CollisionOffsetY = -1,
     Defense = {

@@ -20,7 +20,8 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'TEXTUREANIM',
 	'CORE',
-	'PLANT',
+		'PLANT',
+	'SORTCONSTRUCTION',
 	
 	'LEVEL1',
 	

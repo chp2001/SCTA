@@ -21,7 +21,8 @@ UnitBlueprint {
 	'NAVAL',
 	'TEXTUREANIM',
 	'CORE',
-	'PLANT',
+		'PLANT',
+	'SORTCONSTRUCTION',
 	
 	'LEVEL1',
 	

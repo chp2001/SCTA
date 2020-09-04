@@ -30,7 +30,7 @@ UnitBlueprint {
 	'ANTINAVY',
 	'NAVAL',
 	'NOSMOKE',
-	
+	'SORTDEFENSE',
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',
     'CORE',

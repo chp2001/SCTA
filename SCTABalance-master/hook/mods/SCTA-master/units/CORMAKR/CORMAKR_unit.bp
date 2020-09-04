@@ -17,9 +17,7 @@ Categories = {
 	'CORE',
 	'ENERGY',
 	'LEVEL2',
-	
-	
-	
+	'SORTECONOMY',
 	'STORAGE',
     },
     Footprint = {

@@ -34,7 +34,7 @@ UnitBlueprint {
         'OVERLAYDEFENSE',
 	'CORE',
 	'SPECIAL',
-    
+    'SORTDEFENSE',
     'SHOWQUEUE',
 	'LEVEL3',
 	

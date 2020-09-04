@@ -36,7 +36,8 @@ UnitBlueprint {
 
 	
 	'STRUCTURE',
-        'ECONOMIC',
+                'ECONOMIC',
+        'SORTECONOMY',
 	'ENERGYPRODUCTION',
 
 	

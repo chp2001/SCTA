@@ -38,8 +38,8 @@ UnitBlueprint {
 
 	
 	'ARM',
-	'DEFENSIVE',
-	
+		'DEFENSIVE',
+	'SORTDEFENSE',
 	'LEVEL1',
 	
 	

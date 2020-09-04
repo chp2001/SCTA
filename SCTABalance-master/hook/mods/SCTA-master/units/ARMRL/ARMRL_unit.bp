@@ -25,7 +25,8 @@ UnitBlueprint {
 	'OVERLAYANTIAIR',
 	'ARM',
 	'SPECIAL',
-	'LEVEL1',
+    'LEVEL1',
+    'SORTDEFENSE',
 	
 	
 	

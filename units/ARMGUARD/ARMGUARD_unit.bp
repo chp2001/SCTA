@@ -33,8 +33,7 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
 	'ARM',
 	'LEVEL2',
-	'STRATEGIC',
-	
+	'SORTDEFENSE',
 	
 	
     },

@@ -22,7 +22,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'EXPERIMENTAL',
 	'STRUCTURE',
-	'DEFENSE',
+	'SORTSTRATEGIC',
 	'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',	
     'CORE',

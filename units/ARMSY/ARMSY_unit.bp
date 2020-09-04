@@ -52,7 +52,8 @@ UnitBlueprint {
 
 	
 	'ARM',
-	'PLANT',
+		'PLANT',
+	'SORTCONSTRUCTION',
 	
 	'LEVEL1',	
 	

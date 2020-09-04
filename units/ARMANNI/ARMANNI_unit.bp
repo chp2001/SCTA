@@ -33,7 +33,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
 	'ARM',
 	'SPECIAL',
-	
+	'SORTDEFENSE',
 	'LEVEL3',
 	
 	

@@ -368,7 +368,6 @@ UnitBlueprint {
             Turreted = true,
             OverChargeWeapon = true,
             ManualFire = 1,
-            WeaponCategory = 'Direct Fire',
         },
         {
             Damage = 1000,

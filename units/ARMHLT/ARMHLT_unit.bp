@@ -28,17 +28,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-
-	
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-
-	
 	'ARM',
-	'DEFENSIVE',
-	
+		'DEFENSIVE',
+	'SORTDEFENSE',
 	'LEVEL2',
 	
 	

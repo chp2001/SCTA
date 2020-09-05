@@ -24,7 +24,7 @@ UnitBlueprint {
     BuildIconSortPriority = 200,
     Categories = {
         'SELECTABLE',
-        'ECONOMIC',
+                'ECONOMIC',
         'COMMAND',
         'MASSPRODUCTION',
         'MASSFABRICATION',

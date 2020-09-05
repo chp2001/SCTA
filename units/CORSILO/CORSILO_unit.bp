@@ -31,14 +31,14 @@ UnitBlueprint {
         'RECLAIMABLE',
         'EXPERIMENTAL',
 	'STRUCTURE',
-	'DEFENSE',
+	'SORTSTRATEGIC',
 	'INDIRECTFIRE',
         'NUKE',
         'SILO',
         'SHOWQUEUE',
 	'CORE',
 	'SPECIAL',
-	
+	'STRATEGIC',
 	'LEVEL3',
 	
     

@@ -1,0 +1,21 @@
+#ARM Fido - Assault Kbot
+#ARMFIDO
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+   Merge = true, 
+    Defense = {
+        Health = 3000,
+        MaxHealth = 3000,
+    },
+    Economy = {
+        BuildCostEnergy = 3000,
+        BuildCostMass = 492,
+        BuildTime = 6000,
+    },
+    Footprint = {
+	SizeX = 1,
+	SizeZ = 1,
+    },
+}

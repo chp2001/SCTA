@@ -45,7 +45,8 @@ UnitBlueprint {
 	'STRUCTURE',
 	'CONSTRUCTION',
 	'ARM',
-	'PLANT',
+		'PLANT',
+	'SORTCONSTRUCTION',
 	
 	'LEVEL1',
 	

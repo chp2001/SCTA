@@ -29,7 +29,8 @@ UnitBlueprint {
 
 	
 	'STRUCTURE',
-        'ECONOMIC',
+                'ECONOMIC',
+        'SORTECONOMY',
 	'ENERGYPRODUCTION',
 	'NAVAL',
 

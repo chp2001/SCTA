@@ -20,7 +20,7 @@ UnitBlueprint {
 	'ARM',
 	'SPECIAL',
 	'LEVEL3',
-	
+	'SORTINTEL',
 	
 	
     },

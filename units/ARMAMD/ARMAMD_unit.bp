@@ -35,7 +35,8 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'ARM',
 	'SPECIAL',
-	'DEFENSIVE',
+		'DEFENSIVE',
+	'SORTDEFENSE',
 	
 	'LEVEL3',
 	

@@ -32,7 +32,7 @@ UnitBlueprint {
     'CORE', 
 	'SPECIAL',
 	'LEVEL2',
-	
+	'SORTDEFENSE',
 	
 	
     },

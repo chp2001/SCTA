@@ -34,7 +34,8 @@ UnitBlueprint {
 	
 	'STRUCTURE',
         'ENERGYSTORAGE',
-        'ECONOMIC',
+                'ECONOMIC',
+        'SORTECONOMY',
 	'TEXTUREANIM',
 
 	

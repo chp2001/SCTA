@@ -12,21 +12,15 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH2',
         'BENIGN',
-
-	
 	'STRUCTURE',
         'DEFENSE',
         'WALL',
 	'NOEXPLOSION',
 	'NOSMOKE',
-
-	
+	'SORTDEFENSE',
 	'CORE',
 	'METAL',
 	'LEVEL2',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',

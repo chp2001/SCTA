@@ -1,5 +1,5 @@
-#ARM Peewee - Infantry Kbot
-#ARMPW
+#ARM Fido - Assault Kbot
+#ARMFIDO
 #
 #Blueprint created by Raevn
 
@@ -7,65 +7,69 @@ UnitBlueprint {
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'SERVTNY2',
+            Cue = 'KBARMSEL',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StartMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'SERVTNY2',
+            Cue = 'KBARMMOV',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StopMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'SERVTNY2',
+            Cue = 'KBARMSTP',
             LodCutoff = 'UnitMove_LodCutoff',
         },
 	Destroyed = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOMED2',
+            Cue = 'XPLOLRG3',
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 4,
+    BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
-        'TECH1',
+        'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
-	'ARMPW',
         'OVERLAYDIRECTFIRE',
         'ARM',
         'KBOT',
-	'LEVEL1',
-	
-	
-	
-	
+	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 250,
-        MaxHealth = 250,
+        Health = 1000,
+        MaxHealth = 1000,
         AirThreatLevel = 0,
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 0.5,
+        SurfaceThreatLevel = 4.5,
     },
-    Description = 'Infantry Kbot',
+    Description = 'Gunslinger Kbot',
     Display = {
         Abilities = {
-            'Infantry',
+            'Assault Bot',
         },
 	DestructionEffects = {
-		DefaultProjectileCategories = {'Test'},
+		DefaultProjectileCategories = {'MetalBarrel'},
 		DestructionEmitters = {
 			{
-				EmitterBone = {'Torso'},
+				EmitterBone = {'torso', 'hips'},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
+			},
+			{
+				EmitterBone = {'rgunbarrel', 'lgunbarrel'},
+				EmitterBlueprint = {
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
+				},
+				EmitterSize = 0.35,
 			},
 		},
 	},
@@ -79,13 +83,19 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'Torso',
+	SmokeBone = 'torso',
         UniformScale = 0.16,
     },
     Economy = {
-	BuildCostEnergy = 697,
-	BuildCostMass = 53,
-	BuildTime = 1452,
+        BuildCostEnergy = 10914,
+        BuildCostMass = 492,
+        BuildTime = 24850,
+    },
+    Footprint = {
+	SizeX = 2,
+	SizeZ = 2,
+	MaxSlope = 0.875,
+	MaxWaterDepth = 0.75,
     },
     General = {
         Category = 'Direct Fire',
@@ -100,14 +110,14 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Basic',
-        UnitName = 'Peewee',
+        TechLevel = 'RULEUTL_Advanced',
+        UnitName = 'Maverick',
     },
     Intel = {
-        VisionRadius = 18,
+        VisionRadius = 10,
     },
     Interface = {
-        HelpText = 'Infantry Kbot',
+        HelpText = 'Assault Kbot',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -116,25 +126,20 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 3.3,
-        MaxBrake = 3.3,
-        MaxSpeed = 3.375,
+        MaxAcceleration = 3.28,
+        MaxBrake = 2.4,
+        MaxSpeed = 2.4,
         MotionType = 'RULEUMT_Land',
-        TurnRate = 184,
-        StandUpright = true,
+        TurnRate = 148,
         MaxSteerForce = 10,
     },
-    SelectionSizeX = 1.25,
-    SelectionSizeZ = 1.25,
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
     SelectionThickness = 0.25,
     SizeX = 2,
-    SizeY = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_bot1_directfire',
+    StrategicIconName = 'icon_bot2_directfire',
     StrategicIconSortPriority = 0,
-    Transport = {
-        CanFireFromTransport = true,
-    },
     Weapon = {
         {
             Audio = {
@@ -147,7 +152,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 2,
+            Damage = 30,
             DamageRadius = 0.25,
             FiringRandomness = 1,
             DamageType = 'Normal',
@@ -160,43 +165,43 @@ UnitBlueprint {
      WeaponCategory = 'DirectFire',
             FiringTolerance = 2,
             Label = 'EMG',
-            MaxRadius = 14,
+            MaxRadius = 23,
             MuzzleSalvoDelay = 0.1,
-            MuzzleSalvoSize = 3,
-	        MuzzleVelocity = 18.75,
+            MuzzleSalvoSize = 1,
+	        MuzzleVelocity = 20,
             ProjectileId = '/mods/SCTA-master/projectiles/EMG/EMG_proj.bp',
-            RackBones = {
-                {
-                    MuzzleBones = {
-                        'RightMuzzle',
+                RackBones = {
+                    {
+                        MuzzleBones = {
+                            'lgunbase',
+                        },
+                        RackBone = 'larm',
                     },
-                    RackBone = 'RightLowerArm',
-                },
-                {
-                    MuzzleBones = {
-                        'LeftMuzzle',
+                    {                    
+                        MuzzleBones = {
+                            'rgunbase',
                     },
-                    RackBone = 'LeftLowerArm',
+                        RackBone = 'rarm',
                 },
             },
             RackRecoilDistance = 0,
             RackReloadTimeout = 0.4,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
-            RackSalvoSize = 3,
-            RateOfFire = 5,
+            RackSalvoSize = 1,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'RightMuzzle',
-            TurretBonePitch = 'RightUpperArm',
-            TurretBoneDualMuzzle = 'LeftMuzzle',
-            TurretBoneDualPitch = 'LeftUpperArm',
-            TurretBoneYaw = 'Torso',
+            TurretBoneMuzzle = 'rgunbarrel',
+            TurretBonePitch = 'rshoulder',
+            TurretBoneDualMuzzle = 'lgunbarrel',
+            TurretBoneDualPitch = 'lshoulder',
+            TurretBoneYaw = 'torso',
             TurretDualManipulators = true,
-            TurretPitch = 90,
+            TurretPitch = 15,
             TurretPitchRange = 360,
             TurretPitchSpeed = 200,
             TurretYaw = 0,
@@ -204,18 +209,18 @@ UnitBlueprint {
             TurretYawSpeed = 150,
             Turreted = true,
         },
-        { #SMALL_UNITEX
-            Damage = 10,
+        { #BIG_UNITEX
+            Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 0.9375,
+            DamageRadius = 3.4375,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #SMALL_UNIT
-            Damage = 10,
+        { #BIG_UNIT
+            Damage = 350,
                        DamageFriendly = true,
-            DamageRadius = 1,
+            DamageRadius = 3,
             DummyWeapon = true,
             DamageType = 'Normal',
             Label = 'SuicideWeapon',
@@ -223,7 +228,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/ARMPW/ARMPW_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMMAV/ARMMAV_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Seabed = true,

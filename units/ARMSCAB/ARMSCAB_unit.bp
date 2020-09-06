@@ -38,7 +38,7 @@ UnitBlueprint {
         'ARM',
         'VEHICLE',
 	'LEVEL2',
-	
+	'OVERLAYDEFENSE',
 	
 	
 	
@@ -179,7 +179,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RangeCategory = 'UWRC_Countermeasure',
-            WeaponCategory = 'Countermeasure',
+            WeaponCategory = 'Defense',
             RateOfFire = 1.5,
             TargetCheckInterval = 0.5,
             TargetRestrictDisallow = 'UNTARGETABLE',
@@ -198,7 +198,6 @@ UnitBlueprint {
             TurretYawRange = 0,
             TurretYawSpeed = 0,
             Turreted = false,
-            WeaponCategory = 'Defense',
             WeaponUnpackLocksMotion = true,
             WeaponUnpackAnimation = '/mods/SCTA-master/units/ARMSCAB/ARMSCAB_lod0_unpack.sca',
             WeaponUnpackAnimationRate = 1,

@@ -32,14 +32,10 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-
-	
         'ARM',
         'KBOT',
 	'LEVEL2',
@@ -50,27 +46,27 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 550,
-        MaxHealth = 550,
+        Health = 1000,
+        MaxHealth = 1000,
         AirThreatLevel = 0,
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,
         SurfaceThreatLevel = 4,
     },
-    Description = 'Fast Attack Kbot',
+    Description = 'Sniper Kbot',
     Display = {
         Abilities = {
-            'Fast Bot',
+            'Sniper Bot',
         },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{
-				EmitterBone = {'Torso'},
+				EmitterBone = {'torso'},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'RightLowerArm', 'LeftLowerArm'},
+				EmitterBone = {'rarm'},
 				EmitterBlueprint = {
     					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -94,9 +90,10 @@ UnitBlueprint {
         UniformScale = 0.16,
     },
     Economy = {
-        BuildCostEnergy = 2221,
-        BuildCostMass = 151,
-        BuildTime = 6768,
+        BuildCostEnergy = 14727,
+        BuildCostMass = 935,
+        MaintenanceConsumptionPerSecondEnergy = 200,
+        BuildTime = 28137,
     },
     Footprint = {
 	SizeX = 2,
@@ -116,15 +113,20 @@ UnitBlueprint {
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
         },
+        ToggleCaps = {
+            RULEUTC_CloakToggle = true,
+        },
         FactionName = 'ARM',
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = 'Zipper',
+        UnitName = 'Shooter',
     },
     Intel = {
+        FreeIntel = false,
         VisionRadius = 16,
+        Cloak = true,
     },
     Interface = {
-        HelpText = 'Fast Attack Kbot',
+        HelpText = 'Sniper Kbot',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -147,7 +149,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_bot2_directfire',
+    StrategicIconName = 'icon_bot2_artillery',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -161,7 +163,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 40,
+            Damage = 300,
 	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARM_FAST',
@@ -172,7 +174,7 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
             Label = 'ARM_FAST',
-            MaxRadius = 20,
+            MaxRadius = 55,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
 	    MuzzleVelocity = 25,
@@ -180,9 +182,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Muzzle',
+                        'muzzle',
                     },
-                    RackBone = 'RightLowerArm',
+                    RackBone = 'ruparm',
                 },
             },
             RackFireTogether = false,
@@ -191,18 +193,20 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RackSlavedToTurret = false,
-            RateOfFire = 1.25,
+            RackSlavedToTurret = true,
+            RateOfFire = 0.25,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
+            EnergyChargeForFirstShot = true,
+            EnergyDrainPerSecond = 250,
+            EnergyRequired = 500,
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'Muzzle',
-            TurretBonePitch = 'RightLowerArm',
-            TurretBoneYaw = 'Torso',
-            TurretDualManipulators = false,
-            TurretPitch = 90,
+            TurretBoneMuzzle = 'muzzle',
+            TurretBonePitch = 'ruparm',
+            TurretBoneYaw = 'torso',
+            TurretPitch = 0,
             TurretPitchRange = 360,
             TurretPitchSpeed = 200,
             TurretYaw = 0,
@@ -229,7 +233,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/ARMFAST/ARMFAST_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMSNIPE/ARMSNIPE_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Seabed = true,

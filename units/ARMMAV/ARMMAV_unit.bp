@@ -173,15 +173,15 @@ UnitBlueprint {
                 RackBones = {
                     {
                         MuzzleBones = {
-                            'lgunbase',
+                            'flare2',
                         },
-                        RackBone = 'larm',
+                        RackBone = 'lshoulder',
                     },
                     {                    
                         MuzzleBones = {
-                            'rgunbase',
+                            'flare',
                     },
-                        RackBone = 'rarm',
+                        RackBone = 'rshoulder',
                 },
             },
             RackRecoilDistance = 0,
@@ -195,13 +195,13 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'rgunbarrel',
+            TurretBoneMuzzle = 'flare',
             TurretBonePitch = 'rshoulder',
-            TurretBoneDualMuzzle = 'lgunbarrel',
+            TurretBoneDualMuzzle = 'flare2',
             TurretBoneDualPitch = 'lshoulder',
             TurretBoneYaw = 'torso',
             TurretDualManipulators = true,
-            TurretPitch = 15,
+            TurretPitch = 0,
             TurretPitchRange = 360,
             TurretPitchSpeed = 200,
             TurretYaw = 0,

@@ -233,7 +233,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/ARMSUBK/ARMSUBK_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/CORSSUB/CORSSUB_dead_prop.bp',
         WreckageLayers = {
             Water = true,
 	    Sub = true,

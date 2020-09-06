@@ -134,9 +134,9 @@ TAunitkeygroups = {
         "coreter",
         "corspec",
     },
-    ["T2_Gatling_Bot"] = {
+    ["T2_Gatling_Bot"]= {
         "corpyro",
-        "armfido",
+        "armzeus",
     },
     ["T1_Interceptor"]= {
         "armfig",
@@ -224,12 +224,14 @@ TAunitkeygroups = {
     },
     ["T2_Heavy_Tank"]= {
         "armbull",
-        "armzeus",
-        "corgol",
+        "armmav",
+        "correap",
         "corcan",
     },
     ["T2_Mobile_AA_Flak_Artillery"]= {
         "armyork",
+        "armfido",
+        "corsent",
     },
 
     ["T2_Field_Engineer"]= {

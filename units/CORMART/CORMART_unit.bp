@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 4,
+    BuildIconSortPriority = 9,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -169,7 +169,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
-	    FiringRandomness = 2,
+	    FiringRandomness = 1,
             Label = 'CORE_ARTILLERY',
             MaxRadius = 60,
             MuzzleSalvoDelay = 0,
@@ -189,7 +189,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.34,
+            RateOfFire = 0.2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

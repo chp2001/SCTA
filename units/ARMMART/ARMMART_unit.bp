@@ -170,7 +170,7 @@ UnitBlueprint {
             },
 	    RangeCategory = 'UWRC_IndirectFire',
      WeaponCategory = 'IndirectFire',
-	    FiringRandomness = 2,
+	    FiringRandomness = 1,
             Label = 'ARM_ARTILLERY',
             MaxRadius = 55,
             MuzzleSalvoDelay = 0,
@@ -190,7 +190,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.36,
+            RateOfFire = 0.20,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

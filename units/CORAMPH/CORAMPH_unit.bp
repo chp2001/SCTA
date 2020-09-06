@@ -181,15 +181,14 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 56.25,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_LASERH1/CORE_LASERH1_proj.bp',
-            EnergyDrainPerSecond = 0,
+            EnergyDrainPerSecond = 20,
             EnergyRequired = 100,
-            
             RackBones = {
                 {
                     MuzzleBones = {
                         'flare',
                     },
-                    RackBone = 'lasbarrel',
+                    RackBone = 'gun',
                 },
             },
             RackRecoilDistance = 0,
@@ -205,8 +204,8 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
             TurretBoneMuzzle = 'flare',
-            TurretBonePitch = 'lasturret',
-            TurretBoneYaw = 'lasturret',
+            TurretBonePitch = 'turret',
+            TurretBoneYaw = 'turret',
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 360,

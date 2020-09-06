@@ -79,7 +79,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -126,7 +125,7 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 3.28,
+        MaxAcceleration = 2.8,
         MaxBrake = 2.8,
         MaxSpeed = 2.8,
         MotionType = 'RULEUMT_Land',
@@ -152,7 +151,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 30,
+            Damage = 35,
             DamageRadius = 0.25,
             FiringRandomness = 1,
             DamageType = 'Normal',

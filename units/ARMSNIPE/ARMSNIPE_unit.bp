@@ -121,7 +121,9 @@ UnitBlueprint {
         UnitName = 'Shooter',
     },
     Intel = {
+        FreeIntel = false,
         VisionRadius = 16,
+        Cloak = true,
     },
     Interface = {
         HelpText = 'Sniper Kbot',

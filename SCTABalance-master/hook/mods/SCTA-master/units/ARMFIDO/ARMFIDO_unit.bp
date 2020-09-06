@@ -5,7 +5,7 @@
 
 UnitBlueprint {
     Merge = true,
-    BuildIconSortPriority = 6,
+    BuildIconSortPriority = 5,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -53,8 +53,8 @@ UnitBlueprint {
             DamageType = 'AntiAir',
             DisplayName = 'GAUSS',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Seabed',
-                Seabed = 'Land|Water|Seabed',
+                Land = 'Land|Water|Seabed|Air',
+                Seabed = 'Land|Water|Seabed|Air',
             },
             RangeCategory = 'UWRC_AntiAir',
      WeaponCategory = 'AntiAir',
@@ -64,7 +64,7 @@ UnitBlueprint {
             MaxRadius = 36,
             MuzzleSalvoDelay = 0.2,
             MuzzleSalvoSize = 4,
-	    MuzzleVelocity = 28.125,
+	    MuzzleVelocity = 45,
             ProjectileId = '/mods/SCTA-master/projectiles/GAUSS/GAUSS_proj.bp',
             RackBones = {
                 {
@@ -86,6 +86,7 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
+            FiringTolerance = 2,
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
             TurretBoneMuzzle = 'Muzzle',
             TurretBonePitch = 'Barrel',

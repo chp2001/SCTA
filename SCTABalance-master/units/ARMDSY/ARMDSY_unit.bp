@@ -1,5 +1,5 @@
-#CORE Shipyard - Produces Ships
-#CORSY
+#ARM Shipyard - Produces Ships
+#ARMDSY
 #
 #Blueprint created by Raevn
 
@@ -29,33 +29,23 @@ UnitBlueprint {
     BuildIconSortPriority = 0,
     Categories = {
         'BUILTBYT1SHIP',
-	'BUILTBYT1KBOT',
-	'BUILTBYT1VEHICLE',
-	'BUILTBYT1AIR',
-        'BUILTBYT1HOVER',
-        'BUILTBYT2SUB',
-	'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH1',
+        'TECH2',
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-
-	
 	'STRUCTURE',
 	'CONSTRUCTION',
 	'NAVAL',
-	'TEXTUREANIM',
-
-	
-	'CORE',
+	'CONSTRUCTIONSORTDOWN',
+	'ARM',
 		'PLANT',
 	'SORTCONSTRUCTION',
+	'LEVEL2',
 	
-	'LEVEL1',
 	
 	
 	
@@ -63,17 +53,17 @@ UnitBlueprint {
     CollisionOffsetY = -0.5,
     Defense = {
         ArmorType = 'Structure',
-        Health = 2490,
-        MaxHealth = 2490,
+        Health = 4800,
+        MaxHealth = 4800,
         AirThreatLevel = 0,
-        EconomyThreatLevel = 3,
+        EconomyThreatLevel = 8,
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
     Description = 'Produces Ships',
     Display = {
 	DestructionEffects = {
-		#DefaultProjectileCategories = {'Construction','ArmBui','BuildMuzzle'},
+		DefaultProjectileCategories = {'Construction','ArmBui','BuildMuzzle'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
@@ -81,7 +71,7 @@ UnitBlueprint {
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'turreta','turretb','a'},
+				EmitterBone = {'Build_Nozzle_01','Build_Nozzle_02'},
 				EmitterBlueprint = {
     					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -91,8 +81,8 @@ UnitBlueprint {
 			},
 		},
 	},
-	BuildBones = {'muzzlea','muzzleb'},
-	BuildAttachBone = 0,
+	BuildBones = {'Nozzle_01','Nozzle_02'},
+	BuildAttachBone = 'ARMDSY',
 	TextureAnimationFrames = 6,
         Mesh = {
             IconFadeInZoom = 130,
@@ -104,21 +94,23 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.32,
     },
     Economy = {
-        BuildCostEnergy = 750,
-        BuildCostMass = 600, 
-        BuildTime = 6000,
-	BuildRate = 100,
-        BuildableCategory = {
-            'SHIP LEVEL1 CORE',
-            'NORMALSUB LEVEL1 CORE',
-        },
+        BuildCostEnergy = 2402,
+        BuildCostMass = 2524, 
+        BuildTime = 13310,
+	BuildRate = 200,
+    BuildableCategory = {
+        'SHIP LEVEL1 ARM',
+        'NORMALSUB LEVEL1 ARM',
+        'SHIP LEVEL2 ARM',
+        'ADVANCEDSUB LEVEL2 ARM',
+    },
 	InitialRallyX = 0,
 	InitialRallyZ = 7.5,
-        StorageMass = 100,
-        StorageEnergy = 100,
+        StorageMass = 200,
+        StorageEnergy = 200,
     },
     Footprint = {
         SizeX = 8,
@@ -138,20 +130,21 @@ UnitBlueprint {
         },
         SelectionPriority = 5,
         ConstructionBar = true,
-        FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
-	UnitName = 'Shipyard',
+        FactionName = 'ARM',
+        UpgradesFrom = 'armsy',
+        TechLevel = 'RULEUTL_Advanced',
+	UnitName = 'Development Shipyard',
     },
     Intel = {
         VisionRadius = 14,
-        WaterVisionRadius = 8,
+        WaterVisionRadius = 4, 
     },
     Interface = {
         HelpText = 'Produces Ships',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarSize = 8,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Water = true,
@@ -184,15 +177,13 @@ UnitBlueprint {
             0.5,
         },
     },
-    SelectionSizeX = 5.25,
-    SelectionSizeZ = 5.25,
-    SelectionCenterOffsetX = 0.5,
-    SelectionCenterOffsetZ = 0.5,
+    SelectionSizeX = 9.9,
+    SelectionSizeZ = 6.8,
     SelectionThickness = 0.25,
-    SizeX = 8,
-    SizeY = 3,
-    SizeZ = 8,
-    StrategicIconName = 'icon_factory1_naval',
+    SizeX = 12,
+    SizeY = 5,
+    SizeZ = 12,
+    StrategicIconName = 'icon_factory2_naval',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
@@ -214,7 +205,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/CORSY/CORSY_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/SCTABalance-master/units/ARMDSY/ARMDSY_dead_prop.bp',
         WreckageLayers = {
             Water = true,
             Seabed = true,

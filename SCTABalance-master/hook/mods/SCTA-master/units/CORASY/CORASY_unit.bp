@@ -41,9 +41,6 @@ UnitBlueprint {
         ProductionPerSecondMass = 0,
     },
     LifeBarSize = 8,
-    General = {
-        UpgradesFrom = 'corsy', 
-    },
     Intel = {
         VisionRadius = 10,
         WaterVisionRadius = 6,

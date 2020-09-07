@@ -45,12 +45,12 @@ UnitBlueprint {
         BuildRate = 150,
         BuildableCategory = {
             'AIR LEVEL1 ARM',
-            'armaap', 
+            'armdap', 
         },
     },
     LifeBarSize = 8,
     General = {
-        UpgradesTo = 'armaap', 
+        UpgradesTo = 'armdap', 
     },
     Intel = {
         VisionRadius = 10,

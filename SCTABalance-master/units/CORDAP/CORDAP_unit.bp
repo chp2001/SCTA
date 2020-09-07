@@ -1,5 +1,5 @@
-#CORE Shipyard - Produces Ships
-#CORSY
+#CORE Aircraft Plant - Produces Aircraft
+#CORDAP
 #
 #Blueprint created by Raevn
 
@@ -7,12 +7,12 @@ UnitBlueprint {
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'PSHPACTV',
+            Cue = 'PAIRACTV',
             LodCutoff = 'UnitMove_LodCutoff',
         },
 	Construct = Sound {
             Bank = 'TA_Sound',
-            Cue = 'PSHPWORK',
+            Cue = 'PLABWORK',
             LodCutoff = 'UnitMove_LodCutoff',
 	},
 	ConstructStop = Sound {
@@ -28,102 +28,104 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 0,
     Categories = {
-        'BUILTBYT1SHIP',
-	'BUILTBYT1KBOT',
-	'BUILTBYT1VEHICLE',
-	'BUILTBYT1AIR',
-        'BUILTBYT1HOVER',
-        'BUILTBYT2SUB',
-	'BUILTBYCOMMANDER',
+        'BUILTBYT1AIR',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH1',
+        'TECH2',
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-
-	
 	'STRUCTURE',
 	'CONSTRUCTION',
-	'NAVAL',
 	'TEXTUREANIM',
-
-	
+        'OVERLAYRADAR',
+        'AIR', 
+        'CONSTRUCTIONSORTDOWN',
 	'CORE',
 		'PLANT',
 	'SORTCONSTRUCTION',
 	
-	'LEVEL1',
+	'LEVEL3',
+	
 	
 	
 	
     },
-    CollisionOffsetY = -0.5,
     Defense = {
         ArmorType = 'Structure',
-        Health = 2490,
-        MaxHealth = 2490,
+        Health = 4600,
+        MaxHealth = 4600,
         AirThreatLevel = 0,
         EconomyThreatLevel = 3,
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = 'Produces Ships',
+    Description = 'Produces Aircraft',
     Display = {
+        Abilities = {
+            '<LOC ability_radar>Radar',
+        },
 	DestructionEffects = {
-		#DefaultProjectileCategories = {'Construction','ArmBui','BuildMuzzle'},
+		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate','Runway'},
 		DestructionEmitters = {
 			{
-				EmitterBone = {0},
+				EmitterBone = {'section1','section2', 0},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'turreta','turretb','a'},
+				EmitterBone = {'guna','gunb'},
 				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+	    				'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
     					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
-		},
-	},
+			{
+				EmitterBone = {'dish'},
+				EmitterBlueprint = {
+		    			'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
+				},
+				EmitterSize = 0.25,
+			},
+        },
+    },
 	BuildBones = {'muzzlea','muzzleb'},
-	BuildAttachBone = 0,
-	TextureAnimationFrames = 6,
+	BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 400,
-                    ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
-                },
+                LODCutoff = 400,
+                AlbedoName = 'CORDAP_Albedo.dds',
+                SpecularName = 'CORDAP_SpecTeam.dds',
+                ShaderName = 'Unit',
             },
         },
-        UniformScale = 0.16,
+        },
+        UniformScale = 0.32,
     },
     Economy = {
-        BuildCostEnergy = 750,
-        BuildCostMass = 600, 
-        BuildTime = 6000,
-	BuildRate = 100,
-        BuildableCategory = {
-            'SHIP LEVEL1 CORE',
-            'NORMALSUB LEVEL1 CORE',
-        },
-	InitialRallyX = 0,
-	InitialRallyZ = 7.5,
-        StorageMass = 100,
-        StorageEnergy = 100,
+        BuildCostEnergy = 10200,
+        BuildCostMass = 2210, 
+        BuildTime = 17376,
+	BuildRate = 180,
+    BuildableCategory = {
+        'AIR LEVEL1 CORE', 
+        'AIR LEVEL2 CORE',
+    },
+	InitialRallyX = 1,
+	InitialRallyZ = 1,
+        StorageMass = 200,
+        StorageEnergy = 200,
     },
     Footprint = {
-        SizeX = 8,
-        SizeZ = 8,
-	MinWaterDepth = 1.875,
+	MaxSlope = 0.625,
+        SizeX = 7,
+        SizeZ = 6,
     },
     General = {
         Category = 'Factory',
@@ -139,60 +141,36 @@ UnitBlueprint {
         SelectionPriority = 5,
         ConstructionBar = true,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
-	UnitName = 'Shipyard',
+        UpgradesFrom = 'corap',
+        TechLevel = 'RULEUTL_Advanced',
+	UnitName = 'Aircraft Development Plant',
     },
     Intel = {
         VisionRadius = 14,
-        WaterVisionRadius = 8,
+	RadarRadius = 32,
+	FreeIntel = true,
     },
     Interface = {
-        HelpText = 'Produces Ships',
+        HelpText = 'Produces Aircraft',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarSize = 8,
     Physics = {
         BuildOnLayerCaps = {
-            LAYER_Water = true,
+            LAYER_Land = true,
         },
         FlattenSkirt = true,
-        SkirtSizeX = 8,
-        SkirtSizeZ = 8,
-	BuildAreaX = 6,
-	BuildAreaZ = 6,
-        OccupyRects = {
-            # offsetX offsetZ  sizeX sizeZ, offset from center of unit
-            -4,
-            -4,
-            0.5,
-            0.5,
-
-            3,
-            3,
-            0.5,
-            0.5,
-
-            3,
-            -4,
-            0.5,
-            0.5,
-
-            -4,
-            3,
-            0.5,
-            0.5,
-        },
+        SkirtSizeX = 7,
+        SkirtSizeZ = 6,
     },
-    SelectionSizeX = 5.25,
-    SelectionSizeZ = 5.25,
-    SelectionCenterOffsetX = 0.5,
-    SelectionCenterOffsetZ = 0.5,
+    SelectionSizeX = 9.9,
+    SelectionSizeZ = 6.8,
     SelectionThickness = 0.25,
-    SizeX = 8,
-    SizeY = 3,
-    SizeZ = 8,
-    StrategicIconName = 'icon_factory1_naval',
+    SizeX = 12,
+    SizeY = 5,
+    SizeZ = 12,
+    StrategicIconName = 'icon_factory2_air',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
@@ -214,11 +192,9 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/CORSY/CORSY_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/SCTABalance-master/units/CORDAP/CORDAP_dead_prop.bp',
         WreckageLayers = {
-            Water = true,
-            Seabed = true,
-            Sub = true,
+            Land = true,
         },
     },
 }

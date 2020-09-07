@@ -17,12 +17,13 @@ UnitBlueprint {
         'AIR',
         'CONSTRUCTIONSORTDOWN',
 	'ARM',
-	'PLANT',
-	'CTRL_F',
+		'PLANT',
+	'SORTCONSTRUCTION',
+	
 	'LEVEL3',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
         Display = {
         UniformScale = 0.32,
@@ -39,12 +40,8 @@ UnitBlueprint {
         },
     },
     LifeBarSize = 8,
-    General = {
-        UpgradesFrom = 'armap',
-    },
     Intel = {
         VisionRadius = 10,
-        RadarRadius = 30,
         FreeIntel = true,
         },
     SelectionSizeX = 9.9,

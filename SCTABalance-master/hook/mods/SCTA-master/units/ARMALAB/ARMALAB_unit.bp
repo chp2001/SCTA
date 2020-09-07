@@ -15,12 +15,13 @@ UnitBlueprint {
         'LAND', 
         'CONSTRUCTIONSORTDOWN',
 	'ARM',
-	'PLANT',
+		'PLANT',
+	'SORTCONSTRUCTION',
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_F',
+	
+	
+	
+	
     },
         Display = {
         UniformScale = 0.32,

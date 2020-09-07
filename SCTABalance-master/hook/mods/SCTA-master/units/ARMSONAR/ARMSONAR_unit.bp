@@ -24,10 +24,10 @@ UnitBlueprint {
 	'SPECIAL',
 	'SONAR',
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_R',
+	'SORTINTEL',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',

@@ -43,10 +43,10 @@ UnitBlueprint {
         'ARM',
         'KBOT',
 	'LEVEL2',
-	'WEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_W',
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -135,8 +135,8 @@ UnitBlueprint {
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
         MaxAcceleration = 3.28,
-        MaxBrake = 3,
-        MaxSpeed = 3,
+        MaxBrake = 2.5,
+        MaxSpeed = 2.5,
         MotionType = 'RULEUMT_Land',
         TurnRate = 148,
         MaxSteerForce = 10,

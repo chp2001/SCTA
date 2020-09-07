@@ -40,12 +40,13 @@ UnitBlueprint {
 	'STRUCTURE',
 	'CONSTRUCTION',
 	'ARM',
-	'PLANT',
+		'PLANT',
+	'SORTCONSTRUCTION',
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_F',
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',

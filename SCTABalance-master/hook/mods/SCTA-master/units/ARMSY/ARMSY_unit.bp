@@ -21,12 +21,13 @@ UnitBlueprint {
 	'NAVAL',
 	'TEXTUREANIM',
 	'ARM',
-	'PLANT',
-	'CTRL_F',
+		'PLANT',
+	'SORTCONSTRUCTION',
+	
 	'LEVEL1',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         Health = 4000,
@@ -45,11 +46,11 @@ UnitBlueprint {
         BuildableCategory = {
             'SHIP LEVEL1 ARM',
             'NORMALSUB LEVEL1 ARM',
-            'armasy',
+            'armdsy',
         },
     },
     General = {
-        UpgradesTo = 'armasy', 
+        UpgradesTo = 'armdsy', 
     },
     SelectionSizeX = 9.9,
     SelectionSizeZ = 6.8,

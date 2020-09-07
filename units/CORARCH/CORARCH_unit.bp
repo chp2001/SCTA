@@ -41,10 +41,10 @@ UnitBlueprint {
         'SHIP',
     'LEVEL2',
     'CORE',
-	'WEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_W',
+	
+	
+	
+	
     },
     CollisionOffsetY = -0.5,
     Defense = {

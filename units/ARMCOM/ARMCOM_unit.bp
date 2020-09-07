@@ -76,7 +76,8 @@ UnitBlueprint {
         'LAND',
         'MOBILE',
          'DIRECTFIRE',
-        'ECONOMIC',
+                'ECONOMIC',
+        'SORTECONOMY',
         'COMMAND',
         'MASSPRODUCTION',
         'ENERGYPRODUCTION',
@@ -89,10 +90,10 @@ UnitBlueprint {
         'ARM',
         'COMMANDER',
 	'LEVEL10',
-	'WEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_C',
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Commander',
@@ -370,7 +371,6 @@ UnitBlueprint {
             Turreted = true,
         OverChargeWeapon = true,
         ManualFire = 1,
-        WeaponCategory = 'Direct Fire',
         },
         {
             Damage = 1000,

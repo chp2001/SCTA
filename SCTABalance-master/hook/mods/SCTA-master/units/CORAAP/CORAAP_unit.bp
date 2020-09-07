@@ -17,12 +17,13 @@ UnitBlueprint {
         'AIR', 
         'CONSTRUCTIONSORTDOWN',
 	'CORE',
-	'PLANT',
-	'CTRL_F',
+		'PLANT',
+	'SORTCONSTRUCTION',
+	
 	'LEVEL3',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         Health = 4000,

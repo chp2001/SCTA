@@ -52,9 +52,9 @@ UnitBlueprint {
 	'CORE',
 	'REPAIRPAD',
 	'LEVEL1',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',

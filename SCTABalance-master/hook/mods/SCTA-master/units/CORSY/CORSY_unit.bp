@@ -21,12 +21,13 @@ UnitBlueprint {
 	'NAVAL',
 	'TEXTUREANIM',
 	'CORE',
-	'PLANT',
-	'CTRL_F',
+		'PLANT',
+	'SORTCONSTRUCTION',
+	
 	'LEVEL1',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         Health = 4200,
@@ -44,12 +45,12 @@ UnitBlueprint {
         BuildableCategory = {
             'SHIP LEVEL1 CORE',
             'NORMALSUB LEVEL1 CORE',
-            'corasy',
+            'cordsy',
         },
     },
     LifeBarSize = 8,
     General = {
-        UpgradesTo = 'corasy', 
+        UpgradesTo = 'cordsy', 
     },
     Intel = {
         VisionRadius = 10,

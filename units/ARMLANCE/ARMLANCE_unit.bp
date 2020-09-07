@@ -69,23 +69,13 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'ANTINAVY',
-	'AIR',
+    'AIR',
+    'HIGHALTAIR',
         'OVERLAYANTINAVY',
-
-	
         'ARM',
-        'VTOL',
-	'CTRL_V',
 	'LEVEL2',
-	'WEAPON',
-	'BOMB',
-	'NOTSUB',
-	'CTRL_W',
-	'CTRL_P',
     },
     Defense = {
         ArmorType = 'Light',
@@ -201,9 +191,10 @@ UnitBlueprint {
                 BallisticArc = 'RULEUBA_None',
                 CollideFriendly = false,
                 Damage = 500,
-                DamageType = 'Normal',
+                DamageRadius = 0.5,
                 DamageWater = 1750,
                 DamageRadiusWater = 0.5,
+                DamageType = 'Normal',
                 DisplayName = 'ARMAIR_TORPEDO',
                 FireTargetLayerCapsTable = {
                     Air = 'Water|Seabed|Sub|Seabed',
@@ -218,7 +209,7 @@ UnitBlueprint {
                 MinRadius = 4,
                 MuzzleSalvoDelay = 1.8,
                 MuzzleSalvoSize = 1,
-                MuzzleVelocity = 20,
+                MuzzleVelocity = 0,
                 ProjectileId = '/mods/SCTA-master/projectiles/ARMAIR_TORPEDO/ARMAIR_TORPEDO_proj.bp',
                 ProjectileLifetime = 20,
                 ProjectilesPerOnFire = 1,

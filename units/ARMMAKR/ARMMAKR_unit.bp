@@ -43,14 +43,15 @@ UnitBlueprint {
         'TECH1',
 	'STRUCTURE',
         'MASSPRODUCTION',
-        'ECONOMIC',
+                'ECONOMIC',
+        'SORTECONOMY',
 	'TEXTUREANIM',
 	'ARM',
 	'ENERGY',
 	'LEVEL1',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
 	'STORAGE',
     },
     Defense = {

@@ -55,11 +55,11 @@ UnitBlueprint {
         'CORE',
         'SHIP',
 	'LEVEL1',
-	'CONSTR',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_B',
+	
+	
+	
+	
+	
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -73,6 +73,8 @@ UnitBlueprint {
     },
     Description = 'Tech Level 1',
     Display = {
+        AnimationOpen = '/mods/SCTA-master/units/CORCS/CORCS_lod0_unpack.sca',
+        AnimationOpenRate = 1, 
         Abilities = {
             'Construction Unit',
         },
@@ -102,7 +104,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },

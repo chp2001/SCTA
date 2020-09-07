@@ -35,11 +35,12 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'ARM',
 	'SPECIAL',
-	'DEFENSIVE',
-	'WEAPON',
+		'DEFENSIVE',
+	'SORTDEFENSE',
+	
 	'LEVEL3',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',

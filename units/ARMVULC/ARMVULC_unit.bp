@@ -27,15 +27,15 @@ UnitBlueprint {
         'RECLAIMABLE',
         'EXPERIMENTAL',
 	'STRUCTURE',
-	'DEFENSE',
+	'SORTSTRATEGIC',
 	'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',	
 	'ARM',
 	'LEVEL3',
 	'STRATEGIC',
-	'WEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',

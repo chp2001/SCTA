@@ -18,11 +18,11 @@ UnitBlueprint {
         'KBOT',
         'VEHICLE',
 	'LEVEL2',
-	'CONSTR',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_B',
+	
+	
+	
+	
+	
     },
     Defense = {
         Health = 900,

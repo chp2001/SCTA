@@ -29,7 +29,8 @@ UnitBlueprint {
 
 	
 	'STRUCTURE',
-        'ECONOMIC',
+                'ECONOMIC',
+        'SORTECONOMY',
 	'ENERGYPRODUCTION',
 	'HYDROCARBON',
 
@@ -37,9 +38,9 @@ UnitBlueprint {
 	'CORE',
 	'ENERGY',
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',

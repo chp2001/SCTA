@@ -21,12 +21,13 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'AIR', 
 	'ARM',
-	'PLANT',
+		'PLANT',
+	'SORTCONSTRUCTION',
 	'LEVEL3',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_F',
+	
+	
+	
+	
     },
     Defense = {
         Health = 2400,
@@ -44,12 +45,12 @@ UnitBlueprint {
         BuildRate = 150,
         BuildableCategory = {
             'AIR LEVEL1 ARM',
-            'armaap', 
+            'armdap', 
         },
     },
     LifeBarSize = 8,
     General = {
-        UpgradesTo = 'armaap', 
+        UpgradesTo = 'armdap', 
     },
     Intel = {
         VisionRadius = 10,

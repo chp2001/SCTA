@@ -11,15 +11,16 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH1',
 	'STRUCTURE',
-        'ECONOMIC',
+    'ECONOMIC',
+    'SORTECONOMY',
 	'ENERGYPRODUCTION',
 	'HYDROCARBON',
 	'CORE',
 	'ENERGY',
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Display = {
         UniformScale = 0.32,
@@ -56,4 +57,5 @@ UnitBlueprint {
     SizeX = 3.5,
     SizeY = 5,
     SizeZ = 3.5,
+    StrategicIconName = 'icon_structure1_energy',
 }

@@ -34,16 +34,17 @@ UnitBlueprint {
 	
 	'STRUCTURE',
         'ENERGYSTORAGE',
-        'ECONOMIC',
+                'ECONOMIC',
+        'SORTECONOMY',
 	'TEXTUREANIM',
 
 	
 	'ARM',
 	'ENERGY',
 	'LEVEL1',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
 	'STORAGE',
     },
     Defense = {

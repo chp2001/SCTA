@@ -38,11 +38,11 @@ UnitBlueprint {
 
 	
 	'ARM',
-	'DEFENSIVE',
-	'WEAPON',
+		'DEFENSIVE',
+	'SORTDEFENSE',
 	'LEVEL1',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
     },
     CollisionOffsetY = -1,
     Defense = {

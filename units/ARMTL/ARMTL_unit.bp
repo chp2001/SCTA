@@ -26,8 +26,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-
-	
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
@@ -35,15 +33,12 @@ UnitBlueprint {
 	'NAVAL',
         'OVERLAYSONAR',
         'OVERLAYANTINAVY',
-
-	
+        'SORTDEFENSE',
 	'ARM',
 	'SPECIAL',
-	'WEAPON',
-	'TORP',
 	'LEVEL2',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
     },
     CollisionOffsetY = -1,
     Defense = {

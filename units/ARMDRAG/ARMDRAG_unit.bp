@@ -15,7 +15,7 @@ UnitBlueprint {
         'TECH2',
         'BENIGN',
 
-	
+        'SORTDEFENSE',
 	'STRUCTURE',
         'DEFENSE',
         'WALL',
@@ -26,9 +26,9 @@ UnitBlueprint {
 	'ARM',
 	'METAL',
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',

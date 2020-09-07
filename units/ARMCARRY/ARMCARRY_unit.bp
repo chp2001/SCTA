@@ -50,10 +50,10 @@ UnitBlueprint {
 	'ARM',
 	'SHIP',
 	'LEVEL2',	
-	'CARRY',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	'NAVALCARRIER',
+	
+	
+	
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -71,10 +71,10 @@ UnitBlueprint {
             '<LOC ability_airstaging>Air Staging',
         },
 	DestructionEffects = {
-		DefaultProjectileCategories = {'ArmShip','ArmBui','Helipad'},
+		DefaultProjectileCategories = {'ArmShip', 'ArmBui', 'Helipad'},
 		DestructionEmitters = {
 			{
-				EmitterBone = {'Attachpoint01','Attachpoint02'},
+				EmitterBone = {'Attachpoint01', 'Attachpoint02'},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
@@ -95,7 +95,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },

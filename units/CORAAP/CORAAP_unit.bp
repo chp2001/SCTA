@@ -42,12 +42,13 @@ UnitBlueprint {
 	'TEXTUREANIM',
         'OVERLAYRADAR',
 	'CORE',
-	'PLANT',
-	'CTRL_F',
+		'PLANT',
+	'SORTCONSTRUCTION',
+	
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',

@@ -29,7 +29,8 @@ UnitBlueprint {
 
 	
 	'STRUCTURE',
-        'ECONOMIC',
+                'ECONOMIC',
+        'SORTECONOMY',
 	'ENERGYPRODUCTION',
 	'NAVAL',
 
@@ -37,9 +38,9 @@ UnitBlueprint {
 	'ARM',
 	'ENERGY',
 	'LEVEL1',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     CollisionOffsetY = -0.5,
     Defense = {

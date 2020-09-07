@@ -40,10 +40,10 @@ UnitBlueprint {
         'ARM',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL1',
-	'WEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_W',
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Normal',

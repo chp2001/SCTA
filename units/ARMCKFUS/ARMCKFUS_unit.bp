@@ -27,14 +27,15 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH3',
 	'STRUCTURE',
-        'ECONOMIC',
+                'ECONOMIC',
+        'SORTECONOMY',
 	'ENERGYPRODUCTION',
 	'ARM',
 	'ENERGY',
 	'LEVEL3',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',

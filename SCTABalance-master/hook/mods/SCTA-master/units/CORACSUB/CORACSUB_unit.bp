@@ -4,6 +4,9 @@ UnitBlueprint {
         Health = 940,
         MaxHealth = 940,
         },
+        Display = {
+            UniformScale = 0.10,
+        },
     Economy = {
         BuildCostEnergy = 3600,
         BuildableCategory = {

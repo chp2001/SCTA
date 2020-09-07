@@ -15,12 +15,13 @@ UnitBlueprint {
 	'CONSTRUCTION',
         'LAND', 
 	'ARM',
-	'PLANT',
+		'PLANT',
+	'SORTCONSTRUCTION',
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_F',
+	
+	
+	
+	
     },
     Defense = {
         Health = 4200,

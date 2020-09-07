@@ -18,10 +18,10 @@ UnitBlueprint {
     'SHOWQUEUE',
 	'SPECIAL',
 	'LEVEL3',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_R',
+	'SORTINTEL',
+	
+	
+	
     },
  Display = {
   Abilities = {

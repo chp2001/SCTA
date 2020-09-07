@@ -34,11 +34,11 @@ UnitBlueprint {
         'OVERLAYDEFENSE',
 	'CORE',
 	'SPECIAL',
-    'WEAPON',
+    'SORTDEFENSE',
     'SHOWQUEUE',
 	'LEVEL3',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
    },
     Defense = {
         ArmorType = 'Structure',

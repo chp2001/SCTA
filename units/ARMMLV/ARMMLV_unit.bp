@@ -55,8 +55,8 @@ UnitBlueprint {
         'VEHICLE',	#'TANK' in TA
 	'MINELAYER',
 	'LEVEL1',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
     },
     Defense = {
         ArmorType = 'Normal',

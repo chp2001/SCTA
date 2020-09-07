@@ -41,12 +41,13 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'NAVAL',
 	'ARM',
-	'PLANT',
+		'PLANT',
+	'SORTCONSTRUCTION',
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_F',
+	
+	
+	
+	
     },
     CollisionOffsetY = -0.5,
     Defense = {

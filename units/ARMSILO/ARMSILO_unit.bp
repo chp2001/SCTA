@@ -31,17 +31,17 @@ UnitBlueprint {
         'RECLAIMABLE',
         'EXPERIMENTAL',
 	'STRUCTURE',
-	'DEFENSE',
+	'STRATEGIC',
 	'INDIRECTFIRE',
         'NUKE',
         'SILO',	
         'NOCUSTOMTARGET',
 	'ARM',
 	'SPECIAL',
-	'WEAPON',
+	'SORTSTRATEGIC',
 	'LEVEL3',
-	'NOTAIR',
-    'NOTSUB',
+	
+    
     'SHOWATTACKRETICLE',
     },
     Defense = {

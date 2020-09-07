@@ -45,10 +45,10 @@ UnitBlueprint {
         'CORE',
         'SHIP',
 	'LEVEL2',
-	'WEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_W',
+	
+	
+	
+	
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -87,7 +87,7 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 230,
+                    LODCutoff = 360,
                     ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },

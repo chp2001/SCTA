@@ -32,10 +32,9 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
 	'CORE',
 	'LEVEL2',
-	'STRATEGIC',
-	'WEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	'SORTDEFENSE',
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',

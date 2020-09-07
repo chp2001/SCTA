@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 2,
+    BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -42,11 +42,11 @@ UnitBlueprint {
 	
         'CORE',
         'VEHICLE',	#'TANK' in TA
-	'LEVEL2',	#'LEVEL1' in TA
-	'WEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_W',
+	'LEVEL2',
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -161,7 +161,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 143,
+            Damage = 75,
 	    DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'CORE_REAP',

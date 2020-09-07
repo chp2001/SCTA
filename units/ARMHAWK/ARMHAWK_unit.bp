@@ -79,14 +79,7 @@ UnitBlueprint {
 	'OVERLAYDIRECTFIRE',
        'HIGHALTAIR',
         'ARM',
-        'VTOL',
-	'CTRL_V',
 	'LEVEL2',
-	'WEAPON',
-	'STEALTH',
-	'NOTSUB',
-	'CTRL_W',
-	'CTRL_P',
     },
     Defense = {
         ArmorType = 'Light',
@@ -171,7 +164,7 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        Elevation = 15,
+        Elevation = 20,
         MotionType = 'RULEUMT_Air',
         MaxSpeed = 0.5,
 	RotateOnSpot = true,

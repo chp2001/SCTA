@@ -49,12 +49,12 @@ UnitBlueprint {
         'OVERLAYCOUNTERINTEL',
         'ARM',
         'KBOT',
-	'NOWEAPON',
+	
 	'JAM',
 	'LEVEL2',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_R',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Normal',

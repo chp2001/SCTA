@@ -17,9 +17,9 @@ UnitBlueprint {
 	'ARM',
 	'ENERGY',
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	'SORTECONOMY',
+	
+	
 	'STORAGE',
     },
     Defense = {

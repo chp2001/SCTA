@@ -15,12 +15,13 @@ UnitBlueprint {
 	'NAVAL',
 	'CONSTRUCTIONSORTDOWN',
 	'ARM',
-	'PLANT',
+		'PLANT',
+	'SORTCONSTRUCTION',
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_F',
+	
+	
+	
+	
     },
     Defense = {
         Health = 6000,
@@ -39,9 +40,6 @@ UnitBlueprint {
         ProductionPerSecondMass = 0,
     },
     LifeBarSize = 8,
-    General = {
-        UpgradesFrom = 'armsy',
-    },
     SelectionSizeX = 9.9,
     SelectionSizeZ = 6.8,
     SizeX = 12,

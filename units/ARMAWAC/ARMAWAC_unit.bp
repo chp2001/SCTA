@@ -71,12 +71,7 @@ UnitBlueprint {
 	'RADAR',
         'OVERLAYRADAR',
         'ARM',
-        'VTOL',
-	'CTRL_V',
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTSUB',
-	'CTRL_R',
     },
     Defense = {
         ArmorType = 'Light',

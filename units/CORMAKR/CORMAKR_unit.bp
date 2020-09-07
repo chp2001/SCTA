@@ -44,16 +44,17 @@ UnitBlueprint {
 	
 	'STRUCTURE',
         'MASSPRODUCTION',
-        'ECONOMIC',
+                'ECONOMIC',
+        'SORTECONOMY',
 	'TEXTUREANIM',
 
 	
 	'CORE',
 	'ENERGY',
 	'LEVEL1',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',

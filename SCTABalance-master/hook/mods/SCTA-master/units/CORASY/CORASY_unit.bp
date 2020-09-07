@@ -15,12 +15,13 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'NAVAL',
 	'CORE',
-	'PLANT',
+		'PLANT',
+	'SORTCONSTRUCTION',
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_F',
+	
+	
+	
+	
     },
     Defense = {
         Health = 6400,
@@ -40,9 +41,6 @@ UnitBlueprint {
         ProductionPerSecondMass = 0,
     },
     LifeBarSize = 8,
-    General = {
-        UpgradesFrom = 'corsy', 
-    },
     Intel = {
         VisionRadius = 10,
         WaterVisionRadius = 6,

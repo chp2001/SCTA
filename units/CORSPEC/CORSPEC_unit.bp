@@ -36,7 +36,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
         },
     },
-    BuildIconSortPriority = 10,
+    BuildIconSortPriority = 9,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -49,12 +49,12 @@ UnitBlueprint {
         'OVERLAYCOUNTERINTEL',
         'CORE',
         'KBOT',
-	'NOWEAPON',
+	
 	'JAM',
 	'LEVEL2',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_R',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Normal',

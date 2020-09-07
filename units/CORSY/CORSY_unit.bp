@@ -52,12 +52,13 @@ UnitBlueprint {
 
 	
 	'CORE',
-	'PLANT',
-	'CTRL_F',
+		'PLANT',
+	'SORTCONSTRUCTION',
+	
 	'LEVEL1',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -92,7 +93,7 @@ UnitBlueprint {
 	},
 	BuildBones = {'muzzlea','muzzleb'},
 	BuildAttachBone = 0,
-	#TextureAnimationFrames = 6,
+	TextureAnimationFrames = 6,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

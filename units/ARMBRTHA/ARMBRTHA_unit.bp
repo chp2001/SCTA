@@ -26,7 +26,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
+        'SORTDEFENSE',
 	
 	'STRUCTURE',
 	'DEFENSE',
@@ -37,9 +37,9 @@ UnitBlueprint {
 	'ARM',
 	'LEVEL3',
 	'STRATEGIC',
-	'WEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -59,12 +59,12 @@ UnitBlueprint {
 		DefaultProjectileCategories = {'MetalBarrel'},
 		DestructionEmitters = {
 			{
-				EmitterBone = {'Turret','Turret_Barrel', 0},
+				EmitterBone = {'turret', 0},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'Turret_Muzzle'},
+				EmitterBone = {'sleeve'},
 				EmitterBlueprint = {
 	    				'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -144,7 +144,7 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
-            BallisticArc = 'RULEUBA_HighArc',
+            BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 2000,
@@ -172,9 +172,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Turret_Muzzle',
+                        'Flare',
                     },
-                    RackBone = 'Turret_Recoil',
+                    RackBone = 'barrel',
                 },
             },
             RackRecoilDistance = -5,
@@ -189,9 +189,9 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'Turret_Muzzle',
-            TurretBonePitch = 'Turret_Barrel',
-            TurretBoneYaw = 'Turret',
+            TurretBoneMuzzle = 'Flare',
+            TurretBonePitch = 'sleeve',
+            TurretBoneYaw = 'turret',
             TurretPitch = 0,
             TurretPitchRange = 360,
             TurretPitchSpeed = 2,

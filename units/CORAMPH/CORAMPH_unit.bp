@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 5,
+    BuildIconSortPriority = 4,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -43,11 +43,11 @@ UnitBlueprint {
 	
         'CORE',
         'HOVER',
-	'WEAPON',
+	
 	'LEVEL2',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_W',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -181,15 +181,20 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 56.25,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_LASERH1/CORE_LASERH1_proj.bp',
-            EnergyDrainPerSecond = 0,
+            EnergyDrainPerSecond = 20,
             EnergyRequired = 100,
-            
             RackBones = {
                 {
                     MuzzleBones = {
                         'flare',
                     },
-                    RackBone = 'lasbarrel',
+                    RackBone = 'gun',
+                },
+                {
+                    MuzzleBones = {
+                        'flare2',
+                    },
+                    RackBone = 'laser',
                 },
             },
             RackRecoilDistance = 0,
@@ -205,9 +210,11 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
             TurretBoneMuzzle = 'flare',
-            TurretBonePitch = 'lasturret',
-            TurretBoneYaw = 'lasturret',
-            TurretDualManipulators = false,
+            TurretBonePitch = 'turret',
+            TurretBoneDualMuzzle = 'flare2',
+            TurretBoneDualPitch = 'laser',
+            TurretBoneYaw = 'head',
+            TurretDualManipulators = true,
             TurretPitch = 0,
             TurretPitchRange = 360,
             TurretPitchSpeed = 200,

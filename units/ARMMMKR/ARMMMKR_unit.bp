@@ -40,14 +40,15 @@ UnitBlueprint {
         'TECH3',
 	'STRUCTURE',
         'MASSPRODUCTION',
-        'ECONOMIC',
+                'ECONOMIC',
+        'SORTECONOMY',
 	'TEXTUREANIM',
 	'ARM',
 	'ENERGY',
 	'LEVEL2',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',

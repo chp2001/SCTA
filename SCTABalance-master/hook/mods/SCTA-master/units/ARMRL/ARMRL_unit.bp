@@ -25,10 +25,11 @@ UnitBlueprint {
 	'OVERLAYANTIAIR',
 	'ARM',
 	'SPECIAL',
-	'LEVEL1',
-	'WEAPON',
-	'NOTAIR',
-	'NOTSUB',
+    'LEVEL1',
+    'SORTDEFENSE',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',

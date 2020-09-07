@@ -27,20 +27,16 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-
-	
+        'SORTDEFENSE',
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-
-	
 	'CORE',
-	'DEFENSIVE',
-	'WEAPON',
+		'DEFENSIVE',
 	'LEVEL2',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
     },
     Defense = {
         ArmorType = 'Structure',

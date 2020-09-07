@@ -39,11 +39,11 @@ UnitBlueprint {
         'LAND',
         'CORE',
         'HOVER',
-	'WEAPON',
+	
 	'LEVEL1',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_W',
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Normal',

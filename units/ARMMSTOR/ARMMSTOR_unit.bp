@@ -33,15 +33,16 @@ UnitBlueprint {
 	
 	'STRUCTURE',
         'METALSTORAGE',
-        'ECONOMIC',
+                'ECONOMIC',
+        'SORTECONOMY',
 
 	
 	'ARM',
 	'METAL',
 	'LEVEL1',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
 	'STORAGE',
     },
     Defense = {

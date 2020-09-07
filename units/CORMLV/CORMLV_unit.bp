@@ -36,7 +36,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 6,
+    BuildIconSortPriority = 8,
     Categories = {
         'SELECTABLE',
         'TECH1',
@@ -55,8 +55,8 @@ UnitBlueprint {
         'VEHICLE',	#'TANK' in TA
 	'MINELAYER',
 	'LEVEL1',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
     },
     Defense = {
         ArmorType = 'Normal',

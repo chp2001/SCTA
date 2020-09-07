@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 3,
+    BuildIconSortPriority = 4,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -43,10 +43,10 @@ UnitBlueprint {
         'ARM',
         'KBOT',
 	'LEVEL2',
-	'WEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_W',
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -133,9 +133,9 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 3.2,
-        MaxBrake = 3.2,
-        MaxSpeed = 3.2,
+        MaxAcceleration = 2,
+        MaxBrake = 2.4,
+        MaxSpeed = 2.4,
         MotionType = 'RULEUMT_Land',
         TurnRate = 158,
         MaxSteerForce = 10,

@@ -40,10 +40,10 @@ UnitBlueprint {
         'ARM',
         'KBOT',
 	'LEVEL1',
-	'WEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_W',
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -147,7 +147,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 4,
+            Damage = 2,
             DamageRadius = 0.25,
             FiringRandomness = 1,
             DamageType = 'Normal',

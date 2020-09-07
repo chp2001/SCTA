@@ -20,12 +20,13 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'AIR', 
 	'CORE',
-	'PLANT',
+		'PLANT',
+	'SORTCONSTRUCTION',
 	'LEVEL3',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_F',
+	
+	
+	
+	
     },
         Display = {
                 Abilities = {
@@ -43,12 +44,12 @@ UnitBlueprint {
         BuildRate = 150,
         BuildableCategory = {
             'AIR LEVEL1 CORE',
-            'coraap', 
+            'cordap', 
         },
     },
     LifeBarSize = 8,
     General = {
-        UpgradesTo = 'coraap', 
+        UpgradesTo = 'cordap', 
     },
     Intel = {
         VisionRadius = 10,

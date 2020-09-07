@@ -40,10 +40,10 @@ UnitBlueprint {
         'CORE',
         'VEHICLE',
 	'LEVEL1',
-	'WEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_W',
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -159,7 +159,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_IndirectFire',
             WeaponCategory = 'IndirectFire',
             FiringTolerance = 3,
-            FiringRandomness = 5,
+            FiringRandomness = 0.5,
             Label = 'CORLEVLR_WEAPON',
             MaxRadius = 30,
             MinRadius = 5, 

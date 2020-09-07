@@ -39,10 +39,10 @@ UnitBlueprint {
         'ARM',
         'KBOT',
 	'LEVEL1',
-	'WEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_W',
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Normal',

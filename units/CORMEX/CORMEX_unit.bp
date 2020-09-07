@@ -43,14 +43,15 @@ UnitBlueprint {
 	    'STRUCTURE',
         'MASSPRODUCTION',
         'MASSEXTRACTION',
-        'ECONOMIC',
+                'ECONOMIC',
+        'SORTECONOMY',
     'CORE',        
     'SHOWQUEUE',
 	'METAL',
 	'LEVEL1',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
+	
+	
+	
 	'STORAGE',
     },
     Defense = {

@@ -6,7 +6,7 @@ UnitBlueprint {
         MaxHealth = 2000,
     },
     Display = {
-        UniformScale = 0.08,
+        UniformScale = 0.04,
     },
     Economy = {
         BuildCostEnergy = 5443,
@@ -15,15 +15,15 @@ UnitBlueprint {
         StorageEnergy = 200,
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
+        SizeX = 2,
+        SizeZ = 2,
 	    MaxSlope = 0.625,
     },
     Intel = {
         VisionRadius = 12,
     },
     Interface = {
-        HelpText = 'Heavy Laser Tower',
+        HelpText = 'Floating Heavy Laser Tower',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -36,7 +36,7 @@ UnitBlueprint {
     SelectionSizeZ = 1.2,
     SelectionCenterOffsetZ = 0,
     SelectionThickness = 0.25,
-    SizeX = 2,
-    SizeY = 3,
-    SizeZ = 2,
+    SizeX = 1,
+    SizeY = 2,
+    SizeZ = 1,
 }

@@ -44,10 +44,10 @@ UnitBlueprint {
         'CORKROG',        
         'CORE',
         'KBOT',
-        'WEAPON',
-        'NOTAIR',
-        'NOTSUB',
-        'CTRL_W',
+        
+        
+        
+        
     },
     Defense = {
         AirThreatLevel = 0,

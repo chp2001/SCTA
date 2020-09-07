@@ -59,11 +59,11 @@ UnitBlueprint {
         'CORE',
         'HOVER',
 	'LEVEL1',
-	'CONSTR',
-	'NOWEAPON',
-	'NOTAIR',
-	'NOTSUB',
-	'CTRL_B',
+	
+	
+	
+	
+	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -76,7 +76,8 @@ UnitBlueprint {
     },
     Description = 'Tech Level 1',
     Display = {
-        AnimationOpen = '/mods/SCTA-master/units/CORCH/CORCH_aopen.sca',
+        AnimationOpen = '/mods/SCTA-master/units/CORCH/CORCH_lod0_aopen.sca',
+        AnimationOpenRate = 0.5, 
         Abilities = {
             'Construction Unit',
             '<LOC ability_hover>Hover',
@@ -100,7 +101,7 @@ UnitBlueprint {
 			},
 		},
 	},
-	BuildBones = {'nanogun'},
+	BuildBones = {'muzzle'},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -180,8 +181,8 @@ UnitBlueprint {
         TurnRate = 20,
         MaxSteerForce = 100,
 	RotateOnSpot = true,
-	TurnFacingRate = 20,
-	WobbleFactor = 0.2,
+    TurnFacingRate = 20,
+    WobbleFactor = 0.2,
 	WobbleSpeed = 0.25,
     },
     SelectionSizeX = 1.5,

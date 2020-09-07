@@ -40,12 +40,8 @@ UnitBlueprint {
         },
     },
     LifeBarSize = 8,
-    General = {
-        UpgradesFrom = 'armap',
-    },
     Intel = {
         VisionRadius = 10,
-        RadarRadius = 30,
         FreeIntel = true,
         },
     SelectionSizeX = 9.9,

@@ -46,11 +46,11 @@ UnitBlueprint {
         BuildableCategory = {
             'SHIP LEVEL1 ARM',
             'NORMALSUB LEVEL1 ARM',
-            'armasy',
+            'armdsy',
         },
     },
     General = {
-        UpgradesTo = 'armasy', 
+        UpgradesTo = 'armdsy', 
     },
     SelectionSizeX = 9.9,
     SelectionSizeZ = 6.8,

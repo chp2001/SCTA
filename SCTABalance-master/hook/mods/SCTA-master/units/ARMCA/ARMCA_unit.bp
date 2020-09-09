@@ -8,7 +8,7 @@ UnitBlueprint {
         BuildCostEnergy = 8000,
         ProductionPerSecondEnergy = 2,
         MaxBuildDistance = 6,
-        BuildTime = 5000,
+        BuildTime = 2000,
     },
     Intel = {
         VisionRadius = 10,

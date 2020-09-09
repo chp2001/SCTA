@@ -21,6 +21,7 @@ UnitBlueprint {
     },
     Economy = {
         NaturalProducer = false,
+        DifferentialUpgradeCostCalculation = true,
         MaintenanceConsumptionPerSecondEnergy = 100,
         },
 }

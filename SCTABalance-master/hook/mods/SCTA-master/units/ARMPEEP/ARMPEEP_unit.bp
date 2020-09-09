@@ -3,4 +3,7 @@ UnitBlueprint {
     Intel = {
     RadarRadius = 60,
     },
+    Economy = {
+        BuildCostMass = 80,
+    },
 }

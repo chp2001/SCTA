@@ -39,9 +39,6 @@ UnitBlueprint {
         },
     },
     LifeBarSize = 8,
-    General = {
-        UpgradesFrom = 'corvp', 
-    },
     Intel = {
         VisionRadius = 10,
     },

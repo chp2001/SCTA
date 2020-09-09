@@ -33,6 +33,7 @@ UnitBlueprint {
      Economy = {
         NaturalProducer = false,
         BuildRate = 120, 
+        DifferentialUpgradeCostCalculation = true,
         MaintenanceConsumptionPerSecondEnergy = 50,
         ProductionPerSecondEnergy = 0,
         BuildableCategory = {

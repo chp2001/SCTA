@@ -64,7 +64,7 @@ UnitBlueprint {
 		TurnSpeed = 0.7,
         TransportHoverHeight = 3,
     },
-    BuildIconSortPriority = 4,
+    BuildIconSortPriority = 5,
     Categories = {
         'SELECTABLE',
         'TECH1',

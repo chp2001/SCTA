@@ -38,9 +38,6 @@ UnitBlueprint {
         },
     },
     LifeBarSize = 8,
-    General = {
-        UpgradesFrom = 'corlab', 
-    },
     Intel = {
         VisionRadius = 10,
     },

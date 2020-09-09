@@ -83,7 +83,7 @@ UnitBlueprint {
 	},
 	BuildBones = {'muzzlea','muzzleb'},
 	BuildAttachBone = 0,
-	#TextureAnimationFrames = 6,
+	TextureAnimationFrames = 6,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -99,8 +99,9 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 10000,
         BuildCostMass = 2524, 
-        BuildTime = 13310,
-	BuildRate = 200,
+        BuildTime = 40500,
+    BuildRate = 200,
+    DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
         'SHIP LEVEL1 CORE',
         'NORMALSUB LEVEL1 CORE',

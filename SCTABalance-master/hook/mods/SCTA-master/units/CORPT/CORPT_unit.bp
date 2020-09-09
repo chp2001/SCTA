@@ -32,6 +32,7 @@ UnitBlueprint {
         BuildCostEnergy = 630,
         BuildCostMass = 90,
         MaintenanceConsumptionPerSecondEnergy = 1,
+        BuildTime = 4200,
     },
     Display = {
         Abilities = {

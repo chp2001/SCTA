@@ -231,7 +231,7 @@ TAunitkeygroups = {
     },
     ["T2_Mobile_AA_Flak_Artillery"]= {
         "armyork",
-        "armfido",
+        "armspdaa",
         "corsent",
     },
 

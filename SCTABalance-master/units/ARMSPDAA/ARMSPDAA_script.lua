@@ -6,11 +6,11 @@
 local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-ARMSPID = Class(TAunit) {
+ARMSPIDAA = Class(TAunit) {
 
 	Weapons = {
 			ARMAH_WEAPON = Class(TAweapon) {},
 			ARMAH2_WEAPON = Class(TAweapon) {},
 		},
 	}
-TypeClass = ARMSPID
+TypeClass = ARMSPIDAA

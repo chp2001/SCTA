@@ -12,6 +12,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostMass = 4400,
+        BuildTime = 35000, 
     },
     Intel = {
         WaterVisionRadius = 15,

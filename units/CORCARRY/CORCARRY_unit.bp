@@ -34,7 +34,7 @@ UnitBlueprint {
         RepairConsumeEnergy = 5,
         RepairConsumeMass = 0.5,
     },
-    BuildIconSortPriority = 1,
+    BuildIconSortPriority = 9,
     Categories = {
         'SELECTABLE',
         'DRAGBUILD',

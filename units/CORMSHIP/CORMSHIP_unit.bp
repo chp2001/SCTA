@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 8,
+    BuildIconSortPriority = 7,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -237,8 +237,8 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RateOfFire = 2,
             TargetCheckInterval = 1,
-            EnergyDrainPerSecond = 5,
-            EnergyRequired = 5,
+            EnergyDrainPerSecond = 100,
+            EnergyRequired = 25,
             TargetPriorities = {
                 'ALLUNITS',
             },

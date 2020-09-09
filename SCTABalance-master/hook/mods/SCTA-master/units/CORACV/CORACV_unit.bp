@@ -31,7 +31,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 3600,
         BuildTime = 5500,
-        BuildRate = 400,
+        BuildRate = 120,
         BuildableCategory = {
             'BUILTBYT1VEHICLE CORE',
             'BUILTBYT2KBOT CORE',

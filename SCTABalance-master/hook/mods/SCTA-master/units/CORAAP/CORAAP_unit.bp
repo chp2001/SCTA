@@ -40,9 +40,6 @@ UnitBlueprint {
         },
     },
     LifeBarSize = 8,
-    General = {
-        UpgradesFrom = 'corap',
-    },
     Intel = {
         VisionRadius = 10,
         RadarRadius = 30,

@@ -44,7 +44,7 @@ ProjectileBlueprint {
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/fmdmisl_mesh.bp',
         StrategicIconSize = 1,
-        UniformScale = 0.16,
+        UniformScale = 0.24,
     },
     General = {
         Category = 'MISSILE',

@@ -39,7 +39,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 4200,
-        BuildRate = 125,
+        BuildRate = 75,
         BuildableCategory = {
             'armdvp',
             'VEHICLE LEVEL1 ARM',

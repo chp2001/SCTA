@@ -5,7 +5,7 @@
 
 UnitBlueprint {
     Merge = true,
-    BuildIconSortPriority = 5,
+    BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -20,8 +20,8 @@ UnitBlueprint {
 	'LEVEL2',
     },
     Defense = {
-        Health = 1100,
-        MaxHealth = 1100,
+        Health = 1900,
+        MaxHealth = 1900,
         AirThreatLevel = 5,
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,
@@ -48,7 +48,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 40,
+            Damage = 60,
 	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'GAUSS',
@@ -61,9 +61,9 @@ UnitBlueprint {
             FiringTolerance = 0.5,
             FiringRandomness = 0.25,
             Label = 'GAUSS',
-            MaxRadius = 36,
+            MaxRadius = 21,
             MuzzleSalvoDelay = 0.2,
-            MuzzleSalvoSize = 4,
+            MuzzleSalvoSize = 2,
 	    MuzzleVelocity = 45,
             ProjectileId = '/mods/SCTA-master/projectiles/GAUSS/GAUSS_proj.bp',
             RackBones = {

@@ -28,7 +28,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 0,
     Categories = {
-        'BUILTBYT1AIR',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -111,7 +110,8 @@ UnitBlueprint {
         BuildCostEnergy = 10200,
         BuildCostMass = 2210, 
         BuildTime = 17376,
-	BuildRate = 180,
+    BuildRate = 180,
+    DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
         'AIR LEVEL2 ARM',
 	    'AIR LEVEL1 ARM', 

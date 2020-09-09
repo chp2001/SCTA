@@ -38,7 +38,7 @@ ProjectileBlueprint {
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/Plasma_mesh.bp',
-        UniformScale = 0.16,
+        UniformScale = 0.30,
         StrategicIconSize = 1,
     },
     General = {

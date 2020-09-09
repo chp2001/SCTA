@@ -301,7 +301,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 400,
+            Damage = 600,
             DamageRadius = 2.5,
             DamageType = 'AntiAir',
             DisplayName = 'CORKROG_ROCKET',
@@ -337,7 +337,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 2,
-            RateOfFire = 4,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',

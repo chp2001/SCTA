@@ -105,6 +105,10 @@ TAunitkeygroups = {
         "armamd",
         "corfmd",
     },
+    ["Tactical_Missile_Defense"]= {
+        "armscab",
+        "cormabm",
+    },
     ["Wall_Section"]= {
         "armdrag",
         "cordrag",
@@ -225,7 +229,7 @@ TAunitkeygroups = {
     },
     ["T2_Heavy_Tank"]= {
         "armbull",
-        "armzeus",
+        "armfido",
         "correap",
         "corcan",
     },

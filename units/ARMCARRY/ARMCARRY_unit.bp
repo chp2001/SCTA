@@ -32,7 +32,7 @@ UnitBlueprint {
 	StagingPlatformScanRadius = 300,
         ShowAssistRangeOnSelect = true,
     },
-    BuildIconSortPriority = 1,
+    BuildIconSortPriority = 9,
     Categories = {
         'SELECTABLE',
         'DRAGBUILD',

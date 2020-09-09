@@ -34,6 +34,7 @@ UnitBlueprint {
 	    BuildRate = 120, 
         MaintenanceConsumptionPerSecondEnergy = 50,
         ProductionPerSecondEnergy = 0,
+        DifferentialUpgradeCostCalculation = true,
         BuildableCategory = {
             'armtarg',
       },

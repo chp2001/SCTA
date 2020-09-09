@@ -28,7 +28,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 0,
     Categories = {
-        'BUILTBYT1SHIP',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -101,7 +100,7 @@ UnitBlueprint {
         BuildCostMass = 2524, 
         BuildTime = 40500,
         DifferentialUpgradeCostCalculation = true,
-	BuildRate = 200,
+	BuildRate = 140,
     BuildableCategory = {
         'SHIP LEVEL1 ARM',
         'NORMALSUB LEVEL1 ARM',

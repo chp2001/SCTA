@@ -37,6 +37,7 @@ UnitBlueprint {
             'SHIP LEVEL2 ARM',
             'ADVANCEDSUB LEVEL2 ARM',
         },
+        BuildRate = 160,
         ProductionPerSecondMass = 0,
     },
     LifeBarSize = 8,

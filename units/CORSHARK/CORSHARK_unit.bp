@@ -81,7 +81,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -184,6 +183,12 @@ UnitBlueprint {
                     },
                     RackBone = 'muzzle',
                 },
+                {
+					MuzzleBones = {
+                        'muzzle2',
+                    },
+                    RackBone = 'muzzle2',
+                },
             },
             RackFireTogether = false,
             RackRecoilDistance = 0,
@@ -200,16 +205,17 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
             TurretBoneMuzzle = 'muzzle',
             TurretBonePitch = 'muzzle',
-            TurretBoneYaw = 'muzzle',
-            TurretDualManipulators = false,
+            TurretBoneDualMuzzle = 'muzzle2',
+            TurretBoneDualPitch = 'muzzle2',
+            TurretBoneYaw = 'CORSHARK',
+            TurretDualManipulators = true,
             TurretPitch = 0,
             TurretPitchRange = 360,
-            TurretPitchSpeed = 36000,
+            TurretPitchSpeed = 60,
             TurretYaw = 0,
             TurretYawRange = 360,
-            TurretYawSpeed = 36000,
+            TurretYawSpeed = 60,
             Turreted = true,
-            WeaponCategory = 'Direct Fire',
         },
         { #SMALL_UNITEX
             Damage = 10,

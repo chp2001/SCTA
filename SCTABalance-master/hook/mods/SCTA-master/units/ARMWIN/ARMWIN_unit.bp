@@ -24,6 +24,7 @@
         SkirtSizeX = 0,
         SkirtSizeZ = 0,
     },
+    SelectionCenterOffsetX = -0.2,
     SelectionSizeX = 0.65,
     SelectionSizeZ = 0.65,
     SelectionThickness = 0.6,

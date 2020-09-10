@@ -38,9 +38,6 @@ PropBlueprint {
     Physics = {
         BlockPath = false, 
     },
-    Wreckage = {
-	Blueprint = '/mods/SCTA-master/units/ARMSJAM/ARMSJAM_heap_prop.bp',
-    },
     ScriptClass = 'TAWreckage',
     ScriptModule = '/mods/SCTA-master/lua/TAWreckage.lua',
     SizeX = 3,

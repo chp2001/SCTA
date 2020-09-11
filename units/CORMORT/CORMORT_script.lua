@@ -3,10 +3,10 @@
 #
 #Blueprint created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-CORMORT = Class(TAunit) {
+CORMORT = Class(TAWalking) {
 
 	Weapons = {
 		CORE_MORT = Class(TAweapon) {

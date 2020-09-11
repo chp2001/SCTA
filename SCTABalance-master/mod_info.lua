@@ -1,4 +1,4 @@
-name = "SCTA Rebalance Mod"
+name = "SCTA Test Rebalance Mod"
 version = 22
 copyright = "Dragun123@2020"
 description = "Makes TA Factions from SCTA Mod cost in line with modern factions. With an exceptional amount of help from Balthazar with actual coding process. And thank you Odin, Silene and Hell for helping to test."

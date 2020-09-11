@@ -1,0 +1,158 @@
+scales 2.5 2.5 -2.5;
+scm-file-path ARMPW_lod0.scm;
+
+move Pelvis to y-axis [-0.540] speed [10];
+turn RightUpperLeg to x-axis <10.692> speed <500>;
+turn LeftUpperLeg to x-axis <-53.489> speed <500>;
+turn LeftLowerLeg to x-axis <53.489> speed <500>;
+turn RightLowerLeg to x-axis <53.489> speed <500>;
+turn RightFoot to x-axis <-37.846> speed <500>;
+
+turn Torso to y-axis <5.747> speed <500>;
+turn LeftUpperArm to x-axis <38.670> speed <500>;
+turn RightUpperArm to x-axis <-18.093> speed <500>;
+turn RightLowerArm to x-axis <48.956> speed <500>;
+turn LeftLowerArm to x-axis <48.956> speed <500>;
+sleep 90;
+
+move Pelvis to y-axis [-0.300] speed [10];
+turn RightUpperLeg to x-axis <-10.280> speed <500>;
+turn LeftUpperLeg to x-axis <-41.549> speed <500>;
+turn LeftLowerLeg to x-axis <41.967> speed <500>;
+turn RightLowerLeg to x-axis <81.879> speed <500>;
+turn RightFoot to x-axis <-31.258> speed <500>;
+
+turn Torso to y-axis <3.280> speed <500>;
+turn LeftUpperArm to x-axis <32.093> speed <500>;
+turn RightUpperArm to x-axis <-11.093> speed <500>;
+turn RightLowerArm to x-axis <48.956> speed <500>;
+turn LeftLowerArm to x-axis <48.956> speed <500>;
+
+sleep 70;
+
+move Pelvis to y-axis [-0.150] speed [10];
+turn RightUpperLeg to x-axis <-18.093> speed <500>;
+turn LeftUpperLeg to x-axis <-24.681> speed <500>;
+turn LeftLowerLeg to x-axis <24.681> speed <500>;
+turn RightLowerLeg to x-axis <85.582> speed <500>;
+turn RightFoot to x-axis <-23.027> speed <500>;
+
+turn Torso to y-axis <0> speed <500>;
+turn LeftUpperArm to x-axis <27.148> speed <500>;
+turn RightUpperArm to x-axis <-7.401> speed <500>;
+
+sleep 50;
+move Pelvis to y-axis [0] speed [10];
+turn RightUpperLeg to x-axis <-42.379> speed <500>;
+turn LeftUpperLeg to x-axis <5.335> speed <500>;
+turn LeftLowerLeg to x-axis <6.571> speed <500>;
+turn LeftFoot to x-axis <-9.027> speed <500>;
+turn RightLowerLeg to x-axis <104.516> speed <500>;
+turn RightFoot to x-axis <0> speed <500>;
+
+turn Torso to y-axis <-3.280> speed <500>;
+turn LeftUpperArm to x-axis <8.214> speed <500>;
+turn RightUpperArm to x-axis <9.027> speed <500>;
+turn RightLowerArm to x-axis <48.956> speed <500>;
+turn LeftLowerArm to x-axis <48.956> speed <500>;
+
+move Pelvis to y-axis [-0.200] speed [10];
+turn RightUpperLeg to x-axis <-69.945> speed <500>;
+turn LeftUpperLeg to x-axis <14.802> speed <500>;
+turn LeftLowerLeg to x-axis <15.214> speed <500>;
+turn LeftFoot to x-axis <-25.093> speed <500>;
+turn RightLowerLeg to x-axis <107.401> speed <500>;
+
+turn Torso to y-axis <-6.159> speed <500>;
+turn LeftUpperArm to x-axis <-3.692> speed <500>;
+turn RightUpperArm to x-axis <17.681> speed <500>;
+
+sleep 50;
+move Pelvis to y-axis [-0.400] speed [10];
+turn RightUpperLeg to x-axis <-75.291> speed <500>;
+turn LeftUpperLeg to x-axis <20.137> speed <500>;
+turn LeftLowerLeg to x-axis <26.324> speed <500>;
+turn LeftFoot to x-axis <-33.725> speed <500>;
+turn RightLowerLeg to x-axis <64.604> speed <500>;
+
+turn Torso to y-axis <-8.214> speed <500>;
+turn LeftUpperArm to x-axis <-10.280> speed <500>;
+turn RightUpperArm to x-axis <25.093> speed <500>;
+
+sleep 70;
+
+move Pelvis to y-axis [-0.550] speed [10];
+turn RightUpperLeg to x-axis <-56.780> speed <500>;
+turn LeftUpperLeg to x-axis <24.258> speed <500>;
+turn LeftLowerLeg to x-axis <38.670> speed <500>;
+turn LeftFoot to x-axis <-38.670> speed <500>;
+turn RightLowerLeg to x-axis <56.780> speed <500>;
+
+turn Torso to y-axis <-6.159> speed <500>;
+turn LeftUpperArm to x-axis <-23.857> speed <500>;
+turn RightUpperArm to x-axis <31.258> speed <500>;
+turn RightLowerArm to x-axis <48.956> speed <500>;
+turn LeftLowerArm to x-axis <48.956> speed <500>;
+
+move Pelvis to y-axis [-0.300] speed [10];
+turn RightUpperLeg to x-axis <-44.846> speed <500>;
+turn LeftUpperLeg to x-axis <5.335> speed <500>;
+turn LeftLowerLeg to x-axis <67.071> speed <500>;
+turn RightFoot to x-axis <-12.324> speed <500>;
+
+turn Torso to y-axis <-3.280> speed <500>;
+turn LeftUpperArm to x-axis <-16.038> speed <500>;
+turn RightUpperArm to x-axis <19.725> speed <500>;
+
+sleep 70;
+move Pelvis to y-axis [-0.140] speed [10];
+turn RightUpperLeg to x-axis <-22.615> speed <500>;
+turn LeftUpperLeg to x-axis <-12.736> speed <500>;
+turn LeftLowerLeg to x-axis <79.412> speed <500>;
+turn LeftFoot to x-axis <-27.967> speed <500>;
+turn RightLowerLeg to x-axis <37.027> speed <500>;
+turn RightFoot to x-axis <-15.626> speed <500>;
+
+turn Torso to y-axis <0> speed <500>;
+turn LeftUpperArm to x-axis <-1.637> speed <500>;
+turn RightUpperArm to x-axis <10.280> speed <500>;
+
+sleep 50;
+
+move Pelvis to y-axis [0] speed [10];
+turn RightUpperLeg to x-axis <2.868> speed <500>;
+turn LeftUpperLeg to x-axis <-42.379> speed <500>;
+turn LeftLowerLeg to x-axis <90.104> speed <500>;
+turn LeftFoot to x-axis <-15.214> speed <500>;
+turn RightLowerLeg to x-axis <6.571> speed <500>;
+turn RightFoot to x-axis <-9.434> speed <500>;
+
+turn Torso to y-axis <3.280> speed <500>;
+turn LeftUpperArm to x-axis <11.505> speed <500>;
+turn RightUpperArm to x-axis <1.225> speed <500>;
+turn RightLowerArm to x-axis <48.956> speed <500>;
+turn LeftLowerArm to x-axis <48.956> speed <500>;
+
+sleep 40;
+move Pelvis to y-axis [-0.190] speed [10];
+turn RightUpperLeg to x-axis <13.159> speed <500>;
+turn LeftUpperLeg to x-axis <-57.192> speed <500>;
+turn RightFoot to x-axis <-19.324> speed <500>;
+
+turn Torso to y-axis <6.159> speed <500>;
+turn LeftUpperArm to x-axis <21.390> speed <500>;
+turn RightUpperArm to x-axis <-6.989> speed <500>;
+
+move Pelvis to y-axis [-0.400] speed [10];
+turn RightUpperLeg to x-axis <16.445> speed <500>;
+turn LeftUpperLeg to x-axis <-67.071> speed <500>;
+turn LeftLowerLeg to x-axis <55.549> speed <500>;
+turn LeftFoot to x-axis <-2.868> speed <500>;
+turn RightLowerLeg to x-axis <24.681> speed <500>;
+turn RightFoot to x-axis <-33.324> speed <500>;
+
+turn Torso to y-axis <8.214> speed <500>;
+turn LeftUpperArm to x-axis <25.093> speed <500>;
+turn RightUpperArm to x-axis <-12.324> speed <500>;
+
+sleep 70;

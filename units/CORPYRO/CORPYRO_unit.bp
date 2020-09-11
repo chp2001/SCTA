@@ -55,6 +55,8 @@ UnitBlueprint {
     },
     Description = 'Assault Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/CORPYRO/CORPYRO_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             'Flame Bot',
         },

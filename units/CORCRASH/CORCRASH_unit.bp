@@ -61,6 +61,8 @@ UnitBlueprint {
     },
     Description = 'Missile Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/CORCRASH/CORCRASH_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             '<LOC ability_aa>Anti-Air',
         },

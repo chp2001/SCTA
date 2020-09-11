@@ -55,6 +55,8 @@ UnitBlueprint {
     },
     Description = 'Sniper Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMSNIPE/ARMSNIPE_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             'Sniper Bot',
         },

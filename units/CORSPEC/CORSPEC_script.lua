@@ -3,11 +3,11 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
 
-CORSPEC = Class(TAunit) {
+CORSPEC = Class(TAWalking) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TAWalking.OnCreate(self)
 
 		self.Spinners = {
 			ltong = CreateRotator(self, 'ltong', 'x', nil, 0, 0, 0),
@@ -59,12 +59,12 @@ CORSPEC = Class(TAunit) {
 	end,
 
 	OnIntelDisabled = function(self)
-		TAunit.OnIntelDisabled(self)
+		TAWalking.OnIntelDisabled(self)
 		ForkThread(self.Close, self)
 	end,
 
 	OnIntelEnabled = function(self)
-		TAunit.OnIntelEnabled(self)
+		TAWalking.OnIntelEnabled(self)
 		ForkThread(self.Open, self)
 		
 	end,

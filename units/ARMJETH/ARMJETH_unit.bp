@@ -57,6 +57,8 @@ UnitBlueprint {
     },
     Description = 'Anti-Air Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMJETH/ARMJETH_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
                 '<LOC ability_aa>Anti-Air',
             },

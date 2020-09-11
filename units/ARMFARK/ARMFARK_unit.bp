@@ -71,6 +71,8 @@ UnitBlueprint {
     },
     Description = 'Fast Assist-Repair Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMFARK/ARMFARK_lod0_Awalk.sca',
+        AnimationWalkRate = 2,
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Construction','BuildMuzzle'},
 		DestructionEmitters = {

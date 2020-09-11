@@ -1,5 +1,5 @@
-#CORE The Can - Armored Assault Kbot
-#CORCAN
+#CORE The SUMO - Armored Assault Kbot
+#CORSUMO
 #
 #Blueprint created by Raevn
 
@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 3,
+    BuildIconSortPriority = 12,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -50,8 +50,8 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 2800,
-        MaxHealth = 2800,
+        Health = 6000,
+        MaxHealth = 6000,
         AirThreatLevel = 0,
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,
@@ -66,12 +66,12 @@ UnitBlueprint {
 		DefaultProjectileCategories = {'MetalBarrel'},
 		DestructionEmitters = {
 			{
-				EmitterBone = {'belly', 'pelvis'},
+				EmitterBone = {'hips', 'body'},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'gun'},
+				EmitterBone = {'Lbarrel', 'Rbarrel'},
 				EmitterBlueprint = {
     					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -119,13 +119,13 @@ UnitBlueprint {
         },
         FactionName = 'CORE',
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = 'The Can',
+        UnitName = 'Sumo',
     },
     Intel = {
         VisionRadius = 12,
     },
     Interface = {
-        HelpText = 'Armored Assault Kbot',
+        HelpText = 'Heavy Armored Assault Kbot',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -161,10 +161,10 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 220,
+            Damage = 400,
 	    DamageRadius = 2,
             DamageType = 'Normal',
-            DisplayName = 'CORE_CANLASER',
+            DisplayName = 'CORE_SUMOLASER',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Seabed = 'Land|Water|Seabed',
@@ -172,7 +172,7 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
             FiringTolerance = 0,
-            Label = 'CORE_CANLASER',
+            Label = 'CORE_SUMOLASER',
             MaxRadius = 28,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -181,10 +181,17 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'firept',
+                        'lflare',
                     },
-                    RackBone = 'gun',
+                    RackBone = 'Lgun',
+                },                
+                {
+                    MuzzleBones = {
+                        'rflare',
+                    },
+                    RackBone = 'Rgun',
                 },
+
             },
             RackFireTogether = false,
             RackRecoilDistance = -1.5,
@@ -199,10 +206,12 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'firept',
-            TurretBonePitch = 'gun',
-            TurretBoneYaw = 'head',
-            TurretDualManipulators = false,
+            TurretBoneMuzzle = 'Rbarrel',
+            TurretBonePitch = 'Rgun',
+            TurretBoneDualMuzzle = 'Lbarrel',
+            TurretBoneDualPitch = 'Lgun',
+            TurretBoneYaw = 'faceguard',
+            TurretDualManipulators = true,
             TurretPitch = 0,
             TurretPitchRange = 360,
             TurretPitchSpeed = 45,
@@ -231,7 +240,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/CORCAN/CORCAN_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/CORSUMO/CORSUMO_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Seabed = true,

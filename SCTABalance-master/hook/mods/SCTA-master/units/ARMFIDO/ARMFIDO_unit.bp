@@ -59,7 +59,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
             FiringTolerance = 0.5,
-            FiringRandomness = 0.25,
+            FiringRandomness = 0.1,
             Label = 'GAUSS',
             MaxRadius = 21,
             MuzzleSalvoDelay = 0.2,
@@ -86,7 +86,7 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            FiringTolerance = 2,
+            FiringTolerance = 0.5,
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
             TurretBoneMuzzle = 'Muzzle',
             TurretBonePitch = 'Barrel',

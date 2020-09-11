@@ -59,6 +59,8 @@ UnitBlueprint {
     },
     Description = 'Skirmish Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMFIDO/ARMFIDO_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             'Assault Bot',
         },

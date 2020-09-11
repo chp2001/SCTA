@@ -55,6 +55,8 @@ UnitBlueprint {
     },
     Description = 'Fast Light Scout Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMFLEA/ARMFLEA_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
 	DestructionEffects = {
 		DestructionEmitters = {
 			{

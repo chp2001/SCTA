@@ -3,10 +3,10 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-ARMFLEA = Class(TAunit) {
+ARMFLEA = Class(TAWalking) {
 	
 	Weapons = {
 		ARMFLEA_WEAPON = Class(TAweapon) {

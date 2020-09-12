@@ -1,5 +1,11 @@
 scales 2.5 2.5 -2.5;
 rotation-scales 1.0 -1.0 1.0;
+set-turn-offset leg1 to y-axis 30;
+set-turn-offset leg2 to y-axis 20;
+set-turn-offset leg3 to y-axis 20;
+set-turn-offset leg4 to y-axis -30;
+set-turn-offset leg5 to y-axis -20;
+set-turn-offset leg6 to y-axis -20;
 scm-file-path ARMSPDAA_lod0.scm;
 
 turn leg1 to y-axis <43.79> now;

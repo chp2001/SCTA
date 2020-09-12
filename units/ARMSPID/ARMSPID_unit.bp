@@ -57,6 +57,8 @@ UnitBlueprint {
     },
     Description = 'Spider Assault Vehicle',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMSPID/ARMSPID_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             'All Terrain',
             'Paralyzer',

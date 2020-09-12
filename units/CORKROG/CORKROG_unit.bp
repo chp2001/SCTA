@@ -83,7 +83,7 @@ UnitBlueprint {
                 },
             },
         },
-        AnimationWalk = '/mods/SCTA-master/units/CORKROG/CORKROG_lod0_Walk.sca',
+        AnimationWalk = '/mods/SCTA-master/units/CORKROG/CORKROG_lod0_Awalk.sca',
         AnimationWalkRate = 0.9,
         Mesh = {
             IconFadeInZoom = 130,

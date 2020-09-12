@@ -1,5 +1,7 @@
 scales 2.5 2.5 -2.5;
 scm-file-path ARMPW_lod0.scm;
+set-turn-offset RightUpperArm to x-axis -90;
+set-turn-offset LeftLowerArm to x-axis -90;
 
 move Pelvis to y-axis [-0.540] speed [10];
 turn RightUpperLeg to x-axis <10.692> speed <500>;

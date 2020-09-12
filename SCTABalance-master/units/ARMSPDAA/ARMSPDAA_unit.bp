@@ -49,6 +49,8 @@ UnitBlueprint {
     },
     Description = 'Spider Anti-Air KBot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/SCTABalance-master/units/ARMSPDAA/ARMSPDAA_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             'All Terrain',
             'AntiAir',

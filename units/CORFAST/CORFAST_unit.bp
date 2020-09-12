@@ -1,5 +1,5 @@
-#ARM Zipper - Fast Attack Kbot
-#ARMFAST
+#CORE Freaker - Fast Attack Kbot
+#COREFAST
 #
 #Blueprint created by Raevn
 
@@ -7,17 +7,17 @@ UnitBlueprint {
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'KBARMSEL',
+            Cue = 'KBCORSEL',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StartMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'KBARMMOV',
+            Cue = 'KBCORMOV',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StopMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'KBARMSTP',
+            Cue = 'KBCORSTP',
             LodCutoff = 'UnitMove_LodCutoff',
         },
 	Destroyed = Sound {
@@ -59,6 +59,8 @@ UnitBlueprint {
     },
     Description = 'Fast Attack Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/CORFAST/CORFAST_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             'Fast Bot',
         },
@@ -70,7 +72,7 @@ UnitBlueprint {
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'RightLowerArm', 'LeftLowerArm'},
+				EmitterBone = {'RLArm', 'LLArm'},
 				EmitterBlueprint = {
     					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -182,7 +184,7 @@ UnitBlueprint {
                     MuzzleBones = {
                         'Muzzle',
                     },
-                    RackBone = 'RightLowerArm',
+                    RackBone = 'LLArm',
                 },
             },
             RackFireTogether = false,
@@ -199,7 +201,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
             TurretBoneMuzzle = 'Muzzle',
-            TurretBonePitch = 'RightLowerArm',
+            TurretBonePitch = 'LLArm',
             TurretBoneYaw = 'Torso',
             TurretDualManipulators = false,
             TurretPitch = 90,

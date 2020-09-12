@@ -3,10 +3,10 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-CORSUMO = Class(TAunit) {
+CORSUMO = Class(TAWalking) {
 
 	Weapons = {
 		CORE_SUMOLASER = Class(TAweapon) {

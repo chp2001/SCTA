@@ -21,4 +21,8 @@ UnitBlueprint {
 	'LEVEL3',
 	'PARAL',
     },
+    Defense = {
+        Health = 2500,
+        MaxHealth = 2500,
+    },
 }

@@ -59,6 +59,8 @@ UnitBlueprint {
     },
     Description = 'Assault Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMZEUS/ARMZEUS_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             'Heavy Infantry',
         },

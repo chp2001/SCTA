@@ -76,6 +76,8 @@ UnitBlueprint {
     },
     Description = 'Tech Level 1',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMCK/ARMCK_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             'Construction Unit',
         },

@@ -51,6 +51,8 @@ UnitBlueprint {
     },
     Description = 'Gunslinger Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMMAV/ARMMAV_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             'Assault Bot',
         },

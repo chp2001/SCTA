@@ -3,14 +3,14 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-ARMHAM = Class(TAunit) {
+ARMHAM = Class(TAWalking) {
 	
 
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TAWalking.OnCreate(self)
 		self.Spinners = {
 			upcase2 = CreateRotator(self, 'UpperSleeves', 'x', nil, 0, 0, 0),
 			locase = CreateRotator(self, 'LowerSleeves', 'x', nil, 0, 0, 0),

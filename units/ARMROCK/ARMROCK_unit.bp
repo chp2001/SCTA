@@ -55,6 +55,8 @@ UnitBlueprint {
     },
     Description = 'Rocket Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMROCK/ARMROCK_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             'Rocket',
         },

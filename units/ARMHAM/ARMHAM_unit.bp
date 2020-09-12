@@ -56,6 +56,8 @@ UnitBlueprint {
     },
     Description = 'Artillery Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMHAM/ARMHAM_lod0_Awalk.sca',
+        AnimationWalkRate = 0.5,
         Abilities = {
             'Artillery',
         },

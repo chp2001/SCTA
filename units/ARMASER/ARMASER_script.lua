@@ -3,9 +3,10 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 
-ARMASER = Class(TAunit) {
+local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
+
+ARMASER = Class(TAWalking) {
 	OnCreate = function(self)
 		TAunit.OnCreate(self)
 		self.Spinners = {

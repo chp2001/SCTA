@@ -1,5 +1,5 @@
-#ARM Amphibious Kbot
-#ARMAPMH
+#CORE Amphibious Kbot
+#CORAPMH
 #
 #Blueprint created by Axle
 
@@ -60,6 +60,8 @@ UnitBlueprint {
     },
     Description = 'Amphibious Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/CORAMPH/CORAMPH_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             '<LOC ability_hover>Hover',
         },
@@ -142,11 +144,10 @@ UnitBlueprint {
         MaxSteerForce = 100,
         RotateOnSpot = true,
         TurnFacingRate = 66,
-        WobbleFactor = 0.2,
-        WobbleSpeed = 0.2,
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,
+    SelectionCenterOffsetZ = -0.5,
     SelectionThickness = 0.25,
     SizeX = 2,
     SizeZ = 2,
@@ -186,13 +187,13 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'flare',
+                        'gunflare',
                     },
                     RackBone = 'gun',
                 },
                 {
                     MuzzleBones = {
-                        'flare2',
+                        'laserflare',
                     },
                     RackBone = 'laser',
                 },
@@ -209,9 +210,9 @@ UnitBlueprint {
                 'ALLUNITS'
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'flare',
+            TurretBoneMuzzle = 'gunflare',
             TurretBonePitch = 'turret',
-            TurretBoneDualMuzzle = 'flare2',
+            TurretBoneDualMuzzle = 'laserflare',
             TurretBoneDualPitch = 'laser',
             TurretBoneYaw = 'head',
             TurretDualManipulators = true,

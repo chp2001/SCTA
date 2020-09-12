@@ -60,6 +60,9 @@ UnitBlueprint {
     },
     Description = 'Amphibious Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMAMPH/ARMAMPH_lod0_AWalk.sca',
+        # AnimationSwim = '/mods/SCTA-master/units/ARMAMPH/ARMAMPH_lod0_ASwim.sca', # @todo activate this when swimming
+        AnimationWalkRate = 1,
         Abilities = {
             '<LOC ability_hover>Hover',
         },

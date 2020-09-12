@@ -3,10 +3,10 @@
 #
 #Script created by Axle
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-ARMAMPH = Class(TAunit) {
+ARMAMPH = Class(TAWalking) {
 
 	Weapons = {
 		armamph_weapon1 = Class(TAweapon) {
@@ -22,6 +22,7 @@ ARMAMPH = Class(TAunit) {
 			end,
 		},
 	},
+
 }
 
 TypeClass = ARMAMPH

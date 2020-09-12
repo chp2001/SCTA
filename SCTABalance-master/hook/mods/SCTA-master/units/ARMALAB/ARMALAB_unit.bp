@@ -1,7 +1,7 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT1KBOT',
+        'BUILTBYT2KBOT',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -36,6 +36,7 @@ UnitBlueprint {
         BuildableCategory = {
             'KBOT LEVEL1 ARM',
             'KBOT LEVEL2 ARM',
+            'KBOT LEVEL3 ARM',
         },
     },
     Intel = {

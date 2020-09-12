@@ -1,4 +1,4 @@
-name = "SCTA Fix"
+name = "SCTA Test"
 uid = "8E704ECC-12EC-11EA-A6CA-D6DA930038A2"
 version = 19
 description = "Total Annihilation for Supreme Commander! Updated and bugfixed by Dragun101, with permission from Raevn, coding fix help from Balth. New Models from Gamma of TA Total Mayham and Madmax of FAF. Thank you to Senth Faction Reselect Code"

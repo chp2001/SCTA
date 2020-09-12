@@ -76,7 +76,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 420,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -122,9 +121,9 @@ UnitBlueprint {
             LAYER_Land = true,
         },
     },
-    SelectionSizeX = 1.5,
-    SelectionCenterOffsetZ = -1,
-    SelectionSizeZ = 1.5,
+    SelectionSizeX = 2.2,
+    SelectionSizeZ = 2.2,
+    SelectionCenterOffsetZ = -1.75,
     SelectionThickness = 0.25,
     SizeX = 3,
     SizeY = 3,

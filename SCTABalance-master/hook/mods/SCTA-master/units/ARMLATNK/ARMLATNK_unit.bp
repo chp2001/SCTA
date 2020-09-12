@@ -1,5 +1,28 @@
 UnitBlueprint {
    Merge = true, 
+   Categories = {
+    'SELECTABLE',
+    'TECH2',
+    'VISIBLETORECON',
+    'RECLAIMABLE',
+    'MOBILE',
+'LAND',
+'DIRECTFIRE',
+'ANTIAIR',
+    'OVERLAYDIRECTFIRE',
+'OVERLAYANTIAIR',
+    'ARM',
+    'VEHICLE',
+'LEVEL3',
+
+
+
+
+},
+Defense = {
+    Health = 3000,
+    MaxHealth = 3000,
+},
     Footprint = {
         SizeX = 1,
         SizeZ = 1,

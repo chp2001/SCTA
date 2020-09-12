@@ -184,7 +184,7 @@ UnitBlueprint {
                     MuzzleBones = {
                         'Muzzle',
                     },
-                    RackBone = 'LLarm',
+                    RackBone = 'LLArm',
                 },
             },
             RackFireTogether = false,

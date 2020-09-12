@@ -60,6 +60,8 @@ UnitBlueprint {
     },
     Description = 'Amphibious Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/CORAMPH/CORAMPH_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             '<LOC ability_hover>Hover',
         },

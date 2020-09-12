@@ -188,13 +188,13 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'flare',
+                        'gunflare',
                     },
                     RackBone = 'gun',
                 },
                 {
                     MuzzleBones = {
-                        'flare2',
+                        'laserflare',
                     },
                     RackBone = 'laser',
                 },
@@ -211,9 +211,9 @@ UnitBlueprint {
                 'ALLUNITS'
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'flare',
+            TurretBoneMuzzle = 'gunflare',
             TurretBonePitch = 'turret',
-            TurretBoneDualMuzzle = 'flare2',
+            TurretBoneDualMuzzle = 'laserflare',
             TurretBoneDualPitch = 'laser',
             TurretBoneYaw = 'head',
             TurretDualManipulators = true,

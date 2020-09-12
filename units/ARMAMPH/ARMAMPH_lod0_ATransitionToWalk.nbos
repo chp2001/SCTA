@@ -1,4 +1,5 @@
 scales 2.5 2.5 -2.5;
+rotation-scales 1.0 -1.0 -1.0;
 scm-file-path ARMAMPH_lod0.scm;
 not-looped;
 

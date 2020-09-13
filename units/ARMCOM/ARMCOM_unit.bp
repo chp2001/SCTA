@@ -263,7 +263,7 @@ UnitBlueprint {
             CollideFriendly = false,
             UseFiringSolutionInsteadOfAimBone = true,
             DamageFriendly = true,
-            Damage = 50,
+            Damage = 100,
             DamageRadius = 1,
             DamageType = 'Normal',
             DisplayName = 'ARMCOMLASER',

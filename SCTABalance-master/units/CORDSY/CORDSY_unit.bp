@@ -99,7 +99,7 @@ UnitBlueprint {
         BuildCostEnergy = 10000,
         BuildCostMass = 2524, 
         BuildTime = 40500,
-    BuildRate = 140,
+    BuildRate = 175,
     DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
         'SHIP LEVEL1 CORE',

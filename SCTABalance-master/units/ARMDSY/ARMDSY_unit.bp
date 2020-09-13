@@ -100,7 +100,7 @@ UnitBlueprint {
         BuildCostMass = 2524, 
         BuildTime = 40500,
         DifferentialUpgradeCostCalculation = true,
-	BuildRate = 140,
+	BuildRate = 175,
     BuildableCategory = {
         'SHIP LEVEL1 ARM',
         'NORMALSUB LEVEL1 ARM',

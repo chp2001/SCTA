@@ -21,7 +21,7 @@ UnitBlueprint {
 
     'ARM',
     'KBOT',
-'LEVEL3',
+'LEVEL2',
    },
     Defense = {
         Health = 6000,

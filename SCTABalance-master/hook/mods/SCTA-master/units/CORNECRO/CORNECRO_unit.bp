@@ -18,7 +18,7 @@ UnitBlueprint {
         'NECRO',
         'VEHICLE',
         'KBOT',
-	'LEVEL3',
+	'LEVEL2',
     }, 
     Defense = {
         Health = 1200,

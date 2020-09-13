@@ -8,7 +8,7 @@ local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 CORPLAS = Class(TAunit) {
 	Weapons = {
-		CORPLAS_WEAPON = Class(TAweapon) {},
+		CORPLAS_WEAPON = Class(TAweapon) {}
 	},
 }
 

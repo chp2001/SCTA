@@ -40,7 +40,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 3600,
-        BuildRate = 90,
+        BuildRate = 120,
         BuildableCategory = {
             'VEHICLE LEVEL1 CORE',
             'cordvp', 

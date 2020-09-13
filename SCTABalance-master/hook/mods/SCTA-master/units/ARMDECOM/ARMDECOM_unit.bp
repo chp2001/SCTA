@@ -12,7 +12,7 @@ UnitBlueprint {
 'LAND',
 'DIRECTFIRE',
 'KBOT',
-'LEVEL3',
+'LEVEL2',
     'OVERLAYDIRECTFIRE',
     'ARM',
 

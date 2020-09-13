@@ -1,6 +1,5 @@
 local oldARMFORT = ARMFORT
 ARMFORT = Class(oldARMFORT) {
-    ShieldEffects = {
         ShieldEffects = {
             '/effects/emitters/terran_shield_generator_t2_01_emit.bp',
             '/effects/emitters/terran_shield_generator_t2_02_emit.bp',

@@ -30,7 +30,7 @@ Categories = {
         },
     Economy = {
         BuildCostEnergy = 20000,
-        BuildCostMass = 1800,
+        BuildCostMass = 820,
         BuildTime = 15000,
         ProductionPerSecondMass = 3,
 	MaintenanceConsumptionPerSecondEnergy = 75,

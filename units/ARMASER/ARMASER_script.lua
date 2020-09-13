@@ -8,7 +8,7 @@ local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
 
 ARMASER = Class(TAWalking) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TAWalking.OnCreate(self)
 		self.Spinners = {
 			ltong = CreateRotator(self, 'LeftFork', 'y', nil, 0, 0, 0),
 			rtong = CreateRotator(self, 'RightFork', 'y', nil, 0, 0, 0),
@@ -111,12 +111,12 @@ ARMASER = Class(TAWalking) {
 	end,
 
 	OnIntelDisabled = function(self)
-		TAunit.OnIntelDisabled(self)
+		TAWalking.OnIntelDisabled(self)
 		ForkThread(self.Close, self)
 	end,
 
 	OnIntelEnabled = function(self)
-		TAunit.OnIntelEnabled(self)
+		TAWalking.OnIntelEnabled(self)
 		ForkThread(self.Open, self)
 		
 	end,

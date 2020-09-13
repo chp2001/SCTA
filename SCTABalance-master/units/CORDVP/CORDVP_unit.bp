@@ -98,7 +98,7 @@ UnitBlueprint {
         BuildCostEnergy = 8000,
         BuildCostMass = 1947, 
         BuildTime = 15410,
-        BuildRate = 120,
+        BuildRate = 175,
         DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
         'VEHICLE LEVEL1 CORE', 

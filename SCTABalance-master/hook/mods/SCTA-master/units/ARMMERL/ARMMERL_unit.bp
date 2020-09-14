@@ -1,0 +1,12 @@
+#ARM Merl - Mobile Rocket Launcher
+#ARMMERL
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true, 
+    Defense = {
+        Health = 1800,
+        MaxHealth = 1800,
+    },
+}

@@ -22,7 +22,7 @@ UnitBlueprint {
         'OVERLAYMISC',
 	'ARM',
 	'SHIP',
-	'LEVEL3',
+	'LEVEL2',
 	'NAVALCARRIER',
 	'SHOWQUEUE',
     },

@@ -1,7 +1,7 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT2VEHICLE',
+        'BUILTBYT1VEHICLE',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -32,11 +32,10 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 8400,
-        BuildRate = 120,
+        BuildRate = 180,
         BuildableCategory = {
             'VEHICLE LEVEL2 ARM',
             'VEHICLE LEVEL1 ARM',
-            'VEHICLE LEVEL3 ARM',
         },
     },
     LifeBarSize = 8,

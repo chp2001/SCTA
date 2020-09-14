@@ -26,14 +26,14 @@ CORDECOM = Class(TAconstructor) {
 	end,
 
 
-	Aim = function(self)
+	Aim = function(self, target)
 		local selfPosition = self:GetPosition('Torso') 
 		local targetPosition = target:GetPosition()
 			
 
 		--TURN torso to y-axis heading SPEED <300.07>;
-		self.Spinners.torso:SetGoal(TAutils.GetAngle(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
-		self.Spinners.torso:SetSpeed(300)
+		self.Spinners.Torso:SetGoal(TAutils.GetAngle(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
+		self.Spinners.Torso:SetSpeed(300)
 
 		local distance = VDist2(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z)
 		selfPosition = self:GetPosition('NanoMuzzle') 

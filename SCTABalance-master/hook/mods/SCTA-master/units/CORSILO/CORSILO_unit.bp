@@ -47,7 +47,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 0,
-            ProjectileId = '/mods/SCTABalance-master/projectiles/CRSCMSSL/CRSCMSSL_proj.bp',
+            ProjectileId = '/mods/SCTA-master/SCTABalance-master/projectiles/CRSCMSSL/CRSCMSSL_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

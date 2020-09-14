@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 14,
+    BuildIconSortPriority = 10,
     Categories = {
         'SELECTABLE',
         'TECH2',

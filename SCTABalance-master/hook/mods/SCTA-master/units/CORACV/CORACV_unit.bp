@@ -31,11 +31,11 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 3600,
         BuildTime = 5500,
-        BuildRate = 120,
+        BuildRate = 180,
         BuildableCategory = {
             'BUILTBYT1VEHICLE CORE',
             'BUILTBYT2KBOT CORE',
-            'coravp',
+            'coralab',
         },
         MaxBuildDistance = 7,
         ProductionPerSecondEnergy = 3,

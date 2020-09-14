@@ -5,6 +5,7 @@
 
 local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
 
+
 CORSPEC = Class(TAWalking) {
 	OnCreate = function(self)
 		TAWalking.OnCreate(self)

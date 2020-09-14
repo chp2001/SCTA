@@ -1,0 +1,12 @@
+#ARM Triton - Amphibious Tank
+#ARMCROC
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Defense = {
+        Health = 2800,
+        MaxHealth = 2800,
+    },
+}

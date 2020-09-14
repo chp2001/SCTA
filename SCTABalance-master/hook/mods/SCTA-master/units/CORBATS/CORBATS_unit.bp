@@ -17,7 +17,7 @@ UnitBlueprint {
 	
         'CORE',
         'SHIP',
-	'LEVEL3',
+	'LEVEL2',
 	
 	
 	
@@ -87,7 +87,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 125,
-            ProjectileId = '/mods/SCTABalance-master/projectiles/TMD_LASER/TMD_LASER_proj.bp',
+            ProjectileId = '/mods/SCTA-master/SCTABalance-master/projectiles/TMD_LASER/TMD_LASER_proj.bp',
             RackBones = {
                 {    
                     MuzzleBones = {

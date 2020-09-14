@@ -1,0 +1,41 @@
+UnitBlueprint {
+   Merge = true, 
+   Categories = {
+    'SELECTABLE',
+    'TECH2',
+    'VISIBLETORECON',
+    'RECLAIMABLE',
+
+
+    'MOBILE',
+'LAND',
+'DIRECTFIRE',
+    'OVERLAYDIRECTFIRE',
+
+
+    'CORE',
+    'VEHICLE',	#'TANK' in TA
+'LEVEL2',
+
+
+
+
+},
+Defense = {
+    Health = 4800,
+    MaxHealth = 4800,
+},
+    Economy = {
+        BuildCostEnergy = 12000,
+        BuildCostMass = 1400,
+        BuildTime = 28000,
+    },
+    Footprint = {
+	SizeX = 2,
+	SizeZ = 2,
+    },
+    Physics = {
+        MaxAcceleration = 1.6,
+        MaxSpeed = 2.2,
+    },
+}

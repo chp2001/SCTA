@@ -1,0 +1,7 @@
+UnitBlueprint {
+    Merge = true, 
+    Defense = {
+        Health = 1900,
+        MaxHealth = 1900,
+    },
+}

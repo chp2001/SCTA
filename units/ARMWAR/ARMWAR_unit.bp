@@ -156,7 +156,6 @@ UnitBlueprint {
             DamageFriendly = true,
             Damage = 8,
             DamageRadius = 0.25,
-            FiringRandomness = 1,
             DamageType = 'Normal',
             DisplayName = 'ARMWAR_EMG',
             FireTargetLayerCapsTable = {
@@ -185,7 +184,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 2,
-            RateOfFire = 5,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
@@ -214,7 +213,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 50,
+            Damage = 30,
             DamageRadius = 1,
             FiringRandomness = 0,
             DamageType = 'Normal',

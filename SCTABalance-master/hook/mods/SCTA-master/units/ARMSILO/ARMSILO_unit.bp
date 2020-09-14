@@ -49,7 +49,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 0,
-            ProjectileId = '/mods/SCTABalance-master/projectiles/NUCLSC_MISSILE/NUCLSC_MISSILE_proj.bp',
+            ProjectileId = '/mods/SCTA-master/SCTABalance-master/projectiles/NUCLSC_MISSILE/NUCLSC_MISSILE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

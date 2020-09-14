@@ -13,6 +13,7 @@ UnitBlueprint {
 	'LEVEL2',
     'OVERLAYDEFENSE',
     'SORTDEFENSE',
+    'NEEDMOBILEBUILD',
 	
 	
 	

@@ -144,7 +144,7 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 2.35,
     SizeZ = 3,
-    StrategicIconName = 'icon_land2_artillery',
+    StrategicIconName = 'icon_land2_antishield',
     StrategicIconSortPriority = 0,
     Weapon = {
         {

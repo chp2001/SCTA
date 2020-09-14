@@ -45,7 +45,7 @@ UnitBlueprint {
     'SHOWATTACKRETICLE',
     },
     Defense = {
-        ArmorType = 'Structure',
+        ArmorType = 'ExperimentalStructure',
         AirThreatLevel = 0,
         EconomyThreatLevel = 1500,
         SubThreatLevel = 0,

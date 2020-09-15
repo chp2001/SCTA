@@ -1,13 +1,4 @@
-#****************************************************************************
-#**
-#**  File     :  /cdimage/units/URB5101/URB5101_script.lua
-#**  Author(s):  John Comes, David Tomandl
-#**
-#**  Summary  :  -- 				local terrain = GetTerrainType(xpos, zpos)
-#-- 				if terrain.TypeCode >= 220 then
-#**
-#**  Copyright � 2005 Gas Powered Games, Inc.  All rights reserved.
-#****************************************************************************
+
 local AWalkingLandUnit = import('/lua/aeonunits.lua').AWalkingLandUnit
 local Entity = import('/lua/sim/Entity.lua').Entity
 local EffectUtil = import('/lua/EffectUtilities.lua')

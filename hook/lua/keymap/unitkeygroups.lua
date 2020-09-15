@@ -38,10 +38,10 @@ TAunitkeygroups = {
         "corgeo",
     },    
     ["Mass_Extractor"]= {
-        "armmex",
-        "cormex",
         "armmoho",
         "cormoho",
+        "armmex",
+        "cormex",
     },
     ["Mass_Fabricator"]= {
         "armmakr",

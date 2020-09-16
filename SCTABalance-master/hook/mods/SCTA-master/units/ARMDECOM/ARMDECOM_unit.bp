@@ -15,13 +15,20 @@ UnitBlueprint {
 'LEVEL2',
     'OVERLAYDIRECTFIRE',
     'ARM',
-
-
+    'CONSTRUCTION',
+    'ENGINEER',
 
 
 },
    Display = {
        UniformScale = 0.28,
+    },
+    Economy = {
+        MaxBuildDistance = 10,
+        BuildRate = 240,
+        BuildableCategory = {
+            'BUILTBYCOMMANDER ARM',
+        },
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,

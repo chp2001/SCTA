@@ -17,10 +17,10 @@ function doGateSpawn(strArmy, createCommander)
 			local factionIndex = GetArmyBrain(strArmy):GetFactionIndex()
 			local initialUnitName = 'mas0001'
 			cdrUnit = CreateInitialArmyUnit(strArmy, initialUnitName)
-			cdrUnit:SetUnSelectable(true)
+			cdrUnit:SetUnSelectable(false)
 			cdrUnit:SetBusy(true)
 			cdrUnit:SetBlockCommandQueue(true)
-			ForkThread(ControlDelay, cdrUnit, 7)
+			ForkThread(ControlDelay, cdrUnit, 8.75)
 			--UISelectAndZoomTo(cdrUnit, 0.1)
 			
 			ABrain.PreBuilt = true
@@ -50,12 +50,13 @@ function doGateSpawn(strArmy, createCommander)
 			local cam = import('/lua/simcamera.lua').SimCamera('WorldCamera')
 			local position = cdrUnit:GetPosition()
 			local heading = cdrUnit:GetHeading()
+			local player = focusarmy
 			local marker = {
 				orientation = VECTOR3( heading + 3.14, 1.2, 0 ),
 				position = { position[1] + 0, position[2] + 1, position[3] + 0 },
 				zoom = FLOAT( 65 ),
 			}
-			cam:MoveToMarker(marker, 1)
+			cam:MoveToMarker(marker, player)
 		end
     end
     return tblGroup , cdrUnit

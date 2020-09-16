@@ -8,11 +8,9 @@ TAunitkeygroups = {
         "armvulc",
     }, 
     ["Land_Factory"]= {
-        "armvp",
         "armlab",
         "armhp",
         "corvp",
-        "corlab",
         "corhp",
     },    
     ["Air_Factory"]= {
@@ -40,10 +38,10 @@ TAunitkeygroups = {
         "corgeo",
     },    
     ["Mass_Extractor"]= {
-        "armmex",
-        "cormex",
         "armmoho",
         "cormoho",
+        "armmex",
+        "cormex",
     },
     ["Mass_Fabricator"]= {
         "armmakr",
@@ -104,6 +102,10 @@ TAunitkeygroups = {
     ["Strategic_Missile_Defense"]= {
         "armamd",
         "corfmd",
+    },
+    ["Tactical_Missile_Defense"]= {
+        "armscab",
+        "cormabm",
     },
     ["Wall_Section"]= {
         "armdrag",
@@ -225,13 +227,13 @@ TAunitkeygroups = {
     },
     ["T2_Heavy_Tank"]= {
         "armbull",
-        "armzeus",
+        "armfido",
         "correap",
         "corcan",
     },
     ["T2_Mobile_AA_Flak_Artillery"]= {
         "armyork",
-        "armfido",
+        "armspdaa",
         "corsent",
     },
 

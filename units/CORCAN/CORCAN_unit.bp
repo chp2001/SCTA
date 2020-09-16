@@ -50,8 +50,8 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 6000,
-        MaxHealth = 6000,
+        Health = 2800,
+        MaxHealth = 2800,
         AirThreatLevel = 0,
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,
@@ -59,6 +59,8 @@ UnitBlueprint {
     },
     Description = 'Armored Assault Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/CORCAN/CORCAN_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             'Heavy Bot',
         },
@@ -161,7 +163,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 400,
+            Damage = 220,
 	    DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'CORE_CANLASER',

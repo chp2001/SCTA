@@ -1,0 +1,12 @@
+#ARM Bulldog - Heavy Assault Tank
+#ARMBULL
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true, 
+    Defense = {
+        Health = 2900,
+        MaxHealth = 2900,
+    },
+}

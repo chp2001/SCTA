@@ -132,7 +132,7 @@ UnitBlueprint {
 	MaxSpeedReverse = 0,
         MaxAcceleration = 2.52,
         MaxBrake = 2.88,
-        MaxSpeed = 5.4375,
+        MaxSpeed = 2.8,
         MotionType = 'RULEUMT_Hover',
         TurnRate = 46,
         MaxSteerForce = 100,

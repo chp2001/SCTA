@@ -1,7 +1,6 @@
 UnitBlueprint {
     Merge = true, 
     Defense = {
-        ArmorType = 'Structure',
         Health = 15000,
         MaxHealth = 15000,
     },
@@ -23,9 +22,9 @@ UnitBlueprint {
     }, 
     SelectionThickness = 0.3,
     SelectionSizeX = 10,
-    SelectionCenterOffsetZ = 0,
+    SelectionCenterOffsetZ = -4,
     SelectionSizeZ = 10,
-    SizeX = 9,
+    SizeX = 12,
     SizeY = 18,
     SizeZ = 14,
     LifeBarSize = 10,

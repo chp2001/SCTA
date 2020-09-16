@@ -4,10 +4,28 @@
 #Blueprint created by Raevn
 
 UnitBlueprint {
-   Merge = true, 
+   Merge = true,
+   BuildIconSortPriority = 12,
+   Categories = {
+    'SELECTABLE',
+    'TECH2',
+    'VISIBLETORECON',
+    'RECLAIMABLE',
+
+
+    'MOBILE',
+'LAND',
+'DIRECTFIRE',
+    'OVERLAYDIRECTFIRE',
+
+
+    'ARM',
+    'KBOT',
+'LEVEL2',
+   },
     Defense = {
-        Health = 3500,
-        MaxHealth = 3500,
+        Health = 6000,
+        MaxHealth = 6000,
     },
     Footprint = {
 	SizeX = 1,
@@ -17,8 +35,8 @@ UnitBlueprint {
         VisionRadius = 12,
     },
     Economy = {
-        BuildCostEnergy = 6000,
-        BuildCostMass = 500,
-        BuildTime = 7500,
+        BuildCostEnergy = 20000,
+        BuildCostMass = 2000,
+        BuildTime = 29000,
     },
 }

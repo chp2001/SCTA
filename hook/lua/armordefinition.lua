@@ -54,13 +54,15 @@ armordefinition = {
     },
     {
         # Armor Type name
-        'FireBeetle',
+        'ExperimentalStructure',
 
         # Armor Definition
         'Normal 1.0',
         'AntiAir 1.0',
-        'DGun 1.0',
-        'FireBeetleExplosion 0.0',
+        'Overcharge 0.25',
+        'DGun 0.1',
+        'Deathnuke 0.032',
+        'ExperimentalFootfall 0.0',
     },
     {
         # Armor Type name

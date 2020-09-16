@@ -30,7 +30,7 @@ UnitBlueprint {
         },
     Economy = {
         BuildCostEnergy = 1200,
-        BuildTime = 3800,
+        BuildTime = 3000,
         ProductionPerSecondEnergy = 2,
         BuildableCategory = {
             'BUILTBYT1KBOT ARM',

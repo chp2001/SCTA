@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 10,
+    BuildIconSortPriority = 13,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -56,6 +56,8 @@ UnitBlueprint {
     },
     Description = 'Mobile Mortar Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/CORMORT/CORMORT_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             'Indirect',
         },
@@ -138,7 +140,7 @@ UnitBlueprint {
         StandUpright = true,
         MaxSteerForce = 10,
     },
-    SelectionCenterOffsetZ = -0.75,
+    SelectionCenterOffsetZ = -0.30,
     SelectionSizeX = 1.0,
     SelectionSizeZ = 1.0,
     SelectionThickness = 0.25,
@@ -158,7 +160,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 400,
+            Damage = 300,
             DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'CORE_MORT',
@@ -170,7 +172,7 @@ UnitBlueprint {
             WeaponCategory = 'Artillery',
             Label = 'CORE_MORT',
             MinRadius = 5,
-            MaxRadius = 55,
+            MaxRadius = 70,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 18.125,
@@ -190,7 +192,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.35,
+            RateOfFire = 0.25,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

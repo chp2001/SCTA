@@ -291,7 +291,7 @@ Factions = {
             LAND = {
                 '/mods/SCTA-master/textures/ui/common/icons/units/armlab_icon.dds',
                 '/mods/SCTA-master/textures/ui/common/icons/units/armalab_icon.dds',
-                '/mods/SCTA-master/SCTABalance-master/textures/ui/common/icons/units/armgant_icon.dds',
+                '/mods/SCTA-master/textures/ui/common/icons/units/armgant_icon.dds',
             },
             AIR = {
                 '/mods/SCTA-master/textures/ui/common/icons/units/armap_icon.dds',

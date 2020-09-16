@@ -9,7 +9,7 @@ UnitBlueprint {
     },
   Economy = {
         BuildCostMass = 140,
-        BuildCostEnergy = 3000,
+        BuildCostEnergy = 1500,
     },
      Footprint = {
         SizeX = 1,
@@ -24,8 +24,9 @@ UnitBlueprint {
         SkirtSizeX = 0,
         SkirtSizeZ = 0,
     },
-    SelectionSizeX = 0.65,
-    SelectionSizeZ = 0.65,
+    SelectionCenterOffsetX = -0.1,
+    SelectionSizeX = 1.3,
+    SelectionSizeZ = 1.3,
     SelectionThickness = 0.6,
     SizeX = 3,
     SizeY = 5,

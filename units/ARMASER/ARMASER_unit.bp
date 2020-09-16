@@ -67,6 +67,8 @@ UnitBlueprint {
     },
     Description = 'Radar Jammer',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMASER/ARMASER_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             '<LOC ability_stealthfield>Stealth Field',
         },

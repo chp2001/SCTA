@@ -61,6 +61,8 @@ UnitBlueprint {
     },
     Description = 'Missile Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/CORCRASH/CORCRASH_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             '<LOC ability_aa>Anti-Air',
         },
@@ -88,7 +90,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -163,7 +164,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 32,
+            Damage = 24,
             DamageRadius = 1.5, 
             DamageType = 'AntiAir',
             DisplayName = 'CORKBOT_MISSILE',
@@ -200,7 +201,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.4,
+            RateOfFire = 0.33,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

@@ -28,7 +28,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 0,
     Categories = {
-        'BUILTBYT1AIR',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -47,7 +46,7 @@ UnitBlueprint {
 		'PLANT',
 	'SORTCONSTRUCTION',
 	
-	'LEVEL3',
+	'LEVEL4',
 	
 	
 	
@@ -55,8 +54,8 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Structure',
-        Health = 4600,
-        MaxHealth = 4600,
+        Health = 3900,
+        MaxHealth = 3900,
         AirThreatLevel = 0,
         EconomyThreatLevel = 3,
         SubThreatLevel = 0,
@@ -109,10 +108,11 @@ UnitBlueprint {
         UniformScale = 0.32,
     },
     Economy = {
-        BuildCostEnergy = 10200,
-        BuildCostMass = 2210, 
+        BuildCostEnergy = 44000,
+        BuildCostMass = 4200, 
         BuildTime = 17376,
-	BuildRate = 180,
+    BuildRate = 180,
+    DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
         'AIR LEVEL1 CORE', 
         'AIR LEVEL2 CORE',

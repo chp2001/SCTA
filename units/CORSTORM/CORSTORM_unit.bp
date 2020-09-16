@@ -55,6 +55,8 @@ UnitBlueprint {
     },
     Description = 'Rocket Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/CORSTORM/CORSTORM_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             'Rocket',
         },
@@ -197,6 +199,7 @@ UnitBlueprint {
             RateOfFire = 0.4,
             TargetCheckInterval = 1,
             TargetPriorities = {
+                'LAND',
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
@@ -212,8 +215,6 @@ UnitBlueprint {
             Turreted = true,
             EnergyDrainPerSecond = 5,
             EnergyRequired = 5,
-            
-            WeaponCategory = 'Direct Fire',
         },
         { #BIG_UNITEX
             Damage = 50,

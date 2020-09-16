@@ -56,6 +56,8 @@ UnitBlueprint {
     },
     Description = 'Artillery Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMHAM/ARMHAM_lod0_Awalk.sca',
+        AnimationWalkRate = 0.5,
         Abilities = {
             'Artillery',
         },
@@ -158,7 +160,7 @@ UnitBlueprint {
             },
             BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
-            DamageFriendly = true,
+            DamageFriendly = false,
             Damage = 130,
             DamageRadius = 1.25, 
             DamageType = 'Normal',

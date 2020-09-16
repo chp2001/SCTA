@@ -28,7 +28,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 0,
     Categories = {
-        'BUILTBYT1SHIP',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -83,7 +82,7 @@ UnitBlueprint {
 	},
 	BuildBones = {'muzzlea','muzzleb'},
 	BuildAttachBone = 0,
-	#TextureAnimationFrames = 6,
+	TextureAnimationFrames = 6,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -97,10 +96,11 @@ UnitBlueprint {
         UniformScale = 0.32,
     },
     Economy = {
-        BuildCostEnergy = 10000,
-        BuildCostMass = 2524, 
-        BuildTime = 13310,
-	BuildRate = 200,
+        BuildCostEnergy = 42000,
+        BuildCostMass = 4200, 
+        BuildTime = 40500,
+    BuildRate = 175,
+    DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
         'SHIP LEVEL1 CORE',
         'NORMALSUB LEVEL1 CORE',

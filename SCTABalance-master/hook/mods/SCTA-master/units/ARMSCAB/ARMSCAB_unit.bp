@@ -9,9 +9,11 @@ UnitBlueprint {
 	'LAND',
 	'ANTIAIR',
         'ARM',
-        'KBOT',
+        'BUILTBYT2KBOT',
 	'LEVEL2',
-	'OVERLAYDEFENSE',
+    'OVERLAYDEFENSE',
+    'SORTDEFENSE',
+    'NEEDMOBILEBUILD',
 	
 	
 	

@@ -3,10 +3,10 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-ARMFAST = Class(TAunit) {
+ARMFAST = Class(TAWalking) {
 
 	OnCreate = function(self)
 		self.Spinners = {
@@ -15,7 +15,7 @@ ARMFAST = Class(TAunit) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
-		TAunit.OnCreate(self)
+		TAWalking.OnCreate(self)
 	end,
 
 	Weapons = {

@@ -3,10 +3,12 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+
+local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-CORROACH = Class(TAunit) {
+
+CORROACH = Class(TAWalking) {
 	attacked = false,
 
 	Weapons = {
@@ -22,7 +24,7 @@ CORROACH = Class(TAunit) {
 		if self.attacked == true then
 			instigator = self
 		end
-		TAunit.OnKilled(self, instigator, type, overkillRatio)
+		TAWalking.OnKilled(self, instigator, type, overkillRatio)
 		
 	end,
 }

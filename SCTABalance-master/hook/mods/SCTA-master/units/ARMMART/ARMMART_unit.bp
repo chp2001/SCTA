@@ -1,13 +1,34 @@
 UnitBlueprint {
     Merge = true, 
+    Categories = {
+        'SELECTABLE',
+        'TECH2',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+
+	
+        'MOBILE',
+	'LAND',
+	'INDIRECTFIRE',
+        'OVERLAYINDIRECTFIRE',
+        'ARTILLERY',
+	
+        'ARM',
+        'VEHICLE',	
+	'LEVEL2',
+	
+	
+	
+	
+    },
     Defense = {
-        Health = 1000,
-        MaxHealth = 1000,
+        Health = 1400,
+        MaxHealth = 1400,
     },
     Economy = {
         BuildCostEnergy = 10000,
         BuildCostMass = 1200,
-        BuildTime = 4530,
+        BuildTime = 22000,
     },
     Weapon = {
         {
@@ -21,7 +42,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 200,
+            Damage = 400,
 	    DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'ARM_ARTILLERY',
@@ -33,7 +54,7 @@ UnitBlueprint {
 	    FiringRandomness = 1.25,
             Label = 'ARM_ARTILLERY',
             WeaponCategory = 'IndirectFire',
-            MaxRadius = 55,
+            MaxRadius = 70,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 19.375,
@@ -51,7 +72,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.36,
+            RateOfFire = 0.2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

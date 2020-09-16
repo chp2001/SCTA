@@ -17,6 +17,7 @@ UnitBlueprint {
         'CORE',
         'NECRO',
         'VEHICLE',
+        'KBOT',
 	'LEVEL2',
     }, 
     Defense = {

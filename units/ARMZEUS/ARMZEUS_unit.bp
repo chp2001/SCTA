@@ -59,6 +59,8 @@ UnitBlueprint {
     },
     Description = 'Assault Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMZEUS/ARMZEUS_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             'Heavy Infantry',
         },
@@ -160,7 +162,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 80,
+            Damage = 180,
 	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'LIGHTNING',
@@ -171,7 +173,7 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
             Label = 'LIGHTNING',
-            MaxRadius = 24,
+            MaxRadius = 29,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
 	    MuzzleVelocity = 25,

@@ -55,6 +55,8 @@ UnitBlueprint {
     },
     Description = 'Sniper Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMSNIPE/ARMSNIPE_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             'Sniper Bot',
         },
@@ -66,7 +68,7 @@ UnitBlueprint {
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'rarm'},
+				EmitterBone = {'muzzle'},
 				EmitterBlueprint = {
     					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -86,13 +88,13 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'Torso',
+	SmokeBone = 'torso',
         UniformScale = 0.16,
     },
     Economy = {
         BuildCostEnergy = 14727,
         BuildCostMass = 935,
-        MaintenanceConsumptionPerSecondEnergy = 200,
+        MaintenanceConsumptionPerSecondEnergy = 25,
         BuildTime = 28137,
     },
     Footprint = {
@@ -182,7 +184,7 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'muzzle',
+                        'Flare',
                     },
                     RackBone = 'ruparm',
                 },
@@ -200,13 +202,13 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             EnergyChargeForFirstShot = true,
-            EnergyDrainPerSecond = 250,
-            EnergyRequired = 500,
+            EnergyDrainPerSecond = 50,
+            EnergyRequired = 100,
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'muzzle',
+            TurretBoneMuzzle = 'Flare',
             TurretBonePitch = 'ruparm',
             TurretBoneYaw = 'torso',
-            TurretPitch = 0,
+            TurretPitch = 90,
             TurretPitchRange = 360,
             TurretPitchSpeed = 200,
             TurretYaw = 0,

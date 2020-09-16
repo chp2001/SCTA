@@ -1,0 +1,12 @@
+#CORE Pyro - Assault Kbot
+#CORPYRO
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true, 
+    Defense = {
+        Health = 1500,
+        MaxHealth = 1500,
+    },
+}

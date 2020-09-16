@@ -128,10 +128,11 @@ UnitBlueprint {
         UniformScale = 0.32,
     },
     Economy = {
-        BuildCostEnergy = 8000,
-        BuildCostMass = 2007, 
+        BuildCostEnergy = 30000,
+        BuildCostMass = 3900, 
         BuildTime = 13520,
-	    BuildRate = 180,
+        BuildRate = 175,
+        DifferentialUpgradeCostCalculation = true,
         BuildableCategory = {
             'KBOT LEVEL1 ARM',
             'KBOT LEVEL2 ARM',

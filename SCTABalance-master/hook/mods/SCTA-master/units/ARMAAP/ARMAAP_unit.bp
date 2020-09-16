@@ -20,7 +20,7 @@ UnitBlueprint {
 		'PLANT',
 	'SORTCONSTRUCTION',
 	
-	'LEVEL3',
+	'LEVEL4',
 	
 	
 	
@@ -29,11 +29,12 @@ UnitBlueprint {
         UniformScale = 0.32,
         },
         Defense = {
-            Health = 3800,
-            MaxHealth = 3800,
+            Health = 3900,
+            MaxHealth = 3900,
         },
     Economy = {
-        BuildCostEnergy = 10200,
+        BuildCostEnergy = 40000,
+        BuildCostMass = 4000, 
         BuildableCategory = {
         'AIR LEVEL2 ARM',
 	    'AIR LEVEL1 ARM', 

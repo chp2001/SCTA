@@ -1,5 +1,5 @@
-#ARM Amphibious Kbot
-#ARMAPMH
+#CORE Amphibious Kbot
+#CORAPMH
 #
 #Blueprint created by Axle
 
@@ -32,22 +32,13 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
         'DIRECTFIRE',
         'KBOT',
         'LAND',
-        'BOT',
-
-	
         'CORE',
-        'HOVER',
-	
+        'HOVER',	
 	'LEVEL2',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -60,6 +51,8 @@ UnitBlueprint {
     },
     Description = 'Amphibious Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/CORAMPH/CORAMPH_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             '<LOC ability_hover>Hover',
         },
@@ -79,7 +72,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -142,8 +134,6 @@ UnitBlueprint {
         MaxSteerForce = 100,
         RotateOnSpot = true,
         TurnFacingRate = 66,
-        WobbleFactor = 0.2,
-        WobbleSpeed = 0.2,
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,
@@ -164,7 +154,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 700,
+            Damage = 50,
             DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'armamph_weapon2',
@@ -179,20 +169,12 @@ UnitBlueprint {
             MaxRadius = 18,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 56.25,
+            MuzzleVelocity = 20,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_LASERH1/CORE_LASERH1_proj.bp',
-            EnergyDrainPerSecond = 20,
-            EnergyRequired = 100,
             RackBones = {
                 {
                     MuzzleBones = {
-                        'flare',
-                    },
-                    RackBone = 'gun',
-                },
-                {
-                    MuzzleBones = {
-                        'flare2',
+                        'laserflare',
                     },
                     RackBone = 'laser',
                 },
@@ -203,18 +185,76 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.625,
+            RateOfFire = 1.25,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS'
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'flare',
-            TurretBonePitch = 'turret',
-            TurretBoneDualMuzzle = 'flare2',
-            TurretBoneDualPitch = 'laser',
+            TurretBoneMuzzle = 'laserflare',
+            TurretBonePitch = 'laser',
             TurretBoneYaw = 'head',
-            TurretDualManipulators = true,
+            TurretPitch = 0,
+            TurretPitchRange = 360,
+            TurretPitchSpeed = 200,
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 300,
+            Turreted = true,
+        },   
+         {
+            Audio = {
+                Fire = Sound {
+                    Bank = 'TA_Sound',
+                    Cue = 'LASRFIR3',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+            DamageFriendly = true,
+            Damage = 200,
+            DamageRadius = 0.25,
+            DamageType = 'Normal',
+            DisplayName = 'armamph_weapon1',
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Air|Seabed',
+                Water = 'Land|Water|Air|Seabed',
+            },
+            RangeCategory = 'UWRC_IndirectFire',
+            WeaponCategory = 'IndirectFire',
+            FiringTolerance = 2.75,
+            Label = 'armamph_weapon1',
+            MaxRadius = 18,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 30,
+            ProjectileId = '/mods/SCTA-master/projectiles/CORE_THUD/CORE_THUD_proj.bp',
+            EnergyDrainPerSecond = 50,
+            EnergyRequired = 100,
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'gunflare',
+                    },
+                    RackBone = 'gun',
+                },
+            },
+            RackRecoilDistance = -1,
+            RackReloadTimeout = 0.5,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            RateOfFire = 0.25,
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'ALLUNITS'
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TurretBoneMuzzle = 'gunflare',
+            TurretBonePitch = 'turret',
+            TurretBoneYaw = 'head',
             TurretPitch = 0,
             TurretPitchRange = 360,
             TurretPitchSpeed = 200,
@@ -223,6 +263,7 @@ UnitBlueprint {
             TurretYawSpeed = 300,
             Turreted = true,
         },
+
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,

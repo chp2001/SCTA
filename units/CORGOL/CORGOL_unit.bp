@@ -159,7 +159,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 196,
+            Damage = 360,
 	    DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'COR_GOL',
@@ -172,7 +172,7 @@ UnitBlueprint {
             Label = 'COR_GOL',
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
+            MuzzleSalvoSize = 2,
             MuzzleVelocity = 20,
             ProjectileId = '/mods/SCTA-master/projectiles/COR_GOL/COR_GOL_proj.bp',
             RackBones = {

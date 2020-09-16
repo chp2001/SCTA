@@ -41,7 +41,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 5400,
-        BuildRate = 150,
+        BuildRate = 100,
         BuildableCategory = {
             'AIR LEVEL1 CORE',
             'cordap', 

@@ -56,6 +56,8 @@ UnitBlueprint {
     },
     Description = 'Medium Infantry Kbot',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMWAR/ARMWAR_lod0_Awalk.sca',
+        AnimationWalkRate = 1,
         Abilities = {
             'Infantry',
         },
@@ -152,9 +154,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 2,
+            Damage = 8,
             DamageRadius = 0.25,
-            FiringRandomness = 1,
             DamageType = 'Normal',
             DisplayName = 'ARMWAR_EMG',
             FireTargetLayerCapsTable = {
@@ -183,7 +184,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 2,
-            RateOfFire = 5,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
@@ -212,7 +213,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 50,
+            Damage = 30,
             DamageRadius = 1,
             FiringRandomness = 0,
             DamageType = 'Normal',
@@ -243,7 +244,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.2,
+            RateOfFire = 0.5,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

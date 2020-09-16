@@ -64,12 +64,12 @@ UnitBlueprint {
             DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate', 'CorBld'},
             DestructionEmitters = {
                 {
-                    EmitterBone = {0, 'cranetop','clamp1','clamp2','clamp3','clamp4'},
+                    EmitterBone = {0, 'connector','door1','door2'},
                     EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
                     EmitterSize = 1.25,
                 },
                 {
-                    EmitterBone = {'arm1a','arm2a','arm3a','arm4a'},
+                    EmitterBone = {'RightA1','RightA2','RightA3','LeftA1','LeftA2', 'LeftA3' },
                     EmitterBlueprint = {
                             '/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
                             '/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -79,8 +79,8 @@ UnitBlueprint {
                 },
             },
         },
-        BuildBones = {'nano1','nano2','nano3','nano4'},
-        BuildAttachBone = 'base',
+        BuildBones = {'nano1','nano2'},
+        BuildAttachBone = 'body',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -95,7 +95,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 20000,
-        BuildCostMass = 13000, 
+        BuildCostMass = 6000, 
         BuildTime = 41937,
         BuildRate = 200,
         BuildableCategory = {

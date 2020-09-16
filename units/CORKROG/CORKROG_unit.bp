@@ -83,7 +83,7 @@ UnitBlueprint {
                 },
             },
         },
-        AnimationWalk = '/mods/SCTA-master/units/CORKROG/CORKROG_lod0_Walk.sca',
+        AnimationWalk = '/mods/SCTA-master/units/CORKROG/CORKROG_lod0_Awalk.sca',
         AnimationWalkRate = 0.9,
         Mesh = {
             IconFadeInZoom = 130,
@@ -301,7 +301,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 400,
+            Damage = 600,
             DamageRadius = 2.5,
             DamageType = 'AntiAir',
             DisplayName = 'CORKROG_ROCKET',
@@ -337,7 +337,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 2,
-            RateOfFire = 4,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',

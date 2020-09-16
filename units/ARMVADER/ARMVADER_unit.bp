@@ -59,6 +59,8 @@ UnitBlueprint {
     },
     Description = 'Crawling Bomb',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/ARMVADER/ARMVADER_lod0_Awalk.sca',
+        AnimationWalkRate = 2,
         Abilities = {
             'Kamikazi',
         },

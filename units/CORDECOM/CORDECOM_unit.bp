@@ -51,7 +51,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 13,
+    BuildIconSortPriority = 14,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -84,7 +84,7 @@ UnitBlueprint {
     },
     Description = 'Commander',
     Display = {
-        AnimationWalk = '/mods/SCTA-master/units/CORDECOM/CORDECOM_lod0_Awalk.sca',
+        AnimationWalk = '/mods/SCTA-master/units/CORCOM/CORCOM_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
             'Decoy',

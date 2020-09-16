@@ -20,7 +20,7 @@ function doGateSpawn(strArmy, createCommander)
 			cdrUnit:SetUnSelectable(true)
 			cdrUnit:SetBusy(true)
 			cdrUnit:SetBlockCommandQueue(true)
-			ForkThread(ControlDelay, cdrUnit, 5)
+			ForkThread(ControlDelay, cdrUnit, 7)
 			--UISelectAndZoomTo(cdrUnit, 0.1)
 			
 			ABrain.PreBuilt = true

@@ -60,7 +60,7 @@ UnitBlueprint {
     Description = 'Fast Attack Kbot',
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORFAST/CORFAST_lod0_Awalk.sca',
-        AnimationWalkRate = 3,
+        AnimationWalkRate = 1,
         Abilities = {
             'Fast Bot',
         },

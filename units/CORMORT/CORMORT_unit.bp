@@ -140,7 +140,7 @@ UnitBlueprint {
         StandUpright = true,
         MaxSteerForce = 10,
     },
-    SelectionCenterOffsetZ = -0.75,
+    SelectionCenterOffsetZ = -0.30,
     SelectionSizeX = 1.0,
     SelectionSizeZ = 1.0,
     SelectionThickness = 0.25,

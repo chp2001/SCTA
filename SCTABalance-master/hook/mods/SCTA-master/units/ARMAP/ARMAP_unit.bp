@@ -42,7 +42,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 5100,
-        BuildRate = 75,
+        BuildRate = 100,
         BuildableCategory = {
             'AIR LEVEL1 ARM',
             'armdap', 

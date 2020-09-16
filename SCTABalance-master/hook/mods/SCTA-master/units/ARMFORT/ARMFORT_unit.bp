@@ -17,7 +17,8 @@ UnitBlueprint {
 	'NOSMOKE',
 	'ARM',
 	'METAL',
-	'LEVEL2',
+    'LEVEL2',
+    'SELECTABLE',
 	
 	
 	

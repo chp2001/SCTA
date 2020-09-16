@@ -30,7 +30,7 @@ ARMDECOM = Class(TAconstructor) {
 	end,
 
 
-	Aim = function(self)
+	Aim = function(self, target)
 		local selfPosition = self:GetPosition('Torso') 
 		local targetPosition = target:GetPosition()
 			

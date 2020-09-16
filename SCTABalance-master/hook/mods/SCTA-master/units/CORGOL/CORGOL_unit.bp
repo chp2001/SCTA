@@ -15,7 +15,7 @@ UnitBlueprint {
 
     'CORE',
     'VEHICLE',	#'TANK' in TA
-'LEVEL3',
+'LEVEL2',
 
 
 

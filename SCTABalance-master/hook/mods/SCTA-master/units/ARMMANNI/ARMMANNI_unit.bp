@@ -5,24 +5,6 @@
 
 UnitBlueprint {
     Merge = true,
-    Categories = {
-        'SELECTABLE',
-        'TECH2',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
-	'TEXTUREANIM',
-        'OVERLAYDIRECTFIRE',
-        'ARM',
-        'VEHICLE',	
-	'LEVEL3',
-	
-	
-	
-	
-    },
     Defense = {
         ArmorType = 'Normal',
         Health = 2500,
@@ -36,34 +18,7 @@ UnitBlueprint {
     Footprint = {
 	SizeX = 3,
 	SizeZ = 3,
-	MaxSlope = 0.75,
-	MaxWaterDepth = 0,
     },
-    General = {
-        Category = 'Direct Fire',
-        Classification = 'RULEUC_MilitaryVehicle',
-        CommandCaps = {
-            RULEUCC_Attack = true,
-            RULEUCC_CallTransport = true,
-            RULEUCC_Guard = true,
-            RULEUCC_Move = true,
-            RULEUCC_Patrol = true,
-            RULEUCC_RetaliateToggle = true,
-            RULEUCC_Stop = true,
-        },
-        FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Advanced',
-        UnitName = 'Penetrator',
-    },
-    Intel = {
-        VisionRadius = 12,
-    },
-    Interface = {
-        HelpText = 'Mobile Energy Weapon',
-    },
-    LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
-    LifeBarSize = 2,
     Physics = {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
@@ -82,7 +37,6 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 2.35,
     SizeZ = 3,
-    StrategicIconName = 'icon_land2_artillery',
     StrategicIconSortPriority = 0,
     Weapon = {
         {

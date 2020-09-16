@@ -1,7 +1,7 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT2AIR',
+        'BUILTBYT1AIR',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -33,10 +33,10 @@ UnitBlueprint {
             MaxHealth = 3900,
         },
     Economy = {
-        BuildCostEnergy = 10200,
+        BuildCostEnergy = 40000,
+        BuildCostMass = 4000, 
         BuildableCategory = {
         'AIR LEVEL2 ARM',
-        'AIR LEVEL3 ARM',
 	    'AIR LEVEL1 ARM', 
         },
     },

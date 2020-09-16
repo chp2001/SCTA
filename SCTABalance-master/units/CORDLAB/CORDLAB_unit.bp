@@ -63,7 +63,7 @@ UnitBlueprint {
 	DestructionEffects = {
 		DestructionEmitters = {
 			{
-				EmitterBone = {'lower1','lower2','a','CORDLAB'},
+				EmitterBone = {'lower1','lower2','a','CORLAB'},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
@@ -94,10 +94,10 @@ UnitBlueprint {
         UniformScale = 0.32,
     },
     Economy = {
-        BuildCostEnergy = 9000,
-        BuildCostMass = 1972, 
+        BuildCostEnergy = 33000,
+        BuildCostMass = 3700, 
         BuildTime = 14000,
-    BuildRate = 100,
+    BuildRate = 160,
     DifferentialUpgradeCostCalculation = true,
         BuildableCategory = {
             'KBOT LEVEL2 CORE',

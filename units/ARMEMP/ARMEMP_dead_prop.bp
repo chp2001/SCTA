@@ -11,9 +11,10 @@ PropBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 230,
+                            LODCutoff = 230,
 		    NormalName = '/mods/SCTA-master/meshes/wrecks/Wreck_NormalsTS.dds',
 		    SpecularName = '/mods/SCTA-master/meshes/wrecks/Wreck_SpecTeam.dds',
+            AlbedoName = '/mods/SCTA-master/meshes/wrecks/Wreck_Albedo.dds',
 		    MeshName = 'ARMEMP_dead_lod0.scm',
                     ShaderName = 'Unit', 
                 },

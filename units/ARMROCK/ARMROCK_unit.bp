@@ -193,6 +193,7 @@ UnitBlueprint {
             RateOfFire = 0.25,
             TargetCheckInterval = 1,
             TargetPriorities = {
+                'LAND',
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',

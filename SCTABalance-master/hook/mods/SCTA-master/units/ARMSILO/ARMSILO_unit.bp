@@ -13,7 +13,6 @@ UnitBlueprint {
         BuildTime = 600000,
     },
   Defense = {
-        ArmorType = 'Structure',
         Health = 30000,
         MaxHealth = 30000,
     },

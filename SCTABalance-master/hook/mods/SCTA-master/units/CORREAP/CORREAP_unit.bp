@@ -6,13 +6,13 @@
 UnitBlueprint {
     Merge = true, 
     Defense = {
-        Health = 2400,
-        MaxHealth = 2400,
+        Health = 3200,
+        MaxHealth = 3200,
     },
     Economy = {
         BuildCostEnergy = 5000,
         BuildCostMass = 500,
-        BuildTime = 9200,
+        BuildTime = 4600,
     },
     Footprint = {
 	SizeX = 1,

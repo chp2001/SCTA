@@ -5,6 +5,10 @@
 
 UnitBlueprint {
     Merge = true, 
+    Defense = {
+        Health = 3800,
+        MaxHealth = 3800,
+    },
     Weapon = {
         {
             Audio = {

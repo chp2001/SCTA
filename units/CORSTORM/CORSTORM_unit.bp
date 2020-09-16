@@ -199,6 +199,7 @@ UnitBlueprint {
             RateOfFire = 0.4,
             TargetCheckInterval = 1,
             TargetPriorities = {
+                'LAND',
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
@@ -214,8 +215,6 @@ UnitBlueprint {
             Turreted = true,
             EnergyDrainPerSecond = 5,
             EnergyRequired = 5,
-            
-            WeaponCategory = 'Direct Fire',
         },
         { #BIG_UNITEX
             Damage = 50,

@@ -5,6 +5,10 @@ UnitBlueprint {
         BuildCostMass = 400,
         BuildTime = 5000,
     },
+    Defense = {
+        Health = 2200,
+        MaxHealth = 2200,
+    },
     Footprint = {
         SizeX = 1,
         SizeZ = 1,

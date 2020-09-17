@@ -57,7 +57,7 @@ ProjectileBlueprint {
     Physics = {
         DestroyOnWater = true,
         RealisticOrdinance = true,
-        Lifetime = 30,
+        Lifetime = 10,
         LeadTarget = false,
 	UseGravity = true,
         VelocityAlign = true,

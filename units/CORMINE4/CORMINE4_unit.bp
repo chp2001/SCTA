@@ -75,9 +75,9 @@ UnitBlueprint {
         UniformScale = 0.16,
     },
     Economy = {
-        BuildCostEnergy = 8400,
-        BuildCostMass = 800,
-        BuildTime = 4500,
+        BuildCostEnergy = 3600,
+        BuildCostMass = 1100,
+        BuildTime = 4000,
         MaintenanceConsumptionPerSecondEnergy = 10,
     },
     Footprint = {
@@ -114,6 +114,7 @@ UnitBlueprint {
     SelectionSizeX = 0.5,
     SelectionSizeZ = 0.5,
     SelectionThickness = 0.25,
+    SelectionCenterOffsetZ = 0.05,
     SizeX = 1,
     SizeZ = 1,
     StrategicIconName = 'icon_land2_bomb', --'icon_structure2_bomb',
@@ -142,7 +143,7 @@ UnitBlueprint {
      WeaponCategory = 'DirectFire',
             FiringTolerance = 360,
             Label = 'ARMMINE4',
-            MaxRadius = 8,
+            MaxRadius = 6,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
 	    MuzzleVelocity = 1,
@@ -168,12 +169,12 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
         },
         { #ARMMINE4
-            Damage = 700,
+            Damage = 450,
             DamageFriendly = true,
             DamageRadius = 6,
             DamageType = 'Normal',
             DummyWeapon = true,
-	    EdgeEffectiveness = 0.05,
+	    EdgeEffectiveness = 0.1,
             Label = 'DeathWeapon',
         },
         { #ARMMINE4
@@ -182,9 +183,8 @@ UnitBlueprint {
             DamageFriendly = true,
             DummyWeapon = true,
             DamageType = 'Normal',
-	    EdgeEffectiveness = 0.05,
+	    EdgeEffectiveness = 0.1,
             Label = 'SuicideWeapon',
         },
-
     },
 }

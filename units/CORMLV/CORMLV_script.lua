@@ -14,11 +14,12 @@ CORMLV = Class(TAconstructor) {
 			Tires2 = CreateRotator(self, 'Wheel2', 'x', nil, 0, 0, 0),
 			door1 = CreateRotator(self, 'Door1', 'z', nil, 0, 0, 0),
 			door2 = CreateRotator(self, 'Door2', 'z', nil, 0, 0, 0),
-			post = CreateRotator(self, 'Beam', 'y', nil, 0, 0, 0),
+			post = CreateRotator(self, 'Stand', 'y', nil, 0, 0, 0),
 			nanogun = CreateRotator(self, 'Muzzle', 'x', nil, 0, 0, 0),
 		}
 		self.Sliders = {
-			plate = CreateSlider(self, 'Beam'),
+			gun = CreateSlider(self, 'Beam'),
+			plate = CreateSlider(self, 'Turret'),
 			door1 = CreateSlider(self, 'Door1'),
 			door2 = CreateSlider(self, 'Door2'),
 		}
@@ -67,8 +68,16 @@ CORMLV = Class(TAconstructor) {
 		WaitSeconds(0.45)
 
 		--MOVE plate to y-axis <2.95> SPEED <6.00>;
-		self.Sliders.plate:SetGoal(0,6,0)
+		self.Sliders.plate:SetGoal(0,5,0)
 		self.Sliders.plate:SetSpeed(3)
+
+		--SLEEP <471>;
+		WaitSeconds(0.45)
+
+		
+		--MOVE plate to y-axis <2.95> SPEED <6.00>;
+		self.Sliders.gun:SetGoal(0,2,0)
+		self.Sliders.gun:SetSpeed(3)
 
 		--SLEEP <471>;
 		WaitSeconds(0.45)
@@ -88,7 +97,7 @@ CORMLV = Class(TAconstructor) {
 		WaitFor(self.Spinners.post)
 
 		local distance = VDist2(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z)
-		selfPosition = self:GetPosition('Turret') 
+		selfPosition = self:GetPosition('Beam') 
 
 		self.Spinners.nanogun:SetGoal(TAutils.GetAngle(0, selfPosition.y, distance, targetPosition.y) + 270)
 		self.Spinners.nanogun:SetSpeed(160.03)
@@ -105,6 +114,15 @@ CORMLV = Class(TAconstructor) {
 		--TURN gun to y-axis <0> SPEED <160.03>;
 		self.Spinners.nanogun:SetGoal(0)
 		self.Spinners.nanogun:SetSpeed(160.03)
+
+		--SLEEP <471>;
+		WaitSeconds(0.45)
+
+		self.Sliders.gun:SetGoal(0,0,0)
+		self.Sliders.gun:SetSpeed(3)
+
+		--SLEEP <471>;
+		WaitSeconds(0.45)
 
 		--MOVE plate to y-axis <0> SPEED <6.00>;
 		self.Sliders.plate:SetGoal(0,0,0)

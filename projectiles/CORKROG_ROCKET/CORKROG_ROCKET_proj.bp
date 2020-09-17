@@ -65,7 +65,7 @@ ProjectileBlueprint {
         DestroyOnWater = true,
 	InitialSpeed = 15.625,
         LeadTarget = false,
-        Lifetime = 100,
+        Lifetime = 25,
         MaxSpeed = 34.375,
         TrackTarget = false,
         TurnRate = 346,

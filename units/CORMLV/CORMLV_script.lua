@@ -10,17 +10,17 @@ CORMLV = Class(TAconstructor) {
 
 	OnCreate = function(self)
 		self.Spinners = {
-			Tires1 = CreateRotator(self, 'Tires1', 'x', nil, 0, 0, 0),
-			Tires2 = CreateRotator(self, 'Tires2', 'x', nil, 0, 0, 0),
-			door1 = CreateRotator(self, 'door1', 'z', nil, 0, 0, 0),
-			door2 = CreateRotator(self, 'door2', 'z', nil, 0, 0, 0),
-			post = CreateRotator(self, 'post', 'y', nil, 0, 0, 0),
-			nanogun = CreateRotator(self, 'nanogun', 'x', nil, 0, 0, 0),
+			Tires1 = CreateRotator(self, 'Wheel1', 'x', nil, 0, 0, 0),
+			Tires2 = CreateRotator(self, 'Wheel2', 'x', nil, 0, 0, 0),
+			door1 = CreateRotator(self, 'Door1', 'z', nil, 0, 0, 0),
+			door2 = CreateRotator(self, 'Door2', 'z', nil, 0, 0, 0),
+			post = CreateRotator(self, 'Beam', 'y', nil, 0, 0, 0),
+			nanogun = CreateRotator(self, 'Muzzle', 'x', nil, 0, 0, 0),
 		}
 		self.Sliders = {
-			plate = CreateSlider(self, 'plate'),
-			door1 = CreateSlider(self, 'door1'),
-			door2 = CreateSlider(self, 'door2'),
+			plate = CreateSlider(self, 'Beam'),
+			door1 = CreateSlider(self, 'Door1'),
+			door2 = CreateSlider(self, 'Door2'),
 		}
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
@@ -56,19 +56,19 @@ CORMLV = Class(TAconstructor) {
 		WaitSeconds(0.45)
 
 		--MOVE door1 to y-axis <-1.85> SPEED <3.00>;
-		self.Sliders.door1:SetGoal(-1.9,0,0)
+		self.Sliders.door1:SetGoal(-4,0,0)
 		self.Sliders.door1:SetSpeed(3.5)
 
 		--MOVE door2 to y-axis <-1.95> SPEED <4.00>;
-		self.Sliders.door2:SetGoal(1.9,0,0)
+		self.Sliders.door2:SetGoal(4,0,0)
 		self.Sliders.door2:SetSpeed(3.5)
 
 		--SLEEP <471>;
 		WaitSeconds(0.45)
 
 		--MOVE plate to y-axis <2.95> SPEED <6.00>;
-		self.Sliders.plate:SetGoal(0,2.95,0)
-		self.Sliders.plate:SetSpeed(6)
+		self.Sliders.plate:SetGoal(0,6,0)
+		self.Sliders.plate:SetSpeed(3)
 
 		--SLEEP <471>;
 		WaitSeconds(0.45)
@@ -79,7 +79,7 @@ CORMLV = Class(TAconstructor) {
 	end,
 
 	Aim = function(self,target)
-		local selfPosition = self:GetPosition('post') 
+		local selfPosition = self:GetPosition('Muzzle') 
 		local targetPosition = target:GetPosition()
 			
 		--TURN gun to y-axis buildheading SPEED <160.03>;
@@ -88,7 +88,7 @@ CORMLV = Class(TAconstructor) {
 		WaitFor(self.Spinners.post)
 
 		local distance = VDist2(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z)
-		selfPosition = self:GetPosition('Muzzle') 
+		selfPosition = self:GetPosition('Turret') 
 
 		self.Spinners.nanogun:SetGoal(TAutils.GetAngle(0, selfPosition.y, distance, targetPosition.y) + 270)
 		self.Spinners.nanogun:SetSpeed(160.03)

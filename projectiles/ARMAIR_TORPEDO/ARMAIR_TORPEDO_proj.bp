@@ -54,7 +54,7 @@ ProjectileBlueprint {
     Physics = {
         DestroyOnWater = false,
         InitialSpeed = 6.25,
-        Lifetime = 30,
+        Lifetime = 10,
 	StayUpright = true,
         StayUnderwater = true,
         TurnRate = 3600,

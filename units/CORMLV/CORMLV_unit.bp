@@ -125,15 +125,15 @@ UnitBlueprint {
         Classification = 'RULEUC_Engineer',
         CommandCaps = {
             RULEUCC_CallTransport = true,
-            RULEUCC_Guard = true,
+            RULEUCC_Guard = false,
             RULEUCC_Move = true,
             RULEUCC_Patrol = true,
             RULEUCC_Pause = true,
             RULEUCC_Stop = true,
         },
-        FactionName = 'ARM',
+        FactionName = 'CORE',
         TechLevel = 'RULEUTL_Basic',
-	UnitName = 'Podger',
+	UnitName = 'Spoiler',
     },
     Intel = {
         VisionRadius = 10,

@@ -143,8 +143,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 1, #Doubles up with death, so death damage subtracted
-	    DamageRadius = 8.59375,
+            Damage = 10, #Doubles up with death, so death damage subtracted
+	    DamageRadius = 6,
             DamageType = 'Normal',
             DisplayName = 'CRAWL_BLAST',
             FireTargetLayerCapsTable = {
@@ -180,17 +180,17 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
         },
         { #CRAWL_BLASTSML
-            Damage = 1200,
+            Damage = 1500,
             DamageFriendly = true,
-            DamageRadius = 8.59375,
+            DamageRadius = 6,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
         { #CRAWL_BLAST
-            Damage = 2500,
+            Damage = 50,
                         DamageFriendly = true,
-            DamageRadius = 9,
+            DamageRadius = 6,
             DummyWeapon = true,
             DamageType = 'Normal',
             Label = 'SuicideWeapon',

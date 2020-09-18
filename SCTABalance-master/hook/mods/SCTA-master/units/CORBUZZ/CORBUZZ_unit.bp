@@ -18,7 +18,7 @@ UnitBlueprint {
     },
     SelectionThickness = 0.3,
     SelectionSizeX = 10,
-    SelectionCenterOffsetZ = 0,
+    SelectionCenterOffsetZ = -0.1,
     SelectionSizeZ = 10,
     SizeX = 12,
     SizeY = 20,

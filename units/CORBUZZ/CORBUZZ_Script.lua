@@ -1,8 +1,8 @@
 local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
-local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
+local TABuzz = import('/mods/SCTA-master/lua/TAweapon.lua').TABuzz
 
 CORBUZZ = Class(TAunit) {
-	currentBarrel = 0,
+	currentBarrel = 1,
 
 	OnCreate = function(self)
 		TAunit.OnCreate(self)
@@ -15,23 +15,23 @@ CORBUZZ = Class(TAunit) {
 	end,
 
 	Weapons = {
-		CORBUZZ_WEAPON = Class(TAweapon) {
+		CORBUZZ_WEAPON = Class(TABuzz) {
 			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-				self.unit.currentBarrel = self.unit.currentBarrel - 1
-				if self.unit.currentBarrel == 1 then
-					self.unit.currentBarrel = 6
-				end
+				TABuzz.OnWeaponFired(self)
+				---LOG(_VERSION)
+				self.unit.currentBarrel = math.mod(self.unit.currentBarrel, 6) + 1
+				---LOG(self.unit.currentBarrel)
 				self.unit:CreateProjectileAtBone('/mods/SCTA-master/effects/entities/Shells/ARMVULC_Shell/ARMVULC_Shell_proj.bp','Turret')
 			end,
 
-    			PlayFxRackReloadSequence = function(self)
+				PlayFxRackReloadSequence = function(self)
+				local goal = 360 - 60 * self.unit.currentBarrel
 				--TURN spindle to z-axis <90> SPEED <400.09>; (for each turn)
-				self.unit.Spinners.Spindle:SetGoal(-45 * (self.unit.currentBarrel - 1))
-				self.unit.Spinners.Spindle:SetSpeed(480)
-
-				TAweapon.PlayFxRackReloadSequence(self)
+				self.unit.Spinners.Spindle:SetGoal(-60 * (self.unit.currentBarrel) + 15)
+				---LOG(goal)
+				self.unit.Spinners.Spindle:SetSpeed(120)
+				WaitSeconds(0.5)
+				TABuzz.PlayFxRackReloadSequence(self)
 			end,
 		},
 	},

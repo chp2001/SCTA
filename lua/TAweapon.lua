@@ -351,6 +351,12 @@ TAweapon = Class(DefaultWeapon) {
     end,
 }
 
+TABuzz = Class (TAweapon) {
+    OnCreate = function(self)
+        TAweapon.OnCreate(self)
+    end,
+}
+
 TACommanderDeathWeapon = Class(BareBonesWeapon) {
     OnCreate = function(self)
         BareBonesWeapon.OnCreate(self)

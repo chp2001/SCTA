@@ -351,19 +351,25 @@ TAweapon = Class(DefaultWeapon) {
     end,
 }
 
+TABuzz = Class (TAweapon) {
+    OnCreate = function(self)
+        TAweapon.OnCreate(self)
+    end,
+}
+
 TACommanderDeathWeapon = Class(BareBonesWeapon) {
     OnCreate = function(self)
         BareBonesWeapon.OnCreate(self)
 
         local myBlueprint = self:GetBlueprint()
         self.Data = {
-            NukeOuterRingDamage = myBlueprint.NukeOuterRingDamage or 10,
-            NukeOuterRingRadius = myBlueprint.NukeOuterRingRadius or 40,
+            NukeOuterRingDamage = myBlueprint.NukeOuterRingDamage or 250,
+            NukeOuterRingRadius = myBlueprint.NukeOuterRingRadius or 20,
             NukeOuterRingTicks = myBlueprint.NukeOuterRingTicks or 20,
             NukeOuterRingTotalTime = myBlueprint.NukeOuterRingTotalTime or 10,
 
-            NukeInnerRingDamage = myBlueprint.NukeInnerRingDamage or 1000,
-            NukeInnerRingRadius = myBlueprint.NukeInnerRingRadius or 30,
+            NukeInnerRingDamage = myBlueprint.NukeInnerRingDamage or 500,
+            NukeInnerRingRadius = myBlueprint.NukeInnerRingRadius or 15,
             NukeInnerRingTicks = myBlueprint.NukeInnerRingTicks or 24,
             NukeInnerRingTotalTime = myBlueprint.NukeInnerRingTotalTime or 24,
         }

@@ -75,10 +75,10 @@ UnitBlueprint {
         UniformScale = 0.16,
     },
     Economy = {
-        BuildCostEnergy = 532,
-        BuildCostMass = 20,
-        BuildTime = 665,
-        MaintenanceConsumptionPerSecondEnergy = 5,
+        BuildCostEnergy = 1200,
+        BuildCostMass = 200,
+        BuildTime = 3000,
+        MaintenanceConsumptionPerSecondEnergy = 3,
     },
     Footprint = {
 	SizeX = 1,
@@ -130,8 +130,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 0, #Doubles up with death, so death damage subtracted
-	    DamageRadius = 10,
+            Damage = 10, #Doubles up with death, so death damage subtracted
+	    DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'ARMMINE1',
 	    EdgeEffectiveness = 0.1,
@@ -168,18 +168,18 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
         },
         { #ARMMINE1
-            Damage = 400,
+            Damage = 200,
             DamageFriendly = true,
-            DamageRadius = 10,
+            DamageRadius = 4,
             DamageType = 'Normal',
             DummyWeapon = true,
 	    EdgeEffectiveness = 0.1,
             Label = 'DeathWeapon',
         },
         { #ARMMINE1
-            Damage = 400,
+            Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 10,
+            DamageRadius = 4,
             DummyWeapon = true,
             DamageType = 'Normal',
 	    EdgeEffectiveness = 0.1,

@@ -125,7 +125,7 @@ UnitBlueprint {
         Classification = 'RULEUC_Engineer',
         CommandCaps = {
             RULEUCC_CallTransport = true,
-            RULEUCC_Guard = true,
+            RULEUCC_Guard = false,
             RULEUCC_Move = true,
             RULEUCC_Patrol = true,
             RULEUCC_Pause = true,

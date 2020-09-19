@@ -157,44 +157,44 @@ UnitBlueprint {
             EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 250,
             EnergyRequired = 1000, --might be to high no rapids
-            
+            UseFiringSolutionInsteadOfAimBone = true,
             ProjectileId = '/mods/SCTA-master/projectiles/CORBUZZ_WEAPON/CORBUZZ_WEAPON_proj.bp',
                 RackBones = {
                     {
                         MuzzleBones = {
                             'flare',
                         },
-                        RackBone = 'muzzle1',
+                        RackBone = 'gun1',
                     },
                     {
                         MuzzleBones = {
                             'flare',
                         },
-                        RackBone = 'muzzle2',
+                        RackBone = 'gun2',
                     },
                     {
                         MuzzleBones = {
                             'flare',
                         },
-                        RackBone = 'muzzle3',
+                        RackBone = 'gun3',
                     },
                     {
                         MuzzleBones = {
                             'flare',
                         },
-                        RackBone = 'muzzle4',
+                        RackBone = 'gun4',
                     },
                     {
                         MuzzleBones = {
                             'flare',
                         },
-                        RackBone = 'muzzle5',
+                        RackBone = 'gun5',
                     },
                     {
                         MuzzleBones = {
                             'flare',
                         },
-                        RackBone = 'muzzle6',
+                        RackBone = 'gun6',
                     },
                 },
             RackRecoilDistance = 0,
@@ -209,7 +209,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'flare',
+            TurretBoneMuzzle = 'Spindle',
             TurretBonePitch = 'Spindle',
             TurretBoneYaw = 'Turret',
             TurretPitch = 0,

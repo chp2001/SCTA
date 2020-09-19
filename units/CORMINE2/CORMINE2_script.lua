@@ -10,7 +10,7 @@ CORMINE2 = Class(TAunit) {
 	attacked = false,
 
 	Weapons = {
-		CORMINE2 = Class(Projectile) {
+		ARMMINE2 = Class(Projectile) {
 			OnWeaponFired = function(self)
 				self.unit.attacked = true
 				self.unit:Kill()

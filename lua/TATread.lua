@@ -82,4 +82,8 @@ CreateTreadsThread = function(self, treads, type )
         WaitSeconds(interval)
     end
 end,
+
+OnKilled = function(self, instigator, type, overkillRatio)
+    TAunit.OnKilled(self, instigator, type, overkillRatio)
+end,
 }

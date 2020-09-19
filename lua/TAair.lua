@@ -60,6 +60,22 @@ TAair = Class(TAunit)
         self:SetAccMult(1)
         self:SetTurnMult(1)
 	end,
+
+	DoSelfDestruct = function(self)
+		self.DoSelfDestruct(self)
+		    if TAunit:BeenDestroyed() or TAunit.Dead then
+		        return
+		    end
+		
+		    if EntityCategoryContains(categories.TRANSPORTATION) then
+		        local cargo = TAunit:GetCargo()
+		        for k, v in cargo do
+		            if TAunit ~= v then
+		                OnKilled(v)
+		            end
+		        end
+			end
+		end,
 }
 
 TypeClass = TAair

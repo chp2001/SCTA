@@ -53,8 +53,8 @@ ProjectileBlueprint {
     Description = 'ARM Nuclear Missile',
     DesiredShooterCap = 1,
     Economy = {
-        BuildCostEnergy = 1500000,
-        BuildCostMass = 24000,
+        BuildCostEnergy = 250000,
+        BuildCostMass = 1200,
         BuildTime = 600000,
     },
     General = {

@@ -154,7 +154,7 @@ UnitBlueprint {
      WeaponCategory = 'DirectFire',
             FiringTolerance = 360,
             Label = 'CRAWL_BLAST',
-            MaxRadius = 5,
+            MaxRadius = 1,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
 	    MuzzleVelocity = 1,
@@ -188,7 +188,7 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         },
         { #CRAWL_BLAST
-            Damage = 50,
+            Damage = 1500,
                         DamageFriendly = true,
             DamageRadius = 6,
             DummyWeapon = true,

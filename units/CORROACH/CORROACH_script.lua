@@ -5,27 +5,21 @@
 
 
 local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
-local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
-
+local TABomb = import('/mods/SCTA-master/lua/TAweapon.lua').TABomb
+local TAKami = import('/mods/SCTA-master/lua/TAweapon.lua').TAKami
 
 CORROACH = Class(TAWalking) {
 	attacked = false,
 
 	Weapons = {
-		CRAWL_BLAST = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				self.unit.attacked = true
-				self.unit:Kill()
-			end,
+			DeathWeapon = Class(TABomb) {},
+			Suicide = Class(TAKami) {        
+				OnFire = function(self)			
+					#disable death weapon
+					self.unit:SetDeathWeaponEnabled(false)
+					TAKami.OnFire(self)
+				end,
+			},
 		},
-	},
-
-	OnKilled = function(self, instigator, type, overkillRatio)
-		if self.attacked == true then
-			instigator = self
-		end
-		TAWalking.OnKilled(self, instigator, type, overkillRatio)
-		
-	end,
 }
 TypeClass = CORROACH

@@ -64,6 +64,23 @@ UnitBlueprint {
         Abilities = {
             'Kamikazi',
         },
+        DestructionEffects = {
+            DefaultFlamingProjectileCountMin = 0,
+            DefaultFlamingProjectileCountMax = 0,
+            DefaultProjectileCountMin = 0,
+            DefaultProjectileCountMax = 0,
+            FlashTime = 0,
+            FlashSize = 0,
+            DestructionEmitters = {
+                {
+                    EmitterBone = {'ARMVADER'},
+                    EmitterBlueprint = {
+                        '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
+                    },
+                    EmitterSize = 1,
+        },
+    },
+},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -143,58 +160,25 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 10, #Doubles up with death, so death damage subtracted
-	    DamageRadius = 6,
+            Damage = 1500, #Doubles up with death, so death damage subtracted
+	    DamageRadius = 3,
             DamageType = 'Normal',
-            DisplayName = 'CRAWL_BLAST',
+            DisplayName = 'Suicide',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
-            FiringTolerance = 360,
-            Label = 'CRAWL_BLAST',
-            MaxRadius = 1,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 1,
+            FiringTolerance = 999999,
+            Label = 'Suicide',
+            MaxRadius = 3,
 	    ProjectileId = '/mods/SCTA-master/projectiles/CRAWL_BLAST/CRAWL_BLAST_proj.bp',
-            RackBones = {
-                {
-                    MuzzleBones = {
-                        'Muzzle',
-                    },
-                    RackBone = 'Muzzle',
-                },
-            },
-            RackRecoilDistance = 0,
-            RackReloadTimeout = 0,
-            RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 0,
-            RackSalvoSize = 1,
-            RateOfFire = 1,
+            RateOfFire = 99999,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-        },
-        { #CRAWL_BLASTSML
-            Damage = 1500,
-            DamageFriendly = true,
-            DamageRadius = 6,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
-        },
-        { #CRAWL_BLAST
-            Damage = 1500,
-                        DamageFriendly = true,
-            DamageRadius = 6,
-            DummyWeapon = true,
-            DamageType = 'Normal',
-            Label = 'SuicideWeapon',
-        },
-
-    },
+        },   
+     },
 }

@@ -1,8 +1,9 @@
 local WeaponFile = import('/lua/sim/DefaultWeapons.lua')
 local DefaultWeapon = WeaponFile.DefaultProjectileWeapon
+local KamikazeWeapon = WeaponFile.KamikazeWeapon
 local BareBonesWeapon = WeaponFile.BareBonesWeapon
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
-
+local EffectTemplate = import('/lua/EffectTemplates.lua')
 
 TAweapon = Class(DefaultWeapon) {
 
@@ -351,10 +352,45 @@ TAweapon = Class(DefaultWeapon) {
     end,
 }
 
-TABuzz = Class (TAweapon) {
+TABuzz = Class(TAweapon) {
     OnCreate = function(self)
         TAweapon.OnCreate(self)
     end,
+}
+
+TAKami = Class(KamikazeWeapon){
+    FxMuzzleFlash = {
+        '/effects/emitters/default_muzzle_flash_01_emit.bp',
+        '/effects/emitters/default_muzzle_flash_02_emit.bp',
+    },
+
+    OnFire = function(self)
+		local army = self.unit:GetArmy()
+		KamikazeWeapon.OnFire(self)
+    end,
+}
+
+TABomb = Class(BareBonesWeapon) {
+    FxMuzzleFlash = {
+        '/effects/emitters/default_muzzle_flash_01_emit.bp',
+        '/effects/emitters/default_muzzle_flash_02_emit.bp',
+    },
+
+    OnCreate = function(self)
+        BareBonesWeapon.OnCreate(self)
+        self:SetWeaponEnabled(false)   
+    end,
+    
+
+    OnFire = function(self)
+    end,
+    
+    Fire = function(self)
+		local army = self.unit:GetArmy()
+		local myBlueprint = self:GetBlueprint()
+        DamageArea(self.unit, self.unit:GetPosition(), myBlueprint.DamageRadius, myBlueprint.Damage, myBlueprint.DamageType or 'Normal', myBlueprint.DamageFriendly or false)
+    end,    
+
 }
 
 TACommanderDeathWeapon = Class(BareBonesWeapon) {

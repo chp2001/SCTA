@@ -180,6 +180,13 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
         },
-
+        { #CRAWL_BLAST
+            Damage = 2500,
+            DamageRadius = 8.59375,
+            DummyWeapon = true,
+            DamageType = 'Normal',
+            DamageFriendly = true,
+            Label = 'SuicideWeapon',
+        },
     },
 }

@@ -162,6 +162,7 @@ UnitBlueprint {
 	    DamageFriendly = true,
             Damage = 1500, #Doubles up with death, so death damage subtracted
 	    DamageRadius = 3,
+            FireOnSelfDestruct = true,
             DamageType = 'Normal',
             DisplayName = 'Suicide',
             FireTargetLayerCapsTable = {

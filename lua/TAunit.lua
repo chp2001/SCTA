@@ -23,6 +23,75 @@ TAunit = Class(Unit)
 	DestructionExplosionWaitDelayMin = 0,
 	DestructionExplosionWaitDelayMax = 0,
 
+    -- experimental hack to enable roach bombing
+    -- we fudge the units weapon list to include those of any transported units
+
+    -- iterate through all the weapons of all transported units
+    CargoWeaponIterator  = function(self)
+        local cargo = nil
+        pcall(function() cargo = self:GetCargo() end)
+
+        local nCargo = 1
+        local nCargoWeapon = 0
+
+        return function ()
+            if not cargo or table.getn(cargo)==0 then
+                return
+            end
+
+            repeat
+                nCargoWeapon = nCargoWeapon + 1
+                if nCargoWeapon > Unit.GetWeaponCount(cargo[nCargo]) then
+                    nCargo = nCargo + 1
+                    nCargoWeapon = 1
+
+                    if nCargo > table.getn(cargo) then
+                        return
+                    end
+                end
+            until Unit.GetWeaponCount(cargo[nCargo]) > 0
+
+            return Unit.GetWeapon(cargo[nCargo], nCargoWeapon)
+        end
+    end,
+
+    -- fudge weapon count to include those of transported units
+    GetWeaponCount = function(self)
+        --LOG('GetWeaponCount:' .. self:GetBlueprint().General.UnitName)
+        local trueWeaponCount = Unit.GetWeaponCount(self)
+        if EntityCategoryContains(categories.TRANSPORTATION, self) then
+            cargoWeaponCount = 0
+            for cargoWeapon in self:CargoWeaponIterator() do
+                cargoWeaponCount = cargoWeaponCount + 1
+            end
+            --LOG('  trueWeaponCount=' .. trueWeaponCount .. ', cargoWeaponCount=' .. cargoWeaponCount)
+            return trueWeaponCount + cargoWeaponCount
+        else
+            --LOG('  trueWeaponCount=' .. trueWeaponCount)
+            return trueWeaponCount
+        end
+    end,
+
+    -- fudge weapon list to include those of transported units
+    GetWeapon = function(self, i)
+        --LOG('GetWeapon:' .. self:GetBlueprint().General.UnitName .. ", i=" .. i)
+
+        cargo = nil
+        pcall(function() cargo = self:GetCargo() end)
+
+        weaponCount = Unit.GetWeaponCount(self)
+        if i <= weaponCount then
+            return Unit.GetWeapon(self,i)
+        else
+            for cargoWeapon in self:CargoWeaponIterator() do
+                weaponCount = weaponCount + 1
+                if weaponCount == i then
+                    return cargoWeapon
+                end
+            end
+        end
+    end,
+
 	OnCreate = function(self)
         Unit.OnCreate(self)
 		self:SetFireState(2)

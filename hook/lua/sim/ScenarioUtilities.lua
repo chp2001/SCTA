@@ -40,23 +40,23 @@ function doGateSpawn(strArmy, createCommander)
 				end
 			end
 		
-		end
-		local focusarmy = GetFocusArmy()
+		--end
+		--local focusarmy = GetFocusArmy()
 		---LOG('*DEBUG----------------------: InitializeArmies, army = ', string.sub(strArmy, 6, -1))
-		for aK, aV in pairs(GetArmyBrain(strArmy)) do
-			LOG(aK,aV)
-		end
-		if(focusarmy == tonumber(string.sub(strArmy, 6, -1))) then
-			local cam = import('/lua/simcamera.lua').SimCamera('WorldCamera')
-			local position = cdrUnit:GetPosition()
-			local heading = cdrUnit:GetHeading()
-			local player = focusarmy
-			local marker = {
-				orientation = VECTOR3( heading + 3.14, 1.2, 0 ),
-				position = { position[1] + 0, position[2] + 1, position[3] + 0 },
-				zoom = FLOAT( 65 ),
-			}
-			cam:MoveToMarker(marker, player)
+		--for aK, aV in pairs(GetArmyBrain(strArmy)) do
+			--LOG(aK,aV)
+		--end
+		---if(focusarmy == tonumber(string.sub(strArmy, 6, -1))) then
+			--local cam = import('/lua/simcamera.lua').SimCamera('WorldCamera')
+			--local position = cdrUnit:GetPosition()
+			--local heading = cdrUnit:GetHeading()
+			--local player = focusarmy
+			--local marker = {
+				--orientation = VECTOR3( heading + 3.14, 1.2, 0 ),
+				--position = { position[1] + 0, position[2] + 1, position[3] + 0 },
+				--zoom = FLOAT( 65 ),
+			--}
+			--cam:MoveToMarker(marker, player)
 		end
     end
     return tblGroup , cdrUnit

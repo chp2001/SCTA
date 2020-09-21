@@ -38,7 +38,6 @@ TAunit = Class(Unit)
             for _,unit in cargo or { } do
                 --LOG('  firing cargo self-d weapons:' .. unit:GetBlueprint().General.UnitName)
                 FireSelfdestructWeapons(unit)
-                break
             end
         end
     end,

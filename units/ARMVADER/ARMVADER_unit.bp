@@ -146,6 +146,7 @@ UnitBlueprint {
     SelectionThickness = 0.25,
     SizeX = 1,
     SizeZ = 1,
+    SizeY = 1, 
     StrategicIconName = 'icon_land2_bomb',
     StrategicIconSortPriority = 0,
     Weapon = {

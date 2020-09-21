@@ -6,7 +6,7 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local Game = import('/lua/game.lua')
 local util = import('/lua/utilities.lua')
 local debrisCat = import('/mods/SCTA-master/lua/TAdebrisCategories.lua')
-
+local FireSelfdestructWeapons = import('/lua/selfdestruct.lua').FireSelfdestructWeapons
 
 TAunit = Class(Unit) 
 {
@@ -23,71 +23,22 @@ TAunit = Class(Unit)
 	DestructionExplosionWaitDelayMin = 0,
 	DestructionExplosionWaitDelayMax = 0,
 
-    -- experimental hack to enable roach bombing
-    -- we fudge the units weapon list to include those of any transported units
-
-    -- iterate through all the weapons of all transported units
-    CargoWeaponIterator  = function(self)
-        local cargo = nil
-        pcall(function() cargo = self:GetCargo() end)
-
-        local nCargo = 1
-        local nCargoWeapon = 0
-
-        return function ()
-            if not cargo or table.getn(cargo)==0 then
-                return
-            end
-
-            repeat
-                nCargoWeapon = nCargoWeapon + 1
-                if nCargoWeapon > Unit.GetWeaponCount(cargo[nCargo]) then
-                    nCargo = nCargo + 1
-                    nCargoWeapon = 1
-
-                    if nCargo > table.getn(cargo) then
-                        return
-                    end
-                end
-            until Unit.GetWeaponCount(cargo[nCargo]) > 0
-
-            return Unit.GetWeapon(cargo[nCargo], nCargoWeapon)
+    Kill = function(self)
+        if self.Dead then
+            return
         end
-    end,
+        --LOG('TAUnit.Kill ' .. self:GetBlueprint().General.UnitName)
 
-    -- fudge weapon count to include those of transported units
-    GetWeaponCount = function(self)
-        --LOG('GetWeaponCount:' .. self:GetBlueprint().General.UnitName)
-        local trueWeaponCount = Unit.GetWeaponCount(self)
-        if EntityCategoryContains(categories.TRANSPORTATION, self) then
-            cargoWeaponCount = 0
-            for cargoWeapon in self:CargoWeaponIterator() do
-                cargoWeaponCount = cargoWeaponCount + 1
-            end
-            --LOG('  trueWeaponCount=' .. trueWeaponCount .. ', cargoWeaponCount=' .. cargoWeaponCount)
-            return trueWeaponCount + cargoWeaponCount
-        else
-            --LOG('  trueWeaponCount=' .. trueWeaponCount)
-            return trueWeaponCount
-        end
-    end,
+        Unit.Kill(self)
 
-    -- fudge weapon list to include those of transported units
-    GetWeapon = function(self, i)
-        --LOG('GetWeapon:' .. self:GetBlueprint().General.UnitName .. ", i=" .. i)
-
-        cargo = nil
-        pcall(function() cargo = self:GetCargo() end)
-
-        weaponCount = Unit.GetWeaponCount(self)
-        if i <= weaponCount then
-            return Unit.GetWeapon(self,i)
-        else
-            for cargoWeapon in self:CargoWeaponIterator() do
-                weaponCount = weaponCount + 1
-                if weaponCount == i then
-                    return cargoWeapon
-                end
+        -- allow cargo to fire self destruct weapons (SelfDestructed flag is set in selfdestruct.lua)
+        if self.SelfDestructed and EntityCategoryContains(categories.TRANSPORTATION, self) then
+            local cargo = nil
+            pcall(function() cargo = self:GetCargo() end)
+            for _,unit in cargo or { } do
+                --LOG('  firing cargo self-d weapons:' .. unit:GetBlueprint().General.UnitName)
+                FireSelfdestructWeapons(unit)
+                break
             end
         end
     end,

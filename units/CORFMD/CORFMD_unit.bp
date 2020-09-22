@@ -4,6 +4,9 @@
 #Blueprint created by Raevn
 
 UnitBlueprint {
+    AI = {
+        InitialAutoMode = true,
+    },
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',

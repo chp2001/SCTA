@@ -3,10 +3,6 @@ UnitBlueprint {
     Defense = {
         Health = 3000,
         MaxHealth = 3000,
-        AirThreatLevel = 0,
-        EconomyThreatLevel = 2,
-        SubThreatLevel = 10,
-        SurfaceThreatLevel = 0,
     },
     Economy = {
         BuildCostEnergy = 6000,

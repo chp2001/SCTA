@@ -23,6 +23,9 @@ UnitBlueprint {
         
         
     },
+    Display = {
+        UniformScale = 0.2,
+    },
     Defense = {
         Health = 1300,
         MaxHealth = 1300,
@@ -36,4 +39,5 @@ UnitBlueprint {
         SizeX = 1,
         SizeZ = 1,
     },
+    SizeY = 3,
 }

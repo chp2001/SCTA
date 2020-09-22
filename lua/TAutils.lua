@@ -303,12 +303,12 @@ function Clamp(x,lb,ub)
 end
 
 
-function QueueDelayedWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
+function QueueDelayedWreckage(self, overkillRatio, bp, completed, pos, orientation, health)
 	ForkThread(CreateWreckage, self, overkillRatio, bp, completed, pos, orientation, health)
 end
 
 
-function CreateWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
+function CreateWreckage(self, overkillRatio, bp, completed, pos, orientation, health)
 	local TAWreckage = import('/mods/SCTA-master/lua/TAWreckage.lua').TAWreckage
 	while not IsDestroyed(self) do
 		WaitSeconds(0.4)
@@ -334,7 +334,6 @@ function CreateWreckage(self,overkillRatio, bp, completed, pos, orientation, hea
 		prop.OriginalUnit = self.OriginalUnit or self
 		if bp.Physics.BlockPath == false then
 		end
-		prop:DoTakeDamage(prop, overkillRatio * health, Vector(0,0,0), 'Normal')
         	prop.AssociatedBP = bp.BlueprintId
 	end
 end

@@ -91,7 +91,6 @@ TAFactory = Class(TAconstructor) {
 	OnFailedToBuild = function(self)
         self.FactoryBuildFailed = true
 		TAconstructor.OnFailedToBuild(self)
-		#WaitSeconds(1)
         ChangeState(self, self.IdleState)
     end,
 

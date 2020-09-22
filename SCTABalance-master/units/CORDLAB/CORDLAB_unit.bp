@@ -84,9 +84,12 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 400,
+                    LODCutoff = 400, 
+                    SpecularName = '/mods/SCTA-master/units/CORLAB/CORLAB_SpecTeam.dds',
+                    AlbedoName = '/mods/SCTA-master/units/CORLAB/CORLAB_Albedo.dds',
+                    MeshName =   '/mods/SCTA-master/units/CORLAB/CORLAB_lod0.scm',
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },

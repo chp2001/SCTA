@@ -33,6 +33,7 @@ UnitBlueprint {
         'OVERLAYANTIAIR',
         'ARM',
         'KBOT',
+        'SPIDER',
 	'LEVEL2',
 	
 	
@@ -95,7 +96,7 @@ UnitBlueprint {
     Footprint = {
 	SizeX = 1,
 	SizeZ = 1,
-	MaxSlope= 255,
+	MaxSlope=1.5,
     },
     General = {
         Category = 'Utility',

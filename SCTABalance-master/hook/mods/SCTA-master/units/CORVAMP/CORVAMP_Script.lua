@@ -3,7 +3,7 @@ CORVAMP = Class(oldCORVAMP) {
 	OnStopBeingBuilt = function(self)
 	self:SetMaintenanceConsumptionActive()
 	oldCORVAMP.OnStopBeingBuilt(self)	
-	end
+	end,
 }
 
 TypeClass = CORVAMP

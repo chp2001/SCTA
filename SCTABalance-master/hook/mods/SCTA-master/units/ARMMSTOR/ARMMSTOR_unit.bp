@@ -1,7 +1,7 @@
 UnitBlueprint {
     Merge = true, 
     Display = {
-        UniformScale = 0.12,
+        UniformScale = 0.06,
     },
     Footprint = {
         SizeX = 1,
@@ -11,19 +11,10 @@ UnitBlueprint {
         VisionRadius = 10,
         WaterVisionRadius = 4, 
     },
-   Physics = {
-        MeshExtentsX = 1.25,
-        MeshExtentsY = 1.25,
-        MeshExtentsZ = 1.25,
-        SkirtOffsetX = -0.5,
-        SkirtOffsetZ = -0.5,
-        SkirtSizeX = 2,
-        SkirtSizeZ = 2,
-    },
-    SelectionSizeX = 3,
-    SelectionSizeZ = 3,
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
     SelectionThickness = 0.6,
-    SizeX = 3.5,
-    SizeY = 2.8,
-    SizeZ = 3.5,
+    SizeX = 1.2,
+    SizeY = 1.4,
+    SizeZ = 1.2,
 }

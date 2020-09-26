@@ -21,7 +21,8 @@ UnitBlueprint {
 	'CORE',
 	'METAL',
 	'LEVEL1',
-	'SORTDEFENSE',
+    'SORTDEFENSE',
+    'SELECTABLE',
 	
 	
     },

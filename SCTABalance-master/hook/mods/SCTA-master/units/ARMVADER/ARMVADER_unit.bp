@@ -42,6 +42,6 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-        },   
+        },
      },
 }

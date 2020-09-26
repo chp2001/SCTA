@@ -7,5 +7,5 @@ ORBIT = 0x20
 
 
 SpecFootprints {
-    { Name = 'Spider1x1',   SizeX=1,  SizeZ=1,  Caps=LAND, MaxWaterDepth=1.5, MaxSlope=1.5, Flags=0 },
+    { Name = 'Spider1x2', SizeX = 1,  SizeZ = 2,  Caps=LAND, MaxSlope=1.5, Flags=0 },
 }

@@ -380,7 +380,7 @@ UnitBlueprint {
 	    EdgeEffectiveness = 0.75,
         },
         {
-            Damage = 500,
+            Damage = 100,
             DamageFriendly = true,
             DamageRadius = 20,
             DamageType = 'Normal',

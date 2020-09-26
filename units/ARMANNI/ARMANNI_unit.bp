@@ -62,16 +62,16 @@ UnitBlueprint {
 			{
 				EmitterBone = {'Case_01','Case_02','Case_03','Case_04','Barrel'},
 				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/total_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/total_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/total_missile_hit_04_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.35,
 			},
 			{
 				EmitterBone = {'Barrel_Muzzle','Container_01','Container_02'},
 				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/total_missile_hit_04_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.25,
 			},

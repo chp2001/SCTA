@@ -41,4 +41,6 @@ UnitBlueprint {
     VisionRadius = 14,
 	RadarStealthFieldRadius = 0,
     },
+    SelectionSizeX = 1.25,
+    SelectionSizeZ = 1.9,
 }

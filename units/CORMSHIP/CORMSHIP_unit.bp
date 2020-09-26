@@ -70,12 +70,12 @@ UnitBlueprint {
 		#DefaultProjectileCategories = {'ArmShip','ArmBui'},
 		DestructionEmitters = {
 			{
-				EmitterBone = {'stand','gun','CORMSHIP'},
+				EmitterBone = {'post','gun','CORMSHIP'},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'dish','door1a', 'door2b'},
+				EmitterBone = {'dish','door1', 'door2'},
 				EmitterBlueprint = {
 	    				'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',

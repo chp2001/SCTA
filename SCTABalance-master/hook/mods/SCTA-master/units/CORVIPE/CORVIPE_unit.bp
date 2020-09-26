@@ -1,5 +1,9 @@
 UnitBlueprint {
     Merge = true, 
+    Defense = {
+        Health = 2500,
+        MaxHealth = 2500,
+    },
     Physics = {
         SkirtSizeX = 0, 
         SkirtSizeZ = 0,  

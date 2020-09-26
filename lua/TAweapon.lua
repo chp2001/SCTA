@@ -399,12 +399,12 @@ TACommanderDeathWeapon = Class(BareBonesWeapon) {
 
         local myBlueprint = self:GetBlueprint()
         self.Data = {
-            NukeOuterRingDamage = myBlueprint.NukeOuterRingDamage or 250,
+            NukeOuterRingDamage = myBlueprint.NukeOuterRingDamage or 50,
             NukeOuterRingRadius = myBlueprint.NukeOuterRingRadius or 20,
             NukeOuterRingTicks = myBlueprint.NukeOuterRingTicks or 20,
             NukeOuterRingTotalTime = myBlueprint.NukeOuterRingTotalTime or 10,
 
-            NukeInnerRingDamage = myBlueprint.NukeInnerRingDamage or 500,
+            NukeInnerRingDamage = myBlueprint.NukeInnerRingDamage or 250,
             NukeInnerRingRadius = myBlueprint.NukeInnerRingRadius or 15,
             NukeInnerRingTicks = myBlueprint.NukeInnerRingTicks or 24,
             NukeInnerRingTotalTime = myBlueprint.NukeInnerRingTotalTime or 24,
@@ -436,7 +436,7 @@ TACommanderSuicideWeapon = Class(BareBonesWeapon) {
             NukeOuterRingTicks = myBlueprint.NukeOuterRingTicks or 20,
             NukeOuterRingTotalTime = myBlueprint.NukeOuterRingTotalTime or 10,
 
-            NukeInnerRingDamage = myBlueprint.NukeInnerRingDamage or 500,
+            NukeInnerRingDamage = myBlueprint.NukeInnerRingDamage or 250,
             NukeInnerRingRadius = myBlueprint.NukeInnerRingRadius or 30,
             NukeInnerRingTicks = myBlueprint.NukeInnerRingTicks or 24,
             NukeInnerRingTotalTime = myBlueprint.NukeInnerRingTotalTime or 24,

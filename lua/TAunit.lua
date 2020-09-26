@@ -6,7 +6,6 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local Game = import('/lua/game.lua')
 local util = import('/lua/utilities.lua')
 local debrisCat = import('/mods/SCTA-master/lua/TAdebrisCategories.lua')
-local FireSelfdestructWeapons = import('/lua/selfdestruct.lua').FireSelfdestructWeapons
 
 TAunit = Class(Unit) 
 {
@@ -22,25 +21,6 @@ TAunit = Class(Unit)
 	FxReclaim = nil,
 	DestructionExplosionWaitDelayMin = 0,
 	DestructionExplosionWaitDelayMax = 0,
-
-    Kill = function(self)
-        if self.Dead then
-            return
-        end
-        --LOG('TAUnit.Kill ' .. self:GetBlueprint().General.UnitName)
-
-        Unit.Kill(self)
-
-        -- allow cargo to fire self destruct weapons (SelfDestructed flag is set in selfdestruct.lua)
-        if self.SelfDestructed and EntityCategoryContains(categories.TRANSPORTATION, self) then
-            local cargo = nil
-            pcall(function() cargo = self:GetCargo() end)
-            for _,unit in cargo or { } do
-                --LOG('  firing cargo self-d weapons:' .. unit:GetBlueprint().General.UnitName)
-                FireSelfdestructWeapons(unit)
-            end
-        end
-    end,
 
 	OnCreate = function(self)
         Unit.OnCreate(self)

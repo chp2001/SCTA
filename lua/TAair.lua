@@ -1,5 +1,7 @@
 #Generic TA Air unit
 local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local FireSelfdestructWeapons = import('/lua/selfdestruct.lua').FireSelfdestructWeapons
+
 
 TAair = Class(TAunit) 
 {
@@ -62,5 +64,35 @@ TAair = Class(TAunit)
 	end,
 
 }
+
+
+TATransportAir = Class(TAair)
+{
+    KillingInProgress = false,
+
+
+    Kill = function(self)
+        if self.Dead or self.KillingInProgress then
+            return
+        end
+        self.KillingInProgress = true
+        LOG('TAUnit.Kill ' .. self:GetBlueprint().General.UnitName)
+
+        -- allow cargo to fire self destruct weapons (SelfDestructed flag is set in selfdestruct.lua)
+        if self.SelfDestructed and EntityCategoryContains(categories.TRANSPORTATION, self) then
+            LOG('  yes self destruct:' .. self:GetBlueprint().General.UnitName)
+            local cargo = self:GetCargo()
+            --pcall(function() cargo = self:GetCargo() end)
+            for _,unit in cargo or { } do
+                LOG('  firing cargo self-d weapons:' .. unit:GetBlueprint().General.UnitName)
+                FireSelfdestructWeapons(unit)
+            end
+        end
+
+        TAair.Kill(self)
+
+    end,
+}
+
 
 TypeClass = TAair

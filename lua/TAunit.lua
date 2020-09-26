@@ -7,7 +7,6 @@ local Game = import('/lua/game.lua')
 local util = import('/lua/utilities.lua')
 local debrisCat = import('/mods/SCTA-master/lua/TAdebrisCategories.lua')
 
-
 TAunit = Class(Unit) 
 {
 	lastHitVector = nil,

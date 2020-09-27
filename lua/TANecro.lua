@@ -4,18 +4,23 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local oldPosition={1,1,1}
 
 TANecro = Class(TAConstructor) {
-
     OnStartReclaim = function(self, target, oldPosition)
         if EntityCategoryContains(categories.NECRO, self) then
-            if not target.ReclaimInProgress then
-                --LOG('* Necro: OnStartReclaim:  I am a necro! no ReclaimInProgress; starting Necroing')
+            if not target.ReclaimInProgress and not target.NecroingInProgress then
+                LOG('* Necro: OnStartReclaim:  I am a necro! no ReclaimInProgress; starting Necroing')
                 target.NecroingInProgress = true
+				self.spawnUnit = true
                 self.RecBP = target.AssociatedBP
                 self.ReclaimLeft = target.ReclaimLeft
                 self.RecPosition = target:GetPosition()
-            else
-                --LOG('* Necro: OnStartReclaim:  I am a necro and ReclaimInProgress; Stopped!')
-                self.RecBP = nil
+            elseif not target.ReclaimInProgress and target.NecroingInProgress then
+				LOG('* Necro: OnStartReclaim:  I am a necro and helping necro')
+				self.RecBP = nil
+				self.ReclaimLeft = nil
+				self.RecPosition = target:GetPosition()
+			else
+                LOG('* Necro: OnStartReclaim:  I am a necro and ReclaimInProgress; Stopped!')
+				self.RecBP = nil
                 self.ReclaimLeft = nil
                 self.RecPosition = nil
                 IssueStop({self})
@@ -39,7 +44,7 @@ TANecro = Class(TAConstructor) {
     OnStopReclaim = function(self, target, oldPosition)
         TAConstructor.OnStopReclaim(self, target, oldPosition)
         if not target then
-            if self.RecBP and EntityCategoryContains(categories.NECRO, self) and oldPosition ~= self.RecPosition then
+            if self.RecBP and EntityCategoryContains(categories.NECRO, self) and oldPosition ~= self.RecPosition and self.spawnUnit then
                 --LOG('* Necro: OnStopReclaim:  I am a necro! and RecBP = true ')
                 oldPosition = self.RecPosition
                 self:ForkThread( self.RespawnUnit, self.RecBP, self:GetArmy(), self.RecPosition, self.ReclaimLeft )
@@ -64,5 +69,4 @@ TANecro = Class(TAConstructor) {
         local newUnit = CreateUnitHPR(RecBP, army, pos[1], pos[2], pos[3], 0, 0, 0)
         newUnit:SetHealth(nil, newUnit:GetMaxHealth() * ReclaimLeft )
     end,
-
 }

@@ -111,7 +111,7 @@ UnitBlueprint {
         UnitName = 'Raider',
     },
     Intel = {
-        VisionRadius = 16,
+        VisionRadius = 14,
     },
     Interface = {
         HelpText = 'Medium Assault Tank',

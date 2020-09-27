@@ -31,7 +31,7 @@ armordefinition = {
         # Armor Definition
         'Normal 1.0',
         'Deathnuke 1.0',
-        'DGun 0.25',
+        'DGun 0.15',
         'Overcharge 0.25',
         'AntiAir 1.0',
     },

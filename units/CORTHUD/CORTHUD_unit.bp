@@ -158,7 +158,7 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
-            BallisticArc = 'RULEUBA_LowArc',
+            BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 125,
@@ -176,7 +176,7 @@ UnitBlueprint {
             MinRadius = 5, 
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 13.125,
+            MuzzleVelocity = 16,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_THUD/CORE_THUD_proj.bp',
             RackBones = {
                 {

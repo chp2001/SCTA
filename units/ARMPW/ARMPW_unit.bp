@@ -155,6 +155,7 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'EMG',
             FireTargetLayerCapsTable = {
+                Air = 'Land|Water|Seabed',
                 Land = 'Land|Water|Air|Seabed',
                 Seabed = 'Land|Water|Air|Seabed',
             },

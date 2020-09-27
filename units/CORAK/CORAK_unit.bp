@@ -152,6 +152,7 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'CORE_LASER',
             FireTargetLayerCapsTable = {
+                Air = 'Land|Water|Seabed',
                 Land = 'Land|Water|Air|Seabed',
                 Seabed = 'Land|Water|Air|Seabed',
             },

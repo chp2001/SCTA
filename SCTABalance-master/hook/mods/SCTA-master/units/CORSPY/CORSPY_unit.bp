@@ -1,0 +1,24 @@
+#ARM SPY - Fast Light Scout Kbot
+#CORSPY
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Economy = {
+        BuildCostEnergy = 1500,
+        BuildTime = 3000,
+        MaintenanceConsumptionPerSecondEnergy = 10,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
+    },
+    Intel = {
+        JamRadius = {
+            Max = 5,
+            Min = 5,
+          },
+          JammerBlips = 5,
+    },
+}

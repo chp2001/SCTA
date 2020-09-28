@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 3,
+    BuildIconSortPriority = 7,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -46,8 +46,8 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 75,
-        MaxHealth = 75,
+        Health = 400,
+        MaxHealth = 400,
         AirThreatLevel = 0,
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,
@@ -79,16 +79,15 @@ UnitBlueprint {
         UniformScale = 0.16,
     },
     Economy = {
-        BuildCostEnergy = 712,
-        BuildCostMass = 44,
-        BuildTime = 2013,
+        BuildCostEnergy = 9000,
+        BuildCostMass = 128,
+        BuildTime = 22000,
+        MaintenanceConsumptionPerSecondEnergy = 10,
     },
     Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-	MaxSlope = 2,
-	MaxWaterDepth = 0,
-    },
+        SizeX = 1,
+        SizeZ = 1,
+	},
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -101,12 +100,17 @@ UnitBlueprint {
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
         },
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
+        },
         FactionName = 'CORE',
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = 'Spy',
+        UnitName = 'Parasite',
     },
     Intel = {
-        VisionRadius = 16,
+        RadarRadius = 50,
+        VisionRadius = 20,
+        Cloak = true,
     },
     Interface = {
         HelpText = 'Infantry Kbot',
@@ -132,7 +136,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_land1_intel',
+    StrategicIconName = 'icon_land2_intel',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_UNITEX

@@ -196,7 +196,7 @@ UnitBlueprint {
         TechLevel = 'RULEUTL_Experimental',
     },
     Intel = {
-        FreeIntel = true,
+        FreeIntel = false,
         VisionRadius = 18,
         WaterVisionRadius = 18,
         RadarRadius = 25,

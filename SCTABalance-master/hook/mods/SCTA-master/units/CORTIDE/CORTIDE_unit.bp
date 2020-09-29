@@ -13,7 +13,7 @@ UnitBlueprint {
         SizeZ = 1,
     },
     Economy = {
-        BuildCostEnergy = 1500,
+        BuildCostEnergy = 960,
 	    NaturalProducer = true,
     },
    Physics = {

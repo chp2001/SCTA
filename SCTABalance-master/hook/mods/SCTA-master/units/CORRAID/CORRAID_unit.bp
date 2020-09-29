@@ -6,6 +6,6 @@
 UnitBlueprint {
     Merge = true,
     Economy = {
-        BuildCostMass = 110,
+        BuildCostMass = 116,
     },
 }

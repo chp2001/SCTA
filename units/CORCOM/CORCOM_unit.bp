@@ -193,7 +193,7 @@ UnitBlueprint {
         TechLevel = 'RULEUTL_Experimental',
     },
     Intel = {
-        FreeIntel = true,
+        FreeIntel = false,
         VisionRadius = 18,
         WaterVisionRadius = 18,
         RadarRadius = 25,
@@ -334,8 +334,8 @@ UnitBlueprint {
             MuzzleVelocity = 12.5,
             NeedPrep = true,
             EnergyChargeForFirstShot = false,
-            EnergyRequired = 1000,
-            EnergyDrainPerSecond = 1000,
+            EnergyRequired = 2000,
+            EnergyDrainPerSecond = 2000,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_DISINTEGRATOR/CORE_DISINTEGRATOR_proj.bp',
             RackBones = {
                 {

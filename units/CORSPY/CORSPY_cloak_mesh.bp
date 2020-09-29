@@ -1,0 +1,13 @@
+MeshBlueprint {
+    IconFadeInZoom = 130,
+    LODs = {
+        {
+            MeshName = 'CORSPY_lod0.scm',
+            AlbedoName = 'CORSPY_Albedo.dds',
+            NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds',
+            SpecularName = 'CORSPY_Specteam.dds',
+            ShaderName = 'TACloak', -- TACloak
+            LODCutoff = 230,
+        },
+    },
+}

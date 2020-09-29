@@ -32,7 +32,7 @@ ProjectileBlueprint {
         CollideEntity = false,
         DestroyOnWater = true,
         InitialSpeed = 11.75,
-        Lifetime = 4,
+        Lifetime = 1,
         UseGravity = false,
     },
 }

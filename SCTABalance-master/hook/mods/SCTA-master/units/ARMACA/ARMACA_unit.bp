@@ -13,7 +13,7 @@ UnitBlueprint {
             'BUILTBYT2AIR ARM',
         },
         MaxBuildDistance = 7,
-        ProductionPerSecondEnergy = 4,
+        ProductionPerSecondEnergy = 3,
         ProductionPerSecondMass = 0,
     },
 }

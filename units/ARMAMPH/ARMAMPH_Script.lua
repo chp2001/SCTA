@@ -28,7 +28,7 @@ ARMAMPH = Class(TAWalking) {
                 if( old == 'Stopped' ) then
                     if( self.SwitchAnims ) then
                         self.SwitchAnims = false
-                        self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationSwim, true):SetRate(self:GetBlueprint().Display.AnimationSwimRate or 1.1)
+                        self.Walking = false
                     else
                         self.AnimManip:SetRate(2.8)
                     end

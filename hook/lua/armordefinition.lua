@@ -14,7 +14,7 @@ armordefinition = {
 
         # Armor Definition
         'Normal 1.0',
-        'AntiAir 0.5',
+        'AntiAir 0.25',
         'DGun 1.0',
     },
     {   # Armor Type Name
@@ -31,16 +31,16 @@ armordefinition = {
         # Armor Definition
         'Normal 1.0',
         'Deathnuke 1.0',
-        'DGun 0.15',
+        'DGun 0.08',
         'Overcharge 0.25',
-        'AntiAir 1.0',
+        'AntiAir 0.25',
     },
     {   # Armor Type Name
         'Structure',
 
         # Armor Definition
         'Normal 1.0',
-        'AntiAir 1.0',
+        'AntiAir 0.25',
         'Overcharge 0.25',
         'DGun 0.1',
         'Deathnuke 0.032',

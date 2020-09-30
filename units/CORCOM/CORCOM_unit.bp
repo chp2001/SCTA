@@ -71,7 +71,6 @@ UnitBlueprint {
         'CAPTURE',
         'REPAIR',
         'SHOWQUEUE',
-        'MOBILE',
 	'LAND',
 	'MOBILE',
 	'DIRECTFIRE',
@@ -89,10 +88,6 @@ UnitBlueprint {
         'CORE',
         'COMMANDER',
 	'LEVEL10',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',

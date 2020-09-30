@@ -8,15 +8,6 @@ MAS0001 = Class(AWalkingLandUnit) {
 	AWalkingLandUnit.OnCreate(self)
 	self.AnimManip = CreateAnimator(self)
 	self.Trash:Add(self.AnimManip)
-		local cam = import('/lua/simcamera.lua').SimCamera('WorldCamera')
-		local position = self:GetPosition()
-		local heading = self:GetHeading()
-		local marker = {
-			orientation = VECTOR3( heading + 3.14, 1.2, 0 ),
-			position = { position[1] + 0, position[2] + 1, position[3] + 0 },
-			zoom = FLOAT( 65 ),
-		}
-		cam:MoveToMarker(marker, 1)
 	#WaitSeconds(1)
 	end,
 

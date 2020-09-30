@@ -14,7 +14,7 @@ MAS0001 = Class(AWalkingLandUnit) {
     OnStopBeingBuilt = function(self,builder,layer)
 		---local army = self:GetArmy()
 		AWalkingLandUnit.OnStopBeingBuilt(self,builder,layer)
-		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationOpen):SetRate(0.8)
+		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationOpen):SetRate(0.25)
     end,
 
    GiveInitialResources = function(self)

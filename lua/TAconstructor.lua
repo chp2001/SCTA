@@ -169,7 +169,6 @@ TAconstructor = Class(TAWalking) {
     end,
 
 	OnFailedToBuild = function(self)
-        self.FactoryBuildFailed = true
 		TAWalking.OnFailedToBuild(self)
         ChangeState(self, self.IdleState)
     end,

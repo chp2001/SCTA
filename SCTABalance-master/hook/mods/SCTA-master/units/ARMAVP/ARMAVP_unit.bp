@@ -42,8 +42,8 @@ UnitBlueprint {
     LifeBarSize = 8,
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 6,
-        SizeZ = 6,
+        SizeX = 7,
+        SizeZ = 7,
     },
     Intel = {
         VisionRadius = 10,

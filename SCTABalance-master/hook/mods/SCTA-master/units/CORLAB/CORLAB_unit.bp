@@ -46,6 +46,11 @@ UnitBlueprint {
             'cordlab', 
         },
     },
+    Footprint = {
+        MaxSlope = 0.625,
+            SizeX = 7,
+            SizeZ = 7,
+        },
     LifeBarSize = 8,
     General = {
         UpgradesTo = 'cordlab', 

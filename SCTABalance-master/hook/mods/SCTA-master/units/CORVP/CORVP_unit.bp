@@ -38,6 +38,11 @@ UnitBlueprint {
             },
         UniformScale = 0.32,
     },
+    Footprint = {
+        MaxSlope = 0.625,
+            SizeX = 8,
+            SizeZ = 8,
+        },
     Economy = {
         BuildCostEnergy = 3600,
         BuildRate = 120,

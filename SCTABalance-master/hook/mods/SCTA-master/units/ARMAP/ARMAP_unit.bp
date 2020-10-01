@@ -48,6 +48,11 @@ UnitBlueprint {
             'armdap', 
         },
     },
+    Footprint = {
+        MaxSlope = 0.625,
+            SizeX = 8,
+            SizeZ = 7,
+        },
     LifeBarSize = 8,
     General = {
         UpgradesTo = 'armdap', 

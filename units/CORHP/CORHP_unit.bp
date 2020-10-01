@@ -65,12 +65,12 @@ UnitBlueprint {
 		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate'},
 		DestructionEmitters = {
 			{
-				EmitterBone = {'plate1','plate2', 0},
+				EmitterBone = {'CORXHP'},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'muzzle1', 'muzzle2'},
+				EmitterBone = {'beam1', 'beam2'},
 				EmitterBlueprint = {
     					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -80,7 +80,7 @@ UnitBlueprint {
 			},
 		},
 	},
-	BuildBones = {'muzzle1','muzzle2'},
+	BuildBones = {'beam1','beam2'},
 	BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,
@@ -92,7 +92,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.12,
     },
     Economy = {
         BuildCostEnergy = 5277,

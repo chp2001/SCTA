@@ -90,7 +90,7 @@ UnitBlueprint {
             },
         },
         AnimationWalk = '/mods/SCTA-master/units/ARMPW/ARMPW_awalk.sca',
-        AnimationWalkRate = 1,
+        AnimationWalkRate = 2,
         AnimationRun = '/mods/SCTA-master/units/ARMPW/ARMPW_arun.sca',
         AnimationRunRate = 0.5,
     	--[[DestructionEffects = {

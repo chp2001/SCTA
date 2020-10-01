@@ -32,6 +32,11 @@ UnitBlueprint {
             Health = 3900,
             MaxHealth = 3900,
         },
+        Footprint = {
+            MaxSlope = 0.625,
+                SizeX = 8,
+                SizeZ = 7,
+            },
     Economy = {
         BuildCostEnergy = 40000,
         BuildCostMass = 4000, 

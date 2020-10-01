@@ -30,6 +30,11 @@ UnitBlueprint {
         Health = 4000,
         MaxHealth = 4000,
         },
+        Footprint = {
+            MaxSlope = 0.625,
+                SizeX = 8,
+                SizeZ = 7,
+            },
     LifeBarSize = 8,
     Economy = {
         BuildRate = 250,

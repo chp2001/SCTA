@@ -44,7 +44,12 @@ UnitBlueprint {
             'armdvp',
             'VEHICLE LEVEL1 ARM',
         },
-    },
+    },    
+    Footprint = {
+        MaxSlope = 0.625,
+            SizeX = 9,
+            SizeZ = 7,
+        },
     LifeBarSize = 8,
     General = {
         UpgradesTo = 'armdvp', 

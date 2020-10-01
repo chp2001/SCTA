@@ -61,6 +61,8 @@ UnitBlueprint {
     },
     Description = 'Builds Hovercraft',
     Display = {
+        AnimationOpen = '/mods/SCTA-master/units/CORHP/CORHP_lod0_Aopen.sca',
+        AnimationOpenRate = 0.2, 
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate'},
 		DestructionEmitters = {
@@ -70,7 +72,7 @@ UnitBlueprint {
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'beam1', 'beam2'},
+                EmitterBone = {'beam1', 'beam2', 'beam3', 'beam4'},
 				EmitterBlueprint = {
     					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -80,7 +82,7 @@ UnitBlueprint {
 			},
 		},
 	},
-	BuildBones = {'beam1','beam2'},
+	BuildBones = {'beam1','beam2', 'beam3', 'beam4'},
 	BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,

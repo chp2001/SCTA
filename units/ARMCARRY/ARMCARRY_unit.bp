@@ -27,11 +27,15 @@ UnitBlueprint {
 	},
     },
     AI = {
-	RefuelingRepairAmount = 200,
-        RefuelingMultiplier = 50,
-	StagingPlatformScanRadius = 300,
-        ShowAssistRangeOnSelect = true,
+    RefuelingMultiplier = 100,
+    RefuelingRepairAmount = 500,
+    RepairConsumeEnergy = 30,
+    RepairConsumeMass = 0,
+    StagingPlatformScanRadius = 300,
+    TargetBones = {
+        'Attachpoint02',
     },
+},
     BuildIconSortPriority = 9,
     Categories = {
         'SELECTABLE',
@@ -67,6 +71,10 @@ UnitBlueprint {
     },
     Description = 'Light Carrier',
     Display = {
+        AnimationBuild = '/mods/SCTA-master/units/ARMCARRY/ARMCARRY_lod0_build.sca',
+        AnimationBuildRate = 0.2, 
+        AnimationPower = '/mods/SCTA-master/units/ARMCARRY/ARMCARRY_lod0_power.sca',
+        AnimationPowerRate = 0.2, 
         Abilities = {
             '<LOC ability_airstaging>Air Staging',
         },
@@ -93,7 +101,7 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 230,
+                    LODCutoff = 300,
                     ShaderName = 'Unit', 
                 },
             },
@@ -122,9 +130,17 @@ UnitBlueprint {
         Category = 'Ship',
         Classification = 'RULEUC_MilitaryShip',
         CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = false,
+            RULEUCC_Capture = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
+            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_Reclaim = false,
+            RULEUCC_Repair = false,
+            RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
             RULEUCC_Transport = true,
         },
@@ -172,11 +188,9 @@ UnitBlueprint {
     StrategicIconName = 'icon_ship2_air',
     StrategicIconSortPriority = 0,
     Transport = {
-        Class1AttachSize = 1,
-        Class2AttachSize = 1,
-        Class3AttachSize = 1,
-        RepairRate = 200,
-	    StorageSlots = 50,
+        ClassGenericUpTo = 3,
+        StorageSlots = 60,
+        TransportClass = 10,
     },
     Weapon = {
         { #ATOMIC_BLAST

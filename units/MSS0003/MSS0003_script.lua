@@ -14,29 +14,22 @@ local CLandUnit = import('/lua/cybranunits.lua').CLandUnit
 
 MSS0003 = Class(CLandUnit) {
 
-     OnStopBeingBuilt = function(self,builder,layer)
-       local position = self:GetPosition()
-       local cdrUnit = CreateUnitHPR('uel0001', self:GetArmy(), (position.x), (position.y+1), (position.z), 0, 0, 0)  
-	   --self:HideBone(0, true)
-	   --self:SetUnSelectable(true)
-	   cdrUnit:HideBone(0, true)
-	   --cdrUnit:SetUnSelectable(true)
-	   cdrUnit:SetBlockCommandQueue(true)
-	   self:SetBlockCommandQueue(true)
-	   --local currGameTime = GetGameTimeSeconds() 
-	   --while currGameTime < 11 do
-		--WaitSeconds(0.1)
-	   --end
-	   cdrUnit:PlayCommanderWarpInEffect()
-       self:Destroy()
-    end,
+	OnStopBeingBuilt = function(self, builder, layer)
+		ForkThread(self.Delay, self, builder, layer)
+		self:Destroy()
+	 end,
+ 
+ 
+	 Delay = function (self, builder, layer)
+		 local position = self:GetPosition()
+		 local cdrUnit = CreateUnitHPR('uel0001', self:GetArmy(), (position.x), (position.y+1), (position.z), 0, 0, 0)  
+		 cdrUnit:SetUnSelectable(false)
+		 cdrUnit:SetBlockCommandQueue(true)
+		 WaitSeconds(3)
+		 cdrUnit:SetBlockCommandQueue(false)
+	 end,
+ 
 
-
-    CommanderWarpDelay = function (cdrUnit, delay)
-    --cdrUnit:SetBlockCommandQueue(true)
-    --WaitSeconds(delay)
-    --cdrUnit:PlayCommanderWarpInEffect()
-    end,
 
 
 }

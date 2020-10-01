@@ -26,16 +26,13 @@ TAFactory = Class(TAconstructor) {
 
 	FlattenSkirt = function(self)
 		TAconstructor.FlattenSkirt(self)
-        local x, y, z = unpack(self:GetPosition())
-        local x0,z0,x1,z1 = self:GetSkirtRect()
-        x0,z0,x1,z1 = math.floor(x0),math.floor(z0),math.ceil(x1),math.ceil(z1)
-        FlattenMapRect(x0, z0, x1-x0, z1-z0, y)
     end,
 
     OnKilled = function(self, instigator, type, overkillRatio)
         TAconstructor.OnKilled(self, instigator, type, overkillRatio)
             if self.currentTarget and not self.currentTarget:IsDead() and self.currentTarget:GetFractionComplete() != 1 then
-                self.currentTarget:Kill()
+				self.currentTarget:Kill()
+			else
                 self.currentTarget:Destroy()
         	end
     end,
@@ -49,13 +46,11 @@ TAFactory = Class(TAconstructor) {
 		else
 			self.desiredState = "opened"
 		end
-		self:SetAllWeaponsEnabled(false)
+		---self:SetAllWeaponsEnabled(false)
 		if self.hideUnit and IsDestroyed(unitBeingBuilt) == false then
 			unitBeingBuilt:HideBone(0, true)
-			#Need to Hide Life Bar
 		end
 		self.isBuilding = true
-		self.isReclaiming = false
 		self.order = order
 		self.wantStopAnimation = false
 		if (self.animating == false) then
@@ -65,80 +60,40 @@ TAFactory = Class(TAconstructor) {
 
 	OnStopBuild = function(self, unitBeingBuilt, order )
 		TAconstructor.OnStopBuild(self, unitBeingBuilt, order )
-		self.desiredTarget = nil
-		self.isBuilding = false
-		self.countdown = self.pauseTime
-		if (self.currentState == "aimed") then
-			self.desiredState = "rolloff"
-		else
-			self.desiredState = "closed"
-		end
 		self:SetAllWeaponsEnabled(true)
 		self:SetBusy(true)
 		self:SetBlockCommandQueue(true)
 	end,
 
 	DestroyUnitBeingBuilt = function(self)
-        if self.UnitBeingBuilt and not self.UnitBeingBuilt.Dead and self.UnitBeingBuilt:GetFractionComplete() < 1 then
-            if self.UnitBeingBuilt:GetFractionComplete() > 0.5 then
-                self.UnitBeingBuilt:Kill()
-            else
-				self.UnitBeingBuilt:Destroy()
-            end
-        end
+        TAconstructor.DestroyUnitBeingBuilt(self)
     end,
 
-	OnFailedToBuild = function(self)
-        self.FactoryBuildFailed = true
-		TAconstructor.OnFailedToBuild(self)
-        ChangeState(self, self.IdleState)
+	OnFailedToBuild = function(self, unitBeingBuilt)
+		self.FactoryBuildFailed = true
+		TAconstructor.OnFailedToBuild(self, unitBeingBuilt)
+        ---ChangeState(self, self.IdleState)
     end,
 
 
 	StopSpin = function(self, unitBeingBuilt)
-		if not IsDestroyed(self) and unitBeingBuilt then
-			WaitSeconds(0.5)
-			if IsDestroyed(unitBeingBuilt) == false then
-            unitBeingBuilt:DetachFrom(true)
-		end
-	end
+		TAconstructor.StopSpin(self, unitBeingBuilt)
     end,
 
 	DelayedClose = function(self)
+		TAconstructor.DelayedClose(self)
 	end,
 
 	GetCloseArea = function(self)
-		local bp = self:GetBlueprint()
-		local pos = self:GetPosition(bp.Display.BuildAttachBone)
-		local area = nil
-		if bp.Physics.CloseAreaX and bp.Physics.CloseAreaZ then
-			area = Rect(pos.x - bp.Physics.CloseAreaX,bp.Physics.CloseAreaZ, bp.Physics.CloseAreaX, bp.Physics.CloseAreaX)
-		else
-			area = Rect(pos.x - bp.SizeX,bp.SizeZ, bp.SizeX, bp.SizeZ)
-		end
-		WaitSeconds(1)
-		return area
+		TAconstructor.GetCloseArea(self)
 	end,
 
 	GetBuildArea = function(self)
-		local bp = self:GetBlueprint()
-		local pos = self:GetPosition(bp.Display.BuildAttachBone)
-		local area = nil
-		if bp.Physics.BuildAreaX and bp.Physics.BuildAreaZ then
-			area = Rect(bp.Physics.BuildAreaX, bp.Physics.BuildAreaZ, bp.Physics.BuildAreaX, bp.Physics.BuildAreaX)
-		else
-			area = Rect(bp.SizeX, bp.SizeZ, bp.SizeX, bp.SizeZ)
-		end
-		WaitSeconds(1)
-		return area
+		TAconstructor.GetBuildArea(self)
 	end,
 
 	RollOff = function(self)
-        if not IsDestroyed(self) then
-            WaitSeconds(0.5)
-			self:SetBusy(false)
-			self:SetBlockCommandQueue(false)
-		end 
+		TAconstructor.RollOff(self)
 	end,
 
 	Unpack = function(self)
@@ -160,7 +115,7 @@ TAFactory = Class(TAconstructor) {
 			if self:IsPaused() == false then
 
 				current = current + 1
-				if current >= target or self.isReclaiming == true then
+				if current >= target then
 					for k,v in self:GetBlueprint().Display.BuildBones do
 
                         local selfPosition = self:GetPosition(v) 
@@ -187,9 +142,6 @@ TAFactory = Class(TAconstructor) {
 						if (self.isBuilding == true) then
 							bp = self:GetBlueprint().Display.BuildEmitter or 'nanolathe.bp'
 							CreateEmitterAtBone(self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/' .. bp ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',time,0)
-						else
-							bp = self:GetBlueprint().Display.ReclaimEmitter or 'reclaimnanolathe.bp'
-							CreateEmitterAtBone(self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/' .. bp ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',time,0):SetEmitterCurveParam('Z_POSITION_CURVE',distance * 10,0)
 						end
 						
 

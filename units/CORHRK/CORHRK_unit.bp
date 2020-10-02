@@ -173,7 +173,6 @@ UnitBlueprint {
             MuzzleVelocity = 3,
             EnergyDrainPerSecond = 5,
             EnergyRequired = 25,
-            
             ProjectileId = '/mods/SCTA-master/projectiles/CORTRUCK_ROCKET/CORTRUCK_ROCKET_proj.bp',
             RackBones = {
                 {
@@ -187,8 +186,7 @@ UnitBlueprint {
                     RackBone = 'Launcher',
                 },
             },
-			WeaponUnpacks = 'true',
-			WeaponUnpackAnimation = '/mods/SCTA-master/units/CORHRK/CORHRK_lod0_unpack',
+			WeaponUnpackAnimation = '/mods/SCTA-master/units/CORHRK/CORHRK_lod0_unpack.sca',
 			WeaponUnpackAnimationRate = 1,
 			WeaponRepackTimeout = 2,
             RackRecoilDistance = 0,

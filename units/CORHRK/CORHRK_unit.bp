@@ -83,7 +83,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -174,7 +173,6 @@ UnitBlueprint {
             MuzzleVelocity = 3,
             EnergyDrainPerSecond = 5,
             EnergyRequired = 25,
-            
             ProjectileId = '/mods/SCTA-master/projectiles/CORTRUCK_ROCKET/CORTRUCK_ROCKET_proj.bp',
             RackBones = {
                 {
@@ -188,6 +186,9 @@ UnitBlueprint {
                     RackBone = 'Launcher',
                 },
             },
+			WeaponUnpackAnimation = '/mods/SCTA-master/units/CORHRK/CORHRK_lod0_unpack.sca',
+			WeaponUnpackAnimationRate = 1,
+			WeaponRepackTimeout = 2,
             RackRecoilDistance = 0,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,

@@ -45,7 +45,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'SHOWQUEUE',
 
-	
+        'REPAIR',
         'MOBILE',
 	'CONSTRUCTION',
 	'LAND',
@@ -81,7 +81,7 @@ UnitBlueprint {
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'door1','door2'},
+				EmitterBone = {'Door1','Door2'},
 				EmitterBlueprint = {
     					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -130,10 +130,14 @@ UnitBlueprint {
             RULEUCC_Patrol = true,
             RULEUCC_Pause = true,
             RULEUCC_Stop = true,
+            RULEUCC_Reclaim = true,
+            RULEUCC_Repair = true,
         },
-        FactionName = 'ARM',
+        ConstructionBar = true,
+        SelectionPriority = 3,
+        FactionName = 'CORE',
         TechLevel = 'RULEUTL_Basic',
-	UnitName = 'Podger',
+	UnitName = 'Spoiler',
     },
     Intel = {
         VisionRadius = 10,

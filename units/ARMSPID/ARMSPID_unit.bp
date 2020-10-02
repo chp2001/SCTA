@@ -40,7 +40,7 @@ UnitBlueprint {
         'ARM',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL2',
-	
+	'SPIDER',
 	'PARAL',
 	
 	
@@ -102,8 +102,7 @@ UnitBlueprint {
     },
     Footprint = {
 	SizeX = 1,
-	SizeZ = 1,
-	MaxSlope= 255,
+	SizeZ = 2,
     },
     General = {
         Category = 'Utility',

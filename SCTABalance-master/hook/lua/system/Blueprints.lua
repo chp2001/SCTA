@@ -66,8 +66,8 @@ do
         
         Mults = {
             Defense = {
-                Health = 0.5,
-                MaxHealth = 0.5,
+                Health = 0.75,
+                MaxHealth = 0.75,
             },
             Display = {
                 UniformScale = 0.5,

@@ -17,6 +17,7 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
+        'SPIDER',
         'KBOT',
 	'LEVEL2',
 	'PARAL',

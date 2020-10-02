@@ -98,9 +98,12 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 400,
-                    ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                LODCutoff = 400, 
+                SpecularName = '/mods/SCTA-master/units/ARMAP/ARMAP_SpecTeam.dds',
+                AlbedoName = '/mods/SCTA-master/units/ARMAP/ARMAP_Albedo.dds',
+                MeshName =   '/mods/SCTA-master/units/ARMAP/ARMAP_lod0.scm',
+                ShaderName = 'Unit', 
+                NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -123,8 +126,8 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 7,
-        SizeZ = 6,
+        SizeX = 8,
+        SizeZ = 7,
     },
     General = {
         Category = 'Factory',
@@ -175,7 +178,7 @@ UnitBlueprint {
         { #LARGE_BUILDINGEX
             Damage = 20,
             DamageFriendly = true,
-            DamageRadius = 1,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
@@ -183,7 +186,7 @@ UnitBlueprint {
         { #LARGE_BUILDING
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 1,
+            DamageRadius = 5,
             DummyWeapon = true,
             DamageType = 'Normal',
             Label = 'SuicideWeapon',

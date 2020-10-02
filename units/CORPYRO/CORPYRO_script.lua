@@ -8,7 +8,6 @@ local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
   
 CORPYRO = Class(TAWalking) {
-
 	#NEED A MUCH BETTER WAY OF DOING SOUND
 	lastSound = 0,
 
@@ -28,7 +27,7 @@ CORPYRO = Class(TAWalking) {
 		FLAMETHROWER = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				LOG(self.unit.lastSound)
+				---LOG(self.unit.lastSound)
 				if self.unit.lastSound == 0 then
 					self:PlaySound(Sound({Cue = 'FLAMHVY1', Bank = 'TA_Sound', LodCutoff = 'Weapon_LodCutoff'}))
 					self.unit.lastSound = 12

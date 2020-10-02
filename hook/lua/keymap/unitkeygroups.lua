@@ -9,8 +9,10 @@ TAunitkeygroups = {
     }, 
     ["Land_Factory"]= {
         "armlab",
+        "armvp",
         "armhp",
         "corvp",
+        "corlab",
         "corhp",
     },    
     ["Air_Factory"]= {

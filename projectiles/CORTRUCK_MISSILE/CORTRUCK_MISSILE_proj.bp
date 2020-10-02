@@ -37,10 +37,6 @@ ProjectileBlueprint {
         'ANTIAIR',
         'MISSILE',
     },    
-    Defense = {
-        Health = 1,
-        MaxHealth = 1,
-    },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/missile_mesh.bp',
         StrategicIconSize = 1,
@@ -51,7 +47,6 @@ ProjectileBlueprint {
         EntityCategory = {
        	    'CORE',
             'PROJECTILE',
-   	        'TACTICAL', 
        	    'MISSILE',
         },
         Faction = 'CORE',
@@ -65,7 +60,7 @@ ProjectileBlueprint {
         DestroyOnWater = true,
         InitialSpeed = 28.125,
         LeadTarget = false,
-        Lifetime = 30,
+        Lifetime = 10,
         MaxSpeed = 34.0625,
         TrackTarget = true,
         TurnRate = 165,

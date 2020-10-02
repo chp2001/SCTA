@@ -59,7 +59,7 @@ UnitBlueprint {
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'barrel'},
+				EmitterBone = {'gunpitch'},
 				EmitterBlueprint = {
     					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -212,7 +212,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/CORVIPE/CORVIPE_dead_prop.bp',
+    Blueprint = '/mods/SCTA-master/units/CORVIPE/CORVIPE_heap_prop.bp',
         WreckageLayers = {
             Land = true,
         },

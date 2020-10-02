@@ -97,7 +97,7 @@ UnitBlueprint {
         BuildCostEnergy = 20000,
         BuildCostMass = 6000, 
         BuildTime = 41937,
-        BuildRate = 200,
+        BuildRate = 250,
         BuildableCategory = {
             'ARMDRAKE',
         },

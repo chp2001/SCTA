@@ -1,8 +1,9 @@
 local WeaponFile = import('/lua/sim/DefaultWeapons.lua')
 local DefaultWeapon = WeaponFile.DefaultProjectileWeapon
+local KamikazeWeapon = WeaponFile.KamikazeWeapon
 local BareBonesWeapon = WeaponFile.BareBonesWeapon
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
-
+local EffectTemplate = import('/lua/EffectTemplates.lua')
 
 TAweapon = Class(DefaultWeapon) {
 
@@ -351,19 +352,60 @@ TAweapon = Class(DefaultWeapon) {
     end,
 }
 
+TABuzz = Class(TAweapon) {
+    OnCreate = function(self)
+        TAweapon.OnCreate(self)
+    end,
+}
+
+TAKami = Class(KamikazeWeapon){
+    FxMuzzleFlash = {
+        '/effects/emitters/default_muzzle_flash_01_emit.bp',
+        '/effects/emitters/default_muzzle_flash_02_emit.bp',
+    },
+
+    OnFire = function(self)
+		local army = self.unit:GetArmy()
+		KamikazeWeapon.OnFire(self)
+    end,
+}
+
+TABomb = Class(BareBonesWeapon) {
+    FxMuzzleFlash = {
+        '/effects/emitters/default_muzzle_flash_01_emit.bp',
+        '/effects/emitters/default_muzzle_flash_02_emit.bp',
+    },
+
+    OnCreate = function(self)
+        BareBonesWeapon.OnCreate(self)
+        self:SetWeaponEnabled(false)   
+    end,
+    
+
+    OnFire = function(self)
+    end,
+    
+    Fire = function(self)
+		local army = self.unit:GetArmy()
+		local myBlueprint = self:GetBlueprint()
+        DamageArea(self.unit, self.unit:GetPosition(), myBlueprint.DamageRadius, myBlueprint.Damage, myBlueprint.DamageType or 'Normal', myBlueprint.DamageFriendly or false)
+    end,    
+
+}
+
 TACommanderDeathWeapon = Class(BareBonesWeapon) {
     OnCreate = function(self)
         BareBonesWeapon.OnCreate(self)
 
         local myBlueprint = self:GetBlueprint()
         self.Data = {
-            NukeOuterRingDamage = myBlueprint.NukeOuterRingDamage or 10,
-            NukeOuterRingRadius = myBlueprint.NukeOuterRingRadius or 40,
+            NukeOuterRingDamage = myBlueprint.NukeOuterRingDamage or 50,
+            NukeOuterRingRadius = myBlueprint.NukeOuterRingRadius or 20,
             NukeOuterRingTicks = myBlueprint.NukeOuterRingTicks or 20,
             NukeOuterRingTotalTime = myBlueprint.NukeOuterRingTotalTime or 10,
 
-            NukeInnerRingDamage = myBlueprint.NukeInnerRingDamage or 1000,
-            NukeInnerRingRadius = myBlueprint.NukeInnerRingRadius or 30,
+            NukeInnerRingDamage = myBlueprint.NukeInnerRingDamage or 250,
+            NukeInnerRingRadius = myBlueprint.NukeInnerRingRadius or 15,
             NukeInnerRingTicks = myBlueprint.NukeInnerRingTicks or 24,
             NukeInnerRingTotalTime = myBlueprint.NukeInnerRingTotalTime or 24,
         }
@@ -394,7 +436,7 @@ TACommanderSuicideWeapon = Class(BareBonesWeapon) {
             NukeOuterRingTicks = myBlueprint.NukeOuterRingTicks or 20,
             NukeOuterRingTotalTime = myBlueprint.NukeOuterRingTotalTime or 10,
 
-            NukeInnerRingDamage = myBlueprint.NukeInnerRingDamage or 500,
+            NukeInnerRingDamage = myBlueprint.NukeInnerRingDamage or 250,
             NukeInnerRingRadius = myBlueprint.NukeInnerRingRadius or 30,
             NukeInnerRingTicks = myBlueprint.NukeInnerRingTicks or 24,
             NukeInnerRingTotalTime = myBlueprint.NukeInnerRingTotalTime or 24,

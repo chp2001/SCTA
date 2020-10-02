@@ -61,16 +61,18 @@ UnitBlueprint {
     },
     Description = 'Builds Hovercraft',
     Display = {
+        AnimationOpen = '/mods/SCTA-master/units/CORHP/CORHP_lod0_Aopen.sca',
+        AnimationOpenRate = 0.2, 
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate'},
 		DestructionEmitters = {
 			{
-				EmitterBone = {'plate1','plate2', 0},
+				EmitterBone = {'CORXHP'},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'muzzle1', 'muzzle2'},
+                EmitterBone = {'beam1', 'beam2', 'beam3', 'beam4'},
 				EmitterBlueprint = {
     					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -80,7 +82,7 @@ UnitBlueprint {
 			},
 		},
 	},
-	BuildBones = {'muzzle1','muzzle2'},
+	BuildBones = {'beam1','beam2', 'beam3', 'beam4'},
 	BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,
@@ -92,7 +94,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.12,
     },
     Economy = {
         BuildCostEnergy = 5277,
@@ -123,7 +125,7 @@ UnitBlueprint {
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
         },
-        SelectionPriority = 2,
+        SelectionPriority = 5,
         ConstructionBar = true,
         FactionName = 'CORE',
         TechLevel = 'RULEUTL_Advanced',

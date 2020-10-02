@@ -1,0 +1,22 @@
+#ARM Tiny - Low Damage, Med. Range Mine
+#ARMMINE1
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH2',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+	'LAND',
+	'DIRECTFIRE',
+        'OVERLAYDIRECTFIRE',	
+        'ARM',
+        'MINE',	
+	'LEVEL2',
+	'KAMIKAZI',
+	
+    },
+}

@@ -47,4 +47,9 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 8,
     },
+    Physics = {
+        MaxAcceleration = 1.4,
+        MaxBrake = 1.25,
+        MaxSpeed = 1.6,
+    },
 }

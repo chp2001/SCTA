@@ -37,7 +37,10 @@ TAWalking = Class(TATreads)
             end
         end
     end,
-    
+
+    OnKilled = function(self, instigator, type, overkillRatio)
+		TATreads.OnKilled(self, instigator, type, overkillRatio)
+	end,
 }
 
 TypeClass = TAWalking

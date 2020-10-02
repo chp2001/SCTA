@@ -4,6 +4,9 @@
 #Blueprint created by Raevn
 
 UnitBlueprint {
+    AI = {
+        InitialAutoMode = true,
+    },
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
@@ -68,7 +71,7 @@ UnitBlueprint {
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'door'},
+				EmitterBone = {'door1'},
 				EmitterBlueprint = {
 	    				'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',

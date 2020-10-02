@@ -151,6 +151,7 @@ UnitBlueprint {
             RULEUCC_Stop = true,
             RULEUCC_Transport = true,
         },
+        SelectionPriority = 2,
         FactionName = 'ARM',
         TechLevel = 'RULEUTL_Basic',
         UnitName = 'Atlas',
@@ -166,7 +167,7 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        Elevation = 7,
+        Elevation = 5,
         MotionType = 'RULEUMT_Air',
     MaxSpeed = 0.5, 
     RotateOnSpot = true,

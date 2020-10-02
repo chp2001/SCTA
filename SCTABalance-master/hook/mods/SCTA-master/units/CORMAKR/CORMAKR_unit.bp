@@ -29,8 +29,8 @@ Categories = {
         MaxHealth = 1500,
         },
     Economy = {
-        BuildCostEnergy = 20000,
-        BuildCostMass = 820,
+        BuildCostEnergy = 9500,
+        BuildCostMass = 1200,
         BuildTime = 15000,
         ProductionPerSecondMass = 3,
 	MaintenanceConsumptionPerSecondEnergy = 75,

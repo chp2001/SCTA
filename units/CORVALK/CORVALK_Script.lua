@@ -3,11 +3,11 @@
 #
 #Script created by Raevn
 
-local TAair = import('/mods/SCTA-master/lua/TAair.lua').TAair
+local TATransportAir = import('/mods/SCTA-master/lua/TAair.lua').TATransportAir
 
-CORVALK = Class(TAair) {
+CORVALK = Class(TATransportAir) {
 	OnCreate = function(self)
-		TAair.OnCreate(self)
+		TATransportAir.OnCreate(self)
 		self.Spinners = {
 			arm1 = CreateRotator(self, 'arm1', 'y', nil, 0, 0, 0),
 			arm2 = CreateRotator(self, 'arm2', 'y', nil, 0, 0, 0),

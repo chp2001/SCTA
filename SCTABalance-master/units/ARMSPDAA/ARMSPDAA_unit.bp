@@ -21,7 +21,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 5,
+    BuildIconSortPriority = 6,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -33,6 +33,7 @@ UnitBlueprint {
         'OVERLAYANTIAIR',
         'ARM',
         'KBOT',
+        'SPIDER',
 	'LEVEL2',
 	
 	
@@ -94,8 +95,7 @@ UnitBlueprint {
     },
     Footprint = {
 	SizeX = 1,
-	SizeZ = 1,
-	MaxSlope= 255,
+	SizeZ = 2,
     },
     General = {
         Category = 'Utility',

@@ -81,16 +81,19 @@ UnitBlueprint {
 	},
 	BuildBones = {'muzzle1','muzzle2'},
 	BuildAttachBone = 'pad',
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
-                {
-                    LODCutoff = 400,
-                    ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
-                },
+    Mesh = {
+        IconFadeInZoom = 130,
+        LODs = {
+            {
+                LODCutoff = 400,
+        SpecularName = '/mods/SCTA-master/units/CORVP/CORVP_SpecTeam.dds',
+        AlbedoName = '/mods/SCTA-master/units/CORVP/CORVP_Albedo.dds',
+        MeshName =   '/mods/SCTA-master/units/CORVP/CORVP_lod0.scm',
+        ShaderName = 'Unit', 
+        NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
             },
         },
+    },
 	TextureAnimationFrames = 6,
         UniformScale = 0.32,
     },
@@ -111,8 +114,8 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 7,
-        SizeZ = 7,
+        SizeX = 8,
+        SizeZ = 8,
     },
     General = {
 	BuildAngle = 2048,

@@ -27,8 +27,13 @@ UnitBlueprint {
 	'SHOWQUEUE',
     },
     Display = {
-        BuildBones = {'nano2', 'nano3'},
-        BuildAttachBone = 'Attachpoint_02',
+        BuildBones = {'nano1', 'nano2'},
+        BuildAttachBone = 'Attachpoint01',
+        UniformScale = 0.28,
+        },
+        Footprint = {
+            SizeX = 12,
+            SizeZ = 12,
         },
     Economy = {
         BuildCostEnergy = 11715,
@@ -42,4 +47,10 @@ UnitBlueprint {
             'AIR LEVEL2 ARM',
         },
     },
+    LifeBarSize = 8,
+    SelectionSizeX = 6,
+    SelectionSizeZ = 12,
+    SizeX = 7,
+    SizeY = 7,
+    SizeZ = 18,
 }

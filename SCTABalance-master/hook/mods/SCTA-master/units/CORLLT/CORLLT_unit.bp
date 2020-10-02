@@ -1,5 +1,6 @@
 UnitBlueprint {
     Merge = true,
+    CollisionOffsetY = -0.6,
     Display = {
         UniformScale = 0.08,
     },
@@ -17,6 +18,6 @@ UnitBlueprint {
     },
     SelectionCenterOffsetZ = 0,
     SizeX = 1,
-    SizeY = 3.5,
+    SizeY = 3.3,
     SizeZ = 1,
 }

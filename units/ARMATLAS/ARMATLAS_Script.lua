@@ -3,11 +3,11 @@
 #
 #Script created by Raevn
 
-local TAair = import('/mods/SCTA-master/lua/TAair.lua').TAair
+local TATransportAir = import('/mods/SCTA-master/lua/TAair.lua').TATransportAir
 
-ARMATLAS = Class(TAair) {
+ARMATLAS = Class(TATransportAir) {
 	OnCreate = function(self)
-		TAair.OnCreate(self)
+		TATransportAir.OnCreate(self)
 		self.Sliders = {
 			arm1 = CreateSlider(self, 'Arm_01'),
 			arm2 = CreateSlider(self, 'Arm_02'),

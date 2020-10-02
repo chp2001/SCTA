@@ -119,9 +119,12 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 400,
+                    LODCutoff = 400, 
+                    SpecularName = '/mods/SCTA-master/units/ARMLAB/ARMLAB_SpecTeam.dds',
+                    AlbedoName = '/mods/SCTA-master/units/ARMLAB/ARMLAB_Albedo.dds',
+                    MeshName =   '/mods/SCTA-master/units/ARMLAB/ARMLAB_lod0.scm',
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -138,14 +141,14 @@ UnitBlueprint {
             'KBOT LEVEL2 ARM',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = 7.5,
+	InitialRallyZ = -7.5,
         StorageMass = 200,
         StorageEnergy = 200,
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 6,
-        SizeZ = 6,
+        SizeX = 7,
+        SizeZ = 7,
     },
     General = {
 	BuildAngle = 4096,

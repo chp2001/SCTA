@@ -94,17 +94,19 @@ UnitBlueprint {
     },
 	BuildBones = {'muzzlea','muzzleb'},
 	BuildAttachBone = 'pad',
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
-                {
+    Mesh = {
+        IconFadeInZoom = 130,
+        LODs = {
+            {
                 LODCutoff = 400,
-                AlbedoName = 'CORDAP_Albedo.dds',
-                SpecularName = 'CORDAP_SpecTeam.dds',
-                ShaderName = 'Unit',
+        NormalName = '/mods/SCTA-master/units/CORAP/CORAP_normalsTS.dds',
+        SpecularName = '/mods/SCTA-master/units/CORAP/CORAP_SpecTeam.dds',
+        AlbedoName = '/mods/SCTA-master/units/CORAP/CORAP_Albedo.dds',
+        MeshName =   '/mods/SCTA-master/units/CORAP/CORAP_lod0.scm',
+        ShaderName = 'Unit', 
             },
         },
-        },
+    },
         UniformScale = 0.32,
     },
     Economy = {
@@ -124,8 +126,8 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 7,
-        SizeZ = 6,
+        SizeX = 8,
+        SizeZ = 7,
     },
     General = {
         Category = 'Factory',

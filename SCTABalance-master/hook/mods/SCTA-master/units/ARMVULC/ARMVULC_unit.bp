@@ -10,23 +10,23 @@ UnitBlueprint {
         BuildTime = 1200000,
     },
     Footprint = {
-        SizeX = 8,
-        SizeZ = 8,
+        SizeX = 6,
+        SizeZ = 6,
     },
         Display = {
-        UniformScale = 0.80,
+        UniformScale = 0.55,
     },
     Physics = {
     SkirtSizeX = 0, 
     SkirtSizeZ = 0,  
     }, 
     SelectionThickness = 0.3,
-    SelectionSizeX = 10,
-    SelectionCenterOffsetZ = -4,
-    SelectionSizeZ = 10,
-    SizeX = 12,
-    SizeY = 18,
-    SizeZ = 14,
+    SelectionSizeX = 8,
+    SelectionCenterOffsetZ = -3,
+    SelectionSizeZ = 8,
+    SizeX = 8,
+    SizeY = 14,
+    SizeZ = 10,
     LifeBarSize = 10,
     Weapon = {
         {

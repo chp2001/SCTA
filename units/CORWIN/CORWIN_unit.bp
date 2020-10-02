@@ -89,8 +89,8 @@ UnitBlueprint {
         BuildTime = 1687,
 	    NaturalProducer = true,
         ProductionPerSecondEnergy = 20,
-        ProductionPerSecondEnergyMin = 10,
-        ProductionPerSecondEnergyMax = 30,
+        ProductionPerSecondEnergyMin = 15,
+        ProductionPerSecondEnergyMax = 35,
     },
     Footprint = {
 	MaxSlope = 0.625,

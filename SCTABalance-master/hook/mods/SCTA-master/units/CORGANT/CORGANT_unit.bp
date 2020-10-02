@@ -29,6 +29,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 18000,
         BuildCostMass = 5500, 
+        BuildRate = 250,
     },
         Display = {
         UniformScale = 0.38,

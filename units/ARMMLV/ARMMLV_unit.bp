@@ -45,7 +45,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'SHOWQUEUE',
 
-	
+	'REPAIR',
         'MOBILE',
 	'CONSTRUCTION',
 	'LAND',
@@ -130,7 +130,11 @@ UnitBlueprint {
             RULEUCC_Patrol = true,
             RULEUCC_Pause = true,
             RULEUCC_Stop = true,
+            RULEUCC_Reclaim = true,
+            RULEUCC_Repair = true,
         },
+        ConstructionBar = true,
+        SelectionPriority = 3,
         FactionName = 'ARM',
         TechLevel = 'RULEUTL_Basic',
 	UnitName = 'Podger',

@@ -71,7 +71,6 @@ UnitBlueprint {
         'CAPTURE',
         'REPAIR',
         'SHOWQUEUE',
-        'MOBILE',
 	'LAND',
 	'MOBILE',
 	'DIRECTFIRE',
@@ -89,10 +88,6 @@ UnitBlueprint {
         'CORE',
         'COMMANDER',
 	'LEVEL10',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -193,7 +188,7 @@ UnitBlueprint {
         TechLevel = 'RULEUTL_Experimental',
     },
     Intel = {
-        FreeIntel = true,
+        FreeIntel = false,
         VisionRadius = 18,
         WaterVisionRadius = 18,
         RadarRadius = 25,
@@ -334,8 +329,8 @@ UnitBlueprint {
             MuzzleVelocity = 12.5,
             NeedPrep = true,
             EnergyChargeForFirstShot = false,
-            EnergyRequired = 1000,
-            EnergyDrainPerSecond = 1000,
+            EnergyRequired = 2000,
+            EnergyDrainPerSecond = 2000,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_DISINTEGRATOR/CORE_DISINTEGRATOR_proj.bp',
             RackBones = {
                 {
@@ -346,12 +341,12 @@ UnitBlueprint {
                 },
             },
             RackRecoilDistance = 0,
-            RackReloadTimeout = 0,
+            RackReloadTimeout = 10,
             RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 10,
+            RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RateOfFire = 0.2,
-            TargetCheckInterval = 1,
+            TargetCheckInterval = 0.1,
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
             TurretBoneMuzzle = 'BigFlsh',
             TurretBonePitch = 'BigGun',
@@ -380,7 +375,7 @@ UnitBlueprint {
 	    EdgeEffectiveness = 0.75,
         },
         {
-            Damage = 1000,
+            Damage = 100,
             DamageFriendly = true,
             DamageRadius = 20,
             DamageType = 'Normal',

@@ -53,9 +53,11 @@ TAAirConstructor = Class(TAair) {
 								#Need to Show Life Bar here once implemented
 							end
 							if (self.isBuilding == true) then
+								if EntityCategoryContains(categories.ARM, self.currentTarget) or EntityCategoryContains(categories.CORE, self.currentTarget) then
 								self.currentTarget:HideFlares()
 								self:SetBuildRate(self:GetBlueprint().Economy.BuildRate)
 								TAair.OnStartBuild(self, self.currentTarget, self.order)
+								end
 							end
 							if (self.isReclaiming == true) then
 								self:SetReclaimTimeMultiplier(1)
@@ -221,7 +223,7 @@ TAAirConstructor = Class(TAair) {
 	Nano = function(self, unitBeingBuilt)
 		local target = 1
 		local current = 0
-		while  self.isBuilding == true and IsDestroyed(unitBeingBuilt) == false and unitBeingBuilt:GetFractionComplete() < 1 or self.isReclaiming == true and self.currentState == "aimed" do
+		while not IsDestroyed(self) and self.isBuilding == true and IsDestroyed(unitBeingBuilt) == false and unitBeingBuilt:GetFractionComplete() < 1 or self.isReclaiming == true and self.currentState == "aimed" do
 			if self:IsPaused() == false then
 
 				current = current + 1

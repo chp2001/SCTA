@@ -154,10 +154,6 @@ TAconstructor = Class(TAWalking) {
 			self.desiredState = "closed"
 		end
 		self:SetAllWeaponsEnabled(true)
-		if self.isFactory then
-			self:SetBusy(true)
-			self:SetBlockCommandQueue(true)
-		end
 	end,
 
 	DestroyUnitBeingBuilt = function(self)
@@ -276,13 +272,11 @@ TAconstructor = Class(TAWalking) {
 	Nano = function(self, unitBeingBuilt)
 		local target = 1
 		local current = 0
-		while  self.isBuilding == true and IsDestroyed(unitBeingBuilt) == false and unitBeingBuilt:GetFractionComplete() < 1 or self.isReclaiming == true and self.currentState == "aimed" do
+		while not IsDestroyed(self) and self.isBuilding == true and IsDestroyed(unitBeingBuilt) == false and unitBeingBuilt:GetFractionComplete() < 1 or self.isReclaiming == true and self.currentState == "aimed" do
 			if self:IsPaused() == false then
-
 				current = current + 1
 				if current >= target or self.isReclaiming == true then
 					for k,v in self:GetBlueprint().Display.BuildBones do
-
                         local selfPosition = self:GetPosition(v) 
                         local targetPosition = unitBeingBuilt:GetPosition()
                         local distance = VDist3(Vector(selfPosition.x,selfPosition.y, selfPosition.z), Vector(targetPosition.x, targetPosition.y, targetPosition.z))

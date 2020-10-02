@@ -45,7 +45,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'SHOWQUEUE',
 
-	
+        'REPAIR',
         'MOBILE',
 	'CONSTRUCTION',
 	'LAND',
@@ -125,12 +125,16 @@ UnitBlueprint {
         Classification = 'RULEUC_Engineer',
         CommandCaps = {
             RULEUCC_CallTransport = true,
-            RULEUCC_Guard = false,
+            RULEUCC_Guard = true,
             RULEUCC_Move = true,
             RULEUCC_Patrol = true,
             RULEUCC_Pause = true,
             RULEUCC_Stop = true,
+            RULEUCC_Reclaim = true,
+            RULEUCC_Repair = true,
         },
+        ConstructionBar = true,
+        SelectionPriority = 3,
         FactionName = 'CORE',
         TechLevel = 'RULEUTL_Basic',
 	UnitName = 'Spoiler',

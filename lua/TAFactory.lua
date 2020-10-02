@@ -32,8 +32,6 @@ TAFactory = Class(TAconstructor) {
         TAconstructor.OnKilled(self, instigator, type, overkillRatio)
             if self.currentTarget and not self.currentTarget:IsDead() and self.currentTarget:GetFractionComplete() != 1 then
 				self.currentTarget:Kill()
-			else
-                self.currentTarget:Destroy()
         	end
     end,
 
@@ -60,7 +58,6 @@ TAFactory = Class(TAconstructor) {
 
 	OnStopBuild = function(self, unitBeingBuilt, order )
 		TAconstructor.OnStopBuild(self, unitBeingBuilt, order )
-		self:SetAllWeaponsEnabled(true)
 		self:SetBusy(true)
 		self:SetBlockCommandQueue(true)
 	end,
@@ -111,7 +108,7 @@ TAFactory = Class(TAconstructor) {
 	Nano = function(self, unitBeingBuilt)
 		local target = 1
 		local current = 0
-		while  self.isBuilding == true and IsDestroyed(unitBeingBuilt) == false and unitBeingBuilt:GetFractionComplete() < 1 or self.isReclaiming == true and self.currentState == "aimed" do
+		while not IsDestroyed(self) and self.isBuilding == true and IsDestroyed(unitBeingBuilt) == false and unitBeingBuilt:GetFractionComplete() < 1 or self.isReclaiming == true and self.currentState == "aimed" do
 			if self:IsPaused() == false then
 
 				current = current + 1

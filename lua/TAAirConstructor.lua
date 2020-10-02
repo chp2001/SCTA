@@ -223,7 +223,7 @@ TAAirConstructor = Class(TAair) {
 	Nano = function(self, unitBeingBuilt)
 		local target = 1
 		local current = 0
-		while  self.isBuilding == true and IsDestroyed(unitBeingBuilt) == false and unitBeingBuilt:GetFractionComplete() < 1 or self.isReclaiming == true and self.currentState == "aimed" do
+		while not IsDestroyed(self) and self.isBuilding == true and IsDestroyed(unitBeingBuilt) == false and unitBeingBuilt:GetFractionComplete() < 1 or self.isReclaiming == true and self.currentState == "aimed" do
 			if self:IsPaused() == false then
 
 				current = current + 1

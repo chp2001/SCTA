@@ -229,7 +229,7 @@ UnitBlueprint {
                 {MuzzleBones = {'RightMuzzle'}, RackBone = 'RightLowerArm'},
                 {MuzzleBones = {'LeftMuzzle'}, RackBone = 'LeftLowerArm'},
             },
-            RackRecoilDistance = 0,
+            RackRecoilDistance = -0.5,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,

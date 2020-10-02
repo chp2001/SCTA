@@ -83,7 +83,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -188,6 +187,10 @@ UnitBlueprint {
                     RackBone = 'Launcher',
                 },
             },
+			WeaponUnpacks = 'true',
+			WeaponUnpackAnimation = '/mods/SCTA-master/units/CORHRK/CORHRK_lod0_unpack',
+			WeaponUnpackAnimationRate = 1,
+			WeaponRepackTimeout = 2,
             RackRecoilDistance = 0,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,

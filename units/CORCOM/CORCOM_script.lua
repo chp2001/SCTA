@@ -52,6 +52,7 @@ CORCOM = Class(TAconstructor) {
 			self.Trash:Add(v)
 		end
 		TAconstructor.OnCreate(self)
+		self:SetCapturable(false)
             	self:SetIntelRadius('Omni', 0)
 		ForkThread(self.CloakDetection, self)
 	end,

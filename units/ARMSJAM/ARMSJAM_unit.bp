@@ -131,7 +131,9 @@ UnitBlueprint {
     },
     Intel = {
 	FreeIntel = false,
-    VisionRadius = 14,
+    SonarRadius = 14,
+    VisionRadius = 10,
+    WaterVisionRadius = 10,
 	RadarStealthFieldRadius = 25,
     },
     Interface = {

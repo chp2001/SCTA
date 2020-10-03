@@ -1,5 +1,5 @@
 #ARM Jammer - Mobile Radar Jammer
-#ARMSJAM
+#ARMSCRAM
 #
 #Blueprint created by Raevn
 
@@ -50,7 +50,9 @@ UnitBlueprint {
         'DEFENSIVEBOAT',
         'ARM',
         'SHIP',
-	'JAM',
+        'SUBMERSIBLE',
+    'JAM',
+    'ADVANCEDSUB',
 	'LEVEL2',
 	
 	
@@ -101,9 +103,9 @@ UnitBlueprint {
         UniformScale = 0.16,
     },
     Economy = {
-        BuildCostEnergy = 1621,
-        BuildCostMass = 97,
-        BuildTime = 5933,
+        BuildCostEnergy = 3000,
+        BuildCostMass = 295,
+        BuildTime = 11000,
 	MaintenanceConsumptionPerSecondEnergy = 10,
     },
     Footprint = {
@@ -112,7 +114,7 @@ UnitBlueprint {
 	MaxSlope = 1,
     },
     General = {
-        Category = 'Utility',
+        Category = 'Submarine',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Guard = true,
@@ -126,14 +128,14 @@ UnitBlueprint {
         },
         FactionName = 'ARM',
         TechLevel = 'RULEUTL_Advanced',
-        UnitName = 'Escort',
+        UnitName = 'Fibber',
         UnitWeight = 1,
     },
     Intel = {
-	FreeIntel = false,
-    SonarRadius = 14,
-    VisionRadius = 10,
-    WaterVisionRadius = 10,
+    FreeIntel = false,
+    SonarRadius = 30,
+    VisionRadius = 14,
+    WaterVisionRadius = 12,
 	RadarStealthFieldRadius = 25,
     },
     Interface = {
@@ -143,13 +145,22 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Air = false,
+            LAYER_Land = false,
+            LAYER_Orbit = false,
+            LAYER_Seabed = false,
+            LAYER_Sub = true,
+            LAYER_Water = false,
+        },
+        Elevation = -1.25,
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
         MaxAcceleration = 1.2,
         MaxBrake = 1.2,
         MaxSpeed = 2.4,
-        MotionType = 'RULEUMT_Water',
+        MotionType = 'RULEUMT_SurfacingSub',
         TurnRate = 83,
     },
     SelectionSizeX = 1,
@@ -180,7 +191,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/ARMSJAM/ARMSJAM_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/ARMSCRAM/ARMSCRAM_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Seabed = true,

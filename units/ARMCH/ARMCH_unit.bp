@@ -180,7 +180,7 @@ UnitBlueprint {
         MaxSteerForce = 100,
 	RotateOnSpot = true,
 	TurnFacingRate = 20,
-	WobbleFactor = 0.2,
+	WobbleFactor = 0.05,
 	WobbleSpeed = 0.25,
     },
     SelectionSizeX = 1.5,

@@ -111,6 +111,7 @@ UnitBlueprint {
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
+            LAYER_Seabed = true,
         },
         SkirtSizeX = 4,
         SkirtSizeZ = 4,
@@ -142,4 +143,11 @@ UnitBlueprint {
             Label = 'SuicideWeapon',
         },
     },
+    Wreckage = {
+        UseCustomMesh = true,
+            Blueprint = '/mods/SCTA-master/units/ARMGEO/ARMGEO_dead_prop.bp',
+            WreckageLayers = {
+                Land = true,
+            },
+        },
 }

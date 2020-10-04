@@ -48,8 +48,6 @@ UnitBlueprint {
         BuildCostMass = 6000, 
 	ProductionPerSecondMass = 0,
         BuildableCategory = {
-            'VTOL LEVEL2 CORE',
-            'VTOL LEVEL1 CORE', 
             'VTOL LEVEL3 CORE',
         },
     },

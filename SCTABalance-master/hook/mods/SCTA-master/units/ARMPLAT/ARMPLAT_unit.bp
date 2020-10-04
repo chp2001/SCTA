@@ -25,10 +25,7 @@ UnitBlueprint {
     'AIR',
 		'PLANT',
 	'SORTCONSTRUCTION',
-	'LEVEL4',
-	
-	
-	
+	'LEVEL3',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -48,9 +45,7 @@ UnitBlueprint {
         BuildCostMass = 6000, 
 	ProductionPerSecondMass = 0,
         BuildableCategory = {
-            'VTOL LEVEL2 ARM',
-            'VTOL LEVEL1 ARM', 
-            'VTOL LEVEL 3 ARM',
+            'VTOL LEVEL3 ARM',
         },
     },
     LifeBarSize = 8,

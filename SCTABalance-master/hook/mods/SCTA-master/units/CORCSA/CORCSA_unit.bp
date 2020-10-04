@@ -30,6 +30,8 @@ UnitBlueprint {
         BuildTime = 4000,    
         BuildableCategory = {
             'BUILTBYT1HOVER CORE',
+            'BUILTBYT1SHIP CORE',
+            'BUILTBYT2SUB CORE',
             'BUILTBYT1AIR CORE',
             'BUILTBYT2AIR CORE',
         },

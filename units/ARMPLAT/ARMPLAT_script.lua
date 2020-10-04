@@ -13,6 +13,8 @@ ARMAAP = Class(TAFactory) {
 	spinUnit = false,
 
 	OnCreate = function(self)
+		self.AnimManip = CreateAnimator(self)
+		self.Trash:Add(self.AnimManip)
 		TAFactory.OnCreate(self)
 	end,
 
@@ -21,6 +23,8 @@ ARMAAP = Class(TAFactory) {
 	end,
 
 	Open = function(self)
+		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
+		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 		TAFactory.Open(self)
 	end,
 
@@ -29,6 +33,8 @@ ARMAAP = Class(TAFactory) {
 	end,
 
 	Close = function(self)
+		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
+		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 		TAFactory.Close(self)
 	end,
 }

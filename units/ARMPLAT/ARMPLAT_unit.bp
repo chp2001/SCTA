@@ -61,6 +61,8 @@ UnitBlueprint {
     },
     Description = 'Builds Seaplanes',
     Display = {
+        AnimationUnpack = '/mods/SCTA-master/units/ARMPLAT/ARMPLAT_lod0_UnPaCk.sca',
+        AnimationUnpackRate = 0.2, 
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate','CorBld','Runway','Circuits'},
 		DestructionProjectiles = {
@@ -86,7 +88,7 @@ UnitBlueprint {
 			},
 		},
 	},
-	BuildBones = {'nano1', 'nano2'},
+	BuildBones = {'beam1', 'beam2'},
 	BuildAttachBone = 'pad',
 	TextureAnimationFrames = 6,
         Mesh = {
@@ -109,9 +111,7 @@ UnitBlueprint {
     NaturalProducer = true,
 	ProductionPerSecondMass = 1,
         BuildableCategory = {
-            'VTOL LEVEL 3 ARM',
-            'armlance',
-            'armfig',
+            'VTOL LEVEL3 ARM',
         },
 	InitialRallyX = 1,
 	InitialRallyZ = 1,

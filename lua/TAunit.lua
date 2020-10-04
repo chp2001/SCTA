@@ -158,14 +158,11 @@ TAunit = Class(Unit)
                 		self:PlayUnitSound('StartMove')
 			end
 		elseif (new == 'Stopped') then
-			if (not EntityCategoryContains(categories.TRANSPORTATION, self) or not self:GetCargo()) then
-				#TAutils.DisplayMessage(self:GetBlueprint().General.UnitName .. ": Arrived", 2)
 				if self.FxMovement then
 					ForkThread(self.IdleEffects, self)
 					for k,v in self.FxMovement do
 						v:Destroy()
 					end
-				end
 			end
 			self:PlayUnitSound('StopMove')
 		end

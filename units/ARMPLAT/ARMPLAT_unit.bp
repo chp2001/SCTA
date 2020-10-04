@@ -41,10 +41,11 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'TEXTUREANIM',
         'OVERLAYRADAR',
-	'ARM',
+    'ARM',
+    'AIR',
 		'PLANT',
 	'SORTCONSTRUCTION',
-	'LEVEL2',
+	'LEVEL3',
 	
 	
 	
@@ -73,7 +74,7 @@ UnitBlueprint {
 		},
 		DestructionEmitters = {
 			{
-				EmitterBone = {'pad','ARMAAP'},
+				EmitterBone = {'pad'},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
@@ -95,7 +96,7 @@ UnitBlueprint {
             IconFadeInZoom = 400,
             LODs = {
                 {
-                    LODCutoff = 230,
+                    LODCutoff = 400,
                     ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
@@ -111,7 +112,7 @@ UnitBlueprint {
     NaturalProducer = true,
 	ProductionPerSecondMass = 1,
         BuildableCategory = {
-            'AIR LEVEL2 ARM',
+            'PLANE LEVEL 3 ARM',
             'armlance',
             'armfig',
         },

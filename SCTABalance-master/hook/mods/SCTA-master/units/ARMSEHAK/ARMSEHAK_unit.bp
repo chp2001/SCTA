@@ -1,0 +1,29 @@
+#ARM Eagle - Radar Plane
+#ARMSEHAK
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+   Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	'AIR',
+    'INTELLIGENCE',
+    'PLANE',
+    'RADAR',
+        'OVERLAYRADAR',
+        'SONAR',
+        'OVERLAYSONAR',
+        'ARM',
+	'LEVEL3',
+    },
+    Economy = {
+        BuildCostMass = 300,
+        MaintenanceConsumptionPerSecondEnergy = 5,
+    },
+    StrategicIconName = 'icon_fighter3_intel',
+}

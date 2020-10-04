@@ -1,0 +1,65 @@
+#ARM Adv. Aircraft Plant - Produces Aircraft
+#ARMAAP
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+   Merge = true,
+    Categories = {
+        'BUILTBYT2SUB',
+        'BUILTBYT1HOVER',
+        'BUILTBYT2AIR',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH3',
+	'FACTORY',
+        'RALLYPOINT',
+        'SHOWQUEUE',
+	'STRUCTURE',
+	'CONSTRUCTION',
+	'TEXTUREANIM',
+        'OVERLAYRADAR',
+    'ARM',
+    'AIR',
+		'PLANT',
+	'SORTCONSTRUCTION',
+	'LEVEL4',
+	
+	
+	
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 6000,
+        MaxHealth = 6000,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 11,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Builds Seaplanes',
+    Display = {
+        UniformScale = 0.32,
+    },
+    Economy = {
+        BuildCostEnergy = 60000,
+        BuildCostMass = 6000, 
+	ProductionPerSecondMass = 0,
+        BuildableCategory = {
+            'AIR LEVEL2 ARM',
+            'AIR LEVEL1 ARM', 
+            'PLANE LEVEL 3 ARM',
+            'armlance',
+            'armfig',
+        },
+    },
+    LifeBarSize = 8,
+    SelectionSizeX = 12,
+    SelectionSizeZ = 6,
+    SizeX = 14,
+    SizeY = 8,
+    SizeZ = 14,
+    StrategicIconName = 'icon_factory3_air',
+}

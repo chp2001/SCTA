@@ -13,15 +13,10 @@ CORCSA = Class(TAAirConstructor) {
 		self.Spinners = {
 			nozzle1 = CreateRotator(self, 'nano1', 'x', nil, 0, 0, 0),
 			nozzle2 = CreateRotator(self, 'nano2', 'x', nil, 0, 0, 0),
+			wing1 = CreateRotator(self, 'rightwing', 'z', nil, 0, 0, 0),
+			wing2 = CreateRotator(self, 'leftwing', 'z', nil, 0, 0, 0),
 		}
 		for k, v in self.Spinners do
-			self.Trash:Add(v)
-		end
-		self.Sliders = {
-			wing1 = CreateSlider(self, 'rightwing'),
-			wing2 = CreateSlider(self, 'leftwing'),
-		}
-		for k, v in self.Sliders do
 			self.Trash:Add(v)
 		end
 	end,
@@ -42,22 +37,22 @@ CORCSA = Class(TAAirConstructor) {
 	end,
 
 	OpenWings = function(self)
-		--MOVE wing1 to x-axis <5.59> SPEED <5.00>;
-		self.Sliders.wing1:SetGoal(0,0,5)
-		self.Sliders.wing1:SetSpeed(5)
+		--MOVE winga to x-axis <5.59> SPEED <5.00>;
+		self.Spinners.wing1:SetGoal(70)
+		self.Spinners.wing1:SetSpeed(70)
 
-		self.Sliders.wing2:SetGoal(0,0,5)
-		self.Sliders.wing2:SetSpeed(5)
+		--MOVE wing2 to x-axis <-5.65> SPEED <5.00>;
+		self.Spinners.wing2:SetGoal(-70)
+		self.Spinners.wing2:SetSpeed(70)
 	end,
 
 	CloseWings = function(self)
-		--MOVE wing1 to x-axis <0> SPEED <5.00>;
-		self.Sliders.wing1:SetGoal(0,0,0)
-		self.Sliders.wing1:SetSpeed(5)
+		self.Spinners.wing1:SetGoal(0)
+		self.Spinners.wing1:SetSpeed(70)
 
-		--MOVE wing2 to x-axis <0> SPEED <5.00>;
-		self.Sliders.wing2:SetGoal(0,0,0)
-		self.Sliders.wing2:SetSpeed(5)
+		--MOVE wing2 to x-axis <-5.65> SPEED <5.00>;
+		self.Spinners.wing2:SetGoal(0)
+		self.Spinners.wing2:SetSpeed(70)
 	end,
 
 	Aim = function(self, target)

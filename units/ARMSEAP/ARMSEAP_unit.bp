@@ -72,6 +72,7 @@ UnitBlueprint {
         'MOBILE',
 	'ANTINAVY',
     'AIR',
+    'VTOL',
     'TRANSPORTATION',
     'PLANE',
     'HIGHALTAIR',
@@ -219,9 +220,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'bombDrop',
+                        'bombdrop',
                     },
-                    RackBone = 'bombDrop',
+                    RackBone = 'bombdrop',
                 },
             },
             RackFireTogether = false,

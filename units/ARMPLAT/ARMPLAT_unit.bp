@@ -61,15 +61,12 @@ UnitBlueprint {
     },
     Description = 'Builds Seaplanes',
     Display = {
-        Abilities = {
-            '<LOC ability_radar>Radar',
-        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate','CorBld','Runway','Circuits'},
 		DestructionProjectiles = {
 			{
 				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMAAP_debris01_proj.bp',
-				Bone = 'radar',
+				Bone = 'pad',
 			},
 		},
 		DestructionEmitters = {
@@ -112,7 +109,7 @@ UnitBlueprint {
     NaturalProducer = true,
 	ProductionPerSecondMass = 1,
         BuildableCategory = {
-            'PLANE LEVEL 3 ARM',
+            'VTOL LEVEL 3 ARM',
             'armlance',
             'armfig',
         },

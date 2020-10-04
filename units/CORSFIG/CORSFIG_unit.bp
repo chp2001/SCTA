@@ -76,7 +76,7 @@ UnitBlueprint {
         'MOBILE',
 	'ANTIAIR',
     'AIR',
-    'PLANE',
+    'VTOL',
     'TRANSPORTATION',
         'OVERLAYANTIAIR',
 	'OVERLAYDIRECTFIRE',
@@ -202,6 +202,7 @@ UnitBlueprint {
             FireTargetLayerCapsTable = {
                 Air = 'Land|Water|Air|Seabed',
                 Land = 'Land|Water|Air|Seabed',
+                Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_AntiAir',
      WeaponCategory = 'AntiAir',
@@ -217,15 +218,15 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'muzzle1',
+                        'emitter1',
                     },
-                    RackBone = 'muzzle1',
+                    RackBone = 'emitter1',
                 },
                 {
                     MuzzleBones = {
-                        'muzzle2',
+                        'emitter2',
                     },
-                    RackBone = 'muzzle2',
+                    RackBone = 'emitter2',
                 },
             },
             RackRecoilDistance = 0,

@@ -13,7 +13,7 @@ UnitBlueprint {
     'MOBILE',
 'CONSTRUCTION',
 'AIR',
-'PLANE',
+'VTOL',
 'SELECTION', 
     'ARM',
 'LEVEL3',

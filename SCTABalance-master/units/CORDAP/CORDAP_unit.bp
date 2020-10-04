@@ -45,12 +45,7 @@ UnitBlueprint {
 	'CORE',
 		'PLANT',
 	'SORTCONSTRUCTION',
-	
-	'LEVEL4',
-	
-	
-	
-	
+	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -116,8 +111,8 @@ UnitBlueprint {
     BuildRate = 180,
     DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
-        'AIR LEVEL1 CORE', 
-        'AIR LEVEL2 CORE',
+        'VTOL LEVEL1 CORE', 
+        'VTOL LEVEL2 CORE',
     },
 	InitialRallyX = 1,
 	InitialRallyZ = 1,

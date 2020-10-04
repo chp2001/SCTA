@@ -14,12 +14,12 @@ UnitBlueprint {
         'MOBILE',
 	'ANTIAIR',
     'AIR',
-    'PLANE',
+    'VTOL',
     'TRANSPORTATION',
         'OVERLAYANTIAIR',
 	'OVERLAYDIRECTFIRE',
 	'DIRECTFIRE',
-        'ARM',
+        'CORE',
 	'LEVEL3',
     },
     Defense = {
@@ -73,15 +73,15 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'muzzle1',
+                        'emitter1',
                     },
-                    RackBone = 'muzzle1',
+                    RackBone = 'emitter1',
                 },
                 {
                     MuzzleBones = {
-                        'muzzle2',
+                        'emitter2',
                     },
-                    RackBone = 'muzzle2',
+                    RackBone = 'emitter2',
                 },
             },
             RackRecoilDistance = 0,

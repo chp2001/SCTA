@@ -17,7 +17,6 @@ UnitBlueprint {
 'SELECTION', 
     'ARM',
 'LEVEL3',
-'TRANSPORTATION',
 },
    Defense = {
     Health = 400,
@@ -30,6 +29,8 @@ UnitBlueprint {
         BuildTime = 4000,    
         BuildableCategory = {
             'BUILTBYT1HOVER ARM',
+            'BUILTBYT1SHIP ARM',
+            'BUILTBYT2SUB ARM',
             'BUILTBYT1AIR ARM',
             'BUILTBYT2AIR ARM',
         },

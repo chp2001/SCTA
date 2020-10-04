@@ -25,39 +25,43 @@ UnitBlueprint {
     'AIR',
 		'PLANT',
 	'SORTCONSTRUCTION',
-	'LEVEL4',
-	
-	
-	
+	'LEVEL3',
     },
     Defense = {
-        ArmorType = 'Structure',
         Health = 6000,
         MaxHealth = 6000,
-        AirThreatLevel = 0,
-        EconomyThreatLevel = 11,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
-    Description = 'Builds Seaplanes',
     Display = {
-        UniformScale = 0.32,
+        UniformScale = 0.20,
+    },
+    Footprint = {
+        MinWaterDepth = 1.875,
+        SizeX = 5,
+        SizeZ = 5,
     },
     Economy = {
         BuildCostEnergy = 60000,
         BuildCostMass = 6000, 
-	ProductionPerSecondMass = 0,
+    ProductionPerSecondMass = 0,
+    BuildRate = 300,
         BuildableCategory = {
-            'VTOL LEVEL2 ARM',
-            'VTOL LEVEL1 ARM', 
-            'VTOL LEVEL 3 ARM',
+            'VTOL LEVEL3 ARM',
         },
     },
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
+        FlattenSkirt = true,
+        SkirtSizeX = 4,
+        SkirtSizeZ = 4,
+    },
     LifeBarSize = 8,
-    SelectionSizeX = 12,
+    SelectionSizeX = 8,
     SelectionSizeZ = 6,
-    SizeX = 14,
-    SizeY = 8,
-    SizeZ = 14,
+    SizeX = 8,
+    SizeY = 4,
+    SizeZ = 8,
     StrategicIconName = 'icon_factory3_air',
 }

@@ -76,7 +76,7 @@ UnitBlueprint {
     'HIGHALTAIR',
         'OVERLAYANTINAVY',
         'CORE',
-	'LEVEL2',
+    'LEVEL2',
     },
     Defense = {
         ArmorType = 'Light',

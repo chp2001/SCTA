@@ -17,7 +17,9 @@ TAunitkeygroups = {
     },    
     ["Air_Factory"]= {
         "armap",
+        "armplat",
         "corap",
+        "corplat",
     },
     ["Naval_Factory"]= {
         "armsy",
@@ -130,7 +132,9 @@ TAunitkeygroups = {
     },
     ["T1_Air_Scout"]= {
         "armpeep",
+        "armsehak",
         "corfink",
+        "corhunt",
     },
     ["T2_Mobile_Stealth_Field_System"]= {
         "armaser",
@@ -160,7 +164,9 @@ TAunitkeygroups = {
     },
     ["T2_Torpedo_Bomber"]= {
         "armlance",
+        "armseap",
         "cortitan",
+        "corseap",
     },
     ["T3_Spy_Plane"]= {
         "armawac",
@@ -168,7 +174,9 @@ TAunitkeygroups = {
     },
     ["T3_Air_Superiority_Fighter"]= {
         "armhawk",
+        "armsfig",
         "corvamp",
+        "corsfig",
     },
     ["T3_Strategic_Bomber"]= {
         "armpnix",
@@ -202,11 +210,13 @@ TAunitkeygroups = {
         "armcs",
         "armcv",
         "armch",
+        "armcsa",
         "corca",
         "corck",
         "corcs",
         "corcv",
         "corch",
+        "corcsa",
     },
     ["T1_Light_Assault_Bot"]= {
         "armpw",

@@ -23,7 +23,7 @@ ARMMARK = Class(TAWalking) {
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAWalking.OnStopBeingBuilt(self,builder,layer)
 		self.Spinners.dish1:SetSpeed(90)
-		self.Spinners.dish2:SetSpeed(90)
+		self.Spinners.dish2:SetSpeed(-90)
 	end,
 }
 

@@ -51,8 +51,8 @@ SizeZ = 16,
         ProductionPerSecondEnergy = 300,
         MaintenanceConsumptionPerSecondEnergy = 35,
         BuildableCategory = {
-            'AIR LEVEL1 CORE', 
-            'AIR LEVEL2 CORE',
+            'VTOL LEVEL1 CORE', 
+            'VTOL LEVEL2 CORE',
         },
     },
 }

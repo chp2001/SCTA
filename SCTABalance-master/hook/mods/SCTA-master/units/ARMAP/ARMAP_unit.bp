@@ -23,7 +23,7 @@ UnitBlueprint {
 	'ARM',
 		'PLANT',
 	'SORTCONSTRUCTION',
-	'LEVEL3',
+	'LEVEL1',
 	
 	
 	
@@ -44,7 +44,7 @@ UnitBlueprint {
         BuildCostEnergy = 5100,
         BuildRate = 100,
         BuildableCategory = {
-            'AIR LEVEL1 ARM',
+            'VTOL LEVEL1 ARM',
             'armdap', 
         },
     },

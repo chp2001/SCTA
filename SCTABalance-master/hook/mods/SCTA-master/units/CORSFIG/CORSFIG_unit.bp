@@ -1,0 +1,120 @@
+#CORE Avenger - Fighter
+#ARMSFIG
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+   Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+'HIGHALTAIR',
+        'MOBILE',
+	'ANTIAIR',
+    'AIR',
+    'VTOL',
+    'TRANSPORTATION',
+        'OVERLAYANTIAIR',
+	'OVERLAYDIRECTFIRE',
+	'DIRECTFIRE',
+        'CORE',
+	'LEVEL3',
+    },
+    Defense = {
+        ArmorType = 'Light',
+        Health = 2000,
+        MaxHealth = 2000,
+        AirThreatLevel = 0.33,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Economy = {
+        BuildCostEnergy = 9000,
+        BuildCostMass = 600,
+    },
+    StrategicIconName = 'icon_fighter3_antiair',
+    Weapon = {
+        {
+            Audio = {
+                Fire = Sound {
+                    Bank = 'TA_Sound',
+                    Cue = 'ROCKLIT3',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+            AutoInitiateAttackCommand = true,
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+            DamageFriendly = false,
+            TrackingRadius = 1.15,
+            Damage = 150,
+            DamageRadius = 1.5,
+            DamageType = 'AntiAir',
+            DisplayName = 'CORVTOL_MISSILE',
+            FireTargetLayerCapsTable = {
+                Air = 'Land|Water|Air|Seabed',
+                Land = 'Land|Water|Air|Seabed',
+                Water = 'Land|Water|Air|Seabed',
+            },
+	    RangeCategory = 'UWRC_AntiAir',
+     WeaponCategory = 'AntiAir',
+            FiringTolerance = 10,
+	    HeadingArcCenter = 0,
+    	    HeadingArcRange = 43.96,
+            Label = 'CORVTOL_MISSILE',
+            MaxRadius = 25,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 100,
+            ProjectileId = '/mods/SCTA-master/projectiles/CORVTOL_MISSILE/CORVTOL_MISSILE_proj.bp',
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'emitter1',
+                    },
+                    RackBone = 'emitter1',
+                },
+                {
+                    MuzzleBones = {
+                        'emitter2',
+                    },
+                    RackBone = 'emitter2',
+                },
+            },
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RateOfFire = 0.5,
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'AIR MOBILE',
+                'AIR MOBILE -INTELLIGENCE',
+                'SPECIALLOWPRI',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+        },
+        { #SMALL_UNITEX #was big_unitx
+            Damage = 30,
+            DamageFriendly = true,
+            DamageRadius = 0.9375,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+        { #SMALL_UNIT #was big_unit
+            Damage = 200,
+            DamageFriendly = true,
+            DamageType = 'Normal',
+            DamageRadius = 2.34375,
+            DummyWeapon = true,
+            Label = 'SuicideWeapon',
+        },
+    },
+}

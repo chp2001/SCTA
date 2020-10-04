@@ -20,7 +20,7 @@ UnitBlueprint {
 		'PLANT',
 	'SORTCONSTRUCTION',
 	
-	'LEVEL4',
+	'LEVEL2',
 	
 	
 	
@@ -41,8 +41,8 @@ UnitBlueprint {
         BuildCostEnergy = 40000,
         BuildCostMass = 4000, 
         BuildableCategory = {
-        'AIR LEVEL2 ARM',
-	    'AIR LEVEL1 ARM', 
+        'VTOL LEVEL2 ARM',
+	    'VTOL LEVEL1 ARM', 
         },
     },
     LifeBarSize = 8,

@@ -65,17 +65,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'AIR',
+	    'AIR',
+    'VTOL',
 	'INTELLIGENCE',
 	'RADAR',
         'OVERLAYRADAR',
         'CORE',
-        
-	
 	'LEVEL2',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Light',

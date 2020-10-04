@@ -1,0 +1,30 @@
+UnitBlueprint {
+    Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	'ANTINAVY',
+    'AIR',
+    'VTOL',
+    'TRANSPORTATION',
+    'HIGHALTAIR',
+        'OVERLAYANTINAVY',
+        'ARM',
+	'LEVEL3',
+    },
+    Defense = {
+        Health = 3000,
+        MaxHealth = 3000,
+    },
+    Economy = {
+        BuildCostEnergy = 24000,
+        BuildCostMass = 1200,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
+    },
+}

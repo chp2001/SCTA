@@ -76,15 +76,10 @@ UnitBlueprint {
         'SELECTION',
         'MOBILE',
 	'CONSTRUCTION',
-	'AIR',
+    'AIR',
+    'VTOL',
         'CORE',
-        
-	
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Light',

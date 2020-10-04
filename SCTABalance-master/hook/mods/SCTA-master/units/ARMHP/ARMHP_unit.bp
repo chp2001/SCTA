@@ -41,8 +41,8 @@ UnitBlueprint {
     },
     Economy = {
         BuildRate = 250,
-        BuildCostEnergy = 6000,
-        BuildCostMass = 3000, 
+        BuildCostEnergy = 39000,
+        BuildCostMass = 4400, 
     },
     LifeBarSize = 8,
     SelectionSizeX = 9.9,

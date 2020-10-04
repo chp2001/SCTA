@@ -15,7 +15,6 @@ UnitBlueprint {
 	'ANTIAIR',
     'AIR',
     'VTOL',
-    'TRANSPORTATION',
         'OVERLAYANTIAIR',
 	'OVERLAYDIRECTFIRE',
 	'DIRECTFIRE',

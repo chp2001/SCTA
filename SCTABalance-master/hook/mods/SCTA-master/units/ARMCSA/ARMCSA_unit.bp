@@ -17,7 +17,6 @@ UnitBlueprint {
 'SELECTION', 
     'ARM',
 'LEVEL3',
-'TRANSPORTATION',
 },
    Defense = {
     Health = 400,

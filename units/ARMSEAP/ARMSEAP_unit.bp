@@ -73,8 +73,6 @@ UnitBlueprint {
 	'ANTINAVY',
     'AIR',
     'VTOL',
-    'TRANSPORTATION',
-    'PLANE',
     'HIGHALTAIR',
         'OVERLAYANTINAVY',
         'ARM',

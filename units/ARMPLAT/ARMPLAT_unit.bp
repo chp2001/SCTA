@@ -116,7 +116,7 @@ UnitBlueprint {
 	InitialRallyX = 1,
 	InitialRallyZ = 1,
 	StorageEnergy = 200,
-	StorageMass=900,
+	StorageMass = 900,
     },
     Footprint = {
         MinWaterDepth = 1.875,
@@ -154,7 +154,6 @@ UnitBlueprint {
     LifeBarSize = 2,
     Physics = {
         BuildOnLayerCaps = {
-            LAYER_Land = true,
             LAYER_Water = true,
         },
         FlattenSkirt = true,

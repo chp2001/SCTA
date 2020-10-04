@@ -72,7 +72,6 @@ UnitBlueprint {
         'MOBILE',
         'AIR',
         'VTOL',
-    'TRANSPORT',
         'TRANSPORTATION',
         'TRANSPORTFOCUS',
         'CANTRANSPORTCOMMANDER',

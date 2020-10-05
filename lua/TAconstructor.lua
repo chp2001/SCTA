@@ -154,20 +154,21 @@ TAconstructor = Class(TAWalking) {
 			self.desiredState = "closed"
 		end
 		self:SetAllWeaponsEnabled(true)
+		ChangeState(self, self.IdleState)
 	end,
 
 	DestroyUnitBeingBuilt = function(self)
         if self.UnitBeingBuilt and not self.UnitBeingBuilt.Dead and self.UnitBeingBuilt:GetFractionComplete() < 1 then
             if self.UnitBeingBuilt:GetFractionComplete() > 0.5 then
                 self.UnitBeingBuilt:Kill()
-            else
-                self.UnitBeingBuilt:Destroy()
             end
-        end
+		end
+		ChangeState(self, self.IdleState)
     end,
 
 	OnFailedToBuild = function(self)
 		TAWalking.OnFailedToBuild(self)
+		---self.DestroyUnitBeingBuilt(self)
         ChangeState(self, self.IdleState)
     end,
 
@@ -250,11 +251,6 @@ TAconstructor = Class(TAWalking) {
 	end,
 
 	RollOff = function(self)
-        if not IsDestroyed(self) and self.isFactory == true then
-            WaitSeconds(0.5)
-			self:SetBusy(false)
-			self:SetBlockCommandQueue(false)
-		end 
 	end,
 
 	Unpack = function(self)

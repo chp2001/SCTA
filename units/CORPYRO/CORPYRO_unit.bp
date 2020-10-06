@@ -184,7 +184,8 @@ UnitBlueprint {
                         'firept1',
                     },
                     RackBone = 'ruparm',
-					
+                },
+                {
 					 MuzzleBones = {
                         'firept2',
                     },
@@ -202,7 +203,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'firept',
+            TurretBoneMuzzle = 'firept1',
             TurretBonePitch = 'ruparm',
             TurretBoneYaw = 'torso',
             TurretPitch = 0,
@@ -229,7 +230,6 @@ UnitBlueprint {
             DamageType = 'Normal',
             Label = 'SuicideWeapon',
         },
-
     },
     Wreckage = {
 	UseCustomMesh = true,

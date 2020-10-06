@@ -14,8 +14,9 @@ UnitBlueprint {
         'CONSTRUCTION',
         'LAND',
         'CORE',
+        'STRATEGIC',
         	'PLANT',
-	'SORTCONSTRUCTION',
+	'SORTSTRATEGIC',
         'LEVEL3',
         
         

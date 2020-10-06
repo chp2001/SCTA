@@ -132,6 +132,8 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
@@ -151,7 +153,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
-     WeaponCategory = 'IndirectFire',
+     WeaponCategory = 'Artillery',
             FiringTolerance = 1.65,	
 	    FiringRandomness = 0.5,
             Label = 'CORE_INTIMIDATOR',

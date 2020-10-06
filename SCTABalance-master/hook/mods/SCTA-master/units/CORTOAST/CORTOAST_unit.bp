@@ -5,6 +5,10 @@
 
 UnitBlueprint {
     Merge = true, 
+    Defense = {
+        Health = 4100,
+        MaxHealth = 4100,
+    },
     Footprint = {
         SizeX = 2,
         SizeZ = 2,

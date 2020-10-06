@@ -4,6 +4,10 @@ UnitBlueprint {
         SizeX = 1,
         SizeZ = 1,
     },
+    Defense = {
+        Health = 9000,
+        MaxHealth = 9000,
+    },
     Economy = {
         BuildTime = 19000,
     },

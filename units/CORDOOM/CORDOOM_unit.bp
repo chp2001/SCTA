@@ -16,7 +16,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 7,
+    BuildIconSortPriority = 8,
     Categories = {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
@@ -26,13 +26,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-        'SORTDEFENSE',
+        'SORTSTRATEGIC',
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 	'CORE',
-	'SPECIAL',
+	'STRATEGIC',
 	'LEVEL3',
     },
     Defense = {
@@ -86,7 +86,6 @@ UnitBlueprint {
     Footprint = {
         SizeX = 3,
         SizeZ = 3,
-	MaxSlope = 0.625,
     },
     General = {
         BuildAngle = 4096,
@@ -124,10 +123,12 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 3,
     SizeZ = 3,
-    StrategicIconName = 'icon_structure3_directfire',
+    StrategicIconName = 'icon_structure3_artillery',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
@@ -150,7 +151,7 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
             Label = 'CORE_DOOMSDAY',
-            MaxRadius = 37.5,
+            MaxRadius = 70,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 62.5,
@@ -194,6 +195,8 @@ UnitBlueprint {
             WeaponRepackTimeout = 3,
         },
         {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
@@ -215,7 +218,7 @@ UnitBlueprint {
      WeaponCategory = 'DirectFire',
             Label = 'CORE_LIGHTLASER',
 	    FiringTolerance = 3.85,
-            MaxRadius = 25,
+            MaxRadius = 45,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 62.5,
@@ -259,6 +262,8 @@ UnitBlueprint {
             WeaponRepackTimeout = 3,
         },
         {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
@@ -280,7 +285,7 @@ UnitBlueprint {
      WeaponCategory = 'DirectFire',
             Label = 'CORE_LASERH1',
 	    FiringTolerance = 2.75,
-            MaxRadius = 18,
+            MaxRadius = 30,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 43.75,

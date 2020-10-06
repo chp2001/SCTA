@@ -3,17 +3,17 @@ TAunitkeygroups = {
         "corkrog",
         "armdrake",
         "corbuzz",
-        "armgant",
-        "corgant",
         "armvulc",
     }, 
     ["Land_Factory"]= {
         "armlab",
         "armvp",
         "armhp",
+        "armgant",
         "corvp",
         "corlab",
         "corhp",
+        "corgant",
     },    
     ["Air_Factory"]= {
         "armap",
@@ -78,16 +78,19 @@ TAunitkeygroups = {
         "cortl",
     },
     ["Heavy_Artillery_Installation"]= {
-        "armbrtha",
-        "corint",
+        "armanni",
+        "cordoom",
     },
     ["Artillery_Installation"]= {
-        "armguard",
+        "armbrtha",
+        "corint",
         "corpun",
     },
     ["Strategic_Missile_Launcher"]= {
         "armsilo",
+        "armemp",
         "corsilo",
+        "cortron",
     },
     ["Radar_System"]= {
         "armrad",
@@ -127,7 +130,12 @@ TAunitkeygroups = {
     },    
     ["Heavy_Point_Defense"]= {
         "armhlt",
+        "armguard",
+        "armamb",
         "corhlt",
+        "corfhlt",
+        "corvipe",
+        "cortoast",
         "corplas",
     },
     ["T1_Air_Scout"]= {
@@ -191,10 +199,8 @@ TAunitkeygroups = {
     },
     ["T1_Mobile_Light_Artillery"]= {
         "armham",
-        "armmh",
         "corthud",
         "corlevlr",
-        "cormh",
     },
     ["T1_Mobile_Anti_Air_Gun"]= {
         "armsam",
@@ -229,6 +235,7 @@ TAunitkeygroups = {
         "armmh",
         "corvroc",
         "cormort",
+        "cormh",
         "armsnipe",
     },
     ["T1_Tank"]= {

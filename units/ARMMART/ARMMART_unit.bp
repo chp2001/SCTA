@@ -150,6 +150,8 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
@@ -169,7 +171,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
-     WeaponCategory = 'IndirectFire',
+     WeaponCategory = 'Artillery',
 	    FiringRandomness = 1,
             Label = 'ARM_ARTILLERY',
             MaxRadius = 55,

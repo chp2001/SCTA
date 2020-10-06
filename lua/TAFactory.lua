@@ -23,6 +23,7 @@ TAFactory = Class(TAconstructor) {
 	AnimationThread = function(self)
 	TAconstructor.AnimationThread(self)
 	end,
+
     OnKilled = function(self, instigator, type, overkillRatio)
         TAconstructor.OnKilled(self, instigator, type, overkillRatio)
             if self.currentTarget and not self.currentTarget:IsDead() and self.currentTarget:GetFractionComplete() != 1 then
@@ -54,8 +55,6 @@ TAFactory = Class(TAconstructor) {
     OnFailedToBuild = function(self)
         self.FactoryBuildFailed = true        
         TAconstructor.OnFailedToBuild(self)
-        self:DestroyBuildRotator()
-        --self:StopBuildFx()
         ChangeState(self, self.IdleState)
     end,
 
@@ -63,15 +62,12 @@ TAFactory = Class(TAconstructor) {
 		TAconstructor.OnStopBuild(self, unitBeingBuilt, order )
 		self:SetBusy(true)
 		self:SetBlockCommandQueue(true)
-    end,
+	end,
+
 	RollOff = function(self)
 		TAconstructor.RollOff(self)
-        if not IsDestroyed(self) and self.isFactory == true then
-            WaitSeconds(0.5)
-			self:SetBusy(false)
-			self:SetBlockCommandQueue(false)
-		end 
 	end,
+
 
 
 	
@@ -128,8 +124,6 @@ TAFactory = Class(TAconstructor) {
     IdleState = State {
         Main = function(self)
             self:SetBusy(false)
-            self:SetBlockCommandQueue(false)
-            self:DestroyBuildRotator()
         end,
 	},
 

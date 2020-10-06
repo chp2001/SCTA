@@ -84,7 +84,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -182,7 +181,12 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'firept',
+                        'firept1',
+                    },
+                    RackBone = 'ruparm',
+					
+					 MuzzleBones = {
+                        'firept2',
                     },
                     RackBone = 'ruparm',
                 },

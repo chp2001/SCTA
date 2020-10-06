@@ -28,6 +28,13 @@ UnitBlueprint {
         Health = 900,
         MaxHealth = 900,
         },
+        Display = {
+            UniformScale = 0.10,
+        },
+        Footprint = {
+                SizeX = 1,
+                SizeZ = 1,
+            },
     Economy = {
         BuildCostEnergy = 3600,
         BuildTime = 5400,
@@ -49,4 +56,10 @@ UnitBlueprint {
         MaxBrake = 1.25,
         MaxSpeed = 1.6,
     },
+    SelectionSizeX = 0.8,
+    SelectionSizeZ = 0.8,
+    SelectionThickness = 0.25,
+    SizeX = 1,
+    SizeY = 1,
+    SizeZ = 1,
 }

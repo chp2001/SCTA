@@ -61,7 +61,7 @@ Physics = {
 },
 SelectionSizeX = 1,
 SelectionSizeZ = 1,
-SelectionCenterOffsetZ = 0,
+SelectionCenterOffsetZ = -0.2,
 SizeX = 1,
 SizeY = 3,
 SizeZ = 1,

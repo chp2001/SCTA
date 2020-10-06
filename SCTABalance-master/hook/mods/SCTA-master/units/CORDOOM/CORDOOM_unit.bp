@@ -1,0 +1,25 @@
+#CORE Doomsday Machine - Energy Weapon
+#CORDOOM
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+   Merge = true,
+    Defense = {
+        Health = 8000,
+        MaxHealth = 8000,
+    },
+    Description = 'Energy Weapon',
+    Economy = {
+        BuildCostEnergy = 40000,
+        BuildCostMass = 3600,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
+    },
+    Physics = {
+        SkirtSizeX = 1, 
+        SkirtSizeZ = 1,  
+    },
+}

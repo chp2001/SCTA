@@ -138,6 +138,8 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
@@ -157,7 +159,7 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Seabed',
             },
             RangeCategory = 'UWRC_IndirectFire',
-            WeaponCategory = 'IndirectFire',
+            WeaponCategory = 'Artillery',
             FiringTolerance = 3,
             FiringRandomness = 0.5,
             Label = 'CORLEVLR_WEAPON',

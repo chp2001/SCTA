@@ -33,21 +33,23 @@ UnitBlueprint {
 	
     },
     Defense = {
-        ArmorType = 'Structure',
-        Health = 400,
-        MaxHealth = 400,
+        Health = 600,
+        MaxHealth = 600,
     },
-    Description = 'Missile Tower',
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air', 
         },
         UniformScale = 0.08,
     },
+    Economy = {
+        BuildCostEnergy = 1500,
+        BuildCostMass = 250,
+        BuildTime = 3600,
+    },
 Footprint = {
     SizeX = 1,
     SizeZ = 1,
-    MaxSlope = 0.875,
 },
 Physics = {
     SkirtSizeX = 0, 

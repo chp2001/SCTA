@@ -24,4 +24,116 @@ UnitBlueprint {
     SizeY = 20,
     SizeZ = 12,
     LifeBarSize = 10,
+    Weapon = {
+        {
+            Audio = {
+                Fire = Sound {
+                    Bank = 'TA_Sound',
+                    Cue = 'XPLONUK4',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+            DamageFriendly = true,
+            Damage = 1500,
+            DamageRadius = 15, 
+            DamageType = 'Normal',
+            DisplayName = 'CORBUZZ_WEAPON',
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+            },
+            RangeCategory = 'UWRC_DirectFire',
+            WeaponCategory = 'Artillery',
+            FiringTolerance = 1,	
+	    FiringRandomness = 2,
+            Label = 'CORBUZZ_WEAPON',
+            MaxRadius = 2500,
+            MinRadius = 100,
+            MuzzleSalvoDelay = 0, 
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 100,
+            EnergyChargeForFirstShot = true,
+            EnergyDrainPerSecond = 500,
+            EnergyRequired = 1000,
+            UseFiringSolutionInsteadOfAimBone = true,
+            ProjectileId = '/mods/SCTA-master/projectiles/CORBUZZ_WEAPON/CORBUZZ_WEAPON_proj.bp',
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'flare',
+                    },
+                    RackBone = 'gun1',
+                },
+                {
+                    MuzzleBones = {
+                        'flare',
+                    },
+                    RackBone = 'gun2',
+                },
+                {
+                    MuzzleBones = {
+                        'flare',
+                    },
+                    RackBone = 'gun3',
+                },
+                {
+                    MuzzleBones = {
+                        'flare',
+                    },
+                    RackBone = 'gun4',
+                },
+                {
+                    MuzzleBones = {
+                        'flare',
+                    },
+                    RackBone = 'gun5',
+                },
+                {
+                    MuzzleBones = {
+                        'flare',
+                    },
+                    RackBone = 'gun6',
+                },
+            },
+            RackRecoilDistance = -0.5,
+            RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 6,
+            RackSlavedToTurret = false,
+            RateOfFire = 6,
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TurretBoneMuzzle = 'Spindle',
+            TurretBonePitch = 'Spindle',
+            TurretBoneYaw = 'Turret',
+            TurretPitch = 0,
+            TurretPitchRange = 360,
+            TurretPitchSpeed = 100,
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 20,
+            Turreted = true,
+        },
+        { #ATOMIC_BLAST
+            Damage = 1000,
+            DamageFriendly = true,
+            DamageRadius = 16.125,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+        { #ATOMIC_BLAST
+            Damage = 2000,
+            DamageFriendly = true,
+            DamageRadius = 16.125,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'SuicideWeapon',
+        },
+    },
 }

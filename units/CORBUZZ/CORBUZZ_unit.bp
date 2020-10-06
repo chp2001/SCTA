@@ -138,6 +138,8 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
@@ -148,72 +150,73 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 1500,
-            DamageRadius = 15, 
+            Damage = 1000,
+            DamageRadius = 3.125, 
             DamageType = 'Normal',
             DisplayName = 'CORBUZZ_WEAPON',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
             },
-            RangeCategory = 'UWRC_DirectFire',
-            WeaponCategory = 'Artillery',
-            FiringTolerance = 1,	
+	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'Artillery',
+            FiringTolerance = 1.65,	
 	    FiringRandomness = 2,
             Label = 'CORBUZZ_WEAPON',
-            MaxRadius = 2500,
+            MaxRadius = 193,
+            MinRadus = 10, 
             MuzzleSalvoDelay = 0, 
-            MuzzleSalvoSize = 2,
+            MuzzleSalvoSize = 6,
             MuzzleVelocity = 50,
             EnergyChargeForFirstShot = true,
-            EnergyDrainPerSecond = 500,
-            EnergyRequired = 1000,
+            EnergyDrainPerSecond = 250,
+            EnergyRequired = 1000, --might be to high no rapids
             UseFiringSolutionInsteadOfAimBone = true,
-            ProjectileId = '/mods/SCTA-master/projectiles/CORBUZZ_WEAPON/CORBUZZ_WEAPON_proj.bp',
-            RackBones = {
-                {
-                    MuzzleBones = {
-                        'flare',
+            ProjectileId = '/mods/SCTAFix/projectiles/CORBUZZ_WEAPON/CORBUZZ_WEAPON_proj.bp',
+                RackBones = {
+                    {
+                        MuzzleBones = {
+                            'flare',
+                        },
+                        RackBone = 'gun1',
                     },
-                    RackBone = 'gun1',
-                },
-                {
-                    MuzzleBones = {
-                        'flare',
+                    {
+                        MuzzleBones = {
+                            'flare',
+                        },
+                        RackBone = 'gun2',
                     },
-                    RackBone = 'gun2',
-                },
-                {
-                    MuzzleBones = {
-                        'flare',
+                    {
+                        MuzzleBones = {
+                            'flare',
+                        },
+                        RackBone = 'gun3',
                     },
-                    RackBone = 'gun3',
-                },
-                {
-                    MuzzleBones = {
-                        'flare',
+                    {
+                        MuzzleBones = {
+                            'flare',
+                        },
+                        RackBone = 'gun4',
                     },
-                    RackBone = 'gun4',
-                },
-                {
-                    MuzzleBones = {
-                        'flare',
+                    {
+                        MuzzleBones = {
+                            'flare',
+                        },
+                        RackBone = 'gun5',
                     },
-                    RackBone = 'gun5',
-                },
-                {
-                    MuzzleBones = {
-                        'flare',
+                    {
+                        MuzzleBones = {
+                            'flare',
+                        },
+                        RackBone = 'gun6',
                     },
-                    RackBone = 'gun6',
                 },
-            },
-            RackRecoilDistance = -0.5,
+            RackRecoilDistance = 0,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 6,
             RackSlavedToTurret = false,
-            RateOfFire = 6,
+            RateOfFire = 12,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
@@ -224,14 +227,14 @@ UnitBlueprint {
             TurretBoneYaw = 'Turret',
             TurretPitch = 0,
             TurretPitchRange = 360,
-            TurretPitchSpeed = 100,
+            TurretPitchSpeed = 2,
             TurretYaw = 0,
             TurretYawRange = 360,
-            TurretYawSpeed = 20,
+            TurretYawSpeed = 5,
             Turreted = true,
         },
         { #ATOMIC_BLAST
-            Damage = 2000,
+            Damage = 1000,
             DamageFriendly = true,
             DamageRadius = 16.125,
             DamageType = 'Normal',
@@ -240,7 +243,9 @@ UnitBlueprint {
         },
         { #ATOMIC_BLAST
             Damage = 2000,
+            DamageFriendly = true,
             DamageRadius = 16.125,
+            DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'SuicideWeapon',
         },

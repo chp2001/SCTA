@@ -16,7 +16,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 7,
+    BuildIconSortPriority = 8,
     Categories = {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
@@ -27,13 +27,14 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH3',
 	'STRUCTURE',
-	'DEFENSE',
+    'DEFENSE',
+    'STRATEGIC',
 	'DIRECTFIRE',
 	'TEXTUREANIM',
         'OVERLAYDIRECTFIRE',
 	'ARM',
 	'SPECIAL',
-	'SORTDEFENSE',
+	'SORTSTRATEGIC',
 	'LEVEL3',
 	
 	
@@ -138,10 +139,12 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 3,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure3_directfire',
+    StrategicIconName = 'icon_structure3_artillery',
     StrategicIconSortPriority = 5,
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
@@ -160,10 +163,10 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
             RangeCategory = 'UWRC_DirectFire',
-            WeaponCategory = 'DirectFire',
+            WeaponCategory = 'Artillery',
             FiringTolerance = 2.75,
             Label = 'ARM_TOTAL_ANNIHILATOR',
-            MaxRadius = 75,
+            MaxRadius = 55,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 62.5,

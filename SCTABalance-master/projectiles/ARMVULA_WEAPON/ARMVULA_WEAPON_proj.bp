@@ -1,3 +1,7 @@
+#ARM Vulcan Cannon
+#ARMVULC_WEAPON
+#
+#Blueprint created by Raevn
 
 ProjectileBlueprint {
     Audio = {
@@ -28,34 +32,31 @@ ProjectileBlueprint {
         },
     },
     Categories = {
-        'CORE',
+        'ARM',
         'PROJECTILE',
-        'INDIRECTFIRE',
+        'DIRECTFIRE',
     },
     Display = {
-        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/Plasma_mesh.bp',
-        UniformScale = 0.20,
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/dgun_mesh.bp',
+        UniformScale = 0.60,
         StrategicIconSize = 1,
     },
     General = {
-        Category = 'Indirect Fire',
+        Category = 'DirectFire',
         EntityCategory = {
-            'CORE',
+            'ARM',
             'PROJECTILE',
-            'INDIRECTFIRE',
+            'DIRECTFIRE',
         },
-        Faction = 'CORE',
-        Weapon = 'CORBUZZ_WEAPON',
+        Faction = 'ARM',
+        Weapon = 'ARMVULC_WEAPON',
     },
     Interface = {
         HelpText = 0,
     },
     Physics = {
         DestroyOnWater = true,
-        LeadTarget = false,
-        TurnRate = 360,
         InitialSpeed = 50,
-        VelocityAlign = false,
         UseGravity = true,
     },
 }

@@ -30,19 +30,19 @@ ProjectileBlueprint {
     Categories = {
         'CORE',
         'PROJECTILE',
-        'INDIRECTFIRE',
+        'DIRECTFIRE',
     },
     Display = {
-        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/Plasma_mesh.bp',
-        UniformScale = 0.20,
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/dgun_mesh.bp',
+        UniformScale = 0.5,
         StrategicIconSize = 1,
     },
     General = {
-        Category = 'Indirect Fire',
+        Category = 'Direct Fire',
         EntityCategory = {
             'CORE',
             'PROJECTILE',
-            'INDIRECTFIRE',
+            'DIRECTFIRE',
         },
         Faction = 'CORE',
         Weapon = 'CORBUZZ_WEAPON',

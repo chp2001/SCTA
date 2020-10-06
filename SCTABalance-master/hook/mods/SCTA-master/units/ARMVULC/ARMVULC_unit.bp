@@ -60,7 +60,7 @@ UnitBlueprint {
             EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 500,
             EnergyRequired = 2000,
-            ProjectileId = '/mods/SCTA-master/projectiles/ARMVULC_WEAPON/ARMVULC_WEAPON_proj.bp',
+            ProjectileId = '/mods/SCTA-master/SCTABalance-master/projectiles/ARMVULA_WEAPON/ARMVULA_WEAPON_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

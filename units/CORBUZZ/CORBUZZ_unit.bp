@@ -165,13 +165,13 @@ UnitBlueprint {
             MaxRadius = 193,
             MinRadus = 10, 
             MuzzleSalvoDelay = 0, 
-            MuzzleSalvoSize = 6,
+            MuzzleSalvoSize = 2,
             MuzzleVelocity = 50,
             EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 250,
             EnergyRequired = 1000, --might be to high no rapids
             UseFiringSolutionInsteadOfAimBone = true,
-            ProjectileId = '/mods/SCTAFix/projectiles/CORBUZZ_WEAPON/CORBUZZ_WEAPON_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORBUZZ_WEAPON/CORBUZZ_WEAPON_proj.bp',
                 RackBones = {
                     {
                         MuzzleBones = {
@@ -183,19 +183,7 @@ UnitBlueprint {
                         MuzzleBones = {
                             'flare',
                         },
-                        RackBone = 'gun2',
-                    },
-                    {
-                        MuzzleBones = {
-                            'flare',
-                        },
                         RackBone = 'gun3',
-                    },
-                    {
-                        MuzzleBones = {
-                            'flare',
-                        },
-                        RackBone = 'gun4',
                     },
                     {
                         MuzzleBones = {
@@ -203,20 +191,14 @@ UnitBlueprint {
                         },
                         RackBone = 'gun5',
                     },
-                    {
-                        MuzzleBones = {
-                            'flare',
-                        },
-                        RackBone = 'gun6',
-                    },
                 },
             RackRecoilDistance = 0,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
-            RackSalvoSize = 6,
+            RackSalvoSize = 3,
             RackSlavedToTurret = false,
-            RateOfFire = 12,
+            RateOfFire = 6,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

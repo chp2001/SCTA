@@ -33,7 +33,7 @@ CORSILO = Class(TAnoassistbuild) {
 						target = target:GetSource()
 					else
 						if (IsUnit(target)) then
-							LOG('This is a unit')
+							---LOG('This is a unit')
 							canSee = target:GetBlip(army)
 						end
 					end

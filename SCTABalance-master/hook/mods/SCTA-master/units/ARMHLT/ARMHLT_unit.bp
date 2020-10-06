@@ -6,7 +6,7 @@ UnitBlueprint {
         MaxHealth = 2000,
     },
     Display = {
-        UniformScale = 0.14,
+        UniformScale = 0.10,
     },
     Economy = {
         BuildCostEnergy = 5443,
@@ -36,7 +36,7 @@ UnitBlueprint {
     SelectionSizeZ = 1.2,
     SelectionCenterOffsetZ = 0,
     SelectionThickness = 0.25,
-    SizeX = 2,
+    SizeX = 1,
     SizeY = 4,
-    SizeZ = 2,
+    SizeZ = 1,
 }

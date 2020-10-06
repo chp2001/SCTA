@@ -45,6 +45,7 @@ UnitBlueprint {
 	
 	
     },
+    CollisionOffsetY = -0.5,
     Defense = {
         ArmorType = 'Structure',
         AirThreatLevel = 6,

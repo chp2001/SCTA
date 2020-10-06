@@ -156,7 +156,6 @@ UnitBlueprint {
                 Water = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
-     WeaponCategory = 'IndirectFire',
             FiringTolerance = 1.65,	
 	    FiringRandomness = 0.5,
             Label = 'ARM_BERTHACANNON',

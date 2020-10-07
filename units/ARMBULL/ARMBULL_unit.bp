@@ -66,12 +66,12 @@ UnitBlueprint {
 		DefaultProjectileCategories = {'Tredside','MetalBarrel'},
 		DestructionEmitters = {
 			{
-				EmitterBone = {'Turret'},
+				EmitterBone = {'turret'},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'Turret_Muzzle_01','Turret_Muzzle_02'},
+				EmitterBone = {'barrel2','barrel1'},
 				EmitterBlueprint = {
 	    				'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -179,15 +179,15 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Turret_Muzzle_01',
+                        'flare1',
                     },
-                    RackBone = 'Turret_Recoil_01',
+                    RackBone = 'barrel1',
                 },
                 {
                     MuzzleBones = {
-                        'Turret_Muzzle_02',
+                        'flare2',
                     },
-                    RackBone = 'Turret_Recoil_02',
+                    RackBone = 'barrel2',
                 },
             },
             RackFireTogether = false,
@@ -203,9 +203,11 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'Turret_Aim_Muzzle',
-            TurretBonePitch = 'Turret_Barrels',
-            TurretBoneYaw = 'Turret',
+            TurretBoneMuzzle = 'flare1',
+            TurretBonePitch = 'barrel1',
+            TurretBoneDualMuzzle = 'flare2',
+            TurretBoneDualPitch = 'barrel2',
+            TurretBoneYaw = 'turret',
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 360,

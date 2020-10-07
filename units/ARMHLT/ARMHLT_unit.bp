@@ -79,7 +79,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -230,6 +229,7 @@ UnitBlueprint {
         Blueprint = '/mods/SCTA-master/units/ARMHLT/ARMHLT_dead_prop.bp',
         WreckageLayers = {
             Land = true,
+            Water = true,
         },
     },
 }

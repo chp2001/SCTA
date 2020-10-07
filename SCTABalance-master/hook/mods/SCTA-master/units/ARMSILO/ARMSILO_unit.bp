@@ -67,7 +67,6 @@ UnitBlueprint {
             RackSalvoSize = 1,
             RateOfFire = 1,
             TargetCheckInterval = 1,
-            
             EnergyDrainPerSecond = 0,
             EnergyRequired = 0,
             CountedProjectile = true,

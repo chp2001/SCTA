@@ -29,7 +29,8 @@ UnitBlueprint {
         'TECH2',
 	'STRUCTURE',
 	'DEFENSE',
-	'DIRECTFIRE',
+    'INDIRECTFIRE',
+    'ARTILLERY',
         'OVERLAYINDIRECTFIRE',
 	'ARM',
 	'LEVEL2',
@@ -55,12 +56,12 @@ UnitBlueprint {
 		DefaultProjectileCategories = {'MetalBarrel'},
 		DestructionEmitters = {
 			{
-				EmitterBone = {'Turret_Barrel'},
+				EmitterBone = {'turret'},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'Turret_Muzzle_01', 'Turret_Muzzle_02'},
+				EmitterBone = {'barrel1', 'barrel2'},
 				EmitterBlueprint = {
     					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -124,7 +125,6 @@ UnitBlueprint {
         },
     },
     SelectionSizeX = 1.5,
-    SelectionCenterOffsetZ = -0.5,
     SelectionSizeZ = 1.5,
     SelectionThickness = 0.25,
     SizeX = 1.5,
@@ -134,6 +134,8 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
@@ -152,7 +154,7 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
-     WeaponCategory = 'IndirectFire',
+     WeaponCategory = 'Artillery',
             Label = 'ARMFIXED_GUN',
             MaxRadius = 60, 
             MuzzleSalvoDelay = 0, 
@@ -161,20 +163,19 @@ UnitBlueprint {
             EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 50,
             EnergyRequired = 200,
-            
             ProjectileId = '/mods/SCTA-master/projectiles/ARMFIXED_GUN/ARMFIXED_GUN_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Turret_Muzzle_01',
+                        'flare1',
                     },
-                    RackBone = 'Turret_Recoil_01',
+                    RackBone = 'barrel1',
                 },
                 {
                     MuzzleBones = {
-                        'Turret_Muzzle_02',
+                        'flare2',
                     },
-                    RackBone = 'Turret_Recoil_02',
+                    RackBone = 'barrel2',
                 },
             },
             RackRecoilDistance = -2.5,
@@ -189,9 +190,9 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'Aim_Muzzle',
-            TurretBonePitch = 'Turret_Barrel',
-            TurretBoneYaw = 'Turret',
+            TurretBoneMuzzle = 'sleeves',
+            TurretBonePitch = 'sleeves',
+            TurretBoneYaw = 'turret',
             TurretPitch = 0,
             TurretPitchRange = 360,
             TurretPitchSpeed = 45,

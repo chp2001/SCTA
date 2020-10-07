@@ -5,26 +5,17 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'NAVAL',
 	'DIRECTFIRE',
 	'BATTLESHIP',
         'OVERLAYINDIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-
-	
         'CORE',
         'SHIP',
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
-        ArmorType = 'Normal',
         Health = 25000,
         MaxHealth = 25000,
     },
@@ -52,6 +43,7 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 12, 
     },
+    StrategicIconName = 'icon_ship3_directfire',
     SelectionSizeX = 6,
     SelectionSizeZ = 12,
     SizeX = 8,
@@ -73,7 +65,7 @@ UnitBlueprint {
             Damage = 100,
             DamageType = 'Normal',
             DisplayName = 'COR_BATSLASER',
-            EnergyDrainPerSecond = 10,
+            EnergyDrainPerSecond = 25,
             EnergyRequired = 50,
             UseFiringSolutionInsteadOfAimBone = true,
             EnergyChargeForFirstShot = true,
@@ -91,9 +83,9 @@ UnitBlueprint {
             RackBones = {
                 {    
                     MuzzleBones = {
-                        'muzzlea',
+                        'flarea',
                     },
-                    RackBone = 'turreta',
+                    RackBone = 'guna',
                 },
             },
             RackRecoilDistance = 0,
@@ -112,8 +104,8 @@ UnitBlueprint {
             TrackingRadius = 1.1,
             TargetRestrictOnlyAllow = 'TACTICAL MISSILE',
             TargetType = 'RULEWTT_Projectile',
-            TurretBoneMuzzle = 'muzzlea',
-            TurretBonePitch = 'gunaaim',
+            TurretBoneMuzzle = 'flarea',
+            TurretBonePitch = 'guna',
             TurretBoneYaw = 'turreta',
             TurretPitch = 0,
             TurretPitchRange = 360,
@@ -149,26 +141,26 @@ UnitBlueprint {
             MaxRadius = 78.125,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 21.875,
-            ProjectileId = '/mods/SCTA-master/projectiles/COR_BATS/COR_BATS_proj.bp',
+            MuzzleVelocity = 35,
+            ProjectileId = '/mods/SCTA-master/SCTABalance-master/projectiles/COR_BATL/COR_BATL_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
-                        'muzzle1b',
+                        'flareb1',
                     },
-                    RackBone = 'barrel1',
+                    RackBone = 'barrelb1',
                 },
                 {
                     MuzzleBones = {
-                        'muzzle2b',
+                        'flareb2',
                     },
-                    RackBone = 'barrel2',
+                    RackBone = 'barrelb2',
                 },
                 {
                     MuzzleBones = {
-                        'muzzle3b',
+                        'flareb3',
                     },
-                    RackBone = 'barrel3',
+                    RackBone = 'barrelb3',
                 },
             },
             RackRecoilDistance = -2.4,
@@ -176,14 +168,14 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.41,
+            RateOfFire = 0.75,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'muzzle2b',
-            TurretBonePitch = 'sleeves',
+            TurretBoneMuzzle = 'flareb2',
+            TurretBonePitch = 'sleeveb',
             TurretBoneYaw = 'turretb',
             TurretPitch = 0,
             TurretPitchRange = 360,

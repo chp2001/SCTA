@@ -8,4 +8,5 @@ UnitBlueprint {
         BuildCostEnergy = 6000,
         BuildCostMass = 2000,
     },
+    StrategicIconName = 'icon_sub3_antinavy',
 }

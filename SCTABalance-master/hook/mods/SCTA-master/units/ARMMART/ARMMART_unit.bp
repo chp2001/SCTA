@@ -5,21 +5,14 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
         'ARTILLERY',
-	
         'ARM',
         'VEHICLE',	
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         Health = 1400,
@@ -30,8 +23,11 @@ UnitBlueprint {
         BuildCostMass = 1200,
         BuildTime = 22000,
     },
+    StrategicIconName = 'icon_land3_artillery',
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',

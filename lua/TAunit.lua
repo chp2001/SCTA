@@ -158,14 +158,11 @@ TAunit = Class(Unit)
                 		self:PlayUnitSound('StartMove')
 			end
 		elseif (new == 'Stopped') then
-			if (not EntityCategoryContains(categories.TRANSPORTATION, self) or not self:GetCargo()) then
-				#TAutils.DisplayMessage(self:GetBlueprint().General.UnitName .. ": Arrived", 2)
 				if self.FxMovement then
 					ForkThread(self.IdleEffects, self)
 					for k,v in self.FxMovement do
 						v:Destroy()
 					end
-				end
 			end
 			self:PlayUnitSound('StopMove')
 		end
@@ -223,7 +220,7 @@ TAunit = Class(Unit)
 		if self:GetFractionComplete() == 1 then
 			for k, weapon in bp.Weapon do
 				#Self Destruct
-				if ((self == instigator and weapon.Label == 'SuicideWeapon') or (self != instigator and weapon.Label == 'DeathWeapon') and type ~= "Reclaimed")then
+				if ((self == instigator and weapon.Label == 'SuicideWeapon') or (self != instigator and weapon.Label == 'DeathWeapon') and type ~= "Reclaimed") then
 					TAutils.DoTaperedAreaDamage(self, self:GetPosition(), weapon.DamageRadius, weapon.Damage, nil, nil, 'Normal', true, false, weapon.EdgeEffectiveness)
 					if (self == instigator and weapon.Label == 'SuicideWeapon') then
 						self:CreateDebrisProjectiles()
@@ -267,7 +264,7 @@ TAunit = Class(Unit)
 						end
 					end
 				end
-	    			#self:HideBone(0, true)
+	    	self:HideBone(0, true)
 			end
 		end
 	end,

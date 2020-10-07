@@ -1,0 +1,197 @@
+#ARM Adv. Aircraft Plant - Produces Aircraft
+#ARMAAP
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PAIRACTV',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Construct = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PLABWORK',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	ConstructStop = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'UNITDONE',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG4',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 0,
+    Categories = {
+        'BUILTBYT2SUB',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH2',
+	'FACTORY',
+        'RALLYPOINT',
+        'SHOWQUEUE',
+	'STRUCTURE',
+	'CONSTRUCTION',
+	'TEXTUREANIM',
+        'OVERLAYRADAR',
+    'ARM',
+    'AIR',
+		'PLANT',
+	'SORTCONSTRUCTION',
+	'LEVEL3',
+	
+	
+	
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 2100,
+        MaxHealth = 2100,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 11,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Builds Seaplanes',
+    Display = {
+        AnimationUnpack = '/mods/SCTA-master/units/ARMPLAT/ARMPLAT_lod0_UnPaCk.sca',
+        AnimationUnpackRate = 0.2, 
+	DestructionEffects = {
+		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate','CorBld','Runway','Circuits'},
+		DestructionProjectiles = {
+			{
+				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMAAP_debris01_proj.bp',
+				Bone = 'pad',
+			},
+		},
+		DestructionEmitters = {
+			{
+				EmitterBone = {'pad'},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+				EmitterSize = 1.25,
+			},
+			{
+				EmitterBone = {'plate1','plate2'},
+				EmitterBlueprint = {
+	    				'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
+				},
+				EmitterSize = 0.35,
+			},
+		},
+	},
+	BuildBones = {'beam1', 'beam2'},
+	BuildAttachBone = 'pad',
+	TextureAnimationFrames = 6,
+        Mesh = {
+            IconFadeInZoom = 400,
+            LODs = {
+                {
+                    LODCutoff = 400,
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 5396,
+        BuildCostMass = 2223,
+        BuildTime = 19248,
+    BuildRate = 200,
+    NaturalProducer = true,
+	ProductionPerSecondMass = 1,
+        BuildableCategory = {
+            'VTOL LEVEL3 ARM',
+        },
+	InitialRallyX = 1,
+	InitialRallyZ = 1,
+	StorageEnergy = 200,
+	StorageMass = 900,
+    },
+    Footprint = {
+        MinWaterDepth = 1.875,
+        SizeX = 7,
+        SizeZ = 7,
+    },
+    General = {
+	BuildAngle = 0,
+        Category = 'Factory',
+        Classification = 'RULEUC_Factory',
+        CommandCaps = {
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        ConstructionBar = true,
+        SelectionPriority = 5,
+        FactionName = 'ARM',
+        TechLevel = 'RULEUTL_Advanced',
+	UnitName = 'Seaplane Platform',
+    },
+    Intel = {
+    VisionRadius = 14,
+	RadarRadius = 30,
+	FreeIntel = true,
+    },
+    Interface = {
+        HelpText = 'Produces Aircraft',
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Water = true,
+        },
+        FlattenSkirt = true,
+        SkirtSizeX = 7,
+        SkirtSizeZ = 7,
+    },
+    SelectionSizeX = 4.45,
+    SelectionSizeZ = 3.4,
+    SelectionCenterOffsetZ = 0.25,
+    SelectionThickness = 0.25,
+    SizeX = 7,
+    SizeY = 4,
+    SizeZ = 7,
+    StrategicIconName = 'icon_factory2_air',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #LARGE_BUILDINGEX
+            Damage = 20,
+            DamageFriendly = true,
+            DamageRadius = 1,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+        { #LARGE_BUILDING
+            Damage = 50,
+            DamageFriendly = true,
+            DamageRadius = 1,
+            DummyWeapon = true,
+            DamageType = 'Normal',
+            Label = 'SuicideWeapon',
+        },
+    },
+    Wreckage = {
+	UseCustomMesh = true,
+        Blueprint = '/mods/SCTA-master/units/ARMPLAT/ARMPLAT_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

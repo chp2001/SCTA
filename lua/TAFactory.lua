@@ -24,10 +24,6 @@ TAFactory = Class(TAconstructor) {
 	TAconstructor.AnimationThread(self)
 	end,
 
-	FlattenSkirt = function(self)
-		TAconstructor.FlattenSkirt(self)
-    end,
-
     OnKilled = function(self, instigator, type, overkillRatio)
         TAconstructor.OnKilled(self, instigator, type, overkillRatio)
             if self.currentTarget and not self.currentTarget:IsDead() and self.currentTarget:GetFractionComplete() != 1 then
@@ -56,55 +52,25 @@ TAFactory = Class(TAconstructor) {
 		end
 	end,
 
+    OnFailedToBuild = function(self)
+        self.FactoryBuildFailed = true        
+        TAconstructor.OnFailedToBuild(self)
+        ChangeState(self, self.IdleState)
+    end,
+
 	OnStopBuild = function(self, unitBeingBuilt, order )
 		TAconstructor.OnStopBuild(self, unitBeingBuilt, order )
 		self:SetBusy(true)
 		self:SetBlockCommandQueue(true)
 	end,
 
-	DestroyUnitBeingBuilt = function(self)
-        TAconstructor.DestroyUnitBeingBuilt(self)
-    end,
-
-	OnFailedToBuild = function(self, unitBeingBuilt)
-		self.FactoryBuildFailed = true
-		TAconstructor.OnFailedToBuild(self, unitBeingBuilt)
-        ---ChangeState(self, self.IdleState)
-    end,
-
-
-	StopSpin = function(self, unitBeingBuilt)
-		TAconstructor.StopSpin(self, unitBeingBuilt)
-    end,
-
-	DelayedClose = function(self)
-		TAconstructor.DelayedClose(self)
-	end,
-
-	GetCloseArea = function(self)
-		TAconstructor.GetCloseArea(self)
-	end,
-
-	GetBuildArea = function(self)
-		TAconstructor.GetBuildArea(self)
-	end,
-
 	RollOff = function(self)
 		TAconstructor.RollOff(self)
 	end,
 
-	Unpack = function(self)
-	end,
 
-	Open = function(self)
-	end,
+
 	
-	Aim = function(self, target)
-	end,
-
-	Close = function(self)
-	end,
-
 	Nano = function(self, unitBeingBuilt)
 		local target = 1
 		local current = 0
@@ -154,6 +120,12 @@ TAFactory = Class(TAconstructor) {
 			WaitSeconds(0.25)
 		end
 	end,
+
+    IdleState = State {
+        Main = function(self)
+            self:SetBusy(false)
+        end,
+	},
 
 	UpgradingState = State {
         Main = function(self)

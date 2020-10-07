@@ -5,8 +5,8 @@ end
 -- Function originally created to check if a Mass Storage can be queued in a location without overlapping
 function CanBuildInSpot(originUnit, unitId, pos)
     local bp = __blueprints[unitId]
-    local mySkirtX = bp.Physics.SkirtSizeX / 2
-    local mySkirtZ = bp.Physics.SkirtSizeZ / 2
+    local mySkirtX = bp.Physics.SkirtSizeX
+    local mySkirtZ = bp.Physics.SkirtSizeZ
 
     -- Find the distance between my skirt and the skirt of a potential Quantum Gateway
     local xDiff = mySkirtX + 5 -- Using 5 because that's half the size of a Quantum Gateway, the largest stock structure
@@ -250,24 +250,13 @@ function GetAngle(x1, z1, x2, z2)
 	return (angle / math.pi) * 180 + 90
 end
 
-function DoTaperedAreaDamage(instigator, position, radius, damage, projectile, targetEntity, damageType, damageFriendly, damageSelf, edgeEffectiveness)
-	local precision = math.floor(radius * 2) + 1
-	local pulse = 0
-	local edge = edgeEffectiveness or 0
-
+function DoTaperedAreaDamage(instigator, position, radius, damage, projectile, targetEntity, damageType, damageFriendly, damageSelf)
         if radius and radius > 0 then
-		if edge * damage > 0 then
-			DamageArea(instigator, position, radius, damage * edge, damageType, damageFriendly, damageSelf or false)
-		end
-		while pulse < precision do
-			local factor = (pulse + 1) / precision
-       			if damage and damage - edge > 0 then
-	            		DamageArea(instigator, position, radius * factor, damage / precision + (1 - factor) * damage * edge, damageType, damageFriendly, damageSelf or false)
-        		end
-			pulse = pulse + 1
-		end
-	elseif targetEntity then
-		Damage(instigator, position, targetEntity, damage, damageType)
+            if damage > 0 then
+			DamageArea(instigator, position, radius, damage, damageType, damageFriendly, damageSelf or false)
+        end
+    	elseif targetEntity then
+        Damage(instigator, position, targetEntity, damage, damageType)
 	end
 end
 

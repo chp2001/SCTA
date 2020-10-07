@@ -34,19 +34,19 @@ ProjectileBlueprint {
     Categories = {
         'ARM',
         'PROJECTILE',
-        'INDIRECTFIRE',
+        'DIRECTFIRE',
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/Plasma_mesh.bp',
-        UniformScale = 0.60,
+        UniformScale = 0.16,
         StrategicIconSize = 1,
     },
     General = {
-        Category = 'Indirect Fire',
+        Category = 'DirectFire',
         EntityCategory = {
             'ARM',
             'PROJECTILE',
-            'INDIRECTFIRE',
+            'DIRECTFIRE',
         },
         Faction = 'ARM',
         Weapon = 'ARMVULC_WEAPON',

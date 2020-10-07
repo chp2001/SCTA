@@ -11,6 +11,7 @@ UnitBlueprint {
         'BUILTBYT1KBOT',
         'BUILTBYT1VEHICLE',
         'BUILTBYT1HOVER',
+        'BUILTBYT1SHIP',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -32,21 +33,23 @@ UnitBlueprint {
 	
     },
     Defense = {
-        ArmorType = 'Structure',
-        Health = 400,
-        MaxHealth = 400,
+        Health = 600,
+        MaxHealth = 600,
     },
-    Description = 'Missile Tower',
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air', 
         },
         UniformScale = 0.08,
     },
+    Economy = {
+        BuildCostEnergy = 1500,
+        BuildCostMass = 250,
+        BuildTime = 3600,
+    },
 Footprint = {
     SizeX = 1,
     SizeZ = 1,
-    MaxSlope = 0.875,
 },
 Physics = {
     SkirtSizeX = 0, 
@@ -58,9 +61,9 @@ Physics = {
 },
 SelectionSizeX = 1,
 SelectionSizeZ = 1,
-SelectionCenterOffsetZ = 0,
+SelectionCenterOffsetZ = -0.2,
 SizeX = 1,
-SizeY = 2,
+SizeY = 3,
 SizeZ = 1,
   StrategicIconName = 'icon_structure1_antiair',
 }

@@ -1,5 +1,5 @@
 UnitBlueprint {
-    BuildIconSortPriority = 17,
+    BuildIconSortPriority = 25,
     Categories = {
         'BUILTBYT1VEHICLE',
         'BUILTBYT1KBOT',

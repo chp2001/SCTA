@@ -102,7 +102,7 @@ UnitBlueprint {
             IconFadeInZoom = 400,
             LODs = {
                 {
-                    LODCutoff = 230,
+                    LODCutoff = 400,
                     ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
@@ -116,7 +116,7 @@ UnitBlueprint {
         BuildTime = 17376,
 	BuildRate = 200,
         BuildableCategory = {
-            'AIR LEVEL2 ARM',
+            'VTOL LEVEL2 ARM',
         },
 	InitialRallyX = 1,
 	InitialRallyZ = 1,

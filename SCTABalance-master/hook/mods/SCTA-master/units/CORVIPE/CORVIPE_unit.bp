@@ -4,6 +4,11 @@ UnitBlueprint {
         Health = 2500,
         MaxHealth = 2500,
     },
+    Economy = {
+        BuildCostEnergy = 9000,
+        BuildCostMass = 2400,
+        BuildTime = 10000,
+    },
     Physics = {
         SkirtSizeX = 0, 
         SkirtSizeZ = 0,  

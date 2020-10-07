@@ -67,7 +67,8 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'OVERLAYSONAR',
         'MOBILE',
-	'AIR',
+	    'AIR',
+    'VTOL',
 	'SCOUT', 
         'CORE',
         

@@ -14,6 +14,7 @@ Economy = {
         SizeZ = 1,
     },
    SizeY = 1, 
+   StrategicIconName = 'icon_land3_antiair',
    Weapon = {
     {
         Audio = {

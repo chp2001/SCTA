@@ -63,7 +63,8 @@ UnitBlueprint {
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Seabed',
             },
-	    RangeCategory = 'UWRC_IndirectFire',
+        RangeCategory = 'UWRC_IndirectFire',
+        WeaponCategory = 'IndirectFire',
             FiringRandomness = 0,
             FiringTolerance = 0,
             Label = 'ARM_ROY',
@@ -129,6 +130,7 @@ UnitBlueprint {
                 Water = 'Water|Sub|Seabed',
             },
             RangeCategory = 'UWRC_AntiNavy',
+            WeaponCategory = 'AntiNavy',
 	    FiringTolerance = 10,
             Label = 'ARMDEPTHCHARGE',
             MaxRadius = 20,

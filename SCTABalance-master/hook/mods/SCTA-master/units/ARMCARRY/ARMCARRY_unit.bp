@@ -43,10 +43,11 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 300,
         MaintenanceConsumptionPerSecondEnergy = 35,
         BuildableCategory = {
-            'AIR LEVEL1 ARM', 
-            'AIR LEVEL2 ARM',
+            'VTOL LEVEL1 ARM', 
+            'VTOL LEVEL2 ARM',
         },
     },
+    StrategicIconName = 'icon_ship3_air',
     LifeBarSize = 8,
     SelectionSizeX = 6,
     SelectionSizeZ = 12,

@@ -1,0 +1,48 @@
+#ARM Flea - Fast Light Scout Kbot
+#ARMMARK
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH2',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	'LAND',
+        'ARM',
+        'KBOT',
+	'LEVEL2',
+    'RADAR',
+    'OVERLAYRADAR',
+    },
+    Economy = {
+        BuildCostEnergy = 600,
+        BuildCostMass = 80,
+        MaintenanceConsumptionPerSecondEnergy = 5,
+        ProductionPerSecondEnergy = 0,
+        BuildTime = 1200,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
+	MaxWaterDepth = 0,
+    },
+    General = {
+        OrderOverrides = {
+                RULEUTC_IntelToggle = {
+                bitmapId = 'radar',
+                helpText = 'toggle_radar',
+                     },
+                 },
+               ToggleCaps = {
+               RULEUTC_IntelToggle = true,
+            },
+    },
+    Intel = {
+        VisionRadius = 16,
+        RadarRadius = 50, 
+    },
+}

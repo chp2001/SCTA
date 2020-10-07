@@ -28,6 +28,13 @@ UnitBlueprint {
         Health = 2000,
         MaxHealth = 2000,
         },
+        Display = {
+            UniformScale = 0.12,
+        },
+        Footprint = {
+                SizeX = 1,
+                SizeZ = 1,
+            },
     Physics = {
         TurnRate = 51,
         MaxSteerForce = 100,
@@ -53,5 +60,10 @@ UnitBlueprint {
         VisionRadius = 8,
         WaterVisionRadius = 4, 
     },
+    SelectionSizeX = 1.5,
+    SelectionSizeZ = 1.5,
+    SizeX = 1.7,
+    SizeY = 1.5,
+    SizeZ = 1.5,
     StrategicIconName = 'icon_land3_engineer',
 }

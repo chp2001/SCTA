@@ -75,7 +75,8 @@ UnitBlueprint {
         'SHOWQUEUE',
         'MOBILE',
 	'CONSTRUCTION',
-	'AIR',
+    'AIR',
+    'VTOL',
     'SELECTION',
         'ARM',
         

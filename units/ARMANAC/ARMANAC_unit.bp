@@ -136,8 +136,8 @@ UnitBlueprint {
         MaxSteerForce = 100,
 	RotateOnSpot = true,
 	TurnFacingRate = 41,
-	WobbleFactor = 0.2,
-	WobbleSpeed = 0.25,
+	WobbleFactor = 0.02,
+	WobbleSpeed = 0.05,
     },
     SelectionSizeX = 1.25,
     SelectionSizeZ = 1.5,
@@ -179,9 +179,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'muzzle',
+                        'flare',
                     },
-                    RackBone = 'recoil',
+                    RackBone = 'barrel',
                 },
             },
             RackRecoilDistance = -2.4,
@@ -196,8 +196,8 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'muzzle',
-            TurretBonePitch = 'barrel',
+            TurretBoneMuzzle = 'flare',
+            TurretBonePitch = 'sleeve',
             TurretBoneYaw = 'turret',
             TurretDualManipulators = false,
             TurretPitch = 0,

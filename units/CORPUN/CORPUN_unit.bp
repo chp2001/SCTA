@@ -16,7 +16,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 16,
+    BuildIconSortPriority = 18,
     Categories = {
         'BUILTBYT1AIR',
         'BUILTBYT1KBOT',
@@ -33,10 +33,8 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
 	'CORE',
 	'LEVEL2',
-	'SORTDEFENSE',
-	
-	
-	
+    'STRATEGIC',
+    'SORTSTRATEGIC',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -133,6 +131,8 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
@@ -152,7 +152,6 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
-     WeaponCategory = 'IndirectFire',
             Label = 'CORFIXED_GUN',
             MaxRadius = 75, 
             MuzzleSalvoDelay = 0, 

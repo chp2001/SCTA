@@ -16,7 +16,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 7,
+    BuildIconSortPriority = 8,
     Categories = {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
@@ -27,13 +27,14 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH3',
 	'STRUCTURE',
-	'DEFENSE',
+    'DEFENSE',
+    'STRATEGIC',
 	'DIRECTFIRE',
 	'TEXTUREANIM',
         'OVERLAYDIRECTFIRE',
 	'ARM',
 	'SPECIAL',
-	'SORTDEFENSE',
+	'SORTSTRATEGIC',
 	'LEVEL3',
 	
 	
@@ -55,12 +56,12 @@ UnitBlueprint {
 	DestructionEffects = {
 		DestructionEmitters = {
 			{
-				EmitterBone = {'Turret_Top','ARMANNI', 'Lower_Turret'},
+				EmitterBone = {'plate1','ARMANNI', 'plate2'},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'Case_01','Case_02','Case_03','Case_04','Barrel'},
+				EmitterBone = {'case1','case3','case2','case4','barrel'},
 				EmitterBlueprint = {
     					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -69,7 +70,7 @@ UnitBlueprint {
 				EmitterSize = 0.35,
 			},
 			{
-				EmitterBone = {'Barrel_Muzzle','Container_01','Container_02'},
+				EmitterBone = {'container1','container2'},
 				EmitterBlueprint = {
     					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
@@ -138,10 +139,12 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 3,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure3_directfire',
+    StrategicIconName = 'icon_structure3_artillery',
     StrategicIconSortPriority = 5,
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
@@ -160,10 +163,10 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
             RangeCategory = 'UWRC_DirectFire',
-            WeaponCategory = 'DirectFire',
+            WeaponCategory = 'Artillery',
             FiringTolerance = 2.75,
             Label = 'ARM_TOTAL_ANNIHILATOR',
-            MaxRadius = 75,
+            MaxRadius = 55,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 62.5,
@@ -171,9 +174,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Barrel_Muzzle',
+                        'flare',
                     },
-                    RackBone = 'Barrel',
+                    RackBone = 'barrel',
                 },
             },
             RackRecoilDistance = 0,
@@ -191,9 +194,9 @@ UnitBlueprint {
                 'ALLUNITS'
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'Barrel_Muzzle',
-            TurretBonePitch = 'Turret_Top',
-            TurretBoneYaw = 'Lower_Turret',
+            TurretBoneMuzzle = 'flare',
+            TurretBonePitch = 'barrel',
+            TurretBoneYaw = 'turret',
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 360,

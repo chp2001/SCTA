@@ -16,7 +16,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 16,
+    BuildIconSortPriority = 1,
     Categories = {
         'BUILTBYT1AIR',
         'BUILTBYT1KBOT',
@@ -39,6 +39,7 @@ UnitBlueprint {
 	
 	
     },
+    CollisionOffsetY = -0.5,
     Defense = {
         ArmorType = 'Structure',
         AirThreatLevel = 0,
@@ -78,7 +79,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -229,6 +229,7 @@ UnitBlueprint {
         Blueprint = '/mods/SCTA-master/units/ARMHLT/ARMHLT_dead_prop.bp',
         WreckageLayers = {
             Land = true,
+            Water = true,
         },
     },
 }

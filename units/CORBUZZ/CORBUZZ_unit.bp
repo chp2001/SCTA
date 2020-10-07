@@ -23,14 +23,14 @@ UnitBlueprint {
         'EXPERIMENTAL',
 	'STRUCTURE',
 	'SORTSTRATEGIC',
-	'INDIRECTFIRE',
-        'OVERLAYINDIRECTFIRE',	
+    'OVERLAYDIRECTFIRE',
+    'DIRECTFIRE',
     'CORE',
 	'LEVEL3',
-	'STRATEGIC',
-	
-	
-	
+    'STRATEGIC',
+    'ARTILLERY',
+    'SHOWATTACKRETICLE',
+    'NOCUSTOMTARGET',
     },
     Defense = {
         ArmorType = 'ExperimentalStructure',
@@ -89,12 +89,22 @@ UnitBlueprint {
     },
     General = {
 	BuildAngle = 12712,
-        Category = 'Defense',
-        Classification = 'RULEUC_Weapon',
+    Category = 'Strategic',
+    Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
+            RULEUCC_CallTransport = false,
+            RULEUCC_Capture = false,
+            RULEUCC_Guard = false,
+            RULEUCC_Move = false,
+            RULEUCC_Nuke = false,
+            RULEUCC_Patrol = false,
+            RULEUCC_Pause = false,
+            RULEUCC_Reclaim = false,
+            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
+            RULEUCC_Transport = false,
         },
         SelectionPriority = 5,
         FactionName = 'CORE',
@@ -128,6 +138,8 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
@@ -145,14 +157,15 @@ UnitBlueprint {
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
             },
-	    RangeCategory = 'UWRC_IndirectFire',
-     WeaponCategory = 'IndirectFire',
+	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'Artillery',
             FiringTolerance = 1.65,	
 	    FiringRandomness = 2,
             Label = 'CORBUZZ_WEAPON',
             MaxRadius = 193,
+            MinRadus = 10, 
             MuzzleSalvoDelay = 0, 
-            MuzzleSalvoSize = 6,
+            MuzzleSalvoSize = 2,
             MuzzleVelocity = 50,
             EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 250,
@@ -170,19 +183,7 @@ UnitBlueprint {
                         MuzzleBones = {
                             'flare',
                         },
-                        RackBone = 'gun2',
-                    },
-                    {
-                        MuzzleBones = {
-                            'flare',
-                        },
                         RackBone = 'gun3',
-                    },
-                    {
-                        MuzzleBones = {
-                            'flare',
-                        },
-                        RackBone = 'gun4',
                     },
                     {
                         MuzzleBones = {
@@ -190,20 +191,14 @@ UnitBlueprint {
                         },
                         RackBone = 'gun5',
                     },
-                    {
-                        MuzzleBones = {
-                            'flare',
-                        },
-                        RackBone = 'gun6',
-                    },
                 },
             RackRecoilDistance = 0,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
-            RackSalvoSize = 6,
+            RackSalvoSize = 3,
             RackSlavedToTurret = false,
-            RateOfFire = 12,
+            RateOfFire = 6,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
@@ -221,7 +216,7 @@ UnitBlueprint {
             Turreted = true,
         },
         { #ATOMIC_BLAST
-            Damage = 2000,
+            Damage = 1000,
             DamageFriendly = true,
             DamageRadius = 16.125,
             DamageType = 'Normal',
@@ -231,9 +226,9 @@ UnitBlueprint {
         { #ATOMIC_BLAST
             Damage = 2000,
             DamageFriendly = true,
-            DamageRadius = 16,
-            DummyWeapon = true,
+            DamageRadius = 16.125,
             DamageType = 'Normal',
+            DummyWeapon = true,
             Label = 'SuicideWeapon',
         },
     },

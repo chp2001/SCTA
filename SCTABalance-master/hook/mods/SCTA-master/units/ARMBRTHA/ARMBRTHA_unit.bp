@@ -11,15 +11,12 @@ UnitBlueprint {
         'TECH2',
 	'STRUCTURE',
     'DEFENSE',
-    'SORTDEFENSE',
 	'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
 	'ARM',
 	'LEVEL3',
-	'STRATEGIC',
-	
-	
-	
+    'STRATEGIC',
+    'SORTSTRATEGIC',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -27,11 +24,22 @@ UnitBlueprint {
         MaxHealth = 3000,
     },
     Display = {
-        UniformScale = 0.25,
+        UniformScale = 0.12,
+    },
+    Footprint = {
+        SizeX = 2,
+        SizeZ = 2,
     },
     Economy = {
         BuildTime = 21000,
     },
-    SizeY = 6,
+    Physics = {
+        SkirtSizeX = 2, 
+        SkirtSizeZ = 2,  
+    },
+    SelectionCenterOffsetZ = -0.3,
+    SizeY = 3,
+    SizeX = 2,
+    SizeZ = 2,
     StrategicIconName = 'icon_structure2_artillery',
 }

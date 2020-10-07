@@ -26,4 +26,5 @@ UnitBlueprint {
         Health = 2500,
         MaxHealth = 2500,
     },
+    StrategicIconName = 'icon_bot3_directfire',
 }

@@ -30,6 +30,8 @@ UnitBlueprint {
     LifeBarSize = 10,
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
@@ -47,20 +49,20 @@ UnitBlueprint {
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
             },
-	    RangeCategory = 'UWRC_IndirectFire',
+            RangeCategory = 'UWRC_DirectFire',
+            WeaponCategory = 'Artillery',
             FiringTolerance = 1.65,	
 	    FiringRandomness = 2,
             Label = 'ARMVULC_WEAPON',
             MaxRadius = 2500,
-            MinRadius = 100,
+            MinRadius = 50,
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 50,
+            MuzzleVelocity = 100,
             EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 500,
             EnergyRequired = 2000,
-            
-            ProjectileId = '/mods/SCTA-master/projectiles/ARMVULC_WEAPON/ARMVULC_WEAPON_proj.bp',
+            ProjectileId = '/mods/SCTA-master/SCTABalance-master/projectiles/ARMVULA_WEAPON/ARMVULA_WEAPON_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -111,7 +113,7 @@ UnitBlueprint {
             Turreted = true,
         },
         { #ATOMIC_BLAST
-            Damage = 2000,
+            Damage = 1000,
             DamageFriendly = true,
             DamageRadius = 16.125,
             DamageType = 'Normal',
@@ -120,6 +122,8 @@ UnitBlueprint {
         },
         { #ATOMIC_BLAST
             Damage = 2000,
+            DamageFriendly = true,
+            DamageType = 'Normal',
             DamageRadius = 16.125,
             DummyWeapon = true,
             Label = 'SuicideWeapon',

@@ -18,10 +18,6 @@ UnitBlueprint {
         'CORE',
         'KBOT',
         'LEVEL2',
-        
-        
-        
-        
     },
     Display = {
         UniformScale = 0.2,
@@ -39,5 +35,6 @@ UnitBlueprint {
         SizeX = 1,
         SizeZ = 1,
     },
+    StrategicIconName = 'icon_bot3_artillery',
     SizeY = 3,
 }

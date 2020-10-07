@@ -17,9 +17,6 @@ UnitBlueprint {
 	'LEVEL3',
     'STRATEGIC',
     'SORTSTRATEGIC',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',

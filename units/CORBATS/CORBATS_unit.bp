@@ -68,7 +68,7 @@ UnitBlueprint {
 	DestructionEffects = {
 		DestructionEmitters = {
 			{
-				EmitterBone = {'turretb','turreta','CORBATS','wake1','wake2','CORBATS'},
+				EmitterBone = {'turretb','turreta', 'wake1', 'wake2', 'CORBATS'},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
@@ -96,7 +96,7 @@ UnitBlueprint {
 	MovementEffects = {
 		Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'wake1','wake2'},
+		Bones = {'wake1', 'wake2'},
 	},
         UniformScale = 0.16,
     },
@@ -186,9 +186,9 @@ UnitBlueprint {
             RackBones = {
                 {    
                     MuzzleBones = {
-                        'muzzlea',
+                        'flarea',
                     },
-                    RackBone = 'turreta',
+                    RackBone = 'guna',
                 },
             },
             RackRecoilDistance = 0,
@@ -202,8 +202,8 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'muzzlea',
-            TurretBonePitch = 'gunaaim',
+            TurretBoneMuzzle = 'flarea',
+            TurretBonePitch = 'guna',
             TurretBoneYaw = 'turreta',
             TurretPitch = 0,
             TurretPitchRange = 360,
@@ -244,21 +244,21 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'muzzle1b',
+                        'flareb1',
                     },
-                    RackBone = 'barrel1',
+                    RackBone = 'barrelb1',
                 },
                 {
                     MuzzleBones = {
-                        'muzzle2b',
+                        'flareb2',
                     },
-                    RackBone = 'barrel2',
+                    RackBone = 'barrelb2',
                 },
                 {
                     MuzzleBones = {
-                        'muzzle3b',
+                        'flareb3',
                     },
-                    RackBone = 'barrel3',
+                    RackBone = 'barrelb3',
                 },
             },
             RackRecoilDistance = -2.4,
@@ -272,8 +272,8 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'muzzle2b',
-            TurretBonePitch = 'sleeves',
+            TurretBoneMuzzle = 'flareb2',
+            TurretBonePitch = 'sleeveb',
             TurretBoneYaw = 'turretb',
             TurretPitch = 0,
             TurretPitchRange = 360,

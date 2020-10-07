@@ -6,30 +6,17 @@
 UnitBlueprint {
     Merge = true,
     Defense = {
-        ArmorType = 'Normal',
         Health = 2500,
         MaxHealth = 2500,
     },
     Economy = {
-        BuildCostEnergy = 17477,
         BuildCostMass = 1500,
-        BuildTime = 35706,
     },
     Footprint = {
-	SizeX = 3,
-	SizeZ = 3,
+	SizeX = 2,
+	SizeZ = 2,
     },
-    Physics = {
-        LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
-        MaxAcceleration = 1,
-        MaxBrake = 1,
-        MaxSpeed = 2,
-        MotionType = 'RULEUMT_Land',
-        TurnRate = 28,
-        MaxSteerForce = 10,
-    },
+    StrategicIconName = 'icon_land3_antishield',
     SelectionCenterOffsetZ = -0.3,
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,

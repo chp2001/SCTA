@@ -73,7 +73,7 @@ UnitBlueprint {
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'barrel1','barrel2','barrel3','turreta'},
+				EmitterBone = {'barrelb1','barrelb2','barrelb3','turreta'},
 				EmitterBlueprint = {
     					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',

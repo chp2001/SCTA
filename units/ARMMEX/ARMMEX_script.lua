@@ -19,10 +19,10 @@ ARMMEX = Class(TAMass) {
 	end,
 
 	CreateWreckage = function( self, overkillRatio )
-		if self.onMetalSpot == false then
+		if self.onMetalSpot == true then
 			TAMass.CreateWreckageProp(self, overkillRatio)
-		else
-			return nil
+		---else
+			---return nil
 		end
 	end,
 

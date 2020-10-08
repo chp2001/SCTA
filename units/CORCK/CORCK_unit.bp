@@ -76,6 +76,8 @@ UnitBlueprint {
     },
     Description = 'Tech Level 1',
     Display = {
+        AnimationOpen = '/mods/SCTA-master/units/CORCK/CORCK_lod0_aopen.sca',
+        AnimationOpenRate = 0.2, 
         AnimationWalk = '/mods/SCTA-master/units/CORCK/CORCK_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
@@ -98,7 +100,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },

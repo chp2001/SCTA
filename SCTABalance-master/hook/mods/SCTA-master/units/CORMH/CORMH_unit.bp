@@ -31,10 +31,6 @@ UnitBlueprint {
         BuildCostMass = 1300,
         BuildTime = 36000,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
     Intel = {
         VisionRadius = 16,
     },

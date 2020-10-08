@@ -152,7 +152,7 @@ UnitBlueprint {
             RULEUCC_Stop = true,
             RULEUCC_Transport = true,
         },
-        SelectionPriority = 2,
+        SelectionPriority = 4,
         FactionName = 'CORE',
         TechLevel = 'RULEUTL_Basic',
         UnitName = 'Valkyrie',

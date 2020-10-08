@@ -1,5 +1,5 @@
 PropBlueprint {
-    Merge = true,
+   Merge = true, 
     Display = {
         UniformScale = 0.20,
     },

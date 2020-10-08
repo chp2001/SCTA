@@ -98,9 +98,8 @@ UnitBlueprint {
         BuildTime = 3747,
     },
     Footprint = {
-	MaxSlope = 1,
-        SizeX = 3,
-        SizeZ = 3,
+        SizeX = 2,
+        SizeZ = 1,
     },
     General = {
         Category = 'Anti Air',

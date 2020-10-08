@@ -63,7 +63,7 @@ UnitBlueprint {
             '<LOC ability_hover>Hover',
         },
 	DestructionEffects = {
-		DefaultProjectileCategories = {'CorCockpit','CorHover'},
+		DefaultProjectileCategories = {'ArmCockpit','ArmHover'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
@@ -99,9 +99,8 @@ UnitBlueprint {
         BuildTime = 17933,
     },
     Footprint = {
-	MaxSlope = 1,
-        SizeX = 3,
-        SizeZ = 3,
+        SizeX = 2,
+        SizeZ = 1,
     },
     General = {
         Category = 'Indirect Fire',

@@ -26,11 +26,6 @@ UnitBlueprint {
         BuildCostMass = 2100,
         BuildTime = 32000,
     },
-    Footprint = {
-	MaxSlope = 1,
-        SizeX = 1,
-        SizeZ = 1,
-    },
     StrategicIconName = 'icon_land3_directfire',
     Weapon = {
         {

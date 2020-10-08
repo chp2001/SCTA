@@ -118,7 +118,7 @@ CORDSY = Class(TAFactory) {
 		--SLEEP <1222>;
 		WaitSeconds(1.2)
 		--SLEEP <7>;
-
+		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
 }

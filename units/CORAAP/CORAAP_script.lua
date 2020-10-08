@@ -224,7 +224,7 @@ CORAAP = Class(TAFactory) {
 		--SLEEP <402>;
 		--SLEEP <13>;
 		WaitSeconds(0.4)
-
+		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
 }

@@ -22,10 +22,16 @@ TAunit = Class(Unit)
 	DestructionExplosionWaitDelayMin = 0,
 	DestructionExplosionWaitDelayMax = 0,
 
+    LOGDBG = function(self, msg)
+        --LOG(self._UnitName .. "(" .. self.Sync.id .. "):" .. msg)
+    end,
+
 	OnCreate = function(self)
+		local bp = self:GetBlueprint()
+        self._UnitName = bp.General.UnitName
+        self:LOGDBG('TAUnit.OnCreate')
         Unit.OnCreate(self)
 		self:SetFireState(2)
-		local bp = self:GetBlueprint()
 		if bp.General.BuildAngle then
 		 	local angle = bp.General.BuildAngle / 182
 			angle = (180 + self.buildAngle) * (math.pi / 180)
@@ -44,6 +50,7 @@ TAunit = Class(Unit)
 
     -- override due to bug in unit.lua
     UpdateConsumptionValues = function(self)
+        self:LOGDBG('TAUnit.UpdateConsumptionValues')
         local energy_rate = 0
         local mass_rate = 0
 
@@ -122,6 +129,7 @@ TAunit = Class(Unit)
 
 
 	OnStopBeingBuilt = function(self,builder,layer)
+        self:LOGDBG('TAUnit.OnStopBeingBuilt')
 		Unit.OnStopBeingBuilt(self,builder,layer)
 		self:SetConsumptionActive(true)
 		self.textureAnimation = true
@@ -129,6 +137,7 @@ TAunit = Class(Unit)
 	end,
 	
 	OnMotionVertEventChange = function(self, new, old )
+        self:LOGDBG('TAUnit.OnMotionVertEventChange')
 		local bp = self:GetBlueprint()
 		if (old == 'Bottom') then
 			if bp.Display.MovementEffects then
@@ -145,6 +154,7 @@ TAunit = Class(Unit)
 	end,
 
 	OnMotionHorzEventChange = function(self, new, old )
+        self:LOGDBG('TAUnit.OnMotionHorzEventChange')
 	        if self:IsDead() then
         	    return
 	        end
@@ -172,6 +182,7 @@ TAunit = Class(Unit)
 
 				
 	MovementEffects = function(self)
+        self:LOGDBG('TAUnit.MovementEffects')
 		local bp = self:GetBlueprint()
 		if not IsDestroyed(self) and bp.Display.MovementEffects then
 			for k, v in bp.Display.MovementEffects.Bones do
@@ -181,6 +192,7 @@ TAunit = Class(Unit)
 	end,
 
 	IdleEffects = function(self)
+        self:LOGDBG('TAUnit.IdleEffects')
 		local bp = self:GetBlueprint()
 		if not IsDestroyed(self) and not self:IsMoving() and bp.Display.IdleEffects then
 			for k, v in bp.Display.IdleEffects.Bones do
@@ -190,6 +202,7 @@ TAunit = Class(Unit)
 	end,
 	
 	Smoke = function(self)
+        self:LOGDBG('TAUnit.Smoke')
 		local bone = self:GetBlueprint().Display.SmokeBone or -1
 		while not IsDestroyed(self) do
 			if self:GetFractionComplete() == 1 then
@@ -208,6 +221,7 @@ TAunit = Class(Unit)
 	end,
 
 	ShowMuzzleFlare = function(self, duration)
+        self:LOGDBG('TAUnit.ShowMuzzleFlare')
 		local bp = self:GetBlueprint()
 		#Show flare bone for pre-determined time
 		self.unit:ShowBone(bp.RackBones[self.CurrentRackSalvoNumber - 1].MuzzleBones[1], true)
@@ -216,6 +230,7 @@ TAunit = Class(Unit)
 	end,
 
 	OnKilled = function(self, instigator, type, overkillRatio)
+        self:LOGDBG('TAUnit.OnKilled')
 		local bp = self:GetBlueprint()
 		if self:GetFractionComplete() == 1 then
 			for k, weapon in bp.Weapon do
@@ -233,7 +248,7 @@ TAunit = Class(Unit)
 	end,
 
 	CreateWreckage = function( self, overkillRatio )
-
+        self:LOGDBG('TAUnit.CreateWreckage')
 		# if overkill ratio is high, the wreck is vaporized! No wreakage for you!
 		if overkillRatio then
 			if overkillRatio > 0.075 then
@@ -249,6 +264,7 @@ TAunit = Class(Unit)
 	end,
 
 	CreateDestructionEffects = function( self, overKillRatio )
+        self:LOGDBG('TAUnit.CreateDestructionEffects')
 		local bp = self:GetBlueprint()
 		if bp.Display.DestructionEffects then
  			if self:GetFractionComplete() == 1 then
@@ -270,6 +286,7 @@ TAunit = Class(Unit)
 	end,
 
 	CreateDebrisProjectiles = function(self)
+        self:LOGDBG('TAUnit.CreateDebrisProjectiles')
 	    local bp = self:GetBlueprint()
 	    local sx = bp.SizeX
 	    local sy = bp.SizeY
@@ -327,6 +344,7 @@ TAunit = Class(Unit)
 	end,
 
     HideFlares = function(self, bp)
+        self:LOGDBG('TAUnit.HideFlares')
         if not bp then bp = self:GetBlueprint().Weapon end
         if bp then
             for i, weapon in bp do
@@ -350,13 +368,14 @@ TAunit = Class(Unit)
     end,
 
     OnReclaimed = function(self, entity)
+        self:LOGDBG('TAUnit.OnReclaimed')
         self:DoUnitCallbacks('OnReclaimed', entity)
 		self.CreateReclaimEndEffects( entity, self )
         self:OnKilled(entity, "Reclaimed", 0.0)
     end,
 
     DeathThread = function( self, overkillRatio, instigator)
-
+        self:LOGDBG('TAUnit.DeathThread')
         #LOG('*DEBUG: OVERKILL RATIO = ', repr(overkillRatio))
 
         #WaitSeconds( utilities.GetRandomFloat( self.DestructionExplosionWaitDelayMin, self.DestructionExplosionWaitDelayMax) )
@@ -395,6 +414,7 @@ TAunit = Class(Unit)
 	end,
 
 	AddBuff = function(self, buffTable, PosEntity)
+        self:LOGDBG('TAUnit.AddBuff' .. self._UnitName .. self.Sync.id)
         local bt = buffTable.BuffType
 
         if not bt then

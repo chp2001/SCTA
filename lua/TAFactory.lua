@@ -20,10 +20,6 @@ TAFactory = Class(TAconstructor) {
 	animating = false,
 	wantStopAnimation = false,
 
-	AnimationThread = function(self)
-	TAconstructor.AnimationThread(self)
-	end,
-
     OnKilled = function(self, instigator, type, overkillRatio)
         TAconstructor.OnKilled(self, instigator, type, overkillRatio)
             if self.currentTarget and not self.currentTarget:IsDead() and self.currentTarget:GetFractionComplete() != 1 then
@@ -33,6 +29,7 @@ TAFactory = Class(TAconstructor) {
 
 
 	OnStartBuild = function(self, unitBeingBuilt, order )
+        self:LOGDBG('TAFactory.OnStartBuild')
 		self.desiredTarget = unitBeingBuilt
 		if (self.currentState == "aimed" or self.currentState == "opened" or self.currentState == "rolloff") then
 			self.currentState = "opened"
@@ -52,26 +49,85 @@ TAFactory = Class(TAconstructor) {
 		end
 	end,
 
-    OnFailedToBuild = function(self)
-        self.FactoryBuildFailed = true        
-        TAconstructor.OnFailedToBuild(self)
-        ChangeState(self, self.IdleState)
-    end,
-
 	OnStopBuild = function(self, unitBeingBuilt, order )
+        self:LOGDBG('TAFactory.OnStopBuild')
 		TAconstructor.OnStopBuild(self, unitBeingBuilt, order )
 		self:SetBusy(true)
-		self:SetBlockCommandQueue(true)
+		self:SetBlockCommandQueue(false)
+        if unitBeingBuilt and unitBeingBuilt.Dead then
+            self.desiredState = "aimed"
+        end
 	end,
 
 	RollOff = function(self)
-		TAconstructor.RollOff(self)
+        self:LOGDBG('TAFactory.RollOff')
+        if not IsDestroyed(self) and self.isFactory == true then
+			ChangeState(self, self.IdleState)
+			WaitSeconds(0.5)
+			self:SetBusy(false)
+			self:SetBlockCommandQueue(false)
+		end 
+		---self:OnStopBuild()
 	end,
 
+	Unpack = function(self)
+        self:LOGDBG('TAFactory.Unpack')
+	end,
 
-
+	Open = function(self)
+        self:LOGDBG('TAFactory.Open')
+	end,
 	
+	Aim = function(self, target)
+        self:LOGDBG('TAFactory.Aim')
+	end,
+
+	DelayedClose = function(self)
+        self:LOGDBG('TAFactory.DelayedClose')
+		ChangeState(self, self.IdleState)
+		if self.isFactory then
+			# Wait until unit factory is clear to close
+				if self.isBuilding == true then
+					return
+				end
+			WaitSeconds(0.5)
+		end
+		self:OnStopBuild()
+	end,
+
+	DestroyUnitBeingBuilt = function(self)
+        self:LOGDBG('TAFactory.DestroyUnitBeingBuilt')
+        if self.UnitBeingBuilt and not self.UnitBeingBuilt.Dead and self.UnitBeingBuilt:GetFractionComplete() < 1 then
+            if self.UnitBeingBuilt:GetFractionComplete() > 0.5 then
+                self.UnitBeingBuilt:Kill()
+            else
+                self.UnitBeingBuilt:Destroy()
+			end
+			self:OnStopBuild()
+		end
+		ChangeState(self, self.IdleState)
+    end,
+
+	Close = function(self)
+        self:LOGDBG('TAFactory.Close')
+		self:SetBusy(false)
+		self:SetBlockCommandQueue(false)
+		---self:OnStopBuild()
+	end,
+
+	StopSpin = function(self, unitBeingBuilt)
+        self:LOGDBG('TAFactory.StopSpin')
+		---self:OnStopBuild()
+		if not IsDestroyed(self) and self.isFactory == true and unitBeingBuilt then
+			WaitSeconds(0.5)
+			if IsDestroyed(unitBeingBuilt) == false then
+            unitBeingBuilt:DetachFrom(true)
+		end
+	end
+    end,
+
 	Nano = function(self, unitBeingBuilt)
+        self:LOGDBG('TAFactory.Nano')
 		local target = 1
 		local current = 0
 		while not IsDestroyed(self) and self.isBuilding == true and IsDestroyed(unitBeingBuilt) == false and unitBeingBuilt:GetFractionComplete() < 1 or self.isReclaiming == true and self.currentState == "aimed" do
@@ -120,12 +176,6 @@ TAFactory = Class(TAconstructor) {
 			WaitSeconds(0.25)
 		end
 	end,
-
-    IdleState = State {
-        Main = function(self)
-            self:SetBusy(false)
-        end,
-	},
 
 	UpgradingState = State {
         Main = function(self)

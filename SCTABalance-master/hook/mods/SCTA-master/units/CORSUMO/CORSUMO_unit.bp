@@ -36,4 +36,5 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 14,
     },
+    StrategicIconName = 'icon_bot3_armored',
 }

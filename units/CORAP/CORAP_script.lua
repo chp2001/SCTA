@@ -142,7 +142,7 @@ CORAP = Class(TAFactory) {
 		--SLEEP <455>;
 		--SLEEP <90>;
 		WaitSeconds(0.5)
-
+		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
 }

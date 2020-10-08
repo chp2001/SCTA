@@ -12,6 +12,7 @@ TATreads = Class(TAunit)
 {
 
 MovementEffects = function( self, EffectsBag, TypeSuffix)
+    self:LOGDBG('TATreads.MovementEffects')
     local layer = self:GetCurrentLayer()
     local bpTable = self:GetBlueprint().Display.MovementEffects
 
@@ -26,6 +27,7 @@ MovementEffects = function( self, EffectsBag, TypeSuffix)
 end,
 
 CreateMotionChangeEffects = function( self, new, old )
+    self:LOGDBG('TATreads.CreateMotionChangeEffects')
     local key = self:GetCurrentLayer()..old..new
     local bpTable = self:GetBlueprint().Display.MotionChangeEffects[key]
 
@@ -35,6 +37,7 @@ CreateMotionChangeEffects = function( self, new, old )
 end,
 
 DestroyMovementEffects = function( self )
+    self:LOGDBG('TATreads.DestroyMovementEffects')
     local bpTable = self:GetBlueprint().Display.MovementEffects
     local layer = self:GetCurrentLayer()
 
@@ -51,6 +54,7 @@ DestroyMovementEffects = function( self )
 end,
 
 CreateTreads = function(self, treads)
+    self:LOGDBG('TATreads.CreateTreads')
     if treads.ScrollTreads then
         self:AddThreadScroller(1.0, treads.ScrollMultiplier or 0.2)
     end
@@ -66,6 +70,7 @@ CreateTreads = function(self, treads)
 end,
 
 CreateTreadsThread = function(self, treads, type )
+    self:LOGDBG('TATreads.CreateTreadsThread')
     local sizeX = treads.TreadMarksSizeX
     local sizeZ = treads.TreadMarksSizeZ
     local interval = treads.TreadMarksInterval
@@ -84,6 +89,7 @@ CreateTreadsThread = function(self, treads, type )
 end,
 
 OnKilled = function(self, instigator, type, overkillRatio)
+    self:LOGDBG('TATreads.OnKilled')
     TAunit.OnKilled(self, instigator, type, overkillRatio)
 end,
 }

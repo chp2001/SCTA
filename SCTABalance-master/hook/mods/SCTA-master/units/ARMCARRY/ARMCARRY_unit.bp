@@ -47,6 +47,7 @@ UnitBlueprint {
             'VTOL LEVEL2 ARM',
         },
     },
+    StrategicIconName = 'icon_ship3_air',
     LifeBarSize = 8,
     SelectionSizeX = 6,
     SelectionSizeZ = 12,

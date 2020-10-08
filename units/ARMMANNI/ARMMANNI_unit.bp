@@ -40,10 +40,6 @@ UnitBlueprint {
         'ARM',
         'VEHICLE',	
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -62,12 +58,12 @@ UnitBlueprint {
 	DestructionEffects = {
 		DestructionEmitters = {
 			{
-				EmitterBone = {'turret'},
+				EmitterBone = {'Turret'},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'muzzle', 'a','b','c','d','e'},
+				EmitterBone = {'Barrel'},
 				EmitterBlueprint = {
     					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -183,9 +179,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'muzzle',
+                        'flare',
                     },
-                    RackBone = 'barrel',
+                    RackBone = 'Barrel',
                 },
             },
             RackFireTogether = false,
@@ -201,9 +197,9 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'muzzle',
-            TurretBonePitch = 'barrel',
-            TurretBoneYaw = 'turret',
+            TurretBoneMuzzle = 'Barrel',
+            TurretBonePitch = 'Sleeve',
+            TurretBoneYaw = 'Turret',
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 60,

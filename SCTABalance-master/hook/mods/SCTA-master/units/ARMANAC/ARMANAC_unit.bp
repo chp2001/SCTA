@@ -62,9 +62,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'muzzle',
+                        'flare',
                     },
-                    RackBone = 'recoil',
+                    RackBone = 'barrel',
                 },
             },
             RackRecoilDistance = -2.4,
@@ -79,8 +79,8 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'muzzle',
-            TurretBonePitch = 'barrel',
+            TurretBoneMuzzle = 'flare',
+            TurretBonePitch = 'sleeve',
             TurretBoneYaw = 'turret',
             TurretDualManipulators = false,
             TurretPitch = 0,

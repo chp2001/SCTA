@@ -58,7 +58,6 @@ ARMSY = Class(TAFactory) {
 		--SLEEP <758>;
 		WaitSeconds(0.75)
 
-		#Doesn't point properly, new values used
 		--TURN turret1 to y-axis <-45.00> SPEED <59.21>;
 		self.Spinners.turret1:SetGoal(75)
 		self.Spinners.turret1:SetSpeed(59.81)
@@ -112,7 +111,7 @@ ARMSY = Class(TAFactory) {
 
 		--SLEEP <760>;
 		WaitSeconds(0.75)
-
+		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
 }

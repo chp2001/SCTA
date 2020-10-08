@@ -49,7 +49,6 @@ self.Spinners.beam4:SetSpeed(175)
 	end,
 
 	Close = function(self)
-		TAFactory.Close(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationOpen)
 		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationOpenRate or 0.2))
 		WaitSeconds(0.5)
@@ -67,6 +66,9 @@ self.Spinners.beam3:SetSpeed(175)
 --TURN door2 to z-axis <90.00> SPEED <175.13>;
 self.Spinners.beam4:SetGoal(0)
 self.Spinners.beam4:SetSpeed(175)
+
+ChangeState(self, self.IdleState)
+TAFactory.Close(self)
 	end,
 }
 

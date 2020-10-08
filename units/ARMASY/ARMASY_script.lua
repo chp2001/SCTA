@@ -107,7 +107,7 @@ ARMASY = Class(TAFactory) {
 
 		--SLEEP <760>;
 		WaitSeconds(0.75)
-
+		ChangeState(self, self.IdleState)
 		--SLEEP <26>;
 		TAFactory.Close(self)
 	end,

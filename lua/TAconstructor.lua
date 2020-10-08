@@ -23,8 +23,10 @@ TAconstructor = Class(TAWalking) {
 	AnimationThread = function(self)
 		self.animating = true
 		while not IsDestroyed(self) and self.wantStopAnimation == false do
+			--ChangeState(self, self.IdleState)
 			if(self.currentState == "rolloff") then
 				self.currentTarget = nil
+				--ChangeState(self, self.IdleState)
 				self.countdown = self.countdown - 0.2
 				if (self.countdown <= 0) then
 					self.desiredState = "closed"
@@ -39,9 +41,11 @@ TAconstructor = Class(TAWalking) {
 				elseif(self.currentState == "opened") then
 					if (self.desiredState == "closed") then
 						self:DelayedClose()
+						--ChangeState(self, self.IdleState)
 						--Check to make sure we still want to close
 						if (self.desiredState == "closed") then	
 							self:Close()
+							--ChangeState(self, self.IdleState)
 							self.currentState = "closed"
 						end
 					elseif (self.desiredState == "aimed") then
@@ -49,6 +53,7 @@ TAconstructor = Class(TAWalking) {
 							self:StopSpin(self.currentTarget)
 						end
 						self:RollOff()
+						--ChangeState(self, self.IdleState)
 						self.currentTarget = self.desiredTarget
 						self.currentState = "aimed"
 						if (self.currentTarget) then
@@ -82,15 +87,16 @@ TAconstructor = Class(TAWalking) {
 				elseif(self.currentState == "aimed" or self.currentState == "rolloff") then
 					if (self.desiredState == "closed") then
 						self:Close(self)
+						---ChangeState(self, self.IdleState)
 						self.currentState = "closed"
 						if (self.isBuilding == false and self.isReclaiming == false) then
 							self.wantStopAnimation = true
 						end
 					elseif (self.desiredState == "rolloff") then
+						--ChangeState(self, self.IdleState)
 						self:StopSpin(self.currentTarget)
 						self:RollOff()
 						self.currentState = "rolloff"
-						ChangeState(self, self.IdleState)
 					end
 				end
 			end
@@ -108,15 +114,6 @@ TAconstructor = Class(TAWalking) {
         FlattenMapRect(x0, z0, x1-x0, z1-z0, y)
     end,
 
-    OnKilled = function(self, instigator, type, overkillRatio)
-        TAWalking.OnKilled(self, instigator, type, overkillRatio)
-        if self.isFactory then
-            if self.currentTarget and not self.currentTarget:IsDead() and self.currentTarget:GetFractionComplete() != 1 then
-                self.currentTarget:Kill()
-                self.currentTarget:Destroy()
-            end
-        end
-    end,
 
 
 	OnStartBuild = function(self, unitBeingBuilt, order )
@@ -146,6 +143,7 @@ TAconstructor = Class(TAWalking) {
 
 	OnStopBuild = function(self, unitBeingBuilt, order )
 		TAWalking.OnStopBuild(self, unitBeingBuilt, order )
+		--ChangeState(self, self.IdleState)
 		self.desiredTarget = nil
 		self.isBuilding = false
 		self.countdown = self.pauseTime
@@ -158,29 +156,15 @@ TAconstructor = Class(TAWalking) {
 	end,
 
 	DestroyUnitBeingBuilt = function(self)
-        if self.UnitBeingBuilt and not self.UnitBeingBuilt.Dead and self.UnitBeingBuilt:GetFractionComplete() < 1 then
-            if self.UnitBeingBuilt:GetFractionComplete() > 0.5 then
-                self.UnitBeingBuilt:Kill()
-            else
-                self.UnitBeingBuilt:Destroy()
-            end
-		end
-		ChangeState(self, self.IdleState)
     end,
 
 	OnFailedToBuild = function(self)
 		TAWalking.OnFailedToBuild(self)
-        ChangeState(self, self.IdleState)
+		self:OnStopBuild()
     end,
 
 
 	StopSpin = function(self, unitBeingBuilt)
-		if not IsDestroyed(self) and self.isFactory == true and unitBeingBuilt then
-			WaitSeconds(0.5)
-			if IsDestroyed(unitBeingBuilt) == false then
-            unitBeingBuilt:DetachFrom(true)
-		end
-	end
     end,
 
 
@@ -214,17 +198,6 @@ TAconstructor = Class(TAWalking) {
 		self.desiredState = "closed"
 		self:SetAllWeaponsEnabled(true)
 	end,
-
-	DelayedClose = function(self)
-		if self.isFactory then
-			# Wait until unit factory is clear to close
-				if self.isBuilding == true then
-					return
-				end
-			WaitSeconds(0.5)
-		end
-	end,
-
 	GetCloseArea = function(self)
 		local bp = self:GetBlueprint()
 		local pos = self:GetPosition(bp.Display.BuildAttachBone)
@@ -252,11 +225,6 @@ TAconstructor = Class(TAWalking) {
 	end,
 
 	RollOff = function(self)
-        if not IsDestroyed(self) and self.isFactory == true then
-            WaitSeconds(0.5)
-			self:SetBusy(false)
-			self:SetBlockCommandQueue(false)
-		end 
 	end,
 
 	Unpack = function(self)
@@ -302,10 +270,10 @@ TAconstructor = Class(TAWalking) {
 						local bp
 						if (self.isBuilding == true) then
 							bp = self:GetBlueprint().Display.BuildEmitter or 'nanolathe.bp'
-							CreateEmitterAtBone(self, v, self:GetArmy(), '/mods/SCTAFix/effects/emitters/' .. bp ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',time,0)
+							CreateEmitterAtBone(self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/' .. bp ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',time,0)
 						else
 							bp = self:GetBlueprint().Display.ReclaimEmitter or 'reclaimnanolathe.bp'
-							CreateEmitterAtBone(self, v, self:GetArmy(), '/mods/SCTAFix/effects/emitters/' .. bp ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',time,0):SetEmitterCurveParam('Z_POSITION_CURVE',distance * 10,0)
+							CreateEmitterAtBone(self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/' .. bp ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',time,0):SetEmitterCurveParam('Z_POSITION_CURVE',distance * 10,0)
 						end
 						
 

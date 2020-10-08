@@ -165,7 +165,7 @@ ARMDLAB = Class(TAFactory) {
 		WaitSeconds(1)
 
 		--SLEEP <48>;
-
+		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
 }

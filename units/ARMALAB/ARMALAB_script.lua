@@ -137,7 +137,7 @@ ARMALAB = Class(TAFactory) {
 		WaitSeconds(0.7)
 
 		--SLEEP <34>;
-
+		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
 }

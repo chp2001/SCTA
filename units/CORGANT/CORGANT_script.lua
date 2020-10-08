@@ -647,7 +647,9 @@ CORGANT = Class(TAFactory) {
 		SLEEP <200>; ]],
 
 	Close = function(self)
-        TAutils.Cobler(self.close_script, self.Spinners, self.Sliders)
+		TAutils.Cobler(self.close_script, self.Spinners, self.Sliders)
+		ChangeState(self, self.IdleState)
+		TAFactory.Close(self)
 	end,
 }
 

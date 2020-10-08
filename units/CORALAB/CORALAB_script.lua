@@ -138,7 +138,7 @@ CORALAB = Class(TAFactory) {
 		--SLEEP <960>;
 		--SLEEP <30>;
 		WaitSeconds(1.0)
-
+		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
 }

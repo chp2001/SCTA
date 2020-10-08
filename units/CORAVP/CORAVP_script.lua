@@ -171,7 +171,7 @@ CORAVP = Class(TAFactory) {
 		WaitSeconds(0.25)
 
 		--SLEEP <20>;
-
+		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
 }

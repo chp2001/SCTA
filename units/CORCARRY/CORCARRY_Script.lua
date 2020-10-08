@@ -39,6 +39,7 @@ CORCARRY = Class(TAFactory) {
 	Close = function(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationBuild)
 		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationBuildRate or 0.2))
+		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
 

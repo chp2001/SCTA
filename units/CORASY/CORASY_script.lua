@@ -48,7 +48,7 @@ CORASY = Class(TAFactory) {
 
 		--SLEEP <1494>;
 		WaitSeconds(1.5)
-
+		ChangeState(self, self.IdleState)
 		--SLEEP <26>;
 		TAFactory.Close(self)
 	end,

@@ -162,7 +162,7 @@ ARMVP = Class(TAFactory) {
 
 		--SLEEP <734>
 		WaitSeconds(0.75)
-
+		ChangeState(self, self.IdleState)
 		--SLEEP <20>;
 		TAFactory.Close(self)
 	end,

@@ -181,7 +181,7 @@ ARMAP = Class(TAFactory) {
 		WaitSeconds(0.7)
 
 		--SLEEP <70>
-
+		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
 }

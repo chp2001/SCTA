@@ -23,14 +23,15 @@ TAconstructor = Class(TAWalking) {
 	AnimationThread = function(self)
 		self.animating = true
 		while not IsDestroyed(self) and self.wantStopAnimation == false do
+			--ChangeState(self, self.IdleState)
 			if(self.currentState == "rolloff") then
 				self.currentTarget = nil
+				--ChangeState(self, self.IdleState)
 				self.countdown = self.countdown - 0.2
 				if (self.countdown <= 0) then
 					self.desiredState = "closed"
 				end
 			end
-
 			if (self.currentState ~= self.desiredState) then
 				if (self.currentState == "closed") then
 					#desiredState will only ever be "opened" from this state
@@ -40,10 +41,11 @@ TAconstructor = Class(TAWalking) {
 				elseif(self.currentState == "opened") then
 					if (self.desiredState == "closed") then
 						self:DelayedClose()
-
+						--ChangeState(self, self.IdleState)
 						--Check to make sure we still want to close
 						if (self.desiredState == "closed") then	
 							self:Close()
+							--ChangeState(self, self.IdleState)
 							self.currentState = "closed"
 						end
 					elseif (self.desiredState == "aimed") then
@@ -51,15 +53,14 @@ TAconstructor = Class(TAWalking) {
 							self:StopSpin(self.currentTarget)
 						end
 						self:RollOff()
+						--ChangeState(self, self.IdleState)
 						self.currentTarget = self.desiredTarget
 						self.currentState = "aimed"
-						
 						if (self.currentTarget) then
 							self:Aim(self.currentTarget)
 						else
 							self.desiredState = "rolloff"
 						end
-
 						if (IsDestroyed(self.currentTarget) == false) then
 							if self.isFactory == true and IsDestroyed(self.currentTarget) == false then
 								local bone = self:GetBlueprint().Display.BuildAttachBone or 0
@@ -86,18 +87,19 @@ TAconstructor = Class(TAWalking) {
 				elseif(self.currentState == "aimed" or self.currentState == "rolloff") then
 					if (self.desiredState == "closed") then
 						self:Close(self)
+						---ChangeState(self, self.IdleState)
 						self.currentState = "closed"
 						if (self.isBuilding == false and self.isReclaiming == false) then
 							self.wantStopAnimation = true
 						end
 					elseif (self.desiredState == "rolloff") then
+						--ChangeState(self, self.IdleState)
 						self:StopSpin(self.currentTarget)
 						self:RollOff()
 						self.currentState = "rolloff"
 					end
 				end
 			end
-
 			WaitSeconds(0.2)
 		end
 		self.animating = false
@@ -113,22 +115,11 @@ TAconstructor = Class(TAWalking) {
     end,
 
 
-    OnKilled = function(self, instigator, type, overkillRatio)
-        TAWalking.OnKilled(self, instigator, type, overkillRatio)
-        if self.isFactory then
-            if self.currentTarget and not self.currentTarget:IsDead() and self.currentTarget:GetFractionComplete() != 1 then
-                self.currentTarget:Kill()
-                self.currentTarget:Destroy()
-            end
-        end
-    end,
-
 
 	OnStartBuild = function(self, unitBeingBuilt, order )
-
         if unitBeingBuilt.noassistbuild and unitBeingBuilt:GetHealth()==unitBeingBuilt:GetMaxHealth() then
             return
-        end
+		end
 		self.desiredTarget = unitBeingBuilt
 		if (self.currentState == "aimed" or self.currentState == "opened" or self.currentState == "rolloff") then
 			self.currentState = "opened"
@@ -152,6 +143,7 @@ TAconstructor = Class(TAWalking) {
 
 	OnStopBuild = function(self, unitBeingBuilt, order )
 		TAWalking.OnStopBuild(self, unitBeingBuilt, order )
+		--ChangeState(self, self.IdleState)
 		self.desiredTarget = nil
 		self.isBuilding = false
 		self.countdown = self.pauseTime
@@ -161,18 +153,19 @@ TAconstructor = Class(TAWalking) {
 			self.desiredState = "closed"
 		end
 		self:SetAllWeaponsEnabled(true)
-		if self.isFactory then
-			self:SetBusy(true)
-			self:SetBlockCommandQueue(true)
-		end
 	end,
+
+	DestroyUnitBeingBuilt = function(self)
+    end,
+
+	OnFailedToBuild = function(self)
+		TAWalking.OnFailedToBuild(self)
+		self:OnStopBuild()
+    end,
 
 
 	StopSpin = function(self, unitBeingBuilt)
-		if not IsDestroyed(self) and self.isFactory == true and unitBeingBuilt then
-			unitBeingBuilt:DetachFrom(true)
-		end
-	end,
+    end,
 
 
 	OnStartReclaim = function(self, target)
@@ -186,7 +179,6 @@ TAconstructor = Class(TAWalking) {
 		else
 			self.desiredState = "opened"
 		end
-		self:SetAllWeaponsEnabled(false)
 		self.isReclaiming = true
 		self.isBuilding = false
 		self.cloakOn = false
@@ -206,70 +198,41 @@ TAconstructor = Class(TAWalking) {
 		self.desiredState = "closed"
 		self:SetAllWeaponsEnabled(true)
 	end,
-
-	DelayedClose = function(self)
-		if self.isFactory then
-			# Wait until unit factory is clear to close
-			local onlySelf = false
-			while onlySelf == false do
-				----onlySelf = self:AreaClear(self:GetCloseArea())
-				---if not onlySelf then	
-					WaitSeconds(0.5)
-				end
-				if self.isBuilding == true then
-					return
-				end
+	GetCloseArea = function(self)
+		local bp = self:GetBlueprint()
+		local pos = self:GetPosition(bp.Display.BuildAttachBone)
+		local area = nil
+		if bp.Physics.CloseAreaX and bp.Physics.CloseAreaZ then
+			area = Rect(pos.x - bp.Physics.CloseAreaX,bp.Physics.CloseAreaZ, bp.Physics.CloseAreaX, bp.Physics.CloseAreaX)
+		else
+			area = Rect(pos.x - bp.SizeX,bp.SizeZ, bp.SizeX, bp.SizeZ)
 		end
+		WaitSeconds(1)
+		return area
 	end,
 
-	--GetCloseArea = function(self)
-		--local bp = self:GetBlueprint()
-		--local pos = self:GetPosition(bp.Display.BuildAttachBone)
-		--local area = nil
-		--if bp.Physics.CloseAreaX and bp.Physics.CloseAreaZ then
-		--	area = Rect(pos.x - bp.Physics.CloseAreaX / 2, pos.z - bp.Physics.CloseAreaZ / 2, pos.x + bp.Physics.CloseAreaX / 2, pos.z + bp.Physics.CloseAreaX / 2)
-		--else
-			--area = Rect(pos.x - bp.SizeX / 2, pos.z - bp.SizeZ / 2, pos.x + bp.SizeX / 2, pos.z + bp.SizeZ / 2)
-		--end
-		--return area
-	--end,
-
-	---GetBuildArea = function(self)
-		---local bp = self:GetBlueprint()
-		---local pos = self:GetPosition(bp.Display.BuildAttachBone)
-		---local area = nil
-		--if bp.Physics.BuildAreaX and bp.Physics.BuildAreaZ then
-			--area = Rect(pos.x - bp.Physics.BuildAreaX / 2, pos.z - bp.Physics.BuildAreaZ / 2, pos.x + bp.Physics.BuildAreaX / 2, pos.z + bp.Physics.BuildAreaX / 2)
-		--else
-			--area = Rect(pos.x - bp.SizeX / 2, pos.z - bp.SizeZ / 2, pos.x + bp.SizeX / 2, pos.z + bp.SizeZ / 2)
-		--end
-		--return area
-	--end,
-
-	--AreaClear = function(self, area)
-		--local unitsInRect = GetUnitsInRect(area)
-		--for k, v in unitsInRect do
-			--if v != self and v != self.desiredTarget then
-				--if (v:GetPosition().x > area.x0) and (v:GetPosition().x < area.x1) and (v:GetPosition().z > area.y0) and (v:GetPosition().z < area.y1) then
-					--if v:GetPosition().y < self:GetPosition().y + 2 then
-						--return false
-					--end
-				--end
-			--end
-		--end
-		--return true
-	--end,
-
-	
-	Unpack = function(self)
+	GetBuildArea = function(self)
+		local bp = self:GetBlueprint()
+		local pos = self:GetPosition(bp.Display.BuildAttachBone)
+		local area = nil
+		if bp.Physics.BuildAreaX and bp.Physics.BuildAreaZ then
+			area = Rect(bp.Physics.BuildAreaX, bp.Physics.BuildAreaZ, bp.Physics.BuildAreaX, bp.Physics.BuildAreaX)
+		else
+			area = Rect(bp.SizeX,bp.SizeZ, bp.SizeX, bp.SizeZ)
+		end
+		WaitSeconds(1)
+		return area
 	end,
 
 	RollOff = function(self)
 	end,
 
-	Open = function(self)
+	Unpack = function(self)
 	end,
 
+	Open = function(self)
+	end,
+	
 	Aim = function(self, target)
 	end,
 
@@ -281,11 +244,9 @@ TAconstructor = Class(TAWalking) {
 		local current = 0
 		while not IsDestroyed(self) and self.isBuilding == true and IsDestroyed(unitBeingBuilt) == false and unitBeingBuilt:GetFractionComplete() < 1 or self.isReclaiming == true and self.currentState == "aimed" do
 			if self:IsPaused() == false then
-
 				current = current + 1
 				if current >= target or self.isReclaiming == true then
 					for k,v in self:GetBlueprint().Display.BuildBones do
-
                         local selfPosition = self:GetPosition(v) 
                         local targetPosition = unitBeingBuilt:GetPosition()
                         local distance = VDist3(Vector(selfPosition.x,selfPosition.y, selfPosition.z), Vector(targetPosition.x, targetPosition.y, targetPosition.z))

@@ -107,6 +107,7 @@ TAconstructor = Class(TAWalking) {
 	end,
 
 	FlattenSkirt = function(self)
+        self:LOGDBG('TAContructor.FlattenSkirt')
 		TAWalking.FlattenSkirt(self)
         local x, y, z = unpack(self:GetPosition())
         local x0,z0,x1,z1 = self:GetSkirtRect()
@@ -117,6 +118,7 @@ TAconstructor = Class(TAWalking) {
 
 
 	OnStartBuild = function(self, unitBeingBuilt, order )
+        self:LOGDBG('TAContructor.OnStartBuild')
         if unitBeingBuilt.noassistbuild and unitBeingBuilt:GetHealth()==unitBeingBuilt:GetMaxHealth() then
             return
 		end
@@ -142,6 +144,7 @@ TAconstructor = Class(TAWalking) {
 	end,
 
 	OnStopBuild = function(self, unitBeingBuilt, order )
+        self:LOGDBG('TAContructor.OnStopBuild')
 		TAWalking.OnStopBuild(self, unitBeingBuilt, order )
 		--ChangeState(self, self.IdleState)
 		self.desiredTarget = nil
@@ -156,19 +159,23 @@ TAconstructor = Class(TAWalking) {
 	end,
 
 	DestroyUnitBeingBuilt = function(self)
+        self:LOGDBG('TAContructor.DestroyUnitBeingBuilt')
     end,
-
-	OnFailedToBuild = function(self)
+    
+    OnFailedToBuild = function(self)
+        self:LOGDBG('TAContructor.OnFailedToBuild')
 		TAWalking.OnFailedToBuild(self)
 		self:OnStopBuild()
     end,
 
 
 	StopSpin = function(self, unitBeingBuilt)
+        self:LOGDBG('TAContructor.StopSpin')
     end,
 
 
 	OnStartReclaim = function(self, target)
+        self:LOGDBG('TAContructor.OnStartReclaim')
 		self:SetReclaimTimeMultiplier(1)
 		self:SetBuildRate(self:GetBlueprint().Economy.BuildRate * 0.60)
 		TAWalking.OnStartReclaim(self, target)
@@ -191,6 +198,7 @@ TAconstructor = Class(TAWalking) {
 
 
 	OnStopReclaim = function(self, target)
+        self:LOGDBG('TAContructor.OnStopReclaim')
 		TAWalking.OnStopReclaim(self, target)
 		self.desiredTarget = nil
 		self.isReclaiming = false
@@ -212,6 +220,7 @@ TAconstructor = Class(TAWalking) {
 	end,
 
 	GetBuildArea = function(self)
+        self:LOGDBG('TAContructor.GetBuildArea')
 		local bp = self:GetBlueprint()
 		local pos = self:GetPosition(bp.Display.BuildAttachBone)
 		local area = nil
@@ -225,21 +234,27 @@ TAconstructor = Class(TAWalking) {
 	end,
 
 	RollOff = function(self)
+        self:LOGDBG('TAContructor.RollOff')
 	end,
 
 	Unpack = function(self)
+        self:LOGDBG('TAContructor.Unpack')
 	end,
 
 	Open = function(self)
+        self:LOGDBG('TAContructor.Open')
 	end,
 	
 	Aim = function(self, target)
+        self:LOGDBG('TAContructor.Aim')
 	end,
 
 	Close = function(self)
+        self:LOGDBG('TAContructor.Close')
 	end,
 
 	Nano = function(self, unitBeingBuilt)
+        self:LOGDBG('TAContructor.Nano')
 		local target = 1
 		local current = 0
 		while not IsDestroyed(self) and self.isBuilding == true and IsDestroyed(unitBeingBuilt) == false and unitBeingBuilt:GetFractionComplete() < 1 or self.isReclaiming == true and self.currentState == "aimed" do

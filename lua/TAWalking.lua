@@ -17,6 +17,7 @@ TAWalking = Class(TATreads)
     DisabledBones = {},
 
     OnMotionHorzEventChange = function( self, new, old )
+        self:LOGDBG('TAWalking.OnMotionHorzEventChange')
         TATreads.OnMotionHorzEventChange(self, new, old)
        
         if ( old == 'Stopped' ) then
@@ -39,6 +40,7 @@ TAWalking = Class(TATreads)
     end,
 
     OnKilled = function(self, instigator, type, overkillRatio)
+        self:LOGDBG('TAWalking.OnKilled')
 		TATreads.OnKilled(self, instigator, type, overkillRatio)
 	end,
 }

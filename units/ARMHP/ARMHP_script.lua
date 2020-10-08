@@ -180,7 +180,7 @@ ARMHP = Class(TAFactory) {
 		WaitSeconds(0.5)
 
 		--SLEEP <23>;
-
+		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
 }

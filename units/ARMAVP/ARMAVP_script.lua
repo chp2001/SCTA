@@ -183,7 +183,7 @@ ARMAVP = Class(TAFactory) {
 
 		--SLEEP <260>;
 		WaitSeconds(0.25)
-
+		ChangeState(self, self.IdleState)
 		--SLEEP <20>;
 		TAFactory.Close(self)
 	end,

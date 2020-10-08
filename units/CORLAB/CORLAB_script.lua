@@ -278,6 +278,7 @@ CORLAB = Class(TAFactory) {
 
 			--SLEEP <31>;
 
+			ChangeState(self, self.IdleState)
 			TAFactory.Close(self)
 		end,
 }

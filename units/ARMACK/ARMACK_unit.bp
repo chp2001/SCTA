@@ -76,6 +76,12 @@ UnitBlueprint {
         Abilities = {
             'Adv. Construction Unit',
         },
+	        TransportAnimation = {
+            {
+                Animation = '/mods/SCTA-master/units/ARMACK/ARMACK_lod0_afold.sca',
+                Weight = 100,
+            },
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Construction','BuildMuzzle'},
 		DestructionEmitters = {
@@ -102,7 +108,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },

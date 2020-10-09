@@ -277,7 +277,7 @@ CORDLAB = Class(TAFactory) {
 			WaitSeconds(0.956)
 
 			--SLEEP <31>;
-
+			ChangeState(self, self.IdleState)
 			TAFactory.Close(self)
 		end,
 }

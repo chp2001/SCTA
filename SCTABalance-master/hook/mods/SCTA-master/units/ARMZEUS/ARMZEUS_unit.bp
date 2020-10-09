@@ -39,4 +39,5 @@ UnitBlueprint {
         BuildCostMass = 2000,
         BuildTime = 29000,
     },
+    StrategicIconName = 'icon_bot3_armored',
 }

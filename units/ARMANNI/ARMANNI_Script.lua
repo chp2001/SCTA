@@ -12,28 +12,28 @@ ARMANNI = Class(TAunit) {
 	OnCreate = function(self)
 		TAunit.OnCreate(self)
 		self.Spinners = {
-			case2 = CreateRotator(self, 'Case_01', 'z', nil, 0, 0, 0),
-			case1 = CreateRotator(self, 'Case_02', 'z', nil, 0, 0, 0),
-			case3 = CreateRotator(self, 'Case_03', 'z', nil, 0, 0, 0),
-			case4 = CreateRotator(self, 'Case_04', 'z', nil, 0, 0, 0),
-			container1 = CreateRotator(self, 'Container_01', 'z', nil, 0, 0, 0),
-			container2 = CreateRotator(self, 'Container_02', 'z', nil, 0, 0, 0),
-			door1 = CreateRotator(self, 'Door_01', 'y', nil, 0, 0, 0),
-			door2 = CreateRotator(self, 'Door_02', 'z', nil, 0, 0, 0),
-			radar = CreateRotator(self, 'Radar', 'x', nil, 0, 0, 0),
+			case2 = CreateRotator(self, 'case2', 'z', nil, 0, 0, 0),
+			case1 = CreateRotator(self, 'case1', 'z', nil, 0, 0, 0),
+			case3 = CreateRotator(self, 'case3', 'z', nil, 0, 0, 0),
+			case4 = CreateRotator(self, 'case4', 'z', nil, 0, 0, 0),
+			container1 = CreateRotator(self, 'container1', 'z', nil, 0, 0, 0),
+			container2 = CreateRotator(self, 'container2', 'z', nil, 0, 0, 0),
+			door1 = CreateRotator(self, 'door1', 'y', nil, 0, 0, 0),
+			door2 = CreateRotator(self, 'door2', 'z', nil, 0, 0, 0),
+			radar = CreateRotator(self, 'radar', 'x', nil, 0, 0, 0),
 		}
 		self.Sliders = {
-			door1 = CreateSlider(self, 'Door_01'),
-			door2 = CreateSlider(self, 'Door_02'),
-			case5 = CreateSlider(self, 'Case_05'),
-			case6 = CreateSlider(self, 'Case_06'),
-			plate1 = CreateSlider(self, 'Plate'),
-			arm = CreateSlider(self, 'Turret'),
-			barrel = CreateSlider(self, 'Barrel'),
-			container1 = CreateSlider(self, 'Container_01'),
-			container2 = CreateSlider(self, 'Container_02'),
-			energy = CreateSlider(self, 'Energy'),
-			plate2 = CreateSlider(self, 'Radar_Base'),
+			door1 = CreateSlider(self, 'door1'),
+			door2 = CreateSlider(self, 'door2'),
+			case5 = CreateSlider(self, 'case5'),
+			case6 = CreateSlider(self, 'case6'),
+			plate1 = CreateSlider(self, 'plate1'),
+			arm = CreateSlider(self, 'arm'),
+			barrel = CreateSlider(self, 'barrel'),
+			container1 = CreateSlider(self, 'container1'),
+			container2 = CreateSlider(self, 'container2'),
+			energy = CreateSlider(self, 'energy'),
+			plate2 = CreateSlider(self, 'plate2'),
 		}
 		for k, v in self.Spinners do
 			self.Trash:Add(v)

@@ -370,7 +370,7 @@ CORDVP = Class(TAFactory) {
 		WaitSeconds(0.4)
 
 		--SLEEP <12>;
-
+		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
 }

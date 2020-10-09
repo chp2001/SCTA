@@ -137,7 +137,7 @@ ARMAAP = Class(TAFactory) {
 		WaitSeconds(0.5)
 
 		--SLEEP <26>;
-
+		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
 }

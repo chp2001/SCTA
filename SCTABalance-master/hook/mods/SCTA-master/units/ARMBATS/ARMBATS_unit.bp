@@ -5,23 +5,15 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'NAVAL',
 	'DIRECTFIRE',
 	'BATTLESHIP',
         'OVERLAYINDIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-
-	
         'ARM',
         'SHIP',
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -43,6 +35,8 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 12, 
     },
+    LifeBarSize = 6,
+    StrategicIconName = 'icon_ship3_directfire',
     SelectionSizeX = 6,
     SelectionSizeZ = 12,
     SizeX = 8,

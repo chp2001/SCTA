@@ -111,7 +111,7 @@ ARMDSY = Class(TAFactory) {
 
 		--SLEEP <760>;
 		WaitSeconds(0.75)
-
+		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
 }

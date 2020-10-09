@@ -55,4 +55,5 @@ SizeZ = 16,
             'VTOL LEVEL2 CORE',
         },
     },
+    StrategicIconName = 'icon_ship3_air',
 }

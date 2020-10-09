@@ -30,6 +30,8 @@ UnitBlueprint {
     LifeBarSize = 10,
     Weapon = {
         {
+            AboveWaterTargetsOnly = true,
+            ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',

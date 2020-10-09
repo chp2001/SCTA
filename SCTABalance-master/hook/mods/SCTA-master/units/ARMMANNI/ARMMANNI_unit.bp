@@ -10,7 +10,7 @@ UnitBlueprint {
         MaxHealth = 2500,
     },
     Economy = {
-        BuildCostMass = 1500,
+        BuildCostMass = 3000,
     },
     Footprint = {
 	SizeX = 2,

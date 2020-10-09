@@ -19,8 +19,8 @@ UnitBlueprint {
         MaxHealth = 1400,
     },
     Economy = {
-        BuildCostEnergy = 10000,
-        BuildCostMass = 1200,
+        BuildCostEnergy = 20000,
+        BuildCostMass = 2400,
         BuildTime = 22000,
     },
     StrategicIconName = 'icon_land3_artillery',

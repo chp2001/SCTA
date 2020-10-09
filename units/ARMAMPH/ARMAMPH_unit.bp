@@ -174,7 +174,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 40,
+            Damage = 120,
             DamageRadius = 1.5,
             DamageType = 'AntiAir',
             DisplayName = 'armamph_weapon1',

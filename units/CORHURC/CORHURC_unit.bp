@@ -256,7 +256,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 50,
+            Damage = 150,
             DamageRadius = 0.25, 
             DamageType = 'AntiAir',
             DisplayName = 'CORAIR2AIRLASER',

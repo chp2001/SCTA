@@ -2,10 +2,10 @@ local oldARMSONAR = ARMSONAR
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 ARMSONAR = Class(oldARMSONAR) {
-	OnStopBuild = function(self, unitBuilding)
-		 oldARMSONAR.OnStopBuild(self, unitBuilding)
-		 if unitBuilding:GetFractionComplete() == 1 and unitBuilding:GetUnitId() == self:GetBlueprint().General.UpgradesTo then
-			 NotifyUpgrade(self, unitBuilding)
+	OnStopBuild = function(self, unitBeingBuilt)
+		 oldARMSONAR.OnStopBuild(self, unitBeingBuilt)
+		 if unitBeingBuilt:GetFractionComplete() == 1 and unitBeingBuilt:GetUnitId() == self:GetBlueprint().General.UpgradesTo then
+			 NotifyUpgrade(self, unitBeingBuilt)
 			 self:Destroy()
 		 end
 	 end,

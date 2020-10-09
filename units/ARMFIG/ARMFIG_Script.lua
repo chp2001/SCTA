@@ -27,7 +27,7 @@ ARMFIG = Class(TAair) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
-		ForkThread(self.RollThread, self)
+		--ForkThread(self.RollThread, self)
 	end,
 
 	RollThread = function(self)

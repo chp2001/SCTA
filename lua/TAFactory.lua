@@ -64,8 +64,10 @@ TAFactory = Class(TAconstructor) {
         if not IsDestroyed(self) and self.isFactory == true then
 			ChangeState(self, self.IdleState)
 			WaitSeconds(0.5)
+			if not IsDestroyed(self) then
 			self:SetBusy(false)
 			self:SetBlockCommandQueue(false)
+			end
 		end 
 		---self:OnStopBuild()
 	end,
@@ -176,35 +178,6 @@ TAFactory = Class(TAconstructor) {
 			WaitSeconds(0.25)
 		end
 	end,
-
-	UpgradingState = State {
-        Main = function(self)
-            self:StopRocking()
-            local bp = self:GetBlueprint().Display
-            self:DisableDefaultToggleCaps()
-        end,
-
-        OnStopBuild = function(self, unitBuilding)
-            TAconstructor.OnStopBuild(self, unitBuilding)
-            self:EnableDefaultToggleCaps()
-            
-            if unitBuilding:GetFractionComplete() == 1 then
-                NotifyUpgrade(self, unitBuilding)
-                self:Destroy()
-            end
-        end,
-
-        OnFailedToBuild = function(self)
-            TAconstructor.OnFailedToBuild(self)
-            self:EnableDefaultToggleCaps()
-            if self:GetCurrentLayer() == 'Water' then
-                self:StartRocking()
-            end
-            ChangeState(self, self.IdleState)
-        end,
-        
-	},
-	
 }
 
 TypeClass = TAFactory

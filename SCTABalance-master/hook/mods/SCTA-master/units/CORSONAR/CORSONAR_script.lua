@@ -2,10 +2,10 @@ local oldCORSONAR = CORSONAR
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 CORSONAR = Class(oldCORSONAR) {
-	OnStopBuild = function(self, unitBuilding)
-		 oldCORSONAR.OnStopBuild(self, unitBuilding)
-		 if unitBuilding:GetFractionComplete() == 1 and unitBuilding:GetUnitId() == self:GetBlueprint().General.UpgradesTo then
-			 NotifyUpgrade(self, unitBuilding)
+	OnStopBuild = function(self, unitBeingBuilt)
+		 oldCORSONAR.OnStopBuild(self, unitBeingBuilt)
+		 if unitBeingBuilt:GetFractionComplete() == 1 and unitBeingBuilt:GetUnitId() == self:GetBlueprint().General.UpgradesTo then
+			 NotifyUpgrade(self, unitBeingBuilt)
 			 self:Destroy()
 		 end
 	 end,

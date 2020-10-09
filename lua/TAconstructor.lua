@@ -34,10 +34,11 @@ TAconstructor = Class(TAWalking) {
 			end
 			if (self.currentState ~= self.desiredState) then
 				if (self.currentState == "closed") then
-					#desiredState will only ever be "opened" from this state
+					if not IsDestroyed(self) then
 					self:Open()
 					self.currentState = "opened"
 					self.desiredState = "aimed"
+					end
 				elseif(self.currentState == "opened") then
 					if (self.desiredState == "closed") then
 						self:DelayedClose()
@@ -165,7 +166,7 @@ TAconstructor = Class(TAWalking) {
     OnFailedToBuild = function(self)
         self:LOGDBG('TAContructor.OnFailedToBuild')
 		TAWalking.OnFailedToBuild(self)
-		self:OnStopBuild()
+		--self:OnStopBuild()
     end,
 
 
@@ -206,6 +207,7 @@ TAconstructor = Class(TAWalking) {
 		self.desiredState = "closed"
 		self:SetAllWeaponsEnabled(true)
 	end,
+
 	GetCloseArea = function(self)
 		local bp = self:GetBlueprint()
 		local pos = self:GetPosition(bp.Display.BuildAttachBone)
@@ -231,6 +233,9 @@ TAconstructor = Class(TAWalking) {
 		end
 		WaitSeconds(1)
 		return area
+	end,
+
+	DelayedClose = function(self)
 	end,
 
 	RollOff = function(self)

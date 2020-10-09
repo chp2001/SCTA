@@ -301,7 +301,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 200,
+            Damage = 630,
             DamageRadius = 2.5,
             DamageType = 'AntiAir',
             DisplayName = 'CORKROG_ROCKET',

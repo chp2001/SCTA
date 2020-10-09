@@ -139,7 +139,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 30,
+            Damage = 90,
             DamageRadius = 1.5,
             DamageType = 'AntiAir',
             DisplayName = 'CORRL_MISSILE',

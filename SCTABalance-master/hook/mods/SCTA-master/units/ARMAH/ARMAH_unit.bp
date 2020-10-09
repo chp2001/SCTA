@@ -49,7 +49,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 20,
+            Damage = 60,
             DamageRadius = 1.5,
             FiringRandomness = 0,
             DamageType = 'AntiAir',

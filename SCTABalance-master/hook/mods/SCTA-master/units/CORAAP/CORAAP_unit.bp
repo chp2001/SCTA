@@ -38,8 +38,8 @@ UnitBlueprint {
             SizeZ = 7,
         },
     Economy = {
-        BuildCostEnergy = 40000,
-        BuildCostMass = 4000, 
+        BuildCostEnergy = 60000,
+        BuildCostMass = 6000, 
         BuildableCategory = {
             'VTOL LEVEL1 CORE', 
             'VTOL LEVEL2 CORE',

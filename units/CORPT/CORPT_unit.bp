@@ -157,7 +157,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 20,
+            Damage = 60,
             DamageRadius = 1.5, 
             DamageType = 'AntiAir',
             DisplayName = 'CORKBOT_MISSILE',

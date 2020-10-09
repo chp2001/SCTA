@@ -232,7 +232,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 57,
+            Damage = 180,
             DamageRadius = 1.5,
             DamageType = 'AntiAir',
             DisplayName = 'ARMSHIP_MISSILE',

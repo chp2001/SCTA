@@ -1,9 +1,9 @@
 local oldARMRAD = ARMRAD
 ARMRAD = Class(oldARMRAD) {
-	OnStopBuild = function(self, unitBuilding)
-		 oldARMRAD.OnStopBuild(self, unitBuilding)
-		 if unitBuilding:GetFractionComplete() == 1 and unitBuilding:GetUnitId() == self:GetBlueprint().General.UpgradesTo then
-			 NotifyUpgrade(self, unitBuilding)
+	OnStopBuild = function(self, unitBeingBuilt)
+		 oldARMRAD.OnStopBuild(self, unitBeingBuilt)
+		 if unitBeingBuilt:GetFractionComplete() == 1 and unitBeingBuilt:GetUnitId() == self:GetBlueprint().General.UpgradesTo then
+			 NotifyUpgrade(self, unitBeingBuilt)
 			 self:Destroy()
 		 end
 	 end,

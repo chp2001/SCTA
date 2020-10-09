@@ -1,9 +1,9 @@
 local oldCORAP = CORAP
 CORAP = Class(oldCORAP) {
-       OnStopBuild = function(self, unitBuilding)
-            oldCORAP.OnStopBuild(self, unitBuilding)
-            if unitBuilding:GetFractionComplete() == 1 and unitBuilding:GetUnitId() == self:GetBlueprint().General.UpgradesTo then
-                NotifyUpgrade(self, unitBuilding)
+       OnStopBuild = function(self, unitBeingBuilt)
+            oldCORAP.OnStopBuild(self, unitBeingBuilt)
+            if unitBeingBuilt:GetFractionComplete() == 1 and unitBeingBuilt:GetUnitId() == self:GetBlueprint().General.UpgradesTo then
+                NotifyUpgrade(self, unitBeingBuilt)
                 self:Destroy()
             end
         end,

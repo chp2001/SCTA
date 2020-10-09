@@ -35,8 +35,8 @@ UnitBlueprint {
         VisionRadius = 12,
     },
     Economy = {
-        BuildCostEnergy = 20000,
-        BuildCostMass = 2000,
+        BuildCostEnergy = 30000,
+        BuildCostMass = 3000,
         BuildTime = 29000,
     },
     StrategicIconName = 'icon_bot3_armored',

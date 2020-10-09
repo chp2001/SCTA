@@ -31,10 +31,6 @@ UnitBlueprint {
         Display = {
             UniformScale = 0.12,
         },
-        Footprint = {
-            SizeX = 1,
-            SizeZ = 1,
-        },
     Physics = {
         TurnRate = 51,
         MaxSteerForce = 100,

@@ -100,7 +100,7 @@ UnitBlueprint {
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
         },
-        SelectionPriority = 2,
+        SelectionPriority = 5,
         FactionName = 'CORE',
         TechLevel = 'RULEUTL_Secret',
         UnitName = 'Advanced Torpedo Launcher',

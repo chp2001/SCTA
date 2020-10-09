@@ -136,9 +136,8 @@ UnitBlueprint {
 	NaturalProducer = true,
     },
     Footprint = {
-	MaxSlope = 1,
-        SizeX = 3,
-        SizeZ = 3,
+        SizeX = 2,
+        SizeZ = 1,
     },
     General = {
         Category = 'Construction',

@@ -75,16 +75,20 @@ UnitBlueprint {
             'Adv. Construction Unit',
         },
         MovementEffects = {
+            Bones = {'CORACV'},
+            Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
+            Scale = 0.5,
             Land = {
                 Treads = {
                     ScrollMultiplier = 0.75,
                     ScrollTreads = true,
                     TreadMarks = {
                         {
+                            BoneName = 'CORACV',
                             TreadMarks = 'tank_treads_albedo',
                             TreadMarksInterval = 0.2,
-                            TreadMarksSizeX = 1,
-                            TreadMarksSizeZ = 1,
+                            TreadMarksSizeX = 0.5,
+                            TreadMarksSizeZ = 0.5,
                             TreadOffset = {
                                 0,
                                 0,

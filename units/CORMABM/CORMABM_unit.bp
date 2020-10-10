@@ -58,12 +58,16 @@ UnitBlueprint {
         '<LOC ability_tacmissiledef>Tactical Missile Defense',
         },
         MovementEffects = {
+            Bones = {'CORMABM'},
+            Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
+            Scale = 0.5,
             Land = {
                 Treads = {
                     ScrollMultiplier = 1,
                     ScrollTreads = true,
                     TreadMarks = {
                         {
+                            BoneName = 'CORMABM',
                             TreadMarks = 'tank_treads_albedo',
                             TreadMarksInterval = 0.2,
                             TreadMarksSizeX = 1,

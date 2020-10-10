@@ -72,7 +72,7 @@ UnitBlueprint {
     Description = 'Tech Level 1',
     Display = {
         AnimationOpen = '/mods/SCTA-master/units/CORCV/CORCV_lod0_Aopen.sca',
-        AnimationOpenRate = 0.2, 
+        AnimationOpenRate = 1, 
         Abilities = {
             'Construction Unit',
         },

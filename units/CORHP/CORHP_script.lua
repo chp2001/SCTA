@@ -28,11 +28,14 @@ CORHP = Class(TAFactory) {
 
 
 	Open = function(self)
-		TAFactory.Open(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationOpen)
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationOpenRate or 0.5))
-		WaitSeconds(0.5)
-		--TURN beam1 to z-axis <-90.00> SPEED <175.13>;
+		TAFactory.Open(self)
+	end,
+
+	Aim = function(self, target)
+		WaitFor(self.AnimManip)	
+				--TURN beam1 to z-axis <-90.00> SPEED <175.13>;
 self.Spinners.beam1:SetGoal(90)
 self.Spinners.beam1:SetSpeed(175)
 
@@ -46,6 +49,8 @@ self.Spinners.beam3:SetSpeed(175)
 --TURN door2 to z-axis <90.00> SPEED <175.13>;
 self.Spinners.beam4:SetGoal(-90)
 self.Spinners.beam4:SetSpeed(175)
+WaitSeconds(0.5)
+		TAFactory.Aim(self, target)
 	end,
 
 	Close = function(self)

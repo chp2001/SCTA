@@ -29,7 +29,7 @@ ARMACK = Class(TAconstructor) {
 	Aim = function(self, target)
 		local selfPosition = self:GetPosition('Torso') 
 		local targetPosition = target:GetPosition()
-			
+		WaitFor(self.AnimManip)	
 		--TURN torso to y-axis buildheading SPEED <160.03>;
 		self.Spinners.torso:SetGoal(TAutils.GetAngle(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
 		self.Spinners.torso:SetSpeed(160.03)

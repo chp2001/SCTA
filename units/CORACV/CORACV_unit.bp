@@ -73,7 +73,9 @@ UnitBlueprint {
     Display = {
         Abilities = {
             'Adv. Construction Unit',
-        },
+        },        
+        AnimationOpen = '/mods/SCTA-master/units/CORACV/CORACV_lod0_Aopen.sca',
+        AnimationOpenRate = 0.2, 
         MovementEffects = {
             Bones = {'CORACV'},
             Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',

@@ -6,7 +6,7 @@
 local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
-ARMAAP = Class(TAFactory) {
+ARMPLAT = Class(TAFactory) {
 	pauseTime = 5,
 	hideUnit = true,
 	isFactory = true,
@@ -29,6 +29,7 @@ ARMAAP = Class(TAFactory) {
 	end,
 
 	Aim = function(self, target)
+		WaitFor(self.AnimManip)	
 		TAFactory.Aim(self, target)
 	end,
 
@@ -40,4 +41,4 @@ ARMAAP = Class(TAFactory) {
 	end,
 }
 
-TypeClass = ARMAAP
+TypeClass = ARMPLAT

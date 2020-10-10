@@ -33,7 +33,7 @@ CORCK = Class(TAconstructor) {
 		#Aim at build job
 		local selfPosition = self:GetPosition('torso') 
 		local targetPosition = target:GetPosition()
-			
+		WaitFor(self.AnimManip)		
 		--TURN torso to y-axis buildheading SPEED <160.03>;
 		self.Spinners.torso:SetGoal(TAutils.GetAngle(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
 		self.Spinners.torso:SetSpeed(160.03)

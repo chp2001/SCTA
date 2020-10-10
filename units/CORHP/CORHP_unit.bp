@@ -62,7 +62,7 @@ UnitBlueprint {
     Description = 'Builds Hovercraft',
     Display = {
         AnimationOpen = '/mods/SCTA-master/units/CORHP/CORHP_lod0_Aopen.sca',
-        AnimationOpenRate = 0.2, 
+        AnimationOpenRate = 1, 
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate'},
 		DestructionEmitters = {

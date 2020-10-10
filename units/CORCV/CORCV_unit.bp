@@ -71,6 +71,8 @@ UnitBlueprint {
     },
     Description = 'Tech Level 1',
     Display = {
+        AnimationOpen = '/mods/SCTA-master/units/CORCV/CORCV_lod0_Aopen.sca',
+        AnimationOpenRate = 0.2, 
         Abilities = {
             'Construction Unit',
         },
@@ -92,16 +94,45 @@ UnitBlueprint {
 			},
 		},
 	},
-	BuildBones = {'muzzle'},
+    BuildBones = {'muzzle'},
+    MovementEffects = {
+        Bones = {'CORCV'},
+        Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
+        Scale = 0.5,
+        Land = {
+            Treads = {
+                ScrollMultiplier = 0.75,
+                ScrollTreads = true,
+                TreadMarks = {
+                    {
+                        BoneName = 'CORCV',
+                        TreadMarks = 'tank_treads_albedo',
+                        TreadMarksInterval = 0.2,
+                        TreadMarksSizeX = 0.5,
+                        TreadMarksSizeZ = 0.5,
+                        TreadOffset = {
+                            0,
+                            0,
+                            0,
+                        },
+                    },
+                },
+            },
+        },
+    },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 230,
-                    ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                    LODCutoff = 120,
+                    Scrolling = true,
+                    ShaderName = 'Unit',
                 },
-            },
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'Unit',
+                },
+			},
         },
         UniformScale = 0.16,
     },

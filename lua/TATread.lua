@@ -15,7 +15,7 @@ MovementEffects = function( self, EffectsBag, TypeSuffix)
     self:LOGDBG('TATreads.MovementEffects')
     local layer = self:GetCurrentLayer()
     local bpTable = self:GetBlueprint().Display.MovementEffects
-
+    TAunit.MovementEffects(self)
     if bpTable[layer] then
         bpTable = bpTable[layer]
         if bpTable.Treads then
@@ -30,7 +30,7 @@ CreateMotionChangeEffects = function( self, new, old )
     self:LOGDBG('TATreads.CreateMotionChangeEffects')
     local key = self:GetCurrentLayer()..old..new
     local bpTable = self:GetBlueprint().Display.MotionChangeEffects[key]
-
+    TAunit.CreateMotionChangeEffects(self, new, old)
     if bpTable then
         self:CreateTerrainTypeEffects( bpTable.Effects, 'FXMotionChange', key )
     end
@@ -40,7 +40,7 @@ DestroyMovementEffects = function( self )
     self:LOGDBG('TATreads.DestroyMovementEffects')
     local bpTable = self:GetBlueprint().Display.MovementEffects
     local layer = self:GetCurrentLayer()
-
+    TAunit.DestroyMovementEffects(self)
     # Cleanup treads
     if self.TreadThreads then
         for k, v in self.TreadThreads do
@@ -54,22 +54,21 @@ DestroyMovementEffects = function( self )
 end,
 
 CreateTreads = function(self, treads)
+    TAunit.CreateTreads(self, treads)
     self:LOGDBG('TATreads.CreateTreads')
     if treads.ScrollTreads then
         self:AddThreadScroller(1.0, treads.ScrollMultiplier or 0.2)
     end
     self.TreadThreads = {}
     if treads.TreadMarks then
-        local type = self:GetTTTreadType(self:GetPosition())
-        if type != 'None' then
             for k, v in treads.TreadMarks do
-                table.insert( self.TreadThreads, self:ForkThread(self.CreateTreadsThread, v, type ))
-            end
+                table.insert( self.TreadThreads, self:ForkThread(self.CreateTreadsThread, v))
         end
     end
 end,
 
-CreateTreadsThread = function(self, treads, type )
+CreateTreadsThread = function(self, treads)
+    --TAunit.CreateTreadsThead(self, treads)
     self:LOGDBG('TATreads.CreateTreadsThread')
     local sizeX = treads.TreadMarksSizeX
     local sizeZ = treads.TreadMarksSizeZ

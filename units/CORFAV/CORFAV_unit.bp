@@ -57,15 +57,19 @@ UnitBlueprint {
     Description = 'Scout',
     Display = {
         MovementEffects = {
+            Bones = {'CORFAV'},
+            Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
+            Scale = 0.5,
             Land = {
                 Treads = {
                     ScrollMultiplier = 0.75,
                     ScrollTreads = true,
                     TreadMarks = {
                         {
+                            BoneName = 'CORFAV',
                             TreadMarks = 'tank_treads_albedo',
                             TreadMarksInterval = 0.2,
-                            TreadMarksSizeX = 1,
+                            TreadMarksSizeX = 0.5,
                             TreadMarksSizeZ = 0.5,
                             TreadOffset = {
                                 0,

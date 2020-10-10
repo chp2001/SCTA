@@ -126,8 +126,6 @@ UnitBlueprint {
                 AlbedoName = 'coracv_albedo.dds',
                 LODCutoff = 215,
                 ShaderName = 'Unit',
-                SpecularName = 'coracv_specteam.dds',
-                NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
             },
         },
     },

@@ -34,7 +34,7 @@ UnitBlueprint {
     },
     LifeBarSize = 6,
     Economy = {
-        BuildCostEnergy = 2200,
+        BuildCostEnergy = 1800,
         BuildCostMass = 520,
         BuildTime = 6000,
 	    NaturalProducer = true,

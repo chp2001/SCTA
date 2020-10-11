@@ -59,6 +59,31 @@ UnitBlueprint {
         Abilities = {
             'Assault Tank',
         },
+        MovementEffects = {
+            Bones = {'ARMFLASH'},
+            Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
+            Scale = 0.5, 
+            Land = {
+                Treads = {
+                    ScrollMultiplier = 0.75,
+                    ScrollTreads = true,
+                    TreadMarks = {
+                        {
+                            BoneName = 'ARMFLASH',
+                            TreadMarks = 'tank_treads_albedo',
+                            TreadMarksInterval = 0.2,
+                            TreadMarksSizeX = 0.5,
+                            TreadMarksSizeZ = 0.5,
+                            TreadOffset = {
+                                0,
+                                0,
+                                0,
+                            },
+                        },
+                    },
+                },
+            },
+        },   
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Tredside','MetalBarrel'},
 		DestructionEmitters = {
@@ -73,9 +98,13 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
+                    LODCutoff = 120,
+                    Scrolling = true,
+                    ShaderName = 'Unit',
+                },
+                {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },

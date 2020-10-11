@@ -41,7 +41,7 @@ UnitBlueprint {
         UniformScale = 0.32,
     },
     Economy = {
-        BuildCostEnergy = 5100,
+        BuildCostEnergy = 9300,
         BuildRate = 100,
         BuildableCategory = {
             'VTOL LEVEL1 ARM',

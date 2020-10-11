@@ -41,7 +41,7 @@ UnitBlueprint {
     },
     LifeBarSize = 8,
     Economy = {
-        BuildCostEnergy = 4800,
+        BuildCostEnergy = 7200,
         BuildRate = 125,
         BuildableCategory = {
             'SHIP LEVEL1 ARM',

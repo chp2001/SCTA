@@ -53,10 +53,11 @@ UnitBlueprint {
     },
     SelectionSizeX = 3.8,
     SelectionSizeZ = 3.8,
+    SelectionCenterOffsetZ = -0.1,
     SelectionThickness = 0.72,
-    SizeX = 3.5,
+    SizeX = 8,
     SizeY = 5,
-    SizeZ = 3.5,
+    SizeZ = 8,
     StrategicIconName = 'icon_structure1_energy',
 }
 

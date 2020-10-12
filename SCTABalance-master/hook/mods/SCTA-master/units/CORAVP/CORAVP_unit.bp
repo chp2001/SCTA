@@ -25,8 +25,8 @@ UnitBlueprint {
 	
     },
     Defense = {
-        Health = 9600,
-        MaxHealth = 9600,
+        Health = 11000,
+        MaxHealth = 11000,
     },
     Footprint = {
         MaxSlope = 0.625,
@@ -37,8 +37,8 @@ UnitBlueprint {
         UniformScale = 0.32,
     },
     Economy = {
-        BuildCostEnergy = 27000,
-        BuildCostMass = 4200, 
+        BuildCostEnergy = 30000,
+        BuildCostMass = 2200, 
         BuildTime = 18000,
         BuildRate = 200,
         BuildableCategory = {

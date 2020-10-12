@@ -17,11 +17,9 @@ UnitBlueprint {
     'ARM',
     'SHOWQUEUE',
 	'SPECIAL',
-	'LEVEL3',
+    'LEVEL3',
+    'TARGETING',
 	'SORTINTEL',
-	
-	
-	
     },
  Display = {
   Abilities = {
@@ -31,7 +29,9 @@ UnitBlueprint {
         },
      }, 
      Economy = {
-	    BuildRate = 120, 
+        BuildRate = 60, 
+        BuildCostEnergy = 6000,
+        BuildCostMass = 250,
         MaintenanceConsumptionPerSecondEnergy = 50,
         ProductionPerSecondEnergy = 0,
         DifferentialUpgradeCostCalculation = true,

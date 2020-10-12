@@ -21,8 +21,6 @@ UnitBlueprint {
 	'SPECIAL',
 	'LEVEL2',
 	'SORTINTEL',
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -39,8 +37,8 @@ UnitBlueprint {
         UniformScale = 0.30,
     },
     Economy = {
-        BuildCostEnergy = 9000,
-        BuildCostMass = 3000,
+        BuildCostEnergy = 50000,
+        BuildCostMass = 4000,
         BuildTime = 25000,
         DifferentialUpgradeCostCalculation = true,
         MaintenanceConsumptionPerSecondEnergy = 700,

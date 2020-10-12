@@ -8,6 +8,7 @@
         MaxHealth = 380,
     },
   Economy = {
+    BuildTime = 3200,
         BuildCostMass = 100,
         BuildCostEnergy = 2100,
     },

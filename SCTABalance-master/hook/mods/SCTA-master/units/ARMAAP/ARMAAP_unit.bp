@@ -29,8 +29,8 @@ UnitBlueprint {
         UniformScale = 0.32,
         },
         Defense = {
-            Health = 9000,
-            MaxHealth = 9000,
+            Health = 9600,
+            MaxHealth = 9600,
         },
         Footprint = {
             MaxSlope = 0.625,
@@ -38,9 +38,9 @@ UnitBlueprint {
                 SizeZ = 7,
             },
     Economy = {
-        BuildCostEnergy = 45000,
-        BuildCostMass = 3000, 
-        BuildTime = 22000,
+        BuildCostEnergy = 42000,
+        BuildCostMass = 1800,
+        BuildTime = 11000,
         BuildableCategory = {
         'VTOL LEVEL2 ARM',
 	    'VTOL LEVEL1 ARM', 

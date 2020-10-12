@@ -31,8 +31,9 @@ UnitBlueprint {
 
 	
         'CORE',
-        'MINE',
-	
+                'MINE',
+        'STRUCTURE',
+        'Structure',
 	'LEVEL2',
 	
 	

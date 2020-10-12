@@ -24,15 +24,15 @@ UnitBlueprint {
 	
     },
     Defense = {
-        Health = 9600,
-        MaxHealth = 9600,
+        Health = 8200,
+        MaxHealth = 8200,
     },
         Display = {      
         UniformScale = 0.32,
     },
     Economy = {
-        BuildCostEnergy = 44000,
-        BuildCostMass = 4200, 
+        BuildCostEnergy = 33000,
+        BuildCostMass = 2400, 
         BuildRate = 180,
         BuildTime = 21000,
         BuildableCategory = {

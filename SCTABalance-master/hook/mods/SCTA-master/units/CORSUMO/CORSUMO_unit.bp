@@ -5,21 +5,13 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-
-	
         'CORE',
         'KBOT',
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         Health = 10000,

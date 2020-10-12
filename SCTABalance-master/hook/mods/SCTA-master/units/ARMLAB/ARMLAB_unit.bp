@@ -43,6 +43,7 @@ UnitBlueprint {
         MaxHealth = 2400,
     },
     Economy = {
+        BuildCostMass = 600, 
         BuildCostEnergy = 4500,
         BuildRate = 120,
         BuildableCategory = {

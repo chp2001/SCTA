@@ -17,6 +17,6 @@ UnitBlueprint {
         'MINE',	
 	'LEVEL2',
 	'KAMIKAZI',
-	
+	'STRUCTURE',
     },
 }

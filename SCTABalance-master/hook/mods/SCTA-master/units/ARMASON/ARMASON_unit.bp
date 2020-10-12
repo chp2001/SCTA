@@ -1,7 +1,25 @@
 UnitBlueprint {
     Merge = true,
+    Categories = {
+        'BUILTBYT2SUB',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH3',
+	'STRUCTURE',
+	'INTELLIGENCE',
+	'SONAR',
+	'NAVAL',
+	'TEXTUREANIM',
+        'OVERLAYSONAR',
+    'ARM',
+	'SPECIAL',
+	'LEVEL2',
+	'SORTINTEL',
+    'TARGETING',
+    },
 	Defense = {
-        ArmorType = 'Structure',
         Health = 1000,
         MaxHealth = 1000,
     },
@@ -22,6 +40,8 @@ UnitBlueprint {
     Economy = {
         NaturalProducer = false,
         DifferentialUpgradeCostCalculation = true,
+        BuildCostEnergy = 9000,
+        BuildCostMass = 600,
         MaintenanceConsumptionPerSecondEnergy = 100,
         },
 }

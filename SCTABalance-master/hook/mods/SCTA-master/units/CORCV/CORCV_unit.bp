@@ -40,8 +40,8 @@ UnitBlueprint {
         MaxSpeed = 1.5, 
     },
     Economy = {
-        BuildCostEnergy = 1200,
-        BuildCostMass = 128,
+        BuildCostEnergy = 1000,
+        BuildCostMass = 116,
         BuildTime = 3000,
         BuildRate = 80,
         ProductionPerSecondEnergy = 2,
@@ -59,6 +59,7 @@ UnitBlueprint {
         MaxBrake = 1.25,
         MaxSpeed = 1.6,
     },
+    LifeBarSize = 1.5,
     SelectionSizeX = 0.6,
     SelectionSizeZ = 0.6,
     SelectionThickness = 0.25,

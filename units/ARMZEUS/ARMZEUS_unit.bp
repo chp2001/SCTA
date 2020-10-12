@@ -219,7 +219,7 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         },
         { #BIG_UNIT
-            Damage = 350,
+            Damage = 100,
                        DamageFriendly = true,
             DamageRadius = 3,
             DummyWeapon = true,

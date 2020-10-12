@@ -24,7 +24,7 @@ do
             Economy = {
                 BuildCostEnergy = 0.3,
                 BuildCostMass = 0.5,
-                BuildTime = 0.05,
+                BuildTime = 0.1,
                 BuildRate = 0.075,
                 MaintenanceConsumptionPerSecondEnergy = 3,
             },
@@ -32,22 +32,18 @@ do
             LifeBarOffset = 0.5,
             LifeBarSize = 0.5,
             Physics = {
-                MaxAcceleration = 1.0,
                 MaxSpeed = 1.2,
                 FuelRechargeRate = 0.000005,
                 FuelUseTime = 0.0006,
-                SkirtSizeX = 1,
-                SkirtSizeZ = 1,
             },    
             SelectionSizeX = 0.5,
             SelectionSizeZ = 0.5,
-            SelectionThickness = 1,
             SizeX = 0.5,
             SizeY = 0.5,
             SizeZ = 0.5,
         }
         for id, bp in all_blueprints.Unit do
-            if bp.Categories and (table.find(bp.Categories, 'ARM') or table.find(bp.Categories, 'CORE')) then
+            if bp.Categories and (table.find(bp.Categories, 'MOBILE')) and (table.find(bp.Categories, 'ARM') or table.find(bp.Categories, 'CORE')) then
                 for group, gdata in Mults do
                     if type(gdata) == 'table' then
                         for stat, data in gdata do
@@ -63,6 +59,52 @@ do
 	            end
 	        end
         end
+
+            Mults = {
+                Defense = {
+                    Health = 0.75,
+                    MaxHealth = 0.75,
+                },
+                Display = {
+                    UniformScale = 0.5,
+                },
+                Intel = {
+                    VisionRadius = 1.5, 
+                    WaterVisionRadius = 3,
+                    },
+                Economy = {
+                    BuildCostEnergy = 0.3,
+                    BuildCostMass = 0.5,
+                    BuildTime = 0.05,
+                    BuildRate = 0.15,
+                    MaintenanceConsumptionPerSecondEnergy = 3,
+                },
+                LifeBarHeight = 0.5,
+                LifeBarOffset = 0.5,
+                LifeBarSize = 0.5, 
+                SelectionSizeX = 0.5,
+                SelectionSizeZ = 0.5,
+                SizeX = 0.5,
+                SizeY = 0.5,
+                SizeZ = 0.5,
+            }
+            for id, bp in all_blueprints.Unit do
+                if bp.Categories and (table.find(bp.Categories, 'STRUCTURE')) and (table.find(bp.Categories, 'ARM') or table.find(bp.Categories, 'CORE')) then
+                    for group, gdata in Mults do
+                        if type(gdata) == 'table' then
+                            for stat, data in gdata do
+                                if bp[group] and bp[group][stat] then
+                                    bp[group][stat] = bp[group][stat] * data
+                                end
+                            end
+                        else
+                            if bp[group] then
+                                bp[group] = bp[group] * gdata
+                            end
+                        end
+                    end
+                end
+            end
         
         Mults = {
             Defense = {
@@ -74,7 +116,7 @@ do
             },
             Economy = {
                 ReclaimEnergyMax = 0.25,
-                ReclaimMassMax = 0.5,
+                ReclaimMassMax = 0.25,
                 ReclaimTime = 0.5,
             },
             Footprint = {

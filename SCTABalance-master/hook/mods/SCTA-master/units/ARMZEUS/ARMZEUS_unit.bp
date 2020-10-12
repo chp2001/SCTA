@@ -24,8 +24,8 @@ UnitBlueprint {
 'LEVEL2',
    },
     Defense = {
-        Health = 6000,
-        MaxHealth = 6000,
+        Health = 9000,
+        MaxHealth = 9000,
     },
     Footprint = {
 	SizeX = 1,
@@ -36,7 +36,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 30000,
-        BuildCostMass = 3000,
+        BuildCostMass = 1800,
         BuildTime = 29000,
     },
     StrategicIconName = 'icon_bot3_armored',

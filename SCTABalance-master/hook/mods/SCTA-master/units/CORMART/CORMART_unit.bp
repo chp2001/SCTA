@@ -20,7 +20,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 15000,
-        BuildCostMass = 2900,
+        BuildCostMass = 1200,
         BuildTime = 26000,
     },
     SelectionCenterOffsetZ = -0.5,

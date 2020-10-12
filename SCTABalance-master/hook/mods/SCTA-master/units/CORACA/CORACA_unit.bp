@@ -5,7 +5,7 @@ UnitBlueprint {
     MaxHealth = 500,
     },
     Economy = {
-        BuildCostEnergy = 13500,
+        BuildCostEnergy = 6000,
         BuildRate = 140,
         BuildTime = 4000, 
         BuildableCategory = {

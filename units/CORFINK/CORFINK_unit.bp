@@ -71,11 +71,9 @@ UnitBlueprint {
     'VTOL',
 	'SCOUT', 
         'CORE',
-        
-	
+	    'INTELLIGENCE',
+    'HIGHALTAIR',
 	'LEVEL1',
-	
-	
     },
     Defense = {
         ArmorType = 'Light',

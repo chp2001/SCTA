@@ -39,5 +39,5 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 3,
         ProductionPerSecondMass = 0,
     },
-    StrategicIconName = 'icon_land3_engineer',
+    StrategicIconName = 'icon_bot3_engineer',
 }

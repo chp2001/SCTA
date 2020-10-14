@@ -44,6 +44,7 @@ UnitBlueprint {
         BuildCostMass = 6000, 
     ProductionPerSecondMass = 0,
     BuildRate = 300,
+    BuildTime = 40000,
         BuildableCategory = {
             'VTOL LEVEL3 ARM',
         },

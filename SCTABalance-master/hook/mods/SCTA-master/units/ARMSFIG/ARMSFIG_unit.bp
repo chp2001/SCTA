@@ -5,6 +5,16 @@
 
 UnitBlueprint {
    Merge = true,
+   Air = {
+    BreakOffDistance = 17,
+    BreakOffTrigger = 12,
+    CombatTurnSpeed = 1.5,
+    MaxAirspeed = 30,
+    MinAirspeed = 15,
+    StartTurnDistance = 5,
+    TightTurnMultiplier = 1.02,
+    TurnSpeed = 1.5,
+},
     Categories = {
         'SELECTABLE',
         'TECH3',

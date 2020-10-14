@@ -18,7 +18,7 @@ UnitBlueprint {
         'KBOT',
         'VEHICLE',
 	'LEVEL1',
-	
+    'VTOL',
 	
 	
 	
@@ -58,7 +58,7 @@ UnitBlueprint {
     SelectionSizeX = 0.6,
     SelectionSizeZ = 0.6,
     SelectionThickness = 0.25,
-    SizeX = 1,
-    SizeY = 1,
-    SizeZ = 1,
+    SizeX = 1.2,
+    SizeY = 1.1,
+    SizeZ = 1.2,
 }

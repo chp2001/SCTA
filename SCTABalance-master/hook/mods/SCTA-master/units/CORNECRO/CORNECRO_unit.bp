@@ -18,7 +18,8 @@ UnitBlueprint {
         'NECRO',
         'VEHICLE',
         'KBOT',
-	'LEVEL2',
+    'LEVEL2',
+    'VTOL',
     }, 
     Defense = {
         Health = 1200,
@@ -28,7 +29,7 @@ UnitBlueprint {
                 UniformScale = 0.06,
             },
     Economy = {
-    BuildCostEnergy = 18000,
+    BuildCostEnergy = 9000,
     BuildCostMass = 1500,
     MaxBuildDistance = 7,
 	ProductionPerSecondEnergy = 3,

@@ -7,19 +7,19 @@ TANecro = Class(TAConstructor) {
     OnStartReclaim = function(self, target, oldPosition)
         if EntityCategoryContains(categories.NECRO, self) then
             if not target.ReclaimInProgress and not target.NecroingInProgress then
-                LOG('* Necro: OnStartReclaim:  I am a necro! no ReclaimInProgress; starting Necroing')
+                --LOG('* Necro: OnStartReclaim:  I am a necro! no ReclaimInProgress; starting Necroing')
                 target.NecroingInProgress = true
 				self.spawnUnit = true
                 self.RecBP = target.AssociatedBP
                 self.ReclaimLeft = target.ReclaimLeft
                 self.RecPosition = target:GetPosition()
             elseif not target.ReclaimInProgress and target.NecroingInProgress then
-				LOG('* Necro: OnStartReclaim:  I am a necro and helping necro')
+				--LOG('* Necro: OnStartReclaim:  I am a necro and helping necro')
 				self.RecBP = nil
 				self.ReclaimLeft = nil
 				self.RecPosition = target:GetPosition()
 			else
-                LOG('* Necro: OnStartReclaim:  I am a necro and ReclaimInProgress; Stopped!')
+                --LOG('* Necro: OnStartReclaim:  I am a necro and ReclaimInProgress; Stopped!')
 				self.RecBP = nil
                 self.ReclaimLeft = nil
                 self.RecPosition = nil
@@ -67,6 +67,6 @@ TANecro = Class(TAConstructor) {
         --LOG('* Necro: RespawnUnit: ReclaimLeft '..ReclaimLeft)
         WaitTicks(3)
         local newUnit = CreateUnitHPR(RecBP, army, pos[1], pos[2], pos[3], 0, 0, 0)
-        newUnit:SetHealth(nil, newUnit:GetMaxHealth() * ReclaimLeft )
+        newUnit:SetHealth(nil, newUnit:GetMaxHealth() * ReclaimLeft * 0.5)
     end,
 }

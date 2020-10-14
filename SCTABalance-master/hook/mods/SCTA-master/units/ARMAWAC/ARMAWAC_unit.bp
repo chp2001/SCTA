@@ -8,17 +8,13 @@ UnitBlueprint {
         'MOBILE',
 	    'AIR',
     'VTOL',
-	'INTELLIGENCE',
+    'HIGHALTAIR',
+    'INTELLIGENCE',
 	'RADAR',
         'OVERLAYRADAR',
         'OVERLAYOMNI',
         'ARM',
-        
-	
 	'LEVEL2',
-	
-	
-	
     },
     Defense = {
         Health = 800,

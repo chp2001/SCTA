@@ -53,6 +53,7 @@ UnitBlueprint {
 	'LAND',
         'CORE',
         'NECRO',
+        'VTOL',
         'KBOT',
 	'LEVEL2',
 	
@@ -126,6 +127,7 @@ UnitBlueprint {
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {
+            RULEUCC_Attack = false,
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = false,
             RULEUCC_Move = true,

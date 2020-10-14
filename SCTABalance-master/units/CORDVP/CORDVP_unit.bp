@@ -61,6 +61,8 @@ UnitBlueprint {
     },
     Description = 'Produces Vehicles',
     Display = {
+        AnimationUnpack = '/mods/SCTA-master/units/CORVP/CORVP_lod0_aopen.sca',
+        AnimationUnpackRate = 0.5, 
 	DestructionEffects = {
 		DestructionEmitters = {
 			{

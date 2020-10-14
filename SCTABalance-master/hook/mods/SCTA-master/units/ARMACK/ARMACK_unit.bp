@@ -18,11 +18,6 @@ UnitBlueprint {
         'KBOT',
         'VEHICLE',
 	'LEVEL2',
-    'VTOL',
-	
-	
-	
-	
     },
     Defense = {
         Health = 900,

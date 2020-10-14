@@ -60,6 +60,8 @@ UnitBlueprint {
     },
     Description = 'Produces Kbots',
     Display = {
+        AnimationUnpack = '/mods/SCTA-master/units/ARMLAB/ARMLAB_lod0_aopen.sca',
+        AnimationUnpackRate = 0.5, 
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Noise3','BuildMuzzle','BuildPlate'},
 		DestructionProjectiles = {

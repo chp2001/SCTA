@@ -56,6 +56,7 @@ UnitBlueprint {
 	
 	
     },
+    CollisionOffsetY = -0.5,
     Defense = {
         ArmorType = 'Normal',
         Health = 460,

@@ -116,8 +116,8 @@ do
             },
             Economy = {
                 ReclaimEnergyMax = 0.25,
-                ReclaimMassMax = 0.25,
-                ReclaimTime = 0.5,
+                ReclaimMassMax = 0.35,
+                ReclaimTime = 10,
             },
             Footprint = {
                 OccupancyCaps = 0,

@@ -195,6 +195,7 @@ UnitBlueprint {
         WreckageLayers = {
             Land = true,
             Seabed = true,
+            Sub = true, 
         },
     },
 }

@@ -20,6 +20,7 @@ UnitBlueprint {
     Categories = {
         'BUILTBYT1SHIP',
         'BUILTBYT1HOVER',
+        'BUILTBYT1AIR',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',

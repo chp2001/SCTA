@@ -292,12 +292,13 @@ function Clamp(x,lb,ub)
 end
 
 
-function QueueDelayedWreckage(self, overkillRatio, bp, completed, pos, orientation, health)
+
+function QueueDelayedWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
 	ForkThread(CreateWreckage, self, overkillRatio, bp, completed, pos, orientation, health)
 end
 
 
-function CreateWreckage(self, overkillRatio, bp, completed, pos, orientation, health)
+function CreateWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
 	local TAWreckage = import('/mods/SCTA-master/lua/TAWreckage.lua').TAWreckage
 	while not IsDestroyed(self) do
 		WaitSeconds(0.4)
@@ -307,25 +308,27 @@ function CreateWreckage(self, overkillRatio, bp, completed, pos, orientation, he
 	if wreck and completed == 1 then
 			
 		local prop = CreateProp( pos, wreck )
-		bp = prop:GetBlueprint()
+		pbp = prop:GetBlueprint()
 
 
-		prop:SetScale(bp.Display.UniformScale)
+		prop:SetScale(pbp.Display.UniformScale)
 		prop:SetOrientation(orientation, true)
 
-		local mass = (bp.Economy.ReclaimMassMax or 0)
-		local energy = (bp.Economy.ReclaimEnergyMax or 0)
+		local mass = (pbp.Economy.ReclaimMassMax or 0)
+		local energy = (pbp.Economy.ReclaimEnergyMax or 0)
 		#change this to point to the wreckage prop intead of the unit blueprint?
 		local time = (bp.Wreckage.ReclaimTimeMultiplier or 1) 
 
 		prop:SetMaxReclaimValues(time, mass, energy)
 
 		prop.OriginalUnit = self.OriginalUnit or self
-		if bp.Physics.BlockPath == false then
+		if pbp.Physics.BlockPath == false then
 		end
+		--prop:DoTakeDamage(prop, overkillRatio * health, Vector(0,0,0), 'Normal')
         	prop.AssociatedBP = bp.BlueprintId
 	end
 end
+
 
 targetingFacilityData = {}
 

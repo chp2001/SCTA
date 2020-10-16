@@ -48,7 +48,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 15,
+            Damage = 18,
 	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'GAUSS',

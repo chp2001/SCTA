@@ -200,6 +200,7 @@ UnitBlueprint {
             TurretBoneMuzzle = 'Muzzle',
             TurretBonePitch = 'RightLowerArm',
             TurretBoneYaw = 'Torso',
+            UseFiringSolutionInsteadOfAimBone = true,
             TurretPitch = 90,
             TurretPitchRange = 360,
             TurretPitchSpeed = 90,

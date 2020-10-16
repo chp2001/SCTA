@@ -155,7 +155,7 @@ UnitBlueprint {
             DamageFriendly = true,
             Damage = 35,
             DamageRadius = 0.25,
-            FiringRandomness = 1,
+            FiringRandomness = 0.05,
             DamageType = 'Normal',
             DisplayName = 'EMG',
             FireTargetLayerCapsTable = {
@@ -164,12 +164,12 @@ UnitBlueprint {
             },
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
-            FiringTolerance = 2,
+            FiringTolerance = 0.5,
             Label = 'EMG',
             MaxRadius = 30,
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 1,
-	        MuzzleVelocity = 20,
+	        MuzzleVelocity = 27,
             ProjectileId = '/mods/SCTA-master/projectiles/EMG/EMG_proj.bp',
                 RackBones = {
                     {
@@ -202,6 +202,7 @@ UnitBlueprint {
             TurretBoneDualPitch = 'lshoulder',
             TurretBoneYaw = 'torso',
             TurretDualManipulators = true,
+            UseFiringSolutionInsteadOfAimBone = true,
             TurretPitch = 0,
             TurretPitchRange = 360,
             TurretPitchSpeed = 200,

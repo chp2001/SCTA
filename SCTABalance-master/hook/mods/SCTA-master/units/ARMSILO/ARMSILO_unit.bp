@@ -8,9 +8,9 @@ UnitBlueprint {
             SizeZ = 7,
         },
     Economy = {
-        BuildCostEnergy = 110000,
-        BuildCostMass = 13500,
-        BuildTime = 600000,
+        BuildCostEnergy = 900000,
+        BuildCostMass = 120000,
+        BuildTime = 75000,
     },
   Defense = {
         Health = 30000,
@@ -49,7 +49,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 0,
-            ProjectileId = '/mods/SCTA-master/SCTABalance-master/projectiles/NUCLSC_MISSILE/NUCLSC_MISSILE_proj.bp',
+            ProjectileId = '/mods/SCTA-master/SCTABalance-master/projectiles/CRSCMSSL/CRSCMSSL_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

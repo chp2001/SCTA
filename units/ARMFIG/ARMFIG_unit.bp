@@ -193,7 +193,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             TrackingRadius = 1.15,
-            Damage = 90,
+            Damage = 150,
             DamageRadius = 1.5,
             DamageType = 'AntiAir',
             DisplayName = 'ARMVTOL_MISSILE',

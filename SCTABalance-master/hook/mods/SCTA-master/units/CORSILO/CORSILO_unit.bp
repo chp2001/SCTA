@@ -8,10 +8,9 @@ UnitBlueprint {
         SizeZ = 7,
     },
     Economy = {
-        BuildCostEnergy = 100000,
-        BuildCostMass = 12000,
-        BuildTime = 540000,
-        BuildRate = 12000,
+        BuildCostEnergy = 900000,
+        BuildCostMass = 120000,
+        BuildTime = 75000,
     },
   Defense = {
         Health = 30000,

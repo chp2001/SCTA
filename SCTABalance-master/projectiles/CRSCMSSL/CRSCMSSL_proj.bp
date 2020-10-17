@@ -44,14 +44,18 @@ ProjectileBlueprint {
         MaxHealth = 60,
     },
     Display = {
-        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/crblmssl_mesh.bp',
+        CameraFollowTimeout = 5,
+        CameraFollowsProjectile = true,
+        MeshBlueprint = '/mods/SCTAFix/meshes/projectiles/crblmssl_mesh.bp',
         StrategicIconSize = 1,
         UniformScale = 0.60,
     },
+    Description = 'CORE Nuclear Missile',
+    DesiredShooterCap = 1,
     Economy = {
-        BuildCostEnergy = 700000,
-        BuildCostMass = 36000,
-        BuildTime = 324000,
+        BuildCostEnergy = 1500000,
+        BuildCostMass = 24000,
+        BuildTime = 200000,
     },
     General = {
         Category = 'Missile',

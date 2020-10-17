@@ -220,6 +220,9 @@ TAAirConstructor = Class(TAair) {
 	Close = function(self)
 	end,
 
+	DelayedClose = function(self)
+	end,
+
 	Nano = function(self, unitBeingBuilt)
 		local target = 1
 		local current = 0

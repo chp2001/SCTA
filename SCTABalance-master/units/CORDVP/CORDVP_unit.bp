@@ -61,6 +61,9 @@ UnitBlueprint {
     },
     Description = 'Produces Vehicles',
     Display = {
+        Abilities = {
+            'Upgradeable',
+        },
         AnimationUnpack = '/mods/SCTA-master/units/CORVP/CORVP_lod0_aopen.sca',
         AnimationUnpackRate = 0.5, 
 	DestructionEffects = {
@@ -106,6 +109,7 @@ UnitBlueprint {
         BuildRate = 175,
         DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
+        'coradvp',
         'VEHICLE LEVEL1 CORE', 
         'VEHICLE LEVEL2 CORE',
     },
@@ -137,6 +141,7 @@ UnitBlueprint {
         TechLevel = 'RULEUTL_Basic',
         UnitName = 'Vehicle Development Plant',
         UpgradesFrom = 'corvp', 
+        UpgradesTo = 'coradvp', 
     },
     Intel = {
         VisionRadius = 10,

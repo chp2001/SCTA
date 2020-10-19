@@ -2,7 +2,7 @@ UnitBlueprint {
     Merge = true, 
     Categories = {
         'SELECTABLE',
-        'TECH2',
+        'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -12,7 +12,7 @@ UnitBlueprint {
         'ARTILLERY',
         'ARM',
         'VEHICLE',	
-	'LEVEL2',
+	'LEVEL3',
     },
     Defense = {
         Health = 1400,

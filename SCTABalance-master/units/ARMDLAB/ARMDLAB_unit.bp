@@ -44,10 +44,6 @@ UnitBlueprint {
 		'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -60,6 +56,9 @@ UnitBlueprint {
     },
     Description = 'Produces Kbots',
     Display = {
+        Abilities = {
+            'Upgradeable',
+        },
         AnimationUnpack = '/mods/SCTA-master/units/ARMLAB/ARMLAB_lod0_aopen.sca',
         AnimationUnpackRate = 0.5, 
 	DestructionEffects = {
@@ -139,6 +138,7 @@ UnitBlueprint {
         BuildRate = 175,
         DifferentialUpgradeCostCalculation = true,
         BuildableCategory = {
+            'armadlab',
             'KBOT LEVEL1 ARM',
             'KBOT LEVEL2 ARM',
         },
@@ -170,6 +170,7 @@ UnitBlueprint {
         TechLevel = 'RULEUTL_Basic',
         UnitName = 'Kbot Development Lab',
         UpgradesFrom = 'armlab',
+        UpgradesTo = 'armadlab', 
     },
     Intel = {
         VisionRadius = 10,

@@ -2,7 +2,7 @@ UnitBlueprint {
    Merge = true, 
    Categories = {
     'SELECTABLE',
-    'TECH2',
+    'TECH3',
     'VISIBLETORECON',
     'RECLAIMABLE',
 
@@ -15,19 +15,19 @@ UnitBlueprint {
 
     'CORE',
     'VEHICLE',	#'TANK' in TA
-'LEVEL2',
+'LEVEL3',
 
 
 
 
 },
 Defense = {
-    Health = 12000,
-    MaxHealth = 12000,
+    Health = 14000,
+    MaxHealth = 14000,
 },
     Economy = {
         BuildCostEnergy = 18000,
-        BuildCostMass = 1000,
+        BuildCostMass = 1800,
         BuildTime = 28000,
     },
     Footprint = {

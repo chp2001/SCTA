@@ -1,8 +1,9 @@
 UnitBlueprint {
    Merge = true,
+   BuildIconSortPriority = 1,
    Categories = {
     'SELECTABLE',
-    'TECH2',
+    'TECH3',
     'VISIBLETORECON',
     'RECLAIMABLE',
     'PATROLHELPER',
@@ -12,7 +13,8 @@ UnitBlueprint {
 'LAND',
 'DIRECTFIRE',
 'KBOT',
-'LEVEL2',
+'VEHICLE',
+'LEVEL3',
     'OVERLAYDIRECTFIRE',
     'CORE',
     'CONSTRUCTION',
@@ -23,12 +25,23 @@ UnitBlueprint {
    Display = {
        UniformScale = 0.28,
     },
+    Defense = {
+        ArmorType = 'Commander',
+        Health = 12000,
+        MaxHealth = 12000,
+    },
     Economy = {
+        BuildCostEnergy = 90000,
+        BuildCostMass = 4500,
+        BuildTime = 100000,
         MaxBuildDistance = 10,
         BuildRate = 240,
         BuildableCategory = {
             'BUILTBYCOMMANDER CORE',
+            'BUILTBYT1HOVER CORE',
         },
+        ProductionPerSecondEnergy = 300,
+        ProductionPerSecondMass = 5,
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,

@@ -153,7 +153,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 35,
+            Damage = 45,
             DamageRadius = 0.25,
             FiringRandomness = 0.05,
             DamageType = 'Normal',
@@ -190,7 +190,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 2,
-            RateOfFire = 2,
+            RateOfFire = 3,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

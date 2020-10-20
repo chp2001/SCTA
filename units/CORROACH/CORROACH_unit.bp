@@ -60,7 +60,7 @@ UnitBlueprint {
     Description = 'Crawling Bomb',
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORROACH/CORROACH_lod0_Awalk.sca',
-        AnimationWalkRate = 1,
+        AnimationWalkRate = 2,
         Abilities = {
             'Kamikazi',
         },
@@ -70,7 +70,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },

@@ -73,10 +73,10 @@ TAconstructor = Class(TAWalking) {
 							end
 
 							if (self.isBuilding == true) then
-								if EntityCategoryContains(categories.ARM, self.currentTarget) or EntityCategoryContains(categories.CORE, self.currentTarget) then
-								self.currentTarget:HideFlares()
 								self:SetBuildRate(self:GetBlueprint().Economy.BuildRate)
 								TAWalking.OnStartBuild(self, self.currentTarget, self.order)
+								if EntityCategoryContains(categories.ARM, self.currentTarget) or EntityCategoryContains(categories.CORE, self.currentTarget) then
+								self.currentTarget:HideFlares()
 								end
 							end
 							if (self.isReclaiming == true) then

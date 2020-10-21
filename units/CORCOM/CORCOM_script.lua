@@ -53,7 +53,7 @@ CORCOM = Class(TAconstructor) {
 		end
 		TAconstructor.OnCreate(self)
 		self:SetCapturable(false)
-            	self:SetIntelRadius('Omni', 0)
+        self:SetIntelRadius('Omni', self:GetBlueprint().Intel.OmniRadius)
 		ForkThread(self.CloakDetection, self)
 	end,
 

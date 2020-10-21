@@ -160,7 +160,7 @@ ARMCOM = Class(TAconstructor) {
 		if self.motion == 'Moving' then
 			self:SetConsumptionPerSecondEnergy(1000)
 		end
-            	self:SetIntelRadius('Omni', 3)
+        self:SetIntelRadius('Omni', self:GetBlueprint().Intel.OmniRadius)
 		self.cloakOn = true
 		self.cloakSet = true
         	self:PlayUnitSound('Cloak')

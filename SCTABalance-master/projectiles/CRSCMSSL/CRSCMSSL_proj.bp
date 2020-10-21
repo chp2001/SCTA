@@ -46,7 +46,7 @@ ProjectileBlueprint {
     Display = {
         CameraFollowTimeout = 5,
         CameraFollowsProjectile = true,
-        MeshBlueprint = '/mods/SCTAFix/meshes/projectiles/crblmssl_mesh.bp',
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/crblmssl_mesh.bp',
         StrategicIconSize = 1,
         UniformScale = 0.60,
     },

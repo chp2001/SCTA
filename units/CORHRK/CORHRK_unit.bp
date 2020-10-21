@@ -1,5 +1,5 @@
 #CORE Diplomat - Mobile Rocket Launcher
-#CORVROC
+#CORHRK
 #
 #Blueprint created by Raevn
 
@@ -164,7 +164,6 @@ UnitBlueprint {
                 Seabed = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
-     WeaponCategory = 'IndirectFire',
             FiringTolerance = 8,
             Label = 'CORTRUCK_ROCKET',
             MaxRadius = 55,
@@ -173,16 +172,16 @@ UnitBlueprint {
             MuzzleVelocity = 3,
             EnergyDrainPerSecond = 5,
             EnergyRequired = 25,
-            ProjectileId = '/mods/SCTA-master/projectiles/CORTRUCK_ROCKET/CORTRUCK_ROCKET_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/HRK_ROCKET/HRK_ROCKET_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = { 'Missile1', },
-		            VisibleMuzzle = true,
+		            VisibleMuzzle = false,
                     RackBone = 'Launcher',
                 },
                 {
                     MuzzleBones = { 'Missile2', },
-		            VisibleMuzzle = true,
+		            VisibleMuzzle = false,
                     RackBone = 'Launcher',
                 },
             },
@@ -224,7 +223,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/CORVROC/CORVROC_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/units/CORHRK/CORHRK_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Seabed = true,

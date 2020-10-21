@@ -1,20 +1,20 @@
 UnitBlueprint {
    Merge = true, 
 Defense = {
-    Health = 10000,
-    MaxHealth = 10000,
+    Health = 2000,
+    MaxHealth = 2000,
 },
 Economy = {
-    BuildCostEnergy = 16000,
-    BuildCostMass = 2000,
-    BuildTime = 18000,
+    BuildCostEnergy = 8000,
+    BuildCostMass = 1000,
+    BuildTime = 6000,
 },
     Footprint = {
         SizeX = 1,
         SizeZ = 1,
     },
    SizeY = 1, 
-   StrategicIconName = 'icon_land3_antiair',
+   StrategicIconName = 'icon_bot2_directfire',
    Weapon = {
     {
         Audio = {
@@ -27,7 +27,7 @@ Economy = {
         BallisticArc = 'RULEUBA_None',
         CollideFriendly = false,
         DamageFriendly = true,
-        Damage = 360,
+        Damage = 120,
         DamageRadius = 0.25, 
         DamageType = 'Normal',
         DisplayName = 'ARMLATNK_WEAPON',
@@ -86,7 +86,7 @@ Economy = {
         BallisticArc = 'RULEUBA_None',
         CollideFriendly = false,
         DamageFriendly = true,
-        Damage = 240,
+        Damage = 100,
         DamageRadius = 1.5, 
         DamageType = 'AntiAir',
         DisplayName = 'ARMKBOT_MISSILE',

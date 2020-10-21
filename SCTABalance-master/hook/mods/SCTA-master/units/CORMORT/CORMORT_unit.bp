@@ -7,7 +7,7 @@ UnitBlueprint {
     Merge = true,
     Categories = {
         'SELECTABLE',
-        'TECH2',
+        'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -17,7 +17,7 @@ UnitBlueprint {
         'ARTILLERY',
         'CORE',
         'KBOT',
-        'LEVEL2',
+        'LEVEL3',
     },
     Display = {
         UniformScale = 0.2,

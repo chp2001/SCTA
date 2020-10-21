@@ -39,7 +39,7 @@ PropBlueprint {
         BlockPath = false, 
     },
     Wreckage = {
-	Blueprint = '/mods/SCTA-master/units/CORVROC/CORVROC_heap_prop.bp',
+	Blueprint = '/mods/SCTA-master/units/CORHRK/CORHRK_heap_prop.bp',
     },
     ScriptClass = 'TAWreckage',
     ScriptModule = '/mods/SCTA-master/lua/TAWreckage.lua',

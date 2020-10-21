@@ -148,8 +148,8 @@ CORCOM = Class(TAconstructor) {
 	OnIntelDisabled = function(self)
 		self.cloakOn = false
 		self.cloakSet = false
-            	self:SetIntelRadius('Omni', 0)
-        	self:PlayUnitSound('Uncloak')
+        self:SetIntelRadius('Omni', 0)
+        self:PlayUnitSound('Uncloak')
 		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
 	end,
 
@@ -157,7 +157,7 @@ CORCOM = Class(TAconstructor) {
 		if self.motion == 'Moving' then
 			self:SetConsumptionPerSecondEnergy(1000)
 		end
-            	self:SetIntelRadius('Omni', 3)
+        self:SetIntelRadius('Omni', self:GetBlueprint().Intel.OmniRadius)
 		self.cloakOn = true
 		self.cloakSet = true
         	self:PlayUnitSound('Cloak')

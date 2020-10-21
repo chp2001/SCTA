@@ -5,6 +5,19 @@
 
 UnitBlueprint {
     Merge = true, 
+    Categories = {
+        'SELECTABLE',
+        'TECH2',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	'LAND',
+	'DIRECTFIRE',
+        'OVERLAYDIRECTFIRE',
+        'ARM',
+        --'KBOT',
+	'LEVEL2',
+    },
     Economy = {
         BuildCostEnergy = 250,
         BuildCostMass = 30,

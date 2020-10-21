@@ -152,7 +152,8 @@ TAunitkeygroups = {
     },
     ["T2_Gatling_Bot"]= {
         "corpyro",
-        "armmav",
+        "armlatnk",
+        "armfido",
     },
     ["T1_Interceptor"]= {
         "armfig",
@@ -196,6 +197,7 @@ TAunitkeygroups = {
         "armsh",
         "corfav",
         "corsh", 
+        "corvoyr",
     },
     ["T1_Mobile_Light_Artillery"]= {
         "armham",
@@ -230,9 +232,9 @@ TAunitkeygroups = {
         "armmerl",
         "armmh",
         "corvroc",
-        "cormort",
         "cormh",
-        "armsnipe",
+        "armhrk",
+        "corhrk",
     },
     ["T1_Tank"]= {
         "armstump",
@@ -242,7 +244,7 @@ TAunitkeygroups = {
     },
     ["T2_Heavy_Tank"]= {
         "armbull",
-        "armfido",
+        "armzeus",
         "correap",
         "corcan",
     },
@@ -308,6 +310,15 @@ TAunitkeygroups = {
     ["T2_Mobile_Bomb"]= {
         "armvader",
         "corroach",
+    },
+    ["T3_Mobile_Heavy_Artillery"] = {
+        "armmart",
+        "cormart",
+        "cormort",
+    },
+    ["T3_Sniper_Bot"] = {
+        "armsnipe",
+        "armmanni",
     },
 }
 

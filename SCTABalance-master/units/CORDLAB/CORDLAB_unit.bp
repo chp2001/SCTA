@@ -60,6 +60,9 @@ UnitBlueprint {
     },
     Description = 'Produces Kbots',
     Display = {
+        Abilities = {
+            'Upgradeable',
+        },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{
@@ -103,6 +106,7 @@ UnitBlueprint {
     BuildRate = 160,
     DifferentialUpgradeCostCalculation = true,
         BuildableCategory = {
+            'coradlab',
             'KBOT LEVEL2 CORE',
             'KBOT LEVEL1 CORE',
         },
@@ -134,6 +138,7 @@ UnitBlueprint {
         TechLevel = 'RULEUTL_Basic',
         UnitName = 'Kbot Development Lab',
         UpgradesFrom = 'corlab', 
+        UpgradesTo = 'coradlab', 
     },
     Intel = {
         VisionRadius = 10,

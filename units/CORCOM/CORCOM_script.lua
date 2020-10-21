@@ -53,7 +53,7 @@ CORCOM = Class(TAconstructor) {
 		end
 		TAconstructor.OnCreate(self)
 		self:SetCapturable(false)
-        self:SetIntelRadius('Omni', self:GetBlueprint().Intel.OmniRadius)
+        self:SetIntelRadius('Omni', 10)
 		ForkThread(self.CloakDetection, self)
 	end,
 
@@ -148,7 +148,7 @@ CORCOM = Class(TAconstructor) {
 	OnIntelDisabled = function(self)
 		self.cloakOn = false
 		self.cloakSet = false
-        self:SetIntelRadius('Omni', 0)
+        self:SetIntelRadius('Omni', 10)
         self:PlayUnitSound('Uncloak')
 		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
 	end,

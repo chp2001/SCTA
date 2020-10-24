@@ -57,8 +57,6 @@ ARMCOM = Class(TAconstructor) {
 		end
 		TAconstructor.OnCreate(self)
 		self:SetCapturable(false)
-        self:SetIntelRadius('Omni', 10)
-		ForkThread(self.CloakDetection, self)
 	end,
 
 	OnStartCapture = function(self, target)
@@ -82,32 +80,22 @@ ARMCOM = Class(TAconstructor) {
 		end
 	end,
 
-	CloakDetection = function(self)
-		while not IsDestroyed(self) and self:IsDead() do
-			WaitSeconds(1)
-			local pos = self:GetPosition()
-			local area = Rect(pos.x - 4, pos.z - 4, pos.x + 4, pos.z + 4)
-			local unitsInRect = GetUnitsInRect(area)
-			local enemyClose = false
-			for k, v in unitsInRect do
-				if v != self and v:GetArmy() != self:GetArmy() then
-					if self.cloakOn == true then
-						self.cloakOn = false
-						self:DisableIntel('Cloak')
-						self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-					end
-					enemyClose = true
-				end
-			end
-			if enemyClose == false then
-				if self.cloakSet == true then
-					self.cloakOn = true
-					self:EnableIntel('Cloak')
-					self:SetMesh('/mods/SCTA-master/units/ARMCOM/ARMCOM_cloak_mesh', true)
-				end
-			end
-		end
-	end,
+    CloakDetection = function(self)
+        local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
+        local brain = moho.entity_methods.GetAIBrain(self)
+        ---local meshbp = moho.entity_methods.GetBlueprint(self).Display.MeshBlueprint
+        local cat = categories.SELECTABLE * categories.MOBILE
+        ---local setmesh = moho.entity_methods.SetMesh
+        local getpos = moho.entity_methods.GetPosition
+        while not self.Dead do
+            WaitSeconds(1)
+            if GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')[1] and self.cloakOn == true then
+				self:DisableIntel('Cloak')
+				WaitSeconds(5)
+				self:EnableIntel('Cloak')
+            end
+        end
+    end,
 
 	PlayCommanderWarpInEffect = function(self)
         self:HideBone(0, true)
@@ -134,10 +122,11 @@ ARMCOM = Class(TAconstructor) {
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAconstructor.OnStopBeingBuilt(self,builder,layer)
 		ForkThread(self.GiveInitialResources, self)
-			self:SetScriptBit('RULEUTC_CloakToggle', true)
+		self:DisableIntel('Cloak')
+	        self:SetScriptBit('RULEUTC_CloakToggle', true)
 	end,
-	
-	OnMotionHorzEventChange = function( self, new, old )
+
+	OnMotionHorzEventChange = function(self, new, old )
 		TAconstructor.OnMotionHorzEventChange(self, new, old)
 		if old == 'Stopped' then
 			self:SetConsumptionPerSecondEnergy(1000)
@@ -151,12 +140,13 @@ ARMCOM = Class(TAconstructor) {
 	OnIntelDisabled = function(self)
 		self.cloakOn = false
 		self.cloakSet = false
-            	self:SetIntelRadius('Omni', 10)
-        	self:PlayUnitSound('Uncloak')
+        self:SetIntelRadius('Omni', 10)
+        self:PlayUnitSound('Uncloak')
 		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
 	end,
 
 	OnIntelEnabled = function(self)
+		--self:EnableIntel('Cloak')
 		if self.motion == 'Moving' then
 			self:SetConsumptionPerSecondEnergy(1000)
 		end
@@ -165,12 +155,15 @@ ARMCOM = Class(TAconstructor) {
 		self.cloakSet = true
         	self:PlayUnitSound('Cloak')
 		self:SetMesh('/mods/SCTA-master/units/ARMCOM/ARMCOM_cloak_mesh', true)
+		ForkThread(self.CloakDetection, self)
 	end,
 
 
 
 	OnScriptBitSet = function(self, bit)
 		if bit == 8 then
+			if self.CloakThread then KillThread(self.CloakThread) end
+			self.CloakThread = self:ForkThread(self.CloakDetection)	
 		end
 		TAconstructor.OnScriptBitSet(self, bit)
 	end,
@@ -178,9 +171,14 @@ ARMCOM = Class(TAconstructor) {
 
 	OnScriptBitClear = function(self, bit)
 		if bit == 8 then
+			if self.CloakThread then
+				KillThread(self.CloakThread)
+				self.cloakOn = false
+			end
 		end
 		TAconstructor.OnScriptBitClear(self, bit)
 	end,
+
 
 	GiveInitialResources = function(self)
 		#need to convert options to ints - they are strings

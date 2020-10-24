@@ -29,14 +29,13 @@ CORCH = Class(TAconstructor) {
 	Aim = function(self, target)
 		local selfPosition = self:GetPosition('nanogun') 
 		local targetPosition = target:GetPosition()
-		
+		TAconstructor.Aim(self, target)
 		WaitFor(self.AnimManip)
 		--TURN turret to y-axis buildheading SPEED <160.03>;
 		self.Spinners.nanogun:SetGoal(TAutils.GetAngle(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
 		self.Spinners.nanogun:SetSpeed(160.03)
 
 		WaitFor(self.Spinners.nanogun)
-		TAconstructor.Aim(self, target)
 	end,
 
 	Close = function(self)

@@ -31,13 +31,14 @@ CORCS = Class(TAconstructor) {
 		local selfPosition = self:GetPosition('nano') 
 		local targetPosition = target:GetPosition()
 		
+		TAconstructor.Aim(self, target)
 		WaitFor(self.AnimManip)
 		--TURN turret to y-axis buildheading SPEED <160.03>;
 		self.Spinners.gun:SetGoal(TAutils.GetAngle(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
 		self.Spinners.gun:SetSpeed(160.03)
 
 		WaitFor(self.Spinners.gun)
-		TAconstructor.Aim(self, target)
+
 	end,
 
 	Close = function(self)

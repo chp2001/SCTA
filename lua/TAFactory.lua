@@ -86,7 +86,9 @@ TAFactory = Class(TAconstructor) {
 	end,
 	
 	Aim = function(self, target)
-        self:LOGDBG('TAFactory.Aim')
+		self:LOGDBG('TAFactory.Aim')
+		if not IsDestroyed(target) and not IsDestroyed(self) and self.isFactory == true then
+		end
 	end,
 
 	DelayedClose = function(self)

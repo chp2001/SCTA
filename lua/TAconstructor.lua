@@ -57,7 +57,7 @@ TAconstructor = Class(TAWalking) {
 						--ChangeState(self, self.IdleState)
 						self.currentTarget = self.desiredTarget
 						self.currentState = "aimed"
-						if (self.currentTarget) then
+						if (self.currentTarget and IsDestroyed(self.currentTarget) == false) then
 							self:Aim(self.currentTarget)
 						else
 							self.desiredState = "rolloff"

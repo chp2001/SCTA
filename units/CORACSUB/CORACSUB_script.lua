@@ -43,7 +43,6 @@ CORACSUB = Class(TAconstructor) {
 		self.Spinners.nanogun:SetGoal(0)
 		self.Spinners.nanogun:SetSpeed(160.03)
 		WaitFor(self.Spinners.nanogun)
-		TAconstructor.Close(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationOpen)
 		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationOpenRate or 0.2))
 		TAconstructor.Close(self)

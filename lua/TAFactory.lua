@@ -50,13 +50,18 @@ TAFactory = Class(TAconstructor) {
 	end,
 
 	OnStopBuild = function(self, unitBeingBuilt, order )
-        self:LOGDBG('TAFactory.OnStopBuild')
+		self:LOGDBG('TAFactory.OnStopBuild')
 		TAconstructor.OnStopBuild(self, unitBeingBuilt, order )
+		ForkThread(self.FactoryOnStopBuild, self, unitBeingBuilt, order )
+	end,
+
+	FactoryOnStopBuild = function(self, unitBeingBuilt, order )
+		--WaitSeconds(1)
 		self:SetBusy(true)
 		self:SetBlockCommandQueue(false)
         if unitBeingBuilt and unitBeingBuilt.Dead then
             self.desiredState = "aimed"
-        end
+		end
 	end,
 
 	RollOff = function(self)
@@ -114,6 +119,9 @@ TAFactory = Class(TAconstructor) {
         self:LOGDBG('TAFactory.Close')
 		self:SetBusy(false)
 		self:SetBlockCommandQueue(false)
+		if self.isBuilding == true then
+			self.desiredState = "aimed"
+		end
 		---self:OnStopBuild()
 	end,
 

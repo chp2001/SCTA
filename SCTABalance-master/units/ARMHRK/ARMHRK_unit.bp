@@ -158,8 +158,8 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'CORTRUCK_ROCKET',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Air|Seabed',
-                Seabed = 'Land|Water|Air|Seabed',
+                Land = 'Land|Water|Air',
+                Seabed = 'Land|Water|Air',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
             FiringTolerance = 8,

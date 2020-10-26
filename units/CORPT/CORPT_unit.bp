@@ -162,7 +162,7 @@ UnitBlueprint {
             DamageType = 'AntiAir',
             DisplayName = 'CORKBOT_MISSILE',
             FireTargetLayerCapsTable = {
-                Water = 'Land|Water|Air|Seabed',
+                Water = 'Land|Water|Air',
             },
 	    RangeCategory = 'UWRC_AntiAir',
      WeaponCategory = 'AntiAir',

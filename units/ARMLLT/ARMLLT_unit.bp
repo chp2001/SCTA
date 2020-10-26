@@ -160,8 +160,8 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'ARM_LIGHTLASER',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Air|Seabed',
-                Water = 'Land|Water|Air|Seabed',
+                Land = 'Land|Water|Air',
+                Water = 'Land|Water|Air',
             },
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',

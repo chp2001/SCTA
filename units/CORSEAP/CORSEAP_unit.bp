@@ -200,7 +200,7 @@ UnitBlueprint {
             FireTargetLayerCapsTable = {
                 Air = 'Water|Seabed|Sub|Seabed',
                 Land = 'Water|Seabed|Sub|Seabed',
-                Water = 'Land|Water|Air|Seabed',
+                Water = 'Land|Water|Sub|Seabed',
             },
             FiringRandomness = 3,
             FiringTolerance = 6,
@@ -265,8 +265,8 @@ UnitBlueprint {
             DamageType = 'AntiAir',
             DisplayName = 'ARMVTOL_MISSILE',
             FireTargetLayerCapsTable = {
-                Air = 'Land|Water|Air|Seabed',
-                Land = 'Land|Water|Air|Seabed',
+                Air = 'Land|Water|Air',
+                Land = 'Land|Water|Air',
             },
 	    RangeCategory = 'UWRC_AntiAir',
      WeaponCategory = 'AntiAir',

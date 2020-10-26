@@ -176,7 +176,7 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'ARMMSHIP_ROCKET',
             FireTargetLayerCapsTable = {
-                Water = 'Land|Water|Air|Seabed',
+                Water = 'Land|Water|Air',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
      WeaponCategory = 'IndirectFire',
@@ -237,7 +237,7 @@ UnitBlueprint {
             DamageType = 'AntiAir',
             DisplayName = 'ARMSHIP_MISSILE',
             FireTargetLayerCapsTable = {
-                Water = 'Land|Water|Air|Seabed',
+                Water = 'Land|Water|Air',
             },
 	    RangeCategory = 'UWRC_AntiAir',
      WeaponCategory = 'AntiAir',

@@ -11,7 +11,7 @@ local TACommanderDeathWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TACo
 CORCOM = Class(TAconstructor) {
 	motion = 'Stopped',
 	cloakOn = false,
-	cloakSet = false,
+	--cloakSet = false,
 
 	Weapons = {
 		CORCOMLASER = Class(TAweapon) {
@@ -69,30 +69,30 @@ CORCOM = Class(TAconstructor) {
 		end
 		self.isReclaiming = false
 		self.isBuilding = false
-		self.cloakOn = false
+		if self.cloakOn == false then
 		self.isCapturing = true
 		self.wantStopAnimation = false
 		if (self.animating == false) then
 			ForkThread(self.AnimationThread, self)
 		end
+		end
 	end,
 
-    CloakDetection = function(self)
-        local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
-        local brain = moho.entity_methods.GetAIBrain(self)
-        ---local meshbp = moho.entity_methods.GetBlueprint(self).Display.MeshBlueprint
-        local cat = categories.SELECTABLE * categories.MOBILE
-        ---local setmesh = moho.entity_methods.SetMesh
-        local getpos = moho.entity_methods.GetPosition
-        while not self.Dead do
-            WaitSeconds(1)
-            if GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')[1] and self.cloakOn == true then
+	CloakDetection = function(self)
+		local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
+		local brain = moho.entity_methods.GetAIBrain(self)
+		local cat = categories.SELECTABLE * categories.MOBILE
+		local getpos = moho.entity_methods.GetPosition
+		while not self.Dead do
+			coroutine.yield(11)
+			local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
+			if dudes[1] then
 				self:DisableIntel('Cloak')
-				WaitSeconds(5)
+			else
 				self:EnableIntel('Cloak')
-            end
-        end
-    end,
+			end
+		end
+	end,
 
 		PlayCommanderWarpInEffect = function(self)
 			self:HideBone(0, true)
@@ -137,7 +137,7 @@ CORCOM = Class(TAconstructor) {
 
 	OnIntelDisabled = function(self)
 		self.cloakOn = false
-		self.cloakSet = false
+		--self.cloakSet = false
         self:SetIntelRadius('Omni', 10)
         self:PlayUnitSound('Uncloak')
 		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
@@ -150,7 +150,7 @@ CORCOM = Class(TAconstructor) {
 		end
         self:SetIntelRadius('Omni', self:GetBlueprint().Intel.OmniRadius)
 		self.cloakOn = true
-		self.cloakSet = true
+		--self.cloakSet = true
         	self:PlayUnitSound('Cloak')
 		self:SetMesh('/mods/SCTA-master/units/CORCOM/CORCOM_cloak_mesh', true)
 		ForkThread(self.CloakDetection, self)

@@ -203,8 +203,8 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'ARMCOMLASER',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Air|Seabed',
-                Seabed = 'Land|Water|Air|Seabed',
+                Land = 'Land|Water|Air',
+                Seabed = 'Land|Water|Air',
             },
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',

@@ -44,8 +44,8 @@ Economy = {
             DamageType = 'AntiAir',
             DisplayName = 'armamph_weapon1',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Air|Seabed',
-                Water = 'Land|Water|Air|Seabed',
+                Land = 'Land|Water|Air',
+                Water = 'Land|Water|Air',
             },
             RangeCategory = 'UWRC_AntiAir',
             WeaponCategory = 'AntiAir',
@@ -111,8 +111,8 @@ Economy = {
             DamageType = 'Normal',
             DisplayName = 'armamph_weapon2',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Air|Seabed',
-                Water = 'Land|Water|Air|Seabed',
+                Land = 'Land|Water|Air',
+                Water = 'Land|Water|Air',
             },
             RangeCategory = 'UWRC_DirectFire',
             WeaponCategory = 'DirectFire',

@@ -42,7 +42,7 @@ ProjectileBlueprint {
         StrategicIconSize = 1,
     },
     General = {
-        Category = 'Indirect Fire',
+        Category = 'Artillery',
         EntityCategory = {
             'ARM',
             'PROJECTILE',
@@ -56,7 +56,7 @@ ProjectileBlueprint {
     },
     Physics = {
         DestroyOnWater = true,
-        InitialSpeed = 19.375,
+        InitialSpeed = 30,
         Lifetime = 10,
         UseGravity = true,
     },

@@ -137,8 +137,8 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'CORFHLT_LASER',
             FireTargetLayerCapsTable = {
-                Water = 'Land|Water|Air|Seabed',
-                Land = 'Land|Water|Air|Seabed',
+                Land = 'Land|Water',
+                Water = 'Land|Water',
             },
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',

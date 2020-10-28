@@ -9,22 +9,29 @@ local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
 CORSPEC = Class(TAWalking) {
 	OnCreate = function(self)
 		TAWalking.OnCreate(self)
+		self.Spinners = {
+			fork = CreateRotator(self, 'tongspivot', 'z', nil, 0, 0, 0),
+		}
+		self.Trash:Add(self.Spinners.fork)
 		self.AnimManip = CreateAnimator(self)
 		self.Trash:Add(self.AnimManip)
 	end,
 
 	Close = function(self)
 		self:PlayUnitSound('Deactivate')
+		self.Spinners.fork:SetSpeed(0)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
-		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
-        WaitFor(self.AnimManip)
+		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationUnpackRate or 1))
+		---WaitFor(self.AnimManip)
 		self:SetMaintenanceConsumptionInactive()
 	end,
 
 	Open = function(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
-		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
+		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 1))
 		self:SetMaintenanceConsumptionActive()
+		WaitFor(self.AnimManip)
+		self.Spinners.fork:SetSpeed(50)
 		self:PlayUnitSound('Activate')
 	end,
 

@@ -32,21 +32,13 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-
-	
         'ARM',
         'KBOT',
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -162,7 +154,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 180,
+            Damage = 60,
 	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'LIGHTNING',

@@ -23,6 +23,9 @@ ARMMERL = Class(TAunit) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
+		for k, v in self.Sliders do
+			self.Trash:Add(v)
+		end
 	end,
 
 	Weapons = {

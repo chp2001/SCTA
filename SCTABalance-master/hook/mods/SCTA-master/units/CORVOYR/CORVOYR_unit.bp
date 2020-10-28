@@ -5,31 +5,33 @@
 
 UnitBlueprint {
     Merge = true,
+    BuildIconSortPriority = 1,
     Categories = {
         'SELECTABLE',
-        'TECH2',
+        'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
 	'LAND',
         'CORE',
         'KBOT',
-	'LEVEL2',
+	'LEVEL1',
     'RADAR',
     'OVERLAYRADAR',
     },
     Economy = {
-        BuildCostEnergy = 600,
-        BuildCostMass = 80,
-        MaintenanceConsumptionPerSecondEnergy = 5,
+        BuildCostEnergy = 420,
+        BuildCostMass = 20,
+        MaintenanceConsumptionPerSecondEnergy = 0,
         ProductionPerSecondEnergy = 0,
-        BuildTime = 1200,
+        BuildTime = 400,
     },
     Footprint = {
         SizeX = 1,
         SizeZ = 1,
 	MaxWaterDepth = 0,
     },
+    StrategicIconName = 'icon_land1_intel',
     General = {
         OrderOverrides = {
                 RULEUTC_IntelToggle = {
@@ -38,7 +40,7 @@ UnitBlueprint {
                      },
                  },
                ToggleCaps = {
-               RULEUTC_IntelToggle = true,
+               RULEUTC_IntelToggle = false,
             },
     },
     Intel = {

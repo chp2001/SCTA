@@ -34,6 +34,7 @@ CORHP = Class(TAFactory) {
 	end,
 
 	Aim = function(self, target)
+		TAFactory.Aim(self, target)
 		WaitFor(self.AnimManip)	
 				--TURN beam1 to z-axis <-90.00> SPEED <175.13>;
 self.Spinners.beam1:SetGoal(90)
@@ -50,7 +51,7 @@ self.Spinners.beam3:SetSpeed(175)
 self.Spinners.beam4:SetGoal(-90)
 self.Spinners.beam4:SetSpeed(175)
 WaitSeconds(0.5)
-		TAFactory.Aim(self, target)
+
 	end,
 
 	Close = function(self)

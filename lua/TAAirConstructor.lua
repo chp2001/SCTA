@@ -53,10 +53,9 @@ TAAirConstructor = Class(TAair) {
 								#Need to Show Life Bar here once implemented
 							end
 							if (self.isBuilding == true) then
+								TAair.OnStartBuild(self, self.currentTarget, self.order)
 								if EntityCategoryContains(categories.ARM, self.currentTarget) or EntityCategoryContains(categories.CORE, self.currentTarget) then
 								self.currentTarget:HideFlares()
-								self:SetBuildRate(self:GetBlueprint().Economy.BuildRate)
-								TAair.OnStartBuild(self, self.currentTarget, self.order)
 								end
 							end
 							if (self.isReclaiming == true) then
@@ -96,7 +95,7 @@ TAAirConstructor = Class(TAair) {
 	OnStartBuild = function(self, unitBeingBuilt, order )
         if unitBeingBuilt.noassistbuild and unitBeingBuilt:GetHealth()==unitBeingBuilt:GetMaxHealth() then
             return
-        end
+		end
 		self.desiredTarget = unitBeingBuilt
 		if (self.currentState == "aimed" or self.currentState == "opened" or self.currentState == "rolloff") then
 			self.currentState = "opened"
@@ -129,10 +128,6 @@ TAAirConstructor = Class(TAair) {
 			self.desiredState = "closed"
 		end
 		self:SetAllWeaponsEnabled(true)
-		if self.isFactory then
-			self:SetBusy(true)
-			self:SetBlockCommandQueue(true)
-		end
 	end,
 
 	DestroyUnitBeingBuilt = function(self)
@@ -153,8 +148,6 @@ TAAirConstructor = Class(TAair) {
 
 
 	OnStartReclaim = function(self, target)
-		self:SetReclaimTimeMultiplier(1)
-		self:SetBuildRate(self:GetBlueprint().Economy.BuildRate)
 		TAair.OnStartReclaim(self, target)
 		self.desiredTarget = target
 		if (self.currentState == "aimed") then

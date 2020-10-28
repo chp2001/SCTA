@@ -192,8 +192,8 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'VTOL_EMG',
             FireTargetLayerCapsTable = {
-                Air = 'Land|Water|Air|Seabed',
-                Land = 'Land|Water|Air|Seabed',
+                Air = 'Land|Water|Air',
+                Land = 'Land|Water|Air',
             },
         RangeCategory = 'UWRC_DirectFire',
         WeaponCategory = 'DirectFire',

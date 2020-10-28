@@ -29,7 +29,7 @@ UnitBlueprint {
             DisplayName = 'ARMAAS_WEAPON1',
 	        FiringTolerance = 10,
             FireTargetLayerCapsTable = {
-                Water = 'Land|Water|Air|Seabed',
+                Water = 'Land|Water|Air',
             },
 	    RangeCategory = 'UWRC_AntiAir',
             Label = 'ARMAAS_WEAPON1',
@@ -105,7 +105,7 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'ARMAAS_WEAPON2',
             FireTargetLayerCapsTable = {
-                Water = 'Land|Water|Air|Seabed',
+                Water = 'Land|Water|Air',
             },
             RangeCategory = 'UWRC_Countermeasure',
 	    FiringTolerance = 10,
@@ -184,7 +184,7 @@ UnitBlueprint {
             DamageType = 'AntiAir',
             DisplayName = 'ARMAAS_WEAPON3',
             FireTargetLayerCapsTable = {
-                Water = 'Land|Water|Air|Seabed',
+                Water = 'Land|Water|Air',
             },
 	    RangeCategory = 'UWRC_AntiAir',
             FiringTolerance = 0.5,	

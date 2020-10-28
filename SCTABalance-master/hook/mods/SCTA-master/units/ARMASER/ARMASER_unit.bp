@@ -1,5 +1,20 @@
 UnitBlueprint {
     Merge = true, 
+    Categories = {
+        'SELECTABLE',
+        'TECH2',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	'LAND',
+    'INTELLIGENCE',
+    'COUNTERINTELLIGENCE',
+        'OVERLAYCOUNTERINTEL',
+        'ARM',
+        --'KBOT',
+	'JAM',
+	'LEVEL2',
+    },
     Display = {
         Abilities = {
             '<LOC ability_jamming>Jamming',

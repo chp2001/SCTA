@@ -30,21 +30,14 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-
-	
 	'STRUCTURE',
         'ENERGYSTORAGE',
                 'ECONOMIC',
         'SORTECONOMY',
 	'TEXTUREANIM',
-
-	
 	'ARM',
 	'ENERGY',
 	'LEVEL1',
-	
-	
-	
 	'STORAGE',
     },
     Defense = {

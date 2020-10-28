@@ -16,6 +16,26 @@ ARMDECOM = Class(TAconstructor) {
 				
 			end,
 		},
+		ARM_DISINTEGRATOR = Class(TAweapon) {
+			OnWeaponFired = function(self)
+				TAweapon.OnWeaponFired(self)
+				self:ForkThread(self.PauseOvercharge)
+				self.unit:SetWeaponEnabledByLabel('ARM_DISINTEGRATOR', true)
+			end,
+
+		        OnLostTarget = function(self)
+				self.unit:SetWeaponEnabledByLabel('ARM_DISINTEGRATOR', true)
+				TAweapon.OnLostTarget(self)
+				end,
+				
+				PauseOvercharge = function(self)
+					if not self.unit:IsOverchargePaused() then
+						self.unit:SetOverchargePaused(true)
+						WaitSeconds(1/self:GetBlueprint().RateOfFire)
+						self.unit:SetOverchargePaused(false)
+					end
+				end,
+		},
 	},
 
 	OnCreate = function(self)

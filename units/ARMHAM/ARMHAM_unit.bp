@@ -64,12 +64,12 @@ UnitBlueprint {
 	DestructionEffects = {
 		DestructionEmitters = {
 			{
-				EmitterBone = {'Torso'},
+				EmitterBone = {'torso'},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'RightBarrel', 'LeftBarrel'},
+				EmitterBone = {'rbarrel', 'lbarrel'},
 				EmitterBlueprint = {
     					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -90,7 +90,7 @@ UnitBlueprint {
             },
         },
 	SmokeBone = 'Torso',
-        UniformScale = 0.16,
+        UniformScale = 0.09,
     },
     Economy = {
         BuildCostEnergy = 1187,
@@ -140,7 +140,7 @@ UnitBlueprint {
         StandUpright = true,
         MaxSteerForce = 10,
     },
-    SelectionCenterOffsetZ = -0.75,
+    --SelectionCenterOffsetZ = -0.75,
     SelectionSizeX = 1,
     SelectionSizeZ = 1,
     SelectionThickness = 0.25,
@@ -183,15 +183,15 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'RightMuzzle',
+                        'rfire',
                     },
-                    RackBone = 'RightBarrel',
+                    RackBone = 'rbarrel',
                 },
                 {
                     MuzzleBones = {
-                        'LeftMuzzle',
+                        'lfire',
                     },
-                    RackBone = 'LeftBarrel',
+                    RackBone = 'lbarrel',
                 },
             },
             RackRecoilDistance = -2,
@@ -206,9 +206,12 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'Aim_Muzzle',
-            TurretBonePitch = 'Arms',
-            TurretBoneYaw = 'Torso',
+            TurretBoneMuzzle = 'rfire',
+            TurretBonePitch = 'pitchturret',
+            TurretBoneDualMuzzle = 'lfire',
+            TurretBoneDualPitch = 'pitchturret',
+            TurretBoneYaw = 'torso',
+            TurretDualManipulators = true,
             TurretPitch = 0,
             TurretPitchRange = 360,
             TurretPitchSpeed = 50,

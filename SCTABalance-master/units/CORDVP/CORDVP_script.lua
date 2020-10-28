@@ -33,8 +33,8 @@ CORDVP = Class(TAFactory) {
 	end,
 
 	Aim = function(self, target)
-		WaitFor(self.AnimManip)
 		TAFactory.Aim(self, target)
+		WaitFor(self.AnimManip)
 	end,
 
 	Close = function(self)
@@ -43,6 +43,14 @@ CORDVP = Class(TAFactory) {
 		WaitSeconds(0.4)
 		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
+	end,
+	
+	OnStopBuild = function(self, unitBeingBuilt)
+		TAFactory.OnStopBuild(self, unitBeingBuilt)
+		if unitBeingBuilt:GetFractionComplete() == 1 and unitBeingBuilt:GetUnitId() == self:GetBlueprint().General.UpgradesTo then
+			NotifyUpgrade(self, unitBeingBuilt)
+			self:Destroy()
+		end
 	end,
 }
 

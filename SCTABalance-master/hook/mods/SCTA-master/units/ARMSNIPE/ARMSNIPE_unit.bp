@@ -1,19 +1,37 @@
 UnitBlueprint {
     Merge = true, 
+    BuildIconSortPriority = 12,
+    Categories = {
+        'SELECTABLE',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	'LAND',
+	'DIRECTFIRE',
+        'OVERLAYDIRECTFIRE',
+        'ARM',
+        'KBOT',
+	'LEVEL3',
+	
+	
+	
+	
+    },
     Defense = {
-        Health = 1000,
-        MaxHealth = 1000,
+        Health = 2000,
+        MaxHealth = 2000,
     },
     Economy = {
-        BuildCostEnergy = 6000,
-        BuildCostMass = 500,
-        BuildTime = 8000,
+        BuildCostEnergy = 21000,
+        BuildCostMass = 2000,
+        BuildTime = 24000,
     },
     Footprint = {
 	SizeX = 1,
 	SizeZ = 1,
     },
-    StrategicIconName = 'icon_land2_missile',
+    StrategicIconName = 'icon_bot3_sniper',
     Weapon = {
         {
             Audio = {
@@ -26,7 +44,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 300,
+            Damage = 2000,
 	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARM_FAST',
@@ -42,7 +60,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
         MuzzleVelocity = 25,
         FiringTolerance = 5,
-        ProjectileId = '/mods/SCTA-master/projectiles/ARMMH_WEAPON/ARMMH_WEAPON_proj.bp',
+        ProjectileId = '/mods/SCTA-master/projectiles/ARM_FAST/ARM_FAST_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

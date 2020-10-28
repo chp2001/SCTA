@@ -5,7 +5,7 @@
 
 UnitBlueprint {
    Merge = true,
-   BuildIconSortPriority = 12,
+   BuildIconSortPriority = 4,
    Categories = {
     'SELECTABLE',
     'TECH2',
@@ -20,8 +20,8 @@ UnitBlueprint {
 'LEVEL2',
    },
     Defense = {
-        Health = 9000,
-        MaxHealth = 9000,
+        Health = 4000,
+        MaxHealth = 4000,
     },
     Footprint = {
 	SizeX = 1,
@@ -31,9 +31,9 @@ UnitBlueprint {
         VisionRadius = 12,
     },
     Economy = {
-        BuildCostEnergy = 30000,
-        BuildCostMass = 1400,
-        BuildTime = 29000,
+        BuildCostEnergy = 3000,
+        BuildCostMass = 400,
+        BuildTime = 5000,
     },
-    StrategicIconName = 'icon_bot3_armored',
+    StrategicIconName = 'icon_land2_directfire',
 }

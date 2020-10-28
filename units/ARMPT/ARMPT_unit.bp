@@ -159,7 +159,7 @@ UnitBlueprint {
             DamageType = 'AntiAir',
             DisplayName = 'ARMKBOT_MISSILE',
             FireTargetLayerCapsTable = {
-                Water = 'Land|Water|Air|Seabed',
+                Water = 'Land|Water|Air',
             },
 	    RangeCategory = 'UWRC_AntiAir',
      WeaponCategory = 'AntiAir',

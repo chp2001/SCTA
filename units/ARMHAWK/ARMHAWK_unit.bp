@@ -204,8 +204,8 @@ UnitBlueprint {
             DamageType = 'AntiAir',
             DisplayName = 'ARMVTOL_ADVMISSILE',
             FireTargetLayerCapsTable = {
-                Air = 'Land|Water|Air|Seabed',
-                Land = 'Land|Water|Air|Seabed',
+                Air = 'Land|Water|Air',
+                Land = 'Land|Water|Air',
             },
 	    RangeCategory = 'UWRC_AntiAir',
      WeaponCategory = 'AntiAir',
@@ -264,8 +264,8 @@ UnitBlueprint {
             DamageType = 'AntiAir',
             DisplayName = 'ARMVTOL_ADVMISSILE2',
             FireTargetLayerCapsTable = {
-                Air = 'Land|Water|Air|Seabed',
-                Land = 'Land|Water|Air|Seabed',
+                Air = 'Land|Water|Air',
+                Land = 'Land|Water|Air',
             },
 	    RangeCategory = 'UWRC_AntiAir',
      WeaponCategory = 'AntiAir',

@@ -49,12 +49,8 @@ UnitBlueprint {
         'OVERLAYCOUNTERINTEL',
         'CORE',
         'KBOT',
-	
 	'JAM',
 	'LEVEL2',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -67,6 +63,7 @@ UnitBlueprint {
     },
     Description = 'Radar Jammer',
     Display = {
+        AnimationUnpack = '/mods/SCTA-master/units/CORSPEC/CORSPEC_lod0_Aunpack.sca',
         AnimationWalk = '/mods/SCTA-master/units/CORSPEC/CORSPEC_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {

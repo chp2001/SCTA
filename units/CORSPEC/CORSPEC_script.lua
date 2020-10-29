@@ -19,10 +19,11 @@ CORSPEC = Class(TAWalking) {
 
 	Close = function(self)
 		self:PlayUnitSound('Deactivate')
-		self.Spinners.fork:SetSpeed(0)
-		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
-		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationUnpackRate or 1))
-		---WaitFor(self.AnimManip)
+		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationPack)
+		self.AnimManip:SetRate((self:GetBlueprint().Display.AnimationPackRate or 1))
+		--WaitFor(self.AnimManip)
+		--self.Spinners.fork:SetGoal(0)
+		--self.Spinners.fork:SetSpeed(0)
 		self:SetMaintenanceConsumptionInactive()
 	end,
 
@@ -30,8 +31,8 @@ CORSPEC = Class(TAWalking) {
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 1))
 		self:SetMaintenanceConsumptionActive()
-		WaitFor(self.AnimManip)
-		self.Spinners.fork:SetSpeed(50)
+		---WaitFor(self.AnimManip)
+		---self.Spinners.fork:SetSpeed(50)
 		self:PlayUnitSound('Activate')
 	end,
 
@@ -43,7 +44,6 @@ CORSPEC = Class(TAWalking) {
 	OnIntelEnabled = function(self)
 		TAWalking.OnIntelEnabled(self)
 		ForkThread(self.Open, self)
-		
 	end,
 }
 TypeClass = CORSPEC

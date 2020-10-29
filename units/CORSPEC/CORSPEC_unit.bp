@@ -64,6 +64,7 @@ UnitBlueprint {
     Description = 'Radar Jammer',
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/CORSPEC/CORSPEC_lod0_Aunpack.sca',
+        AnimationPack = '/mods/SCTA-master/units/CORSPEC/CORSPEC_lod0_Apack.sca',
         AnimationWalk = '/mods/SCTA-master/units/CORSPEC/CORSPEC_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {

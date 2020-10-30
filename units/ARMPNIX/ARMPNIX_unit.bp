@@ -255,7 +255,7 @@ UnitBlueprint {
             AutoInitiateAttackCommand = true,
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-            DamageFriendly = true,
+            DamageFriendly = false,
             Damage = 35,
             DamageRadius = 0.25, 
             DamageType = 'Anti-Air',

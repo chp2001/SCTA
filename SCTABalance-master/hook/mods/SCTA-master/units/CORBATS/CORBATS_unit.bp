@@ -2,7 +2,7 @@ UnitBlueprint {
     Merge = true,
     Categories = {
         'SELECTABLE',
-        'TECH2',
+        'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -13,7 +13,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'CORE',
         'SHIP',
-	'LEVEL2',
+	'LEVEL3',
     },
     Defense = {
         Health = 25000,

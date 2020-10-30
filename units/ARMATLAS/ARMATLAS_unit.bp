@@ -61,7 +61,7 @@ UnitBlueprint {
         LiftFactor = 8,
         MaxAirspeed = 10,
         StartTurnDistance = 10,
-        TransportHoverHeight = 3,
+        TransportHoverHeight = 6,
     },
     BuildIconSortPriority = 5,
     Categories = {
@@ -168,8 +168,8 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        Elevation = 5,
-        MotionType = 'RULEUMT_Air',
+    Elevation = 9,
+    MotionType = 'RULEUMT_Air',
     MaxSpeed = 0.5, 
     RotateOnSpot = true,
 	FuelRechargeRate = 999999,

@@ -54,13 +54,8 @@ UnitBlueprint {
         'T2SUBMARINE',
         'OVERLAYSONAR',	
            'ARM',
-        'SELECTION',
-	
+        'SELECTION',	
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',

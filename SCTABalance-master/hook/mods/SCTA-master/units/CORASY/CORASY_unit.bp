@@ -39,6 +39,8 @@ UnitBlueprint {
             'NORMALSUB LEVEL1 CORE',
             'SHIP LEVEL2 CORE',
             'ADVANCEDSUB LEVEL2 CORE',
+            'SHIP LEVEL3 CORE',
+            'ADVANCEDSUB LEVEL3 CORE',
         },
         BuildRate = 220,
         ProductionPerSecondMass = 0,

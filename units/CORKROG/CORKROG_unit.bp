@@ -44,10 +44,7 @@ UnitBlueprint {
         'CORKROG',        
         'CORE',
         'KBOT',
-        
-        
-        
-        
+        'LEVEL4',
     },
     Defense = {
         AirThreatLevel = 0,

@@ -90,7 +90,7 @@ UnitBlueprint {
         NaturalProducer = true,
         ProductionPerSecondEnergy = 20,
         ProductionPerSecondEnergyMin = 15,
-        ProductionPerSecondEnergyMax = 35,
+        ProductionPerSecondEnergyMax = 30,
     },
     Footprint = {
 	MaxSlope = 0.625,

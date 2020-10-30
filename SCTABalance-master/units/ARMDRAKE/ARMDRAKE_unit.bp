@@ -42,10 +42,7 @@ UnitBlueprint {
         'ARMDRAKE',        
         'ARM',
         'KBOT',
-        
-        
-        
-        
+        'LEVEL4',  
     },
     Defense = {
         AirThreatLevel = 0,

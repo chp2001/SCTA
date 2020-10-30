@@ -5,7 +5,7 @@ do
         OldModBlueprints(all_blueprints)
         BlueprintMults(all_blueprints)
         GiveVet(all_blueprints.Unit)
-        BlueprintAirMults(all_blueprints)
+        --BlueprintAirMults(all_blueprints)
     end
 
     function BlueprintMults(all_blueprints)
@@ -33,6 +33,7 @@ do
             LifeBarSize = 0.5,
             Physics = {
                 MaxSpeed = 1.2,
+                TurnRate = 0.5,
                 FuelRechargeRate = 0.000005,
                 FuelUseTime = 0.0006,
             },    
@@ -172,19 +173,26 @@ do
                 end
             end
         end
+        
+        for id, bp in all_blueprints.Unit do
+            if bp.Categories and ((table.find(bp.Categories, 'ARM') or table.find(bp.Categories, 'CORE')) and table.find(bp.Categories, 'AIR') and table.find(bp.Categories, 'MOBILE')) then
+        if not bp.Physics.GroundCollisionOffset then bp.Physics.GroundCollisionOffset = 1.5 end
+        end
+            end
+        end
     end
     
     function GiveVet(all_bps)
         for id, bp in all_bps do
             if bp.Weapon and bp.Categories then
                 local mul = 10
-                if table.find(bp.Categories, 'TECH1') then
+                if table.find(bp.Categories, 'LEVEL1') then
                     mul = 1
-                elseif table.find(bp.Categories, 'TECH2') then
+                elseif table.find(bp.Categories, 'LEVEL2') then
                     mul = 2
-                elseif table.find(bp.Categories, 'TECH3') then
+                elseif table.find(bp.Categories, 'LEVEL3') then
                     mul = 3
-                elseif table.find(bp.Categories, 'EXPERIMENTAL') then
+                elseif table.find(bp.Categories, 'LEVEL4') then
                     mul = 4
                 end
                 if not bp.Buffs then bp.Buffs = {} end
@@ -209,11 +217,6 @@ do
             end
         end
     end
-        function BlueprintAirMults(all_blueprints)
-        for id, bp in all_blueprints.Unit do
-                if bp.Categories and ((table.find(bp.Categories, 'ARM') or table.find(bp.Categories, 'CORE')) and table.find(bp.Categories, 'AIR') and table.find(bp.Categories, 'MOBILE')) then
-            if not bp.Physics.GroundCollisionOffset then bp.Physics.GroundCollisionOffset = 1.5 end
-        end
-    end
-end
-end
+        --function BlueprintAirMults(all_blueprints)
+
+--end

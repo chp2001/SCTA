@@ -1,5 +1,22 @@
 UnitBlueprint {
     Merge = true, 
+    Categories = {
+        'SELECTABLE',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	'NAVAL',
+	'INTELLIGENCE',
+        'OVERLAYCOUNTERINTEL',
+        'COUNTERINTELLIGENCE',
+        'DEFENSIVEBOAT',
+        'ARM',
+        'SUBMERSIBLE',
+    'JAM',
+    'ADVANCEDSUB',
+	'LEVEL3',
+    },
     Display = {
         Abilities = {
             '<LOC ability_jamming>Jamming',
@@ -8,7 +25,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 2100,
         BuildCostMass = 200,
-        BuildTime = 400,
+        BuildTime = 3600,
     },
     Footprint = {
 	SizeX = 2,

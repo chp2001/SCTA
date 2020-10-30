@@ -42,11 +42,8 @@ TAconstructor = Class(TAWalking) {
 				elseif(self.currentState == "opened") then
 					if (self.desiredState == "closed") then
 						self:DelayedClose()
-						--ChangeState(self, self.IdleState)
-						--Check to make sure we still want to close
 						if (self.desiredState == "closed") then	
 							self:Close()
-							--ChangeState(self, self.IdleState)
 							self.currentState = "closed"
 						end
 					elseif (self.desiredState == "aimed") then
@@ -54,7 +51,6 @@ TAconstructor = Class(TAWalking) {
 							self:StopSpin(self.currentTarget)
 						end
 						self:RollOff()
-						--ChangeState(self, self.IdleState)
 						self.currentTarget = self.desiredTarget
 						self.currentState = "aimed"
 						if (self.currentTarget and IsDestroyed(self.currentTarget) == false) then
@@ -71,7 +67,6 @@ TAconstructor = Class(TAWalking) {
 								self.currentTarget:ShowBone(0, true)
 								#Need to Show Life Bar here once implemented
 							end
-
 							if (self.isBuilding == true) then
 								self:SetBuildRate(self:GetBlueprint().Economy.BuildRate)
 								TAWalking.OnStartBuild(self, self.currentTarget, self.order)
@@ -132,7 +127,7 @@ TAconstructor = Class(TAWalking) {
 		end
 		self:SetAllWeaponsEnabled(false)
 		if self.hideUnit and IsDestroyed(unitBeingBuilt) == false then
-			unitBeingBuilt:HideBone(0, true)
+			unitBeingBuilt:HideBone(0, false)
 			#Need to Hide Life Bar
 		end
 		self.isBuilding = true

@@ -1,11 +1,11 @@
-#ARM Shipyard - Produces Ships
-#ARMDSY
+#CORE Shipyard - Produces Ships
+#CORDY
 #
 #Script created by Raevn
 
 local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 
-ARMDSY = Class(TAFactory) {
+ARMADSY = Class(TAFactory) {
 	pauseTime = 5,
 	hideUnit = true,
 	isFactory = true,
@@ -114,14 +114,6 @@ ARMDSY = Class(TAFactory) {
 		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
-
-	OnStopBuild = function(self, unitBeingBuilt)
-		TAFactory.OnStopBuild(self, unitBeingBuilt)
-		if unitBeingBuilt:GetFractionComplete() == 1 and unitBeingBuilt:GetUnitId() == self:GetBlueprint().General.UpgradesTo then
-			NotifyUpgrade(self, unitBeingBuilt)
-			self:Destroy()
-		end
-	end,
 }
 
-TypeClass = ARMDSY
+TypeClass = ARMADSY

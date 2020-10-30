@@ -78,7 +78,7 @@ UnitBlueprint {
 				Bone = 'Door_03',
 			},
 			{
-				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMADLAB_debris01_proj.bp',
+				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMLAB_debris01_proj.bp',
 				Bone = 'Door_04',
 			},
 			{

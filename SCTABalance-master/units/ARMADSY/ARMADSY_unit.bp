@@ -1,5 +1,5 @@
 #CORE Shipyard - Produces Ships
-#CORDSY
+#ARMDSY
 #
 #Blueprint created by Raevn
 
@@ -32,7 +32,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH2',
+        'TECH3',
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -40,14 +40,10 @@ UnitBlueprint {
 	'STRUCTURE',
 	'CONSTRUCTION',
 	'NAVAL',
-	'CORE',
+	'ARM',
 		'PLANT',
 	'SORTCONSTRUCTION',
-	'LEVEL2',
-	
-	
-	
-	
+	'LEVEL3',
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -61,52 +57,56 @@ UnitBlueprint {
     },
     Description = 'Produces Ships',
     Display = {
-	DestructionEffects = {
-		#DefaultProjectileCategories = {'Construction','ArmBui','BuildMuzzle'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'turreta','turretb','a'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},
-	BuildBones = {'muzzlea','muzzleb'},
-	BuildAttachBone = 0,
-	TextureAnimationFrames = 6,
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
+        DestructionEffects = {
+            DefaultProjectileCategories = {'Construction','ArmBui','BuildMuzzle'},
+            DestructionEmitters = {
                 {
-                    LODCutoff = 400,
-                    ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                    EmitterBone = {0},
+                    EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+                    EmitterSize = 1.25,
+                },
+                {
+                    EmitterBone = {'Build_Nozzle_01','Build_Nozzle_02'},
+                    EmitterBlueprint = {
+                            '/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
+                            '/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
+                            '/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
+                    },
+                    EmitterSize = 0.35,
                 },
             },
         },
+        BuildBones = {'Nozzle_01','Nozzle_02'},
+        BuildAttachBone = 'ARMDSY',
+        TextureAnimationFrames = 6,
+        Mesh = {
+                IconFadeInZoom = 130,
+                LODs = {
+                    {
+                        LODCutoff = 400, 
+                        SpecularName = '/mods/SCTA-master/SCTABalance-master/units/ARMDSY/ARMDSY_SpecTeam.dds',
+                        AlbedoName = '/mods/SCTA-master/SCTABalance-master/units/ARMDSY/ARMDSY_Albedo.dds',
+                        MeshName =   '/mods/SCTA-master/SCTABalance-master/units/ARMDSY/ARMDSY_lod0.scm',
+                        ShaderName = 'Unit', 
+                        NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                    },
+                },
+            },
         UniformScale = 0.32,
     },
     Economy = {
-        BuildCostEnergy = 40000,
-        BuildCostMass = 4000, 
-        BuildTime = 80000,
-    BuildRate = 175,
+        BuildCostEnergy = 120000,
+        BuildCostMass = 8000, 
+        BuildTime = 100000,
+    BuildRate = 200,
     DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
-        'SHIP LEVEL1 CORE',
-        'NORMALSUB LEVEL1 CORE',
-        'SHIP LEVEL2 CORE',
-        'ADVANCEDSUB LEVEL2 CORE',
-        'coradsy',
+        'SHIP LEVEL1 ARM',
+        'NORMALSUB LEVEL1 ARM',
+        'SHIP LEVEL2 ARM',
+        'ADVANCEDSUB LEVEL2 ARM',
+        'SHIP LEVEL3 ARM',
+        'ADVANCEDSUB LEVEL3 ARM',
     },
 	InitialRallyX = 0,
 	InitialRallyZ = 7.5,
@@ -131,11 +131,10 @@ UnitBlueprint {
         },
         SelectionPriority = 5,
         ConstructionBar = true,
-        FactionName = 'CORE',
-        UpgradesFrom = 'corsy', 
-        UpgradesTo = 'coradsy',
+        FactionName = 'ARM',
+        UpgradesFrom = 'armdsy', 
         TechLevel = 'RULEUTL_Advanced',
-	UnitName = 'Development Shipyard',
+	UnitName = 'Advanced Development Shipyard',
     },
     Intel = {
         VisionRadius = 14,
@@ -182,12 +181,10 @@ UnitBlueprint {
     SelectionSizeX = 9.9,
     SelectionSizeZ = 6.8,
     SelectionThickness = 0.25,
-    SelectionCenterOffsetX = 0.5,
-    SelectionCenterOffsetZ = 0.5,
     SizeX = 12,
     SizeY = 5,
     SizeZ = 12,
-    StrategicIconName = 'icon_factory2_naval',
+    StrategicIconName = 'icon_factory3_naval',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
@@ -209,7 +206,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/SCTABalance-master/units/CORDSY/CORDSY_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/SCTABalance-master/units/ARMADSY/ARMADSY_dead_prop.bp',
         WreckageLayers = {
             Water = true,
             Seabed = true,

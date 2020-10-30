@@ -1,5 +1,20 @@
 UnitBlueprint {
    Merge = true, 
+   Categories = {
+    'SELECTABLE',
+    'TECH3',
+    'VISIBLETORECON',
+    'RECLAIMABLE',
+    'MOBILE',
+'NAVAL',
+'T2SUBMARINE',
+'ANTINAVY',
+'NOSMOKE',
+    'OVERLAYANTINAVY',
+'ADVANCEDSUB',
+    'CORE',    
+'LEVEL3',
+},
     Defense = {
         Health = 3000,
         MaxHealth = 3000,

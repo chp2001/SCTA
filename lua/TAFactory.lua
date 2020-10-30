@@ -39,7 +39,7 @@ TAFactory = Class(TAconstructor) {
 		end
 		---self:SetAllWeaponsEnabled(false)
 		if self.hideUnit and IsDestroyed(unitBeingBuilt) == false then
-			unitBeingBuilt:HideBone(0, true)
+			unitBeingBuilt:HideBone(0, false)
 		end
 		self.isBuilding = true
 		self.order = order
@@ -95,13 +95,12 @@ TAFactory = Class(TAconstructor) {
         self:LOGDBG('TAFactory.DelayedClose')
 		ChangeState(self, self.IdleState)
 		if self.isFactory then
-			# Wait until unit factory is clear to close
 				if self.isBuilding == true then
 					return
 				end
 			WaitSeconds(0.5)
 		end
-		self:OnStopBuild()
+		--self:OnStopBuild()
 	end,
 
 	DestroyUnitBeingBuilt = function(self)

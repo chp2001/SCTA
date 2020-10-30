@@ -5,7 +5,7 @@
 
 local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 
-CORDSY = Class(TAFactory) {
+CORADSY = Class(TAFactory) {
 	pauseTime = 5,
 	hideUnit = true,
 	isFactory = true,
@@ -121,14 +121,6 @@ CORDSY = Class(TAFactory) {
 		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
-
-	OnStopBuild = function(self, unitBeingBuilt)
-		TAFactory.OnStopBuild(self, unitBeingBuilt)
-		if unitBeingBuilt:GetFractionComplete() == 1 and unitBeingBuilt:GetUnitId() == self:GetBlueprint().General.UpgradesTo then
-			NotifyUpgrade(self, unitBeingBuilt)
-			self:Destroy()
-		end
-	end,
 }
 
-TypeClass = CORDSY
+TypeClass = CORADSY

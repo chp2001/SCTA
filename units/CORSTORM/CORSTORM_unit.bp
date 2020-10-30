@@ -56,7 +56,7 @@ UnitBlueprint {
     Description = 'Rocket Kbot',
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORSTORM/CORSTORM_lod0_Awalk.sca',
-        AnimationWalkRate = 1,
+        AnimationWalkRate = 1.5,
         Abilities = {
             'Rocket',
         },
@@ -215,7 +215,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'launcher',
+            TurretBoneMuzzle = 'aim',
             TurretBonePitch = 'launcher',
             TurretBoneYaw = 'turret',
             TurretPitch = 0,

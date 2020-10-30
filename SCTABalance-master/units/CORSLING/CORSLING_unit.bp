@@ -130,7 +130,7 @@ UnitBlueprint {
         MaxBrake = 1,
         MaxSpeed = 2,
         MotionType = 'RULEUMT_Land',
-        TurnRate = 10,
+        TurnRate = 40,
         MaxSteerForce = 10,
     },
     SelectionSizeX = 1.5,

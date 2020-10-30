@@ -170,7 +170,7 @@ UnitBlueprint {
             },
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-            AlternateDamageFriendly = true,
+            --AlternateDamageFriendly = true,
             Damage = 100,
             DamageRadius = 1.5, 
             FiringRandomness = 0,
@@ -187,7 +187,7 @@ UnitBlueprint {
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 15.625,
+            MuzzleVelocity = 20,
             ProjectileId = '/mods/SCTA-master/projectiles/CORKBOT_ROCKET/CORKBOT_ROCKET_proj.bp',
             RackBones = {
                 {
@@ -215,7 +215,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'turret',
+            TurretBoneMuzzle = 'launcher',
             TurretBonePitch = 'launcher',
             TurretBoneYaw = 'turret',
             TurretPitch = 0,

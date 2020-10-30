@@ -193,7 +193,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             TrackingRadius = 1.15,
-            Damage = 150,
+            Damage = 75,
             DamageRadius = 1.5,
             DamageType = 'AntiAir',
             DisplayName = 'ARMVTOL_MISSILE',
@@ -231,7 +231,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.5,
+            RateOfFire = 1,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',

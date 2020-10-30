@@ -5,7 +5,6 @@ do
         OldModBlueprints(all_blueprints)
         BlueprintMults(all_blueprints)
         GiveVet(all_blueprints.Unit)
-        --BlueprintAirMults(all_blueprints)
     end
 
     function BlueprintMults(all_blueprints)
@@ -175,7 +174,7 @@ do
         end
         
         for id, bp in all_blueprints.Unit do
-            if bp.Categories and ((table.find(bp.Categories, 'ARM') or table.find(bp.Categories, 'CORE')) and table.find(bp.Categories, 'AIR') and table.find(bp.Categories, 'MOBILE')) then
+            if bp.Categories and ((table.find(bp.Categories, 'ARM') or table.find(bp.Categories, 'CORE')) and table.find(bp.Categories, 'VTOL')) then
         if not bp.Physics.GroundCollisionOffset then bp.Physics.GroundCollisionOffset = 1.5 end
         end
             end
@@ -217,6 +216,3 @@ do
             end
         end
     end
-        --function BlueprintAirMults(all_blueprints)
-
---end

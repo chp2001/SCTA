@@ -10,15 +10,11 @@ UnitBlueprint {
         'LAND',
         'CORE',
         'HOVER',
-	
 	'LEVEL1',
-	
-	
-	
     },
     Defense = {
-        Health = 9000,
-        MaxHealth = 9000,
+        Health = 12000,
+        MaxHealth = 12000,
         SurfaceThreatLevel = 12,
     },
     Economy = {
@@ -26,12 +22,7 @@ UnitBlueprint {
         BuildCostMass = 2100,
         BuildTime = 32000,
     },
-    Footprint = {
-	MaxSlope = 1,
-        SizeX = 1,
-        SizeZ = 1,
-    },
-    StrategicIconName = 'icon_land3_directfire',
+    StrategicIconName = 'icon_bot3_armored',
     Weapon = {
         {
             Audio = {
@@ -58,7 +49,7 @@ UnitBlueprint {
             MaxRadius = 32,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 28,
+            InitialSpeed = 21.875,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMANAC_WEAPON/ARMANAC_WEAPON_proj.bp',
             RackBones = {
                 {

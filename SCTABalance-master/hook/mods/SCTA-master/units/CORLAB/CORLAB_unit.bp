@@ -39,7 +39,8 @@ UnitBlueprint {
         UniformScale = 0.32,
     },
     Economy = {
-        BuildCostEnergy = 4000,
+        BuildCostEnergy = 4800,
+        BuildCostMass = 700, 
         BuildRate = 100,
         BuildableCategory = {
             'KBOT LEVEL1 CORE',

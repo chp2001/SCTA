@@ -63,7 +63,7 @@ UnitBlueprint {
         TurnSpeed = 0.7,
         Winged = true,
     },
-    BuildIconSortPriority = 2,
+    BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -97,7 +97,7 @@ UnitBlueprint {
 		DefaultFlamingProjectileCountMin = 0,
 		DefaultFlamingProjectileCountMax = 0,
 		DestructionDebrisUseLocalVelocity = true,
-		#DefaultProjectileCategories = {'ArmCockpit'},
+		DefaultProjectileCategories = {'ArmCockpit'},
 		FlashSize = 10,
 		FlashTime = 10,
 		DestructionEmitters = {
@@ -256,7 +256,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 50,
+            Damage = 150,
             DamageRadius = 0.25, 
             DamageType = 'AntiAir',
             DisplayName = 'CORAIR2AIRLASER',

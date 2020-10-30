@@ -29,21 +29,19 @@ CORACSUB = Class(TAconstructor) {
 	Aim = function(self, target)
 		local selfPosition = self:GetPosition('muzzle') 
 		local targetPosition = target:GetPosition()
-		
+		TAconstructor.Aim(self, target)
 		WaitFor(self.AnimManip)
 		--TURN turret to y-axis buildheading SPEED <160.03>;
 		self.Spinners.nanogun:SetGoal(TAutils.GetAngle(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
 		self.Spinners.nanogun:SetSpeed(160.03)
 
 		WaitFor(self.Spinners.nanogun)
-		TAconstructor.Aim(self, target)
 	end,
 
 	Close = function(self)
 		self.Spinners.nanogun:SetGoal(0)
 		self.Spinners.nanogun:SetSpeed(160.03)
 		WaitFor(self.Spinners.nanogun)
-		TAconstructor.Close(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationOpen)
 		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationOpenRate or 0.2))
 		TAconstructor.Close(self)

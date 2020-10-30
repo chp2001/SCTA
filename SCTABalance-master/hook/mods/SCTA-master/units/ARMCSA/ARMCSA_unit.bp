@@ -19,14 +19,15 @@ UnitBlueprint {
 'LEVEL3',
 },
    Defense = {
-    Health = 400,
-    MaxHealth = 400,
+    Health = 900,
+    MaxHealth = 900,
     },
     Description = 'Tech Level 3',
     Economy = {
-        BuildCostEnergy = 24000,
+        BuildCostEnergy = 7200,
         BuildRate = 300,
-        BuildTime = 4000,    
+        BuildTime = 6000,
+        BuildCostMass = 400,    
         BuildableCategory = {
             'BUILTBYT1HOVER ARM',
             'BUILTBYT1SHIP ARM',
@@ -38,5 +39,5 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 3,
         ProductionPerSecondMass = 0,
     },
-    StrategicIconName = 'icon_land3_engineer',
+    StrategicIconName = 'icon_bot3_engineer',
 }

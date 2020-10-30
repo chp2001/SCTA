@@ -51,8 +51,8 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Structure',
-        Health = 4000,
-        MaxHealth = 4000,
+        Health = 9200,
+        MaxHealth = 9200,
         AirThreatLevel = 0,
         EconomyThreatLevel = 11,
         SubThreatLevel = 0,
@@ -60,6 +60,9 @@ UnitBlueprint {
     },
     Description = 'Produces Kbots',
     Display = {
+        Abilities = {
+            'Upgradeable',
+        },
 	DestructionEffects = {
 		DestructionEmitters = {
 			{
@@ -97,12 +100,13 @@ UnitBlueprint {
         UniformScale = 0.32,
     },
     Economy = {
-        BuildCostEnergy = 33000,
-        BuildCostMass = 3700, 
-        BuildTime = 14000,
+        BuildCostEnergy = 38000,
+        BuildCostMass = 3600, 
+        BuildTime = 36000,
     BuildRate = 160,
     DifferentialUpgradeCostCalculation = true,
         BuildableCategory = {
+            'coradlab',
             'KBOT LEVEL2 CORE',
             'KBOT LEVEL1 CORE',
         },
@@ -134,6 +138,7 @@ UnitBlueprint {
         TechLevel = 'RULEUTL_Basic',
         UnitName = 'Kbot Development Lab',
         UpgradesFrom = 'corlab', 
+        UpgradesTo = 'coradlab', 
     },
     Intel = {
         VisionRadius = 10,

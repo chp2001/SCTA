@@ -7,7 +7,7 @@ UnitBlueprint {
     Merge = true,
     Categories = {
         'SELECTABLE',
-        'TECH2',
+        'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -17,7 +17,7 @@ UnitBlueprint {
         'ARTILLERY',
         'CORE',
         'KBOT',
-        'LEVEL2',
+        'LEVEL3',
     },
     Display = {
         UniformScale = 0.2,
@@ -27,8 +27,8 @@ UnitBlueprint {
         MaxHealth = 1300,
     },
     Economy = {
-        BuildCostEnergy = 6900,
-        BuildCostMass = 1600,
+        BuildCostEnergy = 14000,
+        BuildCostMass = 1200,
         BuildTime = 21000,
     },
     Footprint = {

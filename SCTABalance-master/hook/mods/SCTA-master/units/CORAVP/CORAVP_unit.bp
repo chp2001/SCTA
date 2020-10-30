@@ -25,8 +25,8 @@ UnitBlueprint {
 	
     },
     Defense = {
-        Health = 4800,
-        MaxHealth = 4800,
+        Health = 11000,
+        MaxHealth = 11000,
     },
     Footprint = {
         MaxSlope = 0.625,
@@ -37,12 +37,14 @@ UnitBlueprint {
         UniformScale = 0.32,
     },
     Economy = {
-        BuildCostEnergy = 27000,
-        BuildCostMass = 3600, 
+        BuildCostEnergy = 45000,
+        BuildCostMass = 3800, 
+        BuildTime = 18000,
         BuildRate = 200,
         BuildableCategory = {
             'VEHICLE LEVEL1 CORE', 
             'VEHICLE LEVEL2 CORE',
+            'VEHICLE LEVEL3 CORE',
         },
     },
     LifeBarSize = 8,

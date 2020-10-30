@@ -31,7 +31,8 @@ UnitBlueprint {
 
 	
         'ARM',
-        'MINE',
+                'MINE',
+        'STRUCTURE',
 	
 	'LEVEL2',
 	

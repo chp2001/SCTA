@@ -30,8 +30,8 @@ UnitBlueprint {
 	
     },
     Defense = {
-        Health = 2400,
-        MaxHealth = 2400,
+        Health = 2200,
+        MaxHealth = 2200,
     },
         Display = {
              Abilities = {
@@ -41,7 +41,8 @@ UnitBlueprint {
         UniformScale = 0.32,
     },
     Economy = {
-        BuildCostEnergy = 5100,
+        BuildCostEnergy = 8000,
+        BuildCostMass = 680,
         BuildRate = 100,
         BuildableCategory = {
             'VTOL LEVEL1 ARM',

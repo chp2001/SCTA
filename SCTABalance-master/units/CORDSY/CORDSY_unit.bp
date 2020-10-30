@@ -52,8 +52,8 @@ UnitBlueprint {
     CollisionOffsetY = -0.5,
     Defense = {
         ArmorType = 'Structure',
-        Health = 5000,
-        MaxHealth = 5000,
+        Health = 10400,
+        MaxHealth = 10400,
         AirThreatLevel = 0,
         EconomyThreatLevel = 3,
         SubThreatLevel = 0,
@@ -96,9 +96,9 @@ UnitBlueprint {
         UniformScale = 0.32,
     },
     Economy = {
-        BuildCostEnergy = 42000,
-        BuildCostMass = 4200, 
-        BuildTime = 40500,
+        BuildCostEnergy = 40000,
+        BuildCostMass = 4000, 
+        BuildTime = 80000,
     BuildRate = 175,
     DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {

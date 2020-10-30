@@ -255,7 +255,7 @@ UnitBlueprint {
             UseFiringSolutionInsteadOfAimBone = true,
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 250,
+            Damage = 200,
             DamageRadius = 1,
             DamageType = 'Normal',
             DisplayName = 'CORCOMLASER',

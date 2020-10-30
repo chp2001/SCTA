@@ -48,7 +48,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 15,
+            Damage = 18,
 	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'GAUSS',
@@ -69,9 +69,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Muzzle',
+                        'flare',
                     },
-                    RackBone = 'Barrel',
+                    RackBone = 'barrel',
                 },
             },
             RackFireTogether = false,
@@ -88,9 +88,9 @@ UnitBlueprint {
             },
             FiringTolerance = 0.5,
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'Muzzle',
-            TurretBonePitch = 'Barrel',
-            TurretBoneYaw = 'Turret',
+            TurretBoneMuzzle = 'flare',
+            TurretBonePitch = 'barrel',
+            TurretBoneYaw = 'turret',
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 360,

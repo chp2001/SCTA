@@ -18,7 +18,7 @@ UnitBlueprint {
         'KBOT',
         'VEHICLE',
 	'LEVEL1',
-	
+    'VTOL',
 	
 	
 	
@@ -36,7 +36,8 @@ UnitBlueprint {
             SizeZ = 1,
         },
     Economy = {
-        BuildCostEnergy = 1200,
+        BuildCostEnergy = 1000,
+        BuildCostMass = 116,
         BuildTime = 3000,
         ProductionPerSecondEnergy = 2,
         BuildableCategory = {
@@ -53,10 +54,11 @@ UnitBlueprint {
         MaxBrake = 1.25,
         MaxSpeed = 1.7,
     },
+    LifeBarSize = 1.5,
     SelectionSizeX = 0.6,
     SelectionSizeZ = 0.6,
     SelectionThickness = 0.25,
-    SizeX = 1,
-    SizeY = 1,
-    SizeZ = 1,
+    SizeX = 1.2,
+    SizeY = 1.1,
+    SizeZ = 1.2,
 }

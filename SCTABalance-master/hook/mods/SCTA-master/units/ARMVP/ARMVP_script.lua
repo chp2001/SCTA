@@ -1,9 +1,9 @@
 local oldARMVP = ARMVP
 ARMVP = Class(oldARMVP) {
-       OnStopBuild = function(self, unitBuilding)
-            oldARMVP.OnStopBuild(self, unitBuilding)
-            if unitBuilding:GetFractionComplete() == 1 and unitBuilding:GetUnitId() == self:GetBlueprint().General.UpgradesTo then
-                NotifyUpgrade(self, unitBuilding)
+       OnStopBuild = function(self, unitBeingBuilt)
+            oldARMVP.OnStopBuild(self, unitBeingBuilt)
+            if unitBeingBuilt:GetFractionComplete() == 1 and unitBeingBuilt:GetUnitId() == self:GetBlueprint().General.UpgradesTo then
+                NotifyUpgrade(self, unitBeingBuilt)
                 self:Destroy()
             end
         end,

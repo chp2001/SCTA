@@ -44,7 +44,8 @@ UnitBlueprint {
             SizeZ = 8,
         },
     Economy = {
-        BuildCostEnergy = 3600,
+        BuildCostEnergy = 4500,
+        BuildCostMass = 600, 
         BuildRate = 120,
         BuildableCategory = {
             'VEHICLE LEVEL1 CORE',

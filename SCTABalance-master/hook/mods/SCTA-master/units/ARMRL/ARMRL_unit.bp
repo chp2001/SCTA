@@ -33,8 +33,8 @@ UnitBlueprint {
 	
     },
     Defense = {
-        Health = 600,
-        MaxHealth = 600,
+        Health = 400,
+        MaxHealth = 400,
     },
     Display = {
         Abilities = {

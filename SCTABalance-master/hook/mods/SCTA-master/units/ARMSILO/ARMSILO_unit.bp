@@ -8,9 +8,9 @@ UnitBlueprint {
             SizeZ = 7,
         },
     Economy = {
-        BuildCostEnergy = 110000,
-        BuildCostMass = 13500,
-        BuildTime = 600000,
+        BuildCostEnergy = 900000,
+        BuildCostMass = 120000,
+        BuildTime = 75000,
     },
   Defense = {
         Health = 30000,
@@ -19,6 +19,8 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 14,
     },
+    SelectionSizeX = 9,
+    SelectionSizeZ = 10,
     LifeBarSize = 10,
     SizeX = 14,
     SizeY = 6,
@@ -34,7 +36,6 @@ UnitBlueprint {
                 },
             },
             BallisticArc = 'RULEUBA_None',
-            RangeCategory = 'UWRC_IndirectFire',
             CollideFriendly = false,
             DamageFriendly = true,
             DamageType = 'Normal',
@@ -49,7 +50,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 0,
-            ProjectileId = '/mods/SCTA-master/SCTABalance-master/projectiles/NUCLSC_MISSILE/NUCLSC_MISSILE_proj.bp',
+            ProjectileId = '/mods/SCTA-master/SCTABalance-master/projectiles/CRSCMSSL/CRSCMSSL_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -83,11 +84,11 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 0,
-            NukeInnerRingDamage = 9000,
+            NukeInnerRingDamage = 20000,
             NukeInnerRingRadius = 45,
             NukeInnerRingTicks = 24,
             NukeInnerRingTotalTime = 12,
-            NukeOuterRingDamage = 2500,
+            NukeOuterRingDamage = 10000,
             NukeOuterRingRadius = 60,
             NukeOuterRingTicks = 20,
             NukeOuterRingTotalTime = 5,

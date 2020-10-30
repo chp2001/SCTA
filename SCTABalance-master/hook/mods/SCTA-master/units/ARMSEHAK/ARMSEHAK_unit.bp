@@ -13,6 +13,7 @@ UnitBlueprint {
         'MOBILE',
 	    'AIR',
     'VTOL',
+    'HIGHALTAIR',
     'INTELLIGENCE',
     'RADAR',
         'OVERLAYRADAR',

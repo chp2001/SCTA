@@ -19,9 +19,7 @@ UnitBlueprint {
 	'SPECIAL',
 	'LEVEL3',
 	'SORTINTEL',
-	
-	
-	
+	'TARGETING',
     },
  Display = {
   Abilities = {
@@ -32,7 +30,9 @@ UnitBlueprint {
      }, 
      Economy = {
         NaturalProducer = false,
-        BuildRate = 120, 
+        BuildCostEnergy = 6000,
+        BuildCostMass = 250,
+        BuildRate = 60, 
         DifferentialUpgradeCostCalculation = true,
         MaintenanceConsumptionPerSecondEnergy = 50,
         ProductionPerSecondEnergy = 0,

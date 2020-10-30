@@ -30,6 +30,7 @@ ARMAAP = Class(TAFactory) {
 
 	Aim = function(self, target)
 		TAFactory.Aim(self, target)
+		WaitFor(self.AnimManip)
 	end,
 
 	Close = function(self)

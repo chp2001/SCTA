@@ -22,9 +22,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 12,
     },
-    Interface = {
-        HelpText = 'Heavy Laser Tower',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

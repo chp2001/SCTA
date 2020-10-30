@@ -5,7 +5,7 @@
 
 UnitBlueprint {
     Merge = true, 
-    BuildIconSortPriority = 13,
+    BuildIconSortPriority = 10,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -23,8 +23,22 @@ UnitBlueprint {
 	'PARAL',
     },
     Defense = {
-        Health = 2500,
-        MaxHealth = 2500,
+        Health = 2000,
+        MaxHealth = 2000,
     },
-    StrategicIconName = 'icon_bot3_directfire',
+    Display = {
+        Abilities = {
+            '<LOC ability_jamming>Jamming',
+        },
+    },
+    Intel = {
+        FreeIntel = true,
+        JamRadius = {
+            Max = 20,
+            Min = 20,
+        },
+        JammerBlips = 4,
+        VisionRadius = 14,
+    },
+    StrategicIconName = 'icon_land2_counterintel',
 }

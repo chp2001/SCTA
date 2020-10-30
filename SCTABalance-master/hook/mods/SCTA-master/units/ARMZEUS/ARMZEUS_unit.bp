@@ -5,27 +5,23 @@
 
 UnitBlueprint {
    Merge = true,
-   BuildIconSortPriority = 12,
+   BuildIconSortPriority = 4,
    Categories = {
     'SELECTABLE',
     'TECH2',
     'VISIBLETORECON',
     'RECLAIMABLE',
-
-
     'MOBILE',
 'LAND',
 'DIRECTFIRE',
     'OVERLAYDIRECTFIRE',
-
-
     'ARM',
     'KBOT',
 'LEVEL2',
    },
     Defense = {
-        Health = 6000,
-        MaxHealth = 6000,
+        Health = 4000,
+        MaxHealth = 4000,
     },
     Footprint = {
 	SizeX = 1,
@@ -35,9 +31,9 @@ UnitBlueprint {
         VisionRadius = 12,
     },
     Economy = {
-        BuildCostEnergy = 20000,
-        BuildCostMass = 2000,
-        BuildTime = 29000,
+        BuildCostEnergy = 3000,
+        BuildCostMass = 400,
+        BuildTime = 5000,
     },
-    StrategicIconName = 'icon_bot3_armored',
+    StrategicIconName = 'icon_land2_directfire',
 }

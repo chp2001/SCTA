@@ -43,6 +43,9 @@ UnitBlueprint {
         BuildRate = 250,
         BuildCostEnergy = 39000,
         BuildCostMass = 4400, 
+        BuildableCategory = {
+            'HOVER ARM',
+        },
     },
     LifeBarSize = 8,
     SelectionSizeX = 9.9,

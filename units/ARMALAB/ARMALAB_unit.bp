@@ -59,6 +59,8 @@ UnitBlueprint {
     },
     Description = 'Produces Kbots',
     Display = {
+        AnimationUnpack = '/mods/SCTA-master/units/ARMALAB/ARMALAB_lod0_aopen.sca',
+        AnimationUnpackRate = 0.5, 
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate', 'CorBld'},
 		DestructionEmitters = {

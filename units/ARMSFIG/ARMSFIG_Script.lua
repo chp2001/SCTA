@@ -14,8 +14,8 @@ ARMSFIG = Class(TAair) {
 		self:SetMaintenanceConsumptionActive()
 		self.Spinners = {
 			base = CreateRotator(self, 0, 'z', nil, 0, 0, 0),
-			winga = CreateRotator(self, 'LWing', 'z', nil, 0, 0, 0),
-			wingb = CreateRotator(self, 'RWing', 'z', nil, 0, 0, 0),
+			winga = CreateRotator(self, 'LWing', 'y', nil, 0, 0, 0),
+			wingb = CreateRotator(self, 'RWing', 'y', nil, 0, 0, 0),
 		}
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
@@ -34,12 +34,12 @@ ARMSFIG = Class(TAair) {
 
 	OpenWings = function(self)
 		--TURN winga to z-axis <-91.21> SPEED <63.22>;
-		self.Spinners.winga:SetGoal(90)
-		self.Spinners.winga:SetSpeed(63)
+		self.Spinners.winga:SetGoal(30)
+		self.Spinners.winga:SetSpeed(30)
 
 		--TURN wingb to z-axis <91.21> SPEED <63.22>;
-		self.Spinners.wingb:SetGoal(-90)
-		self.Spinners.wingb:SetSpeed(63)
+		self.Spinners.wingb:SetGoal(-30)
+		self.Spinners.wingb:SetSpeed(30)
 
 		self.moving = true
 	end,

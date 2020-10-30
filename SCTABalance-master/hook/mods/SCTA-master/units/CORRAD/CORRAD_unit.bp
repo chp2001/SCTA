@@ -7,7 +7,7 @@ UnitBlueprint {
   },
 }, 
     Economy = {
-        BuildRate = 80, 
+        BuildRate = 40, 
         MaintenanceConsumptionPerSecondEnergy = 10,
         ProductionPerSecondEnergy = 0,
         BuildableCategory = {

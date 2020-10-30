@@ -101,8 +101,6 @@ UnitBlueprint {
         BuildTime = 6112,
     },
     Footprint = {
-	MaxSlope = 0.75,
-	MaxWaterDepth = 15,
         SizeX = 3,
         SizeZ = 3,
     },

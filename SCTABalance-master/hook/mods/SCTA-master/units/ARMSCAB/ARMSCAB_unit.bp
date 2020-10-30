@@ -14,7 +14,7 @@ UnitBlueprint {
     'OVERLAYDEFENSE',
     'SORTDEFENSE',
     'NEEDMOBILEBUILD',
-	
+	'BUILTBYT2AIR',
 	
 	
     },

@@ -166,11 +166,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'ARMTRUCK_ROCKET',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Air|Seabed',
-                Seabed = 'Land|Water|Air|Seabed',
+                Land = 'Land|Water|Air',
+                Seabed = 'Land|Water|Air',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
-     WeaponCategory = 'IndirectFire',
             FiringTolerance = 7,
             Label = 'ARMTRUCK_ROCKET',
             MaxRadius = 50,
@@ -179,14 +178,13 @@ UnitBlueprint {
             MuzzleVelocity = 0,
             EnergyDrainPerSecond = 5,
             EnergyRequired = 5,
-            
             ProjectileId = '/mods/SCTA-master/projectiles/ARMTRUCK_ROCKET/ARMTRUCK_ROCKET_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
                         'Muzzle',
                     },
-		    VisibleMuzzle = true,
+		    VisibleMuzzle = false,
                     RackBone = 'Muzzle',
                 },
             },

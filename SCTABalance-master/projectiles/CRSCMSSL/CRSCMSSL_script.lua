@@ -5,6 +5,7 @@
 
 local TANuclearProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TANuclearProjectile
 
+
 CRSCMSSL = Class(TANuclearProjectile) {
 
 	OnCreate = function(self)
@@ -67,7 +68,6 @@ CRSCMSSL = Class(TANuclearProjectile) {
         end
         TANuclearProjectile.OnImpact(self, TargetType, TargetEntity)
     end,
-
 }
 
 TypeClass = CRSCMSSL

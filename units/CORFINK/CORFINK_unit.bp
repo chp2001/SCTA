@@ -71,11 +71,9 @@ UnitBlueprint {
     'VTOL',
 	'SCOUT', 
         'CORE',
-        
-	
+        'HIGHALTAIR',
+        'INTELLIGENCE',
 	'LEVEL1',
-	
-	
     },
     Defense = {
         ArmorType = 'Light',
@@ -96,7 +94,7 @@ UnitBlueprint {
 		DestructionDebrisUseLocalVelocity = true,
 		DefaultFlamingProjectileCountMin = 0,
 		DefaultFlamingProjectileCountMax = 0,
-		#DefaultProjectileCategories = {'ArmCockpit'},
+		DefaultProjectileCategories = {'ArmCockpit'},
 		FlashSize = 10,
 		FlashTime = 10,
 		DestructionEmitters = {

@@ -32,22 +32,13 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
         'DIRECTFIRE',
         'KBOT',
         'LAND',
-        'BOT',
-
-	
         'ARM',
         'HOVER',
-	
 	'LEVEL2',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -174,13 +165,13 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 40,
+            Damage = 120,
             DamageRadius = 1.5,
             DamageType = 'AntiAir',
             DisplayName = 'armamph_weapon1',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Air|Seabed',
-                Water = 'Land|Water|Air|Seabed',
+                Land = 'Land|Water|Air',
+                Water = 'Land|Water|Air',
             },
             RangeCategory = 'UWRC_AntiAir',
             WeaponCategory = 'AntiAir',
@@ -246,8 +237,8 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'armamph_weapon2',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Air|Seabed',
-                Water = 'Land|Water|Air|Seabed',
+                Land = 'Land|Water|Air',
+                Water = 'Land|Water|Air',
             },
             RangeCategory = 'UWRC_DirectFire',
             WeaponCategory = 'DirectFire',

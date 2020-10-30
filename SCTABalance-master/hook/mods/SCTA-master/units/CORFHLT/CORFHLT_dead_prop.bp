@@ -8,9 +8,11 @@ PropBlueprint {
         SizeX = 1,
         SizeZ = 1,
     },
-    Interface = {
-        HelpText = 'Wreckage',
-    },
+    Economy = {
+        ReclaimEnergyMax = 0,
+        ReclaimMassMax = 400,
+        ReclaimTime = 10,
+        },
     Physics = {
         BlockPath = false, 
     },

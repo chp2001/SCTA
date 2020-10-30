@@ -3,4 +3,9 @@ PropBlueprint {
     Display = {
         UniformScale = 0.32,
     },
+    Economy = {
+        ReclaimEnergyMax = 0,
+        ReclaimMassMax = 420,
+        ReclaimTime = 10,
+        },
 }

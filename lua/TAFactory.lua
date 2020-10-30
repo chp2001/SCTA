@@ -50,13 +50,18 @@ TAFactory = Class(TAconstructor) {
 	end,
 
 	OnStopBuild = function(self, unitBeingBuilt, order )
-        self:LOGDBG('TAFactory.OnStopBuild')
+		self:LOGDBG('TAFactory.OnStopBuild')
 		TAconstructor.OnStopBuild(self, unitBeingBuilt, order )
+		ForkThread(self.FactoryOnStopBuild, self, unitBeingBuilt, order )
+	end,
+
+	FactoryOnStopBuild = function(self, unitBeingBuilt, order )
+		--WaitSeconds(1)
 		self:SetBusy(true)
 		self:SetBlockCommandQueue(false)
         if unitBeingBuilt and unitBeingBuilt.Dead then
             self.desiredState = "aimed"
-        end
+		end
 	end,
 
 	RollOff = function(self)
@@ -64,8 +69,10 @@ TAFactory = Class(TAconstructor) {
         if not IsDestroyed(self) and self.isFactory == true then
 			ChangeState(self, self.IdleState)
 			WaitSeconds(0.5)
+			if not IsDestroyed(self) then
 			self:SetBusy(false)
 			self:SetBlockCommandQueue(false)
+			end
 		end 
 		---self:OnStopBuild()
 	end,
@@ -79,7 +86,9 @@ TAFactory = Class(TAconstructor) {
 	end,
 	
 	Aim = function(self, target)
-        self:LOGDBG('TAFactory.Aim')
+		self:LOGDBG('TAFactory.Aim')
+		if not IsDestroyed(target) and not IsDestroyed(self) and self.isFactory == true then
+		end
 	end,
 
 	DelayedClose = function(self)
@@ -112,6 +121,9 @@ TAFactory = Class(TAconstructor) {
         self:LOGDBG('TAFactory.Close')
 		self:SetBusy(false)
 		self:SetBlockCommandQueue(false)
+		if self.isBuilding == true then
+			self.desiredState = "aimed"
+		end
 		---self:OnStopBuild()
 	end,
 
@@ -176,35 +188,6 @@ TAFactory = Class(TAconstructor) {
 			WaitSeconds(0.25)
 		end
 	end,
-
-	UpgradingState = State {
-        Main = function(self)
-            self:StopRocking()
-            local bp = self:GetBlueprint().Display
-            self:DisableDefaultToggleCaps()
-        end,
-
-        OnStopBuild = function(self, unitBuilding)
-            TAconstructor.OnStopBuild(self, unitBuilding)
-            self:EnableDefaultToggleCaps()
-            
-            if unitBuilding:GetFractionComplete() == 1 then
-                NotifyUpgrade(self, unitBuilding)
-                self:Destroy()
-            end
-        end,
-
-        OnFailedToBuild = function(self)
-            TAconstructor.OnFailedToBuild(self)
-            self:EnableDefaultToggleCaps()
-            if self:GetCurrentLayer() == 'Water' then
-                self:StartRocking()
-            end
-            ChangeState(self, self.IdleState)
-        end,
-        
-	},
-	
 }
 
 TypeClass = TAFactory

@@ -63,12 +63,16 @@ UnitBlueprint {
             'Tank',
         },
         MovementEffects = {
+            Bones = {'ARMSTUMP'},
+            Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
+            Scale = 0.5, 
             Land = {
                 Treads = {
                     ScrollMultiplier = 0.75,
                     ScrollTreads = true,
                     TreadMarks = {
                         {
+                            BoneName = 'ARMSTUMP',
                             TreadMarks = 'tank_treads_albedo',
                             TreadMarksInterval = 0.2,
                             TreadMarksSizeX = 1,

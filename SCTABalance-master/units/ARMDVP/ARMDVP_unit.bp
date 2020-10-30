@@ -51,8 +51,8 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Structure',
-        Health = 3600,
-        MaxHealth = 3600,
+        Health = 9200,
+        MaxHealth = 9200,
         AirThreatLevel = 0,
         EconomyThreatLevel = 11,
         SubThreatLevel = 0,
@@ -60,6 +60,9 @@ UnitBlueprint {
     },
     Description = 'Produces Vehicles',
     Display = {
+        Abilities = {
+            'Upgradeable',
+        },
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate','Circuits'},
 		DestructionEmitters = {
@@ -97,14 +100,15 @@ UnitBlueprint {
         UniformScale = 0.32,
     },
     Economy = {
-        BuildCostEnergy = 33000,
-        BuildCostMass = 3700, 
-        BuildTime = 14950,
+        BuildCostEnergy = 38000,
+        BuildCostMass = 3600, 
+        BuildTime = 36000,
         DifferentialUpgradeCostCalculation = true,
 	BuildRate = 160,
         BuildableCategory = {
             'VEHICLE LEVEL1 ARM',
             'VEHICLE LEVEL2 ARM',
+            'armadvp',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7.5,
@@ -134,6 +138,7 @@ UnitBlueprint {
         TechLevel = 'RULEUTL_Basic',
         UnitName = 'Vehicle Development Plant',
         UpgradesFrom = 'armvp', 
+        UpgradesTo = 'armadvp', 
     },
     Intel = {
         VisionRadius = 10,

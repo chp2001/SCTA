@@ -1,0 +1,22 @@
+#ARM Seer - Mobile Radar
+#ARMSEER
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH2',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	'LAND',
+	'INTELLIGENCE',
+	'RADAR',
+        'OVERLAYRADAR',
+        'ARM',
+        --'VEHICLE',	#'TANK' in TA
+	'LEVEL2',
+    },
+}

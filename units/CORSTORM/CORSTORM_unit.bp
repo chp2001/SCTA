@@ -84,11 +84,23 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
 	SmokeBone = 'torso',
+	        TransportAnimation = {
+            {
+                Animation = '/mods/SCTA-master/units/CORSTORM/CORSTORM_lod0_Afold.sca',
+                Weight = 100,
+            },
+		},
+		
+		TransportDropAnimation = {
+            {
+                Animation = '/mods/SCTA-master/units/CORSTORM/CORSTORM_lod0_Aunfold.sca',
+                Weight = 100,
+            },
+        },
         UniformScale = 0.16,
     },
     Economy = {

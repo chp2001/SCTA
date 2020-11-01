@@ -1,5 +1,6 @@
 UnitBlueprint {
     Merge = true, 
+    BuildIconSortPriority = 1,
     Categories = {
         'SELECTABLE',
         'TECH3',
@@ -57,4 +58,5 @@ UnitBlueprint {
     },
     SelectionSizeX = 1.25,
     SelectionSizeZ = 1.9,
+    StrategicIconName = 'icon_sub3_intel',
 }

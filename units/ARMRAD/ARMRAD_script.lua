@@ -11,9 +11,9 @@ ARMRAD = Class(TAunit) {
 	OnCreate = function(self)
 		TAunit.OnCreate(self)
 		self.Spinners = {
-			ear1 = CreateRotator(self, 'Dish_01', 'x', nil, 0, 0, 0),
-			ear2 = CreateRotator(self, 'Dish_02', 'x', nil, 0, 0, 0),
-			dish = CreateRotator(self, 'Radar', 'y', nil, 0, 0, 0),
+			ear1 = CreateRotator(self, 'dish1', 'x', nil, 0, 0, 0),
+			ear2 = CreateRotator(self, 'dish2', 'x', nil, 0, 0, 0),
+			dish = CreateRotator(self, 'radar', 'y', nil, 0, 0, 0),
 		}
 		for k, v in self.Spinners do
 			self.Trash:Add(v)

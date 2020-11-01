@@ -24,6 +24,15 @@ UnitBlueprint {
         Health = 6400,
         MaxHealth = 6400,
     },
+    Display = {
+        UniformScale = 0.12,
+    },
+    SelectionSizeX = 1.4,
+    SelectionSizeZ = 1.4,
+    SelectionCenterOffsetZ = 0,
+    SizeX = 1.8,
+    SizeY = 1,
+    SizeZ = 1.8,
     Economy = {
         BuildCostEnergy = 12000,
         BuildCostMass = 2000,

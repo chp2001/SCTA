@@ -212,15 +212,17 @@ TAunitkeygroups = {
         "cormist",
         "corcrash",
     },
+    ["Builders"] = {
+        "armdecom",
+        "cordecom",
+    },
     ["T1_Engineer"]= {
         "armck",
         "armcs",
         "armcv",
-        "armch",
         "corck",
         "corcs",
         "corcv",
-        "corch",
     },
     ["T1_Light_Assault_Bot"]= {
         "armpw",
@@ -252,6 +254,7 @@ TAunitkeygroups = {
         "armyork",
         "armspdaa",
         "corsent",
+        "corsling",
     },
     ["T2_Field_Engineer"]= {
         "armfark", 
@@ -270,8 +273,10 @@ TAunitkeygroups = {
     ["T3_Engineer"] = {
         "armaca",
         "armcsa",
+        "armch",
         "coraca",
         "corcsa",
+        "corch",
     },
     ["T1_Frigate"]= {
         "armroy",
@@ -315,6 +320,10 @@ TAunitkeygroups = {
         "armmart",
         "cormart",
         "cormort",
+    },
+    ["T3_Aircraft_Carrier"] = {
+        'armcarry',
+        'corcarry',
     },
     ["T3_Sniper_Bot"] = {
         "armsnipe",

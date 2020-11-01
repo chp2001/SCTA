@@ -80,7 +80,7 @@ UnitBlueprint {
 		},
 		DestructionEmitters = {
 			{
-				EmitterBone = {0, 'Radar'},
+				EmitterBone = {0, 'radar'},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},

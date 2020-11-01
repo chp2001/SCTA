@@ -24,7 +24,7 @@ UnitBlueprint {
 	
     },
         Display = {
-        UniformScale = 0.22,
+        UniformScale = 0.24,
     },
     Defense = {
         Health = 10000,
@@ -54,6 +54,6 @@ UnitBlueprint {
     SelectionSizeZ = 5,
     SelectionThickness = 0.25,
     SizeX = 9,
-    SizeY = 2,
+    SizeY = 1,
     SizeZ = 9,
 }

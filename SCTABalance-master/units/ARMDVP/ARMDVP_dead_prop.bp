@@ -42,7 +42,7 @@ PropBlueprint {
     ScriptClass = 'TAWreckage',
     ScriptModule = '/mods/SCTA-master/SCTABalance-master/lua/TAWreckage.lua',
     SizeX = 6,
-    SizeY = 2,
+    SizeY = 1,
     SizeZ = 6,
     CollisionSizeX = 7,
     CollisionOffsetZ = 1,

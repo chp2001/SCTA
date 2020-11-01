@@ -177,7 +177,7 @@ UnitBlueprint {
     SelectionSizeZ = 5,
     SelectionThickness = 0.25,
     SizeX = 9,
-    SizeY = 2,
+    SizeY = 1,
     SizeZ = 9,
     StrategicIconName = 'icon_factory2_land', --'icon_factory1_bot',
     StrategicIconSortPriority = 0,

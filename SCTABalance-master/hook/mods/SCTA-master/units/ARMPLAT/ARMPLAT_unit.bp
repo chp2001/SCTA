@@ -36,8 +36,8 @@ UnitBlueprint {
     },
     Footprint = {
         MinWaterDepth = 1.875,
-        SizeX = 5,
-        SizeZ = 5,
+        SizeX = 8,
+        SizeZ = 8,
     },
     Economy = {
         BuildCostEnergy = 60000,
@@ -59,10 +59,11 @@ UnitBlueprint {
         SkirtSizeZ = 4,
     },
     LifeBarSize = 8,
-    SelectionSizeX = 8,
-    SelectionSizeZ = 6,
-    SizeX = 8,
-    SizeY = 4,
-    SizeZ = 8,
+    SelectionSizeX = 7,
+    SelectionSizeZ = 5,
+    SelectionThickness = 0.25,
+    SizeX = 9,
+    SizeY = 2,
+    SizeZ = 9,
     StrategicIconName = 'icon_factory3_air',
 }

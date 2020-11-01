@@ -60,7 +60,8 @@ UnitBlueprint {
 	
 	
     },
-    CollisionOffsetY = -0.5,
+    CollisionOffsetY = -1,
+    CollisionOffsetZ = 0,
     Defense = {
         ArmorType = 'Structure',
         Health = 2490,
@@ -121,8 +122,8 @@ UnitBlueprint {
         StorageEnergy = 100,
     },
     Footprint = {
-        SizeX = 8,
-        SizeZ = 8,
+        SizeX = 12,
+        SizeZ = 12,
 	MinWaterDepth = 1.875,
     },
     General = {

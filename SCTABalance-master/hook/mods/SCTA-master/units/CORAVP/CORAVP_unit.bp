@@ -19,23 +19,19 @@ UnitBlueprint {
 		'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         Health = 11000,
         MaxHealth = 11000,
     },
+    Display = {
+        UniformScale = 0.2,
+    },
     Footprint = {
         MaxSlope = 0.625,
-            SizeX = 9,
-            SizeZ = 7,
+        SizeX = 8,
+        SizeZ = 8,
         },
-        Display = {
-        UniformScale = 0.32,
-    },
     Economy = {
         BuildCostEnergy = 45000,
         BuildCostMass = 6000, 
@@ -51,9 +47,10 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 10,
     },
-    SelectionSizeX = 9.9,
-    SelectionSizeZ = 6.8,
-    SizeX = 12,
-    SizeY = 5,
-    SizeZ = 12,
+    SelectionSizeX = 7,
+    SelectionSizeZ = 5,
+    SelectionThickness = 0.25,
+    SizeX = 9,
+    SizeY = 2,
+    SizeZ = 9,
 }

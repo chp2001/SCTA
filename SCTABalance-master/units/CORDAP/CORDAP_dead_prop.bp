@@ -44,6 +44,6 @@ PropBlueprint {
     ScriptClass = 'TAWreckage',
     ScriptModule = '/mods/SCTA-master/lua/TAWreckage.lua',
     SizeX = 7,
-    SizeY = 2,
-    SizeZ = 6,
+    SizeY = 1,
+    SizeZ = 7,
 }

@@ -59,6 +59,8 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
+    ---CollisionOffsetY = -0.5,
+    --CollisionOffsetZ = 0,
     Description = 'Builds Seaplanes',
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/ARMPLAT/ARMPLAT_lod0_UnPaCk.sca',

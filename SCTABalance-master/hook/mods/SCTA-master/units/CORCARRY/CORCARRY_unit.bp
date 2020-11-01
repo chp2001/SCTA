@@ -5,6 +5,7 @@
 
 UnitBlueprint {
     Merge = true, 
+    BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
         'DRAGBUILD',
@@ -27,6 +28,10 @@ UnitBlueprint {
 	'SHOWQUEUE',
 	
 	
+    },
+    Defense = {
+        Health = 17000,
+        MaxHealth = 17000,
     },
     Display = {
     BuildBones = {'nano2', 'nano3'},

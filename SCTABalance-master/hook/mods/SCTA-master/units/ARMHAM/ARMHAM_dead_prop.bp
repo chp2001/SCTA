@@ -1,7 +1,7 @@
 PropBlueprint {
     Merge = true, 
     Display = {
-        UniformScale = 0.10,
+        UniformScale = 0.075,
     },
     Footprint = {
         SizeX = 1,
@@ -12,4 +12,7 @@ PropBlueprint {
         ReclaimMassMax = 75,
         ReclaimTime = 10,
     },
+    SizeX = 1,
+    SizeY = 1,
+    SizeZ = 1,
 }

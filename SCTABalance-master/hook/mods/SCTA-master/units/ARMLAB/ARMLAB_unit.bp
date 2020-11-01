@@ -1,5 +1,6 @@
 UnitBlueprint {
     Merge = true,
+    BuildIconSortPriority = 1,
     Categories = {
         'BUILTBYT1AIR',
         'BUILTBYT1KBOT',
@@ -22,9 +23,6 @@ UnitBlueprint {
 		'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL1',
-	
-	
-	
     },
         Display = {
              Abilities = {

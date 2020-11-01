@@ -95,7 +95,7 @@ UnitBlueprint {
         BuildTime = 41937,
         BuildRate = 200,
         BuildableCategory = {
-            'CORKROG',
+            'LEVEL4 KBOT CORE',
         },
         InitialRallyX = 0,
         InitialRallyZ = 7.5,

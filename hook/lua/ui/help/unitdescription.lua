@@ -304,7 +304,7 @@ Description = table.merged( Description, {
     ['cordsy'] = "<LOC cordsy_help>. For SCTABalance, an upgrade from CORSY to access T2.",
     ['coradsy'] = "<LOC coradsy_help>. For SCTABalance, an upgrade from CORDSY to access T3.",
     ['cordlab'] = "<LOC cordlab_help>. For SCTABalance, an upgrade from CORLAB, to access T2",
-    ['coradlab'] = "<LOC coradlab_help>. For SCTABalance, an upgrade from CORADLAB to access T3.",
+    ['coradlab'] = "<LOC coradlab_help>. For SCTABalance, an upgrade from CORDLAB to access T3.",
 } )
 
 end

@@ -287,16 +287,24 @@ Description = table.merged( Description, {
     ['mss0007'] = "<LOC mss0007_help>."         ,
 
     ['armdrake'] = "<LOC armdrake_help> ARM KBot invoking Dragons of Bygone Eras. SCTABalance Only",
-    ['armgant'] = "<LOC armgant_help> ARM Factory, that ARM Drakes. SCTABalance Only",
+    ['armgant'] = "<LOC armgant_help> ARM Factory, that build ARM Drakes. SCTABalance Only",
     ['armspdaa'] = "<LOC armspdaa_help> For SCTABalance, Spider KBot to help ARM Kbots defend against air threats",
     ['armdvp'] = "<LOC armdvp_help>. For SCTABalance, an upgrade from ARMVP to access T2.",
+    ['armadvp'] = "<LOC armadvp_help>. For SCTABalance, an upgrade from ARMDVP to access T3.",
     ['armdsy'] = "<LOC armdsy_help>. For SCTABalance, an upgrade from ARMSY to access T2.",
+    ['armadsy'] = "<LOC armadsy_help>. For SCTABalance, an upgrade from ARMDSY to access T3.",
     ['armdap'] = "<LOC armdap_help>. For SCTABalance, an upgrade from ARMAP to access T2.",
     ['armdlab'] = "<LOC armdlab_help>. For SCTABalance, an upgrade from ARMLAB, to access T2.",
-    ['cordlab'] = "<LOC cordvp_help>. For SCTABalance, an upgrade from CORVP, to access T2",
+    ['armadlab'] = "<LOC armadlab_help>. For SCTABalance, an upgrade from ARMDLAB to access T3.",
+    ['armhrk'] = "<LOC armhrk_help>."         ,
+    ['corsling'] = "<LOC corsling_help> For SCTABalance, Turtle KBot to help CORE Kbots defend against air threats",
+    ['cordvp'] = "<LOC cordvp_help>. For SCTABalance, an upgrade from CORVP, to access T2",
+    ['coradvp'] = "<LOC coradvp_help>. For SCTABalance, an upgrade from CORDVP to access T3.",
     ['cordap'] = "<LOC cordap_help>. For SCTABalance, an upgrade from CORAP to access T2.",
     ['cordsy'] = "<LOC cordsy_help>. For SCTABalance, an upgrade from CORSY to access T2.",
-    ['cordvp'] = "<LOC cordlab_help>. For SCTABalance, an upgrade from CORLAB, to access T2",
+    ['coradsy'] = "<LOC coradsy_help>. For SCTABalance, an upgrade from CORDSY to access T3.",
+    ['cordlab'] = "<LOC cordlab_help>. For SCTABalance, an upgrade from CORLAB, to access T2",
+    ['coradlab'] = "<LOC coradlab_help>. For SCTABalance, an upgrade from CORADLAB to access T3.",
 } )
 
 end

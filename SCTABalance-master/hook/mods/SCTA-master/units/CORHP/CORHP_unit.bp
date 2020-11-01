@@ -31,7 +31,7 @@ UnitBlueprint {
         MaxHealth = 4000,
         },
         Display = {
-            UniformScale = 0.22,
+            UniformScale = 0.17,
         },
         Footprint = {
             MaxSlope = 0.625,
@@ -47,10 +47,11 @@ UnitBlueprint {
             'HOVER CORE',
         },
     },
-    SelectionSizeX = 9.9,
-    SelectionSizeZ = 6.8,
-    SizeX = 12,
-    SizeY = 5,
-    SizeZ = 12,
+    SelectionSizeX = 7,
+    SelectionSizeZ = 5,
+    SelectionThickness = 0.25,
+    SizeX = 9,
+    SizeY = 2,
+    SizeZ = 9,
     StrategicIconName = 'icon_factory3_naval',
  }

@@ -28,7 +28,7 @@ UnitBlueprint {
              Abilities = {
             '<LOC ability_upgradable>Upgradeable',
         },
-        UniformScale = 0.32,
+        UniformScale = 0.25,
     },
     Footprint = {
         MaxSlope = 0.625,
@@ -56,9 +56,10 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 10,
     },
-    SelectionSizeX = 9.9,
-    SelectionSizeZ = 6.8,
-    SizeX = 12,
-    SizeY = 5,
-    SizeZ = 12,
+    SelectionSizeX = 7,
+    SelectionSizeZ = 5,
+    SelectionThickness = 0.25,
+    SizeX = 9,
+    SizeY = 2,
+    SizeZ = 9,
 }

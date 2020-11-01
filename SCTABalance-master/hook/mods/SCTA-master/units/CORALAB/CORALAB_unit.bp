@@ -28,7 +28,7 @@ UnitBlueprint {
         MaxHealth = 8200,
     },
         Display = {
-        UniformScale = 0.2,
+        UniformScale = 0.24,
     },
     Footprint = {
         MaxSlope = 0.625,

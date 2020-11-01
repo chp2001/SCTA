@@ -100,7 +100,7 @@ UnitBlueprint {
         BuildTime = 41937,
         BuildRate = 250,
         BuildableCategory = {
-            'ARMDRAKE',
+            'KBOT LEVEL4 ARM',
         },
         InitialRallyX = 0,
         InitialRallyZ = 7.5,

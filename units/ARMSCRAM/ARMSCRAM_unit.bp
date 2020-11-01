@@ -49,14 +49,10 @@ UnitBlueprint {
         'COUNTERINTELLIGENCE',
         'DEFENSIVEBOAT',
         'ARM',
-        'SHIP',
         'SUBMERSIBLE',
     'JAM',
     'ADVANCEDSUB',
 	'LEVEL2',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',

@@ -50,7 +50,7 @@ UnitBlueprint {
     Description = 'Mobile Radar Kbot',
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORVOYR/CORVOYR_lod0_Awalk.sca',
-        AnimationWalkRate = 1,
+        AnimationWalkRate = 2,
 	DestructionEffects = {
 		DestructionEmitters = {
 			{

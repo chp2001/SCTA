@@ -19,12 +19,7 @@ UnitBlueprint {
         'OVERLAYSONAR',
         'SELECTION',
         'ARM',
-	
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         Health = 900,

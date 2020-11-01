@@ -1,8 +1,8 @@
 UnitBlueprint {
    Merge = true, 
    Defense = {
-    Health = 560,
-    MaxHealth = 560,
+    Health = 520,
+    MaxHealth = 520,
     },
     Display = {
         UniformScale = 0.14,
@@ -25,7 +25,7 @@ SizeZ = 1.6,
 Physics = {
     MaxBrake = 2.4,
     MaxSpeed = 2.8,
-    TurnRate = 80,
+    TurnRate = 120,
     StandUpright = true,
     MaxSteerForce = 10,
     },

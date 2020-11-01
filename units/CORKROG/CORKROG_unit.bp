@@ -40,14 +40,10 @@ UnitBlueprint {
         'TEXTUREANIM',
         'OVERLAYINDIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-        'OVERLAYANTIAIR',
-        'CORKROG',        
+        'OVERLAYANTIAIR',        
         'CORE',
         'KBOT',
-        
-        
-        
-        
+        'LEVEL4',
     },
     Defense = {
         AirThreatLevel = 0,
@@ -165,7 +161,7 @@ UnitBlueprint {
             },
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-            DamageFriendly = true,
+            DamageFriendly = false,
             Damage = 1000,
             DamageRadius = 3,
             DamageType = 'Normal',
@@ -237,7 +233,7 @@ UnitBlueprint {
             },
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-            DamageFriendly = true,
+            DamageFriendly = false,
             Damage = 6000,
             DamageRadius = 0.25,
             DamageType = 'Normal',
@@ -300,7 +296,7 @@ UnitBlueprint {
             },
             BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
-            DamageFriendly = true,
+            DamageFriendly = false,
             Damage = 600,
             DamageRadius = 2.5,
             DamageType = 'AntiAir',

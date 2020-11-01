@@ -40,12 +40,7 @@ UnitBlueprint {
         'OVERLAYANTINAVY',
 	'ADVANCEDSUB',
         'ARM',
-        
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',

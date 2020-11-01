@@ -42,10 +42,7 @@ UnitBlueprint {
         'ARMDRAKE',        
         'ARM',
         'KBOT',
-        
-        
-        
-        
+        'LEVEL4',  
     },
     Defense = {
         AirThreatLevel = 0,
@@ -136,9 +133,9 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
         BackUpDistance = 0,
         MaxSpeedReverse = 0,
-        MaxAcceleration = 3.24,
-        MaxBrake = 6.84,
-        MaxSpeed = 2,
+        MaxAcceleration = 2.4,
+        MaxBrake = 3,
+        MaxSpeed = 3.2,
         MotionType = 'RULEUMT_Amphibious',
         TurnRate = 158,
         StandUpright = true,
@@ -179,7 +176,7 @@ UnitBlueprint {
             MaxRadius = 30,
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 3,
-			MuzzleVelocity = 28.125,
+			MuzzleVelocity = 32,
             ProjectileId = '/mods/SCTA-master/SCTABalance-master/projectiles/ARMDRAK_LASER/ARMDRAK_LASER_proj.bp',
             RackBones = {
                 {

@@ -5,12 +5,13 @@
 
 UnitBlueprint {
     Merge = true, 
+    BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH2',
+        'TECH3',
         'REPAIR',
     'NAVAL',
     'FACTORY',
@@ -22,11 +23,15 @@ UnitBlueprint {
         'OVERLAYMISC',
 	'CORE',
 	'SHIP',
-	'LEVEL2',
+	'LEVEL3',
 	'NAVALCARRIER',
 	'SHOWQUEUE',
 	
 	
+    },
+    Defense = {
+        Health = 17000,
+        MaxHealth = 17000,
     },
     Display = {
     BuildBones = {'nano2', 'nano3'},

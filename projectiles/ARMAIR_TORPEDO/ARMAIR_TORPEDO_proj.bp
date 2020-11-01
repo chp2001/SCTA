@@ -35,10 +35,10 @@ ProjectileBlueprint {
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/torpedo_mesh.bp',
         StrategicIconSize = 1,
-        UniformScale = 0.16,
+        UniformScale = 0.22,
     },
     General = {
-        Category = 'Direct Fire',
+        Category = 'Anti Navy',
         EntityCategory = {
             'ARM',
             'PROJECTILE',

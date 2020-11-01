@@ -56,7 +56,7 @@ UnitBlueprint {
     Description = 'Rocket Kbot',
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORSTORM/CORSTORM_lod0_Awalk.sca',
-        AnimationWalkRate = 1,
+        AnimationWalkRate = 1.5,
         Abilities = {
             'Rocket',
         },
@@ -84,11 +84,23 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
 	SmokeBone = 'torso',
+	        TransportAnimation = {
+            {
+                Animation = '/mods/SCTA-master/units/CORSTORM/CORSTORM_lod0_Afold.sca',
+                Weight = 100,
+            },
+		},
+		
+		TransportDropAnimation = {
+            {
+                Animation = '/mods/SCTA-master/units/CORSTORM/CORSTORM_lod0_Aunfold.sca',
+                Weight = 100,
+            },
+        },
         UniformScale = 0.16,
     },
     Economy = {
@@ -158,7 +170,7 @@ UnitBlueprint {
             },
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-            AlternateDamageFriendly = true,
+            --AlternateDamageFriendly = true,
             Damage = 100,
             DamageRadius = 1.5, 
             FiringRandomness = 0,
@@ -175,7 +187,7 @@ UnitBlueprint {
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 15.625,
+            MuzzleVelocity = 20,
             ProjectileId = '/mods/SCTA-master/projectiles/CORKBOT_ROCKET/CORKBOT_ROCKET_proj.bp',
             RackBones = {
                 {
@@ -203,7 +215,7 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'turret',
+            TurretBoneMuzzle = 'aim',
             TurretBonePitch = 'launcher',
             TurretBoneYaw = 'turret',
             TurretPitch = 0,

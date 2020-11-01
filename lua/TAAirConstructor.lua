@@ -25,21 +25,18 @@ TAAirConstructor = Class(TAair) {
 		while not IsDestroyed(self) and self.wantStopAnimation == false do
 			if (self.currentState ~= self.desiredState) then
 				if (self.currentState == "closed") then
-					#desiredState will only ever be "opened" from this state
 					self:Open()
 					self.currentState = "opened"
 					self.desiredState = "aimed"
 				elseif(self.currentState == "opened") then
 					if (self.desiredState == "closed") then
 						self:DelayedClose()
-						--Check to make sure we still want to close
 						if (self.desiredState == "closed") then	
 							self:Close()
 							self.currentState = "closed"
 						end
 					elseif (self.desiredState == "aimed") then
 						if (self.currentTarget and not IsDestroyed(self.currentTarget)) then
-							--self:StopSpin(self.currentTarget)
 						end
 						self.currentTarget = self.desiredTarget
 						self.currentState = "aimed"
@@ -105,7 +102,7 @@ TAAirConstructor = Class(TAair) {
 		end
 		self:SetAllWeaponsEnabled(false)
 		if self.hideUnit and IsDestroyed(unitBeingBuilt) == false then
-			unitBeingBuilt:HideBone(0, true)
+			unitBeingBuilt:HideBone(0, false)
 			#Need to Hide Life Bar
 		end
 		self.isBuilding = true

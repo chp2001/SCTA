@@ -1,7 +1,7 @@
 PropBlueprint {
    Merge = true, 
     Display = {
-        UniformScale = 0.09,
+        UniformScale = 0.08,
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,

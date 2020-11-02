@@ -44,7 +44,8 @@ UnitBlueprint {
         BuildCostEnergy = 39000,
         BuildCostMass = 4400, 
         BuildableCategory = {
-            'HOVER ARM',
+            'HOVER LEVEL1 ARM',
+            'HOVER LEVEL3 ARM',
         },
     },
     LifeBarSize = 8,

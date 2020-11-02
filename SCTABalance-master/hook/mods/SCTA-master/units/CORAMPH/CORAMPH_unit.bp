@@ -10,7 +10,7 @@ UnitBlueprint {
     'KBOT',
     'LAND',
     'CORE',
-    'HOVER',	
+    'AMPHIBIOUS',
 'LEVEL3',
 },
    Defense = {

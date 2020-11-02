@@ -9,8 +9,10 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'LAND',
         'CORE',
+        'VEHICLE',
+        'KBOT',
         'HOVER',
-	'LEVEL1',
+	'LEVEL3',
     },
     Defense = {
         Health = 12000,
@@ -22,7 +24,7 @@ UnitBlueprint {
         BuildCostMass = 2100,
         BuildTime = 32000,
     },
-    StrategicIconName = 'icon_bot3_armored',
+    StrategicIconName = 'icon_land3_directfire',
     Weapon = {
         {
             Audio = {

@@ -9,12 +9,10 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'LAND',
         'ARM',
+        'VEHICLE',
+        'KBOT',
         'HOVER',
-	
-	'LEVEL1',
-	
-	
-	
+	'LEVEL3',
     },
     Defense = {
         Health = 8500,

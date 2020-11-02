@@ -44,7 +44,9 @@ UnitBlueprint {
         BuildCostEnergy = 39000,
         BuildCostMass = 4400, 
         BuildableCategory = {
-            'HOVER CORE',
+            'HOVER LEVEL1 CORE',
+            'HOVER LEVEL3 CORE',
+            'coramph',
         },
     },
     SelectionSizeX = 7,

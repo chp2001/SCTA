@@ -232,17 +232,17 @@ TAunitkeygroups = {
     },
     ["T2_Mobile_Missile_Launcher"]= {
         "armmerl",
-        "armmh",
         "corvroc",
-        "cormh",
         "armhrk",
         "corhrk",
+    },
+    ["T2_Counter_Intelligence_Boat"] = {
+        "armsjam",
+        "corsjam",
     },
     ["T1_Tank"]= {
         "armstump",
         "corraid",
-        "armanac",
-        "corsnap",
     },
     ["T2_Heavy_Tank"]= {
         "armbull",
@@ -326,8 +326,24 @@ TAunitkeygroups = {
         'corcarry',
     },
     ["T3_Sniper_Bot"] = {
-        "armsnipe",
+        "armmav",
         "armmanni",
+    },    
+    ["T3_Siege_Assault_Bot"] = {
+        "corsumo",
+    },
+    ["T3_Armored_Assault_Bot"] = {
+        "armanac",
+        "corsnap",
+    },
+    ["T3_Mobile_Missile_Platform"] = {
+        "armmh",
+        "cormh",
+    },
+    ["T3_Mobile_AA"] = {
+        "armsnipe",
+        "armah",
+        "corah",
     },
 }
 

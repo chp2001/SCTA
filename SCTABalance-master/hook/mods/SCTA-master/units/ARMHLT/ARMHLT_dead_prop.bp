@@ -1,7 +1,7 @@
 PropBlueprint {
     Merge = true, 
     Display = {
-        UniformScale = 0.14,
+        UniformScale = 0.10,
     },
     Footprint = {
         OccupancyCaps = 0,

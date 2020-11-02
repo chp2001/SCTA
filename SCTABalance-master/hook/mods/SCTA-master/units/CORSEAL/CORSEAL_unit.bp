@@ -2,7 +2,7 @@ UnitBlueprint {
     Merge = true,
     Categories = {
         'SELECTABLE',
-        'TECH3',
+        'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -12,12 +12,11 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'CORE',
         'VEHICLE',	#'TANK' in TA
-        'HOVER',
-	'LEVEL3',
+	'LEVEL2',
     },
     Defense = {
-        Health = 9000,
-        MaxHealth = 9000,
+        Health = 4500,
+        MaxHealth = 4500,
     },
     Display = {
         UniformScale = 0.12,
@@ -29,11 +28,11 @@ UnitBlueprint {
     SizeY = 1,
     SizeZ = 1.8,
     Economy = {
-        BuildCostEnergy = 12000,
-        BuildCostMass = 1600,
-        BuildTime = 18000,
+        BuildCostEnergy = 8000,
+        BuildCostMass = 600,
+        BuildTime = 9000,
     },
-    StrategicIconName = 'icon_land3_directfire',
+    StrategicIconName = 'icon_land2_directfire',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -47,7 +46,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 360,
+            Damage = 120,
             DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'CORE_MEDIUMCANNON',

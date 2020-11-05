@@ -175,7 +175,7 @@ do
         
         for id, bp in all_blueprints.Unit do
             if bp.Categories and ((table.find(bp.Categories, 'ARM') or table.find(bp.Categories, 'CORE')) and table.find(bp.Categories, 'VTOL')) then
-        if not bp.Physics.GroundCollisionOffset then bp.Physics.GroundCollisionOffset = 1.5 end
+        if not bp.Physics.GroundCollisionOffset then bp.Physics.GroundCollisionOffset = 1 end
         end
             end
         end

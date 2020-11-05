@@ -82,6 +82,7 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'CORE',
     'LEVEL1',
+    'SEAPLA',
     },
     Defense = {
         ArmorType = 'Light',

@@ -7,6 +7,8 @@ local TAAirConstructor = import('/mods/SCTA-master/lua/TAAirConstructor.lua').TA
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 ARMCSA = Class(TAAirConstructor) {
+    Flying = true,
+	IsWaiting = false,
 
 	OnCreate = function(self)
 		TAAirConstructor.OnCreate(self)
@@ -14,13 +16,13 @@ ARMCSA = Class(TAAirConstructor) {
 			nozzle1 = CreateRotator(self, 'nanopoint', 'x', nil, 0, 0, 0),
 			nozzle2 = CreateRotator(self, 'nanopoint2', 'x', nil, 0, 0, 0),
 		}
-		for k, v in self.Spinners do
-			self.Trash:Add(v)
-		end
 		self.Sliders = {
 			wing1 = CreateSlider(self, 'Rwing'),
 			wing2 = CreateSlider(self, 'Lwing'),
 		}
+		for k, v in self.Spinners do
+			self.Trash:Add(v)
+		end
 		for k, v in self.Sliders do
 			self.Trash:Add(v)
 		end
@@ -36,7 +38,7 @@ ARMCSA = Class(TAAirConstructor) {
 		end
 	end,
 
-	OnStopBeingBuilt = function(self,builder,layer)
+	OnStopBeingBuilt = function(self, builder, layer)
 		TAAirConstructor.OnStopBeingBuilt(self,builder,layer)
 		self:OpenWings(self)
 	end,
@@ -65,7 +67,8 @@ ARMCSA = Class(TAAirConstructor) {
 		local selfPosition = self:GetPosition('nanopoint') 
 		local targetPosition = target:GetPosition()
 		local distance = VDist2(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z)
-
+		
+		TAAirConstructor.Aim(self, target)
 		self.Spinners.nozzle1:SetGoal(TAutils.GetAngle(0, targetPosition.y, distance, selfPosition.y))
 		self.Spinners.nozzle1:SetSpeed(160.03)
 
@@ -75,8 +78,8 @@ ARMCSA = Class(TAAirConstructor) {
 		self.Spinners.nozzle2:SetSpeed(160.03)
 
 		WaitFor(self.Spinners.nozzle2)
-		TAAirConstructor.Aim(self, target)
 	end,
+
 }
 
 TypeClass = ARMCSA

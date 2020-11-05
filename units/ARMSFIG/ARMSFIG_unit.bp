@@ -68,6 +68,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 3,
     Categories = {
+        'TRANSPORTATION',
         'SELECTABLE',
         'TECH1',
         'VISIBLETORECON',
@@ -137,9 +138,8 @@ UnitBlueprint {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
-            RULEUCC_CallTransport = true,
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = true,
+            RULEUCC_CallTransport = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
             RULEUCC_Patrol = true,
@@ -153,6 +153,7 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 22,
         WaterVisionRadius = 4, 
+        RadarStealth = true,
     },
     Interface = {
         HelpText = 'Fighter',

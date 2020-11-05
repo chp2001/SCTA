@@ -29,7 +29,8 @@ UnitBlueprint {
 	'OVERLAYDIRECTFIRE',
 	'DIRECTFIRE',
         'ARM',
-	'LEVEL3',
+    'LEVEL3',
+    'TRANSPORTATION',
     },
     Defense = {
         Health = 2000,

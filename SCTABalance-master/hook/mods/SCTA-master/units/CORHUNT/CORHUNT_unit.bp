@@ -20,7 +20,8 @@ UnitBlueprint {
         'SONAR',
         'OVERLAYSONAR',
         'CORE',
-	'LEVEL3',
+        'LEVEL3',
+        'TRANSPORTATION',
     },
     Economy = {
         BuildCostMass = 300,

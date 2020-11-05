@@ -73,6 +73,7 @@ UnitBlueprint {
         'AIR',
         'VTOL',
         'TRANSPORTATION',
+        'AIRTRANSPORT',
         'TRANSPORTFOCUS',
         'CANTRANSPORTCOMMANDER',
         'ARM',

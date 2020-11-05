@@ -78,6 +78,7 @@ UnitBlueprint {
         'OVERLAYSONAR',
         'CORE',
     'LEVEL2',
+    'SEAPLA',
     },
     Defense = {
         ArmorType = 'Light',

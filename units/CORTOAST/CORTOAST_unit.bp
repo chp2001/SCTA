@@ -33,9 +33,6 @@ UnitBlueprint {
 	'CORE',
 	'LEVEL2',
 	'SORTDEFENSE',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',

@@ -3,15 +3,20 @@
 #
 #Script created by Raevn
 
-local TAair = import('/mods/SCTA-master/lua/TAair.lua').TAair
+local TASeaair = import('/mods/SCTA-master/lua/TASeaair.lua').TASeaair
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-ARMSFIG = Class(TAair) {
+CORSFIG = Class(TASeaair) {
 	moving = false,
 
 	OnCreate = function(self)
-		TAair.OnCreate(self)
-		self:SetMaintenanceConsumptionActive()
+		TASeaair.OnCreate(self)
+		self.Sliders = {
+			chassis = CreateSlider(self, 0),
+		}
+		for k, v in self.Sliders do
+			self.Trash:Add(v)
+		end
 		self.Spinners = {
 			wing1 = CreateRotator(self, 'wing1', 'z', nil, 0, 0, 0),
 			wing2 = CreateRotator(self, 'wing2', 'z', nil, 0, 0, 0),
@@ -21,15 +26,6 @@ ARMSFIG = Class(TAair) {
 		end
 	end,
 
-	OnMotionVertEventChange = function(self, new, old )
-		if (new == 'Down' or new == 'Bottom') then
-                	self:PlayUnitSound('Landing')
-			self:CloseWings(self)
-		elseif (new == 'Up' or new == 'Top') then
-                	self:PlayUnitSound('TakeOff')
-			self:OpenWings(self)
-		end
-	end,	
 
 	OpenWings = function(self)
 		--MOVE winga to x-axis <5.59> SPEED <5.00>;
@@ -61,4 +57,4 @@ ARMSFIG = Class(TAair) {
 	},
 }
 
-TypeClass = ARMSFIG
+TypeClass = CORSFIG

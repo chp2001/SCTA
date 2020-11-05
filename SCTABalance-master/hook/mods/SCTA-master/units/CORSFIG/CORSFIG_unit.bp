@@ -29,16 +29,12 @@ UnitBlueprint {
 	'OVERLAYDIRECTFIRE',
 	'DIRECTFIRE',
         'CORE',
-	'LEVEL3',
+        'LEVEL3',
+        'TRANSPORTATION',
     },
     Defense = {
-        ArmorType = 'Light',
         Health = 2000,
         MaxHealth = 2000,
-        AirThreatLevel = 0.33,
-        EconomyThreatLevel = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Economy = {
         BuildCostEnergy = 9000,

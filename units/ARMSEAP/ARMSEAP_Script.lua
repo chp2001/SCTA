@@ -3,13 +3,19 @@
 #
 #Script created by Raevn
 
-local TAair = import('/mods/SCTA-master/lua/TAair.lua').TAair
+local TASeaair = import('/mods/SCTA-master/lua/TASeaair.lua').TASeaair
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-ARMSEAP = Class(TAair) {
+ARMSEAP = Class(TASeaair) {
 
 	OnCreate = function(self)
-		TAair.OnCreate(self)
+		TASeaair.OnCreate(self)
+		self.Sliders = {
+			chassis = CreateSlider(self, 0),
+		}
+		for k, v in self.Sliders do
+			self.Trash:Add(v)
+		end
 		self.Spinners = {
 			wing1 = CreateRotator(self, 'LWing', 'z', nil, 0, 0, 0),
 			wing2 = CreateRotator(self, 'RWing', 'z', nil, 0, 0, 0),
@@ -19,15 +25,7 @@ ARMSEAP = Class(TAair) {
 		end
 	end,
 
-	OnMotionVertEventChange = function(self, new, old )
-		if (new == 'Down' or new == 'Bottom') then
-                	self:PlayUnitSound('Landing')
-			self:CloseWings(self)
-		elseif (new == 'Up' or new == 'Top') then
-                	self:PlayUnitSound('TakeOff')
-			self:OpenWings(self)
-		end
-	end,
+
 
 	OpenWings = function(self)
 		--TURN wing1 to z-axis <-90.00> SPEED <60.69>;

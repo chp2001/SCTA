@@ -76,7 +76,8 @@ UnitBlueprint {
         'CORE',
         'SONAR',
         'OVERLAYSONAR',
-	'LEVEL3',
+    'LEVEL3',
+    'TRANSPORTATION',
     },
     Defense = {
         ArmorType = 'Light',
@@ -127,16 +128,15 @@ UnitBlueprint {
         BuildTime = 22825,
     },
     Footprint = {
-        SizeX = 3,
-        SizeZ = 3,
+        SizeX = 1,
+        SizeZ = 1,
     },
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
-            RULEUCC_CallTransport = true,
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = true,
+            RULEUCC_CallTransport = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
             RULEUCC_Patrol = true,
@@ -150,7 +150,8 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 22,
         SonarRadius = 30, 
-		WaterVisionRadius = 14,
+        WaterVisionRadius = 14,
+        RadarStealth = true,
     },
     Interface = {
         HelpText = 'Torpedo Bomber',

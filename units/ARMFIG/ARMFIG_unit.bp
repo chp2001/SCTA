@@ -80,7 +80,8 @@ UnitBlueprint {
         'OVERLAYANTIAIR',
         'OVERLAYDIRECTFIRE',
         'ARM',
-	'LEVEL1',
+    'LEVEL1',
+    'SEAPLA',
     },
     Defense = {
         ArmorType = 'Light',
@@ -137,9 +138,8 @@ UnitBlueprint {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
-            RULEUCC_CallTransport = true,
+            RULEUCC_CallTransport = false,
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
             RULEUCC_Patrol = true,

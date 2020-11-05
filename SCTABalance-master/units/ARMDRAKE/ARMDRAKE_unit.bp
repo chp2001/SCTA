@@ -147,6 +147,9 @@ UnitBlueprint {
     SizeX = 6,
     SizeY = 12,
     SizeZ = 6,
+    Transport = {
+        TransportClass = 4,
+    },
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 0,
     Weapon = {

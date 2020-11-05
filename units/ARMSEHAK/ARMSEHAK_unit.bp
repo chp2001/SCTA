@@ -74,7 +74,8 @@ UnitBlueprint {
         'SONAR',
         'OVERLAYSONAR',
         'ARM',
-	'LEVEL3',
+    'LEVEL3',
+    'TRANSPORTATION',
     },
     Defense = {
         ArmorType = 'Light',
@@ -124,8 +125,8 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 23,
     },
     Footprint = {
-        SizeX = 3,
-        SizeZ = 3,
+        SizeX = 1,
+        SizeZ = 1,
     },
     General = {
         Category = 'Utility',
@@ -148,7 +149,8 @@ UnitBlueprint {
     Intel = {
     VisionRadius = 22,
     WaterVisionRadius = 6,
-	FreeIntel = true,
+    FreeIntel = true,
+    RadarStealth = true,
     RadarRadius = 103, 
     SonarRadius = 70,
     },

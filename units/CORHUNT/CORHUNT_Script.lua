@@ -3,12 +3,18 @@
 #
 #Script created by Raevn
 
-local TAair = import('/mods/SCTA-master/lua/TAair.lua').TAair
+local TASeaair = import('/mods/SCTA-master/lua/TASeaair.lua').TASeaair
 
-CORHUNT = Class(TAair) {
+CORHUNT = Class(TASeaair) {
 
 	OnCreate = function(self)
-		TAair.OnCreate(self)
+		TASeaair.OnCreate(self)
+		self.Sliders = {
+			chassis = CreateSlider(self, 0),
+		}
+		for k, v in self.Sliders do
+			self.Trash:Add(v)
+		end
 		self.Spinners = {
 			radar1 = CreateRotator(self, 'Lwing', 'z', nil, 0, 0, 0),
 			radar2 = CreateRotator(self, 'Rwing', 'z', nil, 0, 0, 0),
@@ -20,10 +26,6 @@ CORHUNT = Class(TAair) {
 		end
 	end,
 
-	OnStopBeingBuilt = function(self,builder,layer)
-		TAair.OnStopBeingBuilt(self,builder,layer)
-		
-	end,
 
 	OpenWings = function(self)
 

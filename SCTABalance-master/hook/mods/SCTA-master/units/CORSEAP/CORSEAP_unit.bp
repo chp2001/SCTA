@@ -39,7 +39,8 @@ UnitBlueprint {
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',
         'CORE',
-	'LEVEL3',
+        'LEVEL3',
+        'TRANSPORTATION',
     },
     Defense = {
         Health = 3000,

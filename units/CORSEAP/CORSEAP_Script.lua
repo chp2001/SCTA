@@ -3,14 +3,15 @@
 #
 #Script created by Raevn
 
-local TAair = import('/mods/SCTA-master/lua/TAair.lua').TAair
+local TASeaair = import('/mods/SCTA-master/lua/TASeaair.lua').TASeaair
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-CORSEAP = Class(TAair) {
+CORSEAP = Class(TASeaair) {
 
 	OnCreate = function(self)
-		TAair.OnCreate(self)
+		TASeaair.OnCreate(self)
 		self.Sliders = {
+			chassis = CreateSlider(self, 0),
 			wing1 = CreateSlider(self, 'wing1L'),
 			wing2 = CreateSlider(self, 'wing2L'),
 			wing3 = CreateSlider(self, 'wing1R'),
@@ -18,16 +19,6 @@ CORSEAP = Class(TAair) {
 		}
 		for k, v in self.Sliders do
 			self.Trash:Add(v)
-		end
-	end,
-
-	OnMotionVertEventChange = function(self, new, old )
-		if (new == 'Down' or new == 'Bottom') then
-                	self:PlayUnitSound('Landing')
-			self:CloseWings(self)
-		elseif (new == 'Up' or new == 'Top') then
-                	self:PlayUnitSound('TakeOff')
-			self:OpenWings(self)
 		end
 	end,
 

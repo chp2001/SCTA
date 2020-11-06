@@ -49,11 +49,9 @@ UnitBlueprint {
 	'ARM',
 	'ENERGY',
 	'LEVEL1',
-	
-	
-	
 	'STORAGE',
     },
+    CollisionOffsetY = -0.3,
     Defense = {
         ArmorType = 'Structure',
         AirThreatLevel = 0,

@@ -10,8 +10,8 @@ UnitBlueprint {
         MaxHealth = 3600,
     },
     Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
+        SizeX = 1,
+        SizeZ = 1,
     },
     Physics = {
         SkirtSizeX = 0, 
@@ -20,5 +20,8 @@ UnitBlueprint {
             LAYER_Land = true,
         },
     },
-    SelectionCenterOffsetZ = -0.5,
+    SelectionCenterOffsetZ = -0.25,
+    SizeX = 2,
+    SizeY = 2,
+    SizeZ = 2,
 }

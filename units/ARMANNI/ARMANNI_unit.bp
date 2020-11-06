@@ -195,7 +195,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
             TurretBoneMuzzle = 'flare',
-            TurretBonePitch = 'barrel',
+            TurretBonePitch = 'gun',
             TurretBoneYaw = 'turret',
             TurretDualManipulators = false,
             TurretPitch = 0,

@@ -1,5 +1,5 @@
-#CORE Doomsday Machine Laser
-#CORE_DOOMSDAY
+#ARM Annihilator Laser
+#ARM_TOTAL_ANNIHILATOR
 #
 #Blueprint created by Raevn
 
@@ -7,27 +7,27 @@ ProjectileBlueprint {
     Audio = {
         Impact = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOSML3',
+            Cue = 'XPLOLRG1',
             LodCutoff = 'Weapon_LodCutoff',
         },
         ImpactUnit = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOSML3',
+            Cue = 'XPLOLRG1',
             LodCutoff = 'Weapon_LodCutoff',
         },
         ImpactShield = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOSML3',
+            Cue = 'XPLOLRG1',
             LodCutoff = 'Weapon_LodCutoff',
         },
         ImpactTerrain = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOSML3',
+            Cue = 'XPLOLRG1',
             LodCutoff = 'Weapon_LodCutoff',
         },
     },
     Categories = {
-        'CORE',
+        'ARM',
         'PROJECTILE',
         'DIRECTFIRE'
     },
@@ -37,19 +37,19 @@ ProjectileBlueprint {
     General = {
         Category = 'Direct Fire',
         EntityCategory = {
-            'CORE',
+            'ARM',
             'PROJECTILE',
             'DIRECTFIRE',
         },
-        Faction = 'CORE',
-        Weapon = 'CORE_DOOMSDAY',
+        Faction = 'ARM',
+        Weapon = 'ARM_TOTAL_ANNIHILATOR',
     },
     Interface = {
         HelpText = 0,
     },
     Physics = {
         DestroyOnWater = true,
-        InitialSpeed = 62.5,
-        Lifetime = 6,
+        InitialSpeed = 70,
+        Lifetime = 5,
     },
 }

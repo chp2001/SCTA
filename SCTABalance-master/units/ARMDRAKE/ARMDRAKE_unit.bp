@@ -141,6 +141,7 @@ UnitBlueprint {
         StandUpright = true,
         MaxSteerForce = 10,
     },
+    SelectionCenterOffsetZ = -0.25,
     SelectionSizeX = 4,
     SelectionSizeZ = 4,
     SelectionThickness = 0.25,
@@ -179,7 +180,7 @@ UnitBlueprint {
             MaxRadius = 30,
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 3,
-			MuzzleVelocity = 32,
+			MuzzleVelocity = 50,
             ProjectileId = '/mods/SCTA-master/SCTABalance-master/projectiles/ARMDRAK_LASER/ARMDRAK_LASER_proj.bp',
             RackBones = {
                 {
@@ -242,9 +243,8 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'CORKROG_HEAD',
             EnergyChargeForFirstShot = true,
-            EnergyDrainPerSecond = 500,
+            EnergyDrainPerSecond = 1000,
             EnergyRequired = 2000,
-            
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air|Seabed',
                 Seabed = 'Land|Water|Air|Seabed',
@@ -253,7 +253,7 @@ UnitBlueprint {
         WeaponCategory = 'DirectFire',
             FiringTolerance = 2.75,
             Label = 'CORKROG_HEAD',
-            MaxRadius = 43.75,
+            MaxRadius = 30,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 0,
 	    MuzzleVelocity = 62.5,

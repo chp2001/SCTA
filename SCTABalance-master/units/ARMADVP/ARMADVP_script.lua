@@ -8,8 +8,7 @@ local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 ARMADVP = Class(TAFactory) {
 	pauseTime = 5,
 	hideUnit = true,
-	isFactory = true,
-	spinUnit = false,
+
 
 	OnCreate = function(self)
 		self.Spinners = {

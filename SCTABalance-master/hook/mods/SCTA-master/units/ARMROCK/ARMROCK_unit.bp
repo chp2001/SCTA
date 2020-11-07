@@ -11,7 +11,7 @@ UnitBlueprint {
         SizeX = 1,
         SizeZ = 1,
     },
-    SizeX = 1,
-    SizeY = 1.2,
-    SizeZ = 1,
+    SizeX = 1.4,
+    SizeY = 1.6,
+    SizeZ = 1.4,
 }

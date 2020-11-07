@@ -14,6 +14,9 @@ UnitBlueprint {
         'VEHICLE',	
 	'LEVEL3',
     },
+    Display = {
+        UniformScale = 0.12,
+    },
     Defense = {
         Health = 1400,
         MaxHealth = 1400,
@@ -23,9 +26,11 @@ UnitBlueprint {
         BuildCostMass = 1300,
         BuildTime = 22000,
     },
-    SizeX = 2,
-    SizeY = 1,
-    SizeZ = 2,
+    SelectionSizeX = 2,
+    SelectionSizeZ = 2,
+    SizeX = 3,
+    SizeY = 2,
+    SizeZ = 3,
     StrategicIconName = 'icon_land3_artillery',
     Weapon = {
         {

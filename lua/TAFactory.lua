@@ -13,12 +13,9 @@ TAFactory = Class(TAconstructor) {
 	isReclaiming = false,
 
 	pauseTime = 3,
-	hideUnit = false,
 	isFactory = true,
-	spinUnit = true,
 
-	animating = false,
-	wantStopAnimation = false,
+	animating = nil,
 
     OnKilled = function(self, instigator, type, overkillRatio)
         TAconstructor.OnKilled(self, instigator, type, overkillRatio)
@@ -43,8 +40,7 @@ TAFactory = Class(TAconstructor) {
 		end
 		self.isBuilding = true
 		self.order = order
-		self.wantStopAnimation = false
-		if (self.animating == false) then
+		if (not self.animating) then
 			ForkThread(self.AnimationThread, self)
 		end
 	end,
@@ -64,9 +60,15 @@ TAFactory = Class(TAconstructor) {
 		end
 	end,
 
-	RollOff = function(self)
-        self:LOGDBG('TAFactory.RollOff')
-        if not IsDestroyed(self) and self.isFactory == true then
+	RollOff = function(self, unitBeingBuilt)
+		self:LOGDBG('TAFactory.RollOff')
+		if not IsDestroyed(self) and unitBeingBuilt then
+			WaitSeconds(0.5)
+			if not IsDestroyed(unitBeingBuilt) then
+            unitBeingBuilt:DetachFrom(true)
+			end
+		end
+        if not IsDestroyed(self) then
 			ChangeState(self, self.IdleState)
 			WaitSeconds(0.5)
 			if not IsDestroyed(self) then
@@ -74,34 +76,14 @@ TAFactory = Class(TAconstructor) {
 			self:SetBlockCommandQueue(false)
 			end
 		end 
-		---self:OnStopBuild()
-	end,
-
-	Unpack = function(self)
-        self:LOGDBG('TAFactory.Unpack')
-	end,
-
-	Open = function(self)
-        self:LOGDBG('TAFactory.Open')
 	end,
 	
 	Aim = function(self, target)
 		self:LOGDBG('TAFactory.Aim')
-		if not IsDestroyed(target) and not IsDestroyed(self) and self.isFactory == true then
+		if not IsDestroyed(target) and not IsDestroyed(self) then
 		end
 	end,
 
-	DelayedClose = function(self)
-        self:LOGDBG('TAFactory.DelayedClose')
-		ChangeState(self, self.IdleState)
-		if self.isFactory then
-				if self.isBuilding == true then
-					return
-				end
-			WaitSeconds(0.5)
-		end
-		--self:OnStopBuild()
-	end,
 
 	DestroyUnitBeingBuilt = function(self)
         self:LOGDBG('TAFactory.DestroyUnitBeingBuilt')
@@ -117,32 +99,22 @@ TAFactory = Class(TAconstructor) {
     end,
 
 	Close = function(self)
-        self:LOGDBG('TAFactory.Close')
+		self:LOGDBG('TAFactory.Close')
+		ChangeState(self, self.IdleState)
 		self:SetBusy(false)
 		self:SetBlockCommandQueue(false)
-		if self.isBuilding == true then
+		if self.isBuilding then
 			self.desiredState = "aimed"
 		end
-		---self:OnStopBuild()
 	end,
 
-	StopSpin = function(self, unitBeingBuilt)
-        self:LOGDBG('TAFactory.StopSpin')
-		---self:OnStopBuild()
-		if not IsDestroyed(self) and self.isFactory == true and unitBeingBuilt then
-			WaitSeconds(0.5)
-			if IsDestroyed(unitBeingBuilt) == false then
-            unitBeingBuilt:DetachFrom(true)
-		end
-	end
-    end,
 
 	Nano = function(self, unitBeingBuilt)
         self:LOGDBG('TAFactory.Nano')
 		local target = 1
 		local current = 0
-		while not IsDestroyed(self) and self.isBuilding == true and IsDestroyed(unitBeingBuilt) == false and unitBeingBuilt:GetFractionComplete() < 1 or self.isReclaiming == true and self.currentState == "aimed" do
-			if self:IsPaused() == false then
+		while not IsDestroyed(self) and self.isBuilding and not IsDestroyed(unitBeingBuilt) and unitBeingBuilt:GetFractionComplete() < 1 and self.currentState == "aimed" do
+			if not self:IsPaused() then
 
 				current = current + 1
 				if current >= target then
@@ -169,7 +141,7 @@ TAFactory = Class(TAconstructor) {
 						end
 
 						local bp
-						if (self.isBuilding == true) then
+						if (self.isBuilding) then
 							bp = self:GetBlueprint().Display.BuildEmitter or 'nanolathe.bp'
 							CreateEmitterAtBone(self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/' .. bp ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',time,0)
 						end

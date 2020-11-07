@@ -23,7 +23,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 1500, #Doubles up with death, so death damage subtracted
-	    DamageRadius = 3,
+	    DamageRadius = 6,
             FireOnSelfDestruct = true,
             DamageType = 'Normal',
             DisplayName = 'Suicide',

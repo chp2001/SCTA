@@ -7,7 +7,7 @@ local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstr
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 CORCK = Class(TAconstructor) {
-	spinUnit = false,
+	,
 
 	OnCreate = function(self)
 		self.Spinners = {

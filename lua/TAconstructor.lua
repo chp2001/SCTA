@@ -13,16 +13,12 @@ TAconstructor = Class(TAWalking) {
 	isReclaiming = false,
 
 	pauseTime = 3,
-	hideUnit = false,
-	isFactory = false,
-	spinUnit = false,
 
-	animating = false,
-	wantStopAnimation = false,
+	animating = nil,
 
 	AnimationThread = function(self)
 		self.animating = true
-		while not IsDestroyed(self) and self.wantStopAnimation == false do
+		while not IsDestroyed(self) do
 			--ChangeState(self, self.IdleState)
 			if(self.currentState == "rolloff") then
 				self.currentTarget = nil
@@ -41,41 +37,35 @@ TAconstructor = Class(TAWalking) {
 					end
 				elseif(self.currentState == "opened") then
 					if (self.desiredState == "closed") then
-						self:DelayedClose()
-						if (self.desiredState == "closed") then	
 							self:Close()
 							self.currentState = "closed"
-						end
 					elseif (self.desiredState == "aimed") then
 						if (self.currentTarget and not IsDestroyed(self.currentTarget)) then
-							self:StopSpin(self.currentTarget)
+							self:RollOff(self.currentTarget)
 						end
-						self:RollOff()
 						self.currentTarget = self.desiredTarget
 						self.currentState = "aimed"
-						if (self.currentTarget and IsDestroyed(self.currentTarget) == false) then
+						if (self.currentTarget and not IsDestroyed(self.currentTarget)) then
 							self:Aim(self.currentTarget)
 						else
 							self.desiredState = "rolloff"
 						end
-						if (IsDestroyed(self.currentTarget) == false) then
-							if self.isFactory == true and IsDestroyed(self.currentTarget) == false then
+						if (not IsDestroyed(self.currentTarget)) then
+							if self.isFactory and not IsDestroyed(self.currentTarget) then
 								local bone = self:GetBlueprint().Display.BuildAttachBone or 0
 								self.currentTarget:AttachBoneTo(-2, self, bone)
 							end
-							if self.hideUnit and IsDestroyed(self.currentTarget) == false  then
+							if self.hideUnit and not IsDestroyed(self.currentTarget) then
 								self.currentTarget:ShowBone(0, true)
-								#Need to Show Life Bar here once implemented
 							end
-							if (self.isBuilding == true) then
+							if (self.isBuilding) then
 								self:SetBuildRate(self:GetBlueprint().Economy.BuildRate)
 								TAWalking.OnStartBuild(self, self.currentTarget, self.order)
 								if EntityCategoryContains(categories.ARM, self.currentTarget) or EntityCategoryContains(categories.CORE, self.currentTarget) then
 								self.currentTarget:HideFlares()
 								end
 							end
-							if (self.isReclaiming == true) then
-								self:SetReclaimTimeMultiplier(1)
+							if (self.isReclaiming) then
 							end
 							ForkThread(self.Nano, self, self.currentTarget)
 						end
@@ -85,21 +75,15 @@ TAconstructor = Class(TAWalking) {
 						self:Close(self)
 						---ChangeState(self, self.IdleState)
 						self.currentState = "closed"
-						if (self.isBuilding == false and self.isReclaiming == false) then
-							self.wantStopAnimation = true
-						end
-					elseif (self.desiredState == "rolloff") then
-						--ChangeState(self, self.IdleState)
-						self:StopSpin(self.currentTarget)
-						self:RollOff()
+					elseif self.isFactory and (self.desiredState == "rolloff") then
+						self:RollOff(self.currentTarget)
 						self.currentState = "rolloff"
 					end
 				end
 			end
 			WaitSeconds(0.2)
 		end
-		self.animating = false
-		self.wantStopAnimation = false
+		self.animating = nil
 	end,
 
 	FlattenSkirt = function(self)
@@ -126,15 +110,13 @@ TAconstructor = Class(TAWalking) {
 			self.desiredState = "opened"
 		end
 		self:SetAllWeaponsEnabled(false)
-		if self.hideUnit and IsDestroyed(unitBeingBuilt) == false then
+		if self.hideUnit and not IsDestroyed(unitBeingBuilt) then
 			unitBeingBuilt:HideBone(0, false)
-			#Need to Hide Life Bar
 		end
 		self.isBuilding = true
 		self.isReclaiming = false
 		self.order = order
-		self.wantStopAnimation = false
-		if (self.animating == false) then
+		if (not self.animating) then
 			ForkThread(self.AnimationThread, self)
 		end
 	end,
@@ -165,11 +147,6 @@ TAconstructor = Class(TAWalking) {
     end,
 
 
-	StopSpin = function(self, unitBeingBuilt)
-        self:LOGDBG('TAContructor.StopSpin')
-    end,
-
-
 	OnStartReclaim = function(self, target)
         self:LOGDBG('TAContructor.OnStartReclaim')
 		self:SetReclaimTimeMultiplier(1)
@@ -186,8 +163,7 @@ TAconstructor = Class(TAWalking) {
 		self.isBuilding = false
 		self.cloakOn = false
 		self.isCapturing = false
-		self.wantStopAnimation = false
-		if (self.animating == false) then
+		if (not self.animating) then
 			ForkThread(self.AnimationThread, self)
 		end
 	end,
@@ -230,10 +206,7 @@ TAconstructor = Class(TAWalking) {
 		return area
 	end,
 
-	DelayedClose = function(self)
-	end,
-
-	RollOff = function(self)
+	RollOff = function(self, unitBeingBuilt)
         self:LOGDBG('TAContructor.RollOff')
 	end,
 
@@ -257,10 +230,10 @@ TAconstructor = Class(TAWalking) {
         self:LOGDBG('TAContructor.Nano')
 		local target = 1
 		local current = 0
-		while not IsDestroyed(self) and self.isBuilding == true and IsDestroyed(unitBeingBuilt) == false and unitBeingBuilt:GetFractionComplete() < 1 or self.isReclaiming == true and self.currentState == "aimed" do
-			if self:IsPaused() == false then
+		while not IsDestroyed(self) and self.isBuilding and not IsDestroyed(unitBeingBuilt) and unitBeingBuilt:GetFractionComplete() < 1 or self.isReclaiming and self.currentState == "aimed" do
+			if not self:IsPaused() then
 				current = current + 1
-				if current >= target or self.isReclaiming == true then
+				if current >= target or self.isReclaiming then
 					for k,v in self:GetBlueprint().Display.BuildBones do
                         local selfPosition = self:GetPosition(v) 
                         local targetPosition = unitBeingBuilt:GetPosition()
@@ -283,7 +256,7 @@ TAconstructor = Class(TAWalking) {
 						end
 
 						local bp
-						if (self.isBuilding == true) then
+						if (self.isBuilding) then
 							bp = self:GetBlueprint().Display.BuildEmitter or 'nanolathe.bp'
 							CreateEmitterAtBone(self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/' .. bp ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',time,0)
 						else

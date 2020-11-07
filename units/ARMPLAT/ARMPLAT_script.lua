@@ -9,8 +9,7 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 ARMPLAT = Class(TAFactory) {
 	pauseTime = 5,
 	hideUnit = true,
-	isFactory = true,
-	spinUnit = false,
+
 	---Water = false,
 
 	OnCreate = function(self)

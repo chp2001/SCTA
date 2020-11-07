@@ -8,9 +8,6 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 CORPLAT = Class(TAFactory) {
 	pauseTime = 5,
-	hideUnit = true,
-	isFactory = true,
-	spinUnit = false,
 
 	OnCreate = function(self)
 		self.Sliders = {

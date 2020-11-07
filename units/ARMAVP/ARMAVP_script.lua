@@ -9,8 +9,7 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 ARMAVP = Class(TAFactory) {
 	pauseTime = 5,
 	hideUnit = true,
-	isFactory = true,
-	spinUnit = false,
+
 
 	OnCreate = function(self)
 		self.Spinners = {

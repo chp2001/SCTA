@@ -13,69 +13,55 @@ TAAirConstructor = Class(TAair) {
 	isReclaiming = false,
 
 	pauseTime = 3,
-	hideUnit = false,
-	isFactory = false,
-	spinUnit = false,
 
-	animating = false,
-	wantStopAnimation = false,
+	animating = nil,
 
 	AnimationThread = function(self)
 		self.animating = true
-		while not IsDestroyed(self) and self.wantStopAnimation == false do
+		while not IsDestroyed(self) do
 			if (self.currentState ~= self.desiredState) then
 				if (self.currentState == "closed") then
+					if not IsDestroyed(self) then
 					self:Open()
 					self.currentState = "opened"
 					self.desiredState = "aimed"
+					end
 				elseif(self.currentState == "opened") then
 					if (self.desiredState == "closed") then
-						self:DelayedClose()
-						if (self.desiredState == "closed") then	
 							self:Close()
 							self.currentState = "closed"
-						end
 					elseif (self.desiredState == "aimed") then
-						if (self.currentTarget and not IsDestroyed(self.currentTarget)) then
-						end
 						self.currentTarget = self.desiredTarget
 						self.currentState = "aimed"
-						if (self.currentTarget) then
+						if (self.currentTarget and not IsDestroyed(self.currentTarget)) then
 							self:Aim(self.currentTarget)
 						end
-						if (IsDestroyed(self.currentTarget) == false) then
-							end
-							if self.hideUnit and IsDestroyed(self.currentTarget) == false  then
+						if (not IsDestroyed(self.currentTarget)) then
+							if self.hideUnit and not IsDestroyed(self.currentTarget) then
 								self.currentTarget:ShowBone(0, true)
-								#Need to Show Life Bar here once implemented
 							end
-							if (self.isBuilding == true) then
+							if (self.isBuilding) then
 								TAair.OnStartBuild(self, self.currentTarget, self.order)
 								if EntityCategoryContains(categories.ARM, self.currentTarget) or EntityCategoryContains(categories.CORE, self.currentTarget) then
 								self.currentTarget:HideFlares()
 								end
 							end
-							if (self.isReclaiming == true) then
-								self:SetReclaimTimeMultiplier(1)
+							if (self.isReclaiming) then
 							end
 							ForkThread(self.Nano, self, self.currentTarget)
 						end
 					end
-				elseif(self.currentState == "aimed" or self.currentState == "rolloff") then
+				elseif(self.currentState == "aimed") then
 					if (self.desiredState == "closed") then
 						self:Close(self)
 						self.currentState = "closed"
-						if (self.isBuilding == false and self.isReclaiming == false) then
-							self.wantStopAnimation = true
-						end
 				end
 			end
+		end
 			WaitSeconds(0.2)
 		end
-		self.animating = false
-		self.wantStopAnimation = false
+		self.animating = nil
 	end,
-
 
     OnKilled = function(self, instigator, type, overkillRatio)
         TAair.OnKilled(self, instigator, type, overkillRatio)
@@ -94,22 +80,21 @@ TAAirConstructor = Class(TAair) {
             return
 		end
 		self.desiredTarget = unitBeingBuilt
-		if (self.currentState == "aimed" or self.currentState == "opened" or self.currentState == "rolloff") then
+		if (self.currentState == "aimed" or self.currentState == "opened") then
 			self.currentState = "opened"
 			self.desiredState = "aimed"
 		else
 			self.desiredState = "opened"
 		end
 		self:SetAllWeaponsEnabled(false)
-		if self.hideUnit and IsDestroyed(unitBeingBuilt) == false then
+		if self.hideUnit and not IsDestroyed(unitBeingBuilt) then
 			unitBeingBuilt:HideBone(0, false)
 			#Need to Hide Life Bar
 		end
 		self.isBuilding = true
 		self.isReclaiming = false
 		self.order = order
-		self.wantStopAnimation = false
-		if (self.animating == false) then
+		if (not self.animating) then
 			ForkThread(self.AnimationThread, self)
 		end
 	end,
@@ -120,8 +105,6 @@ TAAirConstructor = Class(TAair) {
 		self.isBuilding = false
 		self.countdown = self.pauseTime
 		if (self.currentState == "aimed") then
-			self.desiredState = "rolloff"
-		else
 			self.desiredState = "closed"
 		end
 		self:SetAllWeaponsEnabled(true)
@@ -156,8 +139,7 @@ TAAirConstructor = Class(TAair) {
 		self:SetAllWeaponsEnabled(false)
 		self.isReclaiming = true
 		self.isBuilding = false
-		self.wantStopAnimation = false
-		if (self.animating == false) then
+		if (not self.animating) then
 			ForkThread(self.AnimationThread, self)
 		end
 	end,
@@ -210,17 +192,14 @@ TAAirConstructor = Class(TAair) {
 	Close = function(self)
 	end,
 
-	DelayedClose = function(self)
-	end,
-
 	Nano = function(self, unitBeingBuilt)
 		local target = 1
 		local current = 0
-		while not IsDestroyed(self) and self.isBuilding == true and IsDestroyed(unitBeingBuilt) == false and unitBeingBuilt:GetFractionComplete() < 1 or self.isReclaiming == true and self.currentState == "aimed" do
-			if self:IsPaused() == false then
+		while not IsDestroyed(self) and self.isBuilding and not IsDestroyed(unitBeingBuilt) and unitBeingBuilt:GetFractionComplete() < 1 or self.isReclaiming and self.currentState == "aimed" do
+			if not self:IsPaused() then
 
 				current = current + 1
-				if current >= target or self.isReclaiming == true then
+				if current >= target or self.isReclaiming then
 					for k,v in self:GetBlueprint().Display.BuildBones do
 
                         local selfPosition = self:GetPosition(v) 
@@ -244,7 +223,7 @@ TAAirConstructor = Class(TAair) {
 						end
 
 						local bp
-						if (self.isBuilding == true) then
+						if (self.isBuilding) then
 							bp = self:GetBlueprint().Display.BuildEmitter or 'nanolathe.bp'
 							CreateEmitterAtBone(self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/' .. bp ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',time,0)
 						else

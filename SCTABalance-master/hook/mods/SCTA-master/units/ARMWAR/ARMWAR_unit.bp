@@ -19,6 +19,9 @@ Footprint = {
 Intel = {
     VisionRadius = 10,
 },
+SelectionSizeX = 0.8,
+SelectionSizeZ = 0.8,
+SelectionCenterOffsetZ = -0.15,
 SizeX = 1.4,
 SizeY = 1.6,
 SizeZ = 1.6,

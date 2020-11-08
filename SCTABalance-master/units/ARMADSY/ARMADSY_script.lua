@@ -8,7 +8,6 @@ local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 ARMADSY = Class(TAFactory) {
 	pauseTime = 5,
 	hideUnit = true,
-	isFactory = true,
 
 	OnCreate = function(self)
 		TAFactory.OnCreate(self)

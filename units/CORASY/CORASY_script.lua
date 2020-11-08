@@ -7,8 +7,7 @@ local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 
 CORASY = Class(TAFactory) {
 	pauseTime = 5,
-	hideUnit = false,
-	isFactory = true,
+	hideUnit = true,
 
 	OnCreate = function(self)
 		TAFactory.OnCreate(self)

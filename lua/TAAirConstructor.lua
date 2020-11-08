@@ -89,7 +89,6 @@ TAAirConstructor = Class(TAair) {
 		self:SetAllWeaponsEnabled(false)
 		if self.hideUnit and not IsDestroyed(unitBeingBuilt) then
 			unitBeingBuilt:HideBone(0, false)
-			#Need to Hide Life Bar
 		end
 		self.isBuilding = true
 		self.isReclaiming = false

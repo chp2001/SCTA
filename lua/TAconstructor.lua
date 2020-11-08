@@ -75,7 +75,7 @@ TAconstructor = Class(TAWalking) {
 						self:Close(self)
 						---ChangeState(self, self.IdleState)
 						self.currentState = "closed"
-					elseif self.isFactory and (self.desiredState == "rolloff") then
+					elseif (self.desiredState == "rolloff") then
 						self:RollOff(self.currentTarget)
 						self.currentState = "rolloff"
 					end

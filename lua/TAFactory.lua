@@ -35,7 +35,7 @@ TAFactory = Class(TAconstructor) {
 			self.desiredState = "opened"
 		end
 		---self:SetAllWeaponsEnabled(false)
-		if self.hideUnit and IsDestroyed(unitBeingBuilt) == false then
+		if self.hideUnit and not IsDestroyed(unitBeingBuilt) then
 			unitBeingBuilt:HideBone(0, false)
 		end
 		self.isBuilding = true

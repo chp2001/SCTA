@@ -32,6 +32,7 @@ UnitBlueprint {
         BuildCostMass = 2000,
         BuildTime = 27000,
     },
+    SizeY = 1.4,
     StrategicIconName = 'icon_land3_antiair',
     Weapon = {
         {

@@ -129,7 +129,6 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        Elevation = 0.25,
         BackUpDistance = 0,
         MaxSpeedReverse = 0,
         WaterSpeedMultiplier = 0.75,
@@ -143,8 +142,6 @@ UnitBlueprint {
         MaxSteerForce = 100,
         RotateOnSpot = true,
         TurnFacingRate = 66,
-        WobbleFactor = 0.05,
-        WobbleSpeed = 0.05,
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,

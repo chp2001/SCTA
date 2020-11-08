@@ -56,8 +56,8 @@ UnitBlueprint {
     },
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
-    SizeX = 1.7,
-    SizeY = 1.5,
-    SizeZ = 1.5,
+    SizeX = 1.8,
+    SizeY = 1,
+    SizeZ = 2,
     StrategicIconName = 'icon_land3_engineer',
 }

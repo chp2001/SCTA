@@ -171,7 +171,8 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-	BackUpDistance = 0,
+        Elevation = 0.25,
+        BackUpDistance = 0,
 	MaxSpeedReverse = 0,
         MaxAcceleration = 2,
         MaxBrake = 1,

@@ -30,10 +30,10 @@ UnitBlueprint {
         BuildCostMass = 400,    
         BuildableCategory = {
             'BUILTBYT1HOVER ARM',
-            'BUILTBYT1SHIP ARM',
             'BUILTBYT2SUB ARM',
-            'BUILTBYT1AIR ARM',
             'BUILTBYT2AIR ARM',
+            'armaap',
+            'armasy',
         },
         MaxBuildDistance = 7,
         ProductionPerSecondEnergy = 3,

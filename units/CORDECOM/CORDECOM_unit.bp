@@ -67,10 +67,7 @@ UnitBlueprint {
 	'LEVEL2',
         'OVERLAYDIRECTFIRE',
         'CORE',
-	
-	
-	
-	
+        'SUBCOMMANDER',
     },
     Defense = {
         ArmorType = 'Commander',
@@ -150,6 +147,7 @@ UnitBlueprint {
             RULEUCC_Repair = true,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
+            RULEUCC_Overcharge = true,
         },
         ConstructionBar = true,
         SelectionPriority = 3,

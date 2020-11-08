@@ -43,11 +43,9 @@ UnitBlueprint {
         MaxBuildDistance = 7,
         BuildableCategory = {
             'BUILTBYT1HOVER ARM',
-            'BUILTBYT1SHIP ARM',
-            'BUILTBYT2SUB ARM',
-            'BUILTBYT1KBOT ARM',
             'BUILTBYT2KBOT ARM',
             'armavp', 
+            'armalab',
         },
     },
     Intel = {

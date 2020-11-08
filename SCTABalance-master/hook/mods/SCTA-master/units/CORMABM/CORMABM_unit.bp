@@ -9,12 +9,13 @@ UnitBlueprint {
 	'LAND',
 	'ANTIAIR',
         'CORE',
-        'BUILTBYT2KBOT',
+        'BUILTBYT1KBOT',
+        'BUILTBYT1HOVER',
 	'LEVEL2',
     'OVERLAYDEFENSE',
     'SORTDEFENSE',
     'NEEDMOBILEBUILD',
-	'BUILTBYT2AIR',
+	'BUILTBYT1AIR',
 	
     },
     Display = {

@@ -12,11 +12,8 @@ UnitBlueprint {
     'OVERLAYOMNI',
     'LAND',
     'ARM',
-    'HOVER',
+    ---'HOVER',
 'LEVEL1',
-
-
-
 },
     Display = {
        Abilities = {

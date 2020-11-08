@@ -83,8 +83,11 @@ TAunitkeygroups = {
     },
     ["Artillery_Installation"]= {
         "armbrtha",
+        "armguard",
         "corint",
         "corpun",
+        "corvipe",
+        "corplas",
     },
     ["Strategic_Missile_Launcher"]= {
         "armsilo",
@@ -130,13 +133,10 @@ TAunitkeygroups = {
     },    
     ["Heavy_Point_Defense"]= {
         "armhlt",
-        "armguard",
         "armamb",
         "corhlt",
         "corfhlt",
-        "corvipe",
         "cortoast",
-        "corplas",
     },
     ["T1_Air_Scout"]= {
         "armpeep",

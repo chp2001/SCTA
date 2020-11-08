@@ -34,6 +34,7 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 16,
     },
+    SizeY = 1.4,
     StrategicIconName = 'icon_land3_missile',
     Weapon = {
         {

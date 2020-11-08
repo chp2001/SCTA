@@ -17,11 +17,7 @@ UnitBlueprint {
     'LAND',
     'CORE',
     'HOVER',
-
 'LEVEL1',
-
-
-
 },
     Defense = {
         Health = 4400,
@@ -35,6 +31,7 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 14,
     },
+    SizeY = 1.4,
     StrategicIconName = 'icon_land3_antiair',
     Weapon = {
         {

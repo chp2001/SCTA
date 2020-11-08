@@ -43,12 +43,9 @@ UnitBlueprint {
         MaxBuildDistance = 7,
         BuildableCategory = {
             'BUILTBYT1HOVER CORE',
-            'BUILTBYT1SHIP CORE',
-            'BUILTBYT2SUB CORE',
-            'BUILTBYT1VEHICLE CORE',
-            'BUILTBYT2VEHICLE CORE',
-            'coralab', 
-            'corgant',
+            'BUILTBYT2KBOT CORE',
+            'coravp', 
+            'coralab',
         },
     },
     Intel = {

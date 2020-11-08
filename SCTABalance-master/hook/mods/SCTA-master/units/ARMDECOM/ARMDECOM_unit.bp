@@ -18,8 +18,7 @@ UnitBlueprint {
     'ARM',
     'CONSTRUCTION',
     'ENGINEER',
-
-
+    'SUBCOMMANDER',
 },
    Display = {
        UniformScale = 0.28,
@@ -30,16 +29,16 @@ UnitBlueprint {
         MaxHealth = 12000,
     },
     Economy = {
-        BuildCostEnergy = 90000,
-        BuildCostMass = 4500,
-        BuildTime = 50000,
+        BuildCostEnergy = 180000,
+        BuildCostMass = 9000,
+        BuildTime = 100000,
         MaxBuildDistance = 10,
-        BuildRate = 240,
+        BuildRate = 600,
         BuildableCategory = {
-            'BUILTBYCOMMANDER ARM',
             'BUILTBYT1HOVER ARM',
             'BUILTBYT2KBOT ARM',
             'armavp', 
+            'armalab',
         },
         ProductionPerSecondEnergy = 300,
         ProductionPerSecondMass = 5,

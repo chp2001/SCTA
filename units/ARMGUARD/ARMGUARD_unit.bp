@@ -146,7 +146,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 500,
+            Damage = 125,
             DamageRadius = 2, 
             DamageType = 'Normal',
             DisplayName = 'ARMFIXED_GUN',

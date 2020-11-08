@@ -143,7 +143,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 1500,
+            Damage = 500,
             DamageRadius = 2.65, 
             WeaponCategory = 'Artillery',
             DamageType = 'Normal',
@@ -160,7 +160,6 @@ UnitBlueprint {
             EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 250,
             EnergyRequired = 750,
-            
             ProjectileId = '/mods/SCTA-master/projectiles/CORFIXED_GUN/CORFIXED_GUN_proj.bp',
             RackBones = {
                 {
@@ -182,7 +181,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.357,
+            RateOfFire = 0.4,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

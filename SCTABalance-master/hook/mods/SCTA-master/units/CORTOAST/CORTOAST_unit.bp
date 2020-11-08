@@ -9,8 +9,8 @@ UnitBlueprint {
         UniformScale = 0.12,
     },
     Defense = {
-        Health = 4100,
-        MaxHealth = 4100,
+        Health = 6200,
+        MaxHealth = 6200,
     },
     Footprint = {
         SizeX = 2,

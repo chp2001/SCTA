@@ -9,14 +9,13 @@ UnitBlueprint {
 	'LAND',
 	'ANTIAIR',
         'ARM',
-        'BUILTBYT2KBOT',
+        'BUILTBYT1KBOT',
+        'BUILTBYT1HOVER',
 	'LEVEL2',
     'OVERLAYDEFENSE',
     'SORTDEFENSE',
     'NEEDMOBILEBUILD',
-	'BUILTBYT2AIR',
-	
-	
+	'BUILTBYT1AIR',
     },
     Display = {
         UniformScale = 0.06,

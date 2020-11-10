@@ -1,6 +1,6 @@
 PropBlueprint {
    Merge = true, 
     Economy = {
-        ReclaimMassMax = 2000,
+        ReclaimMassMax = 1800,
     },
 }

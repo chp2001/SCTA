@@ -10,13 +10,13 @@ UnitBlueprint {
 	'ANTIAIR',
         'CORE',
         'BUILTBYT1KBOT',
+        'BUILTBYT1VEHICLE',
+        'BUILTBYT1AIR',
         'BUILTBYT1HOVER',
 	'LEVEL2',
     'OVERLAYDEFENSE',
     'SORTDEFENSE',
     'NEEDMOBILEBUILD',
-	'BUILTBYT1AIR',
-	
     },
     Display = {
         UniformScale = 0.20,

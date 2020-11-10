@@ -14,14 +14,15 @@ UnitBlueprint {
 	'LEVEL3',
     },
     Defense = {
-        Health = 10000,
-        MaxHealth = 10000,
+        Health = 16000,
+        MaxHealth = 16000,
     },
     Display = {
         UniformScale = 0.24,
     },
     Economy = {
-        BuildCostMass = 1600,
+        BuildCostMass = 2400,
+        BuildCostEnergy = 42000,
         BuildTime = 22500,
     },
     Footprint = {
@@ -31,6 +32,7 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 14,
     },
+    LifeBarSize = 4,
     SelectionSizeX = 2.4,
     SelectionSizeZ = 2.4,
     SizeX = 3,

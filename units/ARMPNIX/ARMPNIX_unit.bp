@@ -134,7 +134,6 @@ UnitBlueprint {
         Category = 'Bomber',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
-            RULEUCC_CallTransport = true,
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
@@ -240,6 +239,7 @@ UnitBlueprint {
             TrackingRadius = 1.15,
             TurretDualManipulators = false,
             Turreted = false,
+            RangeCategory = 'UWRC_DirectFire',
             WeaponCategory = 'Bomb',
             WeaponRepackTimeout = 0,
             WeaponUnpacks = false,

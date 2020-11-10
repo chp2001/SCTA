@@ -26,7 +26,7 @@ Defense = {
     MaxHealth = 14000,
 },
     Economy = {
-        BuildCostEnergy = 18000,
+        BuildCostEnergy = 36000,
         BuildCostMass = 1800,
         BuildTime = 28000,
     },

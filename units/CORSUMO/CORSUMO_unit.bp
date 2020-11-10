@@ -60,7 +60,7 @@ UnitBlueprint {
     Description = 'Armored Assault Kbot',
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORSUMO/CORSUMO_lod0_Awalk.sca',
-        AnimationWalkRate = 1,
+        AnimationWalkRate = 1.2,
         Abilities = {
             'Heavy Bot',
         },
@@ -89,7 +89,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -138,10 +137,11 @@ UnitBlueprint {
 	MaxSpeedReverse = 0,
         MaxAcceleration = 2.2,
         MaxBrake = 2.2,
-        MaxSpeed = 2.2,
+        MaxSpeed = 0.5,
         MotionType = 'RULEUMT_Land',
         TurnRate = 155,
         MaxSteerForce = 10,
+		RotateOnSpot = 'true',
     },
     SelectionSizeX = 1.3,
     SelectionSizeZ = 1.2,

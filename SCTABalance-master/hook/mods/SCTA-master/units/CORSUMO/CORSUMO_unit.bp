@@ -17,16 +17,24 @@ UnitBlueprint {
         Health = 10000,
         MaxHealth = 10000,
     },
+    Display = {
+        UniformScale = 0.24,
+    },
     Economy = {
         BuildCostMass = 1600,
         BuildTime = 22500,
     },
     Footprint = {
-	SizeX = 1,
-	SizeZ = 1,
+	SizeX = 2,
+	SizeZ = 2,
     },
     Intel = {
         VisionRadius = 14,
     },
+    SelectionSizeX = 2.4,
+    SelectionSizeZ = 2.4,
+    SizeX = 3,
+    SizeZ = 3,
+    SizeY = 3,
     StrategicIconName = 'icon_bot3_armored',
 }

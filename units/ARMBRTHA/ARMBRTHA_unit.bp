@@ -16,7 +16,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 18,
+    BuildIconSortPriority = 1,
     Categories = {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
@@ -27,19 +27,13 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH3',
         'SORTDEFENSE',
-	
 	'STRUCTURE',
 	'DEFENSE',
 	'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
-
-	
 	'ARM',
 	'LEVEL3',
 	'STRATEGIC',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -148,7 +142,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 2000,
+            Damage = 1250,
             DamageRadius = 2.5, 
             DamageType = 'Normal',
             DisplayName = 'ARM_BERTHACANNON',
@@ -160,7 +154,8 @@ UnitBlueprint {
             FiringTolerance = 1.65,	
 	    FiringRandomness = 0.5,
             Label = 'ARM_BERTHACANNON',
-            MaxRadius = 180,
+            RenderFireClock = true,
+            MaxRadius = 280,
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 75,
@@ -179,10 +174,10 @@ UnitBlueprint {
             RackRecoilDistance = -5,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 0,
+            RackSalvoReloadTime = 3,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.143,
+            RateOfFire = 0.5,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

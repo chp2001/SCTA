@@ -215,7 +215,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 0,
-            NukeInnerRingDamage = 10,
+            NukeInnerRingDamage = 30,
             NukeInnerRingRadius = 15,
             NukeInnerRingTicks = 10,
             NukeInnerRingTotalTime = 12,

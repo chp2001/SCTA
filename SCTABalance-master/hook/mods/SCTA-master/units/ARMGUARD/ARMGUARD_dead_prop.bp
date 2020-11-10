@@ -4,6 +4,6 @@ PropBlueprint {
         UniformScale = 0.24,
     },
     Economy = {
-        ReclaimMassMax = 20000,
+        ReclaimMassMax = 2500,
     },
 }

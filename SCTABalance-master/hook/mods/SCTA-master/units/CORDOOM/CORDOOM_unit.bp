@@ -10,7 +10,7 @@ UnitBlueprint {
         MaxHealth = 22000,
     },
     Display = {
-        UniformScale = 0.36,
+        UniformScale = 0.18,
     },
     Description = 'Energy Weapon',
     Economy = {
@@ -22,17 +22,18 @@ UnitBlueprint {
         SkirtSizeX = 1, 
         SkirtSizeZ = 1,  
     },
-    LifeBarSize = 6,
-    SelectionSizeX = 4,
-    SelectionSizeZ = 4,
+    LifeBarSize = 3,
+    SelectionSizeX = 2,
+    SelectionSizeZ = 2,
     SelectionThickness = 0.25,
-    SizeX = 8,
-    SizeY = 10,
-    SizeZ = 8,
+    SizeX = 4,
+    SizeY = 5,
+    SizeZ = 4,
     Weapon = {
         {
             AboveWaterTargetsOnly = true,
             ArtilleryShieldBlocks = true,
+            RenderFireClock = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',

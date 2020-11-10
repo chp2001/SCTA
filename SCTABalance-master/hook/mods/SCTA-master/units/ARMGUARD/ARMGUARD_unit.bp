@@ -1,11 +1,19 @@
 UnitBlueprint {
     Merge = true, 
-    Footprint = {
-	MaxSlope = 0.625,
-        SizeX = 1,
-        SizeZ = 1,
+    Display = {
+        UniformScale = 0.24,
+    },
+    Economy = {
+        BuildCostEnergy = 45000,
+        BuildCostMass = 3000,
+        BuildTime = 40000,
     },
     Intel = {
         VisionRadius = 14,
     },
+    SelectionSizeX = 2,
+    SelectionSizeZ = 2,
+    SizeX = 2.5,
+    SizeY = 3.5,
+    SizeZ = 2.5,
 }

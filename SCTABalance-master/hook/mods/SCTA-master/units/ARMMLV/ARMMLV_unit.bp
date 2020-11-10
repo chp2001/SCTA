@@ -1,0 +1,23 @@
+#ARM Mine Layer Vehicle - Tech Level 1
+#ARMMLV
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Display = {
+        UniformScale = 0.08,
+    },
+    Economy = {
+        MaxBuildDistance = 6,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
+    },
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
+    SizeX = 1.5,
+    SizeY = 1,
+    SizeZ = 1.5,
+}

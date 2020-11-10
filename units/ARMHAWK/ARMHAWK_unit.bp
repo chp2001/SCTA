@@ -139,7 +139,6 @@ UnitBlueprint {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
-            RULEUCC_CallTransport = true,
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
@@ -217,7 +216,7 @@ UnitBlueprint {
             MaxRadius = 41.1875,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 100,
+            MuzzleVelocity = 25,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMVTOL_ADVMISSILE/ARMVTOL_ADVMISSILE_proj.bp',
             RackBones = {
                 {
@@ -234,9 +233,8 @@ UnitBlueprint {
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
             RateOfFire = 0.66,
-            EnergyDrainPerSecond = 0,
+            EnergyDrainPerSecond = 50,
             EnergyRequired = 150,
-            
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -277,7 +275,7 @@ UnitBlueprint {
             MaxRadius = 41.1875,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 100,
+            MuzzleVelocity = 25,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMVTOL_ADVMISSILE2/ARMVTOL_ADVMISSILE2_proj.bp',
             RackBones = {
                 {
@@ -294,9 +292,8 @@ UnitBlueprint {
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
             RateOfFire = 0.66,
-            EnergyDrainPerSecond = 0,
+            EnergyDrainPerSecond = 50,
             EnergyRequired = 150,
-            
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',

@@ -33,9 +33,6 @@ UnitBlueprint {
 	'CORE',
 	'LEVEL3',
 	'SORTDEFENSE',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -157,7 +154,7 @@ UnitBlueprint {
             FiringTolerance = 1.65,	
 	    FiringRandomness = 0.5,
             Label = 'CORE_INTIMIDATOR',
-            MaxRadius = 180,
+            MaxRadius = 210,
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 80,

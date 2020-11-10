@@ -5,6 +5,28 @@
 
 UnitBlueprint {
     Merge = true, 
+    Categories = {
+        'TECH2',
+        'BUILTBYT2AIR',
+        'BUILTBYT2KBOT',
+        'BUILTBYT2VEHICLE',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+	'STRUCTURE',
+	'STRATEGIC',
+	'INDIRECTFIRE',
+        'NUKE',
+        'SILO',
+        'SHOWQUEUE',
+	'CORE',
+	'SPECIAL',
+	'SORTSTRATEGIC',
+	'LEVEL3',
+    'SHOWATTACKRETICLE',
+    'NOCUSTOMTARGET',
+    },
     Economy = {
         BuildRate = 150,
     },

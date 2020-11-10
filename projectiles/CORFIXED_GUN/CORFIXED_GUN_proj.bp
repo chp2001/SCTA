@@ -34,7 +34,7 @@ ProjectileBlueprint {
     Categories = {
         'CORE',
         'PROJECTILE',
-        'DIRECTFIRE'
+        'INDIRECTFIRE'
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/Plasma_mesh.bp',
@@ -42,11 +42,11 @@ ProjectileBlueprint {
         StrategicIconSize = 1,
     },
     General = {
-        Category = 'Direct Fire',
+        Category = 'Indirect Fire',
         EntityCategory = {
             'CORE',
             'PROJECTILE',
-            'DIRECTFIRE',
+            'INDIRECTFIRE',
         },
         Faction = 'CORE',
         Weapon = 'CORFIXED_GUN',
@@ -56,7 +56,7 @@ ProjectileBlueprint {
     },
     Physics = {
         DestroyOnWater = true,
-        InitialSpeed = 21.875,
+        InitialSpeed = 42,
         Lifetime = 10,
         UseGravity = true,
     },

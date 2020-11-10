@@ -70,19 +70,19 @@ TAunitkeygroups = {
     ["Torpedo_Launcher"]= {
         "armatl",
         "armtl",
-        "armguard",
+        "armanni",
         "coratl",
         "cortl",
         "corplas",
-        "corpun",
-    },
-    ["Heavy_Artillery_Installation"]= {
-        "armanni",
         "cordoom",
     },
-    ["Artillery_Installation"]= {
+    ["Heavy_Artillery_Installation"]= {
         "armbrtha",
         "corint",
+    },
+    ["Artillery_Installation"]= {
+        "corpun",
+        "armguard",
         "corvipe",
     },
     ["Strategic_Missile_Launcher"]= {

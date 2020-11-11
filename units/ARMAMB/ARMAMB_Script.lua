@@ -3,14 +3,12 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
-local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
+local TAPop = import('/mods/SCTA-master/lua/TAunit.lua').TAPop
+local TAHide = import('/mods/SCTA-master/lua/TAweapon.lua').TAHide
 
-ARMAMB = Class(TAunit) {
-	damageReduction = 1,
-
+ARMAMB = Class(TAPop) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TAPop.OnCreate(self)
 		self.Spinners = {
 			door1 = CreateRotator(self, 'door1', 'x', nil, 0, 0, 0),
 			door2 = CreateRotator(self, 'door2', 'z', nil, 0, 0, 0),
@@ -38,18 +36,17 @@ ARMAMB = Class(TAunit) {
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
-		ForkThread(self.InitialPack,self)
+		TAPop.OnStopBeingBuilt(self,builder,layer)
+		ForkThread(self.Pack,self)
 	end,
 
 	OnDamage = function(self, instigator, amount, vector, damageType)
-		TAunit.OnDamage(self, instigator, amount * self.damageReduction, vector, damageType)
+		TAPop.OnDamage(self, instigator, amount * self.damageReduction, vector, damageType)
 		#Has Damage Reduction
 	end,
 
-	InitialPack = function(self)
-		self.damageReduction = 0.28
-
+	Pack = function(self)
+		TAPop.Pack(self)
 		--MOVE barrel to z-axis <-7.90> SPEED <24.00>;
 		self.Sliders.barrel:SetGoal(0,0,-7.9)
 		self.Sliders.barrel:SetSpeed(24)
@@ -134,15 +131,13 @@ ARMAMB = Class(TAunit) {
 	end,
 
 	Weapons = {
-		ARMAMB_GUN = Class(TAweapon) {
+		ARMAMB_GUN = Class(TAHide) {
 			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
+				TAHide.OnWeaponFired(self)
 				
 			end,
 
 			PlayFxWeaponUnpackSequence = function(self)
-				self.unit.damageReduction = 1
-
 				--MOVE door1 to y-axis <-3.40> SPEED <8.00>;
 				self.unit.Sliders.door1:SetGoal(0,-3.4,0)
 				self.unit.Sliders.door1:SetSpeed(8)
@@ -223,13 +218,10 @@ ARMAMB = Class(TAunit) {
 
 				--SLEEP <25>;
 
-				TAweapon.PlayFxWeaponUnpackSequence(self)
+				TAHide.PlayFxWeaponUnpackSequence(self)
 			end,	
 
 			PlayFxWeaponPackSequence = function(self)
-				self.unit.damageReduction = 0.28
-
-				--MOVE barrel to z-axis <-7.90> SPEED <24.00>;
 				self.unit.Sliders.barrel:SetGoal(0,0,-7.9)
 				self.unit.Sliders.barrel:SetSpeed(24)
 
@@ -309,7 +301,7 @@ ARMAMB = Class(TAunit) {
 
 				--SLEEP <17>;
 				
-				TAweapon.PlayFxWeaponPackSequence(self)
+				TAHide.PlayFxWeaponPackSequence(self)
 			end,	
 		},
 	},

@@ -40,7 +40,7 @@ UnitBlueprint {
         SkirtSizeZ = 3,  
     },
     LifeBarSize = 4,
-    SelectionCenterOffsetZ = -1,
+    SelectionCenterOffsetZ = -0.5,
     SizeY = 7,
     SizeX = 4,
     SizeZ = 4,

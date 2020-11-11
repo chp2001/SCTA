@@ -472,4 +472,13 @@ TAunit = Class(Unit)
     end,
 }
 
+TAPop = Class(TAunit) {
+	damageReduction = 1,
+	Pack = function(self)
+		self.damageReduction = 0.28
+		self:EnableIntel('RadarStealth')
+	end,
+
+}
+
 TypeClass = TAunit

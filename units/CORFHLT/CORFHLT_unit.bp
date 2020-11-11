@@ -149,7 +149,8 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 50,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMFHLT_LASER/ARMFHLT_LASER_proj.bp',
-            EnergyRequired = 75,
+            EnergyDrainPerSecond = 50,
+            EnergyRequired = 100,
             ProjectileLifetime = 1,
             RackBones = {
                 {
@@ -177,10 +178,12 @@ UnitBlueprint {
                 'ALLUNITS'
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'aimmuzzle',
-            TurretBonePitch = 'gun',
+            TurretBoneMuzzle = 'muzzle1',
+            TurretBonePitch = 'barrel2',
+            TurretBoneDualMuzzle = 'muzzle2',
+            TurretBoneDualPitch = 'barrel1',
             TurretBoneYaw = 'turret',
-            TurretDualManipulators = false,
+            TurretDualManipulators = true,
             TurretPitch = 0,
             TurretPitchRange = 360,
             TurretPitchSpeed = 150,
@@ -190,7 +193,7 @@ UnitBlueprint {
             Turreted = true,
         },
         { #LARGE_BUILDINGEX
-            Damage = 300,
+            Damage = 100,
             DamageFriendly = true,
             DamageRadius = 3.75,
             DamageType = 'Normal',
@@ -198,7 +201,7 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         },
         { #LARGE_BUILDING
-            Damage = 1800,
+            Damage = 200,
             DamageRadius = 12.5,
             DummyWeapon = true,
             Label = 'SuicideWeapon',

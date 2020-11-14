@@ -9,7 +9,7 @@ TASeaair = Class(TAair)
     end,
 
 	OnMotionVertEventChange = function(self, new, old )
-		TAair.OnMotionVertEventChange(self, new, old)
+		---TAair.OnMotionVertEventChange(self, new, old)
 			if (new == 'Down' or new == 'Bottom') then
 						self:PlayUnitSound('Landing')
 				self:CloseWings(self)
@@ -21,7 +21,7 @@ TASeaair = Class(TAair)
 		end,
 
 	OnLayerChange = function(self, new, old)
-        TAair.OnLayerChange(self, new, old)
+		--TAair.OnLayerChange(self, new, old)
 		if( old != 'None' ) then
             if( self.AT1 ) then
                 self.AT1:Destroy()
@@ -29,10 +29,14 @@ TASeaair = Class(TAair)
 			end
             local myBlueprint = self:GetBlueprint()
 			if( new == 'Water' ) then
+				self:EnableIntel('Vision')
+                self:EnableIntel('WaterVision')
 				self:EnableIntel('RadarStealth')
 				self.Sliders.chassis:SetSpeed(10)
 				self.Sliders.chassis:SetGoal(0,-10,0)
 			elseif( new == 'Air' ) then
+				self:EnableIntel('Vision')
+                self:DisableIntel('WaterVision')
 				self.Sliders.chassis:SetSpeed(10)
 				self.Sliders.chassis:SetGoal(0,0,0)
 				self:DisableIntel('RadarStealth')

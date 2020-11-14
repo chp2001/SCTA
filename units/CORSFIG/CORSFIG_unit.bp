@@ -8,8 +8,7 @@ UnitBlueprint {
         GuardReturnRadius = 75,
         GuardScanRadius = 60,
     },
-
-    Audio = {
+        Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
             Cue = 'VTOLCRAC',
@@ -79,7 +78,6 @@ UnitBlueprint {
     'VTOL',
         'OVERLAYANTIAIR',
 	'OVERLAYDIRECTFIRE',
-	'DIRECTFIRE',
         'CORE',
     'LEVEL3',
     'TRANSPORTATION',
@@ -138,7 +136,7 @@ UnitBlueprint {
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = true,
+            RULEUCC_CallTransport = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
             RULEUCC_Patrol = true,

@@ -1,70 +1,65 @@
-#CORE Avenger Missile
-#CORVTOL_MISSILE
-#
-#Projectile created by Raevn
 
 ProjectileBlueprint {
     Audio = {
         Impact = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOSML2',
+            Cue = 'XPLOMED2',
             LodCutoff = 'Weapon_LodCutoff',
         },
         ImpactUnit = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOSML2',
+            Cue = 'XPLOMED2',
             LodCutoff = 'Weapon_LodCutoff',
         },
         ImpactShield = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOSML2',
+            Cue = 'XPLOMED2',
             LodCutoff = 'Weapon_LodCutoff',
         },
         ImpactTerrain = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOSML2',
+            Cue = 'XPLOMED2',
             LodCutoff = 'Weapon_LodCutoff',
         },
         ImpactWater = Sound {
             Bank = 'TA_Sound',
-            Cue = 'SPLSMED',
+            Cue = 'SPLSSML',
             LodCutoff = 'Weapon_LodCutoff',
         },
     },
     Categories = {
-        'CORE',
+        'ARM',
         'PROJECTILE',
-        'ANTIAIR',
-        'MISSILE',
+        'ANTIMISSILE',
     },
     Display = {
+        CameraFollowTimeout = 1,
+        CameraFollowsProjectile = true,
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/missile_mesh.bp',
         StrategicIconSize = 1,
-        UniformScale = 0.16,
+        UniformScale = 0.22,
     },
     General = {
-        Category = 'Anti Air',
-        EntityCategory = {
-       	    'CORE',
+        Category = 'Defense',
+        Categories = {
+            'ARM',
             'PROJECTILE',
-   	    'ANTIAIR',
-       	    'MISSILE',
+            'ANTIMISSILE',
         },
-        Faction = 'CORE',
-        Weapon = 'CORVTOL_MISSILE',
+        Faction = 'ARM',
     },
     Interface = {
         HelpText = 0,
     },
     Physics = {
-        --Acceleration = 9.3125,
+        Acceleration = 10,
+        ---CollideEntity = true,
+        CollideSurface = true,
         DestroyOnWater = true,
-        InitialSpeed = 100,
-        LeadTarget = false,
-        Lifetime = 10,
-        --MaxSpeed = 29.375,
+        InitialSpeed = 60,
+        MaxSpeed = 120,
         TrackTarget = true,
-        TurnRate = 350,
+        TurnRate = 360,
         UseGravity = false,
         VelocityAlign = true,
     },

@@ -53,11 +53,11 @@ ProjectileBlueprint {
     },
     Physics = {
         Acceleration = 0,
-        CollideEntity = true,
+        --CollideEntity = true,
         CollideSurface = true,
         DestroyOnWater = true,
         FlareRadius = 15,
-        MaxSpeed = 20,
+        InitialSpeed = 20,
         TrackTarget = true,
         TurnRate = 360,
         UseGravity = false,

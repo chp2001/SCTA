@@ -5,6 +5,9 @@
 
 UnitBlueprint {
     Merge = true, 
+    Display = {
+        UniformScale = 0.10,
+    },
     Defense = {
         Health = 3200,
         MaxHealth = 3200,
@@ -18,8 +21,10 @@ UnitBlueprint {
 	SizeX = 1,
 	SizeZ = 1,
     },
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
     SelectionCenterOffsetZ = -0.2,
     SizeX = 2,
-    SizeY = 1.5,
+    SizeY = 1,
     SizeZ = 2,
 }

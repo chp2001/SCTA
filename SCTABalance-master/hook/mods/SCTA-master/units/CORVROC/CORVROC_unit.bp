@@ -1,7 +1,7 @@
 UnitBlueprint {
     Merge = true, 
     Display = {
-        UniformScale = 0.12,
+        UniformScale = 0.08,
     },
     Defense = {
         Health = 1900,
@@ -11,9 +11,9 @@ UnitBlueprint {
         BuildCostEnergy = 4200,
         BuildCostMass = 580,
     },
-    SelectionSizeX = 1.25,
-    SelectionSizeZ = 1.25,
-    SizeX = 2,
-    SizeY = 1,
-    SizeZ = 2,
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
+    SizeX = 1.8,
+    SizeY = 0.5,
+    SizeZ = 1.8,
 }

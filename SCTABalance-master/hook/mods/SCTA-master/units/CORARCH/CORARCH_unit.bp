@@ -1,0 +1,17 @@
+#ARM Shredder - Anti-Air Ship
+#ARMAAS
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Display = {
+        UniformScale = 0.28,
+    },
+    LifeBarSize = 3,
+    SelectionSizeX = 3,
+    SelectionSizeZ = 6,
+    SizeX = 4,
+    SizeY = 3,
+    SizeZ = 10,
+}

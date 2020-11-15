@@ -32,7 +32,7 @@ do
             LifeBarSize = 0.5,
             Physics = {
                 MaxSpeed = 1.2,
-                TurnRate = 0.5,
+                TurnRate = 0.75,
                 FuelRechargeRate = 0.000005,
                 FuelUseTime = 0.0006,
             },    

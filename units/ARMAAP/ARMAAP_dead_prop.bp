@@ -30,7 +30,7 @@ PropBlueprint {
     Footprint = {
         OccupancyCaps = 3,
         SizeX = 7,
-        SizeZ = 6,
+        SizeZ = 7,
     },
     Interface = {
         HelpText = 'Wreckage',

@@ -22,14 +22,14 @@ UnitBlueprint {
 	
     },
     Defense = {
-        Health = 2200,
-        MaxHealth = 2200,
+        Health = 2800,
+        MaxHealth = 2800,
         SurfaceThreatLevel = 40,
     },
     Economy = {
         BuildCostEnergy = 10200,
         BuildCostMass = 1300,
-        BuildTime = 36000,
+        BuildTime = 20000,
     },
     Intel = {
         VisionRadius = 16,

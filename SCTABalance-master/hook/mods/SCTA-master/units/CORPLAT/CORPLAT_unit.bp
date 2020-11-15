@@ -31,15 +31,10 @@ UnitBlueprint {
 	
     },
     Defense = {
-        ArmorType = 'Structure',
-        Health = 6000,
-        MaxHealth = 6000,
-        AirThreatLevel = 0,
+        Health = 14000,
+        MaxHealth = 14000,
         EconomyThreatLevel = 11,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
-    Description = 'Builds Seaplanes',
     Display = {
         UniformScale = 0.20,
     },
@@ -49,9 +44,9 @@ UnitBlueprint {
         SizeZ = 8,
     },
     Economy = {
-        BuildCostEnergy = 60000,
-        BuildCostMass = 6000, 
-        BuildTime = 40000,
+        BuildCostEnergy = 120000,
+        BuildCostMass = 8000, 
+        BuildTime = 85000,
     ProductionPerSecondMass = 0,
     BuildRate = 300,
         BuildableCategory = {

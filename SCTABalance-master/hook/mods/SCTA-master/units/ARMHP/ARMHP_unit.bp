@@ -28,8 +28,8 @@ UnitBlueprint {
 	
     },
     Defense = {
-        Health = 4000,
-        MaxHealth = 4000,
+        Health = 15000,
+        MaxHealth = 15000,
     },
     Footprint = {
         MaxSlope = 0.625,
@@ -42,7 +42,8 @@ UnitBlueprint {
     Economy = {
         BuildRate = 250,
         BuildCostEnergy = 39000,
-        BuildCostMass = 4400, 
+        BuildCostMass = 7000, 
+        BuildTime = 60000,
         BuildableCategory = {
             'HOVER LEVEL1 ARM',
             'HOVER LEVEL3 ARM',

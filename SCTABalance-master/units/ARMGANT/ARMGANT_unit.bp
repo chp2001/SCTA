@@ -95,9 +95,9 @@ UnitBlueprint {
         UniformScale = 0.38,
     },
     Economy = {
-        BuildCostEnergy = 20000,
-        BuildCostMass = 6000, 
-        BuildTime = 41937,
+        BuildCostEnergy = 200000,
+        BuildCostMass = 12000, 
+        BuildTime = 125000,
         BuildRate = 250,
         BuildableCategory = {
             'KBOT LEVEL4 ARM',
@@ -166,8 +166,8 @@ UnitBlueprint {
             3.5,
         },
     },
-    SelectionSizeX = 14,
-    SelectionSizeZ = 14,
+    SelectionSizeX = 10,
+    SelectionSizeZ = 10,
     SelectionThickness = 0.25,
     SizeX = 14,
     SizeY = 16,

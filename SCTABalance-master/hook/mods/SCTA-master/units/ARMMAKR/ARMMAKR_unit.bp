@@ -4,6 +4,7 @@ UnitBlueprint {
         'BUILTBYT1AIR',
         'BUILTBYT1KBOT',
         'BUILTBYT1VEHICLE',
+        'BUILTBYT1SHIP',
         'BUILTBYT1HOVER',
         'SELECTABLE',
         'DRAGBUILD',

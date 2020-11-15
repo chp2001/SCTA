@@ -178,7 +178,7 @@ UnitBlueprint {
             MinRadius = 5, 
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 13.125,
+            MuzzleVelocity = 20,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_HAM/ARM_HAM_proj.bp',
             RackBones = {
                 {
@@ -219,12 +219,11 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 90,
             Turreted = true,
-            WeaponCategory = 'Artillery',
 	        WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
             EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 5,
-            EnergyRequired = 5,
+            EnergyRequired = 10,
         },
         { #BIG_UNITEX
             Damage = 50,

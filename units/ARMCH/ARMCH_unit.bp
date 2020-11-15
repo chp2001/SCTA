@@ -137,7 +137,7 @@ UnitBlueprint {
     },
     Footprint = {
         SizeX = 2,
-        SizeZ = 1,
+        SizeZ = 2,
     },
     General = {
         Category = 'Construction',

@@ -98,10 +98,8 @@ UnitBlueprint {
         BuildTime = 2171,
     },
     Footprint = {
-        SizeX = 2,
+        SizeX = 1,
         SizeZ = 2,
-	MaxSlope = 0.875,
-	MaxWaterDepth = 0.75,
     },
     General = {
         Category = 'Indirect Fire',
@@ -178,7 +176,7 @@ UnitBlueprint {
             MinRadius = 5, 
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 16,
+            MuzzleVelocity = 25,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_THUD/CORE_THUD_proj.bp',
             RackBones = {
                 {
@@ -216,9 +214,8 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 90,
             Turreted = true,
-            WeaponCategory = 'Artillery',
             EnergyChargeForFirstShot = true,
-            EnergyDrainPerSecond = 10,
+            EnergyDrainPerSecond = 5,
             EnergyRequired = 10,
             
         },

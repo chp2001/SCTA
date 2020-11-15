@@ -7,10 +7,6 @@ UnitBlueprint {
         BuildCostEnergy = 600,
         BuildCostMass = 90,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
     Intel = {
         VisionRadius = 12,
     },

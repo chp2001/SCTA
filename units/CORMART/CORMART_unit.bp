@@ -155,7 +155,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 600,
+            Damage = 450,
 	    DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'CORE_ARTILLERY',
@@ -166,10 +166,11 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_IndirectFire',
 	    FiringRandomness = 1,
             Label = 'CORE_ARTILLERY',
-            MaxRadius = 70,
+            MinRadius = 20,
+            MaxRadius = 110,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 19.375,
+            MuzzleVelocity = 30,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_ARTILLERY/CORE_ARTILLERY_proj.bp',
             RackBones = {
                 {
@@ -184,7 +185,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.2,
+            RateOfFire = 0.15,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
@@ -203,8 +204,8 @@ UnitBlueprint {
             Turreted = true,
             WeaponCategory = 'Artillery',
             EnergyChargeForFirstShot = true,
-            EnergyDrainPerSecond = 5,
-            EnergyRequired = 20,
+            EnergyDrainPerSecond = 50,
+            EnergyRequired = 150,
         },
         { #BIG_UNITEX
             Damage = 50,

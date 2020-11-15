@@ -31,8 +31,10 @@ TAunitkeygroups = {
     },
     ["Hydrocarbon_Power_Plant"]= {
         "armgeo",
+        "armtide",
         "armckfus",
         "corgeo",
+        "cortide", 
         "corckfus",
     },    
     ["Mass_Extractor"]= {
@@ -48,10 +50,8 @@ TAunitkeygroups = {
         "cormmkr", 
     },
     ["Energy_Storage"]= {
-        "armestor",
-        "armtide", 
+        "armestor", 
         "corestor",
-        "cortide", 
     },
     ["Mass_Storage"]= {
         "armmstor",

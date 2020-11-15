@@ -79,9 +79,9 @@ UnitBlueprint {
         BuildCostEnergy = 768,
         BuildCostMass = 82,
         BuildTime = 2188,
-        ProductionPerSecondEnergy = 15,
-        ProductionPerSecondEnergyMin = 10,
-        ProductionPerSecondEnergyMax = 20,
+        ProductionPerSecondEnergy = 20,
+        ProductionPerSecondEnergyMin = 15,
+        ProductionPerSecondEnergyMax = 25,
 	NaturalProducer = true,
     },
     Footprint = {

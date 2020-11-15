@@ -5,6 +5,22 @@
 
 UnitBlueprint {
     Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH1',
+        'ENGINEER',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SHOWQUEUE',
+	'REPAIR',
+        'MOBILE',
+	'CONSTRUCTION',
+	'LAND',
+        'CORE',
+        ---'VEHICLE',
+	'MINELAYER',
+	'LEVEL1',
+    },
     Display = {
         UniformScale = 0.12,
     },

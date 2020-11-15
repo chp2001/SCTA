@@ -73,6 +73,8 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'SONAR',
         'OVERLAYSONAR',
+        'OMNI',
+        'OVERLAYOMNI',
         'ARM',
     'LEVEL3',
     'TRANSPORTATION',
@@ -90,6 +92,8 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_radar>Radar',
+            '<LOC ability_omni>Omni Sensor',
+            '<LOC ability_sonar>Sonar',
         },
 	DestructionEffects = {
 		DefaultFlamingProjectileCountMin = 0,
@@ -122,7 +126,6 @@ UnitBlueprint {
         BuildCostEnergy = 7624,
         BuildCostMass = 139,
         BuildTime = 10064,
-        MaintenanceConsumptionPerSecondEnergy = 23,
     },
     Footprint = {
         SizeX = 1,
@@ -135,12 +138,8 @@ UnitBlueprint {
             RULEUCC_Guard = true,
             RULEUCC_CallTransport = true,
             RULEUCC_Move = true,
-            RULEUCC_Guard = true,
             RULEUCC_Patrol = true,
             RULEUCC_Stop = true,
-        },
-        ToggleCaps = {
-            RULEUTC_IntelToggle = true,
         },
         FactionName = 'ARM',
         TechLevel = 'RULEUTL_Advanced',
@@ -149,10 +148,11 @@ UnitBlueprint {
     Intel = {
     VisionRadius = 22,
     WaterVisionRadius = 6,
-    FreeIntel = true,
+    FreeIntel = false,
     RadarStealth = true,
     RadarRadius = 103, 
     SonarRadius = 70,
+    OmniRadius = 20,
     },
     Interface = {
         HelpText = 'Radar Plane',

@@ -13,7 +13,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH2',
+        'TECH3',
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
@@ -46,7 +46,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_structure2_directfire',
+    StrategicIconName = 'icon_structure3_directfire',
     Weapon = {
         {
             Audio = {

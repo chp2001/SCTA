@@ -18,4 +18,5 @@ UnitBlueprint {
         SkirtSizeX = 0, 
         SkirtSizeZ = 0,  
     },
+    SizeY = 3,
   }    

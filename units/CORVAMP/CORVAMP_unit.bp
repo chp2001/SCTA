@@ -214,7 +214,7 @@ UnitBlueprint {
             MaxRadius = 40.625,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 25,
+            MuzzleVelocity = 80,
             ProjectileId = '/mods/SCTA-master/projectiles/CORVTOL_ADVMISSILE/CORVTOL_ADVMISSILE_proj.bp',
             RackBones = {
                 {
@@ -273,8 +273,8 @@ UnitBlueprint {
             MaxRadius = 40.625,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 25,
-            ProjectileId = '/mods/SCTA-master/projectiles/CORVTOL_ADVMISSILE2/CORVTOL_ADVMISSILE2_proj.bp',
+            MuzzleVelocity = 80,
+            ProjectileId = '/mods/SCTA-master/projectiles/CORVTOL_ADVMISSILE/CORVTOL_ADVMISSILE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

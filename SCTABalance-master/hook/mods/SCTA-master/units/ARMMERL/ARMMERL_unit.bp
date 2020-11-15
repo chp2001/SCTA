@@ -4,9 +4,21 @@
 #Blueprint created by Raevn
 
 UnitBlueprint {
-    Merge = true, 
+    Merge = true,
+    Display = {
+        UniformScale = 0.12,
+    },
     Defense = {
         Health = 1800,
         MaxHealth = 1800,
     },
+    Economy = {
+        BuildCostEnergy = 4500,
+        BuildCostMass = 600,
+    },
+    SelectionSizeX = 1.25,
+    SelectionSizeZ = 1.25,
+    SizeX = 2,
+    SizeY = 1,
+    SizeZ = 2,
 }

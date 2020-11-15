@@ -122,9 +122,8 @@ UnitBlueprint {
 	    BuildRate = 200,
     },
     Footprint = {
-        SizeX = 6,
-        SizeZ = 6,
-	MinWaterDepth = 1.875,
+        SizeX = 4,
+        SizeZ = 9,
     },
     General = {
         Category = 'Ship',

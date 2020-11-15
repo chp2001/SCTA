@@ -5,6 +5,9 @@
 
 UnitBlueprint {
     Merge = true,
+    Display = {
+        UniformScale = 0.24,
+    },
     Defense = {
         Health = 2900,
         MaxHealth = 2900,
@@ -12,4 +15,10 @@ UnitBlueprint {
     Economy = {
         BuildTime = 45000,
     },
+    LifeBarSize = 4,
+    SelectionSizeX = 3,
+    SelectionSizeZ = 5,
+    SizeX = 4,
+    SizeY = 3,
+    SizeZ = 10,
 }

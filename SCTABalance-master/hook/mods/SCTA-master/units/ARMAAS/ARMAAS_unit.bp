@@ -10,7 +10,14 @@ UnitBlueprint {
             '<LOC ability_aa>Anti-Air',
             '<LOC ability_tacmissiledef>Tactical Missile Defense',
         },
+        UniformScale = 0.24,
     },
+    LifeBarSize = 3,
+    SelectionSizeX = 3,
+    SelectionSizeZ = 6,
+    SizeX = 3,
+    SizeY = 3,
+    SizeZ = 10,
     Weapon = {
         {
             Audio = {

@@ -88,9 +88,8 @@ UnitBlueprint {
         BuildTime = 38567,
     },
     Footprint = {
-        SizeX = 6,
-        SizeZ = 6,
-	MinWaterDepth = 0.9375,
+        SizeX = 2,
+        SizeZ = 4,
     },
     General = {
         Category = 'Submarine',

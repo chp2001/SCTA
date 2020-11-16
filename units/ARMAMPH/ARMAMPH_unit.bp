@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 5,
+    BuildIconSortPriority = 6,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -142,8 +142,6 @@ UnitBlueprint {
         MaxSteerForce = 100,
         RotateOnSpot = true,
         TurnFacingRate = 66,
-        WobbleFactor = 0.05,
-        WobbleSpeed = 0.05,
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,

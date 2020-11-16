@@ -1,5 +1,6 @@
 #Generic TA unit
 local Unit = import('/lua/sim/Unit.lua').Unit
+local FireState = import('/lua/game.lua').FireState
 local explosion = import('/lua/defaultexplosions.lua')
 local scenarioUtils = import('/lua/sim/ScenarioUtilities.lua')
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
@@ -31,7 +32,7 @@ TAunit = Class(Unit)
         self._UnitName = bp.General.UnitName
         self:LOGDBG('TAUnit.OnCreate')
         Unit.OnCreate(self)
-		self:SetFireState(2)
+		self:SetFireState(FireState.GROUND_FIRE)
 		if bp.General.BuildAngle then
 		 	local angle = bp.General.BuildAngle / 182
 			angle = (180 + self.buildAngle) * (math.pi / 180)
@@ -39,7 +40,7 @@ TAunit = Class(Unit)
 	  		local z = math.sin(angle / 2) 
 			Warp(self, self:GetPosition(), {0, x, 0, z}) 
 		end
-		self:SetReclaimTimeMultiplier(50)
+		--self:SetReclaimTimeMultiplier(50)
 		self:SetDeathWeaponEnabled(false)
 		self:HideFlares()
 		self.FxMovement = TrashBag()
@@ -470,6 +471,15 @@ TAunit = Class(Unit)
             self:SetRegenRate(buffTable.Value or 0)
         end
     end,
+}
+
+TAPop = Class(TAunit) {
+	damageReduction = 1,
+	Pack = function(self)
+		self.damageReduction = 0.28
+		self:EnableIntel('RadarStealth')
+	end,
+
 }
 
 TypeClass = TAunit

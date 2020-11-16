@@ -9,9 +9,7 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 CORGANT = Class(TAFactory) {
 	pauseTime = 5,
 	hideUnit = true,
-	isFactory = true,
-	spinUnit = false,
-
+	
 	OnCreate = function(self)
 		self.Spinners = {
 			clamp1b = CreateRotator(self, 'clamp1b', 'z', nil, 0, 0, 0),

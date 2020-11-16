@@ -133,9 +133,8 @@ UnitBlueprint {
 	ProductionPerSecondMass = 1,
     },
     Footprint = {
-        SizeX = 4,
+        SizeX = 2,
         SizeZ = 4,
-	MinWaterDepth = 2.5,
     },
     General = {
         Category = 'Construction',

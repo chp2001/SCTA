@@ -5,6 +5,9 @@ UnitBlueprint {
         BuildCostMass = 400,
         BuildTime = 5000,
     },
+    Display = {
+        UniformScale = 0.10,
+    },
     Defense = {
         Health = 2200,
         MaxHealth = 2200,
@@ -16,4 +19,10 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 10,
     },
+    LifeBarSize = 1.5,
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
+    SizeX = 1,
+    SizeZ = 1,
+    SizeY = 2,
 }

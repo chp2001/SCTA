@@ -39,7 +39,7 @@ UnitBlueprint {
             '<LOC ability_radar>Radar',
             '<LOC ability_upgradable>Upgradeable',
         },
-        UniformScale = 0.32,
+        UniformScale = 0.25,
     },
     Economy = {
         BuildCostEnergy = 8000,
@@ -52,8 +52,8 @@ UnitBlueprint {
     },
     Footprint = {
         MaxSlope = 0.625,
-            SizeX = 8,
-            SizeZ = 7,
+        SizeX = 8,
+        SizeZ = 8,
         },
     LifeBarSize = 8,
     General = {
@@ -64,9 +64,10 @@ UnitBlueprint {
         RadarRadius = 30,
         FreeIntel = true,
         },
-        SelectionSizeX = 9.9,
-        SelectionSizeZ = 6.8,
-        SizeX = 12,
-        SizeY = 5,
-        SizeZ = 12,
+        SelectionSizeX = 7,
+        SelectionSizeZ = 5,
+        SelectionThickness = 0.25,
+        SizeX = 9,
+        SizeY = 1,
+        SizeZ = 9,
 }

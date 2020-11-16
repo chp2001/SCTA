@@ -29,7 +29,8 @@ UnitBlueprint {
 	'OVERLAYDIRECTFIRE',
 	'DIRECTFIRE',
         'ARM',
-	'LEVEL3',
+    'LEVEL3',
+    'TRANSPORTATION',
     },
     Defense = {
         Health = 2000,
@@ -73,8 +74,8 @@ UnitBlueprint {
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 100,
-            ProjectileId = '/mods/SCTA-master/projectiles/CORVTOL_MISSILE/CORVTOL_MISSILE_proj.bp',
+            MuzzleVelocity = 75,
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMSVTOL_MISSILE_MISSILE/ARMSVTOL_MISSILE_MISSILE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

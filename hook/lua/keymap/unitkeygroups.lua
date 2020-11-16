@@ -8,18 +8,14 @@ TAunitkeygroups = {
     ["Land_Factory"]= {
         "armlab",
         "armvp",
-        "armhp",
         "armgant",
         "corvp",
         "corlab",
-        "corhp",
         "corgant",
     },    
     ["Air_Factory"]= {
         "armap",
-        "armplat",
         "corap",
-        "corplat",
     },
     ["Naval_Factory"]= {
         "armsy",
@@ -29,17 +25,17 @@ TAunitkeygroups = {
         "armfus",
         "armsolar",
         "armwin",
-        "armtide",
-        "armckfus", 
         "corfus",
         "corsolar",
         "corwin",
-        "cortide",
-        "corckfus", 
     },
     ["Hydrocarbon_Power_Plant"]= {
         "armgeo",
+        "armtide",
+        "armckfus",
         "corgeo",
+        "cortide", 
+        "corckfus",
     },    
     ["Mass_Extractor"]= {
         "armmoho",
@@ -54,7 +50,7 @@ TAunitkeygroups = {
         "cormmkr", 
     },
     ["Energy_Storage"]= {
-        "armestor",
+        "armestor", 
         "corestor",
     },
     ["Mass_Storage"]= {
@@ -73,18 +69,21 @@ TAunitkeygroups = {
     },
     ["Torpedo_Launcher"]= {
         "armatl",
-        "coratl",
         "armtl",
-        "cortl",
-    },
-    ["Heavy_Artillery_Installation"]= {
         "armanni",
+        "coratl",
+        "cortl",
+        "corplas",
         "cordoom",
     },
-    ["Artillery_Installation"]= {
+    ["Heavy_Artillery_Installation"]= {
         "armbrtha",
         "corint",
+    },
+    ["Artillery_Installation"]= {
         "corpun",
+        "armguard",
+        "corvipe",
     },
     ["Strategic_Missile_Launcher"]= {
         "armsilo",
@@ -114,11 +113,33 @@ TAunitkeygroups = {
         "armscab",
         "cormabm",
     },
-    ["Wall_Section"]= {
+    ["Shield_Generator"]= {
         "armdrag",
         "cordrag",
         "armfort",
         "corfort",
+    },
+    ["T2_Support_Land_Factory"]= {
+        "armalab",
+        "armavp",
+        "coravp",
+        "coralab",
+    },
+    ["T2_Support_Air_Factory"]= {
+        "armaap",
+        "coraap",
+    },
+    ["T2_Support_Naval_Factory"]= {
+        "armasy",
+        "corasy",
+    },
+    ["T3_Support_Land_Factory"] = {
+        "armhp",
+        "corhp",
+    },
+    ["T3_Support_Air_Factory"] = {
+        "armplat",
+        "corplat",
     },
     ["Air_Staging"]= {
         "armasp",
@@ -130,13 +151,10 @@ TAunitkeygroups = {
     },    
     ["Heavy_Point_Defense"]= {
         "armhlt",
-        "armguard",
         "armamb",
         "corhlt",
         "corfhlt",
-        "corvipe",
         "cortoast",
-        "corplas",
     },
     ["T1_Air_Scout"]= {
         "armpeep",
@@ -173,9 +191,7 @@ TAunitkeygroups = {
     },
     ["T2_Torpedo_Bomber"]= {
         "armlance",
-        "armseap",
         "cortitan",
-        "corseap",
     },
     ["T3_Spy_Plane"]= {
         "armawac",
@@ -190,6 +206,10 @@ TAunitkeygroups = {
     ["T3_Strategic_Bomber"]= {
         "armpnix",
         "corhurc",
+    },
+    ["T3_Torpedo_Bomber"] = {
+        "armseap",
+        "corseap",
     },
     ["T1_Land_Scout"]= {
         "armfav",
@@ -232,17 +252,17 @@ TAunitkeygroups = {
     },
     ["T2_Mobile_Missile_Launcher"]= {
         "armmerl",
-        "armmh",
         "corvroc",
-        "cormh",
         "armhrk",
         "corhrk",
+    },
+    ["T2_Counter_Intelligence_Boat"] = {
+        "armsjam",
+        "corsjam",
     },
     ["T1_Tank"]= {
         "armstump",
         "corraid",
-        "armanac",
-        "corsnap",
     },
     ["T2_Heavy_Tank"]= {
         "armbull",
@@ -326,8 +346,24 @@ TAunitkeygroups = {
         'corcarry',
     },
     ["T3_Sniper_Bot"] = {
-        "armsnipe",
+        "armmav",
         "armmanni",
+    },    
+    ["T3_Siege_Assault_Bot"] = {
+        "corsumo",
+    },
+    ["T3_Armored_Assault_Bot"] = {
+        "armanac",
+        "corsnap",
+    },
+    ["T3_Mobile_Missile_Platform"] = {
+        "armmh",
+        "cormh",
+    },
+    ["T3_Mobile_AA"] = {
+        "armsnipe",
+        "armah",
+        "corah",
     },
 }
 

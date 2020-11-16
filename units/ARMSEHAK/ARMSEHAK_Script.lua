@@ -3,17 +3,18 @@
 #
 #Script created by Raevn
 
-local TAair = import('/mods/SCTA-master/lua/TAair.lua').TAair
+local TASeaair = import('/mods/SCTA-master/lua/TASeaair.lua').TASeaair
 
-ARMSEHAK = Class(TAair) {
+ARMSEHAK = Class(TASeaair) {
 
 	OnCreate = function(self)
-		TAair.OnCreate(self)
+		TASeaair.OnCreate(self)
 		self.Spinners = {
 			radar1 = CreateRotator(self, 'Sonarholder1', 'y', nil, 0, 0, 0),
 			radar2 = CreateRotator(self, 'Sonarholder2', 'y', nil, 0, 0, 0),
 		}
 		self.Sliders = {
+			chassis = CreateSlider(self, 0),
 			Rwing = CreateSlider(self, 'Rwing'),
 			Lwing = CreateSlider(self, 'Lwing'),
 		}
@@ -26,7 +27,7 @@ ARMSEHAK = Class(TAair) {
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAair.OnStopBeingBuilt(self,builder,layer)
+		TASeaair.OnStopBeingBuilt(self,builder,layer)
 		self.Spinners.radar1:SetSpeed(90)
 		self.Spinners.radar2:SetSpeed(90)
 	end,

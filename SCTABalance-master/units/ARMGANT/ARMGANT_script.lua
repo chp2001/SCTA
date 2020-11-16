@@ -9,8 +9,7 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 ARMGANT = Class(TAFactory) {
 	pauseTime = 5,
 	hideUnit = true,
-	isFactory = true,
-	spinUnit = false,
+
 
 	OnCreate = function(self)
 		TAFactory.OnCreate(self)

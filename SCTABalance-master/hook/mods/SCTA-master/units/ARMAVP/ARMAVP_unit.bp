@@ -24,13 +24,13 @@ UnitBlueprint {
         MaxHealth = 8200,
     },
         Display = {      
-        UniformScale = 0.32,
+        UniformScale = 0.25,
     },
     Economy = {
         BuildCostEnergy = 52000,
         BuildCostMass = 6400, 
         BuildRate = 200,
-        BuildTime = 21000,
+        BuildTime = 36000,
         BuildableCategory = {
             'VEHICLE LEVEL3 ARM',
             'VEHICLE LEVEL2 ARM',
@@ -39,16 +39,17 @@ UnitBlueprint {
     },
     LifeBarSize = 8,
     Footprint = {
-	MaxSlope = 0.625,
-        SizeX = 7,
-        SizeZ = 7,
+        MaxSlope = 0.625,
+        SizeX = 8,
+        SizeZ = 8,
     },
     Intel = {
         VisionRadius = 10,
     },
-    SelectionSizeX = 9.9,
-    SelectionSizeZ = 6.8,
-    SizeX = 12,
-    SizeY = 5,
-    SizeZ = 12,
+    SelectionSizeX = 7,
+    SelectionSizeZ = 5,
+    SelectionThickness = 0.25,
+    SizeX = 9,
+    SizeY = 1,
+    SizeZ = 9,
 }

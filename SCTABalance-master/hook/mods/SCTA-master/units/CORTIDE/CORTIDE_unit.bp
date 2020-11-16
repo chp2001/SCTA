@@ -4,16 +4,20 @@ UnitBlueprint {
         UniformScale = 0.11,
     },
     Defense = {
-        ArmorType = 'Structure',
-        Health = 800,
-        MaxHealth = 800,
+        Health = 1300,
+        MaxHealth = 1300,
     },
   Footprint = {
         SizeX = 1,
         SizeZ = 1,
     },
     Economy = {
-        BuildCostEnergy = 960,
+        BuildCostEnergy = 3600,
+        BuildCostMass = 200,
+        BuildTime = 3000,
+        ProductionPerSecondEnergy = 30,
+        ProductionPerSecondEnergyMin = 25,
+        ProductionPerSecondEnergyMax = 40,
 	    NaturalProducer = true,
     },
    Physics = {

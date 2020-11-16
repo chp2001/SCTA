@@ -1,65 +1,55 @@
+#ARM Annihilator Laser
+#ARM_TOTAL_ANNIHILATOR
+#
+#Blueprint created by Raevn
 
 ProjectileBlueprint {
     Audio = {
         Impact = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOMED2',
+            Cue = 'XPLOLRG1',
             LodCutoff = 'Weapon_LodCutoff',
         },
         ImpactUnit = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOMED2',
+            Cue = 'XPLOLRG1',
             LodCutoff = 'Weapon_LodCutoff',
         },
         ImpactShield = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOMED2',
+            Cue = 'XPLOLRG1',
             LodCutoff = 'Weapon_LodCutoff',
         },
         ImpactTerrain = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOMED2',
-            LodCutoff = 'Weapon_LodCutoff',
-        },
-        ImpactWater = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'SPLSSML',
+            Cue = 'XPLOLRG1',
             LodCutoff = 'Weapon_LodCutoff',
         },
     },
     Categories = {
         'ARM',
         'PROJECTILE',
-        'ANTIMISSILE',
+        'DIRECTFIRE'
     },
     Display = {
-        CameraFollowTimeout = 0,
-        CameraFollowsProjectile = false,
-        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/missile_mesh.bp',
         StrategicIconSize = 1,
-        UniformScale = 0.16,
     },
     General = {
-        Category = 'Defense',
-        Categories = {
+        Category = 'Direct Fire',
+        EntityCategory = {
             'ARM',
             'PROJECTILE',
-            'ANTIMISSILE',
+            'DIRECTFIRE',
         },
         Faction = 'ARM',
+        Weapon = 'ARM_TOTAL_ANNIHILATOR',
     },
     Interface = {
         HelpText = 0,
     },
     Physics = {
-        Acceleration = 0,
-        CollideEntity = true,
-        CollideSurface = true,
         DestroyOnWater = true,
-        MaxSpeed = 80,
-        TrackTarget = true,
-        TurnRate = 360,
-        UseGravity = false,
-        VelocityAlign = true,
+        InitialSpeed = 70,
+        Lifetime = 5,
     },
 }

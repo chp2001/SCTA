@@ -173,7 +173,7 @@ UnitBlueprint {
      WeaponCategory = 'DirectFire',
             FiringTolerance = 999999,
             Label = 'Suicide',
-            MaxRadius = 3,
+            MaxRadius = 6,
 	    ProjectileId = '/mods/SCTA-master/projectiles/CRAWL_BLAST/CRAWL_BLAST_proj.bp',
             RateOfFire = 99999,
             TargetCheckInterval = 1,

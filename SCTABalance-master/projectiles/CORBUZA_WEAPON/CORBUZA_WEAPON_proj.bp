@@ -30,19 +30,24 @@ ProjectileBlueprint {
     Categories = {
         'CORE',
         'PROJECTILE',
-        'DIRECTFIRE',
+        'INDIRECTFIRE',
     },
     Display = {
+        CameraFollowTimeout = 5,
+        CameraFollowsProjectile = true,
+        ImpactEffects = {
+            Type = 'Large01',
+        },
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/dgun_mesh.bp',
         UniformScale = 0.5,
-        StrategicIconSize = 1,
+        StrategicIconSize = 3,
     },
     General = {
-        Category = 'Direct Fire',
+        Category = 'Indirect Fire',
         EntityCategory = {
             'CORE',
             'PROJECTILE',
-            'DIRECTFIRE',
+            'INDIRECTFIRE',
         },
         Faction = 'CORE',
         Weapon = 'CORBUZZ_WEAPON',
@@ -52,10 +57,7 @@ ProjectileBlueprint {
     },
     Physics = {
         DestroyOnWater = true,
-        LeadTarget = false,
-        TurnRate = 360,
-        InitialSpeed = 50,
-        VelocityAlign = false,
+        InitialSpeed = 75,
         UseGravity = true,
     },
 }

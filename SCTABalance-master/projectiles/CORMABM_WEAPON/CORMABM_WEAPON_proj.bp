@@ -1,70 +1,65 @@
-#ARM Hawk Missile 2
-#ARMVTOL_ADVMISSILE2
-#
-#Projectile created by Raevn
 
 ProjectileBlueprint {
     Audio = {
         Impact = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOSML2',
+            Cue = 'XPLOMED2',
             LodCutoff = 'Weapon_LodCutoff',
         },
         ImpactUnit = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOSML2',
+            Cue = 'XPLOMED2',
             LodCutoff = 'Weapon_LodCutoff',
         },
         ImpactShield = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOSML2',
+            Cue = 'XPLOMED2',
             LodCutoff = 'Weapon_LodCutoff',
         },
         ImpactTerrain = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOSML2',
+            Cue = 'XPLOMED2',
             LodCutoff = 'Weapon_LodCutoff',
         },
         ImpactWater = Sound {
             Bank = 'TA_Sound',
-            Cue = 'SPLSMED',
+            Cue = 'SPLSSML',
             LodCutoff = 'Weapon_LodCutoff',
         },
     },
     Categories = {
-        'ARM',
+        'CORE',
         'PROJECTILE',
-        'ANTIAIR',
-        'MISSILE',
+        'ANTIMISSILE',
     },
     Display = {
+        CameraFollowTimeout = 0,
+        CameraFollowsProjectile = false,
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/missile_mesh.bp',
         StrategicIconSize = 1,
         UniformScale = 0.16,
     },
     General = {
-        Category = 'Anti Air',
-        EntityCategory = {
-       	    'ARM',
+        Category = 'Defense',
+        Categories = {
+            'CORE',
             'PROJECTILE',
-   	    'ANTIAIR',
-       	    'MISSILE',
+            'ANTIMISSILE',
         },
-        Faction = 'ARM',
-        Weapon = 'ARMVTOL_ADVMISSILE',
+        Faction = 'CORE',
     },
     Interface = {
         HelpText = 0,
     },
     Physics = {
-        Acceleration = 8.125,
+        ---Acceleration = 5,
+        --CollideEntity = true,
+        CollideSurface = true,
         DestroyOnWater = true,
-        InitialSpeed = 28.125,
-        LeadTarget = false,
-        Lifetime = 10,
-        MaxSpeed = 34.625,
+        FlareRadius = 15,
+        InitialSpeed = 30,
         TrackTarget = true,
-        TurnRate = 400,
+        TurnRate = 360,
         UseGravity = false,
         VelocityAlign = true,
     },

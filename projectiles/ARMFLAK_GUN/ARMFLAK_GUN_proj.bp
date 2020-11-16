@@ -60,7 +60,7 @@ ProjectileBlueprint {
         InitialSpeed = 59.375,
         Lifetime = 10,
         UseGravity = false,
-        #LeadTarget = true,
+        LeadTarget = true,
         DetonateAboveHeight = 30,
     },
 }

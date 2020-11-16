@@ -1,0 +1,20 @@
+#CORE Deleter - Mobile Radar Jammer
+#CORETER
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+   Merge = true,
+    Display = {
+        UniformScale = 0.08,
+    },
+    Footprint = {
+	SizeX = 1,
+	SizeZ = 1,
+    },
+    LifeBarSize = 1.5,
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
+    SizeX = 1,
+    SizeZ = 1,
+}

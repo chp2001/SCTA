@@ -26,12 +26,12 @@ UnitBlueprint {
         MaxHealth = 10000,
     },
         Display = {
-        UniformScale = 0.32,
+        UniformScale = 0.22,
     },
     Footprint = {
         MaxSlope = 0.625,
             SizeX = 8,
-            SizeZ = 7,
+            SizeZ = 8,
         },
     Economy = {
         BuildCostEnergy = 42000,
@@ -48,9 +48,10 @@ UnitBlueprint {
         RadarRadius = 30,
         FreeIntel = true,
     },
-    SelectionSizeX = 9.9,
-    SelectionSizeZ = 6.8,
-    SizeX = 12,
-    SizeY = 5,
-    SizeZ = 12,
+    SelectionSizeX = 7,
+    SelectionSizeZ = 5,
+    SelectionThickness = 0.25,
+    SizeX = 9,
+    SizeY = 1,
+    SizeZ = 9,
 }

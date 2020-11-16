@@ -5,6 +5,9 @@
 
 UnitBlueprint {
    Merge = true, 
+   Display = {
+    UniformScale = 0.28,
+},
    Economy = {
     BuildCostMass = 114,
 },
@@ -12,5 +15,10 @@ UnitBlueprint {
 	SizeX = 1,
 	SizeZ = 1,
     },
+    LifeBarSize = 1.4,
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
+    SizeX = 1.5,
+	SizeZ = 1.5,
     SizeY = 1, 
 }

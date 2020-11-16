@@ -59,7 +59,8 @@ CORCSA = Class(TAAirConstructor) {
 		local selfPosition = self:GetPosition('nano1') 
 		local targetPosition = target:GetPosition()
 		local distance = VDist2(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z)
-
+		TAAirConstructor.Aim(self, target)
+		
 		self.Spinners.nozzle1:SetGoal(TAutils.GetAngle(0, targetPosition.y, distance, selfPosition.y))
 		self.Spinners.nozzle1:SetSpeed(160.03)
 
@@ -69,7 +70,7 @@ CORCSA = Class(TAAirConstructor) {
 		self.Spinners.nozzle2:SetSpeed(160.03)
 
 		WaitFor(self.Spinners.nozzle2)
-		TAAirConstructor.Aim(self, target)
+
 	end,
 }
 

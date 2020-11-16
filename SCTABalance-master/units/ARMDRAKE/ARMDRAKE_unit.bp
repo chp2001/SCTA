@@ -50,8 +50,8 @@ UnitBlueprint {
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,
         SurfaceThreatLevel = 500,
-        Health = 80000,
-        MaxHealth = 80000,
+        Health = 120000,
+        MaxHealth = 120000,
     },
     Description = 'Experimental Kbot',
     Display = {
@@ -93,9 +93,9 @@ UnitBlueprint {
         UniformScale = 0.35,
     },
     Economy = {
-        BuildCostEnergy = 116664,
-        BuildCostMass = 29489,
-        BuildTime = 382193,
+        BuildCostEnergy = 840000,
+        BuildCostMass = 44000,
+        BuildTime = 450000,
     },
     Footprint = {
         SizeX = 3,
@@ -141,12 +141,16 @@ UnitBlueprint {
         StandUpright = true,
         MaxSteerForce = 10,
     },
+    SelectionCenterOffsetZ = -0.25,
     SelectionSizeX = 4,
     SelectionSizeZ = 4,
     SelectionThickness = 0.25,
     SizeX = 6,
     SizeY = 12,
     SizeZ = 6,
+    Transport = {
+        TransportClass = 4,
+    },
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 0,
     Weapon = {
@@ -176,7 +180,7 @@ UnitBlueprint {
             MaxRadius = 30,
             MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 3,
-			MuzzleVelocity = 32,
+			MuzzleVelocity = 50,
             ProjectileId = '/mods/SCTA-master/SCTABalance-master/projectiles/ARMDRAK_LASER/ARMDRAK_LASER_proj.bp',
             RackBones = {
                 {
@@ -239,9 +243,8 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'CORKROG_HEAD',
             EnergyChargeForFirstShot = true,
-            EnergyDrainPerSecond = 500,
+            EnergyDrainPerSecond = 1000,
             EnergyRequired = 2000,
-            
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air|Seabed',
                 Seabed = 'Land|Water|Air|Seabed',
@@ -250,7 +253,7 @@ UnitBlueprint {
         WeaponCategory = 'DirectFire',
             FiringTolerance = 2.75,
             Label = 'CORKROG_HEAD',
-            MaxRadius = 43.75,
+            MaxRadius = 30,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 0,
 	    MuzzleVelocity = 62.5,

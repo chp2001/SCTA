@@ -85,10 +85,8 @@ UnitBlueprint {
         BuildTime = 2013,
     },
     Footprint = {
-        SizeX = 2,
+        SizeX = 1,
         SizeZ = 2,
-	MaxSlope = 2,
-	MaxWaterDepth = 0,
     },
     General = {
         Category = 'Direct Fire',

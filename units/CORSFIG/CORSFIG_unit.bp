@@ -8,8 +8,7 @@ UnitBlueprint {
         GuardReturnRadius = 75,
         GuardScanRadius = 60,
     },
-
-    Audio = {
+        Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
             Cue = 'VTOLCRAC',
@@ -79,9 +78,9 @@ UnitBlueprint {
     'VTOL',
         'OVERLAYANTIAIR',
 	'OVERLAYDIRECTFIRE',
-	'DIRECTFIRE',
         'CORE',
-	'LEVEL3',
+    'LEVEL3',
+    'TRANSPORTATION',
     },
     Defense = {
         ArmorType = 'Light',
@@ -129,17 +128,15 @@ UnitBlueprint {
         BuildTime = 14333,
     },
     Footprint = {
-	MaxSlope = 0.625,
-        SizeX = 2,
-        SizeZ = 2,
+        SizeX = 1,
+        SizeZ = 1,
     },
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
-            RULEUCC_CallTransport = true,
             RULEUCC_Attack = true,
-            RULEUCC_CallTransport = true,
+            RULEUCC_CallTransport = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
             RULEUCC_Patrol = true,
@@ -153,6 +150,7 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 22,
         WaterVisionRadius = 4, 
+        RadarStealth = true,
     },
     Interface = {
         HelpText = 'Fighter',
@@ -213,8 +211,8 @@ UnitBlueprint {
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 100,
-            ProjectileId = '/mods/SCTA-master/projectiles/CORVTOL_MISSILE/CORVTOL_MISSILE_proj.bp',
+            MuzzleVelocity = 60,
+            ProjectileId = '/mods/SCTA-master/projectiles/CORSVTOL_MISSILE/CORSVTOL_MISSILE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

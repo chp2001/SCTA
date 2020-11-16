@@ -99,7 +99,7 @@ UnitBlueprint {
     },
     Footprint = {
         SizeX = 2,
-        SizeZ = 1,
+        SizeZ = 2,
     },
     General = {
         Category = 'Anti Air',
@@ -128,6 +128,7 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
+        Elevation = 0.25,   
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
         MaxAcceleration = 2.52,

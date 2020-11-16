@@ -19,12 +19,14 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'SONAR',
         'OVERLAYSONAR',
+        'OMNI',
+        'OVERLAYOMNI',
         'CORE',
-	'LEVEL3',
+        'LEVEL3',
+        'TRANSPORTATION',
     },
     Economy = {
         BuildCostMass = 300,
-        MaintenanceConsumptionPerSecondEnergy = 5,
     },
     StrategicIconName = 'icon_fighter3_intel',
 }

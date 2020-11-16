@@ -4,6 +4,7 @@ local KamikazeWeapon = WeaponFile.KamikazeWeapon
 local BareBonesWeapon = WeaponFile.BareBonesWeapon
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local EffectTemplate = import('/lua/EffectTemplates.lua')
+
 TAweapon = Class(DefaultWeapon) {
     FxRackChargeMuzzleFlash = {},
     FxRackChargeMuzzleFlashScale = 1,
@@ -164,6 +165,21 @@ TAweapon = Class(DefaultWeapon) {
         end  
 
         return damageTable
+    end,
+}
+
+TAHide = Class(TAweapon) {
+
+    PlayFxWeaponUnpackSequence = function(self)
+        self.unit.damageReduction = 1
+        self.unit:DisableUnitIntel('RadarStealth')
+        TAweapon.PlayFxWeaponUnpackSequence(self)
+    end,
+
+    PlayFxWeaponPackSequence = function(self)
+        self.unit.damageReduction = 0.28
+        self.unit:EnableUnitIntel('RadarStealth')
+        TAweapon.PlayFxWeaponPackSequence(self)
     end,
 }
 

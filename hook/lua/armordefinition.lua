@@ -33,7 +33,7 @@ armordefinition = {
         'Deathnuke 1.0',
         'DGun 0.08',
         'Overcharge 0.25',
-        'AntiAir 0.02',
+        'AntiAir 0.2',
     },
     {   # Armor Type Name
         'Structure',

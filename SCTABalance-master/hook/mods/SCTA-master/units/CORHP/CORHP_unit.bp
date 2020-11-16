@@ -27,11 +27,11 @@ UnitBlueprint {
 	
     },
     Defense = {
-        Health = 4000,
-        MaxHealth = 4000,
+        Health = 16000,
+        MaxHealth = 16000,
         },
         Display = {
-            UniformScale = 0.22,
+            UniformScale = 0.17,
         },
         Footprint = {
             MaxSlope = 0.625,
@@ -42,15 +42,19 @@ UnitBlueprint {
     Economy = {
         BuildRate = 250,
         BuildCostEnergy = 39000,
-        BuildCostMass = 4400, 
+        BuildCostMass = 7000, 
+        BuildTime = 60000,
         BuildableCategory = {
-            'HOVER CORE',
+            'HOVER LEVEL1 CORE',
+            'HOVER LEVEL3 CORE',
+            'coramph',
         },
     },
-    SelectionSizeX = 9.9,
-    SelectionSizeZ = 6.8,
-    SizeX = 12,
-    SizeY = 5,
-    SizeZ = 12,
+    SelectionSizeX = 7,
+    SelectionSizeZ = 5,
+    SelectionThickness = 0.25,
+    SizeX = 9,
+    SizeY = 1,
+    SizeZ = 9,
     StrategicIconName = 'icon_factory3_naval',
  }

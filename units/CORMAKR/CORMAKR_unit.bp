@@ -40,22 +40,16 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-
-	
 	'STRUCTURE',
-        'MASSPRODUCTION',
-                'ECONOMIC',
+    'MASSPRODUCTION',
+    'ECONOMIC',
         'SORTECONOMY',
 	'TEXTUREANIM',
-
-	
 	'CORE',
 	'ENERGY',
 	'LEVEL1',
-	
-	
-	
     },
+    CollisionOffsetY = -0.3,
     Defense = {
         ArmorType = 'Structure',
         AirThreatLevel = 0,
@@ -117,6 +111,7 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 14,
         WaterVisionRadius = 4, 
+        RadarStealth = true, 
     },
     Interface = {
         HelpText = 'Metal Maker',

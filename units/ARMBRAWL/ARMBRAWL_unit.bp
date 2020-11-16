@@ -132,7 +132,6 @@ UnitBlueprint {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
-            RULEUCC_CallTransport = true,
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
@@ -231,7 +230,6 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            WeaponCategory = 'Direct Fire',
             TurretBoneMuzzle = 'ARMBRAWL',
             TurretBonePitch = 'ARMBRAWL',
             TurretBoneYaw = 'ARMBRAWL',

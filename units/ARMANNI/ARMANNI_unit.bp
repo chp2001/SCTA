@@ -16,7 +16,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 8,
+    BuildIconSortPriority = 1,
     Categories = {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
@@ -34,7 +34,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
 	'ARM',
 	'SPECIAL',
-	'SORTSTRATEGIC',
+	'SORTDEFENSE',
 	'LEVEL3',
 	
 	
@@ -139,7 +139,7 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 3,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure3_artillery',
+    StrategicIconName = 'icon_structure3_directfire',
     StrategicIconSortPriority = 5,
     Weapon = {
         {
@@ -195,7 +195,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
             TurretBoneMuzzle = 'flare',
-            TurretBonePitch = 'barrel',
+            TurretBonePitch = 'gun',
             TurretBoneYaw = 'turret',
             TurretDualManipulators = false,
             TurretPitch = 0,

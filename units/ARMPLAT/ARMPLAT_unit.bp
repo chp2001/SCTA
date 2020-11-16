@@ -62,7 +62,7 @@ UnitBlueprint {
     Description = 'Builds Seaplanes',
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/ARMPLAT/ARMPLAT_lod0_UnPaCk.sca',
-        AnimationUnpackRate = 0.2, 
+        AnimationUnpackRate = 0.5, 
 	DestructionEffects = {
 		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate','CorBld','Runway','Circuits'},
 		DestructionProjectiles = {
@@ -108,11 +108,12 @@ UnitBlueprint {
         BuildCostMass = 2223,
         BuildTime = 19248,
     BuildRate = 200,
+    BuildableCategory = {
+        'SEAPLA ARM',
+        'VTOL LEVEL3 ARM',
+    },
     NaturalProducer = true,
 	ProductionPerSecondMass = 1,
-        BuildableCategory = {
-            'VTOL LEVEL3 ARM',
-        },
 	InitialRallyX = 1,
 	InitialRallyZ = 1,
 	StorageEnergy = 200,
@@ -144,7 +145,8 @@ UnitBlueprint {
     Intel = {
     VisionRadius = 14,
 	RadarRadius = 30,
-	FreeIntel = true,
+    FreeIntel = true,
+    RadarStealth = true,
     },
     Interface = {
         HelpText = 'Produces Aircraft',

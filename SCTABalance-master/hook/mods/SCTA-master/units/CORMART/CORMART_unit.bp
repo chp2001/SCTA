@@ -19,15 +19,15 @@ UnitBlueprint {
         MaxHealth = 1600,
     },
     Display = {
-        UniformScale = 0.08,
+        UniformScale = 0.18,
     },
     Economy = {
         BuildCostEnergy = 15000,
         BuildCostMass = 1200,
         BuildTime = 26000,
     },
-    SelectionSizeX = 1,
-    SelectionSizeZ = 1,
-    SelectionCenterOffsetZ = 0,
+    SelectionSizeX = 1.8,
+    SelectionSizeZ = 1.8,
+    SelectionCenterOffsetZ = -0.2,
     StrategicIconName = 'icon_land3_artillery',
 }

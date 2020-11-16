@@ -16,7 +16,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 18,
+    BuildIconSortPriority = 1,
     Categories = {
         'BUILTBYT1AIR',
         'BUILTBYT1KBOT',
@@ -133,6 +133,7 @@ UnitBlueprint {
         {
             AboveWaterTargetsOnly = true,
             ArtilleryShieldBlocks = true,
+            RenderFireClock = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
@@ -143,8 +144,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 1500,
-            DamageRadius = 2.65, 
+            Damage = 350,
+            DamageRadius = 5, 
             WeaponCategory = 'Artillery',
             DamageType = 'Normal',
             DisplayName = 'CORFIXED_GUN',
@@ -153,14 +154,13 @@ UnitBlueprint {
             },
 	    RangeCategory = 'UWRC_IndirectFire',
             Label = 'CORFIXED_GUN',
-            MaxRadius = 75, 
+            MaxRadius = 150, 
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 21.875,
+            MuzzleVelocity = 42,
             EnergyChargeForFirstShot = true,
-            EnergyDrainPerSecond = 250,
-            EnergyRequired = 750,
-            
+            EnergyDrainPerSecond = 400,
+            EnergyRequired = 1200,
             ProjectileId = '/mods/SCTA-master/projectiles/CORFIXED_GUN/CORFIXED_GUN_proj.bp',
             RackBones = {
                 {
@@ -179,10 +179,10 @@ UnitBlueprint {
             RackRecoilDistance = -1.5,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 0,
-            RackSalvoSize = 1,
+            RackSalvoReloadTime = 1,
+            RackSalvoSize = 2,
             RackSlavedToTurret = false,
-            RateOfFire = 0.357,
+            RateOfFire = 0.4,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

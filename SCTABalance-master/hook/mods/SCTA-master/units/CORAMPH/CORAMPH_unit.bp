@@ -10,7 +10,7 @@ UnitBlueprint {
     'KBOT',
     'LAND',
     'CORE',
-    'HOVER',	
+    'AMPHIBIOUS',
 'LEVEL3',
 },
    Defense = {
@@ -19,7 +19,7 @@ UnitBlueprint {
 },
 Economy = {
     BuildCostEnergy = 21000,
-    BuildCostMass = 2100,
+    BuildCostMass = 1900,
     BuildTime = 20000,
 },
     Footprint = {

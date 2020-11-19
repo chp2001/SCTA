@@ -9,17 +9,16 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH2',
+        'TECH3',
 	'STRUCTURE',
         'MASSPRODUCTION',
         'MASSEXTRACTION',
         'ECONOMIC',
 	'CORE',
 	'ENERGY',
-	'LEVEL2',
+	'LEVEL3',
 	'SORTECONOMY',
-	
-	
+    --'CONSTRUCTIONSORTDOWN',
 	'STORAGE',
     },
     Defense = {

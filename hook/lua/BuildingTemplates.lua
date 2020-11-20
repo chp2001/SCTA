@@ -28,8 +28,12 @@ BuildingTemplates[6] = {
             'armmakr',
         },
             {
-                'T3Resource',
+                'T2Resource',
                 'armmoho',
+            },
+            {
+                'T3Resource',
+                'armmass',
             },
             {
                 'T3MassCreation',
@@ -234,8 +238,12 @@ BuildingTemplates[6] = {
             'cormakr',
         },
         {
-            'T3Resource',
+            'T2Resource',
             'cormoho',
+        },
+        {
+            'T3Resource',
+            'cormass',
         },
         {
             'T3MassCreation',

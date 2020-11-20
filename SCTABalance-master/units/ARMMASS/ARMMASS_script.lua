@@ -1,12 +1,12 @@
-#ARM Metal Extractor - Extracts Metal
-#ARMMEX
+#ARM Moho Mine - Advanced Metal Extractor
+#ARMMOHO
 #
 #Script created by Raevn
 
 local TAMass = import('/mods/SCTA-master/lua/TAMass.lua').TAMass
 local ScenarioUtils = import('/lua/sim/ScenarioUtilities.lua')
 
-ARMMEX = Class(TAMass) {
+ARMMASS = Class(TAMass) {
 	OnCreate = function(self)
 		TAMass.OnCreate(self)
 		self:SetMaintenanceConsumptionActive()
@@ -60,4 +60,4 @@ ARMMEX = Class(TAMass) {
 	end,
 }
 
-TypeClass = ARMMEX
+TypeClass = ARMMASS

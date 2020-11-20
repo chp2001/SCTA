@@ -1,5 +1,5 @@
-#ARM Hawk Missile 2
-#ARMVTOL_ADVMISSILE2
+#CORE Vamp Missile
+#CORVTOL_ADVMISSILE2
 #
 #Projectile created by Raevn
 
@@ -32,7 +32,7 @@ ProjectileBlueprint {
         },
     },
     Categories = {
-        'ARM',
+        'CORE',
         'PROJECTILE',
         'ANTIAIR',
         'MISSILE',
@@ -45,24 +45,24 @@ ProjectileBlueprint {
     General = {
         Category = 'Anti Air',
         EntityCategory = {
-       	    'ARM',
+       	    'CORE',
             'PROJECTILE',
    	    'ANTIAIR',
        	    'MISSILE',
         },
-        Faction = 'ARM',
-        Weapon = 'ARMVTOL_ADVMISSILE',
+        Faction = 'CORE',
+        Weapon = 'CORVTOL_ADVMISSILE2',
     },
     Interface = {
         HelpText = 0,
     },
     Physics = {
-        Acceleration = 8.125,
+        Acceleration = 30,
         DestroyOnWater = true,
-        InitialSpeed = 28.125,
+        InitialSpeed = 60,
         LeadTarget = false,
         Lifetime = 10,
-        MaxSpeed = 34.625,
+        MaxSpeed = 150,
         TrackTarget = true,
         TurnRate = 400,
         UseGravity = false,

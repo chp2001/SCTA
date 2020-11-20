@@ -65,7 +65,7 @@ UnitBlueprint {
     },
     Description = 'Extracts Metal',
     Display = {
-	DestructionEffects = {
+        DestructionEffects = {
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
@@ -81,8 +81,8 @@ UnitBlueprint {
 				},
 				EmitterSize = 0.35,
 			},
-		},
-	},
+        },
+    },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

@@ -39,7 +39,7 @@ UnitBlueprint {
     Air = {
         AutoLandTime = 1,
         BankFactor = 3,
-        BankForward = false,
+        BankForward = true,
         BreakOffDistance = 24,
         BreakOffIfNearNewTarget = true,
         BreakOffTrigger = 20,
@@ -133,7 +133,6 @@ UnitBlueprint {
         Category = 'Bomber',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
-            RULEUCC_CallTransport = true,
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
@@ -240,6 +239,7 @@ UnitBlueprint {
             TurretYawRange = 180,
             TurretYawSpeed = 60,
             Turreted = false,
+            RangeCategory = 'UWRC_DirectFire',
             WeaponCategory = 'Bomb',
             WeaponRepackTimeout = 0,
             WeaponUnpacks = false,

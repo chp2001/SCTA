@@ -138,7 +138,6 @@ UnitBlueprint {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
-            RULEUCC_CallTransport = true,
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
@@ -196,8 +195,8 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             TrackingRadius = 1.15,
-            Damage = 150,
-            DamageRadius = 1.5,
+            Damage = 110,
+            DamageRadius = 0.5,
             DamageType = 'AntiAir',
             DisplayName = 'CORVTOL_MISSILE',
             FireTargetLayerCapsTable = {
@@ -208,7 +207,7 @@ UnitBlueprint {
      WeaponCategory = 'AntiAir',
             FiringTolerance = 10,
 	    HeadingArcCenter = 0,
-    	    HeadingArcRange = 43.96,
+    	    HeadingArcRange = 75,
             Label = 'CORVTOL_MISSILE',
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
@@ -220,13 +219,13 @@ UnitBlueprint {
                     MuzzleBones = {
                         'muzzle1',
                     },
-                    RackBone = 'muzzle1',
+                    RackBone = 'winga',
                 },
                 {
                     MuzzleBones = {
                         'muzzle2',
                     },
-                    RackBone = 'muzzle2',
+                    RackBone = 'wingb',
                 },
             },
             RackRecoilDistance = 0,
@@ -234,7 +233,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.5,
+            RateOfFire = 0.75,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',

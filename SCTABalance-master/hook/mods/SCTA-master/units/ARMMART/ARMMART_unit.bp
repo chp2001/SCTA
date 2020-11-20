@@ -60,10 +60,11 @@ UnitBlueprint {
         FiringTolerance = 2,
         --MuzzleVelocityReduceDistance = 40,
             Label = 'ARM_ARTILLERY',
-            MaxRadius = 70,
+            MinRadius = 20,
+            MaxRadius = 110,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 20,
+            MuzzleVelocity = 30,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_ARTILLERY/ARM_ARTILLERY_proj.bp',
             RackBones = {
                 {

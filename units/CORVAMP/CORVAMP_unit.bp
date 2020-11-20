@@ -137,7 +137,6 @@ UnitBlueprint {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
-            RULEUCC_CallTransport = true,
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
@@ -197,7 +196,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             TrackingRadius = 1.15,
-            Damage = 210, 						
+            Damage = 120, 						
             DamageRadius = 1.5,
             FiringRandomness = 0,
             DamageType = 'AntiAir',
@@ -215,7 +214,7 @@ UnitBlueprint {
             MaxRadius = 40.625,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 100,
+            MuzzleVelocity = 80,
             ProjectileId = '/mods/SCTA-master/projectiles/CORVTOL_ADVMISSILE/CORVTOL_ADVMISSILE_proj.bp',
             RackBones = {
                 {
@@ -231,10 +230,9 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.7,
-            EnergyDrainPerSecond = 0,
+            RateOfFire = 1.4,
+            EnergyDrainPerSecond = 40,
             EnergyRequired = 160,
-            
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -257,7 +255,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             TrackingRadius = 1.15,
-            Damage = 210, 						
+            Damage = 120, 						
             DamageRadius = 1.5,
             FiringRandomness = 0,
             DamageType = 'AntiAir',
@@ -275,8 +273,8 @@ UnitBlueprint {
             MaxRadius = 40.625,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 100,
-            ProjectileId = '/mods/SCTA-master/projectiles/CORVTOL_ADVMISSILE2/CORVTOL_ADVMISSILE2_proj.bp',
+            MuzzleVelocity = 80,
+            ProjectileId = '/mods/SCTA-master/projectiles/CORVTOL_ADVMISSILE/CORVTOL_ADVMISSILE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -291,10 +289,9 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.7,
-            EnergyDrainPerSecond = 0,
+            RateOfFire = 1.4,
+            EnergyDrainPerSecond = 40,
             EnergyRequired = 160,
-            
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',

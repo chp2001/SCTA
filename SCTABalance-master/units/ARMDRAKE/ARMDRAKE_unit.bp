@@ -50,8 +50,8 @@ UnitBlueprint {
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,
         SurfaceThreatLevel = 500,
-        Health = 80000,
-        MaxHealth = 80000,
+        Health = 120000,
+        MaxHealth = 120000,
     },
     Description = 'Experimental Kbot',
     Display = {
@@ -93,9 +93,9 @@ UnitBlueprint {
         UniformScale = 0.35,
     },
     Economy = {
-        BuildCostEnergy = 116664,
-        BuildCostMass = 29489,
-        BuildTime = 382193,
+        BuildCostEnergy = 840000,
+        BuildCostMass = 44000,
+        BuildTime = 450000,
     },
     Footprint = {
         SizeX = 3,

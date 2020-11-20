@@ -5,7 +5,6 @@ PropBlueprint {
     },
     Economy = {
         ReclaimEnergyMax = 0,
-        ReclaimMassMax = 3600,
-        ReclaimTime = 10,
+        ReclaimMassMax = 6000,
         },
 }

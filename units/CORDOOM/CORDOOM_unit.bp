@@ -16,7 +16,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 8,
+    BuildIconSortPriority = 1,
     Categories = {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
@@ -26,7 +26,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-        'SORTSTRATEGIC',
+        'SORTDEFENSE',
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
@@ -123,7 +123,7 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 3,
     SizeZ = 3,
-    StrategicIconName = 'icon_structure3_artillery',
+    StrategicIconName = 'icon_structure3_directfire',
     StrategicIconSortPriority = 0,
     Weapon = {
         {

@@ -135,7 +135,6 @@ UnitBlueprint {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
-            RULEUCC_CallTransport = true,
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
@@ -242,7 +241,8 @@ UnitBlueprint {
                 TrackingRadius = 1.15,
                 TurretDualManipulators = false,
                 Turreted = false,
-                WeaponCategory = 'Anti Navy',
+                RangeCategory = 'UWRC_AntiNavy',
+                WeaponCategory = 'AntiNavy',
                 WeaponRepackTimeout = 0,
                 WeaponUnpacks = false,
             },

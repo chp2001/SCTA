@@ -31,8 +31,10 @@ TAunitkeygroups = {
     },
     ["Hydrocarbon_Power_Plant"]= {
         "armgeo",
+        "armtide",
         "armckfus",
         "corgeo",
+        "cortide", 
         "corckfus",
     },    
     ["Mass_Extractor"]= {
@@ -40,6 +42,8 @@ TAunitkeygroups = {
         "cormoho",
         "armmex",
         "cormex",
+        "armmass",
+        "cormass",
     },
     ["Mass_Fabricator"]= {
         "armmakr",
@@ -48,10 +52,8 @@ TAunitkeygroups = {
         "cormmkr", 
     },
     ["Energy_Storage"]= {
-        "armestor",
-        "armtide", 
+        "armestor", 
         "corestor",
-        "cortide", 
     },
     ["Mass_Storage"]= {
         "armmstor",
@@ -70,19 +72,19 @@ TAunitkeygroups = {
     ["Torpedo_Launcher"]= {
         "armatl",
         "armtl",
-        "armguard",
+        "armanni",
         "coratl",
         "cortl",
         "corplas",
-        "corpun",
-    },
-    ["Heavy_Artillery_Installation"]= {
-        "armanni",
         "cordoom",
     },
-    ["Artillery_Installation"]= {
+    ["Heavy_Artillery_Installation"]= {
         "armbrtha",
         "corint",
+    },
+    ["Artillery_Installation"]= {
+        "corpun",
+        "armguard",
         "corvipe",
     },
     ["Strategic_Missile_Launcher"]= {

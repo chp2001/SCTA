@@ -194,7 +194,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             TrackingRadius = 1.15,
-            Damage = 75,
+            Damage = 35,
             DamageRadius = 1.5,
             DamageType = 'AntiAir',
             DisplayName = 'ARMVTOL_MISSILE',
@@ -206,25 +206,25 @@ UnitBlueprint {
      WeaponCategory = 'AntiAir',
             FiringTolerance = 8,
 	    HeadingArcCenter = 0,
-    	    HeadingArcRange = 43.96,
+    	    HeadingArcRange = 90,
             Label = 'ARMVTOL_MISSILE',
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 26.25,
+            MuzzleVelocity = 90,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMVTOL_MISSILE/ARMVTOL_MISSILE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
                         'Muzzle_01',
                     },
-                    RackBone = 'Muzzle_01',
+                    RackBone = 'Wing_01',
                 },
                 {
                     MuzzleBones = {
                         'Muzzle_02',
                     },
-                    RackBone = 'Muzzle_02',
+                    RackBone = 'Wing_02',
                 },
             },
             RackRecoilDistance = 0,
@@ -232,7 +232,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 1,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',

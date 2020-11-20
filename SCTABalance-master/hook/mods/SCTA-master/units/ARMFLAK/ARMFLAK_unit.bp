@@ -1,5 +1,23 @@
 UnitBlueprint {
     Merge = true,
+    Categories = {
+        'BUILTBYT2AIR',
+        'BUILTBYT2KBOT',
+        'BUILTBYT2VEHICLE',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH2',
+	'STRUCTURE',
+	'DEFENSE',
+	'ANTIAIR',
+        'OVERLAYANTIAIR',
+	'ARM',
+	'LEVEL3',
+    'STRATEGIC',
+    'SORTDEFENSE',
+    },
     Footprint = {
         SizeX = 1,
         SizeZ = 1,
@@ -15,4 +33,5 @@ UnitBlueprint {
         SkirtSizeX = 0, 
         SkirtSizeZ = 0,  
     },
+    StrategicIconName = 'icon_structure2_antiair',
   }    

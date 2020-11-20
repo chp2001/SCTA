@@ -83,8 +83,8 @@ UnitBlueprint {
         UniformScale = 0.16,
     },
     Economy = {
-        BuildCostEnergy = 16821,
-        BuildCostMass = 2002,
+        BuildCostEnergy = 17000,
+        BuildCostMass = 2200,
         BuildTime = 20172,
     },
     Footprint = {
@@ -194,15 +194,15 @@ UnitBlueprint {
         { #LARGE_BUILDINGEX
             Damage = 300,
             DamageFriendly = true,
-            DamageRadius = 3.75,
+            DamageRadius = 4,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
         { #LARGE_BUILDING
-            Damage = 1800,
+            Damage = 600,
             DamageFriendly = true,
-            DamageRadius = 13,
+            DamageRadius = 4,
             DummyWeapon = true,
             DamageType = 'Normal',
             Label = 'SuicideWeapon',

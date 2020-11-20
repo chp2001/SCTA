@@ -1,13 +1,13 @@
-#ARM Hawk Missile 2
-#ARMVTOL_ADVMISSILE2
+#CORE Vamp Missile
+#CORVTOL_ADVMISSILE2
 #
 #Script created by Raevn
 
 local TAMissileProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TAMissileProjectile
 
-ARMVTOL_ADVMISSILE2 = Class(TAMissileProjectile) 
+CORSVTOL_MISSILE = Class(TAMissileProjectile) 
 {
 	TrackTime = 7,
 }
 
-TypeClass = ARMVTOL_ADVMISSILE2
+TypeClass = CORSVTOL_MISSILE

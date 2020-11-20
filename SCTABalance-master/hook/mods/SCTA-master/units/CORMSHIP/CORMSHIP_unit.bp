@@ -5,14 +5,22 @@
 
 UnitBlueprint {
     Merge = true,
+    Display = {
+        UniformScale = 0.2,
+    },
     Defense = {
         Health = 3000,
         MaxHealth = 3000,
     },
-    Description = 'Missile Ship',
     Economy = {
-        BuildCostEnergy = 7628,
-        BuildCostMass = 2283,
+        BuildCostEnergy = 7800,
+        BuildCostMass = 2300,
         BuildTime = 36000,
     },
+    LifeBarSize = 4,
+    SelectionSizeX = 3,
+    SelectionSizeZ = 5,
+    SizeX = 3,
+    SizeY = 3,
+    SizeZ = 10,
 }

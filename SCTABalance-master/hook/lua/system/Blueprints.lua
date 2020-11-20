@@ -32,7 +32,7 @@ do
             LifeBarSize = 0.5,
             Physics = {
                 MaxSpeed = 1.2,
-                TurnRate = 0.5,
+                TurnRate = 0.75,
                 FuelRechargeRate = 0.000005,
                 FuelUseTime = 0.0006,
             },    
@@ -177,7 +177,7 @@ do
         
         for id, bp in all_blueprints.Unit do
             if bp.Categories and ((table.find(bp.Categories, 'ARM') or table.find(bp.Categories, 'CORE')) and table.find(bp.Categories, 'VTOL')) then
-        if not bp.Physics.GroundCollisionOffset then bp.Physics.GroundCollisionOffset = 1 end
+        if not bp.Physics.GroundCollisionOffset then bp.Physics.GroundCollisionOffset = 1.5 end
         end
             end
         end

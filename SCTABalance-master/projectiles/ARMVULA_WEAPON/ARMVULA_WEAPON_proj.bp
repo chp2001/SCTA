@@ -34,19 +34,24 @@ ProjectileBlueprint {
     Categories = {
         'ARM',
         'PROJECTILE',
-        'DIRECTFIRE',
+        'INDIRECTFIRE',
     },
     Display = {
+        CameraFollowTimeout = 5,
+        CameraFollowsProjectile = true,
+        ImpactEffects = {
+            Type = 'Large01',
+        },
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/dgun_mesh.bp',
         UniformScale = 0.60,
-        StrategicIconSize = 1,
+        StrategicIconSize = 3,
     },
     General = {
-        Category = 'DirectFire',
+        Category = 'IndirectFire',
         EntityCategory = {
             'ARM',
             'PROJECTILE',
-            'DIRECTFIRE',
+            'INDIRECTFIRE',
         },
         Faction = 'ARM',
         Weapon = 'ARMVULC_WEAPON',
@@ -56,7 +61,7 @@ ProjectileBlueprint {
     },
     Physics = {
         DestroyOnWater = true,
-        InitialSpeed = 50,
+        InitialSpeed = 75,
         UseGravity = true,
     },
 }

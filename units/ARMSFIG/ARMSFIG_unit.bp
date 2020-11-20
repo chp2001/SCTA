@@ -80,7 +80,6 @@ UnitBlueprint {
     'VTOL',
         'OVERLAYANTIAIR',
 	'OVERLAYDIRECTFIRE',
-	'DIRECTFIRE',
         'ARM',
 	'LEVEL3',
     },
@@ -201,20 +200,19 @@ UnitBlueprint {
             DamageType = 'AntiAir',
             DisplayName = 'CORVTOL_MISSILE',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Air',
                 Air = 'Land|Water|Air',
+                Land = 'Land|Water|Air',
+                Water = 'Land|Water|Air',
             },
 	    RangeCategory = 'UWRC_AntiAir',
      WeaponCategory = 'AntiAir',
             FiringTolerance = 10,
-	    HeadingArcCenter = 0,
-    	    HeadingArcRange = 43.96,
             Label = 'CORVTOL_MISSILE',
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 100,
-            ProjectileId = '/mods/SCTA-master/projectiles/CORVTOL_MISSILE/CORVTOL_MISSILE_proj.bp',
+            MuzzleVelocity = 75,
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMSVTOL_MISSILE/ARMSVTOL_MISSILE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

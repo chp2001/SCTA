@@ -16,7 +16,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 16,
+    BuildIconSortPriority = 1,
     Categories = {
         'BUILTBYT1AIR',
         'BUILTBYT1KBOT',
@@ -34,7 +34,7 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
 	'ARM',
 	'LEVEL2',
-	'SORTDEFENSE',
+	'SORTSTRATEGIC',
 	
 	
     },
@@ -130,12 +130,13 @@ UnitBlueprint {
     SizeX = 1.5,
     SizeY = 1,
     SizeZ = 1.5,
-    StrategicIconName = 'icon_structure2_directfire',
+    StrategicIconName = 'icon_structure2_artillery',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
             AboveWaterTargetsOnly = true,
             ArtilleryShieldBlocks = true,
+            RenderFireClock = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
@@ -156,13 +157,14 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_IndirectFire',
      WeaponCategory = 'Artillery',
             Label = 'ARMFIXED_GUN',
-            MaxRadius = 60, 
+            MaxRadius = 120, 
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 21.875,
+            MuzzleVelocity = 42,
             EnergyChargeForFirstShot = true,
-            EnergyDrainPerSecond = 50,
-            EnergyRequired = 200,
+            RenderFireClock = true,
+            EnergyDrainPerSecond = 250,
+            EnergyRequired = 1000,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMFIXED_GUN/ARMFIXED_GUN_proj.bp',
             RackBones = {
                 {
@@ -181,8 +183,8 @@ UnitBlueprint {
             RackRecoilDistance = -2.5,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 0,
-            RackSalvoSize = 1,
+            RackSalvoReloadTime = 1,
+            RackSalvoSize = 2,
             RackSlavedToTurret = false,
             RateOfFire = 1,
             TargetCheckInterval = 1,

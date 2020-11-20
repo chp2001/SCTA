@@ -118,7 +118,7 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 2.25,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure1_energy',
+    StrategicIconName = 'icon_structure_energy_storage',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #ESTOR_BUILDINGEX

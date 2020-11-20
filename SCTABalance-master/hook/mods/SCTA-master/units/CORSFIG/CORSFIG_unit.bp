@@ -27,7 +27,6 @@ UnitBlueprint {
     'VTOL',
         'OVERLAYANTIAIR',
 	'OVERLAYDIRECTFIRE',
-	'DIRECTFIRE',
         'CORE',
         'LEVEL3',
         'TRANSPORTATION',
@@ -56,7 +55,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             TrackingRadius = 1.15,
-            Damage = 180,
+            Damage = 80,
             DamageRadius = 1.5,
             DamageType = 'AntiAir',
             DisplayName = 'CORVTOL_MISSILE',
@@ -73,9 +72,9 @@ UnitBlueprint {
             Label = 'CORVTOL_MISSILE',
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
-            MuzzleVelocity = 100,
-            ProjectileId = '/mods/SCTA-master/projectiles/CORVTOL_MISSILE/CORVTOL_MISSILE_proj.bp',
+            MuzzleSalvoSize = 2,
+            MuzzleVelocity = 60,
+            ProjectileId = '/mods/SCTA-master/projectiles/CORSVTOL_MISSILE/CORSVTOL_MISSILE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -95,7 +94,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.5,
+            RateOfFire = 1,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',

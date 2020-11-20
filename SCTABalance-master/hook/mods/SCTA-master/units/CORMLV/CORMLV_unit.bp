@@ -1,0 +1,39 @@
+#ARM Mine Layer Vehicle - Tech Level 1
+#ARMMLV
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH1',
+        'ENGINEER',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SHOWQUEUE',
+	'REPAIR',
+        'MOBILE',
+	'CONSTRUCTION',
+	'LAND',
+        'CORE',
+        ---'VEHICLE',
+	'MINELAYER',
+	'LEVEL1',
+    },
+    Display = {
+        UniformScale = 0.12,
+    },
+    Economy = {
+        MaxBuildDistance = 6,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
+    },
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
+    SizeX = 1.5,
+    SizeY = 1,
+    SizeZ = 1.5,
+}

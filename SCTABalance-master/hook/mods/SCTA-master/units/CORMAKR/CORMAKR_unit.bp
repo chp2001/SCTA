@@ -5,6 +5,7 @@ Categories = {
         'BUILTBYT1KBOT',
         'BUILTBYT1VEHICLE',
         'BUILTBYT1HOVER',
+        'BUILTBYT1SHIP',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',

@@ -5,8 +5,10 @@
 
 UnitBlueprint {
     Merge = true,
+    Display = {
+        UniformScale = 0.2,
+    },
     Defense = {
-        ArmorType = 'Normal',
         Health = 14000,
         MaxHealth = 14000,
     },
@@ -17,6 +19,11 @@ UnitBlueprint {
     Intel = {
         WaterVisionRadius = 15,
     },
+    SelectionSizeX = 3,
+    SelectionSizeZ = 5,
+    SizeX = 4,
+    SizeY = 3,
+    SizeZ = 8,
     Weapon = {
         {
             Audio = {

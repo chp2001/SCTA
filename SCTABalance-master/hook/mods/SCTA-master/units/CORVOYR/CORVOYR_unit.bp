@@ -38,7 +38,7 @@ UnitBlueprint {
         SizeZ = 1,
 	MaxWaterDepth = 0,
     },
-    StrategicIconName = 'icon_land1_intel',
+    StrategicIconName = 'icon_bot1_intel',
     General = {
         OrderOverrides = {
                 RULEUTC_IntelToggle = {
@@ -54,6 +54,7 @@ UnitBlueprint {
         VisionRadius = 16,
         RadarRadius = 50, 
     },
+    LifeBarSize = 1,
     SelectionSizeX = 0.6,
     SelectionSizeZ = 0.6,
     SizeX = 1,

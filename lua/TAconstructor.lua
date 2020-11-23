@@ -1,6 +1,7 @@
-local TAWalking = import('/mods/SCTA-master/lua/TAWalking.lua').TAWalking
+local TAWalking = import('/mods/SCTA-master/lua/TAMotion.lua').TAWalking
 local Unit = import('/lua/sim/Unit.lua').Unit
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+local oldPosition={1,1,1}
 
 TAconstructor = Class(TAWalking) {
 	currentState = "closed",
@@ -9,8 +10,8 @@ TAconstructor = Class(TAWalking) {
 	desiredTarget = nil,
 	order = nil,
 
-	isBuilding = false,
-	isReclaiming = false,
+	isBuilding = nil,
+	isReclaiming = nil,
 
 	pauseTime = 3,
 
@@ -104,7 +105,7 @@ TAconstructor = Class(TAWalking) {
 		end
 		self:SetAllWeaponsEnabled(false)
 		self.isBuilding = true
-		self.isReclaiming = false
+		self.isReclaiming = nil
 		self.order = order
 		if (not self.animating) then
 			ForkThread(self.AnimationThread, self)
@@ -116,7 +117,7 @@ TAconstructor = Class(TAWalking) {
 		TAWalking.OnStopBuild(self, unitBeingBuilt, order )
 		--ChangeState(self, self.IdleState)
 		self.desiredTarget = nil
-		self.isBuilding = false
+		self.isBuilding = nil
 		self.countdown = self.pauseTime
 		if (self.currentState == "aimed") then
 			self.desiredState = "rolloff"
@@ -150,11 +151,11 @@ TAconstructor = Class(TAWalking) {
 			self.desiredState = "opened"
 		end
 		self.isReclaiming = true
-		self.isBuilding = false
-		self.cloakOn = false
-		self.isCapturing = false
+		self.isBuilding = nil
+		if not self.cloakOn and not self.isCapturing then
 		if (not self.animating) then
 			ForkThread(self.AnimationThread, self)
+		end
 		end
 	end,
 
@@ -163,7 +164,7 @@ TAconstructor = Class(TAWalking) {
         self:LOGDBG('TAContructor.OnStopReclaim')
 		TAWalking.OnStopReclaim(self, target)
 		self.desiredTarget = nil
-		self.isReclaiming = false
+		self.isReclaiming = nil
 		self.countdown = self.pauseTime
 		self.desiredState = "closed"
 		self:SetAllWeaponsEnabled(true)
@@ -267,6 +268,75 @@ TAconstructor = Class(TAWalking) {
 			WaitSeconds(0.25)
 		end
 	end,
+}
+
+
+TANecro = Class(TAconstructor) {
+    OnStartReclaim = function(self, target, oldPosition)
+        if EntityCategoryContains(categories.NECRO, self) then
+            if not target.ReclaimInProgress and not target.NecroingInProgress then
+                --LOG('* Necro: OnStartReclaim:  I am a necro! no ReclaimInProgress; starting Necroing')
+                target.NecroingInProgress = true
+				self.spawnUnit = true
+                self.RecBP = target.AssociatedBP
+                self.ReclaimLeft = target.ReclaimLeft
+                self.RecPosition = target:GetPosition()
+            elseif not target.ReclaimInProgress and target.NecroingInProgress then
+				--LOG('* Necro: OnStartReclaim:  I am a necro and helping necro')
+				self.RecBP = nil
+				self.ReclaimLeft = nil
+				self.RecPosition = target:GetPosition()
+			else
+                --LOG('* Necro: OnStartReclaim:  I am a necro and ReclaimInProgress; Stopped!')
+				self.RecBP = nil
+                self.ReclaimLeft = nil
+                self.RecPosition = nil
+                IssueStop({self})
+                IssueClearCommands({self})
+                return
+            end
+        else
+            if not target.NecroingInProgress then
+                --LOG('* Necro: OnStartReclaim:  I am engineer, no NecroingInProgress, starting Reclaim')
+                target.ReclaimInProgress = true
+            else
+                --LOG('* Necro: OnStartReclaim:  I am engineer and NecroingInProgress; Stopped!')
+                IssueStop({self})
+                IssueClearCommands({self})
+                return
+            end
+        end
+        TAconstructor.OnStartReclaim(self, target, oldPosition)
+    end,
+
+    OnStopReclaim = function(self, target, oldPosition)
+        TAconstructor.OnStopReclaim(self, target, oldPosition)
+        if not target then
+            if self.RecBP and EntityCategoryContains(categories.NECRO, self) and oldPosition ~= self.RecPosition and self.spawnUnit then
+                --LOG('* Necro: OnStopReclaim:  I am a necro! and RecBP = true ')
+                oldPosition = self.RecPosition
+                self:ForkThread( self.RespawnUnit, self.RecBP, self:GetArmy(), self.RecPosition, self.ReclaimLeft )
+            else
+                --LOG('* Necro: OnStopReclaim: no necro or no RecBP')
+            end
+        else
+            if EntityCategoryContains(categories.NECRO, self) then
+                --LOG('* Necro: OnStopReclaim:  Wreck still exist. Removing target data from Necro')
+                self.RecBP = nil
+                self.ReclaimLeft = nil
+                self.RecPosition = nil
+            else
+                --LOG('* Necro: OnStopReclaim: Wreck still exist. no necro')
+            end
+        end
+    end,
+
+    RespawnUnit = function(self, RecBP, army, pos, ReclaimLeft)
+        --LOG('* Necro: RespawnUnit: ReclaimLeft '..ReclaimLeft)
+        WaitTicks(3)
+        local newUnit = CreateUnitHPR(RecBP, army, pos[1], pos[2], pos[3], 0, 0, 0)
+        newUnit:SetHealth(nil, newUnit:GetMaxHealth() * ReclaimLeft * 0.5)
+    end,
 }
 
 TypeClass = TAconstructor

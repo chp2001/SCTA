@@ -10,8 +10,8 @@ local TACommanderDeathWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TACo
 
 CORCOM = Class(TAconstructor) {
 	motion = 'Stopped',
-	cloakOn = false,
-	cloakSet = false,
+	cloakOn = nil,
+	--cloakSet = false,
 
 	Weapons = {
 		CORCOMLASER = Class(TAweapon) {
@@ -67,9 +67,9 @@ CORCOM = Class(TAconstructor) {
 		else
 			self.desiredState = "opened"
 		end
-		self.isReclaiming = false
-		self.isBuilding = false
-		if self.cloakOn == false then
+		self.isReclaiming = nil
+		self.isBuilding = nil
+		if not self.cloakOn then
 		self.isCapturing = true
 		if (not self.animating) then
 			ForkThread(self.AnimationThread, self)
@@ -134,7 +134,7 @@ CORCOM = Class(TAconstructor) {
 	end,
 
 	OnIntelDisabled = function(self)
-		self.cloakOn = false
+		self.cloakOn = nil
 		self:DisableIntel('Cloak')
         self:SetIntelRadius('Omni', 10)
         self:PlayUnitSound('Uncloak')
@@ -168,7 +168,7 @@ CORCOM = Class(TAconstructor) {
 		if bit == 8 then
 			if self.CloakThread then
 				KillThread(self.CloakThread)
-				self.cloakOn = false
+				self.cloakOn = nil
 			end
 		end
 		TAconstructor.OnScriptBitClear(self, bit)

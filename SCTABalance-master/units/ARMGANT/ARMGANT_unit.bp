@@ -78,7 +78,7 @@ UnitBlueprint {
             },
         },
         BuildBones = {'nano1','nano2'},
-        BuildAttachBone = 'body',
+        BuildAttachBone = 'buildpad',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

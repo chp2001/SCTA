@@ -9,8 +9,8 @@ TAAirConstructor = Class(TAair) {
 	desiredTarget = nil,
 	order = nil,
 
-	isBuilding = false,
-	isReclaiming = false,
+	isBuilding = nil,
+	isReclaiming = nil,
 
 	pauseTime = 3,
 
@@ -73,7 +73,7 @@ TAAirConstructor = Class(TAair) {
     end,
 
 	OnStartBuild = function(self, unitBeingBuilt, order )
-        if unitBeingBuilt.noassistbuild and unitBeingBuilt:GetHealth()==unitBeingBuilt:GetMaxHealth() then
+        if unitBeingBuilt.noassistbuild and unitBeingBuilt:GetHealth() == unitBeingBuilt:GetMaxHealth() then
             return
 		end
 		self.desiredTarget = unitBeingBuilt
@@ -83,12 +83,9 @@ TAAirConstructor = Class(TAair) {
 		else
 			self.desiredState = "opened"
 		end
-		self:SetAllWeaponsEnabled(false)
-		if self.hideUnit and not IsDestroyed(unitBeingBuilt) then
-			unitBeingBuilt:HideBone(0, false)
-		end
+		--self:SetAllWeaponsEnabled(false)
 		self.isBuilding = true
-		self.isReclaiming = false
+		self.isReclaiming = nil
 		self.order = order
 		if (not self.animating) then
 			ForkThread(self.AnimationThread, self)
@@ -98,12 +95,12 @@ TAAirConstructor = Class(TAair) {
 	OnStopBuild = function(self, unitBeingBuilt, order )
 		TAair.OnStopBuild(self, unitBeingBuilt, order )
 		self.desiredTarget = nil
-		self.isBuilding = false
+		self.isBuilding = nil
 		self.countdown = self.pauseTime
 		if (self.currentState == "aimed") then
 			self.desiredState = "closed"
 		end
-		self:SetAllWeaponsEnabled(true)
+		--self:SetAllWeaponsEnabled(true)
 	end,
 
 	DestroyUnitBeingBuilt = function(self)
@@ -134,7 +131,7 @@ TAAirConstructor = Class(TAair) {
 		end
 		self:SetAllWeaponsEnabled(false)
 		self.isReclaiming = true
-		self.isBuilding = false
+		self.isBuilding = nil
 		if (not self.animating) then
 			ForkThread(self.AnimationThread, self)
 		end
@@ -144,10 +141,10 @@ TAAirConstructor = Class(TAair) {
 	OnStopReclaim = function(self, target)
 		TAair.OnStopReclaim(self, target)
 		self.desiredTarget = nil
-		self.isReclaiming = false
+		self.isReclaiming = nil
 		self.countdown = self.pauseTime
 		self.desiredState = "closed"
-		self:SetAllWeaponsEnabled(true)
+		---self:SetAllWeaponsEnabled(true)
 	end,
 
 	GetCloseArea = function(self)

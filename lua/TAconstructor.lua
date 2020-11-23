@@ -51,13 +51,6 @@ TAconstructor = Class(TAWalking) {
 							self.desiredState = "rolloff"
 						end
 						if (not IsDestroyed(self.currentTarget)) then
-							if self.isFactory and not IsDestroyed(self.currentTarget) then
-								local bone = self:GetBlueprint().Display.BuildAttachBone or 0
-								self.currentTarget:AttachBoneTo(-2, self, bone)
-							end
-							if self.hideUnit and not IsDestroyed(self.currentTarget) then
-								self.currentTarget:ShowBone(0, true)
-							end
 							if (self.isBuilding) then
 								self:SetBuildRate(self:GetBlueprint().Economy.BuildRate)
 								TAWalking.OnStartBuild(self, self.currentTarget, self.order)
@@ -110,9 +103,6 @@ TAconstructor = Class(TAWalking) {
 			self.desiredState = "opened"
 		end
 		self:SetAllWeaponsEnabled(false)
-		if self.hideUnit and not IsDestroyed(unitBeingBuilt) then
-			unitBeingBuilt:HideBone(0, false)
-		end
 		self.isBuilding = true
 		self.isReclaiming = false
 		self.order = order

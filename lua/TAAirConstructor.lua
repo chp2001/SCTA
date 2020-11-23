@@ -37,9 +37,6 @@ TAAirConstructor = Class(TAair) {
 							self:Aim(self.currentTarget)
 						end
 						if (not IsDestroyed(self.currentTarget)) then
-							if self.hideUnit and not IsDestroyed(self.currentTarget) then
-								self.currentTarget:ShowBone(0, true)
-							end
 							if (self.isBuilding) then
 								TAair.OnStartBuild(self, self.currentTarget, self.order)
 								if EntityCategoryContains(categories.ARM, self.currentTarget) or EntityCategoryContains(categories.CORE, self.currentTarget) then

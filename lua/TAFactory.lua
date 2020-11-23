@@ -9,8 +9,8 @@ TAFactory = Class(TAconstructor) {
 	desiredTarget = nil,
 	order = nil,
 
-	isBuilding = false,
-	isReclaiming = false,
+	isBuilding = nil,
+	---isReclaiming = false,
 
 	pauseTime = 3,
 	isFactory = true,
@@ -33,6 +33,12 @@ TAFactory = Class(TAconstructor) {
 			self.desiredState = "aimed"
 		else
 			self.desiredState = "opened"
+		end
+		if (not IsDestroyed(self.desiredTarget)) then
+			---if self.isFactory then
+				local bone = self:GetBlueprint().Display.BuildAttachBone or 0
+				self.desiredTarget:AttachBoneTo(-2, self, bone)
+			---end
 		end
 		---self:SetAllWeaponsEnabled(false)
 		self.isBuilding = true

@@ -13,7 +13,7 @@ local TACommanderSuicideWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TA
 
 ARMCOM = Class(TAconstructor) {
 	motion = 'Stopped',
-	cloakOn = false,
+	cloakOn = nil,
 
 	Weapons = {
 		ARMCOMLASER = Class(TAweapon) {
@@ -69,9 +69,9 @@ ARMCOM = Class(TAconstructor) {
 		else
 			self.desiredState = "opened"
 		end
-		self.isReclaiming = false
-		self.isBuilding = false
-		if self.cloakOn == false then
+		self.isReclaiming = nil
+		self.isBuilding = nil
+		if not self.cloakOn then
 		self.isCapturing = true
 		if (not self.animating) then
 			ForkThread(self.AnimationThread, self)
@@ -135,7 +135,7 @@ ARMCOM = Class(TAconstructor) {
 	end,
 
 	OnIntelDisabled = function(self)
-		self.cloakOn = false
+		self.cloakOn = nil
 		self:DisableIntel('Cloak')
         self:SetIntelRadius('Omni', 10)
         self:PlayUnitSound('Uncloak')
@@ -152,6 +152,7 @@ ARMCOM = Class(TAconstructor) {
         	self:PlayUnitSound('Cloak')
 		self:SetMesh('/mods/SCTA-master/units/ARMCOM/ARMCOM_cloak_mesh', true)
 		ForkThread(self.CloakDetection, self)
+		--end
 	end,
 
 
@@ -170,7 +171,7 @@ ARMCOM = Class(TAconstructor) {
 		if bit == 8 then
 			if self.CloakThread then
 				KillThread(self.CloakThread)
-				self.cloakOn = false
+				self.cloakOn = nil
 			end
 		end
 		TAconstructor.OnScriptBitClear(self, bit)

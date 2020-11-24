@@ -57,7 +57,7 @@ UnitBlueprint {
     Description = 'Artillery Kbot',
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORTHUD/CORTHUD_lod0_Awalk.sca',
-        AnimationWalkRate = 1,
+        AnimationWalkRate = 2,
         Abilities = {
             'Artillery',
         },
@@ -85,7 +85,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -158,7 +157,7 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
-            BallisticArc = 'RULEUBA_HighArc',
+            BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 125,

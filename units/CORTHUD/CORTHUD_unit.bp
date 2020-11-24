@@ -157,7 +157,7 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
-            BallisticArc = 'RULEUBA_LowArc',
+            BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 125,
@@ -175,7 +175,8 @@ UnitBlueprint {
             MinRadius = 5, 
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 25,
+            MuzzleVelocity = 14,
+            MuzzleVelocityReduceDistance = 28,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_THUD/CORE_THUD_proj.bp',
             RackBones = {
                 {
@@ -207,7 +208,7 @@ UnitBlueprint {
             TurretBonePitch = 'gun',
             TurretBoneYaw = 'torso',
             TurretPitch = 0,
-            TurretPitchRange = 360,
+            TurretPitchRange = 90,
             TurretPitchSpeed = 45,
             TurretYaw = 0,
             TurretYawRange = 360,

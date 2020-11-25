@@ -453,5 +453,3 @@ noassistbuild = true,
     end,
 
 }
-
-TypeClass = TAunit

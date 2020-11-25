@@ -93,8 +93,8 @@ TAconstructor = Class(TAWalking) {
 
 	OnStartBuild = function(self, unitBeingBuilt, order )
 		self:LOGDBG('TAContructor.OnStartBuild')
-		TAWalking.OnStartBuild(self, unitBeingBuilt, order )
-        if unitBeingBuilt.noassistbuild and unitBeingBuilt:GetHealth()==unitBeingBuilt:GetMaxHealth() then
+		---TAWalking.OnStartBuild(self, unitBeingBuilt, order )
+        if unitBeingBuilt.noassistbuild and unitBeingBuilt:GetHealth() == unitBeingBuilt:GetMaxHealth() then
             return
 		end
 		self.desiredTarget = unitBeingBuilt

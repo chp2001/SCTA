@@ -73,7 +73,7 @@ TAAirConstructor = Class(TAair) {
     end,
 
 	OnStartBuild = function(self, unitBeingBuilt, order )
-		TAair.OnStartBuild(self, unitBeingBuilt, order )
+		---TAair.OnStartBuild(self, unitBeingBuilt, order )
         if unitBeingBuilt.noassistbuild and unitBeingBuilt:GetHealth() == unitBeingBuilt:GetMaxHealth() then
             return
 		end
@@ -124,7 +124,7 @@ TAAirConstructor = Class(TAair) {
 		else
 			self.desiredState = "opened"
 		end
-		self:SetAllWeaponsEnabled(false)
+		---self:SetAllWeaponsEnabled(false)
 		self.isReclaiming = true
 		self.isBuilding = nil
 		if (not self.animating) then

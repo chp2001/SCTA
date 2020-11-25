@@ -7,7 +7,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH3',
+        'TECH2',
         'BENIGN',
         'SORTDEFENSE',
 	'STRUCTURE',
@@ -19,12 +19,8 @@ UnitBlueprint {
 	'METAL',
     'LEVEL2',
     'SELECTABLE',
-	
-	
-	
     },
     Defense = {
-        ArmorType = 'Structure',
         Health = 4000,
         MaxHealth = 4000,
         Shield = {
@@ -38,12 +34,12 @@ UnitBlueprint {
             ShieldRechargeTime = 50,
             ShieldRegenRate = 10,
             ShieldRegenStartTime = 1,
-            ShieldSize = 2,
+            ShieldSize = 1.5,
             ShieldVerticalOffset = 0.4,
         },
     },
     Display = {
-        UniformScale = 0.16,
+        UniformScale = 0.12,
     },
     Economy = {
         BuildCostEnergy = 600,

@@ -151,7 +151,7 @@ UnitBlueprint {
             ProjectileId = '/mods/SCTA-master/projectiles/ARMFHLT_LASER/ARMFHLT_LASER_proj.bp',
             EnergyDrainPerSecond = 50,
             EnergyRequired = 100,
-            ProjectileLifetime = 1,
+            ---ProjectileLifetime = 1,
             RackBones = {
                 {
                     MuzzleBones = {

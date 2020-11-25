@@ -18,10 +18,6 @@ UnitBlueprint {
         'KBOT',
         'VEHICLE',
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         Health = 1200,
@@ -42,7 +38,6 @@ UnitBlueprint {
         BuildableCategory = {
             'BUILTBYT1VEHICLE CORE',
             'BUILTBYT2KBOT CORE',
-            'coralab',
         },
         MaxBuildDistance = 7,
         ProductionPerSecondEnergy = 3,

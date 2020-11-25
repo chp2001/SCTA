@@ -53,7 +53,7 @@ TAconstructor = Class(TAWalking) {
 						end
 						if (not IsDestroyed(self.currentTarget)) then
 							if (self.isBuilding) then
-								self:SetBuildRate(self:GetBlueprint().Economy.BuildRate)
+								---self:SetBuildRate(self:GetBlueprint().Economy.BuildRate)
 								TAWalking.OnStartBuild(self, self.currentTarget, self.order)
 								if EntityCategoryContains(categories.ARM, self.currentTarget) or EntityCategoryContains(categories.CORE, self.currentTarget) then
 								self.currentTarget:HideFlares()
@@ -92,8 +92,9 @@ TAconstructor = Class(TAWalking) {
 
 
 	OnStartBuild = function(self, unitBeingBuilt, order )
-        self:LOGDBG('TAContructor.OnStartBuild')
-        if unitBeingBuilt.noassistbuild and unitBeingBuilt:GetHealth()==unitBeingBuilt:GetMaxHealth() then
+		self:LOGDBG('TAContructor.OnStartBuild')
+		---TAWalking.OnStartBuild(self, unitBeingBuilt, order )
+        if unitBeingBuilt.noassistbuild and unitBeingBuilt:GetHealth() == unitBeingBuilt:GetMaxHealth() then
             return
 		end
 		self.desiredTarget = unitBeingBuilt
@@ -139,9 +140,10 @@ TAconstructor = Class(TAWalking) {
 
 
 	OnStartReclaim = function(self, target)
-        self:LOGDBG('TAContructor.OnStartReclaim')
-		self:SetReclaimTimeMultiplier(1)
-		self:SetBuildRate(self:GetBlueprint().Economy.BuildRate * 0.60)
+		self:LOGDBG('TAContructor.OnStartReclaim')
+		---if not self.cloakOn or not self.isCapturing then
+		--self:SetReclaimTimeMultiplier(1)
+		--self:SetBuildRate(self:GetBlueprint().Economy.BuildRate * 0.60)
 		TAWalking.OnStartReclaim(self, target)
 		self.desiredTarget = target
 		if (self.currentState == "aimed") then
@@ -152,10 +154,9 @@ TAconstructor = Class(TAWalking) {
 		end
 		self.isReclaiming = true
 		self.isBuilding = nil
-		if not self.cloakOn and not self.isCapturing then
 		if (not self.animating) then
 			ForkThread(self.AnimationThread, self)
-		end
+		--end
 		end
 	end,
 
@@ -163,6 +164,10 @@ TAconstructor = Class(TAWalking) {
 	OnStopReclaim = function(self, target)
         self:LOGDBG('TAContructor.OnStopReclaim')
 		TAWalking.OnStopReclaim(self, target)
+		self.Conclude(self, target)
+	end,
+
+	Conclude = function(self, target)
 		self.desiredTarget = nil
 		self.isReclaiming = nil
 		self.countdown = self.pauseTime
@@ -339,4 +344,68 @@ TANecro = Class(TAconstructor) {
     end,
 }
 
-TypeClass = TAconstructor
+TACommander = Class(TAconstructor) {
+
+	OnStartReclaim = function(self, target)
+		TAconstructor.OnStartReclaim(self, target)
+		self:SetScriptBit('RULEUTC_CloakToggle', true)
+	end,
+
+	OnStartCapture = function(self, target)
+		---self:SetCaptureTimeMultiplier(1)
+		--self:SetBuildRate(self:GetBlueprint().Economy.BuildRate * 0.6)
+		TAconstructor.OnStartCapture(self, target)
+		self:SetScriptBit('RULEUTC_CloakToggle', true)
+		self:SetAllWeaponsEnabled(false)
+		self.desiredTarget = target
+		if (self.currentState == "aimed") then
+			self.currentState = "opened"
+			self.desiredState = "aimed"
+		else
+			self.desiredState = "opened"
+		end
+		self.isBuilding = nil
+		---if not self.cloakOn then
+		self.isCapturing = true
+		self.isReclaiming = true
+		if (not self.animating) then
+			ForkThread(TAconstructor.AnimationThread, self)
+		end
+	end,
+
+
+	OnStopCapture = function(self, target)
+		TAconstructor.OnStopCapture(self, target)
+		self.isCapturing = nil
+		TAconstructor.Conclude(self, target)
+	end,
+    
+    OnFailedCapture = function(self, target)
+		TAconstructor.OnFailedCapture(self, target)
+		self.isCapturing = nil
+		TAconstructor.Conclude(self, target)
+    end,
+
+	Conclude = function(self, target)
+		TAconstructor.Conclude(self, target)
+		if self.cloakOn then
+		ForkThread(self.CloakDetection, self)
+		end
+	end,
+
+    CloakDetection = function(self)
+        local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
+        local brain = moho.entity_methods.GetAIBrain(self)
+        local cat = categories.SELECTABLE * categories.MOBILE
+        local getpos = moho.entity_methods.GetPosition
+        while not self.Dead do
+            coroutine.yield(11)
+            local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
+            if dudes[1] and self.cloakOn then
+                self:DisableIntel('Cloak')
+            elseif not dudes[1] and self.cloakOn then
+                self:EnableIntel('Cloak')
+            end
+        end
+    end,
+}

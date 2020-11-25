@@ -42,7 +42,7 @@ UnitBlueprint {
             'SHIP LEVEL3 CORE',
             'ADVANCEDSUB LEVEL3 CORE',
         },
-        BuildRate = 220,
+        BuildRate = 360,
         ProductionPerSecondMass = 0,
     },
     LifeBarSize = 8,

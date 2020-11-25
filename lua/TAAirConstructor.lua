@@ -73,6 +73,7 @@ TAAirConstructor = Class(TAair) {
     end,
 
 	OnStartBuild = function(self, unitBeingBuilt, order )
+		TAair.OnStartBuild(self, unitBeingBuilt, order )
         if unitBeingBuilt.noassistbuild and unitBeingBuilt:GetHealth() == unitBeingBuilt:GetMaxHealth() then
             return
 		end
@@ -104,19 +105,13 @@ TAAirConstructor = Class(TAair) {
 	end,
 
 	DestroyUnitBeingBuilt = function(self)
-        if self.UnitBeingBuilt and not self.UnitBeingBuilt.Dead and self.UnitBeingBuilt:GetFractionComplete() < 1 then
-            if self.UnitBeingBuilt:GetFractionComplete() > 0.5 then
-                self.UnitBeingBuilt:Kill()
-            else
-                self.UnitBeingBuilt:Destroy()
-            end
-        end
+        self:LOGDBG('TAContructor.DestroyUnitBeingBuilt')
     end,
 
-	OnFailedToBuild = function(self)
+    OnFailedToBuild = function(self)
+        self:LOGDBG('TAContructor.OnFailedToBuild')
 		TAair.OnFailedToBuild(self)
-		#WaitSeconds(1)
-        ChangeState(self, self.IdleState)
+		--self:OnStopBuild()
     end,
 
 

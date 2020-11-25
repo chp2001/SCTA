@@ -42,7 +42,7 @@ UnitBlueprint {
             'SHIP LEVEL3 ARM',
             'ADVANCEDSUB LEVEL3 ARM',
         },
-        BuildRate = 220,
+        BuildRate = 360,
         ProductionPerSecondMass = 0,
     },
     LifeBarSize = 8,

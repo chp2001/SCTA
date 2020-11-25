@@ -1,5 +1,5 @@
-#ARM Aircraft Plant - Produces Aircraft
-#ARMDAP
+#CORE Aircraft Plant - Produces Aircraft
+#CORDAP
 #
 #Blueprint created by Raevn
 
@@ -32,7 +32,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH2',
+        'TECH3',
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -40,19 +40,19 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'TEXTUREANIM',
         'OVERLAYRADAR',
-        'AIR',
+        'AIR', 
         'CONSTRUCTIONSORTDOWN',
-	'ARM',
+	'CORE',
 		'PLANT',
 	'SORTCONSTRUCTION',
-	'LEVEL2',
+	'LEVEL3',
     },
     Defense = {
         ArmorType = 'Structure',
-        Health = 3700,
-        MaxHealth = 3700,
+        Health = 10000,
+        MaxHealth = 10000,
         AirThreatLevel = 0,
-        EconomyThreatLevel = 3,
+        EconomyThreatLevel = 6,
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
@@ -65,12 +65,12 @@ UnitBlueprint {
 		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate','Runway'},
 		DestructionEmitters = {
 			{
-				EmitterBone = {'BasePlate', 0},
+				EmitterBone = {'section1','section2', 0},
 				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
 				EmitterSize = 1.25,
 			},
 			{
-				EmitterBone = {'Post_01','Post_02'},
+				EmitterBone = {'guna','gunb'},
 				EmitterBlueprint = {
 	    				'/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
 			    		'/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
@@ -79,47 +79,46 @@ UnitBlueprint {
 				EmitterSize = 0.35,
 			},
 			{
-				EmitterBone = {'Radar'},
+				EmitterBone = {'dish'},
 				EmitterBlueprint = {
 		    			'/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
 				},
 				EmitterSize = 0.25,
 			},
-		},
-	},
-	BuildBones = {'Nozzle_01','Nozzle_02'},
-	BuildAttachBone = 'BasePlate',
-	TextureAnimationFrames = 6,
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
-                {
-                LODCutoff = 400, 
-                SpecularName = '/mods/SCTA-master/units/ARMAP/ARMAP_SpecTeam.dds',
-                AlbedoName = '/mods/SCTA-master/units/ARMAP/ARMAP_Albedo.dds',
-                MeshName =   '/mods/SCTA-master/units/ARMAP/ARMAP_lod0.scm',
-                ShaderName = 'Unit', 
-                NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
-                },
+        },
+    },
+	BuildBones = {'muzzlea','muzzleb'},
+	BuildAttachBone = 'pad',
+    Mesh = {
+        IconFadeInZoom = 130,
+        LODs = {
+            {
+                LODCutoff = 400,
+        NormalName = '/mods/SCTA-master/units/CORAP/CORAP_normalsTS.dds',
+        SpecularName = '/mods/SCTA-master/units/CORAP/CORAP_SpecTeam.dds',
+        AlbedoName = '/mods/SCTA-master/units/CORAP/CORAP_Albedo.dds',
+        MeshName =   '/mods/SCTA-master/units/CORAP/CORAP_lod0.scm',
+        ShaderName = 'Unit', 
             },
         },
+    },
         UniformScale = 0.25,
     },
     Economy = {
-        BuildCostEnergy = 54000,
-        BuildCostMass = 2100, 
+        BuildCostEnergy = 90000,
+        BuildCostMass = 5000, 
         BuildTime = 40000,
-    BuildRate = 180,
+    BuildRate = 240,
     DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
-        'VTOL LEVEL2 ARM',
-        'VTOL LEVEL1 ARM',
-        'armadap', 
-        },
+        'VTOL LEVEL1 CORE', 
+        'VTOL LEVEL2 CORE',
+        'VTOL LEVEL3 CORE',
+    },
 	InitialRallyX = 1,
 	InitialRallyZ = 1,
-    StorageMass = 200,
-    StorageEnergy = 200,
+        StorageMass = 200,
+        StorageEnergy = 200,
     },
     Footprint = {
         MaxSlope = 0.625,
@@ -137,17 +136,16 @@ UnitBlueprint {
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
         },
-        ConstructionBar = true,
         SelectionPriority = 5,
-        FactionName = 'ARM',
+        ConstructionBar = true,
+        FactionName = 'CORE',
+        UpgradesFrom = 'cordap',
         TechLevel = 'RULEUTL_Advanced',
-        UpgradesFrom = 'armap',
-        UpgradesTo = 'armadap', 
-	UnitName = 'Aircraft Development Plant',
+	UnitName = 'Aircraft Advanced Development Plant',
     },
     Intel = {
-        VisionRadius = 10,
-	RadarRadius = 31,
+        VisionRadius = 14,
+	RadarRadius = 32,
 	FreeIntel = true,
     },
     Interface = {
@@ -170,13 +168,13 @@ UnitBlueprint {
     SizeX = 9,
     SizeY = 1,
     SizeZ = 9,
-    StrategicIconName = 'icon_factory2_air',
+    StrategicIconName = 'icon_factory3_air',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
             Damage = 20,
             DamageFriendly = true,
-            DamageRadius = 5,
+            DamageRadius = 1,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
@@ -184,7 +182,7 @@ UnitBlueprint {
         { #LARGE_BUILDING
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 5,
+            DamageRadius = 1,
             DummyWeapon = true,
             DamageType = 'Normal',
             Label = 'SuicideWeapon',
@@ -192,7 +190,7 @@ UnitBlueprint {
     },
     Wreckage = {
 	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/SCTABalance-master/units/ARMDAP/ARMDAP_dead_prop.bp',
+        Blueprint = '/mods/SCTA-master/SCTABalance-master/units/CORADAP/CORADAP_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

@@ -2,6 +2,7 @@ UnitBlueprint {
     Merge = true,
     Categories = {
         'BUILTBYT2SUB',
+        'BUILTBYT2AIR',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -41,7 +42,7 @@ UnitBlueprint {
         NaturalProducer = false,
         DifferentialUpgradeCostCalculation = true,
         BuildCostEnergy = 9000,
-        BuildCostMass = 600,
+        BuildCostMass = 1200,
         MaintenanceConsumptionPerSecondEnergy = 100,
         },
 }

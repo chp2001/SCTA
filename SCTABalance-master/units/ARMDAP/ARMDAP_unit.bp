@@ -107,13 +107,14 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 54000,
-        BuildCostMass = 2100, 
+        BuildCostMass = 2700, 
         BuildTime = 40000,
     BuildRate = 180,
     DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
         'VTOL LEVEL2 ARM',
-	    'VTOL LEVEL1 ARM', 
+        'VTOL LEVEL1 ARM',
+        'armadap', 
         },
 	InitialRallyX = 1,
 	InitialRallyZ = 1,
@@ -141,6 +142,7 @@ UnitBlueprint {
         FactionName = 'ARM',
         TechLevel = 'RULEUTL_Advanced',
         UpgradesFrom = 'armap',
+        UpgradesTo = 'armadap', 
 	UnitName = 'Aircraft Development Plant',
     },
     Intel = {

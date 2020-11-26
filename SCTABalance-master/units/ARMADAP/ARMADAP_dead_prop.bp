@@ -3,34 +3,34 @@ PropBlueprint {
         'RECLAIMABLE',
     },
     Defense = {
-        Health = 950,
-        MaxHealth = 950,
+        Health = 1480,
+        MaxHealth = 1480,
     },
     Display = {
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 230,
+                    LODCutoff = 400,
 		    NormalName = '/mods/SCTA-master/meshes/wrecks/Wreck_NormalsTS.dds',
 		    SpecularName = '/mods/SCTA-master/meshes/wrecks/Wreck_SpecTeam.dds',
 		    AlbedoName = '/mods/SCTA-master/meshes/wrecks/Wreck_Albedo.dds',
-		    MeshName = 'CORHLT_dead_lod0.scm',
+            MeshName =   '/mods/SCTA-master/units/ARMAP/ARMAP_dead_lod0.scm',
                     ShaderName = 'Unit', 
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.25,
     },
     Economy = {
         ReclaimEnergyMax = 0,
-        ReclaimMassMax = 471,
+        ReclaimMassMax = 8000,
         ReclaimTime = 10,
     },
     Footprint = {
         OccupancyCaps = 3,
-        SizeX = 3,
-        SizeZ = 3,
+        SizeX = 7,
+        SizeZ = 6,
     },
     Interface = {
         HelpText = 'Wreckage',
@@ -39,11 +39,15 @@ PropBlueprint {
         BlockPath = false, 
     },
     Wreckage = {
-	Blueprint = '/mods/SCTA-master/units/CORHLT/CORHLT_heap_prop.bp',
+	Blueprint = '/mods/SCTA-master/SCTABalance-master/units/ARMADAP/ARMADAP_heap_prop.bp',
     },
     ScriptClass = 'TAWreckage',
     ScriptModule = '/mods/SCTA-master/lua/TAWreckage.lua',
-    SizeX = 2.5,
-    SizeY = 4,
-    SizeZ = 2.5,
+    SizeX = 7,
+    SizeY = 3.75,
+    SizeZ = 6,
+    CollisionSizeX = 5.5,
+    CollisionSizeZ = 3,
+    CollisionOffsetZ = -1.5,
+    CollisionOffsetX = 0.75,
 }

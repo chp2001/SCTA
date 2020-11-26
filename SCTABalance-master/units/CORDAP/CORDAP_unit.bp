@@ -106,13 +106,14 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 54000,
-        BuildCostMass = 2100, 
+        BuildCostMass = 2700, 
         BuildTime = 40000,
     BuildRate = 180,
     DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
         'VTOL LEVEL1 CORE', 
         'VTOL LEVEL2 CORE',
+        'coradap', 
     },
 	InitialRallyX = 1,
 	InitialRallyZ = 1,
@@ -139,6 +140,7 @@ UnitBlueprint {
         ConstructionBar = true,
         FactionName = 'CORE',
         UpgradesFrom = 'corap',
+        UpgradesTo = 'coradap', 
         TechLevel = 'RULEUTL_Advanced',
 	UnitName = 'Aircraft Development Plant',
     },

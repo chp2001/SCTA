@@ -191,7 +191,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             BombDropThreshold = 3,
             CollideFriendly = false,
-            Damage = 125,
+            Damage = 65,
             DamageFriendly = true,
             DamageRadius = 6,
             DamageType = 'Normal',
@@ -258,7 +258,7 @@ UnitBlueprint {
             DamageFriendly = false,
             Damage = 35,
             DamageRadius = 0.25, 
-            DamageType = 'Anti-Air',
+            DamageType = 'AntiAir',
             DisplayName = 'ARMAIR2AIRLASER',
 	    FiringTolerance = 2,
             FireTargetLayerCapsTable = {

@@ -30,7 +30,7 @@ UnitBlueprint {
         BuildCostEnergy = 15000,
         BuildCostMass = 320,
         BuildTime = 3000,
-        MaintenanceConsumptionPerSecondEnergy = 10,
+        MaintenanceConsumptionPerSecondEnergy = 25,
     },
     General = {
         OrderOverrides = {
@@ -48,5 +48,10 @@ UnitBlueprint {
 	FreeIntel = false,
     RadarRadius = 100, 
     OmniRadius = 20,
+    JamRadius = {
+        Max = 7,
+        Min = 7,
+      },
+      JammerBlips = 5,
     },
 }

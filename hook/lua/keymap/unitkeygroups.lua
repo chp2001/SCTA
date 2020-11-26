@@ -160,7 +160,6 @@ TAunitkeygroups = {
     ["Heavy_Point_Defense"]= {
         "armhlt",
         "armfort",
-        "corhlt",
         "corfhlt",
         "corfort",
     },

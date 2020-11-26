@@ -33,10 +33,10 @@ ARMDRAKE = Class(TAWalking) {
 					self.unit.currentBarrel = 0
 				end
 
-				self.unit.Spinners.spindle2:SetGoal(-90 * self.unit.currentBarrel)
-				self.unit.Spinners.spindle2:SetSpeed(200)
-				self.unit.Spinners.spindle:SetGoal(-90 * self.unit.currentBarrel)
-				self.unit.Spinners.spindle:SetSpeed(200)
+				self.unit.Spinners.spindle2:SetGoal(-90 * (self.unit.currentBarrel + 1))
+				self.unit.Spinners.spindle2:SetSpeed(480)
+				self.unit.Spinners.spindle:SetGoal(-90 * (self.unit.currentBarrel + 1))
+				self.unit.Spinners.spindle:SetSpeed(480)
 				end,
 			},
 		CORKROG_HEAD = Class(TAweapon) {

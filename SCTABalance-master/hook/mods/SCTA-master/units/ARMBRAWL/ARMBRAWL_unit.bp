@@ -5,23 +5,10 @@
 
 UnitBlueprint {
     Merge = true,
-    Categories = {
-        'SELECTABLE',
-        'TECH2',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'MOBILE',
-        'AIR',
-        'VTOL',
-	'GROUNDATTACK',
-        'OVERLAYDIRECTFIRE',	
-        'ARM',
-	'LEVEL2',
-    }, 
     Economy = {
-        BuildCostEnergy = 13000,
-        BuildCostMass = 500,
-        BuildTime = 20000,
+        BuildCostEnergy = 8500,
+        BuildCostMass = 400,
+        BuildTime = 12000,
     },
     Footprint = {
         SizeX = 1,
@@ -31,7 +18,6 @@ UnitBlueprint {
         VisionRadius = 14,
         WaterVisionRadius = 4, 
     },
-    StrategicIconName = 'icon_gunship2_directfire',
     Weapon = {
         {
             Audio = {
@@ -59,7 +45,7 @@ UnitBlueprint {
             Label = 'VTOL_EMG',
             MaxRadius = 25,
             MuzzleSalvoDelay = 0.1,
-            MuzzleSalvoSize = 4,
+            MuzzleSalvoSize = 2,
 	    MuzzleVelocity = 28.125,
             ProjectileId = '/mods/SCTA-master/projectiles/VTOL_EMG/VTOL_EMG_proj.bp',
             RackBones = {
@@ -83,7 +69,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 10,
+            RateOfFire = 4,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

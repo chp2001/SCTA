@@ -40,8 +40,8 @@ ProjectileBlueprint {
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 60,
-        MaxHealth = 60,
+        Health = 60000,
+        MaxHealth = 60000,
     },
     Display = {
         CameraFollowTimeout = 5,

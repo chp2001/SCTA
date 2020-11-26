@@ -42,7 +42,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             BombDropThreshold = 3.5,
             CollideFriendly = false,
-            Damage = 450,
+            Damage = 650,
             DamageFriendly = true,
             DamageRadius = 4,
             DamageType = 'Normal',
@@ -57,11 +57,11 @@ UnitBlueprint {
             Label = 'CORADVBOMB',
             MaxRadius = 60,
             MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 6,
+            MuzzleSalvoSize = 4,
             MuzzleVelocity = 0,
             NeedToComputeBombDrop = true,
             ProjectileId = '/mods/SCTA-master/projectiles/CORADVBOMB/CORADVBOMB_proj.bp',
-            ProjectilesPerOnFire = 6,
+            --ProjectilesPerOnFire = 6,
             RackBones = {
                 {
                     MuzzleBones = {
@@ -77,7 +77,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 8,
             RackSlavedToTurret = false,
-            RateOfFire = 1,
+            RateOfFire = 0.33,
             TargetCheckInterval = 2.5,
             TargetPriorities = {
                 'SPECIALHIGHPRI',

@@ -5,29 +5,15 @@
 
 UnitBlueprint {
     Merge = true,
-    Categories = {
-        'SELECTABLE',
-        'TECH2',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'MOBILE',
-	    'AIR',
-    'VTOL',
-	'GROUNDATTACK',
-        'OVERLAYDIRECTFIRE',
-        'CORE',
-	'LEVEL2',
-    },
     Economy = {
-        BuildCostEnergy = 15000,
-        BuildCostMass = 700,
-        BuildTime = 19000,
+        BuildCostEnergy = 8500,
+        BuildCostMass = 400,
+        BuildTime = 12000,
     },
     Footprint = {
         SizeX = 1,
         SizeZ = 1,
     },
-    StrategicIconName = 'icon_gunship2_directfire',
     Weapon = {
         {
             Audio = {
@@ -40,7 +26,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 15,
+            Damage = 5,
             DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'VTOL_ROCKET',
@@ -95,7 +81,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 15,
+            Damage = 5,
             DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'VTOL_ROCKET2',

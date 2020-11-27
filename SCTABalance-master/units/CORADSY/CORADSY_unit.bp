@@ -41,13 +41,9 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'NAVAL',
 	'CORE',
-		'PLANT',
+    'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL3',
-	
-	
-	
-	
     },
     CollisionOffsetY = -1,
     CollisionOffsetZ = 0,

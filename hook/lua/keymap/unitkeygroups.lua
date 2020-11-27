@@ -99,17 +99,15 @@ TAunitkeygroups = {
     },
     ["Radar_System"]= {
         "armrad",
+        "armarad",
         "armtarg",
         "corrad",
+        "corarad",
         "cortarg",
     },
     ["Sonar_System"]= {
         "armsonar",
         "corsonar",
-    },
-    ["Omni_Sensor"]= {
-        "armarad",
-        "corarad",
     },
     ["Strategic_Missile_Defense"]= {
         "armamd",

@@ -42,7 +42,7 @@ UnitBlueprint {
 	'TEXTUREANIM',
         'LAND', 
 	'CORE',
-		'PLANT',
+    'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL3',
 	

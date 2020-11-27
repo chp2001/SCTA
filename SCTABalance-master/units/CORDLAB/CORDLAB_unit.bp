@@ -41,7 +41,7 @@ UnitBlueprint {
         'LAND',
         'CONSTRUCTIONSORTDOWN',
 	'CORE',
-		'PLANT',
+    'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL2',
 	

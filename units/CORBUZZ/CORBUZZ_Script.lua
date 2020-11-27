@@ -26,7 +26,7 @@ CORBUZZ = Class(TAunit) {
 				end
 				self.unit:CreateProjectileAtBone('/mods/SCTA-master/effects/entities/Shells/ARMVULC_Shell/ARMVULC_Shell_proj.bp','Turret')
 				self.unit.Spinners.Spindle:SetGoal(-60 * (self.unit.currentBarrel))
-				self.unit.Spinners.Spindle:SetSpeed(720)
+				self.unit.Spinners.Spindle:SetSpeed(1440)
 			end,
 
 			OnGotTargetCheck = function(self)

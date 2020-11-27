@@ -45,7 +45,7 @@ UnitBlueprint {
         Health = 1300,
         MaxHealth = 1300,
     },
-    Description = 'Pop-up Heavy Cannon',
+    Description = 'Pop-up Laser Cannon',
     Display = {
         Abilities = {
             'Defense',
@@ -108,7 +108,7 @@ UnitBlueprint {
         VisionRadius = 14,
     },
     Interface = {
-        HelpText = 'Pop-up Heavy Cannon',
+        HelpText = 'Pop-up Laser Cannon',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

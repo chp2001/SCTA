@@ -19,7 +19,6 @@ UnitBlueprint {
     'SORTSTRATEGIC',
     },
     Defense = {
-        ArmorType = 'Structure',
         Health = 9000,
         MaxHealth = 9000,
     },

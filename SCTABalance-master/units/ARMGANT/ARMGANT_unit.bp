@@ -29,6 +29,7 @@ UnitBlueprint {
     BuildIconSortPriority = 18,
     Categories = {
         'BUILTBYT1HOVER',
+        'BUILTBYT2KBOT',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -43,9 +44,9 @@ UnitBlueprint {
         'LAND',
         'ARM',
         'STRATEGIC',
-        	'PLANT',
+        	'GANTRY',
             'SORTCONSTRUCTION',
-        'LEVEL3',
+        'LEVEL4',
     },
     Defense = {
         ArmorType = 'Structure',

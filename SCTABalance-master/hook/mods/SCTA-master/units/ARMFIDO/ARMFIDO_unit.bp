@@ -20,8 +20,8 @@ UnitBlueprint {
 	'LEVEL2',
     },
     Defense = {
-        Health = 3000,
-        MaxHealth = 3000,
+        Health = 2000,
+        MaxHealth = 2000,
         AirThreatLevel = 5,
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,
@@ -29,7 +29,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 3300,
-        BuildCostMass = 440,
+        BuildCostMass = 410,
         BuildTime = 6000,
     },
     Footprint = {
@@ -48,7 +48,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 18,
+            Damage = 17,
 	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'GAUSS',

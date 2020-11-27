@@ -149,7 +149,7 @@ UnitBlueprint {
     SelectionCenterOffsetZ = -0.3,
     SelectionThickness = 0.25,
     SizeX = 2,
-    SizeY = 4,
+    SizeY = 4.5,
     SizeZ = 2,
     StrategicIconName = 'icon_structure1_intel',
     StrategicIconSortPriority = 0,

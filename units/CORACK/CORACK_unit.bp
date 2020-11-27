@@ -76,7 +76,7 @@ UnitBlueprint {
     },
     Description = 'Tech Level 2',
     Display = {
-		AnimationOpen = '/mods/SCTA-master/units/CORACK/CORACK_lod0_Aopen.sca',
+        AnimationOpen = '/mods/SCTA-master/units/CORACK/CORACK_lod0_Aopen.sca',
         AnimationOpenRate = 1, 
         AnimationWalk = '/mods/SCTA-master/units/CORACK/CORACK_lod0_Awalk.sca',
         AnimationWalkRate = 1,

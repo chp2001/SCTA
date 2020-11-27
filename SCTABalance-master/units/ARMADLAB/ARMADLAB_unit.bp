@@ -41,13 +41,9 @@ UnitBlueprint {
         'LAND', 
         'CONSTRUCTIONSORTDOWN',
 	'ARM',
-		'PLANT',
+    'PLANT',
 	'SORTCONSTRUCTION',
-	'LEVEL2',
-	
-	
-	
-	
+	'LEVEL3',
     },
     Defense = {
         ArmorType = 'Structure',

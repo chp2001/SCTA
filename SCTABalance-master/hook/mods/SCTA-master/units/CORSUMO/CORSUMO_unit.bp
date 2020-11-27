@@ -14,8 +14,8 @@ UnitBlueprint {
 	'LEVEL3',
     },
     Defense = {
-        Health = 16000,
-        MaxHealth = 16000,
+        Health = 14000,
+        MaxHealth = 14000,
     },
     Display = {
         UniformScale = 0.24,

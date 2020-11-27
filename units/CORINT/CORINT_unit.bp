@@ -154,7 +154,7 @@ UnitBlueprint {
             FiringTolerance = 1.65,	
 	    FiringRandomness = 2,
             Label = 'CORE_INTIMIDATOR',
-            MaxRadius = 300,
+            MaxRadius = 500,
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 80,

@@ -18,7 +18,7 @@ UnitBlueprint {
         'AIR', 
         'CONSTRUCTIONSORTDOWN',
 	'CORE',
-		'PLANT',
+    'LAB',
 	'SORTCONSTRUCTION',
 	'LEVEL2',
     },

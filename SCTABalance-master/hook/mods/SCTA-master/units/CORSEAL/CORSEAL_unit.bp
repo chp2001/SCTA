@@ -46,7 +46,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 120,
+            Damage = 60,
             DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'CORE_MEDIUMCANNON',

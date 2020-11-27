@@ -35,9 +35,6 @@ UnitBlueprint {
         'KBOT',
         'SPIDER',
 	'LEVEL2',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -153,7 +150,7 @@ UnitBlueprint {
                 BallisticArc = 'RULEUBA_None',
                 CollideFriendly = false,
                 DamageFriendly = true,
-                Damage = 180,
+                Damage = 220,
                 DamageRadius = 1,
                 FiringRandomness = 0,
                 DamageType = 'AntiAir',
@@ -185,7 +182,7 @@ UnitBlueprint {
                 RackSalvoReloadTime = 0,
                 RackSalvoSize = 1,
                 RackSlavedToTurret = false,
-                RateOfFire = 0.25,
+                RateOfFire = 0.36,
                 TargetCheckInterval = 1,
                 TargetPriorities = {
                     'ALLUNITS',
@@ -216,7 +213,7 @@ UnitBlueprint {
                 BallisticArc = 'RULEUBA_None',
                 CollideFriendly = false,
                 DamageFriendly = true,
-                Damage = 180,
+                Damage = 220,
                 DamageRadius = 1,
                 FiringRandomness = 0,
                 DamageType = 'AntiAir',
@@ -248,7 +245,7 @@ UnitBlueprint {
                 RackSalvoReloadTime = 0,
                 RackSalvoSize = 1,
                 RackSlavedToTurret = false,
-                RateOfFire = 0.25,
+                RateOfFire = 0.36,
                 TargetCheckInterval = 1,
                 TargetPriorities = {
                     'ALLUNITS',
@@ -277,8 +274,8 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         },
         { #BIG_UNIT
-            Damage = 350,
-                       DamageFriendly = true,
+            Damage = 100,
+            DamageFriendly = true,
             DamageRadius = 3,
             DummyWeapon = true,
             DamageType = 'Normal',

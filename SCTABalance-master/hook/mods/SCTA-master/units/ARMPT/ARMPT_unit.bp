@@ -16,13 +16,9 @@ UnitBlueprint {
     'OVERLAYANTIAIR',
     'OVERLAYRADAR',
     'OVERLAYSONAR',
-        'ARM',
-        'SHIP',
+    'ARM',
+    'OCEAN',
 	'LEVEL1',
-	
-	
-	
-	
     },
     Defense = {
         Health = 400,

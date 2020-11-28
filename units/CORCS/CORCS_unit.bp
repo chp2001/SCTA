@@ -52,14 +52,9 @@ UnitBlueprint {
     'CONSTRUCTION',
     'DEFENSIVEBOAT',
 	'NAVAL',
-        'CORE',
-        'SHIP',
+    'CORE',
+    'OCEAN',
 	'LEVEL1',
-	
-	
-	
-	
-	
     },
     CollisionOffsetY = -0.5,
     Defense = {

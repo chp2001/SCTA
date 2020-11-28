@@ -17,7 +17,7 @@ UnitBlueprint {
     'OVERLAYRADAR',
     'OVERLAYSONAR',
         'CORE',
-        'SHIP',
+        'OCEAN',
 	'LEVEL1',
 	
 	

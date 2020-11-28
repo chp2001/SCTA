@@ -53,7 +53,7 @@ UnitBlueprint {
     'DEFENSIVEBOAT',
 	'NAVAL',
         'ARM',
-        'SHIP',
+        'OCEAN',
 	'LEVEL1',
 	
 	

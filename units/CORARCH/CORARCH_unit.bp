@@ -38,13 +38,9 @@ UnitBlueprint {
 	'LIGHTBOAT',
         'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',
-        'SHIP',
+        'CORE',
+        'OCEAN',
     'LEVEL2',
-    'CORE',
-	
-	
-	
-	
     },
     CollisionOffsetY = -0.5,
     Defense = {

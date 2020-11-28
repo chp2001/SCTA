@@ -20,8 +20,8 @@ UnitBlueprint {
 'LEVEL2',
    },
     Defense = {
-        Health = 2800,
-        MaxHealth = 2800,
+        Health = 3500,
+        MaxHealth = 3500,
     },
     Footprint = {
 	SizeX = 1,

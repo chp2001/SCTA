@@ -49,16 +49,10 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'NAVAL',
 	'TEXTUREANIM',
-
-	
 	'CORE',
 		'PLANT',
 	'SORTCONSTRUCTION',
-	
 	'LEVEL1',
-	
-	
-	
     },
     CollisionOffsetY = -1,
     CollisionOffsetZ = 0,
@@ -113,8 +107,7 @@ UnitBlueprint {
         BuildTime = 6000,
 	BuildRate = 100,
         BuildableCategory = {
-            'SHIP LEVEL1 CORE',
-            'NORMALSUB LEVEL1 CORE',
+            'OCEAN LEVEL1 CORE',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7.5,

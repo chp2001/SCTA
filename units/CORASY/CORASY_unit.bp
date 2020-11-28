@@ -37,21 +37,13 @@ UnitBlueprint {
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-
-	
 	'STRUCTURE',
 	'CONSTRUCTION',
 	'NAVAL',
-
-	
 	'CORE',
 		'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL2',
-	
-	
-	
-	
     },
     CollisionOffsetY = -1,
     CollisionOffsetZ = 0,
@@ -109,8 +101,7 @@ UnitBlueprint {
 	InitialRallyX = 0,
 	InitialRallyZ = 7.5,
         BuildableCategory = {
-            'SHIP LEVEL2 CORE',
-            'ADVANCEDSUB LEVEL2 CORE',
+            'OCEAN LEVEL2 CORE',
         },
         StorageMass = 200,
         StorageEnergy = 200,

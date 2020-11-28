@@ -36,10 +36,11 @@ UnitBlueprint {
 	'NAVAL',
     'T2SUBMARINE',
 	'ANTINAVY',
-	'NOSMOKE',
+    'NOSMOKE',
+    'SUBMERSIBLE',
         'OVERLAYANTINAVY',
-	'ADVANCEDSUB',
         'ARM',
+        'OCEAN',
 	'LEVEL2',
     },
     Defense = {

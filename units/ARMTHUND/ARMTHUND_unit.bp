@@ -77,7 +77,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'ARM',
         'HIGHALTAIR',
-	'LEVEL1',
+    'LEVEL1',
     },
     Defense = {
         ArmorType = 'Light',
@@ -147,7 +147,7 @@ UnitBlueprint {
         UnitName = 'Thunder',
     },
     Intel = {
-        VisionRadius = 22,
+        VisionRadius = 12,
         WaterVisionRadius = 4, 
     },
     Interface = {
@@ -189,7 +189,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             BombDropThreshold = 3,
             CollideFriendly = false,
-            Damage = 45,
+            Damage = 160,
             DamageFriendly = true,
             DamageRadius = 3,
             DamageType = 'Normal',
@@ -217,12 +217,12 @@ UnitBlueprint {
                 },
             },
             RackRecoilDistance = 0,
-            RackReloadTimeout = 5,
+            RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.5,
+            RateOfFire = 0.25,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -246,7 +246,7 @@ UnitBlueprint {
             WeaponUnpacks = false,
         },
         { #LIGHTNING
-            Damage = 180,
+            Damage = 80,
             DamageFriendly = true,
             DamageRadius = 0.25,
             DamageType = 'Normal',
@@ -254,7 +254,7 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         },
         { #CRAWL_BLASTSML
-            Damage = 1200,
+            Damage = 200,
                         DamageFriendly = true,
             DamageRadius = 9,
             DummyWeapon = true,

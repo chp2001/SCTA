@@ -146,7 +146,7 @@ UnitBlueprint {
         UnitName = 'Shadow',
     },
     Intel = {
-        VisionRadius = 22,
+        VisionRadius = 12,
         WaterVisionRadius = 4, 
     },
     Interface = {
@@ -188,7 +188,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             BombDropThreshold = 3,
             CollideFriendly = false,
-            Damage = 60,
+            Damage = 200,
             DamageFriendly = true,
             DamageRadius = 4,
             DamageType = 'Normal',
@@ -216,7 +216,7 @@ UnitBlueprint {
                 },
             },
             RackRecoilDistance = 0,
-            RackReloadTimeout = 5,
+            RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
@@ -253,7 +253,7 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         }, 
         { #BIG_UNIT
-            Damage = 20,
+            Damage = 100,
             DamageFriendly = true,
             DamageRadius = 1,
             DummyWeapon = true,

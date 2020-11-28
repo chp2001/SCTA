@@ -26,21 +26,14 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-
-	
 	'STRUCTURE',
                 'ECONOMIC',
         'SORTECONOMY',
 	'ENERGYPRODUCTION',
 	'NAVAL',
-
-	
 	'CORE',
 	'ENERGY',
 	'LEVEL1',
-	
-	
-	
     },
     CollisionOffsetY = -0.5,
     Defense = {

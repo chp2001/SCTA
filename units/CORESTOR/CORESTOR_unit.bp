@@ -38,9 +38,6 @@ UnitBlueprint {
 	'CORE',
 	'ENERGY',
 	'LEVEL1',
-	
-	
-	
 	'STORAGE',
     },
     Defense = {

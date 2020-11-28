@@ -55,11 +55,6 @@ UnitBlueprint {
         'CORE',
         'SHIP',
 	'LEVEL1',
-	
-	
-	
-	
-	
     },
     CollisionOffsetY = -0.5,
     Defense = {

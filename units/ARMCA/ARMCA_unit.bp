@@ -79,13 +79,7 @@ UnitBlueprint {
     'VTOL',
     'SELECTION',
         'ARM',
-        
-	
 	'LEVEL1',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Light',

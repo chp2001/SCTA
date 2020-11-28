@@ -99,10 +99,8 @@ UnitBlueprint {
         DifferentialUpgradeCostCalculation = true,
 	BuildRate = 175,
     BuildableCategory = {
-        'SHIP LEVEL1 ARM',
-        'NORMALSUB LEVEL1 ARM',
-        'SHIP LEVEL2 ARM',
-        'ADVANCEDSUB LEVEL2 ARM',
+        'OCEAN LEVEL1 ARM',
+        'OCEAN LEVEL2 ARM',
         'armadsy',
     },
 	InitialRallyX = 0,

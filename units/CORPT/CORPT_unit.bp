@@ -32,8 +32,6 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'NAVAL',
 	'DIRECTFIRE',
@@ -41,15 +39,9 @@ UnitBlueprint {
 	'LIGHTBOAT',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
-
-	
-        'CORE',
-        'SHIP',
+    'CORE',
+    'OCEAN',
 	'LEVEL1',
-	
-	
-	
-	
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -67,7 +59,7 @@ UnitBlueprint {
             '<LOC ability_aa>Anti-Air',
         },
 	DestructionEffects = {
-#		DefaultProjectileCategories = {'ArmShip','ArmCockpit'},
+		DefaultProjectileCategories = {'ArmShip','ArmCockpit'},
 		DestructionEmitters = {
 			{
 				EmitterBone = {'turret'},

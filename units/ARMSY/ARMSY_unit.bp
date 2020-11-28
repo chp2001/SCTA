@@ -43,22 +43,14 @@ UnitBlueprint {
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-
-	
 	'STRUCTURE',
 	'CONSTRUCTION',
 	'NAVAL',
 	'TEXTUREANIM',
-
-	
 	'ARM',
 		'PLANT',
 	'SORTCONSTRUCTION',
-	
 	'LEVEL1',	
-	
-	
-	
     },
     CollisionOffsetY = -1,
     CollisionOffsetZ = 0,
@@ -113,8 +105,7 @@ UnitBlueprint {
         BuildTime = 6050,
 	BuildRate = 100,
         BuildableCategory = {
-            'SHIP LEVEL1 ARM',
-            'NORMALSUB LEVEL1 ARM',
+            'OCEAN LEVEL1 ARM',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7.5,

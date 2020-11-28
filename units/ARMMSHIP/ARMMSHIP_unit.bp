@@ -32,8 +32,6 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'NAVAL',
 	'INDIRECTFIRE',
@@ -45,12 +43,8 @@ UnitBlueprint {
 	'OVERLAYANTIAIR',
 	'OVERLAYRADAR',
         'ARM',
-        'SHIP',
+        'OCEAN',
 	'LEVEL2',
-	
-	
-	
-	
     },
     CollisionOffsetY = -0.5,
     Defense = {

@@ -38,12 +38,8 @@ UnitBlueprint {
 	'BATTLESHIP',
         'OVERLAYINDIRECTFIRE',
         'ARM',
-        'SHIP',
+        'OCEAN',
 	'LEVEL2',
-	
-	
-	
-	
     },
     CollisionOffsetY = -0.5,
     Defense = {

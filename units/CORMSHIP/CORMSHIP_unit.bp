@@ -42,13 +42,9 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'OVERLAYRADAR',
 	'OVERLAYANTIAIR',
-        'CORE',
-        'SHIP',
+    'CORE',
+    'OCEAN',
 	'LEVEL2',
-	
-	
-	
-	
     },
     CollisionOffsetY = -0.5,
     Defense = {

@@ -51,7 +51,7 @@ UnitBlueprint {
         'ARM',
         'SUBMERSIBLE',
     'JAM',
-    'ADVANCEDSUB',
+    'OCEAN',
 	'LEVEL2',
     },
     Defense = {

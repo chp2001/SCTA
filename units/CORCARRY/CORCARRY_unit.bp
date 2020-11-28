@@ -51,13 +51,10 @@ UnitBlueprint {
 	'CARRIER',
         'OVERLAYRADAR',
         'OVERLAYMISC',
-	'CORE',
-	'SHIP',
+        'CORE',
+        'OCEAN',
 	'LEVEL2',
 	'NAVALCARRIER',
-	
-	
-	
     },
     CollisionOffsetY = -0.5,
     Defense = {

@@ -16,7 +16,7 @@ UnitBlueprint {
     'DEFENSIVEBOAT',
 	'NAVAL',
         'CORE',
-        ---'SHIP',
+        ---'OCEAN',
 	'LEVEL1',
     },
     Defense = {

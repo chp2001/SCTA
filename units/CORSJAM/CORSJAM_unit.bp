@@ -49,12 +49,9 @@ UnitBlueprint {
         'OVERLAYCOUNTERINTEL',
         'DEFENSIVEBOAT',
         'CORE',
-	'SHIP',
+        'OCEAN',
 	'JAM',
 	'LEVEL2',
-	
-	
-	
     },
     CollisionOffsetY = -0.5,
     Defense = {

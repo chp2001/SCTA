@@ -32,10 +32,8 @@ UnitBlueprint {
         BuildCostMass = 2200,
         BuildTime = 30000,
         BuildableCategory = {
-            'SHIP LEVEL1 CORE',
-            'NORMALSUB LEVEL1 CORE',
-            'SHIP LEVEL2 CORE',
-            'ADVANCEDSUB LEVEL2 CORE',
+            'OCEAN LEVEL1 CORE',
+            'OCEAN LEVEL2 CORE',
         },
         BuildRate = 360,
         ProductionPerSecondMass = 0,

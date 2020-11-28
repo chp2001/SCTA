@@ -15,8 +15,8 @@ UnitBlueprint {
     'AIR',
     'VTOL',
     'SELECTION',
-    'SHIP',
-        'ARM',
+    'ARM',
+    'OCEAN',
 	'LEVEL1',
     },
     Defense = {

@@ -32,22 +32,16 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'NAVAL',
     'T1SUBMARINE',
 	'ANTINAVY',
-	'NOSMOKE',
+    'NOSMOKE',
+    'SUBMERSIBLE',
         'OVERLAYANTINAVY',
-	'NORMALSUB',
         'CORE',
-        
+        'OCEAN', 
 	'LEVEL1',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',

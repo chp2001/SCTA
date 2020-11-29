@@ -27,7 +27,7 @@ CORMMKR = Class(TAunit) {
 	OpeningState = State {
 		Main = function(self)
 			self:PlayUnitSound('Activate')
-			self.textureAnimation = true
+			
 
 
 			--SLEEP <772>;
@@ -87,7 +87,7 @@ CORMMKR = Class(TAunit) {
 			WaitSeconds(0.7)
 
 			ChangeState(self, self.IdleClosedState)
-			self.textureAnimation = false
+			
 		end,
 
 	},

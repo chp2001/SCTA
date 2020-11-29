@@ -208,7 +208,7 @@ UnitBlueprint {
             DamageFriendly = false,
             Damage = 3,
             DamageRadius = 0,
-            FiringRandomness = 1,
+            FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'EMG',
             FireTargetLayerCapsTable = {

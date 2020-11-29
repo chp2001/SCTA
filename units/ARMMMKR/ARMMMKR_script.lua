@@ -37,7 +37,7 @@ ARMMMKR = Class(TAunit) {
 	OpeningState = State {
 		Main = function(self)
 			self:PlayUnitSound('Activate')
-			self.textureAnimation = true
+			
 
 			--TURN lid2 to x-axis <30.40> SPEED <38.60>;
 			self.Spinners.lid2:SetGoal(30.40)
@@ -166,7 +166,7 @@ ARMMMKR = Class(TAunit) {
 			WaitSeconds(0.7)
 
 			ChangeState(self, self.IdleClosedState)
-			self.textureAnimation = false
+			
 		end,
 
 	},

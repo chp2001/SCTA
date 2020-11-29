@@ -33,10 +33,10 @@ UnitBlueprint {
     SizeZ = 8,
         },
     Economy = {
-        BuildCostEnergy = 45000,
+        BuildCostEnergy = 30000,
         BuildCostMass = 2200, 
         BuildRate = 180,
-        BuildTime = 30000,
+        BuildTime = 20000,
         BuildableCategory = {
             'KBOT LEVEL1 ARM',
             'KBOT LEVEL2 ARM',

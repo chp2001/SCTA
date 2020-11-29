@@ -154,7 +154,7 @@ do
         
         Mults = {
             Display = {
-                UniformScale = 0.5,
+                UniformScale = 0.35,
             },
         }
         for id, bp in all_blueprints.Projectile do

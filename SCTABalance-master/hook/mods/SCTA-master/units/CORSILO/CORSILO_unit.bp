@@ -30,7 +30,7 @@ UnitBlueprint {
         BuildCostEnergy = 900000,
         BuildCostMass = 120000,
         BuildTime = 600000,
-        BuildRate = 6000,
+        BuildRate = 2000,
     },
   Defense = {
         Health = 13000,

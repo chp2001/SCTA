@@ -2,7 +2,7 @@ PropBlueprint {
    Merge = true, 
     Economy = {
         ReclaimEnergyMax = 0,
-        ReclaimMassMax = 5000,
+        ReclaimMassMax = 6000,
         ReclaimTime = 10,
     },
 }

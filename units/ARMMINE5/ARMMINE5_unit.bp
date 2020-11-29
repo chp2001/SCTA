@@ -135,7 +135,7 @@ UnitBlueprint {
 	    DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'ARMMINE5',
-	    EdgeEffectiveness = 0.1,
+	    ---EdgeEffectiveness = 0.1,
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water',
             },
@@ -174,7 +174,7 @@ UnitBlueprint {
             DamageRadius = 2,
             DamageType = 'Normal',
             DummyWeapon = true,
-	    EdgeEffectiveness = 0.1,
+	    ---EdgeEffectiveness = 0.1,
             Label = 'DeathWeapon',
         },
     },

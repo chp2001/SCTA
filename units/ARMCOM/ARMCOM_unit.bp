@@ -322,14 +322,14 @@ UnitBlueprint {
             Damage = 50,
             DamageRadius = 1,
             DamageType = 'DGun',
-            DisplayName = 'ARM_DISINTEGRATOR',
+            DisplayName = 'DGun',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Seabed = 'Land|Water|Seabed',
             },
 	        RangeCategory = 'UWRC_DirectFire',
          WeaponCategory = 'DirectFire',
-            Label = 'ARM_DISINTEGRATOR',
+            Label = 'DGun',
             MaxRadius = 22,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -337,7 +337,7 @@ UnitBlueprint {
 	        NeedPrep = true,
             EnergyRequired = 2000,
             EnergyDrainPerSecond = 2000,
-            EnergyChargeForFirstShot = false,
+            EnergyChargeForFirstShot = true,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_DISINTEGRATOR/ARM_DISINTEGRATOR_proj.bp',
             RackBones = {
                 {

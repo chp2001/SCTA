@@ -34,7 +34,7 @@ CORCS = Class(TAconstructor) {
 		TAconstructor.Aim(self, target)
 		WaitFor(self.AnimManip)
 		--TURN turret to y-axis buildheading SPEED <160.03>;
-		self.Spinners.gun:SetGoal(TAutils.GetAngle(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
+		self.Spinners.gun:SetGoal(TAutils.GetAngleTA(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
 		self.Spinners.gun:SetSpeed(160.03)
 
 		WaitFor(self.Spinners.gun)

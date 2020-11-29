@@ -127,45 +127,6 @@ TAweapon = Class(DefaultWeapon) {
             end
         end,
     },
-
-    GetDamageTable = function(self)
-        local weaponBlueprint = self:GetBlueprint()
-        local damageTable = {}
-        damageTable.EdgeEffectiveness = weaponBlueprint.EdgeEffectiveness
-        damageTable.DamageRadius = weaponBlueprint.DamageRadius or 0
-        damageTable.DamageAmount = weaponBlueprint.Damage + (self.DamageMod or 0)
-        damageTable.DamageType = weaponBlueprint.DamageType
-        damageTable.DamageFriendly = weaponBlueprint.DamageFriendly
-        if damageTable.DamageFriendly == nil then
-            damageTable.DamageFriendly = true
-        end
-        damageTable.CollideFriendly = weaponBlueprint.CollideFriendly or false
-        damageTable.DoTTime = weaponBlueprint.DoTTime
-        damageTable.DoTPulses = weaponBlueprint.DoTPulses
-        damageTable.MetaImpactAmount = weaponBlueprint.MetaImpactAmount
-        damageTable.MetaImpactRadius = weaponBlueprint.MetaImpactRadius
-        #Add buff
-        damageTable.Buffs = {}
-        if weaponBlueprint.Buffs != nil then
-            for k, v in weaponBlueprint.Buffs do
-                damageTable.Buffs[k] = {}
-                damageTable.Buffs[k] = v
-            end   
-        end     
-        #remove disabled buff
-        if (self.Disabledbf != nil) and (damageTable.Buffs != nil) then
-            for k, v in damageTable.Buffs do
-                for j, w in self.Disabledbf do
-                    if v.BuffType == w then
-                        #Removing buff
-                        table.remove( damageTable.Buffs, k )
-                    end
-                end
-            end  
-        end  
-
-        return damageTable
-    end,
 }
 
 TAHide = Class(TAweapon) {
@@ -287,4 +248,47 @@ TACommanderSuicideWeapon = Class(BareBonesWeapon) {
             myProjectile:PassData(self.Data)
         end
     end,
+}
+
+TADGun = Class(TAweapon) {
+    EnergyRequired = nil,
+
+    HasEnergy = function(self)
+        return self.unit:GetAIBrain():GetEconomyStored('ENERGY') >= self.EnergyRequired
+    end,
+
+    -- Can we use the OC weapon?
+    CanOvercharge = function(self)
+        return not self.unit:IsOverchargePaused() and self:HasEnergy() and not
+            self:UnitOccupied() 
+    end,
+
+    StartEconomyDrain = function(self) -- OverchargeWeapon drains energy on impact
+    end,
+
+    OnWeaponFired = function(self)
+        ---TAweapon.OnWeaponFired(self)
+        self.unit:SetWeaponEnabledByLabel('DGun', true)
+        self:ForkThread(self.PauseOvercharge)
+    end,
+
+        OnLostTarget = function(self)
+        self.unit:SetWeaponEnabledByLabel('DGun', true)
+        TAweapon.OnLostTarget(self)
+    end,
+        
+        PauseOvercharge = function(self)
+            if not self.unit:IsOverchargePaused() then
+                self.unit:SetOverchargePaused(true)
+                WaitSeconds(1/self:GetBlueprint().RateOfFire)
+                self.unit:SetOverchargePaused(false)
+            end
+        end,
+
+        OnCreate = function(self)
+            TAweapon.OnCreate(self)
+            self.EnergyRequired = self:GetBlueprint().EnergyRequired
+            self.unit:SetWeaponEnabledByLabel('DGun', true)
+            self.unit:SetOverchargePaused(false)
+        end,
 }

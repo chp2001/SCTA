@@ -59,7 +59,7 @@ function CreateWreckage(self,overkillRatio, bp, completed, pos, orientation, hea
 		prop:SetMaxReclaimValues(time, mass, energy)
 
 		prop.OriginalUnit = self.OriginalUnit or self
-		if pbp.Physics.BlockPath == false then
+		if not pbp.Physics.BlockPath then
 		end
 		--prop:DoTakeDamage(prop, overkillRatio * health, Vector(0,0,0), 'Normal')
         	prop.AssociatedBP = bp.BlueprintId

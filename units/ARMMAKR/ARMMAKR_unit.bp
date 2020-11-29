@@ -73,7 +73,7 @@ UnitBlueprint {
 			},
 		},
 	},
-	TextureAnimationFrames = 8,
+	--TextureAnimationFrames = 8,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -145,14 +145,7 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-         { #SMALL_BUILDING
-            Damage = 200,
-            DamageFriendly = true,
-            DamageRadius = 2,
-            DummyWeapon = true,
-            DamageType = 'Normal',
-            Label = 'SuicideWeapon',
-        },
+         
     },
     Wreckage = {
 	UseCustomMesh = true,

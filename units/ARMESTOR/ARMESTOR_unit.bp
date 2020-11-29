@@ -61,7 +61,7 @@ UnitBlueprint {
 			},
 		},
 	},
-	TextureAnimationFrames = 8,
+	--TextureAnimationFrames = 8,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -126,14 +126,6 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
-        { #CRAWL_BLASTSML
-            Damage = 1200,
-            DamageRadius = 8.59375,
-            DamageFriendly = true,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'SuicideWeapon',
         },
     },
     Wreckage = {

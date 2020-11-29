@@ -286,14 +286,7 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #BIG_UNIT //Was SMALL_UNIT, but not appropriate
-            Damage = 350,
-                       DamageFriendly = true,
-            DamageRadius = 3,
-            DummyWeapon = true,
-            DamageType = 'Normal',
-            Label = 'SuicideWeapon',
-        },
+
     },
     Wreckage = {
 	UseCustomMesh = true,

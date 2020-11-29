@@ -177,15 +177,5 @@ UnitBlueprint {
 	    EdgeEffectiveness = 0.1,
             Label = 'DeathWeapon',
         },
-        { #ARMMINE5
-            Damage = 50,
-            DamageRadius = 2,
-            DamageFriendly = true,
-            DummyWeapon = true,
-            DamageType = 'Normal',
-	    EdgeEffectiveness = 0.1,
-            Label = 'SuicideWeapon',
-        },
-
     },
 }

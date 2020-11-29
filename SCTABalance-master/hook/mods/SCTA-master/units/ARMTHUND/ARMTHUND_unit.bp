@@ -111,13 +111,5 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #CRAWL_BLASTSML
-            Damage = 100,
-            DamageFriendly = true,
-            DamageRadius = 9,
-            DummyWeapon = true,
-            DamageType = 'Normal',
-            Label = 'SuicideWeapon',
-        },
     },
 }

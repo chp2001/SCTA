@@ -60,7 +60,7 @@ UnitBlueprint {
             'AntiAir',
             'Amphibious',
         },
-        TextureAnimationFrames = 8,
+        --TextureAnimationFrames = 8,
         DestructionEffects = {
             DestructionEmitters = {
                 {
@@ -366,14 +366,7 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #NUCLEAR_MISSILE
-            Damage = 5500,
-            DamageFriendly = true,
-            DamageRadius = 16,
-            DummyWeapon = true,
-            DamageType = 'Normal',
-            Label = 'SuicideWeapon',
-        },
+
     },
     Wreckage = {
 	UseCustomMesh = true,

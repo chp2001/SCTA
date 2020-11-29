@@ -83,7 +83,7 @@ UnitBlueprint {
                 },
             },
         },
-	TextureAnimationFrames = 8,
+	--TextureAnimationFrames = 8,
         UniformScale = 0.16,
     },
     Economy = {
@@ -217,14 +217,7 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #CRAWL_BLASTSML
-            Damage = 1200,
-                        DamageFriendly = true,
-            DamageRadius = 9,
-            DummyWeapon = true,
-            DamageType = 'Normal',
-            Label = 'SuicideWeapon',
-        },
+
 
     },
     Wreckage = {

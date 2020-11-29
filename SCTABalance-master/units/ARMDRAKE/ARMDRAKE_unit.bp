@@ -58,7 +58,7 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
         },
-        TextureAnimationFrames = 8,
+        --TextureAnimationFrames = 8,
         DestructionEffects = {
             DestructionEmitters = {
                 {
@@ -379,14 +379,6 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },
-        { #NUCLEAR_MISSILE
-        Damage = 5500,
-        DamageFriendly = true,
-        DamageRadius = 16,
-        DummyWeapon = true,
-        DamageType = 'Normal',
-        Label = 'SuicideWeapon',
         },
     },
     Wreckage = {

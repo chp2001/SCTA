@@ -7,7 +7,6 @@ local TACommander = import('/mods/SCTA-master/lua/TAconstructor.lua').TACommande
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local TACommanderDeathWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TACommanderDeathWeapon
-local TACommanderSuicideWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TACommanderSuicideWeapon
 local TADGun = import('/mods/SCTA-master/lua/TAweapon.lua').TADGun
 
 CORCOM = Class(TACommander) {
@@ -25,7 +24,6 @@ CORCOM = Class(TACommander) {
 		DGun = Class(TADGun) {
 		},
 		DeathWeapon = Class(TACommanderDeathWeapon) {},
-		SuicideWeapon = Class(TACommanderSuicideWeapon) {},
 	},
 
 	OnCreate = function(self)

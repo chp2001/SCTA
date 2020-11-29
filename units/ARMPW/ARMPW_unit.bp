@@ -259,24 +259,8 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-        },--[[
-        { --SMALL_UNIT
-            Damage = 10,
-            DamageFriendly = true,
-            DamageRadius = 1,
-            DummyWeapon = true,
-            DamageType = 'Normal',
-            Label = 'SuicideWeapon',
-        },]]
-    },
-    --[[Wreckage = {  --A static single death prop isn't going to work with multiple death animations.
-        UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/ARMPW/ARMPW_dead_prop.bp',
-        WreckageLayers = {
-            Land = true,
-            Seabed = true,
         },
-    },]]
+    },
     Wreckage = {
         UseCustomMesh = true,
         Blueprint = '/mods/SCTA-master/units/ARMPW/ARMPW_heap_prop.bp',

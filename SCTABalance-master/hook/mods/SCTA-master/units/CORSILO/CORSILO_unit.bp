@@ -124,13 +124,5 @@ UnitBlueprint {
         DummyWeapon = true,
         Label = 'DeathWeapon',
     },
-    { #NUCLEAR_MISSILE
-        Damage = 5500,
-        DamageFriendly = true,
-        DamageRadius = 16,
-        DummyWeapon = true,
-        DamageType = 'Normal',
-        Label = 'SuicideWeapon',
-    },
 },
 }

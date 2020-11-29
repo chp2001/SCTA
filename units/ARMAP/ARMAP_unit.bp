@@ -97,7 +97,7 @@ UnitBlueprint {
 	},
 	BuildBones = {'Nozzle_01','Nozzle_02'},
 	BuildAttachBone = 'BasePlate',
-	TextureAnimationFrames = 6,
+	--TextureAnimationFrames = 6,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -181,14 +181,7 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #LARGE_BUILDING
-            Damage = 50,
-            DamageFriendly = true,
-            DamageRadius = 1,
-            DummyWeapon = true,
-            DamageType = 'Normal',
-            Label = 'SuicideWeapon',
-        },
+
     },
     Wreckage = {
 	UseCustomMesh = true,

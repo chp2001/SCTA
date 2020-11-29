@@ -109,13 +109,6 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #BIG_UNIT
-            Damage = 100,
-            DamageFriendly = true,
-            DamageRadius = 3,
-            DummyWeapon = true,
-            DamageType = 'Normal',
-            Label = 'SuicideWeapon',
-        },
+
     },
 }

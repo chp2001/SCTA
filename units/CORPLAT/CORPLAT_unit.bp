@@ -87,7 +87,7 @@ UnitBlueprint {
 	},
 	BuildBones = {'beam1', 'beam2'},
 	BuildAttachBone = 'pad',
-	TextureAnimationFrames = 6,
+	--TextureAnimationFrames = 6,
         Mesh = {
             IconFadeInZoom = 400,
             LODs = {
@@ -177,14 +177,7 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #LARGE_BUILDING
-            Damage = 50,
-            DamageFriendly = true,
-            DamageRadius = 1,
-            DummyWeapon = true,
-            DamageType = 'Normal',
-            Label = 'SuicideWeapon',
-        },
+
     },
     Wreckage = {
 	UseCustomMesh = true,

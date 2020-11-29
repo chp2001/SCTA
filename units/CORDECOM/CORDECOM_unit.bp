@@ -316,15 +316,6 @@ UnitBlueprint {
             DummyWeapon = true,
 	    EdgeEffectiveness = 0.15,
         },
-        {
-            Damage = 100,
-            DamageFriendly = true,
-            DamageRadius = 23.75,
-            DamageType = 'Normal',
-            DisplayName = 'SuicideWeapon',
-            Label = 'SuicideWeapon',
-            DummyWeapon = true,
-	    EdgeEffectiveness = 0.15,
-        },
+
     },
 }

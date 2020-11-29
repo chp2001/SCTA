@@ -12,12 +12,12 @@ TAunit = Class(Unit)
 {
 	lastHitVector = nil,
 	buildAngle = 0,
-	textureAnimation = false,
+	--TextureAnimation = false,
     	FxDamage1 = {},
     	FxDamage2 = {},
     	FxDamage3 = {},
 	FxMovement = nil,
-	Suicide = false,
+	Suicide = nil,
 	CurrentSpeed = 'Stopped',
 	FxReclaim = nil,
 	DestructionExplosionWaitDelayMin = 0,
@@ -41,7 +41,7 @@ TAunit = Class(Unit)
 			Warp(self, self:GetPosition(), {0, x, 0, z}) 
 		end
 		--self:SetReclaimTimeMultiplier(50)
-		self:SetDeathWeaponEnabled(false)
+		self:SetDeathWeaponEnabled(true)
 		self:HideFlares()
 		self.FxMovement = TrashBag()
 		if not EntityCategoryContains(categories.NOSMOKE, self) then
@@ -52,8 +52,7 @@ TAunit = Class(Unit)
 	OnStopBeingBuilt = function(self,builder,layer)
         self:LOGDBG('TAUnit.OnStopBeingBuilt')
 		Unit.OnStopBeingBuilt(self,builder,layer)
-		self:SetConsumptionActive(true)
-		
+		self:SetConsumptionActive(true)	
 		ForkThread(self.IdleEffects, self)
 	end,
 	
@@ -156,12 +155,9 @@ TAunit = Class(Unit)
 		if self:GetFractionComplete() == 1 then
 			for k, weapon in bp.Weapon do
 				#Self Destruct
-				if ((self == instigator and weapon.Label == 'SuicideWeapon') or (self != instigator and weapon.Label == 'DeathWeapon') and type ~= "Reclaimed") then
 					self:CreateDebrisProjectiles()
-					if (self == instigator and weapon.Label == 'SuicideWeapon') then
-						self:CreateDebrisProjectiles()
+					if (self == instigator) then
 						self.Suicide = true
-					end
 				end
 			end
 		end
@@ -176,7 +172,7 @@ TAunit = Class(Unit)
 				return
 			end
 		end
-	        if self:GetBlueprint().Wreckage.WreckageLayers[self:GetCurrentLayer()] and self.Suicide == false then
+	        if self:GetBlueprint().Wreckage.WreckageLayers[self:GetCurrentLayer()] and not self.Suicide then
 			TAutils.QueueDelayedWreckage(self, overkillRatio, self:GetBlueprint(), self:GetFractionComplete(), self:GetPosition(), self:GetOrientation(), self:GetMaxHealth())
 		end
 	end,
@@ -235,7 +231,7 @@ TAunit = Class(Unit)
 			debrisList = debrisCat.RULEDPC.RULEDPC_Generic
 		end
 		if debrisList then
-			if bp.Display.DestructionEffects.DestructionDebrisUseLocalVelocity and bp.Display.DestructionEffects.DestructionDebrisUseLocalVelocity == true then
+			if bp.Display.DestructionEffects.DestructionDebrisUseLocalVelocity and bp.Display.DestructionEffects.DestructionDebrisUseLocalVelocity then
 				speed = bp.Physics.MaxSpeed
 				if self.CurrentSpeed == 'Stopped' then
 					speed = 0
@@ -249,7 +245,7 @@ TAunit = Class(Unit)
 				ydir = ypos + sy
 			end
 	        	local debris = self:CreateProjectile(debrisList[util.GetRandomInt(1,table.getn(debrisList))],xpos,ypos,zpos,xdir,ydir,zdir)
-			if bp.Display.DestructionEffects.DestructionDebrisUseLocalVelocity and bp.Display.DestructionEffects.DestructionDebrisUseLocalVelocity == true then
+			if bp.Display.DestructionEffects.DestructionDebrisUseLocalVelocity and bp.Display.DestructionEffects.DestructionDebrisUseLocalVelocity then
 				debris:SetVelocity(speed)
 			end
 		end

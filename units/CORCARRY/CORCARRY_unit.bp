@@ -197,14 +197,6 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #CRAWL_BLAST
-            Damage = 2500,
-                        DamageFriendly = true,
-            DamageRadius = 9,
-            DummyWeapon = true,
-            DamageType = 'Normal',
-            Label = 'SuicideWeapon',
-        },
     },
     Wreckage = {
 	UseCustomMesh = true,

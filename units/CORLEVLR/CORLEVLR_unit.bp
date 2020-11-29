@@ -214,14 +214,6 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #MEDIUM_UNIT
-            Damage = 250,
-            DamageFriendly = true,
-            DamageRadius = 3,
-            DummyWeapon = true,
-            DamageType = 'Normal',
-            Label = 'SuicideWeapon',
-        },
     },
     Wreckage = {
 	UseCustomMesh = true,

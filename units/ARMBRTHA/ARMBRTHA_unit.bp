@@ -203,14 +203,7 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        { #ATOMIC_BLAST
-            Damage = 1500,
-            DamageFriendly = true,
-            DamageRadius = 16,
-            DummyWeapon = true,
-            DamageType = 'Normal',
-            Label = 'SuicideWeapon',
-        },
+        
     },
     Wreckage = {
 	UseCustomMesh = true,

@@ -173,40 +173,6 @@ TAunit = Class(Unit)
         end
     end,
 
-    --[[DeathThread = function( self, overkillRatio, instigator)
-        self:LOGDBG('TAUnit.DeathThread')
-
-        self:DestroyAllDamageEffects()
-
-        if self.PlayDestructionEffects then
-            self:CreateDestructionEffects( self, overkillRatio )
-        end
-        if self.DeathAnimManip then
-            WaitFor(self.DeathAnimManip)
-            if self.PlayDestructionEffects and self.PlayEndAnimDestructionEffects then
-                self:CreateDestructionEffects( self, overkillRatio )
-            end
-        end
-
-        self:CreateWreckage( overkillRatio )
-        if( self.ShowUnitDestructionDebris and overkillRatio ) then
-            if overkillRatio <= 1 then
-                self.CreateUnitDestructionDebris( self, true, true, false )
-            elseif overkillRatio <= 2 then
-                self.CreateUnitDestructionDebris( self, true, true, false )
-            elseif overkillRatio <= 3 then
-                self.CreateUnitDestructionDebris( self, true, true, true )
-            else #VAPORIZED
-                self.CreateUnitDestructionDebris( self, true, true, true )
-            end
-        end
-
-        #LOG('*DEBUG: DeathThread Destroying in ',  self.DeathThreadDestructionWaitTime )
-        WaitSeconds(self.DeathThreadDestructionWaitTime)
-
-        self:PlayUnitSound('Destroyed')
-        self:Destroy()
-	end,]]--
 }
 
 TAPop = Class(TAunit) {

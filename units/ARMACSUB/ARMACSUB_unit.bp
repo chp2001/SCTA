@@ -71,7 +71,7 @@ UnitBlueprint {
         Abilities = {
             'Construction Unit',
         },
-	DestructionEffects = {
+		--[[DestructionEffects = {
 		DefaultFlamingProjectileCountMin = 0,
 		DefaultFlamingProjectileCountMax = 0,
 		DefaultProjectileCountMin = 0,
@@ -92,7 +92,7 @@ UnitBlueprint {
 				EmitterSize = 0.35,
 			},
 		},
-	},
+	},]]---
 	BuildBones = {'muzzle'},
         Mesh = {
             IconFadeInZoom = 130,
@@ -198,9 +198,14 @@ UnitBlueprint {
         },
 
     },
-    Wreckage = {
-	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/ARMACSUB/ARMACSUB_dead_prop.bp',
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMACSUB/ARMACSUB_dead_prop.bp',
         WreckageLayers = {
             Water = true,
 	    Sub = true,

@@ -60,7 +60,7 @@ UnitBlueprint {
         AnimationUnpackRate = 0.5, 
         AnimationPack = '/mods/SCTA-master/units/CORGANT/CORGANT_lod0_repack.sca',
         AnimationPackRate = 0.5, 
-        DestructionEffects = {
+        	--[[DestructionEffects = {
             DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate', 'CorBld'},
             DestructionEmitters = {
                 {
@@ -75,10 +75,10 @@ UnitBlueprint {
                             '/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
                             '/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
                     },
-                    EmitterSize = 0.35,
-                },
-            },
-        },
+				EmitterSize = 0.35,
+			},
+		},
+	},]]--
         BuildBones = {'nano1','nano2','nano3','nano4'},
         BuildAttachBone = 'gangplank',
         Mesh = {
@@ -184,9 +184,14 @@ UnitBlueprint {
         },
 
     },
-    Wreckage = {
-	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/CORGANT/CORGANT_dead_prop.bp',
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORGANT/CORGANT_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

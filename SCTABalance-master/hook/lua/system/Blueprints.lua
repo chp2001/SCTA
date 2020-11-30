@@ -109,50 +109,6 @@ do
             end
         
         Mults = {
-            Defense = {
-                Health = 0.75,
-                MaxHealth = 0.75,
-            },
-            Display = {
-                UniformScale = 0.5,
-            },
-            Economy = {
-                ReclaimEnergyMax = 0.25,
-                ReclaimMassMax = 0.35,
-                ReclaimTime = 10,
-            },
-            Footprint = {
-                OccupancyCaps = 0,
-            },
-            SelectionSizeX = 0.5,
-            SelectionSizeZ = 0.5,
-            SelectionThickness = 0.5,
-            SizeX = 0.5,
-            SizeY = 0.5,
-            SizeZ = 0.5,    
-            CollisionSizeX = 0,
-            CollisionSizeZ = 0,
-            CollisionOffsetZ = 0,
-        }
-        for id, bp in all_blueprints.Prop do
-            if bp.ScriptClass == 'TAWreckage' then
-                for group, gdata in Mults do
-                    if type(gdata) == 'table' then
-                        for stat, data in gdata do
-                            if bp[group] and bp[group][stat] then
-                                bp[group][stat] = bp[group][stat] * data
-                            end
-                        end
-                    else
-                        if bp[group] then
-                            bp[group] = bp[group] * gdata
-                        end
-                    end
-                end
-            end
-        end
-        
-        Mults = {
             Display = {
                 UniformScale = 0.35,
             },

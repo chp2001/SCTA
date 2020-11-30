@@ -407,5 +407,8 @@ TACommander = Class(TAconstructor) {
                 self:EnableIntel('Cloak')
             end
         end
+	end,
+	
+    HideFlares = function(self, bp)
     end,
 }

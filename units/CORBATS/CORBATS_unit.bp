@@ -59,7 +59,7 @@ UnitBlueprint {
         Abilities = {
             'Battleship',
         },
-	DestructionEffects = {
+		--[[DestructionEffects = {
 		DestructionEmitters = {
 			{
 				EmitterBone = {'turretb','turreta', 'wake1', 'wake2', 'CORBATS'},
@@ -76,7 +76,7 @@ UnitBlueprint {
 				EmitterSize = 0.35,
 			},
 		},
-	},
+	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -286,9 +286,14 @@ UnitBlueprint {
         }, 
 
     },
-    Wreckage = {
-	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/CORBATS/CORBATS_dead_prop.bp',
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORBATS/CORBATS_dead_prop.bp',
         WreckageLayers = {
             Water = true,
 	    Sub = true,

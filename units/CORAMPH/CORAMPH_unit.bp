@@ -56,7 +56,7 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_hover>Hover',
         },
-	DestructionEffects = {
+		--[[DestructionEffects = {
 		DefaultProjectileCategories = {'MetalBarrel','ArmHover'},
 		DestructionEmitters = {
 			{
@@ -65,7 +65,7 @@ UnitBlueprint {
 				EmitterSize = 1.25,
 			},
 		},
-	},
+	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -275,8 +275,8 @@ UnitBlueprint {
 
     },
     Wreckage = {
-        UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/CORAMPH/CORAMPH_dead_prop.bp',
+        ---UseCustomMesh = true,
+        --Blueprint = '/mods/SCTA-master/units/CORAMPH/CORAMPH_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Water = true,

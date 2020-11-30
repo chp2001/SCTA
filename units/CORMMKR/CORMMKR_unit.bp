@@ -61,7 +61,7 @@ UnitBlueprint {
     },
     Description = 'Converts Energy into Metal',
     Display = {
-	DestructionEffects = {
+		--[[DestructionEffects = {
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},
@@ -69,7 +69,7 @@ UnitBlueprint {
 				EmitterSize = 1.25,
 			},
 		},
-	},
+	},]]--
 	--TextureAnimationFrames = 8,
         Mesh = {
             IconFadeInZoom = 130,
@@ -142,9 +142,14 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         },
     },
-    Wreckage = {
-	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/CORMMKR/CORMMKR_dead_prop.bp',
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORMMKR/CORMMKR_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

@@ -113,12 +113,4 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         },
     },
-    Wreckage = {
-	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/ARMMANNI/ARMMANNI_dead_prop.bp',
-        WreckageLayers = {
-            Land = true,
-            Seabed = true,
-        },
-    },
 }

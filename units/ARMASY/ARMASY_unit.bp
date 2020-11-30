@@ -58,7 +58,7 @@ UnitBlueprint {
     },
     Description = 'Produces Ships',
     Display = {
-	DestructionEffects = {
+		--[[DestructionEffects = {
 		DefaultProjectileCategories = {'Construction','ArmBui','BuildMuzzle'},
 		DestructionEmitters = {
 			{
@@ -76,7 +76,7 @@ UnitBlueprint {
 				EmitterSize = 0.35,
 			},
 		},
-	},
+	},]]---
 	BuildBones = {'Nozzle_01','Nozzle_02'},
 	BuildAttachBone = 'BuildPlate',
         Mesh = {
@@ -188,9 +188,14 @@ UnitBlueprint {
         },
 
     },
-    Wreckage = {
-	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/ARMASY/ARMASY_dead_prop.bp',
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMASY/ARMASY_dead_prop.bp',
         WreckageLayers = {
             Water = true,
             Seabed = true,

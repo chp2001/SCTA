@@ -30,12 +30,12 @@ function GetAngleTA(x1, z1, x2, z2)
 	return (angle / math.pi) * 180 + 90
 end
 
-function QueueDelayedWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
+--[[function QueueDelayedWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
 	ForkThread(CreateWreckage, self, overkillRatio, bp, completed, pos, orientation, health)
-end
+end]]--
 
 
-function CreateWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
+--[[function CreateWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
 	local TAWreckage = import('/mods/SCTA-master/lua/TAWreckage.lua').TAWreckage
 	while not IsDestroyed(self) do
 		WaitSeconds(0.4)
@@ -64,7 +64,8 @@ function CreateWreckage(self,overkillRatio, bp, completed, pos, orientation, hea
 		--prop:DoTakeDamage(prop, overkillRatio * health, Vector(0,0,0), 'Normal')
         	prop.AssociatedBP = bp.BlueprintId
 	end
-end
+end]]--
+
 targetingFacilityData = {}
 
 function registerTargetingFacility(army)

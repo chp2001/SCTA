@@ -82,7 +82,7 @@ UnitBlueprint {
             'Decoy',
             'Construction Unit',
         },
-	DestructionEffects = {
+		--[[DestructionEffects = {
 		DefaultFlamingProjectileCountMin = 0,
 		DefaultFlamingProjectileCountMax = 0,
 		DefaultProjectileCountMin = 0,
@@ -103,7 +103,7 @@ UnitBlueprint {
 				EmitterSize = 1.35,
 			},
 		},
-	},
+	},]]--
 	BuildBones = {'LaserMuzzle'},
         Mesh = {
             IconFadeInZoom = 130,

@@ -6,7 +6,6 @@ local scenarioUtils = import('/lua/sim/ScenarioUtilities.lua')
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local Game = import('/lua/game.lua')
 local util = import('/lua/utilities.lua')
-local debrisCat = import('/mods/SCTA-master/lua/TAdebrisCategories.lua')
 
 TAunit = Class(Unit) 
 {
@@ -149,113 +148,6 @@ TAunit = Class(Unit)
 		self.unit:HideBone(bp.RackBones[self.CurrentRackSalvoNumber - 1].MuzzleBones[1], true)
 	end,
 
-	--[[OnKilled = function(self, instigator, type, overkillRatio)
-        self:LOGDBG('TAUnit.OnKilled')
-		local bp = self:GetBlueprint()
-		if self:GetFractionComplete() == 1 then
-			for k, weapon in bp.Weapon do
-				#Self Destruct
-					self:CreateDebrisProjectiles()
-					if (self == instigator) then
-						self.Suicide = true
-				end
-			end
-		end
-		Unit.OnKilled(self, instigator, type, overkillRatio)
-	end,]]--
-
-	--[[CreateWreckage = function( self, overkillRatio )
-        self:LOGDBG('TAUnit.CreateWreckage')
-		if overkillRatio then
-			if overkillRatio > 0.075 then
-				self:CreateDebrisProjectiles()
-				return
-			end
-		end
-	        if self:GetBlueprint().Wreckage.WreckageLayers[self:GetCurrentLayer()] and not self.Suicide then
-			TAutils.QueueDelayedWreckage(self, overkillRatio, self:GetBlueprint(), self:GetFractionComplete(), self:GetPosition(), self:GetOrientation(), self:GetMaxHealth())
-		end
-	end,]]--
-
-	--[[CreateDestructionEffects = function( self, overKillRatio )
-        self:LOGDBG('TAUnit.CreateDestructionEffects')
-		local bp = self:GetBlueprint()
-		if bp.Display.DestructionEffects then
- 			if self:GetFractionComplete() == 1 then
-				--if not EntityCategoryContains(categories.NOEXPLOSION, self) then
-				--	CreateLightParticle( self, 0, self:GetArmy(), bp.Display.DestructionEffects.FlashSize or 20, bp.Display.DestructionEffects.FlashTime or 10, 'ExplosionGlow', 'ramp_ExplosionGlow' )
-				--end
-				if bp.Display.DestructionEffects.DestructionEmitters then
-					for k,v in bp.Display.DestructionEffects.DestructionEmitters do
-						for bk,bv in v.EmitterBone do
-							for ek, ev in v.EmitterBlueprint do
-								CreateEmitterAtBone(self, bv, self:GetArmy(), ev):ScaleEmitter(v.EmitterSize)
-							end
-						end
-					end
-				end
-	    	self:HideBone(0, true)
-			end
-		end
-	end,]]--
-
-	--[[CreateDebrisProjectiles = function(self)
-        self:LOGDBG('TAUnit.CreateDebrisProjectiles')
-	    local bp = self:GetBlueprint()
-	    local sx = bp.SizeX
-	    local sy = bp.SizeY
-	    local sz = bp.SizeZ
-	    local partamounts = util.GetRandomInt( bp.Display.DestructionEffects.DefaultFlamingProjectileCountMin or 1, bp.Display.DestructionEffects.DefaultFlamingProjectileCountMax or ((sx * sz / 4) + 3)) 
-		LOG("PartAmounts: ",partamounts)
-	    for i = 1, partamounts do
-	        local xpos, ypos, zpos = util.GetRandomOffset( sx, sy, sz, 1)
-        	local xdir,ydir,zdir = util.GetRandomOffset( sx, sy, sz, 10)
-        	self:CreateProjectile('/mods/SCTA-master/effects/entities/Debris/Flame/DefaultFlameProjectileDebris_proj.bp',xpos,ypos,zpos,xdir,ydir + 5,zdir)
-	    end
-	    partamounts = util.GetRandomInt( bp.Display.DestructionEffects.DefaultProjectileCountMin or 5, bp.Display.DestructionEffects.DefaultProjectileCountMax or (sx * sz + 4)) 
-		LOG("PartAmounts: ",partamounts)
-	    local z = math.cos(self:GetHeading())
-	    local x = math.sin(self:GetHeading())
-	    for i = 1, partamounts do
-	        local xpos, ypos, zpos = util.GetRandomOffset( sx, sy, sz, 1)
-        	local xdir,ydir,zdir = util.GetRandomOffset( sx, sy, sz, 10)
-
-		local debrisList = {}
-		if bp.Display.DestructionEffects.DefaultProjectileCategories then
-			for k, v in bp.Display.DestructionEffects.DefaultProjectileCategories do
-				for ek, ev in debrisCat.RULEDPC[v] do
-					table.insert(debrisList, ev)
-				end
-			end
-		else
-			debrisList = debrisCat.RULEDPC.RULEDPC_Generic
-		end
-		if debrisList then
-			if bp.Display.DestructionEffects.DestructionDebrisUseLocalVelocity and bp.Display.DestructionEffects.DestructionDebrisUseLocalVelocity then
-				speed = bp.Physics.MaxSpeed
-				if self.CurrentSpeed == 'Stopped' then
-					speed = 0
-				elseif self.CurrentSpeed == 'Cruise' then
-					speed = speed / 2
-				elseif self.CurrentSpeed == 'Stopping' then
-					speed = speed / 5
-				end
-				xdir = xpos + x*speed
-				zdir = zpos + z*speed
-				ydir = ypos + sy
-			end
-	        	local debris = self:CreateProjectile(debrisList[util.GetRandomInt(1,table.getn(debrisList))],xpos,ypos,zpos,xdir,ydir,zdir)
-			if bp.Display.DestructionEffects.DestructionDebrisUseLocalVelocity and bp.Display.DestructionEffects.DestructionDebrisUseLocalVelocity then
-				debris:SetVelocity(speed)
-			end
-		end
-	    end
-	    if bp.Display.DestructionEffects.DestructionProjectiles then
-		    for k, v in bp.Display.DestructionEffects.DestructionProjectiles do
-	        	self:CreateProjectileAtBone(v.ProjectileBlueprint,v.Bone)
-		    end
-	    end
-	end,]]--
 
     HideFlares = function(self, bp)
         self:LOGDBG('TAUnit.HideFlares')

@@ -1,5 +1,4 @@
 PropBlueprint {
-    BlueprintId = 'ARMSTUMP',
     Categories = {
         'RECLAIMABLE',
     },

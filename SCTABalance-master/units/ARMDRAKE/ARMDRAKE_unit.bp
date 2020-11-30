@@ -59,7 +59,7 @@ UnitBlueprint {
             '<LOC ability_aa>Anti-Air',
         },
         --TextureAnimationFrames = 8,
-        DestructionEffects = {
+        	--[[DestructionEffects = {
             DestructionEmitters = {
                 {
                     EmitterBone = {'torso','head','hips','rleg','lleg'},
@@ -73,10 +73,10 @@ UnitBlueprint {
                             '/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
                             '/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
                     },
-                    EmitterSize = 0.35,
-                },
-            },
-        },        
+				EmitterSize = 0.35,
+			},
+		},
+	},]]--        
         AnimationWalk = '/mods/SCTA-master/SCTABalance-master/units/ARMDRAKE/ARMDRAKE_lod0_Awalk.sca',
         AnimationWalkRate = 0.6,
         AttackReticuleSize = 1,
@@ -381,9 +381,14 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         },
     },
-    Wreckage = {
-	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/SCTABalance-master/units/ARMDRAKE/ARMDRAKE_dead_prop.bp',
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/SCTABalance-master/units/ARMDRAKE/ARMDRAKE_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Seabed = true,

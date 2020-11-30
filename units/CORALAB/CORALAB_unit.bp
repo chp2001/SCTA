@@ -59,7 +59,7 @@ UnitBlueprint {
     },
     Description = 'Produces Kbots',
     Display = {
-	DestructionEffects = {
+		--[[DestructionEffects = {
 #		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate', 'CorBld'},
 		DestructionEmitters = {
 			{
@@ -77,7 +77,7 @@ UnitBlueprint {
 				EmitterSize = 0.35,
 			},
 		},
-	},
+	},]]---
 	BuildBones = {'beama','beamb'},
 	BuildAttachBone = 'pad',
         Mesh = {
@@ -185,9 +185,14 @@ UnitBlueprint {
         },
 
     },
-    Wreckage = {
-	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/CORALAB/CORALAB_dead_prop.bp',
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORALAB/CORALAB_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

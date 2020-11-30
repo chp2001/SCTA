@@ -93,7 +93,7 @@ UnitBlueprint {
         Abilities = {
             'Transport',
         },
-	DestructionEffects = {
+		--[[DestructionEffects = {
 		DefaultFlamingProjectileCountMin = 0,
 		DefaultFlamingProjectileCountMax = 0,
 		DestructionDebrisUseLocalVelocity = true,
@@ -107,7 +107,7 @@ UnitBlueprint {
 				EmitterSize = 1.25,
 			},
 		},
-	},
+	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

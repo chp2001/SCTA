@@ -62,7 +62,7 @@ UnitBlueprint {
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/CORAVP/CORAVP_lod0_aopen.sca',
         AnimationUnpackRate = 0.5, 
-	DestructionEffects = {
+		--[[DestructionEffects = {
 		DestructionEmitters = {
 			{
 				EmitterBone = {'wing1','wing2', 'wing3', 'CORAVP'},
@@ -79,7 +79,7 @@ UnitBlueprint {
 				EmitterSize = 0.35,
 			},
 		},
-	},
+	},]]---
 	BuildBones = {'muzzle1','muzzle2'},
 	BuildAttachBone = 'pad',
 	--TextureAnimationFrames = 4,
@@ -188,9 +188,14 @@ UnitBlueprint {
         },
 
     },
-    Wreckage = {
-	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/CORAVP/CORAVP_dead_prop.bp',
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORAVP/CORAVP_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

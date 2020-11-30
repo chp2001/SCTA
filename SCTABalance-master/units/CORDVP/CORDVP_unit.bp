@@ -66,7 +66,7 @@ UnitBlueprint {
         },
         AnimationUnpack = '/mods/SCTA-master/units/CORVP/CORVP_lod0_aopen.sca',
         AnimationUnpackRate = 0.5, 
-	DestructionEffects = {
+		--[[DestructionEffects = {
 		DestructionEmitters = {
 			{
 				EmitterBone = {'layer1a','layer2a', 'layer3a'},
@@ -83,7 +83,7 @@ UnitBlueprint {
 				EmitterSize = 0.35,
 			},
 		},
-	},
+	},]]---
 	BuildBones = {'muzzle1','muzzle2'},
 	BuildAttachBone = 'pad',
     Mesh = {
@@ -200,9 +200,14 @@ UnitBlueprint {
         },
 
     },
-    Wreckage = {
-	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/SCTABalance-master/units/CORDVP/CORDVP_dead_prop.bp',
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/SCTABalance-master/units/CORDVP/CORDVP_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

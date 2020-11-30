@@ -60,7 +60,7 @@ UnitBlueprint {
             'Anti-Sub',
             'Sonar',
         },
-	DestructionEffects = {
+		--[[DestructionEffects = {
 		DefaultProjectileCategories = {'ArmShip','ArmPanel3','MetalBarrel'},
 		DestructionEmitters = {
 			{
@@ -78,7 +78,7 @@ UnitBlueprint {
 				EmitterSize = 0.35,
 			},
 		},
-	},
+	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -291,9 +291,14 @@ UnitBlueprint {
         }, 
 
     },
-    Wreckage = {
-	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/ARMCRUS/ARMCRUS_dead_prop.bp',
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMCRUS/ARMCRUS_dead_prop.bp',
         WreckageLayers = {
             Water = true,
 	    Sub = true,

@@ -149,7 +149,7 @@ TAunit = Class(Unit)
 		self.unit:HideBone(bp.RackBones[self.CurrentRackSalvoNumber - 1].MuzzleBones[1], true)
 	end,
 
-	OnKilled = function(self, instigator, type, overkillRatio)
+	--[[OnKilled = function(self, instigator, type, overkillRatio)
         self:LOGDBG('TAUnit.OnKilled')
 		local bp = self:GetBlueprint()
 		if self:GetFractionComplete() == 1 then
@@ -162,9 +162,9 @@ TAunit = Class(Unit)
 			end
 		end
 		Unit.OnKilled(self, instigator, type, overkillRatio)
-	end,
+	end,]]--
 
-	CreateWreckage = function( self, overkillRatio )
+	--[[CreateWreckage = function( self, overkillRatio )
         self:LOGDBG('TAUnit.CreateWreckage')
 		if overkillRatio then
 			if overkillRatio > 0.075 then
@@ -175,9 +175,9 @@ TAunit = Class(Unit)
 	        if self:GetBlueprint().Wreckage.WreckageLayers[self:GetCurrentLayer()] and not self.Suicide then
 			TAutils.QueueDelayedWreckage(self, overkillRatio, self:GetBlueprint(), self:GetFractionComplete(), self:GetPosition(), self:GetOrientation(), self:GetMaxHealth())
 		end
-	end,
+	end,]]--
 
-	CreateDestructionEffects = function( self, overKillRatio )
+	--[[CreateDestructionEffects = function( self, overKillRatio )
         self:LOGDBG('TAUnit.CreateDestructionEffects')
 		local bp = self:GetBlueprint()
 		if bp.Display.DestructionEffects then
@@ -197,9 +197,9 @@ TAunit = Class(Unit)
 	    	self:HideBone(0, true)
 			end
 		end
-	end,
+	end,]]--
 
-	CreateDebrisProjectiles = function(self)
+	--[[CreateDebrisProjectiles = function(self)
         self:LOGDBG('TAUnit.CreateDebrisProjectiles')
 	    local bp = self:GetBlueprint()
 	    local sx = bp.SizeX
@@ -255,7 +255,7 @@ TAunit = Class(Unit)
 	        	self:CreateProjectileAtBone(v.ProjectileBlueprint,v.Bone)
 		    end
 	    end
-	end,
+	end,]]--
 
     HideFlares = function(self, bp)
         self:LOGDBG('TAUnit.HideFlares')
@@ -281,7 +281,7 @@ TAunit = Class(Unit)
         end
     end,
 
-    DeathThread = function( self, overkillRatio, instigator)
+    --[[DeathThread = function( self, overkillRatio, instigator)
         self:LOGDBG('TAUnit.DeathThread')
 
         self:DestroyAllDamageEffects()
@@ -314,7 +314,7 @@ TAunit = Class(Unit)
 
         self:PlayUnitSound('Destroyed')
         self:Destroy()
-	end,
+	end,]]--
 }
 
 TAPop = Class(TAunit) {

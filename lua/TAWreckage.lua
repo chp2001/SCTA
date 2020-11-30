@@ -1,12 +1,10 @@
-local Prop = import('/lua/sim/Prop.lua').Prop
+local Wreckage = import('/lua/Wreckage.lua').Wreckage
 
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
-TAWreckage = Class(Prop) {
+TAWreckage = Class(Wreckage) {
 	OnCreate = function(self)
-        Prop.OnCreate(self)
-        self.IsWreckage = true
-        self.OrientationCache = self:GetOrientation()
+        Wreckage.OnCreate(self)
     end,
 
 }

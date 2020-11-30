@@ -249,13 +249,4 @@ UnitBlueprint {
             Label = 'DeathWeapon',
         }, 
     },
-    Wreckage = {
-	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/ARMAAS/ARMAAS_dead_prop.bp',
-        WreckageLayers = {
-            Water = true,
-	    Sub = true,
-	    Seabed = true,
-        },
-    },
 }

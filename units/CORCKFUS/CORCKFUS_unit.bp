@@ -51,7 +51,7 @@ UnitBlueprint {
         Abilities = {
             'Cloak'
         },
-	DestructionEffects = {
+		--[[DestructionEffects = {
 		DefaultProjectileCategories = {'Stone'},
 		DestructionEmitters = {
 			{
@@ -60,7 +60,7 @@ UnitBlueprint {
 				EmitterSize = 1.25,
 			},
 		},
-	},
+	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -135,9 +135,14 @@ UnitBlueprint {
         },
 
     },
-    Wreckage = {
-	UseCustomMesh = true,
-        Blueprint = '/mods/SCTA-master/units/CORCKFUS/CORCKFUS_dead_prop.bp',
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORCKFUS/CORCKFUS_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

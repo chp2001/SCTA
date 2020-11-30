@@ -96,7 +96,7 @@ UnitBlueprint {
             '<LOC ability_aa>Anti-Air',
             '<LOC ability_personalstealth>Personal Stealth',
         },
-	DestructionEffects = {
+		--[[DestructionEffects = {
 		DefaultFlamingProjectileCountMin = 0,
 		DefaultFlamingProjectileCountMax = 0,
 		DestructionDebrisUseLocalVelocity = true,
@@ -110,7 +110,7 @@ UnitBlueprint {
 				EmitterSize = 1.25,
 			},
 		},
-	},
+	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

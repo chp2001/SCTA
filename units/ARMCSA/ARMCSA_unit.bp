@@ -96,7 +96,7 @@ UnitBlueprint {
             'Construction Unit',
         },
 	ReclaimEmitter = 'nanolathe.bp',
-	DestructionEffects = {
+		--[[DestructionEffects = {
 		DefaultFlamingProjectileCountMin = 0,
 		DefaultFlamingProjectileCountMax = 0,
 		DestructionDebrisUseLocalVelocity = true,
@@ -110,7 +110,7 @@ UnitBlueprint {
 				EmitterSize = 1.25,
 			},
 		},
-	},
+	},]]--
 	BuildBones = {'nanopoint', 'nanopoint2'},
         Mesh = {
             IconFadeInZoom = 130,

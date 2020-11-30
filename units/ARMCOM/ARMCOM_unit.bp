@@ -117,7 +117,7 @@ UnitBlueprint {
             'D-Gun',
             'Construction Unit',
         },
-	DestructionEffects = {
+		--[[DestructionEffects = {
 		DefaultFlamingProjectileCountMin = 0,
 		DefaultFlamingProjectileCountMax = 0,
 		DefaultProjectileCountMin = 0,
@@ -133,7 +133,7 @@ UnitBlueprint {
 				EmitterSize = 15,
 			},
 		},
-	},
+	},]]--
 	BuildBones = {'LaserMuzzle'},
         Mesh = {
             IconFadeInZoom = 130,

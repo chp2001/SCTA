@@ -1,6 +1,5 @@
 UnitBlueprint {
     Merge = true,
-    BlueprintId= 'armap',
     BuildIconSortPriority = 3,
     Categories = {
         'BUILTBYT1AIR',
@@ -25,10 +24,6 @@ UnitBlueprint {
 		'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL1',
-	
-	
-	
-	
     },
     Defense = {
         Health = 2200,

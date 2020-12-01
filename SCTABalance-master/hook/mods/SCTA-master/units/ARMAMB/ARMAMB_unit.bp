@@ -5,7 +5,6 @@
 
 UnitBlueprint {
     Merge = true, 
-    BlueprintId= 'armamb',
     Categories = {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',

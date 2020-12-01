@@ -5,7 +5,6 @@
 
 UnitBlueprint {
     Merge = true, 
-    BlueprintId= 'armaas',
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',

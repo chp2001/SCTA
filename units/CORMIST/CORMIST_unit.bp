@@ -41,10 +41,6 @@ UnitBlueprint {
         'CORE',
         'VEHICLE',	#'TANK' in TA
 	'LEVEL1',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',

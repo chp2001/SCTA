@@ -17,9 +17,6 @@ UnitBlueprint {
 	'LEVEL3',
     'STRATEGIC',
     'SORTDEFENSE',
-	
-	
-	
     },
     Display = {
         UniformScale = 0.06,

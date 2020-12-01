@@ -1,6 +1,5 @@
 UnitBlueprint {
     Merge = true, 
-    BlueprintId= 'armaser',
     Categories = {
         'SELECTABLE',
         'TECH2',

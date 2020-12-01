@@ -1,6 +1,5 @@
 UnitBlueprint {
     Merge = true,
-    BlueprintId= 'armaap',
     Categories = {
         'BUILTBYT1AIR',
         'BUILTBYT2AIR',

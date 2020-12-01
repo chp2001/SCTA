@@ -5,7 +5,6 @@
 
 UnitBlueprint {
    Merge = true,
-   BlueprintId= 'armah',
    Categories = {
     'SELECTABLE',
     'TECH3',

@@ -1,5 +1,6 @@
 UnitBlueprint {
    Merge = true, 
+   BlueprintId= 'armamph',
    Categories = {
     'SELECTABLE',
     'TECH3',

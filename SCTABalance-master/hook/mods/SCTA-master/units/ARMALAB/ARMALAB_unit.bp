@@ -1,5 +1,6 @@
 UnitBlueprint {
     Merge = true,
+    BlueprintId= 'armalab',
     Categories = {
         'BUILTBYT2KBOT',
         'BUILTBYT1KBOT',

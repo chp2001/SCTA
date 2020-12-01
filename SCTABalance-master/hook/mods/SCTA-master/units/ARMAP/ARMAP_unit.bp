@@ -1,5 +1,6 @@
 UnitBlueprint {
     Merge = true,
+    BlueprintId= 'armap',
     BuildIconSortPriority = 3,
     Categories = {
         'BUILTBYT1AIR',

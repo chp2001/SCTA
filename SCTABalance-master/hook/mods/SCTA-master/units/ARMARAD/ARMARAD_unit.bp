@@ -1,5 +1,6 @@
 UnitBlueprint {
     Merge = true,
+    BlueprintId= 'armarad',
     BuildIconSortPriority = 20,
     Categories = {
         'BUILTBYT2VEHICLE',

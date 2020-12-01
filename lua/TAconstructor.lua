@@ -409,6 +409,14 @@ TACommander = Class(TAconstructor) {
         end
 	end,
 	
-    HideFlares = function(self, bp)
-    end,
+	--CreateExplosionDebris = function( self, army )
+		--TAconstructor.CreateExplosionDebris (self, army)
+		
+    --end,
+
+	DeathThread = function(self)
+		local army = self:GetArmy()
+		CreateAttachedEmitter( self, 0, army, '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp'):ScaleEmitter(10)
+		TAconstructor.DeathThread(self)
+	end,
 }

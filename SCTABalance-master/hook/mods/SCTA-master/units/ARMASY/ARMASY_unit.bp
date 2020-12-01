@@ -1,5 +1,6 @@
 UnitBlueprint {
     Merge = true,
+    BlueprintId= 'armasy',
     Categories = {
         'BUILTBYT2SUB',
         'BUILTBYT2AIR',

@@ -51,9 +51,9 @@ UnitBlueprint {
     			{
     				EmitterBone = { 'Leg_Tiptoe_001', 'Leg_Tiptoe_002', 'Leg_Tiptoe_003', 'Leg_Tiptoe_004', 'Leg_Tiptoe_005', 'Leg_Tiptoe_006' },
     				EmitterBlueprint = {
-                        '/mods/SCTA-master/effects/emitters/terran_missile_hit_01_emit.bp',
-                        '/mods/SCTA-master/effects/emitters/terran_missile_hit_03_emit.bp',
-                        '/mods/SCTA-master/effects/emitters/terran_missile_hit_04_emit.bp',
+                        '/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
+                        '/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
+                        '/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
     				},
     			EmitterSize = 0.35,
     			},

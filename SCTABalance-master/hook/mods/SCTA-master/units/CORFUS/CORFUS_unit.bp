@@ -17,8 +17,6 @@ UnitBlueprint {
 	'ENERGY',
 	'LEVEL2',
 	'SORTECONOMY',
-	
-	
     },
     Defense = {
         Health = 2700,

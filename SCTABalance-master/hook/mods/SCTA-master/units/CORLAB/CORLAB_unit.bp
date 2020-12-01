@@ -22,11 +22,7 @@ UnitBlueprint {
 	'CORE',
 		'PLANT',
 	'SORTCONSTRUCTION',
-	
 	'LEVEL1',
-	
-	
-	
     },
     Defense = {
         Health = 2200,

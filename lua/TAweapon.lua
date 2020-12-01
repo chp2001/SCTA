@@ -190,32 +190,6 @@ TABomb = Class(BareBonesWeapon) {
 TACommanderDeathWeapon = Class(BareBonesWeapon) {
     OnCreate = function(self)
         BareBonesWeapon.OnCreate(self)
-
-        local myBlueprint = self:GetBlueprint().Weapon
-        self.Data = {
-            NukeOuterRingDamage = myBlueprint.NukeOuterRingDamage or 3000,
-            NukeOuterRingRadius = myBlueprint.NukeOuterRingRadius or 20,
-            NukeOuterRingTicks = myBlueprint.NukeOuterRingTicks or 20,
-            NukeOuterRingTotalTime = myBlueprint.NukeOuterRingTotalTime or 10,
-
-            NukeInnerRingDamage = myBlueprint.NukeInnerRingDamage or 1500,
-            NukeInnerRingRadius = myBlueprint.NukeInnerRingRadius or 15,
-            NukeInnerRingTicks = myBlueprint.NukeInnerRingTicks or 24,
-            NukeInnerRingTotalTime = myBlueprint.NukeInnerRingTotalTime or 24,
-        }
-    end,
-
-
-    OnFire = function(self)
-    end,
-
-    Fire = function(self)
-        local myBlueprint = self:GetBlueprint()
-        local myProjectile = self.unit:CreateProjectile( myBlueprint.ProjectileId, 0, 0, 0, nil, nil, nil):SetCollision(false)
-        myProjectile:PassDamageData(self:GetDamageTable())
-        if self.Data then
-            myProjectile:PassData(self.Data)
-        end
     end,
 }
 

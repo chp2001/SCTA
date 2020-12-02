@@ -10,7 +10,8 @@ UnitBlueprint {
     'KBOT',
     'LAND',
     'ARM',
-    'HOVER',
+        'HOVER',
+'PHIB',
 'LEVEL3',
 },
    Defense = {

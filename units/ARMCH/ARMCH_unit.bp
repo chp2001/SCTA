@@ -59,11 +59,6 @@ UnitBlueprint {
         'ARM',
         'HOVER',
 	'LEVEL1',
-	
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',

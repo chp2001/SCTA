@@ -11,6 +11,7 @@ UnitBlueprint {
     'LAND',
     'CORE',
     'AMPHIBIOUS',
+    'PHIB',
 'LEVEL3',
 },
    Defense = {

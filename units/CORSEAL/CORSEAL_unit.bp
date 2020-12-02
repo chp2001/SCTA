@@ -32,24 +32,15 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'AMPHIBIOUS',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-
-	
         'CORE',
         'VEHICLE',	#'TANK' in TA
-        'HOVER',
+        --'HOVER',
 	'LEVEL2',
-	
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -64,6 +55,31 @@ UnitBlueprint {
     Display = {
         Abilities = {
             'Amphibious',
+        },
+        MovementEffects = {
+            Bones = {'CORSEAL'},
+            Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
+            Scale = 0.5,
+            Land = {
+                Treads = {
+                    ScrollMultiplier = 0.75,
+                    ScrollTreads = true,
+                    TreadMarks = {
+                        {
+                            BoneName = 'CORSEAL',
+                            TreadMarks = 'tank_treads_albedo',
+                            TreadMarksInterval = 0.2,
+                            TreadMarksSizeX = 1,
+                            TreadMarksSizeZ = 01,
+                            TreadOffset = {
+                                0,
+                                0,
+                                0,
+                            },
+                        },
+                    },
+                },
+            },
         },
 		--[[DestructionEffects = {
 		#DefaultProjectileCategories = {'Tredside','ArmPanel3','MetalBarrel'},
@@ -88,9 +104,13 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 230,
-                    ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                    LODCutoff = 120,
+                    Scrolling = true,
+                    ShaderName = 'Unit',
+                },
+                {
+                    LODCutoff = 215,
+                    ShaderName = 'Unit',
                 },
             },
         },

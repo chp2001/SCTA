@@ -16,7 +16,8 @@ UnitBlueprint {
 'OVERLAYANTIAIR',
     'LAND',
     'ARM',
-    'HOVER',
+        'HOVER',
+'PHIB',
 
 'LEVEL1',
 

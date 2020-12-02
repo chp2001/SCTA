@@ -19,7 +19,8 @@ UnitBlueprint {
 
 	
         'ARM',
-        'HOVER',
+            'HOVER',
+'PHIB',
 	
 	'LEVEL1',
 	

@@ -8,7 +8,6 @@ MAS0001 = Class(AWalkingLandUnit) {
 	AWalkingLandUnit.OnCreate(self)
 	self.AnimManip = CreateAnimator(self)
 	self.Trash:Add(self.AnimManip)
-	#WaitSeconds(1)
 	end,
 
     OnStopBeingBuilt = function(self,builder,layer)

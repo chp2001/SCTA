@@ -16,7 +16,8 @@ UnitBlueprint {
 'OVERLAYANTIAIR',
     'LAND',
     'CORE',
-    'HOVER',
+        'HOVER',
+'PHIB',
 'LEVEL1',
 },
     Defense = {

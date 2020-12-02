@@ -13,10 +13,11 @@ UnitBlueprint {
         'MOBILE',
 	'LAND',
     'AMPHIBIOUS',
+    'PHIB',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
-        'VEHICLE',	#'TANK' in TA
+        'VEHICLE',
 	'LEVEL2',
     },
     Defense = {

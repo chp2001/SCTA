@@ -123,5 +123,3 @@ TAWalking = Class(TATreads)
 		TATreads.OnKilled(self, instigator, type, overkillRatio)
 	end,
 }
-
-TypeClass = TAWalking

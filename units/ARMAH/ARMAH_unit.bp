@@ -39,11 +39,7 @@ UnitBlueprint {
         'LAND',
         'ARM',
         'HOVER',
-	
 	'LEVEL1',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',

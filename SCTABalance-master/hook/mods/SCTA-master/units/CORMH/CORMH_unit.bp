@@ -14,7 +14,8 @@ UnitBlueprint {
 
 	
         'CORE',
-        'HOVER',
+            'HOVER',
+'PHIB',
 	
 	'LEVEL1',
 	

@@ -11,7 +11,8 @@ UnitBlueprint {
         'CORE',
         'VEHICLE',
         'KBOT',
-        'HOVER',
+            'HOVER',
+'PHIB',
 	'LEVEL3',
     },
     Defense = {

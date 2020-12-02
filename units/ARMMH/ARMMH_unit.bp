@@ -32,21 +32,13 @@ UnitBlueprint {
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
         'LAND',
-
-	
         'ARM',
         'HOVER',
-	
 	'LEVEL1',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',

@@ -7,11 +7,12 @@ UnitBlueprint {
         'RECLAIMABLE',
         'MOBILE',
 	'LAND',
-	'AMPHIBIOUS',
+    'AMPHIBIOUS',
+    'PHIB',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'VEHICLE',	#'TANK' in TA
+        'VEHICLE',	
 	'LEVEL2',
     },
     Defense = {

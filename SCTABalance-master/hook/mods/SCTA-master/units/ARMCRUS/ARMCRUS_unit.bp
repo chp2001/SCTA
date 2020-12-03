@@ -9,8 +9,8 @@ UnitBlueprint {
         UniformScale = 0.2,
     },
     Defense = {
-        Health = 12000,
-        MaxHealth = 12000,
+        Health = 10000,
+        MaxHealth = 10000,
     },
     Economy = {
         BuildCostMass = 4000,

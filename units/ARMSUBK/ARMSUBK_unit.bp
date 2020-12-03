@@ -56,7 +56,7 @@ UnitBlueprint {
     Display = {
         Abilities = {
             'Anti-Sub',
-            'Sonar',
+            '<LOC ability_sonar>Sonar',
         },
 		--[[DestructionEffects = {
 		DefaultFlamingProjectileCountMin = 0,

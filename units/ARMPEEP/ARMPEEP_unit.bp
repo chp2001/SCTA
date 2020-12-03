@@ -95,7 +95,7 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_radar>Radar',
-            'Sonar',
+            '<LOC ability_sonar>Sonar',
         },  
 		--[[DestructionEffects = {
 		DestructionDebrisUseLocalVelocity = true,

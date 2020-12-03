@@ -139,7 +139,7 @@ UnitBlueprint {
             FiringRandomness = 3,
             FiringTolerance = 0,
             Label = 'COR_BATS',
-            MaxRadius = 78.125,
+            MaxRadius = 125,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 35,

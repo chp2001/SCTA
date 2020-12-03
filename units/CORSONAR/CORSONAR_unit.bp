@@ -63,7 +63,6 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_sonar>Sonar',
-            '<LOC ability_upgradable>Upgradeable',
         },
 		--[[DestructionEffects = {
 		DestructionEmitters = {

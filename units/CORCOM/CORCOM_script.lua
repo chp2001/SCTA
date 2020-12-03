@@ -38,6 +38,7 @@ CORCOM = Class(TACommander) {
 		self:SetCapturable(false)
         ---self:SetIntelRadius('Omni', 10)
 	end,
+
 		PlayCommanderWarpInEffect = function(self)
 			self:HideBone(0, true)
 			self:SetUnSelectable(true)
@@ -127,6 +128,8 @@ CORCOM = Class(TACommander) {
 		self:GetAIBrain():GiveResource('MASS', self:GetBlueprint().Economy.StorageMass)
 	end,
 
+
+
 	Aim = function(self, target)
 		local selfPosition = self:GetPosition('Torso') 
 		local targetPosition = target:GetPosition()
@@ -140,7 +143,7 @@ CORCOM = Class(TACommander) {
 		selfPosition = self:GetPosition('NanoMuzzle') 
 
 		--TURN luparm to x-axis (0 - pitch - 29.99) SPEED <45.01>; #luparm or nanogun?
-		self.Spinners.Nanogun:SetGoal(TAutils.GetAngleTA(0, selfPosition.y, distance, targetPosition.y) + 180)
+		self.Spinners.Nanogun:SetGoal(TAutils.GetAngleTA(0, selfPosition.y, distance, targetPosition.y))
 		self.Spinners.Nanogun:SetSpeed(45.01)
 
 		WaitFor(self.Spinners.Torso)

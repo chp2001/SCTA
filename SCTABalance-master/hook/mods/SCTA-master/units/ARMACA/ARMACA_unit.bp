@@ -20,19 +20,23 @@ UnitBlueprint {
 'LEVEL2',
 },
    Defense = {
-    Health = 400,
-    MaxHealth = 400,
+    Health = 540,
+    MaxHealth = 540,
     },
     Economy = {
         BuildCostEnergy = 6000,
-        BuildRate = 140,
+        BuildRate = 150,
         BuildTime = 4000,    
         BuildableCategory = {
             'BUILTBYT1AIR ARM',
             'BUILTBYT2AIR ARM',
         },
-        MaxBuildDistance = 7,
+        MaxBuildDistance = 5,
         ProductionPerSecondEnergy = 3,
         ProductionPerSecondMass = 0,
+    },
+    Physics = {
+        FuelRechargeRate = 777777,
+        FuelUseTime = 777777,
     },
 }

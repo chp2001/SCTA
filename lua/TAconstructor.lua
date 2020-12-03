@@ -60,6 +60,7 @@ TAconstructor = Class(TAWalking) {
 								end
 							end
 							if (self.isReclaiming) then
+								TAWalking.OnStartReclaim(self, self.currentTarget)
 							end
 							ForkThread(self.Nano, self, self.currentTarget)
 						end
@@ -141,12 +142,8 @@ TAconstructor = Class(TAWalking) {
 
 	OnStartReclaim = function(self, target)
 		self:LOGDBG('TAContructor.OnStartReclaim')
-		---if not self.cloakOn or not self.isCapturing then
-		--self:SetReclaimTimeMultiplier(1)
-		--self:SetBuildRate(self:GetBlueprint().Economy.BuildRate * 0.60)
-		TAWalking.OnStartReclaim(self, target)
 		self.desiredTarget = target
-		if (self.currentState == "aimed") then
+		if (self.currentState == "aimed" or self.currentState == "opened" ) then
 			self.currentState = "opened"
 			self.desiredState = "aimed"
 		else
@@ -169,6 +166,7 @@ TAconstructor = Class(TAWalking) {
 
 	Conclude = function(self, target)
 		self.desiredTarget = nil
+		---self.isBuilding = nil
 		self.isReclaiming = nil
 		self.countdown = self.pauseTime
 		self.desiredState = "closed"
@@ -239,37 +237,14 @@ TAconstructor = Class(TAWalking) {
                             time = 10
                         end
 
-						local aiBrain = self:GetAIBrain()
-						local storedMass = aiBrain:GetEconomyStoredRatio('MASS')
-						local storedEnergy = aiBrain:GetEconomyStoredRatio('ENERGY')
-						local ratioMass = aiBrain:GetEconomyIncome('MASS') / aiBrain:GetEconomyRequested('MASS')
-						local ratioEnergy =  aiBrain:GetEconomyIncome('ENERGY') / aiBrain:GetEconomyRequested('ENERGY')
-						local lowestStored = math.min(storedMass, storedEnergy)
-						if lowestStored == storedMass then 
-							lowestRatio = ratioMass
-						else
-							lowestRatio = ratioEnergy
-						end
-
-						local bp
-						if (self.isBuilding) then
+						if (self.isBuilding or self.isReclaiming) then
 							bp = self:GetBlueprint().Display.BuildEmitter or 'nanolathe.bp'
 							CreateEmitterAtBone(self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/' .. bp ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',time,0)
-						else
-							bp = self:GetBlueprint().Display.ReclaimEmitter or 'reclaimnanolathe.bp'
-							CreateEmitterAtBone(self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/' .. bp ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',time,0):SetEmitterCurveParam('Z_POSITION_CURVE',distance * 10,0)
-						end
-						
-
-						if lowestRatio < 1 and lowestStored < 0.1 then
-							target = math.floor(1 / lowestRatio)
-						else
-							target = 1
 						end
 					end
-					current = 0
 				end
 			end
+					current = 0
 			WaitSeconds(0.25)
 		end
 	end,
@@ -408,11 +383,6 @@ TACommander = Class(TAconstructor) {
             end
         end
 	end,
-	
-	--CreateExplosionDebris = function( self, army )
-		--TAconstructor.CreateExplosionDebris (self, army)
-		
-    --end,
 
 	DeathThread = function(self)
 		local army = self:GetArmy()

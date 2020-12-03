@@ -1,13 +1,11 @@
--- Note that the order here will determine the faction index
--- (it's the automatically assigned array index)
 do
 
-    local TAFactions = {
+    TAFactions = {
     {
         Key = 'arm',
         Category = 'ARM',
         DisplayName = "ARM",
-        SoundPrefix = 'ARM',
+        SoundPrefix = 'UEF',
         FactionInUnitBp = 'ARM',
         InitialUnit = 'armcom',
         CampaignFileDesignator = 'M',
@@ -50,10 +48,10 @@ do
         Key = 'core',
         Category = 'CORE',
         DisplayName = "CORE",
-        SoundPrefix = 'CORE',
+        SoundPrefix = 'Cybran',
         FactionInUnitBp = 'CORE',
         InitialUnit = 'corcom',
-        CampaignFileDesignator = 'K',
+        CampaignFileDesignator = 'O',
         TransmissionLogColor = 'ffff0000',
         Icon = "/mods/SCTA-master/textures/ui/common/widgets/faction-icons-alpha_bmp/core_ico.dds",
         VeteranIcon = "/mods/SCTA-master/textures/ui/common/game/veteran-logo_bmp/core-veteran_bmp.dds",
@@ -91,7 +89,7 @@ do
     },
 }
 
-Factions = table.merged(Factions, TAFactions)
+Factions = table.cat(Factions, TAFactions)
 
 end
 

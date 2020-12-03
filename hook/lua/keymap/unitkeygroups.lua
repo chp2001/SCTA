@@ -214,6 +214,10 @@ TAunitkeygroups = {
         "armseap",
         "corseap",
     },
+    ["T1_Attack_Boat"] = {
+        "armpt",
+        "corpt",
+    },
     ["T1_Land_Scout"]= {
         "armfav",
         "armflea",
@@ -309,9 +313,13 @@ TAunitkeygroups = {
         "armcrus",
         "corcrus",
     },
-    ["T2_Cruiser"]= {
+    ["T3_Missile_Ship"] = {
         "armmship",
         "cormship",
+    },
+    ["T2_Cruiser"]= {
+        "armaas",
+        "corarch",
     },
     ["T1_Attack_Submarine"]= {
         "armsub",

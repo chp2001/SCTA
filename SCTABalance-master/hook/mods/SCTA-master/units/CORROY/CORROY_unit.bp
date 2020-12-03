@@ -52,7 +52,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 18,
+            Damage = 23,
             DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'CORE_ROY',

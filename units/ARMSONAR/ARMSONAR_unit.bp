@@ -46,9 +46,6 @@ UnitBlueprint {
 	'SPECIAL',
 	'LEVEL2',
 	'SORTINTEL',
-	
-	
-	
     },
     CollisionOffsetY = -0.75,
     Defense = {
@@ -63,7 +60,7 @@ UnitBlueprint {
     Description = 'Locates Water Units',
     Display = {
         Abilities = {
-            'Sonar',
+            '<LOC ability_sonar>Sonar',
         },
 		--[[DestructionEffects = {
 		DestructionEmitters = {

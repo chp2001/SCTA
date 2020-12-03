@@ -9,7 +9,6 @@ UnitBlueprint {
       Display = {
           Abilities = {
             '<LOC ability_amphibious>Amphibious',
-            '<LOC ability_customizable>Customizable',
             '<LOC ability_notcap>Not Capturable',
             '<LOC ability_omni>Omni Sensor',
             '<LOC ability_personalstealth>Personal Stealth',

@@ -44,7 +44,6 @@ TAAirConstructor = Class(TAair) {
 								end
 							end
 							if (self.isReclaiming) then
-								TAair.OnStartReclaim(self, self.currentTarget)
 							end
 							ForkThread(self.Nano, self, self.currentTarget)
 						end
@@ -101,10 +100,10 @@ TAAirConstructor = Class(TAair) {
 		--self:SetAllWeaponsEnabled(true)
 	end,
 
-
 	OnStartReclaim = function(self, target)
+		TAair.OnStartReclaim(self, target)
 		self.desiredTarget = target
-		if (self.currentState == "aimed" or self.currentState == "opened" ) then
+		if (self.currentState == "aimed" or self.currentState == "opened") then
 			self.currentState = "opened"
 			self.desiredState = "aimed"
 		else
@@ -131,6 +130,7 @@ TAAirConstructor = Class(TAair) {
 		self.countdown = self.pauseTime
 		self.desiredState = "closed"
 	end,
+
 
 	GetCloseArea = function(self)
 		local bp = self:GetBlueprint()
@@ -188,17 +188,33 @@ TAAirConstructor = Class(TAair) {
                             time = 10
                         end
 
-						if (self.isBuilding or self.isReclaiming) then
-							bp = self:GetBlueprint().Display.BuildEmitter or 'nanolathe.bp'
-							CreateEmitterAtBone(self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/' .. bp ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',time,0)
+						local aiBrain = self:GetAIBrain()
+						local storedMass = aiBrain:GetEconomyStoredRatio('MASS')
+						local storedEnergy = aiBrain:GetEconomyStoredRatio('ENERGY')
+						local ratioMass = aiBrain:GetEconomyIncome('MASS') / aiBrain:GetEconomyRequested('MASS')
+						local ratioEnergy =  aiBrain:GetEconomyIncome('ENERGY') / aiBrain:GetEconomyRequested('ENERGY')
+						local lowestStored = math.min(storedMass, storedEnergy)
+						if lowestStored == storedMass then 
+							lowestRatio = ratioMass
+						else
+							lowestRatio = ratioEnergy
+						end
+
+						local bp
+						bp = self:GetBlueprint().Display.BuildEmitter or 'nanolathe.bp'
+						CreateEmitterAtBone(self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/' .. bp ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',time,0)
+						
+
+						if lowestRatio < 1 and lowestStored < 0.1 then
+							target = math.floor(1 / lowestRatio)
+						else
+							target = 1
 						end
 					end
+					current = 0
 				end
 			end
-					current = 0
 			WaitSeconds(0.25)
 		end
 	end,
 }
-
-TypeClass = TAAirConstructor

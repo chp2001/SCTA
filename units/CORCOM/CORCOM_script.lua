@@ -140,10 +140,9 @@ CORCOM = Class(TACommander) {
 		self.Spinners.Torso:SetSpeed(300)
 
 		local distance = VDist2(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z)
-		selfPosition = self:GetPosition('NanoMuzzle') 
+		selfPosition = self:GetPosition('Nanogun') 
 
-		--TURN luparm to x-axis (0 - pitch - 29.99) SPEED <45.01>; #luparm or nanogun?
-		self.Spinners.Nanogun:SetGoal(TAutils.GetAngleTA(0, selfPosition.y, distance, targetPosition.y))
+		self.Spinners.Nanogun:SetGoal(-90)
 		self.Spinners.Nanogun:SetSpeed(45.01)
 
 		WaitFor(self.Spinners.Torso)
@@ -157,7 +156,7 @@ CORCOM = Class(TACommander) {
 		self.Spinners.Torso:SetSpeed(90)
 			
 		self.Spinners.Nanogun:SetGoal(0)
-		self.Spinners.Nanogun:SetSpeed(45)
+		self.Spinners.Nanogun:SetSpeed(45.01)
 
 		WaitFor(self.Spinners.Torso)
 		WaitFor(self.Spinners.Nanogun)

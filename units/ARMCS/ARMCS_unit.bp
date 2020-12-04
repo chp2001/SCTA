@@ -61,7 +61,7 @@ UnitBlueprint {
 	
 	
     },
-    CollisionOffsetY = -0.5,
+    CollisionOffsetY = -0.25,
     Defense = {
         ArmorType = 'Normal',
         Health = 1105,
@@ -170,8 +170,8 @@ UnitBlueprint {
         TurnRate = 33,
         MaxSteerForce = 10,
     },
-    SelectionSizeX = 2,
-    SelectionSizeZ = 2,
+    SelectionSizeX = 1.5,
+    SelectionSizeZ = 3,
     SelectionThickness = 0.25,
     SizeX = 2.5,
     SizeY = 2,

@@ -55,53 +55,10 @@ TAunit = Class(Unit)
 		ForkThread(self.IdleEffects, self)
 	end,
 	
-	OnMotionVertEventChange = function(self, new, old )
-        self:LOGDBG('TAUnit.OnMotionVertEventChange')
-		local bp = self:GetBlueprint()
-		if (old == 'Bottom') then
-			if bp.Display.MovementEffects then
-				ForkThread(self.MovementEffects, self)
-			end
-		elseif (new == 'Bottom' and old == 'Down') then
-			if self.FxMovement then
-				ForkThread(self.IdleEffects, self)
-				for k,v in self.FxMovement do
-					v:Destroy()
-				end
-			end
-		end
-	end,
 
-	OnMotionHorzEventChange = function(self, new, old )
-        self:LOGDBG('TAUnit.OnMotionHorzEventChange')
-	        if self:IsDead() then
-        	    return
-	        end
-
-		local bp = self:GetBlueprint()
-		if (new == 'Cruise') then
-			if bp.Display.MovementEffects then
-				ForkThread(self.MovementEffects, self)
-			end
-			if old == 'Stopped' then
-                		self:PlayUnitSound('StartMove')
-			end
-		elseif (new == 'Stopped') then
-				if self.FxMovement then
-					ForkThread(self.IdleEffects, self)
-					for k,v in self.FxMovement do
-						v:Destroy()
-					end
-			end
-			self:PlayUnitSound('StopMove')
-		end
-		self.CurrentSpeed = new
-			self:StopRocking()
-	end,
-
-				
-	MovementEffects = function(self)
-        self:LOGDBG('TAUnit.MovementEffects')
+	MovementEffects = function(self, EffectsBag, TypeSuffix)
+		self:LOGDBG('TAUnit.MovementEffects')
+		Unit.MovementEffects(self, EffectsBag, TypeSuffix)
 		local bp = self:GetBlueprint()
 		if not IsDestroyed(self) and bp.Display.MovementEffects then
 			for k, v in bp.Display.MovementEffects.Bones do

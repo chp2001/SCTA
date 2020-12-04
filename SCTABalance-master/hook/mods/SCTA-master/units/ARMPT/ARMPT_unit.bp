@@ -21,8 +21,8 @@ UnitBlueprint {
 	'LEVEL1',
     },
     Defense = {
-        Health = 400,
-        MaxHealth = 400,
+        Health = 280,
+        MaxHealth = 280,
     },
     Economy = {
         BuildCostEnergy = 720,
@@ -54,7 +54,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 6,
+            Damage = 9,
             DamageRadius = 1.5, 
             DamageType = 'AntiAir',
             DisplayName = 'ARMKBOT_MISSILE',
@@ -117,7 +117,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 15,
+            Damage = 5,
             DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARMPT_LASER',
@@ -173,7 +173,7 @@ UnitBlueprint {
         { #SMALL_UNITEX
             Damage = 10,
             DamageFriendly = true,
-            DamageRadius = 0.9375,
+            DamageRadius = 1,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

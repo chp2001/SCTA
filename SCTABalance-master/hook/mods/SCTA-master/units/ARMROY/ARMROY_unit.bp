@@ -40,6 +40,8 @@ UnitBlueprint {
         BuildCostMass = 580,
         BuildTime = 26000,
     },
+    SelectionSizeX = 2,
+    SelectionSizeZ = 3,
     Weapon = {
         {
             Audio = {

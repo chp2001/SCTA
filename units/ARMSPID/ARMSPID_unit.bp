@@ -65,6 +65,16 @@ UnitBlueprint {
                 { LODCutoff = 230, ShaderName = 'Unit' },
             },
         },
+        MovementEffects = {
+            Land = {
+                Effects = {
+                    {
+                        Bones = { 'Leg_Tiptoe_001', 'Leg_Tiptoe_002', 'Leg_Tiptoe_003', 'Leg_Tiptoe_004', 'Leg_Tiptoe_005', 'Leg_Tiptoe_006' },
+                        Type = 'GroundKickup01',
+                    },
+                },
+            },
+        },
         ---TransportAnimation = { { Animation = '/mods/SCTA-master/units/armspid/armspid_Alegfold.sca', Weight = 100 } },
         -- = { { Animation = '/mods/SCTA-master/units/armspid/armspid_Alegunfold.sca', Weight = 100 } },
 	    --SmokeBone = 'Turret_Yaw',

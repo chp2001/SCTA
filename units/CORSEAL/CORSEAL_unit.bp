@@ -17,7 +17,7 @@ UnitBlueprint {
         },
         StopMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'TCORST0P',
+            Cue = 'VCORSTOP',
             LodCutoff = 'UnitMove_LodCutoff',
         },
 	Destroyed = Sound {

@@ -39,18 +39,20 @@ CORCOM = Class(TACommander) {
         ---self:SetIntelRadius('Omni', 10)
 	end,
 
-		PlayCommanderWarpInEffect = function(self)
-			self:HideBone(0, true)
-			self:SetUnSelectable(true)
-			self:SetBusy(true)
-			self:SetBlockCommandQueue(true)
-			self:ForkThread(self.WarpInEffectThread)
-		end,
-	
-		WarpInEffectThread = function(self)
-			self:PlayUnitSound('CommanderArrival')
-			self:CreateProjectile( '/effects/entities/UnitTeleport01/UnitTeleport01_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
-			WaitSeconds(2.1)
+	PlayCommanderWarpInEffect = function(self)
+        self:HideBone(0, true)
+        self:SetUnSelectable(false)
+        self:SetBusy(true)
+		self:SetBlockCommandQueue(true)
+		self.PlayCommanderWarpInEffectFlag = true
+        self:ForkThread(self.ExplosionInEffectThread)
+    end,
+
+    ExplosionInEffectThread = function(self)
+		self:PlayUnitSound('CommanderArrival')
+		self.PlayCommanderWarpInEffectFlag = false
+		self:CreateProjectile( '/mods/SCTA-master/effects/entities/TAEntrance/TAEntrance_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
+		WaitSeconds(2.1)
 			self:ShowBone(0, true)
 			self:HideBone('Mlasflsh', true)
 			self:HideBone('BigFlsh', true)
@@ -66,6 +68,7 @@ CORCOM = Class(TACommander) {
 		TACommander.OnStopBeingBuilt(self,builder,layer)
 		ForkThread(self.GiveInitialResources, self)
 			self:SetScriptBit('RULEUTC_CloakToggle', true)
+			self:ForkThread(self.PlayCommanderWarpInEffect)
 	end,
 
 	OnMotionHorzEventChange = function(self, new, old )

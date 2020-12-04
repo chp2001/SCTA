@@ -45,7 +45,7 @@ MAS0001 = Class(AWalkingLandUnit) {
 
 	Spawn = function(self, unitBeingBuilt, order)
 		--self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationOpen):SetRate(0.8)
-		self:CreateProjectile( '/effects/entities/UnitTeleport01/UnitTeleport01_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
+		--self:CreateProjectile( '/effects/entities/UnitTeleport01/UnitTeleport01_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
 		local gtime = GetGameTimeSeconds()
 		while gtime < 9 do
 			WaitSeconds(0.2)

@@ -42,16 +42,19 @@ ARMCOM = Class(TACommander) {
 
 	PlayCommanderWarpInEffect = function(self)
         self:HideBone(0, true)
-        self:SetUnSelectable(true)
+        self:SetUnSelectable(false)
         self:SetBusy(true)
-        self:SetBlockCommandQueue(true)
-        self:ForkThread(self.WarpInEffectThread)
+		self:SetBlockCommandQueue(true)
+		self.PlayCommanderWarpInEffectFlag = true
+        self:ForkThread(self.ExplosionInEffectThread)
     end,
 
-    WarpInEffectThread = function(self)
-        self:PlayUnitSound('CommanderArrival')
-        self:CreateProjectile( '/effects/entities/UnitTeleport01/UnitTeleport01_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
-        WaitSeconds(2.1)
+    ExplosionInEffectThread = function(self)
+		self:PlayUnitSound('CommanderArrival')
+		self.PlayCommanderWarpInEffectFlag = false
+		self:CreateProjectile( '/mods/SCTA-master/effects/entities/TAEntrance/TAEntrance_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
+		WaitSeconds(2.1)
+		---CreateAttachedEmitter( self, 0, army, '/mods/SCTA-master/effects/emitters/ENTRANCE_emit.bp'):ScaleEmitter(4)
 		self:ShowBone(0, true)
 		self:HideBone('DGunMuzzle', true)
         self:HideBone('LaserMuzzle', true)
@@ -66,6 +69,7 @@ ARMCOM = Class(TACommander) {
 		TACommander.OnStopBeingBuilt(self,builder,layer)
 		ForkThread(self.GiveInitialResources, self)
 			self:SetScriptBit('RULEUTC_CloakToggle', true)
+			self:ForkThread(self.PlayCommanderWarpInEffect)
 	end,
 
 	OnMotionHorzEventChange = function(self, new, old )

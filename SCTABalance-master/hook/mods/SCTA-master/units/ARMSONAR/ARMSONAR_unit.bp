@@ -9,6 +9,7 @@ UnitBlueprint {
         'BUILTBYT1SHIP',
         'BUILTBYT1HOVER',
         'BUILTBYT1AIR',
+        'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',

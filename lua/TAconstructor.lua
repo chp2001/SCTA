@@ -141,12 +141,9 @@ TAconstructor = Class(TAWalking) {
 
 	OnStartReclaim = function(self, target)
 		self:LOGDBG('TAContructor.OnStartReclaim')
-		---if not self.cloakOn or not self.isCapturing then
-		--self:SetReclaimTimeMultiplier(1)
-		--self:SetBuildRate(self:GetBlueprint().Economy.BuildRate * 0.60)
 		TAWalking.OnStartReclaim(self, target)
 		self.desiredTarget = target
-		if (self.currentState == "aimed") then
+		if (self.currentState == "aimed" or self.currentState == "opened") then
 			self.currentState = "opened"
 			self.desiredState = "aimed"
 		else
@@ -408,11 +405,6 @@ TACommander = Class(TAconstructor) {
             end
         end
 	end,
-	
-	--CreateExplosionDebris = function( self, army )
-		--TAconstructor.CreateExplosionDebris (self, army)
-		
-    --end,
 
 	DeathThread = function(self)
 		local army = self:GetArmy()

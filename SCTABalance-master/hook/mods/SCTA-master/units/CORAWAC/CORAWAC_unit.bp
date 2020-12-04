@@ -30,7 +30,7 @@ UnitBlueprint {
         BuildCostEnergy = 15000,
         BuildCostMass = 320,
         BuildTime = 3000,
-        MaintenanceConsumptionPerSecondEnergy = 25,
+        MaintenanceConsumptionPerSecondEnergy = 40,
     },
     General = {
         OrderOverrides = {
@@ -53,5 +53,9 @@ UnitBlueprint {
         Min = 7,
       },
       JammerBlips = 5,
+    },
+    Physics = {
+    FuelRechargeRate = 999999,
+    FuelUseTime = 999999,
     },
 }

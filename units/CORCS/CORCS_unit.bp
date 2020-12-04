@@ -56,7 +56,7 @@ UnitBlueprint {
     'OCEAN',
 	'LEVEL1',
     },
-    CollisionOffsetY = -0.5,
+    CollisionOffsetY = -0.25,
     Defense = {
         ArmorType = 'Normal',
         Health = 1150,

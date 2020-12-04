@@ -17,7 +17,7 @@ UnitBlueprint {
         },
         StopMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'TCORST0P',
+            Cue = 'VCORSTOP',
             LodCutoff = 'UnitMove_LodCutoff',
         },
 	    Destroyed = Sound {
@@ -37,12 +37,8 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'VEHICLE',	#'TANK' in TA
+        'VEHICLE',
 	'LEVEL1',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',

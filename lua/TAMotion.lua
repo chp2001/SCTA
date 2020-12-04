@@ -13,7 +13,7 @@ MovementEffects = function( self, EffectsBag, TypeSuffix)
     self:LOGDBG('TATreads.MovementEffects')
     local layer = self:GetCurrentLayer()
     local bpTable = self:GetBlueprint().Display.MovementEffects
-    TAunit.MovementEffects(self)
+    TAunit.MovementEffects(self, EffectsBag, TypeSuffix)
     if bpTable[layer] then
         bpTable = bpTable[layer]
         if bpTable.Treads then

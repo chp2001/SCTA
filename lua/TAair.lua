@@ -70,7 +70,15 @@ TAair = Class(TAunit)
 
 TATransportAir = Class(TAair)
 {
-    KillingInProgress = false,
+	OnMotionVertEventChange = function(self, new, old )
+		if (new == 'Bottom' and old == 'Down' and EntityCategoryContains(categories.TRANSPORTATION, self)) then
+	        self:PlayUnitSound('Landing')
+			self:CloseWings(self)
+		TAair.OnMotionVertEventChange(self, new, old)
+		end
+	end,
+	
+	KillingInProgress = false,
 
 
     Kill = function(self)

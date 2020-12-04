@@ -19,6 +19,9 @@ UnitBlueprint {
     'KBOT',
 'LEVEL2',
    },
+   Display = {
+    UniformScale = 0.12,
+},
     Defense = {
         Health = 3500,
         MaxHealth = 3500,
@@ -35,6 +38,9 @@ UnitBlueprint {
         BuildCostMass = 400,
         BuildTime = 5000,
     },
+    SizeX = 1.5,
+    SizeY = 1.5,
+    SizeZ = 1.5,
     StrategicIconName = 'icon_land2_directfire',
     Weapon = {
         {
@@ -48,7 +54,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 55,
+            Damage = 53,
 	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'LIGHTNING',

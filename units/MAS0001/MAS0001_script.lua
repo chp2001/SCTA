@@ -6,6 +6,7 @@ local EffectUtil = import('/lua/EffectUtilities.lua')
 MAS0001 = Class(AWalkingLandUnit) {
 	OnCreate = function(self)
 	AWalkingLandUnit.OnCreate(self)
+	self:AddBuildRestriction(categories.NOMADS)
 	self.AnimManip = CreateAnimator(self)
 	self.Trash:Add(self.AnimManip)
 	end,
@@ -13,11 +14,13 @@ MAS0001 = Class(AWalkingLandUnit) {
     OnStopBeingBuilt = function(self,builder,layer)
 		---local army = self:GetArmy()
 		AWalkingLandUnit.OnStopBeingBuilt(self,builder,layer)
+		if __blueprints['xnl0001'] then
+		self:RemoveBuildRestriction(categories.NOMADS)
+		end
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationOpen):SetRate(0.25)
     end,
 
    GiveInitialResources = function(self)
-       #WaitTicks(2)
         self:GetAIBrain():GiveResource('Energy', self:GetBlueprint().Economy.StorageEnergy)
         self:GetAIBrain():GiveResource('Mass', self:GetBlueprint().Economy.StorageMass)
     end,

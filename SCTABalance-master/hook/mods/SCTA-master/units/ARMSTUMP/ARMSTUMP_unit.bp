@@ -16,5 +16,4 @@ UnitBlueprint {
     SelectionSizeZ = 1,
     SizeX = 1.5,
 	SizeZ = 1.5,
-    SizeY = 1, 
 }

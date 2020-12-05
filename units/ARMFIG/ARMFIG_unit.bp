@@ -129,7 +129,7 @@ UnitBlueprint {
         BuildCostMass = 99,
         BuildTime = 9182,
     },
-    --[[--[[Footprint = {
+    --[[Footprint = {
         SizeX = 2,
         SizeZ = 2,
     },]]--

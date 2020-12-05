@@ -6,7 +6,7 @@
 local TACommander = import('/mods/SCTA-master/lua/TAconstructor.lua').TACommander
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
-local TACommanderDeathWeapon = import('/mods/SCTAFix/lua/TAweapon.lua').TACommanderDeathWeapon
+local TACommanderDeathWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TACommanderDeathWeapon
 local TADGun = import('/mods/SCTA-master/lua/TAweapon.lua').TADGun
 
 CORCOM = Class(TACommander) {
@@ -131,25 +131,30 @@ CORCOM = Class(TACommander) {
 		self:GetAIBrain():GiveResource('MASS', self:GetBlueprint().Economy.StorageMass)
 	end,
 
+	OnStartReclaim = function(self, target)
+		TACommander.OnStartReclaim(self, target)
+		self.Spinners.Nanogun:SetGoal(-60)
+		self.Spinners.Nanogun:SetSpeed(45.01)
+		self:SetScriptBit('RULEUTC_CloakToggle', true)
+	end,
 
+
+	Open = function(self)
+		self.Spinners.Nanogun:SetGoal(-85)
+		self.Spinners.Nanogun:SetSpeed(45.01)
+		TACommander.Open(self)
+	end,
 
 	Aim = function(self, target)
 		local selfPosition = self:GetPosition('Torso') 
 		local targetPosition = target:GetPosition()
 			
-
+		WaitFor(self.Spinners.Nanogun)
 		--TURN torso to y-axis heading SPEED <300.07>;
 		self.Spinners.Torso:SetGoal(TAutils.GetAngleTA(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
 		self.Spinners.Torso:SetSpeed(300)
 
-		local distance = VDist2(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z)
-		selfPosition = self:GetPosition('Nanogun') 
-
-		self.Spinners.Nanogun:SetGoal(-90)
-		self.Spinners.Nanogun:SetSpeed(45.01)
-
 		WaitFor(self.Spinners.Torso)
-		WaitFor(self.Spinners.Nanogun)
 		TACommander.Aim(self,target)
 	end,
 

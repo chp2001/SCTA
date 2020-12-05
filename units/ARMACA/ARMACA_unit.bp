@@ -139,7 +139,7 @@ UnitBlueprint {
 	ProductionPerSecondMass = 2,
 	NaturalProducer = true,
     },
-    --[[--[[Footprint = {
+   --[[Footprint = {
         SizeX = 2,
         SizeZ = 2,
     },]]--

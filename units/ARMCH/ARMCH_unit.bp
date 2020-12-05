@@ -130,10 +130,7 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 15,
 	NaturalProducer = true,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-    },
+
     General = {
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',

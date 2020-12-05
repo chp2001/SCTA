@@ -129,11 +129,10 @@ UnitBlueprint {
         BuildCostMass = 101,
         BuildTime = 9196,
     },
-    Footprint = {
-	MaxSlope = 0.625,
+    --[[Footprint = {
         SizeX = 2,
         SizeZ = 2,
-    },
+    },]]--
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',

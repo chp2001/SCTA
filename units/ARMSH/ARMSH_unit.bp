@@ -91,10 +91,7 @@ UnitBlueprint {
         BuildCostMass = 76,
         BuildTime = 3388,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-    },
+
     General = {
         Category = 'Scout',
         Classification = 'RULEUC_MilitaryVehicle',

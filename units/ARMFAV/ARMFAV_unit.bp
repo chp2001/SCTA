@@ -116,12 +116,12 @@ UnitBlueprint {
         BuildCostMass = 37,
         BuildTime = 1465,
     },
-    Footprint = {
+    --[[Footprint = {
 	MaxSlope = 1,
 	MaxWaterDepth = 0.75,
         SizeX = 2,
         SizeZ = 2,
-    },
+    },]]--
     General = {
         Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',

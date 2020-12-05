@@ -79,11 +79,7 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 15,
         BuildTime = 3200,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-	MaxWaterDepth = 0,
-    },
+
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',

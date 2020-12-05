@@ -7,10 +7,6 @@ UnitBlueprint {
     Economy = {
 	MaintenanceConsumptionPerSecondEnergy = 15,
     },
-    Footprint = {
-	SizeX = 1,
-	SizeZ = 1,
-    },
     Intel = {
         RadarStealthFieldRadius = 20,
     },

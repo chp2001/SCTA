@@ -8,8 +8,4 @@ UnitBlueprint {
         BuildCostEnergy = 13000,
         BuildCostMass = 800,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
 }

@@ -7,10 +7,6 @@ UnitBlueprint {
         BuildCostMass = 64,
         BuildTime = 2100,
     },
-    Footprint = {
-	SizeX = 1,
-	SizeZ = 1,
-    },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,
     SelectionCenterOffsetZ = -0.25,

@@ -108,11 +108,6 @@ UnitBlueprint {
         BuildTime = 5933,
 	MaintenanceConsumptionPerSecondEnergy = 10,
     },
-    Footprint = {
-	SizeX = 2,
-	SizeZ = 2,
-	MaxSlope = 1,
-    },
     General = {
         Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',

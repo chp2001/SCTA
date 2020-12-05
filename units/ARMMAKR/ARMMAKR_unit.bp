@@ -93,11 +93,7 @@ UnitBlueprint {
         ProductionPerSecondMass = 1,
 	MaintenanceConsumptionPerSecondEnergy = 60,
     },
-    Footprint = {
-	MaxSlope = 0.625,
-        SizeX = 3,
-        SizeZ = 3,
-    },
+
     General = {
 	BuildAngle = 8192,
         Category = 'Economy',

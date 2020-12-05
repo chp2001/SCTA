@@ -87,12 +87,6 @@ UnitBlueprint {
         BuildCostMass = 119,
         BuildTime = 1941,
     },
-    Footprint = {
-	MaxSlope = 1,
-	MaxWaterDepth = 0.75,
-        SizeX = 3,
-        SizeZ = 3,
-    },
     General = {
         Category = 'Anti Air',
         Classification = 'RULEUC_MilitaryVehicle',

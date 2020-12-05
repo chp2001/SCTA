@@ -130,11 +130,6 @@ UnitBlueprint {
         BuildCostMass = 107,
         BuildTime = 5500,
     },
-    Footprint = {
-	MaxSlope = 0.625,
-        SizeX = 3,
-        SizeZ = 3,
-    },
     General = {
         Category = 'Transport',
         Classification = 'RULEUC_MilitaryAircraft',

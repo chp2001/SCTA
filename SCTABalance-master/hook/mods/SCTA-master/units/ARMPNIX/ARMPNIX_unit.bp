@@ -23,10 +23,6 @@ UnitBlueprint {
         BuildCostEnergy = 30000,
         BuildCostMass = 1200,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
     StrategicIconName = 'icon_bomber2_directfire',
     Weapon = {
         {

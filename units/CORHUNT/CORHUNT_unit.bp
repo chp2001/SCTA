@@ -127,10 +127,10 @@ UnitBlueprint {
         BuildCostMass = 139,
         BuildTime = 10064,
     },
-    Footprint = {
+    --[[Footprint = {
         SizeX = 1,
         SizeZ = 1,
-    },
+    },]]--
     General = {
         Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',

@@ -146,12 +146,6 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 20,
 	ProductionPerSecondMass = 1,
     },
-    Footprint = {
-	MaxSlope = 1,
-	MaxWaterDepth = 1.125,
-        SizeX = 3,
-        SizeZ = 3,
-    },
     General = {
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',

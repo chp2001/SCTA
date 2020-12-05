@@ -92,12 +92,6 @@ UnitBlueprint {
         BuildCostMass = 492,
         BuildTime = 24850,
     },
-    Footprint = {
-	SizeX = 2,
-	SizeZ = 2,
-	MaxSlope = 0.875,
-	MaxWaterDepth = 0.75,
-    },
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -138,6 +132,7 @@ UnitBlueprint {
     SelectionSizeZ = 1,
     SelectionThickness = 0.25,
     SizeX = 2,
+    SizeY = 2,
     SizeZ = 2,
     StrategicIconName = 'icon_bot2_directfire',
     StrategicIconSortPriority = 0,

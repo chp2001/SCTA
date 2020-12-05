@@ -23,8 +23,4 @@ UnitBlueprint {
         BuildCostMass = 90,
         BuildTime = 1000,
     },
-    Footprint = {
-	SizeX = 1,
-	SizeZ = 1,
-    },
 }

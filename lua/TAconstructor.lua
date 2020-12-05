@@ -343,11 +343,6 @@ TANecro = Class(TAconstructor) {
 
 TACommander = Class(TAconstructor) {
 
-	OnStartReclaim = function(self, target)
-		TAconstructor.OnStartReclaim(self, target)
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
-	end,
-
 	OnStartCapture = function(self, target)
 		---self:SetCaptureTimeMultiplier(1)
 		--self:SetBuildRate(self:GetBlueprint().Economy.BuildRate * 0.6)

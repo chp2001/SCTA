@@ -114,12 +114,6 @@ UnitBlueprint {
         },
         MaxBuildDistance = 4.375,
     },
-    Footprint = {
-	MaxSlope = 1,
-	MaxWaterDepth = 0,
-        SizeX = 3,
-        SizeZ = 3,
-    },
     General = {
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',

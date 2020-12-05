@@ -15,10 +15,6 @@ Economy = {
     BuildCostMass = 450,
     BuildTime = 6000,
 },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
     General = {
         ToggleCaps = {
             RULEUTC_JammingToggle = true,

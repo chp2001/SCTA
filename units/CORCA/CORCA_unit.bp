@@ -143,11 +143,10 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 10,
 	NaturalProducer = true,
     },
-    Footprint = {
-	MaxSlope = 0.625,
+   --[[Footprint = {
         SizeX = 2,
         SizeZ = 2,
-    },
+    },]]--
     General = {
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',

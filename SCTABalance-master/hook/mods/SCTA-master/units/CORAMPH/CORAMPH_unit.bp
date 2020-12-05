@@ -23,10 +23,6 @@ Economy = {
     BuildCostMass = 1900,
     BuildTime = 20000,
 },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
     StrategicIconName = 'icon_bot3_directfire',
     Weapon = {
         {

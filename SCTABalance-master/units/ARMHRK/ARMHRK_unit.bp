@@ -89,10 +89,6 @@ UnitBlueprint {
         BuildCostMass = 440,
         BuildTime = 7002,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-        },
     General = {
         Category = 'Indirect Fire',
         Classification = 'RULEUC_MilitaryVehicle',

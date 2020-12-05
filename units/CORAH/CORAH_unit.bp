@@ -92,10 +92,7 @@ UnitBlueprint {
         BuildCostMass = 120,
         BuildTime = 3747,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-    },
+
     General = {
         Category = 'Anti Air',
         Classification = 'RULEUC_MilitaryVehicle',

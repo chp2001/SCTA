@@ -27,10 +27,6 @@ UnitBlueprint {
         BuildCostMass = 2000,
         BuildTime = 24000,
     },
-    Footprint = {
-	SizeX = 1,
-	SizeZ = 1,
-    },
     StrategicIconName = 'icon_bot3_sniper',
     Weapon = {
         {

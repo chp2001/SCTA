@@ -29,25 +29,30 @@ CORDECOM = Class(TAconstructor) {
 		TAconstructor.OnCreate(self)
 	end,
 
+	OnStartReclaim = function(self, target)
+		TAconstructor.OnStartReclaim(self, target)
+		self.Spinners.Nanogun:SetGoal(-60)
+		self.Spinners.Nanogun:SetSpeed(45.01)
+	end,
+
+
+	Open = function(self)
+		self.Spinners.Nanogun:SetGoal(-85)
+		self.Spinners.Nanogun:SetSpeed(45.01)
+		TAconstructor.Open(self)
+	end,
 
 	Aim = function(self, target)
 		local selfPosition = self:GetPosition('Torso') 
 		local targetPosition = target:GetPosition()
 			
-
+		WaitFor(self.Spinners.Nanogun)
 		--TURN torso to y-axis heading SPEED <300.07>;
 		self.Spinners.Torso:SetGoal(TAutils.GetAngleTA(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
 		self.Spinners.Torso:SetSpeed(300)
 
-		local distance = VDist2(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z)
-		selfPosition = self:GetPosition('NanoMuzzle') 
-
-		--TURN Nanogun to x-axis (0 - pitch - 29.99) SPEED <45.01>;
-		self.Spinners.Nanogun:SetGoal(-180 + TAutils.GetAngleTA(0, selfPosition.y, distance, targetPosition.y))
-		self.Spinners.Nanogun:SetSpeed(45.01)
-
 		WaitFor(self.Spinners.Torso)
-		WaitFor(self.Spinners.Nanogun)
+
 		TAconstructor.Aim(self, target)
 	end,
 
@@ -57,7 +62,7 @@ CORDECOM = Class(TAconstructor) {
 		self.Spinners.Torso:SetSpeed(90)
 	
 		self.Spinners.Nanogun:SetGoal(0)
-		self.Spinners.Nanogun:SetSpeed(45)
+		self.Spinners.Nanogun:SetSpeed(45.01)
 
 		WaitFor(self.Spinners.Torso)
 		WaitFor(self.Spinners.Nanogun)

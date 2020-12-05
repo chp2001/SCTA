@@ -125,11 +125,7 @@ UnitBlueprint {
         BuildCostMass = 220,
         BuildTime = 16269,
     },
-    Footprint = {
-	MaxSlope = 0.625,
-        SizeX = 3,
-        SizeZ = 3,
-    },
+
     General = {
         Category = 'Bomber',
         Classification = 'RULEUC_MilitaryVehicle',

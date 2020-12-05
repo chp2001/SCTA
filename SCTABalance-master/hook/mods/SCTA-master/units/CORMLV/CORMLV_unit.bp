@@ -27,10 +27,6 @@ UnitBlueprint {
     Economy = {
         MaxBuildDistance = 6,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,
     SizeX = 1.5,

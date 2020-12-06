@@ -7,24 +7,24 @@ UnitBlueprint {
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'TCORSEL',
+            Cue = 'TARMSEL',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StartMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'TCORMOVE',
+            Cue = 'TARMMOVE',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StopMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'VCORSTOP',
+            Cue = 'TARMST0P',
             LodCutoff = 'UnitMove_LodCutoff',
         },
-	Destroyed = Sound {
+    Destroyed = Sound {
             Bank = 'TA_Sound',
             Cue = 'XPLOLRG3',
             LodCutoff = 'UnitMove_LodCutoff',
-	},
+    },
     },
     BuildIconSortPriority = 4,
     Categories = {
@@ -116,7 +116,7 @@ UnitBlueprint {
         TurnRate = 71,
         MaxSteerForce = 10,
     },
-    SelectionCenterOffsetZ = -0.25,
+    SelectionCenterOffsetZ = -0.1,
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.3,
     SelectionThickness = 0.25,

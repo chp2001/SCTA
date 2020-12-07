@@ -148,7 +148,7 @@ UnitBlueprint {
         },
         FlattenSkirt = true,
         SkirtSizeX = 8,
-        SkirtSizeZ = 6,
+        SkirtSizeZ = 8,
 	BuildAreaX = 4,
 	BuildAreaZ = 4,
 	CloseAreaX = 4,

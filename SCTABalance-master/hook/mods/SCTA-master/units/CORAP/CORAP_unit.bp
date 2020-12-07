@@ -49,6 +49,8 @@ UnitBlueprint {
             'cordap', 
         },
     },
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 5,
     LifeBarSize = 8,
     General = {
         UpgradesTo = 'cordap', 

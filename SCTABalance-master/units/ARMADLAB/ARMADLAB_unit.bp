@@ -174,8 +174,8 @@ UnitBlueprint {
     Interface = {
         HelpText = 'Produces Kbots',
     },
-    LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 5,
     LifeBarSize = 8,
     Physics = {
         BuildOnLayerCaps = {

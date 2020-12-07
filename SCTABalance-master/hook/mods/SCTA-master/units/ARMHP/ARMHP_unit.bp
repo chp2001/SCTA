@@ -42,6 +42,8 @@ UnitBlueprint {
             'PHIB LEVEL3 ARM',
         },
     },
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 5,
     LifeBarSize = 8,
     SelectionSizeX = 7,
     SelectionSizeZ = 5,

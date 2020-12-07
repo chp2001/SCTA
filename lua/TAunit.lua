@@ -54,6 +54,14 @@ TAunit = Class(Unit)
 		self:SetConsumptionActive(true)	
 		ForkThread(self.IdleEffects, self)
 	end,
+
+	OnStopBuild = function(self, unitBeingBuilt, order)
+		Unit.OnStopBuild(self, unitBeingBuilt, order)
+		if unitBeingBuilt:GetFractionComplete() == 1 and unitBeingBuilt:GetUnitId() == self:GetBlueprint().General.UpgradesTo then
+			NotifyUpgrade(self, unitBeingBuilt)
+			self:Destroy()
+		end
+	end,
 	
 
 	MovementEffects = function(self, EffectsBag, TypeSuffix)

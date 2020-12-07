@@ -41,6 +41,8 @@ UnitBlueprint {
             'KBOT LEVEL2 CORE',
         },
     },
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 5,
     LifeBarSize = 8,
     Intel = {
         VisionRadius = 10,

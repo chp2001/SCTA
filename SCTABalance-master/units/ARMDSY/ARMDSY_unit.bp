@@ -139,8 +139,8 @@ UnitBlueprint {
     Interface = {
         HelpText = 'Produces Ships',
     },
-    LifeBarHeight = 0.25,
-    LifeBarOffset = 1,
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 5,
     LifeBarSize = 8,
     Physics = {
         BuildOnLayerCaps = {
@@ -175,7 +175,7 @@ UnitBlueprint {
         },
     },
     SelectionSizeX = 9.9,
-    SelectionSizeZ = 6.8,
+    SelectionSizeZ = 9.9,
     SelectionThickness = 0.25,
     SizeX = 12,
     SizeY = 5,

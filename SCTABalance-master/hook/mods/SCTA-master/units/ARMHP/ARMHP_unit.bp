@@ -46,7 +46,7 @@ UnitBlueprint {
     LifeBarOffset = 5,
     LifeBarSize = 8,
     SelectionSizeX = 7,
-    SelectionSizeZ = 5,
+    SelectionSizeZ = 7,
     SelectionThickness = 0.25,
     SizeX = 9,
     SizeY = 1,

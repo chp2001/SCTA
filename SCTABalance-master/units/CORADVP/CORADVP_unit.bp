@@ -111,7 +111,7 @@ UnitBlueprint {
         'VEHICLE LEVEL3 CORE',
     },
 	InitialRallyX = 0,
-	InitialRallyZ = 7.5,
+	InitialRallyZ = 4,
         StorageMass = 100,
         StorageEnergy = 100,
     },

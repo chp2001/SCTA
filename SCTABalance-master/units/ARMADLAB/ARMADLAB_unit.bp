@@ -140,7 +140,7 @@ UnitBlueprint {
             'KBOT LEVEL3 ARM',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = -7.5,
+	InitialRallyZ = -4,
         StorageMass = 200,
         StorageEnergy = 200,
     },

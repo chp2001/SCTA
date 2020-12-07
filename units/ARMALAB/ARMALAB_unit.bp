@@ -43,10 +43,6 @@ UnitBlueprint {
 		'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -103,7 +99,7 @@ UnitBlueprint {
             'KBOT LEVEL2 ARM',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = 7.5,
+	InitialRallyZ = 4,
         StorageMass = 200,
         StorageEnergy = 200,
     },

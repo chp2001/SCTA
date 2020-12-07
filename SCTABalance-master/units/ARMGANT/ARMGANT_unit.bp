@@ -132,9 +132,9 @@ UnitBlueprint {
     Interface = {
         HelpText = 'Builds Drake',
     },
-    LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
-    LifeBarSize = 10,
+    LifeBarHeight = 0.3,
+    LifeBarOffset = 7,
+    LifeBarSize = 13,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
@@ -164,11 +164,11 @@ UnitBlueprint {
             3.5,
         },
     },
-    SelectionSizeX = 10,
-    SelectionSizeZ = 10,
+    SelectionSizeX = 12,
+    SelectionSizeZ = 12,
     SelectionThickness = 0.25,
     SizeX = 14,
-    SizeY = 16,
+    SizeY = 10,
     SizeZ = 14,
     StrategicIconName = 'icon_experimental_generic',
     StrategicIconSortPriority = 5,

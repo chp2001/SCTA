@@ -176,7 +176,6 @@ do
                 LifeBarHeight = 0.3,
                 LifeBarOffset = 0.5,
                 LifeBarSize = 0.5, 
-                SelectionThickness = 2.5,
                 SelectionSizeX = 0.5,
                 SelectionSizeZ = 0.5,
                 SizeX = 0.5,

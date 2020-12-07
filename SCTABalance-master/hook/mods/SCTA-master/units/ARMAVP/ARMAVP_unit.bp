@@ -36,6 +36,8 @@ UnitBlueprint {
             'VEHICLE LEVEL1 ARM',
         },
     },
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 5,
     LifeBarSize = 8,
     Footprint = {
         MaxSlope = 0.625,

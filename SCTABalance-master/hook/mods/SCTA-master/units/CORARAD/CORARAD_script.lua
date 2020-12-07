@@ -2,14 +2,6 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local oldCORARAD = CORARAD
 
 CORARAD = Class(oldCORARAD) {
-	OnStopBuild = function(self, unitBeingBuilt)
-		 oldCORARAD.OnStopBuild(self, unitBeingBuilt)
-		 if unitBeingBuilt:GetFractionComplete() == 1 and unitBeingBuilt:GetUnitId() == self:GetBlueprint().General.UpgradesTo then
-			 NotifyUpgrade(self, unitBeingBuilt)
-			 self:Destroy()
-		 end
-	 end,
-
 	 OnFailedToBuild = function(self)
         oldCORARAD.OnFailedToBuild(self)
 		self:SetMaintenanceConsumptionActive()

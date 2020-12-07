@@ -143,7 +143,7 @@ UnitBlueprint {
             'KBOT LEVEL2 ARM',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = -7.5,
+	InitialRallyZ = -4,
         StorageMass = 200,
         StorageEnergy = 200,
     },
@@ -178,8 +178,8 @@ UnitBlueprint {
     Interface = {
         HelpText = 'Produces Kbots',
     },
-    LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 5,
     LifeBarSize = 8,
     Physics = {
         BuildOnLayerCaps = {

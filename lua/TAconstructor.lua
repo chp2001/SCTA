@@ -20,10 +20,8 @@ TAconstructor = Class(TAWalking) {
 	AnimationThread = function(self)
 		self.animating = true
 		while not IsDestroyed(self) do
-			--ChangeState(self, self.IdleState)
 			if(self.currentState == "rolloff") then
 				self.currentTarget = nil
-				--ChangeState(self, self.IdleState)
 				self.countdown = self.countdown - 0.2
 				if (self.countdown <= 0) then
 					self.desiredState = "closed"
@@ -198,10 +196,6 @@ TAconstructor = Class(TAWalking) {
 
 	RollOff = function(self, unitBeingBuilt)
         self:LOGDBG('TAContructor.RollOff')
-	end,
-
-	Unpack = function(self)
-        self:LOGDBG('TAContructor.Unpack')
 	end,
 
 	Open = function(self)

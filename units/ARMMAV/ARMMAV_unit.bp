@@ -148,7 +148,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 45,
+            Damage = 66,
             DamageRadius = 0.25,
             FiringRandomness = 0.05,
             DamageType = 'Normal',
@@ -163,7 +163,7 @@ UnitBlueprint {
             Label = 'EMG',
             MaxRadius = 30,
             MuzzleSalvoDelay = 0.1,
-            MuzzleSalvoSize = 1,
+            MuzzleSalvoSize = 2,
 	        MuzzleVelocity = 27,
             ProjectileId = '/mods/SCTA-master/projectiles/EMG/EMG_proj.bp',
                 RackBones = {
@@ -185,7 +185,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 2,
-            RateOfFire = 3,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

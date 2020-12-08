@@ -13,6 +13,7 @@ UnitBlueprint {
         Health = 140,
         MaxHealth = 140,
     },
+    LifeBarSize = 1,
     SelectionSizeX = 0.5,
     SelectionSizeZ = 0.5,
     SelectionCenterOffsetZ = -0.15,

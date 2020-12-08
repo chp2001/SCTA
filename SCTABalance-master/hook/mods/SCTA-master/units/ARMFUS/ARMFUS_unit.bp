@@ -31,8 +31,8 @@ UnitBlueprint {
         SizeZ = 4,
     },
     Economy = {
-        BuildCostEnergy = 40000,
-        BuildCostMass = 2200,
+        BuildCostEnergy = 38000,
+        BuildCostMass = 1900,
         BuildTime = 60000,
 	    NaturalProducer = true,
         ProductionPerSecondEnergy = 500,

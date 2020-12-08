@@ -28,9 +28,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 25,
+            Damage = 24,
             DamageRadius = 1.5, 
-            DamageType = 'AntiAir',
+            DamageType = 'SAMAir',
             DisplayName = 'ARMKBOT_MISSILE',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',
@@ -65,7 +65,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 1.5,
+            RateOfFire = 1.666666667,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

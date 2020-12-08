@@ -48,8 +48,8 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 650,
-        MaxHealth = 650,
+        Health = 580,
+        MaxHealth = 580,
         AirThreatLevel = 4,
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,
@@ -84,7 +84,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 1027,
-        BuildCostMass = 119,
+        BuildCostMass = 128,
         BuildTime = 1941,
     },
     General = {
@@ -146,7 +146,7 @@ UnitBlueprint {
             Damage = 90,
             DamageRadius = 1.5,
             FiringRandomness = 0,
-            DamageType = 'AntiAir',
+            DamageType = 'SAMAir',
             DisplayName = 'ARMTRUCK_MISSILE',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',

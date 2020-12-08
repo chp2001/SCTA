@@ -70,9 +70,6 @@ TAAirConstructor = Class(TAair) {
 
 	OnStartBuild = function(self, unitBeingBuilt, order )
 		---TAair.OnStartBuild(self, unitBeingBuilt, order )
-        if unitBeingBuilt.noassistbuild and unitBeingBuilt:GetHealth() == unitBeingBuilt:GetMaxHealth() then
-            return
-		end
 		self.desiredTarget = unitBeingBuilt
 		if (self.currentState == "aimed" or self.currentState == "opened") then
 			self.currentState = "opened"

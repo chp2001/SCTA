@@ -94,9 +94,6 @@ TAconstructor = Class(TAWalking) {
 	OnStartBuild = function(self, unitBeingBuilt, order )
 		self:LOGDBG('TAContructor.OnStartBuild')
 		---TAWalking.OnStartBuild(self, unitBeingBuilt, order )
-        if unitBeingBuilt.noassistbuild and unitBeingBuilt:GetHealth() == unitBeingBuilt:GetMaxHealth() then
-            return
-		end
 		self.desiredTarget = unitBeingBuilt
 		if (self.currentState == "aimed" or self.currentState == "opened" or self.currentState == "rolloff") then
 			self.currentState = "opened"

@@ -205,7 +205,6 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        
     },
         Wreckage = {
 	---UseCustomMesh = true,

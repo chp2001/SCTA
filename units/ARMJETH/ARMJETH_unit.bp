@@ -158,7 +158,7 @@ UnitBlueprint {
             DamageFriendly = false,
             Damage = 63,
             DamageRadius = 1.5, 
-            DamageType = 'AntiAir',
+            DamageType = 'SAMAir',
             DisplayName = 'ARMKBOT_MISSILE',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',

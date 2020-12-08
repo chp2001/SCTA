@@ -198,7 +198,7 @@ UnitBlueprint {
             Damage = 120, 						
             DamageRadius = 1.5,
             FiringRandomness = 0,
-            DamageType = 'AntiAir',
+            DamageType = 'SAMAir',
             DisplayName = 'CORVTOL_ADVMISSILE',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',
@@ -257,7 +257,7 @@ UnitBlueprint {
             Damage = 120, 						
             DamageRadius = 1.5,
             FiringRandomness = 0,
-            DamageType = 'AntiAir',
+            DamageType = 'SAMAir',
             DisplayName = 'CORVTOL_ADVMISSILE2',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',

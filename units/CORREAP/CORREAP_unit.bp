@@ -167,7 +167,7 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
             Label = 'CORE_REAP',
-            MaxRadius = 30,
+            MaxRadius = 24,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 30,

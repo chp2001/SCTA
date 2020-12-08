@@ -146,7 +146,7 @@ UnitBlueprint {
             Damage = 90,
             DamageRadius = 1.5,
             FiringRandomness = 0,
-            DamageType = 'AntiAir',
+            DamageType = 'SAMAir',
             DisplayName = 'ARMTRUCK_MISSILE',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',

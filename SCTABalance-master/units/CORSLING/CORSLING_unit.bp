@@ -156,7 +156,7 @@ UnitBlueprint {
                 Damage = 140,
                 DamageRadius = 1,
                 FiringRandomness = 0,
-                DamageType = 'AntiAir',
+                DamageType = 'SAMAir',
                 DisplayName = 'ARMAH_WEAPON',
                 FireTargetLayerCapsTable = {
                     Land = 'Land|Water|Air',

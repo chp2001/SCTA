@@ -161,7 +161,7 @@ UnitBlueprint {
             DamageFriendly = false,
             Damage = 72,
             DamageRadius = 1.5, 
-            DamageType = 'AntiAir',
+            DamageType = 'SAMAir',
             DisplayName = 'CORKBOT_MISSILE',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',

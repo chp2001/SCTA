@@ -157,7 +157,7 @@ UnitBlueprint {
             Damage = 150,
             DamageRadius = 1.5,
             FiringRandomness = 0,
-            DamageType = 'AntiAir',
+            DamageType = 'SAMAir',
             DisplayName = 'CORAH_WEAPON',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',

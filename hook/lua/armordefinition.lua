@@ -7,6 +7,7 @@ armordefinition = {
         # Armor Definition
         'Normal 1.0',
         'AntiAir 0.05',
+        'SAMAir 0.33',
         'DGun 1.0',
     },
     {   # Armor Type Name
@@ -15,6 +16,7 @@ armordefinition = {
         # Armor Definition
         'Normal 1.0',
         'AntiAir 0.05',
+        'SAMAir 0.33',
         'DGun 1.0',
     },
     {   # Armor Type Name
@@ -24,6 +26,7 @@ armordefinition = {
         'Normal 1.0',
         'DGun 1.0',
         'AntiAir 1.0',
+        'SAMAir 1.0',
     },
     {   # Armor Type Name
         'Commander',
@@ -34,6 +37,7 @@ armordefinition = {
         'DGun 0.08',
         'Overcharge 0.25',
         'AntiAir 0.2',
+        'SAMAir 0.5',
     },
     {   # Armor Type Name
         'Structure',
@@ -41,6 +45,7 @@ armordefinition = {
         # Armor Definition
         'Normal 1.0',
         'AntiAir 0.02',
+        'SAMAir 0.2',
         'Overcharge 0.25',
         'DGun 0.1',
         'Deathnuke 0.032',
@@ -59,6 +64,7 @@ armordefinition = {
         # Armor Definition
         'Normal 1.0',
         'AntiAir 0.02',
+        'SAMAir 0.2',
         'Overcharge 0.25',
         'DGun 0.1',
         'Deathnuke 0.032',
@@ -70,6 +76,7 @@ armordefinition = {
 
         # Armor Definition
         'Normal 1.0',
+        'SAMAir 1.0',
         'AntiAir 1.0',
         'CzarBeam 0.25',
         'DGun 1.0',
@@ -81,6 +88,7 @@ armordefinition = {
 
         # Armor Definition
         'Normal 1.0',
+        'SAMAir 0.2',
         'AntiAir 0.02',
         'DGun 1.0',
         'TacticalMissile 0.55',

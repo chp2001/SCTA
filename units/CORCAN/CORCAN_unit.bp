@@ -157,7 +157,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 220,
+            Damage = 210,
 	    DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'CORE_CANLASER',
@@ -189,7 +189,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.8,
+            RateOfFire = 0.8333333333,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

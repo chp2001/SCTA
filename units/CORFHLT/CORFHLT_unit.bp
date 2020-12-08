@@ -133,7 +133,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 200,
+            Damage = 100,
             DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'CORFHLT_LASER',
@@ -171,9 +171,9 @@ UnitBlueprint {
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
-            RackSalvoSize = 1,
+            RackSalvoSize = 2,
             RackSlavedToTurret = false,
-            RateOfFire = 0.91,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS'

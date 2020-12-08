@@ -79,7 +79,7 @@ Economy = {
         RackSalvoReloadTime = 0,
         RackSalvoSize = 1,
         RackSlavedToTurret = false,
-        RateOfFire = 0.65,
+        RateOfFire = 0.6666666667,
         TargetCheckInterval = 1,
         TargetPriorities = {
             'ALLUNITS',
@@ -139,7 +139,7 @@ Economy = {
         RackSalvoReloadTime = 0,
         RackSalvoSize = 1,
         RackSlavedToTurret = false,
-        RateOfFire = 0.42,
+        RateOfFire = 0.4166666667,
         TargetCheckInterval = 1,
         TargetPriorities = {
             'ALLUNITS',

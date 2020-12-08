@@ -240,8 +240,7 @@ UnitBlueprint {
             EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 0,
             EnergyRequired = 50,
-            
-            RateOfFire = 1.92,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS'
@@ -313,8 +312,7 @@ UnitBlueprint {
             EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 10,
             EnergyRequired = 10,
-            
-            RateOfFire = 1.04,
+            RateOfFire = 1,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS'

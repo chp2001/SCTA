@@ -175,7 +175,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.83,
+            RateOfFire = 0.8333333333,
             TargetCheckInterval = 1,
             TargetPriorities = { 'ALLUNITS' },
             TargetRestrictDisallow = 'UNTARGETABLE',-- UNDERWATER is a pointless category use AboveWaterTargetsOnly = true,

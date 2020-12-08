@@ -30,7 +30,7 @@ UnitBlueprint {
         BuildCostEnergy = 900000,
         BuildCostMass = 120000,
         BuildTime = 600000,
-        BuildRate = 2000,
+        BuildRate = 80000,
     },
   Defense = {
         Health = 12000,
@@ -39,7 +39,7 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 14,
     },
-    SelectionSizeX = 9,
+    SelectionSizeX = 10,
     SelectionSizeZ = 10,
     LifeBarSize = 10,
     SizeX = 14,

@@ -44,8 +44,8 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 655,
-        MaxHealth = 655,
+        Health = 600,
+        MaxHealth = 600,
         AirThreatLevel = 4,
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,
@@ -79,7 +79,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 947,
-        BuildCostMass = 116,
+        BuildCostMass = 122,
         BuildTime = 1820,
     },
     General = {

@@ -28,7 +28,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 25,
+            Damage = 24,
             DamageRadius = 1.5, 
             DamageType = 'SAMAir',
             DisplayName = 'ARMKBOT_MISSILE',

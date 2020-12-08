@@ -98,7 +98,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 1224,
-        BuildCostMass = 129,
+        BuildCostMass = 112,
         BuildTime = 2636,
     },
 
@@ -159,7 +159,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 72,
+            Damage = 96,
             DamageRadius = 1.5, 
             DamageType = 'SAMAir',
             DisplayName = 'CORKBOT_MISSILE',

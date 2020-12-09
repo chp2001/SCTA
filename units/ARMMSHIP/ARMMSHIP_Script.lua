@@ -58,8 +58,8 @@ ARMMSHIP = Class(TAunit) {
 	
 					--SLEEP <10>;
 	
-					self.unit:ShowBone('Rocket_01',true)
-					self.unit:ShowBone('Rocket_02',true)
+					self.unit:ShowBone('Rocket_01',false)
+					self.unit:ShowBone('Rocket_02',false)
 	
 	
 					--MOVE door1 to x-axis <4.19> SPEED <6.00>;
@@ -110,6 +110,8 @@ ARMMSHIP = Class(TAunit) {
 				self.unit.Sliders.plate:SetGoal(0,4.34,0)
 				self.unit.Sliders.plate:SetSpeed(7)
 
+				self.unit:ShowBone('Rocket_01',true)
+				self.unit:ShowBone('Rocket_02',true)
 				--SLEEP <600>;
 				WaitSeconds(0.6)
 
@@ -153,8 +155,8 @@ ARMMSHIP = Class(TAunit) {
 
 				--SLEEP <10>;
 
-				self.unit:ShowBone('Rocket_01',true)
-				self.unit:ShowBone('Rocket_02',true)
+				self.unit:ShowBone('Rocket_01',false)
+				self.unit:ShowBone('Rocket_02',false)
 
 				TAweapon.PlayFxWeaponPackSequence(self)
 			end,	

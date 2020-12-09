@@ -165,7 +165,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 500,
+            Damage = 2000,
             DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'ARMMSHIP_ROCKET',
@@ -176,24 +176,22 @@ UnitBlueprint {
      WeaponCategory = 'IndirectFire',
             Label = 'ARMMSHIP_ROCKET',
 	    FiringTolerance = 10,
-            MaxRadius = 81.25,
+            MaxRadius = 125,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 3,
+            MuzzleVelocity = 0,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMMSHIP_ROCKET/ARMMSHIP_ROCKET_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
                         'Rocket_01',
                     },
-		    VisibleMuzzle = true,
                     RackBone = 'Launcher_01',
                 },
                 {
                     MuzzleBones = {
                         'Rocket_02',
                     },
-		    VisibleMuzzle = true,
                     RackBone = 'Launcher_01',
                 },
             },
@@ -201,10 +199,11 @@ UnitBlueprint {
             RackRecoilDistance = 0,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 0,
-            RackSalvoSize = 2,
+            RackSalvoReloadTime = 2,
+            RackSalvoSize = 1,
             RackSlavedToTurret = false,
             RateOfFire = 2,
+            ProjectileLifetime = 300,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
@@ -212,9 +211,9 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
 	    WeaponUnpacks = true,
-            WeaponRepackTimeout = 3,
-            EnergyDrainPerSecond = 40,
-            EnergyRequired = 120,
+            WeaponRepackTimeout = 2,
+            EnergyDrainPerSecond = 50,
+            EnergyRequired = 150,
         },
         {
             Audio = {

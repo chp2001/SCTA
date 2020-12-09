@@ -27,6 +27,7 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
+            AboveWaterTargetsOnly = true,
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
@@ -83,7 +84,7 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
             TurretBoneMuzzle = 'launcher1',
             TurretBonePitch = 'launcher1',
             TurretBoneYaw = 'launcher1',
@@ -121,7 +122,7 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 80,
-            ProjectileId = '/mods/SCTA-master/projectiles/ARMAMIS_WEAPON/ARMAMIS_WEAPON_proj.bp',
+            ProjectileId = '/mods/SCTA-master/SCTABalance-master/projectiles/ARMAMIS_WEAPON/ARMAMIS_WEAPON_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

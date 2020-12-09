@@ -93,7 +93,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+                        TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             WeaponCategory = 'Missile',
 	    WeaponUnpacks = true,
             WeaponRepackTimeout = 3,

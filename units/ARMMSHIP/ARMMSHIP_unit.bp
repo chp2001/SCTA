@@ -209,7 +209,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
 	    WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
             EnergyDrainPerSecond = 40,
@@ -268,7 +269,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'Launcher_02',
             TurretBonePitch = 'Launcher_02',
             TurretBoneYaw = 'Turret_02',

@@ -238,7 +238,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
 	    WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
             WeaponUnpackAnimation = '/mods/SCTA-master/units/CORMSHIP/CORMSHIP_lod0_runpack.sca',
@@ -304,7 +305,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'missile2',
             TurretBonePitch = 'gun',
             TurretBoneYaw = 'turret',

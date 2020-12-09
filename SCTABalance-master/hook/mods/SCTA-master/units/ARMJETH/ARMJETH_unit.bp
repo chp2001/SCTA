@@ -70,7 +70,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+                        TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'RightMuzzle',
             TurretBonePitch = 'RightGun',
             TurretBoneDualMuzzle = 'LeftMuzzle',

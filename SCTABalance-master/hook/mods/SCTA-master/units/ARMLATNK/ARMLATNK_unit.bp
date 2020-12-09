@@ -84,7 +84,8 @@ Economy = {
         TargetPriorities = {
             'ALLUNITS',
         },
-        TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+                    TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
         TurretBoneMuzzle = 'flare',
         TurretBonePitch = 'Lturret',
         TurretBoneYaw = 'Lturret',
@@ -144,7 +145,8 @@ Economy = {
         TargetPriorities = {
             'ALLUNITS',
         },
-        TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+                    TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
         TurretBoneMuzzle = 'Rflare1',
         TurretBonePitch = 'Rgun',
         TurretBoneYaw = 'Rturret',

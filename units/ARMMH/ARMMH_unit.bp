@@ -190,7 +190,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             WeaponCategory = 'Indirect Fire',
 	    WeaponUnpacks = true,
             WeaponRepackTimeout = 3,

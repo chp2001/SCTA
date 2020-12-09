@@ -178,7 +178,7 @@ UnitBlueprint {
             RateOfFire = 0.8333333333,
             TargetCheckInterval = 1,
             TargetPriorities = { 'ALLUNITS' },
-            TargetRestrictDisallow = 'UNTARGETABLE',-- UNDERWATER is a pointless category use AboveWaterTargetsOnly = true,
+            TargetRestrictDisallow = 'UNTARGETABLE',
             TurretBoneMuzzle = 'Turret_Barrel_R',
             TurretBonePitch = 'Turret_Pitch',
             TurretBoneDualMuzzle = 'Turret_Barrel_L',

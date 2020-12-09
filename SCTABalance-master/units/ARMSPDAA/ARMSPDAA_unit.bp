@@ -187,7 +187,8 @@ UnitBlueprint {
                 TargetPriorities = {
                     'ALLUNITS',
                 },
-                TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+                TargetRestrictDisallow = 'UNTARGETABLE',
+                AboveWaterTargetsOnly = true,
                 TurretBoneMuzzle = 'flare1',
                 TurretBonePitch = 'turret1',
                 TurretBoneYaw = 'turret1',
@@ -250,7 +251,8 @@ UnitBlueprint {
                 TargetPriorities = {
                     'ALLUNITS',
                 },
-                TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+                TargetRestrictDisallow = 'UNTARGETABLE',
+                AboveWaterTargetsOnly = true,
                 TurretBoneMuzzle = 'flare2',
                 TurretBonePitch = 'turret2',
                 TurretBoneYaw = 'turret2',

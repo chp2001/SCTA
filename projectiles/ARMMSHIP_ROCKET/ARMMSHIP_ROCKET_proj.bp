@@ -39,13 +39,13 @@ ProjectileBlueprint {
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 1,
-        MaxHealth = 1,
+        Health = 5,
+        MaxHealth = 5,
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/rocket_mesh.bp',
-        StrategicIconSize = 1,
-        UniformScale = 0.16,
+        StrategicIconSize = 2,
+        UniformScale = 0.24,
     },
     General = {
         Category = 'Missile',
@@ -66,7 +66,7 @@ ProjectileBlueprint {
         DestroyOnWater = true,
 	InitialSpeed = 0,
         LeadTarget = false,
-        Lifetime = 20,
+        Lifetime = 250,
         MaxSpeed = 25,
         TrackTarget = false,
         TurnRate = 133,

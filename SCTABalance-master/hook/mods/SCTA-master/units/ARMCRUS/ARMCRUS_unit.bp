@@ -26,7 +26,6 @@ UnitBlueprint {
     SizeZ = 8,
     Weapon = {
         {
-            AboveWaterTargetsOnly = true,
             ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
@@ -38,7 +37,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 110,
+            Damage = 200,
             DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'ARM_CRUS',
@@ -52,7 +51,7 @@ UnitBlueprint {
             Label = 'ARM_CRUS',
             MaxRadius = 81.25,
             MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
+            MuzzleSalvoSize = 2,
             MuzzleVelocity = 30,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_CRUS/ARM_CRUS_proj.bp',
             RackBones = {
@@ -73,15 +72,16 @@ UnitBlueprint {
             RackRecoilDistance = -2.4,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 0,
-            RackSalvoSize = 1,
+            RackSalvoReloadTime = 1,
+            RackSalvoSize = 2,
             RackSlavedToTurret = false,
-            RateOfFire = 2,
+            RateOfFire = 1,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+                        TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'flare1',
             TurretBonePitch = 'barrel1',
             TurretBoneDualMuzzle = 'flare2',
@@ -107,7 +107,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 40,
+            Damage = 100,
             DamageRadius = 0.5,
             DamageType = 'Normal',
             DamageWater = 200,
@@ -158,9 +158,9 @@ UnitBlueprint {
             Turreted = true,
         },
         { #BIG_UNITEX
-            Damage = 50,
+            Damage = 500,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

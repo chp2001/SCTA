@@ -63,7 +63,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 100,
+            Damage = 750,
             DamageType = 'Normal',
             DisplayName = 'COR_BATSLASER',
             EnergyDrainPerSecond = 25,
@@ -86,7 +86,19 @@ UnitBlueprint {
                     MuzzleBones = {
                         'flarea',
                     },
-                    RackBone = 'guna',
+                    RackBone = 'muzzle1',
+                },
+                {
+                    MuzzleBones = {
+                        'flarea',
+                    },
+                    RackBone = 'muzzle2',
+                },
+                {
+                    MuzzleBones = {
+                        'flarea',
+                    },
+                    RackBone = 'muzzle3',
                 },
             },
             RackRecoilDistance = 0,
@@ -100,10 +112,10 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE',
             FiringTolerance = 0,
             TrackingRadius = 1.1,
-            TargetRestrictOnlyAllow = 'TACTICAL MISSILE',
+            TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
+            TargetRestrictOnlyAllow = 'TACTICAL,MISSILE,NAVAL,AIR',
             TargetType = 'RULEWTT_Projectile',
             TurretBoneMuzzle = 'flarea',
             TurretBonePitch = 'guna',
@@ -124,6 +136,7 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
+            AboveWaterTargetsOnly = true,
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamagesFriendly = true,
@@ -136,7 +149,7 @@ UnitBlueprint {
             },
         RangeCategory = 'UWRC_IndirectFire',
         WeaponCategory = 'IndirectFire',
-            FiringRandomness = 3,
+            FiringRandomness = 0.5,
             FiringTolerance = 0,
             Label = 'COR_BATS',
             MaxRadius = 125,
@@ -174,7 +187,7 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
             TurretBoneMuzzle = 'flareb2',
             TurretBonePitch = 'sleeveb',
             TurretBoneYaw = 'turretb',

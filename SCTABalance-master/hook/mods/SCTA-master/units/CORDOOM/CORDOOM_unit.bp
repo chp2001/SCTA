@@ -46,7 +46,6 @@ UnitBlueprint {
     SizeZ = 4,
     Weapon = {
         {
-            AboveWaterTargetsOnly = true,
             ArtilleryShieldBlocks = true,
             RenderFireClock = true,
             Audio = {
@@ -98,7 +97,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS'
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+                        TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'flare',
             TurretBonePitch = 'barrela',
             TurretBoneYaw = 'turreta',
@@ -114,7 +114,6 @@ UnitBlueprint {
             WeaponRepackTimeout = 3,
         },
         {
-            AboveWaterTargetsOnly = true,
             ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
@@ -164,7 +163,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS'
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+                        TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'flareb',
             TurretBonePitch = 'barrelb',
             TurretBoneYaw = 'turretb',
@@ -180,7 +180,6 @@ UnitBlueprint {
             WeaponRepackTimeout = 3,
         },
         {
-            AboveWaterTargetsOnly = true,
             ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
@@ -236,7 +235,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS'
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+                        TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'flarec1',
             TurretBonePitch = 'barrelc1',
             TurretBoneYaw = 'turretc',

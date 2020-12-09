@@ -183,7 +183,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'flare',
             TurretBonePitch = 'Lgun',
             TurretBoneYaw = 'Lturret',
@@ -222,7 +223,7 @@ UnitBlueprint {
             MaxRadius = 37.75,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 36,
+            InitialSpeed = 28.125,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMKBOT_MISSILE/ARMKBOT_MISSILE_proj.bp',
             RackBones = {
                 {
@@ -243,7 +244,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'Rflare1',
             TurretBonePitch = 'Rgun',
             TurretBoneYaw = 'Rturret',

@@ -82,7 +82,8 @@ do
             LifeBarOffset = 0.5,
             LifeBarSize = 0.5,
             Physics = {
-                MaxSpeed = 1.5,
+                MaxSpeed = 0.75,
+                TurnRate = 0.5,
             },    
             SelectionSizeX = 0.5,
             SelectionSizeZ = 0.5,

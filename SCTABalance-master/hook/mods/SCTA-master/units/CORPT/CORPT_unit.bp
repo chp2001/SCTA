@@ -25,12 +25,12 @@ UnitBlueprint {
 	
     },
     Defense = {
-        Health = 320,
-        MaxHealth = 320,
+        Health = 1000,
+        MaxHealth = 1000,
     },    
     Economy = {
-        BuildCostEnergy = 630,
-        BuildCostMass = 90,
+        BuildCostEnergy = 1230,
+        BuildCostMass = 180,
         BuildTime = 4200,
     },
     Display = {
@@ -58,7 +58,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 12,
+            Damage = 45,
             DamageRadius = 1.5, 
             DamageType = 'AntiAir',
             DisplayName = 'CORKBOT_MISSILE',
@@ -71,7 +71,7 @@ UnitBlueprint {
             MaxRadius = 36.875,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 30,
+            InitialSpeed = 28.125,
             ProjectileId = '/mods/SCTA-master/projectiles/CORKBOT_MISSILE/CORKBOT_MISSILE_proj.bp',
             RackBones = {
                 {
@@ -92,7 +92,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+                        TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'missile',
             TurretBonePitch = 'missile',
             TurretBoneYaw = 'missile',
@@ -116,7 +117,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 8,
+            Damage = 30,
             DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'CORPT_LASER',
@@ -125,7 +126,7 @@ UnitBlueprint {
             },
 	    RangeCategory = 'UWRC_DirectFire',
             Label = 'CORPT_LASER',
-            MaxRadius = 15,
+            MaxRadius = 31,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 25,
@@ -148,15 +149,16 @@ UnitBlueprint {
             RackRecoilDistance = -2.4,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 0,
-            RackSalvoSize = 1,
+            RackSalvoReloadTime = 1,
+            RackSalvoSize = 2,
             RackSlavedToTurret = false,
             RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'sleeves',
             TurretBonePitch = 'sleeves',
             TurretBoneYaw = 'turret',
@@ -177,6 +179,5 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-
     },
 }

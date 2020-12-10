@@ -280,7 +280,7 @@ UnitBlueprint {
             Turreted = true,
         },
         { #BIG_UNITEX //Was SMALL_UNITEX, but not appropriate
-            Damage = 50,
+            Damage = 500,
             DamageFriendly = true,
             DamageRadius = 3.4375,
             DamageType = 'Normal',

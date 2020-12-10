@@ -50,14 +50,13 @@ ProjectileBlueprint {
         },
         Faction = 'ARM',
         Weapon = 'ARMAAS_WEAPON3',
-	EdgeEffectiveness = 0.9,
     },
     Interface = {
         HelpText = 0,
     },
     Physics = {
         DestroyOnWater = true,
-        InitialSpeed = 59.375,
+        InitialSpeed = 60,
         Lifetime = 10,
         UseGravity = false,
         LeadTarget = true,

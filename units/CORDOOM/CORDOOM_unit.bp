@@ -286,7 +286,7 @@ UnitBlueprint {
             MaxRadius = 30,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 43.75,
+            MuzzleVelocity = 50,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_LIGHTLASER/CORE_LIGHTLASER_proj.bp',
             RackBones = {
                 {

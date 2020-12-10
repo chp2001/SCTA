@@ -161,7 +161,7 @@ UnitBlueprint {
             MaxRadius = 24,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 56.25,
+	    MuzzleVelocity = 32,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMFLEA_WEAPON/ARMFLEA_WEAPON_proj.bp',
             RackBones = {
                 {

@@ -41,7 +41,6 @@ UnitBlueprint {
         [1] = {
             Damage = 160,
             DamageRadius = 2.5,
-            DamageType = 'Normal',
 	    FiringTolerance = 8,
             MaxRadius = 60,
             MuzzleSalvoDelay = 0,

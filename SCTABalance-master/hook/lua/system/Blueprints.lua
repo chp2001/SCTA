@@ -226,10 +226,19 @@ do
         
         for id, bp in all_blueprints.Unit do
             if bp.Categories and ((table.find(bp.Categories, 'ARM') or table.find(bp.Categories, 'CORE')) and table.find(bp.Categories, 'VTOL')) then
-        if not bp.Physics.GroundCollisionOffset then bp.Physics.GroundCollisionOffset = 1.5 end
+        if not bp.Physics.GroundCollisionOffset then bp.Physics.GroundCollisionOffset = 1.5 
         end
             end
         end
+
+        for id, bp in all_blueprints.Unit do
+            if bp.Categories and (table.find(bp.Categories, 'SUBMERSIBLE')) and (table.find(bp.Categories, 'TECH1') or table.find(bp.Categories, 'TECH2') or table.find(bp.Categories, 'TECH3')) then
+                if bp.Defense.ArmorType and type(bp.Defense.ArmorType) == 'string' then
+                    bp.Defense.ArmorType = 'Sub'
+        end
+            end
+                end
+            end
     end
 
     function GiveVet(all_bps)

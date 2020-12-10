@@ -175,7 +175,7 @@ UnitBlueprint {
             MaxRadius = 42.25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 18.75,
+            MuzzleVelocity = 24,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_ROY/CORE_ROY_proj.bp',
             RackBones = {
                 {

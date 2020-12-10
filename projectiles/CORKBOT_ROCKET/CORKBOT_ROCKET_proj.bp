@@ -57,7 +57,7 @@ ProjectileBlueprint {
     Physics = {
 	TurnRate = 0,
         DestroyOnWater = true,
-        InitialSpeed = 20,
+        InitialSpeed = 22,
 	TrackTarget = true,
 	TurnSpeed = 0,
         Lifetime = 10,

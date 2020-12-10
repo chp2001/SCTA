@@ -171,7 +171,7 @@ UnitBlueprint {
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 22, 
+            MuzzleVelocity = 24, 
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_MEDIUMCANNON/ARM_MEDIUMCANNON_proj.bp',
             RackBones = {
                 {

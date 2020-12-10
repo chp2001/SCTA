@@ -14,37 +14,9 @@ UnitBlueprint {
     LifeBarSize = 1,
     SizeY = 0.5, 
     Weapon = {
-        {
-            Audio = {
-                Fire = Sound {
-                    Bank = 'TA_Sound',
-                    Cue = 'LARGEGUN',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
-            },
-            BallisticArc = 'RULEUBA_None',
-            CollideFriendly = false,
-	    DamageFriendly = true,
+        [1] = {
             Damage = 1500, #Doubles up with death, so death damage subtracted
 	    DamageRadius = 6,
-            FireOnSelfDestruct = true,
-            DamageType = 'Normal',
-            DisplayName = 'Suicide',
-            FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Seabed',
-            },
-	    RangeCategory = 'UWRC_DirectFire',
-     WeaponCategory = 'DirectFire',
-            FiringTolerance = 999999,
-            Label = 'Suicide',
-            MaxRadius = 3,
-	    ProjectileId = '/mods/SCTA-master/projectiles/CRAWL_BLAST/CRAWL_BLAST_proj.bp',
-            RateOfFire = 99999,
-            TargetCheckInterval = 1,
-            TargetPriorities = {
-                'ALLUNITS',
-            },
-            TargetRestrictDisallow = 'UNTARGETABLE',
         },
      },
 }

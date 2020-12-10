@@ -32,17 +32,8 @@ UnitBlueprint {
     SizeY = 2,
     SizeZ = 3,
     Weapon = {
-        {
+        [1] = {
             AimsStraightOnDisable = false,
-            Audio = {
-                Fire = Sound {
-                    Bank = 'TA_Sound',
-                    Cue = 'ROCKHVY2',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
-            },
-            BallisticArc = 'RULEUBA_None',
-            CollideFriendly = false,
             Damage = 1,
             DamageType = 'Normal',
             DamageRadius = 2,
@@ -61,14 +52,6 @@ UnitBlueprint {
             ProjectileId = '/mods/SCTA-master/SCTABalance-master/projectiles/ARMAMIS_WEAPON/ARMAMIS_WEAPON_proj.bp',
             ProjectileLifetimeUsesMultiplier = 1.1,
             ProjectilesPerOnFire = 1,
-            RackBones = {
-                {
-                    MuzzleBones = {
-                        'Flare',
-                    },
-                    RackBone = 'barrel',
-                },
-            },
             RackFireTogether = false,
             RackRecoilDistance = 0,
             RackReloadTimeout = 2,
@@ -79,14 +62,11 @@ UnitBlueprint {
             WeaponCategory = 'Defense',
             RateOfFire = 1,
             TargetCheckInterval = 0.5,
-            TargetRestrictDisallow = 'UNTARGETABLE',
-            TargetRestrictOnlyAllow = 'TACTICAL MISSILE',
+            TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
+            TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
             TargetType = 'RULEWTT_Projectile',
             EffectiveRadius = 30,
             TrackingRadius = 20,
-            TurretBoneMuzzle = 'Flare',
-            TurretBonePitch = 'barrel',
-            TurretBoneYaw = 'barrel',
             TurretDualManipulators = false,
             SlavedToBody = false,
             TurretPitch = 0,
@@ -95,21 +75,8 @@ UnitBlueprint {
             TurretYaw = 0,
             TurretYawRange = 0,
             TurretYawSpeed = 0,
-            Turreted = false,
-            WeaponUnpackLocksMotion = false,
-            WeaponUnpackAnimation = '/mods/SCTA-master/units/ARMSCAB/ARMSCAB_lod0_unpack.sca',
-            WeaponUnpackAnimationRate = 1,
-            WeaponRepackTimeout = 0.5,
-            WeaponUnpacks = true,
         },
-        { #SMALL_UNITEX
-            Damage = 10,
-            DamageFriendly = true,
-            DamageRadius = 0.9375,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        [2] = {
         },
-
     },
 }

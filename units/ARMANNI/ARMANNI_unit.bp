@@ -142,6 +142,7 @@ UnitBlueprint {
     Weapon = {
         {
             ArtilleryShieldBlocks = true,
+            RenderFireClock = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',

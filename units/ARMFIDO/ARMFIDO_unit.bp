@@ -173,7 +173,7 @@ UnitBlueprint {
             MaxRadius = 24,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 28.125,
+	    MuzzleVelocity = 28,
             ProjectileId = '/mods/SCTA-master/projectiles/GAUSS/GAUSS_proj.bp',
             RackBones = {
                 {
@@ -197,9 +197,9 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'muzzle',
+            TurretBoneMuzzle = 'flare',
             TurretBonePitch = 'barrel',
-            TurretBoneYaw = 'tower',
+            TurretBoneYaw = 'turret',
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 360,

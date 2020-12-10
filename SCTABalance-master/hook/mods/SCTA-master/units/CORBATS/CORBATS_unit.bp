@@ -51,21 +51,10 @@ UnitBlueprint {
     SizeY = 7,
     SizeZ = 16,
     Weapon = {
-        {
-            AimsStraightOnDisable = true,
-            Audio = {
-                Fire = Sound {
-                    Bank = 'TA_Sound',
-                    Cue = 'LASRMAS2',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
-            },
-            BallisticArc = 'RULEUBA_None',
+        [1] = {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 750,
-            DamageType = 'Normal',
-            DisplayName = 'COR_BATSLASER',
             EnergyDrainPerSecond = 25,
             EnergyRequired = 50,
             UseFiringSolutionInsteadOfAimBone = true,
@@ -81,26 +70,6 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 125,
             ProjectileId = '/mods/SCTA-master/SCTABalance-master/projectiles/TMD_LASER/TMD_LASER_proj.bp',
-            RackBones = {
-                {    
-                    MuzzleBones = {
-                        'flarea',
-                    },
-                    RackBone = 'muzzle1',
-                },
-                {
-                    MuzzleBones = {
-                        'flarea',
-                    },
-                    RackBone = 'muzzle2',
-                },
-                {
-                    MuzzleBones = {
-                        'flarea',
-                    },
-                    RackBone = 'muzzle3',
-                },
-            },
             RackRecoilDistance = 0,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
@@ -117,96 +86,28 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
             TargetRestrictOnlyAllow = 'TACTICAL,MISSILE,NAVAL,AIR',
             TargetType = 'RULEWTT_Projectile',
-            TurretBoneMuzzle = 'flarea',
-            TurretBonePitch = 'guna',
-            TurretBoneYaw = 'turreta',
             TurretPitch = 0,
             TurretPitchRange = 360,
             TurretPitchSpeed = 200,
             TurretYaw = 0,
             TurretYawRange = 360,
             TurretYawSpeed = 720,
-            Turreted = true,
         },
-        {
-            Audio = {
-                Fire = Sound {
-                    Bank = 'TA_Sound',
-                    Cue = 'CANNHVY1',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
-            },
-            AboveWaterTargetsOnly = true,
-            BallisticArc = 'RULEUBA_LowArc',
-            CollideFriendly = false,
-            DamagesFriendly = true,
+        [2] = {
             Damage = 1000,
             DamageRadius = 2,
-            DamageType = 'Normal',
-            DisplayName = 'COR_BATS',
-            FireTargetLayerCapsTable = {
-                Water = 'Land|Water|Seabed',
-            },
-        RangeCategory = 'UWRC_IndirectFire',
-        WeaponCategory = 'IndirectFire',
             FiringRandomness = 0.5,
             FiringTolerance = 0,
-            Label = 'COR_BATS',
             MaxRadius = 125,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 35,
             ProjectileId = '/mods/SCTA-master/SCTABalance-master/projectiles/COR_BATL/COR_BATL_proj.bp',
-            RackBones = {
-                {
-                    MuzzleBones = {
-                        'flareb1',
-                    },
-                    RackBone = 'barrelb1',
-                },
-                {
-                    MuzzleBones = {
-                        'flareb2',
-                    },
-                    RackBone = 'barrelb2',
-                },
-                {
-                    MuzzleBones = {
-                        'flareb3',
-                    },
-                    RackBone = 'barrelb3',
-                },
-            },
             RackRecoilDistance = -2.4,
-            RackReloadTimeout = 0,
-            RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RateOfFire = 0.7692307692,
-            TargetCheckInterval = 1,
-            TargetPriorities = {
-                'ALLUNITS',
-            },
-            TargetRestrictDisallow = 'UNTARGETABLE',
-            TurretBoneMuzzle = 'flareb2',
-            TurretBonePitch = 'sleeveb',
-            TurretBoneYaw = 'turretb',
-            TurretPitch = 0,
-            TurretPitchRange = 360,
-            TurretPitchSpeed = 30,
-            TurretYaw = 0,
-            TurretYawRange = 360,
-            TurretYawSpeed = 55,
-            Turreted = true,
         },
-        { #BIG_UNITEX
-            Damage = 50,
-            DamageFriendly = true,
-            DamageRadius = 3.4375,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        [3] = {
         }, 
-
     },
 }

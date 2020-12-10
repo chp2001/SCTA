@@ -40,7 +40,7 @@ ARMSFIG = Class(TASeaair) {
 	end,
 
 	CloseWings = function(self)
-		self.moving = false
+		self.moving = nil
 		--TURN winga to z-axis <0> SPEED <63.13>;
 		self.Spinners.winga:SetGoal(0)
 		self.Spinners.winga:SetSpeed(63)

@@ -193,7 +193,7 @@ UnitBlueprint {
             AutoInitiateAttackCommand = true,
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-            Damage = 2400,
+            Damage = 3600,
             DamageRadius = 0.5,
             DamageType = 'AntiSub',
             DisplayName = 'CORAIR_TORPEDO',
@@ -209,10 +209,9 @@ UnitBlueprint {
             MinRadius = 4,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 7,
+            MuzzleVelocity = 15,
             ProjectileId = '/mods/SCTA-master/projectiles/SEAAIR_TORPEDO/SEAAIR_TORPEDO_proj.bp',
             ProjectileLifetime = 30,
-            ProjectilesPerOnFire = 1,
             RackBones = {
                 {
                     MuzzleBones = {

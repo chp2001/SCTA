@@ -24,20 +24,20 @@ CORSEAP = Class(TASeaair) {
 
 	OpenWings = function(self)
 		--MOVE wing1 to x-axis <5.59> SPEED <5.00>;
-		self.Sliders.wing1:SetGoal(-5.59,0,0)
-		self.Sliders.wing1:SetSpeed(5)
+		self.Sliders.wing1:SetGoal(-3,0,0)
+		self.Sliders.wing1:SetSpeed(3)
 
 		--MOVE wing2 to x-axis <-5.65> SPEED <5.00>;
-		self.Sliders.wing2:SetGoal(-5.65,0,0)
-		self.Sliders.wing2:SetSpeed(5)
+		self.Sliders.wing2:SetGoal(3,0,0)
+		self.Sliders.wing2:SetSpeed(3)
 
 		--MOVE wing1 to x-axis <5.59> SPEED <5.00>;
-		self.Sliders.wing3:SetGoal(5.59,0,0)
-		self.Sliders.wing3:SetSpeed(5)
+		self.Sliders.wing3:SetGoal(3,0,0)
+		self.Sliders.wing3:SetSpeed(3)
 		
 		--MOVE wing2 to x-axis <-5.65> SPEED <5.00>;
-		self.Sliders.wing4:SetGoal(5.65,0,0)
-		self.Sliders.wing4:SetSpeed(5)
+		self.Sliders.wing4:SetGoal(-3,0,0)
+		self.Sliders.wing4:SetSpeed(3)
 	end,
 
 	CloseWings = function(self)

@@ -186,7 +186,7 @@ UnitBlueprint {
                 AutoInitiateAttackCommand = true,
                 BallisticArc = 'RULEUBA_None',
                 CollideFriendly = false,
-                Damage = 1500,
+                Damage = 2100,
                 DamageRadius = 0.5,
                 DamageType = 'AntiSub',
                 DisplayName = 'ARMAIR_TORPEDO',
@@ -206,7 +206,6 @@ UnitBlueprint {
                 MuzzleVelocity = 10,
                 ProjectileId = '/mods/SCTA-master/projectiles/ARMAIR_TORPEDO/ARMAIR_TORPEDO_proj.bp',
                 ProjectileLifetime = 20,
-                ProjectilesPerOnFire = 1,
                 RackBones = {
                     {
                         MuzzleBones = {

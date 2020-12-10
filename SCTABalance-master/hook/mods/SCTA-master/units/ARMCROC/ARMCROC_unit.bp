@@ -40,76 +40,12 @@ UnitBlueprint {
     },
     StrategicIconName = 'icon_land2_directfire',
     Weapon = {
-        {
-            Audio = {
-                Fire = Sound {
-                    Bank = 'TA_Sound',
-                    Cue = 'CANNON2',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
-            },
-            BallisticArc = 'RULEUBA_None',
-            CollideFriendly = false,
+        [1] = {
 	    DamageFriendly = true,
             Damage = 150,
-            DamageRadius = 1.5,
-            DamageType = 'Normal',
-            DisplayName = 'ARM_MEDIUMCANNON',
-            FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Seabed',
-                Seabed = 'Land|Water|Seabed',
-            },
-	    RangeCategory = 'UWRC_DirectFire',
-     WeaponCategory = 'DirectFire',
-            Label = 'ARM_MEDIUMCANNON',
-            MaxRadius = 25,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
-            MuzzleVelocity = 22, 
-            ProjectileId = '/mods/SCTA-master/projectiles/ARM_MEDIUMCANNON/ARM_MEDIUMCANNON_proj.bp',
-            RackBones = {
-                {
-                    MuzzleBones = {
-                        'Turret_Muzzle',
-                    },
-                    RackBone = 'Turret_Barrel',
-                },
-            },
-            RackFireTogether = false,
-            RackRecoilDistance = -2.4,
-            RackReloadTimeout = 0,
-            RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 0,
-            RackSalvoSize = 1,
-            RackSlavedToTurret = false,
             RateOfFire = 0.5,
-            TargetCheckInterval = 1,
-            TargetPriorities = {
-                'ALLUNITS',
-            },
-                        TargetRestrictDisallow = 'UNTARGETABLE',
-            AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'Turret_Muzzle',
-            TurretBonePitch = 'Turret',
-            TurretBoneYaw = 'Turret',
-            TurretDualManipulators = false,
-            TurretPitch = 0,
-            TurretPitchRange = 360,
-            TurretPitchSpeed = 15,
-            TurretYaw = 0,
-            TurretYawRange = 360,
-            TurretYawSpeed = 35,
-            Turreted = true,
         },
-        { #BIG_UNITEX
-            Damage = 50,
-            DamageFriendly = true,
-            DamageRadius = 3.4375,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        [2] = {
         },
-
-
     },
 }

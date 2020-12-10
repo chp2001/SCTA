@@ -157,7 +157,7 @@ UnitBlueprint {
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 21.875,
+            MuzzleVelocity = 30,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMANAC_WEAPON/ARMANAC_WEAPON_proj.bp',
             RackBones = {
                 {
@@ -191,7 +191,6 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 170,
             Turreted = true,
-            WeaponCategory = 'Direct Fire',
         },
         { #BIG_UNITEX
             Damage = 50,

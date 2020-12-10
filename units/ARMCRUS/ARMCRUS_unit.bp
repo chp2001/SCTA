@@ -232,11 +232,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 40,
+            Damage = 210,
             DamageRadius = 0.5,
-            DamageType = 'Normal',
-            DamageWater = 200,
-            DamageRadiusWater = 0.5,
+            DamageType = 'AntiSub',
             DisplayName = 'ARMDEPTHCHARGE',
             FireTargetLayerCapsTable = {
                 Water = 'Water|Sub|Seabed',
@@ -248,7 +246,7 @@ UnitBlueprint {
             MaxRadius = 45,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 10,
+            MuzzleVelocity = 5,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMDEPTHCHARGE/ARMDEPTHCHARGE_proj.bp',
             RackBones = {
                 {

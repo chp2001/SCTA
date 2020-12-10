@@ -19,6 +19,7 @@ UnitBlueprint {
     Intel = {
         WaterVisionRadius = 15,
     },
+    LifeBarSize = 4,
     SelectionSizeX = 3,
     SelectionSizeZ = 5,
     SizeX = 4,
@@ -36,7 +37,7 @@ UnitBlueprint {
             RateOfFire = 1,
         },
         [2] = {
-            Damage = 100,
+            Damage = 350,
             RateOfFire = 0.5882352941,
         },
         [3] = {

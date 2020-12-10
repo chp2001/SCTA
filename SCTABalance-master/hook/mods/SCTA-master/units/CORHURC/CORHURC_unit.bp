@@ -31,8 +31,6 @@ UnitBlueprint {
             Damage = 650,
             DamageFriendly = true,
             DamageRadius = 4,
-            DamageType = 'Normal',
-            DisplayName = 'CORADVBOMB',
             EffectiveRadius = 25,
             FiringRandomness = 0,
             FiringTolerance = 6,

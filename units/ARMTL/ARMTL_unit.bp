@@ -139,11 +139,9 @@ UnitBlueprint {
             },
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-            Damage = 100,
+            Damage = 300,
             DamageRadius = 0.5,
-            DamageWater = 300,
-            DamageRadiusWater = 0.5,
-            DamageType = 'Normal',
+            DamageType = 'AntiSub',
             DisplayName = 'COAX_TORPEDO',
             FireTargetLayerCapsTable = {
                 Water = 'Seabed|Sub|Water',

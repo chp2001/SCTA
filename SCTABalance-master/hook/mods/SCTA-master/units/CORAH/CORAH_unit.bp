@@ -40,7 +40,6 @@ UnitBlueprint {
             DamageRadius = 1.5,
             FiringRandomness = 0,
 	    FiringTolerance = 10,
-            Label = 'CORAH_WEAPON',
             MaxRadius = 40.625,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,

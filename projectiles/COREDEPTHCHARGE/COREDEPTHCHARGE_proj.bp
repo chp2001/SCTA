@@ -33,6 +33,7 @@ ProjectileBlueprint {
 	'ANTINAVY',
     },
     Display = {
+        CameraFollowTimeout = 3,
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/DEPTHCHARGE_mesh.bp',
         UniformScale = 0.16,
         StrategicIconSize = 1,
@@ -53,13 +54,11 @@ ProjectileBlueprint {
     },
     Physics = {
         DestroyOnWater = false,
-        InitialSpeed = 10,
-	MaxSpeed = 6.25,
-        Acceleration = 0.9375,
-        Lifetime = 5,
+        InitialSpeed = 5,
+        Lifetime = 10,
         UseGravity = false,
         TrackTarget = true,
-        TurnRate = 55,
+        TurnRate = 90,
         VelocityAlign = true,
 	StayUnderwater = true
     },

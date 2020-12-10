@@ -189,11 +189,9 @@ UnitBlueprint {
             AutoInitiateAttackCommand = true,
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-            Damage = 200,
+            Damage = 800,
             DamageRadius = 0.5,
-            DamageWater = 800,
-            DamageRadiusWater = 0.5,
-            DamageType = 'Normal',
+            DamageType = 'AntiSub',
             DisplayName = 'CORAIR_TORPEDO',
             FireTargetLayerCapsTable = {
                 Air = 'Water|Seabed|Sub|Seabed',

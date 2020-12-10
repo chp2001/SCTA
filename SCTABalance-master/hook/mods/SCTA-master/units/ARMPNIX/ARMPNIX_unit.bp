@@ -50,7 +50,6 @@ UnitBlueprint {
         [2] = {
             Damage = 15,
             DamageRadius = 0.25, 
-            DamageType = 'AntiAir',
 	    FiringTolerance = 2,
         RackFireTogether = true,
             MaxRadius = 37.5,

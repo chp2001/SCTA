@@ -28,7 +28,7 @@ do
                 MaintenanceConsumptionPerSecondEnergy = 3,
             },
             LifeBarHeight = 0.3,
-            LifeBarOffset = 0.5,
+            LifeBarOffset = 0.3,
             LifeBarSize = 0.5,
             Physics = {
                 MaxSpeed = 1.2,

@@ -49,8 +49,8 @@ UnitBlueprint {
     CollisionOffsetZ = 0,
     Defense = {
         ArmorType = 'Structure',
-        Health = 10000,
-        MaxHealth = 10000,
+        Health = 12000,
+        MaxHealth = 12000,
         AirThreatLevel = 0,
         EconomyThreatLevel = 8,
         SubThreatLevel = 0,
@@ -140,7 +140,7 @@ UnitBlueprint {
         HelpText = 'Produces Ships',
     },
     LifeBarHeight = 0.22,
-    LifeBarOffset = 5,
+    LifeBarOffset = 3,
     LifeBarSize = 8,
     Physics = {
         BuildOnLayerCaps = {

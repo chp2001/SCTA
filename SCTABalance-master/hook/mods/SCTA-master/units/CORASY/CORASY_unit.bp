@@ -21,8 +21,8 @@ UnitBlueprint {
 	'LEVEL2',
     },
     Defense = {
-        Health = 13000,
-        MaxHealth = 13000,
+        Health = 16500,
+        MaxHealth = 16500,
     },
         Display = {
         UniformScale = 0.32,
@@ -39,7 +39,7 @@ UnitBlueprint {
         ProductionPerSecondMass = 0,
     },
     LifeBarHeight = 0.22,
-    LifeBarOffset = 5,
+    LifeBarOffset = 3,
     LifeBarSize = 10,
     Intel = {
         VisionRadius = 10,

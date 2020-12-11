@@ -43,7 +43,7 @@ UnitBlueprint {
         },
     },
     LifeBarHeight = 0.22,
-    LifeBarOffset = 5,
+    LifeBarOffset = 3,
     LifeBarSize = 8,
     SelectionSizeX = 7,
     SelectionSizeZ = 7,

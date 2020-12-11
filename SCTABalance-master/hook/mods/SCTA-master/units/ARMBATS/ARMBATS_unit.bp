@@ -35,8 +35,8 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 12, 
     },
+    LifeBarHeight = 0.25,
     LifeBarSize = 6,
-    LifeBarOffset = 8,
     StrategicIconName = 'icon_ship3_directfire',
     SelectionSizeX = 5,
     SelectionSizeZ = 10,

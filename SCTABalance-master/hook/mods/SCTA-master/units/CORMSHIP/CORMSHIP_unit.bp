@@ -6,6 +6,9 @@
 UnitBlueprint {
     Merge = true,
     Display = {
+        Abilities = {
+            '<LOC ability_tacmissiledef>Tactical Missile Defense',
+        },
         UniformScale = 0.2,
     },
     Defense = {
@@ -29,7 +32,6 @@ UnitBlueprint {
         AimsStraightOnDisable = false,
         Damage = 30,
         DamageType = 'Normal',
-        DamageRadius = 2,
         MaxRadius = 60,
         FiringTolerance = 360,
         FiringRandomness = 0,
@@ -51,13 +53,14 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RangeCategory = 'UWRC_Countermeasure',
+            WeaponCategory = 'Defense',
             RateOfFire = 1,
             EffectiveRadius = 30,
             TrackingRadius = 10,
             TargetCheckInterval = 0.5,
             WeaponRepackTimeout = 3,
-            TargetRestrictDisallow = 'UNTARGETABLE,STRATEGIC',
-            TargetRestrictOnlyAllow = 'TACTICAL,MISSILE',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetRestrictOnlyAllow = 'TACTICAL MISSILE',
             TargetType = 'RULEWTT_Projectile',
         },
         [3] = {},

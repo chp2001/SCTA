@@ -35,7 +35,7 @@ UnitBlueprint {
         [1] = {
             AimsStraightOnDisable = false,
             Damage = 30,
-            DamageRadius = 2,
+            DamageRadius = 0,
             FiringRandomness = 0,
             Flare = {
                 Category = 'MISSILE',
@@ -57,7 +57,6 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RangeCategory = 'UWRC_Countermeasure',
             RateOfFire = 1,
             TargetCheckInterval = 0.5,
             TargetRestrictDisallow = 'UNTARGETABLE, STRATEGIC',

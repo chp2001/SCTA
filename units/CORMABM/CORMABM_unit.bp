@@ -204,6 +204,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 2,
+            WeaponCategory = 'Defense',
             RangeCategory = 'UWRC_Countermeasure',
             RateOfFire = 1,
             TargetCheckInterval = 0.5,

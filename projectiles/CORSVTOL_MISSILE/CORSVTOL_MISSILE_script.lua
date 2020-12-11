@@ -7,7 +7,7 @@ local TAMissileProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TA
 
 CORSVTOL_MISSILE = Class(TAMissileProjectile) 
 {
-	TrackTime = 7,
+	TrackTime = 3,
 }
 
 TypeClass = CORSVTOL_MISSILE

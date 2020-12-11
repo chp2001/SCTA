@@ -4,6 +4,13 @@
 #Blueprint created by Raevn
 
 UnitBlueprint {
+    AI = {
+        TargetBones = {
+            'turret1',
+            'turret2',
+            'CORBATS',
+        },
+    },
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',

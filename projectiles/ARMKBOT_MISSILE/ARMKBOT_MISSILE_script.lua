@@ -7,7 +7,7 @@ local TAMissileProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TA
 
 ARMKBOT_MISSILE = Class(TAMissileProjectile) 
 {
-	TrackTime = 5,
+	TrackTime = 3,
 }
 
 TypeClass = ARMKBOT_MISSILE

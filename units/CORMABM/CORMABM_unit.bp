@@ -225,7 +225,7 @@ UnitBlueprint {
             WeaponUnpackAnimation = '/mods/SCTA-master/units/CORMABM/CORMABM_lod0_Aunpack.sca',
             WeaponUnpackAnimationRate = 2,
             WeaponCategory = 'Defense',
-            WeaponRepackTimeout = 1,
+            WeaponRepackTimeout = 2,
             WeaponUnpacks = true,
         },
         { #SMALL_UNITEX

@@ -9,8 +9,8 @@ UnitBlueprint {
         UniformScale = 0.2,
     },
     Defense = {
-        Health = 10000,
-        MaxHealth = 10000,
+        Health = 8000,
+        MaxHealth = 8000,
     },
     Economy = {
         BuildCostMass = 4000,
@@ -25,10 +25,21 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 3,
     SizeZ = 8,
+    Description = 'Destroyer',
+    Interface = {
+        HelpText = 'Destroyer',
+    },
+    Physics = {
+            MaxAcceleration = 3,
+            MaxBrake = 3,
+            MaxSpeed = 4,
+            TurnRate = 80,
+        },
     Weapon = {
         [1] = {
             ArtilleryShieldBlocks = true,
             Damage = 200,
+            MaxRadius = 80,
         RangeCategory = 'UWRC_IndirectFire',
         WeaponCategory = 'Artillery',
             MuzzleSalvoSize = 2,

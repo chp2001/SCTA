@@ -27,7 +27,8 @@ UnitBlueprint {
               'Anti-Sub',
               '<LOC ability_sonar>Sonar',
               '<LOC ability_radar>Radar',
-        },
+            },
+            UniformScale = 0.24,    
         },
     Intel = {
     VisionRadius = 14, 
@@ -40,8 +41,15 @@ UnitBlueprint {
         BuildCostMass = 580,
         BuildTime = 26000,
     },
-    SelectionSizeX = 2,
-    SelectionSizeZ = 3,
+    Description = 'Frigate',
+    Interface = {
+        HelpText = 'Frigate',
+    },
+    SelectionSizeX = 3,
+    SelectionSizeZ = 4,
+    SizeX = 3.6,
+    SizeY = 4,
+    SizeZ = 6,
     Weapon = {
         [1] = {
             Damage = 33,

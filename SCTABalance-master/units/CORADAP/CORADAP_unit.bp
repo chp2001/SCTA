@@ -152,7 +152,7 @@ UnitBlueprint {
         HelpText = 'Produces Aircraft',
     },
     LifeBarHeight = 0.22,
-    LifeBarOffset = 5,
+    LifeBarOffset = 3,
     LifeBarSize = 8,
     Physics = {
         BuildOnLayerCaps = {

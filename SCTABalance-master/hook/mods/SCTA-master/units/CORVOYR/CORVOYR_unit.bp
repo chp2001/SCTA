@@ -24,7 +24,7 @@ UnitBlueprint {
         MaxHealth = 100,
     },
     Display = {
-        UniformScale = 0.08,
+        UniformScale = 0.09,
     },
     Economy = {
         BuildCostEnergy = 210,
@@ -55,9 +55,9 @@ UnitBlueprint {
         RadarRadius = 50, 
     },
     LifeBarSize = 1,
-    SelectionSizeX = 0.6,
-    SelectionSizeZ = 0.6,
-    SizeX = 1,
-    SizeY = 1,
-    SizeZ = 1,
+    SelectionSizeX = 0.75,
+    SelectionSizeZ = 0.75,
+    SizeX = 1.5,
+    SizeY = 1.5,
+    SizeZ = 1.5,
 }

@@ -26,8 +26,8 @@ UnitBlueprint {
 	'LEVEL1',
     },
     Defense = {
-        Health = 4200,
-        MaxHealth = 4200,
+        Health = 9000,
+        MaxHealth = 9000,
     },
         Display = {
                 Abilities = {
@@ -44,7 +44,7 @@ UnitBlueprint {
         },
     },
     LifeBarHeight = 0.22,
-    LifeBarOffset = 5,
+    LifeBarOffset = 3,
     LifeBarSize = 10,
     General = {
         UpgradesTo = 'cordsy', 

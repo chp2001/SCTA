@@ -100,10 +100,6 @@ UnitBlueprint {
         BuildCostMass = 298,
         BuildTime = 6112,
     },
-    Footprint = {
-        SizeX = 3,
-        SizeZ = 3,
-    },
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -175,7 +171,7 @@ UnitBlueprint {
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 22, 
+            MuzzleVelocity = 24, 
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_MEDIUMCANNON/ARM_MEDIUMCANNON_proj.bp',
             RackBones = {
                 {
@@ -192,12 +188,13 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.56,
+            RateOfFire = 0.5882352941,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'Turret_Muzzle',
             TurretBonePitch = 'Turret',
             TurretBoneYaw = 'Turret',

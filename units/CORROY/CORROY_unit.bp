@@ -175,7 +175,7 @@ UnitBlueprint {
             MaxRadius = 42.25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 18.75,
+            MuzzleVelocity = 24,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_ROY/CORE_ROY_proj.bp',
             RackBones = {
                 {
@@ -196,15 +196,19 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.42,
+            RateOfFire = 0.4166666667,
             TargetCheckInterval = 1,
             TrackingRadius = 1.25,
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'flarea1',
             TurretBonePitch = 'sleeves',
+            TurretBoneDualMuzzle = 'flarea2',
+            TurretBoneDualPitch = 'sleeves',
+            TurretDualManipulators = true,
             TurretBoneYaw = 'turret',
             TurretPitch = 0,
             TurretPitchRange = 360,
@@ -225,11 +229,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 50,
+            Damage = 250,
             DamageRadius = 0.5,
-            DamageWater = 250,
-            DamageRadiusWater = 0.5,
-            DamageType = 'Normal',
+            DamageType = 'AntiSub',
             DisplayName = 'COREDEPTHCHARGE',
             FireTargetLayerCapsTable = {
                 Water = 'Water|Sub|Seabed',
@@ -241,7 +243,7 @@ UnitBlueprint {
             MaxRadius = 20,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 10,
+            MuzzleVelocity = 5,
             ProjectileId = '/mods/SCTA-master/projectiles/COREDEPTHCHARGE/COREDEPTHCHARGE_proj.bp',
             RackBones = {
                 {

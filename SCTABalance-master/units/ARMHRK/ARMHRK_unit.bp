@@ -7,17 +7,17 @@ UnitBlueprint {
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'TCORSEL',
+            Cue = 'TARMSEL',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StartMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'TCORMOVE',
+            Cue = 'TARMMOVE',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StopMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'TCORST0P',
+            Cue = 'TARMST0P',
             LodCutoff = 'UnitMove_LodCutoff',
         },
 	Destroyed = Sound {
@@ -89,10 +89,6 @@ UnitBlueprint {
         BuildCostMass = 440,
         BuildTime = 7002,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-        },
     General = {
         Category = 'Indirect Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -182,12 +178,13 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.18,
+            RateOfFire = 0.1818181818,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             WeaponCategory = 'MISSILE',
 	    WeaponUnpacks = true,
             WeaponRepackTimeout = 3,

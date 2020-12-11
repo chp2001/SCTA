@@ -87,12 +87,11 @@ UnitBlueprint {
         BuildCostMass = 354,
         BuildTime = 9676,
     },
-    Footprint = {
-	MaxSlope = 0.625,
+    --[[Footprint = {
 	MaxWaterDepth = 0.75,
         SizeX = 2,
         SizeZ = 2,
-    },
+    },]]--
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -163,7 +162,7 @@ UnitBlueprint {
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 25,
+            MuzzleVelocity = 30,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMLATNK_WEAPON/ARMLATNK_WEAPON_proj.bp',
             RackBones = {
                 {
@@ -179,12 +178,13 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.65,
+            RateOfFire = 0.6666666667,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'flare',
             TurretBonePitch = 'Lgun',
             TurretBoneYaw = 'Lturret',
@@ -223,7 +223,7 @@ UnitBlueprint {
             MaxRadius = 37.75,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 36,
+            MuzzleVelocity = 28.125,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMKBOT_MISSILE/ARMKBOT_MISSILE_proj.bp',
             RackBones = {
                 {
@@ -239,12 +239,13 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.42,
+            RateOfFire = 0.4166666667,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'Rflare1',
             TurretBonePitch = 'Rgun',
             TurretBoneYaw = 'Rturret',

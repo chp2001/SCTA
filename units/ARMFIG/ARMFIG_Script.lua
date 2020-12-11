@@ -82,7 +82,7 @@ ARMFIG = Class(TAair) {
 
 	CloseWings = function(self)
 
-		self.moving = false
+		self.moving = nil
 
 		--MOVE wing1 to x-axis <0> SPEED <1.00>;
 		self.Sliders.wing1:SetGoal(0,0,0)

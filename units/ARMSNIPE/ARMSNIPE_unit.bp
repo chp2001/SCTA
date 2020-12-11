@@ -97,12 +97,6 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 25,
         BuildTime = 28137,
     },
-    Footprint = {
-	SizeX = 2,
-	SizeZ = 2,
-	MaxSlope = 1.0625,
-	MaxWaterDepth = 0.75,
-    },
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -204,7 +198,8 @@ UnitBlueprint {
             EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 50,
             EnergyRequired = 100,
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'Flare',
             TurretBonePitch = 'ruparm',
             TurretBoneYaw = 'torso',

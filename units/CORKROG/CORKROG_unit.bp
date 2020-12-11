@@ -98,12 +98,6 @@ UnitBlueprint {
         BuildCostMass = 29489,
         BuildTime = 382193,
     },
-    Footprint = {
-        SizeX = 3,
-        SizeZ = 3,
-        MaxSlope = 1.0625,
-        MaxWaterDepth = 0.75,
-    },
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -206,7 +200,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'rmuzzle',
             TurretBonePitch = 'rarm',
             TurretBoneDualMuzzle = 'lmuzzle',
@@ -276,7 +271,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'eyeflare',
             TurretBonePitch = 'head',
             TurretBoneYaw = 'head',
@@ -345,7 +341,8 @@ UnitBlueprint {
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'torso',
             TurretBonePitch = 'torso',
             TurretBoneYaw = 'torso',

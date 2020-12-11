@@ -98,15 +98,10 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 1224,
-        BuildCostMass = 129,
+        BuildCostMass = 112,
         BuildTime = 2636,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-	MaxSlope = 0.875,
-	MaxWaterDepth = 0.75,
-    },
+
     General = {
         Category = 'Anti Air',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -164,9 +159,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 72,
+            Damage = 96,
             DamageRadius = 1.5, 
-            DamageType = 'AntiAir',
+            DamageType = 'SAMAir',
             DisplayName = 'CORKBOT_MISSILE',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',
@@ -201,12 +196,13 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.33,
+            RateOfFire = 0.3333333333,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'Muzzle1',
             TurretBonePitch = 'GunBase',
             TurretBoneYaw = 'Turret',

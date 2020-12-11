@@ -200,12 +200,13 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.34,
+            RateOfFire = 0.3448275862,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'flare1',
             TurretBonePitch = 'barrel1',
             TurretBoneDualMuzzle = 'flare2',
@@ -231,11 +232,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 40,
+            Damage = 210,
             DamageRadius = 0.5,
-            DamageType = 'Normal',
-            DamageWater = 200,
-            DamageRadiusWater = 0.5,
+            DamageType = 'AntiSub',
             DisplayName = 'ARMDEPTHCHARGE',
             FireTargetLayerCapsTable = {
                 Water = 'Water|Sub|Seabed',
@@ -247,7 +246,7 @@ UnitBlueprint {
             MaxRadius = 45,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 10,
+            MuzzleVelocity = 5,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMDEPTHCHARGE/ARMDEPTHCHARGE_proj.bp',
             RackBones = {
                 {
@@ -264,7 +263,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.36,
+            RateOfFire = 0.3571428571,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

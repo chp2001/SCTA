@@ -10,10 +10,6 @@ UnitBlueprint {
         Economy = {
             BuildCostMass = 100,
         },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
     SizeX = 1.6,
     SizeY = 1.4,
     SizeZ = 1.4,

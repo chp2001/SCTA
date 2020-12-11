@@ -18,21 +18,21 @@ UnitBlueprint {
 'LEVEL3',
 },
 Display = {
-    UniformScale = 0.08,
+    UniformScale = 0.12,
     },
     Defense = {
         Health = 3000,
         MaxHealth = 3000,
     },
     Economy = {
-        BuildCostEnergy = 6000,
-        BuildCostMass = 2000,
+        BuildCostEnergy = 20000,
+        BuildCostMass = 4000,
     },
-    SelectionSizeX = 2,
-    SelectionSizeZ = 2,
+    SelectionSizeX = 3,
+    SelectionSizeZ = 3,
     SelectionThickness = 0.25,
-    SizeX = 4,
+    SizeX = 6,
     SizeY = 2,
-    SizeZ = 4,
+    SizeZ = 6,
     StrategicIconName = 'icon_sub3_antinavy',
 }

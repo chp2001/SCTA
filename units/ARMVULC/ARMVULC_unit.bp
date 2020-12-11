@@ -142,7 +142,6 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
             {
-                AboveWaterTargetsOnly = true,
                 ArtilleryShieldBlocks = true,
                 Audio = {
                     Fire = Sound {
@@ -207,12 +206,13 @@ UnitBlueprint {
                 RackSalvoReloadTime = 0,
                 RackSalvoSize = 4,
                 RackSlavedToTurret = false,
-                RateOfFire = 4,
+                RateOfFire = 5,
                 TargetCheckInterval = 1,
                 TargetPriorities = {
                     'ALLUNITS',
                 },
-                TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+                TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
                 TurretBoneMuzzle = 'Flare',
                 TurretBonePitch = 'Neck',
                 TurretBoneYaw = 'Turret',

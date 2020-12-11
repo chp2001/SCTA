@@ -33,8 +33,8 @@ ProjectileBlueprint {
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 1,
-        MaxHealth = 1,
+        Health = 2,
+        MaxHealth = 2,
     },
     Categories = {
         'CORE',
@@ -45,7 +45,7 @@ ProjectileBlueprint {
     Display = {
 	#TODO: corshiprckt1
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/corshiprckt1_mesh.bp',
-        StrategicIconSize = 1,
+        StrategicIconSize = 2,
         UniformScale = 0.16,
     },
     General = {
@@ -67,7 +67,7 @@ ProjectileBlueprint {
         DestroyOnWater = true,
 	InitialSpeed = 0,
         LeadTarget = false,
-        Lifetime = 10,
+        Lifetime = 50,
         MaxSpeed = 25,
         TrackTarget = false,
         TurnRate = 134,

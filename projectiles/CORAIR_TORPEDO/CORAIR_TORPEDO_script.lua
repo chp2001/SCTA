@@ -8,12 +8,6 @@ local TAUnderWaterProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua')
 CORAIR_TORPEDO = Class(TAUnderWaterProjectile) {
 	TrackTime = 10,
 
-	PassDamageThread = function(self)
-		local bp = self:GetLauncher():GetBlueprint().Weapon
-		WaitSeconds(0.1)
-		self.DamageData.DamageAmount = bp.DamageWater or 800
-		self.DamageData.DamageRadius = bp.DamageRadiusWater or 0.2
-	end,
 }
 
 TypeClass = CORAIR_TORPEDO

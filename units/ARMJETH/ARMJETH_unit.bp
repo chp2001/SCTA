@@ -95,15 +95,10 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 1219,
-        BuildCostMass = 128,
+        BuildCostMass = 106,
         BuildTime = 2631,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-	MaxSlope = 0.875,
-	MaxWaterDepth = 0.75,
-    },
+
     General = {
         Category = 'Anti Air',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -163,7 +158,7 @@ UnitBlueprint {
             DamageFriendly = false,
             Damage = 63,
             DamageRadius = 1.5, 
-            DamageType = 'AntiAir',
+            DamageType = 'SAMAir',
             DisplayName = 'ARMKBOT_MISSILE',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',
@@ -176,7 +171,7 @@ UnitBlueprint {
             MaxRadius = 32,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 35,
+            MuzzleVelocity = 28.125,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMKBOT_MISSILE/ARMKBOT_MISSILE_proj.bp',
             RackBones = {
                 {
@@ -203,7 +198,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'RightMuzzle',
             TurretBonePitch = 'RightGun',
             TurretBoneDualMuzzle = 'LeftMuzzle',

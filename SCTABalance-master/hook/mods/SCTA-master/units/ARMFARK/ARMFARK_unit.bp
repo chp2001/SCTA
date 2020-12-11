@@ -36,10 +36,6 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 3,
 	ProductionPerSecondMass = 0,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
     Intel = {
         VisionRadius = 10,
     },

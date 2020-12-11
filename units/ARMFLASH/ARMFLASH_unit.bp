@@ -115,12 +115,11 @@ UnitBlueprint {
         BuildCostMass = 106,
         BuildTime = 1676,
     },
-    Footprint = {
-	MaxSlope = 0.625,
+    --[[Footprint = {
 	MaxWaterDepth = 0.75,
         SizeX = 1,
         SizeZ = 1,
-    },
+    },]]--
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -177,7 +176,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 5,
+            Damage = 7,
             DamageRadius = 0.25,
             FiringRandomness = 1,
             DamageType = 'Normal',
@@ -192,7 +191,7 @@ UnitBlueprint {
             Label = 'EMG',
             MaxRadius = 12,
             MuzzleSalvoDelay = 0.1,
-            MuzzleSalvoSize = 3,
+            MuzzleSalvoSize = 2,
 	    MuzzleVelocity = 27,
             ProjectileId = '/mods/SCTA-master/projectiles/EMG/EMG_proj.bp',
             RackBones = {
@@ -214,12 +213,13 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 2,
-            RateOfFire = 5,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'Muzzle_Aim',
             TurretBonePitch = 'Turret_Barrel',
             TurretBoneYaw = 'Turret',

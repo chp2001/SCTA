@@ -101,12 +101,6 @@ UnitBlueprint {
         BuildCostMass = 398,
         BuildTime = 10827,
     },
-    Footprint = {
-	SizeX = 2,
-	SizeZ = 2,
-	MaxSlope = 0.875,
-	MaxWaterDepth = 0.75,
-    },
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -179,7 +173,7 @@ UnitBlueprint {
             MaxRadius = 24,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 28.125,
+	    MuzzleVelocity = 28,
             ProjectileId = '/mods/SCTA-master/projectiles/GAUSS/GAUSS_proj.bp',
             RackBones = {
                 {
@@ -201,10 +195,11 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'muzzle',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
+            TurretBoneMuzzle = 'flare',
             TurretBonePitch = 'barrel',
-            TurretBoneYaw = 'tower',
+            TurretBoneYaw = 'turret',
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 360,

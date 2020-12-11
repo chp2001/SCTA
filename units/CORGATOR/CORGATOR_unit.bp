@@ -4,27 +4,27 @@
 #Blueprint created by Raevn
 
 UnitBlueprint {
-    Audio = {
-        UISelection = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'TCORSEL',
-            LodCutoff = 'UnitMove_LodCutoff',
+        Audio = {
+            UISelection = Sound {
+                Bank = 'TA_Sound',
+                Cue = 'TARMSEL',
+                LodCutoff = 'UnitMove_LodCutoff',
+            },
+            StartMove = Sound {
+                Bank = 'TA_Sound',
+                Cue = 'TARMMOVE',
+                LodCutoff = 'UnitMove_LodCutoff',
+            },
+            StopMove = Sound {
+                Bank = 'TA_Sound',
+                Cue = 'TARMST0P',
+                LodCutoff = 'UnitMove_LodCutoff',
+            },
+        Destroyed = Sound {
+                Bank = 'TA_Sound',
+                Cue = 'XPLOLRG3',
+                LodCutoff = 'UnitMove_LodCutoff',
         },
-        StartMove = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'TCORMOVE',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        StopMove = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'VCORSTOP',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-	    Destroyed = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'XPLOLRG3',
-            LodCutoff = 'UnitMove_LodCutoff',
-	    },
     },
     BuildIconSortPriority = 3,
     Categories = {
@@ -79,12 +79,6 @@ UnitBlueprint {
         BuildCostEnergy = 887,
         BuildCostMass = 110,
         BuildTime = 1737,
-    },
-    Footprint = {
-	SizeX = 2,
-	SizeZ = 2,
-	MaxSlope = 0.625,
-	MaxWaterDepth = 0.75,
     },
     General = {
         Category = 'Direct Fire',
@@ -185,7 +179,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'flare1',
             TurretBonePitch = 'barrel1',
             TurretBoneDualMuzzle = 'flare2',

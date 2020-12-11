@@ -98,11 +98,6 @@ UnitBlueprint {
         BuildCostMass = 264,
         BuildTime = 4530,
     },
-    Footprint = {
-	SizeX = 3,
-	SizeZ = 3,
-	MaxSlope = 0.75,
-    },
     General = {
         Category = 'Indirect Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -150,7 +145,6 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         {
-            AboveWaterTargetsOnly = true,
             ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
@@ -198,7 +192,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'flare',
             TurretBonePitch = 'pitchturret',
             TurretBoneYaw = 'turret',

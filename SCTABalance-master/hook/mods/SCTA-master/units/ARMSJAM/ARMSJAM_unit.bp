@@ -15,8 +15,7 @@ UnitBlueprint {
         },
     },
     SelectionSizeX = 1.25,
-    SelectionSizeZ = 1.9,
-    SizeX = 3,
+    SelectionSizeZ = 2.6,
     SizeY = 2,
     SizeZ = 4,
 }

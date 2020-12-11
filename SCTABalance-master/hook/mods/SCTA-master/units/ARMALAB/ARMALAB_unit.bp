@@ -28,7 +28,6 @@ UnitBlueprint {
         MaxHealth = 10000,
     },
     Footprint = {	
-        MaxSlope = 0.625,
     SizeX = 8,
     SizeZ = 8,
         },
@@ -45,10 +44,11 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 10,
     },
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 3,
     LifeBarSize = 8,
     SelectionSizeX = 7,
     SelectionSizeZ = 5,
-    SelectionThickness = 0.25,
     SizeX = 9,
     SizeY = 1,
     SizeZ = 9,

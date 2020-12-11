@@ -141,7 +141,7 @@ UnitBlueprint {
             DamageFriendly = false,
             Damage = 90,
             DamageRadius = 1.5,
-            DamageType = 'AntiAir',
+            DamageType = 'SAMAir',
             DisplayName = 'CORRL_MISSILE',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',
@@ -186,7 +186,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS'
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'Muzzle2',
             TurretBonePitch = 'Turret',
             TurretBoneYaw = 'Turret',

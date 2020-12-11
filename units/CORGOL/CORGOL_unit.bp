@@ -7,24 +7,24 @@ UnitBlueprint {
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'TCORSEL',
+            Cue = 'TARMSEL',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StartMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'TCORMOVE',
+            Cue = 'TARMMOVE',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StopMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'VCORSTOP',
+            Cue = 'TARMST0P',
             LodCutoff = 'UnitMove_LodCutoff',
         },
-	Destroyed = Sound {
+    Destroyed = Sound {
             Bank = 'TA_Sound',
             Cue = 'XPLOLRG3',
             LodCutoff = 'UnitMove_LodCutoff',
-	},
+    },
     },
     BuildIconSortPriority = 9,
     Categories = {
@@ -97,12 +97,7 @@ UnitBlueprint {
         BuildCostMass = 697,
         BuildTime = 7058,
     },
-    Footprint = {
-	SizeX = 3,
-	SizeZ = 3,
-	MaxSlope = 0.75,
-	MaxWaterDepth = 6.25
-    },
+
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -173,7 +168,7 @@ UnitBlueprint {
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 2,
-            MuzzleVelocity = 20,
+            MuzzleVelocity = 30,
             ProjectileId = '/mods/SCTA-master/projectiles/COR_GOL/COR_GOL_proj.bp',
             RackBones = {
                 {
@@ -190,12 +185,13 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.67,
+            RateOfFire = 0.6666666667,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'muzzle',
             TurretBonePitch = 'sleeve',
             TurretBoneYaw = 'turret',

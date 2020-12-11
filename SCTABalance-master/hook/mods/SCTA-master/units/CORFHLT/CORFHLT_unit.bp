@@ -34,86 +34,25 @@ UnitBlueprint {
     SizeY = 3,
     SizeZ = 2,
     Weapon = {
-        {
-            Audio = {
-                Fire = Sound {
-                    Bank = 'TA_Sound',
-                    Cue = 'LASRMAS2',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
-            },
-            BallisticArc = 'RULEUBA_None',
-            CollideFriendly = false,
-            DamageFriendly = false,
+        [1] = {
             Damage = 90,
-            DamageRadius = 0.25,
-            DamageType = 'Normal',
-            DisplayName = 'CORFHLT_LASER',
-            FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Air',
-                Water = 'Land|Water|Air',
-            },
-	    RangeCategory = 'UWRC_DirectFire',
-     WeaponCategory = 'DirectFire',
             FiringTolerance = 3,
-            Label = 'CORFHLT_LASER',
             MaxRadius = 48,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 50,
-            ProjectileId = '/mods/SCTA-master/projectiles/ARMFHLT_LASER/ARMFHLT_LASER_proj.bp',
             EnergyDrainPerSecond = 50,
             EnergyRequired = 100,
             UseFiringSolutionInsteadOfAimBone = true,
             ProjectileLifetime = 1,
-            RackBones = {
-                {
-                    MuzzleBones = {
-                        'muzzle1',
-                    },
-                    RackBone = 'barrel1',
-                },
-                {
-                    MuzzleBones = {
-                        'muzzle2',
-                    },
-                    RackBone = 'barrel2',
-                },
-            },
             RackRecoilDistance = -3,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 1.5,
-            TargetCheckInterval = 1,
-            TargetPriorities = {
-                'ALLUNITS'
-            },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'muzzle1',
-            TurretBonePitch = 'gun',
-            TurretBoneDualMuzzle = 'muzzle2',
-            TurretBoneDualPitch = 'gun',
-            TurretBoneYaw = 'turret',
-            TurretDualManipulators = true,
-            TurretPitch = 0,
-            TurretPitchRange = 360,
-            TurretPitchSpeed = 150,
-            TurretYaw = 0,
-            TurretYawRange = 360,
-            TurretYawSpeed = 150,
-            Turreted = true,
+            RateOfFire = 1.666666667,
         },
-        { #LARGE_BUILDINGEX
-            Damage = 100,
-            DamageFriendly = true,
-            DamageRadius = 3.75,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        [2] = {
         },
-
     },
 }

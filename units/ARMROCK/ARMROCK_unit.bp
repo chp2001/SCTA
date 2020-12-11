@@ -96,12 +96,7 @@ UnitBlueprint {
         BuildCostMass = 117,
         BuildTime = 1946,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-	MaxSlope = 0.875,
-	MaxWaterDepth = 0.75,
-    },
+
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -196,7 +191,8 @@ UnitBlueprint {
                 'LAND',
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'Muzzle',
             TurretBonePitch = 'Arm',
             TurretBoneYaw = 'Torso',

@@ -48,8 +48,8 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 650,
-        MaxHealth = 650,
+        Health = 580,
+        MaxHealth = 580,
         AirThreatLevel = 4,
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,
@@ -84,14 +84,8 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 1027,
-        BuildCostMass = 119,
+        BuildCostMass = 128,
         BuildTime = 1941,
-    },
-    Footprint = {
-	MaxSlope = 1,
-	MaxWaterDepth = 0.75,
-        SizeX = 3,
-        SizeZ = 3,
     },
     General = {
         Category = 'Anti Air',
@@ -152,7 +146,7 @@ UnitBlueprint {
             Damage = 90,
             DamageRadius = 1.5,
             FiringRandomness = 0,
-            DamageType = 'AntiAir',
+            DamageType = 'SAMAir',
             DisplayName = 'ARMTRUCK_MISSILE',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',
@@ -165,7 +159,7 @@ UnitBlueprint {
             MaxRadius = 37.5,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 35,
+            MuzzleVelocity = 28.125,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMTRUCK_MISSILE/ARMTRUCK_MISSILE_proj.bp',
             RackBones = {
                 {
@@ -192,7 +186,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'Turret_Barrel',
             TurretBonePitch = 'Turret_Barrel',
             TurretBoneYaw = 'Turret',

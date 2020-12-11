@@ -26,8 +26,8 @@ UnitBlueprint {
 	'LEVEL1',
     },
     Defense = {
-        Health = 4200,
-        MaxHealth = 4200,
+        Health = 9000,
+        MaxHealth = 9000,
     },
         Display = {
                 Abilities = {
@@ -43,7 +43,9 @@ UnitBlueprint {
             'cordsy',
         },
     },
-    LifeBarSize = 8,
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 3,
+    LifeBarSize = 10,
     General = {
         UpgradesTo = 'cordsy', 
     },
@@ -52,7 +54,7 @@ UnitBlueprint {
         WaterVisionRadius = 6,
     },
     SelectionSizeX = 9.9,
-    SelectionSizeZ = 6.8,
+    SelectionSizeZ = 9.9,
     SizeX = 12,
     SizeY = 5,
     SizeZ = 12,

@@ -179,7 +179,7 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS'
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
             TurretBoneMuzzle = 'flare',
             TurretBonePitch = 'barrela',
             TurretBoneYaw = 'turreta',
@@ -195,7 +195,6 @@ UnitBlueprint {
             WeaponRepackTimeout = 3,
         },
         {
-            AboveWaterTargetsOnly = true,
             ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
@@ -240,13 +239,13 @@ UnitBlueprint {
             EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 0,
             EnergyRequired = 50,
-            
-            RateOfFire = 1.92,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS'
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'flareb',
             TurretBonePitch = 'barrelb',
             TurretBoneYaw = 'turretb',
@@ -262,7 +261,6 @@ UnitBlueprint {
             WeaponRepackTimeout = 3,
         },
         {
-            AboveWaterTargetsOnly = true,
             ArtilleryShieldBlocks = true,
             Audio = {
                 Fire = Sound {
@@ -288,7 +286,7 @@ UnitBlueprint {
             MaxRadius = 30,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 43.75,
+            MuzzleVelocity = 50,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_LIGHTLASER/CORE_LIGHTLASER_proj.bp',
             RackBones = {
                 {
@@ -313,13 +311,13 @@ UnitBlueprint {
             EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 10,
             EnergyRequired = 10,
-            
-            RateOfFire = 1.04,
+            RateOfFire = 1,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS'
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'flarec1',
             TurretBonePitch = 'barrelc1',
             TurretBoneYaw = 'turretc',

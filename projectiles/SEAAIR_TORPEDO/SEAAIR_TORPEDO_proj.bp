@@ -34,12 +34,11 @@ ProjectileBlueprint {
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/torpedo_mesh.bp',
         StrategicIconSize = 1,
-        UniformScale = 0.22,
+        UniformScale = 0.16,
     },
     General = {
         Category = 'Anti Navy',
         EntityCategory = {
-    
             'PROJECTILE',
             'DIRECTFIRE',
 	    'ANTINAVY',
@@ -51,7 +50,7 @@ ProjectileBlueprint {
     },
     Physics = {
         DestroyOnWater = false,
-        InitialSpeed = 7,
+        InitialSpeed = 15,
         TurnRate = 3600,
         VelocityAlign = true,
         UseGravity = true,

@@ -93,10 +93,7 @@ UnitBlueprint {
         BuildCostMass = 120,
         BuildTime = 3747,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-    },
+
     General = {
         Category = 'Anti Air',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -161,7 +158,7 @@ UnitBlueprint {
             Damage = 147,
             DamageRadius = 1.5,
             FiringRandomness = 0,
-            DamageType = 'AntiAir',
+            DamageType = 'SAMAir',
             DisplayName = 'ARMAH_WEAPON',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',
@@ -202,12 +199,13 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.48,
+            RateOfFire = 0.4761904762,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'muzzle_02',
             TurretBonePitch = 'box',
             TurretBoneYaw = 'box',

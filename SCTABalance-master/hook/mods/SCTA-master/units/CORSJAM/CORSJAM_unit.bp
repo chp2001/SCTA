@@ -9,8 +9,7 @@ UnitBlueprint {
 	MaintenanceConsumptionPerSecondEnergy = 10,
     },
     SelectionSizeX = 1.25,
-    SelectionSizeZ = 1.9,
-    SizeX = 3,
-    SizeY = 2,
+    SelectionSizeZ = 2.6,
+    SizeY = 1.6,
     SizeZ = 4,
 }

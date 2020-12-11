@@ -26,10 +26,6 @@ UnitBlueprint {
     Economy = {
         BuildCostMass = 1250,
     },
-    Footprint = {
-	SizeX = 2,
-	SizeZ = 2,
-    },
     StrategicIconName = 'icon_land3_antishield',
     SelectionCenterOffsetZ = -0.3,
     SelectionSizeX = 1.5,
@@ -40,77 +36,14 @@ UnitBlueprint {
     SizeZ = 3,
     StrategicIconSortPriority = 0,
     Weapon = {
-        {
-            Audio = {
-                Fire = Sound {
-                    Bank = 'TA_Sound',
-                    Cue = 'ANNIGUN1',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
-            },
-            BallisticArc = 'RULEUBA_None',
-            CollideFriendly = false,
-	    DamageFriendly = true,
-            Damage = 1000,
-	    DamageRadius = 0.5,
-            DamageType = 'Normal',
-            DisplayName = 'ARMMANNI_WEAPON',
-            EnergyChargeForFirstShot = true,
-            EnergyDrainPerSecond = 100,
+        [1] = {
+            EnergyDrainPerSecond = 1500,
             EnergyRequired = 500,
-            
-            FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Seabed',
-                Seabed = 'Land|Water|Seabed',
-            },
-	    RangeCategory = 'UWRC_DirectFire',
-     WeaponCategory = 'DirectFire',
-            Label = 'ARMMANNI_WEAPON',
             MaxRadius = 60,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
             MuzzleVelocity = 62.5,
-            ProjectileId = '/mods/SCTA-master/projectiles/ARMMANNI_WEAPON/ARMMANNI_WEAPON_proj.bp',
-            RackBones = {
-                {
-                    MuzzleBones = {
-                        'flare',
-                    },
-                    RackBone = 'Barrel',
-                },
-            },
-            RackFireTogether = false,
-            RackRecoilDistance = 0,
-            RackReloadTimeout = 0,
-            RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 0,
-            RackSalvoSize = 1,
-            RackSlavedToTurret = false,
-            RateOfFire = 0.17,
-            TargetCheckInterval = 1,
-            TargetPriorities = {
-                'ALLUNITS',
-            },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'Barrel',
-            TurretBonePitch = 'Sleeve',
-            TurretBoneYaw = 'Turret', 
-            TurretDualManipulators = false,
-            TurretPitch = 0,
-            TurretPitchRange = 60,
-            TurretPitchSpeed = 4,
-            TurretYaw = 0,
-            TurretYawRange = 360,
-            TurretYawSpeed = 8,
-            Turreted = true,
+            RateOfFire = 0.1694915254,
         },
-        { #ATOMIC_BLAST
-            Damage = 2000,
-            DamageFriendly = true,
-            DamageRadius = 16.125,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        [2] = {
         },
     },
 }

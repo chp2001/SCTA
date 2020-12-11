@@ -127,10 +127,10 @@ UnitBlueprint {
         BuildCostMass = 187,
         BuildTime = 14333,
     },
-    Footprint = {
+    --[[Footprint = {
         SizeX = 1,
         SizeZ = 1,
-    },
+    },]]--
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -187,7 +187,6 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
-            AboveWaterTargetsOnly = true,
             AutoInitiateAttackCommand = true,
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
@@ -241,7 +240,8 @@ UnitBlueprint {
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
         },
         { #SMALL_UNITEX #was big_unitx
             Damage = 30,

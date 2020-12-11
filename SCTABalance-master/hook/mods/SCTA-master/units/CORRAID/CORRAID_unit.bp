@@ -6,19 +6,15 @@
 UnitBlueprint {
     Merge = true,
     Display = {
-        UniformScale = 0.12,
+        UniformScale = 0.14,
     },
     Economy = {
-        BuildCostMass = 116,
+        BuildCostMass = 122,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-        },
     LifeBarSize = 1.4,
     SelectionSizeX = 1,
     SelectionSizeZ = 1,
-    SizeX = 1.5,
-	SizeZ = 1.5,
-    SizeY = 0.6, 
+    SizeX = 1.7,
+	SizeZ = 1.7,
+    SizeY = 1, 
 }

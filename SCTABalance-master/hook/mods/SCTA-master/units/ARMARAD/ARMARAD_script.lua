@@ -2,13 +2,6 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local oldARMARAD = ARMARAD
 
 ARMARAD = Class(oldARMARAD) {
-	OnStopBuild = function(self, unitBeingBuilt)
-		 oldARMARAD.OnStopBuild(self, unitBeingBuilt)
-		 if unitBeingBuilt:GetFractionComplete() == 1 and unitBeingBuilt:GetUnitId() == self:GetBlueprint().General.UpgradesTo then
-			 NotifyUpgrade(self, unitBeingBuilt)
-			 self:Destroy()
-		 end
-	 end,
 
 	 OnFailedToBuild = function(self)
         oldARMARAD.OnFailedToBuild(self)

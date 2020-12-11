@@ -23,19 +23,15 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_radar>Radar',
         },
-        UniformScale = 0.08, 
+        UniformScale = 0.12,
        },
     Intel = {
     RadarRadius = 40,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
     LifeBarSize = 1,
-    SelectionSizeX = 0.6,
-    SelectionSizeZ = 0.6,
-    SizeX = 1,
-    SizeY = 0.5,
-    SizeZ = 1,
+    SelectionSizeX = 0.9,
+    SelectionSizeZ = 0.9,
+    SizeX = 1.5,
+    SizeY = 1.5,
+    SizeZ = 1.5,
 }

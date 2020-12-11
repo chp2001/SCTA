@@ -141,8 +141,8 @@ UnitBlueprint {
     StrategicIconSortPriority = 5,
     Weapon = {
         {
-            AboveWaterTargetsOnly = true,
             ArtilleryShieldBlocks = true,
+            RenderFireClock = true,
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
@@ -191,7 +191,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS'
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'flare',
             TurretBonePitch = 'gun',
             TurretBoneYaw = 'turret',

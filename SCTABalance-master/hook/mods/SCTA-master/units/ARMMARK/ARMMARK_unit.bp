@@ -25,11 +25,6 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 0,
         BuildTime = 1200,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-	MaxWaterDepth = 0,
-    },
     General = {
         OrderOverrides = {
                 RULEUTC_IntelToggle = {

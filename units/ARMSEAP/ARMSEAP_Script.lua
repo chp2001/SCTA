@@ -12,15 +12,10 @@ ARMSEAP = Class(TASeaair) {
 		TASeaair.OnCreate(self)
 		self.Sliders = {
 			chassis = CreateSlider(self, 0),
+			wing1 = CreateSlider(self, 'LWing'),
+			wing2 = CreateSlider(self, 'RWing'),
 		}
 		for k, v in self.Sliders do
-			self.Trash:Add(v)
-		end
-		self.Spinners = {
-			wing1 = CreateRotator(self, 'LWing', 'z', nil, 0, 0, 0),
-			wing2 = CreateRotator(self, 'RWing', 'z', nil, 0, 0, 0),
-		}
-		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
 	end,
@@ -28,23 +23,25 @@ ARMSEAP = Class(TASeaair) {
 
 
 	OpenWings = function(self)
+		self.moving = true
 		--TURN wing1 to z-axis <-90.00> SPEED <60.69>;
-		self.Spinners.wing1:SetGoal(90)
-		self.Spinners.wing1:SetSpeed(61)
+		self.Sliders.wing1:SetGoal(3,0,2)
+		self.Sliders.wing1:SetSpeed(1)
 
 		--TURN wing2 to z-axis <90.00> SPEED <60.69>;
-		self.Spinners.wing2:SetGoal(-90)
-		self.Spinners.wing2:SetSpeed(61)
+		self.Sliders.wing2:SetGoal(-3,0,2)
+		self.Sliders.wing2:SetSpeed(1)
 	end,
 
 	CloseWings = function(self)
+		self.moving = nil
 		--TURN wing1 to z-axis <0> SPEED <60.69>;
-		self.Spinners.wing1:SetGoal(0)
-		self.Spinners.wing1:SetSpeed(61)
+		self.Sliders.wing1:SetGoal(0,0,0)
+		self.Sliders.wing1:SetSpeed(1)
 
 		--TURN wing2 to z-axis <0> SPEED <60.69>;
-		self.Spinners.wing2:SetGoal(0)
-		self.Spinners.wing2:SetSpeed(61)
+		self.Sliders.wing2:SetGoal(0,0,0)
+		self.Sliders.wing2:SetSpeed(1)
 	end,
 
 	Weapons = {

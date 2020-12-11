@@ -183,13 +183,13 @@ UnitBlueprint {
             RackSalvoSize = 1,
             RateOfFire = 10,
             TargetCheckInterval = 1,
-            TargetRestrictDisallow = 'UNTARGETABLE',
             WeaponRepackTimeout = 4,
             WeaponUnpacks = true,
             ForceSingleFire = true,
             CountedProjectile = true,
             InitialProjectileStorage = 0,
             MaxProjectileStorage = 10,
+            TargetRestrictDisallow = 'UNTARGETABLE',
             TargetRestrictOnlyAllow = 'STRATEGIC MISSILE',
             TargetType = 'RULEWTT_Projectile',
             EffectiveRadius = 125,
@@ -205,7 +205,6 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-        
     },
         Wreckage = {
 	---UseCustomMesh = true,

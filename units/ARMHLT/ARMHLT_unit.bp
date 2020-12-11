@@ -187,12 +187,13 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 1.04,
+            RateOfFire = 1,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS'
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'Muzzle_01',
             TurretBonePitch = 'Barrels',
             TurretBoneDualMuzzle = 'Muzzle_02',

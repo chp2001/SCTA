@@ -54,6 +54,14 @@ TAunit = Class(Unit)
 		self:SetConsumptionActive(true)	
 		ForkThread(self.IdleEffects, self)
 	end,
+
+	OnStopBuild = function(self, unitBeingBuilt, order)
+		Unit.OnStopBuild(self, unitBeingBuilt, order)
+		if unitBeingBuilt:GetFractionComplete() == 1 and unitBeingBuilt:GetUnitId() == self:GetBlueprint().General.UpgradesTo then
+			NotifyUpgrade(self, unitBeingBuilt)
+			self:Destroy()
+		end
+	end,
 	
 
 	MovementEffects = function(self, EffectsBag, TypeSuffix)
@@ -178,17 +186,7 @@ TAMass = Class(TAunit) {
 	}
 	
 TAnoassistbuild = Class(TAunit) {
-noassistbuild = true,
-
-    OnDamage = function(self, instigator, amount, vector, damageType)
-        TAunit.OnDamage(self, instigator, amount, vector, damageType)
-        WaitSeconds(1)
-        for _, v in self:GetGuards() do
-            if not v.Dead then
-                IssueClearCommands({v})
-                IssueGuard({v},self)
-            end
-        end
-    end,
-
+	OnCreate = function(self)
+		TAunit.OnCreate(self)
+	end,
 }

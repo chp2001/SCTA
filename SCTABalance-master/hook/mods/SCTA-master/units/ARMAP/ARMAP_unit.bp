@@ -50,6 +50,8 @@ UnitBlueprint {
         SizeX = 8,
         SizeZ = 8,
         },
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 3,
     LifeBarSize = 8,
     General = {
         UpgradesTo = 'armdap', 

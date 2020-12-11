@@ -7,24 +7,24 @@ UnitBlueprint {
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'TCORSEL',
+            Cue = 'TARMSEL',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StartMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'TCORMOVE',
+            Cue = 'TARMMOVE',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StopMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'VCORSTOP',
+            Cue = 'TARMST0P',
             LodCutoff = 'UnitMove_LodCutoff',
         },
-	Destroyed = Sound {
+    Destroyed = Sound {
             Bank = 'TA_Sound',
             Cue = 'XPLOLRG3',
             LodCutoff = 'UnitMove_LodCutoff',
-	},
+    },
     },
     BuildIconSortPriority = 4,
     Categories = {
@@ -121,12 +121,6 @@ UnitBlueprint {
         BuildCostMass = 295,
         BuildTime = 6119,
     },
-    Footprint = {
-	MaxSlope = 0.75,
-	MaxWaterDepth = 15,
-        SizeX = 3,
-        SizeZ = 3,
-    },
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -221,12 +215,13 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.53,
+            RateOfFire = 0.5263157895,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'sleeves',
             TurretBonePitch = 'sleeves',
             TurretBoneYaw = 'turret',

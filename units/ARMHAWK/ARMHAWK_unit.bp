@@ -130,11 +130,11 @@ UnitBlueprint {
         BuildTime = 15285,
         MaintenanceConsumptionPerSecondEnergy = 20,
     },
-    Footprint = {
+    --[[Footprint = {
 	MaxSlope = 0.25,
         SizeX = 2,
         SizeZ = 2,
-    },
+    },]]--
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -201,7 +201,7 @@ UnitBlueprint {
             Damage = 210, 						
             DamageRadius = 1.5,
             FiringRandomness = 0,
-            DamageType = 'AntiAir',
+            DamageType = 'SAMAir',
             DisplayName = 'ARMVTOL_ADVMISSILE',
             FireTargetLayerCapsTable = {
                 Air = 'Land|Water|Air',
@@ -232,7 +232,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.66,
+            RateOfFire = 0.6666666667,
             EnergyDrainPerSecond = 50,
             EnergyRequired = 150,
             TargetCheckInterval = 1,
@@ -243,7 +243,7 @@ UnitBlueprint {
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
         },
         {
             Audio = {
@@ -260,7 +260,7 @@ UnitBlueprint {
             Damage = 210, 						
             DamageRadius = 1.5,
             FiringRandomness = 0,
-            DamageType = 'AntiAir',
+            DamageType = 'SAMAir',
             DisplayName = 'ARMVTOL_ADVMISSILE2',
             FireTargetLayerCapsTable = {
                 Air = 'Land|Water|Air',
@@ -291,7 +291,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.66,
+            RateOfFire = 0.6666666667,
             EnergyDrainPerSecond = 50,
             EnergyRequired = 150,
             TargetCheckInterval = 1,
@@ -302,7 +302,8 @@ UnitBlueprint {
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            AboveWaterTargetsOnly = true,
+            TargetRestrictDisallow = 'UNTARGETABLE',
         },
         { #BIG_UNITEX
             Damage = 50,

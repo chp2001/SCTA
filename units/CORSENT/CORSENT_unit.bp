@@ -110,10 +110,6 @@ UnitBlueprint {
         BuildCostMass = 830,
         BuildTime = 20380,
     },
-    Footprint = {
-        SizeX = 3,
-        SizeZ = 3,
-    },
     General = {
         Category = 'Anti Air',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -170,7 +166,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 80,
+            Damage = 90,
             DamageRadius = 3.28,
 	    EdgeEffectiveness = 0.9,
             FiringRandomness = 0,
@@ -209,7 +205,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 4,
             RackSlavedToTurret = false,
-            RateOfFire = 1.81,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

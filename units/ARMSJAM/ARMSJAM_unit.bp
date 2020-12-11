@@ -53,7 +53,7 @@ UnitBlueprint {
 	'JAM',
 	'LEVEL2',
     },
-    CollisionOffsetY = -0.5,
+    CollisionOffsetY = -0.25,
     Defense = {
         ArmorType = 'Normal',
         Health = 460,

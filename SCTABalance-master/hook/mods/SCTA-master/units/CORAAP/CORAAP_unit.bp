@@ -44,6 +44,8 @@ UnitBlueprint {
             'VTOL LEVEL2 CORE',
         },
     },
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 3,
     LifeBarSize = 8,
     Intel = {
         VisionRadius = 10,

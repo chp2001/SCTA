@@ -8,10 +8,6 @@ UnitBlueprint {
     Display = {
         UniformScale = 0.08,
     },
-    Footprint = {
-	SizeX = 1,
-	SizeZ = 1,
-    },
     Intel = {
         RadarStealthFieldRadius = 20,
     },

@@ -126,11 +126,7 @@ UnitBlueprint {
         BuildCostMass = 378,
         BuildTime = 14096,
     },
-    Footprint = {
-	MaxSlope = 0.625,
-        SizeX = 3,
-        SizeZ = 3,
-    },
+
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -190,11 +186,9 @@ UnitBlueprint {
                 AutoInitiateAttackCommand = true,
                 BallisticArc = 'RULEUBA_None',
                 CollideFriendly = false,
-                Damage = 500,
+                Damage = 2100,
                 DamageRadius = 0.5,
-                DamageWater = 1750,
-                DamageRadiusWater = 0.5,
-                DamageType = 'Normal',
+                DamageType = 'AntiSub',
                 DisplayName = 'ARMAIR_TORPEDO',
                 FireTargetLayerCapsTable = {
                     Air = 'Water|Seabed|Sub|Seabed',
@@ -212,7 +206,6 @@ UnitBlueprint {
                 MuzzleVelocity = 10,
                 ProjectileId = '/mods/SCTA-master/projectiles/ARMAIR_TORPEDO/ARMAIR_TORPEDO_proj.bp',
                 ProjectileLifetime = 20,
-                ProjectilesPerOnFire = 1,
                 RackBones = {
                     {
                         MuzzleBones = {

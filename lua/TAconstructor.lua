@@ -20,10 +20,8 @@ TAconstructor = Class(TAWalking) {
 	AnimationThread = function(self)
 		self.animating = true
 		while not IsDestroyed(self) do
-			--ChangeState(self, self.IdleState)
 			if(self.currentState == "rolloff") then
 				self.currentTarget = nil
-				--ChangeState(self, self.IdleState)
 				self.countdown = self.countdown - 0.2
 				if (self.countdown <= 0) then
 					self.desiredState = "closed"
@@ -41,10 +39,10 @@ TAconstructor = Class(TAWalking) {
 							self:Close()
 							self.currentState = "closed"
 					elseif (self.desiredState == "aimed") then
+						self.currentTarget = self.desiredTarget
 						if (self.currentTarget and not IsDestroyed(self.currentTarget)) then
 							self:RollOff(self.currentTarget)
 						end
-						self.currentTarget = self.desiredTarget
 						self.currentState = "aimed"
 						if (self.currentTarget and not IsDestroyed(self.currentTarget)) then
 							self:Aim(self.currentTarget)
@@ -94,9 +92,6 @@ TAconstructor = Class(TAWalking) {
 	OnStartBuild = function(self, unitBeingBuilt, order )
 		self:LOGDBG('TAContructor.OnStartBuild')
 		---TAWalking.OnStartBuild(self, unitBeingBuilt, order )
-        if unitBeingBuilt.noassistbuild and unitBeingBuilt:GetHealth() == unitBeingBuilt:GetMaxHealth() then
-            return
-		end
 		self.desiredTarget = unitBeingBuilt
 		if (self.currentState == "aimed" or self.currentState == "opened" or self.currentState == "rolloff") then
 			self.currentState = "opened"
@@ -201,10 +196,6 @@ TAconstructor = Class(TAWalking) {
 
 	RollOff = function(self, unitBeingBuilt)
         self:LOGDBG('TAContructor.RollOff')
-	end,
-
-	Unpack = function(self)
-        self:LOGDBG('TAContructor.Unpack')
 	end,
 
 	Open = function(self)
@@ -342,11 +333,6 @@ TANecro = Class(TAconstructor) {
 }
 
 TACommander = Class(TAconstructor) {
-
-	OnStartReclaim = function(self, target)
-		TAconstructor.OnStartReclaim(self, target)
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
-	end,
 
 	OnStartCapture = function(self, target)
 		---self:SetCaptureTimeMultiplier(1)

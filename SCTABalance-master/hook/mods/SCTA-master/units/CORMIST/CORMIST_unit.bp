@@ -8,10 +8,6 @@ UnitBlueprint {
     Display = {
         UniformScale = 0.10,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
     Intel = {
         VisionRadius = 10,
     },

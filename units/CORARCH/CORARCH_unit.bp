@@ -210,7 +210,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'boxA',
             TurretBonePitch = 'boxA',
             TurretBoneYaw = 'turretA',
@@ -292,7 +293,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'boxB',
             TurretBonePitch = 'boxB',
             TurretBoneYaw = 'turretB',
@@ -358,7 +360,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 1.42,
+            RateOfFire = 1.428571429,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

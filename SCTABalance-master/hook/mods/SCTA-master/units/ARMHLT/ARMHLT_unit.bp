@@ -34,85 +34,14 @@ UnitBlueprint {
     SizeY = 3,
     SizeZ = 1,
     Weapon = {
-        {
-            Audio = {
-                Fire = Sound {
-                    Bank = 'TA_Sound',
-                    Cue = 'LASRMAS2',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
-            },
-            BallisticArc = 'RULEUBA_None',
-            CollideFriendly = false,
-            DamageFriendly = false,
+        [1] = {
             Damage = 70,
-            DamageRadius = 0.25,
-            DamageType = 'Normal',
-            DisplayName = 'ARM_LASERH1',
-            FireTargetLayerCapsTable = {
-                Land = 'Land|Water',
-                Water = 'Land|Water',
-            },
-	    RangeCategory = 'UWRC_DirectFire',
-     WeaponCategory = 'DirectFire',
-            FiringTolerance = 1,
-            Label = 'ARM_LASERH1',
-            MaxRadius = 48,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
-            MuzzleVelocity = 50,
-            ProjectileId = '/mods/SCTA-master/projectiles/ARM_LASERH1/ARM_LASERH1_proj.bp',
-            EnergyDrainPerSecond = 50,
-            EnergyRequired = 100,
-            EnergyChargeForFirstShot = true,
-            ProjectileLifetime = 1,
-            RackBones = {
-                {
-                    MuzzleBones = {
-                        'Muzzle_01',
-                    },
-                    RackBone = 'Barrels',
-                },
-                {
-                    MuzzleBones = {
-                        'Muzzle_02',
-                    },
-                    RackBone = 'Barrels',
-                },
-            },
             RackRecoilDistance = -0.1,
-            RackReloadTimeout = 0,
-            RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0.5,
             RackSalvoSize = 4,
-            RackSlavedToTurret = false,
             RateOfFire = 2,
-            TargetCheckInterval = 1,
-            TargetPriorities = {
-                'ALLUNITS'
-            },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            TurretBoneMuzzle = 'Muzzle_01',
-            TurretBonePitch = 'Barrels',
-            TurretBoneDualMuzzle = 'Muzzle_02',
-            TurretBoneDualPitch = 'Barrels',
-            TurretBoneYaw = 'Turret',
-            TurretDualManipulators = true,
-            TurretPitch = 0,
-            TurretPitchRange = 360,
-            TurretPitchSpeed = 200,
-            TurretYaw = 0,
-            TurretYawRange = 360,
-            TurretYawSpeed = 200,
-            Turreted = true,
         },
-        { #MEDIUM_BUILDINGEX
-            Damage = 100,
-            DamageFriendly = true,
-            DamageRadius = 3.28,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        [2] = {
         },
 
     },

@@ -211,7 +211,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'launcher1',
             TurretBonePitch = 'launcher1',
             TurretBoneYaw = 'launcher1',
@@ -244,7 +245,6 @@ UnitBlueprint {
             },
         RangeCategory = 'UWRC_AntiAir',
         WeaponCategory = 'AntiAir',
-        WeaponCategory = 'Anti Air',
 	    FiringTolerance = 10,
             Label = 'ARMAAS_WEAPON2',
             MaxRadius = 44.375,
@@ -290,7 +290,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'launcher2',
             TurretBonePitch = 'launcher2',
             TurretBoneYaw = 'launcher2',
@@ -330,7 +331,7 @@ UnitBlueprint {
             MaxRadius = 46.875, 
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 36,
+            MuzzleVelocity = 60,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMAAS_WEAPON3/ARMAAS_WEAPON3_proj.bp',
             RackBones = {
                 {
@@ -352,12 +353,13 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 1.42,
+            RateOfFire = 1.428571429,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'turret',
             TurretBonePitch = 'turret',
             TurretBoneYaw = 'turretbase',

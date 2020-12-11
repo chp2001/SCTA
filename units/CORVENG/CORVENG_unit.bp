@@ -129,11 +129,10 @@ UnitBlueprint {
         BuildCostMass = 101,
         BuildTime = 9196,
     },
-    Footprint = {
-	MaxSlope = 0.625,
+    --[[Footprint = {
         SizeX = 2,
         SizeZ = 2,
-    },
+    },]]--
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -233,7 +232,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.75,
+            RateOfFire = 0.7692307692,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -242,7 +241,8 @@ UnitBlueprint {
                 'SPECIALLOWPRI',
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
         },
         { #SMALL_UNITEX #was big_unitx
             Damage = 30,

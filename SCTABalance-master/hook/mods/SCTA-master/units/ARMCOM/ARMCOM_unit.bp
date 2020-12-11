@@ -37,7 +37,7 @@ UnitBlueprint {
     },
     Economy = {
         MaxBuildDistance = 10,
-        BuildRate = 240,
+        BuildRate = 200,
 	    MaintenanceConsumptionPerSecondEnergy = 100,
         StorageEnergy = 2500,
         StorageMass = 1250,

@@ -112,12 +112,12 @@ UnitBlueprint {
         BuildCostMass = 38,
         BuildTime = 1515,
     },
-    Footprint = {
+    --[[Footprint = {
 	MaxSlope = 1,
 	MaxWaterDepth = 0.75,
         SizeX = 2,
         SizeZ = 2,
-    },
+    },]]--
     General = {
         Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -202,12 +202,13 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 1.156,
+            RateOfFire = 1.111111111,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'Muzzle',
             TurretBonePitch = 'Turret',
             TurretBoneYaw = 'Turret',

@@ -106,8 +106,8 @@ TATransportAir = Class(TAair)
 
 TASeaair = Class(TAair) 
 {
-	OnCreate = function(self)
-		TAair.OnCreate(self)
+	OnStopBeingBuilt = function(self)
+		TAair.OnStopBeingBuilt(self)
 		self:DisableIntel('RadarStealth')
     end,
 

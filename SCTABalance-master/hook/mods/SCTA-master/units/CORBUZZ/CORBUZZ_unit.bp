@@ -43,94 +43,34 @@ UnitBlueprint {
     SizeZ = 6,
     LifeBarSize = 6,
     Weapon = {
-        {
-            AboveWaterTargetsOnly = true,
-            ArtilleryShieldBlocks = true,
-            Audio = {
-                Fire = Sound {
-                    Bank = 'TA_Sound',
-                    Cue = 'XPLONUK4',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
-            },
+        [1] = {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 3600,
-            ---MuzzleVelocityRandom = 0.7,
-            ---MuzzleVelocityReduceDistance = 4000,
             DamageRadius = 5, 
-            DamageType = 'Normal',
-            DisplayName = 'CORBUZZ_WEAPON',
-            FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Seabed',
-            },
             RangeCategory = 'UWRC_IndirectFire',
             WeaponCategory = 'Artillery',
             FiringTolerance = 1,	
         FiringRandomness = 0.75,
         ProjectileLifetime = 2000,
-            Label = 'CORBUZZ_WEAPON',
             MaxRadius = 2500,
             MinRadius = 100,
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
-            --MuzzleVelocity = 160,
             EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 1000,
             EnergyRequired = 2000,
             UseFiringSolutionInsteadOfAimBone = true,
             ProjectileId = '/mods/SCTA-master/SCTABalance-master/projectiles/CORBUZA_WEAPON/CORBUZA_WEAPON_proj.bp',
-            RackBones = {
-                {
-                    MuzzleBones = {
-                        'flare',
-                    },
-                    RackBone = 'gun1',
-                },
-                {
-                    MuzzleBones = {
-                        'flare',
-                    },
-                    RackBone = 'gun2',
-                },
-                {
-                    MuzzleBones = {
-                        'flare',
-                    },
-                    RackBone = 'gun3',
-                },
-                {
-                    MuzzleBones = {
-                        'flare',
-                    },
-                    RackBone = 'gun4',
-                },
-                {
-                    MuzzleBones = {
-                        'flare',
-                    },
-                    RackBone = 'gun5',
-                },
-                {
-                    MuzzleBones = {
-                        'flare',
-                    },
-                    RackBone = 'gun6',
-                },
-        },
+            
             RackRecoilDistance = 0,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 1.5,
             RackSalvoSize = 6,
             RackSlavedToTurret = false,
-            RateOfFire = 3,
-            TargetCheckInterval = 1,
-            TargetPriorities = {
-                'ALLUNITS',
-            },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            RateOfFire = 3.333333333,
             TurretBoneMuzzle = 'flare',
             TurretBonePitch = 'flare',
             TurretBoneYaw = 'Turret',
@@ -140,15 +80,8 @@ UnitBlueprint {
             TurretYaw = 0,
             TurretYawRange = 360,
             TurretYawSpeed = 10,
-            Turreted = true,
         },
-        { #ATOMIC_BLAST
-            Damage = 1000,
-            DamageFriendly = true,
-            DamageRadius = 16.125,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        [2] = {
         },
     },
 }

@@ -7,24 +7,24 @@ UnitBlueprint {
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'TCORSEL',
+            Cue = 'TARMSEL',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StartMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'TCORMOVE',
+            Cue = 'TARMMOVE',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StopMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'VCORSTOP',
+            Cue = 'TARMST0P',
             LodCutoff = 'UnitMove_LodCutoff',
         },
-	Destroyed = Sound {
+    Destroyed = Sound {
             Bank = 'TA_Sound',
             Cue = 'XPLOLRG3',
             LodCutoff = 'UnitMove_LodCutoff',
-	},
+    },
     },
     BuildIconSortPriority = 3,
     Categories = {
@@ -98,12 +98,7 @@ UnitBlueprint {
         BuildCostMass = 473,
         BuildTime = 8730,
     },
-    Footprint = {
-	SizeX = 3,
-	SizeZ = 3,
-	MaxSlope = 0.75,
-	MaxWaterDepth = 6.25
-    },
+
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -161,7 +156,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 90,
+            Damage = 92,
 	    DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'CORE_REAP',
@@ -172,10 +167,10 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
             Label = 'CORE_REAP',
-            MaxRadius = 30,
+            MaxRadius = 24,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 30,
+            MuzzleVelocity = 25,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_REAP/CORE_REAP_proj.bp',
             RackBones = {
                 {
@@ -198,12 +193,13 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.769,
+            RateOfFire = 0.7692307692,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'sleeves',
             TurretBonePitch = 'sleeves',
             TurretBoneYaw = 'turret',

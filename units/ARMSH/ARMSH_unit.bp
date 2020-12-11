@@ -91,10 +91,7 @@ UnitBlueprint {
         BuildCostMass = 76,
         BuildTime = 3388,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-    },
+
     General = {
         Category = 'Scout',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -192,7 +189,8 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'Muzzle',
             TurretBonePitch = 'Turret',
             TurretBoneYaw = 'Turret',

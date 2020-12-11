@@ -38,74 +38,20 @@ UnitBlueprint {
     SizeY = 1.4,
     StrategicIconName = 'icon_land3_missile',
     Weapon = {
-        {
-            Audio = {
-                Fire = Sound {
-                    Bank = 'TA_Sound',
-                    Cue = 'ROCKHVY1',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
-            },
-            BallisticArc = 'RULEUBA_HighArc',
-            CollideFriendly = false,
-            DamageFriendly = false,
+        [1] = {
             Damage = 160,
             DamageRadius = 2.5,
-            DamageType = 'Normal',
-            DisplayName = 'CORMH_WEAPON',
-            FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Air',
-                Water = 'Land|Water|Air',
-            },
-        RangeCategory = 'UWRC_IndirectFire',
 	    FiringTolerance = 8,
-            Label = 'CORMH_WEAPON',
             MaxRadius = 60,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 0,
-            ProjectileId = '/mods/SCTA-master/projectiles/ARMMH_WEAPON/ARMMH_WEAPON_proj.bp',
-            RackBones = {
-                {
-                    MuzzleBones = {
-                        'muzzle_01',
-                    },
-                    RackBone = 'box',
-                },
-               {
-                    MuzzleBones = {
-                        'muzzle_02',
-                    },
-                    RackBone = 'box',
-                },
-            },
-            RackRecoilDistance = 0,
-            RackReloadTimeout = 0,
-            RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 0,
-            RackSalvoSize = 1,
-            RackSlavedToTurret = false,
             RateOfFire = 2,
             TargetCheckInterval = 1,
             EnergyDrainPerSecond = 120,
             EnergyRequired = 240,
             EnergyChargeForFirstShot = true,
-            TargetPriorities = {
-                'ALLUNITS',
-            },
-            TargetRestrictDisallow = 'UNTARGETABLE, UNDERWATER',
-            WeaponCategory = 'Missile',
-	    WeaponUnpacks = true,
-            WeaponRepackTimeout = 3,
         },
-        { #BIG_UNITEX
-            Damage = 50,
-            DamageFriendly = true,
-            DamageRadius = 3.4375,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        [2] = {
         }, 
-
     },
 }

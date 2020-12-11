@@ -44,7 +44,7 @@ UnitBlueprint {
 	'LEVEL1',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Sub',
         Health = 610,
         MaxHealth = 610,
         AirThreatLevel = 0,
@@ -163,11 +163,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 50,
+            Damage = 240,
         DamageRadius = 0.5,
-        DamageWater = 250,
-        DamageRadiusWater = 0.5,
-            DamageType = 'Normal',
+        DamageType = 'AntiSub',
             DisplayName = 'ARM_TORPEDO',
             FireTargetLayerCapsTable = {
                 Sub = 'Seabed|Sub|Water',
@@ -197,7 +195,7 @@ UnitBlueprint {
             RackSalvoSize = 1,
             TrackingRadius = 1.15,
             RackSlavedToTurret = false,
-            RateOfFire = 0.37,
+            RateOfFire = 0.3703703704,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

@@ -22,7 +22,7 @@ ProjectileBlueprint {
         },
     },
     Categories = {
-        'CORE',
+        'ARM',
         'PROJECTILE',
         'ANTIMISSILE',
     },
@@ -31,11 +31,11 @@ ProjectileBlueprint {
     },
     General = {
         EntityCategory = {
-            'CORE',
+            'ARM',
             'PROJECTILE',
             'ANTIMISSILE',
         },
-        Faction = 'CORE',
+        Faction = 'ARM',
         Weapon = 'TMD_LASER',
     },
     Interface = {

@@ -3,11 +3,11 @@
 #
 #Script created by Raevn
 
-local TAMissileProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TAMissileProjectile
+local TARocketProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TARocketProjectile
 
-CORRL_MISSILE = Class(TAMissileProjectile) 
+CORRL_MISSILE = Class(TARocketProjectile) 
 {
-	TrackTime = 5,
+	TrackTime = 3,
 }
 
 TypeClass = CORRL_MISSILE

@@ -4,6 +4,14 @@
 #Blueprint created by Raevn
 
 UnitBlueprint {
+    AI = {
+        TargetBones = {
+            'sign',
+            'connector',
+            'door2',
+            'door1',
+        },
+    },
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',

@@ -3,8 +3,8 @@
 #
 #Script created by Raevn
 
-local TAMissileProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TAMissileProjectile
+local TARocketProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TARocketProjectile
 
-VTOL_ROCKET = Class(TAMissileProjectile) {}
+VTOL_ROCKET = Class(TARocketProjectile) {}
 
 TypeClass = VTOL_ROCKET

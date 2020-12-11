@@ -6,7 +6,7 @@
 local TAUnderWaterProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TAUnderWaterProjectile
 
 SEAAIR_TORPEDO = Class(TAUnderWaterProjectile) {
-	TrackTime = 10,
+	TrackTime = 5,
 }
 
 TypeClass = SEAAIR_TORPEDO

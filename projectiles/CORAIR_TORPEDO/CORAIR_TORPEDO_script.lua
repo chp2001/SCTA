@@ -6,7 +6,7 @@
 local TAUnderWaterProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TAUnderWaterProjectile
 
 CORAIR_TORPEDO = Class(TAUnderWaterProjectile) {
-	TrackTime = 10,
+	TrackTime = 5,
 
 }
 

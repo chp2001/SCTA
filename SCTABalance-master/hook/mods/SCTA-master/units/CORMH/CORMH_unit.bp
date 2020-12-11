@@ -45,7 +45,7 @@ UnitBlueprint {
             MaxRadius = 60,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            RateOfFire = 2,
+            RateOfFire = 1,
             TargetCheckInterval = 1,
             EnergyDrainPerSecond = 120,
             EnergyRequired = 240,

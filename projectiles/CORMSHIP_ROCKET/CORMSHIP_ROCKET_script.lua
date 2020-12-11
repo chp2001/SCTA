@@ -14,7 +14,7 @@ CORMSHIP_ROCKET = Class(TAMissileProjectile) {
 	end,
 
 	MovementThread = function(self)
-		WaitSeconds(5)
+		WaitSeconds(2)
 		self:TrackTarget(true)
 		WaitSeconds(2)
 		self:TrackTarget(false)

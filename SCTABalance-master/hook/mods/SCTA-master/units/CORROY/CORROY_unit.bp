@@ -28,7 +28,7 @@ UnitBlueprint {
               '<LOC ability_sonar>Sonar',
               '<LOC ability_radar>Radar',
         },
-        UniformScale = 0.24,
+        UniformScale = 0.18,
      },
     Intel = {
         VisionRadius = 20, 
@@ -45,11 +45,11 @@ UnitBlueprint {
     Interface = {
         HelpText = 'Frigate',
     },
-    SelectionSizeX = 3,
-    SelectionSizeZ = 5,
-    SizeX = 3.6,
-    SizeY = 4,
-    SizeZ = 6,
+    SelectionSizeX = 2,
+    SelectionSizeZ = 4,
+    SizeX = 2,
+    SizeY = 3,
+    SizeZ = 7,
     Weapon = {
         [1] = {
             Damage = 30,

@@ -36,7 +36,6 @@ UnitBlueprint {
         MaxSpeed = 4,
     },
     LifeBarHeight = 0.25,
-    LifeBarOffset = 8,
     LifeBarSize = 6,
     Intel = {
         VisionRadius = 12, 

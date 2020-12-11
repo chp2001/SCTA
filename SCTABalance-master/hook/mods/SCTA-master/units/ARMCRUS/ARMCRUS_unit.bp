@@ -21,10 +21,10 @@ UnitBlueprint {
     },
     LifeBarSize = 4,
     SelectionSizeX = 3,
-    SelectionSizeZ = 5,
-    SizeX = 4,
+    SelectionSizeZ = 6,
+    SizeX = 3,
     SizeY = 3,
-    SizeZ = 8,
+    SizeZ = 10,
     Description = 'Destroyer',
     Interface = {
         HelpText = 'Destroyer',

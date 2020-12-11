@@ -79,7 +79,6 @@ do
                 MaintenanceConsumptionPerSecondEnergy = 3,
             },
             LifeBarHeight = 0.3,
-            LifeBarOffset = 0.5,
             LifeBarSize = 0.5,
             Physics = {
                 MaxSpeed = 0.75,
@@ -175,8 +174,8 @@ do
                     MaintenanceConsumptionPerSecondEnergy = 3,
                 },
                 LifeBarHeight = 0.3,
-                LifeBarOffset = 0.5,
-                LifeBarSize = 0.5, 
+                LifeBarOffset = 0.8,
+                LifeBarSize = 0.75, 
                 SelectionSizeX = 0.5,
                 SelectionSizeZ = 0.5,
                 SizeX = 0.5,

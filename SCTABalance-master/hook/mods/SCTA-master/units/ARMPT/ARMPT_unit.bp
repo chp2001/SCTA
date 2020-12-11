@@ -40,7 +40,6 @@ UnitBlueprint {
     RadarRadius = 50,
     SonarRadius = 80,
     },
-    SizeY = 2.4,
     Weapon = {
         [1] = {
             Damage = 21,

@@ -21,9 +21,9 @@ ARMACK = Class(TAconstructor) {
 	end,
 
 	Open = function(self)
+		TAconstructor.Open(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationOpen)
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationOpenRate or 0.2))	
-		TAconstructor.Open(self)
 	end,
 
 	Aim = function(self, target)

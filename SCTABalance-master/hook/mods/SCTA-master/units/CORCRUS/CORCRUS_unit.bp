@@ -9,8 +9,8 @@ UnitBlueprint {
         UniformScale = 0.2,
     },
     Defense = {
-        Health = 12000,
-        MaxHealth = 12000,
+        Health = 9000,
+        MaxHealth = 9000,
     },
     Economy = {
         BuildCostMass = 4400,
@@ -18,6 +18,16 @@ UnitBlueprint {
     },
     Intel = {
         WaterVisionRadius = 15,
+    },
+    Description = 'Destroyer',
+    Interface = {
+        HelpText = 'Destroyer',
+    },
+        Physics = {
+        MaxAcceleration = 3,
+        MaxBrake = 3,
+        MaxSpeed = 4,
+        TurnRate = 80,
     },
     SelectionSizeX = 3,
     SelectionSizeZ = 5,
@@ -30,7 +40,7 @@ UnitBlueprint {
             DamageRadius = 2,
             FiringRandomness = 0,
             FiringTolerance = 0,
-            MaxRadius = 60,
+            MaxRadius = 85,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             RackSalvoSize = 1,

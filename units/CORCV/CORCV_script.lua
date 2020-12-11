@@ -30,9 +30,9 @@ CORCV = Class(TAconstructor) {
 	Aim = function(self, target)
 		local selfPosition = self:GetPosition('turret') 
 		local targetPosition = target:GetPosition()
-		
+		WaitFor(self.AnimManip)
 		TAconstructor.Aim(self, target)
-		WaitFor(self.AnimManip)		
+		
 		--TURN turret to y-axis buildheading SPEED <160.03>;
 		self.Spinners.turret:SetGoal(TAutils.GetAngleTA(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
 		self.Spinners.turret:SetSpeed(160.03)

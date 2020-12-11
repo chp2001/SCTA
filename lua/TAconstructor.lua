@@ -38,6 +38,7 @@ TAconstructor = Class(TAWalking) {
 					if (self.desiredState == "closed") then
 							self:Close()
 							self.currentState = "closed"
+							if not IsDestroyed(self) then
 					elseif (self.desiredState == "aimed") then
 						if (self.currentTarget and not IsDestroyed(self.currentTarget)) then
 							self:RollOff(self.currentTarget)
@@ -75,6 +76,7 @@ TAconstructor = Class(TAWalking) {
 			end
 			WaitSeconds(0.2)
 		end
+	end
 		self.animating = nil
 	end,
 

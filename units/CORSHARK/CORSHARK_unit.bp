@@ -44,7 +44,7 @@ UnitBlueprint {
 	'LEVEL2',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Sub',
         Health = 276,
         MaxHealth = 276,
         AirThreatLevel = 0,
@@ -164,7 +164,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiNavy',
             WeaponCategory = 'AntiNavy',
             Label = 'CORSMART_TORPEDO',
-            MaxRadius = 23.4375,
+            MaxRadius = 32,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 10,

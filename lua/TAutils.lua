@@ -1,70 +1,43 @@
 local util = import('/lua/utilities.lua')
+local EffectUtil = import('/lua/EffectUtilities.lua')
 
-function GetAngleTA(x1, z1, x2, z2)
-	local dx = x2 - x1
-	local dz = z2 - z1
-
-	local angle = math.atan(math.abs(dz) / math.abs(dx))
-
-	if dz < 0 then
-		if dx < 0 then
-			angle = math.pi - angle
-		elseif dx == 0 then
-			angle = math.pi / 2
-		end
-	elseif dz > 0 then
-		if dx < 0 then
-			angle = math.pi + angle
-		elseif dx > 0 then
-			angle = 2 * math.pi - angle
-		elseif dx == 0 then
-			angle = 3 * math.pi
-		end
-	else
-		if dx < 0 then
-			angle = math.pi
-		else
-			angle = 0
-		end
+CreateTABuildingEffects = function( self, unitBeingBuilt, order )
+	WaitSeconds( 0.1 )
+	for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
+		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.1) )         
 	end
-	return (angle / math.pi) * 180 + 90
 end
 
---[[function QueueDelayedWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
-	ForkThread(CreateWreckage, self, overkillRatio, bp, completed, pos, orientation, health)
-end]]--
+function CreateDefaultBuildBeams( builder, unitBeingBuilt, BuildEffectBones, BuildEffectsBag )
+    local BeamBuildEmtBp = '/mods/SCTA-master/effects/emitters/nanolathe.bp'
+    local ox, oy, oz = unpack(unitBeingBuilt:GetPosition())
+    local BeamEndEntity = Entity()
+    local army = builder:GetArmy()
+    BuildEffectsBag:Add( BeamEndEntity )
+    Warp( BeamEndEntity, Vector(ox, oy, oz))   
+   
+    local BuildBeams = {}
 
+    # Create build beams
+    if BuildEffectBones != nil then
+        local beamEffect = nil
+        for i, BuildBone in BuildEffectBones do
+            local beamEffect = AttachBeamEntityToEntity(builder, BuildBone, BeamEndEntity, -1, army, BeamBuildEmtBp )
+            table.insert( BuildBeams, beamEffect )
+            BuildEffectsBag:Add(beamEffect)
+        end
+    end
+    
+    CreateEmitterOnEntity( BeamEndEntity, builder:GetArmy(),'/effects/emitters/sparks_08_emit.bp')
+    local waitTime = util.GetRandomFloat( 0.3, 1.5 )
 
---[[function CreateWreckage(self,overkillRatio, bp, completed, pos, orientation, health)
-	local TAWreckage = import('/mods/SCTA-master/lua/TAWreckage.lua').TAWreckage
-	while not IsDestroyed(self) do
-		WaitSeconds(0.4)
-	end
+    while not builder:BeenDestroyed() and not unitBeingBuilt:BeenDestroyed() do
+        local x, y, z = builder.GetRandomOffset(unitBeingBuilt, 1 )
+        Warp( BeamEndEntity, Vector(ox + x, oy + y, oz + z))
+        WaitSeconds(waitTime)
+    end
+end
 
-	local wreck = bp.Wreckage.Blueprint
-	if wreck and completed == 1 then
-			
-		local prop = CreateProp( pos, wreck )
-		pbp = prop:GetBlueprint()
-
-
-		prop:SetScale(pbp.Display.UniformScale)
-		prop:SetOrientation(orientation, true)
-
-		local mass = (pbp.Economy.ReclaimMassMax or 0)
-		local energy = (pbp.Economy.ReclaimEnergyMax or 0)
-		#change this to point to the wreckage prop intead of the unit blueprint?
-		local time = (bp.Wreckage.ReclaimTimeMultiplier or 1) 
-
-		prop:SetMaxReclaimValues(time, mass, energy)
-
-		prop.OriginalUnit = self.OriginalUnit or self
-		if not pbp.Physics.BlockPath then
-		end
-		--prop:DoTakeDamage(prop, overkillRatio * health, Vector(0,0,0), 'Normal')
-        	prop.AssociatedBP = bp.BlueprintId
-	end
-end]]--
 
 targetingFacilityData = {}
 

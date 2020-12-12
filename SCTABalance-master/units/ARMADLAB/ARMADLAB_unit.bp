@@ -58,61 +58,6 @@ UnitBlueprint {
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/ARMLAB/ARMLAB_lod0_aopen.sca',
         AnimationUnpackRate = 0.5, 
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Noise3','BuildMuzzle','BuildPlate'},
-		DestructionProjectiles = {
-			{
-				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMLAB_debris01_proj.bp',
-				Bone = 'Door_01',
-			},
-			{
-				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMLAB_debris01_proj.bp',
-				Bone = 'Door_02',
-			},
-			{
-				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMLAB_debris01_proj.bp',
-				Bone = 'Door_03',
-			},
-			{
-				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMLAB_debris01_proj.bp',
-				Bone = 'Door_04',
-			},
-			{
-				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMLAB_debris01_proj.bp',
-				Bone = 'Door_01a',
-			},
-			{
-				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMLAB_debris01_proj.bp',
-				Bone = 'Door_02a',
-			},
-			{
-				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMLAB_debris01_proj.bp',
-				Bone = 'Door_03a',
-			},
-			{
-				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMLAB_debris01_proj.bp',
-				Bone = 'Door_04a',
-			},
-		},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Door_01','Door_02a','Door_03a','Door_04','Stand_01','Stand_02'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'Door_01a','Door_02','Door_03','Door_04a'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
-	BuildBones = {'Nozzle_01','Nozzle_02'},
-	BuildAttachBone = 'BasePlate',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -150,7 +95,11 @@ UnitBlueprint {
         SizeZ = 8,
     },
     General = {
-	BuildAngle = 4096,
+    BuildBones = {
+        BuildAttachBone = 'BasePlate',
+            BuildEffectBones = {'Nozzle_01','Nozzle_02'},
+        },
+    BuildAngle = 4096,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

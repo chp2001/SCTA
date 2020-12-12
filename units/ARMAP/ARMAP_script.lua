@@ -6,10 +6,6 @@
 local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 
 ARMAP = Class(TAFactory) {
-	pauseTime = 5,
-	hideUnit = true,
-
-
 	OnCreate = function(self)
 		self.Spinners = {
 			radar = CreateRotator(self, 'Radar', 'y', nil, 0, 0, 0),
@@ -50,9 +46,6 @@ ARMAP = Class(TAFactory) {
 		self.Spinners.door2:SetGoal(-90)
 		self.Spinners.door2:SetSpeed(131.80)
 
-		--SLEEP <683>
-		WaitSeconds(0.7)
-
 		--MOVE door1 to y-axis <-8.35> SPEED <12.00>
 		self.Sliders.door1:SetGoal(0,0,-8.35)
 		self.Sliders.door1:SetSpeed(12)
@@ -60,9 +53,6 @@ ARMAP = Class(TAFactory) {
 		--MOVE door2 to y-axis <-5.30> SPEED <7.00>
 		self.Sliders.door2:SetGoal(5.3,0,0)
 		self.Sliders.door2:SetSpeed(7)
-
-		--SLEEP <689>
-		WaitSeconds(0.7)
 
 		--MOVE plate1 to y-axis <7.75> SPEED <11.00>
 		self.Sliders.plate1:SetGoal(0,7.75,0)
@@ -72,15 +62,9 @@ ARMAP = Class(TAFactory) {
 		self.Sliders.plate2:SetGoal(0,9.4,0)
 		self.Sliders.plate2:SetSpeed(13)
 
-		--SLEEP <691>
-		WaitSeconds(0.7)
-
 		--TURN post1 to y-axis <89.54> SPEED <129.62>
 		self.Spinners.post1:SetGoal(89.54)
 		self.Spinners.post1:SetSpeed(129.62)
-
-		--SLEEP <691>
-		WaitSeconds(0.7)
 
 		--TURN nano2 to x-axis <132.29> SPEED <190.67>
 		self.Spinners.nano2:SetGoal(132.29)
@@ -89,10 +73,6 @@ ARMAP = Class(TAFactory) {
 		--TURN nano1 to z-axis <-128.69> SPEED <185.48>
 		self.Spinners.nano1:SetGoal(128.69)
 		self.Spinners.nano1:SetSpeed(185.48)
-			
-		--SLEEP <694>
-		WaitSeconds(0.7)
-
 
 		--TURN post2 to y-axis <-48.14> SPEED <70.30>
 		self.Spinners.post2:SetGoal(-48.1)
@@ -101,22 +81,10 @@ ARMAP = Class(TAFactory) {
 		--TURN post1 to y-axis <76.94> SPEED <18.39>
 		self.Spinners.post1:SetGoal(76.94)
 		self.Spinners.post1:SetSpeed(18.39)
-			
-		--SLEEP <685>
-		WaitSeconds(0.7)
-
-		--SLEEP <70>
-
-		--SPIN pad around y-axis  SPEED <30.00>
-		self.Spinners.pad:SetSpeed(0)
-
 		TAFactory.Open(self)
 	end,
 
 	Close = function(self)
-		--STOP-SPIN pad around y-axis 
-		self.Spinners.pad:SetSpeed(0)
-
 		--TURN post2 to y-axis <0> SPEED <70.51>
 		self.Spinners.post2:SetGoal(0)
 		self.Spinners.post2:SetSpeed(70.51)
@@ -124,9 +92,6 @@ ARMAP = Class(TAFactory) {
 		--TURN post1 to y-axis <89.54> SPEED <18.45>
 		self.Spinners.post1:SetGoal(89.54)
 		self.Spinners.post1:SetSpeed(18.45)
-
-		--SLEEP <683>
-		WaitSeconds(0.7)
 
 		--TURN nano2 to x-axis <0> SPEED <192.06>
 		self.Spinners.nano2:SetGoal(0)
@@ -136,15 +101,9 @@ ARMAP = Class(TAFactory) {
 		self.Spinners.nano1:SetGoal(0)
 		self.Spinners.nano1:SetSpeed(186.83)
 
-		--SLEEP <689>
-		WaitSeconds(0.7)
-
 		--TURN post1 to y-axis <0> SPEED <129.62>
 		self.Spinners.post1:SetGoal(0)
 		self.Spinners.post1:SetSpeed(129.62)
-
-		--SLEEP <691>
-		WaitSeconds(0.7)
 
 		--MOVE plate1 to y-axis <0> SPEED <11.00>
 		self.Sliders.plate1:SetGoal(0,0,0)
@@ -154,9 +113,6 @@ ARMAP = Class(TAFactory) {
 		self.Sliders.plate2:SetGoal(0,0,0)
 		self.Sliders.plate2:SetSpeed(13)
 
-		--SLEEP <691>
-		WaitSeconds(0.7)
-
 		--MOVE door1 to y-axis <0> SPEED <12.00>
 		self.Sliders.door1:SetGoal(0,0,0)
 		self.Sliders.door1:SetSpeed(12)
@@ -165,9 +121,6 @@ ARMAP = Class(TAFactory) {
 		self.Sliders.door2:SetGoal(0,0,0)
 		self.Sliders.door2:SetSpeed(7)
 
-		--SLEEP <694>
-		WaitSeconds(0.7)
-
 		--TURN door1 to x-axis <0> SPEED <129.44>
 		self.Spinners.door1:SetGoal(0)
 		self.Spinners.door1:SetSpeed(131.41)
@@ -175,12 +128,6 @@ ARMAP = Class(TAFactory) {
 		--TURN door2 to z-axis <0> SPEED <131.41>
 		self.Spinners.door2:SetGoal(0)
 		self.Spinners.door2:SetSpeed(131.41)
-
-		--SLEEP <694>
-		WaitSeconds(0.7)
-
-		--SLEEP <70>
-		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
 }

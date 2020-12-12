@@ -39,9 +39,6 @@ ARMACSUB = Class(TAconstructor) {
 		self.Spinners.door2:SetGoal(-67.41)
 		self.Spinners.door2:SetSpeed(108.58)
 
-		--SLEEP <621>;
-		WaitSeconds(0.6)
-
 		--MOVE door1 to y-axis <-3.14> SPEED <5.00>;
 		self.Sliders.door1:SetGoal(-3.10,0,0)
 		self.Sliders.door1:SetSpeed(4.5)
@@ -50,55 +47,20 @@ ARMACSUB = Class(TAconstructor) {
 		self.Sliders.door2:SetGoal(3.10,0,0)
 		self.Sliders.door2:SetSpeed(4.5)
 
-		--SLEEP <627>;
-		WaitSeconds(0.6)
-
 		--MOVE plate to y-axis <5.65> SPEED <8.00>;
 		self.Sliders.plate:SetGoal(0,5,0) #5.65 is too high
 		self.Sliders.plate:SetSpeed(8)
 
-		--SLEEP <628>;
-		WaitSeconds(0.6)
-
-		--SLEEP <31>;
-
 		TAconstructor.Open(self)
 	end,
 
-	Aim = function(self,target)
-		local selfPosition = self:GetPosition('post') 
-		local targetPosition = target:GetPosition()
-			
-		--TURN post to y-axis buildheading SPEED <160.03>;
-		self.Spinners.post:SetGoal(TAutils.GetAngleTA(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
-		self.Spinners.post:SetSpeed(160.03)
-		WaitFor(self.Spinners.post)
-		
-		local distance = VDist2(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z)
-		selfPosition = self:GetPosition('muzzle') 
-
-		self.Spinners.nanogun:SetGoal(-90 + TAutils.GetAngleTA(0, selfPosition.y, distance, targetPosition.y))
-		self.Spinners.nanogun:SetSpeed(160.03)
-		WaitFor(self.Spinners.nanogun)
-		TAconstructor.Aim(self, target)
-	end,
 
 	Close = function(self)
-
-		self.Spinners.post:SetGoal(0)
-		self.Spinners.post:SetSpeed(160.03)
-
-		self.Spinners.nanogun:SetGoal(0)
-		self.Spinners.nanogun:SetSpeed(160.03)
-		WaitFor(self.Spinners.nanogun)
-		WaitFor(self.Spinners.post)
 
 		--MOVE plate to y-axis <0> SPEED <9.00>;
 		self.Sliders.plate:SetGoal(0,0,0)
 
 		self.Sliders.plate:SetSpeed(9)
-		--SLEEP <621>;
-		WaitSeconds(0.6)
 
 		--MOVE door1 to y-axis <0> SPEED <5.00>;
 		self.Sliders.door1:SetGoal(0,0,0)
@@ -108,9 +70,6 @@ ARMACSUB = Class(TAconstructor) {
 		self.Sliders.door2:SetGoal(0,0,0)
 		self.Sliders.door2:SetSpeed(4.5)
 
-		--SLEEP <627>;
-		WaitSeconds(0.6)
-
 		--TURN door1 to z-axis <0> SPEED <107.37>;
 		self.Spinners.door1:SetGoal(0)
 		self.Spinners.door1:SetSpeed(107.37)
@@ -118,11 +77,6 @@ ARMACSUB = Class(TAconstructor) {
 		--TURN door2 to z-axis <0> SPEED <107.37>;
 		self.Spinners.door2:SetGoal(0)
 		self.Spinners.door2:SetSpeed(107.37)
-
-		--SLEEP <628>
-		WaitSeconds(0.6)
-
-		--SLEEP <31>
 
 		TAconstructor.Close(self)
 	end,

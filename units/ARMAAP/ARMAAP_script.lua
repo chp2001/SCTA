@@ -49,9 +49,6 @@ ARMAAP = Class(TAFactory) {
 		self.Sliders.building2:SetGoal(7.8,0,0)
 		self.Sliders.building2:SetSpeed(15)
 
-		--SLEEP <514>;
-		WaitSeconds(0.5)
-
 		--MOVE nanobox1 to x-axis <7.70> SPEED <14.00>;
 		self.Sliders.nanobox1:SetGoal(-7.7,0,0)
 		self.Sliders.nanobox1:SetSpeed(14)
@@ -59,9 +56,6 @@ ARMAAP = Class(TAFactory) {
 		--MOVE nanobox2 to x-axis <-7.75> SPEED <14.00>;
 		self.Sliders.nanobox2:SetGoal(7.8,0,0)
 		self.Sliders.nanobox2:SetSpeed(14)
-
-		--SLEEP <518>;
-		WaitSeconds(0.5)
 
 		--MOVE nano2 to z-axis <4.00> SPEED <7.00>;
 		self.Sliders.nano2:SetGoal(0,0,3.5)
@@ -71,36 +65,20 @@ ARMAAP = Class(TAFactory) {
 		self.Sliders.nano1:SetGoal(0,0,3.5)
 		self.Sliders.nano1:SetSpeed(7)
 
-		--SLEEP <519>;
-		WaitSeconds(0.5)
+		self.Spinners.nozzle1:SetGoal(45)
+		self.Spinners.nozzle1:SetSpeed(160.03)
 
-		--SLEEP <26>;
-
-		--SPIN pad around y-axis  SPEED <30.00>
-		self.Spinners.pad:SetSpeed(0)
-
+		self.Spinners.nozzle2:SetGoal(-45)
+		self.Spinners.nozzle2:SetSpeed(160.03)
 		TAFactory.Open(self)
 	end,
 
-	Aim = function(self, target)
-		local selfPosition = self:GetPosition('Nozzle_01') 
-		local targetPosition = self:GetPosition('pad') 
-			
-		self.Spinners.nozzle1:SetGoal(TAutils.GetAngleTA(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
+	Close = function(self)
+		self.Spinners.nozzle1:SetGoal(0)
 		self.Spinners.nozzle1:SetSpeed(160.03)
 
-		selfPosition = self:GetPosition('Nozzle_02') 
-		self.Spinners.nozzle2:SetGoal(TAutils.GetAngleTA(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
+		self.Spinners.nozzle2:SetGoal(0)
 		self.Spinners.nozzle2:SetSpeed(160.03)
-	
-		WaitFor(self.Spinners.nozzle1)
-		WaitFor(self.Spinners.nozzle2)
-		TAFactory.Aim(self, target)
-	end,
-
-	Close = function(self)
-		--STOP-SPIN pad around y-axis 
-		self.Spinners.pad:SetSpeed(0)
 
 		--MOVE nano2 to z-axis <0> SPEED <7.00>;
 		self.Sliders.nano2:SetGoal(0,0,0)
@@ -110,9 +88,6 @@ ARMAAP = Class(TAFactory) {
 		self.Sliders.nano1:SetGoal(0,0,0)
 		self.Sliders.nano1:SetSpeed(7)
 
-		--SLEEP <514>;
-		WaitSeconds(0.5)
-
 		--MOVE nanobox1 to x-axis <0> SPEED <14.00>;
 		self.Sliders.nanobox1:SetGoal(0,0,0)
 		self.Sliders.nanobox1:SetSpeed(14)
@@ -121,9 +96,6 @@ ARMAAP = Class(TAFactory) {
 		self.Sliders.nanobox2:SetGoal(0,0,0)
 		self.Sliders.nanobox2:SetSpeed(14)
 
-		--SLEEP <518>;
-		WaitSeconds(0.5)
-
 		--MOVE building1 to x-axis <0> SPEED <15.00>;
 		self.Sliders.building1:SetGoal(0,0,0)
 		self.Sliders.building1:SetSpeed(15)
@@ -131,12 +103,6 @@ ARMAAP = Class(TAFactory) {
 		--MOVE building2 to x-axis <0> SPEED <15.00>;
 		self.Sliders.building2:SetGoal(0,0,0)
 		self.Sliders.building2:SetSpeed(15)
-
-		--SLEEP <519>;
-		WaitSeconds(0.5)
-
-		--SLEEP <26>;
-		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
 }

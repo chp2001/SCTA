@@ -24,11 +24,11 @@ CORDVP = Class(TAFactory) {
 
 
 	Open = function(self)
+		TAFactory.Open(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 		WaitSeconds(0.6)
 		self.Spinners.pad:SetSpeed(0)
-		TAFactory.Open(self)
 	end,
 
 	Aim = function(self, target)

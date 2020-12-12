@@ -63,23 +63,6 @@ ARMCSA = Class(TAAirConstructor) {
 		self.Sliders.wing2:SetSpeed(5)
 	end,
 
-	Aim = function(self, target)
-		local selfPosition = self:GetPosition('nanopoint') 
-		local targetPosition = target:GetPosition()
-		local distance = VDist2(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z)
-		
-		TAAirConstructor.Aim(self, target)
-		self.Spinners.nozzle1:SetGoal(TAutils.GetAngleTA(0, targetPosition.y, distance, selfPosition.y))
-		self.Spinners.nozzle1:SetSpeed(160.03)
-
-		WaitFor(self.Spinners.nozzle1)
-
-		self.Spinners.nozzle2:SetGoal(TAutils.GetAngleTA(0, targetPosition.y, distance, selfPosition.y))
-		self.Spinners.nozzle2:SetSpeed(160.03)
-
-		WaitFor(self.Spinners.nozzle2)
-	end,
-
 }
 
 TypeClass = ARMCSA

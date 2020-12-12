@@ -52,13 +52,8 @@ UnitBlueprint {
 	'LAND',
 	'SELECTION', 
         'ARM',
-        'VEHICLE',	#'TANK' in TA
+        'VEHICLE',
 	'LEVEL2',
-	
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -74,26 +69,6 @@ UnitBlueprint {
         Abilities = {
             'Adv. Construction Unit',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Construction','Tredside','ArmCockpit','BuildMuzzle'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'Build_Muzzle','Door_01','Door_02'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
-	BuildBones = {'Build_Muzzle'},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -122,6 +97,12 @@ UnitBlueprint {
 	ProductionPerSecondMass = 1,
     },
     General = {
+        BuildBones = {
+            AimBone = 'Build_Nozzle',
+            BuildEffectBones = {'Build_Muzzle'},
+            PitchBone = 'Build_Muzzle',
+            YawBone = 'Turret',
+        },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

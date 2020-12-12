@@ -104,7 +104,6 @@ UnitBlueprint {
 			},
 		},
 	},]]--
-	BuildBones = {'LaserMuzzle'},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -134,6 +133,12 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
+        BuildBones = {
+            AimBone = 'Torso',
+            BuildEffectBones = {'LaserMuzzle'},
+            PitchBone = 'Torso',
+            YawBone = 'Torso',
+        },
         Category = 'Construction',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {

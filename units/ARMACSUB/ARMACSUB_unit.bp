@@ -71,29 +71,6 @@ UnitBlueprint {
         Abilities = {
             'Construction Unit',
         },
-		--[[DestructionEffects = {
-		DefaultFlamingProjectileCountMin = 0,
-		DefaultFlamingProjectileCountMax = 0,
-		DefaultProjectileCountMin = 0,
-		DefaultProjectileCountMax = 0,
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'door1','door2'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
-	BuildBones = {'muzzle'},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -131,6 +108,12 @@ UnitBlueprint {
         SizeZ = 4,
     },
     General = {
+        BuildBones = {
+            AimBone = 'post',
+            BuildEffectBones = {'muzzle'},
+            PitchBone = 'muzzle',
+            YawBone = 'post',
+        },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

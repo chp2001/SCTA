@@ -93,7 +93,6 @@ UnitBlueprint {
 			},
 		},
 	},]]---
-	BuildBones = {'muzzle'},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -132,6 +131,12 @@ UnitBlueprint {
     },
 
     General = {
+        BuildBones = {
+            AimBone = 'nanogun',
+            BuildEffectBones = {'muzzle'},
+            PitchBone = 'nanogun',
+            YawBone = 'turret',
+        },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

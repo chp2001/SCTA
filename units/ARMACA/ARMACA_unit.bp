@@ -111,7 +111,6 @@ UnitBlueprint {
 			},
 		},
 	},]]--
-	BuildBones = {'Nozzle'},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -143,7 +142,13 @@ UnitBlueprint {
         SizeX = 2,
         SizeZ = 2,
     },]]--
-    General = {
+    General = {        
+        BuildBones = {
+        AimBone = 'Nozzle',
+        BuildEffectBones = {'Nozzle'},
+        PitchBone = 'Nozzle',
+        YawBone = 'Nozzle',
+    },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

@@ -59,17 +59,6 @@ ARMACA = Class(TAAirConstructor) {
 		self.Sliders.wing2:SetGoal(0,0,0)
 		self.Sliders.wing2:SetSpeed(5)
 	end,
-
-	Aim = function(self, target)
-		local selfPosition = self:GetPosition('Nozzle') 
-		local targetPosition = target:GetPosition()
-		local distance = VDist2(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z)
-		TAAirConstructor.Aim(self, target)
-		self.Spinners.nozzle:SetGoal(-TAutils.GetAngleTA(0, targetPosition.y, distance, selfPosition.y))
-		self.Spinners.nozzle:SetSpeed(160.03)
-
-		WaitFor(self.Spinners.nozzle)
-	end,
 }
 
 TypeClass = ARMACA

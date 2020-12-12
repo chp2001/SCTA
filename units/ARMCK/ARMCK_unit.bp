@@ -76,8 +76,8 @@ UnitBlueprint {
     },
     Description = 'Tech Level 1',
     Display = {
-        AnimationOpen = '/mods/SCTA-master/units/ARMCK/ARMCK_lod0_Aopen.sca',
-        AnimationOpenRate = 1, 
+        AnimationBuild = '/mods/SCTA-master/units/ARMCK/ARMCK_lod0_Aopen.sca',
+        AnimationBuildRate = 1, 
         AnimationWalk = '/mods/SCTA-master/units/ARMCK/ARMCK_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
@@ -102,7 +102,6 @@ UnitBlueprint {
 			},
 		},
 	},]]---
-	BuildBones = {'NozzleTip'},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -129,8 +128,13 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 10,
 	NaturalProducer = true,
     },
-
     General = {
+        BuildBones = {
+            AimBone = 'Torso',
+            BuildEffectBones = {'NozzleTip'},
+            PitchBone = 'Torso',
+            YawBone = 'Torso',
+        },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

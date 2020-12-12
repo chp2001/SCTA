@@ -4,31 +4,124 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local oldPosition={1,1,1}
 
 TAconstructor = Class(TAWalking) {
-	currentState = "closed",
-	desiredState = "closed",
-    currentTarget = nil,
-	desiredTarget = nil,
-	order = nil,
+    OnCreate = function(self)
+        TAWalking.OnCreate(self) 
+    
+        self.EffectsBag = {}
+        if self:GetBlueprint().General.BuildBones then
+            self:SetupBuildBones()
+        end
 
-	isBuilding = nil,
-	isReclaiming = nil,
+        if self:GetBlueprint().Display.AnimationBuild then
+            self.BuildingOpenAnim = self:GetBlueprint().Display.AnimationBuild
+        end
 
-	pauseTime = 3,
+        if self.BuildingOpenAnim then
+            self.BuildingOpenAnimManip = CreateAnimator(self)
+            self.BuildingOpenAnimManip:SetPrecedence(1)
+            self.BuildingOpenAnimManip:PlayAnim(self.BuildingOpenAnim, false):SetRate(0)
+            if self.BuildArmManipulator then
+                self.BuildArmManipulator:Disable()
+            end
+        end
+        self.BuildingUnit = false
+    end,
 
-	animating = nil,
+    OnPaused = function(self)
+        self:StopUnitAmbientSound( 'ConstructLoop' )
+        TAWalking.OnPaused(self)
+        if self.BuildingUnit then
+            TAWalking.StopBuildingEffects(self, self:GetUnitBeingBuilt())
+        end    
+    end,
+    
+    OnUnpaused = function(self)
+        if self.BuildingUnit then
+            self:PlayUnitAmbientSound( 'ConstructLoop' )
+            TAWalking.StartBuildingEffects(self, self:GetUnitBeingBuilt(), self.UnitBuildOrder)
+        end
+        TAWalking.OnUnpaused(self)
+    end,
+    
+    OnStartBuild = function(self, unitBeingBuilt, order )
+        TAWalking.OnStartBuild(self,unitBeingBuilt, order)
+        self:Open()
+        self.UnitBeingBuilt = unitBeingBuilt
+        self.UnitBuildOrder = order
+        self.BuildingUnit = true
+        if unitBeingBuilt:GetUnitId() == self:GetBlueprint().General.UpgradesTo and order == 'Upgrade' then
+            self.Upgrading = true
+            self.BuildingUnit = false
+        end
+    end,
 
-	OnStartBuild = function(self, unitBeingBuilt, order)
-		self:Open()
-		TAWalking.OnStartBuild(self, unitBeingBuilt, order)
-	end,
+    Open = function(self)
+    end,
+
+    OnStopBuild = function(self, unitBeingBuilt)
+        self:Close()
+        TAWalking.OnStopBuild(self,unitBeingBuilt)
+        if self.Upgrading then
+            NotifyUpgrade(self,unitBeingBuilt)
+            self:Destroy()
+        end
+        self.UnitBeingBuilt = nil
+        self.UnitBuildOrder = nil
+
+        if self.BuildingOpenAnimManip and self.BuildArmManipulator then
+            self.StoppedBuilding = true
+        elseif self.BuildingOpenAnimManip then
+            self.BuildingOpenAnimManip:SetRate(-1)
+        end
+        self.BuildingUnit = false
+    end,
+
+    Close = function(self)
+    end,
+
+    WaitForBuildAnimation = function(self, enable)
+        if self.BuildArmManipulator then
+            WaitFor(self.BuildingOpenAnimManip)
+            if (enable) then
+                self.BuildArmManipulator:Enable()
+            end
+        end
+    end,
+
+    OnPrepareArmToBuild = function(self)
+        TAWalking.OnPrepareArmToBuild(self)
+
+        #LOG( 'OnPrepareArmToBuild' )
+        if self.BuildingOpenAnimManip then
+            self.BuildingOpenAnimManip:SetRate(self:GetBlueprint().Display.AnimationBuildRate or 1)
+            if self.BuildArmManipulator then
+                self.StoppedBuilding = false
+                ForkThread( self.WaitForBuildAnimation, self, true )
+            end
+        end
+    end,
+
+    OnStopBuilderTracking = function(self)
+        TAWalking.OnStopBuilderTracking(self)
+
+        if self.StoppedBuilding then
+            self.StoppedBuilding = false
+            self.BuildArmManipulator:Disable()
+            self.BuildingOpenAnimManip:SetRate(-(self:GetBlueprint().Display.AnimationBuildRate or 1))
+        end
+    end,
+    
+
+    CheckBuildRestriction = function(self, target_bp)
+        if self:CanBuild(target_bp.BlueprintId) then
+            return true
+        else
+            return false
+        end
+    end,
 
 	CreateBuildEffects = function(self, unitBeingBuilt, order)
-        TAUtil.CreateTABuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
-	end,
-	
-	OnStopBuild = function(self, unitBeingBuilt)
-		self:Close()
-       TAWalking.OnStopBuild(self, unitBeingBuilt)
+        TAutils.CreateTABuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
     end,
 }
 
@@ -109,37 +202,18 @@ TACommander = Class(TAconstructor) {
 		TAconstructor.OnStartCapture(self, target)
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
 		self:SetAllWeaponsEnabled(false)
-		self.desiredTarget = target
-		if (self.currentState == "aimed") then
-			self.currentState = "opened"
-			self.desiredState = "aimed"
-		else
-			self.desiredState = "opened"
-		end
-		self.isBuilding = nil
-		---if not self.cloakOn then
-		self.isCapturing = true
-		self.isReclaiming = true
-		if (not self.animating) then
-			ForkThread(TAconstructor.AnimationThread, self)
-		end
 	end,
 
 
 	OnStopCapture = function(self, target)
 		TAconstructor.OnStopCapture(self, target)
-		self.isCapturing = nil
-		TAconstructor.Conclude(self, target)
 	end,
     
     OnFailedCapture = function(self, target)
 		TAconstructor.OnFailedCapture(self, target)
-		self.isCapturing = nil
-		TAconstructor.Conclude(self, target)
     end,
 
 	Conclude = function(self, target)
-		TAconstructor.Conclude(self, target)
 		if self.cloakOn then
 		ForkThread(self.CloakDetection, self)
 		end

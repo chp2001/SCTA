@@ -3,215 +3,116 @@ local Unit = import('/lua/sim/Unit.lua').Unit
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 TAAirConstructor = Class(TAair) {
-	currentState = "closed",
-	desiredState = "closed",
-    currentTarget = nil,
-	desiredTarget = nil,
-	order = nil,
+    OnCreate = function(self)
+        TAair.OnCreate(self) 
+    
+        self.EffectsBag = {}
+        if self:GetBlueprint().General.BuildBones then
+            self:SetupBuildBones()
+        end
 
-	isBuilding = nil,
-	isReclaiming = nil,
+        if self:GetBlueprint().Display.AnimationBuild then
+            self.BuildingOpenAnim = self:GetBlueprint().Display.AnimationBuild
+        end
 
-	pauseTime = 3,
-
-	animating = nil,
-
-	AnimationThread = function(self)
-		self.animating = true
-		while not IsDestroyed(self) do
-			if (self.currentState ~= self.desiredState) then
-				if (self.currentState == "closed") then
-					if not IsDestroyed(self) then
-					self:Open()
-					self.currentState = "opened"
-					self.desiredState = "aimed"
-					end
-				elseif(self.currentState == "opened") then
-					if (self.desiredState == "closed") then
-							self:Close()
-							self.currentState = "closed"
-					elseif (self.desiredState == "aimed") then
-						self.currentTarget = self.desiredTarget
-						self.currentState = "aimed"
-						if (self.currentTarget and not IsDestroyed(self.currentTarget)) then
-							self:Aim(self.currentTarget)
-						end
-						if (not IsDestroyed(self.currentTarget)) then
-							if (self.isBuilding) then
-								TAair.OnStartBuild(self, self.currentTarget, self.order)
-								if EntityCategoryContains(categories.ARM, self.currentTarget) or EntityCategoryContains(categories.CORE, self.currentTarget) then
-								self.currentTarget:HideFlares()
-								end
-							end
-							if (self.isReclaiming) then
-							end
-							ForkThread(self.Nano, self, self.currentTarget)
-						end
-					end
-				elseif(self.currentState == "aimed") then
-					if (self.desiredState == "closed") then
-						self:Close(self)
-						self.currentState = "closed"
-				end
-			end
-		end
-			WaitSeconds(0.2)
-		end
-		self.animating = nil
-	end,
-
-	FlattenSkirt = function(self)
-		TAair.FlattenSkirt(self)
-        local x, y, z = unpack(self:GetPosition())
-        local x0,z0,x1,z1 = self:GetSkirtRect()
-        x0,z0,x1,z1 = math.floor(x0),math.floor(z0),math.ceil(x1),math.ceil(z1)
-        FlattenMapRect(x0, z0, x1-x0, z1-z0, y)
+        if self.BuildingOpenAnim then
+            self.BuildingOpenAnimManip = CreateAnimator(self)
+            self.BuildingOpenAnimManip:SetPrecedence(1)
+            self.BuildingOpenAnimManip:PlayAnim(self.BuildingOpenAnim, false):SetRate(0)
+            if self.BuildArmManipulator then
+                self.BuildArmManipulator:Disable()
+            end
+        end
+        self.BuildingUnit = false
     end,
 
-	OnStartBuild = function(self, unitBeingBuilt, order )
-		---TAair.OnStartBuild(self, unitBeingBuilt, order )
-		self.desiredTarget = unitBeingBuilt
-		if (self.currentState == "aimed" or self.currentState == "opened") then
-			self.currentState = "opened"
-			self.desiredState = "aimed"
-		else
-			self.desiredState = "opened"
-		end
-		--self:SetAllWeaponsEnabled(false)
-		self.isBuilding = true
-		self.isReclaiming = nil
-		self.order = order
-		if (not self.animating) then
-			ForkThread(self.AnimationThread, self)
-		end
-	end,
+    OnPaused = function(self)
+        self:StopUnitAmbientSound( 'ConstructLoop' )
+        TAair.OnPaused(self)
+        if self.BuildingUnit then
+            TAair.StopBuildingEffects(self, self:GetUnitBeingBuilt())
+        end    
+    end,
+    
+    OnUnpaused = function(self)
+        if self.BuildingUnit then
+            self:PlayUnitAmbientSound( 'ConstructLoop' )
+            TAair.StartBuildingEffects(self, self:GetUnitBeingBuilt(), self.UnitBuildOrder)
+        end
+        TAair.OnUnpaused(self)
+    end,
+    
+    OnStartBuild = function(self, unitBeingBuilt, order )
+        TAair.OnStartBuild(self,unitBeingBuilt, order)
+        #Fix up info on the unit id from the blueprint and see if it matches the 'UpgradeTo' field in the BP.
+        self.UnitBeingBuilt = unitBeingBuilt
+        self.UnitBuildOrder = order
+        self.BuildingUnit = true
+        if unitBeingBuilt:GetUnitId() == self:GetBlueprint().General.UpgradesTo and order == 'Upgrade' then
+            self.Upgrading = true
+            self.BuildingUnit = false
+        end
+    end,
 
-	OnStopBuild = function(self, unitBeingBuilt, order )
-		TAair.OnStopBuild(self, unitBeingBuilt, order )
-		self.desiredTarget = nil
-		self.isBuilding = nil
-		self.countdown = self.pauseTime
-		if (self.currentState == "aimed") then
-			self.desiredState = "closed"
-		end
-		--self:SetAllWeaponsEnabled(true)
-	end,
+    OnStopBuild = function(self, unitBeingBuilt)
+        TAair.OnStopBuild(self,unitBeingBuilt)
+        if self.Upgrading then
+            NotifyUpgrade(self,unitBeingBuilt)
+            self:Destroy()
+        end
+        self.UnitBeingBuilt = nil
+        self.UnitBuildOrder = nil
 
-	OnStartReclaim = function(self, target)
-		TAair.OnStartReclaim(self, target)
-		self.desiredTarget = target
-		if (self.currentState == "aimed" or self.currentState == "opened") then
-			self.currentState = "opened"
-			self.desiredState = "aimed"
-		else
-			self.desiredState = "opened"
-		end
-		---self:SetAllWeaponsEnabled(false)
-		self.isReclaiming = true
-		self.isBuilding = nil
-		if (not self.animating) then
-			ForkThread(self.AnimationThread, self)
-		end
-	end,
+        if self.BuildingOpenAnimManip and self.BuildArmManipulator then
+            self.StoppedBuilding = true
+        elseif self.BuildingOpenAnimManip then
+            self.BuildingOpenAnimManip:SetRate(-1)
+        end
+        self.BuildingUnit = false
+    end,
 
+    WaitForBuildAnimation = function(self, enable)
+        if self.BuildArmManipulator then
+            WaitFor(self.BuildingOpenAnimManip)
+            if (enable) then
+                self.BuildArmManipulator:Enable()
+            end
+        end
+    end,
 
-	OnStopReclaim = function(self, target)
-		TAair.OnStopReclaim(self, target)
-		self.Conclude(self, target)
-	end,
+    OnPrepareArmToBuild = function(self)
+        TAair.OnPrepareArmToBuild(self)
 
-	Conclude = function(self, target)
-		self.desiredTarget = nil
-		self.isReclaiming = nil
-		--self.isBuilding = nil
-		self.countdown = self.pauseTime
-		self.desiredState = "closed"
-	end,
+        #LOG( 'OnPrepareArmToBuild' )
+        if self.BuildingOpenAnimManip then
+            self.BuildingOpenAnimManip:SetRate(self:GetBlueprint().Display.AnimationBuildRate or 1)
+            if self.BuildArmManipulator then
+                self.StoppedBuilding = false
+                ForkThread( self.WaitForBuildAnimation, self, true )
+            end
+        end
+    end,
 
+    OnStopBuilderTracking = function(self)
+        TAair.OnStopBuilderTracking(self)
 
-	GetCloseArea = function(self)
-		local bp = self:GetBlueprint()
-		local pos = self:GetPosition(bp.Display.BuildAttachBone)
-		local area = nil
-		if bp.Physics.CloseAreaX and bp.Physics.CloseAreaZ then
-			area = Rect(pos.x - bp.Physics.CloseAreaX,bp.Physics.CloseAreaZ, bp.Physics.CloseAreaX, bp.Physics.CloseAreaX)
-		else
-			area = Rect(pos.x - bp.SizeX,bp.SizeZ, bp.SizeX, bp.SizeZ)
-		end
-		WaitSeconds(1)
-		return area
-	end,
+        if self.StoppedBuilding then
+            self.StoppedBuilding = false
+            self.BuildArmManipulator:Disable()
+            self.BuildingOpenAnimManip:SetRate(-(self:GetBlueprint().Display.AnimationBuildRate or 1))
+        end
+    end,
+    
 
-	GetBuildArea = function(self)
-		local bp = self:GetBlueprint()
-		local pos = self:GetPosition(bp.Display.BuildAttachBone)
-		local area = nil
-		if bp.Physics.BuildAreaX and bp.Physics.BuildAreaZ then
-			area = Rect(bp.Physics.BuildAreaX, bp.Physics.BuildAreaZ, bp.Physics.BuildAreaX, bp.Physics.BuildAreaX)
-		else
-			area = Rect(bp.SizeX,bp.SizeZ, bp.SizeX, bp.SizeZ)
-		end
-		WaitSeconds(1)
-		return area
-	end,
+    CheckBuildRestriction = function(self, target_bp)
+        if self:CanBuild(target_bp.BlueprintId) then
+            return true
+        else
+            return false
+        end
+    end,
 
-	Unpack = function(self)
-	end,
-
-	Open = function(self)
-	end,
-	
-	Aim = function(self, target)
-	end,
-
-	Close = function(self)
-	end,
-
-	Nano = function(self, unitBeingBuilt)
-		local target = 1
-		local current = 0
-		while not IsDestroyed(self) and self.isBuilding and not IsDestroyed(unitBeingBuilt) and unitBeingBuilt:GetFractionComplete() < 1 or self.isReclaiming and self.currentState == "aimed" do
-			if not self:IsPaused() then
-
-				current = current + 1
-				if current >= target or self.isReclaiming then
-					for k,v in self:GetBlueprint().Display.BuildBones do
-
-                        local selfPosition = self:GetPosition(v) 
-                        local targetPosition = unitBeingBuilt:GetPosition()
-                        local distance = VDist3(Vector(selfPosition.x,selfPosition.y, selfPosition.z), Vector(targetPosition.x, targetPosition.y, targetPosition.z))
-                        local time = distance * 0.85
-                        if (time >10) then
-                            time = 10
-                        end
-
-						local aiBrain = self:GetAIBrain()
-						local storedMass = aiBrain:GetEconomyStoredRatio('MASS')
-						local storedEnergy = aiBrain:GetEconomyStoredRatio('ENERGY')
-						local ratioMass = aiBrain:GetEconomyIncome('MASS') / aiBrain:GetEconomyRequested('MASS')
-						local ratioEnergy =  aiBrain:GetEconomyIncome('ENERGY') / aiBrain:GetEconomyRequested('ENERGY')
-						local lowestStored = math.min(storedMass, storedEnergy)
-						if lowestStored == storedMass then 
-							lowestRatio = ratioMass
-						else
-							lowestRatio = ratioEnergy
-						end
-
-						local bp
-						bp = self:GetBlueprint().Display.BuildEmitter or 'nanolathe.bp'
-						CreateEmitterAtBone(self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/' .. bp ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',time,0)
-						
-
-						if lowestRatio < 1 and lowestStored < 0.1 then
-							target = math.floor(1 / lowestRatio)
-						else
-							target = 1
-						end
-					end
-					current = 0
-				end
-			end
-			WaitSeconds(0.25)
-		end
-	end,
+	CreateBuildEffects = function(self, unitBeingBuilt, order)
+        TAutils.CreateTABuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
+    end,
 }

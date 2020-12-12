@@ -66,8 +66,8 @@ UnitBlueprint {
     },
     Description = 'Tech Level 2',
     Display = {
-        AnimationOpen = '/mods/SCTA-master/units/ARMACK/ARMACK_lod0_Aopen.sca',
-        AnimationOpenRate = 1, 
+        AnimationBuild = '/mods/SCTA-master/units/ARMACK/ARMACK_lod0_Aopen.sca',
+        AnimationBuildRate = 1, 
         AnimationWalk = '/mods/SCTA-master/units/ARMACK/ARMACK_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
@@ -98,7 +98,6 @@ UnitBlueprint {
 			},
 		},
 	},]]---
-	BuildBones = {'Build_Muzzle_01','Build_Muzzle_02'},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -126,8 +125,13 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 20,
 	ProductionPerSecondMass = 1,
     },
-
     General = {
+        BuildBones = {
+            AimBone = 'Torso',
+            BuildEffectBones = {'Build_Muzzle_01','Build_Muzzle_02'},
+            PitchBone = 'Torso',
+            YawBone = 'Torso',
+        },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

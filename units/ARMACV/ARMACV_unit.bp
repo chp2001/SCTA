@@ -52,13 +52,8 @@ UnitBlueprint {
 	'LAND',
 	'SELECTION', 
         'ARM',
-        'VEHICLE',	#'TANK' in TA
+        'VEHICLE',
 	'LEVEL2',
-	
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -93,7 +88,6 @@ UnitBlueprint {
 			},
 		},
 	},]]---
-	BuildBones = {'Build_Muzzle'},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -122,6 +116,12 @@ UnitBlueprint {
 	ProductionPerSecondMass = 1,
     },
     General = {
+        BuildBones = {
+            AimBone = 'Build_Nozzle',
+            BuildEffectBones = {'Build_Muzzle'},
+            PitchBone = 'Build_Muzzle',
+            YawBone = 'Turret',
+        },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

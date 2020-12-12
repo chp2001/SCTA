@@ -69,8 +69,8 @@ UnitBlueprint {
         Abilities = {
             'Adv. Construction Unit',
         },        
-        AnimationOpen = '/mods/SCTA-master/units/CORACV/CORACV_lod0_Aopen.sca',
-        AnimationOpenRate = 1, 
+        AnimationBuild = '/mods/SCTA-master/units/CORACV/CORACV_lod0_Aopen.sca',
+        AnimationBuildRate = 1, 
         MovementEffects = {
             Bones = {'CORACV'},
             Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
@@ -96,24 +96,6 @@ UnitBlueprint {
                 },
             },
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Construction','Tredside','ArmCockpit','BuildMuzzle'},
-		DestructionEmitters = {		{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'nozzle','door1','door2'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
 	BuildBones = {'nozzle'},
     Mesh = {
         IconFadeInZoom = 130,
@@ -147,6 +129,12 @@ UnitBlueprint {
 	ProductionPerSecondMass = 1,
     },
     General = {
+        BuildBones = {
+            AimBone = 'stand',
+            BuildEffectBones = {'nozzle'},
+            PitchBone = 'nozzle',
+            YawBone = 'nozzle',
+        },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

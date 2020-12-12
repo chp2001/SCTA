@@ -73,6 +73,8 @@ UnitBlueprint {
     },
     Description = 'Tech Level 1',
     Display = {
+        AnimationBuild = '/mods/SCTA-master/units/ARMCS/ARMCS_lod0_unpack.sca',
+        AnimationBuildRate = 1, 
         Abilities = {
             'Construction Unit',
         },

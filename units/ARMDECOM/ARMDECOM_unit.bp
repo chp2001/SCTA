@@ -82,28 +82,8 @@ UnitBlueprint {
             'Decoy',
             'Construction Unit',
         },
-		--[[DestructionEffects = {
-		DefaultFlamingProjectileCountMin = 0,
-		DefaultFlamingProjectileCountMax = 0,
-		DefaultProjectileCountMin = 0,
-		DefaultProjectileCountMax = 0,
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {
-					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-				},
-				EmitterSize = 15,
-			},
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {
-					'/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
-				},
-				EmitterSize = 1.35,
-			},
-		},
-	},]]--
+        AnimationBuild = '/mods/SCTA-master/units/ARMCOM/ARMCOM_lod0_unpack.sca',
+        AnimationBuildRate = 1, 
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

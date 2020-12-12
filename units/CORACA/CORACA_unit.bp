@@ -143,6 +143,12 @@ UnitBlueprint {
         SizeZ = 2,
     },]]--
     General = {
+        BuildBones = {
+            AimBone = 'nozzle',
+            BuildEffectBones = {'nozzle'},
+            PitchBone = 'nozzle',
+            YawBone = 'nozzle',
+        },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

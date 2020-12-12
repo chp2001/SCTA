@@ -106,6 +106,8 @@ UnitBlueprint {
     },
     Description = 'Commander',
     Display = {
+        AnimationBuild = '/mods/SCTA-master/units/ARMCOM/ARMCOM_lod0_unpack.sca',
+        AnimationBuildRate = 1, 
         AnimationWalk = '/mods/SCTA-master/units/ARMCOM/ARMCOM_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
@@ -116,23 +118,6 @@ UnitBlueprint {
             'D-Gun',
             'Construction Unit',
         },
-		--[[DestructionEffects = {
-		DefaultFlamingProjectileCountMin = 0,
-		DefaultFlamingProjectileCountMax = 0,
-		DefaultProjectileCountMin = 0,
-		DefaultProjectileCountMax = 0,
-		FlashTime = 0,
-		FlashSize = 0,
-		DestructionEmitters = {
-			{
-				EmitterBone = {'ARMCOM'},
-				EmitterBlueprint = {
-					'/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
-				},
-				EmitterSize = 15,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

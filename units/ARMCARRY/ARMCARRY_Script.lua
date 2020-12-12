@@ -30,9 +30,9 @@ ARMCARRY = Class(TAFactory) {
 	end,
 
 	Open = function(self)
+		TAFactory.Open(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationBuild)
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationBuildRate or 0.2))
-		TAFactory.Open(self)
 	end,
 
 	Aim = function(self, target)

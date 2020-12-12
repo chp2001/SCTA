@@ -49,7 +49,7 @@ TAconstructor = Class(TAWalking) {
 						else
 							self.desiredState = "rolloff"
 						end
-						if (not IsDestroyed(self.currentTarget)) then
+						if (not IsDestroyed(self) and not IsDestroyed(self.currentTarget)) then
 							if (self.isBuilding) then
 								---self:SetBuildRate(self:GetBlueprint().Economy.BuildRate)
 								TAWalking.OnStartBuild(self, self.currentTarget, self.order)

@@ -1,6 +1,7 @@
 local TAair = import('/mods/SCTA-master/lua/TAair.lua').TAair
 local Unit = import('/lua/sim/Unit.lua').Unit
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+local EffectUtil = import('/lua/EffectUtilities.lua')
 
 TAAirConstructor = Class(TAair) {
     OnCreate = function(self)
@@ -115,4 +116,12 @@ TAAirConstructor = Class(TAair) {
 	CreateBuildEffects = function(self, unitBeingBuilt, order)
         TAutils.CreateTABuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
     end,
+
+    CreateReclaimEffects = function( self, target )
+		EffectUtil.PlayReclaimEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.ReclaimEffectsBag )
+    end,
+    
+    CreateReclaimEndEffects = function( self, target )
+        EffectUtil.PlayReclaimEndEffects( self, target )
+    end,         
 }

@@ -63,6 +63,11 @@ ARMACV = Class(TAconstructor) {
 		TAconstructor.Open(self)
 	end,
 
+	OnPrepareArmToBuild = function(self)
+		WaitFor(self.Spinners.nano)
+		TACommander.OnPrepareArmToBuild(self)
+	end,
+
 	Close = function(self)
 
 		self.Spinners.turret:SetGoal(0)

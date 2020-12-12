@@ -2,6 +2,7 @@ local TAWalking = import('/mods/SCTA-master/lua/TAMotion.lua').TAWalking
 local Unit = import('/lua/sim/Unit.lua').Unit
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local oldPosition={1,1,1}
+local EffectUtil = import('/lua/EffectUtilities.lua')
 
 TAconstructor = Class(TAWalking) {
     OnCreate = function(self)
@@ -44,8 +45,8 @@ TAconstructor = Class(TAWalking) {
     end,
     
     OnStartBuild = function(self, unitBeingBuilt, order )
-        TAWalking.OnStartBuild(self,unitBeingBuilt, order)
         self:Open()
+        TAWalking.OnStartBuild(self,unitBeingBuilt, order)
         self.UnitBeingBuilt = unitBeingBuilt
         self.UnitBuildOrder = order
         self.BuildingUnit = true
@@ -109,19 +110,27 @@ TAconstructor = Class(TAWalking) {
             self.BuildArmManipulator:Disable()
             self.BuildingOpenAnimManip:SetRate(-(self:GetBlueprint().Display.AnimationBuildRate or 1))
         end
-    end,
-    
-
-    CheckBuildRestriction = function(self, target_bp)
-        if self:CanBuild(target_bp.BlueprintId) then
-            return true
-        else
-            return false
-        end
-    end,
+    end,   
 
 	CreateBuildEffects = function(self, unitBeingBuilt, order)
         TAutils.CreateTABuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
+    end,
+
+    CreateReclaimEffects = function( self, target )
+		EffectUtil.PlayReclaimEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.ReclaimEffectsBag )
+    end,
+    
+    CreateReclaimEndEffects = function( self, target )
+        EffectUtil.PlayReclaimEndEffects( self, target )
+    end,         
+    
+    CreateCaptureEffects = function( self, target )
+		EffectUtil.PlayCaptureEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.CaptureEffectsBag )
+    end,
+    
+    OnStopReclaim = function(self, target)
+        self:Close()
+        TAWalking.OnStopReclaim(self, target)
     end,
 }
 
@@ -197,8 +206,6 @@ TANecro = Class(TAconstructor) {
 TACommander = Class(TAconstructor) {
 
 	OnStartCapture = function(self, target)
-		---self:SetCaptureTimeMultiplier(1)
-		--self:SetBuildRate(self:GetBlueprint().Economy.BuildRate * 0.6)
 		TAconstructor.OnStartCapture(self, target)
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
 		self:SetAllWeaponsEnabled(false)
@@ -212,12 +219,6 @@ TACommander = Class(TAconstructor) {
     OnFailedCapture = function(self, target)
 		TAconstructor.OnFailedCapture(self, target)
     end,
-
-	Conclude = function(self, target)
-		if self.cloakOn then
-		ForkThread(self.CloakDetection, self)
-		end
-	end,
 
     CloakDetection = function(self)
         local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint

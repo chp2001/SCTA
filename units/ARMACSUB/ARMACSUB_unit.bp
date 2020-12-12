@@ -68,6 +68,8 @@ UnitBlueprint {
     },
     Description = 'Tech Level 2',
     Display = {
+        AnimationBuild = '/mods/SCTA-master/units/ARMACSUB/ARMACSUB_lod0_unpack.sca',
+        AnimationBuildRate = 1, 
         Abilities = {
             'Construction Unit',
         },

@@ -63,6 +63,8 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_radar>Radar',
         },
+    AnimationUnpack = '/mods/SCTA-master/units/ARMAAP/ARMAAP_lod0_unpack.sca',
+    AnimationUnpackRate = 0.5,    
         Mesh = {
             IconFadeInZoom = 400,
             LODs = {

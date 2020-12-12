@@ -44,19 +44,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SHOWQUEUE',
-
 	'REPAIR',
         'MOBILE',
 	'CONSTRUCTION',
 	'LAND',
-
-	
         'ARM',
-        'VEHICLE',	#'TANK' in TA
-	'MINELAYER',
+        'VEHICLE',
 	'LEVEL1',
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -72,26 +66,6 @@ UnitBlueprint {
         Abilities = {
             'Construction Unit',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Construction','ArmCockpit','BuildMuzzle'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'door1','door2'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
-	BuildBones = {'Muzzle'},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -115,6 +89,12 @@ UnitBlueprint {
         MaxBuildDistance = 4.375,
     },
     General = {
+        BuildBones = {
+            AimBone = 'post',
+            BuildEffectBones = {'Muzzle'},
+            PitchBone = 'Muzzle',
+            YawBone = 'post',
+        },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

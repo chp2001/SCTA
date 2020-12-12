@@ -58,6 +58,8 @@ UnitBlueprint {
     },
     Description = 'Produces Aircraft',
     Display = {
+        AnimationUnpack = '/mods/SCTA-master/units/ARMAP/ARMAP_lod0_unpack.sca',
+        AnimationUnpackRate = 0.5,   
         Abilities = {
             '<LOC ability_radar>Radar',
         },

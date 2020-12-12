@@ -6,9 +6,6 @@
 local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 
 ARMADSY = Class(TAFactory) {
-	pauseTime = 5,
-	hideUnit = true,
-
 	OnCreate = function(self)
 		TAFactory.OnCreate(self)
 		self.Spinners = {
@@ -29,11 +26,7 @@ ARMADSY = Class(TAFactory) {
 		end
 	end,
 
-	OnKilled = function(self, instigator, type, overkillRatio)
-		TAFactory.OnKilled(self, instigator, type, overkillRatio)
-		
-	end,
-
+	
 	Open = function(self)
 		--MOVE nano2 to y-axis <7.80> SPEED <10.00>;
 		self.Sliders.nano2:SetGoal(0,7.8,0)
@@ -43,8 +36,6 @@ ARMADSY = Class(TAFactory) {
 		self.Sliders.nano1:SetGoal(0,7.8,0)
 		self.Sliders.nano1:SetSpeed(10)
 
-		--SLEEP <751>;
-		WaitSeconds(0.75)
 
 		--TURN nano2 to x-axis <-311.84> SPEED <411.51>;
 		self.Spinners.nano2:SetGoal(-311.84)
@@ -54,8 +45,6 @@ ARMADSY = Class(TAFactory) {
 		self.Spinners.nano1:SetGoal(312.29)
 		self.Spinners.nano1:SetSpeed(411.51)
 
-		--SLEEP <758>;
-		WaitSeconds(0.75)
 
 		--TURN turret1 to y-axis <-45.00> SPEED <59.21>;
 		self.Spinners.turret1:SetGoal(75)
@@ -64,12 +53,6 @@ ARMADSY = Class(TAFactory) {
 		--TURN turret2 to y-axis <45.44> SPEED <59.81>;
 		self.Spinners.turret2:SetGoal(75)
 		self.Spinners.turret2:SetSpeed(59.81)
-
-		 #Changed to allow new turn value
-		--SLEEP <760>;
-		WaitSeconds(1.45)
-
-		--SLEEP <37>;
 
 		TAFactory.Open(self)
 	end,
@@ -86,9 +69,6 @@ ARMADSY = Class(TAFactory) {
 		self.Spinners.turret2:SetGoal(0)
 		self.Spinners.turret2:SetSpeed(60)
 
-		--SLEEP <750>;
-		WaitSeconds(0.75)
-
 		--TURN nano2 to x-axis <0> SPEED <412.05>;
 		self.Spinners.nano2:SetGoal(0)
 		self.Spinners.nano2:SetSpeed(412.05)
@@ -96,9 +76,6 @@ ARMADSY = Class(TAFactory) {
 		--TURN nano1 to x-axis <0> SPEED <412.64>;
 		self.Spinners.nano1:SetGoal(0)
 		self.Spinners.nano1:SetSpeed(412.05)
-
-		--SLEEP <757>;
-		WaitSeconds(0.75)
 
 		--MOVE nano2 to y-axis <0> SPEED <10.00>;
 		self.Sliders.nano2:SetGoal(0,0,0)
@@ -108,9 +85,6 @@ ARMADSY = Class(TAFactory) {
 		self.Sliders.nano1:SetGoal(0,0,0)
 		self.Sliders.nano1:SetSpeed(10)
 
-		--SLEEP <760>;
-		WaitSeconds(0.75)
-		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
 }

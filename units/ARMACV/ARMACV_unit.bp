@@ -69,6 +69,8 @@ UnitBlueprint {
         Abilities = {
             'Adv. Construction Unit',
         },
+        AnimationBuild = '/mods/SCTA-master/units/ARMACV/ARMACV_lod0_unpack.sca',
+        AnimationBuildRate = 1, 
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

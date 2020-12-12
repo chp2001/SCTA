@@ -73,26 +73,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/ARMFARK/ARMFARK_lod0_Awalk.sca',
         AnimationWalkRate = 2,
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Construction','BuildMuzzle'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'hips'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'nozzle1','nozzle2'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
-	BuildBones = {'nozzle1','nozzle2'},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -123,6 +103,12 @@ UnitBlueprint {
         SizeZ = 2,
     },]]--
     General = {
+        BuildBones = {
+            AimBone = 0,
+            BuildEffectBones = {'nozzle1','nozzle2'},
+            PitchBone = 0,
+            YawBone = 0,
+        },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

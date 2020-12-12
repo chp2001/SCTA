@@ -32,7 +32,6 @@ UnitBlueprint {
         MaxHealth = 16000,
     },
     Display = {
-        BuildAttachBone = 'Attachpoint01',
         UniformScale = 0.28,
         },
         Footprint = {
@@ -41,6 +40,7 @@ UnitBlueprint {
         },
     General = {
         BuildBones = {
+            BuildAttachBone = 'Attachpoint01',
             BuildEffectBones = {'nano1','nano2'},
         },   
     },

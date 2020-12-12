@@ -61,35 +61,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_radar>Radar',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate','Runway'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'BasePlate', 0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'Post_01','Post_02'},
-				EmitterBlueprint = {
-	    				'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-			{
-				EmitterBone = {'Radar'},
-				EmitterBlueprint = {
-		    			'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.25,
-			},
-		},
-	},]]--
-	BuildBones = {'Nozzle_01','Nozzle_02'},
-	BuildAttachBone = 'BasePlate',
-	--TextureAnimationFrames = 6,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -127,6 +98,10 @@ UnitBlueprint {
         SizeZ = 8,
     },
     General = {
+        BuildBones = {
+            BuildAttachBone = 'BasePlate',
+            BuildEffectBones = {'Nozzle_01', 'Nozzle_02'},
+        },    
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

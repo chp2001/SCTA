@@ -6,10 +6,6 @@
 local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 
 ARMASY = Class(TAFactory) {
-	pauseTime = 5,
-	hideUnit = false,
-	isFactory = true,
-
 	OnCreate = function(self)
 		TAFactory.OnCreate(self)
 		self.Spinners = {
@@ -39,22 +35,12 @@ ARMASY = Class(TAFactory) {
 		self.Sliders.nano1:SetGoal(0,7.8,0)
 		self.Sliders.nano1:SetSpeed(15)
 
-		--SLEEP <514>;
-		WaitSeconds(0.5)
-
-		#Doesn't point properly, new values used
-		--TURN nano2 to x-axis <58.04> SPEED <112.08>
 		self.Spinners.nano2:SetGoal(75.04)
 		self.Spinners.nano2:SetSpeed(112.08)
 
 		--TURN nano1 to x-axis <58.04> SPEED <112.08>
 		self.Spinners.nano1:SetGoal(75.04)
 		self.Spinners.nano1:SetSpeed(112.08)
-
-		--SLEEP <518>;
-		WaitSeconds(0.5)
-
-		#Doesn't point properly, new values used
 		--TURN piling1 to y-axis <-52.64> SPEED <101.46>;
 		self.Spinners.piling1:SetGoal(-45)
 		self.Spinners.piling1:SetSpeed(95)
@@ -62,12 +48,6 @@ ARMASY = Class(TAFactory) {
 		--TURN piling2 to y-axis <47.69> SPEED <91.92>;
 		self.Spinners.piling2:SetGoal(45)
 		self.Spinners.piling2:SetSpeed(95)
-
-		#Changed to allow new turn value
-		--SLEEP <519>;
-		WaitSeconds(0.75)
-
-		--SLEEP <26>;
 
 		TAFactory.Open(self)
 	end,
@@ -83,9 +63,6 @@ ARMASY = Class(TAFactory) {
 		self.Spinners.piling2:SetGoal(0)
 		self.Spinners.piling2:SetSpeed(95)
 
-		--SLEEP <750>;
-		WaitSeconds(0.75)
-
 		--TURN nano2 to x-axis <0> SPEED <112.08>;
 		self.Spinners.nano2:SetGoal(0)
 		self.Spinners.nano2:SetSpeed(112.08)
@@ -94,9 +71,6 @@ ARMASY = Class(TAFactory) {
 		self.Spinners.nano1:SetGoal(0)
 		self.Spinners.nano1:SetSpeed(112.08)
 
-		--SLEEP <757>;
-		WaitSeconds(0.75)
-
 		--MOVE nano2 to y-axis <0> SPEED <15.00>;
 		self.Sliders.nano2:SetGoal(0,0,0)
 		self.Sliders.nano2:SetSpeed(15)
@@ -104,11 +78,6 @@ ARMASY = Class(TAFactory) {
 		--MOVE nano1 to y-axis <0> SPEED <14.00>;
 		self.Sliders.nano1:SetGoal(0,0,0)
 		self.Sliders.nano1:SetSpeed(15)
-
-		--SLEEP <760>;
-		WaitSeconds(0.75)
-		ChangeState(self, self.IdleState)
-		--SLEEP <26>;
 		TAFactory.Close(self)
 	end,
 }

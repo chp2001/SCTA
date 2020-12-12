@@ -58,7 +58,6 @@ UnitBlueprint {
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/ARMLAB/ARMLAB_lod0_aopen.sca',
         AnimationUnpackRate = 0.5, 
-	BuildAttachBone = 'BasePlate',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -97,6 +96,7 @@ UnitBlueprint {
     },
     General = {
     BuildBones = {
+        BuildAttachBone = 'BasePlate',
             BuildEffectBones = {'Nozzle_01','Nozzle_02'},
         },
     BuildAngle = 4096,

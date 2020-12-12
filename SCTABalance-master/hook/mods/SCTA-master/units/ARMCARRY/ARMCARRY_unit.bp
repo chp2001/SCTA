@@ -32,7 +32,6 @@ UnitBlueprint {
         MaxHealth = 16000,
     },
     Display = {
-        BuildBones = {'nano1', 'nano2'},
         BuildAttachBone = 'Attachpoint01',
         UniformScale = 0.28,
         },
@@ -40,6 +39,11 @@ UnitBlueprint {
             SizeX = 12,
             SizeZ = 12,
         },
+    General = {
+        BuildBones = {
+            BuildEffectBones = {'nano1','nano2'},
+        },   
+    },
     Economy = {
         BuildCostEnergy = 11715,
         BuildCostMass = 3000,

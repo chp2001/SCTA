@@ -41,9 +41,6 @@ ARMCV = Class(TAconstructor) {
 		self.Spinners.door2:SetGoal(70)
 		self.Spinners.door2:SetSpeed(182.13)
 
-		--SLEEP <388>;
-		WaitSeconds(0.4)
-
 		--MOVE door1 to y-axis <-2.35> SPEED <6.00>;
 		self.Sliders.door1:SetGoal(2.25,0,0)
 		self.Sliders.door1:SetSpeed(6)
@@ -52,15 +49,11 @@ ARMCV = Class(TAconstructor) {
 		self.Sliders.door2:SetGoal(-2.25,0,0)
 		self.Sliders.door2:SetSpeed(6)
 
-		--SLEEP <389>;
-		WaitSeconds(0.4)
 
 		--MOVE plate to y-axis <4.45> SPEED <11.00>;
 		self.Sliders.plate:SetGoal(0,4.45,0)
 		self.Sliders.plate:SetSpeed(11)
 
-		--SLEEP <389>;
-		WaitSeconds(0.4)
 
 		--TURN arm to x-axis <90.00> SPEED <230.82>;
 		self.Spinners.arm:SetGoal(90)
@@ -70,36 +63,14 @@ ARMCV = Class(TAconstructor) {
 		self.Spinners.nano:SetGoal(-66.14)
 		self.Spinners.nano:SetSpeed(169.65)
 
-		--SLEEP <390>;
-		WaitSeconds(0.4)
-
-		--SLEEP <20>;
 		TAconstructor.Open(self)
 	end,
 
-	Aim = function(self,target)
-		local selfPosition = self:GetPosition('Turret') 
-		local targetPosition = target:GetPosition()
-		
-		--TURN turret to y-axis buildheading SPEED <160.03>;
-		self.Spinners.turret:SetGoal(TAutils.GetAngleTA(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
-		self.Spinners.turret:SetSpeed(160.03)
-		WaitFor(self.Spinners.turret)
-
-		local distance = VDist2(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z)
-		selfPosition = self:GetPosition('Turret_Muzzle') 
-
-		self.Spinners.nano:SetGoal(TAutils.GetAngleTA(0, selfPosition.y, distance, targetPosition.y) + 180)
-		self.Spinners.nano:SetSpeed(160.03)
-		WaitFor(self.Spinners.nano)
-		TAconstructor.Aim(self, target)
-	end,
 
 	Close = function(self)
 
 		self.Spinners.turret:SetGoal(0)
 		self.Spinners.turret:SetSpeed(160.03)
-		WaitFor(self.Spinners.turret)
 
 		--TURN arm to x-axis <0> SPEED <232.01>;
 		self.Spinners.arm:SetGoal(0)
@@ -108,17 +79,9 @@ ARMCV = Class(TAconstructor) {
 		--TURN nano to x-axis <0> SPEED <170.52>;
 		self.Spinners.nano:SetGoal(0)
 		self.Spinners.nano:SetSpeed(170.52)
-
-		--SLEEP <388>;
-		WaitSeconds(0.4)
-
 		--MOVE plate to y-axis <0> SPEED <11.00>;
 		self.Sliders.plate:SetGoal(0,0,0)
 		self.Sliders.plate:SetSpeed(11)
-
-		--SLEEP <389>;
-		WaitSeconds(0.4)
-
 		--MOVE door1 to y-axis <0> SPEED <6.00>;
 		self.Sliders.door1:SetGoal(0,0,0)
 		self.Sliders.door1:SetSpeed(6)
@@ -126,10 +89,6 @@ ARMCV = Class(TAconstructor) {
 		--MOVE door2 to y-axis <0> SPEED <5.00>;
 		self.Sliders.door2:SetGoal(0,0,0)
 		self.Sliders.door2:SetSpeed(6)
-
-		--SLEEP <389>;
-		WaitSeconds(0.4)
-
 		--TURN door1 to z-axis <0> SPEED <181.19>;
 		self.Spinners.door1:SetGoal(0)
 		self.Spinners.door1:SetSpeed(181.19)
@@ -137,12 +96,6 @@ ARMCV = Class(TAconstructor) {
 		--TURN door2 to z-axis <0> SPEED <181.19>;
 		self.Spinners.door2:SetGoal(0)
 		self.Spinners.door2:SetSpeed(181.19)
-
-		--SLEEP <390>
-		WaitSeconds(0.4)
-
-		--SLEEP <20>
-
 		TAconstructor.Close(self)
 	end,
 }

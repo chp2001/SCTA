@@ -6,10 +6,6 @@
 local TAFactory = import('/mods/SCTA-master/lua/TAfactory.lua').TAFactory
 
 ARMLAB = Class(TAFactory) {
-	pauseTime = 5,
-	hideUnit = true,
-
-
 	OnCreate = function(self)
 		self.AnimManip = CreateAnimator(self)
 		self.Trash:Add(self.AnimManip)

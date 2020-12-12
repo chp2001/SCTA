@@ -145,13 +145,9 @@ ARMCOM = Class(TACommander) {
 	end,
 
 	Open = function(self)
+		TACommander.Open(self)
 		self.Spinners.luparm:SetGoal(-70)
 		self.Spinners.luparm:SetSpeed(140)
-		TACommander.Open(self)
-	end,
-
-	OnPrepareArmToBuild = function(self)
-		TACommander.OnPrepareArmToBuild(self)
 	end,
 
 	Wait = function(self)
@@ -161,10 +157,9 @@ end,
 
 
 	Close = function(self)
+		TACommander.Close(self)
 		self.Spinners.luparm:SetGoal(0)
 		self.Spinners.luparm:SetSpeed(45.01)
-
-		TACommander.Close(self)
 	end,
 }
 

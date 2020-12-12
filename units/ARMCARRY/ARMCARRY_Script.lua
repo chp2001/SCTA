@@ -29,22 +29,18 @@ ARMCARRY = Class(TAFactory) {
 		self:SetMaintenanceConsumptionActive()
 	end,
 
+
 	Open = function(self)
 		TAFactory.Open(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationBuild)
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationBuildRate or 0.2))
 	end,
 
-	Aim = function(self, target)
-		TAFactory.Aim(self, target)
-		WaitFor(self.AnimManip)
-	end,
 
 	Close = function(self)
-		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationBuild)
-		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationBuildRate or 0.2))
-		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
+		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationBuild)
+		self.AnimManip:SetRate(-0.1 * (self:GetBlueprint().Display.AnimationBuildRate or 0.2))
 	end,
 
 	OnScriptBitSet = function(self, bit)

@@ -65,7 +65,8 @@ UnitBlueprint {
     },
     Description = 'Produces Kbots',
     Display = {
-	BuildBones = {'muzzle1','muzzle2'},
+    AnimationUnpack = '/mods/SCTA-master/units/CORLAB/CORLAB_lod0_unpack.sca',
+    AnimationUnpackRate = 1,     
 	BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,
@@ -100,7 +101,6 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildAttachBone = 'pad',
             BuildEffectBones = {'muzzle1', 'muzzle2'},
         },          
 	BuildAngle = 1024,

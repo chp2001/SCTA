@@ -27,6 +27,10 @@ ARMGANT = Class(TAFactory) {
 
 		TAFactory.Close(self)
 	end,
+
+	CreateBuildEffects = function(self, unitBeingBuilt, order)
+		TAutils.CreateTAGantBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
+	end,
 }
 
 TypeClass = ARMGANT

@@ -8,13 +8,19 @@ TAconstructor = Class(TAWalking) {
     OnCreate = function(self)
         TAWalking.OnCreate(self) 
     
+      
+        local bp = self:GetBlueprint()
+
+        -- Save build effect bones for faster access when creating build effects
+        self.BuildEffectBones = bp.General.BuildBones.BuildEffectBones
+
         self.EffectsBag = {}
-        if self:GetBlueprint().General.BuildBones then
+        if bp.General.BuildBones then
             self:SetupBuildBones()
         end
 
-        if self:GetBlueprint().Display.AnimationBuild then
-            self.BuildingOpenAnim = self:GetBlueprint().Display.AnimationBuild
+        if bp.Display.AnimationBuild then
+            self.BuildingOpenAnim = bp.Display.AnimationBuild
         end
 
         if self.BuildingOpenAnim then
@@ -29,7 +35,6 @@ TAconstructor = Class(TAWalking) {
     end,
 
     OnPaused = function(self)
-        self:StopUnitAmbientSound( 'ConstructLoop' )
         TAWalking.OnPaused(self)
         if self.BuildingUnit then
             TAWalking.StopBuildingEffects(self, self:GetUnitBeingBuilt())
@@ -38,34 +43,21 @@ TAconstructor = Class(TAWalking) {
     
     OnUnpaused = function(self)
         if self.BuildingUnit then
-            self:PlayUnitAmbientSound( 'ConstructLoop' )
             TAWalking.StartBuildingEffects(self, self:GetUnitBeingBuilt(), self.UnitBuildOrder)
         end
         TAWalking.OnUnpaused(self)
     end,
     
     OnStartBuild = function(self, unitBeingBuilt, order )
-        self:Open()
         TAWalking.OnStartBuild(self,unitBeingBuilt, order)
+        self:OnPrepareArmToBuild()
         self.UnitBeingBuilt = unitBeingBuilt
         self.UnitBuildOrder = order
         self.BuildingUnit = true
-        if unitBeingBuilt:GetUnitId() == self:GetBlueprint().General.UpgradesTo and order == 'Upgrade' then
-            self.Upgrading = true
-            self.BuildingUnit = false
-        end
-    end,
-
-    Open = function(self)
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)
-        self:Close()
         TAWalking.OnStopBuild(self,unitBeingBuilt)
-        if self.Upgrading then
-            NotifyUpgrade(self,unitBeingBuilt)
-            self:Destroy()
-        end
         self.UnitBeingBuilt = nil
         self.UnitBuildOrder = nil
 
@@ -74,12 +66,9 @@ TAconstructor = Class(TAWalking) {
         elseif self.BuildingOpenAnimManip then
             self.BuildingOpenAnimManip:SetRate(-1)
         end
+        self:OnStopBuilderTracking()
         self.BuildingUnit = false
     end,
-
-    Close = function(self)
-    end,
-
     WaitForBuildAnimation = function(self, enable)
         if self.BuildArmManipulator then
             WaitFor(self.BuildingOpenAnimManip)
@@ -91,24 +80,32 @@ TAconstructor = Class(TAWalking) {
 
     OnPrepareArmToBuild = function(self)
         TAWalking.OnPrepareArmToBuild(self)
-
-        #LOG( 'OnPrepareArmToBuild' )
         if self.BuildingOpenAnimManip then
             self.BuildingOpenAnimManip:SetRate(self:GetBlueprint().Display.AnimationBuildRate or 1)
             if self.BuildArmManipulator then
                 self.StoppedBuilding = false
                 ForkThread( self.WaitForBuildAnimation, self, true )
             end
+        end       
+         if self:IsMoving() then
+            self:SetImmobile(true)
+            self:ForkThread(function() WaitTicks(1) if not self:BeenDestroyed() then self:SetImmobile(false) end end)
         end
+    end,
+
+    OnFailedToBuild = function(self)
+        TAconstructor.OnFailedToBuild(self)
+        self:SetImmobile(false)
     end,
 
     OnStopBuilderTracking = function(self)
         TAWalking.OnStopBuilderTracking(self)
 
         if self.StoppedBuilding then
-            self.StoppedBuilding = false
+            self.StoppedBuilding = nil
             self.BuildArmManipulator:Disable()
             self.BuildingOpenAnimManip:SetRate(-(self:GetBlueprint().Display.AnimationBuildRate or 1))
+            self:SetImmobile(false)
         end
     end,   
 
@@ -129,8 +126,13 @@ TAconstructor = Class(TAWalking) {
     end,
     
     OnStopReclaim = function(self, target)
-        self:Close()
+        self.BuildingOpenAnimManip:SetRate(-1*(self:GetBlueprint().Display.AnimationBuildRate or 1))
         TAWalking.OnStopReclaim(self, target)
+    end,
+
+    OnStartReclaim = function(self, target)
+        self:OnPrepareArmToBuild()
+        TAWalking.OnStartReclaim(self, target)
     end,
 }
 

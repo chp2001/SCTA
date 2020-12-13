@@ -27,16 +27,8 @@ CORCOM = Class(TACommander) {
 	},
 
 	OnCreate = function(self)
-		self.Spinners = {
-			Torso = CreateRotator(self, 'Torso', 'y', nil, 0, 0, 0),
-			Nanogun = CreateRotator(self, 'Nanogun', 'x', nil, 0, 0, 0),
-		}
-		for k, v in self.Spinners do
-			self.Trash:Add(v)
-		end
 		TACommander.OnCreate(self)
 		self:SetCapturable(false)
-        ---self:SetIntelRadius('Omni', 10)
 	end,
 
 	PlayCommanderWarpInEffect = function(self)
@@ -133,8 +125,6 @@ CORCOM = Class(TACommander) {
 
 	OnStartReclaim = function(self, target)
 		TACommander.OnStartReclaim(self, target)
-		self.Spinners.Nanogun:SetGoal(-60)
-		self.Spinners.Nanogun:SetSpeed(45.01)
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
 	end,
 }

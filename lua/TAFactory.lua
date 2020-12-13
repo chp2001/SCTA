@@ -18,8 +18,9 @@ TAFactory = Class(FactoryUnit) {
 		end,
 
 		CreateBuildEffects = function(self, unitBeingBuilt, order)
-			TAutils.CreateTABuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
+			TAutils.CreateTAFactBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
 		end,
+		
 		Close = function(self)
 		end,
 	}

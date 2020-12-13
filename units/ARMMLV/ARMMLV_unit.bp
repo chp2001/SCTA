@@ -63,6 +63,8 @@ UnitBlueprint {
     },
     Description = 'Mine Layer Vehicle',
     Display = {
+        AnimationBuild = '/mods/SCTA-master/units/ARMMLV/ARMMLV_lod0_unpack.sca',
+        AnimationBuildRate = 1, 
         Abilities = {
             'Construction Unit',
         },

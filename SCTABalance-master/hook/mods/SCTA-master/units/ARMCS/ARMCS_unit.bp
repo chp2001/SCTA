@@ -4,6 +4,7 @@ UnitBlueprint {
         'SELECTABLE',
         'TECH2',
         'ENGINEER',
+        'FIELDENGINEER',
         'REPAIR',
         'RECLAIM',
         'VISIBLETORECON',

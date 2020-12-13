@@ -6,9 +6,6 @@
 local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 
 CORHP = Class(TAFactory) {
-	pauseTime = 5,
-	hideUnit = true,
-
 	OnCreate = function(self)
 		self.Spinners = {
 			beam1 = CreateRotator(self, 'beam1', 'y', nil, 0, 0, 0),
@@ -29,33 +26,24 @@ CORHP = Class(TAFactory) {
 		TAFactory.Open(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationOpen)
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationOpenRate or 0.5))
-	end,
-
-	Aim = function(self, target)
-		TAFactory.Aim(self, target)
-		WaitFor(self.AnimManip)	
-				--TURN beam1 to z-axis <-90.00> SPEED <175.13>;
-self.Spinners.beam1:SetGoal(90)
-self.Spinners.beam1:SetSpeed(175)
-
---TURN door2 to z-axis <90.00> SPEED <175.13>;
-self.Spinners.beam2:SetGoal(90)
-self.Spinners.beam2:SetSpeed(175)
-
-self.Spinners.beam3:SetGoal(-90)
-self.Spinners.beam3:SetSpeed(175)
-
---TURN door2 to z-axis <90.00> SPEED <175.13>;
-self.Spinners.beam4:SetGoal(-90)
-self.Spinners.beam4:SetSpeed(175)
-WaitSeconds(0.5)
-
+		self.Spinners.beam1:SetGoal(90)
+		self.Spinners.beam1:SetSpeed(175)
+		
+		--TURN door2 to z-axis <90.00> SPEED <175.13>;
+		self.Spinners.beam2:SetGoal(90)
+		self.Spinners.beam2:SetSpeed(175)
+		
+		self.Spinners.beam3:SetGoal(-90)
+		self.Spinners.beam3:SetSpeed(175)
+		
+		--TURN door2 to z-axis <90.00> SPEED <175.13>;
+		self.Spinners.beam4:SetGoal(-90)
+		self.Spinners.beam4:SetSpeed(175)
 	end,
 
 	Close = function(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationOpen)
 		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationOpenRate or 0.2))
-		WaitSeconds(0.5)
 
 		self.Spinners.beam1:SetGoal(0)
 		self.Spinners.beam1:SetSpeed(175)
@@ -70,8 +58,6 @@ self.Spinners.beam3:SetSpeed(175)
 --TURN door2 to z-axis <90.00> SPEED <175.13>;
 self.Spinners.beam4:SetGoal(0)
 self.Spinners.beam4:SetSpeed(175)
-
-ChangeState(self, self.IdleState)
 TAFactory.Close(self)
 	end,
 }

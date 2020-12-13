@@ -77,7 +77,6 @@ UnitBlueprint {
             'Construction Unit',
             '<LOC ability_hover>Hover',
         },
-	BuildBones = {'muzzle'},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

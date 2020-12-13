@@ -23,6 +23,9 @@ UnitBlueprint {
     Health = 900,
     MaxHealth = 900,
     },
+    Display = {
+        UniformScale = 0.12,
+    },
     Description = 'Tech Level 3',
     Economy = {
         BuildCostEnergy = 7200,
@@ -43,4 +46,6 @@ UnitBlueprint {
         FuelUseTime = 888888,
     },
     StrategicIconName = 'icon_bot3_engineer',
+    SelectionSizeX = 1.5,
+    SelectionSizeZ = 1.5,
 }

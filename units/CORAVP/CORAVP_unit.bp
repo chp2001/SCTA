@@ -62,7 +62,6 @@ UnitBlueprint {
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/CORAVP/CORAVP_lod0_aopen.sca',
         AnimationUnpackRate = 0.5, 
-	BuildBones = {'muzzle1','muzzle2'},
 	BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,

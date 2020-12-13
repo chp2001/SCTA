@@ -60,6 +60,10 @@ UnitBlueprint {
         RadarRadius = 30,
         FreeIntel = true,
     },
+    Physics = {
+        SkirtSizeX = 8,
+        SkirtSizeZ = 8,
+    },
     SelectionSizeX = 7,
     SelectionSizeZ = 5,
     SelectionThickness = 0.25,

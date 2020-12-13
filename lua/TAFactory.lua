@@ -6,8 +6,14 @@ local EffectUtil = import('/lua/EffectUtilities.lua')
 TAFactory = Class(FactoryUnit) {	
 		OnStartBuild = function(self, unitBeingBuilt, order )
 			self:Open()
+			ForkThread(self.FactoryStartBuild, self, unitBeingBuilt, order )
+		end,
+
+		FactoryStartBuild = function(self, unitBeingBuilt, order )
+			WaitFor(self.AnimManip)
 			FactoryUnit.OnStartBuild(self, unitBeingBuilt, order )
 		end,
+	
 	
 		OnStopBuild = function(self, unitBeingBuilt, order )
 			self:Close()

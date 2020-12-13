@@ -76,23 +76,13 @@ UnitBlueprint {
     },
     Description = 'Tech Level 1',
     Display = {
-        AnimationOpen = '/mods/SCTA-master/units/CORCK/CORCK_lod0_aopen.sca',
-        AnimationOpenRate = 0.2, 
+        AnimationBuild = '/mods/SCTA-master/units/CORCK/CORCK_lod0_aopen.sca',
+        AnimationBuildRate = 0.2, 
         AnimationWalk = '/mods/SCTA-master/units/CORCK/CORCK_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
             'Construction Unit',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Construction','BuildMuzzle'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'torso'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
 	BuildBones = {'BuildNozzle'},
         Mesh = {
             IconFadeInZoom = 130,
@@ -120,8 +110,13 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 10,
 	NaturalProducer = true,
     },
-
     General = {
+        BuildBones = {
+            AimBone = 'torso',
+            BuildEffectBones = {'BuildNozzle'},
+            PitchBone = 'torso',
+            YawBone = 'torso',
+        },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

@@ -37,8 +37,8 @@ ProjectileBlueprint {
         'DIRECTFIRE'
     },
     Display = {
-        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/Plasma_mesh.bp',
-        UniformScale = 0.28,
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/dgun_mesh.bp',
+        UniformScale = 0.4,
         StrategicIconSize = 1,
     },
     General = {

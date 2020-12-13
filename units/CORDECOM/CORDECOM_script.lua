@@ -17,6 +17,12 @@ CORDECOM = Class(TAconstructor) {
 		},
 
 	},
+
+	DeathThread = function(self)
+		local army = self:GetArmy()
+		CreateAttachedEmitter( self, 0, army, '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp'):ScaleEmitter(10)
+		TAconstructor.DeathThread(self)
+	end,
 }
 
 TypeClass = CORDECOM

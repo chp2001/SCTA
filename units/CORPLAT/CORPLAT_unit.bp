@@ -60,32 +60,6 @@ UnitBlueprint {
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/CORPLAT/CORPLAT_lod0_uNPack.sca',
         AnimationUnpackRate = 1,   
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate','CorBld','Runway','Circuits'},
-		DestructionProjectiles = {
-			{
-				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMAAP_debris01_proj.bp',
-				Bone = 'platform',
-			},
-		},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'pad'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'door1','door2'},
-				EmitterBlueprint = {
-	    				'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
-	BuildBones = {'beam1', 'beam2'},
 	BuildAttachBone = 'pad',
 	--TextureAnimationFrames = 6,
         Mesh = {
@@ -122,6 +96,9 @@ UnitBlueprint {
         SizeZ = 7,
     },
     General = {
+        BuildBones = {
+            BuildEffectBones = {'beam1', 'beam2'},
+        },      
 	BuildAngle = 0,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',

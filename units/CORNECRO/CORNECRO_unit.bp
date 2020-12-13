@@ -73,26 +73,8 @@ UnitBlueprint {
     },
     Description = 'Resurrection Kbot',
     Display = {
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Construction','BuildMuzzle'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'hips'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'nozzle1','nozzle2'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
-    BuildBones = {'nozzle1'},
+        AnimationBuild = '/mods/SCTA-master/units/CORNECRO/CORNECRO_lod0_unpack.sca',
+        AnimationBuildRate = 1,
     AnimationWalk = '/mods/SCTA-master/units/CORNECRO/CORNECRO_lod0_Awalk.sca',
     AnimationWalkRate = 1,
         Mesh = {
@@ -117,13 +99,13 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 17,
 	ProductionPerSecondMass = 1,
     },
-    --[[Footprint = {
-	MaxSlope = 0.875,
-	MaxWaterDepth = 1.375,
-        SizeX = 2,
-        SizeZ = 2,
-    },]]--
     General = {
+        BuildBones = {
+            AimBone = 'torso',
+            BuildEffectBones = {'nozzle1'},
+            PitchBone = 'torso',
+            YawBone = 'torso',
+        },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

@@ -29,13 +29,6 @@ ARMCOM = Class(TACommander) {
 	},
 
 	OnCreate = function(self)
-		self.Spinners = {
-			torso = CreateRotator(self, 'Torso', 'y', nil, 0, 0, 0),
-			luparm = CreateRotator(self, 'LeftLowerArm', 'x', nil, 0, 0, 0),
-		}
-		for k, v in self.Spinners do
-			self.Trash:Add(v)
-		end
 		TACommander.OnCreate(self)
 		self:SetCapturable(false)
 	end,
@@ -139,28 +132,9 @@ ARMCOM = Class(TACommander) {
 
 	OnStartReclaim = function(self, target)
 		TACommander.OnStartReclaim(self, target)
-		self.Spinners.luparm:SetGoal(-60)
-		self.Spinners.luparm:SetSpeed(60)
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
 	end,
 
-	Open = function(self)
-		TACommander.Open(self)
-		self.Spinners.luparm:SetGoal(-70)
-		self.Spinners.luparm:SetSpeed(140)
-	end,
-
-	Wait = function(self)
-	WaitFor(self.Spinners.luparm)
-end, 
-
-
-
-	Close = function(self)
-		TACommander.Close(self)
-		self.Spinners.luparm:SetGoal(0)
-		self.Spinners.luparm:SetSpeed(45.01)
-	end,
 }
 
 TypeClass = ARMCOM

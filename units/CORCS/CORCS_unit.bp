@@ -68,30 +68,11 @@ UnitBlueprint {
     },
     Description = 'Tech Level 1',
     Display = {
-        AnimationOpen = '/mods/SCTA-master/units/CORCS/CORCS_lod0_unpack.sca',
-        AnimationOpenRate = 1, 
+        AnimationBuild = '/mods/SCTA-master/units/CORCS/CORCS_lod0_unpack.sca',
+        AnimationBuildRate = 1, 
         Abilities = {
             'Construction Unit',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Construction','ArmShip','BuildMuzzle'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'turret'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'door1','door2'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
 	BuildBones = {'nano'},
         Mesh = {
             IconFadeInZoom = 130,
@@ -128,6 +109,12 @@ UnitBlueprint {
         SizeZ = 3,
     },
     General = {
+        BuildBones = {
+            AimBone = 'turret',
+            BuildEffectBones = {'nano'},
+            PitchBone = 'nano',
+            YawBone = 'turret',
+        },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

@@ -15,7 +15,9 @@ ARMCARRY = Class(TAFactory) {
 		self.Spinners = {
 			radar = CreateRotator(self, 'Radar', 'y', nil, 0, 0, 0),
 		}
-		self.Trash:Add(self.Spinners.radar)
+		for k, v in self.Spinners do
+			self.Trash:Add(v)
+		end
 		self.AnimManip = CreateAnimator(self)
 		self.Trash:Add(self.AnimManip)
 	end,

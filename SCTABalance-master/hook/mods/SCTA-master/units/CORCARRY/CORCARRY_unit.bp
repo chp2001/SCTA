@@ -32,8 +32,7 @@ UnitBlueprint {
         MaxHealth = 17000,
     },
     Display = {
-    BuildBones = {'nano2', 'nano3'},
-    BuildAttachBone = 'Attachpoint02',
+        BuildAttachBone = 'Attachpoint_Med_02',
     UniformScale = 0.32,
     },
     Economy = {
@@ -49,6 +48,11 @@ UnitBlueprint {
             'VTOL LEVEL2 CORE AIR',
             'VTOL LEVEL3 CORE',
         },
+    },
+    General = {
+        BuildBones = {
+            BuildEffectBones = {'nano2','nano3'},
+        },   
     },
 Footprint = {
     SizeX = 12,

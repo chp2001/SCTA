@@ -11,8 +11,6 @@ CORCSA = Class(TAAirConstructor) {
 	OnCreate = function(self)
 		TAAirConstructor.OnCreate(self)
 		self.Spinners = {
-			nozzle1 = CreateRotator(self, 'nano1', 'x', nil, 0, 0, 0),
-			nozzle2 = CreateRotator(self, 'nano2', 'x', nil, 0, 0, 0),
 			wing1 = CreateRotator(self, 'rightwing', 'z', nil, 0, 0, 0),
 			wing2 = CreateRotator(self, 'leftwing', 'z', nil, 0, 0, 0),
 		}
@@ -55,23 +53,6 @@ CORCSA = Class(TAAirConstructor) {
 		self.Spinners.wing2:SetSpeed(70)
 	end,
 
-	Aim = function(self, target)
-		local selfPosition = self:GetPosition('nano1') 
-		local targetPosition = target:GetPosition()
-		local distance = VDist2(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z)
-		TAAirConstructor.Aim(self, target)
-		
-		self.Spinners.nozzle1:SetGoal(TAutils.GetAngleTA(0, targetPosition.y, distance, selfPosition.y))
-		self.Spinners.nozzle1:SetSpeed(160.03)
-
-		WaitFor(self.Spinners.nozzle1)
-
-		self.Spinners.nozzle2:SetGoal(TAutils.GetAngleTA(0, targetPosition.y, distance, selfPosition.y))
-		self.Spinners.nozzle2:SetSpeed(160.03)
-
-		WaitFor(self.Spinners.nozzle2)
-
-	end,
 }
 
 TypeClass = CORCSA

@@ -71,6 +71,8 @@ UnitBlueprint {
     },
     Description = 'Tech Level 1',
     Display = {
+        AnimationBuild = '/mods/SCTA-master/units/ARMCV/ARMCV_lod0_unpack.sca',
+        AnimationBuildRate = 1, 
         Abilities = {
             'Construction Unit',
         },
@@ -104,7 +106,7 @@ UnitBlueprint {
         BuildBones = {
             AimBone = 'Turret',
             BuildEffectBones = {'Turret_Muzzle'},
-            PitchBone = 'Turret_Muzzle',
+            PitchBone = 'Turret_Hinge',
             YawBone = 'Turret',
         },
         Category = 'Construction',

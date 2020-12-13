@@ -44,18 +44,10 @@ CORAP = Class(TAFactory) {
 		self.Sliders.section1:SetGoal(-5.85,0,0)
 		self.Sliders.section1:SetSpeed(12)
 
-		--SLEEP <464>;
-		--SLEEP <266>;
-		WaitSeconds(0.7)
-
 		--MOVE section2 to x-axis <4.50> SPEED <6.00>;
 		--MOVE section2 to z-axis <2.10> SPEED <3.00>;
 		self.Sliders.section2:SetGoal(-4.5,0,2.1)
 		self.Sliders.section2:SetSpeed(6)
-
-		--SLEEP <650>;
-		--SLEEP <274>;
-		WaitSeconds(0.9)
 
 		--MOVE guna to x-axis <7.05> SPEED <10.00>;
 		self.Sliders.guna:SetGoal(-7.05,0,0)
@@ -66,10 +58,6 @@ CORAP = Class(TAFactory) {
 		self.Sliders.gunb:SetGoal(-5,0,2.0)
 		self.Sliders.gunb:SetSpeed(7)
 
-		--SLEEP <657>;
-		--SLEEP <134>;
-		WaitSeconds(0.9)
-
 		--MOVE guna to z-axis <2.50> SPEED <5.00>;
 		self.Sliders.guna:SetGoal(-7.05,0,2.5)
 		self.Sliders.guna:SetSpeed(5)
@@ -79,13 +67,6 @@ CORAP = Class(TAFactory) {
 		self.Sliders.gunb:SetGoal(-3.65,0,4.14)
 		self.Sliders.gunb:SetSpeed(4)
 
-		--TURN gunb to y-axis <9.57> SPEED <19.91>;
-		--self.Spinners.gunb:SetGoal(9.5)
-		--self.Spinners.gunb:SetSpeed(20)
-
-		--SLEEP <481>;
-		--SLEEP <56>;
-		WaitSeconds(0.5)
 
 		--SPIN pad around y-axis  SPEED <30.00>
 		self.Spinners.pad:SetSpeed(0)
@@ -106,11 +87,6 @@ CORAP = Class(TAFactory) {
 		self.Sliders.gunb:SetGoal(4.85,0,2.0)
 		self.Sliders.gunb:SetSpeed(5)
 
-		--TURN gunb to y-axis <0> SPEED <22.58>;
-
-		--SLEEP <424>;
-		--SLEEP <428>;
-		WaitSeconds(0.8)
 
 		--MOVE guna to x-axis <0> SPEED <12.00>;
 		self.Sliders.guna:SetGoal(0,0,0)
@@ -121,26 +97,16 @@ CORAP = Class(TAFactory) {
 		self.Sliders.gunb:SetGoal(0,0,0)
 		self.Sliders.gunb:SetSpeed(8)
 
-		--SLEEP <548>;
-		--SLEEP <152>;
-		WaitSeconds(0.7)
-
 		--MOVE section2 to x-axis <0> SPEED <8.00>;
 		--MOVE section2 to z-axis <0> SPEED <3.00>;
 		self.Sliders.section2:SetGoal(0,0,0)
 		self.Sliders.section2:SetSpeed(8)
 
-		--SLEEP <551>;
-		--SLEEP <149>;
-		WaitSeconds(0.7)
 
 		--MOVE section1 to x-axis <0> SPEED <12.00>;
 		self.Sliders.section1:SetGoal(0,0,0)
 		self.Sliders.section1:SetSpeed(12)
 
-		--SLEEP <455>;
-		--SLEEP <90>;
-		WaitSeconds(0.5)
 		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,

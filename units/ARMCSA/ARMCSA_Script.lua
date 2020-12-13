@@ -12,17 +12,10 @@ ARMCSA = Class(TAAirConstructor) {
 
 	OnCreate = function(self)
 		TAAirConstructor.OnCreate(self)
-		self.Spinners = {
-			nozzle1 = CreateRotator(self, 'nanopoint', 'x', nil, 0, 0, 0),
-			nozzle2 = CreateRotator(self, 'nanopoint2', 'x', nil, 0, 0, 0),
-		}
 		self.Sliders = {
 			wing1 = CreateSlider(self, 'Rwing'),
 			wing2 = CreateSlider(self, 'Lwing'),
 		}
-		for k, v in self.Spinners do
-			self.Trash:Add(v)
-		end
 		for k, v in self.Sliders do
 			self.Trash:Add(v)
 		end

@@ -67,26 +67,6 @@ UnitBlueprint {
     },
     Description = 'Automatically repairs aircraft',
     Display = {
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Stone','Helipad','BuildMuzzle'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Attachpoint01'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
-	BuildBones = {},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -113,6 +93,9 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
+        BuildBones = {
+            BuildEffectBones = {'CORASP'},
+        },         
 	BuildAngle = 1,
         Category = 'Strategic',
         Classification = 'RULEUC_MiscSupport',

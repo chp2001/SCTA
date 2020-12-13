@@ -123,10 +123,10 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            AimBone = 'nanopoint',
+            AimBone = 0,
             BuildEffectBones = {'nanopoint', 'nanopoint2'},
-            PitchBone = 'nanopoint',
-            YawBone = 'nanopoint',
+            PitchBone = 0,
+            YawBone = 0,
         },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',

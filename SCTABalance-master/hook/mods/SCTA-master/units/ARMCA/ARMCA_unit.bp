@@ -23,6 +23,9 @@ UnitBlueprint {
         Health = 380,
         MaxHealth = 380,
         },
+        Display = {
+            UniformScale = 0.08,
+        },
     Economy = {
         BuildCostMass = 180,
         BuildCostEnergy = 3400,
@@ -37,4 +40,6 @@ UnitBlueprint {
         FuelRechargeRate = 666666,
         FuelUseTime = 666666,
     },
+    SelectionSizeX = 0.6,
+    SelectionSizeZ = 0.6,
 }

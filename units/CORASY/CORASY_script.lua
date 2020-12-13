@@ -6,49 +6,25 @@
 local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 
 CORASY = Class(TAFactory) {
-	pauseTime = 5,
-	hideUnit = true,
 
 	OnCreate = function(self)
+		self.AnimManip = CreateAnimator(self)
+		self.Trash:Add(self.AnimManip)
 		TAFactory.OnCreate(self)
-		self.Spinners = {
-			gun1 = CreateRotator(self, 'gun1', 'z', nil, 0, 0, 0),
-			gun2 = CreateRotator(self, 'gun2', 'z', nil, 0, 0, 0),
-		}
-		for k, v in self.Spinners do
-			self.Trash:Add(v)
-		end
 	end,
+
 
 	Open = function(self)
-		--TURN gun1 to z-axis <-89.73> SPEED <60.07>;
-		self.Spinners.gun1:SetGoal(90)
-		self.Spinners.gun1:SetSpeed(60)
-
-		--TURN gun2 to z-axis <89.73> SPEED <60.07>;
-		self.Spinners.gun2:SetGoal(-90)
-		self.Spinners.gun2:SetSpeed(60)
-
-		--SLEEP <1494>;
-		WaitSeconds(1.5)
-
 		TAFactory.Open(self)
+		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
+		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 	end,
 
+
 	Close = function(self)
+		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
+		self.AnimManip:SetRate(-0.1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 
-		--TURN gun1 to z-axis <0> SPEED <60.35>;
-		self.Spinners.gun1:SetGoal(0)
-		self.Spinners.gun1:SetSpeed(60)
-
-		--TURN gun2 to z-axis <0> SPEED <60.35>;
-		self.Spinners.gun2:SetGoal(0)
-		self.Spinners.gun2:SetSpeed(60)
-
-		--SLEEP <1494>;
-		WaitSeconds(1.5)
-		ChangeState(self, self.IdleState)
-		--SLEEP <26>;
 		TAFactory.Close(self)
 	end,
 }

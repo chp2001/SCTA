@@ -49,10 +49,6 @@ UnitBlueprint {
 		'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL1',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -68,34 +64,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_radar>Radar',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate','Runway'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'section1','section2', 0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'guna','gunb'},
-				EmitterBlueprint = {
-	    				'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-			{
-				EmitterBone = {'dish'},
-				EmitterBlueprint = {
-		    			'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.25,
-			},
-		},
-	},]]--
-	BuildBones = {'muzzlea','muzzleb'},
-	BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -128,6 +96,10 @@ UnitBlueprint {
         SizeZ = 6,
     },
     General = {
+        BuildBones = {
+            BuildAttachBone = 'pad',
+            BuildEffectBones = {'muzzlea','muzzleb'},
+        },      
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

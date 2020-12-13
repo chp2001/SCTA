@@ -66,6 +66,8 @@ UnitBlueprint {
     },
     Description = 'Builds Hovercraft',
     Display = {
+        AnimationUnpack = '/mods/SCTA-master/units/ARMHP/ARMHP_lod0_unpack.sca',
+        AnimationUnpackRate = 0.5,    
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

@@ -6,8 +6,6 @@
 local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 
 CORASY = Class(TAFactory) {
-	pauseTime = 5,
-	hideUnit = true,
 
 	OnCreate = function(self)
 		TAFactory.OnCreate(self)
@@ -29,9 +27,6 @@ CORASY = Class(TAFactory) {
 		self.Spinners.gun2:SetGoal(-90)
 		self.Spinners.gun2:SetSpeed(60)
 
-		--SLEEP <1494>;
-		WaitSeconds(1.5)
-
 		TAFactory.Open(self)
 	end,
 
@@ -44,11 +39,6 @@ CORASY = Class(TAFactory) {
 		--TURN gun2 to z-axis <0> SPEED <60.35>;
 		self.Spinners.gun2:SetGoal(0)
 		self.Spinners.gun2:SetSpeed(60)
-
-		--SLEEP <1494>;
-		WaitSeconds(1.5)
-		ChangeState(self, self.IdleState)
-		--SLEEP <26>;
 		TAFactory.Close(self)
 	end,
 }

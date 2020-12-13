@@ -119,6 +119,10 @@ UnitBlueprint {
         SizeZ = 9,
     },
     General = {
+        BuildBones = {
+            BuildAttachBone = 'buildpad',
+            BuildEffectBones = {'nano1', 'nano2'},
+        },    
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

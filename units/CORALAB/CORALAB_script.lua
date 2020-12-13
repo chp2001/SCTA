@@ -44,9 +44,6 @@ CORALAB = Class(TAFactory) {
 		self.Sliders.mainb:SetGoal(9.75,0,0)
 		self.Sliders.mainb:SetSpeed(10)
 
-		--SLEEP <908>;
-		WaitSeconds(0.9)
-
 		--MOVE stepb1 to y-axis <-2.30> SPEED <2.00>;
 		self.Sliders.stepb1:SetGoal(0,-2.3,0)
 		self.Sliders.stepb1:SetSpeed(2)
@@ -67,9 +64,6 @@ CORALAB = Class(TAFactory) {
 		self.Sliders.stepa3:SetGoal(0,-4.49,0)
 		self.Sliders.stepa3:SetSpeed(5)
 
-		--SLEEP <828>;
-		WaitSeconds(0.8)
-
 		--TURN guna to x-axis <121.61> SPEED <286.23>;
 		self.Spinners.guna:SetGoal(121)
 		self.Spinners.guna:SetSpeed(285)
@@ -77,21 +71,10 @@ CORALAB = Class(TAFactory) {
 		--TURN gunb to x-axis <121.00> SPEED <284.80>;
 		self.Spinners.gunb:SetGoal(121)
 		self.Spinners.gunb:SetSpeed(285)
-
-		--SLEEP <425>;
-		--SLEEP <29>;
-		WaitSeconds(0.5)
-
-		--SPIN pad around y-axis  SPEED <30.00>
-		self.Spinners.pad:SetSpeed(0)
-
 		TAFactory.Open(self)
 	end,
 
 	Close = function(self)
-		--STOP-SPIN pad around y-axis 
-		self.Spinners.pad:SetSpeed(0)
-
 		--TURN guna to x-axis <0> SPEED <282.25>;
 		self.Spinners.guna:SetGoal(0)
 		self.Spinners.guna:SetSpeed(281)
@@ -99,9 +82,6 @@ CORALAB = Class(TAFactory) {
 		--TURN gunb to x-axis <0> SPEED <280.84>;
 		self.Spinners.gunb:SetGoal(0)
 		self.Spinners.gunb:SetSpeed(281)
-
-		--SLEEP <431>;
-		WaitSeconds(0.4)
 
 		--MOVE stepb1 to y-axis <0> SPEED <2.00>;
 		self.Sliders.stepb1:SetGoal(0,0,0)
@@ -123,9 +103,6 @@ CORALAB = Class(TAFactory) {
 		self.Sliders.stepa3:SetGoal(0,0,0)
 		self.Sliders.stepa3:SetSpeed(5)
 
-		--SLEEP <768>;
-		WaitSeconds(0.8)
-
 		--MOVE maina to x-axis <0> SPEED <10.00>;
 		self.Sliders.maina:SetGoal(0,0,0)
 		self.Sliders.maina:SetSpeed(10)
@@ -134,10 +111,6 @@ CORALAB = Class(TAFactory) {
 		self.Sliders.mainb:SetGoal(0,0,0)
 		self.Sliders.mainb:SetSpeed(10)
 
-		--SLEEP <960>;
-		--SLEEP <30>;
-		WaitSeconds(1.0)
-		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
 	end,
 }

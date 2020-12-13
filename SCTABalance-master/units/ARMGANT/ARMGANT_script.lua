@@ -37,9 +37,7 @@ ARMGANT = Class(TAFactory) {
 				--TURN door2 to z-axis <90.00> SPEED <131.80>
 				self.Spinners.door2:SetGoal(90)
 				self.Spinners.door2:SetSpeed(131.80)
-		
-				--SLEEP <683>
-				WaitSeconds(0.7)
+	
 				self.Sliders.plate:SetGoal(0,0,2.3)
 				self.Sliders.plate:SetSpeed(7)
 		TAFactory.Open(self)
@@ -53,9 +51,6 @@ ARMGANT = Class(TAFactory) {
 		--TURN door2 to z-axis <90.00> SPEED <131.80>
 		self.Spinners.door2:SetGoal(0)
 		self.Spinners.door2:SetSpeed(131.80)
-
-		--SLEEP <683>
-		WaitSeconds(0.7)
 
 		self.Sliders.plate:SetGoal(0,0,0)
 		self.Sliders.plate:SetSpeed(7)

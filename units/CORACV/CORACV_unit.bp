@@ -133,7 +133,7 @@ UnitBlueprint {
             AimBone = 'stand',
             BuildEffectBones = {'nozzle'},
             PitchBone = 'nozzle',
-            YawBone = 'nozzle',
+            YawBone = 'gun',
         },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',

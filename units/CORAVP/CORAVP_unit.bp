@@ -62,27 +62,8 @@ UnitBlueprint {
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/CORAVP/CORAVP_lod0_aopen.sca',
         AnimationUnpackRate = 0.5, 
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'wing1','wing2', 'wing3', 'CORAVP'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'gun1', 'gun2'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
 	BuildBones = {'muzzle1','muzzle2'},
 	BuildAttachBone = 'pad',
-	--TextureAnimationFrames = 4,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -114,6 +95,10 @@ UnitBlueprint {
         SizeZ = 6,
     },
     General = {
+        BuildBones = {
+            BuildAttachBone = 'pad',
+            BuildEffectBones = {'muzzle1', 'muzzle2'},
+        },    
 	BuildAngle = 1024,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',

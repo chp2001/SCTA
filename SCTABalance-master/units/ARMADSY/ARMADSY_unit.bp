@@ -58,6 +58,8 @@ UnitBlueprint {
     },
     Description = 'Produces Ships',
     Display = {
+        AnimationUnpack = '/mods/SCTA-master/units/ARMSY/ARMSY_lod0_unpack.sca',
+        AnimationUnpackRate = 2,  
         Mesh = {
                 IconFadeInZoom = 130,
                 LODs = {

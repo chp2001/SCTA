@@ -112,6 +112,9 @@ UnitBlueprint {
 	MinWaterDepth = 1.875,
     },
     General = {
+        BuildBones = {
+            BuildEffectBones = {'beam1', 'beam2'},
+        },    
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

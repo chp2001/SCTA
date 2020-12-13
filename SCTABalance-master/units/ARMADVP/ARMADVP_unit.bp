@@ -56,6 +56,8 @@ UnitBlueprint {
     },
     Description = 'Produces Vehicles',
     Display = {
+        AnimationUnpack = '/mods/SCTA-master/units/ARMVP/ARMVP_lod0_unpack.sca',
+        AnimationUnpackRate = 2,    
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

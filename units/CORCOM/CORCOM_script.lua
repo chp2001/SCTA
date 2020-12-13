@@ -137,39 +137,6 @@ CORCOM = Class(TACommander) {
 		self.Spinners.Nanogun:SetSpeed(45.01)
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
 	end,
-
-
-	Open = function(self)
-		self.Spinners.Nanogun:SetGoal(-85)
-		self.Spinners.Nanogun:SetSpeed(45.01)
-		TACommander.Open(self)
-	end,
-
-	Aim = function(self, target)
-		local selfPosition = self:GetPosition('Torso') 
-		local targetPosition = target:GetPosition()
-			
-		WaitFor(self.Spinners.Nanogun)
-		--TURN torso to y-axis heading SPEED <300.07>;
-		self.Spinners.Torso:SetGoal(TAutils.GetAngleTA(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z) - (self:GetHeading() * 180) / math.pi)
-		self.Spinners.Torso:SetSpeed(300)
-
-		WaitFor(self.Spinners.Torso)
-		TACommander.Aim(self,target)
-	end,
-
-
-	Close = function(self)
-		self.Spinners.Torso:SetGoal(0)
-		self.Spinners.Torso:SetSpeed(90)
-			
-		self.Spinners.Nanogun:SetGoal(0)
-		self.Spinners.Nanogun:SetSpeed(45.01)
-
-		WaitFor(self.Spinners.Torso)
-		WaitFor(self.Spinners.Nanogun)
-		TACommander.Close(self)
-	end,
 }
 
 TypeClass = CORCOM

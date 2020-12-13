@@ -67,27 +67,9 @@ UnitBlueprint {
     },
     Description = 'Builds Drake',
     Display = {
-        	--[[DestructionEffects = {
-            DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate', 'CorBld'},
-            DestructionEmitters = {
-                {
-                    EmitterBone = {0, 'connector','door1','door2'},
-                    EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-                    EmitterSize = 1.25,
-                },
-                {
-                    EmitterBone = {'RightA1','RightA2','RightA3','LeftA1','LeftA2', 'LeftA3' },
-                    EmitterBlueprint = {
-                            '/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-                            '/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-                            '/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-                    },
-				EmitterSize = 0.35,
-			},
-		},
-	},]]--
-        BuildBones = {'nano1','nano2'},
         BuildAttachBone = 'buildpad',
+        AnimationUnpack = '/mods/SCTA-master/SCTABalance-master/units/ARMGANT/ARMGANT_lod0_unpack.sca',
+        AnimationUnpackRate = 0.5, 
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -120,7 +102,6 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildAttachBone = 'buildpad',
             BuildEffectBones = {'nano1', 'nano2'},
         },    
         Category = 'Factory',

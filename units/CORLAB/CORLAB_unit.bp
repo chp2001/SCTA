@@ -65,24 +65,6 @@ UnitBlueprint {
     },
     Description = 'Produces Kbots',
     Display = {
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'lower1','lower2','a','CORLAB'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'ubox1','ubox2'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
 	BuildBones = {'muzzle1','muzzle2'},
 	BuildAttachBone = 'pad',
         Mesh = {
@@ -117,6 +99,10 @@ UnitBlueprint {
         SizeZ = 6,
     },
     General = {
+        BuildBones = {
+            BuildAttachBone = 'pad',
+            BuildEffectBones = {'muzzle1', 'muzzle2'},
+        },          
 	BuildAngle = 1024,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',

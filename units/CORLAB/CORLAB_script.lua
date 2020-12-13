@@ -6,9 +6,6 @@
 local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 
 CORLAB = Class(TAFactory) {
-	pauseTime = 5,
-	hideUnit = true,
-
 	OnCreate = function(self)
 		self.Spinners = {
 			upper1 = CreateRotator(self, 'upper1', 'x', nil, 0, 0, 0),
@@ -57,8 +54,6 @@ CORLAB = Class(TAFactory) {
 			self.Spinners.upper1:SetGoal(180)
 			self.Spinners.upper1:SetSpeed(194.63)
 
-			--SLEEP <925>;
-			WaitSeconds(0.925)
 
 			--MOVE lower1 to x-axis <8.90> SPEED <8.00>;
 			self.Sliders.lower1:SetGoal(-8.9,0,0)
@@ -67,9 +62,6 @@ CORLAB = Class(TAFactory) {
 			--MOVE lower2 to x-axis <-8.95> SPEED <9.00>;
 			self.Sliders.lower2:SetGoal(8.9,0,0)
 			self.Sliders.lower2:SetSpeed(8)
-
-			--SLEEP <990>;
-			WaitSeconds(0.99)
 
 			--MOVE ldoor2 to y-axis <-0.15> SPEED <1.00>;
 			self.Sliders.ldoor2:SetGoal(0,-0.15,0)
@@ -91,9 +83,6 @@ CORLAB = Class(TAFactory) {
 			#self.Spinners.udoor1:SetGoal(0.6)
 			#self.Spinners.udoor1:SetSpeed(7.5)
 
-			--SLEEP <81>;
-			WaitSeconds(0.081)
-
 			--MOVE ldoor2 to x-axis <-3.65> SPEED <7.00>;
 			self.Sliders.ldoor2:SetGoal(3.65,0,0)
 			self.Sliders.ldoor2:SetSpeed(7)
@@ -109,9 +98,6 @@ CORLAB = Class(TAFactory) {
 			--MOVE udoor1 to x-axis <3.69> SPEED <7.00>;
 			self.Sliders.udoor1:SetGoal(-3.65,0,0)
 			self.Sliders.udoor1:SetSpeed(7)
-
-			--SLEEP <476>;
-			WaitSeconds(0.476)
 
 			--MOVE pad to z-axis <6.25> SPEED <10.00>;
 			self.Sliders.padmover:SetGoal(0,0,6.25)
@@ -133,9 +119,6 @@ CORLAB = Class(TAFactory) {
 			self.Sliders.ubox1:SetGoal(0,-4.45,0)
 			self.Sliders.ubox1:SetSpeed(7)
 
-			--SLEEP <574>;
-			WaitSeconds(0.574)
-
 			--MOVE gun2 to z-axis <1.10> SPEED <1.00>;
 			self.Sliders.ugun2:SetGoal(-1.1,0,0)
 			self.Sliders.ugun2:SetSpeed(1)
@@ -151,14 +134,6 @@ CORLAB = Class(TAFactory) {
 			--TURN gun1 to y-axis <-90.00> SPEED <158.20>;
 			self.Spinners.ugun1:SetGoal(-90)
 			self.Spinners.ugun1:SetSpeed(158.2)
-
-			--SLEEP <569>;
-			WaitSeconds(0.569)
-
-			--SLEEP <29>;
-
-			--SPIN pad around y-axis  SPEED <30.00>
-			self.Spinners.pad:SetSpeed(0)
 			TAFactory.Open(self)
 		end,
 
@@ -184,9 +159,6 @@ CORLAB = Class(TAFactory) {
 			self.Spinners.ugun1:SetGoal(0)
 			self.Spinners.ugun1:SetSpeed(160)
 
-			--SLEEP <562>;
-			WaitSeconds(0.562)
-
 			--MOVE pad to z-axis <0> SPEED <10.00>;
 			self.Sliders.padmover:SetGoal(0,0,0)
 			self.Sliders.padmover:SetSpeed(10)
@@ -207,9 +179,6 @@ CORLAB = Class(TAFactory) {
 			self.Sliders.ubox1:SetGoal(0,0,0)
 			self.Sliders.ubox1:SetSpeed(7)
 
-			--SLEEP <570>;
-			WaitSeconds(0.57)
-
 			--MOVE ldoor2 to x-axis <0> SPEED <6.00>;
 			self.Sliders.ldoor2:SetGoal(0,0,0)
 			self.Sliders.ldoor2:SetSpeed(7)
@@ -225,9 +194,6 @@ CORLAB = Class(TAFactory) {
 			--MOVE udoor1 to x-axis <0> SPEED <6.00>;
 			self.Sliders.udoor1:SetGoal(0,0,0)
 			self.Sliders.udoor1:SetSpeed(7)
-
-			--SLEEP <572>;
-			WaitSeconds(0.572)
 
 			--MOVE ldoor2 to y-axis <0> SPEED <1.00>;
 			self.Sliders.ldoor2:SetGoal(0,0,0)
@@ -249,9 +215,6 @@ CORLAB = Class(TAFactory) {
 			#self.Spinners.udoor1:SetGoal(0)
 			#self.Spinners.udoor1:SetSpeed(6.06)
 
-			--SLEEP <120>;
-			WaitSeconds(0.12)
-
 			--MOVE lower1 to x-axis <0> SPEED <10.00>;
 			self.Sliders.lower1:SetGoal(0,0,0)
 			self.Sliders.lower1:SetSpeed(10)
@@ -260,9 +223,6 @@ CORLAB = Class(TAFactory) {
 			self.Sliders.lower2:SetGoal(0,0,0)
 			self.Sliders.lower2:SetSpeed(10)
 
-			--SLEEP <874>;
-			WaitSeconds(0.874)
-
 			--TURN upper2 to x-axis <0> SPEED <188.32>;
 			self.Spinners.upper2:SetGoal(0)
 			self.Spinners.upper2:SetSpeed(188.32)
@@ -270,13 +230,6 @@ CORLAB = Class(TAFactory) {
 			--TURN upper1 to x-axis <0> SPEED <188.32>;
 			self.Spinners.upper1:SetGoal(0)
 			self.Spinners.upper1:SetSpeed(188.32)
-
-			--SLEEP <956>;
-			WaitSeconds(0.956)
-
-			--SLEEP <31>;
-
-			ChangeState(self, self.IdleState)
 			TAFactory.Close(self)
 		end,
 }

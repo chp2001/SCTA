@@ -6,110 +6,23 @@
 local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 
 CORALAB = Class(TAFactory) {
-	pauseTime = 5,
-	hideUnit = true,
-
-
 	OnCreate = function(self)
-		self.Spinners = {
-			pad = CreateRotator(self, 'pad', 'y', nil, 0, 0, 0),
-			guna = CreateRotator(self, 'guna', 'x', nil, 0, 0, 0),
-			gunb = CreateRotator(self, 'gunb', 'x', nil, 0, 0, 0),
-		}
-		self.Sliders = {
-			maina = CreateSlider(self, 'maina'),
-			mainb = CreateSlider(self, 'mainb'),
-			stepb1 = CreateSlider(self, 'stepb1'),
-			stepb2 = CreateSlider(self, 'stepb2'),
-			stepb3 = CreateSlider(self, 'stepb3'),
-			stepa2 = CreateSlider(self, 'stepa2'),
-			stepa3 = CreateSlider(self, 'stepa3'),
-		}
-		for k, v in self.Sliders do
-			self.Trash:Add(v)
-		end
-		for k, v in self.Spinners do
-			self.Trash:Add(v)
-		end
+		self.AnimManip = CreateAnimator(self)
+		self.Trash:Add(self.AnimManip)
 		TAFactory.OnCreate(self)
 	end,
 
 
 	Open = function(self)
-		--MOVE maina to x-axis <9.75> SPEED <10.00>;
-		self.Sliders.maina:SetGoal(-9.75,0,0)
-		self.Sliders.maina:SetSpeed(10)
-
-		--MOVE mainb to x-axis <-9.75> SPEED <10.00>;
-		self.Sliders.mainb:SetGoal(9.75,0,0)
-		self.Sliders.mainb:SetSpeed(10)
-
-		--MOVE stepb1 to y-axis <-2.30> SPEED <2.00>;
-		self.Sliders.stepb1:SetGoal(0,-2.3,0)
-		self.Sliders.stepb1:SetSpeed(2)
-
-		--MOVE stepb2 to y-axis <-4.59> SPEED <5.00>;
-		self.Sliders.stepb2:SetGoal(0,-4.59,0)
-		self.Sliders.stepb2:SetSpeed(5)
-
-		--MOVE stepb3 to y-axis <-6.79> SPEED <8.00>;
-		self.Sliders.stepb3:SetGoal(0,-6.79,0)
-		self.Sliders.stepb3:SetSpeed(8)
-
-		--MOVE stepa2 to y-axis <-2.25> SPEED <2.00>;
-		self.Sliders.stepa2:SetGoal(0,-2.25,0)
-		self.Sliders.stepa2:SetSpeed(2)
-
-		--MOVE stepa3 to y-axis <-4.49> SPEED <5.00>;
-		self.Sliders.stepa3:SetGoal(0,-4.49,0)
-		self.Sliders.stepa3:SetSpeed(5)
-
-		--TURN guna to x-axis <121.61> SPEED <286.23>;
-		self.Spinners.guna:SetGoal(121)
-		self.Spinners.guna:SetSpeed(285)
-
-		--TURN gunb to x-axis <121.00> SPEED <284.80>;
-		self.Spinners.gunb:SetGoal(121)
-		self.Spinners.gunb:SetSpeed(285)
 		TAFactory.Open(self)
+		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
+		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 	end,
 
+
 	Close = function(self)
-		--TURN guna to x-axis <0> SPEED <282.25>;
-		self.Spinners.guna:SetGoal(0)
-		self.Spinners.guna:SetSpeed(281)
-
-		--TURN gunb to x-axis <0> SPEED <280.84>;
-		self.Spinners.gunb:SetGoal(0)
-		self.Spinners.gunb:SetSpeed(281)
-
-		--MOVE stepb1 to y-axis <0> SPEED <2.00>;
-		self.Sliders.stepb1:SetGoal(0,0,0)
-		self.Sliders.stepb1:SetSpeed(2)
-
-		--MOVE stepb2 to y-axis <0> SPEED <5.00>;
-		self.Sliders.stepb2:SetGoal(0,0,0)
-		self.Sliders.stepb2:SetSpeed(5)
-
-		--MOVE stepb3 to y-axis <0> SPEED <8.00>;
-		self.Sliders.stepb3:SetGoal(0,0,0)
-		self.Sliders.stepb3:SetSpeed(8)
-
-		--MOVE stepa2 to y-axis <0> SPEED <2.00>;
-		self.Sliders.stepa2:SetGoal(0,0,0)
-		self.Sliders.stepa2:SetSpeed(2)
-
-		--MOVE stepa3 to y-axis <0> SPEED <5.00>;
-		self.Sliders.stepa3:SetGoal(0,0,0)
-		self.Sliders.stepa3:SetSpeed(5)
-
-		--MOVE maina to x-axis <0> SPEED <10.00>;
-		self.Sliders.maina:SetGoal(0,0,0)
-		self.Sliders.maina:SetSpeed(10)
-
-		--MOVE mainb to x-axis <0> SPEED <10.00>;
-		self.Sliders.mainb:SetGoal(0,0,0)
-		self.Sliders.mainb:SetSpeed(10)
+		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
+		self.AnimManip:SetRate(-0.1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 
 		TAFactory.Close(self)
 	end,

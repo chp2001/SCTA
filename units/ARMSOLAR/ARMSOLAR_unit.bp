@@ -121,7 +121,7 @@ UnitBlueprint {
         SizeZ = 5,
     },
     General = {
-	BuildAngle = 4096,
+	---BuildAngle = 4096,
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
         ToggleCaps = {

@@ -105,7 +105,7 @@ UnitBlueprint {
         BuildBones = {
             BuildEffectBones = {'muzzle1', 'muzzle2'},
         },       
-	BuildAngle = 2048,
+	---BuildAngle = 2048,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

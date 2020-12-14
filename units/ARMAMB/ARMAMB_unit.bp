@@ -93,7 +93,7 @@ UnitBlueprint {
         SizeZ = 3,
     },
     General = {
-	BuildAngle = 8192,
+	---BuildAngle = 8192,
         Category = 'Defense',
         Classification = 'RULEUC_Weapon',
         CommandCaps = {

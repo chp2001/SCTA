@@ -32,14 +32,6 @@ TAunit = Class(Unit)
         self:LOGDBG('TAUnit.OnCreate')
         Unit.OnCreate(self)
 		self:SetFireState(FireState.GROUND_FIRE)
-		if bp.General.BuildAngle then
-		 	local angle = bp.General.BuildAngle / 182
-			angle = (180 + self.buildAngle) * (math.pi / 180)
-	 		local x = math.cos(angle / 2) 
-	  		local z = math.sin(angle / 2) 
-			Warp(self, self:GetPosition(), {0, x, 0, z}) 
-		end
-		--self:SetReclaimTimeMultiplier(50)
 		self:SetDeathWeaponEnabled(true)
 		self:HideFlares()
 		self.FxMovement = TrashBag()
@@ -62,7 +54,6 @@ TAunit = Class(Unit)
 			self:Destroy()
 		end
 	end,
-	
 
 	MovementEffects = function(self, EffectsBag, TypeSuffix)
 		self:LOGDBG('TAUnit.MovementEffects')

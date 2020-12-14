@@ -125,7 +125,7 @@ UnitBlueprint {
         SizeZ = 7,
     },
     General = {
-	BuildAngle = 0,
+	---BuildAngle = 0,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

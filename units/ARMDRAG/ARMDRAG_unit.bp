@@ -73,7 +73,7 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-	BuildAngle = 8192,
+	---BuildAngle = 8192,
         CapCost = 0,
         Category = 'Defense',
         Classification = 'RULEUC_MiscSupport',

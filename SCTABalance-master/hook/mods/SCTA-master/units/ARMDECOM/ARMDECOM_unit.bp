@@ -24,7 +24,6 @@ UnitBlueprint {
        UniformScale = 0.28,
     },
     Defense = {
-        ArmorType = 'Commander',
         Health = 18000,
         MaxHealth = 18000,
     },

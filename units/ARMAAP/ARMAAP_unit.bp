@@ -100,7 +100,7 @@ UnitBlueprint {
             BuildAttachBone = 'pad',
             BuildEffectBones = {'Nozzle_01', 'Nozzle_02'},
         },    
-	BuildAngle = 0,
+	---BuildAngle = 0,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

@@ -11,7 +11,7 @@ local TADGun = import('/mods/SCTA-master/lua/TAweapon.lua').TADGun
 ARMDECOM = Class(TAconstructor) {
 
 	Weapons = {
-		ARMCOMLASER = Class(TAweapon) {
+		COMLASER = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
 				
@@ -23,9 +23,9 @@ ARMDECOM = Class(TAconstructor) {
 
 	DeathThread = function(self)
 		local army = self:GetArmy()
-		CreateAttachedEmitter( self, 0, army, '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp'):ScaleEmitter(10)
+		CreateAttachedEmitter( self, 0, army, '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp'):ScaleEmitter(5)
 		TAconstructor.DeathThread(self)
-	end,
+    end,
 }
 
 TypeClass = ARMDECOM

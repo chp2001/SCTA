@@ -106,8 +106,8 @@ UnitBlueprint {
     },
     Description = 'Commander',
     Display = {
-        AnimationBuild = '/mods/SCTA-master/units/ARMCOM/ARMCOM_lod0_unpack.sca',
-        AnimationBuildRate = 1, 
+        --AnimationBuild = '/mods/SCTA-master/units/ARMCOM/ARMCOM_lod0_unpack.sca',
+        --AnimationBuildRate = 1, 
         AnimationWalk = '/mods/SCTA-master/units/ARMCOM/ARMCOM_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
@@ -118,6 +118,7 @@ UnitBlueprint {
             'D-Gun',
             'Construction Unit',
         },
+        CloakMesh = '/mods/SCTA-master/units/ARMCOM/ARMCOM_cloak_mesh',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -153,9 +154,9 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            AimBone = 'Torso',
+            AimBone = 'LaserMuzzle',
             BuildEffectBones = {'LaserMuzzle'},
-            PitchBone = 'Torso',
+            PitchBone = 'LeftLowerArm',
             YawBone = 'Torso',
         },
         Category = 'Command',
@@ -254,14 +255,14 @@ UnitBlueprint {
             Damage = 50,
             DamageRadius = 1,
             DamageType = 'Normal',
-            DisplayName = 'ARMCOMLASER',
+            DisplayName = 'COMLASER',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air|Seabed',
                 Seabed = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
-            Label = 'ARMCOMLASER',
+            Label = 'COMLASER',
             MaxRadius = 22,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -290,7 +291,7 @@ UnitBlueprint {
             TurretBoneMuzzle = 'LaserMuzzle',
             TurretBonePitch = 'LeftLowerArm',
             TurretBoneYaw = 'Torso',
-            TurretPitch = 90,
+            TurretPitch = 15,
             TurretPitchRange = 360,
             TurretPitchSpeed = 45,
             TurretYaw = 0,

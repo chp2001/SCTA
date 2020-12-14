@@ -96,7 +96,7 @@ UnitBlueprint {
             BuildAttachBone = 'pad',
             BuildEffectBones = {'beama', 'beamb'},
         },             
-	BuildAngle = 1024,
+	---BuildAngle = 1024,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

@@ -94,7 +94,7 @@ TAconstructor = Class(TAWalking) {
     end,
 
     OnFailedToBuild = function(self)
-        TAconstructor.OnFailedToBuild(self)
+        TAWalking.OnFailedToBuild(self)
         self:SetImmobile(false)
     end,
 

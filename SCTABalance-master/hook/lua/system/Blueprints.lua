@@ -42,7 +42,7 @@ do
             SizeZ = 0.5,
         }
         for id, bp in all_blueprints.Unit do
-            if bp.Categories and (table.find(bp.Categories, 'MOBILE') and table.find(bp.Categories, 'LAND')) and (table.find(bp.Categories, 'ARM') or table.find(bp.Categories, 'CORE')) then
+            if bp.Categories and (table.find(bp.Categories, 'ARM') or table.find(bp.Categories, 'CORE')) and (table.find(bp.Categories, 'MOBILE') and table.find(bp.Categories, 'LAND')) then
                 for group, gdata in Mults do
                     if type(gdata) == 'table' then
                         for stat, data in gdata do
@@ -91,7 +91,7 @@ do
             SizeZ = 0.5,
         }
         for id, bp in all_blueprints.Unit do
-            if bp.Categories and (table.find(bp.Categories, 'MOBILE') and table.find(bp.Categories, 'NAVAL')) and (table.find(bp.Categories, 'ARM') or table.find(bp.Categories, 'CORE')) then
+            if bp.Categories and (table.find(bp.Categories, 'ARM') or table.find(bp.Categories, 'CORE')) and (table.find(bp.Categories, 'MOBILE') and table.find(bp.Categories, 'NAVAL')) then
                 for group, gdata in Mults do
                     if type(gdata) == 'table' then
                         for stat, data in gdata do
@@ -137,7 +137,7 @@ do
             SelectionThickness = 2.5,
         }
         for id, bp in all_blueprints.Unit do
-            if bp.Categories and (table.find(bp.Categories, 'MOBILE') and table.find(bp.Categories, 'AIR')) and (table.find(bp.Categories, 'ARM') or table.find(bp.Categories, 'CORE')) then
+            if bp.Categories and (table.find(bp.Categories, 'ARM') or table.find(bp.Categories, 'CORE')) and (table.find(bp.Categories, 'MOBILE') and table.find(bp.Categories, 'AIR')) then
                 for group, gdata in Mults do
                     if type(gdata) == 'table' then
                         for stat, data in gdata do
@@ -183,7 +183,7 @@ do
                 SizeZ = 0.5,
             }
             for id, bp in all_blueprints.Unit do
-                if bp.Categories and (table.find(bp.Categories, 'STRUCTURE')) and (table.find(bp.Categories, 'ARM') or table.find(bp.Categories, 'CORE')) then
+                if bp.Categories and (table.find(bp.Categories, 'ARM') or table.find(bp.Categories, 'CORE')) and (table.find(bp.Categories, 'STRUCTURE')) then
                     for group, gdata in Mults do
                         if type(gdata) == 'table' then
                             for stat, data in gdata do

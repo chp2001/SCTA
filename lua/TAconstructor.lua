@@ -69,6 +69,7 @@ TAconstructor = Class(TAWalking) {
         self:OnStopBuilderTracking()
         self.BuildingUnit = false
     end,
+
     WaitForBuildAnimation = function(self, enable)
         if self.BuildArmManipulator then
             WaitFor(self.BuildingOpenAnimManip)
@@ -120,10 +121,6 @@ TAconstructor = Class(TAWalking) {
     CreateReclaimEndEffects = function( self, target )
         EffectUtil.PlayReclaimEndEffects( self, target )
     end,         
-    
-    CreateCaptureEffects = function( self, target )
-		EffectUtil.PlayCaptureEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.CaptureEffectsBag )
-    end,
     
     OnStopReclaim = function(self, target)
         self.BuildingOpenAnimManip:SetRate(-1*(self:GetBlueprint().Display.AnimationBuildRate or 1))
@@ -211,8 +208,11 @@ TACommander = Class(TAconstructor) {
 		TAconstructor.OnStartCapture(self, target)
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
 		self:SetAllWeaponsEnabled(false)
-	end,
-
+    end,
+    
+    CreateCaptureEffects = function( self, target )
+		EffectUtil.PlayCaptureEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.CaptureEffectsBag )
+    end,
 
 	OnStopCapture = function(self, target)
 		TAconstructor.OnStopCapture(self, target)

@@ -22,6 +22,9 @@ UnitBlueprint {
 	
 	
     },
+    Display = {
+        UniformScale = 0.16,
+    },
     Defense = {
         Health = 420,
         MaxHealth = 420,
@@ -39,4 +42,11 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 8,
     },
+    LifeBarSize = 1.5,
+    SelectionSizeX = 0.6,
+    SelectionSizeZ = 0.6,
+    SelectionThickness = 0.25,
+    SizeX = 1.2,
+    SizeY = 1.1,
+    SizeZ = 1.2,
 }

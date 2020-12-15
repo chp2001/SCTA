@@ -96,7 +96,6 @@ UnitBlueprint {
                 },
             },
         },
-	BuildBones = {'nozzle'},
     Mesh = {
         IconFadeInZoom = 130,
         LODs = {

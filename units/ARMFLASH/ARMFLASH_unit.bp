@@ -100,11 +100,11 @@ UnitBlueprint {
                 {
                     LODCutoff = 120,
                     Scrolling = true,
-                    ShaderName = 'Unit',
+                    ShaderName = 'AeonCZAR',
                 },
                 {
                     LODCutoff = 230,
-                    ShaderName = 'Unit', 
+                    ShaderName = 'AeonCZAR', 
                 },
             },
         },

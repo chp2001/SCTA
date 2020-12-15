@@ -81,7 +81,7 @@ UnitBlueprint {
                     SpecularName = '/mods/SCTA-master/units/ARMMOHO/ARMMOHO_SpecTeam.dds',
                     AlbedoName = '/mods/SCTA-master/units/ARMMOHO/ARMMOHO_Albedo.dds',
                     MeshName =   '/mods/SCTA-master/units/ARMMOHO/ARMMOHO_lod0.scm',
-                    ShaderName = 'Unit', 
+                    ShaderName = 'AeonCZAR', 
                     NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },

@@ -53,8 +53,8 @@ UnitBlueprint {
     },
     Description = 'Builds Hovercraft',
     Display = {
-        AnimationOpen = '/mods/SCTA-master/units/CORHP/CORHP_lod0_Aopen.sca',
-        AnimationOpenRate = 1, 
+        AnimationUnpack = '/mods/SCTA-master/units/CORHP/CORHP_lod0_Aopen.sca',
+        AnimationUnpackRate = 1, 
 	BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,

@@ -98,7 +98,7 @@ UnitBlueprint {
             BuildAttachBone = 'pad',
             BuildEffectBones = {'muzzle1', 'muzzle2'},
         },    
-	BuildAngle = 1024,
+	---BuildAngle = 1024,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

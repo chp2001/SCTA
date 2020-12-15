@@ -97,7 +97,7 @@ UnitBlueprint {
         BuildBones = {
             BuildEffectBones = {'Build_Nozzle_01','Build_Nozzle_02'},
         },             
-	BuildAngle = 1024,
+	---BuildAngle = 1024,
         Category = 'Strategic',
         Classification = 'RULEUC_MiscSupport',
         CommandCaps = {

@@ -54,6 +54,7 @@ TAconstructor = Class(TAWalking) {
         self.UnitBeingBuilt = unitBeingBuilt
         self.UnitBuildOrder = order
         self.BuildingUnit = true
+        --LOG(self.cloakOn)
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)
@@ -69,6 +70,7 @@ TAconstructor = Class(TAWalking) {
         self:OnStopBuilderTracking()
         self.BuildingUnit = false
     end,
+
     WaitForBuildAnimation = function(self, enable)
         if self.BuildArmManipulator then
             WaitFor(self.BuildingOpenAnimManip)
@@ -121,12 +123,10 @@ TAconstructor = Class(TAWalking) {
         EffectUtil.PlayReclaimEndEffects( self, target )
     end,         
     
-    CreateCaptureEffects = function( self, target )
-		EffectUtil.PlayCaptureEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.CaptureEffectsBag )
-    end,
-    
     OnStopReclaim = function(self, target)
-        self.BuildingOpenAnimManip:SetRate(-1*(self:GetBlueprint().Display.AnimationBuildRate or 1))
+        if self.BuildingOpenAnimManip then
+            self.BuildingOpenAnimManip:SetRate(-1)
+        end
         TAWalking.OnStopReclaim(self, target)
     end,
 
@@ -207,12 +207,57 @@ TANecro = Class(TAconstructor) {
 
 TACommander = Class(TAconstructor) {
 
+    
+    OnCreate = function(self)
+		TAconstructor.OnCreate(self)
+		self:SetCapturable(false)
+	end,
+
+	OnStartReclaim = function(self, target)
+		TAconstructor.OnStartReclaim(self, target)
+		self:SetScriptBit('RULEUTC_CloakToggle', true)
+	end,
+    
+	OnMotionHorzEventChange = function(self, new, old )
+		TAconstructor.OnMotionHorzEventChange(self, new, old)
+		if old == 'Stopped' then
+			self:SetConsumptionPerSecondEnergy(1000)
+			self.motion = 'Moving'
+		elseif new == 'Stopped' then
+			self:SetConsumptionPerSecondEnergy(200)
+			self.motion = 'Stopped'
+		end
+	end,
+
+	OnIntelDisabled = function(self)
+		self.cloakOn = nil
+		self:DisableIntel('Cloak')
+        self:SetIntelRadius('Omni', 10)
+        self:PlayUnitSound('Uncloak')
+		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
+	end,
+
+	OnIntelEnabled = function(self)
+		--self:EnableIntel('Cloak')
+		if self.motion == 'Moving' then
+			self:SetConsumptionPerSecondEnergy(1000)
+		end
+        self:SetIntelRadius('Omni', self:GetBlueprint().Intel.OmniRadius)
+		self.cloakOn = true
+        	self:PlayUnitSound('Cloak')
+			self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
+		ForkThread(self.CloakDetection, self)
+		--end
+	end,
+
 	OnStartCapture = function(self, target)
 		TAconstructor.OnStartCapture(self, target)
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
-		self:SetAllWeaponsEnabled(false)
-	end,
-
+    end,
+    
+    CreateCaptureEffects = function( self, target )
+		EffectUtil.PlayCaptureEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.CaptureEffectsBag )
+    end,
 
 	OnStopCapture = function(self, target)
 		TAconstructor.OnStopCapture(self, target)
@@ -242,5 +287,50 @@ TACommander = Class(TAconstructor) {
 		local army = self:GetArmy()
 		CreateAttachedEmitter( self, 0, army, '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp'):ScaleEmitter(10)
 		TAconstructor.DeathThread(self)
-	end,
+    end,
+    
+    DoTakeDamage = function(self, instigator, amount, vector, damageType)
+        -- Handle incoming OC damage
+        if damageType == 'Overcharge' then
+            local wep = instigator:GetWeaponByLabel('OverCharge')
+            amount = wep:GetBlueprint().Overcharge.commandDamage
+        end
+
+        TAconstructor.DoTakeDamage(self, instigator, amount, vector, damageType)
+        local aiBrain = self:GetAIBrain()
+        if aiBrain then
+            aiBrain:OnPlayCommanderUnderAttackVO()
+        end
+
+        if self:GetHealth() < ArmyBrains[self.Army]:GetUnitStat(self.UnitId, "lowest_health") then
+            ArmyBrains[self.Army]:SetUnitStat(self.UnitId, "lowest_health", self:GetHealth())
+        end
+    end,
+
+    OnKilled = function(self, instigator, type, overkillRatio)
+        TAconstructor.OnKilled(self, instigator, type, overkillRatio)
+
+        -- If there is a killer, and it's not me
+        if instigator and instigator.Army ~= self.Army then
+            local instigatorBrain = ArmyBrains[instigator.Army]
+
+            Sync.EnforceRating = true
+            WARN('ACU kill detected. Rating for ranked games is now enforced.')
+
+            -- If we are teamkilled, filter out death explostions of allied units that were not coused by player's self destruct order
+            -- Damage types:
+            --     'DeathExplosion' - when normal unit is killed
+            --     'Nuke' - when Paragon is killed
+            --     'Deathnuke' - when ACU is killed
+            if IsAlly(self.Army, instigator.Army) and not ((type == 'DeathExplosion' or type == 'Nuke' or type == 'Deathnuke') and not instigator.SelfDestructed) then
+                WARN('Teamkill detected')
+                Sync.Teamkill = {killTime = GetGameTimeSeconds(), instigator = instigator.Army, victim = self.Army}
+            else
+                ForkThread(function()
+                    instigatorBrain:ReportScore()
+                end)
+            end
+        end
+        ArmyBrains[self.Army].CommanderKilledBy = (instigator or self).Army
+    end,
 }

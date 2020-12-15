@@ -96,7 +96,7 @@ UnitBlueprint {
         BuildBones = {
             BuildEffectBones = {'CORASP'},
         },         
-	BuildAngle = 1,
+	---BuildAngle = 1,
         Category = 'Strategic',
         Classification = 'RULEUC_MiscSupport',
         CommandCaps = {

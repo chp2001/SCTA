@@ -37,8 +37,8 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Water = true,
         },
-        SkirtSizeX = 0,
-        SkirtSizeZ = 0,
+        SkirtSizeX = 2,
+        SkirtSizeZ = 2,
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,

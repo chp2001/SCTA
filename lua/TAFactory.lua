@@ -13,21 +13,20 @@ TAFactory = Class(FactoryUnit) {
 			WaitFor(self.AnimManip)
 			FactoryUnit.OnStartBuild(self, unitBeingBuilt, order )
 		end,
-	
-	
-		OnStopBuild = function(self, unitBeingBuilt, order )
-			self:Close()
-			FactoryUnit.OnStopBuild(self, unitBeingBuilt, order )
-		end,
-		
+
 		Open = function(self)
+		end,
+
+		OnStopBuild = function(self, unitBeingBuilt, order)
+			FactoryUnit.OnStopBuild(self, unitBeingBuilt, order)
+			self:Close()
+		end,
+
+		Close = function(self)
 		end,
 
 		CreateBuildEffects = function(self, unitBeingBuilt, order)
 			TAutils.CreateTAFactBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
-		end,
-		
-		Close = function(self)
 		end,
 	}
 

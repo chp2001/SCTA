@@ -12,12 +12,9 @@ local TACommanderDeathWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TACo
 #ARM Commander - Commander
 
 ARMCOM = Class(TACommander) {
-	motion = 'Stopped',
-	cloakOn = nil,
-	isCapturing = nil,
 
 	Weapons = {
-		ARMCOMLASER = Class(TAweapon) {
+		COMLASER = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
 				
@@ -27,12 +24,6 @@ ARMCOM = Class(TACommander) {
 		},
 		DeathWeapon = Class(TACommanderDeathWeapon) {},
 	},
-
-	OnCreate = function(self)
-		TACommander.OnCreate(self)
-		self:SetCapturable(false)
-	end,
-
 	PlayCommanderWarpInEffect = function(self)
         self:HideBone(0, true)
         self:SetUnSelectable(false)
@@ -46,7 +37,7 @@ ARMCOM = Class(TACommander) {
 		self:PlayUnitSound('CommanderArrival')
 		self.PlayCommanderWarpInEffectFlag = false
 		self:CreateProjectile( '/mods/SCTA-master/effects/entities/TAEntrance/TAEntrance_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
-		WaitSeconds(2.1)
+		WaitSeconds(2.7)
 		---CreateAttachedEmitter( self, 0, army, '/mods/SCTA-master/effects/emitters/ENTRANCE_emit.bp'):ScaleEmitter(4)
 		self:ShowBone(0, true)
 		self:HideBone('DGunMuzzle', true)
@@ -63,45 +54,16 @@ ARMCOM = Class(TACommander) {
 		ForkThread(self.GiveInitialResources, self)
 			self:SetScriptBit('RULEUTC_CloakToggle', true)
 			self:ForkThread(self.PlayCommanderWarpInEffect)
-	end,
-
-	OnMotionHorzEventChange = function(self, new, old )
-		TACommander.OnMotionHorzEventChange(self, new, old)
-		if old == 'Stopped' then
-			self:SetConsumptionPerSecondEnergy(1000)
-			self.motion = 'Moving'
-		elseif new == 'Stopped' then
-			self:SetConsumptionPerSecondEnergy(200)
 			self.motion = 'Stopped'
-		end
 	end,
 
-	OnIntelDisabled = function(self)
-		self.cloakOn = nil
-		self:DisableIntel('Cloak')
-        self:SetIntelRadius('Omni', 10)
-        self:PlayUnitSound('Uncloak')
-		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-	end,
-
-	OnIntelEnabled = function(self)
-		--self:EnableIntel('Cloak')
-		if self.motion == 'Moving' then
-			self:SetConsumptionPerSecondEnergy(1000)
-		end
-        self:SetIntelRadius('Omni', self:GetBlueprint().Intel.OmniRadius)
-		self.cloakOn = true
-        	self:PlayUnitSound('Cloak')
-		self:SetMesh('/mods/SCTA-master/units/ARMCOM/ARMCOM_cloak_mesh', true)
-		ForkThread(TACommander.CloakDetection, self)
-		--end
-	end,
 
 
 
 	OnScriptBitSet = function(self, bit)
 		if bit == 8 then
 			self:OnIntelDisabled()
+			self.cloakOn = nil
 			if self.CloakThread then KillThread(self.CloakThread) end
 			self.CloakThread = self:ForkThread(TACommander.CloakDetection)	
 		end
@@ -126,14 +88,6 @@ ARMCOM = Class(TACommander) {
 		self:GetAIBrain():GiveResource('MASS', self:GetBlueprint().Economy.StorageMass)
 	end,
 
-	OnKilled = function(self, instigator, type, overkillRatio)
-		TACommander.OnKilled(self, instigator, type, overkillRatio)
-	end,
-
-	OnStartReclaim = function(self, target)
-		TACommander.OnStartReclaim(self, target)
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
-	end,
 
 }
 

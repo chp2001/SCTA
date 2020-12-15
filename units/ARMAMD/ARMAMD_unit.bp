@@ -100,7 +100,7 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-	BuildAngle = 4096,
+	---BuildAngle = 4096,
     Category = 'Defense',
     Classification = 'RULEUC_CounterMeasure',
         CommandCaps = {

@@ -98,7 +98,7 @@ UnitBlueprint {
 	MaxSlope = 1.25,
     },
     General = {
-        BuildAngle = 0,
+        ---BuildAngle = 0,
         Category = 'Defense',
         Classification = 'RULEUC_Weapon',
         CommandCaps = {

@@ -55,9 +55,9 @@ CORPLAT = Class(TAFactory) {
 
 	Close = function(self)
 		ForkThread(self.WaterFall, self)
+		TAFactory.Close(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
 		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
-		TAFactory.Close(self)
 	end,
 
 	WaterFall = function(self)

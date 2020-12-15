@@ -109,7 +109,7 @@ UnitBlueprint {
         ProductionPerSecondMass = 2.2,
     },
     General = {
-	BuildAngle = 8192,
+	---BuildAngle = 8192,
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,

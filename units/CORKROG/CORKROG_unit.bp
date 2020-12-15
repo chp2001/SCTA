@@ -4,6 +4,14 @@
 #Blueprint created by Raevn
 
 UnitBlueprint {
+    AI = {
+        TargetBones = {
+            'head',
+            'torso',
+            'lleg',
+            'rleg',
+        },
+    },
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
@@ -174,7 +182,7 @@ UnitBlueprint {
             MaxRadius = 30,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-	        MuzzleVelocity = 28.125,
+	        MuzzleVelocity = 32,
             ProjectileId = '/mods/SCTA-master/projectiles/CORKROG_FIRE/CORKROG_FIRE_proj.bp',
             RackBones = {
                 {
@@ -237,9 +245,8 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'CORKROG_HEAD',
             EnergyChargeForFirstShot = true,
-            EnergyDrainPerSecond = 600,
+            EnergyDrainPerSecond = 1500,
             EnergyRequired = 3000,
-            
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air|Seabed',
                 Seabed = 'Land|Water|Air|Seabed',
@@ -311,7 +318,7 @@ UnitBlueprint {
             MaxRadius = 56.25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 0,
-	    MuzzleVelocity = 40,
+	    MuzzleVelocity = 20,
             ProjectileId = '/mods/SCTA-master/projectiles/CORKROG_ROCKET/CORKROG_ROCKET_proj.bp',
             RackBones = {
                 {

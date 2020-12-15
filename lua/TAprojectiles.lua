@@ -17,7 +17,6 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
 		if self.Smoke then
 			self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
 		end
-        	---self:SetCollisionShape('Sphere', 0, 0, 0, 1)
 	end,
 
 	TrackingThread = function(self)
@@ -254,6 +253,13 @@ TALightCannonProjectile = Class(TAProjectile) {
 		'/effects/emitters/destruction_water_splash_wash_01_emit.bp',
 	},
     	FxWaterHitScale = 0.5,
+}
+TARocketProjectile = Class(TAMediumCannonProjectile) {
+	Smoke = true,
+
+	OnCreate = function(self)
+	TAMediumCannonProjectile.OnCreate(self)
+	end,
 }
 
 TAMissileProjectile = Class(TAMediumCannonProjectile) {

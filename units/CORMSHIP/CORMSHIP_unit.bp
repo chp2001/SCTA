@@ -259,7 +259,6 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 186,
-            DamageRadius = 1.5,
             DamageType = 'AntiAir',
             DisplayName = 'CORSHIP_MISSILE',
             FireTargetLayerCapsTable = {
@@ -303,9 +302,6 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RateOfFire = 0.5,
             TargetCheckInterval = 1,
-            TargetPriorities = {
-                'ALLUNITS',
-            },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'missile2',

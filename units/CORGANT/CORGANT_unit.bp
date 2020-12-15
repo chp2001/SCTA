@@ -4,6 +4,13 @@
 #Blueprint created by Raevn
 
 UnitBlueprint {
+    AI = {
+        TargetBones = {
+            'gangplank',
+            'CORGANT',
+            'crane',
+        },
+    },
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
@@ -57,29 +64,9 @@ UnitBlueprint {
     Description = 'Builds Krogoths',
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/CORGANT/CORGANT_lod0_unpack.sca',
-        AnimationUnpackRate = 0.5, 
+        AnimationUnpackRate = 1, 
         AnimationPack = '/mods/SCTA-master/units/CORGANT/CORGANT_lod0_repack.sca',
-        AnimationPackRate = 0.5, 
-        	--[[DestructionEffects = {
-            DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate', 'CorBld'},
-            DestructionEmitters = {
-                {
-                    EmitterBone = {0, 'cranetop','clamp1','clamp2','clamp3','clamp4'},
-                    EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-                    EmitterSize = 1.25,
-                },
-                {
-                    EmitterBone = {'arm1a','arm2a','arm3a','arm4a'},
-                    EmitterBlueprint = {
-                            '/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-                            '/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-                            '/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-                    },
-				EmitterSize = 0.35,
-			},
-		},
-	},]]--
-        BuildBones = {'nano1','nano2','nano3','nano4'},
+        AnimationPackRate = 1,
         BuildAttachBone = 'gangplank',
         Mesh = {
             IconFadeInZoom = 130,
@@ -112,6 +99,9 @@ UnitBlueprint {
         SizeZ = 9,
     },
     General = {
+        BuildBones = {
+            BuildEffectBones = {'nano1','nano2','nano3','nano4'},
+        },  
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

@@ -67,7 +67,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 230,
-                    ShaderName = 'Unit', 
+                    ShaderName = 'AeonCZAR', 
 		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
@@ -85,7 +85,7 @@ UnitBlueprint {
 	MaxSlope = 0.625,
     },
     General = {
-	BuildAngle = 8192,
+	---BuildAngle = 8192,
         Category = 'Defense',
         Classification = 'RULEUC_Weapon',
         CommandCaps = {

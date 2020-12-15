@@ -15,7 +15,9 @@ CORCARRY = Class(TAFactory) {
 		self.Spinners = {
 			dish = CreateRotator(self, 'dish', 'y', nil, 0, 0, 0),
 		}
-		self.Trash:Add(self.Spinners.dish)
+		for k, v in self.Spinners do
+			self.Trash:Add(v)
+		end
 		self.AnimManip = CreateAnimator(self)
 		self.Trash:Add(self.AnimManip)
 	end,
@@ -30,21 +32,15 @@ CORCARRY = Class(TAFactory) {
 	end,
 
 	Open = function(self)
+		TAFactory.Open(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationBuild)
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationBuildRate or 0.2))
-		TAFactory.Open(self)
-	end,
-
-	Aim = function(self, target)
-		TAFactory.Aim(self, target)
-		WaitFor(self.AnimManip)
 	end,
 
 	Close = function(self)
+		TAFactory.Close(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationBuild)
 		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationBuildRate or 0.2))
-		ChangeState(self, self.IdleState)
-		TAFactory.Close(self)
 	end,
 
 	OnScriptBitSet = function(self, bit)

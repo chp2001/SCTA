@@ -64,27 +64,8 @@ UnitBlueprint {
     },
     Description = 'Produces Vehicles',
     Display = {
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate','Circuits'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Side_01','Side_02', 0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'Build_Plate_01', 'Build_Plate_02'},
-				EmitterBlueprint = {
-	    				'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
-	BuildBones = {'Nozzle_01','Nozzle_02'},
-	BuildAttachBone = 'BuildPlate',
+        AnimationUnpack = '/mods/SCTA-master/units/ARMVP/ARMVP_lod0_unpack.sca',
+        AnimationUnpackRate = 2,    
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -116,7 +97,11 @@ UnitBlueprint {
         SizeZ = 6,
     },
     General = {
-	BuildAngle = 1024,
+        BuildBones = {
+            BuildAttachBone = 'BuildPlate',
+            BuildEffectBones = {'Nozzle_01','Nozzle_02'},
+        },            
+	---BuildAngle = 1024,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

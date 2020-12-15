@@ -1,0 +1,68 @@
+#CORE Hive - Light Carrier
+#CORCARRY
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true, 
+    BuildIconSortPriority = 3,
+    Categories = {
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH3',
+        'REPAIR',
+    'NAVAL',
+    'FACTORY',
+	'MOBILE',
+	'STRATEGIC',
+        'AIRSTAGINGPLATFORM',
+	'CARRIER',
+        'OVERLAYRADAR',
+        'OVERLAYMISC',
+	'CORE',
+	'OCEAN',
+	'LEVEL3',
+	'NAVALCARRIER',
+	'SHOWQUEUE',
+    },
+    Defense = {
+        Health = 17000,
+        MaxHealth = 17000,
+    },
+    Display = {
+        BuildAttachBone = 'Attachpoint_Med_02',
+    UniformScale = 0.32,
+    },
+    Economy = {
+        BuildCostEnergy = 11715,
+        BuildCostMass = 3000,
+        BuildTime = 60000,
+        BuildRate = 600,
+        ProductionPerSecondEnergy = 300,
+        MaintenanceConsumptionPerSecondEnergy = 35,
+        BuildableCategory = {
+            'VTOL LEVEL1 CORE AIR ENGINEER',
+            'VTOL LEVEL1 CORE HIGHALTAIR', 
+            'VTOL LEVEL2 CORE AIR',
+            'VTOL LEVEL3 CORE',
+        },
+    },
+    General = {
+        BuildBones = {
+            BuildEffectBones = {'nano2','nano3'},
+        },   
+    },
+Footprint = {
+    SizeX = 12,
+    SizeZ = 12,
+},    
+LifeBarSize = 8,
+SelectionSizeX = 6,
+SelectionSizeZ = 10,
+SizeX = 8,
+SizeY = 6,
+SizeZ = 16,
+    StrategicIconName = 'icon_ship3_air',
+}

@@ -55,18 +55,6 @@ CORCA = Class(TAAirConstructor) {
 		self.Spinners.wingb:SetSpeed(61)
 	end,
 
-	Aim = function(self, target)
-		local selfPosition = self:GetPosition('nozzle') 
-		local targetPosition = target:GetPosition()
-		local distance = VDist2(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z)
-
-		self.Spinners.nozzle:SetGoal(-TAutils.GetAngleTA(0, targetPosition.y, distance, selfPosition.y))
-		self.Spinners.nozzle:SetSpeed(160.03)
-
-		WaitFor(self.Spinners.nozzle)
-		TAAirConstructor.Aim(self, target)
-	end,
-
 }
 
 TypeClass = CORCA

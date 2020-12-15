@@ -75,7 +75,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 420,
-                    ShaderName = 'Unit', 
+                    ShaderName = 'AeonCZAR', 
                 },
             },
         },
@@ -92,7 +92,7 @@ UnitBlueprint {
 	MaxSlope = 0.625,
     },
     General = {
-	BuildAngle = 12712,
+	---BuildAngle = 12712,
     Category = 'Strategic',
     Classification = 'RULEUC_Weapon',
         CommandCaps = {

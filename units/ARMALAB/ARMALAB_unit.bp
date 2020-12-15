@@ -56,27 +56,7 @@ UnitBlueprint {
     Description = 'Produces Kbots',
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/ARMALAB/ARMALAB_lod0_aopen.sca',
-        AnimationUnpackRate = 0.5, 
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate', 'CorBld'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0, 'nano1','nano2'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'quarter1','quarter2','quarter3','quarter4'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
-	BuildBones = {'Nozzle_01','Nozzle_02'},
+        AnimationUnpackRate = 1, 
 	BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,
@@ -109,7 +89,10 @@ UnitBlueprint {
         SizeZ = 6,
     },
     General = {
-	BuildAngle = 2048,
+    BuildBones = {
+            BuildEffectBones = {'Nozzle_01','Nozzle_02'},
+    },   
+	---BuildAngle = 2048,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

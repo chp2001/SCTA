@@ -12,17 +12,10 @@ ARMCSA = Class(TAAirConstructor) {
 
 	OnCreate = function(self)
 		TAAirConstructor.OnCreate(self)
-		self.Spinners = {
-			nozzle1 = CreateRotator(self, 'nanopoint', 'x', nil, 0, 0, 0),
-			nozzle2 = CreateRotator(self, 'nanopoint2', 'x', nil, 0, 0, 0),
-		}
 		self.Sliders = {
 			wing1 = CreateSlider(self, 'Rwing'),
 			wing2 = CreateSlider(self, 'Lwing'),
 		}
-		for k, v in self.Spinners do
-			self.Trash:Add(v)
-		end
 		for k, v in self.Sliders do
 			self.Trash:Add(v)
 		end
@@ -61,23 +54,6 @@ ARMCSA = Class(TAAirConstructor) {
 		--MOVE wing2 to x-axis <0> SPEED <5.00>;
 		self.Sliders.wing2:SetGoal(0,0,0)
 		self.Sliders.wing2:SetSpeed(5)
-	end,
-
-	Aim = function(self, target)
-		local selfPosition = self:GetPosition('nanopoint') 
-		local targetPosition = target:GetPosition()
-		local distance = VDist2(selfPosition.x, selfPosition.z, targetPosition.x, targetPosition.z)
-		
-		TAAirConstructor.Aim(self, target)
-		self.Spinners.nozzle1:SetGoal(TAutils.GetAngleTA(0, targetPosition.y, distance, selfPosition.y))
-		self.Spinners.nozzle1:SetSpeed(160.03)
-
-		WaitFor(self.Spinners.nozzle1)
-
-		self.Spinners.nozzle2:SetGoal(TAutils.GetAngleTA(0, targetPosition.y, distance, selfPosition.y))
-		self.Spinners.nozzle2:SetSpeed(160.03)
-
-		WaitFor(self.Spinners.nozzle2)
 	end,
 
 }

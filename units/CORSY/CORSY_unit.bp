@@ -67,26 +67,8 @@ UnitBlueprint {
     },
     Description = 'Produces Ships',
     Display = {
-		--[[DestructionEffects = {
-		#DefaultProjectileCategories = {'Construction','ArmBui','BuildMuzzle'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'turreta','turretb','a'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
-	BuildBones = {'muzzlea','muzzleb'},
+        AnimationUnpack = '/mods/SCTA-master/units/CORSY/CORSY_lod0Action.sca',
+        AnimationUnpackRate = 0.5, 
 	BuildAttachBone = 0,
 	--TextureAnimationFrames = 6,
         Mesh = {
@@ -120,6 +102,9 @@ UnitBlueprint {
 	MinWaterDepth = 1.875,
     },
     General = {
+        BuildBones = {
+            BuildEffectBones = {'muzzlea', 'muzzleb'},
+        },     
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

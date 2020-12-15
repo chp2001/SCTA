@@ -1,0 +1,189 @@
+#ARM Vehicle Plant - Produces Vehicles
+#ARMADVP
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PVEHACTV',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Construct = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PVEHWORK',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	ConstructStop = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'UNITDONE',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG4',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 0,
+    Categories = {
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH3',
+	    'FACTORY',
+        'RALLYPOINT',
+        'SHOWQUEUE',
+        'CONSTRUCTIONSORTDOWN',
+	    'STRUCTURE',
+	    'CONSTRUCTION',
+        'LAND', 
+	'ARM',
+    'PLANT',
+	'SORTCONSTRUCTION',
+	'LEVEL3',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 10500,
+        MaxHealth = 10500,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 11,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Produces Vehicles',
+    Display = {
+        AnimationUnpack = '/mods/SCTA-master/units/ARMVP/ARMVP_lod0_unpack.sca',
+        AnimationUnpackRate = 2,    
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 400, 
+                    SpecularName = '/mods/SCTA-master/units/ARMVP/ARMVP_SpecTeam.dds',
+                    AlbedoName = '/mods/SCTA-master/units/ARMVP/ARMVP_Albedo.dds',
+                    MeshName =   '/mods/SCTA-master/units/ARMVP/ARMVP_lod0.scm',
+                    ShaderName = 'Unit', 
+                    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.25,
+    },
+    Economy = {
+        BuildCostEnergy = 60000,
+        BuildCostMass = 7200, 
+        BuildTime = 220000,
+        DifferentialUpgradeCostCalculation = true,
+	BuildRate = 180,
+        BuildableCategory = {
+            'VEHICLE LEVEL1 ARM',
+            'VEHICLE LEVEL2 ARM',
+            'VEHICLE LEVEL3 ARM',
+        },
+	InitialRallyX = 0,
+	InitialRallyZ = 4,
+        StorageMass = 100,
+        StorageEnergy = 100,
+    },
+    Footprint = {
+        MaxSlope = 0.625,
+        SizeX = 8,
+        SizeZ = 8,
+    },
+    General = {
+        BuildBones = {
+            BuildAttachBone = 'BuildPlate',
+            BuildEffectBones = {'Nozzle_01','Nozzle_02'},
+        },                
+	---BuildAngle = 1024,
+        Category = 'Factory',
+        Classification = 'RULEUC_Factory',
+        CommandCaps = {
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        SelectionPriority = 5,
+        ConstructionBar = true,
+        FactionName = 'ARM',
+        TechLevel = 'RULEUTL_Basic',
+        UnitName = 'Vehicle Advanced Development Plant',
+        UpgradesFrom = 'armdvp', 
+    },
+    Intel = {
+        VisionRadius = 10,
+    },
+    Interface = {
+        HelpText = 'Produces Vehicles',
+    },
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 3,
+    LifeBarSize = 8,
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        FlattenSkirt = true,
+        SkirtSizeX = 8,
+        SkirtSizeZ = 8,
+	BuildAreaX = 4,
+	BuildAreaZ = 4,
+	CloseAreaX = 4,
+	CloseAreaZ = 6,
+        OccupyRects = {
+            # offsetX offsetZ  sizeX sizeZ, offset from center of unit
+            -3,
+            0,
+            1,
+            2.5,
+
+            3,
+            0,
+            1,
+            2.5,
+
+            0,
+            -3,
+            4,
+            0.5,
+        },
+    },
+    SelectionSizeX = 7,
+    SelectionSizeZ = 5,
+    SelectionThickness = 0.25,
+    SizeX = 9,
+    SizeY = 1,
+    SizeZ = 9,
+    StrategicIconName = 'icon_factory3_land',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #LARGE_BUILDINGEX
+            Damage = 20,
+            DamageFriendly = true,
+            DamageRadius = 5,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+ 
+    },
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/SCTABalance/units/ARMADVP/ARMADVP_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

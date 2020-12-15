@@ -64,28 +64,8 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_radar>Radar',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate','CorBld','Runway','Circuits'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'pad','CORAAP'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'block1','block2'},
-				EmitterBlueprint = {
-	    				'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
-	BuildBones = {'beam1', 'beam2'},
-	BuildAttachBone = 'pad',
-	--TextureAnimationFrames = 6,
+        AnimationUnpack = '/mods/SCTA-master/units/CORAAP/CORAAP_lod0_unpack.sca',
+        AnimationUnpackRate = 0.5,    
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -116,7 +96,11 @@ UnitBlueprint {
         SizeZ = 6,
     },
     General = {
-	BuildAngle = 0,
+        BuildBones = {
+            BuildAttachBone = 'pad',
+            BuildEffectBones = {'beam1', 'beam2'},
+        },             
+	---BuildAngle = 0,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

@@ -1,0 +1,191 @@
+#ARM Drake Gantry - Builds Drake
+#ARMGANT
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    AI = {
+        TargetBones = {
+            'sign',
+            'connector',
+            'door2',
+            'door1',
+        },
+    },
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'GANTSEL1',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Construct = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'GANTOK2',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	ConstructStop = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'GANTOK1',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG4',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 18,
+    Categories = {
+        'BUILTBYT1HOVER',
+        ---'BUILTBYT2KBOT',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'FACTORY',
+        'GATE',
+        'EXPERIMENTAL', 
+        'RALLYPOINT',
+        'SHOWQUEUE',
+        'STRUCTURE',
+        'CONSTRUCTION',
+        'LAND',
+        'ARM',
+        'STRATEGIC',
+        	'GANTRY',
+            'SORTCONSTRUCTION',
+        'LEVEL4',
+    },
+    Defense = {
+        ArmorType = 'ExperimentalStructure',
+        Health = 40000,
+        MaxHealth = 40000,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 11,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Builds Drake',
+    Display = {
+        BuildAttachBone = 'buildpad',
+        AnimationUnpack = '/mods/SCTA-master/SCTABalance/units/ARMGANT/ARMGANT_lod0_unpack.sca',
+        AnimationUnpackRate = 0.5, 
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 400,
+                    ShaderName = 'Unit', 
+                    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.38,
+    },
+    Economy = {
+        BuildCostEnergy = 200000,
+        BuildCostMass = 12000, 
+        BuildTime = 125000,
+        BuildRate = 250,
+        BuildableCategory = {
+            'KBOT LEVEL4 ARM',
+        },
+        InitialRallyX = 0,
+        InitialRallyZ = 7.5,
+        StorageMass = 800,
+        StorageEnergy = 1400,
+    },
+    Footprint = {
+	MaxSlope = 0.625,
+        SizeX = 9,
+        SizeZ = 9,
+    },
+    General = {
+        BuildBones = {
+            BuildEffectBones = {'nano1', 'nano2'},
+        },    
+        Category = 'Factory',
+        Classification = 'RULEUC_Factory',
+        CommandCaps = {
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        SelectionPriority = 5,
+        FactionName = 'ARM',
+        TechLevel = 'RULEUTL_Advanced',
+	UnitName = 'Drake Gantry',
+    },
+    Intel = {
+        VisionRadius = 14,
+    },
+    Interface = {
+        HelpText = 'Builds Drake',
+    },
+    LifeBarHeight = 0.3,
+    LifeBarOffset = 7,
+    LifeBarSize = 13,
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        FlattenSkirt = true,
+        SkirtSizeX = 9,
+        SkirtSizeZ = 9,
+	BuildAreaX = 3,
+	BuildAreaZ = 3,
+	CloseAreaX = 5,
+	CloseAreaZ = 5,
+        OccupyRects = {
+            # offsetX offsetZ  sizeX sizeZ, offset from center of unit
+            0,
+            -4.5,
+            4.5,
+            1,
+
+            -4,
+            1,
+            1,
+            3.5,
+
+            4,
+            1,
+            1,
+            3.5,
+        },
+    },
+    SelectionSizeX = 12,
+    SelectionSizeZ = 12,
+    SelectionThickness = 0.25,
+    SizeX = 14,
+    SizeY = 10,
+    SizeZ = 14,
+    StrategicIconName = 'icon_experimental_generic',
+    StrategicIconSortPriority = 5,
+    Weapon = {
+        { #LARGE_BUILDINGEX
+            Damage = 20,
+            DamageFriendly = true,
+            DamageRadius = 1,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/SCTABalance/units/ARMGANT/ARMGANT_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

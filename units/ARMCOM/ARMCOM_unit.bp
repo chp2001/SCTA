@@ -106,6 +106,8 @@ UnitBlueprint {
     },
     Description = 'Commander',
     Display = {
+        --AnimationBuild = '/mods/SCTA-master/units/ARMCOM/ARMCOM_lod0_unpack.sca',
+        --AnimationBuildRate = 1, 
         AnimationWalk = '/mods/SCTA-master/units/ARMCOM/ARMCOM_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
@@ -116,30 +118,13 @@ UnitBlueprint {
             'D-Gun',
             'Construction Unit',
         },
-		--[[DestructionEffects = {
-		DefaultFlamingProjectileCountMin = 0,
-		DefaultFlamingProjectileCountMax = 0,
-		DefaultProjectileCountMin = 0,
-		DefaultProjectileCountMax = 0,
-		FlashTime = 0,
-		FlashSize = 0,
-		DestructionEmitters = {
-			{
-				EmitterBone = {'ARMCOM'},
-				EmitterBlueprint = {
-					'/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
-				},
-				EmitterSize = 15,
-			},
-		},
-	},]]--
-	BuildBones = {'LaserMuzzle'},
+        CloakMesh = '/mods/SCTA-master/units/ARMCOM/ARMCOM_cloak_mesh',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 230,
-                    ShaderName = 'Unit', 
+                    ShaderName = 'AeonCZAR', 
                 },
             },
         },
@@ -168,6 +153,12 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
+        BuildBones = {
+            AimBone = 'LaserMuzzle',
+            BuildEffectBones = {'LaserMuzzle'},
+            PitchBone = 'LeftLowerArm',
+            YawBone = 'Torso',
+        },
         Category = 'Command',
         Classification = 'RULEUC_Commander',
         CommandCaps = {
@@ -264,14 +255,14 @@ UnitBlueprint {
             Damage = 50,
             DamageRadius = 1,
             DamageType = 'Normal',
-            DisplayName = 'ARMCOMLASER',
+            DisplayName = 'COMLASER',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air|Seabed',
                 Seabed = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
-            Label = 'ARMCOMLASER',
+            Label = 'COMLASER',
             MaxRadius = 22,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -300,7 +291,7 @@ UnitBlueprint {
             TurretBoneMuzzle = 'LaserMuzzle',
             TurretBonePitch = 'LeftLowerArm',
             TurretBoneYaw = 'Torso',
-            TurretPitch = 90,
+            TurretPitch = 15,
             TurretPitchRange = 360,
             TurretPitchSpeed = 45,
             TurretYaw = 0,

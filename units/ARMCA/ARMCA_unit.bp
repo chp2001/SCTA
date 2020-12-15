@@ -95,7 +95,6 @@ UnitBlueprint {
         Abilities = {
             'Construction Unit',
         },
-	ReclaimEmitter = 'nanolathe.bp',
 		--[[DestructionEffects = {
 		DefaultFlamingProjectileCountMin = 0,
 		DefaultFlamingProjectileCountMax = 0,
@@ -111,13 +110,12 @@ UnitBlueprint {
 			},
 		},
 	},]]--
-	BuildBones = {'Nozzle'},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 230,
-                    ShaderName = 'Unit', 
+                    ShaderName = 'AeonCZAR', 
 		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
@@ -143,6 +141,12 @@ UnitBlueprint {
         SizeZ = 2,
     },]]--
     General = {
+        BuildBones = {
+            AimBone = 'Nozzle',
+            BuildEffectBones = {'Nozzle'},
+            PitchBone = 'Nozzle',
+            YawBone = 'Nozzle',
+        },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

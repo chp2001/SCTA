@@ -15,7 +15,9 @@ ARMCARRY = Class(TAFactory) {
 		self.Spinners = {
 			radar = CreateRotator(self, 'Radar', 'y', nil, 0, 0, 0),
 		}
-		self.Trash:Add(self.Spinners.radar)
+		for k, v in self.Spinners do
+			self.Trash:Add(v)
+		end
 		self.AnimManip = CreateAnimator(self)
 		self.Trash:Add(self.AnimManip)
 	end,
@@ -29,22 +31,18 @@ ARMCARRY = Class(TAFactory) {
 		self:SetMaintenanceConsumptionActive()
 	end,
 
+
 	Open = function(self)
+		TAFactory.Open(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationBuild)
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationBuildRate or 0.2))
-		TAFactory.Open(self)
 	end,
 
-	Aim = function(self, target)
-		TAFactory.Aim(self, target)
-		WaitFor(self.AnimManip)
-	end,
 
 	Close = function(self)
-		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationBuild)
-		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationBuildRate or 0.2))
-		ChangeState(self, self.IdleState)
 		TAFactory.Close(self)
+		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationBuild)
+		self.AnimManip:SetRate(-0.1 * (self:GetBlueprint().Display.AnimationBuildRate or 0.2))
 	end,
 
 	OnScriptBitSet = function(self, bit)

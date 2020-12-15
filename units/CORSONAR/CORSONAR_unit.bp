@@ -96,7 +96,7 @@ UnitBlueprint {
 	MinWaterDepth = 0.5,
     },
     General = {
-	BuildAngle = 8192,
+	---BuildAngle = 8192,
         Category = 'Intelligence',
         Classification = 'RULEUC_Sensor',
         ToggleCaps = {

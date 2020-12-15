@@ -95,23 +95,6 @@ UnitBlueprint {
         Abilities = {
             'Adv. Construction Unit',
         },
-	ReclaimEmitter = 'nanolathe.bp',
-		--[[DestructionEffects = {
-		DefaultFlamingProjectileCountMin = 0,
-		DefaultFlamingProjectileCountMax = 0,
-		DestructionDebrisUseLocalVelocity = true,
-		#DefaultProjectileCategories = {'Construction','ArmCockpit'},
-		FlashSize = 10,
-		FlashTime = 10,
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
-	BuildBones = {'nozzle'},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -138,11 +121,13 @@ UnitBlueprint {
     ProductionPerSecondMass = 1,
     NaturalProducer = true,
     },
-    --[[Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-    },]]--
     General = {
+        BuildBones = {
+            AimBone = 'nozzle',
+            BuildEffectBones = {'nozzle'},
+            PitchBone = 'nozzle',
+            YawBone = 'nozzle',
+        },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

@@ -68,7 +68,7 @@ ProjectileBlueprint {
         Lifetime = 20,
         MaxSpeed = 25,
         TrackTarget = false,
-        TurnRate = 275,
+        TurnRate = 60,
         UseGravity = false,
         VelocityAlign = true,
     },

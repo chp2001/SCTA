@@ -3,9 +3,9 @@
 #
 #Script created by Raevn
 
-local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstructor
+local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 
-CORASP = Class(TAconstructor) {
+CORASP = Class(TAFactory) {
 }
 
 TypeClass = CORASP

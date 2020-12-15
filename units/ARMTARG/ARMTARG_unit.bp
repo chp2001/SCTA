@@ -74,7 +74,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 230,
-                    ShaderName = 'Unit', 
+                    ShaderName = 'AeonCZAR', 
 		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
@@ -93,7 +93,7 @@ UnitBlueprint {
         SizeZ = 4,
     },
     General = {
-	BuildAngle = 4096,
+	---BuildAngle = 4096,
         Category = 'Intelligence',
         Classification = 'RULEUC_Sensor',
         ToggleCaps = {

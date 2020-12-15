@@ -63,41 +63,8 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_radar>Radar',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Construction','BuildMuzzle','BuildPlate','CorBld','Runway','Circuits'},
-		DestructionProjectiles = {
-			{
-				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMAAP_debris01_proj.bp',
-				Bone = 'radar',
-			},
-		},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'pad','ARMAAP'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'building1','building2'},
-				EmitterBlueprint = {
-	    				'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-			{
-				EmitterBone = {'radar'},
-				EmitterBlueprint = {
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.25,
-			},
-		},
-	},]]--
-	BuildBones = {'Nozzle_01', 'Nozzle_02'},
-	BuildAttachBone = 'pad',
-	--TextureAnimationFrames = 6,
+    AnimationUnpack = '/mods/SCTA-master/units/ARMAAP/ARMAAP_lod0_unpack.sca',
+    AnimationUnpackRate = 1,    
         Mesh = {
             IconFadeInZoom = 400,
             LODs = {
@@ -129,7 +96,11 @@ UnitBlueprint {
         SizeZ = 7,
     },
     General = {
-	BuildAngle = 0,
+        BuildBones = {
+            BuildAttachBone = 'pad',
+            BuildEffectBones = {'Nozzle_01', 'Nozzle_02'},
+        },    
+	---BuildAngle = 0,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

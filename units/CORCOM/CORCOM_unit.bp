@@ -90,15 +90,18 @@ UnitBlueprint {
 	'LEVEL10',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Commander',
         Health = 3000,
         MaxHealth = 3000,
         RegenRate = 3.7,  # TA HealTime=27, which appears to be 27 units of 30sec
     },
     Description = 'Commander',
     Display = {
+        --AnimationBuild = '/mods/SCTA-master/units/CORCOM/CORCOM_lod0_unpack.sca',
+        --AnimationBuildRate = 1, 
 			AnimationWalk = '/mods/SCTA-master/units/CORCOM/CORCOM_lod0_Awalk.sca',
-			AnimationWalkRate = 1,
+            AnimationWalkRate = 1,
+            CloakMesh = '/mods/SCTA-master/units/CORCOM/CORCOM_cloak_mesh',
         Abilities = {
             '<LOC ability_amphibious>Amphibious',
             '<LOC ability_notcap>Not Capturable',
@@ -107,24 +110,6 @@ UnitBlueprint {
             'D-Gun',
             'Construction Unit',
         },
-		--[[DestructionEffects = {
-		DefaultFlamingProjectileCountMin = 0,
-		DefaultFlamingProjectileCountMax = 0,
-		DefaultProjectileCountMin = 0,
-		DefaultProjectileCountMax = 0,
-		FlashTime = 0,
-		FlashSize = 0,
-		DestructionEmitters = {
-			{
-				EmitterBone = {'CORCOM'},
-				EmitterBlueprint = {
-					'/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
-				},
-				EmitterSize = 15,
-			},
-		},
-	},]]--
-    BuildBones = {'NanoMuzzle'},
     Mesh = {
         IconFadeInZoom = 130,
         LODs = {
@@ -161,6 +146,12 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
+        BuildBones = {
+            AimBone = 'NanoMuzzle',
+            BuildEffectBones = {'NanoMuzzle'},
+            PitchBone = 'Nanogun',
+            YawBone = 'Torso',
+        },
         Category = 'Command',
         Classification = 'RULEUC_Commander',
         CommandCaps = {
@@ -254,7 +245,7 @@ UnitBlueprint {
             UseFiringSolutionInsteadOfAimBone = true,
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 200,
+            Damage = 150,
             DamageRadius = 1,
             DamageType = 'Normal',
             DisplayName = 'CORCOMLASER',
@@ -264,7 +255,7 @@ UnitBlueprint {
             },
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
-            Label = 'CORCOMLASER',
+            Label = 'COMLASER',
             MaxRadius = 22,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -283,7 +274,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.5,
+            RateOfFire = 0.75,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
@@ -293,12 +284,12 @@ UnitBlueprint {
             TurretBoneMuzzle = 'Mlasflsh',
             TurretBonePitch = 'Nanogun',
             TurretBoneYaw = 'Torso',
-            TurretPitch = 90,
+            TurretPitch = 15,
             TurretPitchRange = 360,
             TurretPitchSpeed = 45,
             TurretYaw = 0,
             TurretYawRange = 360,
-            TurretYawSpeed = 300,
+            TurretYawSpeed = 60,
             Turreted = true,
         },
         {

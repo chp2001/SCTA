@@ -100,7 +100,7 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-	BuildAngle = 16384,
+	---BuildAngle = 16384,
         Category = 'Intelligence',
         Classification = 'RULEUC_Sensor',
         ToggleCaps = {

@@ -1,0 +1,50 @@
+UnitBlueprint {
+   Merge = true,
+   Categories = {
+    'SELECTABLE',
+    'TECH2',
+    'ENGINEER',
+    'REPAIR',
+    'RECLAIM',
+    'VISIBLETORECON',
+    'RECLAIMABLE',
+    'PATROLHELPER',
+    'SHOWQUEUE',
+    'MOBILE',
+'CONSTRUCTION',
+'AIR',
+'VTOL',
+'SELECTION', 
+    'CORE',
+'OCEAN',
+'LEVEL2',
+},
+   Defense = {
+    Health = 600,
+    MaxHealth = 600,
+    },
+    Display = {
+        UniformScale = 0.10,
+    },
+    Economy = {
+        BuildCostEnergy = 6000,
+        BuildRate = 150,
+        BuildTime = 4000, 
+        BuildableCategory = {
+            'BUILTBYT1AIR CORE',
+            'BUILTBYT2AIR CORE',
+        },
+        MaxBuildDistance = 5,
+        ProductionPerSecondEnergy = 3,
+        ProductionPerSecondMass = 0,
+    },
+    Intel = {
+        VisionRadius = 12,
+    },
+    Physics = {
+        FuelRechargeRate = 777777,
+        FuelUseTime = 777777,
+    },
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
+}

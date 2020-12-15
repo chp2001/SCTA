@@ -40,9 +40,9 @@ ARMPLAT = Class(TAFactory) {
 
 	Open = function(self)
 		ForkThread(self.WaterRise, self)
+		TAFactory.Open(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
-		TAFactory.Open(self)
 	end,
 
 	WaterRise = function(self)
@@ -63,10 +63,9 @@ ARMPLAT = Class(TAFactory) {
 
 	Close = function(self)
 		ForkThread(self.WaterFall, self)
+		TAFactory.Close(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
 		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
-		ChangeState(self, self.IdleState)
-		TAFactory.Close(self)
 	end,
 
 	WaterFall = function(self)

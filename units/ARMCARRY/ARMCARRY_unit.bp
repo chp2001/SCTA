@@ -72,37 +72,18 @@ UnitBlueprint {
     Description = 'Light Carrier',
     Display = {
         AnimationBuild = '/mods/SCTA-master/units/ARMCARRY/ARMCARRY_lod0_build.sca',
-        AnimationBuildRate = 0.2, 
+        AnimationBuildRate = 2, 
         AnimationPower = '/mods/SCTA-master/units/ARMCARRY/ARMCARRY_lod0_power.sca',
         AnimationPowerRate = 0.2, 
         Abilities = {
             '<LOC ability_airstaging>Air Staging',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'ArmShip', 'ArmBui', 'Helipad'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Attachpoint01', 'Attachpoint02'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'Radar'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 300,
-                    ShaderName = 'Unit', 
+                    ShaderName = 'AeonCZAR', 
                 },
             },
         },

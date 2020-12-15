@@ -1,0 +1,55 @@
+#ARM Swatter - Anti-Air Hovercraft
+#ARMAH
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+   Merge = true,
+   Categories = {
+    'SELECTABLE',
+    'TECH3',
+    'VISIBLETORECON',
+    'RECLAIMABLE',
+    'MOBILE',
+'ANTIAIR',
+    'OVERLAYDIRECTFIRE',
+'OVERLAYANTIAIR',
+    'LAND',
+    'CORE',
+        'HOVER',
+'PHIB',
+'LEVEL1',
+},
+    Defense = {
+        Health = 4400,
+        MaxHealth = 4400,
+    },
+    Economy = {
+        BuildCostEnergy = 32000,
+        BuildCostMass = 2400,
+        BuildTime = 30000,
+    },
+    Intel = {
+        VisionRadius = 14,
+    },
+    SizeY = 1.4,
+    StrategicIconName = 'icon_land3_antiair',
+    Weapon = {
+        [1] = {
+            Damage = 192,
+            DamageRadius = 1.5,
+            FiringRandomness = 0,
+	    FiringTolerance = 10,
+            MaxRadius = 40.625,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 70,
+            ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/AH_WEAPON/AH_WEAPON_proj.bp',
+            RackSalvoSize = 3,
+            RackSlavedToTurret = false,
+            RateOfFire = 1,
+        },
+        [2] = {
+        }, 
+    },
+}

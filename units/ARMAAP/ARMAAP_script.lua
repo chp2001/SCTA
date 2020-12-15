@@ -36,6 +36,7 @@ ARMAAP = Class(TAFactory) {
 
 
 	Close = function(self)
+		TAFactory.Close(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
 		self.AnimManip:SetRate(-0.1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 
@@ -44,7 +45,6 @@ ARMAAP = Class(TAFactory) {
 
 		self.Spinners.nozzle2:SetGoal(0)
 		self.Spinners.nozzle2:SetSpeed(160.03)
-		TAFactory.Close(self)
 	end,
 
 

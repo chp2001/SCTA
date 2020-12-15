@@ -60,7 +60,7 @@ CORDSY = Class(TAFactory) {
 
 
 	Close = function(self)
-
+		TAFactory.Close(self)
 		--TURN turreta to y-axis <0> SPEED <50.28>;
 		self.Spinners.turreta:SetGoal(0)
 		self.Spinners.turreta:SetSpeed(50.28)
@@ -84,8 +84,6 @@ CORDSY = Class(TAFactory) {
 		--MOVE turretb to y-axis <0> SPEED <5.00>;
 		self.Sliders.turretb:SetGoal(0,0,0)
 		self.Sliders.turretb:SetSpeed(5)
-
-		TAFactory.Close(self)
 	end,
 
 

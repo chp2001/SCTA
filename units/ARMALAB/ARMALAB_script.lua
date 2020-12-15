@@ -21,10 +21,9 @@ ARMALAB = Class(TAFactory) {
 
 
 	Close = function(self)
+		TAFactory.Close(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
 		self.AnimManip:SetRate(-0.1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
-
-		TAFactory.Close(self)
 	end,
 }
 

@@ -38,9 +38,9 @@ CORCARRY = Class(TAFactory) {
 	end,
 
 	Close = function(self)
+		TAFactory.Close(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationBuild)
 		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationBuildRate or 0.2))
-		TAFactory.Close(self)
 	end,
 
 	OnScriptBitSet = function(self, bit)

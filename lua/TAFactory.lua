@@ -13,22 +13,26 @@ TAFactory = Class(FactoryUnit) {
 			WaitFor(self.AnimManip)
 			FactoryUnit.OnStartBuild(self, unitBeingBuilt, order )
 		end,
-	
-	
-		OnStopBuild = function(self, unitBeingBuilt, order )
-			self:Close()
-			FactoryUnit.OnStopBuild(self, unitBeingBuilt, order )
-		end,
-		
+
 		Open = function(self)
+		end,
+
+		Close = function(self)
+		WaitTicks(5)
 		end,
 
 		CreateBuildEffects = function(self, unitBeingBuilt, order)
 			TAutils.CreateTAFactBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
 		end,
-		
-		Close = function(self)
-		end,
+
+		IdleState = State {
+			Main = function(self)
+				ForkThread(self.Close, self)
+				self:SetBusy(false)
+				self:SetBlockCommandQueue(false)
+				self:DestroyBuildRotator()
+			end,
+		},
 	}
 
 TypeClass = TAFactory

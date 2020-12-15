@@ -277,8 +277,10 @@ TACommander = Class(TAconstructor) {
             local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
             if dudes[1] and self.cloakOn then
                 self:DisableIntel('Cloak')
+                self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
             elseif not dudes[1] and self.cloakOn then
                 self:EnableIntel('Cloak')
+                self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
             end
         end
 	end,

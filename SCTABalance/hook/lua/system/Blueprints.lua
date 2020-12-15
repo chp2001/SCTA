@@ -166,9 +166,6 @@ do
                 elseif table.find(bp.Categories, 'MOBILE') then
                     -- #7 CB Change: "_" is a throwaway variable that I'm using to simplify this code. if the "UpdateStat" function returns true, then the others don't get run at all.
                     local _ = UpdateStat(bp, Land_Mults, Land_Singles, 'LAND') or UpdateStat(bp, Naval_Mults, Naval_Singles, 'NAVAL') or UpdateStat(bp, Air_Mults, Air_Singles, 'AIR')
-                elseif table.find(bp.Categories, 'VTOL') then
-                    -- #6 CB Change - clean up the assignment from using if/then to just assignment.
-                    bp.Physics.GroundCollisionOffset = bp.Physics.GroundCollisionOffset or 1.5
                 end
             end
         end

@@ -66,7 +66,7 @@ UnitBlueprint {
                     SpecularName = '/mods/SCTA-master/units/ARMVP/ARMVP_SpecTeam.dds',
                     AlbedoName = '/mods/SCTA-master/units/ARMVP/ARMVP_Albedo.dds',
                     MeshName =   '/mods/SCTA-master/units/ARMVP/ARMVP_lod0.scm',
-                    ShaderName = 'AeonCZAR', 
+                    ShaderName = 'Unit', 
                     NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },

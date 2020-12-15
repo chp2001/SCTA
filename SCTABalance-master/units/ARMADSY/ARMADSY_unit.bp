@@ -68,7 +68,7 @@ UnitBlueprint {
                         SpecularName = '/mods/SCTA-master/SCTABalance-master/units/ARMDSY/ARMDSY_SpecTeam.dds',
                         AlbedoName = '/mods/SCTA-master/SCTABalance-master/units/ARMDSY/ARMDSY_Albedo.dds',
                         MeshName =   '/mods/SCTA-master/SCTABalance-master/units/ARMDSY/ARMDSY_lod0.scm',
-                        ShaderName = 'AeonCZAR', 
+                        ShaderName = 'Unit', 
                         NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                     },
                 },

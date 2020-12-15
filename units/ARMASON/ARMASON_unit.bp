@@ -81,7 +81,7 @@ UnitBlueprint {
             LODs = {
                 {
                   LODCutoff = 230,
-                    ShaderName = 'Unit', 
+                    ShaderName = 'AeonCZAR', 
 		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },

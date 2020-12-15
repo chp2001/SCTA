@@ -93,7 +93,7 @@ UnitBlueprint {
 		    SpecularName = '/mods/SCTA-master/units/ARMCOM/ARMCOM_SpecTeam.dds',
 		    AlbedoName = '/mods/SCTA-master/units/ARMCOM/ARMCOM_Albedo.dds',
             MeshName =   '/mods/SCTA-master/units/ARMCOM/ARMCOM_lod0.scm',        
-            ShaderName = 'Unit', 
+            ShaderName = 'AeonCZAR', 
                 },
             },
         },

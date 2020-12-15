@@ -83,7 +83,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 300,
-                    ShaderName = 'Unit', 
+                    ShaderName = 'AeonCZAR', 
                 },
             },
         },

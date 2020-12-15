@@ -17,22 +17,17 @@ TAFactory = Class(FactoryUnit) {
 		Open = function(self)
 		end,
 
+		OnStopBuild = function(self, unitBeingBuilt, order)
+			FactoryUnit.OnStopBuild(self, unitBeingBuilt, order)
+			self:Close()
+		end,
+
 		Close = function(self)
-		WaitTicks(5)
 		end,
 
 		CreateBuildEffects = function(self, unitBeingBuilt, order)
 			TAutils.CreateTAFactBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
 		end,
-
-		IdleState = State {
-			Main = function(self)
-				ForkThread(self.Close, self)
-				self:SetBusy(false)
-				self:SetBlockCommandQueue(false)
-				self:DestroyBuildRotator()
-			end,
-		},
 	}
 
 TypeClass = TAFactory

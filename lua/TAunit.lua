@@ -22,6 +22,7 @@ TAunit = Class(Unit)
 		self:SetFireState(FireState.GROUND_FIRE)
 		self:SetDeathWeaponEnabled(true)
 		self:HideFlares()
+		self.CurrentSpeed = 'Stopped'
 		self.FxMovement = TrashBag()
 		if not EntityCategoryContains(categories.NOSMOKE, self) then
 			ForkThread(self.Smoke, self)
@@ -133,7 +134,6 @@ TAunit = Class(Unit)
 }
 
 TAPop = Class(TAunit) {
-
 	Fold = function(self)
 		TAunit.Fold(self)
 		self:EnableIntel('RadarStealth')

@@ -36,12 +36,13 @@ UnitBlueprint {
 		'STRUCTURE',
         'ECONOMIC',
         'SORTECONOMY',
-		'ENERGYPRODUCTION',
-		'CORE',
-		'ENERGY',
-		'LEVEL1',
-	},
+	'ENERGYPRODUCTION',
+	'CORE',
+	'ENERGY',
+	'LEVEL1',
+    },
     Defense = {
+        DamageModifier = 0.33,
         ArmorType = 'Structure',
         Health = 320,
         MaxHealth = 320,
@@ -54,24 +55,6 @@ UnitBlueprint {
     Display = {
         AnimationOpen = '/mods/SCTA-master/units/CORSOLAR/CORSOLAR_Aopen.sca',
         AnimationOpenRate = 1,
-        --[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'wing1','wing2','wing3','wing4'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

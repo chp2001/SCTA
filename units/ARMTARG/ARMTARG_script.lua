@@ -7,8 +7,6 @@ local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 ARMTARG = Class(TAunit) {
-	damageReduction = 1,
-
 	OnCreate = function(self)
 		TAunit.OnCreate(self)
 		self.Spinners = {
@@ -29,11 +27,6 @@ ARMTARG = Class(TAunit) {
 		for k, v in self.Sliders do
 			self.Trash:Add(v)
 		end
-	end,
-
-	OnDamage = function(self, instigator, amount, vector, damageType)
-		TAunit.OnDamage(self, instigator, amount * self.damageReduction, vector, damageType) 
-		#Has Damage Reduction
 	end,
 
 	OnKilled = function(self, instigator, type, overkillRatio)
@@ -69,7 +62,7 @@ ARMTARG = Class(TAunit) {
 	end,
 
 	Open = function(self)
-		self.damageReduction = 1
+		TAunit.Unfold(self)
 
 		--TURN post1 to x-axis <-90.21> SPEED <82.32>;
 		self.Spinners.post1:SetGoal(-90)
@@ -114,6 +107,7 @@ ARMTARG = Class(TAunit) {
 	end,
 
 	Close = function(self)
+		TAunit.Fold(self)
 		--MOVE light4 to x-axis <0> SPEED <1.00>;
 		self.Sliders.light4:SetGoal(0,0,0)
 		self.Sliders.light4:SetSpeed(1)
@@ -152,8 +146,6 @@ ARMTARG = Class(TAunit) {
 		--SLEEP <1220>;
 		--SLEEP <58>;
                 WaitSeconds(1.3)
-
-		self.damageReduction = 0.7
 		self:SetMaintenanceConsumptionInactive()
 	end,
 }

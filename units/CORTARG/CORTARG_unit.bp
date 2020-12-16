@@ -46,6 +46,7 @@ UnitBlueprint {
 	'LEVEL3',
     },
     Defense = {
+        DamageModifier = 0.7,
         ArmorType = 'Structure',
         Health = 1800,
         MaxHealth = 1800,

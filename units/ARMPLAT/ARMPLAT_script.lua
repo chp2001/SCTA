@@ -7,11 +7,6 @@ local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 ARMPLAT = Class(TAFactory) {
-	pauseTime = 5,
-	hideUnit = true,
-
-	---Water = false,
-
 	OnCreate = function(self)
 		self.Sliders = {
 			chassis = CreateSlider(self, 0),

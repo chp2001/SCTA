@@ -6,28 +6,18 @@
 local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 
 ARMMAKR = Class(TAunit) {
-	damageReduction = 1,
-
-
-	OnDamage = function(self, instigator, amount, vector, damageType)
-		#Apply Damage Reduction
-		TAunit.OnDamage(self, instigator, self.damageReduction * amount, vector, damageType) 
-	end,
-
 	OnProductionUnpaused = function(self)
+		TAunit.Unfold(self)
 		TAunit.OnProductionUnpaused(self)
 		self:SetMaintenanceConsumptionActive()
-		
-		self.damageReduction = 1
 		self:PlayUnitSound('Activate')
 	end,
 
 
 	OnProductionPaused = function(self)
 		TAunit.OnProductionPaused(self)
+		TAunit.Fold(self)
 		self:SetMaintenanceConsumptionInactive()
-		
-		self.damageReduction = 0.5
 		self:PlayUnitSound('Deactivate')		
 	end,
 }

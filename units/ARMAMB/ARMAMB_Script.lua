@@ -37,16 +37,12 @@ ARMAMB = Class(TAPop) {
 
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAPop.OnStopBeingBuilt(self,builder,layer)
-		ForkThread(self.Pack,self)
+		ForkThread(self.Fold, self)
 	end,
 
-	OnDamage = function(self, instigator, amount, vector, damageType)
-		TAPop.OnDamage(self, instigator, amount * self.damageReduction, vector, damageType)
-		#Has Damage Reduction
-	end,
 
-	Pack = function(self)
-		TAPop.Pack(self)
+	Fold = function(self)
+		TAPop.Fold(self)
 		--MOVE barrel to z-axis <-7.90> SPEED <24.00>;
 		self.Sliders.barrel:SetGoal(0,0,-7.9)
 		self.Sliders.barrel:SetSpeed(24)

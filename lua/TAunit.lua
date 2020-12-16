@@ -9,18 +9,6 @@ local util = import('/lua/utilities.lua')
 
 TAunit = Class(Unit) 
 {
-	lastHitVector = nil,
-	buildAngle = 0,
-	--TextureAnimation = false,
-    	FxDamage1 = {},
-    	FxDamage2 = {},
-    	FxDamage3 = {},
-	FxMovement = nil,
-	Suicide = nil,
-	CurrentSpeed = 'Stopped',
-	FxReclaim = nil,
-	DestructionExplosionWaitDelayMin = 0,
-	DestructionExplosionWaitDelayMax = 0,
 
     LOGDBG = function(self, msg)
         --LOG(self._UnitName .. "(" .. self.Sync.id .. "):" .. msg)
@@ -75,6 +63,19 @@ TAunit = Class(Unit)
 			end
 		end
 	end,
+
+	OnDamage = function(self, instigator, amount, vector, damageType)
+		Unit.OnDamage(self, instigator, amount * (self.Pack or 1), vector, damageType)
+	end,
+	
+	Fold = function(self)
+		self.Pack = self:GetBlueprint().Defense.DamageModifier
+	end,
+	
+	Unfold = function(self)
+		self.Pack = nil
+	end,
+		
 	
 	Smoke = function(self)
         self:LOGDBG('TAUnit.Smoke')
@@ -132,9 +133,9 @@ TAunit = Class(Unit)
 }
 
 TAPop = Class(TAunit) {
-	damageReduction = 1,
-	Pack = function(self)
-		self.damageReduction = 0.28
+
+	Fold = function(self)
+		TAunit.Fold(self)
 		self:EnableIntel('RadarStealth')
 	end,
 
@@ -175,6 +176,14 @@ TAMass = Class(TAunit) {
         self:RemoveCommandCap('RULEUCC_Stop') 
     end,
 	}
+
+TACloser = Class(TAunit) {
+	OnStopBeingBuilt = function(self,builder,layer)
+		TAunit.OnStopBeingBuilt(self,builder,layer)
+		closeDueToDamage = nil,
+		ChangeState(self, self.OpeningState)
+	end,
+}	
 	
 TAnoassistbuild = Class(TAunit) {
 	OnCreate = function(self)

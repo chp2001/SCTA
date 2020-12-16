@@ -3,15 +3,11 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TACloser = import('/mods/SCTA-master/lua/TAunit.lua').TACloser
 
-ARMSOLAR = Class(TAunit) {
-	closeDueToDamage = nil,
-	damageReduction = 1,
-	productionIsActive = true,
-
+ARMSOLAR = Class(TACloser) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TACloser.OnCreate(self)
 		self.Spinners = {
 			dish1 = CreateRotator(self, 'Dish_01', 'x', nil, 0, 0, 0),
 			dish2 = CreateRotator(self, 'Dish_02', 'z', nil, 0, 0, 0),
@@ -23,15 +19,11 @@ ARMSOLAR = Class(TAunit) {
 		end
 	end,
 
-	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
-		ChangeState(self, self.OpeningState)
-	end,
-
 	OpeningState = State {
 		Main = function(self)
+			self.productionIsActive = true
 			self:PlayUnitSound('Activate')
-			self.damageReduction = 1
+			TACloser.Unfold(self)
 			--TURN dish1 to x-axis <-90.00> SPEED <60.01>
 			self.Spinners.dish1:SetGoal(90)
 			self.Spinners.dish1:SetSpeed(60)
@@ -83,7 +75,7 @@ ARMSOLAR = Class(TAunit) {
 			for k, spinner in self.Spinners do
 				WaitFor(spinner)
 			end
-			self.damageReduction = 0.33
+			TACloser.Fold(self)
 			ChangeState(self, self.IdleClosedState)
 		end,
 
@@ -114,7 +106,7 @@ ARMSOLAR = Class(TAunit) {
 		end,
 
 		OnDamage = function(self, instigator, amount, vector, damageType)
-			TAunit.OnDamage(self, instigator, amount, vector, damageType)
+			TACloser.OnDamage(self, instigator, amount, vector, damageType)
 			self.DamageSeconds = 8
 			self.closeDueToDamage = true
 			ChangeState(self, self.ClosingState)
@@ -123,13 +115,13 @@ ARMSOLAR = Class(TAunit) {
 	},
 		
 	OnProductionUnpaused = function(self)
-		TAunit.OnProductionUnpaused(self)
+		TACloser.OnProductionUnpaused(self)
 		self.productionIsActive = true
 		ChangeState(self, self.OpeningState)
 	end,
 
 	OnProductionPaused = function(self)
-		TAunit.OnProductionPaused(self)
+		TACloser.OnProductionPaused(self)
 		self.productionIsActive = nil
 		ChangeState(self, self.ClosingState)
 	end,
@@ -137,8 +129,7 @@ ARMSOLAR = Class(TAunit) {
 
 
 	OnDamage = function(self, instigator, amount, vector, damageType)
-		#Apply Damage Reduction
-		TAunit.OnDamage(self, instigator, amount * self.damageReduction, vector, damageType) 
+		TACloser.OnDamage(self, instigator, amount, vector, damageType) 
 		self.DamageSeconds = 8
 	end,
 }

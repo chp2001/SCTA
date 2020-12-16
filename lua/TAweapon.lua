@@ -6,15 +6,6 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 
 TAweapon = Class(DefaultWeapon) {
-    FxRackChargeMuzzleFlash = {},
-    FxRackChargeMuzzleFlashScale = 1,
-    FxChargeMuzzleFlash = {},
-    FxChargeMuzzleFlashScale = 1,
-    FxMuzzleFlash = {
-        '/effects/emitters/default_muzzle_flash_01_emit.bp',
-        '/effects/emitters/default_muzzle_flash_02_emit.bp',
-    },
-
     StartEconomyDrain = function(self)
         DefaultWeapon.StartEconomyDrain(self)
     end,
@@ -132,18 +123,30 @@ TAweapon = Class(DefaultWeapon) {
 TAHide = Class(TAweapon) {
 
     PlayFxWeaponUnpackSequence = function(self)
-        self.unit.damageReduction = 1
+        self.unit.Pack = 1
         self.unit:DisableUnitIntel('RadarStealth')
         TAweapon.PlayFxWeaponUnpackSequence(self)
     end,
 
     PlayFxWeaponPackSequence = function(self)
-        self.unit.damageReduction = 0.28
+        self.unit.Pack = 0.28
         self.unit:EnableUnitIntel('RadarStealth')
         TAweapon.PlayFxWeaponPackSequence(self)
     end,
 }
 
+TAPopLaser = Class(TAweapon) {
+
+    PlayFxWeaponUnpackSequence = function(self)
+        self.unit.Pack = 1
+        TAweapon.PlayFxWeaponUnpackSequence(self)
+    end,
+
+    PlayFxWeaponPackSequence = function(self)
+        self.unit.Pack = 0.5
+        TAweapon.PlayFxWeaponPackSequence(self)
+    end,
+}
 
 TABuzz = Class(TAweapon) {
     OnCreate = function(self)

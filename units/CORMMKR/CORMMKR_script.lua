@@ -1,13 +1,10 @@
 
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TACloser = import('/mods/SCTA-master/lua/TACloser.lua').TACloser
 
-CORMMKR = Class(TAunit) {
-	closeDueToDamage = nil,
-	productionIsActive = true,
-
+CORMMKR = Class(TACloser) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TACloser.OnCreate(self)
 		self.Spinners = {
 			lid1 = CreateRotator(self, 'flap1', 'x', nil, 0, 0, 0),
 			lid2 = CreateRotator(self, 'flap2', 'z', nil, 0, 0, 0),
@@ -19,18 +16,10 @@ CORMMKR = Class(TAunit) {
 		end
 	end,
 
-	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
-		ChangeState(self, self.OpeningState)
-	end,
-
 	OpeningState = State {
 		Main = function(self)
 			self:PlayUnitSound('Activate')
-			
-
-
-			--SLEEP <772>;
+			TACloser.Unfold(self)
 			WaitSeconds(0.75)
 
 			--TURN lid1 to x-axis <35.26> SPEED <45.57>;
@@ -67,7 +56,7 @@ CORMMKR = Class(TAunit) {
 			self:SetProductionActive(false)
 			self:PlayUnitSound('Activate')
 			self:SetMaintenanceConsumptionInactive()
-
+			TACloser.Fold(self)
 			--TURN lid1 to x-axis <0> SPEED <51.35>;
 			self.Spinners.lid1:SetGoal(0)
 			self.Spinners.lid1:SetSpeed(51.35)
@@ -113,7 +102,7 @@ CORMMKR = Class(TAunit) {
 		end,
 
 		OnDamage = function(self, instigator, amount, vector, damageType)
-			TAunit.OnDamage(self, instigator, amount, vector, damageType)
+			TACloser.OnDamage(self, instigator, amount, vector, damageType)
 			self.DamageSeconds = 8
 			self.closeDueToDamage = true
 			ChangeState(self, self.ClosingState)
@@ -122,13 +111,13 @@ CORMMKR = Class(TAunit) {
 	},
 		
 	OnProductionUnpaused = function(self)
-		TAunit.OnProductionUnpaused(self)
+		TACloser.OnProductionUnpaused(self)
 		self.productionIsActive = true
 		ChangeState(self, self.OpeningState)
 	end,
 
 	OnProductionPaused = function(self)
-		TAunit.OnProductionPaused(self)
+		TACloser.OnProductionPaused(self)
 		self.productionIsActive = nil
 		ChangeState(self, self.ClosingState)
 	end,
@@ -136,7 +125,7 @@ CORMMKR = Class(TAunit) {
 
 
 	OnDamage = function(self, instigator, amount, vector, damageType)
-		TAunit.OnDamage(self, instigator, amount, vector, damageType) 
+		TACloser.OnDamage(self, instigator, amount, vector, damageType) 
 		self.DamageSeconds = 8
 	end,
 }

@@ -3,15 +3,11 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TACloser = import('/mods/SCTA-master/lua/TAunit.lua').TACloser
 
-CORSOLAR = Class(TAunit) {
-	closeDueToDamage = nil,
-	damageReduction = 1,
-	productionIsActive = true,
-
+CORSOLAR = Class(TACloser) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TACloser.OnCreate(self)
 		self.Spinners = {
 			wing1 = CreateRotator(self, 'wing1', 'z', nil, 0, 0, 0),
 			wing2 = CreateRotator(self, 'wing2', 'z', nil, 0, 0, 0),
@@ -36,15 +32,14 @@ CORSOLAR = Class(TAunit) {
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
-		ChangeState(self, self.OpeningState)
+		TACloser.OnStopBeingBuilt(self,builder,layer)
+		self.productionIsActive = true
 	end,
 
 	OpeningState = State {
 		Main = function(self)
 			self:PlayUnitSound('Activate')
-			self.damageReduction = 1
-
+			TACloser.Unfold(self)
 			--MOVE shell to y-axis <4.09> SPEED <8.00>;
 			self.Sliders.shell:SetGoal(0,4.1,0)
 			self.Sliders.shell:SetSpeed(8)
@@ -149,7 +144,7 @@ CORSOLAR = Class(TAunit) {
 		Main = function(self)
 			self:SetProductionActive(false)
 			self:PlayUnitSound('Activate')
-
+			TACloser.Fold(self)
 			--TURN wing3 to x-axis <-90.00> SPEED <321.68>;
 			self.Spinners.wing3:SetGoal(-90)
 			self.Spinners.wing3:SetSpeed(320)
@@ -242,8 +237,6 @@ CORSOLAR = Class(TAunit) {
 			WaitSeconds(0.35)
 
 			--SLEEP <52>;
-
-			self.damageReduction = 0.33
 			ChangeState(self, self.IdleClosedState)
 		end,
 
@@ -274,7 +267,7 @@ CORSOLAR = Class(TAunit) {
 		end,
 
 		OnDamage = function(self, instigator, amount, vector, damageType)
-			TAunit.OnDamage(self, instigator, amount, vector, damageType)
+			TACloser.OnDamage(self, instigator, amount, vector, damageType)
 			self.DamageSeconds = 8
 			self.closeDueToDamage = true
 			ChangeState(self, self.ClosingState)
@@ -283,13 +276,13 @@ CORSOLAR = Class(TAunit) {
 	},
 		
 	OnProductionUnpaused = function(self)
-		TAunit.OnProductionUnpaused(self)
+		TACloser.OnProductionUnpaused(self)
 		self.productionIsActive = true
 		ChangeState(self, self.OpeningState)
 	end,
 
 	OnProductionPaused = function(self)
-		TAunit.OnProductionPaused(self)
+		TACloser.OnProductionPaused(self)
 		self.productionIsActive = nil
 		ChangeState(self, self.ClosingState)
 	end,
@@ -297,7 +290,7 @@ CORSOLAR = Class(TAunit) {
 
 
 	OnDamage = function(self, instigator, amount, vector, damageType)
-		TAunit.OnDamage(self, instigator, amount * self.damageReduction, vector, damageType) 
+		TACloser.OnDamage(self, instigator, amount, vector, damageType) 
 		self.DamageSeconds = 8
 	end,
 }

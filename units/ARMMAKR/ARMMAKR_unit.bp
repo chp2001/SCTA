@@ -53,6 +53,7 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.3,
     Defense = {
+        DamageModifier = 0.5,
         ArmorType = 'Structure',
         AirThreatLevel = 0,
         EconomyThreatLevel = 2,

@@ -7,17 +7,10 @@ local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 CORTARG = Class(TAunit) {
-	damageReduction = 1,
-
 	OnCreate = function(self)
 		TAunit.OnCreate(self)
 		self.AnimManip = CreateAnimator(self)
 		self.Trash:Add(self.AnimManip)
-	end,
-
-	OnDamage = function(self, instigator, amount, vector, damageType)
-		TAunit.OnDamage(self, instigator, amount * self.damageReduction, vector, damageType) 
-		#Has Damage Reduction
 	end,
 
 	OnKilled = function(self, instigator, type, overkillRatio)
@@ -55,7 +48,7 @@ CORTARG = Class(TAunit) {
 	Open = function(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
-		self.damageReduction = 1
+		TAunit.Unfold(self)
                 WaitSeconds(1.2)
 		self:SetMaintenanceConsumptionActive()
 	end,
@@ -65,7 +58,7 @@ CORTARG = Class(TAunit) {
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
 		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
                 WaitFor(self.AnimManip)
-		self.damageReduction = 0.7
+		TAunit.Fold(self)
 		self:SetMaintenanceConsumptionInactive()
 		end
 	end,

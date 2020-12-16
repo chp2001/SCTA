@@ -3,15 +3,11 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TACloser = import('/mods/SCTA-master/lua/TAunit.lua').TACloser
 
-CORARAD = Class(TAunit) {
-	closeDueToDamage = nil,
-
-	intelIsActive = true,
-
+CORARAD = Class(TACloser) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TACloser.OnCreate(self)
 		self.Spinners = {
 			dish = CreateRotator(self, 'dish', 'x', nil, 0, 0, 0),
 			turret = CreateRotator(self, 'turret', 'y', nil, 0, 0, 0),
@@ -21,23 +17,18 @@ CORARAD = Class(TAunit) {
 		end
 	end,
 
-	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
-		self.intelIsActive = true
-		self:SetMaintenanceConsumptionActive()
-		self:PlayUnitSound('Activate')
-		ChangeState(self, self.OpeningState)
-	end,
-
 	OnDestroy = function(self)
-		TAunit.OnDestroy(self)
+		TACloser.OnDestroy(self)
 		ChangeState(self, self.DeadState)
 	end,
 
 	OpeningState = State {
 		Main = function(self)
-
+			TACloser.Unfold(self)
+			self:EnableIntel('Radar')
 			self:PlayUnitSound('Activate')
+			self.intelIsActive = true
+			self:SetMaintenanceConsumptionActive()
 
 			--SPIN turret around y-axis  SPEED <20.00>;
 			self.Spinners.turret:ClearGoal()
@@ -46,8 +37,6 @@ CORARAD = Class(TAunit) {
 			--SPIN dish around x-axis  SPEED <-200.04>;
 			self.Spinners.dish:ClearGoal()
 			self.Spinners.dish:SetSpeed(-200)
-			
-			self:EnableIntel('Radar')
 			ChangeState(self, self.IdleOpenState)
 		end,
 	},
@@ -55,6 +44,7 @@ CORARAD = Class(TAunit) {
 
 	ClosingState = State {
 		Main = function(self)
+			TACloser.Fold(self)
 			self:DisableIntel('Radar')
 
 			self:PlayUnitSound('Deactivate')
@@ -89,7 +79,7 @@ CORARAD = Class(TAunit) {
 		end,
 
 		OnDamage = function(self, instigator, amount, vector, damageType)
-			TAunit.OnDamage(self, instigator, amount, vector, damageType) 
+			TACloser.OnDamage(self, instigator, amount, vector, damageType) 
 
 			self.DamageSeconds = 8
 			ChangeState(self, self.ClosingState)
@@ -102,7 +92,7 @@ CORARAD = Class(TAunit) {
 		end,
 
 		OnDamage = function(self, instigator, amount, vector, damageType)
-			TAunit.OnDamage(self, instigator, amount, vector, damageType)
+			TACloser.OnDamage(self, instigator, amount, vector, damageType)
 			self.DamageSeconds = 8
 			self.closeDueToDamage = true
 			ChangeState(self, self.ClosingState)
@@ -116,7 +106,7 @@ CORARAD = Class(TAunit) {
 			self:SetMaintenanceConsumptionInactive()
 			ChangeState(self, self.ClosingState)
 		end
-		TAunit.OnScriptBitSet(self, bit)
+		TACloser.OnScriptBitSet(self, bit)
 	end,
 
 
@@ -126,7 +116,7 @@ CORARAD = Class(TAunit) {
 			self:SetMaintenanceConsumptionActive()
 			ChangeState(self, self.OpeningState)
 		end
-		TAunit.OnScriptBitClear(self, bit)
+		TACloser.OnScriptBitClear(self, bit)
 	end,
 
 	DeadState = State {

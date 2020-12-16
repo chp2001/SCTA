@@ -33,22 +33,16 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-
-	
 	'STRUCTURE',
                 'ECONOMIC',
         'SORTECONOMY',
 	'ENERGYPRODUCTION',
-
-	
 	'ARM',
 	'ENERGY',
 	'LEVEL1',
-	
-	
-	
     },
     Defense = {
+        DamageModifier = 0.33,
         ArmorType = 'Structure',
         AirThreatLevel = 0,
         EconomyThreatLevel = 1,
@@ -59,43 +53,6 @@ UnitBlueprint {
     },
     Description = 'Produces Energy',
     Display = {
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Stone', 'ArmSolar'},
-		DestructionProjectiles = {
-			{
-				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMSOLAR_debris_proj.bp',
-				Bone = 'Dish_01',
-			},
-			{
-				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMSOLAR_debris_proj.bp',
-				Bone = 'Dish_02',
-			},
-			{
-				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMSOLAR_debris_proj.bp',
-				Bone = 'Dish_03',
-			},
-			{
-				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMSOLAR_debris_proj.bp',
-				Bone = 'Dish_04',
-			},
-		},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'Dish_01','Dish_02','Dish_03','Dish_04'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

@@ -3,14 +3,11 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TACloser = import('/mods/SCTA-master/lua/TAunit.lua').TACloser
 
-ARMMMKR = Class(TAunit) {
-	closeDueToDamage = nil,
-	productionIsActive = true,
-
+ARMMMKR = Class(TACloser) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TACloser.OnCreate(self)
 		self.Spinners = {
 			lid1 = CreateRotator(self, 'lid1', 'x', nil, 0, 0, 0),
 			lid2 = CreateRotator(self, 'lid2', 'x', nil, 0, 0, 0),
@@ -29,13 +26,10 @@ ARMMMKR = Class(TAunit) {
 		end
 	end,
 
-	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
-		ChangeState(self, self.OpeningState)
-	end,
-
 	OpeningState = State {
 		Main = function(self)
+			TACloser.Unfold(self)
+			self.productionIsActive = true
 			self:PlayUnitSound('Activate')
 			
 
@@ -105,6 +99,7 @@ ARMMMKR = Class(TAunit) {
 
 	ClosingState = State {
 		Main = function(self)
+			TACloser.Fold(self)
 			self:SetProductionActive(false)
 			self:PlayUnitSound('Activate')
 			self:SetMaintenanceConsumptionInactive()
@@ -196,7 +191,7 @@ ARMMMKR = Class(TAunit) {
 		end,
 
 		OnDamage = function(self, instigator, amount, vector, damageType)
-			TAunit.OnDamage(self, instigator, amount, vector, damageType)
+			TACloser.OnDamage(self, instigator, amount, vector, damageType)
 			self.DamageSeconds = 8
 			self.closeDueToDamage = true
 			ChangeState(self, self.ClosingState)
@@ -205,13 +200,13 @@ ARMMMKR = Class(TAunit) {
 	},
 		
 	OnProductionUnpaused = function(self)
-		TAunit.OnProductionUnpaused(self)
+		TACloser.OnProductionUnpaused(self)
 		self.productionIsActive = true
 		ChangeState(self, self.OpeningState)
 	end,
 
 	OnProductionPaused = function(self)
-		TAunit.OnProductionPaused(self)
+		TACloser.OnProductionPaused(self)
 		self.productionIsActive = nil
 		ChangeState(self, self.ClosingState)
 	end,
@@ -219,7 +214,7 @@ ARMMMKR = Class(TAunit) {
 
 
 	OnDamage = function(self, instigator, amount, vector, damageType)
-		TAunit.OnDamage(self, instigator, amount, vector, damageType) 
+		TACloser.OnDamage(self, instigator, amount, vector, damageType) 
 		self.DamageSeconds = 8
 	end,
 }

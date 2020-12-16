@@ -43,10 +43,9 @@ UnitBlueprint {
 	'SPECIAL',
 	'LEVEL3',
 	'SORTINTEL',
-	
-	
     },
     Defense = {
+        DamageModifier = 0.7,
         ArmorType = 'Structure',
         AirThreatLevel = 0,
         EconomyThreatLevel = 500,

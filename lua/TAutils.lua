@@ -1,5 +1,7 @@
 local util = import('/lua/utilities.lua')
 local EffectUtil = import('/lua/EffectUtilities.lua')
+local Entity = import('/lua/sim/Entity.lua').Entity
+local EffectTemplate = import('/lua/EffectTemplates.lua')
 
 CreateTABuildingEffects = function( self, unitBeingBuilt, order )
 	WaitSeconds( 0.1 )
@@ -7,6 +9,7 @@ CreateTABuildingEffects = function( self, unitBeingBuilt, order )
 		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.1) )         
 	end
 end
+
 
 CreateTAFactBuildingEffects = function( self, unitBeingBuilt, order )
 	WaitSeconds( 0.1 )
@@ -21,6 +24,15 @@ CreateTAGantBuildingEffects = function( self, unitBeingBuilt, order )
 		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.2) )         
     end
 end
+
+TAReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, EffectsBag)
+    EffectUtil.PlayReclaimEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
+    local target = reclaimed
+    for k, v in target do
+        reclaimed.ReclaimEffectsBag:Add( CreateAttachedEmitter(reclaimed, 0, reclaimer:GetArmy(), '/mods/SCTA-master/effects/emitters/reclaimnanolathe.bp' ):ScaleEmitter(0.08) )
+    end      
+end
+
 
 targetingFacilityData = {}
 

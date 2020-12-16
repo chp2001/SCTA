@@ -53,7 +53,8 @@ UnitBlueprint {
     Description = 'Produces Energy',
     Display = {
         AnimationOpen = '/mods/SCTA-master/units/CORSOLAR/CORSOLAR_Aopen.sca',
-		--[[DestructionEffects = {
+        AnimationOpenRate = 1,
+        --[[DestructionEffects = {
 		DestructionEmitters = {
 			{
 				EmitterBone = {0},

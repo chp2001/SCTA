@@ -31,8 +31,7 @@ UnitBlueprint {
       Physics = {
         MaxAcceleration = 1,
         MaxBrake = 1.4,
-        MaxSpeed = 1.5,
-        MotionType = 'RULEUMT_Amphibious',
+        MaxSpeed = 1.42,
     },
     Economy = {
         MaxBuildDistance = 10,

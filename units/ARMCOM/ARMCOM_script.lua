@@ -3,7 +3,7 @@
 #
 #Script created by Raevn
 
-local TACommander = import('/mods/SCTA-master/lua/TAconstructor.lua').TACommander
+local TARealCommander = import('/mods/SCTA-master/lua/TAconstructor.lua').TARealCommander
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 local TADGun = import('/mods/SCTA-master/lua/TAweapon.lua').TADGun
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
@@ -11,7 +11,7 @@ local TACommanderDeathWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TACo
 
 #ARM Commander - Commander
 
-ARMCOM = Class(TACommander) {
+ARMCOM = Class(TARealCommander) {
 
 	Weapons = {
 		COMLASER = Class(TAweapon) {
@@ -50,7 +50,7 @@ ARMCOM = Class(TACommander) {
     end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TACommander.OnStopBeingBuilt(self,builder,layer)
+		TARealCommander.OnStopBeingBuilt(self,builder,layer)
 		ForkThread(self.GiveInitialResources, self)
 			self:SetScriptBit('RULEUTC_CloakToggle', true)
 			self:ForkThread(self.PlayCommanderWarpInEffect)
@@ -65,9 +65,9 @@ ARMCOM = Class(TACommander) {
 			self:OnIntelDisabled()
 			self.cloakOn = nil
 			if self.CloakThread then KillThread(self.CloakThread) end
-			self.CloakThread = self:ForkThread(TACommander.CloakDetection)	
+			self.CloakThread = self:ForkThread(TARealCommander.CloakDetection)	
 		end
-		TACommander.OnScriptBitSet(self, bit)
+		TARealCommander.OnScriptBitSet(self, bit)
 	end,
 
 
@@ -78,7 +78,7 @@ ARMCOM = Class(TACommander) {
 				self.cloakOn = nil
 			end
 		end
-		TACommander.OnScriptBitClear(self, bit)
+		TARealCommander.OnScriptBitClear(self, bit)
 	end,
 
 

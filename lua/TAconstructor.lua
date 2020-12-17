@@ -49,12 +49,11 @@ TAconstructor = Class(TAWalking) {
     end,
     
     OnStartBuild = function(self, unitBeingBuilt, order )
-        TAWalking.OnStartBuild(self,unitBeingBuilt, order)
         self:OnPrepareArmToBuild()
         self.UnitBeingBuilt = unitBeingBuilt
         self.UnitBuildOrder = order
         self.BuildingUnit = true
-        --LOG(self.cloakOn)
+        TAWalking.OnStartBuild(self,unitBeingBuilt, order)
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)
@@ -104,7 +103,7 @@ TAconstructor = Class(TAWalking) {
         TAWalking.OnStopBuilderTracking(self)
 
         if self.StoppedBuilding then
-            self.StoppedBuilding = nil
+            self.StoppedBuilding = false
             self.BuildArmManipulator:Disable()
             self.BuildingOpenAnimManip:SetRate(-(self:GetBlueprint().Display.AnimationBuildRate or 1))
             self:SetImmobile(false)
@@ -124,6 +123,7 @@ TAconstructor = Class(TAWalking) {
     end,         
     
     OnStopReclaim = function(self, target)
+        self.StoppedBuilding = false
         if self.BuildingOpenAnimManip then
             self.BuildingOpenAnimManip:SetRate(-1)
         end
@@ -131,8 +131,14 @@ TAconstructor = Class(TAWalking) {
     end,
 
     OnStartReclaim = function(self, target)
-        self:OnPrepareArmToBuild()
+        if self.BuildingOpenAnimManip then
+            self.BuildingOpenAnimManip:SetRate(self:GetBlueprint().Display.AnimationBuildRate or 1)
+            if self.BuildArmManipulator then
+                self.StoppedBuilding = false
+                ForkThread( self.WaitForBuildAnimation, self, true )
         TAWalking.OnStartReclaim(self, target)
+            end
+        end
     end,
 }
 

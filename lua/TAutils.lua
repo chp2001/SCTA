@@ -27,9 +27,8 @@ end
 
 TAReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, EffectsBag)
     EffectUtil.PlayReclaimEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
-    local target = reclaimed
-    for k, v in target do
-        reclaimed.ReclaimEffectsBag:Add( CreateAttachedEmitter(reclaimed, 0, reclaimer:GetArmy(), '/mods/SCTA-master/effects/emitters/reclaimnanolathe.bp' ):ScaleEmitter(0.08) )
+    for k, v in reclaimer:GetBlueprint().General.BuildBones.BuildEffectBones do
+		reclaimer.ReclaimEffectsBag:Add( CreateAttachedEmitter( reclaimer, v, reclaimer:GetArmy(),  '/mods/SCTA-master/effects/emitters/reclaimnanolathe.bp' ):ScaleEmitter(0.04):OffsetEmitter(0,0,1))
     end      
 end
 

@@ -32,14 +32,14 @@ ARMASON = Class(TAunit) {
 	end,
 
 	OnIntelDisabled = function(self)
-		self:Pack()
+		self:Fold()
 		self:SetMaintenanceConsumptionInactive()
 		TAunit.OnIntelDisabled(self)
 		self:PlayUnitSound('Deactivate')
 	end,
 
-	Pack = function(self)
-		TAunit.Pack(self)
+	Fold = function(self)
+		TAunit.Fold(self)
 				--TURN hinge1 to x-axis <0> SPEED <68.78>;
 				self.Spinners.hinge1:SetGoal(0)
 				self.Spinners.hinge1:SetSpeed(68)
@@ -82,14 +82,14 @@ ARMASON = Class(TAunit) {
 		
 
 	OnIntelEnabled = function(self)	
-		self:Unpack()
+		self:Unfold()
 		self:SetMaintenanceConsumptionActive()
 		TAunit.OnIntelEnabled(self)
 	self:PlayUnitSound('Activate')
 	end,
 
-	Unpack = function(self)
-		TAunit.Unpack(self)
+	Unfold = function(self)
+		TAunit.Unfold(self)
 		--TURN hinge1 to x-axis <133.26> SPEED <68.74>;
 		self.Spinners.hinge1:SetGoal(130)
 		self.Spinners.hinge1:SetSpeed(68)

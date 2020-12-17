@@ -37,8 +37,8 @@ ProjectileBlueprint {
         'DIRECTFIRE'
     },
     Display = {
-        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/Plasma_mesh.bp',
-        UniformScale = 0.30,
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/dgun_mesh.bp',
+        UniformScale = 0.45,
         StrategicIconSize = 1,
     },
     General = {
@@ -56,7 +56,7 @@ ProjectileBlueprint {
     },
     Physics = {
         DestroyOnWater = true,
-        InitialSpeed = 32,
+        InitialSpeed = 40,
         Lifetime = 4,
         UseGravity = true,
     },

@@ -7,10 +7,7 @@ local EffectUtil = import('/lua/EffectUtilities.lua')
 TAconstructor = Class(TAWalking) {
     OnCreate = function(self)
         TAWalking.OnCreate(self) 
-    
-      
         local bp = self:GetBlueprint()
-
         -- Save build effect bones for faster access when creating build effects
         self.BuildEffectBones = bp.General.BuildBones.BuildEffectBones
 
@@ -50,11 +47,9 @@ TAconstructor = Class(TAWalking) {
     
     OnStartBuild = function(self, unitBeingBuilt, order )
         TAWalking.OnStartBuild(self,unitBeingBuilt, order)
-        self:OnPrepareArmToBuild()
         self.UnitBeingBuilt = unitBeingBuilt
         self.UnitBuildOrder = order
         self.BuildingUnit = true
-        --LOG(self.cloakOn)
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)
@@ -104,7 +99,7 @@ TAconstructor = Class(TAWalking) {
         TAWalking.OnStopBuilderTracking(self)
 
         if self.StoppedBuilding then
-            self.StoppedBuilding = nil
+            self.StoppedBuilding = false
             self.BuildArmManipulator:Disable()
             self.BuildingOpenAnimManip:SetRate(-(self:GetBlueprint().Display.AnimationBuildRate or 1))
             self:SetImmobile(false)
@@ -116,7 +111,7 @@ TAconstructor = Class(TAWalking) {
     end,
 
     CreateReclaimEffects = function( self, target )
-		EffectUtil.PlayReclaimEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.ReclaimEffectsBag )
+		TAutils.TAReclaimEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.ReclaimEffectsBag )
     end,
     
     CreateReclaimEndEffects = function( self, target )
@@ -124,14 +119,13 @@ TAconstructor = Class(TAWalking) {
     end,         
     
     OnStopReclaim = function(self, target)
+        TAWalking.OnStopReclaim(self, target)
         if self.BuildingOpenAnimManip then
             self.BuildingOpenAnimManip:SetRate(-1)
         end
-        TAWalking.OnStopReclaim(self, target)
     end,
 
     OnStartReclaim = function(self, target)
-        self:OnPrepareArmToBuild()
         TAWalking.OnStartReclaim(self, target)
     end,
 }

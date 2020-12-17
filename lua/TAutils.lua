@@ -36,6 +36,24 @@ TAReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, EffectsBag)
     end      
 end
 
+TAAirReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, EffectsBag)
+    WaitSeconds(0.75)
+    EffectUtil.PlayReclaimEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
+    for k, v in reclaimer:GetBlueprint().General.BuildBones.BuildEffectBones do
+		reclaimer.ReclaimEffectsBag:Add( CreateAttachedEmitter( reclaimer, v, reclaimer:GetArmy(),  '/mods/SCTA-master/effects/emitters/reclaimnanolathe.bp' ):ScaleEmitter(0.05):OffsetEmitter(0.1,0,1))
+    end      
+end
+
+
+TACaptureEffect = function(capturer, captive, BuildEffectBones, EffectsBag)
+    WaitSeconds(0.75)
+    EffectUtil.PlayCaptureEffects(capturer, captive, BuildEffectBones, EffectsBag)    
+    for k, v in capturer:GetBlueprint().General.BuildBones.BuildEffectBones do
+		capturer.CaptureEffectsBag:Add( CreateAttachedEmitter( capturer, v, capturer:GetArmy(),  '/mods/SCTA-master/effects/emitters/reclaimnanolathe.bp' ):ScaleEmitter(0.08):OffsetEmitter(0,-0.05,2))
+    end
+end
+
+
 
 targetingFacilityData = {}
 

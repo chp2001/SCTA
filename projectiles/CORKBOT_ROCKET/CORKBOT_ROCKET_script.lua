@@ -7,7 +7,17 @@ local TAMissileProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TA
 
 CORKBOT_ROCKET = Class(TAMissileProjectile) 
 {
-	TrackTime = 4,
+	OnCreate = function(self)
+		TAMissileProjectile.OnCreate(self)
+		self.TrackTime = 4
+		self:ForkThread( self.MovementThread )
+	end,
+
+	MovementThread = function(self)
+		WaitSeconds(1)
+		self:TrackTarget(true)
+		WaitSeconds(1)
+	end,
 }
 
 TypeClass = CORKBOT_ROCKET

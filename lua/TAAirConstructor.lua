@@ -55,11 +55,23 @@ TAAirConstructor = Class(TAair) {
 
     OnStopBuilderTracking = function(self)
         TAair.OnStopBuilderTracking(self)
-
         if self.StoppedBuilding then
             self.StoppedBuilding = false
+            self.BuildArmManipulator:Disable()
             self:SetImmobile(false)
         end
+    end,
+
+    OnPrepareArmToBuild = function(self)
+        TAair.OnPrepareArmToBuild(self)  
+         if self:IsMoving() then
+            self:SetImmobile(true)
+            self:ForkThread(function() WaitTicks(1) if not self:BeenDestroyed() then self:SetImmobile(false) end end)
+        end
+    end,
+
+    OnStartReclaim = function(self, target)
+        TAair.OnStartReclaim(self, target)
     end,
     
 	CreateBuildEffects = function(self, unitBeingBuilt, order)
@@ -67,9 +79,9 @@ TAAirConstructor = Class(TAair) {
     end,
 
     CreateReclaimEffects = function( self, target )
-		EffectUtil.PlayReclaimEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.ReclaimEffectsBag )
+		TAutils.TAAirReclaimEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.ReclaimEffectsBag )
     end,
-    
+
     CreateReclaimEndEffects = function( self, target )
         EffectUtil.PlayReclaimEndEffects( self, target )
     end,         

@@ -6,8 +6,6 @@
 local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 
 ARMRAD = Class(TAunit) {
-	intelIsActive = true,
-
 	OnCreate = function(self)
 		TAunit.OnCreate(self)
 		self.Spinners = {
@@ -18,6 +16,7 @@ ARMRAD = Class(TAunit) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
+		self.intelIsActive = true
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)

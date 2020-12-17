@@ -8,10 +8,8 @@ local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 ARMAAS = Class(TAunit) {
 	Weapons = {
-		ARMAAS_WEAPON1 = Class(TAweapon) {},
-		ARMAAS_WEAPON2 = Class(TAweapon) {},
-		ARMAAS_WEAPON3 = Class(TAweapon) {},
-	},
+			WEAPON = Class(TAweapon) {},
+		},
 }
 
 TypeClass = ARMAAS

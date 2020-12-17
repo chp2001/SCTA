@@ -6,10 +6,6 @@
 local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
 
 ARMCARRY = Class(TAFactory) {
-	pauseTime = 5,
-	hideUnit = true,
-
-
 	OnCreate = function(self)
 		TAFactory.OnCreate(self)
 		self.Spinners = {

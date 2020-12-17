@@ -8,12 +8,9 @@ local TAWalking = import('/mods/SCTA-master/lua/TAMotion.lua').TAWalking
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
   
 CORPYRO = Class(TAWalking) {
-	#NEED A MUCH BETTER WAY OF DOING SOUND
-	lastSound = 0,
-
 	OnCreate = function(self)
 		TAWalking.OnCreate(self)
-		lastSound = 0
+		self.lastSound = 0
 	end,
 
 

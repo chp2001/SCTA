@@ -1,10 +1,10 @@
 
-local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstructor
+local TACommander = import('/mods/SCTA-master/lua/TAconstructor.lua').TACommander
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local TADGun = import('/mods/SCTA-master/lua/TAweapon.lua').TADGun
 
-CORDECOM = Class(TAconstructor) {
+CORDECOM = Class(TACommander) {
 
 	Weapons = {
 		COMLASER = Class(TAweapon) {
@@ -17,11 +17,6 @@ CORDECOM = Class(TAconstructor) {
 		},
 
 	},
-	DeathThread = function(self)
-		local army = self:GetArmy()
-		CreateAttachedEmitter( self, 0, army, '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp'):ScaleEmitter(5)
-		TAconstructor.DeathThread(self)
-    end,
 }
 
 TypeClass = CORDECOM

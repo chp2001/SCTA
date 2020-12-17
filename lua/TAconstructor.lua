@@ -201,19 +201,54 @@ TANecro = Class(TAconstructor) {
 
 TACommander = Class(TAconstructor) {
 
-    
     OnCreate = function(self)
 		TAconstructor.OnCreate(self)
 		self:SetCapturable(false)
 	end,
+    
+    CreateCaptureEffects = function( self, target )
+		TAutils.TACaptureEffect( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.CaptureEffectsBag )
+    end,
 
-	OnStartReclaim = function(self, target)
-		TAconstructor.OnStartReclaim(self, target)
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
+	OnStopCapture = function(self, target)
+		TAconstructor.OnStopCapture(self, target)
 	end,
     
-	OnMotionHorzEventChange = function(self, new, old )
-		TAconstructor.OnMotionHorzEventChange(self, new, old)
+    OnFailedCapture = function(self, target)
+		TAconstructor.OnFailedCapture(self, target)
+    end,
+
+	DeathThread = function(self)
+		local army = self:GetArmy()
+		CreateAttachedEmitter( self, 0, army, '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp'):ScaleEmitter(5)
+		TAconstructor.DeathThread(self)
+    end,
+    
+    DoTakeDamage = function(self, instigator, amount, vector, damageType)
+        -- Handle incoming OC damage
+        if damageType == 'Overcharge' then
+            local wep = instigator:GetWeaponByLabel('OverCharge')
+            amount = wep:GetBlueprint().Overcharge.commandDamage
+        end
+
+        TAconstructor.DoTakeDamage(self, instigator, amount, vector, damageType)
+    end,
+
+}
+
+TARealCommander = Class(TACommander) {
+    OnStartReclaim = function(self, target)
+		TACommander.OnStartReclaim(self, target)
+		self:SetScriptBit('RULEUTC_CloakToggle', true)
+	end,
+
+	OnStartCapture = function(self, target)
+		TACommander.OnStartCapture(self, target)
+		self:SetScriptBit('RULEUTC_CloakToggle', true)
+    end,
+
+    OnMotionHorzEventChange = function(self, new, old )
+		TACommander.OnMotionHorzEventChange(self, new, old)
 		if old == 'Stopped' then
 			self:SetConsumptionPerSecondEnergy(1000)
 			self.motion = 'Moving'
@@ -244,67 +279,8 @@ TACommander = Class(TAconstructor) {
 		--end
 	end,
 
-	OnStartCapture = function(self, target)
-		TAconstructor.OnStartCapture(self, target)
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
-    end,
-    
-    CreateCaptureEffects = function( self, target )
-		EffectUtil.PlayCaptureEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.CaptureEffectsBag )
-    end,
-
-	OnStopCapture = function(self, target)
-		TAconstructor.OnStopCapture(self, target)
-	end,
-    
-    OnFailedCapture = function(self, target)
-		TAconstructor.OnFailedCapture(self, target)
-    end,
-
-    CloakDetection = function(self)
-        local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
-        local brain = moho.entity_methods.GetAIBrain(self)
-        local cat = categories.SELECTABLE * categories.MOBILE
-        local getpos = moho.entity_methods.GetPosition
-        while not self.Dead do
-            coroutine.yield(11)
-            local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
-            if dudes[1] and self.cloakOn then
-                self:DisableIntel('Cloak')
-                self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-            elseif not dudes[1] and self.cloakOn then
-                self:EnableIntel('Cloak')
-                self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
-            end
-        end
-	end,
-
-	DeathThread = function(self)
-		local army = self:GetArmy()
-		CreateAttachedEmitter( self, 0, army, '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp'):ScaleEmitter(10)
-		TAconstructor.DeathThread(self)
-    end,
-    
-    DoTakeDamage = function(self, instigator, amount, vector, damageType)
-        -- Handle incoming OC damage
-        if damageType == 'Overcharge' then
-            local wep = instigator:GetWeaponByLabel('OverCharge')
-            amount = wep:GetBlueprint().Overcharge.commandDamage
-        end
-
-        TAconstructor.DoTakeDamage(self, instigator, amount, vector, damageType)
-        local aiBrain = self:GetAIBrain()
-        if aiBrain then
-            aiBrain:OnPlayCommanderUnderAttackVO()
-        end
-
-        if self:GetHealth() < ArmyBrains[self.Army]:GetUnitStat(self.UnitId, "lowest_health") then
-            ArmyBrains[self.Army]:SetUnitStat(self.UnitId, "lowest_health", self:GetHealth())
-        end
-    end,
-
     OnKilled = function(self, instigator, type, overkillRatio)
-        TAconstructor.OnKilled(self, instigator, type, overkillRatio)
+        TACommander.OnKilled(self, instigator, type, overkillRatio)
 
         -- If there is a killer, and it's not me
         if instigator and instigator.Army ~= self.Army then
@@ -328,5 +304,36 @@ TACommander = Class(TAconstructor) {
             end
         end
         ArmyBrains[self.Army].CommanderKilledBy = (instigator or self).Army
+    end,
+
+    CloakDetection = function(self)
+        local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
+        local brain = moho.entity_methods.GetAIBrain(self)
+        local cat = categories.SELECTABLE * categories.MOBILE
+        local getpos = moho.entity_methods.GetPosition
+        while not self.Dead do
+            coroutine.yield(11)
+            local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
+            if dudes[1] and self.cloakOn then
+                self:DisableIntel('Cloak')
+                self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
+            elseif not dudes[1] and self.cloakOn then
+                self:EnableIntel('Cloak')
+                self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
+            end
+        end
+    end,
+    
+    DoTakeDamage = function(self, instigator, amount, vector, damageType)
+
+        TACommander.DoTakeDamage(self, instigator, amount, vector, damageType)
+        local aiBrain = self:GetAIBrain()
+        if aiBrain then
+            aiBrain:OnPlayCommanderUnderAttackVO()
+        end
+
+        if self:GetHealth() < ArmyBrains[self.Army]:GetUnitStat(self.UnitId, "lowest_health") then
+            ArmyBrains[self.Army]:SetUnitStat(self.UnitId, "lowest_health", self:GetHealth())
+        end
     end,
 }

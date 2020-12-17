@@ -3,7 +3,7 @@ local TABuzz = import('/mods/SCTA-master/lua/TAweapon.lua').TABuzz
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 CORBUZZ = Class(TAunit) {
-	currentBarrel = 0,
+	
 
 	OnCreate = function(self)
 		TAunit.OnCreate(self)
@@ -13,6 +13,7 @@ CORBUZZ = Class(TAunit) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
+		self.currentBarrel = 0
 	end,
 
 	Weapons = {

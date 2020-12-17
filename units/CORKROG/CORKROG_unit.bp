@@ -255,7 +255,7 @@ UnitBlueprint {
      WeaponCategory = 'DirectFire',
             FiringTolerance = 2.75,
             Label = 'CORKROG_HEAD',
-            MaxRadius = 43.75,
+            MaxRadius = 45,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 0,
 	    MuzzleVelocity = 62.5,

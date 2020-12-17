@@ -7,10 +7,7 @@ local EffectUtil = import('/lua/EffectUtilities.lua')
 TAconstructor = Class(TAWalking) {
     OnCreate = function(self)
         TAWalking.OnCreate(self) 
-    
-      
         local bp = self:GetBlueprint()
-
         -- Save build effect bones for faster access when creating build effects
         self.BuildEffectBones = bp.General.BuildBones.BuildEffectBones
 
@@ -49,11 +46,10 @@ TAconstructor = Class(TAWalking) {
     end,
     
     OnStartBuild = function(self, unitBeingBuilt, order )
-        self:OnPrepareArmToBuild()
+        TAWalking.OnStartBuild(self,unitBeingBuilt, order)
         self.UnitBeingBuilt = unitBeingBuilt
         self.UnitBuildOrder = order
         self.BuildingUnit = true
-        TAWalking.OnStartBuild(self,unitBeingBuilt, order)
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)
@@ -123,22 +119,14 @@ TAconstructor = Class(TAWalking) {
     end,         
     
     OnStopReclaim = function(self, target)
-        self.StoppedBuilding = false
+        TAWalking.OnStopReclaim(self, target)
         if self.BuildingOpenAnimManip then
             self.BuildingOpenAnimManip:SetRate(-1)
         end
-        TAWalking.OnStopReclaim(self, target)
     end,
 
     OnStartReclaim = function(self, target)
-        if self.BuildingOpenAnimManip then
-            self.BuildingOpenAnimManip:SetRate(self:GetBlueprint().Display.AnimationBuildRate or 1)
-            if self.BuildArmManipulator then
-                self.StoppedBuilding = false
-                ForkThread( self.WaitForBuildAnimation, self, true )
         TAWalking.OnStartReclaim(self, target)
-            end
-        end
     end,
 }
 

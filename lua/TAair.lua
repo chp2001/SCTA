@@ -8,27 +8,29 @@ TAair = Class(TAunit)
 	OnCreate = function(self)
         TAunit.OnCreate(self)
         self.HasFuel = true
-    end,
+	end,
+	
 
-	OnMotionVertEventChange = function(self, new, old )
-		TAunit.OnMotionVertEventChange(self, new, old)
-		if new == 'Down' then
-            -- Turn off the ambient hover sound
-        elseif new == 'Bottom' then
-            -- While landed, planes can only see half as far
-            local vis = self:GetBlueprint().Intel.VisionRadius / 2
+    OnMotionVertEventChange = function(self, new, old)
+        TAunit.OnMotionVertEventChange(self, new, old)
+        if new == 'Down' then
+			self:CloseWings()
+			self:PlayUnitSound('Landing')
+			local vis = self:GetBlueprint().Intel.VisionRadius / 2
             self:SetIntelRadius('Vision', vis)
-        elseif new == 'Up' or (new == 'Top' and (old == 'Down' or old == 'Bottom')) then
-            -- Set the vision radius back to default
-            local bpVision = self:GetBlueprint().Intel.VisionRadius
+        elseif new == 'Up' or new == 'Top' then
+			self:OpenWings()
+			self:PlayUnitSound('TakeOff')
+			local bpVision = self:GetBlueprint().Intel.VisionRadius
             if bpVision then
                 self:SetIntelRadius('Vision', bpVision)
             else
                 self:SetIntelRadius('Vision', 0)
             end
         end
-    end,
-
+	end,
+	
+	
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAunit.OnStopBeingBuilt(self,builder,layer)
 		self:OpenWings(self)
@@ -74,7 +76,11 @@ TATransportAir = Class(TAair)
 		if (new == 'Bottom' and old == 'Down' and EntityCategoryContains(categories.TRANSPORTATION, self)) then
 	        self:PlayUnitSound('Landing')
 			self:CloseWings(self)
-		TAair.OnMotionVertEventChange(self, new, old)
+			elseif (new == 'Bottom') then
+			self:PlayUnitSound('TakeOff')
+			elseif (new == 'Up' or new == 'Top') then
+			self:OpenWings(self)
+			TAair.OnMotionVertEventChange(self, new, old)
 		end
 	end,
 	

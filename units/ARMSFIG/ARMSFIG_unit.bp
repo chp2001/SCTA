@@ -227,6 +227,8 @@ UnitBlueprint {
                     RackBone = 'Weapon2',
                 },
             },
+            HeadingArcCenter = 0,
+    	    HeadingArcRange = 43.96,
             RackRecoilDistance = 0,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,

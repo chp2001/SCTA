@@ -6,11 +6,10 @@
 local TAMissileProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TAMissileProjectile
 
 CORMSHIP_ROCKET = Class(TAMissileProjectile) {
-	TrackTime = 4,
-
 	OnCreate = function(self)
 		TAMissileProjectile.OnCreate(self)
 		self:ForkThread( self.MovementThread )
+		self.TrackTime = 4
 	end,
 
 	MovementThread = function(self)

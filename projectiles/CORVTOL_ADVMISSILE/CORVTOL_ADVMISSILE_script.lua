@@ -7,7 +7,10 @@ local TARocketProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TAR
 
 CORVTOL_ADVMISSILE = Class(TARocketProjectile) 
 {
-	TrackTime = 2,
+	OnCreate = function(self)
+		TARocketProjectile.OnCreate(self)
+		self.TrackTime = 2
+	end,
 }
 
 TypeClass = CORVTOL_ADVMISSILE

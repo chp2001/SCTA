@@ -7,8 +7,6 @@ local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 ARMMSHIP = Class(TAunit) {
-	currentShot = 0,
-
 	OnCreate = function(self)
 		TAunit.OnCreate(self)
 		self.Spinners = {
@@ -25,7 +23,9 @@ ARMMSHIP = Class(TAunit) {
 		for k, v in self.Sliders do
 			self.Trash:Add(v)
 		end
+		self.currentShot = 0
 	end,
+
 	Weapons = {
 		ARMMSHIP_ROCKET = Class(TAweapon) {
     			PlayFxRackReloadSequence = function(self)

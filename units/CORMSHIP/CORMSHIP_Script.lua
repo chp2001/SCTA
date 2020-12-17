@@ -7,8 +7,6 @@ local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 CORMSHIP = Class(TAunit) {
-	currentShot = 0,
-
 	OnCreate = function(self)
 		TAunit.OnCreate(self)
 		self.Spinners = {
@@ -17,6 +15,7 @@ CORMSHIP = Class(TAunit) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
+		self.currentShot = 0
 		self.Spinners.dish:SetSpeed(150)
 	end,
 	Weapons = {

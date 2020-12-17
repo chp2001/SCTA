@@ -7,8 +7,6 @@ local TAair = import('/mods/SCTA-master/lua/TAair.lua').TAair
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 ARMFIG = Class(TAair) {
-	moving = nil,
-
 	OnCreate = function(self)
 		TAair.OnCreate(self)
 		---self:SetMaintenanceConsumptionActive()
@@ -27,7 +25,8 @@ ARMFIG = Class(TAair) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
-		--ForkThread(self.RollThread, self)
+		self.moving = nil
+		ForkThread(self.RollThread, self)
 	end,
 
 	RollThread = function(self)

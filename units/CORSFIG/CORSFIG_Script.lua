@@ -7,8 +7,6 @@ local TASeaair = import('/mods/SCTA-master/lua/TAair.lua').TASeaair
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 CORSFIG = Class(TASeaair) {
-	moving = false,
-
 	OnCreate = function(self)
 		TASeaair.OnCreate(self)
 		self.Sliders = {
@@ -24,6 +22,7 @@ CORSFIG = Class(TASeaair) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
+		self.moving = nil
 	end,
 
 

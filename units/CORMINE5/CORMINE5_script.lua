@@ -7,7 +7,7 @@ local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 local Projectile = import('/lua/sim/DefaultWeapons.lua').DefaultProjectileWeapon
 
 CORMINE5 = Class(TAunit) {
-	attacked = nil,
+
 
 	Weapons = {
 		ARMMINE5 = Class(Projectile) {

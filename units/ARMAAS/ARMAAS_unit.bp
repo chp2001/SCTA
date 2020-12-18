@@ -35,7 +35,7 @@ UnitBlueprint {
         'MOBILE',
 	'NAVAL',
 	'ANTIAIR',
-	'LIGHTBOAT',
+	'CRUISER',
         'OVERLAYANTIAIR',
         'ARM',
         'OCEAN',
@@ -83,7 +83,7 @@ UnitBlueprint {
         SizeZ = 6,
     },
     General = {
-        Category = 'Ship',
+        Category = 'Anti Air',
         Classification = 'RULEUC_MilitaryShip',
         CommandCaps = {
             RULEUCC_Attack = true,

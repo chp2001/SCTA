@@ -47,7 +47,7 @@ UnitBlueprint {
     Description = 'Pop-up Laser Cannon',
     Display = {
         Abilities = {
-            'Defense',
+            'PopUp',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -71,7 +71,6 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-	---BuildAngle = 8192,
         Category = 'Defense',
         Classification = 'RULEUC_Weapon',
         CommandCaps = {

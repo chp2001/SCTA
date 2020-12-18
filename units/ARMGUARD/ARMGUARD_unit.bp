@@ -95,9 +95,8 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-	---BuildAngle = 8192,
-        Category = 'Defense',
-        Classification = 'RULEUC_Weapon',
+    Category = 'Strategic',
+    Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_RetaliateToggle = true,

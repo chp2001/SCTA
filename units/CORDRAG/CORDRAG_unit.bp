@@ -34,14 +34,8 @@ UnitBlueprint {
     Description = 'Perimeter Defence',
     Display = {
         Abilities = {
-            'Wall',
+            '<LOC ability_aquatic>Aquatic',
         },
-		--[[DestructionEffects = {
-		DefaultFlamingProjectileCountMin = 0,
-		DefaultFlamingProjectileCountMax = 0,
-		FlashSize = 0,
-		FlashTime = 0,
-		},]]--
         Mesh = {
 	    IconFadeInZoom = 130,
             LODs = {
@@ -65,8 +59,7 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-	---BuildAngle = 8192,
-        CapCost = 0,
+        CapCost = 0.1,
         Category = 'Defense',
         Classification = 'RULEUC_MiscSupport',
         SelectionPriority = 5,

@@ -47,7 +47,7 @@ UnitBlueprint {
     Description = 'Pop-up Heavy Cannon',
     Display = {
         Abilities = {
-            'Defense',
+            'Pop-Up',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -71,7 +71,6 @@ UnitBlueprint {
         SizeZ = 3,
     },
     General = {
-	---BuildAngle = 8192,
         Category = 'Defense',
         Classification = 'RULEUC_Weapon',
         CommandCaps = {

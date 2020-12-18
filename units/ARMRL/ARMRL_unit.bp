@@ -59,22 +59,8 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
+            '<LOC ability_aquatic>Aquatic',
         },
-		--[[DestructionEffects = {
-		DestructionProjectiles = {
-			{
-				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMRL_debris01_proj.bp',
-				Bone = 'Barrel',
-			},
-		},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Turret', 0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -98,7 +84,6 @@ UnitBlueprint {
 	MaxSlope = 1.25,
     },
     General = {
-        ---BuildAngle = 0,
         Category = 'Defense',
         Classification = 'RULEUC_Weapon',
         CommandCaps = {

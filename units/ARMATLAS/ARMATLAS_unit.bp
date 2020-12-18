@@ -173,13 +173,15 @@ UnitBlueprint {
     },
     Weapon = {
         { #SMALL_UNITEX
-            Damage = 10,
-            DamageFriendly = true,
-            DamageRadius = 0.9375,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        Damage = 50,
+        DamageFriendly = true,
+        DamageRadius = 3.4375,
+        DamageType = 'Normal',
+        DisplayName = 'Air Crash',
+        DummyWeapon = true,
+        FiringTolerance = 2,
+        Label = 'DeathImpact',
+        WeaponCategory = 'Death',
         },
-
     },
 }

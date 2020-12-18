@@ -35,7 +35,7 @@ UnitBlueprint {
         'MOBILE',
 	'NAVAL',
 	'DIRECTFIRE',
-	'DESTROYER',
+	'FRIGATE',
         'OVERLAYANTINAVY',
         'OVERLAYINDIRECTFIRE',
         'OVERLAYSONAR',
@@ -57,28 +57,9 @@ UnitBlueprint {
     Description = 'Destroyer',
     Display = {
         Abilities = {
-            'Anti-Sub',
+            '<LOC ability_depthcharge>Depth Charges',
             '<LOC ability_sonar>Sonar',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'ArmShip','ArmPanel3','MetalBarrel'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Turret','DepthCharge'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'Barrel_01','Barrel_02'},
-				EmitterBlueprint = {
-	    				'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---	
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

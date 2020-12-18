@@ -55,11 +55,6 @@ UnitBlueprint {
         'ARM',
         'OCEAN',
 	'LEVEL1',
-	
-	
-	
-	
-	
     },
     CollisionOffsetY = -0.25,
     Defense = {

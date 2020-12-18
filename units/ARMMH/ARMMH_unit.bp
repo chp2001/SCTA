@@ -54,16 +54,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_hover>Hover',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'ArmCockpit','ArmHover'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -140,6 +130,9 @@ UnitBlueprint {
     SizeZ = 3,
     StrategicIconName = 'icon_land2_missile',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
     Weapon = {
         {
             Audio = {

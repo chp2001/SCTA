@@ -169,6 +169,7 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
+            AutoInitiateAttackCommand = true,
             AboveWaterTargetsOnly = true,
             AutoInitiateAttackCommand = true,
             BallisticArc = 'RULEUBA_None',

@@ -39,10 +39,6 @@ UnitBlueprint {
         'CORE',
         'KBOT',
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -58,26 +54,8 @@ UnitBlueprint {
         AnimationWalk = '/mods/SCTA-master/units/CORPYRO/CORPYRO_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
-            'Flame Bot',
+            'Assault Bot',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'torso'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'lloarm'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -139,17 +117,11 @@ UnitBlueprint {
     SizeZ = 2,
     StrategicIconName = 'icon_bot2_directfire',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
     Weapon = {
         {
---[[
-            Audio = {
-                Fire = Sound {
-                    Bank = 'TA_Sound',
-                    Cue = 'FLAMHVY1',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
-            },
---]]
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	        DamageFriendly = true,

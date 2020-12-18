@@ -162,7 +162,7 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Transport = {
         AirClass = true,
-        TransportClass = 1,
+        TransportClass = 2,
     },
     Weapon = {
         {
@@ -173,6 +173,7 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
+            AutoInitiateAttackCommand = true,
             AboveWaterTargetsOnly = true,
             AutoInitiateAttackCommand = true,
             BallisticArc = 'RULEUBA_None',
@@ -234,6 +235,7 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
+            AutoInitiateAttackCommand = true,
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,

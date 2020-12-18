@@ -41,10 +41,6 @@ UnitBlueprint {
         'ARM',
         'VEHICLE',
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -60,16 +56,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Tredside'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Lturret'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -87,11 +73,6 @@ UnitBlueprint {
         BuildCostMass = 354,
         BuildTime = 9676,
     },
-    --[[Footprint = {
-	MaxWaterDepth = 0.75,
-        SizeX = 2,
-        SizeZ = 2,
-    },]]--
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -136,6 +117,9 @@ UnitBlueprint {
     SizeZ = 2,
     StrategicIconName = 'icon_land2_antiair',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
     Weapon = {
         {
             Audio = {

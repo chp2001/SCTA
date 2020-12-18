@@ -39,10 +39,6 @@ UnitBlueprint {
         'CORE',
         'KBOT',
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -57,15 +53,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORSPY/CORSPY_lod0_Awalk.sca',
         AnimationWalkRate = 1,
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'head'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
     Mesh = {
             IconFadeInZoom = 130,
             LODs = {

@@ -181,7 +181,7 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Transport = {
         AirClass = true,
-        TransportClass = 1,
+        TransportClass = 2,
     },
     Weapon = {
         { #BIG_UNITEX

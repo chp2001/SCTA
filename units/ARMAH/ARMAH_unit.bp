@@ -56,16 +56,6 @@ UnitBlueprint {
             '<LOC ability_hover>Hover',
             '<LOC ability_aa>Anti-Air',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'ArmCockpit','ArmHover'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -143,6 +133,9 @@ UnitBlueprint {
     SizeZ = 3,
     StrategicIconName = 'icon_land1_antiair',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
     Weapon = {
         {
             Audio = {

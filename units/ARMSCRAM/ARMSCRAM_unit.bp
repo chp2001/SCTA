@@ -92,10 +92,10 @@ UnitBlueprint {
     },
     General = {
         Category = 'Submarine',
-        Classification = 'RULEUC_MilitaryVehicle',
+        Classification = 'RULEUC_MilitaryShip',
         CommandCaps = {
             RULEUCC_Guard = true,
-            RULEUCC_CallTransport = true,
+            RULEUCC_CallTransport = false,
             RULEUCC_Move = true,
             RULEUCC_Patrol = true,
             RULEUCC_Stop = true,

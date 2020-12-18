@@ -36,12 +36,9 @@ UnitBlueprint {
 	'LAND',
 	'ANTIAIR',
         'CORE',
-        'VEHICLE',	#'TANK' in TA
+        'VEHICLE',
 	'LEVEL2',
 	'OVERLAYDEFENSE',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -82,16 +79,6 @@ UnitBlueprint {
                 },
             },
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'ArmCockpit'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -156,6 +143,9 @@ UnitBlueprint {
     SizeZ = 4,
     StrategicIconName = 'icon_structure2_antimissile',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 3,
+    },
     Weapon = {
         {
             AimsStraightOnDisable = false,

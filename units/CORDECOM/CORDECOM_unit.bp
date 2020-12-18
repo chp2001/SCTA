@@ -175,6 +175,9 @@ UnitBlueprint {
     SizeZ = 2,
     StrategicIconName = 'icon_commander_generic',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
     Weapon = {	
         {
             Audio = {

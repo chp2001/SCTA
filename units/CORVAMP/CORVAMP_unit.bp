@@ -96,21 +96,6 @@ UnitBlueprint {
             '<LOC ability_aa>Anti-Air',
             '<LOC ability_personalstealth>Personal Stealth',
         },
-		--[[DestructionEffects = {
-		DefaultFlamingProjectileCountMin = 0,
-		DefaultFlamingProjectileCountMax = 0,
-		DestructionDebrisUseLocalVelocity = true,
-		#DefaultProjectileCategories = {'ArmCockpit'},
-		FlashSize = 10,
-		FlashTime = 10,
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -128,13 +113,9 @@ UnitBlueprint {
         BuildTime = 15924,
         MaintenanceConsumptionPerSecondEnergy = 15,
     },
-    --[[Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-    },]]--
     General = {
-        Category = 'Direct Fire',
-        Classification = 'RULEUC_MilitaryVehicle',
+        Category = 'Fighter',
+        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,

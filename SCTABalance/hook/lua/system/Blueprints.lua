@@ -87,7 +87,7 @@ do
                 MaxHealth = 0.5,
             },
             Display = {
-                UniformScale = 0.5,
+                UniformScale = 0.33,
             },
             Intel = {
                 WaterVisionRadius = 3,
@@ -108,9 +108,9 @@ do
             LifeBarOffset = 0.5,
             LifeBarSize = 0.5,
             
-            SelectionSizeX = 0.5,
-            SelectionSizeZ = 0.5,
-            SelectionThickness = 2.5,
+            SelectionSizeX = 0.33,
+            SelectionSizeZ = 0.33,
+            SelectionThickness = 2,
         }
         local Struct_Mults = {
             Defense = {

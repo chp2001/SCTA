@@ -96,21 +96,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
         },
-		--[[DestructionEffects = {
-		#DefaultProjectileCategories = {'ArmCockpit'},
-		DefaultFlamingProjectileCountMin = 0,
-		DefaultFlamingProjectileCountMax = 0,
-		DestructionDebrisUseLocalVelocity = true,
-		FlashSize = 10,
-		FlashTime = 10,
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {	
             IconFadeInZoom = 130,
             LODs = {
@@ -127,13 +112,9 @@ UnitBlueprint {
         BuildCostMass = 187,
         BuildTime = 14333,
     },
-    --[[Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },]]--
     General = {
-        Category = 'Direct Fire',
-        Classification = 'RULEUC_MilitaryVehicle',
+        Category = 'Fighter',
+        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = false,
@@ -205,7 +186,7 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_AntiAir',
      WeaponCategory = 'AntiAir',
             FiringTolerance = 10,
-	    HeadingArcCenter = 0,
+            HeadingArcCenter = 0,
     	    HeadingArcRange = 43.96,
             Label = 'CORVTOL_MISSILE',
             MaxRadius = 25,

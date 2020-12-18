@@ -124,8 +124,8 @@ UnitBlueprint {
     },
 
     General = {
-        Category = 'Direct Fire',
-        Classification = 'RULEUC_MilitaryVehicle',
+        Category = 'Gunship',
+        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -179,6 +179,7 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
+            AutoInitiateAttackCommand = true,
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,

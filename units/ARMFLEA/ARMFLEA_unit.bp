@@ -57,15 +57,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/ARMFLEA/ARMFLEA_lod0_Awalk.sca',
         AnimationWalkRate = 1,
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'torso'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -89,7 +80,7 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-        Category = 'Direct Fire',
+        Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,

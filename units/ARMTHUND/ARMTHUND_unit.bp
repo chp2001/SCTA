@@ -93,21 +93,6 @@ UnitBlueprint {
         Abilities = {
             'Bomber',
         },
-		--[[DestructionEffects = {
-		DefaultFlamingProjectileCountMin = 0,
-		DefaultFlamingProjectileCountMax = 0,
-		DestructionDebrisUseLocalVelocity = true,
-		DefaultProjectileCategories = {'ArmCockpit'},
-		FlashSize = 10,
-		FlashTime = 10,
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -128,7 +113,7 @@ UnitBlueprint {
 
     General = {
         Category = 'Bomber',
-        Classification = 'RULEUC_MilitaryVehicle',
+        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,

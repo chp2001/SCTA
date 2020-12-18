@@ -54,16 +54,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_hover>Hover',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'ArmCockpit','ArmHover'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Turret'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -93,7 +83,7 @@ UnitBlueprint {
     },
 
     General = {
-        Category = 'Scout',
+        Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,

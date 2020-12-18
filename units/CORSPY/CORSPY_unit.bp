@@ -84,12 +84,8 @@ UnitBlueprint {
         BuildTime = 22000,
         MaintenanceConsumptionPerSecondEnergy = 10,
     },
-    --[[Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-	},]]--
     General = {
-        Category = 'Direct Fire',
+        Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,

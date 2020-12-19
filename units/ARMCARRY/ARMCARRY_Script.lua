@@ -41,24 +41,17 @@ ARMCARRY = Class(TAFactory) {
 		self.AnimManip:SetRate(-0.1 * (self:GetBlueprint().Display.AnimationBuildRate or 0.2))
 	end,
 
-	OnScriptBitSet = function(self, bit)
-		if bit == 3 then
-
+	OnIntelDisabled = function(self)
 			self.Spinners.radar:SetSpeed(0)
-
 			self:SetMaintenanceConsumptionInactive()
-		end
-		TAFactory.OnScriptBitSet(self, bit)
+		TAFactory.OnIntelDisabled(self)
 	end,
 
 
-	OnScriptBitClear = function(self, bit)
-		if bit == 3 then
-			--SPIN radar around y-axis SPEED <60.01>
+	OnIntelEnabled = function(self)
 			self.Spinners.radar:SetSpeed(60)
 			self:SetMaintenanceConsumptionActive()
-		end
-		TAFactory.OnScriptBitClear(self, bit)
+		TAFactory.OnIntelEnabled(self)
 	end,
 }
 

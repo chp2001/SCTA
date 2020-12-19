@@ -39,25 +39,18 @@ CORCARRY = Class(TAFactory) {
 		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationBuildRate or 0.2))
 	end,
 
-	OnScriptBitSet = function(self, bit)
-		if bit == 3 then
-
-			self.Spinners.dish:SetSpeed(0)
-
-			self:SetMaintenanceConsumptionInactive()
-		end
-		TAFactory.OnScriptBitSet(self, bit)
-	end,
+	OnIntelDisabled = function(self)
+		self.Spinners.dish:SetSpeed(0)
+		self:SetMaintenanceConsumptionInactive()
+	TAFactory.OnIntelDisabled(self)
+end,
 
 
-	OnScriptBitClear = function(self, bit)
-		if bit == 3 then
-			--SPIN dish around y-axis SPEED <60.01>
-			self.Spinners.dish:SetSpeed(60)
-			self:SetMaintenanceConsumptionActive()
-		end
-		TAFactory.OnScriptBitClear(self, bit)
-	end,
+OnIntelEnabled = function(self)
+		self.Spinners.dish:SetSpeed(60)
+		self:SetMaintenanceConsumptionActive()
+	TAFactory.OnIntelEnabled(self)
+end,
 }
 
 TypeClass = CORCARRY

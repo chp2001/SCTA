@@ -34,12 +34,12 @@ UnitBlueprint {
         StagingPlatformScanRadius = 300,
         TargetBones = {
             'Attachpoint01',
+            'Attachpoint_Med_02',
         },
     },
     BuildIconSortPriority = 9,
     Categories = {
         'SELECTABLE',
-        'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
@@ -74,26 +74,11 @@ UnitBlueprint {
         AnimationPowerRate = 0.2, 
         Abilities = {
             '<LOC ability_airstaging>Air Staging',
-        },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'ArmShip', 'ArmBui', 'Helipad'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'CORCARRY', 'Attachpoint01', 'Attachpoint02'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'dish'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
+            '<LOC ability_carrier>Carrier',
+            '<LOC ability_factory>Factory',
+            },
+        BuildAttachBone = 'Attachpoint_Med_02',
+
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -103,11 +88,6 @@ UnitBlueprint {
                 },
             },
         },
-	MovementEffects = {
-		Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
-		Scale = 0.5,
-		Bones = {'wake1','wake2'},
-	},
         UniformScale = 0.16,
     },
     Economy = {
@@ -117,19 +97,28 @@ UnitBlueprint {
         BuildRate = 200,
         ProductionPerSecondEnergy = 200,
         MaintenanceConsumptionPerSecondEnergy = 35,
+        BuildableCategory = {
+            'VTOL LEVEL1 CORE AIR ENGINEER',
+            'VTOL LEVEL1 CORE HIGHALTAIR', 
+            'VTOL LEVEL2 CORE AIR',
+            'VTOL LEVEL3 CORE',
+        },
     },
     Footprint = {
         SizeX = 4,
         SizeZ = 8,
     },
     General = {
+        BuildBones = {
+            BuildEffectBones = {'nano2','nano3'},
+        },
         Category = 'Ship',
         Classification = 'RULEUC_MilitaryShip',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = false,
             RULEUCC_Capture = false,
-            RULEUCC_Guard = true,
+            RULEUCC_Guard = false,
             RULEUCC_Move = true,
             RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,

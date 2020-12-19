@@ -69,7 +69,7 @@ UnitBlueprint {
     Description = 'Light Carrier',
     Display = {
         AnimationBuild = '/mods/SCTA-master/units/CORCARRY/CORCARRY_lod0_build.sca',
-        AnimationBuildRate = 0.2, 
+        AnimationBuildRate = 1, 
         AnimationPower = '/mods/SCTA-master/units/CORCARRY/CORCARRY_lod0_power.sca',
         AnimationPowerRate = 0.2, 
         Abilities = {
@@ -77,8 +77,6 @@ UnitBlueprint {
             '<LOC ability_carrier>Carrier',
             '<LOC ability_factory>Factory',
             },
-        BuildAttachBone = 'Attachpoint_Med_02',
-
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

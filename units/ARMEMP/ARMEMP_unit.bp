@@ -100,7 +100,7 @@ UnitBlueprint {
         UnitName = 'Stunner',
     },
     Intel = {
-        VisionRadius = 22,
+        VisionRadius = 16,
     },
     Interface = {
         HelpText = 'Electro Pulse Launcher',

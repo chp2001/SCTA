@@ -47,8 +47,8 @@ UnitBlueprint {
         },
     },
     Intel = {
-        VisionRadius = 8,
-        WaterVisionRadius = 4, 
+        VisionRadius = 10,
+        WaterVisionRadius = 8, 
     },
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,

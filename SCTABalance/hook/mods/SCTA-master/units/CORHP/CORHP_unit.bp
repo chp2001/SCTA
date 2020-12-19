@@ -33,7 +33,7 @@ UnitBlueprint {
             },
             LifeBarHeight = 0.22,
             LifeBarOffset = 3,
-            LifeBarSize = 8,
+            LifeBarSize = 7,
     Economy = {
         BuildRate = 300,
         BuildCostEnergy = 39000,
@@ -43,6 +43,10 @@ UnitBlueprint {
             'PHIB LEVEL1 CORE',
             'PHIB LEVEL3 CORE',
         },
+    },
+    Physics = {
+        SkirtSizeX = 8,
+        SkirtSizeZ = 8,
     },
     SelectionSizeX = 7,
     SelectionSizeZ = 7,

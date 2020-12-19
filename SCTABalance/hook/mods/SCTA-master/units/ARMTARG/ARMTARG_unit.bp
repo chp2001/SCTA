@@ -73,7 +73,7 @@ UnitBlueprint {
     },
         Intel = {
             FreeIntel = false,
-            VisionRadius = 22, 
+            VisionRadius = 18, 
             RadarRadius = 360,
             OmniRadius = 120,
         },

@@ -75,7 +75,7 @@ UnitBlueprint {
                     },
                 },
             },
-        UniformScale = 0.32,
+        UniformScale = 0.28,
     },
     Economy = {
         BuildCostEnergy = 120000,
@@ -94,8 +94,8 @@ UnitBlueprint {
     StorageEnergy = 50,
     },
     Footprint = {
-        SizeX = 12,
-        SizeZ = 12,
+        SizeX = 10,
+        SizeZ = 10,
 	MinWaterDepth = 1.875,
     },
     General = {
@@ -128,14 +128,14 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
-    LifeBarSize = 10,
+    LifeBarSize = 7,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Water = true,
         },
         FlattenSkirt = true,
-        SkirtSizeX = 8,
-        SkirtSizeZ = 8,
+        SkirtSizeX = 10,
+        SkirtSizeZ = 10,
 	BuildAreaX = 6,
 	BuildAreaZ = 6,
         OccupyRects = {

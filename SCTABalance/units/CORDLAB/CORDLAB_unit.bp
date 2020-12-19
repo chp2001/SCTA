@@ -134,14 +134,14 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
-    LifeBarSize = 8,
+    LifeBarSize = 7,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
         FlattenSkirt = true,
-        SkirtSizeX = 6,
-        SkirtSizeZ = 6,
+        SkirtSizeX = 8,
+        SkirtSizeZ = 8,
 	BuildAreaX = 2,
 	BuildAreaZ = 2,
 	CloseAreaX = 2,

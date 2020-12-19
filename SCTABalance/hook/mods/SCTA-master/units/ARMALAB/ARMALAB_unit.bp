@@ -30,7 +30,7 @@ UnitBlueprint {
     Footprint = {	
     SizeX = 8,
     SizeZ = 8,
-        },
+    },
     Economy = {
         BuildCostEnergy = 30000,
         BuildCostMass = 2200, 
@@ -44,9 +44,13 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 10,
     },
+    Physics = {
+        SkirtSizeX = 8,
+        SkirtSizeZ = 8,
+    },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
-    LifeBarSize = 8,
+    LifeBarSize = 7,
     SelectionSizeX = 7,
     SelectionSizeZ = 5,
     SizeX = 9,

@@ -40,7 +40,7 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 300,
         MaintenanceConsumptionPerSecondEnergy = 35,
     },
-LifeBarSize = 8,
+LifeBarSize = 7,
 SelectionSizeX = 6,
 SelectionSizeZ = 10,
 SizeX = 8,

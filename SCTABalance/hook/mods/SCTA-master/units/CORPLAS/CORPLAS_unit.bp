@@ -36,7 +36,7 @@ UnitBlueprint {
         BuildTime = 6200,
     },
     Intel = {
-        VisionRadius = 16,
+        VisionRadius = 12,
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,

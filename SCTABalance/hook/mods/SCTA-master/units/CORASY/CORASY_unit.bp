@@ -25,7 +25,16 @@ UnitBlueprint {
         MaxHealth = 16500,
     },
         Display = {
-        UniformScale = 0.32,
+        UniformScale = 0.28,
+    },
+    Footprint = {
+        SizeX = 10,
+        SizeZ = 10,
+	MinWaterDepth = 1.875,
+    },
+    Physics = {
+        SkirtSizeX = 10,
+        SkirtSizeZ = 10,
     },
     Economy = {
         BuildCostEnergy = 16000,
@@ -40,7 +49,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
-    LifeBarSize = 10,
+    LifeBarSize = 7,
     Intel = {
         VisionRadius = 10,
         WaterVisionRadius = 6,

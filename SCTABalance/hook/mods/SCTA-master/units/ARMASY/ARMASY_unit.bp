@@ -25,7 +25,7 @@ UnitBlueprint {
         MaxHealth = 16000,
     },
         Display = {
-        UniformScale = 0.32,
+        UniformScale = 0.28,
     },
     Economy = {
         BuildCostEnergy = 16000,
@@ -37,6 +37,15 @@ UnitBlueprint {
         },
         BuildRate = 360,
         ProductionPerSecondMass = 0,
+    },    
+    Footprint = {
+        SizeX = 10,
+        SizeZ = 10,
+	MinWaterDepth = 1.875,
+    },
+    Physics = {
+        SkirtSizeX = 10,
+        SkirtSizeZ = 10,
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,

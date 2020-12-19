@@ -132,7 +132,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
-    LifeBarSize = 8,
+    LifeBarSize = 7,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,

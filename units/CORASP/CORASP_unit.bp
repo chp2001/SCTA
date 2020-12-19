@@ -84,7 +84,7 @@ UnitBlueprint {
         BuildTime = 21587,
 	BuildRate = 200,
 	NaturalProducer = true,
-        ProductionPerSecondEnergy = 11,
+        ProductionPerSecondEnergy = 10,
 	StorageEnergy = 100,
     },
     Footprint = {

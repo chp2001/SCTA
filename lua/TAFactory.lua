@@ -37,8 +37,6 @@ TACarrier = Class(AircraftCarrier) {
         TAutils.CreateTAFactBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
     end,
 	
-	BuildAttachBone = 'Attachpoint_Med_02',
-
     OnFailedToBuild = function(self)
         AircraftCarrier.OnFailedToBuild(self)
         ChangeState(self, self.IdleState)

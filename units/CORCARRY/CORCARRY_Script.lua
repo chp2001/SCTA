@@ -39,7 +39,9 @@ end,
 		self.Spinners.dish:SetSpeed(60)
 		self:SetMaintenanceConsumptionActive()
         ChangeState(self, self.IdleState)
-    end,
+	end,
+	
+	BuildAttachBone = 'Attachpoint_Med_02',
 }
 
 

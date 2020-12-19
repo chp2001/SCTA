@@ -110,6 +110,7 @@ UnitBlueprint {
         Category = 'Utility',
         Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
+            RULEUCC_Dock = true,
             RULEUCC_Guard = true,
             RULEUCC_CallTransport = true,
             RULEUCC_Move = true,

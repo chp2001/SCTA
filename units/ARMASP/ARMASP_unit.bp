@@ -27,12 +27,13 @@ UnitBlueprint {
 	},
     },
     AI = {
+        GuardScanRadius = 300,
         RefuelingMultiplier = 50,
-	    RefuelingRepairAmount = 500,
-	    StagingPlatformScanRadius = 300,
-        ShowAssistRangeOnSelect = true,
+        RefuelingRepairAmount = 500,
         RepairConsumeEnergy = 5,
         RepairConsumeMass = 0.5,
+        ShowAssistRangeOnSelect = true,
+        StagingPlatformScanRadius = 300,
     },
     BuildIconSortPriority = 15,
     Categories = {
@@ -50,11 +51,7 @@ UnitBlueprint {
         'AIRSTAGINGPLATFORM',
         'OVERLAYMISC',
 	'ARM',
-	'REPAIRPAD',
-	'LEVEL1',
-	
-	
-	
+	'LEVEL3',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -67,6 +64,9 @@ UnitBlueprint {
     },
     Description = 'Automatically repairs aircraft',
     Display = {
+        Abilities = {
+            '<LOC ability_airstaging>Air Staging',
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -97,14 +97,31 @@ UnitBlueprint {
         BuildBones = {
             BuildEffectBones = {'Build_Nozzle_01','Build_Nozzle_02'},
         },             
-	---BuildAngle = 1024,
         Category = 'Strategic',
         Classification = 'RULEUC_MiscSupport',
         CommandCaps = {
+            RULEUCC_Attack = false,
+            RULEUCC_CallTransport = false,
+            RULEUCC_Capture = false,
+            RULEUCC_Guard = false,
+            RULEUCC_Move = false,
+            RULEUCC_Nuke = false,
+            RULEUCC_Patrol = false,
+            RULEUCC_Reclaim = false,
+            RULEUCC_Repair = false,
+            RULEUCC_RetaliateToggle = false,
+            RULEUCC_Stop = false,
             RULEUCC_Transport = true,
         },
         SelectionPriority = 5,
         FactionName = 'ARM',
+        Icon = 'land',
+        OrderOverrides = {
+            RULEUCC_Transport = {
+                bitmapId = 'deploy',
+                helpText = 'deploy',
+            },
+        },
         TechLevel = 'RULEUTL_Secret',
         UnitName = 'Air Repair Pad',
     },
@@ -137,7 +154,7 @@ UnitBlueprint {
         Class2AttachSize = 1,
         Class3AttachSize = 1,
         RepairRate = 200,
-	StorageSlots = 0,
+        DockingSlots = 1,
     },
     Weapon = {
         { #BIG_UNITEX

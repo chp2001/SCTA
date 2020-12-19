@@ -34,7 +34,7 @@ UnitBlueprint {
         StagingPlatformScanRadius = 300,
         TargetBones = {
             'Attachpoint01',
-            'Attachpoint_Med_02',
+            'Attachpoint02',
         },
     },
     BuildIconSortPriority = 9,
@@ -71,7 +71,7 @@ UnitBlueprint {
         AnimationBuild = '/mods/SCTA-master/units/CORCARRY/CORCARRY_lod0_build.sca',
         AnimationBuildRate = 1, 
         AnimationPower = '/mods/SCTA-master/units/CORCARRY/CORCARRY_lod0_power.sca',
-        AnimationPowerRate = 0.2, 
+        AnimationPowerRate = 1, 
         Abilities = {
             '<LOC ability_airstaging>Air Staging',
             '<LOC ability_carrier>Carrier',

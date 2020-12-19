@@ -39,10 +39,6 @@ UnitBlueprint {
         'ARM',
         'KBOT',
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',

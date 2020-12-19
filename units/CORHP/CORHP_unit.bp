@@ -53,6 +53,9 @@ UnitBlueprint {
     },
     Description = 'Builds Hovercraft',
     Display = {
+        Abilities = {
+            '<LOC ability_aquatic>Aquatic',
+        },
         AnimationUnpack = '/mods/SCTA-master/units/CORHP/CORHP_lod0_Aopen.sca',
         AnimationUnpackRate = 1, 
 	BuildAttachBone = 'pad',

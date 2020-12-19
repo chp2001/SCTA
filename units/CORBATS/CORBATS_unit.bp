@@ -39,8 +39,6 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'NAVAL',
 	'DIRECTFIRE',

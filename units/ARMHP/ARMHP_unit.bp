@@ -66,6 +66,9 @@ UnitBlueprint {
     },
     Description = 'Builds Hovercraft',
     Display = {
+        Abilities = {
+            '<LOC ability_aquatic>Aquatic',
+        },
         AnimationUnpack = '/mods/SCTA-master/units/ARMHP/ARMHP_lod0_unpack.sca',
         AnimationUnpackRate = 1,    
         Mesh = {

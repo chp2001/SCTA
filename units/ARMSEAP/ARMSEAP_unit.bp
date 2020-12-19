@@ -93,8 +93,7 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_sonar>Sonar',
-            'Torpedo Bomber',
-            'Anti-Sub',
+            '<LOC ability_torpedo>Torpedoes',
         },
         Mesh = {
             IconFadeInZoom = 130,

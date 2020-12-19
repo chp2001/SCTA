@@ -3,7 +3,7 @@
 #
 #Script created by Raevn
 
-local TATransportAir = import('/mods/SCTA-master/lua/TAair.lua').TATransportAir
+local TATransportAir = import('/mods/SCTA-master/lua/TATransport.lua').TATransportAir
 
 ARMATLAS = Class(TATransportAir) {
 	OnCreate = function(self)

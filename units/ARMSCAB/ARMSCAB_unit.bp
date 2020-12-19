@@ -54,16 +54,6 @@ UnitBlueprint {
         Abilities = {
         '<LOC ability_tacmissiledef>Tactical Missile Defense',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'ArmCockpit'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-    	},]]--
     AnimationWalk = '/mods/SCTA-master/units/ARMSCAB/ARMSCAB_lod0_WALK.sca',
     AnimationWalkRate = 1,
         Mesh = {
@@ -125,6 +115,9 @@ UnitBlueprint {
     SizeZ = 4,
     StrategicIconName = 'icon_structure2_antimissile',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
     Weapon = {
         {
             AimsStraightOnDisable = false,

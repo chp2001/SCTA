@@ -232,6 +232,9 @@ UnitBlueprint {
         0.5,
     },
     VeteranMassMult = 0.5,
+    Transport = {
+        TransportClass = 2,
+    },
     Weapon = {	
         {
             Audio = {

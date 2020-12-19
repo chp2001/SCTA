@@ -64,17 +64,9 @@ UnitBlueprint {
     },
     Description = 'Converts Energy into Metal',
     Display = {
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Stone'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
-	--TextureAnimationFrames = 8,
+        Abilities = {
+            '<LOC ability_aquatic>Aquatic',
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -94,9 +86,7 @@ UnitBlueprint {
         ProductionPerSecondMass = 1,
 	MaintenanceConsumptionPerSecondEnergy = 60,
     },
-
     General = {
-	---BuildAngle = 8192,
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
         ToggleCaps = {

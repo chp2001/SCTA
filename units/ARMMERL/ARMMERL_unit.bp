@@ -32,22 +32,15 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'INDIRECTFIRE',
 	'ROCKET',
         'OVERLAYINDIRECTFIRE',
         'ARTILLERY',
-	
         'ARM',
         'VEHICLE',	
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -63,25 +56,6 @@ UnitBlueprint {
         Abilities = {
             'Missile',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Tredside','ArmCockpit'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'Door_01', 'Door_02'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -143,6 +117,9 @@ UnitBlueprint {
     SizeZ = 3,
     StrategicIconName = 'icon_land2_missile',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
     Weapon = {
         {
             Audio = {

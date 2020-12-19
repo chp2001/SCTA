@@ -51,25 +51,6 @@ UnitBlueprint {
         Abilities = {
             'Game Ender',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'MetalBarrel','Stone','BuildPlate'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Spindle','Turret'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'Flare'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -92,7 +73,6 @@ UnitBlueprint {
 	MaxSlope = 0.625,
     },
     General = {
-	---BuildAngle = 12712,
     Category = 'Strategic',
     Classification = 'RULEUC_Weapon',
         CommandCaps = {

@@ -38,13 +38,8 @@ UnitBlueprint {
 	'RADAR',
         'OVERLAYRADAR',
         'ARM',
-        'VEHICLE',	#'TANK' in TA
-	
-	
+        'VEHICLE',
 	'LEVEL2',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -60,25 +55,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_radar>Radar',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Tredside','ArmCockpit'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'Radar'},
-				EmitterBlueprint = {
-	    				'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -96,7 +72,6 @@ UnitBlueprint {
         BuildCostMass = 85,
         BuildTime = 3186,
     },
-
     General = {
         Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',

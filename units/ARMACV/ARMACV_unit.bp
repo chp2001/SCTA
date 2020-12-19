@@ -151,6 +151,9 @@ UnitBlueprint {
     SizeZ = 3,
     StrategicIconName = 'icon_land2_engineer',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
     Weapon = {
         { #BIG_UNITEX
             Damage = 50,

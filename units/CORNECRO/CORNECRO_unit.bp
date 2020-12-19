@@ -56,11 +56,6 @@ UnitBlueprint {
         'VTOL',
         'KBOT',
 	'LEVEL2',
-	
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',

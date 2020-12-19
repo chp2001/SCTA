@@ -54,25 +54,10 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/SCTABalance/units/ARMHRK/ARMHRK_lod0_AWalk.sca',
         AnimationWalkRate = 1,
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Tredside','ArmCockpit'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'ARMHRK'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
+        Abilities = {
+            'Assault Bot',
+            'Missile',
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -133,6 +118,9 @@ UnitBlueprint {
     SizeZ = 1,
     StrategicIconName = 'icon_land2_missile',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
     Weapon = {
         {
             Audio = {

@@ -89,8 +89,8 @@ UnitBlueprint {
         },
 	InitialRallyX = 0,
 	InitialRallyZ = -5,
-        StorageMass = 200,
-        StorageEnergy = 200,
+    StorageMass = 50,
+    StorageEnergy = 50,
     },
     Footprint = {
         MaxSlope = 0.625,

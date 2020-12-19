@@ -86,9 +86,9 @@ UnitBlueprint {
             'KBOT LEVEL1 CORE',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = 4,
-        StorageMass = 100,
-        StorageEnergy = 100,
+	InitialRallyZ = 5,
+        StorageMass = 50,
+        StorageEnergy = 50,
     },
     Footprint = {
 	MaxSlope = 0.625,

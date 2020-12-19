@@ -90,9 +90,9 @@ UnitBlueprint {
 	    'VTOL LEVEL1 ARM', 
         },
 	InitialRallyX = 1,
-	InitialRallyZ = 1,
-    StorageMass = 200,
-    StorageEnergy = 200,
+	InitialRallyZ = 5,
+    StorageMass = 50,
+    StorageEnergy = 50,
     },
     Footprint = {
         MaxSlope = 0.625,

@@ -86,7 +86,7 @@ UnitBlueprint {
             'VTOL LEVEL2 ARM',
         },
 	InitialRallyX = 1,
-	InitialRallyZ = 1,
+	InitialRallyZ = 5,
         StorageMass = 200,
         StorageEnergy = 200,
     },

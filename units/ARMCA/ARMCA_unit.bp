@@ -121,15 +121,11 @@ UnitBlueprint {
             'BUILTBYT1AIR ARM',
         },
         MaxBuildDistance = 2.5,
-        StorageEnergy = 50,
-        StorageMass = 50,
+        StorageEnergy = 5,
+        StorageMass = 5,
 	ProductionPerSecondEnergy = 11,
 	NaturalProducer = true,
     },
-    --[[Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-    },]]--
     General = {
         BuildBones = {
             AimBone = 'Nozzle',

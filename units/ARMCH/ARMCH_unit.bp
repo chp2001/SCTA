@@ -107,7 +107,7 @@ UnitBlueprint {
             'BUILTBYT1HOVER ARM',
         },
         MaxBuildDistance = 4.375,
-        StorageEnergy = 80,
+        StorageEnergy = 50,
         StorageMass = 50,
 	ProductionPerSecondEnergy = 15,
 	NaturalProducer = true,

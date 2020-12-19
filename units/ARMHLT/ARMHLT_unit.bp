@@ -67,7 +67,7 @@ UnitBlueprint {
         BuildCostEnergy = 5398,
         BuildCostMass = 584,
         BuildTime = 9575,
-        StorageEnergy = 200,
+        StorageEnergy = 150,
     },
     Footprint = {
         SizeX = 2,

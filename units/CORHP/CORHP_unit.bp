@@ -80,9 +80,9 @@ UnitBlueprint {
             'HOVER LEVEL1 CORE',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = 4,
-        StorageMass = 200,
-        StorageEnergy = 200,
+	InitialRallyZ = 5,
+        StorageMass = 250,
+        StorageEnergy = 250,
     },
     Footprint = {
 	MaxSlope = 0.625,

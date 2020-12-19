@@ -33,7 +33,11 @@ UnitBlueprint {
             MaxSlope = 0.625,
                 SizeX = 8,
                 SizeZ = 8,
-            },
+        },
+        Physics = {
+            SkirtSizeX = 8,
+            SkirtSizeZ = 8,
+        },
     Economy = {
         BuildCostEnergy = 42000,
         BuildCostMass = 2300,
@@ -45,7 +49,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
-    LifeBarSize = 8,
+    LifeBarSize = 7,
     Intel = {
         VisionRadius = 10,
         FreeIntel = true,

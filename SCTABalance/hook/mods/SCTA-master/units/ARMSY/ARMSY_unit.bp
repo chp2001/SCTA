@@ -33,11 +33,20 @@ UnitBlueprint {
             Abilities = {
                 '<LOC ability_upgradable>Upgradeable',
             },    
-        UniformScale = 0.32,
+        UniformScale = 0.28,
+    },
+    Footprint = {
+        SizeX = 10,
+        SizeZ = 10,
+	MinWaterDepth = 1.875,
+    },
+    Physics = {
+        SkirtSizeX = 10,
+        SkirtSizeZ = 10,
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
-    LifeBarSize = 10,
+    LifeBarSize = 7,
     Economy = {
         BuildCostEnergy = 7200,
         BuildRate = 125,

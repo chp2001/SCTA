@@ -41,7 +41,7 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 35,
     },
     StrategicIconName = 'icon_ship3_air',
-    LifeBarSize = 8,
+    LifeBarSize = 7,
     SelectionSizeX = 6,
     SelectionSizeZ = 12,
     SizeX = 7,

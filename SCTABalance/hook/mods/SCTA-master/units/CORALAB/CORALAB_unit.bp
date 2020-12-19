@@ -43,9 +43,13 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
-    LifeBarSize = 8,
+    LifeBarSize = 7,
     Intel = {
         VisionRadius = 10,
+    },
+    Physics = {
+        SkirtSizeX = 8,
+        SkirtSizeZ = 8,
     },
     SelectionSizeX = 7,
     SelectionSizeZ = 5,

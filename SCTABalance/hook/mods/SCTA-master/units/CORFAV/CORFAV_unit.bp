@@ -12,26 +12,22 @@ UnitBlueprint {
     'OVERLAYDIRECTFIRE',
     'OVERLAYRADAR', 
     'CORE',
-    'VEHICLE',	#'TANK' in TA
+    'VEHICLE',
     'LEVEL1',
-    
-    
-    
-    
 },
     Display = {
         Abilities = {
             '<LOC ability_radar>Radar',
         },
-        UniformScale = 0.12,
+        UniformScale = 0.09,
        },
     Intel = {
     RadarRadius = 40,
     },
     LifeBarSize = 1,
-    SelectionSizeX = 0.9,
-    SelectionSizeZ = 0.9,
-    SizeX = 1.5,
-    SizeY = 1.5,
-    SizeZ = 1.5,
+    SelectionSizeX = 0.7,
+    SelectionSizeZ = 0.7,
+    SizeX = 1.25,
+    SizeY = 1.25,
+    SizeZ = 1.25,
 }

@@ -1,12 +1,12 @@
 UnitBlueprint {
   Merge = true,
   Display = {
-    UniformScale = 0.12,
+    UniformScale = 0.1,
 },
-    Defense = {
-        Health = 400,
-        MaxHealth = 400,
-    },
+Defense = {
+    Health = 250,
+    MaxHealth = 250,
+},
   Economy = {
     BuildTime = 3200,
         BuildCostMass = 100,
@@ -17,12 +17,12 @@ UnitBlueprint {
         SizeZ = 2,
     },
    Physics = {
-    SkirtOffsetX = -0.4,
-    SkirtOffsetZ = -0.4,
+    SkirtOffsetX = -0.275,
+    SkirtOffsetZ = -0.3,
         SkirtSizeX = 2.5,
         SkirtSizeZ = 2.5,
     },
-    SelectionCenterOffsetX = -0.1,
+    SelectionCenterOffsetX = -0.05,
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
     SelectionThickness = 0.6,

@@ -3,10 +3,10 @@
   Display = {
     UniformScale = 0.12,
 },
-    Defense = {
-        Health = 380,
-        MaxHealth = 380,
-    },
+Defense = {
+    Health = 220,
+    MaxHealth = 220,
+},
   Economy = {
     BuildTime = 3200,
         BuildCostMass = 100,
@@ -17,8 +17,8 @@
         SizeZ = 2,
     },
    Physics = {
-        SkirtOffsetX = -0.4,
-        SkirtOffsetZ = -0.4,
+    SkirtOffsetX = -0.3,
+    SkirtOffsetZ = -0.35,
         SkirtSizeX = 2.5,
         SkirtSizeZ = 2.5,
     },

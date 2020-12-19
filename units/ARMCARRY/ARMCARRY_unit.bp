@@ -50,7 +50,6 @@ UnitBlueprint {
         'FACTORY',
         'NAVALCARRIER',
         'SHOWQUEUE',
-        'OVERLAYANTIAIR',
         'OVERLAYRADAR',
         'OVERLAYSONAR',
         'OVERLAYMISC',

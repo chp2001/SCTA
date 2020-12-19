@@ -84,7 +84,7 @@ UnitBlueprint {
             'VEHICLE LEVEL2 CORE',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = 4,
+	InitialRallyZ = 5,
         StorageMass = 200,
         StorageEnergy = 200,
     },

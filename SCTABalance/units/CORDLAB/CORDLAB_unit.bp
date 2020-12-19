@@ -80,7 +80,7 @@ UnitBlueprint {
             },
         },
 	--TextureAnimationFrames = 6,
-        UniformScale = 0.25,
+        UniformScale = 0.26,
     },
     Economy = {
         BuildCostEnergy = 38000,
@@ -94,9 +94,9 @@ UnitBlueprint {
             'KBOT LEVEL1 CORE',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = 4,
-        StorageMass = 100,
-        StorageEnergy = 100,
+	InitialRallyZ = 5,
+        StorageMass = 50,
+        StorageEnergy = 50,
     },
     Footprint = {
 	MaxSlope = 0.625,

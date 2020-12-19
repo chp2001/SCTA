@@ -91,9 +91,9 @@ UnitBlueprint {
     NaturalProducer = true,
 	ProductionPerSecondMass = 1,
 	InitialRallyX = 1,
-	InitialRallyZ = 1,
-	StorageEnergy = 200,
-	StorageMass = 900,
+	InitialRallyZ = 5,
+	StorageEnergy = 250,
+	StorageMass = 250,
     },
     Footprint = {
         MinWaterDepth = 1.875,

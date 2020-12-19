@@ -82,7 +82,7 @@ UnitBlueprint {
 	NaturalProducer = true,
 	ProductionPerSecondMass = 1,
 	InitialRallyX = 0,
-	InitialRallyZ = 7.5,
+	InitialRallyZ = 5,
         BuildableCategory = {
             'OCEAN LEVEL2 CORE',
         },

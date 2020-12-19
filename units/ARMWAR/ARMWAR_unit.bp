@@ -40,10 +40,6 @@ UnitBlueprint {
         'ARM',
         'KBOT',
 	'LEVEL1',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -58,18 +54,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/ARMWAR/ARMWAR_lod0_Awalk.sca',
         AnimationWalkRate = 1,
-        Abilities = {
-            'Infantry',
-        },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'torso'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -88,10 +72,6 @@ UnitBlueprint {
         BuildCostMass = 196,
         BuildTime = 5709,
     },
-    --[[Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },]]--
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -116,7 +96,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarSize = 1.5,
     Physics = {
         LayerChangeOffsetHeight = -2.00,
 	    BackUpDistance = 0,
@@ -137,9 +117,6 @@ UnitBlueprint {
     SizeZ = 2,
     StrategicIconName = 'icon_bot1_directfire',
     StrategicIconSortPriority = 0,
-    ---Transport = {
-        --CanFireFromTransport = true,
-    --},
     Weapon = {
         {
             Audio = {
@@ -228,7 +205,7 @@ UnitBlueprint {
             MaxRadius = 12,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 11,
+	    MuzzleVelocity = 15,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMWAR_LCANNON/ARMWAR_LCANNON_proj.bp',
             RackBones = {
                 {

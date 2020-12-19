@@ -39,15 +39,11 @@ UnitBlueprint {
         'ARM',
         'KBOT',
 	'LEVEL1',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 75,
-        MaxHealth = 75,
+        Health = 50,
+        MaxHealth = 50,
         AirThreatLevel = 0,
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,

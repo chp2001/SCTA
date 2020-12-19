@@ -33,8 +33,8 @@ UnitBlueprint {
     RepairConsumeMass = 0,
     StagingPlatformScanRadius = 300,
     TargetBones = {
-        'Attachpoint01',
         'Attachpoint_Med_02',
+        'Attachpoint_Med_01',
     },
 },
     BuildIconSortPriority = 9,
@@ -73,8 +73,7 @@ UnitBlueprint {
         AnimationBuild = '/mods/SCTA-master/units/ARMCARRY/ARMCARRY_lod0_build.sca',
         AnimationBuildRate = 2, 
         AnimationPower = '/mods/SCTA-master/units/ARMCARRY/ARMCARRY_lod0_power.sca',
-        AnimationPowerRate = 0.2,
-        BuildAttachBone = 'Attachpoint_Med_01',
+        AnimationPowerRate = 1,
         Abilities = {
             '<LOC ability_airstaging>Air Staging',    
             '<LOC ability_carrier>Carrier',

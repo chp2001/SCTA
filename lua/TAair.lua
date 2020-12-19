@@ -9,8 +9,10 @@ TAair = Class(TAunit)
         TAunit.OnCreate(self)
         self.HasFuel = true
 	end,
-	
 
+	OnStartRefueling = function(self)
+    end,
+	
     OnMotionVertEventChange = function(self, new, old)
         TAunit.OnMotionVertEventChange(self, new, old)
 		if (new == 'Down' or new == 'Bottom') then

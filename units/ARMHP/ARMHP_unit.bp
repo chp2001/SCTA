@@ -69,6 +69,7 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_aquatic>Aquatic',
         },
+        BuildAttachBone = 'pad',
         AnimationUnpack = '/mods/SCTA-master/units/ARMHP/ARMHP_lod0_unpack.sca',
         AnimationUnpackRate = 1,    
         Mesh = {
@@ -103,7 +104,6 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildAttachBone = 'pad',
             BuildEffectBones = {'muzzle1','muzzle2'},
         },      
         Category = 'Factory',
@@ -140,10 +140,20 @@ UnitBlueprint {
         FlattenSkirt = true,
         SkirtSizeX = 8,
         SkirtSizeZ = 8,
-	BuildAreaX = 4,
-	BuildAreaZ = 4,
-	CloseAreaX = 4,
-	CloseAreaZ = 7,
+    RollOffPoints = {
+        {
+            UnitSpin = 0,
+            X = 0,
+            Y = 0,
+            Z = 2.5,
+        },
+        {
+            UnitSpin = 180,
+            X = 0,
+            Y = 0,
+            Z = -2.5,
+        },
+    },
         OccupyRects = {
             # offsetX offsetZ  sizeX sizeZ, offset from center of unit
             -3,

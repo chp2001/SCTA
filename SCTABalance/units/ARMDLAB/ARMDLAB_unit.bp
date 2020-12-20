@@ -59,6 +59,7 @@ UnitBlueprint {
         Abilities = {
             'Upgradeable',
         },
+        BuildAttachBone = 'BasePlate',
         AnimationUnpack = '/mods/SCTA-master/units/ARMLAB/ARMLAB_lod0_aopen.sca',
         AnimationUnpackRate = 1.5, 
         Mesh = {
@@ -99,7 +100,6 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildAttachBone = 'BasePlate',
                 BuildEffectBones = {'Nozzle_01','Nozzle_02'},
             },
 	---BuildAngle = 4096,
@@ -137,10 +137,24 @@ UnitBlueprint {
         FlattenSkirt = true,
         SkirtSizeX = 8,
         SkirtSizeZ = 8,
-	BuildAreaX = 2,
-	BuildAreaZ = 2,
-	CloseAreaX = 2,
-	CloseAreaZ = 6,
+	------BuildAreaX = 2,
+	------BuildAreaZ = 2,
+	---CloseAreaX = 2,
+    ---CloseAreaZ = 2,
+    RollOffPoints = {
+    {
+        UnitSpin = 0,
+        X = 0,
+        Y = 0,
+        Z = -2.5,
+    },
+    {
+        UnitSpin = 180,
+        X = 0,
+        Y = 0,
+        Z = 2.5,
+    },
+},
         OccupyRects = {
             # offsetX offsetZ  sizeX sizeZ, offset from center of unit
             -2,

@@ -131,10 +131,10 @@ UnitBlueprint {
         FlattenSkirt = true,
         SkirtSizeX = 8,
         SkirtSizeZ = 6,
-	BuildAreaX = 4,
-	BuildAreaZ = 4,
-	CloseAreaX = 4,
-	CloseAreaZ = 4,
+	---BuildAreaX = 4,
+	---BuildAreaZ = 4,
+	---CloseAreaX = 4,
+	---CloseAreaZ = 4,
         OccupyRects = {
             # offsetX offsetZ  sizeX sizeZ, offset from center of unit
             -3.5,

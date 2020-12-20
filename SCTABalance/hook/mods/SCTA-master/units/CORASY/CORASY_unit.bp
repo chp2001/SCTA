@@ -30,11 +30,6 @@ UnitBlueprint {
     Footprint = {
         SizeX = 14,
         SizeZ = 14,
-	MinWaterDepth = 1.875,
-    },
-    Physics = {
-        SkirtSizeX = 12,
-        SkirtSizeZ = 12,
     },
     Economy = {
         BuildCostEnergy = 16000,
@@ -59,7 +54,7 @@ UnitBlueprint {
     SelectionSizeX = 15,
     SelectionSizeZ = 15,
     SizeX = 20,
-    SizeY = 5,
+    SizeY = 3,
     SizeZ = 20,
     ---CollisionOffsetX = -2,
 }

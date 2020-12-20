@@ -65,7 +65,6 @@ UnitBlueprint {
         AnimationUnpack = '/mods/SCTA-master/units/CORSY/CORSY_lod0Action.sca',
         AnimationUnpackRate = 0.5, 
 	BuildAttachBone = 0,
-	--TextureAnimationFrames = 6,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -136,10 +135,36 @@ UnitBlueprint {
             LAYER_Water = true,
         },
         FlattenSkirt = true,
-        SkirtSizeX = 12,
-        SkirtSizeZ = 12,
-	BuildAreaX = 6,
-	BuildAreaZ = 6,
+        SkirtSizeX = 8,
+        SkirtSizeZ = 8,
+	------BuildAreaX = 8,
+    ------BuildAreaZ = 8,
+    RollOffPoints = {
+        {
+            UnitSpin = 0,
+            X = 0,
+            Y = 0,
+            Z = 3,
+        },
+        {
+            UnitSpin = 90,
+            X = 3,
+            Y = 0,
+            Z = 0,
+        },    
+                  {
+            UnitSpin = 180,
+            X = 0,
+            Y = 0,
+            Z = -3,
+        },
+        {
+            UnitSpin = 360,
+            X = -3,
+            Y = 0,
+            Z = 0,
+        },
+    },
         OccupyRects = {
             # offsetX offsetZ  sizeX sizeZ, offset from center of unit
             -4,
@@ -169,7 +194,7 @@ UnitBlueprint {
     SelectionCenterOffsetX = 0.5,
     SelectionCenterOffsetZ = 0.5,
     SizeX = 20,
-    SizeY = 5,
+    SizeY = 3,
     SizeZ = 20,
     ---CollisionOffsetX = -2,
     StrategicIconName = 'icon_factory2_naval',

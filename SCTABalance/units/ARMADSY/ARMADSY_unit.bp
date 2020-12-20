@@ -58,6 +58,7 @@ UnitBlueprint {
     },
     Description = 'Produces Ships',
     Display = {
+        BuildAttachBone = 'ARMDSY',
         AnimationUnpack = '/mods/SCTA-master/units/ARMSY/ARMSY_lod0_unpack.sca',
         AnimationUnpackRate = 2,  
         Mesh = {
@@ -133,10 +134,36 @@ UnitBlueprint {
             LAYER_Water = true,
         },
         FlattenSkirt = true,
-        SkirtSizeX = 12,
-        SkirtSizeZ = 12,
-	BuildAreaX = 6,
-	BuildAreaZ = 6,
+        SkirtSizeX = 8,
+        SkirtSizeZ = 8,
+	------BuildAreaX = 8,
+    ------BuildAreaZ = 8,
+    RollOffPoints = {
+        {
+            UnitSpin = 0,
+            X = 0,
+            Y = 0,
+            Z = 3,
+        },
+        {
+            UnitSpin = 90,
+            X = 3,
+            Y = 0,
+            Z = 0,
+        },    
+                  {
+            UnitSpin = 180,
+            X = 0,
+            Y = 0,
+            Z = -3,
+        },
+        {
+            UnitSpin = 360,
+            X = -3,
+            Y = 0,
+            Z = 0,
+        },
+    },
         OccupyRects = {
             # offsetX offsetZ  sizeX sizeZ, offset from center of unit
             -4,
@@ -164,7 +191,7 @@ UnitBlueprint {
     SelectionSizeZ = 15,
     SelectionThickness = 0.25,
     SizeX = 20,
-    SizeY = 5,
+    SizeY = 3,
     SizeZ = 20,
     ---CollisionOffsetX = -2,
     StrategicIconName = 'icon_factory3_naval',

@@ -17,25 +17,19 @@ ARMSCRAM = Class(TAunit) {
 	end,
 
 
-	OnScriptBitSet = function(self, bit)
-		if bit == 5 then
-			--spin fork around z-axis speed <0>
-			self.Spinners.fork:SetSpeed(0)
+	OnIntelDisabled = function(self)
+		self.Spinners.fork:SetSpeed(0)
 			self:SetMaintenanceConsumptionInactive()
 			self:PlayUnitSound('Deactivate')
-		end
-		TAunit.OnScriptBitSet(self, bit)
-	end,
+	TAunit.OnIntelDisabled(self)
+end,
 
 
-	OnScriptBitClear = function(self, bit)
-		if bit == 5 then
-			--spin fork around z-axis speed <100>
-			self.Spinners.fork:SetSpeed(100)
-			self:SetMaintenanceConsumptionActive()
-			self:PlayUnitSound('Activate')
-		end
-		TAunit.OnScriptBitClear(self, bit)
-	end,
+OnIntelEnabled = function(self)
+	self.Spinners.fork:SetSpeed(100)
+	self:SetMaintenanceConsumptionActive()
+	self:PlayUnitSound('Activate')
+	TAunit.OnIntelEnabled(self)
+end,
 }
 TypeClass = ARMSCRAM

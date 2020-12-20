@@ -66,61 +66,45 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_stealthfield>Stealth Field',
         },
-<<<<<<< Updated upstream
-=======
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'fork'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-    },]]---
-    Land = {
-        Treads = {
-            ScrollMultiplier = 0.75,
-            ScrollTreads = true,
-            TreadMarks = {
-                {
-                    BoneName = 'CORETER',
-                    TreadMarks = 'tank_treads_albedo',
-                    TreadMarksInterval = 0.2,
-                    TreadMarksSizeX = 0.5,
-                    TreadMarksSizeZ = 0.5,
-                    TreadOffset = {
-                        0,
-                        0,
-                        0,
+        MovementEffects = {
+            Bones = {'CORETER'},
+            Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
+            Scale = 0.5,
+            Land = {
+                Treads = {
+                    ScrollMultiplier = 0.75,
+                    ScrollTreads = true,
+                    TreadMarks = {
+                        {
+                            BoneName = 'CORETER',
+                            TreadMarks = 'tank_treads_albedo',
+                            TreadMarksInterval = 0.2,
+                            TreadMarksSizeX = 0.5,
+                            TreadMarksSizeZ = 0.5,
+                            TreadOffset = {
+                                0,
+                                0,
+                                0,
+                            },
+                        },
                     },
                 },
             },
         },
-    },
->>>>>>> Stashed changes
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
-                {
-                    LODCutoff = 120,
-                    Scrolling = true,
-                    ShaderName = 'Unit',
-                },
-                {
-                    LODCutoff = 230,
-                    ShaderName = 'Unit', 
-                },
+    Mesh = {
+        IconFadeInZoom = 130,
+        LODs = {
+            {
+                LODCutoff = 120,
+                Scrolling = true,
+                ShaderName = 'Unit',
+            },
+            {
+                LODCutoff = 215,
+                ShaderName = 'Unit',
             },
         },
+    },
         UniformScale = 0.16,
     },
     Economy = {

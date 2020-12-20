@@ -18,24 +18,21 @@ CORVRAD = Class(TAunit) {
 		TAunit.OnStopBeingBuilt(self,builder,layer)
 		--spin dish around y-axis speed <100>;
 		self.Spinners.dish:SetTargetSpeed(100)
+		self:OnIntelEnabled()
 	end,
 
 
-	OnScriptBitSet = function(self, bit)
-		if bit == 3 then
-			--spin dish around z-axis speed <0> (Bug in TA: meant to be y-axis)
-			self.Spinners.dish:SetTargetSpeed(0)
-		end
-		TAunit.OnScriptBitSet(self, bit)
-	end,
+	OnIntelDisabled = function(self)
+		self.Spinners.dish:SetSpeed(0)
+			self:SetMaintenanceConsumptionInactive()
+	TAunit.OnIntelDisabled(self)
+end,
 
 
-	OnScriptBitClear = function(self, bit)
-		if bit == 3 then
-			--spin dish around y-axis speed <100>;
-			self.Spinners.dish:SetTargetSpeed(100)
-		end
-		TAunit.OnScriptBitClear(self, bit)
-	end,
+OnIntelEnabled = function(self)
+	self.Spinners.dish:SetSpeed(100)
+	self:SetMaintenanceConsumptionActive()
+	TAunit.OnIntelEnabled(self)
+end,
 }
 TypeClass = CORVRAD

@@ -53,6 +53,10 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORSPY/CORSPY_lod0_Awalk.sca',
         AnimationWalkRate = 1,
+        Abilities = {
+            '<LOC ability_radar>Radar',
+        },
+        CloakMesh = '/mods/SCTA-master/units/CORSPY/CORSPY_cloak_mesh',
     Mesh = {
             IconFadeInZoom = 130,
             LODs = {

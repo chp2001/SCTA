@@ -6,13 +6,13 @@ local EffectUtil = import('/lua/EffectUtilities.lua')
 
 TAFactory = Class(FactoryUnit) {	
 		OnStartBuild = function(self, unitBeingBuilt, order )
-			self:Open()
-			ForkThread(self.FactoryStartBuild, self, unitBeingBuilt, order )
+            ForkThread(self.FactoryStartBuild, self, unitBeingBuilt, order )
+            self:Open()
 		end,
 
 		FactoryStartBuild = function(self, unitBeingBuilt, order )
-			WaitFor(self.AnimManip)
-			FactoryUnit.OnStartBuild(self, unitBeingBuilt, order )
+            FactoryUnit.OnStartBuild(self, unitBeingBuilt, order )
+            WaitFor(self.AnimManip)
 		end,
 
 		Open = function(self)
@@ -28,7 +28,7 @@ TAFactory = Class(FactoryUnit) {
 
 		CreateBuildEffects = function(self, unitBeingBuilt, order)
 			TAutils.CreateTAFactBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
-		end,
+        end,
     }
     
     TASeaFactory = Class(TAFactory) {

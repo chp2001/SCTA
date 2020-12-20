@@ -51,8 +51,8 @@ UnitBlueprint {
         SizeZ = 8,
     },    
     Physics = {
-        SkirtSizeX = 8,
-        SkirtSizeZ = 8,
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,

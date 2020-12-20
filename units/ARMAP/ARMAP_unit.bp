@@ -140,6 +140,14 @@ UnitBlueprint {
         FlattenSkirt = true,
         SkirtSizeX = 7,
         SkirtSizeZ = 6,
+        RollOffPoints = {
+            {
+                UnitSpin = 0,
+                X = 0,
+                Y = 0,
+                Z = 2.5,
+            },
+        },
     },
     SelectionSizeX = 3.75,
     SelectionSizeZ = 3.5,

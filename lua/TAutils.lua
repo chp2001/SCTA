@@ -33,7 +33,7 @@ CreateTAGantBuildingEffects = function(self, unitBeingBuilt, order)
 	for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
 		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.2) )         
     end
-    EffectUtil.CreateCybranFactoryBuildEffects( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones, self.BuildEffectsBag )
+    EffectUtil.CreateDefaultBuildBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
 end
 
 TAReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, EffectsBag)

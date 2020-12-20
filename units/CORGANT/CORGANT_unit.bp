@@ -133,10 +133,14 @@ UnitBlueprint {
         FlattenSkirt = true,
         SkirtSizeX = 9,
         SkirtSizeZ = 9,
-	BuildAreaX = 3,
-	BuildAreaZ = 3,
-	CloseAreaX = 5,
-	CloseAreaZ = 5,
+        RollOffPoints = {
+            {
+                UnitSpin = 0,
+                X = 0,
+                Y = 0,
+                Z = 2.5,
+            },
+        },
         OccupyRects = {
             # offsetX offsetZ  sizeX sizeZ, offset from center of unit
             0,

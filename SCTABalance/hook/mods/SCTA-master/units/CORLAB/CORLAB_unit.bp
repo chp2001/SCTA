@@ -56,8 +56,8 @@ UnitBlueprint {
         UpgradesTo = 'cordlab', 
     },
     Physics = {
-        SkirtSizeX = 8,
-        SkirtSizeZ = 8,
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
     },
     SelectionSizeX = 7,
     SelectionSizeZ = 5,

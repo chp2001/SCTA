@@ -37,7 +37,7 @@ UnitBlueprint {
         BuildCostEnergy = 24000,
         MaintenanceConsumptionPerSecondEnergy = 10,
         BuildTime = 17500,
-        ProductionPerSecondMass = 8,
+        ProductionPerSecondMass = 10,
     },
    Physics = {
         MeshExtentsX = 1.25,

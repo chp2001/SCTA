@@ -3,12 +3,12 @@
 #
 #Script created by Raevn
 
-local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
+local TASeaFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TASeaFactory
 
-CORDSY = Class(TAFactory) {
+CORDSY = Class(TASeaFactory) {
 
 	OnCreate = function(self)
-		TAFactory.OnCreate(self)
+		TASeaFactory.OnCreate(self)
 		self.Spinners = {
 			turreta = CreateRotator(self, 'turreta', 'y', nil, 0, 0, 0),
 			turretb = CreateRotator(self, 'turretb', 'y', nil, 0, 0, 0),
@@ -55,12 +55,12 @@ CORDSY = Class(TAFactory) {
 		self.Spinners.gunax:SetGoal(66.90)
 		self.Spinners.gunax:SetSpeed(92.68)
 
-		TAFactory.Open(self)
+		TASeaFactory.Open(self)
 	end,
 
 
 	Close = function(self)
-		TAFactory.Close(self)
+		TASeaFactory.Close(self)
 		--TURN turreta to y-axis <0> SPEED <50.28>;
 		self.Spinners.turreta:SetGoal(0)
 		self.Spinners.turreta:SetSpeed(50.28)

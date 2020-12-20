@@ -29,7 +29,13 @@ TAFactory = Class(FactoryUnit) {
 		CreateBuildEffects = function(self, unitBeingBuilt, order)
 			TAutils.CreateTAFactBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
 		end,
-	}
+    }
+    
+    TASeaFactory = Class(TAFactory) {
+    CreateBuildEffects = function(self, unitBeingBuilt, order)
+        TAutils.CreateTASeaFactBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
+    end,
+    }    
 
 TACarrier = Class(AircraftCarrier) {
 

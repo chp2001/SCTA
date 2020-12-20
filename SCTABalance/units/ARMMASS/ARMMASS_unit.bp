@@ -55,24 +55,6 @@ UnitBlueprint {
     },
     Description = 'Advanced Metal Extractor',
     Display = {
-        	--[[DestructionEffects = {
-        DestructionEmitters = {
-			{
-				EmitterBone = {'ARMMOHO'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'Blades'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -94,7 +76,7 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 10,
         BuildTime = 24000,
         DifferentialUpgradeCostCalculation = true,
-        ProductionPerSecondMass = 8,
+        ProductionPerSecondMass = 10,
     },
     Footprint = {
         SizeX = 1,

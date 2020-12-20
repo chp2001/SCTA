@@ -3,11 +3,11 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TATreads = import('/mods/SCTA-master/lua/TAMotion.lua').TATreads
 
-CORETER = Class(TAunit) {
+CORETER = Class(TATreads) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TATreads.OnCreate(self)
 		self.Spinners = {
 			fork = CreateRotator(self, 'fork', 'z', nil, 0, 0, 0),
 		}
@@ -15,7 +15,7 @@ CORETER = Class(TAunit) {
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
+		TATreads.OnStopBeingBuilt(self,builder,layer)
 		--spin fork around z-axis speed <100>
 		self.Spinners.fork:SetSpeed(100)
 		self:SetMaintenanceConsumptionActive()
@@ -29,7 +29,7 @@ CORETER = Class(TAunit) {
 			self:SetMaintenanceConsumptionInactive()
 			self:PlayUnitSound('Deactivate')
 		end
-		TAunit.OnScriptBitSet(self, bit)
+		TATreads.OnScriptBitSet(self, bit)
 	end,
 
 
@@ -40,7 +40,7 @@ CORETER = Class(TAunit) {
 			self:SetMaintenanceConsumptionActive()
 			self:PlayUnitSound('Activate')
 		end
-		TAunit.OnScriptBitClear(self, bit)
+		TATreads.OnScriptBitClear(self, bit)
 	end,
 }
 TypeClass = CORETER

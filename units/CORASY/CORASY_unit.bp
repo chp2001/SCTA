@@ -61,7 +61,7 @@ UnitBlueprint {
         AnimationUnpack = '/mods/SCTA-master/units/CORASY/CORASY_lod0Action.sca',
         AnimationUnpackRate = 1, 
 	--TextureAnimationFrames = 4,
-	BuildAttachBone = 0,
+	BuildAttachBone = 'BuildBone',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -128,12 +128,8 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Water = true,
         },
-        SkirtSizeX = 8,
-        SkirtSizeZ = 8,
-	SkirtSizeX = 8,
-        SkirtSizeZ = 8,
-	------BuildAreaX = 8,
-    ------BuildAreaZ = 8,
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
     RollOffPoints = {
         {
             UnitSpin = 0,
@@ -141,23 +137,11 @@ UnitBlueprint {
             Y = 0,
             Z = 3,
         },
-        {
-            UnitSpin = 90,
-            X = 3,
-            Y = 0,
-            Z = 0,
-        },    
                   {
             UnitSpin = 180,
             X = 0,
             Y = 0,
             Z = -3,
-        },
-        {
-            UnitSpin = 360,
-            X = -3,
-            Y = 0,
-            Z = 0,
         },
     },
         OccupyRects = {

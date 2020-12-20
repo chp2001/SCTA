@@ -62,16 +62,19 @@ UnitBlueprint {
     },
     Description = 'Produces Ships',
     Display = {
+        BuildAttachBone = 'BuildBone',
         AnimationUnpack = '/mods/SCTA-master/units/CORSY/CORSY_lod0Action.sca',
-        AnimationUnpackRate = 0.5, 
-	BuildAttachBone = 0,
+        AnimationUnpackRate = 2,  
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 400,
+                    LODCutoff = 400, 
+                    SpecularName = '/mods/SCTA-master/units/CORSY/CORSY_SpecTeam.dds',
+                    AlbedoName = '/mods/SCTA-master/units/CORSY/CORSY_Albedo.dds',
+                    MeshName =   '/mods/SCTA-master/units/CORSY/CORSY_lod0.scm',
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -135,8 +138,8 @@ UnitBlueprint {
             LAYER_Water = true,
         },
         FlattenSkirt = true,
-        SkirtSizeX = 8,
-        SkirtSizeZ = 8,
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
 	------BuildAreaX = 8,
     ------BuildAreaZ = 8,
     RollOffPoints = {

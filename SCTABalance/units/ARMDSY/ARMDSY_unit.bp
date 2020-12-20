@@ -58,16 +58,19 @@ UnitBlueprint {
     },
     Description = 'Produces Ships',
     Display = {
-        BuildAttachBone = 'ARMDSY',
+        BuildAttachBone = 'BuildBone',
         AnimationUnpack = '/mods/SCTA-master/units/ARMSY/ARMSY_lod0_unpack.sca',
         AnimationUnpackRate = 2,  
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 400,
+                    LODCutoff = 400, 
+                    SpecularName = '/mods/SCTA-master/units/ARMSY/ARMSY_SpecTeam.dds',
+                    AlbedoName = '/mods/SCTA-master/units/ARMSY/ARMSY_Albedo.dds',
+                    MeshName =   '/mods/SCTA-master/units/ARMSY/ARMSY_lod0.scm',
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -131,8 +134,8 @@ UnitBlueprint {
             LAYER_Water = true,
         },
         FlattenSkirt = true,
-        SkirtSizeX = 8,
-        SkirtSizeZ = 8,
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
 	------BuildAreaX = 8,
     ------BuildAreaZ = 8,
     RollOffPoints = {

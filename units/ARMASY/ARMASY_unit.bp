@@ -58,7 +58,7 @@ UnitBlueprint {
     },
     Description = 'Produces Ships',
     Display = {
-        BuildAttachBone = 'BasePlate',
+        BuildAttachBone = 'BuildPlate',
         AnimationUnpack = '/mods/SCTA-master/units/ARMASY/ARMASY_lod0_unpack.sca',
         AnimationUnpackRate = 0.5,    
         Mesh = {
@@ -127,8 +127,8 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Water = true,
         },
-        SkirtSizeX = 8,
-        SkirtSizeZ = 8,
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
 	------BuildAreaX = 8,
     ------BuildAreaZ = 8,
     RollOffPoints = {

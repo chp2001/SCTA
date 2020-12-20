@@ -127,10 +127,6 @@ UnitBlueprint {
         FlattenSkirt = true,
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
-	-----BuildAreaX = 4,
-	-----BuildAreaZ = 4,
-	---CloseAreaX = 4,
-    ---CloseAreaZ = 7,
     RollOffPoints = {
         {
             UnitSpin = 0,

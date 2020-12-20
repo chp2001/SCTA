@@ -67,7 +67,7 @@ UnitBlueprint {
     Display = {
         BuildAttachBone = 'buildpad',
         AnimationUnpack = '/mods/SCTA-master/SCTABalance/units/ARMGANT/ARMGANT_lod0_unpack.sca',
-        AnimationUnpackRate = 0.5, 
+        AnimationUnpackRate = 1, 
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -133,10 +133,14 @@ UnitBlueprint {
         FlattenSkirt = true,
         SkirtSizeX = 9,
         SkirtSizeZ = 9,
-	---BuildAreaX = 3,
-	---BuildAreaZ = 3,
-	---CloseAreaX = 5,
-	---CloseAreaZ = 5,
+        RollOffPoints = {
+            {
+                UnitSpin = 0,
+                X = 0,
+                Y = 0,
+                Z = 2.5,
+            },
+        },
         OccupyRects = {
             # offsetX offsetZ  sizeX sizeZ, offset from center of unit
             0,

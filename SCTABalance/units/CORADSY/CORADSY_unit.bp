@@ -157,7 +157,7 @@ UnitBlueprint {
             Z = -3,
         },
         {
-            UnitSpin = 360,
+            UnitSpin = -90,
             X = -3,
             Y = 0,
             Z = 0,

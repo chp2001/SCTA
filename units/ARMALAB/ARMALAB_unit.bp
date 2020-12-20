@@ -123,12 +123,8 @@ UnitBlueprint {
             LAYER_Land = true,
         },
         FlattenSkirt = true,
-        SkirtSizeX = 5,
+        SkirtSizeX = 6,
         SkirtSizeZ = 6,
-	-----BuildAreaX = 3,
-	-----BuildAreaZ = 6,
-	---CloseAreaX = 3,
-    ---CloseAreaZ = 6,
     RollOffPoints = {
         {
             UnitSpin = 0,

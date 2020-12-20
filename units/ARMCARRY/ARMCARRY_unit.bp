@@ -104,7 +104,7 @@ UnitBlueprint {
         },
     },
     Footprint = {
-        SizeX = 4,
+        SizeX = 3,
         SizeZ = 8,
     },
     General = {

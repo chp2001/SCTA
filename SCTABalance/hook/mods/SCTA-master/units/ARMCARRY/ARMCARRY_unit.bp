@@ -42,6 +42,7 @@ UnitBlueprint {
     },
     StrategicIconName = 'icon_ship3_air',
     LifeBarSize = 7,
+    LifeBarOffset = 2,
     SelectionSizeX = 6,
     SelectionSizeZ = 12,
     SizeX = 7,

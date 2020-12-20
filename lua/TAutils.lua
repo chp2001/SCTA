@@ -20,6 +20,14 @@ CreateTAFactBuildingEffects = function( self, unitBeingBuilt, order )
     EffectUtil.CreateDefaultBuildBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
 end
 
+CreateTASeaFactBuildingEffects = function( self, unitBeingBuilt, order )
+    WaitSeconds( 0.1 )
+    for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
+		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.3) )         
+    end
+    EffectUtil.CreateDefaultBuildBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
+end
+
 CreateTAGantBuildingEffects = function(self, unitBeingBuilt, order)
     WaitSeconds( 0.1 )
 	for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do

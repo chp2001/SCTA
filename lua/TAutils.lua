@@ -31,7 +31,7 @@ end
 CreateTAGantBuildingEffects = function(self, unitBeingBuilt, order)
     WaitSeconds( 0.75 )
 	for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
-		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.2):OffsetEmitter(0,0,-0.5))         
+		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.18):OffsetEmitter(0,0,-0.2))         
     end
     EffectUtil.CreateCybranFactoryBuildEffects( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones, self.BuildEffectsBag )
 end

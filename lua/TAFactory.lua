@@ -5,14 +5,14 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local EffectUtil = import('/lua/EffectUtilities.lua')
 
 TAFactory = Class(FactoryUnit) {	
-		OnStartBuild = function(self, unitBeingBuilt, order )
-            ForkThread(self.FactoryStartBuild, self, unitBeingBuilt, order )
+        OnStartBuild = function(self, unitBeingBuilt, order )
             self:Open()
+            ForkThread(self.FactoryStartBuild, self, unitBeingBuilt, order )
 		end,
 
-		FactoryStartBuild = function(self, unitBeingBuilt, order )
-            FactoryUnit.OnStartBuild(self, unitBeingBuilt, order )
+        FactoryStartBuild = function(self, unitBeingBuilt, order )
             WaitFor(self.AnimManip)
+            FactoryUnit.OnStartBuild(self, unitBeingBuilt, order )
 		end,
 
 		Open = function(self)
@@ -36,6 +36,33 @@ TAFactory = Class(FactoryUnit) {
         TAutils.CreateTASeaFactBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
     end,
     }    
+
+    TAGantry = Class(FactoryUnit) {	
+        OnStartBuild = function(self, unitBeingBuilt, order )
+            ForkThread(self.FactoryStartBuild, self, unitBeingBuilt, order )
+            self:Open()
+        end,
+    
+        FactoryStartBuild = function(self, unitBeingBuilt, order )
+            FactoryUnit.OnStartBuild(self, unitBeingBuilt, order )
+            WaitFor(self.AnimManip)
+        end,
+    
+            Open = function(self)
+            end,
+    
+            OnStopBuild = function(self, unitBeingBuilt, order)
+                FactoryUnit.OnStopBuild(self, unitBeingBuilt, order)
+                self:Close()
+            end,
+    
+            Close = function(self)
+            end,
+    
+            CreateBuildEffects = function(self, unitBeingBuilt, order)
+                TAutils.CreateTAGantBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
+            end,
+        }
 
 TACarrier = Class(AircraftCarrier) {
 

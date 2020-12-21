@@ -3,32 +3,28 @@
 #
 #Script created by Raevn
 
-local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
+local TAGantry = import('/mods/SCTA-master/lua/TAFactory.lua').TAGantry
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
-CORGANT = Class(TAFactory) {
+CORGANT = Class(TAGantry) {
 	
 	OnCreate = function(self)
 		self.AnimManip = CreateAnimator(self)
 		self.Trash:Add(self.AnimManip)
-		TAFactory.OnCreate(self)
+		TAGantry.OnCreate(self)
 	end,
 
 
 	Open = function(self)
-		TAFactory.Open(self)
+		TAGantry.Open(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 	end,
 
 	Close = function(self)
-		TAFactory.Close(self)
+		TAGantry.Close(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationPack)
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationPackRate or 0.2))
-	end,
-
-	CreateBuildEffects = function(self, unitBeingBuilt, order)
-		TAutils.CreateTAGantBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
 	end,
 }
 

@@ -29,11 +29,11 @@ CreateTASeaFactBuildingEffects = function( self, unitBeingBuilt, order )
 end
 
 CreateTAGantBuildingEffects = function(self, unitBeingBuilt, order)
-    WaitSeconds( 0.1 )
+    WaitSeconds( 0.75 )
 	for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
-		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.2) )         
+		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.2):OffsetEmitter(0,0,-0.5))         
     end
-    EffectUtil.CreateDefaultBuildBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
+    EffectUtil.CreateCybranFactoryBuildEffects( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones, self.BuildEffectsBag )
 end
 
 TAReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, EffectsBag)

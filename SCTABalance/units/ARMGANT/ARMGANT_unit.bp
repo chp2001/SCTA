@@ -100,7 +100,8 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildEffectBones = {'nano1', 'nano2'},
+            BuildAttachBone = 'buildpad',
+            BuildEffectBones = {'flashy', 'nano1', 'nano2'},
         },    
         Category = 'Factory',
         Classification = 'RULEUC_Factory',

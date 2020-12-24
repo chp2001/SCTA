@@ -228,6 +228,9 @@ TADGun = Class(TAweapon) {
 
     OnLostTarget = function(self)
         self.unit:SetWeaponEnabledByLabel('DGun', true)
+        if self.AutoMode then
+            self.AutoThread = self:ForkThread(self.AutoEnable)
+        end
         TAweapon.OnLostTarget(self)
     end,
 

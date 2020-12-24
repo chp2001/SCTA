@@ -28,25 +28,17 @@ UnitBlueprint {
         MaxHealth = 6000,
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
-    Physics = {
-        SkirtSizeX = 0, 
-        SkirtSizeZ = 0,  
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
+        SizeX = 2,
+        SizeZ = 2,
     },
     Intel = {
     FreeIntel = true,
     RadarStealth = true,
     },
-    SelectionCenterOffsetZ = -0.25,
+    SelectionCenterOffsetZ = -0.3,
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_structure3_directfire',
     Weapon = {
         [1] = {
             RangeCategory = 'UWRC_DirectFire',

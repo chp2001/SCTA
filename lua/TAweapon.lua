@@ -208,33 +208,94 @@ TADGun = Class(TAweapon) {
         return not self.unit:IsOverchargePaused() and self:HasEnergy() and not
             self:UnitOccupied() 
     end,
+    
+    UnitOccupied = function(self)
+        return self.unit:IsUnitState('Building') or
+            self.unit:IsUnitState('Repairing') or
+            self.unit:IsUnitState('Reclaiming')
+    end,
 
     StartEconomyDrain = function(self) -- OverchargeWeapon drains energy on impact
     end,
 
     OnWeaponFired = function(self)
-        ---TAweapon.OnWeaponFired(self)
-        self.unit:SetWeaponEnabledByLabel('DGun', true)
+        --TAweapon.OnWeaponFired(self)
         self:ForkThread(self.PauseOvercharge)
     end,
 
-        OnLostTarget = function(self)
-        self.unit:SetWeaponEnabledByLabel('DGun', true)
-        TAweapon.OnLostTarget(self)
-    end,
-        
-        PauseOvercharge = function(self)
-            if not self.unit:IsOverchargePaused() then
-                self.unit:SetOverchargePaused(true)
-                WaitSeconds(1/self:GetBlueprint().RateOfFire)
-                self.unit:SetOverchargePaused(false)
+
+    PauseOvercharge = function(self)
+        if not self.unit:IsOverchargePaused() then
+            self.unit:SetOverchargePaused(true)
+            WaitSeconds(0.5/self:GetBlueprint().RateOfFire)
+            self.unit:SetOverchargePaused(false)
+            self.unit:SetWeaponEnabledByLabel('DGun', true)
+            if self.AutoMode then
+                self.unit:SetWeaponEnabledByLabel('AutoDGun', true)
+                self.AutoThread = self:ForkThread(self.AutoEnable)
             end
-        end,
+        end
+    end,
 
         OnCreate = function(self)
             TAweapon.OnCreate(self)
             self.EnergyRequired = self:GetBlueprint().EnergyRequired
             self.unit:SetWeaponEnabledByLabel('DGun', true)
+            self.unit:SetWeaponEnabledByLabel('AutoDGun', false)
             self.unit:SetOverchargePaused(false)
+            self.AutoMode = false
+            self.AutoThread = nil
+        end,
+
+        AutoEnable = function(self)
+            while not self:CanOvercharge() do
+                WaitSeconds(0.1)
+            end
+    
+            if self.AutoMode then
+                self.unit:SetWeaponEnabledByLabel('AutoDGun', true)
+                self:OnEnableWeapon()
+            end
+        end,
+    
+        SetAutoOvercharge = function(self, auto)
+            self.AutoMode = auto
+    
+            if self.AutoMode then
+                self.AutoThread = self:ForkThread(self.AutoEnable)
+            else
+                if self.AutoThread then
+                    KillThread(self.AutoThread)
+                    self.AutoThread = nil
+                end
+                if self.enabled then
+                    self:OnDisableWeapon()
+                end
+            end
+        end,
+
+        IsEnabled = function(self)
+            return self.enabled
+        end,
+    
+        OnEnableWeapon = function(self)
+            if self:BeenDestroyed() then return end
+            TAweapon.OnEnableWeapon(self)
+            self:SetWeaponEnabled(true)
+            if self:CanOvercharge() then
+                self.unit:SetWeaponEnabledByLabel(self.DesiredWeaponLabel, false)
+            end
+            self.enabled = true
+        end,
+    
+        OnDisableWeapon = function(self)
+            if self.unit:BeenDestroyed() then return end
+            self:SetWeaponEnabled(false)
+    
+            -- Only allow it to turn on the primary weapon if the unit is ready
+            if not self:UnitOccupied() then
+                self.unit:SetWeaponEnabledByLabel(self.DesiredWeaponLabel, true)
+            end
+            self.enabled = false
         end,
 }

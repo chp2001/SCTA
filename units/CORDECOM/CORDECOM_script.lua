@@ -8,14 +8,19 @@ CORDECOM = Class(TACommander) {
 
 	Weapons = {
 		COMLASER = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
 		},
 		DGun = Class(TADGun) {
+			OnWeaponFired = function(self)
+				self.unit:SetWeaponEnabledByLabel('AutoDGun', false)
+				TADGun.OnWeaponFired(self)
+			end,
+		},		
+		AutoDGun = Class(TADGun) {
+			OnWeaponFired = function(self)
+				self.unit:SetWeaponEnabledByLabel('DGun', false)
+				TADGun.OnWeaponFired(self)
+			end,
 		},
-
 	},
 }
 

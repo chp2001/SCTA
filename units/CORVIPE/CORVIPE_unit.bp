@@ -67,8 +67,8 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 2,
-        SizeZ = 2,
+        SizeX = 3,
+        SizeZ = 3,
     },
     General = {
         Category = 'Defense',

@@ -30,11 +30,11 @@ UnitBlueprint {
         SizeZ = 1,
     },
     Economy = {
-        BuildCostEnergy = 18000,
-        BuildCostMass = 600,
+        BuildCostEnergy = 24000,
+        BuildCostMass = 750,
         BuildTime = 30000,
-        ProductionPerSecondMass = 2,
-	MaintenanceConsumptionPerSecondEnergy = 50,
+        ProductionPerSecondMass = 3,
+	MaintenanceConsumptionPerSecondEnergy = 60,
     },
     Physics = {
         SkirtSizeX = 0, 

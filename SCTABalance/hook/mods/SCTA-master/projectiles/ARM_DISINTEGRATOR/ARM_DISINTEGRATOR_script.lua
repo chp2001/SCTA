@@ -17,7 +17,7 @@ DGun = Class(TALightCannonProjectile) {
 			if pos.y < GetTerrainHeight(pos.x, pos.z) then
 				self:SetTurnRate(0)
 				pos.y = GetTerrainHeight(pos.x, pos.z)
-				DamageArea(self, pos, 2, 2000, 'DGun', true)
+				DamageArea(self, pos, 2, 1500, 'DGun', true)
 				self:SetPosition(pos, true)
 				self:PlaySound(Sound({Cue = 'XPLOMAS2', Bank = 'TA_Sound', LodCutoff = 'Weapon_LodCutoff'}))
 				CreateEmitterAtEntity(self, self:GetArmy(), '/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp' ):ScaleEmitter(0.5)

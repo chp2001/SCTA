@@ -15,12 +15,10 @@ ARMCOM = Class(TARealCommander) {
 
 	Weapons = {
 		COMLASER = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
 		},
 		DGun = Class(TADGun) {
+		},		
+		AutoDGun = Class(TADGun) {
 		},
 		DeathWeapon = Class(TACommanderDeathWeapon) {},
 	},

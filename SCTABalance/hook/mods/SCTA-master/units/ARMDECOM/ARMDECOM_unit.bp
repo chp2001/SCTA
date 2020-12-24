@@ -27,6 +27,7 @@ UnitBlueprint {
     Defense = {
         Health = 18000,
         MaxHealth = 18000,
+        RegenRate = 10,
     },
     General = {
         CommandCaps = {

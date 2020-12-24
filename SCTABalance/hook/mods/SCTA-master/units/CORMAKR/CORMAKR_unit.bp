@@ -29,13 +29,13 @@ Categories = {
         Health = 600,
         MaxHealth = 600,
         },
-    Economy = {
-        BuildCostEnergy = 18000,
-        BuildCostMass = 600,
-        BuildTime = 30000,
-        ProductionPerSecondMass = 2,
-	MaintenanceConsumptionPerSecondEnergy = 50,
-    },   
+        Economy = {
+            BuildCostEnergy = 24000,
+            BuildCostMass = 700,
+            BuildTime = 30000,
+            ProductionPerSecondMass = 3,
+        MaintenanceConsumptionPerSecondEnergy = 60,
+        },
      Intel = {
         VisionRadius = 10,
     },

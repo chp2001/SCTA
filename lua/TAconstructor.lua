@@ -204,13 +204,13 @@ TACommander = Class(TAconstructor) {
     SetAutoOvercharge = function(self, auto)
         local wep = self:GetWeaponByLabel('AutoDGun')
         wep:SetAutoOvercharge(auto)
-        self:SetWeaponEnabledByLabel('AutoDGun', true)
         self.Sync.AutoOvercharge = auto
     end,
 
     OnCreate = function(self)
 		TAconstructor.OnCreate(self)
-		self:SetCapturable(false)
+        self:SetCapturable(false)
+        self:SetWeaponEnabledByLabel('AutoDGun', false)
 	end,
     
     CreateCaptureEffects = function( self, target )

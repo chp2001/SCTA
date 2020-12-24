@@ -243,18 +243,14 @@ TADGun = Class(TAweapon) {
             self.unit:SetWeaponEnabledByLabel('DGun', true)
             self.unit:SetWeaponEnabledByLabel('AutoDGun', false)
             self.unit:SetOverchargePaused(false)
-            self.AutoMode = false
-            self.AutoThread = nil
         end,
 
         AutoEnable = function(self)
             while not self:CanOvercharge() do
                 WaitSeconds(0.1)
             end
-    
             if self.AutoMode then
                 self.unit:SetWeaponEnabledByLabel('AutoDGun', true)
-                self:OnEnableWeapon()
             end
         end,
     
@@ -268,34 +264,7 @@ TADGun = Class(TAweapon) {
                     KillThread(self.AutoThread)
                     self.AutoThread = nil
                 end
-                if self.enabled then
-                    self:OnDisableWeapon()
-                end
             end
         end,
-
-        IsEnabled = function(self)
-            return self.enabled
-        end,
     
-        OnEnableWeapon = function(self)
-            if self:BeenDestroyed() then return end
-            TAweapon.OnEnableWeapon(self)
-            self:SetWeaponEnabled(true)
-            if self:CanOvercharge() then
-                self.unit:SetWeaponEnabledByLabel(self.DesiredWeaponLabel, false)
-            end
-            self.enabled = true
-        end,
-    
-        OnDisableWeapon = function(self)
-            if self.unit:BeenDestroyed() then return end
-            self:SetWeaponEnabled(false)
-    
-            -- Only allow it to turn on the primary weapon if the unit is ready
-            if not self:UnitOccupied() then
-                self.unit:SetWeaponEnabledByLabel(self.DesiredWeaponLabel, true)
-            end
-            self.enabled = false
-        end,
 }

@@ -219,21 +219,24 @@ TADGun = Class(TAweapon) {
     end,
 
     OnWeaponFired = function(self)
-        --TAweapon.OnWeaponFired(self)
+        self.unit:SetWeaponEnabledByLabel('DGun', true)
+        if self.AutoMode then
+            self.AutoThread = self:ForkThread(self.AutoEnable)
+        end
         self:ForkThread(self.PauseOvercharge)
+    end,
+
+    OnLostTarget = function(self)
+        self.unit:SetWeaponEnabledByLabel('DGun', true)
+        TAweapon.OnLostTarget(self)
     end,
 
 
     PauseOvercharge = function(self)
         if not self.unit:IsOverchargePaused() then
             self.unit:SetOverchargePaused(true)
-            WaitSeconds(0.5/self:GetBlueprint().RateOfFire)
+            WaitSeconds(1 / self:GetBlueprint().RateOfFire)
             self.unit:SetOverchargePaused(false)
-            self.unit:SetWeaponEnabledByLabel('DGun', true)
-            if self.AutoMode then
-                self.unit:SetWeaponEnabledByLabel('AutoDGun', true)
-                self.AutoThread = self:ForkThread(self.AutoEnable)
-            end
         end
     end,
 
@@ -247,7 +250,7 @@ TADGun = Class(TAweapon) {
 
         AutoEnable = function(self)
             while not self:CanOvercharge() do
-                WaitSeconds(0.1)
+                WaitSeconds(3)
             end
             if self.AutoMode then
                 self.unit:SetWeaponEnabledByLabel('AutoDGun', true)

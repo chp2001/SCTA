@@ -115,8 +115,6 @@ UnitBlueprint {
         LODs = {
             {
                 LODCutoff = 230,
-        SpecularName = '/mods/SCTA-master/units/CORCOM/CORCOM_SpecTeam.dds',
-        AlbedoName = '/mods/SCTA-master/units/CORCOM/CORCOM_Albedo.dds',
                 ShaderName = 'Unit', 
             },
         },

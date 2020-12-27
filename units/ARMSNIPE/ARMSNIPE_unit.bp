@@ -160,9 +160,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Flare',
+                        'flash',
                     },
-                    RackBone = 'ruparm',
+                    RackBone = 'rarm',
                 },
             },
             RackFireTogether = false,
@@ -182,8 +182,8 @@ UnitBlueprint {
             EnergyRequired = 100,
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'Flare',
-            TurretBonePitch = 'ruparm',
+            TurretBoneMuzzle = 'flash',
+            TurretBonePitch = 'rarm',
             TurretBoneYaw = 'torso',
             TurretPitch = 90,
             TurretPitchRange = 360,

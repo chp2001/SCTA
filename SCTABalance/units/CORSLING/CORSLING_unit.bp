@@ -32,12 +32,9 @@ UnitBlueprint {
 	'ANTIAIR',
         'OVERLAYANTIAIR',
         'CORE',
-        'KBOT',
+        --'KBOT',
         'SPIDER',
 	'LEVEL2',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',

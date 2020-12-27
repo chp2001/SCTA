@@ -38,7 +38,7 @@ UnitBlueprint {
 	'ROCKET',
         'OVERLAYINDIRECTFIRE',
         'ARM',
-        'KBOT', 
+        --'KBOT', 
 	'LEVEL2',
     },
     Defense = {

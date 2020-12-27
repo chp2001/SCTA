@@ -60,16 +60,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Tredside','ArmCockpit'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Turret'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -164,15 +154,15 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Turret_Muzzle_01',
+                        'flare1',
                     },
-                    RackBone = 'Turret_Barrel',
+                    RackBone = 'launcher',
                 },
                 {
                     MuzzleBones = {
-                        'Turret_Muzzle_02',
+                        'flare2',
                     },
-                    RackBone = 'Turret_Barrel',
+                    RackBone = 'launcher',
                 },
             },
             RackRecoilDistance = 0,
@@ -188,9 +178,9 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'Turret_Barrel',
-            TurretBonePitch = 'Turret_Barrel',
-            TurretBoneYaw = 'Turret',
+            TurretBoneMuzzle = 'launcher',
+            TurretBonePitch = 'launcher',
+            TurretBoneYaw = 'turret',
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 360,

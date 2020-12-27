@@ -63,7 +63,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'torso',
+	SmokeBone = 'body',
         UniformScale = 0.16,
     },
     Economy = {
@@ -185,7 +185,7 @@ UnitBlueprint {
         { #SMALL_UNITEX
             Damage = 10,
             DamageFriendly = true,
-            DamageRadius = 0.9375,
+            DamageRadius = 1,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

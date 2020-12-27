@@ -5,7 +5,6 @@
 
 UnitBlueprint {
    Merge = true,
-   BuildIconSortPriority = 4,
    Categories = {
     'SELECTABLE',
     'TECH2',

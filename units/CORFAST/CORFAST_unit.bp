@@ -144,7 +144,7 @@ UnitBlueprint {
             MaxRadius = 20,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 25,
+	    MuzzleVelocity = 60,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_FAST/ARM_FAST_proj.bp',
             RackBones = {
                 {

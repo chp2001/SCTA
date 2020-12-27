@@ -169,6 +169,12 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_CloakToggle = true,
         },
+        OrderOverrides = {
+            RULEUCC_Overcharge = {
+                bitmapId = 'activate-weapon',
+                helpText = 'DGun. Requires 600 Energy to Fire. Right-click turn on auto',
+            },
+        },
         SelectionPriority = 3,
         FactionName = 'CORE',
         UnitName = 'Commander',
@@ -318,11 +324,11 @@ UnitBlueprint {
             MaxRadius = 22,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 12.5,
+            MuzzleVelocity = 18,
             NeedPrep = true,
             EnergyChargeForFirstShot = true,
-            EnergyRequired = 500,
-            EnergyDrainPerSecond = 500,
+            EnergyRequired = 600,
+            EnergyDrainPerSecond = 600,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_DISINTEGRATOR/CORE_DISINTEGRATOR_proj.bp',
             RackBones = {
                 {
@@ -382,7 +388,7 @@ UnitBlueprint {
             MaxRadius = 22,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 12.5,
+            MuzzleVelocity = 18,
             NeedPrep = true,
             EnergyChargeForFirstShot = true,
             EnergyRequired = 600,
@@ -423,7 +429,7 @@ UnitBlueprint {
             Damage = 3000,
             DamageFriendly = true,
             DamageRadius = 20,
-            DamageType = 'Normal',
+            DamageType = 'Deathnuke',
             DisplayName = 'DeathWeapon',
             Label = 'DeathWeapon',
             DummyWeapon = true,

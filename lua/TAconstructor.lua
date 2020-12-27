@@ -3,6 +3,8 @@ local Unit = import('/lua/sim/Unit.lua').Unit
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local oldPosition={1,1,1}
 local EffectUtil = import('/lua/EffectUtilities.lua')
+local Util = import('/lua/utilities.lua')
+local RandomFloat = Util.GetRandomFloat
 
 TAconstructor = Class(TAWalking) {
     OnCreate = function(self)
@@ -226,8 +228,11 @@ TACommander = Class(TAconstructor) {
     end,
 
 	DeathThread = function(self)
-		local army = self:GetArmy()
-		CreateAttachedEmitter( self, 0, army, '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp'):ScaleEmitter(5)
+        local army = self:GetArmy()
+        local position = self:GetPosition()
+        local PlumeEffectYOffset = 1
+        self:CreateProjectile('/effects/entities/UEFNukeEffect02/UEFNukeEffect02_proj.bp',0,PlumeEffectYOffset,0,0,0,1)
+		CreateAttachedEmitter( self, 0, army, '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp'):ScaleEmitter(10)
 		TAconstructor.DeathThread(self)
     end,
     
@@ -247,7 +252,56 @@ TARealCommander = Class(TACommander) {
     OnStartReclaim = function(self, target)
 		TACommander.OnStartReclaim(self, target)
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
-	end,
+    end,
+    
+    DeathThread = function(self)
+        local army = self:GetArmy()
+        local position = self:GetPosition()
+        TACommander.DeathThread(self)
+        self:CreateInitialFireballSmokeRing()
+        self:ForkThread(self.CreateOuterRingWaveSmokeRing)
+        local orientation = RandomFloat(0,2*math.pi)
+        CreateDecal(position, orientation, 'Crater01_albedo', '', 'Albedo', 50, 50, 1200, 0, self.Army)
+        CreateDecal(position, orientation, 'Crater01_normals', '', 'Normals', 50, 50, 1200, 0, self.Army)
+        CreateDecal(position, orientation, 'nuke_scorch_003_albedo', '', 'Albedo', 60, 60, 1200, 0, self.Army)
+    end,  
+
+    CreateInitialFireballSmokeRing = function(self)
+        local sides = 12
+        local angle = (2*math.pi) / sides
+        local velocity = 5
+        local OffsetMod = 8
+
+        for i = 0, (sides-1) do
+            local X = math.sin(i*angle)
+            local Z = math.cos(i*angle)
+            self:CreateProjectile('/effects/entities/UEFNukeShockwave01/UEFNukeShockwave01_proj.bp', X * OffsetMod , 1.5, Z * OffsetMod, X, 0, Z)
+                :SetVelocity(velocity):SetAcceleration(-0.5)
+        end
+    end,
+
+    CreateOuterRingWaveSmokeRing = function(self)
+        local sides = 32
+        local angle = (2*math.pi) / sides
+        local velocity = 7
+        local OffsetMod = 8
+        local projectiles = {}
+
+        for i = 0, (sides-1) do
+            local X = math.sin(i*angle)
+            local Z = math.cos(i*angle)
+            local proj =  self:CreateProjectile('/effects/entities/UEFNukeShockwave02/UEFNukeShockwave02_proj.bp', X * OffsetMod , 2.5, Z * OffsetMod, X, 0, Z)
+                :SetVelocity(velocity)
+            table.insert(projectiles, proj)
+        end
+
+        WaitSeconds(3)
+
+        -- Slow projectiles down to normal speed
+        for k, v in projectiles do
+            v:SetAcceleration(-0.45)
+        end
+    end,
 
 	OnStartCapture = function(self, target)
 		TACommander.OnStartCapture(self, target)

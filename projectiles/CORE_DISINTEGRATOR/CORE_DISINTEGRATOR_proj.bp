@@ -40,7 +40,7 @@ ProjectileBlueprint {
         CollideSurface = false,
         CollideEntity = false,
         DestroyOnWater = true,
-        InitialSpeed = 12.5,
+        InitialSpeed = 18,
         Lifetime = 2,
         LeadTarget = false,
         TrackTarget = true,

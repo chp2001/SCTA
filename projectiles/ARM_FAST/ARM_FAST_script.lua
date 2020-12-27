@@ -7,7 +7,7 @@ local TALaserProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TALa
 
 ARM_FAST = Class(TALaserProjectile) 
 {
-	PolyTrail = '/mods/SCTA-master/effects/emitters/RED_LASER_emit.bp',
+	PolyTrail = '/mods/SCTA-master/effects/emitters/GREEN_LASER_emit.bp',
 }
 
 TypeClass = ARM_FAST

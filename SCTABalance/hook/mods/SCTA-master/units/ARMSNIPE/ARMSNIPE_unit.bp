@@ -36,8 +36,8 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             RateOfFire = 0.25,
-            EnergyDrainPerSecond = 50,
-            EnergyRequired = 100,
+            EnergyDrainPerSecond = 250,
+            EnergyRequired = 500,
         },
         [2] = {
         },

@@ -32,7 +32,7 @@ UnitBlueprint {
 	'ANTIAIR',
         'OVERLAYANTIAIR',
         'ARM',
-        'KBOT',
+        --'KBOT',
         'SPIDER',
 	'LEVEL2',
     },

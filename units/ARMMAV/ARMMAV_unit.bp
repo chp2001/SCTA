@@ -159,7 +159,7 @@ UnitBlueprint {
                     },
                     {                    
                         MuzzleBones = {
-                            'flare',
+                            'flare1',
                     },
                         RackBone = 'ruparm',
                 },
@@ -178,7 +178,7 @@ UnitBlueprint {
             AboveWaterTargetsOnly = true,
             WeaponUnpacks = true,
             WeaponRepackTimeout = 1,
-            TurretBoneMuzzle = 'flare',
+            TurretBoneMuzzle = 'flare1',
             TurretBonePitch = 'rarm',
             TurretBoneDualMuzzle = 'flare2',
             TurretBoneDualPitch = 'larm',

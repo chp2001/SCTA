@@ -38,7 +38,7 @@ UnitBlueprint {
 	'ROCKET',
         'OVERLAYINDIRECTFIRE',
         'ARM',
-        'KBOT', 
+        --'KBOT', 
 	'LEVEL2',
     },
     Defense = {
@@ -98,7 +98,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarSize = 1,
     Physics = {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
@@ -111,8 +111,8 @@ UnitBlueprint {
         MaxSteerForce = 10,
     },
     SelectionThickness = 0.25,
-    SelectionSizeX = 1,
-    SelectionSizeZ = 1,
+    SelectionSizeX = 0.6,
+    SelectionSizeZ = 0.6,
     SizeX = 1,
     SizeY = 1.5,
     SizeZ = 1,

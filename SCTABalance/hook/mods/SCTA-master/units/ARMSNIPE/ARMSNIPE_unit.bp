@@ -12,11 +12,8 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'ARM',
         'KBOT',
-	'LEVEL3',
-	
-	
-	
-	
+    'LEVEL3',
+    'SNIPER',
     },
     Defense = {
         Health = 2000,
@@ -30,12 +27,8 @@ UnitBlueprint {
     StrategicIconName = 'icon_bot3_sniper',
     Weapon = {
         [1] = {
-            Damage = 600,
-	    DamageRadius = 0.25,
+            Damage = 1000,
             MaxRadius = 60,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
-            RateOfFire = 0.25,
             EnergyDrainPerSecond = 250,
             EnergyRequired = 500,
         },

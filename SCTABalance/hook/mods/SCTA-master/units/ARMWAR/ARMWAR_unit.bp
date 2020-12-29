@@ -1,16 +1,16 @@
 UnitBlueprint {
    Merge = true, 
    Defense = {
-    Health = 560,
-    MaxHealth = 560,
+    Health = 580,
+    MaxHealth = 580,
     },
     Display = {
         UniformScale = 0.12,
     },
 Economy = {
     BuildCostEnergy = 1100,
-    BuildCostMass = 130,
-    BuildTime = 2400,
+    BuildCostMass = 116,
+    BuildTime = 2200,
 },
 Footprint = {
     SizeX = 1,
@@ -34,10 +34,10 @@ Physics = {
     },
     Weapon = {
         [1] = {
-            Damage = 5,
+            Damage = 10,
             FiringTolerance = 1,
             MaxRadius = 18,
-            MuzzleSalvoSize = 4,
+            MuzzleSalvoSize = 2,
             RackReloadTimeout = 0,
             RackSalvoSize = 1,
             RateOfFire = 1,

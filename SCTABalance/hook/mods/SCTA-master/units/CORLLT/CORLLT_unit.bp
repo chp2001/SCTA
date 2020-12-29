@@ -2,7 +2,7 @@ UnitBlueprint {
     Merge = true,
     CollisionOffsetY = -0.6,
     Display = {
-        UniformScale = 0.08,
+        UniformScale = 0.1,
     },
     Defense = {
         Health = 1700,
@@ -20,8 +20,9 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 12,
     },
-    SelectionCenterOffsetZ = 0,
-    SizeX = 1,
+    LifeBarSize = 1,
+    SelectionCenterOffsetZ = -0.1,
+    SizeX = 1.2,
     SizeY = 3.3,
-    SizeZ = 1,
+    SizeZ = 1.2,
 }

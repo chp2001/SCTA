@@ -29,20 +29,14 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-
-	
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-
-	
 	'ARM',
 		'DEFENSIVE',
 	'SORTDEFENSE',
 	'LEVEL1',
-	
-	
     },
     CollisionOffsetY = -1,
     Defense = {
@@ -59,25 +53,6 @@ UnitBlueprint {
         Abilities = {
             'Defense',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'MetalBarrel'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Turret'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'Turret_Barrel'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -121,7 +96,7 @@ UnitBlueprint {
         HelpText = 'Light Laser Tower',
     },
     LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
+    LifeBarOffset = 0.25,
     LifeBarSize = 2,
     Physics = {
         SkirtSizeX = 2, 

@@ -104,7 +104,7 @@ UnitBlueprint {
         HelpText = 'Missile Tower',
     },
     LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
+    LifeBarOffset = 0.25,
     LifeBarSize = 2,
     Physics = {
         SkirtSizeX = 3, 

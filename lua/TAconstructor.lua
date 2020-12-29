@@ -314,47 +314,48 @@ TARealCommander = Class(TACommander) {
 			self:SetConsumptionPerSecondEnergy(1000)
 			self.motion = 'Moving'
 		elseif new == 'Stopped' then
-			self:SetConsumptionPerSecondEnergy(200)
+			self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
 			self.motion = 'Stopped'
 		end
-	end,
+    end,
+    
+    OnStartBuild = function(self, unitBeingBuilt, order )
+        TACommander.OnStartBuild(self, unitBeingBuilt, order)
+        self:SetScriptBit('RULEUTC_CloakToggle', true)
+    end,
 
 	OnIntelDisabled = function(self)
 		self.cloakOn = nil
-		self:DisableIntel('Cloak')
-        self:SetIntelRadius('Omni', 10)
+        TACommander.OnIntelDisabled()
+        if not self:IsIntelEnabled('Cloak') then
         self:PlayUnitSound('Uncloak')
 		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-	end,
+        end
+    end,
 
-	OnIntelEnabled = function(self)
-		--self:EnableIntel('Cloak')
+    OnIntelEnabled = function(self)
+        TACommander.OnIntelEnabled()
+        if self:IsIntelEnabled('Cloak') then
+            self.cloakOn = true
 		if self.motion == 'Moving' then
 			self:SetConsumptionPerSecondEnergy(1000)
-		end
-        self:SetIntelRadius('Omni', self:GetBlueprint().Intel.OmniRadius)
-		self.cloakOn = true
+        end
         	self:PlayUnitSound('Cloak')
 			self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
 		ForkThread(self.CloakDetection, self)
-		--end
+        --end
+        end
 	end,
 
     OnKilled = function(self, instigator, type, overkillRatio)
         TACommander.OnKilled(self, instigator, type, overkillRatio)
 
-        -- If there is a killer, and it's not me
         if instigator and instigator.Army ~= self.Army then
             local instigatorBrain = ArmyBrains[instigator.Army]
 
             Sync.EnforceRating = true
             WARN('ACU kill detected. Rating for ranked games is now enforced.')
 
-            -- If we are teamkilled, filter out death explostions of allied units that were not coused by player's self destruct order
-            -- Damage types:
-            --     'DeathExplosion' - when normal unit is killed
-            --     'Nuke' - when Paragon is killed
-            --     'Deathnuke' - when ACU is killed
             if IsAlly(self.Army, instigator.Army) and not ((type == 'DeathExplosion' or type == 'Nuke' or type == 'Deathnuke') and not instigator.SelfDestructed) then
                 WARN('Teamkill detected')
                 Sync.Teamkill = {killTime = GetGameTimeSeconds(), instigator = instigator.Army, victim = self.Army}

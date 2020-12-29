@@ -202,7 +202,7 @@ UnitBlueprint {
      WeaponCategory = 'DirectFire',
             FiringTolerance = 2,
             Label = 'ARMWAR_LCANNON',
-            MaxRadius = 12,
+            MaxRadius = 15,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
 	    MuzzleVelocity = 15,

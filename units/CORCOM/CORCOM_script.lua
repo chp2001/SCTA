@@ -56,7 +56,7 @@ CORCOM = Class(TARealCommander) {
 
 	OnScriptBitSet = function(self, bit)
 		if bit == 8 then
-			self:OnIntelDisabled()
+			self:DisableUnitIntel('ToggleBit8', 'Cloak')
 			if self.CloakThread then KillThread(self.CloakThread) end
 			self.CloakThread = self:ForkThread(TARealCommander.CloakDetection)	
 		end

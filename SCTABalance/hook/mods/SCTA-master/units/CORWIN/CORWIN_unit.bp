@@ -11,6 +11,8 @@ Defense = {
     BuildTime = 3200,
         BuildCostMass = 100,
         BuildCostEnergy = 2700,
+        ProductionPerSecondEnergyMin = 15,
+        ProductionPerSecondEnergyMax = 35,
     },
     Footprint = {
         SizeX = 2,

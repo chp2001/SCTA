@@ -22,6 +22,7 @@ ARMCOM = Class(TARealCommander) {
 		},
 		DeathWeapon = Class(TACommanderDeathWeapon) {},
 	},
+
 	PlayCommanderWarpInEffect = function(self)
         self:HideBone(0, true)
         self:SetUnSelectable(false)
@@ -60,7 +61,7 @@ ARMCOM = Class(TARealCommander) {
 
 	OnScriptBitSet = function(self, bit)
 		if bit == 8 then
-			self:OnIntelDisabled()
+			self:DisableUnitIntel('ToggleBit8', 'Cloak')
 			self.cloakOn = nil
 			if self.CloakThread then KillThread(self.CloakThread) end
 			self.CloakThread = self:ForkThread(TARealCommander.CloakDetection)	

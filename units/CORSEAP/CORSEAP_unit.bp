@@ -78,6 +78,7 @@ UnitBlueprint {
         'OVERLAYSONAR',
     'LEVEL3',
     'TRANSPORTATION',
+    'SNIPEMODE',
     },
     Defense = {
         ArmorType = 'Light',

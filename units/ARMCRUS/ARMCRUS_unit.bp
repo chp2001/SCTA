@@ -42,7 +42,8 @@ UnitBlueprint {
         'ARM',
         'OCEAN',
 	'LEVEL2',
-	'ANTISUB',
+    'ANTISUB',
+    'SNIPEMODE',
     },
     CollisionOffsetY = -0.5,
     Defense = {

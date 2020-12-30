@@ -12,7 +12,8 @@ UnitBlueprint {
         'ARTILLERY',
         'ARM',
         'VEHICLE',	
-	'LEVEL3',
+    'LEVEL3',
+    'SNIPEMODE',
     },
     Display = {
         UniformScale = 0.12,

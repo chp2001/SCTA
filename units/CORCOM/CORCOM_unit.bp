@@ -87,7 +87,8 @@ UnitBlueprint {
         'OVERLAYSONAR',
         'CORE',
         'COMMANDER',
-	'LEVEL10',
+    'LEVEL10',
+    'SNIPEMODE',
     },
     Defense = {
         ArmorType = 'Commander',

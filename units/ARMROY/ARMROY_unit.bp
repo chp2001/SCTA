@@ -41,6 +41,7 @@ UnitBlueprint {
         'OVERLAYSONAR',
         'ARM',
         'OCEAN',
+        'SNIPEMODE',
 	'LEVEL1',
 	'ANTISUB',
     },

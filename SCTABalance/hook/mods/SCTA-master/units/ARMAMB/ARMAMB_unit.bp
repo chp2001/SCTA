@@ -21,7 +21,8 @@ UnitBlueprint {
 	'ARM',
 	'LEVEL2',
 	'STRATEGIC',
-	'SORTDEFENSE',
+    'SORTDEFENSE',
+    'SNIPEMODE',
     },
     Defense = {
         Health = 6000,

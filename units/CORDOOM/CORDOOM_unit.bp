@@ -33,7 +33,8 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
 	'CORE',
 	'STRATEGIC',
-	'LEVEL3',
+    'LEVEL3',
+    'SNIPEMODE',
     },
     Defense = {
         DamageModifier = 0.5,

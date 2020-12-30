@@ -14,7 +14,8 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'CORE',
         'OCEAN',
-	'LEVEL3',
+    'LEVEL3',
+    'SNIPEMODE',
     },
     Defense = {
         Health = 25000,

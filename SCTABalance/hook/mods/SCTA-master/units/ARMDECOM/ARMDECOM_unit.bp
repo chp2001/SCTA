@@ -20,6 +20,7 @@ UnitBlueprint {
     'CONSTRUCTION',
     'ENGINEER',
     'SUBCOMMANDER',
+    'SNIPEMODE',
 },
    Display = {
        UniformScale = 0.28,

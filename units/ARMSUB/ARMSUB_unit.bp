@@ -41,7 +41,8 @@ UnitBlueprint {
         'OVERLAYANTINAVY',
         'ARM',
         'OCEAN',   
-	'LEVEL1',
+    'LEVEL1',
+    'SNIPEMODE',
     },
     Defense = {
         ArmorType = 'Sub',

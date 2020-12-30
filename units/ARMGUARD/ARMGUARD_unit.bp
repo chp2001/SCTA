@@ -35,8 +35,7 @@ UnitBlueprint {
 	'ARM',
 	'LEVEL2',
 	'SORTSTRATEGIC',
-	
-	
+    'SNIPEMODE',
     },
     Defense = {
         ArmorType = 'Structure',

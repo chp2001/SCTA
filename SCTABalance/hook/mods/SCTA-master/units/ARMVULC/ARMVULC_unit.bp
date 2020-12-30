@@ -17,6 +17,7 @@ UnitBlueprint {
     'ARTILLERY',
     'SHOWATTACKRETICLE',
     'NOCUSTOMTARGET',
+    'SNIPEMODE',
     },
     Defense = {
         Health = 15000,

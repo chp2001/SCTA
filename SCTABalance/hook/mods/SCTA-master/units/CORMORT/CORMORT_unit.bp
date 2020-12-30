@@ -18,6 +18,7 @@ UnitBlueprint {
         'CORE',
         'KBOT',
         'LEVEL3',
+        'SNIPEMODE',
     },
     Display = {
         UniformScale = 0.2,

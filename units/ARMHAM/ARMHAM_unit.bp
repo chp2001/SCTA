@@ -136,7 +136,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_HighArc',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 130,
+            Damage = 100,
             DamageRadius = 1.25, 
             DamageType = 'Normal',
             DisplayName = 'ARM_HAM',

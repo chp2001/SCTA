@@ -126,7 +126,8 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
-            BallisticArc = 'RULEUBA_None',
+            BallisticArc = 'RULEUBA_LowArc',
+            FiringRandomnessWhileMoving = 0,
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 8,
@@ -141,9 +142,9 @@ UnitBlueprint {
             FiringTolerance = 2,
             Label = 'ARMWAR_EMG',
             MaxRadius = 18,
-            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoDelay = 0.05,
             MuzzleSalvoSize = 2,
-	    MuzzleVelocity = 20,
+	    MuzzleVelocity = 25,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMWAR_EMG/ARMWAR_EMG_proj.bp',
             RackBones = {
                 {
@@ -224,6 +225,7 @@ UnitBlueprint {
             TargetPriorities = {
                 'ALLUNITS',
             },
+            FiringRandomnessWhileMoving = 0,
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'flare',

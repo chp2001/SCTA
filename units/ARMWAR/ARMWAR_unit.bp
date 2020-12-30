@@ -130,7 +130,6 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 8,
-            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARMWAR_EMG',
             FireTargetLayerCapsTable = {
@@ -247,7 +246,6 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-
     },
         Wreckage = {
 	---UseCustomMesh = true,

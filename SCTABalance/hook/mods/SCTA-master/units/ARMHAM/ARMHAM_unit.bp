@@ -1,7 +1,7 @@
 UnitBlueprint {
     Merge = true,
     Display = {
-            UniformScale = 0.08,
+            UniformScale = 0.1,
         },
         Economy = {
             BuildCostEnergy = 630,
@@ -10,8 +10,8 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 11,
     },
-    SelectionSizeX = 0.5,
-    SelectionSizeZ = 0.5,
+    SelectionSizeX = 0.8,
+    SelectionSizeZ = 0.8,
     --SelectionCenterOffsetZ = 0.25,
     SizeX = 1.4,
     SizeY = 1.6,

@@ -58,24 +58,6 @@ UnitBlueprint {
         Abilities = {
             'Artillery',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'torso'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'rbarrel', 'lbarrel'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -119,7 +101,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarSize = 1.5,
     Physics = {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
@@ -175,15 +157,15 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'rfire',
+                        'rbarrel',
                     },
-                    RackBone = 'rbarrel',
+                    RackBone = 'rcannon',
                 },
                 {
                     MuzzleBones = {
-                        'lfire',
+                        'lbarrel',
                     },
-                    RackBone = 'lbarrel',
+                    RackBone = 'lcannon',
                 },
             },
             RackRecoilDistance = -2,

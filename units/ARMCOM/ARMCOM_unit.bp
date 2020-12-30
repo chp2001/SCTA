@@ -89,10 +89,7 @@ UnitBlueprint {
         'ARM',
         'COMMANDER',
 	'LEVEL10',
-	
-	
-	
-	
+    'SNIPEMODE',
     },
     Defense = {
         ArmorType = 'Commander',

@@ -29,21 +29,13 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH2',
         'SORTDEFENSE',
-	
 	'STRUCTURE',
 	'DEFENSE',
-	'DIRECTFIRE',
 	'ANTIAIR',
-        'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
-
-	
 	'ARM',
 	'SPECIAL',
 	'LEVEL2',
-	
-	
-	
     },
     CollisionOffsetY = -0.5,
     Defense = {

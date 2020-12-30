@@ -47,7 +47,8 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'CORE',
         'OCEAN',
-	'LEVEL2',
+    'LEVEL2',
+    'SNIPEMODE',
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -64,24 +65,6 @@ UnitBlueprint {
         Abilities = {
             'Battleship',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'turretb','turreta', 'wake1', 'wake2', 'CORBATS'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'barrelb1','barrelb2','barrelb3','turreta'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

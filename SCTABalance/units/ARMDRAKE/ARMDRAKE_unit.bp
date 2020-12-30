@@ -50,6 +50,7 @@ UnitBlueprint {
         'ARM',
         'KBOT',
         'LEVEL4',  
+        'SNIPEMODE',
     },
     Defense = {
         AirThreatLevel = 0,

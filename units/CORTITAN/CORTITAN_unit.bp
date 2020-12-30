@@ -79,6 +79,7 @@ UnitBlueprint {
         'CORE',
     'LEVEL2',
     'SEAPLA',
+    'SNIPEMODE',
     },
     Defense = {
         ArmorType = 'Light',

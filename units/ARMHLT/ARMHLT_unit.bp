@@ -35,7 +35,8 @@ UnitBlueprint {
 	'ARM',
 		'DEFENSIVE',
 	'SORTDEFENSE',
-	'LEVEL2',
+    'LEVEL2',
+    'SNIPEMODE',
     },
     CollisionOffsetY = -0.5,
     Defense = {

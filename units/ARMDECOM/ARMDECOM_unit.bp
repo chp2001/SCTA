@@ -63,6 +63,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'ARM',
         'SUBCOMMANDER',
+        'SNIPEMODE',
     },
     Defense = {
         ArmorType = 'Commander',

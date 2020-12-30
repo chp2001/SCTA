@@ -16,6 +16,7 @@ UnitBlueprint {
 'OCEAN',
     'CORE',    
 'LEVEL3',
+'SNIPEMODE',
 },
 Display = {
     UniformScale = 0.12,

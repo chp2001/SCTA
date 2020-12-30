@@ -20,6 +20,7 @@ UnitBlueprint {
 'CORE',
 'STRATEGIC',
 'LEVEL3',
+'SNIPEMODE',
 },
     Defense = {
         Health = 22000,

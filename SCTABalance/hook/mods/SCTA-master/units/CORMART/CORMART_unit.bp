@@ -12,7 +12,8 @@ UnitBlueprint {
         'ARTILLERY',
         'CORE',
         'VEHICLE',	
-	'LEVEL3',
+    'LEVEL3',
+    'SNIPEMODE',
     },
     Defense = {
         Health = 1600,

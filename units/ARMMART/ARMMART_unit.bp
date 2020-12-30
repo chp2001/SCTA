@@ -39,7 +39,8 @@ UnitBlueprint {
         'ARTILLERY',
         'ARM',
         'VEHICLE',
-	'LEVEL2',
+    'LEVEL2',
+    'SNIPEMODE',
     },
     Defense = {
         ArmorType = 'Normal',

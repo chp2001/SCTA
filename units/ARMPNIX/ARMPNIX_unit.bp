@@ -78,7 +78,8 @@ UnitBlueprint {
 	'OVERLAYANTIAIR',
         'ARM',
         'HIGHALTAIR',
-		'LEVEL2',
+        'LEVEL2',
+        'SNIPEMODE',
     },
     Defense = {
         ArmorType = 'Light',

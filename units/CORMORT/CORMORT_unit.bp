@@ -40,10 +40,7 @@ UnitBlueprint {
         'CORE',
         'KBOT',
         'LEVEL2',
-        
-        
-        
-        
+        'SNIPEMODE', 
     },
     Defense = {
         ArmorType = 'Normal',

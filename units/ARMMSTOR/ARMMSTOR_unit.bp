@@ -56,16 +56,6 @@ UnitBlueprint {
     },
     Description = 'Increases Metal Storage',
     Display = {
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Stone'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -106,8 +96,8 @@ UnitBlueprint {
         HelpText = 'Increases Metal Storage',
     },
     LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarOffset = 0.25,
+    LifeBarSize = 1,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,

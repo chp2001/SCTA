@@ -105,7 +105,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarSize = 1,
     Physics = {
         SkirtSizeX = 1, 
         SkirtSizeZ = 1, 

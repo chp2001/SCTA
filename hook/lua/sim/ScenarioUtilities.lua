@@ -1,7 +1,8 @@
 function CreateInitialArmyGroup(strArmy, createCommander)
+	CreateWind()
 	local tblGroup = CreateArmyGroup(strArmy, 'INITIAL')
     local cdrUnit = false
-    if createCommander then
+    if createCommander and ( tblGroup == nil or 0 == table.getn(tblGroup) )  then
 		local ABrain = GetArmyBrain(strArmy);
 		if(ABrain.BrainType == 'Human') then
 			
@@ -33,7 +34,6 @@ function CreateInitialArmyGroup(strArmy, createCommander)
 			end
 		end
     end
-	CreateWind()
     return tblGroup, cdrUnit
 end
 

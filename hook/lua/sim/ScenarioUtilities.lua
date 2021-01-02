@@ -1,15 +1,8 @@
-do
-
 function CreateInitialArmyGroup(strArmy, createCommander)
-	local tblGroup, cdrUnit = doGateSpawn(strArmy, createCommander)
 	CreateWind()
-    return tblGroup, cdrUnit
-end
-
-function doGateSpawn(strArmy, createCommander)
-    local tblGroup = CreateArmyGroup(strArmy, 'INITIAL')
+	local tblGroup = CreateArmyGroup(strArmy, 'INITIAL')
     local cdrUnit = false
-    if createCommander and ( tblGroup == nil or 0 == table.getn(tblGroup) ) then
+    if createCommander and ( tblGroup == nil or 0 == table.getn(tblGroup) )  then
 		local ABrain = GetArmyBrain(strArmy);
 		if(ABrain.BrainType == 'Human') then
 			
@@ -41,7 +34,7 @@ function doGateSpawn(strArmy, createCommander)
 			end
 		end
     end
-    return tblGroup , cdrUnit
+    return tblGroup, cdrUnit
 end
 
 
@@ -74,5 +67,4 @@ function WindThread()
 		WaitTicks(30 + 1)
 		--Wait ticks waits 1 less tick than it should. #timingissues
 	end
-end
 end

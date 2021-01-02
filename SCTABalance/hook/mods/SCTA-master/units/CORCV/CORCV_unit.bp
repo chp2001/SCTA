@@ -19,17 +19,13 @@ UnitBlueprint {
         'VEHICLE',
 	'LEVEL1',
     'VTOL',
-	
-	
-	
-	
     },
     Defense = {
         Health = 440,
         MaxHealth = 440,
         },
         Display = {
-            UniformScale = 0.08,
+            UniformScale = 0.085,
         },
     Physics = {
         MaxAcceleration = 1.2,
@@ -54,11 +50,10 @@ UnitBlueprint {
         MaxBrake = 1.25,
         MaxSpeed = 1.6,
     },
-    LifeBarSize = 1.5,
-    SelectionSizeX = 0.6,
-    SelectionSizeZ = 0.6,
+    SelectionSizeX = 0.8,
+    SelectionSizeZ = 1.1,
     SelectionThickness = 0.25,
     SizeX = 1.2,
     SizeY = 1.1,
-    SizeZ = 1.2,
+    SizeZ = 1.5,
 }

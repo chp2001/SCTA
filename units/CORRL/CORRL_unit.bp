@@ -38,8 +38,6 @@ UnitBlueprint {
 	'SPECIAL',
 	'LEVEL2',
 	'SORTDEFENSE',
-	
-	
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -55,16 +53,8 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
+            '<LOC ability_aquatic>Aquatic',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Turret', 0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -87,7 +77,6 @@ UnitBlueprint {
 	MaxSlope = 1.25,
     },
     General = {
-        ---BuildAngle = 0,
         Category = 'Defense',
         Classification = 'RULEUC_Weapon',
         CommandCaps = {
@@ -102,13 +91,13 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 22,
-        WaterVisionRadius = 4, 
+        WaterVisionRadius = 9, 
     },
     Interface = {
         HelpText = 'Missile Tower',
     },
     LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
+    LifeBarOffset = 0.25,
     LifeBarSize = 2,
     Physics = {
         SkirtSizeX = 3, 

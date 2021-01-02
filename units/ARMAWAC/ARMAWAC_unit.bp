@@ -89,21 +89,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_radar>Radar',
         },
-		--[[DestructionEffects = {
-		DefaultFlamingProjectileCountMin = 0,
-		DefaultFlamingProjectileCountMax = 0,
-		DestructionDebrisUseLocalVelocity = true,
-		DefaultProjectileCategories = {'ArmCockpit'},
-		FlashSize = 10,
-		FlashTime = 10,
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -124,12 +109,12 @@ UnitBlueprint {
     },
     General = {
         Category = 'Utility',
-        Classification = 'RULEUC_MilitaryVehicle',
+        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Guard = true,
+            RULEUCC_Dock = true,
             RULEUCC_CallTransport = true,
             RULEUCC_Move = true,
-            RULEUCC_Guard = true,
             RULEUCC_Patrol = true,
             RULEUCC_Stop = true,
         },
@@ -155,6 +140,7 @@ UnitBlueprint {
     Physics = {
         Elevation = 15,
         MotionType = 'RULEUMT_Air',
+        GroundCollisionOffset = 1.5,
         MaxAcceleration = 10,
         MaxSpeed = 10,
         MaxSteerForce = 100,

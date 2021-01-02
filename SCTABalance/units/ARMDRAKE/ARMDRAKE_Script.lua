@@ -8,7 +8,6 @@ local Projectile = import('/lua/sim/DefaultWeapons.lua').DefaultProjectileWeapon
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 ARMDRAKE = Class(TAWalking) {
-	currentBarrel = 0,
 
 	OnCreate = function(self)
 		TAWalking.OnCreate(self)
@@ -19,6 +18,7 @@ ARMDRAKE = Class(TAWalking) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
+		self.currentBarrel = 0
 	end,
 
 

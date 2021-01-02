@@ -7,9 +7,6 @@ local TAair = import('/mods/SCTA-master/lua/TAair.lua').TAair
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 CORAPE = Class(TAair) {
-	currentBarrel = 0,
-	currentBarrel2 = 0,
-
 	OnCreate = function(self)
 		TAair.OnCreate(self)
 		self.Spinners = {
@@ -21,6 +18,8 @@ CORAPE = Class(TAair) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
+		self.currentBarrel = 0
+		self.currentBarrel2 = 0
 	end,
 
 	OnMotionVertEventChange = function(self, new, old )

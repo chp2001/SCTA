@@ -22,6 +22,7 @@ UnitBlueprint {
 'SPECIAL',
 'SORTDEFENSE',
 'LEVEL3',
+'SNIPEMODE',
 },
     Defense = {
         Health = 16000,

@@ -2,8 +2,6 @@ local SinglePolyTrailProjectile = import('/lua/sim/Defaultprojectiles.lua').Sing
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 TAProjectile = Class(SinglePolyTrailProjectile) {
-	Smoke = nil,
-
 	FxSmoke = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
 	FxSmokeScale = 1,
 
@@ -27,7 +25,11 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
 }
 
 TANuclearProjectile = Class(TAProjectile) {
-	Smoke = true,
+	OnCreate = function(self)
+		TAProjectile.OnCreate(self)
+		self.Smoke = true
+	end,
+
 	FxImpactAirUnit = {
 		'/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
 	},
@@ -66,7 +68,11 @@ TANuclearProjectile = Class(TAProjectile) {
 }
 
 TAEMPNuclearProjectile = Class(TAProjectile) {
-	Smoke = true,
+	OnCreate = function(self)
+		TAProjectile.OnCreate(self)
+		self.Smoke = true
+	end,
+
 	FxImpactAirUnit = {
 		'/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp',
 	},
@@ -255,18 +261,17 @@ TALightCannonProjectile = Class(TAProjectile) {
     	FxWaterHitScale = 0.5,
 }
 TARocketProjectile = Class(TAMediumCannonProjectile) {
-	Smoke = true,
-
 	OnCreate = function(self)
 	TAMediumCannonProjectile.OnCreate(self)
+	self.Smoke = true
 	end,
 }
 
 TAMissileProjectile = Class(TAMediumCannonProjectile) {
-	Smoke = true,
 	OnCreate = function(self)
 	self:SetCollisionShape('Sphere', 0, 0, 0, 1)
 	TAMediumCannonProjectile.OnCreate(self)
+	self.Smoke = true
 	end,
 }
 

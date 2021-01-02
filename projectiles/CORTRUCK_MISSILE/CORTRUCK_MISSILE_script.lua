@@ -7,7 +7,10 @@ local TARocketProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TAR
 
 CORTRUCK_MISSILE = Class(TARocketProjectile) 
 {
-	TrackTime = 3,
+	OnCreate = function(self)
+		TARocketProjectile.OnCreate(self)
+		self.TrackTime = 3
+	end,
 }
 
 TypeClass = CORTRUCK_MISSILE

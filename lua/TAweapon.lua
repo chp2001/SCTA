@@ -6,15 +6,6 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 
 TAweapon = Class(DefaultWeapon) {
-    FxRackChargeMuzzleFlash = {},
-    FxRackChargeMuzzleFlashScale = 1,
-    FxChargeMuzzleFlash = {},
-    FxChargeMuzzleFlashScale = 1,
-    FxMuzzleFlash = {
-        '/effects/emitters/default_muzzle_flash_01_emit.bp',
-        '/effects/emitters/default_muzzle_flash_02_emit.bp',
-    },
-
     StartEconomyDrain = function(self)
         DefaultWeapon.StartEconomyDrain(self)
     end,
@@ -132,18 +123,30 @@ TAweapon = Class(DefaultWeapon) {
 TAHide = Class(TAweapon) {
 
     PlayFxWeaponUnpackSequence = function(self)
-        self.unit.damageReduction = 1
+        self.unit.Pack = 1
         self.unit:DisableUnitIntel('RadarStealth')
         TAweapon.PlayFxWeaponUnpackSequence(self)
     end,
 
     PlayFxWeaponPackSequence = function(self)
-        self.unit.damageReduction = 0.28
+        self.unit.Pack = 0.28
         self.unit:EnableUnitIntel('RadarStealth')
         TAweapon.PlayFxWeaponPackSequence(self)
     end,
 }
 
+TAPopLaser = Class(TAweapon) {
+
+    PlayFxWeaponUnpackSequence = function(self)
+        self.unit.Pack = 1
+        TAweapon.PlayFxWeaponUnpackSequence(self)
+    end,
+
+    PlayFxWeaponPackSequence = function(self)
+        self.unit.Pack = 0.5
+        TAweapon.PlayFxWeaponPackSequence(self)
+    end,
+}
 
 TABuzz = Class(TAweapon) {
     OnCreate = function(self)
@@ -205,33 +208,72 @@ TADGun = Class(TAweapon) {
         return not self.unit:IsOverchargePaused() and self:HasEnergy() and not
             self:UnitOccupied() 
     end,
+    
+    UnitOccupied = function(self)
+        return self.unit:IsUnitState('Building') or
+            self.unit:IsUnitState('Repairing') or
+            self.unit:IsUnitState('Reclaiming')
+    end,
 
     StartEconomyDrain = function(self) -- OverchargeWeapon drains energy on impact
     end,
 
     OnWeaponFired = function(self)
-        ---TAweapon.OnWeaponFired(self)
-        self.unit:SetWeaponEnabledByLabel('DGun', true)
         self:ForkThread(self.PauseOvercharge)
     end,
 
-        OnLostTarget = function(self)
+    OnLostTarget = function(self)
         self.unit:SetWeaponEnabledByLabel('DGun', true)
+        if self.AutoMode then
+            self.AutoThread = self:ForkThread(self.AutoEnable)
+        end
         TAweapon.OnLostTarget(self)
     end,
-        
-        PauseOvercharge = function(self)
-            if not self.unit:IsOverchargePaused() then
-                self.unit:SetOverchargePaused(true)
-                WaitSeconds(1/self:GetBlueprint().RateOfFire)
-                self.unit:SetOverchargePaused(false)
-            end
-        end,
+
+
+    PauseOvercharge = function(self)
+        if not self.unit:IsOverchargePaused() then
+            self.unit:SetOverchargePaused(true)
+            WaitSeconds(1 / self:GetBlueprint().RateOfFire)
+            self.unit:SetOverchargePaused(false)
+        end
+        self.unit:SetWeaponEnabledByLabel('DGun', true)
+        if self.AutoMode then
+            self.AutoThread = self:ForkThread(self.AutoEnable)
+        end
+    end,
 
         OnCreate = function(self)
             TAweapon.OnCreate(self)
             self.EnergyRequired = self:GetBlueprint().EnergyRequired
             self.unit:SetWeaponEnabledByLabel('DGun', true)
+            self.unit:SetWeaponEnabledByLabel('AutoDGun', false)
             self.unit:SetOverchargePaused(false)
         end,
+
+        AutoEnable = function(self)
+            while not self:CanOvercharge() do
+                WaitSeconds(3)
+            end
+            if self.AutoMode then
+                self.unit:SetWeaponEnabledByLabel('DGun', false)
+                self.unit:SetWeaponEnabledByLabel('AutoDGun', true)
+            end
+        end,
+    
+        SetAutoOvercharge = function(self, auto)
+            self.AutoMode = auto
+    
+            if self.AutoMode then
+                self.AutoThread = self:ForkThread(self.AutoEnable)
+            else
+                if self.AutoThread then
+                    KillThread(self.AutoThread)
+                    self.unit:SetWeaponEnabledByLabel('AutoDGun', false)
+                    self.unit:SetWeaponEnabledByLabel('DGun', true)
+                    self.AutoThread = nil
+                end
+            end
+        end,
+    
 }

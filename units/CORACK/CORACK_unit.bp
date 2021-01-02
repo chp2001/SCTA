@@ -59,11 +59,6 @@ UnitBlueprint {
         'CORE',
         'KBOT',
 	'LEVEL2',
-	
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -104,8 +99,8 @@ UnitBlueprint {
             'BUILTBYT2KBOT CORE',
         },
         MaxBuildDistance = 3.75,
-        StorageEnergy = 100,
-        StorageMass = 100,
+        StorageEnergy = 25,
+        StorageMass = 25,
         NaturalProducer = true,
 	ProductionPerSecondEnergy = 20,
 	ProductionPerSecondMass = 1,
@@ -164,6 +159,9 @@ UnitBlueprint {
     SizeZ = 2,
     StrategicIconName = 'icon_land2_engineer',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
     Weapon = {
         { #BIG_UNITEX
             Damage = 50,

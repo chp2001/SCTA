@@ -75,7 +75,8 @@ UnitBlueprint {
 	'GROUNDATTACK',
         'OVERLAYDIRECTFIRE',
         'CORE',
-	'LEVEL2',
+    'LEVEL2',
+    'SNIPEMODE',
     },
     Defense = {
         ArmorType = 'Light',
@@ -91,21 +92,6 @@ UnitBlueprint {
         Abilities = {
             'Gunship',
         },
-		--[[DestructionEffects = {
-		#DefaultProjectileCategories = {'ArmCockpit'},
-		DestructionDebrisUseLocalVelocity = true,
-		DefaultFlamingProjectileCountMin = 0,
-		DefaultFlamingProjectileCountMax = 0,
-		FlashSize = 10,
-		FlashTime = 10,
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -124,10 +110,11 @@ UnitBlueprint {
     },
 
     General = {
-        Category = 'Direct Fire',
-        Classification = 'RULEUC_MilitaryVehicle',
+        Category = 'Gunship',
+        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
+            RULEUCC_Dock = true,
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
@@ -152,6 +139,7 @@ UnitBlueprint {
     Physics = {
         Elevation = 8,
         MotionType = 'RULEUMT_Air',
+        GroundCollisionOffset = 1.5,
         MaxSpeed = 0.5, 
         RotateOnSpot = true,
 	FuelRechargeRate = 444444,
@@ -178,6 +166,7 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
+            AutoInitiateAttackCommand = true,
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,

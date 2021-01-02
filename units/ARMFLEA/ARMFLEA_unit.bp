@@ -39,15 +39,11 @@ UnitBlueprint {
         'ARM',
         'KBOT',
 	'LEVEL1',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 75,
-        MaxHealth = 75,
+        Health = 50,
+        MaxHealth = 50,
         AirThreatLevel = 0,
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,
@@ -57,15 +53,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/ARMFLEA/ARMFLEA_lod0_Awalk.sca',
         AnimationWalkRate = 1,
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'torso'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -76,7 +63,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'torso',
+	SmokeBone = 'body',
         UniformScale = 0.16,
     },
     Economy = {
@@ -89,7 +76,7 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-        Category = 'Direct Fire',
+        Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,
@@ -198,7 +185,7 @@ UnitBlueprint {
         { #SMALL_UNITEX
             Damage = 10,
             DamageFriendly = true,
-            DamageRadius = 0.9375,
+            DamageRadius = 1,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

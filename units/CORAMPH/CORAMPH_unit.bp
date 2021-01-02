@@ -37,7 +37,6 @@ UnitBlueprint {
         'KBOT',
         'LAND',
         'CORE',
-        --'HOVER',
         'AMPHIBIOUS',
 	'LEVEL2',
     },
@@ -55,18 +54,9 @@ UnitBlueprint {
         AnimationWalk = '/mods/SCTA-master/units/CORAMPH/CORAMPH_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
-            '<LOC ability_hover>Hover',
+            '<LOC ability_amphibious>Amphibious',
+            'Assault Bot',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'MetalBarrel','ArmHover'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -76,16 +66,6 @@ UnitBlueprint {
                 },
             },
         },
-	IdleEffects = {
-		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
-		Scale = 0.5,
-		Bones = {'lfoot','rfoot'},
-	},
-	MovementEffects = {
-		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
-		Scale = 0.5,
-		Bones = {'lfoot','rfoot'},
-	},
         UniformScale = 0.16,
     },
     Economy = {
@@ -143,6 +123,9 @@ UnitBlueprint {
     SizeZ = 2,
     StrategicIconName = 'icon_bot2_directfire',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
     Weapon = {
         {
             Audio = {

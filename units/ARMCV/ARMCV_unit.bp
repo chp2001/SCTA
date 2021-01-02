@@ -76,17 +76,46 @@ UnitBlueprint {
         Abilities = {
             'Construction Unit',
         },
+        MovementEffects = {
+            Bones = {'ARMCV'},
+            Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
+            Scale = 0.5,
+        Land = {
+            Treads = {
+                ScrollMultiplier = 0.75,
+                ScrollTreads = true,
+                TreadMarks = {
+                    {
+                        BoneName = 'ARMCV',
+                        TreadMarks = 'tank_treads_albedo',
+                        TreadMarksInterval = 0.2,
+                        TreadMarksSizeX = 0.5,
+                        TreadMarksSizeZ = 0.5,
+                        TreadOffset = {
+                            0,
+                            0,
+                            0,
+                        },
+                    },
+                },
+            },
+        },
+    },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
+                    LODCutoff = 120,
+                    Scrolling = true,
+                    ShaderName = 'AeonCZAR',
+                },
+                {
                     LODCutoff = 230,
                     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.32,
     },
     Economy = {
         BuildCostEnergy = 2030,
@@ -97,14 +126,14 @@ UnitBlueprint {
             'BUILTBYT1VEHICLE ARM',
         },
         MaxBuildDistance = 2.5,
-        StorageEnergy = 50,
-        StorageMass = 50,
+        StorageEnergy = 5,
+        StorageMass = 5,
 	ProductionPerSecondEnergy = 5,
 	NaturalProducer = true,
     },
     General = {
         BuildBones = {
-            AimBone = 'Turret',
+            AimBone = 'Turret_Barrel',
             BuildEffectBones = {'Turret_Muzzle'},
             PitchBone = 'Turret_Hinge',
             YawBone = 'Turret',
@@ -147,7 +176,7 @@ UnitBlueprint {
         TurnRate = 41,
         MaxSteerForce = 10,
     },
-    SelectionCenterOffsetZ = -0.3,
+    SelectionCenterOffsetZ = 0,
     SelectionSizeX = 1.75,
     SelectionSizeZ = 1.5,
     SelectionThickness = 0.25,

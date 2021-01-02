@@ -39,10 +39,6 @@ UnitBlueprint {
         'CORE',
         'KBOT',
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -57,15 +53,10 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORSPY/CORSPY_lod0_Awalk.sca',
         AnimationWalkRate = 1,
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'head'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
+        Abilities = {
+            '<LOC ability_radar>Radar',
+        },
+        CloakMesh = '/mods/SCTA-master/units/CORSPY/CORSPY_cloak_mesh',
     Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -84,12 +75,8 @@ UnitBlueprint {
         BuildTime = 22000,
         MaintenanceConsumptionPerSecondEnergy = 10,
     },
-    --[[Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-	},]]--
     General = {
-        Category = 'Direct Fire',
+        Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,

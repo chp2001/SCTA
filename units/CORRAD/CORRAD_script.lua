@@ -3,11 +3,11 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 
-CORRAD = Class(TAunit) {
+CORRAD = Class(TAStructure) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TAStructure.OnCreate(self)
 		self.Spinners = {
 			dish = CreateRotator(self, 'dish', 'y', nil, 0, 0, 0),
 		}
@@ -17,7 +17,7 @@ CORRAD = Class(TAunit) {
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
+		TAStructure.OnStopBeingBuilt(self,builder,layer)
 		self.StartSpin(self)
 		self:PlayUnitSound('Activate')
 	end,
@@ -27,7 +27,7 @@ CORRAD = Class(TAunit) {
 			self:PlayUnitSound('Deactivate')
 			self.StopSpin(self)
 		end
-		TAunit.OnScriptBitSet(self, bit)
+		TAStructure.OnScriptBitSet(self, bit)
 	end,
 
 
@@ -36,7 +36,7 @@ CORRAD = Class(TAunit) {
 			self:PlayUnitSound('Activate')
 			self.StartSpin(self)
 		end
-		TAunit.OnScriptBitClear(self, bit)
+		TAStructure.OnScriptBitClear(self, bit)
 	end,
 
 	StartSpin = function(self)

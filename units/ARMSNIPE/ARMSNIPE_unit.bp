@@ -37,12 +37,9 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
+        'SNIPER',
         'KBOT',
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -58,26 +55,9 @@ UnitBlueprint {
         AnimationWalk = '/mods/SCTA-master/units/ARMSNIPE/ARMSNIPE_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
-            'Sniper Bot',
+            'Assault Bot',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'torso'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'muzzle'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
+        CloakMesh = '/mods/SCTA-master/units/ARMSNIPE/ARMSNIPE_cloak_mesh',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -142,11 +122,14 @@ UnitBlueprint {
     SelectionSizeX = 1.0,
     SelectionSizeZ = 1.0,
     SelectionThickness = 0.25,
-    SizeX = 2,
-    SizeY = 2,
-    SizeZ = 2,
+    SizeX = 1.5,
+    SizeY = 2.4,
+    SizeZ = 1.5,
     StrategicIconName = 'icon_bot2_artillery',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
     Weapon = {
         {
             Audio = {
@@ -158,9 +141,11 @@ UnitBlueprint {
             },
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-	    DamageFriendly = true,
+        DamageFriendly = false,
+        WeaponUnpacks = true,
+        WeaponRepackTimeout = 1,
             Damage = 300,
-	    DamageRadius = 0.25,
+	    DamageRadius = 1,
             DamageType = 'Normal',
             DisplayName = 'ARM_FAST',
             FireTargetLayerCapsTable = {
@@ -173,14 +158,14 @@ UnitBlueprint {
             MaxRadius = 55,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 25,
+            MuzzleVelocity = 60,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_FAST/ARM_FAST_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Flare',
+                        'flash',
                     },
-                    RackBone = 'ruparm',
+                    RackBone = 'rarm',
                 },
             },
             RackFireTogether = false,
@@ -198,12 +183,15 @@ UnitBlueprint {
             EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 50,
             EnergyRequired = 100,
+            FiringTolerance = 2,
+            RenderFireClock = true,
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'Flare',
-            TurretBonePitch = 'ruparm',
+            TurretBoneMuzzle = 'flash',
+            TurretBonePitch = 'rarm',
             TurretBoneYaw = 'torso',
-            TurretPitch = 90,
+            TurretPitch = 70,
+            UseFiringSolutionInsteadOfAimBone = true,
             TurretPitchRange = 360,
             TurretPitchSpeed = 200,
             TurretYaw = 0,
@@ -214,7 +202,7 @@ UnitBlueprint {
         { #SMALL_UNITEX
             Damage = 10,
             DamageFriendly = true,
-            DamageRadius = 0.9375,
+            DamageRadius = 1,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

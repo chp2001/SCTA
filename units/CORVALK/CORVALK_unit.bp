@@ -93,21 +93,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_transport>Transport',
         },
-		--[[DestructionEffects = {
-		DefaultFlamingProjectileCountMin = 0,
-		DefaultFlamingProjectileCountMax = 0,
-		DestructionDebrisUseLocalVelocity = true,
-		DefaultProjectileCategories = {'ArmCockpit'},
-		FlashSize = 10,
-		FlashTime = 10,
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -135,6 +120,7 @@ UnitBlueprint {
         Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
+            RULEUCC_Dock = true,
             RULEUCC_CallTransport = true,
             RULEUCC_Capture = false,
             RULEUCC_Ferry = true,
@@ -166,6 +152,7 @@ UnitBlueprint {
     Physics = {
         Elevation = 9,
         MotionType = 'RULEUMT_Air',
+        GroundCollisionOffset = 1.5,
     MaxSpeed = 0.5, 
     RotateOnSpot = true,
 	FuelRechargeRate = 444444,
@@ -191,8 +178,11 @@ UnitBlueprint {
             DamageFriendly = true,
             DamageRadius = 3.4375,
             DamageType = 'Normal',
+            DisplayName = 'Air Crash',
             DummyWeapon = true,
-            Label = 'DeathWeapon',
+            FiringTolerance = 2,
+            Label = 'DeathImpact',
+            WeaponCategory = 'Death',
         }, 
 
     },

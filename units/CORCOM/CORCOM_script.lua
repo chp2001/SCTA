@@ -3,21 +3,19 @@
 #
 #Script created by Raevn
 
-local TACommander = import('/mods/SCTA-master/lua/TAconstructor.lua').TACommander
+local TARealCommander = import('/mods/SCTA-master/lua/TAconstructor.lua').TARealCommander
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local TACommanderDeathWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TACommanderDeathWeapon
 local TADGun = import('/mods/SCTA-master/lua/TAweapon.lua').TADGun
 
-CORCOM = Class(TACommander) {
+CORCOM = Class(TARealCommander) {
 	Weapons = {
 		COMLASER = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
 		},
 		DGun = Class(TADGun) {
+		},		
+		AutoDGun = Class(TADGun) {
 		},
 		DeathWeapon = Class(TACommanderDeathWeapon) {},
 	},
@@ -35,20 +33,19 @@ CORCOM = Class(TACommander) {
 		self:PlayUnitSound('CommanderArrival')
 		self.PlayCommanderWarpInEffectFlag = false
 		self:CreateProjectile( '/mods/SCTA-master/effects/entities/TAEntrance/TAEntrance_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
-		WaitSeconds(2.7)
-			self:ShowBone(0, true)
+		self:ShowBone(0, true)
+		self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
+		WaitSeconds(3)
 			self:HideBone('Mlasflsh', true)
 			self:HideBone('BigFlsh', true)
+			self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
 			self:SetUnSelectable(false)
 			self:SetBusy(false)
 			self:SetBlockCommandQueue(false)
-	
-			WaitSeconds(6)
-			self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
 		end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TACommander.OnStopBeingBuilt(self,builder,layer)
+		TARealCommander.OnStopBeingBuilt(self,builder,layer)
 		ForkThread(self.GiveInitialResources, self)
 			self:SetScriptBit('RULEUTC_CloakToggle', true)
 			self:ForkThread(self.PlayCommanderWarpInEffect)
@@ -58,11 +55,11 @@ CORCOM = Class(TACommander) {
 
 	OnScriptBitSet = function(self, bit)
 		if bit == 8 then
-			self:OnIntelDisabled()
+			self:DisableUnitIntel('ToggleBit8', 'Cloak')
 			if self.CloakThread then KillThread(self.CloakThread) end
-			self.CloakThread = self:ForkThread(TACommander.CloakDetection)	
+			self.CloakThread = self:ForkThread(TARealCommander.CloakDetection)	
 		end
-		TACommander.OnScriptBitSet(self, bit)
+		TARealCommander.OnScriptBitSet(self, bit)
 	end,
 
 
@@ -74,7 +71,7 @@ CORCOM = Class(TACommander) {
 				self.cloakOn = nil
 			end
 		end
-		TACommander.OnScriptBitClear(self, bit)
+		TARealCommander.OnScriptBitClear(self, bit)
 	end,
 
 	GiveInitialResources = function(self)

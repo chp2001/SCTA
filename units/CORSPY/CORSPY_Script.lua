@@ -14,32 +14,20 @@ CORSPY = Class(TAWalking) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
-		self:SetMaintenanceConsumptionInactive()
         self:SetScriptBit('RULEUTC_IntelToggle', true)
 		self:RequestRefreshUI()
     end,
 
 	OnIntelDisabled = function(self)
+		self:SetMaintenanceConsumptionInactive()
+		self:DisableIntel('Cloak')
 		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
 	end,
 
 	OnIntelEnabled = function(self)
-		self:SetMesh('/mods/SCTA-master/units/CORSPY/CORSPY_cloak_mesh', true)
-	end,
-
-	OnScriptBitSet = function(self, bit)
-		if bit == 8 then
-			self.Spinners.fork:SetSpeed(0)
-		end
-		TAWalking.OnScriptBitSet(self, bit)
-	end,
-
-
-	OnScriptBitClear = function(self, bit)
-		if bit == 8 then
-			self.Spinners.fork:SetSpeed(100)
-		end
-		TAWalking.OnScriptBitClear(self, bit)
+		self:SetMaintenanceConsumptionActive()
+		self:EnableIntel('Cloak')
+		self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
 	end,
 }
 

@@ -7,8 +7,6 @@ local TAair = import('/mods/SCTA-master/lua/TAair.lua').TAair
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 CORVENG = Class(TAair) {
-	moving = false,
-
 	OnCreate = function(self)
 		TAair.OnCreate(self)
 		---self:SetMaintenanceConsumptionActive()
@@ -20,6 +18,7 @@ CORVENG = Class(TAair) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
+		self.moving = nil
 	end,
 
 	OnMotionVertEventChange = function(self, new, old )

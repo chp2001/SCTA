@@ -85,16 +85,6 @@ UnitBlueprint {
                 },
             },
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'ArmCockpit'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -116,12 +106,6 @@ UnitBlueprint {
         BuildCostMass = 37,
         BuildTime = 1465,
     },
-    --[[Footprint = {
-	MaxSlope = 1,
-	MaxWaterDepth = 0.75,
-        SizeX = 2,
-        SizeZ = 2,
-    },]]--
     General = {
         Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',

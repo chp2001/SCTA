@@ -32,7 +32,8 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
 	'CORE',
 	'LEVEL3',
-	'SORTDEFENSE',
+    'SORTDEFENSE',
+    'SNIPEMODE',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -48,25 +49,6 @@ UnitBlueprint {
         Abilities = {
             'Artillery',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'MetalBarrel'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'turret',0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'barrel'},
-				EmitterBlueprint = {
-	    				'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -90,7 +72,7 @@ UnitBlueprint {
     },
     General = {
 	---BuildAngle = 0,
-        Category = 'Defense',
+        Category = 'Strategic',
         Classification = 'RULEUC_Weapon',
         CommandCaps = {
             RULEUCC_Attack = true,

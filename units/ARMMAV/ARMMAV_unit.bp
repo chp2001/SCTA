@@ -56,25 +56,6 @@ UnitBlueprint {
         Abilities = {
             'Assault Bot',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'MetalBarrel'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'torso'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'rgunbarrel', 'lgunbarrel'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -85,7 +66,7 @@ UnitBlueprint {
             },
         },
 	SmokeBone = 'torso',
-        UniformScale = 0.16,
+        UniformScale = 0.12,
     },
     Economy = {
         BuildCostEnergy = 10914,
@@ -128,14 +109,17 @@ UnitBlueprint {
         TurnRate = 148,
         MaxSteerForce = 10,
     },
-    SelectionSizeX = 1,
-    SelectionSizeZ = 1,
+    SelectionSizeX = 0.8,
+    SelectionSizeZ = 0.8,
     SelectionThickness = 0.25,
-    SizeX = 2,
+    SizeX = 1.5,
     SizeY = 2,
-    SizeZ = 2,
+    SizeZ = 1.5,
     StrategicIconName = 'icon_bot2_directfire',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
     Weapon = {
         {
             Audio = {
@@ -162,7 +146,7 @@ UnitBlueprint {
             FiringTolerance = 0.5,
             Label = 'EMG',
             MaxRadius = 30,
-            MuzzleSalvoDelay = 0.1,
+            MuzzleSalvoDelay = 0.2,
             MuzzleSalvoSize = 2,
 	        MuzzleVelocity = 27,
             ProjectileId = '/mods/SCTA-master/projectiles/EMG/EMG_proj.bp',
@@ -171,17 +155,17 @@ UnitBlueprint {
                         MuzzleBones = {
                             'flare2',
                         },
-                        RackBone = 'lshoulder',
+                        RackBone = 'luparm',
                     },
                     {                    
                         MuzzleBones = {
-                            'flare',
+                            'flare1',
                     },
-                        RackBone = 'rshoulder',
+                        RackBone = 'ruparm',
                 },
             },
             RackRecoilDistance = 0,
-            RackReloadTimeout = 0.4,
+            RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 2,
@@ -192,10 +176,12 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'flare',
-            TurretBonePitch = 'rshoulder',
+            WeaponUnpacks = true,
+            WeaponRepackTimeout = 1,
+            TurretBoneMuzzle = 'flare1',
+            TurretBonePitch = 'rarm',
             TurretBoneDualMuzzle = 'flare2',
-            TurretBoneDualPitch = 'lshoulder',
+            TurretBoneDualPitch = 'larm',
             TurretBoneYaw = 'torso',
             TurretDualManipulators = true,
             UseFiringSolutionInsteadOfAimBone = true,

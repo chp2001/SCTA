@@ -36,7 +36,8 @@ UnitBlueprint {
 	'CORE',
 		'DEFENSIVE',
 	'SORTDEFENSE',
-	'LEVEL1',
+    'LEVEL1',
+    'SNIPEMODE',
     },
     CollisionOffsetY = -1,
     Defense = {
@@ -53,24 +54,6 @@ UnitBlueprint {
         Abilities = {
             'Defense',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'Turret'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -86,7 +69,7 @@ UnitBlueprint {
         BuildCostEnergy = 2608,
         BuildCostMass = 268,
         BuildTime = 4724,
-        StorageEnergy = 100,
+        StorageEnergy = 75,
     },
     Footprint = {
         SizeX = 2,
@@ -94,7 +77,6 @@ UnitBlueprint {
 	MaxSlope = 0.875,
     },
     General = {
-        ---BuildAngle = 32768,
         Category = 'Defense',
         Classification = 'RULEUC_Weapon',
         CommandCaps = {
@@ -114,7 +96,7 @@ UnitBlueprint {
         HelpText = 'Light Laser Tower',
     },
     LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
+    LifeBarOffset = 0.25,
     LifeBarSize = 2,
     Physics = {
         SkirtSizeX = 2, 
@@ -123,8 +105,8 @@ UnitBlueprint {
             LAYER_Land = true,
         },
     },
-    SelectionSizeX = 1.25,
-    SelectionSizeZ = 1.25,
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
     SelectionCenterOffsetZ = -0.8,
     SelectionThickness = 0.25,
     SizeX = 2,

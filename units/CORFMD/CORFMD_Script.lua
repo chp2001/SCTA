@@ -3,13 +3,10 @@
 #
 #Script created by Raevn
 
-local TAnoassistbuild = import('/mods/SCTA-master/lua/TAunit.lua').TAnoassistbuild
+local TAnoassistbuild = import('/mods/SCTA-master/lua/TAStructure.lua').TAnoassistbuild
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 CORFMD = Class(TAnoassistbuild) {
-	currentRound = 1,
-	PackTime = 0,
-
 	OnCreate = function(self)
 		TAnoassistbuild.OnCreate(self)
 		self.Sliders = {
@@ -20,6 +17,8 @@ CORFMD = Class(TAnoassistbuild) {
 		for k, v in self.Sliders do
 			self.Trash:Add(v)
 		end
+		self.currentRound = 1
+		self.PackTime = 0
 	end,
 
 	Weapons = {

@@ -3,13 +3,11 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 
-ARMRAD = Class(TAunit) {
-	intelIsActive = true,
-
+ARMRAD = Class(TAStructure) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TAStructure.OnCreate(self)
 		self.Spinners = {
 			ear1 = CreateRotator(self, 'dish1', 'x', nil, 0, 0, 0),
 			ear2 = CreateRotator(self, 'dish2', 'x', nil, 0, 0, 0),
@@ -18,10 +16,11 @@ ARMRAD = Class(TAunit) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
+		self.intelIsActive = true
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
+		TAStructure.OnStopBeingBuilt(self,builder,layer)
 		self.intelIsActive = true
 		self.StartSpin(self)
 		self:PlayUnitSound('Activate')
@@ -32,7 +31,7 @@ ARMRAD = Class(TAunit) {
 			self:PlayUnitSound('Deactivate')
 			self.StopSpin(self)
 		end
-		TAunit.OnScriptBitSet(self, bit)
+		TAStructure.OnScriptBitSet(self, bit)
 	end,
 
 
@@ -41,7 +40,7 @@ ARMRAD = Class(TAunit) {
 			self:PlayUnitSound('Activate')
 			self.StartSpin(self)
 		end
-		TAunit.OnScriptBitClear(self, bit)
+		TAStructure.OnScriptBitClear(self, bit)
 	end,
 
 	StartSpin = function(self)

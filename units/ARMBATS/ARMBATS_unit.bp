@@ -46,7 +46,8 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'ARM',
         'OCEAN',
-	'LEVEL2',
+    'LEVEL2',
+    'SNIPEMODE',
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -60,28 +61,6 @@ UnitBlueprint {
     },
     Description = 'Battleship',
     Display = {
-        Abilities = {
-            'Battleship',
-        },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'ArmShip','ArmBui', 'MetalBarrel'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'turret1','turret2','ARMBATS','wake1','wake2'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'barrel1A','flare2A','barrel1B','turret1','barrel2C'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -113,11 +92,17 @@ UnitBlueprint {
         Classification = 'RULEUC_MilitaryShip',
         CommandCaps = {
             RULEUCC_Attack = true,
+            RULEUCC_CallTransport = false,
+            RULEUCC_Capture = false,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
+            RULEUCC_Nuke = false,
             RULEUCC_Patrol = true,
+            RULEUCC_Reclaim = false,
+            RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
+            RULEUCC_Transport = false,
         },
         FactionName = 'ARM',
         TechLevel = 'RULEUTL_Advanced',

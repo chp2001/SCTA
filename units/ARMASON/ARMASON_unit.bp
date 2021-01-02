@@ -49,6 +49,7 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.5,
     Defense = {
+        DamageModifier = 0.46,
         ArmorType = 'Structure',
         Health = 320,
         MaxHealth = 320,
@@ -62,20 +63,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_sonar>Sonar',
         },
-		--[[DestructionEffects = {
-		DefaultFlamingProjectileCountMin = 0,
-		DefaultFlamingProjectileCountMax = 0,
-		DefaultProjectileCountMin = 0,
-		DefaultProjectileCountMax = 0,
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
-	--TextureAnimationFrames = 6,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -123,7 +110,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarSize = 1,
     Physics = {
         SkirtSizeX = 1, 
         SkirtSizeZ = 1, 

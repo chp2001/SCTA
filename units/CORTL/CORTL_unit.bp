@@ -35,11 +35,8 @@ UnitBlueprint {
         'SORTDEFENSE',
 	'CORE',
 	'SPECIAL',
-	
-	
+    'SNIPEMODE',
 	'LEVEL2',
-	
-	
     },
     CollisionOffsetY = -1,
     Defense = {
@@ -54,18 +51,9 @@ UnitBlueprint {
     Description = 'Torpedo Launcher',
     Display = {
         Abilities = {
-            'Anti-Sub',
+            '<LOC ability_torpedo>Torpedoes',
             '<LOC ability_sonar>Sonar',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

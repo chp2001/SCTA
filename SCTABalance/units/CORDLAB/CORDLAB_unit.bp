@@ -80,7 +80,7 @@ UnitBlueprint {
             },
         },
 	--TextureAnimationFrames = 6,
-        UniformScale = 0.25,
+        UniformScale = 0.26,
     },
     Economy = {
         BuildCostEnergy = 38000,
@@ -94,9 +94,9 @@ UnitBlueprint {
             'KBOT LEVEL1 CORE',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = 4,
-        StorageMass = 100,
-        StorageEnergy = 100,
+	InitialRallyZ = 5,
+        StorageMass = 50,
+        StorageEnergy = 50,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -134,7 +134,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
-    LifeBarSize = 8,
+    LifeBarSize = 7,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
@@ -142,10 +142,20 @@ UnitBlueprint {
         FlattenSkirt = true,
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
-	BuildAreaX = 2,
-	BuildAreaZ = 2,
-	CloseAreaX = 2,
-	CloseAreaZ = 6,
+    RollOffPoints = {
+    {
+        UnitSpin = 0,
+        X = 0,
+        Y = 0,
+        Z = 2.5,
+    },
+    {
+        UnitSpin = 180,
+        X = 0,
+        Y = 0,
+        Z = -2.5,
+    }, 
+},
         OccupyRects = {
             # offsetX offsetZ  sizeX sizeZ, offset from center of unit
             -3,

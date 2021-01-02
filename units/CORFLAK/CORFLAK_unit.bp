@@ -51,16 +51,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'MetalBarrel'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Turret', 0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -83,7 +73,6 @@ UnitBlueprint {
 	MaxSlope = 0.625,
     },
     General = {
-	---BuildAngle = 8192,
         Category = 'Defense',
         Classification = 'RULEUC_Weapon',
         CommandCaps = {

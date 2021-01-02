@@ -5,6 +5,23 @@
 
 UnitBlueprint {
     Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH2',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	'LAND',
+	'INDIRECTFIRE',
+	'ROCKET',
+        'OVERLAYINDIRECTFIRE',
+        'ARTILLERY',
+        'ARM',
+        'VEHICLE',
+        'KBOT',	
+    'LEVEL2',
+    'SNIPEMODE',
+    },
     Display = {
         UniformScale = 0.08,
     },

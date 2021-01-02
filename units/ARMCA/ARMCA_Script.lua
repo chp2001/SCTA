@@ -9,12 +9,6 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 ARMCA = Class(TAAirConstructor) {
 	OnCreate = function(self)
 		TAAirConstructor.OnCreate(self)
-		self.Spinners = {
-			nozzle = CreateRotator(self, 'Nozzle', 'x', nil, 0, 0, 0),
-		}
-		for k, v in self.Spinners do
-			self.Trash:Add(v)
-		end
 		self.Sliders = {
 			wing1 = CreateSlider(self, 'Wing_01'),
 			wing2 = CreateSlider(self, 'Wing_02'),

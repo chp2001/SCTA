@@ -17,11 +17,12 @@ UnitBlueprint {
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
-        'OVERLAYINDIRECTFIRE',
+        'OVERLAYDIRECTFIRE',
 	'CORE',
 	'LEVEL2',
 	'STRATEGIC',
     'SORTDEFENSE',
+    'SNIPEMODE',
     },
     Display = {
         UniformScale = 0.12,

@@ -7,9 +7,6 @@ local TAAirConstructor = import('/mods/SCTA-master/lua/TAAirConstructor.lua').TA
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 ARMCSA = Class(TAAirConstructor) {
-    Flying = true,
-	IsWaiting = false,
-
 	OnCreate = function(self)
 		TAAirConstructor.OnCreate(self)
 		self.Sliders = {

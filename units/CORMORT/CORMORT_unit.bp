@@ -40,10 +40,7 @@ UnitBlueprint {
         'CORE',
         'KBOT',
         'LEVEL2',
-        
-        
-        
-        
+        'SNIPEMODE', 
     },
     Defense = {
         ArmorType = 'Normal',
@@ -59,26 +56,8 @@ UnitBlueprint {
         AnimationWalk = '/mods/SCTA-master/units/CORMORT/CORMORT_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
-            'Indirect',
+            'Assault Bot',
         },
-        	--[[DestructionEffects = {
-            DestructionEmitters = {
-                {
-                    EmitterBone = {'Torso'},
-                    EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-                    EmitterSize = 1.25,
-                },
-                {
-                    EmitterBone = {'Barrel'},
-                    EmitterBlueprint = {
-                            '/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-                            '/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-                            '/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-                    },
-                    EmitterSize = 1.25,
-                },
-            },
-       	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -144,6 +123,9 @@ UnitBlueprint {
     SizeZ = 2,
     StrategicIconName = 'icon_bot2_artillery',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
     Weapon = {
         {
             ArtilleryShieldBlocks = true,

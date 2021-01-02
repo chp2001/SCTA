@@ -31,9 +31,8 @@ UnitBlueprint {
     StrategicIconName = 'icon_bot3_directfire',
     Weapon = {
         [1] = {
-            Damage = 70,
+            Damage = 30,
             MaxRadius = 25,
-            MuzzleSalvoSize = 1,
         },
         [2] = {
 },

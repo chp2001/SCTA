@@ -3,14 +3,12 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
-local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
+local TAPopLaser = import('/mods/SCTA-master/lua/TAweapon.lua').TAPopLaser
 
-ARMANNI = Class(TAunit) {
-	damageReduction = 1,
-
+ARMANNI = Class(TAStructure) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TAStructure.OnCreate(self)
 		self.Spinners = {
 			case2 = CreateRotator(self, 'case2', 'z', nil, 0, 0, 0),
 			case1 = CreateRotator(self, 'case1', 'z', nil, 0, 0, 0),
@@ -43,20 +41,23 @@ ARMANNI = Class(TAunit) {
 		end
 	end,
 
-	OnDamage = function(self, instigator, amount, vector, damageType)
-		TAunit.OnDamage(self, instigator, amount * self.damageReduction, vector, damageType) 
-		#Has Damage Reduction
+	OnStopBeingBuilt = function(self,builder,layer)
+		TAStructure.OnStopBeingBuilt(self,builder,layer)
+		ForkThread(self.Fold, self)
+	end,
+
+	Fold = function(self)
+		TAStructure.Fold(self)
 	end,
 
 	Weapons = {
-		ARM_TOTAL_ANNIHILATOR = Class(TAweapon) {
+		ARM_TOTAL_ANNIHILATOR = Class(TAPopLaser) {
 			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
+				TAPopLaser.OnWeaponFired(self)
+
 			end,
 
 			PlayFxWeaponUnpackSequence = function(self)
-				self.unit.damageReduction = 1
 
 				--MOVE case5 to y-axis <-7.30> SPEED <14.00>;
 				self.unit.Sliders.case5:SetGoal(0,-7.3,0)
@@ -198,12 +199,10 @@ ARMANNI = Class(TAunit) {
 				self.unit.Spinners.radar:ClearGoal()
 				self.unit.Spinners.radar:SetSpeed(100)
 
-				TAweapon.PlayFxWeaponUnpackSequence(self)
+				TAPopLaser.PlayFxWeaponUnpackSequence(self)
 			end,	
 
 			PlayFxWeaponPackSequence = function(self)
-				self.unit.damageReduction = 0.5
-
 				--TURN radar to x-axis <0> SPEED <182.11>;
 				self.unit.Spinners.radar:SetGoal(0)
 				self.unit.Spinners.radar:SetSpeed(182.11)
@@ -334,11 +333,7 @@ ARMANNI = Class(TAunit) {
 
 				--SLEEP <519>;
 				WaitSeconds(0.5)
-
-				--SLEEP <160>;
-				WaitSeconds(0.15)
-				
-				TAweapon.PlayFxWeaponPackSequence(self)
+				TAPopLaser.PlayFxWeaponPackSequence(self)
 			end,	
 		},
 	},

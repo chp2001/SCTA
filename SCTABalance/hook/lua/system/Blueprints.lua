@@ -18,7 +18,7 @@ do
                 UniformScale = 0.5,
             },
             Intel = {
-                VisionRadius = 1.5, 
+                VisionRadius = 2, 
                 WaterVisionRadius = 3,
             },
             Economy = {
@@ -87,7 +87,7 @@ do
                 MaxHealth = 0.5,
             },
             Display = {
-                UniformScale = 0.5,
+                UniformScale = 0.33,
             },
             Intel = {
                 WaterVisionRadius = 3,
@@ -108,9 +108,9 @@ do
             LifeBarOffset = 0.5,
             LifeBarSize = 0.5,
             
-            SelectionSizeX = 0.5,
-            SelectionSizeZ = 0.5,
-            SelectionThickness = 2.5,
+            SelectionSizeX = 0.33,
+            SelectionSizeZ = 0.33,
+            SelectionThickness = 2,
         }
         local Struct_Mults = {
             Defense = {
@@ -121,7 +121,7 @@ do
                 UniformScale = 0.5,
             },
             Intel = {
-                VisionRadius = 1.5, 
+                VisionRadius = 2.5, 
                 WaterVisionRadius = 3,
                 },
             Economy = {
@@ -166,9 +166,6 @@ do
                 elseif table.find(bp.Categories, 'MOBILE') then
                     -- #7 CB Change: "_" is a throwaway variable that I'm using to simplify this code. if the "UpdateStat" function returns true, then the others don't get run at all.
                     local _ = UpdateStat(bp, Land_Mults, Land_Singles, 'LAND') or UpdateStat(bp, Naval_Mults, Naval_Singles, 'NAVAL') or UpdateStat(bp, Air_Mults, Air_Singles, 'AIR')
-                elseif table.find(bp.Categories, 'VTOL') then
-                    -- #6 CB Change - clean up the assignment from using if/then to just assignment.
-                    bp.Physics.GroundCollisionOffset = bp.Physics.GroundCollisionOffset or 1.5
                 end
             end
         end

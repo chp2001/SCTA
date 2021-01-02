@@ -3,7 +3,7 @@
 #
 #Script created by Raevn
 
-local TAPop = import('/mods/SCTA-master/lua/TAunit.lua').TAPop
+local TAPop = import('/mods/SCTA-master/lua/TAStructure.lua').TAPop
 local TAHide = import('/mods/SCTA-master/lua/TAweapon.lua').TAHide
 
 CORTOAST = Class(TAPop) {
@@ -15,16 +15,11 @@ CORTOAST = Class(TAPop) {
 
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAPop.OnStopBeingBuilt(self,builder,layer)
-		ForkThread(self.Pack,self)
+		ForkThread(self.Fold, self)
 	end,
 
-	OnDamage = function(self, instigator, amount, vector, damageType)
-		TAPop.OnDamage(self, instigator, amount * self.damageReduction, vector, damageType)
-		#Has Damage Reduction
-	end,
-
-	Pack = function(self)
-		TAPop.Pack(self)
+	Fold = function(self)
+		TAPop.Fold(self)
 		self:SetWeaponEnabledByLabel('ARMAMB_GUN', true)
 	end,
 

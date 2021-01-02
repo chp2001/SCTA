@@ -98,21 +98,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
         },
-		--[[DestructionEffects = {
-		#DefaultProjectileCategories = {'ArmCockpit'},
-		DefaultFlamingProjectileCountMin = 0,
-		DefaultFlamingProjectileCountMax = 0,
-		DestructionDebrisUseLocalVelocity = true,
-		FlashSize = 10,
-		FlashTime = 10,
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {	
             IconFadeInZoom = 130,
             LODs = {
@@ -129,15 +114,12 @@ UnitBlueprint {
         BuildCostMass = 101,
         BuildTime = 9196,
     },
-    --[[Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-    },]]--
     General = {
-        Category = 'Direct Fire',
-        Classification = 'RULEUC_MilitaryVehicle',
+        Category = 'Fighter',
+        Classification = 'RULEUC_MilitaryAircraft',
         CommandCaps = {
             RULEUCC_Attack = true,
+            RULEUCC_Dock = true,
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
@@ -162,6 +144,7 @@ UnitBlueprint {
     Physics = {
         Elevation = 18,
         MotionType = 'RULEUMT_Air',
+        GroundCollisionOffset = 1.5,
         MaxSpeed = 0.5,
 	RotateOnSpot = true,
 	FuelRechargeRate = 444444,

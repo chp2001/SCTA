@@ -3,31 +3,21 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 
-ARMMAKR = Class(TAunit) {
-	damageReduction = 1,
-
-
-	OnDamage = function(self, instigator, amount, vector, damageType)
-		#Apply Damage Reduction
-		TAunit.OnDamage(self, instigator, self.damageReduction * amount, vector, damageType) 
-	end,
-
+ARMMAKR = Class(TAStructure) {
 	OnProductionUnpaused = function(self)
-		TAunit.OnProductionUnpaused(self)
+		TAStructure.Unfold(self)
+		TAStructure.OnProductionUnpaused(self)
 		self:SetMaintenanceConsumptionActive()
-		
-		self.damageReduction = 1
 		self:PlayUnitSound('Activate')
 	end,
 
 
 	OnProductionPaused = function(self)
-		TAunit.OnProductionPaused(self)
+		TAStructure.OnProductionPaused(self)
+		TAStructure.Fold(self)
 		self:SetMaintenanceConsumptionInactive()
-		
-		self.damageReduction = 0.5
 		self:PlayUnitSound('Deactivate')		
 	end,
 }

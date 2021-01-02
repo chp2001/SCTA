@@ -8,27 +8,31 @@ TAair = Class(TAunit)
 	OnCreate = function(self)
         TAunit.OnCreate(self)
         self.HasFuel = true
-    end,
+	end,
 
-	OnMotionVertEventChange = function(self, new, old )
-		TAunit.OnMotionVertEventChange(self, new, old)
-		if new == 'Down' then
-            -- Turn off the ambient hover sound
-        elseif new == 'Bottom' then
-            -- While landed, planes can only see half as far
-            local vis = self:GetBlueprint().Intel.VisionRadius / 2
+	OnStartRefueling = function(self)
+    end,
+	
+    OnMotionVertEventChange = function(self, new, old)
+        TAunit.OnMotionVertEventChange(self, new, old)
+		if (new == 'Down' or new == 'Bottom') then
+			self:CloseWings()
+			self:PlayUnitSound('Landing')
+			local vis = self:GetBlueprint().Intel.VisionRadius / 2
             self:SetIntelRadius('Vision', vis)
-        elseif new == 'Up' or (new == 'Top' and (old == 'Down' or old == 'Bottom')) then
-            -- Set the vision radius back to default
-            local bpVision = self:GetBlueprint().Intel.VisionRadius
+        elseif (new == 'Up' or new == 'Top') then
+			self:OpenWings()
+			self:PlayUnitSound('TakeOff')
+			local bpVision = self:GetBlueprint().Intel.VisionRadius
             if bpVision then
                 self:SetIntelRadius('Vision', bpVision)
             else
                 self:SetIntelRadius('Vision', 0)
             end
         end
-    end,
-
+	end,
+	
+	
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAunit.OnStopBeingBuilt(self,builder,layer)
 		self:OpenWings(self)
@@ -66,44 +70,6 @@ TAair = Class(TAunit)
 	end,
 
 }
-
-
-TATransportAir = Class(TAair)
-{
-	OnMotionVertEventChange = function(self, new, old )
-		if (new == 'Bottom' and old == 'Down' and EntityCategoryContains(categories.TRANSPORTATION, self)) then
-	        self:PlayUnitSound('Landing')
-			self:CloseWings(self)
-		TAair.OnMotionVertEventChange(self, new, old)
-		end
-	end,
-	
-	KillingInProgress = false,
-
-
-    Kill = function(self)
-        if self.Dead or self.KillingInProgress then
-            return
-        end
-        self.KillingInProgress = true
-        --LOG('TAUnit.Kill ' .. self:GetBlueprint().General.UnitName)
-
-        -- allow cargo to fire self destruct weapons (SelfDestructed flag is set in selfdestruct.lua)
-        if self.SelfDestructed and EntityCategoryContains(categories.AIRTRANSPORT, self) then
-            --LOG('  yes self destruct:' .. self:GetBlueprint().General.UnitName)
-            local cargo = self:GetCargo()
-            --pcall(function() cargo = self:GetCargo() end)
-            for _,unit in cargo or { } do
-                --LOG('  firing cargo self-d weapons:' .. unit:GetBlueprint().General.UnitName)
-                FireSelfdestructWeapons(unit)
-            end
-        end
-
-        TAair.Kill(self)
-
-    end,
-}
-
 TASeaair = Class(TAair) 
 {
 	OnStopBeingBuilt = function(self)

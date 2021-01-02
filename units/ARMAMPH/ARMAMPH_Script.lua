@@ -8,13 +8,12 @@ local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 
 ARMAMPH = Class(TAWalking) {
-	SwitchAnims = true,
-    Walking = true,
-	IsWaiting = false,
-	
 	OnStopBeingBuilt = function(self,builder,layer)
         TAWalking.OnStopBeingBuilt(self,builder,layer)
         # If created with F2 on land, then play the transform anim.
+        self.Walking = true
+        self.SwitchAnims = true
+        self.IsWaiting = nil
         if(self:GetCurrentLayer() == 'Water') then
             self.AT1 = self:ForkThread(self.TransformThread, true)
         end
@@ -27,8 +26,8 @@ ARMAMPH = Class(TAWalking) {
             if( self.Swim ) then
                 if( old == 'Stopped' ) then
                     if( self.SwitchAnims ) then
-                        self.SwitchAnims = false
-                        self.Walking = false
+                        self.SwitchAnims = nil
+                        self.Walking = nil
                     else
                         self.AnimManip:SetRate(2.8)
                     end
@@ -71,10 +70,10 @@ ARMAMPH = Class(TAWalking) {
             self.IsWaiting = true
             WaitFor(self.AnimManip)
             self:SetCollisionShape( 'Box', bp.CollisionOffsetX or 0,(bp.CollisionOffsetY + (bp.SizeY * 0.25)) or 0,bp.CollisionOffsetZ or 0, bp.SizeX * scale, bp.SizeY * scale, bp.SizeZ * scale )
-            self.IsWaiting = false
+            self.IsWaiting = nil
             self:SetImmobile(false)
             self.SwitchAnims = true
-			self.Walking = false
+			self.Walking = true
             self.Trash:Add(self.AnimManip)
 		else	
             self:SetImmobile(true)
@@ -87,7 +86,7 @@ ARMAMPH = Class(TAWalking) {
             self.IsWaiting = true
 			WaitFor(self.AnimManip)
 			self:SetCollisionShape( 'Box', bp.CollisionOffsetX or 0,(bp.CollisionOffsetY + (bp.SizeY*0.5)) or 0,bp.CollisionOffsetZ or 0, bp.SizeX * scale, bp.SizeY * scale, bp.SizeZ * scale )
-            self.IsWaiting = false
+            self.IsWaiting = nil
             self.AnimManip:Destroy()
             self.AnimManip = nil
             self:SetImmobile(false)

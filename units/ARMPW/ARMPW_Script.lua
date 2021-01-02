@@ -16,10 +16,7 @@ ARMPW = Class(TAWalking) {
             self.Animator:SetRate(bpDisplay.AnimationRunRate or 0.5)
         end
     end,
---[[ 
-    MovementEffects = function(self)
-        --The parent loops over a table without checking it's actually there.
-    end,]]
+
 }
 
 TypeClass = ARMPW

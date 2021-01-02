@@ -50,12 +50,16 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
-    LifeBarSize = 8,
+    LifeBarSize = 7,
     General = {
         UpgradesTo = 'cordvp', 
     },
     Intel = {
         VisionRadius = 10,
+    },
+    Physics = {
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
     },
     SelectionSizeX = 7,
     SelectionSizeZ = 5,

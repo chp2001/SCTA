@@ -101,8 +101,8 @@ UnitBlueprint {
         HelpText = 'Increases Energy Storage',
     },
     LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarOffset = 0.25,
+    LifeBarSize = 1,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,

@@ -48,11 +48,7 @@ UnitBlueprint {
 	'CORE',
 		'PLANT',
 	'SORTCONSTRUCTION',
-	
 	'LEVEL1',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -90,9 +86,9 @@ UnitBlueprint {
             'KBOT LEVEL1 CORE',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = 4,
-        StorageMass = 100,
-        StorageEnergy = 100,
+	InitialRallyZ = 5,
+        StorageMass = 50,
+        StorageEnergy = 50,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -136,10 +132,20 @@ UnitBlueprint {
         FlattenSkirt = true,
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
-	BuildAreaX = 2,
-	BuildAreaZ = 2,
-	CloseAreaX = 2,
-	CloseAreaZ = 6,
+    RollOffPoints = {
+    {
+        UnitSpin = 0,
+        X = 0,
+        Y = 0,
+        Z = 2.5,
+    },
+    {
+        UnitSpin = 180,
+        X = 0,
+        Y = 0,
+        Z = -2.5,
+    }, 
+},
         OccupyRects = {
             # offsetX offsetZ  sizeX sizeZ, offset from center of unit
             -3,

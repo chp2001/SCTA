@@ -3,11 +3,11 @@
 #
 #Blueprint created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 
-CORCKFUS = Class(TAunit) {
+CORCKFUS = Class(TAStructure) {
     OnStopBeingBuilt = function(self,builder,layer)
-        TAunit.OnStopBeingBuilt(self,builder,layer)
+        TAStructure.OnStopBeingBuilt(self,builder,layer)
         self:SetScriptBit('RULEUTC_CloakToggle', true)
         self:RequestRefreshUI()
     end,
@@ -17,7 +17,7 @@ CORCKFUS = Class(TAunit) {
 	end,
 
 	OnIntelEnabled = function(self)
-		self:SetMesh('/mods/SCTA-master/units/CORCKFUS/CORCKFUS_cloak_mesh', true)
+		self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
 	end,
 }
 

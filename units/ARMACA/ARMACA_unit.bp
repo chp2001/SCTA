@@ -49,7 +49,12 @@ UnitBlueprint {
     Air = {
         AutoLandTime = 1,
         BankFactor = 0,
-	    BankForward = true,
+        BankForward = true,
+        CirclingDirChangeFrequencySec = 1,
+        CirclingElevationChangeRatio = 0.25,
+        CirclingRadiusChangeMaxRatio = 0.9,
+        CirclingRadiusChangeMinRatio = 0.6,
+        CirclingTurnMult = 2,
         CanFly = true,
         KLift = 1,
         KLiftDamping = 1,
@@ -58,8 +63,8 @@ UnitBlueprint {
         KTurn = 3,
         KTurnDamping = 3,
         LiftFactor = 7,
-        MaxAirspeed = 9,
-        MinAirspeed = 6,
+        MaxAirspeed = 6,
+        MinAirspeed = 2,
         StartTurnDistance = 5,
     },
     BuildIconSortPriority = 0,
@@ -95,22 +100,6 @@ UnitBlueprint {
         Abilities = {
             'Adv. Construction Unit',
         },
-	ReclaimEmitter = 'nanolathe.bp',
-		--[[DestructionEffects = {
-		DefaultFlamingProjectileCountMin = 0,
-		DefaultFlamingProjectileCountMax = 0,
-		DestructionDebrisUseLocalVelocity = true,
-		DefaultProjectileCategories = {'Construction','ArmCockpit'},
-		FlashSize = 10,
-		FlashTime = 10,
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -132,16 +121,12 @@ UnitBlueprint {
             'BUILTBYT2AIR ARM',
         },
         MaxBuildDistance = 3.75,
-        StorageEnergy = 100,
-        StorageMass = 100,
+        StorageEnergy = 25,
+        StorageMass = 25,
 	ProductionPerSecondEnergy = 25,
 	ProductionPerSecondMass = 2,
 	NaturalProducer = true,
     },
-   --[[Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-    },]]--
     General = {        
         BuildBones = {
         AimBone = 'Nozzle',
@@ -154,6 +139,7 @@ UnitBlueprint {
         CommandCaps = {
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
+            RULEUCC_Dock = true,
             RULEUCC_Move = true,
             RULEUCC_Patrol = true,
             RULEUCC_Pause = true,
@@ -180,6 +166,7 @@ UnitBlueprint {
     Physics = {
         Elevation = 4,
         MotionType = 'RULEUMT_Air',
+        GroundCollisionOffset = 1.5,
     MaxSpeed = 0.5, 
     RotateOnSpot = true,
 	FuelRechargeRate = 444444,
@@ -195,7 +182,7 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Transport = {
         AirClass = true,
-        TransportClass = 1,
+        TransportClass = 2,
     },
     Weapon = {
         { #BIG_UNITEX

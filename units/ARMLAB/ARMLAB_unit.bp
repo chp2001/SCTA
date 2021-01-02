@@ -64,6 +64,7 @@ UnitBlueprint {
     },
     Description = 'Produces Kbots',
     Display = {
+        BuildAttachBone = 'BasePlate',
         AnimationUnpack = '/mods/SCTA-master/units/ARMLAB/ARMLAB_lod0_aopen.sca',
         AnimationUnpackRate = 1.5, 
         Mesh = {
@@ -88,8 +89,8 @@ UnitBlueprint {
         },
 	InitialRallyX = 0,
 	InitialRallyZ = -5,
-        StorageMass = 100,
-        StorageEnergy = 100,
+        StorageMass = 50,
+        StorageEnergy = 50,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -98,10 +99,8 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildAttachBone = 'BasePlate',
                 BuildEffectBones = {'Nozzle_01','Nozzle_02'},
             },
-	---BuildAngle = 4096,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {
@@ -134,10 +133,20 @@ UnitBlueprint {
         FlattenSkirt = true,
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
-	BuildAreaX = 2,
-	BuildAreaZ = 2,
-	CloseAreaX = 2,
-	CloseAreaZ = 6,
+    RollOffPoints = {
+    {
+        UnitSpin = 0,
+        X = 0,
+        Y = 0,
+        Z = -2.5,
+    },
+    {
+        UnitSpin = 180,
+        X = 0,
+        Y = 0,
+        Z = 2.5,
+    }, 
+    },
         OccupyRects = {
             # offsetX offsetZ  sizeX sizeZ, offset from center of unit
             -2,

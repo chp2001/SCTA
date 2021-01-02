@@ -89,9 +89,9 @@ UnitBlueprint {
             'LEVEL4 KBOT CORE',
         },
         InitialRallyX = 0,
-        InitialRallyZ = 7.5,
-        StorageMass = 800,
-        StorageEnergy = 1400,
+        InitialRallyZ = 8,
+        StorageMass = 500,
+        StorageEnergy = 500,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -100,6 +100,7 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
+            BuildAttachBone = 'gangplank',
             BuildEffectBones = {'nano1','nano2','nano3','nano4'},
         },  
         Category = 'Factory',
@@ -133,10 +134,14 @@ UnitBlueprint {
         FlattenSkirt = true,
         SkirtSizeX = 9,
         SkirtSizeZ = 9,
-	BuildAreaX = 3,
-	BuildAreaZ = 3,
-	CloseAreaX = 5,
-	CloseAreaZ = 5,
+        RollOffPoints = {
+            {
+                UnitSpin = 0,
+                X = 0,
+                Y = 0,
+                Z = 2.5,
+            },
+        },
         OccupyRects = {
             # offsetX offsetZ  sizeX sizeZ, offset from center of unit
             0,

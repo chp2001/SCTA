@@ -35,7 +35,8 @@ UnitBlueprint {
     'CORE', 
 	'SPECIAL',
 	'LEVEL2',
-	'SORTDEFENSE',
+    'SORTDEFENSE',
+    'SNIPEMODE',
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -46,18 +47,8 @@ UnitBlueprint {
     Description = 'Heavy Laser Tower',
     Display = {
         Abilities = {
-            'Floating',
+            '<LOC ability_aquatic>Aquatic',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'MetalBarrel'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0, 'turret'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -73,7 +64,7 @@ UnitBlueprint {
         BuildCostEnergy = 5796,
         BuildCostMass = 524,
         BuildTime = 10178,
-        StorageEnergy = 200,
+        StorageEnergy = 150,
     },
     Footprint = {
         SizeX = 4,
@@ -81,7 +72,6 @@ UnitBlueprint {
 	MinWaterDepth = 2,
     },
     General = {
-        ---BuildAngle = 16384,
         Category = 'Defense',
         Classification = 'RULEUC_Weapon',
         CommandCaps = {

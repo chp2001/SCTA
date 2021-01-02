@@ -54,11 +54,6 @@ UnitBlueprint {
         'ARM',
         'KBOT',
 	'LEVEL2',
-	
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -135,9 +130,9 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 3.9375,
-        MaxBrake = 3.9375,
-        MaxSpeed = 3.9375,
+        MaxAcceleration = 3,
+        MaxBrake = 3,
+        MaxSpeed = 3,
         MotionType = 'RULEUMT_Land',
         TurnRate = 166,
         MaxSteerForce = 10,

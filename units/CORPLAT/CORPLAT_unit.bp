@@ -59,9 +59,11 @@ UnitBlueprint {
     Description = 'Builds Seaplanes',
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/CORPLAT/CORPLAT_lod0_uNPack.sca',
-        AnimationUnpackRate = 1,   
+        AnimationUnpackRate = 1, 
+        Abilities = {
+            '<LOC ability_aquatic>Aquatic',
+        },
 	BuildAttachBone = 'pad',
-	--TextureAnimationFrames = 6,
         Mesh = {
             IconFadeInZoom = 400,
             LODs = {
@@ -86,9 +88,9 @@ UnitBlueprint {
     NaturalProducer = true,
 	ProductionPerSecondMass = 1,
 	InitialRallyX = 1,
-	InitialRallyZ = 1,
-	StorageEnergy = 200,
-	StorageMass = 900,
+	InitialRallyZ = 5,
+	StorageEnergy = 250,
+	StorageMass = 250,
     },
     Footprint = {
         MinWaterDepth = 1.875,
@@ -99,7 +101,6 @@ UnitBlueprint {
         BuildBones = {
             BuildEffectBones = {'beam1', 'beam2'},
         },      
-	---BuildAngle = 0,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

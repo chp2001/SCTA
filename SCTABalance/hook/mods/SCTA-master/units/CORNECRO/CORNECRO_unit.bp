@@ -22,8 +22,8 @@ UnitBlueprint {
     'VTOL',
     }, 
     Defense = {
-        Health = 500,
-        MaxHealth = 500,
+        Health = 1300,
+        MaxHealth = 1300,
         },
     Display = {
         UniformScale = 0.06,
@@ -39,8 +39,9 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 10,
     },
-    SelectionSizeX = 1,
-    SelectionSizeZ = 1,
+    LifeBarSize = 1,
+    SelectionSizeX = 0.6,
+    SelectionSizeZ = 0.6,
     SizeX = 1,
     ---SizeY = 0.75,
     SizeZ = 1,

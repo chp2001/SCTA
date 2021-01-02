@@ -32,7 +32,7 @@ UnitBlueprint {
                 Abilities = {
                     '<LOC ability_upgradable>Upgradeable',
                 },
-        UniformScale = 0.25,
+        UniformScale = 0.26,
     },
     Economy = {
         BuildCostEnergy = 4800,
@@ -51,9 +51,13 @@ UnitBlueprint {
         },
         LifeBarHeight = 0.22,
     LifeBarOffset = 3,
-    LifeBarSize = 8,
+    LifeBarSize = 7,
     General = {
         UpgradesTo = 'cordlab', 
+    },
+    Physics = {
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
     },
     SelectionSizeX = 7,
     SelectionSizeZ = 5,

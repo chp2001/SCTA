@@ -52,6 +52,7 @@ UnitBlueprint {
         'CORE',
         'KBOT',
         'LEVEL4',
+        'SNIPEMODE',
     },
     Defense = {
         AirThreatLevel = 0,
@@ -65,28 +66,9 @@ UnitBlueprint {
     Description = 'Experimental Kbot',
     Display = {
         Abilities = {
-            'AntiAir',
-            'Amphibious',
+            '<LOC ability_aa>Anti-Air',
+            '<LOC ability_amphibious>Amphibious',
         },
-        --TextureAnimationFrames = 8,
-        	--[[DestructionEffects = {
-            DestructionEmitters = {
-                {
-                    EmitterBone = {'torso','head','hips','rleg','lleg'},
-                    EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-                    EmitterSize = 1.25,
-                },
-                {
-                    EmitterBone = {'larm','rarm','lthigh','rthigh'},
-                    EmitterBlueprint = {
-                            '/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-                            '/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-                            '/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-                    },
-				EmitterSize = 0.35,
-			},
-		},
-	},]]--
         AnimationWalk = '/mods/SCTA-master/units/CORKROG/CORKROG_lod0_Awalk.sca',
         AnimationWalkRate = 0.9,
         Mesh = {
@@ -255,7 +237,7 @@ UnitBlueprint {
      WeaponCategory = 'DirectFire',
             FiringTolerance = 2.75,
             Label = 'CORKROG_HEAD',
-            MaxRadius = 43.75,
+            MaxRadius = 45,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 0,
 	    MuzzleVelocity = 62.5,

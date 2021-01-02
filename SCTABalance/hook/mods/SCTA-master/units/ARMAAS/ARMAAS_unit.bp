@@ -18,10 +18,4 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 3,
     SizeZ = 10,
-    Weapon = {
-        [1] = {},
-        [2] = {},
-        [3] = {},
-        [4] = {},
-        }, 
 }

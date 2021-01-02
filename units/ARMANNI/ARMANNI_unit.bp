@@ -35,10 +35,12 @@ UnitBlueprint {
 	'ARM',
 	'SPECIAL',
 	'SORTDEFENSE',
-	'LEVEL3',
+    'LEVEL3',
+    'SNIPEMODE',
     },
     Defense = {
         ArmorType = 'Structure',
+        DamageModifier = 0.5,
         AirThreatLevel = 0,
         EconomyThreatLevel = 30,
         SubThreatLevel = 0,
@@ -51,38 +53,12 @@ UnitBlueprint {
         Abilities = {
             'Defense',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'plate1','ARMANNI', 'plate2'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'case1','case3','case2','case4','barrel'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-			{
-				EmitterBone = {'container1','container2'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.25,
-			},
-		},
-	},]]--
-	--TextureAnimationFrames = 8,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 230,
-                    ShaderName = 'AeonCZAR', 
+                    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
@@ -100,7 +76,6 @@ UnitBlueprint {
 	MaxSlope = 0.625,
     },
     General = {
-        ---BuildAngle = 4096,
         Category = 'Defense',
         Classification = 'RULEUC_Weapon',
         CommandCaps = {

@@ -51,15 +51,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/ARMMARK/ARMMARK_lod0_Awalk.sca',
         AnimationWalkRate = 1,
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'head'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -81,7 +72,7 @@ UnitBlueprint {
     },
 
     General = {
-        Category = 'Direct Fire',
+        Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',
         CommandCaps = {
             RULEUCC_Attack = true,

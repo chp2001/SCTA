@@ -59,17 +59,8 @@ UnitBlueprint {
         AnimationSwimRate = 1,
         Abilities = {
             '<LOC ability_hover>Hover',
+            'Assault Bot',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'MetalBarrel','ArmHover'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -151,6 +142,9 @@ UnitBlueprint {
     SizeY = 2,
     StrategicIconName = 'icon_bot2_directfire',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
     Weapon = {
         {
             Audio = {

@@ -29,16 +29,16 @@ UnitBlueprint {
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
-        'OVERLAYINDIRECTFIRE',
+        'OVERLAYDIRECTFIRE',
 	'ARM',
 	'LEVEL2',
 	'STRATEGIC',
-	'SORTDEFENSE',
-	
-	
+    'SORTDEFENSE',
+    'SNIPEMODE',
     },
     Defense = {
         ArmorType = 'Structure',
+        DamageModifier = 0.28,
         AirThreatLevel = 0,
         EconomyThreatLevel = 3,
         SubThreatLevel = 0,
@@ -49,27 +49,8 @@ UnitBlueprint {
     Description = 'Pop-up Heavy Cannon',
     Display = {
         Abilities = {
-            'Defense',
+            'PopUp',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'MetalBarrel'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0, 'gun'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'barrel'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -88,12 +69,10 @@ UnitBlueprint {
         BuildTime = 20172,
     },
     Footprint = {
-	MaxSlope = 0.625,
-        SizeX = 3,
-        SizeZ = 3,
-    },
+            SizeX = 3,
+            SizeZ = 3,
+        },
     General = {
-	---BuildAngle = 8192,
         Category = 'Defense',
         Classification = 'RULEUC_Weapon',
         CommandCaps = {
@@ -116,15 +95,13 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        SkirtSizeX = 3, 
-        SkirtSizeZ = 3,  
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
     },
-    SelectionSizeX = 1.5,
+    SelectionSizeX = 2,
     SelectionCenterOffsetZ = -0.75,
-    SelectionSizeZ = 1.5,
+    SelectionSizeZ = 2,
     SelectionThickness = 0.25,
     SizeX = 3,
     SizeY = 2,

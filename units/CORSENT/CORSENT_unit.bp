@@ -37,7 +37,7 @@ UnitBlueprint {
 	'ANTIAIR',
         'OVERLAYANTIAIR',
         'CORE',
-        'VEHICLE',	#'TANK' in TA
+        'VEHICLE',
 	'LEVEL2',
     },
     Defense = {
@@ -54,16 +54,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'MetalBarrel'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Turret'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-   	},]]--
     MovementEffects = {
         Bones = {'CORSENT'},
         Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
@@ -154,6 +144,9 @@ UnitBlueprint {
     SizeX = 3,
     StrategicIconName = 'icon_land2_antiair',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
     Weapon = {
         {
             Audio = {

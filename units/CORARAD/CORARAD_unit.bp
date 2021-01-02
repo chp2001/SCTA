@@ -44,11 +44,9 @@ UnitBlueprint {
 	'SPECIAL',
 	'LEVEL3',
 	'SORTINTEL',
-	
-	
-	
     },
     Defense = {
+        DamageReduction = 1,   
         ArmorType = 'Structure',
         AirThreatLevel = 0,
         EconomyThreatLevel = 50,
@@ -62,24 +60,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_radar>Radar',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0, 'turret'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'dish'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -141,7 +121,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarSize = 1,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
@@ -151,6 +131,8 @@ UnitBlueprint {
     },
     SelectionSizeX = 1.25,
     SelectionSizeZ = 1.25,
+    SelectionCenterOffsetZ = 0.05,
+    SelectionCenterOffsetX = -0.1,
     SelectionThickness = 0.25,
     SizeX = 2,
     SizeY = 3,

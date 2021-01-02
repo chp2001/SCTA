@@ -1,6 +1,6 @@
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 
-CORDRAG = Class(TAunit) {
+CORDRAG = Class(TAStructure) {
 }
 
 TypeClass = CORDRAG

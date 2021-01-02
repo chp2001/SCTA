@@ -76,7 +76,6 @@ UnitBlueprint {
         Abilities = {
             'Construction Unit',
         },
-
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -108,12 +107,11 @@ UnitBlueprint {
             'BUILTBYT1HOVER ARM',
         },
         MaxBuildDistance = 4.375,
-        StorageEnergy = 80,
+        StorageEnergy = 50,
         StorageMass = 50,
 	ProductionPerSecondEnergy = 15,
 	NaturalProducer = true,
     },
-
     General = {
         BuildBones = {
             AimBone = 'nanogun',
@@ -148,10 +146,11 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarSize = 1.6,
     Physics = {
-        Elevation = 0.25,   
-        MaxSpeedReverse = 0,
+        Elevation = 0.2,
+        BackUpDistance = 0,
+	MaxSpeedReverse = 0,
         MaxAcceleration = 2,
         MaxBrake = 1,
         MaxSpeed = 3,
@@ -160,8 +159,8 @@ UnitBlueprint {
         MaxSteerForce = 100,
 	RotateOnSpot = true,
     TurnFacingRate = 20,
-	WobbleFactor = 0.02,
-	WobbleSpeed = 0.05,
+	WobbleFactor = 0.01,
+	WobbleSpeed = 0.03,
     },
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
@@ -171,6 +170,9 @@ UnitBlueprint {
     SizeZ = 3,
     StrategicIconName = 'icon_land1_engineer',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 3,
+    },
     Weapon = {
         { #BIG_UNITEX
             Damage = 50,

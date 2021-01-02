@@ -3,14 +3,13 @@ local Unit = import('/lua/sim/Unit.lua').Unit
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local oldPosition={1,1,1}
 local EffectUtil = import('/lua/EffectUtilities.lua')
+local Util = import('/lua/utilities.lua')
+local RandomFloat = Util.GetRandomFloat
 
 TAconstructor = Class(TAWalking) {
     OnCreate = function(self)
         TAWalking.OnCreate(self) 
-    
-      
         local bp = self:GetBlueprint()
-
         -- Save build effect bones for faster access when creating build effects
         self.BuildEffectBones = bp.General.BuildBones.BuildEffectBones
 
@@ -50,11 +49,9 @@ TAconstructor = Class(TAWalking) {
     
     OnStartBuild = function(self, unitBeingBuilt, order )
         TAWalking.OnStartBuild(self,unitBeingBuilt, order)
-        self:OnPrepareArmToBuild()
         self.UnitBeingBuilt = unitBeingBuilt
         self.UnitBuildOrder = order
         self.BuildingUnit = true
-        --LOG(self.cloakOn)
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)
@@ -104,7 +101,7 @@ TAconstructor = Class(TAWalking) {
         TAWalking.OnStopBuilderTracking(self)
 
         if self.StoppedBuilding then
-            self.StoppedBuilding = nil
+            self.StoppedBuilding = false
             self.BuildArmManipulator:Disable()
             self.BuildingOpenAnimManip:SetRate(-(self:GetBlueprint().Display.AnimationBuildRate or 1))
             self:SetImmobile(false)
@@ -116,7 +113,7 @@ TAconstructor = Class(TAWalking) {
     end,
 
     CreateReclaimEffects = function( self, target )
-		EffectUtil.PlayReclaimEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.ReclaimEffectsBag )
+		TAutils.TAReclaimEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.ReclaimEffectsBag )
     end,
     
     CreateReclaimEndEffects = function( self, target )
@@ -124,14 +121,13 @@ TAconstructor = Class(TAWalking) {
     end,         
     
     OnStopReclaim = function(self, target)
+        TAWalking.OnStopReclaim(self, target)
         if self.BuildingOpenAnimManip then
             self.BuildingOpenAnimManip:SetRate(-1)
         end
-        TAWalking.OnStopReclaim(self, target)
     end,
 
     OnStartReclaim = function(self, target)
-        self:OnPrepareArmToBuild()
         TAWalking.OnStartReclaim(self, target)
     end,
 }
@@ -207,56 +203,20 @@ TANecro = Class(TAconstructor) {
 
 TACommander = Class(TAconstructor) {
 
-    
+    SetAutoOvercharge = function(self, auto)
+        local wep = self:GetWeaponByLabel('AutoDGun')
+        wep:SetAutoOvercharge(auto)
+        self.Sync.AutoOvercharge = auto
+    end,
+
     OnCreate = function(self)
 		TAconstructor.OnCreate(self)
-		self:SetCapturable(false)
+        self:SetCapturable(false)
+        self:SetWeaponEnabledByLabel('AutoDGun', false)
 	end,
-
-	OnStartReclaim = function(self, target)
-		TAconstructor.OnStartReclaim(self, target)
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
-	end,
-    
-	OnMotionHorzEventChange = function(self, new, old )
-		TAconstructor.OnMotionHorzEventChange(self, new, old)
-		if old == 'Stopped' then
-			self:SetConsumptionPerSecondEnergy(1000)
-			self.motion = 'Moving'
-		elseif new == 'Stopped' then
-			self:SetConsumptionPerSecondEnergy(200)
-			self.motion = 'Stopped'
-		end
-	end,
-
-	OnIntelDisabled = function(self)
-		self.cloakOn = nil
-		self:DisableIntel('Cloak')
-        self:SetIntelRadius('Omni', 10)
-        self:PlayUnitSound('Uncloak')
-		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-	end,
-
-	OnIntelEnabled = function(self)
-		--self:EnableIntel('Cloak')
-		if self.motion == 'Moving' then
-			self:SetConsumptionPerSecondEnergy(1000)
-		end
-        self:SetIntelRadius('Omni', self:GetBlueprint().Intel.OmniRadius)
-		self.cloakOn = true
-        	self:PlayUnitSound('Cloak')
-			self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
-		ForkThread(self.CloakDetection, self)
-		--end
-	end,
-
-	OnStartCapture = function(self, target)
-		TAconstructor.OnStartCapture(self, target)
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
-    end,
     
     CreateCaptureEffects = function( self, target )
-		EffectUtil.PlayCaptureEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.CaptureEffectsBag )
+		TAutils.TACaptureEffect( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.CaptureEffectsBag )
     end,
 
 	OnStopCapture = function(self, target)
@@ -267,24 +227,11 @@ TACommander = Class(TAconstructor) {
 		TAconstructor.OnFailedCapture(self, target)
     end,
 
-    CloakDetection = function(self)
-        local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
-        local brain = moho.entity_methods.GetAIBrain(self)
-        local cat = categories.SELECTABLE * categories.MOBILE
-        local getpos = moho.entity_methods.GetPosition
-        while not self.Dead do
-            coroutine.yield(11)
-            local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
-            if dudes[1] and self.cloakOn then
-                self:DisableIntel('Cloak')
-            elseif not dudes[1] and self.cloakOn then
-                self:EnableIntel('Cloak')
-            end
-        end
-	end,
-
 	DeathThread = function(self)
-		local army = self:GetArmy()
+        local army = self:GetArmy()
+        local position = self:GetPosition()
+        local PlumeEffectYOffset = 1
+        self:CreateProjectile('/effects/entities/UEFNukeEffect02/UEFNukeEffect02_proj.bp',0,PlumeEffectYOffset,0,0,0,1)
 		CreateAttachedEmitter( self, 0, army, '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp'):ScaleEmitter(10)
 		TAconstructor.DeathThread(self)
     end,
@@ -297,31 +244,118 @@ TACommander = Class(TAconstructor) {
         end
 
         TAconstructor.DoTakeDamage(self, instigator, amount, vector, damageType)
-        local aiBrain = self:GetAIBrain()
-        if aiBrain then
-            aiBrain:OnPlayCommanderUnderAttackVO()
-        end
+    end,
 
-        if self:GetHealth() < ArmyBrains[self.Army]:GetUnitStat(self.UnitId, "lowest_health") then
-            ArmyBrains[self.Army]:SetUnitStat(self.UnitId, "lowest_health", self:GetHealth())
+}
+
+TARealCommander = Class(TACommander) {
+    OnStartReclaim = function(self, target)
+		TACommander.OnStartReclaim(self, target)
+		self:SetScriptBit('RULEUTC_CloakToggle', true)
+    end,
+    
+    DeathThread = function(self)
+        local army = self:GetArmy()
+        local position = self:GetPosition()
+        TACommander.DeathThread(self)
+        self:CreateInitialFireballSmokeRing()
+        self:ForkThread(self.CreateOuterRingWaveSmokeRing)
+        local orientation = RandomFloat(0,2*math.pi)
+        CreateDecal(position, orientation, 'Crater01_albedo', '', 'Albedo', 50, 50, 1200, 0, self.Army)
+        CreateDecal(position, orientation, 'Crater01_normals', '', 'Normals', 50, 50, 1200, 0, self.Army)
+        CreateDecal(position, orientation, 'nuke_scorch_003_albedo', '', 'Albedo', 60, 60, 1200, 0, self.Army)
+    end,  
+
+    CreateInitialFireballSmokeRing = function(self)
+        local sides = 12
+        local angle = (2*math.pi) / sides
+        local velocity = 5
+        local OffsetMod = 8
+
+        for i = 0, (sides-1) do
+            local X = math.sin(i*angle)
+            local Z = math.cos(i*angle)
+            self:CreateProjectile('/effects/entities/UEFNukeShockwave01/UEFNukeShockwave01_proj.bp', X * OffsetMod , 1.5, Z * OffsetMod, X, 0, Z)
+                :SetVelocity(velocity):SetAcceleration(-0.5)
         end
     end,
 
-    OnKilled = function(self, instigator, type, overkillRatio)
-        TAconstructor.OnKilled(self, instigator, type, overkillRatio)
+    CreateOuterRingWaveSmokeRing = function(self)
+        local sides = 32
+        local angle = (2*math.pi) / sides
+        local velocity = 7
+        local OffsetMod = 8
+        local projectiles = {}
 
-        -- If there is a killer, and it's not me
+        for i = 0, (sides-1) do
+            local X = math.sin(i*angle)
+            local Z = math.cos(i*angle)
+            local proj =  self:CreateProjectile('/effects/entities/UEFNukeShockwave02/UEFNukeShockwave02_proj.bp', X * OffsetMod , 2.5, Z * OffsetMod, X, 0, Z)
+                :SetVelocity(velocity)
+            table.insert(projectiles, proj)
+        end
+
+        WaitSeconds(3)
+
+        -- Slow projectiles down to normal speed
+        for k, v in projectiles do
+            v:SetAcceleration(-0.45)
+        end
+    end,
+
+	OnStartCapture = function(self, target)
+		TACommander.OnStartCapture(self, target)
+		self:SetScriptBit('RULEUTC_CloakToggle', true)
+    end,
+
+    OnMotionHorzEventChange = function(self, new, old )
+		TACommander.OnMotionHorzEventChange(self, new, old)
+		if old == 'Stopped' then
+			self:SetConsumptionPerSecondEnergy(1000)
+			self.motion = 'Moving'
+		elseif new == 'Stopped' then
+			self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
+			self.motion = 'Stopped'
+		end
+    end,
+    
+    OnStartBuild = function(self, unitBeingBuilt, order )
+        TACommander.OnStartBuild(self, unitBeingBuilt, order)
+        self:SetScriptBit('RULEUTC_CloakToggle', true)
+    end,
+
+	OnIntelDisabled = function(self)
+		self.cloakOn = nil
+        TACommander.OnIntelDisabled()
+        if not self:IsIntelEnabled('Cloak') then
+        self:PlayUnitSound('Uncloak')
+		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
+        end
+    end,
+
+    OnIntelEnabled = function(self)
+        TACommander.OnIntelEnabled()
+        if self:IsIntelEnabled('Cloak') then
+            self.cloakOn = true
+		if self.motion == 'Moving' then
+			self:SetConsumptionPerSecondEnergy(1000)
+        end
+        	self:PlayUnitSound('Cloak')
+			self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
+		ForkThread(self.CloakDetection, self)
+        --end
+        end
+	end,
+
+    OnKilled = function(self, instigator, type, overkillRatio)
+        TACommander.OnKilled(self, instigator, type, overkillRatio)
+
         if instigator and instigator.Army ~= self.Army then
             local instigatorBrain = ArmyBrains[instigator.Army]
 
             Sync.EnforceRating = true
             WARN('ACU kill detected. Rating for ranked games is now enforced.')
 
-            -- If we are teamkilled, filter out death explostions of allied units that were not coused by player's self destruct order
-            -- Damage types:
-            --     'DeathExplosion' - when normal unit is killed
-            --     'Nuke' - when Paragon is killed
-            --     'Deathnuke' - when ACU is killed
             if IsAlly(self.Army, instigator.Army) and not ((type == 'DeathExplosion' or type == 'Nuke' or type == 'Deathnuke') and not instigator.SelfDestructed) then
                 WARN('Teamkill detected')
                 Sync.Teamkill = {killTime = GetGameTimeSeconds(), instigator = instigator.Army, victim = self.Army}
@@ -332,5 +366,36 @@ TACommander = Class(TAconstructor) {
             end
         end
         ArmyBrains[self.Army].CommanderKilledBy = (instigator or self).Army
+    end,
+
+    CloakDetection = function(self)
+        local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
+        local brain = moho.entity_methods.GetAIBrain(self)
+        local cat = categories.SELECTABLE * categories.MOBILE
+        local getpos = moho.entity_methods.GetPosition
+        while not self.Dead do
+            coroutine.yield(11)
+            local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
+            if dudes[1] and self.cloakOn then
+                self:DisableIntel('Cloak')
+                self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
+            elseif not dudes[1] and self.cloakOn then
+                self:EnableIntel('Cloak')
+                self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
+            end
+        end
+    end,
+    
+    DoTakeDamage = function(self, instigator, amount, vector, damageType)
+
+        TACommander.DoTakeDamage(self, instigator, amount, vector, damageType)
+        local aiBrain = self:GetAIBrain()
+        if aiBrain then
+            aiBrain:OnPlayCommanderUnderAttackVO()
+        end
+
+        if self:GetHealth() < ArmyBrains[self.Army]:GetUnitStat(self.UnitId, "lowest_health") then
+            ArmyBrains[self.Army]:SetUnitStat(self.UnitId, "lowest_health", self:GetHealth())
+        end
     end,
 }

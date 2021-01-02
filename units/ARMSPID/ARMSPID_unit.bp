@@ -29,36 +29,16 @@ UnitBlueprint {
         ArmorType = 'Normal',
         Health = 450,
         MaxHealth = 450,
-        --AirThreatLevel = 0,
-        --EconomyThreatLevel = 0,
-        --SubThreatLevel = 0,
         SurfaceThreatLevel = 4,
     },
     Description = 'Spider Assault Vehicle',
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/ARMSPID/ARMSPID_AWalk.sca',
         AnimationWalkRate = 6.5,
-        Abilities = {'<LOC ability_stun>EMP Weapon'},
-        ---Stuff that should be dealt with by default scripts not hard coded:
-    		--[[DestructionEffects = {
-    		DefaultProjectileCategories = {'ArmCockpit'},
-    		DestructionEmitters = {
-    			{
-    				EmitterBone = {0, 'Turret_Yaw'},
-    				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-    				EmitterSize = 1.25,
-    			},
-    			{
-    				EmitterBone = { 'Leg_Tiptoe_001', 'Leg_Tiptoe_002', 'Leg_Tiptoe_003', 'Leg_Tiptoe_004', 'Leg_Tiptoe_005', 'Leg_Tiptoe_006' },
-    				EmitterBlueprint = {
-                        '/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-                        '/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-                        '/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-    				},
-    			EmitterSize = 0.35,
-    			},
-    		},
-    		},]]--
+        Abilities = {
+            '<LOC ability_stun>EMP Weapon',
+            'All-Terrain',
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -113,9 +93,6 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        --LayerChangeOffsetHeight = -2.00,
-        --BackUpDistance = 0,
-        --MaxSpeedReverse = 0,
         MaxAcceleration = 3.05175782/2,
         MaxBrake = 3.05175782/2,
         MaxSpeed = 3.051757812/2,
@@ -126,9 +103,9 @@ UnitBlueprint {
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
     SelectionThickness = 0.25,
-    SizeX = 1,
+    SizeX = 2,
     SizeY = 1.5,
-    SizeZ = 3,
+    SizeZ = 2,
     StrategicIconName = 'icon_land2_directfire',
     StrategicIconSortPriority = 0,
     Weapon = {

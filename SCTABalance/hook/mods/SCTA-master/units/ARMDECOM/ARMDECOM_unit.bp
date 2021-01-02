@@ -8,6 +8,7 @@ UnitBlueprint {
     'RECLAIMABLE',
     'PATROLHELPER',
     'RECLAIM',
+    'CAPTURE',
     'REPAIR',
     'MOBILE',
 'LAND',
@@ -19,6 +20,7 @@ UnitBlueprint {
     'CONSTRUCTION',
     'ENGINEER',
     'SUBCOMMANDER',
+    'SNIPEMODE',
 },
    Display = {
        UniformScale = 0.28,
@@ -26,6 +28,23 @@ UnitBlueprint {
     Defense = {
         Health = 18000,
         MaxHealth = 18000,
+        RegenRate = 10,
+    },
+    General = {
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Capture = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_Reclaim = true,
+            RULEUCC_Repair = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+            RULEUCC_Overcharge = true,
+        },
     },
     Economy = {
         BuildCostEnergy = 330000,
@@ -41,8 +60,8 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 700,
         ProductionPerSecondMass = 6,
     },
-    SelectionSizeX = 2,
-    SelectionSizeZ = 2,
+    SelectionSizeX = 1.6,
+    SelectionSizeZ = 1.6,
     SizeY = 4.3,
     SizeX = 2.8,
 }

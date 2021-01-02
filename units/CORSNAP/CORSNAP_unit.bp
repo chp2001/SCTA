@@ -52,17 +52,8 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_hover>Hover',
+            'Heavy Tank',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'MetalBarrel','ArmHover'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -139,6 +130,9 @@ UnitBlueprint {
     SizeZ = 3,
     StrategicIconName = 'icon_land2_directfire',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 3,
+    },
     Weapon = {
         {
             Audio = {

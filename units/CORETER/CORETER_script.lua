@@ -3,11 +3,11 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TATreads = import('/mods/SCTA-master/lua/TAMotion.lua').TATreads
 
-CORETER = Class(TAunit) {
+CORETER = Class(TATreads) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TATreads.OnCreate(self)
 		self.Spinners = {
 			fork = CreateRotator(self, 'fork', 'z', nil, 0, 0, 0),
 		}
@@ -15,32 +15,26 @@ CORETER = Class(TAunit) {
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
+		TATreads.OnStopBeingBuilt(self,builder,layer)
 		--spin fork around z-axis speed <100>
 		self.Spinners.fork:SetSpeed(100)
 		self:SetMaintenanceConsumptionActive()
 	end,
 
 
-	OnScriptBitSet = function(self, bit)
-		if bit == 5 then
-			--spin fork around z-axis speed <0>
-			self.Spinners.fork:SetSpeed(0)
+	OnIntelDisabled = function(self)
+		self.Spinners.fork:SetSpeed(0)
 			self:SetMaintenanceConsumptionInactive()
 			self:PlayUnitSound('Deactivate')
-		end
-		TAunit.OnScriptBitSet(self, bit)
-	end,
+	TATreads.OnIntelDisabled(self)
+end,
 
 
-	OnScriptBitClear = function(self, bit)
-		if bit == 5 then
-			--spin fork around z-axis speed <100>
-			self.Spinners.fork:SetSpeed(100)
-			self:SetMaintenanceConsumptionActive()
-			self:PlayUnitSound('Activate')
-		end
-		TAunit.OnScriptBitClear(self, bit)
-	end,
+OnIntelEnabled = function(self)
+	self.Spinners.fork:SetSpeed(100)
+	self:SetMaintenanceConsumptionActive()
+	self:PlayUnitSound('Activate')
+	TATreads.OnIntelEnabled(self)
+end,
 }
 TypeClass = CORETER

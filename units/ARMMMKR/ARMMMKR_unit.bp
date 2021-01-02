@@ -46,11 +46,9 @@ UnitBlueprint {
 	'ARM',
 	'ENERGY',
 	'LEVEL2',
-	
-	
-	
     },
     Defense = {
+        DamageModifier = 1,
         ArmorType = 'Structure',
         AirThreatLevel = 0,
         EconomyThreatLevel = 5,
@@ -61,16 +59,6 @@ UnitBlueprint {
     },
     Description = 'Converts Energy into Metal',
     Display = {
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
-	--TextureAnimationFrames = 8,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -81,7 +69,6 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'a',
         UniformScale = 0.16,
     },
     Economy = {

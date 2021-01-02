@@ -33,27 +33,25 @@ UnitBlueprint {
     'TRANSPORTATION',
     },
     Defense = {
-        Health = 2000,
-        MaxHealth = 2000,
+        Health = 3000,
+        MaxHealth = 3000,
     },
     Economy = {
         BuildCostEnergy = 90000,
         BuildCostMass = 600,
     },
+    Physics = {
+	FuelRechargeRate = 666666,
+	FuelUseTime = 666666,
+    },
     StrategicIconName = 'icon_fighter3_antiair',
     Weapon = {
         [1] = {
-            TrackingRadius = 1.15,
-            Damage = 180,
-            DamageRadius = 1.5,
-            FiringTolerance = 10,
-	    HeadingArcCenter = 0,
-    	    HeadingArcRange = 43.96,
-            MaxRadius = 25,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
-            RackSalvoSize = 1,
-            RateOfFire = 0.5,
+            Damage = 100,
+            MaxRadius = 35,
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 2,
+            RateOfFire = 1,
         },
         [2] = {
         },

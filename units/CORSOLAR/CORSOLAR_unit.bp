@@ -33,18 +33,16 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-	'STRUCTURE',
-                'ECONOMIC',
+		'STRUCTURE',
+        'ECONOMIC',
         'SORTECONOMY',
 	'ENERGYPRODUCTION',
 	'CORE',
 	'ENERGY',
 	'LEVEL1',
-	
-	
-	
     },
     Defense = {
+        DamageModifier = 0.33,
         ArmorType = 'Structure',
         Health = 320,
         MaxHealth = 320,
@@ -55,31 +53,14 @@ UnitBlueprint {
     },
     Description = 'Produces Energy',
     Display = {
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'wing1','wing2','wing3','wing4'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
+        AnimationOpen = '/mods/SCTA-master/units/CORSOLAR/CORSOLAR_Aopen.sca',
+        AnimationOpenRate = 1,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -89,7 +70,7 @@ UnitBlueprint {
         BuildCostEnergy = 790,
         BuildCostMass = 141,
         BuildTime = 2416,
-	NaturalProducer = true,
+		NaturalProducer = true,
         ProductionPerSecondEnergy = 20,
     },
     Footprint = {
@@ -107,7 +88,7 @@ UnitBlueprint {
         SelectionPriority = 5,
         FactionName = 'CORE',
         TechLevel = 'RULEUTL_Basic',
-	UnitName = 'Solar Collector',
+		UnitName = 'Solar Collector',
     },
     Intel = {
         VisionRadius = 14,
@@ -144,16 +125,16 @@ UnitBlueprint {
         },
          
     },
-        Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-        EnergyMult = 0,
-        HealthMult = 0.9,
-        MassMult = 0.9,
-        ReclaimTimeMultiplier = 1,
-        --Blueprint = '/mods/SCTA-master/units/CORSOLAR/CORSOLAR_dead_prop.bp',
-        WreckageLayers = {
-            Land = true,
-        },
+	Wreckage = {
+		---UseCustomMesh = true,
+		Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+		EnergyMult = 0,
+		HealthMult = 0.9,
+		MassMult = 0.9,
+		ReclaimTimeMultiplier = 1,
+		--Blueprint = '/mods/SCTA-master/units/CORSOLAR/CORSOLAR_dead_prop.bp',
+		WreckageLayers = {
+			Land = true,
+		},
     },
 }

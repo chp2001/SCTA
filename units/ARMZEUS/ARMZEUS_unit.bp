@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 4,
+    BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -54,26 +54,8 @@ UnitBlueprint {
         AnimationWalk = '/mods/SCTA-master/units/ARMZEUS/ARMZEUS_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
-            'Heavy Infantry',
+            'Assault Bot',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Torso'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'Gun', 'LeftElbow'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -128,14 +110,17 @@ UnitBlueprint {
         TurnRate = 158,
         MaxSteerForce = 10,
     },
-    SelectionSizeX = 1,
-    SelectionSizeZ = 1,
+    SelectionSizeX = 0.8,
+    SelectionSizeZ = 0.8,
     SelectionThickness = 0.25,
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
     StrategicIconName = 'icon_bot2_directfire',
     StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
     Weapon = {
         {
             Audio = {

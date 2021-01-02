@@ -51,17 +51,6 @@ UnitBlueprint {
     },
     Description = 'Increases Energy Storage',
     Display = {
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Stone','EnergyStorage','CorBld'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
-	--TextureAnimationFrames = 8,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -86,7 +75,6 @@ UnitBlueprint {
         SizeZ = 4,
     },
     General = {
-	---BuildAngle = 4096,
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,
@@ -102,8 +90,8 @@ UnitBlueprint {
         HelpText = 'Increases Energy Storage',
     },
     LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarOffset = 0.25,
+    LifeBarSize = 1,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,

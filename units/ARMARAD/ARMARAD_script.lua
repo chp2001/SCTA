@@ -3,15 +3,11 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TACloser = import('/mods/SCTA-master/lua/TAStructure.lua').TACloser
 
-ARMARAD = Class(TAunit) {
-	closeDueToDamage = nil,
-
-	intelIsActive = true,
-
+ARMARAD = Class(TACloser) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TACloser.OnCreate(self)
 		self.Spinners = {
 			dish1 = CreateRotator(self, 'Dish_01', 'z', nil, 0, 0, 0),
 			dish2 = CreateRotator(self, 'Dish_02', 'z', nil, 0, 0, 0),
@@ -30,24 +26,17 @@ ARMARAD = Class(TAunit) {
 		end
 	end,
 
-	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
-		self.intelIsActive = true
-		self:SetMaintenanceConsumptionActive()
-		self:PlayUnitSound('Activate')
-		ChangeState(self, self.OpeningState)
-	end,
-
 	OnDestroy = function(self)
-		TAunit.OnDestroy(self)
+		TACloser.OnDestroy(self)
 		ChangeState(self, self.DeadState)
 	end,
 
 	OpeningState = State {
 		Main = function(self)
-
+			TACloser.Unfold(self)
 			self:PlayUnitSound('Activate')
-
+			self.intelIsActive = true
+			self:SetMaintenanceConsumptionActive()
 			--MOVE post to y-axis <9.10> SPEED <16.00>;
 			self.Sliders.post:SetGoal(0,9.1,0)
 			self.Sliders.post:SetSpeed(16)
@@ -90,7 +79,7 @@ ARMARAD = Class(TAunit) {
 	ClosingState = State {
 		Main = function(self)
 			self:DisableIntel('Radar')
-
+			TACloser.Fold(self)
 			self:PlayUnitSound('Deactivate')
 
 			--TURN turret to y-axis <0> SPEED <60.01>;
@@ -157,7 +146,7 @@ ARMARAD = Class(TAunit) {
 		end,
 
 		OnDamage = function(self, instigator, amount, vector, damageType)
-			TAunit.OnDamage(self, instigator, amount, vector, damageType) 
+			TACloser.OnDamage(self, instigator, amount, vector, damageType) 
 
 			self.DamageSeconds = 8
 			ChangeState(self, self.ClosingState)
@@ -170,7 +159,7 @@ ARMARAD = Class(TAunit) {
 		end,
 
 		OnDamage = function(self, instigator, amount, vector, damageType)
-			TAunit.OnDamage(self, instigator, amount, vector, damageType)
+			TACloser.OnDamage(self, instigator, amount, vector, damageType)
 			self.DamageSeconds = 8
 			self.closeDueToDamage = true
 			ChangeState(self, self.ClosingState)
@@ -184,7 +173,7 @@ ARMARAD = Class(TAunit) {
 			self:SetMaintenanceConsumptionInactive()
 			ChangeState(self, self.ClosingState)
 		end
-		TAunit.OnScriptBitSet(self, bit)
+		TACloser.OnScriptBitSet(self, bit)
 	end,
 
 
@@ -194,7 +183,7 @@ ARMARAD = Class(TAunit) {
 			self:SetMaintenanceConsumptionActive()
 			ChangeState(self, self.OpeningState)
 		end
-		TAunit.OnScriptBitClear(self, bit)
+		TACloser.OnScriptBitClear(self, bit)
 	end,
 
 	DeadState = State {

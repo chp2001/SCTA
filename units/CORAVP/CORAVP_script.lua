@@ -16,7 +16,7 @@ CORAVP = Class(TAFactory) {
 	Open = function(self)
 		TAFactory.Open(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
-		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
+		self.AnimManip:SetRate(3 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 	end,
 
 	Close = function(self)

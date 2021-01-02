@@ -74,7 +74,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.25,
+        UniformScale = 0.2,
     },
     Economy = {
         BuildCostEnergy = 38000,
@@ -88,9 +88,9 @@ UnitBlueprint {
             'armadvp',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = 4,
-        StorageMass = 100,
-        StorageEnergy = 100,
+	InitialRallyZ = 5,
+        StorageMass = 50,
+        StorageEnergy = 50,
     },
     Footprint = {
         MaxSlope = 0.625,
@@ -129,18 +129,22 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
-    LifeBarSize = 8,
+    LifeBarSize = 7,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
         FlattenSkirt = true,
-        SkirtSizeX = 8,
-        SkirtSizeZ = 8,
-	BuildAreaX = 4,
-	BuildAreaZ = 4,
-	CloseAreaX = 4,
-	CloseAreaZ = 6,
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
+        RollOffPoints = {
+            {
+                UnitSpin = 0,
+                X = 0,
+                Y = 0,
+                Z = 2.5,
+            },
+        },
         OccupyRects = {
             # offsetX offsetZ  sizeX sizeZ, offset from center of unit
             -3,

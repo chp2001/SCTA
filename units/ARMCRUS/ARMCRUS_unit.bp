@@ -35,14 +35,15 @@ UnitBlueprint {
         'MOBILE',
 	'NAVAL',
 	'DIRECTFIRE',
-	'CRUISER',
+	'DESTROYER',
         'OVERLAYINDIRECTFIRE',
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',
         'ARM',
         'OCEAN',
 	'LEVEL2',
-	'ANTISUB',
+    'ANTISUB',
+    'SNIPEMODE',
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -57,28 +58,9 @@ UnitBlueprint {
     Description = 'Cruiser',
     Display = {
         Abilities = {
-            'Anti-Sub',
+            '<LOC ability_depthcharge>Depth Charges',
             '<LOC ability_sonar>Sonar',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'ArmShip','ArmPanel3','MetalBarrel'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'turret','flare3'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'barrel1','barrel2'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

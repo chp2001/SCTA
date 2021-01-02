@@ -8,7 +8,10 @@ local TABomb = import('/mods/SCTA-master/lua/TAweapon.lua').TABomb
 local TAKami = import('/mods/SCTA-master/lua/TAweapon.lua').TAKami
 
 ARMVADER = Class(TAWalking) {
-	attacked = false,
+	OnCreate = function(self)
+		TAWalking.OnCreate(self)
+		self.attacked = false
+	end,
 
 	Weapons = {
 		DeathWeapon = Class(TABomb) {},

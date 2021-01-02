@@ -86,7 +86,7 @@ UnitBlueprint {
             'VTOL LEVEL2 CORE',
         },
 	InitialRallyX = 1,
-	InitialRallyZ = 1,
+	InitialRallyZ = 5,
         StorageMass = 200,
         StorageEnergy = 200,
     },
@@ -135,6 +135,14 @@ UnitBlueprint {
         FlattenSkirt = true,
         SkirtSizeX = 7,
         SkirtSizeZ = 6,
+        RollOffPoints = {
+            {
+                UnitSpin = 0,
+                X = 0,
+                Y = 0,
+                Z = 2.5,
+            },
+        },
     },
     SelectionSizeX = 4.45,
     SelectionSizeZ = 3.75,

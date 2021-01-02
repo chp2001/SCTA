@@ -25,8 +25,8 @@ UnitBlueprint {
 	
     },
     Defense = {
-        Health = 500,
-        MaxHealth = 500,
+        Health = 1200,
+        MaxHealth = 1200,
         },
     Economy = {
     BuildCostEnergy = 3800,
@@ -39,8 +39,10 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 10,
     },
-    SelectionSizeX = 1,
-    SelectionSizeZ = 1,
+    LifeBarSize = 1,
+    SelectionCenterOffsetZ = 0.1,
+    SelectionSizeX = 0.6,
+    SelectionSizeZ = 0.6,
     SizeX = 1,
     ---SizeY = 0.75,
     SizeZ = 1,

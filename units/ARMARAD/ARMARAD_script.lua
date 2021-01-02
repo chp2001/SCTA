@@ -3,7 +3,7 @@
 #
 #Script created by Raevn
 
-local TACloser = import('/mods/SCTA-master/lua/TAunit.lua').TACloser
+local TACloser = import('/mods/SCTA-master/lua/TAStructure.lua').TACloser
 
 ARMARAD = Class(TACloser) {
 	OnCreate = function(self)

@@ -36,14 +36,6 @@ TAunit = Class(Unit)
 		ForkThread(self.IdleEffects, self)
 	end,
 
-	OnStopBuild = function(self, unitBeingBuilt, order)
-		Unit.OnStopBuild(self, unitBeingBuilt, order)
-		if unitBeingBuilt:GetFractionComplete() == 1 and unitBeingBuilt:GetUnitId() == self:GetBlueprint().General.UpgradesTo then
-			NotifyUpgrade(self, unitBeingBuilt)
-			self:Destroy()
-		end
-	end,
-
 	MovementEffects = function(self, EffectsBag, TypeSuffix)
 		self:LOGDBG('TAUnit.MovementEffects')
 		Unit.MovementEffects(self, EffectsBag, TypeSuffix)
@@ -68,15 +60,6 @@ TAunit = Class(Unit)
 	OnDamage = function(self, instigator, amount, vector, damageType)
 		Unit.OnDamage(self, instigator, amount * (self.Pack or 1), vector, damageType)
 	end,
-	
-	Fold = function(self)
-		self.Pack = self:GetBlueprint().Defense.DamageModifier
-	end,
-	
-	Unfold = function(self)
-		self.Pack = nil
-	end,
-		
 	
 	Smoke = function(self)
         self:LOGDBG('TAUnit.Smoke')
@@ -131,62 +114,4 @@ TAunit = Class(Unit)
         end
     end,
 
-}
-
-TAPop = Class(TAunit) {
-	Fold = function(self)
-		TAunit.Fold(self)
-		self:EnableIntel('RadarStealth')
-	end,
-
-}
-
-TAMass = Class(TAunit) {
-    OnCreate = function(self)
-        TAunit.OnCreate(self)
-        local markers = scenarioUtils.GetMarkers()
-        local unitPosition = self:GetPosition()
-
-        for k, v in pairs(markers) do
-            if(v.type == 'MASS') then
-                local massPosition = v.position
-                if( (massPosition[1] < unitPosition[1] + 1) and (massPosition[1] > unitPosition[1] - 1) and
-                    (massPosition[2] < unitPosition[2] + 1) and (massPosition[2] > unitPosition[2] - 1) and
-                    (massPosition[3] < unitPosition[3] + 1) and (massPosition[3] > unitPosition[3] - 1)) then
-                    self:SetProductionPerSecondMass(self:GetProductionPerSecondMass() * (v.amount / 100))
-                    break
-                end
-            end
-        end
-    end,
-
-    OnStopBeingBuilt = function(self,builder,layer)
-        TAunit.OnStopBeingBuilt(self,builder,layer)
-        self:SetMaintenanceConsumptionActive()
-    end,
-
-
-    OnStartBuild = function(self, unitbuilding, order)
-        TAunit.OnStartBuild(self, unitbuilding, order)
-        self:AddCommandCap('RULEUCC_Stop')
-    end,
-
-    OnStopBuild = function(self, unitbuilding, order)
-        TAunit.OnStopBuild(self, unitbuilding, order)
-        self:RemoveCommandCap('RULEUCC_Stop') 
-    end,
-	}
-
-TACloser = Class(TAunit) {
-	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
-		closeDueToDamage = nil,
-		ChangeState(self, self.OpeningState)
-	end,
-}	
-	
-TAnoassistbuild = Class(TAunit) {
-	OnCreate = function(self)
-		TAunit.OnCreate(self)
-	end,
 }

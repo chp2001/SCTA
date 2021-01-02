@@ -3,12 +3,12 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
-ARMTARG = Class(TAunit) {
+ARMTARG = Class(TAStructure) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TAStructure.OnCreate(self)
 		self.Spinners = {
 			post1 = CreateRotator(self, 'post1', 'x', nil, 0, 0, 0),
 			post2 = CreateRotator(self, 'post2', 'x', nil, 0, 0, 0),
@@ -33,11 +33,11 @@ ARMTARG = Class(TAunit) {
             if (self:GetScriptBit(3) == false) then
 	        TAutils.unregisterTargetingFacility(self:GetArmy())
             end
-            TAunit.OnKilled(self, instigator, type, overkillRatio)
+            TAStructure.OnKilled(self, instigator, type, overkillRatio)
         end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
+		TAStructure.OnStopBeingBuilt(self,builder,layer)
 		ForkThread(self.Open, self)
 		self:PlayUnitSound('Activate')
 		TAutils.registerTargetingFacility(self:GetArmy())
@@ -49,7 +49,7 @@ ARMTARG = Class(TAunit) {
     		        ForkThread(self.Close, self)
 			TAutils.unregisterTargetingFacility(self:GetArmy())
 		end
-		TAunit.OnScriptBitSet(self, bit)
+		TAStructure.OnScriptBitSet(self, bit)
 	end,
 
 	OnScriptBitClear = function(self, bit)
@@ -58,11 +58,11 @@ ARMTARG = Class(TAunit) {
 			ForkThread(self.Open, self)
 			TAutils.registerTargetingFacility(self:GetArmy())
 		end
-		TAunit.OnScriptBitClear(self, bit)
+		TAStructure.OnScriptBitClear(self, bit)
 	end,
 
 	Open = function(self)
-		TAunit.Unfold(self)
+		TAStructure.Unfold(self)
 
 		--TURN post1 to x-axis <-90.21> SPEED <82.32>;
 		self.Spinners.post1:SetGoal(-90)
@@ -107,7 +107,7 @@ ARMTARG = Class(TAunit) {
 	end,
 
 	Close = function(self)
-		TAunit.Fold(self)
+		TAStructure.Fold(self)
 		--MOVE light4 to x-axis <0> SPEED <1.00>;
 		self.Sliders.light4:SetGoal(0,0,0)
 		self.Sliders.light4:SetSpeed(1)

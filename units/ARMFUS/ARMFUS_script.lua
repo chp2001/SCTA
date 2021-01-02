@@ -3,9 +3,9 @@
 #
 #Blueprint created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 
-ARMFUS = Class(TAunit) {
+ARMFUS = Class(TAStructure) {
 }
 
 TypeClass = ARMFUS

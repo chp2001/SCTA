@@ -2,7 +2,7 @@
 #CORSOLAR
 #
 #Script created by Raevn
-local TACloser = import('/mods/SCTA-master/lua/TAunit.lua').TACloser
+local TACloser = import('/mods/SCTA-master/lua/TAStructure.lua').TACloser
 
 CORSOLAR = Class(TACloser) {
 	OnCreate = function(self)

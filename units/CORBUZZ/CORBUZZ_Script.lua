@@ -1,12 +1,12 @@
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 local TABuzz = import('/mods/SCTA-master/lua/TAweapon.lua').TABuzz
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
-CORBUZZ = Class(TAunit) {
+CORBUZZ = Class(TAStructure) {
 	
 
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TAStructure.OnCreate(self)
 		self.Spinners = {
 			Spindle = CreateRotator(self, 'Spindle', 'x', nil, 0, 0, 0),
 		}

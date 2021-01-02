@@ -3,12 +3,12 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 
-CORMAKR = Class(TAunit) {
+CORMAKR = Class(TAStructure) {
 
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TAStructure.OnCreate(self)
 		self.Sliders = {
 			chassis = CreateSlider(self, 0),
 		}
@@ -24,7 +24,7 @@ CORMAKR = Class(TAunit) {
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
+		TAStructure.OnStopBeingBuilt(self,builder,layer)
 		local bp = self:GetBlueprint()
         local scale = 0.5
 		self:DisableIntel('RadarStealth')
@@ -41,7 +41,7 @@ CORMAKR = Class(TAunit) {
 
 	OnProductionPaused = function(self)
 		#Close Animation		
-		TAunit.OnProductionPaused(self)
+		TAStructure.OnProductionPaused(self)
 		self:SetMaintenanceConsumptionInactive()
 		
 		self:PlayUnitSound('Deactivate')
@@ -55,7 +55,7 @@ CORMAKR = Class(TAunit) {
 		self.Spinners.plug:SetSpeed(50)
 		WaitFor(self.Spinners.plug)
 
-		TAunit.OnProductionUnpaused(self)
+		TAStructure.OnProductionUnpaused(self)
 		self:SetMaintenanceConsumptionActive()
 		
 	end,

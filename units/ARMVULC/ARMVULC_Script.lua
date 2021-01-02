@@ -3,13 +3,13 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
-ARMVULC = Class(TAunit) {
+ARMVULC = Class(TAStructure) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TAStructure.OnCreate(self)
 		self.Spinners = {
 			spindle = CreateRotator(self, 'Spindle', 'z', nil, 0, 0, 0),
 		}

@@ -3,21 +3,21 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 local TAPopLaser = import('/mods/SCTA-master/lua/TAweapon.lua').TAPopLaser
 
-CORDOOM = Class(TAunit) {
+CORDOOM = Class(TAStructure) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TAStructure.OnCreate(self)
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
+		TAStructure.OnStopBeingBuilt(self,builder,layer)
 		ForkThread(self.Fold, self)
 	end,
 
 	Fold = function(self)
-		TAunit.Fold(self)
+		TAStructure.Fold(self)
 	end,
 
 

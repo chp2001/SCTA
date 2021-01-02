@@ -3,7 +3,7 @@
 #
 #Script created by Raevn
 
-local TAPop = import('/mods/SCTA-master/lua/TAunit.lua').TAPop
+local TAPop = import('/mods/SCTA-master/lua/TAStructure.lua').TAPop
 local TAHide = import('/mods/SCTA-master/lua/TAweapon.lua').TAHide
 
 ARMAMB = Class(TAPop) {

@@ -1,8 +1,8 @@
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 
-CORASON = Class(TAunit) {
+CORASON = Class(TAStructure) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TAStructure.OnCreate(self)
 		self.Spinners = {
 			dish = CreateRotator(self, 'dish', 'y', nil, 0, 0, 0),	
 		}
@@ -13,24 +13,24 @@ CORASON = Class(TAunit) {
 	end,
 
 	OnIntelDisabled = function(self)
-		TAunit.Fold(self)
+		TAStructure.Fold(self)
 		--STOP-SPIN dish around y-axis;
 		self.Spinners.dish:SetSpeed(0)
 
 		self:SetMaintenanceConsumptionInactive()
 		
-		TAunit.OnIntelDisabled(self)
+		TAStructure.OnIntelDisabled(self)
 		self:PlayUnitSound('Deactivate')
 	end,
 
 	OnIntelEnabled = function(self)
-		TAunit.Unfold(self)
+		TAStructure.Unfold(self)
 		--SPIN dish around y-axis  SPEED <60.01>;
 		self.Spinners.dish:SetSpeed(60)
 
 		self:SetMaintenanceConsumptionActive()
 		
-		TAunit.OnIntelEnabled(self)
+		TAStructure.OnIntelEnabled(self)
 		self:PlayUnitSound('Activate')
 	end,
 }

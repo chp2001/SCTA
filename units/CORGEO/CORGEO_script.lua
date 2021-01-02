@@ -4,8 +4,8 @@
 #Script created by Raevn
 
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 
-CORGEO = Class(TAunit) {}
+CORGEO = Class(TAStructure) {}
 
 TypeClass = CORGEO

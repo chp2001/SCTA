@@ -3,9 +3,9 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 
-ARMFORT = Class(TAunit) {
+ARMFORT = Class(TAStructure) {
 }
 
 TypeClass = ARMFORT

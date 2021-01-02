@@ -3,12 +3,12 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 local TAPopLaser = import('/mods/SCTA-master/lua/TAweapon.lua').TAPopLaser
 
-ARMANNI = Class(TAunit) {
+ARMANNI = Class(TAStructure) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TAStructure.OnCreate(self)
 		self.Spinners = {
 			case2 = CreateRotator(self, 'case2', 'z', nil, 0, 0, 0),
 			case1 = CreateRotator(self, 'case1', 'z', nil, 0, 0, 0),
@@ -42,12 +42,12 @@ ARMANNI = Class(TAunit) {
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
+		TAStructure.OnStopBeingBuilt(self,builder,layer)
 		ForkThread(self.Fold, self)
 	end,
 
 	Fold = function(self)
-		TAunit.Fold(self)
+		TAStructure.Fold(self)
 	end,
 
 	Weapons = {

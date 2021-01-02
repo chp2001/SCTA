@@ -3,10 +3,10 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-ARMBRTHA = Class(TAunit) {
+ARMBRTHA = Class(TAStructure) {
 	Weapons = {
 		ARM_BERTHACANNON = Class(TAweapon) {
 			OnWeaponFired = function(self)

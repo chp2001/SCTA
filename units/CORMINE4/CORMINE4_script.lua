@@ -1,12 +1,7 @@
-#CORE HE Area Mine - Med. Damage, Large Range Mine
-#CORMINE4
-#
-#Script created by Raevn
-
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAMine = import('/mods/SCTA-master/lua/TAStructure.lua').TAMine
 local Projectile = import('/lua/sim/DefaultWeapons.lua').DefaultProjectileWeapon
 
-CORMINE4 = Class(TAunit) {
+CORMINE4 = Class(TAMine) {
 
 
 	Weapons = {
@@ -17,27 +12,5 @@ CORMINE4 = Class(TAunit) {
 			end,
 		},
 	},
-
-	OnKilled = function(self, instigator, type, overkillRatio)
-		if self.unit.attacked then
-			instigator = self
-		end
-		TAunit.OnKilled(self, instigator, type, overkillRatio)
-		
-	end,
-
-	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
-		self:RequestRefreshUI()
-	end,
-
-	OnIntelDisabled = function(self)
-		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-	end,
-
-	OnIntelEnabled = function(self)
-		self:SetMesh('/mods/SCTA-master/units/CORMINE4/CORMINE4_cloak_mesh', true)
-	end,
 }
 TypeClass = CORMINE4

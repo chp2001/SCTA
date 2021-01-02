@@ -3,12 +3,12 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 
-ARMASON = Class(TAunit) {
+ARMASON = Class(TAStructure) {
 
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TAStructure.OnCreate(self)
 		self.Spinners = {
 			hinge1 = CreateRotator(self, 'hinge1', 'x', nil, 0, 0, 0),
 			hinge2 = CreateRotator(self, 'hinge2', 'x', nil, 0, 0, 0),
@@ -34,12 +34,12 @@ ARMASON = Class(TAunit) {
 	OnIntelDisabled = function(self)
 		self:Fold()
 		self:SetMaintenanceConsumptionInactive()
-		TAunit.OnIntelDisabled(self)
+		TAStructure.OnIntelDisabled(self)
 		self:PlayUnitSound('Deactivate')
 	end,
 
 	Fold = function(self)
-		TAunit.Fold(self)
+		TAStructure.Fold(self)
 				--TURN hinge1 to x-axis <0> SPEED <68.78>;
 				self.Spinners.hinge1:SetGoal(0)
 				self.Spinners.hinge1:SetSpeed(68)
@@ -84,12 +84,12 @@ ARMASON = Class(TAunit) {
 	OnIntelEnabled = function(self)	
 		self:Unfold()
 		self:SetMaintenanceConsumptionActive()
-		TAunit.OnIntelEnabled(self)
+		TAStructure.OnIntelEnabled(self)
 	self:PlayUnitSound('Activate')
 	end,
 
 	Unfold = function(self)
-		TAunit.Unfold(self)
+		TAStructure.Unfold(self)
 		--TURN hinge1 to x-axis <133.26> SPEED <68.74>;
 		self.Spinners.hinge1:SetGoal(130)
 		self.Spinners.hinge1:SetSpeed(68)

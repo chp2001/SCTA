@@ -3,7 +3,7 @@
 #
 #Script created by Raevn
 
-local TAMass = import('/mods/SCTA-master/lua/TAunit.lua').TAMass
+local TAMass = import('/mods/SCTA-master/lua/TAStructure.lua').TAMass
 local ScenarioUtils = import('/lua/sim/ScenarioUtilities.lua')
 
 CORMOHO = Class(TAMass) {

@@ -3,7 +3,7 @@ local explosion = import('/lua/defaultexplosions.lua')
 local scenarioUtils = import('/lua/sim/ScenarioUtilities.lua')
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local Game = import('/lua/game.lua')
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 local util = import('/lua/utilities.lua')
 
 local SyncroniseThread = function(self, interval, event, data)
@@ -40,10 +40,10 @@ end
 local TidalEnergyMin = false
 local TidalEnergyRange = false
 
-TATidal = Class(TAunit) 
+TATidal = Class(TAStructure) 
 {
         OnStopBeingBuilt = function(self,builder,layer)
-        TAunit.OnStopBeingBuilt(self,builder,layer)
+        TAStructure.OnStopBeingBuilt(self,builder,layer)
         ------------------------------------------------------------------------
         -- Pre-setup
         ------------------------------------------------------------------------
@@ -94,7 +94,7 @@ TATidal = Class(TAunit)
     end,
 
     OnKilled = function(self, instigator, type, overKillRatio)
-        TAunit.OnKilled(self, instigator, type, overKillRatio)
+        TAStructure.OnKilled(self, instigator, type, overKillRatio)
     end,
 }
 
@@ -103,10 +103,10 @@ TATidal = Class(TAunit)
 local WindEnergyMin = false
 local WindEnergyRange = false
 
-TAWin = Class(TAunit) 
+TAWin = Class(TAStructure) 
 {
     OnStopBeingBuilt = function(self,builder,layer)
-    TAunit.OnStopBeingBuilt(self,builder,layer)
+    TAStructure.OnStopBeingBuilt(self,builder,layer)
     self:SetProductionPerSecondEnergy(0)
     if not WindEnergyMin and not WindEnergyRange then
         LOG("Defining wind turbine energy output value range.")
@@ -139,6 +139,6 @@ OnWeatherInterval = function(self)
 end,
 
         OnKilled = function(self, instigator, type, overKillRatio)
-           TAunit.OnKilled(self, instigator, type, overKillRatio)
+           TAStructure.OnKilled(self, instigator, type, overKillRatio)
         end,
     }

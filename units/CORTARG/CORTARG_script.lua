@@ -3,12 +3,12 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
-CORTARG = Class(TAunit) {
+CORTARG = Class(TAStructure) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TAStructure.OnCreate(self)
 		self.AnimManip = CreateAnimator(self)
 		self.Trash:Add(self.AnimManip)
 	end,
@@ -17,11 +17,11 @@ CORTARG = Class(TAunit) {
             if (self:GetScriptBit(3) == false) then
 	        TAutils.unregisterTargetingFacility(self:GetArmy())
             end
-            TAunit.OnKilled(self, instigator, type, overkillRatio)
+            TAStructure.OnKilled(self, instigator, type, overkillRatio)
         end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
+		TAStructure.OnStopBeingBuilt(self,builder,layer)
 		ForkThread(self.Open, self)
 		self:PlayUnitSound('Activate')
 		TAutils.registerTargetingFacility(self:GetArmy())
@@ -33,7 +33,7 @@ CORTARG = Class(TAunit) {
     		ForkThread(self.Close, self)
 			TAutils.unregisterTargetingFacility(self:GetArmy())
 		end
-		TAunit.OnScriptBitSet(self, bit)
+		TAStructure.OnScriptBitSet(self, bit)
 	end,
 
 	OnScriptBitClear = function(self, bit)
@@ -42,13 +42,13 @@ CORTARG = Class(TAunit) {
 			ForkThread(self.Open, self)
 			TAutils.registerTargetingFacility(self:GetArmy())
 		end
-		TAunit.OnScriptBitClear(self, bit)
+		TAStructure.OnScriptBitClear(self, bit)
 	end,
 
 	Open = function(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
-		TAunit.Unfold(self)
+		TAStructure.Unfold(self)
                 WaitSeconds(1.2)
 		self:SetMaintenanceConsumptionActive()
 	end,
@@ -58,7 +58,7 @@ CORTARG = Class(TAunit) {
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
 		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
                 WaitFor(self.AnimManip)
-		TAunit.Fold(self)
+		TAStructure.Fold(self)
 		self:SetMaintenanceConsumptionInactive()
 		end
 	end,

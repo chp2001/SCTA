@@ -3,20 +3,20 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 
-ARMMAKR = Class(TAunit) {
+ARMMAKR = Class(TAStructure) {
 	OnProductionUnpaused = function(self)
-		TAunit.Unfold(self)
-		TAunit.OnProductionUnpaused(self)
+		TAStructure.Unfold(self)
+		TAStructure.OnProductionUnpaused(self)
 		self:SetMaintenanceConsumptionActive()
 		self:PlayUnitSound('Activate')
 	end,
 
 
 	OnProductionPaused = function(self)
-		TAunit.OnProductionPaused(self)
-		TAunit.Fold(self)
+		TAStructure.OnProductionPaused(self)
+		TAStructure.Fold(self)
 		self:SetMaintenanceConsumptionInactive()
 		self:PlayUnitSound('Deactivate')		
 	end,

@@ -33,9 +33,6 @@ UnitBlueprint {
     'CORE',
 	'ENERGY',
 	'LEVEL3',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -49,18 +46,9 @@ UnitBlueprint {
     Description = 'Produces Energy',
     Display = {
         Abilities = {
-            'Cloak'
+            '<LOC ability_cloak>Cloaking',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Stone'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
+		CloakMesh = '/mods/SCTA-master/units/CORCKFUS/CORCKFUS_cloak_mesh',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

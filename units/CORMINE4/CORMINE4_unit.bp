@@ -23,22 +23,15 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
 	'BUILTBYT1MINELAYER',
-
-	
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-
-	
         'CORE',
                 'MINE',
         'STRUCTURE',
         'Structure',
 	'LEVEL2',
-	
-	
 	'KAMIKAZI',
-	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -54,15 +47,7 @@ UnitBlueprint {
         Abilities = {
             'Kamikazi',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
+		CloakMesh = '/mods/SCTA-master/units/CORMINE4/CORMINE4_cloak_mesh',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

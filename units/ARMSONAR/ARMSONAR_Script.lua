@@ -3,12 +3,12 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 
-ARMSONAR = Class(TAunit) {
+ARMSONAR = Class(TAStructure) {
 
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TAStructure.OnCreate(self)
 		self.Spinners = {
 			base = CreateRotator(self, 'Base', 'y', nil, 0, 0, 0),
 		}
@@ -21,7 +21,7 @@ ARMSONAR = Class(TAunit) {
 
 		self:SetMaintenanceConsumptionInactive()
 		
-		TAunit.OnIntelDisabled(self)
+		TAStructure.OnIntelDisabled(self)
 		self:PlayUnitSound('Deactivate')
 	end,
 
@@ -31,13 +31,13 @@ ARMSONAR = Class(TAunit) {
 
 		self:SetMaintenanceConsumptionActive()
 		
-		TAunit.OnIntelEnabled(self)
+		TAStructure.OnIntelEnabled(self)
 		self:PlayUnitSound('Activate')
 	end,
 
 	OnKilled = function(self, instigator, type, overkillRatio)
 		self.Spinners.base:SetSpeed(0)
-		TAunit.OnKilled(self, instigator, type, overkillRatio)
+		TAStructure.OnKilled(self, instigator, type, overkillRatio)
 		
 	end,
 }

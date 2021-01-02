@@ -126,7 +126,7 @@ UnitBlueprint {
         HelpText = 'Radar Tower',
     },
     LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
+    LifeBarOffset = 0.25,
     LifeBarSize = 1,
     Physics = {
         BuildOnLayerCaps = {

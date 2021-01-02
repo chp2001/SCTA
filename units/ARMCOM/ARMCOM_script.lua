@@ -36,16 +36,16 @@ ARMCOM = Class(TARealCommander) {
 		self:PlayUnitSound('CommanderArrival')
 		self.PlayCommanderWarpInEffectFlag = false
 		self:CreateProjectile( '/mods/SCTA-master/effects/entities/TAEntrance/TAEntrance_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
-		WaitSeconds(2.7)
-		---CreateAttachedEmitter( self, 0, army, '/mods/SCTA-master/effects/emitters/ENTRANCE_emit.bp'):ScaleEmitter(4)
 		self:ShowBone(0, true)
+		self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
+		WaitSeconds(3)
+		---CreateAttachedEmitter( self, 0, army, '/mods/SCTA-master/effects/emitters/ENTRANCE_emit.bp'):ScaleEmitter(4)
 		self:HideBone('DGunMuzzle', true)
-        self:HideBone('LaserMuzzle', true)
-        self:SetUnSelectable(false)
-        self:SetBusy(false)
-        self:SetBlockCommandQueue(false)
-        WaitSeconds(6)
+		self:HideBone('LaserMuzzle', true)
 		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
+        self:SetUnSelectable(false)
+		self:SetBusy(false)
+		self:SetBlockCommandQueue(false)
     end,
 
 	OnStopBeingBuilt = function(self,builder,layer)

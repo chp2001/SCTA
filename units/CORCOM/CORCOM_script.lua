@@ -33,16 +33,15 @@ CORCOM = Class(TARealCommander) {
 		self:PlayUnitSound('CommanderArrival')
 		self.PlayCommanderWarpInEffectFlag = false
 		self:CreateProjectile( '/mods/SCTA-master/effects/entities/TAEntrance/TAEntrance_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
-		WaitSeconds(2.7)
-			self:ShowBone(0, true)
+		self:ShowBone(0, true)
+		self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
+		WaitSeconds(3)
 			self:HideBone('Mlasflsh', true)
 			self:HideBone('BigFlsh', true)
+			self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
 			self:SetUnSelectable(false)
 			self:SetBusy(false)
 			self:SetBlockCommandQueue(false)
-	
-			WaitSeconds(6)
-			self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
 		end,
 
 	OnStopBeingBuilt = function(self,builder,layer)

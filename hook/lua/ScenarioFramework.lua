@@ -1,6 +1,7 @@
 local ScenarioUtils = import('/lua/sim/ScenarioUtilities.lua')
 
 function SpawnCommander(brain, unit, effect, name, PauseAtDeath, DeathTrigger, enhancements)
+	ScenarioUtils.CreateWind()
 	local ABrain = GetArmyBrain(brain);
 	if(ABrain.BrainType == 'Human') then
 	local ACU = ScenarioUtils.CreateInitialArmyUnit(brain, 'mas0001')
@@ -10,7 +11,6 @@ function SpawnCommander(brain, unit, effect, name, PauseAtDeath, DeathTrigger, e
 	if DeathTrigger then
 		CreateUnitDeathTrigger(DeathTrigger, ACU)
 	end
-	ScenarioUtils.CreateWind()
 	return ACU
 	else
 	local ACU = ScenarioUtils.CreateArmyUnit(brain, unit)
@@ -58,8 +58,6 @@ function SpawnCommander(brain, unit, effect, name, PauseAtDeath, DeathTrigger, e
     elseif effect then
         GateInEffect(ACU, effect)
     end
-
-    -- If true is passed as parameter then it uses default name.
     if name == true then
         ACU:SetCustomName(GetArmyBrain(brain).Nickname)
     elseif type(name) == 'string' then

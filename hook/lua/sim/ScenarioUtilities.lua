@@ -1,7 +1,7 @@
 function CreateInitialArmyGroup(strArmy, createCommander)
 	local tblGroup = CreateArmyGroup(strArmy, 'INITIAL')
     local cdrUnit = false
-    if createCommander and ( tblGroup == nil or 0 == table.getn(tblGroup) ) then
+    if createCommander then
 		local ABrain = GetArmyBrain(strArmy);
 		if(ABrain.BrainType == 'Human') then
 			

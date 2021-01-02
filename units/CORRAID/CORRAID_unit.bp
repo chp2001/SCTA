@@ -54,15 +54,6 @@ UnitBlueprint {
         Abilities = {
             'Tank',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Turret'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -116,7 +107,7 @@ UnitBlueprint {
         TurnRate = 71,
         MaxSteerForce = 10,
     },
-    SelectionCenterOffsetZ = -0.1,
+    SelectionCenterOffsetZ = -0.2,
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.3,
     SelectionThickness = 0.25,

@@ -121,7 +121,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarSize = 1,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
@@ -131,6 +131,8 @@ UnitBlueprint {
     },
     SelectionSizeX = 1.25,
     SelectionSizeZ = 1.25,
+    SelectionCenterOffsetZ = 0.05,
+    SelectionCenterOffsetX = -0.1,
     SelectionThickness = 0.25,
     SizeX = 2,
     SizeY = 3,

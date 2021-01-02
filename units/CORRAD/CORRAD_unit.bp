@@ -47,10 +47,6 @@ UnitBlueprint {
 	'SPECIAL',
 	'SORTINTEL',
 	'LEVEL1',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -66,16 +62,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_radar>Radar',
         },
-		--[[DestructionEffects = {
-		#DefaultProjectileCategories = {'CamoflageC','MetalBarrel'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0, 'dish'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -85,7 +71,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.12,
     },
     Economy = {
         BuildCostEnergy = 800,
@@ -100,7 +86,6 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-	---BuildAngle = 16384,
         Category = 'Intelligence',
         Classification = 'RULEUC_Sensor',
         ToggleCaps = {
@@ -136,7 +121,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarSize = 1,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
@@ -155,9 +140,9 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_BUILDINGEX
-            Damage = 40,
+            Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 6.406,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

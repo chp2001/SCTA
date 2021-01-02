@@ -33,7 +33,6 @@ UnitBlueprint {
             '<LOC ability_omni>Omni Sensor',
             '<LOC ability_radar>Radar',
         },
-        UniformScale = 0.30,
     },
     Economy = {
         BuildCostEnergy = 50000,
@@ -43,8 +42,8 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 700,
     },
     Footprint = {
-        SizeX = 4,
-        SizeZ = 4,
+        SizeX = 2,
+        SizeZ = 2,
     },
     General = {
 	BuildAngle = 4096,
@@ -81,13 +80,12 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
-        SkirtSizeX = 4,
-        SkirtSizeZ = 4,
+        SkirtSizeX = 2,
+        SkirtSizeZ = 2,
     },
-    SelectionSizeX = 4,
-    SelectionSizeZ = 4,
-    SelectionThickness = 0.25,
-    SizeX = 8,
-    SizeY = 6,
-    SizeZ = 8,
+    SelectionSizeX = 3,
+    SelectionSizeZ = 3,
+    SizeX = 4,
+    SizeY = 3,
+    SizeZ = 4,
 }

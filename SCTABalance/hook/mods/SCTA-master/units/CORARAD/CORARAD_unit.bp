@@ -28,7 +28,8 @@ UnitBlueprint {
             '<LOC ability_upgradable>Upgradeable',
             'Radar Targeting',
         },
-     }, 
+    UniformScale = 0.12,    
+}, 
      Economy = {
         NaturalProducer = false,
         BuildCostEnergy = 6000,
@@ -51,7 +52,6 @@ UnitBlueprint {
         VisionRadius = 12, 
         RadarRadius = 240,
     },
-    SelectionCenterOffsetZ = -0.1,
     SizeY = 5,
     StrategicIconName = 'icon_structure2_intel',
 }

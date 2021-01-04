@@ -37,6 +37,7 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
+        'TACLOAK',
         'KBOT',
 	'LEVEL2',
     },
@@ -88,7 +89,7 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         ToggleCaps = {
-            RULEUTC_IntelToggle = true,
+            RULEUTC_CloakToggle = true,
         },
         FactionName = 'CORE',
         TechLevel = 'RULEUTL_Advanced',

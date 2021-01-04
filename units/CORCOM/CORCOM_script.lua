@@ -53,27 +53,6 @@ CORCOM = Class(TARealCommander) {
 			self:ForkThread(self.PlayCommanderWarpInEffect)
 	end,
 
-
-	OnScriptBitSet = function(self, bit)
-		if bit == 8 then
-			self:DisableUnitIntel('ToggleBit8', 'Cloak')
-			if self.CloakThread then KillThread(self.CloakThread) end
-			self.CloakThread = self:ForkThread(TARealCommander.CloakDetection)	
-		end
-		TARealCommander.OnScriptBitSet(self, bit)
-	end,
-
-
-	OnScriptBitClear = function(self, bit)
-		if bit == 8 then
-			if self.CloakThread then
-				KillThread(self.CloakThread)
-				self.cloakOn = nil
-			end
-		end
-		TARealCommander.OnScriptBitClear(self, bit)
-	end,
-
 	GiveInitialResources = function(self)
 		self:GetAIBrain():GiveResource('ENERGY', self:GetBlueprint().Economy.StorageEnergy)
 		self:GetAIBrain():GiveResource('MASS', self:GetBlueprint().Economy.StorageMass)

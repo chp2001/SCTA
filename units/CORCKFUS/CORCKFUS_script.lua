@@ -12,14 +12,6 @@ CORCKFUS = Class(TAStructure) {
         self:SetScriptBit('RULEUTC_CloakToggle', true)
         self:RequestRefreshUI()
     end,
-
-	OnIntelDisabled = function(self)
-		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-	end,
-
-	OnIntelEnabled = function(self)
-		self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
-	end,
 }
 
 TypeClass = CORCKFUS

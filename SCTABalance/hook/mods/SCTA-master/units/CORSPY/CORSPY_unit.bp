@@ -17,6 +17,7 @@ UnitBlueprint {
 	'LEVEL2',
     'RADAR',
     'OVERLAYRADAR',
+    'TACLOAK',
     },
     Economy = {
         BuildCostEnergy = 1500,

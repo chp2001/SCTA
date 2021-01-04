@@ -310,15 +310,17 @@ TARealCommander = Class(TACommander) {
 
     OnMotionHorzEventChange = function(self, new, old )
 		TACommander.OnMotionHorzEventChange(self, new, old)
-		if old == 'Stopped' then
+        if self.cloakOn then
+        if old == 'Stopped' then
 			self:SetConsumptionPerSecondEnergy(1000)
 			self.motion = 'Moving'
 		elseif new == 'Stopped' then
 			self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
 			self.motion = 'Stopped'
-		end
+        end
+    end
     end,
-    
+
     OnStartBuild = function(self, unitBeingBuilt, order )
         TACommander.OnStartBuild(self, unitBeingBuilt, order)
         self:SetScriptBit('RULEUTC_CloakToggle', true)
@@ -337,9 +339,6 @@ TARealCommander = Class(TACommander) {
         TACommander.OnIntelEnabled()
         if self:IsIntelEnabled('Cloak') then
             self.cloakOn = true
-		if self.motion == 'Moving' then
-			self:SetConsumptionPerSecondEnergy(1000)
-        end
         	self:PlayUnitSound('Cloak')
 			self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
 		ForkThread(self.CloakDetection, self)

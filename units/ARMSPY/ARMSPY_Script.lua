@@ -8,7 +8,8 @@ local TAWalking = import('/mods/SCTA-master/lua/TAMotion.lua').TAWalking
 ARMSPY = Class(TAWalking) {
     OnStopBeingBuilt = function(self, builder, layer)
 		TAWalking.OnStopBeingBuilt(self, builder, layer)
-        self:SetScriptBit('RULEUTC_IntelToggle', true)
+        self:SetMaintenanceConsumptionInactive()
+        self:SetScriptBit('RULEUTC_CloakToggle', true)
         self:RequestRefreshUI()
     end,
 

@@ -7,6 +7,10 @@ MAS0001 = Class(AWalkingLandUnit) {
 	OnCreate = function(self)
 	AWalkingLandUnit.OnCreate(self)
 	self:AddBuildRestriction(categories.NOMADS)
+	self:AddBuildRestriction(categories.UEF)
+	self:AddBuildRestriction(categories.CYBRAN)
+	self:AddBuildRestriction(categories.AEON)
+	self:AddBuildRestriction(categories.SERAPHIM)
 	self.AnimManip = CreateAnimator(self)
 	self.Trash:Add(self.AnimManip)
 	end,

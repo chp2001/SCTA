@@ -47,9 +47,10 @@ CORCOM = Class(TARealCommander) {
 	OnStopBeingBuilt = function(self,builder,layer)
 		TARealCommander.OnStopBeingBuilt(self,builder,layer)
 		ForkThread(self.GiveInitialResources, self)
-			self:SetScriptBit('RULEUTC_CloakToggle', true)
+        self:SetMaintenanceConsumptionInactive()
+        self:SetScriptBit('RULEUTC_CloakToggle', true)
+        self:RequestRefreshUI()
 			self:ForkThread(self.PlayCommanderWarpInEffect)
-			self.motion = 'Stopped'
 	end,
 
 
@@ -61,7 +62,6 @@ CORCOM = Class(TARealCommander) {
 		end
 		TARealCommander.OnScriptBitSet(self, bit)
 	end,
-
 
 
 	OnScriptBitClear = function(self, bit)

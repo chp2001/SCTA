@@ -21,7 +21,8 @@ ARMSNIPE = Class(TAWalking) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
+        self:SetMaintenanceConsumptionInactive()
+        self:SetScriptBit('RULEUTC_CloakToggle', true)
         self:RequestRefreshUI()
     end,
 

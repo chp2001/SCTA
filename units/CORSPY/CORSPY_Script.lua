@@ -14,8 +14,9 @@ CORSPY = Class(TAWalking) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
-        self:SetScriptBit('RULEUTC_IntelToggle', true)
-		self:RequestRefreshUI()
+        self:SetMaintenanceConsumptionInactive()
+        self:SetScriptBit('RULEUTC_CloakToggle', true)
+        self:RequestRefreshUI()
     end,
 
 	OnIntelDisabled = function(self)

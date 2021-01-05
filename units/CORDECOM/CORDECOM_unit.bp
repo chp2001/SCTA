@@ -82,8 +82,6 @@ UnitBlueprint {
     },
     Description = 'Commander',
     Display = {
-        --AnimationBuild = '/mods/SCTA-master/units/CORCOM/CORCOM_lod0_unpack.sca',
-        --AnimationBuildRate = 1, 
         AnimationWalk = '/mods/SCTA-master/units/CORCOM/CORCOM_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
@@ -114,8 +112,7 @@ UnitBlueprint {
         MaxBuildDistance = 3.75,
     },
     Footprint = {
-	MaxSlope = 1.25,
-        SizeX = 2,
+        SizeX = 1,
         SizeZ = 2,
     },
     General = {

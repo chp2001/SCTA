@@ -50,10 +50,7 @@ UnitBlueprint {
     Defense = {
         DamageModifier = 1,
         ArmorType = 'Structure',
-        AirThreatLevel = 0,
         EconomyThreatLevel = 5,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
         Health = 400,
         MaxHealth = 400,
     },
@@ -84,7 +81,6 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-	---BuildAngle = 8192,
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
         ToggleCaps = {

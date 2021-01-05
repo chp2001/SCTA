@@ -83,8 +83,6 @@ UnitBlueprint {
             'Decoy',
             'Construction Unit',
         },
-        --AnimationBuild = '/mods/SCTA-master/units/ARMCOM/ARMCOM_lod0_unpack.sca',
-        --AnimationBuildRate = 1, 
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -109,8 +107,7 @@ UnitBlueprint {
         MaxBuildDistance = 3.75,
     },
     Footprint = {
-	MaxSlope = 1.25,
-        SizeX = 2,
+        SizeX = 1,
         SizeZ = 2,
     },
     General = {

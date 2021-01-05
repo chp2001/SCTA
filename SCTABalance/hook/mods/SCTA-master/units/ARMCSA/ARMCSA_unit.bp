@@ -1,5 +1,9 @@
 UnitBlueprint {
    Merge = true,
+   Air = {
+    MaxAirspeed = 10,
+    MinAirspeed = 3,
+},
    Categories = {
     'SELECTABLE',
     'TECH3',
@@ -29,7 +33,7 @@ UnitBlueprint {
     Description = 'Tech Level 3',
     Economy = {
         BuildCostEnergy = 7200,
-        BuildRate = 300,
+        BuildRate = 450,
         BuildTime = 6000,
         BuildCostMass = 400,    
         BuildableCategory = {

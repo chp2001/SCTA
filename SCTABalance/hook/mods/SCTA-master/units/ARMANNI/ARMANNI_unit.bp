@@ -32,9 +32,9 @@ UnitBlueprint {
         UniformScale = 0.18,
     },
     Economy = {
-        BuildCostEnergy = 1000000,
-        BuildCostMass = 60000,
-        BuildTime = 270000,
+        BuildCostEnergy = 30000,
+        BuildCostMass = 6000,
+        BuildTime = 60000,
     },
     Physics = {
         SkirtSizeX = 1, 

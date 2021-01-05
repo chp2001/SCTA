@@ -1,5 +1,9 @@
 UnitBlueprint {
    Merge = true,
+   Air = {
+    MaxAirspeed = 9,
+    MinAirspeed = 3,
+    },
    Categories = {
     'SELECTABLE',
     'TECH2',
@@ -23,12 +27,9 @@ UnitBlueprint {
     Health = 540,
     MaxHealth = 540,
     },        
-    Display = {
-        UniformScale = 0.10,
-    },
     Economy = {
         BuildCostEnergy = 6000,
-        BuildRate = 150,
+        BuildRate = 225,
         BuildTime = 4000,    
         BuildableCategory = {
             'BUILTBYT1AIR ARM',

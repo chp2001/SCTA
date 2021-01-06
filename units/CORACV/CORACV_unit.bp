@@ -20,21 +20,21 @@ StopMove = Sound {
     Cue = 'VCORSTOP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Construct = Sound {
+Construct = Sound {
     Bank = 'TA_Sound',
     Cue = 'NANLATH2',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	StartReclaim = Sound {
+},
+StartReclaim = Sound {
     Bank = 'TA_Sound',
     Cue = 'RECLAIM2',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	Destroyed = Sound {
+},
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 0,
     Categories = {
@@ -48,12 +48,12 @@ StopMove = Sound {
 'PATROLHELPER',
 'SHOWQUEUE',
 'MOBILE',
-	'CONSTRUCTION',
-	'LAND',
-	'SELECTION',
+'CONSTRUCTION',
+'LAND',
+'SELECTION',
 'CORE',
-'VEHICLE',	
-	'LEVEL2',
+'VEHICLE',
+'LEVEL2',
     },
     Defense = {
 ArmorType = 'Normal',
@@ -63,7 +63,7 @@ AirThreatLevel = 0,
 EconomyThreatLevel = 0,
 SubThreatLevel = 0,
 SurfaceThreatLevel = 0,
-    },				
+    },
     Description = 'Tech Level 2',
     Display = {
 Abilities = {
@@ -123,9 +123,9 @@ BuildableCategory = {
 MaxBuildDistance = 3.75,
 StorageEnergy = 25,
 StorageMass = 25,
-	NaturalProducer = true,
-	ProductionPerSecondEnergy = 20,
-	ProductionPerSecondMass = 1,
+NaturalProducer = true,
+ProductionPerSecondEnergy = 20,
+ProductionPerSecondMass = 1,
     },
     General = {
 BuildBones = {
@@ -163,8 +163,8 @@ HelpText = 'Tech Level 2',
     LifeBarSize = 1,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 1.4,
 MaxBrake = 1.2,
 MaxSpeed = 2.4,
@@ -195,7 +195,7 @@ TransportClass = 2,
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

@@ -10,11 +10,11 @@ UISelection = Sound {
     Cue = 'SERVLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLONUK3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 1,
     Categories = {
@@ -27,12 +27,12 @@ UISelection = Sound {
 'RECLAIMABLE',
 'TECH3',
 'SORTDEFENSE',
-	'STRUCTURE',
-	'DEFENSE',
-	'INDIRECTFIRE',
+'STRUCTURE',
+'DEFENSE',
+'INDIRECTFIRE',
 'OVERLAYINDIRECTFIRE',
-	'ARM',
-	'LEVEL3',
+'ARM',
+'LEVEL3',
     'STRATEGIC',
     'SNIPEMODE',
     },
@@ -56,7 +56,7 @@ Mesh = {
 {
     LODCutoff = 300,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -130,9 +130,9 @@ Fire = Sound {
 Land = 'Land|Water|Seabed',
 Water = 'Land|Water|Seabed',
     },
-	    RangeCategory = 'UWRC_IndirectFire',
-    FiringTolerance = 1.65,	
-	    FiringRandomness = 0.5,
+    RangeCategory = 'UWRC_IndirectFire',
+    FiringTolerance = 1.65,
+    FiringRandomness = 0.5,
     Label = 'ARM_BERTHACANNON',
     RenderFireClock = true,
     MaxRadius = 450,
@@ -187,7 +187,7 @@ Water = 'Land|Water|Seabed',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

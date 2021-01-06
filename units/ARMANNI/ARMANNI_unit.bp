@@ -10,11 +10,11 @@ UISelection = Sound {
     Cue = 'ANNI',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLONUK3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 1,
     Categories = {
@@ -26,14 +26,14 @@ UISelection = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH3',
-	'STRUCTURE',
+'STRUCTURE',
     'DEFENSE',
     'STRATEGIC',
-	'DIRECTFIRE',	
+'DIRECTFIRE',
 'OVERLAYDIRECTFIRE',
-	'ARM',
-	'SPECIAL',
-	'SORTDEFENSE',
+'ARM',
+'SPECIAL',
+'SORTDEFENSE',
     'LEVEL3',
     'SNIPEMODE',
     },
@@ -58,7 +58,7 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -72,7 +72,7 @@ BuildTime = 75071,
     Footprint = {
 SizeX = 4,
 SizeZ = 4,
-	MaxSlope = 0.625,
+MaxSlope = 0.625,
     },
     General = {
 Category = 'Defense',
@@ -89,8 +89,8 @@ UnitName = 'Annihilator',
     },
     Intel = {
 VisionRadius = 12,
-	RadarRadius = 30,
-	FreeIntel = false,
+RadarRadius = 30,
+FreeIntel = false,
     },
     Interface = {
 HelpText = 'Energy Weapon',
@@ -178,7 +178,7 @@ Land = 'Land|Water|Seabed',
     TurretYawRange = 360,
     TurretYawSpeed = 50,
     Turreted = true,
-	    WeaponUnpacks = true,
+    WeaponUnpacks = true,
     WeaponRepackTimeout = 3,
 },
 { #ATOMIC_BLAST
@@ -192,7 +192,7 @@ Land = 'Land|Water|Seabed',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

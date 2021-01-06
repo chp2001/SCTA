@@ -20,11 +20,11 @@ Deactivate = Sound {
     Cue = 'TARGOFF2',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG4',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 20,
     Categories = {
@@ -37,12 +37,12 @@ Deactivate = Sound {
 'RECLAIMABLE',
 'TECH3',
 'SORTINTEL',
-	'STRUCTURE',
-	'INTELLIGENCE',
-	'TARGETING',	
-	'CORE',
-	'SPECIAL',
-	'LEVEL3',
+'STRUCTURE',
+'INTELLIGENCE',
+'TARGETING',
+'CORE',
+'SPECIAL',
+'LEVEL3',
     },
     Defense = {
 DamageModifier = 0.7,
@@ -61,15 +61,15 @@ AnimationUnpackRate = 0.2,
 Abilities = {
     'Radar Targeting',
 },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
+--[[DestructionEffects = {
+DestructionEmitters = {
+{
+EmitterBone = {0},
+EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+EmitterSize = 1.25,
+},
+},
+},]]--
 Mesh = {
     IconFadeInZoom = 130,
     LODs = {
@@ -79,7 +79,7 @@ Mesh = {
 },
     },
 },
-	--TextureAnimationFrames = 6,
+--TextureAnimationFrames = 6,
 UniformScale = 0.16,
     },
     Economy = {
@@ -89,12 +89,12 @@ BuildTime = 161287,
 MaintenanceConsumptionPerSecondEnergy = 700,
     },
     Footprint = {
-	MaxSlope = 0.625,
+MaxSlope = 0.625,
 SizeX = 5,
 SizeZ = 4,
     },
     General = {
-	---BuildAngle = 4096,
+---BuildAngle = 4096,
 Category = 'Intelligence',
 Classification = 'RULEUC_Sensor',
 ToggleCaps = {
@@ -103,7 +103,7 @@ ToggleCaps = {
 SelectionPriority = 5,
 FactionName = 'CORE',
 TechLevel = 'RULEUTL_Basic',
-	UnitName = 'Targeting Facility',
+UnitName = 'Targeting Facility',
     },
     Intel = {
 VisionRadius = 14,
@@ -141,7 +141,7 @@ SkirtSizeZ = 4,
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

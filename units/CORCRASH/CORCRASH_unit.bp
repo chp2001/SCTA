@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'KBCORSTP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 6,
     Categories = {
@@ -33,22 +33,22 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 
-	
-'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
-	'ANTIAIR',
-'OVERLAYDIRECTFIRE',
-	'OVERLAYANTIAIR',
 
-	
+'MOBILE',
+'LAND',
+'DIRECTFIRE',
+'ANTIAIR',
+'OVERLAYDIRECTFIRE',
+'OVERLAYANTIAIR',
+
+
 'CORE',
 'KBOT',
-	'LEVEL1',
-	
-	
-	
-	
+'LEVEL1',
+
+
+
+
     },
     Defense = {
 ArmorType = 'Normal',
@@ -66,24 +66,24 @@ AnimationWalkRate = 1,
 Abilities = {
     '<LOC ability_aa>Anti-Air',
 },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Pelvis'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'GunBase'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
+--[[DestructionEffects = {
+DestructionEmitters = {
+{
+EmitterBone = {'Pelvis'},
+EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+EmitterSize = 1.25,
+},
+{
+EmitterBone = {'GunBase'},
+EmitterBlueprint = {
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
+},
+EmitterSize = 0.35,
+},
+},
+},]]---
 Mesh = {
     IconFadeInZoom = 130,
     LODs = {
@@ -93,7 +93,7 @@ Mesh = {
 },
     },
 },
-	SmokeBone = 'Pelvis',
+SmokeBone = 'Pelvis',
 UniformScale = 0.16,
     },
     Economy = {
@@ -129,8 +129,8 @@ HelpText = 'Anti-Air Kbot',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	    BackUpDistance = 0,
-	    MaxSpeedReverse = 0,
+    BackUpDistance = 0,
+    MaxSpeedReverse = 0,
 MaxAcceleration = 2.6,
 MaxBrake = 2.6,
 MaxSpeed = 2.6,
@@ -226,7 +226,7 @@ Seabed = 'Land|Water|Air',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

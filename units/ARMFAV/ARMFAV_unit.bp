@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'VARMSTOP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOMED2',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 2,
     Categories = {
@@ -33,21 +33,21 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 
-	
+
 'MOBILE',
-	'LAND',
-	'SCOUT',
-	'DIRECTFIRE',
+'LAND',
+'SCOUT',
+'DIRECTFIRE',
 'OVERLAYDIRECTFIRE',
 'OVERLAYRADAR',
-	
+
 'ARM',
-'VEHICLE',	#'TANK' in TA
-	'LEVEL1',
-	
-	
-	
-	
+'VEHICLE',#'TANK' in TA
+'LEVEL1',
+
+
+
+
     },
     Defense = {
 ArmorType = 'Normal',
@@ -133,8 +133,8 @@ HelpText = 'Fast Attack Vehicle',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 2,
 MaxBrake = 2,
 MaxSpeed = 4,
@@ -169,13 +169,13 @@ Fire = Sound {
 Land = 'Land|Water|Seabed',
 Seabed = 'Land|Water|Seabed',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     Label = 'ARM_LASER',
     MaxRadius = 24,
     MuzzleSalvoSize = 1,
-	    MuzzleSalvoDelay = 0,
-	    MuzzleVelocity = 25,
+    MuzzleSalvoDelay = 0,
+    MuzzleVelocity = 25,
     ProjectileId = '/mods/SCTA-master/projectiles/ARM_LASER/ARM_LASER_proj.bp',
     RackBones = {
 {
@@ -225,7 +225,7 @@ Seabed = 'Land|Water|Seabed',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

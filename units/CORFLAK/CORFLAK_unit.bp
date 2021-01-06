@@ -10,11 +10,11 @@ UISelection = Sound {
     Cue = 'TWRTURN3',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOMED1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 7,
     Categories = {
@@ -26,16 +26,16 @@ UISelection = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH3',
-	'STRUCTURE',
-	'DEFENSE',
-	'ANTIAIR',
+'STRUCTURE',
+'DEFENSE',
+'ANTIAIR',
 'OVERLAYANTIAIR',
     'CORE',
-	'LEVEL3',
-	'STRATEGIC',
-	'SORTDEFENSE',
-	
-	
+'LEVEL3',
+'STRATEGIC',
+'SORTDEFENSE',
+
+
     },
     Defense = {
 ArmorType = 'Structure',
@@ -70,7 +70,7 @@ BuildTime = 38010,
     Footprint = {
 SizeX = 2,
 SizeZ = 2,
-	MaxSlope = 0.625,
+MaxSlope = 0.625,
     },
     General = {
 Category = 'Defense',
@@ -128,10 +128,10 @@ Fire = Sound {
     FireTargetLayerCapsTable = {
 Land = 'Air',
     },
-	    RangeCategory = 'UWRC_AntiAir',
+    RangeCategory = 'UWRC_AntiAir',
      WeaponCategory = 'AntiAir',
-    FiringTolerance = 4.214,	
-	    FiringRandomness = 0.5,
+    FiringTolerance = 4.214,
+    FiringRandomness = 0.5,
     Label = 'ARMFLAK_GUN',
     MaxRadius = 50, 
     MuzzleSalvoDelay = 0, 
@@ -189,7 +189,7 @@ Land = 'Air',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'TARMST0P',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 3,
     Categories = {
@@ -33,17 +33,17 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
-	'ARMFLASH',
+'LAND',
+'DIRECTFIRE',
+'ARMFLASH',
 'OVERLAYDIRECTFIRE',
 'ARM',
-'VEHICLE',	#'TANK' in TA
-	'LEVEL1',
-	
-	
-	
-	
+'VEHICLE',#'TANK' in TA
+'LEVEL1',
+
+
+
+
     },
     Defense = {
 ArmorType = 'Normal',
@@ -84,16 +84,16 @@ Treads = {
 },
     },
 },   
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Tredside','MetalBarrel'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Turret'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
+--[[DestructionEffects = {
+DefaultProjectileCategories = {'Tredside','MetalBarrel'},
+DestructionEmitters = {
+{
+EmitterBone = {'Turret'},
+EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+EmitterSize = 1.25,
+},
+},
+},]]--
 Mesh = {
     IconFadeInZoom = 130,
     LODs = {
@@ -116,7 +116,7 @@ BuildCostMass = 106,
 BuildTime = 1676,
     },
     --[[Footprint = {
-	MaxWaterDepth = 0.75,
+MaxWaterDepth = 0.75,
 SizeX = 1,
 SizeZ = 1,
     },]]--
@@ -147,8 +147,8 @@ HelpText = 'Fast Assault Tank',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 1.75,
 MaxBrake = 2,
 MaxSpeed = 3,
@@ -185,14 +185,14 @@ Fire = Sound {
 Land = 'Land|Water|Seabed',
 Seabed = 'Land|Water|Seabed',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     FiringTolerance = 3,
     Label = 'EMG',
     MaxRadius = 12,
     MuzzleSalvoDelay = 0.1,
     MuzzleSalvoSize = 2,
-	    MuzzleVelocity = 27,
+    MuzzleVelocity = 27,
     ProjectileId = '/mods/SCTA-master/projectiles/EMG/EMG_proj.bp',
     RackBones = {
 {
@@ -243,7 +243,7 @@ Seabed = 'Land|Water|Seabed',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

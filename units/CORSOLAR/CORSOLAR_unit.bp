@@ -10,16 +10,16 @@ UISelection = Sound {
     Cue = 'SOLAR2',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Activate = Sound {
+Activate = Sound {
     Bank = 'TA_Sound',
     Cue = 'SOLAR2',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	Destroyed = Sound {
+},
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOSML3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 9,
     Categories = {
@@ -33,13 +33,13 @@ UISelection = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH1',
-		'STRUCTURE',
+'STRUCTURE',
 'ECONOMIC',
 'SORTECONOMY',
-	'ENERGYPRODUCTION',
-	'CORE',
-	'ENERGY',
-	'LEVEL1',
+'ENERGYPRODUCTION',
+'CORE',
+'ENERGY',
+'LEVEL1',
     },
     Defense = {
 DamageModifier = 0.33,
@@ -70,16 +70,16 @@ UniformScale = 0.16,
 BuildCostEnergy = 790,
 BuildCostMass = 141,
 BuildTime = 2416,
-		NaturalProducer = true,
+NaturalProducer = true,
 ProductionPerSecondEnergy = 20,
     },
     Footprint = {
-	MaxSlope = 0.625,
+MaxSlope = 0.625,
 SizeX = 5,
 SizeZ = 5,
     },
     General = {
-	---BuildAngle = 32768,
+---BuildAngle = 32768,
 Category = 'Economy',
 Classification = 'RULEUC_Resource',
 ToggleCaps = {
@@ -88,7 +88,7 @@ ToggleCaps = {
 SelectionPriority = 5,
 FactionName = 'CORE',
 TechLevel = 'RULEUTL_Basic',
-		UnitName = 'Solar Collector',
+UnitName = 'Solar Collector',
     },
     Intel = {
 VisionRadius = 14,
@@ -125,16 +125,16 @@ SkirtSizeZ = 5,
 },
  
     },
-	Wreckage = {
-		---UseCustomMesh = true,
-		Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-		EnergyMult = 0,
-		HealthMult = 0.9,
-		MassMult = 0.9,
-		ReclaimTimeMultiplier = 1,
-		--Blueprint = '/mods/SCTA-master/units/CORSOLAR/CORSOLAR_dead_prop.bp',
-		WreckageLayers = {
-			Land = true,
-		},
+Wreckage = {
+---UseCustomMesh = true,
+Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+EnergyMult = 0,
+HealthMult = 0.9,
+MassMult = 0.9,
+ReclaimTimeMultiplier = 1,
+--Blueprint = '/mods/SCTA-master/units/CORSOLAR/CORSOLAR_dead_prop.bp',
+WreckageLayers = {
+Land = true,
+},
     },
 }

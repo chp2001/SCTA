@@ -30,11 +30,11 @@ Landing = Sound {
     Cue = 'VTOLARLD',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOMED2',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     AI = {
 BeaconName = 'UAB5102',
@@ -77,7 +77,7 @@ TransportHoverHeight = 6,
 'TRANSPORTFOCUS',
 'CANTRANSPORTCOMMANDER',
 'ARM',
-	'LEVEL1',
+'LEVEL1',
     },
     Defense = {
 ArmorType = 'Light',
@@ -99,15 +99,15 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
-	MovementEffects = {
-		Emitter = '/mods/SCTA-master/effects/emitters/fire_smoke_emit.bp',
-		Scale = 1,
-		Bones = {'Flame_01','Flame_02','Flame_03'},
-	},
+MovementEffects = {
+Emitter = '/mods/SCTA-master/effects/emitters/fire_smoke_emit.bp',
+Scale = 1,
+Bones = {'Flame_01','Flame_02','Flame_03'},
+},
 UniformScale = 0.16,
     },
     Economy = {
@@ -155,8 +155,8 @@ HelpText = 'Air Transport',
     GroundCollisionOffset = 1.5,
     MaxSpeed = 0.5, 
     RotateOnSpot = true,
-	FuelRechargeRate = 444444,
-	FuelUseTime = 444444,
+FuelRechargeRate = 444444,
+FuelUseTime = 444444,
     },
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,

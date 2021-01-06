@@ -94,15 +94,15 @@ AnimationWalkRate = 1,
 AnimationRun = '/mods/SCTA-master/units/ARMPW/ARMPW_arun.sca',
 AnimationRunRate = 0.5,
     --[[DestructionEffects = {
-    		DefaultProjectileCategories = {'Test'},
-    		DestructionEmitters = {
-    			{
-    				EmitterBone = {'Torso'},
-    				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-    				EmitterSize = 1.25,
-    			},
-    		},
-    	},]]
+    DefaultProjectileCategories = {'Test'},
+    DestructionEmitters = {
+    {
+    EmitterBone = {'Torso'},
+    EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+    EmitterSize = 1.25,
+    },
+    },
+    },]]
 Mesh = {
     IconFadeInZoom = 130,
     LODs = {
@@ -221,7 +221,7 @@ Seabed = 'Land|Water|Air',
     MaxRadius = 13,
     MuzzleSalvoDelay = 0,
     MuzzleSalvoSize = 1,
-	MuzzleVelocity = 27,
+MuzzleVelocity = 27,
     ProjectileId = '/mods/SCTA-master/projectiles/EMG/EMG_proj.bp',
     RackBones = {
 {MuzzleBones = {'RightMuzzle'}, RackBone = 'RightLowerArm'},

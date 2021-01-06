@@ -20,11 +20,11 @@ Deactivate = Sound {
     Cue = 'TARGOFF1',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG4',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 20,
     Categories = {
@@ -36,13 +36,13 @@ Deactivate = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH3',
-	'STRUCTURE',
-	'INTELLIGENCE',
-	'TARGETING',
-	'ARM',
-	'SPECIAL',
-	'LEVEL3',
-	'SORTINTEL',
+'STRUCTURE',
+'INTELLIGENCE',
+'TARGETING',
+'ARM',
+'SPECIAL',
+'LEVEL3',
+'SORTINTEL',
     },
     Defense = {
 DamageModifier = 0.7,
@@ -59,22 +59,22 @@ MaxHealth = 1900,
 Abilities = {
     'Radar Targeting',
 },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
+--[[DestructionEffects = {
+DestructionEmitters = {
+{
+EmitterBone = {0},
+EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+EmitterSize = 1.25,
+},
+},
+},]]--
 Mesh = {
     IconFadeInZoom = 130,
     LODs = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -87,12 +87,12 @@ BuildTime = 154785,
 MaintenanceConsumptionPerSecondEnergy = 700,
     },
     Footprint = {
-	MaxSlope = 0.625,
+MaxSlope = 0.625,
 SizeX = 5,
 SizeZ = 4,
     },
     General = {
-	---BuildAngle = 4096,
+---BuildAngle = 4096,
 Category = 'Intelligence',
 Classification = 'RULEUC_Sensor',
 ToggleCaps = {
@@ -101,7 +101,7 @@ ToggleCaps = {
 SelectionPriority = 5,
 FactionName = 'ARM',
 TechLevel = 'RULEUTL_Basic',
-	UnitName = 'Targeting Facility',
+UnitName = 'Targeting Facility',
     },
     Intel = {
 VisionRadius = 14,
@@ -139,7 +139,7 @@ SkirtSizeZ = 4,
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

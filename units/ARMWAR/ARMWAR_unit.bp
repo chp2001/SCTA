@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'KBARMSTP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOMED2',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 5,
     Categories = {
@@ -33,13 +33,13 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
-	'ARMWAR',
+'LAND',
+'DIRECTFIRE',
+'ARMWAR',
 'OVERLAYDIRECTFIRE',
 'ARM',
 'KBOT',
-	'LEVEL1',
+'LEVEL1',
     },
     Defense = {
 ArmorType = 'Normal',
@@ -60,11 +60,11 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
-	SmokeBone = 'torso',
+SmokeBone = 'torso',
 UniformScale = 0.16,
     },
     Economy = {
@@ -99,8 +99,8 @@ HelpText = 'Medium Infantry Kbot',
     LifeBarSize = 1.5,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	    BackUpDistance = 0,
-	    MaxSpeedReverse = 0,
+    BackUpDistance = 0,
+    MaxSpeedReverse = 0,
 MaxAcceleration = 2.9,
 MaxBrake = 2.9,
 MaxSpeed = 2.9,
@@ -137,14 +137,14 @@ Fire = Sound {
 Land = 'Land|Water|Seabed',
 Seabed = 'Land|Water|Seabed',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     FiringTolerance = 2,
     Label = 'ARMWAR_EMG',
     MaxRadius = 18,
     MuzzleSalvoDelay = 0.05,
     MuzzleSalvoSize = 2,
-	    MuzzleVelocity = 25,
+    MuzzleVelocity = 25,
     ProjectileId = '/mods/SCTA-master/projectiles/ARMWAR_EMG/ARMWAR_EMG_proj.bp',
     RackBones = {
 {
@@ -178,7 +178,7 @@ Seabed = 'Land|Water|Seabed',
     TurretYawSpeed = 150,
     Turreted = true,
 },
-	    {
+    {
     Audio = {
 Fire = Sound {
     Bank = 'TA_Sound',
@@ -198,14 +198,14 @@ Fire = Sound {
 Land = 'Land|Water|Seabed',
 Seabed = 'Land|Water|Seabed',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     FiringTolerance = 2,
     Label = 'ARMWAR_LCANNON',
     MaxRadius = 15,
     MuzzleSalvoDelay = 0,
     MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 15,
+    MuzzleVelocity = 15,
     ProjectileId = '/mods/SCTA-master/projectiles/ARMWAR_LCANNON/ARMWAR_LCANNON_proj.bp',
     RackBones = {
 {
@@ -250,7 +250,7 @@ Seabed = 'Land|Water|Seabed',
 },
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

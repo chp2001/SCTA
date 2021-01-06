@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'SERVTNY1',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOMED2',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 2,
     Categories = {
@@ -33,16 +33,16 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
+'LAND',
+'DIRECTFIRE',
 'OVERLAYDIRECTFIRE',
 'CORE',
 'KBOT',
-	'LEVEL1',
-	
-	
-	
-	
+'LEVEL1',
+
+
+
+
     },
     Defense = {
 ArmorType = 'Normal',
@@ -58,15 +58,15 @@ SurfaceThreatLevel = 0.5,
 Abilities = {
     'Infantry',
 },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'torso'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-   	},]]--
+--[[DestructionEffects = {
+DestructionEmitters = {
+{
+EmitterBone = {'torso'},
+EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+EmitterSize = 1.25,
+},
+},
+   },]]--
     AnimationWalk = '/mods/SCTA-master/units/CORAK/CORAK_lod0_Awalk.sca',
     AnimationWalkRate = 1,
 Mesh = {
@@ -78,7 +78,7 @@ Mesh = {
 },
     },
 },
-	SmokeBone = 'torso',
+SmokeBone = 'torso',
 UniformScale = 0.16,
     },
     Economy = {
@@ -113,8 +113,8 @@ HelpText = 'Infantry Kbot',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 3.3,
 MaxBrake = 3.3,
 MaxSpeed = 3.3,
@@ -156,14 +156,14 @@ Air = 'Land|Water',
 Land = 'Land|Water|Air',
 Seabed = 'Land|Water|Air',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     FiringTolerance = 0,
     Label = 'CORE_LASER',
     MaxRadius = 14,
     MuzzleSalvoDelay = 0,
     MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 25,
+    MuzzleVelocity = 25,
     ProjectileId = '/mods/SCTA-master/projectiles/CORE_LASER/CORE_LASER_proj.bp',
     RackBones = {
 {
@@ -216,7 +216,7 @@ Seabed = 'Land|Water|Air',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

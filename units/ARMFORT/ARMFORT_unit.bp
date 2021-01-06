@@ -9,23 +9,23 @@ UnitBlueprint {
 'BUILTBYT2VEHICLE',
 'BUILTBYT2KBOT',
 'BUILTBYT2AIR',
-	'UNSELECTABLE',
+'UNSELECTABLE',
 'DRAGBUILD',
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH3',
 'BENIGN',
-	'STRUCTURE',
+'STRUCTURE',
 'DEFENSE',
 'WALL',
-	'NOEXPLOSION',
-	'NOSMOKE',
-	'ARM',
-	'METAL',
-	'LEVEL2',
-	'SORTDEFENSE',
-	
-	
+'NOEXPLOSION',
+'NOSMOKE',
+'ARM',
+'METAL',
+'LEVEL2',
+'SORTDEFENSE',
+
+
     },
     Defense = {
 ArmorType = 'Structure',
@@ -41,19 +41,19 @@ SurfaceThreatLevel = 0,
 Abilities = {
     'Wall',
 },
-		--[[DestructionEffects = {
-		DefaultFlamingProjectileCountMin = 0,
-		DefaultFlamingProjectileCountMax = 0,
-		FlashSize = 0,
-		FlashTime = 0,
-		},]]--
+--[[DestructionEffects = {
+DefaultFlamingProjectileCountMin = 0,
+DefaultFlamingProjectileCountMax = 0,
+FlashSize = 0,
+FlashTime = 0,
+},]]--
 Mesh = {
-	    IconFadeInZoom = 130,
+    IconFadeInZoom = 130,
     LODs = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -65,12 +65,12 @@ BuildCostMass = 27,
 BuildTime = 965,
     },
     Footprint = {
-	MaxSlope = 2,
+MaxSlope = 2,
 SizeX = 2,
 SizeZ = 2,
     },
     General = {
-	---BuildAngle = 0,
+---BuildAngle = 0,
 CapCost = 0,
 Category = 'Defense',
 Classification = 'RULEUC_MiscSupport',
@@ -102,7 +102,7 @@ SkirtSizeZ = 2,
     StrategicIconName = 'icon_structure_wall',
     StrategicIconSortPriority = 0,
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

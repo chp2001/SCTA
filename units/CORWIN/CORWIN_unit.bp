@@ -13,7 +13,7 @@ UnitBlueprint {
     Bank = 'TA_Sound',
     Cue = 'XPLOSML3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 9,
     Categories = {
@@ -27,17 +27,17 @@ UnitBlueprint {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH1',
-	'STRUCTURE',
+'STRUCTURE',
 'ECONOMIC',
 'SORTECONOMY',
-	'ENERGYPRODUCTION',
-	'WIND',
-	'CORE',
-	'ENERGY',
-	'LEVEL1',
-	
-	
-	
+'ENERGYPRODUCTION',
+'WIND',
+'CORE',
+'ENERGY',
+'LEVEL1',
+
+
+
     },
     Defense = {
 ArmorType = 'Structure',
@@ -52,7 +52,7 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -62,18 +62,18 @@ UniformScale = 0.16,
 BuildCostEnergy = 523,
 BuildCostMass = 55,
 BuildTime = 1687,
-	    NaturalProducer = true,
+    NaturalProducer = true,
 ProductionPerSecondEnergy = 25,
 ProductionPerSecondEnergyMin = 10,
 ProductionPerSecondEnergyMax = 40,
     },
     Footprint = {
-	MaxSlope = 0.625,
+MaxSlope = 0.625,
 SizeX = 4,
 SizeZ = 4,
     },
     General = {
-	---BuildAngle = 1024,
+---BuildAngle = 1024,
 Category = 'Economy',
 Classification = 'RULEUC_Resource',
 SelectionPriority = 5,
@@ -117,7 +117,7 @@ BuildOnLayerCaps = {
  
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

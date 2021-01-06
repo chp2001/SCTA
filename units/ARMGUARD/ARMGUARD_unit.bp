@@ -10,11 +10,11 @@ UISelection = Sound {
     Cue = 'TWRTURN3',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOMED1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 1,
     Categories = {
@@ -27,14 +27,14 @@ UISelection = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH2',
-	'STRUCTURE',
-	'DEFENSE',
+'STRUCTURE',
+'DEFENSE',
     'INDIRECTFIRE',
     'ARTILLERY',
 'OVERLAYINDIRECTFIRE',
-	'ARM',
-	'LEVEL2',
-	'SORTSTRATEGIC',
+'ARM',
+'LEVEL2',
+'SORTSTRATEGIC',
     'SNIPEMODE',
     },
     Defense = {
@@ -51,32 +51,32 @@ MaxHealth = 2477,
 Abilities = {
     'Defense',
 },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'MetalBarrel'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'turret'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'barrel1', 'barrel2'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
+--[[DestructionEffects = {
+DefaultProjectileCategories = {'MetalBarrel'},
+DestructionEmitters = {
+{
+EmitterBone = {'turret'},
+EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+EmitterSize = 1.25,
+},
+{
+EmitterBone = {'barrel1', 'barrel2'},
+EmitterBlueprint = {
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
+},
+EmitterSize = 0.35,
+},
+},
+},]]---
 Mesh = {
     IconFadeInZoom = 130,
     LODs = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -86,10 +86,10 @@ UniformScale = 0.16,
 BuildCostEnergy = 7687,
 BuildCostMass = 1477,
 BuildTime = 13377,
-	StorageEnergy = 200,
+StorageEnergy = 200,
     },
     Footprint = {
-	MaxSlope = 0.625,
+MaxSlope = 0.625,
 SizeX = 2,
 SizeZ = 2,
     },
@@ -151,7 +151,7 @@ Fire = Sound {
     FireTargetLayerCapsTable = {
 Land = 'Land|Water|Seabed',
     },
-	    RangeCategory = 'UWRC_IndirectFire',
+    RangeCategory = 'UWRC_IndirectFire',
      WeaponCategory = 'Artillery',
     Label = 'ARMFIXED_GUN',
     MaxRadius = 120, 
@@ -212,7 +212,7 @@ Land = 'Land|Water|Seabed',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

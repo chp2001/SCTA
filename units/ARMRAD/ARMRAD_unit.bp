@@ -20,11 +20,11 @@ Deactivate = Sound {
     Cue = 'RADARDE1',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOSML3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 15,
     Categories = {
@@ -32,25 +32,25 @@ Deactivate = Sound {
 'BUILTBYT1KBOT',
 'BUILTBYT1AIR',
 'BUILTBYT1HOVER',
-	'BUILTBYCOMMANDER',
+'BUILTBYCOMMANDER',
 'SELECTABLE',
 'DRAGBUILD',
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH1',
-	'STRUCTURE',
-	'INTELLIGENCE',
+'STRUCTURE',
+'INTELLIGENCE',
     'RADAR',
     'SHOWQUEUE',
 'OVERLAYRADAR',
-	'ARM',
-	'SPECIAL',
-	'SORTINTEL',
-	'LEVEL1',
-	
-	
-	
-	
+'ARM',
+'SPECIAL',
+'SORTINTEL',
+'LEVEL1',
+
+
+
+
     },
     Defense = {
 ArmorType = 'Structure',
@@ -72,7 +72,7 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -82,12 +82,12 @@ UniformScale = 0.12,
 BuildCostEnergy = 750,
 BuildCostMass = 49,
 BuildTime = 1137,
-	NaturalProducer = true,
+NaturalProducer = true,
 MaintenanceConsumptionPerSecondEnergy = 5,
-	ProductionPerSecondEnergy = 5,
+ProductionPerSecondEnergy = 5,
     },
     Footprint = {
-	MaxSlope = 0.625,
+MaxSlope = 0.625,
 SizeX = 2,
 SizeZ = 2,
     },
@@ -115,12 +115,12 @@ SelectionPriority = 5,
 },
 FactionName = 'ARM',
 TechLevel = 'RULEUTL_Basic',
-	UnitName = 'Radar Tower',
+UnitName = 'Radar Tower',
     },
     Intel = {
-	FreeIntel = true,
+FreeIntel = true,
 VisionRadius = 22, 
-	RadarRadius = 90,
+RadarRadius = 90,
     },
     Interface = {
 HelpText = 'Radar Tower',
@@ -154,7 +154,7 @@ SkirtSizeZ = 2,
 },  
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

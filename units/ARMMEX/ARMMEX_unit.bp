@@ -20,11 +20,11 @@ Deactivate = Sound {
     Cue = 'MEXOFF1',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOSML3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 5,
     Categories = {
@@ -40,18 +40,18 @@ Deactivate = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH1',
-	    'STRUCTURE',
+    'STRUCTURE',
 'MASSPRODUCTION',
 'MASSEXTRACTION',
 'ECONOMIC',
 'SORTECONOMY',
-	    'ARM',
-	    'ENERGY',
-	    'LEVEL1',
-	    
-	    
-	    
-	    'STORAGE',
+    'ARM',
+    'ENERGY',
+    'LEVEL1',
+    
+    
+    
+    'STORAGE',
     },
     Defense = {
 ArmorType = 'Structure',
@@ -64,38 +64,38 @@ SurfaceThreatLevel = 0,
     },
     Description = 'Extracts Metal',
     Display = {
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'CamoflageC','Noise3'},
-		DestructionProjectiles = {
-			{
-				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMMEX_debris01_proj.bp',
-				Bone = 'arms',
-			},
-		},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'arms'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
+--[[DestructionEffects = {
+DefaultProjectileCategories = {'CamoflageC','Noise3'},
+DestructionProjectiles = {
+{
+ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMMEX_debris01_proj.bp',
+Bone = 'arms',
+},
+},
+DestructionEmitters = {
+{
+EmitterBone = {0},
+EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+EmitterSize = 1.25,
+},
+{
+EmitterBone = {'arms'},
+EmitterBlueprint = {
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
+},
+EmitterSize = 0.35,
+},
+},
+},]]---
 Mesh = {
     IconFadeInZoom = 130,
     LODs = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -109,7 +109,7 @@ MaintenanceConsumptionPerSecondEnergy = 3,
 ProductionPerSecondMass = 2.2,
     },
     General = {
-	---BuildAngle = 8192,
+---BuildAngle = 8192,
 Category = 'Economy',
 Classification = 'RULEUC_Resource',
 SelectionPriority = 5,
@@ -180,7 +180,7 @@ BuildRestriction = 'RULEUBR_OnMassDeposit',
  
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

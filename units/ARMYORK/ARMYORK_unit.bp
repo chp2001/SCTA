@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'VARMSTOP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 4,
     Categories = {
@@ -33,12 +33,12 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	'LAND',
-	'ANTIAIR',
+'LAND',
+'ANTIAIR',
 'OVERLAYANTIAIR',
 'ARM',
 'VEHICLE',
-	'LEVEL2',
+'LEVEL2',
     },
     Defense = {
 ArmorType = 'Normal',
@@ -60,7 +60,7 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -98,8 +98,8 @@ HelpText = 'Mobile Flak Vehicle',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 1.1,
 MaxBrake = 1.1,
 MaxSpeed = 2.1,
@@ -132,7 +132,7 @@ Fire = Sound {
     DamageFriendly = false,
     Damage = 85,
     DamageRadius = 3.28,
-	    EdgeEffectiveness = 0.9,
+    EdgeEffectiveness = 0.9,
     FiringRandomness = 0,
     DamageType = 'AntiAir',
     DisplayName = 'ARMYORK_GUN',
@@ -140,7 +140,7 @@ Fire = Sound {
 Land = 'Air',
 Seabed = 'Air',
     },
-	    RangeCategory = 'UWRC_AntiAir',
+    RangeCategory = 'UWRC_AntiAir',
      WeaponCategory = 'AntiAir',
     FiringTolerance = 4.2,
     Label = 'ARMYORK_GUN',
@@ -234,7 +234,7 @@ Seabed = 'Air',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

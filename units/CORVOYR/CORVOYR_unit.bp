@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'KBARMSTP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 2,
     Categories = {
@@ -33,10 +33,10 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	'LAND',
+'LAND',
 'CORE',
 'KBOT',
-	'LEVEL2',
+'LEVEL2',
     },
     Defense = {
 ArmorType = 'Normal',
@@ -60,7 +60,7 @@ Mesh = {
 },
     },
 },
-	SmokeBone = 'body',
+SmokeBone = 'body',
 UniformScale = 0.16,
     },
     Economy = {
@@ -99,8 +99,8 @@ HelpText = 'Infantry Kbot',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 2,
 MaxBrake = 3,
 MaxSpeed = 3,
@@ -129,7 +129,7 @@ MaxSteerForce = 10,
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

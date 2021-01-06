@@ -20,21 +20,21 @@ StopMove = Sound {
     Cue = 'SHARMSTP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Construct = Sound {
+Construct = Sound {
     Bank = 'TA_Sound',
     Cue = 'NANLATH1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	StartReclaim = Sound {
+},
+StartReclaim = Sound {
     Bank = 'TA_Sound',
     Cue = 'RECLAIM1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	Destroyed = Sound {
+},
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 1,
     Categories = {
@@ -51,10 +51,10 @@ StopMove = Sound {
 'MOBILE',
     'CONSTRUCTION',
     'DEFENSIVEBOAT',
-	'NAVAL',
+'NAVAL',
 'ARM',
 'OCEAN',
-	'LEVEL1',
+'LEVEL1',
     },
     CollisionOffsetY = -0.25,
     Defense = {
@@ -79,15 +79,15 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
-	MovementEffects = {
-		Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
-		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02'},
-	},
+MovementEffects = {
+Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
+Scale = 0.5,
+Bones = {'Wake_01','Wake_02'},
+},
 UniformScale = 0.16,
     },
     Economy = {
@@ -101,8 +101,8 @@ BuildableCategory = {
 MaxBuildDistance = 3.75,
 StorageEnergy = 30,
 StorageMass = 30,
-	NaturalProducer = true,
-	ProductionPerSecondEnergy = 5,
+NaturalProducer = true,
+ProductionPerSecondEnergy = 5,
     },
     Footprint = {
 SizeX = 2,
@@ -144,8 +144,8 @@ HelpText = 'Tech Level 1',
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 2.5,
 MaxBrake = 2.5,
 MaxSpeed = 3,
@@ -173,7 +173,7 @@ MaxSteerForce = 10,
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,
@@ -182,8 +182,8 @@ ReclaimTimeMultiplier = 1,
 --Blueprint = '/mods/SCTA-master/units/ARMCS/ARMCS_dead_prop.bp',
 WreckageLayers = {
     Water = true,
-	    Sub = true,
-	    Seabed = true,
+    Sub = true,
+    Seabed = true,
 },
     },
 }

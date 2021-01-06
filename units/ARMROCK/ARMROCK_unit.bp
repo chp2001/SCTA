@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'KBARMSTP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 5,
     Categories = {
@@ -33,16 +33,16 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
+'LAND',
+'DIRECTFIRE',
 'OVERLAYDIRECTFIRE',
 'ARM',
 'KBOT',
-	'LEVEL1',
-	
-	
-	
-	
+'LEVEL1',
+
+
+
+
     },
     Defense = {
 ArmorType = 'Normal',
@@ -60,35 +60,35 @@ AnimationWalkRate = 1,
 Abilities = {
     'Rocket',
 },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Torso'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'Barrel'},
-				EmitterBlueprint = {
-	    				'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
+--[[DestructionEffects = {
+DestructionEmitters = {
+{
+EmitterBone = {'Torso'},
+EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+EmitterSize = 1.25,
+},
+{
+EmitterBone = {'Barrel'},
+EmitterBlueprint = {
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
+},
+EmitterSize = 0.35,
+},
+},
+},]]---
 Mesh = {
     IconFadeInZoom = 130,
     LODs = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
-	SmokeBone = 'Torso',
+SmokeBone = 'Torso',
 UniformScale = 0.16,
     },
     Economy = {
@@ -124,8 +124,8 @@ HelpText = 'Rocket Kbot',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 2.8,
 MaxBrake = 2.8,
 MaxSpeed = 2.8,
@@ -163,7 +163,7 @@ Fire = Sound {
 Land = 'Land|Water|Air',
 Seabed = 'Land|Water|Air',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     FiringTolerance = 0,
     Label = 'KBOT_ROCKET',
@@ -179,8 +179,8 @@ Seabed = 'Land|Water|Air',
     },
     RackBone = 'Barrel',
 },
-	    },
-    RackRecoilDistance = -0.75, 				
+    },
+    RackRecoilDistance = -0.75, 
     RackReloadTimeout = 0,
     RackSalvoChargeTime = 0,
     RackSalvoReloadTime = 0,
@@ -218,7 +218,7 @@ Seabed = 'Land|Water|Air',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

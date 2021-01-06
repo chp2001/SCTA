@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'VARMSTOP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 6,
     Categories = {
@@ -33,13 +33,13 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	'LAND',
-	'INTELLIGENCE',
-	'RADAR',
+'LAND',
+'INTELLIGENCE',
+'RADAR',
 'OVERLAYRADAR',
 'ARM',
 'VEHICLE',
-	'LEVEL2',
+'LEVEL2',
     },
     Defense = {
 ArmorType = 'Normal',
@@ -61,7 +61,7 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -91,9 +91,9 @@ TechLevel = 'RULEUTL_Advanced',
 UnitName = 'Seer',
     },
     Intel = {
-	FreeIntel = true,
+FreeIntel = true,
     VisionRadius = 16,
-	RadarRadius = 70,
+RadarRadius = 70,
     },
     Interface = {
 HelpText = 'Mobile Radar',
@@ -103,8 +103,8 @@ HelpText = 'Mobile Radar',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 1.152,
 MaxBrake = 1,
 MaxSpeed = 2.2,
@@ -131,7 +131,7 @@ TurnRate = 82,
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

@@ -10,11 +10,11 @@ UISelection = Sound {
     Cue = 'FUSION2',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLONUK3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 14,
     Categories = {
@@ -28,19 +28,19 @@ UISelection = Sound {
 'RECLAIMABLE',
 'TECH3',
 
-	
-	'STRUCTURE',
+
+'STRUCTURE',
 'ECONOMIC',
 'SORTECONOMY',
-	'ENERGYPRODUCTION',
+'ENERGYPRODUCTION',
 
-	
-	'CORE',
-	'ENERGY',
-	'LEVEL3',
-	
-	
-	
+
+'CORE',
+'ENERGY',
+'LEVEL3',
+
+
+
     },
     Defense = {
 ArmorType = 'Structure',
@@ -53,22 +53,22 @@ MaxHealth = 3000,
     },
     Description = 'Produces Energy',
     Display = {
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
+--[[DestructionEffects = {
+DestructionEmitters = {
+{
+EmitterBone = {0},
+EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+EmitterSize = 1.25,
+},
+},
+},]]--
 Mesh = {
     IconFadeInZoom = 130,
     LODs = {
 {
     LODCutoff = 300,
     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -78,22 +78,22 @@ UniformScale = 0.16,
 BuildCostEnergy = 37865,
 BuildCostMass = 5004,
 BuildTime = 94281,
-	NaturalProducer = true,
+NaturalProducer = true,
 ProductionPerSecondEnergy = 1050,
     },
     Footprint = {
-	MaxSlope = 0.625,
+MaxSlope = 0.625,
 SizeX = 5,
 SizeZ = 5,
     },
     General = {
-	---BuildAngle = 16384,
+---BuildAngle = 16384,
 Category = 'Economy',
 Classification = 'RULEUC_Resource',
 SelectionPriority = 5,
 FactionName = 'CORE',
 TechLevel = 'RULEUTL_Secret',
-	UnitName = 'Fusion Power Plant',
+UnitName = 'Fusion Power Plant',
     },
     Intel = {
 VisionRadius = 14,
@@ -133,7 +133,7 @@ SkirtSizeZ = 5,
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

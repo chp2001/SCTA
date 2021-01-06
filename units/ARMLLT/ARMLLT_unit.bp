@@ -10,11 +10,11 @@ UISelection = Sound {
     Cue = 'SERVMED2',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOMED1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 12,
     Categories = {
@@ -29,13 +29,13 @@ UISelection = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH1',
-	'STRUCTURE',
-	'DEFENSE',
-	'DIRECTFIRE',
+'STRUCTURE',
+'DEFENSE',
+'DIRECTFIRE',
 'OVERLAYDIRECTFIRE',
-	'ARM',
-		'DEFENSIVE',
-	'SORTDEFENSE',
+'ARM',
+'DEFENSIVE',
+'SORTDEFENSE',
     'LEVEL1',
     'SNIPEMODE',
     },
@@ -60,7 +60,7 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -75,7 +75,7 @@ StorageEnergy = 75,
     Footprint = {
 SizeX = 2,
 SizeZ = 2,
-	MaxSlope = 0.875,
+MaxSlope = 0.875,
     },
     General = {
 Category = 'Defense',
@@ -138,7 +138,7 @@ Fire = Sound {
 Land = 'Land|Water|Air',
 Water = 'Land|Water|Air',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     FiringTolerance = 2.75,
     Label = 'ARM_LIGHTLASER',
@@ -191,7 +191,7 @@ Water = 'Land|Water|Air',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

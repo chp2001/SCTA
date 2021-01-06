@@ -20,11 +20,11 @@ Deactivate = Sound {
     Cue = 'RADADDE1',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOSML3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 13,
     Categories = {
@@ -36,17 +36,17 @@ Deactivate = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH3',
-	'STRUCTURE',
-	'INTELLIGENCE',
-	'RADAR',
+'STRUCTURE',
+'INTELLIGENCE',
+'RADAR',
 'OVERLAYRADAR',
-	'ARM',
-	'SPECIAL',
-	'LEVEL3',
-	'SORTINTEL',
-	
-	
-	
+'ARM',
+'SPECIAL',
+'LEVEL3',
+'SORTINTEL',
+
+
+
     },
     Defense = {
 DamageModifier = 1,
@@ -69,7 +69,7 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -79,12 +79,12 @@ UniformScale = 0.16,
 BuildCostEnergy = 1830,
 BuildCostMass = 125,
 BuildTime = 4800,
-	    NaturalProducer = false,
+    NaturalProducer = false,
     MaintenanceConsumptionPerSecondEnergy = 18,
-	ProductionPerSecondEnergy = 18,
+ProductionPerSecondEnergy = 18,
     },
     Footprint = {
-	MaxSlope = 0.625,
+MaxSlope = 0.625,
 SizeX = 2,
 SizeZ = 2,
     },
@@ -112,12 +112,12 @@ SelectionPriority = 5,
 },
 FactionName = 'ARM',
 TechLevel = 'RULEUTL_Secret',
-	UnitName = 'Advanced Radar Tower',
+UnitName = 'Advanced Radar Tower',
     },
     Intel = {
-	FreeIntel = false,
+FreeIntel = false,
     VisionRadius = 22, 
-	RadarRadius = 180,
+RadarRadius = 180,
     },
     Interface = {
 HelpText = 'Long Range Radar Tower',
@@ -152,7 +152,7 @@ SkirtSizeZ = 2,
  
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

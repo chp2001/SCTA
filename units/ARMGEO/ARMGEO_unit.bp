@@ -10,11 +10,11 @@ UISelection = Sound {
     Cue = 'GEOTHRM1',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG4',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 13,
     Categories = {
@@ -27,20 +27,20 @@ UISelection = Sound {
 'RECLAIMABLE',
 'TECH2',
 
-	
-	'STRUCTURE',
+
+'STRUCTURE',
 'ECONOMIC',
 'SORTECONOMY',
-	'ENERGYPRODUCTION',
-	'HYDROCARBON',
+'ENERGYPRODUCTION',
+'HYDROCARBON',
 
-	
-	'ARM',
-	'ENERGY',
-	'LEVEL2',
-	
-	
-	
+
+'ARM',
+'ENERGY',
+'LEVEL2',
+
+
+
     },
     Defense = {
 ArmorType = 'Structure',
@@ -53,15 +53,15 @@ SurfaceThreatLevel = 0,
     },
     Description = 'Produces Energy',
     Display = {
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
+--[[DestructionEffects = {
+DestructionEmitters = {
+{
+EmitterBone = {0},
+EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+EmitterSize = 1.25,
+},
+},
+},]]--
 Abilities = {
     'Geothermal',
 },
@@ -71,7 +71,7 @@ Mesh = {
 {
     LODCutoff = 350,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -81,22 +81,22 @@ UniformScale = 0.16,
 BuildCostEnergy = 9568,
 BuildCostMass = 520,
 BuildTime = 13078,
-	NaturalProducer = true,
+NaturalProducer = true,
 ProductionPerSecondEnergy = 250,
     },
     Footprint = {
-	MaxSlope = 0.625,
+MaxSlope = 0.625,
 SizeX = 4,
 SizeZ = 4,
     },
     General = {
-	---BuildAngle = 2048,
+---BuildAngle = 2048,
 Category = 'Economy',
 Classification = 'RULEUC_Resource',
 SelectionPriority = 5,
 FactionName = 'ARM',
 TechLevel = 'RULEUTL_Advanced',
-	UnitName = 'Geothermal Powerplant',
+UnitName = 'Geothermal Powerplant',
     },
     Intel = {
 VisionRadius = 14,
@@ -115,7 +115,7 @@ BuildOnLayerCaps = {
 },
 SkirtSizeX = 4,
 SkirtSizeZ = 4,
-	BuildRestriction = 'RULEUBR_OnHydrocarbonDeposit',
+BuildRestriction = 'RULEUBR_OnHydrocarbonDeposit',
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,

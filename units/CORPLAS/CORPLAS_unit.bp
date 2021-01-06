@@ -10,11 +10,11 @@ UISelection = Sound {
     Cue = 'KBCORSEL',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOMED1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 12,
     Categories = {
@@ -29,11 +29,11 @@ UISelection = Sound {
 'RECLAIMABLE',
 'TECH1',
 'SORTDEFENSE',
-	'STRUCTURE',
-	'DEFENSE',
-	'DIRECTFIRE',
+'STRUCTURE',
+'DEFENSE',
+'DIRECTFIRE',
 'OVERLAYDIRECTFIRE',
-	'CORE',
+'CORE',
     },
     Defense = {
 ArmorType = 'Structure',
@@ -68,7 +68,7 @@ BuildTime = 4094,
     Footprint = {
 SizeX = 1,
 SizeZ = 1,
-	MaxSlope = 0.625,
+MaxSlope = 0.625,
     },
     General = {
 Category = 'Defense',
@@ -127,7 +127,7 @@ Fire = Sound {
     FireTargetLayerCapsTable = {
 Land = 'Land|Water|Air',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     FiringTolerance = 0,
     Label = 'CORPLAS_WEAPON',
@@ -188,7 +188,7 @@ Land = 'Land|Water|Air',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

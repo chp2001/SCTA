@@ -10,11 +10,11 @@ UISelection = Sound {
     Cue = 'TIDEGEN1',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOSML3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 10,
     Categories = {
@@ -27,20 +27,20 @@ UISelection = Sound {
 'RECLAIMABLE',
 'TECH1',
 
-	
-	'STRUCTURE',
+
+'STRUCTURE',
 'ECONOMIC',
 'SORTECONOMY',
-	'ENERGYPRODUCTION',
-	'NAVAL',
+'ENERGYPRODUCTION',
+'NAVAL',
 
-	
-	'ARM',
-	'ENERGY',
-	'LEVEL1',
-	
-	
-	
+
+'ARM',
+'ENERGY',
+'LEVEL1',
+
+
+
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -54,22 +54,22 @@ MaxHealth = 256,
     },
     Description = 'Produces Energy',
     Display = {
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
+--[[DestructionEffects = {
+DestructionEmitters = {
+{
+EmitterBone = {0},
+EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+EmitterSize = 1.25,
+},
+},
+},]]--
 Mesh = {
     IconFadeInZoom = 130,
     LODs = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -82,15 +82,15 @@ BuildTime = 2188,
 ProductionPerSecondEnergy = 20,
 ProductionPerSecondEnergyMin = 15,
 ProductionPerSecondEnergyMax = 25,
-	NaturalProducer = true,
+NaturalProducer = true,
     },
     Footprint = {
 SizeX = 3,
 SizeZ = 3,
-	MinWaterDepth = 1.25,
+MinWaterDepth = 1.25,
     },
     General = {
-	---BuildAngle = 8192,
+---BuildAngle = 8192,
 Category = 'Economy',
 Classification = 'RULEUC_Resource',
 SelectionPriority = 5,
@@ -135,7 +135,7 @@ BuildOnLayerCaps = {
  
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

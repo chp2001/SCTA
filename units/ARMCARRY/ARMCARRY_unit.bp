@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'SHARMSTP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLONUK3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     AI = {
     RefuelingMultiplier = 100,
@@ -55,7 +55,7 @@ StopMove = Sound {
 'OVERLAYMISC',
 'ARM',
 'OCEAN',
-	'LEVEL2',
+'LEVEL2',
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -142,10 +142,10 @@ TechLevel = 'RULEUTL_Advanced',
 UnitName = 'Colossus',
     },
     Intel = {
-	FreeIntel = false,
+FreeIntel = false,
     VisionRadius = 22,
     WaterVisionRadius = 4, 
-	RadarRadius = 113,
+RadarRadius = 113,
     },
     Interface = {
 HelpText = 'Light Carrier',
@@ -154,8 +154,8 @@ HelpText = 'Light Carrier',
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 3,
 MaxBrake = 3,
 MaxSpeed = 4,
@@ -180,14 +180,14 @@ TransportClass = 10,
 { #ATOMIC_BLAST
     Damage = 2000,
     DamageFriendly = true,
-    DamageRadius = 16.125, 					#TO DO (damage tapering)
+    DamageRadius = 16.125, #TO DO (damage tapering)
     DamageType = 'Normal',
     DummyWeapon = true,
     Label = 'DeathWeapon',
 },
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,
@@ -196,8 +196,8 @@ ReclaimTimeMultiplier = 1,
 --Blueprint = '/mods/SCTA-master/units/ARMCARRY/ARMCARRY_dead_prop.bp',
 WreckageLayers = {
     Water = true,
-	    Sub = true,
-	    Seabed = true,
+    Sub = true,
+    Seabed = true,
 },
     },
 }

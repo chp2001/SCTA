@@ -10,21 +10,21 @@ UISelection = Sound {
     Cue = 'PLABACTV',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Construct = Sound {
+Construct = Sound {
     Bank = 'TA_Sound',
     Cue = 'PLABWORK',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	ConstructStop = Sound {
+},
+ConstructStop = Sound {
     Bank = 'TA_Sound',
     Cue = 'UNITDONE',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	Destroyed = Sound {
+},
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG4',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 2,
     Categories = {
@@ -34,15 +34,15 @@ UISelection = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH2',
-	'FACTORY',
+'FACTORY',
 'RALLYPOINT',
 'SHOWQUEUE',
-	'STRUCTURE',
-	'CONSTRUCTION',
-	'CORE',
-		'PLANT',
-	'SORTCONSTRUCTION',
-	'LEVEL2',
+'STRUCTURE',
+'CONSTRUCTION',
+'CORE',
+'PLANT',
+'SORTCONSTRUCTION',
+'LEVEL2',
     'LAND',
     },
     Defense = {
@@ -65,7 +65,7 @@ Mesh = {
 {
     LODCutoff = 400,
     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -75,17 +75,17 @@ UniformScale = 0.16,
 BuildCostEnergy = 3625,
 BuildCostMass = 1972, 
 BuildTime = 14000,
-	BuildRate = 200,
+BuildRate = 200,
 BuildableCategory = {
     'KBOT LEVEL2 CORE',
 },
-	InitialRallyX = 0,
-	InitialRallyZ = 5,
+InitialRallyX = 0,
+InitialRallyZ = 5,
 StorageMass = 200,
 StorageEnergy = 200,
     },
     Footprint = {
-	MaxSlope = 0.625,
+MaxSlope = 0.625,
 SizeX = 6,
 SizeZ = 6,
     },
@@ -107,7 +107,7 @@ SelectionPriority = 5,
 ConstructionBar = true,
 FactionName = 'CORE',
 TechLevel = 'RULEUTL_Advanced',
-	UnitName = 'Adv. Kbot Lab',
+UnitName = 'Adv. Kbot Lab',
     },
     Intel = {
 VisionRadius = 14,
@@ -183,7 +183,7 @@ OccupyRects = {
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

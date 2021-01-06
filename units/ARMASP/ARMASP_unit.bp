@@ -10,21 +10,21 @@ UISelection = Sound {
     Cue = 'PAIRACTV',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Construct = Sound {
+Construct = Sound {
     Bank = 'TA_Sound',
     Cue = 'PLABWORK',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	ConstructStop = Sound {
+},
+ConstructStop = Sound {
     Bank = 'TA_Sound',
     Cue = 'UNITDONE',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	Destroyed = Sound {
+},
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG4',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     AI = {
 GuardScanRadius = 300,
@@ -46,12 +46,12 @@ StagingPlatformScanRadius = 300,
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH1',
-	'STRUCTURE',
-	'STRATEGIC',
+'STRUCTURE',
+'STRATEGIC',
 'AIRSTAGINGPLATFORM',
 'OVERLAYMISC',
-	'ARM',
-	'LEVEL3',
+'ARM',
+'LEVEL3',
     },
     Defense = {
 ArmorType = 'Structure',
@@ -73,7 +73,7 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -83,13 +83,13 @@ UniformScale = 0.16,
 BuildCostEnergy = 8510,
 BuildCostMass = 425,
 BuildTime = 21953,
-	BuildRate = 200,
-	NaturalProducer = true,
+BuildRate = 200,
+NaturalProducer = true,
     ProductionPerSecondEnergy = 10,
-	StorageEnergy = 100,
+StorageEnergy = 100,
     },
     Footprint = {
-	MaxSlope = 0.625,
+MaxSlope = 0.625,
 SizeX = 2,
 SizeZ = 2,
     },
@@ -168,7 +168,7 @@ DockingSlots = 1,
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

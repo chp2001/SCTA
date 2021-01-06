@@ -57,7 +57,7 @@ Type = 'GroundKickup01',
 },
 ---TransportAnimation = { { Animation = '/mods/SCTA-master/units/armspid/armspid_Alegfold.sca', Weight = 100 } },
 -- = { { Animation = '/mods/SCTA-master/units/armspid/armspid_Alegunfold.sca', Weight = 100 } },
-	    --SmokeBone = 'Turret_Yaw',
+    --SmokeBone = 'Turret_Yaw',
 UniformScale = 0.038,
     },
     Economy = {

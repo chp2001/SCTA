@@ -30,7 +30,7 @@ UISelection = Sound {
     Categories = {
 'PRODUCTSC1',
 'SELECTABLE',
-       	'COMMAND',
+       'COMMAND',
 'CYBRAN',
 'MOBILE',
 'LAND',

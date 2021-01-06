@@ -20,26 +20,26 @@ StopMove = Sound {
     Cue = 'KBCORSTP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	Construct = Sound {
+},
+Construct = Sound {
     Bank = 'TA_Sound',
     Cue = 'NANLATH1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	StartReclaim = Sound {
+},
+StartReclaim = Sound {
     Bank = 'TA_Sound',
     Cue = 'RECLAIM1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	DeathExplosion = Sound {
+},
+DeathExplosion = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 0,
     Categories = {
@@ -54,11 +54,11 @@ StopMove = Sound {
 'SHOWQUEUE',
 'SELECTION',
 'MOBILE',
-	'CONSTRUCTION',
-	'LAND',
+'CONSTRUCTION',
+'LAND',
 'CORE',
 'KBOT',
-	'LEVEL2',
+'LEVEL2',
     },
     Defense = {
 ArmorType = 'Normal',
@@ -87,7 +87,7 @@ Mesh = {
 },
     },
 },
-	SmokeBone = 'torso',
+SmokeBone = 'torso',
 UniformScale = 0.16,
     },
     Economy = {
@@ -102,8 +102,8 @@ MaxBuildDistance = 3.75,
 StorageEnergy = 25,
 StorageMass = 25,
 NaturalProducer = true,
-	ProductionPerSecondEnergy = 20,
-	ProductionPerSecondMass = 1,
+ProductionPerSecondEnergy = 20,
+ProductionPerSecondMass = 1,
     },
     General = {
 BuildBones = {
@@ -141,8 +141,8 @@ HelpText = 'Tech Level 2',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 1.1,
 MaxBrake = 1.1,
 MaxSpeed = 1.125,
@@ -174,7 +174,7 @@ TransportClass = 2,
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'SUCORSTP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOMED2',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 3,
     Categories = {
@@ -33,9 +33,9 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	'NAVAL',
+'NAVAL',
     'T1SUBMARINE',
-	'ANTINAVY',
+'ANTINAVY',
     'NOSMOKE',
     'SUBMERSIBLE',
 'OVERLAYANTINAVY',
@@ -65,15 +65,15 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
-	MovementEffects = {
-		Emitter = '/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
-		Scale = 0.5,
-		Bones = {'wake'},
-	},
+MovementEffects = {
+Emitter = '/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
+Scale = 0.5,
+Bones = {'wake'},
+},
 UniformScale = 0.16,
     },
     Economy = {
@@ -84,7 +84,7 @@ BuildTime = 9729,
     Footprint = {
 SizeX = 3,
 SizeZ = 3,
-	MinWaterDepth = 1.25,
+MinWaterDepth = 1.25,
     },
     General = {
 Category = 'Submarine',
@@ -102,7 +102,7 @@ TechLevel = 'RULEUTL_Basic',
 UnitName = 'Snake',
     },
     Intel = {
-	FreeIntel = true,
+FreeIntel = true,
 SonarRadius = 50,
 VisionRadius = 20,
 WaterVisionRadius = 12,
@@ -123,8 +123,8 @@ BuildOnLayerCaps = {
     LAYER_Water = false,
 },
 Elevation = -1.25,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 5.5,
 MaxBrake = 4,
 MaxSpeed = 4,
@@ -151,7 +151,7 @@ Fire = Sound {
     },
     BallisticArc = 'RULEUBA_None',
     CollideFriendly = false,
-	    DamageFriendly = true,
+    DamageFriendly = true,
     Damage = 240,
 DamageRadius = 0.5,
 DamageType = 'AntiSub',
@@ -222,7 +222,7 @@ RackBone = 'flare2',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,
@@ -231,8 +231,8 @@ ReclaimTimeMultiplier = 1,
 --Blueprint = '/mods/SCTA-master/units/CORSUB/CORSUB_dead_prop.bp',
 WreckageLayers = {
     Water = true,
-	    Sub = true,
-	    Seabed = true,
+    Sub = true,
+    Seabed = true,
 },
     },
 }

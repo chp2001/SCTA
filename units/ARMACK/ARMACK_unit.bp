@@ -20,21 +20,21 @@ StopMove = Sound {
     Cue = 'KBARMSTP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Construct = Sound {
+Construct = Sound {
     Bank = 'TA_Sound',
     Cue = 'NANLATH1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	StartReclaim = Sound {
+},
+StartReclaim = Sound {
     Bank = 'TA_Sound',
     Cue = 'RECLAIM1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	Destroyed = Sound {
+},
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 0,
     Categories = {
@@ -48,12 +48,12 @@ StopMove = Sound {
 'PATROLHELPER',
 'SHOWQUEUE',
 'MOBILE',
-	'CONSTRUCTION',
-	'LAND',
-	'SELECTION', 
+'CONSTRUCTION',
+'LAND',
+'SELECTION', 
 'ARM',
 'KBOT',
-	'LEVEL2',
+'LEVEL2',
     },
     Defense = {
 ArmorType = 'Normal',
@@ -73,7 +73,7 @@ AnimationWalkRate = 1,
 Abilities = {
     'Adv. Construction Unit',
 },
-	TransportAnimation = {
+TransportAnimation = {
     {
 Animation = '/mods/SCTA-master/units/ARMACK/ARMACK_lod0_afold.sca',
 Weight = 100,
@@ -88,7 +88,7 @@ Mesh = {
 },
     },
 },
-	SmokeBone = 'Torso',
+SmokeBone = 'Torso',
 UniformScale = 0.16,
     },
     Economy = {
@@ -102,9 +102,9 @@ BuildableCategory = {
 MaxBuildDistance = 3.75,
 StorageEnergy = 25,
 StorageMass = 25,
-	NaturalProducer = true,
-	ProductionPerSecondEnergy = 20,
-	ProductionPerSecondMass = 1,
+NaturalProducer = true,
+ProductionPerSecondEnergy = 20,
+ProductionPerSecondMass = 1,
     },
     General = {
 BuildBones = {
@@ -142,8 +142,8 @@ HelpText = 'Tech Level 2',
     LifeBarSize = 1,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	    BackUpDistance = 0,
-	    MaxSpeedReverse = 0,
+    BackUpDistance = 0,
+    MaxSpeedReverse = 0,
 MaxAcceleration = 1.125,
 MaxBrake = 1.125,
 MaxSpeed = 1.125,
@@ -175,7 +175,7 @@ TransportClass = 2,
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

@@ -22,11 +22,11 @@ Deactivate = Sound {
     LodCutoff = 'UnitMove_LodCutoff',
 },
 
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG4',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 2,
     Categories = {
@@ -38,13 +38,13 @@ Deactivate = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH3',
-	'STRUCTURE',
+'STRUCTURE',
 'MASSPRODUCTION',
 'ECONOMIC',
-'SORTECONOMY',	
-	'ARM',
-	'ENERGY',
-	'LEVEL2',
+'SORTECONOMY',
+'ARM',
+'ENERGY',
+'LEVEL2',
     },
     Defense = {
 DamageModifier = 1,
@@ -61,7 +61,7 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -72,10 +72,10 @@ BuildCostEnergy = 9350,
 BuildCostMass = 58,
 BuildTime = 34980,
 ProductionPerSecondMass = 16,
-	MaintenanceConsumptionPerSecondEnergy = 800,
+MaintenanceConsumptionPerSecondEnergy = 800,
     },
     Footprint = {
-	MaxSlope = 0.625,
+MaxSlope = 0.625,
 SizeX = 2,
 SizeZ = 2,
     },
@@ -126,7 +126,7 @@ BuildOnLayerCaps = {
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

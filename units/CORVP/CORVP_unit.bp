@@ -10,21 +10,21 @@ UISelection = Sound {
     Cue = 'PVEHACTV',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Construct = Sound {
+Construct = Sound {
     Bank = 'TA_Sound',
     Cue = 'PVEHWORK',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	ConstructStop = Sound {
+},
+ConstructStop = Sound {
     Bank = 'TA_Sound',
     Cue = 'UNITDONE',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	Destroyed = Sound {
+},
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG4',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 0,
     Categories = {
@@ -39,16 +39,16 @@ UISelection = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH1',
-	'FACTORY',
+'FACTORY',
 'RALLYPOINT',
 'SHOWQUEUE',
-	'STRUCTURE',
-	'CONSTRUCTION',
-	'LAND',
-	'CORE',
-		'PLANT',
-	'SORTCONSTRUCTION',
-	'LEVEL1',
+'STRUCTURE',
+'CONSTRUCTION',
+'LAND',
+'CORE',
+'PLANT',
+'SORTCONSTRUCTION',
+'LEVEL1',
     },
     Defense = {
 ArmorType = 'Structure',
@@ -63,14 +63,14 @@ SurfaceThreatLevel = 0,
     Display = {
 AnimationUnpack = '/mods/SCTA-master/units/CORVP/CORVP_lod0_aopen.sca',
 AnimationUnpackRate = 1.5, 
-	BuildAttachBone = 'pad',
+BuildAttachBone = 'pad',
 Mesh = {
     IconFadeInZoom = 130,
     LODs = {
 {
     LODCutoff = 400,
     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -80,17 +80,17 @@ UniformScale = 0.16,
 BuildCostEnergy = 1100,
 BuildCostMass = 600, 
 BuildTime = 6700,
-	BuildRate = 100,
+BuildRate = 100,
 BuildableCategory = {
     'VEHICLE LEVEL1 CORE',
 },
-	InitialRallyX = 0,
-	InitialRallyZ = 5,
+InitialRallyX = 0,
+InitialRallyZ = 5,
 StorageMass = 50,
 StorageEnergy = 50,
     },
     Footprint = {
-	MaxSlope = 0.625,
+MaxSlope = 0.625,
 SizeX = 7,
 SizeZ = 7,
     },
@@ -112,7 +112,7 @@ SelectionPriority = 5,
 ConstructionBar = true,
 FactionName = 'CORE',
 TechLevel = 'RULEUTL_Basic',
-	UnitName = 'Vehicle Plant',
+UnitName = 'Vehicle Plant',
     },
     Intel = {
 VisionRadius = 14,
@@ -176,7 +176,7 @@ OccupyRects = {
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

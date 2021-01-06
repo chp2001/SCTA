@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'AMPHSTP1',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 6,
     Categories = {
@@ -38,7 +38,7 @@ StopMove = Sound {
 'LAND',
 'ARM',
 'HOVER',
-	'LEVEL2',
+'LEVEL2',
     },
     Defense = {
 ArmorType = 'Normal',
@@ -67,20 +67,20 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
-	IdleEffects = {
-		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
-		Scale = 0.5,
-		Bones = {'lfoot','rfoot'},
-	},
-	MovementEffects = {
-		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
-		Scale = 0.5,
-		Bones = {'lfoot','rfoot'},
-	},
+IdleEffects = {
+Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
+Scale = 0.5,
+Bones = {'lfoot','rfoot'},
+},
+MovementEffects = {
+Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
+Scale = 0.5,
+Bones = {'lfoot','rfoot'},
+},
 UniformScale = 0.16,
     },
     Economy = {

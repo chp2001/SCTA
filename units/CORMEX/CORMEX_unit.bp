@@ -21,11 +21,11 @@ Deactivate = Sound {
     LodCutoff = 'UnitMove_LodCutoff',
 },
 
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOSML3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 5,
     Categories = {
@@ -40,16 +40,16 @@ Deactivate = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH1',
-	    'STRUCTURE',
+    'STRUCTURE',
 'MASSPRODUCTION',
 'MASSEXTRACTION',
 'ECONOMIC',
 'SORTECONOMY',
     'CORE',
     'SHOWQUEUE',
-	'METAL',
-	'LEVEL1',
-	'STORAGE',
+'METAL',
+'LEVEL1',
+'STORAGE',
     },
     Defense = {
 ArmorType = 'Structure',
@@ -81,7 +81,7 @@ MaintenanceConsumptionPerSecondEnergy = 3,
 ProductionPerSecondMass = 2.2,
     },
     General = {
-	---BuildAngle = 2048,
+---BuildAngle = 2048,
 Category = 'Economy',
 Classification = 'RULEUC_Resource',
 SelectionPriority = 5,
@@ -152,7 +152,7 @@ BuildRestriction = 'RULEUBR_OnMassDeposit',
  
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

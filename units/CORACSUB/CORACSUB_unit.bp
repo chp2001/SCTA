@@ -20,21 +20,21 @@ StopMove = Sound {
     Cue = 'SUARMSTP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Construct = Sound {
+Construct = Sound {
     Bank = 'TA_Sound',
     Cue = 'NANLATH1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	StartReclaim = Sound {
+},
+StartReclaim = Sound {
     Bank = 'TA_Sound',
     Cue = 'RECLAIM1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	Destroyed = Sound {
+},
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOMED2',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 0,
     Categories = {
@@ -49,13 +49,13 @@ StopMove = Sound {
 'SHOWQUEUE',
 'SELECTION',
 'MOBILE',
-	    'CONSTRUCTION',
-	    'NAVAL',
+    'CONSTRUCTION',
+    'NAVAL',
 'CORE',
 'OCEAN',
 'T2SUBMARINE',
 'OVERLAYSONAR',
-	    'LEVEL2',
+    'LEVEL2',
     },
     Defense = {
 ArmorType = 'Normal',
@@ -73,7 +73,7 @@ AnimationBuildRate = 0.2,
 Abilities = {
     'Construction Unit',
 },
-	BuildBones = {'muzzle'},
+BuildBones = {'muzzle'},
 Mesh = {
     IconFadeInZoom = 130,
     LODs = {
@@ -83,11 +83,11 @@ Mesh = {
 },
     },
 },
-	MovementEffects = {
-		Emitter = '/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
-		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02'},
-	},
+MovementEffects = {
+Emitter = '/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
+Scale = 0.5,
+Bones = {'Wake_01','Wake_02'},
+},
 UniformScale = 0.16,
     },
     Economy = {
@@ -102,8 +102,8 @@ MaxBuildDistance = 6.25,
 StorageEnergy = 50,
 StorageMass = 50,
 NaturalProducer = true,
-	ProductionPerSecondEnergy = 15,
-	ProductionPerSecondMass = 1,
+ProductionPerSecondEnergy = 15,
+ProductionPerSecondMass = 1,
     },
     Footprint = {
 SizeX = 2,
@@ -136,8 +136,8 @@ UnitName = 'Advanced Construction Sub',
     Intel = {
 VisionRadius = 8,
 WaterVisionRadius = 8,
-	SonarRadius = 25,
-	FreeIntel = true,
+SonarRadius = 25,
+FreeIntel = true,
     },
     Interface = {
 HelpText = 'Tech Level 2',
@@ -155,8 +155,8 @@ BuildOnLayerCaps = {
     LAYER_Water = false,
 },
 Elevation = -1.5,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 3.5,
 MaxBrake = 3.5,
 MaxSpeed = 4,
@@ -184,7 +184,7 @@ MaxSteerForce = 10,
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,
@@ -193,8 +193,8 @@ ReclaimTimeMultiplier = 1,
 --Blueprint = '/mods/SCTA-master/units/CORACSUB/CORACSUB_dead_prop.bp',
 WreckageLayers = {
     Water = true,
-	    Sub = true,
-	    Seabed = true,
+    Sub = true,
+    Seabed = true,
 },
     },
 }

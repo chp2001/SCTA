@@ -30,11 +30,11 @@ Landing = Sound {
     Cue = 'VTOLCRLD',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     Air = {
 AutoLandTime = 1,
@@ -102,7 +102,7 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -149,8 +149,8 @@ MotionType = 'RULEUMT_Air',
 GroundCollisionOffset = 1.5,
     MaxSpeed = 0.5, 
     RotateOnSpot = true,
-	FuelRechargeRate = 444444,
-	FuelUseTime = 444444,
+FuelRechargeRate = 444444,
+FuelUseTime = 444444,
     },
     SelectionSizeX = 1.75,
     SelectionSizeZ = 2,
@@ -256,11 +256,11 @@ Fire = Sound {
 Air = 'Land|Water|Air',
 Land = 'Land|Water|Air',
     },
-	    RangeCategory = 'UWRC_AntiAir',
+    RangeCategory = 'UWRC_AntiAir',
      WeaponCategory = 'AntiAir',
     FiringTolerance = 8,
-	    HeadingArcCenter = 0,
-    	    HeadingArcRange = 43.96,
+    HeadingArcCenter = 0,
+        HeadingArcRange = 43.96,
     Label = 'ARMVTOL_MISSILE',
     MaxRadius = 25,
     MuzzleSalvoDelay = 0,

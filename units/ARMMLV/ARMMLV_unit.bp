@@ -20,21 +20,21 @@ StopMove = Sound {
     Cue = 'VARMSTOP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Construct = Sound {
+Construct = Sound {
     Bank = 'TA_Sound',
     Cue = 'NANLATH1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	StartReclaim = Sound {
+},
+StartReclaim = Sound {
     Bank = 'TA_Sound',
     Cue = 'RECLAIM1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	Destroyed = Sound {
+},
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 6,
     Categories = {
@@ -44,13 +44,13 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'SHOWQUEUE',
-	'REPAIR',
+'REPAIR',
 'MOBILE',
-	'CONSTRUCTION',
-	'LAND',
+'CONSTRUCTION',
+'LAND',
 'ARM',
 'VEHICLE',
-	'LEVEL1',
+'LEVEL1',
     },
     Defense = {
 ArmorType = 'Normal',
@@ -74,7 +74,7 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -113,7 +113,7 @@ ConstructionBar = true,
 SelectionPriority = 3,
 FactionName = 'ARM',
 TechLevel = 'RULEUTL_Basic',
-	UnitName = 'Podger',
+UnitName = 'Podger',
     },
     Intel = {
 VisionRadius = 10,
@@ -126,8 +126,8 @@ HelpText = 'Mine Layer Vehicle',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 1,
 MaxBrake = 1,
 MaxSpeed = 2,
@@ -155,7 +155,7 @@ MaxSteerForce = 10,
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

@@ -10,21 +10,21 @@ UISelection = Sound {
     Cue = 'PVEHACTV',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Construct = Sound {
+Construct = Sound {
     Bank = 'TA_Sound',
     Cue = 'PVEHWORK',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	ConstructStop = Sound {
+},
+ConstructStop = Sound {
     Bank = 'TA_Sound',
     Cue = 'UNITDONE',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	Destroyed = Sound {
+},
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG4',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 2,
     Categories = {
@@ -34,14 +34,14 @@ UISelection = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH2',
-	'FACTORY',
+'FACTORY',
 'RALLYPOINT',
 'SHOWQUEUE',
-	'STRUCTURE',
-	'CONSTRUCTION',
-	'ARM',
-		'PLANT',
-	'SORTCONSTRUCTION',
+'STRUCTURE',
+'CONSTRUCTION',
+'ARM',
+'PLANT',
+'SORTCONSTRUCTION',
     'LEVEL2',
     'LAND',
     },
@@ -65,7 +65,7 @@ Mesh = {
 {
     LODCutoff = 400,
     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -75,12 +75,12 @@ UniformScale = 0.16,
 BuildCostEnergy = 3200,
 BuildCostMass = 1984, 
 BuildTime = 14950,
-	BuildRate = 200,
+BuildRate = 200,
 BuildableCategory = {
     'VEHICLE LEVEL2 ARM',
 },
-	InitialRallyX = 0,
-	InitialRallyZ = 5,
+InitialRallyX = 0,
+InitialRallyZ = 5,
 StorageMass = 200,
 StorageEnergy = 200,
     },
@@ -106,7 +106,7 @@ SelectionPriority = 5,
 ConstructionBar = true,
 FactionName = 'ARM',
 TechLevel = 'RULEUTL_Advanced',
-	UnitName = 'Adv. Vehicle Plant',
+UnitName = 'Adv. Vehicle Plant',
     },
     Intel = {
 VisionRadius = 14,
@@ -171,7 +171,7 @@ OccupyRects = {
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'KBARMSTP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 3,
     Categories = {
@@ -33,12 +33,12 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
+'LAND',
+'DIRECTFIRE',
 'OVERLAYDIRECTFIRE',
 'ARM',
 'KBOT',
-	'LEVEL2',
+'LEVEL2',
     },
     Defense = {
 ArmorType = 'Normal',
@@ -62,11 +62,11 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
-	SmokeBone = 'Torso',
+SmokeBone = 'Torso',
 UniformScale = 0.06,
     },
     Economy = {
@@ -101,8 +101,8 @@ HelpText = 'Assault Kbot',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 3.28,
 MaxBrake = 2.5,
 MaxSpeed = 2.5,
@@ -132,23 +132,23 @@ Fire = Sound {
     },
     BallisticArc = 'RULEUBA_None',
     CollideFriendly = false,
-	    DamageFriendly = false,
+    DamageFriendly = false,
     Damage = 240,
-	    DamageRadius = 0.25,
+    DamageRadius = 0.25,
     DamageType = 'Normal',
     DisplayName = 'GAUSS',
     FireTargetLayerCapsTable = {
 Land = 'Land|Water|Seabed',
 Seabed = 'Land|Water|Seabed',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     FiringTolerance = 0,
     Label = 'GAUSS',
     MaxRadius = 24,
     MuzzleSalvoDelay = 0,
     MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 28,
+    MuzzleVelocity = 28,
     ProjectileId = '/mods/SCTA-master/projectiles/GAUSS/GAUSS_proj.bp',
     RackBones = {
 {
@@ -195,7 +195,7 @@ Seabed = 'Land|Water|Seabed',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

@@ -20,11 +20,11 @@ Deactivate = Sound {
     Cue = 'SONARDE1',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOSML3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 16,
     Categories = {
@@ -34,15 +34,15 @@ Deactivate = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH3',
-	'STRUCTURE',
-	'INTELLIGENCE',
-	'SONAR',
-	'NAVAL',	
+'STRUCTURE',
+'INTELLIGENCE',
+'SONAR',
+'NAVAL',
 'OVERLAYSONAR',
     'ARM',
-	'SPECIAL',
-	'LEVEL2',
-	'SORTINTEL',
+'SPECIAL',
+'LEVEL2',
+'SORTINTEL',
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -66,7 +66,7 @@ Mesh = {
 {
   LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -76,16 +76,16 @@ UniformScale = 0.16,
 BuildCostEnergy = 2469,
 BuildCostMass = 163,
 BuildTime = 6152,
-	NaturalProducer = false,
-	MaintenanceConsumptionPerSecondEnergy = 25,
+NaturalProducer = false,
+MaintenanceConsumptionPerSecondEnergy = 25,
     },
     Footprint = {
 SizeX = 2,
 SizeZ = 2,
-	MinWaterDepth = 1.5,
+MinWaterDepth = 1.5,
     },
     General = {
-	---BuildAngle = 8192,
+---BuildAngle = 8192,
 Category = 'Intelligence',
 Classification = 'RULEUC_Sensor',
 ToggleCaps = {
@@ -97,10 +97,10 @@ TechLevel = 'RULEUTL_Secret',
 UnitName = 'Advanced Sonar Station',
     },
     Intel = {
-	FreeIntel = false,
+FreeIntel = false,
     VisionRadius = 12,
-	SonarRadius = 140,
-	WaterVisionRadius = 12,
+SonarRadius = 140,
+WaterVisionRadius = 12,
     },
     Interface = {
 HelpText = 'Extended Sonar',
@@ -135,7 +135,7 @@ BuildOnLayerCaps = {
  
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

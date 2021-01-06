@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'KBCORSTP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 3,
     Categories = {
@@ -33,16 +33,16 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
+'LAND',
+'DIRECTFIRE',
 'OVERLAYDIRECTFIRE',
 'CORE',
 'KBOT',
-	'LEVEL1',
-	
-	
-	
-	
+'LEVEL1',
+
+
+
+
     },
     Defense = {
 ArmorType = 'Normal',
@@ -60,24 +60,24 @@ AnimationWalkRate = 1.5,
 Abilities = {
     'Rocket',
 },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'torso'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'launcher'},
-				EmitterBlueprint = {
-	    				'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
+--[[DestructionEffects = {
+DestructionEmitters = {
+{
+EmitterBone = {'torso'},
+EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+EmitterSize = 1.25,
+},
+{
+EmitterBone = {'launcher'},
+EmitterBlueprint = {
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
+},
+EmitterSize = 0.35,
+},
+},
+},]]---
 Mesh = {
     IconFadeInZoom = 130,
     LODs = {
@@ -87,15 +87,15 @@ Mesh = {
 },
     },
 },
-	SmokeBone = 'torso',
-	TransportAnimation = {
+SmokeBone = 'torso',
+TransportAnimation = {
     {
 Animation = '/mods/SCTA-master/units/CORSTORM/CORSTORM_lod0_Afold.sca',
 Weight = 100,
     },
-		},
-		
-		TransportDropAnimation = {
+},
+
+TransportDropAnimation = {
     {
 Animation = '/mods/SCTA-master/units/CORSTORM/CORSTORM_lod0_Aunfold.sca',
 Weight = 100,
@@ -136,8 +136,8 @@ HelpText = 'Rocket Kbot',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 2.8,
 MaxBrake =2.8,
 MaxSpeed = 2.8,
@@ -175,7 +175,7 @@ Fire = Sound {
 Land = 'Land|Water|Air',
 Seabed = 'Land|Water|Air',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     FiringTolerance = 0,
     Label = 'CORKBOT_ROCKET',
@@ -197,7 +197,7 @@ Seabed = 'Land|Water|Air',
     },
     RackBone = 'launcher',
 },
-	    },
+    },
     RackRecoilDistance = 0,
     RackReloadTimeout = 0,
     RackSalvoChargeTime = 0,
@@ -235,7 +235,7 @@ Seabed = 'Land|Water|Air',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'KBARMSTP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 6,
     Categories = {
@@ -33,18 +33,18 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
-	'ANTIAIR',
+'LAND',
+'DIRECTFIRE',
+'ANTIAIR',
 'OVERLAYDIRECTFIRE',
-	'OVERLAYANTIAIR',
+'OVERLAYANTIAIR',
 'ARM',
 'KBOT',
-	'LEVEL1',
-	
-	
-	
-	
+'LEVEL1',
+
+
+
+
     },
     Defense = {
 ArmorType = 'Normal',
@@ -62,35 +62,35 @@ AnimationWalkRate = 1,
 Abilities = {
 '<LOC ability_aa>Anti-Air',
     },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Torso'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'LeftLauncher', 'RightLauncher'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
+--[[DestructionEffects = {
+DestructionEmitters = {
+{
+EmitterBone = {'Torso'},
+EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+EmitterSize = 1.25,
+},
+{
+EmitterBone = {'LeftLauncher', 'RightLauncher'},
+EmitterBlueprint = {
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
+},
+EmitterSize = 0.35,
+},
+},
+},]]---
 Mesh = {
     IconFadeInZoom = 130,
     LODs = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
-	SmokeBone = 'Torso',
+SmokeBone = 'Torso',
 UniformScale = 0.16,
     },
     Economy = {
@@ -126,8 +126,8 @@ HelpText = 'Anti-Air Kbot',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 2.6,
 MaxBrake = 2.6,
 MaxSpeed = 2.625,
@@ -213,7 +213,7 @@ Seabed = 'Land|Water|Air',
     TurretYawRange = 360,
     TurretYawSpeed = 275.06,
     Turreted = true,
-	    WeaponUnpacks = true,
+    WeaponUnpacks = true,
     WeaponRepackTimeout = 3,
 },
 { #BIG_UNITEX
@@ -227,7 +227,7 @@ Seabed = 'Land|Water|Air',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

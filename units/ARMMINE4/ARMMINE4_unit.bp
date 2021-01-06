@@ -10,11 +10,11 @@ UISelection = Sound {
     Cue = 'MINESEL1',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'EXMINE4',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 3,
     Categories = {
@@ -22,16 +22,16 @@ UISelection = Sound {
 'TECH2',
 'VISIBLETORECON',
 'RECLAIMABLE',
-	'BUILTBYT1MINELAYER',
-	'LAND',
-	'DIRECTFIRE',
+'BUILTBYT1MINELAYER',
+'LAND',
+'DIRECTFIRE',
 'OVERLAYDIRECTFIRE',
 'ARM',
 'TACLOAK',
 'MINE',
 'STRUCTURE',
-	'LEVEL2',
-	'KAMIKAZI',
+'LEVEL2',
+'KAMIKAZI',
     },
     Defense = {
 ArmorType = 'Structure',
@@ -47,14 +47,14 @@ MaxHealth = 200,
 Abilities = {
     'Kamikazi',
 },
-		CloakMesh = '/mods/SCTA-master/units/ARMMINE4/ARMMINE4_cloak_mesh',
+CloakMesh = '/mods/SCTA-master/units/ARMMINE4/ARMMINE4_cloak_mesh',
 Mesh = {
     IconFadeInZoom = 130,
     LODs = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -67,20 +67,20 @@ BuildTime = 4000,
 MaintenanceConsumptionPerSecondEnergy = 10,
     },
     Footprint = {
-	SizeX = 1,
-	SizeZ = 1,
-	MaxSlope = 0.9375,
-	MaxWaterDepth = 0,
+SizeX = 1,
+SizeZ = 1,
+MaxSlope = 0.9375,
+MaxWaterDepth = 0,
     },
     General = {
 Category = 'Direct Fire',
 Classification = 'RULEUC_MilitaryVehicle',
 CommandCaps = {
-	RULEUCC_RetaliateToggle = true,
+RULEUCC_RetaliateToggle = true,
 },
-	ToggleCaps = {
-		RULEUTC_CloakToggle = true,
-	},
+ToggleCaps = {
+RULEUTC_CloakToggle = true,
+},
 FactionName = 'ARM',
 TechLevel = 'RULEUTL_Advanced',
 UnitName = 'HE Area Mine',
@@ -115,24 +115,24 @@ Fire = Sound {
     },
     BallisticArc = 'RULEUBA_None',
     CollideFriendly = false,
-	    DamageFriendly = true,
+    DamageFriendly = true,
     Damage = 10, #Doubles up with death, so death damage subtracted
-	    DamageRadius = 6,
+    DamageRadius = 6,
     DamageType = 'Normal',
     DisplayName = 'ARMMINE4',
-	  ---EdgeEffectiveness = 0.05,
+  ---EdgeEffectiveness = 0.05,
     FireTargetLayerCapsTable = {
 Land = 'Land|Water',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     FiringTolerance = 360,
     Label = 'ARMMINE4',
     MaxRadius = 6,
     MuzzleSalvoDelay = 0,
     MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 1,
-	    ProjectileId = '/mods/SCTA-master/projectiles/ARMMINE4/ARMMINE4_proj.bp',
+    MuzzleVelocity = 1,
+    ProjectileId = '/mods/SCTA-master/projectiles/ARMMINE4/ARMMINE4_proj.bp',
     RackBones = {
 {
     MuzzleBones = {

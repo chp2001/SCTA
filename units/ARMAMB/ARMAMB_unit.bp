@@ -10,11 +10,11 @@ UISelection = Sound {
     Cue = 'TWRTURN3',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOMED1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 6,
     Categories = {
@@ -26,13 +26,13 @@ UISelection = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH3',
-	'STRUCTURE',
-	'DEFENSE',
-	'DIRECTFIRE',
+'STRUCTURE',
+'DEFENSE',
+'DIRECTFIRE',
 'OVERLAYDIRECTFIRE',
-	'ARM',
-	'LEVEL2',
-	'STRATEGIC',
+'ARM',
+'LEVEL2',
+'STRATEGIC',
     'SORTDEFENSE',
     'SNIPEMODE',
     },
@@ -57,7 +57,7 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -166,7 +166,7 @@ WeaponCategory = 'IndirectFire',
     TurretYawRange = 360,
     TurretYawSpeed = 100,
     Turreted = true,
-	WeaponUnpacks = true,
+WeaponUnpacks = true,
     WeaponRepackTimeout = 3,
 },
 { #LARGE_BUILDINGEX
@@ -180,7 +180,7 @@ WeaponCategory = 'IndirectFire',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

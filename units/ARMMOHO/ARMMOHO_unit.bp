@@ -21,11 +21,11 @@ Deactivate = Sound {
     LodCutoff = 'UnitMove_LodCutoff',
 },
 
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOSML3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 1,
     Categories = {
@@ -38,18 +38,18 @@ Deactivate = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'TECH3',
-	'STRUCTURE',
+'STRUCTURE',
 'MASSPRODUCTION',
 'MASSEXTRACTION',
 'ECONOMIC',
 'SORTECONOMY',
-	'ARM',
-	'ENERGY',
-	'LEVEL3',
-	
-	
-	
-	'STORAGE',
+'ARM',
+'ENERGY',
+'LEVEL3',
+
+
+
+'STORAGE',
     },
     Defense = {
 ArmorType = 'Structure',
@@ -62,31 +62,31 @@ MaxHealth = 1573,
     },
     Description = 'Advanced Metal Extractor',
     Display = {
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'ARMMOHO'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'Blades'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
+--[[DestructionEffects = {
+DestructionEmitters = {
+{
+EmitterBone = {'ARMMOHO'},
+EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+EmitterSize = 1.25,
+},
+{
+EmitterBone = {'Blades'},
+EmitterBlueprint = {
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
+    '/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
+},
+EmitterSize = 0.35,
+},
+},
+},]]---
 Mesh = {
     IconFadeInZoom = 130,
     LODs = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -102,10 +102,10 @@ ProductionPerSecondMass = 6.6,
     Footprint = {
 SizeX = 5,
 SizeZ = 5,
-	MaxSlope = 0.625,
+MaxSlope = 0.625,
     },
     General = {
-	---BuildAngle = 2048,
+---BuildAngle = 2048,
 Category = 'Economy',
 Classification = 'RULEUC_Resource',
 SelectionPriority = 5,
@@ -156,7 +156,7 @@ BuildRestriction = 'RULEUBR_OnMassDeposit',
  
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

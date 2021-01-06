@@ -30,11 +30,11 @@ Landing = Sound {
     Cue = 'VTOLARLD',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     Air = {
 AutoLandTime = 1,
@@ -66,7 +66,7 @@ Winged = true,
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	    'AIR',
+    'AIR',
     'VTOL',
     'INTELLIGENCE',
     'RADAR',
@@ -101,7 +101,7 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },

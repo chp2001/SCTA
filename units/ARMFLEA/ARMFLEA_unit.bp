@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'KBARMSTP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 3,
     Categories = {
@@ -33,12 +33,12 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
+'LAND',
+'DIRECTFIRE',
 'OVERLAYDIRECTFIRE',
 'ARM',
 'KBOT',
-	'LEVEL1',
+'LEVEL1',
     },
     Defense = {
 ArmorType = 'Normal',
@@ -59,11 +59,11 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
-	SmokeBone = 'body',
+SmokeBone = 'body',
 UniformScale = 0.16,
     },
     Economy = {
@@ -102,8 +102,8 @@ HelpText = 'Infantry Kbot',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 5.64,
 MaxBrake = 5.6,
 MaxSpeed = 5.625,
@@ -141,14 +141,14 @@ Fire = Sound {
 Land = 'Land|Water|Air',
 Seabed = 'Land|Water|Air',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     FiringTolerance = 0,
     Label = 'ARMFLEA_WEAPON',
     MaxRadius = 24,
     MuzzleSalvoDelay = 0,
     MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 32,
+    MuzzleVelocity = 32,
     ProjectileId = '/mods/SCTA-master/projectiles/ARMFLEA_WEAPON/ARMFLEA_WEAPON_proj.bp',
     RackBones = {
 {
@@ -193,7 +193,7 @@ Seabed = 'Land|Water|Air',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

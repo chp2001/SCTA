@@ -20,46 +20,46 @@ StopMove = Sound {
     Cue = 'KCCORSTP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Construct = Sound {
+Construct = Sound {
     Bank = 'TA_Sound',
     Cue = 'NANLATH2',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
 ConstructStop = Sound {
     Bank = 'TA_Sound',
     Cue = 'KCORMOV',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Cloak = Sound {
+Cloak = Sound {
     Bank = 'TA_Sound',
     Cue = 'KLOAK2',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	Uncloak = Sound {
+},
+Uncloak = Sound {
     Bank = 'TA_Sound',
     Cue = 'KLOAK2UN',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	StartReclaim = Sound {
+},
+StartReclaim = Sound {
     Bank = 'TA_Sound',
     Cue = 'RECLAIM1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	StartCapture = Sound {
+},
+StartCapture = Sound {
     Bank = 'TA_Sound',
     Cue = 'CAPTURE2',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	Destroyed = Sound {
+},
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLONUK4',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	DeathExplosion = Sound {
+},
+DeathExplosion = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLONUK4',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     Categories = {
 'SELECTABLE',
@@ -71,8 +71,8 @@ ConstructStop = Sound {
 'CAPTURE',
 'REPAIR',
 'SHOWQUEUE',
-	'LAND',
-	'MOBILE',
+'LAND',
+'MOBILE',
     'DIRECTFIRE',
     'TACLOAK',
 'ECONOMIC',
@@ -99,7 +99,7 @@ RegenRate = 3.7,  # TA HealTime=27, which appears to be 27 units of 30sec
     },
     Description = 'Commander',
     Display = {
-	AnimationWalk = '/mods/SCTA-master/units/CORCOM/CORCOM_lod0_Awalk.sca',
+AnimationWalk = '/mods/SCTA-master/units/CORCOM/CORCOM_lod0_Awalk.sca',
     AnimationWalkRate = 1,
     CloakMesh = '/mods/SCTA-master/units/CORCOM/CORCOM_cloak_mesh',
 Abilities = {
@@ -119,7 +119,7 @@ ShaderName = 'Unit',
     },
 },
     },
-	SmokeBone = 'Torso',
+SmokeBone = 'Torso',
 UniformScale = 0.16,
     },
     Economy = {
@@ -134,7 +134,7 @@ MaxBuildDistance = 3.75,
 NaturalProducer = true,
 ProductionPerSecondEnergy = 25,
 ProductionPerSecondMass = 1,
-	MaintenanceConsumptionPerSecondEnergy = 200,
+MaintenanceConsumptionPerSecondEnergy = 200,
 StorageEnergy = 1000,
 StorageMass = 1000,
     },
@@ -189,9 +189,9 @@ FreeIntel = false,
 VisionRadius = 18,
 WaterVisionRadius = 18,
 RadarRadius = 25,
-	SonarRadius = 25,
-	Cloak = true,
-	OmniRadius = 3,
+SonarRadius = 25,
+Cloak = true,
+OmniRadius = 3,
     },
     Interface = {
 HelpText = 'Commander',
@@ -200,7 +200,7 @@ HelpText = 'Commander',
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-	BackUpDistance = 0,
+BackUpDistance = 0,
 MaxSpeedReverse = 0,
 MaxAcceleration = 5.76,
 MaxBrake = 11.52,
@@ -242,7 +242,7 @@ Level5 = 120,
     Transport = {
 TransportClass = 2,
     },
-    Weapon = {	
+    Weapon = {
 {
     Audio = {
 Fire = Sound {
@@ -263,7 +263,7 @@ Fire = Sound {
 Land = 'Land|Water|Air|Seabed',
 Seabed = 'Land|Water|Air|Seabed',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     Label = 'COMLASER',
     MaxRadius = 22,
@@ -321,7 +321,7 @@ Fire = Sound {
 Land = 'Land|Water|Seabed',
 Seabed = 'Land|Water|Seabed',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     Label = 'DGun',
     MaxRadius = 22,
@@ -385,7 +385,7 @@ Fire = Sound {
 Land = 'Land|Water|Seabed',
 Seabed = 'Land|Water|Seabed',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     Label = 'AutoDGun',
     MaxRadius = 22,

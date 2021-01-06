@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'KBARMSTP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOMED2',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 11,
     Categories = {
@@ -33,12 +33,12 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
+'LAND',
+'DIRECTFIRE',
 'OVERLAYDIRECTFIRE',
 'ARM',
 'KBOT',
-	'LEVEL2',
+'LEVEL2',
     },
     Defense = {
 ArmorType = 'Normal',
@@ -62,11 +62,11 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
-	SmokeBone = 'Torso',
+SmokeBone = 'Torso',
 UniformScale = 0.16,
     },
     Economy = {
@@ -101,8 +101,8 @@ HelpText = 'Fast Attack Kbot',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 3,
 MaxBrake = 3.2,
 MaxSpeed = 3.2,
@@ -130,22 +130,22 @@ Fire = Sound {
     },
     BallisticArc = 'RULEUBA_None',
     CollideFriendly = false,
-	    DamageFriendly = false,
+    DamageFriendly = false,
     Damage = 40,
-	    DamageRadius = 0.25,
+    DamageRadius = 0.25,
     DamageType = 'Normal',
     DisplayName = 'ARM_FAST',
     FireTargetLayerCapsTable = {
 Land = 'Land|Water|Seabed',
 Seabed = 'Land|Water|Seabed',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     Label = 'ARM_FAST',
     MaxRadius = 20,
     MuzzleSalvoDelay = 0,
     MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 60,
+    MuzzleVelocity = 60,
     ProjectileId = '/mods/SCTA-master/projectiles/ARM_FAST/ARM_FAST_proj.bp',
     RackBones = {
 {
@@ -192,7 +192,7 @@ Seabed = 'Land|Water|Seabed',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

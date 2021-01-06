@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'AMPHSTP1',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 6,
     Categories = {
@@ -38,7 +38,7 @@ StopMove = Sound {
 'LAND',
 'CORE',
 'AMPHIBIOUS',
-	'LEVEL2',
+'LEVEL2',
     },
     Defense = {
 ArmorType = 'Normal',

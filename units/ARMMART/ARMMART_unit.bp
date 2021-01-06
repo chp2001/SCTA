@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'TARMST0P',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 13,
     Categories = {
@@ -33,8 +33,8 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	'LAND',
-	'INDIRECTFIRE',
+'LAND',
+'INDIRECTFIRE',
 'OVERLAYINDIRECTFIRE',
 'ARTILLERY',
 'ARM',
@@ -62,7 +62,7 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -100,8 +100,8 @@ HelpText = 'Mobile Artillery',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 1.1,
 MaxBrake = 1,
 MaxSpeed = 2,
@@ -133,16 +133,16 @@ Fire = Sound {
     },
     BallisticArc = 'RULEUBA_HighArc',
     CollideFriendly = false,
-	    DamageFriendly = true,
+    DamageFriendly = true,
     Damage = 750,
-	    DamageRadius = 1.5,
+    DamageRadius = 1.5,
     DamageType = 'Normal',
     DisplayName = 'ARM_ARTILLERY',
     FireTargetLayerCapsTable = {
 Land = 'Land|Water|Seabed',
 Seabed = 'Land|Water|Seabed',
     },
-	    RangeCategory = 'UWRC_IndirectFire',
+    RangeCategory = 'UWRC_IndirectFire',
      WeaponCategory = 'Artillery',
 FiringRandomness = 1,
 FiringTolerance = 2,
@@ -198,7 +198,7 @@ FiringTolerance = 2,
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

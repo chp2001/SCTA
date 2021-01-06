@@ -33,12 +33,12 @@ LodCutoff = 'UnitMove_LodCutoff',
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
+'LAND',
+'DIRECTFIRE',
 'OVERLAYDIRECTFIRE',
 'CORE',
 'VEHICLE',
-	'LEVEL1',
+'LEVEL1',
     },
     Defense = {
 ArmorType = 'Normal',
@@ -54,22 +54,22 @@ SurfaceThreatLevel = 0.33,
 Abilities = {
     'Assault Tank',
 },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
+--[[DestructionEffects = {
+DestructionEmitters = {
+{
+EmitterBone = {0},
+EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+EmitterSize = 1.25,
+},
+},
+},]]--
 Mesh = {
     IconFadeInZoom = 130,
     LODs = {
 {
     LODCutoff = 230,
     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -107,8 +107,8 @@ HelpText = 'Assault Tank',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 1.2,
 MaxBrake = 1.2,
 MaxSpeed = 2.4,
@@ -135,23 +135,23 @@ Fire = Sound {
     },
     BallisticArc = 'RULEUBA_None',
     CollideFriendly = false,
-	    DamageFriendly = true,
+    DamageFriendly = true,
     Damage = 35,
-	    DamageRadius = 0.25,
+    DamageRadius = 0.25,
     DamageType = 'Normal',
     DisplayName = 'GATOR_LASER',
     FireTargetLayerCapsTable = {
 Land = 'Land|Water|Seabed',
 Seabed = 'Land|Water|Seabed',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     FiringTolerance = 0,
     Label = 'GATOR_LASER',
     MaxRadius = 18,
     MuzzleSalvoDelay = 0,
     MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 25,
+    MuzzleVelocity = 25,
     ProjectileId = '/mods/SCTA-master/projectiles/GATOR_LASER/GATOR_LASER_proj.bp',
     RackBones = {
 {
@@ -206,7 +206,7 @@ Seabed = 'Land|Water|Seabed',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

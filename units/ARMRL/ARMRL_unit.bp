@@ -10,11 +10,11 @@ UISelection = Sound {
     Cue = 'KBARMSEL',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG4',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 15,
     Categories = {
@@ -29,13 +29,13 @@ UISelection = Sound {
 'RECLAIMABLE',
 'TECH2',
 'SORTDEFENSE',
-	'STRUCTURE',
-	'DEFENSE',
-	'ANTIAIR',
-	'OVERLAYANTIAIR',
-	'ARM',
-	'SPECIAL',
-	'LEVEL2',
+'STRUCTURE',
+'DEFENSE',
+'ANTIAIR',
+'OVERLAYANTIAIR',
+'ARM',
+'SPECIAL',
+'LEVEL2',
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -59,7 +59,7 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -73,7 +73,7 @@ BuildTime = 1843,
     Footprint = {
 SizeX = 3,
 SizeZ = 3,
-	MaxSlope = 1.25,
+MaxSlope = 1.25,
     },
     General = {
 Category = 'Defense',
@@ -115,7 +115,7 @@ BuildOnLayerCaps = {
     SizeZ = 3,
     StrategicIconName = 'icon_structure2_antiair',
     StrategicIconSortPriority = 0,
-    Weapon = { 				 				
+    Weapon = {  
 {
     Audio = {
 Fire = Sound {
@@ -186,7 +186,7 @@ Water = 'Land|Water|Air',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

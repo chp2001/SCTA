@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'VARMSTOP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
 Activate = Sound {
     Bank = 'TA_Sound',
     Cue = 'RADJAM1',
@@ -43,14 +43,14 @@ Deactivate = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	'LAND',
+'LAND',
     'INTELLIGENCE',
     'COUNTERINTELLIGENCE',
 'OVERLAYCOUNTERINTEL',
 'ARM',
 'KBOT',
-	'JAM',
-	'LEVEL2',
+'JAM',
+'LEVEL2',
     },
     Defense = {
 ArmorType = 'Normal',
@@ -74,18 +74,18 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
-	SmokeBone = 'Torso',
+SmokeBone = 'Torso',
 UniformScale = 0.16,
     },
     Economy = {
 BuildCostEnergy = 1326,
 BuildCostMass = 73,
 BuildTime = 4937,
-	MaintenanceConsumptionPerSecondEnergy = 15,
+MaintenanceConsumptionPerSecondEnergy = 15,
     },
     General = {
 Category = 'Utility',
@@ -112,10 +112,10 @@ TechLevel = 'RULEUTL_Advanced',
 UnitName = 'Eraser',
     },
     Intel = {
-	FreeIntel = false,
-	RadarStealth = true,
+FreeIntel = false,
+RadarStealth = true,
     VisionRadius = 14,
-	RadarStealthFieldRadius = 31,
+RadarStealthFieldRadius = 31,
     },
     Interface = {
 HelpText = 'Mobile Radar Jammer',
@@ -125,8 +125,8 @@ HelpText = 'Mobile Radar Jammer',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 2,
 MaxBrake = 2,
 MaxSpeed = 2,
@@ -153,7 +153,7 @@ TurnRate = 156.25,
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

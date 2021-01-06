@@ -20,26 +20,26 @@ StopMove = Sound {
     Cue = 'KBCORSTP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Construct = Sound {
+Construct = Sound {
     Bank = 'TA_Sound',
     Cue = 'NANLATH2',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	StartReclaim = Sound {
+},
+StartReclaim = Sound {
     Bank = 'TA_Sound',
     Cue = 'RECLAIM1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	Destroyed = Sound {
+},
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	DeathExplosion = Sound {
+},
+DeathExplosion = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 1,
     Categories = {
@@ -54,16 +54,16 @@ StopMove = Sound {
 'SHOWQUEUE',
 'SELECTION',
 'MOBILE',
-	'CONSTRUCTION',
-	'LAND',
+'CONSTRUCTION',
+'LAND',
 'CORE',
 'KBOT',
-	'LEVEL1',
-	
-	
-	
-	
-	
+'LEVEL1',
+
+
+
+
+
     },
     Defense = {
 ArmorType = 'Normal',
@@ -83,7 +83,7 @@ AnimationWalkRate = 1,
 Abilities = {
     'Construction Unit',
 },
-	BuildBones = {'BuildNozzle'},
+BuildBones = {'BuildNozzle'},
 Mesh = {
     IconFadeInZoom = 130,
     LODs = {
@@ -93,7 +93,7 @@ Mesh = {
 },
     },
 },
-	SmokeBone = 'torso',
+SmokeBone = 'torso',
 UniformScale = 0.16,
     },
     Economy = {
@@ -107,8 +107,8 @@ BuildableCategory = {
 MaxBuildDistance = 2.5,
 StorageEnergy = 5,
 StorageMass = 5,
-	ProductionPerSecondEnergy = 10,
-	NaturalProducer = true,
+ProductionPerSecondEnergy = 10,
+NaturalProducer = true,
     },
     General = {
 BuildBones = {
@@ -146,8 +146,8 @@ HelpText = 'Tech Level 1',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 1.7,
 MaxBrake = 1.7,
 MaxSpeed = 1.7,
@@ -176,7 +176,7 @@ StandUpright = true,
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

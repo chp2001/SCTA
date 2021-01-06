@@ -20,21 +20,21 @@ StopMove = Sound {
     Cue = 'KBARMSTP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	Construct = Sound {
+},
+Construct = Sound {
     Bank = 'TA_Sound',
     Cue = 'NANLATH1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	StartReclaim = Sound {
+},
+StartReclaim = Sound {
     Bank = 'TA_Sound',
     Cue = 'RECLAIM1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 1,
     Categories = {
@@ -49,13 +49,13 @@ StopMove = Sound {
 'PATROLHELPER',
 'SHOWQUEUE',
 'MOBILE',
-	'CONSTRUCTION',
-	'LAND',
+'CONSTRUCTION',
+'LAND',
 'CORE',
 'NECRO',
 'VTOL',
 'KBOT',
-	'LEVEL2',
+'LEVEL2',
     },
     Defense = {
 ArmorType = 'Normal',
@@ -81,7 +81,7 @@ Mesh = {
 },
     },
 },
-	SmokeBone = 'torso',
+SmokeBone = 'torso',
 UniformScale = 0.16,
     },
     Economy = {
@@ -90,9 +90,9 @@ BuildCostMass = 480,
 BuildRate = 180,
 BuildTime = 7931,
 MaxBuildDistance = 3.75,
-	NaturalProducer = true,
-	ProductionPerSecondEnergy = 17,
-	ProductionPerSecondMass = 1,
+NaturalProducer = true,
+ProductionPerSecondEnergy = 17,
+ProductionPerSecondMass = 1,
     },
     General = {
 BuildBones = {
@@ -117,7 +117,7 @@ CommandCaps = {
 SelectionPriority = 3,
 FactionName = 'CORE',
 TechLevel = 'RULEUTL_Advanced',
-	UnitName = 'Necro',
+UnitName = 'Necro',
     },
     Intel = {
 VisionRadius = 12,
@@ -130,8 +130,8 @@ HelpText = 'Resurrection Kbot',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 2,
 MaxBrake = 1.2,
 MaxSpeed = 1.2,
@@ -160,7 +160,7 @@ StandUpright = true,
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

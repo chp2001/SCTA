@@ -30,11 +30,11 @@ Landing = Sound {
     Cue = 'VTOLCRLD',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     Air = {
 AutoLandTime = 1,
@@ -69,7 +69,7 @@ Winged = true,
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	'ANTINAVY',
+'ANTINAVY',
     'AIR',
     'VTOL',
     'HIGHALTAIR',
@@ -102,7 +102,7 @@ Mesh = {
 {
     LODCutoff = 230,
     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -134,7 +134,7 @@ UnitName = 'Titan',
     Intel = {
 VisionRadius = 22,
 SonarRadius = 30, 
-		WaterVisionRadius = 14,
+WaterVisionRadius = 14,
     },
     Interface = {
 HelpText = 'Torpedo Bomber',
@@ -149,8 +149,8 @@ MotionType = 'RULEUMT_Air',
 GroundCollisionOffset = 1.5,
     MaxSpeed = 0.5, 
     RotateOnSpot = true,
-	FuelRechargeRate = 444444,
-	FuelUseTime = 444444,
+FuelRechargeRate = 444444,
+FuelUseTime = 444444,
     },
     SelectionSizeX = 1.75,
     SelectionSizeZ = 2,

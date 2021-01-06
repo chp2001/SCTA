@@ -33,12 +33,12 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
+'LAND',
+'DIRECTFIRE',
 'OVERLAYDIRECTFIRE',
 'CORE',
-'VEHICLE',	#'TANK' in TA
-	'LEVEL1',
+'VEHICLE',#'TANK' in TA
+'LEVEL1',
     },
     Defense = {
 ArmorType = 'Normal',
@@ -60,7 +60,7 @@ Mesh = {
 {
     LODCutoff = 200,
     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -98,8 +98,8 @@ HelpText = 'Medium Assault Tank',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 1.5,
 MaxBrake = 1.5,
 MaxSpeed = 3,
@@ -127,23 +127,23 @@ Fire = Sound {
     },
     BallisticArc = 'RULEUBA_None',
     CollideFriendly = false,
-	    DamageFriendly = true,
+    DamageFriendly = true,
     Damage = 23,
-	    DamageRadius = 1,
+    DamageRadius = 1,
     DamageType = 'Normal',
     DisplayName = 'CORE_LIGHTCANNON',
     FireTargetLayerCapsTable = {
 Land = 'Land|Water|Seabed',
 Seabed = 'Land|Water|Seabed',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     FiringTolerance = 0,
     Label = 'CORE_LIGHTCANNON',
     MaxRadius = 18,
     MuzzleSalvoDelay = 0,
     MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 22,
+    MuzzleVelocity = 22,
     ProjectileId = '/mods/SCTA-master/projectiles/CORE_LIGHTCANNON/CORE_LIGHTCANNON_proj.bp',
     RackBones = {
 {
@@ -190,7 +190,7 @@ Seabed = 'Land|Water|Seabed',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

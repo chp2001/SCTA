@@ -17,21 +17,21 @@ UISelection = Sound {
     Cue = 'GANTSEL1',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Construct = Sound {
+Construct = Sound {
     Bank = 'TA_Sound',
     Cue = 'GANTOK2',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	ConstructStop = Sound {
+},
+ConstructStop = Sound {
     Bank = 'TA_Sound',
     Cue = 'GANTOK1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	Destroyed = Sound {
+},
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG4',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 18,
     Categories = {
@@ -48,8 +48,8 @@ UISelection = Sound {
 'CONSTRUCTION',
 'CORE',
 'STRATEGIC',
-	'PLANT',
-	'SORTSTRATEGIC',
+'PLANT',
+'SORTSTRATEGIC',
 'LEVEL3',  
     },
     Defense = {
@@ -94,7 +94,7 @@ StorageMass = 500,
 StorageEnergy = 500,
     },
     Footprint = {
-	MaxSlope = 0.625,
+MaxSlope = 0.625,
 SizeX = 9,
 SizeZ = 9,
     },
@@ -116,7 +116,7 @@ CommandCaps = {
 SelectionPriority = 5,
 FactionName = 'CORE',
 TechLevel = 'RULEUTL_Advanced',
-	UnitName = 'Krogoth Gantry',
+UnitName = 'Krogoth Gantry',
     },
     Intel = {
 VisionRadius = 14,
@@ -180,7 +180,7 @@ OccupyRects = {
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

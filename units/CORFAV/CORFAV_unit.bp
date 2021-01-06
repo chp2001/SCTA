@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'VCORSTOP',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOMED2',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 2,
     Categories = {
@@ -33,17 +33,17 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'MOBILE',
-	'LAND',
-	'SCOUT',
-	'DIRECTFIRE',
+'LAND',
+'SCOUT',
+'DIRECTFIRE',
 'OVERLAYDIRECTFIRE',
 'CORE',
-'VEHICLE',	#'TANK' in TA
-	'LEVEL1',
-	
-	
-	
-	
+'VEHICLE',#'TANK' in TA
+'LEVEL1',
+
+
+
+
     },
     Defense = {
 ArmorType = 'Normal',
@@ -81,15 +81,15 @@ Treads = {
 },
     },
 },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
+--[[DestructionEffects = {
+DestructionEmitters = {
+{
+EmitterBone = {0},
+EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+EmitterSize = 1.25,
+},
+},
+},]]--
 Mesh = {
     IconFadeInZoom = 130,
     {
@@ -101,7 +101,7 @@ ShaderName = 'Unit',
 {
     LODCutoff = 230,
     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -113,8 +113,8 @@ BuildCostMass = 38,
 BuildTime = 1515,
     },
     --[[Footprint = {
-	MaxSlope = 1,
-	MaxWaterDepth = 0.75,
+MaxSlope = 1,
+MaxWaterDepth = 0.75,
 SizeX = 2,
 SizeZ = 2,
     },]]--
@@ -145,8 +145,8 @@ HelpText = 'Scout',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+BackUpDistance = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 2,
 MaxBrake = 2,
 MaxSpeed = 4,
@@ -181,13 +181,13 @@ Fire = Sound {
 Land = 'Land|Water|Seabed',
 Seabed = 'Land|Water|Seabed',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     Label = 'CORE_LASER',
     MaxRadius = 22,
     MuzzleSalvoSize = 1,
-	    MuzzleSalvoDelay = 0,
-	    MuzzleVelocity = 25,
+    MuzzleSalvoDelay = 0,
+    MuzzleVelocity = 25,
     ProjectileId = '/mods/SCTA-master/projectiles/CORE_LASER/CORE_LASER_proj.bp',
     RackBones = {
 {
@@ -231,7 +231,7 @@ Seabed = 'Land|Water|Seabed',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

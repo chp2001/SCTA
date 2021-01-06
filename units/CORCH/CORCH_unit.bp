@@ -20,26 +20,26 @@ StopMove = Sound {
     Cue = 'HOVMDOF1',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Construct = Sound {
+Construct = Sound {
     Bank = 'TA_Sound',
     Cue = 'NANLATH1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	StartReclaim = Sound {
+},
+StartReclaim = Sound {
     Bank = 'TA_Sound',
     Cue = 'RECLAIM1',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	Destroyed = Sound {
+},
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
-	DeathExplosion = Sound {
+},
+DeathExplosion = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 0,
     Categories = {
@@ -54,11 +54,11 @@ StopMove = Sound {
 'SHOWQUEUE',
 'MOBILE',
 'SELECTION',
-	'CONSTRUCTION',
+'CONSTRUCTION',
 'LAND',
 'CORE',
 'HOVER',
-	'LEVEL1',
+'LEVEL1',
     },
     Defense = {
 ArmorType = 'Normal',
@@ -86,16 +86,16 @@ Mesh = {
 },
     },
 },
-	IdleEffects = {
-		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
-		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
-	},
-	MovementEffects = {
-		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
-		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
-	},
+IdleEffects = {
+Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
+Scale = 0.5,
+Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
+},
+MovementEffects = {
+Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
+Scale = 0.5,
+Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
+},
 UniformScale = 0.16,
     },
     Economy = {
@@ -109,8 +109,8 @@ BuildableCategory = {
 MaxBuildDistance = 4.375,
 StorageEnergy = 50,
 StorageMass = 50,
-	ProductionPerSecondEnergy = 15,
-	NaturalProducer = true,
+ProductionPerSecondEnergy = 15,
+NaturalProducer = true,
     },
     General = {
 BuildBones = {
@@ -150,17 +150,17 @@ HelpText = 'Tech Level 1',
     Physics = {
 Elevation = 0.2,
 BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+MaxSpeedReverse = 0,
 MaxAcceleration = 2,
 MaxBrake = 1,
 MaxSpeed = 3,
 MotionType = 'RULEUMT_Hover',
 TurnRate = 20,
 MaxSteerForce = 100,
-	RotateOnSpot = true,
+RotateOnSpot = true,
     TurnFacingRate = 20,
-	WobbleFactor = 0.01,
-	WobbleSpeed = 0.03,
+WobbleFactor = 0.01,
+WobbleSpeed = 0.03,
     },
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
@@ -185,7 +185,7 @@ TransportClass = 3,
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

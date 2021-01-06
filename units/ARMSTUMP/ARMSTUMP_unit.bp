@@ -20,11 +20,11 @@ StopMove = Sound {
     Cue = 'TARMST0P',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLOLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
-	},
+},
     },
     BuildIconSortPriority = 4,
     Categories = {
@@ -33,20 +33,20 @@ StopMove = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 
-	
+
 'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
+'LAND',
+'DIRECTFIRE',
 'OVERLAYDIRECTFIRE',
 
-	
+
 'ARM',
-'VEHICLE',	#'TANK' in TA
-	'LEVEL1',
-	
-	
-	
-	
+'VEHICLE',#'TANK' in TA
+'LEVEL1',
+
+
+
+
     },
     Defense = {
 ArmorType = 'Normal',
@@ -87,16 +87,16 @@ Treads = {
 },
     },
 },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Tredside','MetalBarrel'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Turret'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
+--[[DestructionEffects = {
+DefaultProjectileCategories = {'Tredside','MetalBarrel'},
+DestructionEmitters = {
+{
+EmitterBone = {'Turret'},
+EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+EmitterSize = 1.25,
+},
+},
+},]]--
 Mesh = {
     IconFadeInZoom = 130,
     LODs = {
@@ -145,8 +145,8 @@ HelpText = 'Medium Assault Tank',
     LifeBarSize = 2,
     Physics = {
 LayerChangeOffsetHeight = -2.00,
-	    BackUpDistance = 0,
-	    MaxSpeedReverse = 0,
+    BackUpDistance = 0,
+    MaxSpeedReverse = 0,
 MaxAcceleration = 1.2,
 MaxBrake = 1.1,
 MaxSpeed = 2.4,
@@ -174,23 +174,23 @@ Fire = Sound {
     },
     BallisticArc = 'RULEUBA_None',
     CollideFriendly = false,
-	    DamageFriendly = true,
+    DamageFriendly = true,
     Damage = 44,
-	    DamageRadius = 1,
+    DamageRadius = 1,
     DamageType = 'Normal',
     DisplayName = 'ARM_LIGHTCANNON',
     FireTargetLayerCapsTable = {
 Land = 'Land|Water|Seabed',
 Seabed = 'Land|Water|Seabed',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
     FiringTolerance = 0,
     Label = 'ARM_LIGHTCANNON',
     MaxRadius = 18,
     MuzzleSalvoDelay = 0,
     MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 23,
+    MuzzleVelocity = 23,
     ProjectileId = '/mods/SCTA-master/projectiles/ARM_LIGHTCANNON/ARM_LIGHTCANNON_proj.bp',
     RackBones = {
 {
@@ -237,7 +237,7 @@ Seabed = 'Land|Water|Seabed',
 
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

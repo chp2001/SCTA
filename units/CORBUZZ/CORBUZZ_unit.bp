@@ -5,11 +5,11 @@ UISelection = Sound {
     Cue = 'SERVLRG3',
     LodCutoff = 'UnitMove_LodCutoff',
 },
-	Destroyed = Sound {
+Destroyed = Sound {
     Bank = 'TA_Sound',
     Cue = 'XPLONUK3',
     LodCutoff = 'UnitMove_LodCutoff',
-	    },
+    },
     },
     BuildIconSortPriority = 27,
     Categories = {
@@ -21,12 +21,12 @@ UISelection = Sound {
 'VISIBLETORECON',
 'RECLAIMABLE',
 'EXPERIMENTAL',
-	'STRUCTURE',
-	'SORTSTRATEGIC',
+'STRUCTURE',
+'SORTSTRATEGIC',
     'OVERLAYDIRECTFIRE',
     'DIRECTFIRE',
     'CORE',
-	'LEVEL3',
+'LEVEL3',
     'STRATEGIC',
     'ARTILLERY',
     'SHOWATTACKRETICLE',
@@ -53,7 +53,7 @@ Mesh = {
 {
     LODCutoff = 400,
     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
 },
     },
 },
@@ -67,7 +67,7 @@ BuildTime = 587421,
     Footprint = {
 SizeX = 3,
 SizeZ = 3,
-	MaxSlope = 0.625,
+MaxSlope = 0.625,
     },
     General = {
     Category = 'Strategic',
@@ -138,10 +138,10 @@ Fire = Sound {
     FireTargetLayerCapsTable = {
 Land = 'Land|Water|Seabed',
     },
-	    RangeCategory = 'UWRC_DirectFire',
+    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'Artillery',
-    FiringTolerance = 1.65,	
-	    FiringRandomness = 2,
+    FiringTolerance = 1.65,
+    FiringRandomness = 2,
     Label = 'CORBUZZ_WEAPON',
     MaxRadius = 193,
     MinRadus = 10, 
@@ -194,7 +194,7 @@ RackBone = 'Turret',
 },
     },
 Wreckage = {
-	---UseCustomMesh = true,
+---UseCustomMesh = true,
 Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
 EnergyMult = 0,
 HealthMult = 0.9,

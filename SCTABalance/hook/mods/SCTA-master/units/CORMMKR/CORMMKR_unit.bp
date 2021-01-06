@@ -1,15 +1,15 @@
 UnitBlueprint {
     Merge = true,
     Display = {
-            UniformScale = 0.20,
-        },
-        Defense = {
-          Health = 6000,
-          MaxHealth = 6000,
+    UniformScale = 0.20,
+},
+Defense = {
+  Health = 6000,
+  MaxHealth = 6000,
       },    
     Footprint = {
-          SizeX = 3,
-          SizeZ = 3,
+  SizeX = 3,
+  SizeZ = 3,
       },
       LifeBarSize = 4,
     Economy = {

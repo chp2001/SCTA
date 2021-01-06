@@ -5,46 +5,46 @@
 
 UnitBlueprint {
     Audio = {
-        UISelection = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'MOHOON2',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Activate = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'MOHORUN2',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Deactivate = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'MOHOOFF2',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+UISelection = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'MOHOON2',
+    LodCutoff = 'UnitMove_LodCutoff',
+},
+Activate = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'MOHORUN2',
+    LodCutoff = 'UnitMove_LodCutoff',
+},
+Deactivate = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'MOHOOFF2',
+    LodCutoff = 'UnitMove_LodCutoff',
+},
 
 	Destroyed = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'XPLOSML3',
-            LodCutoff = 'UnitMove_LodCutoff',
+    Bank = 'TA_Sound',
+    Cue = 'XPLOSML3',
+    LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
     BuildIconSortPriority = 1,
     Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
-        'BUILTBYT2VEHICLE',
-        'BUILTBYT2SUB',
-        'SELECTABLE',
-        'DRAGBUILD',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH3',
+'BUILTBYT2AIR',
+'BUILTBYT2KBOT',
+'BUILTBYT2VEHICLE',
+'BUILTBYT2SUB',
+'SELECTABLE',
+'DRAGBUILD',
+'VISIBLETORECON',
+'RECLAIMABLE',
+'TECH3',
 
 	
 	'STRUCTURE',
-        'MASSPRODUCTION',
-        'MASSEXTRACTION',
-                'ECONOMIC',
-        'SORTECONOMY',
+'MASSPRODUCTION',
+'MASSEXTRACTION',
+'ECONOMIC',
+'SORTECONOMY',
 
 	
 	'CORE',
@@ -56,13 +56,13 @@ UnitBlueprint {
 	
     },
     Defense = {
-        ArmorType = 'Structure',
-        AirThreatLevel = 0,
-        EconomyThreatLevel = 2000,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
-        Health = 1465,
-        MaxHealth = 1465,
+ArmorType = 'Structure',
+AirThreatLevel = 0,
+EconomyThreatLevel = 2000,
+SubThreatLevel = 0,
+SurfaceThreatLevel = 0,
+Health = 1465,
+MaxHealth = 1465,
     },
     Description = 'Advanced Metal Extractor',
     Display = {
@@ -84,60 +84,60 @@ UnitBlueprint {
 			},
 		},
 	},]]---
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
-                {
-                    LODCutoff = 230,
-                    ShaderName = 'Unit', 
-                },
-            },
-        },
-        UniformScale = 0.16,
+Mesh = {
+    IconFadeInZoom = 130,
+    LODs = {
+{
+    LODCutoff = 230,
+    ShaderName = 'Unit', 
+},
+    },
+},
+UniformScale = 0.16,
     },
     Economy = {
-        BuildCostEnergy = 9121,
-        BuildCostMass = 1450,
-        BuildTime = 32500,
-        MaintenanceConsumptionPerSecondEnergy = 12,
-        ProductionPerSecondMass = 6.6,
+BuildCostEnergy = 9121,
+BuildCostMass = 1450,
+BuildTime = 32500,
+MaintenanceConsumptionPerSecondEnergy = 12,
+ProductionPerSecondMass = 6.6,
     },
     Footprint = {
-        SizeX = 5,
-        SizeZ = 5,
+SizeX = 5,
+SizeZ = 5,
 	MaxSlope = 0.625,
     },
     General = {
 	---BuildAngle = 2048,
-        Category = 'Economy',
-        Classification = 'RULEUC_Resource',
-        SelectionPriority = 5,
-        FactionName = 'CORE',
-        ToggleCaps = {
-            RULEUTC_ProductionToggle = true,
-        },
-        TechLevel = 'RULEUTL_Secret',
-        UnitName = 'Moho Mine',
+Category = 'Economy',
+Classification = 'RULEUC_Resource',
+SelectionPriority = 5,
+FactionName = 'CORE',
+ToggleCaps = {
+    RULEUTC_ProductionToggle = true,
+},
+TechLevel = 'RULEUTL_Secret',
+UnitName = 'Moho Mine',
     },
     Intel = {
-        VisionRadius = 14,
-        WaterVisionRadius = 4, 
+VisionRadius = 14,
+WaterVisionRadius = 4, 
     },
     Interface = {
-        HelpText = 'Advanced Metal Extractor',
+HelpText = 'Advanced Metal Extractor',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-            LAYER_Seabed = true,
-        },
-        FlattenSkirt = true,
-        SkirtSizeX = 5,
-        SkirtSizeZ = 5,
-        BuildRestriction = 'RULEUBR_OnMassDeposit',
+BuildOnLayerCaps = {
+    LAYER_Land = true,
+    LAYER_Seabed = true,
+},
+FlattenSkirt = true,
+SkirtSizeX = 5,
+SkirtSizeZ = 5,
+BuildRestriction = 'RULEUBR_OnMassDeposit',
     },
     SelectionSizeX = 3,
     SelectionSizeZ = 3,
@@ -148,26 +148,26 @@ UnitBlueprint {
     StrategicIconName = 'icon_structure2_mass',
     StrategicIconSortPriority = 0,
     Weapon = {
-        { #SMALL_BUILDINGEX
-            Damage = 40,
-            DamageFriendly = true,
-            DamageRadius = 6.406,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
-        },
-         
+{ #SMALL_BUILDINGEX
+    Damage = 40,
+    DamageFriendly = true,
+    DamageRadius = 6.406,
+    DamageType = 'Normal',
+    DummyWeapon = true,
+    Label = 'DeathWeapon',
+},
+ 
     },
-        Wreckage = {
+Wreckage = {
 	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-        EnergyMult = 0,
-        HealthMult = 0.9,
-        MassMult = 0.9,
-        ReclaimTimeMultiplier = 1,
-        --Blueprint = '/mods/SCTA-master/units/CORMOHO/CORMOHO_dead_prop.bp',
-        WreckageLayers = {
-            Land = true,
-        },
+Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+EnergyMult = 0,
+HealthMult = 0.9,
+MassMult = 0.9,
+ReclaimTimeMultiplier = 1,
+--Blueprint = '/mods/SCTA-master/units/CORMOHO/CORMOHO_dead_prop.bp',
+WreckageLayers = {
+    Land = true,
+},
     },
 }

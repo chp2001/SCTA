@@ -18,14 +18,14 @@ UnitBlueprint {
 },
     Display = {
        Abilities = {
-        '<LOC ability_radar>Radar',
-        '<LOC ability_omni>Omni Sensor',
-        },
+'<LOC ability_radar>Radar',
+'<LOC ability_omni>Omni Sensor',
+},
     },
     Intel = {
-        RadarRadius = 80,
-        VisionRadius = 14,
-        OmniRadius = 25,
+RadarRadius = 80,
+VisionRadius = 14,
+OmniRadius = 25,
     },
     StrategicIconName = 'icon_land3_intel',
 }

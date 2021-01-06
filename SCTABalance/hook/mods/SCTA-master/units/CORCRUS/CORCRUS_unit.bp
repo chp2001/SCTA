@@ -6,28 +6,28 @@
 UnitBlueprint {
     Merge = true,
     Display = {
-        UniformScale = 0.2,
+UniformScale = 0.2,
     },
     Defense = {
-        Health = 9000,
-        MaxHealth = 9000,
+Health = 9000,
+MaxHealth = 9000,
     },
     Economy = {
-        BuildCostMass = 4400,
-        BuildTime = 35000, 
+BuildCostMass = 4400,
+BuildTime = 35000, 
     },
     Intel = {
-        WaterVisionRadius = 15,
+WaterVisionRadius = 15,
     },
     Description = 'Destroyer',
     Interface = {
-        HelpText = 'Destroyer',
+HelpText = 'Destroyer',
     },
-        Physics = {
-        MaxAcceleration = 3,
-        MaxBrake = 3,
-        MaxSpeed = 4,
-        TurnRate = 80,
+Physics = {
+MaxAcceleration = 3,
+MaxBrake = 3,
+MaxSpeed = 4,
+TurnRate = 80,
     },
     LifeBarSize = 4,
     SelectionSizeX = 3,
@@ -36,22 +36,22 @@ UnitBlueprint {
     SizeY = 3,
     SizeZ = 9,
     Weapon = {
-        [1] = {
-            Damage = 140,
-            DamageRadius = 2,
-            FiringRandomness = 0,
-            FiringTolerance = 0,
-            MaxRadius = 85,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
-            RackSalvoSize = 1,
-            RateOfFire = 2,
-        },
-        [2] = {
-            MaxRadius = 20,
-            RateOfFire = 0.7692307692,
-        },
-        [3] = {
-        },
+[1] = {
+    Damage = 140,
+    DamageRadius = 2,
+    FiringRandomness = 0,
+    FiringTolerance = 0,
+    MaxRadius = 85,
+    MuzzleSalvoDelay = 0,
+    MuzzleSalvoSize = 1,
+    RackSalvoSize = 1,
+    RateOfFire = 2,
+},
+[2] = {
+    MaxRadius = 20,
+    RateOfFire = 0.7692307692,
+},
+[3] = {
+},
     },
 }

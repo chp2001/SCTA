@@ -6,24 +6,24 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'SELECTABLE',
-        'TECH3',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'MOBILE',
+'SELECTABLE',
+'TECH3',
+'VISIBLETORECON',
+'RECLAIMABLE',
+'MOBILE',
 	'LAND',
 	'DIRECTFIRE',	
-        'OVERLAYDIRECTFIRE',
-        'ARM',
-        'VEHICLE',	
+'OVERLAYDIRECTFIRE',
+'ARM',
+'VEHICLE',	
 	'LEVEL3',
     },
     Defense = {
-        Health = 5000,
-        MaxHealth = 5000,
+Health = 5000,
+MaxHealth = 5000,
     },
     Economy = {
-        BuildCostMass = 1250,
+BuildCostMass = 1250,
     },
     StrategicIconName = 'icon_land3_antishield',
     SelectionCenterOffsetZ = -0.3,
@@ -35,14 +35,14 @@ UnitBlueprint {
     SizeZ = 3,
     StrategicIconSortPriority = 0,
     Weapon = {
-        [1] = {
-            EnergyDrainPerSecond = 1500,
-            EnergyRequired = 500,
-            MaxRadius = 60,
-            MuzzleVelocity = 62.5,
-            RateOfFire = 0.1694915254,
-        },
-        [2] = {
-        },
+[1] = {
+    EnergyDrainPerSecond = 1500,
+    EnergyRequired = 500,
+    MaxRadius = 60,
+    MuzzleVelocity = 62.5,
+    RateOfFire = 0.1694915254,
+},
+[2] = {
+},
     },
 }

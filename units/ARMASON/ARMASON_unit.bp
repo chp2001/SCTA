@@ -5,40 +5,40 @@
 
 UnitBlueprint {
     Audio = {
-        UISelection = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'SONAR1',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Activate = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'RADAR1',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-        Deactivate = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'SONARDE1',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+UISelection = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'SONAR1',
+    LodCutoff = 'UnitMove_LodCutoff',
+},
+Activate = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'RADAR1',
+    LodCutoff = 'UnitMove_LodCutoff',
+},
+Deactivate = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'SONARDE1',
+    LodCutoff = 'UnitMove_LodCutoff',
+},
 	Destroyed = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'XPLOSML3',
-            LodCutoff = 'UnitMove_LodCutoff',
+    Bank = 'TA_Sound',
+    Cue = 'XPLOSML3',
+    LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
     BuildIconSortPriority = 16,
     Categories = {
-        'BUILTBYT2SUB',
-        'SELECTABLE',
-        'DRAGBUILD',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH3',
+'BUILTBYT2SUB',
+'SELECTABLE',
+'DRAGBUILD',
+'VISIBLETORECON',
+'RECLAIMABLE',
+'TECH3',
 	'STRUCTURE',
 	'INTELLIGENCE',
 	'SONAR',
 	'NAVAL',	
-        'OVERLAYSONAR',
+'OVERLAYSONAR',
     'ARM',
 	'SPECIAL',
 	'LEVEL2',
@@ -46,55 +46,55 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.5,
     Defense = {
-        DamageModifier = 0.46,
-        ArmorType = 'Structure',
-        Health = 320,
-        MaxHealth = 320,
-        AirThreatLevel = 0,
-        EconomyThreatLevel = 3,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+DamageModifier = 0.46,
+ArmorType = 'Structure',
+Health = 320,
+MaxHealth = 320,
+AirThreatLevel = 0,
+EconomyThreatLevel = 3,
+SubThreatLevel = 0,
+SurfaceThreatLevel = 0,
     },
     Description = 'Extended Sonar',
     Display = {
-        Abilities = {
-            '<LOC ability_sonar>Sonar',
-        },
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
-                {
-                  LODCutoff = 230,
-                    ShaderName = 'AeonCZAR', 
+Abilities = {
+    '<LOC ability_sonar>Sonar',
+},
+Mesh = {
+    IconFadeInZoom = 130,
+    LODs = {
+{
+  LODCutoff = 230,
+    ShaderName = 'AeonCZAR', 
 		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
-                },
-            },
-        },
-        UniformScale = 0.16,
+},
+    },
+},
+UniformScale = 0.16,
     },
     Economy = {
-        BuildCostEnergy = 2469,
-        BuildCostMass = 163,
-        BuildTime = 6152,
+BuildCostEnergy = 2469,
+BuildCostMass = 163,
+BuildTime = 6152,
 	NaturalProducer = false,
 	MaintenanceConsumptionPerSecondEnergy = 25,
     },
     Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
+SizeX = 2,
+SizeZ = 2,
 	MinWaterDepth = 1.5,
     },
     General = {
 	---BuildAngle = 8192,
-        Category = 'Intelligence',
-        Classification = 'RULEUC_Sensor',
-        ToggleCaps = {
-            RULEUTC_IntelToggle = true,
-        },
-        SelectionPriority = 5,
-        FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Secret',
-        UnitName = 'Advanced Sonar Station',
+Category = 'Intelligence',
+Classification = 'RULEUC_Sensor',
+ToggleCaps = {
+    RULEUTC_IntelToggle = true,
+},
+SelectionPriority = 5,
+FactionName = 'ARM',
+TechLevel = 'RULEUTL_Secret',
+UnitName = 'Advanced Sonar Station',
     },
     Intel = {
 	FreeIntel = false,
@@ -103,17 +103,17 @@ UnitBlueprint {
 	WaterVisionRadius = 12,
     },
     Interface = {
-        HelpText = 'Extended Sonar',
+HelpText = 'Extended Sonar',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 1,
     Physics = {
-        SkirtSizeX = 1, 
-        SkirtSizeZ = 1, 
-        BuildOnLayerCaps = {
-            LAYER_Water = true,
-        },
+SkirtSizeX = 1, 
+SkirtSizeZ = 1, 
+BuildOnLayerCaps = {
+    LAYER_Water = true,
+},
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,
@@ -124,28 +124,28 @@ UnitBlueprint {
     StrategicIconName = 'icon_structure3_intel',
     StrategicIconSortPriority = 0,
     Weapon = {
-        { #SMALL_BUILDINGEX
-            Damage = 40,
-            DamageFriendly = true,
-            DamageRadius = 6.406,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
-        },
-         
+{ #SMALL_BUILDINGEX
+    Damage = 40,
+    DamageFriendly = true,
+    DamageRadius = 6.406,
+    DamageType = 'Normal',
+    DummyWeapon = true,
+    Label = 'DeathWeapon',
+},
+ 
     },
-        Wreckage = {
+Wreckage = {
 	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-        EnergyMult = 0,
-        HealthMult = 0.9,
-        MassMult = 0.9,
-        ReclaimTimeMultiplier = 1,
-        --Blueprint = '/mods/SCTA-master/units/ARMASON/ARMASON_dead_prop.bp',
-        WreckageLayers = {
-            Water = true,
-            Seabed = true,
-            Sub = true,
-        },
+Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+EnergyMult = 0,
+HealthMult = 0.9,
+MassMult = 0.9,
+ReclaimTimeMultiplier = 1,
+--Blueprint = '/mods/SCTA-master/units/ARMASON/ARMASON_dead_prop.bp',
+WreckageLayers = {
+    Water = true,
+    Seabed = true,
+    Sub = true,
+},
     },
 }

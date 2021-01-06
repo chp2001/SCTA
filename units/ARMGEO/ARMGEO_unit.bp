@@ -5,32 +5,32 @@
 
 UnitBlueprint {
     Audio = {
-        UISelection = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'GEOTHRM1',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+UISelection = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'GEOTHRM1',
+    LodCutoff = 'UnitMove_LodCutoff',
+},
 	Destroyed = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'XPLOLRG4',
-            LodCutoff = 'UnitMove_LodCutoff',
+    Bank = 'TA_Sound',
+    Cue = 'XPLOLRG4',
+    LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
     BuildIconSortPriority = 13,
     Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1VEHICLE',
-        'BUILTBYT1HOVER',
-        'SELECTABLE',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH2',
+'BUILTBYT1AIR',
+'BUILTBYT1KBOT',
+'BUILTBYT1VEHICLE',
+'BUILTBYT1HOVER',
+'SELECTABLE',
+'VISIBLETORECON',
+'RECLAIMABLE',
+'TECH2',
 
 	
 	'STRUCTURE',
-                'ECONOMIC',
-        'SORTECONOMY',
+'ECONOMIC',
+'SORTECONOMY',
 	'ENERGYPRODUCTION',
 	'HYDROCARBON',
 
@@ -43,13 +43,13 @@ UnitBlueprint {
 	
     },
     Defense = {
-        ArmorType = 'Structure',
-        Health = 880,
-        MaxHealth = 880,
-        AirThreatLevel = 0,
-        EconomyThreatLevel = 2,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+ArmorType = 'Structure',
+Health = 880,
+MaxHealth = 880,
+AirThreatLevel = 0,
+EconomyThreatLevel = 2,
+SubThreatLevel = 0,
+SurfaceThreatLevel = 0,
     },
     Description = 'Produces Energy',
     Display = {
@@ -62,59 +62,59 @@ UnitBlueprint {
 			},
 		},
 	},]]--
-        Abilities = {
-            'Geothermal',
-        },
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
-                {
-                    LODCutoff = 350,
-                    ShaderName = 'AeonCZAR', 
+Abilities = {
+    'Geothermal',
+},
+Mesh = {
+    IconFadeInZoom = 130,
+    LODs = {
+{
+    LODCutoff = 350,
+    ShaderName = 'AeonCZAR', 
 		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
-                },
-            },
-        },
-        UniformScale = 0.16,
+},
+    },
+},
+UniformScale = 0.16,
     },
     Economy = {
-        BuildCostEnergy = 9568,
-        BuildCostMass = 520,
-        BuildTime = 13078,
+BuildCostEnergy = 9568,
+BuildCostMass = 520,
+BuildTime = 13078,
 	NaturalProducer = true,
-        ProductionPerSecondEnergy = 250,
+ProductionPerSecondEnergy = 250,
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 4,
-        SizeZ = 4,
+SizeX = 4,
+SizeZ = 4,
     },
     General = {
 	---BuildAngle = 2048,
-        Category = 'Economy',
-        Classification = 'RULEUC_Resource',
-        SelectionPriority = 5,
-        FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Advanced',
+Category = 'Economy',
+Classification = 'RULEUC_Resource',
+SelectionPriority = 5,
+FactionName = 'ARM',
+TechLevel = 'RULEUTL_Advanced',
 	UnitName = 'Geothermal Powerplant',
     },
     Intel = {
-        VisionRadius = 14,
-        WaterVisionRadius = 6,
+VisionRadius = 14,
+WaterVisionRadius = 6,
     },
     Interface = {
-        HelpText = 'Produces Energy',
+HelpText = 'Produces Energy',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-            LAYER_Seabed = true,
-        },
-        SkirtSizeX = 4,
-        SkirtSizeZ = 4,
+BuildOnLayerCaps = {
+    LAYER_Land = true,
+    LAYER_Seabed = true,
+},
+SkirtSizeX = 4,
+SkirtSizeZ = 4,
 	BuildRestriction = 'RULEUBR_OnHydrocarbonDeposit',
     },
     SelectionSizeX = 2,
@@ -126,26 +126,26 @@ UnitBlueprint {
     StrategicIconName = 'icon_structure2_energy',
     StrategicIconSortPriority = 0,
     Weapon = {
-        { #LARGE_BUILDINGEX
-            Damage = 300,
-            DamageFriendly = true,
-            DamageRadius = 3.75,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
-        },
+{ #LARGE_BUILDINGEX
+    Damage = 300,
+    DamageFriendly = true,
+    DamageRadius = 3.75,
+    DamageType = 'Normal',
+    DummyWeapon = true,
+    Label = 'DeathWeapon',
+},
 
     },
     Wreckage = {
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-        EnergyMult = 0,
-        HealthMult = 0.9,
-        MassMult = 0.9,
-        ReclaimTimeMultiplier = 1,
-        --UseCustomMesh = true,
-           ---Blueprint = '/mods/SCTA-master/units/ARMGEO/ARMGEO_dead_prop.bp',
-            WreckageLayers = {
-                Land = true,
-            },
-        },
+Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+EnergyMult = 0,
+HealthMult = 0.9,
+MassMult = 0.9,
+ReclaimTimeMultiplier = 1,
+--UseCustomMesh = true,
+   ---Blueprint = '/mods/SCTA-master/units/ARMGEO/ARMGEO_dead_prop.bp',
+    WreckageLayers = {
+Land = true,
+    },
+},
 }

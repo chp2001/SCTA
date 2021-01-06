@@ -5,14 +5,14 @@ UnitBlueprint {
     MaxHealth = 10000,
     },
     Economy = {
-            BuildCostEnergy = 600000,
-            BuildCostMass = 6000,
-            BuildRate = 400000,
-        },
-        Weapon = {
-            [1] = {
-                ProjectileId =   '/mods/SCTA-master/SCTABalance/projectiles/ARD_ROCKET/ARD_ROCKET_proj.bp',
-            },
-            [2] = {},
-        },
+    BuildCostEnergy = 600000,
+    BuildCostMass = 6000,
+    BuildRate = 400000,
+},
+Weapon = {
+    [1] = {
+ProjectileId =   '/mods/SCTA-master/SCTABalance/projectiles/ARD_ROCKET/ARD_ROCKET_proj.bp',
+    },
+    [2] = {},
+},
     }

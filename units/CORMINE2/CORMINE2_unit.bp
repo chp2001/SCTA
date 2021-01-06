@@ -5,66 +5,66 @@
 
 UnitBlueprint {
     Audio = {
-        UISelection = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'MINESEL2',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
+UISelection = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'MINESEL2',
+    LodCutoff = 'UnitMove_LodCutoff',
+},
 	Destroyed = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'EXMINE2',
-            LodCutoff = 'UnitMove_LodCutoff',
+    Bank = 'TA_Sound',
+    Cue = 'EXMINE2',
+    LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
     BuildIconSortPriority = 1,
     Categories = {
-        'SELECTABLE',
-        'TECH2',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
+'SELECTABLE',
+'TECH2',
+'VISIBLETORECON',
+'RECLAIMABLE',
 	'BUILTBYT1MINELAYER',
 	'LAND',
 	'DIRECTFIRE',
-        'OVERLAYDIRECTFIRE',
-        'CORE',
-        'TACLOAK',
-                'MINE',
-        'STRUCTURE',
+'OVERLAYDIRECTFIRE',
+'CORE',
+'TACLOAK',
+'MINE',
+'STRUCTURE',
 	'LEVEL2',
 	'KAMIKAZI',
     },
     Defense = {
-        ArmorType = 'Structure',
-        AirThreatLevel = 0,
-        EconomyThreatLevel = 0,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
-        Health = 200,
-        MaxHealth = 200,
+ArmorType = 'Structure',
+AirThreatLevel = 0,
+EconomyThreatLevel = 0,
+SubThreatLevel = 0,
+SurfaceThreatLevel = 0,
+Health = 200,
+MaxHealth = 200,
     },
     Description = 'Low Damage, Large Range Mine',
     Display = {
-        Abilities = {
-            'Kamikazi',
-        },
+Abilities = {
+    'Kamikazi',
+},
 		CloakMesh = '/mods/SCTA-master/units/CORMINE2/CORMINE2_cloak_mesh',
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
-                {
-                    LODCutoff = 230,
-                    ShaderName = 'Unit', 
+Mesh = {
+    IconFadeInZoom = 130,
+    LODs = {
+{
+    LODCutoff = 230,
+    ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
-                },
-            },
-        },
-        UniformScale = 0.16,
+},
+    },
+},
+UniformScale = 0.16,
     },
     Economy = {
-        BuildCostEnergy = 2400,
-        BuildCostMass = 350,
-        BuildTime = 3500,
-        MaintenanceConsumptionPerSecondEnergy = 3,
+BuildCostEnergy = 2400,
+BuildCostMass = 350,
+BuildTime = 3500,
+MaintenanceConsumptionPerSecondEnergy = 3,
     },
     Footprint = {
 	SizeX = 1,
@@ -73,29 +73,29 @@ UnitBlueprint {
 	MaxWaterDepth = 0,
     },
     General = {
-        Category = 'Direct Fire',
-        Classification = 'RULEUC_MilitaryVehicle',
-        CommandCaps = {
-        	RULEUCC_RetaliateToggle = true,
-        },
+Category = 'Direct Fire',
+Classification = 'RULEUC_MilitaryVehicle',
+CommandCaps = {
+	RULEUCC_RetaliateToggle = true,
+},
 	ToggleCaps = {
 		RULEUTC_CloakToggle = true,
 	},
-        FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
-        UnitName = 'M-209',
+FactionName = 'CORE',
+TechLevel = 'RULEUTL_Advanced',
+UnitName = 'M-209',
     },
     Intel = {
-        VisionRadius = 4,
+VisionRadius = 4,
     },
     Interface = {
-        HelpText = 'Low Damage, Large Range Mine',
+HelpText = 'Low Damage, Large Range Mine',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        MotionType = 'RULEUMT_None',
+MotionType = 'RULEUMT_None',
     },
     SelectionSizeX = 0.5,
     SelectionSizeZ = 0.5,
@@ -105,62 +105,62 @@ UnitBlueprint {
     StrategicIconName = 'icon_land1_bomb', --'icon_structure2_bomb',
     StrategicIconSortPriority = 0,
     Weapon = {
-        {
-            Audio = {
-                Fire = Sound {
-                    Bank = 'TA_Sound',
-                    Cue = 'LARGEGUN',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
-            },
-            BallisticArc = 'RULEUBA_None',
-            CollideFriendly = false,
+{
+    Audio = {
+Fire = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'LARGEGUN',
+    LodCutoff = 'Weapon_LodCutoff',
+},
+    },
+    BallisticArc = 'RULEUBA_None',
+    CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 10, #Doubles up with death, so death damage subtracted
+    Damage = 10, #Doubles up with death, so death damage subtracted
 	    DamageRadius = 5,
-            DamageType = 'Normal',
-            DisplayName = 'ARMMINE2',
+    DamageType = 'Normal',
+    DisplayName = 'ARMMINE2',
 	  ---EdgeEffectiveness = 0.05,
-            FireTargetLayerCapsTable = {
-                Land = 'Land|Water',
-            },
+    FireTargetLayerCapsTable = {
+Land = 'Land|Water',
+    },
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
-            FiringTolerance = 360,
-            Label = 'ARMMINE2',
-            MaxRadius = 6.25,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
+    FiringTolerance = 360,
+    Label = 'ARMMINE2',
+    MaxRadius = 6.25,
+    MuzzleSalvoDelay = 0,
+    MuzzleSalvoSize = 1,
 	    MuzzleVelocity = 1,
 	    ProjectileId = '/mods/SCTA-master/projectiles/ARMMINE2/ARMMINE2_proj.bp',
-            RackBones = {
-                {
-                    MuzzleBones = {
-                        'Muzzle',
-                    },
-                    RackBone = 'Muzzle',
-                },
-            },
-            RackRecoilDistance = 0,
-            RackReloadTimeout = 0,
-            RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 0,
-            RackSalvoSize = 1,
-            RateOfFire = 1,
-            TargetCheckInterval = 1,
-            TargetPriorities = {
-                'ALLUNITS',
-            },
-            TargetRestrictDisallow = 'UNTARGETABLE',
-        },
-        { #ARMMINE2
-            Damage = 300,
-            DamageFriendly = true,
-            DamageRadius = 5,
-            DamageType = 'Normal',
-            DummyWeapon = true,
+    RackBones = {
+{
+    MuzzleBones = {
+'Muzzle',
+    },
+    RackBone = 'Muzzle',
+},
+    },
+    RackRecoilDistance = 0,
+    RackReloadTimeout = 0,
+    RackSalvoChargeTime = 0,
+    RackSalvoReloadTime = 0,
+    RackSalvoSize = 1,
+    RateOfFire = 1,
+    TargetCheckInterval = 1,
+    TargetPriorities = {
+'ALLUNITS',
+    },
+    TargetRestrictDisallow = 'UNTARGETABLE',
+},
+{ #ARMMINE2
+    Damage = 300,
+    DamageFriendly = true,
+    DamageRadius = 5,
+    DamageType = 'Normal',
+    DummyWeapon = true,
 	  ---EdgeEffectiveness = 0.05,
-            Label = 'DeathWeapon',
-        },
+    Label = 'DeathWeapon',
+},
     },
 }

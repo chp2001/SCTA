@@ -6,18 +6,18 @@
 UnitBlueprint {
     Merge = true,
     Display = {
-        UniformScale = 0.2,
+UniformScale = 0.2,
     },
     Defense = {
-        Health = 8000,
-        MaxHealth = 8000,
+Health = 8000,
+MaxHealth = 8000,
     },
     Economy = {
-        BuildCostMass = 4000,
-        BuildTime = 36000,
+BuildCostMass = 4000,
+BuildTime = 36000,
     },
     Intel = {
-        WaterVisionRadius = 15,
+WaterVisionRadius = 15,
     },
     LifeBarSize = 4,
     SelectionSizeX = 3,
@@ -27,33 +27,33 @@ UnitBlueprint {
     SizeZ = 10,
     Description = 'Destroyer',
     Interface = {
-        HelpText = 'Destroyer',
+HelpText = 'Destroyer',
     },
     Physics = {
-            MaxAcceleration = 3,
-            MaxBrake = 3,
-            MaxSpeed = 4,
-            TurnRate = 80,
-        },
+    MaxAcceleration = 3,
+    MaxBrake = 3,
+    MaxSpeed = 4,
+    TurnRate = 80,
+},
     Weapon = {
-        [1] = {
-            ArtilleryShieldBlocks = true,
-            Damage = 200,
-            MaxRadius = 80,
-        RangeCategory = 'UWRC_IndirectFire',
-        WeaponCategory = 'Artillery',
-            MuzzleSalvoSize = 2,
-            RackSalvoReloadTime = 1,
-            RackSalvoSize = 2,
-            RateOfFire = 1,
-        },
-        [2] = {
-            Damage = 350,
-            RateOfFire = 0.5882352941,
-        },
-        [3] = {
-            Damage = 500,
-            DamageRadius = 3,
-        }, 
+[1] = {
+    ArtilleryShieldBlocks = true,
+    Damage = 200,
+    MaxRadius = 80,
+RangeCategory = 'UWRC_IndirectFire',
+WeaponCategory = 'Artillery',
+    MuzzleSalvoSize = 2,
+    RackSalvoReloadTime = 1,
+    RackSalvoSize = 2,
+    RateOfFire = 1,
+},
+[2] = {
+    Damage = 350,
+    RateOfFire = 0.5882352941,
+},
+[3] = {
+    Damage = 500,
+    DamageRadius = 3,
+}, 
     },
 }

@@ -14,7 +14,6 @@ UnitBlueprint {
 	'STRUCTURE',
         'MASSPRODUCTION',
         'ECONOMIC',
-	'TEXTUREANIM',
 	'ARM',
 	'ENERGY',
 	'LEVEL2',

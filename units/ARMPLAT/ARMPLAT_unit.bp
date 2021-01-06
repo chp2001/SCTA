@@ -38,17 +38,13 @@ UnitBlueprint {
         'RALLYPOINT',
         'SHOWQUEUE',
 	'STRUCTURE',
-	'CONSTRUCTION',
-	'TEXTUREANIM',
+	'CONSTRUCTION',	
         'OVERLAYRADAR',
     'ARM',
     'AIR',
 		'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL3',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',

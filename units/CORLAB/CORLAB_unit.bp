@@ -44,7 +44,7 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'STRUCTURE',
 	'CONSTRUCTION',
-	'TEXTUREANIM',
+	'LAND',
 	'CORE',
 		'PLANT',
 	'SORTCONSTRUCTION',
@@ -74,7 +74,6 @@ UnitBlueprint {
                 },
             },
         },
-	--TextureAnimationFrames = 6,
         UniformScale = 0.16,
     },
     Economy = {
@@ -99,7 +98,6 @@ UnitBlueprint {
         BuildBones = {
             BuildEffectBones = {'muzzle1', 'muzzle2'},
         },          
-	---BuildAngle = 1024,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {
@@ -176,7 +174,6 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-
     },
         Wreckage = {
 	---UseCustomMesh = true,

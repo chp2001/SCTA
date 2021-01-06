@@ -13,7 +13,6 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'STRUCTURE',
 	'CONSTRUCTION',
-	'TEXTUREANIM',
         'OVERLAYRADAR',
         'AIR',
         'CONSTRUCTIONSORTDOWN',

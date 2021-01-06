@@ -39,16 +39,12 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'STRUCTURE',
 	'CONSTRUCTION',
-	'TEXTUREANIM',
         'OVERLAYRADAR',
 	'CORE',
 		'PLANT',
 	'SORTCONSTRUCTION',
-	
+	'AIR',
 	'LEVEL2',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -65,7 +61,8 @@ UnitBlueprint {
             '<LOC ability_radar>Radar',
         },
         AnimationUnpack = '/mods/SCTA-master/units/CORAAP/CORAAP_lod0_unpack.sca',
-        AnimationUnpackRate = 0.5,    
+        AnimationUnpackRate = 0.5,  
+        BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -91,16 +88,13 @@ UnitBlueprint {
         StorageEnergy = 200,
     },
     Footprint = {
-	MaxSlope = 0.625,
-        SizeX = 7,
+        SizeX = 6,
         SizeZ = 6,
     },
     General = {
         BuildBones = {
-            BuildAttachBone = 'pad',
             BuildEffectBones = {'beam1', 'beam2'},
         },             
-	---BuildAngle = 0,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {
@@ -133,7 +127,7 @@ UnitBlueprint {
             LAYER_Land = true,
         },
         FlattenSkirt = true,
-        SkirtSizeX = 7,
+        SkirtSizeX = 6,
         SkirtSizeZ = 6,
         RollOffPoints = {
             {
@@ -161,7 +155,6 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-
     },
         Wreckage = {
 	---UseCustomMesh = true,

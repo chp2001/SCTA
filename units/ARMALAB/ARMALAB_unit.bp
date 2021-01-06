@@ -39,7 +39,8 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'STRUCTURE',
 	'CONSTRUCTION',
-	'ARM',
+    'ARM',
+    'LAND',
 		'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL2',
@@ -84,15 +85,13 @@ UnitBlueprint {
         StorageEnergy = 200,
     },
     Footprint = {
-	MaxSlope = 0.625,
-        SizeX = 5,
+        SizeX = 6,
         SizeZ = 6,
     },
     General = {
     BuildBones = {
-            BuildEffectBones = {'Nozzle_01','Nozzle_02'},
+        BuildEffectBones = {'Nozzle_01','Nozzle_02'},
     },   
-	---BuildAngle = 2048,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

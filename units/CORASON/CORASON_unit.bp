@@ -32,15 +32,12 @@ UnitBlueprint {
 	'STRUCTURE',
 	'INTELLIGENCE',
 	'SONAR',
-	'NAVAL',
-	'TEXTUREANIM',
+	'NAVAL',	
         'OVERLAYSONAR',
     'CORE',
 	'SPECIAL',
 	'LEVEL2',
 	'SORTINTEL',
-	
-	
     },
     CollisionOffsetY = -0.5,
     Defense = {

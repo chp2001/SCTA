@@ -38,17 +38,12 @@ UnitBlueprint {
         'SHOWQUEUE',
         'CONSTRUCTIONSORTDOWN',
 	'STRUCTURE',
-	'CONSTRUCTION',
-	'TEXTUREANIM',
+	'CONSTRUCTION',	
         'LAND', 
 	'CORE',
     'PLANT',
 	'SORTCONSTRUCTION',
-	'LEVEL3',
-	
-	
-	
-	
+	'LEVEL3',	
     },
     Defense = {
         ArmorType = 'Structure',

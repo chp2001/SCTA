@@ -40,7 +40,8 @@ UnitBlueprint {
 	'CORE',
 		'PLANT',
 	'SORTCONSTRUCTION',
-	'LEVEL2',
+    'LEVEL2',
+    'NAVAL',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -180,13 +181,11 @@ UnitBlueprint {
 
     },
         Wreckage = {
-	---UseCustomMesh = true,
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
-        --Blueprint = '/mods/SCTA-master/units/CORHP/CORHP_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

@@ -13,7 +13,6 @@ UnitBlueprint {
 	'INTELLIGENCE',
 	'SONAR',
 	'NAVAL',
-	'TEXTUREANIM',
         'OVERLAYSONAR',
     'ARM',
 	'SPECIAL',

@@ -44,16 +44,12 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'STRUCTURE',
 	'CONSTRUCTION',
-	'TEXTUREANIM',
         'OVERLAYRADAR',
 	'ARM',
 		'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL1',
-	
-	
-	
-	
+	'AIR',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -71,6 +67,7 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_radar>Radar',
         },
+        BuildAttachBone = 'BasePlate',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -97,13 +94,11 @@ UnitBlueprint {
         StorageEnergy = 50,
     },
     Footprint = {
-	MaxSlope = 0.625,
         SizeX = 7,
-        SizeZ = 6,
+        SizeZ = 7,
     },
     General = {
         BuildBones = {
-            BuildAttachBone = 'BasePlate',
             BuildEffectBones = {'Nozzle_01', 'Nozzle_02'},
         },    
         Category = 'Factory',

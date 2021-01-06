@@ -39,15 +39,12 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'STRUCTURE',
 	'CONSTRUCTION',
-	'TEXTUREANIM',
         'OVERLAYRADAR',
-	'ARM',
+    'ARM',
+    'AIR',
 		'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL2',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',

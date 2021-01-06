@@ -42,7 +42,8 @@ UnitBlueprint {
 	'ARM',
 		'PLANT',
 	'SORTCONSTRUCTION',
-	'LEVEL2',
+    'LEVEL2',
+    'LAND',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -84,7 +85,6 @@ UnitBlueprint {
         StorageEnergy = 200,
     },
     Footprint = {
-	MaxSlope = 0.625,
         SizeX = 6,
         SizeZ = 6,
     },

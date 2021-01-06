@@ -43,10 +43,7 @@ UnitBlueprint {
 		'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL2',
-	
-	
-	
-	
+    'LAND',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -89,14 +86,13 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 7,
+        SizeX = 6,
         SizeZ = 6,
     },
     General = {
         BuildBones = {
             BuildEffectBones = {'beama', 'beamb'},
         },             
-	---BuildAngle = 1024,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {
@@ -127,7 +123,7 @@ UnitBlueprint {
             LAYER_Land = true,
         },
         FlattenSkirt = true,
-        SkirtSizeX = 7,
+        SkirtSizeX = 6,
         SkirtSizeZ = 6,
         RollOffPoints = {
             {

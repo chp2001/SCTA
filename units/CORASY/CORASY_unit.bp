@@ -60,7 +60,6 @@ UnitBlueprint {
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/CORASY/CORASY_lod0Action.sca',
         AnimationUnpackRate = 1, 
-	--TextureAnimationFrames = 4,
 	BuildAttachBone = 'BuildBone',
         Mesh = {
             IconFadeInZoom = 130,

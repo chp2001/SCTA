@@ -47,11 +47,8 @@ UnitBlueprint {
 	'ARM',
 		'PLANT',
 	'SORTCONSTRUCTION',
-	
+	'LAND',
 	'LEVEL1',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -94,14 +91,13 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 8,
+        SizeX = 6,
         SizeZ = 6,
     },
     General = {
         BuildBones = {
             BuildEffectBones = {'Nozzle_01','Nozzle_02'},
         },            
-	---BuildAngle = 1024,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

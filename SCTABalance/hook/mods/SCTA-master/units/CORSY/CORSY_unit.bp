@@ -18,8 +18,7 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'STRUCTURE',
 	'CONSTRUCTION',
-	'NAVAL',
-	'TEXTUREANIM',
+	'NAVAL',	
 	'CORE',
 		'PLANT',
 	'SORTCONSTRUCTION',
@@ -64,5 +63,4 @@ UnitBlueprint {
     SizeX = 20,
     SizeY = 3,
     SizeZ = 20,
-    ---CollisionOffsetX = -2,
 }

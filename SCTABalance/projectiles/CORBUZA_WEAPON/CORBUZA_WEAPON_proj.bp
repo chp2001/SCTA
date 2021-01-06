@@ -1,63 +1,63 @@
 
 ProjectileBlueprint {
     Audio = {
-        Impact = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'XPLONUK1',
-            LodCutoff = 'Weapon_LodCutoff',
-        },
-        ImpactUnit = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'XPLONUK1',
-            LodCutoff = 'Weapon_LodCutoff',
-        },
-        ImpactShield = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'XPLONUK1',
-            LodCutoff = 'Weapon_LodCutoff',
-        },
-        ImpactTerrain = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'XPLONUK1',
-            LodCutoff = 'Weapon_LodCutoff',
-        },
-        ImpactWater = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'SPLSLRG',
-            LodCutoff = 'Weapon_LodCutoff',
-        },
+Impact = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'XPLONUK1',
+    LodCutoff = 'Weapon_LodCutoff',
+},
+ImpactUnit = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'XPLONUK1',
+    LodCutoff = 'Weapon_LodCutoff',
+},
+ImpactShield = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'XPLONUK1',
+    LodCutoff = 'Weapon_LodCutoff',
+},
+ImpactTerrain = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'XPLONUK1',
+    LodCutoff = 'Weapon_LodCutoff',
+},
+ImpactWater = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'SPLSLRG',
+    LodCutoff = 'Weapon_LodCutoff',
+},
     },
     Categories = {
-        'CORE',
-        'PROJECTILE',
-        'INDIRECTFIRE',
+'CORE',
+'PROJECTILE',
+'INDIRECTFIRE',
     },
     Display = {
-        CameraFollowTimeout = 5,
-        CameraFollowsProjectile = true,
-        ImpactEffects = {
-            Type = 'Large01',
-        },
-        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/dgun_mesh.bp',
-        UniformScale = 0.5,
-        StrategicIconSize = 3,
+CameraFollowTimeout = 5,
+CameraFollowsProjectile = true,
+ImpactEffects = {
+    Type = 'Large01',
+},
+MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/dgun_mesh.bp',
+UniformScale = 0.5,
+StrategicIconSize = 3,
     },
     General = {
-        Category = 'Indirect Fire',
-        EntityCategory = {
-            'CORE',
-            'PROJECTILE',
-            'INDIRECTFIRE',
-        },
-        Faction = 'CORE',
-        Weapon = 'CORBUZZ_WEAPON',
+Category = 'Indirect Fire',
+EntityCategory = {
+    'CORE',
+    'PROJECTILE',
+    'INDIRECTFIRE',
+},
+Faction = 'CORE',
+Weapon = 'CORBUZZ_WEAPON',
     },
     Interface = {
-        HelpText = 0,
+HelpText = 0,
     },
     Physics = {
-        DestroyOnWater = true,
-        InitialSpeed = 75,
-        UseGravity = true,
+DestroyOnWater = true,
+InitialSpeed = 75,
+UseGravity = true,
     },
 }

@@ -5,13 +5,13 @@
 
 ProjectileBlueprint {
     Categories = {
-        'PROJECTILE',
+'PROJECTILE',
     },
     General = {
-        EntityCategory = {
-            'PROJECTILE',
-        },
-        Faction = 'DUMMY',
-        Weapon = 'DUMMY',
+EntityCategory = {
+    'PROJECTILE',
+},
+Faction = 'DUMMY',
+Weapon = 'DUMMY',
     },
 }

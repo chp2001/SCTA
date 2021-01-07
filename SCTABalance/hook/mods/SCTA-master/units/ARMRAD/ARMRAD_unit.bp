@@ -7,11 +7,11 @@ UnitBlueprint {
   },
 }, 
     Economy = {
-        BuildRate = 40, 
-        MaintenanceConsumptionPerSecondEnergy = 10,
-        ProductionPerSecondEnergy = 0,
-        BuildableCategory = {
-            'armarad',
+BuildRate = 40, 
+MaintenanceConsumptionPerSecondEnergy = 10,
+ProductionPerSecondEnergy = 0,
+BuildableCategory = {
+    'armarad',
       },
     },
     General = {

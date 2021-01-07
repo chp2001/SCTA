@@ -1,20 +1,20 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'SELECTABLE',
-        'TECH2',
-        'ENGINEER',
-        'REPAIR',
-        'RECLAIM',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'PATROLHELPER',
-        'SHOWQUEUE',
+'SELECTABLE',
+'TECH2',
+'ENGINEER',
+'REPAIR',
+'RECLAIM',
+'VISIBLETORECON',
+'RECLAIMABLE',
+'PATROLHELPER',
+'SHOWQUEUE',
 	'SELECTION',
-        'MOBILE',
+'MOBILE',
 	'CONSTRUCTION',
 	'LAND',
-        'CORE',
+'CORE',
 	'LEVEL2',
 	
 	
@@ -23,22 +23,22 @@ UnitBlueprint {
 	
     },
     Defense = {
-        Health = 1000,
-        MaxHealth = 1000,
-        },
+Health = 1000,
+MaxHealth = 1000,
+},
     Economy = {
-        BuildCostEnergy = 4800,
-        BuildTime = 6000,
-        BuildRate = 320,
-        BuildableCategory = {
-            'BUILTBYT1KBOT CORE',
-            'BUILTBYT2KBOT CORE',
-        },
-        MaxBuildDistance = 7,
-        ProductionPerSecondEnergy = 2,
-        ProductionPerSecondMass = 0,
+BuildCostEnergy = 4800,
+BuildTime = 6000,
+BuildRate = 320,
+BuildableCategory = {
+    'BUILTBYT1KBOT CORE',
+    'BUILTBYT2KBOT CORE',
+},
+MaxBuildDistance = 7,
+ProductionPerSecondEnergy = 2,
+ProductionPerSecondMass = 0,
     },
     Intel = {
-        VisionRadius = 10,
+VisionRadius = 10,
     },
 }

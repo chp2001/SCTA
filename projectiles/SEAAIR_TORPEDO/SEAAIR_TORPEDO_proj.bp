@@ -5,54 +5,54 @@
 
 ProjectileBlueprint {
     Audio = {
-        Impact = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'XPLODEP2',
-            LodCutoff = 'Weapon_LodCutoff',
-        },
-        ImpactUnit = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'XPLODEP2',
-            LodCutoff = 'Weapon_LodCutoff',
-        },
-        ImpactShield = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'XPLODEP2',
-            LodCutoff = 'Weapon_LodCutoff',
-        },
-        ImpactTerrain = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'XPLODEP2',
-            LodCutoff = 'Weapon_LodCutoff',
-        },
+Impact = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'XPLODEP2',
+    LodCutoff = 'Weapon_LodCutoff',
+},
+ImpactUnit = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'XPLODEP2',
+    LodCutoff = 'Weapon_LodCutoff',
+},
+ImpactShield = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'XPLODEP2',
+    LodCutoff = 'Weapon_LodCutoff',
+},
+ImpactTerrain = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'XPLODEP2',
+    LodCutoff = 'Weapon_LodCutoff',
+},
     },
     Categories = {
-        'PROJECTILE',
-        'ANTINAVY',
-        'TORPEDO',
+'PROJECTILE',
+'ANTINAVY',
+'TORPEDO',
     },
     Display = {
-        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/torpedo_mesh.bp',
-        StrategicIconSize = 1,
-        UniformScale = 0.16,
+MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/torpedo_mesh.bp',
+StrategicIconSize = 1,
+UniformScale = 0.16,
     },
     General = {
-        Category = 'Anti Navy',
-        EntityCategory = {
-            'PROJECTILE',
-            'DIRECTFIRE',
+Category = 'Anti Navy',
+EntityCategory = {
+    'PROJECTILE',
+    'DIRECTFIRE',
 	    'ANTINAVY',
-        },
-        Weapon = 'CORAIR_TORPEDO',
+},
+Weapon = 'CORAIR_TORPEDO',
     },
     Interface = {
-        HelpText = 0,
+HelpText = 0,
     },
     Physics = {
-        DestroyOnWater = false,
-        InitialSpeed = 15,
-        TurnRate = 3600,
-        VelocityAlign = true,
-        UseGravity = true,
+DestroyOnWater = false,
+InitialSpeed = 15,
+TurnRate = 3600,
+VelocityAlign = true,
+UseGravity = true,
     },
 }

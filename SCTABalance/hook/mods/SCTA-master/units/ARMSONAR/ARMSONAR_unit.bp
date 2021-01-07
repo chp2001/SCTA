@@ -6,20 +6,20 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT1SHIP',
-        'BUILTBYT1HOVER',
-        'BUILTBYT1AIR',
-        'BUILTBYCOMMANDER',
-        'SELECTABLE',
-        'DRAGBUILD',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH1',
+'BUILTBYT1KBOT',
+'BUILTBYT1HOVER',
+'BUILTBYT1AIR',
+'BUILTBYCOMMANDER',
+'SELECTABLE',
+'DRAGBUILD',
+'VISIBLETORECON',
+'RECLAIMABLE',
+'TECH1',
 	'STRUCTURE',
 	'INTELLIGENCE',
 	'SONAR',
 	'NAVAL',
-        'OVERLAYSONAR',
+'OVERLAYSONAR',
 	'ARM',
 	'SPECIAL',
 	'LEVEL2',
@@ -27,14 +27,14 @@ UnitBlueprint {
 	'TARGETING',
     },
     Defense = {
-        Health = 300,
-        MaxHealth = 300,
+Health = 300,
+MaxHealth = 300,
     },
     Display = {
-        Abilities = {
-            '<LOC ability_sonar>Sonar',
-            '<LOC ability_upgradable>Upgradeable',
-        },
+Abilities = {
+    '<LOC ability_sonar>Sonar',
+    '<LOC ability_upgradable>Upgradeable',
+},
     },
     Economy = {
 	NaturalProducer = false,
@@ -44,19 +44,19 @@ UnitBlueprint {
     MaintenanceConsumptionPerSecondEnergy = 10,
     ProductionPerSecondEnergy = 0,
     BuildableCategory = {
-        'armason',
-        },
+'armason',
+},
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
+SizeX = 1,
+SizeZ = 1,
 	MinWaterDepth = 0.5,
     },
     General = {
-        ToggleCaps = {
-            RULEUTC_IntelToggle = true,
-        },
-        UpgradesTo = 'armason',
+ToggleCaps = {
+    RULEUTC_IntelToggle = true,
+},
+UpgradesTo = 'armason',
     },
     Intel = {
 	FreeIntel = false,
@@ -67,11 +67,11 @@ UnitBlueprint {
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     Physics = {
-        SkirtSizeX = 1, 
-        SkirtSizeZ = 1, 
-        BuildOnLayerCaps = {
-            LAYER_Water = true,
-        },
+SkirtSizeX = 1, 
+SkirtSizeZ = 1, 
+BuildOnLayerCaps = {
+    LAYER_Water = true,
+},
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,

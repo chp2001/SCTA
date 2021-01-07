@@ -1,27 +1,27 @@
 UnitBlueprint {
     Merge = true, 
     Defense = {
-        Health = 2000,
-        MaxHealth = 2000,
+Health = 2000,
+MaxHealth = 2000,
     },
     Display = {
-        UniformScale = 0.08,
+UniformScale = 0.08,
     },
     Economy = {
-        BuildCostEnergy = 12000,
-        BuildCostMass = 900,
-        BuildTime = 12000,
+BuildCostEnergy = 12000,
+BuildCostMass = 900,
+BuildTime = 12000,
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
+SizeX = 1,
+SizeZ = 1,
     },
     Intel = {
-        VisionRadius = 12,
+VisionRadius = 12,
     },
     Physics = {
-        SkirtSizeX = 1, 
-        SkirtSizeZ = 1,  
+SkirtSizeX = 1, 
+SkirtSizeZ = 1,  
     },
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
@@ -29,15 +29,15 @@ UnitBlueprint {
     SizeY = 3.25,
     SizeZ = 1,
     Weapon = {
-        [1] = {
-            Damage = 70,
-            RackRecoilDistance = -0.1,
-            RackSalvoReloadTime = 0.5,
-            RackSalvoSize = 4,
-            RateOfFire = 2,
-        },
-        [2] = {
-        },
+[1] = {
+    Damage = 70,
+    RackRecoilDistance = -0.1,
+    RackSalvoReloadTime = 0.5,
+    RackSalvoSize = 4,
+    RateOfFire = 2,
+},
+[2] = {
+},
 
     },
 }

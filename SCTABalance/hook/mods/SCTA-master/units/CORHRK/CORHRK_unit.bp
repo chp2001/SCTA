@@ -1,15 +1,15 @@
 UnitBlueprint {
     Merge = true, 
     Defense = {
-        Health = 1900,
-        MaxHealth = 1900,
+Health = 1900,
+MaxHealth = 1900,
     },
     Display = {
-        UniformScale = 0.08,
+UniformScale = 0.08,
     },
     Economy = {
-        BuildCostEnergy = 4200,
-        BuildCostMass = 580,
+BuildCostEnergy = 4200,
+BuildCostMass = 580,
     },
     LifeBarSize = 1,
     SelectionSizeX = 0.6,

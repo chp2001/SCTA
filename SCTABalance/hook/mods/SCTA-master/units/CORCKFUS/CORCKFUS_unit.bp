@@ -1,16 +1,16 @@
 UnitBlueprint {
     Merge = true, 
     Defense = {
-        Health = 8000,
-        MaxHealth = 8000,
+Health = 8000,
+MaxHealth = 8000,
     },
     Display = {
-        UniformScale = 0.40,
-        },
-        Footprint = {
-            SizeX = 5,
-            SizeZ = 5,
-        },
+UniformScale = 0.40,
+},
+Footprint = {
+    SizeX = 5,
+    SizeZ = 5,
+},
     Economy = {
     BuildCostEnergy = 150000,
     ProductionPerSecondEnergy = 2000,
@@ -18,8 +18,8 @@ UnitBlueprint {
     },
     LifeBarSize = 6,
     Physics = {
-        SkirtSizeX = 0,
-        SkirtSizeZ = 0,
+SkirtSizeX = 0,
+SkirtSizeZ = 0,
     },
     SelectionSizeX = 8,
     SelectionSizeZ = 8,

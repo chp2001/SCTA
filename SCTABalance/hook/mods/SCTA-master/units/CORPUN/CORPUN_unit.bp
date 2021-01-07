@@ -1,16 +1,16 @@
 UnitBlueprint {
     Merge = true, 
     Display = {
-        UniformScale = 0.2,
+UniformScale = 0.2,
     },
     Economy = {
-        BuildCostEnergy = 45000,
-        BuildCostMass = 3000,
-        BuildTime = 40000,
+BuildCostEnergy = 45000,
+BuildCostMass = 3000,
+BuildTime = 40000,
     },
     Physics = {
-        SkirtSizeX = 0, 
-        SkirtSizeZ = 0,  
+SkirtSizeX = 0, 
+SkirtSizeZ = 0,  
     },
     SelectionSizeX = 2.4,
     SelectionSizeZ = 2.4,

@@ -1,24 +1,24 @@
 UnitBlueprint {
     Merge = true,
     Display = {
-            UniformScale = 0.20,
-        },
-        Defense = {
-          Health = 6000,
-          MaxHealth = 6000,
+    UniformScale = 0.20,
+},
+Defense = {
+  Health = 6000,
+  MaxHealth = 6000,
       },    
     Footprint = {
-          SizeX = 3,
-          SizeZ = 3,
+  SizeX = 3,
+  SizeZ = 3,
       },
       Intel = {
-        VisionRadius = 10,
+VisionRadius = 10,
     },
       LifeBarSize = 4,
     Economy = {
-        BuildCostEnergy = 600000,
-        BuildCostMass = 5600,
-        ProductionPerSecondMass = 24,
+BuildCostEnergy = 600000,
+BuildCostMass = 5600,
+ProductionPerSecondMass = 24,
   MaintenanceConsumptionPerSecondEnergy = 700,
   BuildTime = 105000,
   },

@@ -6,10 +6,10 @@
 UnitBlueprint {
     Merge = true, 
     Display = {
-        UniformScale = 0.10,
+UniformScale = 0.10,
     },
     Intel = {
-        VisionRadius = 10,
+VisionRadius = 10,
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,

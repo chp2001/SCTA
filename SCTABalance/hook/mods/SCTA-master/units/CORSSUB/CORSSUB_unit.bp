@@ -22,12 +22,12 @@ Display = {
     UniformScale = 0.12,
     },
     Defense = {
-        Health = 3000,
-        MaxHealth = 3000,
+Health = 3000,
+MaxHealth = 3000,
     },
     Economy = {
-        BuildCostEnergy = 20000,
-        BuildCostMass = 4000,
+BuildCostEnergy = 20000,
+BuildCostMass = 4000,
     },
     SelectionSizeX = 3,
     SelectionSizeZ = 3,

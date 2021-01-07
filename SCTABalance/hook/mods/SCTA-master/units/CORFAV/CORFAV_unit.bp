@@ -16,10 +16,10 @@ UnitBlueprint {
     'LEVEL1',
 },
     Display = {
-        Abilities = {
-            '<LOC ability_radar>Radar',
-        },
-        UniformScale = 0.09,
+Abilities = {
+    '<LOC ability_radar>Radar',
+},
+UniformScale = 0.09,
        },
     Intel = {
     RadarRadius = 40,

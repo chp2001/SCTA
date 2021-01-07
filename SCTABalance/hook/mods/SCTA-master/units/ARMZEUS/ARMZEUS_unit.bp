@@ -22,32 +22,32 @@ UnitBlueprint {
     UniformScale = 0.12,
 },
     Defense = {
-        Health = 3500,
-        MaxHealth = 3500,
+Health = 3500,
+MaxHealth = 3500,
     },
     Intel = {
-        VisionRadius = 12,
+VisionRadius = 12,
     },
     Economy = {
-        BuildCostEnergy = 3000,
-        BuildCostMass = 400,
-        BuildTime = 5000,
+BuildCostEnergy = 3000,
+BuildCostMass = 400,
+BuildTime = 5000,
     },
     SizeX = 1.5,
     SizeY = 1.5,
     SizeZ = 1.5,
     StrategicIconName = 'icon_land2_directfire',
     Weapon = {
-        [1] = {
-            Damage = 53,
-            MaxRadius = 22,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
-            RackSalvoSize = 1,
-            RateOfFire = 1,
-            UseFiringSolutionInsteadOfAimBone = true,
-        },
-        [2] = {
-        },
+[1] = {
+    Damage = 53,
+    MaxRadius = 22,
+    MuzzleSalvoDelay = 0,
+    MuzzleSalvoSize = 1,
+    RackSalvoSize = 1,
+    RateOfFire = 1,
+    UseFiringSolutionInsteadOfAimBone = true,
+},
+[2] = {
+},
     },
 }

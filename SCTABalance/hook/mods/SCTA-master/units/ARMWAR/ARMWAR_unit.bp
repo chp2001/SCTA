@@ -5,7 +5,7 @@ UnitBlueprint {
     MaxHealth = 580,
     },
     Display = {
-        UniformScale = 0.12,
+UniformScale = 0.12,
     },
 Economy = {
     BuildCostEnergy = 1100,
@@ -33,16 +33,16 @@ Physics = {
     MaxSteerForce = 10,
     },
     Weapon = {
-        [1] = {
-            Damage = 10,
-            MaxRadius = 18,
-            RackSalvoSize = 1,
-            RateOfFire = 1,
-        },
+[1] = {
+    Damage = 10,
+    MaxRadius = 18,
+    RackSalvoSize = 1,
+    RateOfFire = 1,
+},
 	    [2] = {
-            Damage = 20,
-        },
-        [3] = {
-        },
+    Damage = 20,
+},
+[3] = {
+},
     },
 }

@@ -2,7 +2,7 @@ UnitBlueprint {
    Merge = true, 
    Display = {
     Abilities = {
-        '<LOC ability_jamming>Jamming',
+'<LOC ability_jamming>Jamming',
     },
 }, 
 Defense = {
@@ -16,21 +16,21 @@ Economy = {
     BuildTime = 6000,
 },
     General = {
-        ToggleCaps = {
-            RULEUTC_JammingToggle = true,
-        },
-        OrderOverrides = {
-            RULEUTC_JammingToggle = {
-                bitmapId = 'jamming',
-                helpText = 'toggle_jamming',
-            },
-        },
+ToggleCaps = {
+    RULEUTC_JammingToggle = true,
+},
+OrderOverrides = {
+    RULEUTC_JammingToggle = {
+bitmapId = 'jamming',
+helpText = 'toggle_jamming',
+    },
+},
     },
     Intel = {
     FreeIntel = false,
     JamRadius = {
-        Max = 10,
-        Min = 10,
+Max = 10,
+Min = 10,
     },
     JammerBlips = 5,
     VisionRadius = 14,
@@ -39,11 +39,11 @@ Economy = {
    StrategicIconName = 'icon_bot2_directfire',
    Weapon = {
     [1] = {
-        Damage = 80,
+Damage = 80,
     },
     [2] = {
-        Damage = 100,
-        DamageRadius = 1.5,
+Damage = 100,
+DamageRadius = 1.5,
     },
     [3] = {
     }, 

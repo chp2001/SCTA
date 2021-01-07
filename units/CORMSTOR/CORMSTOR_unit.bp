@@ -5,112 +5,112 @@
 
 UnitBlueprint {
     Audio = {
-        UISelection = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'STORMTL2',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
-	Destroyed = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'XPLOSML3',
-            LodCutoff = 'UnitMove_LodCutoff',
-	},
+UISelection = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'STORMTL2',
+    LodCutoff = 'UnitMove_LodCutoff',
+},
+Destroyed = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'XPLOSML3',
+    LodCutoff = 'UnitMove_LodCutoff',
+},
     },
     BuildIconSortPriority = 7,
     Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1VEHICLE',
-        'BUILTBYT1SHIP',
-        'BUILTBYT1HOVER',
-        'BUILTBYCOMMANDER',
-        'SELECTABLE',
-        'DRAGBUILD',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH1',
+'BUILTBYT1AIR',
+'BUILTBYT1KBOT',
+'BUILTBYT1VEHICLE',
+'BUILTBYT1SHIP',
+'BUILTBYT1HOVER',
+'BUILTBYCOMMANDER',
+'SELECTABLE',
+'DRAGBUILD',
+'VISIBLETORECON',
+'RECLAIMABLE',
+'TECH1',
 
-	
-	'STRUCTURE',
-        'METALSTORAGE',
-                'ECONOMIC',
-        'SORTECONOMY',
 
-	
-	'CORE',
-	'METAL',
-	'LEVEL1',
-	
-	
-	
-	'STORAGE',
+'STRUCTURE',
+'METALSTORAGE',
+'ECONOMIC',
+'SORTECONOMY',
+
+
+'CORE',
+'METAL',
+'LEVEL1',
+
+
+
+'STORAGE',
     },
     Defense = {
-        ArmorType = 'Structure',
-        AirThreatLevel = 0,
-        EconomyThreatLevel = 2,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
-        Health = 1306,
-        MaxHealth = 1306,
+ArmorType = 'Structure',
+AirThreatLevel = 0,
+EconomyThreatLevel = 2,
+SubThreatLevel = 0,
+SurfaceThreatLevel = 0,
+Health = 1306,
+MaxHealth = 1306,
     },
     Description = 'Increases Metal Storage',
     Display = {
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
-                {
-                    LODCutoff = 230,
-                    ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
-                },
-            },
-        },
-        UniformScale = 0.16,
+--[[DestructionEffects = {
+DestructionEmitters = {
+{
+EmitterBone = {0},
+EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+EmitterSize = 1.25,
+},
+},
+},]]--
+Mesh = {
+    IconFadeInZoom = 130,
+    LODs = {
+{
+    LODCutoff = 230,
+    ShaderName = 'Unit', 
+    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+},
+    },
+},
+UniformScale = 0.16,
     },
     Economy = {
-        BuildCostEnergy = 550,
-        BuildCostMass = 320,
-        BuildTime = 2925,
-        StorageMass = 1000,
+BuildCostEnergy = 550,
+BuildCostMass = 320,
+BuildTime = 2925,
+StorageMass = 1000,
     },
     Footprint = {
-	MaxSlope = 0.625,
-        SizeX = 5,
-        SizeZ = 5,
+MaxSlope = 0.625,
+SizeX = 5,
+SizeZ = 5,
     },
     General = {
-        Category = 'Economy',
-        Classification = 'RULEUC_Resource',
-        SelectionPriority = 5,
-        FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
-        UnitName = 'Metal Storage',
+Category = 'Economy',
+Classification = 'RULEUC_Resource',
+SelectionPriority = 5,
+FactionName = 'CORE',
+TechLevel = 'RULEUTL_Basic',
+UnitName = 'Metal Storage',
     },
     Intel = {
-        VisionRadius = 14,
-        WaterVisionRadius = 4, 
+VisionRadius = 14,
+WaterVisionRadius = 4, 
     },
     Interface = {
-        HelpText = 'Increases Metal Storage',
+HelpText = 'Increases Metal Storage',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.25,
     LifeBarSize = 1,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-            LAYER_Seabed = true,
-        },
+BuildOnLayerCaps = {
+    LAYER_Land = true,
+    LAYER_Seabed = true,
+},
     },
     SelectionSizeX = 2.5,
     SelectionSizeZ = 2.5,
@@ -121,26 +121,26 @@ UnitBlueprint {
     StrategicIconName = 'icon_structure1_mass',
     StrategicIconSortPriority = 0,
     Weapon = {
-        { #SMALL_BUILDINGEX
-            Damage = 40,
-            DamageFriendly = true,
-            DamageRadius = 6.406,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
-        },
-         
+{ #SMALL_BUILDINGEX
+    Damage = 40,
+    DamageFriendly = true,
+    DamageRadius = 6.406,
+    DamageType = 'Normal',
+    DummyWeapon = true,
+    Label = 'DeathWeapon',
+},
+ 
     },
-        Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-        EnergyMult = 0,
-        HealthMult = 0.9,
-        MassMult = 0.9,
-        ReclaimTimeMultiplier = 1,
-        --Blueprint = '/mods/SCTA-master/units/CORMSTOR/CORMSTOR_dead_prop.bp',
-        WreckageLayers = {
-            Land = true,
-        },
+Wreckage = {
+---UseCustomMesh = true,
+Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+EnergyMult = 0,
+HealthMult = 0.9,
+MassMult = 0.9,
+ReclaimTimeMultiplier = 1,
+--Blueprint = '/mods/SCTA-master/units/CORMSTOR/CORMSTOR_dead_prop.bp',
+WreckageLayers = {
+    Land = true,
+},
     },
 }

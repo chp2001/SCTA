@@ -50,7 +50,8 @@ UnitBlueprint {
         'STRATEGIC',
         	'PLANT',
 	'SORTSTRATEGIC',
-        'LEVEL3',  
+        'LEVEL3',
+        'GATE',  
     },
     Defense = {
         ArmorType = 'ExperimentalStructure',

@@ -40,20 +40,13 @@ UnitBlueprint {
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-
-	
+    'LAND',
 	'STRUCTURE',
 	'CONSTRUCTION',
-
-	
 	'ARM',
-		'PLANT',
+	'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',

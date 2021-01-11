@@ -44,7 +44,6 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'STRUCTURE',
 	'CONSTRUCTION',
-	'TEXTUREANIM',
 	'CORE',
 		'PLANT',
 	'SORTCONSTRUCTION',

@@ -1,13 +1,13 @@
 MeshBlueprint {
     IconFadeInZoom = 130,
     LODs = {
-{
-    MeshName = 'CORCOM_lod0.scm',
-    AlbedoName = 'CORCOM_Albedo.dds',
-    NormalsName = 'CORCOM_normalsts.dds',
-    SpecularName = 'CORCOM_Specteam.dds',
-    ShaderName = 'TACloak', -- TACloak
-    LODCutoff = 230,
-},
+        {
+            MeshName = 'CORCOM_lod0.scm',
+            AlbedoName = 'CORCOM_Albedo.dds',
+            NormalsName = 'CORCOM_normalsts.dds',
+            SpecularName = 'CORCOM_Specteam.dds',
+            ShaderName = 'TACloak', -- TACloak
+            LODCutoff = 230,
+        },
     },
 }

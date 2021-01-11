@@ -16,7 +16,7 @@ UnitBlueprint {
 'OVERLAYANTIAIR',
     'LAND',
     'ARM',
-'HOVER',
+        'HOVER',
 'PHIB',
 
 'LEVEL1',
@@ -25,24 +25,24 @@ UnitBlueprint {
 
 },
     Defense = {
-Health = 4000,
-MaxHealth = 4000,
+        Health = 4000,
+        MaxHealth = 4000,
     },    
     Economy = {
-BuildCostEnergy = 36000,
-BuildCostMass = 2000,
-BuildTime = 27000,
+        BuildCostEnergy = 36000,
+        BuildCostMass = 2000,
+        BuildTime = 27000,
     },
     SizeY = 1.4,
     StrategicIconName = 'icon_land3_antiair',
     Weapon = {
-[1] = {
-    Damage = 180,  
-    MuzzleVelocity = 70,
-    ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/AH_WEAPON/AH_WEAPON_proj.bp',
-    RackSalvoSize = 3,
-    RateOfFire = 1,
-},
-[2] = {}, 
+        [1] = {
+            Damage = 180,  
+            MuzzleVelocity = 70,
+            ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/AH_WEAPON/AH_WEAPON_proj.bp',
+            RackSalvoSize = 3,
+            RateOfFire = 1,
+        },
+        [2] = {}, 
     },
 }

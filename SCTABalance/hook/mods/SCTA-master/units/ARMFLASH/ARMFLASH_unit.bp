@@ -4,11 +4,11 @@ UnitBlueprint {
     UniformScale = 0.1,
 },
     Defense = {
-Health = 180,
-MaxHealth = 180,
+        Health = 180,
+        MaxHealth = 180,
     },
     Economy = {
-BuildCostMass = 76,
+        BuildCostMass = 76,
     },
     LifeBarSize = 1,
     SelectionSizeX = 0.6,

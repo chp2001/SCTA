@@ -6,17 +6,17 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-'SELECTABLE',
-'TECH2',
-'VISIBLETORECON',
-'RECLAIMABLE',
-'MOBILE',
+        'SELECTABLE',
+        'TECH2',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
 	'LAND',
 	'INTELLIGENCE',
 	'RADAR',
-'OVERLAYRADAR',
-'ARM',
---'VEHICLE',	#'TANK' in TA
+        'OVERLAYRADAR',
+        'ARM',
+        --'VEHICLE',	#'TANK' in TA
 	'LEVEL2',
     },
 }

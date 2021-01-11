@@ -1,13 +1,13 @@
 MeshBlueprint {
     IconFadeInZoom = 130,
     LODs = {
-{
-    MeshName = 'ARMSPY_lod0.scm',
-    AlbedoName = 'ARMSPY_Albedo.dds',
-    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds',
-    SpecularName = 'ARMSPY_SpecTeam.dds',
-    ShaderName = 'TACloak', -- TACloak
-    LODCutoff = 230,
-},
+        {
+            MeshName = 'ARMSPY_lod0.scm',
+            AlbedoName = 'ARMSPY_Albedo.dds',
+            NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds',
+            SpecularName = 'ARMSPY_SpecTeam.dds',
+            ShaderName = 'TACloak', -- TACloak
+            LODCutoff = 230,
+        },
     },
 }

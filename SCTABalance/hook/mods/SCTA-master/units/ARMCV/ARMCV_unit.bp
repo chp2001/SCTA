@@ -1,20 +1,20 @@
 UnitBlueprint {
     Merge = true, 
     Categories = {
-'SELECTABLE',
-'TECH1',
-'ENGINEER',
-'REPAIR',
-'RECLAIM',
-'VISIBLETORECON',
-'RECLAIMABLE',
-'PATROLHELPER',
-'SHOWQUEUE',
+        'SELECTABLE',
+        'TECH1',
+        'ENGINEER',
+        'REPAIR',
+        'RECLAIM',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'PATROLHELPER',
+        'SHOWQUEUE',
 	'SELECTION',
-'MOBILE',
+        'MOBILE',
 	'CONSTRUCTION',
 	'LAND',
-'ARM',
+        'ARM',
 	'LEVEL1',
 	
 	
@@ -23,24 +23,24 @@ UnitBlueprint {
 	
     },
     Display = {
-UniformScale = 0.16,
+        UniformScale = 0.16,
     },
     Defense = {
-Health = 420,
-MaxHealth = 420,
-},
+        Health = 420,
+        MaxHealth = 420,
+        },
     Physics = {
-MaxAcceleration = 1.5,
-MaxSpeed = 1.5,
+        MaxAcceleration = 1.5,
+        MaxSpeed = 1.5,
     }, 
-Economy = {
-BuildCostEnergy = 1600,
-BuildTime = 3800,
-ProductionPerSecondEnergy = 1,
-MaxBuildDistance = 6,
+        Economy = {
+        BuildCostEnergy = 1600,
+        BuildTime = 3800,
+        ProductionPerSecondEnergy = 1,
+        MaxBuildDistance = 6,
     },
     Intel = {
-VisionRadius = 8,
+        VisionRadius = 8,
     },
     LifeBarSize = 1.5,
     SelectionSizeX = 0.6,

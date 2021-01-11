@@ -1,11 +1,11 @@
 UnitBlueprint {
     Merge = true, 
     Display = {
-UniformScale = 0.11,
+        UniformScale = 0.11,
     },
     Economy = {
-BuildCostMass = 64,
-BuildTime = 2100,
+        BuildCostMass = 64,
+        BuildTime = 2100,
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,

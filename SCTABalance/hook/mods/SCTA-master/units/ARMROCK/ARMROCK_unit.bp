@@ -6,7 +6,7 @@ UnitBlueprint {
 },
    Display = {
     UniformScale = 0.12,
-},
+        },
     SelectionSizeX = 0.8,
     SelectionSizeZ = 0.8,
     SizeX = 1.3,

@@ -6,20 +6,20 @@
 UnitBlueprint {
     Merge = true,
     Economy = {
-BuildCostEnergy = 8500,
-BuildCostMass = 400,
-BuildTime = 12000,
+        BuildCostEnergy = 8500,
+        BuildCostMass = 400,
+        BuildTime = 12000,
     },
     Intel = {
-VisionRadius = 14,
-WaterVisionRadius = 4, 
+        VisionRadius = 14,
+        WaterVisionRadius = 4, 
     },
     Weapon = {
-[1] = {
-Damage = 5,
-MaxRadius = 25,
-RackSalvoSize = 2,
-RateOfFire = 3.33,
+        [1] = {
+        Damage = 5,
+        MaxRadius = 25,
+        RackSalvoSize = 2,
+        RateOfFire = 3.33,
     },
     [2] = {
     },

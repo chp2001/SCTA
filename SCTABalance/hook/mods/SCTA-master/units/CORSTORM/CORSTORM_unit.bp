@@ -6,10 +6,10 @@ UnitBlueprint {
     },
    Display = {
     UniformScale = 0.11,
-},
-Economy = {
-    BuildCostMass = 100,
-},
+        },
+        Economy = {
+            BuildCostMass = 100,
+        },
     SizeX = 1.6,
     SizeY = 1.4,
     SizeZ = 1.4,

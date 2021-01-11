@@ -1,20 +1,20 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-'SELECTABLE',
-'TECH1',
-'ENGINEER',
-'REPAIR',
-'RECLAIM',
-'VISIBLETORECON',
-'RECLAIMABLE',
-'PATROLHELPER',
-'SHOWQUEUE',
+        'SELECTABLE',
+        'TECH1',
+        'ENGINEER',
+        'REPAIR',
+        'RECLAIM',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'PATROLHELPER',
+        'SHOWQUEUE',
 	'SELECTION',
-'MOBILE',
+        'MOBILE',
 	'CONSTRUCTION',
 	'LAND',
-'CORE',
+        'CORE',
 	'LEVEL1',
 	
 	
@@ -23,16 +23,16 @@ UnitBlueprint {
 	
     },
     Defense = {
-Health = 410,
-MaxHealth = 410,
-},
+        Health = 410,
+        MaxHealth = 410,
+        },
     Economy = {
-BuildCostEnergy = 1600,
-BuildTime = 3800,
-ProductionPerSecondEnergy = 1,
-MaxBuildDistance = 6,
+        BuildCostEnergy = 1600,
+        BuildTime = 3800,
+        ProductionPerSecondEnergy = 1,
+        MaxBuildDistance = 6,
     },
     Intel = {
-VisionRadius = 8,
+        VisionRadius = 8,
     },
 }

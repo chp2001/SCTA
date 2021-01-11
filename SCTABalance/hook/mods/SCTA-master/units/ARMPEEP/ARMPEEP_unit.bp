@@ -4,6 +4,6 @@ UnitBlueprint {
     RadarRadius = 60,
     },
     Economy = {
-BuildCostMass = 80,
+        BuildCostMass = 80,
     },
 }

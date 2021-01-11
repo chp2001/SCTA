@@ -26,13 +26,13 @@ Defense = {
     MaxHealth = 16000,
 },
     Economy = {
-BuildCostEnergy = 36000,
-BuildCostMass = 2450,
-BuildTime = 28000,
+        BuildCostEnergy = 36000,
+        BuildCostMass = 2450,
+        BuildTime = 28000,
     },
     Physics = {
-MaxAcceleration = 1.6,
-MaxSpeed = 2.2,
+        MaxAcceleration = 1.6,
+        MaxSpeed = 2.2,
     },
     StrategicIconName = 'icon_land3_directfire',
 }

@@ -10,7 +10,7 @@ UnitBlueprint {
     'KBOT',
     'LAND',
     'ARM',
-'HOVER',
+        'HOVER',
 'PHIB',
 'LEVEL3',
 },
@@ -25,18 +25,18 @@ Economy = {
 },
     StrategicIconName = 'icon_bot3_armored',
     Weapon = {
-[1] = {
-    Damage = 240,
-},
-[2] = {
-    EnergyDrainPerSecond = 25,
-    EnergyRequired = 50,
-    Damage = 180,
-    MaxRadius = 28, 
-    RateOfFire = 0.7692307692,
-},
-[3] = {
-}, 
+        [1] = {
+            Damage = 240,
+        },
+        [2] = {
+            EnergyDrainPerSecond = 25,
+            EnergyRequired = 50,
+            Damage = 180,
+            MaxRadius = 28, 
+            RateOfFire = 0.7692307692,
+        },
+        [3] = {
+        }, 
 
     },
 }

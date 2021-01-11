@@ -5,61 +5,61 @@
 
 ProjectileBlueprint {
     Audio = {
-Impact = Sound {
-    Bank = 'TA_Sound',
-    Cue = 'XPLODEP2',
-    LodCutoff = 'Weapon_LodCutoff',
-},
-ImpactUnit = Sound {
-    Bank = 'TA_Sound',
-    Cue = 'XPLODEP2',
-    LodCutoff = 'Weapon_LodCutoff',
-},
-ImpactShield = Sound {
-    Bank = 'TA_Sound',
-    Cue = 'XPLODEP2',
-    LodCutoff = 'Weapon_LodCutoff',
-},
-ImpactTerrain = Sound {
-    Bank = 'TA_Sound',
-    Cue = 'XPLODEP2',
-    LodCutoff = 'Weapon_LodCutoff',
-},
+        Impact = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactUnit = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactShield = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactTerrain = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
     },
     Categories = {
-'CORE',
-'PROJECTILE',
-'DIRECTFIRE',
+        'CORE',
+        'PROJECTILE',
+        'DIRECTFIRE',
 	'ANTINAVY',
     },
     Display = {
-CameraFollowTimeout = 3,
-MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/DEPTHCHARGE_mesh.bp',
-UniformScale = 0.16,
-StrategicIconSize = 1,
+        CameraFollowTimeout = 3,
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/DEPTHCHARGE_mesh.bp',
+        UniformScale = 0.16,
+        StrategicIconSize = 1,
     },
     General = {
-Category = 'Direct Fire',
-EntityCategory = {
-    'CORE',
-    'PROJECTILE',
-    'DIRECTFIRE',
+        Category = 'Direct Fire',
+        EntityCategory = {
+            'CORE',
+            'PROJECTILE',
+            'DIRECTFIRE',
 	    'ANTINAVY',
-},
-Faction = 'CORE',
-Weapon = 'COREDEPTHCHARGE',
+        },
+        Faction = 'CORE',
+        Weapon = 'COREDEPTHCHARGE',
     },
     Interface = {
-HelpText = 0,
+        HelpText = 0,
     },
     Physics = {
-DestroyOnWater = false,
-InitialSpeed = 5,
-Lifetime = 10,
-UseGravity = false,
-TrackTarget = true,
-TurnRate = 90,
-VelocityAlign = true,
+        DestroyOnWater = false,
+        InitialSpeed = 5,
+        Lifetime = 10,
+        UseGravity = false,
+        TrackTarget = true,
+        TurnRate = 90,
+        VelocityAlign = true,
 	StayUnderwater = true
     },
 }

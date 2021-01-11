@@ -6,112 +6,112 @@
 UnitBlueprint {
     BuildIconSortPriority = 20,
     Categories = {
-'BUILTBYT2VEHICLE',
-'BUILTBYT2KBOT',
-'BUILTBYT2AIR',
-'UNSELECTABLE',
-'DRAGBUILD',
-'VISIBLETORECON',
-'RECLAIMABLE',
-'TECH3',
-'BENIGN',
-'SORTDEFENSE',
-'STRUCTURE',
-'DEFENSE',
-'WALL',
-'NOEXPLOSION',
-'NOSMOKE',
-'CORE',
-'METAL',
-'LEVEL2',
-
-
-
+        'BUILTBYT2VEHICLE',
+        'BUILTBYT2KBOT',
+        'BUILTBYT2AIR',
+	'UNSELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH3',
+        'BENIGN',
+        'SORTDEFENSE',
+	'STRUCTURE',
+        'DEFENSE',
+        'WALL',
+	'NOEXPLOSION',
+	'NOSMOKE',
+	'CORE',
+	'METAL',
+	'LEVEL2',
+	
+	
+	
     },
     Defense = {
-ArmorType = 'Structure',
-Health = 6000,
-MaxHealth = 6000,
-AirThreatLevel = 0,
-EconomyThreatLevel = 0,
-SubThreatLevel = 0,
-SurfaceThreatLevel = 0,
+        ArmorType = 'Structure',
+        Health = 6000,
+        MaxHealth = 6000,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
     },
     Description = 'Perimeter Defence',
     Display = {
-Abilities = {
-    'Wall',
-},
---[[DestructionEffects = {
-DefaultFlamingProjectileCountMin = 0,
-DefaultFlamingProjectileCountMax = 0,
-FlashSize = 0,
-FlashTime = 0,
-},]]--
-Mesh = {
-    IconFadeInZoom = 130,
-    LODs = {
-{
-    LODCutoff = 230,
-    ShaderName = 'Unit', 
-    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
-},
-    },
-},
-UniformScale = 0.16,
+        Abilities = {
+            'Wall',
+        },
+		--[[DestructionEffects = {
+		DefaultFlamingProjectileCountMin = 0,
+		DefaultFlamingProjectileCountMax = 0,
+		FlashSize = 0,
+		FlashTime = 0,
+		},]]--
+        Mesh = {
+	    IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.16,
     },
     Economy = {
-BuildCostEnergy = 675,
-BuildCostMass = 27,
-BuildTime = 965,
+        BuildCostEnergy = 675,
+        BuildCostMass = 27,
+        BuildTime = 965,
     },
     Footprint = {
-MaxSlope = 2,
-SizeX = 2,
-SizeZ = 2,
+	MaxSlope = 2,
+        SizeX = 2,
+        SizeZ = 2,
     },
     General = {
----BuildAngle = 0,
-CapCost = 0,
-Category = 'Defense',
-Classification = 'RULEUC_MiscSupport',
-SelectionPriority = 5,
-FactionName = 'CORE',
-TechLevel = 'RULEUTL_Secret',
-UnitName = 'Fortification Wall',
+	---BuildAngle = 0,
+        CapCost = 0,
+        Category = 'Defense',
+        Classification = 'RULEUC_MiscSupport',
+        SelectionPriority = 5,
+        FactionName = 'CORE',
+        TechLevel = 'RULEUTL_Secret',
+        UnitName = 'Fortification Wall',
     },
     Intel = {
-VisionRadius = 0,
+        VisionRadius = 0,
     },
     Interface = {
-HelpText = 'Perimeter Defence',
+        HelpText = 'Perimeter Defence',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     LifeBarRender = false,
     Physics = {
-BuildOnLayerCaps = {
-    LAYER_Land = true,
-},
-SkirtSizeX = 2,
-SkirtSizeZ = 2,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+        },
+        SkirtSizeX = 2,
+        SkirtSizeZ = 2,
     },
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
     StrategicIconName = 'icon_structure_wall',
     StrategicIconSortPriority = 0,
-Wreckage = {
----UseCustomMesh = true,
-Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-EnergyMult = 0,
-HealthMult = 0.9,
-MassMult = 0.9,
-ReclaimTimeMultiplier = 1,
---Blueprint = '/mods/SCTA-master/units/CORFORT/CORFORT_heap_prop.bp',
-WreckageLayers = {
-    Land = true,
-},
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORFORT/CORFORT_heap_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
     },
 }

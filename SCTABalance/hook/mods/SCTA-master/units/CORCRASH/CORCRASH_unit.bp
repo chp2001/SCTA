@@ -9,7 +9,7 @@ UnitBlueprint {
     UniformScale = 0.08,
 },
     Intel = {
-VisionRadius = 10,
+        VisionRadius = 10,
     },
     SelectionSizeX = 0.8,
 SelectionSizeZ = 0.8,

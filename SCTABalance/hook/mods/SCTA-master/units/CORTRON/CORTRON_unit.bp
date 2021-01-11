@@ -6,20 +6,20 @@
 UnitBlueprint {
     Merge = true, 
     Categories = {
-'TECH3',
-'BUILTBYT2AIR',
-'BUILTBYT2KBOT',
-'BUILTBYT2VEHICLE',
-'SELECTABLE',
-'DRAGBUILD',
-'VISIBLETORECON',
-'RECLAIMABLE',
+        'TECH3',
+        'BUILTBYT2AIR',
+        'BUILTBYT2KBOT',
+        'BUILTBYT2VEHICLE',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
 	'STRUCTURE',
 	'STRATEGIC',
 	'INDIRECTFIRE',
-'NUKE',
-'SILO',
-'SHOWQUEUE',
+        'NUKE',
+        'SILO',
+        'SHOWQUEUE',
 	'CORE',
 	'SPECIAL',
 	'SORTSTRATEGIC',
@@ -28,14 +28,14 @@ UnitBlueprint {
     'NOCUSTOMTARGET',
     },
     Economy = {
-BuildRate = 150000,
+        BuildRate = 150000,
     },    
     Weapon = {
-[1] = {
-    ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/EZBMSSL/EZBMSSL_proj.bp',
-},
-[2] = {
-},
+        [1] = {
+            ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/EZBMSSL/EZBMSSL_proj.bp',
+        },
+        [2] = {
+        },
     },
 
 }

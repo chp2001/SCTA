@@ -2,23 +2,23 @@ UnitBlueprint {
     Merge = true,
     CollisionOffsetY = -0.6,
     Display = {
-UniformScale = 0.1,
+        UniformScale = 0.1,
     },
     Defense = {
-Health = 1700,
-MaxHealth = 1700,
+        Health = 1700,
+        MaxHealth = 1700,
     },
     Footprint = {
-SizeX = 1,
-SizeZ = 1,
+        SizeX = 1,
+        SizeZ = 1,
 	    MaxSlope = 0.875,
     },
     Physics = {
-SkirtSizeX = 1, 
-SkirtSizeZ = 1,  
+        SkirtSizeX = 1, 
+        SkirtSizeZ = 1,  
     },
     Intel = {
-VisionRadius = 12,
+        VisionRadius = 12,
     },
     LifeBarSize = 1,
     SelectionCenterOffsetZ = -0.1,

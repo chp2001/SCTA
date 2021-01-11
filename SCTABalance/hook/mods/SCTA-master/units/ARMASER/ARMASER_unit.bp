@@ -1,17 +1,17 @@
 UnitBlueprint {
     Merge = true, 
     Categories = {
-'SELECTABLE',
-'TECH2',
-'VISIBLETORECON',
-'RECLAIMABLE',
-'MOBILE',
+        'SELECTABLE',
+        'TECH2',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
 	'LAND',
     'INTELLIGENCE',
     'COUNTERINTELLIGENCE',
-'OVERLAYCOUNTERINTEL',
-'ARM',
---'KBOT',
+        'OVERLAYCOUNTERINTEL',
+        'ARM',
+        --'KBOT',
 	'JAM',
 	'LEVEL2',
     },
@@ -19,6 +19,6 @@ UnitBlueprint {
 	    MaintenanceConsumptionPerSecondEnergy = 20,
     },
     Intel = {
-RadarStealthFieldRadius = 20,
+        RadarStealthFieldRadius = 20,
     },
 }

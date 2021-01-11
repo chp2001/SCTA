@@ -6,16 +6,16 @@
 UnitBlueprint {
     Merge = true,
     Economy = {
-BuildCostEnergy = 8000,
-BuildCostMass = 500,
-BuildTime = 5000,
+        BuildCostEnergy = 8000,
+        BuildCostMass = 500,
+        BuildTime = 5000,
     },
     LifeBarOffset = 0,
     LifeBarSize = 1,
     Weapon = {
-[1] = {
-    Damage = 1500, #Doubles up with death, so death damage subtracted
+        [1] = {
+            Damage = 1500, #Doubles up with death, so death damage subtracted
 	    DamageRadius = 6,
-},
+        },
      },
 }

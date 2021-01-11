@@ -9,7 +9,7 @@ UnitBlueprint {
     UniformScale = 0.10,
 },
     Intel = {
-VisionRadius = 10,
+        VisionRadius = 10,
     },
     SelectionSizeX = 0.8,
     SelectionSizeZ = 0.8,
@@ -17,12 +17,12 @@ VisionRadius = 10,
     SizeY = 1.2,
     SizeZ = 1.2,
     Weapon = {
-[1] = {
-    Damage = 24,
-    RateOfFire = 1.666666667,
-},
-[2] = {
-}, 
+        [1] = {
+            Damage = 24,
+            RateOfFire = 1.666666667,
+        },
+        [2] = {
+        }, 
 
     },
 }

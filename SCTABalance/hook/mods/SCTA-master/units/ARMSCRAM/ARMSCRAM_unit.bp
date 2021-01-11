@@ -2,31 +2,31 @@ UnitBlueprint {
     Merge = true, 
     BuildIconSortPriority = 1,
     Categories = {
-'SELECTABLE',
-'TECH3',
-'VISIBLETORECON',
-'RECLAIMABLE',
-'MOBILE',
+        'SELECTABLE',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
 	'NAVAL',
 	'INTELLIGENCE',
-'OVERLAYCOUNTERINTEL',
-'COUNTERINTELLIGENCE',
-'DEFENSIVEBOAT',
-'ARM',
-'SUBMERSIBLE',
+        'OVERLAYCOUNTERINTEL',
+        'COUNTERINTELLIGENCE',
+        'DEFENSIVEBOAT',
+        'ARM',
+        'SUBMERSIBLE',
     'JAM',
     'OCEAN',
 	'LEVEL3',
     },
     Display = {
-Abilities = {
-    '<LOC ability_jamming>Jamming',
-},
+        Abilities = {
+            '<LOC ability_jamming>Jamming',
+        },
     }, 
     Economy = {
-BuildCostEnergy = 2100,
-BuildCostMass = 200,
-BuildTime = 3600,
+        BuildCostEnergy = 2100,
+        BuildCostMass = 200,
+        BuildTime = 3600,
     },
     Footprint = {
 	SizeX = 2,
@@ -34,23 +34,23 @@ BuildTime = 3600,
 	MaxSlope = 1,
     },
     General = {
-ToggleCaps = {
-    RULEUTC_JammingToggle = true,
-    RULEUTC_StealthToggle = false,
-},
-OrderOverrides = {
-    RULEUTC_JammingToggle = {
-bitmapId = 'jamming',
-helpText = 'toggle_jamming',
-    },
-},
+        ToggleCaps = {
+            RULEUTC_JammingToggle = true,
+            RULEUTC_StealthToggle = false,
+        },
+        OrderOverrides = {
+            RULEUTC_JammingToggle = {
+                bitmapId = 'jamming',
+                helpText = 'toggle_jamming',
+            },
+        },
     },
     Intel = {
     FreeIntel = false,
     RadarStealth = false,
     JamRadius = {
-Max = 18,
-Min = 18,
+        Max = 18,
+        Min = 18,
     },
     JammerBlips = 8,
     VisionRadius = 14,

@@ -8,7 +8,7 @@ UnitBlueprint {
 	MaintenanceConsumptionPerSecondEnergy = 15,
     },
     Intel = {
-RadarStealthFieldRadius = 20,
+        RadarStealthFieldRadius = 20,
     },
     LifeBarSize = 1.4,
     SelectionSizeX = 0.8,

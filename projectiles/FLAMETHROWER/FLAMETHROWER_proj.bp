@@ -5,34 +5,34 @@
 
 ProjectileBlueprint {
     Categories = {
-'CORE',
-'PROJECTILE',
-'DIRECTFIRE'
+        'CORE',
+        'PROJECTILE',
+        'DIRECTFIRE'
     },
     Display = {
 	#Better way of doing this?
-MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/Plasma_mesh.bp',
-UniformScale = 0,
-StrategicIconSize = 1,
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/Plasma_mesh.bp',
+        UniformScale = 0,
+        StrategicIconSize = 1,
     },
     General = {
-Category = 'Direct Fire',
-EntityCategory = {
-    'CORE',
-    'PROJECTILE',
-    'DIRECTFIRE',
-},
-Faction = 'CORE',
-Weapon = 'FLAMETHROWER',
+        Category = 'Direct Fire',
+        EntityCategory = {
+            'CORE',
+            'PROJECTILE',
+            'DIRECTFIRE',
+        },
+        Faction = 'CORE',
+        Weapon = 'FLAMETHROWER',
     },
     Interface = {
-HelpText = 0,
+        HelpText = 0,
     },
     Physics = {
-CollideEntity = false,
-DestroyOnWater = true,
-InitialSpeed = 11.75,
-Lifetime = 1,
-UseGravity = false,
+        CollideEntity = false,
+        DestroyOnWater = true,
+        InitialSpeed = 11.75,
+        Lifetime = 1,
+        UseGravity = false,
     },
 }

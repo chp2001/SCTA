@@ -6,17 +6,17 @@
 UnitBlueprint {
     Merge = true,
     Display = {
-Abilities = {
-    '<LOC ability_tacmissiledef>Tactical Missile Defense',
-},
-UniformScale = 0.24,
+        Abilities = {
+            '<LOC ability_tacmissiledef>Tactical Missile Defense',
+        },
+        UniformScale = 0.24,
     },
     Defense = {
-Health = 2900,
-MaxHealth = 2900,
+        Health = 2900,
+        MaxHealth = 2900,
     },
     Economy = {
-BuildTime = 45000,
+        BuildTime = 45000,
     },
     LifeBarSize = 4,
     SelectionSizeX = 3,

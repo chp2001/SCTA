@@ -5,63 +5,63 @@
 
 ProjectileBlueprint {
     Audio = {
-Impact = Sound {
-    Bank = 'TA_Sound',
-    Cue = 'XPLOSML2',
-    LodCutoff = 'Weapon_LodCutoff',
-},
-ImpactUnit = Sound {
-    Bank = 'TA_Sound',
-    Cue = 'XPLOSML2',
-    LodCutoff = 'Weapon_LodCutoff',
-},
-ImpactShield = Sound {
-    Bank = 'TA_Sound',
-    Cue = 'XPLOSML2',
-    LodCutoff = 'Weapon_LodCutoff',
-},
-ImpactTerrain = Sound {
-    Bank = 'TA_Sound',
-    Cue = 'XPLOSML2',
-    LodCutoff = 'Weapon_LodCutoff',
-},
-ImpactWater = Sound {
-    Bank = 'TA_Sound',
-    Cue = 'SPLSMED',
-    LodCutoff = 'Weapon_LodCutoff',
-},
+        Impact = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOSML2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactUnit = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOSML2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactShield = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOSML2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactTerrain = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOSML2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactWater = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'SPLSMED',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
     },
     Categories = {
-'ARM',
-'PROJECTILE',
-'MISSILE',
+        'ARM',
+        'PROJECTILE',
+        'MISSILE',
     },
     Display = {
-MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/missile_mesh.bp',
-StrategicIconSize = 1,
-UniformScale = 0.16,
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/missile_mesh.bp',
+        StrategicIconSize = 1,
+        UniformScale = 0.16,
     },
     General = {
-Category = 'Direct Fire',
-EntityCategory = {
+        Category = 'Direct Fire',
+        EntityCategory = {
        	    'ARM',
-    'PROJECTILE',
+            'PROJECTILE',
        	    'MISSILE',
-},
-Faction = 'ARM',
-Weapon = 'KBOT_ROCKET',
+        },
+        Faction = 'ARM',
+        Weapon = 'KBOT_ROCKET',
     },
     Interface = {
-HelpText = 0,
+        HelpText = 0,
     },
     Physics = {
 	TurnRate = 0,
-DestroyOnWater = true,
-InitialSpeed = 24,
+        DestroyOnWater = true,
+        InitialSpeed = 24,
 	TrackTarget = true,
 	TurnSpeed = 0,
-Lifetime = 10,
-UseGravity = false,
-VelocityAlign = true,
+        Lifetime = 10,
+        UseGravity = false,
+        VelocityAlign = true,
     },
 }

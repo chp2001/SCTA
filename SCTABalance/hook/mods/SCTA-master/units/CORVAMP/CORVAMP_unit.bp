@@ -11,33 +11,33 @@ UnitBlueprint {
       TurnSpeed = 1.5,
   },
     Display = {
-  Abilities = {
-    '<LOC ability_aa>Anti-Air',
-    '<LOC ability_personalstealth>Personal Stealth',
-  },
-},
+          Abilities = {
+            '<LOC ability_aa>Anti-Air',
+            '<LOC ability_personalstealth>Personal Stealth',
+          },
+        },
     Defense = {
-  Health = 2400,
-  MaxHealth = 2400,
-      },
+          Health = 2400,
+          MaxHealth = 2400,
+              },
       Economy = {
-BuildCostMass = 480,
-BuildCostEnergy = 69000,
-MaintenanceConsumptionPerSecondEnergy = 15,
-},
- General = {
+        BuildCostMass = 480,
+        BuildCostEnergy = 69000,
+        MaintenanceConsumptionPerSecondEnergy = 15,
+        },
+         General = {
  	     OrderOverrides = {
-RULEUTC_StealthToggle = {
-bitmapId = 'stealth',
-helpText = 'toggle_stealth',
-     },
- },
-       ToggleCaps = {
-       RULEUTC_StealthToggle = true,
-    },
-},
-Intel = {
-VisionRadius =  10,
+                RULEUTC_StealthToggle = {
+                bitmapId = 'stealth',
+                helpText = 'toggle_stealth',
+                     },
+                 },
+               ToggleCaps = {
+               RULEUTC_StealthToggle = true,
+            },
+        },
+        Intel = {
+        VisionRadius =  10,
 	    RadarStealth = true,
 	    FreeIntel = false,
     },

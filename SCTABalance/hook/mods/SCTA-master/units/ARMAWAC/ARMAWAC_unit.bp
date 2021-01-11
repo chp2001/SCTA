@@ -1,60 +1,60 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-'SELECTABLE',
-'TECH2',
-'VISIBLETORECON',
-'RECLAIMABLE',
-'MOBILE',
+        'SELECTABLE',
+        'TECH2',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
 	    'AIR',
     'VTOL',
     'HIGHALTAIR',
     'INTELLIGENCE',
 	'RADAR',
-'OVERLAYRADAR',
-'OVERLAYOMNI',
-'ARM',
+        'OVERLAYRADAR',
+        'OVERLAYOMNI',
+        'ARM',
 	'LEVEL2',
     },
     Defense = {
-Health = 800,
-MaxHealth = 800,
+        Health = 800,
+        MaxHealth = 800,
     },
     Display = {
-Abilities = {
-    '<LOC ability_omni>Omni Sensor',
-    '<LOC ability_radar>Radar',
-},
+        Abilities = {
+            '<LOC ability_omni>Omni Sensor',
+            '<LOC ability_radar>Radar',
+        },
     },
     Economy = {
-BuildCostEnergy = 16000,
-BuildCostMass = 330,
-BuildTime = 2800,
-MaintenanceConsumptionPerSecondEnergy = 40,
+        BuildCostEnergy = 16000,
+        BuildCostMass = 330,
+        BuildTime = 2800,
+        MaintenanceConsumptionPerSecondEnergy = 40,
     },
     General = {
-OrderOverrides = {
-RULEUTC_IntelToggle = {
-bitmapId = 'radar',
-helpText = 'toggle_radar',
-     },
- },
-       ToggleCaps = {
-       RULEUTC_IntelToggle = true,
-    },
+        OrderOverrides = {
+                RULEUTC_IntelToggle = {
+                bitmapId = 'radar',
+                helpText = 'toggle_radar',
+                     },
+                 },
+               ToggleCaps = {
+               RULEUTC_IntelToggle = true,
+            },
     },
     Intel = {
 	FreeIntel = false,
     RadarRadius = 100, 
     OmniRadius = 20,
     JamRadius = {
-Max = 7,
-Min = 7,
+        Max = 7,
+        Min = 7,
       },
       JammerBlips = 5,
     },
     Physics = {
-FuelRechargeRate = 999999,
-FuelUseTime = 999999,
-},
+        FuelRechargeRate = 999999,
+        FuelUseTime = 999999,
+        },
 }

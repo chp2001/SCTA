@@ -15,20 +15,20 @@ UnitBlueprint {
     'LEVEL1',
 },
     Display = {
-Abilities = {
-    '<LOC ability_radar>Radar',
-},
-UniformScale = 0.12,
+        Abilities = {
+            '<LOC ability_radar>Radar',
+        },
+        UniformScale = 0.12,
        },
     Intel = {
     VisionRadius = 14,
     RadarRadius = 40,
     },
     Physics = {
-MaxAcceleration = 3,
-MaxBrake = 3,
-MaxSpeed = 4,
-TurnRate = 100,
+        MaxAcceleration = 3,
+        MaxBrake = 3,
+        MaxSpeed = 4,
+        TurnRate = 100,
     },
     LifeBarSize = 1,
     SelectionSizeX = 0.5,

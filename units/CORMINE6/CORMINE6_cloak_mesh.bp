@@ -1,13 +1,13 @@
 MeshBlueprint {
     IconFadeInZoom = 130,
     LODs = {
-{
-    MeshName = 'CORMINE6_lod0.scm',
-    AlbedoName = 'CORMINE6_Albedo.dds',
-    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds',
-    SpecularName = 'CORMINE6_Specteam.dds',
-    ShaderName = 'TACloak', -- TACloak
-    LODCutoff = 230,
-},
+        {
+            MeshName = 'CORMINE6_lod0.scm',
+            AlbedoName = 'CORMINE6_Albedo.dds',
+            NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds',
+            SpecularName = 'CORMINE6_Specteam.dds',
+            ShaderName = 'TACloak', -- TACloak
+            LODCutoff = 230,
+        },
     },
 }

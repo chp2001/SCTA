@@ -5,113 +5,113 @@
 
 UnitBlueprint {
     Audio = {
-UISelection = Sound {
-    Bank = 'TA_Sound',
-    Cue = 'FUSION2',
-    LodCutoff = 'UnitMove_LodCutoff',
-},
-Destroyed = Sound {
-    Bank = 'TA_Sound',
-    Cue = 'XPLONUK3',
-    LodCutoff = 'UnitMove_LodCutoff',
-},
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'FUSION2',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLONUK3',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
     },
     BuildIconSortPriority = 14,
     Categories = {
-'BUILTBYT2AIR',
-'BUILTBYT2KBOT',
-'BUILTBYT2VEHICLE',
-'BUILTBYT2SUB',
-'SELECTABLE',
-'DRAGBUILD',
-'VISIBLETORECON',
-'RECLAIMABLE',
-'TECH3',
+        'BUILTBYT2AIR',
+        'BUILTBYT2KBOT',
+        'BUILTBYT2VEHICLE',
+        'BUILTBYT2SUB',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH3',
 
+	
+	'STRUCTURE',
+                'ECONOMIC',
+        'SORTECONOMY',
+	'ENERGYPRODUCTION',
 
-'STRUCTURE',
-'ECONOMIC',
-'SORTECONOMY',
-'ENERGYPRODUCTION',
-
-
-'CORE',
-'ENERGY',
-'LEVEL3',
-
-
-
+	
+	'CORE',
+	'ENERGY',
+	'LEVEL3',
+	
+	
+	
     },
     Defense = {
-ArmorType = 'Structure',
-AirThreatLevel = 0,
-EconomyThreatLevel = 34,
-SubThreatLevel = 0,
-SurfaceThreatLevel = 0,
-Health = 3000,
-MaxHealth = 3000,
+        ArmorType = 'Structure',
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 34,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+        Health = 3000,
+        MaxHealth = 3000,
     },
     Description = 'Produces Energy',
     Display = {
---[[DestructionEffects = {
-DestructionEmitters = {
-{
-EmitterBone = {0},
-EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-EmitterSize = 1.25,
-},
-},
-},]]--
-Mesh = {
-    IconFadeInZoom = 130,
-    LODs = {
-{
-    LODCutoff = 300,
-    ShaderName = 'Unit', 
-    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
-},
-    },
-},
-UniformScale = 0.16,
+		--[[DestructionEffects = {
+		DestructionEmitters = {
+			{
+				EmitterBone = {0},
+				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
+				EmitterSize = 1.25,
+			},
+		},
+	},]]--
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 300,
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.16,
     },
     Economy = {
-BuildCostEnergy = 37865,
-BuildCostMass = 5004,
-BuildTime = 94281,
-NaturalProducer = true,
-ProductionPerSecondEnergy = 1050,
+        BuildCostEnergy = 37865,
+        BuildCostMass = 5004,
+        BuildTime = 94281,
+	NaturalProducer = true,
+        ProductionPerSecondEnergy = 1050,
     },
     Footprint = {
-MaxSlope = 0.625,
-SizeX = 5,
-SizeZ = 5,
+	MaxSlope = 0.625,
+        SizeX = 5,
+        SizeZ = 5,
     },
     General = {
----BuildAngle = 16384,
-Category = 'Economy',
-Classification = 'RULEUC_Resource',
-SelectionPriority = 5,
-FactionName = 'CORE',
-TechLevel = 'RULEUTL_Secret',
-UnitName = 'Fusion Power Plant',
+	---BuildAngle = 16384,
+        Category = 'Economy',
+        Classification = 'RULEUC_Resource',
+        SelectionPriority = 5,
+        FactionName = 'CORE',
+        TechLevel = 'RULEUTL_Secret',
+	UnitName = 'Fusion Power Plant',
     },
     Intel = {
-VisionRadius = 14,
-WaterVisionRadius = 4, 
+        VisionRadius = 14,
+        WaterVisionRadius = 4, 
     },
     Interface = {
-HelpText = 'Produces Energy',
+        HelpText = 'Produces Energy',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-BuildOnLayerCaps = {
-    LAYER_Land = true,
-    LAYER_Seabed = true,
-},
-SkirtSizeX = 5,
-SkirtSizeZ = 5,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+        SkirtSizeX = 5,
+        SkirtSizeZ = 5,
     },
     SelectionSizeX = 2.75,
     SelectionSizeZ = 2.75,
@@ -122,26 +122,26 @@ SkirtSizeZ = 5,
     StrategicIconName = 'icon_structure3_energy',
     StrategicIconSortPriority = 0,
     Weapon = {
-{ #ATOMIC_BLAST
-    Damage = 2000,
-    DamageFriendly = true,
-    DamageRadius = 16.125,
-    DamageType = 'Normal',
-    DummyWeapon = true,
-    Label = 'DeathWeapon',
-},
+        { #ATOMIC_BLAST
+            Damage = 2000,
+            DamageFriendly = true,
+            DamageRadius = 16.125,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
 
     },
-Wreckage = {
----UseCustomMesh = true,
-Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-EnergyMult = 0,
-HealthMult = 0.9,
-MassMult = 0.9,
-ReclaimTimeMultiplier = 1,
---Blueprint = '/mods/SCTA-master/units/CORFUS/CORFUS_dead_prop.bp',
-WreckageLayers = {
-    Land = true,
-},
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORFUS/CORFUS_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
     },
 }

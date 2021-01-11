@@ -5,62 +5,62 @@
 
 ProjectileBlueprint {
     Audio = {
-Impact = Sound {
-    Bank = 'TA_Sound',
-    Cue = 'XPLOMED2',
-    LodCutoff = 'Weapon_LodCutoff',
-},
-ImpactUnit = Sound {
-    Bank = 'TA_Sound',
-    Cue = 'XPLOMED2',
-    LodCutoff = 'Weapon_LodCutoff',
-},
-ImpactShield = Sound {
-    Bank = 'TA_Sound',
-    Cue = 'XPLOMED2',
-    LodCutoff = 'Weapon_LodCutoff',
-},
-ImpactTerrain = Sound {
-    Bank = 'TA_Sound',
-    Cue = 'XPLOMED2',
-    LodCutoff = 'Weapon_LodCutoff',
-},
-ImpactWater = Sound {
-    Bank = 'TA_Sound',
-    Cue = 'SPLSSML',
-    LodCutoff = 'Weapon_LodCutoff',
-},
+        Impact = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactUnit = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactShield = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactTerrain = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactWater = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'SPLSSML',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
     },
     Categories = {
-'ARM',
-'PROJECTILE',
-'INDIRECTFIRE',
+        'ARM',
+        'PROJECTILE',
+        'INDIRECTFIRE',
     },
     Display = {
-MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/bomb_mesh.bp',
-UniformScale = 0.16,
-StrategicIconSize = 1,
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/bomb_mesh.bp',
+        UniformScale = 0.16,
+        StrategicIconSize = 1,
     },
     General = {
-Category = 'BOMB',
-EntityCategory = {
-    'ARM',
-    'PROJECTILE',
-    'INDIRECTFIRE',
-},
-Faction = 'ARM',
-Weapon = 'ARMBOMB',
+        Category = 'BOMB',
+        EntityCategory = {
+            'ARM',
+            'PROJECTILE',
+            'INDIRECTFIRE',
+        },
+        Faction = 'ARM',
+        Weapon = 'ARMBOMB',
     },
     Interface = {
-HelpText = 0,
+        HelpText = 0,
     },
     Physics = {
-DestroyOnWater = true,
-RealisticOrdinance = true,
-Lifetime = 10,
-LeadTarget = false,
+        DestroyOnWater = true,
+        RealisticOrdinance = true,
+        Lifetime = 10,
+        LeadTarget = false,
 	UseGravity = true,
-VelocityAlign = true,
-TurnRate = 30,
+        VelocityAlign = true,
+        TurnRate = 30,
     },
 }

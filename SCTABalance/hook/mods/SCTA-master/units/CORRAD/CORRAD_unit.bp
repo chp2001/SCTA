@@ -1,18 +1,18 @@
 UnitBlueprint {
     Merge = true,
     Display = {
- Abilities = {
+         Abilities = {
       '<LOC ability_radar>Radar',
       '<LOC ability_upgradable>Upgradeable',
   },
   UniformScale = 0.10,
 }, 
     Economy = {
-BuildRate = 40, 
-MaintenanceConsumptionPerSecondEnergy = 10,
-ProductionPerSecondEnergy = 0,
-BuildableCategory = {
-    'corarad',
+        BuildRate = 40, 
+        MaintenanceConsumptionPerSecondEnergy = 10,
+        ProductionPerSecondEnergy = 0,
+        BuildableCategory = {
+            'corarad',
       },
     },
     General = {

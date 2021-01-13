@@ -49,16 +49,17 @@ function CreateIdleTab(unitData, id, expandFunc)
         self.units = {}
         if self.id == 'engineer' then
             local sortedUnits = {}
-            sortedUnits[8] = EntityCategoryFilterDown(categories.SUBCOMMANDER, self.allunits)
-            sortedUnits[7] = EntityCategoryFilterDown(categories.TECH3 - categories.SUBCOMMANDER - categories.VTOL , self.allunits)
-            sortedUnits[6] = EntityCategoryFilterDown(categories.VTOL * categories.LEVEL3, self.allunits)
-            sortedUnits[5] = EntityCategoryFilterDown(categories.FIELDENGINEER, self.allunits)
-            sortedUnits[4] = EntityCategoryFilterDown(categories.VTOL * categories.LEVEL2 , self.allunits)
-            sortedUnits[3] = EntityCategoryFilterDown(categories.TECH2 - categories.FIELDENGINEER - categories.VTOL, self.allunits)
+            sortedUnits[9] = EntityCategoryFilterDown(categories.SUBCOMMANDER, self.allunits)
+            sortedUnits[8] = EntityCategoryFilterDown(categories.TECH3 - categories.SUBCOMMANDER - categories.VTOL , self.allunits)
+            sortedUnits[7] = EntityCategoryFilterDown(categories.VTOL * categories.LEVEL3, self.allunits)
+            sortedUnits[6] = EntityCategoryFilterDown(categories.FIELDENGINEER * categories.TECH2, self.allunits)
+            sortedUnits[5] = EntityCategoryFilterDown(categories.VTOL * categories.LEVEL2 , self.allunits)
+            sortedUnits[4] = EntityCategoryFilterDown(categories.TECH2 - categories.FIELDENGINEER - categories.VTOL, self.allunits)
+            sortedUnits[3] = EntityCategoryFilterDown(categories.FIELDENGINEER * categories.TECH1, self.allunits)
             sortedUnits[2] = EntityCategoryFilterDown(categories.VTOL * categories.LEVEL1 , self.allunits)
-            sortedUnits[1] = EntityCategoryFilterDown(categories.TECH1 - categories.VTOL, self.allunits)
+            sortedUnits[1] = EntityCategoryFilterDown(categories.TECH1 - categories.VTOL - categories.FIELDENGINEER , self.allunits)
 
-            local keyToIcon = {'T1', 'T1A', 'T2', 'T2A', 'T2F', 'T3A', 'T3', 'SCU'}
+            local keyToIcon = {'T1', 'T1A', 'T1F', 'T2', 'T2A', 'T2F', 'T3A', 'T3', 'SCU'}
 
             local i = table.getn(sortedUnits)
             local needIcon = true
@@ -215,23 +216,21 @@ function CreateIdleEngineerList(parent, units)
             return entry
         end
         local engineers = {}
-        engineers[8] = EntityCategoryFilterDown(categories.SUBCOMMANDER, unitData)
-        engineers[7] = EntityCategoryFilterDown(categories.TECH3 - categories.SUBCOMMANDER - categories.VTOL, unitData)
-        engineers[6] = EntityCategoryFilterDown(categories.VTOL * categories.LEVEL3, unitData)
-        engineers[5] = EntityCategoryFilterDown(categories.FIELDENGINEER, unitData)
-        engineers[4] = EntityCategoryFilterDown(categories.VTOL * categories.LEVEL2 - categories.FIELDENGINEER, unitData)
-        engineers[3] = EntityCategoryFilterDown(categories.TECH2 - categories.FIELDENGINEER - categories.VTOL, unitData)
+        engineers[9] = EntityCategoryFilterDown(categories.SUBCOMMANDER, unitData)
+        engineers[8] = EntityCategoryFilterDown(categories.TECH3 - categories.SUBCOMMANDER - categories.VTOL, unitData)
+        engineers[7] = EntityCategoryFilterDown(categories.VTOL * categories.LEVEL3, unitData)
+        engineers[6] = EntityCategoryFilterDown(categories.FIELDENGINEER * categories.TECH2, unitData)
+        engineers[5] = EntityCategoryFilterDown(categories.VTOL * categories.LEVEL2 - categories.FIELDENGINEER, unitData)
+        engineers[4] = EntityCategoryFilterDown(categories.TECH2 - categories.FIELDENGINEER - categories.VTOL, unitData)
+        engineers[3] = EntityCategoryFilterDown(categories.FIELDENGINEER * categories.TECH1, unitData)
         engineers[2] = EntityCategoryFilterDown(categories.VTOL * categories.LEVEL1, unitData)
-        engineers[1] = EntityCategoryFilterDown(categories.TECH1 - categories.VTOL, unitData)
+        engineers[1] = EntityCategoryFilterDown(categories.TECH1 - categories.VTOL - categories.FIELDENGINEER, unitData)
 
-        local indexToIcon = {'1', '1', '2', '2', '2', '3', '3', '3'}
-        local keyToIcon = {'T1', 'T1A', 'T2', 'T2A', 'T2F', 'T3A', 'T3','SCU'}
+        local indexToIcon = {'1', '1', '1', '2', '2', '2', '3', '3', '3'}
+        local keyToIcon = {'T1', 'T1A', 'T1F', 'T2', 'T2A', 'T2F', 'T3A', 'T3','SCU'}
         for index, units in engineers do
             local i = index
             -- ADDED SUPPORT FOR CUSTOM FACTIONS HAVING FIELD ENGINEERS
-            if i == 5 and (not Factions[currentFaction].IdleEngTextures or not Factions[currentFaction].IdleEngTextures.T2F) then
-                continue
-            end
             if not self.icons[i] then
                 self.icons[i] = CreateUnitEntry(indexToIcon[i], units, Factions[currentFaction].IdleEngTextures[keyToIcon[index]])
                 self.icons[i].priority = i

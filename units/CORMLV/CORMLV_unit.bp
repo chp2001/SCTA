@@ -44,19 +44,15 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SHOWQUEUE',
-
         'REPAIR',
         'MOBILE',
 	'CONSTRUCTION',
 	'LAND',
-
-	
         'CORE',
-        'VEHICLE',	#'TANK' in TA
+        'VEHICLE',
 	'MINELAYER',
 	'LEVEL1',
-	
-	
+	'FIELDENGINEER',
     },
     Defense = {
         ArmorType = 'Normal',

@@ -1,5 +1,26 @@
 do
+    Factions[1].IdleEngTextures.T1A = '/mods/SCTA-master/textures/ui/common/icons/units/armca_icon.dds'
+    Factions[1].IdleEngTextures.T2A = '/mods/SCTA-master/textures/ui/common/icons/units/armaca_icon.dds'
+    Factions[1].IdleEngTextures.T3A = '/mods/SCTA-master/textures/ui/common/icons/units/armcsa_icon.dds'
+    
+    Factions[2].IdleEngTextures.T1A = '/mods/SCTA-master/textures/ui/common/icons/units/corca_icon.dds'
+    Factions[2].IdleEngTextures.T2A = '/mods/SCTA-master/textures/ui/common/icons/units/coraca_icon.dds'
+    Factions[2].IdleEngTextures.T3A = '/mods/SCTA-master/textures/ui/common/icons/units/corcsa_icon.dds'
+    
+    Factions[3].IdleEngTextures.T1A = '/mods/SCTA-master/textures/ui/common/icons/units/armca_icon.dds'
+    Factions[3].IdleEngTextures.T2A = '/mods/SCTA-master/textures/ui/common/icons/units/armaca_icon.dds'
+    Factions[3].IdleEngTextures.T3A = '/mods/SCTA-master/textures/ui/common/icons/units/armcsa_icon.dds'
+    
+    Factions[4].IdleEngTextures.T1A = '/mods/SCTA-master/textures/ui/common/icons/units/corca_icon.dds'
+    Factions[4].IdleEngTextures.T2A = '/mods/SCTA-master/textures/ui/common/icons/units/coraca_icon.dds'
+    Factions[4].IdleEngTextures.T3A = '/mods/SCTA-master/textures/ui/common/icons/units/corcsa_icon.dds'
 
+if __blueprints['xnl0001'] then
+    Factions[5].IdleEngTextures.T1A = '/mods/SCTA-master/textures/ui/common/icons/units/corca_icon.dds'
+    Factions[5].IdleEngTextures.T2A = '/mods/SCTA-master/textures/ui/common/icons/units/coraca_icon.dds'
+    Factions[5].IdleEngTextures.T3A = '/mods/SCTA-master/textures/ui/common/icons/units/corcsa_icon.dds'
+end
+    
     TAFactions = {
     {
         Key = 'arm',

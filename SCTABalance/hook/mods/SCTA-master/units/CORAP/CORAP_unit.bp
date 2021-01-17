@@ -46,6 +46,7 @@ UnitBlueprint {
         BuildRate = 100,
         BuildableCategory = {
             'VTOL LEVEL1 CORE',
+            'corcv',
             'cordap', 
         },
     },

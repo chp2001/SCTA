@@ -32,21 +32,21 @@ UnitBlueprint {
         'TRANSPORTATION',
     },
     Defense = {
-        Health = 3200,
-        MaxHealth = 3200,
+        Health = 1800,
+        MaxHealth = 1800,
     },
     Economy = {
-        BuildCostEnergy = 9000,
-        BuildCostMass = 600,
+        BuildCostEnergy = 30000,
+        BuildCostMass = 400,
     },
     Physics = {
         FuelRechargeRate = 666666,
         FuelUseTime = 666666,
         },
-    StrategicIconName = 'icon_fighter3_antiair',
+    StrategicIconName = 'icon_fighter2_antiair',
     Weapon = {
         [1] = {
-            Damage = 60,
+            Damage = 30,
             MuzzleSalvoDelay = 0.4,
             MuzzleSalvoSize = 4,
             RateOfFire = 1,

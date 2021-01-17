@@ -1,8 +1,3 @@
-#ARM Triton - Amphibious Tank
-#ARMCROC
-#
-#Blueprint created by Raevn
-
 UnitBlueprint {
     Merge = true,
     Categories = {
@@ -13,7 +8,6 @@ UnitBlueprint {
         'MOBILE',
 	'LAND',
     'AMPHIBIOUS',
-    'PHIB',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
@@ -41,7 +35,6 @@ UnitBlueprint {
     StrategicIconName = 'icon_land2_directfire',
     Weapon = {
         [1] = {
-	    DamageFriendly = true,
             Damage = 150,
             RateOfFire = 0.5,
         },

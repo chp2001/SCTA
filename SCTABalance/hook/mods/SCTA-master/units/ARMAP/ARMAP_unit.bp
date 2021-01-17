@@ -43,6 +43,7 @@ UnitBlueprint {
         BuildableCategory = {
             'VTOL LEVEL1 ARM',
             'armdap', 
+            'armck',
         },
     },
     Footprint = {

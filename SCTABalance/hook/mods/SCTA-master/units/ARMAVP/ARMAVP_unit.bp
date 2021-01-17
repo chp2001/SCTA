@@ -2,6 +2,7 @@ UnitBlueprint {
     Merge = true,
     Categories = {
         'BUILTBYT2KBOT',
+        'BUILTBYT1KBOT',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -27,10 +28,10 @@ UnitBlueprint {
         UniformScale = 0.25,
     },
     Economy = {
-        BuildCostEnergy = 18000,
-        BuildCostMass = 1200, 
+        BuildCostEnergy = 36000,
+        BuildCostMass = 2400, 
         BuildRate = 150,
-        BuildTime = 12000,
+        BuildTime = 20000,
         BuildableCategory = {
             'VEHICLE LEVEL2 ARM',
             'VEHICLE LEVEL1 ARM',

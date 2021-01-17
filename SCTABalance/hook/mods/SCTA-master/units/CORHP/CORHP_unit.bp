@@ -2,7 +2,7 @@ UnitBlueprint {
     Merge = true,
     Categories = {
         'BUILTBYT1HOVER',
-        --'BUILTBYT2KBOT',
+        'BUILTBYT2KBOT',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -13,7 +13,7 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'STRUCTURE',
 	'CONSTRUCTION',
-        'NAVAL', 
+        'LAND', 
 	'CORE',
     'PLATFORM',
 	'SORTCONSTRUCTION',
@@ -35,12 +35,11 @@ UnitBlueprint {
             LifeBarOffset = 3,
             LifeBarSize = 7,
     Economy = {
-        BuildRate = 300,
-        BuildCostEnergy = 39000,
-        BuildCostMass = 3000, 
-        BuildTime = 60000,
+        BuildCostEnergy = 20000,
+        BuildCostMass = 1200, 
+        BuildRate = 150,
+        BuildTime = 12000,
         BuildableCategory = {
-            'PHIB LEVEL1 CORE',
             'PHIB LEVEL3 CORE',
         },
     },
@@ -54,5 +53,5 @@ UnitBlueprint {
     SizeX = 9,
     SizeY = 1,
     SizeZ = 9,
-    StrategicIconName = 'icon_factory3_land',
+    StrategicIconName = 'icon_factory2_land',
  }

@@ -5,50 +5,42 @@ UnitBlueprint {
         'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
         'LAND',
-
-	
-        'CORE',
-            'HOVER',
-'PHIB',
-	
-	'LEVEL1',
-	
-	
-	
+    'CORE',
+    'HOVER',
+    'PHIB',
+	'LEVEL3',
     },
     Defense = {
-        Health = 2800,
-        MaxHealth = 2800,
+        Health = 2100,
+        MaxHealth = 2100,
         SurfaceThreatLevel = 40,
     },
     Economy = {
-        BuildCostEnergy = 10200,
-        BuildCostMass = 1300,
-        BuildTime = 20000,
+        BuildCostEnergy = 4000,
+        BuildCostMass = 750,
+        BuildTime = 7000,
     },
     Intel = {
         VisionRadius = 13,
     },
     SizeY = 1.4,
-    StrategicIconName = 'icon_land3_missile',
+    StrategicIconName = 'icon_land2_missile',
     Weapon = {
         [1] = {
-            Damage = 160,
+            Damage = 200,
             DamageRadius = 2.5,
-	    FiringTolerance = 8,
+	        FiringTolerance = 8,
             MaxRadius = 60,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            RateOfFire = 1,
+            RateOfFire = 0.5,
             TargetCheckInterval = 1,
-            EnergyDrainPerSecond = 120,
-            EnergyRequired = 240,
+            EnergyDrainPerSecond = 60,
+            EnergyRequired = 120,
             EnergyChargeForFirstShot = true,
         },
         [2] = {

@@ -7,8 +7,7 @@ UnitBlueprint {
    Merge = true,
     Categories = {
         'BUILTBYT1HOVER',
-        --'BUILTBYT2SUB',
-        ---'BUILTBYT2AIR',
+        'BUILTBYT2AIR',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -19,7 +18,6 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'STRUCTURE',
 	'CONSTRUCTION',
-	'TEXTUREANIM',
         'OVERLAYRADAR',
     'CORE',
     'AIR',
@@ -41,11 +39,11 @@ UnitBlueprint {
         SizeZ = 8,
     },
     Economy = {
-        BuildCostEnergy = 120000,
-        BuildCostMass = 4000, 
-        BuildTime = 85000,
-    ProductionPerSecondMass = 0,
-    BuildRate = 300,
+        BuildCostEnergy = 60000,
+        BuildCostMass = 1200, 
+        BuildTime = 18000,
+        ProductionPerSecondMass = 0,
+        BuildRate = 150,
         BuildableCategory = {
             'VTOL LEVEL3 CORE',
         },
@@ -68,5 +66,5 @@ UnitBlueprint {
     SizeX = 9,
     SizeY = 3,
     SizeZ = 9,
-    StrategicIconName = 'icon_factory3_air',
+    StrategicIconName = 'icon_factory2_air',
 }

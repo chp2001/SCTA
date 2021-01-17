@@ -32,12 +32,11 @@ ProjectileBlueprint {
         },
     },
     Categories = {
-        'ARM',
+        'CORE',
         'PROJECTILE',
         'STRATEGIC',
         'TACTICAL',
         'MISSILE',
-        'PARALYSER',
         'INDIRECTFIRE',
     },
     Defense = {
@@ -51,22 +50,21 @@ ProjectileBlueprint {
         UniformScale = 0.16,
     },
     Economy = {
-        BuildCostEnergy = 6000,
-        BuildCostMass = 3000,
+        BuildCostEnergy = 9000,
+        BuildCostMass = 4500,
         BuildTime = 5000000,
     },
     General = {
         Category = 'Missile',
         EntityCategory = {
-            'ARM',
+            'CORE',
             'PROJECTILE',
             'STRATEGIC',
             'TACTICAL',
             'MISSILE',
-            'PARALYSER',
             'INDIRECTFIRE',
         },
-        Faction = 'ARM',
+        Faction = 'CORE',
         Weapon = 'EMBMSSL',
     },
     Interface = {

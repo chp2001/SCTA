@@ -44,11 +44,11 @@ UnitBlueprint {
         'TRANSPORTATION',
     },
     Defense = {
-        Health = 4000,
-        MaxHealth = 4000,
+        Health = 1800,
+        MaxHealth = 1800,
     },
     Economy = {
-        BuildCostEnergy = 60000,
-        BuildCostMass = 3600,
+        BuildCostEnergy = 20000,
+        BuildCostMass = 1200,
     },
 }

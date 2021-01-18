@@ -69,12 +69,12 @@ UnitBlueprint {
 	IdleEffects = {
 		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
+		Bones = {'Wake1','Wake2','Wake3','Wake4'},
 	},
 	MovementEffects = {
 		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
+		Bones = {'Wake1','Wake2','Wake3','Wake4'},
 	},
         UniformScale = 0.16,
     },
@@ -169,21 +169,21 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'muzzle_01',
+                        'Flare1',
                     },
-                    RackBone = 'box',
+                    RackBone = 'Box',
                 },
                 {
                     MuzzleBones = {
-                        'muzzle_02',
+                        'Flare2',
                     },
-                    RackBone = 'box',
+                    RackBone = 'Box',
                 },
                 {
                     MuzzleBones = {
-                        'muzzle_03',
+                        'Flare3',
                     },
-                    RackBone = 'box',
+                    RackBone = 'Box',
                 },
             },
             RackRecoilDistance = 0,
@@ -199,9 +199,9 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'muzzle_02',
-            TurretBonePitch = 'box',
-            TurretBoneYaw = 'box',
+            TurretBoneMuzzle = 'Flare2',
+            TurretBonePitch = 'Box',
+            TurretBoneYaw = 'Box',
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 360,
@@ -209,7 +209,7 @@ UnitBlueprint {
             TurretYaw = 0,
             TurretYawRange = 360,
             TurretYawSpeed = 250,
-            Turreted = true,
+            Turreted = false,
 	    WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
         },

@@ -199,15 +199,15 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Muzzle_01',
+                        'flare1',
                     },
-                    RackBone = 'Wing_01',
+                    RackBone = 'wing1',
                 },
                 {
                     MuzzleBones = {
-                        'Muzzle_02',
+                        'flare2',
                     },
-                    RackBone = 'Wing_02',
+                    RackBone = 'wing2',
                 },
             },
             RackRecoilDistance = 0,

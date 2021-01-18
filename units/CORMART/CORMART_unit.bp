@@ -97,7 +97,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarSize = 3,
     Physics = {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
@@ -111,7 +111,6 @@ UnitBlueprint {
     },
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.75,
-    SelectionCenterOffsetZ = -0.75,
     SelectionThickness = 0.25,
     SizeX = 3,
     SizeY = 1.5,
@@ -149,7 +148,8 @@ UnitBlueprint {
             MaxRadius = 110,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 30,
+            MuzzleVelocity = 22,
+            MuzzleVelocityReduceDistance = 85,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_ARTILLERY/CORE_ARTILLERY_proj.bp',
             RackBones = {
                 {
@@ -159,7 +159,7 @@ UnitBlueprint {
                     RackBone = 'barrel',
                 },
             },
-            RackRecoilDistance = -2.4,
+            RackRecoilDistance = -0.25,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
@@ -194,8 +194,7 @@ UnitBlueprint {
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-},
-
+        },
     },
         Wreckage = {
 	---UseCustomMesh = true,

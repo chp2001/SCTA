@@ -54,10 +54,14 @@ ProjectileBlueprint {
     Interface = {
         HelpText = 0,
     },
-    Physics = {
-        DestroyOnWater = true,
-        InitialSpeed = 30,
-        Lifetime = 10,
-        UseGravity = true,
+        Physics = {
+            DestroyOnWater = true,
+            InitialSpeed = 50,
+            InitialSpeedRange = 12,
+            InitialSpeedReduceDistance = 115,
+            LeadTarget = false,
+            Lifetime = 20,
+            TurnRate = 360,
+            VelocityAlign = true,
     },
 }

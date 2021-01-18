@@ -9,8 +9,8 @@ UnitBlueprint {
     BreakOffDistance = 17,
     BreakOffTrigger = 12,
     CombatTurnSpeed = 1.5,
-    MaxAirspeed = 20,
-    MinAirspeed = 10,
+    MaxAirspeed = 24,
+    MinAirspeed = 12,
     StartTurnDistance = 5,
     TightTurnMultiplier = 1.02,
     TurnSpeed = 1.5,
@@ -44,7 +44,7 @@ UnitBlueprint {
 	FuelRechargeRate = 666666,
 	FuelUseTime = 666666,
     },
-    StrategicIconName = 'icon_fighter2_antiair',
+    StrategicIconName = 'icon_fighter2_missile',
     Weapon = {
         [1] = {
             Damage = 50,

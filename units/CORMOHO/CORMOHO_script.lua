@@ -28,10 +28,10 @@ CORMOHO = Class(TAMass) {
 	end,
 
 	CreateWreckage = function( self, overkillRatio )
-		if self.onMetalSpot then
-			TAMass.CreateWreckage(self, overkillRatio)
-		--else
-			--return nil
+		if not self.onMetalSpot then
+			TAMass.CreateWreckageProp(self, overkillRatio)
+		else
+			return nil
 		end
 	end,
 

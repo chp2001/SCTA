@@ -11,7 +11,7 @@ ARMMOHO = Class(TAMass) {
 	OnCreate = function(self)
 		TAMass.OnCreate(self)
 		self.Spinners = {
-			arms = CreateRotator(self, 'Blades', 'y', nil, 0, 91, 0),
+			arms = CreateRotator(self, 'sp', 'y', nil, 0, 91, 0),
 		}
 		self.Trash:Add(self.Spinners.arms)
 	end,

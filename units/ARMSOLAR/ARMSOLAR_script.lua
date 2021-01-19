@@ -9,10 +9,10 @@ ARMSOLAR = Class(TACloser) {
 	OnCreate = function(self)
 		TACloser.OnCreate(self)
 		self.Spinners = {
-			dish1 = CreateRotator(self, 'Dish_01', 'x', nil, 0, 0, 0),
-			dish2 = CreateRotator(self, 'Dish_02', 'z', nil, 0, 0, 0),
-			dish3 = CreateRotator(self, 'Dish_03', 'x', nil, 0, 0, 0),
-			dish4 = CreateRotator(self, 'Dish_04', 'z', nil, 0, 0, 0),	
+			dish1 = CreateRotator(self, 'turn1', 'x', nil, 0, 0, 0),
+			dish2 = CreateRotator(self, 'turn2', 'x', nil, 0, 0, 0),
+			dish3 = CreateRotator(self, 'turn3', 'z', nil, 0, 0, 0),
+			dish4 = CreateRotator(self, 'turn4', 'z', nil, 0, 0, 0),	
 		}
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
@@ -29,11 +29,11 @@ ARMSOLAR = Class(TACloser) {
 			self.Spinners.dish1:SetSpeed(60)
 
 			--TURN dish2 to x-axis <90.00> SPEED <60.01>
-			self.Spinners.dish2:SetGoal(90)
+			self.Spinners.dish2:SetGoal(-90)
 			self.Spinners.dish2:SetSpeed(60)
 
 			--TURN dish3 to z-axis <-90.00> SPEED <60.01>
-			self.Spinners.dish3:SetGoal(-90)
+			self.Spinners.dish3:SetGoal(90)
 			self.Spinners.dish3:SetSpeed(60)
 
 			--TURN dish4 to z-axis <90.00> SPEED <60.01>

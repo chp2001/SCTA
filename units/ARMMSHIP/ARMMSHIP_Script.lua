@@ -10,12 +10,12 @@ ARMMSHIP = Class(TAunit) {
 	OnCreate = function(self)
 		TAunit.OnCreate(self)
 		self.Spinners = {
-			launcher1 = CreateRotator(self, 'Launcher_01', 'x', nil, 0, 0, 0),
+			launcher1 = CreateRotator(self, 'launcher1', 'x', nil, 0, 0, 0),
 		}
 		self.Sliders = {
-			door1 = CreateSlider(self, 'Door_01'),
-			door2 = CreateSlider(self, 'Door_02'),
-			plate = CreateSlider(self, 'Plate'),
+			door1 = CreateSlider(self, 'door1'),
+			door2 = CreateSlider(self, 'door2'),
+			plate = CreateSlider(self, 'plate'),
 		}
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
@@ -28,9 +28,15 @@ ARMMSHIP = Class(TAunit) {
 
 	Weapons = {
 		ARMMSHIP_ROCKET = Class(TAweapon) {
-    			PlayFxRackReloadSequence = function(self)
+
+				
+
+			PlayFxRackReloadSequence = function(self)
 				self.unit.currentShot = self.unit.currentShot + 1
 				if self.unit.currentShot == 2 then
+					
+					self.unit:HideBone('rocket1', true)
+					self.unit:HideBone('rocket2', true)
 					--TURN launcher1 to x-axis <0> SPEED <120.02>;
 					self.unit.Spinners.launcher1:SetGoal(0)
 					self.unit.Spinners.launcher1:SetSpeed(120)
@@ -57,9 +63,9 @@ ARMMSHIP = Class(TAunit) {
 					WaitSeconds(1.5) #0.6 not long enough
 	
 					--SLEEP <10>;
-	
-					self.unit:ShowBone('Rocket_01',false)
-					self.unit:ShowBone('Rocket_02',false)
+
+					self.unit:ShowBone('rocket1', true)
+					self.unit:ShowBone('rocket2', true)
 	
 	
 					--MOVE door1 to x-axis <4.19> SPEED <6.00>;
@@ -88,9 +94,8 @@ ARMMSHIP = Class(TAunit) {
 					WaitSeconds(0.75)
 	
 					--SLEEP <10>;
-
-					self.unit.currentShot = 0
-				end
+					self.unit.currentShot = 0	
+					end	
 				TAweapon.PlayFxRackReloadSequence(self)
 			end,
 
@@ -110,8 +115,8 @@ ARMMSHIP = Class(TAunit) {
 				self.unit.Sliders.plate:SetGoal(0,4.34,0)
 				self.unit.Sliders.plate:SetSpeed(7)
 
-				self.unit:ShowBone('Rocket_01',true)
-				self.unit:ShowBone('Rocket_02',true)
+				self.unit:ShowBone('rocket1', true)
+				self.unit:ShowBone('rocket2', true)
 				--SLEEP <600>;
 				WaitSeconds(0.6)
 
@@ -150,13 +155,6 @@ ARMMSHIP = Class(TAunit) {
 				self.unit.Sliders.door2:SetGoal(0,0,0)
 				self.unit.Sliders.door2:SetSpeed(6)
 
-				--SLEEP <600>;
-				WaitSeconds(1.5) #0.6 not long enough
-
-				--SLEEP <10>;
-
-				self.unit:ShowBone('Rocket_01',false)
-				self.unit:ShowBone('Rocket_02',false)
 
 				TAweapon.PlayFxWeaponPackSequence(self)
 			end,	

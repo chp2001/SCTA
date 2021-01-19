@@ -189,17 +189,17 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Muzzle_01a',
-                        'Muzzle_01b',
+                        'flare1A',
+                        'flare1B',
                     },
-                    RackBone = 'Weapon_01',
+                    RackBone = 'weapon1',
                 },
                 {
                     MuzzleBones = {
-                        'Muzzle_02a',
-                        'Muzzle_02b',
+                        'flare2A',
+                        'flare2B',
                     },
-                    RackBone = 'Weapon_02',
+                    RackBone = 'weapon2',
                 },
             },
             RackRecoilDistance = 0,
@@ -214,9 +214,9 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'ARMBRAWL',
-            TurretBonePitch = 'ARMBRAWL',
-            TurretBoneYaw = 'ARMBRAWL',
+            TurretBoneMuzzle = 'armbrawl',
+            TurretBonePitch = 'armbrawl',
+            TurretBoneYaw = 'armbrawl',
             TurretPitch = -40,
             TurretPitchRange = 70,
             TurretPitchSpeed = 90,

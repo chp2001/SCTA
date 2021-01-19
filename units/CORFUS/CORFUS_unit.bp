@@ -27,41 +27,22 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	
 	'STRUCTURE',
                 'ECONOMIC',
         'SORTECONOMY',
 	'ENERGYPRODUCTION',
-
-	
 	'CORE',
 	'ENERGY',
 	'LEVEL3',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',
-        AirThreatLevel = 0,
         EconomyThreatLevel = 34,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
         Health = 3000,
         MaxHealth = 3000,
     },
     Description = 'Produces Energy',
     Display = {
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

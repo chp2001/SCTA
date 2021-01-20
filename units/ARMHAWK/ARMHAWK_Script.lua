@@ -11,8 +11,8 @@ ARMHAWK = Class(TAair) {
 	OnCreate = function(self)
 		TAair.OnCreate(self)
 		self.Sliders = {
-			wing1 = CreateSlider(self, 'Wing_01'),
-			wing2 = CreateSlider(self, 'Wing_02'),
+			wing1 = CreateSlider(self, 'wing1'),
+			wing2 = CreateSlider(self, 'wing2'),
 		}
 		for k, v in self.Sliders do
 			self.Trash:Add(v)

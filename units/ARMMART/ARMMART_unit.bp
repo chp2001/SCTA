@@ -97,7 +97,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarSize = 3,
     Physics = {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
@@ -150,7 +150,8 @@ UnitBlueprint {
             MaxRadius = 55,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 30,
+            MuzzleVelocity = 22,
+            MuzzleVelocityReduceDistance = 85,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_ARTILLERY/ARM_ARTILLERY_proj.bp',
             RackBones = {
                 {

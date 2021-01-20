@@ -1,5 +1,9 @@
 UnitBlueprint {
     Merge = true,
+    Air = {
+        MaxAirspeed = 8,
+        MinAirspeed = 3,
+    },    
     Categories = {
         'SELECTABLE',
         'TECH1',
@@ -27,7 +31,7 @@ UnitBlueprint {
             UniformScale = 0.08,
         },
     Economy = {
-        BuildCostMass = 180,
+        BuildCostMass = 120,
         BuildCostEnergy = 3400,
         ProductionPerSecondEnergy = 2,
         MaxBuildDistance = 5,

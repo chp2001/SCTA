@@ -11,34 +11,30 @@ UnitBlueprint {
     'VISIBLETORECON',
     'RECLAIMABLE',
     'MOBILE',
-'ANTIAIR',
+    'ANTIAIR',
     'OVERLAYDIRECTFIRE',
-'OVERLAYANTIAIR',
+    'OVERLAYANTIAIR',
     'LAND',
     'ARM',
-        'HOVER',
-'PHIB',
-
-'LEVEL1',
-
-
-
-},
+    'HOVER',
+    'PHIB',
+    'LEVEL3',
+    },
     Defense = {
-        Health = 4000,
-        MaxHealth = 4000,
+        Health = 1600,
+        MaxHealth = 1600,
     },    
     Economy = {
-        BuildCostEnergy = 36000,
-        BuildCostMass = 2000,
-        BuildTime = 27000,
+        BuildCostEnergy = 4000,
+        BuildCostMass = 360,
+        BuildTime = 6000,
     },
     SizeY = 1.4,
-    StrategicIconName = 'icon_land3_antiair',
+    StrategicIconName = 'icon_land2_antiair',
     Weapon = {
         [1] = {
-            Damage = 180,  
-            MuzzleVelocity = 70,
+            Damage = 60,  
+            MuzzleVelocity = 50,
             ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/AH_WEAPON/AH_WEAPON_proj.bp',
             RackSalvoSize = 3,
             RateOfFire = 1,

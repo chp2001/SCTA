@@ -23,7 +23,7 @@ UnitBlueprint {
         MaxHealth = 2700,
     },
     Display = {
-        UniformScale = 0.30,
+        UniformScale = 0.2,
         },
         Footprint = {
             SizeX = 4,
@@ -41,10 +41,10 @@ UnitBlueprint {
         SkirtSizeX = 0,
         SkirtSizeZ = 0,
     },
-    SelectionSizeX = 6,
-    SelectionSizeZ = 6,
-    SizeY = 6,
-    SizeX = 8,
-    SizeZ = 8,
+    SelectionSizeX = 4,
+    SelectionSizeZ = 4,
+    SizeY = 4,
+    SizeX = 6,
+    SizeZ = 6,
     StrategicIconName = 'icon_structure2_energy',
 }

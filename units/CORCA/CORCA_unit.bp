@@ -83,14 +83,8 @@ UnitBlueprint {
     'AIR',
     'VTOL',
 	'SELECTION',
-        'CORE',
-        
-	
+        'CORE',      	
 	'LEVEL1',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Light',
@@ -121,7 +115,7 @@ UnitBlueprint {
         BuildCostEnergy = 4580,
         BuildCostMass = 110,
         BuildTime = 10000,        
-	BuildRate = 50,
+	BuildRate = 75,
         BuildableCategory = {
             'BUILTBYT1AIR CORE',
         },
@@ -165,8 +159,8 @@ UnitBlueprint {
         HelpText = 'Tech Level 1',
     },
     LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarOffset = 0.25,
+    LifeBarSize = 1,
     Physics = {
         Elevation = 4,
         MotionType = 'RULEUMT_Air',
@@ -192,7 +186,7 @@ UnitBlueprint {
         { #SMALL_UNITEX
             Damage = 10,
             DamageFriendly = true,
-            DamageRadius = 0.9375,
+            DamageRadius = 1,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

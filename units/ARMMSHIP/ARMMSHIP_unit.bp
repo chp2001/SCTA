@@ -75,7 +75,7 @@ UnitBlueprint {
 	MovementEffects = {
 		Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02'},
+		Bones = {'wake1','wake2'},
 	},
         UniformScale = 0.16,
     },
@@ -165,15 +165,17 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Rocket_01',
+                        'rocket1',
                     },
-                    RackBone = 'Launcher_01',
+                    VisibleMuzzle = true,
+                    RackBone = 'launcher1',
                 },
                 {
                     MuzzleBones = {
-                        'Rocket_02',
+                        'rocket2',
                     },
-                    RackBone = 'Launcher_01',
+                    VisibleMuzzle = true,
+                    RackBone = 'launcher1',
                 },
             },
             RackFireTogether = false,
@@ -181,7 +183,7 @@ UnitBlueprint {
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 2,
-            RackSalvoSize = 1,
+            RackSalvoSize = 2,
             RackSlavedToTurret = false,
             RateOfFire = 2,
             ProjectileLifetime = 300,
@@ -191,7 +193,8 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-	    WeaponUnpacks = true,
+            WeaponUnpacks = true,
+            WeaponUnpackTimeout = 1,
             WeaponRepackTimeout = 2,
             EnergyDrainPerSecond = 50,
             EnergyRequired = 150,
@@ -225,15 +228,15 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Muzzle_01',
+                        'flare1',
                     },
-                    RackBone = 'Launcher_02',
+                    RackBone = 'launcher2',
                 },
                 {
                     MuzzleBones = {
-                        'Muzzle_02',
+                        'flare2',
                     },
-                    RackBone = 'Launcher_02',
+                    RackBone = 'launcher2',
                 },
             },
             RackFireTogether = false,
@@ -247,9 +250,9 @@ UnitBlueprint {
             TargetCheckInterval = 1,
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'Launcher_02',
-            TurretBonePitch = 'Launcher_02',
-            TurretBoneYaw = 'Turret_02',
+            TurretBoneMuzzle = 'launcher2',
+            TurretBonePitch = 'launcher2',
+            TurretBoneYaw = 'turret2',
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 360,

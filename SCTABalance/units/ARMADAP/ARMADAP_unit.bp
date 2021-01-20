@@ -79,11 +79,10 @@ UnitBlueprint {
         UniformScale = 0.25,
     },
     Economy = {
-        BuildCostEnergy = 90000,
-        BuildCostMass = 8000, 
-        BuildTime = 40000,
+        BuildCostEnergy = 30000,
+        BuildCostMass = 700, 
+        BuildTime = 60000,
     BuildRate = 240,
-    DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
         'VTOL LEVEL3 ARM',
         'VTOL LEVEL2 ARM',
@@ -170,14 +169,13 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 20,
+            Damage = 200,
             DamageFriendly = true,
             DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-
     },
         Wreckage = {
 	---UseCustomMesh = true,

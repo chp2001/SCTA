@@ -11,8 +11,8 @@ CORMIST = Class(TAunit) {
 	OnCreate = function(self)
 		TAunit.OnCreate(self)
 		self.Sliders = {
-			arms = CreateSlider(self, 'Arms'),
-			gun = CreateSlider(self, 'Gun'),
+			arms = CreateSlider(self, 'arms'),
+			gun = CreateSlider(self, 'gun'),
 		}
 		for k, v in self.Sliders do
 			self.Trash:Add(v)
@@ -28,7 +28,7 @@ CORMIST = Class(TAunit) {
 				self.unit.Sliders.arms:SetSpeed(2)
 
 				--MOVE gun to y-axis <2.4> SPEED <1.00>;
-				self.unit.Sliders.gun:SetGoal(0,2.4,0)
+				self.unit.Sliders.gun:SetGoal(0,2,0)
 				self.unit.Sliders.gun:SetSpeed(1)
 
 				--SLEEP <1325>

@@ -28,5 +28,4 @@ UnitBlueprint {
     Economy = {
         BuildCostMass = 300,
     },
-    StrategicIconName = 'icon_fighter3_intel',
 }

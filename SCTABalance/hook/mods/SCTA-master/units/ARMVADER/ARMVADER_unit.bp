@@ -12,7 +12,6 @@ UnitBlueprint {
     },
     LifeBarOffset = 0,
     LifeBarSize = 1,
-    SizeY = 0.5, 
     Weapon = {
         [1] = {
             Damage = 1500, #Doubles up with death, so death damage subtracted

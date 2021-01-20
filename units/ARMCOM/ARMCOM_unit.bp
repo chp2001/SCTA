@@ -88,6 +88,7 @@ UnitBlueprint {
         'OVERLAYSONAR',	
         'ARM',
         'COMMANDER',
+        'TACLOAK',
 	'LEVEL10',
     'SNIPEMODE',
     },
@@ -103,9 +104,7 @@ UnitBlueprint {
     },
     Description = 'Commander',
     Display = {
-        --AnimationBuild = '/mods/SCTA-master/units/ARMCOM/ARMCOM_lod0_unpack.sca',
-        --AnimationBuildRate = 1, 
-        AnimationWalk = '/mods/SCTA-master/units/ARMCOM/ARMCOM_lod0_Awalk.sca',
+         AnimationWalk = '/mods/SCTA-master/units/ARMCOM/ARMCOM_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
             '<LOC ability_amphibious>Amphibious',
@@ -145,8 +144,7 @@ UnitBlueprint {
         StorageMass = 1000,
     },
     Footprint = {
-	MaxSlope = 1.25,
-        SizeX = 2,
+        SizeX = 1,
         SizeZ = 2,
     },
     General = {

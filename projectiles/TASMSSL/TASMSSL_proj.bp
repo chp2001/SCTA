@@ -1,0 +1,90 @@
+#Nuclear Missile Rocket
+#CRBLMSSL
+#
+#Projectile created by Raevn
+
+ProjectileBlueprint {
+    Audio = {
+        Impact = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED4',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactUnit = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED4',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactShield = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED4',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactTerrain = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED4',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactWater = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'SPLSLRG',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+    },
+    Categories = {
+        'CORE',
+        'PROJECTILE',
+        'STRATEGIC',
+        'TACTICAL',
+        'MISSILE',
+        'INDIRECTFIRE',
+    },
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 5,
+        MaxHealth = 5,
+    },
+    Display = {
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/crblmssl_mesh.bp',
+        StrategicIconSize = 1,
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 9000,
+        BuildCostMass = 4500,
+        BuildTime = 3000,
+    },
+    General = {
+        Category = 'Missile',
+        EntityCategory = {
+            'CORE',
+            'PROJECTILE',
+            'STRATEGIC',
+            'TACTICAL',
+            'MISSILE',
+            'INDIRECTFIRE',
+        },
+        Faction = 'CORE',
+        Weapon = 'EMBMSSL',
+    },
+    Interface = {
+        HelpText = 0,
+    },
+    Physics = {
+        Acceleration = 3,
+        CollideEntity = false,
+        CollideSurface = false,
+        DestroyOnWater = false,
+        InitialSpeed = 0,
+        Lifetime = 600,
+        MaxSpeed = 30,
+        RotationalVelocity = 0,
+        RotationalVelocityRange = 0,
+        TrackTarget = true,
+        TrackTargetGround = true,
+        TurnRate = 0,
+        UseGravity = false,
+        VelocityAlign = true,
+    },
+    StrategicIconName = '/textures/ui/common/game/unit-over/icon-nuke_bmp.dds',
+}

@@ -9,13 +9,13 @@ ARMATLAS = Class(TATransportAir) {
 	OnCreate = function(self)
 		TATransportAir.OnCreate(self)
 		self.Sliders = {
-			arm1 = CreateSlider(self, 'Arm_01'),
-			arm2 = CreateSlider(self, 'Arm_02'),
-			arm3 = CreateSlider(self, 'Arm_03'),
+			arm1 = CreateSlider(self, 'arm1'),
+			arm2 = CreateSlider(self, 'arm2'),
+			arm3 = CreateSlider(self, 'arm3'),
 		}
 		self.Spinners = {
-			arm1 = CreateRotator(self, 'Arm_01', 'y', nil, 0, 0, 0),
-			arm2 = CreateRotator(self, 'Arm_02', 'y', nil, 0, 0, 0),
+			arm1 = CreateRotator(self, 'arm1', 'y', nil, 0, 0, 0),
+			arm2 = CreateRotator(self, 'arm2', 'y', nil, 0, 0, 0),
 		}
 		for k, v in self.Sliders do
 			self.Trash:Add(v)

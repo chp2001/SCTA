@@ -33,7 +33,8 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
+    'LAND',
+    'TACLOAK',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
@@ -87,7 +88,7 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         ToggleCaps = {
-            RULEUTC_IntelToggle = true,
+            RULEUTC_CloakToggle = true,
         },
         FactionName = 'ARM',
         TechLevel = 'RULEUTL_Advanced',

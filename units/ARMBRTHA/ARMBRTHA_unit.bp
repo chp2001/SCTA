@@ -132,7 +132,7 @@ UnitBlueprint {
             },
 	    RangeCategory = 'UWRC_IndirectFire',
             FiringTolerance = 1.65,	
-	    FiringRandomness = 2,
+	    FiringRandomness = 0.5,
             Label = 'ARM_BERTHACANNON',
             RenderFireClock = true,
             MaxRadius = 450,

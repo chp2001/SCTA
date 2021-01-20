@@ -25,7 +25,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 800000,
         BuildCostMass = 30000,
-        BuildTime = 70000,
+        BuildTime = 150000,
     },
     Footprint = {
         SizeX = 3,
@@ -38,7 +38,7 @@ UnitBlueprint {
         SkirtSizeX = 3, 
         SkirtSizeZ = 3,  
     },
-    LifeBarSize = 6,
+    LifeBarSize = 3,
     SelectionSizeX = 3,
     SelectionSizeZ = 3,
     SelectionCenterOffsetZ = -0.6,
@@ -46,4 +46,12 @@ UnitBlueprint {
     SizeX = 4,
     SizeZ = 4,
     StrategicIconName = 'icon_structure3_artillery',
+    Weapon = {
+        [1] = {
+            BallisticArc = 'RULEUBA_HighArc',        
+            MuzzleVelocityReduceDistance = 800,
+            FiringRandomness = 1.5,
+        },
+        [2] = {},
+    },
 }

@@ -11,9 +11,8 @@ UnitBlueprint {
     'LAND',
     'CORE',
     'AMPHIBIOUS',
-    'PHIB',
-'LEVEL3',
-},
+    'LEVEL3',
+    },
    Defense = {
     Health = 8000,
     MaxHealth = 8000,

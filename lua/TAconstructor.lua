@@ -310,42 +310,22 @@ TARealCommander = Class(TACommander) {
 
     OnMotionHorzEventChange = function(self, new, old )
 		TACommander.OnMotionHorzEventChange(self, new, old)
-		if old == 'Stopped' then
+        if self.cloakOn then
+        if old == 'Stopped' then
 			self:SetConsumptionPerSecondEnergy(1000)
 			self.motion = 'Moving'
 		elseif new == 'Stopped' then
 			self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
 			self.motion = 'Stopped'
-		end
+        end
+    end
     end,
-    
+
     OnStartBuild = function(self, unitBeingBuilt, order )
         TACommander.OnStartBuild(self, unitBeingBuilt, order)
         self:SetScriptBit('RULEUTC_CloakToggle', true)
     end,
 
-	OnIntelDisabled = function(self)
-		self.cloakOn = nil
-        TACommander.OnIntelDisabled()
-        if not self:IsIntelEnabled('Cloak') then
-        self:PlayUnitSound('Uncloak')
-		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-        end
-    end,
-
-    OnIntelEnabled = function(self)
-        TACommander.OnIntelEnabled()
-        if self:IsIntelEnabled('Cloak') then
-            self.cloakOn = true
-		if self.motion == 'Moving' then
-			self:SetConsumptionPerSecondEnergy(1000)
-        end
-        	self:PlayUnitSound('Cloak')
-			self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
-		ForkThread(self.CloakDetection, self)
-        --end
-        end
-	end,
 
     OnKilled = function(self, instigator, type, overkillRatio)
         TACommander.OnKilled(self, instigator, type, overkillRatio)
@@ -366,24 +346,6 @@ TARealCommander = Class(TACommander) {
             end
         end
         ArmyBrains[self.Army].CommanderKilledBy = (instigator or self).Army
-    end,
-
-    CloakDetection = function(self)
-        local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
-        local brain = moho.entity_methods.GetAIBrain(self)
-        local cat = categories.SELECTABLE * categories.MOBILE
-        local getpos = moho.entity_methods.GetPosition
-        while not self.Dead do
-            coroutine.yield(11)
-            local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
-            if dudes[1] and self.cloakOn then
-                self:DisableIntel('Cloak')
-                self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-            elseif not dudes[1] and self.cloakOn then
-                self:EnableIntel('Cloak')
-                self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
-            end
-        end
     end,
     
     DoTakeDamage = function(self, instigator, amount, vector, damageType)

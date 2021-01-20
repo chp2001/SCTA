@@ -160,8 +160,8 @@ UnitBlueprint {
         HelpText = 'Tech Level 1',
     },
     LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarOffset = 0.25,
+    LifeBarSize = 1,
     Physics = {
         Elevation = 4,
         MotionType = 'RULEUMT_Air',

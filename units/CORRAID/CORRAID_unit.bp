@@ -37,7 +37,7 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'VEHICLE',	#'TANK' in TA
+        'VEHICLE',
 	'LEVEL1',
     },
     Defense = {
@@ -107,7 +107,6 @@ UnitBlueprint {
         TurnRate = 71,
         MaxSteerForce = 10,
     },
-    SelectionCenterOffsetZ = -0.2,
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.3,
     SelectionThickness = 0.25,
@@ -148,9 +147,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Muzzle',
+                        'flare',
                     },
-                    RackBone = 'Barrel',
+                    RackBone = 'barrel',
                 },
             },
             RackFireTogether = false,
@@ -167,9 +166,9 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'Muzzle',
-            TurretBonePitch = 'Sleeve',
-            TurretBoneYaw = 'Turret',
+            TurretBoneMuzzle = 'flare',
+            TurretBonePitch = 'sleeve',
+            TurretBoneYaw = 'turret',
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 360,

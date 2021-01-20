@@ -26,9 +26,6 @@ UnitBlueprint {
             Health = 2000,
             MaxHealth = 2000,
             },
-            Display = {
-                UniformScale = 0.1,
-            },
         Physics = {
             TurnRate = 51,
             MaxSteerForce = 100,
@@ -38,7 +35,7 @@ UnitBlueprint {
         Economy = {
             BuildCostEnergy = 3200,
             BuildTime = 6000,
-            BuildRate = 240,
+            BuildRate = 300,
             ProductionPerSecondEnergy = 4,
             MaxBuildDistance = 7,
             BuildableCategory = {

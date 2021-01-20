@@ -15,8 +15,8 @@ UnitBlueprint {
 	'CONSTRUCTION',
         'LAND',
         'CORE',
-            'HOVER',
-'PHIB',
+        'HOVER',
+        'PHIB',
         'KBOT',
         'VEHICLE',
 	'LEVEL3',
@@ -38,7 +38,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 3200,
         BuildTime = 6000,
-        BuildRate = 240,
+        BuildRate = 300,
         ProductionPerSecondEnergy = 4,
         MaxBuildDistance = 7,
         BuildableCategory = {

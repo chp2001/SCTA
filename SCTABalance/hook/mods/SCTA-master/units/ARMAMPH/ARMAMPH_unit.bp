@@ -10,19 +10,18 @@ UnitBlueprint {
     'KBOT',
     'LAND',
     'ARM',
-        'HOVER',
-'PHIB',
-'LEVEL3',
-},
+    'HOVER',
+    'LEVEL3',
+    },
    Defense = {
     Health = 11000,
     MaxHealth = 11000,
-},
-Economy = {
+    },
+    Economy = {
     BuildCostEnergy = 30000,
     BuildCostMass = 1400,
     BuildTime = 29000,
-},
+    },
     StrategicIconName = 'icon_bot3_armored',
     Weapon = {
         [1] = {
@@ -37,6 +36,5 @@ Economy = {
         },
         [3] = {
         }, 
-
     },
 }

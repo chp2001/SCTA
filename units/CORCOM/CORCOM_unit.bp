@@ -73,7 +73,8 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'LAND',
 	'MOBILE',
-	'DIRECTFIRE',
+    'DIRECTFIRE',
+    'TACLOAK',
                 'ECONOMIC',
         'SORTECONOMY',
         'COMMAND',
@@ -98,9 +99,7 @@ UnitBlueprint {
     },
     Description = 'Commander',
     Display = {
-        --AnimationBuild = '/mods/SCTA-master/units/CORCOM/CORCOM_lod0_unpack.sca',
-        --AnimationBuildRate = 1, 
-			AnimationWalk = '/mods/SCTA-master/units/CORCOM/CORCOM_lod0_Awalk.sca',
+        	AnimationWalk = '/mods/SCTA-master/units/CORCOM/CORCOM_lod0_Awalk.sca',
             AnimationWalkRate = 1,
             CloakMesh = '/mods/SCTA-master/units/CORCOM/CORCOM_cloak_mesh',
         Abilities = {
@@ -140,8 +139,7 @@ UnitBlueprint {
         StorageMass = 1000,
     },
     Footprint = {
-	MaxSlope = 1.25,
-        SizeX = 2,
+        SizeX = 1,
         SizeZ = 2,
     },
     General = {

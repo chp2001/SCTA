@@ -32,8 +32,6 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
@@ -58,24 +56,8 @@ UnitBlueprint {
         AnimationWalkRate = 2,
         Abilities = {
             'Kamikazi',
+            'All-Terrain',
         },
-        	--[[DestructionEffects = {
-            DefaultFlamingProjectileCountMin = 0,
-            DefaultFlamingProjectileCountMax = 0,
-            DefaultProjectileCountMin = 0,
-            DefaultProjectileCountMax = 0,
-            FlashTime = 0,
-            FlashSize = 0,
-            DestructionEmitters = {
-                {
-                    EmitterBone = {'ARMVADER'},
-                    EmitterBlueprint = {
-                        '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
-                    },
-                    EmitterSize = 1,
-        },
-    },
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -86,13 +68,17 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'Torso',
+        SmokeBone = 'ARMVADER',
         UniformScale = 0.16,
     },
     Economy = {
         BuildCostEnergy = 5473,
         BuildCostMass = 61,
         BuildTime = 7901,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 2,
     },
     General = {
         Category = 'Direct Fire',

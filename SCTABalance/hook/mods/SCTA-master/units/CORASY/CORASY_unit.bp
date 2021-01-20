@@ -1,8 +1,8 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
+        'BUILTBYT1AIR',
         'BUILTBYT2AIR',
-        'BUILTBYT2SUB',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -11,7 +11,6 @@ UnitBlueprint {
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-        'CONSTRUCTIONSORTDOWN',
 	'STRUCTURE',
 	'CONSTRUCTION',
 	'NAVAL',
@@ -32,9 +31,9 @@ UnitBlueprint {
         SizeZ = 14,
     },
     Economy = {
-        BuildCostEnergy = 16000,
-        BuildCostMass = 1800,
-        BuildTime = 30000,
+        BuildCostEnergy = 45000,
+        BuildCostMass = 2500,
+        BuildTime = 11000,
         BuildableCategory = {
             'OCEAN LEVEL1 CORE',
             'OCEAN LEVEL2 CORE',

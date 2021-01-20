@@ -19,10 +19,6 @@ UnitBlueprint {
         'VEHICLE',
 	'LEVEL2',
     'VTOL',
-	
-	
-	
-	
     },
     Defense = {
         Health = 1200,

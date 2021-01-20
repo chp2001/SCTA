@@ -5,7 +5,7 @@ UnitBlueprint {
         MaxHealth = 7000,
     },
     Display = {
-        UniformScale = 0.40,
+        UniformScale = 0.16,
         },
         Footprint = {
             SizeX = 5,
@@ -22,7 +22,7 @@ UnitBlueprint {
         SkirtSizeZ = 0,
     },
     SelectionSizeX = 8,
-    SelectionSizeZ = 8,
+    SelectionSizeZ = 6,
     SelectionThickness = 0.25,
     SizeX = 10,
     SizeY = 6,

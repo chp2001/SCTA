@@ -11,13 +11,13 @@ ARMFIG = Class(TAair) {
 		TAair.OnCreate(self)
 		---self:SetMaintenanceConsumptionActive()
 		self.Sliders = {
-			wing1 = CreateSlider(self, 'Wing_01'),
-			wing2 = CreateSlider(self, 'Wing_02'),
+			wing1 = CreateSlider(self, 'wing1'),
+			wing2 = CreateSlider(self, 'wing2'),
 		}
 		self.Spinners = {
 			base = CreateRotator(self, 0, 'z', nil, 0, 0, 0),
-			wing1 = CreateRotator(self, 'Wing_01', 'z', nil, 0, 0, 0),
-			wing2 = CreateRotator(self, 'Wing_02', 'z', nil, 0, 0, 0),
+			wing1 = CreateRotator(self, 'wing1', 'z', nil, 0, 0, 0),
+			wing2 = CreateRotator(self, 'wing2', 'z', nil, 0, 0, 0),
 		}
 		for k, v in self.Sliders do
 			self.Trash:Add(v)
@@ -61,11 +61,11 @@ ARMFIG = Class(TAair) {
 
 	OpenWings = function(self)
 		--MOVE wing1 to x-axis <-2.40> SPEED <1.00>;
-		self.Sliders.wing1:SetGoal(-2.4,0,0)
+		self.Sliders.wing1:SetGoal(2.4,0,0)
 		self.Sliders.wing1:SetSpeed(1)
 
 		--MOVE wing2 to x-axis <2.44> SPEED <1.00>;
-		self.Sliders.wing2:SetGoal(2.4,0,0)
+		self.Sliders.wing2:SetGoal(-2.4,0,0)
 		self.Sliders.wing2:SetSpeed(1)
 
 		--TURN wing1 to z-axis <0.89> SPEED <0.61>;

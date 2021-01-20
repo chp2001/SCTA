@@ -31,21 +31,14 @@ UnitBlueprint {
         'SELECTABLE',
         'TECH2',
         'VISIBLETORECON',
-        'RECLAIMABLE',
-
-	
+        'RECLAIMABLE',	
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-
-	
-        'CORE',
+	     'CORE',
         'KBOT',
-	
 	'LEVEL2',
-	
-	
 	'KAMIKAZI',
     },
     Defense = {
@@ -75,28 +68,15 @@ UnitBlueprint {
         },
 	SmokeBone = 'CORROACH',
         UniformScale = 0.16,
-        	--[[DestructionEffects = {
-            DefaultFlamingProjectileCountMin = 0,
-            DefaultFlamingProjectileCountMax = 0,
-            DefaultProjectileCountMin = 0,
-            DefaultProjectileCountMax = 0,
-            FlashTime = 0,
-            FlashSize = 0,
-            DestructionEmitters = {
-                {
-                    EmitterBone = {'CORROACH'},
-                    EmitterBlueprint = {
-                        '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
-                    },
-                    EmitterSize = 2,
-        },
-     },
-       	},]]--
     },	
     Economy = {
         BuildCostEnergy = 5471,
         BuildCostMass = 65,
         BuildTime = 7899,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 2,
     },
     General = {
         Category = 'Direct Fire',

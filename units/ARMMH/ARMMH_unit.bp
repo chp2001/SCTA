@@ -67,12 +67,12 @@ UnitBlueprint {
 	IdleEffects = {
 		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
+		Bones = {'Wake1','Wake2','Wake3','Wake4'},
 	},
 	MovementEffects = {
 		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
+		Bones = {'Wake1','Wake2','Wake3','Wake4'},
 	},
         UniformScale = 0.16,
     },
@@ -164,9 +164,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'muzzle',
+                        'Flare',
                     },
-                    RackBone = 'box',
+                    RackBone = 'Box',
                 },
             },
             RackRecoilDistance = 0,

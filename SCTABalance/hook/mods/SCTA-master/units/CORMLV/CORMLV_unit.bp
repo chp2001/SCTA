@@ -19,7 +19,8 @@ UnitBlueprint {
         'CORE',
         ---'VEHICLE',
 	'MINELAYER',
-	'LEVEL1',
+    'LEVEL1',
+    'FIELDENGINEER',
     },
     Display = {
         UniformScale = 0.12,

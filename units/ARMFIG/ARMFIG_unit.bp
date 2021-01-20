@@ -155,7 +155,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 1,
     SizeZ = 2,
-    StrategicIconName = 'icon_fighter1_antiair',
+    StrategicIconName = 'icon_fighter1_missile',
     StrategicIconSortPriority = 0,
     Transport = {
         AirClass = true,
@@ -199,15 +199,15 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Muzzle_01',
+                        'flare1',
                     },
-                    RackBone = 'Wing_01',
+                    RackBone = 'wing1',
                 },
                 {
                     MuzzleBones = {
-                        'Muzzle_02',
+                        'flare2',
                     },
-                    RackBone = 'Wing_02',
+                    RackBone = 'wing2',
                 },
             },
             RackRecoilDistance = 0,

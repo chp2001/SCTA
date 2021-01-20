@@ -33,14 +33,14 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
-	'ANTIAIR',
+	    'LAND',
+	    'DIRECTFIRE',
+	    'ANTIAIR',
         'OVERLAYDIRECTFIRE',
-	'OVERLAYANTIAIR',
+	    'OVERLAYANTIAIR',
         'CORE',
-        'VEHICLE',	#'TANK' in TA
-	'LEVEL1',
+        'VEHICLE',
+	    'LEVEL1',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -56,15 +56,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_aa>Anti-Air', 
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Turret'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -160,21 +151,15 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Muzzle1',
+                        'flare1',
                     },
-                    RackBone = 'Gun',
+                    RackBone = 'gun',
                 },
                 {
                     MuzzleBones = {
-                        'Muzzle2',
+                        'flare3',
                     },
-                    RackBone = 'Gun',
-                },
-                {
-                    MuzzleBones = {
-                        'Muzzle3',
-                    },
-                    RackBone = 'Gun',
+                    RackBone = 'gun',
                 },
             },
             RackRecoilDistance = 0,
@@ -190,10 +175,12 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'Muzzle2',
-            TurretBonePitch = 'Gun',
-            TurretBoneYaw = 'Turret',
-            TurretDualManipulators = false,
+            TurretBoneMuzzle = 'flare1',
+            TurretBonePitch = 'gun',
+            TurretBoneDualMuzzle = 'flare3',
+            TurretBoneDualPitch = 'gun',
+            TurretBoneYaw = 'turret',
+            TurretDualManipulators = true,
             TurretPitch = 0,
             TurretPitchRange = 360,
             TurretPitchSpeed = 150,

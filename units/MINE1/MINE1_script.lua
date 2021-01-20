@@ -1,11 +1,16 @@
+#ARM Tiny - Low Damage, Med. Range Mine
+#ARMMINE1
+#
+#Script created by Raevn
+
 local TAMine = import('/mods/SCTA-master/lua/TAStructure.lua').TAMine
 local Projectile = import('/lua/sim/DefaultWeapons.lua').DefaultProjectileWeapon
 
-CORMINE4 = Class(TAMine) {
+MINE1 = Class(TAMine) {
 
 
 	Weapons = {
-		ARMMINE4 = Class(Projectile) {
+		ARMMINE1 = Class(Projectile) {
 			OnWeaponFired = function(self)
 				self.unit.attacked = true
 				self.unit:Kill()
@@ -13,4 +18,4 @@ CORMINE4 = Class(TAMine) {
 		},
 	},
 }
-TypeClass = CORMINE4
+TypeClass = MINE1

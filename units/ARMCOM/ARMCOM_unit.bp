@@ -104,8 +104,8 @@ UnitBlueprint {
     },
     Description = 'Commander',
     Display = {
-         AnimationWalk = '/mods/SCTA-master/units/ARMCOM/ARMCOM_lod0_Awalk.sca',
-        AnimationWalkRate = 1,
+         AnimationWalk = '/mods/SCTA-master/units/ARMCOM/ARMCOM_Awalk.sca',
+        AnimationWalkRate = 3.75,
         Abilities = {
             '<LOC ability_amphibious>Amphibious',
             '<LOC ability_notcap>Not Capturable',
@@ -120,12 +120,12 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 230,
-                    ShaderName = 'AeonCZAR', 
+                    ShaderName = 'Unit', 
                 },
             },
         },
 	SmokeBone = 'Torso',
-        UniformScale = 0.16,
+        UniformScale = 0.032,
     },
     Economy = {
         BuildCostEnergy = 34125,
@@ -149,9 +149,9 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            AimBone = 'LaserMuzzle',
-            BuildEffectBones = {'LaserMuzzle'},
-            PitchBone = 'LeftLowerArm',
+            AimBone = 'Arm_Lower_L',
+            BuildEffectBones = {'Arm_Lower_L'},
+            PitchBone = 'Elbow_L',
             YawBone = 'Torso',
         },
         Category = 'Command',
@@ -279,9 +279,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'LaserMuzzle',
+                        'Laser_R',
                     },
-                    RackBone = 'LeftLowerArm',
+                    RackBone = 'Elbow_L',
                 },
             },
             RackRecoilDistance = 0,
@@ -296,8 +296,8 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'LaserMuzzle',
-            TurretBonePitch = 'LeftLowerArm',
+            TurretBoneMuzzle = 'Laser_R',
+            TurretBonePitch = 'Elbow_L',
             TurretBoneYaw = 'Torso',
             TurretPitch = 15,
             TurretPitchRange = 360,
@@ -341,9 +341,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'DGunMuzzle',
+                        'Arm_Lower_R',
                     },
-                    RackBone = 'RightLowerArm',
+                    RackBone = 'Elbow_R',
                 },
             },
             RackRecoilDistance = 0,
@@ -357,8 +357,8 @@ UnitBlueprint {
             TargetCheckInterval = 0.1,
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'DGunMuzzle',
-            TurretBonePitch = 'RightLowerArm',
+            TurretBoneMuzzle = 'Arm_Lower_R',
+            TurretBonePitch = 'Elbow_R',
             TurretBoneYaw = 'Torso',
             TurretDualManipulators = false,
             TurretPitch = 15,
@@ -405,9 +405,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'DGunMuzzle',
+                        'Arm_Lower_R',
                     },
-                    RackBone = 'RightLowerArm',
+                    RackBone = 'Elbow_R',
                 },
             },
             RackRecoilDistance = 0,
@@ -421,8 +421,8 @@ UnitBlueprint {
             TargetCheckInterval = 0.1,
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'DGunMuzzle',
-            TurretBonePitch = 'RightLowerArm',
+            TurretBoneMuzzle = 'Arm_Lower_R',
+            TurretBonePitch = 'Elbow_R',
             TurretBoneYaw = 'Torso',
             TurretDualManipulators = false,
             TurretPitch = 15,

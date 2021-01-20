@@ -10,7 +10,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 12,
     },
-    SelectionCenterOffsetZ = -0.25,
     SizeX = 1,
     SizeY = 1,
     SizeZ = 1,

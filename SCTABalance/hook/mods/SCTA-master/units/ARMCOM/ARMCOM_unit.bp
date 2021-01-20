@@ -15,7 +15,7 @@ UnitBlueprint {
             'D-Gun',
             'Construction Unit',
           },
-        UniformScale = 0.28,
+        UniformScale = 0.06,
     },
     Intel = {
       ActiveIntel = {

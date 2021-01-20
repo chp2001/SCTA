@@ -1,0 +1,13 @@
+MeshBlueprint {
+    IconFadeInZoom = 130,
+    LODs = {
+        {
+            MeshName = 'MINE1_lod0.scm',
+            AlbedoName = 'MINE1_Albedo.dds',
+            NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds',
+            SpecularName = 'MINE1_Specteam.dds',
+            ShaderName = 'TACloak', -- TACloak
+            LODCutoff = 230,
+        },
+    },
+}

@@ -26,9 +26,6 @@ UnitBlueprint {
             Health = 2000,
             MaxHealth = 2000,
             },
-            Display = {
-                UniformScale = 0.1,
-            },
         Physics = {
             TurnRate = 51,
             MaxSteerForce = 100,

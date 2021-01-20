@@ -40,8 +40,6 @@ ARMCOM = Class(TARealCommander) {
 		self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
 		WaitSeconds(3)
 		---CreateAttachedEmitter( self, 0, army, '/mods/SCTA-master/effects/emitters/ENTRANCE_emit.bp'):ScaleEmitter(4)
-		self:HideBone('DGunMuzzle', true)
-		self:HideBone('LaserMuzzle', true)
 		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
         self:SetUnSelectable(false)
 		self:SetBusy(false)

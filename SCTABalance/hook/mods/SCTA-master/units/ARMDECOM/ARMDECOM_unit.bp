@@ -23,7 +23,7 @@ UnitBlueprint {
     'SNIPEMODE',
 },
    Display = {
-       UniformScale = 0.28,
+       UniformScale = 0.06,
     },
     Defense = {
         Health = 18000,

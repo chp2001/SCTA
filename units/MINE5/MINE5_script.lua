@@ -1,16 +1,16 @@
-#ARM Area Mine - Low Damage, Large Range Mine
-#ARMMINE2
+#ARM Precision Mine - High Damage, Small Range Mine
+#ARMMINE5
 #
 #Script created by Raevn
 
 local TAMine = import('/mods/SCTA-master/lua/TAStructure.lua').TAMine
 local Projectile = import('/lua/sim/DefaultWeapons.lua').DefaultProjectileWeapon
 
-ARMMINE2 = Class(TAMine) {
+MINE5 = Class(TAMine) {
 
 
 	Weapons = {
-		ARMMINE2 = Class(Projectile) {
+		ARMMINE5 = Class(Projectile) {
 			OnWeaponFired = function(self)
 				self.unit.attacked = true
 				self.unit:Kill()
@@ -18,4 +18,4 @@ ARMMINE2 = Class(TAMine) {
 		},
 	},
 }
-TypeClass = ARMMINE2
+TypeClass = MINE5

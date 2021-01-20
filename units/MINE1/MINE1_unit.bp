@@ -137,9 +137,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Muzzle',
+                        'mine',
                     },
-                    RackBone = 'Muzzle',
+                    RackBone = 'mine',
                 },
             },
             RackRecoilDistance = 0,

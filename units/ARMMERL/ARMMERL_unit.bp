@@ -145,18 +145,17 @@ UnitBlueprint {
             FiringTolerance = 7,
             Label = 'ARMTRUCK_ROCKET',
             MaxRadius = 50,
+            MinRadius = 5,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 0,
-            EnergyDrainPerSecond = 5,
-            EnergyRequired = 5,
+            MuzzleVelocity = 5,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMTRUCK_ROCKET/ARMTRUCK_ROCKET_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
                         'Muzzle',
                     },
-		    VisibleMuzzle = false,
+		    VisibleMuzzle = true,
                     RackBone = 'Muzzle',
                 },
             },
@@ -179,12 +178,11 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-},
-
+        },
     },
         Wreckage = {
 	---UseCustomMesh = true,

@@ -198,15 +198,15 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Weapon1',
+                        'fire1',
                     },
-                    RackBone = 'Weapon1',
+                    RackBone = 'barrel1',
                 },
                 {
                     MuzzleBones = {
-                        'Weapon2',
+                        'fire2',
                     },
-                    RackBone = 'Weapon2',
+                    RackBone = 'barrel2',
                 },
             },
             HeadingArcCenter = 0,

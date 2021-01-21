@@ -110,7 +110,7 @@ UnitBlueprint {
         TurnRate = 28,
         MaxSteerForce = 10,
     },
-    SelectionCenterOffsetZ = -0.3,
+    SelectionCenterOffsetZ = -0.1,
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
     SelectionThickness = 0.25,
@@ -153,12 +153,12 @@ UnitBlueprint {
             MaxRadius = 43.75,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 62.5,
+            MuzzleVelocity = 45,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMMANNI_WEAPON/ARMMANNI_WEAPON_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
-                        'flare',
+                        'Flash',
                     },
                     RackBone = 'Barrel',
                 },
@@ -177,7 +177,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'Barrel',
+            TurretBoneMuzzle = 'Flash',
             TurretBonePitch = 'Sleeve',
             TurretBoneYaw = 'Turret',
             TurretDualManipulators = false,

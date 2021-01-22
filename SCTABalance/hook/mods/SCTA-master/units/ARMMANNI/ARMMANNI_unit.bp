@@ -27,7 +27,6 @@ UnitBlueprint {
         BuildCostMass = 1250,
     },
     StrategicIconName = 'icon_land3_antishield',
-    SelectionCenterOffsetZ = -0.3,
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
     SelectionThickness = 0.25,
@@ -37,10 +36,9 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         [1] = {
-            EnergyDrainPerSecond = 1500,
-            EnergyRequired = 500,
+            EnergyDrainPerSecond = 500,
+            EnergyRequired = 1500,
             MaxRadius = 60,
-            MuzzleVelocity = 62.5,
             RateOfFire = 0.1694915254,
         },
         [2] = {

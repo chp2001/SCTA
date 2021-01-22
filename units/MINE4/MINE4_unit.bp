@@ -48,7 +48,7 @@ UnitBlueprint {
         Abilities = {
             'Kamikazi',
         },
-		CloakMesh = '/mods/SCTA-master/units/MINE5/MINE5_cloak_mesh',
+		CloakMesh = '/mods/SCTA-master/units/MINE4/MINE4_cloak_mesh',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

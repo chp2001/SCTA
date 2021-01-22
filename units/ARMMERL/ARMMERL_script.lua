@@ -11,13 +11,13 @@ ARMMERL = Class(TAunit) {
 	OnCreate = function(self)
 		TAunit.OnCreate(self)
 		self.Spinners = {
-			door1 = CreateRotator(self, 'Door_01', 'z', nil, 0, 0, 0),
-			door2 = CreateRotator(self, 'Door_02', 'z', nil, 0, 0, 0),
+			door1 = CreateRotator(self, 'Door1', 'z', nil, 0, 0, 0),
+			door2 = CreateRotator(self, 'Door2', 'z', nil, 0, 0, 0),
 			arm = CreateRotator(self, 'Arm', 'x', nil, 0, 0, 0),
 		}
 		self.Sliders = {
-			door1 = CreateSlider(self, 'Door_01'),
-			door2 = CreateSlider(self, 'Door_02'),
+			door1 = CreateSlider(self, 'Door1'),
+			door2 = CreateSlider(self, 'Door2'),
 			plate = CreateSlider(self, 'Plate'),
 		}
 		for k, v in self.Spinners do
@@ -33,6 +33,7 @@ ARMMERL = Class(TAunit) {
 
     			PlayFxRackReloadSequence = function(self)
 
+				self.unit:HideBone('Muzzle', true)	
 				--TURN arm to x-axis <0> SPEED <175.41>;
 				self.unit.Spinners.arm:SetGoal(0)
 				self.unit.Spinners.arm:SetSpeed(175.41)
@@ -68,9 +69,6 @@ ARMMERL = Class(TAunit) {
 
 				--SLEEP <519>;
 				WaitSeconds(0.5)
-
-				--SLEEP <25>;
-				WaitSeconds(0.025)
 
 				self.unit:ShowBone('Muzzle', true)
 

@@ -14,7 +14,6 @@ UnitBlueprint {
     },
     SelectionSizeX = 2.4,
     SelectionSizeZ = 2.4,
-    SelectionCenterOffsetZ = 0,
     SizeX = 3,
     SizeY = 3,
     SizeZ = 3,

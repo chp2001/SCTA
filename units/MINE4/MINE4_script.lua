@@ -6,7 +6,7 @@
 local TAMine = import('/mods/SCTA-master/lua/TAStructure.lua').TAMine
 local Projectile = import('/lua/sim/DefaultWeapons.lua').DefaultProjectileWeapon
 
-MINE5 = Class(TAMine) {
+MINE4 = Class(TAMine) {
 
 
 	Weapons = {
@@ -18,4 +18,4 @@ MINE5 = Class(TAMine) {
 		},
 	},
 }
-TypeClass = MINE5
+TypeClass = MINE4

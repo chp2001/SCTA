@@ -34,9 +34,6 @@ UnitBlueprint {
 	'ARM',
 	'ENERGY',
 	'LEVEL3',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -49,23 +46,20 @@ UnitBlueprint {
     },
     Description = 'Produces Energy',
     Display = {
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Stone'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 300,
-                    ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                    LODCutoff = 100,
+                    ShaderName = 'Unit',
+                },
+                {
+                    LODCutoff = 215,
+                    ShaderName = 'Unit',
+                },
+                {
+                    LODCutoff = 330,
+                    ShaderName = 'Unit',
                 },
             },
         },
@@ -127,7 +121,6 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-
     },
         Wreckage = {
 	---UseCustomMesh = true,

@@ -26,21 +26,14 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-
-	
-	'STRUCTURE',
-                'ECONOMIC',
+	    'STRUCTURE',
+        'ECONOMIC',
         'SORTECONOMY',
-	'ENERGYPRODUCTION',
-	'HYDROCARBON',
-
-	
-	'CORE',
-	'ENERGY',
-	'LEVEL2',
-	
-	
-	
+	    'ENERGYPRODUCTION',
+	    'HYDROCARBON',
+	    'CORE',
+	    'ENERGY',
+	    'LEVEL2',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -53,15 +46,6 @@ UnitBlueprint {
     },
     Description = 'Produces Energy',
     Display = {
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Abilities = {
             'Geothermal',
         },

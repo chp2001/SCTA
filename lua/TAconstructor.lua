@@ -197,7 +197,7 @@ TANecro = Class(TAconstructor) {
         --LOG('* Necro: RespawnUnit: ReclaimLeft '..ReclaimLeft)
         WaitTicks(3)
         local newUnit = CreateUnitHPR(RecBP, army, pos[1], pos[2], pos[3], 0, 0, 0)
-        newUnit:SetHealth(nil, newUnit:GetMaxHealth() * ReclaimLeft * 0.75)
+        newUnit:SetHealth(nil, newUnit:GetMaxHealth() * ReclaimLeft * 0.1)
     end,
 }
 

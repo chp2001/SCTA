@@ -8,7 +8,7 @@ UnitBlueprint {
         TargetBones = {
             'turret1',
             'turret2',
-            'CORBATS',
+            'corbats',
         },
     },
     Audio = {
@@ -267,9 +267,9 @@ UnitBlueprint {
             Turreted = true,
         },
         { #BIG_UNITEX
-            Damage = 50,
+            Damage = 500,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

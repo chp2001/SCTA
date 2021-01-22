@@ -151,13 +151,13 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'muzzle1',
+                        'flare1',
                     },
                     RackBone = 'barrel1',
                 },
                 {
                     MuzzleBones = {
-                        'muzzle2',
+                        'flare2',
                     },
                     RackBone = 'barrel2',
                 },

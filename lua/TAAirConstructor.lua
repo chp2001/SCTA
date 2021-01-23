@@ -75,7 +75,7 @@ TAAirConstructor = Class(TAair) {
     end,
     
 	CreateBuildEffects = function(self, unitBeingBuilt, order)
-        TAutils.CreateTABuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
+        TAutils.CreateTAAirBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
     end,
 
     CreateReclaimEffects = function( self, target )

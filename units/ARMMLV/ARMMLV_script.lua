@@ -10,8 +10,8 @@ ARMMLV = Class(TAconstructor) {
 
 	OnCreate = function(self)
 		self.Spinners = {
-			Tires1 = CreateRotator(self, 'Tires1', 'x', nil, 0, 0, 0),
-			Tires2 = CreateRotator(self, 'Tires2', 'x', nil, 0, 0, 0),
+			Tires1 = CreateRotator(self, 'Tire1', 'x', nil, 0, 0, 0),
+			Tires2 = CreateRotator(self, 'Tire2', 'x', nil, 0, 0, 0),
 		}
 		for k, v in self.Spinners do
 			self.Trash:Add(v)

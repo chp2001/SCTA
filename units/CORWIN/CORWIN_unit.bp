@@ -35,9 +35,6 @@ UnitBlueprint {
 	'CORE',
 	'ENERGY',
 	'LEVEL1',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -46,16 +43,19 @@ UnitBlueprint {
     },
     Description = 'Produces Energy',
     Display = {
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
-                {
-                    LODCutoff = 230,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+            Mesh = {
+                IconFadeInZoom = 130,
+                LODs = {
+                    {
+                        LODCutoff = 135,
+                        ShaderName = 'Unit',
+                    },
+                    {
+                        LODCutoff = 215,
+                        ShaderName = 'Unit',
+                    },
                 },
             },
-        },
         UniformScale = 0.16,
     },
     Economy = {

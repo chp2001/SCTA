@@ -25,6 +25,10 @@ UnitBlueprint {
         SkirtOffsetZ = -0.5,
         SkirtSizeX = 2,
         SkirtSizeZ = 2,
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
     },
     SelectionSizeX = 1.3,
     SelectionSizeZ = 1.3,

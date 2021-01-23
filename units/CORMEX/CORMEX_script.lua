@@ -16,8 +16,9 @@ CORMEX = Class(TAMass) {
 		self.Sliders = {
 			stand = CreateSlider(self, 'stand'),
 		}
-		self.Trash:Add(self.Spinners.arms)
-		self.Trash:Add(self.Spinners.stand)
+		for k, v in self.Spinners do
+			self.Trash:Add(v)
+		end
 	end,
 
 	CreateWreckage = function( self, overkillRatio )

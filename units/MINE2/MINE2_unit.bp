@@ -42,6 +42,7 @@ UnitBlueprint {
     Description = 'Small Damage, Large Range Mine',
     Display = {
         Abilities = {
+            '<LOC ability_cloak>Cloaking',
             'Kamikazi',
         },
 		CloakMesh = '/mods/SCTA-master/units/MINE2/MINE2_cloak_mesh',
@@ -84,6 +85,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 4,
+        Cloak = true,
     },
     Interface = {
         HelpText = 'Small Damage, Large Range Mine',

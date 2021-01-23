@@ -46,6 +46,7 @@ UnitBlueprint {
     Description = 'Med. Damage, Small Range Mine',
     Display = {
         Abilities = {
+            '<LOC ability_cloak>Cloaking',
             'Kamikazi',
         },
 		CloakMesh = '/mods/SCTA-master/units/MINE3/MINE3_cloak_mesh',
@@ -88,6 +89,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 4,
+        Cloak = true,
     },
     Interface = {
         HelpText = 'Med. Damage, Small Range Mine',

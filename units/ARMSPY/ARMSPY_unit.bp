@@ -55,6 +55,7 @@ UnitBlueprint {
         AnimationWalk = '/mods/SCTA-master/units/ARMSPY/ARMSPY_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
+            '<LOC ability_cloak>Cloaking',
             '<LOC ability_radar>Radar',
         },
         CloakMesh = '/mods/SCTA-master/units/ARMSPY/ARMSPY_cloak_mesh',

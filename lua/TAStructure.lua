@@ -92,19 +92,14 @@ TAMine = Class(TAStructure) {
 		TAStructure.OnKilled(self, instigator, type, overkillRatio)
 		
 	end,
-
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAStructure.OnStopBeingBuilt(self,builder,layer)
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
+		self:SetMaintenanceConsumptionActive()
+		self:SetScriptBit('RULEUTC_CloakToggle', false)
 		self:RequestRefreshUI()
 	end,
 
-	OnIntelDisabled = function(self)
-		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-	end,
 
-	OnIntelEnabled = function(self)
-        self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
+	HideFlares = function(self, bp)
 	end,
-
 }

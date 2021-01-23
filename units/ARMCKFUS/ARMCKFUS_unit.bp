@@ -90,7 +90,7 @@ UnitBlueprint {
     Intel = {
         FreeIntel = false,
         VisionRadius = 14,
-	Cloak = true,
+	    Cloak = true,
     },
     Interface = {
         HelpText = 'Produces Energy',

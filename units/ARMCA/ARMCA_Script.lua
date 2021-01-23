@@ -10,8 +10,8 @@ ARMCA = Class(TAAirConstructor) {
 	OnCreate = function(self)
 		TAAirConstructor.OnCreate(self)
 		self.Sliders = {
-			wing1 = CreateSlider(self, 'Wing_01'),
-			wing2 = CreateSlider(self, 'Wing_02'),
+			wing1 = CreateSlider(self, 'rwingb'),
+			wing2 = CreateSlider(self, 'lwingb'),
 		}
 		for k, v in self.Sliders do
 			self.Trash:Add(v)
@@ -34,13 +34,13 @@ ARMCA = Class(TAAirConstructor) {
 	end,
 
 	OpenWings = function(self)
-		--MOVE wing1 to x-axis <-4.50> SPEED <4.00>;
-		self.Sliders.wing1:SetGoal(4.5,0,0)
+		--MOVE wing1 to x-axis <5.59> SPEED <5.00>;
+		self.Sliders.wing1:SetGoal(-6.25,0,0)
 		self.Sliders.wing1:SetSpeed(4)
 
-		--MOVE wing2 to x-axis <5.84> SPEED <6.00>;
-		self.Sliders.wing2:SetGoal(-5.84,0,0)
-		self.Sliders.wing2:SetSpeed(6)
+		--MOVE wing2 to x-axis <-5.65> SPEED <5.00>;
+		self.Sliders.wing2:SetGoal(6.25,0,0)
+		self.Sliders.wing2:SetSpeed(4)
 	end,
 
 	CloseWings = function(self)
@@ -50,7 +50,7 @@ ARMCA = Class(TAAirConstructor) {
 
 		--MOVE wing2 to x-axis <0> SPEED <6.00>;
 		self.Sliders.wing2:SetGoal(0,0,0)
-		self.Sliders.wing2:SetSpeed(6)
+		self.Sliders.wing2:SetSpeed(4)
 	end,
 }
 

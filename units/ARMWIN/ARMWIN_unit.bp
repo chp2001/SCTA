@@ -28,16 +28,13 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH1',
 	    'STRUCTURE',
-                'ECONOMIC',
+        'ECONOMIC',
         'SORTECONOMY',
 	    'ENERGYPRODUCTION',
 	    'WIND',
 	    'ARM',
 	    'ENERGY',
 	    'LEVEL1',
-	    
-	    
-	    
     },
     Defense = {
         ArmorType = 'Structure',
@@ -52,7 +49,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'AeonCZAR',
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+		            NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },

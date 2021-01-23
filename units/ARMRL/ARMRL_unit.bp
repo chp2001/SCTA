@@ -63,7 +63,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.14,
     },
     Economy = {
         BuildCostEnergy = 843,
@@ -108,7 +108,6 @@ UnitBlueprint {
     },
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
-    SelectionCenterOffsetZ = -0.5,
     SelectionThickness = 0.25,
     SizeX = 3,
     SizeY = 4,
@@ -147,9 +146,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Muzzle',
+                        'Flare',
                     },
-                    RackBone = 'Launcher',
+                    RackBone = 'launchers',
                 },
             },
             RackRecoilDistance = 0,
@@ -164,9 +163,9 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'Muzzle',
-            TurretBonePitch = 'Launcher',
-            TurretBoneYaw = 'Turret',
+            TurretBoneMuzzle = 'Flare',
+            TurretBonePitch = 'launchers',
+            TurretBoneYaw = 'turret',
             TurretPitch = 0,
             TurretPitchRange = 360,
             TurretPitchSpeed = 250,

@@ -163,7 +163,7 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Muzzle',
+                        'Flare',
                     },
                     RackBone = 'Turret',
                 },
@@ -181,7 +181,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'Muzzle',
+            TurretBoneMuzzle = 'Flare',
             TurretBonePitch = 'Turret',
             TurretBoneYaw = 'Turret',
             TurretDualManipulators = false,

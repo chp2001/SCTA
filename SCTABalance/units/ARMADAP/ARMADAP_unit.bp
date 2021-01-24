@@ -60,6 +60,7 @@ UnitBlueprint {
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/ARMAP/ARMAP_lod0_unpack.sca',
         AnimationUnpackRate = 1,   
+        BuildAttachBone = 'BasePlate',
         Abilities = {
             '<LOC ability_radar>Radar',
         },
@@ -86,9 +87,10 @@ UnitBlueprint {
     BuildableCategory = {
         'VTOL LEVEL3 ARM',
         'VTOL LEVEL2 ARM',
-	    'VTOL LEVEL1 ARM', 
+        'VTOL LEVEL1 ARM', 
+        'armck',
         },
-	InitialRallyX = 1,
+	InitialRallyX = 0,
 	InitialRallyZ = 5,
     StorageMass = 50,
     StorageEnergy = 50,
@@ -100,7 +102,6 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildAttachBone = 'BasePlate',
             BuildEffectBones = {'Nozzle_01', 'Nozzle_02'},
         },    
         Category = 'Factory',

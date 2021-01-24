@@ -16,7 +16,7 @@ UnitBlueprint {
 	'NAVAL',
 	'ARM',
     'LAB',
-	'SORTCONSTRUCTION',
+	'SORTOTHER',
 	'LEVEL2',
     },
     Defense = {

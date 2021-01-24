@@ -17,7 +17,7 @@ UnitBlueprint {
         'CONSTRUCTIONSORTDOWN',
 	'CORE',
     'LAB',
-	'SORTCONSTRUCTION',
+	'SORTOTHER',
 	'LEVEL2',
     },
     Defense = {

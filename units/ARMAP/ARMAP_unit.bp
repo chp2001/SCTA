@@ -64,7 +64,8 @@ UnitBlueprint {
     Description = 'Produces Aircraft',
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/ARMAP/ARMAP_lod0_unpack.sca',
-        AnimationUnpackRate = 1,   
+        AnimationUnpackRate = 1,
+        BuildAttachBone = 'BasePlate',
         Abilities = {
             '<LOC ability_radar>Radar',
         },
@@ -88,7 +89,7 @@ UnitBlueprint {
         BuildableCategory = {
             'VTOL LEVEL1 ARM',
         },
-	InitialRallyX = 1,
+	InitialRallyX = 0,
 	InitialRallyZ = 5,
         StorageMass = 50,
         StorageEnergy = 50,
@@ -96,11 +97,10 @@ UnitBlueprint {
     Footprint = {
 	MaxSlope = 0.625,
         SizeX = 7,
-        SizeZ = 6,
+        SizeZ = 7,
     },
     General = {
         BuildBones = {
-            BuildAttachBone = 'BasePlate',
             BuildEffectBones = {'Nozzle_01', 'Nozzle_02'},
         },    
         Category = 'Factory',
@@ -139,10 +139,22 @@ UnitBlueprint {
         SkirtSizeZ = 6,
         RollOffPoints = {
             {
+                UnitSpin = 90,
+                X = 3,
+                Y = 0,
+                Z = 0,
+            },
+                {
                 UnitSpin = 0,
                 X = 0,
                 Y = 0,
-                Z = 2.5,
+                Z = 3,
+            },
+            {
+                UnitSpin = -90,
+                X = -3,
+                Y = 0,
+                Z = 0,
             },
         },
     },

@@ -63,6 +63,7 @@ UnitBlueprint {
         },
         AnimationUnpack = '/mods/SCTA-master/units/CORAAP/CORAAP_lod0_unpack.sca',
         AnimationUnpackRate = 0.5,    
+        BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -82,7 +83,7 @@ UnitBlueprint {
         BuildableCategory = {
             'VTOL LEVEL2 CORE',
         },
-	InitialRallyX = 1,
+	InitialRallyX = 0,
 	InitialRallyZ = 5,
         StorageMass = 200,
         StorageEnergy = 200,
@@ -94,7 +95,6 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildAttachBone = 'pad',
             BuildEffectBones = {'beam1', 'beam2'},
         },             
 	---BuildAngle = 0,
@@ -134,10 +134,22 @@ UnitBlueprint {
         SkirtSizeZ = 6,
         RollOffPoints = {
             {
+                UnitSpin = 90,
+                X = 3,
+                Y = 0,
+                Z = 0,
+            },
+                {
                 UnitSpin = 0,
                 X = 0,
                 Y = 0,
-                Z = 2.5,
+                Z = 3,
+            },
+            {
+                UnitSpin = -90,
+                X = -3,
+                Y = 0,
+                Z = 0,
             },
         },
     },

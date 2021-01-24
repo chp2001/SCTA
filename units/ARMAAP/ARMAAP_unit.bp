@@ -61,6 +61,7 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_radar>Radar',
         },
+    BuildAttachBone = 'pad',    
     AnimationUnpack = '/mods/SCTA-master/units/ARMAAP/ARMAAP_lod0_unpack.sca',
     AnimationUnpackRate = 1,    
         Mesh = {
@@ -83,7 +84,7 @@ UnitBlueprint {
         BuildableCategory = {
             'VTOL LEVEL2 ARM',
         },
-	InitialRallyX = 1,
+	InitialRallyX = 0,
 	InitialRallyZ = 5,
         StorageMass = 200,
         StorageEnergy = 200,
@@ -95,7 +96,6 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildAttachBone = 'pad',
             BuildEffectBones = {'Nozzle_01', 'Nozzle_02'},
         },    
 	---BuildAngle = 0,

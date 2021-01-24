@@ -17,7 +17,7 @@ UnitBlueprint {
         'AIR',
 	'ARM',
     'LAB',
-	'SORTCONSTRUCTION',
+	'SORTOTHER',
 	'LEVEL2',
     },
         Display = {

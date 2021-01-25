@@ -40,6 +40,7 @@ UnitBlueprint {
         BuildableCategory = {
             'KBOT LEVEL1 CORE', 
             'KBOT LEVEL2 CORE',
+            'KBOT LEVEL3 CORE',
         },
     },
     LifeBarHeight = 0.22,

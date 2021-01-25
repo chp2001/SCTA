@@ -75,21 +75,25 @@ end
 updateBuildRestrictions = function(self)
     local aiBrain = self:GetAIBrain()
     --Add build restrictions
+    --EngiModFinalFORMTA
+    ---Basicallys Stop Lower Tech from building UpperTech. Advanced Factories now full access to builds
+    ---Will require another rebalancing of Seaplanes and Hovers
     if EntityCategoryContains(categories.LEVEL1 * categories.CONSTRUCTION - categories.PLANT, self) then
         self:AddBuildRestriction(categories.LEVEL2)
         self:AddBuildRestriction(categories.LEVEL3)
     self.restrictions = true
-    elseif EntityCategoryContains(categories.LEVEL2 - categories.PLANT, self) then
+    elseif EntityCategoryContains(categories.LEVEL2 * categories.CONSTRUCTION - categories.PLANT, self) then
         self:AddBuildRestriction(categories.LEVEL3)
     self.restrictions = true    
     end
 
     if self.restrictions then
+    local gtime = GetGameTimeSeconds()
     local HQCategory = categories.PLANT
-        if self.FindHQType(aiBrain, HQCategory * categories.LEVEL3) then
+        if self.FindHQType(aiBrain, HQCategory * categories.LEVEL3) or  gtime > 1200 then
             self:RemoveBuildRestriction(categories.LEVEL2)
             self:RemoveBuildRestriction(categories.LEVEL3)
-        elseif self.FindHQType(aiBrain, HQCategory * categories.LEVEL2) then
+        elseif self.FindHQType(aiBrain, HQCategory * categories.LEVEL2) or gtime > 450 then
             self:RemoveBuildRestriction(categories.LEVEL2)
         end
     end

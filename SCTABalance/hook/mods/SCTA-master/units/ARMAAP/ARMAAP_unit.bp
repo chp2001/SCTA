@@ -42,7 +42,8 @@ UnitBlueprint {
         BuildTime = 11000,
         BuildableCategory = {
         'VTOL LEVEL2 ARM',
-	    'VTOL LEVEL1 ARM', 
+        'VTOL LEVEL1 ARM', 
+        'VTOL LEVEL3 ARM',
         },
     },
     LifeBarHeight = 0.22,

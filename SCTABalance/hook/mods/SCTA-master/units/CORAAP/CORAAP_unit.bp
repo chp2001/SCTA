@@ -42,6 +42,7 @@ UnitBlueprint {
         BuildableCategory = {
             'VTOL LEVEL1 CORE', 
             'VTOL LEVEL2 CORE',
+            'VTOL LEVEL3 CORE',
         },
     },
     LifeBarHeight = 0.22,

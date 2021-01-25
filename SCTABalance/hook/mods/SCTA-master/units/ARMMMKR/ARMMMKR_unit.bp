@@ -1,5 +1,22 @@
 UnitBlueprint {
     Merge = true,
+    Categories = {
+      'BUILTBYT2AIR',
+      'BUILTBYT2KBOT',
+      'BUILTBYT2VEHICLE',
+      'SELECTABLE',
+      'DRAGBUILD',
+      'VISIBLETORECON',
+      'RECLAIMABLE',
+      'TECH3',
+'STRUCTURE',
+      'MASSPRODUCTION',
+              'ECONOMIC',
+      'SORTECONOMY',
+'ARM',
+'ENERGY',
+'LEVEL3',
+  },
     Display = {
             UniformScale = 0.20,
         },

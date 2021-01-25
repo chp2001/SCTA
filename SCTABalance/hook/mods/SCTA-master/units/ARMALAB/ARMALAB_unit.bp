@@ -17,7 +17,7 @@ UnitBlueprint {
         'CONSTRUCTIONSORTDOWN',
 	'ARM',
     'LAB',
-	'SORTCONSTRUCTION',
+	'SORTOTHER',
 	'LEVEL2',
     },
         Display = {
@@ -39,6 +39,7 @@ UnitBlueprint {
         BuildableCategory = {
             'KBOT LEVEL1 ARM',
             'KBOT LEVEL2 ARM',
+            'KBOT LEVEL3 ARM',
         },
     },
     Intel = {

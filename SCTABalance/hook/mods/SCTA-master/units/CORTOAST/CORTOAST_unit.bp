@@ -19,7 +19,7 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 	'CORE',
-	'LEVEL2',
+	'LEVEL3',
 	'STRATEGIC',
     'SORTDEFENSE',
     'SNIPEMODE',

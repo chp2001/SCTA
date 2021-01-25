@@ -12,9 +12,6 @@ ARMSFIG = Class(TASeaair) {
 	OnCreate = function(self)
 		TASeaair.OnCreate(self)
 		self.Sliders = {
-			base = CreateRotator(self, 0, 'z', nil, 0, 0, 0),
-		}
-		self.Sliders = {
 			chassis = CreateSlider(self, 0),
 			winga = CreateSlider(self, 'lwing1'),
 			wingb = CreateSlider(self, 'rwing1'),
@@ -22,9 +19,6 @@ ARMSFIG = Class(TASeaair) {
 		for k, v in self.Sliders do
 			self.Trash:Add(v)
 		end	
-		for k, v in self.Spinners do
-			self.Trash:Add(v)
-		end
 		self.moving = nil
 	end,
 

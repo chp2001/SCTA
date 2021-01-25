@@ -20,7 +20,7 @@ UnitBlueprint {
         'CONSTRUCTIONSORTDOWN',
 	'CORE',
     'LAB',
-	'SORTCONSTRUCTION',
+	'SORTOTHER',
 	'LEVEL2',
     },
     Defense = {
@@ -42,6 +42,7 @@ UnitBlueprint {
         BuildableCategory = {
             'VTOL LEVEL1 CORE', 
             'VTOL LEVEL2 CORE',
+            'VTOL LEVEL3 CORE',
         },
     },
     LifeBarHeight = 0.22,

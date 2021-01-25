@@ -1,5 +1,9 @@
 UnitBlueprint {
     Merge = true,
+    Air = {
+        MaxAirspeed = 15,
+        MinAirspeed = 10,
+    },
     Categories = {
         'SELECTABLE',
         'TECH2',

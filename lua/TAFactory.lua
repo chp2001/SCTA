@@ -4,7 +4,27 @@ local Unit = import('/lua/sim/Unit.lua').Unit
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local EffectUtil = import('/lua/EffectUtilities.lua')
 
-TAFactory = Class(FactoryUnit) {	
+TAFactory = Class(FactoryUnit) {
+    OnCreate = function(self)
+    FactoryUnit.OnCreate(self)
+    if __blueprints['armmass'] then
+        TAutils.updateBuildRestrictions(self)
+    end
+    end,
+
+    OnStopBeingBuilt = function(self, builder, layer)
+        FactoryUnit.OnStopBeingBuilt(self)
+        local aiBrain = GetArmyBrain(self.Army)
+        if __blueprints['armmass'] then
+        if EntityCategoryContains(categories.PLANT, self) then
+            local buildRestrictionVictims = aiBrain:GetListOfUnits(categories.FACTORY + categories.ENGINEER, false)
+            for id, unit in buildRestrictionVictims do    
+        TAutils.updateBuildRestrictions(unit)
+        end
+        end
+    end
+    end,
+
         OnStartBuild = function(self, unitBeingBuilt, order )
             self:Open()
             ForkThread(self.FactoryStartBuild, self, unitBeingBuilt, order )

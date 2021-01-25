@@ -16,7 +16,7 @@ UnitBlueprint {
 	'NAVAL',
 	'CORE',
     'LAB',
-	'SORTCONSTRUCTION',
+	'SORTOTHER',
 	'LEVEL2',
     },
     Defense = {
@@ -37,6 +37,7 @@ UnitBlueprint {
         BuildableCategory = {
             'OCEAN LEVEL1 CORE',
             'OCEAN LEVEL2 CORE',
+            'OCEAN LEVEL3 CORE',
         },
         InitialRallyX = 0,
         InitialRallyZ = 12,

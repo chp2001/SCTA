@@ -19,7 +19,7 @@ UnitBlueprint {
     'OVERLAYOMNI',
 	'CORE',
 	'SPECIAL',
-	'LEVEL2',
+	'LEVEL3',
 	'SORTINTEL',
     },
     Defense = {

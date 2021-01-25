@@ -31,6 +31,9 @@ TAconstructor = Class(TAWalking) {
             end
         end
         self.BuildingUnit = false
+        if __blueprints['armmass'] then
+            TAutils.updateBuildRestrictions(self)
+        end
     end,
 
     OnPaused = function(self)
@@ -66,6 +69,9 @@ TAconstructor = Class(TAWalking) {
         end
         self:OnStopBuilderTracking()
         self.BuildingUnit = false
+        if __blueprints['armmass'] then
+            TAutils.updateBuildRestrictions(self)
+        end
     end,
 
     WaitForBuildAnimation = function(self, enable)

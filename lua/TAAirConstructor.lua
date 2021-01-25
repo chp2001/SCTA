@@ -17,6 +17,9 @@ TAAirConstructor = Class(TAair) {
             self:SetupBuildBones()
         end
         self.BuildingUnit = false
+        if __blueprints['armmass'] then
+            TAutils.updateBuildRestrictions(self)
+        end
     end,
 
     OnFailedToBuild = function(self)
@@ -51,6 +54,9 @@ TAAirConstructor = Class(TAair) {
         self.UnitBeingBuilt = nil
         self.UnitBuildOrder = nil
         self.BuildingUnit = false
+        if __blueprints['armmass'] then
+            TAutils.updateBuildRestrictions(self)
+        end
     end,
 
     OnStopBuilderTracking = function(self)

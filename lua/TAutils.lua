@@ -2,6 +2,7 @@ local util = import('/lua/utilities.lua')
 local EffectUtil = import('/lua/EffectUtilities.lua')
 local Entity = import('/lua/sim/Entity.lua').Entity
 local EffectTemplate = import('/lua/EffectTemplates.lua')
+local Factions = import('/lua/factions.lua').GetFactions(true)
 
 CreateTABuildingEffects = function( self, unitBeingBuilt, order )
     WaitSeconds(0.75)
@@ -69,6 +70,40 @@ TACaptureEffect = function(capturer, captive, BuildEffectBones, EffectsBag)
     end
 end
 
+
+
+updateBuildRestrictions = function(self)
+    local aiBrain = self:GetAIBrain()
+    --Add build restrictions
+    if EntityCategoryContains(categories.LEVEL1 * categories.CONSTRUCTION - categories.PLANT, self) then
+        self:AddBuildRestriction(categories.LEVEL2)
+        self:AddBuildRestriction(categories.LEVEL3)
+    self.restrictions = true
+    elseif EntityCategoryContains(categories.LEVEL2 - categories.PLANT, self) then
+        self:AddBuildRestriction(categories.LEVEL3)
+    self.restrictions = true    
+    end
+
+    if self.restrictions then
+    local HQCategory = categories.PLANT
+        if self.FindHQType(aiBrain, HQCategory * categories.LEVEL3) then
+            self:RemoveBuildRestriction(categories.LEVEL2)
+            self:RemoveBuildRestriction(categories.LEVEL3)
+        elseif self.FindHQType(aiBrain, HQCategory * categories.LEVEL2) then
+            self:RemoveBuildRestriction(categories.LEVEL2)
+        end
+    end
+end
+
+--self.FindHQType(aiBrain, category)
+FindHQType = function(aiBrain, category)
+    for id, unit in aiBrain:GetListOfUnits(categories.PLANT) do
+        if not unit:IsBeingBuilt() then
+            return true
+        end
+    end
+    return false
+end
 
 
 targetingFacilityData = {}

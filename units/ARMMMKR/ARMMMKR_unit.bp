@@ -42,7 +42,6 @@ UnitBlueprint {
         'MASSPRODUCTION',
                 'ECONOMIC',
         'SORTECONOMY',
-	'TEXTUREANIM',
 	'ARM',
 	'ENERGY',
 	'LEVEL2',

@@ -26,8 +26,8 @@ TAunit = Class(Unit)
 		self.FxMovement = TrashBag()
 		if not EntityCategoryContains(categories.NOSMOKE, self) then
 			ForkThread(self.Smoke, self)
-		end
-	end,
+        end
+        end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
         self:LOGDBG('TAUnit.OnStopBeingBuilt')

@@ -22,7 +22,7 @@ UnitBlueprint {
     'CORE',
     'AIR',
     'PLATFORM',
-	'SORTOTHER',
+	'SORTCONSTRUCTION',
 	'LEVEL3',
     },
     Defense = {

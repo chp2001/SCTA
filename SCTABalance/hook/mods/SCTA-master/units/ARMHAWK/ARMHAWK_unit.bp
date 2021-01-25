@@ -49,5 +49,16 @@ UnitBlueprint {
     Physics = {
       FuelRechargeRate = 666666,
       FuelUseTime = 666666,
-    },    
+    },
+    Weapon = {
+      [1] = {
+        EnergyDrainPerSecond = 60,
+        EnergyRequired = 60,
+      },
+      [2] = {
+        EnergyDrainPerSecond = 60,
+        EnergyRequired = 60,
+      },
+      [3] = {}, 
+  },
   }

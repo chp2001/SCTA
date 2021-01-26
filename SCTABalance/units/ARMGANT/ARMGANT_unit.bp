@@ -51,7 +51,7 @@ UnitBlueprint {
         'ARM',
         'STRATEGIC',
         'SORTCONSTRUCTION',
-        'LEVEL4',
+        'LEVEL3',
     },
     Defense = {
         ArmorType = 'ExperimentalStructure',

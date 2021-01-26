@@ -38,7 +38,6 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'STRUCTURE',
 	'CONSTRUCTION',
-	'TEXTUREANIM',
         'OVERLAYRADAR',
         'AIR', 
         'CONSTRUCTIONSORTDOWN',
@@ -80,9 +79,9 @@ UnitBlueprint {
         UniformScale = 0.25,
     },
     Economy = {
-        BuildCostEnergy = 30000,
-        BuildCostMass = 700, 
-        BuildTime = 60000,
+        BuildCostEnergy = 45000,
+        BuildCostMass = 2000, 
+        BuildTime = 90000,
     BuildRate = 240,
     BuildableCategory = {
         'VTOL LEVEL1 CORE', 

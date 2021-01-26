@@ -37,7 +37,7 @@ UnitBlueprint {
         BuildCostEnergy = 60000,
         BuildCostMass = 3000, 
         BuildRate = 240,
-        BuildTime = 178000,
+        BuildTime = 150000,
         BuildableCategory = {
             'PHIB LEVEL3 ARM',
         },

@@ -1,0 +1,25 @@
+#ARM Lurker - Submarine
+UnitBlueprint {
+    Merge = true,
+    Defense = {
+        Health = 650,
+        MaxHealth = 650,
+    },
+    Display = {
+        UniformScale = 0.1,
+    },
+    Economy = {
+        BuildCostEnergy = 7500,
+        BuildCostMass = 800,
+    },
+    LifeBarOffset = 0.25,
+    LifeBarSize = 1,
+    Physics = {
+        MaxSpeed = 8.4,
+    },
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
+    SizeX = 1.5,
+    SizeY = 0.8,
+    SizeZ = 1.5,
+}

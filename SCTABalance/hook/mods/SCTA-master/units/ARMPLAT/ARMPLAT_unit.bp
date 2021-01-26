@@ -7,7 +7,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH2',
+        'TECH3',
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -33,10 +33,10 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 60000,
-        BuildCostMass = 1200, 
-        BuildTime = 18000,
+        BuildCostMass = 2400, 
+        BuildTime = 64000,
     ProductionPerSecondMass = 0,
-    BuildRate = 150,
+    BuildRate = 240,
         BuildableCategory = {
             'VTOL LEVEL3 ARM',
         },

@@ -19,8 +19,8 @@ UnitBlueprint {
 	'LEVEL2',
     },
     Defense = {
-        Health = 16500,
-        MaxHealth = 16500,
+        Health = 12500,
+        MaxHealth = 12500,
     },
         Display = {
         UniformScale = 0.45,
@@ -30,9 +30,9 @@ UnitBlueprint {
         SizeZ = 14,
     },
     Economy = {
-        BuildCostEnergy = 36000,
-        BuildCostMass = 1800,
-        BuildTime = 8000,
+        BuildCostEnergy = 18000,
+        BuildCostMass = 2000,
+        BuildTime = 32000,
         BuildableCategory = {
             'OCEAN LEVEL1 CORE',
             'OCEAN LEVEL2 CORE',

@@ -27,10 +27,10 @@ UnitBlueprint {
         UniformScale = 0.25,
     },
     Economy = {
-        BuildCostEnergy = 32000,
-        BuildCostMass = 1600, 
+        BuildCostEnergy = 15000,
+        BuildCostMass = 1400, 
         BuildRate = 150,
-        BuildTime = 15000,
+        BuildTime = 18000,
         BuildableCategory = {
             'VEHICLE LEVEL2 ARM',
             'VEHICLE LEVEL1 ARM',

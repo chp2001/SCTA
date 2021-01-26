@@ -17,7 +17,7 @@ UnitBlueprint {
 	'HYDROCARBON',
 	'CORE',
 	'ENERGY',
-	'LEVEL2',
+	'LEVEL1',
     },
     Display = {
         UniformScale = 0.32,

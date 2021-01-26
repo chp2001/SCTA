@@ -40,7 +40,10 @@ TAFactory = Class(FactoryUnit) {
 
 		OnStopBuild = function(self, unitBeingBuilt, order)
 			FactoryUnit.OnStopBuild(self, unitBeingBuilt, order)
-			self:Close()
+            self:Close()
+            if __blueprints['armmass'] then
+                TAutils.updateBuildRestrictions(self)
+            end
 		end,
 
 		Close = function(self)

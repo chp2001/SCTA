@@ -16,7 +16,7 @@ UnitBlueprint {
 	'NAVAL',
 	'CORE',
     'LAB',
-	'SORTOTHER',
+	'SORTCONSTRUCTION',
 	'LEVEL2',
     },
     Defense = {
@@ -31,9 +31,9 @@ UnitBlueprint {
         SizeZ = 14,
     },
     Economy = {
-        BuildCostEnergy = 45000,
-        BuildCostMass = 2500,
-        BuildTime = 11000,
+        BuildCostEnergy = 36000,
+        BuildCostMass = 1800,
+        BuildTime = 8000,
         BuildableCategory = {
             'OCEAN LEVEL1 CORE',
             'OCEAN LEVEL2 CORE',

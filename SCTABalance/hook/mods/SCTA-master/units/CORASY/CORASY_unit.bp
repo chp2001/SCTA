@@ -15,7 +15,6 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'NAVAL',
 	'CORE',
-    'LAB',
 	'SORTCONSTRUCTION',
 	'LEVEL2',
     },

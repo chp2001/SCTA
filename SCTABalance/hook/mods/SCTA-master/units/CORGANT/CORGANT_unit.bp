@@ -17,7 +17,6 @@ UnitBlueprint {
         'LAND',
         'CORE',
         'STRATEGIC',
-        	'GANTRY',
             'SORTCONSTRUCTION',
         'LEVEL4',  
     },

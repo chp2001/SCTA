@@ -50,8 +50,7 @@ UnitBlueprint {
         'LAND',
         'ARM',
         'STRATEGIC',
-        	'GANTRY',
-            'SORTCONSTRUCTION',
+        'SORTCONSTRUCTION',
         'LEVEL4',
     },
     Defense = {

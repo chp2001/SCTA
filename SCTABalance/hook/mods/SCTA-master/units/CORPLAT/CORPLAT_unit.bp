@@ -21,8 +21,7 @@ UnitBlueprint {
         'OVERLAYRADAR',
     'CORE',
     'AIR',
-    'PLATFORM',
-	'SORTCONSTRUCTION',
+    'SORTCONSTRUCTION',
 	'LEVEL3',
     },
     Defense = {

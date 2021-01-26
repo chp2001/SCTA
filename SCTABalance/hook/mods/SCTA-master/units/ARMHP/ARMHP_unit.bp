@@ -19,7 +19,6 @@ UnitBlueprint {
 	'CONSTRUCTION',
         'LAND', 
 	'ARM',
-    'PLATFORM',
 	'SORTCONSTRUCTION',
 	'LEVEL3',
     },
@@ -57,4 +56,4 @@ UnitBlueprint {
     SizeY = 1,
     SizeZ = 9,
     StrategicIconName = 'icon_factory3_land',
- }
+}

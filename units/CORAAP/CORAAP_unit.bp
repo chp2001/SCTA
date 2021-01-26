@@ -42,7 +42,6 @@ UnitBlueprint {
 	'TEXTUREANIM',
         'OVERLAYRADAR',
 	'CORE',
-		'PLANT',
 	'SORTCONSTRUCTION',
 	'AIR',
 	'LEVEL2',

@@ -16,7 +16,6 @@ UnitBlueprint {
 	'CONSTRUCTION',
         'LAND', 
 	'ARM',
-    'LAB',
 	'SORTCONSTRUCTION',
 	'LEVEL2',
     },

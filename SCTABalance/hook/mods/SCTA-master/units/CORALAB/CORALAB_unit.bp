@@ -16,7 +16,6 @@ UnitBlueprint {
         'LAND',
         'CONSTRUCTIONSORTDOWN',
 	'CORE',
-    'LAB',
 	'SORTCONSTRUCTION',
 	'LEVEL2',
     },
@@ -28,7 +27,6 @@ UnitBlueprint {
         UniformScale = 0.24,
     },
     Footprint = {
-        MaxSlope = 0.625,
         SizeX = 8,
         SizeZ = 8,
         },

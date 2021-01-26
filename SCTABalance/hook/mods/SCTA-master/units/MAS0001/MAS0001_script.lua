@@ -7,6 +7,9 @@ MAS0001 = Class(oldMAS0001) {
 		self:RemoveBuildRestriction(categories.UEF)
 		self:RemoveBuildRestriction(categories.SERAPHIM)
 		self:RemoveBuildRestriction(categories.CYBRAN)
+		if __blueprints['xnl0001'] then
+			self:RemoveBuildRestriction(categories.NOMADS)
+		end
 		oldMAS0001.OnStopBeingBuilt(self,builder,layer)
     end,
 }

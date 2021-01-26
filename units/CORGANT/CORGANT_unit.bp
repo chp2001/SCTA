@@ -48,7 +48,6 @@ UnitBlueprint {
         'CONSTRUCTION',
         'CORE',
         'STRATEGIC',
-        	'PLANT',
 	'SORTSTRATEGIC',
         'LEVEL3',
         'GATE',  

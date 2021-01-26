@@ -14,11 +14,9 @@ UnitBlueprint {
         'CONSTRUCTIONSORTDOWN',
 	'STRUCTURE',
 	'CONSTRUCTION',
-	'TEXTUREANIM',
         'LAND', 
 	'CORE',
-    'LAB',
-	'SORTOTHER',
+	'SORTCONSTRUCTION',
 	'LEVEL2',
     },
     Defense = {

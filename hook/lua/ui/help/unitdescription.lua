@@ -265,8 +265,9 @@ Description = table.merged( Description, {
     ['corvoyr'] = "<LOC corvoyr_help>."         ,
     ['corwin'] = "<LOC corwin_help>.CORE Power Generator, energy generated varies unpredictably"           ,
     ['mine1'] = "<LOC mine1_help>."       ,
+    ['mine2'] = "<LOC mine2_help>."       ,
     ['mine3'] = "<LOC mine3_help>."       ,
-    ['mine5'] = "<LOC mine5_help>."       ,
+    ['mine4'] = "<LOC mine4_help>."       ,
     ['mas0001'] = "<LOC mas0001_help>."         ,
     ['mss0001'] = "<LOC mss0001_help>."         ,
     ['mss0002'] = "<LOC mss0002_help>."         ,
@@ -287,6 +288,7 @@ Description = table.merged( Description, {
     ['armadap'] = "<LOC armadap_help>. For SCTABalance, an upgrade from ARMDAP to access T3.",
     ['armdlab'] = "<LOC armdlab_help>. For SCTABalance, an upgrade from ARMLAB, to access T2.",
     ['armadlab'] = "<LOC armadlab_help>. For SCTABalance, an upgrade from ARMDLAB to access T3.",
+    ['armsfar'] = "An Advanced Shipborne Engineer Unit. No engineering suite. The Fast Assist/Repair Kbot. Small, mobile frame for reclaiming wrecks and assisting factories",
     ['armhrk'] = "<LOC armhrk_help>."         ,
     ['armmass'] = "<LOC armmass_help>."         ,
     ['corsling'] = "<LOC corsling_help> For SCTABalance, Turtle KBot to help CORE Kbots defend against air threats",
@@ -298,6 +300,7 @@ Description = table.merged( Description, {
     ['coradsy'] = "<LOC coradsy_help>. For SCTABalance, an upgrade from CORDSY to access T3.",
     ['cordlab'] = "<LOC cordlab_help>. For SCTABalance, an upgrade from CORLAB, to access T2",
     ['coradlab'] = "<LOC coradlab_help>. For SCTABalance, an upgrade from CORDLAB to access T3.",
+    ['corsnec'] = "An Advanced Shipborne Engineer Unit. No engineering suite. Quickly rebuilds dead units instead of reclaiming them.",
     ['cormass'] = "<LOC cormass_help>."         ,
 } )
 

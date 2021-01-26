@@ -18,9 +18,6 @@ MAS0001 = Class(AWalkingLandUnit) {
     OnStopBeingBuilt = function(self,builder,layer)
 		---local army = self:GetArmy()
 		AWalkingLandUnit.OnStopBeingBuilt(self,builder,layer)
-		if __blueprints['xnl0001'] then
-		self:RemoveBuildRestriction(categories.NOMADS)
-		end
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationOpen):SetRate(0.25)
     end,
 

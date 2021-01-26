@@ -17,7 +17,7 @@ UnitBlueprint {
 	'STRUCTURE',
 	'CONSTRUCTION',
         'LAND', 
-	'CORE',
+    'CORE',
     'PLATFORM',
 	'SORTCONSTRUCTION',
 	'LEVEL3',

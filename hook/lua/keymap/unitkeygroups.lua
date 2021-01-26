@@ -286,7 +286,9 @@ TAunitkeygroups = {
     ["T2_Field_Engineer"]= {
         "armfark", 
         "armcs",
+        "armsfar",
         "cornecro",
+        "corsnec",
         "corcs",
     },
     ["T2_Engineer"]= {

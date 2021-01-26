@@ -6,8 +6,6 @@
 local TASeaFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TASeaFactory
 
 CORDSY = Class(TASeaFactory) {
-
-	CORADSY = Class(TASeaFactory) {
 		OnCreate = function(self)
 			self.AnimManip = CreateAnimator(self)
 			self.Trash:Add(self.AnimManip)

@@ -18,7 +18,7 @@ UnitBlueprint {
     'DEFENSIVEBOAT',
 	'NAVAL',
         'CORE',
-        'OCEAN',
+        --'OCEAN',
 	'LEVEL2',
     },
     Description = 'Tech Level 2',

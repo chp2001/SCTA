@@ -40,7 +40,6 @@ UnitBlueprint {
 	'STRUCTURE',
 	'CONSTRUCTION',
 	'CORE',
-		'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL2',
 	'LAND',

@@ -7,7 +7,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH2',
+        'TECH3',
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -21,11 +21,10 @@ UnitBlueprint {
 	'LEVEL3',
     },
     Defense = {
-        Health = 15000,
-        MaxHealth = 15000,
+        Health = 30000,
+        MaxHealth = 30000,
     },
     Footprint = {
-        MaxSlope = 0.625,
         SizeX = 8,
         SizeZ = 8,
     },
@@ -33,10 +32,10 @@ UnitBlueprint {
         UniformScale = 0.23,
     },
     Economy = {
-        BuildCostEnergy = 20000,
-        BuildCostMass = 1200, 
-        BuildRate = 150,
-        BuildTime = 12000,
+        BuildCostEnergy = 60000,
+        BuildCostMass = 3000, 
+        BuildRate = 240,
+        BuildTime = 178000,
         BuildableCategory = {
             'PHIB LEVEL3 ARM',
         },
@@ -54,5 +53,5 @@ UnitBlueprint {
     SizeX = 9,
     SizeY = 1,
     SizeZ = 9,
-    StrategicIconName = 'icon_factory2_land',
+    StrategicIconName = 'icon_factory3_land',
  }

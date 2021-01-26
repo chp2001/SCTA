@@ -18,7 +18,7 @@ UnitBlueprint {
     'ARM',
     'SHOWQUEUE',
 	'SPECIAL',
-    'LEVEL3',
+    'LEVEL2',
     'TARGETING',
 	'SORTINTEL',
     },

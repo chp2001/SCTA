@@ -9,8 +9,8 @@ UnitBlueprint {
     BreakOffDistance = 17,
     BreakOffTrigger = 12,
     CombatTurnSpeed = 1.5,
-    MaxAirspeed = 24,
-    MinAirspeed = 12,
+    MaxAirspeed = 30,
+    MinAirspeed = 15,
     StartTurnDistance = 5,
     TightTurnMultiplier = 1.02,
     TurnSpeed = 1.5,
@@ -37,17 +37,17 @@ UnitBlueprint {
         MaxHealth = 1500,
     },
     Economy = {
-        BuildCostEnergy = 30000,
-        BuildCostMass = 400,
+        BuildCostEnergy = 36000,
+        BuildCostMass = 600,
     },
     Physics = {
 	FuelRechargeRate = 666666,
 	FuelUseTime = 666666,
     },
-    StrategicIconName = 'icon_fighter2_missile',
+    StrategicIconName = 'icon_fighter3_missile',
     Weapon = {
         [1] = {
-            Damage = 50,
+            Damage = 75,
             MaxRadius = 35,
             MuzzleSalvoDelay = 0.2,
             MuzzleSalvoSize = 2,

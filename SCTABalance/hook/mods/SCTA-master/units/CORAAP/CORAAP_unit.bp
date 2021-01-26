@@ -20,7 +20,7 @@ UnitBlueprint {
         'CONSTRUCTIONSORTDOWN',
 	'CORE',
     'LAB',
-	'SORTOTHER',
+	'SORTCONSTRUCTION',
 	'LEVEL2',
     },
     Defense = {
@@ -36,9 +36,9 @@ UnitBlueprint {
             SizeZ = 8,
         },
     Economy = {
-        BuildCostEnergy = 42000,
-        BuildCostMass = 2300,
-        BuildTime = 11000,
+        BuildCostEnergy = 28000,
+        BuildCostMass = 1700,
+        BuildTime = 14000,
         BuildableCategory = {
             'VTOL LEVEL1 CORE', 
             'VTOL LEVEL2 CORE',

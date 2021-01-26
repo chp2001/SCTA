@@ -17,7 +17,7 @@ UnitBlueprint {
         'CONSTRUCTIONSORTDOWN',
 	'ARM',
     'LAB',
-	'SORTOTHER',
+	'SORTCONSTRUCTION',
 	'LEVEL2',
     },
         Display = {
@@ -32,10 +32,10 @@ UnitBlueprint {
     SizeZ = 8,
     },
     Economy = {
-        BuildCostEnergy = 30000,
-        BuildCostMass = 2200, 
+        BuildCostEnergy = 20000,
+        BuildCostMass = 1500, 
         BuildRate = 180,
-        BuildTime = 20000,
+        BuildTime = 15000,
         BuildableCategory = {
             'KBOT LEVEL1 ARM',
             'KBOT LEVEL2 ARM',

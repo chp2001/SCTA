@@ -17,7 +17,7 @@ UnitBlueprint {
         'AIR',
 	'ARM',
     'LAB',
-	'SORTOTHER',
+	'SORTCONSTRUCTION',
 	'LEVEL2',
     },
         Display = {
@@ -28,7 +28,6 @@ UnitBlueprint {
             MaxHealth = 9600,
         },
         Footprint = {
-            MaxSlope = 0.625,
                 SizeX = 8,
                 SizeZ = 8,
         },
@@ -37,9 +36,9 @@ UnitBlueprint {
             SkirtSizeZ = 8,
         },
     Economy = {
-        BuildCostEnergy = 42000,
-        BuildCostMass = 2300,
-        BuildTime = 11000,
+        BuildCostEnergy = 28000,
+        BuildCostMass = 1700,
+        BuildTime = 14000,
         BuildableCategory = {
         'VTOL LEVEL2 ARM',
         'VTOL LEVEL1 ARM', 

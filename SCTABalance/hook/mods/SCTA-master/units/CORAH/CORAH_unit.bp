@@ -21,22 +21,22 @@ UnitBlueprint {
     'LEVEL3',
     },
     Defense = {
-        Health = 1800,
-        MaxHealth = 1800,
+        Health = 2600,
+        MaxHealth = 2600,
     },
     Economy = {
-        BuildCostEnergy = 4000,
-        BuildCostMass = 360,
-        BuildTime = 9000,
+        BuildCostEnergy = 7000,
+        BuildCostMass = 540,
+        BuildTime = 12000,
     },
     Intel = {
         VisionRadius = 14,
     },
     SizeY = 1.4,
-    StrategicIconName = 'icon_land2_antiair',
+    StrategicIconName = 'icon_land3_antiair',
     Weapon = {
         [1] = {
-            Damage = 70,
+            Damage = 100,
             DamageRadius = 1.5,
             FiringRandomness = 0,
 	        FiringTolerance = 10,

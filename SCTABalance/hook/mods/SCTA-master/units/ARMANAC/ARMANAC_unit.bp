@@ -14,20 +14,20 @@ UnitBlueprint {
 	    'LEVEL3',
     },
     Defense = {
-        Health = 4000,
-        MaxHealth = 4000,
+        Health = 6000,
+        MaxHealth = 6000,
         SurfaceThreatLevel = 12,
     },
     Economy = {
-        BuildCostEnergy = 8000,
-        BuildCostMass = 600,
-        BuildTime = 7500,
+        BuildCostEnergy = 14000,
+        BuildCostMass = 1500,
+        BuildTime = 9000,
     },
     SizeY = 1.4,
-    StrategicIconName = 'icon_land2_directfire',
+    StrategicIconName = 'icon_land3_directfire',
     Weapon = {
         [1] = {
-            Damage = 150,
+            Damage = 300,
             MaxRadius = 24,
         },
         [2] = {}, 

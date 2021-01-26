@@ -19,7 +19,7 @@ UnitBlueprint {
         KTurnDamping = 1,
         LiftFactor = 7,
         MaxAirspeed = 20,
-        MinAirspeed = 18,
+        MinAirspeed = 10,
         StartTurnDistance = 5,
         TightTurnMultiplier = 0,
         TurnSpeed = 0.8,
@@ -44,11 +44,11 @@ UnitBlueprint {
         'TRANSPORTATION',
     },
     Defense = {
-        Health = 1800,
-        MaxHealth = 1800,
+        Health = 2400,
+        MaxHealth = 2400,
     },
     Economy = {
-        BuildCostEnergy = 20000,
-        BuildCostMass = 1200,
+        BuildCostEnergy = 30000,
+        BuildCostMass = 2000,
     },
 }

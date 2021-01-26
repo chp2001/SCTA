@@ -15,23 +15,23 @@ UnitBlueprint {
 	'LEVEL3',
     },
     Defense = {
-        Health = 2100,
-        MaxHealth = 2100,
+        Health = 2400,
+        MaxHealth = 2400,
         SurfaceThreatLevel = 40,
     },
     Economy = {
-        BuildCostEnergy = 4000,
-        BuildCostMass = 750,
+        BuildCostEnergy = 6000,
+        BuildCostMass = 900,
         BuildTime = 7000,
     },
     Intel = {
         VisionRadius = 13,
     },
     SizeY = 1.4,
-    StrategicIconName = 'icon_land2_missile',
+    StrategicIconName = 'icon_land3_missile',
     Weapon = {
         [1] = {
-            Damage = 200,
+            Damage = 350,
             DamageRadius = 2.5,
 	        FiringTolerance = 8,
             MaxRadius = 60,

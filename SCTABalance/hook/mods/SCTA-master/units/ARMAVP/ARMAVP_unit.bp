@@ -17,7 +17,7 @@ UnitBlueprint {
         'LAND', 
 	'ARM',
     'LAB',
-	'SORTOTHER',
+	'SORTCONSTRUCTION',
 	'LEVEL2',
     },
     Defense = {
@@ -28,10 +28,10 @@ UnitBlueprint {
         UniformScale = 0.25,
     },
     Economy = {
-        BuildCostEnergy = 36000,
-        BuildCostMass = 2400, 
+        BuildCostEnergy = 32000,
+        BuildCostMass = 1600, 
         BuildRate = 150,
-        BuildTime = 20000,
+        BuildTime = 15000,
         BuildableCategory = {
             'VEHICLE LEVEL2 ARM',
             'VEHICLE LEVEL1 ARM',

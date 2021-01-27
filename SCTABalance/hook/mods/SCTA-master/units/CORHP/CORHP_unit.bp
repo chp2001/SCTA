@@ -1,15 +1,13 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        ---'BUILTBYT1VEHICLE',
-        ---'BUILTBYT1KBOT',
-        ---'BUILTBYT1AIR',
         'BUILTBYT1HOVER',
         'BUILTBYT2KBOT',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'LEVEL3',
         'TECH3',
 	'FACTORY',
         'RALLYPOINT',
@@ -19,7 +17,6 @@ UnitBlueprint {
         'LAND', 
     'CORE',
 	'SORTCONSTRUCTION',
-	'LEVEL3',
     },
     Defense = {
         Health = 22000,

@@ -32,6 +32,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
+        'LEVEL2',
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -39,7 +40,6 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'CORE',
 	'SORTCONSTRUCTION',
-    'LEVEL2',
     'LAND',
     },
     Defense = {

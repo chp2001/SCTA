@@ -14,7 +14,6 @@ TAweapon = Class(DefaultWeapon) {
         local army = self.unit:GetArmy()
         local canSee = true
 
-        ###object currently targeting
         local target = self:GetCurrentTarget()
         if (target) then
             if (IsUnit(target)) then
@@ -25,13 +24,15 @@ TAweapon = Class(DefaultWeapon) {
             end
         end
 
-        ###object (if any) currently ordered to target
         local currentTarget = self.unit:GetTargetEntity()
         if (currentTarget and IsBlip(currentTarget)) then
             currentTarget = currentTarget:GetSource()
         end
 
-        if (canSee or TAutils.ArmyHasTargetingFacility(self.unit:GetArmy()) or currentTarget == target or (target and IsProp(target)) or EntityCategoryContains(categories.NOCUSTOMTARGET, self.unit)) then
+        if canSee or
+        TAutils.ArmyHasTargetingFacility(self.unit:GetArmy()) or
+        currentTarget == target or 
+        (target and IsProp(target)) then
              return true
         else
             self:ResetTarget()
@@ -145,12 +146,6 @@ TAPopLaser = Class(TAweapon) {
     PlayFxWeaponPackSequence = function(self)
         self.unit.Pack = 0.5
         TAweapon.PlayFxWeaponPackSequence(self)
-    end,
-}
-
-TABuzz = Class(TAweapon) {
-    OnCreate = function(self)
-        TAweapon.OnCreate(self)
     end,
 }
 

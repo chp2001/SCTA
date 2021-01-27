@@ -53,7 +53,7 @@ ProjectileBlueprint {
     },
     Physics = {
         Acceleration = 10,
-        ---CollideEntity = true,
+        --CollideEntity = true,
         CollideSurface = true,
         DestroyOnWater = true,
         InitialSpeed = 60,

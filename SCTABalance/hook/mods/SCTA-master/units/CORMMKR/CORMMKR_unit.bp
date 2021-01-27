@@ -8,6 +8,7 @@ UnitBlueprint {
       'DRAGBUILD',
       'VISIBLETORECON',
       'RECLAIMABLE',
+      'LEVEL3',
       'TECH3',
       'STRUCTURE',
       'MASSPRODUCTION',
@@ -15,7 +16,6 @@ UnitBlueprint {
       'SORTECONOMY',
       'CORE',
       'ENERGY',
-      'LEVEL3',
   },
     Display = {
             UniformScale = 0.20,

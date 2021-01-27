@@ -88,7 +88,7 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 230,
-		    NormalName = '/mods/SCTA-master/units/ARMCOM/ARMCOM_normalsTS.dds',
+		    NormalName = '/mods/SCTA-master/units/ARMCOM/ARMCOM_normalsts.dds',
 		    SpecularName = '/mods/SCTA-master/units/ARMCOM/ARMCOM_SpecTeam.dds',
 		    AlbedoName = '/mods/SCTA-master/units/ARMCOM/ARMCOM_Albedo.dds',
             MeshName =   '/mods/SCTA-master/units/ARMCOM/ARMCOM_lod0.scm',        

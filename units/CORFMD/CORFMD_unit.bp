@@ -29,19 +29,16 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-	'STRUCTURE',
-	'DEFENSE',
+	    'STRUCTURE',
+	    'DEFENSE',
         'ANTIMISSILE',
         'SILO',
-	'NOCUSTOMTARGET',
         'OVERLAYDEFENSE',
-	'CORE',
-	'SPECIAL',
-    'SORTDEFENSE',
-    'SHOWQUEUE',
-	'LEVEL3',
-	
-	
+	    'CORE',
+	    'SPECIAL',
+        'SORTDEFENSE',
+        'SHOWQUEUE',
+	    'LEVEL3',
    },
     Defense = {
         ArmorType = 'Structure',
@@ -57,24 +54,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_stratmissiledef>Strategic Missile Defense',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'wedge'},
-				EmitterBlueprint = {
-	    				'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

@@ -30,7 +30,6 @@ UnitBlueprint {
     'STRATEGIC',
     'ARTILLERY',
     'SHOWATTACKRETICLE',
-    'NOCUSTOMTARGET',
     'SNIPEMODE',
     },
     Defense = {

@@ -22,9 +22,8 @@ UnitBlueprint {
         'OVERLAYSONAR',
 	'ARM',
 	'SPECIAL',
-	'LEVEL2',
+	'LEVEL1',
 	'SORTINTEL',
-	'TARGETING',
     },
     Defense = {
         Health = 300,

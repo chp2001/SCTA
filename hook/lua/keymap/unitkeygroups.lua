@@ -378,6 +378,10 @@ TAunitkeygroups = {
         "armah",
         "corah",
     },
+    ["T3_Mobile_Shield_Generator"] = {
+        "armseer",
+        "corvrad",
+    },
 }
 
 --since we are merging unordered tables that contain ordered tables, we need to merge them manually instead of table.merged or whatever

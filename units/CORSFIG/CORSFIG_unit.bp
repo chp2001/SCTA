@@ -198,15 +198,15 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'emitter1',
+                        'laser1',
                     },
-                    RackBone = 'emitter1',
+                    RackBone = 'barrels',
                 },
                 {
                     MuzzleBones = {
-                        'emitter2',
+                        'laser2',
                     },
-                    RackBone = 'emitter2',
+                    RackBone = 'barrels',
                 },
             },
             RackRecoilDistance = 0,

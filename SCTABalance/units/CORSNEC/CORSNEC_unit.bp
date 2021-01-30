@@ -105,7 +105,10 @@ UnitBlueprint {
         MaxBuildDistance = 6,
         StorageEnergy = 30,
         StorageMass = 30,
-	NaturalProducer = true,
+    NaturalProducer = true,
+    BuildableCategory = {
+        'mas0001',
+    },
     },
     Footprint = {
         SizeX = 2,

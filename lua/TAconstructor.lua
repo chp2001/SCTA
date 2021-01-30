@@ -51,6 +51,9 @@ TAconstructor = Class(TAWalking) {
     end,
     
     OnStartBuild = function(self, unitBeingBuilt, order )
+        if order == 'Repair' and unitBeingBuilt.WorkItem != self.WorkItem then
+			self:InheritWork(unitBeingBuilt)
+		end 
         TAWalking.OnStartBuild(self,unitBeingBuilt, order)
         self.UnitBeingBuilt = unitBeingBuilt
         self.UnitBuildOrder = order

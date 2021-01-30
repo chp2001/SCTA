@@ -92,7 +92,10 @@ UnitBlueprint {
         MaxBuildDistance = 3.75,
 	NaturalProducer = true,
 	ProductionPerSecondEnergy = 17,
-	ProductionPerSecondMass = 1,
+    ProductionPerSecondMass = 1,
+    BuildableCategory = {
+        'mas0001',
+    },
     },
     General = {
         BuildBones = {
@@ -104,11 +107,11 @@ UnitBlueprint {
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {
-            RULEUCC_Attack = false,
+            RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
-            RULEUCC_Guard = false,
+            RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Patrol = false,
+            RULEUCC_Patrol = true,
             RULEUCC_Pause = true,
             RULEUCC_Reclaim = true,
             RULEUCC_Repair = true,

@@ -2,7 +2,7 @@ UnitBlueprint {
     Merge = true,
     CollisionOffsetY = -0.6,
     Display = {
-        UniformScale = 0.1,
+        UniformScale = 0.15,
     },
     Defense = {
         Health = 1500,

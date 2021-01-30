@@ -66,8 +66,8 @@ UnitBlueprint {
     },
     Description = 'Fast Assist-Repair Kbot',
     Display = {
-        AnimationBuild = '/mods/SCTA-master/units/ARMFARK/ARMFARK_lod0_unpack.sca',
-        AnimationBuildRate = 1, 
+        --AnimationBuild = '/mods/SCTA-master/units/ARMFARK/ARMFARK_lod0_unpack.sca',
+        --AnimationBuildRate = 1, 
         AnimationWalk = '/mods/SCTA-master/units/ARMFARK/ARMFARK_lod0_Awalk.sca',
         AnimationWalkRate = 2,
         Mesh = {
@@ -80,8 +80,8 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'torso',
-        UniformScale = 0.16,
+	SmokeBone = 'pelvis',
+        UniformScale = 0.12,
     },
     Economy = {
         BuildCostEnergy = 3219,
@@ -95,10 +95,10 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            AimBone = 'torso',
-            BuildEffectBones = {'nozzle1','nozzle2'},
-            PitchBone = 'torso',
-            YawBone = 'torso',
+            AimBone = 'pelvis',
+            BuildEffectBones = {'fire'},
+            PitchBone = 'pelvis',
+            YawBone = 'pelvis',
         },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',

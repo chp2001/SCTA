@@ -71,7 +71,7 @@ UnitBlueprint {
             },
         },
 	SmokeBone = 'torso',
-        UniformScale = 0.16,
+        UniformScale = 0.14,
     },
     Economy = {
         BuildCostEnergy = 14727,
@@ -127,6 +127,7 @@ UnitBlueprint {
     SizeX = 1.5,
     SizeY = 2.4,
     SizeZ = 1.5,
+    SelectionCenterOffsetZ = -0.4,
     StrategicIconName = 'icon_bot2_artillery',
     StrategicIconSortPriority = 0,
     Transport = {
@@ -165,7 +166,7 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'flash',
+                        'spark1',
                     },
                     RackBone = 'rarm',
                 },
@@ -189,10 +190,10 @@ UnitBlueprint {
             RenderFireClock = true,
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'flash',
+            TurretBoneMuzzle = 'spark1',
             TurretBonePitch = 'rarm',
             TurretBoneYaw = 'torso',
-            TurretPitch = 70,
+            TurretPitch = 0,
             UseFiringSolutionInsteadOfAimBone = true,
             TurretPitchRange = 360,
             TurretPitchSpeed = 200,

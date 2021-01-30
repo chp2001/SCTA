@@ -34,9 +34,6 @@ UnitBlueprint {
 	'LEVEL3',
     'STRATEGIC',
     'SORTDEFENSE',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -62,7 +59,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.2,
     },
     Economy = {
         BuildCostEnergy = 17425,
@@ -101,8 +98,7 @@ UnitBlueprint {
             LAYER_Land = true,
         },
     },
-    SelectionCenterOffsetZ = -0.25,
-    SelectionCenterOffsetX = 0,
+    SelectionCenterOffsetZ = -0.12,
     SelectionSizeX = 1,
     SelectionSizeZ = 1,
     SelectionThickness = 0.25,
@@ -143,15 +139,15 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Flare_01',
+                        'flare',
                     },
-                    RackBone = 'Barrel_01',
+                    RackBone = 'barrel',
                 },
                 {
                     MuzzleBones = {
-                        'Flare_02',
+                        'flare2',
                     },
-                    RackBone = 'Barrel_02',
+                    RackBone = 'barrel2',
                 },
             },
             RackRecoilDistance = -4,
@@ -166,11 +162,11 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TurretBoneMuzzle = 'Flare_01',
-            TurretBonePitch = 'Turret',
-            TurretBoneDualMuzzle = 'Flare_02',
-            TurretBoneDualPitch = 'Turret',
-            TurretBoneYaw = 'TurretBase',
+            TurretBoneMuzzle = 'flare',
+            TurretBonePitch = 'YTurret',
+            TurretBoneDualMuzzle = 'flare2',
+            TurretBoneDualPitch = 'YTurret',
+            TurretBoneYaw = 'XTurret',
             TurretDualManipulators = true,
             TurretPitch = 0,
             TurretPitchRange = 360,

@@ -36,7 +36,7 @@ UnitBlueprint {
         VisionRadius = 10,
     },
     LifeBarSize = 1,
-    SelectionCenterOffsetZ = 0.1,
+    ---SelectionCenterOffsetZ = 0.1,
     SelectionSizeX = 0.6,
     SelectionSizeZ = 0.6,
     SizeX = 1,

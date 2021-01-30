@@ -68,8 +68,8 @@ UnitBlueprint {
     },
     Description = 'Resurrection Kbot',
     Display = {
-        AnimationBuild = '/mods/SCTA-master/units/CORNECRO/CORNECRO_lod0_unpack.sca',
-        AnimationBuildRate = 1,
+    --AnimationBuild = '/mods/SCTA-master/units/CORNECRO/CORNECRO_lod0_unpack.sca',
+    --AnimationBuildRate = 1,
     AnimationWalk = '/mods/SCTA-master/units/CORNECRO/CORNECRO_lod0_Awalk.sca',
     AnimationWalkRate = 1,
         Mesh = {
@@ -99,9 +99,9 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            AimBone = 'torso',
+            AimBone = 'nozzle1',
             BuildEffectBones = {'nozzle1'},
-            PitchBone = 'torso',
+            PitchBone = 'Rlathe',
             YawBone = 'torso',
         },
         Category = 'Construction',

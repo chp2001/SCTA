@@ -34,9 +34,6 @@ UnitBlueprint {
 	'LEVEL3',
     'STRATEGIC',
     'SORTDEFENSE',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -143,15 +140,15 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Flare_01',
+                        'flare',
                     },
-                    RackBone = 'Barrel_01',
+                    RackBone = 'barrel',
                 },
                 {
                     MuzzleBones = {
-                        'Flare_02',
+                        'flare2',
                     },
-                    RackBone = 'Barrel_02',
+                    RackBone = 'barrel2',
                 },
             },
             RackRecoilDistance = -4,
@@ -166,11 +163,11 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TurretBoneMuzzle = 'Flare_01',
-            TurretBonePitch = 'Turret',
-            TurretBoneDualMuzzle = 'Flare_02',
-            TurretBoneDualPitch = 'Turret',
-            TurretBoneYaw = 'TurretBase',
+            TurretBoneMuzzle = 'flare',
+            TurretBonePitch = 'YTurret',
+            TurretBoneDualMuzzle = 'flare2',
+            TurretBoneDualPitch = 'YTurret',
+            TurretBoneYaw = 'XTurret',
             TurretDualManipulators = true,
             TurretPitch = 0,
             TurretPitchRange = 360,

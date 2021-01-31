@@ -47,10 +47,6 @@ UnitBlueprint {
 	'SPECIAL',
 	'SORTINTEL',
 	'LEVEL1',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',

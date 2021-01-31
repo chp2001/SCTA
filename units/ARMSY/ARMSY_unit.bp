@@ -46,7 +46,6 @@ UnitBlueprint {
 	'STRUCTURE',
 	'CONSTRUCTION',
 	'NAVAL',
-	'TEXTUREANIM',
 	'ARM',
 		'PLANT',
 	'SORTCONSTRUCTION',
@@ -119,7 +118,7 @@ UnitBlueprint {
 	UnitName = 'Shipyard',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 10,
         WaterVisionRadius = 4, 
     },
     Interface = {
@@ -135,8 +134,6 @@ UnitBlueprint {
         FlattenSkirt = true,
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
-	------BuildAreaX = 8,
-    ------BuildAreaZ = 8,
     RollOffPoints = {
         {
             UnitSpin = 0,

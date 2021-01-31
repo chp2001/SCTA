@@ -117,7 +117,7 @@ UnitBlueprint {
 	UnitName = 'Kbot Lab',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 10,
     },
     Interface = {
         HelpText = 'Produces Kbots',

@@ -34,7 +34,7 @@ Physics = {
     },
     Weapon = {
         [1] = {
-            Damage = 10,
+            Damage = 15,
             MaxRadius = 18,
             RackSalvoSize = 1,
             RateOfFire = 1,

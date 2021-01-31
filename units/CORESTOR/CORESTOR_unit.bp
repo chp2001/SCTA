@@ -83,7 +83,7 @@ UnitBlueprint {
         UnitName = 'Energy Storage',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 10,
         WaterVisionRadius = 4, 
     },
     Interface = {

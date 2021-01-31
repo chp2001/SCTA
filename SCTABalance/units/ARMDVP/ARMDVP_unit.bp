@@ -60,7 +60,8 @@ UnitBlueprint {
             'Upgradeable',
         },
         AnimationUnpack = '/mods/SCTA-master/units/ARMVP/ARMVP_lod0_unpack.sca',
-        AnimationUnpackRate = 2,    
+        AnimationUnpackRate = 2, 
+        BuildAttachBone = 'BuildPlate',   
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -99,9 +100,8 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildAttachBone = 'BuildPlate',
-            BuildEffectBones = {'Nozzle_01','Nozzle_02'},
-        },                
+            BuildEffectBones = {'spray1','spray2', 'spray3', 'spray4', },
+        },      
 	---BuildAngle = 1024,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
@@ -143,6 +143,12 @@ UnitBlueprint {
                 X = 0,
                 Y = 0,
                 Z = 2.5,
+            },
+            {
+                UnitSpin = 180,
+                X = 0,
+                Y = 0,
+                Z = -2.5,
             },
         },
         OccupyRects = {

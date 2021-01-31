@@ -56,7 +56,7 @@ UnitBlueprint {
         SkirtSizeZ = 6,
     },
     LifeBarHeight = 0.22,
-    LifeBarOffset = 3,
+    LifeBarOffset = 2,
     LifeBarSize = 7,
     General = {
         UpgradesTo = 'armdap', 

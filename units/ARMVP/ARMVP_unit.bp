@@ -96,7 +96,7 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildEffectBones = {'Nozzle_01','Nozzle_02'},
+            BuildEffectBones = {'spray1','spray2', 'spray3', 'spray4', },
         },            
 	---BuildAngle = 1024,
         Category = 'Factory',
@@ -138,6 +138,12 @@ UnitBlueprint {
                 Y = 0,
                 Z = 2.5,
             },
+            {
+                UnitSpin = 180,
+                X = 0,
+                Y = 0,
+                Z = -2.5,
+            },
         },
         OccupyRects = {
             # offsetX offsetZ  sizeX sizeZ, offset from center of unit
@@ -166,7 +172,7 @@ UnitBlueprint {
     StrategicIconName = 'icon_factory1_land',
     StrategicIconSortPriority = 0,
     Weapon = {
-        { #LARGE_BUILDINGEX
+        { #LARGE_sprayEX
             Damage = 20,
             DamageFriendly = true,
             DamageRadius = 1,

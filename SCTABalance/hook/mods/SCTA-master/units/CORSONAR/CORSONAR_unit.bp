@@ -37,6 +37,7 @@ UnitBlueprint {
     },
     Economy = {
         NaturalProducer = false,
+        BuildCostEnergy = 2400,
         ProductionPerSecondEnergy = 0,
         BuildRate = 40, 
         BuildCostMass = 200,
@@ -65,7 +66,7 @@ UnitBlueprint {
         FreeIntel = false,
         VisionRadius = 12,
         WaterVisionRadius = 12,
-        SonarRadius = 74,
+        SonarRadius = 120,
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,

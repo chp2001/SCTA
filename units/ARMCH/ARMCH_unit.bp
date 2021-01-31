@@ -72,7 +72,7 @@ UnitBlueprint {
     Description = 'Tech Level 1',
     Display = {
         AnimationBuild = '/mods/SCTA-master/units/ARMCH/ARMCH_lod0_unpack.sca',
-        AnimationBuildRate = 1, 
+        AnimationBuildRate = 2, 
         Abilities = {
             'Construction Unit',
         },
@@ -96,7 +96,7 @@ UnitBlueprint {
 		Scale = 0.5,
 		Bones = {'wake1','wake2','wake3','wake4','wake5','wake6'},
 	},
-        UniformScale = 0.16,
+        UniformScale = 0.1,
     },
     Economy = {
         BuildCostEnergy = 4370,
@@ -115,10 +115,16 @@ UnitBlueprint {
     General = {
         BuildBones = {
             AimBone = 'nanogun',
-            BuildEffectBones = {'nano1'},
+            BuildEffectBones = {'beam', 'beam2'},
             PitchBone = 'nanogun',
             YawBone = 'turret',
         },
+        BuildBonesAlt1 = {
+            AimBone = 'nanogun2',
+            PitchBone = 'nanogun2',
+            YawBone = 'turret2',
+        },
+
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

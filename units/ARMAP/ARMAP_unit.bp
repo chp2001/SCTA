@@ -44,7 +44,6 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'STRUCTURE',
 	'CONSTRUCTION',
-	'TEXTUREANIM',
         'OVERLAYRADAR',
 	'ARM',
 		'PLANT',
@@ -65,7 +64,7 @@ UnitBlueprint {
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/ARMAP/ARMAP_lod0_unpack.sca',
         AnimationUnpackRate = 1,
-        BuildAttachBone = 'BasePlate',
+        BuildAttachBone = 'buildpad',
         Abilities = {
             '<LOC ability_radar>Radar',
         },
@@ -101,7 +100,7 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildEffectBones = {'Nozzle_01', 'Nozzle_02'},
+            BuildEffectBones = {'spray1', 'spray2'},
         },    
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
@@ -139,10 +138,10 @@ UnitBlueprint {
         SkirtSizeZ = 6,
         RollOffPoints = {
             {
-                UnitSpin = 90,
-                X = 3,
+                UnitSpin = 180,
+                X = 0,
                 Y = 0,
-                Z = 0,
+                Z = -3,
             },
                 {
                 UnitSpin = 0,

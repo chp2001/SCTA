@@ -144,6 +144,12 @@ UnitBlueprint {
                 Y = 0,
                 Z = 2.5,
             },
+            {
+                UnitSpin = 180,
+                X = 0,
+                Y = 0,
+                Z = -2.5,
+            },
         },
         OccupyRects = {
             # offsetX offsetZ  sizeX sizeZ, offset from center of unit

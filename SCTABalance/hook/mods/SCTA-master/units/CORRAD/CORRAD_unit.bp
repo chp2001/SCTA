@@ -20,6 +20,9 @@ UnitBlueprint {
   },
   Intel = {
     FreeIntel = false,
+      VisionRadius = 8,
+      WaterVisionRadius = 8,
+    },
   }, 
   SelectionCenterOffsetZ = -0.2,
 }

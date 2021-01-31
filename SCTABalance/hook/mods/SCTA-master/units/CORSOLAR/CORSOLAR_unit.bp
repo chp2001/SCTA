@@ -31,6 +31,10 @@ UnitBlueprint {
             LAYER_Water = true,
         },
     },
+    Intel = {
+        VisionRadius = 8,
+        WaterVisionRadius = 8,
+      },
     SelectionSizeX = 1.3,
     SelectionSizeZ = 1.3,
     SelectionThickness = 0.6,

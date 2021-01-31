@@ -8,6 +8,10 @@ UnitBlueprint {
   Display = {
     UniformScale = 0.10,
 },
+Intel = {
+  VisionRadius = 8,
+  WaterVisionRadius = 8,
+},
   Economy = {
         BuildCostMass = 180,
         BuildCostEnergy = 1600,

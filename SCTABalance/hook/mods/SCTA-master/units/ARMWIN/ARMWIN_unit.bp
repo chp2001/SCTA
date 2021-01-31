@@ -24,6 +24,10 @@ Defense = {
         SkirtSizeX = 2.5,
         SkirtSizeZ = 2.5,
     },
+    Intel = {
+        VisionRadius = 8,
+        WaterVisionRadius = 8,
+      },
     SelectionCenterOffsetX = -0.2,
     SelectionCenterOffsetZ = 0.12,
     SelectionSizeX = 1.5,

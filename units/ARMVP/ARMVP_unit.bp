@@ -145,6 +145,7 @@ UnitBlueprint {
                 Z = -2.5,
             },
         },
+        ---OccupyRect=WhereAUnitCannotWalk
         OccupyRects = {
             # offsetX offsetZ  sizeX sizeZ, offset from center of unit
             -2,

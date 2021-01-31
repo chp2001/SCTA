@@ -28,7 +28,7 @@ UnitBlueprint {
             'Radar Targeting',
             '<LOC ability_upgradable>Upgradeable',
         },
-        UniformScale = 0.12,    
+        UniformScale = 0.1,    
      }, 
      Economy = {
         NaturalProducer = false,

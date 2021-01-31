@@ -66,8 +66,8 @@ UnitBlueprint {
     },
     Description = 'Fast Assist-Repair Kbot',
     Display = {
-        --AnimationBuild = '/mods/SCTA-master/units/ARMFARK/ARMFARK_lod0_unpack.sca',
-        --AnimationBuildRate = 1, 
+        AnimationBuild = '/mods/SCTA-master/units/ARMFARK/ARMFARK_lod0Action.sca',
+        AnimationBuildRate = 1, 
         AnimationWalk = '/mods/SCTA-master/units/ARMFARK/ARMFARK_lod0_Awalk.sca',
         AnimationWalkRate = 2,
         Mesh = {
@@ -89,14 +89,17 @@ UnitBlueprint {
         BuildRate = 180,
         BuildTime = 7931,
         MaxBuildDistance = 3.75,
-	NaturalProducer = true,
+    NaturalProducer = true,
+    BuildableCategory = {
+        'mas0001',
+    },
 	ProductionPerSecondEnergy = 17,
 	ProductionPerSecondMass = 1,
     },
     General = {
         BuildBones = {
             AimBone = 'pelvis',
-            BuildEffectBones = {'fire'},
+            BuildEffectBones = {'fire', 'nano1b'},
             PitchBone = 'pelvis',
             YawBone = 'pelvis',
         },

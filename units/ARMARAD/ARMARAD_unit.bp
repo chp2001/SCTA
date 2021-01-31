@@ -44,9 +44,6 @@ UnitBlueprint {
 	'SPECIAL',
 	'LEVEL3',
 	'SORTINTEL',
-	
-	
-	
     },
     Defense = {
         DamageModifier = 1,
@@ -73,7 +70,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.12,
     },
     Economy = {
         BuildCostEnergy = 1830,

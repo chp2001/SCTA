@@ -68,8 +68,8 @@ UnitBlueprint {
     },
     Description = 'Resurrection Kbot',
     Display = {
-        AnimationBuild = '/mods/SCTA-master/units/CORNECRO/CORNECRO_lod0_unpack.sca',
-        AnimationBuildRate = 1,
+    --AnimationBuild = '/mods/SCTA-master/units/CORNECRO/CORNECRO_lod0_unpack.sca',
+    --AnimationBuildRate = 1,
     AnimationWalk = '/mods/SCTA-master/units/CORNECRO/CORNECRO_lod0_Awalk.sca',
     AnimationWalkRate = 1,
         Mesh = {
@@ -92,23 +92,26 @@ UnitBlueprint {
         MaxBuildDistance = 3.75,
 	NaturalProducer = true,
 	ProductionPerSecondEnergy = 17,
-	ProductionPerSecondMass = 1,
+    ProductionPerSecondMass = 1,
+    BuildableCategory = {
+        'mas0001',
+    },
     },
     General = {
         BuildBones = {
-            AimBone = 'torso',
+            AimBone = 'nozzle1',
             BuildEffectBones = {'nozzle1'},
-            PitchBone = 'torso',
+            PitchBone = 'Rlathe',
             YawBone = 'torso',
         },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {
-            RULEUCC_Attack = false,
+            RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
-            RULEUCC_Guard = false,
+            RULEUCC_Guard = true,
             RULEUCC_Move = true,
-            RULEUCC_Patrol = false,
+            RULEUCC_Patrol = true,
             RULEUCC_Pause = true,
             RULEUCC_Reclaim = true,
             RULEUCC_Repair = true,

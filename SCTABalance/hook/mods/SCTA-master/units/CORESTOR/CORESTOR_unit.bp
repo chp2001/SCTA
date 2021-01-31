@@ -1,17 +1,15 @@
 
 UnitBlueprint {
     Merge = true, 
-    Display = {
-        UniformScale = 0.04,
-    },
     Footprint = {
         SizeX = 1,
         SizeZ = 1,
     },
-    SelectionSizeX = 1,
-    SelectionSizeZ = 1,
+    LifeBarOffset = 0.4,
+    SelectionSizeX = 2,
+    SelectionSizeZ = 2,
     SelectionThickness = 0.6,
-    SizeX = 1.2,
-    SizeY = 1,
-    SizeZ = 1.2,
+    SizeX = 2.4,
+    SizeY = 2,
+    SizeZ = 2.4,
 }

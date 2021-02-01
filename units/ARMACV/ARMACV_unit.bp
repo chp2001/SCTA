@@ -100,10 +100,15 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            AimBone = 'Build_Nozzle',
-            BuildEffectBones = {'Build_Muzzle'},
-            PitchBone = 'Build_Muzzle',
-            YawBone = 'Turret',
+            AimBone = 'nano1',
+            BuildEffectBones = {'beam1', 'beam2'},
+            PitchBone = 'nano1',
+            YawBone = 'turret1',
+        },
+        BuildBonesAlt1 = {
+            AimBone = 'nano2',
+            PitchBone = 'nano2',
+            YawBone = 'turret2',
         },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',

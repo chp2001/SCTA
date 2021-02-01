@@ -124,7 +124,6 @@ UnitBlueprint {
             PitchBone = 'nanogun2',
             YawBone = 'turret2',
         },
-
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

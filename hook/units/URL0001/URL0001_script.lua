@@ -23,7 +23,6 @@ URL0001 = Class(oldURL0001) {
         oldURL0001.OnStopBeingBuilt(self, builder, layer)
         local aiBrain = self:GetAIBrain()
 		if aiBrain.SCTAAI then
-            local factionIndex = 7
             local position = self:GetPosition()
 				CreateUnitHPR('corcom', self:GetArmy(), (position.x), (position.y+1), (position.z), 0, 0, 0)  
                 self:Destroy()

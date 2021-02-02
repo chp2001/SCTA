@@ -5,17 +5,12 @@ function CreateInitialArmyGroup(strArmy, createCommander)
     if createCommander and ( tblGroup == nil or 0 == table.getn(tblGroup) )  then
 		local ABrain = GetArmyBrain(strArmy);
 		if(ABrain.BrainType == 'Human') then
-			
-				
-			local factionIndex = GetArmyBrain(strArmy):GetFactionIndex()
 			local initialUnitName = 'mas0001'
 			cdrUnit = CreateInitialArmyUnit(strArmy, initialUnitName)
 			cdrUnit:SetUnSelectable(false)
 			cdrUnit:SetBusy(true)
 			cdrUnit:SetBlockCommandQueue(true)
 			ForkThread(ControlDelay, cdrUnit, 8.75)
-			--UISelectAndZoomTo(cdrUnit, 0.1)
-			
 			ABrain.PreBuilt = true
 		else
 			local tblGroup = CreateArmyGroup( strArmy, 'INITIAL')

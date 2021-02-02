@@ -15,7 +15,6 @@ XNL0001 = Class(oldXNL0001) {
         oldXNL0001.OnStopBeingBuilt(self, builder, layer)
         local aiBrain = self:GetAIBrain()
 		if aiBrain.SCTAAI then
-            local factionIndex = 7
             local position = self:GetPosition()
 			CreateUnitHPR('corcom', self:GetArmy(), (position.x), (position.y+1), (position.z), 0, 0, 0)  
             self:Destroy()

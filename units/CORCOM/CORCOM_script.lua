@@ -47,10 +47,10 @@ CORCOM = Class(TARealCommander) {
 	OnStopBeingBuilt = function(self,builder,layer)
 		TARealCommander.OnStopBeingBuilt(self,builder,layer)
 		ForkThread(self.GiveInitialResources, self)
-        self:SetMaintenanceConsumptionInactive()
+		self:SetMaintenanceConsumptionInactive()
         self:SetScriptBit('RULEUTC_CloakToggle', true)
         self:RequestRefreshUI()
-			self:ForkThread(self.PlayCommanderWarpInEffect)
+		self:ForkThread(self.PlayCommanderWarpInEffect)
 	end,
 
 	GiveInitialResources = function(self)

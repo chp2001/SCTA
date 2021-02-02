@@ -10,15 +10,24 @@
 local oldUEL0001 = UEL0001
 UEL0001 = Class(oldUEL0001) {
     PlayCommanderWarpInEffect = function(self)
-        self:HideBone(0, true)
-        self:SetUnSelectable(false)
-        self:SetBusy(true)
-        self:SetBlockCommandQueue(true)
-        self:ForkThread(self.WarpInEffectThread)
+        if not self.Dead then
+            self:HideBone(0, true)
+            self:SetUnSelectable(false)
+            self:SetBusy(true)
+            self:SetBlockCommandQueue(true)
+            self:ForkThread(self.WarpInEffectThread)
+        end
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
         oldUEL0001.OnStopBeingBuilt(self, builder, layer)
+        local aiBrain = self:GetAIBrain()
+        if aiBrain.SCTAAI then
+            local factionIndex = 6
+			local position = self:GetPosition()
+			CreateUnitHPR('armcom', self:GetArmy(), (position.x), (position.y+1), (position.z), 0, 0, 0)  
+            self:Destroy()
+        end
         self:ForkThread(self.PlayCommanderWarpInEffect) --should only be used for testing out the drop animation
     end,
 

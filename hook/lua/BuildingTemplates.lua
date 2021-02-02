@@ -1,9 +1,14 @@
 BuildingTemplates[6] = {
-    {
         {
             'T1EnergyProduction',
             'armsolar',
+        },
+        {
+            'T1EnergyProduction2',
             'armwin',
+        },
+        {
+            'T1EnergyProduction3',
             'armtide',
         },
         {
@@ -44,11 +49,17 @@ BuildingTemplates[6] = {
             {
                 'T1LandFactory',
                 'armlab',
+            },
+            {
+                'T1LandFactory2',
                 'armvp',
             },
             {
                 'T2LandFactory',
                 'armalab',
+            },
+            {
+                'T2LandFactory2',
                 'armavp',
             },
             {
@@ -98,6 +109,9 @@ BuildingTemplates[6] = {
             {
                 'Wall',
                 'armdrag',
+            },
+            {
+                'Wall2',
                 'armfort',
             },
             -- -Ground Defense
@@ -201,20 +215,29 @@ BuildingTemplates[6] = {
     
             -- UEF FA Specific
             {
-                'T3GroundDefense',
-                'armanni', 
+                'T3GroundDefense', 
                 'armamb',
             },
-        },
+            {
+                'T3GroundDefense2',
+                'armanni', 
+            },
     }
+
+
     BuildingTemplates[7] = {
-    {
     {
        'T1EnergyProduction',
             'corsolar',
-            'corwin',
-            'cortide',
-        },
+            },
+            {
+                'T1EnergyProduction2',
+                'corwin',
+            },
+            {
+                'T1EnergyProduction3',
+                'cortide',
+            },
         {
             'T1HydroCarbon',
             'corgeo',
@@ -253,13 +276,19 @@ BuildingTemplates[6] = {
         -- Land Factory Structures
         {
             'T1LandFactory',
-            'corlab',
             'corvp',
         },
         {
+            'T1LandFactory2',
+            'corlab',
+        },
+        {
             'T2LandFactory',
-            'coralab',
             'coravp',
+        },
+        {
+            'T2LandFactory2',
+            'coralab',
         },
         {
             'T3LandFactory',
@@ -309,6 +338,10 @@ BuildingTemplates[6] = {
         {
             'Wall',
             'cordrag',
+            'corfort',
+        },
+        {
+            'Wall2',
             'corfort',
         },
         -- -Ground Defense
@@ -414,7 +447,9 @@ BuildingTemplates[6] = {
         {
             'T3GroundDefense',
             'cortoast',
-            'cordoom',
         },
-    },
+        {
+            'T3GroundDefense2',
+            'cordoom', 
+        },
 }

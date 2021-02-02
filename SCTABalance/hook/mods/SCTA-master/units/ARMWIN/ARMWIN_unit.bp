@@ -1,7 +1,7 @@
   UnitBlueprint {
   Merge = true,
   Display = {
-    UniformScale = 0.12,
+    UniformScale = 0.08,
 },
 Defense = {
     Health = 220,
@@ -18,22 +18,16 @@ Defense = {
         SizeX = 2,
         SizeZ = 2,
     },
-   Physics = {
-    SkirtOffsetX = -0.3,
-    SkirtOffsetZ = -0.35,
-        SkirtSizeX = 2.5,
-        SkirtSizeZ = 2.5,
-    },
     Intel = {
         VisionRadius = 8,
         WaterVisionRadius = 8,
       },
-    SelectionCenterOffsetX = -0.2,
+    SelectionCenterOffsetX = -0.15,  
     SelectionCenterOffsetZ = 0.12,
-    SelectionSizeX = 1.5,
-    SelectionSizeZ = 1.5,
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
     SelectionThickness = 0.6,
-    SizeX = 3,
-    SizeY = 5,
-    SizeZ = 3,
+    SizeX = 2,
+    SizeY = 3,
+    SizeZ = 2,
 }

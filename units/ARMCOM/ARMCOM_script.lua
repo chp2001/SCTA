@@ -12,7 +12,6 @@ local TACommanderDeathWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TACo
 #ARM Commander - Commander
 
 ARMCOM = Class(TARealCommander) {
-
 	Weapons = {
 		COMLASER = Class(TAweapon) {
 		},
@@ -39,7 +38,6 @@ ARMCOM = Class(TARealCommander) {
 		self:ShowBone(0, true)
 		self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
 		WaitSeconds(3)
-		---CreateAttachedEmitter( self, 0, army, '/mods/SCTA-master/effects/emitters/ENTRANCE_emit.bp'):ScaleEmitter(4)
 		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
         self:SetUnSelectable(false)
 		self:SetBusy(false)
@@ -49,7 +47,7 @@ ARMCOM = Class(TARealCommander) {
 	OnStopBeingBuilt = function(self,builder,layer)
 		TARealCommander.OnStopBeingBuilt(self,builder,layer)
 		ForkThread(self.GiveInitialResources, self)
-        self:SetMaintenanceConsumptionInactive()
+		self:SetMaintenanceConsumptionInactive()
         self:SetScriptBit('RULEUTC_CloakToggle', true)
         self:RequestRefreshUI()
 		self:ForkThread(self.PlayCommanderWarpInEffect)

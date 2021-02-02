@@ -38,6 +38,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'ARM',
         'KBOT',
+        'SCOUT',
 	'LEVEL1',
     },
     Defense = {

@@ -12,8 +12,9 @@ UnitBlueprint {
     'OVERLAYRADAR', 
     'ARM',
     'KBOT',
+    'SCOUT',
     'LEVEL1',
-},
+    },
     Display = {
         Abilities = {
             '<LOC ability_radar>Radar',

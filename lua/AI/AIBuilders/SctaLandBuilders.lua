@@ -10,7 +10,7 @@ BuilderGroup {
     BuildersType = 'FactoryBuilder',
     Builder {
         BuilderName = 'SCTAAi Factory Engineer',
-        PlatoonTemplate = 'T1BuildEngineerMod',
+        PlatoonTemplate = 'T1BuildEngineerSCTA',
         Priority = 100, -- Top factory priority
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENGINEER - categories.COMMAND } }, -- Build engies until we have 4 of them.
@@ -19,7 +19,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAi Factory Scout',
-        PlatoonTemplate = 'T1LandScoutMod',
+        PlatoonTemplate = 'T1LandScoutSCTA',
         Priority = 90,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.MOBILE * categories.LAND } },
@@ -28,7 +28,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAi Factory Tank',
-        PlatoonTemplate = 'T1LandDFBotMod',
+        PlatoonTemplate = 'T1LandDFBotSCTA',
         Priority = 80,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.DIRECTFIRE * categories.MOBILE,
@@ -38,14 +38,14 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAi Factory Artillery',
-        PlatoonTemplate = 'T1LandArtilleryMod',
+        PlatoonTemplate = 'T1LandArtillerySCTA',
         Priority = 70,
         BuilderConditions = { },
         BuilderType = 'All',
     },
     Builder {
         BuilderName = 'SCTAAi Factory AntiAir',
-        PlatoonTemplate = 'T1LandAA',
+        PlatoonTemplate = 'T1LandAASCTA',
         Priority = 110,
         BuilderConditions = {
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, -- Build AA if the enemy is threatening our base with air units.

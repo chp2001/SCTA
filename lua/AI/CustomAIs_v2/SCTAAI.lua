@@ -11,14 +11,22 @@ AI = {
 	Version = '1',
 	AIList = {
 		{
-			key = 'sctaai',
-			name = '<LOC SctaAI_0001>AI: SCTA',
+			key = 'sctaaiarm',
+			name = '<LOC SctaAI_0001>AI: SCTA Arm',
+		},
+		{
+			key = 'sctaaicore',
+			name = '<LOC SctaAI_0002>AI: SCTA Core',
 		},
 	},
 	CheatAIList = {
 		{
-			key = 'sctaaicheat',
-			name = '<LOC SctaAI_0003>AIx: SCTA',
+			key = 'sctaaiarmcheat',
+			name = '<LOC SctaAI_0003>AIx: SCTA Arm',
+		},
+		{
+			key = 'sctaaicorecheat',
+			name = '<LOC SctaAI_0004>AIx: SCTA Core',
 		},
 	},
 }

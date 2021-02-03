@@ -6,7 +6,7 @@
 ]]
 
 PlatoonTemplate {
-    Name = 'SCTAAILandAttack',
+    Name = 'StrikeForceSCTA',
     Plan = 'StrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
         { categories.MOBILE * categories.LAND - categories.EXPERIMENTAL - categories.ENGINEER, -- Type of units.
@@ -18,7 +18,39 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
-    Name = 'T1LandScoutMod',
+    Name = 'LandAttackSCTA',
+    Plan = 'AttackForceAI',
+    GlobalSquads = {
+        { categories.MOBILE * categories.LAND - categories.EXPERIMENTAL - categories.ENGINEER, 2, 20, 'Attack', 'none' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'T1AirScoutFormSCTA',
+    Plan = 'ScoutingAI',
+    GlobalSquads = {
+        { categories.AIR * categories.SCOUT * categories.TECH1, 1, 1, 'scout', 'None' },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'CommanderBuilderSCTA',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        { categories.COMMAND, 1, 1, 'support', 'None' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTA',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        { categories.ENGINEER * categories.TECH1 - categories.COMMAND , 1, 1, 'support', 'None' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'T1LandScoutSCTA',
     FactionSquads = {
         UEF = {
             { 'uel0101', 1, 1, 'scout', 'none' }
@@ -42,7 +74,79 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
-    Name = 'T1LandDFBotMod',
+    Name = 'T1AirScoutSCTA',
+    FactionSquads = {
+        UEF = {
+            { 'uea0101', 1, 1, 'scout', 'none' }
+        },
+        Aeon = {
+            { 'uaa0101', 1, 1, 'scout', 'none' }
+        },
+        Cybran = {
+            { 'ura0101', 1, 1, 'scout', 'none' }
+        },
+        Seraphim = {
+            { 'xsa0101', 1, 1, 'scout', 'none' }
+        },
+        Arm = {
+            { 'armpeep', 1, 1, 'scout', 'none' }
+        },
+        Core = {
+            { 'corfink', 1, 1, 'scout', 'none' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T1AirFighterSCTA',
+    FactionSquads = {
+        UEF = {
+            { 'uea0102', 1, 1, 'attack', 'GrowthFormation' }
+        },
+        Aeon = {
+            { 'uaa0102', 1, 1, 'attack', 'GrowthFormation' }
+        },
+        Cybran = {
+            { 'ura0102', 1, 1, 'attack', 'GrowthFormation' }
+        },
+        Seraphim = {
+            { 'xsa0102', 1, 1, 'attack', 'GrowthFormation' }
+        },
+        Arm = {
+            { 'armfig', 1, 1, 'attack', 'GrowthFormation' }
+        },
+        Core = {
+            { 'corveng', 1, 1, 'attack', 'GrowthFormation' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T1AirBomberSCTA',
+    FactionSquads = {
+        UEF = {
+            { 'uea0103', 1, 1, 'attack', 'GrowthFormation' }
+        },
+        Aeon = {
+            { 'uaa0103', 1, 1, 'attack', 'GrowthFormation' }
+        },
+        Cybran = {
+            { 'ura0103', 1, 1, 'attack', 'GrowthFormation' }
+        },
+        Seraphim = {
+            { 'xsa0103', 1, 1, 'attack', 'GrowthFormation' }
+        },
+        Arm = {
+            { 'armthund', 1, 1, 'attack', 'GrowthFormation' }
+        },
+        Core = {
+            { 'corshad', 1, 1, 'attack', 'GrowthFormation' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T1LandDFBotSCTA',
     FactionSquads = {
         UEF = {
             { 'uel0106', 1, 1, 'attack', 'None' }
@@ -69,7 +173,7 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
-    Name = 'T1LandArtilleryMod',
+    Name = 'T1LandArtillerySCTA',
     FactionSquads = {
         UEF = {
             { 'uel0103', 1, 1, 'Attack', 'none' }
@@ -93,7 +197,7 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
-    Name = 'T1BuildEngineerMod',
+    Name = 'T1BuildEngineerSCTA',
     FactionSquads = {
         UEF = {
             { 'uel0105', 1, 1, 'support', 'None' }
@@ -114,4 +218,28 @@ PlatoonTemplate {
             { 'corcv', 1, 1, 'support', 'None' }
         },
     }
+}
+
+PlatoonTemplate {
+    Name = 'T1LandAASCTA',
+    FactionSquads = {
+        UEF = {
+            { 'uel0104', 1, 1, 'Attack', 'none' }
+        },
+        Aeon = {
+            { 'ual0104', 1, 1, 'attack', 'none' }
+        },
+        Cybran = {
+            { 'url0104', 1, 1, 'attack', 'none' }
+        },
+        Seraphim = {
+            { 'xsl0104', 1, 1, 'attack', 'none' }
+        },
+        Arm = {
+            { 'armjeth', 1, 1, 'attack', 'none' }
+        },
+        Core = {
+            { 'cormist', 1, 1, 'attack', 'none' }
+        },
+    },
 }

@@ -10,7 +10,7 @@ BuilderGroup {
     BuildersType = 'EngineerBuilder',
     Builder {
         BuilderName = 'SCTAAI T1Engineer Mex',
-        PlatoonTemplate = 'EngineerBuilder',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 100,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = { },
@@ -19,7 +19,6 @@ BuilderGroup {
             NeedGuard = false,
             DesiresAssist = false,
             Construction = {
-                FactionIndex = 6,
                 BuildStructures = {
                     'T1Resource',
                 }

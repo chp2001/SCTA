@@ -1,9 +1,8 @@
+WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset platoon.lua' )
+
 local SCTAAIPlatoon = Platoon
 Platoon = Class(SCTAAIPlatoon) {
-    EngineerBuildAI = function(self)
-        if not self.Brain.SCTAAI then
-            return SCTAAIPlatoon.EngineerBuildAI(self)
-        end
+    EngineerBuildAISCTA = function(self)
         local aiBrain = self:GetBrain()
         local platoonUnits = self:GetPlatoonUnits()
         local armyIndex = aiBrain:GetArmyIndex()
@@ -35,6 +34,7 @@ Platoon = Class(SCTAAIPlatoon) {
 
         local FactionToIndex  = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, NOMADS = 5, ARM = 6, CORE = 7}
         local factionIndex = cons.FactionIndex or FactionToIndex[eng.factionCategory]
+        --LOG('Faction Index is '..factionIndex)
 
         buildingTmplFile = import(cons.BuildingTemplateFile or '/lua/BuildingTemplates.lua')
         baseTmplFile = import(cons.BaseTemplateFile or '/lua/BaseTemplates.lua')

@@ -11,7 +11,7 @@ BuilderGroup {
     BuildersType = 'EngineerBuilder',
     Builder {
         BuilderName = 'SCTAAI T1Engineer LandFac',
-        PlatoonTemplate = 'EngineerBuilder',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 95,
         InstanceCount = 1,
         BuilderConditions = {
@@ -23,7 +23,6 @@ BuilderGroup {
             NeedGuard = false,
             DesiresAssist = true,
             Construction = {
-                FactionIndex = 6,
                 BuildStructures = {
                     'T1LandFactory',
                 }
@@ -32,7 +31,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI T1Engineer AirFac',
-        PlatoonTemplate = 'EngineerBuilder',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 90,
         InstanceCount = 1,
         BuilderConditions = {
@@ -45,7 +44,6 @@ BuilderGroup {
             NeedGuard = false,
             DesiresAssist = true,
             Construction = {
-                FactionIndex = 6,
                 BuildStructures = {
                     'T1AirFactory',
                 }

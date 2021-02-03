@@ -1,3 +1,5 @@
+WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset aibehaviors.lua' )
+
 function CommanderBehaviorSCTA(platoon)
     for _, v in platoon:GetPlatoonUnits() do
         if not v.Dead and not v.CommanderThread then
@@ -8,6 +10,7 @@ end
 
 
 function CommanderThreadSCTA(cdr, platoon)
+    --LOG('cdr is '..cdr.UnitId)
     local aiBrain = cdr:GetAIBrain()
     aiBrain:BuildScoutLocations()
     -- Added to ensure we know the start locations (thanks to Sorian).

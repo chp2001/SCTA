@@ -1,4 +1,4 @@
-
+WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset aibrain.lua' )
 
 local SCTAAIBrainClass = AIBrain
 AIBrain = Class(SCTAAIBrainClass) {
@@ -8,7 +8,7 @@ AIBrain = Class(SCTAAIBrainClass) {
         local per = ScenarioInfo.ArmySetup[self.Name].AIPersonality
         --LOG('Oncreate')
         if string.find(per, 'scta') then
-            --LOG('* AI-RNG: This is SCTA')
+            --LOG('* AI-SCTA: This is SCTA')
             self.SCTAAI = true
 
         end

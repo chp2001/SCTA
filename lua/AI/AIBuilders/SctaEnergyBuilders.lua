@@ -10,18 +10,17 @@ BuilderGroup {
     BuildersType = 'EngineerBuilder',
     Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen',
-        PlatoonTemplate = 'EngineerBuilder',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 90,
-        InstanceCount = 1,
+        InstanceCount = 2,
         BuilderConditions = {
-            { EBC, 'LessThanEconStorageRatio', { 1.1, 0.99}}, -- If less than full energy, build a pgen.
+            { EBC, 'LessThanEnergyTrend', { 10.0 } },
         },
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
             Construction = {
-                FactionIndex = 6,
                 BuildStructures = {
                     'T1EnergyProduction',
                 }

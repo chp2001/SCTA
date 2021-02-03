@@ -9,22 +9,32 @@ BuilderGroup {
     BuilderGroupName = 'SCTAAIAirBuilder',
     BuildersType = 'FactoryBuilder',
     Builder {
+        BuilderName = 'SCTAAI T1 Scouts',
+        PlatoonTemplate = 'T1AirScoutSCTA',
+        Priority = 100,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.MOBILE * categories.AIR * categories.SCOUT } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.3}},
+        },
+        BuilderType = 'All',
+    },
+    Builder {
         BuilderName = 'SCTAAI Factory Bomber',
-        PlatoonTemplate = 'T1AirBomber',
+        PlatoonTemplate = 'T1AirBomberSCTA',
         Priority = 80,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.0, 0.7}},
         },
-        BuilderType = 'Air',
+        BuilderType = 'All',
     },
     Builder {
         BuilderName = 'SCTAAI Factory Intie',
-        PlatoonTemplate = 'T1AirFighter',
+        PlatoonTemplate = 'T1AirFighterSCTA',
         Priority = 90,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
             { SBC, 'HaveRatioUnitsWithCategoryAndAlliance', { false, 1.5, categories.AIR * categories.ANTIAIR, categories.AIR * categories.MOBILE, 'Enemy'}},
             { EBC, 'GreaterThanEconStorageRatio', { 0.0, 0.7}},
         },
-        BuilderType = 'Air',
+        BuilderType = 'All',
     },
 }

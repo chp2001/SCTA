@@ -165,10 +165,10 @@ PlatoonTemplate {
             { 'xnl0106', 1, 1, 'Attack', 'none' }
         },
         Arm = {
-            { 'armpw', 1, 1, 'attack', 'none' }
+            { 'armpw', 1, 3, 'attack', 'none' }
         },
         Core = {
-            { 'corgator', 1, 1, 'attack', 'none' }
+            { 'corgator', 1, 3, 'attack', 'none' }
         },
     }
 }

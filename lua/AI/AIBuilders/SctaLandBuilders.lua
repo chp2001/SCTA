@@ -9,6 +9,17 @@ BuilderGroup {
     BuilderGroupName = 'SCTAAILandBuilder',
     BuildersType = 'FactoryBuilder',
     Builder {
+        BuilderName = 'SCTAAi Factory BOT',
+        PlatoonTemplate = 'T1LandDFBotSCTA',
+        PlatoonAddFunctions = { {SAI, 'BuildOnce'}, },
+        Priority = 90,
+        BuilderConditions = {
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.DIRECTFIRE * categories.MOBILE,
+                                       '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
+        },
+        BuilderType = 'All',
+    },
+    Builder {
         BuilderName = 'SCTAAi Factory Engineer',
         PlatoonTemplate = 'T1BuildEngineerSCTA',
         Priority = 100, -- Top factory priority
@@ -28,7 +39,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAi Factory Tank',
-        PlatoonTemplate = 'T1LandDFBotSCTA',
+        PlatoonTemplate = 'T1LandDFTankSCTA',
         Priority = 80,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.DIRECTFIRE * categories.MOBILE,

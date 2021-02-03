@@ -13,8 +13,11 @@ TAweapon = Class(DefaultWeapon) {
     OnGotTargetCheck = function(self)
         local army = self.unit:GetArmy()
         local canSee = true
-
         local target = self:GetCurrentTarget()
+        local aiBrain = self.unit:GetAIBrain()
+        if aiBrain.SCTAAI then
+        return true
+        else
         if (target) then
             if (IsUnit(target)) then
                 canSee = target:GetBlip(army):IsSeenNow(army)
@@ -38,6 +41,7 @@ TAweapon = Class(DefaultWeapon) {
             self:ResetTarget()
             return false
         end
+    end
     end,
 
     IdleState = State(DefaultWeapon.IdleState) {

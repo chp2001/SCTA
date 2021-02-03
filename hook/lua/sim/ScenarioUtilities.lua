@@ -19,7 +19,6 @@ function CreateInitialArmyGroup(strArmy, createCommander)
 			local cdrUnit = false
 		
 			if createCommander and ( tblGroup == nil or 0 == table.getn(tblGroup) ) then
-				--local factionIndex = GetArmyBrain(strArmy):GetFactionIndex()
 				local per = ScenarioInfo.ArmySetup[ABrain.Name].AIPersonality
 				if per == 'sctaaiarm' or per == 'sctaaiarmcheat' then
 				    factionIndex = 6
@@ -27,8 +26,10 @@ function CreateInitialArmyGroup(strArmy, createCommander)
 				elseif per == 'sctaaicore' or per == 'sctaaicorecheat' then
 					factionIndex = 7
 					initialUnitName = 'corcom'
+				else
+					factionIndex = GetArmyBrain(strArmy):GetFactionIndex()
+					initialUnitName = import('/lua/factions.lua').Factions[factionIndex].InitialUnit
 				end
-				--local initialUnitName = import('/lua/factions.lua').Factions[factionIndex].InitialUnit
 				cdrUnit = CreateInitialArmyUnit(strArmy, initialUnitName)
 				if EntityCategoryContains(categories.COMMAND, cdrUnit) then
 					if ScenarioInfo.Options['PrebuiltUnits'] == 'Off' then

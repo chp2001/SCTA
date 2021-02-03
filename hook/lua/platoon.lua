@@ -1,4 +1,4 @@
-SCTAAIPlatoon = Platoon
+local SCTAAIPlatoon = Platoon
 Platoon = Class(SCTAAIPlatoon) {
     EngineerBuildAI = function(self)
         if not self.Brain.SCTAAI then
@@ -333,7 +333,6 @@ Platoon = Class(SCTAAIPlatoon) {
             return self.ProcessBuildCommand(eng, false)
         end
     end,
-
     UnitUpgradeAI = function(self)
         local aiBrain = self:GetBrain()
         local platoonUnits = self:GetPlatoonUnits()

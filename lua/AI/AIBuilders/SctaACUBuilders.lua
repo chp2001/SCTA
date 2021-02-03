@@ -20,7 +20,7 @@ BuilderGroup {
             },	
         InstantCheck = true,	
         BuilderType = 'Any',	
-        PlatoonAddBehaviors = { 'CommanderThreadSCTA' }, -- Add a behaviour to the Commander unit once its done with it's BO.	
+        PlatoonAddBehaviors = { 'CommanderBehaviorSCTA' }, -- Add a behaviour to the Commander unit once its done with it's BO.	
         PlatoonAddFunctions = { {SAI, 'BuildOnce'}, }, -- Flag this builder to be only run once.	
         BuilderData = {	
             Construction = {	
@@ -32,7 +32,6 @@ BuilderGroup {
                     'T1Resource',	
                     'T1EnergyProduction',	
                     'T1EnergyProduction2',
-                    'T1LandFactory2',
                 }	
             }	
         }	
@@ -62,7 +61,6 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'LessThanEnergyTrend', { 0.0 } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.ENERGYPRODUCTION * categories.TECH2 }},
         },
         BuilderType = 'Any',
@@ -71,7 +69,7 @@ BuilderGroup {
             DesiresAssist = false,
             Construction = {
                 BuildStructures = {
-                    'T1EnergyProduction',
+                    'T1EnergyProduction2',
                 }
             }
         }

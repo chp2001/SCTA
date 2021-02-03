@@ -65,7 +65,8 @@ PlatoonTemplate {
             { 'xsl0101', 1, 1, 'scout', 'none' }
         },
         Arm = {
-            { 'armflea', 1, 1, 'scout', 'none' }
+            { 'armflea', 1, 1, 'scout', 'none' },
+            { 'armfav', 1, 1, 'scout', 'none' },
         },
         Core = {
             { 'corfav', 1, 1, 'scout', 'none' }
@@ -241,5 +242,29 @@ PlatoonTemplate {
         Core = {
             { 'cormist', 1, 1, 'attack', 'none' }
         },
-    },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T1LandDFTankSCTA',
+    FactionSquads = {
+        UEF = {
+            { 'uel0201', 1, 1, 'attack', 'none' }
+        },
+        Aeon = {
+            { 'ual0201', 1, 1, 'attack', 'none' }
+        },
+        Cybran = {
+            { 'url0107', 1, 1, 'attack', 'none' }
+        },
+        Seraphim = {
+            { 'xsl0201', 1, 1, 'attack', 'none' }
+        },
+        Arm = {
+            { 'armwar', 1, 1, 'attack', 'none' }
+        },
+        Core = {
+            { 'corraid', 1, 1, 'attack', 'none' }
+        },
+    }
 }

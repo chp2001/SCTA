@@ -1,5 +1,18 @@
 WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset aibehaviors.lua' )
 
+
+local AIUtils = import('/lua/ai/aiutilities.lua')
+local Utilities = import('/lua/utilities.lua')
+local AIBuildStructures = import('/lua/ai/aibuildstructures.lua')
+local UnitUpgradeTemplates = import('/lua/upgradetemplates.lua').UnitUpgradeTemplates
+local StructureUpgradeTemplates = import('/lua/upgradetemplates.lua').StructureUpgradeTemplates
+local ScenarioFramework = import('/lua/ScenarioFramework.lua')
+local AIAttackUtils = import('/lua/ai/aiattackutilities.lua')
+local TriggerFile = import('/lua/scenariotriggers.lua')
+local UCBC = import('/lua/editor/UnitCountBuildConditions.lua')
+local SBC = import('/lua/editor/SorianBuildConditions.lua')
+local SUtils = import('/lua/AI/sorianutilities.lua')
+
 function CommanderBehaviorSCTA(platoon)
     for _, v in platoon:GetPlatoonUnits() do
         if not v.Dead and not v.CommanderThread then
@@ -29,7 +42,6 @@ function CommanderThreadSCTA(cdr, platoon)
         if not cdr.Dead and cdr:IsIdleState() and not cdr.GoingHome and not cdr:IsUnitState("Moving")
         and not cdr:IsUnitState("Building") and not cdr:IsUnitState("Guarding")
         and not cdr:IsUnitState("Attacking") and not cdr:IsUnitState("Repairing")
-        and not cdr:IsUnitState("Upgrading") and not cdr:IsUnitState("Enhancing")
         and not cdr:IsUnitState('BlockCommandQueue') then
             -- if we have nothing to build...
             if not cdr.EngineerBuildQueue or table.getn(cdr.EngineerBuildQueue) == 0 then
@@ -89,9 +101,6 @@ function CDRSCTADGun(aiBrain, cdr)
         and GetGameTimeSeconds() < 660
         and GetGameTimeSeconds() > 243
         and mapSizeX <= 512 and mapSizeZ <= 512
-        and ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality ~= 'turtle'
-        and ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality ~= 'defense'
-        and ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality ~= 'rushnaval'
         then
         maxRadius = 256
     end

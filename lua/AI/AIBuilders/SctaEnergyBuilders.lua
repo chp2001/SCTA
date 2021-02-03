@@ -14,7 +14,6 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 2,
         BuilderConditions = {
-            { EBC, 'LessThanEnergyTrend', { 10.0 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -22,7 +21,7 @@ BuilderGroup {
             DesiresAssist = false,
             Construction = {
                 BuildStructures = {
-                    'T1EnergyProduction',
+                    'T1EnergyProduction2',
                 }
             }
         }

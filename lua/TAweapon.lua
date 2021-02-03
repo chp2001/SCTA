@@ -29,8 +29,8 @@ TAweapon = Class(DefaultWeapon) {
             currentTarget = currentTarget:GetSource()
         end
 
-        if canSee or
-        TAutils.ArmyHasTargetingFacility(self.unit:GetArmy()) or
+        if canSee == true or
+        TAutils.ArmyHasTargetingFacility(army) or
         currentTarget == target or 
         (target and IsProp(target)) then
              return true
@@ -191,7 +191,7 @@ TACommanderDeathWeapon = Class(BareBonesWeapon) {
     end,
 }
 
-TADGun = Class(TAweapon) {
+TADGun = Class(DefaultProjectileWeapon) {
     EnergyRequired = nil,
 
     HasEnergy = function(self)
@@ -239,7 +239,7 @@ TADGun = Class(TAweapon) {
     end,
 
         OnCreate = function(self)
-            TAweapon.OnCreate(self)
+            DefaultProjectileWeapon.OnCreate(self)
             self.EnergyRequired = self:GetBlueprint().EnergyRequired
             self.unit:SetWeaponEnabledByLabel('DGun', true)
             self.unit:SetWeaponEnabledByLabel('AutoDGun', false)

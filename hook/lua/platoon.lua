@@ -333,6 +333,7 @@ Platoon = Class(SCTAAIPlatoon) {
             return self.ProcessBuildCommand(eng, false)
         end
     end,
+
     UnitUpgradeAI = function(self)
         local aiBrain = self:GetBrain()
         local platoonUnits = self:GetPlatoonUnits()

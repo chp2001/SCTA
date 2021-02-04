@@ -127,9 +127,14 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            AimBone = 0,
+            AimBone = 'nanogun1',
             BuildEffectBones = {'nano1', 'nano2'},
-            PitchBone = 0,
+            PitchBone = 'pods',
+            YawBone = 0,
+        },       
+        BuildBonesAlt1 = {
+            AimBone = 'nanogun2',
+            PitchBone = 'pods',
             YawBone = 0,
         },
         Category = 'Construction',
@@ -186,7 +191,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 4,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

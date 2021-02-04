@@ -16,7 +16,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, 'FACTORY TECH1' } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 15, 'FACTORY TECH1' } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -24,6 +24,7 @@ BuilderGroup {
             DesiresAssist = true,
             Construction = {
                 BuildStructures = {
+                    'T1LandFactory',
                     'T1LandFactory',
                 }
             }
@@ -37,7 +38,7 @@ BuilderGroup {
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.8}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, 'FACTORY TECH1' } }, -- Don't build air fac immediately.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, 'FACTORY TECH1' } }, -- Stop after 5 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, 'FACTORY TECH1 AIR' } }, -- Stop after 5 facs have been built.
         },
         BuilderType = 'Any',
         BuilderData = {

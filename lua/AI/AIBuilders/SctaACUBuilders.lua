@@ -58,7 +58,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI ACU T1Pgen',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 90,
+        Priority = 60,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.WIND} },
@@ -69,7 +69,9 @@ BuilderGroup {
             DesiresAssist = false,
             Construction = {
                 BuildStructures = {
+                    'T1EnergyProduction',
                     'T1EnergyProduction2',
+                    'T1AirFactory',
                 }
             }
         }

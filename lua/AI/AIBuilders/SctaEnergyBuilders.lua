@@ -11,10 +11,9 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Hydro',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 50,
+        Priority = 90,
         InstanceCount = 2,
         BuilderConditions = { -- The build conditions determine if this builder is available to be used or not.	
-        { IBC, 'NotPreBuilt', {}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -47,7 +46,7 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTAAI T1Engineer Pgen',
+        BuilderName = 'SCTAAI T1Engineer Pgen2',
         PlatoonTemplate = 'EngineerBuilder',
         Priority = 50,
         InstanceCount = 1,

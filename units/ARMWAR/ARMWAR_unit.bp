@@ -39,7 +39,8 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'ARM',
         'KBOT',
-	'LEVEL1',
+    'LEVEL1',
+    'TANK',
     },
     Defense = {
         ArmorType = 'Normal',

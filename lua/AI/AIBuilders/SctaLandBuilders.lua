@@ -40,10 +40,9 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Tank',
         PlatoonTemplate = 'T1LandDFTankSCTA',
-        Priority = 80,
+        Priority = 90,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.DIRECTFIRE * categories.MOBILE,
-                                       '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
+            {  UCBC, 'HaveLessThanUnitsWithCategory', { 20, categories.TANK } }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'All',
     },
@@ -57,7 +56,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory AntiAir',
         PlatoonTemplate = 'T1LandAASCTA',
-        Priority = 110,
+        Priority = 85,
         BuilderConditions = {
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, -- Build AA if the enemy is threatening our base with air units.
             { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,

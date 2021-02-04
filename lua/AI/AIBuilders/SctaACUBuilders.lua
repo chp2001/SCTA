@@ -25,13 +25,13 @@ BuilderGroup {
         BuilderData = {	
             Construction = {	
                 BuildStructures = { -- The buildings to make	
-                    'T1LandFactory',	
-                    'T1EnergyProduction',	
-                    'T1EnergyProduction',	
-                    'T1Resource', -- Mass Extractor	
-                    'T1Resource',	
-                    'T1EnergyProduction',	
-                    'T1EnergyProduction2',
+                'T1LandFactory',	
+                'T1EnergyProduction',	
+                'T1EnergyProduction',	
+                'T1Resource', -- Mass Extractor		
+                'T1EnergyProduction',	
+                'T1EnergyProduction2',
+                'T1LandFactory',
                 }	
             }	
         }	
@@ -61,7 +61,7 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.ENERGYPRODUCTION * categories.TECH2 }},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.WIND} },
         },
         BuilderType = 'Any',
         BuilderData = {

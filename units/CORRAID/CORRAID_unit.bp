@@ -37,6 +37,7 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
+        'TANK',
         'VEHICLE',
 	'LEVEL1',
     },

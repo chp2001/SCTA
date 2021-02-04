@@ -80,15 +80,15 @@ UnitBlueprint {
         },
         Mesh = {
             IconFadeInZoom = 130,
+            {
+                LODCutoff = 120,
+                Scrolling = true,
+                ShaderName = 'Unit',
+            },
             LODs = {
                 {
-                    LODCutoff = 120,
-                    Scrolling = true,
-                    ShaderName = 'AeonCZAR',
-                },
-                {
                     LODCutoff = 230,
-                    ShaderName = 'AeonCZAR', 
+                    ShaderName = 'Unit', 
                 },
             },
         },

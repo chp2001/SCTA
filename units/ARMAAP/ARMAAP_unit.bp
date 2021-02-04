@@ -39,7 +39,6 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'STRUCTURE',
 	'CONSTRUCTION',
-	'TEXTUREANIM',
         'OVERLAYRADAR',
 	'ARM',
 		'PLANT',

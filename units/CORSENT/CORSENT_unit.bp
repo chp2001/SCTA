@@ -79,17 +79,17 @@ UnitBlueprint {
             },
         },
     },
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
-                    {
-                        LODCutoff = 120,
-                        Scrolling = true,
-                        ShaderName = 'Unit',
-                    },
-                {
-                    LODCutoff = 230,
-                    ShaderName = 'Unit', 
+    Mesh = {
+        IconFadeInZoom = 130,
+        {
+            LODCutoff = 120,
+            Scrolling = true,
+            ShaderName = 'Unit',
+        },
+        LODs = {
+            {
+                LODCutoff = 230,
+                ShaderName = 'Unit', 
                 },
             },
         },

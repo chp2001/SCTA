@@ -4,6 +4,8 @@ local IBC = '/lua/editor/InstantBuildConditions.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local SBC = '/lua/editor/SorianBuildConditions.lua'
+local SIBC = '/lua/editor/SorianInstantBuildConditions.lua'
+local MIBC = '/lua/editor/MiscBuildConditions.lua'
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIEnergyBuilder',
@@ -47,7 +49,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen2',
-        PlatoonTemplate = 'EngineerBuilder',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 50,
         InstanceCount = 1,
         BuilderConditions = {
@@ -59,9 +61,36 @@ BuilderGroup {
             DesiresAssist = false,
             Construction = {
                 BuildStructures = {
+                    'T1GroundDefense',
                     'T1EnergyProduction',
+                    'T1EnergyProduction',
+                    'T1AirFactory',
                 }
             }
         }
     },  
+    Builder {
+        BuilderName = 'SCTAAI T1Engineer MetalMaker',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 50,
+        BuilderConditions = {
+                { MIBC, 'GreaterThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
+                { SIBC, 'LessThanEconEfficiencyOverTime', { 0.91, 2.0}},
+                { SIBC, 'GreaterThanEconEfficiencyOverTime', { 0.4, 1.25}},
+                { EBC, 'LessThanEconStorageRatio', { 0.75, 2 } },
+                { SIBC, 'HaveGreaterThanUnitsWithCategory', { 6, 'ENERGYPRODUCTION' } },
+                { IBC, 'BrainNotLowPowerMode', {} },
+            },
+        BuilderType = 'Any',
+        BuilderData = {
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                AdjacencyCategory = 'ENERGYPRODUCTION',
+                BuildStructures = {
+                    'T1MassCreation',
+                },
+            }
+        }
+    },
 }

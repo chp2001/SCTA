@@ -80,17 +80,17 @@ SurfaceThreatLevel = 24,
             },
         },
     },
-Mesh = {
-    IconFadeInZoom = 130,
-    LODs = {
+    Mesh = {
+        IconFadeInZoom = 130,
         {
             LODCutoff = 120,
             Scrolling = true,
             ShaderName = 'Unit',
-        },        
-                {
-    LODCutoff = 230,
-    ShaderName = 'Unit', 
+        },
+        LODs = {
+            {
+                LODCutoff = 230,
+                ShaderName = 'Unit', 
     NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
             },
         },

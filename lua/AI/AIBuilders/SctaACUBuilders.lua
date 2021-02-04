@@ -26,12 +26,15 @@ BuilderGroup {
             Construction = {	
                 BuildStructures = { -- The buildings to make	
                 'T1LandFactory',	
+                'T1EnergyProduction',
+                'T1Resource',
+                'T1Resource', 
                 'T1EnergyProduction',	
-                'T1EnergyProduction',	
-                'T1Resource', -- Mass Extractor		
+                -- Mass Extractor		
                 'T1EnergyProduction',	
                 'T1EnergyProduction2',
-                'T1LandFactory',
+                'T1LandFactory2',
+                'T1Radar',
                 }	
             }	
         }	
@@ -92,25 +95,7 @@ BuilderGroup {
             Construction = {
                 BuildStructures = {
                     'T1LandFactory',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTAAI T1Commander Land2Fac',
-        PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 30,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            Construction = {
-                BuildStructures = {
-                    'T1LandFactory',
+                    'T1LandFactory2',
                 }
             }
         }

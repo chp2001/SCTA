@@ -39,16 +39,12 @@ UnitBlueprint {
         'CONSTRUCTIONSORTDOWN',
 	'STRUCTURE',
 	'CONSTRUCTION',
-	'TEXTUREANIM',
-        'LAND', 
+    'LAND', 
+    'PRIMARY',
 	'CORE',
     'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',

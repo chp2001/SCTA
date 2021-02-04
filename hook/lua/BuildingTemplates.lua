@@ -162,11 +162,11 @@ BuildingTemplates[6] = {
                 'armtarg',
             },
             {
-                'T2Sonar',
+                'T1Sonar',
                 'armsonar',
             },
             {
-                'T3Sonar',
+                'T2Sonar',
                 'armason',
             },
     

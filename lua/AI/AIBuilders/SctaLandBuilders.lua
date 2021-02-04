@@ -4,6 +4,7 @@ local IBC = '/lua/editor/InstantBuildConditions.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local SBC = '/lua/editor/SorianBuildConditions.lua'
+local MIBC = '/lua/editor/MiscBuildConditions.lua'
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAILandBuilder',
@@ -14,7 +15,7 @@ BuilderGroup {
         PlatoonAddFunctions = { {SAI, 'BuildOnce'}, },
         Priority = 90,
         BuilderConditions = {
-            { UCBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'All',
     },
@@ -70,7 +71,7 @@ BuilderGroup {
         PlatoonAddFunctions = { {SAI, 'BuildOnce'}, },
         Priority = 95,
         BuilderConditions = {
-            { UCBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'All',
     },

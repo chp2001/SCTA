@@ -52,9 +52,6 @@ UnitBlueprint {
     },
     Description = 'Medium Assault Tank',
     Display = {
-        Abilities = {
-            'Tank',
-        },
         MovementEffects = {
             Bones = {'ARMSTUMP'},
             Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',

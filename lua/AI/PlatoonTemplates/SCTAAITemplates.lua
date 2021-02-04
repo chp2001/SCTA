@@ -246,6 +246,31 @@ PlatoonTemplate {
     }
 }
 
+PlatoonTemplate {
+    Name = 'T1LandDFTankSCTA',
+    FactionSquads = {
+        UEF = {
+            { 'uel0201', 1, 1, 'attack', 'none' }
+        },
+        Aeon = {
+            { 'ual0201', 1, 1, 'attack', 'none' }
+        },
+        Cybran = {
+            { 'url0107', 1, 1, 'attack', 'none' }
+        },
+        Seraphim = {
+            { 'xsl0201', 1, 1, 'attack', 'none' }
+        },
+        Arm = {
+            { 'armwar', 1, 2, 'attack', 'none' },
+            { 'armrock', 1, 1, 'attack', 'none' },
+        },
+        Core = {
+            { 'corraid', 1, 1, 'attack', 'none' }
+        },
+    }
+}
+
 
 
 PlatoonTemplate {

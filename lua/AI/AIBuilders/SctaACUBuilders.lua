@@ -33,6 +33,7 @@ BuilderGroup {
                 'T1EnergyProduction',	
                 'T1EnergyProduction2',
                 'T1LandFactory',
+                'T1Radar',
                 }	
             }	
         }	
@@ -85,25 +86,6 @@ BuilderGroup {
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 12, 'FACTORY LAND TECH1' } }, -- Stop after 10 facs have been built.
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            Construction = {
-                BuildStructures = {
-                    'T1LandFactory',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTAAI T1Commander Land2Fac',
-        PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 30,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {

@@ -52,9 +52,6 @@ UnitBlueprint {
     },
     Description = 'Medium Assault Tank',
     Display = {
-        Abilities = {
-            'Tank',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

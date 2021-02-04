@@ -5,6 +5,7 @@ local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local SBC = '/lua/editor/SorianBuildConditions.lua'
 local SIBC = '/lua/editor/SorianInstantBuildConditions.lua'
+local MIBC = '/lua/editor/MiscBuildConditions.lua'
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIEnergyBuilder',
@@ -23,6 +24,10 @@ BuilderGroup {
             Construction = {
                 BuildStructures = {
                     'T1HydroCarbon',
+                    'T1GroundDefense',
+                    'T1EnergyProduction2',
+                    'T1EnergyProduction2',
+                    'T1AirFactory',
                 }
             }
         }
@@ -70,7 +75,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 50,
         BuilderConditions = {
-                { UCBC, 'MoreThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
+                { MIBC, 'GreaterThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
                 { SIBC, 'LessThanEconEfficiencyOverTime', { 0.91, 2.0}},
                 { SIBC, 'GreaterThanEconEfficiencyOverTime', { 0.4, 1.25}},
                 { EBC, 'LessThanEconStorageRatio', { 0.75, 2 } },

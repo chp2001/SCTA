@@ -338,7 +338,6 @@ BuildingTemplates[6] = {
         {
             'Wall',
             'cordrag',
-            'corfort',
         },
         {
             'Wall2',
@@ -392,11 +391,11 @@ BuildingTemplates[6] = {
             'cortarg',
         },
         {
-            'T2Sonar',
+            'T1Sonar',
             'corsonar',
         },
         {
-            'T3Sonar',
+            'T2Sonar',
             'corason',
         },
 

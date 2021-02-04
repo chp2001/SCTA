@@ -28,11 +28,12 @@ BuilderGroup {
                 'T1LandFactory',	
                 'T1EnergyProduction',
                 'T1Resource',
+                'T1Resource', 
                 'T1EnergyProduction',	
-                'T1Resource', -- Mass Extractor		
+                -- Mass Extractor		
                 'T1EnergyProduction',	
                 'T1EnergyProduction2',
-                'T1LandFactory',
+                'T1LandFactory2',
                 'T1Radar',
                 }	
             }	

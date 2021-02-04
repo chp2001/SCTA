@@ -24,10 +24,6 @@ BuilderGroup {
             Construction = {
                 BuildStructures = {
                     'T1HydroCarbon',
-                    'T1GroundDefense',
-                    'T1EnergyProduction2',
-                    'T1EnergyProduction2',
-                    'T1AirFactory',
                 }
             }
         }
@@ -65,7 +61,10 @@ BuilderGroup {
             DesiresAssist = false,
             Construction = {
                 BuildStructures = {
+                    'T1GroundDefense',
                     'T1EnergyProduction',
+                    'T1EnergyProduction',
+                    'T1AirFactory',
                 }
             }
         }

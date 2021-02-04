@@ -38,22 +38,15 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	
 	'STRUCTURE',
         'MASSPRODUCTION',
         'MASSEXTRACTION',
                 'ECONOMIC',
         'SORTECONOMY',
-
-	
 	'CORE',
 	'METAL',
 	'EXTRACTOR',
 	'LEVEL3',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',

@@ -43,7 +43,7 @@ BuilderGroup {
             DesiresAssist = true,
             Construction = {
                 BuildStructures = {
-                    'T1LandFactory',
+                    'T1LandFactory2',
                 }
             }
         }

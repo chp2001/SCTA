@@ -73,31 +73,6 @@ PlatoonTemplate {
     }
 }
 
-
-PlatoonTemplate {
-    Name = 'T1LandScoutSCTA2',
-    FactionSquads = {
-        UEF = {
-            { 'uel0101', 1, 1, 'scout', 'none' }
-        },
-        Aeon = {
-            { 'ual0101', 1, 1, 'scout', 'none' }
-        },
-        Cybran = {
-            { 'url0101', 1, 1, 'scout', 'none' }
-        },
-        Seraphim = {
-            { 'xsl0101', 1, 1, 'scout', 'none' }
-        },
-        Arm = {
-            { 'armfav', 1, 1, 'scout', 'none' }
-        },
-        Core = {
-            { 'corvoyr', 1, 1, 'scout', 'none' }
-        },
-    }
-}
-
 PlatoonTemplate {
     Name = 'T1AirScoutSCTA',
     FactionSquads = {
@@ -199,33 +174,6 @@ PlatoonTemplate {
 
 
 PlatoonTemplate {
-    Name = 'T1LandDFBotSCTA2',
-    FactionSquads = {
-        UEF = {
-            { 'uel0106', 1, 1, 'attack', 'None' }
-        },
-        Aeon = {
-            { 'ual0106', 1, 1, 'attack', 'None' }
-        },
-        Cybran = {
-            { 'url0106', 1, 1, 'attack', 'None' }
-        },
-        Seraphim = {
-            { 'xsl0201', 1, 1, 'attack', 'None' }
-        },
-        Nomads = {
-            { 'xnl0106', 1, 1, 'Attack', 'none' }
-        },
-        Arm = {
-            { 'armflash', 1, 3, 'attack', 'none' }
-        },
-        Core = {
-            { 'corak', 1, 3, 'attack', 'none' }
-        },
-    }
-}
-
-PlatoonTemplate {
     Name = 'T1LandArtillerySCTA',
     FactionSquads = {
         UEF = {
@@ -248,6 +196,7 @@ PlatoonTemplate {
         },
     }
 }
+
 
 PlatoonTemplate {
     Name = 'T1BuildEngineerSCTA',
@@ -297,26 +246,65 @@ PlatoonTemplate {
     }
 }
 
+
+
 PlatoonTemplate {
-    Name = 'T1LandDFTankSCTA',
+    Name = 'T1LandDFBotSCTA2',
     FactionSquads = {
-        UEF = {
-            { 'uel0201', 1, 1, 'attack', 'none' }
-        },
-        Aeon = {
-            { 'ual0201', 1, 1, 'attack', 'none' }
-        },
-        Cybran = {
-            { 'url0107', 1, 1, 'attack', 'none' }
-        },
-        Seraphim = {
-            { 'xsl0201', 1, 1, 'attack', 'none' }
-        },
         Arm = {
-            { 'armwar', 1, 1, 'attack', 'none' }
+            { 'armflash', 1, 3, 'attack', 'none' }
         },
         Core = {
-            { 'corraid', 1, 1, 'attack', 'none' }
+            { 'corak', 1, 3, 'attack', 'none' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T1LandScoutSCTA2',
+    FactionSquads = {
+        Arm = {
+            { 'armfav', 1, 1, 'scout', 'none' }
+        },
+        Core = {
+            { 'corvoyr', 1, 1, 'scout', 'none' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T1LandArtillerySCTA2',
+    FactionSquads = {
+        Arm = {
+            { 'armsam', 1, 1, 'attack', 'none' }
+        },
+        Core = {
+            { 'corthud', 1, 1, 'attack', 'none' }
+        },
+    }
+}
+
+
+PlatoonTemplate {
+    Name = 'T1LandAASCTA2',
+    FactionSquads = {
+        Arm = {
+            { 'armsam', 1, 1, 'attack', 'none' }
+        },
+        Core = {
+            { 'corcrash', 1, 1, 'attack', 'none' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T1LandDFTankSCTA2',
+    FactionSquads = {
+        Arm = {
+            { 'armstump', 1, 1, 'attack', 'none' }
+        },
+        Core = {
+            { 'corstorm', 1, 1, 'attack', 'none' }
         },
     }
 }

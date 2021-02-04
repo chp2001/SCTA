@@ -38,6 +38,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'ARM',
         'KBOT',
+        'TANK',
 	'LEVEL1',
     },
     Defense = {
@@ -92,7 +93,7 @@ UnitBlueprint {
         UnitName = 'Rocko',
     },
     Intel = {
-        VisionRadius = 16,
+        VisionRadius = 10,
     },
     Interface = {
         HelpText = 'Rocket Kbot',

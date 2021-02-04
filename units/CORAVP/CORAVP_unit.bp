@@ -39,11 +39,11 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'STRUCTURE',
 	'CONSTRUCTION',
-	'TEXTUREANIM',
 	'CORE',
 	'SORTCONSTRUCTION',
 	'LEVEL2',
-	'LAND',
+    'LAND', 
+    'PRIMARY',
     },
     Defense = {
         ArmorType = 'Structure',

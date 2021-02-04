@@ -14,8 +14,7 @@ BuilderGroup {
         PlatoonAddFunctions = { {SAI, 'BuildOnce'}, },
         Priority = 90,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.DIRECTFIRE * categories.MOBILE,
-                                       '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
+            { UCBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'All',
     },
@@ -56,6 +55,57 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory AntiAir',
         PlatoonTemplate = 'T1LandAASCTA',
+        Priority = 85,
+        BuilderConditions = {
+            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, -- Build AA if the enemy is threatening our base with air units.
+            { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,
+                                       '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
+        },
+        BuilderType = 'All',
+    },
+
+    Builder {
+        BuilderName = 'SCTAAi Factory2 BOT',
+        PlatoonTemplate = 'T1LandDFBotSCTA2',
+        PlatoonAddFunctions = { {SAI, 'BuildOnce'}, },
+        Priority = 95,
+        BuilderConditions = {
+            { UCBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
+        },
+        BuilderType = 'All',
+    },
+
+    Builder {
+        BuilderName = 'SCTAAi Factory2 Scout',
+        PlatoonTemplate = 'T1LandScoutSCTA2',
+        Priority = 90,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.MOBILE * categories.LAND } },
+        },
+        BuilderType = 'All',
+    },
+
+    Builder {
+        BuilderName = 'SCTAAi Factory2 Tank',
+        PlatoonTemplate = 'T1LandDFTankSCTA2',
+        Priority = 90,
+        BuilderConditions = {
+            {  UCBC, 'HaveLessThanUnitsWithCategory', { 20, categories.TANK } }, -- Don't make tanks if we have lots of them.
+        },
+        BuilderType = 'All',
+    },
+
+    Builder {
+        BuilderName = 'SCTAAi Factory2 Artillery',
+        PlatoonTemplate = 'T1LandArtillerySCTA2',
+        Priority = 70,
+        BuilderConditions = { },
+        BuilderType = 'All',
+    },
+
+    Builder {
+        BuilderName = 'SCTAAi Factory2 AntiAir',
+        PlatoonTemplate = 'T1LandAASCTA2',
         Priority = 85,
         BuilderConditions = {
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, -- Build AA if the enemy is threatening our base with air units.

@@ -26,7 +26,8 @@ BuilderGroup {
             Construction = {	
                 BuildStructures = { -- The buildings to make	
                 'T1LandFactory',	
-                'T1EnergyProduction',	
+                'T1EnergyProduction',
+                'T1Resource',
                 'T1EnergyProduction',	
                 'T1Resource', -- Mass Extractor		
                 'T1EnergyProduction',	
@@ -111,6 +112,7 @@ BuilderGroup {
             Construction = {
                 BuildStructures = {
                     'T1LandFactory',
+                    'T1LandFactory2',
                 }
             }
         }

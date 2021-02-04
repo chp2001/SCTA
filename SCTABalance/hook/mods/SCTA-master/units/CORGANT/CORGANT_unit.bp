@@ -17,7 +17,7 @@ UnitBlueprint {
         'LAND',
         'CORE',
         'STRATEGIC',
-            'SORTCONSTRUCTION',
+        'SORTCONSTRUCTION',
         'LEVEL3',  
     },
     Defense = {

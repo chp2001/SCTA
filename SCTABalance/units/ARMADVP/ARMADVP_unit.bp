@@ -40,6 +40,7 @@ UnitBlueprint {
 	    'STRUCTURE',
 	    'CONSTRUCTION',
         'LAND', 
+        'SECONDARY',
 	'ARM',
     'PLANT',
 	'SORTCONSTRUCTION',

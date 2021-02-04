@@ -28,7 +28,7 @@ Platoon = Class(SCTAAIPlatoon) {
         end
 
         --DUNCAN - added
-        if eng:IsUnitState('Building') or eng:IsUnitState('Upgrading') or eng:IsUnitState("Enhancing") then
+        if eng:IsUnitState('Building') or eng:IsUnitState('Upgrading') then
            return
         end
 

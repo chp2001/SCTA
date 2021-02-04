@@ -1,7 +1,9 @@
 function CreateInitialArmyGroup(strArmy, createCommander)
 	CreateWind()
 	local tblGroup = CreateArmyGroup(strArmy, 'INITIAL')
-    local cdrUnit = false
+	local cdrUnit = false
+	local factionIndex
+	local initialUnitName
     if createCommander and ( tblGroup == nil or 0 == table.getn(tblGroup) )  then
 		local ABrain = GetArmyBrain(strArmy);
 		if(ABrain.BrainType == 'Human') then
@@ -17,8 +19,17 @@ function CreateInitialArmyGroup(strArmy, createCommander)
 			local cdrUnit = false
 		
 			if createCommander and ( tblGroup == nil or 0 == table.getn(tblGroup) ) then
-				local factionIndex = GetArmyBrain(strArmy):GetFactionIndex()
-				local initialUnitName = import('/lua/factions.lua').Factions[factionIndex].InitialUnit
+				local per = ScenarioInfo.ArmySetup[ABrain.Name].AIPersonality
+				if per == 'sctaaiarm' or per == 'sctaaiarmcheat' then
+				    factionIndex = 6
+					initialUnitName = 'armcom'
+				elseif per == 'sctaaicore' or per == 'sctaaicorecheat' then
+					factionIndex = 7
+					initialUnitName = 'corcom'
+				else
+					factionIndex = GetArmyBrain(strArmy):GetFactionIndex()
+					initialUnitName = import('/lua/factions.lua').Factions[factionIndex].InitialUnit
+				end
 				cdrUnit = CreateInitialArmyUnit(strArmy, initialUnitName)
 				if EntityCategoryContains(categories.COMMAND, cdrUnit) then
 					if ScenarioInfo.Options['PrebuiltUnits'] == 'Off' then

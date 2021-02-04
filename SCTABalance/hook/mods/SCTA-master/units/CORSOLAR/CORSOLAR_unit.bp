@@ -6,7 +6,7 @@ UnitBlueprint {
         MaxHealth = 600,
       },
       Display = {
-        UniformScale = 0.10,
+        UniformScale = 0.1,
     },
   Economy = {
         BuildCostMass = 180,
@@ -35,8 +35,8 @@ UnitBlueprint {
         VisionRadius = 8,
         WaterVisionRadius = 8,
       },
-    SelectionSizeX = 1.3,
-    SelectionSizeZ = 1.3,
+    SelectionSizeX = 1.5,
+    SelectionSizeZ = 1.5,
     SelectionThickness = 0.6,
     SizeX = 3,
     SizeY = 1.8,

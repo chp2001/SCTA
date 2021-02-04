@@ -13,8 +13,11 @@ TAweapon = Class(DefaultWeapon) {
     OnGotTargetCheck = function(self)
         local army = self.unit:GetArmy()
         local canSee = true
-
         local target = self:GetCurrentTarget()
+        local aiBrain = self.unit:GetAIBrain()
+        if aiBrain.SCTAAI then
+        return true
+        else
         if (target) then
             if (IsUnit(target)) then
                 canSee = target:GetBlip(army):IsSeenNow(army)
@@ -29,20 +32,21 @@ TAweapon = Class(DefaultWeapon) {
             currentTarget = currentTarget:GetSource()
         end
 
-        if canSee or
-        TAutils.ArmyHasTargetingFacility(self.unit:GetArmy()) or
-        currentTarget == target or 
-        (target and IsProp(target)) then
+        if (canSee == true or 
+        TAutils.ArmyHasTargetingFacility(army) == true or
+        currentTarget == target or
+        (target and IsProp(target))) then
              return true
         else
             self:ResetTarget()
-            return nil
+            return false
         end
+    end
     end,
 
     IdleState = State(DefaultWeapon.IdleState) {
         OnGotTarget = function(self)
-            if (self:OnGotTargetCheck()) then
+            if (self:OnGotTargetCheck() == true) then
                 DefaultWeapon.IdleState.OnGotTarget(self)
             end
         end,
@@ -50,7 +54,7 @@ TAweapon = Class(DefaultWeapon) {
 
     WeaponUnpackingState = State(DefaultWeapon.WeaponUnpackingState) {
         Main = function(self)
-            if (self:OnGotTargetCheck()) then
+            if (self:OnGotTargetCheck() == true) then
                 DefaultWeapon.WeaponUnpackingState.Main(self)
             else
                 ChangeState(self, self.WeaponPackingState)
@@ -58,7 +62,7 @@ TAweapon = Class(DefaultWeapon) {
         end,
 
         OnGotTarget = function(self)
-            if (self:OnGotTargetCheck()) then
+            if (self:OnGotTargetCheck() == true) then
                 DefaultWeapon.WeaponUnpackingState.OnGotTarget(self)
             end
         end,
@@ -70,7 +74,7 @@ TAweapon = Class(DefaultWeapon) {
 
         Main = function(self)
             local bp = self:GetBlueprint()
-            if (bp.CountedProjectile and bp.WeaponUnpacks) then
+            if (bp.CountedProjectile == true and bp.WeaponUnpacks == true) then
                 self.unit:SetBusy(true)
             else
                 self.unit:SetBusy(false)
@@ -85,14 +89,14 @@ TAweapon = Class(DefaultWeapon) {
                 aiBrain:TakeResource('Energy', bp.EnergyRequired)
                 self.WeaponCanFire = true
             end
-            if bp.CountedProjectile then
+            if bp.CountedProjectile == true then
                 ChangeState(self, self.RackSalvoFiringState)
             end
 
         end,
 
         OnGotTarget = function(self)
-            if (self:OnGotTargetCheck()) then
+            if (self:OnGotTargetCheck() == true) then
                 DefaultWeapon.RackSalvoFireReadyState.OnGotTarget(self)
             end
         end,
@@ -105,7 +109,7 @@ TAweapon = Class(DefaultWeapon) {
 
         OnLostTarget = function(self)
             local bp = self:GetBlueprint()
-            if bp.WeaponUnpacks then
+            if bp.WeaponUnpacks == true then
                 ChangeState(self, self.WeaponPackingState)
             end
         end,
@@ -114,7 +118,7 @@ TAweapon = Class(DefaultWeapon) {
 
     WeaponPackingState = State(DefaultWeapon.WeaponPackingState) {
         OnGotTarget = function(self)
-            if (self:OnGotTargetCheck()) then
+            if (self:OnGotTargetCheck() == true) then
                 DefaultWeapon.WeaponPackingState.OnGotTarget(self)
             end
         end,
@@ -191,7 +195,7 @@ TACommanderDeathWeapon = Class(BareBonesWeapon) {
     end,
 }
 
-TADGun = Class(TAweapon) {
+TADGun = Class(DefaultWeapon) {
     EnergyRequired = nil,
 
     HasEnergy = function(self)
@@ -239,7 +243,7 @@ TADGun = Class(TAweapon) {
     end,
 
         OnCreate = function(self)
-            TAweapon.OnCreate(self)
+            DefaultWeapon.OnCreate(self)
             self.EnergyRequired = self:GetBlueprint().EnergyRequired
             self.unit:SetWeaponEnabledByLabel('DGun', true)
             self.unit:SetWeaponEnabledByLabel('AutoDGun', false)

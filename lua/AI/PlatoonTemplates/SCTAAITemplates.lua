@@ -67,18 +67,6 @@ PlatoonTemplate {
 
 
 PlatoonTemplate {
-    Name = 'T1LandScoutSCTA',
-    FactionSquads = {
-        Arm = {
-            { 'armflea', 1, 1, 'scout', 'none' }
-        },
-        Core = {
-            { 'corfav', 1, 1, 'scout', 'none' }
-        },
-    }
-}
-
-PlatoonTemplate {
     Name = 'T1AirScoutSCTA',
     FactionSquads = {
         Arm = {
@@ -95,11 +83,11 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armfig', 1, 3, 'attack', 'GrowthFormation' },
-            { 'armca', 1, 1, 'attack', 'GrowthFormation' },
+            { 'armca', 1, 1, 'support', 'GrowthFormation' },
         },
         Core = {
             { 'corveng', 1, 3, 'attack', 'GrowthFormation' },
-            { 'corca', 1, 1, 'attack', 'GrowthFormation' },
+            { 'corca', 1, 1, 'support', 'GrowthFormation' },
         },
     }
 }
@@ -109,11 +97,26 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armthund', 1, 2, 'attack', 'GrowthFormation' },
-            { 'armca', 1, 1, 'attack', 'GrowthFormation' },
+            { 'armca', 1, 1, 'support', 'GrowthFormation' },
         },
         Core = {
-            { 'corshad', 1, 2, 'attack', 'GrowthFormation' }
-            { 'corca', 1, 1, 'attack', 'GrowthFormation' },
+            { 'corshad', 1, 2, 'attack', 'GrowthFormation' },
+            { 'corca', 1, 1, 'support', 'GrowthFormation' },
+        },
+    }
+}
+
+----PrimaryLand
+
+
+PlatoonTemplate {
+    Name = 'T1LandScoutSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armflea', 1, 1, 'scout', 'none' }
+        },
+        Core = {
+            { 'corfav', 1, 1, 'scout', 'none' }
         },
     }
 }
@@ -186,17 +189,17 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armwar', 1, 2, 'attack', 'none' },
-            { 'armck', 1, 1, 'attack', 'none' },
+            { 'armck', 1, 1, 'support', 'none' },
             { 'armrock', 1, 1, 'attack', 'none' },
         },
         Core = {
-            { 'corraid', 1, 1, 'attack', 'none' },
-            { 'corcv', 1, 1, 'attack', 'none' },
+            { 'corraid', 1, 3, 'attack', 'none' },
+            { 'corcv', 1, 1, 'support', 'none' },
         },
     }
 }
 
-
+-----SecondaryLand
 
 PlatoonTemplate {
     Name = 'T1LandDFBotSCTA2',
@@ -329,11 +332,11 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armhawk', 1, 3, 'attack', 'GrowthFormation' },
-            { 'armaca', 1, 1, 'attack', 'GrowthFormation' },
+            { 'armaca', 1, 1, 'support', 'GrowthFormation' },
         },
         Core = {
-            { 'corvampg', 1, 3, 'attack', 'GrowthFormation' },
-            { 'coraca', 1, 1, 'attack', 'GrowthFormation' },
+            { 'corvamp', 1, 3, 'attack', 'GrowthFormation' },
+            { 'coraca', 1, 1, 'support', 'GrowthFormation' },
         },
     }
 }

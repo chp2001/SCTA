@@ -156,8 +156,11 @@ BuilderGroup {
         BuilderName = 'SCTAAi Experimental',
         PlatoonTemplate = 'SCTAExperimental',
         Priority = 130,
-        BuilderConditions = {},
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 5, categories.EXPERIMENTAL * categories.MOBILE } },
+        },
         BuilderType = 'All',
     },
 }
 
+----needFigureOutMassEco and KnowingHowPauseFactoriesForAi

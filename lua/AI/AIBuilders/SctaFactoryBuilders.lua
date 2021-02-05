@@ -118,7 +118,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI Gantry Factory',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
+        PlatoonTemplate = 'EngineerBuilderSCTA2',
         Priority = 120,
         InstanceCount = 1,
         BuilderConditions = {

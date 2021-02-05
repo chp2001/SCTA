@@ -30,8 +30,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer MetalMaker',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 75,
-        InstanceCount = 1,
+        Priority = 90,
+        InstanceCount = 2,
         BuilderConditions = {
                 { MIBC, 'GreaterThanGameTime', {1250} }, -- Don't make tanks if we have lots of them.
             },

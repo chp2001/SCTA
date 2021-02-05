@@ -34,7 +34,6 @@ BuilderGroup {
                 'T1EnergyProduction',	
                 'T1EnergyProduction2',
                 'T1LandFactory2',
-                'T1Radar',
                 }	
             }	
         }	
@@ -45,7 +44,7 @@ BuilderGroup {
         Priority = 100,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 60, -500, 0, 0, 'AntiSurface', 1}},
+            { MIBC, 'LessThanGameTime', {750} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -61,7 +60,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI ACU T1Pgen',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 60,
+        Priority = 90,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.WIND} },
@@ -72,9 +71,7 @@ BuilderGroup {
             DesiresAssist = false,
             Construction = {
                 BuildStructures = {
-                    'T1EnergyProduction',
                     'T1EnergyProduction2',
-                    'T1AirFactory',
                 }
             }
         }
@@ -82,11 +79,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Commander LandFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 90,
+        Priority = 95,
         InstanceCount = 1,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, 'FACTORY LAND TECH1' } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.FACTORY * categories.LEVEL1 * categories.LAND } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -95,9 +92,29 @@ BuilderGroup {
             Construction = {
                 BuildStructures = {
                     'T1LandFactory',
-                    'T1LandFactory2',
+                }
+            }
+        }
+    },    
+    Builder {
+        BuilderName = 'SCTAAI T1Commander AirFac',
+        PlatoonTemplate = 'CommanderBuilderSCTA',
+        Priority = 95,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 5, categories.FACTORY * categories.LEVEL1 * categories.AIR } }, -- Stop after 10 facs have been built.
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            Construction = {
+                BuildStructures = {
+                    'T1AirFactory',
                 }
             }
         }
     },
+
 }

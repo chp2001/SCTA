@@ -1,6 +1,6 @@
 WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset platoon.lua' )
 
-local SCTAAIPlatoon = Platoon
+SCTAAIPlatoon = Platoon
 Platoon = Class(SCTAAIPlatoon) {
     EngineerBuildAISCTA = function(self)
         local aiBrain = self:GetBrain()
@@ -234,43 +234,18 @@ Platoon = Class(SCTAAIPlatoon) {
         elseif cons.AvoidCategory then
             relative = false
             local pos = aiBrain.BuilderManagers[eng.BuilderManagerData.LocationType].EngineerManager.Location
-            local cat = cons.AdjacencyCategory
-            -- convert text categories like 'MOBILE AIR' to 'categories.MOBILE * categories.AIR'
-            if type(cat) == 'string' then
-                cat = ParseEntityCategory(cat)
-            end
             local avoidCat = cons.AvoidCategory
             -- convert text categories like 'MOBILE AIR' to 'categories.MOBILE * categories.AIR'
             if type(avoidCat) == 'string' then
                 avoidCat = ParseEntityCategory(avoidCat)
             end
-            local radius = (cons.AdjacencyDistance or 50)
+            local radius = 50
             if not pos or not pos then
                 coroutine.yield(1)
                 self:PlatoonDisband()
                 return
             end
             reference  = AIUtils.FindUnclutteredArea(aiBrain, cat, pos, radius, cons.maxUnits, cons.maxRadius, avoidCat)
-            buildFunction = AIBuildStructures.AIBuildAdjacency
-            table.insert(baseTmplList, baseTmpl)
-        elseif cons.AdjacencyCategory then
-            relative = false
-            local pos = aiBrain.BuilderManagers[eng.BuilderManagerData.LocationType].EngineerManager.Location
-            local cat = cons.AdjacencyCategory
-            -- convert text categories like 'MOBILE AIR' to 'categories.MOBILE * categories.AIR'
-            if type(cat) == 'string' then
-                cat = ParseEntityCategory(cat)
-            end
-            local radius = (cons.AdjacencyDistance or 50)
-            local radius = (cons.AdjacencyDistance or 50)
-            if not pos or not pos then
-                coroutine.yield(1)
-                self:PlatoonDisband()
-                return
-            end
-            reference  = AIUtils.GetOwnUnitsAroundPoint(aiBrain, cat, pos, radius, cons.ThreatMin,
-                                                        cons.ThreatMax, cons.ThreatRings)
-            buildFunction = AIBuildStructures.AIBuildAdjacency
             table.insert(baseTmplList, baseTmpl)
         else
             table.insert(baseTmplList, baseTmpl)
@@ -333,6 +308,29 @@ Platoon = Class(SCTAAIPlatoon) {
             return self.ProcessBuildCommand(eng, false)
         end
     end,
+
+    SCTAManagerEngineerAssistAI = function(self)
+        local aiBrain = self:GetBrain()
+        local assistData = self.PlatoonData.Assist
+        local beingBuilt = false
+        self:SorianEconAssistBody()
+        WaitSeconds(assistData.Time or 60)
+        local eng = self:GetPlatoonUnits()[1]
+        if eng:GetGuardedUnit() then
+            beingBuilt = eng:GetGuardedUnit()
+        end
+        if beingBuilt and assistData.AssistUntilFinished then
+            while beingBuilt:IsUnitState('Building') or beingBuilt:IsUnitState('Upgrading') do
+                WaitSeconds(5)
+            end
+        end
+        if not aiBrain:PlatoonExists(self) then --or assistData.PermanentAssist then
+            SUtils.AISendPing(eng:GetPosition(), 'move', aiBrain:GetArmyIndex())
+            return
+        end
+        self:PlatoonDisband()
+    end,
+
 
     UnitUpgradeAI = function(self)
         local aiBrain = self:GetBrain()

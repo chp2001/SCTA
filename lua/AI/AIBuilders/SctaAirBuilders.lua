@@ -36,5 +36,15 @@ BuilderGroup {
             { EBC, 'GreaterThanEconStorageRatio', { 0.0, 0.7}},
         },
         BuilderType = 'All',
+    },   
+     
+    Builder {
+        BuilderName = 'SCTAAi AirFactory Engineer',
+        PlatoonTemplate = 'T1BuildEngineerAirSCTA',
+        Priority = 100, -- Top factory priority
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENGINEER * categories.AIR} }, -- Build engies until we have 4 of them.
+        },
+        BuilderType = 'All',
     },
 }

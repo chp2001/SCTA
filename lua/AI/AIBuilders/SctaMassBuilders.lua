@@ -25,4 +25,21 @@ BuilderGroup {
             }
         }
     },
+    Builder {
+        BuilderName = 'SCTAAI T2Engineer Mex',
+        PlatoonTemplate = 'EngineerBuilderSCTA2',
+        Priority = 100,
+        InstanceCount = 2, -- The max number concurrent instances of this builder.
+        BuilderConditions = { },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+                BuildStructures = {
+                    'T2Resource',
+                }
+            }
+        }
+    },
 }

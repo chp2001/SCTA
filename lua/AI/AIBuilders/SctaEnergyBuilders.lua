@@ -13,14 +13,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Hydro',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 90,
-        InstanceCount = 2,
-        BuilderConditions = { -- The build conditions determine if this builder is available to be used or not.	
-        },
+        Priority = 100,
+        BuilderConditions = {
+                { SBC, 'CanBuildOnHydroLessThanDistance', { 'LocationType', 200, -500, 0, 0, 'AntiSurface', 1 }},
+            },
         BuilderType = 'Any',
         BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = false,
             Construction = {
                 BuildStructures = {
                     'T1HydroCarbon',
@@ -61,10 +59,7 @@ BuilderGroup {
             DesiresAssist = false,
             Construction = {
                 BuildStructures = {
-                    'T1GroundDefense',
                     'T1EnergyProduction',
-                    'T1EnergyProduction',
-                    'T1AirFactory',
                 }
             }
         }
@@ -74,7 +69,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 50,
         BuilderConditions = {
-                { MIBC, 'GreaterThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
+                { MIBC, 'GreaterThanGameTime', {750} }, -- Don't make tanks if we have lots of them.
                 { SIBC, 'LessThanEconEfficiencyOverTime', { 0.91, 2.0}},
                 { SIBC, 'GreaterThanEconEfficiencyOverTime', { 0.4, 1.25}},
                 { EBC, 'LessThanEconStorageRatio', { 0.75, 2 } },
@@ -85,12 +80,52 @@ BuilderGroup {
         BuilderData = {
             NumAssistees = 2,
             Construction = {
+                DesiresAssist = true,
                 BuildClose = true,
-                AdjacencyCategory = 'ENERGYPRODUCTION',
                 BuildStructures = {
                     'T1MassCreation',
                 },
             }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T2Engineer Pgen',
+        PlatoonTemplate = 'EngineerBuilderSCTA2',
+        Priority = 90,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {750} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LEVEL2, categories.ENERGYPRODUCTION} },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            Construction = {
+                BuildStructures = {
+                    'T2EnergyProduction',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'Engineer SCTA Assistance',
+        PlatoonTemplate = 'EngineerBuilderSCTAFIELD',
+        Priority = 500,
+        InstanceCount = 50,
+        BuilderConditions = {
+            { IBC, 'BrainNotLowPowerMode', {} },
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'ALLUNITS' } },
+            { SIBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.1 }},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                PermanentAssist = false,
+                AssisteeType = 'Engineer',
+                Time = 30,
+            },
         }
     },
 }

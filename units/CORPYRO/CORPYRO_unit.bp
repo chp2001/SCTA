@@ -39,6 +39,7 @@ UnitBlueprint {
         'CORE',
         'KBOT',
 	'LEVEL2',
+    'PYRO',
     },
     Defense = {
         ArmorType = 'Normal',

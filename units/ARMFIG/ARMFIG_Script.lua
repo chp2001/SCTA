@@ -48,11 +48,7 @@ ARMFIG = Class(TAair) {
 					--TURN base to z-axis <0> SPEED <120.02>
 					self.Spinners.base:SetGoal(0)
 					self.Spinners.base:SetSpeed(120)
-
-					WaitFor(self.Spinners.base)
-
-					self.Spinners.base:SetSpeed(0)
-					self.Spinners.base:ClearGoal()	
+				
 				end
 			end
 			WaitSeconds(2)

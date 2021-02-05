@@ -32,7 +32,7 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.WIND} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.WIND} },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -48,10 +48,9 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 50,
+        Priority = 70,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'LessThanEconStorageRatio', { 1.1, 0.99}}, -- If less than full energy, build a pgen.
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -65,37 +64,13 @@ BuilderGroup {
         }
     },  
     Builder {
-        BuilderName = 'SCTAAI T1Engineer MetalMaker',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 50,
-        BuilderConditions = {
-                { MIBC, 'GreaterThanGameTime', {750} }, -- Don't make tanks if we have lots of them.
-                { SIBC, 'LessThanEconEfficiencyOverTime', { 0.91, 2.0}},
-                { SIBC, 'GreaterThanEconEfficiencyOverTime', { 0.4, 1.25}},
-                { EBC, 'LessThanEconStorageRatio', { 0.75, 2 } },
-                { SIBC, 'HaveGreaterThanUnitsWithCategory', { 6, 'ENERGYPRODUCTION' } },
-                { IBC, 'BrainNotLowPowerMode', {} },
-            },
-        BuilderType = 'Any',
-        BuilderData = {
-            NumAssistees = 2,
-            Construction = {
-                DesiresAssist = true,
-                BuildClose = true,
-                BuildStructures = {
-                    'T1MassCreation',
-                },
-            }
-        }
-    },
-    Builder {
         BuilderName = 'SCTAAI T2Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA2',
-        Priority = 90,
-        InstanceCount = 2,
+        Priority = 110,
+        InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {750} }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LEVEL2, categories.ENERGYPRODUCTION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.LEVEL2 * categories.ENERGYPRODUCTION} },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -106,26 +81,6 @@ BuilderGroup {
                     'T2EnergyProduction',
                 }
             }
-        }
-    },
-    Builder {
-        BuilderName = 'Engineer SCTA Assistance',
-        PlatoonTemplate = 'EngineerBuilderSCTAFIELD',
-        Priority = 500,
-        InstanceCount = 50,
-        BuilderConditions = {
-            { IBC, 'BrainNotLowPowerMode', {} },
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'ALLUNITS' } },
-            { SIBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.1 }},
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                PermanentAssist = false,
-                AssisteeType = 'Engineer',
-                Time = 30,
-            },
         }
     },
 }

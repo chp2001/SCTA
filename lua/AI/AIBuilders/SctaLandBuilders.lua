@@ -118,7 +118,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT2 Engineer',
         PlatoonTemplate = 'T2BuildEngineerSCTA',
-        Priority = 100, -- Top factory priority
+        Priority = 110, -- Top factory priority
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.ENGINEER * categories.LEVEL2 - categories.FIELDENGINEER } }, -- Build engies until we have 4 of them.
         },
@@ -127,7 +127,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT2 Tank',
         PlatoonTemplate = 'T2LandDFTankSCTA',
-        Priority = 90,
+        Priority = 100,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL2 * categories.DIRECTFIRE,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
@@ -137,7 +137,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Artillery',
         PlatoonTemplate = 'T2LandMissileSCTA',
-        Priority = 70,
+        Priority = 85,
         BuilderConditions = { },
         BuilderType = 'All',
     },
@@ -152,4 +152,12 @@ BuilderGroup {
         },
         BuilderType = 'All',
     },
+    Builder {
+        BuilderName = 'SCTAAi Experimental',
+        PlatoonTemplate = 'SCTAExperimental',
+        Priority = 130,
+        BuilderConditions = {},
+        BuilderType = 'All',
+    },
 }
+

@@ -67,6 +67,8 @@ BuilderGroup {
             Construction = {
                 BuildStructures = {
                     'T1AirFactory',
+                    'T1EnergyProduction2',
+                    'T1EnergyProduction2',
                 }
             }
         }
@@ -79,7 +81,7 @@ BuilderGroup {
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { MIBC, 'GreaterThanGameTime', {750} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -110,6 +112,27 @@ BuilderGroup {
             Construction = {
                 BuildStructures = {
                     'T2AirFactory',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI Gantry Factory',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 120,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
+            { MIBC, 'GreaterThanGameTime', {1800} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.GATE} }, -- Stop after 10 facs have been built.
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            Construction = {
+                BuildStructures = {
+                    'T3QuantumGate',
                 }
             }
         }

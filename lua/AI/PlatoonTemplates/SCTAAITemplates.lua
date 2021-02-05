@@ -45,7 +45,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTA',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
-        { categories.ENGINEER * categories.LEVEL1, 1, 1, 'support', 'None' }
+        { categories.ENGINEER * categories.LEVEL1, 1, 3, 'support', 'None' }
     },
 }
 
@@ -53,18 +53,9 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTA2',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
-        { categories.ENGINEER * categories.LEVEL2 - categories.FIELDENGINEER , 1, 1, 'support', 'None' }
+        { categories.ENGINEER * categories.LEVEL2, 1, 3, 'support', 'None' }
     },
 }
-
-PlatoonTemplate {
-    Name = 'EngineerBuilderSCTAFIELD',
-    Plan = 'SCTAManagerEngineerAssistAI',
-    GlobalSquads = {
-        { categories.FIELDENGINEER, 1, 1, 'support', 'None' }
-    },
-}
-
 
 PlatoonTemplate {
     Name = 'T1AirScoutSCTA',
@@ -83,11 +74,9 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armfig', 1, 3, 'attack', 'GrowthFormation' },
-            { 'armca', 1, 1, 'support', 'GrowthFormation' },
         },
         Core = {
             { 'corveng', 1, 3, 'attack', 'GrowthFormation' },
-            { 'corca', 1, 1, 'support', 'GrowthFormation' },
         },
     }
 }
@@ -97,11 +86,9 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armthund', 1, 2, 'attack', 'GrowthFormation' },
-            { 'armca', 1, 1, 'support', 'GrowthFormation' },
         },
         Core = {
             { 'corshad', 1, 2, 'attack', 'GrowthFormation' },
-            { 'corca', 1, 1, 'support', 'GrowthFormation' },
         },
     }
 }
@@ -125,10 +112,12 @@ PlatoonTemplate {
     Name = 'T1LandDFBotSCTA',
     FactionSquads = {
         Arm = {
-            { 'armpw', 1, 3, 'attack', 'none' }
+            { 'armpw', 1, 3, 'attack', 'none' },
+            { 'armck', 1, 1, 'support', 'None' },
         },
         Core = {
-            { 'corgator', 1, 3, 'attack', 'none' }
+            { 'corgator', 1, 3, 'attack', 'none' },
+            { 'corcv', 1, 1, 'support', 'None' },
         },
     }
 }
@@ -171,6 +160,18 @@ PlatoonTemplate {
     }
 }
 
+PlatoonTemplate {
+    Name = 'T2BuildEngineerAirSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armaca', 1, 1, 'support', 'None' }
+        },
+        Core = {
+            { 'coraca', 1, 1, 'support', 'None' }
+        },
+    }
+}
+
 
 PlatoonTemplate {
     Name = 'T1LandAASCTA',
@@ -188,13 +189,11 @@ PlatoonTemplate {
     Name = 'T1LandDFTankSCTA',
     FactionSquads = {
         Arm = {
-            { 'armwar', 1, 2, 'attack', 'none' },
-            { 'armck', 1, 1, 'support', 'none' },
-            { 'armrock', 1, 1, 'attack', 'none' },
+            { 'armwar', 1, 6, 'attack', 'none' },
+            { 'armrock', 1, 4, 'attack', 'none' },
         },
         Core = {
             { 'corraid', 1, 3, 'attack', 'none' },
-            { 'corcv', 1, 1, 'support', 'none' },
         },
     }
 }
@@ -254,10 +253,10 @@ PlatoonTemplate {
     Name = 'T1LandDFTankSCTA2',
     FactionSquads = {
         Arm = {
-            { 'armstump', 1, 1, 'attack', 'none' }
+            { 'armstump', 1, 2, 'attack', 'none' }
         },
         Core = {
-            { 'corstorm', 1, 1, 'attack', 'none' }
+            { 'corstorm', 1, 2, 'attack', 'none' }
         },
     }
 }
@@ -280,22 +279,10 @@ PlatoonTemplate {
     Name = 'T2BuildEngineerSCTA',
     FactionSquads = {
         Arm = {
-            { 'armack', 1, 1, 'support', 'None' }
+            { 'armack', 1, 3, 'support', 'None' }
         },
         Core = {
-            { 'coracv', 1, 1, 'support', 'None' }
-        },
-    }
-}
-
-PlatoonTemplate {
-    Name = 'T2SupportSCTA',
-    FactionSquads = {
-        Arm = {
-            { 'armfark', 1, 1, 'support', 'None' }
-        },
-        Core = {
-            { 'cornecro', 1, 1, 'support', 'None' }
+            { 'coracv', 1, 3, 'support', 'None' }
         },
     }
 }
@@ -332,11 +319,9 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armhawk', 1, 3, 'attack', 'GrowthFormation' },
-            { 'armaca', 1, 1, 'support', 'GrowthFormation' },
         },
         Core = {
             { 'corvamp', 1, 3, 'attack', 'GrowthFormation' },
-            { 'coraca', 1, 1, 'support', 'GrowthFormation' },
         },
     }
 }
@@ -349,6 +334,18 @@ PlatoonTemplate {
         },
         Core = {
             { 'corhurc', 1, 2, 'attack', 'GrowthFormation' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'SCTAExperimental',
+    FactionSquads = {
+        Arm = {
+            { 'armdrake', 1, 1, 'attack', 'none' },
+        },
+        Core = {
+            { 'corkrog', 1, 1, 'attack', 'none' },
         },
     }
 }

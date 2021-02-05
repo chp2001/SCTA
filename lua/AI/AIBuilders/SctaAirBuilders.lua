@@ -60,11 +60,20 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Factory Stealth',
         PlatoonTemplate = 'T2AirFighterSCTA',
-        Priority = 90,
+        Priority = 95,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
             { SBC, 'HaveRatioUnitsWithCategoryAndAlliance', { false, 1.5, categories.AIR * categories.ANTIAIR, categories.AIR * categories.MOBILE, 'Enemy'}},
             { EBC, 'GreaterThanEconStorageRatio', { 0.0, 0.7}},
         },
         BuilderType = 'All',
-    },   
+    },
+    Builder {
+        BuilderName = 'SCTAAi AirFactory Engineer2',
+        PlatoonTemplate = 'T2BuildEngineerAirSCTA',
+        Priority = 100, -- Top factory priority
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENGINEER * categories.AIR} }, -- Build engies until we have 4 of them.
+        },
+        BuilderType = 'All',
+    }, 
 }

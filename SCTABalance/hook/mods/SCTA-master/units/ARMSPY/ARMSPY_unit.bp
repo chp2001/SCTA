@@ -18,6 +18,7 @@ UnitBlueprint {
     'RADAR',
     'OVERLAYRADAR',
     'TACLOAK',
+    'JAM',
     },
     Economy = {
         BuildCostEnergy = 1500,

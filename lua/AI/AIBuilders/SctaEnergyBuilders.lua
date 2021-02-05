@@ -48,9 +48,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 70,
+        Priority = 50,
         InstanceCount = 1,
         BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LEVEL2 * categories.ENERGYPRODUCTION} },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -66,11 +67,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA2',
-        Priority = 110,
+        Priority = 95,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {750} }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.LEVEL2 * categories.ENERGYPRODUCTION} },
+            { MIBC, 'GreaterThanGameTime', {900} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LEVEL2 * categories.ENERGYPRODUCTION} },
         },
         BuilderType = 'Any',
         BuilderData = {

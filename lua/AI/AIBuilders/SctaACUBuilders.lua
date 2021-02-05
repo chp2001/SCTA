@@ -34,6 +34,7 @@ BuilderGroup {
                 'T1EnergyProduction',	
                 'T1EnergyProduction2',
                 'T1LandFactory2',
+                'T1Radar',
                 }	
             }	
         }	
@@ -103,7 +104,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 5, categories.FACTORY * categories.LEVEL1 * categories.AIR } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FACTORY * categories.LEVEL1 * categories.AIR } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
         BuilderData = {

@@ -55,6 +55,7 @@ PlatoonTemplate {
         { categories.EXPERIMENTAL * categories.LAND * categories.MOBILE - categories.INSIGNIFICANTUNIT, 2, 3, 'attack', 'none' }
     },
 }
+
 PlatoonTemplate {
     Name = 'SCTAExperimental',
     FactionSquads = {

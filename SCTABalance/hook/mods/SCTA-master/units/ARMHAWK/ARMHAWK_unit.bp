@@ -10,45 +10,34 @@ UnitBlueprint {
       TightTurnMultiplier = 1.02,
       TurnSpeed = 1.5,
   },
-    Display = {
-        Abilities = {
-            '<LOC ability_aa>Anti-Air',
-            '<LOC ability_jamming>Jamming',
-                    },
-              },
+  Display = {
+    Abilities = {
+      '<LOC ability_aa>Anti-Air',
+      '<LOC ability_personalstealth>Personal Stealth',
+         },
+    },
     Defense = {
           Health = 2100,
           MaxHealth = 2100,
               },
     Economy = {
-      BuildCostMass = 480,
-        BuildCostEnergy = 28000,
-        MaintenanceConsumptionPerSecondEnergy = 15,
+          BuildCostMass = 480,
+          BuildCostEnergy = 28000,
+          MaintenanceConsumptionPerSecondEnergy = 15,
         },
     General = {
-      OrderOverrides = {
-        RULEUTC_JammingToggle = {
-            bitmapId = 'jamming',
-            helpText = 'toggle_jamming',
-                                },
-                        },
-              ToggleCaps = {
-                RULEUTC_JammingToggle = true,
-                RULEUTC_StealthToggle = false,
-                          },
+          ToggleCaps = {
+               RULEUTC_StealthToggle = true,
               },
-        Intel = {
-      JamRadius = {
-        Max = 4,
-        Min = 4,
-      },
-      JammerBlips = 3,
-      RadarStealth = false,
-	    FreeIntel = false,
+        },
+    Intel = {
+          VisionRadius =  10,
+	        RadarStealth = true,
+	        FreeIntel = false,
     },
     Physics = {
-      FuelRechargeRate = 666666,
-      FuelUseTime = 666666,
+          FuelRechargeRate = 666666,
+          FuelUseTime = 666666,
     },
     Weapon = {
       [1] = {

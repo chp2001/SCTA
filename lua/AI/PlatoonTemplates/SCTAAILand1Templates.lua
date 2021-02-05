@@ -93,6 +93,18 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
+    Name = 'T2LandAuxFact1',
+    FactionSquads = {
+        Arm = {
+            { 'armspid', 1, 1, 'attack', 'none' }
+        },
+        Core = {
+            { 'coreter', 1, 1, 'attack', 'none' }
+        },
+    }
+}
+
+PlatoonTemplate {
     Name = 'T2LandDFTankSCTA',
     FactionSquads = {
         Arm = {

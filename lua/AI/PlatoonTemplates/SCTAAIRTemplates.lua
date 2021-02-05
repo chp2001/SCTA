@@ -67,3 +67,15 @@ PlatoonTemplate {
         },
     }
 }
+
+PlatoonTemplate {
+    Name = 'T2AirScoutSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armawac', 1, 1, 'scout', 'none' }
+        },
+        Core = {
+            { 'corawac', 1, 1, 'scout', 'none' }
+        },
+    }
+}

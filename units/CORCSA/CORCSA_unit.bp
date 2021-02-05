@@ -97,6 +97,8 @@ UnitBlueprint {
     },
     Description = 'Tech Level 1',
     Display = {
+        AnimationBuild = '/mods/SCTA-master/units/CORCSA/CORCSA_lod0_unpack.sca',
+        AnimationBuildRate = 1,
         Abilities = {
             'Construction Unit',
         },
@@ -127,16 +129,11 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            AimBone = 'nanogun1',
+            AimBone = 0,
             BuildEffectBones = {'nano1', 'nano2'},
-            PitchBone = 'pods',
+            PitchBone = 0,
             YawBone = 0,
         },       
-        BuildBonesAlt1 = {
-            AimBone = 'nanogun2',
-            PitchBone = 'pods',
-            YawBone = 0,
-        },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

@@ -16,6 +16,19 @@ TAAirConstructor = Class(TAair) {
         if bp.General.BuildBones then
             self:SetupBuildBones()
         end
+        
+        if bp.Display.AnimationBuild then
+            self.BuildingOpenAnim = bp.Display.AnimationBuild
+        end
+
+        if self.BuildingOpenAnim then
+            self.BuildingOpenAnimManip = CreateAnimator(self)
+            self.BuildingOpenAnimManip:SetPrecedence(1)
+            self.BuildingOpenAnimManip:PlayAnim(self.BuildingOpenAnim, false):SetRate(0)
+            if self.BuildArmManipulator then
+                self.BuildArmManipulator:Disable()
+            end
+        end
         self.BuildingUnit = false
         if __blueprints['armmass'] then
             TAutils.updateBuildRestrictions(self)
@@ -42,8 +55,10 @@ TAAirConstructor = Class(TAair) {
     end,
     
     OnStartBuild = function(self, unitBeingBuilt, order )
+        if order == 'Repair' and unitBeingBuilt.WorkItem != self.WorkItem then
+			self:InheritWork(unitBeingBuilt)
+		end 
         TAair.OnStartBuild(self,unitBeingBuilt, order)
-        #Fix up info on the unit id from the blueprint and see if it matches the 'UpgradeTo' field in the BP.
         self.UnitBeingBuilt = unitBeingBuilt
         self.UnitBuildOrder = order
         self.BuildingUnit = true
@@ -53,9 +68,24 @@ TAAirConstructor = Class(TAair) {
         TAair.OnStopBuild(self,unitBeingBuilt)
         self.UnitBeingBuilt = nil
         self.UnitBuildOrder = nil
+        if self.BuildingOpenAnimManip and self.BuildArmManipulator then
+            self.StoppedBuilding = true
+        elseif self.BuildingOpenAnimManip then
+            self.BuildingOpenAnimManip:SetRate(-1)
+        end
+        self:OnStopBuilderTracking()
         self.BuildingUnit = false
         if __blueprints['armmass'] then
             TAutils.updateBuildRestrictions(self)
+        end
+    end,
+
+    WaitForBuildAnimation = function(self, enable)
+        if self.BuildArmManipulator then
+            WaitFor(self.BuildingOpenAnimManip)
+            if (enable) then
+                self.BuildArmManipulator:Enable()
+            end
         end
     end,
 
@@ -64,12 +94,20 @@ TAAirConstructor = Class(TAair) {
         if self.StoppedBuilding then
             self.StoppedBuilding = false
             self.BuildArmManipulator:Disable()
+            self.BuildingOpenAnimManip:SetRate(-(self:GetBlueprint().Display.AnimationBuildRate or 1))
             self:SetImmobile(false)
         end
     end,
 
     OnPrepareArmToBuild = function(self)
         TAair.OnPrepareArmToBuild(self)  
+        if self.BuildingOpenAnimManip then
+            self.BuildingOpenAnimManip:SetRate(self:GetBlueprint().Display.AnimationBuildRate or 1)
+            if self.BuildArmManipulator then
+                self.StoppedBuilding = false
+                ForkThread( self.WaitForBuildAnimation, self, true )
+            end
+        end       
          if self:IsMoving() then
             self:SetImmobile(true)
             self:ForkThread(function() WaitTicks(1) if not self:BeenDestroyed() then self:SetImmobile(false) end end)
@@ -79,6 +117,14 @@ TAAirConstructor = Class(TAair) {
     OnStartReclaim = function(self, target)
         TAair.OnStartReclaim(self, target)
     end,
+
+    OnStopReclaim = function(self, target)
+        TAair.OnStopReclaim(self, target)
+        if self.BuildingOpenAnimManip then
+            self.BuildingOpenAnimManip:SetRate(-1)
+        end
+    end,
+
     
 	CreateBuildEffects = function(self, unitBeingBuilt, order)
         TAutils.CreateTAAirBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )

@@ -9,13 +9,8 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 ARMCSA = Class(TAAirConstructor) {
 	OnCreate = function(self)
 		TAAirConstructor.OnCreate(self)
-		self.Sliders = {
-			wing1 = CreateSlider(self, 'Rwing'),
-			wing2 = CreateSlider(self, 'Lwing'),
-		}
-		for k, v in self.Sliders do
-			self.Trash:Add(v)
-		end
+		self.AnimManip = CreateAnimator(self)
+		self.Trash:Add(self.AnimManip)
 	end,
 
 	OnMotionVertEventChange = function(self, new, old )
@@ -35,22 +30,14 @@ ARMCSA = Class(TAAirConstructor) {
 
 	OpenWings = function(self)
 		--MOVE wing1 to x-axis <5.59> SPEED <5.00>;
-		self.Sliders.wing1:SetGoal(-5.59,0,0)
-		self.Sliders.wing1:SetSpeed(5)
-
-		--MOVE wing2 to x-axis <-5.65> SPEED <5.00>;
-		self.Sliders.wing2:SetGoal(5.65,0,0)
-		self.Sliders.wing2:SetSpeed(5)
+		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationWing)
+		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationWingRate or 0.2))
 	end,
 
 	CloseWings = function(self)
 		--MOVE wing1 to x-axis <0> SPEED <5.00>;
-		self.Sliders.wing1:SetGoal(0,0,0)
-		self.Sliders.wing1:SetSpeed(5)
-
-		--MOVE wing2 to x-axis <0> SPEED <5.00>;
-		self.Sliders.wing2:SetGoal(0,0,0)
-		self.Sliders.wing2:SetSpeed(5)
+		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationWing)
+		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationWingRate or 0.2))
 	end,
 
 }

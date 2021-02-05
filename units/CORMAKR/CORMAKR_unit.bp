@@ -83,11 +83,6 @@ UnitBlueprint {
         ProductionPerSecondMass = 1,
 	MaintenanceConsumptionPerSecondEnergy = 60,
     },
-    Footprint = {
-	MaxSlope = 0.625,
-        SizeX = 4,
-        SizeZ = 3,
-    },
     General = {
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
@@ -111,8 +106,6 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        SkirtSizeX = 4, 
-        SkirtSizeZ = 3, 
         BuildOnLayerCaps = {
             LAYER_Land = true,
             LAYER_Water = true,

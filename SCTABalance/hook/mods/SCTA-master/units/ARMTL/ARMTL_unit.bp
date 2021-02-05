@@ -22,8 +22,7 @@ UnitBlueprint {
         'OVERLAYANTINAVY',
         'SORTDEFENSE',
 	'ARM',
-	'SPECIAL',
-    'LEVEL2',
+    'LEVEL1',
     'SNIPEMODE',
     },
     Defense = {

@@ -42,7 +42,6 @@ UnitBlueprint {
 	'NAVAL',
         'OVERLAYSONAR',
 	'ARM',
-	'SPECIAL',
 	'LEVEL2',
 	'SORTINTEL',
     },

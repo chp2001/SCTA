@@ -34,7 +34,6 @@ UnitBlueprint {
 	'ANTIAIR',
 	'OVERLAYANTIAIR',
 	'ARM',
-	'SPECIAL',
 	'LEVEL2',
     },
     CollisionOffsetY = -0.5,

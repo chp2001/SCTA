@@ -39,7 +39,6 @@ UnitBlueprint {
         'NUKE',
         'SILO',	
 	    'ARM',
-	    'SPECIAL',
 	    'SORTSTRATEGIC',
 	    'LEVEL3',
         'SHOWATTACKRETICLE',

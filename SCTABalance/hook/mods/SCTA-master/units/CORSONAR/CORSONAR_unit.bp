@@ -1,7 +1,6 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT1SHIP',
         'BUILTBYT1HOVER',
         'BUILTBYT1AIR',
         'BUILTBYCOMMANDER',
@@ -15,7 +14,6 @@ UnitBlueprint {
 	'NAVAL',
         'OVERLAYSONAR',
 	'CORE',
-	'SPECIAL',
 	'SONAR',
 	'LEVEL1',
 	'SORTINTEL',

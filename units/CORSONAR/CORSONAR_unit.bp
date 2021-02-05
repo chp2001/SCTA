@@ -41,13 +41,9 @@ UnitBlueprint {
 	'NAVAL',
         'OVERLAYSONAR',
 	'CORE',
-	'SPECIAL',
 	'SONAR',
 	'LEVEL2',
 	'SORTINTEL',
-	
-	
-	
     },
     CollisionOffsetY = -0.75,
     Defense = {

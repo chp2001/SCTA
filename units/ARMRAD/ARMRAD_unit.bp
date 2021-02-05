@@ -44,7 +44,6 @@ UnitBlueprint {
     'SHOWQUEUE',
         'OVERLAYRADAR',
 	'ARM',
-	'SPECIAL',
 	'SORTINTEL',
 	'LEVEL1',
     },

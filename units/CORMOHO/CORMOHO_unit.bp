@@ -44,8 +44,6 @@ UnitBlueprint {
                 'ECONOMIC',
         'SORTECONOMY',
 	'CORE',
-	'METAL',
-	'EXTRACTOR',
 	'LEVEL3',
     },
     Defense = {

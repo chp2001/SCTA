@@ -40,7 +40,6 @@ UnitBlueprint {
         'SILO',
         'SHOWQUEUE',
 	    'CORE',
-	    'SPECIAL',
         'STRATEGIC',
         'LEVEL3',
         'SHOWATTACKRETICLE',

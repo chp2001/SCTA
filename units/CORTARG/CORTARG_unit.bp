@@ -40,9 +40,7 @@ UnitBlueprint {
 	'STRUCTURE',
 	'INTELLIGENCE',
 	'TARGETING',
-	'TEXTUREANIM',
 	'CORE',
-	'SPECIAL',
 	'LEVEL3',
     },
     Defense = {
@@ -62,15 +60,6 @@ UnitBlueprint {
         Abilities = {
             'Radar Targeting',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -80,7 +69,6 @@ UnitBlueprint {
                 },
             },
         },
-	--TextureAnimationFrames = 6,
         UniformScale = 0.16,
     },
     Economy = {

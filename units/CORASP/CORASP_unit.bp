@@ -14,17 +14,17 @@ UnitBlueprint {
             Bank = 'TA_Sound',
             Cue = 'PLABWORK',
             LodCutoff = 'UnitMove_LodCutoff',
-	},
+	    },
 	ConstructStop = Sound {
             Bank = 'TA_Sound',
             Cue = 'UNITDONE',
             LodCutoff = 'UnitMove_LodCutoff',
-	},
+	    },
 	Destroyed = Sound {
             Bank = 'TA_Sound',
             Cue = 'XPLOLRG4',
             LodCutoff = 'UnitMove_LodCutoff',
-	},
+	    },
     },
     AI = {
         GuardScanRadius = 300,
@@ -116,7 +116,7 @@ UnitBlueprint {
         OrderOverrides = {
             RULEUCC_Transport = {
                 bitmapId = 'deploy',
-                helpText = 'deploy',
+                helpText = 'Deploy',
             },
         },
         SelectionPriority = 5,

@@ -69,7 +69,6 @@ UnitBlueprint {
     Footprint = {
         SizeX = 1,
         SizeZ = 2,
-        --MaxSlope = 180,
     },
     General = {
         Category = 'Utility',
@@ -172,9 +171,9 @@ UnitBlueprint {
             Turreted = true,
         },
         { --BIG_UNITEX
-            Damage = 50,
+            Damage = 75,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

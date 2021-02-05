@@ -119,7 +119,7 @@ UnitBlueprint {
         OrderOverrides = {
             RULEUCC_Transport = {
                 bitmapId = 'deploy',
-                helpText = 'deploy',
+                helpText = 'Deploy',
             },
         },
         TechLevel = 'RULEUTL_Secret',

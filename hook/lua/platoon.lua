@@ -309,29 +309,6 @@ Platoon = Class(SCTAAIPlatoon) {
         end
     end,
 
-    SCTAManagerEngineerAssistAI = function(self)
-        local aiBrain = self:GetBrain()
-        local assistData = self.PlatoonData.Assist
-        local beingBuilt = false
-        self:SorianEconAssistBody()
-        WaitSeconds(assistData.Time or 60)
-        local eng = self:GetPlatoonUnits()[1]
-        if eng:GetGuardedUnit() then
-            beingBuilt = eng:GetGuardedUnit()
-        end
-        if beingBuilt and assistData.AssistUntilFinished then
-            while beingBuilt:IsUnitState('Building') or beingBuilt:IsUnitState('Upgrading') do
-                WaitSeconds(5)
-            end
-        end
-        if not aiBrain:PlatoonExists(self) then --or assistData.PermanentAssist then
-            SUtils.AISendPing(eng:GetPosition(), 'move', aiBrain:GetArmyIndex())
-            return
-        end
-        self:PlatoonDisband()
-    end,
-
-
     UnitUpgradeAI = function(self)
         local aiBrain = self:GetBrain()
         local platoonUnits = self:GetPlatoonUnits()

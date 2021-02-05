@@ -135,15 +135,6 @@ BuilderGroup {
         BuilderType = 'All',
     },
     Builder {
-        BuilderName = 'SCTAAi FactoryT2 Field',
-        PlatoonTemplate = 'T2SupportSCTA',
-        Priority = 70,
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.FIELDENGINEER } },
-         },
-        BuilderType = 'All',
-    },
-    Builder {
         BuilderName = 'SCTAAi Factory Artillery',
         PlatoonTemplate = 'T2LandMissileSCTA',
         Priority = 70,

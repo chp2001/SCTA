@@ -47,4 +47,24 @@ BuilderGroup {
         },
         BuilderType = 'All',
     },
+    
+    Builder {
+        BuilderName = 'SCTAAI Factory Strategic',
+        PlatoonTemplate = 'T2AirBomberSCTA',
+        Priority = 80,
+        BuilderConditions = {
+            { EBC, 'GreaterThanEconStorageRatio', { 0.0, 0.7}},
+        },
+        BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAI Factory Stealth',
+        PlatoonTemplate = 'T2AirFighterSCTA',
+        Priority = 90,
+        BuilderConditions = { -- Only make inties if the enemy air is strong.
+            { SBC, 'HaveRatioUnitsWithCategoryAndAlliance', { false, 1.5, categories.AIR * categories.ANTIAIR, categories.AIR * categories.MOBILE, 'Enemy'}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.0, 0.7}},
+        },
+        BuilderType = 'All',
+    },   
 }

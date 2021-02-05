@@ -45,7 +45,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTA',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
-        { categories.ENGINEER * categories.TECH1 - categories.COMMAND , 1, 1, 'support', 'None' }
+        { categories.ENGINEER * categories.LEVEL1, 1, 1, 'support', 'None' }
     },
 }
 
@@ -108,10 +108,12 @@ PlatoonTemplate {
     Name = 'T1AirBomberSCTA',
     FactionSquads = {
         Arm = {
-            { 'armthund', 1, 2, 'attack', 'GrowthFormation' }
+            { 'armthund', 1, 2, 'attack', 'GrowthFormation' },
+            { 'armca', 1, 1, 'attack', 'GrowthFormation' },
         },
         Core = {
             { 'corshad', 1, 2, 'attack', 'GrowthFormation' }
+            { 'corca', 1, 1, 'attack', 'GrowthFormation' },
         },
     }
 }
@@ -183,11 +185,13 @@ PlatoonTemplate {
     Name = 'T1LandDFTankSCTA',
     FactionSquads = {
         Arm = {
-            { 'armwar', 1, 3, 'attack', 'none' },
+            { 'armwar', 1, 2, 'attack', 'none' },
+            { 'armck', 1, 1, 'attack', 'none' },
             { 'armrock', 1, 1, 'attack', 'none' },
         },
         Core = {
-            { 'corraid', 1, 1, 'attack', 'none' }
+            { 'corraid', 1, 1, 'attack', 'none' },
+            { 'corcv', 1, 1, 'attack', 'none' },
         },
     }
 }
@@ -316,6 +320,32 @@ PlatoonTemplate {
         Core = {
             { 'correap', 1, 4, 'attack', 'none' },
             { 'coreter', 1, 1, 'attack', 'none' },
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T2AirFighterSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armhawk', 1, 3, 'attack', 'GrowthFormation' },
+            { 'armaca', 1, 1, 'attack', 'GrowthFormation' },
+        },
+        Core = {
+            { 'corvampg', 1, 3, 'attack', 'GrowthFormation' },
+            { 'coraca', 1, 1, 'attack', 'GrowthFormation' },
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T2AirBomberSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armpnix', 1, 2, 'attack', 'GrowthFormation' }
+        },
+        Core = {
+            { 'corhurc', 1, 2, 'attack', 'GrowthFormation' }
         },
     }
 }

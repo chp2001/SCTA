@@ -14,9 +14,10 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer Hydro',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 100,
+        InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-                { SBC, 'CanBuildOnHydroLessThanDistance', { 'LocationType', 200, -500, 0, 0, 'AntiSurface', 1 }},
-            },
+            { MIBC, 'LessThanGameTime', {750} }, -- Don't make tanks if we have lots of them.
+        },
         BuilderType = 'Any',
         BuilderData = {
             Construction = {

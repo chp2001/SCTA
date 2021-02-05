@@ -21,6 +21,7 @@ UnitBlueprint {
 'SORTDEFENSE',
 'LEVEL3',
 'SNIPEMODE',
+'LASER',
 },
     Defense = {
         Health = 16000,

@@ -35,6 +35,7 @@ UnitBlueprint {
 	'STRATEGIC',
     'LEVEL3',
     'SNIPEMODE',
+    'LASER',
     },
     Defense = {
         DamageModifier = 0.5,

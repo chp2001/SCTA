@@ -36,6 +36,7 @@ UnitBlueprint {
 	'LEVEL2',
     'SORTDEFENSE',
     'SNIPEMODE',
+    'LASER',
     },
     CollisionOffsetY = -0.5,
     Defense = {

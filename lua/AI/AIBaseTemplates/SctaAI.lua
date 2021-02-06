@@ -23,6 +23,7 @@ BaseBuilderTemplate {
         'SCTAAIEnergyBuilder',
         'SCTAAIEngineerMassBuilder',
         'SCTAAIFactoryBuilders',
+        'SCTAAIDefenseBuilder',
     },
     NonCheatBuilders = {
         -- Specify builders that are _only_ used by non-cheating AI (e.g. scouting)

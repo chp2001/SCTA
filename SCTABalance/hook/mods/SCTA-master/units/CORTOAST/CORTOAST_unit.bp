@@ -8,7 +8,6 @@ UnitBlueprint {
     Categories = {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
-        'BUILTBYT2VEHICLE',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',

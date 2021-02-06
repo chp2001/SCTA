@@ -43,15 +43,15 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'NAVAL',
-	'INTELLIGENCE',
+	    'NAVAL',
+	    'INTELLIGENCE',
         'OVERLAYCOUNTERINTEL',
         'COUNTERINTELLIGENCE',
         'DEFENSIVEBOAT',
         'ARM',
         'OCEAN',
-	'JAM',
-	'LEVEL2',
+	    'JAM',
+	    'LEVEL2',
     },
     CollisionOffsetY = -0.25,
     Defense = {
@@ -151,13 +151,11 @@ UnitBlueprint {
 
     },
         Wreckage = {
-	---UseCustomMesh = true,
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
-        --Blueprint = '/mods/SCTA-master/units/ARMSJAM/ARMSJAM_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Seabed = true,

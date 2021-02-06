@@ -45,4 +45,20 @@ BuilderGroup {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
          },
     },
+    Builder {
+        BuilderName = 'LV4Kbot',
+        PlatoonTemplate = 'T4ExperimentalSCTA',
+        Priority = 10000,
+        FormRadius = 10000,
+        InstanceCount = 50,
+        BuilderType = 'Any',
+        BuilderData = {
+            ThreatWeights = {
+                TargetThreatType = 'Commander',
+            },
+            UseMoveOrder = true,
+            PrioritizedCategories = { 'COMMAND', 'FACTORY -NAVAL', 'EXPERIMENTAL', 'MASSPRODUCTION', 'STRUCTURE -NAVAL' }, # list in order
+        },
+    },
 }
+

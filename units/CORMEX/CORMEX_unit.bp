@@ -47,9 +47,7 @@ UnitBlueprint {
         'SORTECONOMY',
     'CORE',        
     'SHOWQUEUE',
-	'METAL',
 	'LEVEL1',
-	'STORAGE',
     },
     Defense = {
         ArmorType = 'Structure',

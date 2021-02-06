@@ -15,11 +15,9 @@ UnitBlueprint {
 	'STRUCTURE',
         'DEFENSE',
         'WALL',
-	'NOEXPLOSION',
 	'NOSMOKE',
 	'SORTDEFENSE',
 	'CORE',
-	'METAL',
 	'LEVEL2',
     },
     Defense = {

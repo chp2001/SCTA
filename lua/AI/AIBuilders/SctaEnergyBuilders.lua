@@ -13,14 +13,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Hydro',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 90,
-        InstanceCount = 2,
-        BuilderConditions = { -- The build conditions determine if this builder is available to be used or not.	
+        Priority = 100,
+        InstanceCount = 2, -- The max number concurrent instances of this builder.
+        BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {750} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'Any',
         BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = false,
             Construction = {
                 BuildStructures = {
                     'T1HydroCarbon',
@@ -34,7 +33,7 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.WIND} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.WIND} },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -53,7 +52,7 @@ BuilderGroup {
         Priority = 50,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'LessThanEconStorageRatio', { 1.1, 0.99}}, -- If less than full energy, build a pgen.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LEVEL2 * categories.ENERGYPRODUCTION} },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -61,35 +60,28 @@ BuilderGroup {
             DesiresAssist = false,
             Construction = {
                 BuildStructures = {
-                    'T1GroundDefense',
                     'T1EnergyProduction',
-                    'T1EnergyProduction',
-                    'T1AirFactory',
                 }
             }
         }
     },  
     Builder {
-        BuilderName = 'SCTAAI T1Engineer MetalMaker',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 50,
+        BuilderName = 'SCTAAI T2Engineer Pgen',
+        PlatoonTemplate = 'EngineerBuilderSCTA2',
+        Priority = 95,
+        InstanceCount = 1,
         BuilderConditions = {
-                { MIBC, 'GreaterThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
-                { SIBC, 'LessThanEconEfficiencyOverTime', { 0.91, 2.0}},
-                { SIBC, 'GreaterThanEconEfficiencyOverTime', { 0.4, 1.25}},
-                { EBC, 'LessThanEconStorageRatio', { 0.75, 2 } },
-                { SIBC, 'HaveGreaterThanUnitsWithCategory', { 6, 'ENERGYPRODUCTION' } },
-                { IBC, 'BrainNotLowPowerMode', {} },
-            },
+            { MIBC, 'GreaterThanGameTime', {900} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LEVEL2 * categories.ENERGYPRODUCTION} },
+        },
         BuilderType = 'Any',
         BuilderData = {
-            NumAssistees = 2,
+            NeedGuard = false,
+            DesiresAssist = true,
             Construction = {
-                BuildClose = true,
-                AdjacencyCategory = 'ENERGYPRODUCTION',
                 BuildStructures = {
-                    'T1MassCreation',
-                },
+                    'T2EnergyProduction',
+                }
             }
         }
     },

@@ -13,10 +13,8 @@ UnitBlueprint {
         'MASSEXTRACTION',
         'ECONOMIC',
 	    'ARM',
-	    'ENERGY',
 	    'LEVEL2',
 	    'SORTECONOMY',
-	    'STORAGE',
     },
     Defense = {
         Health = 2300,

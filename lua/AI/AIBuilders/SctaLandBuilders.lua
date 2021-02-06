@@ -12,10 +12,9 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory BOT',
         PlatoonTemplate = 'T1LandDFBotSCTA',
-        PlatoonAddFunctions = { {SAI, 'BuildOnce'}, },
         Priority = 90,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'All',
     },
@@ -33,7 +32,8 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandScoutSCTA',
         Priority = 90,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.MOBILE * categories.LAND } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.LAND } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 5, categories.SCOUT * categories.LAND } },
         },
         BuilderType = 'All',
     },
@@ -42,7 +42,11 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandDFTankSCTA',
         Priority = 90,
         BuilderConditions = {
-            {  UCBC, 'HaveLessThanUnitsWithCategory', { 20, categories.TANK } }, -- Don't make tanks if we have lots of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 1.05 }},
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK,
+                                       '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'All',
     },
@@ -58,6 +62,8 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandAASCTA',
         Priority = 85,
         BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.LAND } },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.75 }},
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, -- Build AA if the enemy is threatening our base with air units.
             { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,
                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
@@ -68,10 +74,9 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory2 BOT',
         PlatoonTemplate = 'T1LandDFBotSCTA2',
-        PlatoonAddFunctions = { {SAI, 'BuildOnce'}, },
         Priority = 95,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'All',
     },
@@ -81,7 +86,8 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandScoutSCTA2',
         Priority = 90,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.MOBILE * categories.LAND } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.LAND } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 5, categories.SCOUT * categories.LAND } },
         },
         BuilderType = 'All',
     },
@@ -91,7 +97,11 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandDFTankSCTA2',
         Priority = 90,
         BuilderConditions = {
-            {  UCBC, 'HaveLessThanUnitsWithCategory', { 20, categories.TANK } }, -- Don't make tanks if we have lots of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 1.05 }},
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK,
+                                       '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'All',
     },
@@ -109,10 +119,73 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandAASCTA2',
         Priority = 85,
         BuilderConditions = {
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, -- Build AA if the enemy is threatening our base with air units.
             { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,
                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
         },
         BuilderType = 'All',
     },
+    Builder {
+        BuilderName = 'SCTAAi FactoryT2 Engineer',
+        PlatoonTemplate = 'T2BuildEngineerSCTA',
+        Priority = 110, -- Top factory priority
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 5, categories.ENGINEER * categories.LEVEL2 - categories.FIELDENGINEER } }, -- Build engies until we have 4 of them.
+        },
+        BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAi FactoryT2 Tank',
+        PlatoonTemplate = 'T2LandDFTankSCTA',
+        Priority = 100,
+        BuilderConditions = {
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL2 * categories.DIRECTFIRE,
+                                       '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
+        },
+        BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAi FactoryT2 Artillery',
+        PlatoonTemplate = 'T2LandMissileSCTA',
+        Priority = 85,
+        BuilderConditions = {
+            { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,
+                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
+         },
+        BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAi Factory Counter',
+        PlatoonTemplate = 'T2LandAuxFact1',
+        Priority = 70,
+        BuilderConditions = {   
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.JAM * categories.LEVEL2 * categories.LAND} },
+        }, -- Build engies until we have 4 of them. },
+        BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAi FactoryT2 AntiAir',
+        PlatoonTemplate = 'T2LandAASCTA',
+        Priority = 85,
+        BuilderConditions = {
+            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, -- Build AA if the enemy is threatening our base with air units.
+            { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,
+                                       '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
+        },
+        BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAi T2 Experimental',
+        PlatoonTemplate = 'SCTAExperimental',
+        Priority = 130,
+        BuilderConditions = {
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.75 }},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.EXPERIMENTAL * categories.MOBILE } },
+        },
+        BuilderType = 'All',
+    },
 }
+
+----needFigureOutMassEco and KnowingHowPauseFactoriesForAi

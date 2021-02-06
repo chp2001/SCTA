@@ -3,8 +3,6 @@ UnitBlueprint {
     Categories = {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
-        'BUILTBYT2VEHICLE',
-        'BUILTBYT2SUB',
         'BUILTBYT1HOVER',
         'SELECTABLE',
         'DRAGBUILD',
@@ -39,8 +37,8 @@ UnitBlueprint {
     },
     LifeBarSize = 4,
     Physics = {
-        SkirtSizeX = 0,
-        SkirtSizeZ = 0,
+        SkirtSizeX = 4,
+        SkirtSizeZ = 4,
     },
     SelectionSizeX = 6,
     SelectionSizeZ = 6,

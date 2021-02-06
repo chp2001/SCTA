@@ -40,7 +40,7 @@ UnitBlueprint {
         'SILO',
         'SHOWQUEUE',
 	    'CORE',
-	    'SPECIAL',
+        'TACTICALMISSILEPLATFORM',
 	    'SORTSTRATEGIC',
 	    'LEVEL3',
         'SHOWATTACKRETICLE',

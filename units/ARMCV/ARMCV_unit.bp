@@ -52,13 +52,8 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'LAND',
         'ARM',
-        'VEHICLE',	#'TANK' in TA
+        'VEHICLE',
 	'LEVEL1',
-	
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',

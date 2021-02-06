@@ -1,7 +1,6 @@
 UnitBlueprint {
     Merge = true, 
     Categories = {
-        'BUILTBYT2SUB',
         'BUILTBYT2AIR',
         'SELECTABLE',
         'DRAGBUILD',
@@ -14,11 +13,11 @@ UnitBlueprint {
 	'ANTINAVY',
 	'NAVAL',
 	'NOSMOKE',
+    'SONAR',
 	'SORTDEFENSE',
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',
     'CORE',
-	'SPECIAL',
     'LEVEL2',
     'SNIPEMODE',
     },

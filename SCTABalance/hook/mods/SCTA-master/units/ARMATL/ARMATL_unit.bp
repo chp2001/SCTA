@@ -1,7 +1,6 @@
 UnitBlueprint {
     Merge = true, 
     Categories = {
-        'BUILTBYT2SUB',
         'BUILTBYT2AIR',
         'SELECTABLE',
         'DRAGBUILD',
@@ -16,16 +15,11 @@ UnitBlueprint {
 	'NAVAL',
 	'NOSMOKE',
 	'SORTDEFENSE',
+    'SONAR',
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',
     'ARM',
-	'SPECIAL',
 	'LEVEL2',
-    },
-    Footprint = {
-        MinWaterDepth = 3,
-        SizeX = 2,
-        SizeZ = 2,
     },
     Defense = {
         Health = 2000,
@@ -35,8 +29,6 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Water = true,
         },
-        SkirtSizeX = 0,
-        SkirtSizeZ = 0,
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,

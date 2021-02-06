@@ -14,6 +14,8 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'OVERLAYOMNI',
         'ARM',
+        'JAM',
+        'SCOUT',
 	'LEVEL2',
     },
     Defense = {

@@ -19,14 +19,9 @@ UnitBlueprint {
 	'STRUCTURE',
         'DEFENSE',
         'WALL',
-	'NOEXPLOSION',
 	'NOSMOKE',
 	'CORE',
-	'METAL',
 	'LEVEL2',
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',

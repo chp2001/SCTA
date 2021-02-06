@@ -45,7 +45,7 @@ UnitBlueprint {
         'LAND',
         'DIRECTFIRE',
         'ANTIAIR',
-        'TEXTUREANIM',
+        'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',        

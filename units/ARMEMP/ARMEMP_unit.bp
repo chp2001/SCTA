@@ -40,10 +40,10 @@ UnitBlueprint {
         'SILO',
         'SHOWQUEUE',
 	    'ARM',
-	    'SPECIAL',
 	    'SORTSTRATEGIC',
 	    'LEVEL3',
         'SHOWATTACKRETICLE',
+        'TACTICALMISSILEPLATFORM',
     },
     Defense = {
         ArmorType = 'Structure',

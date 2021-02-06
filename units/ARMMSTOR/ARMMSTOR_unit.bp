@@ -29,21 +29,12 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-
-	
-	'STRUCTURE',
-        'METALSTORAGE',
-                'ECONOMIC',
+	    'STRUCTURE',
+        'MASSSTORAGE',
+        'ECONOMIC',
         'SORTECONOMY',
-
-	
-	'ARM',
-	'METAL',
-	'LEVEL1',
-	
-	
-	
-	'STORAGE',
+	    'ARM',
+	    'LEVEL1',
     },
     Defense = {
         ArmorType = 'Structure',

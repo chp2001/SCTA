@@ -13,7 +13,8 @@ BuilderGroup {
         PlatoonTemplate = 'T1AirScoutSCTA',
         Priority = 100,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.MOBILE * categories.AIR * categories.SCOUT } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.AIR } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.MOBILE * categories.AIR * categories.SCOUT } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.3}},
         },
         BuilderType = 'All',
@@ -32,8 +33,54 @@ BuilderGroup {
         PlatoonTemplate = 'T1AirFighterSCTA',
         Priority = 90,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
-            { SBC, 'HaveRatioUnitsWithCategoryAndAlliance', { false, 1.5, categories.AIR * categories.ANTIAIR, categories.AIR * categories.MOBILE, 'Enemy'}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.AIR } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.0, 0.7}},
+        },
+        BuilderType = 'All',
+    },        
+    Builder {
+        BuilderName = 'SCTAAi AirFactory Engineer',
+        PlatoonTemplate = 'T1BuildEngineerAirSCTA',
+        Priority = 100, -- Top factory priority
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENGINEER * categories.AIR * categories.LEVEL1} }, -- Build engies until we have 4 of them.
+        },
+        BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAI Factory Strategic',
+        PlatoonTemplate = 'T2AirBomberSCTA',
+        Priority = 85,
+        BuilderConditions = {
+            { EBC, 'GreaterThanEconStorageRatio', { 0.0, 0.7}},
+        },
+        BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAI Factory Stealth',
+        PlatoonTemplate = 'T2AirFighterSCTA',
+        Priority = 95,
+        BuilderConditions = { -- Only make inties if the enemy air is strong.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.0, 0.7}},
+        },
+        BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAi AirFactory Engineer2',
+        PlatoonTemplate = 'T2BuildEngineerAirSCTA',
+        Priority = 100, -- Top factory priority
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENGINEER * categories.AIR * categories.LEVEL2} }, -- Build engies until we have 4 of them.
+        },
+        BuilderType = 'All',
+    }, 
+    Builder {
+        BuilderName = 'SCTAAI T2 Scouts',
+        PlatoonTemplate = 'T2AirScoutSCTA',
+        Priority = 100,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.JAM * categories.AIR * categories.SCOUT } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.3}},
         },
         BuilderType = 'All',
     },

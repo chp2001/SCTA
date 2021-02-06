@@ -40,7 +40,6 @@ UnitBlueprint {
 	'INTELLIGENCE',
 	'TARGETING',
 	'ARM',
-	'SPECIAL',
 	'LEVEL3',
 	'SORTINTEL',
     },

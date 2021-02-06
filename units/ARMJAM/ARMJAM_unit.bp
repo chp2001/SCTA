@@ -20,11 +20,11 @@ UnitBlueprint {
             Cue = 'VARMSTOP',
             LodCutoff = 'UnitMove_LodCutoff',
         },
-	Destroyed = Sound {
+	    Destroyed = Sound {
             Bank = 'TA_Sound',
             Cue = 'XPLOLRG3',
             LodCutoff = 'UnitMove_LodCutoff',
-	},
+	    },
         Activate = Sound {
             Bank = 'TA_Sound',
             Cue = 'RADJAM1',
@@ -43,14 +43,14 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'INTELLIGENCE',
+	    'LAND',
+	    'INTELLIGENCE',
         'OVERLAYCOUNTERINTEL',
         'COUNTERINTELLIGENCE',
         'ARM',
         'VEHICLE',
-	'JAM',
-	'LEVEL2',
+	    'JAM',
+	    'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -82,7 +82,7 @@ UnitBlueprint {
         BuildCostEnergy = 1621,
         BuildCostMass = 97,
         BuildTime = 5933,
-	MaintenanceConsumptionPerSecondEnergy = 10,
+	    MaintenanceConsumptionPerSecondEnergy = 10,
     },
     General = {
         Category = 'Utility',
@@ -135,21 +135,18 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 4,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
         }, 
-
     },
         Wreckage = {
-	---UseCustomMesh = true,
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
-        --Blueprint = '/mods/SCTA-master/units/ARMJAM/ARMJAM_dead_prop.bp',
         WreckageLayers = {
             Land = true,
             Seabed = true,

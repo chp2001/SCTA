@@ -162,7 +162,7 @@ UnitBlueprint {
     LifeBarSize = 2,
     Physics = {
         LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
+	    BackUpDistance = 0,
         MaxSpeedReverse = 0,
         MaxAcceleration = 2.25,
         MaxBrake = 2.25,

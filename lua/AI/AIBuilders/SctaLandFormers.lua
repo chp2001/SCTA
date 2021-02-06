@@ -24,6 +24,21 @@ BuilderGroup {
          },
     },
     Builder {
+        BuilderName = 'SCTAAI LAB',
+        PlatoonTemplate = 'LABSCTA', -- The platoon template tells the AI what units to include, and how to use them.
+        Priority = 90,
+        InstanceCount = 200,
+        BuilderType = 'Any',
+        BuilderData = {
+            NeverGuardBases = true,
+            NeverGuardEngineers = false,
+            UseFormation = 'AttackFormation',
+        },        
+        BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
+         },
+    },
+    Builder {
         BuilderName = 'SCTAAI Land Attack',
         PlatoonTemplate = 'LandAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 100,

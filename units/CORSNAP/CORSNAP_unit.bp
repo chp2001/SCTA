@@ -38,6 +38,7 @@ UnitBlueprint {
         'CORE',
         'HOVER',
 	'LEVEL1',
+    'TANK',
     },
     Defense = {
         ArmorType = 'Normal',

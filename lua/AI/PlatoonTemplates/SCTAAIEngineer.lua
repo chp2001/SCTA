@@ -7,7 +7,15 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
-    Name = 'EngineerBuilderT12SCTA',
+    Name = 'EngineerBuilderSCTA23',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        { categories.ENGINEER * (categories.LEVEL2 + categories.LEVEL3) - categories.ENGINEERSTATION , 1, 1, 'support', 'None' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTA12',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
         { categories.ENGINEER * (categories.LEVEL1 + categories.LEVEL2) - categories.ENGINEERSTATION , 1, 1, 'support', 'None' }
@@ -22,11 +30,36 @@ PlatoonTemplate {
     },
 }
 
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTAEco',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        { categories.ENGINEER * categories.LEVEL1 * categories.AIR, 1, 1, 'support', 'None' }
+    },
+}
+
 PlatoonTemplate {
     Name = 'EngineerBuilderSCTA2',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
         { categories.ENGINEER * categories.LEVEL2, 1, 1, 'support', 'None' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderT3SCTA',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        { categories.ENGINEER * categories.LEVEL3, 1, 1, 'support', 'None' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTA3VTOL',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        { categories.ENGINEER * categories.LEVEL3 * categories.AIR, 1, 1, 'support', 'None' }
     },
 }
 
@@ -70,10 +103,35 @@ PlatoonTemplate {
     Name = 'T2BuildEngineerSCTA',
     FactionSquads = {
         Arm = {
-            { 'armack', 1, 1, 'support', 'None' },
+            { 'armack', 1, 1, 'support', 'None' }
         },
         Core = {
-            { 'coracv', 1, 1, 'support', 'None' },
+            { 'coracv', 1, 1, 'support', 'None' }
+        },
+    }
+}
+
+
+PlatoonTemplate {
+    Name = 'T3BuildEngineerAirSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armcsa', 1, 1, 'support', 'None' }
+        },
+        Core = {
+            { 'corcsa', 1, 1, 'support', 'None' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T3BuildEngineerSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armch', 1, 1, 'support', 'None' },
+        },
+        Core = {
+            { 'corch', 1, 1, 'support', 'None' },
         },
     }
 }

@@ -12,6 +12,7 @@ UnitBlueprint {
         'HOVER',
         'PHIB',
 	    'LEVEL3',
+        'TANK',
     },
     Defense = {
         Health = 9000,

@@ -231,22 +231,6 @@ Platoon = Class(SCTAAIPlatoon) {
             end
             table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
             buildFunction = AIBuildStructures.AIExecuteBuildStructure
-        elseif cons.AvoidCategory then
-            relative = false
-            local pos = aiBrain.BuilderManagers[eng.BuilderManagerData.LocationType].EngineerManager.Location
-            local avoidCat = cons.AvoidCategory
-            -- convert text categories like 'MOBILE AIR' to 'categories.MOBILE * categories.AIR'
-            if type(avoidCat) == 'string' then
-                avoidCat = ParseEntityCategory(avoidCat)
-            end
-            local radius = 50
-            if not pos or not pos then
-                coroutine.yield(1)
-                self:PlatoonDisband()
-                return
-            end
-            reference  = AIUtils.FindUnclutteredArea(aiBrain, cat, pos, radius, cons.maxUnits, cons.maxRadius, avoidCat)
-            table.insert(baseTmplList, baseTmpl)
         else
             table.insert(baseTmplList, baseTmpl)
             relative = true

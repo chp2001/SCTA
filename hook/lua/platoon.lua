@@ -29,9 +29,12 @@ Platoon = Class(SCTAAIPlatoon) {
         if eng:IsUnitState('Building') or eng:IsUnitState('Upgrading') then
            return
         end
-
-        local FactionToIndex  = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, NOMADS = 5, ARM = 6, CORE = 7}
-        local factionIndex = cons.FactionIndex or FactionToIndex[eng.factionCategory]
+        if __blueprints['xnl0001'] then
+            local FactionToIndex  = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, NOMADS = 5, ARM = 6, CORE = 7}
+            local factionIndex = cons.FactionIndex or FactionToIndex[eng.factionCategory]
+        else
+            local FactionToIndex  = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, ARM = 5, CORE = 6}
+            local factionIndex = cons.FactionIndex or FactionToIndex[eng.factionCategory] 
         --LOG('Faction Index is '..factionIndex)
 
         buildingTmplFile = import(cons.BuildingTemplateFile or '/lua/BuildingTemplates.lua')
@@ -289,13 +292,18 @@ Platoon = Class(SCTAAIPlatoon) {
         if not eng.Dead and not eng:IsUnitState('Building') then
             return self.ProcessBuildCommand(eng, false)
         end
+    end
     end,
 
     UnitUpgradeAI = function(self)
         local aiBrain = self:GetBrain()
         local platoonUnits = self:GetPlatoonUnits()
+        if __blueprints['xnl0001'] then
+        local FactionToIndex  = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, NOMADS = 5, ARM = 6, CORE = 7}
         local factionIndex = aiBrain:GetFactionIndex()
-        local FactionToIndex = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, NOMADS = 5, ARM = 6, CORE = 7}
+        else
+        local FactionToIndex  = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, ARM = 5, CORE = 6}
+        local factionIndex = aiBrain:GetFactionIndex()
         local UnitBeingUpgradeFactionIndex = nil
         local upgradeIssued = false
         self:Stop()
@@ -368,5 +376,6 @@ Platoon = Class(SCTAAIPlatoon) {
         end
         WaitTicks(1)
         self:PlatoonDisband()
+    end
     end,
 }

@@ -29,7 +29,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI T1Engineer MetalMaker',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco',
         Priority = 90,
         InstanceCount = 1,
         BuilderConditions = {

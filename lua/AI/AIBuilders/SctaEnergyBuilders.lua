@@ -29,7 +29,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco',
         Priority = 90,
         InstanceCount = 2,
         BuilderConditions = {
@@ -60,14 +60,14 @@ BuilderGroup {
             DesiresAssist = false,
             Construction = {
                 BuildStructures = {
-                    'T1EnergyProduction',
+                    'T1EnergyProduction2',
                 }
             }
         }
     },  
     Builder {
         BuilderName = 'SCTAAI T2Engineer Pgen',
-        PlatoonTemplate = 'EngineerBuilderSCTA2',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
         Priority = 95,
         InstanceCount = 1,
         BuilderConditions = {
@@ -81,6 +81,26 @@ BuilderGroup {
             Construction = {
                 BuildStructures = {
                     'T2EnergyProduction',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T3Engineer Pgen',
+        PlatoonTemplate = 'EngineerBuilderSCTA3',
+        Priority = 110,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {1000} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LEVEL3 * categories.ENERGYPRODUCTION} },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            Construction = {
+                BuildStructures = {
+                    'T3EnergyProduction',
                 }
             }
         }

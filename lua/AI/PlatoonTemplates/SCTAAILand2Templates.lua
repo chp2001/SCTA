@@ -12,10 +12,12 @@ PlatoonTemplate {
     Name = 'T1LandDFBotSCTA2',
     FactionSquads = {
         Arm = {
-            { 'armflash', 1, 3, 'attack', 'none' }
+            { 'armflash', 1, 3, 'attack', 'none' },
+            { 'armck', 1, 1, 'support', 'None' }, 
         },
         Core = {
-            { 'corak', 1, 3, 'attack', 'none' }
+            { 'corak', 1, 3, 'attack', 'none' },
+            { 'corcv', 1, 1, 'support', 'None' },
         },
     }
 }
@@ -65,6 +67,32 @@ PlatoonTemplate {
         },
         Core = {
             { 'corstorm', 1, 2, 'attack', 'none' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T2LandAuxFact2',
+    FactionSquads = {
+        Arm = {
+            { 'armjam', 1, 1, 'attack', 'none' }
+        },
+        Core = {
+            { 'corspec', 1, 1, 'attack', 'none' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T2LandDFTank2SCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armbull', 1, 4, 'attack', 'none' },
+            { 'armlatnk', 1, 2, 'attack', 'none' },
+        },
+        Core = {
+            { 'corcan', 1, 2, 'attack', 'none' },
+            { 'corpyro', 1, 1, 'attack', 'none' },
         },
     }
 }

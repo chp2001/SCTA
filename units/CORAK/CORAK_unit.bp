@@ -39,10 +39,7 @@ UnitBlueprint {
         'CORE',
         'KBOT',
 	'LEVEL1',
-	
-	
-	
-	
+	'RAIDER',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -58,15 +55,6 @@ UnitBlueprint {
         Abilities = {
             'Infantry',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'torso'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-   	},]]--
     AnimationWalk = '/mods/SCTA-master/units/CORAK/CORAK_lod0_Awalk.sca',
     AnimationWalkRate = 1,
         Mesh = {

@@ -79,3 +79,15 @@ PlatoonTemplate {
         },
     }
 }
+
+PlatoonTemplate {
+    Name = 'T3AirFighterSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armsfig', 1, 3, 'attack', 'GrowthFormation' },
+        },
+        Core = {
+            { 'corsfig', 1, 3, 'attack', 'GrowthFormation' },
+        },
+    }
+}

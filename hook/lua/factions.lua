@@ -139,3 +139,4 @@ for index, value in Factions do
     FactionIndexMap[value.Key] = index
     FactionDesToKey[value.CampaignFileDesignator] = value.Key
 end
+--LOG('Resulting Table'..repr(Factions))

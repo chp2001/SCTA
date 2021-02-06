@@ -19,9 +19,9 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'LABSCTA',
-    Plan = 'StrikeForceAI', -- The platoon function to use.
+    Plan = 'HuntAI', -- The platoon function to use.
     GlobalSquads = {
-        { categories.MOBILE * categories.LAND - categories.TANK - categories.EXPERIMENTAL - categories.ENGINEER, -- Type of units.
+        { categories.MOBILE * categories.RAIDER, -- Type of units.
           1, -- Min number of units.
           4, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
@@ -64,6 +64,30 @@ PlatoonTemplate {
         },
         Core = {
             { 'corkrog', 1, 1, 'attack', 'none' },
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T2LandMissileSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armmerl', 1, 1, 'attack', 'none' }
+        },
+        Core = {
+            { 'corvroc', 1, 1, 'attack', 'none' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T2LandAASCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armyork', 1, 1, 'attack', 'none' }
+        },
+        Core = {
+            { 'corsent', 1, 1, 'attack', 'none' }
         },
     }
 }

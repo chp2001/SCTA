@@ -1,5 +1,3 @@
-WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset platoon.lua' )
-
 SCTAAIPlatoon = Platoon
 Platoon = Class(SCTAAIPlatoon) {
     EngineerBuildAISCTA = function(self)

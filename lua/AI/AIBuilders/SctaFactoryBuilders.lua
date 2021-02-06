@@ -13,8 +13,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer LandFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 95,
-        InstanceCount = 1,
+        Priority = 100,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},

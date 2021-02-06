@@ -41,7 +41,6 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'T1LandDFBotSCTA',
-    FactionSquads = {
         FactionSquads = {
             Arm = {
                 { 'armpw', 1, 3, 'attack', 'none' },
@@ -51,8 +50,8 @@ PlatoonTemplate {
                 { 'corgator', 1, 3, 'attack', 'none' },
                 { 'corcv', 1, 1, 'support', 'None' },
             },
-    }
-}
+        }
+    } 
 
 
 PlatoonTemplate {

@@ -87,7 +87,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI T3Engineer Pgen',
-        PlatoonTemplate = 'EngineerBuilderT3SCTA',
+        PlatoonTemplate = 'EngineerBuilderSCTA3',
         Priority = 110,
         InstanceCount = 1,
         BuilderConditions = {

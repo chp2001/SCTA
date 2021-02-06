@@ -48,7 +48,7 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
-    Name = 'EngineerBuilderT3SCTA',
+    Name = 'EngineerBuilderSCTA3',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
         { categories.ENGINEER * categories.LEVEL3, 1, 1, 'support', 'None' }

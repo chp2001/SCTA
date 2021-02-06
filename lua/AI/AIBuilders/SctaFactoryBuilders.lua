@@ -34,7 +34,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer LandFac2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 95,
+        Priority = 94,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
@@ -55,7 +55,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer AirFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 95,
+        Priority = 96,
         InstanceCount = 1,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.8}},

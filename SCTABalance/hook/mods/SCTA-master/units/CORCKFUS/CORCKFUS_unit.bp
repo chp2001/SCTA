@@ -17,10 +17,6 @@ UnitBlueprint {
 	MaintenanceConsumptionPerSecondEnergy = 100,
     },
     LifeBarSize = 6,
-    Physics = {
-        SkirtSizeX = 0,
-        SkirtSizeZ = 0,
-    },
     SelectionSizeX = 8,
     SelectionSizeZ = 8,
     SizeX = 10,

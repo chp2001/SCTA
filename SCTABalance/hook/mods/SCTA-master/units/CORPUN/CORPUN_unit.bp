@@ -8,10 +8,6 @@ UnitBlueprint {
         BuildCostMass = 3000,
         BuildTime = 40000,
     },
-    Physics = {
-        SkirtSizeX = 0, 
-        SkirtSizeZ = 0,  
-    },
     Intel = {
         VisionRadius = 14,
     },

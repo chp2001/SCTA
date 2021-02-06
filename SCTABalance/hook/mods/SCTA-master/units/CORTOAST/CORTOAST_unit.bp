@@ -34,9 +34,7 @@ UnitBlueprint {
         SizeX = 2,
         SizeZ = 2,
     },
-    Physics = {
-        SkirtSizeX = 0, 
-        SkirtSizeZ = 0,  
+    Physics = {  
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },

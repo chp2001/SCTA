@@ -18,7 +18,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTA',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
-        { categories.ENGINEER * categories.LEVEL1, 1, 3, 'support', 'None' }
+        { categories.ENGINEER * categories.LEVEL1, 1, 1, 'support', 'None' }
     },
 }
 
@@ -26,7 +26,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTA2',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
-        { categories.ENGINEER * categories.LEVEL2, 1, 3, 'support', 'None' }
+        { categories.ENGINEER * categories.LEVEL2, 1, 1, 'support', 'None' }
     },
 }
 
@@ -71,11 +71,9 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armack', 1, 1, 'support', 'None' },
-            { 'armck', 1, 3, 'support', 'None' },
         },
         Core = {
             { 'coracv', 1, 1, 'support', 'None' },
-            { 'corcv', 1, 3, 'support', 'None' },
         },
     }
 }

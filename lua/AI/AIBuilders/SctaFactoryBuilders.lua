@@ -44,6 +44,7 @@ BuilderGroup {
             NeedGuard = false,
             DesiresAssist = true,
             Construction = {
+                BuildClose = true,
                 BuildStructures = {
                     'T1LandFactory',
                 }
@@ -65,6 +66,7 @@ BuilderGroup {
             NeedGuard = false,
             DesiresAssist = true,
             Construction = {
+                BuildClose = true,
                 BuildStructures = {
                     'T1LandFactory2',
                 }
@@ -230,9 +232,9 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
-            BuildClose = true,
             NeedGuard = false,
             Construction = {
+                BuildClose = true,
                 BuildStructures = {
                     'T1LandFactory2',
                 }

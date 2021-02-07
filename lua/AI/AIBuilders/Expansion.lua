@@ -35,7 +35,7 @@ BuilderGroup {
                 BaseTemplate = 'ExpansionBaseTemplates',
                 ExpansionBase = true,
                 NearMarkerType = 'Start Location',
-                ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                ExpansionRadius = 25, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
                 LocationRadius = 500,
                 LocationType = 'LocationType',
                 ThreatMin = -1000,
@@ -46,7 +46,6 @@ BuilderGroup {
                     'T1AADefense',
                     'T1GroundDefense',
                     'T1Radar',
-                    'T1LandFactory',
                 }
             },
         }
@@ -66,7 +65,7 @@ BuilderGroup {
                 BaseTemplate = 'ExpansionBaseTemplates',
                 ExpansionBase = true,
                 NearMarkerType = 'Expansion Area',
-                ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                ExpansionRadius = 25, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
                 LocationRadius = 500,
                 LocationType = 'LocationType',
                 ThreatMin = -1000,
@@ -77,7 +76,6 @@ BuilderGroup {
                     'T1AADefense',
                     'T1GroundDefense',
                     'T1Radar',
-                    'T1LandFactory',
                 }
             },
         }

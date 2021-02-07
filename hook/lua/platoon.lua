@@ -1,4 +1,4 @@
-local SCTAAIPlatoon = Platoon
+SCTAAIPlatoon = Platoon
 Platoon = Class(SCTAAIPlatoon) {
     EngineerBuildAISCTA = function(self)
         local aiBrain = self:GetBrain()

@@ -33,7 +33,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer LandFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 95,
-        InstanceCount = 2,
+        InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
@@ -117,7 +117,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2LAND2 Factory',
         PlatoonTemplate = 'EngineerBuilderSCTA12',
-        Priority = 110,
+        Priority = 120,
         InstanceCount = 1,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
@@ -180,7 +180,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2AirFactory',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
-        Priority = 100,
+        Priority = 105,
         InstanceCount = 1,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
@@ -201,7 +201,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Gantry Factory',
         PlatoonTemplate = 'EngineerBuilderSCTA23',
-        Priority = 125,
+        Priority = 135,
         InstanceCount = 1,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},

@@ -21,8 +21,9 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
             Construction = {
+                DesiresAssist = true,
+                NumAssistees = 2,
                 BuildStructures = {
                     'T1AirFactory',
                 }
@@ -42,8 +43,9 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
             Construction = {
+                DesiresAssist = true,
+                NumAssistees = 2,
                 BuildClose = true,
                 BuildStructures = {
                     'T1LandFactory',
@@ -64,8 +66,9 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
             Construction = {
+                DesiresAssist = true,
+                NumAssistees = 2,
                 BuildClose = true,
                 BuildStructures = {
                     'T1LandFactory2',
@@ -87,8 +90,9 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
             Construction = {
+                DesiresAssist = true,
+                NumAssistees = 2,
                 BuildClose = true,
                 BuildStructures = {
                     'T1AirFactory',
@@ -109,8 +113,9 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
             Construction = {
+                DesiresAssist = true,
+                NumAssistees = 2,
                 BuildStructures = {
                     'T2LandFactory',
                 }
@@ -130,8 +135,9 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
             Construction = {
+                DesiresAssist = true,
+                NumAssistees = 2,
                 BuildStructures = {
                     'T2LandFactory2',
                 }
@@ -151,8 +157,9 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
             Construction = {
+                DesiresAssist = true,
+                NumAssistees = 2,
                 BuildStructures = {
                     'T3LandFactory',
                 }
@@ -172,8 +179,9 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
             Construction = {
+                DesiresAssist = true,
+                NumAssistees = 2,
                 BuildStructures = {
                     'T3AirFactory',
                 }
@@ -193,8 +201,9 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
             Construction = {
+                DesiresAssist = true,
+                NumAssistees = 2,
                 BuildStructures = {
                     'T2AirFactory',
                 }
@@ -214,8 +223,9 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
             Construction = {
+                DesiresAssist = true,
+                NumAssistees = 2,
                 BuildStructures = {
                     'T3QuantumGate',
                 }
@@ -281,5 +291,5 @@ BuilderGroup {
                 }
             }
         }
-    },     
+    },
 }

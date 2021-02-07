@@ -19,9 +19,9 @@ function CreateInitialArmyGroup(strArmy, createCommander)
 		
 			if createCommander and ( tblGroup == nil or 0 == table.getn(tblGroup) ) then
 				local per = ScenarioInfo.ArmySetup[ABrain.Name].AIPersonality
-				if per == 'sctaaiarm' or per == 'sctaaiarmcheat' then
+				if per == 'sctaaiarm' then
 					initialUnitName = 'armcom'
-				elseif per == 'sctaaicore' or per == 'sctaaicorecheat' then
+				elseif per == 'sctaaicore' then
 					initialUnitName = 'corcom'
 				else
 					local factionIndex = GetArmyBrain(strArmy):GetFactionIndex()

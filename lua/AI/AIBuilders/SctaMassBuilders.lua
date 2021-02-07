@@ -39,14 +39,14 @@ BuilderGroup {
             },
         BuilderType = 'Any',
         BuilderData = {
-            NumAssistees = 2,
             Construction = {
                 DesiresAssist = true,
+                NumAssistees = 2,
                 BuildClose = true,
                 BuildStructures = {
                     'T1MassCreation',
                     'T1EnergyProduction',
-                },
+                }
             }
         }
     },

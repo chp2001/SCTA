@@ -18,6 +18,7 @@ BaseBuilderTemplate {
         'SCTAAIDefenseBuilder',
         'SctaExtractorUpgrades',
         'SCTAExpansionBuilders',
+        'SCTAAssisters',
     },
     BaseSettings = {
         EngineerCount = {
@@ -41,7 +42,7 @@ BaseBuilderTemplate {
     ExpansionFunction = function(aiBrain, location, markerType)
         local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
         if markerType == ('Expansion Area' or 'Start Location')
-        and per == 'sctaaiarm' or per == 'sctaaicore' or per == 'sctaaiarmcheat' or per == 'sctaaicorecheat' then
+        and per == 'sctaaiarm' or per == 'sctaaicore' then
             return 15000, 'SCTAAIExpansion'
         else
         return -1

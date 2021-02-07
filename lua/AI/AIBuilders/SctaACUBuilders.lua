@@ -88,8 +88,9 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
             Construction = {
+                DesiresAssist = true,
+                NumAssistees = 2,
                 BuildClose = true,
                 BuildStructures = {
                     'T1LandFactory',
@@ -109,8 +110,9 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
             Construction = {
+                DesiresAssist = true,
+                NumAssistees = 2,
                 BuildStructures = {
                     'T1AirFactory',
                 }

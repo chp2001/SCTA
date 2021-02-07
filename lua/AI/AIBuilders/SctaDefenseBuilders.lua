@@ -23,7 +23,7 @@ BuilderGroup {
                 BuildClose = true,
                 BuildStructures = {
                     'T1AADefense',
-                },
+                }
             }
         }
     },
@@ -42,7 +42,7 @@ BuilderGroup {
                 BuildClose = true,
                 BuildStructures = {
                     'T1GroundDefense',
-                },
+                }
             }
         }
     },
@@ -80,7 +80,7 @@ BuilderGroup {
                 BuildClose = true,
                 BuildStructures = {
                     'T2GroundDefense',
-                },
+                }
             }
         }
     },
@@ -99,7 +99,7 @@ BuilderGroup {
                 BuildClose = true,
                 BuildStructures = {
                     'T3GroundDefense',
-                },
+                }
             }
         }
     },

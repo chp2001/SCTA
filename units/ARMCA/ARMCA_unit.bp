@@ -97,6 +97,10 @@ UnitBlueprint {
     },
     Description = 'Tech Level 1',
     Display = {
+        AnimationBuild = '/mods/SCTA-master/units/ARMCA/ARMCA_lod0_nano.sca',
+        AnimationBuildRate = 1, 
+        AnimationWing = '/mods/SCTA-master/units/ARMCA/ARMCA_lod0_wings.sca',
+        AnimationWingRate = 1, 
         Abilities = {
             'Construction Unit',
         },
@@ -106,7 +110,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -128,10 +131,10 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            AimBone = 'nano1',
-            BuildEffectBones = {'nano1'},
-            PitchBone = 'nano1',
-            YawBone = 'nano1',
+            AimBone = 'nano',
+            BuildEffectBones = {'Nozzle'},
+            PitchBone = 'nano',
+            YawBone = 0,
         },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',

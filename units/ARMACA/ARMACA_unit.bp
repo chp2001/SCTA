@@ -110,7 +110,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.1,
     },
     Economy = {
         BuildCostEnergy = 12096,
@@ -129,11 +129,11 @@ UnitBlueprint {
     },
     General = {        
         BuildBones = {
-        AimBone = 'Nozzle',
-        BuildEffectBones = {'Nozzle'},
-        PitchBone = 'Nozzle',
-        YawBone = 'Nozzle',
-    },
+            AimBone = 'nano1',
+            BuildEffectBones = {'nano1'},
+            PitchBone = 'nano1',
+            YawBone = 'nano1',
+        },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {

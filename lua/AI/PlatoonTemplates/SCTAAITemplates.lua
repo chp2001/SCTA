@@ -49,10 +49,10 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'T4ExperimentalSCTA',
-    Plan = 'ExperimentalAIHub',
+    Plan = 'StrikeForceAI',
     GlobalSquads = {
         #DUNCAN - removed the sera lightning unit
-        { categories.EXPERIMENTAL * categories.LAND * categories.MOBILE - categories.INSIGNIFICANTUNIT, 2, 3, 'attack', 'none' }
+        { categories.EXPERIMENTAL * categories.LAND * categories.MOBILE, 1, 1, 'attack', 'none' }
     },
 }
 

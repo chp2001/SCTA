@@ -53,7 +53,9 @@ BuilderGroup {
         BuilderName = 'SCTAAi Factory Artillery',
         PlatoonTemplate = 'T1LandArtillerySCTA',
         Priority = 70,
-        BuilderConditions = { },
+        BuilderConditions = {
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
+         },
         BuilderType = 'All',
     },
     Builder {
@@ -108,7 +110,9 @@ BuilderGroup {
         BuilderName = 'SCTAAi Factory2 Artillery',
         PlatoonTemplate = 'T1LandArtillerySCTA2',
         Priority = 70,
-        BuilderConditions = { },
+        BuilderConditions = { 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
+        },
         BuilderType = 'All',
     },
 

@@ -68,6 +68,7 @@ BuilderGroup {
             NeedGuard = false,
             DesiresAssist = false,
             Construction = {
+                BuildClose = true,
                 BuildStructures = {
                     'T1EnergyProduction2',
                 }
@@ -88,6 +89,7 @@ BuilderGroup {
             NeedGuard = false,
             DesiresAssist = true,
             Construction = {
+                BuildClose = true,
                 BuildStructures = {
                     'T1LandFactory',
                 }

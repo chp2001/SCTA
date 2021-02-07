@@ -36,7 +36,7 @@ BuilderGroup {
             { EBC, 'GreaterThanEconIncome',  { 2.4, 20}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.2 }},
             { MIBC, 'GreaterThanGameTime', { 720 } },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'MASSEXTRACTION TECH2', 'MASSEXTRACTION' } },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'MASSEXTRACTION TECH3', 'MASSEXTRACTION' } },
         },
         FormRadius = 10000,
         BuilderType = 'Any',
@@ -51,7 +51,7 @@ BuilderGroup {
             { IBC, 'BrainNotLowPowerMode', {} },
             { MIBC, 'GreaterThanGameTime', { 540 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 600, 0 } },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'MASSEXTRACTION TECH2', 'MASSEXTRACTION' } },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'MASSEXTRACTION TECH3', 'MASSEXTRACTION' } },
 
         },
         FormRadius = 10000,

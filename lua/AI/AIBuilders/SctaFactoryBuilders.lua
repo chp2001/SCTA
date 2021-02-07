@@ -36,7 +36,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, 
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.FACTORY * categories.LEVEL1 * categories.PRIMARY } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
@@ -58,7 +58,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.FACTORY * categories.LEVEL1 * categories.SECONDARY } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
@@ -241,5 +241,45 @@ BuilderGroup {
                 }
             }
         }
-    },    
+    },
+    Builder {
+        BuilderName = 'SCTAAI LandFac2 Emergency',
+        PlatoonTemplate = 'EngineerBuilderSCTA12',
+        Priority = 600,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {750} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T2LandFactory2',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI LandFac3 Emergency',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        Priority = 600,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {1500} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T3LandFactory',
+                }
+            }
+        }
+    },     
 }

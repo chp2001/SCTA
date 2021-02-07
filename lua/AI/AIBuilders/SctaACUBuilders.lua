@@ -23,7 +23,8 @@ BuilderGroup {
         PlatoonAddBehaviors = { 'CommanderBehaviorSCTA' }, -- Add a behaviour to the Commander unit once its done with it's BO.	
         PlatoonAddFunctions = { {SAI, 'BuildOnce'}, }, -- Flag this builder to be only run once.	
         BuilderData = {	
-            Construction = {	
+            Construction = {
+                BuildClose = true,
                 BuildStructures = { -- The buildings to make	
                 'T1LandFactory',	
                 'T1EnergyProduction',

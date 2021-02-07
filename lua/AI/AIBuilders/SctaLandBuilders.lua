@@ -43,7 +43,7 @@ BuilderGroup {
         Priority = 90,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
         },
@@ -64,7 +64,8 @@ BuilderGroup {
         Priority = 85,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.LAND } },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.75 }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, -- Build AA if the enemy is threatening our base with air units.
             { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,
                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
@@ -99,7 +100,8 @@ BuilderGroup {
         Priority = 90,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
         },
@@ -121,6 +123,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandAASCTA2',
         Priority = 85,
         BuilderConditions = {
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, -- Build AA if the enemy is threatening our base with air units.
             { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,
                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
@@ -154,6 +157,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandDFTankSCTA',
         Priority = 100,
         BuilderConditions = {
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL2 * categories.DIRECTFIRE,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
@@ -166,6 +170,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandDFTank2SCTA',
         Priority = 100,
         BuilderConditions = {
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL2 * categories.DIRECTFIRE,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
@@ -232,6 +237,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
         },

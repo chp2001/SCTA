@@ -33,7 +33,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer LandFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 95,
-        InstanceCount = 1,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
@@ -55,7 +55,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer LandFac2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 90,
-        InstanceCount = 1,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
@@ -89,6 +89,7 @@ BuilderGroup {
             NeedGuard = false,
             DesiresAssist = true,
             Construction = {
+                BuildClose = true,
                 BuildStructures = {
                     'T1AirFactory',
                 }
@@ -225,10 +226,10 @@ BuilderGroup {
         BuilderName = 'SCTAAI LandFac Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 500,
-        InstanceCount = 2,
+        InstanceCount = 4,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.8, 0.8}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {

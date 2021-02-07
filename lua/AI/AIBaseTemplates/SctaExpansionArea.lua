@@ -44,10 +44,10 @@ BaseBuilderTemplate {
         if not per == 'sctaaiarm' or per == 'sctaaicore' or per == 'sctaaiarmcheat' or per == 'sctaaicorecheat' then
             return -1
         end
-        if markerType != 'Start Location' then
+        if markerType != 'Start Location' or markerType != 'Expansion Area' then
             return -1
         end
-        LOG('Return sctaai personality')
+         LOG('* SCTAAI: Expansion return default 0')
         return 1000, 'SCTAAIExpansion'
     end,
 }

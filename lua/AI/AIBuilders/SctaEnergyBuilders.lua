@@ -40,6 +40,7 @@ BuilderGroup {
             NeedGuard = false,
             DesiresAssist = false,
             Construction = {
+                BuildClose = true,
                 BuildStructures = {
                     'T1EnergyProduction2',
                 }

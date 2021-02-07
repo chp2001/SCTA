@@ -15,7 +15,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 50,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 1 }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -32,8 +32,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 50,
         BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LASER * categories.LEVEL1 } }, 
             { MIBC, 'LessThanGameTime', {480} }, -- Don't make tanks if we have lots of them.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 1 }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.25}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -48,10 +49,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAMissileDefense',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 50,
+        Priority = 70,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.ANTIMISSILE} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1 }}, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -70,7 +71,7 @@ BuilderGroup {
         Priority = 60,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.LASER * categories.LEVEL2 } }, 
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1 }}, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}}, 
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -89,7 +90,7 @@ BuilderGroup {
         Priority = 60,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.LASER * categories.LEVEL2 } }, 
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1 }}, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.4, 0.25}}, 
         },
         BuilderType = 'Any',
         BuilderData = {

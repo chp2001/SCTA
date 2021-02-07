@@ -44,9 +44,8 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 1.05 }},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK,
-                                       '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
+                                       '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
         },
         BuilderType = 'All',
     },

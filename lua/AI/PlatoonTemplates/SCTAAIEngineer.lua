@@ -67,10 +67,10 @@ PlatoonTemplate {
     Name = 'T1BuildEngineerSCTA',
     FactionSquads = {
         Arm = {
-            { 'armck', 1, 1, 'support', 'None' }
+            { 'armck', 1, 2, 'support', 'None' }
         },
         Core = {
-            { 'corcv', 1, 1, 'support', 'None' }
+            { 'corcv', 1, 2, 'support', 'None' }
         },
     }
 }
@@ -79,10 +79,10 @@ PlatoonTemplate {
     Name = 'T1BuildEngineerAirSCTA',
     FactionSquads = {
         Arm = {
-            { 'armca', 1, 1, 'support', 'None' }
+            { 'armca', 1, 2, 'support', 'None' }
         },
         Core = {
-            { 'corca', 1, 1, 'support', 'None' }
+            { 'corca', 1, 2, 'support', 'None' }
         },
     }
 }

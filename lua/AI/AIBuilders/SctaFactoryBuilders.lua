@@ -219,5 +219,24 @@ BuilderGroup {
             }
         }
     },
-
+    Builder {
+        BuilderName = 'SCTAAI LandFac Emergency',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        Priority = 500,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {300} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.8, 0.8}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            BuildClose = true,
+            NeedGuard = false,
+            Construction = {
+                BuildStructures = {
+                    'T1LandFactory2',
+                }
+            }
+        }
+    },    
 }

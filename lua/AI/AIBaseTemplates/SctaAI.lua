@@ -25,6 +25,7 @@ BaseBuilderTemplate {
         'SCTAAIFactoryBuilders',
         'SCTAAIDefenseBuilder',
         'SctaExtractorUpgrades',
+        'SCTAExpansionBuilders',
     },
     NonCheatBuilders = {
         -- Specify builders that are _only_ used by non-cheating AI (e.g. scouting)
@@ -32,7 +33,7 @@ BaseBuilderTemplate {
     BaseSettings = { },
     ExpansionFunction = function(aiBrain, location, markerType)
         -- This is used if you want to make stuff outside of the starting location.
-        return 0
+        return -1
     end,
     
     FirstBaseFunction = function(aiBrain)

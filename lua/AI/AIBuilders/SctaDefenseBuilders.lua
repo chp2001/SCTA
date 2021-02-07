@@ -83,4 +83,23 @@ BuilderGroup {
             }
         }
     },
+    Builder {
+        BuilderName = 'SCTALaser3Tower',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        Priority = 60,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.LASER * categories.LEVEL2 } }, 
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1 }}, 
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T3GroundDefense',
+                },
+            }
+        }
+    },
 }

@@ -33,9 +33,9 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 1,
         BuilderConditions = {
-                { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.MASSFABRICATION} },
+                { UCBC, 'HaveLessThanUnitsWithCategory', { 5, categories.MASSFABRICATION} },
                 { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
-                { MIBC, 'GreaterThanGameTime', {1250} }, -- Don't make tanks if we have lots of them.
+                { MIBC, 'GreaterThanGameTime', {1800} }, -- Don't make tanks if we have lots of them.
             },
         BuilderType = 'Any',
         BuilderData = {
@@ -52,7 +52,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI T2Engineer Mex',
-        PlatoonTemplate = 'EngineerBuilderSCTA2',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
         Priority = 100,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = { },

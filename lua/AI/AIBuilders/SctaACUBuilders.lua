@@ -30,9 +30,10 @@ BuilderGroup {
                 'T1EnergyProduction',
                 'T1Resource',
                 'T1Resource', 
-                'T1EnergyProduction',			
-                'T1EnergyProduction2',
+                'T1Radar',
+                'T1EnergyProduction',
                 'T1LandFactory2',
+                'T1EnergyProduction',
                 }	
             }	
         }	

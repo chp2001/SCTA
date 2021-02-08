@@ -67,7 +67,6 @@ BuilderGroup {
                 BuildStructures = {                    
                     'T1AADefense',
                     'T1GroundDefense',
-                    'T1Radar',
                 }
             },
         }

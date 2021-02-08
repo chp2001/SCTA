@@ -80,9 +80,9 @@ UnitBlueprint {
         },
         MovementEffects = {
             TAMovement = {
-            Bones = { 'Leg_Tiptoe_004', 'Leg_Tiptoe_003'},
+            Bones = { 'Origin'},
             Emitter = '/mods/SCTA-master/effects/emitters/TAdust_emit.bp',
-            Scale = 0.1,
+            Scale = 0.4,
             },
         },
         TransportAnimation = { { Animation = '/mods/SCTA-master/units/ARMSPID/ARMSPID_ATransport.sca', Weight = 100 } },

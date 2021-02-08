@@ -76,15 +76,10 @@ UnitBlueprint {
         },
         Mesh = {
             IconFadeInZoom = 130,
-            {
-                LODCutoff = 120,
-                Scrolling = true,
-                ShaderName = 'Unit',
-            },
             LODs = {
                 {
                     LODCutoff = 230,
-                    ShaderName = 'Unit', 
+                    Scrolling = true, 
 		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },

@@ -24,8 +24,10 @@ BuilderGroup {
             Construction = {
                 DesiresAssist = true,
                 NumAssistees = 2,
+                BuildClose = true,
                 BuildStructures = {
                     'T1AirFactory',
+                    'T1Radar',
                 }
             }
         }

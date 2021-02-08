@@ -52,13 +52,7 @@ SurfaceThreatLevel = 24,
     },
     Description = 'Mobile Rocket Launcher',
     Display = {
-    Abilities = {
-        'Missile',
-    },
     MovementEffects = {
-        Bones = {'CORVROC'},
-        Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
-        Scale = 0.5,
     Land = {
         Treads = {
         ScrollMultiplier = 0.75,

@@ -103,9 +103,11 @@ UnitBlueprint {
             },
         },
 	MovementEffects = {
+        TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/fire_smoke_emit.bp',
 		Scale = 1,
 		Bones = {'firepoint1','firepoint2','firepoint3','firepoint4'},
+        },
 	},
         UniformScale = 0.16,
     },

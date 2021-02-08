@@ -67,12 +67,14 @@ UnitBlueprint {
 	IdleEffects = {
 		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake1','Wake2','Wake3','Wake4'},
+		Bones = {'Wake2'},
 	},
 	MovementEffects = {
+        TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake1','Wake2','Wake3','Wake4'},
+		Bones = {'Wake1'},
+        },
 	},
         UniformScale = 0.16,
     },

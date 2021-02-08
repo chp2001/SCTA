@@ -72,9 +72,6 @@ UnitBlueprint {
             'Construction Unit',
         },
         MovementEffects = {
-            Bones = {'ARMCV'},
-            Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
-            Scale = 0.5,
         Land = {
             Treads = {
                 ScrollMultiplier = 0.75,

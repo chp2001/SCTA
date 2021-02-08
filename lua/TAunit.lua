@@ -40,9 +40,9 @@ TAunit = Class(Unit)
 		self:LOGDBG('TAUnit.MovementEffects')
 		Unit.MovementEffects(self, EffectsBag, TypeSuffix)
 		local bp = self:GetBlueprint()
-		if not IsDestroyed(self) and bp.Display.MovementEffects then
-			for k, v in bp.Display.MovementEffects.Bones do
-				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.Emitter ):ScaleEmitter(bp.Display.MovementEffects.Scale))
+		if not IsDestroyed(self) and bp.Display.MovementEffects.TAMovement then
+			for k, v in bp.Display.MovementEffects.TAMovement.Bones do
+				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.TAMovement.Emitter ):ScaleEmitter(bp.Display.MovementEffects.Scale))
 			end
 		end
 	end,

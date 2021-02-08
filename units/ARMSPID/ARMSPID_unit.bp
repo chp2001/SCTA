@@ -79,9 +79,11 @@ UnitBlueprint {
             },
         },
         MovementEffects = {
+            TAMovement = {
             Bones = { 'Leg_Tiptoe_004', 'Leg_Tiptoe_003'},
             Emitter = '/effects/emitters/Dust_small_emit.bp',
             Scale = 0.5,
+            },
         },
         TransportAnimation = { { Animation = '/mods/SCTA-master/units/ARMSPID/ARMSPID_ATransport.sca', Weight = 100 } },
         TransportDropAnimation = { { Animation = '/mods/SCTA-master/units/ARMSPID/ARMSPID_ATransportDetach.sca', Weight = 100 } },

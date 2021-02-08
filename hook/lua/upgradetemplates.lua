@@ -107,4 +107,4 @@
         }
     end
 end
-LOG('Resulting Table'..repr(StructureUpgradeTemplates))
+---LOG('Resulting Table'..repr(StructureUpgradeTemplates))

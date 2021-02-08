@@ -15,7 +15,6 @@ ARMFIG = Class(TAair) {
 			wing2 = CreateSlider(self, 'wing2'),
 		}
 		self.Spinners = {
-			base = CreateRotator(self, 0, 'z', nil, 0, 0, 0),
 			wing1 = CreateRotator(self, 'wing1', 'z', nil, 0, 0, 0),
 			wing2 = CreateRotator(self, 'wing2', 'z', nil, 0, 0, 0),
 		}
@@ -24,34 +23,6 @@ ARMFIG = Class(TAair) {
 		end
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
-		end
-		self.moving = nil
-		ForkThread(self.RollThread, self)
-	end,
-
-	RollThread = function(self)
-		while not IsDestroyed(self) do
-			if self.moving then
-				if math.random(10) == 5 then
-					--TURN base to z-axis <239.99> SPEED <120.02>
-					self.Spinners.base:SetGoal(240)
-					self.Spinners.base:SetSpeed(120)
-
-					WaitFor(self.Spinners.base)
-
-					--TURN base to z-axis <119.99> SPEED <180.04>
-					self.Spinners.base:SetGoal(120)
-					self.Spinners.base:SetSpeed(120)
-
-					WaitFor(self.Spinners.base)
-
-					--TURN base to z-axis <0> SPEED <120.02>
-					self.Spinners.base:SetGoal(0)
-					self.Spinners.base:SetSpeed(120)
-				
-				end
-			end
-			WaitSeconds(2)
 		end
 	end,
 
@@ -71,13 +42,9 @@ ARMFIG = Class(TAair) {
 		--TURN wing2 to z-axis <-2.69> SPEED <1.85>;
 		self.Spinners.wing2:SetGoal(-2.69)
 		self.Spinners.wing2:SetSpeed(1.85)
-
-		self.moving = true
 	end,
 
 	CloseWings = function(self)
-
-		self.moving = nil
 
 		--MOVE wing1 to x-axis <0> SPEED <1.00>;
 		self.Sliders.wing1:SetGoal(0,0,0)

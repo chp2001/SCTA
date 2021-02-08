@@ -48,6 +48,25 @@ BuilderGroup {
         }
     },
     Builder {
+        BuilderName = 'SCTAAI T1EngineerEco Pgen2',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco',
+        Priority = 10,
+        InstanceCount = 3,
+        BuilderConditions = {
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1EnergyProduction2',
+                }
+            }
+        }
+    },
+    Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 50,
@@ -78,8 +97,9 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
             Construction = {
+                DesiresAssist = true,
+                NumAssistees = 2,
                 BuildStructures = {
                     'T2EnergyProduction',
                 }
@@ -98,8 +118,9 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
             Construction = {
+                DesiresAssist = true,
+                NumAssistees = 2,
                 BuildStructures = {
                     'T3EnergyProduction',
                 }

@@ -9,13 +9,6 @@
 
 
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
-local MIBC = '/lua/editor/MiscBuildConditions.lua'
-local MABC = '/lua/editor/MarkerBuildConditions.lua'
-local OAUBC = '/lua/editor/OtherArmyUnitCountBuildConditions.lua'
-local EBC = '/lua/editor/EconomyBuildConditions.lua'
-local PCBC = '/lua/editor/PlatoonCountBuildConditions.lua'
-local SAI = '/lua/ScenarioPlatoonAI.lua'
-local IBC = '/lua/editor/InstantBuildConditions.lua'
 
 BuilderGroup {
     BuilderGroupName = 'SCTAExpansionBuilders',
@@ -74,7 +67,6 @@ BuilderGroup {
                 BuildStructures = {                    
                     'T1AADefense',
                     'T1GroundDefense',
-                    'T1Radar',
                 }
             },
         }

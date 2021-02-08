@@ -107,6 +107,7 @@ TAWalking = Class(TATreads)
             if bpDisplay.AnimationWalk then
                 self.Animator:PlayAnim(bpDisplay.AnimationWalk, true)
                 self.Animator:SetRate(bpDisplay.AnimationWalkRate or 1)
+                TATreads.MovementEffects(self)
             end
         elseif ( new == 'Stopped' ) then
             if(self.IdleAnim and not self:IsDead()) then

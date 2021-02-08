@@ -72,9 +72,6 @@ UnitBlueprint {
         AnimationBuild = '/mods/SCTA-master/units/CORACV/CORACV_lod0_Aopen.sca',
         AnimationBuildRate = 1, 
         MovementEffects = {
-            Bones = {'CORACV'},
-            Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
-            Scale = 0.5,
             Land = {
                 Treads = {
                     ScrollMultiplier = 0.75,
@@ -98,14 +95,10 @@ UnitBlueprint {
         },
         Mesh = {
             IconFadeInZoom = 130,
-            {
-                LODCutoff = 120,
-                Scrolling = true,
-                ShaderName = 'Unit',
-            },
             LODs = {
                 {
                     LODCutoff = 230,
+                    Scrolling = true,
                     ShaderName = 'Unit', 
             },
         },

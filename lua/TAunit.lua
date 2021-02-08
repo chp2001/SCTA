@@ -36,13 +36,24 @@ TAunit = Class(Unit)
 		ForkThread(self.IdleEffects, self)
 	end,
 
+	OnMotionHorzEventChange = function(self, new, old )
+		local bp = self:GetBlueprint()
+		Unit.OnMotionHorzEventChange(self, new, old )
+	if (new == 'Stopped') and bp.Display.MovementEffects.TAMovement then
+			ForkThread(self.IdleEffects, self)
+			for k,v in self.FxMovement do
+				v:Destroy()
+			end
+		end
+	end,
+
 	MovementEffects = function(self, EffectsBag, TypeSuffix)
 		self:LOGDBG('TAUnit.MovementEffects')
-		Unit.MovementEffects(self, EffectsBag, TypeSuffix)
+		---Unit.MovementEffects(self, EffectsBag, TypeSuffix)
 		local bp = self:GetBlueprint()
-		if not IsDestroyed(self) and bp.Display.MovementEffects then
-			for k, v in bp.Display.MovementEffects.Bones do
-				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.Emitter ):ScaleEmitter(bp.Display.MovementEffects.Scale))
+		if not IsDestroyed(self) and bp.Display.MovementEffects.TAMovement then
+			for k, v in bp.Display.MovementEffects.TAMovement.Bones do
+				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.TAMovement.Emitter ):ScaleEmitter(bp.Display.MovementEffects.TAMovement.Scale))
 			end
 		end
 	end,

@@ -72,9 +72,6 @@ UnitBlueprint {
             'Construction Unit',
         },
     MovementEffects = {
-        Bones = {'CORCV'},
-        Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
-        Scale = 0.5,
         Land = {
             Treads = {
                 ScrollMultiplier = 0.75,
@@ -98,14 +95,10 @@ UnitBlueprint {
     },
     Mesh = {
         IconFadeInZoom = 130,
-        {
-            LODCutoff = 120,
-            Scrolling = true,
-            ShaderName = 'Unit',
-        },
         LODs = {
             {
                 LODCutoff = 230,
+                Scrolling = true,
                 ShaderName = 'Unit', 
                 },
 			},

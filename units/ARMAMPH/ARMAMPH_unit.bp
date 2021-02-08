@@ -77,9 +77,11 @@ UnitBlueprint {
 		Bones = {'lfoot','rfoot'},
 	},
 	MovementEffects = {
+        TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
 		Bones = {'lfoot','rfoot'},
+        },
 	},
         UniformScale = 0.16,
     },

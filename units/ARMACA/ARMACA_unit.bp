@@ -97,6 +97,10 @@ UnitBlueprint {
     },
     Description = 'Tech Level 2',
     Display = {
+        AnimationBuild = '/mods/SCTA-master/units/ARMACA/ARMACA_lod0_nano.sca',
+        AnimationBuildRate = 1, 
+        AnimationWing = '/mods/SCTA-master/units/ARMACA/ARMACA_lod0_wings.sca',
+        AnimationWingRate = 1, 
         Abilities = {
             'Adv. Construction Unit',
         },
@@ -106,7 +110,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -129,10 +132,15 @@ UnitBlueprint {
     },
     General = {        
         BuildBones = {
-            AimBone = 'nano1',
-            BuildEffectBones = {'nano1'},
-            PitchBone = 'nano1',
-            YawBone = 'nano1',
+            AimBone = 'Lnanopitch',
+            BuildEffectBones = {'NozzleL', 'NozzleR'},
+            PitchBone = 'Lnanopitch',
+            YawBone = 'Lnanoyaw',
+        },
+        BuildBonesAlt1 = {
+            AimBone = 'Rnanopitch',
+            PitchBone = 'Rnanopitch',
+            YawBone = 'Rnanoyaw',
         },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',

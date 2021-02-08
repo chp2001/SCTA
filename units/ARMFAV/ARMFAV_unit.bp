@@ -54,16 +54,13 @@ UnitBlueprint {
     Description = 'Fast Attack Vehicle',
     Display = {
         MovementEffects = {
-            Bones = {'ARMFAV'},
-            Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
-            Scale = 0.5,
             Land = {
                 Treads = {
                     ScrollMultiplier = 0.75,
                     ScrollTreads = true,
                     TreadMarks = {
                         {
-                             BoneName = 'ARMFAV',
+                            BoneName = 'ARMFAV',
                             TreadMarks = 'tank_treads_albedo',
                             TreadMarksInterval = 0.2,
                             TreadMarksSizeX = 0.5,
@@ -80,14 +77,10 @@ UnitBlueprint {
         },
         Mesh = {
             IconFadeInZoom = 130,
-            {
-                LODCutoff = 120,
-                Scrolling = true,
-                ShaderName = 'Unit',
-            },
             LODs = {
                 {
                     LODCutoff = 230,
+                    Scrolling = true,
                     ShaderName = 'Unit', 
                 },
             },

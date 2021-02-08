@@ -91,8 +91,8 @@ BuilderGroup {
         PlatoonTemplate = 'T3BuildEngineerAirSCTA',
         Priority = 120, -- Top factory priority
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { MIBC, 'GreaterThanGameTime', {1500} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENGINEER * categories.AIR * categories.LEVEL3} }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'All',

@@ -32,8 +32,8 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 50,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LASER * categories.LEVEL1 } }, 
             { MIBC, 'LessThanGameTime', {480} }, -- Don't make tanks if we have lots of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LASER * categories.LEVEL1 } }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.25}},
         },
         BuilderType = 'Any',

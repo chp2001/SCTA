@@ -32,10 +32,10 @@ BuilderGroup {
         InstanceCount = 1,
         Priority = 200,
         BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', { 720 } },
             { IBC, 'BrainNotLowPowerMode', {} },
             { EBC, 'GreaterThanEconIncome',  { 2.4, 20}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.2 }},
-            { MIBC, 'GreaterThanGameTime', { 720 } },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'MASSEXTRACTION TECH3', 'MASSEXTRACTION' } },
         },
         FormRadius = 10000,
@@ -47,8 +47,8 @@ BuilderGroup {
         InstanceCount = 1,
         Priority = 200,
         BuilderConditions = {
-            { IBC, 'BrainNotLowPowerMode', {} },
             { MIBC, 'GreaterThanGameTime', { 540 } },
+            { IBC, 'BrainNotLowPowerMode', {} },
             { EBC, 'GreaterThanEconStorageCurrent', { 600, 0 } },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'MASSEXTRACTION LEVEL3', 'MASSEXTRACTION' } },
 
@@ -61,8 +61,8 @@ BuilderGroup {
         PlatoonTemplate = 'T1RadarUpgrade',
         Priority = 50,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.5 }},
             { MIBC, 'GreaterThanGameTime', {1200} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.5 }},
             { IBC, 'BrainNotLowPowerMode', {} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'RADAR STRUCTURE LEVEL2', 'RADAR STRUCTURE' } },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, 'FUSION'} },

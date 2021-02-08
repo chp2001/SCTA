@@ -108,8 +108,8 @@ BuilderGroup {
         Priority = 120,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { MIBC, 'GreaterThanGameTime', {800} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
@@ -130,8 +130,8 @@ BuilderGroup {
         Priority = 120,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { MIBC, 'GreaterThanGameTime', {800} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
@@ -152,8 +152,8 @@ BuilderGroup {
         Priority = 130,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { MIBC, 'GreaterThanGameTime', {1500} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FACTORY * categories.LEVEL3 * categories.LAND} }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
@@ -174,8 +174,8 @@ BuilderGroup {
         Priority = 130,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { MIBC, 'GreaterThanGameTime', {1500} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FACTORY * categories.LEVEL3 * categories.AIR} }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
@@ -196,8 +196,8 @@ BuilderGroup {
         Priority = 105,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { MIBC, 'GreaterThanGameTime', {900} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.FACTORY * categories.LEVEL2 * categories.AIR } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
@@ -218,8 +218,8 @@ BuilderGroup {
         Priority = 135,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { MIBC, 'GreaterThanGameTime', {1500} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.GATE} }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
@@ -240,8 +240,8 @@ BuilderGroup {
         Priority = 500,
         InstanceCount = 4,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
             { MIBC, 'GreaterThanGameTime', {300} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
         },
         BuilderType = 'Any',
@@ -261,8 +261,8 @@ BuilderGroup {
         Priority = 600,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.FACTORY * categories.LEVEL3 * categories.LAND } }, -- Stop after 10 facs have been built.
             { MIBC, 'GreaterThanGameTime', {750} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.FACTORY * categories.LEVEL3 * categories.LAND } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
         },
         BuilderType = 'Any',

@@ -103,32 +103,6 @@ UnitBlueprint {
                 },
             },
         },
-        MovementEffects = {
-            Land = {
-                Footfall = {
-                    Bones = {
-                        {
-                            FootBone = 'LeftFoot',
-                            HipBone = 'LeftUpperLeg',
-                            KneeBone = 'LeftLowerLeg',
-                            MaxFootFall = 0,--0.23808,
-                            Offset = {x = 1.5},
-                            StraightLegs = false,
-                            Type = 'FootFall01',
-                        },
-                        {
-                            FootBone = 'RightFoot',
-                            HipBone = 'RightUpperLeg',
-                            KneeBone = 'RightLowerLeg',
-                            MaxFootFall = 0,--0.23808,
-                            Offset = {x = -1.5},
-                            StraightLegs = false,
-                            Type = 'FootFall01',
-                        },
-                    },
-                },
-            },
-        },
         UniformScale = 0.16,
     },
     Economy = {

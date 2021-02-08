@@ -33,7 +33,6 @@ UnitBlueprint {
 	    'ENERGYPRODUCTION',
 	    'WIND',
 	    'ARM',
-	    'ENERGY',
 	    'LEVEL1',
     },
     Defense = {

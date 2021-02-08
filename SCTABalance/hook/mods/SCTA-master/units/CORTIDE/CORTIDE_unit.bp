@@ -15,8 +15,8 @@ UnitBlueprint {
 	    'ENERGYPRODUCTION',
 	    'NAVAL',
 	    'CORE',
-	    'ENERGY',
 	    'LEVEL1',
+        'TIDAL',
     },
     Display = {
         UniformScale = 0.11,

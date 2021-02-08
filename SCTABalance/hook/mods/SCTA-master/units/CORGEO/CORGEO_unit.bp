@@ -16,7 +16,6 @@ UnitBlueprint {
 	'ENERGYPRODUCTION',
 	'HYDROCARBON',
 	'CORE',
-	'ENERGY',
 	'LEVEL1',
 },
 Display = {

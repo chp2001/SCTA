@@ -15,8 +15,8 @@ UnitBlueprint {
 	    'ENERGYPRODUCTION',
 	    'NAVAL',
 	    'ARM',
-	    'ENERGY',
 	    'LEVEL1',
+        'TIDAL',
     },
     Defense = {
         Health = 1200,

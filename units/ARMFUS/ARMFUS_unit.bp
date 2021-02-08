@@ -33,6 +33,7 @@ UnitBlueprint {
         'SORTECONOMY',
 	    'ENERGYPRODUCTION',
 	    'ARM',
+        'FUSION',
     },
     Defense = {
         ArmorType = 'Structure',

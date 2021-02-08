@@ -14,7 +14,7 @@ UnitBlueprint {
         'ECONOMIC',
 	'ENERGYPRODUCTION',
 	'CORE',
-	'ENERGY',
+	'FUSION',
 	'LEVEL2',
 	'SORTECONOMY',
     },

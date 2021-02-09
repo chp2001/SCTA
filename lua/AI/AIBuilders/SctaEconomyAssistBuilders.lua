@@ -20,7 +20,7 @@ BuilderGroup {
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
-                AssisteeType = categories.FACTORY,
+                AssisteeType = 'Factory',
                 AssistRange = 120,
                 BeingBuiltCategories = {'EXPERIMENTAL'},                  
                 PermanentAssist = true,
@@ -41,7 +41,7 @@ BuilderGroup {
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
-                AssisteeType = categories.ENGINEER,
+                AssisteeType = 'Engineer',
                 AssistRange = 120,
                 BeingBuiltCategories = {'LEVEL4'},                 
                 PermanentAssist = true,
@@ -65,7 +65,7 @@ BuilderGroup {
             Assist = {
                 AssistUntilFinished = true,
                 AssistLocation = 'LocationType',
-                AssisteeType = categories.ENGINEER,
+                AssisteeType = 'Engineer',
                 AssistRange = 100,
                 AssistClosestUnit = true,
                 BeingBuiltCategories = {'FUSION'},
@@ -86,7 +86,7 @@ BuilderGroup {
             Assist = {
                 AssistUntilFinished = true,
                 AssistLocation = 'LocationType',
-                AssisteeType = categories.STRUCTURE,
+                AssisteeType = 'Structure',
                 AssistRange = 100,
                 AssistClosestUnit = true,
                 BeingBuiltCategories = {'STRUCTURE MASSEXTRACTION LEVEL3'},

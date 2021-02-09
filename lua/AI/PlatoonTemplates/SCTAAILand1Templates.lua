@@ -20,7 +20,7 @@ PlatoonTemplate {
             { 'armrock', 1, 2, 'attack', 'none' },
         },
         Core = {
-            { 'corraid', 1, 4, 'attack', 'none' },
+            { 'corraid', 1, 4, 'attack', 'none' }
         },
     }
 }

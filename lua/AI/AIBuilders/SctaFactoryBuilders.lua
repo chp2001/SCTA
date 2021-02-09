@@ -84,9 +84,9 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1,  categories.FACTORY * categories.LEVEL1 } }, -- Don't build air fac immediately.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4,  categories.FACTORY * categories.AIR * categories.LEVEL1 } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  categories.FACTORY * categories.AIR * categories.LEVEL2  } }, -- Stop after 5 facs have been built.
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 6,  categories.FACTORY * categories.LEVEL1 } }, -- Don't build air fac immediately.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6,  categories.FACTORY * categories.AIR * categories.LEVEL1 } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2,  categories.FACTORY * categories.AIR * categories.LEVEL2  } }, -- Stop after 5 facs have been built.
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.8}},
         },
         BuilderType = 'Any',

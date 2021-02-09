@@ -33,8 +33,8 @@ BuilderGroup {
         Priority = 50,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {480} }, -- Don't make tanks if we have lots of them.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LASER * categories.LEVEL1 } }, 
-            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.25}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LASER * categories.LEVEL1 } }, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.7}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -51,8 +51,8 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 70,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.ANTIMISSILE} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.8, 0.5}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ANTIMISSILE} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.7}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -71,7 +71,7 @@ BuilderGroup {
         Priority = 60,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.LASER * categories.LEVEL2 } }, 
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}}, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.75}}, 
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -108,8 +108,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 60,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {1200} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
+            { MIBC, 'GreaterThanGameTime', {480} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
         },
         BuilderType = 'Any',

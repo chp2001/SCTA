@@ -29,13 +29,70 @@ BuilderGroup {
                 'T1LandFactory',	
                 'T1EnergyProduction',
                 'T1Resource',
-                'T1Resource', 
-                'T1EnergyProduction',
-                'T1LandFactory2',
-                'T1EnergyProduction',
                 }	
             }	
         }	
+    },
+    Builder {
+        BuilderName = 'SCTA AI ACU Factory',
+        PlatoonTemplate = 'CommanderBuilderSCTA',
+        Priority = 960,
+        InstanceCount = 2, -- The max number concurrent instances of this builder.
+        BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {240} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'GreaterThanGameTime', {150} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1LandFactory2',
+                }
+            }
+        }
+    },   
+    Builder {
+        BuilderName = 'SCTA  ACU Energy',
+        PlatoonTemplate = 'CommanderBuilderSCTA',
+        Priority = 950,
+        InstanceCount = 2, -- The max number concurrent instances of this builder.
+        BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {150} }, -- Don't make tanks if we have lots of them.
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1EnergyProduction',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTA AI ACU Mex',
+        PlatoonTemplate = 'CommanderBuilderSCTA',
+        Priority = 975,
+        InstanceCount = 2, -- The max number concurrent instances of this builder.
+        BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {75} }, -- Don't make tanks if we have lots of them.
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+                BuildStructures = {
+                    'T1Resource',
+                }
+            }
+        }
     },
     Builder {
         BuilderName = 'SCTA AI ACU T1Engineer Mex',
@@ -43,7 +100,7 @@ BuilderGroup {
         Priority = 100,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {750} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {800} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -79,12 +136,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Commander LandFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 95,
+        Priority = 90,
         InstanceCount = 1,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.FACTORY * categories.LEVEL1 * categories.LAND } }, -- Stop after 10 facs have been built.
-            { MIBC, 'GreaterThanGameTime', {1200} },
+            { MIBC, 'LessThanGameTime', {1200} },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -107,7 +164,7 @@ BuilderGroup {
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FACTORY * categories.LEVEL1 * categories.AIR } }, -- Stop after 10 facs have been built.
-            { MIBC, 'GreaterThanGameTime', {1200} },
+            { MIBC, 'LessThanGameTime', {1200} },
         },
         BuilderType = 'Any',
         BuilderData = {

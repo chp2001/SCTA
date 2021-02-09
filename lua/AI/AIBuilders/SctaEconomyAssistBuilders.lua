@@ -13,7 +13,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Assist Gantry',
         PlatoonTemplate = 'EngineerBuilderSCTAAssist',
-        Priority = 60,
+        Priority = 120,
         InstanceCount = 12,
         BuilderConditions = {
         },
@@ -22,7 +22,7 @@ BuilderGroup {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Factory',
                 AssistRange = 120,
-                BeingBuiltCategories = {'EXPERIMENTAL'},                  
+                BeingBuiltCategories = {'LEVEL4'},                  
                 PermanentAssist = true,
                 AssistClosestUnit = false,                                       
                 AssistUntilFinished = true,
@@ -34,7 +34,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Assist Gantry Production',
         PlatoonTemplate = 'EngineerBuilderSCTAAssist',
-        Priority = 75,
+        Priority = 120,
         InstanceCount = 12,
         BuilderConditions = {
         },
@@ -43,7 +43,7 @@ BuilderGroup {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Engineer',
                 AssistRange = 120,
-                BeingBuiltCategories = {'LEVEL4'},                 
+                BeingBuiltCategories = {'GATE'},                 
                 PermanentAssist = true,
                 AssistClosestUnit = false,                                       
                 AssistUntilFinished = true,
@@ -58,7 +58,7 @@ BuilderGroup {
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.25}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -66,7 +66,7 @@ BuilderGroup {
                 AssistUntilFinished = true,
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Engineer',
-                AssistRange = 100,
+                AssistRange = 200,
                 AssistClosestUnit = true,
                 BeingBuiltCategories = {'FUSION'},
                 Time = 60,
@@ -79,7 +79,7 @@ BuilderGroup {
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.25}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -87,7 +87,7 @@ BuilderGroup {
                 AssistUntilFinished = true,
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Structure',
-                AssistRange = 100,
+                AssistRange = 200,
                 AssistClosestUnit = true,
                 BeingBuiltCategories = {'STRUCTURE MASSEXTRACTION LEVEL3'},
                 Time = 60,

@@ -33,26 +33,8 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.WIND} },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = false,
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T1EnergyProduction2',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTAAI T1EngineerEco Pgen2',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco',
-        Priority = 10,
-        InstanceCount = 3,
-        BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {1200} }, 
+            { EBC, 'LessThanEconStorageRatio', { 1, 0.25}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -93,6 +75,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LEVEL2 * categories.ENERGYPRODUCTION} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'FUSION', 'ENERGYPRODUCTION' } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -114,6 +97,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1000} }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LEVEL3 * categories.ENERGYPRODUCTION} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'FUSION', 'ENERGYPRODUCTION' } },
         },
         BuilderType = 'Any',
         BuilderData = {

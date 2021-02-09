@@ -139,7 +139,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2BuildEngineerSCTA',
         Priority = 110, -- Top factory priority
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 5, categories.ENGINEER * categories.LEVEL2 - categories.FIELDENGINEER } }, -- Build engies until we have 4 of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.ENGINEER * categories.LEVEL2 - categories.FIELDENGINEER } }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'All',
     },
@@ -147,10 +147,9 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Field Engineer',
         PlatoonTemplate = 'T2BuildFieldEngineerSCTA',
-        Priority = 80, -- Top factory priority
+        Priority = 100, -- Top factory priority
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FIELDENGINEER * categories.LEVEL2} }, -- Build engies until we have 4 of them.
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4, categories.ENGINEER * (categories.LEVEL2 + categories.LEVEL3) - categories.FIELDENGINEER } }, -- Don't build air fac immediately.
         },
         BuilderType = 'All',
     },

@@ -44,12 +44,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Extractor Upgrade Time Based',
         PlatoonTemplate = 'T1MassExtractorUpgrade',
-        InstanceCount = 1,
+        InstanceCount = 2,
         Priority = 200,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 900 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 600, 2000 } },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'MASSEXTRACTION LEVEL3', 'MASSEXTRACTION' } },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, 'MASSEXTRACTION LEVEL3', 'MASSEXTRACTION' } },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, 'FUSION'} },
             { IBC, 'BrainNotLowPowerMode', {} },
         },

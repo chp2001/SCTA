@@ -33,8 +33,8 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {1800} }, -- Don't make tanks if we have lots of them.
-                { UCBC, 'HaveLessThanUnitsWithCategory', { 5, categories.MASSFABRICATION} },
+            { MIBC, 'GreaterThanGameTime', {1200} }, -- Don't make tanks if we have lots of them.
+                { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.MASSFABRICATION} },
                 { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
             },
         BuilderType = 'Any',

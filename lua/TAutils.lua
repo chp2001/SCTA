@@ -84,6 +84,7 @@ updateBuildRestrictions = function(self)
     self.restrictions = true
     elseif EntityCategoryContains(categories.LEVEL2 * categories.CONSTRUCTION - categories.PLANT, self) then
         self:AddBuildRestriction(categories.LEVEL3)
+        self:AddBuildRestriction(categories.LEVEL4)
     self.restrictions = true    
     end
 
@@ -93,6 +94,7 @@ updateBuildRestrictions = function(self)
         if self.FindHQType(aiBrain, HQCategory * categories.LEVEL3) or  gtime > 1200 then
             self:RemoveBuildRestriction(categories.LEVEL2)
             self:RemoveBuildRestriction(categories.LEVEL3)
+            self:RemoveBuildRestriction(categories.LEVEL4)
         elseif self.FindHQType(aiBrain, HQCategory * categories.LEVEL2) or gtime > 600 then
             self:RemoveBuildRestriction(categories.LEVEL2)
         end

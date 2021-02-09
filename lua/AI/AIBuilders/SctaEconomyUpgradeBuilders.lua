@@ -33,10 +33,10 @@ BuilderGroup {
         Priority = 200,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 720 } },
-            { IBC, 'BrainNotLowPowerMode', {} },
             { EBC, 'GreaterThanEconIncome',  { 2.4, 20}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.2 }},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'MASSEXTRACTION TECH3', 'MASSEXTRACTION' } },
+            { IBC, 'BrainNotLowPowerMode', {} },
         },
         FormRadius = 10000,
         BuilderType = 'Any',
@@ -48,10 +48,9 @@ BuilderGroup {
         Priority = 200,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 540 } },
-            { IBC, 'BrainNotLowPowerMode', {} },
             { EBC, 'GreaterThanEconStorageCurrent', { 600, 0 } },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'MASSEXTRACTION LEVEL3', 'MASSEXTRACTION' } },
-
+            { IBC, 'BrainNotLowPowerMode', {} },
         },
         FormRadius = 10000,
         BuilderType = 'Any',
@@ -63,9 +62,9 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1200} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.5 }},
-            { IBC, 'BrainNotLowPowerMode', {} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'RADAR STRUCTURE LEVEL2', 'RADAR STRUCTURE' } },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, 'FUSION'} },
+            { IBC, 'BrainNotLowPowerMode', {} },
         },
         BuilderType = 'Any',
     },

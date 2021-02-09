@@ -22,7 +22,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 14000,
         BuildCostMass = 1500,
-        BuildTime = 9000,
+        BuildTime = 18000,
     },
     SizeY = 1.4,
     StrategicIconName = 'icon_land3_directfire',

@@ -96,3 +96,17 @@ PlatoonTemplate {
         },
     }
 }
+
+PlatoonTemplate {
+    Name = 'T3LandDFTankSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armsnipe', 1, 1, 'attack', 'none' },
+            { 'armmav', 1, 2, 'attack', 'none' },
+        },
+        Core = {
+            { 'corgol', 1, 2, 'attack', 'none' },
+            { 'cormart', 1, 1, 'attack', 'none' },
+        },
+    }
+}

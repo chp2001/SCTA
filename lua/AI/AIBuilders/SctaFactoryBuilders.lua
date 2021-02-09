@@ -39,8 +39,8 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, 
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.FACTORY * categories.LEVEL1 * categories.PRIMARY } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.FACTORY * categories.LEVEL1 * categories.PRIMARY } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}}, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -62,8 +62,8 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.FACTORY * categories.LEVEL1 * categories.SECONDARY } }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -84,10 +84,10 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.8}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1,  categories.FACTORY * categories.LEVEL1 } }, -- Don't build air fac immediately.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4,  categories.FACTORY * categories.AIR * categories.LEVEL1 } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  categories.FACTORY * categories.AIR * categories.LEVEL2  } }, -- Stop after 5 facs have been built.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.8}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -106,11 +106,11 @@ BuilderGroup {
         BuilderName = 'SCTAAI T2LAND Factory',
         PlatoonTemplate = 'EngineerBuilderSCTA12',
         Priority = 120,
-        InstanceCount = 1,
+        InstanceCount = 2,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {800} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
+            { MIBC, 'GreaterThanGameTime', {700} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -127,10 +127,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2LAND2 Factory',
         PlatoonTemplate = 'EngineerBuilderSCTA12',
-        Priority = 120,
+        Priority = 115,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {800} },
+            { MIBC, 'GreaterThanGameTime', {750} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
         },
@@ -238,7 +238,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI LandFac Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 500,
-        InstanceCount = 4,
+        InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
@@ -250,7 +250,7 @@ BuilderGroup {
             Construction = {
                 BuildClose = true,
                 BuildStructures = {
-                    'T1LandFactory2',
+                    'T1LandFactory',
                 }
             }
         }

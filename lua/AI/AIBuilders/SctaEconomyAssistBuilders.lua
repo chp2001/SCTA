@@ -32,6 +32,27 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
+        BuilderName = 'SCTA Assist Gantry Production',
+        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
+        Priority = 75,
+        InstanceCount = 12,
+        BuilderConditions = {
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = categories.ENGINEER,
+                AssistRange = 120,
+                BeingBuiltCategories = {categories.EXPERIMENTAL},                   
+                PermanentAssist = true,
+                AssistClosestUnit = false,                                       
+                AssistUntilFinished = true,
+                Time = 60,
+            },
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
         BuilderName = 'SCTA Mex Assist',
         PlatoonTemplate = 'EngineerBuilderSCTAAssist',
         Priority = 75,
@@ -55,6 +76,20 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Reclaim',
         PlatoonTemplate = 'EngineerBuilderSCTA',
+        PlatoonAIPlan = 'ReclaimAI',
+        Priority = 75,
+        InstanceCount = 3,
+        BuilderConditions = {
+                { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
+            },
+        BuilderData = {
+            LocationType = 'LocationType',
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim2',
+        PlatoonTemplate = 'EngineerBuilderSCTAField',
         PlatoonAIPlan = 'ReclaimAI',
         Priority = 75,
         InstanceCount = 3,
@@ -93,7 +128,7 @@ BuilderGroup {
             },
         BuilderData = {
             Location = 'LocationType',
-            Reclaim = {'LEVEL1 PLANT LAND'},
+            Reclaim = {'LEVEL1 PLANT'},
         },
         BuilderType = 'Any',
     },
@@ -108,7 +143,7 @@ BuilderGroup {
             },
         BuilderData = {
             Location = 'LocationType',
-            Reclaim = {'LEVEL1 PLANT LAND'},
+            Reclaim = {'LEVEL1 PLANT'},
         },
         BuilderType = 'Any',
     },
@@ -116,7 +151,7 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Finish',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 250,
+        Priority = 50,
         InstanceCount = 3,
         BuilderConditions = {
                 { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
@@ -125,7 +160,7 @@ BuilderGroup {
             Assist = {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Engineer',
-                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
+                BeingBuiltCategories = {categories.STRATEGIC, categories.ECONOMIC, categories.STRUCTURE},
                 Time = 20,
             },
         },

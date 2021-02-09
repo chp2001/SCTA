@@ -145,6 +145,17 @@ BuilderGroup {
     },
 
     Builder {
+        BuilderName = 'SCTAAi Field Engineer',
+        PlatoonTemplate = 'T2BuildFieldEngineerSCTA',
+        Priority = 80, -- Top factory priority
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FIELDENGINEER * categories.LEVEL2} }, -- Build engies until we have 4 of them.
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4, categories.ENGINEER * (categories.LEVEL2 + categories.LEVEL3) - categories.FIELDENGINEER } }, -- Don't build air fac immediately.
+        },
+        BuilderType = 'All',
+    },
+
+    Builder {
         BuilderName = 'SCTAAi FactoryT3 Engineer',
         PlatoonTemplate = 'T3BuildEngineerSCTA',
         Priority = 125, -- Top factory priority
@@ -174,7 +185,7 @@ BuilderGroup {
         Priority = 100,
         BuilderConditions = {
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL2 * categories.DIRECTFIRE,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
         },
@@ -234,6 +245,8 @@ BuilderGroup {
         PlatoonTemplate = 'T3LandHOVERSCTA',
         Priority = 90,
         BuilderConditions = {
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
         },
@@ -268,7 +281,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1300} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL3 * categories.DIRECTFIRE,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
         },

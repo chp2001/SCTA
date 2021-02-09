@@ -51,11 +51,21 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'EngineerBuilderSCTAAssist',
-    Plan = 'EngineerBuildAISCTA',
+    Plan = 'ManagerEngineerAssistAI',
     GlobalSquads = {
-        { categories.ENGINEER * (categories.AIR + categories.FIELDENGINEER), 1, 1, 'support', 'None' }
+        {categories.FIELDENGINEER, 1, 1, 'support', 'None' }
     },
 }
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTAField',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        {categories.FIELDENGINEER, 1, 1, 'support', 'None' }
+    },
+}
+
+
 
 
 PlatoonTemplate {
@@ -129,6 +139,18 @@ PlatoonTemplate {
         },
     }
 }
+PlatoonTemplate {
+    Name = 'T2BuildFieldEngineerSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armfark', 1, 1, 'support', 'None' }
+        },
+        Core = {
+            { 'cornecro', 1, 1, 'support', 'None' }
+        },
+    }
+}
+
 
 
 PlatoonTemplate {

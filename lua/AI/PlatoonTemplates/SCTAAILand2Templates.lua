@@ -89,8 +89,7 @@ PlatoonTemplate {
     Name = 'T2LandDFTank2SCTA',
     FactionSquads = {
         Arm = {
-            { 'armbull', 1, 4, 'attack', 'none' },
-            { 'armlatnk', 1, 2, 'attack', 'none' },
+            { 'armbull', 1, 4, 'attack', 'none' }
         },
         Core = {
             { 'corcan', 1, 2, 'attack', 'none' },

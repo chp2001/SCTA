@@ -46,6 +46,7 @@ BuilderGroup {
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
         },
         BuilderType = 'All',
     },
@@ -102,8 +103,9 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.FACTORY * categories.LEVEL3 * categories.LAND } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
         },
         BuilderType = 'All',
     },
@@ -113,7 +115,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandArtillerySCTA2',
         Priority = 70,
         BuilderConditions = { 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.FACTORY * categories.LEVEL3 * categories.LAND } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
         },
         BuilderType = 'All',
@@ -184,6 +186,8 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandMissileSCTA',
         Priority = 85,
         BuilderConditions = {
+            { UCBC, 'HaveUnitRatio', { 0.2, categories.LEVEL2 * categories.INDIRECTFIRE,
+            '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
          },
         BuilderType = 'All',
     },
@@ -222,31 +226,27 @@ BuilderGroup {
         BuilderName = 'SCTAAi T2 Experimental',
         PlatoonTemplate = 'SCTAExperimental',
         Priority = 130,
-        BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.EXPERIMENTAL * categories.MOBILE } },
-        },
+        BuilderConditions = {},
         BuilderType = 'All',
     },
-
     Builder {
-        BuilderName = 'SCTAAi FactoryT3 Tank',
+        BuilderName = 'SCTAAi FactoryT3 Hover',
         PlatoonTemplate = 'T3LandHOVERSCTA',
         Priority = 90,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'All',
     },
-
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Artillery',
         PlatoonTemplate = 'T3HOVERMISSILESCTA', 
         Priority = 70,
-        BuilderConditions = { },
+        BuilderConditions = {
+        { UCBC, 'HaveUnitRatio', { 0.2, categories.LEVEL2 * categories.INDIRECTFIRE,
+        '<=', categories.LEVEL3 * categories.LAND - categories.ENGINEER } }, -- Don't make tanks if we have lots of them. },
+        },
         BuilderType = 'All',
     },
 
@@ -258,6 +258,30 @@ BuilderGroup {
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, -- Build AA if the enemy is threatening our base with air units.
             { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,
                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
+        },
+        BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAi FactoryT3 Tank',
+        PlatoonTemplate = 'T3LandDFTankSCTA',
+        Priority = 125,
+        BuilderConditions = {
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL3 * categories.DIRECTFIRE,
+                                       '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
+        },
+        BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAi FactoryT3 Tank3',
+        PlatoonTemplate = 'T3LandDFTank2SCTA',
+        Priority = 125,
+        BuilderConditions = {
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL3 * categories.DIRECTFIRE,
+            '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'All',
     },

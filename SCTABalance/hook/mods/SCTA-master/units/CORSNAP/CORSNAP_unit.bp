@@ -20,9 +20,9 @@ UnitBlueprint {
         SurfaceThreatLevel = 12,
     },
     Economy = {
-        BuildCostEnergy = 12000,
-        BuildCostMass = 1100,
-        BuildTime = 14000,
+        BuildCostEnergy = 18000,
+        BuildCostMass = 1700,
+        BuildTime = 28000,
     },
     SizeY = 1.4,
     StrategicIconName = 'icon_land3_directfire',

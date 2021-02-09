@@ -16,7 +16,7 @@ BuilderGroup {
         Priority = 95,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  categories.FACTORY * categories.AIR * categories.LEVEL1 } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  categories.FACTORY * categories.AIR} },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -150,7 +150,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI T3LAND Factory',
-        PlatoonTemplate = 'EngineerBuilderSCTA3',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
         Priority = 130,
         InstanceCount = 1,
         BuilderConditions = {
@@ -172,7 +172,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI T3Air Factory',
-        PlatoonTemplate = 'EngineerBuilderSCTA3VTOL',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
         Priority = 130,
         InstanceCount = 1,
         BuilderConditions = {

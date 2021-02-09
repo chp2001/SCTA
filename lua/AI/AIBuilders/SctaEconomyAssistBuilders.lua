@@ -171,6 +171,23 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
+        BuilderName = 'SCTA Engineer Reclaim Energy',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonAIPlan = 'ReclaimStructuresAI',
+        Priority = 150,
+        InstanceCount = 8,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {1500} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, 'FUSION'} },
+            { EBC, 'LessThanEconStorageRatio', { 0.25, 1}},
+            },
+        BuilderData = {
+            Location = 'LocationType',
+            Reclaim = {'WIND, SOLAR'},
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
         BuilderName = 'SCTA Engineer Finish',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',

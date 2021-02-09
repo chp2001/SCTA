@@ -122,22 +122,4 @@ BuilderGroup {
             }
         }
     },
-    Builder {
-        BuilderName = 'SCTAAI ACU T1Pgen2',
-        PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 10,
-        InstanceCount = 1,
-        BuilderConditions = {},
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = false,
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T1EnergyProduction',
-                }
-            }
-        }
-    },
 }

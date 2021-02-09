@@ -118,6 +118,7 @@ BuilderGroup {
             Construction = {
                 DesiresAssist = true,
                 NumAssistees = 2,
+                BuildClose = true,
                 BuildStructures = {
                     'T2LandFactory',
                 }
@@ -140,6 +141,7 @@ BuilderGroup {
             Construction = {
                 DesiresAssist = true,
                 NumAssistees = 2,
+                BuildClose = true,
                 BuildStructures = {
                     'T2LandFactory2',
                 }
@@ -243,6 +245,7 @@ BuilderGroup {
             { MIBC, 'GreaterThanGameTime', {300} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+            { MIBC, 'LessThanGameTime', {1200} },
         },
         BuilderType = 'Any',
         BuilderData = {

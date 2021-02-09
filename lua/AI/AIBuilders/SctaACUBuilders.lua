@@ -84,6 +84,7 @@ BuilderGroup {
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.FACTORY * categories.LEVEL1 * categories.LAND } }, -- Stop after 10 facs have been built.
+            { MIBC, 'GreaterThanGameTime', {1200} },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -106,6 +107,7 @@ BuilderGroup {
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FACTORY * categories.LEVEL1 * categories.AIR } }, -- Stop after 10 facs have been built.
+            { MIBC, 'GreaterThanGameTime', {1200} },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -113,11 +115,29 @@ BuilderGroup {
             Construction = {
                 DesiresAssist = true,
                 NumAssistees = 2,
+                BuildClose = true,
                 BuildStructures = {
                     'T1AirFactory',
                 }
             }
         }
     },
-
+    Builder {
+        BuilderName = 'SCTAAI ACU T1Pgen2',
+        PlatoonTemplate = 'CommanderBuilderSCTA',
+        Priority = 10,
+        InstanceCount = 1,
+        BuilderConditions = {},
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1EnergyProduction',
+                }
+            }
+        }
+    },
 }

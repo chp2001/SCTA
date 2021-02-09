@@ -123,7 +123,8 @@ BuilderGroup {
         Priority = 200,
         InstanceCount = 5,
         BuilderConditions = {
-                { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 1, categories.LEVEL3 * categories.FACTORY}},
+            { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 1, categories.LEVEL3 * categories.FACTORY}},
                 { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.LEVEL1 * categories.PLANT }},
             },
         BuilderData = {
@@ -140,29 +141,11 @@ BuilderGroup {
         InstanceCount = 8,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
+            { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},
             },
         BuilderData = {
             Location = 'LocationType',
             Reclaim = {'LEVEL1 PLANT'},
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Finish',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
-        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 50,
-        InstanceCount = 3,
-        BuilderConditions = {
-                { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
-            },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                BeingBuiltCategories = {categories.STRATEGIC, categories.ECONOMIC, categories.STRUCTURE},
-                Time = 20,
-            },
         },
         BuilderType = 'Any',
     },

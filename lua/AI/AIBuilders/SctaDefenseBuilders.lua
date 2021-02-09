@@ -52,7 +52,7 @@ BuilderGroup {
         Priority = 70,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.ANTIMISSILE} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.8, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -99,6 +99,25 @@ BuilderGroup {
                 BuildClose = true,
                 BuildStructures = {
                     'T3GroundDefense',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAMissileTower Emergency',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        Priority = 60,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {1200} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1AADefense',
                 }
             }
         }

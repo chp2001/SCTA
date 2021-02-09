@@ -55,7 +55,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
         PlatoonAIPlan = 'ReclaimAI',
         Priority = 75,
         InstanceCount = 3,
@@ -89,7 +89,7 @@ BuilderGroup {
         Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
-                { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 4, categories.LEVEL3 * categories.FACTORY}},
+                { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 1, categories.LEVEL3 * categories.FACTORY}},
                 { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.LEVEL1 * categories.PLANT }},
             },
         BuilderData = {

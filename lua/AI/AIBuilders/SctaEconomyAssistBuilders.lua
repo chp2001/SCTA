@@ -22,7 +22,7 @@ BuilderGroup {
                 AssistLocation = 'LocationType',
                 AssisteeType = categories.FACTORY,
                 AssistRange = 120,
-                BeingBuiltCategories = {categories.EXPERIMENTAL},                   
+                BeingBuiltCategories = {'EXPERIMENTAL'},                  
                 PermanentAssist = true,
                 AssistClosestUnit = false,                                       
                 AssistUntilFinished = true,
@@ -43,7 +43,7 @@ BuilderGroup {
                 AssistLocation = 'LocationType',
                 AssisteeType = categories.ENGINEER,
                 AssistRange = 120,
-                BeingBuiltCategories = {categories.EXPERIMENTAL},                   
+                BeingBuiltCategories = {'LEVEL4'},                 
                 PermanentAssist = true,
                 AssistClosestUnit = false,                                       
                 AssistUntilFinished = true,
@@ -51,6 +51,27 @@ BuilderGroup {
             },
         },
         BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA PGen Assist',
+        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
+        Priority = 75,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Assist = {
+                AssistUntilFinished = true,
+                AssistLocation = 'LocationType',
+                AssisteeType = categories.ENGINEER,
+                AssistRange = 100,
+                AssistClosestUnit = true,
+                BeingBuiltCategories = {'FUSION'},
+                Time = 60,
+            },
+        }
     },
     Builder {
         BuilderName = 'SCTA Mex Assist',
@@ -68,7 +89,7 @@ BuilderGroup {
                 AssisteeType = categories.STRUCTURE,
                 AssistRange = 100,
                 AssistClosestUnit = true,
-                BeingBuiltCategories = {categories.STRUCTURE * categories.MASSEXTRACTION * categories.LEVEL3},
+                BeingBuiltCategories = {'STRUCTURE MASSEXTRACTION LEVEL3'},
                 Time = 60,
             },
         }
@@ -146,6 +167,25 @@ BuilderGroup {
         BuilderData = {
             Location = 'LocationType',
             Reclaim = {'LEVEL1 PLANT'},
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Finish',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
+        Priority = 70,
+        InstanceCount = 3,
+        BuilderConditions = {
+                { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
+            },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
+                Time = 20,
+            },
         },
         BuilderType = 'Any',
     },

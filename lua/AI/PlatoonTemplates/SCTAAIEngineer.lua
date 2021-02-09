@@ -53,7 +53,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTAAssist',
     Plan = 'ManagerEngineerAssistAI',
     GlobalSquads = {
-        {categories.FIELDENGINEER, 1, 1, 'support', 'None' }
+        {categories.ENGINEER * (categories.AIR + categories.FIELDENGINEER), 1, 1, 'support', 'None' }
     },
 }
 

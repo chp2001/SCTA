@@ -48,6 +48,16 @@ PlatoonTemplate {
     },
 }
 
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTAAssist',
+    Plan = 'EngineerAssistAISCTA',
+    GlobalSquads = {
+        { categories.ENGINEER * (categories.AIR + categories.FIELDENGINEER), 1, 1, 'support', 'None' }
+    },
+}
+
+
 PlatoonTemplate {
     Name = 'EngineerBuilderSCTA2',
     Plan = 'EngineerBuildAISCTA',

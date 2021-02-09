@@ -271,7 +271,7 @@ BuilderGroup {
             Construction = {
                 BuildClose = true,
                 BuildStructures = {
-                    'T2LandFactory2',
+                    'T2LandFactory',
                 }
             }
         }
@@ -279,7 +279,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI LandFac3 Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTA23',
-        Priority = 600,
+        Priority = 750,
         InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },

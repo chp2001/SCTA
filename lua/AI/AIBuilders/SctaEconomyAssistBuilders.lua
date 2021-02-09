@@ -12,11 +12,10 @@ BuilderGroup {
     BuildersType = 'EngineerBuilder',
     Builder {
         BuilderName = 'SCTA Assist Gantry',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
         Priority = 60,
         InstanceCount = 12,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
         },
         BuilderData = {
             Assist = {
@@ -34,7 +33,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTA Mex Assist',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
@@ -99,10 +98,25 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
+        BuilderName = 'SCTA Engineer Reclaim T1 PLANTS',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonAIPlan = 'ReclaimStructuresAI',
+        Priority = 300,
+        InstanceCount = 8,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {1500} },
+            },
+        BuilderData = {
+            Location = 'LocationType',
+            Reclaim = {'LEVEL1 PLANT LAND'},
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
         BuilderName = 'SCTA Engineer Finish',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 70,
+        Priority = 250,
         InstanceCount = 3,
         BuilderConditions = {
                 { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},

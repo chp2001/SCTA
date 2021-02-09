@@ -266,6 +266,7 @@ BuilderGroup {
         PlatoonTemplate = 'T3LandDFTankSCTA',
         Priority = 125,
         BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {1300} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL3 * categories.DIRECTFIRE,
@@ -278,6 +279,7 @@ BuilderGroup {
         PlatoonTemplate = 'T3LandDFTank2SCTA',
         Priority = 125,
         BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {1300} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL3 * categories.DIRECTFIRE,

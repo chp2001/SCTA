@@ -289,6 +289,119 @@ Platoon = Class(SCTAAIPlatoon) {
         end
     end,
 
+    AssistSCTABody = function(self)
+        local aiBrain = self:GetBrain()
+        WaitTicks(5)
+        if not aiBrain:PlatoonExists(self) then
+            return
+        end
+        local platoonUnits = self:GetPlatoonUnits()
+        local eng = platoonUnits[1]
+        eng.AssistPlatoon = self
+        local assistData = self.PlatoonData.Assist
+        local platoonPos = self:GetPlatoonPosition()
+        local assistee = false
+        local assistingBool = false
+        if not eng.Dead then
+            local guardedUnit = eng:GetGuardedUnit()
+            if guardedUnit and not guardedUnit.Dead then
+                if eng.AssistSet and assistData.PermanentAssist then
+                    return
+                end
+                eng.AssistSet = false
+                if guardedUnit:IsUnitState('Building') or guardedUnit:IsUnitState('Upgrading') then
+                    return
+                end
+            end
+        end
+        self:Stop()
+        if assistData then
+            local assistRange = assistData.AssistRange or 80
+            -- Check for units being built
+            if assistData.BeingBuiltCategories then
+                local unitsBuilding = aiBrain:GetListOfUnits(categories.CONSTRUCTION, false)
+                for catNum, buildeeCat in assistData.BeingBuiltCategories do
+                    local buildCat = ParseEntityCategory(buildeeCat)
+                    for unitNum, unit in unitsBuilding do
+                        if not unit.Dead and (unit:IsUnitState('Building') or unit:IsUnitState('Upgrading')) then
+                            local buildingUnit = unit.UnitBeingBuilt
+                            if buildingUnit and not buildingUnit.Dead and EntityCategoryContains(buildCat, buildingUnit) then
+                                local unitPos = unit:GetPosition()
+                                if unitPos and platoonPos and VDist2(platoonPos[1], platoonPos[3], unitPos[1], unitPos[3]) < assistRange then
+                                    assistee = unit
+                                    break
+                                end
+                            end
+                        end
+                    end
+                    if assistee then
+                        break
+                    end
+                end
+            end
+            -- Check for builders
+            if not assistee and assistData.BuilderCategories then
+                for catNum, buildCat in assistData.BuilderCategories do
+                    local unitsBuilding = aiBrain:GetListOfUnits(ParseEntityCategory(buildCat), false)
+                    for unitNum, unit in unitsBuilding do
+                        if not unit.Dead and unit:IsUnitState('Building') then
+                            local unitPos = unit:GetPosition()
+                            if unitPos and platoonPos and VDist2(platoonPos[1], platoonPos[3], unitPos[1], unitPos[3]) < assistRange then
+                                assistee = unit
+                                break
+                            end
+                        end
+                    end
+                end
+            end
+            -- If the unit to be assisted is a factory, assist whatever it is assisting or is assisting it
+            -- Makes sure all factories have someone helping out to load balance better
+            if assistee and not assistee.Dead and EntityCategoryContains(categories.FACTORY, assistee) then
+                local guardee = assistee:GetGuardedUnit()
+                if guardee and not guardee.Dead and EntityCategoryContains(categories.FACTORY, guardee) then
+                    local factories = AIUtils.AIReturnAssistingFactories(guardee)
+                    table.insert(factories, assistee)
+                    AIUtils.AIEngineersAssistFactories(aiBrain, platoonUnits, factories)
+                    assistingBool = true
+                elseif table.getn(assistee:GetGuards()) > 0 then
+                    local factories = AIUtils.AIReturnAssistingFactories(assistee)
+                    table.insert(factories, assistee)
+                    AIUtils.AIEngineersAssistFactories(aiBrain, platoonUnits, factories)
+                    assistingBool = true
+                end
+            end
+        end
+        if assistee and not assistee.Dead then
+            if not assistingBool then
+                eng.AssistSet = true
+                IssueGuard(platoonUnits, assistee)
+            end
+        elseif not assistee then
+            if eng.BuilderManagerData then
+                local emLoc = eng.BuilderManagerData.EngineerManager:GetLocationCoords()
+                local dist = assistData.AssistRange or 80
+                if VDist3(eng:GetPosition(), emLoc) > dist then
+                    self:MoveToLocation(emLoc, false)
+                    WaitSeconds(9)
+                end
+            end
+            WaitSeconds(1)
+        end
+    end,
+
+    EngineerAssistAISCTA = function(self)
+        self:ForkThread(self.AssistSCTABody)
+        local aiBrain = self:GetBrain()
+        WaitSeconds(self.PlatoonData.Assist.Time or 60)
+        if not aiBrain:PlatoonExists(self) then
+            return
+        end
+        WaitTicks(1)
+        -- stop the platoon from endless assisting
+        self:Stop()
+        self:PlatoonDisband()
+    end,
+
     UnitUpgradeAI = function(self)
         local aiBrain = self:GetBrain()
         local platoonUnits = self:GetPlatoonUnits()

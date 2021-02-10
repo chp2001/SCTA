@@ -25,7 +25,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1AirBomberSCTA',
         Priority = 80,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.7}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.7}},
         },
         BuilderType = 'All',
     },
@@ -35,7 +35,7 @@ BuilderGroup {
         Priority = 90,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.AIR } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.7}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.7}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.2, 0.33 }},
         },
         BuilderType = 'All',

@@ -109,9 +109,9 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            AimBone = 'Build_Nozzle',
+            AimBone = 'Build_Muzzle',
             BuildEffectBones = {'Build_Muzzle'},
-            PitchBone = 'Build_Muzzle',
+            PitchBone = 'Build_Nozzle',
             YawBone = 'Turret',
         },
         Category = 'Construction',

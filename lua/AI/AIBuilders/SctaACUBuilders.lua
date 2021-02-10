@@ -36,7 +36,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA AI ACU Factory',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 960,
+        Priority = 980,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {240} }, -- Don't make tanks if we have lots of them.

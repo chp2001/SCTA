@@ -15,7 +15,7 @@ PlatoonTemplate {
             { 'armck', 1, 1, 'support', 'None' }, 
             { 'armflash', 1, 3, 'attack', 'none' },
         },
-        Core = {,
+        Core = {
             { 'corcv', 1, 1, 'support', 'None' },
             { 'corak', 1, 3, 'attack', 'none' },
         },

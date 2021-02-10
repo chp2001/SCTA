@@ -16,11 +16,7 @@ UnitBlueprint {
 	'LAND',
         'CORE',
 	'LEVEL1',
-	
-	
-	
-	
-	
+	--'KBOT',
     },
     Defense = {
         Health = 410,

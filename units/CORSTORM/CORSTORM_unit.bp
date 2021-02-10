@@ -40,6 +40,7 @@ UnitBlueprint {
         'KBOT',
 	    'LEVEL1',
         'TANK',
+        'ROCKET',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -54,9 +55,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORSTORM/CORSTORM_lod0_Awalk.sca',
         AnimationWalkRate = 1.5,
-        Abilities = {
-            'Rocket',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

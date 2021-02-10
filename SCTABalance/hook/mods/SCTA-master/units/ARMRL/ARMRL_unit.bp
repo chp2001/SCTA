@@ -22,6 +22,7 @@ UnitBlueprint {
 	    'ARM',
         'LEVEL1',
         'SORTDEFENSE',
+        'ROCKET',
     },
     Defense = {
         Health = 400,

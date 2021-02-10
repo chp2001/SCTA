@@ -16,11 +16,6 @@ UnitBlueprint {
 	'LAND',
         'ARM',
 	'LEVEL2',
-	
-	
-	
-	
-	
     },
     Defense = {
         Health = 1100,

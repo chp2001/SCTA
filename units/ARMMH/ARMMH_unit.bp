@@ -39,6 +39,7 @@ UnitBlueprint {
         'ARM',
         'HOVER',
 	    'LEVEL1',
+        'ROCKET',
     },
     Defense = {
         ArmorType = 'Normal',

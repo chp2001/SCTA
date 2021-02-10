@@ -77,7 +77,6 @@ UnitBlueprint {
         'AIR',
         'VTOL',
         'OVERLAYANTIAIR',
-	    'OVERLAYDIRECTFIRE',
         'CORE',
 	    'LEVEL2',
     },

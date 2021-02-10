@@ -35,6 +35,7 @@ UnitBlueprint {
 	    'OVERLAYANTIAIR',
 	    'ARM',
 	    'LEVEL2',
+        'ROCKET',
     },
     CollisionOffsetY = -0.5,
     Defense = {

@@ -39,6 +39,7 @@ UnitBlueprint {
         'ARM',
         'KBOT',
 	    'LEVEL1',
+        'ROCKET',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -53,9 +54,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/ARMROCK/ARMROCK_lod0_Awalk.sca',
         AnimationWalkRate = 1,
-        Abilities = {
-            'Rocket',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

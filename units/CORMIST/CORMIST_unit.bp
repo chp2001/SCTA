@@ -39,6 +39,7 @@ UnitBlueprint {
         'CORE',
         'VEHICLE',
 	    'LEVEL1',
+        'ROCKET',
     },
     Defense = {
         ArmorType = 'Normal',

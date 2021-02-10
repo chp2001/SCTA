@@ -45,7 +45,7 @@ BuilderGroup {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.15}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},
         },
         BuilderType = 'All',
     },
@@ -55,7 +55,7 @@ BuilderGroup {
         Priority = 70,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL3 * categories.LAND } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
          },
         BuilderType = 'All',
     },
@@ -102,7 +102,7 @@ BuilderGroup {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.15}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},
         },
         BuilderType = 'All',
     },
@@ -168,7 +168,7 @@ BuilderGroup {
         Priority = 100,
         BuilderConditions = {
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL2 * categories.DIRECTFIRE,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
         },
@@ -181,7 +181,7 @@ BuilderGroup {
         Priority = 100,
         BuilderConditions = {
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL2 * categories.DIRECTFIRE,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
         },

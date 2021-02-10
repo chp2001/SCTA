@@ -32,8 +32,7 @@ BuilderGroup {
         InstanceCount = 1,
         Priority = 200,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 720 } },
-            { EBC, 'GreaterThanEconIncome',  { 2.4, 20}},
+            { EBC, 'GreaterThanEconIncome',  { 8, 100}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.2 }},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'MASSEXTRACTION LEVEL3', 'MASSEXTRACTION' } },
             { IBC, 'BrainNotLowPowerMode', {} },

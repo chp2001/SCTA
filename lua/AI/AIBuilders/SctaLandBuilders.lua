@@ -12,9 +12,9 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory BOT',
         PlatoonTemplate = 'T1LandDFBotSCTA',
-        Priority = 90,
+        Priority = 110,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {150} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'All',
     },
@@ -33,7 +33,7 @@ BuilderGroup {
         Priority = 90,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.LAND } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 5, categories.SCOUT * categories.LAND } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.SCOUT} },
         },
         BuilderType = 'All',
     },
@@ -45,8 +45,7 @@ BuilderGroup {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.15}},
         },
         BuilderType = 'All',
     },
@@ -55,8 +54,8 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandArtillerySCTA',
         Priority = 70,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL3 * categories.LAND } }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
          },
         BuilderType = 'All',
     },
@@ -68,7 +67,6 @@ BuilderGroup {
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, -- Build AA if the enemy is threatening our base with air units.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.LAND } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
             { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,
                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
         },
@@ -78,9 +76,9 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory2 BOT',
         PlatoonTemplate = 'T1LandDFBotSCTA2',
-        Priority = 95,
+        Priority = 110,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {150} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'All',
     },
@@ -103,9 +101,8 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.FACTORY * categories.LEVEL3 * categories.LAND } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.15}},
         },
         BuilderType = 'All',
     },
@@ -115,7 +112,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandArtillerySCTA2',
         Priority = 70,
         BuilderConditions = { 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.FACTORY * categories.LEVEL3 * categories.LAND } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL3 * categories.LAND } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
         },
         BuilderType = 'All',

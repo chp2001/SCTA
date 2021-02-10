@@ -15,9 +15,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 100,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
-        BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {750} }, -- Don't make tanks if we have lots of them.
-        },
+        BuilderConditions = {},
         BuilderType = 'Any',
         BuilderData = {
             Construction = {
@@ -34,7 +32,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {1200} }, 
-            { EBC, 'LessThanEconStorageRatio', { 1, 0.75}},
+            { EBC, 'LessThanEconStorageRatio', { 1, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -51,7 +49,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 85,
+        Priority = 50,
         InstanceCount = 3,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FUSION} },
@@ -62,6 +60,7 @@ BuilderGroup {
             NeedGuard = false,
             DesiresAssist = false,
             Construction = {
+                BuildClose = true,
                 BuildStructures = {
                     'T1EnergyProduction2',
                 }
@@ -72,7 +71,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T2Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 95,
-        InstanceCount = 2,
+        InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FUSION} },

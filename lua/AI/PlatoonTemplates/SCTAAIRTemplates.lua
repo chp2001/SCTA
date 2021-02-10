@@ -23,10 +23,10 @@ PlatoonTemplate {
     Name = 'T1AirFighterSCTA',
     FactionSquads = {
         Arm = {
-            { 'armfig', 1, 3, 'attack', 'GrowthFormation' },
+            { 'armfig', 1, 3, 'attack', 'GrowthFormation' }
         },
         Core = {
-            { 'corveng', 1, 3, 'attack', 'GrowthFormation' },
+            { 'corveng', 1, 3, 'attack', 'GrowthFormation' }
         },
     }
 }

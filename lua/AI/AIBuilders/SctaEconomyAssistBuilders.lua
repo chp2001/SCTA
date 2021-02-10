@@ -16,6 +16,7 @@ BuilderGroup {
         Priority = 120,
         InstanceCount = 12,
         BuilderConditions = {
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'LEVEL4' }},
         },
         BuilderData = {
             Assist = {
@@ -37,6 +38,7 @@ BuilderGroup {
         Priority = 120,
         InstanceCount = 12,
         BuilderConditions = {
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'GATE' }},
         },
         BuilderData = {
             Assist = {
@@ -58,18 +60,17 @@ BuilderGroup {
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.25}},
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'FUSION' }},
+            { EBC, 'LessThanEconEfficiencyOverTime', { 2.0, 1.5 }},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 0.5 } },
         },
         BuilderType = 'Any',
         BuilderData = {
             Assist = {
-                AssistUntilFinished = true,
-                AssistLocation = 'LocationType',
                 AssisteeType = 'Engineer',
-                AssistRange = 200,
-                AssistClosestUnit = true,
+                AssistLocation = 'LocationType',
                 BeingBuiltCategories = {'FUSION'},
-                Time = 60,
+                Time = 20,
             },
         }
     },
@@ -79,7 +80,9 @@ BuilderGroup {
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.25}},
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'STRUCTURE MASSEXTRACTION LEVEL3' }},
+            { EBC, 'LessThanEconEfficiencyOverTime', { 2.0, 1.5 }},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 0.5 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -183,7 +186,7 @@ BuilderGroup {
             },
         BuilderData = {
             Location = 'LocationType',
-            Reclaim = {'WIND, SOLAR'},
+            Reclaim = {'SOLAR'},
         },
         BuilderType = 'Any',
     },

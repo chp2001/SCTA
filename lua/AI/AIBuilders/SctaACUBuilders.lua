@@ -40,7 +40,7 @@ BuilderGroup {
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {240} }, -- Don't make tanks if we have lots of them.
-            { MIBC, 'GreaterThanGameTime', {150} },
+            { MIBC, 'GreaterThanGameTime', {120} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
         },
         BuilderType = 'Any',
@@ -145,10 +145,10 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
+            DesiresAssist = true,
+            NumAssistees = 2, 
             NeedGuard = false,
             Construction = {
-                DesiresAssist = true,
-                NumAssistees = 2,
                 BuildClose = true,
                 BuildStructures = {
                     'T1LandFactory',
@@ -168,10 +168,10 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
+            DesiresAssist = true,
+            NumAssistees = 2,
             NeedGuard = false,
             Construction = {
-                DesiresAssist = true,
-                NumAssistees = 2,
                 BuildClose = true,
                 BuildStructures = {
                     'T1AirFactory',

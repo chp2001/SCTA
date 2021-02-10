@@ -19,10 +19,6 @@ UnitBlueprint {
         'CORE',
         'OCEAN',
 	'LEVEL1',
-	
-	
-	
-	
     },
     Defense = {
         Health = 1000,

@@ -10,7 +10,7 @@ UnitBlueprint {
 	'DIRECTFIRE',
 	'FRIGATE',
         'OVERLAYANTINAVY',
-        'OVERLAYINDIRECTFIRE',
+        'OVERLAYDIRECTFIRE',
         'OVERLAYSONAR',
         'OVERLAYRADAR', 
         'CORE',

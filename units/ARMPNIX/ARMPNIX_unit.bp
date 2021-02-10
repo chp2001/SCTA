@@ -74,6 +74,8 @@ UnitBlueprint {
 	'BOMBER',
     'AIR',
     'VTOL',
+    'DIRECTFIRE',
+    'ANTIAIR',
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
         'ARM',

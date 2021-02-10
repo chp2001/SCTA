@@ -7,10 +7,12 @@ UnitBlueprint {
     'RECLAIMABLE',
     'MOBILE',
     'DIRECTFIRE',
+    'OVERLAYDIRECTFIRE',
     'KBOT',
     'LAND',
     'CORE',
     'AMPHIBIOUS',
+    'PHIB',
     'LEVEL3',
     },
    Defense = {

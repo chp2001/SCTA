@@ -41,13 +41,7 @@ UnitBlueprint {
     },
     StrategicIconName = 'icon_bot1_intel',
     General = {
-        OrderOverrides = {
-                RULEUTC_IntelToggle = {
-                bitmapId = 'radar',
-                helpText = 'toggle_radar',
-                     },
-                 },
-               ToggleCaps = {
+        ToggleCaps = {
                RULEUTC_IntelToggle = false,
             },
     },

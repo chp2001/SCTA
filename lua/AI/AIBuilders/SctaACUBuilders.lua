@@ -61,6 +61,7 @@ BuilderGroup {
         Priority = 950,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.SOLAR} },
             { MIBC, 'LessThanGameTime', {150} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'Any',
@@ -81,7 +82,8 @@ BuilderGroup {
         Priority = 975,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {75} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {150} }, -- Don't make tanks if we have lots of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.MASSEXTRACTION} },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -140,8 +142,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.FACTORY * categories.LEVEL1 * categories.LAND } }, -- Stop after 10 facs have been built.
-            { MIBC, 'LessThanGameTime', {1200} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.FACTORY * categories.LAND } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -163,8 +164,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FACTORY * categories.LEVEL1 * categories.AIR } }, -- Stop after 10 facs have been built.
-            { MIBC, 'LessThanGameTime', {1200} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FACTORY * categories.AIR } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
         BuilderData = {

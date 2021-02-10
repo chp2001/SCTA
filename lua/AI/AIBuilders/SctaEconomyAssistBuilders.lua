@@ -55,8 +55,30 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
+        BuilderName = 'SCTA Assist LEVEL2 Production',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        Priority = 120,
+        InstanceCount = 4,
+        BuilderConditions = {
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'LEVEL2 FACTORY' }},
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                AssistRange = 120,
+                BeingBuiltCategories = {'LEVEL2'},                 
+                PermanentAssist = false,
+                AssistClosestUnit = false,                                       
+                AssistUntilFinished = true,
+                Time = 60,
+            },
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
         BuilderName = 'SCTA PGen Assist',
-        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
@@ -71,12 +93,13 @@ BuilderGroup {
                 AssistLocation = 'LocationType',
                 BeingBuiltCategories = {'FUSION'},
                 Time = 20,
+                AssistUntilFinished = true,
             },
         }
     },
     Builder {
         BuilderName = 'SCTA Mex Assist',
-        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco',
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
@@ -98,7 +121,7 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTA Engineer Reclaim',
+        BuilderName = 'SCTA Engineer Reclaim 3',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         PlatoonAIPlan = 'ReclaimAI',
         Priority = 75,
@@ -112,7 +135,7 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'SCTA Engineer Reclaim2',
+        BuilderName = 'SCTA Engineer Reclaim 2',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
         PlatoonAIPlan = 'ReclaimAI',
         Priority = 75,
@@ -165,11 +188,29 @@ BuilderGroup {
         InstanceCount = 8,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
-            { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},
+            { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LEVEL2 * categories.LAND * categories.FACTORY} },
             },
         BuilderData = {
             Location = 'LocationType',
             Reclaim = {'LEVEL1 PLANT'},
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim T1 PLANTS2',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco',
+        PlatoonAIPlan = 'ReclaimStructuresAI',
+        Priority = 350,
+        InstanceCount = 3,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {600} },
+            { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 15, categories.LEVEL1 * categories.LAND * categories.FACTORY} },
+        },
+        BuilderData = {
+            Location = 'LocationType',
+            Reclaim = {'LEVEL1 PLANT LAND'},
         },
         BuilderType = 'Any',
     },
@@ -192,10 +233,10 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTA Engineer Finish',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 70,
-        InstanceCount = 3,
+        Priority = 150,
+        InstanceCount = 2,
         BuilderConditions = {
                 { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
             },

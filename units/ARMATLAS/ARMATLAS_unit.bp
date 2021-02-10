@@ -77,7 +77,7 @@ UnitBlueprint {
         'TRANSPORTFOCUS',
         'CANTRANSPORTCOMMANDER',
         'ARM',
-	'LEVEL1',
+	    'LEVEL1',
     },
     Defense = {
         ArmorType = 'Light',

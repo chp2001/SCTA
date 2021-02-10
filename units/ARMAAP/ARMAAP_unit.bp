@@ -34,17 +34,17 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-	'FACTORY',
+	    'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-	'STRUCTURE',
-	'CONSTRUCTION',
+	    'STRUCTURE',
+	    'CONSTRUCTION',
         'OVERLAYRADAR',
-	'ARM',
+	    'ARM',
 		'PLANT',
-	'SORTCONSTRUCTION',
-	'LEVEL2',
-    'AIR',
+	    'SORTCONSTRUCTION',
+	    'LEVEL2',
+        'AIR',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -69,7 +69,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 400,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+		            NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },

@@ -59,11 +59,6 @@ UnitBlueprint {
         'CORE',
         'KBOT',
 	'LEVEL1',
-	
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -83,7 +78,6 @@ UnitBlueprint {
         Abilities = {
             'Construction Unit',
         },
-	BuildBones = {'BuildNozzle'},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

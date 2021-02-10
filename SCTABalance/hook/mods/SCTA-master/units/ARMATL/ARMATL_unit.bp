@@ -9,7 +9,6 @@ UnitBlueprint {
         'TECH2',
 	'STRUCTURE',
 	'DEFENSE',
-	'DIRECTFIRE',
     'ANTINAVY',
     'SNIPEMODE',
 	'NAVAL',

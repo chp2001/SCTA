@@ -35,15 +35,9 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 40,
     },
     General = {
-        OrderOverrides = {
-                RULEUTC_IntelToggle = {
-                bitmapId = 'radar',
-                helpText = 'toggle_radar',
-                     },
-                 },
-               ToggleCaps = {
-               RULEUTC_IntelToggle = true,
-            },
+        ToggleCaps = {
+        RULEUTC_IntelToggle = true,
+        },
     },
     Intel = {
 	FreeIntel = false,

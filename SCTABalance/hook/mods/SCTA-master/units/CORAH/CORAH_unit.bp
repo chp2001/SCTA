@@ -12,7 +12,7 @@ UnitBlueprint {
     'RECLAIMABLE',
     'MOBILE',
     'ANTIAIR',
-    'OVERLAYDIRECTFIRE',
+    'ROCKET',
     'OVERLAYANTIAIR',
     'LAND',
     'CORE',

@@ -12,12 +12,12 @@ PlatoonTemplate {
     Name = 'T1LandDFBotSCTA2',
     FactionSquads = {
         Arm = {
-            { 'armflash', 1, 3, 'attack', 'none' },
             { 'armck', 1, 1, 'support', 'None' }, 
+            { 'armflash', 1, 3, 'attack', 'none' },
         },
         Core = {
-            { 'corak', 1, 3, 'attack', 'none' },
             { 'corcv', 1, 1, 'support', 'None' },
+            { 'corak', 1, 3, 'attack', 'none' },
         },
     }
 }

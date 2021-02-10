@@ -16,11 +16,6 @@ UnitBlueprint {
 	'LAND',
         'ARM',
 	'LEVEL1',
-	
-	
-	
-	
-	
     },
     Display = {
         UniformScale = 0.16,

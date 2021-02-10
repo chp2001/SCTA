@@ -13,6 +13,7 @@ UnitBlueprint {
     'HOVER',
     'PHIB',
 	'LEVEL3',
+    'ROCKET',
     },
     Defense = {
         Health = 2400,

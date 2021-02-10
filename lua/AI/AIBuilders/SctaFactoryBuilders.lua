@@ -24,7 +24,6 @@ BuilderGroup {
             DesiresAssist = true,
             NumAssistees = 2,
             Construction = {
-                BuildClose = true,
                 BuildStructures = {
                     'T1AirFactory',
                     'T1Radar',
@@ -39,7 +38,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 7, categories.FACTORY * categories.LEVEL1 * categories.PRIMARY } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.FACTORY * categories.LEVEL1} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}}, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
@@ -62,7 +61,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 5, categories.FACTORY * categories.LEVEL1 * categories.SECONDARY } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.FACTORY * categories.LEVEL1} }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
         },
         BuilderType = 'Any',
@@ -106,17 +105,17 @@ BuilderGroup {
         BuilderName = 'SCTAAI T2LAND Factory',
         PlatoonTemplate = 'EngineerBuilderSCTA12',
         Priority = 120,
-        InstanceCount = 2,
+        InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {700} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.4, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
-            NumAssistees = 2,
+            NumAssistees = 1,
             Construction = {
                 BuildClose = true,
                 BuildStructures = {
@@ -132,7 +131,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {750} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.4, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',

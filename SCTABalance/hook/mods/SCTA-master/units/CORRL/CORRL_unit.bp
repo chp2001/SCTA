@@ -18,6 +18,7 @@ UnitBlueprint {
 	'STRUCTURE',
 	'DEFENSE',
 	'ANTIAIR',
+    'ROCKET',
 	'OVERLAYANTIAIR',
 	'CORE',
 	'LEVEL1',

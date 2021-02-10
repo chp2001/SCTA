@@ -48,6 +48,26 @@ PlatoonTemplate {
     },
 }
 
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTAAssist',
+    Plan = 'ManagerEngineerAssistAI',
+    GlobalSquads = {
+        {categories.FIELDENGINEER, 1, 1, 'support', 'None' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTAField',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        {categories.FIELDENGINEER, 1, 1, 'support', 'None' }
+    },
+}
+
+
+
+
 PlatoonTemplate {
     Name = 'EngineerBuilderSCTA2',
     Plan = 'EngineerBuildAISCTA',
@@ -61,14 +81,6 @@ PlatoonTemplate {
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
         { categories.ENGINEER * categories.LEVEL3, 1, 1, 'support', 'None' }
-    },
-}
-
-PlatoonTemplate {
-    Name = 'EngineerBuilderSCTA3VTOL',
-    Plan = 'EngineerBuildAISCTA',
-    GlobalSquads = {
-        { categories.ENGINEER * categories.LEVEL3 * categories.AIR, 1, 1, 'support', 'None' }
     },
 }
 
@@ -119,6 +131,18 @@ PlatoonTemplate {
         },
     }
 }
+PlatoonTemplate {
+    Name = 'T2BuildFieldEngineerSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armfark', 1, 1, 'support', 'None' }
+        },
+        Core = {
+            { 'cornecro', 1, 1, 'support', 'None' }
+        },
+    }
+}
+
 
 
 PlatoonTemplate {

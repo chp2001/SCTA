@@ -33,26 +33,8 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.WIND} },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = false,
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T1EnergyProduction2',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTAAI T1EngineerEco Pgen2',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco',
-        Priority = 10,
-        InstanceCount = 3,
-        BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {1200} }, 
+            { EBC, 'LessThanEconStorageRatio', { 1, 0.75}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -69,10 +51,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 50,
-        InstanceCount = 1,
+        Priority = 85,
+        InstanceCount = 3,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LEVEL2 * categories.ENERGYPRODUCTION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FUSION} },
+            { EBC, 'LessThanEconStorageRatio', { 1, 0.25}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -89,17 +72,18 @@ BuilderGroup {
         BuilderName = 'SCTAAI T2Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 95,
-        InstanceCount = 1,
+        InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LEVEL2 * categories.ENERGYPRODUCTION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FUSION} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, 'FUSION', 'ENERGYPRODUCTION' } },
         },
         BuilderType = 'Any',
         BuilderData = {
+            DesiresAssist = true,
+            NumAssistees = 2,
             NeedGuard = false,
             Construction = {
-                DesiresAssist = true,
-                NumAssistees = 2,
                 BuildStructures = {
                     'T2EnergyProduction',
                 }
@@ -113,14 +97,15 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1000} }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LEVEL3 * categories.ENERGYPRODUCTION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LEVEL3 * categories.FUSION} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'FUSION', 'ENERGYPRODUCTION' } },
         },
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
             Construction = {
-                DesiresAssist = true,
-                NumAssistees = 2,
                 BuildStructures = {
                     'T3EnergyProduction',
                 }

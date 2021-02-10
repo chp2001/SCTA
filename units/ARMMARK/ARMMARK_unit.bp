@@ -33,10 +33,10 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
+	    'LAND',
         'ARM',
         'KBOT',
-	'LEVEL2',
+	    'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',

@@ -36,7 +36,7 @@ UnitBlueprint {
 	'NAVAL',
 	'DIRECTFIRE',
 	'FRIGATE',
-        'OVERLAYINDIRECTFIRE',
+        'OVERLAYDIRECTFIRE',
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',
         'CORE',

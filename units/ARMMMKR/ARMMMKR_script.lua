@@ -86,9 +86,6 @@ ARMMMKR = Class(TACloser) {
 			--SLEEP <775>;
 			WaitSeconds(0.75)
 
-			--SLEEP <775>;
-			WaitSeconds(0.75)
-
 			self:SetProductionActive(true)
 			self:SetMaintenanceConsumptionActive()
 

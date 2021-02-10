@@ -39,6 +39,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'LEVEL1',
         'TECH1',
 	'STRUCTURE',
     'MASSPRODUCTION',
@@ -46,8 +47,6 @@ UnitBlueprint {
     'ECONOMIC',
         'SORTECONOMY',
 	'CORE',
-	'ENERGY',
-	'LEVEL1',
     },
     CollisionOffsetY = -0.3,
     Defense = {

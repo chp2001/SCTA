@@ -1,6 +1,6 @@
 
 
-local TACloser = import('/mods/SCTA-master/lua/TACloser.lua').TACloser
+local TACloser = import('/mods/SCTA-master/lua/TAStructure.lua').TACloser
 
 CORMMKR = Class(TACloser) {
 	OnCreate = function(self)
@@ -18,9 +18,9 @@ CORMMKR = Class(TACloser) {
 
 	OpeningState = State {
 		Main = function(self)
-			self:PlayUnitSound('Activate')
 			TACloser.Unfold(self)
-			WaitSeconds(0.75)
+			self.productionIsActive = true
+			self:PlayUnitSound('Activate')
 
 			--TURN lid1 to x-axis <35.26> SPEED <45.57>;
 			self.Spinners.lid1:SetGoal(30.40)

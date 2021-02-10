@@ -55,7 +55,7 @@ UnitBlueprint {
         'OVERLAYMISC',
         'ARM',
         'OCEAN',
-    'LEVEL2',
+        'LEVEL2',
     },
     CollisionOffsetY = -0.5,
     Defense = {

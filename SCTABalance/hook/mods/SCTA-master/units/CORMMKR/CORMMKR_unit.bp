@@ -16,7 +16,6 @@ UnitBlueprint {
       'ECONOMIC',
       'SORTECONOMY',
       'CORE',
-      'ENERGY',
   },
     Display = {
             UniformScale = 0.20,
@@ -34,7 +33,9 @@ UnitBlueprint {
       BuildCostEnergy = 600000,
       BuildCostMass = 5600,
       ProductionPerSecondMass = 24,
-MaintenanceConsumptionPerSecondEnergy = 700,
-BuildTime = 105000,
+      MaintenanceConsumptionPerSecondEnergy = 700,
+      BuildTime = 105000,
   },
+  SelectionSizeX = 4,
+  SelectionSizeZ = 4,
 }

@@ -79,21 +79,13 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
-        IdleEffects = {
-            Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
-            Scale = 0.5,
-            Bones = {'Wake_02'},
-        },
-	    MovementEffects = {
-        TAMovement = {
+	MovementEffects = {
 		Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake_01'},
-        },
+		Bones = {'Wake_01','Wake_02'},
 	},
         UniformScale = 0.16,
     },
@@ -117,7 +109,7 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            AimBone = 'Build_Muzzle',
+            AimBone = 'Build_Nozzle',
             BuildEffectBones = {'Build_Muzzle'},
             PitchBone = 'Build_Muzzle',
             YawBone = 'Turret',

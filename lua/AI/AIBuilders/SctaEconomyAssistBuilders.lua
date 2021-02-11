@@ -187,7 +187,7 @@ BuilderGroup {
         Priority = 150,
         InstanceCount = 3,
         BuilderConditions = {
-            { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},
+            { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 6, categories.LEVEL2 * categories.FACTORY * categories.LAND}},
             },
         BuilderData = {

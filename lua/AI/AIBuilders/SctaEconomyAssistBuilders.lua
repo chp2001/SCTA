@@ -238,7 +238,7 @@ BuilderGroup {
         InstanceCount = 8,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, 'FUSION'} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, categories.FUSION} },
             { EBC, 'LessThanEconStorageRatio', { 0.25, 1}},
             },
         BuilderData = {

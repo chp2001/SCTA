@@ -184,7 +184,7 @@ BuilderGroup {
         PlatoonTemplate = 'CommanderSCTAAssist',
         Priority = 75,
         BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'ENERGYPRODUCTION TECH2, ENERGYPRODUCTION TECH3' }},
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'FUSION' }},
             { EBC, 'LessThanEconEfficiencyOverTime', { 2.0, 1.5 }},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.6, 0.5 } },
         },

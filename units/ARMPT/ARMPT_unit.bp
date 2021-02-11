@@ -71,16 +71,16 @@ UnitBlueprint {
     IdleEffects = {
             Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
             Scale = 0.5,
-            Bones = {'Wake_02'},
+            Bones = {'wake1'},
         },
 	MovementEffects = {
         TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake_01'},
+		Bones = {'wake2'},
         },
 	},
-        UniformScale = 0.16,
+        UniformScale = 0.12,
     },
     Economy = {
         BuildCostEnergy = 985,
@@ -165,15 +165,15 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Launcher_01',
+                        'Flare1',
                     },
-                    RackBone = 'Launcher_01',
+                    RackBone = 'Launcher',
                 },
                 {
                     MuzzleBones = {
-                        'Launcher_01',
+                        'Flare2',
                     },
-                    RackBone = 'Launcher_01',
+                    RackBone = 'Launcher',
                 },
             },
             RackRecoilDistance = 0,
@@ -188,10 +188,12 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'Launcher_01',
-            TurretBonePitch = 'Launcher_01',
-            TurretBoneYaw = 'Launcher_01',
-            TurretDualManipulators = false,
+            TurretBoneMuzzle = 'Flare1',
+            TurretBonePitch = 'mturret',
+            TurretBoneDualMuzzle = 'Flare2',
+            TurretBoneDualPitch = 'mturret',
+            TurretBoneYaw = 'mturret',
+            TurretDualManipulators = true,
             TurretPitch = 0,
             TurretPitchRange = 360,
             TurretPitchSpeed = 95,
@@ -229,15 +231,15 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Muzzle_01',
+                        'Flash',
                     },
-                    RackBone = 'Barrel_01',
+                    RackBone = 'Barrel',
                 },
                 {
                     MuzzleBones = {
-                        'Muzzle_02',
+                        'Flash2',
                     },
-                    RackBone = 'Barrel_02',
+                    RackBone = 'Barrel2',
                 },
             },
             RackFireTogether = false,
@@ -254,11 +256,11 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'Flare1',
-            TurretBonePitch = 'Turret',
-            TurretBoneDualMuzzle = 'Flare2',
-            TurretBoneDualPitch = 'Turret',
-            TurretBoneYaw = 'Turret',
+            TurretBoneMuzzle = 'Flash',
+            TurretBonePitch = 'turret',
+            TurretBoneDualMuzzle = 'Flash2',
+            TurretBoneDualPitch = 'turret',
+            TurretBoneYaw = 'turret',
             TurretDualManipulators = true,
             TurretPitch = 0,
             TurretPitchRange = 360,
@@ -269,9 +271,9 @@ UnitBlueprint {
             Turreted = true,
         },
         { #SMALL_UNITEX
-            Damage = 10,
+            Damage = 25,
             DamageFriendly = true,
-            DamageRadius = 0.9375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

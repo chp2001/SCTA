@@ -55,7 +55,7 @@ UnitBlueprint {
         'T2SUBMARINE',
         'OVERLAYSONAR',	
         'SELECTION',	
-	    'LEVEL2',
+	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -79,7 +79,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -113,10 +112,10 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            AimBone = 'post',
+            AimBone = 'muzzle',
             BuildEffectBones = {'muzzle'},
             PitchBone = 'muzzle',
-            YawBone = 'post',
+            YawBone = 'turret',
         },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
@@ -156,7 +155,7 @@ UnitBlueprint {
             LAYER_Sub = true,
             LAYER_Water = false,
         },
-        Elevation = -1.5,
+        Elevation = -2.5,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
         MaxAcceleration = 2,

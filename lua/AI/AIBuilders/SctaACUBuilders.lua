@@ -142,7 +142,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.FACTORY * categories.LAND } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.FACTORY * categories.LAND } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
         BuilderData = {

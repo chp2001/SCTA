@@ -56,7 +56,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTA Assist LEVEL2 Production',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
         Priority = 120,
         InstanceCount = 4,
         BuilderConditions = {
@@ -78,7 +78,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTA PGen Assist',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {

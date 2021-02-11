@@ -1,8 +1,8 @@
 local oldARMHAWK = ARMHAWK
 ARMHAWK = Class(oldARMHAWK) {
-	OnStopBeingBuilt = function(self)
+	OnStopBeingBuilt = function(self, builder, layer)
 		self:SetMaintenanceConsumptionActive()
-		oldARMHAWK.OnStopBeingBuilt(self)
+		oldARMHAWK.OnStopBeingBuilt(self, builder, layer)
 end,
 }
 TypeClass = ARMHAWK

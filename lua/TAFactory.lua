@@ -13,7 +13,7 @@ TAFactory = Class(FactoryUnit) {
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
-        FactoryUnit.OnStopBeingBuilt(self)
+        FactoryUnit.OnStopBeingBuilt(self, builder, layer)
         local aiBrain = GetArmyBrain(self.Army)
         if __blueprints['armmass'] then
         if EntityCategoryContains(categories.PLANT, self) then

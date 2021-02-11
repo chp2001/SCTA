@@ -15,8 +15,8 @@ TAweapon = Class(DefaultWeapon) {
         local canSee = true
         local target = self:GetCurrentTarget()
         local aiBrain = self.unit:GetAIBrain()
-        if aiBrain.SCTAAI then
-        return true
+        if aiBrain.SCTAAI or TAutils.ArmyHasTargetingFacility(army) == true then
+            return true
         else
         if (target) then
             if (IsUnit(target)) then

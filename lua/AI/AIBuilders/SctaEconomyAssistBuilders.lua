@@ -187,7 +187,7 @@ BuilderGroup {
         Priority = 150,
         InstanceCount = 3,
         BuilderConditions = {
-            { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},
+            { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 6, categories.LEVEL2 * categories.FACTORY * categories.LAND}},
             },
         BuilderData = {
@@ -238,7 +238,7 @@ BuilderGroup {
         InstanceCount = 8,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, 'FUSION'} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, categories.FUSION} },
             { EBC, 'LessThanEconStorageRatio', { 0.25, 1}},
             },
         BuilderData = {

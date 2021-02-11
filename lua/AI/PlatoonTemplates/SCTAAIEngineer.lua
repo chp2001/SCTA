@@ -7,6 +7,14 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
+    Name = 'CommanderSCTAAssist',
+    Plan = 'ManagerEngineerAssistAI',
+    GlobalSquads = {
+        { categories.COMMAND, 1, 1, 'support', 'None' },
+    },
+}
+
+PlatoonTemplate {
     Name = 'EngineerBuilderSCTA123',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {

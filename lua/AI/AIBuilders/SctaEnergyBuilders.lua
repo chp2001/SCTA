@@ -74,7 +74,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FUSION} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, 'FUSION', 'ENERGYPRODUCTION' } },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, 'FUSION' } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -96,7 +96,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1000} }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LEVEL3 * categories.FUSION} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'FUSION', 'ENERGYPRODUCTION' } },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'FUSION'} },
         },
         BuilderType = 'Any',
         BuilderData = {

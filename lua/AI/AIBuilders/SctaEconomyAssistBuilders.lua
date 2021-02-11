@@ -67,7 +67,7 @@ BuilderGroup {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Engineer',
                 AssistRange = 120,
-                BeingBuiltCategories = {'LEVEL2'},                 
+                BeingBuiltCategories = {'LEVEL2 FACTORY'},   
                 PermanentAssist = false,
                 AssistClosestUnit = false,                                       
                 AssistUntilFinished = true,

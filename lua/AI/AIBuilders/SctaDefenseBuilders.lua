@@ -51,6 +51,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 70,
         BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {900} }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ANTIMISSILE} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.7}},
         },
@@ -70,8 +71,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 60,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.LASER * categories.LEVEL2 } }, 
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.75}}, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.LASER * categories.LEVEL2 } }, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.75}}, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FUSION} }, 
         },
         BuilderType = 'Any',
         BuilderData = {

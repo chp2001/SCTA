@@ -34,7 +34,7 @@ BuilderGroup {
         BuilderConditions = {
             { EBC, 'GreaterThanEconIncome',  { 4, 50}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 1.2 }},
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'MASSEXTRACTION LEVEL3', 'MASSEXTRACTION' } },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'MASSEXTRACTION LEVEL2', 'MASSEXTRACTION' } },
             { IBC, 'BrainNotLowPowerMode', {} },
         },
         FormRadius = 10000,
@@ -48,7 +48,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 900 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 600, 2000 } },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, 'MASSEXTRACTION LEVEL3', 'MASSEXTRACTION' } },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, 'MASSEXTRACTION LEVEL2', 'MASSEXTRACTION' } },
             { IBC, 'BrainNotLowPowerMode', {} },
         },
         FormRadius = 10000,

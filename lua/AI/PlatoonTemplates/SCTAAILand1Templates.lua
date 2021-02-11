@@ -88,12 +88,14 @@ PlatoonTemplate {
     Name = 'T2LandDFTankSCTA',
     FactionSquads = {
         Arm = {
+            { 'armfark', 1, 1, 'support', 'None' },
             { 'armfido', 1, 2, 'attack', 'none' },
-            { 'armzeus', 1, 4, 'attack', 'none' },
-            { 'armspid', 1, 1, 'attack', 'none' },
+            { 'armzeus', 1, 6, 'attack', 'none' },
+            { 'armspid', 1, 2, 'attack', 'none' },
         },
         Core = {
-            { 'correap', 1, 4, 'attack', 'none' },
+            { 'cornecro', 1, 1, 'support', 'None' },
+            { 'correap', 1, 8, 'attack', 'none' },
             { 'coreter', 1, 1, 'attack', 'none' },
         },
     }

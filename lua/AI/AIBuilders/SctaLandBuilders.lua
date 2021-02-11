@@ -224,7 +224,6 @@ BuilderGroup {
         PlatoonTemplate = 'T3LandHOVERSCTA',
         Priority = 90,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
@@ -236,7 +235,7 @@ BuilderGroup {
         PlatoonTemplate = 'T3HOVERMISSILESCTA', 
         Priority = 70,
         BuilderConditions = {
-        { UCBC, 'HaveUnitRatio', { 0.2, categories.LEVEL2 * categories.INDIRECTFIRE,
+        { UCBC, 'HaveUnitRatio', { 0.2, categories.LEVEL3 * categories.ROCKET,
         '<=', categories.LEVEL3 * categories.LAND - categories.ENGINEER } }, -- Don't make tanks if we have lots of them. },
         },
         BuilderType = 'All',
@@ -259,7 +258,6 @@ BuilderGroup {
         Priority = 125,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1300} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL3 * categories.DIRECTFIRE,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
@@ -272,7 +270,6 @@ BuilderGroup {
         Priority = 125,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1300} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL3 * categories.DIRECTFIRE,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.

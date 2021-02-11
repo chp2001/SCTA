@@ -103,7 +103,7 @@ BuilderGroup {
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'STRUCTURE MASSEXTRACTION LEVEL3' }},
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'STRUCTURE MASSEXTRACTION LEVEL2' }},
             { EBC, 'LessThanEconEfficiencyOverTime', { 2.0, 1.5 }},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 0.5 } },
         },
@@ -115,7 +115,7 @@ BuilderGroup {
                 AssisteeType = 'Structure',
                 AssistRange = 200,
                 AssistClosestUnit = true,
-                BeingBuiltCategories = {'STRUCTURE MASSEXTRACTION LEVEL3'},
+                BeingBuiltCategories = {'STRUCTURE MASSEXTRACTION LEVEL2'},
                 Time = 60,
             },
         }
@@ -177,6 +177,22 @@ BuilderGroup {
         BuilderData = {
             Location = 'LocationType',
             Reclaim = {'LEVEL1 PLANT'},
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim Excess T2PLANTS',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonAIPlan = 'ReclaimStructuresAI',
+        Priority = 150,
+        InstanceCount = 3,
+        BuilderConditions = {
+            { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 6, categories.LEVEL2 * categories.FACTORY * categories.LAND}},
+            },
+        BuilderData = {
+            Location = 'LocationType',
+            Reclaim = {'LEVEL2 FACTORY LAND'},
         },
         BuilderType = 'Any',
     },

@@ -100,17 +100,6 @@ BuilderGroup {
         BuilderType = 'All',
     },     
     Builder {
-        BuilderName = 'SCTAAI Factory Seaplane',
-        PlatoonTemplate = 'T3AirFighterSCTA',
-        Priority = 100,
-        BuilderConditions = { -- Only make inties if the enemy air is strong.
-        { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.2, 0.33 }},
-        { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
-        },
-        BuilderType = 'All',
-    },
-
-    Builder {
         BuilderName = 'SCTAAi Field Engineer2',
         PlatoonTemplate = 'T2BuildFieldEngineerSCTA',
         Priority = 80, -- Top factory priority

@@ -25,9 +25,14 @@ CORBUZZ = Class(TAStructure) {
 					self.unit.currentBarrel = 0
 				end
 				self.unit:CreateProjectileAtBone('/mods/SCTA-master/effects/entities/Shells/ARMVULC_Shell/ARMVULC_Shell_proj.bp','Turret')
+			end,
+
+			PlayFxRackReloadSequence = function(self)
 				self.unit.Spinners.Spindle:SetGoal(-60 * (self.unit.currentBarrel))
 				self.unit.Spinners.Spindle:SetSpeed(1440)
+				TIFArtilleryWeapon.PlayFxRackReloadSequence(self)
 			end,
+
 		},
 	},
 }

@@ -24,9 +24,9 @@ UnitBlueprint {
         MaxHealth = 15000,
     },
     Economy = {
-        BuildCostEnergy = 10000000,
+        BuildCostEnergy = 15000000,
         BuildCostMass = 450000,
-        BuildTime = 1800000,
+        BuildTime = 3600000,
     },
     Footprint = {
         SizeX = 6,

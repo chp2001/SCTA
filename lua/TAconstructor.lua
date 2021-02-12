@@ -50,14 +50,21 @@ TAconstructor = Class(TAWalking) {
         TAWalking.OnUnpaused(self)
     end,
     
-    OnStartBuild = function(self, unitBeingBuilt, order )
+    OnStartBuild = function(self, unitBeingBuilt, order ) 
         if order == 'Repair' and unitBeingBuilt.WorkItem != self.WorkItem then
 			self:InheritWork(unitBeingBuilt)
 		end 
-        TAWalking.OnStartBuild(self,unitBeingBuilt, order)
+        TAWalking.OnStartBuild(self, unitBeingBuilt, order)
         self.UnitBeingBuilt = unitBeingBuilt
         self.UnitBuildOrder = order
         self.BuildingUnit = true
+    end,
+
+    InheritWork = function(self, target)
+        self.WorkItem = target.WorkItem
+        self.WorkItemBuildCostEnergy = target.WorkItemBuildCostEnergy
+        self.WorkItemBuildCostMass = target.WorkItemBuildCostMass
+        self.WorkItemBuildTime = target.WorkItemBuildTime
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)
@@ -115,10 +122,10 @@ TAconstructor = Class(TAWalking) {
             self.BuildingOpenAnimManip:SetRate(-(self:GetBlueprint().Display.AnimationBuildRate or 1))
             self:SetImmobile(false)
         end
-    end,   
-
-	CreateBuildEffects = function(self, unitBeingBuilt, order)
-        TAutils.CreateTABuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
+    end,
+    
+    CreateBuildEffects = function( self, unitBeingBuilt, order )
+        self.BuildEffectsBag:Add( TAutils.CreateTABuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag ))
     end,
 
     CreateReclaimEffects = function( self, target )

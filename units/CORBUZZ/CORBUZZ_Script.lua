@@ -28,8 +28,8 @@ CORBUZZ = Class(TAStructure) {
 			end,
 
 			PlayFxRackReloadSequence = function(self)
-				self.unit.Spinners.Spindle:SetGoal(-60 * (self.unit.currentBarrel))
-				self.unit.Spinners.Spindle:SetSpeed(1440)
+				self.unit.Spinners.Spindle:SetGoal(-60 * (self.unit.currentBarrel + 1))
+				self.unit.Spinners.Spindle:SetSpeed(600)
 				TIFArtilleryWeapon.PlayFxRackReloadSequence(self)
 			end,
 

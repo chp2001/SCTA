@@ -84,7 +84,6 @@ UnitBlueprint {
                     LODCutoff = 230,
                     Scrolling = true,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },

@@ -14,10 +14,6 @@ TAweapon = Class(DefaultWeapon) {
         local army = self.unit:GetArmy()
         local canSee = true
         local target = self:GetCurrentTarget()
-        local aiBrain = self.unit:GetAIBrain()
-        if aiBrain.SCTAAI or TAutils.ArmyHasTargetingFacility(army) == true then
-            return true
-        else
         if (target) then
             if (IsUnit(target)) then
                 canSee = target:GetBlip(army):IsSeenNow(army)
@@ -33,7 +29,6 @@ TAweapon = Class(DefaultWeapon) {
         end
 
         if (canSee == true or 
-        TAutils.ArmyHasTargetingFacility(army) == true or
         currentTarget == target or
         (target and IsProp(target))) then
              return true
@@ -41,12 +36,16 @@ TAweapon = Class(DefaultWeapon) {
             self:ResetTarget()
             return false
         end
-    end
     end,
 
     IdleState = State(DefaultWeapon.IdleState) {
         OnGotTarget = function(self)
-            if (self:OnGotTargetCheck() == true) then
+            local aiBrain = self.unit:GetAIBrain()
+            local army = self.unit:GetArmy()
+            ---LOG('Resulting Table'..repr(TAutils.targetingFacilityData))
+            if (aiBrain.SCTAAI or 
+            TAutils.ArmyHasTargetingFacility(army) or 
+            self:OnGotTargetCheck() == true) then
                 DefaultWeapon.IdleState.OnGotTarget(self)
             end
         end,
@@ -54,7 +53,12 @@ TAweapon = Class(DefaultWeapon) {
 
     WeaponUnpackingState = State(DefaultWeapon.WeaponUnpackingState) {
         Main = function(self)
-            if (self:OnGotTargetCheck() == true) then
+            local aiBrain = self.unit:GetAIBrain()
+            local army = self.unit:GetArmy()
+            ---LOG('Resulting Table'..repr(TAutils.targetingFacilityData))
+            if (aiBrain.SCTAAI or 
+            TAutils.ArmyHasTargetingFacility(army) or 
+            self:OnGotTargetCheck() == true) then
                 DefaultWeapon.WeaponUnpackingState.Main(self)
             else
                 ChangeState(self, self.WeaponPackingState)
@@ -62,7 +66,12 @@ TAweapon = Class(DefaultWeapon) {
         end,
 
         OnGotTarget = function(self)
-            if (self:OnGotTargetCheck() == true) then
+            local aiBrain = self.unit:GetAIBrain()
+            local army = self.unit:GetArmy()
+            ---LOG('Resulting Table'..repr(TAutils.targetingFacilityData))
+            if (aiBrain.SCTAAI or 
+            TAutils.ArmyHasTargetingFacility(army) or 
+            self:OnGotTargetCheck() == true)  then
                 DefaultWeapon.WeaponUnpackingState.OnGotTarget(self)
             end
         end,
@@ -96,7 +105,12 @@ TAweapon = Class(DefaultWeapon) {
         end,
 
         OnGotTarget = function(self)
-            if (self:OnGotTargetCheck() == true) then
+            local aiBrain = self.unit:GetAIBrain()
+            local army = self.unit:GetArmy()
+            ---LOG('Resulting Table'..repr(TAutils.targetingFacilityData))
+            if (aiBrain.SCTAAI or 
+            TAutils.ArmyHasTargetingFacility(army) or 
+            self:OnGotTargetCheck() == true) then
                 DefaultWeapon.RackSalvoFireReadyState.OnGotTarget(self)
             end
         end,
@@ -118,7 +132,12 @@ TAweapon = Class(DefaultWeapon) {
 
     WeaponPackingState = State(DefaultWeapon.WeaponPackingState) {
         OnGotTarget = function(self)
-            if (self:OnGotTargetCheck() == true) then
+            local aiBrain = self.unit:GetAIBrain()
+            local army = self.unit:GetArmy()
+            ---LOG('Resulting Table'..repr(TAutils.targetingFacilityData))
+            if (aiBrain.SCTAAI or 
+            TAutils.ArmyHasTargetingFacility(army) or 
+            self:OnGotTargetCheck() == true)  then
                 DefaultWeapon.WeaponPackingState.OnGotTarget(self)
             end
         end,

@@ -9,6 +9,7 @@ UnitBlueprint {
         'MOBILE',
 	'NAVAL',
 	'DIRECTFIRE',
+    'INDIRECTFIRE',
 	'BATTLESHIP',
         'OVERLAYINDIRECTFIRE',
         'OVERLAYDIRECTFIRE',

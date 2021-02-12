@@ -64,6 +64,14 @@ TAAirConstructor = Class(TAair) {
         self.BuildingUnit = true
     end,
 
+
+    InheritWork = function(self, target)
+        self.WorkItem = target.WorkItem
+        self.WorkItemBuildCostEnergy = target.WorkItemBuildCostEnergy
+        self.WorkItemBuildCostMass = target.WorkItemBuildCostMass
+        self.WorkItemBuildTime = target.WorkItemBuildTime
+    end,
+
     OnStopBuild = function(self, unitBeingBuilt)
         TAair.OnStopBuild(self,unitBeingBuilt)
         self.UnitBeingBuilt = nil
@@ -126,8 +134,8 @@ TAAirConstructor = Class(TAair) {
     end,
 
     
-	CreateBuildEffects = function(self, unitBeingBuilt, order)
-        TAutils.CreateTAAirBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
+    CreateBuildEffects = function( self, unitBeingBuilt, order )
+        self.BuildEffectsBag:Add( TAutils.CreateTAAirBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag ))
     end,
 
     CreateReclaimEffects = function( self, target )

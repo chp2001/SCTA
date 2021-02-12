@@ -35,8 +35,6 @@ UnitBlueprint {
         'MOBILE',
     'LAND',
     'TACLOAK',
-	'DIRECTFIRE',
-        'OVERLAYDIRECTFIRE',
         'ARM',
         'KBOT',
 	'LEVEL2',

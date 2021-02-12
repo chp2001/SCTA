@@ -34,6 +34,7 @@ UnitBlueprint {
 	'ARM',
 	'LEVEL3',
     'STRATEGIC',
+    'ARTILLERY',
     'SNIPEMODE',
     },
     Defense = {
@@ -47,9 +48,6 @@ UnitBlueprint {
     },
     Description = 'Long Range Plasma Cannon',
     Display = {
-        Abilities = {
-            'Artillery',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

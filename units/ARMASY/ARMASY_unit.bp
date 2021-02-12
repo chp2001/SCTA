@@ -41,7 +41,6 @@ UnitBlueprint {
 	    'CONSTRUCTION',
 	    'NAVAL',
 	    'ARM',
-		'PLANT',
 	    'SORTCONSTRUCTION',
 	    'LEVEL2',
     },
@@ -129,8 +128,6 @@ UnitBlueprint {
         },
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
-	------BuildAreaX = 8,
-    ------BuildAreaZ = 8,
     RollOffPoints = {
         {
             UnitSpin = 0,

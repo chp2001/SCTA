@@ -24,9 +24,9 @@ UnitBlueprint {
         MaxHealth = 15000,
     },
     Economy = {
-        BuildCostEnergy = 10000000,
+        BuildCostEnergy = 15000000,
         BuildCostMass = 450000,
-        BuildTime = 1800000,
+        BuildTime = 3600000,
     },
     Footprint = {
         SizeX = 6,
@@ -46,9 +46,7 @@ UnitBlueprint {
     Weapon = {
         [1] = {
             DamageRadius = 5, 
-            RangeCategory = 'UWRC_IndirectFire',
-            WeaponCategory = 'Artillery',
-	    FiringRandomness = 0.25,
+	        FiringRandomness = 0.25,
             MaxRadius = 2500,
             MinRadius = 50,
             MuzzleSalvoSize = 1,

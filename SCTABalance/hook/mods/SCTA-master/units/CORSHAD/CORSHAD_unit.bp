@@ -9,7 +9,7 @@ UnitBlueprint {
     'BOMBER',
     'AIR',
     'VTOL',
-    'DIRECTFIFRE',
+    'DIRECTFIRE',
     'OVERLAYDIRECTFIRE',
     'CORE',
     'HIGHALTAIR',

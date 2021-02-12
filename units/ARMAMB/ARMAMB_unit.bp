@@ -127,8 +127,8 @@ UnitBlueprint {
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
             },
-        RangeCategory = 'UWRC_IndirectFire',
-        WeaponCategory = 'IndirectFire',
+            RangeCategory = 'UWRC_DirectFire',
+            WeaponCategory = 'DirectFire',
             Label = 'ARMAMB_GUN',
             MaxRadius = 60, 
             MuzzleSalvoDelay = 0, 

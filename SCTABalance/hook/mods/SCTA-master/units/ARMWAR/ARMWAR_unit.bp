@@ -17,7 +17,7 @@ Footprint = {
     SizeZ = 1,
 },
 Intel = {
-    VisionRadius = 10,
+    VisionRadius = 12,
 },
 SelectionSizeX = 0.8,
 SelectionSizeZ = 0.8,

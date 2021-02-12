@@ -100,7 +100,7 @@ UnitBlueprint {
         BuildBones = {
             AimBone = 'pelvis',
             BuildEffectBones = {'fire', 'nano1b'},
-            PitchBone = 'pelvis',
+            PitchBone = 'pitchturret',
             YawBone = 'pelvis',
         },
         Category = 'Construction',

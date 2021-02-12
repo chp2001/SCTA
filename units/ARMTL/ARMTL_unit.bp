@@ -28,7 +28,6 @@ UnitBlueprint {
         'TECH1',
 	'STRUCTURE',
 	'DEFENSE',
-	'DIRECTFIRE',
 	'ANTINAVY',
 	'NAVAL',
         'OVERLAYSONAR',

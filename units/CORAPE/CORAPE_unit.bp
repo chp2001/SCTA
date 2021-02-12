@@ -73,6 +73,7 @@ UnitBlueprint {
 	    'AIR',
         'VTOL',
 	    'GROUNDATTACK',
+        'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
         'LEVEL2',

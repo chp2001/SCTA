@@ -46,7 +46,6 @@ UnitBlueprint {
         [1] = {
             Damage = 3600,
             DamageRadius = 5, 
-            RangeCategory = 'UWRC_IndirectFire',
             FiringTolerance = 1.65,	
             FiringRandomness = 0.75,
             ProjectileLifetime = 2000,
@@ -62,6 +61,7 @@ UnitBlueprint {
             RateOfFire = 3.333333333,           
             TurretPitchSpeed = 10,
             TurretYawSpeed = 10,
+            RenderFireClock = true,
         },
         [2] = {
         },

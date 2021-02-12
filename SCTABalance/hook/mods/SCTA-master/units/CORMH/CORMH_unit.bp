@@ -26,7 +26,7 @@ UnitBlueprint {
         BuildTime = 7000,
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 18,
     },
     SizeY = 1.4,
     StrategicIconName = 'icon_land3_missile',

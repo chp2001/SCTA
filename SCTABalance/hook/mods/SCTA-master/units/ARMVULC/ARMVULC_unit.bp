@@ -46,9 +46,7 @@ UnitBlueprint {
     Weapon = {
         [1] = {
             DamageRadius = 5, 
-            RangeCategory = 'UWRC_IndirectFire',
-            WeaponCategory = 'Artillery',
-	    FiringRandomness = 0.25,
+	        FiringRandomness = 0.25,
             MaxRadius = 2500,
             MinRadius = 50,
             MuzzleSalvoSize = 1,

@@ -121,7 +121,7 @@ UnitBlueprint {
 	UnitName = 'Aircraft Advanced Development Plant',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 10,
 	RadarRadius = 32,
 	FreeIntel = true,
     },

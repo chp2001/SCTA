@@ -33,7 +33,7 @@ Economy = {
         Min = 10,
     },
     JammerBlips = 5,
-    VisionRadius = 14,
+    VisionRadius = 16,
     },
    SizeY = 1, 
    StrategicIconName = 'icon_bot2_directfire',

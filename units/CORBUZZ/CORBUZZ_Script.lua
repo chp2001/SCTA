@@ -17,6 +17,7 @@ CORBUZZ = Class(TAStructure) {
 
 	Weapons = {
 		CORBUZZ_WEAPON = Class(TIFArtilleryWeapon) {
+			FxMuzzleFlashScale = 3,
 			OnWeaponFired = function(self)
 				TIFArtilleryWeapon.OnWeaponFired(self)
 				

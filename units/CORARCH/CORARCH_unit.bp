@@ -36,7 +36,6 @@ UnitBlueprint {
 	'NAVAL',
 	'ANTIAIR',
 	'CRUISER',
-        'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',
         'CORE',
         'OCEAN',

@@ -20,6 +20,7 @@ ARMVULC = Class(TAStructure) {
 
 	Weapons = {
 		ARMVULC_WEAPON = Class(TIFArtilleryWeapon) {
+			FxMuzzleFlashScale = 3,
 			OnWeaponFired = function(self)
 				TIFArtilleryWeapon.OnWeaponFired(self)
 				

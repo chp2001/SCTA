@@ -18,11 +18,6 @@ UnitBlueprint {
         'OCEAN',
 	    'LEVEL3',
     },
-    Display = {
-        Abilities = {
-            '<LOC ability_jamming>Jamming',
-        },
-    }, 
     Economy = {
         BuildCostEnergy = 2100,
         BuildCostMass = 200,
@@ -33,22 +28,9 @@ UnitBlueprint {
 	SizeZ = 3,
 	MaxSlope = 1,
     },
-    General = {
-        ToggleCaps = {
-            RULEUTC_JammingToggle = true,
-            RULEUTC_StealthToggle = false,
-        },
-    },
     Intel = {
     FreeIntel = false,
-    RadarStealth = false,
-    JamRadius = {
-        Max = 18,
-        Min = 18,
-    },
-    JammerBlips = 8,
     VisionRadius = 14,
-	RadarStealthFieldRadius = 0,
     },
     SelectionSizeX = 1.25,
     SelectionSizeZ = 1.9,

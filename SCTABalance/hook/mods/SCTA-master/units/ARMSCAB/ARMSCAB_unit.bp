@@ -17,6 +17,7 @@ UnitBlueprint {
         'SORTDEFENSE',
         'NEEDMOBILEBUILD',
         'DEFENSE',
+        'ANTIAIR',
     },
     Display = {
         UniformScale = 0.06,

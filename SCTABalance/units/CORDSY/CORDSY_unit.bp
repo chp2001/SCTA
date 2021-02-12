@@ -124,7 +124,7 @@ UnitBlueprint {
 	UnitName = 'Development Shipyard',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 10,
         WaterVisionRadius = 8,
     },
     Interface = {

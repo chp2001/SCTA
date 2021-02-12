@@ -31,7 +31,7 @@ UnitBlueprint {
             },
         },
         Intel = {
-        VisionRadius =  10,
+        VisionRadius =  22,
 	    RadarStealth = true,
 	    FreeIntel = false,
     },

@@ -25,7 +25,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH3',
 	    'STRUCTURE',
-	    'DIRECTFIRE',
 	    'ANTINAVY',
 	    'NAVAL',
 	    'NOSMOKE',

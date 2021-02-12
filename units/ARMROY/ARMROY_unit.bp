@@ -165,8 +165,8 @@ UnitBlueprint {
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Seabed',
             },
-	    RangeCategory = 'UWRC_IndirectFire',
-     WeaponCategory = 'IndirectFire',
+	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
             FiringRandomness = 0,
             FiringTolerance = 0,
             Label = 'ARM_ROY',

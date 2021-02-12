@@ -39,7 +39,6 @@ UnitBlueprint {
 	'ROCKET',
 	'CRUISER',
         'OVERLAYINDIRECTFIRE',
-        'OVERLAYDIRECTFIRE',
 	    'OVERLAYANTIAIR',
 	    'OVERLAYRADAR',
         'ARM',

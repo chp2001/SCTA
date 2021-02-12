@@ -65,8 +65,8 @@ UnitBlueprint {
                             BoneName = 'CORVRAD',
                             TreadMarks = 'tank_treads_albedo',
                             TreadMarksInterval = 0.2,
-                            TreadMarksSizeX = 0.5,
-                            TreadMarksSizeZ = 0.5,
+                            TreadMarksSizeX = 0.75,
+                            TreadMarksSizeZ = 0.75,
                             TreadOffset = {
                                 0,
                                 0,
@@ -87,7 +87,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.12,
     },
     Economy = {
         BuildCostEnergy = 1209,

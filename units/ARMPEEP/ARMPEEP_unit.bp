@@ -105,7 +105,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.08,
     },
     Economy = {
         BuildCostEnergy = 1475,
@@ -165,7 +165,7 @@ UnitBlueprint {
         { #SMALL_UNITEX
             Damage = 10,
             DamageFriendly = true,
-            DamageRadius = 0.9375,
+            DamageRadius = 1,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

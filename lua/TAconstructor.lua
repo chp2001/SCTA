@@ -151,17 +151,14 @@ TANecro = Class(TAconstructor) {
                 target.NecroingInProgress = true
 				self.spawnUnit = true
                 self.RecBP = target.AssociatedBP
-                self.ReclaimLeft = target.ReclaimLeft
                 self.RecPosition = target:GetPosition()
             elseif not target.ReclaimInProgress and target.NecroingInProgress then
 				--LOG('* Necro: OnStartReclaim:  I am a necro and helping necro')
 				self.RecBP = nil
-				self.ReclaimLeft = nil
 				self.RecPosition = target:GetPosition()
 			else
                 --LOG('* Necro: OnStartReclaim:  I am a necro and ReclaimInProgress; Stopped!')
 				self.RecBP = nil
-                self.ReclaimLeft = nil
                 self.RecPosition = nil
                 IssueStop({self})
                 IssueClearCommands({self})
@@ -187,7 +184,7 @@ TANecro = Class(TAconstructor) {
             if self.RecBP and EntityCategoryContains(categories.NECRO, self) and oldPosition ~= self.RecPosition and self.spawnUnit then
                 --LOG('* Necro: OnStopReclaim:  I am a necro! and RecBP = true ')
                 oldPosition = self.RecPosition
-                self:ForkThread( self.RespawnUnit, self.RecBP, self:GetArmy(), self.RecPosition, self.ReclaimLeft )
+                self:ForkThread( self.RespawnUnit, self.RecBP, self:GetArmy(), self.RecPosition)
             else
                 --LOG('* Necro: OnStopReclaim: no necro or no RecBP')
             end
@@ -195,7 +192,6 @@ TANecro = Class(TAconstructor) {
             if EntityCategoryContains(categories.NECRO, self) then
                 --LOG('* Necro: OnStopReclaim:  Wreck still exist. Removing target data from Necro')
                 self.RecBP = nil
-                self.ReclaimLeft = nil
                 self.RecPosition = nil
             else
                 --LOG('* Necro: OnStopReclaim: Wreck still exist. no necro')
@@ -203,11 +199,11 @@ TANecro = Class(TAconstructor) {
         end
     end,
 
-    RespawnUnit = function(self, RecBP, army, pos, ReclaimLeft)
+    RespawnUnit = function(self, RecBP, army, pos)
         --LOG('* Necro: RespawnUnit: ReclaimLeft '..ReclaimLeft)
         WaitTicks(3)
         local newUnit = CreateUnitHPR(RecBP, army, pos[1], pos[2], pos[3], 0, 0, 0)
-        newUnit:SetHealth(nil, newUnit:GetMaxHealth() * ReclaimLeft * 0.1)
+        newUnit:SetHealth(nil, 100)
     end,
 }
 

@@ -170,9 +170,9 @@ UnitBlueprint {
     StrategicIconSortPriority = 5,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 20,
+            Damage = 1000,
             DamageFriendly = true,
-            DamageRadius = 1,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

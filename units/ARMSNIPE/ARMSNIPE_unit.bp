@@ -203,12 +203,12 @@ UnitBlueprint {
             Turreted = true,
         },
         { #SMALL_UNITEX
-            Damage = 10,
-            DamageFriendly = true,
-            DamageRadius = 1,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        Damage = 100,
+        DamageFriendly = true,
+        DamageRadius = 3,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
         },
 
     },

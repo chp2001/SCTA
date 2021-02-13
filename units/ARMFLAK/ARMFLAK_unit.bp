@@ -177,7 +177,7 @@ UnitBlueprint {
             Turreted = true,
         },
         { #LARGE_BUILDINGEX
-            Damage = 300,
+            Damage = 120,
             DamageFriendly = true,
             DamageRadius = 3.75,
             DamageType = 'Normal',

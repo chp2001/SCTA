@@ -226,12 +226,12 @@ UnitBlueprint {
             AboveWaterTargetsOnly = true,
         },
         { #SMALL_UNITEX #was big_unitx
-            Damage = 30,
-            DamageFriendly = true,
-            DamageRadius = 0.9375,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        Damage = 30,
+        DamageFriendly = true,
+        DamageRadius = 3,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
         },
 
     },

@@ -228,7 +228,7 @@ UnitBlueprint {
         { #SMALL_UNITEX #was big_unitx
             Damage = 30,
             DamageFriendly = true,
-            DamageRadius = 0.9375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

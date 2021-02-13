@@ -217,9 +217,9 @@ UnitBlueprint {
             Turreted = true,
         },
         { --SMALL_UNITEX    -- There's no point in having two death weapons when they are so similar
-            Damage = 20,--10,
+            Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 1,--0.9375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

@@ -208,9 +208,9 @@ UnitBlueprint {
             WeaponCategory = 'Direct Fire',
         },
         { #SMALL_UNITEX
-            Damage = 10,
+            Damage = 100,
             DamageFriendly = true,
-            DamageRadius = 0.9375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

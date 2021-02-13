@@ -79,12 +79,15 @@ UnitBlueprint {
 	},
         UniformScale = 0.16,
     },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 2,
+    },
     Economy = {
         BuildCostEnergy = 1444,
         BuildCostMass = 120,
         BuildTime = 3747,
     },
-
     General = {
         Category = 'Anti Air',
         Classification = 'RULEUC_MilitaryVehicle',

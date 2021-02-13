@@ -114,6 +114,10 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 15,
 	NaturalProducer = true,
     },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 2,
+    },
     General = {
         BuildBones = {
             AimBone = 'nanogun',

@@ -6,6 +6,7 @@ local SAI = '/lua/ScenarioPlatoonAI.lua'
 local SBC = '/lua/editor/SorianBuildConditions.lua'
 local SIBC = '/lua/editor/SorianInstantBuildConditions.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local MABC = '/lua/editor/MarkerBuildConditions.lua'
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIEnergyBuilder',
@@ -13,11 +14,15 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Hydro',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 100,
-        InstanceCount = 2, -- The max number concurrent instances of this builder.
-        BuilderConditions = {},
+        Priority = 90,
+        InstanceCount = 1, -- The max number concurrent instances of this builder.
+        BuilderConditions = { 
+            { SBC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 300}},
+        },
         BuilderType = 'Any',
         BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
             Construction = {
                 BuildStructures = {
                     'T1HydroCarbon',
@@ -48,11 +53,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 80,
+        Priority = 90,
         InstanceCount = 3,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FUSION} },
-            { EBC, 'LessThanEconStorageRatio', { 1, 0.25}},
+            { EBC, 'LessThanEconStorageRatio', { 1, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -74,7 +79,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FUSION} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, 'FUSION' } },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.FUSION} },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -96,7 +101,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1000} }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LEVEL3 * categories.FUSION} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'FUSION'} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.FUSION} },
         },
         BuilderType = 'Any',
         BuilderData = {

@@ -16,6 +16,7 @@ BuilderGroup {
         Priority = 95,
         InstanceCount = 1,
         BuilderConditions = {
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR} },
         },
         BuilderType = 'Any',

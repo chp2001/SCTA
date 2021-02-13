@@ -32,8 +32,10 @@ TAFactory = Class(FactoryUnit) {
 
         FactoryStartBuild = function(self, unitBeingBuilt, order )
             WaitFor(self.AnimManip)
+            if not self.Dead then
             FactoryUnit.OnStartBuild(self, unitBeingBuilt, order )
-		end,
+            end
+        end,
 
 		Open = function(self)
 		end,

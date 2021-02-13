@@ -39,13 +39,13 @@ TAconstructor = Class(TAWalking) {
     OnPaused = function(self)
         TAWalking.OnPaused(self)
         if self.BuildingUnit then
-            TAWalking.StopBuildingEffects(self, self:GetUnitBeingBuilt())
+            TAWalking.StopBuildingEffects(self, self:UnitBeingBuilt())
         end    
     end,
     
     OnUnpaused = function(self)
         if self.BuildingUnit then
-            TAWalking.StartBuildingEffects(self, self:GetUnitBeingBuilt(), self.UnitBuildOrder)
+            TAWalking.StartBuildingEffects(self, self:UnitBeingBuilt(), self.UnitBuildOrder)
         end
         TAWalking.OnUnpaused(self)
     end,

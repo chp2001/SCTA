@@ -15,7 +15,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 100,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
-        BuilderConditions = { },
+        BuilderConditions = {
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.2}},
+         },
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,

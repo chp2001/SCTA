@@ -11,28 +11,6 @@ BuilderGroup {
     BuilderGroupName = 'SCTAAIFactoryBuilders',
     BuildersType = 'EngineerBuilder',
     Builder {
-        BuilderName = 'SCTAAI T1Engineer AirFac2',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 95,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR} },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
-            Construction = {
-                BuildStructures = {
-                    'T1AirFactory',
-                    'T1Radar',
-                }
-            }
-        }
-    },
-    Builder {
         BuilderName = 'SCTAAI T1Engineer LandFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 95,
@@ -84,7 +62,7 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 6,  categories.FACTORY * categories.LEVEL1 } }, -- Don't build air fac immediately.
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  categories.FACTORY * categories.LEVEL1 } }, -- Don't build air fac immediately.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4,  categories.FACTORY * categories.AIR} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  categories.FACTORY * categories.AIR * categories.LEVEL2  } }, -- Stop after 5 facs have been built.
             { MIBC, 'LessThanGameTime', {1200} },

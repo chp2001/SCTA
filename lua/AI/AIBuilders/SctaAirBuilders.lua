@@ -46,6 +46,7 @@ BuilderGroup {
         Priority = 100, -- Top factory priority
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENGINEER * categories.AIR * categories.LEVEL1} }, -- Build engies until we have 4 of them.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}}, 
         },
         BuilderType = 'All',
     },

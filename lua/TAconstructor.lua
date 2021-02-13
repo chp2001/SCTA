@@ -123,7 +123,9 @@ TAconstructor = Class(TAWalking) {
     end,
 
     CreateReclaimEffects = function( self, target )
-		TAutils.TAReclaimEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.ReclaimEffectsBag )
+        if not self.Dead then
+        TAutils.TAReclaimEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.ReclaimEffectsBag )
+        end
     end,
     
     CreateReclaimEndEffects = function( self, target )

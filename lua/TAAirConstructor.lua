@@ -65,13 +65,6 @@ TAAirConstructor = Class(TAair) {
     end,
 
 
-    InheritWork = function(self, target)
-        self.WorkItem = target.WorkItem
-        self.WorkItemBuildCostEnergy = target.WorkItemBuildCostEnergy
-        self.WorkItemBuildCostMass = target.WorkItemBuildCostMass
-        self.WorkItemBuildTime = target.WorkItemBuildTime
-    end,
-
     OnStopBuild = function(self, unitBeingBuilt)
         TAair.OnStopBuild(self,unitBeingBuilt)
         self.UnitBeingBuilt = nil
@@ -123,7 +116,9 @@ TAAirConstructor = Class(TAair) {
     end,
 
     OnStartReclaim = function(self, target)
+        if not self.Dead then
         TAair.OnStartReclaim(self, target)
+        end
     end,
 
     OnStopReclaim = function(self, target)

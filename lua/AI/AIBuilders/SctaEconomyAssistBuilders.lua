@@ -127,10 +127,11 @@ BuilderGroup {
         Priority = 75,
         InstanceCount = 3,
         BuilderConditions = {
-                { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
-            },
+            { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
+        },
         BuilderData = {
-            LocationType = 'LocationType',
+        LocationType = 'LocationType',
+        ReclaimTime = 30,
         },
         BuilderType = 'Any',
     },
@@ -141,10 +142,11 @@ BuilderGroup {
         Priority = 75,
         InstanceCount = 3,
         BuilderConditions = {
-                { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
-            },
+            { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
+        },
         BuilderData = {
-            LocationType = 'LocationType',
+        LocationType = 'LocationType',
+        ReclaimTime = 30,
         },
         BuilderType = 'Any',
     },

@@ -41,7 +41,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {240} }, -- Don't make tanks if we have lots of them.
             { MIBC, 'GreaterThanGameTime', {90} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.3}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.3}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -122,7 +122,8 @@ BuilderGroup {
         Priority = 100,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.WIND} },
+            { MIBC, 'GreaterThanGameTime', {300} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.SOLAR} },
             { EBC, 'LessThanEconStorageRatio', { 1, 0.5}},
         },
         BuilderType = 'Any',
@@ -132,7 +133,7 @@ BuilderGroup {
             Construction = {
                 BuildClose = true,
                 BuildStructures = {
-                    'T1EnergyProduction2',
+                    'T1EnergyProduction',
                 }
             }
         }

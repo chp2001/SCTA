@@ -10,6 +10,7 @@ UnitBlueprint {
     Economy = {
         BuildRate = 40, 
         BuildCostEnergy = 2400,
+        BuildTime = 2300,
         MaintenanceConsumptionPerSecondEnergy = 10,
         ProductionPerSecondEnergy = 0,
         BuildableCategory = {

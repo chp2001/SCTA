@@ -87,6 +87,27 @@ BuilderGroup {
         }
     },
     Builder {
+        BuilderName = 'SCTARadar',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco',
+            Priority = 50,
+            BuilderConditions = {
+                { UCBC, 'UnitsLessAtLocation', { 'LocationType', 1, (categories.RADAR + categories.OMNI) * categories.STRUCTURE - categories.FACTORY}},
+                { EBC, 'GreaterThanEconIncome',  { 0.5, 15 } },
+                { IBC, 'BrainNotLowPowerMode', {} },
+                { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 1.2 }}, 
+            },
+            BuilderType = 'Any',
+            BuilderData = {
+                Construction = {
+                    BuildClose = true,
+                    BuildStructures = {
+                        'T1Radar',
+                    },
+                    Location = 'LocationType',
+                }
+            }
+        },
+    Builder {
         BuilderName = 'SCTALaser3Tower',
         PlatoonTemplate = 'EngineerBuilderSCTA23',
         Priority = 60,

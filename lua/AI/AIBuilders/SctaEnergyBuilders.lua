@@ -34,9 +34,10 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
         Priority = 90,
-        InstanceCount = 2,
+        InstanceCount = 3,
         BuilderConditions = {
-            { EBC, 'LessThanEconStorageRatio', { 1, 0.25}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.3}},
+            { EBC, 'LessThanEconStorageRatio', { 1, 0.6}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -54,9 +55,10 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer Pgen2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 90,
-        InstanceCount = 3,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FUSION} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.2}},
             { EBC, 'LessThanEconStorageRatio', { 1, 0.5}},
         },
         BuilderType = 'Any',
@@ -66,7 +68,7 @@ BuilderGroup {
             Construction = {
                 BuildClose = true,
                 BuildStructures = {
-                    'T1EnergyProduction2',
+                    'T1EnergyProduction',
                 }
             }
         }
@@ -78,6 +80,8 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} }, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.4}},
+            { EBC, 'LessThanEconStorageRatio', { 1, 0.8}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FUSION} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.FUSION} },
         },
@@ -100,6 +104,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1000} }, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LEVEL3 * categories.FUSION} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.FUSION} },
         },

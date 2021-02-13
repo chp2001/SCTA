@@ -59,7 +59,7 @@ UnitBlueprint {
             Land = {
                 Treads = {
                     ScrollMultiplier = 0.75,
-                    ScrollTreads = true,
+                    ScrollTreads = false,
                     TreadMarks = {
                         {
                             BoneName = 'corfav',
@@ -83,7 +83,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     Scrolling = true, 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -186,7 +185,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'flare',
-            TurretBonePitch = 'turret',
+            TurretBonePitch = 'barrel',
             TurretBoneYaw = 'turret',
             TurretPitch = 0,
             TurretPitchRange = 360,

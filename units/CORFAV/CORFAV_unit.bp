@@ -55,6 +55,8 @@ UnitBlueprint {
     },
     Description = 'Scout',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/CORFAV/CORFAV_lod0_wheels.sca',
+        AnimationWalkRate = 1,
         MovementEffects = {
             Land = {
                 Treads = {
@@ -82,7 +84,6 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 230,
-                    Scrolling = true, 
                 },
             },
         },

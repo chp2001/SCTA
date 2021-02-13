@@ -209,8 +209,6 @@ TACommanderDeathWeapon = Class(BareBonesWeapon) {
 }
 
 TADGun = Class(DefaultWeapon) {
-    AutoMode = false,
-    AutoThread = nil,
     EnergyRequired = nil,
 
     HasEnergy = function(self)
@@ -235,12 +233,9 @@ TADGun = Class(DefaultWeapon) {
     PauseOvercharge = function(self)
         if not self.unit:IsOverchargePaused() then
             self.unit:SetOverchargePaused(true)
-            self.unit:SetWeaponEnabledByLabel('AutoDGun', false)
-            self.unit:SetWeaponEnabledByLabel('DGun', false)
             WaitSeconds(1 / self:GetBlueprint().RateOfFire)
             self.unit:SetOverchargePaused(false)
         end
-        self.unit:SetWeaponEnabledByLabel('DGun', true)
         if self.AutoMode then
             self.AutoThread = self:ForkThread(self.AutoEnable)
         end
@@ -266,7 +261,6 @@ TADGun = Class(DefaultWeapon) {
             else
                 if self.AutoThread then
                     KillThread(self.AutoThread)
-                    self.unit:SetWeaponEnabledByLabel('AutoDGun', false)
                     self.AutoThread = nil
                 end
             end
@@ -281,7 +275,6 @@ TADGun = Class(DefaultWeapon) {
         end,
 
         OnWeaponFired = function(self)
-            DefaultWeapon.OnWeaponFired(self)
             self:ForkThread(self.PauseOvercharge)
         end,
 

@@ -222,6 +222,7 @@ TACommander = Class(TAconstructor) {
     OnCreate = function(self)
 		TAconstructor.OnCreate(self)
         self:SetCapturable(false)
+        self:SetWeaponEnabledByLabel('AutoDGun', false)
 	end,
     
     CreateCaptureEffects = function( self, target )

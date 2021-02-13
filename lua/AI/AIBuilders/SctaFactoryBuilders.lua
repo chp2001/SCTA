@@ -109,7 +109,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {700} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
         },
         BuilderType = 'Any',
@@ -133,7 +133,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {750} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.FACTORY * categories.LEVEL2 * categories.LAND } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
         BuilderData = {

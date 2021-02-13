@@ -55,11 +55,13 @@ UnitBlueprint {
     },
     Description = 'Scout',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/CORFAV/CORFAV_lod0_wheels.sca',
+        AnimationWalkRate = 1,
         MovementEffects = {
             Land = {
                 Treads = {
                     ScrollMultiplier = 0.75,
-                    ScrollTreads = true,
+                    ScrollTreads = false,
                     TreadMarks = {
                         {
                             BoneName = 'corfav',
@@ -82,8 +84,6 @@ UnitBlueprint {
             LODs = {
                 {
                     LODCutoff = 230,
-                    Scrolling = true, 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -186,7 +186,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'flare',
-            TurretBonePitch = 'turret',
+            TurretBonePitch = 'barrel',
             TurretBoneYaw = 'turret',
             TurretPitch = 0,
             TurretPitchRange = 360,

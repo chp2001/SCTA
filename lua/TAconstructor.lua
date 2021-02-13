@@ -51,21 +51,15 @@ TAconstructor = Class(TAWalking) {
     end,
     
     OnStartBuild = function(self, unitBeingBuilt, order ) 
-        if order == 'Repair' and unitBeingBuilt.WorkItem != self.WorkItem then
-			self:InheritWork(unitBeingBuilt)
-		end 
         TAWalking.OnStartBuild(self, unitBeingBuilt, order)
+        if order == 'Repair' and unitBeingBuilt.WorkItem != self.WorkItem then
+			TAWalking.InheritWork(self, unitBeingBuilt)
+		end 
         self.UnitBeingBuilt = unitBeingBuilt
         self.UnitBuildOrder = order
         self.BuildingUnit = true
     end,
 
-    InheritWork = function(self, target)
-        self.WorkItem = target.WorkItem
-        self.WorkItemBuildCostEnergy = target.WorkItemBuildCostEnergy
-        self.WorkItemBuildCostMass = target.WorkItemBuildCostMass
-        self.WorkItemBuildTime = target.WorkItemBuildTime
-    end,
 
     OnStopBuild = function(self, unitBeingBuilt)
         TAWalking.OnStopBuild(self,unitBeingBuilt)

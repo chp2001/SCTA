@@ -4,7 +4,7 @@ UnitBlueprint {
         UniformScale = 0.10,
     },
     Economy = {
-        BuildCostEnergy = 600,
+        BuildCostEnergy = 660,
         BuildCostMass = 90,
     },
     Intel = {

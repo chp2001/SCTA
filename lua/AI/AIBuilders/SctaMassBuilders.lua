@@ -6,17 +6,19 @@ local SAI = '/lua/ScenarioPlatoonAI.lua'
 local SBC = '/lua/editor/SorianBuildConditions.lua'
 local SIBC = '/lua/editor/SorianInstantBuildConditions.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local MABC = '/lua/editor/MarkerBuildConditions.lua'
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIEngineerMassBuilder',
     BuildersType = 'EngineerBuilder',
     Builder {
-        BuilderName = 'SCTAAI T1Engineer Mex',
+        BuilderName = 'SCTAAI T1Engineer Mex 150',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 100,
+        Priority = 95,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.2}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
+            { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 150, -500, 0, 0, 'AntiSurface', 1 }},
          },
         BuilderType = 'Any',
         BuilderData = {
@@ -29,6 +31,46 @@ BuilderGroup {
             }
         }
     },
+    Builder {
+        BuilderName = 'SCTAAI T1Engineer 300 Mex',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 90,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
+                { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 300, -500, 1, 0, 'AntiSurface', 1 }},
+            },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+                BuildStructures = {
+                    'T1Resource',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T1Engineer 450 Mex',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 85,
+        InstanceCount = 1,
+        BuilderConditions = {
+                { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
+                { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 450, -500, 1, 0, 'AntiSurface', 1 }},
+            },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+                BuildStructures = {
+                    'T1Resource',
+                }
+            }
+        }
+    },  
     Builder {
         BuilderName = 'SCTAAI T1Engineer MetalMaker',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
@@ -56,7 +98,10 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA23',
         Priority = 100,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
-        BuilderConditions = { },
+        BuilderConditions = {
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
+            { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 100, -500, 0, 0, 'AntiSurface', 1 }},
+         },
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,

@@ -128,11 +128,10 @@ BuilderGroup {
         Priority = 75,
         InstanceCount = 3,
         BuilderConditions = {
-            { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
-        },
+                { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
+            },
         BuilderData = {
-        LocationType = 'LocationType',
-        ReclaimTime = 30,
+            LocationType = 'LocationType',
         },
         BuilderType = 'Any',
     },
@@ -162,7 +161,6 @@ BuilderGroup {
             },
         BuilderData = {
             LocationType = 'LocationType',
-            ReclaimTime = 30,
         },
         BuilderType = 'Any',
     },
@@ -174,13 +172,13 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 4, categories.LEVEL2 * categories.FACTORY}},
-                { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.LEVEL1 * categories.PLANT }},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LEVEL2 * categories.LAND * categories.FACTORY} },
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.LEVEL1 * categories.PLANT * categories.LAND}},
             },
         BuilderData = {
             Location = 'LocationType',
             ReclaimTime = 30,
-            Reclaim = {'LEVEL1 PLANT'},
+            Reclaim = {'LEVEL1 PLANT LAND'},
         },
         BuilderType = 'Any',
     },
@@ -210,26 +208,9 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
             { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.LEVEL1 * categories.PLANT * categories.LAND}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LEVEL2 * categories.LAND * categories.FACTORY} },
             },
-        BuilderData = {
-            Location = 'LocationType',
-            ReclaimTime = 30,
-            Reclaim = {'LEVEL1 PLANT'},
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Reclaim T1 PLANTS2',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco',
-        PlatoonAIPlan = 'ReclaimStructuresAI',
-        Priority = 350,
-        InstanceCount = 3,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {600} },
-            { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 15, categories.LEVEL1 * categories.LAND * categories.FACTORY} },
-        },
         BuilderData = {
             Location = 'LocationType',
             ReclaimTime = 30,
@@ -239,13 +220,14 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Energy',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco',
         PlatoonAIPlan = 'ReclaimStructuresAI',
         Priority = 150,
         InstanceCount = 8,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, categories.FUSION} },
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.SOLAR}},
             { EBC, 'LessThanEconStorageRatio', { 0.25, 1}},
             },
         BuilderData = {

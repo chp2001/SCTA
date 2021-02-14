@@ -8,6 +8,7 @@ UnitBlueprint {
         MaxHealth = 180,
     },
     Economy = {
+        BuildCostEnergy = 330,
         BuildCostMass = 76,
     },
     LifeBarSize = 1,

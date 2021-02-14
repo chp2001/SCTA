@@ -31,12 +31,15 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeverGuardBases = true,
-            NeverGuardEngineers = false,
+            NeverGuardEngineers = true,
             UseFormation = 'AttackFormation',
-        },        
+            ThreatWeights = {
+                IgnoreStrongerTargetsRatio = 100.0,
+            },
+        },
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
-         },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.RAIDER} },
+        },
     },
     Builder {
         BuilderName = 'SCTAAI Land Attack',

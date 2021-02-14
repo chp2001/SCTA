@@ -122,7 +122,7 @@ BuilderGroup {
         Priority = 50,
         InstanceCount = 2,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {800} }, ,
+            { MIBC, 'LessThanGameTime', {800} },
         },
         BuilderType = 'Any',
         BuilderData = {

@@ -149,7 +149,7 @@ UnitBlueprint {
                     Duration = 1, --0.9,
                     Radius = 2, --0.25,
                     TargetAllow = 'MOBILE',
-                    TargetDisallow = 'TECH3,EXPERIMENTAL,COMMAND',
+                    TargetDisallow = 'TECH3, EXPERIMENTAL, COMMAND',
                 },
             },
             BallisticArc = 'RULEUBA_None',

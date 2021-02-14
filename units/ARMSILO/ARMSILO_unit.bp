@@ -40,7 +40,7 @@ UnitBlueprint {
         'SILO',	
 	    'ARM',
 	    'SORTSTRATEGIC',
-	    'LEVEL3',
+	    'LEVEL4',
         'SHOWATTACKRETICLE',
     },
     Defense = {

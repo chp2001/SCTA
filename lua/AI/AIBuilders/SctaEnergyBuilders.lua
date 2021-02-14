@@ -17,7 +17,7 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = { 
-            { SBC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 300}},
+            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 300}},
         },
         BuilderType = 'Any',
         BuilderData = {

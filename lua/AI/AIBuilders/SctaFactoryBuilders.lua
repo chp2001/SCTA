@@ -11,6 +11,26 @@ BuilderGroup {
     BuilderGroupName = 'SCTAAIFactoryBuilders',
     BuildersType = 'EngineerBuilder',
     Builder {
+        BuilderName = 'SCTAAI T1Engineer AirFac2',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 95,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR} },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildStructures = {
+                    'T1AirFactory',
+                }
+            }
+        }
+    },
+    Builder {
         BuilderName = 'SCTAAI T1Engineer LandFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 95,

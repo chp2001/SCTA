@@ -66,13 +66,14 @@ TAAirConstructor = Class(TAair) {
         TAair.OnStopBuild(self,unitBeingBuilt)
         self.UnitBeingBuilt = nil
         self.UnitBuildOrder = nil
+
         if self.BuildingOpenAnimManip and self.BuildArmManipulator then
             self.StoppedBuilding = true
         elseif self.BuildingOpenAnimManip then
             self.BuildingOpenAnimManip:SetRate(-1)
         end
-        self:OnStopBuilderTracking()
         self.BuildingUnit = false
+        self:SetImmobile(false)
         if __blueprints['armmass'] then
             TAutils.updateBuildRestrictions(self)
         end
@@ -81,12 +82,12 @@ TAAirConstructor = Class(TAair) {
     WaitForBuildAnimation = function(self, enable)
         if self.BuildArmManipulator then
             WaitFor(self.BuildingOpenAnimManip)
-            if (enable) then
+            if enable then
                 self.BuildArmManipulator:Enable()
             end
         end
     end,
-
+    
     OnStopBuilderTracking = function(self)
         TAair.OnStopBuilderTracking(self)
         if self.StoppedBuilding then
@@ -103,19 +104,17 @@ TAAirConstructor = Class(TAair) {
             self.BuildingOpenAnimManip:SetRate(self:GetBlueprint().Display.AnimationBuildRate or 1)
             if self.BuildArmManipulator then
                 self.StoppedBuilding = false
-                ForkThread( self.WaitForBuildAnimation, self, true )
+                self:ForkThread(self.WaitForBuildAnimation, true)
             end
-        end       
-         if self:IsMoving() then
+        end
+        if self:IsMoving() then
             self:SetImmobile(true)
             self:ForkThread(function() WaitTicks(1) if not self:BeenDestroyed() then self:SetImmobile(false) end end)
         end
     end,
 
     OnStartReclaim = function(self, target)
-        if not self.Dead then
         TAair.OnStartReclaim(self, target)
-        end
     end,
 
     OnStopReclaim = function(self, target)

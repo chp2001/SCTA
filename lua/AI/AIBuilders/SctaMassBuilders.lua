@@ -6,6 +6,7 @@ local SAI = '/lua/ScenarioPlatoonAI.lua'
 local SBC = '/lua/editor/SorianBuildConditions.lua'
 local SIBC = '/lua/editor/SorianInstantBuildConditions.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local MABC = '/lua/editor/MarkerBuildConditions.lua'
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIEngineerMassBuilder',
@@ -15,9 +16,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 100,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
-        BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.2}},
-         },
+        BuilderConditions = { },
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,

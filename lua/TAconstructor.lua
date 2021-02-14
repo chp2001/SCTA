@@ -68,8 +68,8 @@ TAconstructor = Class(TAWalking) {
         elseif self.BuildingOpenAnimManip then
             self.BuildingOpenAnimManip:SetRate(-1)
         end
-        self:OnStopBuilderTracking()
         self.BuildingUnit = false
+        self:SetImmobile(false)
         if __blueprints['armmass'] then
             TAutils.updateBuildRestrictions(self)
         end
@@ -78,11 +78,12 @@ TAconstructor = Class(TAWalking) {
     WaitForBuildAnimation = function(self, enable)
         if self.BuildArmManipulator then
             WaitFor(self.BuildingOpenAnimManip)
-            if (enable) then
+            if enable then
                 self.BuildArmManipulator:Enable()
             end
         end
     end,
+
 
     OnPrepareArmToBuild = function(self)
         TAWalking.OnPrepareArmToBuild(self)
@@ -90,10 +91,10 @@ TAconstructor = Class(TAWalking) {
             self.BuildingOpenAnimManip:SetRate(self:GetBlueprint().Display.AnimationBuildRate or 1)
             if self.BuildArmManipulator then
                 self.StoppedBuilding = false
-                ForkThread( self.WaitForBuildAnimation, self, true )
+                self:ForkThread(self.WaitForBuildAnimation, true)
             end
-        end       
-         if self:IsMoving() then
+        end
+        if self:IsMoving() then
             self:SetImmobile(true)
             self:ForkThread(function() WaitTicks(1) if not self:BeenDestroyed() then self:SetImmobile(false) end end)
         end
@@ -120,9 +121,7 @@ TAconstructor = Class(TAWalking) {
     end,
 
     CreateReclaimEffects = function( self, target )
-        if not self.Dead then
         TAutils.TAReclaimEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.ReclaimEffectsBag )
-        end
     end,
     
     CreateReclaimEndEffects = function( self, target )

@@ -145,7 +145,7 @@ UnitBlueprint {
     Physics = {
         Elevation = 15,
         MotionType = 'RULEUMT_Air',
-        GroundCollisionOffset = 1.5,
+        GroundCollisionOffset = 1.6,
         MaxAcceleration = 10,
         MaxSpeed = 10,
         MaxSteerForce = 100,

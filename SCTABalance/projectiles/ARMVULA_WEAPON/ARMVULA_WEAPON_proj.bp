@@ -34,7 +34,7 @@ ProjectileBlueprint {
     Categories = {
         'ARM',
         'PROJECTILE',
-        'INDIRECTFIRE',
+        'DIRECTFIRE',
     },
     Display = {
         CameraFollowTimeout = 5,
@@ -47,11 +47,11 @@ ProjectileBlueprint {
         StrategicIconSize = 3,
     },
     General = {
-        Category = 'IndirectFire',
+        Category = 'DirectFire',
         EntityCategory = {
             'ARM',
             'PROJECTILE',
-            'INDIRECTFIRE',
+            'DIRECTFIRE',
         },
         Faction = 'ARM',
         Weapon = 'ARMVULC_WEAPON',
@@ -61,7 +61,7 @@ ProjectileBlueprint {
     },
     Physics = {
         DestroyOnWater = true,
-        InitialSpeed = 75,
+        InitialSpeed = 125,
         UseGravity = true,
     },
 }

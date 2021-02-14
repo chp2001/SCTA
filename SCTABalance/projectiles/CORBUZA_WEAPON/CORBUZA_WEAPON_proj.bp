@@ -30,7 +30,7 @@ ProjectileBlueprint {
     Categories = {
         'CORE',
         'PROJECTILE',
-        'INDIRECTFIRE',
+        'DIRECTFIRE',
     },
     Display = {
         CameraFollowTimeout = 5,
@@ -43,11 +43,11 @@ ProjectileBlueprint {
         StrategicIconSize = 3,
     },
     General = {
-        Category = 'Indirect Fire',
+        Category = 'Direct Fire',
         EntityCategory = {
             'CORE',
             'PROJECTILE',
-            'INDIRECTFIRE',
+            'DIRECTFIRE',
         },
         Faction = 'CORE',
         Weapon = 'CORBUZZ_WEAPON',
@@ -57,7 +57,7 @@ ProjectileBlueprint {
     },
     Physics = {
         DestroyOnWater = true,
-        InitialSpeed = 75,
+        InitialSpeed = 125,
         UseGravity = true,
     },
 }

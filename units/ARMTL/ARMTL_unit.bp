@@ -146,7 +146,7 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'flare',
+                        'Muzzle',
                     },
                     RackBone = 'Turret',
                 },
@@ -162,9 +162,9 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
-            TurretBoneMuzzle = 'flare',
-            TurretBonePitch = 'pitchturret',
-            TurretBoneYaw = 'turret',
+            TurretBoneMuzzle = 'Muzzle',
+            TurretBonePitch = 'Turret',
+            TurretBoneYaw = 'Turret',
             TurretPitch = 0,
             TurretPitchRange = 360,
             TurretPitchSpeed = 80,

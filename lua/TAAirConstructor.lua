@@ -56,9 +56,6 @@ TAAirConstructor = Class(TAair) {
     
     OnStartBuild = function(self, unitBeingBuilt, order )
         TAair.OnStartBuild(self,unitBeingBuilt, order)
-        if order == 'Repair' and unitBeingBuilt.WorkItem != self.WorkItem then
-			TAair.InheritWork(self, unitBeingBuilt)
-		end 
         self.UnitBeingBuilt = unitBeingBuilt
         self.UnitBuildOrder = order
         self.BuildingUnit = true

@@ -130,7 +130,7 @@ BuilderGroup {
         Priority = 125, -- Top factory priority
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 5, categories.ENGINEER * categories.LEVEL3 - categories.FIELDENGINEER } }, -- Build engies until we have 4 of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.LEVEL3 - categories.FIELDENGINEER } }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'All',
     },

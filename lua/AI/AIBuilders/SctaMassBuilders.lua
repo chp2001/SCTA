@@ -37,7 +37,8 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2,  categories.FUSION} }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 1.05 }},
-            },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
+        },
         BuilderType = 'Any',
         BuilderData = {
             DesiresAssist = true,

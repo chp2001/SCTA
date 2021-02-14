@@ -54,7 +54,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 90,
+        Priority = 50,
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FUSION} },
@@ -80,8 +80,6 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} }, 
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.4}},
-            { EBC, 'LessThanEconStorageRatio', { 1, 0.8}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FUSION} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.FUSION} },
         },

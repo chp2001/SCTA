@@ -99,7 +99,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTA Mex Assist',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco',
+        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
@@ -173,11 +173,12 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 1, categories.LEVEL3 * categories.FACTORY}},
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 4, categories.LEVEL2 * categories.FACTORY}},
                 { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.LEVEL1 * categories.PLANT }},
             },
         BuilderData = {
             Location = 'LocationType',
+            ReclaimTime = 30,
             Reclaim = {'LEVEL1 PLANT'},
         },
         BuilderType = 'Any',
@@ -194,6 +195,7 @@ BuilderGroup {
             },
         BuilderData = {
             Location = 'LocationType',
+            ReclaimTime = 30,
             Reclaim = {'LEVEL2 FACTORY LAND'},
         },
         BuilderType = 'Any',
@@ -211,6 +213,7 @@ BuilderGroup {
             },
         BuilderData = {
             Location = 'LocationType',
+            ReclaimTime = 30,
             Reclaim = {'LEVEL1 PLANT'},
         },
         BuilderType = 'Any',
@@ -228,6 +231,7 @@ BuilderGroup {
         },
         BuilderData = {
             Location = 'LocationType',
+            ReclaimTime = 30,
             Reclaim = {'LEVEL1 PLANT LAND'},
         },
         BuilderType = 'Any',
@@ -246,6 +250,7 @@ BuilderGroup {
         BuilderData = {
             Location = 'LocationType',
             Reclaim = {'SOLAR'},
+                ReclaimTime = 30,
         },
         BuilderType = 'Any',
     },

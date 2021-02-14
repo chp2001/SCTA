@@ -27,29 +27,29 @@ ARMATLAS = Class(TATransportAir) {
 
 	OpenWings = function(self)
 		--MOVE arm1 to x-axis <-3.40> SPEED <3.00>;
-		self.Sliders.arm1:SetGoal(3.40,0,0)
-		self.Sliders.arm1:SetSpeed(3)
+		self.Sliders.arm1:SetGoal(4,0,0)
+		self.Sliders.arm1:SetSpeed(4)
 
 		--MOVE arm2 to x-axis <3.40> SPEED <3.00>;
-		self.Sliders.arm2:SetGoal(-3.40,0,0)
-		self.Sliders.arm2:SetSpeed(3)
+		self.Sliders.arm2:SetGoal(-4,0,0)
+		self.Sliders.arm2:SetSpeed(4)
 
 		--MOVE arm3 to z-axis <-4.80> SPEED <4.00>;
-		self.Sliders.arm3:SetGoal(0,0,-4.80)
+		self.Sliders.arm3:SetGoal(0,0,-4)
 		self.Sliders.arm3:SetSpeed(4)
 
 		--TURN arm1 to y-axis <-21.14> SPEED <21.19>;
-		self.Spinners.arm1:SetGoal(-21.14)
-		self.Spinners.arm1:SetSpeed(21.19)
+		self.Spinners.arm1:SetGoal(-15)
+		self.Spinners.arm1:SetSpeed(15)
 
 		--TURN arm2 to y-axis <21.14> SPEED <21.19>;
-		self.Spinners.arm2:SetGoal(21.14)
-		self.Spinners.arm2:SetSpeed(21.19)
+		self.Spinners.arm2:SetGoal(15)
+		self.Spinners.arm2:SetSpeed(15)
 	end,
 
 	CloseWings = function(self)
 		--MOVE arm1 to x-axis <0> SPEED <3.00>;
-		self.Sliders.arm1:SetGoal(0.40,0,0)
+		self.Sliders.arm1:SetGoal(0,0,0)
 		self.Sliders.arm1:SetSpeed(3)
 
 		--MOVE arm2 to x-axis <0> SPEED <3.00>;

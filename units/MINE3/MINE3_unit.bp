@@ -31,7 +31,7 @@ UnitBlueprint {
         'TACLOAK',
                 'MINE',
         'STRUCTURE',
-	'LEVEL2',
+	'LEVEL1',
 	'KAMIKAZI',
     },
     Defense = {

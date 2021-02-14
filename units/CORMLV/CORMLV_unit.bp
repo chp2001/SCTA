@@ -70,7 +70,30 @@ UnitBlueprint {
         },
         AnimationBuild = '/mods/SCTA-master/units/CORMLV/CORMLV_lod0_unpack.sca',
         AnimationBuildRate = 1, 
-	BuildBones = {'Muzzle'},
+        AnimationWalk = '/mods/SCTA-master/units/CORMLV/CORMLV_lod0_wheels.sca',
+        AnimationWalkRate = 1,
+        MovementEffects = {
+            Land = {
+                Treads = {
+                    ScrollMultiplier = 0.75,
+                    ScrollTreads = false,
+                    TreadMarks = {
+                        {
+                            BoneName = 'CORMLV',
+                            TreadMarks = 'tank_treads_albedo',
+                            TreadMarksInterval = 0.2,
+                            TreadMarksSizeX = 1.25,
+                            TreadMarksSizeZ = 1.25,
+                            TreadOffset = {
+                                0,
+                                0,
+                                0,
+                            },
+                        },
+                    },
+                },
+            },
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -95,10 +118,10 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            AimBone = 'Beam',
+            AimBone = 'Muzzle',
             BuildEffectBones = {'Muzzle'},
-            PitchBone = 'Muzzle',
-            YawBone = 'Beam',
+            PitchBone = 'Turret',
+            YawBone = 'Turret',
         },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',

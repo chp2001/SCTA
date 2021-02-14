@@ -1,7 +1,7 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'NEEDMOBILEBUILD',
+        --'NEEDMOBILEBUILD',
         'SELECTABLE',
         'TECH4',
         'EXPERIMENTAL',
@@ -16,7 +16,7 @@ UnitBlueprint {
         'CORE',
         'KBOT',
         'LEVEL4',
-        'BUILTBYT1HOVER',
+        --'BUILTBYT1HOVER',
         'SNIPEMODE',
     },
     Defense = {

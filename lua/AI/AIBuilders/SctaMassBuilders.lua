@@ -15,7 +15,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 100,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
-        BuilderConditions = { },
+        BuilderConditions = {
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.2}},
+         },
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
@@ -35,7 +37,8 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2,  categories.FUSION} }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 1.05 }},
-            },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
+        },
         BuilderType = 'Any',
         BuilderData = {
             DesiresAssist = true,

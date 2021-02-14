@@ -140,7 +140,7 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_BUILDINGEX
-            Damage = 50,
+            Damage = 75,
             DamageFriendly = true,
             DamageRadius = 3,
             DamageType = 'Normal',

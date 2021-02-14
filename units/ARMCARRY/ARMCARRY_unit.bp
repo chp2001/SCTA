@@ -180,7 +180,7 @@ UnitBlueprint {
         { #ATOMIC_BLAST
             Damage = 2000,
             DamageFriendly = true,
-            DamageRadius = 16.125, 					#TO DO (damage tapering)
+            DamageRadius = 12, 		
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

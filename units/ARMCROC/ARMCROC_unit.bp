@@ -67,6 +67,10 @@ UnitBlueprint {
         },
         UniformScale = 0.16,
     },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 2,
+    },
     Economy = {
         BuildCostEnergy = 2300,
         BuildCostMass = 298,
@@ -183,14 +187,13 @@ UnitBlueprint {
             Turreted = true,
         },
         { #BIG_UNITEX
-            Damage = 50,
+            Damage = 100,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-},
-
+        },
     },
         Wreckage = {
 	---UseCustomMesh = true,

@@ -84,7 +84,10 @@ UnitBlueprint {
         BuildCostMass = 120,
         BuildTime = 3747,
     },
-
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 2,
+    },
     General = {
         Category = 'Anti Air',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -220,7 +223,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

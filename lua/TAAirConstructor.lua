@@ -43,34 +43,24 @@ TAAirConstructor = Class(TAair) {
     OnPaused = function(self)
         TAair.OnPaused(self)
         if self.BuildingUnit then
-            TAair.StopBuildingEffects(self, self:GetUnitBeingBuilt())
+            TAair.StopBuildingEffects(self, self:UnitBeingBuilt())
         end    
     end,
     
     OnUnpaused = function(self)
         if self.BuildingUnit then
-            TAair.StartBuildingEffects(self, self:GetUnitBeingBuilt(), self.UnitBuildOrder)
+            TAair.StartBuildingEffects(self, self:UnitBeingBuilt(), self.UnitBuildOrder)
         end
         TAair.OnUnpaused(self)
     end,
     
     OnStartBuild = function(self, unitBeingBuilt, order )
         TAair.OnStartBuild(self,unitBeingBuilt, order)
-        if order == 'Repair' and unitBeingBuilt.WorkItem != self.WorkItem then
-			TAair.InheritWork(self, unitBeingBuilt)
-		end 
         self.UnitBeingBuilt = unitBeingBuilt
         self.UnitBuildOrder = order
         self.BuildingUnit = true
     end,
 
-
-    InheritWork = function(self, target)
-        self.WorkItem = target.WorkItem
-        self.WorkItemBuildCostEnergy = target.WorkItemBuildCostEnergy
-        self.WorkItemBuildCostMass = target.WorkItemBuildCostMass
-        self.WorkItemBuildTime = target.WorkItemBuildTime
-    end,
 
     OnStopBuild = function(self, unitBeingBuilt)
         TAair.OnStopBuild(self,unitBeingBuilt)
@@ -123,7 +113,9 @@ TAAirConstructor = Class(TAair) {
     end,
 
     OnStartReclaim = function(self, target)
+        if not self.Dead then
         TAair.OnStartReclaim(self, target)
+        end
     end,
 
     OnStopReclaim = function(self, target)

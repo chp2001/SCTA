@@ -39,22 +39,19 @@ TAconstructor = Class(TAWalking) {
     OnPaused = function(self)
         TAWalking.OnPaused(self)
         if self.BuildingUnit then
-            TAWalking.StopBuildingEffects(self, self:GetUnitBeingBuilt())
+            TAWalking.StopBuildingEffects(self, self:UnitBeingBuilt())
         end    
     end,
     
     OnUnpaused = function(self)
         if self.BuildingUnit then
-            TAWalking.StartBuildingEffects(self, self:GetUnitBeingBuilt(), self.UnitBuildOrder)
+            TAWalking.StartBuildingEffects(self, self:UnitBeingBuilt(), self.UnitBuildOrder)
         end
         TAWalking.OnUnpaused(self)
     end,
     
     OnStartBuild = function(self, unitBeingBuilt, order ) 
         TAWalking.OnStartBuild(self, unitBeingBuilt, order)
-        if order == 'Repair' and unitBeingBuilt.WorkItem != self.WorkItem then
-			TAWalking.InheritWork(self, unitBeingBuilt)
-		end 
         self.UnitBeingBuilt = unitBeingBuilt
         self.UnitBuildOrder = order
         self.BuildingUnit = true
@@ -123,7 +120,9 @@ TAconstructor = Class(TAWalking) {
     end,
 
     CreateReclaimEffects = function( self, target )
-		TAutils.TAReclaimEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.ReclaimEffectsBag )
+        if not self.Dead then
+        TAutils.TAReclaimEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.ReclaimEffectsBag )
+        end
     end,
     
     CreateReclaimEndEffects = function( self, target )

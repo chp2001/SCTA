@@ -184,9 +184,9 @@ UnitBlueprint {
             Turreted = true,
         },
         { #MEDIUM_BUILDINGEX
-            Damage = 100,
+            Damage = 500,
             DamageFriendly = true,
-            DamageRadius = 3.28,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

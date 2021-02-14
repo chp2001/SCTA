@@ -135,16 +135,4 @@ UnitBlueprint {
         },
 
     },
-    Wreckage = {
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-        EnergyMult = 0,
-        HealthMult = 0.9,
-        MassMult = 0.9,
-        ReclaimTimeMultiplier = 1,
-        --UseCustomMesh = true,
-            --Blueprint = '/mods/SCTA-master/units/CORGEO/CORGEO_dead_prop.bp',
-            WreckageLayers = {
-                Land = true,
-            },
-        },
 }

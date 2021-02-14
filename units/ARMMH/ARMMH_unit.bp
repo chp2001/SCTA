@@ -84,6 +84,10 @@ UnitBlueprint {
         BuildCostMass = 325,
         BuildTime = 17933,
     },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 2,
+    },
     General = {
         Category = 'Indirect Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -193,9 +197,9 @@ UnitBlueprint {
             WeaponRepackTimeout = 3,
         },
         { #BIG_UNITEX
-            Damage = 50,
+            Damage = 100,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

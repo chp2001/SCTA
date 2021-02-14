@@ -128,23 +128,11 @@ UnitBlueprint {
         { #LARGE_BUILDINGEX
             Damage = 300,
             DamageFriendly = true,
-            DamageRadius = 3.75,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
 
     },
-    Wreckage = {
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
-        EnergyMult = 0,
-        HealthMult = 0.9,
-        MassMult = 0.9,
-        ReclaimTimeMultiplier = 1,
-        --UseCustomMesh = true,
-           ---Blueprint = '/mods/SCTA-master/units/ARMGEO/ARMGEO_dead_prop.bp',
-            WreckageLayers = {
-                Land = true,
-            },
-        },
 }

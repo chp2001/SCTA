@@ -5,6 +5,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostMass = 64,
+        BuildCostEnergy = 600,
         BuildTime = 2100,
     },
     SelectionSizeX = 1,

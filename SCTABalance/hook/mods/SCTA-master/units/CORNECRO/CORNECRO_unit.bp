@@ -31,7 +31,7 @@ UnitBlueprint {
     Economy = {
     BuildCostEnergy = 3800,
     BuildCostMass = 360,
-    BuildRate = 300,
+    BuildRate = 150,
     MaxBuildDistance = 7,
 	ProductionPerSecondEnergy = 3,
 	ProductionPerSecondMass = 0,

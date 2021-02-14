@@ -122,16 +122,15 @@ BuilderGroup {
         Priority = 50,
         InstanceCount = 2,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {300} },
+            { MIBC, 'LessThanGameTime', {800} }, ,
         },
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
             Construction = {
-                BuildClose = true,
                 BuildStructures = {
-                    'T1EnergyProduction',
+                    'T1EnergyProduction2',
                 }
             }
         }

@@ -37,15 +37,17 @@ TAconstructor = Class(TAWalking) {
     end,
 
     OnPaused = function(self)
+        self:StopUnitAmbientSound('Construct')
         TAWalking.OnPaused(self)
         if self.BuildingUnit then
-            TAWalking.StopBuildingEffects(self, self:UnitBeingBuilt())
-        end    
+            TAWalking.StopBuildingEffects(self, self.UnitBeingBuilt)
+        end
     end,
-    
+
     OnUnpaused = function(self)
         if self.BuildingUnit then
-            TAWalking.StartBuildingEffects(self, self:UnitBeingBuilt(), self.UnitBuildOrder)
+            self:PlayUnitAmbientSound('Construct')
+            TAWalking.StartBuildingEffects(self, self.UnitBeingBuilt, self.UnitBuildOrder)
         end
         TAWalking.OnUnpaused(self)
     end,

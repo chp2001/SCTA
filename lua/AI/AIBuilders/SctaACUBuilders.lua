@@ -120,11 +120,10 @@ BuilderGroup {
         BuilderName = 'SCTAAI ACU T1Pgen',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 100,
-        InstanceCount = 1,
+        InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.SOLAR} },
-            { EBC, 'LessThanEconStorageRatio', { 1, 0.5}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.SOLAR} },
         },
         BuilderType = 'Any',
         BuilderData = {

@@ -17,6 +17,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2,  categories.FACTORY * categories.LEVEL1 } },
         },
         BuilderType = 'Any',
         BuilderData = {

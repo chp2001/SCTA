@@ -41,15 +41,17 @@ TAAirConstructor = Class(TAair) {
     end,
 
     OnPaused = function(self)
+        self:StopUnitAmbientSound('Construct')
         TAair.OnPaused(self)
         if self.BuildingUnit then
-            TAair.StopBuildingEffects(self, self:UnitBeingBuilt())
-        end    
+            TAair.StopBuildingEffects(self, self.UnitBeingBuilt)
+        end
     end,
-    
+
     OnUnpaused = function(self)
         if self.BuildingUnit then
-            TAair.StartBuildingEffects(self, self:UnitBeingBuilt(), self.UnitBuildOrder)
+            self:PlayUnitAmbientSound('Construct')
+            TAair.StartBuildingEffects(self, self.UnitBeingBuilt, self.UnitBuildOrder)
         end
         TAair.OnUnpaused(self)
     end,

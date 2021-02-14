@@ -46,11 +46,11 @@ PlatoonTemplate {
         FactionSquads = {
             Arm = {
                 { 'armck', 1, 1, 'support', 'None' },
-                { 'armpw', 1, 4, 'attack', 'none' },
+                { 'armpw', 1, 2, 'attack', 'none' },
             },
             Core = {
                 { 'corcv', 1, 1, 'support', 'None' },
-                { 'corgator', 1, 4, 'attack', 'none' },
+                { 'corgator', 1, 2, 'attack', 'none' },
             },
         }
     } 

@@ -111,6 +111,11 @@ UnitBlueprint {
         },
         UniformScale = 0.16,
     },
+    Footprint = {
+        MaxSlope = 0.25,
+        SizeX = 1,
+        SizeZ = 1,
+    },
     Economy = {
         BuildCostEnergy = 12824,
         BuildCostMass = 231,
@@ -165,7 +170,7 @@ UnitBlueprint {
     Physics = {
         Elevation = 4,
         MotionType = 'RULEUMT_Air',
-        GroundCollisionOffset = 1.5,
+        GroundCollisionOffset = 1.6,
     MaxSpeed = 0.5, 
     RotateOnSpot = true,
 	FuelRechargeRate = 444444,

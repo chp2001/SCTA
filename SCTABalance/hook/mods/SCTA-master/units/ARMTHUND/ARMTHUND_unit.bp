@@ -17,7 +17,7 @@ UnitBlueprint {
     'RADAR',
     'OVERLAYRADAR',
     'SNIPEMODE',
-},
+    },
    Defense = {
     Health = 320,
     MaxHealth = 320,

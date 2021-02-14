@@ -25,7 +25,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 17,
     Categories = {
-        'TECH3',
+        'TECH2',
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
         'BUILTBYT2VEHICLE',
@@ -145,7 +145,7 @@ UnitBlueprint {
                     Duration = 10, --0.9,
                     Radius = 20, --0.25,
                     TargetAllow = 'ALLUNITS',
-                    TargetDisallow = 'EXPERIMENTAL,COMMAND',
+                    TargetDisallow = 'EXPERIMENTAL, COMMAND',
                 },
             },
             BallisticArc = 'RULEUBA_None',

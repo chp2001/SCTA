@@ -41,7 +41,7 @@ UnitBlueprint {
         'SHOWQUEUE',
 	    'CORE',
         'STRATEGIC',
-        'LEVEL3',
+        'LEVEL4',
         'SHOWATTACKRETICLE',
     },
     Defense = {

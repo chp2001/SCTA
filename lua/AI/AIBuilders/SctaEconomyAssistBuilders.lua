@@ -104,6 +104,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'STRUCTURE MASSEXTRACTION LEVEL2' }},
+            { UCBC, 'HaveGreaterThanUnitsInCategoryBeingBuilt', { 0, categories.MASSEXTRACTION * categories.LEVEL2 }},
             { EBC, 'LessThanEconEfficiencyOverTime', { 2.0, 1.5 }},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 0.5 } },
         },

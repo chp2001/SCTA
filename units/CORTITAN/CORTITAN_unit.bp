@@ -159,9 +159,10 @@ UnitBlueprint {
     SelectionSizeX = 1.75,
     SelectionSizeZ = 2,
     SelectionThickness = 0.25,
-    SizeX = 3,
-    SizeY = 1,
-    SizeZ = 3,
+    SizeSphere = 1.6,
+    SizeX = 1,
+    SizeY = 0.4,
+    SizeZ = 1.2,
     StrategicIconName = 'icon_bomber2_antinavy',
     StrategicIconSortPriority = 0,
     Transport = {

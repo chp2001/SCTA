@@ -184,9 +184,10 @@ UnitBlueprint {
     SelectionCenterOffsetX = 0.01,
     SelectionCenterOffsetZ = 0.02,
     SelectionThickness = 0.25,
-    SizeX = 2,
-    SizeY = 1,
-    SizeZ = 2,
+    SizeSphere = 1.6,
+    SizeX = 1,
+    SizeY = 0.2,
+    SizeZ = 1,
     StrategicIconName = 'icon_bot1_engineer',
     StrategicIconSortPriority = 0,
     Transport = {

@@ -115,11 +115,16 @@ UnitBlueprint {
         },
         UniformScale = 0.12,
     },
+    Footprint = {
+        MaxSlope = 0.25,
+        SizeX = 1,
+        SizeZ = 1,
+    },
     Economy = {
         BuildCostEnergy = 4320,
         BuildCostMass = 105,
         BuildTime = 10000,        
-	BuildRate = 75,
+	    BuildRate = 75,
         BuildableCategory = {
             'BUILTBYT1AIR ARM',
         },

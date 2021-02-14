@@ -52,5 +52,5 @@ UnitBlueprint {
     Physics = {
         FuelRechargeRate = 999999,
         FuelUseTime = 999999,
-        },
+    },
 }

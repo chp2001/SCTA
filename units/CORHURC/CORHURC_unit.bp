@@ -113,7 +113,11 @@ UnitBlueprint {
         BuildCostMass = 220,
         BuildTime = 16269,
     },
-
+    Footprint = {
+        MaxSlope = 0.25,
+        SizeX = 1,
+        SizeZ = 1,
+    },
     General = {
         Category = 'Bomber',
         Classification = 'RULEUC_MilitaryAircraft',
@@ -145,10 +149,10 @@ UnitBlueprint {
         Elevation = 15,
         MotionType = 'RULEUMT_Air',
         GroundCollisionOffset = 1.5,
-    MaxSpeed = 0.5, 
-    RotateOnSpot = true,
-	FuelRechargeRate = 444444,
-	FuelUseTime = 444444,
+        MaxSpeed = 0.5, 
+        RotateOnSpot = true,
+	    FuelRechargeRate = 444444,
+	    FuelUseTime = 444444,
     },
     SelectionSizeX = 1.75,
     SelectionSizeZ = 1.9,

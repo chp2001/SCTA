@@ -117,15 +117,20 @@ UnitBlueprint {
         BuildCostEnergy = 5368,
         BuildCostMass = 115,
         BuildTime = 24763,        
-	BuildRate = 50,
+	    BuildRate = 50,
         BuildableCategory = {
             'BUILTBYT1HOVER CORE',
         },
         MaxBuildDistance = 3.75,
         StorageEnergy = 50,
         StorageMass = 50,
-	ProductionPerSecondEnergy = 10,
-	NaturalProducer = true,
+	    ProductionPerSecondEnergy = 10,
+	    NaturalProducer = true,
+    },
+    Footprint = {
+        MaxSlope = 0.25,
+        SizeX = 1,
+        SizeZ = 1,
     },
     General = {
         BuildBones = {

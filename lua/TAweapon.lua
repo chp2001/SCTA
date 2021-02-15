@@ -221,9 +221,6 @@ TADGun = Class(DefaultWeapon) {
             self:UnitOccupied() 
     end,
 
-    StartEconomyDrain = function(self) -- OverchargeWeapon drains energy on impact
-    end,
-    
     UnitOccupied = function(self)
         return self.unit:IsUnitState('Building') or
             self.unit:IsUnitState('Repairing') or

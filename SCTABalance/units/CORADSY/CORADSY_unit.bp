@@ -195,7 +195,7 @@ UnitBlueprint {
     SizeY = 3,
     SizeZ = 20,
     ---CollisionOffsetX = -2,
-    StrategicIconName = 'icon_factory3_naval',
+    StrategicIconName = 'icon_factoryhq3_naval',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX

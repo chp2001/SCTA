@@ -41,7 +41,7 @@ UnitBlueprint {
 	    'CONSTRUCTION',
         'OVERLAYRADAR',
 	    'ARM',
-		'PLANT',
+        'LAB',
 	    'SORTCONSTRUCTION',
 	    'LEVEL2',
         'AIR',

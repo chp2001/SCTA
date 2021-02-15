@@ -16,9 +16,10 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'AIR',
 	    'ARM',
+        'LAB',
 	    'SORTCONSTRUCTION',
 	    'LEVEL2',
-    },
+        },
         Display = {
         UniformScale = 0.23,
         },

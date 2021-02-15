@@ -39,7 +39,6 @@ UnitBlueprint {
 	'STRUCTURE',
 	'CONSTRUCTION',
     'LAND', 
-    'SECONDARY',
         'CONSTRUCTIONSORTDOWN',
 	'CORE',
     'PLANT',

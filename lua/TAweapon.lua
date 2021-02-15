@@ -238,7 +238,8 @@ TADGun = Class(DefaultWeapon) {
         end
     end,
 
-
+    StartEconomyDrain = function(self) -- OverchargeWeapon drains energy on impact
+    end,
 
         AutoEnable = function(self)
             while not self:CanOvercharge() do
@@ -272,6 +273,7 @@ TADGun = Class(DefaultWeapon) {
         end,
 
         OnWeaponFired = function(self)
+            DefaultWeapon.StartEconomyDrain(self)
             self:ForkThread(self.PauseOvercharge)
         end,
 

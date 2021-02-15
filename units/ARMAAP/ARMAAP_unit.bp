@@ -64,7 +64,7 @@ UnitBlueprint {
     AnimationUnpack = '/mods/SCTA-master/units/ARMAAP/ARMAAP_lod0_unpack.sca',
     AnimationUnpackRate = 1,    
         Mesh = {
-            IconFadeInZoom = 400,
+            IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 400,

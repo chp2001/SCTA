@@ -48,7 +48,6 @@ UnitBlueprint {
 		'PLANT',
 	    'SORTCONSTRUCTION',
         'LAND', 
-        'PRIMARY',
 	    'LEVEL1',
     },
     Defense = {

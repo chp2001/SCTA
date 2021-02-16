@@ -29,6 +29,8 @@ UnitBlueprint {
     BuildIconSortPriority = 7,
     Categories = {
         'SELECTABLE',
+        'OCEAN',
+        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -42,8 +44,6 @@ UnitBlueprint {
         'OVERLAYRADAR',
 	'OVERLAYANTIAIR',
     'CORE',
-    'OCEAN',
-	'LEVEL2',
     },
     CollisionOffsetY = -0.5,
     Defense = {

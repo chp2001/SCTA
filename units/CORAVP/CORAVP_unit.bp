@@ -43,7 +43,7 @@ UnitBlueprint {
 	'SORTCONSTRUCTION',
 	'LEVEL2',
     'LAND', 
-    'PRIMARY',
+    'LAB',
     },
     Defense = {
         ArmorType = 'Structure',

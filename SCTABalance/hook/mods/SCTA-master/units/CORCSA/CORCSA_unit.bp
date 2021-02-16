@@ -38,7 +38,6 @@ UnitBlueprint {
         BuildCostMass = 400,  
         BuildableCategory = {
             'BUILTBYT1HOVER CORE',
-            'BUILTBYT2SUB CORE',
             'BUILTBYT2AIR CORE',
         },
         MaxBuildDistance = 5,

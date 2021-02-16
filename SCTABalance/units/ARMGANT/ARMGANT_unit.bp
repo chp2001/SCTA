@@ -36,6 +36,7 @@ UnitBlueprint {
     Categories = {
         'BUILTBYT1HOVER',
         'BUILTBYT2KBOT',
+        'BUILTBYT2AIR',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -51,7 +52,8 @@ UnitBlueprint {
         'ARM',
         'STRATEGIC',
         'SORTCONSTRUCTION',
-        'LEVEL4',
+        'LEVEL3',
+        'GANTRY',
     },
     Defense = {
         ArmorType = 'ExperimentalStructure',
@@ -85,7 +87,7 @@ UnitBlueprint {
         BuildTime = 300000,
         BuildRate = 250,
         BuildableCategory = {
-            'KBOT LEVEL4 ARM',
+            'LEVEL4 KBOT ARM',
         },
         InitialRallyX = 0,
         InitialRallyZ = 8,

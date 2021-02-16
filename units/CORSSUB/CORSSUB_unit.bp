@@ -24,6 +24,7 @@ UnitBlueprint {
     BuildIconSortPriority = 9,
     Categories = {
         'SELECTABLE',
+        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -36,7 +37,6 @@ UnitBlueprint {
         'OVERLAYANTINAVY',
         'CORE',
         'OCEAN', 
-    'LEVEL2',
     'SNIPEMODE',
     },
     Defense = {

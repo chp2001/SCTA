@@ -6,7 +6,6 @@
 UnitBlueprint {
    Merge = true,
     Categories = {
-        'BUILTBYT1HOVER',
         'BUILTBYT2AIR',
         'SELECTABLE',
         'DRAGBUILD',
@@ -23,6 +22,7 @@ UnitBlueprint {
         'AIR',
         'SORTCONSTRUCTION',
 	    'LEVEL3',
+        'PLATFORM',
     },
     Defense = {
         Health = 14000,

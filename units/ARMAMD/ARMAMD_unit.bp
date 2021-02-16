@@ -29,6 +29,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
+        'LEVEL3',
 	    'STRUCTURE',
 	    'DEFENSE',
         'ANTIMISSILE',
@@ -37,7 +38,6 @@ UnitBlueprint {
         'SHOWQUEUE',
 	    'ARM',
 	    'SORTDEFENSE',	
-	    'LEVEL3',
     },
     Defense = {
         ArmorType = 'Structure',

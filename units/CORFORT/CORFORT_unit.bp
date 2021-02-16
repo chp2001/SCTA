@@ -13,6 +13,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'LEVEL2',
         'TECH3',
         'BENIGN',
         'SORTDEFENSE',
@@ -21,7 +22,6 @@ UnitBlueprint {
         'WALL',
 	'NOSMOKE',
 	'CORE',
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Structure',

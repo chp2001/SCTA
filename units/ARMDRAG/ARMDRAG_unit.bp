@@ -13,6 +13,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
+        'LEVEL2',
         'BENIGN',
         'SORTDEFENSE',
 	    'STRUCTURE',
@@ -20,7 +21,6 @@ UnitBlueprint {
         'WALL',
 	    'NOSMOKE',
 	    'ARM',
-	    'LEVEL2',
     },
     Defense = {
         ArmorType = 'Structure',

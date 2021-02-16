@@ -30,13 +30,13 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'LEVEL2',
+        'KBOT',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
 	    'LAND',
         'ARM',
-        'KBOT',
-	    'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',

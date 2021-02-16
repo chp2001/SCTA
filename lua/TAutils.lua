@@ -5,8 +5,8 @@ local EffectTemplate = import('/lua/EffectTemplates.lua')
 local Factions = import('/lua/factions.lua').GetFactions(true)
 
 CreateTABuildingEffects = function( self, unitBeingBuilt, order )
-    if not self.Dead then
     WaitSeconds(0.75)
+    if not self.Dead then
 	for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
 		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.1) )         
     end
@@ -15,8 +15,8 @@ end
 end
 
 CreateTAAirBuildingEffects = function( self, unitBeingBuilt, order )
-    if not self.Dead then
     WaitSeconds(0.75)
+    if not self.Dead then
 	for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
 		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.1) )         
     end
@@ -26,8 +26,8 @@ end
 
 
 CreateTAFactBuildingEffects = function( self, unitBeingBuilt, order )
-    if not self.Dead then
     WaitSeconds( 0.1 )
+    if not self.Dead then
     for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
 		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.05) )         
     end
@@ -36,8 +36,8 @@ end
 end
 
 CreateTASeaFactBuildingEffects = function( self, unitBeingBuilt, order )
-    if not self.Dead then
     WaitSeconds( 0.1 )
+    if not self.Dead then
     for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
 		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.3) )         
     end
@@ -46,8 +46,8 @@ end
 end
 
 CreateTAGantBuildingEffects = function(self, unitBeingBuilt, order)
-    if not self.Dead then
     WaitSeconds( 0.75 )
+    if not self.Dead then
 	for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
 		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.18):OffsetEmitter(0,0,-0.2))         
     end
@@ -56,29 +56,29 @@ end
 end
 
 TAReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, EffectsBag)
-    if not reclaimer.Dead then
     WaitSeconds(0.75)
-    EffectUtil.PlayReclaimEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
+    if not reclaimer.Dead then
     for k, v in reclaimer:GetBlueprint().General.BuildBones.BuildEffectBones do
 		reclaimer.ReclaimEffectsBag:Add( CreateAttachedEmitter( reclaimer, v, reclaimer:GetArmy(),  '/mods/SCTA-master/effects/emitters/reclaimnanolathe.bp' ):ScaleEmitter(0.08):OffsetEmitter(0,0,3))
     end
+    EffectUtil.PlayReclaimEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
     end      
 end
 
 TAAirReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, EffectsBag)
-    if not reclaimer.Dead then
     WaitSeconds(0.75)
-    EffectUtil.PlayReclaimEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
+    if not reclaimer.Dead then
     for k, v in reclaimer:GetBlueprint().General.BuildBones.BuildEffectBones do
 		reclaimer.ReclaimEffectsBag:Add( CreateAttachedEmitter( reclaimer, v, reclaimer:GetArmy(),  '/mods/SCTA-master/effects/emitters/reclaimnanolathe.bp' ):ScaleEmitter(0.05):OffsetEmitter(0.1,0,1))
     end
+    EffectUtil.PlayReclaimEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
 end      
 end
 
 
 TACaptureEffect = function(capturer, captive, BuildEffectBones, EffectsBag)
-    if not capturer.Dead then
     WaitSeconds(0.75)
+    if not capturer.Dead then
     EffectUtil.PlayCaptureEffects(capturer, captive, BuildEffectBones, EffectsBag)    
     for k, v in capturer:GetBlueprint().General.BuildBones.BuildEffectBones do
 		capturer.CaptureEffectsBag:Add( CreateAttachedEmitter( capturer, v, capturer:GetArmy(),  '/mods/SCTA-master/effects/emitters/reclaimnanolathe.bp' ):ScaleEmitter(0.08):OffsetEmitter(0,-0.05,2))
@@ -97,11 +97,10 @@ updateBuildRestrictions = function(self)
     if EntityCategoryContains(categories.LEVEL1 * categories.CONSTRUCTION - categories.PLANT, self) then
         self:AddBuildRestriction(categories.LEVEL2)
         self:AddBuildRestriction(categories.LEVEL3)
-    self.restrictions = true
+        self.restrictions = true
     elseif EntityCategoryContains(categories.LEVEL2 * categories.CONSTRUCTION - categories.PLANT, self) then
         self:AddBuildRestriction(categories.LEVEL3)
-        self:AddBuildRestriction(categories.LEVEL4)
-    self.restrictions = true    
+        self.restrictions = true    
     end
 
     if self.restrictions then
@@ -110,7 +109,6 @@ updateBuildRestrictions = function(self)
         if self.FindHQType(aiBrain, HQCategory * categories.LEVEL3) or  gtime > 1200 then
             self:RemoveBuildRestriction(categories.LEVEL2)
             self:RemoveBuildRestriction(categories.LEVEL3)
-            self:RemoveBuildRestriction(categories.LEVEL4)
         elseif self.FindHQType(aiBrain, HQCategory * categories.LEVEL2) or gtime > 600 then
             self:RemoveBuildRestriction(categories.LEVEL2)
         end

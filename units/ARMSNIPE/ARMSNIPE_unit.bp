@@ -30,6 +30,8 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'LEVEL2',
+        'KBOT',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -39,8 +41,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'ARM',
         'SNIPER',
-        'KBOT',
-	    'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',

@@ -127,6 +127,7 @@ UnitBlueprint {
             RULEUTC_IntelToggle = true,
         },
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Eagle',
     },

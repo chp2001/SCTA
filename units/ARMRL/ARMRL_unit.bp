@@ -80,7 +80,8 @@ UnitBlueprint {
         },
         SelectionPriority = 5,
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Defender',
     },
     Intel = {

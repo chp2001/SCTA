@@ -40,6 +40,8 @@ UnitBlueprint {
             'VTOL LEVEL1 CORE', 
             'VTOL LEVEL2 CORE',
             'VTOL LEVEL3 CORE',
+            'cornecro',
+            'corcv',
         },
     },
     LifeBarHeight = 0.22,

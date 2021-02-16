@@ -108,8 +108,10 @@ UnitBlueprint {
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
         },
+        ConstructionBar = true,
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
 	UnitName = 'Radar Tower',
     },
     Intel = {

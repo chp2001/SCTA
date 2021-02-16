@@ -174,11 +174,13 @@ UnitBlueprint {
                 helpText = 'DGun. Requires 600 Energy to Fire. Right-click turn on auto',
             },
         },
+        ConstructionBar = true,
         SelectionPriority = 3,
         FactionName = 'CORE',
         UnitName = 'Commander',
         QuickSelectPriority = 1,
-        TechLevel = 'RULEUTL_Experimental',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Experimental',
     },
     Intel = {
         ActiveIntel = {

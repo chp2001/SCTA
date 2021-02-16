@@ -113,6 +113,7 @@ UnitBlueprint {
         SelectionPriority = 5,
         ConstructionBar = true,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Basic',
         UnitName = 'Vehicle Advanced Development Plant',
         UpgradesFrom = 'armdvp', 

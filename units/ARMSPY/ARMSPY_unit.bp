@@ -35,8 +35,8 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-    'LAND',
-    'TACLOAK',
+        'LAND',
+        'TACLOAK',
         'ARM',
     },
     Defense = {
@@ -90,7 +90,8 @@ UnitBlueprint {
             RULEUTC_CloakToggle = true,
         },
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Infiltrator',
     },
     Intel = {

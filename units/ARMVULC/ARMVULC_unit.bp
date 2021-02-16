@@ -92,7 +92,8 @@ UnitBlueprint {
         },
         SelectionPriority = 5,
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Secret',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Secret',
         UnitName = 'Vulcan',
     },
     Intel = {

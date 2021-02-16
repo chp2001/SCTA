@@ -63,6 +63,7 @@ UnitBlueprint {
         Classification = 'RULEUC_MiscSupport',
         SelectionPriority = 5,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Dragons Teeth',
     },

@@ -120,6 +120,7 @@ UnitBlueprint {
         FactionName = 'CORE',
         UpgradesFrom = 'corsy', 
         UpgradesTo = 'coradsy',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
 	UnitName = 'Development Shipyard',
     },

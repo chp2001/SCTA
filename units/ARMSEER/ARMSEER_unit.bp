@@ -87,7 +87,8 @@ UnitBlueprint {
             RULEUTC_IntelToggle = true,
         },
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Seer',
     },
     Intel = {

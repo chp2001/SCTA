@@ -116,7 +116,8 @@ UnitBlueprint {
         FactionName = 'ARM',
         UpgradesFrom = 'armsy',
         UpgradesTo = 'armadsy',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
 	UnitName = 'Development Shipyard',
     },
     Intel = {

@@ -111,6 +111,7 @@ UnitBlueprint {
         SelectionPriority = 5,
         ConstructionBar = true,
         FactionName = 'CORE',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
 	UnitName = 'Adv. Shipyard',
     },

@@ -98,7 +98,9 @@ UnitBlueprint {
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
         },
+        ConstructionBar = true,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Basic',
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,

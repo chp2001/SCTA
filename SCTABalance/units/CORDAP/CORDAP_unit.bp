@@ -89,6 +89,7 @@ UnitBlueprint {
         'VTOL LEVEL2 CORE',
         'coradap', 
         'corcv',
+        'cornecro',
     },
 	InitialRallyX = 0,
 	InitialRallyZ = 5,
@@ -119,7 +120,8 @@ UnitBlueprint {
         FactionName = 'CORE',
         UpgradesFrom = 'corap',
         UpgradesTo = 'coradap', 
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
 	UnitName = 'Aircraft Development Plant',
     },
     Intel = {

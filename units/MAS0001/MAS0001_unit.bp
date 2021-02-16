@@ -104,7 +104,7 @@ UnitBlueprint {
         Icon = 'land',
         QuickSelectPriority = 1,
         SelectionPriority = 3,
-        TechLevel = 'RULEUTL_Experimental',
+TechLevel = 'RULEUTL_Experimental',
         UnitWeight = 1,
     },
     Intel = {

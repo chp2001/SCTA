@@ -4,6 +4,9 @@ UnitBlueprint {
    Categories = {
     'SELECTABLE',
     'TECH3',
+    'OCEAN',
+    'CORE',    
+    'LEVEL3',
     'VISIBLETORECON',
     'RECLAIMABLE',
     'MOBILE',
@@ -12,9 +15,6 @@ UnitBlueprint {
     'T2SUBMARINE',
     'ANTINAVY',
     'OVERLAYANTINAVY',
-    'OCEAN',
-    'CORE',    
-    'LEVEL3',
     'SNIPEMODE',
 },
 Display = {

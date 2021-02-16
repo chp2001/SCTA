@@ -84,7 +84,8 @@ UnitBlueprint {
 		RULEUTC_CloakToggle = true,
 	},
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Focused Mine',
     },
     Intel = {

@@ -115,13 +115,13 @@ UnitBlueprint {
         },
         SelectionPriority = 5,
         FactionName = 'ARM',
-        Icon = 'land',
         OrderOverrides = {
             RULEUCC_Transport = {
                 bitmapId = 'deploy',
                 helpText = 'Deploy',
             },
         },
+        Icon = 'land',
         TechLevel = 'RULEUTL_Secret',
         UnitName = 'Air Repair Pad',
     },

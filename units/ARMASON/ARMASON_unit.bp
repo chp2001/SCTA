@@ -92,6 +92,7 @@ UnitBlueprint {
         },
         SelectionPriority = 5,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Secret',
         UnitName = 'Advanced Sonar Station',
     },

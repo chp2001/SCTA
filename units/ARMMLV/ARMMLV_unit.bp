@@ -113,6 +113,7 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 3,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Basic',
 	UnitName = 'Podger',
     },

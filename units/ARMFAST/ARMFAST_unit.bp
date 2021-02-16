@@ -87,6 +87,7 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Zipper',
     },

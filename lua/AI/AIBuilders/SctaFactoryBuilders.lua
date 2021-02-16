@@ -223,7 +223,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {180} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.LAND } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.75}},
             { MIBC, 'LessThanGameTime', {1200} },
         },
         BuilderType = 'Any',
@@ -245,7 +245,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {750} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.PLATFORM * categories.LAND } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.75}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -265,7 +265,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.75}},
         },
         BuilderType = 'Any',
         BuilderData = {

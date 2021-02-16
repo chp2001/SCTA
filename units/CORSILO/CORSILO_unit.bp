@@ -93,7 +93,8 @@ UnitBlueprint {
         },
         SelectionPriority = 5,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Secret',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Secret',
         UnitName = 'Silencer',
     },
     Intel = {

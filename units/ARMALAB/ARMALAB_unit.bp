@@ -107,7 +107,8 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 5,
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
 	UnitName = 'Adv. Kbot Lab',
     },
     Intel = {

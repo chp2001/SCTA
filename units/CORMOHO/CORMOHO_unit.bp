@@ -89,7 +89,8 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
         },
-        TechLevel = 'RULEUTL_Secret',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Secret',
         UnitName = 'Moho Mine',
     },
     Intel = {

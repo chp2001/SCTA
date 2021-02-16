@@ -86,7 +86,9 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
         },
-        TechLevel = 'RULEUTL_Secret',
+        FactionName = 'ARM',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Secret',
         UnitName = 'MEX Quarry',
         UpgradesFrom = 'armmex',
     },

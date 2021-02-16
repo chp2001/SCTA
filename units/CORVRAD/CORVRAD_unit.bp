@@ -109,7 +109,8 @@ UnitBlueprint {
             RULEUTC_IntelToggle = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Informer',
     },
     Intel = {

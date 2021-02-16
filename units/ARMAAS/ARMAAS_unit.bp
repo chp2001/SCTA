@@ -107,7 +107,8 @@ UnitBlueprint {
             RULEUCC_Transport = false,
         },
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Archer',
     },
     Intel = {

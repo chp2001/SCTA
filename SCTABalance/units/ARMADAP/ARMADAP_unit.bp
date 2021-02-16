@@ -117,6 +117,7 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 5,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
         UpgradesFrom = 'armdap',
 	UnitName = 'Aircraft Advanced Development Plant',

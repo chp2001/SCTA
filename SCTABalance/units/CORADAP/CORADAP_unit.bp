@@ -118,7 +118,8 @@ UnitBlueprint {
         ConstructionBar = true,
         FactionName = 'CORE',
         UpgradesFrom = 'cordap',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
 	UnitName = 'Aircraft Advanced Development Plant',
     },
     Intel = {

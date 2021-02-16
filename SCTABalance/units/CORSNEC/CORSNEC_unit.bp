@@ -138,6 +138,7 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 3,
         FactionName = 'CORE',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Basic',
         UnitName = 'Necromancy Ship',
     },

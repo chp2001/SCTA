@@ -100,8 +100,8 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_StealthToggle = true,
         },
-        Icon = 'land',
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Eraser',
     },

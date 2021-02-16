@@ -99,7 +99,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Experimental',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Experimental',
         UnitName = 'Krogoth',
     },
     Intel = {

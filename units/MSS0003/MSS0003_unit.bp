@@ -116,7 +116,7 @@ UnitBlueprint {
         },
         FactionName = 'UEF',
         Icon = 'land',
-        TechLevel = 'RULEUTL_Basic',
+TechLevel = 'RULEUTL_Basic',
         ToggleCaps = {
             RULEUTC_CloakToggle = true,
         },

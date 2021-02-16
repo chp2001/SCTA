@@ -120,7 +120,8 @@ UnitBlueprint {
         FactionName = 'CORE',
         UpgradesFrom = 'corap',
         UpgradesTo = 'coradap', 
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
 	UnitName = 'Aircraft Development Plant',
     },
     Intel = {

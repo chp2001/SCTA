@@ -38,14 +38,14 @@ BuilderGroup {
         Priority = 120,
         InstanceCount = 12,
         BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'GATE' }},
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'GANTRY' }},
         },
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Engineer',
                 AssistRange = 120,
-                BeingBuiltCategories = {'GATE'},                 
+                BeingBuiltCategories = {'GANTRY'},                 
                 PermanentAssist = true,
                 AssistClosestUnit = false,                                       
                 AssistUntilFinished = true,
@@ -60,14 +60,14 @@ BuilderGroup {
         Priority = 120,
         InstanceCount = 4,
         BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'LEVEL2 FACTORY' }},
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'LAB' }},
         },
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Engineer',
                 AssistRange = 120,
-                BeingBuiltCategories = {'LEVEL2 FACTORY'},   
+                BeingBuiltCategories = {'LAB'},   
                 PermanentAssist = false,
                 AssistClosestUnit = false,                                       
                 AssistUntilFinished = true,
@@ -172,13 +172,13 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LEVEL2 * categories.LAND * categories.FACTORY} },
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.LEVEL1 * categories.PLANT * categories.LAND}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB * categories.LAND} },
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT * categories.LAND}},
             },
         BuilderData = {
             Location = 'LocationType',
             ReclaimTime = 30,
-            Reclaim = {'LEVEL1 PLANT LAND'},
+            Reclaim = {'PLANT LAND'},
         },
         BuilderType = 'Any',
     },
@@ -190,12 +190,12 @@ BuilderGroup {
         InstanceCount = 3,
         BuilderConditions = {
             { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 9, categories.LEVEL2 * categories.FACTORY * categories.LAND}},
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 9, categories.LAB * categories.LAND}},
             },
         BuilderData = {
             Location = 'LocationType',
             ReclaimTime = 30,
-            Reclaim = {'LEVEL2 FACTORY LAND'},
+            Reclaim = {'LAB LAND'},
         },
         BuilderType = 'Any',
     },
@@ -208,13 +208,13 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
             { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.LEVEL1 * categories.PLANT * categories.LAND}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LEVEL2 * categories.LAND * categories.FACTORY} },
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT * categories.LAND}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB * categories.LAND} },
             },
         BuilderData = {
             Location = 'LocationType',
             ReclaimTime = 30,
-            Reclaim = {'LEVEL1 PLANT LAND'},
+            Reclaim = {'PLANT LAND'},
         },
         BuilderType = 'Any',
     },

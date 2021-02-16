@@ -49,7 +49,7 @@ UnitBlueprint {
         'CORE',
         'STRATEGIC',
 	    'SORTSTRATEGIC',
-        'LEVEL4',
+        'LEVEL3',
         'GANTRY',
         'GATE',  
     },

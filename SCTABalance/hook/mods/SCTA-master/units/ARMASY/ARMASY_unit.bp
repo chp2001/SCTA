@@ -17,6 +17,7 @@ UnitBlueprint {
 	    'ARM',
 	    'SORTCONSTRUCTION',
 	    'LEVEL2',
+        'LAB',
     },
     Defense = {
         Health = 10000,

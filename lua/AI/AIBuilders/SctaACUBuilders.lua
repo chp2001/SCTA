@@ -205,8 +205,8 @@ Builder {
     PlatoonTemplate = 'CommanderSCTAAssist',
     Priority = 50,
     BuilderConditions = {
-        { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.1} },
-        { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, 'MOBILE' }},
+        { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.6, 0.5 } },
+        { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, 'LEVEL4' }},
         { IBC, 'BrainNotLowPowerMode', {} },
     },
     BuilderType = 'Any',
@@ -214,9 +214,7 @@ Builder {
         Assist = {
             AssistLocation = 'LocationType',
             AssisteeType = 'Factory',
-            BuilderCategories = {'FACTORY',},
             BeingBuiltCategories = {'LEVEL4'},
-            PermanentAssist = true,
             Time = 20,
         },
     }

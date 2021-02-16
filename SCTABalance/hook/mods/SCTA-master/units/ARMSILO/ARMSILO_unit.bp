@@ -14,7 +14,7 @@ UnitBlueprint {
         'SILO',	
 	    'ARM',
 	    'SORTSTRATEGIC',
-	    'LEVEL4',
+	    'LEVEL3',
         'SHOWATTACKRETICLE',
     },
     Display = {

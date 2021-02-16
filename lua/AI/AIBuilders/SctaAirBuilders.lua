@@ -14,7 +14,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1AirScoutSCTA',
         Priority = 100,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL2 * categories.AIR } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LAB * categories.AIR } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.MOBILE * categories.AIR * categories.SCOUT } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.3}},
         },
@@ -34,7 +34,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1AirFighterSCTA',
         Priority = 90,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FACTORY * categories.LEVEL2 * categories.AIR } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.AIR } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.7}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.2, 0.33 }},
         },
@@ -66,7 +66,7 @@ BuilderGroup {
         BuilderConditions = { -- Only make inties if the enemy air is strong.
         { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.7}},
         { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.2, 0.33 }},
-        { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.LEVEL3 * categories.AIR } },
+        { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.PLATFORM * categories.AIR } },
     },
         BuilderType = 'All',
     },
@@ -75,7 +75,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2BuildEngineerAirSCTA',
         Priority = 120, -- Top factory priority
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENGINEER * categories.AIR * categories.LEVEL2} }, -- Build engies until we have 4 of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.AIR * categories.LEVEL2} }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'All',
     }, 
@@ -96,7 +96,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENGINEER * categories.AIR * categories.LEVEL3} }, -- Build engies until we have 4 of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.AIR * categories.LEVEL3} }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'All',
     },     

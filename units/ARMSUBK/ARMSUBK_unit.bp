@@ -36,7 +36,6 @@ UnitBlueprint {
 	    'NAVAL',
         'T2SUBMARINE',
 	    'ANTINAVY',
-        'NOSMOKE',
         'SUBMERSIBLE',
         'OVERLAYANTINAVY',
         'ARM',

@@ -29,7 +29,6 @@ UnitBlueprint {
 	'DEFENSE',
 	'ANTINAVY',
 	'NAVAL',
-	'NOSMOKE',
 	'SORTDEFENSE',
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',

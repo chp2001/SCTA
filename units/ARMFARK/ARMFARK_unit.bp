@@ -80,7 +80,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'pelvis',
+	---SmokeBone = 'pelvis',
         UniformScale = 0.12,
     },
     Economy = {

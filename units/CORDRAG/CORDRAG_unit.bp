@@ -16,7 +16,6 @@ UnitBlueprint {
 	'STRUCTURE',
         'DEFENSE',
         'WALL',
-	'NOSMOKE',
 	'SORTDEFENSE',
 	'CORE',
     },

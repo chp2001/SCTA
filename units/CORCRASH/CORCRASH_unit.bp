@@ -65,7 +65,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'Pelvis',
+	---SmokeBone = 'Pelvis',
         UniformScale = 0.16,
     },
     Economy = {

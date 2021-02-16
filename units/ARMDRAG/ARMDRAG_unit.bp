@@ -19,7 +19,6 @@ UnitBlueprint {
 	    'STRUCTURE',
         'DEFENSE',
         'WALL',
-	    'NOSMOKE',
 	    'ARM',
     },
     Defense = {

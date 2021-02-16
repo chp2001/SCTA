@@ -13,7 +13,6 @@ UnitBlueprint {
 	'STRUCTURE',
         'DEFENSE',
         'WALL',
-	'NOSMOKE',
 	'CORE',
     'LEVEL2',
     'SELECTABLE',

@@ -87,7 +87,7 @@ UnitBlueprint {
         },
         TransportAnimation = { { Animation = '/mods/SCTA-master/units/ARMSPID/ARMSPID_ATransport.sca', Weight = 100 } },
         TransportDropAnimation = { { Animation = '/mods/SCTA-master/units/ARMSPID/ARMSPID_ATransportDetach.sca', Weight = 100 } },
-	    SmokeBone = 'Turret_Pitch',
+	    ---SmokeBone = 'Turret_Pitch',
         UniformScale = 0.038,
     },
     Economy = {

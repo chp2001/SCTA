@@ -14,7 +14,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Mex 150',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 95,
+        Priority = 100,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},

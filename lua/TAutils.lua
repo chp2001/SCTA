@@ -5,18 +5,18 @@ local EffectTemplate = import('/lua/EffectTemplates.lua')
 local Factions = import('/lua/factions.lua').GetFactions(true)
 
 CreateTABuildingEffects = function( self, unitBeingBuilt, order )
+    EffectUtil.CreateSeraphimUnitEngineerBuildingEffects( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
     WaitSeconds(0.75)
-    if not self.Dead then
+    if not self.Dead and not IsDestroyed(unitBeingBuilt) then
 	for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
 		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.1) )         
     end
-    EffectUtil.CreateSeraphimUnitEngineerBuildingEffects( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
 end
 end
 
 CreateTAAirBuildingEffects = function( self, unitBeingBuilt, order )
     WaitSeconds(0.75)
-    if not self.Dead then
+    if not self.Dead and not IsDestroyed(unitBeingBuilt) then
 	for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
 		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.1) )         
     end
@@ -25,9 +25,9 @@ end
 end
 
 
-CreateTAFactBuildingEffects = function( self, unitBeingBuilt, order )
+CreateTAFactBuildingEffects = function( self, unitBeingBuilt, order )  
     WaitSeconds( 0.1 )
-    if not self.Dead then
+    if not self.Dead and not IsDestroyed(unitBeingBuilt) then
     for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
 		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.05) )         
     end
@@ -37,7 +37,7 @@ end
 
 CreateTASeaFactBuildingEffects = function( self, unitBeingBuilt, order )
     WaitSeconds( 0.1 )
-    if not self.Dead then
+    if not self.Dead and not IsDestroyed(unitBeingBuilt) then
     for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
 		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.3) )         
     end
@@ -47,39 +47,39 @@ end
 
 CreateTAGantBuildingEffects = function(self, unitBeingBuilt, order)
     WaitSeconds( 0.75 )
-    if not self.Dead then
+    if not self.Dead and not IsDestroyed(unitBeingBuilt) then
 	for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
 		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.18):OffsetEmitter(0,0,-0.2))         
     end
     EffectUtil.CreateCybranFactoryBuildEffects( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones, self.BuildEffectsBag )
-end
+    end
 end
 
 TAReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, EffectsBag)
+    EffectUtil.PlayReclaimEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
     WaitSeconds(0.75)
-    if not reclaimer.Dead then
+    if not reclaimer.Dead and not IsDestroyed(reclaimed) then
     for k, v in reclaimer:GetBlueprint().General.BuildBones.BuildEffectBones do
 		reclaimer.ReclaimEffectsBag:Add( CreateAttachedEmitter( reclaimer, v, reclaimer:GetArmy(),  '/mods/SCTA-master/effects/emitters/reclaimnanolathe.bp' ):ScaleEmitter(0.08):OffsetEmitter(0,0,3))
     end
-    EffectUtil.PlayReclaimEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
     end      
 end
 
 TAAirReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, EffectsBag)
+    EffectUtil.PlayReclaimEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
     WaitSeconds(0.75)
-    if not reclaimer.Dead then
+    if not reclaimer.Dead and not IsDestroyed(reclaimed) then
     for k, v in reclaimer:GetBlueprint().General.BuildBones.BuildEffectBones do
 		reclaimer.ReclaimEffectsBag:Add( CreateAttachedEmitter( reclaimer, v, reclaimer:GetArmy(),  '/mods/SCTA-master/effects/emitters/reclaimnanolathe.bp' ):ScaleEmitter(0.05):OffsetEmitter(0.1,0,1))
     end
-    EffectUtil.PlayReclaimEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
 end      
 end
 
 
 TACaptureEffect = function(capturer, captive, BuildEffectBones, EffectsBag)
-    WaitSeconds(0.75)
-    if not capturer.Dead then
     EffectUtil.PlayCaptureEffects(capturer, captive, BuildEffectBones, EffectsBag)    
+    WaitSeconds(0.75)
+    if not capturer.Dead and not IsDestroyed(captive) then
     for k, v in capturer:GetBlueprint().General.BuildBones.BuildEffectBones do
 		capturer.CaptureEffectsBag:Add( CreateAttachedEmitter( capturer, v, capturer:GetArmy(),  '/mods/SCTA-master/effects/emitters/reclaimnanolathe.bp' ):ScaleEmitter(0.08):OffsetEmitter(0,-0.05,2))
     end

@@ -156,7 +156,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.PLATFORM * categories.LAND} }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.PLATFORM * categories.LAND} }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -196,11 +196,12 @@ BuilderGroup {
         BuilderName = 'SCTAAI Gantry Factory',
         PlatoonTemplate = 'EngineerBuilderSCTA23',
         Priority = 135,
-        InstanceCount = 2,
+        InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.GANTRY} }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.GANTRY} },
         },
         BuilderType = 'Any',
         BuilderData = {

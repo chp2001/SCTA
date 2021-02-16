@@ -140,7 +140,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandDFTankSCTA',
         Priority = 105,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL2 * categories.TANK,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
         },
@@ -152,7 +152,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandDFTank2SCTA',
         Priority = 105,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.5}},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL2 * categories.TANK,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
         },
@@ -202,8 +202,8 @@ BuilderGroup {
         PlatoonTemplate = 'T3LandHOVERSCTA',
         Priority = 110,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK,
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK * categories.LEVEL3,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'All',
@@ -236,7 +236,7 @@ BuilderGroup {
         Priority = 125,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1300} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL3 * categories.TANK,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
         },

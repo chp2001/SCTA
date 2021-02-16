@@ -16,7 +16,7 @@ TAunit = Class(Unit)
 
 	OnCreate = function(self)
 		local bp = self:GetBlueprint()
-        self._UnitName = bp.General.UnitName
+        --self._UnitName = bp.General.UnitName
         ---self:LOGDBG('TAUnit.OnCreate')
         Unit.OnCreate(self)
 		self:SetFireState(FireState.GROUND_FIRE)
@@ -69,16 +69,6 @@ TAunit = Class(Unit)
 		Unit.OnDamage(self, instigator, amount * (self.Pack or 1), vector, damageType)
 	end,
 	
-
-	ShowMuzzleFlare = function(self, duration)
-        ---self:LOGDBG('TAUnit.ShowMuzzleFlare')
-		local bp = self:GetBlueprint()
-		#Show flare bone for pre-determined time
-		self.unit:ShowBone(bp.RackBones[self.CurrentRackSalvoNumber - 1].MuzzleBones[1], true)
-		WaitSeconds(duration)
-		self.unit:HideBone(bp.RackBones[self.CurrentRackSalvoNumber - 1].MuzzleBones[1], true)
-	end,
-
 	OnIntelDisabled = function(self)
 		Unit.OnIntelDisabled()
 		if EntityCategoryContains(categories.TACLOAK, self) then
@@ -92,12 +82,12 @@ TAunit = Class(Unit)
 
     OnIntelEnabled = function(self)
 		Unit.OnIntelEnabled()
-		if EntityCategoryContains(categories.TACLOAK, self) then
-        if self:IsIntelEnabled('Cloak') then
+			if EntityCategoryContains(categories.TACLOAK, self) then
+       	 	if self:IsIntelEnabled('Cloak') then
             self.cloakOn = true
         	self:PlayUnitSound('Cloak')
 			self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
-		ForkThread(self.CloakDetection, self)
+			ForkThread(self.CloakDetection, self)
         --end
 		end
 		end

@@ -96,9 +96,9 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 200,
         MaintenanceConsumptionPerSecondEnergy = 35,
         BuildableCategory = {
-            'VTOL LEVEL1 CORE AIR ENGINEER',
+            'VTOL LEVEL1 CORE ENGINEER',
             'VTOL LEVEL1 CORE HIGHALTAIR', 
-            'VTOL LEVEL2 CORE AIR',
+            'VTOL LEVEL2 CORE',
             'VTOL LEVEL3 CORE',
         },
     },

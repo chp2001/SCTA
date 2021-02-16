@@ -89,6 +89,7 @@ UnitBlueprint {
         'VTOL LEVEL1 ARM',
         'armadap', 
         'armck',
+        'armfark',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 5,

@@ -88,6 +88,7 @@ UnitBlueprint {
         'VTOL LEVEL2 CORE',
         'VTOL LEVEL3 CORE',
         'corcv',
+        'cornecro',
     },
 	InitialRallyX = 0,
 	InitialRallyZ = 5,

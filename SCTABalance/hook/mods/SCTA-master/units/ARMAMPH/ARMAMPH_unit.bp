@@ -3,6 +3,10 @@ UnitBlueprint {
    Categories = {
     'SELECTABLE',
     'TECH3',
+    'ARM',
+    'PHIB',
+    'HOVER',
+    'LEVEL3',
     'VISIBLETORECON',
     'RECLAIMABLE',
     'MOBILE',
@@ -10,10 +14,6 @@ UnitBlueprint {
     'OVERLAYDIRECTFIRE',
     'KBOT',
     'LAND',
-    'ARM',
-    'PHIB',
-    'HOVER',
-    'LEVEL3',
     },
    Defense = {
     Health = 11000,

@@ -35,8 +35,8 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-    'LAND',
-    'TACLOAK',
+        'LAND',
+        'TACLOAK',
         'ARM',
     },
     Defense = {

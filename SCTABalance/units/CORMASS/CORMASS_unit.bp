@@ -85,7 +85,6 @@ UnitBlueprint {
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,
-        FactionName = 'CORE',
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
         },

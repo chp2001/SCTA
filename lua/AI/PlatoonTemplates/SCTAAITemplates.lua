@@ -19,7 +19,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'LABSCTA',
-    Plan = 'StrikeForceAI', -- The platoon function to use.
+    Plan = 'ScoutingAI', -- The platoon function to use.
     GlobalSquads = {
         { categories.MOBILE * categories.RAIDER, -- Type of units.
           1, -- Min number of units.
@@ -49,7 +49,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'T4ExperimentalSCTA',
-    Plan = 'ExperimentalAIHub', 
+    Plan = 'ExperimentalAIHubSorian', 
     GlobalSquads = {
         #DUNCAN - removed the sera lightning unit
         { categories.EXPERIMENTAL * categories.LAND * categories.MOBILE, 1, 1, 'attack', 'none' }

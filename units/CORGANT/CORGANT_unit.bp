@@ -40,7 +40,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH3',
+        'EXPERIMENTAL',
         'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -50,6 +50,7 @@ UnitBlueprint {
         'STRATEGIC',
 	    'SORTSTRATEGIC',
         'LEVEL4',
+        'GANTRY',
         'GATE',  
     },
     Defense = {

@@ -29,6 +29,8 @@ StopMove = Sound {
     BuildIconSortPriority = 5,
     Categories = {
         'SELECTABLE',
+        'VEHICLE',
+        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -38,8 +40,6 @@ StopMove = Sound {
         'ROCKET',
         'OVERLAYINDIRECTFIRE',
         'CORE',
-        'VEHICLE',
-        'LEVEL2',
     },
     Defense = {
 ArmorType = 'Normal',

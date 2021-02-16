@@ -18,7 +18,8 @@ UnitBlueprint {
         'CORE',
         'STRATEGIC',
         'SORTCONSTRUCTION',
-        'LEVEL4',  
+        'LEVEL4',
+        'GANTRY',  
     },
     Defense = {
     Health = 48000,

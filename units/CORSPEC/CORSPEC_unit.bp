@@ -39,6 +39,7 @@ UnitBlueprint {
     BuildIconSortPriority = 9,
     Categories = {
         'SELECTABLE',
+        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -50,7 +51,6 @@ UnitBlueprint {
         'CORE',
         'KBOT',
 	    'JAM',
-	    'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',

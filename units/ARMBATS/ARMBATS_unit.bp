@@ -37,6 +37,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -48,7 +49,6 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'ARM',
         'OCEAN',
-        'LEVEL2',
         'SNIPEMODE',
     },
     CollisionOffsetY = -0.5,

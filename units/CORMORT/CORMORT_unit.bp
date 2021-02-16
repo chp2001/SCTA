@@ -29,6 +29,7 @@ UnitBlueprint {
     BuildIconSortPriority = 13,
     Categories = {
         'SELECTABLE',
+        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -39,7 +40,6 @@ UnitBlueprint {
         'ARTILLERY',
         'CORE',
         'KBOT',
-        'LEVEL2',
         'SNIPEMODE', 
     },
     Defense = {

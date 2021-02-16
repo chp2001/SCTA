@@ -8,6 +8,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
+        'LEVEL2',
 	    'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -18,7 +19,6 @@ UnitBlueprint {
 	    'ARM',
         'LAB',
 	    'SORTCONSTRUCTION',
-	    'LEVEL2',
         },
         Display = {
         UniformScale = 0.23,

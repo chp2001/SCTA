@@ -70,6 +70,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
+        'LEVEL1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'HIGHALTAIR',
@@ -79,7 +80,6 @@ UnitBlueprint {
         'VTOL',
         'OVERLAYANTIAIR',
         'ARM',
-        'LEVEL1',
         'SEAPLA',
     },
     Defense = {

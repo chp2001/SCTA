@@ -26,6 +26,7 @@ UnitBlueprint {
     BuildIconSortPriority = 17,
     Categories = {
         'TECH2',
+        'LEVEL3',
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
         'BUILTBYT2VEHICLE',
@@ -41,7 +42,6 @@ UnitBlueprint {
         'SHOWQUEUE',
 	    'ARM',
 	    'SORTSTRATEGIC',
-	    'LEVEL3',
         'SHOWATTACKRETICLE',
         'TACTICALMISSILEPLATFORM',
     },

@@ -36,7 +36,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA AI ACU Factory',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 980,
+        Priority = 950,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {240} }, -- Don't make tanks if we have lots of them.
@@ -58,11 +58,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA  ACU Energy',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 950,
+        Priority = 960,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.SOLAR} },
-            { MIBC, 'LessThanGameTime', {120} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -82,7 +82,7 @@ BuilderGroup {
         Priority = 975,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {120} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.STRUCTURE * categories.MASSEXTRACTION} },
         },
         BuilderType = 'Any',

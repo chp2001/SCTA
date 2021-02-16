@@ -125,10 +125,7 @@ TAconstructor = Class(TAWalking) {
     CreateReclaimEffects = function( self, target )
         self.ReclaimEffectsBag:Add(TAutils.TAReclaimEffects(self, target, self.BuildEffectBones or {0, }, self.ReclaimEffectsBag))
     end,
-    
-    CreateReclaimEndEffects = function( self, target )
-        EffectUtil.PlayReclaimEndEffects( self, target )
-    end,         
+          
     
     OnStopReclaim = function(self, target)
         TAWalking.OnStopReclaim(self, target)

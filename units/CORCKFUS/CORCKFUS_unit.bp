@@ -73,7 +73,7 @@ UnitBlueprint {
     Footprint = {
 	MaxSlope = 0.625,
         SizeX = 5,
-        SizeZ = 4,
+        SizeZ = 5,
     },
     General = {
 	---BuildAngle = 4096,
@@ -103,7 +103,7 @@ UnitBlueprint {
             LAYER_Land = true,
         },
         SkirtSizeX = 5,
-        SkirtSizeZ = 4,
+        SkirtSizeZ = 5,
     },
     SelectionSizeX = 2.5,
     SelectionSizeZ = 2,

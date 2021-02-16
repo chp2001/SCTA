@@ -189,23 +189,6 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'SCTA Engineer Reclaim Excess T2PLANTS',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
-        PlatoonAIPlan = 'ReclaimStructuresAI',
-        Priority = 150,
-        InstanceCount = 3,
-        BuilderConditions = {
-            { EBC, 'LessThanEconStorageRatio', { 0.1, 1.1}},
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 12, categories.LAB * categories.LAND}},
-            },
-        BuilderData = {
-            Location = 'LocationType',
-            ReclaimTime = 30,
-            Reclaim = {'LAB LAND'},
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
         BuilderName = 'SCTA Engineer Reclaim T1 PLANTS',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'ReclaimStructuresAI',

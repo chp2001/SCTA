@@ -115,10 +115,6 @@ TAAirConstructor = Class(TAair) {
         end
     end,
 
-    OnStartReclaim = function(self, target)
-        TAair.OnStartReclaim(self, target)
-    end,
-
     OnStopReclaim = function(self, target)
         TAair.OnStopReclaim(self, target)
         if self.BuildingOpenAnimManip then
@@ -126,7 +122,6 @@ TAAirConstructor = Class(TAair) {
         end
     end,
 
-    
     CreateBuildEffects = function( self, unitBeingBuilt, order )
         self.BuildEffectsBag:Add( TAutils.CreateTAAirBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag ))
     end,
@@ -134,8 +129,5 @@ TAAirConstructor = Class(TAair) {
     CreateReclaimEffects = function( self, target )
         self.ReclaimEffectsBag:Add(TAutils.TAAirReclaimEffects(self, target, self.BuildEffectBones or {0, }, self.ReclaimEffectsBag))
     end,
-
-    CreateReclaimEndEffects = function( self, target )
-        EffectUtil.PlayReclaimEndEffects( self, target )
-    end,         
+     
 }

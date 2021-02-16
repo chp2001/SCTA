@@ -9,7 +9,7 @@ UnitBlueprint {
     },
 Economy = {
     BuildCostEnergy = 750,
-    BuildCostMass = 116,
+    BuildCostMass = 130,
     BuildTime = 2200,
 },
 Footprint = {
@@ -29,7 +29,6 @@ Physics = {
     MaxBrake = 2.4,
     MaxSpeed = 3,
     TurnRate = 150,
-    StandUpright = true,
     MaxSteerForce = 10,
     },
     Weapon = {

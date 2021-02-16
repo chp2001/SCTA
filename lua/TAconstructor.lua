@@ -123,7 +123,7 @@ TAconstructor = Class(TAWalking) {
     end,
 
     CreateReclaimEffects = function( self, target )
-        TAutils.TAReclaimEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.ReclaimEffectsBag )
+        self.ReclaimEffectsBag:Add(TAutils.TAReclaimEffects(self, target, self.BuildEffectBones or {0, }, self.ReclaimEffectsBag))
     end,
     
     CreateReclaimEndEffects = function( self, target )

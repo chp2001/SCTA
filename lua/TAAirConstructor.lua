@@ -132,7 +132,7 @@ TAAirConstructor = Class(TAair) {
     end,
 
     CreateReclaimEffects = function( self, target )
-		TAutils.TAAirReclaimEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.ReclaimEffectsBag )
+        self.ReclaimEffectsBag:Add(TAutils.TAAirReclaimEffects(self, target, self.BuildEffectBones or {0, }, self.ReclaimEffectsBag))
     end,
 
     CreateReclaimEndEffects = function( self, target )

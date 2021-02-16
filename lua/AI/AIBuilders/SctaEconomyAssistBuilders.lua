@@ -16,7 +16,9 @@ BuilderGroup {
         Priority = 120,
         InstanceCount = 12,
         BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'LEVEL4' }},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.6, 0.5 } },
+            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, 'LEVEL4' }},
+            { IBC, 'BrainNotLowPowerMode', {} },
         },
         BuilderData = {
             Assist = {
@@ -39,6 +41,8 @@ BuilderGroup {
         InstanceCount = 12,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'GANTRY' }},
+            { EBC, 'LessThanEconEfficiencyOverTime', { 2.0, 1.5 }},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 0.5 } },
         },
         BuilderData = {
             Assist = {
@@ -61,6 +65,8 @@ BuilderGroup {
         InstanceCount = 4,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'LAB' }},
+            { EBC, 'LessThanEconEfficiencyOverTime', { 2.0, 1.5 }},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 0.5 } },
         },
         BuilderData = {
             Assist = {
@@ -189,8 +195,8 @@ BuilderGroup {
         Priority = 150,
         InstanceCount = 3,
         BuilderConditions = {
-            { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 9, categories.LAB * categories.LAND}},
+            { EBC, 'LessThanEconStorageRatio', { 0.1, 1.1}},
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 12, categories.LAB * categories.LAND}},
             },
         BuilderData = {
             Location = 'LocationType',

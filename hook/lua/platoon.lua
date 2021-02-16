@@ -296,6 +296,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local factionIndex = aiBrain:GetFactionIndex()
         local UnitBeingUpgradeFactionIndex = nil
         local upgradeIssued = false
+        if not EntityCategoryContains(categories.GANTRY, self) then
         self:Stop()
         --LOG('* UnitUpgradeAI: PlatoonName:'..repr(self.BuilderName))
         for k, v in platoonUnits do
@@ -366,5 +367,6 @@ Platoon = Class(SCTAAIPlatoon) {
         end
         WaitTicks(1)
         self:PlatoonDisband()
+    end
     end,
 }

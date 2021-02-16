@@ -52,7 +52,7 @@ TATidal = Class(TAStructure)
         -- Calculate energy values
         ------------------------------------------------------------------------
         if not TidalEnergyMin and not TidalEnergyRange then
-            LOG("Defining tidal generator energy output value range.")
+            --LOG("Defining tidal generator energy output value range.")
             --------------------------------------------------------------------
             -- Check check values to make sure another mod didn't change them
             --------------------------------------------------------------------
@@ -77,7 +77,7 @@ TATidal = Class(TAStructure)
             --------------------------------------------------------------------
             TidalEnergyMin = min + (range * math.min(wR1,wR2))
             TidalEnergyRange = min + (range * math.max(wR1,wR2)) - TidalEnergyMin
-            LOG("Map tidal strength defined as: " .. TidalEnergyMin .. "–" .. TidalEnergyMin + TidalEnergyRange)
+            --LOG("Map tidal strength defined as: " .. TidalEnergyMin .. "–" .. TidalEnergyMin + TidalEnergyRange)
         end
         ------------------------------------------------------------------------
         -- Run the thread
@@ -109,7 +109,7 @@ TAWin = Class(TAStructure)
     TAStructure.OnStopBeingBuilt(self,builder,layer)
     self:SetProductionPerSecondEnergy(0)
     if not WindEnergyMin and not WindEnergyRange then
-        LOG("Defining wind turbine energy output value range.")
+        --LOG("Defining wind turbine energy output value range.")
         local bp = self:GetBlueprint().Economy
         local mean = bp.ProductionPerSecondEnergy or 17.5
         local min = bp.ProductionPerSecondEnergyMin or 5

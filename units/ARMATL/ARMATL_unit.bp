@@ -28,7 +28,6 @@ UnitBlueprint {
 	    'STRUCTURE',
 	    'ANTINAVY',
 	    'NAVAL',
-	    'NOSMOKE',
         'SONAR',
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',

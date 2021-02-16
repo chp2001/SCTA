@@ -65,7 +65,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'torso',
+	---SmokeBone = 'torso',
         UniformScale = 0.12,
     },
     Economy = {

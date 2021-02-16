@@ -64,7 +64,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'torso',
+	---SmokeBone = 'torso',
 	        TransportAnimation = {
             {
                 Animation = '/mods/SCTA-master/units/CORSTORM/CORSTORM_lod0_Afold.sca',

@@ -10,26 +10,23 @@ local util = import('/lua/utilities.lua')
 TAunit = Class(Unit) 
 {
 
-    LOGDBG = function(self, msg)
+    --LOGDBG = function(self, msg)
         --LOG(self._UnitName .. "(" .. self.Sync.id .. "):" .. msg)
-    end,
+   ---end,
 
 	OnCreate = function(self)
 		local bp = self:GetBlueprint()
         self._UnitName = bp.General.UnitName
-        self:LOGDBG('TAUnit.OnCreate')
+        ---self:LOGDBG('TAUnit.OnCreate')
         Unit.OnCreate(self)
 		self:SetFireState(FireState.GROUND_FIRE)
 		self:HideFlares()
 		self.CurrentSpeed = 'Stopped'
 		self.FxMovement = TrashBag()
-		if not EntityCategoryContains(categories.NOSMOKE, self) then
-			ForkThread(self.Smoke, self)
-        end
         end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-        self:LOGDBG('TAUnit.OnStopBeingBuilt')
+        ---self:LOGDBG('TAUnit.OnStopBeingBuilt')
 		Unit.OnStopBeingBuilt(self,builder,layer)
 		self:SetDeathWeaponEnabled(true)
 		self:SetConsumptionActive(true)	
@@ -48,7 +45,7 @@ TAunit = Class(Unit)
 	end,
 
 	MovementEffects = function(self, EffectsBag, TypeSuffix)
-		self:LOGDBG('TAUnit.MovementEffects')
+		---self:LOGDBG('TAUnit.MovementEffects')
 		---Unit.MovementEffects(self, EffectsBag, TypeSuffix)
 		local bp = self:GetBlueprint()
 		if not IsDestroyed(self) and bp.Display.MovementEffects.TAMovement then
@@ -59,7 +56,7 @@ TAunit = Class(Unit)
 	end,
 
 	IdleEffects = function(self)
-        self:LOGDBG('TAUnit.IdleEffects')
+        ---self:LOGDBG('TAUnit.IdleEffects')
 		local bp = self:GetBlueprint()
 		if not IsDestroyed(self) and not self:IsMoving() and bp.Display.IdleEffects then
 			for k, v in bp.Display.IdleEffects.Bones do
@@ -72,27 +69,9 @@ TAunit = Class(Unit)
 		Unit.OnDamage(self, instigator, amount * (self.Pack or 1), vector, damageType)
 	end,
 	
-	Smoke = function(self)
-        self:LOGDBG('TAUnit.Smoke')
-		local bone = self:GetBlueprint().Display.SmokeBone or -1
-		while not IsDestroyed(self) do
-			if self:GetFractionComplete() == 1 then
-				if self:GetHealth()/self:GetMaxHealth() < 0.25 then
-					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA-master/effects/emitters/damage_bad_smoke_emit.bp' )
-					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA-master/effects/emitters/damage_bad_smoke_emit.bp' )
-				elseif self:GetHealth()/self:GetMaxHealth() < 0.5 then
-					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA-master/effects/emitters/damage_smoke_emit.bp' )
-					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA-master/effects/emitters/damage_bad_smoke_emit.bp' )
-				elseif self:GetHealth()/self:GetMaxHealth() < 0.75 then
-					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA-master/effects/emitters/damage_smoke_emit.bp' )
-				end
-			end
-			WaitSeconds(0.5)
-		end
-	end,
 
 	ShowMuzzleFlare = function(self, duration)
-        self:LOGDBG('TAUnit.ShowMuzzleFlare')
+        ---self:LOGDBG('TAUnit.ShowMuzzleFlare')
 		local bp = self:GetBlueprint()
 		#Show flare bone for pre-determined time
 		self.unit:ShowBone(bp.RackBones[self.CurrentRackSalvoNumber - 1].MuzzleBones[1], true)
@@ -162,7 +141,7 @@ TAunit = Class(Unit)
 	end,
 
     HideFlares = function(self, bp)
-        self:LOGDBG('TAUnit.HideFlares')
+        ---self:LOGDBG('TAUnit.HideFlares')
         if not bp then bp = self:GetBlueprint().Weapon end
         if bp then
             for i, weapon in bp do

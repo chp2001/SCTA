@@ -68,7 +68,7 @@ UnitBlueprint {
                 },
             },
         },
-        SmokeBone = 'ARMVADER',
+        ---SmokeBone = 'ARMVADER',
         UniformScale = 0.16,
     },
     Economy = {

@@ -12,7 +12,6 @@ UnitBlueprint {
     'ANTINAVY',
     'SNIPEMODE',
 	'NAVAL',
-	'NOSMOKE',
 	'SORTDEFENSE',
     'SONAR',
         'OVERLAYANTINAVY',

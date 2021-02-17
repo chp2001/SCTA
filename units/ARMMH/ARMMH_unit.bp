@@ -185,16 +185,13 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RateOfFire = 0.1111111111,
             TargetCheckInterval = 1,
-            EnergyDrainPerSecond = 5,
-            EnergyRequired = 5,
-            EnergyChargeForFirstShot = true,
             TargetPriorities = {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
             WeaponCategory = 'Indirect Fire',
-	    WeaponUnpacks = true,
+	        WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
         },
         { #BIG_UNITEX

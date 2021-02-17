@@ -222,8 +222,6 @@ TechLevel = 'RULEUTL_Advanced',
             RackSlavedToTurret = false,
             RateOfFire = 3.33,
             TargetCheckInterval = 1,
-            EnergyDrainPerSecond = 100,
-            EnergyRequired = 25,
             TargetPriorities = {
                 'ALLUNITS',
             },

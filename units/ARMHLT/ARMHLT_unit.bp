@@ -147,7 +147,7 @@ UnitBlueprint {
             EnergyDrainPerSecond = 50,
             EnergyRequired = 100,
             EnergyChargeForFirstShot = true,
-            ProjectileLifetime = 1,
+            ProjectileLifetime = 50,
             RackBones = {
                 {
                     MuzzleBones = {

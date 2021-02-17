@@ -168,8 +168,6 @@ TechLevel = 'RULEUTL_Advanced',
     MuzzleSalvoDelay = 0,
     MuzzleSalvoSize = 1,
     MuzzleVelocity = 3,
-    EnergyDrainPerSecond = 5,
-    EnergyRequired = 25,    
     ProjectileId = '/mods/SCTA-master/projectiles/CORTRUCK_ROCKET/CORTRUCK_ROCKET_proj.bp',
     RackBones = {
     {

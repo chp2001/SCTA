@@ -16,4 +16,14 @@ UnitBlueprint {
     SizeX = 1.4,
     SizeY = 1.6,
     SizeZ = 1.4,
+    Weapon = {
+        [1] = {
+            Damage = 200,
+            RateOfFire = 0.5,
+            EnergyChargeForFirstShot = true,
+            EnergyDrainPerSecond = 5,
+            EnergyRequired = 10,
+        },
+        [2] = {}, 
+    },
 }

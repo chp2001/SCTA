@@ -197,8 +197,6 @@ TechLevel = 'RULEUTL_Basic',
             TurretYawRange = 360,
             TurretYawSpeed = 90,
             Turreted = true,
-            EnergyDrainPerSecond = 5,
-            EnergyRequired = 5,
         },
         { #BIG_UNITEX
             Damage = 50,

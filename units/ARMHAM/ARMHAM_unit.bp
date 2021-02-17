@@ -197,9 +197,6 @@ UnitBlueprint {
             Turreted = true,
 	        WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
-            EnergyChargeForFirstShot = true,
-            EnergyDrainPerSecond = 5,
-            EnergyRequired = 10,
         },
         { #BIG_UNITEX
             Damage = 50,

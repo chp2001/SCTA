@@ -140,7 +140,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Air',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-     WeaponCategory = 'DirectFire',
+        WeaponCategory = 'DirectFire',
             FiringTolerance = 2.75,
             Label = 'ARM_LIGHTLASER',
             MaxRadius = 25,

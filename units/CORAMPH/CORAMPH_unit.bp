@@ -218,8 +218,6 @@ TechLevel = 'RULEUTL_Advanced',
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 20,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_THUD/CORE_THUD_proj.bp',
-            EnergyDrainPerSecond = 50,
-            EnergyRequired = 100,
             RackBones = {
                 {
                     MuzzleBones = {
@@ -252,7 +250,6 @@ TechLevel = 'RULEUTL_Advanced',
             TurretYawSpeed = 300,
             Turreted = true,
         },
-
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,

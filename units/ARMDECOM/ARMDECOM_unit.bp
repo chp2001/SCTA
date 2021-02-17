@@ -117,8 +117,8 @@ UnitBlueprint {
             PitchBone = 'Elbow_L',
             YawBone = 'Torso',
         },
-        Category = 'Construction',
-        Classification = 'RULEUC_MilitaryVehicle',
+        Category = 'Command',
+        Classification = 'RULEUC_Commander',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,

@@ -58,16 +58,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'ArmShip','ArmCockpit'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'turret'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

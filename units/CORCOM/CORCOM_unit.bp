@@ -87,7 +87,6 @@ UnitBlueprint {
         'OMNI', 
         'OVERLAYSONAR',
         'CORE',
-        'COMMANDER',
         'LEVEL10',
         'SNIPEMODE',
     },

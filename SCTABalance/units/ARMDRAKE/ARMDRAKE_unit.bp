@@ -48,8 +48,6 @@ UnitBlueprint {
         'KBOT',
         'LEVEL4',  
         'SNIPEMODE',
-        --'NEEDMOBILEBUILD',
-        --'BUILTBYT1HOVER',
     },
     Defense = {
         AirThreatLevel = 0,

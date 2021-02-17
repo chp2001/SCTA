@@ -40,6 +40,8 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
+        'OCEAN',
+	    'LEVEL1',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -53,8 +55,6 @@ UnitBlueprint {
         'DEFENSIVEBOAT',
 	    'NAVAL',
         'ARM',
-        'OCEAN',
-	    'LEVEL1',
     },
     CollisionOffsetY = -0.25,
     Defense = {

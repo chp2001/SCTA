@@ -33,12 +33,12 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
+        'LEVEL1',
 	    'STRUCTURE',
         'ECONOMIC',
         'SORTECONOMY',
 	    'ENERGYPRODUCTION',
 	    'ARM',
-	    'LEVEL1',
         'SOLAR',
     },
     Defense = {

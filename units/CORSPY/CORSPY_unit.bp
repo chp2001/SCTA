@@ -29,6 +29,8 @@ UnitBlueprint {
     BuildIconSortPriority = 7,
     Categories = {
         'SELECTABLE',
+        'KBOT',
+        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -38,8 +40,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'CORE',
         'TACLOAK',
-        'KBOT',
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',

@@ -26,6 +26,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
+        'LEVEL3',
         'STRUCTURE',
         'TACLOAK',
         'ECONOMIC',
@@ -33,7 +34,6 @@ UnitBlueprint {
 	    'ENERGYPRODUCTION',
         'CORE',
         'FUSION',
-	    'LEVEL3',
     },
     Defense = {
         ArmorType = 'Structure',

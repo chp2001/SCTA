@@ -26,6 +26,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
+        'LEVEL1',
 	    'STRUCTURE',
         'DEFENSE',
 	    'ANTINAVY',
@@ -34,7 +35,6 @@ UnitBlueprint {
         'SORTDEFENSE',
 	    'CORE',
         'SNIPEMODE',
-	    'LEVEL1',
     },
     CollisionOffsetY = -1,
     Defense = {

@@ -15,6 +15,9 @@ UnitBlueprint {
         'SELECTABLE',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'VEHICLE',
+        'JAM',
+        'LEVEL2', 
         'TECH2',
         'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
@@ -22,9 +25,6 @@ UnitBlueprint {
         'MOBILE',
         'LAND',
         'ARM',
-        'VEHICLE',
-        'JAM',
-        'LEVEL2', -- There's no real reason to keep this distinct from TECH2
     },
     Defense = {
         ArmorType = 'Normal',

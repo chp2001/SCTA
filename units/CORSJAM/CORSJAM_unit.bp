@@ -39,6 +39,9 @@ UnitBlueprint {
     BuildIconSortPriority = 8,
     Categories = {
         'SELECTABLE',
+        'OCEAN',
+	    'JAM',
+	    'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -49,9 +52,6 @@ UnitBlueprint {
         'OVERLAYCOUNTERINTEL',
         'DEFENSIVEBOAT',
         'CORE',
-        'OCEAN',
-	    'JAM',
-	    'LEVEL2',
     },
     CollisionOffsetY = -0.25,
     Defense = {

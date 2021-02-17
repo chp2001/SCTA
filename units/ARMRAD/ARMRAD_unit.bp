@@ -38,6 +38,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
+        'LEVEL1',
 	    'STRUCTURE',
 	    'INTELLIGENCE',
         'RADAR',
@@ -45,7 +46,6 @@ UnitBlueprint {
         'OVERLAYRADAR',
 	    'ARM',
 	    'SORTINTEL',
-        'LEVEL1',
     },
     Defense = {
         ArmorType = 'Structure',

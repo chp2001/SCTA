@@ -68,6 +68,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'HIGHALTAIR',
@@ -80,7 +81,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
 	'OVERLAYANTIAIR',
         'CORE',
-    'LEVEL2',
     'SNIPEMODE',
     },
     Defense = {

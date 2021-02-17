@@ -30,6 +30,8 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
+        'KBOT',
+        'LEVEL1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -38,8 +40,6 @@ UnitBlueprint {
 	    'ARMWAR',
         'OVERLAYDIRECTFIRE',
         'ARM',
-        'KBOT',
-        'LEVEL1',
         'TANK',
     },
     Defense = {

@@ -55,6 +55,8 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'KBOT',
+        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'PATROLHELPER',
@@ -63,8 +65,6 @@ UnitBlueprint {
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
-	'KBOT',
-	'LEVEL2',
         'OVERLAYDIRECTFIRE',
         'CORE',
         'SUBCOMMANDER',

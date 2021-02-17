@@ -44,6 +44,8 @@ UnitBlueprint {
     BuildIconSortPriority = 0,
     Categories = {
         'SELECTABLE',
+        'KBOT',
+        'LEVEL2',
         'TECH2',
         'ENGINEER',
         'REPAIR',
@@ -57,8 +59,6 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'LAND',
         'CORE',
-        'KBOT',
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',

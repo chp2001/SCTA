@@ -40,6 +40,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
+        'LEVEL1',
 	    'STRUCTURE',
         'MASSPRODUCTION',
         'MASSEXTRACTION',
@@ -47,7 +48,6 @@ UnitBlueprint {
         'SORTECONOMY',
     'CORE',        
     'SHOWQUEUE',
-	'LEVEL1',
     },
     Defense = {
         ArmorType = 'Structure',

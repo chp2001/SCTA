@@ -29,6 +29,8 @@ UnitBlueprint {
     BuildIconSortPriority = 5,
     Categories = {
         'SELECTABLE',
+        'VEHICLE',
+        'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -37,8 +39,6 @@ UnitBlueprint {
 	    'ANTIAIR',
         'OVERLAYANTIAIR',
         'ARM',
-        'VEHICLE',
-        'LEVEL1',
         'ROCKET',
     },
     Defense = {

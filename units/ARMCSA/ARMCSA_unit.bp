@@ -71,6 +71,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
+        'LEVEL3',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -84,7 +85,6 @@ UnitBlueprint {
         'VTOL',
 	    'SELECTION', 
         'ARM',
-        'LEVEL3',
     },
     Defense = {
         ArmorType = 'Light',

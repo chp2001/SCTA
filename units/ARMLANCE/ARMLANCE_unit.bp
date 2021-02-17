@@ -65,6 +65,9 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'LEVEL2',
+        'OVERLAYSONAR',
+        'SEAPLA',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -75,9 +78,6 @@ UnitBlueprint {
         'HIGHALTAIR',
         'OVERLAYANTINAVY',
         'ARM',
-        'LEVEL2',
-        'OVERLAYSONAR',
-        'SEAPLA',
     },
     Defense = {
         ArmorType = 'Light',

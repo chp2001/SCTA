@@ -30,6 +30,8 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
+        'OCEAN',
+	    'LEVEL1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -40,8 +42,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',
         'ARM',
-        'OCEAN',
-	    'LEVEL1',
     },
     CollisionOffsetY = -0.25,
     Defense = {

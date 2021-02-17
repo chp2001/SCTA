@@ -39,6 +39,8 @@ UnitBlueprint {
     BuildIconSortPriority = 0,
     Categories = {
         'SELECTABLE',
+        'VEHICLE',	
+        'LEVEL2',
         'TECH2',
         'ENGINEER',
         'REPAIR',
@@ -52,8 +54,6 @@ UnitBlueprint {
 	'LAND',
 	'SELECTION',
         'CORE',
-        'VEHICLE',	
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',

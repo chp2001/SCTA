@@ -33,6 +33,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'EXPERIMENTAL',
+        'LEVEL3',
 	    'STRUCTURE',
 	    'STRATEGIC',
 	    'INDIRECTFIRE',
@@ -40,7 +41,6 @@ UnitBlueprint {
         'SILO',	
 	    'ARM',
 	    'SORTSTRATEGIC',
-	    'LEVEL3',
         'SHOWATTACKRETICLE',
     },
     Defense = {

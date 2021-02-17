@@ -29,6 +29,8 @@ UnitBlueprint {
     BuildIconSortPriority = 2,
     Categories = {
         'SELECTABLE',
+        'VEHICLE',
+	    'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -40,8 +42,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'OVERLAYRADAR',
         'ARM',
-        'VEHICLE',
-	    'LEVEL1',
     },
     Defense = {
         ArmorType = 'Normal',

@@ -25,6 +25,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'LEVEL1',
         'TECH1',
 	    'STRUCTURE',
         'ECONOMIC',
@@ -33,7 +34,6 @@ UnitBlueprint {
 	    'NAVAL',
 	    'CORE',
 	    'TIDAL',
-	    'LEVEL1',
     },
     CollisionOffsetY = -0.5,
     Defense = {

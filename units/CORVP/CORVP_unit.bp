@@ -38,6 +38,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'LEVEL1',
         'TECH1',
 	'FACTORY',
         'RALLYPOINT',
@@ -47,7 +48,6 @@ UnitBlueprint {
 	'CORE',
 		'PLANT',
 	'SORTCONSTRUCTION',
-    'LEVEL1',
     'LAND', 
     },
     Defense = {

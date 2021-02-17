@@ -83,7 +83,7 @@ BuilderGroup {
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.STRUCTURE * categories.MASSEXTRACTION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.MASSEXTRACTION} },
         },
         BuilderType = 'Any',
         BuilderData = {

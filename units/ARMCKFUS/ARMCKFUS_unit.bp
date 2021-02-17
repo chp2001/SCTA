@@ -25,6 +25,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'LEVEL3',
         'TECH3',
         'STRUCTURE',
         'TACLOAK',
@@ -33,7 +34,6 @@ UnitBlueprint {
 	    'ENERGYPRODUCTION',
 	    'ARM',
 	    'FUSION',
-	    'LEVEL3',
     },
     Defense = {
         ArmorType = 'Structure',

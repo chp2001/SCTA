@@ -29,17 +29,17 @@ UnitBlueprint {
     BuildIconSortPriority = 4,
     Categories = {
         'SELECTABLE',
+        'VEHICLE',	
+        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'AMPHIBIOUS',
-	'DIRECTFIRE',
+	    'LAND',
+        'AMPHIBIOUS',
+	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'VEHICLE',
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -90,8 +90,8 @@ UnitBlueprint {
         UniformScale = 0.16,
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 2,
+        SizeX = 2,
+        SizeZ = 1,
     },
     Economy = {
         BuildCostEnergy = 2310,

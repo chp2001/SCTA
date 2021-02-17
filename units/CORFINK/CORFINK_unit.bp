@@ -62,6 +62,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
+        'LEVEL1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'RADAR',
@@ -75,7 +76,6 @@ UnitBlueprint {
         'CORE',
         'HIGHALTAIR',
         'INTELLIGENCE',
-	    'LEVEL1',
     },
     Defense = {
         ArmorType = 'Light',

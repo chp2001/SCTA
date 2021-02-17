@@ -40,6 +40,7 @@ UnitBlueprint {
         'ARM',
         'HOVER',
         'ROCKET',
+        'SILO',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -85,8 +86,8 @@ UnitBlueprint {
         BuildTime = 17933,
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 2,
+        SizeX = 2,
+        SizeZ = 1,
     },
     General = {
         Category = 'Indirect Fire',
@@ -185,16 +186,13 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RateOfFire = 0.1111111111,
             TargetCheckInterval = 1,
-            EnergyDrainPerSecond = 5,
-            EnergyRequired = 5,
-            EnergyChargeForFirstShot = true,
             TargetPriorities = {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
             WeaponCategory = 'Indirect Fire',
-	    WeaponUnpacks = true,
+	        WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
         },
         { #BIG_UNITEX

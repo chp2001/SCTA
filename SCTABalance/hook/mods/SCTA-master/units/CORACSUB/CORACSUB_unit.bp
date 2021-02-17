@@ -19,7 +19,6 @@ UnitBlueprint {
 	    'CONSTRUCTION',
         'NAVAL',
         'SUBMERSIBLE',
-        ---'OCEAN',
     },
     Defense = {
         Health = 940,

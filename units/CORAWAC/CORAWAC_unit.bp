@@ -62,6 +62,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -72,7 +73,6 @@ UnitBlueprint {
 	'RADAR',
         'OVERLAYRADAR',
         'CORE',
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Light',
@@ -103,7 +103,6 @@ UnitBlueprint {
         BuildCostEnergy = 8062,
         BuildCostMass = 165,
         BuildTime = 12819,
-        MaintenanceConsumptionPerSecondEnergy = 23,
     },
     Footprint = {
         MaxSlope = 0.25,
@@ -121,18 +120,14 @@ UnitBlueprint {
             RULEUCC_Patrol = true,
             RULEUCC_Stop = true,
         },
-        ToggleCaps = {
-            RULEUTC_IntelToggle = true,
-        },
         FactionName = 'CORE',
         Icon = 'land',
 TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Vulture',
     },
     Intel = {
-    VisionRadius = 22,
+    VisionRadius = 16,
     WaterVisionRadius = 4, 
-	FreeIntel = false,
 	RadarRadius = 103, 
     },
     Interface = {

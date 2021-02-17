@@ -1,27 +1,16 @@
 UnitBlueprint {
    Merge = true,
-   Categories = {
-    'SELECTABLE',
-    'TECH1',
-    'VISIBLETORECON',
-    'RECLAIMABLE',
-    'MOBILE',
-    'LAND',
-    'DIRECTFIRE',
-    'OVERLAYDIRECTFIRE',
-    'RADAR',
-    'OVERLAYRADAR',
-    'ARM',
-    'KBOT',
-    'SCOUT',
-    'LEVEL1',
-    },
     Display = {
         Abilities = {
             '<LOC ability_radar>Radar',
         },
         UniformScale = 0.12,
        },
+    Economy = {
+        BuildCostEnergy = 700,
+        BuildCostMass = 14,
+        BuildTime = 550,
+    },
     Intel = {
     VisionRadius = 14,
     RadarRadius = 40,

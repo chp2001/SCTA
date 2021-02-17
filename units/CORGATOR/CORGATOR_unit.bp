@@ -30,6 +30,8 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
+        'VEHICLE',
+        'LEVEL1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -37,8 +39,6 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'VEHICLE',
-	'LEVEL1',
     'RAIDER',
     },
     Defense = {

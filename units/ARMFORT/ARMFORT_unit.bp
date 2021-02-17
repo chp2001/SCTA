@@ -36,12 +36,6 @@ UnitBlueprint {
         Abilities = {
             'Wall',
         },
-		--[[DestructionEffects = {
-		DefaultFlamingProjectileCountMin = 0,
-		DefaultFlamingProjectileCountMax = 0,
-		FlashSize = 0,
-		FlashTime = 0,
-		},]]--
         Mesh = {
 	    IconFadeInZoom = 130,
             LODs = {

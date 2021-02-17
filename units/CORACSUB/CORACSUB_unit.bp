@@ -39,6 +39,10 @@ UnitBlueprint {
     BuildIconSortPriority = 0,
     Categories = {
         'SELECTABLE',
+        'OCEAN',
+        'T2SUBMARINE',
+        'OVERLAYSONAR',
+	    'LEVEL2',
         'TECH2',
         'ENGINEER',
         'REPAIR',
@@ -52,10 +56,6 @@ UnitBlueprint {
 	    'CONSTRUCTION',
 	    'NAVAL',
         'CORE',
-        'OCEAN',
-        'T2SUBMARINE',
-        'OVERLAYSONAR',
-	    'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',

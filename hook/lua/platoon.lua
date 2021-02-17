@@ -296,7 +296,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local factionIndex = aiBrain:GetFactionIndex()
         local UnitBeingUpgradeFactionIndex = nil
         local upgradeIssued = false
-        if not EntityCategoryContains(categories.GANTRY, self) or EntityCategoryContains(categories.LAB, self) or EntityCategoryContains(categories.PLATFORM, self) then
+        if not EntityCategoryContains(categories.GANTRY + categories.LAB + categories.PLATFORM, self) then
         self:Stop()
         --LOG('* UnitUpgradeAI: PlatoonName:'..repr(self.BuilderName))
         for k, v in platoonUnits do

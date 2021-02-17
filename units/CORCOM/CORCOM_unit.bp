@@ -87,7 +87,6 @@ UnitBlueprint {
         'OMNI', 
         'OVERLAYSONAR',
         'CORE',
-        'COMMANDER',
         'LEVEL10',
         'SNIPEMODE',
     },
@@ -139,8 +138,8 @@ UnitBlueprint {
         StorageMass = 1000,
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 2,
+        SizeX = 2,
+        SizeZ = 1,
     },
     General = {
         BuildBones = {

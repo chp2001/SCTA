@@ -39,6 +39,8 @@ UnitBlueprint {
         'SELECTABLE',
         'TECH4',
         'EXPERIMENTAL',
+        'KBOT',
+        'LEVEL4',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -48,8 +50,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',        
         'CORE',
-        'KBOT',
-        'LEVEL4',
         'SNIPEMODE',
     },
     Defense = {

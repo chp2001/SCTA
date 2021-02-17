@@ -29,6 +29,8 @@ UnitBlueprint {
     BuildIconSortPriority = 6,
     Categories = {
         'SELECTABLE',
+        'VEHICLE',
+	    'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -38,8 +40,6 @@ UnitBlueprint {
 	    'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
         'CORE',
-        'VEHICLE',
-	    'LEVEL1',
         'SNIPEMODE',
     },
     Defense = {
@@ -132,7 +132,7 @@ TechLevel = 'RULEUTL_Advanced',
             CollideFriendly = false,
 	    DamageFriendly = false,
             Damage = 180,
-	    DamageRadius = 2.625,
+	    DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'CORLEVLR_WEAPON',
             FireTargetLayerCapsTable = {
@@ -184,9 +184,6 @@ TechLevel = 'RULEUTL_Advanced',
             TurretYawRange = 360,
             TurretYawSpeed = 20,
             Turreted = true,
-            EnergyDrainPerSecond = 5,
-            EnergyRequired = 10,
-            
         },
         { #MEDIUM_UNITEX #Does not exist, values guessed
             Damage = 40,

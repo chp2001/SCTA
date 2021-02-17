@@ -141,8 +141,6 @@ UnitBlueprint {
         FlattenSkirt = true,
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
-	------BuildAreaX = 8,
-    ------BuildAreaZ = 8,
     RollOffPoints = {
         {
             UnitSpin = 0,

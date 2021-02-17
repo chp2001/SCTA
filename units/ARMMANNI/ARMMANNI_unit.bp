@@ -140,9 +140,8 @@ TechLevel = 'RULEUTL_Advanced',
             DamageType = 'Normal',
             DisplayName = 'ARMMANNI_WEAPON',
             EnergyChargeForFirstShot = true,
-            EnergyDrainPerSecond = 100,
-            EnergyRequired = 500,
-            
+            EnergyDrainPerSecond = 500,
+            EnergyRequired = 2000,
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Seabed = 'Land|Water|Seabed',

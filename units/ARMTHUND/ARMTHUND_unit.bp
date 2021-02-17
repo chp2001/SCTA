@@ -67,6 +67,7 @@ UnitBlueprint {
     BuildIconSortPriority = 4,
     Categories = {
         'SELECTABLE',
+        'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -79,7 +80,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'ARM',
         'HIGHALTAIR',
-        'LEVEL1',
     },
     Defense = {
         ArmorType = 'Light',

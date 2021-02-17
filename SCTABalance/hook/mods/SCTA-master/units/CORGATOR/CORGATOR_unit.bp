@@ -8,7 +8,8 @@ UnitBlueprint {
         UniformScale = 0.1,
     },
     Economy = {
-        BuildCostMass = 84,
+        BuildCostEnergy = 450,
+        BuildCostMass = 42,
     },    
     LifeBarSize = 1,
     SelectionCenterOffsetZ = -0.05,

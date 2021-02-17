@@ -29,6 +29,8 @@ UnitBlueprint {
     BuildIconSortPriority = 9,
     Categories = {
         'SELECTABLE',
+        'KBOT',
+        'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -38,8 +40,6 @@ UnitBlueprint {
     'ARTILLERY',
         'OVERLAYINDIRECTFIRE',
         'CORE',
-        'KBOT',
-	'LEVEL1',
     'SNIPEMODE',
     },
     Defense = {
@@ -76,8 +76,8 @@ UnitBlueprint {
         BuildTime = 2171,
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 2,
+        SizeX = 2,
+        SizeZ = 1,
     },
     General = {
         Category = 'Indirect Fire',
@@ -192,11 +192,7 @@ TechLevel = 'RULEUTL_Basic',
             TurretYaw = 0,
             TurretYawRange = 360,
             TurretYawSpeed = 90,
-            Turreted = true,
-            EnergyChargeForFirstShot = true,
-            EnergyDrainPerSecond = 5,
-            EnergyRequired = 10,
-            
+            Turreted = true, 
         },
         { #BIG_UNITEX
             Damage = 50,

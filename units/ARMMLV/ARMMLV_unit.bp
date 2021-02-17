@@ -39,6 +39,8 @@ UnitBlueprint {
     BuildIconSortPriority = 6,
     Categories = {
         'SELECTABLE',
+        'VEHICLE',
+        'LEVEL1',
         'TECH1',
         'ENGINEER',
         'VISIBLETORECON',
@@ -50,8 +52,6 @@ UnitBlueprint {
         'LAND',
         'FIELDENGINEER',
         'ARM',
-        'VEHICLE',
-        'LEVEL1',
     },
     Defense = {
         ArmorType = 'Normal',

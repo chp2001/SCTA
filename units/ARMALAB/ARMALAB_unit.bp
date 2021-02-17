@@ -33,6 +33,8 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'LAB',
+        'LEVEL2',
         'TECH2',
 	    'FACTORY',
         'RALLYPOINT',
@@ -41,9 +43,7 @@ UnitBlueprint {
 	    'CONSTRUCTION',
         'ARM',
         'LAND', 
-        'LAB',
 	    'SORTCONSTRUCTION',
-	    'LEVEL2',
     },
     Defense = {
         ArmorType = 'Structure',

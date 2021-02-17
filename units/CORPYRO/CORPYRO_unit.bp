@@ -29,6 +29,8 @@ UnitBlueprint {
     BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
+        'KBOT',
+        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -37,8 +39,6 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'KBOT',
-	'LEVEL2',
     'PYRO',
     },
     Defense = {

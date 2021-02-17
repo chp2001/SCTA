@@ -16,7 +16,6 @@ UnitBlueprint {
         'CORE',
         'KBOT',
         'LEVEL4',
-        --'BUILTBYT1HOVER',
         'SNIPEMODE',
     },
     Defense = {

@@ -69,6 +69,8 @@ UnitBlueprint {
     BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
+        'LEVEL1',
+        'SEAPLA',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -79,8 +81,6 @@ UnitBlueprint {
     'VTOL',
         'OVERLAYANTIAIR',
         'CORE',
-    'LEVEL1',
-    'SEAPLA',
     },
     Defense = {
         ArmorType = 'Light',

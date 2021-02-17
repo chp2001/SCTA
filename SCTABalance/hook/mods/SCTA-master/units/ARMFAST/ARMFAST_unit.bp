@@ -8,6 +8,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -15,8 +16,6 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
-        --'KBOT',
-	'LEVEL2',
     },
     Economy = {
         BuildCostEnergy = 250,

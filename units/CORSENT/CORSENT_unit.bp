@@ -30,6 +30,8 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'VEHICLE',
+        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -37,8 +39,6 @@ UnitBlueprint {
 	'ANTIAIR',
         'OVERLAYANTIAIR',
         'CORE',
-        'VEHICLE',
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',

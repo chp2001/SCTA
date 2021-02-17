@@ -32,6 +32,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'LEVEL1',
         'TECH1',
 		'STRUCTURE',
         'ECONOMIC',
@@ -39,7 +40,6 @@ UnitBlueprint {
 	    'ENERGYPRODUCTION',
 	    'CORE',
 	    'SOLAR',
-	    'LEVEL1',
     },
     Defense = {
         DamageModifier = 0.33,

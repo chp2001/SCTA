@@ -38,8 +38,8 @@ UnitBlueprint {
 	'ROCKET',
         'OVERLAYINDIRECTFIRE',
         'ARM',
-        --'KBOT', 
 	'LEVEL2',
+    'SILO',
     },
     Defense = {
         ArmorType = 'Normal',

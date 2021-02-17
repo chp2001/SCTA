@@ -28,6 +28,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
+        'LEVEL2',
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
@@ -35,7 +36,6 @@ UnitBlueprint {
 	'ARM',
 		'LASER',
 	'SORTDEFENSE',
-    'LEVEL2',
     'SNIPEMODE',
     },
     CollisionOffsetY = -0.5,
@@ -147,7 +147,7 @@ UnitBlueprint {
             EnergyDrainPerSecond = 50,
             EnergyRequired = 100,
             EnergyChargeForFirstShot = true,
-            ProjectileLifetime = 1,
+            ProjectileLifetime = 50,
             RackBones = {
                 {
                     MuzzleBones = {

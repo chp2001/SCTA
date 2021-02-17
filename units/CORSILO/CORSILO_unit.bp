@@ -33,6 +33,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'EXPERIMENTAL',
+        'LEVEL3',
 	    'STRUCTURE',
 	    'SORTSTRATEGIC',
 	    'INDIRECTFIRE',
@@ -41,7 +42,6 @@ UnitBlueprint {
         'SHOWQUEUE',
 	    'CORE',
         'STRATEGIC',
-        'LEVEL3',
         'SHOWATTACKRETICLE',
     },
     Defense = {

@@ -87,7 +87,7 @@ UnitBlueprint {
         },
         FactionName = 'ARM',
         Icon = 'land',
-TechLevel = 'RULEUTL_Advanced',
+        TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Luger',
     },
     Intel = {
@@ -185,9 +185,6 @@ TechLevel = 'RULEUTL_Advanced',
             TurretYawRange = 360,
             TurretYawSpeed = 50,
             Turreted = true,            
-            EnergyChargeForFirstShot = true,
-            EnergyDrainPerSecond = 5,
-            EnergyRequired = 20,
         },
         { #BIG_UNITEX
             Damage = 100,

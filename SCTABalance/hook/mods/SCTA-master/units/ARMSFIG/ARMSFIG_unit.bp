@@ -9,8 +9,8 @@ UnitBlueprint {
     BreakOffDistance = 17,
     BreakOffTrigger = 12,
     CombatTurnSpeed = 1.5,
-    MaxAirspeed = 30,
-    MinAirspeed = 15,
+    MaxAirspeed = 24,
+    MinAirspeed = 12,
     StartTurnDistance = 5,
     TightTurnMultiplier = 1.02,
     TurnSpeed = 1.5,
@@ -31,8 +31,8 @@ UnitBlueprint {
     'TRANSPORTATION',
     },
     Defense = {
-        Health = 1500,
-        MaxHealth = 1500,
+        Health = 3000,
+        MaxHealth = 3000,
     },
     Economy = {
         BuildCostEnergy = 36000,

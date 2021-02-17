@@ -29,6 +29,8 @@ UnitBlueprint {
     BuildIconSortPriority = 8,
     Categories = {
         'SELECTABLE',
+        'KBOT',
+	    'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -38,8 +40,6 @@ UnitBlueprint {
         'ARTILLERY',
         'OVERLAYINDIRECTFIRE',
         'ARM',
-        'KBOT',
-	    'LEVEL1',
         'SNIPEMODE',
     },
     Defense = {
@@ -197,9 +197,6 @@ UnitBlueprint {
             Turreted = true,
 	        WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
-            EnergyChargeForFirstShot = true,
-            EnergyDrainPerSecond = 5,
-            EnergyRequired = 10,
         },
         { #BIG_UNITEX
             Damage = 50,

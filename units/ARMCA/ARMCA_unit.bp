@@ -70,6 +70,7 @@ UnitBlueprint {
     BuildIconSortPriority = 1,
     Categories = {
         'SELECTABLE',
+        'LEVEL1',
         'TECH1',
         'ENGINEER',
         'REPAIR',
@@ -84,7 +85,6 @@ UnitBlueprint {
         'VTOL',
         'SELECTION',
         'ARM',
-	    'LEVEL1',
     },
     Defense = {
         ArmorType = 'Light',

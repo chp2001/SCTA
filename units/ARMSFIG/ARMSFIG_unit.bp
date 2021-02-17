@@ -71,6 +71,7 @@ UnitBlueprint {
         'TRANSPORTATION',
         'SELECTABLE',
         'TECH1',
+        'LEVEL3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'HIGHALTAIR',
@@ -80,7 +81,6 @@ UnitBlueprint {
         'VTOL',
         'OVERLAYANTIAIR',
         'ARM',
-	    'LEVEL3',
     },
     Defense = {
         ArmorType = 'Light',

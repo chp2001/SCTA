@@ -39,6 +39,8 @@ UnitBlueprint {
     BuildIconSortPriority = 8,
     Categories = {
         'SELECTABLE',
+        'VEHICLE',
+        'LEVEL1',
         'TECH1',
         'ENGINEER',
         'VISIBLETORECON',
@@ -49,9 +51,7 @@ UnitBlueprint {
 	    'CONSTRUCTION',
 	    'LAND',
         'CORE',
-        'VEHICLE',
 	    'MINELAYER',
-	    'LEVEL1',
 	    'FIELDENGINEER',
     },
     Defense = {

@@ -34,6 +34,7 @@ UnitBlueprint {
 	    'CORE',
         'SORTDEFENSE',
         'SNIPEMODE',
+        'LASER',
     },
     Defense = {
         DamageModifier = 0.28,
@@ -125,8 +126,8 @@ TechLevel = 'RULEUTL_Secret',
             DamageRadius = 2, 
             DamageType = 'Normal',
             DisplayName = 'ARMAMB_GUN',
-            EnergyDrainPerSecond = 25,
-            EnergyRequired = 75,
+            EnergyDrainPerSecond = 50,
+            EnergyRequired = 100,
             EnergyChargeForFirstShot = true,
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',

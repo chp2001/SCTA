@@ -38,6 +38,7 @@ UnitBlueprint {
 	    'INDIRECTFIRE',
 	    'ANTIAIR',
 	    'ROCKET',
+        'SILO',
 	    'CRUISER',
         'OVERLAYINDIRECTFIRE',
 	    'OVERLAYANTIAIR',
@@ -203,8 +204,6 @@ UnitBlueprint {
             WeaponUnpacks = true,
             WeaponUnpackTimeout = 1,
             WeaponRepackTimeout = 2,
-            EnergyDrainPerSecond = 50,
-            EnergyRequired = 150,
         },
         {
             Audio = {

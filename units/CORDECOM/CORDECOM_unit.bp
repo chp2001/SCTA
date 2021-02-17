@@ -55,6 +55,8 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'KBOT',
+        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'PATROLHELPER',
@@ -63,8 +65,6 @@ UnitBlueprint {
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
-	'KBOT',
-	'LEVEL2',
         'OVERLAYDIRECTFIRE',
         'CORE',
         'SUBCOMMANDER',
@@ -112,8 +112,8 @@ UnitBlueprint {
         MaxBuildDistance = 3.75,
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 2,
+        SizeX = 2,
+        SizeZ = 1,
     },
     General = {
         BuildBones = {
@@ -122,8 +122,8 @@ UnitBlueprint {
             PitchBone = 'Nanogun',
             YawBone = 'Torso',
         },
-        Category = 'Construction',
-        Classification = 'RULEUC_MilitaryVehicle',
+        Category = 'Command',
+        Classification = 'RULEUC_Commander',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,

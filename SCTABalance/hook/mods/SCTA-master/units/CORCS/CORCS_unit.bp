@@ -19,7 +19,6 @@ UnitBlueprint {
         'MOBILE',
         'CONSTRUCTION',
         'DEFENSIVEBOAT',
-        --'OCEAN',
     },
     Description = 'Tech Level 2',
     Defense = {

@@ -15,13 +15,17 @@ UnitBlueprint {
     'CORE',
     'VEHICLE',
     'LEVEL1',
-},
+    },
     Display = {
         Abilities = {
             '<LOC ability_radar>Radar',
         },
         UniformScale = 0.09,
-       },
+    },
+    Economy = {
+        BuildCostEnergy = 240,
+        BuildCostMass = 18,
+    },
     Intel = {
     RadarRadius = 40,
     },

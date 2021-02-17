@@ -88,8 +88,8 @@ UnitBlueprint {
         BuildTime = 3388,
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 2,
+        SizeX = 2,
+        SizeZ = 1,
     },
     General = {
         Category = 'Utility',

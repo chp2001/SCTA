@@ -32,7 +32,6 @@ UnitBlueprint {
 	    'ANTIAIR',
         'OVERLAYANTIAIR',
         'ARM',
-        --'KBOT',
         'JAM',
 	    'LEVEL2',
     },
@@ -72,8 +71,8 @@ UnitBlueprint {
         BuildTime = 6075,
     },
     Footprint = {
-	SizeX = 1,
-	SizeZ = 2,
+	SizeX = 2,
+	SizeZ = 1,
     },
     General = {
         Category = 'Utility',

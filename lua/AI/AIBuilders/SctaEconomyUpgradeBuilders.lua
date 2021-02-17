@@ -47,7 +47,7 @@ BuilderGroup {
         Priority = 200,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 900 } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 600, 2000 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 1100, 2000 } },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, categories.MASSEXTRACTION * categories.LEVEL2} },
             { IBC, 'BrainNotLowPowerMode', {} },
         },

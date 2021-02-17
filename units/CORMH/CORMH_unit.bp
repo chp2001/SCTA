@@ -84,8 +84,8 @@ UnitBlueprint {
         BuildTime = 17933,
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 2,
+        SizeX = 2,
+        SizeZ = 1,
     },
     General = {
         Category = 'Indirect Fire',

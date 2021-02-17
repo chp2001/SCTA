@@ -107,8 +107,8 @@ UnitBlueprint {
         MaxBuildDistance = 3.75,
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 2,
+        SizeX = 2,
+        SizeZ = 1,
     },
     General = {
         BuildBones = {

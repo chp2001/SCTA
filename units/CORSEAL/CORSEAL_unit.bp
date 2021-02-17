@@ -90,8 +90,8 @@ UnitBlueprint {
         UniformScale = 0.16,
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 2,
+        SizeX = 2,
+        SizeZ = 1,
     },
     Economy = {
         BuildCostEnergy = 2310,

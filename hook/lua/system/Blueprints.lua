@@ -1,7 +1,7 @@
-local oldExtractBuildMeshBlueprint = ExtractBuildMeshBlueprint
+local TAExtractBuildMeshBlueprint = ExtractBuildMeshBlueprint
 
 function ExtractBuildMeshBlueprint(bp)
-	oldExtractBuildMeshBlueprint(bp)
+	TAExtractBuildMeshBlueprint(bp)
 	local FactionName = bp.General.FactionName
 	if FactionName == 'ARM' or FactionName == 'CORE' then 
 		local meshid = bp.Display.MeshBlueprint

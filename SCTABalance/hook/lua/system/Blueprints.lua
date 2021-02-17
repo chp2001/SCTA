@@ -1,13 +1,13 @@
 do
-    local OldModBlueprints = ModBlueprints
+    local TAModBlueprints = ModBlueprints
 
     function ModBlueprints(all_blueprints)
-        OldModBlueprints(all_blueprints)
-        BlueprintMults(all_blueprints)
-        GiveVet(all_blueprints.Unit)
+        TAModBlueprints(all_blueprints)
+        TABlueprintMults(all_blueprints)
+        TAGiveVet(all_blueprints.Unit)
     end
 
-    function BlueprintMults(all_blueprints)
+    function TABlueprintMults(all_blueprints)
         -- #1 CB Change: Split Mults into tables and individual variables. Renamed variables to only loop through all_blueprints.Unit once. This reduces the number of checks later at Comment #3
         local Land_Mults = {
             Defense = {
@@ -208,7 +208,7 @@ function UpdateStat_NoCheck(bp, mults, singles)
     end
 end
 
-function GiveVet(all_bps)
+function TAGiveVet(all_bps)
     for id, bp in all_bps do
         if bp.Weapon and bp.Categories then
             -- #9 CB Comment: we don't need to assign to 10 then reassign to 1-4. Only assign to 10 if there's not a match.

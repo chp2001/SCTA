@@ -31,8 +31,8 @@ UnitBlueprint {
         'TRANSPORTATION',
     },
     Defense = {
-        Health = 2300,
-        MaxHealth = 2300,
+        Health = 3300,
+        MaxHealth = 3300,
     },
     Economy = {
         BuildCostEnergy = 45000,

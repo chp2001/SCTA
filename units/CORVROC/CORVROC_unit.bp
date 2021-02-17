@@ -38,6 +38,7 @@ StopMove = Sound {
         'LAND',
         'INDIRECTFIRE',
         'ROCKET',
+        'SILO',
         'OVERLAYINDIRECTFIRE',
         'CORE',
     },

@@ -39,6 +39,7 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'ARM',
 	'LEVEL2',
+    'SILO',
     },
     Defense = {
         ArmorType = 'Normal',

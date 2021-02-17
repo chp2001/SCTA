@@ -39,7 +39,7 @@ UnitBlueprint {
 	'INDIRECTFIRE',
 	'ROCKET',
         'OVERLAYINDIRECTFIRE',
-        'ARTILLERY',
+        'SILO',
         'ARM',
     'SNIPEMODE',
     },

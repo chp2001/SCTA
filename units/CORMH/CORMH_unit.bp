@@ -39,7 +39,8 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'LAND',
         'CORE',
-    'ROCKET',
+        'ROCKET',
+        'SILO',
     },
     Defense = {
         ArmorType = 'Normal',

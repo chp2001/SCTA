@@ -35,7 +35,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'MOBILE',
 	    'LAND',
-	    'AMPHIBIOUS',
+        'AMPHIBIOUS',
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',

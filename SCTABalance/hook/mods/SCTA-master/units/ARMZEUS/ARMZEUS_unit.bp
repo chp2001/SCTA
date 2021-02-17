@@ -5,19 +5,6 @@
 
 UnitBlueprint {
    Merge = true,
-   Categories = {
-    'SELECTABLE',
-    'TECH2',
-    'VISIBLETORECON',
-    'RECLAIMABLE',
-    'MOBILE',
-'LAND',
-'DIRECTFIRE',
-    'OVERLAYDIRECTFIRE',
-    'ARM',
-    'KBOT',
-'LEVEL2',
-   },
    Display = {
     UniformScale = 0.12,
 },
@@ -31,7 +18,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 3000,
         BuildCostMass = 400,
-        BuildTime = 5000,
+        BuildTime = 6600,
     },
     SizeX = 1.5,
     SizeY = 1.5,

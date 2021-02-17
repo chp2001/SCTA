@@ -1,21 +1,5 @@
 UnitBlueprint {
    Merge = true,
-   Categories = {
-    'SELECTABLE',
-    'TECH1',
-    'VISIBLETORECON',
-    'RECLAIMABLE',
-    'MOBILE',
-    'LAND',
-    'SCOUT',
-    'DIRECTFIRE',
-    'OVERLAYDIRECTFIRE',
-    'RADAR',
-    'OVERLAYRADAR',
-    'ARM',
-    'VEHICLE',
-    'LEVEL1',
-    },
     Display = {
         Abilities = {
             '<LOC ability_radar>Radar',

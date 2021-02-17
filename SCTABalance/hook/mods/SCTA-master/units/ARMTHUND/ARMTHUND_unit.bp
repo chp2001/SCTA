@@ -14,7 +14,6 @@ UnitBlueprint {
     'HIGHALTAIR',
     'LEVEL1',
     'DIRECTFIRE',
-    'RADAR',
     'OVERLAYRADAR',
     'SNIPEMODE',
     },

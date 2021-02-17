@@ -4,11 +4,11 @@ UnitBlueprint {
       Abilities = {
       '<LOC ability_radar>Radar',
       '<LOC ability_upgradable>Upgradeable',
-  },
-}, 
+    },
+  }, 
     Economy = {
-      BuildCostEnergy = 2400,
-      BuildTime = 2300,
+        BuildCostEnergy = 1600,
+        BuildTime = 2300,
         BuildRate = 40, 
         MaintenanceConsumptionPerSecondEnergy = 10,
         ProductionPerSecondEnergy = 0,

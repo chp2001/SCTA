@@ -3,6 +3,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -11,9 +12,7 @@ UnitBlueprint {
         'COUNTERINTELLIGENCE',
         'OVERLAYCOUNTERINTEL',
         'ARM',
-        --'KBOT',
 	    'JAM',
-	    'LEVEL2',
     },
     Economy = {
 	    MaintenanceConsumptionPerSecondEnergy = 20,

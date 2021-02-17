@@ -41,6 +41,7 @@ UnitBlueprint {
         'SELECTABLE',
         'TECH2',
         'LEVEL2',
+        'KBOT',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -49,7 +50,6 @@ UnitBlueprint {
         'COUNTERINTELLIGENCE',
         'OVERLAYCOUNTERINTEL',
         'ARM',
-        'KBOT',
 	    'JAM',
     },
     Defense = {

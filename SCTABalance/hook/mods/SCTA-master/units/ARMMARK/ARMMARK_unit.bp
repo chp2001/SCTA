@@ -13,7 +13,6 @@ UnitBlueprint {
         'MOBILE',
 	'LAND',
         'ARM',
-        --'KBOT',
 	'LEVEL2',
     'RADAR',
     'OVERLAYRADAR',

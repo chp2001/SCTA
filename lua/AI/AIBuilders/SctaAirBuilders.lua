@@ -62,9 +62,9 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Factory Stealth',
         PlatoonTemplate = 'T2AirFighterSCTA',
-        Priority = 95,
+        Priority = 110,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
-        { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.7}},
+        { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.7}},
         { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.2, 0.33 }},
         { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.PLATFORM * categories.AIR } },
     },

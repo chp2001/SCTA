@@ -26,26 +26,31 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_omni>Omni Sensor',
             '<LOC ability_radar>Radar',
+            '<LOC ability_jamming>Jamming',
         },
     },
     Economy = {
-        BuildCostEnergy = 16000,
-        BuildCostMass = 330,
-        BuildTime = 2800,
+        BuildCostEnergy = 8000,
+        BuildCostMass = 220,
+        BuildTime = 5600,
         MaintenanceConsumptionPerSecondEnergy = 40,
     },
     General = {
         ToggleCaps = {
-        RULEUTC_IntelToggle = true,
+            RULEUTC_JammingToggle = true,
         },
     },
     Intel = {
+        ActiveIntel = {
+            Omni = true,
+            Radar = true,
+        },
 	FreeIntel = false,
     RadarRadius = 100, 
     OmniRadius = 20,
     JamRadius = {
-        Max = 7,
-        Min = 7,
+        Max = 18,
+        Min = 12,
       },
       JammerBlips = 5,
     },

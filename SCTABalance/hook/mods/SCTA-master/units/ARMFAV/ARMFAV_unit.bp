@@ -7,9 +7,9 @@ UnitBlueprint {
         UniformScale = 0.09,
        },
     Economy = {
-        BuildCostEnergy = 750,
+        BuildCostEnergy = 370,
         BuildCostMass = 20,
-        BuildTime = 600,
+        BuildTime = 1800,
     },
     Intel = {
     RadarRadius = 40,

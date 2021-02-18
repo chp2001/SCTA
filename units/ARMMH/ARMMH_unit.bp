@@ -41,6 +41,7 @@ UnitBlueprint {
         'HOVER',
         'ROCKET',
         'SILO',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',

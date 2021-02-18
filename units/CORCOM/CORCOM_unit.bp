@@ -89,6 +89,7 @@ UnitBlueprint {
         'CORE',
         'LEVEL10',
         'SNIPEMODE',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Commander',

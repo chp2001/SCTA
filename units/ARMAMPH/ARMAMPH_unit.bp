@@ -42,6 +42,7 @@ UnitBlueprint {
         'LAND',
         'ARM',
         'HOVER',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',

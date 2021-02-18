@@ -25,6 +25,7 @@ UnitBlueprint {
         'MOBILE',
         'LAND',
         'ARM',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',

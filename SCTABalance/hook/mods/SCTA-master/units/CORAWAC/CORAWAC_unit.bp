@@ -42,7 +42,6 @@ UnitBlueprint {
         },
     },
     Intel = {
-        Intel = {
             ActiveIntel = {
                 Omni = true,
                 Radar = true,

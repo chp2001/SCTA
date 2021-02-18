@@ -34,6 +34,7 @@ UnitBlueprint {
         'CORE',
         'JAM',
 	    'LEVEL2',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',

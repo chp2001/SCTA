@@ -42,6 +42,7 @@ UnitBlueprint {
         'RADAR',
         'OVERLAYRADAR',
         'ARM',
+        'ALLTERRAIN',
         },
     Defense = {
         ArmorType = 'Normal',

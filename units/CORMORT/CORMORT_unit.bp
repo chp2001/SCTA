@@ -40,7 +40,8 @@ UnitBlueprint {
         'ARTILLERY',
         'CORE',
         'KBOT',
-        'SNIPEMODE', 
+        'SNIPEMODE',
+        'ALLTERRAIN', 
     },
     Defense = {
         ArmorType = 'Normal',

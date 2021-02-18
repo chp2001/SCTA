@@ -39,6 +39,7 @@ UnitBlueprint {
 	    'OVERLAYANTIAIR',
         'LAND',
         'ARM',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',

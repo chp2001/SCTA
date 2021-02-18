@@ -40,6 +40,7 @@ UnitBlueprint {
         'LAND',
         'CORE',
         'ROCKET',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',

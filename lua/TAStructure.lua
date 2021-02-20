@@ -7,6 +7,8 @@ local util = import('/lua/utilities.lua')
 
 TAStructure = Class(TAunit) 
 {
+	LandBuiltHiddenBones = {'Floatation'},
+	
 	OnStopBuild = function(self, unitBeingBuilt, order)
 		TAunit.OnStopBuild(self, unitBeingBuilt, order)
 		if unitBeingBuilt:GetFractionComplete() == 1 and unitBeingBuilt:GetUnitId() == self:GetBlueprint().General.UpgradesTo then

@@ -4,6 +4,12 @@
 #Blueprint created by Raevn
 
 UnitBlueprint {
+    AI = {
+        TargetBones = {
+            'Barrels',
+            'ARMHLT',
+        },
+    },
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
@@ -73,7 +79,6 @@ UnitBlueprint {
     Footprint = {
         SizeX = 2,
         SizeZ = 2,
-	MaxSlope = 0.625,
     },
     General = {
         Category = 'Defense',
@@ -99,9 +104,7 @@ UnitBlueprint {
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 1,
-    Physics = {
-        SkirtSizeX = 2, 
-        SkirtSizeZ = 2,  
+    Physics = { 
         BuildOnLayerCaps = {
             LAYER_Land = true,
             LAYER_Water = true,

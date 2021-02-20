@@ -314,7 +314,7 @@ TechLevel = 'RULEUTL_Advanced',
             DamageType = 'AntiAir',
             DisplayName = 'ARMAAS_WEAPON3',
             FireTargetLayerCapsTable = {
-                Water = 'Land|Water|Air',
+                Water = 'Air',
             },
         RangeCategory = 'UWRC_AntiAir',
         WeaponCategory = 'AntiAir',

@@ -1,7 +1,10 @@
-
-
 UnitBlueprint {
     BuildIconSortPriority = 25,
+    AI = {
+        TargetBones = {
+            0,
+        },
+    },
     Categories = {
         'BUILTBYT1VEHICLE',
         'BUILTBYT1KBOT',

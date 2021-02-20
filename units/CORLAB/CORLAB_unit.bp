@@ -62,7 +62,9 @@ UnitBlueprint {
     Description = 'Produces Kbots',
     Display = {
     AnimationUnpack = '/mods/SCTA-master/units/CORLAB/CORLAB_lod0_unpack.sca',
-    AnimationUnpackRate = 1,     
+    AnimationUnpackRate = 0.5,
+    AnimationPack = '/mods/SCTA-master/units/CORLAB/CORLAB_lod0_pack.sca',
+    AnimationPackRate = 0.5,  
 	BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,
@@ -70,7 +72,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 400,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -97,7 +98,7 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildEffectBones = {'muzzle1', 'muzzle2'},
+            BuildEffectBones = {'muzzle1', 'muzzle2','muzzle3','muzzle4'},
         },          
 	---BuildAngle = 1024,
         Category = 'Factory',

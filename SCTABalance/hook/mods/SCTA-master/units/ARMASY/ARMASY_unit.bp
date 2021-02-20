@@ -24,7 +24,7 @@ UnitBlueprint {
         MaxHealth = 10000,
     },
         Display = {
-        UniformScale = 0.45,
+        UniformScale = 0.28,
     },
     Economy = {
         BuildCostEnergy = 18000,

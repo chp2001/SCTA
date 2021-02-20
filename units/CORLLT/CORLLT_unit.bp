@@ -4,6 +4,12 @@
 #Blueprint created by Raevn
 
 UnitBlueprint {
+    AI = {
+        TargetBones = {
+            'CORLLT',
+            'Stand',
+        },
+    },
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',

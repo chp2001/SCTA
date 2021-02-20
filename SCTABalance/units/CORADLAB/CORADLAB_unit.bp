@@ -57,7 +57,7 @@ UnitBlueprint {
     Description = 'Produces Kbots',
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/CORLAB/CORLAB_lod0_unpack.sca',
-        AnimationUnpackRate = 1, 
+        AnimationUnpackRate = 0.5, 
 	BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,
@@ -98,7 +98,7 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildEffectBones = {'muzzle1', 'muzzle2'},
+            BuildEffectBones = {'muzzle1', 'muzzle2','muzzle3','muzzle4'},
         },           
         Category = 'Factory',
         Classification = 'RULEUC_Factory',

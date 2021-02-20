@@ -62,7 +62,9 @@ UnitBlueprint {
     Description = 'Produces Kbots',
     Display = {
     AnimationUnpack = '/mods/SCTA-master/units/CORLAB/CORLAB_lod0_unpack.sca',
-    AnimationUnpackRate = 1,     
+    AnimationUnpackRate = 0.5,
+    AnimationPack = '/mods/SCTA-master/units/CORLAB/CORLAB_lod0_pack.sca',
+    AnimationPackRate = 0.5,  
 	BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,

@@ -86,11 +86,15 @@ TAFactory = Class(FactoryUnit) {
             end,
     
             OnStopBuild = function(self, unitBeingBuilt, order)
-                FactoryUnit.OnStopBuild(self, unitBeingBuilt, order)
                 self:Close()
+                ForkThread(self.FactoryStopBuild, self, unitBeingBuilt, order )
             end,
     
-            Close = function(self)
+            FactoryStopBuild = function(self, unitBeingBuilt, order)
+                FactoryUnit.OnStopBuild(self, unitBeingBuilt, order)
+                if not self.Dead then
+                    WaitFor(self.AnimManip)
+                end
             end,
     
             CreateBuildEffects = function(self, unitBeingBuilt, order)

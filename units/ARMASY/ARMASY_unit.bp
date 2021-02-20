@@ -58,7 +58,7 @@ UnitBlueprint {
     },
     Description = 'Produces Ships',
     Display = {
-        BuildAttachBone = 'BuildPlate',
+        BuildAttachBone = 'slip',
         AnimationUnpack = '/mods/SCTA-master/units/ARMASY/ARMASY_lod0_unpack.sca',
         AnimationUnpackRate = 0.5,    
         Mesh = {
@@ -71,7 +71,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.08,
     },
     Economy = {
         BuildCostEnergy = 2402,
@@ -95,8 +95,8 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildEffectBones = {'Nozzle_01', 'Nozzle_02'},
-        },    
+            BuildEffectBones = {'beam1','beam2', 'beam3', 'beam4'},
+        }, 
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {
@@ -138,46 +138,12 @@ UnitBlueprint {
             Z = 3,
         },
         {
-            UnitSpin = 90,
-            X = 3,
-            Y = 0,
-            Z = 0,
-        },    
-                  {
             UnitSpin = 180,
             X = 0,
             Y = 0,
             Z = -3,
         },
-        {
-            UnitSpin = -90,
-            X = -3,
-            Y = 0,
-            Z = 0,
-        },
     },
-        OccupyRects = {
-            # offsetX offsetZ  sizeX sizeZ, offset from center of unit
-            -4,
-            -4,
-            0.5,
-            0.5,
-
-            3,
-            3,
-            0.5,
-            0.5,
-
-            3,
-            -4,
-            0.5,
-            0.5,
-
-            -4,
-            3,
-            0.5,
-            0.5,
-        },
     },
     SelectionSizeX = 4.25,
     SelectionSizeZ = 4.25,

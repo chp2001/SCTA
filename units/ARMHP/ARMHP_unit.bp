@@ -75,7 +75,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.1,
     },
     Economy = {
         BuildCostEnergy = 5277,
@@ -97,7 +97,7 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildEffectBones = {'muzzle1','muzzle2'},
+            BuildEffectBones = {'beam1','beam2', 'beam3', 'beam4'},
         },      
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
@@ -140,6 +140,12 @@ UnitBlueprint {
             X = 0,
             Y = 0,
             Z = 2.5,
+        },
+        {
+            UnitSpin = 90,
+            X = 2.5,
+            Y = 0,
+            Z = 0,
         },
         {
             UnitSpin = 180,

@@ -21,8 +21,8 @@ CORADLAB = Class(TAFactory) {
 
 	Close = function(self)
 		TAFactory.Close(self)
-		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
-		self.AnimManip:SetRate(-0.1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
+		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationPack)
+		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationPackRate or 0.2))
 	end,
 }
 

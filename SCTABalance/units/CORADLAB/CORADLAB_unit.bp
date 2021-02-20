@@ -57,7 +57,9 @@ UnitBlueprint {
     Description = 'Produces Kbots',
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/CORLAB/CORLAB_lod0_unpack.sca',
-        AnimationUnpackRate = 0.5, 
+        AnimationUnpackRate = 0.5,
+        AnimationPack = '/mods/SCTA-master/units/CORLAB/CORLAB_lod0_pack.sca',
+        AnimationPackRate = 0.5,  
 	BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,
@@ -68,7 +70,7 @@ UnitBlueprint {
                     AlbedoName = '/mods/SCTA-master/units/CORLAB/CORLAB_Albedo.dds',
                     MeshName =   '/mods/SCTA-master/units/CORLAB/CORLAB_lod0.scm',
                     ShaderName = 'Unit', 
-                    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                    NormalName = '/mods/SCTA-master/units/CORLAB/CORLAB_normalsTS.dds',
                 },
             },
         },

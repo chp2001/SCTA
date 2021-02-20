@@ -39,7 +39,7 @@ CreateTASeaFactBuildingEffects = function( self, unitBeingBuilt, order )
     WaitSeconds( 0.1 )
     if not self.Dead and not IsDestroyed(unitBeingBuilt) then
     for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
-		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.3) )         
+		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.1) )         
     end
     EffectUtil.CreateDefaultBuildBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
 end

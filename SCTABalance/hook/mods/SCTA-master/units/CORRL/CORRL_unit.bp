@@ -25,8 +25,8 @@ UnitBlueprint {
 	'SORTDEFENSE',
     },
     Defense = {
-        Health = 500,
-        MaxHealth = 500,
+        Health = 700,
+        MaxHealth = 700,
     },
     Economy = {
         BuildCostEnergy = 1500,

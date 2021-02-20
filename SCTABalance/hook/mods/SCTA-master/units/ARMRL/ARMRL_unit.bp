@@ -25,8 +25,8 @@ UnitBlueprint {
         'ROCKET',
     },
     Defense = {
-        Health = 400,
-        MaxHealth = 400,
+        Health = 600,
+        MaxHealth = 600,
     },
     Display = {
         Abilities = {

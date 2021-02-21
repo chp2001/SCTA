@@ -5,7 +5,7 @@
 
 local TALightCannonProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TALightCannonProjectile
 
-DCORE_DISINTEGRATOR = Class(TALightCannonProjectile) {
+DGun = Class(TALightCannonProjectile) {
 	OnCreate = function(self)
 		TALightCannonProjectile.OnCreate(self)
 		ForkThread(self.MovementThread,self)
@@ -27,4 +27,4 @@ DCORE_DISINTEGRATOR = Class(TALightCannonProjectile) {
 	end,
 }
 
-TypeClass = DCORE_DISINTEGRATOR
+TypeClass = DGun

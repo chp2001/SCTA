@@ -100,7 +100,7 @@ BuilderGroup {
         BuilderName = 'SCTA AI ACU T1Engineer Mex',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 100,
-        InstanceCount = 1, -- The max number concurrent instances of this builder.
+        InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {800} }, -- Don't make tanks if we have lots of them.
             { EBC, 'LessThanEconStorageRatio', { 0.5, 1}},
@@ -120,10 +120,10 @@ BuilderGroup {
         BuilderName = 'SCTAAI ACU T1Pgen',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 90,
-        InstanceCount = 1,
+        InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {450} },
-            { EBC, 'LessThanEconStorageRatio', { 1, 0.4}},
+            { EBC, 'LessThanEconStorageRatio', { 1, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -144,7 +144,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.FACTORY * categories.LAND } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.LAB } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -216,7 +216,26 @@ Builder {
             AssisteeType = 'Factory',
             BeingBuiltCategories = {'LEVEL4'},
             Time = 20,
+            },
+        }
+    },
+    Builder {
+        BuilderName = 'SCTA Commander Finish',
+        PlatoonTemplate = 'CommanderSCTAAssist',
+        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
+        Priority = 25,
+        InstanceCount = 2,
+        BuilderConditions = {
+                { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
+            },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
+                Time = 20,
+            },
         },
-    }
-},
+        BuilderType = 'Any',
+    },
 }

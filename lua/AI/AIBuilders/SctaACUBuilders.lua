@@ -41,6 +41,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {240} }, -- Don't make tanks if we have lots of them.
             { MIBC, 'GreaterThanGameTime', {90} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.PLANT} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.3}},
         },
         BuilderType = 'Any',
@@ -122,8 +123,8 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 2,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {450} },
-            { EBC, 'LessThanEconStorageRatio', { 1, 0.5}},
+            { MIBC, 'GreaterThanGameTime', {800} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FUSION } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
         BuilderData = {

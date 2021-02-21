@@ -34,15 +34,24 @@ PlatoonTemplate {
     Name = 'LandAttackSCTA',
     Plan = 'AttackForceAI',
     GlobalSquads = {
-        { categories.MOBILE * categories.LAND - categories.EXPERIMENTAL - categories.ENGINEER, 2, 20, 'Attack', 'none' }
+        { categories.MOBILE * categories.LAND - categories.EXPERIMENTAL - categories.ENGINEER - categories.ROCKET, 2, 20, 'Attack', 'none' }
     },
 }
+
+PlatoonTemplate {
+    Name = 'LandRocketAttackSCTA',
+    Plan = 'AttackForceAI',
+    GlobalSquads = {
+        { categories.MOBILE * categories.LAND * (categories.ROCKET + categories.ARTILLERY) - categories.EXPERIMENTAL - categories.ENGINEER, 6, 20, 'Attack', 'none' }
+    },
+}
+
 
 PlatoonTemplate {
     Name = 'T1AirScoutFormSCTA',
     Plan = 'ScoutingAI',
     GlobalSquads = {
-        { categories.AIR * categories.SCOUT * categories.TECH1, 1, 1, 'scout', 'None' },
+        { categories.AIR * categories.SCOUT, 1, 1, 'scout', 'None' },
     }
 }
 
@@ -88,6 +97,18 @@ PlatoonTemplate {
         },
         Core = {
             { 'corsent', 1, 1, 'attack', 'none' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T1LandRocketSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armrock', 1, 2, 'attack', 'none' }
+        },
+        Core = {
+            { 'corstorm', 1, 2, 'attack', 'none' }
         },
     }
 }

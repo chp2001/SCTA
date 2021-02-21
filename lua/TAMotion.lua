@@ -108,6 +108,7 @@ TAWalking = Class(TATreads)
                 TATreads.MovementEffects(self)
             end
         elseif ( new == 'Stopped' ) then
+                TATreads.MovementEffects(self)
             if(self.IdleAnim and not self:IsDead()) then
                 self.Animator:PlayAnim(self.IdleAnim, true)
             elseif(not self.DeathAnim or not self:IsDead()) then

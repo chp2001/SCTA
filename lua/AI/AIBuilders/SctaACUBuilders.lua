@@ -104,7 +104,6 @@ BuilderGroup {
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {800} }, -- Don't make tanks if we have lots of them.
-            { EBC, 'LessThanEconStorageRatio', { 0.5, 1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -120,7 +119,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI ACU T1Pgen',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 90,
+        Priority = 60,
         InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {800} },
@@ -141,10 +140,9 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Commander LandFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 94,
+        Priority = 90,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.3}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.LAB } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
@@ -218,23 +216,5 @@ Builder {
             Time = 20,
             },
         }
-    },
-    Builder {
-        BuilderName = 'SCTA Commander Finish',
-        PlatoonTemplate = 'CommanderSCTAAssist',
-        Priority = 75,
-        InstanceCount = 2,
-        BuilderConditions = {
-                { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
-            },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
-                Time = 20,
-            },
-        },
-        BuilderType = 'Any',
     },
 }

@@ -7,7 +7,10 @@ UnitBlueprint {
    Merge = true,
    Display = {
     UniformScale = 0.08,
-},
+    },
+    Economy = {
+        BuildCostEnergy = 750,
+    },
     Intel = {
         VisionRadius = 10,
     },

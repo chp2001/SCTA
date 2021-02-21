@@ -35,9 +35,9 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer LandFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 95,
-        InstanceCount = 1,
+        InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LAB * categories.LAND } }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.LAND } }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.PLANT} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}}, -- Stop after 10 facs have been built.
         },
@@ -57,10 +57,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer LandFac2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 90,
+        Priority = 50,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LAB * categories.LAND } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.LAND } }, -- Stop after 10 facs have been built.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.PLANT} }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
         },

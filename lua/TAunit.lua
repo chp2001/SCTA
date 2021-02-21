@@ -76,7 +76,8 @@ TAunit = Class(Unit)
 	end,
 
 	CloakDetection = function(self)
-        local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
+        if not IsDestroyed(self) then
+		local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
         local brain = moho.entity_methods.GetAIBrain(self)
         local cat = categories.SELECTABLE * categories.MOBILE
         local getpos = moho.entity_methods.GetPosition
@@ -94,6 +95,7 @@ TAunit = Class(Unit)
                 self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
             end
         end
+	end
     end,
 
 	OnScriptBitSet = function(self, bit)

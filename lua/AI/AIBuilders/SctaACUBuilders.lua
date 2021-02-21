@@ -41,6 +41,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {240} }, -- Don't make tanks if we have lots of them.
             { MIBC, 'GreaterThanGameTime', {90} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.PLANT} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.3}},
         },
         BuilderType = 'Any',
@@ -103,7 +104,6 @@ BuilderGroup {
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {800} }, -- Don't make tanks if we have lots of them.
-            { EBC, 'LessThanEconStorageRatio', { 0.5, 1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -119,11 +119,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI ACU T1Pgen',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 90,
+        Priority = 60,
         InstanceCount = 2,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {450} },
-            { EBC, 'LessThanEconStorageRatio', { 1, 0.5}},
+            { MIBC, 'GreaterThanGameTime', {800} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FUSION } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -140,16 +140,14 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Commander LandFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 95,
+        Priority = 90,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.LAB } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
         BuilderData = {
-            DesiresAssist = true,
-            NumAssistees = 2, 
+            DesiresAssist = false,
             NeedGuard = false,
             Construction = {
                 BuildClose = true,
@@ -218,23 +216,5 @@ Builder {
             Time = 20,
             },
         }
-    },
-    Builder {
-        BuilderName = 'SCTA Commander Finish',
-        PlatoonTemplate = 'CommanderSCTAAssist',
-        Priority = 75,
-        InstanceCount = 2,
-        BuilderConditions = {
-                { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
-            },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
-                Time = 20,
-            },
-        },
-        BuilderType = 'Any',
     },
 }

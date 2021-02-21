@@ -6,8 +6,11 @@
 UnitBlueprint {
    Merge = true,
    Display = {
-    UniformScale = 0.10,
-},
+    UniformScale = 0.1,
+    },
+    Economy = {
+        BuildCostEnergy = 720,
+    },
     Intel = {
         VisionRadius = 10,
     },
@@ -23,6 +26,5 @@ UnitBlueprint {
         },
         [2] = {
         }, 
-
     },
 }

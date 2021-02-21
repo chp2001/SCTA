@@ -64,6 +64,28 @@ BuilderGroup {
          },
     },
     Builder {
+        BuilderName = 'SCTAAI Land2 Attack',
+        PlatoonTemplate = 'LandRocketAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
+        Priority = 100,
+        InstanceCount = 2,
+        BuilderType = 'Any',
+        BuilderData = {
+            ThreatSupport = 75,
+            NeverGuardBases = true,
+            NeverGuardEngineers = true,
+            UseFormation = 'AttackFormation',
+            LocationType = 'LocationType',
+            AggressiveMove = false,
+            ThreatWeights = {
+            SecondaryTargetThreatType = 'StructuresNotMex',
+            IgnoreStrongerTargetsRatio = 100.0,
+            },
+        },        
+        BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
+         },
+    },
+    Builder {
         BuilderName = 'LV4Kbot',
         PlatoonTemplate = 'T4ExperimentalSCTA',
         Priority = 10000,

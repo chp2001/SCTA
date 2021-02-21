@@ -71,11 +71,11 @@ BuilderGroup {
         BuilderType = 'All',
     },
     Builder {
-        BuilderName = 'SCTAAi Factory2 Tank',
-        PlatoonTemplate = 'T1LandDFTankSCTA2',
-        Priority = 90,
+        BuilderName = 'SCTAAi Factory Rocket',
+        PlatoonTemplate = 'T1LandRocketSCTA',
+        Priority = 75,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.ROCKET,
+            { UCBC, 'HaveUnitRatio', { 0.3, categories.ROCKET,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.LAND } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},

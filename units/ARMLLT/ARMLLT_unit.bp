@@ -78,11 +78,6 @@ UnitBlueprint {
         BuildTime = 4662,
         StorageEnergy = 75,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-	MaxSlope = 0.875,
-    },
     General = {
         Category = 'Defense',
         Classification = 'RULEUC_Weapon',
@@ -106,9 +101,7 @@ UnitBlueprint {
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.25,
     LifeBarSize = 2,
-    Physics = {
-        SkirtSizeX = 2, 
-        SkirtSizeZ = 2,  
+    Physics = { 
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },

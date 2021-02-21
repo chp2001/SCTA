@@ -100,7 +100,7 @@ BuilderGroup {
         BuilderName = 'SCTA AI ACU T1Engineer Mex',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 100,
-        InstanceCount = 2, -- The max number concurrent instances of this builder.
+        InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {800} }, -- Don't make tanks if we have lots of them.
             { EBC, 'LessThanEconStorageRatio', { 0.5, 1}},
@@ -119,11 +119,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI ACU T1Pgen',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 50,
-        InstanceCount = 2,
+        Priority = 90,
+        InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {450} },
-            { EBC, 'LessThanEconStorageRatio', { 1, 0.25}},
+            { EBC, 'LessThanEconStorageRatio', { 1, 0.4}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -140,7 +140,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Commander LandFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 90,
+        Priority = 95,
         InstanceCount = 1,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},

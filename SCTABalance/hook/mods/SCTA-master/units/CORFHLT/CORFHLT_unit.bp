@@ -8,8 +8,8 @@ UnitBlueprint {
         UniformScale = 0.08,
     },
     Economy = {
-        BuildCostEnergy = 12000,
-        BuildCostMass = 900,
+        BuildCostEnergy = 10000,
+        BuildCostMass = 800,
         BuildTime = 12000,
     },
     Footprint = {
@@ -19,9 +19,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 12,
     },
-    LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
-    LifeBarSize = 2,
     Physics = {
         SkirtSizeX = 1, 
         SkirtSizeZ = 1,  

@@ -8,14 +8,8 @@ UnitBlueprint {
         Health = 1700,
         MaxHealth = 1700,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-	    MaxSlope = 0.875,
-    },
-    Physics = {
-        SkirtSizeX = 1, 
-        SkirtSizeZ = 1,  
+    Economy = {
+        BuildTime = 5500,
     },
     Intel = {
         VisionRadius = 12,

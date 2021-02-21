@@ -57,7 +57,7 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 3,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.3}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
             { EBC, 'LessThanEconStorageRatio', { 1, 0.6}},
         },
         BuilderType = 'Any',
@@ -79,7 +79,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FUSION} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.2}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
             { EBC, 'LessThanEconStorageRatio', { 1, 0.5}},
         },
         BuilderType = 'Any',

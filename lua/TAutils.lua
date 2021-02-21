@@ -7,52 +7,42 @@ local Factions = import('/lua/factions.lua').GetFactions(true)
 CreateTABuildingEffects = function( self, unitBeingBuilt, order )
     EffectUtil.CreateSeraphimUnitEngineerBuildingEffects( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
     WaitSeconds(0.75)
-    if not self.Dead and not IsDestroyed(unitBeingBuilt) then
 	for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
 		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.1) )         
     end
-end
 end
 
 CreateTAAirBuildingEffects = function( self, unitBeingBuilt, order )
     WaitSeconds(0.75)
-    if not self.Dead and not IsDestroyed(unitBeingBuilt) then
 	for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
 		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.1) )         
     end
     EffectUtil.CreateDefaultBuildBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
-end
 end
 
 
 CreateTAFactBuildingEffects = function( self, unitBeingBuilt, order )  
     WaitSeconds( 0.1 )
-    if not self.Dead and not IsDestroyed(unitBeingBuilt) then
     for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
 		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.05) )         
     end
     EffectUtil.CreateDefaultBuildBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
 end
-end
 
 CreateTASeaFactBuildingEffects = function( self, unitBeingBuilt, order )
     WaitSeconds( 0.1 )
-    if not self.Dead and not IsDestroyed(unitBeingBuilt) then
     for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
 		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.1) )         
     end
     EffectUtil.CreateDefaultBuildBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
 end
-end
 
 CreateTAGantBuildingEffects = function(self, unitBeingBuilt, order)
     WaitSeconds( 0.75 )
-    if not self.Dead and not IsDestroyed(unitBeingBuilt) then
 	for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
 		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.18):OffsetEmitter(0,0,-0.2))         
     end
     EffectUtil.CreateCybranFactoryBuildEffects( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones, self.BuildEffectsBag )
-    end
 end
 
 TAReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, EffectsBag)

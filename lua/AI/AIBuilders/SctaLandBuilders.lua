@@ -75,7 +75,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandDFTankSCTA2',
         Priority = 90,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK,
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.ROCKET,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.LAND } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},

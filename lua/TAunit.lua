@@ -29,18 +29,6 @@ TAunit = Class(Unit)
 		Unit.OnStopBeingBuilt(self,builder,layer)
 		self:SetDeathWeaponEnabled(true)
 		self:SetConsumptionActive(true)	
-		ForkThread(self.IdleEffects, self)
-	end,
-
-	OnMotionHorzEventChange = function(self, new, old )
-		local bp = self:GetBlueprint()
-		Unit.OnMotionHorzEventChange(self, new, old )
-	if (new == 'Stopped') and bp.Display.MovementEffects.TAMovement then
-			ForkThread(self.IdleEffects, self)
-			for k,v in self.FxMovement do
-				v:Destroy()
-			end
-		end
 	end,
 
 	MovementEffects = function(self, EffectsBag, TypeSuffix)
@@ -52,14 +40,9 @@ TAunit = Class(Unit)
 				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.TAMovement.Emitter ):ScaleEmitter(bp.Display.MovementEffects.TAMovement.Scale))
 			end
 		end
-	end,
-
-	IdleEffects = function(self)
-        ---self:LOGDBG('TAUnit.IdleEffects')
-		local bp = self:GetBlueprint()
-		if not IsDestroyed(self) and not self:IsMoving() and bp.Display.IdleEffects then
-			for k, v in bp.Display.IdleEffects.Bones do
-				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.IdleEffects.Emitter ):ScaleEmitter(bp.Display.IdleEffects.Scale))
+		if not self:IsUnitState('Moving') and bp.Display.MovementEffects.TAMovement then
+			for k,v in self.FxMovement do
+			v:Destroy()
 			end
 		end
 	end,

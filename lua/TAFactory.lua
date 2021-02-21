@@ -32,7 +32,7 @@ TAFactory = Class(FactoryUnit) {
 
         FactoryStartBuild = function(self, unitBeingBuilt, order )
             WaitFor(self.AnimManip)
-            if not self.Dead then
+            if not self.Dead and not IsDestroyed(unitBeingBuilt) then
             FactoryUnit.OnStartBuild(self, unitBeingBuilt, order )
             end
         end,
@@ -69,7 +69,7 @@ TAFactory = Class(FactoryUnit) {
     
         FactoryStartBuild = function(self, unitBeingBuilt, order )
             WaitFor(self.AnimManip)
-            if not self.Dead then
+            if not self.Dead and not IsDestroyed(unitBeingBuilt) then
             FactoryUnit.OnStartBuild(self, unitBeingBuilt, order ) 
             end
         end,

@@ -37,7 +37,6 @@ UnitBlueprint {
     Footprint = {
         SizeX = 1,
         SizeZ = 1,
-	MaxWaterDepth = 0,
     },
     StrategicIconName = 'icon_bot1_intel',
     General = {

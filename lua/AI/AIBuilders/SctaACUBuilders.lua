@@ -141,16 +141,15 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Commander LandFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 95,
+        Priority = 94,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.3}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.LAB } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
         BuilderData = {
-            DesiresAssist = true,
-            NumAssistees = 2, 
+            DesiresAssist = false,
             NeedGuard = false,
             Construction = {
                 BuildClose = true,

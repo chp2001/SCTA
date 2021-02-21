@@ -40,20 +40,19 @@ TAFactory = Class(FactoryUnit) {
 		Open = function(self)
 		end,
 
-		OnStopBuild = function(self, unitBeingBuilt, order)
+
+        OnStopBuild = function(self, unitBuilding)
             self:Close()
-            ForkThread(self.FactoryStopBuild, self, unitBeingBuilt, order )
+            ForkThread(self.FactoryStopBuild, self, unitBuilding)
 		end,
 
-        FactoryStopBuild = function(self, unitBeingBuilt, order)
-            FactoryUnit.OnStopBuild(self, unitBeingBuilt, order)
+        FactoryStopBuild = function(self, unitBuilding)
+            WaitFor(self.AnimManip)
             if not self.Dead then
-                WaitFor(self.AnimManip)
+            FactoryUnit.OnStopBuild(self, unitBuilding)
             end
-            if __blueprints['armmass'] then
-                TAutils.updateBuildRestrictions(self)
-            end    
 		end,
+        
 
 		Close = function(self)
 		end,

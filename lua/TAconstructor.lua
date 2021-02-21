@@ -314,14 +314,12 @@ TARealCommander = Class(TACommander) {
     OnMotionHorzEventChange = function(self, new, old )
 		TACommander.OnMotionHorzEventChange(self, new, old)
         if self.cloakOn then
-        if old == 'Stopped' then
-			self:SetConsumptionPerSecondEnergy(1000)
-			self.motion = 'Moving'
-		elseif new == 'Stopped' then
-			self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
-			self.motion = 'Stopped'
+            if  self:IsUnitState('Moving') then
+                self:SetConsumptionPerSecondEnergy(1000)
+            else
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
+            end
         end
-    end
     end,
 
     OnStartBuild = function(self, unitBeingBuilt, order )

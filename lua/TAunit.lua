@@ -21,7 +21,6 @@ TAunit = Class(Unit)
         Unit.OnCreate(self)
 		self:SetFireState(FireState.GROUND_FIRE)
 		self:HideFlares()
-		self.CurrentSpeed = 'Stopped'
 		self.FxMovement = TrashBag()
         end,
 

@@ -9,7 +9,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 330,
         BuildCostMass = 14,
-        BuildTime = 1550,
+        BuildTime = 700,
     },
     Intel = {
     VisionRadius = 14,

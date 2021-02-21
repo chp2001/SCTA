@@ -8,24 +8,22 @@ UnitBlueprint {
       Display = {
         UniformScale = 0.1,
     },
-  Economy = {
-        BuildCostMass = 180,
-        BuildCostEnergy = 1600,
-        BuildTime = 3900,
-        ProductionPerSecondEnergy = 20,
-       },
-   Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
-   Physics = {
-        MeshExtentsX = 1.25,
-        MeshExtentsY = 1.25,
-        MeshExtentsZ = 1.25,
-        SkirtOffsetX = -0.5,
-        SkirtOffsetZ = -0.5,
-        SkirtSizeX = 2,
-        SkirtSizeZ = 2,
+        Economy = {
+          BuildCostMass = 180,
+          BuildCostEnergy = 1200,
+          BuildTime = 3900,
+          ProductionPerSecondEnergy = 20,
+      },
+      Footprint = {
+          SizeX = 1,
+          SizeZ = 1,
+      },
+     Physics = {
+          MeshExtentsX = 1.25,
+          MeshExtentsY = 1.25,
+          MeshExtentsZ = 1.25,
+          SkirtSizeX = 1,
+          SkirtSizeZ = 1,
         BuildOnLayerCaps = {
             LAYER_Land = true,
             LAYER_Water = true,

@@ -6,8 +6,8 @@
 local TAWin = import('/mods/SCTA-master/lua/TAWeather.lua').TAWin
 
 CORWIN = Class(TAWin) {
-	OnCreate = function(self,builder,layer)
-		TAWin.OnCreate(self,builder,layer)
+	OnCreate = function(self)
+		TAWin.OnCreate(self)
 		self:SetProductionPerSecondEnergy(0)
 		self.Spinners = {
 		   --CreateRotator(Win, bone, axis, [goal], [speed], [accel], [goalspeed])

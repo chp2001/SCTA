@@ -222,8 +222,7 @@ Builder {
     Builder {
         BuilderName = 'SCTA Commander Finish',
         PlatoonTemplate = 'CommanderSCTAAssist',
-        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 25,
+        Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
                 { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},

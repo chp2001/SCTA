@@ -4,8 +4,9 @@ UnitBlueprint {
         UniformScale = 0.10,
     },
     Economy = {
+        BuildTime = 2200,
         BuildCostEnergy = 660,
-        BuildCostMass = 90,
+        BuildCostMass = 60,
     },
     Intel = {
         VisionRadius = 12,

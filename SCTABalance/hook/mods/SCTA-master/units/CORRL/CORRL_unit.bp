@@ -30,8 +30,8 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 1500,
-        BuildCostMass = 250,
-        BuildTime = 3600,
+        BuildCostMass = 180,
+        BuildTime = 4500,
     },
     Display = {
         Abilities = {

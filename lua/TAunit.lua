@@ -100,10 +100,13 @@ TAunit = Class(Unit)
         while not self.Dead do
             coroutine.yield(11)
             local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
-            if (dudes[1] or self:IsUnitState('Building')) and self.cloakOn then
+            if dudes[1] and self.cloakOn then
                 self:DisableIntel('Cloak')
                 self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-            elseif not dudes[1] and self.cloakOn then
+			elseif self:IsUnitState('Building') and self.cloakOn then
+				self:DisableIntel('Cloak')
+                self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
+			elseif not dudes[1] and self.cloakOn then
                 self:EnableIntel('Cloak')
                 self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
             end

@@ -4,18 +4,12 @@ UnitBlueprint {
     Display = {
         UniformScale = 0.1,
     },
+    Economy = {
+        BuildTime = 5500,
+    },
     Defense = {
         Health = 1500,
         MaxHealth = 1500,
-    },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-	    MaxSlope = 0.875,
-    },
-    Physics = {
-        SkirtSizeX = 1, 
-        SkirtSizeZ = 1,  
     },
     Intel = {
         VisionRadius = 12,

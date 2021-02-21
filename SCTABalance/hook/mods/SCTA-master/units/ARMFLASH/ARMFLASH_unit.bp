@@ -10,6 +10,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 330,
         BuildCostMass = 76,
+        BuildTime = 700,
     },
     LifeBarSize = 1,
     SelectionSizeX = 0.6,

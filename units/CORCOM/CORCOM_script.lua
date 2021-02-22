@@ -5,9 +5,11 @@
 
 local TARealCommander = import('/mods/SCTA-master/lua/TAconstructor.lua').TARealCommander
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
+local TADGun = import('/mods/SCTA-master/lua/TAweapon.lua').TADGun
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local TACommanderDeathWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TACommanderDeathWeapon
-local TADGun = import('/mods/SCTA-master/lua/TAweapon.lua').TADGun
+
+#CORE Commander - Commander
 
 CORCOM = Class(TARealCommander) {
 	Weapons = {
@@ -36,11 +38,11 @@ CORCOM = Class(TARealCommander) {
 		self:ShowBone(0, true)
 		self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
 		WaitSeconds(3)
-			self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-			self:SetUnSelectable(false)
-			self:SetBusy(false)
-			self:SetBlockCommandQueue(false)
-		end,
+		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
+        self:SetUnSelectable(false)
+		self:SetBusy(false)
+		self:SetBlockCommandQueue(false)
+    end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
 		TARealCommander.OnStopBeingBuilt(self,builder,layer)
@@ -52,9 +54,12 @@ CORCOM = Class(TARealCommander) {
 	end,
 
 	GiveInitialResources = function(self)
+		#need to convert options to ints - they are strings
 		self:GetAIBrain():GiveResource('ENERGY', self:GetBlueprint().Economy.StorageEnergy)
 		self:GetAIBrain():GiveResource('MASS', self:GetBlueprint().Economy.StorageMass)
 	end,
+
+
 }
 
 TypeClass = CORCOM

@@ -13,7 +13,7 @@ Intel = {
   WaterVisionRadius = 8,
 },
   Economy = {
-        BuildCostMass = 180,
+        BuildCostMass = 240,
         BuildCostEnergy = 1200,
         BuildTime = 3900,
         ProductionPerSecondEnergy = 20,

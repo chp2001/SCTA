@@ -39,11 +39,11 @@ UnitBlueprint {
     BuildIconSortPriority = 1,
     Categories = {
         'SELECTABLE',
-        'TECH2',
+        'TECH1',
         'NAVAL',
         'CORE',
         'OCEAN',
-	    'LEVEL2',
+	    'LEVEL1',
         'FIELDENGINEER',
         'ENGINEER',
         'REPAIR',
@@ -58,7 +58,7 @@ UnitBlueprint {
         'CONSTRUCTION',
         'DEFENSIVEBOAT',
     },
-    Description = 'Tech Level 2',
+    Description = 'Tech Level 1',
     CollisionOffsetY = -0.25,
     Defense = {
         ArmorType = 'Normal',
@@ -99,14 +99,14 @@ UnitBlueprint {
         UniformScale = 0.16,
     },
     Economy = {
-        BuildRate = 360,
-        BuildCostMass = 600,
-        BuildCostEnergy = 3600,
-        BuildTime = 4000,
-        ProductionPerSecondEnergy = 4,
+        BuildRate = 180,
+        BuildCostMass = 200,
+        BuildCostEnergy = 1800,
+        BuildTime = 2000,
+        ProductionPerSecondEnergy = 2,
         MaxBuildDistance = 6,
-        StorageEnergy = 30,
-        StorageMass = 30,
+        StorageEnergy = 10,
+        StorageMass = 10,
     NaturalProducer = true,
     BuildableCategory = {
         'mas0001',
@@ -165,7 +165,7 @@ UnitBlueprint {
     SizeX = 2.5,
     SizeY = 2,
     SizeZ = 4,
-    StrategicIconName = 'icon_bot2_engineer', --'icon_ship1_engineer',
+    StrategicIconName = 'icon_land1_engineer',  --'icon_ship1_engineer',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_UNITEX

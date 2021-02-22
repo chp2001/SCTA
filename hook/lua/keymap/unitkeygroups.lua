@@ -246,8 +246,10 @@ TAunitkeygroups = {
     ["T1_Engineer"]= {
         "armck",
         "armcv",
+        "armcs",
         "corck",
         "corcv",
+        "corcs",
     },
     ["T1_Light_Assault_Bot"]= {
         "armpw",
@@ -285,11 +287,7 @@ TAunitkeygroups = {
     },
     ["T2_Field_Engineer"]= {
         "armfark", 
-        "armcs",
-        "armsfar",
         "cornecro",
-        "corsnec",
-        "corcs",
     },
     ["T2_Engineer"]= {
         "armaca",

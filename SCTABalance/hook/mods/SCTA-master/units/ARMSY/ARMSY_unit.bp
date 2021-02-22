@@ -40,7 +40,7 @@ UnitBlueprint {
     LifeBarOffset = 5,
     LifeBarSize = 14,
     Economy = {
-        BuildCostEnergy = 7200,
+        BuildCostEnergy = 3600,
         BuildRate = 125,
         BuildableCategory = {
             'OCEAN LEVEL1 ARM',

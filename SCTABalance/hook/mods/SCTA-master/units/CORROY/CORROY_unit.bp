@@ -37,9 +37,9 @@ UnitBlueprint {
         RadarRadius = 10,
     },
     Economy = {
-        BuildCostEnergy = 6300,
-        BuildCostMass = 600,
-        BuildTime = 24000,
+        BuildCostEnergy = 6100,
+        BuildCostMass = 580,
+        BuildTime = 11000,
     },
     Description = 'Frigate',
     Interface = {
@@ -53,11 +53,9 @@ UnitBlueprint {
     Weapon = {
         [1] = {
             Damage = 30,
-            DamageRadius = 1.5,
             MaxRadius = 28,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 2,
-            RackRecoilDistance = -2.4,
             RackSalvoSize = 2,
             RateOfFire = 1,
         },

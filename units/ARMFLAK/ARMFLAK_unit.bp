@@ -121,8 +121,8 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 75,
-            DamageRadius = 3.75, 
-            DamageType = 'AntiAir',
+            DamageRadius = 4, 
+            DamageType = 'Normal',
             DisplayName = 'ARMFLAK_GUN',
             FireTargetLayerCapsTable = {
                 Land = 'Air',
@@ -177,9 +177,9 @@ UnitBlueprint {
             Turreted = true,
         },
         { #LARGE_BUILDINGEX
-            Damage = 120,
+            Damage = 100,
             DamageFriendly = true,
-            DamageRadius = 3.75,
+            DamageRadius = 4,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

@@ -165,10 +165,10 @@ TechLevel = 'RULEUTL_Basic',
             RangeCategory = 'UWRC_AntiNavy',
             WeaponCategory = 'AntiNavy',
             Label = 'ARM_TORPEDO',
-            MaxRadius = 37,
+            MaxRadius = 30,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 10,
+            MuzzleVelocity = 5,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_TORPEDO/ARM_TORPEDO_proj.bp',
             RackBones = {
                 {

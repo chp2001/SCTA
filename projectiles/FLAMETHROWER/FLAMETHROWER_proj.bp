@@ -10,7 +10,6 @@ ProjectileBlueprint {
         'DIRECTFIRE'
     },
     Display = {
-	#Better way of doing this?
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/Plasma_mesh.bp',
         UniformScale = 0,
         StrategicIconSize = 1,

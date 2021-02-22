@@ -29,17 +29,17 @@ ProjectileBlueprint {
     Categories = {
         'CORE',
         'PROJECTILE',
-        'DIRECTFIRE'
+        'ANTIAIR'
     },
     Display = {
         StrategicIconSize = 1,
     },
     General = {
-        Category = 'Direct Fire',
+        Category = 'AntiAir',
         EntityCategory = {
             'CORE',
             'PROJECTILE',
-            'DIRECTFIRE',
+            'ANTIAIR',
         },
         Faction = 'CORE',
         Weapon = 'COR_BATSLASER',

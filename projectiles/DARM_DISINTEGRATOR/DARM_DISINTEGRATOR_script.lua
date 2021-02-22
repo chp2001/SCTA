@@ -5,7 +5,7 @@
 
 local TALightCannonProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TALightCannonProjectile
 
-DGun = Class(TALightCannonProjectile) {
+DARMGun = Class(TALightCannonProjectile) {
 	OnCreate = function(self)
 		TALightCannonProjectile.OnCreate(self)
 		ForkThread(self.MovementThread,self)
@@ -27,4 +27,4 @@ DGun = Class(TALightCannonProjectile) {
 	end,
 }
 
-TypeClass = DGun
+TypeClass = DARMGun

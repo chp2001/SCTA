@@ -8,7 +8,6 @@ armordefinition = {
         'Normal 1.0',
         'AntiAir 0.05',
         'LANDAir 0.3',
-        'StlAir 0.5',
         'AntiSub 0.33',
         'DGun 1.0',
     },
@@ -19,20 +18,15 @@ armordefinition = {
         'Normal 1.0',
         'AntiAir 0.05',
         'LANDAir 0.3',
-        'StlAir 0.5',
         'AntiSub 0.33',
-        'DGun 1.0',
     },
     {   # Armor Type Name
         'Light',
 
         # Armor Definition
         'Normal 1.0',
-        'DGun 1.0',
         'AntiAir 1.0',
         'LANDAir 1.0',
-        'StlAir 1.0',
-        'AntiSub 0.2',
     },
     {   # Armor Type Name
         'Commander',
@@ -41,11 +35,9 @@ armordefinition = {
         'Normal 1.0',
         'Deathnuke 1.0',
         'DGun 0.45',
-        'Overcharge 0.25',
         'AntiAir 0.05',
         'LANDAir 0.3',
-        'StlAir 0.5',
-        'AntiSub 0.66',
+        'AntiSub 0.3',
     },
     {   # Armor Type Name
         'Structure',
@@ -54,8 +46,7 @@ armordefinition = {
         'Normal 1.0',
         'AntiAir 0.05',
         'LANDAir 0.3',
-        'StlAir 0.5',
-        'AntiSub 0.2',
+        'AntiSub 0.3',
         'Overcharge 0.25',
         'DGun 0.33',
         'Deathnuke 0.032'
@@ -67,7 +58,6 @@ armordefinition = {
         # Armor Definition
         'AntiAir 1.0',
         'LANDAir 1.0',
-        'StlAir 1.0',
         'AntiSub 1.0',
         'DGun 2.0',
         'ExperimentalFootfall 0.0',
@@ -80,7 +70,6 @@ armordefinition = {
         'Normal 1.0',
         'AntiAir 1.0',
         'LANDAir 1.0',
-        'StlAir 1.0',
         'AntiSub 1.0',
         'Overcharge 0.25',
         'DGun 0.33',
@@ -95,10 +84,7 @@ armordefinition = {
         'Normal 1.0',
         'AntiAir 1.0',
         'LANDAir 1.0',
-        'StlAir 1.0',
-        'AntiSub 0.2',
         'CzarBeam 0.25',
-        'DGun 1.0',
         'OtheTacticalBomb 0.1',
     },
     {
@@ -109,10 +95,7 @@ armordefinition = {
         'Normal 1.0',
         'AntiAir 0.05',
         'LANDAir 0.3',
-        'StlAir 0.5',
-        'DGun 1.0',
         'TacticalMissile 0.55',
-        'AntiSub 0.33',
     },
 
     { 
@@ -123,8 +106,6 @@ armordefinition = {
     'Normal 1.0',
     'AntiAir 0.05',
     'LANDAir 0.3',
-    'StlAir 0.5',
-    'DGun 1.0',
     'AntiSub 1.0',
 },
 }

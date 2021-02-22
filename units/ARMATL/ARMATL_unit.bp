@@ -125,8 +125,8 @@ UnitBlueprint {
             },
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-            Damage = 1500,
-            DamageRadius = 0.5,
+            Damage = 400,
+            DamageRadius = 1,
             DamageType = 'AntiSub',
             DisplayName = 'ARMATL_TORPEDO',
             ProjectileLifetime = 12,
@@ -141,7 +141,7 @@ UnitBlueprint {
             MaxRadius = 40.625,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 6,
+            MuzzleVelocity = 4,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMATL_TORPEDO/ARMATL_TORPEDO_proj.bp',
             RackBones = {
                 {

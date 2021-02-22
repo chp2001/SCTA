@@ -40,8 +40,8 @@ ProjectileBlueprint {
         Category = 'Anti Navy',
         EntityCategory = {
             'PROJECTILE',
-            'DIRECTFIRE',
-	    'ANTINAVY',
+            'TORPEDO',
+	        'ANTINAVY',
         },
         Weapon = 'CORAIR_TORPEDO',
     },
@@ -49,10 +49,14 @@ ProjectileBlueprint {
         HelpText = 0,
     },
     Physics = {
+        Acceleration = 0,
         DestroyOnWater = false,
         InitialSpeed = 15,
-        TurnRate = 3600,
+        Lifetime = 20,
+        MaxSpeed = 15,
+        StayUnderwater = true,
+        TrackTarget = true,
+        TurnRate = 230,
         VelocityAlign = true,
-        UseGravity = true,
     },
 }

@@ -27,9 +27,8 @@ ProjectileBlueprint {
         },
     },
     Categories = {
-        'ARM',
         'PROJECTILE',
-        'DIRECTFIRE',
+        'TORPEDO',
 	'ANTINAVY',
     },
     Display = {
@@ -38,29 +37,26 @@ ProjectileBlueprint {
         StrategicIconSize = 1,
     },
     General = {
-        Category = 'Direct Fire',
+        Category = 'AntiNavy',
         EntityCategory = {
-            'ARM',
             'PROJECTILE',
-            'DIRECTFIRE',
+            'TORPEDO',
 	    'ANTINAVY',
         },
-        Faction = 'ARM',
         Weapon = 'ARMATL_TORPEDO',
     },
     Interface = {
         HelpText = 0,
     },
     Physics = {
-	Acceleration = 1.25,
+        Acceleration = 5,
         DestroyOnWater = false,
-        InitialSpeed = 3.75,
-	MaxSpeed = 5.625,
-        Lifetime = 10,
+        InitialSpeed = 3,
+        Lifetime = 7,
+        MaxSpeed = 18,
         StayUnderwater = true,
         TrackTarget = true,
-        TurnRate = 250,
+        TurnRate = 230,
         VelocityAlign = true,
-        UseGravity = false,
     },
 }

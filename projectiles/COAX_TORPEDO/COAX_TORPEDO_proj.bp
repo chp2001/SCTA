@@ -27,10 +27,9 @@ ProjectileBlueprint {
         },
     },
     Categories = {
-        'ARM',
         'PROJECTILE',
-        'DIRECTFIRE',
-	'ANTINAVY',
+        'TORPEDO',
+	    'ANTINAVY',
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/torpedo_mesh.bp',
@@ -38,27 +37,26 @@ ProjectileBlueprint {
         StrategicIconSize = 1,
     },
     General = {
-        Category = 'Direct Fire',
+        Category = 'AntiNavy',
         EntityCategory = {
-            'ARM',
             'PROJECTILE',
-            'DIRECTFIRE',
-	    'ANTINAVY',
+            'TORPEDO',
+	        'ANTINAVY',
         },
-        Faction = 'ARM',
         Weapon = 'COAX_TORPEDO',
     },
     Interface = {
         HelpText = 0,
     },
     Physics = {
+        Acceleration = 5,
         DestroyOnWater = false,
-        InitialSpeed = 10,
-        Lifetime = 10,
+        InitialSpeed = 3,
+        Lifetime = 7,
+        MaxSpeed = 18,
         StayUnderwater = true,
         TrackTarget = true,
-        TurnRate = 2.75,
+        TurnRate = 230,
         VelocityAlign = true,
-        UseGravity = false,
     },
 }

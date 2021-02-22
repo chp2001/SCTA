@@ -134,7 +134,7 @@ UnitBlueprint {
             DamageFriendly = false,
             Damage = 63,
             DamageRadius = 1.5, 
-            DamageType = 'SAMAir',
+            DamageType = 'LANDAir',
             DisplayName = 'ARMKBOT_MISSILE',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',
@@ -189,7 +189,7 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 275.06,
             Turreted = true,
-	    WeaponUnpacks = true,
+	        WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
         },
         { #BIG_UNITEX

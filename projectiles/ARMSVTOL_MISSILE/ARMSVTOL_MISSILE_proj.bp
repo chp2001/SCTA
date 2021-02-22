@@ -47,7 +47,7 @@ ProjectileBlueprint {
         EntityCategory = {
        	    'ARM',
             'PROJECTILE',
-   	    'ANTIAIR',
+   	        'ANTIAIR',
        	    'MISSILE',
         },
         Faction = 'ARM',

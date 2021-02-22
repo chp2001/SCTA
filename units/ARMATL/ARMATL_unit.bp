@@ -125,7 +125,7 @@ UnitBlueprint {
             },
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-            Damage = 400,
+            Damage = 900,
             DamageRadius = 1,
             DamageType = 'AntiSub',
             DisplayName = 'ARMATL_TORPEDO',
@@ -148,7 +148,7 @@ UnitBlueprint {
                     MuzzleBones = {
                         'flare',
                     },
-                    RackBone = 'Turret',
+                    RackBone = 'turret',
                 },
             },
             TrackingRadius = 1.15,

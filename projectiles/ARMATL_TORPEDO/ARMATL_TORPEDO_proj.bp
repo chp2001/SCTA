@@ -30,6 +30,7 @@ ProjectileBlueprint {
         'PROJECTILE',
         'TORPEDO',
 	'ANTINAVY',
+    'ARM',
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/AdvTorpedo_mesh.bp', #Change
@@ -42,7 +43,9 @@ ProjectileBlueprint {
             'PROJECTILE',
             'TORPEDO',
 	    'ANTINAVY',
+        'CORE',
         },
+        Faction = 'ARM',
         Weapon = 'ARMATL_TORPEDO',
     },
     Interface = {

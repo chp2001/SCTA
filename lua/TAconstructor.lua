@@ -245,7 +245,6 @@ TACommander = Class(TAconstructor) {
             local wep = instigator:GetWeaponByLabel('OverCharge')
             amount = wep:GetBlueprint().Overcharge.commandDamage
         end
-
         TAconstructor.DoTakeDamage(self, instigator, amount, vector, damageType)
     end,
 
@@ -350,15 +349,13 @@ TARealCommander = Class(TACommander) {
     end,
     
     DoTakeDamage = function(self, instigator, amount, vector, damageType)
-
-        TACommander.DoTakeDamage(self, instigator, amount, vector, damageType)
         local aiBrain = self:GetAIBrain()
         if aiBrain then
             aiBrain:OnPlayCommanderUnderAttackVO()
         end
-
         if self:GetHealth() < ArmyBrains[self.Army]:GetUnitStat(self.UnitId, "lowest_health") then
             ArmyBrains[self.Army]:SetUnitStat(self.UnitId, "lowest_health", self:GetHealth())
         end
+        TACommander.DoTakeDamage(self, instigator, amount, vector, damageType)
     end,
 }

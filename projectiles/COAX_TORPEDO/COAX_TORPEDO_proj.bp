@@ -30,6 +30,7 @@ ProjectileBlueprint {
         'PROJECTILE',
         'TORPEDO',
 	    'ANTINAVY',
+        'CORE',
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/torpedo_mesh.bp',
@@ -42,7 +43,9 @@ ProjectileBlueprint {
             'PROJECTILE',
             'TORPEDO',
 	        'ANTINAVY',
+            'ARM',
         },
+        Faction = 'CORE',
         Weapon = 'COAX_TORPEDO',
     },
     Interface = {

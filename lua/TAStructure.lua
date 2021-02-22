@@ -9,6 +9,15 @@ TAStructure = Class(TAunit)
 {
 	LandBuiltHiddenBones = {'Floatation'},
 	
+	DoTakeDamage = function(self, instigator, amount, vector, damageType)
+	    -- Handle incoming OC damage
+        if damageType == 'Overcharge' then
+            local wep = instigator:GetWeaponByLabel('OverCharge')
+            amount = wep:GetBlueprint().Overcharge.structureDamage
+        end
+        TAunit.DoTakeDamage(self, instigator, amount, vector, damageType)
+    end,
+
 	OnStopBuild = function(self, unitBeingBuilt, order)
 		TAunit.OnStopBuild(self, unitBeingBuilt, order)
 		if unitBeingBuilt:GetFractionComplete() == 1 and unitBeingBuilt:GetUnitId() == self:GetBlueprint().General.UpgradesTo then

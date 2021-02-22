@@ -29,17 +29,17 @@ ProjectileBlueprint {
     Categories = {
         'ARM',
         'PROJECTILE',
-        'DIRECTFIRE',
+        'ANTIAIR',
     },
     Display = {
         StrategicIconSize = 1,
     },
     General = {
-        Category = 'Direct Fire',
+        Category = 'AntiAir',
         EntityCategory = {
             'ARM',
             'PROJECTILE',
-            'DIRECTFIRE',
+            'ANTIAIR',
         },
         Faction = 'ARM',
         Weapon = 'ARMAIR2AIRLASER',

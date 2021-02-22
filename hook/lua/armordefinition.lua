@@ -8,7 +8,7 @@ armordefinition = {
         'Normal 1.0',
         'AntiAir 0.05',
         'LANDAir 0.3',
-        'AntiSub 0.33',
+        'AntiSub 0.5',
         'DGun 1.0',
     },
     {   # Armor Type Name
@@ -18,7 +18,7 @@ armordefinition = {
         'Normal 1.0',
         'AntiAir 0.05',
         'LANDAir 0.3',
-        'AntiSub 0.33',
+        'AntiSub 0.5',
     },
     {   # Armor Type Name
         'Light',
@@ -37,7 +37,7 @@ armordefinition = {
         'DGun 0.45',
         'AntiAir 0.05',
         'LANDAir 0.3',
-        'AntiSub 0.3',
+        'AntiSub 0.5',
     },
     {   # Armor Type Name
         'Structure',

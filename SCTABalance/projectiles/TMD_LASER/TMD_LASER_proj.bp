@@ -38,9 +38,7 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'TMD_LASER',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 100,

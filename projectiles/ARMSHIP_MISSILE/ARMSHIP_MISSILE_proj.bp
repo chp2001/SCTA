@@ -53,9 +53,7 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARMSHIP_MISSILE',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         Acceleration = 7.5625,
         DestroyOnWater = true,

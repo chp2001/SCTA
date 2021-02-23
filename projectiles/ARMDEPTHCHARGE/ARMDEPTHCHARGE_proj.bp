@@ -49,9 +49,7 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARMDEPTHCHARGE',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         DestroyOnWater = false,
         InitialSpeed = 5,

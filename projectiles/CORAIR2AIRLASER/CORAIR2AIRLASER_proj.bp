@@ -44,9 +44,7 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'COREAIR2AIRLASER',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 56.25,

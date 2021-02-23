@@ -51,9 +51,7 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARMAAS_WEAPON3',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 60,

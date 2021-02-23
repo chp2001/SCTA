@@ -51,9 +51,7 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARMWAR_LCANNON',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 15,

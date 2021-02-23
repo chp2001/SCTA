@@ -33,9 +33,7 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'DGun',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         CollideSurface = false,
         CollideEntity = false,

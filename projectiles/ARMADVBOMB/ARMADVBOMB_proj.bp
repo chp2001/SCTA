@@ -51,9 +51,7 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARMADVBOMB',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         DestroyOnWater = true,
         RealisticOrdinance = true,

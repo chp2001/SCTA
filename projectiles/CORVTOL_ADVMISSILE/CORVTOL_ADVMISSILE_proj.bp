@@ -53,9 +53,7 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORVTOL_ADVMISSILE',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         Acceleration = 10,
         DestroyOnWater = true,

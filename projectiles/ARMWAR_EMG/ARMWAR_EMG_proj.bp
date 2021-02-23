@@ -46,9 +46,7 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARMWAR_EMG',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 25,

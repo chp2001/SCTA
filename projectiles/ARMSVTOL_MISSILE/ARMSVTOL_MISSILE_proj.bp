@@ -53,9 +53,7 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARMSVTOL_ADVMISSILE',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         Acceleration = 15,
         DestroyOnWater = true,

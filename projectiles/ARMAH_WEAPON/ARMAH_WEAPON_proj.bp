@@ -53,9 +53,7 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARMAH_WEAPON',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         Acceleration = 10.25,
         DestroyOnWater = true,

@@ -44,9 +44,7 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARMFLEA_WEAPON',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 32,

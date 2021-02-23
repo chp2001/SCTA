@@ -49,9 +49,7 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'COREDEPTHCHARGE',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         DestroyOnWater = false,
         InitialSpeed = 5,

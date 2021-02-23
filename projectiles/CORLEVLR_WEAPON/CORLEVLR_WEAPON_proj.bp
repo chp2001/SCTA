@@ -51,9 +51,7 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORLEVLR_WEAPON',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 34,

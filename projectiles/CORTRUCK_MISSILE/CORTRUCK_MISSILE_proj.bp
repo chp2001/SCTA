@@ -52,9 +52,7 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORTRUCK_MISSILE',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         Acceleration = 8.5,
         DestroyOnWater = true,

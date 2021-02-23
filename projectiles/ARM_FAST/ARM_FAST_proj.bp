@@ -44,9 +44,7 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARM_FAST',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 60,

@@ -68,9 +68,6 @@ ProjectileBlueprint {
         },
         Faction = 'ARM',
     },
-    Interface = {
-        HelpText = 'ARM Nuclear Missile',
-    },
     Physics = {
         Acceleration = 3,
         CollideEntity = false,

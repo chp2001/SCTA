@@ -53,14 +53,11 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORVTOL_MISSILE',
     },
-
     Physics = {
-        Acceleration = 10,
         DestroyOnWater = true,
-        InitialSpeed = 40,
+        InitialSpeed = 60,
         LeadTarget = false,
         Lifetime = 10,
-        MaxSpeed = 80,
         TrackTarget = true,
         TurnRate = 350,
         UseGravity = false,

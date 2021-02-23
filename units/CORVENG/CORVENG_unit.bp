@@ -196,7 +196,7 @@ TechLevel = 'RULEUTL_Basic',
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 40,
+            MuzzleVelocity = 60,
             ProjectileId = '/mods/SCTA-master/projectiles/CORVTOL_MISSILE/CORVTOL_MISSILE_proj.bp',
             RackBones = {
                 {

@@ -199,7 +199,7 @@ UnitBlueprint {
             MaxRadius = 42,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 50,
+            MuzzleVelocity = 65,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMVTOL_ADVMISSILE/ARMVTOL_ADVMISSILE_proj.bp',
             RackBones = {
                 {
@@ -257,7 +257,7 @@ UnitBlueprint {
             MaxRadius = 42,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 50,
+            MuzzleVelocity = 65,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMVTOL_ADVMISSILE/ARMVTOL_ADVMISSILE_proj.bp',
             RackBones = {
                 {

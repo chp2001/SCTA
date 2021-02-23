@@ -35,7 +35,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH2',
         'LEVEL2',
-        'LAB',
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -45,6 +44,7 @@ UnitBlueprint {
 	'CORE',
 	'SORTCONSTRUCTION',
 	'AIR',
+    'LAB',
     },
     Defense = {
         ArmorType = 'Structure',

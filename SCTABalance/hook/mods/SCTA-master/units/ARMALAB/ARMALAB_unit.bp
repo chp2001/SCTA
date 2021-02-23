@@ -3,7 +3,6 @@ UnitBlueprint {
     Categories = {
         'BUILTBYT2KBOT',
         'BUILTBYT1KBOT',
-        'LAB',
         'ARM',
         'LEVEL2',
         'TECH2',
@@ -18,6 +17,7 @@ UnitBlueprint {
 	    'CONSTRUCTION',
         'LAND', 
         'SORTCONSTRUCTION',
+        'LAB',
     },
         Display = {
         UniformScale = 0.28,

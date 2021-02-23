@@ -34,7 +34,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-        'LAB',
         'LEVEL2',
         'AIR',
 	    'FACTORY',
@@ -45,6 +44,7 @@ UnitBlueprint {
         'OVERLAYRADAR',
 	    'ARM',
 	    'SORTCONSTRUCTION',
+        'LAB',
     },
     Defense = {
         ArmorType = 'Structure',

@@ -14,10 +14,10 @@ UnitBlueprint {
 	    'STRUCTURE',
 	    'CONSTRUCTION',
         'LAND', 
-        'LAB',
 	    'CORE',
 	    'SORTCONSTRUCTION',
 	    'LEVEL2',
+        'LAB',
     },
     Defense = {
         Health = 11000,

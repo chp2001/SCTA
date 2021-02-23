@@ -51,6 +51,7 @@ UnitBlueprint {
             DamageRadius = 1,
             EnergyDrainPerSecond = 50,
             EnergyRequired = 150,
+            EnergyChargeForFirstShot = true,
             FiringTolerance = 0,
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,

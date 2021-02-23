@@ -19,9 +19,6 @@ UnitBlueprint {
         [1] = {
             Damage = 200,
             RateOfFire = 0.2,
-            EnergyDrainPerSecond = 5,
-            EnergyRequired = 5,
-            EnergyChargeForFirstShot = true,
         },
         [2] = {}, 
     },

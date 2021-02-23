@@ -4,7 +4,7 @@
 #Script created by Raevn
 
 local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
-local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
+local TARocket = import('/mods/SCTA-master/lua/TAweapon.lua').TARocket
 local TAMPhalanxWeapon = import('/lua/terranweapons.lua').TAMPhalanxWeapon
 
 ARMMSHIP = Class(TAunit) {
@@ -28,7 +28,7 @@ ARMMSHIP = Class(TAunit) {
 	end,
 
 	Weapons = {
-		ARMMSHIP_ROCKET = Class(TAweapon) {
+		ARMMSHIP_ROCKET = Class(TARocket) {
 
 				
 
@@ -97,7 +97,7 @@ ARMMSHIP = Class(TAunit) {
 					--SLEEP <10>;
 					self.unit.currentShot = 0	
 					end	
-				TAweapon.PlayFxRackReloadSequence(self)
+				TARocket.PlayFxRackReloadSequence(self)
 			end,
 
 			PlayFxWeaponUnpackSequence = function(self)
@@ -130,7 +130,7 @@ ARMMSHIP = Class(TAunit) {
 
 				--SLEEP <10>;
 
-				TAweapon.PlayFxWeaponUnpackSequence(self)
+				TARocket.PlayFxWeaponUnpackSequence(self)
 			end,	
 
 			PlayFxWeaponPackSequence = function(self)
@@ -157,7 +157,7 @@ ARMMSHIP = Class(TAunit) {
 				self.unit.Sliders.door2:SetSpeed(6)
 
 
-				TAweapon.PlayFxWeaponPackSequence(self)
+				TARocket.PlayFxWeaponPackSequence(self)
 			end,	
 		},
 		ARMSHIP_MISSILE = Class(TAMPhalanxWeapon) {},

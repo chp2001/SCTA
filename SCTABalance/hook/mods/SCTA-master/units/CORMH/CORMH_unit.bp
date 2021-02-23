@@ -41,9 +41,9 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             RateOfFire = 0.5,
             TargetCheckInterval = 1,
-            EnergyDrainPerSecond = 60,
-            EnergyRequired = 120,
-            EnergyChargeForFirstShot = true,
+            MassDrainPerSecond = 10,
+            MassRequired = 30,
+            MassChargeForFirstShot = true,
         },
         [2] = {
         }, 

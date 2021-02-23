@@ -36,7 +36,7 @@ UnitBlueprint {
         BuildRate = 240,
         BuildTime = 150000,
         BuildableCategory = {
-            'PHIB LEVEL3 ARM',
+            'HOVER LEVEL3 ARM',
         },
     },
     Physics = {

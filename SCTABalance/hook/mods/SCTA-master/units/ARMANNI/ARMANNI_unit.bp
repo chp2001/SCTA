@@ -12,6 +12,7 @@ UnitBlueprint {
     'VISIBLETORECON',
     'RECLAIMABLE',
     'TECH3',
+    'LEVEL3',
     'STRUCTURE',
     'DEFENSE',
     'STRATEGIC',
@@ -19,9 +20,8 @@ UnitBlueprint {
     'OVERLAYDIRECTFIRE',
     'ARM',
     'SORTDEFENSE',
-    'LEVEL3',
-    'SNIPEMODE',
     'LASER',
+    'SNIPEMODE',
     },
     Defense = {
         Health = 16000,

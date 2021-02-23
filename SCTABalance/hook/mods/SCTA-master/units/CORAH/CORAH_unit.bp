@@ -17,7 +17,6 @@ UnitBlueprint {
     'LAND',
     'CORE',
     'HOVER',
-    'PHIB',
     'LEVEL3',
     },
     Defense = {

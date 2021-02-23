@@ -88,9 +88,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 22,
     },
-    Interface = {
-        HelpText = 'Anti-Air Flak Gun',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

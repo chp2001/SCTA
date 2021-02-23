@@ -124,9 +124,6 @@ TechLevel = 'RULEUTL_Advanced',
     Intel = {
         VisionRadius = 14,
     },
-    Interface = {
-        HelpText = 'Builds Krogoth',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

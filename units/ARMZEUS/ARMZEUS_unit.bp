@@ -95,9 +95,6 @@ TechLevel = 'RULEUTL_Advanced',
     Intel = {
         VisionRadius = 16,
     },
-    Interface = {
-        HelpText = 'Assault Kbot',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

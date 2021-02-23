@@ -114,9 +114,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 10,
     },
-    Interface = {
-        HelpText = 'Fast Assault Tank',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

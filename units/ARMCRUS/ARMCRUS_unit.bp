@@ -112,9 +112,6 @@ UnitBlueprint {
         WaterVisionRadius = 14,
 	SonarRadius = 27, 
     },
-    Interface = {
-        HelpText = 'Cruiser',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

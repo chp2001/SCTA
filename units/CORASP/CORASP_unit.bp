@@ -127,9 +127,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 12,
     },
-    Interface = {
-        HelpText = 'Automatically repairs aircraft',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

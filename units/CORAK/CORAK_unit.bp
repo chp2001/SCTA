@@ -94,9 +94,6 @@ TechLevel = 'RULEUTL_Basic',
     Intel = {
         VisionRadius = 18,
     },
-    Interface = {
-        HelpText = 'Infantry Kbot',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

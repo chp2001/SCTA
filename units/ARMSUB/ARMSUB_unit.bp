@@ -100,7 +100,7 @@ UnitBlueprint {
         },
         FactionName = 'ARM',
         Icon = 'land',
-TechLevel = 'RULEUTL_Basic',
+        TechLevel = 'RULEUTL_Basic',
         UnitName = 'Lurker',
     },
     Intel = {
@@ -108,9 +108,6 @@ TechLevel = 'RULEUTL_Basic',
         SonarRadius = 50,
         VisionRadius = 20,
         WaterVisionRadius = 12,
-    },
-    Interface = {
-        HelpText = 'Submarine',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

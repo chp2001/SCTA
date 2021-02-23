@@ -93,9 +93,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 16,
     },
-    Interface = {
-        HelpText = 'Lightning Tank',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

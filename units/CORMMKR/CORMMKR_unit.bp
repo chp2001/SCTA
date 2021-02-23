@@ -98,9 +98,6 @@ TechLevel = 'RULEUTL_Secret',
     Intel = {
         VisionRadius = 14,
     },
-    Interface = {
-        HelpText = 'Converts Energy into Metal',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

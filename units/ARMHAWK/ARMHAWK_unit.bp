@@ -116,7 +116,6 @@ UnitBlueprint {
         BuildCostEnergy = 6893,
         BuildCostMass = 254,
         BuildTime = 15285,
-        MaintenanceConsumptionPerSecondEnergy = 20,
     },
     General = {
         Category = 'Fighter',
@@ -140,10 +139,6 @@ UnitBlueprint {
     VisionRadius = 22,
     WaterVisionRadius = 4, 
 	RadarStealth = true,
-	FreeIntel = false,
-    },
-    Interface = {
-        HelpText = 'Stealth Fighter',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

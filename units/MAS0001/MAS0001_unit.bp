@@ -110,9 +110,6 @@ TechLevel = 'RULEUTL_Experimental',
     Intel = {
         VisionRadius = 6,
     },
-    Interface = {
-        HelpText = 'Command',
-    },
     LifeBarHeight = 0.075,
     LifeBarOffset = 0.5,
     LifeBarSize = 0.8,

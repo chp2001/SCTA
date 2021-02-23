@@ -166,9 +166,6 @@ UnitBlueprint {
         VisionRadius = 12,
         WaterVisionRadius = 6,
     },
-    Interface = {
-        HelpText = 'Tech Level 1',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.25,
     LifeBarSize = 1,

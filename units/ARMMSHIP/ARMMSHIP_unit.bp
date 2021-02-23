@@ -113,9 +113,6 @@ UnitBlueprint {
         WaterVisionRadius = 4, 
         RadarRadius = 78,
     },
-    Interface = {
-        HelpText = 'Missile Ship',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

@@ -1,6 +1,8 @@
 UnitBlueprint {
     Merge = true, 
     Categories = {
+        'BUILTBYT1AIR',
+        'BUILTBYT1KBOT',
         'SELECTABLE',
         'TECH2',
         'VISIBLETORECON',
@@ -9,9 +11,6 @@ UnitBlueprint {
 	    'LAND',
         'CORE',
         'ANTIMISSILE',
-        'BUILTBYT1VEHICLE',
-        'BUILTBYT1AIR',
-        'BUILTBYT1HOVER',
 	    'LEVEL2',
         'OVERLAYDEFENSE',
         'SORTDEFENSE',

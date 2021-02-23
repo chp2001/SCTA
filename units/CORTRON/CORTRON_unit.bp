@@ -25,11 +25,11 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 17,
     Categories = {
-        'LEVEL3',
-        'TECH3',
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
         'BUILTBYT2VEHICLE',
+        'LEVEL3',
+        'TECH3',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',

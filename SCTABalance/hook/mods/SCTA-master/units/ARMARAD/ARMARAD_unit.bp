@@ -2,8 +2,8 @@ UnitBlueprint {
     Merge = true,
     BuildIconSortPriority = 10,
     Categories = {
-        'BUILTBYT2KBOT',
         'BUILTBYT2AIR',
+        'BUILTBYT2KBOT',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -17,7 +17,6 @@ UnitBlueprint {
 	    'ARM',
 	    'SORTINTEL',
         'TARGETING',
-        'BUILTBYT1KBOT',
     },
  Display = {
   Abilities = {

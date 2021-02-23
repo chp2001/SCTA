@@ -32,7 +32,7 @@ UnitBlueprint {
         BuildTime = 5500,
         BuildRate = 180,
         BuildableCategory = {
-            'BUILTBYT1VEHICLE CORE',
+            'BUILTBYT1KBOT CORE',
             'BUILTBYT2KBOT CORE',
         },
         MaxBuildDistance = 7,

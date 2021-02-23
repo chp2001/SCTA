@@ -37,10 +37,9 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 15,
     Categories = {
-        'BUILTBYT2VEHICLE',
-        'BUILTBYT2KBOT',
         'BUILTBYT2AIR',
-        'BUILTBYT1HOVER',
+        'BUILTBYT2KBOT',
+        'BUILTBYT2VEHICLE',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',

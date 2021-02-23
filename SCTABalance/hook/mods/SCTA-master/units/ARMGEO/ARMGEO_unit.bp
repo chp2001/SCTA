@@ -3,9 +3,7 @@ UnitBlueprint {
     Categories = {
         'BUILTBYT1AIR',
         'BUILTBYT1KBOT',
-        'BUILTBYT1VEHICLE',
         'BUILTBYT1HOVER',
-        'BUILTBYT1SHIP',
         'SELECTABLE',
         'VISIBLETORECON',
         'RECLAIMABLE',

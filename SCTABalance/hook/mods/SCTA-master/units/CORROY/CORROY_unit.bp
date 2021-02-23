@@ -42,9 +42,6 @@ UnitBlueprint {
         BuildTime = 11000,
     },
     Description = 'Frigate',
-    Interface = {
-        HelpText = 'Frigate',
-    },
     SelectionSizeX = 2,
     SelectionSizeZ = 4,
     SizeX = 2,

@@ -125,9 +125,6 @@ TechLevel = 'RULEUTL_Basic',
     Intel = {
         VisionRadius = 10,
     },
-    Interface = {
-        HelpText = 'Produces Vehicles',
-    },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
     LifeBarSize = 7,

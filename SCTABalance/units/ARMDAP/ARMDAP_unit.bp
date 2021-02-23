@@ -129,9 +129,6 @@ UnitBlueprint {
 	RadarRadius = 32,
 	FreeIntel = true,
     },
-    Interface = {
-        HelpText = 'Produces Aircraft',
-    },
     LifeBarHeight = 0.22,
     LifeBarOffset = 2,
     LifeBarSize = 7,

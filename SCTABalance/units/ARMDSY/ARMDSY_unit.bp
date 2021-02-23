@@ -117,15 +117,12 @@ UnitBlueprint {
         UpgradesFrom = 'armsy',
         UpgradesTo = 'armadsy',
         Icon = 'land',
-TechLevel = 'RULEUTL_Advanced',
+    TechLevel = 'RULEUTL_Advanced',
 	UnitName = 'Development Shipyard',
     },
     Intel = {
         VisionRadius = 10,
         WaterVisionRadius = 8, 
-    },
-    Interface = {
-        HelpText = 'Produces Ships',
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 5,

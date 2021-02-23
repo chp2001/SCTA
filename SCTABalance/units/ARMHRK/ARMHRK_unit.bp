@@ -94,9 +94,6 @@ TechLevel = 'RULEUTL_Advanced',
     Intel = {
         VisionRadius = 14,
     },
-    Interface = {
-        HelpText = 'Mobile Kbot Rocket Launcher',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 1,

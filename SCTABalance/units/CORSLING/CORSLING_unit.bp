@@ -95,9 +95,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 14,
     },
-    Interface = {
-        HelpText = 'Tortoise Flak Kbot',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

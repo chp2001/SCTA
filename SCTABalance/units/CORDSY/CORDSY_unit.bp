@@ -128,9 +128,6 @@ UnitBlueprint {
         VisionRadius = 10,
         WaterVisionRadius = 8,
     },
-    Interface = {
-        HelpText = 'Produces Ships',
-    },
     LifeBarHeight = 0.22,
     LifeBarOffset = 5,
     LifeBarSize = 14,

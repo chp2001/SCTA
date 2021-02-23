@@ -59,7 +59,7 @@ ProjectileBlueprint {
     Physics = {
         Acceleration = 20,
         DestroyOnWater = true,
-        InitialSpeed = 100,
+        InitialSpeed = 50,
         LeadTarget = false,
         Lifetime = 10,
         MaxSpeed = 120,

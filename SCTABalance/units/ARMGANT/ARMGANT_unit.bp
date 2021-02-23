@@ -124,9 +124,6 @@ TechLevel = 'RULEUTL_Advanced',
     Intel = {
         VisionRadius = 14,
     },
-    Interface = {
-        HelpText = 'Builds Drake',
-    },
     LifeBarHeight = 0.3,
     LifeBarOffset = 7,
     LifeBarSize = 13,

@@ -28,9 +28,9 @@ UnitBlueprint {
     SizeZ = 10,
     Weapon = {
         [1] = {
-            EnergyDrainPerSecond = 100,
-            EnergyRequired = 300,
-            EnergyChargeForFirstShot = true,
+            MassDrainPerSecond = 10,
+            MassRequired = 60,
+            MassChargeForFirstShot = true,
         },
         [2] = {            
             AimsStraightOnDisable = false,

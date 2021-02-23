@@ -166,6 +166,62 @@ TAPopLaser = Class(TAweapon) {
     end,
 }
 
+TARocket = Class(TAweapon) {
+ -- Called when the weapon is created, almost always when the owning unit is created
+ OnCreate = function(self)
+    local bp = self:GetBlueprint()
+    self.MassRequired = bp.MassRequired
+    self.MassDrainPerSecond = bp.MassDrainPerSecond
+    if bp.MassChargeForFirstShot == false then
+        self.FirstShot = true
+    end
+    TAweapon.OnCreate(self)
+end,
+
+--OnWeaponFired = function(self)
+    --TAweapon.OnWeaponFired(self)
+    --self:StartMassDrain()
+--end,
+
+StartEconomyDrain = function(self)
+    TAweapon.StartEconomyDrain(self)
+    if self.FirstShot then return end
+    local bp = self:GetBlueprint()
+    if not self.MassDrain and bp.MassRequired and bp.MassDrainPerSecond then
+        local MsReq = self:GetWeaponMassRequired()
+        local MsDrain = self:GetWeaponMassDrain()
+        if MsReq > 0 and MsDrain > 0 then
+            local time = MsReq / MsDrain
+            if time < 0.1 then
+                time = 0.1
+            end
+            self.MassDrain = CreateEconomyEvent(self.unit, 0, MsReq, time)
+            self.FirstShot = true
+            self.unit:ForkThread(function()
+                WaitFor(self.MassDrain)
+                RemoveEconomyEvent(self.unit, self.MassDrain)
+                self.MassDrain = nil
+            end)
+        end
+    end
+end,
+
+GetWeaponMassRequired = function(self)
+    local bp = self:GetBlueprint()
+    local weapMass = (bp.MassRequired or 0)
+    if weapMass < 0 then
+        weapMass = 0
+    end
+    return weapMass
+end,
+
+GetWeaponMassDrain = function(self)
+    local bp = self:GetBlueprint()
+    local weapMass = (bp.MassDrainPerSecond or 0)
+    return weapMass
+end,
+}
+
 TAKami = Class(KamikazeWeapon){
     FxMuzzleFlash = {
         '/effects/emitters/default_muzzle_flash_01_emit.bp',

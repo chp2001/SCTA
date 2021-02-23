@@ -33,7 +33,7 @@ UnitBlueprint {
         [1] = {
             Damage = 90,
             FiringTolerance = 3,
-            MaxRadius = 48,
+            MaxRadius = 60,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             EnergyDrainPerSecond = 50,

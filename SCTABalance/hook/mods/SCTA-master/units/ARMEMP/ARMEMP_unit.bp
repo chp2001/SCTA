@@ -20,7 +20,7 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'ARM',
 	'SORTSTRATEGIC',
-    'TECH2',
+    'TECH3',
 	'LEVEL3',
     'SHOWATTACKRETICLE',
     'TACTICALMISSILEPLATFORM',

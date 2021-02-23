@@ -2,6 +2,7 @@ UnitBlueprint {
     Merge = true, 
     Categories = {
         'BUILTBYT2AIR',
+        'BUILTBYT1HOVER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -22,10 +23,14 @@ UnitBlueprint {
         Health = 2000,
         MaxHealth = 2000,
     },
+    Economy = {
+        BuildTime = 20000,
+    },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,
     SelectionThickness = 0.5,
     SizeX = 3,
     SizeY = 4,
     SizeZ = 3,
+    StrategicIconName = 'icon_structure2_antinavy',
 }

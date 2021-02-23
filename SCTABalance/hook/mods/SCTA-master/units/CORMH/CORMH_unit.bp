@@ -11,6 +11,7 @@ UnitBlueprint {
         'LAND',
     'CORE',
     'HOVER',
+    'VEHICLE',
 	'LEVEL3',
     'ROCKET',
     'SILO',

@@ -7,17 +7,21 @@ UnitBlueprint {
     Merge = true,
     Categories = {
         'SELECTABLE',
-        'TECH2',
+        'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
+	    'LAND',
         'CORE',
-	'LEVEL2',
-    'RADAR',
-    'OVERLAYRADAR',
-    'TACLOAK',
-    'JAM',
+	    'LEVEL3',
+        'RADAR',
+        'OVERLAYRADAR',
+        'TACLOAK',
+        'JAM',
+        'KBOT',
+    },
+    Display = {
+        UniformScale = 0.1,
     },
     Economy = {
         BuildCostEnergy = 1500,
@@ -25,10 +29,15 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 10,
     },
     Intel = {
+        ActiveIntel = {
+            Omni = true,
+        },    
         JamRadius = {
-            Max = 5,
-            Min = 5,
+            Max = 20,
+            Min = 10,
           },
           JammerBlips = 5,
+          OmniRadius = 15,
     },
+    StrategicIconName = 'icon_bot3_intel',
 }

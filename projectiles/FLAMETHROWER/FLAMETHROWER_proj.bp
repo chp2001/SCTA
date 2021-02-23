@@ -24,9 +24,7 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'FLAMETHROWER',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         CollideEntity = false,
         DestroyOnWater = true,

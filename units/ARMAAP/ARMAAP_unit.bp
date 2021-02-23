@@ -34,7 +34,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-        'LAB',
         'LEVEL2',
         'AIR',
 	    'FACTORY',
@@ -45,6 +44,7 @@ UnitBlueprint {
         'OVERLAYRADAR',
 	    'ARM',
 	    'SORTCONSTRUCTION',
+        'LAB',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -120,16 +120,10 @@ UnitBlueprint {
 	RadarRadius = 30,
 	FreeIntel = true,
     },
-    Interface = {
-        HelpText = 'Produces Aircraft',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         FlattenSkirt = true,
         SkirtSizeX = 7,
         SkirtSizeZ = 7,

@@ -198,9 +198,6 @@ UnitBlueprint {
 	Cloak = true,
     OmniRadius = 3,
     },
-    Interface = {
-        HelpText = 'Commander',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

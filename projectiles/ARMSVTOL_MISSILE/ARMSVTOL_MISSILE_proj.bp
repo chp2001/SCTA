@@ -53,16 +53,12 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARMSVTOL_ADVMISSILE',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
-        Acceleration = 25,
         DestroyOnWater = true,
-        InitialSpeed = 75,
+        InitialSpeed = 70,
         LeadTarget = false,
         Lifetime = 10,
-        MaxSpeed = 125,
         TrackTarget = true,
         TurnRate = 200,
         UseGravity = false,

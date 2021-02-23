@@ -101,9 +101,6 @@ TechLevel = 'RULEUTL_Advanced',
     Intel = {
         VisionRadius = 6,
     },
-    Interface = {
-        HelpText = 'Crawling Bomb',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

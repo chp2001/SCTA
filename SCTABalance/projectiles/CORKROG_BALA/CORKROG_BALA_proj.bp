@@ -51,9 +51,7 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORKROG_FIRE',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 40,

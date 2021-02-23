@@ -118,9 +118,6 @@ UnitBlueprint {
         WaterVisionRadius = 12,
         SonarRadius = 20,
     },
-    Interface = {
-        HelpText = 'Battleship',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

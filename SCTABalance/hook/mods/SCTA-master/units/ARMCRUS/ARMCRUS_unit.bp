@@ -26,9 +26,6 @@ UnitBlueprint {
     SizeY = 3,
     SizeZ = 10,
     Description = 'Destroyer',
-    Interface = {
-        HelpText = 'Destroyer',
-    },
     Physics = {
             MaxAcceleration = 3,
             MaxBrake = 3,

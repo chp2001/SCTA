@@ -51,9 +51,7 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORSHIP_MISSILE',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         Acceleration = 7.5625,
         DestroyOnWater = true,

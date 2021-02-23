@@ -103,21 +103,10 @@ UnitBlueprint {
         WaterVisionRadius = 10,
 	FreeIntel = true,
     },
-    Interface = {
-        HelpText = 'Battle Submarine',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 4,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Air = false,
-            LAYER_Land = false,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = true,
-            LAYER_Water = false,
-        },
         Elevation = -1.25,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,

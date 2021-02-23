@@ -51,9 +51,7 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORADVBOMB',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         DestroyOnWater = true,
         RealisticOrdinance = true,

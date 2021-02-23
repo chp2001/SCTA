@@ -59,9 +59,7 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORMSHIP_ROCKET',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         Acceleration = 2.5,
         DestroyOnWater = true,

@@ -77,8 +77,8 @@ UnitBlueprint {
     },
     General = {
 	---BuildAngle = 4096,
-    Category = 'Defense',
-    Classification = 'RULEUC_CounterMeasure',
+        Category = 'Defense',
+        Classification = 'RULEUC_CounterMeasure',
         CommandCaps = {
             RULEUCC_SiloBuildTactical = true,
             RULEUCC_Stop = true,
@@ -88,14 +88,11 @@ UnitBlueprint {
         SelectionPriority = 5,
         FactionName = 'ARM',
         Icon = 'land',
-TechLevel = 'RULEUTL_Secret',
+        TechLevel = 'RULEUTL_Secret',
         UnitName = 'Protector',
     },
     Intel = {
         VisionRadius = 10,
-    },
-    Interface = {
-        HelpText = 'Anti Missile Defense System',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -103,9 +100,6 @@ TechLevel = 'RULEUTL_Secret',
     Physics = {
         SkirtSizeX = 2, 
         SkirtSizeZ = 2,  
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,

@@ -86,18 +86,12 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 14,
     },
-    Interface = {
-        HelpText = 'Long Range Plasma Cannon',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
         SkirtSizeX = 3, 
         SkirtSizeZ = 3,  
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
     },
     SelectionSizeX = 1.5,
     SelectionCenterOffsetZ = -1,

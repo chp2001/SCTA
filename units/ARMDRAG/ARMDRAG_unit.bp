@@ -73,9 +73,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 0,
     },
-    Interface = {
-        HelpText = 'Perimeter Defence',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

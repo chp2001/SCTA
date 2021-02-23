@@ -51,9 +51,7 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORKBOT_ROCKET',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
 	TurnRate = 10,
         DestroyOnWater = true,

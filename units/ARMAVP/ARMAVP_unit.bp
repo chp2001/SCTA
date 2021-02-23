@@ -35,7 +35,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'LEVEL2',
         'LAND', 
-        'LAB',
         'TECH2',
 	    'FACTORY',
         'RALLYPOINT',
@@ -44,6 +43,7 @@ UnitBlueprint {
 	    'CONSTRUCTION',
 	    'ARM',
 	    'SORTCONSTRUCTION',
+        'LAB',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -113,16 +113,10 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 14,
     },
-    Interface = {
-        HelpText = 'Produces Vehicles',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         FlattenSkirt = true,
         SkirtSizeX = 6,
         SkirtSizeZ = 6,

@@ -51,9 +51,7 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORE_ARTILLERY',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
         Physics = {
             DestroyOnWater = true,
             InitialSpeed = 50,

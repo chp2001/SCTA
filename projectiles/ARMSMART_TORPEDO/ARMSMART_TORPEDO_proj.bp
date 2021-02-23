@@ -48,9 +48,7 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARMSMART_TORPEDO',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         Acceleration = 5,
         DestroyOnWater = false,

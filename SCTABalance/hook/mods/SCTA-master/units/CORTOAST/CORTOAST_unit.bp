@@ -34,11 +34,6 @@ UnitBlueprint {
         SizeX = 2,
         SizeZ = 2,
     },
-    Physics = {  
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
-    },
     Intel = {
         FreeIntel = true,
         RadarStealth = true,

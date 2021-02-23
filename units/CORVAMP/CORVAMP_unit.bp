@@ -141,9 +141,6 @@ TechLevel = 'RULEUTL_Advanced',
 	RadarStealth = true,
 	FreeIntel = false,
     },
-    Interface = {
-        HelpText = 'Stealth Fighter',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
@@ -202,7 +199,7 @@ TechLevel = 'RULEUTL_Advanced',
             MaxRadius = 40.625,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 80,
+            MuzzleVelocity = 65,
             ProjectileId = '/mods/SCTA-master/projectiles/CORVTOL_ADVMISSILE/CORVTOL_ADVMISSILE_proj.bp',
             RackBones = {
                 {
@@ -261,7 +258,7 @@ TechLevel = 'RULEUTL_Advanced',
             MaxRadius = 40.625,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 80,
+            MuzzleVelocity = 65,
             ProjectileId = '/mods/SCTA-master/projectiles/CORVTOL_ADVMISSILE/CORVTOL_ADVMISSILE_proj.bp',
             RackBones = {
                 {

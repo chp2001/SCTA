@@ -57,7 +57,7 @@ UnitBlueprint {
     Description = 'Produces Kbots',
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/CORALAB/CORALAB_lod0_unpack.sca',
-        AnimationUnpackRate = 2,    
+        AnimationUnpackRate = 0.5,    
         BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,
@@ -65,7 +65,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 400,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -87,11 +86,11 @@ UnitBlueprint {
     Footprint = {
 	MaxSlope = 0.625,
         SizeX = 7,
-        SizeZ = 6,
+        SizeZ = 7,
     },
     General = {
         BuildBones = {
-            BuildEffectBones = {'beama', 'beamb'},
+            BuildEffectBones = {'muzzle1', 'muzzle2', 'muzzle3', 'muzzle4', 'muzzle5', 'muzzle6'},
         },             
 	---BuildAngle = 1024,
         Category = 'Factory',
@@ -114,19 +113,13 @@ TechLevel = 'RULEUTL_Advanced',
     Intel = {
         VisionRadius = 14,
     },
-    Interface = {
-        HelpText = 'Produces Kbots',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         FlattenSkirt = true,
         SkirtSizeX = 7,
-        SkirtSizeZ = 6,
+        SkirtSizeZ = 7,
         RollOffPoints = {
             {
                 UnitSpin = 90,

@@ -88,18 +88,12 @@ TechLevel = 'RULEUTL_Basic',
     Intel = {
         VisionRadius = 24,
     },
-    Interface = {
-        HelpText = 'Plasma Tower',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
         SkirtSizeX = 1, 
         SkirtSizeZ = 1,  
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
     },
     SelectionSizeX = 1.6,
     SelectionSizeZ = 1.6,

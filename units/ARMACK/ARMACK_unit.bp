@@ -135,9 +135,6 @@ TechLevel = 'RULEUTL_Advanced',
     Intel = {
         VisionRadius = 16,
     },
-    Interface = {
-        HelpText = 'Tech Level 2',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 1,

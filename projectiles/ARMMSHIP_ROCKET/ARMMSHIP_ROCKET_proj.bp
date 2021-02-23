@@ -58,9 +58,7 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARMMSHIP_ROCKET',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         Acceleration = 2.5,
         DestroyOnWater = true,

@@ -20,9 +20,6 @@ UnitBlueprint {
         WaterVisionRadius = 15,
     },
     Description = 'Destroyer',
-    Interface = {
-        HelpText = 'Destroyer',
-    },
         Physics = {
         MaxAcceleration = 3,
         MaxBrake = 3,

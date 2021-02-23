@@ -48,9 +48,7 @@ ProjectileBlueprint {
         },
         Faction = 'ARM',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         Acceleration = 10,
         --CollideEntity = true,

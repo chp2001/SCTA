@@ -124,16 +124,10 @@ TechLevel = 'RULEUTL_Advanced',
     Intel = {
         VisionRadius = 14,
     },
-    Interface = {
-        HelpText = 'Builds Drake',
-    },
     LifeBarHeight = 0.3,
     LifeBarOffset = 7,
     LifeBarSize = 13,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         FlattenSkirt = true,
         SkirtSizeX = 9,
         SkirtSizeZ = 9,

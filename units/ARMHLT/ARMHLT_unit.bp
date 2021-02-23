@@ -98,9 +98,6 @@ UnitBlueprint {
         VisionRadius = 24,
         WaterVisionRadius = 8, 
     },
-    Interface = {
-        HelpText = 'Heavy Laser Tower',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 1,
@@ -135,8 +132,8 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'ARM_LASERH1',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water',
-                Water = 'Land|Water',
+                Land = 'Land|Water|Air',
+                Water = 'Land|Water|Air',
             },
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',

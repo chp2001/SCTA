@@ -99,18 +99,12 @@ TechLevel = 'RULEUTL_Secret',
     Intel = {
         VisionRadius = 14,
     },
-    Interface = {
-        HelpText = 'Rapid Fire Plasma Cannon',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
         SkirtSizeX = 3, 
         SkirtSizeZ = 3,  
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
     },
     SelectionSizeX = 2.2,
     SelectionSizeZ = 2.2,

@@ -91,9 +91,6 @@ UnitBlueprint {
         VisionRadius = 14,
         WaterVisionRadius = 4, 
     },
-    Interface = {
-        HelpText = 'Produces Energy',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
@@ -103,7 +100,7 @@ UnitBlueprint {
             LAYER_Seabed = true,
         },
         SkirtSizeX = 5,
-        SkirtSizeZ = 4,
+        SkirtSizeZ = 5,
     },
     SelectionSizeX = 2.5,
     SelectionSizeZ = 2,

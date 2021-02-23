@@ -132,16 +132,13 @@ UnitBlueprint {
         },
         FactionName = 'ARM',
         Icon = 'land',
-TechLevel = 'RULEUTL_Basic',
+        TechLevel = 'RULEUTL_Basic',
         UnitName = 'Tornado',
     },
     Intel = {
         VisionRadius = 22,
         WaterVisionRadius = 4, 
         RadarStealth = true,
-    },
-    Interface = {
-        HelpText = 'Fighter',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -199,7 +196,7 @@ TechLevel = 'RULEUTL_Basic',
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 75,
+            MuzzleVelocity = 70,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMSVTOL_MISSILE/ARMSVTOL_MISSILE_proj.bp',
             RackBones = {
                 {

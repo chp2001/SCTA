@@ -35,7 +35,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH2',
         'LEVEL2',
-        'LAB',
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -45,6 +44,7 @@ UnitBlueprint {
 	'CORE',
 	'SORTCONSTRUCTION',
 	'AIR',
+    'LAB',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -119,18 +119,12 @@ TechLevel = 'RULEUTL_Advanced',
 	RadarRadius = 72,
 	FreeIntel = true,
     },
-    Interface = {
-        HelpText = 'Produces Aircraft',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         FlattenSkirt = true,
-        SkirtSizeX = 7,
+        SkirtSizeX = 6,
         SkirtSizeZ = 6,
         RollOffPoints = {
             {

@@ -104,14 +104,11 @@ UnitBlueprint {
         SelectionPriority = 5,
         FactionName = 'ARM',
         Icon = 'land',
-TechLevel = 'RULEUTL_Secret',
+        TechLevel = 'RULEUTL_Secret',
         UnitName = 'Retaliator',
     },
     Intel = {
         VisionRadius = 22,
-    },
-    Interface = {
-        HelpText = 'Nuclear Missile Launcher',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -119,9 +116,6 @@ TechLevel = 'RULEUTL_Secret',
     Physics = {
         SkirtSizeX = 5, 
         SkirtSizeZ = 5,  
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
     },
     SelectionSizeX = 2.5,
     SelectionSizeZ = 2.5,

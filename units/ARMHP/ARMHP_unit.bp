@@ -120,9 +120,6 @@ UnitBlueprint {
         VisionRadius = 14,
         WaterVisionRadius = 6,
     },
-    Interface = {
-        HelpText = 'Builds Hovercraft',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

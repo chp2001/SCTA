@@ -129,16 +129,10 @@ TechLevel = 'RULEUTL_Advanced',
 	RadarRadius = 32,
 	FreeIntel = true,
     },
-    Interface = {
-        HelpText = 'Produces Aircraft',
-    },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
     LifeBarSize = 7,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         FlattenSkirt = true,
         SkirtSizeX = 6,
         SkirtSizeZ = 6,

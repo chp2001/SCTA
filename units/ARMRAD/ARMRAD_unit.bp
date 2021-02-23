@@ -119,16 +119,10 @@ TechLevel = 'RULEUTL_Basic',
         VisionRadius = 22, 
 	RadarRadius = 90,
     },
-    Interface = {
-        HelpText = 'Radar Tower',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.25,
     LifeBarSize = 1,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         SkirtSizeX = 2,
         SkirtSizeZ = 2,
     },

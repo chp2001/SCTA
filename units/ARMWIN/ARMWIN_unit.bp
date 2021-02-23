@@ -81,17 +81,9 @@ TechLevel = 'RULEUTL_Basic',
     Intel = {
         VisionRadius = 14,
     },
-    Interface = {
-        HelpText = 'Produces Energy',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
-    Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
-    },
     SelectionCenterOffsetX = -0.4,
     SelectionSizeX = 2.25,
     SelectionSizeZ = 2.25,

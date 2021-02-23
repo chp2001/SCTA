@@ -58,9 +58,7 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORTRUCK_ROCKET',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         Acceleration = 2,
         DestroyOnWater = true,

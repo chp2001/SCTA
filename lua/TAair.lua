@@ -64,8 +64,8 @@ TAair = Class(TAunit)
 }
 TASeaair = Class(TAair) 
 {
-	OnStopBeingBuilt = function(self,builder,layer)
-		TAair.OnStopBeingBuilt(self,builder,layer)
+	OnStopBeingBuilt = function(self)
+		TAair.OnStopBeingBuilt(self)
 		self:DisableIntel('RadarStealth')
     end,
 

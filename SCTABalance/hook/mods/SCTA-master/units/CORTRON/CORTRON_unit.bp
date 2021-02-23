@@ -6,7 +6,6 @@
 UnitBlueprint {
     Merge = true, 
     Categories = {
-        'TECH2',
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
         'SELECTABLE',
@@ -22,6 +21,7 @@ UnitBlueprint {
 	'CORE',
 	'TACTICALMISSILEPLATFORM',
 	'SORTSTRATEGIC',
+    'TECH3',
 	'LEVEL3',
     'SHOWATTACKRETICLE',
     },

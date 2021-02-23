@@ -18,7 +18,6 @@ UnitBlueprint {
         'LAND',
         'ARM',
         'HOVER',
-        'PHIB',
 		'LEVEL3',
     },
     Defense = {

@@ -1,7 +1,6 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'PLATFORM',
         'BUILTBYT2KBOT',
         'SELECTABLE',
         'DRAGBUILD',
@@ -16,6 +15,7 @@ UnitBlueprint {
 	    'CONSTRUCTION',
         'LAND', 
         'CORE',
+        'PLATFORM',
 	    'SORTCONSTRUCTION',
     },
     Defense = {
@@ -38,7 +38,8 @@ UnitBlueprint {
         BuildRate = 240,
         BuildTime = 150000,
         BuildableCategory = {
-            'PHIB LEVEL3 CORE',
+            'HOVER LEVEL3 CORE',
+            'coramph',
         },
     },
     Physics = {

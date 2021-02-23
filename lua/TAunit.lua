@@ -64,19 +64,19 @@ TAunit = Class(Unit)
 
     OnIntelEnabled = function(self)
 		Unit.OnIntelEnabled()
-			if EntityCategoryContains(categories.TACLOAK, self) then
+		if EntityCategoryContains(categories.TACLOAK, self) then
        	 	if self:IsIntelEnabled('Cloak') then
             self.cloakOn = true
         	self:PlayUnitSound('Cloak')
 			self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
-			ForkThread(self.CloakDetection, self)
-        --end
-		end
+				if not IsDestroyed(self) then
+				ForkThread(self.CloakDetection, self)
+        		end
+			end
 		end
 	end,
 
 	CloakDetection = function(self)
-        if not IsDestroyed(self) then
 		local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
         local brain = moho.entity_methods.GetAIBrain(self)
         local cat = categories.SELECTABLE * categories.MOBILE
@@ -87,13 +87,12 @@ TAunit = Class(Unit)
             if dudes[1] and self.cloakOn then
                 self:DisableIntel('Cloak')
                 self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-			elseif self:IsUnitState('Building') and self.cloakOn then
-				self:DisableIntel('Cloak')
-                self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
 			elseif not dudes[1] and self.cloakOn then
                 self:EnableIntel('Cloak')
                 self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
-            end
+			elseif self:IsUnitState('Building') and self.cloakOn then
+				self:DisableIntel('Cloak')
+                self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
         end
 	end
     end,

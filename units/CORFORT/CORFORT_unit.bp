@@ -11,9 +11,9 @@ UnitBlueprint {
         },
     },
     Categories = {
-        'BUILTBYT2VEHICLE',
-        'BUILTBYT2KBOT',
         'BUILTBYT2AIR',
+        'BUILTBYT2KBOT',
+        'BUILTBYT2VEHICLE',
 	'UNSELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',

@@ -16,10 +16,9 @@ UnitBlueprint {
             'LAND',
             'ARM',
             'HOVER',
-            'PHIB',
             'KBOT',
             'VEHICLE',
-        'LEVEL3',
+            'LEVEL3',
         },
         Description = 'Tech Level 3',
         Defense = {

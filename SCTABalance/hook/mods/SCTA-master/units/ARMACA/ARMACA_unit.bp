@@ -6,13 +6,12 @@ UnitBlueprint {
     },
    Categories = {
     'SELECTABLE',
-    'SELECTION',
-    'TECH2',
     'LEVEL2',
+    'TECH2',
     'AIR',
     'VTOL',
+    'SELECTION', 
     'ARM',
-    'OCEAN',
     'ENGINEER',
     'REPAIR',
     'RECLAIM',
@@ -22,6 +21,7 @@ UnitBlueprint {
     'SHOWQUEUE',
     'MOBILE',
     'CONSTRUCTION',
+    'OCEAN',
     },
    Defense = {
     Health = 540,

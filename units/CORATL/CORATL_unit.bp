@@ -69,8 +69,8 @@ UnitBlueprint {
     },
     Footprint = {
         MinWaterDepth = 3,
-        SizeX = 4,
-        SizeZ = 4,
+        SizeX = 2,
+        SizeZ = 2,
     },
     General = {
         Category = 'Defense',
@@ -100,8 +100,8 @@ TechLevel = 'RULEUTL_Secret',
         BuildOnLayerCaps = {
             LAYER_Water = true,
         },
-        SkirtSizeX = 4,
-        SkirtSizeZ = 4,
+        SkirtSizeX = 2,
+        SkirtSizeZ = 2,
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,

@@ -34,7 +34,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Hydro2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 90,
+        Priority = 95,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = { 
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
@@ -55,7 +55,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
         Priority = 90,
-        InstanceCount = 3,
+        InstanceCount = 2,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
             { EBC, 'LessThanEconStorageRatio', { 1, 0.6}},
@@ -75,7 +75,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 100,
+        Priority = 25,
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FUSION} },
@@ -88,14 +88,14 @@ BuilderGroup {
             Construction = {
                 BuildClose = true,
                 BuildStructures = {
-                    'T1EnergyProduction',
+                    'T1EnergyProduction2',
                 }
             }
         }
     },  
     Builder {
         BuilderName = 'SCTAAI T2Engineer Pgen',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
         Priority = 95,
         InstanceCount = 1,
         BuilderConditions = {

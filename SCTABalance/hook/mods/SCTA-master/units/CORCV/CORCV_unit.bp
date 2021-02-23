@@ -38,7 +38,7 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 2,
         MaxBuildDistance = 6,
         BuildableCategory = {
-            'BUILTBYT1VEHICLE CORE',
+            'BUILTBYT1KBOT CORE',
         },
     },
     Intel = {

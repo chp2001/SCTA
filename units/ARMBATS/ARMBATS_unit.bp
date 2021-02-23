@@ -88,8 +88,8 @@ UnitBlueprint {
         BuildTime = 42730,
     },
     Footprint = {
-        SizeX = 4,
-        SizeZ = 8,
+        SizeX = 2,
+        SizeZ = 6,
     },
     General = {
         Category = 'Ship',

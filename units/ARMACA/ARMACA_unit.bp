@@ -70,7 +70,12 @@ UnitBlueprint {
     BuildIconSortPriority = 0,
     Categories = {
         'SELECTABLE',
+        'LEVEL2',
         'TECH2',
+        'AIR',
+        'VTOL',
+	    'SELECTION', 
+        'ARM',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -79,12 +84,7 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
         'MOBILE',
-	'CONSTRUCTION',
-    'AIR',
-    'VTOL',
-	'SELECTION', 
-        'ARM',
-	'LEVEL2',
+	    'CONSTRUCTION',
     },
     Defense = {
         ArmorType = 'Light',
@@ -97,6 +97,10 @@ UnitBlueprint {
     },
     Description = 'Tech Level 2',
     Display = {
+        AnimationBuild = '/mods/SCTA-master/units/ARMACA/ARMACA_lod0_nano.sca',
+        AnimationBuildRate = 1, 
+        AnimationWing = '/mods/SCTA-master/units/ARMACA/ARMACA_lod0_wings.sca',
+        AnimationWingRate = 1, 
         Abilities = {
             'Adv. Construction Unit',
         },
@@ -106,11 +110,15 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.1,
+    },
+    Footprint = {
+        MaxSlope = 0.25,
+        SizeX = 1,
+        SizeZ = 1,
     },
     Economy = {
         BuildCostEnergy = 12096,
@@ -129,11 +137,16 @@ UnitBlueprint {
     },
     General = {        
         BuildBones = {
-        AimBone = 'Nozzle',
-        BuildEffectBones = {'Nozzle'},
-        PitchBone = 'Nozzle',
-        YawBone = 'Nozzle',
-    },
+            AimBone = 'Lnanopitch',
+            BuildEffectBones = {'NozzleL', 'NozzleR'},
+            PitchBone = 'Lnanopitch',
+            YawBone = 'Lnanoyaw',
+        },
+        BuildBonesAlt1 = {
+            AimBone = 'Rnanopitch',
+            PitchBone = 'Rnanopitch',
+            YawBone = 'Rnanoyaw',
+        },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {
@@ -150,7 +163,8 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 3,
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Adv. Construction Aircraft',
     },
     Intel = {
@@ -166,7 +180,7 @@ UnitBlueprint {
     Physics = {
         Elevation = 4,
         MotionType = 'RULEUMT_Air',
-        GroundCollisionOffset = 1.5,
+        GroundCollisionOffset = 1.6,
     MaxSpeed = 0.5, 
     RotateOnSpot = true,
 	FuelRechargeRate = 444444,
@@ -175,9 +189,10 @@ UnitBlueprint {
     SelectionSizeX = 1.25,
     SelectionSizeZ = 1.25,
     SelectionThickness = 0.25,
-    SizeX = 2,
-    SizeY = 1,
-    SizeZ = 2,
+    SizeSphere = 1.6,
+    SizeX = 1,
+    SizeY = 0.2,
+    SizeZ = 1,
     StrategicIconName = 'icon_bot2_engineer',
     StrategicIconSortPriority = 0,
     Transport = {
@@ -188,7 +203,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

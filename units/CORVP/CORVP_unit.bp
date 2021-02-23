@@ -38,6 +38,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'LEVEL1',
         'TECH1',
 	'FACTORY',
         'RALLYPOINT',
@@ -47,7 +48,7 @@ UnitBlueprint {
 	'CORE',
 		'PLANT',
 	'SORTCONSTRUCTION',
-	'LEVEL1',
+    'LAND', 
     },
     Defense = {
         ArmorType = 'Structure',
@@ -112,7 +113,8 @@ UnitBlueprint {
         SelectionPriority = 5,
         ConstructionBar = true,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
 	UnitName = 'Vehicle Plant',
     },
     Intel = {
@@ -167,12 +169,12 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 20,
-            DamageFriendly = true,
-            DamageRadius = 1,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        Damage = 200,
+        DamageFriendly = true,
+        DamageRadius = 5,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
         },
 
     },

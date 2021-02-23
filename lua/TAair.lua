@@ -36,15 +36,7 @@ TAair = Class(TAunit)
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAunit.OnStopBeingBuilt(self,builder,layer)
 		self:OpenWings(self)
-				self:PlayUnitSound('TakeOff')
-				local bp = self:GetBlueprint()
-				self:SetCollisionShape(
-					'Sphere', 
-					bp.CollisionSphereOffsetX or 0, 
-					bp.CollisionSphereOffsetY or 0, 
-					bp.CollisionSphereOffsetZ or 0, 
-					bp.SizeSphere or 1.5 
-				)      
+		self:PlayUnitSound('TakeOff')   
 	end,
 
 	OpenWings = function(self)
@@ -72,8 +64,8 @@ TAair = Class(TAunit)
 }
 TASeaair = Class(TAair) 
 {
-	OnStopBeingBuilt = function(self)
-		TAair.OnStopBeingBuilt(self)
+	OnStopBeingBuilt = function(self,builder,layer)
+		TAair.OnStopBeingBuilt(self,builder,layer)
 		self:DisableIntel('RadarStealth')
     end,
 

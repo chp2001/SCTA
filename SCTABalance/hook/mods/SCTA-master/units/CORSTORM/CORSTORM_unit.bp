@@ -7,10 +7,22 @@ UnitBlueprint {
    Display = {
     UniformScale = 0.11,
         },
-        Economy = {
+    Economy = {
+            BuildTime = 2200,
+            BuildCostEnergy = 820,
             BuildCostMass = 100,
         },
     SizeX = 1.6,
     SizeY = 1.4,
     SizeZ = 1.4,
+    Weapon = {
+        [1] = {
+            Damage = 200,
+            RateOfFire = 0.2,
+            EnergyDrainPerSecond = 5,
+            EnergyRequired = 5,
+            EnergyChargeForFirstShot = true,
+        },
+        [2] = {}, 
+    },
 }

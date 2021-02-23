@@ -12,7 +12,7 @@ UnitBlueprint {
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
-        'OVERLAYINDIRECTFIRE',
+        'OVERLAYDIRECTFIRE',
 	'CORE',
 	'LEVEL2',
 	'STRATEGIC',
@@ -34,10 +34,6 @@ UnitBlueprint {
             SizeX = 1,
             SizeZ = 1,
         },
-    Physics = {
-        SkirtSizeX = 0, 
-        SkirtSizeZ = 0,  
-    },
     Intel = {
         FreeIntel = true,
         RadarStealth = true,

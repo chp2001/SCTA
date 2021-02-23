@@ -29,6 +29,8 @@ UnitBlueprint {
     BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
+        'KBOT',
+        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -37,8 +39,6 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'KBOT',
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -65,7 +65,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'belly',
+	---SmokeBone = 'belly',
         UniformScale = 0.16,
     },
     Economy = {
@@ -86,7 +86,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'The Can',
     },
     Intel = {
@@ -187,7 +188,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

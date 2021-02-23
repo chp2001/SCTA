@@ -39,6 +39,8 @@ UnitBlueprint {
     BuildIconSortPriority = 1,
     Categories = {
         'SELECTABLE',
+        'VEHICLE',
+        'LEVEL1',
         'TECH1',
         'ENGINEER',
         'REPAIR',
@@ -52,13 +54,6 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'LAND',
         'ARM',
-        'VEHICLE',	#'TANK' in TA
-	'LEVEL1',
-	
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -77,9 +72,6 @@ UnitBlueprint {
             'Construction Unit',
         },
         MovementEffects = {
-            Bones = {'ARMCV'},
-            Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
-            Scale = 0.5,
         Land = {
             Treads = {
                 ScrollMultiplier = 0.75,
@@ -101,17 +93,13 @@ UnitBlueprint {
             },
         },
     },
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
-                {
-                    LODCutoff = 120,
-                    Scrolling = true,
-                    ShaderName = 'AeonCZAR',
-                },
-                {
-                    LODCutoff = 230,
-                    ShaderName = 'AeonCZAR', 
+    Mesh = {
+        IconFadeInZoom = 130,
+        LODs = {
+            {
+                LODCutoff = 230,
+                Scrolling = true,
+                ShaderName = 'Unit', 
                 },
             },
         },
@@ -153,6 +141,7 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 3,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Basic',
         UnitName = 'Construction Vehicle',
     },
@@ -189,7 +178,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

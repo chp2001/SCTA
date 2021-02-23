@@ -6,10 +6,17 @@
 UnitBlueprint {
     Merge = true, 
     Display = {
-        UniformScale = 0.10,
+        UniformScale = 0.1,
+    },
+    Economy = {
+        BuildCostEnergy = 750,
+        BuildTime = 2700,
     },
     Intel = {
         VisionRadius = 10,
+    },
+    Physics = {
+        MaxSpeed = 2.4,
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,

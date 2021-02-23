@@ -29,18 +29,18 @@ UnitBlueprint {
     BuildIconSortPriority = 6,
     Categories = {
         'SELECTABLE',
+        'VEHICLE',
+	    'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-    'LAND',
-    'ARTILLERY',
-	'INDIRECTFIRE',
+        'LAND',
+        'ARTILLERY',
+	    'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
         'CORE',
-        'VEHICLE',
-	'LEVEL1',
-    'SNIPEMODE',
+        'SNIPEMODE',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -86,7 +86,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Leveler',
     },
     Intel = {
@@ -131,7 +132,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = false,
             Damage = 180,
-	    DamageRadius = 2.625,
+	    DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'CORLEVLR_WEAPON',
             FireTargetLayerCapsTable = {
@@ -183,9 +184,6 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 20,
             Turreted = true,
-            EnergyDrainPerSecond = 5,
-            EnergyRequired = 10,
-            
         },
         { #MEDIUM_UNITEX #Does not exist, values guessed
             Damage = 40,

@@ -26,10 +26,12 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 6,
+    BuildIconSortPriority = 13,
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'LEVEL2',
+        'VEHICLE',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -38,8 +40,6 @@ UnitBlueprint {
 	'RADAR',
         'OVERLAYRADAR',
         'ARM',
-        'VEHICLE',
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -87,7 +87,8 @@ UnitBlueprint {
             RULEUTC_IntelToggle = true,
         },
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Seer',
     },
     Intel = {
@@ -123,7 +124,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

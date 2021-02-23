@@ -4,6 +4,12 @@
 #Blueprint created by Raevn
 
 UnitBlueprint {
+    AI = {
+        TargetBones = {
+            'Barrels',
+            'ARMHLT',
+        },
+    },
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
@@ -28,14 +34,14 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
+        'LEVEL2',
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 	'ARM',
-		'DEFENSIVE',
+		'LASER',
 	'SORTDEFENSE',
-    'LEVEL2',
     'SNIPEMODE',
     },
     CollisionOffsetY = -0.5,
@@ -73,7 +79,6 @@ UnitBlueprint {
     Footprint = {
         SizeX = 2,
         SizeZ = 2,
-	MaxSlope = 0.625,
     },
     General = {
         Category = 'Defense',
@@ -85,6 +90,7 @@ UnitBlueprint {
         },
         SelectionPriority = 5,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Sentinel',
     },
@@ -98,9 +104,7 @@ UnitBlueprint {
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 1,
-    Physics = {
-        SkirtSizeX = 2, 
-        SkirtSizeZ = 2,  
+    Physics = { 
         BuildOnLayerCaps = {
             LAYER_Land = true,
             LAYER_Water = true,
@@ -146,7 +150,7 @@ UnitBlueprint {
             EnergyDrainPerSecond = 50,
             EnergyRequired = 100,
             EnergyChargeForFirstShot = true,
-            ProjectileLifetime = 1,
+            ProjectileLifetime = 50,
             RackBones = {
                 {
                     MuzzleBones = {
@@ -189,9 +193,9 @@ UnitBlueprint {
             Turreted = true,
         },
         { #MEDIUM_BUILDINGEX
-            Damage = 100,
+            Damage = 300,
             DamageFriendly = true,
-            DamageRadius = 3.28,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

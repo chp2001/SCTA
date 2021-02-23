@@ -4,7 +4,9 @@ UnitBlueprint {
         UniformScale = 0.08,
     },
     Economy = {
+        BuildCostEnergy = 360,
         BuildCostMass = 70,
+        BuildTime = 660,
     },
     Intel = {
         VisionRadius = 10,
@@ -17,7 +19,6 @@ UnitBlueprint {
         MaxSpeed = 3.375,
     },
     LifeBarSize = 1,
-    SelectionCenterOffsetZ = 0.1,
     SelectionSizeX = 0.5,
     SelectionSizeZ = 0.5,
     SizeX = 1.15,

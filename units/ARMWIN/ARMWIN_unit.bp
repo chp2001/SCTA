@@ -27,17 +27,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
+        'LEVEL1',
 	    'STRUCTURE',
-                'ECONOMIC',
+        'ECONOMIC',
         'SORTECONOMY',
 	    'ENERGYPRODUCTION',
 	    'WIND',
 	    'ARM',
-	    'ENERGY',
-	    'LEVEL1',
-	    
-	    
-	    
     },
     Defense = {
         ArmorType = 'Structure',
@@ -52,7 +48,7 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'AeonCZAR',
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+		            NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -78,7 +74,8 @@ UnitBlueprint {
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Wind Generator',
     },
     Intel = {
@@ -91,8 +88,6 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        SkirtSizeX = 4, 
-        SkirtSizeZ = 4, 
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },

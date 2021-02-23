@@ -28,22 +28,13 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'LEVEL1',
         'TECH1',
-
-	
-	'STRUCTURE',
-        'METALSTORAGE',
-                'ECONOMIC',
+	    'STRUCTURE',
+        'MASSSTORAGE',
+        'ECONOMIC',
         'SORTECONOMY',
-
-	
-	'CORE',
-	'METAL',
-	'LEVEL1',
-	
-	
-	
-	'STORAGE',
+	    'CORE',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -56,15 +47,6 @@ UnitBlueprint {
     },
     Description = 'Increases Metal Storage',
     Display = {
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -93,7 +75,8 @@ UnitBlueprint {
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Metal Storage',
     },
     Intel = {

@@ -29,6 +29,8 @@ UnitBlueprint {
     BuildIconSortPriority = 4,
     Categories = {
         'SELECTABLE',
+        'KBOT',
+        'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -37,8 +39,7 @@ UnitBlueprint {
         'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
-        'KBOT',
-        'LEVEL1',
+        'RAIDER',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -93,48 +94,12 @@ UnitBlueprint {
         AnimationWalkRate = 1,
         AnimationRun = '/mods/SCTA-master/units/ARMPW/ARMPW_arun.sca',
         AnimationRunRate = 0.5,
-    --[[DestructionEffects = {
-    		DefaultProjectileCategories = {'Test'},
-    		DestructionEmitters = {
-    			{
-    				EmitterBone = {'Torso'},
-    				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-    				EmitterSize = 1.25,
-    			},
-    		},
-    	},]]
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 230,
                     ShaderName = 'AeonCZAR',
-                },
-            },
-        },
-        MovementEffects = {
-            Land = {
-                Footfall = {
-                    Bones = {
-                        {
-                            FootBone = 'LeftFoot',
-                            HipBone = 'LeftUpperLeg',
-                            KneeBone = 'LeftLowerLeg',
-                            MaxFootFall = 0,--0.23808,
-                            Offset = {x = 1.5},
-                            StraightLegs = false,
-                            Type = 'FootFall01',
-                        },
-                        {
-                            FootBone = 'RightFoot',
-                            HipBone = 'RightUpperLeg',
-                            KneeBone = 'RightLowerLeg',
-                            MaxFootFall = 0,--0.23808,
-                            Offset = {x = -1.5},
-                            StraightLegs = false,
-                            Type = 'FootFall01',
-                        },
-                    },
                 },
             },
         },
@@ -158,7 +123,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Peewee',
     },
     Intel = {
@@ -237,6 +203,7 @@ UnitBlueprint {
             TargetPriorities = {'ALLUNITS'},
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
+            UseFiringSolutionInsteadOfAimBone = true,
             TurretBoneMuzzle = 'RightMuzzle',
             TurretBonePitch = 'RightLowerArm',
             TurretBoneDualMuzzle = 'LeftMuzzle',
@@ -252,9 +219,9 @@ UnitBlueprint {
             Turreted = true,
         },
         { --SMALL_UNITEX    -- There's no point in having two death weapons when they are so similar
-            Damage = 20,--10,
+            Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 1,--0.9375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

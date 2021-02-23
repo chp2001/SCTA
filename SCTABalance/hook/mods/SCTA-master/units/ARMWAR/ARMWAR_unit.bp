@@ -8,7 +8,7 @@ UnitBlueprint {
         UniformScale = 0.12,
     },
 Economy = {
-    BuildCostEnergy = 1100,
+    BuildCostEnergy = 750,
     BuildCostMass = 116,
     BuildTime = 2200,
 },
@@ -17,7 +17,7 @@ Footprint = {
     SizeZ = 1,
 },
 Intel = {
-    VisionRadius = 10,
+    VisionRadius = 12,
 },
 SelectionSizeX = 0.8,
 SelectionSizeZ = 0.8,
@@ -29,12 +29,11 @@ Physics = {
     MaxBrake = 2.4,
     MaxSpeed = 3,
     TurnRate = 150,
-    StandUpright = true,
     MaxSteerForce = 10,
     },
     Weapon = {
         [1] = {
-            Damage = 10,
+            Damage = 15,
             MaxRadius = 18,
             RackSalvoSize = 1,
             RateOfFire = 1,

@@ -36,17 +36,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
+        'LEVEL3',
 	'STRUCTURE',
 	'INTELLIGENCE',
 	'RADAR',
         'OVERLAYRADAR',
 	'ARM',
-	'SPECIAL',
-	'LEVEL3',
 	'SORTINTEL',
-	
-	
-	
     },
     Defense = {
         DamageModifier = 1,
@@ -73,7 +69,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.12,
     },
     Economy = {
         BuildCostEnergy = 1830,
@@ -110,7 +106,9 @@ UnitBlueprint {
             RULEUCC_Stop = true,
             RULEUCC_Transport = false,
         },
+        ConstructionBar = true,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Secret',
 	UnitName = 'Advanced Radar Tower',
     },
@@ -142,9 +140,9 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_BUILDINGEX
-            Damage = 40,
+            Damage = 100,
             DamageFriendly = true,
-            DamageRadius = 6.406,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

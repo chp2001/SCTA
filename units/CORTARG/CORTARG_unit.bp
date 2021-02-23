@@ -35,15 +35,13 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'LEVEL3',
         'TECH3',
         'SORTINTEL',
-	'STRUCTURE',
-	'INTELLIGENCE',
-	'TARGETING',
-	'TEXTUREANIM',
-	'CORE',
-	'SPECIAL',
-	'LEVEL3',
+	    'STRUCTURE',
+	    'INTELLIGENCE',
+	    'TARGETING',
+	    'CORE',
     },
     Defense = {
         DamageModifier = 0.7,
@@ -62,15 +60,6 @@ UnitBlueprint {
         Abilities = {
             'Radar Targeting',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -80,7 +69,6 @@ UnitBlueprint {
                 },
             },
         },
-	--TextureAnimationFrames = 6,
         UniformScale = 0.16,
     },
     Economy = {
@@ -103,7 +91,8 @@ UnitBlueprint {
         },
         SelectionPriority = 5,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
 	UnitName = 'Targeting Facility',
     },
     Intel = {
@@ -132,12 +121,12 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 20,
-            DamageFriendly = true,
-            DamageRadius = 1,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        Damage = 750,
+        DamageFriendly = true,
+        DamageRadius = 5,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
         },
 
     },

@@ -29,17 +29,15 @@ UnitBlueprint {
     BuildIconSortPriority = 7,
     Categories = {
         'SELECTABLE',
+        'KBOT',
+        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-    'LAND',
-    'TACLOAK',
-	'DIRECTFIRE',
-        'OVERLAYDIRECTFIRE',
+        'LAND',
+        'TACLOAK',
         'ARM',
-        'KBOT',
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -55,6 +53,7 @@ UnitBlueprint {
         AnimationWalk = '/mods/SCTA-master/units/ARMSPY/ARMSPY_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
+            '<LOC ability_cloak>Cloaking',
             '<LOC ability_radar>Radar',
         },
         CloakMesh = '/mods/SCTA-master/units/ARMSPY/ARMSPY_cloak_mesh',
@@ -91,7 +90,8 @@ UnitBlueprint {
             RULEUTC_CloakToggle = true,
         },
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Infiltrator',
     },
     Intel = {
@@ -127,9 +127,9 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_UNITEX
-            Damage = 10,
+            Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 0.9375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

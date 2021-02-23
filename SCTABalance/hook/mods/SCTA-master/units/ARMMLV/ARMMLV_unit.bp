@@ -17,7 +17,6 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'LAND',
         'ARM',
-        ---'VEHICLE',
 	'MINELAYER',
     'LEVEL1',
     'FIELDENGINEER',

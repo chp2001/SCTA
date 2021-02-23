@@ -31,28 +31,34 @@ TAconstructor = Class(TAWalking) {
             end
         end
         self.BuildingUnit = false
+        if __blueprints['armmass'] then
+            TAutils.updateBuildRestrictions(self)
+        end
     end,
 
     OnPaused = function(self)
+        self:StopUnitAmbientSound('Construct')
         TAWalking.OnPaused(self)
         if self.BuildingUnit then
-            TAWalking.StopBuildingEffects(self, self:GetUnitBeingBuilt())
-        end    
+            TAWalking.StopBuildingEffects(self, self.UnitBeingBuilt)
+        end
     end,
-    
+
     OnUnpaused = function(self)
         if self.BuildingUnit then
-            TAWalking.StartBuildingEffects(self, self:GetUnitBeingBuilt(), self.UnitBuildOrder)
+            self:PlayUnitAmbientSound('Construct')
+            TAWalking.StartBuildingEffects(self, self.UnitBeingBuilt, self.UnitBuildOrder)
         end
         TAWalking.OnUnpaused(self)
     end,
     
-    OnStartBuild = function(self, unitBeingBuilt, order )
-        TAWalking.OnStartBuild(self,unitBeingBuilt, order)
+    OnStartBuild = function(self, unitBeingBuilt, order ) 
+        TAWalking.OnStartBuild(self, unitBeingBuilt, order)
         self.UnitBeingBuilt = unitBeingBuilt
         self.UnitBuildOrder = order
         self.BuildingUnit = true
     end,
+
 
     OnStopBuild = function(self, unitBeingBuilt)
         TAWalking.OnStopBuild(self,unitBeingBuilt)
@@ -64,18 +70,22 @@ TAconstructor = Class(TAWalking) {
         elseif self.BuildingOpenAnimManip then
             self.BuildingOpenAnimManip:SetRate(-1)
         end
-        self:OnStopBuilderTracking()
         self.BuildingUnit = false
+        self:SetImmobile(false)
+        if __blueprints['armmass'] then
+            TAutils.updateBuildRestrictions(self)
+        end
     end,
 
     WaitForBuildAnimation = function(self, enable)
         if self.BuildArmManipulator then
             WaitFor(self.BuildingOpenAnimManip)
-            if (enable) then
+            if enable then
                 self.BuildArmManipulator:Enable()
             end
         end
     end,
+
 
     OnPrepareArmToBuild = function(self)
         TAWalking.OnPrepareArmToBuild(self)
@@ -83,10 +93,10 @@ TAconstructor = Class(TAWalking) {
             self.BuildingOpenAnimManip:SetRate(self:GetBlueprint().Display.AnimationBuildRate or 1)
             if self.BuildArmManipulator then
                 self.StoppedBuilding = false
-                ForkThread( self.WaitForBuildAnimation, self, true )
+                self:ForkThread(self.WaitForBuildAnimation, true)
             end
-        end       
-         if self:IsMoving() then
+        end
+        if self:IsMoving() then
             self:SetImmobile(true)
             self:ForkThread(function() WaitTicks(1) if not self:BeenDestroyed() then self:SetImmobile(false) end end)
         end
@@ -106,19 +116,16 @@ TAconstructor = Class(TAWalking) {
             self.BuildingOpenAnimManip:SetRate(-(self:GetBlueprint().Display.AnimationBuildRate or 1))
             self:SetImmobile(false)
         end
-    end,   
-
-	CreateBuildEffects = function(self, unitBeingBuilt, order)
-        TAutils.CreateTABuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
+    end,
+    
+    CreateBuildEffects = function( self, unitBeingBuilt, order )
+        self.BuildEffectsBag:Add( TAutils.CreateTABuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag ))
     end,
 
     CreateReclaimEffects = function( self, target )
-		TAutils.TAReclaimEffects( self, target, self:GetBlueprint().General.BuildBones.BuildEffectBones or {0,}, self.ReclaimEffectsBag )
+        self.ReclaimEffectsBag:Add(TAutils.TAReclaimEffects(self, target, self.BuildEffectBones or {0, }, self.ReclaimEffectsBag))
     end,
-    
-    CreateReclaimEndEffects = function( self, target )
-        EffectUtil.PlayReclaimEndEffects( self, target )
-    end,         
+          
     
     OnStopReclaim = function(self, target)
         TAWalking.OnStopReclaim(self, target)
@@ -141,17 +148,14 @@ TANecro = Class(TAconstructor) {
                 target.NecroingInProgress = true
 				self.spawnUnit = true
                 self.RecBP = target.AssociatedBP
-                self.ReclaimLeft = target.ReclaimLeft
                 self.RecPosition = target:GetPosition()
             elseif not target.ReclaimInProgress and target.NecroingInProgress then
 				--LOG('* Necro: OnStartReclaim:  I am a necro and helping necro')
 				self.RecBP = nil
-				self.ReclaimLeft = nil
 				self.RecPosition = target:GetPosition()
 			else
                 --LOG('* Necro: OnStartReclaim:  I am a necro and ReclaimInProgress; Stopped!')
 				self.RecBP = nil
-                self.ReclaimLeft = nil
                 self.RecPosition = nil
                 IssueStop({self})
                 IssueClearCommands({self})
@@ -177,7 +181,7 @@ TANecro = Class(TAconstructor) {
             if self.RecBP and EntityCategoryContains(categories.NECRO, self) and oldPosition ~= self.RecPosition and self.spawnUnit then
                 --LOG('* Necro: OnStopReclaim:  I am a necro! and RecBP = true ')
                 oldPosition = self.RecPosition
-                self:ForkThread( self.RespawnUnit, self.RecBP, self:GetArmy(), self.RecPosition, self.ReclaimLeft )
+                self:ForkThread( self.RespawnUnit, self.RecBP, self:GetArmy(), self.RecPosition)
             else
                 --LOG('* Necro: OnStopReclaim: no necro or no RecBP')
             end
@@ -185,7 +189,6 @@ TANecro = Class(TAconstructor) {
             if EntityCategoryContains(categories.NECRO, self) then
                 --LOG('* Necro: OnStopReclaim:  Wreck still exist. Removing target data from Necro')
                 self.RecBP = nil
-                self.ReclaimLeft = nil
                 self.RecPosition = nil
             else
                 --LOG('* Necro: OnStopReclaim: Wreck still exist. no necro')
@@ -193,11 +196,11 @@ TANecro = Class(TAconstructor) {
         end
     end,
 
-    RespawnUnit = function(self, RecBP, army, pos, ReclaimLeft)
+    RespawnUnit = function(self, RecBP, army, pos)
         --LOG('* Necro: RespawnUnit: ReclaimLeft '..ReclaimLeft)
         WaitTicks(3)
         local newUnit = CreateUnitHPR(RecBP, army, pos[1], pos[2], pos[3], 0, 0, 0)
-        newUnit:SetHealth(nil, newUnit:GetMaxHealth() * ReclaimLeft * 0.75)
+        newUnit:SetHealth(nil, 100)
     end,
 }
 
@@ -242,7 +245,6 @@ TACommander = Class(TAconstructor) {
             local wep = instigator:GetWeaponByLabel('OverCharge')
             amount = wep:GetBlueprint().Overcharge.commandDamage
         end
-
         TAconstructor.DoTakeDamage(self, instigator, amount, vector, damageType)
     end,
 
@@ -311,14 +313,12 @@ TARealCommander = Class(TACommander) {
     OnMotionHorzEventChange = function(self, new, old )
 		TACommander.OnMotionHorzEventChange(self, new, old)
         if self.cloakOn then
-        if old == 'Stopped' then
-			self:SetConsumptionPerSecondEnergy(1000)
-			self.motion = 'Moving'
-		elseif new == 'Stopped' then
-			self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
-			self.motion = 'Stopped'
+            if  self:IsUnitState('Moving') then
+                self:SetConsumptionPerSecondEnergy(1000)
+            else
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
+            end
         end
-    end
     end,
 
     OnStartBuild = function(self, unitBeingBuilt, order )
@@ -349,15 +349,13 @@ TARealCommander = Class(TACommander) {
     end,
     
     DoTakeDamage = function(self, instigator, amount, vector, damageType)
-
-        TACommander.DoTakeDamage(self, instigator, amount, vector, damageType)
         local aiBrain = self:GetAIBrain()
         if aiBrain then
             aiBrain:OnPlayCommanderUnderAttackVO()
         end
-
         if self:GetHealth() < ArmyBrains[self.Army]:GetUnitStat(self.UnitId, "lowest_health") then
             ArmyBrains[self.Army]:SetUnitStat(self.UnitId, "lowest_health", self:GetHealth())
         end
+        TACommander.DoTakeDamage(self, instigator, amount, vector, damageType)
     end,
 }

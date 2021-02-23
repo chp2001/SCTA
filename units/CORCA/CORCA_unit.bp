@@ -71,6 +71,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
+        'LEVEL1',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -79,12 +80,11 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
         'MOBILE',
-	'CONSTRUCTION',
-    'AIR',
-    'VTOL',
-	'SELECTION',
+	    'CONSTRUCTION',
+        'AIR',
+        'VTOL',
+	    'SELECTION',
         'CORE',      	
-	'LEVEL1',
     },
     Defense = {
         ArmorType = 'Light',
@@ -111,11 +111,16 @@ UnitBlueprint {
         },
         UniformScale = 0.128, 
     },
+    Footprint = {
+        MaxSlope = 0.25,
+        SizeX = 1,
+        SizeZ = 1,
+    },
     Economy = {
         BuildCostEnergy = 4580,
         BuildCostMass = 110,
         BuildTime = 10000,        
-	BuildRate = 75,
+	    BuildRate = 75,
         BuildableCategory = {
             'BUILTBYT1AIR CORE',
         },
@@ -148,7 +153,8 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 3,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Construction Aircraft',
     },
     Intel = {
@@ -164,7 +170,7 @@ UnitBlueprint {
     Physics = {
         Elevation = 4,
         MotionType = 'RULEUMT_Air',
-        GroundCollisionOffset = 1.5,
+        GroundCollisionOffset = 1.6,
     MaxSpeed = 0.5,
     RotateOnSpot = true,
 	FuelRechargeRate = 444444,
@@ -184,9 +190,9 @@ UnitBlueprint {
     },
     Weapon = {
         { #SMALL_UNITEX
-            Damage = 10,
+            Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 1,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

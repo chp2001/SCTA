@@ -33,19 +33,18 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-	'FACTORY',
+	    'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-	'STRUCTURE',
-	'CONSTRUCTION',
-	'TEXTUREANIM',
+	    'STRUCTURE',
+	    'CONSTRUCTION',
         'OVERLAYRADAR',
         'AIR',
         'CONSTRUCTIONSORTDOWN',
-	'ARM',
-    'PLANT',
-	'SORTCONSTRUCTION',
-	'LEVEL2',
+	    'ARM',
+        'PLANT',
+	    'SORTCONSTRUCTION',
+	    'LEVEL2',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -60,6 +59,7 @@ UnitBlueprint {
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/ARMAP/ARMAP_lod0_unpack.sca',
         AnimationUnpackRate = 1,   
+        BuildAttachBone = 'buildpad',
         Abilities = {
             '<LOC ability_radar>Radar',
         },
@@ -88,8 +88,10 @@ UnitBlueprint {
         'VTOL LEVEL2 ARM',
         'VTOL LEVEL1 ARM',
         'armadap', 
+        'armck',
+        'armfark',
         },
-	InitialRallyX = 1,
+	InitialRallyX = 0,
 	InitialRallyZ = 5,
     StorageMass = 50,
     StorageEnergy = 50,
@@ -101,9 +103,8 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildAttachBone = 'BasePlate',
-            BuildEffectBones = {'Nozzle_01', 'Nozzle_02'},
-        },    
+            BuildEffectBones = {'spray1', 'spray2'},
+        }, 
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {
@@ -117,6 +118,7 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 5,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
         UpgradesFrom = 'armap',
         UpgradesTo = 'armadap', 
@@ -124,14 +126,14 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 10,
-	RadarRadius = 31,
+	RadarRadius = 32,
 	FreeIntel = true,
     },
     Interface = {
         HelpText = 'Produces Aircraft',
     },
     LifeBarHeight = 0.22,
-    LifeBarOffset = 3,
+    LifeBarOffset = 2,
     LifeBarSize = 7,
     Physics = {
         BuildOnLayerCaps = {
@@ -142,16 +144,16 @@ UnitBlueprint {
         SkirtSizeZ = 6,
         RollOffPoints = {
             {
+                UnitSpin = 180,
+                X = 0,
+                Y = 0,
+                Z = -3,
+            },
+                {
                 UnitSpin = 0,
                 X = 0,
                 Y = 0,
-                Z = 2.5,
-            },
-            {
-                UnitSpin = 90,
-                X = 3,
-                Y = 0,
-                Z = 0,
+                Z = 3,
             },
             {
                 UnitSpin = -90,
@@ -167,11 +169,11 @@ UnitBlueprint {
     SizeX = 9,
     SizeY = 1,
     SizeZ = 9,
-    StrategicIconName = 'icon_factory2_air',
+    StrategicIconName = 'icon_factoryhq2_air',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 20,
+            Damage = 200,
             DamageFriendly = true,
             DamageRadius = 5,
             DamageType = 'Normal',

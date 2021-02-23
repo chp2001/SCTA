@@ -71,6 +71,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
+        'LEVEL3',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -84,7 +85,6 @@ UnitBlueprint {
     'VTOL',
 	'SELECTION', 
         'CORE',
-    'LEVEL3',
     },
     Defense = {
         ArmorType = 'Light',
@@ -97,6 +97,8 @@ UnitBlueprint {
     },
     Description = 'Tech Level 1',
     Display = {
+        AnimationBuild = '/mods/SCTA-master/units/CORCSA/CORCSA_lod0_unpack.sca',
+        AnimationBuildRate = 1,
         Abilities = {
             'Construction Unit',
         },
@@ -106,7 +108,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -116,15 +117,20 @@ UnitBlueprint {
         BuildCostEnergy = 5368,
         BuildCostMass = 115,
         BuildTime = 24763,        
-	BuildRate = 50,
+	    BuildRate = 50,
         BuildableCategory = {
             'BUILTBYT1HOVER CORE',
         },
         MaxBuildDistance = 3.75,
         StorageEnergy = 50,
         StorageMass = 50,
-	ProductionPerSecondEnergy = 10,
-	NaturalProducer = true,
+	    ProductionPerSecondEnergy = 10,
+	    NaturalProducer = true,
+    },
+    Footprint = {
+        MaxSlope = 0.25,
+        SizeX = 1,
+        SizeZ = 1,
     },
     General = {
         BuildBones = {
@@ -132,7 +138,7 @@ UnitBlueprint {
             BuildEffectBones = {'nano1', 'nano2'},
             PitchBone = 0,
             YawBone = 0,
-        },
+        },       
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {
@@ -149,7 +155,8 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 3,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Construction Seaplane',
     },
     Intel = {
@@ -165,7 +172,7 @@ UnitBlueprint {
     Physics = {
         Elevation = 4,
         MotionType = 'RULEUMT_Air',
-        GroundCollisionOffset = 1.5,
+        GroundCollisionOffset = 1.6,
     MaxSpeed = 0.5, 
     RotateOnSpot = true,
 	FuelRechargeRate = 444444,
@@ -187,7 +194,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 4,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

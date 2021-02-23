@@ -39,16 +39,16 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-	'FACTORY',
+        'LEVEL1',
+	    'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-	'STRUCTURE',
-	'CONSTRUCTION',
-	'ARM',
+	    'STRUCTURE',
+        'CONSTRUCTION',
+	    'ARM',
 		'PLANT',
-	'SORTCONSTRUCTION',
-	'LAND',
-	'LEVEL1',
+	    'SORTCONSTRUCTION',
+        'LAND', 
     },
     Defense = {
         ArmorType = 'Structure',
@@ -96,7 +96,7 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildEffectBones = {'Nozzle_01','Nozzle_02'},
+            BuildEffectBones = {'spray1','spray2', 'spray3', 'spray4', },
         },            
 	---BuildAngle = 1024,
         Category = 'Factory',
@@ -112,7 +112,8 @@ UnitBlueprint {
         SelectionPriority = 5,
         ConstructionBar = true,
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
 	UnitName = 'Vehicle Plant',
     },
     Intel = {
@@ -138,23 +139,25 @@ UnitBlueprint {
                 Y = 0,
                 Z = 2.5,
             },
+            {
+                UnitSpin = 180,
+                X = 0,
+                Y = 0,
+                Z = -2.5,
+            },
         },
+        ---OccupyRect=WhereAUnitCannotWalk
         OccupyRects = {
             # offsetX offsetZ  sizeX sizeZ, offset from center of unit
-            -3,
+            -2,
             0,
-            1,
-            2.5,
-
-            3,
-            0,
-            1,
-            2.5,
-
-            0,
-            -3,
-            4,
             0.5,
+            3,
+
+            2,
+            0,
+            0.5,
+            3,
         },
     },
     SelectionSizeX = 4,
@@ -166,10 +169,10 @@ UnitBlueprint {
     StrategicIconName = 'icon_factory1_land',
     StrategicIconSortPriority = 0,
     Weapon = {
-        { #LARGE_BUILDINGEX
-            Damage = 20,
+        { #LARGE_sprayEX
+            Damage = 200,
             DamageFriendly = true,
-            DamageRadius = 1,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

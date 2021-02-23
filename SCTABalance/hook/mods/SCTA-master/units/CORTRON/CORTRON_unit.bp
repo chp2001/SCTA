@@ -6,10 +6,9 @@
 UnitBlueprint {
     Merge = true, 
     Categories = {
-        'TECH3',
+        'TECH2',
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
-        'BUILTBYT2VEHICLE',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -21,11 +20,10 @@ UnitBlueprint {
         'SILO',
         'SHOWQUEUE',
 	'CORE',
-	'SPECIAL',
+	'TACTICALMISSILEPLATFORM',
 	'SORTSTRATEGIC',
 	'LEVEL3',
     'SHOWATTACKRETICLE',
-    'NOCUSTOMTARGET',
     },
     Economy = {
         BuildRate = 150000,

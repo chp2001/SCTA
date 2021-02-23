@@ -4,7 +4,27 @@ local Unit = import('/lua/sim/Unit.lua').Unit
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local EffectUtil = import('/lua/EffectUtilities.lua')
 
-TAFactory = Class(FactoryUnit) {	
+TAFactory = Class(FactoryUnit) {
+    OnCreate = function(self)
+    FactoryUnit.OnCreate(self)
+    if __blueprints['armmass'] then
+        TAutils.updateBuildRestrictions(self)
+    end
+    end,
+
+    OnStopBeingBuilt = function(self, builder, layer)
+        FactoryUnit.OnStopBeingBuilt(self, builder, layer)
+        local aiBrain = GetArmyBrain(self.Army)
+        if __blueprints['armmass'] then
+        if EntityCategoryContains(categories.PLANT, self) then
+            local buildRestrictionVictims = aiBrain:GetListOfUnits(categories.FACTORY + categories.ENGINEER, false)
+            for id, unit in buildRestrictionVictims do    
+        TAutils.updateBuildRestrictions(unit)
+        end
+        end
+    end
+    end,
+
         OnStartBuild = function(self, unitBeingBuilt, order )
             self:Open()
             ForkThread(self.FactoryStartBuild, self, unitBeingBuilt, order )
@@ -12,16 +32,20 @@ TAFactory = Class(FactoryUnit) {
 
         FactoryStartBuild = function(self, unitBeingBuilt, order )
             WaitFor(self.AnimManip)
+            if not self.Dead and not IsDestroyed(unitBeingBuilt) then
             FactoryUnit.OnStartBuild(self, unitBeingBuilt, order )
-		end,
+            end
+        end,
 
 		Open = function(self)
 		end,
 
-		OnStopBuild = function(self, unitBeingBuilt, order)
-			FactoryUnit.OnStopBuild(self, unitBeingBuilt, order)
-			self:Close()
+
+        OnStopBuild = function(self, unitBuilding)
+            FactoryUnit.OnStopBuild(self, unitBuilding)
+            self:Close()
 		end,
+        
 
 		Close = function(self)
 		end,
@@ -44,18 +68,20 @@ TAFactory = Class(FactoryUnit) {
         end,
     
         FactoryStartBuild = function(self, unitBeingBuilt, order )
-            FactoryUnit.OnStartBuild(self, unitBeingBuilt, order )
             WaitFor(self.AnimManip)
+            if not self.Dead and not IsDestroyed(unitBeingBuilt) then
+            FactoryUnit.OnStartBuild(self, unitBeingBuilt, order ) 
+            end
         end,
     
             Open = function(self)
             end,
-    
-            OnStopBuild = function(self, unitBeingBuilt, order)
-                FactoryUnit.OnStopBuild(self, unitBeingBuilt, order)
+
+            OnStopBuild = function(self, unitBuilding)
+                FactoryUnit.OnStopBuild(self, unitBuilding)
                 self:Close()
             end,
-    
+            
             Close = function(self)
             end,
     

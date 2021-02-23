@@ -2,12 +2,11 @@
 #CORVRAD
 #
 #Script created by Raevn
+local TATreads = import('/mods/SCTA-master/lua/TAMotion.lua').TATreads
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
-
-CORVRAD = Class(TAunit) {
+CORVRAD = Class(TATreads) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TATreads.OnCreate(self)
 		self.Spinners = {
 			dish = CreateRotator(self, 'dish', 'y', nil, 0, 100, 0),
 		}
@@ -15,7 +14,7 @@ CORVRAD = Class(TAunit) {
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
+		TATreads.OnStopBeingBuilt(self,builder,layer)
 		--spin dish around y-axis speed <100>;
 		self.Spinners.dish:SetTargetSpeed(100)
 		self:OnIntelEnabled()
@@ -25,14 +24,14 @@ CORVRAD = Class(TAunit) {
 	OnIntelDisabled = function(self)
 		self.Spinners.dish:SetSpeed(0)
 			self:SetMaintenanceConsumptionInactive()
-	TAunit.OnIntelDisabled(self)
+	TATreads.OnIntelDisabled(self)
 end,
 
 
 OnIntelEnabled = function(self)
 	self.Spinners.dish:SetSpeed(100)
 	self:SetMaintenanceConsumptionActive()
-	TAunit.OnIntelEnabled(self)
+	TATreads.OnIntelEnabled(self)
 end,
 }
 TypeClass = CORVRAD

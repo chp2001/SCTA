@@ -10,7 +10,7 @@ TATreads = Class(TAunit)
 {
 
 MovementEffects = function( self, EffectsBag, TypeSuffix)
-    self:LOGDBG('TATreads.MovementEffects')
+    ---self:LOGDBG('TATreads.MovementEffects')
     local layer = self:GetCurrentLayer()
     local bpTable = self:GetBlueprint().Display.MovementEffects
     TAunit.MovementEffects(self, EffectsBag, TypeSuffix)
@@ -25,7 +25,7 @@ MovementEffects = function( self, EffectsBag, TypeSuffix)
 end,
 
 CreateMotionChangeEffects = function( self, new, old )
-    self:LOGDBG('TATreads.CreateMotionChangeEffects')
+    ---self:LOGDBG('TATreads.CreateMotionChangeEffects')
     local key = self:GetCurrentLayer()..old..new
     local bpTable = self:GetBlueprint().Display.MotionChangeEffects[key]
     TAunit.CreateMotionChangeEffects(self, new, old)
@@ -35,7 +35,7 @@ CreateMotionChangeEffects = function( self, new, old )
 end,
 
 DestroyMovementEffects = function( self )
-    self:LOGDBG('TATreads.DestroyMovementEffects')
+    ---self:LOGDBG('TATreads.DestroyMovementEffects')
     local bpTable = self:GetBlueprint().Display.MovementEffects
     local layer = self:GetCurrentLayer()
     TAunit.DestroyMovementEffects(self)
@@ -53,7 +53,7 @@ end,
 
 CreateTreads = function(self, treads)
     TAunit.CreateTreads(self, treads)
-    self:LOGDBG('TATreads.CreateTreads')
+    ---self:LOGDBG('TATreads.CreateTreads')
     if treads.ScrollTreads then
         self:AddThreadScroller(1.0, treads.ScrollMultiplier or 0.2)
     end
@@ -67,7 +67,7 @@ end,
 
 CreateTreadsThread = function(self, treads)
     --TAunit.CreateTreadsThead(self, treads)
-    self:LOGDBG('TATreads.CreateTreadsThread')
+    ---self:LOGDBG('TATreads.CreateTreadsThread')
     local sizeX = treads.TreadMarksSizeX
     local sizeZ = treads.TreadMarksSizeZ
     local interval = treads.TreadMarksInterval
@@ -78,8 +78,6 @@ CreateTreadsThread = function(self, treads)
     local army = self:GetArmy()
 
     while true do
-        # Syntatic reference
-        # CreateSplatOnBone(entity, offset, boneName, textureName, sizeX, sizeZ, lodParam, duration, army)
         CreateSplatOnBone(self, treadOffset, treadBone, treadTexture, sizeX, sizeZ, 130, duration, army)
         WaitSeconds(interval)
     end
@@ -96,7 +94,7 @@ TAWalking = Class(TATreads)
     DisabledBones = {},
 
     OnMotionHorzEventChange = function( self, new, old )
-        self:LOGDBG('TAWalking.OnMotionHorzEventChange')
+        ---self:LOGDBG('TAWalking.OnMotionHorzEventChange')
         TATreads.OnMotionHorzEventChange(self, new, old)
        
         if ( old == 'Stopped' ) then
@@ -107,8 +105,10 @@ TAWalking = Class(TATreads)
             if bpDisplay.AnimationWalk then
                 self.Animator:PlayAnim(bpDisplay.AnimationWalk, true)
                 self.Animator:SetRate(bpDisplay.AnimationWalkRate or 1)
+                TATreads.MovementEffects(self)
             end
         elseif ( new == 'Stopped' ) then
+                TATreads.MovementEffects(self)
             if(self.IdleAnim and not self:IsDead()) then
                 self.Animator:PlayAnim(self.IdleAnim, true)
             elseif(not self.DeathAnim or not self:IsDead()) then
@@ -119,7 +119,7 @@ TAWalking = Class(TATreads)
     end,
 
     OnKilled = function(self, instigator, type, overkillRatio)
-        self:LOGDBG('TAWalking.OnKilled')
+        ---self:LOGDBG('TAWalking.OnKilled')
 		TATreads.OnKilled(self, instigator, type, overkillRatio)
 	end,
 }

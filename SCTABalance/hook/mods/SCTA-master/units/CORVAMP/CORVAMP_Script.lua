@@ -1,8 +1,8 @@
 local oldCORVAMP = CORVAMP
 CORVAMP = Class(oldCORVAMP) {
-	OnStopBeingBuilt = function(self)
+	OnStopBeingBuilt = function(self, builder, layer)
 	self:SetMaintenanceConsumptionActive()
-	oldCORVAMP.OnStopBeingBuilt(self)	
+	oldCORVAMP.OnStopBeingBuilt(self, builder, layer)	
 	end,
 }
 

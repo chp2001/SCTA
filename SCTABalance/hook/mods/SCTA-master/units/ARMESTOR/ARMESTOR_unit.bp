@@ -1,8 +1,5 @@
 UnitBlueprint {
     Merge = true, 
-    Display = {
-        UniformScale = 0.08,
-    },
     Footprint = {
         SizeX = 1,
         SizeZ = 1,
@@ -10,10 +7,10 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 10, 
     },
-    SelectionSizeX = 1,
-    SelectionSizeZ = 1,
+    SelectionSizeX = 1.5,
+    SelectionSizeZ = 1.5,
     SelectionThickness = 0.6,
-    SizeX = 1.2,
-    SizeY = 1.2,
-    SizeZ = 1.2,
+    SizeX = 2,
+    SizeY = 2.2,
+    SizeZ = 2,
 }

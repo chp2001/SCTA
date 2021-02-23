@@ -39,6 +39,8 @@ UnitBlueprint {
     BuildIconSortPriority = 1,
     Categories = {
         'SELECTABLE',
+        'OCEAN',
+	    'LEVEL1',
         'TECH1',
         'ENGINEER',
         'REPAIR',
@@ -49,12 +51,10 @@ UnitBlueprint {
         'SHOWQUEUE',
         'SELECTION',
         'MOBILE',
-    'CONSTRUCTION',
-    'DEFENSIVEBOAT',
-	'NAVAL',
-    'CORE',
-    'OCEAN',
-	'LEVEL1',
+        'CONSTRUCTION',
+        'DEFENSIVEBOAT',
+	    'NAVAL',
+        'CORE',
     },
     CollisionOffsetY = -0.25,
     Defense = {
@@ -84,9 +84,11 @@ UnitBlueprint {
             },
         },
 	MovementEffects = {
+        TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'wake1','wake2'},
+		Bones = {'wake1'},
+        },
 	},
         UniformScale = 0.16,
     },
@@ -130,7 +132,8 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 3,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Construction Ship',
     },
     Intel = {
@@ -163,9 +166,9 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_UNITEX
-            Damage = 10,
+            Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 0.9375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

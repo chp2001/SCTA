@@ -29,20 +29,18 @@ UnitBlueprint {
     BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
+        'KBOT',
+	    'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
+	    'LAND',
+	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'KBOT',
-	'LEVEL1',
-	
-	
-	
-	
+        'TANK',
+        'ROCKET',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -57,27 +55,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORSTORM/CORSTORM_lod0_Awalk.sca',
         AnimationWalkRate = 1.5,
-        Abilities = {
-            'Rocket',
-        },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'torso'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'launcher'},
-				EmitterBlueprint = {
-	    				'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -87,14 +64,13 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'torso',
+	---SmokeBone = 'torso',
 	        TransportAnimation = {
             {
                 Animation = '/mods/SCTA-master/units/CORSTORM/CORSTORM_lod0_Afold.sca',
                 Weight = 100,
             },
 		},
-		
 		TransportDropAnimation = {
             {
                 Animation = '/mods/SCTA-master/units/CORSTORM/CORSTORM_lod0_Aunfold.sca',
@@ -108,7 +84,6 @@ UnitBlueprint {
         BuildCostMass = 160,
         BuildTime = 1969,
     },
-
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -122,7 +97,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Storm',
     },
     Intel = {
@@ -167,7 +143,7 @@ UnitBlueprint {
             CollideFriendly = false,
             --AlternateDamageFriendly = true,
             Damage = 100,
-            DamageRadius = 1.5, 
+            DamageRadius = 1, 
             FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'CORKBOT_ROCKET',
@@ -177,7 +153,7 @@ UnitBlueprint {
             },
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
-            FiringTolerance = 0,
+            FiringTolerance = 10,
             Label = 'CORKBOT_ROCKET',
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
@@ -221,13 +197,11 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 90,
             Turreted = true,
-            EnergyDrainPerSecond = 5,
-            EnergyRequired = 5,
         },
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

@@ -9,8 +9,11 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 9000,
-        BuildCostMass = 360,
+        BuildCostMass = 200,
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 4,
+    SizeX = 2,
+    SizeY = 1,
+    SizeZ = 2.25,
 }

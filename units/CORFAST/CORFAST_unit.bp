@@ -29,6 +29,8 @@ UnitBlueprint {
     BuildIconSortPriority = 10,
     Categories = {
         'SELECTABLE',
+        'KBOT',
+        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -37,8 +39,6 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'KBOT',
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -65,7 +65,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'Torso',
+	---SmokeBone = 'Torso',
         UniformScale = 0.13,
     },
     Economy = {
@@ -86,7 +86,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Freaker',
     },
     Intel = {
@@ -181,9 +182,9 @@ UnitBlueprint {
             Turreted = true,
         },
         { #SMALL_UNITEX
-            Damage = 10,
+            Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 0.9375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

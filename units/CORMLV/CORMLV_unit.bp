@@ -39,6 +39,8 @@ UnitBlueprint {
     BuildIconSortPriority = 8,
     Categories = {
         'SELECTABLE',
+        'VEHICLE',
+        'LEVEL1',
         'TECH1',
         'ENGINEER',
         'VISIBLETORECON',
@@ -46,13 +48,11 @@ UnitBlueprint {
         'SHOWQUEUE',
         'REPAIR',
         'MOBILE',
-	'CONSTRUCTION',
-	'LAND',
+	    'CONSTRUCTION',
+	    'LAND',
         'CORE',
-        'VEHICLE',
-	'MINELAYER',
-	'LEVEL1',
-	'FIELDENGINEER',
+	    'MINELAYER',
+	    'FIELDENGINEER',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -70,7 +70,30 @@ UnitBlueprint {
         },
         AnimationBuild = '/mods/SCTA-master/units/CORMLV/CORMLV_lod0_unpack.sca',
         AnimationBuildRate = 1, 
-	BuildBones = {'Muzzle'},
+        AnimationWalk = '/mods/SCTA-master/units/CORMLV/CORMLV_lod0_wheels.sca',
+        AnimationWalkRate = 1,
+        MovementEffects = {
+            Land = {
+                Treads = {
+                    ScrollMultiplier = 0.75,
+                    ScrollTreads = false,
+                    TreadMarks = {
+                        {
+                            BoneName = 'CORMLV',
+                            TreadMarks = 'tank_treads_albedo',
+                            TreadMarksInterval = 0.2,
+                            TreadMarksSizeX = 1.25,
+                            TreadMarksSizeZ = 1.25,
+                            TreadOffset = {
+                                0,
+                                0,
+                                0,
+                            },
+                        },
+                    },
+                },
+            },
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -95,10 +118,10 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            AimBone = 'Beam',
+            AimBone = 'Muzzle',
             BuildEffectBones = {'Muzzle'},
-            PitchBone = 'Muzzle',
-            YawBone = 'Beam',
+            PitchBone = 'Turret',
+            YawBone = 'Turret',
         },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
@@ -115,7 +138,8 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 3,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
 	UnitName = 'Spoiler',
     },
     Intel = {
@@ -150,7 +174,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

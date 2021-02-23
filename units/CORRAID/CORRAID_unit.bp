@@ -29,6 +29,8 @@ UnitBlueprint {
     BuildIconSortPriority = 4,
     Categories = {
         'SELECTABLE',
+        'VEHICLE',
+        'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -37,8 +39,7 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'VEHICLE',
-	'LEVEL1',
+        'TANK',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -51,9 +52,6 @@ UnitBlueprint {
     },
     Description = 'Medium Assault Tank',
     Display = {
-        Abilities = {
-            'Tank',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -84,7 +82,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Raider',
     },
     Intel = {
@@ -181,7 +180,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

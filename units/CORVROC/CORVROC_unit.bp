@@ -29,6 +29,8 @@ StopMove = Sound {
     BuildIconSortPriority = 5,
     Categories = {
         'SELECTABLE',
+        'VEHICLE',
+        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -36,10 +38,9 @@ StopMove = Sound {
         'LAND',
         'INDIRECTFIRE',
         'ROCKET',
+        'SILO',
         'OVERLAYINDIRECTFIRE',
         'CORE',
-        'VEHICLE',
-        'LEVEL2',
     },
     Defense = {
 ArmorType = 'Normal',
@@ -52,13 +53,7 @@ SurfaceThreatLevel = 24,
     },
     Description = 'Mobile Rocket Launcher',
     Display = {
-    Abilities = {
-        'Missile',
-    },
     MovementEffects = {
-        Bones = {'CORVROC'},
-        Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
-        Scale = 0.5,
     Land = {
         Treads = {
         ScrollMultiplier = 0.75,
@@ -80,17 +75,13 @@ SurfaceThreatLevel = 24,
             },
         },
     },
-Mesh = {
-    IconFadeInZoom = 130,
-    LODs = {
-        {
-            LODCutoff = 120,
-            Scrolling = true,
-            ShaderName = 'Unit',
-        },        
-                {
-    LODCutoff = 230,
-    ShaderName = 'Unit', 
+    Mesh = {
+        IconFadeInZoom = 130,
+        LODs = {
+            {
+                LODCutoff = 230,
+                Scrolling = true,
+                ShaderName = 'Unit', 
     NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
             },
         },
@@ -115,7 +106,8 @@ Mesh = {
     RULEUCC_Stop = true,
     },
     FactionName = 'CORE',
-    TechLevel = 'RULEUTL_Advanced',
+    Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
     UnitName = 'Diplomat',
     },
     Intel = {
@@ -177,8 +169,6 @@ Mesh = {
     MuzzleSalvoDelay = 0,
     MuzzleSalvoSize = 1,
     MuzzleVelocity = 3,
-    EnergyDrainPerSecond = 5,
-    EnergyRequired = 25,    
     ProjectileId = '/mods/SCTA-master/projectiles/CORTRUCK_ROCKET/CORTRUCK_ROCKET_proj.bp',
     RackBones = {
     {
@@ -210,7 +200,7 @@ Mesh = {
     { #BIG_UNITEX
     Damage = 50,
     DamageFriendly = true,
-    DamageRadius = 3.4375,
+    DamageRadius = 3,
     DamageType = 'Normal',
     DummyWeapon = true,
     Label = 'DeathWeapon',

@@ -38,16 +38,12 @@ UnitBlueprint {
         'SHOWQUEUE',
 	'STRUCTURE',
 	'CONSTRUCTION',
-        'LAND',
+    'LAND', 
         'CONSTRUCTIONSORTDOWN',
 	'CORE',
     'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -61,7 +57,9 @@ UnitBlueprint {
     Description = 'Produces Kbots',
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/CORLAB/CORLAB_lod0_unpack.sca',
-        AnimationUnpackRate = 1, 
+        AnimationUnpackRate = 0.5,
+        AnimationPack = '/mods/SCTA-master/units/CORLAB/CORLAB_lod0_pack.sca',
+        AnimationPackRate = 0.5,  
         Abilities = {
             'Upgradeable',
         },
@@ -75,7 +73,7 @@ UnitBlueprint {
                     AlbedoName = '/mods/SCTA-master/units/CORLAB/CORLAB_Albedo.dds',
                     MeshName =   '/mods/SCTA-master/units/CORLAB/CORLAB_lod0.scm',
                     ShaderName = 'Unit', 
-                    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                    NormalName = '/mods/SCTA-master/units/CORLAB/CORLAB_normalsTS.dds',
                 },
             },
         },
@@ -105,8 +103,8 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildEffectBones = {'muzzle1', 'muzzle2'},
-        },       
+            BuildEffectBones = {'muzzle1', 'muzzle2','muzzle3','muzzle4'},
+        },     
 	---BuildAngle = 1024,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
@@ -121,6 +119,7 @@ UnitBlueprint {
         SelectionPriority = 5,
         ConstructionBar = true,
         FactionName = 'CORE',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Basic',
         UnitName = 'Kbot Development Lab',
         UpgradesFrom = 'corlab', 
@@ -175,16 +174,16 @@ UnitBlueprint {
     SizeX = 9,
     SizeY = 1,
     SizeZ = 9,
-    StrategicIconName = 'icon_factory2_land', --'icon_factory1_bot',
+    StrategicIconName = 'icon_factoryhq2_land', --'icon_factory1_bot',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 20,
-            DamageFriendly = true,
-            DamageRadius = 1,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        Damage = 200,
+        DamageFriendly = true,
+        DamageRadius = 5,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
         },
 
     },

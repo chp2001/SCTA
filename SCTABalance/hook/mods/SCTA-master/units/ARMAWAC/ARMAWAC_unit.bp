@@ -7,14 +7,16 @@ UnitBlueprint {
         'RECLAIMABLE',
         'MOBILE',
 	    'AIR',
-    'VTOL',
-    'HIGHALTAIR',
-    'INTELLIGENCE',
-	'RADAR',
+        'VTOL',
+        'HIGHALTAIR',
+        'INTELLIGENCE',
+	    'RADAR',
         'OVERLAYRADAR',
         'OVERLAYOMNI',
         'ARM',
-	'LEVEL2',
+        'JAM',
+        'SCOUT',
+	    'LEVEL2',
     },
     Defense = {
         Health = 800,
@@ -24,37 +26,36 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_omni>Omni Sensor',
             '<LOC ability_radar>Radar',
+            '<LOC ability_jamming>Jamming',
         },
     },
     Economy = {
-        BuildCostEnergy = 16000,
-        BuildCostMass = 330,
-        BuildTime = 2800,
+        BuildCostEnergy = 8000,
+        BuildCostMass = 220,
+        BuildTime = 5600,
         MaintenanceConsumptionPerSecondEnergy = 40,
     },
     General = {
-        OrderOverrides = {
-                RULEUTC_IntelToggle = {
-                bitmapId = 'radar',
-                helpText = 'toggle_radar',
-                     },
-                 },
-               ToggleCaps = {
-               RULEUTC_IntelToggle = true,
-            },
+        ToggleCaps = {
+            RULEUTC_JammingToggle = true,
+        },
     },
     Intel = {
+        ActiveIntel = {
+            Omni = true,
+            Radar = true,
+        },
 	FreeIntel = false,
     RadarRadius = 100, 
     OmniRadius = 20,
     JamRadius = {
-        Max = 7,
-        Min = 7,
+        Max = 18,
+        Min = 12,
       },
       JammerBlips = 5,
     },
     Physics = {
         FuelRechargeRate = 999999,
         FuelUseTime = 999999,
-        },
+    },
 }

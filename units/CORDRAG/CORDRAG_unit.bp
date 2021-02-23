@@ -1,5 +1,10 @@
 UnitBlueprint {
     BuildIconSortPriority = 25,
+    AI = {
+        TargetBones = {
+            0,
+        },
+    },
     Categories = {
         'BUILTBYT1VEHICLE',
         'BUILTBYT1KBOT',
@@ -10,17 +15,14 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'LEVEL2',
         'TECH2',
         'BENIGN',
 	'STRUCTURE',
         'DEFENSE',
         'WALL',
-	'NOEXPLOSION',
-	'NOSMOKE',
 	'SORTDEFENSE',
 	'CORE',
-	'METAL',
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -64,7 +66,8 @@ UnitBlueprint {
         Classification = 'RULEUC_MiscSupport',
         SelectionPriority = 5,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Dragons Teeth',
     },
     Intel = {

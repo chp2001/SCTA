@@ -29,21 +29,20 @@ UnitBlueprint {
     BuildIconSortPriority = 2,
     Categories = {
         'SELECTABLE',
+        'VEHICLE',
+	    'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'SCOUT',
-	'DIRECTFIRE',
+	    'LAND',
+	    'SCOUT',
+	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'VEHICLE',	#'TANK' in TA
-	'LEVEL1',
-	
-	
-	
-	
+        'INTELLIGENCE',
+        'RADAR',
+        'OVERLAYRADAR',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -56,17 +55,16 @@ UnitBlueprint {
     },
     Description = 'Scout',
     Display = {
+        AnimationWalk = '/mods/SCTA-master/units/CORFAV/CORFAV_lod0_wheels.sca',
+        AnimationWalkRate = 1,
         MovementEffects = {
-            Bones = {'CORFAV'},
-            Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
-            Scale = 0.5,
             Land = {
                 Treads = {
                     ScrollMultiplier = 0.75,
-                    ScrollTreads = true,
+                    ScrollTreads = false,
                     TreadMarks = {
                         {
-                            BoneName = 'CORFAV',
+                            BoneName = 'corfav',
                             TreadMarks = 'tank_treads_albedo',
                             TreadMarksInterval = 0.2,
                             TreadMarksSizeX = 0.5,
@@ -81,27 +79,11 @@ UnitBlueprint {
                 },
             },
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
-            {
-                LODCutoff = 120,
-                Scrolling = true,
-                ShaderName = 'Unit',
-            },
             LODs = {
                 {
                     LODCutoff = 230,
-                    ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -112,12 +94,6 @@ UnitBlueprint {
         BuildCostMass = 38,
         BuildTime = 1515,
     },
-    --[[Footprint = {
-	MaxSlope = 1,
-	MaxWaterDepth = 0.75,
-        SizeX = 2,
-        SizeZ = 2,
-    },]]--
     General = {
         Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -131,7 +107,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Weasel',
     },
     Intel = {
@@ -192,9 +169,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Muzzle',
+                        'flare',
                     },
-                    RackBone = 'Turret',
+                    RackBone = 'turret',
                 },
             },
             RackRecoilDistance = 0,
@@ -209,9 +186,9 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'Muzzle',
-            TurretBonePitch = 'Turret',
-            TurretBoneYaw = 'Turret',
+            TurretBoneMuzzle = 'flare',
+            TurretBonePitch = 'barrel',
+            TurretBoneYaw = 'turret',
             TurretPitch = 0,
             TurretPitchRange = 360,
             TurretPitchSpeed = 90,
@@ -221,14 +198,13 @@ UnitBlueprint {
             Turreted = true,
         },
         { #SMALL_UNITEX
-            Damage = 10,
-            DamageFriendly = true,
-            DamageRadius = 0.9375,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        Damage = 30,
+        DamageFriendly = true,
+        DamageRadius = 3,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
         },
-
     },
         Wreckage = {
 	---UseCustomMesh = true,

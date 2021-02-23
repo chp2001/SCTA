@@ -40,6 +40,8 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
+        'OCEAN',
+	    'LEVEL1',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -49,12 +51,10 @@ UnitBlueprint {
         'SHOWQUEUE',
         'SELECTION',
         'MOBILE',
-    'CONSTRUCTION',
-    'DEFENSIVEBOAT',
-	'NAVAL',
+        'CONSTRUCTION',
+        'DEFENSIVEBOAT',
+	    'NAVAL',
         'ARM',
-        'OCEAN',
-	'LEVEL1',
     },
     CollisionOffsetY = -0.25,
     Defense = {
@@ -79,15 +79,16 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
-	MovementEffects = {
+	    MovementEffects = {
+        TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02'},
-	},
+		Bones = {'Wake_01'},
+        },
+    },
         UniformScale = 0.16,
     },
     Economy = {
@@ -112,7 +113,7 @@ UnitBlueprint {
         BuildBones = {
             AimBone = 'Build_Muzzle',
             BuildEffectBones = {'Build_Muzzle'},
-            PitchBone = 'Build_Muzzle',
+            PitchBone = 'Build_Nozzle',
             YawBone = 'Turret',
         },
         Category = 'Construction',
@@ -130,6 +131,7 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 3,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Basic',
         UnitName = 'Construction Ship',
     },
@@ -165,7 +167,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

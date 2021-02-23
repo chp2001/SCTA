@@ -4,6 +4,12 @@
 #Blueprint created by Raevn
 
 UnitBlueprint {
+    AI = {
+        TargetBones = {
+            'socle',
+            'turret',
+        },
+    },
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
@@ -29,15 +35,15 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-	'STRUCTURE',
-	'DEFENSE',
-	'DIRECTFIRE',
+        'LEVEL1',
+	    'STRUCTURE',
+	    'DEFENSE',
+	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-	'ARM',
-		'DEFENSIVE',
-	'SORTDEFENSE',
-    'LEVEL1',
-    'SNIPEMODE',
+	    'ARM',
+    	'SORTDEFENSE',
+        'SNIPEMODE',
+        'LASER',
     },
     CollisionOffsetY = -1,
     Defense = {
@@ -64,18 +70,13 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.24,
     },
     Economy = {
         BuildCostEnergy = 2546,
         BuildCostMass = 262,
         BuildTime = 4662,
         StorageEnergy = 75,
-    },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-	MaxSlope = 0.875,
     },
     General = {
         Category = 'Defense',
@@ -87,6 +88,7 @@ UnitBlueprint {
         },
         SelectionPriority = 5,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Basic',
         UnitName = 'L.L.T.',
     },
@@ -99,16 +101,14 @@ UnitBlueprint {
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.25,
     LifeBarSize = 2,
-    Physics = {
-        SkirtSizeX = 2, 
-        SkirtSizeZ = 2,  
+    Physics = { 
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,
-    SelectionCenterOffsetZ = -0.5,
+    SelectionCenterOffsetZ = -0.15,
     SelectionThickness = 0.25,
     SizeX = 2,
     SizeY = 3,
@@ -139,7 +139,7 @@ UnitBlueprint {
                 Water = 'Land|Water|Air',
             },
 	    RangeCategory = 'UWRC_DirectFire',
-     WeaponCategory = 'DirectFire',
+        WeaponCategory = 'DirectFire',
             FiringTolerance = 2.75,
             Label = 'ARM_LIGHTLASER',
             MaxRadius = 25,
@@ -150,9 +150,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Turret_Muzzle',
+                        'fire2',
                     },
-                    RackBone = 'Turret_Barrel',
+                    RackBone = 'turret',
                 },
             },
             RackRecoilDistance = 0,
@@ -168,9 +168,9 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'Turret_Muzzle',
-            TurretBonePitch = 'Turret_Barrel',
-            TurretBoneYaw = 'Turret',
+            TurretBoneMuzzle = 'barrel',
+            TurretBonePitch = 'pitchturret',
+            TurretBoneYaw = 'turret',
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 360,
@@ -183,7 +183,7 @@ UnitBlueprint {
         { #MEDIUM_BUILDINGEX
             Damage = 100,
             DamageFriendly = true,
-            DamageRadius = 3.28,
+            DamageRadius = 4,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

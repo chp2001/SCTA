@@ -33,27 +33,18 @@ UnitBlueprint {
         'BUILTBYT2KBOT',
         'BUILTBYT2VEHICLE',
         'BUILTBYT2SUB',
+        'LEVEL3',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	
-	'STRUCTURE',
+	    'STRUCTURE',
         'MASSPRODUCTION',
         'MASSEXTRACTION',
-                'ECONOMIC',
+        'ECONOMIC',
         'SORTECONOMY',
-
-	
-	'CORE',
-	'METAL',
-	'EXTRACTOR',
-	'LEVEL3',
-	
-	
-	
+	    'CORE',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -66,24 +57,6 @@ UnitBlueprint {
     },
     Description = 'Advanced Metal Extractor',
     Display = {
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'CORMOHO'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'shell'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -116,7 +89,8 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
         },
-        TechLevel = 'RULEUTL_Secret',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Secret',
         UnitName = 'Moho Mine',
     },
     Intel = {

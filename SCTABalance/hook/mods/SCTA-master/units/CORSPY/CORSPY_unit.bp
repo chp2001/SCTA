@@ -13,11 +13,11 @@ UnitBlueprint {
         'MOBILE',
 	'LAND',
         'CORE',
-        --'KBOT',
 	'LEVEL2',
     'RADAR',
     'OVERLAYRADAR',
     'TACLOAK',
+    'JAM',
     },
     Economy = {
         BuildCostEnergy = 1500,

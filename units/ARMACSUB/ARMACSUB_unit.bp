@@ -40,6 +40,10 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'LEVEL2',
+        'NAVAL',
+        'ARM',
+        'OCEAN',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -49,13 +53,9 @@ UnitBlueprint {
         'SHOWQUEUE',
         'MOBILE',
         'CONSTRUCTION',
-        'NAVAL',
-        'ARM',
-        'OCEAN',
         'T2SUBMARINE',
         'OVERLAYSONAR',	
         'SELECTION',	
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -79,14 +79,15 @@ UnitBlueprint {
                 {
                     LODCutoff = 230,
                     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
-	MovementEffects = {
+	    MovementEffects = {
+        TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
 		Scale = 0.5,
 		Bones = {'Wake_01','Wake_02'},
+        },
 	},
         UniformScale = 0.16,
     },
@@ -111,10 +112,10 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            AimBone = 'post',
+            AimBone = 'muzzle',
             BuildEffectBones = {'muzzle'},
             PitchBone = 'muzzle',
-            YawBone = 'post',
+            YawBone = 'turret',
         },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
@@ -130,7 +131,8 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 3,
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Advanced Construction Sub',
     },
     Intel = {
@@ -154,7 +156,7 @@ UnitBlueprint {
             LAYER_Sub = true,
             LAYER_Water = false,
         },
-        Elevation = -1.5,
+        Elevation = -2.5,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
         MaxAcceleration = 2,
@@ -174,9 +176,9 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_UNITEX
-            Damage = 10,
+            Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 0.9375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

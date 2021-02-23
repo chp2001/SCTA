@@ -28,6 +28,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
+        'LEVEL1',
         'SORTDEFENSE',
 	'STRUCTURE',
 	'DEFENSE',
@@ -80,7 +81,8 @@ UnitBlueprint {
         },
         SelectionPriority = 5,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Immolator',
     },
     Intel = {

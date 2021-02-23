@@ -4,6 +4,12 @@
 #Blueprint created by Raevn
 
 UnitBlueprint {
+    AI = {
+        TargetBones = {
+            'CORLLT',
+            'Stand',
+        },
+    },
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
@@ -29,15 +35,15 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
+        'LEVEL1',
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 	'CORE',
-		'DEFENSIVE',
 	'SORTDEFENSE',
-    'LEVEL1',
     'SNIPEMODE',
+    'LASER',
     },
     CollisionOffsetY = -1,
     Defense = {
@@ -71,11 +77,6 @@ UnitBlueprint {
         BuildTime = 4724,
         StorageEnergy = 75,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-	MaxSlope = 0.875,
-    },
     General = {
         Category = 'Defense',
         Classification = 'RULEUC_Weapon',
@@ -86,7 +87,8 @@ UnitBlueprint {
         },
         SelectionPriority = 5,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Light Laser Tower',
     },
     Intel = {
@@ -99,15 +101,12 @@ UnitBlueprint {
     LifeBarOffset = 0.25,
     LifeBarSize = 2,
     Physics = {
-        SkirtSizeX = 2, 
-        SkirtSizeZ = 2,  
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,
-    SelectionCenterOffsetZ = -0.8,
     SelectionThickness = 0.25,
     SizeX = 2,
     SizeY = 3,

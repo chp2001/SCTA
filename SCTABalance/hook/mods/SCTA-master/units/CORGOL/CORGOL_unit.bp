@@ -5,21 +5,13 @@ UnitBlueprint {
     'TECH3',
     'VISIBLETORECON',
     'RECLAIMABLE',
-
-
     'MOBILE',
-'LAND',
-'DIRECTFIRE',
+    'LAND',
+    'DIRECTFIRE',
     'OVERLAYDIRECTFIRE',
-
-
     'CORE',
-    'VEHICLE',	#'TANK' in TA
-'LEVEL3',
-
-
-
-
+    'VEHICLE',
+    'LEVEL3',
 },
 Defense = {
     Health = 16000,

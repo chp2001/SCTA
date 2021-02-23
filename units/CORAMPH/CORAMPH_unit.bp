@@ -30,15 +30,19 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
         'DIRECTFIRE',
+        'INDIRECTFIRE',
+        'OVERLAYDIRECTFIRE',
+        'OVERLAYINDIRECTFIRE',
         'KBOT',
         'LAND',
         'CORE',
         'AMPHIBIOUS',
-	'LEVEL2',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -73,11 +77,10 @@ UnitBlueprint {
         BuildCostMass = 255,
         BuildTime = 5982,
     },
-    --[[Footprint = {
-        MaxSlope = 0.8,
-        SizeX = 1,
+    Footprint = {
+        SizeX = 2,
         SizeZ = 1,
-    },]]--
+    },
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -91,7 +94,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Gimp',
     },
     Intel = {
@@ -215,8 +219,6 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 20,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_THUD/CORE_THUD_proj.bp',
-            EnergyDrainPerSecond = 50,
-            EnergyRequired = 100,
             RackBones = {
                 {
                     MuzzleBones = {
@@ -249,11 +251,10 @@ UnitBlueprint {
             TurretYawSpeed = 300,
             Turreted = true,
         },
-
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

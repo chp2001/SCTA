@@ -1,0 +1,179 @@
+PlatoonTemplate {
+    Name = 'CommanderBuilderSCTA',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        { categories.COMMAND, 1, 1, 'support', 'None' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'CommanderSCTAAssist',
+    Plan = 'ManagerEngineerAssistAI',
+    GlobalSquads = {
+        { categories.COMMAND, 1, 1, 'support', 'None' },
+    },
+}
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTA123',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        { categories.ENGINEER * (categories.LEVEL1 + categories.LEVEL2 + categories.LEVEL3) - categories.ENGINEERSTATION , 1, 1, 'support', 'None' }
+    },
+}
+
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTA23',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        { categories.ENGINEER * (categories.LEVEL2 + categories.LEVEL3) - categories.ENGINEERSTATION , 1, 1, 'support', 'None' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTA12',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        { categories.ENGINEER * (categories.LEVEL1 + categories.LEVEL2) - categories.ENGINEERSTATION , 1, 1, 'support', 'None' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTA',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        { categories.ENGINEER * categories.LEVEL1 - categories.COMMAND, 1, 1, 'support', 'None' }
+    },
+}
+
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTAEco',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        { categories.ENGINEER * categories.LEVEL1 * categories.AIR, 1, 1, 'support', 'None' }
+    },
+}
+
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTAAssist',
+    Plan = 'ManagerEngineerAssistAI',
+    GlobalSquads = {
+        {categories.FIELDENGINEER, 1, 1, 'support', 'None' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTAField',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        {categories.FIELDENGINEER, 1, 1, 'support', 'None' }
+    },
+}
+
+
+
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTA2',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        { categories.ENGINEER * categories.LEVEL2, 1, 1, 'support', 'None' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTA3',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        { categories.ENGINEER * categories.LEVEL3, 1, 1, 'support', 'None' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'T1BuildEngineerSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armck', 1, 1, 'support', 'None' }
+        },
+        Core = {
+            { 'corcv', 1, 1, 'support', 'None' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T1BuildEngineerAirSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armca', 1, 1, 'support', 'None' }
+        },
+        Core = {
+            { 'corca', 1, 1, 'support', 'None' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T2BuildEngineerAirSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armaca', 1, 1, 'support', 'None' }
+        },
+        Core = {
+            { 'coraca', 1, 1, 'support', 'None' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T2BuildEngineerSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armack', 1, 1, 'support', 'None' }
+        },
+        Core = {
+            { 'coracv', 1, 1, 'support', 'None' }
+        },
+    }
+}
+PlatoonTemplate {
+    Name = 'T2BuildFieldEngineerSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armfark', 1, 1, 'support', 'None' }
+        },
+        Core = {
+            { 'cornecro', 1, 1, 'support', 'None' }
+        },
+    }
+}
+
+
+
+PlatoonTemplate {
+    Name = 'T3BuildEngineerAirSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armcsa', 1, 1, 'support', 'None' }
+        },
+        Core = {
+            { 'corcsa', 1, 1, 'support', 'None' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T3BuildEngineerSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armch', 1, 1, 'support', 'None' },
+        },
+        Core = {
+            { 'corch', 1, 1, 'support', 'None' },
+        },
+    }
+}
+

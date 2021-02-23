@@ -34,18 +34,17 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-	'FACTORY',
+        'LAB',
+        'LEVEL2',
+        'AIR',
+	    'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-	'STRUCTURE',
-	'CONSTRUCTION',
-	'TEXTUREANIM',
+	    'STRUCTURE',
+	    'CONSTRUCTION',
         'OVERLAYRADAR',
-	'ARM',
-		'PLANT',
-	'SORTCONSTRUCTION',
-	'LEVEL2',
-    'AIR',
+	    'ARM',
+	    'SORTCONSTRUCTION',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -61,15 +60,16 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_radar>Radar',
         },
+    BuildAttachBone = 'pad',    
     AnimationUnpack = '/mods/SCTA-master/units/ARMAAP/ARMAAP_lod0_unpack.sca',
     AnimationUnpackRate = 1,    
         Mesh = {
-            IconFadeInZoom = 400,
+            IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 400,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+		            NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -83,7 +83,7 @@ UnitBlueprint {
         BuildableCategory = {
             'VTOL LEVEL2 ARM',
         },
-	InitialRallyX = 1,
+	InitialRallyX = 0,
 	InitialRallyZ = 5,
         StorageMass = 200,
         StorageEnergy = 200,
@@ -95,7 +95,6 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildAttachBone = 'pad',
             BuildEffectBones = {'Nozzle_01', 'Nozzle_02'},
         },    
 	---BuildAngle = 0,
@@ -112,11 +111,12 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 5,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
 	UnitName = 'Adv. Aircraft Plant',
     },
     Intel = {
-    VisionRadius = 14,
+    VisionRadius = 10,
 	RadarRadius = 30,
 	FreeIntel = true,
     },
@@ -165,12 +165,12 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 20,
-            DamageFriendly = true,
-            DamageRadius = 1,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        Damage = 200,
+        DamageFriendly = true,
+        DamageRadius = 5,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
         },
 
     },

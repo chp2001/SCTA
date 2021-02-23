@@ -29,22 +29,16 @@ UnitBlueprint {
     BuildIconSortPriority = 6,
     Categories = {
         'SELECTABLE',
+        'KBOT',
+	    'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
-	'ANTIAIR',
-        'OVERLAYDIRECTFIRE',
-	'OVERLAYANTIAIR',
+	    'LAND',
+	    'ANTIAIR',
+	    'OVERLAYANTIAIR',
         'ARM',
-        'KBOT',
-	'LEVEL1',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -72,7 +66,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'Torso',
+	---SmokeBone = 'Torso',
         UniformScale = 0.16,
     },
     Economy = {
@@ -80,7 +74,6 @@ UnitBlueprint {
         BuildCostMass = 106,
         BuildTime = 2631,
     },
-
     General = {
         Category = 'Anti Air',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -94,6 +87,7 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Basic',
         UnitName = 'Jethro',
     },
@@ -140,7 +134,7 @@ UnitBlueprint {
             DamageFriendly = false,
             Damage = 63,
             DamageRadius = 1.5, 
-            DamageType = 'SAMAir',
+            DamageType = 'LANDAir',
             DisplayName = 'ARMKBOT_MISSILE',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',
@@ -195,13 +189,13 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 275.06,
             Turreted = true,
-	    WeaponUnpacks = true,
+	        WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
         },
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

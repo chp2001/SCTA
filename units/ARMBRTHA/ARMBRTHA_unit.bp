@@ -26,14 +26,15 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
+        'LEVEL3',
         'SORTDEFENSE',
 	'STRUCTURE',
 	'DEFENSE',
 	'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
 	'ARM',
-	'LEVEL3',
     'STRATEGIC',
+    'ARTILLERY',
     'SNIPEMODE',
     },
     Defense = {
@@ -47,9 +48,6 @@ UnitBlueprint {
     },
     Description = 'Long Range Plasma Cannon',
     Display = {
-        Abilities = {
-            'Artillery',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -81,6 +79,7 @@ UnitBlueprint {
         },
         SelectionPriority = 5,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Secret',
         UnitName = 'Big Bertha',
     },
@@ -179,7 +178,7 @@ UnitBlueprint {
         { #ATOMIC_BLAST
             Damage = 1000,
             DamageFriendly = true,
-            DamageRadius = 16.125,
+            DamageRadius = 12,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

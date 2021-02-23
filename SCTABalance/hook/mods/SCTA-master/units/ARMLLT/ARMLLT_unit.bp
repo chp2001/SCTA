@@ -1,28 +1,23 @@
 UnitBlueprint {
     Merge = true,
-    CollisionOffsetY = -0.6,
+    CollisionOffsetY = -0.4,
     Display = {
         UniformScale = 0.1,
+    },
+    Economy = {
+        BuildTime = 5500,
     },
     Defense = {
         Health = 1500,
         MaxHealth = 1500,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-	    MaxSlope = 0.875,
-    },
-    Physics = {
-        SkirtSizeX = 1, 
-        SkirtSizeZ = 1,  
-    },
     Intel = {
         VisionRadius = 12,
     },
     LifeBarSize = 1,
-    SelectionCenterOffsetZ = -0.1,
-    SizeX = 1.2,
-    SizeY = 3.3,
-    SizeZ = 1.2,
+    SelectionSizeX = 0.8,
+    SelectionSizeZ = 0.8,
+    SizeX = 0.8,
+    SizeY = 2.2,
+    SizeZ = 0.8,
 }

@@ -29,22 +29,17 @@ UnitBlueprint {
     BuildIconSortPriority = 5,
     Categories = {
         'SELECTABLE',
+        'VEHICLE',
+        'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
-	'ANTIAIR',
-        'OVERLAYDIRECTFIRE',
+	    'LAND',
+	    'ANTIAIR',
         'OVERLAYANTIAIR',
         'ARM',
-        'VEHICLE',	#'TANK' in TA
-	'LEVEL1',
-	
-	
-	
-	
+        'ROCKET',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -90,7 +85,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Samson',
     },
     Intel = {
@@ -104,8 +100,8 @@ UnitBlueprint {
     LifeBarSize = 2,
     Physics = {
         LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+	    BackUpDistance = 0,
+	    MaxSpeedReverse = 0,
         MaxAcceleration = 1.4,
         MaxBrake = 1.2,
         MaxSpeed = 2.8,
@@ -136,15 +132,15 @@ UnitBlueprint {
             Damage = 90,
             DamageRadius = 1.5,
             FiringRandomness = 0,
-            DamageType = 'SAMAir',
+            DamageType = 'LANDAir',
             DisplayName = 'ARMTRUCK_MISSILE',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',
                 Seabed = 'Land|Water|Air',
             },
-	    RangeCategory = 'UWRC_AntiAir',
-     WeaponCategory = 'AntiAir',
-            FiringTolerance = 5,
+	        RangeCategory = 'UWRC_AntiAir',
+            WeaponCategory = 'AntiAir',
+            FiringTolerance = 10,
             Label = 'ARMTRUCK_MISSILE',
             MaxRadius = 37.5,
             MuzzleSalvoDelay = 0,
@@ -193,7 +189,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

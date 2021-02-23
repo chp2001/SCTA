@@ -8,35 +8,30 @@ UnitBlueprint {
     BuildIconSortPriority = 13,
     Categories = {
         'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
         'BUILTBYT1VEHICLE',
         'BUILTBYT1HOVER',
-        'BUILTBYT1SHIP',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-        'BUILTBYCOMMANDER',
 	'STRUCTURE',
 	'DEFENSE',
-	'DIRECTFIRE',
 	'ANTIAIR',
-    'OVERLAYDIRECTFIRE',
+    'ROCKET',
 	'OVERLAYANTIAIR',
 	'CORE',
-	'SPECIAL',
 	'LEVEL1',
 	'SORTDEFENSE',
     },
     Defense = {
-        Health = 500,
-        MaxHealth = 500,
+        Health = 700,
+        MaxHealth = 700,
     },
     Economy = {
         BuildCostEnergy = 1500,
-        BuildCostMass = 250,
-        BuildTime = 3600,
+        BuildCostMass = 180,
+        BuildTime = 4500,
     },
     Display = {
         Abilities = {
@@ -48,10 +43,6 @@ UnitBlueprint {
     SizeX = 1,
     SizeZ = 1
 },
-Physics = {
-    SkirtSizeX = 0, 
-    SkirtSizeZ = 0,  
-  },
   Intel = {
     VisionRadius = 12,
 },

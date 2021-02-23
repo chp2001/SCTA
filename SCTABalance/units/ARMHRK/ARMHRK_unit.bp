@@ -38,8 +38,8 @@ UnitBlueprint {
 	'ROCKET',
         'OVERLAYINDIRECTFIRE',
         'ARM',
-        --'KBOT', 
 	'LEVEL2',
+    'SILO',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -87,7 +87,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Destroyer',
     },
     Intel = {
@@ -178,9 +179,9 @@ UnitBlueprint {
             WeaponRepackTimeout = 3,
         },
         { #BIG_UNITEX
-            Damage = 50,
+            Damage = 100,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

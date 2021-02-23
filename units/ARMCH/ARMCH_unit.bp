@@ -45,6 +45,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
+        'LEVEL1',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -53,12 +54,12 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
         'MOBILE',
-	'CONSTRUCTION',
+	    'CONSTRUCTION',
         'LAND',
-	'SELECTION', 
+	    'SELECTION', 
         'ARM',
         'HOVER',
-	'LEVEL1',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -72,7 +73,7 @@ UnitBlueprint {
     Description = 'Tech Level 1',
     Display = {
         AnimationBuild = '/mods/SCTA-master/units/ARMCH/ARMCH_lod0_unpack.sca',
-        AnimationBuildRate = 1, 
+        AnimationBuildRate = 2, 
         Abilities = {
             'Construction Unit',
         },
@@ -86,17 +87,14 @@ UnitBlueprint {
                 },
             },
         },
-	IdleEffects = {
-		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
-		Scale = 0.5,
-		Bones = {'wake1','wake2','wake3','wake4','wake5','wake6'},
-	},
 	MovementEffects = {
+        TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'wake1','wake2','wake3','wake4','wake5','wake6'},
+		Bones = {'wake1'},
+        },
 	},
-        UniformScale = 0.16,
+        UniformScale = 0.1,
     },
     Economy = {
         BuildCostEnergy = 4370,
@@ -112,12 +110,21 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 15,
 	NaturalProducer = true,
     },
+    Footprint = {
+        SizeX = 2,
+        SizeZ = 1,
+    },
     General = {
         BuildBones = {
             AimBone = 'nanogun',
-            BuildEffectBones = {'nano1'},
+            BuildEffectBones = {'beam', 'beam2'},
             PitchBone = 'nanogun',
             YawBone = 'turret',
+        },
+        BuildBonesAlt1 = {
+            AimBone = 'nanogun2',
+            PitchBone = 'nanogun2',
+            YawBone = 'turret2',
         },
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
@@ -134,6 +141,7 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 3,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Construction Hovercraft',
     },
@@ -177,7 +185,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

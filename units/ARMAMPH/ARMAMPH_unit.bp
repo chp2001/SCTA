@@ -30,15 +30,19 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
         'DIRECTFIRE',
+        'OVERLAYDIRECTFIRE',
+        'ANTIAIR',
+        'OVERLAYANTAIR',
         'KBOT',
         'LAND',
         'ARM',
         'HOVER',
-	'LEVEL2',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -71,15 +75,12 @@ UnitBlueprint {
                 },
             },
         },
-	IdleEffects = {
-		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
-		Scale = 0.5,
-		Bones = {'lfoot','rfoot'},
-	},
 	MovementEffects = {
+        TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
 		Bones = {'lfoot','rfoot'},
+        },
 	},
         UniformScale = 0.16,
     },
@@ -88,11 +89,10 @@ UnitBlueprint {
         BuildCostMass = 255,
         BuildTime = 5982,
     },
-    --[[Footprint = {
-        MaxSlope = 0.8,
-        SizeX = 1,
+    Footprint = {
+        SizeX = 2,
         SizeZ = 1,
-    },]]--
+    },
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -106,7 +106,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Pelican',
     },
     Intel = {
@@ -159,7 +160,7 @@ UnitBlueprint {
             DamageFriendly = false,
             Damage = 120,
             DamageRadius = 1.5,
-            DamageType = 'AntiAir',
+            DamageType = 'LANDAir',
             DisplayName = 'armamph_weapon1',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',
@@ -222,9 +223,9 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
+            EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 10,
             EnergyRequired = 10,
-            WeaponCategory = 'Direct Fire',
             Damage = 60,
             DamageRadius = 0.25,
             DamageType = 'Normal',
@@ -276,9 +277,9 @@ UnitBlueprint {
             Turreted = true,
         },
         { #BIG_UNITEX
-            Damage = 50,
+            Damage = 100,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

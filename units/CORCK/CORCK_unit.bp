@@ -44,6 +44,8 @@ UnitBlueprint {
     BuildIconSortPriority = 1,
     Categories = {
         'SELECTABLE',
+        'KBOT',
+        'LEVEL1',
         'TECH1',
         'ENGINEER',
         'REPAIR',
@@ -57,13 +59,6 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'LAND',
         'CORE',
-        'KBOT',
-	'LEVEL1',
-	
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -83,7 +78,6 @@ UnitBlueprint {
         Abilities = {
             'Construction Unit',
         },
-	BuildBones = {'BuildNozzle'},
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -93,7 +87,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'torso',
+	---SmokeBone = 'torso',
         UniformScale = 0.16,
     },
     Economy = {
@@ -132,7 +126,8 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 3,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Construction Kbot',
     },
     Intel = {
@@ -168,7 +163,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

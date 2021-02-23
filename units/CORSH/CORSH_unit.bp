@@ -29,16 +29,21 @@ UnitBlueprint {
     BuildIconSortPriority = 2,
     Categories = {
         'SELECTABLE',
+        'HOVER',
+        'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
 	'SCOUT',
+    'INTELLIGENCE',
+    'RADAR',
+    'OVERLAYRADAR',
+    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'LAND',
         'CORE',
-        'HOVER',
-	'LEVEL1',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -63,15 +68,12 @@ UnitBlueprint {
                 },
             },
         },
-	IdleEffects = {
-		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
-		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04','Wake_05','Wake_06'},
-	},
 	MovementEffects = {
+        TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04','Wake_05','Wake_06'},
+		Bones = {'Wake_01', 'Wake_05', 'Wake_06'},
+        },
 	},
         UniformScale = 0.16,
     },
@@ -80,7 +82,10 @@ UnitBlueprint {
         BuildCostMass = 76,
         BuildTime = 3388,
     },
-
+    Footprint = {
+        SizeX = 2,
+        SizeZ = 1,
+    },
     General = {
         Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -94,7 +99,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Scrubber',
     },
     Intel = {
@@ -195,7 +201,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

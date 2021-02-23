@@ -30,6 +30,8 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'VEHICLE',
+        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -37,8 +39,6 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'VEHICLE',
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -85,7 +85,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Reaper',
     },
     Intel = {
@@ -151,13 +152,13 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'muzzle1',
+                        'flare1',
                     },
                     RackBone = 'barrel1',
                 },
                 {
                     MuzzleBones = {
-                        'muzzle2',
+                        'flare2',
                     },
                     RackBone = 'barrel2',
                 },
@@ -191,7 +192,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

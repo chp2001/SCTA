@@ -22,21 +22,18 @@ UnitBlueprint {
         'BUILTBYT2KBOT',
         'BUILTBYT2VEHICLE',
         'BUILTBYT2SUB',
+        'LEVEL3',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-	'STRUCTURE',
-                'ECONOMIC',
+	    'STRUCTURE',
+        'ECONOMIC',
         'SORTECONOMY',
-	'ENERGYPRODUCTION',
-	'ARM',
-	'ENERGY',
-	'LEVEL3',
-	
-	
-	
+	    'ENERGYPRODUCTION',
+	    'ARM',
+        'FUSION',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -49,23 +46,20 @@ UnitBlueprint {
     },
     Description = 'Produces Energy',
     Display = {
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Stone'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 300,
-                    ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                    LODCutoff = 100,
+                    ShaderName = 'Unit',
+                },
+                {
+                    LODCutoff = 215,
+                    ShaderName = 'Unit',
+                },
+                {
+                    LODCutoff = 330,
+                    ShaderName = 'Unit',
                 },
             },
         },
@@ -81,7 +75,7 @@ UnitBlueprint {
     Footprint = {
 	MaxSlope = 0.625,
         SizeX = 5,
-        SizeZ = 4,
+        SizeZ = 5,
     },
     General = {
 	---BuildAngle = 4096,
@@ -89,6 +83,7 @@ UnitBlueprint {
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Secret',
 	UnitName = 'Fusion Reactor',
     },
@@ -122,12 +117,11 @@ UnitBlueprint {
         { #ATOMIC_BLAST
             Damage = 2000,
             DamageFriendly = true,
-            DamageRadius = 16.125,
+            DamageRadius = 12,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-
     },
         Wreckage = {
 	---UseCustomMesh = true,

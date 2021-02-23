@@ -30,16 +30,17 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'AMPHIBIOUS',
-	'DIRECTFIRE',
+	    'LAND',
+        'AMPHIBIOUS',
+	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
         'VEHICLE',
-	'LEVEL2',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -67,6 +68,10 @@ UnitBlueprint {
         },
         UniformScale = 0.16,
     },
+    Footprint = {
+        SizeX = 2,
+        SizeZ = 1,
+    },
     Economy = {
         BuildCostEnergy = 2300,
         BuildCostMass = 298,
@@ -85,6 +90,7 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Triton',
     },
@@ -151,9 +157,9 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Turret_Muzzle',
+                        'flare1',
                     },
-                    RackBone = 'Turret_Barrel',
+                    RackBone = 'barrel',
                 },
             },
             RackFireTogether = false,
@@ -170,9 +176,9 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'Turret_Muzzle',
-            TurretBonePitch = 'Turret',
-            TurretBoneYaw = 'Turret',
+            TurretBoneMuzzle = 'flare1',
+            TurretBonePitch = 'turret',
+            TurretBoneYaw = 'turret',
             TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 360,
@@ -183,14 +189,13 @@ UnitBlueprint {
             Turreted = true,
         },
         { #BIG_UNITEX
-            Damage = 50,
+            Damage = 100,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
-},
-
+        },
     },
         Wreckage = {
 	---UseCustomMesh = true,

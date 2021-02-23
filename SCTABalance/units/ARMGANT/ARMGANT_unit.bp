@@ -36,6 +36,7 @@ UnitBlueprint {
     Categories = {
         'BUILTBYT1HOVER',
         'BUILTBYT2KBOT',
+        'BUILTBYT2AIR',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -50,9 +51,9 @@ UnitBlueprint {
         'LAND',
         'ARM',
         'STRATEGIC',
-        	'GANTRY',
-            'SORTCONSTRUCTION',
-        'LEVEL4',
+        'SORTCONSTRUCTION',
+        'LEVEL3',
+        'GANTRY',
     },
     Defense = {
         ArmorType = 'ExperimentalStructure',
@@ -83,10 +84,10 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 200000,
         BuildCostMass = 12000, 
-        BuildTime = 125000,
+        BuildTime = 300000,
         BuildRate = 250,
         BuildableCategory = {
-            'KBOT LEVEL4 ARM',
+            'LEVEL4 KBOT ARM',
         },
         InitialRallyX = 0,
         InitialRallyZ = 8,
@@ -95,8 +96,8 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 9,
-        SizeZ = 9,
+        SizeX = 12,
+        SizeZ = 12,
     },
     General = {
         BuildBones = {
@@ -113,9 +114,11 @@ UnitBlueprint {
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
         },
+        ConstructionBar = true,
         SelectionPriority = 5,
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
 	UnitName = 'Drake Gantry',
     },
     Intel = {
@@ -170,9 +173,9 @@ UnitBlueprint {
     StrategicIconSortPriority = 5,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 20,
+            Damage = 1000,
             DamageFriendly = true,
-            DamageRadius = 1,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

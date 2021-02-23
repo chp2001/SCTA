@@ -7,7 +7,6 @@ local TAAirConstructor = import('/mods/SCTA-master/lua/TAAirConstructor.lua').TA
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 CORCSA = Class(TAAirConstructor) {
-
 	OnCreate = function(self)
 		TAAirConstructor.OnCreate(self)
 		self.Spinners = {

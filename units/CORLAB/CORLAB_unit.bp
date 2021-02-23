@@ -39,16 +39,16 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-	'FACTORY',
+        'LEVEL1',
+	    'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-	'STRUCTURE',
-	'CONSTRUCTION',
-	'CORE',
+	    'STRUCTURE',
+	    'CONSTRUCTION',
+	    'CORE',
 		'PLANT',
-	'SORTCONSTRUCTION',
-    'LEVEL1',
-    'LAND',
+	    'SORTCONSTRUCTION',
+        'LAND', 
     },
     Defense = {
         ArmorType = 'Structure',
@@ -62,7 +62,9 @@ UnitBlueprint {
     Description = 'Produces Kbots',
     Display = {
     AnimationUnpack = '/mods/SCTA-master/units/CORLAB/CORLAB_lod0_unpack.sca',
-    AnimationUnpackRate = 1,     
+    AnimationUnpackRate = 0.5,
+    AnimationPack = '/mods/SCTA-master/units/CORLAB/CORLAB_lod0_pack.sca',
+    AnimationPackRate = 0.5,  
 	BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,
@@ -70,7 +72,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 400,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -97,7 +98,7 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildEffectBones = {'muzzle1', 'muzzle2'},
+            BuildEffectBones = {'muzzle1', 'muzzle2','muzzle3','muzzle4'},
         },          
 	---BuildAngle = 1024,
         Category = 'Factory',
@@ -113,11 +114,12 @@ UnitBlueprint {
         SelectionPriority = 5,
         ConstructionBar = true,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
 	UnitName = 'Kbot Lab',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 10,
     },
     Interface = {
         HelpText = 'Produces Kbots',
@@ -169,12 +171,12 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 20,
-            DamageFriendly = true,
-            DamageRadius = 1,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        Damage = 200,
+        DamageFriendly = true,
+        DamageRadius = 5,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
         },
 
     },

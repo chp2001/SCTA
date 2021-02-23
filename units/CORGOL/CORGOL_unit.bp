@@ -29,6 +29,7 @@ UnitBlueprint {
     BuildIconSortPriority = 9,
     Categories = {
         'SELECTABLE',
+        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -38,7 +39,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'CORE',
         'VEHICLE',
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -84,7 +84,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Goliath',
     },
     Intel = {
@@ -183,7 +184,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

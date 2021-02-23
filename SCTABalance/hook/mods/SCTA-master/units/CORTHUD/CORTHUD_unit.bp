@@ -4,14 +4,24 @@ UnitBlueprint {
         UniformScale = 0.10,
     },
     Economy = {
-        BuildCostEnergy = 600,
-        BuildCostMass = 90,
+        BuildTime = 2200,
+        BuildCostEnergy = 660,
+        BuildCostMass = 60,
     },
     Intel = {
         VisionRadius = 12,
     },
-    SelectionCenterOffsetZ = -0.25,
     SizeX = 1,
     SizeY = 1,
     SizeZ = 1,
+    Weapon = {
+        [1] = {
+            Damage = 250,
+            RateOfFire = 0.33,
+            EnergyChargeForFirstShot = true,
+            EnergyDrainPerSecond = 5,
+            EnergyRequired = 10,
+        },
+        [2] = {}, 
+    },
 }

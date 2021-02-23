@@ -29,6 +29,7 @@ UnitBlueprint {
     BuildIconSortPriority = 13,
     Categories = {
         'SELECTABLE',
+        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -39,8 +40,8 @@ UnitBlueprint {
         'ARTILLERY',
         'CORE',
         'KBOT',
-        'LEVEL2',
-        'SNIPEMODE', 
+        'SNIPEMODE',
+        'ALLTERRAIN', 
     },
     Defense = {
         ArmorType = 'Normal',
@@ -75,8 +76,8 @@ UnitBlueprint {
         BuildTime = 7527,
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 2,
+        SizeX = 2,
+        SizeZ = 1,
     },
     General = {
         Category = 'Direct Fire',
@@ -91,7 +92,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Morty',
     },
     Intel = {
@@ -189,13 +191,11 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 180,
             Turreted = true,
-            EnergyDrainPerSecond = 10,
-            EnergyRequired = 60,
         },
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

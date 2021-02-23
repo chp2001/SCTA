@@ -10,50 +10,40 @@ local util = import('/lua/utilities.lua')
 TAunit = Class(Unit) 
 {
 
-    LOGDBG = function(self, msg)
+    --LOGDBG = function(self, msg)
         --LOG(self._UnitName .. "(" .. self.Sync.id .. "):" .. msg)
-    end,
+   ---end,
 
 	OnCreate = function(self)
 		local bp = self:GetBlueprint()
-        self._UnitName = bp.General.UnitName
-        self:LOGDBG('TAUnit.OnCreate')
+        --self._UnitName = bp.General.UnitName
+        ---self:LOGDBG('TAUnit.OnCreate')
         Unit.OnCreate(self)
 		self:SetFireState(FireState.GROUND_FIRE)
-		self:SetDeathWeaponEnabled(true)
 		self:HideFlares()
-		self.CurrentSpeed = 'Stopped'
 		self.FxMovement = TrashBag()
-		if not EntityCategoryContains(categories.NOSMOKE, self) then
-			ForkThread(self.Smoke, self)
-		end
-	end,
+        end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-        self:LOGDBG('TAUnit.OnStopBeingBuilt')
+        ---self:LOGDBG('TAUnit.OnStopBeingBuilt')
 		Unit.OnStopBeingBuilt(self,builder,layer)
+		self:SetDeathWeaponEnabled(true)
 		self:SetConsumptionActive(true)	
-		ForkThread(self.IdleEffects, self)
 	end,
 
 	MovementEffects = function(self, EffectsBag, TypeSuffix)
-		self:LOGDBG('TAUnit.MovementEffects')
-		Unit.MovementEffects(self, EffectsBag, TypeSuffix)
+		if not IsDestroyed(self) then
 		local bp = self:GetBlueprint()
-		if not IsDestroyed(self) and bp.Display.MovementEffects then
-			for k, v in bp.Display.MovementEffects.Bones do
-				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.Emitter ):ScaleEmitter(bp.Display.MovementEffects.Scale))
+		if bp.Display.MovementEffects.TAMovement then
+			for k, v in bp.Display.MovementEffects.TAMovement.Bones do
+				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.TAMovement.Emitter ):ScaleEmitter(bp.Display.MovementEffects.TAMovement.Scale))
 			end
 		end
-	end,
-
-	IdleEffects = function(self)
-        self:LOGDBG('TAUnit.IdleEffects')
-		local bp = self:GetBlueprint()
-		if not IsDestroyed(self) and not self:IsMoving() and bp.Display.IdleEffects then
-			for k, v in bp.Display.IdleEffects.Bones do
-				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.IdleEffects.Emitter ):ScaleEmitter(bp.Display.IdleEffects.Scale))
+		if not self:IsUnitState('Moving') and bp.Display.MovementEffects.TAMovement then
+			for k,v in self.FxMovement do
+			v:Destroy()
 			end
+		end
 		end
 	end,
 
@@ -61,34 +51,6 @@ TAunit = Class(Unit)
 		Unit.OnDamage(self, instigator, amount * (self.Pack or 1), vector, damageType)
 	end,
 	
-	Smoke = function(self)
-        self:LOGDBG('TAUnit.Smoke')
-		local bone = self:GetBlueprint().Display.SmokeBone or -1
-		while not IsDestroyed(self) do
-			if self:GetFractionComplete() == 1 then
-				if self:GetHealth()/self:GetMaxHealth() < 0.25 then
-					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA-master/effects/emitters/damage_bad_smoke_emit.bp' )
-					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA-master/effects/emitters/damage_bad_smoke_emit.bp' )
-				elseif self:GetHealth()/self:GetMaxHealth() < 0.5 then
-					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA-master/effects/emitters/damage_smoke_emit.bp' )
-					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA-master/effects/emitters/damage_bad_smoke_emit.bp' )
-				elseif self:GetHealth()/self:GetMaxHealth() < 0.75 then
-					CreateEmitterAtBone(self, bone, self:GetArmy(), '/mods/SCTA-master/effects/emitters/damage_smoke_emit.bp' )
-				end
-			end
-			WaitSeconds(0.5)
-		end
-	end,
-
-	ShowMuzzleFlare = function(self, duration)
-        self:LOGDBG('TAUnit.ShowMuzzleFlare')
-		local bp = self:GetBlueprint()
-		#Show flare bone for pre-determined time
-		self.unit:ShowBone(bp.RackBones[self.CurrentRackSalvoNumber - 1].MuzzleBones[1], true)
-		WaitSeconds(duration)
-		self.unit:HideBone(bp.RackBones[self.CurrentRackSalvoNumber - 1].MuzzleBones[1], true)
-	end,
-
 	OnIntelDisabled = function(self)
 		Unit.OnIntelDisabled()
 		if EntityCategoryContains(categories.TACLOAK, self) then
@@ -102,19 +64,20 @@ TAunit = Class(Unit)
 
     OnIntelEnabled = function(self)
 		Unit.OnIntelEnabled()
-		if EntityCategoryContains(categories.TACLOAK, self) then
-        if self:IsIntelEnabled('Cloak') then
+			if EntityCategoryContains(categories.TACLOAK, self) then
+       	 	if self:IsIntelEnabled('Cloak') then
             self.cloakOn = true
         	self:PlayUnitSound('Cloak')
 			self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
-		ForkThread(self.CloakDetection, self)
+			ForkThread(self.CloakDetection, self)
         --end
 		end
 		end
 	end,
 
 	CloakDetection = function(self)
-        local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
+        if not IsDestroyed(self) then
+		local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
         local brain = moho.entity_methods.GetAIBrain(self)
         local cat = categories.SELECTABLE * categories.MOBILE
         local getpos = moho.entity_methods.GetPosition
@@ -124,11 +87,15 @@ TAunit = Class(Unit)
             if dudes[1] and self.cloakOn then
                 self:DisableIntel('Cloak')
                 self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-            elseif not dudes[1] and self.cloakOn then
+			elseif self:IsUnitState('Building') and self.cloakOn then
+				self:DisableIntel('Cloak')
+                self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
+			elseif not dudes[1] and self.cloakOn then
                 self:EnableIntel('Cloak')
                 self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
             end
         end
+	end
     end,
 
 	OnScriptBitSet = function(self, bit)
@@ -151,7 +118,7 @@ TAunit = Class(Unit)
 	end,
 
     HideFlares = function(self, bp)
-        self:LOGDBG('TAUnit.HideFlares')
+        ---self:LOGDBG('TAUnit.HideFlares')
         if not bp then bp = self:GetBlueprint().Weapon end
         if bp then
             for i, weapon in bp do

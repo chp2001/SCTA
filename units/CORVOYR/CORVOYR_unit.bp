@@ -29,14 +29,14 @@ UnitBlueprint {
     BuildIconSortPriority = 2,
     Categories = {
         'SELECTABLE',
+        'LEVEL2',
         'TECH2',
+        'KBOT',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
+	    'LAND',
         'CORE',
-        'KBOT',
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -60,7 +60,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'body',
+	---SmokeBone = 'body',
         UniformScale = 0.16,
     },
     Economy = {
@@ -84,7 +84,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Voyeur',
     },
     Intel = {
@@ -119,12 +120,12 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_UNITEX
-            Damage = 10,
-            DamageFriendly = true,
-            DamageRadius = 0.9375,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        Damage = 30,
+        DamageFriendly = true,
+        DamageRadius = 3,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
         },
 
     },

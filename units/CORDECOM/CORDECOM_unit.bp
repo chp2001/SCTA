@@ -55,6 +55,8 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'KBOT',
+        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'PATROLHELPER',
@@ -63,12 +65,11 @@ UnitBlueprint {
         'MOBILE',
 	'LAND',
 	'DIRECTFIRE',
-	'KBOT',
-	'LEVEL2',
         'OVERLAYDIRECTFIRE',
         'CORE',
         'SUBCOMMANDER',
         'SNIPEMODE',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Commander',
@@ -101,7 +102,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'Torso',
+	---SmokeBone = 'Torso',
         UniformScale = 0.16,
     },
     Economy = {
@@ -112,8 +113,8 @@ UnitBlueprint {
         MaxBuildDistance = 3.75,
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 2,
+        SizeX = 2,
+        SizeZ = 1,
     },
     General = {
         BuildBones = {
@@ -122,8 +123,8 @@ UnitBlueprint {
             PitchBone = 'Nanogun',
             YawBone = 'Torso',
         },
-        Category = 'Construction',
-        Classification = 'RULEUC_MilitaryVehicle',
+        Category = 'Command',
+        Classification = 'RULEUC_Commander',
         CommandCaps = {
             RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
@@ -147,7 +148,8 @@ UnitBlueprint {
         SelectionPriority = 3,
         FactionName = 'CORE',
         UnitName = 'Commander',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
     },
     Intel = {
         FreeIntel = true,
@@ -162,7 +164,7 @@ UnitBlueprint {
     LifeBarSize = 2,
     Physics = {
         LayerChangeOffsetHeight = -2.00,
-	BackUpDistance = 0,
+	    BackUpDistance = 0,
         MaxSpeedReverse = 0,
         MaxAcceleration = 2.25,
         MaxBrake = 2.25,

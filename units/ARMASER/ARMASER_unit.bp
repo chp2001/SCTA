@@ -40,17 +40,17 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'LEVEL2',
+        'KBOT',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-    'INTELLIGENCE',
-    'COUNTERINTELLIGENCE',
+	    'LAND',
+        'INTELLIGENCE',
+        'COUNTERINTELLIGENCE',
         'OVERLAYCOUNTERINTEL',
         'ARM',
-        'KBOT',
-	'JAM',
-	'LEVEL2',
+	    'JAM',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -78,7 +78,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'Torso',
+	---SmokeBone = 'Torso',
         UniformScale = 0.16,
     },
     Economy = {
@@ -100,14 +100,8 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_StealthToggle = true,
         },
-        Icon = 'land',
-        OrderOverrides = {
-            RULEUTC_StealthToggle = {
-                bitmapId = 'stealth-field',
-                helpText = 'toggle_stealth_field',
-            },
-        },
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Eraser',
     },
@@ -145,7 +139,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

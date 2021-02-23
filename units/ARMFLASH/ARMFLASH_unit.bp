@@ -29,21 +29,17 @@ UnitBlueprint {
     BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
+        'VEHICLE',
+        'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
-	'ARMFLASH',
+	    'LAND',
+	    'DIRECTFIRE',
+	    'RAIDER',
         'OVERLAYDIRECTFIRE',
         'ARM',
-        'VEHICLE',	#'TANK' in TA
-	'LEVEL1',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -60,9 +56,6 @@ UnitBlueprint {
             'Assault Tank',
         },
         MovementEffects = {
-            Bones = {'ARMFLASH'},
-            Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
-            Scale = 0.5, 
             Land = {
                 Treads = {
                     ScrollMultiplier = 0.75,
@@ -84,27 +77,13 @@ UnitBlueprint {
                 },
             },
         },   
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'Tredside','MetalBarrel'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Turret'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
-                {
-                    LODCutoff = 120,
-                    Scrolling = true,
-                    ShaderName = 'AeonCZAR',
-                },
-                {
-                    LODCutoff = 230,
-                    ShaderName = 'AeonCZAR', 
+    Mesh = {
+        IconFadeInZoom = 130,
+        LODs = {
+            {
+                LODCutoff = 230,
+                Scrolling = true,
+                ShaderName = 'Unit', 
                 },
             },
         },
@@ -115,11 +94,6 @@ UnitBlueprint {
         BuildCostMass = 106,
         BuildTime = 1676,
     },
-    --[[Footprint = {
-	MaxWaterDepth = 0.75,
-        SizeX = 1,
-        SizeZ = 1,
-    },]]--
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -133,6 +107,7 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Basic',
         UnitName = 'Flash',
     },
@@ -235,7 +210,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

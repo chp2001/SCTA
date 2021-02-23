@@ -25,15 +25,15 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'LEVEL1',
         'TECH1',
-	'STRUCTURE',
-                'ECONOMIC',
+	    'STRUCTURE',
+        'ECONOMIC',
         'SORTECONOMY',
-	'ENERGYPRODUCTION',
-	'NAVAL',
-	'CORE',
-	'ENERGY',
-	'LEVEL1',
+	    'ENERGYPRODUCTION',
+	    'NAVAL',
+	    'CORE',
+	    'TIDAL',
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -47,15 +47,6 @@ UnitBlueprint {
     },
     Description = 'Produces Energy',
     Display = {
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -88,7 +79,8 @@ UnitBlueprint {
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Tidal Generator',
     },
     Intel = {

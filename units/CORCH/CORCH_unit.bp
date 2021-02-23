@@ -44,6 +44,7 @@ UnitBlueprint {
     BuildIconSortPriority = 0,
     Categories = {
         'SELECTABLE',
+        'LEVEL1',
         'TECH1',
         'ENGINEER',
         'REPAIR',
@@ -58,7 +59,7 @@ UnitBlueprint {
         'LAND',
         'CORE',
         'HOVER',
-	'LEVEL1',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -86,17 +87,18 @@ UnitBlueprint {
                 },
             },
         },
-	IdleEffects = {
-		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
-		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
-	},
 	MovementEffects = {
+        TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
+		Bones = {'Wake_01'},
+        },
 	},
         UniformScale = 0.16,
+    },
+    Footprint = {
+        SizeX = 2,
+        SizeZ = 1,
     },
     Economy = {
         BuildCostEnergy = 4370,
@@ -134,7 +136,8 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 3,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Construction Hovercraft',
     },
     Intel = {
@@ -177,7 +180,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

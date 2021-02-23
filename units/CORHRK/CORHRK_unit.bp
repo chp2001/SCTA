@@ -29,17 +29,18 @@ UnitBlueprint {
     BuildIconSortPriority = 6,
     Categories = {
         'SELECTABLE',
+        'KBOT', 
+	    'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'INDIRECTFIRE',
-	'ROCKET',
+	    'LAND',
+	    'INDIRECTFIRE',
+	    'ROCKET',
+        'SILO',
         'OVERLAYINDIRECTFIRE',
         'CORE',
-        'KBOT', 
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -87,7 +88,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Dominator',
     },
     Intel = {
@@ -148,8 +150,6 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 3,
-            EnergyDrainPerSecond = 5,
-            EnergyRequired = 25,
             ProjectileId = '/mods/SCTA-master/projectiles/HRK_ROCKET/HRK_ROCKET_proj.bp',
             RackBones = {
                 {
@@ -185,7 +185,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

@@ -18,6 +18,7 @@ UnitBlueprint {
 	'LEVEL1',
     'RADAR',
     'OVERLAYRADAR',
+    'SCOUT',
     },
     Defense = {
         Health = 100,
@@ -27,26 +28,19 @@ UnitBlueprint {
         UniformScale = 0.09,
     },
     Economy = {
-        BuildCostEnergy = 210,
-        BuildCostMass = 60,
+        BuildCostEnergy = 220,
+        BuildCostMass = 22,
+        BuildTime = 800,
         MaintenanceConsumptionPerSecondEnergy = 0,
         ProductionPerSecondEnergy = 0,
-        BuildTime = 400,
     },
     Footprint = {
         SizeX = 1,
         SizeZ = 1,
-	MaxWaterDepth = 0,
     },
     StrategicIconName = 'icon_bot1_intel',
     General = {
-        OrderOverrides = {
-                RULEUTC_IntelToggle = {
-                bitmapId = 'radar',
-                helpText = 'toggle_radar',
-                     },
-                 },
-               ToggleCaps = {
+        ToggleCaps = {
                RULEUTC_IntelToggle = false,
             },
     },

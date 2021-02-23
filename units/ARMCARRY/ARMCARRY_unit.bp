@@ -24,7 +24,7 @@ UnitBlueprint {
             Bank = 'TA_Sound',
             Cue = 'XPLONUK3',
             LodCutoff = 'UnitMove_LodCutoff',
-	},
+	    },
     },
     AI = {
     RefuelingMultiplier = 100,
@@ -35,14 +35,15 @@ UnitBlueprint {
     TargetBones = {
         'Attachpoint_Med_02',
         'Attachpoint_Med_01',
+        },
     },
-},
     BuildIconSortPriority = 9,
     Categories = {
         'SELECTABLE',
         'MOBILE',
         'NAVAL',
         'TECH2',
+        'LEVEL2',
         'AIRSTAGINGPLATFORM',
         'CARRIER',
         'VISIBLETORECON',
@@ -55,7 +56,6 @@ UnitBlueprint {
         'OVERLAYMISC',
         'ARM',
         'OCEAN',
-    'LEVEL2',
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -88,8 +88,8 @@ UnitBlueprint {
             },
         },
         UniformScale = 0.16,
-    },
-    Economy = {
+        },
+        Economy = {
         BuildCostEnergy = 11257,
         BuildCostMass = 1372,
         BuildTime = 25394,
@@ -97,16 +97,16 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 35,
         BuildRate = 200,
         BuildableCategory = {
-            'VTOL LEVEL1 ARM AIR ENGINEER',
+            'VTOL LEVEL1 ARM ENGINEER',
             'VTOL LEVEL1 ARM HIGHALTAIR', 
-            'VTOL LEVEL2 ARM AIR',
+            'VTOL LEVEL2 ARM',
             'VTOL LEVEL3 ARM',
+            },
         },
-    },
-    Footprint = {
+        Footprint = {
         SizeX = 3,
         SizeZ = 8,
-    },
+        },
     General = {
         BuildBones = {
             BuildEffectBones = {'nano1','nano2'},
@@ -134,10 +134,12 @@ UnitBlueprint {
         OrderOverrides = {
             RULEUCC_Transport = {
                 bitmapId = 'deploy',
-                helpText = 'deploy',
+                helpText = 'Deploy',
             },
         },
+        ConstructionBar = true,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Colossus',
     },
@@ -180,7 +182,7 @@ UnitBlueprint {
         { #ATOMIC_BLAST
             Damage = 2000,
             DamageFriendly = true,
-            DamageRadius = 16.125, 					#TO DO (damage tapering)
+            DamageRadius = 12, 		
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

@@ -67,6 +67,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
+        'LEVEL1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -77,7 +78,6 @@ UnitBlueprint {
         'TRANSPORTFOCUS',
         'CANTRANSPORTCOMMANDER',
         'ARM',
-	'LEVEL1',
     },
     Defense = {
         ArmorType = 'Light',
@@ -104,11 +104,18 @@ UnitBlueprint {
             },
         },
 	MovementEffects = {
+        TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/fire_smoke_emit.bp',
 		Scale = 1,
 		Bones = {'Flame_01','Flame_02','Flame_03'},
+        },
 	},
         UniformScale = 0.16,
+    },
+    Footprint = {
+        MaxSlope = 0.25,
+        SizeX = 1,
+        SizeZ = 4,
     },
     Economy = {
         BuildCostEnergy = 2479,
@@ -136,6 +143,7 @@ UnitBlueprint {
         },
         SelectionPriority = 4,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Basic',
         UnitName = 'Atlas',
     },
@@ -152,7 +160,7 @@ UnitBlueprint {
     Physics = {
     Elevation = 9,
     MotionType = 'RULEUMT_Air',
-    GroundCollisionOffset = 1.5,
+    GroundCollisionOffset = 1.6,
     MaxSpeed = 0.5, 
     RotateOnSpot = true,
 	FuelRechargeRate = 444444,
@@ -176,7 +184,7 @@ UnitBlueprint {
         { #SMALL_UNITEX
         Damage = 50,
         DamageFriendly = true,
-        DamageRadius = 3.4375,
+        DamageRadius = 3,
         DamageType = 'Normal',
         DisplayName = 'Air Crash',
         DummyWeapon = true,

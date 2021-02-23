@@ -3,13 +3,25 @@ UnitBlueprint {
    Defense = {
     Health = 280,
     MaxHealth = 280,
-},
+    },
    Display = {
     UniformScale = 0.12,
-        },
+    },
+    Economy = {
+        BuildCostEnergy = 750,
+        BuildCostMass = 114,
+    },
     SelectionSizeX = 0.8,
     SelectionSizeZ = 0.8,
     SizeX = 1.3,
     SizeY = 1.2,
     SizeZ = 1.3,
+    Weapon = {
+        [1] = {
+            EnergyChargeForFirstShot = true,
+            EnergyDrainPerSecond = 5,
+            EnergyRequired = 5,
+        },
+        [2] = {}, 
+    },
 }

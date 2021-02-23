@@ -39,16 +39,11 @@ UnitBlueprint {
         'CONSTRUCTIONSORTDOWN',
 	'STRUCTURE',
 	'CONSTRUCTION',
-	'TEXTUREANIM',
-        'LAND', 
+    'LAND', 
 	'CORE',
     'PLANT',
 	'SORTCONSTRUCTION',
 	'LEVEL2',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -122,6 +117,7 @@ UnitBlueprint {
         SelectionPriority = 5,
         ConstructionBar = true,
         FactionName = 'CORE',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Basic',
         UnitName = 'Vehicle Development Plant',
         UpgradesFrom = 'corvp', 
@@ -175,16 +171,16 @@ UnitBlueprint {
     SizeX = 9,
     SizeY = 1,
     SizeZ = 9,
-    StrategicIconName = 'icon_factory2_land',
+    StrategicIconName = 'icon_factoryhq2_land',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 20,
-            DamageFriendly = true,
-            DamageRadius = 1,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        Damage = 200,
+        DamageFriendly = true,
+        DamageRadius = 5,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
         },
 
     },

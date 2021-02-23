@@ -5,20 +5,6 @@
 
 UnitBlueprint {
     Merge = true,
-    BuildIconSortPriority = 3,
-    Categories = {
-        'SELECTABLE',
-        'TECH2',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
-        'OVERLAYDIRECTFIRE',
-        'ARM',
-        'KBOT',
-	'LEVEL2',
-    },
     Defense = {
         Health = 2000,
         MaxHealth = 2000,
@@ -30,7 +16,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 3300,
         BuildCostMass = 410,
-        BuildTime = 6000,
+        BuildTime = 7000,
     },
     SizeX = 1.5,
     SizeZ = 1.5,
@@ -45,7 +31,6 @@ UnitBlueprint {
             MuzzleSalvoSize = 3,
             RackReloadTimeout = 0.2,
             RateOfFire = 1,
-            FiringTolerance = 0.5,
         },
         [2] = {
         },

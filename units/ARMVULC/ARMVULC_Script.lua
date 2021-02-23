@@ -4,8 +4,7 @@
 #Script created by Raevn
 
 local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
-local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
-local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+local TIFArtilleryWeapon = import('/lua/terranweapons.lua').TIFArtilleryWeapon
 
 ARMVULC = Class(TAStructure) {
 	OnCreate = function(self)
@@ -20,9 +19,10 @@ ARMVULC = Class(TAStructure) {
 	end,
 
 	Weapons = {
-		ARMVULC_WEAPON = Class(TAweapon) {
+		ARMVULC_WEAPON = Class(TIFArtilleryWeapon) {
+			FxMuzzleFlashScale = 3,
 			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
+				TIFArtilleryWeapon.OnWeaponFired(self)
 				
 				self.unit.currentBarrel = self.unit.currentBarrel + 1
 				if self.unit.currentBarrel == 4 then
@@ -36,35 +36,7 @@ ARMVULC = Class(TAStructure) {
 				self.unit.Spinners.spindle:SetGoal(-90 * (self.unit.currentBarrel + 1))
 				self.unit.Spinners.spindle:SetSpeed(480)
 
-				TAweapon.PlayFxRackReloadSequence(self)
-			end,
-
-			OnGotTargetCheck = function(self)
-				local army = self.unit:GetArmy()
-				local canSee = true
-		
-				local target = self:GetCurrentTarget()
-				if (target) then
-					if (IsBlip(target)) then
-						target = target:GetSource()
-					else
-						if (IsUnit(target)) then
-							---LOG('This is a unit')
-							canSee = target:GetBlip(army)
-						end
-					end
-				end
-				local currentTarget = self.unit:GetTargetEntity()
-				if (currentTarget and IsBlip(currentTarget)) then
-					currentTarget = currentTarget:GetSource()
-				end
-		
-				if (canSee or TAutils.ArmyHasTargetingFacility(self.unit:GetArmy()) or currentTarget == target or (target and IsProp(target)) or EntityCategoryContains(categories.NOCUSTOMTARGET, self.unit)) then
-					 return true
-				else
-					self:ResetTarget()
-					return nil
-				end
+				TIFArtilleryWeapon.PlayFxRackReloadSequence(self)
 			end,
 		},
 	},

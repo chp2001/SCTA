@@ -8,8 +8,8 @@ UnitBlueprint {
         UniformScale = 0.16,
         },
         Footprint = {
-            SizeX = 5,
-            SizeZ = 5,
+            SizeX = 7,
+            SizeZ = 7,
         },
     Economy = {
     BuildCostEnergy = 150000,
@@ -17,10 +17,6 @@ UnitBlueprint {
 	MaintenanceConsumptionPerSecondEnergy = 100,
     },
     LifeBarSize = 6,
-    Physics = {
-        SkirtSizeX = 0,
-        SkirtSizeZ = 0,
-    },
     SelectionSizeX = 8,
     SelectionSizeZ = 6,
     SelectionThickness = 0.25,

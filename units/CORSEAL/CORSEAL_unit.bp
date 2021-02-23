@@ -29,17 +29,18 @@ UnitBlueprint {
     BuildIconSortPriority = 4,
     Categories = {
         'SELECTABLE',
+        'VEHICLE',	
+        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'AMPHIBIOUS',
-	'DIRECTFIRE',
+	    'LAND',
+        'AMPHIBIOUS',
+	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'VEHICLE',
-	'LEVEL2',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -56,9 +57,6 @@ UnitBlueprint {
             '<LOC ability_amphibious>Amphibious',
         },
         MovementEffects = {
-            Bones = {'CORSEAL'},
-            Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
-            Scale = 0.5,
             Land = {
                 Treads = {
                     ScrollMultiplier = 0.75,
@@ -84,17 +82,17 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 120,
+                    LODCutoff = 230,
                     Scrolling = true,
-                    ShaderName = 'Unit',
-                },
-                {
-                    LODCutoff = 215,
-                    ShaderName = 'Unit',
+                    ShaderName = 'Unit', 
                 },
             },
         },
         UniformScale = 0.16,
+    },
+    Footprint = {
+        SizeX = 2,
+        SizeZ = 1,
     },
     Economy = {
         BuildCostEnergy = 2310,
@@ -114,7 +112,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Crock',
     },
     Intel = {
@@ -220,7 +219,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

@@ -15,6 +15,9 @@ UnitBlueprint {
         'SELECTABLE',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'VEHICLE',
+        'JAM',
+        'LEVEL2', 
         'TECH2',
         'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
@@ -22,8 +25,7 @@ UnitBlueprint {
         'MOBILE',
         'LAND',
         'ARM',
-        'VEHICLE',
-        'LEVEL2', -- There's no real reason to keep this distinct from TECH2
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -45,19 +47,48 @@ UnitBlueprint {
                 { LODCutoff = 230, ShaderName = 'Unit' },
             },
         },
-        MovementEffects = {
-            Land = {
-                Effects = {
-                    {
-                        Bones = { 'Leg_Tiptoe_001', 'Leg_Tiptoe_002', 'Leg_Tiptoe_003', 'Leg_Tiptoe_004', 'Leg_Tiptoe_005', 'Leg_Tiptoe_006' },
-                        Type = 'GroundKickup01',
-                    },
-                },
+        AnimationDeath = {
+            {
+                Animation = '/mods/SCTA-master/units/ARMSPID/ARMSPID_ADeath_01.sca',
+                AnimationRateMax = 1.6,
+                AnimationRateMin = 1.5,
+                Weight = 100,
+            },
+            {
+                Animation = '/mods/SCTA-master/units/ARMSPID/ARMSPID_ADeath_02.sca',
+                AnimationRateMax = 1.6,
+                AnimationRateMin = 1.5,
+                Weight = 100,
+            },
+            {
+                Animation = '/mods/SCTA-master/units/ARMSPID/ARMSPID_ADeath_03.sca',
+                AnimationRateMax = 1.6,
+                AnimationRateMin = 1.5,
+                Weight = 100,
+            },
+            {
+                Animation = '/mods/SCTA-master/units/ARMSPID/ARMSPID_ADeath_04.sca',
+                AnimationRateMax = 1.6,
+                AnimationRateMin = 1.5,
+                Weight = 100,
+            },
+            {
+                Animation = '/mods/SCTA-master/units/ARMSPID/ARMSPID_ADeath_05.sca',
+                AnimationRateMax = 1.6,
+                AnimationRateMin = 1.5,
+                Weight = 100,
             },
         },
-        ---TransportAnimation = { { Animation = '/mods/SCTA-master/units/armspid/armspid_Alegfold.sca', Weight = 100 } },
-        -- = { { Animation = '/mods/SCTA-master/units/armspid/armspid_Alegunfold.sca', Weight = 100 } },
-	    --SmokeBone = 'Turret_Yaw',
+        MovementEffects = {
+            TAMovement = {
+            Bones = { 'Origin'},
+            Emitter = '/mods/SCTA-master/effects/emitters/TAdust_emit.bp',
+            Scale = 0.4,
+            },
+        },
+        TransportAnimation = { { Animation = '/mods/SCTA-master/units/ARMSPID/ARMSPID_ATransport.sca', Weight = 100 } },
+        TransportDropAnimation = { { Animation = '/mods/SCTA-master/units/ARMSPID/ARMSPID_ATransportDetach.sca', Weight = 100 } },
+	    ---SmokeBone = 'Turret_Pitch',
         UniformScale = 0.038,
     },
     Economy = {
@@ -66,9 +97,8 @@ UnitBlueprint {
         BuildTime = 6075,
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 2,
-        --MaxSlope = 180,
+        SizeX = 2,
+        SizeZ = 1,
     },
     General = {
         Category = 'Utility',
@@ -120,7 +150,7 @@ UnitBlueprint {
                     Duration = 1, --0.9,
                     Radius = 2, --0.25,
                     TargetAllow = 'MOBILE',
-                    TargetDisallow = 'TECH3,EXPERIMENTAL,COMMAND',
+                    TargetDisallow = 'TECH3, EXPERIMENTAL, COMMAND',
                 },
             },
             BallisticArc = 'RULEUBA_None',
@@ -171,9 +201,9 @@ UnitBlueprint {
             Turreted = true,
         },
         { --BIG_UNITEX
-            Damage = 50,
+            Damage = 75,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

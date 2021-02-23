@@ -34,6 +34,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
+        'LEVEL2',
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -41,9 +42,8 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'NAVAL',
 	'CORE',
-		'PLANT',
 	'SORTCONSTRUCTION',
-	'LEVEL2',
+    'LAB',
     },
     CollisionOffsetY = -1,
     CollisionOffsetZ = 0,
@@ -58,10 +58,9 @@ UnitBlueprint {
     },
     Description = 'Produces Ships',
     Display = {
-        AnimationUnpack = '/mods/SCTA-master/units/CORASY/CORASY_lod0Action.sca',
+        AnimationUnpack = '/mods/SCTA-master/units/CORASY/CORASY_lod0_unpack.sca',
         AnimationUnpackRate = 1, 
-	--TextureAnimationFrames = 4,
-	BuildAttachBone = 'BuildBone',
+	BuildAttachBone = 'nano',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -72,7 +71,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.1,
     },
     Economy = {
         BuildCostEnergy = 2325,
@@ -96,8 +95,8 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildEffectBones = {'beam1', 'beam2'},
-        },    
+            BuildEffectBones = {'beam1','beam2', 'beam3', 'beam4'},
+        }, 
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {
@@ -111,6 +110,7 @@ UnitBlueprint {
         SelectionPriority = 5,
         ConstructionBar = true,
         FactionName = 'CORE',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
 	UnitName = 'Adv. Shipyard',
     },
@@ -130,41 +130,19 @@ UnitBlueprint {
         },
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
-    RollOffPoints = {
-        {
-            UnitSpin = 0,
-            X = 0,
-            Y = 0,
-            Z = 3,
-        },
-                  {
-            UnitSpin = 180,
-            X = 0,
-            Y = 0,
-            Z = -3,
-        },
-    },
-        OccupyRects = {
-            # offsetX offsetZ  sizeX sizeZ, offset from center of unit
-            -4,
-            -4,
-            0.5,
-            0.5,
-
-            3,
-            3,
-            0.5,
-            0.5,
-
-            3,
-            -4,
-            0.5,
-            0.5,
-
-            -4,
-            3,
-            0.5,
-            0.5,
+        RollOffPoints = {
+            {
+                UnitSpin = 0,
+                X = 0,
+                Y = 0,
+                Z = 3,
+            },
+            {
+                UnitSpin = 180,
+                X = 0,
+                Y = 0,
+                Z = -3,
+            },
         },
     },
     SelectionSizeX = 4.75,
@@ -177,12 +155,12 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 20,
-            DamageFriendly = true,
-            DamageRadius = 1,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        Damage = 200,
+        DamageFriendly = true,
+        DamageRadius = 5,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
         },
 
     },

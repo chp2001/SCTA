@@ -67,6 +67,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
+        'LEVEL1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -77,7 +78,6 @@ UnitBlueprint {
         'TRANSPORTFOCUS',
         'CANTRANSPORTCOMMANDER',
         'CORE',
-	'LEVEL1',
     },
     Defense = {
         ArmorType = 'Light',
@@ -103,9 +103,11 @@ UnitBlueprint {
             },
         },
 	MovementEffects = {
+        TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/fire_smoke_emit.bp',
 		Scale = 1,
 		Bones = {'firepoint1','firepoint2','firepoint3','firepoint4'},
+        },
 	},
         UniformScale = 0.16,
     },
@@ -114,7 +116,11 @@ UnitBlueprint {
         BuildCostMass = 115,
         BuildTime = 5889,
     },
-
+    Footprint = {
+        MaxSlope = 0.25,
+        SizeX = 1,
+        SizeZ = 4,
+    },
     General = {
         Category = 'Transport',
         Classification = 'RULEUC_MilitaryAircraft',
@@ -136,7 +142,8 @@ UnitBlueprint {
         },
         SelectionPriority = 4,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Valkyrie',
     },
     Intel = {
@@ -152,11 +159,11 @@ UnitBlueprint {
     Physics = {
         Elevation = 9,
         MotionType = 'RULEUMT_Air',
-        GroundCollisionOffset = 1.5,
-    MaxSpeed = 0.5, 
-    RotateOnSpot = true,
-	FuelRechargeRate = 444444,
-	FuelUseTime = 444444,
+        GroundCollisionOffset = 1.6,
+        MaxSpeed = 0.5, 
+        RotateOnSpot = true,
+	    FuelRechargeRate = 444444,
+	    FuelUseTime = 444444,
     },
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
@@ -176,7 +183,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'Air Crash',
             DummyWeapon = true,

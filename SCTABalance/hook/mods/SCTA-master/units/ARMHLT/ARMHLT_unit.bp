@@ -5,11 +5,11 @@ UnitBlueprint {
         MaxHealth = 2000,
     },
     Display = {
-        UniformScale = 0.08,
+        UniformScale = 0.07,
     },
     Economy = {
-        BuildCostEnergy = 12000,
-        BuildCostMass = 900,
+        BuildCostEnergy = 10000,
+        BuildCostMass = 800,
         BuildTime = 12000,
     },
     Footprint = {
@@ -25,9 +25,9 @@ UnitBlueprint {
     },
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
-    SizeX = 1,
+    SizeX = 1.5,
     SizeY = 3.25,
-    SizeZ = 1,
+    SizeZ = 1.5,
     Weapon = {
         [1] = {
             Damage = 70,

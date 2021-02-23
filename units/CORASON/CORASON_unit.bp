@@ -28,19 +28,15 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'LEVEL2',
         'TECH3',
 	'STRUCTURE',
 	'INTELLIGENCE',
 	'SONAR',
 	'NAVAL',
-	'TEXTUREANIM',
         'OVERLAYSONAR',
     'CORE',
-	'SPECIAL',
-	'LEVEL2',
 	'SORTINTEL',
-	
-	
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -91,7 +87,8 @@ UnitBlueprint {
         },
         SelectionPriority = 5,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Secret',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Secret',
         UnitName = 'Advanced Sonar Station',
     },
     Intel = {

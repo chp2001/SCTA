@@ -3,6 +3,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'LEVEL2',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -15,12 +16,6 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'LAND',
         'CORE',
-	'LEVEL2',
-	
-	
-	
-	
-	
     },
     Defense = {
         Health = 1000,

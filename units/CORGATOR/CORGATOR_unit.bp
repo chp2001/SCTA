@@ -30,6 +30,8 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
+        'VEHICLE',
+        'LEVEL1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -37,8 +39,7 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'VEHICLE',
-	'LEVEL1',
+    'RAIDER',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -54,15 +55,6 @@ UnitBlueprint {
         Abilities = {
             'Assault Tank',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -93,7 +85,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Instigator',
     },
     Intel = {
@@ -198,7 +191,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

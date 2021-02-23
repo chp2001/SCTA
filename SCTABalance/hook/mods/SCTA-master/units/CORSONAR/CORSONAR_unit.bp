@@ -1,7 +1,6 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT1SHIP',
         'BUILTBYT1HOVER',
         'BUILTBYT1AIR',
         'BUILTBYCOMMANDER',
@@ -10,19 +9,18 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-	'STRUCTURE',
-	'INTELLIGENCE',
-	'NAVAL',
+	    'STRUCTURE',
+	    'INTELLIGENCE',
+	    'NAVAL',
         'OVERLAYSONAR',
-	'CORE',
-	'SPECIAL',
-	'SONAR',
-	'LEVEL2',
-	'SORTINTEL',
+	    'CORE',
+	    'SONAR',
+	    'LEVEL1',
+	    'SORTINTEL',
     },
     Defense = {
-        Health = 300,
-        MaxHealth = 300,
+        Health = 150,
+        MaxHealth = 150,
     },
     Display = {
         Abilities = {
@@ -37,9 +35,10 @@ UnitBlueprint {
     },
     Economy = {
         NaturalProducer = false,
-        ProductionPerSecondEnergy = 0,
+        BuildCostEnergy = 1200,
+        BuildTime = 2300,
         BuildRate = 40, 
-        BuildCostMass = 200,
+        BuildCostMass = 120,
         MaintenanceConsumptionPerSecondEnergy = 10,
         ProductionPerSecondEnergy = 0,
         BuildableCategory = {
@@ -65,7 +64,7 @@ UnitBlueprint {
         FreeIntel = false,
         VisionRadius = 12,
         WaterVisionRadius = 12,
-        SonarRadius = 74,
+        SonarRadius = 120,
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,

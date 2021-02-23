@@ -5,6 +5,7 @@
 
 local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
+local AAMWillOWisp = import('/lua/aeonweapons.lua').AAMWillOWisp
 
 CORMSHIP = Class(TAunit) {
 	OnCreate = function(self)
@@ -40,7 +41,7 @@ CORMSHIP = Class(TAunit) {
 				TAweapon.PlayFxWeaponPackSequence(self)
 			end,	
 		},
-		CORSHIP_MISSILE = Class(TAweapon) {},
+		CORSHIP_MISSILE = Class(AAMWillOWisp) {},
 	},
 }
 

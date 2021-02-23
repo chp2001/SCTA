@@ -39,6 +39,9 @@ UnitBlueprint {
     BuildIconSortPriority = 0,
     Categories = {
         'SELECTABLE',
+        'ARM',
+        'KBOT',
+	    'LEVEL2',
         'TECH2',
         'ENGINEER',
         'REPAIR',
@@ -48,12 +51,9 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
         'MOBILE',
-	'CONSTRUCTION',
-	'LAND',
-	'SELECTION', 
-        'ARM',
-        'KBOT',
-	'LEVEL2',
+	    'CONSTRUCTION',
+	    'LAND',
+	    'SELECTION', 
     },
     Defense = {
         ArmorType = 'Normal',
@@ -88,7 +88,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'Torso',
+	---SmokeBone = 'Torso',
         UniformScale = 0.16,
     },
     Economy = {
@@ -128,7 +128,8 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 3,
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Adv. Construction Kbot',
     },
     Intel = {
@@ -167,7 +168,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

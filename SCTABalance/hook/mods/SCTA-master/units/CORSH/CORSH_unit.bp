@@ -13,7 +13,6 @@ UnitBlueprint {
     'LAND',
     'CORE',
     'HOVER',
-    --'PHIB',
     'LEVEL1',
 },
 Display = {

@@ -35,14 +35,13 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'LEVEL3',
         'TECH3',
-	'STRUCTURE',
-	'INTELLIGENCE',
-	'TARGETING',
-	'ARM',
-	'SPECIAL',
-	'LEVEL3',
-	'SORTINTEL',
+	    'STRUCTURE',
+	    'INTELLIGENCE',
+	    'TARGETING',
+	    'ARM',
+	    'SORTINTEL',
     },
     Defense = {
         DamageModifier = 0.7,
@@ -59,15 +58,6 @@ UnitBlueprint {
         Abilities = {
             'Radar Targeting',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -100,7 +90,8 @@ UnitBlueprint {
         },
         SelectionPriority = 5,
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
 	UnitName = 'Targeting Facility',
     },
     Intel = {
@@ -129,9 +120,9 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 20,
+            Damage = 750,
             DamageFriendly = true,
-            DamageRadius = 1,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

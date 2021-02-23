@@ -29,19 +29,19 @@ UnitBlueprint {
     BuildIconSortPriority = 2,
     Categories = {
         'SELECTABLE',
+        'OCEAN',
+        'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'NAVAL',
-	'DIRECTFIRE',
-	'ANTIAIR',
-	'LIGHTBOAT',
+	    'NAVAL',
+	    'DIRECTFIRE',
+	    'ANTIAIR',
+	    'LIGHTBOAT',
         'OVERLAYDIRECTFIRE',
-	'OVERLAYANTIAIR',
-    'CORE',
-    'OCEAN',
-	'LEVEL1',
+        'OVERLAYANTIAIR',
+        'CORE',
     },
     CollisionOffsetY = -0.25,
     Defense = {
@@ -58,16 +58,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
         },
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'ArmShip','ArmCockpit'},
-		DestructionEmitters = {
-			{
-				EmitterBone = {'turret'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -78,9 +68,11 @@ UnitBlueprint {
             },
         },
 	MovementEffects = {
+        TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'wake1','wake2'},
+		Bones = {'wake1'},
+        },
 	},
         UniformScale = 0.16,
     },
@@ -105,7 +97,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Searcher',
     },
     Intel = {
@@ -150,14 +143,14 @@ UnitBlueprint {
             DamageFriendly = false,
             Damage = 60,
             DamageRadius = 1.5, 
-            DamageType = 'AntiAir',
+            DamageType = 'Normal',
             DisplayName = 'CORKBOT_MISSILE',
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Air',
             },
-	    RangeCategory = 'UWRC_AntiAir',
-     WeaponCategory = 'AntiAir',
-            FiringTolerance = 8,
+	        RangeCategory = 'UWRC_AntiAir',
+            WeaponCategory = 'AntiAir',
+            FiringTolerance = 10,
             Label = 'CORKBOT_MISSILE',
             MaxRadius = 36.875,
             MuzzleSalvoDelay = 0,
@@ -215,8 +208,8 @@ UnitBlueprint {
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Seabed',
             },
-	    RangeCategory = 'UWRC_DirectFire',
-     WeaponCategory = 'DirectFire',
+	        RangeCategory = 'UWRC_DirectFire',
+            WeaponCategory = 'DirectFire',
             Label = 'CORPT_LASER',
             MaxRadius = 20,
             MuzzleSalvoDelay = 0,
@@ -264,9 +257,9 @@ UnitBlueprint {
             Turreted = true,
         },
         { #SMALL_UNITEX
-            Damage = 10,
+            Damage = 25,
             DamageFriendly = true,
-            DamageRadius = 0.9375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

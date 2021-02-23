@@ -1,13 +1,12 @@
 do
-    local OldModBlueprints = ModBlueprints
+    local TAModBlueprints = ModBlueprints
 
     function ModBlueprints(all_blueprints)
-        OldModBlueprints(all_blueprints)
-        BlueprintMults(all_blueprints)
-        GiveVet(all_blueprints.Unit)
+        TAModBlueprints(all_blueprints)
+        TABlueprintMults(all_blueprints)
     end
 
-    function BlueprintMults(all_blueprints)
+    function TABlueprintMults(all_blueprints)
         -- #1 CB Change: Split Mults into tables and individual variables. Renamed variables to only loop through all_blueprints.Unit once. This reduces the number of checks later at Comment #3
         local Land_Mults = {
             Defense = {
@@ -18,7 +17,7 @@ do
                 UniformScale = 0.5,
             },
             Intel = {
-                VisionRadius = 2, 
+                VisionRadius = 1.5, 
                 WaterVisionRadius = 3,
             },
             Economy = {
@@ -121,8 +120,9 @@ do
                 UniformScale = 0.5,
             },
             Intel = {
-                VisionRadius = 2.5, 
+                VisionRadius = 1.5, 
                 WaterVisionRadius = 3,
+                RadarRadius = 1.5,
                 },
             Economy = {
                 BuildCostEnergy = 0.3,
@@ -203,47 +203,6 @@ function UpdateStat_NoCheck(bp, mults, singles)
     for group, gdata in singles do
         if bp[group] then
             bp[group] = bp[group] * gdata
-        end
-    end
-end
-
-function GiveVet(all_bps)
-    for id, bp in all_bps do
-        if bp.Weapon and bp.Categories then
-            -- #9 CB Comment: we don't need to assign to 10 then reassign to 1-4. Only assign to 10 if there's not a match.
-            local mul
-            if table.find(bp.Categories, 'LEVEL1') then
-                mul = 1
-            elseif table.find(bp.Categories, 'LEVEL2') then
-                mul = 2
-            elseif table.find(bp.Categories, 'LEVEL3') then
-                mul = 3
-            elseif table.find(bp.Categories, 'LEVEL4') then
-                mul = 4
-            else
-                mul = 10
-            end
-            -- #8 CB Comment: bp.Buffs.Regen won't exist if bp.Buffs doesn't, so don't double check it.
-            if not bp.Buffs then
-                bp.Buffs = {}
-            elseif not bp.Buffs.Regen then
-                bp.Buffs.Regen = {
-                    Level1 = 1 * mul,
-                    Level2 = 2 * mul,
-                    Level3 = 3 * mul,
-                    Level4 = 4 * mul,
-                    Level5 = 5 * mul,
-                }
-            end
-            if not bp.Veteran then
-                bp.Veteran =  {
-                    Level1 = 3 * mul,
-                    Level2 = 6 * mul,
-                    Level3 = 9 * mul,
-                    Level4 = 12 * mul,
-                    Level5 = 15 * mul,
-                }
-            end
         end
     end
 end

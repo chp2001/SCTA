@@ -34,18 +34,17 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
+        'LEVEL2',
+        'LAB',
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
 	'STRUCTURE',
 	'CONSTRUCTION',
-	'TEXTUREANIM',
         'OVERLAYRADAR',
 	'CORE',
-		'PLANT',
 	'SORTCONSTRUCTION',
 	'AIR',
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -63,6 +62,7 @@ UnitBlueprint {
         },
         AnimationUnpack = '/mods/SCTA-master/units/CORAAP/CORAAP_lod0_unpack.sca',
         AnimationUnpackRate = 0.5,    
+        BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -82,7 +82,7 @@ UnitBlueprint {
         BuildableCategory = {
             'VTOL LEVEL2 CORE',
         },
-	InitialRallyX = 1,
+	InitialRallyX = 0,
 	InitialRallyZ = 5,
         StorageMass = 200,
         StorageEnergy = 200,
@@ -94,7 +94,6 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildAttachBone = 'pad',
             BuildEffectBones = {'beam1', 'beam2'},
         },             
 	---BuildAngle = 0,
@@ -111,7 +110,8 @@ UnitBlueprint {
         SelectionPriority = 5,
         ConstructionBar = true,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
 	UnitName = 'Adv. Aircraft Plant',
     },
     Intel = {
@@ -134,10 +134,22 @@ UnitBlueprint {
         SkirtSizeZ = 6,
         RollOffPoints = {
             {
+                UnitSpin = 90,
+                X = 3,
+                Y = 0,
+                Z = 0,
+            },
+                {
                 UnitSpin = 0,
                 X = 0,
                 Y = 0,
-                Z = 2.5,
+                Z = 3,
+            },
+            {
+                UnitSpin = -90,
+                X = -3,
+                Y = 0,
+                Z = 0,
             },
         },
     },
@@ -151,12 +163,12 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 20,
-            DamageFriendly = true,
-            DamageRadius = 1,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        Damage = 200,
+        DamageFriendly = true,
+        DamageRadius = 5,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
         },
 
     },

@@ -29,7 +29,7 @@ ProjectileBlueprint {
     Categories = {
         'CORE',
         'PROJECTILE',
-        'DIRECTFIRE',
+        'DEPTHCHARGE',
 	'ANTINAVY',
     },
     Display = {
@@ -39,11 +39,11 @@ ProjectileBlueprint {
         StrategicIconSize = 1,
     },
     General = {
-        Category = 'Direct Fire',
+        Category = 'AntiNavy',
         EntityCategory = {
             'CORE',
             'PROJECTILE',
-            'DIRECTFIRE',
+            'DEPTHCHARGE',
 	    'ANTINAVY',
         },
         Faction = 'CORE',

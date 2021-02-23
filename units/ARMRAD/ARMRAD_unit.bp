@@ -32,25 +32,20 @@ UnitBlueprint {
         'BUILTBYT1KBOT',
         'BUILTBYT1AIR',
         'BUILTBYT1HOVER',
-	'BUILTBYCOMMANDER',
+	    'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-	'STRUCTURE',
-	'INTELLIGENCE',
-    'RADAR',
-    'SHOWQUEUE',
+        'LEVEL1',
+	    'STRUCTURE',
+	    'INTELLIGENCE',
+        'RADAR',
+        'SHOWQUEUE',
         'OVERLAYRADAR',
-	'ARM',
-	'SPECIAL',
-	'SORTINTEL',
-	'LEVEL1',
-	
-	
-	
-	
+	    'ARM',
+	    'SORTINTEL',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -113,8 +108,10 @@ UnitBlueprint {
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
         },
+        ConstructionBar = true,
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
 	UnitName = 'Radar Tower',
     },
     Intel = {
@@ -145,7 +142,7 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_BUILDINGEX
-            Damage = 50,
+            Damage = 75,
             DamageFriendly = true,
             DamageRadius = 3,
             DamageType = 'Normal',

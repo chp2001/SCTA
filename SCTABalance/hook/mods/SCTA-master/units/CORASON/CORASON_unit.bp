@@ -1,8 +1,8 @@
 UnitBlueprint {
     Merge = true, 
     Categories = {
-        'BUILTBYT2SUB',
         'BUILTBYT2AIR',
+        'BUILTBYT1AIR',
         'BUILTBYT1HOVER',
         'SELECTABLE',
         'DRAGBUILD',
@@ -13,10 +13,8 @@ UnitBlueprint {
 	'INTELLIGENCE',
 	'SONAR',
 	'NAVAL',
-	'TEXTUREANIM',
         'OVERLAYSONAR',
     'CORE',
-	'SPECIAL',
 	'LEVEL2',
 	'SORTINTEL',
     'TARGETING',
@@ -36,7 +34,7 @@ UnitBlueprint {
     BuildCostEnergy = 9000,
     BuildCostMass = 1200,
     DifferentialUpgradeCostCalculation = true,
-	MaintenanceConsumptionPerSecondEnergy = 100,
+	MaintenanceConsumptionPerSecondEnergy = 50,
     },
     Footprint = {
         SizeX = 1,

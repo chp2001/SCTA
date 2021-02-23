@@ -4,11 +4,11 @@
 #Blueprint created by Dragun
 
 local TAWalking = import('/mods/SCTA-master/lua/TAMotion.lua').TAWalking
-local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
+local TAMPhalanxWeapon = import('/lua/terranweapons.lua').TAMPhalanxWeapon
 
 ARMSCAB = Class(TAWalking) {
 	Weapons = {
-			Turret01 = Class(TAweapon) {}
+			Turret01 = Class(TAMPhalanxWeapon) {}
 	},
 }
 

@@ -7,7 +7,7 @@ UnitBlueprint {
     Merge = true,
     Categories = {
         'SELECTABLE',
-        'TECH2',
+        'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -16,7 +16,35 @@ UnitBlueprint {
 	'RADAR',
         'OVERLAYRADAR',
         'ARM',
-        --'VEHICLE',	#'TANK' in TA
-	'LEVEL2',
+    'VEHICLE',
+    'LEVEL3',
+    'OVERLAYOMNI',
+    'OVERLAYCOUNTERINTEL',
     },
+    Display = {
+    Abilities = {
+        '<LOC ability_radar>Radar',
+        '<LOC ability_omni>Omni Sensor',
+        '<LOC ability_stealthfield>Stealth Field',
+        },
+    },
+    Economy = {
+        MaintenanceConsumptionPerSecondEnergy = 20,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
+    },
+    Intel = {
+        FreeIntel = false,
+        VisionRadius = 14,
+        OmniRadius = 40,
+        RadarStealthFieldRadius = 20,
+    },
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
+    SizeX = 2,
+    SizeY = 1,
+    SizeZ = 2,
+    StrategicIconName = 'icon_land3_intel',
 }

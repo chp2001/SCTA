@@ -1,11 +1,11 @@
 #ARM Commander Disintegrator
-#ARM_DISINTEGRATOR
+#DGun
 #
 #Script created by Raevn
 
 local TALightCannonProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TALightCannonProjectile
 
-ARM_DISINTEGRATOR = Class(TALightCannonProjectile) {
+DGun = Class(TALightCannonProjectile) {
 	OnCreate = function(self)
 		TALightCannonProjectile.OnCreate(self)
 		ForkThread(self.MovementThread,self)
@@ -27,4 +27,4 @@ ARM_DISINTEGRATOR = Class(TALightCannonProjectile) {
 	end,
 }
 
-TypeClass = ARM_DISINTEGRATOR
+TypeClass = DGun

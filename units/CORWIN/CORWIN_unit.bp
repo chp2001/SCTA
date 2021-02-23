@@ -26,18 +26,14 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'LEVEL1',
         'TECH1',
-	'STRUCTURE',
-                'ECONOMIC',
+	    'STRUCTURE',
+        'ECONOMIC',
         'SORTECONOMY',
-	'ENERGYPRODUCTION',
-	'WIND',
-	'CORE',
-	'ENERGY',
-	'LEVEL1',
-	
-	
-	
+	    'ENERGYPRODUCTION',
+	    'WIND',
+	    'CORE',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -46,16 +42,19 @@ UnitBlueprint {
     },
     Description = 'Produces Energy',
     Display = {
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
-                {
-                    LODCutoff = 230,
-                    ShaderName = 'Unit',
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+            Mesh = {
+                IconFadeInZoom = 130,
+                LODs = {
+                    {
+                        LODCutoff = 135,
+                        ShaderName = 'Unit',
+                    },
+                    {
+                        LODCutoff = 215,
+                        ShaderName = 'Unit',
+                    },
                 },
             },
-        },
         UniformScale = 0.16,
     },
     Economy = {
@@ -78,7 +77,8 @@ UnitBlueprint {
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Wind Generator',
     },
     Intel = {
@@ -91,8 +91,6 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        SkirtSizeX = 4, 
-        SkirtSizeZ = 4, 
         BuildOnLayerCaps = {
             LAYER_Land = true,
         },

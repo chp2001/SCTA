@@ -3,6 +3,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'LEVEL2',
         'FIELDENGINEER',
         'ENGINEER',
         'REPAIR',
@@ -12,14 +13,12 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
         'MOBILE',
-	'CONSTRUCTION',
-	'LAND',
+	    'CONSTRUCTION',
+	    'LAND',
         'CORE',
         'NECRO',
         'VEHICLE',
         'KBOT',
-    'LEVEL2',
-    'VTOL',
     }, 
     Defense = {
         Health = 1300,
@@ -31,7 +30,7 @@ UnitBlueprint {
     Economy = {
     BuildCostEnergy = 3800,
     BuildCostMass = 360,
-    BuildRate = 300,
+    BuildRate = 150,
     MaxBuildDistance = 7,
 	ProductionPerSecondEnergy = 3,
 	ProductionPerSecondMass = 0,

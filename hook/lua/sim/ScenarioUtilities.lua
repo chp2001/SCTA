@@ -1,29 +1,32 @@
 function CreateInitialArmyGroup(strArmy, createCommander)
 	CreateWind()
 	local tblGroup = CreateArmyGroup(strArmy, 'INITIAL')
-    local cdrUnit = false
+	local cdrUnit = false
+	local initialUnitName
     if createCommander and ( tblGroup == nil or 0 == table.getn(tblGroup) )  then
 		local ABrain = GetArmyBrain(strArmy);
 		if(ABrain.BrainType == 'Human') then
-			
-				
-			local factionIndex = GetArmyBrain(strArmy):GetFactionIndex()
 			local initialUnitName = 'mas0001'
 			cdrUnit = CreateInitialArmyUnit(strArmy, initialUnitName)
 			cdrUnit:SetUnSelectable(false)
 			cdrUnit:SetBusy(true)
 			cdrUnit:SetBlockCommandQueue(true)
 			ForkThread(ControlDelay, cdrUnit, 8.75)
-			--UISelectAndZoomTo(cdrUnit, 0.1)
-			
 			ABrain.PreBuilt = true
 		else
 			local tblGroup = CreateArmyGroup( strArmy, 'INITIAL')
 			local cdrUnit = false
 		
 			if createCommander and ( tblGroup == nil or 0 == table.getn(tblGroup) ) then
-				local factionIndex = GetArmyBrain(strArmy):GetFactionIndex()
-				local initialUnitName = import('/lua/factions.lua').Factions[factionIndex].InitialUnit
+				local per = ScenarioInfo.ArmySetup[ABrain.Name].AIPersonality
+				if per == 'sctaaiarm' then
+					initialUnitName = 'armcom'
+				elseif per == 'sctaaicore' then
+					initialUnitName = 'corcom'
+				else
+					local factionIndex = GetArmyBrain(strArmy):GetFactionIndex()
+					initialUnitName = import('/lua/factions.lua').Factions[factionIndex].InitialUnit
+				end
 				cdrUnit = CreateInitialArmyUnit(strArmy, initialUnitName)
 				if EntityCategoryContains(categories.COMMAND, cdrUnit) then
 					if ScenarioInfo.Options['PrebuiltUnits'] == 'Off' then

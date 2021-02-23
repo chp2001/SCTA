@@ -35,19 +35,15 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'LEVEL2',
         'TECH1',
 	'STRUCTURE',
 	'INTELLIGENCE',
 	'NAVAL',
         'OVERLAYSONAR',
 	'CORE',
-	'SPECIAL',
 	'SONAR',
-	'LEVEL2',
 	'SORTINTEL',
-	
-	
-	
     },
     CollisionOffsetY = -0.75,
     Defense = {
@@ -64,15 +60,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_sonar>Sonar',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -102,9 +89,11 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
+        ConstructionBar = true,
         SelectionPriority = 5,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Sonar Station',
     },
     Intel = {

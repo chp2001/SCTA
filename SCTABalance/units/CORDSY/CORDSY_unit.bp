@@ -120,11 +120,12 @@ UnitBlueprint {
         FactionName = 'CORE',
         UpgradesFrom = 'corsy', 
         UpgradesTo = 'coradsy',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
 	UnitName = 'Development Shipyard',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 10,
         WaterVisionRadius = 8,
     },
     Interface = {
@@ -140,8 +141,6 @@ UnitBlueprint {
         FlattenSkirt = true,
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
-	------BuildAreaX = 8,
-    ------BuildAreaZ = 8,
     RollOffPoints = {
         {
             UnitSpin = 0,
@@ -200,16 +199,16 @@ UnitBlueprint {
     SizeY = 3,
     SizeZ = 20,
     ---CollisionOffsetX = -2,
-    StrategicIconName = 'icon_factory2_naval',
+    StrategicIconName = 'icon_factoryhq2_naval',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 20,
-            DamageFriendly = true,
-            DamageRadius = 1,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        Damage = 200,
+        DamageFriendly = true,
+        DamageRadius = 5,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
         },
 
     },

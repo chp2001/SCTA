@@ -7,6 +7,17 @@ local util = import('/lua/utilities.lua')
 
 TAStructure = Class(TAunit) 
 {
+	LandBuiltHiddenBones = {'Floatation'},
+	
+	DoTakeDamage = function(self, instigator, amount, vector, damageType)
+	    -- Handle incoming OC damage
+        if damageType == 'Overcharge' then
+            local wep = instigator:GetWeaponByLabel('OverCharge')
+            amount = wep:GetBlueprint().Overcharge.structureDamage
+        end
+        TAunit.DoTakeDamage(self, instigator, amount, vector, damageType)
+    end,
+
 	OnStopBuild = function(self, unitBeingBuilt, order)
 		TAunit.OnStopBuild(self, unitBeingBuilt, order)
 		if unitBeingBuilt:GetFractionComplete() == 1 and unitBeingBuilt:GetUnitId() == self:GetBlueprint().General.UpgradesTo then
@@ -92,19 +103,14 @@ TAMine = Class(TAStructure) {
 		TAStructure.OnKilled(self, instigator, type, overkillRatio)
 		
 	end,
-
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAStructure.OnStopBeingBuilt(self,builder,layer)
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
+		self:SetMaintenanceConsumptionActive()
+		self:SetScriptBit('RULEUTC_CloakToggle', false)
 		self:RequestRefreshUI()
 	end,
 
-	OnIntelDisabled = function(self)
-		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-	end,
 
-	OnIntelEnabled = function(self)
-        self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
+	HideFlares = function(self, bp)
 	end,
-
 }

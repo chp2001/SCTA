@@ -1,5 +1,23 @@
 UnitBlueprint {
     Merge = true,
+    Categories = {
+        --'NEEDMOBILEBUILD',
+        'SELECTABLE',
+        'TECH4',
+        'EXPERIMENTAL',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+        'LAND',
+        'DIRECTFIRE',
+        'ANTIAIR',
+        'OVERLAYDIRECTFIRE',
+        'OVERLAYANTIAIR',        
+        'CORE',
+        'KBOT',
+        'LEVEL4',
+        'SNIPEMODE',
+    },
     Defense = {
         Health = 150000,
         MaxHealth = 150000,

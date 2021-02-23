@@ -30,15 +30,20 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
+        'LEVEL1',
+        'HOVER',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'SCOUT',
+        'SCOUT',
+	    'INTELLIGENCE',
+        'RADAR',
+        'OVERLAYRADAR',
+        'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'LAND',
         'ARM',
-        'HOVER',
-	'LEVEL1',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -64,15 +69,12 @@ UnitBlueprint {
                 },
             },
         },
-	IdleEffects = {
-		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
-		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
-	},
 	MovementEffects = {
+        TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02','Wake_03','Wake_04'},
+		Bones = {'Wake_01'},
+        },
 	},
         UniformScale = 0.16,
     },
@@ -81,7 +83,10 @@ UnitBlueprint {
         BuildCostMass = 76,
         BuildTime = 3388,
     },
-
+    Footprint = {
+        SizeX = 2,
+        SizeZ = 1,
+    },
     General = {
         Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -95,7 +100,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Skimmer',
     },
     Intel = {
@@ -163,7 +169,7 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Muzzle',
+                        'Flare',
                     },
                     RackBone = 'Turret',
                 },
@@ -181,7 +187,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'Muzzle',
+            TurretBoneMuzzle = 'Flare',
             TurretBonePitch = 'Turret',
             TurretBoneYaw = 'Turret',
             TurretDualManipulators = false,
@@ -196,7 +202,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

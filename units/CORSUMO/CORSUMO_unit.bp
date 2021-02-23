@@ -29,6 +29,7 @@ UnitBlueprint {
     BuildIconSortPriority = 12,
     Categories = {
         'SELECTABLE',
+        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -38,7 +39,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'CORE',
         'KBOT',
-	'LEVEL2',
+        'TANK',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -65,7 +66,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'body',
+	---SmokeBone = 'body',
         UniformScale = 0.16,
     },
     Economy = {
@@ -86,7 +87,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Sumo',
     },
     Intel = {
@@ -197,7 +199,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

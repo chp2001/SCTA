@@ -28,13 +28,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'ANTIAIR',
+	    'LAND',
+	    'ANTIAIR',
         'OVERLAYANTIAIR',
         'ARM',
-        --'KBOT',
-        'SPIDER',
-	'LEVEL2',
+        'JAM',
+	    'LEVEL2',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -63,7 +63,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'turret1',
+	---SmokeBone = 'turret1',
         UniformScale = 0.12,
     },
     Economy = {
@@ -72,8 +72,8 @@ UnitBlueprint {
         BuildTime = 6075,
     },
     Footprint = {
-	SizeX = 1,
-	SizeZ = 2,
+	SizeX = 2,
+	SizeZ = 1,
     },
     General = {
         Category = 'Utility',
@@ -88,7 +88,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Huntsman',
     },
     Intel = {
@@ -134,7 +135,7 @@ UnitBlueprint {
                 Damage = 220,
                 DamageRadius = 1,
                 FiringRandomness = 0,
-                DamageType = 'SAMAir',
+                DamageType = 'LANDAir',
                 DisplayName = 'ARMAH_WEAPON',
                 FireTargetLayerCapsTable = {
                     Land = 'Land|Water|Air',
@@ -198,7 +199,7 @@ UnitBlueprint {
                 Damage = 220,
                 DamageRadius = 1,
                 FiringRandomness = 0,
-                DamageType = 'SAMAir',
+                DamageType = 'LANDAir',
                 DisplayName = 'ARMAH_WEAPON',
                 FireTargetLayerCapsTable = {
                     Land = 'Land|Water|Air',
@@ -251,7 +252,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

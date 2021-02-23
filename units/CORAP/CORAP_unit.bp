@@ -39,17 +39,17 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-	'FACTORY',
+        'LEVEL1',
+	    'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-	'STRUCTURE',
-	'CONSTRUCTION',
+	    'STRUCTURE',
+	    'CONSTRUCTION',
         'OVERLAYRADAR',
-	'CORE',
+	    'CORE',
 		'PLANT',
-	'SORTCONSTRUCTION',
-    'LEVEL1',
-    'AIR',
+	    'SORTCONSTRUCTION',
+        'AIR',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -89,7 +89,7 @@ UnitBlueprint {
         BuildableCategory = {
             'VTOL LEVEL1 CORE',
         },
-	InitialRallyX = 1,
+	InitialRallyX = 0,
 	InitialRallyZ = 5,
         StorageMass = 50,
         StorageEnergy = 50,
@@ -97,7 +97,7 @@ UnitBlueprint {
     Footprint = {
 	MaxSlope = 0.625,
         SizeX = 7,
-        SizeZ = 6,
+        SizeZ = 7,
     },
     General = {
         BuildBones = {
@@ -116,7 +116,8 @@ UnitBlueprint {
         SelectionPriority = 5,
         ConstructionBar = true,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
 	UnitName = 'Aircraft Plant',
     },
     Intel = {
@@ -136,7 +137,7 @@ UnitBlueprint {
         },
         FlattenSkirt = true,
         SkirtSizeX = 7,
-        SkirtSizeZ = 6,
+        SkirtSizeZ = 7,
         RollOffPoints = {
             {
                 UnitSpin = 0,
@@ -168,12 +169,12 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX
-            Damage = 20,
-            DamageFriendly = true,
-            DamageRadius = 1,
-            DamageType = 'Normal',
-            DummyWeapon = true,
-            Label = 'DeathWeapon',
+        Damage = 200,
+        DamageFriendly = true,
+        DamageRadius = 5,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
         },
 
     },

@@ -4,6 +4,12 @@
 #Blueprint created by Raevn
 
 UnitBlueprint {
+    AI = {
+        TargetBones = {
+            'turret',
+            'CORFHLT',
+        },
+    },
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
@@ -28,15 +34,15 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
+        'LEVEL2',
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
     'CORE', 
-	'SPECIAL',
-	'LEVEL2',
     'SORTDEFENSE',
     'SNIPEMODE',
+    'LASER',
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -67,9 +73,8 @@ UnitBlueprint {
         StorageEnergy = 150,
     },
     Footprint = {
-        SizeX = 4,
-        SizeZ = 4,
-	MinWaterDepth = 2,
+        SizeX = 2,
+        SizeZ = 2,
     },
     General = {
         Category = 'Defense',
@@ -81,7 +86,8 @@ UnitBlueprint {
         },
         SelectionPriority = 5,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Thunderbolt',
     },
     Intel = {
@@ -93,18 +99,16 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 2,
-    Physics = {
-        SkirtSizeX = 4, 
-        SkirtSizeZ = 4,  
+    LifeBarSize = 1,
+    Physics = {  
         BuildOnLayerCaps = {
             LAYER_Land = true,
             LAYER_Water = true,
         },
     },
+    SelectionCenterOffsetZ = -0.3,
     SelectionSizeX = 2,
     SelectionSizeZ = 2,
-    SelectionCenterOffsetZ = -0.1,
     SelectionThickness = 0.25,
     SizeX = 3.5,
     SizeY = 3.5,

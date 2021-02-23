@@ -3,7 +3,6 @@ UnitBlueprint {
     BuildIconSortPriority = 3,
     Categories = {
         'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
         'BUILTBYT1VEHICLE',
         'BUILTBYT1HOVER',
         'BUILTBYCOMMANDER',
@@ -12,17 +11,17 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-	'FACTORY',
+	    'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
-	'STRUCTURE',
-	'CONSTRUCTION',
+	    'STRUCTURE',
+	    'CONSTRUCTION',
         'OVERLAYRADAR',
         'AIR', 
-	'CORE',
+	    'CORE',
 		'PLANT',
-	'SORTCONSTRUCTION',
-	'LEVEL1',
+	    'SORTCONSTRUCTION',
+	    'LEVEL1',
     },
         Display = {
                 Abilities = {
@@ -43,7 +42,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 8000,
         BuildCostMass = 680,
-        BuildRate = 100,
+        BuildRate = 120,
         BuildableCategory = {
             'VTOL LEVEL1 CORE',
             'corcv',

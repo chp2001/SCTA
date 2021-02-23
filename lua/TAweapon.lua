@@ -13,9 +13,11 @@ TAweapon = Class(DefaultWeapon) {
     OnGotTargetCheck = function(self)
         local army = self.unit:GetArmy()
         local canSee = true
-
-        ###object currently targeting
         local target = self:GetCurrentTarget()
+        local aiBrain = self.unit:GetAIBrain()
+        if aiBrain.SCTAAI then
+            return true
+        else
         if (target) then
             if (IsUnit(target)) then
                 canSee = target:GetBlip(army):IsSeenNow(army)
@@ -25,39 +27,50 @@ TAweapon = Class(DefaultWeapon) {
             end
         end
 
-        ###object (if any) currently ordered to target
         local currentTarget = self.unit:GetTargetEntity()
         if (currentTarget and IsBlip(currentTarget)) then
             currentTarget = currentTarget:GetSource()
         end
 
-        if (canSee or TAutils.ArmyHasTargetingFacility(self.unit:GetArmy()) or currentTarget == target or (target and IsProp(target)) or EntityCategoryContains(categories.NOCUSTOMTARGET, self.unit)) then
+        if (canSee == true or 
+        currentTarget == target or
+        (target and IsProp(target))) then
              return true
         else
             self:ResetTarget()
-            return nil
+            return false
         end
+    end
     end,
 
     IdleState = State(DefaultWeapon.IdleState) {
-        OnGotTarget = function(self)
-            if (self:OnGotTargetCheck()) then
+        OnGotTarget = function(self) 
+            local army = self.unit:GetArmy()
+            ---LOG('Resulting Table'..repr(TAutils.targetingFacilityData))
+            if (TAutils.ArmyHasTargetingFacility(army) or 
+            self:OnGotTargetCheck() == true) then
                 DefaultWeapon.IdleState.OnGotTarget(self)
             end
         end,
     },
 
     WeaponUnpackingState = State(DefaultWeapon.WeaponUnpackingState) {
-        Main = function(self)
-            if (self:OnGotTargetCheck()) then
+        Main = function(self)          
+            local army = self.unit:GetArmy()
+            ---LOG('Resulting Table'..repr(TAutils.targetingFacilityData))
+            if (TAutils.ArmyHasTargetingFacility(army) or 
+            self:OnGotTargetCheck() == true) then
                 DefaultWeapon.WeaponUnpackingState.Main(self)
             else
                 ChangeState(self, self.WeaponPackingState)
             end
         end,
 
-        OnGotTarget = function(self)
-            if (self:OnGotTargetCheck()) then
+        OnGotTarget = function(self)         
+            local army = self.unit:GetArmy()
+            ---LOG('Resulting Table'..repr(TAutils.targetingFacilityData))
+            if (TAutils.ArmyHasTargetingFacility(army) or 
+            self:OnGotTargetCheck() == true)  then
                 DefaultWeapon.WeaponUnpackingState.OnGotTarget(self)
             end
         end,
@@ -66,10 +79,9 @@ TAweapon = Class(DefaultWeapon) {
     RackSalvoFireReadyState = State(DefaultWeapon.RackSalvoFireReadyState) {
         WeaponWantEnabled = true,
         WeaponAimWantEnabled = true,
-
         Main = function(self)
             local bp = self:GetBlueprint()
-            if (bp.CountedProjectile and bp.WeaponUnpacks) then
+            if (bp.CountedProjectile == true and bp.WeaponUnpacks == true) then
                 self.unit:SetBusy(true)
             else
                 self.unit:SetBusy(false)
@@ -84,27 +96,30 @@ TAweapon = Class(DefaultWeapon) {
                 aiBrain:TakeResource('Energy', bp.EnergyRequired)
                 self.WeaponCanFire = true
             end
-            if bp.CountedProjectile then
+            if bp.CountedProjectile == true then
                 ChangeState(self, self.RackSalvoFiringState)
             end
 
         end,
 
-        OnGotTarget = function(self)
-            if (self:OnGotTargetCheck()) then
+        OnGotTarget = function(self)      
+            local army = self.unit:GetArmy()
+            ---LOG('Resulting Table'..repr(TAutils.targetingFacilityData))
+            if (TAutils.ArmyHasTargetingFacility(army) or 
+            self:OnGotTargetCheck() == true) then
                 DefaultWeapon.RackSalvoFireReadyState.OnGotTarget(self)
             end
         end,
 
         OnFire = function(self)
-            if self.WeaponCanFire then
+            if self.WeaponCanFire == true then
                 ChangeState(self, self.RackSalvoFiringState)
             end
         end,
 
         OnLostTarget = function(self)
             local bp = self:GetBlueprint()
-            if bp.WeaponUnpacks then
+            if bp.WeaponUnpacks == true then
                 ChangeState(self, self.WeaponPackingState)
             end
         end,
@@ -113,7 +128,10 @@ TAweapon = Class(DefaultWeapon) {
 
     WeaponPackingState = State(DefaultWeapon.WeaponPackingState) {
         OnGotTarget = function(self)
-            if (self:OnGotTargetCheck()) then
+            local army = self.unit:GetArmy()
+            ---LOG('Resulting Table'..repr(TAutils.targetingFacilityData))
+            if (TAutils.ArmyHasTargetingFacility(army) or 
+            self:OnGotTargetCheck() == true)  then
                 DefaultWeapon.WeaponPackingState.OnGotTarget(self)
             end
         end,
@@ -145,12 +163,6 @@ TAPopLaser = Class(TAweapon) {
     PlayFxWeaponPackSequence = function(self)
         self.unit.Pack = 0.5
         TAweapon.PlayFxWeaponPackSequence(self)
-    end,
-}
-
-TABuzz = Class(TAweapon) {
-    OnCreate = function(self)
-        TAweapon.OnCreate(self)
     end,
 }
 
@@ -196,7 +208,7 @@ TACommanderDeathWeapon = Class(BareBonesWeapon) {
     end,
 }
 
-TADGun = Class(TAweapon) {
+TADGun = Class(DefaultWeapon) {
     EnergyRequired = nil,
 
     HasEnergy = function(self)
@@ -208,28 +220,12 @@ TADGun = Class(TAweapon) {
         return not self.unit:IsOverchargePaused() and self:HasEnergy() and not
             self:UnitOccupied() 
     end,
-    
+
     UnitOccupied = function(self)
         return self.unit:IsUnitState('Building') or
             self.unit:IsUnitState('Repairing') or
             self.unit:IsUnitState('Reclaiming')
     end,
-
-    StartEconomyDrain = function(self) -- OverchargeWeapon drains energy on impact
-    end,
-
-    OnWeaponFired = function(self)
-        self:ForkThread(self.PauseOvercharge)
-    end,
-
-    OnLostTarget = function(self)
-        self.unit:SetWeaponEnabledByLabel('DGun', true)
-        if self.AutoMode then
-            self.AutoThread = self:ForkThread(self.AutoEnable)
-        end
-        TAweapon.OnLostTarget(self)
-    end,
-
 
     PauseOvercharge = function(self)
         if not self.unit:IsOverchargePaused() then
@@ -237,31 +233,25 @@ TADGun = Class(TAweapon) {
             WaitSeconds(1 / self:GetBlueprint().RateOfFire)
             self.unit:SetOverchargePaused(false)
         end
-        self.unit:SetWeaponEnabledByLabel('DGun', true)
         if self.AutoMode then
             self.AutoThread = self:ForkThread(self.AutoEnable)
         end
     end,
 
-        OnCreate = function(self)
-            TAweapon.OnCreate(self)
-            self.EnergyRequired = self:GetBlueprint().EnergyRequired
-            self.unit:SetWeaponEnabledByLabel('DGun', true)
-            self.unit:SetWeaponEnabledByLabel('AutoDGun', false)
-            self.unit:SetOverchargePaused(false)
-        end,
+    StartEconomyDrain = function(self) -- OverchargeWeapon drains energy on impact
+    end,
 
         AutoEnable = function(self)
             while not self:CanOvercharge() do
-                WaitSeconds(3)
+                WaitSeconds(1)
             end
             if self.AutoMode then
-                self.unit:SetWeaponEnabledByLabel('DGun', false)
                 self.unit:SetWeaponEnabledByLabel('AutoDGun', true)
             end
         end,
     
-        SetAutoOvercharge = function(self, auto)
+        
+    SetAutoOvercharge = function(self, auto)
             self.AutoMode = auto
     
             if self.AutoMode then
@@ -269,11 +259,58 @@ TADGun = Class(TAweapon) {
             else
                 if self.AutoThread then
                     KillThread(self.AutoThread)
-                    self.unit:SetWeaponEnabledByLabel('AutoDGun', false)
-                    self.unit:SetWeaponEnabledByLabel('DGun', true)
                     self.AutoThread = nil
                 end
             end
         end,
+
+        OnCreate = function(self)
+            DefaultWeapon.OnCreate(self)
+            self.EnergyRequired = self:GetBlueprint().EnergyRequired
+            self.unit:SetWeaponEnabledByLabel('DGun', true)
+            self.unit:SetWeaponEnabledByLabel('AutoDGun', false)
+            self.unit:SetOverchargePaused(false)
+        end,
+
+        OnWeaponFired = function(self)
+            DefaultWeapon.StartEconomyDrain(self)
+            self:ForkThread(self.PauseOvercharge)
+        end,
+
+        WaitDGUN = function(self)
+            WaitSeconds(1 / self:GetBlueprint().RateOfFire)
+        end,
+
+        IdleState = State(DefaultWeapon.IdleState) {
+            OnGotTarget = function(self)
+                if self:CanOvercharge() then
+                    DefaultWeapon.IdleState.OnGotTarget(self)
+                else
+                    self:ForkThread(function()
+                        while not self:CanOvercharge() do
+                            WaitSeconds(0.1)
+                        end
+                            self:OnGotTarget()
+                    end)
+                end
+            end,
     
+            OnFire = function(self)
+                if self:CanOvercharge() then
+                    ChangeState(self, self.RackSalvoFiringState)
+                else
+                    self:ForkThread(self.WaitDGUN)
+                end
+            end,
+        },
+    
+        RackSalvoFireReadyState = State(DefaultWeapon.RackSalvoFireReadyState) {
+            OnFire = function(self)
+                if self:CanOvercharge() then
+                    DefaultWeapon.RackSalvoFireReadyState.OnFire(self)
+                else
+                    self:ForkThread(self.WaitDGUN)
+                end
+            end,
+        }    
 }

@@ -31,7 +31,7 @@ UnitBlueprint {
         'TACLOAK',
                 'MINE',
         'STRUCTURE',
-	'LEVEL2',
+	'LEVEL1',
 	'KAMIKAZI',
     },
     Defense = {
@@ -46,6 +46,7 @@ UnitBlueprint {
     Description = 'Low Damage, Med. Range Mine',
     Display = {
         Abilities = {
+            '<LOC ability_cloak>Cloaking',
             'Kamikazi',
         },
 		CloakMesh = '/mods/SCTA-master/units/MINE1/MINE1_cloak_mesh',
@@ -83,11 +84,13 @@ UnitBlueprint {
 		RULEUTC_CloakToggle = true,
 	},
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Tiny',
     },
     Intel = {
         VisionRadius = 4,
+        Cloak = true,
     },
     Interface = {
         HelpText = 'Low Damage, Med. Range Mine',

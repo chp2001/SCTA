@@ -2,7 +2,6 @@ UnitBlueprint {
     Merge = true,
     BuildIconSortPriority = 10,
     Categories = {
-        'BUILTBYT2VEHICLE',
         'BUILTBYT2KBOT',
         'BUILTBYT2AIR',
         'BUILTBYT1KBOT',
@@ -17,8 +16,7 @@ UnitBlueprint {
     'OVERLAYRADAR',
     'ARM',
     'SHOWQUEUE',
-	'SPECIAL',
-    'LEVEL3',
+    'LEVEL2',
     'TARGETING',
 	'SORTINTEL',
     },
@@ -28,7 +26,7 @@ UnitBlueprint {
             'Radar Targeting',
             '<LOC ability_upgradable>Upgradeable',
         },
-        UniformScale = 0.12,    
+        UniformScale = 0.1,    
      }, 
      Economy = {
         NaturalProducer = false,

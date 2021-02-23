@@ -29,21 +29,12 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-
-	
-	'STRUCTURE',
-        'METALSTORAGE',
-                'ECONOMIC',
+        'LEVEL1',
+	    'STRUCTURE',
+        'MASSSTORAGE',
+        'ECONOMIC',
         'SORTECONOMY',
-
-	
-	'ARM',
-	'METAL',
-	'LEVEL1',
-	
-	
-	
-	'STORAGE',
+	    'ARM',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -85,7 +76,8 @@ UnitBlueprint {
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Metal Storage',
     },
     Intel = {
@@ -114,9 +106,9 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_BUILDINGEX
-            Damage = 40,
+            Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 6.406,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

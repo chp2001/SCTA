@@ -10,13 +10,13 @@ ARMSEHAK = Class(TASeaair) {
 	OnCreate = function(self)
 		TASeaair.OnCreate(self)
 		self.Spinners = {
-			radar1 = CreateRotator(self, 'Sonarholder1', 'y', nil, 0, 0, 0),
-			radar2 = CreateRotator(self, 'Sonarholder2', 'y', nil, 0, 0, 0),
+			radar1 = CreateRotator(self, 'scanner1', 'y', nil, 0, 0, 0),
+			radar2 = CreateRotator(self, 'scanner2', 'y', nil, 0, 0, 0),
 		}
 		self.Sliders = {
 			chassis = CreateSlider(self, 0),
-			Rwing = CreateSlider(self, 'Rwing'),
-			Lwing = CreateSlider(self, 'Lwing'),
+			Rwing = CreateSlider(self, 'rwing1'),
+			Lwing = CreateSlider(self, 'lwing1'),
 		}
 		for k, v in self.Sliders do
 			self.Trash:Add(v)
@@ -35,23 +35,23 @@ ARMSEHAK = Class(TASeaair) {
 	OpenWings = function(self)
 
 		--MOVE Rwing to x-axis <4.45> SPEED <3.00>;
-		self.Sliders.Rwing:SetGoal(-4.45,0,0)
+		self.Sliders.Rwing:SetGoal(0,0,0)
 		self.Sliders.Rwing:SetSpeed(3)
 
 		--MOVE Lwing to x-axis <-4.45> SPEED <3.00>;
-		self.Sliders.Lwing:SetGoal(4.45,0,0)
+		self.Sliders.Lwing:SetGoal(0,0,0)
 		self.Sliders.Lwing:SetSpeed(3)
 
 	end,
 
 	CloseWings = function(self)
 
-		--MOVE Rwing to x-axis <0> SPEED <3.00>;
-		self.Sliders.Rwing:SetGoal(0,0,0)
+		--MOVE Rwing to x-axis <4.45> SPEED <3.00>;
+		self.Sliders.Rwing:SetGoal(4.45,0,0)
 		self.Sliders.Rwing:SetSpeed(3)
 
-		--MOVE Lwing to x-axis <0> SPEED <3.00>;
-		self.Sliders.Lwing:SetGoal(0,0,0)
+		--MOVE Lwing to x-axis <-4.45> SPEED <3.00>;
+		self.Sliders.Lwing:SetGoal(-4.45,0,0)
 		self.Sliders.Lwing:SetSpeed(3)
 	end,
 }

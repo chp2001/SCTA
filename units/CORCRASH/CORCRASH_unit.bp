@@ -29,26 +29,17 @@ UnitBlueprint {
     BuildIconSortPriority = 6,
     Categories = {
         'SELECTABLE',
+        'KBOT',
+	    'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
-	'ANTIAIR',
-        'OVERLAYDIRECTFIRE',
-	'OVERLAYANTIAIR',
-
-	
+	    'LAND',
+	    'ANTIAIR',
+	    'OVERLAYANTIAIR',
         'CORE',
-        'KBOT',
-	'LEVEL1',
-	
-	
-	
-	
+        'ROCKET',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -66,24 +57,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'Pelvis'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'GunBase'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -93,7 +66,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'Pelvis',
+	---SmokeBone = 'Pelvis',
         UniformScale = 0.16,
     },
     Economy = {
@@ -115,7 +88,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Crasher',
     },
     Intel = {
@@ -161,15 +135,14 @@ UnitBlueprint {
             DamageFriendly = false,
             Damage = 96,
             DamageRadius = 1.5, 
-            DamageType = 'SAMAir',
+            DamageType = 'LANDAir',
             DisplayName = 'CORKBOT_MISSILE',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',
-                Seabed = 'Land|Water|Air',
             },
             RangeCategory = 'UWRC_AntiAir',
             WeaponCategory = 'AntiAir',
-            FiringTolerance = 8,
+            FiringTolerance = 10,
             Label = 'CORKBOT_MISSILE',
             MaxRadius = 36.875,
             MuzzleSalvoDelay = 0,
@@ -218,7 +191,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

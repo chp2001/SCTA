@@ -2,7 +2,6 @@ UnitBlueprint {
     Merge = true, 
     BuildIconSortPriority = 20,
     Categories = {
-        'BUILTBYT2VEHICLE',
         'BUILTBYT2KBOT',
         'BUILTBYT2AIR',
         'SELECTABLE',
@@ -18,7 +17,6 @@ UnitBlueprint {
     'OVERLAYRADAR',
     'OVERLAYOMNI',
 	'ARM',
-	'SPECIAL',
 	'LEVEL3',
 	'SORTINTEL',
     },

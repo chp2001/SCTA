@@ -29,16 +29,13 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
+        'LEVEL1',
         'TECH1',
-	'STRUCTURE',
+	    'STRUCTURE',
         'ENERGYSTORAGE',
-                'ECONOMIC',
+        'ECONOMIC',
         'SORTECONOMY',
-	'TEXTUREANIM',
-	'CORE',
-	'ENERGY',
-	'LEVEL1',
-	'STORAGE',
+	    'CORE',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -51,16 +48,6 @@ UnitBlueprint {
     },
     Description = 'Increases Energy Storage',
     Display = {
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-	},]]--
-	--TextureAnimationFrames = 8,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -71,7 +58,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.1,
     },
     Economy = {
         BuildCostEnergy = 2490,
@@ -90,11 +77,12 @@ UnitBlueprint {
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Energy Storage',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 10,
         WaterVisionRadius = 4, 
     },
     Interface = {
@@ -121,7 +109,7 @@ UnitBlueprint {
         { #ESTOR_BUILDINGEX
             Damage = 900,
             DamageFriendly = true,
-            DamageRadius = 4.6875,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

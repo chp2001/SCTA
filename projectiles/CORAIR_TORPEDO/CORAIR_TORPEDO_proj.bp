@@ -42,7 +42,7 @@ ProjectileBlueprint {
         EntityCategory = {
             'CORE',
             'PROJECTILE',
-            'DIRECTFIRE',
+            'TORPEDO',
 	    'ANTINAVY',
         },
         Faction = 'CORE',
@@ -52,13 +52,14 @@ ProjectileBlueprint {
         HelpText = 0,
     },
     Physics = {
+        Acceleration = 0,
         DestroyOnWater = false,
         InitialSpeed = 10,
-        Lifetime = 10,
-	StayUpright = true,
+        Lifetime = 20,
+        MaxSpeed = 10,
         StayUnderwater = true,
-        TurnRate = 3600,
+        TrackTarget = true,
+        TurnRate = 230,
         VelocityAlign = true,
-        UseGravity = true,
     },
 }

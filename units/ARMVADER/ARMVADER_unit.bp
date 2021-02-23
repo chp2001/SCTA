@@ -29,6 +29,8 @@ UnitBlueprint {
     BuildIconSortPriority = 11,
     Categories = {
         'SELECTABLE',
+        'KBOT',
+        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -37,9 +39,8 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
-        'KBOT',
-	'LEVEL2',
 	'KAMIKAZI',
+    'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -68,7 +69,7 @@ UnitBlueprint {
                 },
             },
         },
-        SmokeBone = 'ARMVADER',
+        ---SmokeBone = 'ARMVADER',
         UniformScale = 0.16,
     },
     Economy = {
@@ -77,8 +78,8 @@ UnitBlueprint {
         BuildTime = 7901,
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 2,
+        SizeX = 2,
+        SizeZ = 1,
     },
     General = {
         Category = 'Direct Fire',
@@ -93,7 +94,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Invader',
     },
     Intel = {

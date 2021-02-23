@@ -29,6 +29,8 @@ UnitBlueprint {
     BuildIconSortPriority = 19,
     Categories = {
         'SELECTABLE',
+        'VEHICLE',
+        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -36,8 +38,6 @@ UnitBlueprint {
 	'LAND',
 	'ANTIAIR',
         'CORE',
-        'VEHICLE',
-	'LEVEL2',
 	'OVERLAYDEFENSE',
     },
     Defense = {
@@ -55,9 +55,6 @@ UnitBlueprint {
         '<LOC ability_tacmissiledef>Tactical Missile Defense',
         },
         MovementEffects = {
-            Bones = {'CORMABM'},
-            Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
-            Scale = 0.5,
             Land = {
                 Treads = {
                     ScrollMultiplier = 1,
@@ -83,12 +80,8 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 120,
-                    Scrolling = true,
-                    ShaderName = 'Unit',
-                },
-                {
                     LODCutoff = 230,
+                    Scrolling = true,
                     ShaderName = 'Unit', 
                 },
             },
@@ -113,7 +106,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Hedgehog',
     },
     Intel = {
@@ -220,9 +214,9 @@ UnitBlueprint {
             WeaponUnpacks = true,
         },
         { #SMALL_UNITEX
-            Damage = 10,
+            Damage = 100,
             DamageFriendly = true,
-            DamageRadius = 0.9375,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

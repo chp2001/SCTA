@@ -5,27 +5,27 @@
 
 UnitBlueprint {
     BuildIconSortPriority = 20,
+    AI = {
+        TargetBones = {
+            0,
+        },
+    },
     Categories = {
         'BUILTBYT2VEHICLE',
         'BUILTBYT2KBOT',
         'BUILTBYT2AIR',
-	'UNSELECTABLE',
+	    'UNSELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
+        'LEVEL2',
         'BENIGN',
-	'STRUCTURE',
+	    'STRUCTURE',
         'DEFENSE',
         'WALL',
-	'NOEXPLOSION',
-	'NOSMOKE',
-	'ARM',
-	'METAL',
-	'LEVEL2',
-	'SORTDEFENSE',
-	
-	
+	    'ARM',
+	    'SORTDEFENSE',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -41,12 +41,6 @@ UnitBlueprint {
         Abilities = {
             'Wall',
         },
-		--[[DestructionEffects = {
-		DefaultFlamingProjectileCountMin = 0,
-		DefaultFlamingProjectileCountMax = 0,
-		FlashSize = 0,
-		FlashTime = 0,
-		},]]--
         Mesh = {
 	    IconFadeInZoom = 130,
             LODs = {
@@ -76,6 +70,7 @@ UnitBlueprint {
         Classification = 'RULEUC_MiscSupport',
         SelectionPriority = 5,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Secret',
         UnitName = 'Fortification Wall',
     },

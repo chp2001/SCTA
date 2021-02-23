@@ -13,8 +13,8 @@ CORSFIG = Class(TASeaair) {
 			chassis = CreateSlider(self, 0),
 		}
 		self.Spinners = {
-			wing1 = CreateRotator(self, 'wing1', 'z', nil, 0, 0, 0),
-			wing2 = CreateRotator(self, 'wing2', 'z', nil, 0, 0, 0),
+			wing1 = CreateRotator(self, 'rwing', 'z', nil, 0, 0, 0),
+			wing2 = CreateRotator(self, 'lwing', 'z', nil, 0, 0, 0),
 		}
 		for k, v in self.Sliders do
 			self.Trash:Add(v)
@@ -28,11 +28,11 @@ CORSFIG = Class(TASeaair) {
 
 	OpenWings = function(self)
 		--MOVE winga to x-axis <5.59> SPEED <5.00>;
-		self.Spinners.wing1:SetGoal(50)
+		self.Spinners.wing1:SetGoal(90)
 		self.Spinners.wing1:SetSpeed(50)
 
 		--MOVE wing2 to x-axis <-5.65> SPEED <5.00>;
-		self.Spinners.wing2:SetGoal(-50)
+		self.Spinners.wing2:SetGoal(-90)
 		self.Spinners.wing2:SetSpeed(50)
 
 		self.moving = true

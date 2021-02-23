@@ -12,7 +12,7 @@ ARMRL = Class(TAStructure) {
 	OnCreate = function(self)
 		TAStructure.OnCreate(self)
 		self.Spinners = {
-			barrel = CreateRotator(self, 'Barrel', 'z', nil, 0, 0, 0),
+			barrel = CreateRotator(self, 'gun1', 'z', nil, 0, 0, 0),
 		}
 		for k, v in self.Spinners do
 			self.Trash:Add(v)

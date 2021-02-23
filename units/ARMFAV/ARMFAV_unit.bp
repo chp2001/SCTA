@@ -29,25 +29,19 @@ UnitBlueprint {
     BuildIconSortPriority = 2,
     Categories = {
         'SELECTABLE',
+        'VEHICLE',
+        'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-	
         'MOBILE',
-	'LAND',
-	'SCOUT',
-	'DIRECTFIRE',
+        'LAND',
+        'SCOUT',
+        'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
+        'RADAR',
         'OVERLAYRADAR',
-	
         'ARM',
-        'VEHICLE',	#'TANK' in TA
-	'LEVEL1',
-	
-	
-	
-	
     },
     Defense = {
         ArmorType = 'Normal',
@@ -61,16 +55,13 @@ UnitBlueprint {
     Description = 'Fast Attack Vehicle',
     Display = {
         MovementEffects = {
-            Bones = {'ARMFAV'},
-            Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
-            Scale = 0.5,
             Land = {
                 Treads = {
                     ScrollMultiplier = 0.75,
                     ScrollTreads = true,
                     TreadMarks = {
                         {
-                             BoneName = 'ARMFAV',
+                            BoneName = 'ARMFAV',
                             TreadMarks = 'tank_treads_albedo',
                             TreadMarksInterval = 0.2,
                             TreadMarksSizeX = 0.5,
@@ -89,13 +80,9 @@ UnitBlueprint {
             IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 120,
-                    Scrolling = true,
-                    ShaderName = 'AeonCZAR',
-                },
-                {
                     LODCutoff = 230,
-                    ShaderName = 'AeonCZAR', 
+                    Scrolling = true,
+                    ShaderName = 'Unit', 
                 },
             },
         },
@@ -119,7 +106,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'ARM',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'Jeffy',
     },
     Intel = {
@@ -215,9 +203,9 @@ UnitBlueprint {
             Turreted = true,
         },
         { #SMALL_UNITEX
-            Damage = 10,
+            Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 0.9375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

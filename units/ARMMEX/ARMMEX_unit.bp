@@ -40,18 +40,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
+        'LEVEL1',
 	    'STRUCTURE',
         'MASSPRODUCTION',
         'MASSEXTRACTION',
-                'ECONOMIC',
+        'ECONOMIC',
         'SORTECONOMY',
 	    'ARM',
-	    'ENERGY',
-	    'LEVEL1',
-	    
-	    
-	    
-	    'STORAGE',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -64,31 +59,6 @@ UnitBlueprint {
     },
     Description = 'Extracts Metal',
     Display = {
-		--[[DestructionEffects = {
-		DefaultProjectileCategories = {'CamoflageC','Noise3'},
-		DestructionProjectiles = {
-			{
-				ProjectileBlueprint = '/mods/SCTA-master/effects/entities/Debris/Pieces/ARMMEX_debris01_proj.bp',
-				Bone = 'arms',
-			},
-		},
-		DestructionEmitters = {
-			{
-				EmitterBone = {0},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-			{
-				EmitterBone = {'arms'},
-				EmitterBlueprint = {
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-			    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    					'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-				},
-				EmitterSize = 0.35,
-			},
-		},
-	},]]---
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -128,7 +98,9 @@ UnitBlueprint {
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
         },
+        ConstructionBar = true,
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Basic',
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,
@@ -170,9 +142,9 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_BUILDINGEX
-            Damage = 40,
+            Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 6.406,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

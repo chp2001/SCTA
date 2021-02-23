@@ -40,6 +40,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
+        'LEVEL1',
 	    'STRUCTURE',
         'MASSPRODUCTION',
         'MASSEXTRACTION',
@@ -47,9 +48,6 @@ UnitBlueprint {
         'SORTECONOMY',
     'CORE',        
     'SHOWQUEUE',
-	'METAL',
-	'LEVEL1',
-	'STORAGE',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -100,7 +98,9 @@ UnitBlueprint {
             RULEUCC_Stop = true,
             RULEUCC_Transport = false,
         },
+        ConstructionBar = true,
         FactionName = 'CORE',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Basic',
         ToggleCaps = {
             RULEUTC_ProductionToggle = true,

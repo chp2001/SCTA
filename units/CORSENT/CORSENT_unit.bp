@@ -30,15 +30,15 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'VEHICLE',
+        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'ANTIAIR',
+	    'LAND',
+	    'ANTIAIR',
         'OVERLAYANTIAIR',
         'CORE',
-        'VEHICLE',
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -55,9 +55,6 @@ UnitBlueprint {
             '<LOC ability_aa>Anti-Air',
         },
     MovementEffects = {
-        Bones = {'CORSENT'},
-        Emitter = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
-        Scale = 0.5,
         Land = {
             Treads = {
                 ScrollMultiplier = 0.75,
@@ -79,17 +76,13 @@ UnitBlueprint {
             },
         },
     },
-        Mesh = {
-            IconFadeInZoom = 130,
-            LODs = {
-                    {
-                        LODCutoff = 120,
-                        Scrolling = true,
-                        ShaderName = 'Unit',
-                    },
-                {
-                    LODCutoff = 230,
-                    ShaderName = 'Unit', 
+    Mesh = {
+        IconFadeInZoom = 130,
+        LODs = {
+            {
+                LODCutoff = 230,
+                Scrolling = true,
+                ShaderName = 'Unit', 
                 },
             },
         },
@@ -113,7 +106,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Copperhead',
     },
     Intel = {
@@ -160,17 +154,15 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 90,
-            DamageRadius = 3.28,
-	    EdgeEffectiveness = 0.9,
+            DamageRadius = 3,
             FiringRandomness = 0,
-            DamageType = 'AntiAir',
+            DamageType = 'Normal',
             DisplayName = 'ARMYORK_GUN',
             FireTargetLayerCapsTable = {
                 Land = 'Air',
-                Seabed = 'Air',
             },
-	    RangeCategory = 'UWRC_AntiAir',
-     WeaponCategory = 'AntiAir',
+	        RangeCategory = 'UWRC_AntiAir',
+            WeaponCategory = 'AntiAir',
             FiringTolerance = 4.2,
             Label = 'ARMYORK_GUN',
             MaxRadius = 42.5,
@@ -219,7 +211,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

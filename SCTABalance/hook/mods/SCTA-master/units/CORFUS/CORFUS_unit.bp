@@ -3,8 +3,8 @@ UnitBlueprint {
     Categories = {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
-        'BUILTBYT2VEHICLE',
-        'BUILTBYT2SUB',
+        'BUILTBYT1AIR',
+        'BUILTBYT1VEHICLE',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -14,7 +14,7 @@ UnitBlueprint {
         'ECONOMIC',
 	'ENERGYPRODUCTION',
 	'CORE',
-	'ENERGY',
+	'FUSION',
 	'LEVEL2',
 	'SORTECONOMY',
     },
@@ -25,10 +25,6 @@ UnitBlueprint {
     Display = {
         UniformScale = 0.2,
         },
-        Footprint = {
-            SizeX = 4,
-            SizeZ = 4,
-        },
     Economy = {
         BuildCostEnergy = 38000,
         BuildCostMass = 1900,
@@ -37,10 +33,6 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 500,
     },
     LifeBarSize = 4,
-    Physics = {
-        SkirtSizeX = 0,
-        SkirtSizeZ = 0,
-    },
     SelectionSizeX = 4,
     SelectionSizeZ = 4,
     SizeY = 4,

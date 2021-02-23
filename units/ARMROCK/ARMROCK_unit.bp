@@ -30,15 +30,16 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
+        'KBOT',
+	    'LEVEL1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
+	    'LAND',
+	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
-        'KBOT',
-	'LEVEL1',
+        'ROCKET',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -53,9 +54,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/ARMROCK/ARMROCK_lod0_Awalk.sca',
         AnimationWalkRate = 1,
-        Abilities = {
-            'Rocket',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -66,7 +64,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'Torso',
+	---SmokeBone = 'Torso',
         UniformScale = 0.16,
     },
     Economy = {
@@ -74,7 +72,6 @@ UnitBlueprint {
         BuildCostMass = 117,
         BuildTime = 1946,
     },
-
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -88,11 +85,12 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Basic',
         UnitName = 'Rocko',
     },
     Intel = {
-        VisionRadius = 16,
+        VisionRadius = 10,
     },
     Interface = {
         HelpText = 'Rocket Kbot',
@@ -133,7 +131,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 105,
-            DamageRadius = 0.5, 
+            DamageRadius = 1, 
             FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'KBOT_ROCKET',
@@ -141,9 +139,9 @@ UnitBlueprint {
                 Land = 'Land|Water|Air',
                 Seabed = 'Land|Water|Air',
             },
-	    RangeCategory = 'UWRC_DirectFire',
-     WeaponCategory = 'DirectFire',
-            FiringTolerance = 0,
+	        RangeCategory = 'UWRC_DirectFire',
+            WeaponCategory = 'DirectFire',
+            FiringTolerance = 10,
             Label = 'KBOT_ROCKET',
             MaxRadius = 25,
             MuzzleSalvoDelay = 0,
@@ -157,7 +155,7 @@ UnitBlueprint {
                     },
                     RackBone = 'Barrel',
                 },
-	    },
+	        },
             RackRecoilDistance = -0.75, 				
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
@@ -181,14 +179,11 @@ UnitBlueprint {
             TurretYawRange = 360,
             TurretYawSpeed = 130,
             Turreted = true,
-            EnergyDrainPerSecond = 5,
-            EnergyRequired = 5,
-            WeaponCategory = 'Direct Fire',
         },
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

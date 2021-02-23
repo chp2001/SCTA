@@ -29,6 +29,8 @@ UnitBlueprint {
     BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
+        'KBOT',
+        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -37,8 +39,7 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'KBOT',
-	'LEVEL2',
+    'PYRO',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -65,7 +66,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'torso',
+	---SmokeBone = 'torso',
         UniformScale = 0.16,
     },
     Economy = {
@@ -86,7 +87,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Pyro',
     },
     Intel = {
@@ -182,9 +184,9 @@ UnitBlueprint {
             Turreted = true,
         },
         { #BIG_UNITEX
-            Damage = 50,
+            Damage = 300,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

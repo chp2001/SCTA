@@ -1,7 +1,24 @@
 UnitBlueprint {
     Merge = true,
+    Categories = {
+      'BUILTBYT2AIR',
+      'BUILTBYT2KBOT',
+      'BUILTBYT2VEHICLE',
+      'SELECTABLE',
+      'DRAGBUILD',
+      'VISIBLETORECON',
+      'RECLAIMABLE',
+      'TECH3',
+      'STRUCTURE',
+      'MASSPRODUCTION',
+      'MASSFABRICATION',
+      'ECONOMIC',
+      'SORTECONOMY',
+      'ARM',
+      'LEVEL3',
+  },
     Display = {
-            UniformScale = 0.20,
+            UniformScale = 0.2,
         },
         Defense = {
           Health = 6000,
@@ -15,11 +32,13 @@ UnitBlueprint {
         VisionRadius = 10,
     },
       LifeBarSize = 4,
-    Economy = {
+      Economy = {
         BuildCostEnergy = 600000,
         BuildCostMass = 5600,
         ProductionPerSecondMass = 24,
-  MaintenanceConsumptionPerSecondEnergy = 700,
-  BuildTime = 105000,
+        MaintenanceConsumptionPerSecondEnergy = 700,
+        BuildTime = 105000,
   },
+  SelectionSizeX = 4,
+  SelectionSizeZ = 4,
 }

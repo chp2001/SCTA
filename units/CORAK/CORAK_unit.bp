@@ -29,6 +29,8 @@ UnitBlueprint {
     BuildIconSortPriority = 2,
     Categories = {
         'SELECTABLE',
+        'KBOT',
+        'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -37,12 +39,7 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'KBOT',
-	'LEVEL1',
-	
-	
-	
-	
+	'RAIDER',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -58,15 +55,6 @@ UnitBlueprint {
         Abilities = {
             'Infantry',
         },
-		--[[DestructionEffects = {
-		DestructionEmitters = {
-			{
-				EmitterBone = {'torso'},
-				EmitterBlueprint = {'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp'},
-				EmitterSize = 1.25,
-			},
-		},
-   	},]]--
     AnimationWalk = '/mods/SCTA-master/units/CORAK/CORAK_lod0_Awalk.sca',
     AnimationWalkRate = 1,
         Mesh = {
@@ -78,7 +66,7 @@ UnitBlueprint {
                 },
             },
         },
-	SmokeBone = 'torso',
+	---SmokeBone = 'torso',
         UniformScale = 0.16,
     },
     Economy = {
@@ -99,7 +87,8 @@ UnitBlueprint {
             RULEUCC_Stop = true,
         },
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Basic',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
         UnitName = 'A.K.',
     },
     Intel = {
@@ -208,7 +197,7 @@ UnitBlueprint {
         { #SMALL_UNITEX
             Damage = 10,
             DamageFriendly = true,
-            DamageRadius = 0.9375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

@@ -10,17 +10,16 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-	'STRUCTURE',
-    'ECONOMIC',
-    'SORTECONOMY',
-	'ENERGYPRODUCTION',
-	'HYDROCARBON',
-	'ARM',
-	'ENERGY',
-	'LEVEL2',
+	    'STRUCTURE',
+        'ECONOMIC',
+        'SORTECONOMY',
+        'LEVEL1',
+	    'ENERGYPRODUCTION',
+	    'HYDROCARBON',
+	    'ARM',
     },
     Display = {
-        UniformScale = 0.32,
+        UniformScale = 0.24,
     },
     Defense = {
         Health = 2000,
@@ -37,9 +36,10 @@ UnitBlueprint {
         BuildCostEnergy = 1800,
         BuildCostMass = 520,
         BuildTime = 9000,
-	    NaturalProducer = true,
         ProductionPerSecondEnergy = 120,
-    },
+    },   
+    LifeBarHeight = 0.075,
+    LifeBarOffset = 1.2,
     LifeBarSize = 6,
  Physics = {
         SkirtOffsetX = -1.5,
@@ -57,4 +57,3 @@ UnitBlueprint {
     SizeZ = 8,
     StrategicIconName = 'icon_structure1_energy',
 }
-

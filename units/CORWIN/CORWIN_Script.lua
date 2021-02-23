@@ -6,16 +6,17 @@
 local TAWin = import('/mods/SCTA-master/lua/TAWeather.lua').TAWin
 
 CORWIN = Class(TAWin) {
-	OnCreate = function(self,builder,layer)
-		TAWin.OnCreate(self,builder,layer)
+	OnCreate = function(self)
+		TAWin.OnCreate(self)
 		self:SetProductionPerSecondEnergy(0)
 		self.Spinners = {
 		   --CreateRotator(Win, bone, axis, [goal], [speed], [accel], [goalspeed])
-		   fan = CreateRotator(self, 'fan', 'z', nil, 0, 0, 0),
-		   cradle = CreateRotator(self, 'cradle', 'y', nil, 0, 0, 0),
+		   fan = CreateRotator(self, 'Rotors', 'z', nil, 0, 0, 0),
+		   cradle = CreateRotator(self, 'Tower', 'z', nil, 0, 0, 0),
 	   }
-	   	self.Trash:Add(self.Spinners.fan)
-		self.Trash:Add(self.Spinners.cradle)
+	   for k, v in self.Spinners do
+		self.Trash:Add(v)
+	end
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)

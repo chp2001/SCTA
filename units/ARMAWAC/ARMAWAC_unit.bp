@@ -63,6 +63,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -73,7 +74,6 @@ UnitBlueprint {
 	'RADAR',
         'OVERLAYRADAR',
         'ARM',
-	'LEVEL2',
     },
     Defense = {
         ArmorType = 'Light',
@@ -101,11 +101,15 @@ UnitBlueprint {
         },
         UniformScale = 0.16,
     },
+    Footprint = {
+        MaxSlope = 0.25,
+        SizeX = 1,
+        SizeZ = 1,
+    },
     Economy = {
         BuildCostEnergy = 8062,
         BuildCostMass = 165,
         BuildTime = 12819,
-        MaintenanceConsumptionPerSecondEnergy = 23,
     },
     General = {
         Category = 'Utility',
@@ -118,17 +122,14 @@ UnitBlueprint {
             RULEUCC_Patrol = true,
             RULEUCC_Stop = true,
         },
-        ToggleCaps = {
-            RULEUTC_IntelToggle = true,
-        },
         FactionName = 'ARM',
+        Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Eagle',
     },
     Intel = {
-    VisionRadius = 22,
+    VisionRadius = 16,
     WaterVisionRadius = 6,
-	FreeIntel = true,
 	RadarRadius = 103, 
     },
     Interface = {
@@ -140,7 +141,7 @@ UnitBlueprint {
     Physics = {
         Elevation = 15,
         MotionType = 'RULEUMT_Air',
-        GroundCollisionOffset = 1.5,
+        GroundCollisionOffset = 1.6,
         MaxAcceleration = 10,
         MaxSpeed = 10,
         MaxSteerForce = 100,
@@ -156,9 +157,10 @@ UnitBlueprint {
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
     SelectionThickness = 0.25,
-    SizeX = 3,
-    SizeY = 1,
-    SizeZ = 3,
+    SizeSphere = 1.6,
+    SizeX = 2.3,
+    SizeY = 0.25,
+    SizeZ = 1,
     StrategicIconName = 'icon_fighter2_intel',
     StrategicIconSortPriority = 0,
     Transport = {
@@ -169,7 +171,7 @@ UnitBlueprint {
         { #BIG_UNITEX
             Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 3.4375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

@@ -39,6 +39,10 @@ UnitBlueprint {
     BuildIconSortPriority = 0,
     Categories = {
         'SELECTABLE',
+        'OCEAN',
+        'T2SUBMARINE',
+        'OVERLAYSONAR',
+	    'LEVEL2',
         'TECH2',
         'ENGINEER',
         'REPAIR',
@@ -52,10 +56,6 @@ UnitBlueprint {
 	    'CONSTRUCTION',
 	    'NAVAL',
         'CORE',
-        'OCEAN',
-        'T2SUBMARINE',
-        'OVERLAYSONAR',
-	    'LEVEL2',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -84,9 +84,11 @@ UnitBlueprint {
             },
         },
 	MovementEffects = {
+        TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake_01','Wake_02'},
+        Bones = {'Wake_01','Wake_02'},
+        },
 	},
         UniformScale = 0.16,
     },
@@ -130,7 +132,8 @@ UnitBlueprint {
         ConstructionBar = true,
         SelectionPriority = 3,
         FactionName = 'CORE',
-        TechLevel = 'RULEUTL_Advanced',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Advanced Construction Sub',
     },
     Intel = {
@@ -174,9 +177,9 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_UNITEX
-            Damage = 10,
+            Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 0.9375,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

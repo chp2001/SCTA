@@ -103,7 +103,7 @@ UnitBlueprint {
             LAYER_Seabed = true,
         },
         SkirtSizeX = 5,
-        SkirtSizeZ = 4,
+        SkirtSizeZ = 5,
     },
     SelectionSizeX = 2.5,
     SelectionSizeZ = 2,

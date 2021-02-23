@@ -108,9 +108,6 @@ TechLevel = 'RULEUTL_Secret',
     Physics = {
         SkirtSizeX = 3, 
         SkirtSizeZ = 3,  
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
     },
     SelectionSizeX = 2.2,
     SelectionSizeZ = 2.2,

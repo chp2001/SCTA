@@ -1,5 +1,4 @@
-﻿
-armordefinition = {
+﻿armordefinition = {
 
     {   # Armor Type Name
         'Default',
@@ -49,7 +48,7 @@ armordefinition = {
         'AntiSub 0.3',
         'Overcharge 0.25',
         'DGun 0.33',
-        'Deathnuke 0.032'
+        'Deathnuke 0.032',
     },
     {
         # Armor Type name

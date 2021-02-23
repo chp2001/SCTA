@@ -44,6 +44,9 @@ TAFactory = Class(FactoryUnit) {
         OnStopBuild = function(self, unitBuilding)
             FactoryUnit.OnStopBuild(self, unitBuilding)
             self:Close()
+            if __blueprints['armmass'] then
+                TAutils.updateBuildRestrictions(self)
+            end
 		end,
         
 

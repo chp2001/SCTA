@@ -111,9 +111,6 @@ UnitBlueprint {
     Physics = {
         SkirtSizeX = 4, 
         SkirtSizeZ = 4,  
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,

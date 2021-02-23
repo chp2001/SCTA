@@ -126,11 +126,8 @@ TechLevel = 'RULEUTL_Advanced',
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         FlattenSkirt = true,
-        SkirtSizeX = 7,
+        SkirtSizeX = 6,
         SkirtSizeZ = 6,
         RollOffPoints = {
             {

@@ -161,28 +161,6 @@ TechLevel = 'RULEUTL_Basic',
             Z = 0,
         },
     },
-        OccupyRects = {
-            # offsetX offsetZ  sizeX sizeZ, offset from center of unit
-            -4,
-            -4,
-            0.5,
-            0.5,
-
-            3,
-            3,
-            0.5,
-            0.5,
-
-            3,
-            -4,
-            0.5,
-            0.5,
-
-            -4,
-            3,
-            0.5,
-            0.5,
-        },
     },
     SelectionSizeX = 4.25,
     SelectionSizeZ = 4.25,

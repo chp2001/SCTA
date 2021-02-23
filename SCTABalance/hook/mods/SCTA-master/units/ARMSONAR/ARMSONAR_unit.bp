@@ -67,9 +67,6 @@ UnitBlueprint {
     Physics = {
         SkirtSizeX = 1, 
         SkirtSizeZ = 1, 
-        BuildOnLayerCaps = {
-            LAYER_Water = true,
-        },
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,

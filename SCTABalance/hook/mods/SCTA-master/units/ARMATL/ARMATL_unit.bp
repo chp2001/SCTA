@@ -22,11 +22,6 @@ UnitBlueprint {
         Health = 2000,
         MaxHealth = 2000,
     },
-    Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Water = true,
-        },
-    },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,
     SelectionThickness = 0.5,

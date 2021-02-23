@@ -101,9 +101,6 @@ TechLevel = 'RULEUTL_Basic',
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         SkirtSizeX = 5,
         SkirtSizeZ = 5,
     },

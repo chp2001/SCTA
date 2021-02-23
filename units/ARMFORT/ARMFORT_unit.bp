@@ -85,9 +85,6 @@ UnitBlueprint {
     LifeBarSize = 2,
     LifeBarRender = false,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         SkirtSizeX = 2,
         SkirtSizeZ = 2,
     },

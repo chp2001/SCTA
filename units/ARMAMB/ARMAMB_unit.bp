@@ -95,11 +95,6 @@ TechLevel = 'RULEUTL_Secret',
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
-    Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
-    },
     SelectionSizeX = 2,
     SelectionCenterOffsetZ = -0.75,
     SelectionSizeZ = 2,

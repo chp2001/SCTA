@@ -32,9 +32,6 @@ UnitBlueprint {
         MaxHealth = 2500,
     },
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Water = true,
-        },
         SkirtSizeX = 2,
         SkirtSizeZ = 2,
     },

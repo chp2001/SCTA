@@ -26,26 +26,21 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI LAB',
         PlatoonTemplate = 'LABSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 90,
-        InstanceCount = 200,
+        Priority = 300,
+        InstanceCount = 5,
         BuilderType = 'Any',
         BuilderData = {
             NeverGuardBases = true,
             NeverGuardEngineers = true,
             UseFormation = 'AttackFormation',
-            ThreatWeights = {
-                IgnoreStrongerTargetsRatio = 100.0,
-            },
-        },
-        BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.RAIDER} },
-        },
+        },        
+        BuilderConditions = { },
     },
     Builder {
         BuilderName = 'SCTAAI Land Attack',
         PlatoonTemplate = 'LandAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 100,
-        InstanceCount = 2,
+        InstanceCount = 30,
         BuilderType = 'Any',
         BuilderData = {
             ThreatSupport = 75,
@@ -67,7 +62,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Land2 Attack',
         PlatoonTemplate = 'LandRocketAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 100,
-        InstanceCount = 2,
+        InstanceCount = 30,
         BuilderType = 'Any',
         BuilderData = {
             ThreatSupport = 75,
@@ -90,7 +85,7 @@ BuilderGroup {
         PlatoonTemplate = 'T4ExperimentalSCTA',
         Priority = 10000,
         FormRadius = 10000,
-        InstanceCount = 50,
+        InstanceCount = 2,
         BuilderType = 'Any',
         BuilderData = {
             ThreatWeights = {

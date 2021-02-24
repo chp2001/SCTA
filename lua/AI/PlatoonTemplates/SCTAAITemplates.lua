@@ -19,11 +19,11 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'LABSCTA',
-    Plan = 'ScoutingAI', -- The platoon function to use.
+    Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
         { categories.MOBILE * categories.RAIDER, -- Type of units.
           1, -- Min number of units.
-          2, -- Max number of units.
+          3, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
           'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
@@ -32,9 +32,9 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'LandAttackSCTA',
-    Plan = 'AttackForceAI',
+    Plan = 'SCTAStrikeForceAI',
     GlobalSquads = {
-        { categories.MOBILE * categories.LAND - categories.EXPERIMENTAL - categories.ENGINEER - categories.ROCKET, 2, 20, 'Attack', 'none' }
+        { categories.MOBILE * categories.LAND - categories.EXPERIMENTAL - categories.ENGINEER - categories.ROCKET - categories.RAIDER, 2, 20, 'Attack', 'none' }
     },
 }
 
@@ -42,7 +42,7 @@ PlatoonTemplate {
     Name = 'LandRocketAttackSCTA',
     Plan = 'AttackForceAI',
     GlobalSquads = {
-        { categories.MOBILE * categories.LAND * (categories.ROCKET + categories.ARTILLERY) - categories.EXPERIMENTAL - categories.ENGINEER, 6, 20, 'Attack', 'none' }
+        { categories.MOBILE * categories.LAND * (categories.ROCKET + categories.ARTILLERY) - categories.EXPERIMENTAL - categories.ENGINEER - categories.RAIDER, 6, 20, 'Attack', 'none' }
     },
 }
 

@@ -30,7 +30,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI Air Intercept',
-        PlatoonTemplate = 'AntiAirHunt',
+        PlatoonTemplate = 'IntieAISCTA',
         Priority = 100,
         InstanceCount = 200,
         BuilderType = 'Any',     

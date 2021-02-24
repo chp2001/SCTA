@@ -29,10 +29,11 @@ UnitBlueprint {
     StrategicIconName = 'icon_bot3_sniper',
     Weapon = {
         [1] = {
-            Damage = 2000,
+            Damage = 1500,
             MaxRadius = 60,
-            EnergyDrainPerSecond = 250,
-            EnergyRequired = 500,
+            RateOfFire = 0.1694915254,
+            EnergyDrainPerSecond = 200,
+            EnergyRequired = 400,
         },
         [2] = {
         },

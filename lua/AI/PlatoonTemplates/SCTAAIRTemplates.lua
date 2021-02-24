@@ -8,6 +8,14 @@
 #****************************************************************************
 
 PlatoonTemplate {
+    Name = 'IntieAISCTA',
+    Plan = 'InterceptorAI',
+    GlobalSquads = {
+        { categories.AIR * categories.MOBILE * categories.ANTIAIR * (categories.LEVEL1 + categories.LEVEL2 + categories.LEVEL3) - categories.BOMBER - categories.TRANSPORTFOCUS - categories.EXPERIMENTAL, 2, 100, 'attack', 'none' },
+    }
+}
+
+PlatoonTemplate {
     Name = 'T1AirScoutSCTA',
     FactionSquads = {
         Arm = {

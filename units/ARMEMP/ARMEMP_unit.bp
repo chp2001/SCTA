@@ -146,7 +146,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            DamageType = 'Normal',
+            DamageType = 'Nuke',
             DisplayName = 'EMBMSSL',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water',

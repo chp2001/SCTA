@@ -8,6 +8,8 @@ local util = import('/lua/utilities.lua')
 TAStructure = Class(TAunit) 
 {
 	LandBuiltHiddenBones = {'Floatation'},
+	MinConsumptionPerSecondEnergy = 1,
+    MinWeaponRequiresEnergy = 0,
 	
 	DoTakeDamage = function(self, instigator, amount, vector, damageType)
 	    -- Handle incoming OC damage
@@ -16,6 +18,16 @@ TAStructure = Class(TAunit)
             amount = wep:GetBlueprint().Overcharge.structureDamage
         end
         TAunit.DoTakeDamage(self, instigator, amount, vector, damageType)
+    end,
+
+	OnPaused = function(self)
+        TAunit.OnPaused(self)
+		self:UpdateConsumptionValues()
+    end,
+
+    OnUnpaused = function(self)
+        TAunit.OnUnpaused(self)
+		self:UpdateConsumptionValues()
     end,
 
 	OnStopBuild = function(self, unitBeingBuilt, order)

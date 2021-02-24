@@ -75,7 +75,7 @@ UnitBlueprint {
 		Bones = {'engineturn'},
         },
 	},
-        UniformScale = 0.16,
+        UniformScale = 0.1,
     },
     Economy = {
         BuildCostEnergy = 5481,

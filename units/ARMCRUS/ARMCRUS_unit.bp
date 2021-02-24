@@ -224,7 +224,7 @@ UnitBlueprint {
             },
             RangeCategory = 'UWRC_AntiNavy',
             WeaponCategory = 'AntiNavy',
-	    FiringTolerance = 3,
+	        FiringTolerance = 3,
             Label = 'ARMDEPTHCHARGE',
             MaxRadius = 45,
             MuzzleSalvoDelay = 0,
@@ -264,7 +264,7 @@ UnitBlueprint {
             Turreted = true,
         },
         { #BIG_UNITEX
-            Damage = 100,
+            Damage = 500,
             DamageFriendly = true,
             DamageRadius = 5,
             DamageType = 'Normal',

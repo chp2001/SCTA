@@ -14,7 +14,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandDFBotSCTA',
         Priority = 110,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {60} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {90} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'All',
     },

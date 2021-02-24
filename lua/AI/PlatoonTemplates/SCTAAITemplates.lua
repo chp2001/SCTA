@@ -19,11 +19,11 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'LABSCTA',
-    Plan = 'ScoutingAI', -- The platoon function to use.
+    Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
         { categories.MOBILE * categories.RAIDER, -- Type of units.
           1, -- Min number of units.
-          2, -- Max number of units.
+          3, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
           'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },

@@ -215,7 +215,7 @@ BuilderGroup {
             { MIBC, 'GreaterThanGameTime', {1800} },
             { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 4, categories.LAB * categories.LAND}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 7, categories.LAB * categories.LAND} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 9, categories.LAB * categories.LAND} },
             },
         BuilderData = {
             Location = 'LocationType',

@@ -26,6 +26,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 1500,
         BuildTime = 3000,
+        TAConsumptionPerSecondEnergy = 60,
         MaintenanceConsumptionPerSecondEnergy = 10,
     },
     Intel = {
@@ -38,6 +39,7 @@ UnitBlueprint {
           },
           JammerBlips = 5,
           OmniRadius = 15,
+          RadarStealth = true,
     },
     StrategicIconName = 'icon_bot3_intel',
 }

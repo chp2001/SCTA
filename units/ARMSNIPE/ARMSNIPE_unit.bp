@@ -76,6 +76,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 14727,
         BuildCostMass = 935,
+        TAConsumptionPerSecondEnergy = 1100,
         MaintenanceConsumptionPerSecondEnergy = 800,
         BuildTime = 28137,
     },

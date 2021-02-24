@@ -127,9 +127,9 @@ TAWalking = Class(TATreads)
 TACloaker = Class(TAWalking) {
     OnMotionHorzEventChange = function(self, new, old )
 		TAWalking.OnMotionHorzEventChange(self, new, old)
-        if self.cloakOn then
+        if self.TAIntelOn then
             if  self:IsUnitState('Moving') then
-                self:SetConsumptionPerSecondEnergy(1000)
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
             else
                 self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
             end

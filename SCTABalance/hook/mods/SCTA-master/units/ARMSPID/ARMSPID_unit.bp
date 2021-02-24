@@ -24,6 +24,10 @@ UnitBlueprint {
         Health = 2000,
         MaxHealth = 2000,
     },
+    Economy = {
+        TAConsumptionPerSecondEnergy = 30,
+        MaintenanceConsumptionPerSecondEnergy = 5,
+    },
     Display = {
         Abilities = {
             '<LOC ability_jamming>Jamming',
@@ -31,11 +35,15 @@ UnitBlueprint {
             'All-Terrain',
         },
     },
+    General = {
+    ToggleCaps = {
+        RULEUTC_JammingToggle = true,
+        },
+    },
     Intel = {
-        FreeIntel = true,
         JamRadius = {
             Max = 20,
-            Min = 20,
+            Min = 5,
         },
         JammerBlips = 4,
         VisionRadius = 14,

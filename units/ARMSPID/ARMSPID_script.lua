@@ -3,10 +3,10 @@
 #
 #Script created by Raevn
 
-local TAWalking = import('/mods/SCTA-master/lua/TAMotion.lua').TAWalking
+local TACloaker = import('/mods/SCTA-master/lua/TAMotion.lua').TACloaker
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-ARMSPID = Class(TAWalking) {
+ARMSPID = Class(TACloaker) {
 
 	Weapons = {
 		ARM_PARALYZER = Class(TAweapon) {

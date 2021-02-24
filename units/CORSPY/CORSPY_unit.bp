@@ -73,7 +73,8 @@ UnitBlueprint {
         BuildCostEnergy = 9000,
         BuildCostMass = 128,
         BuildTime = 22000,
-        MaintenanceConsumptionPerSecondEnergy = 10,
+        TAConsumptionPerSecondEnergy = 900,
+        MaintenanceConsumptionPerSecondEnergy = 350,
     },
     General = {
         Category = 'Utility',

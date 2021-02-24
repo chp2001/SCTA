@@ -21,6 +21,13 @@ UnitBlueprint {
         'DEFENSIVEBOAT',
         'OCEAN',
     },
+    Display = {
+        Abilities = {
+             '<LOC ability_personalstealth>Personal Stealth',
+             'Resurrection',
+             'Construction Unit',
+        },
+    },
     Defense = {
         Health = 800,
         MaxHealth = 800,
@@ -40,6 +47,8 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 10,
+        RadarStealth = true,
+        SonarStealth = true,
     },
     StrategicIconName = 'icon_structure1_engineer', 
 }

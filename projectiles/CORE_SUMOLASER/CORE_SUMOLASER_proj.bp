@@ -1,5 +1,5 @@
-#ARM Stingray Laser
-#ARMFHLT_LASER
+#CORE The Can Laser
+#CORE_CANLASER
 #
 #Blueprint created by Raevn
 
@@ -42,11 +42,12 @@ ProjectileBlueprint {
             'DIRECTFIRE',
         },
         Faction = 'CORE',
-        Weapon = 'ARMFHLT_LASER',
+        Weapon = 'CORE_SUMOLASER',
     },
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 50,
-        Lifetime = 3,
+        Lifetime = 5,
+        UseGravity = true,
     },
 }

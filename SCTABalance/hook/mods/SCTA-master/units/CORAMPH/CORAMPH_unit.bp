@@ -27,24 +27,16 @@ Economy = {
     Weapon = {
         [1] = {
             Damage = 200,
-            DamageRadius = 0.25,
-            FiringTolerance = 2.75,
             MaxRadius = 32,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
-            RackSalvoSize = 1,
             RateOfFire = 1.25,
+            EnergyDrainPerSecond = 50,
+            EnergyRequired = 50,
         },   
         [2] = {
             Damage = 400,
-            DamageRadius = 2,
             MaxRadius = 40,
             EnergyDrainPerSecond = 150,
             EnergyRequired = 300,
-            RackRecoilDistance = -1,
-            RackReloadTimeout = 0.5,
-            RackSalvoSize = 1,
-            RateOfFire = 0.25,
             EnergyChargeForFirstShot = true,
         },
         [3] = {

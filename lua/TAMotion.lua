@@ -123,3 +123,16 @@ TAWalking = Class(TATreads)
 		TATreads.OnKilled(self, instigator, type, overkillRatio)
 	end,
 }
+
+TACloaker = Class(TAWalking) {
+    OnMotionHorzEventChange = function(self, new, old )
+		TAWalking.OnMotionHorzEventChange(self, new, old)
+        if self.TAIntelOn then
+            if  self:IsUnitState('Moving') then
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
+            else
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
+            end
+        end
+    end,
+}

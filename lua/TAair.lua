@@ -107,3 +107,16 @@ TASeaair = Class(TAair)
     end,
 
 }
+
+TAAirCloaker = Class(TAair) {
+    OnMotionHorzEventChange = function(self, new, old )
+		TAair.OnMotionHorzEventChange(self, new, old)
+        if self.TAIntelOn then
+            if  self:IsUnitState('Moving') then
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
+            else
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
+            end
+        end
+    end,
+}

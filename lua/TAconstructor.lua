@@ -248,14 +248,31 @@ TACommander = Class(TAconstructor) {
         TAconstructor.DoTakeDamage(self, instigator, amount, vector, damageType)
     end,
 
+    
+    OnMotionHorzEventChange = function(self, new, old )
+		TAconstructor.OnMotionHorzEventChange(self, new, old)
+        if self.TAIntelOn then
+            if  self:IsUnitState('Moving') then
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
+            else
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
+            end
+        end
+    end,
+
+    OnStartReclaim = function(self, target)
+		TAconstructor.OnStartReclaim(self, target)
+		self:SetScriptBit('RULEUTC_CloakToggle', true)
+    end,
+
+    OnStartCapture = function(self, target)
+		TAconstructor.OnStartCapture(self, target)
+		self:SetScriptBit('RULEUTC_CloakToggle', true)
+    end,
+
 }
 
 TARealCommander = Class(TACommander) {
-    OnStartReclaim = function(self, target)
-		TACommander.OnStartReclaim(self, target)
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
-    end,
-    
     DeathThread = function(self)
         local army = self:GetArmy()
         local position = self:GetPosition()
@@ -303,27 +320,6 @@ TARealCommander = Class(TACommander) {
         for k, v in projectiles do
             v:SetAcceleration(-0.45)
         end
-    end,
-
-	OnStartCapture = function(self, target)
-		TACommander.OnStartCapture(self, target)
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
-    end,
-
-    OnMotionHorzEventChange = function(self, new, old )
-		TACommander.OnMotionHorzEventChange(self, new, old)
-        if self.cloakOn then
-            if  self:IsUnitState('Moving') then
-                self:SetConsumptionPerSecondEnergy(1000)
-            else
-                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
-            end
-        end
-    end,
-
-    OnStartBuild = function(self, unitBeingBuilt, order )
-        TACommander.OnStartBuild(self, unitBeingBuilt, order)
-        self:SetScriptBit('RULEUTC_CloakToggle', true)
     end,
 
 

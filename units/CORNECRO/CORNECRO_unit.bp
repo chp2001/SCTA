@@ -67,8 +67,11 @@ UnitBlueprint {
     },
     Description = 'Resurrection Kbot',
     Display = {
-    --AnimationBuild = '/mods/SCTA-master/units/CORNECRO/CORNECRO_lod0_unpack.sca',
-    --AnimationBuildRate = 1,
+        Abilities = {
+             '<LOC ability_personalstealth>Personal Stealth',
+             'Resurrection',
+             'Construction Unit',
+    },
     AnimationWalk = '/mods/SCTA-master/units/CORNECRO/CORNECRO_lod0_Awalk.sca',
     AnimationWalkRate = 1,
         Mesh = {
@@ -125,6 +128,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 12,
+        RadarStealth = true,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

@@ -1,17 +1,17 @@
-local oldARMSPY = ARMSPY
-ARMSPY = Class(oldARMSPY) { 
+local oldCORSPY = CORSPY
+CORSPY = Class(oldCORSPY) { 
 
 	OnIntelDisabled = function(self)
-		oldARMSPY.OnIntelDisabled(self)
+		oldCORSPY.OnIntelDisabled(self)
 		self:DisableIntel('RadarStealth')
 		self:EnableIntel('Jammer')
 	end,
 
 	OnIntelEnabled = function(self)
-		oldARMSPY.OnIntelEnabled(self)
+		oldCORSPY.OnIntelEnabled(self)
 		self:EnableIntel('RadarStealth')
 		self:DisableIntel('Jammer')
 	end,
 }
 
-TypeClass = ARMSPY
+TypeClass = CORSPY

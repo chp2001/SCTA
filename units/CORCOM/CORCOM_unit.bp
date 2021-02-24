@@ -137,7 +137,8 @@ UnitBlueprint {
         NaturalProducer = true,
         ProductionPerSecondEnergy = 25,
         ProductionPerSecondMass = 1,
-	MaintenanceConsumptionPerSecondEnergy = 200,
+        TAConsumptionPerSecondEnergy = 1000,
+	    MaintenanceConsumptionPerSecondEnergy = 200,
         StorageEnergy = 1000,
         StorageMass = 1000,
     },
@@ -188,6 +189,7 @@ UnitBlueprint {
         ActiveIntel = {
             Omni = true,
             Sonar = true,
+            Radar = true,
         },    
         FreeIntel = false,
         VisionRadius = 18,

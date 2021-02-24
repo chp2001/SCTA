@@ -100,7 +100,7 @@ UnitBlueprint {
     Intel = {
         SonarRadius = 30,
         VisionRadius = 10,
-        WaterVisionRadius = 10,
+        WaterVisionRadius = 20,
 	FreeIntel = true,
     },
     LifeBarHeight = 0.25,

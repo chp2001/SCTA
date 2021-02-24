@@ -53,9 +53,10 @@ TAunit = Class(Unit)
 	
 	OnIntelDisabled = function(self)
 		Unit.OnIntelDisabled()
-		self.TAIntelOn = nil
+		self.TAIntelOn = nil	
 		if EntityCategoryContains(categories.TACLOAK, self) then
-        if not self:IsIntelEnabled('Cloak') then
+		self.CloakOn = nil
+		if not self:IsIntelEnabled('Cloak') then
         self:PlayUnitSound('Uncloak')
 		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
 		end
@@ -66,7 +67,8 @@ TAunit = Class(Unit)
 		Unit.OnIntelEnabled()
 		self.TAIntelOn = true
 		if EntityCategoryContains(categories.TACLOAK, self) then
-       	 	if self:IsIntelEnabled('Cloak') then
+			if self:IsIntelEnabled('Cloak') then
+			self.CloakOn = true	
         	self:PlayUnitSound('Cloak')
 			self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
 				if not IsDestroyed(self) then
@@ -84,15 +86,17 @@ TAunit = Class(Unit)
         while not self.Dead do
             coroutine.yield(11)
             local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
-            if dudes[1] and self.TAIntelOn then
+            if dudes[1] and self.CloakOn then
                 self:DisableIntel('Cloak')
                 self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-			elseif not dudes[1] and self.TAIntelOn then
-                self:EnableIntel('Cloak')
-                self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
-			elseif self:IsUnitState('Building') and self.TAIntelOn then
+			elseif self:IsUnitState('Building') and self.CloakOn then
 				self:DisableIntel('Cloak')
+				self:UpdateConsumptionValues()
                 self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
+			elseif not dudes[1] and self.CloakOn then
+                self:EnableIntel('Cloak')
+				---self:UpdateConsumptionValues()
+                self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
         end
 	end
     end,
@@ -110,7 +114,7 @@ TAunit = Class(Unit)
 		if bit == 8 then
 			if self.CloakThread then
 				KillThread(self.CloakThread)
-				self.TAIntelOn = nil
+				self.CloakOn = nil
 			end
 		end
 		Unit.OnScriptBitClear(self, bit)

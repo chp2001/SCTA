@@ -19,6 +19,7 @@ UnitBlueprint {
         'KBOT',
         'LEVEL2',
         'JAM',
+        'TACLOAK',
     },
     Defense = {
         Health = 2000,

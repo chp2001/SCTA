@@ -190,6 +190,7 @@ UnitBlueprint {
         ActiveIntel = {
             Omni = true,
             Sonar = true,
+            Radar = true,
         },    
         FreeIntel = false,
         VisionRadius = 18,

@@ -21,6 +21,7 @@ UnitBlueprint {
         ActiveIntel = {
             Omni = true,
             Sonar = true,
+            Radar = true,
             RadarStealth = true,
             SonarStealth = true,
         },

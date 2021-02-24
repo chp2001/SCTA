@@ -3,12 +3,12 @@
 #
 #Script created by Raevn
 
-local TAWalking = import('/mods/SCTA-master/lua/TAMotion.lua').TAWalking
+local TACloaker = import('/mods/SCTA-master/lua/TAMotion.lua').TACloaker
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-ARMSNIPE = Class(TAWalking) {
+ARMSNIPE = Class(TACloaker) {
     OnStopBeingBuilt = function(self, builder, layer)
-		TAWalking.OnStopBeingBuilt(self, builder, layer)
+		TACloaker.OnStopBeingBuilt(self, builder, layer)
         self:SetMaintenanceConsumptionInactive()
         self:SetScriptBit('RULEUTC_CloakToggle', true)
         self:RequestRefreshUI()

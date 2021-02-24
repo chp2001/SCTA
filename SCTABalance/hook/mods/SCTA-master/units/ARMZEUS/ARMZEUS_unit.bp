@@ -26,9 +26,11 @@ UnitBlueprint {
     StrategicIconName = 'icon_land2_directfire',
     Weapon = {
         [1] = {
-            Damage = 53,
+            EnergyDrainPerSecond = 50,
+            EnergyRequired = 50,
+            EnergyChargeForFirstShot = true,
+            Damage = 70,
             MaxRadius = 22,
-            MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             RackSalvoSize = 1,
             RateOfFire = 1,

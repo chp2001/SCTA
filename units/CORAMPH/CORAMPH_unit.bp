@@ -155,6 +155,9 @@ TechLevel = 'RULEUTL_Advanced',
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 43.75,
+            EnergyDrainPerSecond = 50,
+            EnergyRequired = 50,
+            EnergyChargeForFirstShot = true,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_LASERH1/CORE_LASERH1_proj.bp',
             RackBones = {
                 {

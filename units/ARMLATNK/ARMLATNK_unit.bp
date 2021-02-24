@@ -190,8 +190,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 93,
-            DamageRadius = 1.5, 
+            Damage = 100,
+            DamageRadius = 1, 
             DamageType = 'LANDAir',
             DisplayName = 'ARMKBOT_MISSILE',
             FireTargetLayerCapsTable = {

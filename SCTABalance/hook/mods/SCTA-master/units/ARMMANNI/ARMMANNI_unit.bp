@@ -35,8 +35,6 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         [1] = {
-            EnergyDrainPerSecond = 500,
-            EnergyRequired = 1500,
             MaxRadius = 60,
             RateOfFire = 0.1694915254,
         },

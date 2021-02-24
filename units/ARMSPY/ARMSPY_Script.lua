@@ -3,11 +3,11 @@
 #
 #Script created by Raevn
 
-local TAWalking = import('/mods/SCTA-master/lua/TAMotion.lua').TAWalking
+local TACloaker = import('/mods/SCTA-master/lua/TAMotion.lua').TACloaker
 
-ARMSPY = Class(TAWalking) {
+ARMSPY = Class(TACloaker) {
     OnStopBeingBuilt = function(self, builder, layer)
-		TAWalking.OnStopBeingBuilt(self, builder, layer)
+		TACloaker.OnStopBeingBuilt(self, builder, layer)
         self:SetMaintenanceConsumptionInactive()
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
         self:RequestRefreshUI()

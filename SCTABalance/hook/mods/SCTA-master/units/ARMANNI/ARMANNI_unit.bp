@@ -48,8 +48,6 @@ UnitBlueprint {
             MaxRadius = 90,
             MuzzleVelocity = 70,
             ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/ARM_SCTA_ANNIHILATOR/ARM_SCTA_ANNIHILATOR_proj.bp',
-            EnergyDrainPerSecond = 2500,
-            EnergyRequired = 5000,
             RateOfFire = 0.25,
         },
         [2] = {

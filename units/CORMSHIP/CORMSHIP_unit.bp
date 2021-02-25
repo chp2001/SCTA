@@ -167,23 +167,32 @@ TechLevel = 'RULEUTL_Advanced',
                 {
                     MuzzleBones = {
                         'rocket1',
+                        'rocket6',
                     },
-		    VisibleMuzzle = true,
+		            VisibleMuzzle = true,
                     RackBone = 'silo1',
+                },
+                {
+                    MuzzleBones = {
+                        'rocket5',
+                    },
+		            VisibleMuzzle = true,
+                    RackBone = 'silo5',
                 },
                 {
                     MuzzleBones = {
                         'rocket2',
                     },
-		    VisibleMuzzle = true,
+		             VisibleMuzzle = true,
                     RackBone = 'silo2',
                 },
-                {
+                    {
                     MuzzleBones = {
+                        'rocket6',
                         'rocket3',
                     },
-		    VisibleMuzzle = true,
-                    RackBone = 'silo3',
+		            VisibleMuzzle = true,
+                    RackBone = 'silo6',
                 },
                 {
                     MuzzleBones = {
@@ -191,20 +200,6 @@ TechLevel = 'RULEUTL_Advanced',
                     },
 		    VisibleMuzzle = true,
                     RackBone = 'silo4',
-                },
-                {
-                    MuzzleBones = {
-                        'rocket5',
-                    },
-		    VisibleMuzzle = true,
-                    RackBone = 'silo5',
-                },
-                {
-                    MuzzleBones = {
-                        'rocket6',
-                    },
-		    VisibleMuzzle = true,
-                    RackBone = 'silo6',
                 },
             },
             RackFireTogether = false,
@@ -226,8 +221,6 @@ TechLevel = 'RULEUTL_Advanced',
             WeaponRepackTimeout = 3,
             WeaponUnpackAnimation = '/mods/SCTA-master/units/CORMSHIP/CORMSHIP_lod0_runpack.sca',
             WeaponUnpackAnimationRate = 1,
-            AnimationReload = '/mods/SCTA-master/units/CORMSHIP/CORMSHIP_lod0_repack.sca',
-            AnimationReloadRate = 1,
         },
         {
             Audio = {

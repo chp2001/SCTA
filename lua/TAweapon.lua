@@ -9,7 +9,7 @@ TAweapon = Class(DefaultWeapon) {
     StartEconomyDrain = function(self)
         DefaultWeapon.StartEconomyDrain(self)
     end,
-
+    
     OnGotTargetCheck = function(self)
         local army = self.unit:GetArmy()
         local canSee = true
@@ -178,10 +178,6 @@ TARocket = Class(TAweapon) {
     TAweapon.OnCreate(self)
 end,
 
---OnWeaponFired = function(self)
-    --TAweapon.OnWeaponFired(self)
-    --self:StartMassDrain()
---end,
 
 StartEconomyDrain = function(self)
     TAweapon.StartEconomyDrain(self)

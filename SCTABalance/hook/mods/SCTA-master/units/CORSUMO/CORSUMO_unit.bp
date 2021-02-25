@@ -39,10 +39,4 @@ UnitBlueprint {
     SizeZ = 2,
     SizeY = 3,
     StrategicIconName = 'icon_bot3_armored',
-    Weapon = {
-        [1] = {
-            Damage = 600,
-        },
-        [2] = {}, 
-    },
 }

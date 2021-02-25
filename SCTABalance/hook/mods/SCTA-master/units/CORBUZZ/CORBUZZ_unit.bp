@@ -61,7 +61,6 @@ UnitBlueprint {
             RateOfFire = 3.333333333,           
             TurretPitchSpeed = 10,
             TurretYawSpeed = 10,
-            RenderFireClock = true,
         },
         [2] = {
         },

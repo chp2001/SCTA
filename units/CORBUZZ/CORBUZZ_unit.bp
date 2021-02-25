@@ -177,6 +177,7 @@ TechLevel = 'RULEUTL_Secret',
             TurretYawRange = 360,
             TurretYawSpeed = 5,
             Turreted = true,
+            RenderFireClock = true,
         },
         { #ATOMIC_BLAST
             Damage = 1000,

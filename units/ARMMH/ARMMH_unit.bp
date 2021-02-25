@@ -186,6 +186,8 @@ UnitBlueprint {
             AboveWaterTargetsOnly = true,
 	        WeaponUnpacks = true,
             WeaponRepackTimeout = 3,
+            RenderFireClock = true,
+            WeaponCategory = 'MISSILE',
         },
         { #BIG_UNITEX
             Damage = 100,

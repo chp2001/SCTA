@@ -78,7 +78,7 @@ UnitBlueprint {
         BuildCostEnergy = 54000,
         BuildCostMass = 6000, 
         BuildTime = 200000,
-        BuildRate = 240,
+        BuildRate = 360,
         DifferentialUpgradeCostCalculation = true,
         BuildableCategory = {
             'KBOT LEVEL1 ARM',

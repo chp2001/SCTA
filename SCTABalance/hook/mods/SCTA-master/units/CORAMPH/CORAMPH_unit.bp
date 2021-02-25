@@ -15,11 +15,11 @@ UnitBlueprint {
     'LEVEL3',
     },
    Defense = {
-    Health = 8000,
-    MaxHealth = 8000,
+    Health = 10000,
+    MaxHealth = 10000,
 },
 Economy = {
-    BuildCostEnergy = 21000,
+    BuildCostEnergy = 30000,
     BuildCostMass = 1900,
     BuildTime = 20000,
 },

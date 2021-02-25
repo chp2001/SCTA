@@ -28,7 +28,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 7000,
         BuildCostMass = 900,
-        BuildTime = 7000,
+        BuildTime = 14000,
     },
     SizeY = 1.4,
     StrategicIconName = 'icon_land3_missile',

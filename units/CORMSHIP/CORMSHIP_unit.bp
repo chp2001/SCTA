@@ -183,7 +183,7 @@ TechLevel = 'RULEUTL_Advanced',
                     MuzzleBones = {
                         'rocket2',
                     },
-		    VisibleMuzzle = true,
+		             VisibleMuzzle = true,
                     RackBone = 'silo2',
                 },
                     {
@@ -191,7 +191,7 @@ TechLevel = 'RULEUTL_Advanced',
                         'rocket6',
                         'rocket3',
                     },
-		    VisibleMuzzle = true,
+		            VisibleMuzzle = true,
                     RackBone = 'silo6',
                 },
                 {

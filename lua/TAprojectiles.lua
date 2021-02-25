@@ -26,8 +26,8 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
 
 TANuclearProjectile = Class(TAProjectile) {
 	OnCreate = function(self)
-		TAProjectile.OnCreate(self)
 		self.Smoke = true
+		TAProjectile.OnCreate(self)
 	end,
 
 	FxImpactAirUnit = {
@@ -261,17 +261,18 @@ TALightCannonProjectile = Class(TAProjectile) {
     	FxWaterHitScale = 0.5,
 }
 TARocketProjectile = Class(TAMediumCannonProjectile) {
+
 	OnCreate = function(self)
-	TAMediumCannonProjectile.OnCreate(self)
 	self.Smoke = true
+	TAMediumCannonProjectile.OnCreate(self)
 	end,
 }
 
 TAMissileProjectile = Class(TAMediumCannonProjectile) {
 	OnCreate = function(self)
+	self.Smoke = true
 	self:SetCollisionShape('Sphere', 0, 0, 0, 1)
 	TAMediumCannonProjectile.OnCreate(self)
-	self.Smoke = true
 	end,
 }
 

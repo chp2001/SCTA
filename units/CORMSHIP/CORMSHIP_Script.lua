@@ -34,9 +34,12 @@ CORMSHIP = Class(TAunit) {
 					self.unit:ShowBone('rocket6', true)
 					self.unit:HideBone('rocket2', true)
 				elseif self.unit.currentShot == 4 then
-					self.unit:HideBone('rocket4', true)
+					self.unit:HideBone('rocket3', true)
 					self.unit:HideBone('rocket6', true)
 					self.unit:ShowBone('rocket5', true)
+				elseif self.unit.currentShot == 5 then
+					self.unit:HideBone('rocket4', true)
+					self.unit:ShowBone('rocket3', true)
 					WaitSeconds(0.5)
 					self.unit:ShowBone('rocket2', true)
 					WaitSeconds(0.5)

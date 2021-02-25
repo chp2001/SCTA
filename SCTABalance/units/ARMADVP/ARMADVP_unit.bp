@@ -79,7 +79,7 @@ UnitBlueprint {
         BuildCostMass = 6300, 
         BuildTime = 220000,
         DifferentialUpgradeCostCalculation = true,
-	BuildRate = 180,
+	BuildRate = 300,
         BuildableCategory = {
             'VEHICLE LEVEL1 ARM',
             'VEHICLE LEVEL2 ARM',

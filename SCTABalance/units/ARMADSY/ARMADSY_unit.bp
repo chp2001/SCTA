@@ -80,7 +80,7 @@ UnitBlueprint {
         BuildCostEnergy = 120000,
         BuildCostMass = 14000, 
         BuildTime = 100000,
-    BuildRate = 300,
+    BuildRate = 360,
     DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
         'OCEAN LEVEL1 ARM',

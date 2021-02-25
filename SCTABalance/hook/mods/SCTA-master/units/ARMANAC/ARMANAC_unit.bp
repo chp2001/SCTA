@@ -22,7 +22,7 @@ UnitBlueprint {
         SurfaceThreatLevel = 12,
     },
     Economy = {
-        BuildCostEnergy = 14000,
+        BuildCostEnergy = 16000,
         BuildCostMass = 1500,
         BuildTime = 18000,
     },

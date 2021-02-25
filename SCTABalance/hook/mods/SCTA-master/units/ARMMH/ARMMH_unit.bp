@@ -39,11 +39,11 @@ UnitBlueprint {
         [1] = {
             Damage = 600,
             DamageRadius = 2.5,
-	    FiringTolerance = 7,
+	        FiringTolerance = 7,
             MaxRadius = 65,
             RateOfFire = 0.303030303,
             MassDrainPerSecond = 5,
-            MassRequired = 10,
+            MassRequired = 15,
             MassChargeForFirstShot = true,
         },
         [2] = {

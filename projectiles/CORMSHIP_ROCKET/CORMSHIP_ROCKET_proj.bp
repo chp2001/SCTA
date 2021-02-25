@@ -61,12 +61,12 @@ ProjectileBlueprint {
     },
 
     Physics = {
-        Acceleration = 2.5,
+        Acceleration = 5,
         DestroyOnWater = true,
 	InitialSpeed = 0,
         LeadTarget = false,
         Lifetime = 50,
-        MaxSpeed = 25,
+        MaxSpeed = 35,
         TrackTarget = false,
         TurnRate = 134,
         UseGravity = false,

@@ -20,8 +20,8 @@ UnitBlueprint {
         [1] = {
             Damage = 450,
             MassChargeForFirstShot = true,
-            MassDrainPerSecond = 5,
-            MassRequired = 20,    
+            MassDrainPerSecond = 2,
+            MassRequired = 10,    
         },
         [2] = {}, 
     },

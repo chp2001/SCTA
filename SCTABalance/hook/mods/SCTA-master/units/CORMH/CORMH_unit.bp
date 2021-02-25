@@ -33,16 +33,11 @@ UnitBlueprint {
     StrategicIconName = 'icon_land3_missile',
     Weapon = {
         [1] = {
-            Damage = 350,
-            DamageRadius = 2.5,
-	        FiringTolerance = 8,
+            Damage = 800,
             MaxRadius = 60,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
             RateOfFire = 0.5,
-            TargetCheckInterval = 1,
             MassDrainPerSecond = 10,
-            MassRequired = 30,
+            MassRequired = 20,
             MassChargeForFirstShot = true,
         },
         [2] = {

@@ -45,7 +45,7 @@ ProjectileBlueprint {
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/rocket_mesh.bp',
         StrategicIconSize = 2,
-        UniformScale = 0.24,
+        UniformScale = 0.3,
     },
     General = {
         Category = 'Missile',
@@ -53,7 +53,7 @@ ProjectileBlueprint {
        	    'ARM',
             'PROJECTILE',
    	        'TACTICAL',
-             'MISSILE', 
+            'MISSILE', 
         },
         Faction = 'ARM',
         Weapon = 'ARMMSHIP_ROCKET',
@@ -62,7 +62,7 @@ ProjectileBlueprint {
     Physics = {
         Acceleration = 5,
         DestroyOnWater = true,
-	InitialSpeed = 0,
+	    InitialSpeed = 0,
         LeadTarget = false,
         Lifetime = 50,
         MaxSpeed = 50,

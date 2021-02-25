@@ -1,11 +1,11 @@
-#CORE Hydra Rocket
-#CORMSHIP_ROCKET
+#ARM Ranger Rocket
+#ARMMSHIP_ROCKET
 #
 #Script created by Raevn
 
 local TAMissileProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TAMissileProjectile
 
-CORMSHIP_ROCKET = Class(TAMissileProjectile) {
+ARMBSHIP_ROCKET = Class(TAMissileProjectile) {
 	OnCreate = function(self)
 		TAMissileProjectile.OnCreate(self)
 		self.TrackTime = 5
@@ -18,4 +18,4 @@ CORMSHIP_ROCKET = Class(TAMissileProjectile) {
 		WaitSeconds(2)
 	end,
 }
-TypeClass = CORMSHIP_ROCKET
+TypeClass = ARMBSHIP_ROCKET

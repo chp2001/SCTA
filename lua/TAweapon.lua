@@ -79,6 +79,7 @@ TAweapon = Class(DefaultWeapon) {
     RackSalvoFireReadyState = State(DefaultWeapon.RackSalvoFireReadyState) {
         WeaponWantEnabled = true,
         WeaponAimWantEnabled = true,
+
         Main = function(self)
             local bp = self:GetBlueprint()
             if (bp.CountedProjectile == true and bp.WeaponUnpacks == true) then
@@ -94,6 +95,15 @@ TAweapon = Class(DefaultWeapon) {
                         WaitSeconds(1)
                 end
                 aiBrain:TakeResource('Energy', bp.EnergyRequired)
+                self.WeaponCanFire = true
+            end
+            if bp.MassRequired and bp.MassRequired > 0 then
+                self.WeaponCanFire = false
+                local aiBrain = self.unit:GetAIBrain()
+                while aiBrain:GetEconomyStored('MASS') < bp.MassRequired do
+                        WaitSeconds(1)
+                end
+                aiBrain:TakeResource('Mass', bp.MassRequired)
                 self.WeaponCanFire = true
             end
             if bp.CountedProjectile == true then

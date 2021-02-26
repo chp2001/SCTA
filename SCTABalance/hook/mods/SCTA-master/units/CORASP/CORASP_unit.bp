@@ -22,4 +22,13 @@ UnitBlueprint {
 	    'LEVEL1',
         'SORTSTRATEGIC',
     },
+    Display = {
+        UniformScale = 0.2,
+    },
+    SelectionSizeX = 3,
+    SelectionSizeZ = 3,
+    SelectionThickness = 0.25,
+    SizeX = 5,
+    SizeY = 2,
+    SizeZ = 5,
 }

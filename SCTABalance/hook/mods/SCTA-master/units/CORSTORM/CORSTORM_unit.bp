@@ -1,6 +1,6 @@
 UnitBlueprint {
    Merge = true,
-   BuildIconSortPriority = 7,
+   BuildIconSortPriority = 5,
    Categories = {
     'SELECTABLE',
     'KBOT',

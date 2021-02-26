@@ -25,7 +25,7 @@ UnitBlueprint {
         Category = 'Indirect Fire',
     },
     Economy = {
-        BuildCostEnergy = 2500,
+        BuildCostEnergy = 5000,
         BuildCostMass = 300,
         BuildTime = 6000,
     },

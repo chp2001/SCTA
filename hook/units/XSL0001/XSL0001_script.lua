@@ -23,6 +23,7 @@ XSL0001 = Class(taXSL0001) {
             cdrUnit:HideBone(0, true)
             cdrUnit:SetUnSelectable(false)
 		    cdrUnit:SetBlockCommandQueue(true)
+            WaitSeconds(2)
 		    cdrUnit:ForkThread(cdrUnit.PlayCommanderWarpInEffect)
     end,
 }

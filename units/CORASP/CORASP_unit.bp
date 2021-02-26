@@ -128,8 +128,8 @@ UnitBlueprint {
         VisionRadius = 12,
     },
     LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarOffset = 1,
+    LifeBarSize = 3,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
@@ -148,9 +148,9 @@ UnitBlueprint {
     Transport = {
         Class2AttachSize = 2,
         Class3AttachSize = 4,
-        DockingSlots = 1,
+        DockingSlots = 4,
         RepairRate = 0.1,
-        StorageSlots = 5,
+        StorageSlots = 0,
     },
     Weapon = {
         { #BIG_UNITEX

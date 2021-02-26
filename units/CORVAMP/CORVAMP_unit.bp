@@ -165,7 +165,7 @@ TechLevel = 'RULEUTL_Advanced',
     StrategicIconSortPriority = 0,
     Transport = {
         AirClass = true,
-        TransportClass = 2,
+        TransportClass = 1,
     },
     Weapon = {
         {

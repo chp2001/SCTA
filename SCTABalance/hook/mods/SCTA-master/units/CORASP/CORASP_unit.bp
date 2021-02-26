@@ -20,5 +20,6 @@ UnitBlueprint {
         'OVERLAYMISC',
         'CORE',
 	    'LEVEL1',
+        'SORTSTRATEGIC',
     },
 }

@@ -5,6 +5,7 @@
 
 UnitBlueprint {
     Merge = true,
+    BuildIconSortPriority = 10,
     Defense = {
         Health = 1500,
         MaxHealth = 1500,
@@ -24,6 +25,7 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         [1] = {
+            DamageToShields = 1500,
             MaxRadius = 45,
             RateOfFire = 0.2,
             EnergyDrainPerSecond = 150,

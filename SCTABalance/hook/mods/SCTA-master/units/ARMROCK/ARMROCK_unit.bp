@@ -21,6 +21,9 @@ UnitBlueprint {
    Display = {
     UniformScale = 0.12,
     },
+    General = {
+        Category = 'Indirect Fire',
+    },
     Economy = {
         BuildCostEnergy = 2500,
         BuildCostMass = 300,
@@ -34,14 +37,19 @@ UnitBlueprint {
     StrategicIconName = 'icon_land2_missile',
     Weapon = {
         [1] = {
-            BallisticArc = 'RULEUBA_HighArc',
+            BallisticArc = 'RULEUBA_LowArc',
             RangeCategory = 'UWRC_IndirectFire',
             WeaponCategory = 'MISSILE',
             Damage = 1200,
             RateOfFire = 0.5,
-            MaxRadius = 55,
-            MuzzleVelocity = 5,
+            FiringTolerance = 360,
+            MaxRadius = 60,
+            MuzzleVelocity = 3,
+            TurretPitch = 135,
+            TurretPitchRange = 0,
+            TurretPitchSpeed = 45,
             ProjectileId = '/mods/SCTA-master/projectiles/HRK_ROCKET/HRK_ROCKET_proj.bp',
+            ---UseFiringSolutionInsteadOfAimBone = true,
         },
         [2] = {
         },

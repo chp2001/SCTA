@@ -175,8 +175,8 @@ TAunitkeygroups = {
     },
     ["T2_Gatling_Bot"]= {
         "corpyro",
-        "armlatnk",
-        "armfido",
+        "armfast",
+        "armmanni",
     },
     ["T1_Interceptor"]= {
         "armfig",
@@ -260,7 +260,7 @@ TAunitkeygroups = {
     ["T2_Mobile_Missile_Launcher"]= {
         "armmerl",
         "corvroc",
-        "armhrk",
+        "armrock",
         "corhrk",
         "armawac",
         "corawac", 
@@ -274,16 +274,15 @@ TAunitkeygroups = {
         "corraid",
     },
     ["T2_Heavy_Tank"]= {
-        "armbull",
-        "armzeus",
+        "armlatnk",
         "correap",
         "corcan",
     },
     ["T2_Mobile_AA_Flak_Artillery"]= {
         "armyork",
-        "armspdaa",
+        "armamph",
         "corsent",
-        "corsling",
+        "corstorm",
     },
     ["T2_Field_Engineer"]= {
         "armfark", 
@@ -328,12 +327,10 @@ TAunitkeygroups = {
     ["T2_Amphibious_Tank"]= {
         "armcroc",
         "corseal",
-        "armamph",
         "coramph",
     },
     ["T1_Assault_Bot"]= {
         "armwar",
-        "corstorm",
     },
     ["T2_Submarine_Hunter"]= {
         "armsubk",
@@ -357,11 +354,13 @@ TAunitkeygroups = {
         "corcarry",
     },
     ["T3_Sniper_Bot"] = {
-        "armmav",
-        "armmanni",
+        "armsnipe",
     },    
     ["T3_Siege_Assault_Bot"] = {
         "corsumo",
+        "corgol",
+        "armbull",
+        "armzeus",
     },
     ["T3_Armored_Assault_Bot"] = {
         "armanac",
@@ -372,7 +371,7 @@ TAunitkeygroups = {
         "cormh",
     },
     ["T3_Mobile_AA"] = {
-        "armsnipe",
+        "armmav",
         "armah",
         "corah",
     },

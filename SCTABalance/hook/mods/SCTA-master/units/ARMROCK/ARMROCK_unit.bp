@@ -1,19 +1,49 @@
 UnitBlueprint {
    Merge = true,
+   Categories = {
+    'SELECTABLE',
+    'TECH2',
+    'KBOT',
+    'LEVEL2',
+    'VISIBLETORECON',
+    'RECLAIMABLE',
+    'MOBILE',
+    'LAND',
+    'INDIRECTFIRE',
+    'OVERLAYINDIRECTFIRE',
+    'ARM',
+    'ROCKET',
+    },
    Defense = {
-    Health = 280,
-    MaxHealth = 280,
+    Health = 1100,
+    MaxHealth = 1100,
     },
    Display = {
     UniformScale = 0.12,
     },
     Economy = {
-        BuildCostEnergy = 750,
-        BuildCostMass = 114,
+        BuildCostEnergy = 2500,
+        BuildCostMass = 300,
+        BuildTime = 6000,
     },
     SelectionSizeX = 0.8,
     SelectionSizeZ = 0.8,
     SizeX = 1.3,
     SizeY = 1.2,
     SizeZ = 1.3,
+    StrategicIconName = 'icon_land2_missile',
+    Weapon = {
+        [1] = {
+            BallisticArc = 'RULEUBA_HighArc',
+            RangeCategory = 'UWRC_IndirectFire',
+            WeaponCategory = 'MISSILE',
+            Damage = 1200,
+            RateOfFire = 0.5,
+            MaxRadius = 55,
+            MuzzleVelocity = 5,
+            ProjectileId = '/mods/SCTA-master/projectiles/HRK_ROCKET/HRK_ROCKET_proj.bp',
+        },
+        [2] = {
+        },
+    },
 }

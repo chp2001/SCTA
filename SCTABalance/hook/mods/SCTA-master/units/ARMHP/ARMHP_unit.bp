@@ -37,6 +37,7 @@ UnitBlueprint {
         BuildTime = 150000,
         BuildableCategory = {
             'HOVER LEVEL3 ARM',
+            'armcroc',
         },
     },
     Physics = {

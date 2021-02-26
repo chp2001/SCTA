@@ -3,31 +3,25 @@ UnitBlueprint {
    Display = {
     Abilities = {
         '<LOC ability_jamming>Jamming',
-    },
-}, 
-Defense = {
+        },
+    }, 
+    Defense = {
     Health = 2000,
     MaxHealth = 2000,
-},
-Economy = {
-    MaintenanceConsumptionPerSecondEnergy = 3,
-    BuildCostEnergy = 8000,
+    },
+    Economy = {
+        TAConsumptionPerSecondEnergy = 30,
+        MaintenanceConsumptionPerSecondEnergy = 5,
+    BuildCostEnergy = 2000,
     BuildCostMass = 450,
     BuildTime = 6000,
-},
+    },
     General = {
         ToggleCaps = {
             RULEUTC_JammingToggle = true,
         },
-        OrderOverrides = {
-            RULEUTC_JammingToggle = {
-                bitmapId = 'jamming',
-                helpText = 'toggle_jamming',
-            },
-        },
     },
     Intel = {
-    FreeIntel = false,
     JamRadius = {
         Max = 10,
         Min = 10,
@@ -36,7 +30,7 @@ Economy = {
     VisionRadius = 16,
     },
    SizeY = 1, 
-   StrategicIconName = 'icon_bot2_directfire',
+   StrategicIconName = 'icon_land2_directfire',
    Weapon = {
     [1] = {
         Damage = 80,

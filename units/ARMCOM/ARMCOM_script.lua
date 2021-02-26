@@ -50,7 +50,6 @@ ARMCOM = Class(TARealCommander) {
 		self:SetMaintenanceConsumptionInactive()
         self:SetScriptBit('RULEUTC_CloakToggle', true)
         self:RequestRefreshUI()
-		self:ForkThread(self.PlayCommanderWarpInEffect)
 	end,
 
 	GiveInitialResources = function(self)

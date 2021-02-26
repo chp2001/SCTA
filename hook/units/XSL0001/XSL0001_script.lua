@@ -19,9 +19,13 @@ XSL0001 = Class(oldXSL0001) {
 
     OnStopBeingBuilt = function(self, builder, layer)
         oldXSL0001.OnStopBeingBuilt(self, builder, layer)
-        self:ForkThread(self.PlayCommanderWarpInEffect) --should only be used for testing out the drop animation
+        if __blueprints['eal0001'] then
+            local position = self:GetPosition()
+            local cdrUnit = CreateUnitHPR('esl0001', self:GetArmy(), (position.x), (position.y+1), (position.z), 0, 0, 0)  
+            cdrUnit:ForkThread(cdrUnit.PlayCommanderWarpInEffect)
+            self:Destroy()
+        end
     end,
-
 }
 
 TypeClass = XSL0001

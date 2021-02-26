@@ -122,7 +122,4 @@ TAMine = Class(TAStructure) {
 		self:RequestRefreshUI()
 	end,
 
-
-	HideFlares = function(self, bp)
-	end,
 }

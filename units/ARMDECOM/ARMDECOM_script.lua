@@ -17,9 +17,6 @@ ARMDECOM = Class(TACommander) {
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
         self:RequestRefreshUI()
 	end,
-
-	HideFlares = function(self, bp)
-	end,
 	
 	Weapons = {
 		COMLASER = Class(TAweapon) {

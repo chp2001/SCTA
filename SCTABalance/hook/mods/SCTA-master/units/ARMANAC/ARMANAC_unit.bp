@@ -14,7 +14,6 @@ UnitBlueprint {
         'HOVER',
         'TANK',
         'ALLTERRAIN',
-        'VEHICLE',
     },
     Defense = {
         Health = 6000,

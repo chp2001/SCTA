@@ -1,7 +1,7 @@
-local SCTAUnitClass = Unit
-Unit = Class(SCTAUnitClass) {
+local taUnitClass = Unit
+Unit = Class(taUnitClass) {
     OnStopBeingCaptured = function(self, captor)
-        SCTAUnitClass.OnStopBeingCaptured(self, captor)
+        taUnitClass.OnStopBeingCaptured(self, captor)
         local aiBrain = self:GetAIBrain()
         if aiBrain.SCTAAI then
             self:Kill()

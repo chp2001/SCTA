@@ -23,7 +23,6 @@ ARMCOM = Class(TARealCommander) {
 	},
 
 	PlayCommanderWarpInEffect = function(self)
-        self:HideBone(0, true)
         self:SetUnSelectable(false)
         self:SetBusy(true)
 		self:SetBlockCommandQueue(true)
@@ -50,7 +49,6 @@ ARMCOM = Class(TARealCommander) {
 		self:SetMaintenanceConsumptionInactive()
         self:SetScriptBit('RULEUTC_CloakToggle', true)
         self:RequestRefreshUI()
-		self:ForkThread(self.PlayCommanderWarpInEffect)
 	end,
 
 	GiveInitialResources = function(self)

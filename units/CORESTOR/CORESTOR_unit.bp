@@ -104,14 +104,13 @@ TechLevel = 'RULEUTL_Basic',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #ESTOR_BUILDINGEX
-            Damage = 900,
+            Damage = 1000,
             DamageFriendly = true,
             DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',
         },
-
     },
         Wreckage = {
 	---UseCustomMesh = true,

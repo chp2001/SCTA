@@ -23,7 +23,8 @@ CORCOM = Class(TARealCommander) {
 	},
 
 	PlayCommanderWarpInEffect = function(self)
-        self:SetUnSelectable(false)
+        self:SetCustomName( ArmyBrains[self:GetArmy()].Nickname )
+		self:SetUnSelectable(false)
         self:SetBusy(true)
 		self:SetBlockCommandQueue(true)
 		self.PlayCommanderWarpInEffectFlag = true

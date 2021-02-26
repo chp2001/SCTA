@@ -103,7 +103,7 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #ESTOR_BUILDINGEX
-            Damage = 1200,
+            Damage = 1000,
             DamageFriendly = true,
             DamageRadius = 5,
             DamageType = 'Normal',

@@ -23,12 +23,8 @@ UnitBlueprint {
           Health = 6000,
           MaxHealth = 6000,
       },    
-    Footprint = {
-          SizeX = 3,
-          SizeZ = 3,
-      },
       LifeBarSize = 4,
-    Economy = {
+  Economy = {
       BuildCostEnergy = 600000,
       BuildCostMass = 5600,
       ProductionPerSecondMass = 24,

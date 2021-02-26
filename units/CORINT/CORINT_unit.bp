@@ -175,7 +175,7 @@ TechLevel = 'RULEUTL_Secret',
         { #ATOMIC_BLAST
             Damage = 1000,
             DamageFriendly = true,
-            DamageRadius = 16,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

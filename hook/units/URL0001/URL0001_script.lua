@@ -7,24 +7,24 @@
 #**
 #**  Copyright � 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
-local oldURL0001 = URL0001
-URL0001 = Class(oldURL0001) {
-    PlayCommanderWarpInEffect = function(self)
-        self:HideBone(0, true)
-        self:SetUnSelectable(false)
-        self:SetBusy(true)
-        self:SetBlockCommandQueue(true)
-        self:ForkThread(self.WarpInEffectThread)
-    end,
-
+local taURL0001 = URL0001
+URL0001 = Class(taURL0001) {
     OnStopBeingBuilt = function(self, builder, layer)
-        oldURL0001.OnStopBeingBuilt(self, builder, layer)
+        taURL0001.OnStopBeingBuilt(self, builder, layer)
         if __blueprints['eal0001'] then
-            local position = self:GetPosition()
-            local cdrUnit = CreateUnitHPR('erl0001', self:GetArmy(), (position.x), (position.y+1), (position.z), 0, 0, 0)  
-            cdrUnit:ForkThread(cdrUnit.PlayCommanderWarpInEffect)
+            ForkThread(self.BlackOps, self, builder, layer)
             self:Destroy()
         end
+    end,
+
+    BlackOps = function (self, builder, layer)
+            local position = self:GetPosition()
+            local cdrUnit = CreateUnitHPR('erl0001', self:GetArmy(), (position.x), (position.y+1), (position.z), 0, 0, 0)  
+            cdrUnit:HideBone(0, true)
+            cdrUnit:SetUnSelectable(false)
+		    cdrUnit:SetBlockCommandQueue(true)
+		    WaitSeconds(2)
+		    cdrUnit:ForkThread(cdrUnit.PlayCommanderWarpInEffect)
     end,
 
 }

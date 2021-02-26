@@ -23,7 +23,6 @@ CORCOM = Class(TARealCommander) {
 	},
 
 	PlayCommanderWarpInEffect = function(self)
-        self:HideBone(0, true)
         self:SetUnSelectable(false)
         self:SetBusy(true)
 		self:SetBlockCommandQueue(true)

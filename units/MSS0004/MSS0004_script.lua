@@ -21,12 +21,17 @@ MSS0004 = Class(CLandUnit) {
  
  
 	 Delay = function (self, builder, layer)
-		local position = self:GetPosition()
-		local cdrUnit = CreateUnitHPR('ual0001', self:GetArmy(), (position.x), (position.y+1), (position.z), 0, 0, 0)  
-		cdrUnit:ForkThread(cdrUnit.PlayCommanderWarpInEffect)
+		 local position = self:GetPosition()
+		 local cdrUnit = CreateUnitHPR('ual0001', self:GetArmy(), (position.x), (position.y+1), (position.z), 0, 0, 0)  
+		 cdrUnit:HideBone(0, true)
+		 cdrUnit:SetUnSelectable(false)
+		 cdrUnit:SetBlockCommandQueue(true)
+		 WaitSeconds(2)
+		 if not IsDestroyed(cdrUnit) then
+			cdrUnit:ForkThread(cdrUnit.PlayCommanderWarpInEffect)
+		end
 	 end,
-
-
+ 
 }
 
 TypeClass = MSS0004

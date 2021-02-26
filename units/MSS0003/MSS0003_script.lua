@@ -19,14 +19,19 @@ MSS0003 = Class(CLandUnit) {
 		self:Destroy()
 	 end,
  
+ 
 	 Delay = function (self, builder, layer)
-		local position = self:GetPosition()
-		local cdrUnit = CreateUnitHPR('uel0001', self:GetArmy(), (position.x), (position.y+1), (position.z), 0, 0, 0)  
-		cdrUnit:ForkThread(cdrUnit.PlayCommanderWarpInEffect)
+		 local position = self:GetPosition()
+		 local cdrUnit = CreateUnitHPR('uel0001', self:GetArmy(), (position.x), (position.y+1), (position.z), 0, 0, 0)  
+		 cdrUnit:HideBone(0, true)
+		 cdrUnit:SetUnSelectable(false)
+		 cdrUnit:SetBlockCommandQueue(true)
+		 WaitSeconds(2)
+		 if not IsDestroyed(cdrUnit) then
+			cdrUnit:ForkThread(cdrUnit.PlayCommanderWarpInEffect)
+		end
 	 end,
-
-
-
+ 
 }
 
 TypeClass = MSS0003

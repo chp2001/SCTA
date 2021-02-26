@@ -1,10 +1,10 @@
 do
-    local oldFactoryBuilderManager = FactoryBuilderManager
+    local taFactoryBuilderManager = FactoryBuilderManager
       
-    FactoryBuilderManager = Class(oldFactoryBuilderManager) {
+    FactoryBuilderManager = Class(taFactoryBuilderManager) {
         GetFactoryFaction = function(self, factory)
             if not self.Brain.SCTAAI then
-                return oldFactoryBuilderManager.GetFactoryFaction(self, factory)
+                return taFactoryBuilderManager.GetFactoryFaction(self, factory)
             end
             if EntityCategoryContains(categories.ARM, factory) then
                 return 'Arm'

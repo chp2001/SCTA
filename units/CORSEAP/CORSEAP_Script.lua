@@ -12,32 +12,21 @@ CORSEAP = Class(TASeaair) {
 		TASeaair.OnCreate(self)
 		self.Sliders = {
 			chassis = CreateSlider(self, 0),
-			wing1 = CreateSlider(self, 'wing1L'),
-			wing2 = CreateSlider(self, 'wing2L'),
-			wing3 = CreateSlider(self, 'wing1R'),
-			wing4 = CreateSlider(self, 'wing2R'),
+			wing1 = CreateSlider(self, 'Wing1'),
+			wing2 = CreateSlider(self, 'Wing2'),
 		}
 		for k, v in self.Sliders do
 			self.Trash:Add(v)
 		end
 	end,
-
 	OpenWings = function(self)
 		--MOVE wing1 to x-axis <5.59> SPEED <5.00>;
-		self.Sliders.wing1:SetGoal(-3,0,0)
+		self.Sliders.wing1:SetGoal(0,0,-3)
 		self.Sliders.wing1:SetSpeed(3)
 
 		--MOVE wing2 to x-axis <-5.65> SPEED <5.00>;
-		self.Sliders.wing2:SetGoal(3,0,0)
+		self.Sliders.wing2:SetGoal(0,0,-3)
 		self.Sliders.wing2:SetSpeed(3)
-
-		--MOVE wing1 to x-axis <5.59> SPEED <5.00>;
-		self.Sliders.wing3:SetGoal(3,0,0)
-		self.Sliders.wing3:SetSpeed(3)
-		
-		--MOVE wing2 to x-axis <-5.65> SPEED <5.00>;
-		self.Sliders.wing4:SetGoal(-3,0,0)
-		self.Sliders.wing4:SetSpeed(3)
 	end,
 
 	CloseWings = function(self)
@@ -48,14 +37,6 @@ CORSEAP = Class(TASeaair) {
 		--MOVE wing2 to x-axis <0> SPEED <5.00>;
 		self.Sliders.wing2:SetGoal(0,0,0)
 		self.Sliders.wing2:SetSpeed(5)
-
-		--MOVE wing1 to x-axis <5.59> SPEED <5.00>;
-		self.Sliders.wing3:SetGoal(0,0,0)
-		self.Sliders.wing3:SetSpeed(5)
-				
-		--MOVE wing2 to x-axis <-5.65> SPEED <5.00>;
-		self.Sliders.wing4:SetGoal(0,0,0)
-		self.Sliders.wing4:SetSpeed(5)
 	end,
 
 	Weapons = {

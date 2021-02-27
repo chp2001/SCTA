@@ -104,7 +104,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.2,
     },
     Economy = {
         BuildCostEnergy = 6307,
@@ -201,15 +201,15 @@ TechLevel = 'RULEUTL_Basic',
             RackBones = {
                 {
                     MuzzleBones = {
-                        'laser1',
+                        'missle1',
                     },
-                    RackBone = 'barrels',
+                    RackBone = 'body',
                 },
                 {
                     MuzzleBones = {
-                        'laser2',
+                        'missle2',
                     },
-                    RackBone = 'barrels',
+                    RackBone = 'body',
                 },
             },
             RackRecoilDistance = 0,

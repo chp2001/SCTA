@@ -201,9 +201,9 @@ TechLevel = 'RULEUTL_Advanced',
             RackBones = {
                 {
                     MuzzleBones = {
-                        'bombdrop',
+                        'CORMOSQ',
                     },
-                    RackBone = 'bombdrop',
+                    RackBone = 'CORMOSQ',
                 },
             },
             RackFireTogether = false,
@@ -258,6 +258,7 @@ TechLevel = 'RULEUTL_Advanced',
             FireTargetLayerCapsTable = {
                 Air = 'Land|Water|Air',
                 Land = 'Land|Water|Air',
+                Water = 'Land|Water|Air',
             },
 	        RangeCategory = 'UWRC_AntiAir',
             WeaponCategory = 'AntiAir',
@@ -273,15 +274,10 @@ TechLevel = 'RULEUTL_Advanced',
             RackBones = {
                 {
                     MuzzleBones = {
-                        'flare1',
+                        'laser1',
+                        'laser2',
                     },
-                    RackBone = 'flare1',
-                },
-                {
-                    MuzzleBones = {
-                        'flare2',
-                    },
-                    RackBone = 'flare2',
+                    RackBone = 'barrels',
                 },
             },
             RackRecoilDistance = 0,

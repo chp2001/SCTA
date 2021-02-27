@@ -3,10 +3,10 @@
 #
 #Script created by Raevn
 
-local TANecro = import('/mods/SCTA-master/lua/TAconstructor.lua').TANecro
+local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstructor
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
-CORCS = Class(TANecro) {
+CORCS = Class(TAconstructor) {
 }
 
 TypeClass = CORCS

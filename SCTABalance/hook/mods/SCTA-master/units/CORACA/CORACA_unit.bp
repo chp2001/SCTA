@@ -10,7 +10,6 @@ UnitBlueprint {
     'VTOL',
     'SELECTION', 
     'CORE',
-    'OCEAN',
     'LEVEL2',
     'TECH2',
     'ENGINEER',

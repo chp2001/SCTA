@@ -39,9 +39,11 @@ UnitBlueprint {
     BuildIconSortPriority = 1,
     Categories = {
         'SELECTABLE',
-        'OCEAN',
-	    'LEVEL1',
         'TECH1',
+        'NAVAL',
+        'CORE',
+        'LEVEL1',
+        'FIELDENGINEER',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -53,8 +55,7 @@ UnitBlueprint {
         'MOBILE',
         'CONSTRUCTION',
         'DEFENSIVEBOAT',
-	    'NAVAL',
-        'CORE',
+        'OCEAN',
     },
     CollisionOffsetY = -0.25,
     Defense = {

@@ -40,8 +40,10 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
-        'OCEAN',
-	    'LEVEL1',
+        'NAVAL',
+        'ARM',
+        'LEVEL1',
+        'FIELDENGINEER',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -53,8 +55,7 @@ UnitBlueprint {
         'MOBILE',
         'CONSTRUCTION',
         'DEFENSIVEBOAT',
-	    'NAVAL',
-        'ARM',
+        'OCEAN',
     },
     CollisionOffsetY = -0.25,
     Defense = {

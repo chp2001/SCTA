@@ -74,7 +74,7 @@ UnitBlueprint {
         'TECH2',
         'AIR',
         'VTOL',
-	    'SELECTION', 
+        'SELECTION', 
         'ARM',
         'ENGINEER',
         'REPAIR',
@@ -84,7 +84,7 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
         'MOBILE',
-	    'CONSTRUCTION',
+        'CONSTRUCTION',
     },
     Defense = {
         ArmorType = 'Light',

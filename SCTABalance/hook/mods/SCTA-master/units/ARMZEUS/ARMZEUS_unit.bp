@@ -5,6 +5,7 @@
 
 UnitBlueprint {
    Merge = true,
+   BuildIconSortPriority = 3,
    Categories = {
     'SELECTABLE',
     'TECH3',
@@ -29,8 +30,8 @@ UnitBlueprint {
         VisionRadius = 14,
     },
     Economy = {
-    BuildCostEnergy = 30000,
-    BuildCostMass = 1400,
+    BuildCostEnergy = 45000,
+    BuildCostMass = 2200,
     BuildTime = 29000,
     },
     SizeX = 1.5,

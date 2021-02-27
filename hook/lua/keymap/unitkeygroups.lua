@@ -24,9 +24,11 @@ TAunitkeygroups = {
         "corsy",
     },
     ["Power_Generator"]= {
+        "armckfus",
         "armfus",
         "armsolar",
         "armwin",
+        "corckfus",
         "corfus",
         "corsolar",
         "corwin",
@@ -34,10 +36,8 @@ TAunitkeygroups = {
     ["Hydrocarbon_Power_Plant"]= {
         "armgeo",
         "armtide",
-        "armckfus",
         "corgeo",
         "cortide", 
-        "corckfus",
     },    
     ["Mass_Extractor"]= {
         "armmoho",
@@ -176,7 +176,7 @@ TAunitkeygroups = {
     ["T2_Gatling_Bot"]= {
         "corpyro",
         "armfast",
-        "armmanni",
+        "armspid",
     },
     ["T1_Interceptor"]= {
         "armfig",
@@ -325,9 +325,7 @@ TAunitkeygroups = {
         "corsub",
     },
     ["T2_Amphibious_Tank"]= {
-        "armcroc",
         "corseal",
-        "coramph",
     },
     ["T1_Assault_Bot"]= {
         "armwar",
@@ -355,16 +353,20 @@ TAunitkeygroups = {
     },
     ["T3_Sniper_Bot"] = {
         "armsnipe",
-    },    
-    ["T3_Siege_Assault_Bot"] = {
+    },
+    ["T3_Tank"] = {
+        "armanac",
+        "corsnap",
+    }, 
+    ["T3_Armored_Assault_Bot"] = {   
         "corsumo",
         "corgol",
         "armbull",
         "armzeus",
     },
-    ["T3_Armored_Assault_Bot"] = {
-        "armanac",
-        "corsnap",
+    ["T3_Siege_Assault_Bot"] = {
+        "armcroc",
+        "coramph",
     },
     ["T3_Mobile_Missile_Platform"] = {
         "armmh",

@@ -16,17 +16,17 @@ UnitBlueprint {
         'ALLTERRAIN',
     },
     Defense = {
-        Health = 6000,
-        MaxHealth = 6000,
+        Health = 14000,
+        MaxHealth = 14000,
         SurfaceThreatLevel = 12,
     },
     Economy = {
-        BuildCostEnergy = 16000,
-        BuildCostMass = 1500,
-        BuildTime = 18000,
+        BuildCostEnergy = 48000,
+        BuildCostMass = 3000,
+        BuildTime = 36000,
     },
     SizeY = 1.4,
-    StrategicIconName = 'icon_land3_directfire',
+    StrategicIconName = 'icon_bot3_armored',
     Weapon = {
         [1] = {
             Damage = 300,

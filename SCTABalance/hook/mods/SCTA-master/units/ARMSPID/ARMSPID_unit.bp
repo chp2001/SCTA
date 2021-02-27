@@ -34,8 +34,10 @@ UnitBlueprint {
         VisionRadius = 14,
     },
     StrategicIconName = 'icon_land2_antishield',
+    Weapon = {
     [1] = {
         DamageToShields = 100,
     },
     [2] = {}, 
+    },
 }

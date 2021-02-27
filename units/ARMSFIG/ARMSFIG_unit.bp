@@ -105,7 +105,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.24,
     },
     Economy = {
         BuildCostEnergy = 6307,
@@ -201,15 +201,15 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'fire1',
+                        'Weapon1',
                     },
-                    RackBone = 'barrel1',
+                    RackBone = 'Weapon1',
                 },
                 {
                     MuzzleBones = {
-                        'fire2',
+                        'Weapon2',
                     },
-                    RackBone = 'barrel2',
+                    RackBone = 'Weapon2',
                 },
             },
             HeadingArcCenter = 0,

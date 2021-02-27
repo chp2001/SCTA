@@ -36,7 +36,7 @@ UnitBlueprint {
             BuildTime = 9000,
             BuildRate = 300,
             ProductionPerSecondEnergy = 4,
-            MaxBuildDistance = 7,
+            MaxBuildDistance = 8,
             BuildableCategory = {
                 'BUILTBYT1HOVER ARM',
                 'BUILTBYT2KBOT ARM',

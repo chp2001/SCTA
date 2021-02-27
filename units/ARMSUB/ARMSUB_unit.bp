@@ -71,12 +71,12 @@ UnitBlueprint {
         },
 	MovementEffects = {
         TAMovement = {
-		Emitter = '/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
-		Scale = 0.5,
-		Bones = {'Wake'},
+            Emitter = '/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
+            Scale = 0.5,
+            Bones = {'wake','wake2'},
         },
 	},
-        UniformScale = 0.16,
+        UniformScale = 0.1,
     },
     Economy = {
         BuildCostEnergy = 3724,
@@ -162,9 +162,10 @@ UnitBlueprint {
             RackBones = {
                 {
                     MuzzleBones = {
-                        'Generic_Muzzle',
+                        'tube1',
+                        'tube2',
                     },
-                    RackBone = 'Generic_Turret',
+                    RackBone = 'taw009',
                 },
             },
             RackFireTogether = false,
@@ -182,17 +183,6 @@ UnitBlueprint {
             },
             FiringTolerance = 360,
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
-            TurretBoneMuzzle = 'Generic_Muzzle',
-            TurretBonePitch = 'Generic_Turret',
-            TurretBoneYaw = 'Generic_Turret',
-            TurretDualManipulators = false,
-            TurretPitch = 0,
-            TurretPitchRange = 360,
-            TurretPitchSpeed = 36000,
-            TurretYaw = 0,
-            TurretYawRange = 360,
-            TurretYawSpeed = 36000,
-            Turreted = true,
         },
         { #SMALL_UNITEX
             Damage = 100,

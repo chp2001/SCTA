@@ -275,11 +275,6 @@ TechLevel = 'RULEUTL_Advanced',
                 {
                     MuzzleBones = {
                         'laser1',
-                    },
-                    RackBone = 'barrels',
-                },
-                {
-                    MuzzleBones = {
                         'laser2',
                     },
                     RackBone = 'barrels',

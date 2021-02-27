@@ -43,7 +43,7 @@ UnitBlueprint {
             MaxRadius = 65,
             RateOfFire = 0.303030303,
             MassDrainPerSecond = 5,
-            MassRequired = 15,
+            MassRequired = 10,
             MassChargeForFirstShot = true,
         },
         [2] = {

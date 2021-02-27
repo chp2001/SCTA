@@ -18,10 +18,7 @@ UnitBlueprint {
     SizeZ = 2,
     Weapon = {
         [1] = {
-            Damage = 450,
-            MassChargeForFirstShot = true,
-            MassDrainPerSecond = 2,
-            MassRequired = 10,    
+            Damage = 450,  
         },
         [2] = {}, 
     },

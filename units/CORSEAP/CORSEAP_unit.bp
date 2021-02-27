@@ -204,9 +204,9 @@ TechLevel = 'RULEUTL_Advanced',
             RackBones = {
                 {
                     MuzzleBones = {
-                        'bombdrop',
+                        'body',
                     },
-                    RackBone = 'bombdrop',
+                    RackBone = 'body',
                 },
             },
             RackFireTogether = false,
@@ -276,9 +276,10 @@ TechLevel = 'RULEUTL_Advanced',
             RackBones = {
                 {
                     MuzzleBones = {
-                        'RearGun',
+                        'firep1',
+                        'firep2',
                     },
-                    RackBone = 'RearGun',
+                    RackBone = 'body',
                 },
             },
             RackRecoilDistance = 0,

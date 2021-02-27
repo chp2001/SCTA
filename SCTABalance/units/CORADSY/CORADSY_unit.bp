@@ -86,6 +86,7 @@ UnitBlueprint {
         'OCEAN LEVEL1 CORE',
         'OCEAN LEVEL2 CORE',
         'OCEAN LEVEL3 CORE',
+        'cornecro',
     },
 	InitialRallyX = 0,
 	InitialRallyZ = 12,

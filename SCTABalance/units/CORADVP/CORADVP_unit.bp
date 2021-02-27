@@ -85,6 +85,7 @@ UnitBlueprint {
         'VEHICLE LEVEL1 CORE', 
         'VEHICLE LEVEL2 CORE',
         'VEHICLE LEVEL3 CORE',
+        'cornecro',
     },
 	InitialRallyX = 0,
 	InitialRallyZ = 5,

@@ -87,6 +87,7 @@ UnitBlueprint {
             'VEHICLE LEVEL1 ARM',
             'VEHICLE LEVEL2 ARM',
             'armadvp',
+            'armfark',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 5,

@@ -20,9 +20,7 @@ UnitBlueprint {
         'T2SUBMARINE',
         'OVERLAYSONAR',
         'SELECTION',
-        'OCEAN',
-        'FIELDENGINEER',
-        'NECRO',	
+        'FIELDENGINEER',	
     },
     Defense = {
         Health = 900,

@@ -21,7 +21,6 @@ UnitBlueprint {
     'SHOWQUEUE',
     'MOBILE',
     'CONSTRUCTION',
-    'OCEAN',
     },
    Defense = {
     Health = 540,

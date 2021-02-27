@@ -151,7 +151,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 1.5,
     SizeZ = 2,
-    StrategicIconName = 'icon_structure2_engineer',
+    StrategicIconName = 'icon_land2_engineer',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #BIG_UNITEX

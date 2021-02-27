@@ -21,7 +21,7 @@ UnitBlueprint {
         MaxHealth = 2300,
     },
     Display = {
-        UniformScale = 0.08,
+        UniformScale = 0.05,
     },
    Footprint = {
         SizeX = 1,

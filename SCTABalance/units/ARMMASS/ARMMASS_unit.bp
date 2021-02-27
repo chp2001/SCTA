@@ -63,7 +63,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.08,
+        UniformScale = 0.05,
     },
     Economy = {
         BuildCostMass = 2300,

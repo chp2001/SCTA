@@ -11,29 +11,25 @@ CORSFIG = Class(TASeaair) {
 		TASeaair.OnCreate(self)
 		self.Sliders = {
 			chassis = CreateSlider(self, 0),
-		}
-		self.Spinners = {
-			wing1 = CreateRotator(self, 'rwing', 'z', nil, 0, 0, 0),
-			wing2 = CreateRotator(self, 'lwing', 'z', nil, 0, 0, 0),
+			wing1 = CreateSlider(self, 'Wing1'),
+			wing2 = CreateSlider(self, 'Wing2'),
 		}
 		for k, v in self.Sliders do
 			self.Trash:Add(v)
 		end
-		for k, v in self.Spinners do
-			self.Trash:Add(v)
-		end
+		self.currentShot = 0
 		self.moving = nil
 	end,
 
 
 	OpenWings = function(self)
 		--MOVE winga to x-axis <5.59> SPEED <5.00>;
-		self.Spinners.wing1:SetGoal(90)
-		self.Spinners.wing1:SetSpeed(50)
+		self.Sliders.wing1:SetGoal(0,0,0)
+		self.Sliders.wing1:SetSpeed(2)
 
 		--MOVE wing2 to x-axis <-5.65> SPEED <5.00>;
-		self.Spinners.wing2:SetGoal(-90)
-		self.Spinners.wing2:SetSpeed(50)
+		self.Sliders.wing2:SetGoal(0,0,0)
+		self.Sliders.wing2:SetSpeed(2)
 
 		self.moving = true
 	end,
@@ -42,16 +38,30 @@ CORSFIG = Class(TASeaair) {
 		self.moving = nil
 
 		--MOVE winga to x-axis <5.59> SPEED <5.00>;
-		self.Spinners.wing1:SetGoal(0)
-		self.Spinners.wing1:SetSpeed(50)
+		self.Sliders.wing2:SetGoal(2,0,0)
+		self.Sliders.wing2:SetSpeed(2)
 
 		--MOVE wing2 to x-axis <-5.65> SPEED <5.00>;
-		self.Spinners.wing2:SetGoal(0)
-		self.Spinners.wing2:SetSpeed(50)
+		self.Sliders.wing2:SetGoal(-2,0,0)
+		self.Sliders.wing2:SetSpeed(2)
 	end,
 
 	Weapons = {
-		CORVTOL_MISSILE = Class(TAweapon) {},
+		CORVTOL_MISSILE = Class(TAweapon) {
+			PlayFxRackReloadSequence = function(self)
+				self.unit.currentShot = self.unit.currentShot + 1
+				if self.unit.currentShot == 1 then
+					self.unit:HideBone('missle1', true)
+				elseif self.unit.currentShot == 2 then
+					self.unit:HideBone('missle2', true)
+					self.unit:ShowBone('missle1', true)
+					WaitSeconds(0.5)
+					self.unit:ShowBone('missle2', true)
+					self.unit.currentShot = 0
+				end
+				TAweapon.PlayFxRackReloadSequence(self)
+			end,
+		},
 		
 	},
 }

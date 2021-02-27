@@ -24,9 +24,11 @@ TAunitkeygroups = {
         "corsy",
     },
     ["Power_Generator"]= {
+        "armckfus",
         "armfus",
         "armsolar",
         "armwin",
+        "corckfus",
         "corfus",
         "corsolar",
         "corwin",
@@ -34,10 +36,8 @@ TAunitkeygroups = {
     ["Hydrocarbon_Power_Plant"]= {
         "armgeo",
         "armtide",
-        "armckfus",
         "corgeo",
         "cortide", 
-        "corckfus",
     },    
     ["Mass_Extractor"]= {
         "armmoho",
@@ -175,8 +175,8 @@ TAunitkeygroups = {
     },
     ["T2_Gatling_Bot"]= {
         "corpyro",
-        "armlatnk",
-        "armfido",
+        "armfast",
+        "armspid",
     },
     ["T1_Interceptor"]= {
         "armfig",
@@ -260,7 +260,7 @@ TAunitkeygroups = {
     ["T2_Mobile_Missile_Launcher"]= {
         "armmerl",
         "corvroc",
-        "armhrk",
+        "armrock",
         "corhrk",
         "armawac",
         "corawac", 
@@ -274,16 +274,15 @@ TAunitkeygroups = {
         "corraid",
     },
     ["T2_Heavy_Tank"]= {
-        "armbull",
-        "armzeus",
+        "armlatnk",
         "correap",
         "corcan",
     },
     ["T2_Mobile_AA_Flak_Artillery"]= {
         "armyork",
-        "armspdaa",
+        "armamph",
         "corsent",
-        "corsling",
+        "corstorm",
     },
     ["T2_Field_Engineer"]= {
         "armfark", 
@@ -326,14 +325,10 @@ TAunitkeygroups = {
         "corsub",
     },
     ["T2_Amphibious_Tank"]= {
-        "armcroc",
         "corseal",
-        "armamph",
-        "coramph",
     },
     ["T1_Assault_Bot"]= {
         "armwar",
-        "corstorm",
     },
     ["T2_Submarine_Hunter"]= {
         "armsubk",
@@ -357,22 +352,28 @@ TAunitkeygroups = {
         "corcarry",
     },
     ["T3_Sniper_Bot"] = {
-        "armmav",
-        "armmanni",
-    },    
-    ["T3_Siege_Assault_Bot"] = {
-        "corsumo",
+        "armsnipe",
     },
-    ["T3_Armored_Assault_Bot"] = {
+    ["T3_Tank"] = {
         "armanac",
         "corsnap",
+    }, 
+    ["T3_Armored_Assault_Bot"] = {   
+        "corsumo",
+        "corgol",
+        "armbull",
+        "armzeus",
+    },
+    ["T3_Siege_Assault_Bot"] = {
+        "armcroc",
+        "coramph",
     },
     ["T3_Mobile_Missile_Platform"] = {
         "armmh",
         "cormh",
     },
     ["T3_Mobile_AA"] = {
-        "armsnipe",
+        "armmav",
         "armah",
         "corah",
     },

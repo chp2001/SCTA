@@ -77,38 +77,3 @@ PlatoonTemplate {
     }
 }
 
-PlatoonTemplate {
-    Name = 'T2LandMissileSCTA',
-    FactionSquads = {
-        Arm = {
-            { 'armmerl', 1, 1, 'attack', 'none' }
-        },
-        Core = {
-            { 'corvroc', 1, 1, 'attack', 'none' }
-        },
-    }
-}
-
-PlatoonTemplate {
-    Name = 'T2LandAASCTA',
-    FactionSquads = {
-        Arm = {
-            { 'armyork', 1, 1, 'attack', 'none' }
-        },
-        Core = {
-            { 'corsent', 1, 1, 'attack', 'none' }
-        },
-    }
-}
-
-PlatoonTemplate {
-    Name = 'T1LandRocketSCTA',
-    FactionSquads = {
-        Arm = {
-            { 'armrock', 1, 2, 'attack', 'none' }
-        },
-        Core = {
-            { 'corstorm', 1, 2, 'attack', 'none' }
-        },
-    }
-}

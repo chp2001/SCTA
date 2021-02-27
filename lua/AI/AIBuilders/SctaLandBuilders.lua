@@ -158,10 +158,20 @@ BuilderGroup {
         },
         BuilderType = 'All',
     },
-
     Builder {
         BuilderName = 'SCTAAi FactoryT2 Artillery',
-        PlatoonTemplate = 'T2LandMissileSCTA',
+        PlatoonTemplate = 'T2LandRocketSCTA',
+        Priority = 85,
+        BuilderConditions = {
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
+            { UCBC, 'HaveUnitRatio', { 0.2, categories.LEVEL2 * categories.ROCKET,
+            '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
+         },
+        BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAi FactoryT2 Artillery2',
+        PlatoonTemplate = 'T2LandMissileSCTA2',
         Priority = 85,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
@@ -175,13 +185,33 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandAuxFact1',
         Priority = 70,
         BuilderConditions = {   
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.JAM * categories.LEVEL2 * categories.LAND} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FIELDENGINEER * categories.LEVEL2 * categories.LAND} },
+        }, 
+        BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAi Factory Counter2',
+        PlatoonTemplate = 'T2LandAuxFact2',
+        Priority = 70,
+        BuilderConditions = {   
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FIELDENGINEER * categories.LEVEL2 * categories.LAND} },
         }, 
         BuilderType = 'All',
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT2 AntiAir',
         PlatoonTemplate = 'T2LandAASCTA',
+        Priority = 85,
+        BuilderConditions = {
+            { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.ANTIAIR * categories.MOBILE,
+            '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
+        },
+        BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAi FactoryT2 AntiAir',
+        PlatoonTemplate = 'T2LandAASCTA2',
         Priority = 85,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.ANTIAIR * categories.MOBILE,

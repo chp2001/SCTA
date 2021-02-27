@@ -27,7 +27,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 24000,
         BuildCostMass = 1300,
-        BuildTime = 21000,
+        BuildTime = 28000,
     },
     SizeY = 1.4,
     StrategicIconName = 'icon_land3_antiair',

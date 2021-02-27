@@ -74,7 +74,6 @@ UnitBlueprint {
         BuildCostMass = 112,
         BuildTime = 2636,
     },
-
     General = {
         Category = 'Anti Air',
         Classification = 'RULEUC_MilitaryVehicle',

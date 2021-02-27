@@ -5,7 +5,7 @@
 
 UnitBlueprint {
    Merge = true, 
-   BuildIconSortPriority = 2,
+   BuildIconSortPriority = 1,
    Categories = {
     'SELECTABLE',
     'TECH3',
@@ -20,11 +20,11 @@ UnitBlueprint {
     'LEVEL3',
    },
     Defense = {
-        Health = 3600,
-        MaxHealth = 3600,
+        Health = 4800,
+        MaxHealth = 4800,
     },
     Economy = {
-        BuildCostEnergy = 9000,
+        BuildCostEnergy = 12000,
         BuildCostMass = 1200,
         BuildTime = 21000,
     },

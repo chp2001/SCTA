@@ -6,16 +6,16 @@
 UnitBlueprint {
     Merge = true,
     Defense = {
-        Health = 2000,
-        MaxHealth = 2000,
-        AirThreatLevel = 5,
+        Health = 2500,
+        MaxHealth = 2500,
+        AirThreatLevel = 2,
         EconomyThreatLevel = 0,
         SubThreatLevel = 0,
-        SurfaceThreatLevel = 2,
+        SurfaceThreatLevel = 5,
     },
     Economy = {
         BuildCostEnergy = 3300,
-        BuildCostMass = 410,
+        BuildCostMass = 380,
         BuildTime = 7000,
     },
     SizeX = 1.5,
@@ -23,7 +23,7 @@ UnitBlueprint {
     SizeY = 1.5,
     Weapon = {
         [1] = {
-            Damage = 30,
+            Damage = 20,
             FiringTolerance = 0.5,
             FiringRandomness = 0.1,
             MaxRadius = 26,

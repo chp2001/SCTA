@@ -2,11 +2,11 @@
 #CORVRAD
 #
 #Script created by Raevn
-local TATreads = import('/mods/SCTA-master/lua/TAMotion.lua').TATreads
+local TACloaker = import('/mods/SCTA-master/lua/TAMotion.lua').TACloaker
 
-CORVRAD = Class(TATreads) {
+CORVRAD = Class(TACloaker) {
 	OnCreate = function(self)
-		TATreads.OnCreate(self)
+		TACloaker.OnCreate(self)
 		self.Spinners = {
 			dish = CreateRotator(self, 'dish', 'y', nil, 0, 100, 0),
 		}
@@ -14,24 +14,9 @@ CORVRAD = Class(TATreads) {
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TATreads.OnStopBeingBuilt(self,builder,layer)
+		TACloaker.OnStopBeingBuilt(self,builder,layer)
 		--spin dish around y-axis speed <100>;
 		self.Spinners.dish:SetTargetSpeed(100)
-		self:OnIntelEnabled()
 	end,
-
-
-	OnIntelDisabled = function(self)
-		self.Spinners.dish:SetSpeed(0)
-			self:SetMaintenanceConsumptionInactive()
-	TATreads.OnIntelDisabled(self)
-end,
-
-
-OnIntelEnabled = function(self)
-	self.Spinners.dish:SetSpeed(100)
-	self:SetMaintenanceConsumptionActive()
-	TATreads.OnIntelEnabled(self)
-end,
 }
 TypeClass = CORVRAD

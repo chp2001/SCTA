@@ -5,7 +5,6 @@
 
 UnitBlueprint {
     Merge = true, 
-    BuildIconSortPriority = 1,
     Defense = {
         Health = 2000,
         MaxHealth = 2000,
@@ -34,5 +33,9 @@ UnitBlueprint {
         JammerBlips = 4,
         VisionRadius = 14,
     },
-    StrategicIconName = 'icon_bot2_directfire',
+    StrategicIconName = 'icon_land2_antishield',
+    [1] = {
+        DamageToShields = 100,
+    },
+    [2] = {}, 
 }

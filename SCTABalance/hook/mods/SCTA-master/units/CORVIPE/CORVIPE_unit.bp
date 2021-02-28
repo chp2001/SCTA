@@ -49,8 +49,8 @@ UnitBlueprint {
         [1] = {
             Damage = 750,
             DamageRadius = 2, 
-            EnergyDrainPerSecond = 50,
-            EnergyRequired = 100,
+            EnergyDrainPerSecond = 40,
+            EnergyRequired = 80,
             MaxRadius = 45, 
             RateOfFire = 0.25,
         },

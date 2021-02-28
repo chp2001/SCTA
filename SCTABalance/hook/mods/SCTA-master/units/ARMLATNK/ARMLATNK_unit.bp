@@ -27,7 +27,7 @@ UnitBlueprint {
         Min = 10,
     },
     JammerBlips = 5,
-    VisionRadius = 16,
+    VisionRadius = 12,
     },
    SizeY = 1, 
    StrategicIconName = 'icon_bot2_directfire',
@@ -37,6 +37,7 @@ UnitBlueprint {
         EnergyDrainPerSecond = 25,
         EnergyRequired = 25,
         EnergyChargeForFirstShot = true,
+        RateOfFire = 0.5,
     },
     [2] = {
     },

@@ -41,8 +41,8 @@ UnitBlueprint {
     StrategicIconName = 'icon_bot3_armored',
     Weapon = {
         [1] = {
-            EnergyDrainPerSecond = 50,
-            EnergyRequired = 50,
+            EnergyDrainPerSecond = 40,
+            EnergyRequired = 40,
         },
         [2] = {
         },

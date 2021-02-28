@@ -41,7 +41,7 @@ UnitBlueprint {
         DifferentialUpgradeCostCalculation = true,
         BuildCostEnergy = 9000,
         BuildCostMass = 1200,
-        MaintenanceConsumptionPerSecondEnergy = 100,
+        MaintenanceConsumptionPerSecondEnergy = 200,
         },
         Intel = {
             SonarRadius = 400,

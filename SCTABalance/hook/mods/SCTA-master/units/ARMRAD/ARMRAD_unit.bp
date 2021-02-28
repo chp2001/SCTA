@@ -10,7 +10,7 @@ UnitBlueprint {
         BuildCostEnergy = 1600,
         BuildTime = 2300,
         BuildRate = 40, 
-        MaintenanceConsumptionPerSecondEnergy = 10,
+        MaintenanceConsumptionPerSecondEnergy = 25,
         ProductionPerSecondEnergy = 0,
         BuildableCategory = {
             'armarad',

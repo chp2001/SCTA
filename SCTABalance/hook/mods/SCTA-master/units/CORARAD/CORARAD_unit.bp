@@ -34,7 +34,7 @@ UnitBlueprint {
         BuildCostMass = 400,
         BuildRate = 60, 
         DifferentialUpgradeCostCalculation = true,
-        MaintenanceConsumptionPerSecondEnergy = 50,
+        MaintenanceConsumptionPerSecondEnergy = 150,
         ProductionPerSecondEnergy = 0,
         BuildableCategory = {
             'cortarg',

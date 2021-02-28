@@ -32,7 +32,7 @@ UnitBlueprint {
         BuildCostEnergy = 6000,
         BuildTime = 9600,
         BuildCostMass = 400,
-        MaintenanceConsumptionPerSecondEnergy = 50,
+        MaintenanceConsumptionPerSecondEnergy = 150,
         DifferentialUpgradeCostCalculation = true,
         BuildableCategory = {
             'armtarg',

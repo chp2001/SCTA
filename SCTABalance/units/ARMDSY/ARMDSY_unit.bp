@@ -89,7 +89,7 @@ UnitBlueprint {
         'armadsy',
     },
 	InitialRallyX = 0,
-	InitialRallyZ = 12,
+	InitialRallyZ = 16,
     StorageMass = 50,
     StorageEnergy = 50,
     },

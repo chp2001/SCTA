@@ -90,7 +90,7 @@ UnitBlueprint {
             'LEVEL4 KBOT CORE',
         },
         InitialRallyX = 0,
-        InitialRallyZ = 8,
+        InitialRallyZ = 14,
         StorageMass = 500,
         StorageEnergy = 500,
     },
@@ -129,8 +129,8 @@ TechLevel = 'RULEUTL_Advanced',
     LifeBarSize = 2,
     Physics = {
         FlattenSkirt = true,
-        SkirtSizeX = 9,
-        SkirtSizeZ = 9,
+        SkirtSizeX = 12,
+        SkirtSizeZ = 12,
         RollOffPoints = {
             {
                 UnitSpin = 0,

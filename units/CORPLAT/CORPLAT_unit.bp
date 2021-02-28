@@ -87,7 +87,7 @@ UnitBlueprint {
     NaturalProducer = true,
 	ProductionPerSecondMass = 1,
 	InitialRallyX = 1,
-	InitialRallyZ = 5,
+	InitialRallyZ = 7,
 	StorageEnergy = 250,
 	StorageMass = 250,
     },

@@ -80,7 +80,7 @@ UnitBlueprint {
             'VEHICLE LEVEL2 ARM',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = 5,
+	InitialRallyZ = 7,
         StorageMass = 200,
         StorageEnergy = 200,
     },

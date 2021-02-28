@@ -81,7 +81,7 @@ UnitBlueprint {
             'HOVER LEVEL1 CORE',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = 5,
+	InitialRallyZ = 7,
         StorageMass = 250,
         StorageEnergy = 250,
     },

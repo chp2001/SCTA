@@ -40,7 +40,7 @@ UnitBlueprint {
             'cordsy',
         },
         InitialRallyX = 0,
-        InitialRallyZ = 12,
+        InitialRallyZ = 16,
     },
     Footprint = {
         SizeX = 14,

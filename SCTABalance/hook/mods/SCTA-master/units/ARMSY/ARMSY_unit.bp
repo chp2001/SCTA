@@ -47,7 +47,7 @@ UnitBlueprint {
             'armdsy',
         },
         InitialRallyX = 0,
-        InitialRallyZ = 12,
+        InitialRallyZ = 16,
     },
     General = {
         UpgradesTo = 'armdsy', 

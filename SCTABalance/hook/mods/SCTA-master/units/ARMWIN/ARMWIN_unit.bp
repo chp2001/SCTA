@@ -10,7 +10,7 @@ Defense = {
   Economy = {
         BuildTime = 4800,
         BuildCostMass = 60,
-        BuildCostEnergy = 2700,
+        BuildCostEnergy = 1800,
         ProductionPerSecondEnergyMin = 15,
         ProductionPerSecondEnergyMax = 35,
     },

@@ -90,7 +90,7 @@ UnitBlueprint {
             'LEVEL4 KBOT CORE',
         },
         InitialRallyX = 0,
-        InitialRallyZ = 14,
+        InitialRallyZ = 8,
         StorageMass = 500,
         StorageEnergy = 500,
     },

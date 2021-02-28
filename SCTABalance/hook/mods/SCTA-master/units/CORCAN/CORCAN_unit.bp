@@ -18,9 +18,10 @@ UnitBlueprint {
     StrategicIconName = 'icon_land2_directfire',
     Weapon = {
         [1] = {
-            Damage = 120,
-            EnergyDrainPerSecond = 50,
-            EnergyRequired = 50,
+            Damage = 35,
+            EnergyDrainPerSecond = 10,
+            EnergyRequired = 10,
+            RateOfFire = 2,
         },
         [2] = {},
     },

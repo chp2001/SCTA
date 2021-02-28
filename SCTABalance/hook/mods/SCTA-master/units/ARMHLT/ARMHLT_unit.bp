@@ -30,11 +30,7 @@ UnitBlueprint {
     SizeZ = 1.5,
     Weapon = {
         [1] = {
-            Damage = 70,
-            RackRecoilDistance = -0.1,
-            RackSalvoReloadTime = 0.5,
-            RackSalvoSize = 4,
-            RateOfFire = 2,
+            Damage = 140,
         },
         [2] = {
         },

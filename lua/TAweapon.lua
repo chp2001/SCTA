@@ -229,22 +229,26 @@ end,
 }
 
 TAKami = Class(KamikazeWeapon){
-    FxMuzzleFlash = {
-        '/effects/emitters/default_muzzle_flash_01_emit.bp',
-        '/effects/emitters/default_muzzle_flash_02_emit.bp',
+    FxDeath = {
+        '/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp',
     },
 
+
     OnFire = function(self)
-		local army = self.unit:GetArmy()
+        local army = self.unit:GetArmy()
+        for k, v in self.FxDeath do
+            CreateEmitterAtBone(self.unit,-2,army,v):ScaleEmitter(3)
+        end 
+		local myBlueprint = self:GetBlueprint()
 		KamikazeWeapon.OnFire(self)
     end,
 }
 
 TABomb = Class(BareBonesWeapon) {
-    FxMuzzleFlash = {
-        '/effects/emitters/default_muzzle_flash_01_emit.bp',
-        '/effects/emitters/default_muzzle_flash_02_emit.bp',
+    FxDeath = {
+        '/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp',
     },
+
 
     OnCreate = function(self)
         BareBonesWeapon.OnCreate(self)
@@ -257,6 +261,9 @@ TABomb = Class(BareBonesWeapon) {
     
     Fire = function(self)
 		local army = self.unit:GetArmy()
+        for k, v in self.FxDeath do
+            CreateEmitterAtBone(self.unit,-2,army,v):ScaleEmitter(3)
+        end 
 		local myBlueprint = self:GetBlueprint()
         DamageArea(self.unit, self.unit:GetPosition(), myBlueprint.DamageRadius, myBlueprint.Damage, myBlueprint.DamageType or 'Normal', myBlueprint.DamageFriendly or false)
     end,    

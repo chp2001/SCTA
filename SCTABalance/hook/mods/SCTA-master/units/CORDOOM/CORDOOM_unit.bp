@@ -49,12 +49,13 @@ UnitBlueprint {
     Weapon = {
         [1] = {
             MaxRadius = 90,
-            EnergyDrainPerSecond = 500,
-            EnergyRequired = 1500,
+            EnergyDrainPerSecond = 400,
         },
             [2] = {
             Damage = 300,
             MaxRadius = 50,
+            EnergyDrainPerSecond = 40,
+            EnergyRequired = 40,
         },
         [3] = {
             Damage = 75,

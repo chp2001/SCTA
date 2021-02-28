@@ -172,7 +172,7 @@ UnitBlueprint {
         OrderOverrides = {
             RULEUCC_Overcharge = {
                 bitmapId = 'activate-weapon',
-                helpText = 'DGun. Requires 600 Energy to Fire. Right-click turn on auto',
+                helpText = 'DGun. Requires 500 Energy to Fire. Right-click turn on auto',
             },
         },
         ToggleCaps = {
@@ -331,8 +331,8 @@ UnitBlueprint {
             MuzzleVelocity = 18,
 	        NeedPrep = true,
             EnergyChargeForFirstShot = true,
-            EnergyRequired = 600,
-            EnergyDrainPerSecond = 600,
+            EnergyRequired = 500,
+            EnergyDrainPerSecond = 500,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_DISINTEGRATOR/CORE_DISINTEGRATOR_proj.bp',
             RackBones = {
                 {
@@ -394,8 +394,8 @@ UnitBlueprint {
             MuzzleVelocity = 18,
 	        NeedPrep = true,
             EnergyChargeForFirstShot = true,
-            EnergyRequired = 600,
-            EnergyDrainPerSecond = 600,
+            EnergyRequired = 500,
+            EnergyDrainPerSecond = 500,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_DISINTEGRATOR/CORE_DISINTEGRATOR_proj.bp',
             RackBones = {
                 {

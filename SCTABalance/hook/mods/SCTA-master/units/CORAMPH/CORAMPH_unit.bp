@@ -29,14 +29,14 @@ Economy = {
             Damage = 200,
             MaxRadius = 32,
             RateOfFire = 1.25,
-            EnergyDrainPerSecond = 50,
-            EnergyRequired = 50,
+            EnergyDrainPerSecond = 40,
+            EnergyRequired = 40,
         },   
         [2] = {
             Damage = 400,
             MaxRadius = 40,
-            EnergyDrainPerSecond = 150,
-            EnergyRequired = 300,
+            EnergyDrainPerSecond = 80,
+            EnergyRequired = 160,
             EnergyChargeForFirstShot = true,
         },
         [3] = {

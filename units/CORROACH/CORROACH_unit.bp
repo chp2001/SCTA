@@ -138,6 +138,14 @@ TechLevel = 'RULEUTL_Advanced',
             FireOnSelfDestruct = true,
             DamageType = 'Normal',
             DisplayName = 'Suicide',
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        0,
+                    },
+                    RackBone = 0,
+                },
+            },
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
             },
@@ -145,7 +153,7 @@ TechLevel = 'RULEUTL_Advanced',
      WeaponCategory = 'DirectFire',
             FiringTolerance = 999999,
             Label = 'Suicide',
-            MaxRadius = 3,
+            MaxRadius = 6,
 	    ProjectileId = '/mods/SCTA-master/projectiles/CRAWL_BLAST/CRAWL_BLAST_proj.bp',
             RateOfFire = 99999,
             TargetCheckInterval = 1,

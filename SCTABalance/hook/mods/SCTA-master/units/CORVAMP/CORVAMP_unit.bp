@@ -43,10 +43,12 @@ UnitBlueprint {
       [1] = {
         EnergyDrainPerSecond = 40,
         EnergyRequired = 40,
+        EnergyChargeForFirstShot = true,
       },
       [2] = {
         EnergyDrainPerSecond = 40,
         EnergyRequired = 40,
+        EnergyChargeForFirstShot = true,
       },
       [3] = {}, 
   },

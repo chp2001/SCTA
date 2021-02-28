@@ -50,6 +50,18 @@ BuilderGroup {
         BuilderType = 'All',
     },
     Builder {
+        BuilderName = 'SCTAAi Factory Tank2',
+        PlatoonTemplate = 'T1LandDFTankSCTA2',
+        Priority = 90,
+        BuilderConditions = {
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK,
+            '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.LAND } }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},
+        },
+        BuilderType = 'All',
+    },
+    Builder {
         BuilderName = 'SCTAAi Factory Artillery',
         PlatoonTemplate = 'T1LandArtillerySCTA',
         Priority = 70,

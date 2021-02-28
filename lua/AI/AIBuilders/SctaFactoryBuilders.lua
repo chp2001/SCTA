@@ -171,7 +171,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2AirFactory',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
-        Priority = 115,
+        Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, categories.FUSION} },
@@ -199,7 +199,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.GANTRY} }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.GANTRY} }, -- Stop after 10 facs have been built.
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.GANTRY} },
         },
         BuilderType = 'Any',
@@ -218,13 +218,12 @@ BuilderGroup {
         BuilderName = 'SCTAAI LandFac Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 500,
-        InstanceCount = 2,
+        InstanceCount = 4,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {180} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.LAND } }, -- Stop after 10 facs have been built.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.PLANT} }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
-            { MIBC, 'LessThanGameTime', {1200} },
+            { MIBC, 'LessThanGameTime', {900} },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -241,11 +240,11 @@ BuilderGroup {
         BuilderName = 'SCTAAI LandFac2 Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTA12',
         Priority = 600,
-        InstanceCount = 2,
+        InstanceCount = 3,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {750} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.PLATFORM * categories.LAND } }, -- Stop after 10 facs have been built.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LAB} }, -- Stop after 10 facs have been built.
+            { MIBC, 'LessThanGameTime', {1500} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.PLATFORM} }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderType = 'Any',
@@ -262,10 +261,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI LandFac3 Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTA23',
-        Priority = 750,
+        Priority = 800,
         InstanceCount = 2,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {1500} },
+            { MIBC, 'GreaterThanGameTime', {1200} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderType = 'Any',

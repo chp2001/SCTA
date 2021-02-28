@@ -34,7 +34,7 @@ BuilderGroup {
         BuilderConditions = {
             { EBC, 'GreaterThanEconIncome',  { 4, 50}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 1.2 }},
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.MASSEXTRACTION * categories.LEVEL2} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.MASSEXTRACTION * categories.LEVEL2} },
             { IBC, 'BrainNotLowPowerMode', {} },
         },
         FormRadius = 10000,

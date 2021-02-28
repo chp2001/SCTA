@@ -22,6 +22,10 @@ UnitBlueprint {
     Display = {
         UniformScale = 0.20,
     },
+    Footprint = {
+        SizeX = 2,
+        SizeZ = 2,
+    },
     Economy = {
         BuildCostEnergy = 12000,
         BuildCostMass = 800,

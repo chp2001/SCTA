@@ -41,7 +41,7 @@ UnitBlueprint {
             'cornecro',
         },
         InitialRallyX = 0,
-        InitialRallyZ = 12,
+        InitialRallyZ = 16,
         BuildRate = 360,
         ProductionPerSecondMass = 0,
     },

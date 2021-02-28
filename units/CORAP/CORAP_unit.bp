@@ -90,7 +90,7 @@ UnitBlueprint {
             'VTOL LEVEL1 CORE',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = 5,
+	InitialRallyZ = 7,
         StorageMass = 50,
         StorageEnergy = 50,
     },

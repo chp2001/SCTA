@@ -38,30 +38,31 @@ TAconstructor = Class(TAWalking) {
 
     OnPaused = function(self)
         self:StopUnitAmbientSound('Construct')
-        TAWalking.OnPaused(self)
         if self.BuildingUnit then
+            self:UpdateConsumptionValues()
             TAWalking.StopBuildingEffects(self, self.UnitBeingBuilt)
         end
+        TAWalking.OnPaused(self)
     end,
 
     OnUnpaused = function(self)
         if self.BuildingUnit then
             self:PlayUnitAmbientSound('Construct')
             TAWalking.StartBuildingEffects(self, self.UnitBeingBuilt, self.UnitBuildOrder)
+            self:UpdateConsumptionValues()
         end
         TAWalking.OnUnpaused(self)
     end,
     
     OnStartBuild = function(self, unitBeingBuilt, order ) 
-        TAWalking.OnStartBuild(self, unitBeingBuilt, order)
         self.UnitBeingBuilt = unitBeingBuilt
         self.UnitBuildOrder = order
         self.BuildingUnit = true
+        TAWalking.OnStartBuild(self, unitBeingBuilt, order)
     end,
 
 
     OnStopBuild = function(self, unitBeingBuilt)
-        TAWalking.OnStopBuild(self,unitBeingBuilt)
         self.UnitBeingBuilt = nil
         self.UnitBuildOrder = nil
 
@@ -75,6 +76,7 @@ TAconstructor = Class(TAWalking) {
         if __blueprints['armmass'] then
             TAutils.updateBuildRestrictions(self)
         end
+        TAWalking.OnStopBuild(self,unitBeingBuilt)
     end,
 
     WaitForBuildAnimation = function(self, enable)
@@ -109,7 +111,6 @@ TAconstructor = Class(TAWalking) {
 
     OnStopBuilderTracking = function(self)
         TAWalking.OnStopBuilderTracking(self)
-
         if self.StoppedBuilding then
             self.StoppedBuilding = false
             self.BuildArmManipulator:Disable()

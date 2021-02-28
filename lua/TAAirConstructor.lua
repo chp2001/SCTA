@@ -42,30 +42,31 @@ TAAirConstructor = Class(TAair) {
 
     OnPaused = function(self)
         self:StopUnitAmbientSound('Construct')
-        TAair.OnPaused(self)
         if self.BuildingUnit then
+            self:UpdateConsumptionValues()
             TAair.StopBuildingEffects(self, self.UnitBeingBuilt)
         end
+        TAair.OnPaused(self)
     end,
 
     OnUnpaused = function(self)
         if self.BuildingUnit then
             self:PlayUnitAmbientSound('Construct')
+            self:UpdateConsumptionValues()
             TAair.StartBuildingEffects(self, self.UnitBeingBuilt, self.UnitBuildOrder)
         end
         TAair.OnUnpaused(self)
     end,
     
     OnStartBuild = function(self, unitBeingBuilt, order )
-        TAair.OnStartBuild(self,unitBeingBuilt, order)
         self.UnitBeingBuilt = unitBeingBuilt
         self.UnitBuildOrder = order
         self.BuildingUnit = true
+        TAair.OnStartBuild(self,unitBeingBuilt, order)
     end,
 
 
     OnStopBuild = function(self, unitBeingBuilt)
-        TAair.OnStopBuild(self,unitBeingBuilt)
         self.UnitBeingBuilt = nil
         self.UnitBuildOrder = nil
 
@@ -79,6 +80,7 @@ TAAirConstructor = Class(TAair) {
         if __blueprints['armmass'] then
             TAutils.updateBuildRestrictions(self)
         end
+        TAair.OnStopBuild(self,unitBeingBuilt)
     end,
 
     WaitForBuildAnimation = function(self, enable)

@@ -40,15 +40,12 @@ UnitBlueprint {
     StrategicIconName = 'icon_bot3_armored',
     Weapon = {
         [1] = {
-            EnergyDrainPerSecond = 75,
-            EnergyRequired = 75,
+            EnergyDrainPerSecond = 50,
+            EnergyRequired = 50,
             EnergyChargeForFirstShot = true,
             Damage = 400,
             MaxRadius = 35,
-            MuzzleSalvoSize = 1,
-            RackSalvoSize = 1,
             RateOfFire = 1,
-            UseFiringSolutionInsteadOfAimBone = true,
             MuzzleVelocity = 30,
             ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/PELTHUND/PELTHUND_proj.bp',
         },

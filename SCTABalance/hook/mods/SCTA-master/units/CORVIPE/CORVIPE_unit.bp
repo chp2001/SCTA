@@ -47,19 +47,12 @@ UnitBlueprint {
     SizeZ = 1,
     Weapon = {
         [1] = {
-            Damage = 1500,
+            Damage = 750,
             DamageRadius = 2, 
-            EnergyDrainPerSecond = 100,
-            EnergyRequired = 400,
-            EnergyChargeForFirstShot = true,
-            MaxRadius = 55, 
-            MuzzleSalvoDelay = 0, 
-            MuzzleSalvoSize = 1,
-            RackRecoilDistance = -5,
-            RackSalvoSize = 1,
-            RackSlavedToTurret = false,
+            EnergyDrainPerSecond = 50,
+            EnergyRequired = 100,
+            MaxRadius = 45, 
             RateOfFire = 0.25,
-            TargetCheckInterval = 1,
         },
         [2] = {
         },

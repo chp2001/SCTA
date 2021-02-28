@@ -35,8 +35,8 @@ Economy = {
         [2] = {
             Damage = 400,
             MaxRadius = 40,
-            EnergyDrainPerSecond = 150,
-            EnergyRequired = 300,
+            EnergyDrainPerSecond = 100,
+            EnergyRequired = 200,
             EnergyChargeForFirstShot = true,
         },
         [3] = {

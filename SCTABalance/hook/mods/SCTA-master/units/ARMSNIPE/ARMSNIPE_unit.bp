@@ -32,8 +32,8 @@ UnitBlueprint {
             Damage = 1500,
             MaxRadius = 60,
             RateOfFire = 0.1694915254,
-            EnergyDrainPerSecond = 200,
-            EnergyRequired = 400,
+            EnergyDrainPerSecond = 100,
+            EnergyRequired = 200,
         },
         [2] = {
         },

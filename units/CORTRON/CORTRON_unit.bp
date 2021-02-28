@@ -37,6 +37,7 @@ UnitBlueprint {
 	    'STRUCTURE',
 	    'STRATEGIC',
 	    'INDIRECTFIRE',
+        'OVERLAYINDIRECTFIRE',
         'NUKE',
         'SILO',
         'SHOWQUEUE',

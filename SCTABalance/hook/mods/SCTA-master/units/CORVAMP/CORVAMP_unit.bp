@@ -41,12 +41,12 @@ UnitBlueprint {
     },
     Weapon = {
       [1] = {
-        EnergyDrainPerSecond = 45,
-        EnergyRequired = 45,
+        EnergyDrainPerSecond = 50,
+        EnergyRequired = 50,
       },
       [2] = {
-        EnergyDrainPerSecond = 45,
-        EnergyRequired = 45,
+        EnergyDrainPerSecond = 50,
+        EnergyRequired = 50,
       },
       [3] = {}, 
   },

@@ -34,8 +34,8 @@ UnitBlueprint {
    Weapon = {
     [1] = {
         Damage = 80,
-        EnergyDrainPerSecond = 50,
-        EnergyRequired = 50,
+        EnergyDrainPerSecond = 25,
+        EnergyRequired = 25,
         EnergyChargeForFirstShot = true,
     },
     [2] = {

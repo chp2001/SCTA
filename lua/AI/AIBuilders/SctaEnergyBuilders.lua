@@ -58,7 +58,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
-            { EBC, 'LessThanEconStorageRatio', { 1, 0.6}},
+            { EBC, 'LessThanEconStorageRatio', { 1, 0.25}},
         },
         BuilderType = 'Any',
         BuilderData = {

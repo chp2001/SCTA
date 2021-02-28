@@ -175,7 +175,7 @@ BuilderGroup {
         Priority = 200,
         InstanceCount = 5,
         BuilderConditions = {
-            { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},
+            { EBC, 'LessThanEconStorageRatio', { 0.1, 1.1}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB * categories.LAND} },
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT * categories.LAND}},
             },
@@ -193,15 +193,15 @@ BuilderGroup {
         Priority = 300,
         InstanceCount = 8,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {1500} },
+            { MIBC, 'GreaterThanGameTime', {1200} },
             { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT * categories.LAND}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB * categories.LAND} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB} },
             },
         BuilderData = {
             Location = 'LocationType',
             ReclaimTime = 30,
-            Reclaim = {'PLANT LAND'},
+            Reclaim = {'PLANT'},
         },
         BuilderType = 'Any',
     },
@@ -212,10 +212,10 @@ BuilderGroup {
         Priority = 250,
         InstanceCount = 8,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {1800} },
-            { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 4, categories.LAB * categories.LAND}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 9, categories.LAB * categories.LAND} },
+            { MIBC, 'GreaterThanGameTime', {1500} },
+            { EBC, 'LessThanEconStorageRatio', { 0.1, 1.1}},
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 2, categories.LAB * categories.LAND}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 8, categories.LAB} },
             },
         BuilderData = {
             Location = 'LocationType',

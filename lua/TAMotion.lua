@@ -19,7 +19,6 @@ TAWalking = Class(TAunit)
         ---self:LOGDBG('TAWalking.OnMotionHorzEventChange')
         TAunit.OnMotionHorzEventChange(self, new, old)
         if ( old == 'Stopped' ) then
-            TAunit.CreateMovementEffects(self)
             if (not self.Animator) then
                 self.Animator = CreateAnimator(self, true)
             end
@@ -29,7 +28,6 @@ TAWalking = Class(TAunit)
                 self.Animator:SetRate(bpDisplay.AnimationWalkRate or 1)
             end
         elseif ( new == 'Stopped' ) then
-            TAunit.CreateMovementEffects(self)
             if(self.IdleAnim and not self:IsDead()) then
                 self.Animator:PlayAnim(self.IdleAnim, true)
             elseif(not self.DeathAnim or not self:IsDead()) then

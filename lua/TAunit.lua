@@ -32,21 +32,17 @@ TAunit = Class(Unit)
 
 	OnMotionHorzEventChange = function(self, new, old )
 		Unit.OnMotionHorzEventChange(self, new, old)
-        if not IsDestroyed(self) then
-		ForkThread(self.TAIntelMotion, self)
-        end
-    end,
+		self.CreateMovementEffects(self)
+	end,
 
-        TAIntelMotion = function(self, new, old )
-            if self.TAIntelOn then
+    TAIntelMotion = function(self, new, old ) 
 			while not self.Dead do
             coroutine.yield(11)
-            if self:IsUnitState('Moving') then
+            if self:IsUnitState('Moving') and self.TAIntelOn then
                 self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
-            else
+			elseif self.TAIntelOn then
                 self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
             end
-        end
 		end
     end,
 
@@ -86,10 +82,12 @@ TAunit = Class(Unit)
 		Unit.OnIntelEnabled()
 		if not IsDestroyed(self) then
 		if EntityCategoryContains(categories.TACLOAK, self) then
+			if self:IsIntelEnabled('Jammer') then
 			self.TAIntelOn = true
 			ForkThread(self.TAIntelMotion, self)
+			end
 			if self:IsIntelEnabled('Cloak') then
-			self.CloakOn = true	
+			self.CloakOn = true
         	self:PlayUnitSound('Cloak')
 			self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
 			ForkThread(self.CloakDetection, self)
@@ -105,6 +103,11 @@ TAunit = Class(Unit)
         local getpos = moho.entity_methods.GetPosition
         while not self.Dead do
             coroutine.yield(11)
+			if self:IsUnitState('Moving') and self.CloakOn then
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
+			elseif self.CloakOn then
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
+            end
             local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
 			if self:IsUnitState('Building') and self.CloakOn and not IsDestroyed(self) then
 				self:DisableIntel('Cloak')

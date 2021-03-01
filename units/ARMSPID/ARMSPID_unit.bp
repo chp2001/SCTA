@@ -80,13 +80,6 @@ UnitBlueprint {
                 Weight = 100,
             },
         },
-        MovementEffects = {
-            TAMovement = {
-            Bones = { 'Origin'},
-            Emitter = '/mods/SCTA-master/effects/emitters/TAdust_emit.bp',
-            Scale = 0.4,
-            },
-        },
         TransportAnimation = { { Animation = '/mods/SCTA-master/units/ARMSPID/ARMSPID_ATransport.sca', Weight = 100 } },
         TransportDropAnimation = { { Animation = '/mods/SCTA-master/units/ARMSPID/ARMSPID_ATransportDetach.sca', Weight = 100 } },
 	    ---SmokeBone = 'Turret_Pitch',

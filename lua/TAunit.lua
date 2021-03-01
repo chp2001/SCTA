@@ -30,11 +30,6 @@ TAunit = Class(Unit)
 		---self:SetConsumptionActive(true)	
 	end,
 
-	OnMotionHorzEventChange = function(self, new, old )
-		Unit.OnMotionHorzEventChange(self, new, old)
-		self.CreateMovementEffects(self)
-	end,
-
     TAIntelMotion = function(self, new, old ) 
 			while not self.Dead do
             coroutine.yield(11)
@@ -46,21 +41,6 @@ TAunit = Class(Unit)
 		end
     end,
 
-	CreateMovementEffects = function(self, EffectsBag, TypeSuffix)
-		if not IsDestroyed(self) then
-		Unit.CreateMovementEffects(self, EffectsBag, TypeSuffix)
-		local bp = self:GetBlueprint()
-		if self:IsUnitState('Moving') and bp.Display.MovementEffects.TAMovement then
-			for k, v in bp.Display.MovementEffects.TAMovement.Bones do
-				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.TAMovement.Emitter ):ScaleEmitter(bp.Display.MovementEffects.TAMovement.Scale))
-			end
-			elseif not self:IsUnitState('Moving') then
-			for k,v in self.FxMovement do
-				v:Destroy()
-			end
-		end
-		end
-	end,
 
 	OnDamage = function(self, instigator, amount, vector, damageType)
 		Unit.OnDamage(self, instigator, amount * (self.Pack or 1), vector, damageType)

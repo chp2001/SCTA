@@ -103,13 +103,13 @@ UnitBlueprint {
                 },
             },
         },
-	MovementEffects = {
-        TAMovement = {
-		Emitter = '/mods/SCTA-master/effects/emitters/fire_smoke_emit.bp',
-		Scale = 1,
-		Bones = {'Flame_01','Flame_02','Flame_03'},
+        MovementEffects = {
+            TAMovement = {
+            Emitter = '/mods/SCTA-master/effects/emitters/fire_smoke_emit.bp',
+            Scale = 1,
+            Bones = {'Flame_01','Flame_02','Flame_03'},
+            },
         },
-	},
         UniformScale = 0.16,
     },
     Footprint = {

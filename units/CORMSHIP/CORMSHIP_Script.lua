@@ -3,13 +3,13 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TASea = import('/mods/SCTA-master/lua/TAMotion.lua').TASea
 local TARocket = import('/mods/SCTA-master/lua/TAweapon.lua').TARocket
 local AAMWillOWisp = import('/lua/aeonweapons.lua').AAMWillOWisp
 
-CORMSHIP = Class(TAunit) {
+CORMSHIP = Class(TASea) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TASea.OnCreate(self)
 		self.Spinners = {
 			dish = CreateRotator(self, 'dish', 'y', nil, 0, 0, 0),
 		}

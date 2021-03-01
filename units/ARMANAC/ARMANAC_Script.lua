@@ -10,10 +10,7 @@ ARMAH = Class(TAunit) {
 
 	Weapons = {
 		ARMANAC_WEAPON = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

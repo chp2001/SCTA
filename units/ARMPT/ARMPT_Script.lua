@@ -9,10 +9,7 @@ local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 ARMPT = Class(TAunit) {
 	Weapons = {
 		ARMPT_LASER = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 		ARMKBOT_MISSILE = Class(TAweapon) {},
 	},

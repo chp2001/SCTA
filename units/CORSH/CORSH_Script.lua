@@ -9,10 +9,7 @@ local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 CORSH = Class(TAunit) {
 	Weapons = {
 		CORSH_WEAPON = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

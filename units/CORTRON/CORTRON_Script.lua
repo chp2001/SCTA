@@ -7,10 +7,6 @@ local TAnoassistbuild = import('/mods/SCTA-master/lua/TAStructure.lua').TAnoassi
 local TIFStrategicMissileWeapon = import('/lua/terranweapons.lua').TIFStrategicMissileWeapon
 
 CORTRON = Class(TAnoassistbuild) {
-	OnCreate = function(self)
-		TAnoassistbuild.OnCreate(self)
-	end,
-
 	Weapons = {
 		EMBMSSL = Class(TIFStrategicMissileWeapon ) {},
 	},

@@ -10,16 +10,10 @@ ARMWAR = Class(TAWalking) {
 	
 	Weapons = {
 		ARMWAR_EMG = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 		ARMWAR_LCANNON = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

@@ -8,20 +8,8 @@ local TIFStrategicMissileWeapon = import('/lua/terranweapons.lua').TIFStrategicM
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 CORSILO = Class(TAnoassistbuild) {
-	
-	OnCreate = function(self)
-		TAnoassistbuild.OnCreate(self)
-	end,
-
 	Weapons = {
 		CRBLMSSL = Class(TIFStrategicMissileWeapon) {
-			PlayFxWeaponUnpackSequence = function(self)
-				TIFStrategicMissileWeapon.PlayFxWeaponUnpackSequence(self)
-			end,
-
-			PlayFxWeaponPackSequence = function(self)
-				TIFStrategicMissileWeapon.PlayFxWeaponPackSequence(self)
-			end,
 		},
 	},
 }

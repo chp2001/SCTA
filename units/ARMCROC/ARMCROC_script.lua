@@ -10,10 +10,7 @@ ARMCROC = Class(TAunit) {
 
 	Weapons = {
 		ARM_MEDIUMCANNON = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

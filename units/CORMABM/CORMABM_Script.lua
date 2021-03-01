@@ -3,10 +3,10 @@
 #
 #Blueprint created by Raevn
 
-local TATreads = import('/mods/SCTA-master/lua/TAMotion.lua').TATreads
+local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 local AAMWillOWisp = import('/lua/aeonweapons.lua').AAMWillOWisp
 
-CORMABM = Class(TATreads) {
+CORMABM = Class(TAunit) {
 	Weapons = {
 			Turret01 = Class(AAMWillOWisp) {}
 	},

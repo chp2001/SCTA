@@ -10,10 +10,7 @@ CORSNAP = Class(TAunit) {
 
 	Weapons = {
 		CORSNAP_WEAPON = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

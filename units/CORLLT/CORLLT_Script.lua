@@ -9,10 +9,7 @@ local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 CORLLT = Class(TAStructure) {
 	Weapons = {
 		CORE_LIGHTLASER = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

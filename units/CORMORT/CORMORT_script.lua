@@ -10,10 +10,6 @@ CORMORT = Class(TAWalking) {
 
 	Weapons = {
 		CORE_MORT = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				 #check flare time
-			end,
 		},
 	},
 }

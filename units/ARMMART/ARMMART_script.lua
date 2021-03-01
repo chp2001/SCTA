@@ -10,10 +10,7 @@ ARMMART = Class(TAunit) {
 
 	Weapons = {
 		ARM_ARTILLERY = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

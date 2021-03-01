@@ -11,14 +11,8 @@ CORKROG = Class(TAWalking) {
 	
 	Weapons = {
 		CORKROG_FIRE = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-			end,
 		},
 		CORKROG_HEAD = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-			end,
 		},
 		CORKROG_ROCKET = Class(TAweapon) {},
 	},

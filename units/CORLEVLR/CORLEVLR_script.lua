@@ -10,10 +10,7 @@ CORLEVLR = Class(TAunit) {
 
 	Weapons = {
 		CORLEVLR_WEAPON = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

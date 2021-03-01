@@ -8,10 +8,6 @@ local TIFStrategicMissileWeapon = import('/lua/terranweapons.lua').TIFStrategicM
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 ARMEMP = Class(TAnoassistbuild) {
-	OnCreate = function(self)
-		TAnoassistbuild.OnCreate(self)
-	end,
-
 	Weapons = {
 		EMBMSSL = Class(TIFStrategicMissileWeapon) {
 		},

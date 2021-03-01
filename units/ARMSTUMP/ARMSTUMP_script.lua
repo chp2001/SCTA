@@ -10,10 +10,7 @@ ARMSTUMP = Class(TATreads) {
 
 	Weapons = {
 		ARM_LIGHTCANNON = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

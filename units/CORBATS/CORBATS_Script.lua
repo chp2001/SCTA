@@ -35,10 +35,7 @@ CORBATS = Class(TAunit) {
 		},
 
 		COR_BATS = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 
 	},

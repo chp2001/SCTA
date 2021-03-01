@@ -61,10 +61,7 @@ ARMPNIX = Class(TAair) {
 	Weapons = {
 		ARMADVBOMB = Class(TAweapon) {},
 		ARMAIR2AIRLASER = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 		
 	},

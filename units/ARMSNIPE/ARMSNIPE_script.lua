@@ -16,9 +16,6 @@ ARMSNIPE = Class(TACloaker) {
 
 	Weapons = {
 		ARM_FAST = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-			end,
 		},
 	},
 }

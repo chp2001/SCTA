@@ -9,10 +9,7 @@ local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 ARMGUARD = Class(TAStructure) {
 	Weapons = {
 		ARMFIXED_GUN = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

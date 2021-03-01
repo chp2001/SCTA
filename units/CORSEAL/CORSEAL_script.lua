@@ -10,10 +10,7 @@ CORSEAL = Class(TATreads) {
 
 	Weapons = {
 		CORE_MEDIUMCANNON = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

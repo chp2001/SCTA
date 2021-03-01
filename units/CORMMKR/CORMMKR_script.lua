@@ -39,9 +39,7 @@ CORMMKR = Class(TACloser) {
 			self.Spinners.lid3:SetSpeed(39.29)
 
 			--SLEEP <774>;
-			WaitSeconds(0.75)
-			--SLEEP <775>;
-			WaitSeconds(0.75)
+			WaitSeconds(1)
 
 			self:SetProductionActive(true)
 			self:SetMaintenanceConsumptionActive()
@@ -72,9 +70,6 @@ CORMMKR = Class(TACloser) {
 			--TURN lid3 to x-axis <-26.75> SPEED <69.05>;
 			self.Spinners.lid3:SetGoal(0)
 			self.Spinners.lid3:SetSpeed(69.05)
-			--SLEEP <688>;
-			WaitSeconds(0.7)
-
 			ChangeState(self, self.IdleClosedState)
 			
 		end,

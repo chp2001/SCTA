@@ -30,7 +30,8 @@ TAunit = Class(Unit)
 		self:SetConsumptionActive(true)	
 	end,
 
-	MovementEffects = function(self, EffectsBag, TypeSuffix)
+	CreateMovementEffects = function(self, EffectsBag, TypeSuffix)
+		Unit.CreateMovementEffects(self, EffectsBag, TypeSuffix)
 		if not IsDestroyed(self) then
 		local bp = self:GetBlueprint()
 		if bp.Display.MovementEffects.TAMovement then

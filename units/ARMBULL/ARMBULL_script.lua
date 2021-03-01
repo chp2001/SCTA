@@ -9,12 +9,8 @@ local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 ARMBULL = Class(TAunit) {
 
 	Weapons = {
-		#ARM_BULL
 		ARM_BULL = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

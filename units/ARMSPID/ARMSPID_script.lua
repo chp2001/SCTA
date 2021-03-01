@@ -10,10 +10,7 @@ ARMSPID = Class(TACloaker) {
 
 	Weapons = {
 		ARM_PARALYZER = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

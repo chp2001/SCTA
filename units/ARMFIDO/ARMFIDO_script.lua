@@ -12,10 +12,7 @@ ARMFIDO = Class(TAWalking) {
 
 	Weapons = {
 		GAUSS = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

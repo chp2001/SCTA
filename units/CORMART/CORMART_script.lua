@@ -10,10 +10,7 @@ CORMART = Class(TAunit) {
 
 	Weapons = {
 		CORE_ARTILLERY = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

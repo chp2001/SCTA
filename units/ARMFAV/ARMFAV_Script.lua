@@ -10,9 +10,6 @@ ARMFAV = Class(TATreads) {
 
 	Weapons = {
 		ARM_LASER = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-			end,
 		},
 	},
 }

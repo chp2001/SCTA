@@ -9,10 +9,7 @@ local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 CORROY = Class(TAunit) {
 	Weapons = {
 		CORE_ROY = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 		COREDEPTHCHARGE = Class(TAweapon) {},
 	},

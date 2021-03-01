@@ -70,10 +70,7 @@ CORHURC = Class(TAair) {
 	Weapons = {
 		CORADVBOMB = Class(TAweapon) {},
 		CORAIR2AIRLASER = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 		
 	},

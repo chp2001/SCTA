@@ -27,21 +27,20 @@ TAunit = Class(Unit)
         ---self:LOGDBG('TAUnit.OnStopBeingBuilt')
 		Unit.OnStopBeingBuilt(self,builder,layer)
 		self:SetDeathWeaponEnabled(true)
-		self:SetConsumptionActive(true)	
+		---self:SetConsumptionActive(true)	
 	end,
 
 	CreateMovementEffects = function(self, EffectsBag, TypeSuffix)
-		Unit.CreateMovementEffects(self, EffectsBag, TypeSuffix)
 		if not IsDestroyed(self) then
+		Unit.CreateMovementEffects(self, EffectsBag, TypeSuffix)
 		local bp = self:GetBlueprint()
-		if bp.Display.MovementEffects.TAMovement then
+		if self:IsUnitState('Moving') and bp.Display.MovementEffects.TAMovement then
 			for k, v in bp.Display.MovementEffects.TAMovement.Bones do
 				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.TAMovement.Emitter ):ScaleEmitter(bp.Display.MovementEffects.TAMovement.Scale))
 			end
-		end
-		if not self:IsUnitState('Moving') and bp.Display.MovementEffects.TAMovement then
+			elseif not self:IsUnitState('Moving') then
 			for k,v in self.FxMovement do
-			v:Destroy()
+				v:Destroy()
 			end
 		end
 		end
@@ -97,8 +96,8 @@ TAunit = Class(Unit)
                 self:EnableIntel('Cloak')
 				---self:UpdateConsumptionValues()
                 self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
-        end
-	end
+        	end
+		end
     end,
 
 	OnScriptBitSet = function(self, bit)
@@ -106,6 +105,11 @@ TAunit = Class(Unit)
 			self:DisableUnitIntel('ToggleBit8', 'Cloak')
 			if self.CloakThread then KillThread(self.CloakThread) end
 			self.CloakThread = self:ForkThread(self.CloakDetection)	
+		end
+		if bit == 3 then
+			self:DisableUnitIntel('ToggleBit3', 'Intel')
+			if self.TAIntelThread then KillThread(self.TAIntelThread) end
+			self.TAIntelThread = self:ForkThread(self.TAIntelMotion)	
 		end
 		Unit.OnScriptBitSet(self, bit)
 	end,
@@ -115,6 +119,12 @@ TAunit = Class(Unit)
 			if self.CloakThread then
 				KillThread(self.CloakThread)
 				self.CloakOn = nil
+			end
+		end
+		if bit == 3 then
+			if self.TAIntelThread then
+				KillThread(self.TAIntelThread)
+				self.TAIntelOn = nil
 			end
 		end
 		Unit.OnScriptBitClear(self, bit)

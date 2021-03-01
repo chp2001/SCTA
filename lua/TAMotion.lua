@@ -6,11 +6,7 @@ local Game = import('/lua/game.lua')
 local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 local util = import('/lua/utilities.lua')
 
-TATreads = Class(TAunit) 
-{
-}
-
-TAWalking = Class(TATreads) 
+TAWalking = Class(TAunit) 
 {
     WalkingAnim = nil,
     WalkingAnimRate = 1,
@@ -21,9 +17,9 @@ TAWalking = Class(TATreads)
 
     OnMotionHorzEventChange = function( self, new, old )
         ---self:LOGDBG('TAWalking.OnMotionHorzEventChange')
-        TATreads.OnMotionHorzEventChange(self, new, old)
-       
+        TAunit.OnMotionHorzEventChange(self, new, old)
         if ( old == 'Stopped' ) then
+            TAunit.CreateMovementEffects(self)
             if (not self.Animator) then
                 self.Animator = CreateAnimator(self, true)
             end
@@ -31,10 +27,9 @@ TAWalking = Class(TATreads)
             if bpDisplay.AnimationWalk then
                 self.Animator:PlayAnim(bpDisplay.AnimationWalk, true)
                 self.Animator:SetRate(bpDisplay.AnimationWalkRate or 1)
-                TATreads.CreateMovementEffects(self)
             end
         elseif ( new == 'Stopped' ) then
-                TATreads.CreateMovementEffects(self)
+            TAunit.CreateMovementEffects(self)
             if(self.IdleAnim and not self:IsDead()) then
                 self.Animator:PlayAnim(self.IdleAnim, true)
             elseif(not self.DeathAnim or not self:IsDead()) then
@@ -43,18 +38,22 @@ TAWalking = Class(TATreads)
             end
         end
     end,
-
-    OnKilled = function(self, instigator, type, overkillRatio)
-        ---self:LOGDBG('TAWalking.OnKilled')
-		TATreads.OnKilled(self, instigator, type, overkillRatio)
-	end,
 }
 
 TACloaker = Class(TAWalking) {
     OnMotionHorzEventChange = function(self, new, old )
 		TAWalking.OnMotionHorzEventChange(self, new, old)
         if self.TAIntelOn then
-            if  self:IsUnitState('Moving') then
+            if not IsDestroyed(self) then
+				ForkThread(self.TAIntelMotion, self)
+        	end
+        end
+    end,
+
+        TAIntelMotion = function(self, new, old )
+            while not self.Dead do
+            coroutine.yield(11)
+            if self:IsUnitState('Moving') then
                 self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
             else
                 self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)

@@ -69,7 +69,6 @@ UnitBlueprint {
                 },
             },
         },
-	},
         UniformScale = 0.1,
     },
     Economy = {

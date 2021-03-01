@@ -40,6 +40,21 @@ ARMPLAT = Class(TAFactory) {
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 	end,
 
+	OnStopBuild = function(self, unitBuilding)
+		TAFactory.OnStopBuild(self, unitBuilding)
+		if not self.Water and EntityCategoryContains(categories.HOVER, unitBuilding) then
+			ForkThread(self.Rolling, self)
+		end
+	end,
+
+	Rolling = function(self)
+		self.Sliders.chassis:SetSpeed(10)
+			self.Sliders.chassis:SetGoal(0,-10,0)
+			WaitSeconds(1)
+			self.Sliders.chassis:SetSpeed(10)
+			self.Sliders.chassis:SetGoal(0,0,0)
+	end,
+
 	WaterRise = function(self)
 		local bp = self:GetBlueprint()
         local scale = 0.5
@@ -49,11 +64,6 @@ ARMPLAT = Class(TAFactory) {
 			self:SetCollisionShape( 'Box', bp.CollisionOffsetX or 0,(bp.CollisionOffsetY + (bp.SizeY*0.5)) or 0,bp.CollisionOffsetZ or 0, bp.SizeX * scale, bp.SizeY * scale, bp.SizeZ * scale )
 			self:DisableIntel('RadarStealth')
 		end
-	end,
-
-	Aim = function(self, target)
-		TAFactory.Aim(self, target)
-		WaitFor(self.AnimManip)
 	end,
 
 	Close = function(self)

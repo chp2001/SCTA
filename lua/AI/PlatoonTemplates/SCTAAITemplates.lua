@@ -9,8 +9,20 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTA',
     Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
+        { categories.MOBILE * categories.LAND * categories.LEVEL1 - categories.RAIDER - categories.ENGINEER - categories.EXPERIMENTAL, -- Type of units.
+          5, -- Min number of units.
+          10, -- Max number of units.
+          'attack', -- platoon types: 'support', 'attack', 'scout',
+          'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+    },
+}
+
+PlatoonTemplate {
+    Name = 'StrikeForceSCTA2',
+    Plan = 'SCTAStrikeForceAILate', -- The platoon function to use.
+    GlobalSquads = {
         { categories.MOBILE * categories.LAND - categories.RAIDER - categories.ENGINEER - categories.EXPERIMENTAL, -- Type of units.
-          2, -- Min number of units.
+          10, -- Min number of units.
           20, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
           'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
@@ -19,7 +31,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'LABSCTA',
-    Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
+    Plan = 'SCTAStrikeForceAIEarly', -- The platoon function to use.
     GlobalSquads = {
         { categories.MOBILE * categories.RAIDER, -- Type of units.
           1, -- Min number of units.

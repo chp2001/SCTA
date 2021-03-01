@@ -46,7 +46,7 @@ UnitBlueprint {
         'OVERLAYANTIAIR',  
         'ARM',
         'KBOT',
-        'LEVEL4',  
+        'BUILTBYGANTRY',  
         'SNIPEMODE',
     },
     Defense = {

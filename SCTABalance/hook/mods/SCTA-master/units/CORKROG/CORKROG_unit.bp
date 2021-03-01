@@ -1,9 +1,8 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        --'NEEDMOBILEBUILD',
+        'BUILTBYGANTRY',
         'SELECTABLE',
-        'TECH4',
         'EXPERIMENTAL',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -15,7 +14,6 @@ UnitBlueprint {
         'OVERLAYANTIAIR',        
         'CORE',
         'KBOT',
-        'LEVEL4',
         'SNIPEMODE',
     },
     Defense = {

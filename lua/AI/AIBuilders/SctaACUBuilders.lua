@@ -212,7 +212,7 @@ Builder {
         Assist = {
             AssistLocation = 'LocationType',
             AssisteeType = 'Factory',
-            BeingBuiltCategories = {'LEVEL4'},
+            BeingBuiltCategories = {'EXPERIMENTAL'},
             Time = 20,
             },
         }

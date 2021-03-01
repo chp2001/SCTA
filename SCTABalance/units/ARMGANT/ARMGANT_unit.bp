@@ -87,7 +87,7 @@ UnitBlueprint {
         BuildTime = 300000,
         BuildRate = 250,
         BuildableCategory = {
-            'LEVEL4 KBOT ARM',
+            'BUILTBYGANTRY ARM',
         },
         InitialRallyX = 0,
         InitialRallyZ = 8,

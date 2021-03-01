@@ -26,6 +26,7 @@ UnitBlueprint {
         'LAND',
         'ARM',
         'ALLTERRAIN',
+        'TACLOAK',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -77,13 +78,6 @@ UnitBlueprint {
                 AnimationRateMax = 1.6,
                 AnimationRateMin = 1.5,
                 Weight = 100,
-            },
-        },
-        MovementEffects = {
-            TAMovement = {
-            Bones = { 'Origin'},
-            Emitter = '/mods/SCTA-master/effects/emitters/TAdust_emit.bp',
-            Scale = 0.4,
             },
         },
         TransportAnimation = { { Animation = '/mods/SCTA-master/units/ARMSPID/ARMSPID_ATransport.sca', Weight = 100 } },

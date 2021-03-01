@@ -2,11 +2,11 @@
 #CORVRAD
 #
 #Script created by Raevn
-local TACloaker = import('/mods/SCTA-master/lua/TAMotion.lua').TACloaker
+local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 
-CORVRAD = Class(TACloaker) {
+CORVRAD = Class(TAunit) {
 	OnCreate = function(self)
-		TACloaker.OnCreate(self)
+		TAunit.OnCreate(self)
 		self.Spinners = {
 			dish = CreateRotator(self, 'dish', 'y', nil, 0, 100, 0),
 		}
@@ -14,7 +14,7 @@ CORVRAD = Class(TACloaker) {
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TACloaker.OnStopBeingBuilt(self,builder,layer)
+		TAunit.OnStopBeingBuilt(self,builder,layer)
 		--spin dish around y-axis speed <100>;
 		self.Spinners.dish:SetTargetSpeed(100)
 	end,

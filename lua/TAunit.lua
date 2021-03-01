@@ -30,21 +30,17 @@ TAunit = Class(Unit)
 		---self:SetConsumptionActive(true)	
 	end,
 
-	CreateMovementEffects = function(self, EffectsBag, TypeSuffix)
-		if not IsDestroyed(self) then
-		Unit.CreateMovementEffects(self, EffectsBag, TypeSuffix)
-		local bp = self:GetBlueprint()
-		if self:IsUnitState('Moving') and bp.Display.MovementEffects.TAMovement then
-			for k, v in bp.Display.MovementEffects.TAMovement.Bones do
-				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.TAMovement.Emitter ):ScaleEmitter(bp.Display.MovementEffects.TAMovement.Scale))
-			end
-			elseif not self:IsUnitState('Moving') then
-			for k,v in self.FxMovement do
-				v:Destroy()
-			end
+    TAIntelMotion = function(self, new, old ) 
+			while not self.Dead do
+            coroutine.yield(11)
+            if self:IsUnitState('Moving') and self.TAIntelOn then
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
+			elseif self.TAIntelOn then
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
+            end
 		end
-		end
-	end,
+    end,
+
 
 	OnDamage = function(self, instigator, amount, vector, damageType)
 		Unit.OnDamage(self, instigator, amount * (self.Pack or 1), vector, damageType)
@@ -52,8 +48,8 @@ TAunit = Class(Unit)
 	
 	OnIntelDisabled = function(self)
 		Unit.OnIntelDisabled()
-		self.TAIntelOn = nil	
 		if EntityCategoryContains(categories.TACLOAK, self) then
+		self.TAIntelOn = nil	
 		self.CloakOn = nil
 		if not self:IsIntelEnabled('Cloak') then
         self:PlayUnitSound('Uncloak')
@@ -64,16 +60,19 @@ TAunit = Class(Unit)
 
     OnIntelEnabled = function(self)
 		Unit.OnIntelEnabled()
-		self.TAIntelOn = true
+		if not IsDestroyed(self) then
 		if EntityCategoryContains(categories.TACLOAK, self) then
+			if self:IsIntelEnabled('Jammer') then
+			self.TAIntelOn = true
+			ForkThread(self.TAIntelMotion, self)
+			end
 			if self:IsIntelEnabled('Cloak') then
-			self.CloakOn = true	
+			self.CloakOn = true
         	self:PlayUnitSound('Cloak')
 			self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
-				if not IsDestroyed(self) then
-				ForkThread(self.CloakDetection, self)
-        		end
+			ForkThread(self.CloakDetection, self)
 			end
+		end
 		end
 	end,
 
@@ -84,6 +83,11 @@ TAunit = Class(Unit)
         local getpos = moho.entity_methods.GetPosition
         while not self.Dead do
             coroutine.yield(11)
+			if self:IsUnitState('Moving') and self.CloakOn then
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
+			elseif self.CloakOn then
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
+            end
             local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
 			if self:IsUnitState('Building') and self.CloakOn and not IsDestroyed(self) then
 				self:DisableIntel('Cloak')
@@ -106,8 +110,8 @@ TAunit = Class(Unit)
 			if self.CloakThread then KillThread(self.CloakThread) end
 			self.CloakThread = self:ForkThread(self.CloakDetection)	
 		end
-		if bit == 3 then
-			self:DisableUnitIntel('ToggleBit3', 'Intel')
+		if bit == 2 then
+			self:DisableUnitIntel('ToggleBit2', 'Jammer')
 			if self.TAIntelThread then KillThread(self.TAIntelThread) end
 			self.TAIntelThread = self:ForkThread(self.TAIntelMotion)	
 		end
@@ -121,7 +125,7 @@ TAunit = Class(Unit)
 				self.CloakOn = nil
 			end
 		end
-		if bit == 3 then
+		if bit == 2 then
 			if self.TAIntelThread then
 				KillThread(self.TAIntelThread)
 				self.TAIntelOn = nil

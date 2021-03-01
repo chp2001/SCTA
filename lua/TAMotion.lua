@@ -6,6 +6,38 @@ local Game = import('/lua/game.lua')
 local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 local util = import('/lua/utilities.lua')
 
+TASea = Class(TAunit) 
+{
+    OnCreate = function(self)
+        TAunit.OnCreate(self)
+		self.FxMovement = TrashBag()
+        end,
+
+     
+	OnMotionHorzEventChange = function(self, new, old )
+		TAunit.OnMotionHorzEventChange(self, new, old)
+		self.CreateMovementEffects(self)
+	end,
+    
+    
+	CreateMovementEffects = function(self, EffectsBag, TypeSuffix)
+		if not IsDestroyed(self) then
+		TAunit.CreateMovementEffects(self, EffectsBag, TypeSuffix)
+		local bp = self:GetBlueprint()
+		if self:IsUnitState('Moving') and bp.Display.MovementEffects.TAMovement then
+			for k, v in bp.Display.MovementEffects.TAMovement.Bones do
+				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.TAMovement.Emitter ):ScaleEmitter(bp.Display.MovementEffects.TAMovement.Scale))
+			end
+			elseif not self:IsUnitState('Moving') then
+			for k,v in self.FxMovement do
+				v:Destroy()
+			end
+		end
+		end
+	end,
+
+
+}
 TAWalking = Class(TAunit) 
 {
     WalkingAnim = nil,
@@ -19,7 +51,6 @@ TAWalking = Class(TAunit)
         ---self:LOGDBG('TAWalking.OnMotionHorzEventChange')
         TAunit.OnMotionHorzEventChange(self, new, old)
         if ( old == 'Stopped' ) then
-            TAunit.CreateMovementEffects(self)
             if (not self.Animator) then
                 self.Animator = CreateAnimator(self, true)
             end
@@ -29,34 +60,11 @@ TAWalking = Class(TAunit)
                 self.Animator:SetRate(bpDisplay.AnimationWalkRate or 1)
             end
         elseif ( new == 'Stopped' ) then
-            TAunit.CreateMovementEffects(self)
             if(self.IdleAnim and not self:IsDead()) then
                 self.Animator:PlayAnim(self.IdleAnim, true)
             elseif(not self.DeathAnim or not self:IsDead()) then
                 self.Animator:Destroy()
                 self.Animator = false
-            end
-        end
-    end,
-}
-
-TACloaker = Class(TAWalking) {
-    OnMotionHorzEventChange = function(self, new, old )
-		TAWalking.OnMotionHorzEventChange(self, new, old)
-        if self.TAIntelOn then
-            if not IsDestroyed(self) then
-				ForkThread(self.TAIntelMotion, self)
-        	end
-        end
-    end,
-
-        TAIntelMotion = function(self, new, old )
-            while not self.Dead do
-            coroutine.yield(11)
-            if self:IsUnitState('Moving') then
-                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
-            else
-                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
             end
         end
     end,

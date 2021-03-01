@@ -4,7 +4,6 @@
 #Script created by Raevn
 
 local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
-local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 ARMAAP = Class(TAFactory) {
 	OnCreate = function(self)

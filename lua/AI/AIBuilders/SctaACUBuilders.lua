@@ -144,6 +144,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB } }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.25}},
         },
         BuilderType = 'Any',
         BuilderData = {

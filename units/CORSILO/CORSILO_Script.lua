@@ -5,7 +5,7 @@
 
 local TAnoassistbuild = import('/mods/SCTA-master/lua/TAStructure.lua').TAnoassistbuild
 local TIFStrategicMissileWeapon = import('/lua/terranweapons.lua').TIFStrategicMissileWeapon
-local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+
 
 CORSILO = Class(TAnoassistbuild) {
 	Weapons = {

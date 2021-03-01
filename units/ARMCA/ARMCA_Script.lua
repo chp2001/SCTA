@@ -4,7 +4,7 @@
 #Script created by Raevn
 
 local TAAirConstructor = import('/mods/SCTA-master/lua/TAAirConstructor.lua').TAAirConstructor
-local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+
 
 ARMCA = Class(TAAirConstructor) {
 	OnCreate = function(self)

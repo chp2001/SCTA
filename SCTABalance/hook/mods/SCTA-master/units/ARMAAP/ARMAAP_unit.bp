@@ -45,6 +45,7 @@ UnitBlueprint {
         'VTOL LEVEL3 ARM',
         'armfark',
         'armck',
+        'armch',
         },
     },
     LifeBarHeight = 0.22,

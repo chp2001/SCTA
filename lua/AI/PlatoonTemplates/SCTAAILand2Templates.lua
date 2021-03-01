@@ -54,7 +54,7 @@ PlatoonTemplate {
             { 'armsam', 1, 1, 'attack', 'none' }
         },
         Core = {
-            { 'corcrash', 1, 1, 'attack', 'none' }
+            { 'corstorm', 1, 1, 'attack', 'none' }
         },
     }
 }
@@ -68,7 +68,7 @@ PlatoonTemplate {
         },
         Core = {
             { 'corcv', 1, 1, 'support', 'none' },
-            { 'corcrash', 1, 6, 'attack', 'none' },
+            { 'corstorm', 1, 6, 'attack', 'none' },
         },
     }
 }
@@ -106,7 +106,7 @@ PlatoonTemplate {
             { 'armyork', 1, 1, 'attack', 'none' }
         },
         Core = {
-            { 'corstorm', 1, 1, 'attack', 'none' }
+            { 'corcrash', 1, 1, 'attack', 'none' }
         },
     }
 }

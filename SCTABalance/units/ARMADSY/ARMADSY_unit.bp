@@ -87,6 +87,7 @@ UnitBlueprint {
         'OCEAN LEVEL2 ARM',
         'OCEAN LEVEL3 ARM',
         'armfark',
+        'armch',
     },
 	InitialRallyX = 0,
 	InitialRallyZ = 16,

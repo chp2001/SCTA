@@ -12,7 +12,7 @@ UnitBlueprint {
         'SHOWQUEUE',
         'MOBILE',
         'SELECTION',
-	'CONSTRUCTION',
+	    'CONSTRUCTION',
         'LAND',
         'CORE',
         'HOVER',
@@ -43,6 +43,7 @@ UnitBlueprint {
         BuildableCategory = {
             'BUILTBYT1HOVER CORE',
             'BUILTBYT2KBOT CORE',
+            'BUILTBYT2AIR CORE',
         },
     },
     Intel = {

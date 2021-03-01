@@ -87,10 +87,7 @@ updateBuildRestrictions = function(self)
     if EntityCategoryContains(categories.LEVEL1 * categories.CONSTRUCTION - categories.PLANT, self) then
         self:AddBuildRestriction(categories.LEVEL2)
         self:AddBuildRestriction(categories.LEVEL3)
-        self.restrictions = true
-    elseif EntityCategoryContains(categories.COMMAND * categories.CONSTRUCTION - categories.PLANT, self) then
-        self:AddBuildRestriction(categories.LEVEL2)
-        self.restrictions = true      
+        self.restrictions = true   
     elseif EntityCategoryContains(categories.LEVEL2 * categories.CONSTRUCTION - categories.PLANT, self) then
         self:AddBuildRestriction(categories.LEVEL3)
         self.restrictions = true

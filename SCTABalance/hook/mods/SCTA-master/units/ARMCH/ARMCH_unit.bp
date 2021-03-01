@@ -40,6 +40,7 @@ UnitBlueprint {
             BuildableCategory = {
                 'BUILTBYT1HOVER ARM',
                 'BUILTBYT2KBOT ARM',
+                'BUILTBYT2AIR ARM',
             },
         },
         Intel = {

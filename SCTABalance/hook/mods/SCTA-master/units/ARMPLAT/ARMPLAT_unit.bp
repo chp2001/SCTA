@@ -39,6 +39,7 @@ UnitBlueprint {
     BuildRate = 240,
         BuildableCategory = {
             'VTOL LEVEL3 ARM',
+            'armch',
         },
     },
     Physics = {

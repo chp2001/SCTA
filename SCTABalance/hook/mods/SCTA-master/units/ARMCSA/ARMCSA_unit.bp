@@ -7,10 +7,8 @@ UnitBlueprint {
    Categories = {
         'SELECTABLE',
         'AIR',
-        'VTOL',
         'SELECTION', 
         'ARM',
-        'OCEAN',
         'LEVEL3',
         'TECH3',
         'ENGINEER',

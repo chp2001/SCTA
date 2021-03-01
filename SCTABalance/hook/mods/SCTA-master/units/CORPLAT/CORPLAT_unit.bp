@@ -45,6 +45,7 @@ UnitBlueprint {
     BuildRate = 240,
         BuildableCategory = {
             'VTOL LEVEL3 CORE',
+            'corch',
         },
     },
     Physics = {

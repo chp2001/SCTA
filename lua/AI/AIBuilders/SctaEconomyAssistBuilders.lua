@@ -25,7 +25,7 @@ BuilderGroup {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Factory',
                 AssistRange = 120,
-                BeingBuiltCategories = {'LEVEL4'},                  
+                BeingBuiltCategories = {'EXPERIMENTAL'},                  
                 PermanentAssist = true,
                 AssistClosestUnit = false,                                       
                 AssistUntilFinished = true,

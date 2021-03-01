@@ -87,7 +87,7 @@ UnitBlueprint {
         BuildTime = 41937,
         BuildRate = 200,
         BuildableCategory = {
-            'LEVEL4 KBOT CORE',
+            'BUILTBYGANTRY CORE',
         },
         InitialRallyX = 0,
         InitialRallyZ = 8,

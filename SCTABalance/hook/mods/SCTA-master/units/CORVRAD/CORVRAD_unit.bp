@@ -32,8 +32,7 @@ UnitBlueprint {
         },
     },
     Economy = {
-        TAConsumptionPerSecondEnergy = 60,
-        MaintenanceConsumptionPerSecondEnergy = 10,
+        MaintenanceConsumptionPerSecondEnergy = 20,
     },
     General = {
     ToggleCaps = {

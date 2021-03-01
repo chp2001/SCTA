@@ -39,25 +39,3 @@ TAWalking = Class(TAunit)
         end
     end,
 }
-
-TACloaker = Class(TAWalking) {
-    OnMotionHorzEventChange = function(self, new, old )
-		TAWalking.OnMotionHorzEventChange(self, new, old)
-        if self.TAIntelOn then
-            if not IsDestroyed(self) then
-				ForkThread(self.TAIntelMotion, self)
-        	end
-        end
-    end,
-
-        TAIntelMotion = function(self, new, old )
-            while not self.Dead do
-            coroutine.yield(11)
-            if self:IsUnitState('Moving') then
-                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
-            else
-                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
-            end
-        end
-    end,
-}

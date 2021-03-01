@@ -26,6 +26,7 @@ UnitBlueprint {
         'LAND',
         'ARM',
         'ALLTERRAIN',
+        'TACLOAK',
     },
     Defense = {
         ArmorType = 'Normal',

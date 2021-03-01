@@ -30,6 +30,26 @@ TAunit = Class(Unit)
 		---self:SetConsumptionActive(true)	
 	end,
 
+	OnMotionHorzEventChange = function(self, new, old )
+		Unit.OnMotionHorzEventChange(self, new, old)
+        if not IsDestroyed(self) then
+		ForkThread(self.TAIntelMotion, self)
+        end
+    end,
+
+        TAIntelMotion = function(self, new, old )
+            if self.TAIntelOn then
+			while not self.Dead do
+            coroutine.yield(11)
+            if self:IsUnitState('Moving') then
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
+            else
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
+            end
+        end
+		end
+    end,
+
 	CreateMovementEffects = function(self, EffectsBag, TypeSuffix)
 		if not IsDestroyed(self) then
 		Unit.CreateMovementEffects(self, EffectsBag, TypeSuffix)
@@ -52,8 +72,8 @@ TAunit = Class(Unit)
 	
 	OnIntelDisabled = function(self)
 		Unit.OnIntelDisabled()
-		self.TAIntelOn = nil	
 		if EntityCategoryContains(categories.TACLOAK, self) then
+		self.TAIntelOn = nil	
 		self.CloakOn = nil
 		if not self:IsIntelEnabled('Cloak') then
         self:PlayUnitSound('Uncloak')
@@ -64,16 +84,17 @@ TAunit = Class(Unit)
 
     OnIntelEnabled = function(self)
 		Unit.OnIntelEnabled()
-		self.TAIntelOn = true
+		if not IsDestroyed(self) then
 		if EntityCategoryContains(categories.TACLOAK, self) then
+			self.TAIntelOn = true
+			ForkThread(self.TAIntelMotion, self)
 			if self:IsIntelEnabled('Cloak') then
 			self.CloakOn = true	
         	self:PlayUnitSound('Cloak')
 			self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
-				if not IsDestroyed(self) then
-				ForkThread(self.CloakDetection, self)
-        		end
+			ForkThread(self.CloakDetection, self)
 			end
+		end
 		end
 	end,
 
@@ -106,8 +127,8 @@ TAunit = Class(Unit)
 			if self.CloakThread then KillThread(self.CloakThread) end
 			self.CloakThread = self:ForkThread(self.CloakDetection)	
 		end
-		if bit == 3 then
-			self:DisableUnitIntel('ToggleBit3', 'Intel')
+		if bit == 2 then
+			self:DisableUnitIntel('ToggleBit2', 'Jammer')
 			if self.TAIntelThread then KillThread(self.TAIntelThread) end
 			self.TAIntelThread = self:ForkThread(self.TAIntelMotion)	
 		end
@@ -121,7 +142,7 @@ TAunit = Class(Unit)
 				self.CloakOn = nil
 			end
 		end
-		if bit == 3 then
+		if bit == 2 then
 			if self.TAIntelThread then
 				KillThread(self.TAIntelThread)
 				self.TAIntelOn = nil

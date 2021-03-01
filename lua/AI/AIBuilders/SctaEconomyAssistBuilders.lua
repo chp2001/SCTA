@@ -132,6 +132,7 @@ BuilderGroup {
         Priority = 75,
         InstanceCount = 3,
         BuilderConditions = {
+                { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},
                 { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
             },
         BuilderData = {
@@ -146,6 +147,7 @@ BuilderGroup {
         Priority = 75,
         InstanceCount = 3,
         BuilderConditions = {
+            { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},
             { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
         },
         BuilderData = {
@@ -161,6 +163,7 @@ BuilderGroup {
         Priority = 2,
         InstanceCount = 10,
         BuilderConditions = {
+                { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},
                 { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
             },
         BuilderData = {

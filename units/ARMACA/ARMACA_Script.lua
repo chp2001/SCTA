@@ -4,7 +4,6 @@
 #Script created by Raevn
 
 local TAAirConstructor = import('/mods/SCTA-master/lua/TAAirConstructor.lua').TAAirConstructor
-local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 ARMACA = Class(TAAirConstructor) {
 	SetupBuildBones = function(self)

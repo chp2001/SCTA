@@ -6,7 +6,7 @@
 local TARealCommander = import('/mods/SCTA-master/lua/TAconstructor.lua').TARealCommander
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 local TADGun = import('/mods/SCTA-master/lua/TAweapon.lua').TADGun
-local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+
 local TACommanderDeathWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TACommanderDeathWeapon
 
 #CORE Commander - Commander

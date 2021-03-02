@@ -143,7 +143,6 @@ TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Hive',
     },
     Intel = {
-	FreeIntel = false,
         VisionRadius = 22,
         WaterVisionRadius = 6,
 	    RadarRadius = 111,

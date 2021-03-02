@@ -1,8 +1,5 @@
 #ARM Flea - Fast Light Scout Kbot
 #ARMMARK
-#
-#Blueprint created by Raevn
-
 UnitBlueprint {
     Merge = true,
     BuildIconSortPriority = 1,

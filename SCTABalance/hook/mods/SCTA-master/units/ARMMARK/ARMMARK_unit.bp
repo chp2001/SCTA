@@ -21,19 +21,12 @@ UnitBlueprint {
         BuildCostEnergy = 600,
         BuildCostMass = 80,
         MaintenanceConsumptionPerSecondEnergy = 5,
-        ProductionPerSecondEnergy = 0,
         BuildTime = 1200,
     },
     General = {
-        OrderOverrides = {
-                RULEUTC_IntelToggle = {
-                bitmapId = 'radar',
-                helpText = 'toggle_radar',
-                     },
-                 },
-               ToggleCaps = {
-               RULEUTC_IntelToggle = true,
-            },
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
+        },
     },
     Intel = {
         VisionRadius = 16,

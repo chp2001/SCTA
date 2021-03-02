@@ -28,7 +28,6 @@ UnitBlueprint {
     UniformScale = 0.12,    
 }, 
      Economy = {
-        NaturalProducer = false,
         BuildCostEnergy = 6000,
         BuildTime = 9600,
         BuildCostMass = 400,
@@ -40,6 +39,9 @@ UnitBlueprint {
       },
     },
     General = {
+    ToggleCaps = {
+            RULEUTC_IntelToggle = true,
+        },
     UpgradesFrom = 'corrad',
     UpgradesTo = 'cortarg', 
     },

@@ -29,9 +29,6 @@ UnitBlueprint {
         BuildCostEnergy = 180000,
         BuildCostMass = 11000,
         BuildTime = 80000,
-        NaturalProducer = true,
-        ProductionPerSecondEnergy = 0,
-        MaintenanceConsumptionPerSecondEnergy = 0,
     },
     Physics = {
         MaxAcceleration = 3,

@@ -44,7 +44,6 @@ UnitBlueprint {
         InitialRallyX = 0,
         InitialRallyZ = 16,
         BuildRate = 360,
-        ProductionPerSecondMass = 0,
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 5,

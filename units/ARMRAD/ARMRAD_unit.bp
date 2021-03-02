@@ -87,7 +87,7 @@ UnitBlueprint {
         Category = 'Intelligence',
         Classification = 'RULEUC_Sensor',
         SelectionPriority = 5,
- CommandCaps = {
+        CommandCaps = {
             RULEUCC_Attack = false,
             RULEUCC_CallTransport = false,
             RULEUCC_Capture = false,
@@ -105,8 +105,8 @@ UnitBlueprint {
         ConstructionBar = true,
         FactionName = 'ARM',
         Icon = 'land',
-TechLevel = 'RULEUTL_Basic',
-	UnitName = 'Radar Tower',
+        TechLevel = 'RULEUTL_Basic',
+	    UnitName = 'Radar Tower',
     },
     Intel = {
         VisionRadius = 22, 

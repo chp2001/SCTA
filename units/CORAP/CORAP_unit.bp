@@ -96,8 +96,8 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 7,
-        SizeZ = 7,
+        SizeX = 6,
+        SizeZ = 6,
     },
     General = {
         BuildBones = {
@@ -129,8 +129,8 @@ TechLevel = 'RULEUTL_Basic',
     LifeBarSize = 2,
     Physics = {
         FlattenSkirt = true,
-        SkirtSizeX = 7,
-        SkirtSizeZ = 7,
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
         RollOffPoints = {
             {
                 UnitSpin = 0,

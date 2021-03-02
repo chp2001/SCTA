@@ -126,22 +126,7 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTA Engineer Reclaim 3',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
-        PlatoonAIPlan = 'ReclaimAI',
-        Priority = 75,
-        InstanceCount = 3,
-        BuilderConditions = {
-                { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},
-                { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
-            },
-        BuilderData = {
-            LocationType = 'LocationType',
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Reclaim 2',
+        BuilderName = 'SCTA Engineer Reclaim Field',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
         PlatoonAIPlan = 'ReclaimAI',
         Priority = 75,
@@ -160,7 +145,7 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Excess',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         PlatoonAIPlan = 'ReclaimAI',
-        Priority = 2,
+        Priority = 50,
         InstanceCount = 10,
         BuilderConditions = {
                 { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},

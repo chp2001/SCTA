@@ -98,8 +98,8 @@ UnitBlueprint {
     },
     Footprint = {
         MaxSlope = 0.625,
-        SizeX = 6,
-        SizeZ = 6,
+        SizeX = 8,
+        SizeZ = 8,
     },
     General = {
         BuildBones = {

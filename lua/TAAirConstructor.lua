@@ -30,7 +30,7 @@ TAAirConstructor = Class(TAair) {
             end
         end
         self.BuildingUnit = false
-        if __blueprints['armmass'] then
+        if __blueprints['armgant'] then
             TAutils.updateBuildRestrictions(self)
         end
     end,
@@ -77,7 +77,7 @@ TAAirConstructor = Class(TAair) {
         end
         self.BuildingUnit = false
         self:SetImmobile(false)
-        if __blueprints['armmass'] then
+        if __blueprints['armgant'] then
             TAutils.updateBuildRestrictions(self)
         end
         TAair.OnStopBuild(self,unitBeingBuilt)

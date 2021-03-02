@@ -7,7 +7,7 @@ local EffectUtil = import('/lua/EffectUtilities.lua')
 TAFactory = Class(FactoryUnit) {
     OnCreate = function(self)
     FactoryUnit.OnCreate(self)
-    if __blueprints['armmass'] then
+    if __blueprints['armgant'] then
         TAutils.updateBuildRestrictions(self)
     end
     end,
@@ -15,7 +15,7 @@ TAFactory = Class(FactoryUnit) {
     OnStopBeingBuilt = function(self, builder, layer)
         FactoryUnit.OnStopBeingBuilt(self, builder, layer)
         local aiBrain = GetArmyBrain(self.Army)
-        if __blueprints['armmass'] then
+        if __blueprints['armgant'] then
         if EntityCategoryContains(categories.PLANT, self) then
             local buildRestrictionVictims = aiBrain:GetListOfUnits(categories.FACTORY + categories.ENGINEER, false)
             for id, unit in buildRestrictionVictims do    
@@ -44,7 +44,7 @@ TAFactory = Class(FactoryUnit) {
         OnStopBuild = function(self, unitBuilding)
             FactoryUnit.OnStopBuild(self, unitBuilding)
             self:Close()
-            if __blueprints['armmass'] then
+            if __blueprints['armgant'] then
                 TAutils.updateBuildRestrictions(self)
             end
 		end,

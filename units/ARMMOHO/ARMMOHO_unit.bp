@@ -33,8 +33,8 @@ UnitBlueprint {
         'BUILTBYT2KBOT',
         'BUILTBYT2VEHICLE',
         'BUILTBYT2SUB',
-        'TECH3',
-        'LEVEL3',
+        'TECH2',
+        'LEVEL2',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -74,7 +74,7 @@ UnitBlueprint {
         BuildCostMass = 1508,
         BuildTime = 35750,
         MaintenanceConsumptionPerSecondEnergy = 15,
-        ProductionPerSecondMass = 6.6,
+        ProductionPerSecondMass = 8,
     },
     Footprint = {
         SizeX = 5,
@@ -100,7 +100,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarSize = 1,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
@@ -121,7 +121,7 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_BUILDINGEX
-            Damage = 50,
+            Damage = 100,
             DamageFriendly = true,
             DamageRadius = 3,
             DamageType = 'Normal',

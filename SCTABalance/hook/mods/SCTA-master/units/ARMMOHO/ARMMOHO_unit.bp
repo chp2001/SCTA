@@ -1,21 +1,5 @@
 UnitBlueprint {
     Merge = true,
-    Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
-        'SELECTABLE',
-        'DRAGBUILD',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH2',
-	    'STRUCTURE',
-        'MASSPRODUCTION',
-        'MASSEXTRACTION',
-        'ECONOMIC',
-	    'ARM',
-	    'LEVEL2',
-	    'SORTECONOMY',
-    },
     Defense = {
         Health = 2300,
         MaxHealth = 2300,
@@ -32,7 +16,6 @@ UnitBlueprint {
         BuildCostEnergy = 24000,
         MaintenanceConsumptionPerSecondEnergy = 25,
         BuildTime = 35000,
-        ProductionPerSecondMass = 8,
     },
    Physics = {
         MeshExtentsX = 1.25,
@@ -50,5 +33,4 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 1.4,
     SizeZ = 2,
-    StrategicIconName = 'icon_structure2_mass',
 }

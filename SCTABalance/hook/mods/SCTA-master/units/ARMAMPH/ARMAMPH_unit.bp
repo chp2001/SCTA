@@ -12,7 +12,7 @@ UnitBlueprint {
     StrategicIconName = 'icon_bot2_antiair',
     Weapon = {
         [1] = {
-            Damage = 150,
+            Damage = 105,
             RateOfFire = 1,
         },
         [2] = {

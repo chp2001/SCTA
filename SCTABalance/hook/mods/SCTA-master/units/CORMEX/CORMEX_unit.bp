@@ -16,11 +16,11 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 2,
         BuildRate = 60,
         BuildableCategory = {
-               'cormass',
+               'cormoho',
         },
     },
     General = {
-        UpgradesTo = 'cormass',
+        UpgradesTo = 'cormoho',
     },
     Physics = {
         DragCoefficient = 0.2,

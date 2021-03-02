@@ -31,7 +31,7 @@ TAconstructor = Class(TAWalking) {
             end
         end
         self.BuildingUnit = false
-        if __blueprints['armmass'] then
+        if __blueprints['armgant'] then
             TAutils.updateBuildRestrictions(self)
         end
     end,
@@ -73,7 +73,7 @@ TAconstructor = Class(TAWalking) {
         end
         self.BuildingUnit = false
         self:SetImmobile(false)
-        if __blueprints['armmass'] then
+        if __blueprints['armgant'] then
             TAutils.updateBuildRestrictions(self)
         end
         TAWalking.OnStopBuild(self,unitBeingBuilt)

@@ -21,7 +21,7 @@
     
         -- sonar
         {'armsonar', 'armason'},
-        {'armmex', 'armmass'},
+        {'armmex', 'armmoho'},
         }
     end
         if not StructureUpgradeTemplates[7] then StructureUpgradeTemplates[7] = {
@@ -48,6 +48,6 @@
         -- sonar
         {'corsonar', 'corason'},
     
-        {'cormex', 'cormass'},
+        {'cormex', 'cormoho'},
         }
     end

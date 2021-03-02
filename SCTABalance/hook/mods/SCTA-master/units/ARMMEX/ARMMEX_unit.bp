@@ -16,11 +16,11 @@ UnitBlueprint {
         BuildCostMass = 50,
         MaintenanceConsumptionPerSecondEnergy = 2,
         BuildableCategory = {
-               'armmass',
+               'armmoho',
         },
     },
     General = {
-        UpgradesTo = 'armmass',
+        UpgradesTo = 'armmoho',
     },
     Physics = {
         DragCoefficient = 0.2,

@@ -37,10 +37,6 @@ BuildingTemplates[6] = {
                 'armmoho',
             },
             {
-                'T3Resource',
-                'armmass',
-            },
-            {
                 'T3MassCreation',
                 'armmmkr',
             },
@@ -263,10 +259,6 @@ BuildingTemplates[6] = {
         {
             'T2Resource',
             'cormoho',
-        },
-        {
-            'T3Resource',
-            'cormass',
         },
         {
             'T3MassCreation',

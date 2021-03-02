@@ -33,7 +33,7 @@ do
         FactionInUnitBp = 'ARM',
         InitialUnit = 'armcom',
         CampaignFileDesignator = 'M',
-        TransmissionLogColor = 'ff0000ff',
+        TransmissionLogColor = 'ff00c1ff',
         Icon = "/mods/SCTA-master/textures/ui/common/widgets/faction-icons-alpha_bmp/arm_ico.dds",
         VeteranIcon = "/mods/SCTA-master/textures/ui/common/game/veteran-logo_bmp/arm-veteran_bmp.dds",
         SmallIcon = "/mods/SCTA-master/textures/ui/common/faction_icon-sm/arm_ico.dds",

@@ -12,7 +12,6 @@ UnitBlueprint {
         BuildCostEnergy = 24000,
         MaintenanceConsumptionPerSecondEnergy = 25,
         BuildTime = 35000,
-        DifferentialUpgradeCostCalculation = true,
     },
    Footprint = {
         SizeX = 1,
@@ -27,9 +26,6 @@ UnitBlueprint {
         SkirtOffsetZ = -0.5,
         SkirtSizeX = 2,
         SkirtSizeZ = 2,
-    },
-    General = {
-        UpgradesFrom = 'cormex',
     },
     SelectionSizeX = 1.25,
     SelectionSizeZ = 1.25,

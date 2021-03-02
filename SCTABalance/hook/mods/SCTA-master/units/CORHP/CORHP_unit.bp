@@ -42,10 +42,6 @@ UnitBlueprint {
             'coramph',
         },
     },
-    Physics = {
-        SkirtSizeX = 6,
-        SkirtSizeZ = 6,
-    },
     SelectionSizeX = 7,
     SelectionSizeZ = 7,
     SelectionThickness = 0.25,

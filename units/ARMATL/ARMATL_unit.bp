@@ -87,7 +87,6 @@ UnitBlueprint {
         UnitName = 'Advanced Torpedo Launcher',
     },
     Intel = {
-	FreeIntel = true,
         SonarRadius = 40,
         VisionRadius = 10,
         WaterVisionRadius = 10,

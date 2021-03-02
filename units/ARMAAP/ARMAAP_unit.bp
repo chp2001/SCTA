@@ -118,15 +118,14 @@ UnitBlueprint {
     Intel = {
     VisionRadius = 10,
 	RadarRadius = 30,
-	FreeIntel = true,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
         FlattenSkirt = true,
-        SkirtSizeX = 7,
-        SkirtSizeZ = 7,
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
         RollOffPoints = {
             {
                 UnitSpin = 0,

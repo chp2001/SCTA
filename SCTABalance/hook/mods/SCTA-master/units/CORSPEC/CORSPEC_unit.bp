@@ -8,10 +8,6 @@ UnitBlueprint {
     Display = {
         UniformScale = 0.08,
     },
-    Footprint = {
-	SizeX = 1,
-	SizeZ = 1,
-    },
     LifeBarSize = 1,
     LifeBarOffset = 0,
     SelectionSizeX = 0.6,

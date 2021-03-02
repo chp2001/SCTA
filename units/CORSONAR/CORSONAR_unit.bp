@@ -75,7 +75,6 @@ UnitBlueprint {
         BuildCostEnergy = 399,
         BuildCostMass = 20,
         BuildTime = 900,
-	MaintenanceConsumptionPerSecondEnergy = 10,
     },
     Footprint = {
         SizeX = 2,
@@ -83,12 +82,8 @@ UnitBlueprint {
 	MinWaterDepth = 0.5,
     },
     General = {
-	---BuildAngle = 8192,
         Category = 'Intelligence',
         Classification = 'RULEUC_Sensor',
-        ToggleCaps = {
-            RULEUTC_IntelToggle = true,
-        },
         ConstructionBar = true,
         SelectionPriority = 5,
         FactionName = 'CORE',
@@ -97,7 +92,6 @@ TechLevel = 'RULEUTL_Basic',
         UnitName = 'Sonar Station',
     },
     Intel = {
-	FreeIntel = false,
     VisionRadius = 12,
 	SonarRadius = 76,
 	WaterVisionRadius = 12,

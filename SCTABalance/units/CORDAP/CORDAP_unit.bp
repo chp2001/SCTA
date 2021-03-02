@@ -98,8 +98,8 @@ UnitBlueprint {
     },
     Footprint = {
         MaxSlope = 0.625,
-        SizeX = 8,
-        SizeZ = 8,
+        SizeX = 6,
+        SizeZ = 6,
     },
     General = {
         BuildBones = {
@@ -127,7 +127,6 @@ TechLevel = 'RULEUTL_Advanced',
     Intel = {
         VisionRadius = 10,
 	RadarRadius = 32,
-	FreeIntel = true,
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,

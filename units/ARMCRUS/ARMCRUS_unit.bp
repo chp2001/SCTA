@@ -107,7 +107,6 @@ UnitBlueprint {
         UnitName = 'Conqueror',
     },
     Intel = {
-	FreeIntel = true,
         VisionRadius = 14,
         WaterVisionRadius = 14,
 	SonarRadius = 27, 

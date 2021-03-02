@@ -37,7 +37,6 @@ UnitBlueprint {
         },
       },
     Intel = {
-    FreeIntel = false,
     RadarRadius = 100,
     SonarRadius = 50,
     },

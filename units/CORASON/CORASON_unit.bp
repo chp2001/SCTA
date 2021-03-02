@@ -70,8 +70,6 @@ UnitBlueprint {
         BuildCostEnergy = 2469,
         BuildCostMass = 163,
         BuildTime = 6152,
-	NaturalProducer = false,
-	MaintenanceConsumptionPerSecondEnergy = 25,
     },
     Footprint = {
         SizeX = 2,
@@ -82,9 +80,6 @@ UnitBlueprint {
 	---BuildAngle = 8192,
         Category = 'Intelligence',
         Classification = 'RULEUC_Sensor',
-        ToggleCaps = {
-            RULEUTC_IntelToggle = true,
-        },
         SelectionPriority = 5,
         FactionName = 'CORE',
         Icon = 'land',
@@ -92,7 +87,6 @@ TechLevel = 'RULEUTL_Secret',
         UnitName = 'Advanced Sonar Station',
     },
     Intel = {
-	FreeIntel = false,
     VisionRadius = 12,
 	SonarRadius = 140,
 	WaterVisionRadius = 12,

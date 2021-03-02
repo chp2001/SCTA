@@ -126,7 +126,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 10,
 	RadarRadius = 32,
-	FreeIntel = true,
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 2,

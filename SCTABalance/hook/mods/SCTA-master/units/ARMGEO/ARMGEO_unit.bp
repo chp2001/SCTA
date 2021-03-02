@@ -39,13 +39,6 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 1.2,
     LifeBarSize = 6,
- Physics = {
-        SkirtOffsetX = -1.5,
-        SkirtOffsetZ = -1.5,
-        SkirtSizeX = 6,
-        SkirtSizeZ = 6,
-        TurnRate = 0,
-    },
     SelectionSizeX = 3.8,
     SelectionSizeZ = 3.8,
     SelectionCenterOffsetZ = -0.1,

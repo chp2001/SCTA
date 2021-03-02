@@ -23,17 +23,6 @@ UnitBlueprint {
       Economy = {
         BuildCostMass = 480,
         BuildCostEnergy = 30000,
-        MaintenanceConsumptionPerSecondEnergy = 15,
-        },
-         General = {
-          ToggleCaps = {
-               RULEUTC_StealthToggle = true,
-            },
-        },
-        Intel = {
-        VisionRadius =  22,
-	    RadarStealth = true,
-	    FreeIntel = false,
     },
     Physics = {
     FuelRechargeRate = 666666,

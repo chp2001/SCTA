@@ -29,7 +29,6 @@ UnitBlueprint {
         UniformScale = 0.25,
     },
     Footprint = {
-        MaxSlope = 0.625,
             SizeX = 8,
             SizeZ = 8,
         },

@@ -97,7 +97,6 @@ UnitBlueprint {
         UnitName = 'Lurker',
     },
     Intel = {
-	FreeIntel = true,
         SonarRadius = 50,
         VisionRadius = 20,
         WaterVisionRadius = 12,

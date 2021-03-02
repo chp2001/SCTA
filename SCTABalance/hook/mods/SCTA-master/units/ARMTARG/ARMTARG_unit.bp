@@ -68,12 +68,11 @@ UnitBlueprint {
         },
         UpgradesFrom = 'armarad',
     },
-        Intel = {
-            FreeIntel = false,
+    Intel = {
             VisionRadius = 18, 
             RadarRadius = 360,
             OmniRadius = 120,
-        },
+    },
     Physics = {
         SkirtSizeX = 2,
         SkirtSizeZ = 2,

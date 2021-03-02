@@ -76,8 +76,6 @@ UnitBlueprint {
         BuildCostEnergy = 800,
         BuildCostMass = 50,
         BuildTime = 1137,
-	    NaturalProducer = false,
-        MaintenanceConsumptionPerSecondEnergy = 6,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -87,11 +85,8 @@ UnitBlueprint {
     General = {
         Category = 'Intelligence',
         Classification = 'RULEUC_Sensor',
-        ToggleCaps = {
-            RULEUTC_IntelToggle = true,
-        },
         SelectionPriority = 5,
- CommandCaps = {
+    CommandCaps = {
             RULEUCC_Attack = false,
             RULEUCC_CallTransport = false,
             RULEUCC_Capture = false,
@@ -103,17 +98,16 @@ UnitBlueprint {
             RULEUCC_Reclaim = false,
             RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = false,
-            RULEUCC_Stop = false,
+            RULEUCC_Stop = true,
             RULEUCC_Transport = false,
         },
         ConstructionBar = true,
         FactionName = 'CORE',
         Icon = 'land',
-TechLevel = 'RULEUTL_Basic',
-	UnitName = 'Radar Tower',
+        TechLevel = 'RULEUTL_Basic',
+	    UnitName = 'Radar Tower',
     },
     Intel = {
-	FreeIntel = false,
     VisionRadius = 22, 
 	RadarRadius = 90,
     },

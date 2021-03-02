@@ -28,13 +28,9 @@ UnitBlueprint {
             MaxHealth = 9600,
         },
         Footprint = {
-                SizeX = 8,
-                SizeZ = 8,
-        },
-        Physics = {
-            SkirtSizeX = 8,
-            SkirtSizeZ = 8,
-        },
+            SizeX = 8,
+            SizeZ = 8,
+    },
     Economy = {
         BuildCostEnergy = 20000,
         BuildCostMass = 1000,
@@ -53,8 +49,7 @@ UnitBlueprint {
     LifeBarSize = 7,
     Intel = {
         VisionRadius = 10,
-        FreeIntel = true,
-        },
+    },
         SelectionSizeX = 7,
         SelectionSizeZ = 5,
         SelectionThickness = 0.25,

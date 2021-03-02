@@ -35,7 +35,6 @@ UnitBlueprint {
         BuildRate = 60, 
         DifferentialUpgradeCostCalculation = true,
         MaintenanceConsumptionPerSecondEnergy = 150,
-        ProductionPerSecondEnergy = 0,
         BuildableCategory = {
             'cortarg',
       },
@@ -45,7 +44,6 @@ UnitBlueprint {
     UpgradesTo = 'cortarg', 
     },
     Intel = {
-	    FreeIntel = false,
         VisionRadius = 12, 
         RadarRadius = 240,
     },

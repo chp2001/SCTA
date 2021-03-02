@@ -36,7 +36,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     Intel = {
-        FreeIntel = false,
         VisionRadius = 14,
         OmniRadius = 40,
         RadarStealthFieldRadius = 20,

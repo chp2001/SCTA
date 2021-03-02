@@ -31,19 +31,8 @@ UnitBlueprint {
         BuildCostEnergy = 220,
         BuildCostMass = 22,
         BuildTime = 800,
-        MaintenanceConsumptionPerSecondEnergy = 0,
-        ProductionPerSecondEnergy = 0,
-    },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
     },
     StrategicIconName = 'icon_bot1_intel',
-    General = {
-        ToggleCaps = {
-               RULEUTC_IntelToggle = false,
-            },
-    },
     Intel = {
         VisionRadius = 16,
         RadarRadius = 50, 

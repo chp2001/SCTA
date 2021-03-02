@@ -94,11 +94,10 @@ UnitBlueprint {
         },
         FactionName = 'CORE',
         Icon = 'land',
-TechLevel = 'RULEUTL_Basic',
+        TechLevel = 'RULEUTL_Basic',
         UnitName = 'Snake',
     },
     Intel = {
-	FreeIntel = true,
         SonarRadius = 50,
         VisionRadius = 20,
         WaterVisionRadius = 12,

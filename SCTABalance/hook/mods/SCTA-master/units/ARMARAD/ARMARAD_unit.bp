@@ -39,13 +39,15 @@ UnitBlueprint {
       },
     },
     General = {
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
+        },
     UpgradesFrom = 'armrad',
     UpgradesTo = 'armtarg', 
     },
     Intel = {
-	    FreeIntel = false,
-        VisionRadius = 12, 
-        RadarRadius = 240,
+    VisionRadius = 12, 
+    RadarRadius = 240,
     },
     StrategicIconName = 'icon_structure2_intel',
 }

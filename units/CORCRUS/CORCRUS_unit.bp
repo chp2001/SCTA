@@ -105,7 +105,6 @@ TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Executioner',
     },
     Intel = {
-	FreeIntel = true,
         VisionRadius = 14,
         WaterVisionRadius = 14,
 	SonarRadius = 26, 

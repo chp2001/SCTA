@@ -57,7 +57,6 @@ UnitBlueprint {
         UpgradesTo = 'armason',
     },
     Intel = {
-	FreeIntel = false,
     VisionRadius = 12,
 	SonarRadius = 140,
 	WaterVisionRadius = 12,

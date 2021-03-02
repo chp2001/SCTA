@@ -92,7 +92,6 @@ UnitBlueprint {
         UnitName = 'Seer',
     },
     Intel = {
-	FreeIntel = false,
     VisionRadius = 16,
 	RadarRadius = 70,
     },

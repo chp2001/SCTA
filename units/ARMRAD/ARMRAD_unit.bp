@@ -77,9 +77,6 @@ UnitBlueprint {
         BuildCostEnergy = 750,
         BuildCostMass = 49,
         BuildTime = 1137,
-	NaturalProducer = true,
-        MaintenanceConsumptionPerSecondEnergy = 5,
-	ProductionPerSecondEnergy = 5,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -89,9 +86,6 @@ UnitBlueprint {
     General = {
         Category = 'Intelligence',
         Classification = 'RULEUC_Sensor',
-        ToggleCaps = {
-            RULEUTC_IntelToggle = true,
-        },
         SelectionPriority = 5,
  CommandCaps = {
             RULEUCC_Attack = false,
@@ -115,7 +109,6 @@ TechLevel = 'RULEUTL_Basic',
 	UnitName = 'Radar Tower',
     },
     Intel = {
-	FreeIntel = true,
         VisionRadius = 22, 
 	RadarRadius = 90,
     },

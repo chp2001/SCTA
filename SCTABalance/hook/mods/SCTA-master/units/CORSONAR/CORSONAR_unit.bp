@@ -34,13 +34,11 @@ UnitBlueprint {
 	MinWaterDepth = 0.5,
     },
     Economy = {
-        NaturalProducer = false,
         BuildCostEnergy = 1200,
         BuildTime = 2300,
         BuildRate = 40, 
         BuildCostMass = 120,
         MaintenanceConsumptionPerSecondEnergy = 25,
-        ProductionPerSecondEnergy = 0,
         BuildableCategory = {
             'corason',
             },
@@ -58,7 +56,6 @@ UnitBlueprint {
         SkirtSizeZ = 1, 
     },
     Intel = {
-        FreeIntel = false,
         VisionRadius = 12,
         WaterVisionRadius = 12,
         SonarRadius = 120,

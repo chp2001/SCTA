@@ -433,7 +433,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 table.insert( categoryList, ParseEntityCategory( v ) )
             end
         end
-        table.insert( atkPri, 'ALLUNITS - AIR' )
+        table.insert( atkPri, 'LAND' )
         table.insert( categoryList, categories.ALLUNITS - categories.AIR )
         self:SetPrioritizedTargetList( 'Attack', categoryList )
         local target
@@ -441,6 +441,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local maxRadius = data.SearchRadius or 50
         local movingToScout = false
         while aiBrain:PlatoonExists(self) do
+            self:SetPlatoonFormationOverride('Attack')
             if not target or target:IsDead() then
                 if aiBrain:GetCurrentEnemy() and aiBrain:GetCurrentEnemy():IsDefeated() then
                     aiBrain:PickEnemyLogic()
@@ -458,12 +459,11 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
                 #target = self:FindPrioritizedUnit('Attack', 'Enemy', true, self:GetPlatoonPosition(), maxRadius)
                 if target then
+                    self:SetPlatoonFormationOverride('Attack')
                     self:Stop()
                     if not data.UseMoveOrder then
-                        self:SetPlatoonFormationOverride('Attack')
                         self:AttackTarget( target )
                     else
-                        self:SetPlatoonFormationOverride('Attack')
                         self:MoveToLocation( table.copy( target:GetPosition() ), false)
                     end
                     movingToScout = false
@@ -474,11 +474,11 @@ Platoon = Class(SCTAAIPlatoon) {
                         if v[1] < 0 or v[3] < 0 or v[1] > ScenarioInfo.size[1] or v[3] > ScenarioInfo.size[2] then
                             #LOG('*AI DEBUG: STRIKE FORCE SENDING UNITS TO WRONG LOCATION - ' .. v[1] .. ', ' .. v[3] )
                         end
-                        self:SetPlatoonFormationOverride('Attack')
                         self:MoveToLocation( (v), false )
                     end
                 end
             end
+            self:SetPlatoonFormationOverride('Attack')
             WaitSeconds( 7 )
         end
     end,
@@ -703,8 +703,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
                 oldDistSq = distSq      
             end
-        end
-        default to returning to attacking    
+        end 
         return self:AttackSCTAForceAI()
     end,
 
@@ -732,9 +731,10 @@ Platoon = Class(SCTAAIPlatoon) {
         end
 
         while aiBrain:PlatoonExists(self) do
-            target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ENGINEER)
+            target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ENGINEER - categories.COMMAND)
             if not target then
-                target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ALLUNITS - categories.WALL - categories.STRUCTURE)
+                WaitSeconds(1)
+                return self:SCTALabAI()
             end
             if target and target:GetFractionComplete() == 1 then
                 local EcoThreat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'Economy')
@@ -755,6 +755,74 @@ Platoon = Class(SCTAAIPlatoon) {
                 hadtarget = false
             end
             WaitSeconds(5) --DUNCAN - was 5
+        end
+    end,
+
+    SCTALabAI = function(self)
+        AIAttackUtils.GetMostRestrictiveLayer(self)
+
+        local aiBrain = self:GetBrain()
+        local scout = self:GetPlatoonUnits()[1]
+        local target
+        -- build scoutlocations if not already done.
+        if not aiBrain.InterestList then
+            aiBrain:BuildScoutLocations()
+        end
+
+        --If we have cloaking (are cybran), then turn on our cloaking
+        --DUNCAN - Fixed to use same bits
+
+        while not scout.Dead do
+            --Head towards the the area that has not had a scout sent to it in a while
+            local targetData = false
+
+            --For every scouts we send to all opponents, send one to scout a low pri area.
+            if aiBrain.IntelData.HiPriScouts < aiBrain.NumOpponents and table.getn(aiBrain.InterestList.HighPriority) > 0 then
+                targetData = aiBrain.InterestList.HighPriority[1]
+                aiBrain.IntelData.HiPriScouts = aiBrain.IntelData.HiPriScouts + 1
+                targetData.LastScouted = GetGameTimeSeconds()
+
+                aiBrain:SortScoutingAreas(aiBrain.InterestList.HighPriority)
+
+            elseif table.getn(aiBrain.InterestList.LowPriority) > 0 then
+                targetData = aiBrain.InterestList.LowPriority[1]
+                aiBrain.IntelData.HiPriScouts = 0
+                targetData.LastScouted = GetGameTimeSeconds()
+
+                aiBrain:SortScoutingAreas(aiBrain.InterestList.LowPriority)
+            else
+                --Reset number of scoutings and start over
+                aiBrain.IntelData.HiPriScouts = 0
+            end
+
+            --Is there someplace we should scout?
+            if targetData then
+                --Can we get there safely?
+                local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, self.MovementLayer, scout:GetPosition(), targetData.Position, 400) --DUNCAN - Increase threatwieght from 100
+
+                IssueClearCommands(self)
+
+                if path then
+                    local pathLength = table.getn(path)
+                    for i=1, pathLength-1 do
+                        self:MoveToLocation(path[i], false)
+                    end
+                end
+
+                self:MoveToLocation(targetData.Position, false)
+
+                --Scout until we reach our destination
+                while not scout.Dead and not scout:IsIdleState() do
+                    target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ENGINEER - categories.COMMAND)
+                    if target then
+                        WaitSeconds(1)
+                        return self:HuntAILABSCTA()
+                    elseif not target then
+                        WaitSeconds(2.5)
+                    end
+                end
+            end
+            WaitSeconds(1)
         end
     end,
 
@@ -783,7 +851,7 @@ Platoon = Class(SCTAAIPlatoon) {
         while aiBrain:PlatoonExists(self) do
             target = self:FindClosestUnit('Attack', 'Enemy', true, categories.EXPERIMENTAL * categories.AIR)
             if not target then
-                target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ALLUNITS - categories.WALL - categories.STRUCTURE)
+                target = self:FindClosestUnit('Attack', 'Enemy', true, categories.AIR)
             end
             if target and target:GetFractionComplete() == 1 then
                 local airThreat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'Air')

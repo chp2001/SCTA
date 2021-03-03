@@ -10,8 +10,8 @@ BuilderGroup {
     BuilderGroupName = 'SCTAAILandFormers',
     BuildersType = 'PlatoonFormBuilder', -- A PlatoonFormBuilder is for builder groups of units.
     Builder {
-        BuilderName = 'SCTAAI Strike',
-        PlatoonTemplate = 'StrikeForceSCTA', -- The platoon template tells the AI what units to include, and how to use them.
+        BuilderName = 'SCTAAI AntiAir',
+        PlatoonTemplate = 'AntiAirSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 90,
         InstanceCount = 200,
         BuilderType = 'Any',
@@ -21,13 +21,13 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * categories.ANTIAIR} },
          },
     },
     Builder {
-        BuilderName = 'SCTAAI Strike 2',
-        PlatoonTemplate = 'StrikeForceSCTA2', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 50,
+        BuilderName = 'SCTAAI Strike',
+        PlatoonTemplate = 'StrikeForceSCTA', -- The platoon template tells the AI what units to include, and how to use them.
+        Priority = 90,
         InstanceCount = 200,
         BuilderType = 'Any',
         BuilderData = {

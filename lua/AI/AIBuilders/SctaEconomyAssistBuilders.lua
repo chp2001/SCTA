@@ -17,7 +17,7 @@ BuilderGroup {
         InstanceCount = 12,
         BuilderConditions = {
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.6, 0.5 } },
-            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, 'LEVEL4' }},
+            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, 'EXPERIMENTAL' }},
             { IBC, 'BrainNotLowPowerMode', {} },
         },
         BuilderData = {
@@ -185,7 +185,8 @@ BuilderGroup {
             { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT * categories.LAND}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB} },
-            },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.PLANT} },    
+        },
         BuilderData = {
             Location = 'LocationType',
             ReclaimTime = 30,
@@ -201,8 +202,9 @@ BuilderGroup {
         InstanceCount = 8,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
-            { EBC, 'LessThanEconStorageRatio', { 0.1, 1.1}},
+            { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 2, categories.LAB * categories.LAND}},
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.LAB} },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 8, categories.LAB} },
             },
         BuilderData = {

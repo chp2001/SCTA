@@ -31,9 +31,9 @@ TAunit = Class(Unit)
 	end,
 
     TAIntelMotion = function(self, new, old ) 
-			while not self.Dead do
+		while not self.Dead do
             coroutine.yield(11)
-            if self:IsUnitState('Moving') and self.TAIntelOn then
+            if self.TAIntelOn and self:IsUnitState('Moving') then
                 self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
 			elseif self.TAIntelOn then
                 self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
@@ -83,13 +83,13 @@ TAunit = Class(Unit)
         local getpos = moho.entity_methods.GetPosition
         while not self.Dead do
             coroutine.yield(11)
-			if self:IsUnitState('Moving') and self.CloakOn and not IsDestroyed(self) then
+			if self.CloakOn and self:IsUnitState('Moving') then
                 self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
 			elseif self.CloakOn then
                 self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
             end
             local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
-			if self:IsUnitState('Building') and self.CloakOn and not IsDestroyed(self) then
+			if self.CloakOn and self:IsUnitState('Building') then
 				self:DisableIntel('Cloak')
 				self:UpdateConsumptionValues()
                 self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)

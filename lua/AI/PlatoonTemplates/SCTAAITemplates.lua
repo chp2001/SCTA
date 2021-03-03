@@ -4,12 +4,13 @@
     Summary :
         Responsible for defining a mapping from AIBuilders keys -> Plans (Plans === platoon.lua functions)
 ]]
+local SPECIAL = categories.RAIDER - categories.EXPERIMENTAL - categories.ENGINEER
 
 PlatoonTemplate {
-    Name = 'StrikeForceSCTA',
-    Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
+    Name = 'AntiAirSCTA',
+    Plan = 'SCTAAntiAirAI', -- The platoon function to use.
     GlobalSquads = {
-        { categories.MOBILE * categories.LAND * categories.LEVEL1 - categories.RAIDER - categories.ENGINEER - categories.EXPERIMENTAL, -- Type of units.
+        { categories.MOBILE * categories.LAND * categories.ANTIAIR, -- Type of units.
           5, -- Min number of units.
           10, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
@@ -18,10 +19,10 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
-    Name = 'StrikeForceSCTA2',
-    Plan = 'SCTAStrikeForceAILate', -- The platoon function to use.
+    Name = 'StrikeForceSCTA',
+    Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
-        { categories.MOBILE * categories.LAND - categories.RAIDER - categories.ENGINEER - categories.EXPERIMENTAL, -- Type of units.
+        { categories.MOBILE * categories.LAND - SPECIAL, -- Type of units.
           10, -- Min number of units.
           20, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
@@ -31,7 +32,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'LABSCTA',
-    Plan = 'SCTAStrikeForceAIEarly', -- The platoon function to use.
+    Plan = 'HuntAILABSCTA', -- The platoon function to use.
     GlobalSquads = {
         { categories.MOBILE * categories.RAIDER, -- Type of units.
           1, -- Min number of units.
@@ -46,15 +47,15 @@ PlatoonTemplate {
     Name = 'LandAttackSCTA',
     Plan = 'SCTAStrikeForceAI',
     GlobalSquads = {
-        { categories.MOBILE * categories.LAND - categories.EXPERIMENTAL - categories.ENGINEER - categories.ROCKET - categories.RAIDER, 2, 20, 'Attack', 'none' }
+        { categories.MOBILE * categories.LAND - SPECIAL, 2, 20, 'Attack', 'none' }
     },
 }
 
 PlatoonTemplate {
     Name = 'LandRocketAttackSCTA',
-    Plan = 'AttackForceAI',
+    Plan = 'AttackSCTAForceAI',
     GlobalSquads = {
-        { categories.MOBILE * categories.LAND * (categories.ROCKET + categories.ARTILLERY) - categories.EXPERIMENTAL - categories.ENGINEER - categories.RAIDER, 6, 20, 'Attack', 'none' }
+        { categories.MOBILE * categories.LAND * (categories.ROCKET + categories.ARTILLERY) - SPECIAL, 6, 20, 'Attack', 'none' }
     },
 }
 

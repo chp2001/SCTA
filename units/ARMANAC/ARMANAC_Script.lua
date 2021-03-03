@@ -15,4 +15,4 @@ ARMANAC = Class(TASea) {
 	},
 }
 
-TypeClass = ARMAH
+TypeClass = ARMANAC

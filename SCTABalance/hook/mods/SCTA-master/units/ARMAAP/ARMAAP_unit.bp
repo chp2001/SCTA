@@ -30,7 +30,7 @@ UnitBlueprint {
         Footprint = {
             SizeX = 8,
             SizeZ = 8,
-    },
+        },
     Economy = {
         BuildCostEnergy = 20000,
         BuildCostMass = 1000,

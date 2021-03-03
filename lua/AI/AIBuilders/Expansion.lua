@@ -29,11 +29,12 @@ BuilderGroup {
     BuilderGroupName = 'SCTAExpansionBuilders',
     BuildersType = 'EngineerBuilder',
     Builder {
-        BuilderName = 'SCTA Expansion Marker',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 50,
+        BuilderName = 'SCTA Start Marker',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 80,
         InstanceCount = 1,
         BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {600} },
             { UCBC, 'ExpansionBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.2}},
         },
@@ -64,6 +65,7 @@ BuilderGroup {
         Priority = 80,
         InstanceCount = 1,
         BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {900} },
             { UCBC, 'ExpansionBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.2}},
         },
@@ -82,8 +84,37 @@ BuilderGroup {
                 ThreatRings = 2,
                 ThreatType = 'AntiSurface',
                 BuildStructures = {                    
-                    'T1LandFactory2',
                     'T1Radar',
+                }
+            },
+        }
+    },
+    Builder {
+        BuilderName = 'SCTA Start Marker Late',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        Priority = 80,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {720} },
+            { UCBC, 'ExpansionBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.2}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                BuildClose = false,
+                BaseTemplate = ExBaseTmpl,
+                ExpansionBase = true,
+                NearMarkerType = 'Start Location',
+                ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                LocationRadius = 500,
+                LocationType = 'LocationType',
+                ThreatMin = -1000,
+                ThreatMax = 1000,
+                ThreatRings = 2,
+                ThreatType = 'AntiSurface',
+                BuildStructures = {                    
+                    'T2LandFactory2',
                 }
             },
         }

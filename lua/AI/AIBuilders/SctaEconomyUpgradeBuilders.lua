@@ -60,6 +60,7 @@ BuilderGroup {
         Priority = 50,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1200} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TARGETING} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.5 }},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.RADAR * categories.STRUCTURE * categories.LEVEL2} },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, categories.FUSION} },

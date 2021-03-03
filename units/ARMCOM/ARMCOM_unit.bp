@@ -87,7 +87,6 @@ UnitBlueprint {
         'OVERLAYSONAR',	
         'ARM',
         'TACLOAK',
-	    'LEVEL1',
         'SNIPEMODE',
         'ALLTERRAIN',
     },

@@ -35,7 +35,6 @@ UnitBlueprint {
         'BUILTBYT1VEHICLE',
         'BUILTBYT1HOVER',
         'BUILTBYT1SHIP',
-        'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',

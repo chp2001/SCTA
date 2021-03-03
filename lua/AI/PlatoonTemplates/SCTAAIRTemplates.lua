@@ -9,7 +9,7 @@
 
 PlatoonTemplate {
     Name = 'IntieAISCTA',
-    Plan = 'InterceptorAI',
+    Plan = 'InterceptorAISCTA',
     GlobalSquads = {
         { categories.AIR * categories.MOBILE * categories.ANTIAIR * (categories.LEVEL1 + categories.LEVEL2 + categories.LEVEL3) - categories.BOMBER - categories.TRANSPORTFOCUS - categories.EXPERIMENTAL, 2, 100, 'attack', 'none' },
     }
@@ -19,10 +19,12 @@ PlatoonTemplate {
     Name = 'T1AirScoutSCTA',
     FactionSquads = {
         Arm = {
-            { 'armpeep', 1, 1, 'scout', 'none' }
+            { 'armpeep', 1, 1, 'scout', 'none' },
+            { 'armca', 1, 1, 'support', 'None' },
         },
         Core = {
-            { 'corfink', 1, 1, 'scout', 'none' }
+            { 'corfink', 1, 1, 'scout', 'none' },
+            { 'corca', 1, 1, 'support', 'None' },
         },
     }
 }

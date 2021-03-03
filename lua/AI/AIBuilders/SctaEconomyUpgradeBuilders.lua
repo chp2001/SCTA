@@ -24,7 +24,7 @@ local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local PlatoonFile = '/lua/platoon.lua'
 
 BuilderGroup {
-    BuilderGroupName = 'SctaExtractorUpgrades',
+    BuilderGroupName = 'SCTAUpgrades',
     BuildersType = 'PlatoonFormBuilder',
     Builder {
         BuilderName = 'SCTA Extractor Upgrade',

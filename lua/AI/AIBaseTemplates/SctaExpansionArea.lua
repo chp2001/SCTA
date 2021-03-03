@@ -13,11 +13,10 @@ BaseBuilderTemplate {
         'SCTAAIAirFormers',
 
         -- Buildings etc
-        'SCTAAIEnergyBuilder',
-        'SCTAAIEngineerMassBuilder',
+        'SCTAAIEngineerEcoBuilder',
         'SCTAAIFactoryBuilders',
         'SCTAAIDefenseBuilder',
-        'SctaExtractorUpgrades',
+        'SCTAUpgrades',
         'SCTAExpansionBuilders',
     },
     BaseSettings = {

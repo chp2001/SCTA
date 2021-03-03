@@ -5,25 +5,6 @@
 
 UnitBlueprint {
     Merge = true, 
-    Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1HOVER',
-        'BUILTBYCOMMANDER',
-        'SELECTABLE',
-        'DRAGBUILD',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH1',
-        'SORTSTRATEGIC',
-	    'STRUCTURE',
-	    'DEFENSE',
-	    'DIRECTFIRE',
-        'OVERLAYDIRECTFIRE',
-        'LEVEL2',
-        'LASER',
-	    'CORE',
-    },
     Display = {
         UniformScale = 0.08,
     },

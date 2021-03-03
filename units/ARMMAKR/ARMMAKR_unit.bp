@@ -40,7 +40,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH1',
+        'TECH2',
         'LEVEL2',
 	    'STRUCTURE',
         'MASSPRODUCTION',

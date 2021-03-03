@@ -23,7 +23,7 @@ UnitBlueprint {
         Cue = 'Computer_Computer_MissileLaunch_01351',
     },
     },
-    BuildIconSortPriority = 17,
+    BuildIconSortPriority = 18,
     Categories = {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
@@ -81,8 +81,8 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 4,
-        SizeZ = 4,
+        SizeX = 3,
+        SizeZ = 3,
     },
     General = {
         Category = 'Strategic',
@@ -107,16 +107,16 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        SkirtSizeX = 4, 
-        SkirtSizeZ = 4,  
+        SkirtSizeX = 3, 
+        SkirtSizeZ = 3,  
     },
-    SelectionSizeX = 2,
-    SelectionSizeZ = 2,
+    SelectionSizeX = 3,
+    SelectionSizeZ = 3,
     SelectionThickness = 0.25,
     SizeX = 4,
     SizeY = 3,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure3_missile',
+    StrategicIconName = 'icon_land3_antishield',
     StrategicIconSortPriority = 0,
     SpecialAbilities = {
         LaunchNuke = {
@@ -144,6 +144,7 @@ UnitBlueprint {
                     TargetDisallow = 'EXPERIMENTAL, COMMAND',
                 },
             },
+            DamageToShields = 3000,
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
@@ -153,9 +154,6 @@ UnitBlueprint {
                 Land = 'Land|Water',
             },
             Label = 'EMBMSSL',
-            MuzzleSalvoDelay = 0, 
-            MuzzleSalvoSize = 1,
-            MuzzleVelocity = 0,
             ProjectileId = '/mods/SCTA-master/projectiles/EMBMSSL/EMBMSSL_proj.bp',
             RackBones = {
                 {
@@ -180,7 +178,7 @@ UnitBlueprint {
             FiringTolerance = 2,
             ForceSingleFire = true,
             InitialProjectileStorage = 0,
-            ManualFire = 1,
+            ManualFire = true,
             Damage = 1,
             MaxProjectileStorage = 5,
             MaxRadius = 500,

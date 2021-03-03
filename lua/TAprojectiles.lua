@@ -1,5 +1,7 @@
-local SinglePolyTrailProjectile = import('/lua/sim/Defaultprojectiles.lua').SinglePolyTrailProjectile
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+local DefaultProjectileFile = import('/lua/sim/defaultprojectiles.lua')
+local SinglePolyTrailProjectile = DefaultProjectileFile.SinglePolyTrailProjectile
+local NukeProjectile = DefaultProjectileFile.NukeProjectile
 
 TAProjectile = Class(SinglePolyTrailProjectile) {
 	FxSmoke = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
@@ -24,7 +26,7 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
 	end,
 }
 
-TANuclearProjectile = Class(TAProjectile) {
+TANuclearProjectile = Class(NukeProjectile, TAProjectile) {
 	OnCreate = function(self)
 		self.Smoke = true
 		TAProjectile.OnCreate(self)
@@ -116,7 +118,7 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 		'/mods/SCTA-master/effects/emitters/napalm_03_emit.bp',
 		'/mods/SCTA-master/effects/emitters/napalm_03_emit.bp',
 		'/mods/SCTA-master/effects/emitters/napalm_03_emit.bp',
-    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
+    	'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
 	},
 	FxAirUnitHitScale = 2,
 	FxImpactShield = {
@@ -132,7 +134,7 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 		'/mods/SCTA-master/effects/emitters/napalm_03_emit.bp',
 		'/mods/SCTA-master/effects/emitters/napalm_03_emit.bp',
 		'/mods/SCTA-master/effects/emitters/napalm_03_emit.bp',
-    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
+    	'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
 	},
 	FxUnitHitScale = 2,
 	FxImpactProp = {

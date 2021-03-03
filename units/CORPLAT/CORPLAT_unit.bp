@@ -114,7 +114,7 @@ UnitBlueprint {
         SelectionPriority = 5,
         FactionName = 'ARM',
         Icon = 'land',
-TechLevel = 'RULEUTL_Advanced',
+    TechLevel = 'RULEUTL_Advanced',
 	UnitName = 'Seaplane Platform',
     },
     Intel = {

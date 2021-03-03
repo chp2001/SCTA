@@ -6,6 +6,7 @@ local SAI = '/lua/ScenarioPlatoonAI.lua'
 local SBC = '/lua/editor/SorianBuildConditions.lua'
 local SIBC = '/lua/editor/SorianInstantBuildConditions.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local MABC = '/lua/editor/MarkerBuildConditions.lua'
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIDefenseBuilder',
@@ -73,7 +74,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.LASER * categories.LEVEL2 } }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.75}}, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FUSION} }, 
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, categories.FUSION} }, 
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -86,27 +87,6 @@ BuilderGroup {
             }
         }
     },
-    Builder {
-        BuilderName = 'SCTARadar',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco',
-            Priority = 50,
-            BuilderConditions = {
-                { UCBC, 'UnitsLessAtLocation', { 'LocationType', 1, (categories.RADAR + categories.OMNI) * categories.STRUCTURE - categories.FACTORY}},
-                { EBC, 'GreaterThanEconIncome',  { 0.5, 15 } },
-                { IBC, 'BrainNotLowPowerMode', {} },
-                { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 1.2 }}, 
-            },
-            BuilderType = 'Any',
-            BuilderData = {
-                Construction = {
-                    BuildClose = true,
-                    BuildStructures = {
-                        'T1Radar',
-                    },
-                    Location = 'LocationType',
-                }
-            }
-        },
     Builder {
         BuilderName = 'SCTALaser3Tower',
         PlatoonTemplate = 'EngineerBuilderSCTA23',

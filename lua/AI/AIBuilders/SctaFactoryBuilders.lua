@@ -116,7 +116,6 @@ BuilderGroup {
             DesiresAssist = true,
             NumAssistees = 1,
             Construction = {
-                BuildClose = true,
                 BuildStructures = {
                     'T2LandFactory',
                 }
@@ -139,7 +138,6 @@ BuilderGroup {
             DesiresAssist = true,
             NumAssistees = 2,
             Construction = {
-                BuildClose = true,
                 BuildStructures = {
                     'T2LandFactory2',
                 }
@@ -184,7 +182,6 @@ BuilderGroup {
             DesiresAssist = true,
             NumAssistees = 2,
             Construction = {
-                BuildClose = true,
                 BuildStructures = {
                     'T2AirFactory',
                 }
@@ -240,7 +237,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI LandFac2 Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTA12',
         Priority = 600,
-        InstanceCount = 3,
+        InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {750} },
             { MIBC, 'LessThanGameTime', {1500} },
@@ -259,6 +256,48 @@ BuilderGroup {
         }
     },
     Builder {
+        BuilderName = 'SCTAAI LandFac2 Emergency2',
+        PlatoonTemplate = 'EngineerBuilderSCTA12',
+        Priority = 600,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {750} },
+            { MIBC, 'LessThanGameTime', {1500} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.PLATFORM} }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T2LandFactory2',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI Gantry Emergency',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        Priority = 650,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.GANTRY} }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T3QuantumGate',
+                }
+            }
+        }
+    },
+    Builder {
         BuilderName = 'SCTAAI LandFac3 Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTA23',
         Priority = 800,
@@ -266,6 +305,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1200} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.PLATFORM} },
         },
         BuilderType = 'Any',
         BuilderData = {

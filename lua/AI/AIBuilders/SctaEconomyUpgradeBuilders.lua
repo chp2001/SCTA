@@ -34,7 +34,7 @@ BuilderGroup {
         BuilderConditions = {
             { EBC, 'GreaterThanEconIncome',  { 4, 50}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 1.2 }},
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.MASSEXTRACTION * categories.LEVEL2} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.MASSEXTRACTION * categories.LEVEL2} },
             { IBC, 'BrainNotLowPowerMode', {} },
         },
         FormRadius = 10000,
@@ -43,12 +43,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Extractor Upgrade Time Based',
         PlatoonTemplate = 'T1MassExtractorUpgrade',
-        InstanceCount = 2,
+        InstanceCount = 1,
         Priority = 200,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 900 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 1100, 2000 } },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, categories.MASSEXTRACTION * categories.LEVEL2} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.MASSEXTRACTION * categories.LEVEL2} },
             { IBC, 'BrainNotLowPowerMode', {} },
         },
         FormRadius = 10000,

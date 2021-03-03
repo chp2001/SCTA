@@ -22,11 +22,12 @@ UnitBlueprint {
         BuildCostEnergy = 2100,
         BuildCostMass = 200,
         BuildTime = 3600,
+        MaintenanceConsumptionPerSecondEnergy = 20,
     },
-    Footprint = {
-	SizeX = 2,
-	SizeZ = 3,
-	MaxSlope = 1,
+    General = {
+        ToggleCaps = {
+        RULEUTC_StealthToggle = true,
+    },
     },
     Intel = {
     VisionRadius = 14,

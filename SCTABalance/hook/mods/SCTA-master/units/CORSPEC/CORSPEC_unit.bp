@@ -8,6 +8,14 @@ UnitBlueprint {
     Display = {
         UniformScale = 0.08,
     },
+    Economy = {
+        MaintenanceConsumptionPerSecondEnergy = 20,
+    },
+    General = {
+    ToggleCaps = {
+        RULEUTC_StealthToggle = true,
+        },
+    },
     LifeBarSize = 1,
     LifeBarOffset = 0,
     SelectionSizeX = 0.6,

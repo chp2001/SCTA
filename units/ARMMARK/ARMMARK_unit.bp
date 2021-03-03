@@ -66,11 +66,8 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 1152,
         BuildCostMass = 95,
-        MaintenanceConsumptionPerSecondEnergy = 15,
-        ProductionPerSecondEnergy = 15,
         BuildTime = 3200,
     },
-
     General = {
         Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -85,7 +82,7 @@ UnitBlueprint {
         },
         FactionName = 'ARM',
         Icon = 'land',
-TechLevel = 'RULEUTL_Advanced',
+        TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Marky',
     },
     Intel = {

@@ -32,5 +32,4 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 4,
     SizeZ = 3,
-    StrategicIconName = 'icon_structure2_antinavy',
 }

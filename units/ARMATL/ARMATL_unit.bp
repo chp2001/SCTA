@@ -23,7 +23,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH3',
+        'TECH2',
         'LEVEL2',
 	    'STRUCTURE',
 	    'ANTINAVY',
@@ -69,8 +69,8 @@ UnitBlueprint {
     },
     Footprint = {
         MinWaterDepth = 3,
-        SizeX = 4,
-        SizeZ = 4,
+        SizeX = 2,
+        SizeZ = 2,
     },
     General = {
         Category = 'Defense',
@@ -99,8 +99,6 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Water = true,
         },
-        SkirtSizeX = 4,
-        SkirtSizeZ = 4,
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,
@@ -108,7 +106,7 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 2,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure3_antinavy',
+    StrategicIconName = 'icon_structure2_antinavy',
     StrategicIconSortPriority = 0,
     Weapon = {
         {

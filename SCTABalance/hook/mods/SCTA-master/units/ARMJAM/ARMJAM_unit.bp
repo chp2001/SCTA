@@ -5,7 +5,12 @@ UnitBlueprint {
     UniformScale = 0.1,
     },
     Economy = {
-	MaintenanceConsumptionPerSecondEnergy = 15,
+        MaintenanceConsumptionPerSecondEnergy = 20,
+        },
+    General = {
+    ToggleCaps = {
+        RULEUTC_StealthToggle = true,
+    },
     },
     Intel = {
         RadarStealthFieldRadius = 20,

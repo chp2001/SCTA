@@ -6,12 +6,11 @@
 UnitBlueprint {
     Merge = true, 
     Economy = {
-	MaintenanceConsumptionPerSecondEnergy = 10,
+    MaintenanceConsumptionPerSecondEnergy = 20,
     },
-    Footprint = {
-        Footprint = {
-            SizeX = 2,
-            SizeZ = 4,
+    General = {
+    ToggleCaps = {
+        RULEUTC_StealthToggle = true,
         },
     },
     SelectionSizeX = 1.25,

@@ -8,6 +8,14 @@ UnitBlueprint {
     Display = {
         UniformScale = 0.06,
     },
+    Economy = {
+    MaintenanceConsumptionPerSecondEnergy = 20,
+    },
+    General = {
+    ToggleCaps = {
+        RULEUTC_StealthToggle = true,
+        },
+    },
     Intel = {
         RadarStealthFieldRadius = 20,
     },

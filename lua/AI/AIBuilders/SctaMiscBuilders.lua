@@ -38,8 +38,8 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
-                { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 300, -500, 1, 0, 'AntiSurface', 1 }},
-            },
+            { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 300, -500, 1, 0, 'AntiSurface', 1 }},
+        },
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
@@ -77,7 +77,7 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0,  categories.FUSION} }, 
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3,  categories.FUSION} }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
         },
@@ -202,7 +202,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FUSION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FUSION * categories.LEVEL2} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.FUSION} },
         },
         BuilderType = 'Any',

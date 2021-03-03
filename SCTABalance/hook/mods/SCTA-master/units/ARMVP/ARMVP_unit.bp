@@ -30,7 +30,6 @@ UnitBlueprint {
             Abilities = {
                 '<LOC ability_upgradable>Upgradeable',
             },
-        UniformScale = 0.2,
     },
     Economy = {
         BuildCostEnergy = 4800,

@@ -83,8 +83,7 @@ UnitBlueprint {
     },
     Footprint = {
 	SizeX = 2,
-	SizeZ = 2,
-	MaxSlope = 1,
+	SizeZ = 4,
     },
     General = {
         Category = 'Submarine',
@@ -139,7 +138,6 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         }, 
-
     },
         Wreckage = {
 	---UseCustomMesh = true,

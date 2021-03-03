@@ -28,24 +28,24 @@ UnitBlueprint {
     UniformScale = 0.12,    
 }, 
      Economy = {
-        NaturalProducer = false,
         BuildCostEnergy = 6000,
         BuildTime = 9600,
         BuildCostMass = 400,
         BuildRate = 60, 
         DifferentialUpgradeCostCalculation = true,
         MaintenanceConsumptionPerSecondEnergy = 150,
-        ProductionPerSecondEnergy = 0,
         BuildableCategory = {
             'cortarg',
       },
     },
     General = {
+    ToggleCaps = {
+            RULEUTC_IntelToggle = true,
+        },
     UpgradesFrom = 'corrad',
     UpgradesTo = 'cortarg', 
     },
     Intel = {
-	    FreeIntel = false,
         VisionRadius = 12, 
         RadarRadius = 240,
     },

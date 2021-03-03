@@ -29,7 +29,6 @@ UnitBlueprint {
 	MaxSlope = 1,
     },
     Intel = {
-    FreeIntel = false,
     VisionRadius = 14,
     },
     SelectionSizeX = 1.25,

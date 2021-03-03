@@ -21,20 +21,9 @@ UnitBlueprint {
           MaxHealth = 2100,
               },
     Economy = {
-          BuildCostMass = 480,
-          BuildCostEnergy = 28000,
-          MaintenanceConsumptionPerSecondEnergy = 15,
-        },
-    General = {
-          ToggleCaps = {
-               RULEUTC_StealthToggle = true,
-              },
-        },
-    Intel = {
-          VisionRadius =  24,
-	        RadarStealth = true,
-	        FreeIntel = false,
-    },
+        BuildCostMass = 480,
+        BuildCostEnergy = 28000,
+      },
     Physics = {
           FuelRechargeRate = 666666,
           FuelUseTime = 666666,

@@ -91,7 +91,6 @@ TechLevel = 'RULEUTL_Basic',
         UnitName = 'Torpedo Launcher',
     },
     Intel = {
-	FreeIntel = true,
         SonarRadius = 28,
         VisionRadius = 10,
         WaterVisionRadius = 10,

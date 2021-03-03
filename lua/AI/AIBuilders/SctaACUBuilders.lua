@@ -55,7 +55,30 @@ BuilderGroup {
                 }
             }
         }
-    },   
+    },
+    Builder {
+        BuilderName = 'SCTA AI ACU Radar',
+        PlatoonTemplate = 'CommanderBuilderSCTA',
+        Priority = 900,
+        InstanceCount = 2, -- The max number concurrent instances of this builder.
+        BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'GreaterThanGameTime', {180} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.RADAR * categories.STRUCTURE} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1Radar',
+                }
+            }
+        }
+    },      
     Builder {
         BuilderName = 'SCTA  ACU Energy',
         PlatoonTemplate = 'CommanderBuilderSCTA',

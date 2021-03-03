@@ -75,7 +75,6 @@ UnitBlueprint {
         BuildCostEnergy = 1830,
         BuildCostMass = 125,
         BuildTime = 4800,
-        MaintenanceConsumptionPerSecondEnergy = 20,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -85,11 +84,8 @@ UnitBlueprint {
     General = {
         Category = 'Intelligence',
         Classification = 'RULEUC_Sensor',
-        ToggleCaps = {
-            RULEUTC_IntelToggle = true,
-        },
         SelectionPriority = 5,
- CommandCaps = {
+        CommandCaps = {
             RULEUCC_Attack = false,
             RULEUCC_CallTransport = false,
             RULEUCC_Capture = false,
@@ -104,9 +100,6 @@ UnitBlueprint {
             RULEUCC_Stop = true,
             RULEUCC_Transport = false,
         },
-        ToggleCaps = {
-            RULEUTC_IntelToggle = true,
-        },
         ConstructionBar = true,
         FactionName = 'ARM',
         Icon = 'land',
@@ -114,7 +107,6 @@ UnitBlueprint {
 	UnitName = 'Advanced Radar Tower',
     },
     Intel = {
-	FreeIntel = false,
     VisionRadius = 22, 
 	RadarRadius = 180,
     },

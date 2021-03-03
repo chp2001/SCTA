@@ -132,7 +132,6 @@ TechLevel = 'RULEUTL_Basic',
     Intel = {
         VisionRadius = 22,
         WaterVisionRadius = 6,
-	FreeIntel = true,
     RadarRadius = 41, 
     SonarRadius = 41, 
     },

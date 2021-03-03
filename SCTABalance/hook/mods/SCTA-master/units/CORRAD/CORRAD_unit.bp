@@ -12,16 +12,17 @@ UnitBlueprint {
         BuildCostEnergy = 1600,
         BuildTime = 2300,
         MaintenanceConsumptionPerSecondEnergy = 25,
-        ProductionPerSecondEnergy = 0,
         BuildableCategory = {
             'corarad',
       },
     },
     General = {
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
+        },
 	UpgradesTo = 'corarad', 
   },
   Intel = {
-    FreeIntel = false,
       VisionRadius = 8,
       WaterVisionRadius = 8,
     },

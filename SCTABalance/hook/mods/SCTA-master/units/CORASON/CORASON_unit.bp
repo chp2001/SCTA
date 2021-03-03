@@ -29,7 +29,6 @@ UnitBlueprint {
         },
     },
     Economy = {
-    NaturalProducer = false,
     BuildCostEnergy = 9000,
     BuildCostMass = 1200,
     DifferentialUpgradeCostCalculation = true,
@@ -41,6 +40,9 @@ UnitBlueprint {
 	MinWaterDepth = 1.5,
     },
     General = {
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
+        },
         UpgradesFrom = 'corsonar',
     },
     Intel = {

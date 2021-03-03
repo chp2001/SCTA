@@ -69,8 +69,8 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 4,
-        SizeZ = 4,
+        SizeX = 3,
+        SizeZ = 3,
     },
     General = {
 	---BuildAngle = 4096,
@@ -108,7 +108,6 @@ TechLevel = 'RULEUTL_Advanced',
         SkirtOffsetZ = -1.5,
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
-        TurnRate = 0,
     },
     SelectionSizeX = 2.3,
     SelectionSizeZ = 2.3,

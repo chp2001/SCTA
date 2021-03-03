@@ -83,7 +83,7 @@ TAunit = Class(Unit)
         local getpos = moho.entity_methods.GetPosition
         while not self.Dead do
             coroutine.yield(11)
-			if self:IsUnitState('Moving') and self.CloakOn then
+			if self:IsUnitState('Moving') and self.CloakOn and not IsDestroyed(self) then
                 self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
 			elseif self.CloakOn then
                 self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)

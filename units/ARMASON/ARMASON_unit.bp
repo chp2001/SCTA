@@ -75,8 +75,6 @@ UnitBlueprint {
         BuildCostEnergy = 2469,
         BuildCostMass = 163,
         BuildTime = 6152,
-	NaturalProducer = false,
-	MaintenanceConsumptionPerSecondEnergy = 25,
     },
     Footprint = {
         SizeX = 2,
@@ -87,8 +85,20 @@ UnitBlueprint {
 	---BuildAngle = 8192,
         Category = 'Intelligence',
         Classification = 'RULEUC_Sensor',
-        ToggleCaps = {
-            RULEUTC_IntelToggle = true,
+        CommandCaps = {
+            RULEUCC_Attack = false,
+            RULEUCC_CallTransport = false,
+            RULEUCC_Capture = false,
+            RULEUCC_Guard = false,
+            RULEUCC_Move = false,
+            RULEUCC_Nuke = false,
+            RULEUCC_Patrol = false,
+            RULEUCC_Pause = true,
+            RULEUCC_Reclaim = false,
+            RULEUCC_Repair = false,
+            RULEUCC_RetaliateToggle = false,
+            RULEUCC_Stop = true,
+            RULEUCC_Transport = false,
         },
         SelectionPriority = 5,
         FactionName = 'ARM',
@@ -97,7 +107,6 @@ UnitBlueprint {
         UnitName = 'Advanced Sonar Station',
     },
     Intel = {
-	FreeIntel = false,
     VisionRadius = 12,
 	SonarRadius = 140,
 	WaterVisionRadius = 12,
@@ -106,8 +115,6 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 1,
     Physics = {
-        SkirtSizeX = 1, 
-        SkirtSizeZ = 1, 
         BuildOnLayerCaps = {
             LAYER_Water = true,
         },

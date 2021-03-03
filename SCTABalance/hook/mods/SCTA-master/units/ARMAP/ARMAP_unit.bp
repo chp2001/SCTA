@@ -45,14 +45,9 @@ UnitBlueprint {
         },
     },
     Footprint = {
-        MaxSlope = 0.625,
         SizeX = 8,
         SizeZ = 8,
-    },    
-    Physics = {
-        SkirtSizeX = 6,
-        SkirtSizeZ = 6,
-    },
+    },   
     LifeBarHeight = 0.22,
     LifeBarOffset = 2,
     LifeBarSize = 7,
@@ -61,9 +56,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 10,
-        RadarRadius = 30,
-        FreeIntel = true,
-        },
+    },
         SelectionSizeX = 7,
         SelectionSizeZ = 5,
         SelectionThickness = 0.25,

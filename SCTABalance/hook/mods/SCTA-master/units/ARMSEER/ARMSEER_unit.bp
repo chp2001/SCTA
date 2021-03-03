@@ -31,15 +31,10 @@ UnitBlueprint {
     Economy = {
         MaintenanceConsumptionPerSecondEnergy = 20,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
     Intel = {
-        FreeIntel = false,
-        VisionRadius = 14,
-        OmniRadius = 40,
-        RadarStealthFieldRadius = 20,
+        VisionRadius = 10,
+        OmniRadius = 60,
+        RadarStealthFieldRadius = 25,
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,

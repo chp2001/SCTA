@@ -72,7 +72,6 @@ UnitBlueprint {
     Footprint = {
         SizeX = 4,
         SizeZ = 4,
-	MaxSlope = 0.625,
     },
     General = {
         Category = 'Defense',
@@ -90,8 +89,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 12,
-	RadarRadius = 30,
-	FreeIntel = false,
+	    RadarRadius = 30,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

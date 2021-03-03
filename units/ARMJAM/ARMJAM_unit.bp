@@ -104,7 +104,6 @@ UnitBlueprint {
         UnitWeight = 1,
     },
     Intel = {
-	FreeIntel = false,
     VisionRadius = 14,
 	RadarStealthFieldRadius = 25,
     },

@@ -95,8 +95,8 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 7,
-        SizeZ = 7,
+        SizeX = 6,
+        SizeZ = 6,
     },
     General = {
         BuildBones = {
@@ -121,8 +121,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 14,
-	RadarRadius = 31,
-	FreeIntel = true,
+	RadarRadius = 32,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

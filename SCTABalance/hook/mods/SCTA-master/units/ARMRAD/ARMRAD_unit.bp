@@ -11,16 +11,17 @@ UnitBlueprint {
         BuildTime = 2300,
         BuildRate = 40, 
         MaintenanceConsumptionPerSecondEnergy = 25,
-        ProductionPerSecondEnergy = 0,
         BuildableCategory = {
             'armarad',
       },
     },
     General = {
+      ToggleCaps = {
+        RULEUTC_IntelToggle = true,
+    },
 	UpgradesTo = 'armarad', 
   },
   Intel = {
-    FreeIntel = false,
       VisionRadius = 8,
       WaterVisionRadius = 8,
     },

@@ -76,7 +76,6 @@ UnitBlueprint {
         SizeZ = 5,
     },
     General = {
-	---BuildAngle = 4096,
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
 	ToggleCaps = {
@@ -89,7 +88,6 @@ UnitBlueprint {
 	UnitName = 'Cloakable Fusion Reactor',
     },
     Intel = {
-        FreeIntel = false,
         VisionRadius = 14,
 	    Cloak = true,
     },

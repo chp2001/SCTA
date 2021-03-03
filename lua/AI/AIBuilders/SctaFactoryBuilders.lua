@@ -174,7 +174,29 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FUSION} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.LAB * categories.AIR } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LAB * categories.AIR } }, -- Stop after 10 facs have been built.
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildStructures = {
+                    'T2AirFactory',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T2AirFactory2',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco12',
+        Priority = 120,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, categories.FUSION} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LAB * categories.AIR } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -273,28 +295,6 @@ BuilderGroup {
                 BuildClose = true,
                 BuildStructures = {
                     'T2LandFactory2',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTAAI Gantry Emergency',
-        PlatoonTemplate = 'EngineerBuilderSCTA23',
-        Priority = 650,
-        InstanceCount = 2,
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.GANTRY} }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T3QuantumGate',
                 }
             }
         }

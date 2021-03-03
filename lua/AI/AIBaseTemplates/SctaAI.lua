@@ -20,9 +20,8 @@ BaseBuilderTemplate {
         'SCTAAIAirFormers',
         
         -- Buildings etc
-        'SCTAAIEngineerEcoBuilder',
+        'SCTAAIEngineerMiscBuilder',
         'SCTAAIFactoryBuilders',
-        'SCTAAIDefenseBuilder',
         'SCTAUpgrades',
         'SCTAExpansionBuilders',
         'SCTAAssisters',

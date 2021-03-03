@@ -30,10 +30,6 @@ UnitBlueprint {
         Health = 6200,
         MaxHealth = 6200,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-    },
     Intel = {
         FreeIntel = true,
         RadarStealth = true,

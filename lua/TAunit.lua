@@ -20,7 +20,6 @@ TAunit = Class(Unit)
         ---self:LOGDBG('TAUnit.OnCreate')
         Unit.OnCreate(self)
 		self:SetFireState(FireState.GROUND_FIRE)
-		self.FxMovement = TrashBag()
         end,
 
 	OnStopBeingBuilt = function(self,builder,layer)

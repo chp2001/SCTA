@@ -9,7 +9,7 @@ local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local MABC = '/lua/editor/MarkerBuildConditions.lua'
 
 BuilderGroup {
-    BuilderGroupName = 'SCTAAIEngineerEcoBuilder',
+    BuilderGroupName = 'SCTAAIEngineerMiscBuilder',
     BuildersType = 'EngineerBuilder',
     Builder {
         BuilderName = 'SCTAAI T1Engineer Mex 150',
@@ -75,10 +75,10 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer MetalMaker',
         PlatoonTemplate = 'EngineerBuilderSCTAEco12',
         Priority = 90,
-        InstanceCount = 1,
+        InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2,  categories.FUSION} }, 
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 1.05 }},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0,  categories.FUSION} }, 
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
         },
         BuilderType = 'Any',
@@ -176,11 +176,11 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen2',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 90,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FUSION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FUSION} },
             { EBC, 'LessThanEconStorageRatio', { 1, 0.5}},
         },
         BuilderType = 'Any',
@@ -201,7 +201,7 @@ BuilderGroup {
         Priority = 95,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {900} }, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FUSION} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.FUSION} },
         },
@@ -223,7 +223,6 @@ BuilderGroup {
         Priority = 110,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {1000} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LEVEL3 * categories.FUSION} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.FUSION} },
@@ -236,6 +235,125 @@ BuilderGroup {
             Construction = {
                 BuildStructures = {
                     'T3EnergyProduction',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAMissileTower',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 50,
+        InstanceCount = 3,
+        BuilderConditions = {
+            { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.5}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1AADefense',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTALaserTower',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 50,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {480} }, -- Don't make tanks if we have lots of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LASER * categories.LEVEL1 } }, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.7}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1GroundDefense',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAMissileDefense',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 70,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {900} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ANTIMISSILE} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.7}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T2MissileDefense',
+                },
+                Location = 'LocationType',
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTALaser2Tower',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 60,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.LASER * categories.LEVEL2 } }, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.75}}, 
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, categories.FUSION} }, 
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T2GroundDefense',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTALaser3Tower',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        Priority = 60,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.LASER * categories.LEVEL3 } }, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.4, 0.25}}, 
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T3GroundDefense',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAMissileTower Emergency',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        Priority = 40,
+        InstanceCount = 4,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {480} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1AADefense',
                 }
             }
         }

@@ -119,7 +119,6 @@ TACKFusion = Class(TAStructure) {
 				ForkThread(self.CloakDetection, self)
 				end
 			end
-			end
 		end,
 	
 		CloakDetection = function(self)

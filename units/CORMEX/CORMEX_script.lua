@@ -51,13 +51,11 @@ CORMEX = Class(TAMass) {
 	OnProductionPaused = function(self)
 		TAMass.OnProductionPaused(self)
 		self:PlayUnitSound('Deactivate')
-		self:SetMaintenanceConsumptionInactive()
 		ForkThread(self.StopSpin,self)
 	end,
 
 	OnProductionUnpaused = function(self)
 		TAMass.OnProductionUnpaused(self)
-		self:SetMaintenanceConsumptionActive()
 		self:PlayUnitSound('Activate')
 		ForkThread(self.StartSpin,self)
 	end,

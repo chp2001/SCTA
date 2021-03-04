@@ -20,6 +20,11 @@ TAStructure = Class(TAunit)
         TAunit.DoTakeDamage(self, instigator, amount, vector, damageType)
     end,
 
+	OnStopBeingBuilt = function(self,builder,layer)
+        TAunit.OnStopBeingBuilt(self,builder,layer)
+        self:SetMaintenanceConsumptionActive()
+    end,
+
 	OnPaused = function(self)
         TAunit.OnPaused(self)
 		self:UpdateConsumptionValues()
@@ -75,12 +80,6 @@ TAMass = Class(TAStructure) {
         end
     end,
 
-    OnStopBeingBuilt = function(self,builder,layer)
-        TAStructure.OnStopBeingBuilt(self,builder,layer)
-        self:SetMaintenanceConsumptionActive()
-    end,
-
-
     OnStartBuild = function(self, unitbuilding, order)
         TAStructure.OnStartBuild(self, unitbuilding, order)
         self:AddCommandCap('RULEUCC_Stop')
@@ -117,7 +116,6 @@ TAMine = Class(TAStructure) {
 	end,
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAStructure.OnStopBeingBuilt(self,builder,layer)
-		self:SetMaintenanceConsumptionActive()
 		self:SetScriptBit('RULEUTC_CloakToggle', false)
 		self:RequestRefreshUI()
 	end,

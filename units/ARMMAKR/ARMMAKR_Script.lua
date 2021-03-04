@@ -9,7 +9,6 @@ ARMMAKR = Class(TAStructure) {
 	OnProductionUnpaused = function(self)
 		TAStructure.Unfold(self)
 		TAStructure.OnProductionUnpaused(self)
-		self:SetMaintenanceConsumptionActive()
 		self:PlayUnitSound('Activate')
 	end,
 
@@ -17,7 +16,6 @@ ARMMAKR = Class(TAStructure) {
 	OnProductionPaused = function(self)
 		TAStructure.OnProductionPaused(self)
 		TAStructure.Fold(self)
-		self:SetMaintenanceConsumptionInactive()
 		self:PlayUnitSound('Deactivate')		
 	end,
 }

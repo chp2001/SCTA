@@ -50,7 +50,6 @@ CORTARG = Class(TAStructure) {
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 		TAStructure.Unfold(self)
                 WaitSeconds(1.2)
-		self:SetMaintenanceConsumptionActive()
 	end,
 
 	Close = function(self)
@@ -59,7 +58,6 @@ CORTARG = Class(TAStructure) {
 		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
                 WaitFor(self.AnimManip)
 		TAStructure.Fold(self)
-		self:SetMaintenanceConsumptionInactive()
 		end
 	end,
 }

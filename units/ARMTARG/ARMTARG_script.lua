@@ -101,9 +101,6 @@ ARMTARG = Class(TAStructure) {
 
 		--SLEEP <1109>;
 		--SLEEP <53>;
-                WaitSeconds(1.2)
-
-		self:SetMaintenanceConsumptionActive()
 	end,
 
 	Close = function(self)
@@ -142,11 +139,6 @@ ARMTARG = Class(TAStructure) {
 		--TURN post4 to z-axis <0> SPEED <73.96>;
 		self.Spinners.post4:SetGoal(0)
 		self.Spinners.post4:SetSpeed(74)
-
-		--SLEEP <1220>;
-		--SLEEP <58>;
-                WaitSeconds(1.3)
-		self:SetMaintenanceConsumptionInactive()
 	end,
 }
 

@@ -9,7 +9,6 @@ local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 ARMFIG = Class(TAair) {
 	OnCreate = function(self)
 		TAair.OnCreate(self)
-		---self:SetMaintenanceConsumptionActive()
 		self.Sliders = {
 			wing1 = CreateSlider(self, 'wing1'),
 			wing2 = CreateSlider(self, 'wing2'),

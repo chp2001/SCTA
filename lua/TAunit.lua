@@ -47,6 +47,7 @@ TAunit = Class(Unit)
 	
 	OnIntelDisabled = function(self)
 		Unit.OnIntelDisabled()
+		self:SetMaintenanceConsumptionInactive()
 		if EntityCategoryContains(categories.TACLOAK, self) then
 		self.TAIntelOn = nil	
 		self.CloakOn = nil
@@ -59,6 +60,7 @@ TAunit = Class(Unit)
 
     OnIntelEnabled = function(self)
 		Unit.OnIntelEnabled()
+		self:SetMaintenanceConsumptionActive()
 		if not IsDestroyed(self) then
 		if EntityCategoryContains(categories.TACLOAK, self) then
 			if self:IsIntelEnabled('Jammer') then

@@ -23,7 +23,13 @@ UnitBlueprint {
     Economy = {
         BuildCostMass = 480,
         BuildCostEnergy = 28000,
+        MaintenanceConsumptionPerSecondEnergy = 15,
       },
+      General = {
+        ToggleCaps = {
+            RULEUTC_StealthToggle = true,
+            },
+        },
     Physics = {
           FuelRechargeRate = 666666,
           FuelUseTime = 666666,

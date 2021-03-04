@@ -24,13 +24,11 @@ CORSPEC = Class(TAWalking) {
 		--WaitFor(self.AnimManip)
 		--self.Spinners.fork:SetGoal(0)
 		--self.Spinners.fork:SetSpeed(0)
-		self:SetMaintenanceConsumptionInactive()
 	end,
 
 	Open = function(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 1))
-		self:SetMaintenanceConsumptionActive()
 		---WaitFor(self.AnimManip)
 		---self.Spinners.fork:SetSpeed(50)
 		self:PlayUnitSound('Activate')

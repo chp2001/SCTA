@@ -27,7 +27,6 @@ ARMMEX = Class(TAMass) {
 		TAMass.OnStopBeingBuilt(self, builder, layer)
 		local markers = ScenarioUtils.GetMarkers() 
 		local unitPosition = self:GetPosition()  
-		--self:SetMaintenanceConsumptionActive()
 		for k, v in pairs(markers) do 
 			if(v.type == 'Mass') then 
                 		local MassPosition = v.position 

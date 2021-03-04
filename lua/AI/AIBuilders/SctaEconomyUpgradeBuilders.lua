@@ -32,7 +32,7 @@ BuilderGroup {
         InstanceCount = 1,
         Priority = 200,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconIncome',  { 12, 100}},
+            { EBC, 'GreaterThanEconIncome',  { 4, 50}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1.2 }},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.MASSEXTRACTION * categories.LEVEL2} },
             { IBC, 'BrainNotLowPowerMode', {} },

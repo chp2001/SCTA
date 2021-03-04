@@ -21,7 +21,6 @@ ARMHAWK = Class(TAair) {
 
 	OnStopBeingBuilt = function(self,builder,layer)
         TAair.OnStopBeingBuilt(self,builder,layer)
-        self:SetMaintenanceConsumptionActive()
     end,
 
 

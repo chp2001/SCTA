@@ -33,8 +33,6 @@ ARMARAD = Class(TACloser) {
 			TACloser.Unfold(self)
 			self:PlayUnitSound('Activate')
 			self.intelIsActive = true
-			self:SetMaintenanceConsumptionActive()
-			--MOVE post to y-axis <9.10> SPEED <16.00>;
 			self.Sliders.post:SetGoal(0,0,0)
 			self.Sliders.post:SetSpeed(16)
 
@@ -120,7 +118,6 @@ ARMARAD = Class(TACloser) {
 	OnScriptBitSet = function(self, bit)
 		if bit == 3 then
 			self.intelIsActive = nil
-			self:SetMaintenanceConsumptionInactive()
 			ChangeState(self, self.ClosingState)
 		end
 		TACloser.OnScriptBitSet(self, bit)
@@ -130,7 +127,6 @@ ARMARAD = Class(TACloser) {
 	OnScriptBitClear = function(self, bit)
 		if bit == 3 then
 			self.intelIsActive = true
-			self:SetMaintenanceConsumptionActive()
 			ChangeState(self, self.OpeningState)
 		end
 		TACloser.OnScriptBitClear(self, bit)

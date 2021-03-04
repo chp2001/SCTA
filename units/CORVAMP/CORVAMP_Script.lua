@@ -10,7 +10,6 @@ CORVAMP = Class(TAair) {
 
 	OnCreate = function(self)
 		TAair.OnCreate(self)
-		--self:SetMaintenanceConsumptionActive()
 		self.Spinners = {
 			base = CreateRotator(self, 0, 'z', nil, 0, 0, 0),
 			winga = CreateRotator(self, 'winga', 'z', nil, 0, 0, 0),
@@ -23,7 +22,6 @@ CORVAMP = Class(TAair) {
 
 	OnStopBeingBuilt = function(self,builder,layer)
         TAair.OnStopBeingBuilt(self,builder,layer)
-        self:SetMaintenanceConsumptionActive()
     end,
 
 	OnMotionVertEventChange = function(self, new, old )

@@ -17,13 +17,11 @@ ARMJAM = Class(TAunit) {
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAunit.OnStopBeingBuilt(self,builder,layer)
 		self.Spinners.fork:SetSpeed(100)
-		self:SetMaintenanceConsumptionActive()
 	end,
 
 
 	OnIntelDisabled = function(self)
 		self.Spinners.fork:SetSpeed(0)
-		self:SetMaintenanceConsumptionInactive()
 		self:PlayUnitSound('Deactivate')
 		TAunit.OnIntelDisabled(self)
 	end,
@@ -31,7 +29,6 @@ ARMJAM = Class(TAunit) {
 
 	OnIntelEnabled = function(self)
 		self.Spinners.fork:SetSpeed(100)
-		self:SetMaintenanceConsumptionActive()
 		self:PlayUnitSound('Activate')
 		TAunit.OnIntelEnabled(self)
 	end,

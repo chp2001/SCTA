@@ -92,7 +92,6 @@ ARMMMKR = Class(TACloser) {
 			TACloser.Fold(self)
 			self:SetProductionActive(false)
 			self:PlayUnitSound('Activate')
-			self:SetMaintenanceConsumptionInactive()
 
 			--MOVE mmakercore to y-axis <5.05> SPEED <15.00>;
 			self.Sliders.core:SetGoal(0,5.05,0)

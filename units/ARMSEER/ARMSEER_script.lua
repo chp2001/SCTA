@@ -24,14 +24,12 @@ ARMSEER = Class(TAunit) {
 
 	OnIntelDisabled = function(self)
 		self.Spinners.dish:SetSpeed(0)
-			self:SetMaintenanceConsumptionInactive()
 	TAunit.OnIntelDisabled(self)
 end,
 
 
 OnIntelEnabled = function(self)
 	self.Spinners.dish:SetSpeed(100)
-	self:SetMaintenanceConsumptionActive()
 	TAunit.OnIntelEnabled(self)
 end,
 }

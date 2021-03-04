@@ -98,17 +98,4 @@ PlatoonTemplate {
     }
 }
 
-PlatoonTemplate {
-    Name = 'SCTAGantry',
-    Plan = 'PauseAI', 
-    FactionSquads = {
-        Arm = {
-            { 'armgant', 1, 1, 'attack', 'none' },
-        },
-        Core = {
-            { 'corgant', 1, 1, 'attack', 'none' },
-        },
-    }
-}
-
 

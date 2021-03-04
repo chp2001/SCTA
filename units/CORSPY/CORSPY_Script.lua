@@ -3,11 +3,11 @@
 #
 #Script created by Raevn
 
-local TAWalking = import('/mods/SCTA-master/lua/TAMotion.lua').TAWalking 
+local TACounter = import('/mods/SCTA-master/lua/TAMotion.lua').TACounter 
 
-CORSPY = Class(TAWalking) {
+CORSPY = Class(TACounter) {
     OnStopBeingBuilt = function(self, builder, layer)
-		TAWalking.OnStopBeingBuilt(self, builder, layer)
+		TACounter.OnStopBeingBuilt(self, builder, layer)
 		self.Spinners = {
 			fork = CreateRotator(self, 'jam', 'y', nil, 0, 0, 0),
 		}

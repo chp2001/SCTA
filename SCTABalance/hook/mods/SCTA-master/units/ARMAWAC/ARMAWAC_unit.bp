@@ -17,7 +17,6 @@ UnitBlueprint {
         'JAM',
         'SCOUT',
 	    'LEVEL2',
-        'TACLOAK',
     },
     Defense = {
         Health = 800,

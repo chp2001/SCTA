@@ -28,7 +28,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'ARM',
         'CORE',
-        'TACLOAK',
                 'MINE',
         'STRUCTURE',
 	'LEVEL1',

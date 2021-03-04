@@ -107,3 +107,52 @@ TASeaair = Class(TAair)
     end,
 
 }
+
+TAIntelAir = Class(TAair) {
+    OnIntelDisabled = function(self)
+		TAair.OnIntelDisabled()
+        if not self:IsIntelEnabled('Jammer') then
+		self.TAIntelOn = nil	
+		end
+    end,
+
+    OnIntelEnabled = function(self)
+		TAair.OnIntelEnabled()
+		if not IsDestroyed(self) then
+			if self:IsIntelEnabled('Jammer') then
+			self.TAIntelOn = true
+			ForkThread(self.TAIntelMotion, self)
+			end
+		end
+	end,
+
+    TAIntelMotion = function(self, new, old ) 
+		while not self.Dead do
+            coroutine.yield(11)
+            if self.TAIntelOn and self:IsUnitState('Moving') then
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
+			elseif self.TAIntelOn then
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
+            end
+		end
+    end,
+
+	OnScriptBitSet = function(self, bit)
+		if bit == 2 then
+			self:DisableUnitIntel('ToggleBit2', 'Jammer')
+			if self.TAIntelThread then KillThread(self.TAIntelThread) end
+			self.TAIntelThread = self:ForkThread(self.TAIntelMotion)	
+		end
+		TAair.OnScriptBitSet(self, bit)
+	end,
+
+	OnScriptBitClear = function(self, bit)
+		if bit == 2 then
+			if self.TAIntelThread then
+				KillThread(self.TAIntelThread)
+				self.TAIntelOn = nil
+			end
+		end
+		TAair.OnScriptBitClear(self, bit)
+	end,
+}

@@ -28,7 +28,6 @@ UnitBlueprint {
         'LEVEL3',
         'TECH3',
         'STRUCTURE',
-        'TACLOAK',
         'ECONOMIC',
         'SORTECONOMY',
 	    'ENERGYPRODUCTION',

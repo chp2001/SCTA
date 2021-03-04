@@ -36,7 +36,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'MOBILE',
         'LAND',
-         'TACLOAK',
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',

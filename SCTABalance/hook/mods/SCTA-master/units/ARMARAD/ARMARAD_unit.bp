@@ -27,7 +27,6 @@ UnitBlueprint {
         UniformScale = 0.1,    
      }, 
      Economy = {
-        NaturalProducer = false,
         BuildRate = 60, 
         BuildCostEnergy = 6000,
         BuildTime = 9600,

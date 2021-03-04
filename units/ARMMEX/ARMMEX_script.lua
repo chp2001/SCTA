@@ -27,7 +27,6 @@ ARMMEX = Class(TAMass) {
 		TAMass.OnStopBeingBuilt(self, builder, layer)
 		local markers = ScenarioUtils.GetMarkers() 
 		local unitPosition = self:GetPosition()  
-		--self:SetMaintenanceConsumptionActive()
 		for k, v in pairs(markers) do 
 			if(v.type == 'Mass') then 
                 		local MassPosition = v.position 
@@ -47,7 +46,6 @@ ARMMEX = Class(TAMass) {
 		TAMass.OnProductionPaused(self)
 		self.Spinners.arms:SetAccel(182)
 		self.Spinners.arms:SetTargetSpeed(0)
-		self:SetMaintenanceConsumptionInactive()
 		self:PlayUnitSound('Deactivate')
 	end,
 
@@ -55,7 +53,6 @@ ARMMEX = Class(TAMass) {
 		TAMass.OnProductionUnpaused(self)
 		self.Spinners.arms:SetAccel(91)
 		self.Spinners.arms:SetTargetSpeed(self:GetProductionPerSecondMass() * 50)
-		self:SetMaintenanceConsumptionActive()
 		self:PlayUnitSound('Activate')
 	end,
 }

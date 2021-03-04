@@ -37,13 +37,6 @@ CORMMKR = Class(TACloser) {
 			--TURN lid3 to x-axis <-74.18> SPEED <61.29>;
 			self.Spinners.lid3:SetGoal(30.40)
 			self.Spinners.lid3:SetSpeed(39.29)
-
-			--SLEEP <774>;
-			WaitSeconds(1)
-
-			self:SetProductionActive(true)
-			self:SetMaintenanceConsumptionActive()
-
 			ChangeState(self, self.IdleOpenState)
 		end,
 	},
@@ -51,9 +44,7 @@ CORMMKR = Class(TACloser) {
 
 	ClosingState = State {
 		Main = function(self)
-			self:SetProductionActive(false)
 			self:PlayUnitSound('Activate')
-			self:SetMaintenanceConsumptionInactive()
 			TACloser.Fold(self)
 			--TURN lid1 to x-axis <0> SPEED <51.35>;
 			self.Spinners.lid1:SetGoal(0)

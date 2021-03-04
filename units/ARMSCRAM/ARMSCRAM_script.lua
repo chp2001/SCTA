@@ -13,21 +13,18 @@ ARMSCRAM = Class(TAunit) {
 		TAunit.OnStopBeingBuilt(self,builder,layer)
 		--spin fork around z-axis speed <100>
 		self.Spinners.fork:SetSpeed(100)
-		self:SetMaintenanceConsumptionActive()
 	end,
 
 
 	OnIntelDisabled = function(self)
 		self.Spinners.fork:SetSpeed(0)
-			self:SetMaintenanceConsumptionInactive()
-			self:PlayUnitSound('Deactivate')
+		self:PlayUnitSound('Deactivate')
 	TAunit.OnIntelDisabled(self)
 end,
 
 
 OnIntelEnabled = function(self)
 	self.Spinners.fork:SetSpeed(100)
-	self:SetMaintenanceConsumptionActive()
 	self:PlayUnitSound('Activate')
 	TAunit.OnIntelEnabled(self)
 end,

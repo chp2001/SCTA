@@ -18,9 +18,6 @@ CORSONAR = Class(TAStructure) {
 	OnIntelDisabled = function(self)
 		--SPIN base around y-axis  SPEED <0>;
 		self.Spinners.dish:SetSpeed(0)
-
-		self:SetMaintenanceConsumptionInactive()
-		
 		TAStructure.OnIntelDisabled(self)
 		self:PlayUnitSound('Deactivate')
 	end,
@@ -28,9 +25,6 @@ CORSONAR = Class(TAStructure) {
 	OnIntelEnabled = function(self)
 		--SPIN base around y-axis  SPEED <60.01>;
 		self.Spinners.dish:SetSpeed(60)
-
-		self:SetMaintenanceConsumptionActive()
-		
 		TAStructure.OnIntelEnabled(self)
 		self:PlayUnitSound('Activate')
 	end,

@@ -3,11 +3,11 @@
 #
 #Blueprint created by Raevn
 
-local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
+local TACKFusion = import('/mods/SCTA-master/lua/TAStructure.lua').TACKFusion
 
-CORCKFUS = Class(TAStructure) {
+CORCKFUS = Class(TACKFusion) {
     OnStopBeingBuilt = function(self,builder,layer)
-        TAStructure.OnStopBeingBuilt(self,builder,layer)
+        TACKFusion.OnStopBeingBuilt(self,builder,layer)
         self:SetScriptBit('RULEUTC_CloakToggle', false)
         self:RequestRefreshUI()
     end,

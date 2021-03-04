@@ -198,10 +198,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA23',
-        Priority = 95,
+        Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'LessThanEconStorageRatio', { 1, 0.5}},
+            { EBC, 'GreaterThanEconStorageCurrent', { 500, 1000 } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FUSION * categories.LEVEL2} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.FUSION} },
         },
@@ -220,10 +220,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T3Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA3',
-        Priority = 110,
+        Priority = 175,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
+            { EBC, 'LessThanEconStorageRatio', { 1, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LEVEL3 * categories.FUSION} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.FUSION} },
         },
@@ -245,6 +245,7 @@ BuilderGroup {
         Priority = 50,
         InstanceCount = 3,
         BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.ANTIAIR} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.5}},
         },
         BuilderType = 'Any',
@@ -260,7 +261,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTALaserTower',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 50,
+        Priority = 60,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {480} }, -- Don't make tanks if we have lots of them.
@@ -301,7 +302,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTALaser2Tower',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 60,
+        Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.LASER * categories.LEVEL2 } }, 
@@ -322,7 +323,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTALaser3Tower',
         PlatoonTemplate = 'EngineerBuilderSCTA23',
-        Priority = 60,
+        Priority = 80,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.LASER * categories.LEVEL3 } }, 

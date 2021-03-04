@@ -3,11 +3,11 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TACounter = import('/mods/SCTA-master/lua/TAMotion.lua').TACounter
 
-ARMJAM = Class(TAunit) {
+ARMJAM = Class(TACounter) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TACounter.OnCreate(self)
 		self.Spinners = {
 			fork = CreateRotator(self, 'Jammer', 'z', nil, 0, 0, 0),
 		}
@@ -15,25 +15,22 @@ ARMJAM = Class(TAunit) {
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
+		TACounter.OnStopBeingBuilt(self,builder,layer)
 		self.Spinners.fork:SetSpeed(100)
-		self:SetMaintenanceConsumptionActive()
 	end,
 
 
 	OnIntelDisabled = function(self)
 		self.Spinners.fork:SetSpeed(0)
-		self:SetMaintenanceConsumptionInactive()
 		self:PlayUnitSound('Deactivate')
-		TAunit.OnIntelDisabled(self)
+		TACounter.OnIntelDisabled(self)
 	end,
 
 
 	OnIntelEnabled = function(self)
 		self.Spinners.fork:SetSpeed(100)
-		self:SetMaintenanceConsumptionActive()
 		self:PlayUnitSound('Activate')
-		TAunit.OnIntelEnabled(self)
+		TACounter.OnIntelEnabled(self)
 	end,
 }
 TypeClass = ARMJAM

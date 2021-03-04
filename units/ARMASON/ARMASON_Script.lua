@@ -33,7 +33,6 @@ ARMASON = Class(TAStructure) {
 
 	OnIntelDisabled = function(self)
 		self:Fold()
-		self:SetMaintenanceConsumptionInactive()
 		TAStructure.OnIntelDisabled(self)
 		self:PlayUnitSound('Deactivate')
 	end,
@@ -83,7 +82,6 @@ ARMASON = Class(TAStructure) {
 
 	OnIntelEnabled = function(self)	
 		self:Unfold()
-		self:SetMaintenanceConsumptionActive()
 		TAStructure.OnIntelEnabled(self)
 	self:PlayUnitSound('Activate')
 	end,

@@ -20,6 +20,7 @@ UnitBlueprint {
     'LEVEL3',
     'OVERLAYOMNI',
     'OVERLAYCOUNTERINTEL',
+    'JAM',
     },
     Display = {
     Abilities = {
@@ -29,13 +30,25 @@ UnitBlueprint {
         },
     },
     Economy = {
-        MaintenanceConsumptionPerSecondEnergy = 20,
+        TAConsumptionPerSecondEnergy = 60,
+        MaintenanceConsumptionPerSecondEnergy = 10,
     },
-    Intel = {
-        VisionRadius = 10,
-        OmniRadius = 60,
-        RadarStealthFieldRadius = 25,
-    },
+    General = {
+        ToggleCaps = {
+            RULEUTC_StealthToggle = true,
+            },
+        },
+        Intel = {
+            ActiveIntel = {
+                Omni = true,
+                Radar = true,
+            },
+            RadarStealth = true,
+            RadarStealthField = true,
+            VisionRadius = 14,
+            OmniRadius = 60,
+            RadarStealthFieldRadius = 30,
+        },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,
     SizeX = 2,

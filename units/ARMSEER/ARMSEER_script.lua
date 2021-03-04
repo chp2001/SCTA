@@ -3,11 +3,11 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TACounter = import('/mods/SCTA-master/lua/TAMotion.lua').TACounter
 
-ARMSEER = Class(TAunit) {
+ARMSEER = Class(TACounter) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TACounter.OnCreate(self)
 		self.Spinners = {
 			dish = CreateRotator(self, 'Radar', 'y', nil, 0, 120, 0),
 		}
@@ -15,24 +15,21 @@ ARMSEER = Class(TAunit) {
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAunit.OnStopBeingBuilt(self,builder,layer)
+		TACounter.OnStopBeingBuilt(self,builder,layer)
 		--spin dish around y-axis speed <100>;
 		self.Spinners.dish:SetTargetSpeed(100)
-		self:OnIntelEnabled()
 	end,
 
 
 	OnIntelDisabled = function(self)
 		self.Spinners.dish:SetSpeed(0)
-			self:SetMaintenanceConsumptionInactive()
-	TAunit.OnIntelDisabled(self)
-end,
+	TACounter.OnIntelDisabled(self)
+	end,
 
 
-OnIntelEnabled = function(self)
-	self.Spinners.dish:SetSpeed(100)
-	self:SetMaintenanceConsumptionActive()
-	TAunit.OnIntelEnabled(self)
-end,
+	OnIntelEnabled = function(self)
+		self.Spinners.dish:SetSpeed(100)
+		TACounter.OnIntelEnabled(self)
+	end,
 }
 TypeClass = ARMSEER

@@ -3,12 +3,12 @@
 #
 #Script created by Raevn
 
-local TAair = import('/mods/SCTA-master/lua/TAair.lua').TAair
+local TAIntelAir = import('/mods/SCTA-master/lua/TAair.lua').TAIntelAir
 
-ARMAWAC = Class(TAair) {
+ARMAWAC = Class(TAIntelAir) {
 
 	OnCreate = function(self)
-		TAair.OnCreate(self)
+		TAIntelAir.OnCreate(self)
 		self.Spinners = {
 			radar = CreateRotator(self, 'radar', 'y', nil, 0, 0, 0),
 		}
@@ -25,7 +25,7 @@ ARMAWAC = Class(TAair) {
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAair.OnStopBeingBuilt(self,builder,layer)
+		TAIntelAir.OnStopBeingBuilt(self,builder,layer)
 		self.Spinners.radar:SetSpeed(90)
 	end,
 

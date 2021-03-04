@@ -130,7 +130,6 @@ BuilderGroup {
             NeedGuard = false,
             DesiresAssist = false,
             Construction = {
-                BuildClose = true,
                 BuildStructures = {
                     'T1EnergyProduction2',
                 }
@@ -181,21 +180,23 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTA CDR Assist Fusion',
+        BuilderName = 'SCTA Mex Assist Commander',
         PlatoonTemplate = 'CommanderSCTAAssist',
-        Priority = 75,
+        Priority = 25,
+        InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'FUSION' }},
-            { EBC, 'LessThanEconEfficiencyOverTime', { 2.0, 1.5 }},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.6, 0.5 } },
+            { UCBC, 'BuildingGreaterAtLocation', { 'LocationType', 0, categories.MASSEXTRACTION * categories.LEVEL2}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 0.5 } },
+            { IBC, 'BrainNotLowPowerMode', {} },
         },
         BuilderType = 'Any',
         BuilderData = {
             Assist = {
-                AssisteeType = 'Engineer',
+                AssistUntilFinished = true,
                 AssistLocation = 'LocationType',
-                BeingBuiltCategories = {'FUSION'},
-                Time = 20,
+                AssisteeType = 'Structure',
+                BeingBuiltCategories = {'MASSEXTRACTION'},
+                Time = 60,
             },
         }
     },
@@ -203,9 +204,10 @@ Builder {
     BuilderName = 'SCTA Commander Assist Gantry',
     PlatoonTemplate = 'CommanderSCTAAssist',
     Priority = 50,
+    InstanceCount = 1,
     BuilderConditions = {
+        { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.EXPERIMENTAL }},
         { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.6, 0.5 } },
-        { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, 'LEVEL4' }},
         { IBC, 'BrainNotLowPowerMode', {} },
     },
     BuilderType = 'Any',
@@ -215,6 +217,25 @@ Builder {
             AssisteeType = 'Factory',
             BeingBuiltCategories = {'EXPERIMENTAL'},
             Time = 20,
+            },
+        }
+    },
+    Builder {
+        BuilderName = 'SCTA CDR Assist Fusion',
+        PlatoonTemplate = 'CommanderSCTAAssist',
+        Priority = 75,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.FUSION }},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.6, 0.5 } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Assist = {
+                AssisteeType = 'Engineer',
+                AssistLocation = 'LocationType',
+                BeingBuiltCategories = {'FUSION'},
+                Time = 20,
             },
         }
     },

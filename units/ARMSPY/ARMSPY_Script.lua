@@ -3,15 +3,9 @@
 #
 #Script created by Raevn
 
-local TAWalking = import('/mods/SCTA-master/lua/TAMotion.lua').TAWalking
+local TACounter = import('/mods/SCTA-master/lua/TAMotion.lua').TACounter
 
-ARMSPY = Class(TAWalking) {
-    OnStopBeingBuilt = function(self, builder, layer)
-		TAWalking.OnStopBeingBuilt(self, builder, layer)
-        self:SetMaintenanceConsumptionInactive()
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
-        self:RequestRefreshUI()
-    end,
+ARMSPY = Class(TACounter) {
 }
 
 TypeClass = ARMSPY

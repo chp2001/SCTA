@@ -59,14 +59,12 @@ CORMOHO = Class(TAMass) {
 	OnProductionPaused = function(self)
 		TAMass.OnProductionPaused(self)
 		ForkThread(self.Close, self)
-                self:SetMaintenanceConsumptionInactive()
 		self:PlayUnitSound('Deactivate')
 	end,
 
 	OnProductionUnpaused = function(self)
 		TAMass.OnProductionUnpaused(self)
 		ForkThread(self.Open, self)
-                self:SetMaintenanceConsumptionActive()
 		self:PlayUnitSound('Activate')
 	end,
 

@@ -3,11 +3,11 @@
 #
 #Script created by Raevn
 
-local TAnoassistbuild = import('/mods/SCTA-master/lua/TAStructure.lua').TAnoassistbuild
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 local TIFStrategicMissileWeapon = import('/lua/terranweapons.lua').TIFStrategicMissileWeapon
 
 
-CORSILO = Class(TAnoassistbuild) {
+CORSILO = Class(TAStructure) {
 	Weapons = {
 		CRBLMSSL = Class(TIFStrategicMissileWeapon) {
 		},

@@ -20,6 +20,11 @@ TAStructure = Class(TAunit)
         TAunit.DoTakeDamage(self, instigator, amount, vector, damageType)
     end,
 
+	OnStopBeingBuilt = function(self,builder,layer)
+        TAunit.OnStopBeingBuilt(self,builder,layer)
+        self:SetMaintenanceConsumptionActive()
+    end,
+
 	OnPaused = function(self)
         TAunit.OnPaused(self)
 		self:UpdateConsumptionValues()
@@ -75,12 +80,6 @@ TAMass = Class(TAStructure) {
         end
     end,
 
-    OnStopBeingBuilt = function(self,builder,layer)
-        TAStructure.OnStopBeingBuilt(self,builder,layer)
-        self:SetMaintenanceConsumptionActive()
-    end,
-
-
     OnStartBuild = function(self, unitbuilding, order)
         TAStructure.OnStartBuild(self, unitbuilding, order)
         self:AddCommandCap('RULEUCC_Stop')
@@ -100,24 +99,81 @@ TACloser = Class(TAStructure) {
 	end,
 }	
 	
-TAnoassistbuild = Class(TAStructure) {
-	OnCreate = function(self)
-		TAStructure.OnCreate(self)
-	end,
+TACKFusion = Class(TAStructure) {
+		OnIntelDisabled = function(self)
+			TAStructure.OnIntelDisabled()
+			self.CloakOn = nil
+			if not self:IsIntelEnabled('Cloak') then
+			self:PlayUnitSound('Uncloak')
+			self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
+			end
+		end
+		end,
+	
+		OnIntelEnabled = function(self)
+			TAStructure.OnIntelEnabled()
+			if not IsDestroyed(self) then
+				if self:IsIntelEnabled('Cloak') then
+				self.CloakOn = true
+				self:PlayUnitSound('Cloak')
+				self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
+				ForkThread(self.CloakDetection, self)
+				end
+			end
+			end
+		end,
+	
+		CloakDetection = function(self)
+			local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
+			local brain = moho.entity_methods.GetAIBrain(self)
+			local cat = categories.SELECTABLE * categories.MOBILE
+			local getpos = moho.entity_methods.GetPosition
+			while not self.Dead do
+				coroutine.yield(11)
+				local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
+				if dudes[1] and self.CloakOn then
+					self:DisableIntel('Cloak')
+					self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
+				elseif not dudes[1] and self.CloakOn then
+					self:EnableIntel('Cloak')
+					---self:UpdateConsumptionValues()
+					self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
+				end
+			end
+		end,
+	
+		OnScriptBitSet = function(self, bit)
+			if bit == 8 then
+				self:DisableUnitIntel('ToggleBit8', 'Cloak')
+				if self.CloakThread then KillThread(self.CloakThread) end
+				self.CloakThread = self:ForkThread(self.CloakDetection)	
+			end
+			TAStructure.OnScriptBitSet(self, bit)
+		end,
+	
+		OnScriptBitClear = function(self, bit)
+			if bit == 8 then
+				if self.CloakThread then
+					KillThread(self.CloakThread)
+					self.CloakOn = nil
+				end
+			end
+			TAStructure.OnScriptBitClear(self, bit)
+		end,
 }
 
-TAMine = Class(TAStructure) {
+TAMine = Class(TACKFusion) {
 
 	OnKilled = function(self, instigator, type, overkillRatio)
 		if self.unit.attacked then
 			instigator = self
 		end
-		TAStructure.OnKilled(self, instigator, type, overkillRatio)
+		TACKFusion.OnKilled(self, instigator, type, overkillRatio)
 		
 	end,
+	
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAStructure.OnStopBeingBuilt(self,builder,layer)
-		self:SetMaintenanceConsumptionActive()
+		TACKFusion.OnStopBeingBuilt(self,builder,layer)
 		self:SetScriptBit('RULEUTC_CloakToggle', false)
 		self:RequestRefreshUI()
 	end,

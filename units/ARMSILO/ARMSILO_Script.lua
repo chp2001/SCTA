@@ -3,13 +3,13 @@
 #
 #Script created by Raevn
 
-local TAnoassistbuild = import('/mods/SCTA-master/lua/TAStructure.lua').TAnoassistbuild
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 local TIFStrategicMissileWeapon = import('/lua/terranweapons.lua').TIFStrategicMissileWeapon
 
-ARMSILO = Class(TAnoassistbuild) {
+ARMSILO = Class(TAStructure) {
 	
 	OnCreate = function(self)
-		TAnoassistbuild.OnCreate(self)
+		TAStructure.OnCreate(self)
 		self.Spinners = {
 			door1 = CreateRotator(self, 'Door_01', 'z', nil, 0, 0, 0),
 			door2 = CreateRotator(self, 'Door_02', 'z', nil, 0, 0, 0),

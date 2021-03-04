@@ -28,8 +28,6 @@ CORARAD = Class(TACloser) {
 			self:EnableIntel('Radar')
 			self:PlayUnitSound('Activate')
 			self.intelIsActive = true
-			self:SetMaintenanceConsumptionActive()
-
 			--SPIN turret around y-axis  SPEED <20.00>;
 			self.Spinners.turret:ClearGoal()
 			self.Spinners.turret:SetSpeed(20)
@@ -103,7 +101,6 @@ CORARAD = Class(TACloser) {
 	OnScriptBitSet = function(self, bit)
 		if bit == 3 then
 			self.intelIsActive = nil
-			self:SetMaintenanceConsumptionInactive()
 			ChangeState(self, self.ClosingState)
 		end
 		TACloser.OnScriptBitSet(self, bit)
@@ -113,7 +110,6 @@ CORARAD = Class(TACloser) {
 	OnScriptBitClear = function(self, bit)
 		if bit == 3 then
 			self.intelIsActive = true
-			self:SetMaintenanceConsumptionActive()
 			ChangeState(self, self.OpeningState)
 		end
 		TACloser.OnScriptBitClear(self, bit)

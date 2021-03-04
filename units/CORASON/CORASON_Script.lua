@@ -16,9 +16,6 @@ CORASON = Class(TAStructure) {
 		TAStructure.Fold(self)
 		--STOP-SPIN dish around y-axis;
 		self.Spinners.dish:SetSpeed(0)
-
-		self:SetMaintenanceConsumptionInactive()
-		
 		TAStructure.OnIntelDisabled(self)
 		self:PlayUnitSound('Deactivate')
 	end,
@@ -27,9 +24,6 @@ CORASON = Class(TAStructure) {
 		TAStructure.Unfold(self)
 		--SPIN dish around y-axis  SPEED <60.01>;
 		self.Spinners.dish:SetSpeed(60)
-
-		self:SetMaintenanceConsumptionActive()
-		
 		TAStructure.OnIntelEnabled(self)
 		self:PlayUnitSound('Activate')
 	end,

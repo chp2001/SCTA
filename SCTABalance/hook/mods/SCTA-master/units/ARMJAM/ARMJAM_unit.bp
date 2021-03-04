@@ -5,8 +5,9 @@ UnitBlueprint {
     UniformScale = 0.1,
     },
     Economy = {
-        MaintenanceConsumptionPerSecondEnergy = 20,
-        },
+        TAConsumptionPerSecondEnergy = 60,
+        MaintenanceConsumptionPerSecondEnergy = 10,
+    },
     General = {
     ToggleCaps = {
         RULEUTC_StealthToggle = true,

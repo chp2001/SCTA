@@ -46,10 +46,12 @@ PlatoonTemplate {
             Arm = {
                 { 'armck', 1, 1, 'support', 'None' },
                 { 'armpw', 1, 2, 'attack', 'none' },
+                { 'armflea', 1, 1, 'scout', 'none' },
             },
             Core = {
                 { 'corcv', 1, 1, 'support', 'None' },
                 { 'corgator', 1, 2, 'attack', 'none' },
+                { 'corfav', 1, 1, 'scout', 'none' },
             },
         }
     } 
@@ -96,11 +98,10 @@ PlatoonTemplate {
     Name = 'T2LandAuxFact1',
     FactionSquads = {
         Arm = {
-            { 'armfark', 1, 1, 'support', 'None' },
+            { 'armfark', 1, 1, 'support', 'None' }
         },
         Core = {
-            { 'coreter', 1, 1, 'attack', 'none' },
-            { 'cornecro', 1, 1, 'support', 'None' },
+            { 'cornecro', 1, 1, 'support', 'None' }
         },
     }
 }
@@ -109,12 +110,12 @@ PlatoonTemplate {
     Name = 'T2LandDFTankSCTA',
     FactionSquads = {
         Arm = {
-            { 'armfark', 1, 1, 'support', 'None' },
+            { 'armack', 1, 1, 'support', 'None' },
             { 'armfido', 1, 6, 'attack', 'none' },
             { 'armfast', 1, 2, 'attack', 'none' },
         },
         Core = {
-            { 'cornecro', 1, 1, 'support', 'None' },
+            { 'coracv', 1, 1, 'support', 'None' },
             { 'correap', 1, 8, 'attack', 'none' },
             { 'coreter', 1, 1, 'attack', 'none' },
         },
@@ -126,10 +127,10 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armsnipe', 1, 1, 'attack', 'none' },
-            { 'armzeus', 1, 2, 'attack', 'none' },
+            { 'armzeus', 1, 4, 'attack', 'none' },
         },
         Core = {
-            { 'corgol', 1, 2, 'attack', 'none' },
+            { 'corgol', 1, 4, 'attack', 'none' },
             { 'cormart', 1, 1, 'attack', 'none' },
         },
     }

@@ -33,8 +33,8 @@ BuilderGroup {
         PlatoonTemplate = 'T2AirBomberSCTA',
         Priority = 90,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, categories.FUSION} }, -- Don't build air fac immediately.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.6}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FUSION} }, -- Don't build air fac immediately.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.7}},
         },
         BuilderType = 'All',
     },
@@ -85,10 +85,9 @@ BuilderGroup {
         PlatoonTemplate = 'T2AirFighterSCTA',
         Priority = 115,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
-        { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, categories.FUSION} },
+        { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FUSION} },
         { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.7}},
         { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.2, 0.33 }},
-        { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.PLATFORM * categories.AIR } },
     },
         BuilderType = 'All',
     },
@@ -97,7 +96,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2BuildEngineerAirSCTA',
         Priority = 120, -- Top factory priority
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, categories.FUSION} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FUSION} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.AIR * categories.LEVEL2} }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'All',

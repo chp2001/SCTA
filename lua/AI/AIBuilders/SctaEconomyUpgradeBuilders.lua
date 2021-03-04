@@ -39,6 +39,11 @@ BuilderGroup {
         },
         FormRadius = 10000,
         BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+        }
     },
     Builder {
         BuilderName = 'SCTA Extractor Upgrade Time Based',
@@ -54,6 +59,11 @@ BuilderGroup {
         },
         FormRadius = 10000,
         BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+        }
     },
     Builder {
         BuilderName = 'SCTAUpgradeIntel',

@@ -1,21 +1,5 @@
 UnitBlueprint {
     Merge = true, 
-    Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
-        'SELECTABLE',
-        'DRAGBUILD',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH2',
-	'STRUCTURE',
-        'ECONOMIC',
-	'ENERGYPRODUCTION',
-	'CORE',
-	'FUSION',
-	'LEVEL2',
-	'SORTECONOMY',
-    },
     Defense = {
         Health = 2700,
         MaxHealth = 2700,

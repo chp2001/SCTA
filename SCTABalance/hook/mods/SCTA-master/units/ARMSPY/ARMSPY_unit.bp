@@ -16,7 +16,6 @@ UnitBlueprint {
 	    'LEVEL2',
         'RADAR',
         'OVERLAYRADAR',
-        'JAM',
     },
     Economy = {
         BuildCostEnergy = 1500,

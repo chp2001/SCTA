@@ -6,7 +6,8 @@
 UnitBlueprint {
     Merge = true, 
     Economy = {
-    MaintenanceConsumptionPerSecondEnergy = 20,
+        TAConsumptionPerSecondEnergy = 60,
+        MaintenanceConsumptionPerSecondEnergy = 20,
     },
     General = {
     ToggleCaps = {

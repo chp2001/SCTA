@@ -14,9 +14,6 @@ CORSPY = Class(TACounter) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
-        self:SetMaintenanceConsumptionInactive()
-        self:SetScriptBit('RULEUTC_CloakToggle', true)
-        self:RequestRefreshUI()
     end,
 
 }

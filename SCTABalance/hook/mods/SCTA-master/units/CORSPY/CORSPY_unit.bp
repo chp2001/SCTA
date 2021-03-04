@@ -16,7 +16,6 @@ UnitBlueprint {
 	    'LEVEL3',
         'RADAR',
         'OVERLAYRADAR',
-        'JAM',
         'KBOT',
     },
     Display = {

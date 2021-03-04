@@ -6,7 +6,7 @@
 UnitBlueprint {
     Merge = true, 
     Display = {
-        UniformScale = 0.10,
+        UniformScale = 0.1,
     },
     Defense = {
         Health = 4000,

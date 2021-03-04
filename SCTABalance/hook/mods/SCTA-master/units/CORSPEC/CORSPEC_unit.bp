@@ -9,7 +9,8 @@ UnitBlueprint {
         UniformScale = 0.08,
     },
     Economy = {
-        MaintenanceConsumptionPerSecondEnergy = 20,
+        TAConsumptionPerSecondEnergy = 60,
+        MaintenanceConsumptionPerSecondEnergy = 10,
     },
     General = {
     ToggleCaps = {

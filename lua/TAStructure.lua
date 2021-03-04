@@ -102,12 +102,11 @@ TACloser = Class(TAStructure) {
 TACKFusion = Class(TAStructure) {
 		OnIntelDisabled = function(self)
 			TAStructure.OnIntelDisabled()
-			self.CloakOn = nil
 			if not self:IsIntelEnabled('Cloak') then
+			self.CloakOn = nil
 			self:PlayUnitSound('Uncloak')
 			self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
 			end
-		end
 		end,
 	
 		OnIntelEnabled = function(self)

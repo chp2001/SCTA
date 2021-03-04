@@ -295,8 +295,8 @@ TACommander = Class(TAconstructor) {
 
     OnIntelDisabled = function(self)
 		TAconstructor.OnIntelDisabled()
-		self.CloakOn = nil
 		if not self:IsIntelEnabled('Cloak') then
+        self.CloakOn = nil
         self:PlayUnitSound('Uncloak')
 		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
 		end

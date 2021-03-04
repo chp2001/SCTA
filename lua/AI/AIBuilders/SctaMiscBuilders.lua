@@ -201,7 +201,7 @@ BuilderGroup {
         Priority = 95,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
+            { EBC, 'LessThanEconStorageRatio', { 1, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FUSION * categories.LEVEL2} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.FUSION} },
         },

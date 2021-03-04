@@ -4,7 +4,7 @@ UnitBlueprint {
       BreakOffDistance = 17,
       BreakOffTrigger = 12,
       CombatTurnSpeed = 1.5,
-      MaxAirspeed = 19,
+      MaxAirspeed = 18,
       MinAirspeed = 9,
       StartTurnDistance = 5,
       TightTurnMultiplier = 1.02,
@@ -23,8 +23,8 @@ UnitBlueprint {
     Economy = {
         BuildCostMass = 480,
         BuildCostEnergy = 28000,
-        TAConsumptionPerSecondEnergy = 30,
-        MaintenanceConsumptionPerSecondEnergy = 15,
+        TAConsumptionPerSecondEnergy = 50,
+        MaintenanceConsumptionPerSecondEnergy = 10,
       },
       General = {
         ToggleCaps = {
@@ -37,13 +37,13 @@ UnitBlueprint {
     },
     Weapon = {
       [1] = {
-        EnergyDrainPerSecond = 50,
-        EnergyRequired = 50,
+        EnergyDrainPerSecond = 25,
+        EnergyRequired = 25,
         EnergyChargeForFirstShot = true,
       },
       [2] = {
-        EnergyDrainPerSecond = 50,
-        EnergyRequired = 50,
+        EnergyDrainPerSecond = 25,
+        EnergyRequired = 25,
         EnergyChargeForFirstShot = true,
       },
       [3] = {}, 

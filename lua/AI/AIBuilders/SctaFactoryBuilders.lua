@@ -192,7 +192,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T2AirFactory2',
         PlatoonTemplate = 'EngineerBuilderSCTAEco12',
         Priority = 120,
-        InstanceCount = 2,
+        InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, categories.FUSION} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},

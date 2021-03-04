@@ -5,24 +5,6 @@
 
 UnitBlueprint {
     Merge = true, 
-    Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
-        'SELECTABLE',
-        'DRAGBUILD',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH3',
-	'STRUCTURE',
-	'DEFENSE',
-	'DIRECTFIRE',
-        'OVERLAYDIRECTFIRE',
-	'CORE',
-	'LEVEL3',
-	'STRATEGIC',
-    'SORTDEFENSE',
-    'SNIPEMODE',
-    },
     Display = {
         UniformScale = 0.12,
     },
@@ -35,17 +17,9 @@ UnitBlueprint {
         RadarStealth = true,
         },
     SelectionCenterOffsetZ = 0,
-    StrategicIconName = 'icon_structure3_directfire',
     Weapon = {
         [1] = {
             Damage = 240,
-            DamageRadius = 3.125, 
-            MaxRadius = 60, 
-            MuzzleSalvoDelay = 0, 
-            RackRecoilDistance = -5,
-            RackSalvoReloadTime = 1,
-            RackSalvoSize = 1,
-            RackSlavedToTurret = false,
             RateOfFire = 1,
         },
         [2] = {

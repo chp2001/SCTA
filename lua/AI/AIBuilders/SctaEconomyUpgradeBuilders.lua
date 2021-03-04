@@ -28,7 +28,7 @@ BuilderGroup {
     BuildersType = 'PlatoonFormBuilder',
     Builder {
         BuilderName = 'SCTA Extractor Upgrade',
-        PlatoonTemplate = 'T1MassExtractorUpgrade',
+        PlatoonTemplate = 'SctaExtractorUpgrades',
         InstanceCount = 2,
         Priority = 200,
         BuilderConditions = {
@@ -42,7 +42,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTA Extractor Upgrade Time Based',
-        PlatoonTemplate = 'T1MassExtractorUpgrade',
+        PlatoonTemplate = 'SctaExtractorUpgrades',
         InstanceCount = 1,
         Priority = 150,
         BuilderConditions = {
@@ -56,14 +56,30 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'SCTAUpgradeRadar',
-        PlatoonTemplate = 'T1RadarUpgrade',
+        BuilderName = 'SCTAUpgradeIntel',
+        PlatoonTemplate = 'SctaIntelUpgrades',
         Priority = 50,
+        InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1200} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TARGETING} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.5 }},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.RADAR * categories.STRUCTURE * categories.LEVEL2} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, categories.FUSION} },
+            { IBC, 'BrainNotLowPowerMode', {} },
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTAUpgradeRadarT2',
+        PlatoonTemplate = 'SctaRadar2Upgrades',
+        Priority = 25,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {1800} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.OMNI * categories.STRUCTURE} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.5 }},
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.OMNI * categories.STRUCTURE * categories.LEVEL3} },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, categories.FUSION} },
             { IBC, 'BrainNotLowPowerMode', {} },
         },

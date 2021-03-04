@@ -1,28 +1,11 @@
 UnitBlueprint {
     Merge = true,
-    Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
-        'SELECTABLE',
-        'DRAGBUILD',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH2',
-        'LEVEL2',
-	    'STRUCTURE',
-	    'DEFENSE',
-	    'ANTIAIR',
-        'OVERLAYANTIAIR',
-	    'CORE',
-        'STRATEGIC',
-        'SORTDEFENSE',
-    },
     Display = {
         UniformScale = 0.06,
     },
     Defense = {
-        Health = 10000,
-        MaxHealth = 10000,
+        Health = 7500,
+        MaxHealth = 7500,
     },
     Footprint = {
         SizeX = 1,
@@ -31,6 +14,4 @@ UnitBlueprint {
     Economy = {
         BuildTime = 19000,
     },
-    StrategicIconName = 'icon_structure2_antiair',
-    SizeY = 2.5,
   }    

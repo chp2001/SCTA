@@ -52,6 +52,14 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
+    Name = 'LandAttackSCTAEarly',
+    Plan = 'SCTAStrikeForceAIEarly',
+    GlobalSquads = {
+        { categories.MOBILE * categories.LAND * categories.LEVEL1 - SPECIAL, 5, 10, 'Attack', 'none' }
+    },
+}
+
+PlatoonTemplate {
     Name = 'LandRocketAttackSCTA',
     Plan = 'AttackSCTAForceAI',
     GlobalSquads = {

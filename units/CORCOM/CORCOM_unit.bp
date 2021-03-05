@@ -110,7 +110,6 @@ UnitBlueprint {
             'D-Gun',
             'Construction Unit',
         },
-        CloakMesh = '/mods/SCTA-master/units/CORCOM/CORCOM_cloak_mesh',
     Mesh = {
         IconFadeInZoom = 130,
         LODs = {

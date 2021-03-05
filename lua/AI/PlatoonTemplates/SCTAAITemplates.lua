@@ -87,6 +87,15 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
+    Name = 'FabricationSCTA',
+    Plan = 'PauseAI', 
+    GlobalSquads = {
+        #DUNCAN - removed the sera lightning unit
+        { categories.MASSFABRICATION, 1, 1, 'support', 'None' }
+    },
+}
+
+PlatoonTemplate {
     Name = 'SCTAExperimental',
     FactionSquads = {
         Arm = {

@@ -55,7 +55,6 @@ UnitBlueprint {
             '<LOC ability_cloak>Cloaking',
             '<LOC ability_radar>Radar',
         },
-        CloakMesh = '/mods/SCTA-master/units/CORSPY/CORSPY_cloak_mesh',
     Mesh = {
             IconFadeInZoom = 130,
             LODs = {

@@ -48,7 +48,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_cloak>Cloaking',
         },
-		CloakMesh = '/mods/SCTA-master/units/CORCKFUS/CORCKFUS_cloak_mesh',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

@@ -48,7 +48,7 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_cloak>Cloaking',
         },
-		CloakMesh = '/mods/SCTA-master/units/ARMCKFUS/ARMCKFUS_cloak_mesh',
+		---self:SetMesh(self:GetBlueprint().Display.CloakMesh, true) = '/mods/SCTA-master/units/ARMCKFUS/ARMCKFUS_cloak_mesh',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

@@ -106,7 +106,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.24,
     },
     Footprint = {
         MaxSlope = 0.25,
@@ -177,7 +177,6 @@ UnitBlueprint {
             },
             AutoInitiateAttackCommand = true,
             AboveWaterTargetsOnly = true,
-            AutoInitiateAttackCommand = true,
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,

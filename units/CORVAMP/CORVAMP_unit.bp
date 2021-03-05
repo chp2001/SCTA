@@ -286,7 +286,7 @@ UnitBlueprint {
             AboveWaterTargetsOnly = true,
         },
         { #BIG_UNITEX
-            Damage = 50,
+            Damage = 100,
             DamageFriendly = true,
             DamageRadius = 3,
             DamageType = 'Normal',

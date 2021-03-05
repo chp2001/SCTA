@@ -7,13 +7,6 @@ local TACommanderDeathWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TACo
 
 
 CORDECOM = Class(TACommander) {
-
-	OnStopBeingBuilt = function(self,builder,layer)
-		TACommander.OnStopBeingBuilt(self,builder,layer)
-		self:SetMaintenanceConsumptionInactive()
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
-        self:RequestRefreshUI()
-	end,
 	
 	Weapons = {
 		COMLASER = Class(TAweapon) {

@@ -47,9 +47,6 @@ ARMCOM = Class(TARealCommander) {
 	OnStopBeingBuilt = function(self,builder,layer)
 		TARealCommander.OnStopBeingBuilt(self,builder,layer)
 		ForkThread(self.GiveInitialResources, self)
-		self:SetMaintenanceConsumptionInactive()
-        self:SetScriptBit('RULEUTC_CloakToggle', true)
-        self:RequestRefreshUI()
 	end,
 
 	GiveInitialResources = function(self)

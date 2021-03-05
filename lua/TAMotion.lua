@@ -68,16 +68,6 @@ TAWalking = Class(TAunit)
             end
         end
     end,
-
-	CloakDetection = function(self)
-		TAunit.CloakDetection(self)
-			local bp = self:GetBlueprint()
-			if self.CloakOn and self:IsUnitState('Moving') then
-                self:SetConsumptionPerSecondEnergy(bp.Economy.TAConsumptionPerSecondEnergy)
-			elseif self.CloakOn then
-                self:SetConsumptionPerSecondEnergy(bp.Economy.MaintenanceConsumptionPerSecondEnergy)
-        	end
-    end,
 }
 
 TACounter = Class(TAWalking) 
@@ -90,46 +80,4 @@ TACounter = Class(TAWalking)
 		self:RequestRefreshUI()
 	end,
 
-	OnIntelDisabled = function(self)
-		TAWalking.OnIntelDisabled()
-		if not self:IsIntelEnabled('Jammer') or not self:IsIntelEnabled('RadarStealth') and EntityCategoryContains(categories.JAM, self) then
-			self.TAIntelOn = nil	
-		end
-		if not self:IsIntelEnabled('Cloak') then
-			self.CloakOn = nil
-			self:PlayUnitSound('Uncloak')
-		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-		end
-    end,
-
-    OnIntelEnabled = function(self)
-		TAWalking.OnIntelEnabled()
-			if self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth') and EntityCategoryContains(categories.JAM, self) then
-				self.TAIntelOn = true
-				ForkThread(TAWalking.TAIntelMotion, self)
-			end
-	end,
-
-	OnScriptBitSet = function(self, bit)
-		self:SetMaintenanceConsumptionInactive()
-		if bit == 2 or bit == 5 then
-			self:DisableUnitIntel('ToggleBit2', 'Jammer')
-			self:DisableUnitIntel('ToggleBit5', 'RadarStealth')
-            self:DisableUnitIntel('ToggleBit5', 'RadarStealthField')
-			if self.TAIntelThread then KillThread(self.TAIntelThread) end
-			self.TAIntelThread = self:ForkThread(self.TAIntelMotion)	
-		end
-		TAWalking.OnScriptBitSet(self, bit)
-	end,
-
-	OnScriptBitClear = function(self, bit)
-		self:SetMaintenanceConsumptionActive()
-		if bit == 2 or bit == 5 then
-			if self.TAIntelThread then
-				KillThread(self.TAIntelThread)
-				self.TAIntelOn = nil
-			end
-		end
-		TAWalking.OnScriptBitClear(self, bit)
-	end,
 }

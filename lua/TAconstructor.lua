@@ -293,14 +293,13 @@ TACommander = Class(TAconstructor) {
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
     end,
 
-	CloakDetection = function(self)
-		TAconstructor.CloakDetection(self)
-			if self.CloakOn and self:IsUnitState('Building') then
-				self:DisableIntel('Cloak')
-				self:UpdateConsumptionValues()
-                self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-		end
-    end,
+    OnStopBeingBuilt = function(self,builder,layer)
+		TAconstructor.OnStopBeingBuilt(self,builder,layer)
+		self:SetMaintenanceConsumptionInactive()
+		self:SetScriptBit('RULEUTC_CloakToggle', true)
+        self:RequestRefreshUI()
+	end,
+
 
 }
 

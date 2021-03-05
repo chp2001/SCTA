@@ -35,6 +35,9 @@ TAunit = Class(Unit)
 
 	OnIntelDisabled = function(self)
 		Unit.OnIntelDisabled()
+		if not self:IsIntelEnabled('Jammer') or not self:IsIntelEnabled('RadarStealth') and EntityCategoryContains(categories.JAM, self) then
+			self.TAIntelOn = nil	
+		end
 		if not self:IsIntelEnabled('Cloak') then
 		self.CloakOn = nil
 		self:PlayUnitSound('Uncloak')
@@ -45,6 +48,10 @@ TAunit = Class(Unit)
 	OnIntelEnabled = function(self)
 		Unit.OnIntelEnabled()
 		if not IsDestroyed(self) then
+			if self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth') and EntityCategoryContains(categories.JAM, self) then
+				self.TAIntelOn = true
+				ForkThread(self.TAIntelMotion, self)
+			end
 			self.CloakOn = true
 			if self:IsIntelEnabled('Cloak') then
 			self:PlayUnitSound('Cloak')
@@ -72,19 +79,37 @@ TAunit = Class(Unit)
 		local getpos = moho.entity_methods.GetPosition
 		while not self.Dead do
 			coroutine.yield(11)
+			local bp = self:GetBlueprint()
+			if self.CloakOn and self:IsUnitState('Moving') then
+                self:SetConsumptionPerSecondEnergy(bp.Economy.TAConsumptionPerSecondEnergy)
+			elseif self.CloakOn then
+                self:SetConsumptionPerSecondEnergy(bp.Economy.MaintenanceConsumptionPerSecondEnergy)
+        	end
 			local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
-			if dudes[1] and self.CloakOn then
+			if self.CloakOn and self:IsUnitState('Building') then
 				self:DisableIntel('Cloak')
-				self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
+				self:UpdateConsumptionValues()
+                self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
+			elseif dudes[1] and self.CloakOn then
+				self:DisableIntel('Cloak')
+				self:SetMesh(bp.Display.MeshBlueprint, true)
 			elseif not dudes[1] and self.CloakOn then
 				self:EnableIntel('Cloak')
 				---self:UpdateConsumptionValues()
-				self:SetMesh(self:GetBlueprint().Display.CloakMeshBlueprint, true)
+				self:SetMesh(bp.Display.CloakMeshBlueprint, true)
 			end
 		end
 	end,
 
 	OnScriptBitSet = function(self, bit)
+		if bit == 2 or bit == 5 and EntityCategoryContains(categories.JAM, self) then
+			self:SetMaintenanceConsumptionInactive()
+			self:DisableUnitIntel('ToggleBit2', 'Jammer')
+			self:DisableUnitIntel('ToggleBit5', 'RadarStealth')
+            self:DisableUnitIntel('ToggleBit5', 'RadarStealthField')
+			if self.TAIntelThread then KillThread(self.TAIntelThread) end
+			self.TAIntelThread = self:ForkThread(self.TAIntelMotion)	
+		end
 		if bit == 8 then
 			self:DisableUnitIntel('ToggleBit8', 'Cloak')
 			if self.CloakThread then KillThread(self.CloakThread) end
@@ -94,6 +119,13 @@ TAunit = Class(Unit)
 	end,
 
 	OnScriptBitClear = function(self, bit)
+		if bit == 2 or bit == 5 and EntityCategoryContains(categories.JAM, self) then
+			self:SetMaintenanceConsumptionActive()
+			if self.TAIntelThread then
+				KillThread(self.TAIntelThread)
+				self.TAIntelOn = nil
+			end
+		end
 		if bit == 8 then
 			if self.CloakThread then
 				KillThread(self.CloakThread)

@@ -74,7 +74,11 @@ TACounter = Class(TAWalking)
 { 
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAWalking.OnStopBeingBuilt(self,builder,layer)
-		self:SetScriptBit('RULEUTC_StealthToggle', false)
+		local bp = self:GetBlueprint()
+		if bp.Intel.RadarStealth then
+			self:SetMaintenanceConsumptionActive()
+		end
+        self:SetScriptBit('RULEUTC_StealthToggle', false)
 		self:SetScriptBit('RULEUTC_JammingToggle', true)
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
 		self:RequestRefreshUI()

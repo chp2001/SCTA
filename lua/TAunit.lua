@@ -103,7 +103,7 @@ TAunit = Class(Unit)
 
 	OnScriptBitSet = function(self, bit)
 		if bit == 2 or bit == 5 and EntityCategoryContains(categories.JAM, self) then
-			self:SetMaintenanceConsumptionInactive()
+			--self:SetMaintenanceConsumptionActive()
 			self:DisableUnitIntel('ToggleBit2', 'Jammer')
 			self:DisableUnitIntel('ToggleBit5', 'RadarStealth')
             self:DisableUnitIntel('ToggleBit5', 'RadarStealthField')
@@ -120,7 +120,7 @@ TAunit = Class(Unit)
 
 	OnScriptBitClear = function(self, bit)
 		if bit == 2 or bit == 5 and EntityCategoryContains(categories.JAM, self) then
-			self:SetMaintenanceConsumptionActive()
+			--self:SetMaintenanceConsumptionInactive()
 			if self.TAIntelThread then
 				KillThread(self.TAIntelThread)
 				self.TAIntelOn = nil

@@ -22,11 +22,18 @@ UnitBlueprint {
               },
     Economy = {
         BuildCostMass = 480,
-        BuildCostEnergy = 28000,
+        BuildCostEnergy = 42000,
+        BuildTime = 20000,
         TAConsumptionPerSecondEnergy = 50,
         MaintenanceConsumptionPerSecondEnergy = 10,
       },
       General = {
+        OrderOverrides = {
+          RULEUTC_StealthToggle = {
+              bitmapId = 'stealth-personal',
+              helpText = 'toggle_stealth_personal',
+          },
+      },
         ToggleCaps = {
             RULEUTC_StealthToggle = true,
             },
@@ -37,14 +44,8 @@ UnitBlueprint {
     },
     Weapon = {
       [1] = {
-        EnergyDrainPerSecond = 25,
-        EnergyRequired = 25,
-        EnergyChargeForFirstShot = true,
       },
       [2] = {
-        EnergyDrainPerSecond = 25,
-        EnergyRequired = 25,
-        EnergyChargeForFirstShot = true,
       },
       [3] = {}, 
   },

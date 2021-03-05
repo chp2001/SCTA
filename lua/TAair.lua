@@ -112,6 +112,10 @@ TAIntelAir = Class(TAair) {
 
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAair.OnStopBeingBuilt(self,builder,layer)
+		local bp = self:GetBlueprint()
+		if bp.Intel.RadarStealth then
+			self:SetMaintenanceConsumptionActive()
+		end
 		self:SetScriptBit('RULEUTC_StealthToggle', false)
 		self:SetScriptBit('RULEUTC_JammingToggle', true)
 		self:RequestRefreshUI()

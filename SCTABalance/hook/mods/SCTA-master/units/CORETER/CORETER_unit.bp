@@ -6,13 +6,19 @@
 UnitBlueprint {
    Merge = true,
     Display = {
-        UniformScale = 0.06,
+        UniformScale = 0.12,
     },
     Economy = {
         TAConsumptionPerSecondEnergy = 60,
         MaintenanceConsumptionPerSecondEnergy = 10,
     },
     General = {
+        OrderOverrides = {
+            RULEUTC_StealthToggle = {
+                bitmapId = 'stealth-field',
+                helpText = 'toggle_stealth_field',
+            },
+        },
     ToggleCaps = {
         RULEUTC_StealthToggle = true,
         },
@@ -23,7 +29,7 @@ UnitBlueprint {
     LifeBarSize = 1.5,
     SelectionSizeX = 0.8,
     SelectionSizeZ = 0.8,
-    SizeX = 1,
-    SizeY = 0.7,
-    SizeZ = 1,
+    SizeX = 2,
+    SizeY = 1.5,
+    SizeZ = 2,
 }

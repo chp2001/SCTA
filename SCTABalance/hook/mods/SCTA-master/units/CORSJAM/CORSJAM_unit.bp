@@ -10,6 +10,12 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 20,
         },
     General = {
+        OrderOverrides = {
+            RULEUTC_StealthToggle = {
+                bitmapId = 'stealth-field',
+                helpText = 'toggle_stealth_field',
+            },
+        },
     ToggleCaps = {
         RULEUTC_StealthToggle = true,
         },

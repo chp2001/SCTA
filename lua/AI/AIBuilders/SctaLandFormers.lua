@@ -41,6 +41,23 @@ BuilderGroup {
          },
     },
     Builder {
+        BuilderName = 'SCTAAI Laser',
+        PlatoonTemplate = 'StrikeForceSCTALaser', -- The platoon template tells the AI what units to include, and how to use them.
+        Priority = 90,
+        InstanceCount = 200,
+        BuilderType = 'Any',
+        BuilderData = {
+            NeverGuardBases = true,
+            NeverGuardEngineers = true,
+            UseFormation = 'AttackFormation',
+        },        
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {900} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
+            { EBC, 'GreaterThanEconStorageCurrent', { 10, 500 } },
+        },
+    },
+    Builder {
         BuilderName = 'SCTAAI Terrain',
         PlatoonTemplate = 'StrikeForceSCTATerrain', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 150,

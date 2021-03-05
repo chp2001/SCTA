@@ -14,7 +14,7 @@ UnitBlueprint {
         'ANTIMISSILE',
 	    'LEVEL2',
         'OVERLAYDEFENSE',
-        'SORTDEFENSE',
+        'SORTSTRATEGIC',
         'NEEDMOBILEBUILD',
         'DEFENSE',
         'ANTIAIR',

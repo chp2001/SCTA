@@ -79,6 +79,7 @@ UnitBlueprint {
         'VTOL',
         'OVERLAYANTIAIR',
         'CORE',
+        'JAM',
     },
     Defense = {
         ArmorType = 'ASF',
@@ -179,7 +180,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             TrackingRadius = 1.15,
-            Damage = 120, 						
+            Damage = 100, 						
             DamageRadius = 1.5,
             FiringRandomness = 0,
             DamageType = 'LANDAir',
@@ -213,7 +214,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 1.428571429,
+            RateOfFire = 1.2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -238,7 +239,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             TrackingRadius = 1.15,
-            Damage = 120, 						
+            Damage = 100, 						
             DamageRadius = 1.5,
             FiringRandomness = 0,
             DamageType = 'LANDAir',
@@ -272,7 +273,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 1.428571429,
+            RateOfFire = 1.2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',

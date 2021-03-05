@@ -36,6 +36,7 @@ UnitBlueprint {
         'SORTSTRATEGIC',
         'SNIPEMODE',
         'ARTILLERY',
+        'LASER',
     },
     Defense = {
         ArmorType = 'Structure',

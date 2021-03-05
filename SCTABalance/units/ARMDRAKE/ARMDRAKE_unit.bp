@@ -48,6 +48,7 @@ UnitBlueprint {
         'KBOT',
         'BUILTBYGANTRY',  
         'SNIPEMODE',
+        'LASER',
     },
     Defense = {
         AirThreatLevel = 0,

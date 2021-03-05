@@ -12,7 +12,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI AntiAir',
         PlatoonTemplate = 'AntiAirSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 90,
+        Priority = 85,
         InstanceCount = 200,
         BuilderType = 'Any',
         BuilderData = {
@@ -31,14 +31,44 @@ BuilderGroup {
         InstanceCount = 200,
         BuilderType = 'Any',
         BuilderData = {
-            NeverGuardBases = false,
-            NeverGuardEngineers = false,
+            NeverGuardBases = true,
+            NeverGuardEngineers = true,
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} },
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
          },
+    },
+    Builder {
+        BuilderName = 'SCTAAI Laser',
+        PlatoonTemplate = 'StrikeForceSCTALaser', -- The platoon template tells the AI what units to include, and how to use them.
+        Priority = 90,
+        InstanceCount = 200,
+        BuilderType = 'Any',
+        BuilderData = {
+            NeverGuardBases = true,
+            NeverGuardEngineers = true,
+            UseFormation = 'AttackFormation',
+        },        
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {900} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
+            { EBC, 'GreaterThanEconStorageCurrent', { 10, 500 } },
+        },
+    },
+    Builder {
+        BuilderName = 'SCTAAI Terrain',
+        PlatoonTemplate = 'StrikeForceSCTATerrain', -- The platoon template tells the AI what units to include, and how to use them.
+        Priority = 150,
+        InstanceCount = 5,
+        BuilderType = 'Any',
+        BuilderData = {
+            NeverGuardBases = true,
+            NeverGuardEngineers = true,
+            UseFormation = 'AttackFormation',
+        },        
+        BuilderConditions = { },
     },
     Builder {
         BuilderName = 'SCTAAI LAB',

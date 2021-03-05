@@ -17,9 +17,9 @@ BuilderGroup {
         Priority = 100,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 150, -500, 0, 0, 'AntiSurface', 1 }},
-         },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
+        },
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
@@ -37,8 +37,8 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 300, -500, 1, 0, 'AntiSurface', 1 }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -57,8 +57,8 @@ BuilderGroup {
         Priority = 85,
         InstanceCount = 1,
         BuilderConditions = {
-                { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
                 { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 450, -500, 1, 0, 'AntiSurface', 1 }},
+                { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
             },
         BuilderType = 'Any',
         BuilderData = {
@@ -99,9 +99,9 @@ BuilderGroup {
         Priority = 100,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 100, -500, 0, 0, 'AntiSurface', 1 }},
-         },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
+        },
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
@@ -119,8 +119,8 @@ BuilderGroup {
         Priority = 110,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = { 
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 50}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -139,8 +139,8 @@ BuilderGroup {
         Priority = 95,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = { 
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 300}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -201,9 +201,29 @@ BuilderGroup {
         Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FUSION} },
             { EBC, 'GreaterThanEconStorageCurrent', { 500, 1000 } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FUSION * categories.LEVEL2} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.FUSION} },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            DesiresAssist = true,
+            NumAssistees = 2,
+            NeedGuard = false,
+            Construction = {
+                BuildStructures = {
+                    'T2EnergyProduction',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T2Engineer2 Pgen',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        Priority = 125,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LEVEL3 * categories.FUSION} },
+            { EBC, 'LessThanEconStorageRatio', { 1, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -223,9 +243,9 @@ BuilderGroup {
         Priority = 175,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'LessThanEconStorageRatio', { 1, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LEVEL3 * categories.FUSION} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.FUSION} },
+            { EBC, 'LessThanEconStorageRatio', { 1, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -245,7 +265,7 @@ BuilderGroup {
         Priority = 50,
         InstanceCount = 3,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.ANTIAIR} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.ROCKET - categories.MOBILE} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.5}},
         },
         BuilderType = 'Any',
@@ -265,7 +285,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {480} }, -- Don't make tanks if we have lots of them.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LASER * categories.LEVEL1 } }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LASER * categories.LEVEL1 - categories.MOBILE } }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.7}},
         },
         BuilderType = 'Any',
@@ -305,7 +325,7 @@ BuilderGroup {
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.LASER * categories.LEVEL2 } }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.LASER * categories.LEVEL2 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.75}}, 
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, categories.FUSION} }, 
         },
@@ -326,7 +346,7 @@ BuilderGroup {
         Priority = 80,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.LASER * categories.LEVEL3 } }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.LASER * categories.LEVEL3 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.4, 0.25}}, 
         },
         BuilderType = 'Any',

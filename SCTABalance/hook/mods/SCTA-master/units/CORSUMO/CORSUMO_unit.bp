@@ -12,6 +12,7 @@ UnitBlueprint {
         'CORE',
         'KBOT',
 	    'LEVEL3',
+        'LASER',
     },
     Defense = {
         Health = 10000,

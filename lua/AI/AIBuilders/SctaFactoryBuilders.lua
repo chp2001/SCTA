@@ -172,7 +172,6 @@ BuilderGroup {
         Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FUSION} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LAB * categories.AIR } }, -- Stop after 10 facs have been built.
         },

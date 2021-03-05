@@ -49,7 +49,8 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'CORE',
         'OCEAN',
-    'SNIPEMODE',
+        'SNIPEMODE',
+        'LASER',
     },
     CollisionOffsetY = -0.5,
     Defense = {

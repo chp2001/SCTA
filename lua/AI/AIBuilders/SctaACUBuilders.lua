@@ -24,11 +24,10 @@ BuilderGroup {
         PlatoonAddFunctions = { {SAI, 'BuildOnce'}, }, -- Flag this builder to be only run once.	
         BuilderData = {	
             Construction = {
-                BuildClose = true,
                 BuildStructures = { -- The buildings to make	
                 'T1LandFactory',	
                 'T1EnergyProduction',
-                'T1Resource',
+                'T1EnergyProduction',
                 }	
             }	
         }	

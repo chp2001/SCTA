@@ -18,6 +18,7 @@ UnitBlueprint {
     'KBOT',
     'LAND',
     'ARM',
+    'LASER',
     },
    Display = {
     UniformScale = 0.12,

@@ -41,6 +41,7 @@ UnitBlueprint {
 	    'OVERLAYANTIAIR',
         'ARM',
         'VEHICLE',
+        'LASER',
     },
     Defense = {
         ArmorType = 'Normal',

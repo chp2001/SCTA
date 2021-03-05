@@ -171,8 +171,8 @@ BuilderGroup {
         Priority = 250,
         InstanceCount = 8,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageCurrent', { 1100, 2000 } },
             { MIBC, 'GreaterThanGameTime', {1500} },
+            { EBC, 'LessEconStorageCurrent', { 100, 1000 } },
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 2, categories.LAB * categories.LAND}},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.LAB} },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 8, categories.LAB} },

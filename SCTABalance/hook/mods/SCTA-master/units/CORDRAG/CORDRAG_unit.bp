@@ -1,22 +1,5 @@
 UnitBlueprint {
     Merge = true,  
-    Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1HOVER',
-        'DRAGBUILD',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH1',
-        'BENIGN',
-	    'STRUCTURE',
-        'DEFENSE',
-        'WALL',
-	    'CORE',
-	    'LEVEL1',
-        'SORTDEFENSE',
-        'SELECTABLE',
-    },
     Defense = {
         Health = 4000,
         MaxHealth = 4000,

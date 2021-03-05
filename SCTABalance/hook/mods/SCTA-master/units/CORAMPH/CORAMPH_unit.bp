@@ -3,16 +3,19 @@ UnitBlueprint {
    Categories = {
     'SELECTABLE',
     'TECH3',
+    'LEVEL3',
+    'LASER',
     'VISIBLETORECON',
     'RECLAIMABLE',
     'MOBILE',
     'DIRECTFIRE',
     'OVERLAYDIRECTFIRE',
+    'OVERLAYINDIRECTFIRE',
     'KBOT',
     'LAND',
     'CORE',
     'AMPHIBIOUS',
-    'LEVEL3',
+    'ALLTERRAIN',
     },
    Defense = {
     Health = 10000,
@@ -35,9 +38,6 @@ Economy = {
         [2] = {
             Damage = 400,
             MaxRadius = 40,
-            EnergyDrainPerSecond = 80,
-            EnergyRequired = 160,
-            EnergyChargeForFirstShot = true,
         },
         [3] = {
         }, 

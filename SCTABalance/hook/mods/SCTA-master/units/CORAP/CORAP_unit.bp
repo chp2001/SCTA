@@ -1,28 +1,6 @@
 UnitBlueprint {
     Merge = true,
     BuildIconSortPriority = 3,
-    Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1HOVER',
-        'BUILTBYCOMMANDER',
-        'SELECTABLE',
-        'DRAGBUILD',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH1',
-	    'FACTORY',
-        'RALLYPOINT',
-        'SHOWQUEUE',
-	    'STRUCTURE',
-	    'CONSTRUCTION',
-        'OVERLAYRADAR',
-        'AIR', 
-	    'CORE',
-		'PLANT',
-	    'SORTCONSTRUCTION',
-	    'LEVEL1',
-    },
         Display = {
                 Abilities = {
                     '<LOC ability_upgradable>Upgradeable',
@@ -30,6 +8,10 @@ UnitBlueprint {
                 },
         UniformScale = 0.25,
     },
+    Footprint = {
+        SizeX = 8,
+        SizeZ = 8,
+    },   
     Defense = {
         Health = 2250,
         MaxHealth = 2250,

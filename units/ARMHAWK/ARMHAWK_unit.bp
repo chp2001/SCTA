@@ -78,7 +78,8 @@ UnitBlueprint {
         'AIR',
         'VTOL',
         'OVERLAYANTIAIR',
-       'HIGHALTAIR',
+        'HIGHALTAIR',
+        'JAM',
     },
     Defense = {
         ArmorType = 'ASF',

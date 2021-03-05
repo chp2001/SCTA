@@ -31,6 +31,18 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
+    Name = 'StrikeForceSCTATerrain',
+    Plan = 'HuntAILABSCTA', -- The platoon function to use.
+    GlobalSquads = {
+        { categories.ALLTERRAIN * categories.LAND - SPECIAL, -- Type of units.
+          5, -- Min number of units.
+          10, -- Max number of units.
+          'attack', -- platoon types: 'support', 'attack', 'scout',
+          'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+    },
+}
+
+PlatoonTemplate {
     Name = 'LABSCTA',
     Plan = 'HuntAILABSCTA', -- The platoon function to use.
     GlobalSquads = {

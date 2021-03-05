@@ -48,7 +48,6 @@ UnitBlueprint {
             '<LOC ability_cloak>Cloaking',
             'Kamikazi',
         },
-		CloakMesh = '/mods/SCTA-master/units/MINE4/MINE4_cloak_mesh',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

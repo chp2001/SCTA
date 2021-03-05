@@ -112,7 +112,7 @@ TAIntelAir = Class(TAair) {
 
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAair.OnStopBeingBuilt(self,builder,layer)
-		self:OnScriptBitClear('RULEUTC_StealthToggle', true)
+		self:SetScriptBit('RULEUTC_StealthToggle', false)
 		self:SetScriptBit('RULEUTC_JammingToggle', true)
 		self:RequestRefreshUI()
 	end,
@@ -129,21 +129,10 @@ TAIntelAir = Class(TAair) {
 		if not IsDestroyed(self) then
 			if self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth') then
 			self.TAIntelOn = true
-			ForkThread(self.TAIntelMotion, self)
+			ForkThread(TAair.TAIntelMotion, self)
 			end
 		end
 	end,
-
-    TAIntelMotion = function(self, new, old ) 
-		while not self.Dead do
-            coroutine.yield(11)
-            if self.TAIntelOn and self:IsUnitState('Moving') then
-                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
-			elseif self.TAIntelOn then
-                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
-            end
-		end
-    end,
 
 	OnScriptBitSet = function(self, bit)
 		self:SetMaintenanceConsumptionInactive()
@@ -151,7 +140,7 @@ TAIntelAir = Class(TAair) {
 			self:DisableUnitIntel('ToggleBit2', 'Jammer')
 			self:DisableUnitIntel('ToggleBit5', 'RadarStealth')
 			if self.TAIntelThread then KillThread(self.TAIntelThread) end
-			self.TAIntelThread = self:ForkThread(self.TAIntelMotion)	
+			self.TAIntelThread = self:ForkThread(TAair.TAIntelMotion)	
 		end
 		TAair.OnScriptBitSet(self, bit)
 	end,

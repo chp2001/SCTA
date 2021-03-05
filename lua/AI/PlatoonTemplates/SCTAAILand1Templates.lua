@@ -46,12 +46,10 @@ PlatoonTemplate {
             Arm = {
                 { 'armck', 1, 1, 'support', 'None' },
                 { 'armpw', 1, 2, 'attack', 'none' },
-                { 'armflea', 1, 1, 'scout', 'none' },
             },
             Core = {
                 { 'corcv', 1, 1, 'support', 'None' },
                 { 'corgator', 1, 2, 'attack', 'none' },
-                { 'corfav', 1, 1, 'scout', 'none' },
             },
         }
     } 

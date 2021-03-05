@@ -58,7 +58,6 @@ UnitBlueprint {
             '<LOC ability_cloak>Cloaking',
             'Assault Bot',
         },
-        CloakMesh = '/mods/SCTA-master/units/ARMSNIPE/ARMSNIPE_cloak_mesh',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

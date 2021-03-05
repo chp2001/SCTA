@@ -36,7 +36,7 @@ CORCOM = Class(TARealCommander) {
 		self.PlayCommanderWarpInEffectFlag = false
 		self:CreateProjectile( '/mods/SCTA-master/effects/entities/TAEntrance/TAEntrance_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
 		self:ShowBone(0, true)
-		self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
+		self:SetMesh(self:GetBlueprint().Display.CloakMeshBlueprint, true)
 		WaitSeconds(3)
 		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
         self:SetUnSelectable(false)

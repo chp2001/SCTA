@@ -87,7 +87,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORCOM/CORCOM_lod0_Awalk.sca',
         AnimationWalkRate = 1,
-        CloakMesh = '/mods/SCTA-master/units/CORCOM/CORCOM_cloak_mesh',
         Abilities = {
             '<LOC ability_cloak>Cloaking',
             '<LOC ability_amphibious>Amphibious',

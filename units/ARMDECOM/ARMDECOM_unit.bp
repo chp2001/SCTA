@@ -82,7 +82,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/ARMCOM/ARMCOM_Awalk.sca',
         AnimationWalkRate = 3.75,
-        CloakMesh = '/mods/SCTA-master/units/ARMCOM/ARMCOM_cloak_mesh',
         Abilities = {
             '<LOC ability_cloak>Cloaking',
             '<LOC ability_amphibious>Amphibious',

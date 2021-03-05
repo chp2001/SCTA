@@ -68,13 +68,23 @@ TAWalking = Class(TAunit)
             end
         end
     end,
+
+	CloakDetection = function(self)
+		TAunit.CloakDetection(self)
+			local bp = self:GetBlueprint()
+			if self.CloakOn and self:IsUnitState('Moving') then
+                self:SetConsumptionPerSecondEnergy(bp.Economy.TAConsumptionPerSecondEnergy)
+			elseif self.CloakOn then
+                self:SetConsumptionPerSecondEnergy(bp.Economy.MaintenanceConsumptionPerSecondEnergy)
+        	end
+    end,
 }
 
 TACounter = Class(TAWalking) 
 { 
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAWalking.OnStopBeingBuilt(self,builder,layer)
-		self:OnScriptBitClear('RULEUTC_StealthToggle', true)
+		self:SetScriptBit('RULEUTC_StealthToggle', false)
 		self:SetScriptBit('RULEUTC_JammingToggle', true)
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
 		self:RequestRefreshUI()
@@ -94,54 +104,11 @@ TACounter = Class(TAWalking)
 
     OnIntelEnabled = function(self)
 		TAWalking.OnIntelEnabled()
-		if not IsDestroyed(self) then
 			if self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth') and EntityCategoryContains(categories.JAM, self) then
 				self.TAIntelOn = true
-				ForkThread(self.TAIntelMotion, self)
+				ForkThread(TAWalking.TAIntelMotion, self)
 			end
-			if self:IsIntelEnabled('Cloak') then
-			self.CloakOn = true
-        	self:PlayUnitSound('Cloak')
-			self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
-			ForkThread(self.CloakDetection, self)
-			end
-		end
 	end,
-
-	TAIntelMotion = function(self) 
-		while not self.Dead do
-            coroutine.yield(11)
-            if self.TAIntelOn and self:IsUnitState('Moving') then
-                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
-			elseif self.TAIntelOn then
-                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
-            end
-		end
-    end,
-
-	CloakDetection = function(self)
-		local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
-        local brain = moho.entity_methods.GetAIBrain(self)
-        local cat = categories.SELECTABLE * categories.MOBILE
-        local getpos = moho.entity_methods.GetPosition
-        while not self.Dead do
-            coroutine.yield(11)
-			if self.CloakOn and self:IsUnitState('Moving') then
-                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
-			elseif self.CloakOn then
-                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
-            end
-            local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
-            if dudes[1] and self.CloakOn then
-                self:DisableIntel('Cloak')
-                self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-			elseif not dudes[1] and self.CloakOn then
-                self:EnableIntel('Cloak')
-				---self:UpdateConsumptionValues()
-                self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
-        	end
-		end
-    end,
 
 	OnScriptBitSet = function(self, bit)
 		self:SetMaintenanceConsumptionInactive()
@@ -152,11 +119,6 @@ TACounter = Class(TAWalking)
 			if self.TAIntelThread then KillThread(self.TAIntelThread) end
 			self.TAIntelThread = self:ForkThread(self.TAIntelMotion)	
 		end
-		if bit == 8 then
-			self:DisableUnitIntel('ToggleBit8', 'Cloak')
-			if self.CloakThread then KillThread(self.CloakThread) end
-			self.CloakThread = self:ForkThread(self.CloakDetection)	
-		end
 		TAWalking.OnScriptBitSet(self, bit)
 	end,
 
@@ -166,12 +128,6 @@ TACounter = Class(TAWalking)
 			if self.TAIntelThread then
 				KillThread(self.TAIntelThread)
 				self.TAIntelOn = nil
-			end
-		end
-		if bit == 8 then
-			if self.CloakThread then
-				KillThread(self.CloakThread)
-				self.CloakOn = nil
 			end
 		end
 		TAWalking.OnScriptBitClear(self, bit)

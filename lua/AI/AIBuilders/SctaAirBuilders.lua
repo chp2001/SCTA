@@ -31,9 +31,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Factory Strategic',
         PlatoonTemplate = 'T2AirBomberSCTA',
-        Priority = 90,
+        Priority = 100,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FUSION} }, -- Don't build air fac immediately.
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.7}},
         },
         BuilderType = 'All',

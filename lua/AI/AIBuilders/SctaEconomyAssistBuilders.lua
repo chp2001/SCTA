@@ -153,7 +153,7 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT * categories.LAND}},
-            { EBC, 'LessThanEconStorageRatio', { 0.1, 1.1}},
+            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB * categories.LAND} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.PLANT} },    
             },

@@ -105,18 +105,16 @@ PlatoonTemplate {
     Name = 'T4ExperimentalSCTA',
     Plan = 'ExperimentalAIHubSorian', 
     GlobalSquads = {
-        #DUNCAN - removed the sera lightning unit
         { categories.EXPERIMENTAL * categories.LAND * categories.MOBILE, 1, 1, 'attack', 'none' }
     },
 }
 
 PlatoonTemplate {
     Name = 'FabricationSCTA',
-    Plan = 'PauseAI', 
+    Plan = 'PauseAI',
     GlobalSquads = {
-        #DUNCAN - removed the sera lightning unit
-        { categories.MASSFABRICATION, 1, 1, 'support', 'None' }
-    },
+        { categories.STRUCTURE * categories.MASSFABRICATION, 1, 1, 'support', 'none' },
+    }
 }
 
 PlatoonTemplate {

@@ -198,10 +198,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA23',
-        Priority = 150,
-        InstanceCount = 1,
+        Priority = 130,
+        InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FUSION} },
+            { MIBC, 'GreaterThanGameTime', {600} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FUSION} },
             { EBC, 'GreaterThanEconStorageCurrent', { 500, 1000 } },
         },
         BuilderType = 'Any',
@@ -223,7 +224,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LEVEL3 * categories.FUSION} },
-            { EBC, 'LessThanEconStorageRatio', { 1, 0.5}},
+            { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.25 }},
         },
         BuilderType = 'Any',
         BuilderData = {

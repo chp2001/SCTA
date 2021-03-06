@@ -1,3 +1,5 @@
+local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+
 SCTAAIPlatoon = Platoon
 Platoon = Class(SCTAAIPlatoon) {
     EngineerBuildAISCTA = function(self)
@@ -255,7 +257,7 @@ Platoon = Class(SCTAAIPlatoon) {
             for k, v in cons.BuildStructures do
                 if aiBrain:PlatoonExists(self) then
                     if not eng.Dead then
-                        local faction = SUtils.GetEngineerFaction(eng)
+                        local faction = TAutils.TAGetEngineerFaction(eng)
                         if aiBrain.CustomUnits[v] and aiBrain.CustomUnits[v][faction] then
                             local replacement = SUtils.GetTemplateReplacement(aiBrain, v, faction, buildingTmpl)
                             if replacement then

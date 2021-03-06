@@ -224,7 +224,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LEVEL3 * categories.FUSION} },
-            { EBC, 'LessThanEconStorageRatio', { 1, 0.5}},
+            { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.25 }},
         },
         BuilderType = 'Any',
         BuilderData = {

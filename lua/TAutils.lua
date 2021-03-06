@@ -138,3 +138,13 @@ end
 function ArmyHasTargetingFacility(army)
     return (targetingFacilityData[army] > 0 and GetArmyBrain(army):GetEconomyStored('ENERGY') > 0)
 end
+
+function TAGetEngineerFaction(engineer)
+    if EntityCategoryContains(categories.ARM, engineer) then
+        return 'Arm'
+    elseif EntityCategoryContains(categories.CORE, engineer) then
+        return 'Core'
+    else
+        return false
+    end
+end

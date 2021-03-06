@@ -12,10 +12,15 @@ do
             return 7
         end
     end,
+}
 
+end
+
+SCTAEngineerManager = EngineerManager
+EngineerManager = Class(SCTAEngineerManager) {
     LowMass = function(self)
         if not self.Brain.SCTAAI then
-            return taEngineerManager.LowMass(self)
+            return SCTAEngineerManager.LowMass(self)
         end
         local econ = AIUtils.AIGetEconomyNumbers(self.Brain)
         local pauseVal = 0
@@ -37,6 +42,5 @@ do
 
         self:ForkThread(self.LowMassRepeatThread)
     end,
-}
 
-end
+}

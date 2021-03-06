@@ -85,7 +85,7 @@ UnitBlueprint {
     BuildableCategory = {
         'OCEAN LEVEL1 ARM',
         'OCEAN LEVEL2 ARM',
-        'armfark',
+        'ALLTERRAIN LEVEL2 ENGINEER ARM',
         'armadsy',
     },
 	InitialRallyX = 0,

@@ -70,7 +70,7 @@ UnitBlueprint {
     BuildIconSortPriority = 0,
     Categories = {
         'SELECTABLE',
-        'TECH1',
+        'TECH3',
         'LEVEL3',
         'ENGINEER',
         'REPAIR',
@@ -95,7 +95,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = 'Tech Level 1',
+    Description = 'Tech Level 3',
     Display = {
         AnimationBuild = '/mods/SCTA-master/units/ARMCSA/ARMCSA_lod0_unpack.sca',
         AnimationBuildRate = 1, 
@@ -185,7 +185,7 @@ UnitBlueprint {
     SizeX = 1,
     SizeY = 0.2,
     SizeZ = 1,
-    StrategicIconName = 'icon_bot1_engineer',
+    StrategicIconName = 'icon_bot3_engineer',
     StrategicIconSortPriority = 0,
     Transport = {
         AirClass = true,

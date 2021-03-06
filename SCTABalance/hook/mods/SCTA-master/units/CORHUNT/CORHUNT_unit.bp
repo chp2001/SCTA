@@ -5,26 +5,6 @@
 
 UnitBlueprint {
    Merge = true,
-    Categories = {
-        'SELECTABLE',
-        'TECH3',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'MOBILE',
-        'AIR',
-        'VTOL',
-        'HIGHALTAIR',
-        'INTELLIGENCE',
-        'RADAR',
-        'OVERLAYRADAR',
-        'SONAR',
-        'OVERLAYSONAR',
-        'OMNI',
-        'OVERLAYOMNI',
-        'CORE',
-        'LEVEL3',
-        'TRANSPORTATION',
-    },
     Economy = {
         BuildCostMass = 300,
     },

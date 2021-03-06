@@ -1,18 +1,5 @@
 UnitBlueprint {
     Merge = true, 
-    Categories = {
-        'SELECTABLE',
-        'TECH2',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'MOBILE',
-	    'LAND',
-	    'ANTIAIR',
-        'OVERLAYANTIAIR',
-        'CORE',
-        'VEHICLE',
-	    'LEVEL2',
-    },
     Economy = {
         BuildCostEnergy = 2500,
         BuildCostMass = 400,

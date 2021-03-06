@@ -4,6 +4,7 @@ UnitBlueprint {
         'SELECTABLE',
         'ARM',
         'KBOT',
+        'VEHICLE',
 	    'LEVEL2',
         'TECH2',
         'ENGINEER',
@@ -17,7 +18,6 @@ UnitBlueprint {
 	    'CONSTRUCTION',
 	    'LAND',
 	    'SELECTION',
-        'VEHICLE',
     },
     Defense = {
         Health = 900,

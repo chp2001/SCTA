@@ -40,6 +40,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'KBOT',
+        'ALLTERRAIN',
         'LEVEL2',
         'TECH2',
         'FIELDENGINEER',
@@ -97,6 +98,10 @@ UnitBlueprint {
     ProductionPerSecondMass = 1,
     BuildableCategory = {
         'mas0001',
+    },
+    Footprint = {
+        SizeX = 2,
+        SizeZ = 1,
     },
     },
     General = {

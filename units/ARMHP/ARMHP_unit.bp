@@ -81,12 +81,12 @@ UnitBlueprint {
         BuildCostEnergy = 5277,
         BuildCostMass = 2007, 
         BuildTime = 18520,
-	BuildRate = 200,
+	    BuildRate = 200,
         BuildableCategory = {
-            'HOVER LEVEL1 ARM',
+            'HOVER LEVEL3 ARM',
         },
-	InitialRallyX = 0,
-	InitialRallyZ = 7,
+	    InitialRallyX = 0,
+	    InitialRallyZ = 7,
         StorageMass = 250,
         StorageEnergy = 250,
     },
@@ -170,7 +170,7 @@ UnitBlueprint {
     SizeX = 8,
     SizeY = 2.5,
     SizeZ = 7,
-    StrategicIconName = 'icon_factory1_land',
+    StrategicIconName = 'icon_factory3_land',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX

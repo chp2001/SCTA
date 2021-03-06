@@ -1,26 +1,5 @@
 UnitBlueprint {
     Merge = true,
-    Categories = {
-        'SELECTABLE',
-        'TECH3',
-        'ENGINEER',
-        'REPAIR',
-        'RECLAIM',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'PATROLHELPER',
-        'SHOWQUEUE',
-        'MOBILE',
-        'SELECTION',
-	    'CONSTRUCTION',
-        'LAND',
-        'CORE',
-        'HOVER',
-        'KBOT',
-        'VEHICLE',
-	    'LEVEL3',
-    },
-    Description = 'Tech Level 3',
     Defense = {
         Health = 2080,
         MaxHealth = 2080,
@@ -31,7 +10,6 @@ UnitBlueprint {
     Physics = {
         TurnRate = 100,
         MaxSteerForce = 100,
-	RotateOnSpot = true,
 	TurnFacingRate = 100,
     },
     Economy = {
@@ -55,5 +33,4 @@ UnitBlueprint {
     SizeX = 1.3,
     SizeY = 1.2,
     SizeZ = 2,
-    StrategicIconName = 'icon_land3_engineer',
 }

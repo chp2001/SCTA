@@ -85,7 +85,7 @@ UnitBlueprint {
         'VEHICLE LEVEL1 CORE', 
         'VEHICLE LEVEL2 CORE',
         'VEHICLE LEVEL3 CORE',
-        'cornecro',
+        'ALLTERRAIN LAND ENGINEER CORE',
     },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

@@ -45,8 +45,8 @@ UnitBlueprint {
         AutoLandTime = 1,
         BankFactor = 1,
         BankForward = false,
-        BreakOffDistance = 5,
-        BreakOffTrigger = 15,
+        BreakOffDistance = 15,
+        BreakOffTrigger = 5,
         CanFly = true,
         CombatTurnSpeed = 1.5,
         EngageDistance = 50,
@@ -68,9 +68,8 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 3,
     Categories = {
-        'TRANSPORTATION',
         'SELECTABLE',
-        'TECH1',
+        'TECH3',
         'LEVEL3',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -81,6 +80,7 @@ UnitBlueprint {
         'VTOL',
         'OVERLAYANTIAIR',
         'ARM',
+        'TRANSPORTATION',
     },
     Defense = {
         ArmorType = 'Light',
@@ -159,7 +159,7 @@ UnitBlueprint {
     SizeX = 1,
     SizeY = 0.3,
     SizeZ = 1.2,
-    StrategicIconName = 'icon_fighter1_antiair',
+    StrategicIconName = 'icon_fighter3_missile',
     StrategicIconSortPriority = 0,
     Transport = {
         AirClass = true,

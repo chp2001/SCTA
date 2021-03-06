@@ -3,8 +3,8 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'ARM',
         'LEVEL2',
+        'ARM',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -19,8 +19,6 @@ UnitBlueprint {
         'SUBMERSIBLE',
         'T2SUBMARINE',
         'OVERLAYSONAR',
-        'SELECTION',
-        'FIELDENGINEER',	
     },
     Defense = {
         Health = 900,

@@ -86,8 +86,8 @@ UnitBlueprint {
         BuildableCategory = {
             'VEHICLE LEVEL1 ARM',
             'VEHICLE LEVEL2 ARM',
+            'ALLTERRAIN ENGINEER LEVEL2 LAND ARM',
             'armadvp',
-            'armfark',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

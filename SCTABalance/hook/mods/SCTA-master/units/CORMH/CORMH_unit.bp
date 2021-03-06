@@ -1,20 +1,5 @@
 UnitBlueprint {
     Merge = true,
-    Categories = {
-        'SELECTABLE',
-        'TECH3',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'MOBILE',
-	'INDIRECTFIRE',
-        'OVERLAYINDIRECTFIRE',
-        'LAND',
-    'CORE',
-    'HOVER',
-	'LEVEL3',
-    'ROCKET',
-    'SILO',
-    },
     Defense = {
         Health = 2400,
         MaxHealth = 2400,
@@ -29,7 +14,6 @@ UnitBlueprint {
         VisionRadius = 18,
     },
     SizeY = 1.4,
-    StrategicIconName = 'icon_land3_missile',
     Weapon = {
         [1] = {
             Damage = 1200,

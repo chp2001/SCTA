@@ -35,7 +35,6 @@ UnitBlueprint {
             'VEHICLE LEVEL2 ARM',
             'VEHICLE LEVEL1 ARM',
             'VEHICLE LEVEL3 ARM',
-            'armfark',
         },
     },
     LifeBarHeight = 0.22,

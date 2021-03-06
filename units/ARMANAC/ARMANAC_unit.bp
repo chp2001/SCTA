@@ -29,8 +29,8 @@ UnitBlueprint {
     BuildIconSortPriority = 5,
     Categories = {
         'SELECTABLE',
-        'TECH1',
-        'LEVEL1',
+        'TECH3',
+        'LEVEL3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -123,7 +123,7 @@ UnitBlueprint {
     SizeX = 3,
     SizeZ = 3,
     SizeZ = 3,
-    StrategicIconName = 'icon_land2_directfire',
+    StrategicIconName = 'icon_bot3_armored',
     StrategicIconSortPriority = 0,
     Transport = {
         TransportClass = 3,

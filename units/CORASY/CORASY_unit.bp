@@ -78,8 +78,6 @@ UnitBlueprint {
         BuildCostMass = 2460, 
         BuildTime = 13080,
 	BuildRate = 200,
-	NaturalProducer = true,
-	ProductionPerSecondMass = 1,
 	InitialRallyX = 0,
 	InitialRallyZ = 7,
         BuildableCategory = {

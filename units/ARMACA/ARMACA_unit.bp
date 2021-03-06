@@ -85,6 +85,7 @@ UnitBlueprint {
         'SHOWQUEUE',
         'MOBILE',
         'CONSTRUCTION',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Light',

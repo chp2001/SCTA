@@ -85,8 +85,8 @@ UnitBlueprint {
     BuildableCategory = {
         'OCEAN LEVEL1 CORE',
         'OCEAN LEVEL2 CORE',
+        'ALLTERRAIN ENGINEER LEVEL2 CORE',
         'coradsy',
-        'cornecro',
     },
 	InitialRallyX = 0,
 	InitialRallyZ = 16,

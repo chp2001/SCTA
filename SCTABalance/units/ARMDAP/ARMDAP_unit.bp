@@ -87,9 +87,8 @@ UnitBlueprint {
     BuildableCategory = {
         'VTOL LEVEL2 ARM',
         'VTOL LEVEL1 ARM',
+        'ALLTERRAIN LEVEL2 LAND ENGINEER ARM',
         'armadap', 
-        'armck',
-        'armfark',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

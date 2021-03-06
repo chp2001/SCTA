@@ -39,7 +39,6 @@ UnitBlueprint {
             'VEHICLE LEVEL1 CORE', 
             'VEHICLE LEVEL2 CORE',
             'VEHICLE LEVEL3 CORE',
-            'cornecro',
         },
     },
     LifeBarHeight = 0.22,

@@ -41,7 +41,7 @@ UnitBlueprint {
         BuildCostEnergy = 60000,
         BuildCostMass = 2400, 
         BuildTime = 64000,
-    BuildRate = 240,
+        BuildRate = 240,
         BuildableCategory = {
             'VTOL LEVEL3 CORE',
             'corch',

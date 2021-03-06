@@ -29,7 +29,6 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 45,
         ProductionPerSecondEnergyMin = 40,
         ProductionPerSecondEnergyMax = 50,
-	    NaturalProducer = true,
     },
     Footprint = {
         SizeX = 1,

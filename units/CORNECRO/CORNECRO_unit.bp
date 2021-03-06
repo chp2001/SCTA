@@ -98,11 +98,11 @@ UnitBlueprint {
     ProductionPerSecondMass = 1,
     BuildableCategory = {
         'mas0001',
+        },
     },
     Footprint = {
         SizeX = 2,
         SizeZ = 1,
-    },
     },
     General = {
         BuildBones = {

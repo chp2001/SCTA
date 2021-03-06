@@ -34,7 +34,6 @@ UnitBlueprint {
         },
     },
     Economy = {
-	NaturalProducer = false,
     BuildCostEnergy = 1200,
     BuildTime = 2300,
     BuildRate = 40, 

@@ -84,8 +84,6 @@ UnitBlueprint {
         'SEAPLA ARM',
         'VTOL LEVEL3 ARM',
     },
-    NaturalProducer = true,
-	ProductionPerSecondMass = 1,
 	InitialRallyX = 1,
 	InitialRallyZ = 7,
 	StorageEnergy = 250,
@@ -141,7 +139,7 @@ UnitBlueprint {
     SizeX = 7,
     SizeY = 4,
     SizeZ = 7,
-    StrategicIconName = 'icon_factory2_air',
+    StrategicIconName = 'icon_factory3_air',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX

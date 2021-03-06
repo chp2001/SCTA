@@ -1,20 +1,5 @@
 UnitBlueprint {
     Merge = true,
-    Categories = {
-        'SELECTABLE',
-        'TECH3',
-        'LEVEL3',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'MOBILE',
-	    'DIRECTFIRE',
-        'OVERLAYDIRECTFIRE',
-        'LAND',
-        'ARM',
-        'HOVER',
-        'TANK',
-        'ALLTERRAIN',
-    },
     Defense = {
         Health = 14000,
         MaxHealth = 14000,
@@ -26,7 +11,6 @@ UnitBlueprint {
         BuildTime = 36000,
     },
     SizeY = 1.4,
-    StrategicIconName = 'icon_bot3_armored',
     Weapon = {
         [1] = {
             Damage = 300,

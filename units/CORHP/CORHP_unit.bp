@@ -78,7 +78,7 @@ UnitBlueprint {
         BuildTime = 18520,
 	BuildRate = 200,
         BuildableCategory = {
-            'HOVER LEVEL1 CORE',
+            'HOVER LEVEL3 CORE',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,
@@ -165,7 +165,7 @@ TechLevel = 'RULEUTL_Advanced',
     SizeX = 8,
     SizeY = 2.5,
     SizeZ = 7,
-    StrategicIconName = 'icon_factory1_land',
+    StrategicIconName = 'icon_factory3_land',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX

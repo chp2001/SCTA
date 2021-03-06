@@ -5,28 +5,7 @@
 
 UnitBlueprint {
    Merge = true,
-    Categories = {
-        'SELECTABLE',
-        'TECH3',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'MOBILE',
-	    'AIR',
-    'VTOL',
-    'HIGHALTAIR',
-    'INTELLIGENCE',
-    'RADAR',
-        'OVERLAYRADAR',
-        'SONAR',
-        'OVERLAYSONAR',
-        'ARM',
-        'LEVEL3',
-        'OMNI',
-        'OVERLAYOMNI',
-    'TRANSPORTATION',
-    },
     Economy = {
         BuildCostMass = 300,
     },
-    StrategicIconName = 'icon_fighter3_intel',
 }

@@ -80,6 +80,7 @@ UnitBlueprint {
         'CORE',
         'HIGHALTAIR',
         'SNIPEMODE',
+        'OVERLAYRADAR',
     },
     Defense = {
         ArmorType = 'Light',

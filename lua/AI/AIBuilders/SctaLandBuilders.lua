@@ -231,7 +231,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Hover',
         PlatoonTemplate = 'T3LandHOVERSCTA',
-        Priority = 110,
+        Priority = 140,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK * categories.LEVEL3,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
@@ -264,7 +264,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Tank',
         PlatoonTemplate = 'T3LandDFTankSCTA',
-        Priority = 125,
+        Priority = 130,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1300} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
@@ -279,7 +279,7 @@ BuilderGroup {
         Priority = 125,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1300} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.25}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL3 * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
         },

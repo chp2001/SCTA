@@ -95,4 +95,16 @@ BuilderGroup {
         },
         BuilderType = 'Any',
     },
+    Builder {
+        BuilderName = 'SCTAMetalMakr',
+        PlatoonTemplate = 'FabricationSCTA',
+        Priority = 300,
+        InstanceCount = 3,
+        BuilderConditions = {
+                { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.MASSFABRICATION}},
+                { EBC, 'LessThanEconStorageRatio',  { 1.1, 0.6}},
+            },
+        BuilderType = 'Any',
+        FormRadius = 10000,
+    },
 }

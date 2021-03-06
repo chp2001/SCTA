@@ -20,13 +20,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 600,
         BuildCostMass = 80,
-        MaintenanceConsumptionPerSecondEnergy = 5,
         BuildTime = 1200,
-    },
-    General = {
-        ToggleCaps = {
-            RULEUTC_IntelToggle = true,
-        },
     },
     Intel = {
         VisionRadius = 16,

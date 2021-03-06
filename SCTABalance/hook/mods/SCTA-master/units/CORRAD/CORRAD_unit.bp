@@ -11,15 +11,13 @@ UnitBlueprint {
         BuildRate = 40, 
         BuildCostEnergy = 1600,
         BuildTime = 2300,
+        ProductionPerSecondEnergy = 0,
         MaintenanceConsumptionPerSecondEnergy = 25,
         BuildableCategory = {
             'corarad',
       },
     },
     General = {
-        ToggleCaps = {
-            RULEUTC_IntelToggle = true,
-        },
 	UpgradesTo = 'corarad', 
   },
   Intel = {

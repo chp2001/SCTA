@@ -74,6 +74,8 @@ UnitBlueprint {
         BuildCostEnergy = 1920,
         BuildCostMass = 122,
         BuildTime = 4960,
+        ProductionPerSecondEnergy = 18,
+        MaintenanceConsumptionPerSecondEnergy = 18,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -99,6 +101,9 @@ UnitBlueprint {
             RULEUCC_RetaliateToggle = false,
             RULEUCC_Stop = true,
             RULEUCC_Transport = false,
+        },
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
         },
         ConstructionBar = true,
         FactionName = 'CORE',

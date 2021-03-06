@@ -105,6 +105,8 @@ UnitBlueprint {
     SonarRadius = 30,
     VisionRadius = 14,
     WaterVisionRadius = 12,
+    RadarStealth = true,
+    RadarStealthField = true,
 	RadarStealthFieldRadius = 25,
     },
     LifeBarHeight = 0.25,

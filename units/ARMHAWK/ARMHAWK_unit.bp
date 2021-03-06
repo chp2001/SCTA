@@ -117,6 +117,8 @@ UnitBlueprint {
         BuildCostEnergy = 6893,
         BuildCostMass = 254,
         BuildTime = 15285,
+        ProductionPerSecondEnergy = 20,
+        MaintenanceConsumptionPerSecondEnergy = 20,
     },
     General = {
         Category = 'Fighter',
@@ -131,6 +133,15 @@ UnitBlueprint {
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
         },
+        OrderOverrides = {
+            RULEUTC_StealthToggle = {
+                bitmapId = 'stealth-personal',
+                helpText = 'toggle_stealth_personal',
+            },
+        },
+          ToggleCaps = {
+              RULEUTC_StealthToggle = true,
+              },
         FactionName = 'ARM',
         Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',

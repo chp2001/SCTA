@@ -10,15 +10,13 @@ UnitBlueprint {
         BuildCostEnergy = 1600,
         BuildTime = 2300,
         BuildRate = 40, 
+        ProductionPerSecondEnergy = 0,
         MaintenanceConsumptionPerSecondEnergy = 25,
         BuildableCategory = {
             'armarad',
       },
     },
     General = {
-      ToggleCaps = {
-        RULEUTC_IntelToggle = true,
-    },
 	UpgradesTo = 'armarad', 
   },
   Intel = {

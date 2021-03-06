@@ -30,6 +30,7 @@ UnitBlueprint {
         },
     },
     Economy = {
+        ProductionPerSecondEnergy = 0,
         TAConsumptionPerSecondEnergy = 60,
         MaintenanceConsumptionPerSecondEnergy = 10,
     },
@@ -42,6 +43,7 @@ UnitBlueprint {
         },
         ToggleCaps = {
             RULEUTC_StealthToggle = true,
+            RULEUTC_IntelToggle = false,    
             },
         },
         Intel = {

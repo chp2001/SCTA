@@ -85,6 +85,8 @@ UnitBlueprint {
         BuildCostEnergy = 1326,
         BuildCostMass = 73,
         BuildTime = 4937,
+        ProductionPerSecondEnergy = 10,
+        MaintenanceConsumptionPerSecondEnergy = 10,
     },
     General = {
         Category = 'Utility',
@@ -96,6 +98,15 @@ UnitBlueprint {
             RULEUCC_Patrol = true,
             RULEUCC_Stop = true,
         },
+        OrderOverrides = {
+            RULEUTC_StealthToggle = {
+                bitmapId = 'stealth-field',
+                helpText = 'toggle_stealth_field',
+            },
+        },
+        ToggleCaps = {
+        RULEUTC_StealthToggle = true,
+        },
         FactionName = 'ARM',
         Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
@@ -103,6 +114,7 @@ UnitBlueprint {
     },
     Intel = {
 	RadarStealth = true,
+    RadarStealthField = true,
     VisionRadius = 14,
 	RadarStealthFieldRadius = 31,
     },

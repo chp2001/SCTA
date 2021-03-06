@@ -77,6 +77,8 @@ UnitBlueprint {
         BuildCostEnergy = 750,
         BuildCostMass = 49,
         BuildTime = 1137,
+        ProductionPerSecondEnergy = 5,
+        MaintenanceConsumptionPerSecondEnergy = 5,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -101,6 +103,9 @@ UnitBlueprint {
             RULEUCC_RetaliateToggle = false,
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
+        },
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
         },
         ConstructionBar = true,
         FactionName = 'ARM',

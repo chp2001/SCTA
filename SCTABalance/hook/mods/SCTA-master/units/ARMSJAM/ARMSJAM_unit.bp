@@ -6,19 +6,9 @@
 UnitBlueprint {
     Merge = true, 
     Economy = {
+        ProductionPerSecondEnergy = 0,
         TAConsumptionPerSecondEnergy = 60,
         MaintenanceConsumptionPerSecondEnergy = 20,
-    },
-    General = {
-        OrderOverrides = {
-            RULEUTC_StealthToggle = {
-                bitmapId = 'stealth-field',
-                helpText = 'toggle_stealth_field',
-            },
-        },
-    ToggleCaps = {
-        RULEUTC_StealthToggle = true,
-        },
     },
     SelectionSizeX = 1.25,
     SelectionSizeZ = 2.6,

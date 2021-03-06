@@ -51,6 +51,9 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/ARMMARK/ARMMARK_lod0_Awalk.sca',
         AnimationWalkRate = 1,
+        Abilities = {
+            '<LOC ability_radar>Radar',
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -67,6 +70,8 @@ UnitBlueprint {
         BuildCostEnergy = 1152,
         BuildCostMass = 95,
         BuildTime = 3200,
+        ProductionPerSecondEnergy = 22,
+        MaintenanceConsumptionPerSecondEnergy = 22,
     },
     General = {
         Category = 'Utility',
@@ -79,6 +84,9 @@ UnitBlueprint {
             RULEUCC_Patrol = true,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
+        },
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
         },
         FactionName = 'ARM',
         Icon = 'land',

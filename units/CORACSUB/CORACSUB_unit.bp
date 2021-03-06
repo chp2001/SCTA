@@ -40,8 +40,9 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'CORE',
         'LEVEL2',
+        'CORE',
+        'OCEAN',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -57,8 +58,6 @@ UnitBlueprint {
         'T2SUBMARINE',
         'OVERLAYSONAR',
         'SELECTION',
-        'OCEAN',
-        'FIELDENGINEER',
         },
     Defense = {
         ArmorType = 'Normal',

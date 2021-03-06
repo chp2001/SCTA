@@ -6,6 +6,13 @@
 UnitBlueprint {
    Merge = true,
     Economy = {
+        ProductionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 0,
         BuildCostMass = 300,
+    },
+    General = {
+        ToggleCaps = {
+            RULEUTC_IntelToggle = false,
+        },
     },
 }

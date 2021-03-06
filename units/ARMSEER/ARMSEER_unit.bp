@@ -71,6 +71,8 @@ UnitBlueprint {
         BuildCostEnergy = 941,
         BuildCostMass = 85,
         BuildTime = 3186,
+        ProductionPerSecondEnergy = 8,
+        MaintenanceConsumptionPerSecondEnergy = 8,
     },
     General = {
         Category = 'Utility',
@@ -81,6 +83,9 @@ UnitBlueprint {
             RULEUCC_Move = true,
             RULEUCC_Patrol = true,
             RULEUCC_Stop = true,
+        },
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
         },
         FactionName = 'ARM',
         Icon = 'land',

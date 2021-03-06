@@ -25,9 +25,16 @@ UnitBlueprint {
         UniformScale = 0.09,
     },
     Economy = {
+        ProductionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 0,
         BuildCostEnergy = 220,
         BuildCostMass = 22,
         BuildTime = 800,
+    },
+    General = {
+        ToggleCaps = {
+            RULEUTC_IntelToggle = false,
+        },
     },
     StrategicIconName = 'icon_bot1_intel',
     Intel = {

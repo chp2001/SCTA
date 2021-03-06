@@ -112,6 +112,8 @@ UnitBlueprint {
         BuildCostEnergy = 7624,
         BuildCostMass = 139,
         BuildTime = 10064,
+        ProductionPerSecondEnergy = 15,
+        MaintenanceConsumptionPerSecondEnergy = 15,
     },
     Footprint = {
         MaxSlope = 0.25,
@@ -133,11 +135,16 @@ UnitBlueprint {
         Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Hunter',
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
+        },
     },
     Intel = {
+        ActiveIntel = {
+            RadarStealth = true,
+        },    
         VisionRadius = 22,
         WaterVisionRadius = 6,
-        FreeIntel = true,
         RadarStealth = true,
         RadarRadius = 103, 
         SonarRadius = 70,

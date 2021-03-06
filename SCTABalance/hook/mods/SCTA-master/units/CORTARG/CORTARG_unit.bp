@@ -44,9 +44,6 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-        ToggleCaps = {
-            RULEUTC_IntelToggle = true,
-        },
         UpgradesFrom = 'corarad',
     },
         Intel = {

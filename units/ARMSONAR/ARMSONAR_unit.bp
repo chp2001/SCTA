@@ -76,6 +76,8 @@ UnitBlueprint {
         BuildCostEnergy = 403,
         BuildCostMass = 20,
         BuildTime = 912,
+        ProductionPerSecondEnergy = 9,
+        MaintenanceConsumptionPerSecondEnergy = 9,
     },
     Footprint = {
         SizeX = 2,
@@ -100,6 +102,15 @@ UnitBlueprint {
             RULEUCC_RetaliateToggle = false,
             RULEUCC_Stop = true,
             RULEUCC_Transport = false,
+        },
+        OrderOverrides = {
+            RULEUTC_IntelToggle = {
+                bitmapId = 'sonar',
+                helpText = 'toggle_sonar',
+            },
+        },
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
         },
         FactionName = 'ARM',
         Icon = 'land',

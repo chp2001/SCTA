@@ -83,6 +83,8 @@ UnitBlueprint {
         BuildCostEnergy = 1757,
         BuildCostMass = 100,
         BuildTime = 5933,
+        ProductionPerSecondEnergy = 20,
+        MaintenanceConsumptionPerSecondEnergy = 20,
     },
     General = {
         Category = 'Utility',
@@ -93,6 +95,15 @@ UnitBlueprint {
             RULEUCC_Patrol = true,
             RULEUCC_Stop = true,
             RULEUCC_Guard = true,
+        },
+        OrderOverrides = {
+            RULEUTC_StealthToggle = {
+                bitmapId = 'stealth-field',
+                helpText = 'toggle_stealth_field',
+            },
+        },
+        ToggleCaps = {
+        RULEUTC_StealthToggle = true,
         },
         FactionName = 'CORE',
         Icon = 'land',

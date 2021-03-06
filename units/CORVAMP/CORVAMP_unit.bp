@@ -111,6 +111,8 @@ UnitBlueprint {
         BuildCostEnergy = 6973,
         BuildCostMass = 257,
         BuildTime = 15924,
+        ProductionPerSecondEnergy = 15,
+        MaintenanceConsumptionPerSecondEnergy = 15,
     },
     Footprint = {
         MaxSlope = 0.25,
@@ -130,6 +132,16 @@ UnitBlueprint {
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
         },
+        OrderOverrides = {
+            RULEUTC_StealthToggle = {
+                bitmapId = 'stealth-personal',
+                helpText = 'toggle_stealth_personal',
+            },
+        },
+          ToggleCaps = {
+              RULEUTC_StealthToggle = true,
+              },
+          },
         FactionName = 'CORE',
         Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',

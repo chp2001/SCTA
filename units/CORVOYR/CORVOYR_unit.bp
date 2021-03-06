@@ -67,6 +67,8 @@ UnitBlueprint {
         BuildCostEnergy = 1152,
         BuildCostMass = 95,
         BuildTime = 3200,
+        ProductionPerSecondEnergy = 16,
+        MaintenanceConsumptionPerSecondEnergy = 16,
     },
     General = {
         Category = 'Utility',
@@ -82,7 +84,7 @@ UnitBlueprint {
         },
         FactionName = 'CORE',
         Icon = 'land',
-TechLevel = 'RULEUTL_Advanced',
+        TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Voyeur',
     },
     Intel = {

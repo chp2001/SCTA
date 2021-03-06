@@ -112,6 +112,8 @@ UnitBlueprint {
         BuildCostEnergy = 7624,
         BuildCostMass = 139,
         BuildTime = 10064,
+        ProductionPerSecondEnergy = 12,
+        MaintenanceConsumptionPerSecondEnergy = 12,
     },
     Footprint = {
         MaxSlope = 0.25,
@@ -129,15 +131,20 @@ UnitBlueprint {
             RULEUCC_Patrol = true,
             RULEUCC_Stop = true,
         },
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
+        },
         FactionName = 'ARM',
         Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Seahawk',
     },
     Intel = {
+    ActiveIntel = {
+        RadarStealth = true,
+    },    
     VisionRadius = 22,
     WaterVisionRadius = 6,
-    FreeIntel = true,
     RadarStealth = true,
     RadarRadius = 103, 
     SonarRadius = 70,

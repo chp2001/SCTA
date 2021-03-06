@@ -51,9 +51,6 @@ UnitBlueprint {
 	MinWaterDepth = 0.5,
     },
     General = {
-        ToggleCaps = {
-            RULEUTC_IntelToggle = true,
-        },
         UpgradesTo = 'armason',
     },
     Intel = {

@@ -75,6 +75,8 @@ UnitBlueprint {
         BuildCostEnergy = 399,
         BuildCostMass = 20,
         BuildTime = 900,
+        ProductionPerSecondEnergy = 8,
+        MaintenanceConsumptionPerSecondEnergy = 8,
     },
     Footprint = {
         SizeX = 2,
@@ -100,10 +102,19 @@ UnitBlueprint {
             RULEUCC_Stop = true,
             RULEUCC_Transport = false,
         },
+        OrderOverrides = {
+            RULEUTC_IntelToggle = {
+                bitmapId = 'sonar',
+                helpText = 'toggle_sonar',
+            },
+        },
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
+        },
         SelectionPriority = 5,
         FactionName = 'CORE',
         Icon = 'land',
-TechLevel = 'RULEUTL_Basic',
+        TechLevel = 'RULEUTL_Basic',
         UnitName = 'Sonar Station',
     },
     Intel = {

@@ -14,20 +14,10 @@ UnitBlueprint {
         BuildCostMass = 480,
         BuildCostEnergy = 42000,
         BuildTime = 20000,
+        ProductionPerSecondEnergy = 0,
         TAConsumptionPerSecondEnergy = 50,
         MaintenanceConsumptionPerSecondEnergy = 10,
       },
-      General = {
-        OrderOverrides = {
-          RULEUTC_StealthToggle = {
-              bitmapId = 'stealth-personal',
-              helpText = 'toggle_stealth_personal',
-          },
-      },
-        ToggleCaps = {
-            RULEUTC_StealthToggle = true,
-            },
-        },
     Physics = {
           FuelRechargeRate = 666666,
           FuelUseTime = 666666,

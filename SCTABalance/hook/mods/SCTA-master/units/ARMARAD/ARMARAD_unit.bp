@@ -31,6 +31,7 @@ UnitBlueprint {
         BuildCostEnergy = 6000,
         BuildTime = 9600,
         BuildCostMass = 400,
+        ProductionPerSecondEnergy = 0,
         MaintenanceConsumptionPerSecondEnergy = 150,
         DifferentialUpgradeCostCalculation = true,
         BuildableCategory = {
@@ -38,9 +39,6 @@ UnitBlueprint {
       },
     },
     General = {
-        ToggleCaps = {
-            RULEUTC_IntelToggle = true,
-        },
     UpgradesFrom = 'armrad',
     UpgradesTo = 'armtarg', 
     },

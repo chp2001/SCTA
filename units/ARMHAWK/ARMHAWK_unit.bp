@@ -142,7 +142,6 @@ UnitBlueprint {
           ToggleCaps = {
               RULEUTC_StealthToggle = true,
               },
-          },
         FactionName = 'ARM',
         Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',

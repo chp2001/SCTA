@@ -52,6 +52,7 @@ UnitBlueprint {
         'SORTCONSTRUCTION',
         'LEVEL3',
         'GANTRY', 
+        'DEVELOPMENT',
     },
     Defense = {
         ArmorType = 'ExperimentalStructure',

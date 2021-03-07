@@ -8,8 +8,8 @@ CommandUnit = Class(oldtaCommandUnit) {
     PlayCommanderWarpInEffect = function(self)
         self:SetCustomName( ArmyBrains[self:GetArmy()].Nickname )
         self:SetUnSelectable(false)
-        self:SetBusy(true)
         self:SetBlockCommandQueue(true)
+        WaitSeconds(2)
         self:ForkThread(self.WarpInEffectThread)
     end,
 }

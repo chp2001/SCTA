@@ -41,7 +41,7 @@ UnitBlueprint {
 	'NAVAL',
 	'CONSTRUCTIONSORTDOWN',
 	'ARM',
-    'PLANT',
+    'DEVELOPMENT',
 	'SORTCONSTRUCTION',
 	'LEVEL2',
     },

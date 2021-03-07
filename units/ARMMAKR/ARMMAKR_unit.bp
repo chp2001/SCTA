@@ -49,7 +49,7 @@ UnitBlueprint {
 	    'ARM',
     },
     CollisionOffsetY = -0.3,
-    CollisionOffsetX = 0.2,
+    CollisionOffsetX = 0.1,
     Defense = {
         DamageModifier = 0.5,
         ArmorType = 'Structure',

@@ -19,4 +19,12 @@ UnitBlueprint {
     SizeX = 1.2,
     SizeY = 1.2,
     SizeZ = 1.2,
+    Weapon = {
+        [1] = {
+            Damage = 24,
+            MaxRadius = 13,
+        },
+        [2] = {
+        },
+    },
 }

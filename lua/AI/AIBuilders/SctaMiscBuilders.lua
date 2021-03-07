@@ -306,7 +306,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ANTIMISSILE} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ANTIMISSILE * categories.LEVEL2} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.7}},
         },
         BuilderType = 'Any',
@@ -315,6 +315,26 @@ BuilderGroup {
                 BuildClose = true,
                 BuildStructures = {
                     'T2MissileDefense',
+                },
+                Location = 'LocationType',
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAMissileDefense2',
+        PlatoonTemplate = 'EngineerBuilderSCTA3',
+        Priority = 70,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {1500} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.ANTIMISSILE * categories.LEVEL3} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.7}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                BuildStructures = {
+                    'T3StrategicMissileDefense',
                 },
                 Location = 'LocationType',
             }
@@ -377,6 +397,26 @@ BuilderGroup {
                 BuildStructures = {
                     'T1AADefense',
                 }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAGameEnder',
+        PlatoonTemplate = 'EngineerBuilderSCTA3',
+        Priority = 70,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {2400} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.STRUCTURE * categories.EXPERIMENTAL * categories.ARTILLERY} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                BuildStructures = {
+                    'T4Artillery',
+                },
+                Location = 'LocationType',
             }
         }
     },

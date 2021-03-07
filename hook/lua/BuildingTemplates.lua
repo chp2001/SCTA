@@ -179,6 +179,10 @@ BuildingTemplates[6] = {
                 'T3Artillery',
                 'armbrtha',
             },
+            {
+                'T4Artillery',
+                'armvulc',
+            },
     
             -- Strategic Missile Structures
             {
@@ -407,6 +411,10 @@ BuildingTemplates[6] = {
         {
             'T3Artillery',
             'corint',
+        },
+        {
+            'T4Artillery',
+            'corbuzz',
         },
 
         -- Strategic Missile Structures

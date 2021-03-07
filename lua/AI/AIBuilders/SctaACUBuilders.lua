@@ -199,6 +199,27 @@ BuilderGroup {
             },
         }
     },
+    Builder {
+        BuilderName = 'SCTA Commander Assist Gantry Construction',
+        PlatoonTemplate = 'CommanderSCTAAssist',
+        Priority = 60,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GANTRY }},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 0.5 } },
+            { IBC, 'BrainNotLowPowerMode', {} },
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                AssistRange = 120,
+                BeingBuiltCategories = {'GANTRY'},                                                   
+                AssistUntilFinished = true,
+            },
+        },
+        BuilderType = 'Any',
+    },
 Builder {
     BuilderName = 'SCTA Commander Assist Gantry',
     PlatoonTemplate = 'CommanderSCTAAssist',

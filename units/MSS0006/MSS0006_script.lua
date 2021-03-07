@@ -19,7 +19,7 @@ MSS0006 = Class(CLandUnit) {
 	 cdrUnit:HideBone(0, true)
 	 cdrUnit:SetUnSelectable(false)
 	 cdrUnit:SetBlockCommandQueue(true)
-	 WaitSeconds(2)
+	 WaitSeconds(1)
 	 cdrUnit:ForkThread(cdrUnit.PlayCommanderWarpInEffect)
  end,
  

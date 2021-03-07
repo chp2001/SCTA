@@ -17,6 +17,7 @@ UnitBlueprint {
 	    'ARM',
 	    'SORTINTEL',
         'TARGETING',
+        'DEVELOPMENT',
     },
  Display = {
   Abilities = {

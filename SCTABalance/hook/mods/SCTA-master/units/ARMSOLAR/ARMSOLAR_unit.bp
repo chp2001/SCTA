@@ -14,7 +14,7 @@ Intel = {
 },
   Economy = {
         BuildCostMass = 240,
-        BuildCostEnergy = 1200,
+        BuildCostEnergy = 1500,
         BuildTime = 3900,
         ProductionPerSecondEnergy = 20,
     },

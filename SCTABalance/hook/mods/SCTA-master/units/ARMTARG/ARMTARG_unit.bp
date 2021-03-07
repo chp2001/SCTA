@@ -2,8 +2,7 @@ UnitBlueprint {
     Merge = true, 
     BuildIconSortPriority = 20,
     Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
+        'BUILTBYT1HOVER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -19,6 +18,7 @@ UnitBlueprint {
 	'ARM',
 	'LEVEL3',
 	'SORTINTEL',
+    'DEVELOPMENT',
     },
     Defense = {
         Health = 3000,

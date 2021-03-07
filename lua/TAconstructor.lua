@@ -398,9 +398,9 @@ TARealCommander = Class(TACommander) {
 
     PlayCommanderWarpInEffect = function(self)
         self:SetCustomName( ArmyBrains[self:GetArmy()].Nickname )
-		self:SetUnSelectable(false)
-        self:SetBusy(true)
-		self:SetBlockCommandQueue(true)
+        self:SetUnSelectable(false)
+        self:SetBlockCommandQueue(true)
+        WaitSeconds(1)
 		self.PlayCommanderWarpInEffectFlag = true
         self:ForkThread(self.ExplosionInEffectThread)
     end,
@@ -409,10 +409,10 @@ TARealCommander = Class(TACommander) {
 		self:PlayUnitSound('CommanderArrival')
 		---self:CreateProjectile( '/effects/entities/UnitTeleport01/UnitTeleport01_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
 		self.PlayCommanderWarpInEffectFlag = false
-		self:CreateProjectile( '/mods/SCTA-master/effects/entities/TAEntrance/TAEntrance_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
-		self:ShowBone(0, true)
 		self:SetMesh(self:GetBlueprint().Display.CloakMeshBlueprint, true)
-		WaitSeconds(3)
+		self:ShowBone(0, true)
+        self:CreateProjectile( '/mods/SCTA-master/effects/entities/TAEntrance/TAEntrance_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
+		WaitSeconds(4)
 		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
         self:SetUnSelectable(false)
 		self:SetBusy(false)

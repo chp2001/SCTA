@@ -43,7 +43,6 @@ UnitBlueprint {
         BuildRate = 200,
 	    MaintenanceConsumptionPerSecondEnergy = 100,
         StorageEnergy = 2500,
-        StorageMass = 1000,
     },
     SelectionSizeX = 1.6,
     SelectionSizeZ = 1.6,

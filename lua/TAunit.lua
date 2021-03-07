@@ -38,8 +38,8 @@ TAunit = Class(Unit)
 		if not self:IsIntelEnabled('Jammer') or not self:IsIntelEnabled('RadarStealth') and EntityCategoryContains(categories.JAM, self) then
 			self.TAIntelOn = nil	
 		end
-		if not self:IsIntelEnabled('Cloak') then
 		self.CloakOn = nil
+		if not self:IsIntelEnabled('Cloak') then
 		self:PlayUnitSound('Uncloak')
 		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
 		end
@@ -84,7 +84,6 @@ TAunit = Class(Unit)
                 self:SetConsumptionPerSecondEnergy(bp.Economy.TAConsumptionPerSecondEnergy)
 			elseif self.CloakOn then
                 self:SetConsumptionPerSecondEnergy(bp.Economy.MaintenanceConsumptionPerSecondEnergy)
-        	end
 			local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
 			if self.CloakOn and self:IsUnitState('Building') then
 				self:DisableIntel('Cloak')
@@ -98,6 +97,20 @@ TAunit = Class(Unit)
 				---self:UpdateConsumptionValues()
 				self:SetMesh(bp.Display.CloakMeshBlueprint, true)
 			end
+		end
+		end
+	end,
+
+	ShouldWatchIntel = function(self)
+		Unit.ShouldWatchIntel(self)
+		if not self.CloakOn then
+		self:DisableIntel('Cloak')
+		self:SetMesh(bp.Display.MeshBlueprint, true)
+		end
+		if not self.TAIntelOn and EntityCategoryContains(categories.JAM, self) then
+			self:DisableIntel('Jammer')
+			self:DisableIntel('RadarStealth')
+			self:DisableIntel('RadarStealthField')
 		end
 	end,
 

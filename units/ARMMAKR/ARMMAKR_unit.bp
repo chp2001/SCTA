@@ -111,9 +111,9 @@ UnitBlueprint {
     SelectionSizeX = 2,
     SelectionSizeZ = 2,
     SelectionThickness = 0.25,
-    SizeX = 2,
+    SizeX = 2.5,
     SizeY = 2,
-    SizeZ = 2,
+    SizeZ = 2.5,
     StrategicIconName = 'icon_structure2_mass',
     StrategicIconSortPriority = 0,
     Weapon = {

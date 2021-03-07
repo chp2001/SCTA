@@ -139,15 +139,15 @@ TechLevel = 'RULEUTL_Secret',
             Label = 'CORBUZZ_WEAPON',
             MaxRadius = 193,
             MinRadus = 10, 
-            MuzzleSalvoDelay = 0, 
-            MuzzleSalvoSize = 2,
+            MuzzleSalvoSize = 1,
+            MuzzleSalvoDelay = 0.1, 
             MuzzleVelocity = 50,
             EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 500,
             EnergyRequired = 2000, --might be to high no rapids
             UseFiringSolutionInsteadOfAimBone = true,
             ProjectileId = '/mods/SCTA-master/projectiles/CORBUZZ_WEAPON/CORBUZZ_WEAPON_proj.bp',
-                    RackBones = {
+                RackBones = {
                         {
                         MuzzleBones = {
                             'flare',
@@ -159,7 +159,7 @@ TechLevel = 'RULEUTL_Secret',
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
-            RackSalvoSize = 3,
+            RackSalvoSize = 6,
             RackSlavedToTurret = false,
             RateOfFire = 5,
             TargetCheckInterval = 1,

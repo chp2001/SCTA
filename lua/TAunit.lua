@@ -88,7 +88,7 @@ TAunit = Class(Unit)
 			if self.CloakOn and self:IsUnitState('Building') then
 				self:DisableIntel('Cloak')
 				self:UpdateConsumptionValues()
-                self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
+                self:SetMesh(bp.Display.MeshBlueprint, true)
 			elseif dudes[1] and self.CloakOn then
 				self:DisableIntel('Cloak')
 				self:SetMesh(bp.Display.MeshBlueprint, true)

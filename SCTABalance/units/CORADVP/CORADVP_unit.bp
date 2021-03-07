@@ -132,13 +132,13 @@ TechLevel = 'RULEUTL_Basic',
         SkirtSizeZ = 6,
         RollOffPoints = {
             {
-                UnitSpin = 0,
+                UnitSpin = 180,
                 X = 0,
                 Y = 0,
                 Z = -2.5,
             },
             {
-                UnitSpin = 180,
+                UnitSpin = 0,
                 X = 0,
                 Y = 0,
                 Z = 2.5,

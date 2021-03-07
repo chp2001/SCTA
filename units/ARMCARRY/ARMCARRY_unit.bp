@@ -144,7 +144,6 @@ UnitBlueprint {
         UnitName = 'Colossus',
     },
     Intel = {
-	FreeIntel = false,
     VisionRadius = 22,
     WaterVisionRadius = 4, 
 	RadarRadius = 113,

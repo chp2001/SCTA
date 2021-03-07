@@ -114,7 +114,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_structure1_mass',
+    StrategicIconName = 'icon_structure2_mass',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_BUILDINGEX

@@ -104,6 +104,7 @@ TAunit = Class(Unit)
 	ShouldWatchIntel = function(self)
 		Unit.ShouldWatchIntel(self)
 		if not self.CloakOn then
+		local bp = self:GetBlueprint()
 		self:DisableIntel('Cloak')
 		self:SetMesh(bp.Display.MeshBlueprint, true)
 		end

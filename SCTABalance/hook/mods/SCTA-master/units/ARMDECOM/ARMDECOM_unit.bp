@@ -38,7 +38,7 @@ UnitBlueprint {
         RegenRate = 10,
     },
     Economy = {
-        BuildCostEnergy = 330000,
+        BuildCostEnergy = 220000,
         BuildCostMass = 9000,
         BuildTime = 100000,
         MaxBuildDistance = 10,
@@ -48,8 +48,8 @@ UnitBlueprint {
             'BUILTBYT2KBOT ARM',
             'BUILTBYT2AIR ARM',
         },
-        ProductionPerSecondEnergy = 700,
-        ProductionPerSecondMass = 6,
+        ProductionPerSecondEnergy = 300,
+        ProductionPerSecondMass = 5,
     },
     Intel = {
         ActiveIntel = {

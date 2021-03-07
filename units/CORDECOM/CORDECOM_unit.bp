@@ -115,8 +115,11 @@ UnitBlueprint {
         BuildRate = 30,
         BuildTime = 24048,
         MaxBuildDistance = 3.75,
+        BuildableCategory = {
+            'BUILTBYCOMMANDER CORE',
+        },
         MaintenanceConsumptionPerSecondEnergy = 100,
-        TAConsumptionPerSecondEnergy = 1000,
+        TAConsumptionPerSecondEnergy = 500,
     },
     Footprint = {
         SizeX = 2,

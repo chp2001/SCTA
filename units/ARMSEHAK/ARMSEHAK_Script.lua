@@ -28,6 +28,7 @@ ARMSEHAK = Class(TASeaair) {
 
 	OnStopBeingBuilt = function(self,builder,layer)
 		TASeaair.OnStopBeingBuilt(self,builder,layer)
+		self:SetMaintenanceConsumptionActive()
 		self.Spinners.radar1:SetSpeed(90)
 		self.Spinners.radar2:SetSpeed(90)
 	end,

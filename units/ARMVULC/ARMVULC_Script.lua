@@ -25,18 +25,12 @@ ARMVULC = Class(TAStructure) {
 				TIFArtilleryWeapon.OnWeaponFired(self)
 				
 				self.unit.currentBarrel = self.unit.currentBarrel + 1
+				self.unit.Spinners.spindle:SetGoal(-90 * (self.unit.currentBarrel + 1))
+				self.unit.Spinners.spindle:SetSpeed(480)
 				if self.unit.currentBarrel == 4 then
 					self.unit.currentBarrel = 0
 				end
 				self.unit:CreateProjectileAtBone('/mods/SCTA-master/effects/entities/Shells/ARMVULC_Shell/ARMVULC_Shell_proj.bp','Shell')
-			end,
-
-    			PlayFxRackReloadSequence = function(self)
-				--TURN spindle to z-axis <90> SPEED <400.09>; (for each turn)
-				self.unit.Spinners.spindle:SetGoal(-90 * (self.unit.currentBarrel + 1))
-				self.unit.Spinners.spindle:SetSpeed(480)
-
-				TIFArtilleryWeapon.PlayFxRackReloadSequence(self)
 			end,
 		},
 	},

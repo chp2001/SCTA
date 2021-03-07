@@ -49,6 +49,7 @@ UnitBlueprint {
 	    'ARM',
     },
     CollisionOffsetY = -0.3,
+    CollisionOffsetX = 0.1,
     Defense = {
         DamageModifier = 0.5,
         ArmorType = 'Structure',
@@ -74,7 +75,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.14,
     },
     Economy = {
         BuildCostEnergy = 687,
@@ -111,9 +112,9 @@ UnitBlueprint {
     SelectionSizeX = 2,
     SelectionSizeZ = 2,
     SelectionThickness = 0.25,
-    SizeX = 2,
+    SizeX = 2.5,
     SizeY = 2,
-    SizeZ = 2,
+    SizeZ = 2.5,
     StrategicIconName = 'icon_structure2_mass',
     StrategicIconSortPriority = 0,
     Weapon = {

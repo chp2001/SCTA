@@ -33,6 +33,7 @@ UnitBlueprint {
 	    'ENERGYPRODUCTION',
         'CORE',
         'FUSION',
+        'TACLOAK',
     },
     Defense = {
         ArmorType = 'Structure',

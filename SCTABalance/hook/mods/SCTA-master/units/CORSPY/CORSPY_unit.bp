@@ -17,6 +17,7 @@ UnitBlueprint {
         'RADAR',
         'OVERLAYRADAR',
         'KBOT',
+        'TACLOAK',
     },
     Display = {
         UniformScale = 0.1,

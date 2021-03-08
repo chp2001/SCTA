@@ -41,6 +41,7 @@ UnitBlueprint {
         'ARM',
         'SNIPER',
         'LASER',
+        'TACLOAK',
     },
     Defense = {
         ArmorType = 'Normal',

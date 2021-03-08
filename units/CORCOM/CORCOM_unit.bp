@@ -86,7 +86,7 @@ UnitBlueprint {
         'OVERLAYSONAR',	
         'CORE',
         'SNIPEMODE',
-        'ALLTERRAIN',
+        'TACLOAK',
     },
     Defense = {
         ArmorType = 'Commander',

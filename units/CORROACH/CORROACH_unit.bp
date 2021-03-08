@@ -35,12 +35,11 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',	
         'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
+	    'LAND',
+	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 	     'CORE',
-	'KAMIKAZI',
-    'ALLTERRAIN',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -56,7 +55,8 @@ UnitBlueprint {
         AnimationWalk = '/mods/SCTA-master/units/CORROACH/CORROACH_lod0_Awalk.sca',
         AnimationWalkRate = 2,
         Abilities = {
-            'Kamikazi',
+            '<LOC ability_suicideweapon>Suicide Weapon',
+            'All-Terrain',
         },
         Mesh = {
             IconFadeInZoom = 130,

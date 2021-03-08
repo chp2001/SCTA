@@ -13,6 +13,7 @@ UnitBlueprint {
         'KBOT',
         'LEVEL3',
         'SNIPER',
+        'TACLOAK',
     },
     Defense = {
         Health = 1000,

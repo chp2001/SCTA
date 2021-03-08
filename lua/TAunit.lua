@@ -35,12 +35,12 @@ TAunit = Class(Unit)
 
 	OnIntelDisabled = function(self)
 		Unit.OnIntelDisabled()
-		if not self:IsIntelEnabled('Jammer') or not self:IsIntelEnabled('RadarStealth') and EntityCategoryContains(categories.JAM, self) then
+		if EntityCategoryContains(categories.JAM, self) and (not self:IsIntelEnabled('Jammer') or not self:IsIntelEnabled('RadarStealth')) then
 			self.TAIntelOn = nil	
 		end
-		self.CloakOn = nil
-		if not self:IsIntelEnabled('Cloak') then
+		if EntityCategoryContains(categories.TACLOAK, self) and not self:IsIntelEnabled('Cloak') then
 		self:PlayUnitSound('Uncloak')
+		self.CloakOn = nil
 		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
 		end
 	end,
@@ -48,12 +48,12 @@ TAunit = Class(Unit)
 	OnIntelEnabled = function(self)
 		Unit.OnIntelEnabled()
 		if not IsDestroyed(self) then
-			if self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth') and EntityCategoryContains(categories.JAM, self) then
+			if EntityCategoryContains(categories.JAM, self) and (self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth')) then
 				self.TAIntelOn = true
 				ForkThread(self.TAIntelMotion, self)
 			end
+			if EntityCategoryContains(categories.TACLOAK, self) and self:IsIntelEnabled('Cloak') then
 			self.CloakOn = true
-			if self:IsIntelEnabled('Cloak') then
 			self:PlayUnitSound('Cloak')
 			self:SetMesh(self:GetBlueprint().Display.CloakMeshBlueprint, true)
 			ForkThread(self.CloakDetection, self)

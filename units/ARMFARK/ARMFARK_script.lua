@@ -9,7 +9,7 @@ local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstr
 ARMFARK = Class(TAconstructor) {
     OnCreate = function(self)
         TAconstructor.OnCreate(self)
-        self:AddBuildRestriction(categories.CYBRAN)
+        self:AddBuildRestriction(categories.ARM)
         end,
 }
 

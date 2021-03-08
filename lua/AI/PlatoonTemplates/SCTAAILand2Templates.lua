@@ -29,7 +29,7 @@ PlatoonTemplate {
             { 'armfav', 1, 1, 'scout', 'none' }
         },
         Core = {
-            { 'corvoyr', 1, 1, 'scout', 'none' }
+            { 'corfast', 1, 1, 'scout', 'none' }
         },
     }
 }

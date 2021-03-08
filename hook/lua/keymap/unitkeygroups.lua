@@ -222,7 +222,11 @@ TAunitkeygroups = {
         "armsh",
         "corfav",
         "corsh", 
+        "corfast",
+    },
+    ["Stealth_Field_Generator"]= {
         "corvoyr",
+        "armmark",
     },
     ["T1_Mobile_Light_Artillery"]= {
         "armham",

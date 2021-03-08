@@ -99,7 +99,7 @@ TechLevel = 'RULEUTL_Secret',
     SizeX = 3,
     SizeY = 2,
     SizeZ = 3,
-    StrategicIconName = 'icon_structure2_directfire',
+    StrategicIconName = 'icon_structure1_directfire',
     StrategicIconSortPriority = 0,
     Weapon = {
         {

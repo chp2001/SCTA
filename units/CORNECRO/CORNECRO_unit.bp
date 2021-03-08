@@ -97,8 +97,8 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 17,
     ProductionPerSecondMass = 1,
     BuildableCategory = {
-        'mas0001',
-        },
+        'BUILTBYT1MINELAYER CORE',
+    },
     },
     Footprint = {
         SizeX = 2,

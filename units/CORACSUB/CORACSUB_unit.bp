@@ -73,7 +73,7 @@ UnitBlueprint {
         AnimationBuild = '/mods/SCTA-master/units/CORACSUB/CORACSUB_lod0_aopen.sca',
         AnimationBuildRate = 0.2, 
         Abilities = {
-            'Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
 	BuildBones = {'muzzle'},
         Mesh = {

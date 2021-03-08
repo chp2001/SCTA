@@ -103,7 +103,7 @@ UnitBlueprint {
         AnimationWing = '/mods/SCTA-master/units/ARMACA/ARMACA_lod0_wings.sca',
         AnimationWingRate = 1, 
         Abilities = {
-            'Adv. Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
         Mesh = {
             IconFadeInZoom = 130,

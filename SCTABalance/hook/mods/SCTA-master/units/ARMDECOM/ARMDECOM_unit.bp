@@ -30,7 +30,7 @@ UnitBlueprint {
         '<LOC ability_personalstealth>Personal Stealth',
         '<LOC ability_amphibious>Amphibious',
         'Decoy',
-        'Construction Unit',
+         '<LOC ability_engineeringsuite>Engineering Suite',
     },
     },
     Defense = {

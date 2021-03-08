@@ -75,7 +75,7 @@ UnitBlueprint {
         AnimationBuild = '/mods/SCTA-master/units/ARMCH/ARMCH_lod0_unpack.sca',
         AnimationBuildRate = 2, 
         Abilities = {
-            'Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
         Mesh = {
             IconFadeInZoom = 130,

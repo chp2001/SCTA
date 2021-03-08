@@ -92,7 +92,7 @@ UnitBlueprint {
             '<LOC ability_cloak>Cloaking',
             '<LOC ability_amphibious>Amphibious',
             'Decoy',
-            'Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
         Mesh = {
             IconFadeInZoom = 130,

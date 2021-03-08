@@ -66,7 +66,7 @@ UnitBlueprint {
     Description = 'Mine Layer Vehicle',
     Display = {
         Abilities = {
-            'Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
         AnimationBuild = '/mods/SCTA-master/units/CORMLV/CORMLV_lod0_unpack.sca',
         AnimationBuildRate = 1, 

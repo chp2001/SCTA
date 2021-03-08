@@ -75,7 +75,7 @@ UnitBlueprint {
         AnimationBuild = '/mods/SCTA-master/units/CORCH/CORCH_lod0_aopen.sca',
         AnimationBuildRate = 1, 
         Abilities = {
-            'Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
             '<LOC ability_hover>Hover',
         },
         Mesh = {

@@ -72,7 +72,7 @@ UnitBlueprint {
         AnimationBuild = '/mods/SCTA-master/units/CORCS/CORCS_lod0_unpack.sca',
         AnimationBuildRate = 1, 
         Abilities = {
-            'Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
 	BuildBones = {'nano'},
         Mesh = {

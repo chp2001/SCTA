@@ -106,7 +106,7 @@ TAunit = Class(Unit)
         if bp.Intel.FreeIntel then
             return false
         end
-        local bpVal = bp.Economy.MaintenanceConsumptionPerSecondEnergy or bp.Economy.MaintenanceConsumptionPerSecondEnergy
+        local bpVal = bp.Economy.MaintenanceConsumptionPerSecondEnergy or bp.Economy.TAConsumptionPerSecondEnergy
         local watchPower = false
         if bpVal and bpVal > 0 then
             local intelTypeTbl = {'JamRadius', 'SpoofRadius'}

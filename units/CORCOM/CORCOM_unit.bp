@@ -86,7 +86,7 @@ UnitBlueprint {
         'OVERLAYSONAR',	
         'CORE',
         'SNIPEMODE',
-        'ALLTERRAIN',
+        'TACLOAK',
     },
     Defense = {
         ArmorType = 'Commander',
@@ -108,7 +108,7 @@ UnitBlueprint {
             '<LOC ability_omni>Omni Sensor',
             '<LOC ability_cloak>Cloaking',
             'D-Gun',
-            'Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
     Mesh = {
         IconFadeInZoom = 130,

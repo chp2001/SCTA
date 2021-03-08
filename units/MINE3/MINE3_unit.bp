@@ -22,16 +22,16 @@ UnitBlueprint {
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
-	'BUILTBYT1MINELAYER',
-	'LAND',
-	'DIRECTFIRE',
+	    'BUILTBYT1MINELAYER',
+	    'LAND',
+	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
         'CORE',
-                'MINE',
+        'MINE',
         'STRUCTURE',
-	'LEVEL1',
-	'KAMIKAZI',
+	    'LEVEL1',
+        'TACLOAK',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -46,7 +46,7 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_cloak>Cloaking',
-            'Kamikazi',
+            '<LOC ability_suicideweapon>Suicide Weapon',
         },
         Mesh = {
             IconFadeInZoom = 130,

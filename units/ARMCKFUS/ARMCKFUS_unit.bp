@@ -21,6 +21,7 @@ UnitBlueprint {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
         'BUILTBYT2VEHICLE',
+        'TACLOAK',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',

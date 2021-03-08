@@ -98,7 +98,7 @@ UnitBlueprint {
     Description = 'Tech Level 1',
     Display = {
         Abilities = {
-            'Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
         Mesh = {
             IconFadeInZoom = 130,

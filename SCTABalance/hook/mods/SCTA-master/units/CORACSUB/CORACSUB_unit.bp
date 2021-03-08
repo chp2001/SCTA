@@ -20,14 +20,11 @@ UnitBlueprint {
     'T2SUBMARINE',
     'OVERLAYSONAR',
     'SELECTION',
-    'FIELDENGINEER',
-    'NECRO',
     },
     Display = {
         Abilities = {
              '<LOC ability_personalstealth>Personal Stealth',
-             'Resurrection',
-             'Construction Unit',
+              '<LOC ability_engineeringsuite>Engineering Suite',
         },
     },
     Defense = {

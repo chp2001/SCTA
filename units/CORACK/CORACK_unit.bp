@@ -76,7 +76,7 @@ UnitBlueprint {
         AnimationWalk = '/mods/SCTA-master/units/CORACK/CORACK_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
-            'Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
         Mesh = {
             IconFadeInZoom = 130,

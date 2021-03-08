@@ -71,7 +71,7 @@ UnitBlueprint {
         Abilities = {
              '<LOC ability_personalstealth>Personal Stealth',
              'Resurrection',
-             'Construction Unit',
+              '<LOC ability_engineeringsuite>Engineering Suite',
     },
     AnimationWalk = '/mods/SCTA-master/units/CORNECRO/CORNECRO_lod0_Awalk.sca',
     AnimationWalkRate = 1,

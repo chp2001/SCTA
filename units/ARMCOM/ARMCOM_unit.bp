@@ -87,7 +87,7 @@ UnitBlueprint {
         'OVERLAYSONAR',	
         'ARM',
         'SNIPEMODE',
-        'ALLTERRAIN',
+        'TACLOAK',
     },
     Defense = {
         ArmorType = 'Commander',
@@ -109,7 +109,7 @@ UnitBlueprint {
             '<LOC ability_omni>Omni Sensor',
             '<LOC ability_cloak>Cloaking',
             'D-Gun',
-            'Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -383,7 +383,7 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
 	        RangeCategory = 'UWRC_DirectFire',
-         WeaponCategory = 'DirectFire',
+            WeaponCategory = 'DirectFire',
             Label = 'AutoDGun',
             MaxRadius = 22,
             MuzzleSalvoDelay = 0,

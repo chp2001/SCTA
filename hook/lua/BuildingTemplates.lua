@@ -169,6 +169,10 @@ BuildingTemplates[6] = {
                 'T2Sonar',
                 'armason',
             },
+            {
+                'T2RadarJammer',
+                'armmark',
+            },
     
             -- Artillery Structures
             {
@@ -393,6 +397,10 @@ BuildingTemplates[6] = {
         {
             'T3Radar',
             'cortarg',
+        },
+        {
+            'T2RadarJammer',
+            'corvoyr',
         },
         {
             'T1Sonar',

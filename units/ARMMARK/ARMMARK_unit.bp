@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 2,
+    BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -50,7 +50,7 @@ UnitBlueprint {
     Description = 'Mobile Radar Kbot',
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/ARMMARK/ARMMARK_lod0_Awalk.sca',
-        AnimationWalkRate = 1,
+        AnimationWalkRate = 3,
         Abilities = {
             '<LOC ability_radar>Radar',
         },

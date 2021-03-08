@@ -9,7 +9,9 @@ local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstr
 ARMFARK = Class(TAconstructor) {
     OnCreate = function(self)
         TAconstructor.OnCreate(self)
+        if not __blueprints['armgant'] then
         self:AddBuildRestriction(categories.ARM)
+        end
         end,
 }
 

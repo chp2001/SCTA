@@ -37,8 +37,7 @@ TAunit = Class(Unit)
 		Unit.OnIntelDisabled()
 		if EntityCategoryContains(categories.JAM, self) and (not self:IsIntelEnabled('Jammer') or not self:IsIntelEnabled('RadarStealth')) then
 			self.TAIntelOn = nil	
-		end
-		if EntityCategoryContains(categories.TACLOAK, self) and not self:IsIntelEnabled('Cloak') then
+		elseif EntityCategoryContains(categories.TACLOAK, self) and not self:IsIntelEnabled('Cloak') then
 		self:PlayUnitSound('Uncloak')
 		self.CloakOn = nil
 		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
@@ -51,8 +50,7 @@ TAunit = Class(Unit)
 			if EntityCategoryContains(categories.JAM, self) and (self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth')) then
 				self.TAIntelOn = true
 				ForkThread(self.TAIntelMotion, self)
-			end
-			if EntityCategoryContains(categories.TACLOAK, self) and self:IsIntelEnabled('Cloak') then
+			elseif EntityCategoryContains(categories.TACLOAK, self) and self:IsIntelEnabled('Cloak') then
 			self.CloakOn = true
 			self:PlayUnitSound('Cloak')
 			self:SetMesh(self:GetBlueprint().Display.CloakMeshBlueprint, true)
@@ -101,19 +99,46 @@ TAunit = Class(Unit)
 		end
 	end,
 
+
+
 	ShouldWatchIntel = function(self)
-		Unit.ShouldWatchIntel(self)
-		if not self.CloakOn then
 		local bp = self:GetBlueprint()
-		self:DisableIntel('Cloak')
-		self:SetMesh(bp.Display.MeshBlueprint, true)
-		end
-		if not self.TAIntelOn and EntityCategoryContains(categories.JAM, self) then
-			self:DisableIntel('Jammer')
-			self:DisableIntel('RadarStealth')
-			self:DisableIntel('RadarStealthField')
-		end
-	end,
+        if bp.Intel.FreeIntel then
+            return false
+        end
+        local bpVal = bp.Economy.MaintenanceConsumptionPerSecondEnergy or bp.Economy.MaintenanceConsumptionPerSecondEnergy
+        local watchPower = false
+        if bpVal and bpVal > 0 then
+            local intelTypeTbl = {'JamRadius', 'SpoofRadius'}
+            local intelTypeBool = {'RadarStealth', 'SonarStealth', 'Cloak'}
+            local intelTypeNum = {'RadarRadius', 'SonarRadius', 'OmniRadius', 'RadarStealthFieldRadius', 'SonarStealthFieldRadius', 'CloakFieldRadius', }
+            local bpInt = bp.Intel
+            if bpInt then
+                for _, v in intelTypeTbl do
+                    for ki, vi in bpInt[v] do
+                        if vi > 0 then
+                            watchPower = true
+                            break
+                        end
+                    end
+                    if watchPower then break end
+                end
+                for _, v in intelTypeBool do
+                    if bpInt[v] then
+                        watchPower = true
+                        break
+                    end
+                end
+                for _, v in intelTypeNum do
+                    if bpInt[v] > 0 then
+                        watchPower = true
+                        break
+                    end
+                end
+            end
+        end
+        return watchPower
+    end,
 
 	OnScriptBitSet = function(self, bit)
 		if bit == 2 or bit == 5 and EntityCategoryContains(categories.JAM, self) then

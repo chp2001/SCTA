@@ -100,46 +100,6 @@ TAunit = Class(Unit)
 	end,
 
 
-
-	ShouldWatchIntel = function(self)
-		local bp = self:GetBlueprint()
-        if bp.Intel.FreeIntel then
-            return false
-        end
-        local bpVal = bp.Economy.MaintenanceConsumptionPerSecondEnergy or bp.Economy.TAConsumptionPerSecondEnergy
-        local watchPower = false
-        if bpVal and bpVal > 0 then
-            local intelTypeTbl = {'JamRadius', 'SpoofRadius'}
-            local intelTypeBool = {'RadarStealth', 'SonarStealth', 'Cloak'}
-            local intelTypeNum = {'RadarRadius', 'SonarRadius', 'OmniRadius', 'RadarStealthFieldRadius', 'SonarStealthFieldRadius', 'CloakFieldRadius', }
-            local bpInt = bp.Intel
-            if bpInt then
-                for _, v in intelTypeTbl do
-                    for ki, vi in bpInt[v] do
-                        if vi > 0 then
-                            watchPower = true
-                            break
-                        end
-                    end
-                    if watchPower then break end
-                end
-                for _, v in intelTypeBool do
-                    if bpInt[v] then
-                        watchPower = true
-                        break
-                    end
-                end
-                for _, v in intelTypeNum do
-                    if bpInt[v] > 0 then
-                        watchPower = true
-                        break
-                    end
-                end
-            end
-        end
-        return watchPower
-    end,
-
 	OnScriptBitSet = function(self, bit)
 		if bit == 2 or bit == 5 and EntityCategoryContains(categories.JAM, self) then
 			--self:SetMaintenanceConsumptionActive()

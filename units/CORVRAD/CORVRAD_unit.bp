@@ -37,7 +37,6 @@ UnitBlueprint {
         'MOBILE',
 	'LAND',
 	'INTELLIGENCE',
-	'RADAR',
         'OVERLAYRADAR',
         'CORE',
     },

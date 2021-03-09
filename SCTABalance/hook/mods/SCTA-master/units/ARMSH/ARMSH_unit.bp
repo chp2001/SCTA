@@ -9,7 +9,6 @@ UnitBlueprint {
     'MOBILE',
     'SCOUT',
     'INTELLIGENCE',
-    'RADAR',
     'OVERLAYRADAR',
     'DIRECTFIRE',
     'OVERLAYDIRECTFIRE',

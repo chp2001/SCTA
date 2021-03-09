@@ -39,7 +39,6 @@ UnitBlueprint {
         'SCOUT',
         'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-        'RADAR',
         'OVERLAYRADAR',
         'ARM',
     },

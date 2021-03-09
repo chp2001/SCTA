@@ -15,7 +15,6 @@ UnitBlueprint {
 	    'LAND',
 	    'INTELLIGENCE',
         'COUNTERINTELLIGENCE',
-	    'RADAR',
         'OVERLAYRADAR',
         'CORE',
 	    'LEVEL3',

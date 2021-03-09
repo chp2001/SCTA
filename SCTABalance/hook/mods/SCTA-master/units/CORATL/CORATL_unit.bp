@@ -12,7 +12,6 @@ UnitBlueprint {
 	    'DEFENSE',
 	    'ANTINAVY',
 	    'NAVAL',
-        'SONAR',
 	    'SORTDEFENSE',
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',

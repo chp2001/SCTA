@@ -65,8 +65,6 @@ UnitBlueprint {
         'LEVEL1',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'RADAR',
-        'SONAR',
         'OVERLAYRADAR',
         'OVERLAYSONAR',
         'MOBILE',

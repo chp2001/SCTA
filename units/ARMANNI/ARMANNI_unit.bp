@@ -36,6 +36,7 @@ UnitBlueprint {
 	    'SORTDEFENSE',
         'LASER',
         'SNIPEMODE',
+        'OVERLAYRADAR',
     },
     Defense = {
         ArmorType = 'Structure',

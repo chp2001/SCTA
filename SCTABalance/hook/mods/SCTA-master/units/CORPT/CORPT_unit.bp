@@ -14,8 +14,6 @@ UnitBlueprint {
 	    'ANTIAIR',
 	    'LIGHTBOAT',
         'OVERLAYDIRECTFIRE',
-        'RADAR',
-        'SONAR',
         'OVERLAYANTIAIR',
         'OVERLAYRADAR',
         'OVERLAYSONAR',

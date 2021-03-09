@@ -16,9 +16,6 @@ UnitBlueprint {
         BuildTime = 4500,
     },
     Display = {
-        Abilities = {
-            '<LOC ability_aa>Anti-Air', 
-        },
         UniformScale = 0.08,
     },
     Footprint = {

@@ -37,6 +37,9 @@ UnitBlueprint {
         'MOBILE',
 	    'LAND',
         'ARM',
+        'SCOUT',
+        'JAM',
+        'OVERLAYRADAR',
     },
     Defense = {
         ArmorType = 'Normal',

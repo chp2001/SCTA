@@ -54,6 +54,9 @@ UnitBlueprint {
     },
     Description = 'Scout',
     Display = {
+        Abilities = {
+            '<LOC ability_radar>Radar',
+        },
         AnimationWalk = '/mods/SCTA-master/units/CORFAV/CORFAV_lod0_wheels.sca',
         AnimationWalkRate = 1,
         MovementEffects = {

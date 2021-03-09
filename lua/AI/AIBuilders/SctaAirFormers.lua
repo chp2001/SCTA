@@ -38,4 +38,14 @@ BuilderGroup {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AIR * categories.ANTIAIR } },
         },
     },
+    Builder {
+        BuilderName = 'SCTAAI Stealth Intercept',
+        PlatoonTemplate = 'StealthFightersAISCTA',
+        Priority = 150,
+        InstanceCount = 200,
+        BuilderType = 'Any',     
+        BuilderConditions = { 
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AIR * categories.ANTIAIR } },
+        },
+    },
 }

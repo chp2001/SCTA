@@ -11,9 +11,6 @@ UnitBlueprint {
         MaxHealth = 600,
     },
     Display = {
-        Abilities = {
-            '<LOC ability_aa>Anti-Air', 
-        },
         UniformScale = 0.08,
     },
     Economy = {

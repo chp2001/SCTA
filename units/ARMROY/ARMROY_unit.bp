@@ -60,7 +60,8 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_depthcharge>Depth Charges',
-            '<LOC ability_sonar>Sonar',
+              '<LOC ability_sonar>Sonar',
+              '<LOC ability_radar>Radar',
         },
         Mesh = {
             IconFadeInZoom = 130,

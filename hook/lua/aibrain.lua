@@ -38,4 +38,84 @@ AIBrain = Class(SCTAAIBrainClass) {
         end
     end,
 
+    PBMBuildNumFactories = function (self, template, location, pType, factory)
+        if not self.SCTAAI then
+            return SCTAAIBrainClass.PBMBuildNumFactories(self, template, location, pType, factory)
+        end
+        local retTemplate = table.deepcopy(template)
+        local assistFacs = factory[1]:GetGuards()
+        table.insert(assistFacs, factory[1])
+        local facs = {T1 = 0, T2 = 0, T3 = 0}
+        for _, v in assistFacs do
+            if EntityCategoryContains(categories.LEVEL3 * categories.FACTORY, v) then
+                facs.T3 = facs.T3 + 1
+            elseif EntityCategoryContains(categories.LEVEL2 * categories.FACTORY, v) then
+                facs.T2 = facs.T2 + 1
+            elseif EntityCategoryContains(categories.FACTORY, v) then
+                facs.T1 = facs.T1 + 1
+            end
+        end
+
+        -- Handle any squads with a specified build quantity
+        local squad = 3
+        while squad <= table.getn(retTemplate) do
+            if retTemplate[squad][2] > 0 then
+                local bp = self:GetUnitBlueprint(retTemplate[squad][1])
+                local buildLevel = AIBuildUnits.UnitBuildCheck(bp)
+                local remaining = retTemplate[squad][3]
+                while buildLevel <= 3 do
+                    if facs['T'..buildLevel] > 0 then
+                        if facs['T'..buildLevel] < remaining then
+                            remaining = remaining - facs['T'..buildLevel]
+                            facs['T'..buildLevel] = 0
+                            buildLevel = buildLevel + 1
+                        else
+                            facs['T'..buildLevel] = facs['T'..buildLevel] - remaining
+                            buildLevel = 10
+                        end
+                    else
+                        buildLevel = buildLevel + 1
+                    end
+                end
+            end
+            squad = squad + 1
+        end
+
+        -- Handle squads with programatic build quantity
+        squad = 3
+        local remainingIds = {T1 = {}, T2 = {}, T3 = {}}
+        while squad <= table.getn(retTemplate) do
+            if retTemplate[squad][2] < 0 then
+                table.insert(remainingIds['T'..AIBuildUnits.UnitBuildCheck(self:GetUnitBlueprint(retTemplate[squad][1])) ], retTemplate[squad][1])
+            end
+            squad = squad + 1
+        end
+        local rTechLevel = 3
+        while rTechLevel >= 1 do
+            for num, unitId in remainingIds['T'..rTechLevel] do
+                for tempRow = 3, table.getn(retTemplate) do
+                    if retTemplate[tempRow][1] == unitId and retTemplate[tempRow][2] < 0 then
+                        retTemplate[tempRow][3] = 0
+                        for fTechLevel = rTechLevel, 3 do
+                            retTemplate[tempRow][3] = retTemplate[tempRow][3] + (facs['T'..fTechLevel] * math.abs(retTemplate[tempRow][2]))
+                            facs['T'..fTechLevel] = 0
+                        end
+                    end
+                end
+            end
+            rTechLevel = rTechLevel - 1
+        end
+
+        -- Remove any IDs with 0 as a build quantity.
+        for i = 1, table.getn(retTemplate) do
+            if i >= 3 then
+                if retTemplate[i][3] == 0 then
+                    table.remove(retTemplate, i)
+                end
+            end
+        end
+
+        return retTemplate
+    end,
+
 }

@@ -30,7 +30,7 @@ UnitBlueprint {
         'CORE',
         'MINE',
         'STRUCTURE',
-	    'LEVEL1',
+	    'LEVEL3',
         'TACLOAK',
     },
     Defense = {
@@ -85,7 +85,7 @@ TechLevel = 'RULEUTL_Advanced',
         Cloak = true,
     },
     LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
+    LifeBarOffset = 0.25,
     LifeBarSize = 1,
     Physics = {
         MotionType = 'RULEUMT_None',

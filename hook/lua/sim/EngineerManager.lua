@@ -36,7 +36,7 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         self.ConsumptionUnits = {
             Engineers = { Category = categories.ENGINEER, Units = {}, UnitsList = {}, Count = 0, },
             Fabricators = { Category = categories.MASSFABRICATION * categories.STRUCTURE, Units = {}, UnitsList = {}, Count = 0, },
-            Lasers = { Category = categories.LASER, Units = {}, UnitsList = {}, Count = 0, },
+            ---Lasers = { Category = categories.LASER, Units = {}, UnitsList = {}, Count = 0, },
             Intel = { Category = categories.STRUCTURE * ( categories.SONAR + categories.RADAR + categories.OMNI + categories.TACLOAK), Units = {}, UnitsList = {}, Count = 0, },
             MobileIntel = { Category = categories.MOBILE - categories.ENGINEER, Units = {}, UnitsList = {}, Count = 0, },
         }
@@ -94,10 +94,6 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         end
 
         if pauseVal != true then
-            pauseVal = self:DisableEnergyGroup(self.ConsumptionUnits.Lasers, econ, pauseVal)
-        end
-
-        if pauseVal != true then
             pauseVal = self:DisableEnergyGroup(self.ConsumptionUnits.Intel, econ, pauseVal)
         end
 
@@ -121,8 +117,6 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         self:EnableGroup(self.ConsumptionUnits.Intel)
 
         self:EnableGroup(self.ConsumptionUnits.MobileIntel)
-        
-        self:EnableGroup(self.ConsumptionUnits.Lasers)
         
         self:EnableGroup(self.ConsumptionUnits.Fabricators)
 

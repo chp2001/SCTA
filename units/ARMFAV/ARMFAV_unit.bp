@@ -53,6 +53,9 @@ UnitBlueprint {
     },
     Description = 'Fast Attack Vehicle',
     Display = {
+        Abilities = {
+            '<LOC ability_radar>Radar',
+        },
         MovementEffects = {
             Land = {
                 Treads = {

@@ -27,13 +27,6 @@ UnitBlueprint {
         BuildCostMass = 150,
         BuildTime = 4500,
     },
-    Display = {
-        Abilities = {
-            '<LOC ability_aa>Anti-Air',
-            '<LOC ability_radar>Radar',
-            '<LOC ability_sonar>Sonar',
-        },
-       },
     Intel = {
     RadarRadius = 50,
     SonarRadius = 80,

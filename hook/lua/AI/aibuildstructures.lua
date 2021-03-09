@@ -1,4 +1,6 @@
 TAExecuteBuildStructure = AIExecuteBuildStructure
+TAAIBuildAdjacency = AIBuildAdjacency
+
 function AIExecuteBuildStructure(aiBrain, builder, buildingType, closeToBuilder, relative, buildingTemplate, baseTemplate, reference, NearMarkerType)
     if not aiBrain.SCTAAI then
         return TAExecuteBuildStructure(aiBrain, builder, buildingType, closeToBuilder, relative, buildingTemplate, baseTemplate, reference, NearMarkerType)
@@ -41,4 +43,11 @@ function AIExecuteBuildStructure(aiBrain, builder, buildingType, closeToBuilder,
         AddToBuildQueue(aiBrain, builder, whatToBuild, NormalToBuildLocation(relativeLoc), false)
         return
     end
+end
+
+function AIBuildAdjacency( aiBrain, builder, buildingType , closeToBuilder, relative, buildingTemplate, baseTemplate, reference, NearMarkerType)
+    if not aiBrain.SCTAAI then
+        return TAAIBuildAdjacency( aiBrain, builder, buildingType , closeToBuilder, relative, buildingTemplate, baseTemplate, reference, NearMarkerType)
+    end
+    AIExecuteBuildStructure( aiBrain, builder, buildingType, builder, true,  buildingTemplate, baseTemplate )
 end

@@ -5,11 +5,6 @@ UnitBlueprint {
         MaxHealth = 2800,
     },
     Display = {
-        Abilities = {
-            '<LOC ability_depthcharge>Depth Charges',
-              '<LOC ability_sonar>Sonar',
-              '<LOC ability_radar>Radar',
-        },
         UniformScale = 0.18,
      },
     Intel = {

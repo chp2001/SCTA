@@ -42,6 +42,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',
         'CORE',
+        'SCOUT',
     },
     CollisionOffsetY = -0.25,
     Defense = {
@@ -57,6 +58,8 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_aa>Anti-Air',
+            '<LOC ability_radar>Radar',
+            '<LOC ability_sonar>Sonar',
         },
         Mesh = {
             IconFadeInZoom = 130,

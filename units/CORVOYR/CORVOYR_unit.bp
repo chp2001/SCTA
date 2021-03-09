@@ -37,6 +37,7 @@ UnitBlueprint {
         'MOBILE',
 	    'LAND',
         'CORE',
+        'SCOUT',
     },
     Defense = {
         ArmorType = 'Normal',

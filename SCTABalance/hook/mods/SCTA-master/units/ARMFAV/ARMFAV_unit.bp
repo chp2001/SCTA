@@ -1,9 +1,6 @@
 UnitBlueprint {
    Merge = true,
     Display = {
-        Abilities = {
-            '<LOC ability_radar>Radar',
-        },
         UniformScale = 0.09,
        },
     Economy = {

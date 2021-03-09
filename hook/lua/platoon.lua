@@ -55,8 +55,21 @@ Platoon = Class(SCTAAIPlatoon) {
 
         -- if we have nothing to build, disband!
         if not cons.BuildStructures then
+            local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
+            local ents = AIUtils.AIGetReclaimablesAroundLocation(aiBrain, locationType) or {}
+            local pos = self:GetPlatoonPosition()
             coroutine.yield(1)
-            return self:IdleEngineerSCTA()
+            if econ.MassStorageRatio > 0.5 and econ.EnergyStorageRatio > 0.5 then
+            self:ForkThread(self.AssistBody)
+            WaitSeconds(self.PlatoonData.Assist.Time or 60)
+            elseif ents[1] and pos then
+                coroutine.yield(1)
+                return self:IdleEngineerSCTA()
+            else
+                coroutine.yield(1)
+                self:PlatoonDisband()
+                return
+            end
         end
         if cons.NearUnitCategory then
             self:SetPrioritizedTargetList('support', {ParseEntityCategory(cons.NearUnitCategory)})
@@ -256,7 +269,17 @@ Platoon = Class(SCTAAIPlatoon) {
             for k, v in cons.BuildStructures do
                 if aiBrain:PlatoonExists(self) then
                     if not eng.Dead then
-                        buildFunction(aiBrain, eng, v, closeToBuilder, relative, buildingTmpl, baseListData, reference, cons.NearMarkerType)
+                        local faction = TAutils.TAGetEngineerFaction(eng)
+                        if aiBrain.CustomUnits[v] and aiBrain.CustomUnits[v][faction] then
+                            local replacement = SUtils.GetTemplateReplacement(aiBrain, v, faction, buildingTmpl)
+                            if replacement then
+                                buildFunction(aiBrain, eng, v, closeToBuilder, relative, replacement, baseListData, reference, cons.NearMarkerType)
+                            else
+                                buildFunction(aiBrain, eng, v, closeToBuilder, relative, buildingTmpl, baseListData, reference, cons.NearMarkerType)
+                            end
+                        else
+                            buildFunction(aiBrain, eng, v, closeToBuilder, relative, buildingTmpl, baseListData, reference, cons.NearMarkerType)
+                        end
                     else
                         if aiBrain:PlatoonExists(self) then
                             self:PlatoonDisband()
@@ -299,12 +322,6 @@ Platoon = Class(SCTAAIPlatoon) {
             local pos = self:GetPlatoonPosition()
 
             if not ents[1] or not pos then
-                WaitTicks(1)
-                self:ForkThread(self.AssistBody)
-                WaitSeconds(self.PlatoonData.Assist.Time or 60)
-                if not brain:PlatoonExists(self) then
-                    return
-                end
                 WaitTicks(1)
                 return self:EngineerBuildAISCTA()
             end

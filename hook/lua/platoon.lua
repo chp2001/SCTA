@@ -23,8 +23,7 @@ Platoon = Class(SCTAAIPlatoon) {
 
         if not eng or eng.Dead then
             coroutine.yield(1)
-            self:PlatoonDisband()
-            return
+            return self:IdleEngineerSCTA()
         end
 
         --DUNCAN - added
@@ -56,8 +55,7 @@ Platoon = Class(SCTAAIPlatoon) {
         -- if we have nothing to build, disband!
         if not cons.BuildStructures then
             coroutine.yield(1)
-            self:PlatoonDisband()
-            return
+            return self:IdleEngineerSCTA()
         end
         if cons.NearUnitCategory then
             self:SetPrioritizedTargetList('support', {ParseEntityCategory(cons.NearUnitCategory)})
@@ -270,8 +268,8 @@ Platoon = Class(SCTAAIPlatoon) {
                         end
                     else
                         if aiBrain:PlatoonExists(self) then
-                            coroutine.yield(1)
-                            return self:IdleEngineerSCTA()
+                            self:PlatoonDisband()
+                            return
                         end
                     end
                 end

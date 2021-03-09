@@ -23,7 +23,8 @@ Platoon = Class(SCTAAIPlatoon) {
 
         if not eng or eng.Dead then
             coroutine.yield(1)
-            return self:IdleEngineerSCTA()
+            self:PlatoonDisband()
+            return
         end
 
         --DUNCAN - added

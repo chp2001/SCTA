@@ -256,21 +256,7 @@ Platoon = Class(SCTAAIPlatoon) {
             for k, v in cons.BuildStructures do
                 if aiBrain:PlatoonExists(self) then
                     if not eng.Dead then
-                        local faction = TAutils.TAGetEngineerFaction(eng)
-                        if aiBrain.CustomUnits[v] and aiBrain.CustomUnits[v][faction] then
-                            local replacement = SUtils.GetTemplateReplacement(aiBrain, v, faction, buildingTmpl)
-                            if replacement then
-                                buildFunction(aiBrain, eng, v, closeToBuilder, relative, replacement, baseListData, reference, cons.NearMarkerType)
-                            else
-                                buildFunction(aiBrain, eng, v, closeToBuilder, relative, buildingTmpl, baseListData, reference, cons.NearMarkerType)
-                            end
-                        else
-                            buildFunction(aiBrain, eng, v, closeToBuilder, relative, buildingTmpl, baseListData, reference, cons.NearMarkerType)
-                        end
-                        if eng:IsIdleState() then
-                                coroutine.yield(10)
-                                return eng:IdleEngineerSCTA()
-                        end
+                        buildFunction(aiBrain, eng, v, closeToBuilder, relative, buildingTmpl, baseListData, reference, cons.NearMarkerType)
                     else
                         if aiBrain:PlatoonExists(self) then
                             self:PlatoonDisband()
@@ -290,6 +276,10 @@ Platoon = Class(SCTAAIPlatoon) {
 
         if not eng.Dead and not eng:IsUnitState('Building') then
             return self.ProcessBuildCommand(eng, false)
+        end
+        if not eng.Dead and eng:IsIdleState() then
+            coroutine.yield(10)
+            return self:IdleEngineerSCTA()
         end
     end,
 

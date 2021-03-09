@@ -8,10 +8,18 @@
 #****************************************************************************
 
 PlatoonTemplate {
+    Name = 'AirHuntAISCTA',
+    Plan = 'HuntAirAISCTA',
+    GlobalSquads = {
+        { categories.AIR * categories.MOBILE * (categories.BOMBER + categories.ANTIAIR), 2, 4, 'attack', 'none' },
+    }
+}
+
+PlatoonTemplate {
     Name = 'IntieAISCTA',
     Plan = 'InterceptorAISCTA',
     GlobalSquads = {
-        { categories.AIR * categories.MOBILE * categories.ANTIAIR * (categories.LEVEL1 + categories.LEVEL3) - categories.BOMBER - categories.TRANSPORTFOCUS - categories.EXPERIMENTAL, 2, 100, 'attack', 'none' },
+        { categories.AIR * categories.MOBILE * categories.ANTIAIR * (categories.LEVEL1 + categories.LEVEL3) - categories.BOMBER - categories.TRANSPORTFOCUS, 2, 100, 'attack', 'none' },
     }
 }
 
@@ -19,7 +27,7 @@ PlatoonTemplate {
     Name = 'StealthFightersAISCTA',
     Plan = 'StealthIntieAISCTA',
     GlobalSquads = {
-        { categories.AIR * categories.MOBILE * categories.ANTIAIR * categories.LEVEL2 - categories.BOMBER - categories.TRANSPORTFOCUS - categories.EXPERIMENTAL, 2, 100, 'attack', 'none' },
+        { categories.AIR * categories.MOBILE * categories.ANTIAIR * categories.LEVEL2 - categories.BOMBER, 2, 100, 'attack', 'none' },
     }
 }
 
@@ -80,12 +88,10 @@ PlatoonTemplate {
     Name = 'T2AirBomberSCTA',
     FactionSquads = {
         Arm = {
-            { 'armawac', 1, 1, 'scout', 'none' },
             { 'armpnix', 1, 2, 'attack', 'GrowthFormation' },
             { 'armhawk', 1, 1, 'attack', 'GrowthFormation' },
         },
         Core = {
-            { 'corawac', 1, 1, 'scout', 'none' },
             { 'corhurc', 1, 2, 'attack', 'GrowthFormation' },
             { 'corvamp', 1, 1, 'attack', 'GrowthFormation' },
         },
@@ -96,12 +102,12 @@ PlatoonTemplate {
     Name = 'T2AirScoutSCTA',
     FactionSquads = {
         Arm = {
-            { 'armawac', 1, 1, 'scout', 'none' },
-            { 'armfark', 1, 1, 'support', 'None' },
+            { 'armawac', 1, 2, 'scout', 'none' },
+            { 'armpnix', 1, 1, 'attack', 'GrowthFormation' },
         },
         Core = {
-            { 'corawac', 1, 1, 'scout', 'none' },
-            { 'cornecro', 1, 1, 'support', 'None' },
+            { 'corawac', 1, 2, 'scout', 'none' },
+            { 'corhurc', 1, 1, 'attack', 'GrowthFormation' },
         },
     }
 }

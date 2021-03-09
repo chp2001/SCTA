@@ -64,6 +64,10 @@ TAunitkeygroups = {
         "corllt",
         "armdrag",
         "cordrag",
+        "mine1",
+        "mine2",
+        "mine3",
+        "mine4",
     },
     ["Anti_Air"]= {
         "armrl",

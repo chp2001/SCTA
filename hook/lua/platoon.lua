@@ -267,6 +267,10 @@ Platoon = Class(SCTAAIPlatoon) {
                         else
                             buildFunction(aiBrain, eng, v, closeToBuilder, relative, buildingTmpl, baseListData, reference, cons.NearMarkerType)
                         end
+                        if eng:IsIdleState() then
+                                coroutine.yield(10)
+                                return eng:IdleEngineerSCTA()
+                        end
                     else
                         if aiBrain:PlatoonExists(self) then
                             self:PlatoonDisband()

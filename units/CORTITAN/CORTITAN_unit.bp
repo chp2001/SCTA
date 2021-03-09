@@ -75,7 +75,6 @@ UnitBlueprint {
     'AIR',
     'VTOL',
     'HIGHALTAIR',
-    'SONAR',
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',
         'CORE',

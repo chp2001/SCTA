@@ -13,7 +13,6 @@ UnitBlueprint {
         'MOBILE',
 	'LAND',
 	'INTELLIGENCE',
-	'RADAR',
         'OVERLAYRADAR',
         'ARM',
     'VEHICLE',

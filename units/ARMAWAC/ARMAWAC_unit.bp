@@ -71,7 +71,6 @@ UnitBlueprint {
         'VTOL',
         'HIGHALTAIR',
         'INTELLIGENCE',
-	    'RADAR',
         'OVERLAYRADAR',
         'OVERLAYOMNI',
         'ARM',

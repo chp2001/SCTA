@@ -41,7 +41,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'CORE',
         'INTELLIGENCE',
-        'RADAR',
         'OVERLAYRADAR',
     },
     Defense = {

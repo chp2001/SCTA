@@ -15,7 +15,6 @@ UnitBlueprint {
         'CORE',
         'NEEDMOBILEBUILD',
 	    'LEVEL3',
-        'RADAR',
         'OVERLAYRADAR',
         'OVERLAYCOUNTERINTEL',
         'JAM',

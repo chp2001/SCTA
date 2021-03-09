@@ -39,7 +39,6 @@ UnitBlueprint {
         'LAND',
         'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-        'RADAR',
         'OVERLAYRADAR',
         'ARM',
         'ALLTERRAIN',

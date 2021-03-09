@@ -15,7 +15,6 @@ UnitBlueprint {
 	    'LAND',
         'KBOT',
 	    'LEVEL1',
-        'RADAR',
         'OVERLAYRADAR',
         'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',

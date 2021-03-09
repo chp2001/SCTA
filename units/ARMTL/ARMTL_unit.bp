@@ -35,7 +35,6 @@ UnitBlueprint {
         'OVERLAYANTINAVY',
         'SORTDEFENSE',
 	'ARM',
-    'SONAR',
     'SNIPEMODE',
     },
     CollisionOffsetY = -1,

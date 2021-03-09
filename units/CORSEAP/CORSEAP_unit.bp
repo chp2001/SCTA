@@ -73,7 +73,6 @@ UnitBlueprint {
         'SNIPEMODE',
         'AIR',
         'VTOL',
-        'SONAR',
         'HIGHALTAIR',
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',

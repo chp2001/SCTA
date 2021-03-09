@@ -277,10 +277,6 @@ Platoon = Class(SCTAAIPlatoon) {
         if not eng.Dead and not eng:IsUnitState('Building') then
             return self.ProcessBuildCommand(eng, false)
         end
-        if not eng.Dead and eng:IsIdleState() then
-            coroutine.yield(10)
-            return self:IdleEngineerSCTA()
-        end
     end,
 
     IdleEngineerSCTA = function(self)

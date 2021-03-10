@@ -43,7 +43,7 @@ UnitBlueprint {
         'NAVAL',
         'ARM',
         'LEVEL1',
-        'FIELDENGINEER',
+        'OCEANENGINEER',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -98,7 +98,7 @@ UnitBlueprint {
         BuildRate = 125,
         BuildTime = 6200,
         BuildableCategory = {
-            'BUILTBYT1SHIP ARM',
+            'BUILTBYT1NAVAL ARM',
         },
         MaxBuildDistance = 3.75,
         StorageEnergy = 30,
@@ -107,7 +107,7 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 5,
     },
     Footprint = {
-        SizeX = 2,
+        SizeX = 1,
         SizeZ = 3,
     },
     General = {

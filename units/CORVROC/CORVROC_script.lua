@@ -3,10 +3,10 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TATreads = import('/mods/SCTA-master/lua/TAMotion.lua').TATreads
 local TARocket = import('/mods/SCTA-master/lua/TAweapon.lua').TARocket
 
-CORVROC = Class(TAunit) {
+CORVROC = Class(TATreads) {
 	Weapons = {
 		CORTRUCK_ROCKET = Class(TARocket) {
 

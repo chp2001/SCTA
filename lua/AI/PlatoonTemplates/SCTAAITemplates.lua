@@ -32,7 +32,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'StrikeForceSCTALaser',
-    Plan = 'SCTAStrikeForceLaserAI', -- The platoon function to use.
+    Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
         { categories.MOBILE * categories.LAND * categories.LASER - SPECIAL, -- Type of units.
           5, -- Min number of units.

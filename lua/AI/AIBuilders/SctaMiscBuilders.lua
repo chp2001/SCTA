@@ -73,7 +73,7 @@ BuilderGroup {
     },  
     Builder {
         BuilderName = 'SCTAAI T1Engineer MetalMaker',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco12',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval12',
         Priority = 90,
         InstanceCount = 2,
         BuilderConditions = {
@@ -417,6 +417,45 @@ BuilderGroup {
                     'T4Artillery',
                 },
                 Location = 'LocationType',
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTATorpedo',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        Priority = 50,
+        InstanceCount = 3,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ROCKET - categories.MOBILE} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.5}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1NavalDefense',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI Naval T1Pgen',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        Priority = 60,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.TIDAL } }, -- Stop after 10 facs have been built.
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1EnergyProduction3',
+                }
             }
         }
     },

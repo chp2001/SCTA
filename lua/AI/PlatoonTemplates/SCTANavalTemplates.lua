@@ -9,7 +9,7 @@
 
 PlatoonTemplate {
     Name = 'SCTAPatrolBoatAttack',
-    Plan = 'NavalForceAI',
+    Plan = 'NavalHuntAI',
     GlobalSquads = {
         { categories.OCEAN * categories.SCOUT, 1, 3, 'Attack', 'GrowthFormation' },
     }
@@ -19,7 +19,7 @@ PlatoonTemplate {
     Name = 'SCTANavalAssault',
     Plan = 'NavalForceAI',
     GlobalSquads = {
-        { categories.MOBILE * categories.OCEAN - categories.ENGINEER - categories.CARRIER, 1, 100, 'Attack', 'GrowthFormation' }
+        { categories.MOBILE * categories.OCEAN - categories.ENGINEER - categories.CARRIER, 4, 100, 'Attack', 'GrowthFormation' }
     },
 }
 

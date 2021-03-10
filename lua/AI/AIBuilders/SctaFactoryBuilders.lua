@@ -345,7 +345,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI T2Naval Factory',
-        PlatoonTemplate = 'EngineerBuilderSCTANaval12',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval',
         Priority = 120,
         InstanceCount = 1,
         BuilderConditions = {

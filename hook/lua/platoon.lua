@@ -512,7 +512,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local data = self.PlatoonData
         local categoryList = {}
         local atkPri = {}
-        if EntityCategoryContains(categories.LASER, self) then
+        if EntityCategoryContains(categories.LASER, data) then
             local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
             while econ.EnergyStorageRatio < 0.4 do
                 WaitSeconds(5)
@@ -533,7 +533,6 @@ Platoon = Class(SCTAAIPlatoon) {
         local maxRadius = data.SearchRadius or 50
         local movingToScout = false
         while aiBrain:PlatoonExists(self) do
-            self:SetPlatoonFormationOverride('Attack')
             if not target or target:IsDead() then
                 if aiBrain:GetCurrentEnemy() and aiBrain:GetCurrentEnemy():IsDefeated() then
                     aiBrain:PickEnemyLogic()
@@ -564,16 +563,15 @@ Platoon = Class(SCTAAIPlatoon) {
                 elseif not movingToScout then
                     movingToScout = true
                     self:Stop()
-                    for k,v in AIUtils.AIGetSortedDefensiveLocations(aiBrain, 10, nil, nil, nil, nil, self:GetPlatoonPosition()) do
+                    for k,v in AIUtils.AIGetSortedMassLocations(aiBrain, 10, nil, nil, nil, nil, self:GetPlatoonPosition()) do
                         if v[1] < 0 or v[3] < 0 or v[1] > ScenarioInfo.size[1] or v[3] > ScenarioInfo.size[2] then
                         end
-                        self:SetPlatoonFormationOverride('AttackFormation')
+                        self:SetPlatoonFormationOverride('Attack')
                         self:MoveToLocation( (v), false )
                     end
                 end
             end
-            self:SetPlatoonFormationOverride('Attack')
-            WaitSeconds(7)
+            WaitSeconds( 7 )
         end
     end,
 

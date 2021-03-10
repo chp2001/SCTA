@@ -19,7 +19,7 @@ UnitBlueprint {
     BuildIconSortPriority = 10,
     Categories = {
         'BUILTBYT1HOVER',
-        'BUILTBYT1SHIP',
+        'BUILTBYT1NAVAL',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
@@ -29,7 +29,7 @@ UnitBlueprint {
         'TECH1',
 	    'STRUCTURE',
         'ECONOMIC',
-        'SORTECONOMY',
+        'SORTSTRATEGIC',
 	    'ENERGYPRODUCTION',
 	    'NAVAL',
 	    'CORE',

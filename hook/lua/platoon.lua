@@ -835,39 +835,22 @@ Platoon = Class(SCTAAIPlatoon) {
                 cmdQ = AIAttackUtils.AIPlatoonSquadAttackVector(aiBrain, self)
                 stuckCount = 0
             -- if we've been stuck and unable to reach next marker? Ignore nearby stuff and pick another target
-            elseif self.LastPosition and VDist2Sq(self.LastPosition[1], self.LastPosition[3], pos[1], pos[3]) < (self.PlatoonData.StuckDistance or 16) then
-                stuckCount = stuckCount + 1
-                if stuckCount >= 2 then
-                    self:StopAttack()
-                    cmdQ = AIAttackUtils.AIPlatoonSquadAttackVector(aiBrain, self)
-                    stuckCount = 0
-                end
-            else
+        elseif self.LastPosition and VDist2Sq(self.LastPosition[1], self.LastPosition[3], pos[1], pos[3]) < (self.PlatoonData.StuckDistance or 8) then
+            stuckCount = stuckCount + 1
+            if stuckCount >= 2 then
+                self:StopAttack()
+                self.LastAttackDestination = {}
+                cmdQ = AIAttackUtils.AIPlatoonSquadAttackVectorSorian(aiBrain, self, bAggro)
                 stuckCount = 0
             end
+        else
+            stuckCount = 0
+        end
 
-            self.LastPosition = pos
-
-            if table.getn(cmdQ) == 0 then
-                -- if we have a low threat value, then go and defend an engineer or a base
-                if mySurfaceThreat < 4
-                    and mySurfaceThreat > 0
-                    and not self.PlatoonData.NeverGuard
-                    and not (self.PlatoonData.NeverGuardEngineers and self.PlatoonData.NeverGuardBases)
-                then
-                    --LOG('*DEBUG: Trying to guard')
-                    return self:GuardEngineer(self.AttackSCTAForceAI)
-                end
-
-                -- we have nothing to do, so find the nearest base and disband
-                if not self.PlatoonData.NeverMerge then
-                    return self:SCTAReturnToBaseAI()
-                end
-                WaitSeconds(5)
-            else
+        self.LastPosition = pos
+            --else
                 -- wait a little longer if we're stuck so that we have a better chance to move
                 WaitSeconds(Random(5,11) + 2 * stuckCount)
-            end
         end
     end,
 

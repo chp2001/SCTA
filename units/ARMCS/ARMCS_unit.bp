@@ -43,7 +43,7 @@ UnitBlueprint {
         'NAVAL',
         'ARM',
         'LEVEL1',
-        'FIELDENGINEER',
+        'OCEANENGINEER',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -107,7 +107,7 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 5,
     },
     Footprint = {
-        SizeX = 2,
+        SizeX = 1,
         SizeZ = 3,
     },
     General = {
@@ -157,7 +157,7 @@ UnitBlueprint {
     SelectionSizeZ = 3,
     SelectionThickness = 0.25,
     SizeX = 2.5,
-    SizeY = 2,
+    SizeY = 1,
     SizeZ = 4,
     StrategicIconName = 'icon_bot1_engineer', 
     StrategicIconSortPriority = 0,

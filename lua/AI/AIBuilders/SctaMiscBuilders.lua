@@ -420,4 +420,23 @@ BuilderGroup {
             }
         }
     },
+    Builder {
+        BuilderName = 'SCTATorpedo',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        Priority = 50,
+        InstanceCount = 3,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ROCKET - categories.MOBILE} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.5}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1NavalDefense',
+                }
+            }
+        }
+    },
 }

@@ -54,9 +54,9 @@ function CreateIdleTab(unitData, id, expandFunc)
             sortedUnits[6] = EntityCategoryFilterDown(categories.FIELDENGINEER * categories.TECH2, self.allunits)
             sortedUnits[5] = EntityCategoryFilterDown(categories.VTOL * categories.LEVEL2 * categories.AIR, self.allunits)
             sortedUnits[4] = EntityCategoryFilterDown(categories.TECH2 * categories.LAND - categories.FIELDENGINEER, self.allunits)
-            sortedUnits[3] = EntityCategoryFilterDown(categories.FIELDENGINEER * categories.TECH1, self.allunits)
+            sortedUnits[3] = EntityCategoryFilterDown(categories.OCEANENGINEER * categories.LEVEL1, self.allunits)
             sortedUnits[2] = EntityCategoryFilterDown(categories.VTOL * categories.LEVEL1 * categories.AIR, self.allunits)
-            sortedUnits[1] = EntityCategoryFilterDown(categories.TECH1 * categories.LAND - categories.FIELDENGINEER, self.allunits)
+            sortedUnits[1] = EntityCategoryFilterDown(categories.TECH1 * categories.LAND - categories.OCEANENGINEER, self.allunits)
 
             local keyToIcon = {'T1', 'T1A', 'T1F', 'T2', 'T2A', 'T2F', 'T3', 'SCU'}
 
@@ -220,9 +220,9 @@ function CreateIdleEngineerList(parent, units)
         engineers[6] = EntityCategoryFilterDown(categories.FIELDENGINEER * categories.TECH2, unitData)
         engineers[5] = EntityCategoryFilterDown(categories.VTOL * categories.LEVEL2 * categories.AIR, unitData)
         engineers[4] = EntityCategoryFilterDown(categories.TECH2 * categories.LAND - categories.FIELDENGINEER, unitData)
-        engineers[3] = EntityCategoryFilterDown(categories.FIELDENGINEER * categories.TECH1, unitData)
+        engineers[3] = EntityCategoryFilterDown(categories.OCEANENGINEER * categories.LEVEL1, unitData)
         engineers[2] = EntityCategoryFilterDown(categories.VTOL * categories.LEVEL1 * categories.AIR, unitData)
-        engineers[1] = EntityCategoryFilterDown(categories.TECH1 * categories.LAND - categories.FIELDENGINEER, unitData)
+        engineers[1] = EntityCategoryFilterDown(categories.TECH1 * categories.LAND - categories.OCEANENGINEER, unitData)
 
         local indexToIcon = {'1', '1', '1', '2', '2', '2', '3', '3'}
         local keyToIcon = {'T1', 'T1A', 'T1F', 'T2', 'T2A', 'T2F', 'T3', 'SCU'}

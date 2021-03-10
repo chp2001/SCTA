@@ -840,7 +840,7 @@ Platoon = Class(SCTAAIPlatoon) {
             if stuckCount >= 2 then
                 self:StopAttack()
                 self.LastAttackDestination = {}
-                cmdQ = AIAttackUtils.AIPlatoonSquadAttackVectorSorian(aiBrain, self, bAggro)
+                cmdQ = AIAttackUtils.AIPlatoonSquadAttackVector( aiBrain, self )
                 stuckCount = 0
             end
         else

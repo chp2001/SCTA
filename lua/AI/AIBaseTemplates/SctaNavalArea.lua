@@ -1,15 +1,13 @@
 
 BaseBuilderTemplate {
-    BaseTemplateName = 'SCTAAIExpansion',
+    BaseTemplateName = 'SCTANavalExpansion',
     Builders = {
         -- List all our builder grous here
         -- ACU
         'SCTAAICommanderBuilder',
 
         -- Unit Builders
-        'SCTAAILandBuilder',
         'SCTAAIAirBuilder',
-        'SCTAAILandFormers',
         'SCTAAIAirFormers',
         'SCTAAINavalBuilder',
         'SCTANavalAttack',
@@ -18,7 +16,6 @@ BaseBuilderTemplate {
         'SCTAAIEngineerMiscBuilder',
         'SCTAAIFactoryBuilders',
         'SCTAUpgrades',
-        'SCTAExpansionBuilders',
     },
     BaseSettings = {
         EngineerCount = {
@@ -28,9 +25,9 @@ BaseBuilderTemplate {
             SCU = 0,
         },
         FactoryCount = {
-            Land = 3,
-            Air = 1,
-            Sea = 0,
+            Land = 0,
+            Air = 0,
+            Sea = 4,
             Gate = 0,
         },
         MassToFactoryValues = {
@@ -45,11 +42,11 @@ BaseBuilderTemplate {
         if not per == 'sctaaiarm' or per == 'sctaaicore' or per == 'sctaaiarmcheat' or per == 'sctaaicorecheat' then
             return -1
         end
-        if markerType != 'Start Location' or markerType != 'Expansion Area' then
+        if markerType != 'Naval Area' then
             return 10
         end
         LOG('Return sctaai personality')
-        return 1000, 'SCTAAIExpansion'
+        return 2000, 'SCTANavalExpansion'
     end,
 }
 

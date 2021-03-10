@@ -322,4 +322,47 @@ BuilderGroup {
             }
         }
     },
+    Builder {
+        BuilderName = 'SCTA T1 Naval Factory Builder',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        Priority = 100,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LAB * categories.NAVAL } }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.PLANT * categories.NAVAL} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}}, -- Stop after 10 facs have been built.
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                Location = 'LocationType',
+                NearMarkerType = 'Naval Area',
+                BuildClose = true,
+                BuildStructures = {
+                    'T1SeaFactory',
+                },
+            },
+        },
+    },
+    Builder {
+        BuilderName = 'SCTAAI T2Naval Factory',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval12',
+        Priority = 120,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {900} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                Location = 'LocationType',
+                NearMarkerType = 'Naval Area',
+                BuildClose = true,
+                BuildStructures = {
+                    'T2SeaFactory',
+                }
+            }
+        }
+    },
 }

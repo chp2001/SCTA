@@ -19,7 +19,7 @@ BaseBuilderTemplate {
         'SCTAAILandFormers',
         'SCTAAIAirFormers',
         'SCTAAINavalBuilder',
-        'SCTANavalAttack',
+        'SCTANavalFormer',
         
         -- Buildings etc
         'SCTAAIEngineerMiscBuilder',

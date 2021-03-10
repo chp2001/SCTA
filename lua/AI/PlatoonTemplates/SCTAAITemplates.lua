@@ -71,7 +71,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTA',
     Plan = 'SCTAStrikeForceAI',
     GlobalSquads = {
-        { categories.MOBILE * categories.LAND - SPECIAL, 2, 20, 'Attack', 'none' }
+        { categories.MOBILE * categories.LAND - SPECIAL, 5, 20, 'Attack', 'none' }
     },
 }
 

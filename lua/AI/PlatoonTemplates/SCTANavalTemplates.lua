@@ -9,7 +9,7 @@
 
 PlatoonTemplate {
     Name = 'SCTAPatrolBoatAttack',
-    Plan = 'HuntAILABSCTA',
+    Plan = 'NavalHuntAI',
     GlobalSquads = {
         { categories.OCEAN * categories.SCOUT, 1, 3, 'Attack', 'GrowthFormation' },
     }

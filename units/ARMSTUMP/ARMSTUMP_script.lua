@@ -3,10 +3,10 @@
 #
 #Blueprint created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TATreads = import('/mods/SCTA-master/lua/TAMotion.lua').TATreads
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-ARMSTUMP = Class(TAunit) {
+ARMSTUMP = Class(TATreads) {
 
 	Weapons = {
 		ARM_LIGHTCANNON = Class(TAweapon) {

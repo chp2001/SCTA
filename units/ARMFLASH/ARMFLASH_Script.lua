@@ -3,17 +3,12 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
-local Projectile = import('/lua/sim/DefaultWeapons.lua').DefaultProjectileWeapon
+local TATreads = import('/mods/SCTA-master/lua/TAMotion.lua').TATreads
+local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-ARMFLASH = Class(TAunit) {
+ARMFLASH = Class(TATreads) {
 	Weapons = {
-		EMG = Class(Projectile) {
-			OnWeaponFired = function(self)
-				Projectile.OnWeaponFired(self)
-				
-			end,
-		},
+		EMG = Class(TAweapon) {},
 	},
 }
 

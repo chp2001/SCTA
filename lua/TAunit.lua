@@ -15,7 +15,6 @@ TAunit = Class(Unit)
    ---end,
 
 	OnCreate = function(self)
-		local bp = self:GetBlueprint()
         --self._UnitName = bp.General.UnitName
         ---self:LOGDBG('TAUnit.OnCreate')
         Unit.OnCreate(self)
@@ -26,7 +25,6 @@ TAunit = Class(Unit)
         ---self:LOGDBG('TAUnit.OnStopBeingBuilt')
 		Unit.OnStopBeingBuilt(self,builder,layer)
 		self:SetDeathWeaponEnabled(true)
-		---self:SetConsumptionActive(true)	
 	end,
 
 	OnDamage = function(self, instigator, amount, vector, damageType)

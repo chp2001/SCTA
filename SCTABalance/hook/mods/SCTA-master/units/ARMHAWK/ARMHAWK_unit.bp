@@ -3,8 +3,8 @@ UnitBlueprint {
     Air = {
       BreakOffDistance = 17,
       BreakOffTrigger = 12,
-      MaxAirspeed = 20,
-      MinAirspeed = 10,
+      MaxAirspeed = 18,
+      MinAirspeed = 9,
   },
     Defense = {
           Health = 2100,

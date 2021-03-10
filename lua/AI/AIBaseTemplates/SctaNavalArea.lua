@@ -7,16 +7,15 @@ BaseBuilderTemplate {
         'SCTAAICommanderBuilder',
 
         -- Unit Builders
-        'SCTAAILandBuilder',
         'SCTAAIAirBuilder',
-        'SCTAAILandFormers',
         'SCTAAIAirFormers',
+        'SCTAAINavalBuilder',
+        'SCTANavalAttack',
 
         -- Buildings etc
         'SCTAAIEngineerMiscBuilder',
         'SCTAAIFactoryBuilders',
         'SCTAUpgrades',
-        'SCTAExpansionBuilders',
     },
     BaseSettings = {
         EngineerCount = {
@@ -26,9 +25,9 @@ BaseBuilderTemplate {
             SCU = 0,
         },
         FactoryCount = {
-            Land = 3,
-            Air = 1,
-            Sea = 0,
+            Land = 0,
+            Air = 0,
+            Sea = 4,
             Gate = 0,
         },
         MassToFactoryValues = {
@@ -44,10 +43,10 @@ BaseBuilderTemplate {
             return -1
         end
         if markerType != 'Naval Area' then
-            return 15
+            return 10
         end
         LOG('Return sctaai personality')
-        return 1000, 'SCTAAINaval'
+        return 2000, 'SCTANavalExpansion'
     end,
 }
 

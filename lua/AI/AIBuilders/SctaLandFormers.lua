@@ -47,6 +47,7 @@ BuilderGroup {
         InstanceCount = 200,
         BuilderType = 'Any',
         BuilderData = {
+            Laser = true,
             NeverGuardBases = true,
             NeverGuardEngineers = true,
             UseFormation = 'AttackFormation',

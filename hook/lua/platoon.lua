@@ -512,7 +512,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local data = self.PlatoonData
         local categoryList = {}
         local atkPri = {}
-        if EntityCategoryContains(categories.LASER, self) then
+        if data.Laser then
             local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
             if econ.EnergyStorageRatio < 0.4 then
                 WaitSeconds(5)
@@ -562,27 +562,18 @@ Platoon = Class(SCTAAIPlatoon) {
                     end
                     movingToScout = false
                 elseif not movingToScout then
+                    self:SetPlatoonFormationOverride('AttackFormation')
                     movingToScout = true
                     self:Stop()
                     for k,v in AIUtils.AIGetSortedMassLocations(aiBrain, 10, nil, nil, nil, nil, self:GetPlatoonPosition()) do
                         if v[1] < 0 or v[3] < 0 or v[1] > ScenarioInfo.size[1] or v[3] > ScenarioInfo.size[2] then
                         end
-                    local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, self.MovementLayer, self:GetPlatoonPosition(), v, 100 , 10000)
-                        self:Stop()
-                        if path then
-                        local pathLength = table.getn(path)
-                        for i=1, pathLength do
-                        --WaitSeconds( 1 )
-                        self:MoveToLocation(path[i], false)
-                        --WaitSeconds( 1 )
-                        self:SetPlatoonFormationOverride('Attack')
-                        end         
+                        self:MoveToLocation( (v), false )
                     end
                 end
             end
             self:SetPlatoonFormationOverride('Attack')
             WaitSeconds( 7 )
-        end
         end
     end,
 

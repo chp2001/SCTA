@@ -512,11 +512,11 @@ Platoon = Class(SCTAAIPlatoon) {
         local data = self.PlatoonData
         local categoryList = {}
         local atkPri = {}
-        if EntityCategoryContains(categories.LASER, data) then
+        if EntityCategoryContains(categories.LASER, self) then
             local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
-            while econ.EnergyStorageRatio < 0.4 do
+            if econ.EnergyStorageRatio < 0.4 then
                 WaitSeconds(5)
-                econ = AIUtils.AIGetEconomyNumbers(aiBrain)
+                return
             end
         end
         if data.PrioritizedCategories then
@@ -572,7 +572,9 @@ Platoon = Class(SCTAAIPlatoon) {
                         if path then
                         local pathLength = table.getn(path)
                         for i=1, pathLength do
+                        --WaitSeconds( 1 )
                         self:MoveToLocation(path[i], false)
+                        --WaitSeconds( 1 )
                         self:SetPlatoonFormationOverride('Attack')
                         end         
                     end

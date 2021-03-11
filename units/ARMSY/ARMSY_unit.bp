@@ -137,23 +137,23 @@ UnitBlueprint {
             UnitSpin = 0,
             X = 0,
             Y = 0,
-            Z = 6,
+            Z = 10,
         },
         {
             UnitSpin = 90,
-            X = 6,
+            X = 10,
             Y = 0,
             Z = 0,
         },    
-                  {
+        {
             UnitSpin = 180,
             X = 0,
             Y = 0,
-            Z = -6,
+            Z = -10,
         },
         {
             UnitSpin = -90,
-            X = -6,
+            X = 10,
             Y = 0,
             Z = 0,
         },

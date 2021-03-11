@@ -79,7 +79,7 @@ UnitBlueprint {
         BuildTime = 13310,
 	BuildRate = 200,
 	InitialRallyX = 0,
-	InitialRallyZ = 7,
+	InitialRallyZ = 10,
         BuildableCategory = {
             'OCEAN LEVEL2 ARM',
         },
@@ -127,16 +127,16 @@ UnitBlueprint {
         SkirtSizeZ = 6,
     RollOffPoints = {
         {
-            UnitSpin = 0,
-            X = 0,
-            Y = 0,
-            Z = 6,
-        },
-        {
             UnitSpin = 180,
             X = 0,
             Y = 0,
-            Z = -6,
+            Z = -10,
+        },
+        {
+            UnitSpin = 0,
+            X = 0,
+            Y = 0,
+            Z = 10,
         },
     },
     },

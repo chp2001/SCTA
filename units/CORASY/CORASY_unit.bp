@@ -79,7 +79,7 @@ UnitBlueprint {
         BuildTime = 13080,
 	BuildRate = 200,
 	InitialRallyX = 0,
-	InitialRallyZ = 7,
+	InitialRallyZ = 10,
         BuildableCategory = {
             'OCEAN LEVEL2 CORE',
         },
@@ -113,8 +113,8 @@ UnitBlueprint {
 	UnitName = 'Adv. Shipyard',
     },
     Intel = {
-        VisionRadius = 14,
-        WaterVisionRadius = 4, 
+        VisionRadius = 10,
+        WaterVisionRadius = 6,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -127,16 +127,16 @@ UnitBlueprint {
         SkirtSizeZ = 6,
         RollOffPoints = {
             {
-                UnitSpin = 0,
-                X = 0,
-                Y = 0,
-                Z = 3,
-            },
-            {
                 UnitSpin = 180,
                 X = 0,
                 Y = 0,
-                Z = -3,
+                Z = -10,
+            },
+            {
+                UnitSpin = 0,
+                X = 0,
+                Y = 0,
+                Z = 10,
             },
         },
     },

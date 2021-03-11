@@ -140,3 +140,15 @@ PlatoonTemplate {
         },
     }
 }
+
+PlatoonTemplate {
+    Name = 'SCTATransport',
+    FactionSquads = {
+        Arm = {
+            { 'armatlas', 1, 1, 'support', 'GrowthFormation' }
+        },
+        Core = {
+            { 'corvalk', 1, 1, 'support', 'GrowthFormation' }
+        },
+    }
+}

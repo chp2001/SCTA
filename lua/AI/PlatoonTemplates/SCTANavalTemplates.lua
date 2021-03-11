@@ -35,10 +35,10 @@ PlatoonTemplate {
     Name = 'T1ScoutShipSCTA',
     FactionSquads = {
         Arm = {
-            { 'armpt', 1, 2, 'Attack', 'GrowthFormation'}
+            { 'armpt', 1, 2, 'Attack', 'GrowthFormation'},
         },
         Core = {
-            { 'corpt', 1, 2, 'Attack', 'GrowthFormation' }
+            { 'corpt', 1, 2, 'Attack', 'GrowthFormation' },
         },
     }
 }

@@ -444,17 +444,16 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         Priority = 60,
         InstanceCount = 2,
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.TIDAL } }, -- Stop after 10 facs have been built.
+        BuilderConditions = { -- Stop after 10 facs have been built.
+            { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.1 }},
         },
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
             Construction = {
-                BuildClose = true,
                 BuildStructures = {
-                    'T1EnergyProduction3',
+                    'T1EnergyProduction',
                 }
             }
         }

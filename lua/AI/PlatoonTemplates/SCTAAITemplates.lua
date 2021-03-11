@@ -5,12 +5,13 @@
         Responsible for defining a mapping from AIBuilders keys -> Plans (Plans === platoon.lua functions)
 ]]
 local SPECIAL = categories.RAIDER - categories.EXPERIMENTAL - categories.ENGINEER
+local GROUND = categories.MOBILE * categories.LAND
 
 PlatoonTemplate {
     Name = 'AntiAirSCTA',
     Plan = 'SCTAAntiAirAI', -- The platoon function to use.
     GlobalSquads = {
-        { categories.MOBILE * categories.LAND * categories.ANTIAIR, -- Type of units.
+        { GROUND * categories.ANTIAIR, -- Type of units.
           5, -- Min number of units.
           10, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
@@ -22,7 +23,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTA',
     Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
-        { categories.MOBILE * categories.LAND - SPECIAL - categories.LASER, -- Type of units.
+        { GROUND - SPECIAL - categories.LASER, -- Type of units.
           5, -- Min number of units.
           10, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
@@ -34,7 +35,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTALaser',
     Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
-        { categories.MOBILE * categories.LAND * categories.LASER - SPECIAL, -- Type of units.
+        { GROUND * categories.LASER - SPECIAL, -- Type of units.
           5, -- Min number of units.
           10, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
@@ -58,7 +59,7 @@ PlatoonTemplate {
     Name = 'LABSCTA',
     Plan = 'HuntAILABSCTA', -- The platoon function to use.
     GlobalSquads = {
-        { categories.MOBILE * (categories.RAIDER + categories.SCOUT), -- Type of units.
+        { categories.MOBILE * categories.RAIDER, -- Type of units.
           1, -- Min number of units.
           3, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
@@ -71,7 +72,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTA',
     Plan = 'AttackSCTAForceAI',
     GlobalSquads = {
-        { categories.MOBILE * categories.LAND - SPECIAL, 5, 20, 'Attack', 'none' }
+        { GROUND - SPECIAL, 5, 20, 'Attack', 'none' }
     },
 }
 
@@ -79,7 +80,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTAEarly',
     Plan = 'SCTAStrikeForceAIEarly',
     GlobalSquads = {
-        { categories.MOBILE * categories.LAND * categories.LEVEL1 - SPECIAL, 5, 10, 'Attack', 'none' }
+        { GROUND * categories.LEVEL1 - SPECIAL, 5, 10, 'Attack', 'none' }
     },
 }
 
@@ -87,17 +88,8 @@ PlatoonTemplate {
     Name = 'LandRocketAttackSCTA',
     Plan = 'AttackSCTAForceAI',
     GlobalSquads = {
-        { categories.MOBILE * categories.LAND * (categories.ROCKET + categories.ARTILLERY) - SPECIAL, 5, 20, 'Attack', 'none' }
+        { GROUND * (categories.ROCKET + categories.ARTILLERY) - SPECIAL, 5, 20, 'Attack', 'none' }
     },
-}
-
-
-PlatoonTemplate {
-    Name = 'T1AirScoutFormSCTA',
-    Plan = 'ScoutingAI',
-    GlobalSquads = {
-        { categories.AIR * categories.SCOUT, 1, 1, 'scout', 'None' },
-    }
 }
 
 
@@ -105,7 +97,7 @@ PlatoonTemplate {
     Name = 'T4ExperimentalSCTA',
     Plan = 'ExperimentalAIHubSorian', 
     GlobalSquads = {
-        { categories.EXPERIMENTAL * categories.LAND * categories.MOBILE, 1, 1, 'attack', 'none' }
+        { categories.EXPERIMENTAL * categories.MOBILE - categories.SUBCOMMANDER, 1, 1, 'attack', 'none' }
     },
 }
 
@@ -125,6 +117,43 @@ PlatoonTemplate {
         },
         Core = {
             { 'corkrog', 1, 1, 'attack', 'none' },
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T3LandHOVERSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armanac', 1, 3, 'attack', 'none' }
+        },
+        Core = {
+            { 'corsnap', 1, 3, 'attack', 'none' }
+        },
+    }
+}
+
+
+PlatoonTemplate {
+    Name = 'THOVERAASCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armah', 1, 1, 'attack', 'none' }
+        },
+        Core = {
+            { 'corah', 1, 1, 'attack', 'none' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T3HOVERMISSILESCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armmh', 1, 2, 'attack', 'none' }
+        },
+        Core = {
+            { 'cormh', 1, 2, 'attack', 'none' }
         },
     }
 }

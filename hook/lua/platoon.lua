@@ -58,13 +58,13 @@ Platoon = Class(SCTAAIPlatoon) {
             local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
             local ents = AIUtils.AIGetReclaimablesAroundLocation(aiBrain, locationType) or {}
             local pos = self:GetPlatoonPosition()
-            coroutine.yield(1)
-            if econ.MassStorageRatio > 0.5 and econ.EnergyStorageRatio > 0.5 then
-            self:ForkThread(self.AssistBody)
-            WaitSeconds(self.PlatoonData.Assist.Time or 60)
-            elseif ents[1] and pos then
+            if ents[1] and pos then
                 coroutine.yield(1)
                 return self:IdleEngineerSCTA()
+            elseif econ.MassStorageRatio > 0.5 and econ.EnergyStorageRatio > 0.5 then
+                coroutine.yield(1)
+                self:ForkThread(self.AssistBody)
+                WaitSeconds(self.PlatoonData.Assist.Time or 60)
             else
                 coroutine.yield(1)
                 self:PlatoonDisband()

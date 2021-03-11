@@ -27,12 +27,12 @@ ARMATLAS = Class(TATransportAir) {
 
 	OpenWings = function(self)
 		--MOVE arm1 to x-axis <-3.40> SPEED <3.00>;
-		self.Sliders.arm1:SetGoal(4,0,0)
-		self.Sliders.arm1:SetSpeed(4)
+		self.Sliders.arm1:SetGoal(3,0,0)
+		self.Sliders.arm1:SetSpeed(3)
 
 		--MOVE arm2 to x-axis <3.40> SPEED <3.00>;
-		self.Sliders.arm2:SetGoal(-4,0,0)
-		self.Sliders.arm2:SetSpeed(4)
+		self.Sliders.arm2:SetGoal(-3,0,0)
+		self.Sliders.arm2:SetSpeed(3)
 
 		--MOVE arm3 to z-axis <-4.80> SPEED <4.00>;
 		self.Sliders.arm3:SetGoal(0,0,-4)

@@ -110,5 +110,19 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.LEVEL3} }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAirTransport',
+        PlatoonTemplate = 'SCTATransport',
+        Priority = 50,
+        BuilderConditions = {
+            { MIBC, 'ArmyNeedsTransports', {} },
+            { UCBC, 'LocationFactoriesBuildingLess', { 'LocationType', 2, 'AIRTRANSPORT' } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 25, 'AIRTRANSPORT' } },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'AIRTRANSPORT' } },
+            { IBC, 'BrainNotLowPowerMode', {} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
+        },
+        BuilderType = 'All',
     },     
 }

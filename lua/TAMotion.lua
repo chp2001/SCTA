@@ -39,30 +39,7 @@ TASea = Class(TAunit)
 
 }
 
-TATreads = Class(TAunit) 
-{ 
-    OnStopBeingBuilt = function(self,builder,layer)
-        ---self:LOGDBG('TAUnit.OnStopBeingBuilt')
-		local treads = self:GetBlueprint().Display.MovementEffects.Land.Treads
-        TAunit.OnStopBeingBuilt(self,builder,layer)
-        if treads then
-			self.TreadEffects = true
-		end
-    end,
-
-    OnMotionHorzEventChange = function( self, new, old )
-        ---self:LOGDBG('TAWalking.OnMotionHorzEventChange')
-        TAunit.OnMotionHorzEventChange(self, new, old)
-        if self.TreadEffects then
-            local treads = self:GetBlueprint().Display.MovementEffects.Land.Treads
-            for k, v in treads.TreadMarks do
-                table.insert(self.TreadThreads, self:ForkThread(self.CreateTreadsThread, v, type))
-            end
-        end
-    end,
-}
-
-TAWalking = Class(TATreads) 
+TAWalking = Class(TAunit) 
 {
     WalkingAnim = nil,
     WalkingAnimRate = 1,
@@ -73,7 +50,7 @@ TAWalking = Class(TATreads)
 
     OnMotionHorzEventChange = function( self, new, old )
         ---self:LOGDBG('TAWalking.OnMotionHorzEventChange')
-        TATreads.OnMotionHorzEventChange(self, new, old)
+        TAunit.OnMotionHorzEventChange(self, new, old)
         if ( old == 'Stopped' ) then
             if (not self.Animator) then
                 self.Animator = CreateAnimator(self, true)
@@ -107,5 +84,4 @@ TACounter = Class(TAWalking)
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
 		self:RequestRefreshUI()
 	end,
-
 }

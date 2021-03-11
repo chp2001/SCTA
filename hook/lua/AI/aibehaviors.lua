@@ -24,6 +24,7 @@ end
 
 function CommanderThreadSCTA(cdr, platoon)
     --LOG('cdr is '..cdr.UnitId)
+    local WaitTaunt = 600 + Random(1, 600)
     local aiBrain = cdr:GetAIBrain()
     aiBrain:BuildScoutLocations()
     -- Added to ensure we know the start locations (thanks to Sorian).
@@ -66,6 +67,10 @@ function CommanderThreadSCTA(cdr, platoon)
             end
         end
         WaitTicks(1)
+        if not cdr.Dead and GetGameTimeSeconds() > WaitTaunt and (not aiBrain.LastVocTaunt or GetGameTimeSeconds() - aiBrain.LastVocTaunt > WaitTaunt) then
+            SUtils.AIRandomizeTaunt(aiBrain)
+            WaitTaunt = 600 + Random(1, 900)
+        end
     end
 end
 

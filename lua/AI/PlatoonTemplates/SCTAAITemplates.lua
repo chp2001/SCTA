@@ -24,7 +24,7 @@ PlatoonTemplate {
     GlobalSquads = {
         { categories.MOBILE * categories.LAND - SPECIAL - categories.LASER, -- Type of units.
           5, -- Min number of units.
-          20, -- Max number of units.
+          10, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
           'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
@@ -69,7 +69,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'LandAttackSCTA',
-    Plan = 'SCTAStrikeForceAI',
+    Plan = 'AttackSCTAForceAI',
     GlobalSquads = {
         { categories.MOBILE * categories.LAND - SPECIAL, 5, 20, 'Attack', 'none' }
     },

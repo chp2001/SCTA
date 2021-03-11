@@ -15,7 +15,6 @@ UnitBlueprint {
         StorageMass = 10,
         BuildableCategory = {
             'BUILTBYT1AIR CORE',
-            'cortide',
         },
     },
     Intel = {

@@ -20,6 +20,16 @@ BuilderGroup {
          },
     },
     Builder {
+        BuilderName = 'SCTAAI Radar Scout',
+        PlatoonTemplate = 'SCTAT2AirScouting',
+        Priority = 125,
+        InstanceCount = 2,
+        BuilderType = 'Any',
+        BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AIR * categories.SCOUT } },
+         },
+    },
+    Builder {
         BuilderName = 'SCTAAI Air Attack',
         PlatoonTemplate = 'BomberAttack',
         Priority = 100,
@@ -46,7 +56,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderType = 'Any',     
         BuilderConditions = { 
-            { MIBC, 'LessThanGameTime', {600} },
+            { MIBC, 'LessThanGameTime', {300} },
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AIR * categories.ANTIAIR } },
         },
     },

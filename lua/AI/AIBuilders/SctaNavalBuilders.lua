@@ -41,7 +41,32 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA T1 Naval Assault',
         PlatoonTemplate = 'SCTANavalAssault',
-        Priority = 25,
+        Priority = 50,
+        InstanceCount = 10,
+        BuilderType = 'Any',
+        BuilderData = {
+            UseFormation = 'AttackFormation',
+            ThreatWeights = {
+                IgnoreStrongerTargetsRatio = 100.0,  #DUNCAN - uncommented, was 100
+                PrimaryThreatTargetType = 'Naval',
+                SecondaryThreatTargetType = 'Economy',
+                SecondaryThreatWeight = 0.1,
+                WeakAttackThreatWeight = 1,
+                VeryNearThreatWeight = 10,
+                NearThreatWeight = 5,
+                MidThreatWeight = 1,
+                FarThreatWeight = 1,
+            },
+        },
+        BuilderConditions = {
+            { UCBC, 'UnitsLessAtLocation', { 'LocationType', 1, 'MOBILE TECH3 NAVAL' } },
+            { SeaAttackCondition, { 'LocationType', 50 } }, 
+        },
+    },
+    Builder {
+        BuilderName = 'SCTA HighTech',
+        PlatoonTemplate = 'SCTANavalAssaultT2',
+        Priority = 75,
         InstanceCount = 10,
         BuilderType = 'Any',
         BuilderData = {
@@ -72,8 +97,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory ScoutShip',
         PlatoonTemplate = 'T1ScoutShipSCTA',
-        Priority = 110,
+        Priority = 100,
         BuilderConditions = {
+            { UCBC, 'HaveUnitRatio', { 0.5, categories.OCEAN * categories.SCOUT,
+            '<=', categories.OCEAN} },
         },
         BuilderType = 'All',
     },
@@ -91,6 +118,42 @@ BuilderGroup {
         PlatoonTemplate = 'T1FrigateSCTA',
         Priority = 90,
         BuilderConditions = {
+            { UCBC, 'HaveUnitRatio', { 0.33, categories.OCEAN * categories.FRIGATE,
+            '<=', categories.OCEAN - categories.ENGINEER } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
+        },
+        BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAi Destroyer Naval',
+        PlatoonTemplate = 'T2DestroyerSCTA',
+        Priority = 125,
+        BuilderConditions = {
+            { UCBC, 'HaveUnitRatio', { 0.33, categories.OCEAN * categories.DESTROYER,
+            '<=', categories.OCEAN - categories.ENGINEER } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
+        },
+        BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAi AntiAir Naval',
+        PlatoonTemplate = 'T2CrusSCTA',
+        Priority = 100,
+        BuilderConditions = {
+            { UCBC, 'HaveUnitRatio', { 0.1, categories.OCEAN * categories.CRUISER,
+            '<=', categories.OCEAN - categories.ENGINEER } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
+        },
+        BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAi Battleship',
+        PlatoonTemplate = 'BattleshipSCTA',
+        Priority = 100,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.BATTLESHIP } }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
         },
         BuilderType = 'All',
     },

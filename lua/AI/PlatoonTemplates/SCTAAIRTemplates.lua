@@ -6,12 +6,13 @@
 #**
 #**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
+local SKY = categories.AIR * categories.MOBILE
 
 PlatoonTemplate {
     Name = 'AirHuntAISCTA',
     Plan = 'HuntAirAISCTA',
     GlobalSquads = {
-        { categories.AIR * categories.MOBILE * (categories.BOMBER + categories.ANTIAIR), 2, 4, 'attack', 'none' },
+        { SKY * (categories.BOMBER + categories.ANTIAIR) * categories.LEVEL1, 2, 4, 'attack', 'none' },
     }
 }
 
@@ -19,7 +20,7 @@ PlatoonTemplate {
     Name = 'IntieAISCTA',
     Plan = 'InterceptorAISCTA',
     GlobalSquads = {
-        { categories.AIR * categories.MOBILE * categories.ANTIAIR * (categories.LEVEL1 + categories.LEVEL3) - categories.BOMBER - categories.TRANSPORTFOCUS, 2, 100, 'attack', 'none' },
+        { SKY * categories.ANTIAIR * (categories.LEVEL1 + categories.LEVEL3) - categories.BOMBER - categories.TRANSPORTFOCUS, 2, 100, 'attack', 'none' },
     }
 }
 
@@ -27,7 +28,23 @@ PlatoonTemplate {
     Name = 'StealthFightersAISCTA',
     Plan = 'StealthIntieAISCTA',
     GlobalSquads = {
-        { categories.AIR * categories.MOBILE * categories.ANTIAIR * categories.LEVEL2 - categories.BOMBER, 2, 100, 'attack', 'none' },
+        { SKY * categories.ANTIAIR * categories.LEVEL2 - categories.BOMBER, 2, 100, 'attack', 'none' },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'SCTAT2AirScouting',
+    Plan = 'ScoutingAI',
+    GlobalSquads = {
+        { SKY * categories.SCOUT * (categories.LEVEL1 + categories.LEVEL2), 1, 1, 'scout', 'None' },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T1AirScoutFormSCTA',
+    Plan = 'ScoutingAI',
+    GlobalSquads = {
+        { SKY * categories.SCOUT * categories.LEVEL1, 1, 1, 'scout', 'None' },
     }
 }
 
@@ -35,11 +52,11 @@ PlatoonTemplate {
     Name = 'T1AirScoutSCTA',
     FactionSquads = {
         Arm = {
-            { 'armpeep', 1, 1, 'scout', 'none' },
+            { 'armpeep', 1, 1, 'scout', 'GrowthFormation' },
             { 'armca', 1, 1, 'support', 'None' },
         },
         Core = {
-            { 'corfink', 1, 1, 'scout', 'none' },
+            { 'corfink', 1, 1, 'scout', 'GrowthFormation' },
             { 'corca', 1, 1, 'support', 'None' },
         },
     }
@@ -61,11 +78,11 @@ PlatoonTemplate {
     Name = 'T1AirBomberSCTA',
     FactionSquads = {
         Arm = {
-            { 'armpeep', 1, 1, 'scout', 'none' },
+            { 'armpeep', 1, 1, 'scout', 'GrowthFormation' },
             { 'armthund', 1, 2, 'attack', 'GrowthFormation' },
         },
         Core = {
-            { 'corfink', 1, 1, 'scout', 'none' },
+            { 'corfink', 1, 1, 'scout', 'GrowthFormation' },
             { 'corshad', 1, 2, 'attack', 'GrowthFormation' },
         },
     }
@@ -102,11 +119,11 @@ PlatoonTemplate {
     Name = 'T2AirScoutSCTA',
     FactionSquads = {
         Arm = {
-            { 'armawac', 1, 2, 'scout', 'none' },
+            { 'armawac', 1, 1, 'scout', 'GrowthFormation' },
             { 'armpnix', 1, 1, 'attack', 'GrowthFormation' },
         },
         Core = {
-            { 'corawac', 1, 2, 'scout', 'none' },
+            { 'corawac', 1, 1, 'scout', 'GrowthFormation' },
             { 'corhurc', 1, 1, 'attack', 'GrowthFormation' },
         },
     }
@@ -116,10 +133,10 @@ PlatoonTemplate {
     Name = 'T3AirFighterSCTA',
     FactionSquads = {
         Arm = {
-            { 'armsfig', 1, 3, 'attack', 'GrowthFormation' },
+            { 'armsfig', 1, 2, 'attack', 'GrowthFormation' },
         },
         Core = {
-            { 'corsfig', 1, 3, 'attack', 'GrowthFormation' },
+            { 'corsfig', 1, 2, 'attack', 'GrowthFormation' },
         },
     }
 }

@@ -11,6 +11,9 @@ BaseBuilderTemplate {
         'SCTAAIAirBuilder',
         'SCTAAILandFormers',
         'SCTAAIAirFormers',
+        'SCTAAINavalBuilder',
+        'SCTANavalFormer',
+
         -- Buildings etc
         'SCTAAIEngineerMiscBuilder',
         'SCTAAIFactoryBuilders',
@@ -27,7 +30,7 @@ BaseBuilderTemplate {
         FactoryCount = {
             Land = 3,
             Air = 1,
-            Sea = 0,
+            Sea = 1,
             Gate = 0,
         },
         MassToFactoryValues = {

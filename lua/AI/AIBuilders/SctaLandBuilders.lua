@@ -42,7 +42,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandDFTankSCTA',
         Priority = 90,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK,
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.LAND } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageCurrent', { 200, 300 } },
@@ -54,7 +54,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandDFTankSCTA2',
         Priority = 90,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK,
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.LAND } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageCurrent', { 200, 300 } },
@@ -139,7 +139,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandDFTankSCTA',
         Priority = 105,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL2 * categories.TANK,
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.LEVEL2 * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
  -- Don't make tanks if we have lots of them.
@@ -152,7 +152,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandDFTank2SCTA',
         Priority = 105,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL2 * categories.TANK,
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.LEVEL2 * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.5}},
         },
@@ -163,7 +163,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandRocketSCTA',
         Priority = 85,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.2, categories.LEVEL2 * categories.ROCKET,
+            { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.LEVEL2 * categories.ROCKET,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
 -- Don't make tanks if we have lots of them.
@@ -176,7 +176,7 @@ BuilderGroup {
         Priority = 85,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
-            { UCBC, 'HaveUnitRatio', { 0.2, categories.LEVEL2 * categories.ROCKET,
+            { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.LEVEL2 * categories.ROCKET,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
          },
         BuilderType = 'All',
@@ -233,7 +233,7 @@ BuilderGroup {
         PlatoonTemplate = 'T3LandHOVERSCTA',
         Priority = 140,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.TANK * categories.LEVEL3,
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK * categories.LEVEL3,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
         },
@@ -244,7 +244,7 @@ BuilderGroup {
         PlatoonTemplate = 'T3HOVERMISSILESCTA', 
         Priority = 70,
         BuilderConditions = {
-        { UCBC, 'HaveUnitRatio', { 0.2, categories.LEVEL3 * categories.ROCKET,
+        { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.LEVEL3 * categories.ROCKET,
         '<=', categories.MOBILE * categories.LAND - categories.ENGINEER } }, -- Don't make tanks if we have lots of them. },
         },
         BuilderType = 'All',
@@ -280,7 +280,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1300} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LEVEL3 * categories.TANK,
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.LEVEL3 * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'All',

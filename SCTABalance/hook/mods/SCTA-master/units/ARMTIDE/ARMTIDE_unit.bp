@@ -1,18 +1,19 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
+        'BUILTBYT1MINELAYER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH1',
+        'TECH2',
 	    'STRUCTURE',
         'ECONOMIC',
         'SORTECONOMY',
 	    'ENERGYPRODUCTION',
 	    'NAVAL',
 	    'ARM',
-	    'LEVEL1',
+	    'LEVEL2',
         'TIDAL',
     },
     Defense = {
@@ -23,8 +24,8 @@ UnitBlueprint {
         UniformScale = 0.12,
     },
     Economy = {
-        BuildCostEnergy = 5400,
-        BuildCostMass = 400,
+        BuildCostEnergy = 2400,
+        BuildCostMass = 200,
         BuildTime = 6000,
         ProductionPerSecondEnergy = 35,
         ProductionPerSecondEnergyMin = 30,

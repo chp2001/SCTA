@@ -328,7 +328,7 @@ BuilderGroup {
         Priority = 100,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LAB * categories.NAVAL } }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.PLANT * categories.NAVAL} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.PLANT * categories.NAVAL} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}}, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',

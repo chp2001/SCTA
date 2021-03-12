@@ -453,7 +453,7 @@ BuilderGroup {
             DesiresAssist = false,
             Construction = {
                 BuildStructures = {
-                    'T1EnergyProduction',
+                    'T1EnergyProduction3',
                 }
             }
         }

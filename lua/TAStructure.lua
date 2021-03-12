@@ -124,6 +124,13 @@ TACloser = Class(TAStructure) {
 		end
 	end,
 
+	OnKilled = function(self, instigator, type, overkillRatio)
+		if EntityCategoryContains(categories.TARGETING, self) and (self:IsIntelEnabled('Radar') or self:IsIntelEnabled('Sonar')) then
+		TAutils.unregisterTargetingFacility(self:GetArmy())
+		end
+		TAStructure.OnKilled(self, instigator, type, overkillRatio)
+	end,
+
 	IdleClosedState = State {
 		Main = function(self)
 			if self.closeDueToDamage then 

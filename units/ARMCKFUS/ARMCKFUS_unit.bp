@@ -21,6 +21,7 @@ UnitBlueprint {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
         'BUILTBYT2VEHICLE',
+        'TACLOAK',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -28,7 +29,6 @@ UnitBlueprint {
         'LEVEL3',
         'TECH3',
         'STRUCTURE',
-        'TACLOAK',
         'ECONOMIC',
         'SORTECONOMY',
 	    'ENERGYPRODUCTION',
@@ -49,7 +49,7 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_cloak>Cloaking',
         },
-		CloakMesh = '/mods/SCTA-master/units/ARMCKFUS/ARMCKFUS_cloak_mesh',
+		---self:SetMesh(self:GetBlueprint().Display.CloakMesh, true) = '/mods/SCTA-master/units/ARMCKFUS/ARMCKFUS_cloak_mesh',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -66,9 +66,9 @@ UnitBlueprint {
         BuildCostEnergy = 42058,
         BuildCostMass = 4800,
         BuildTime = 105487,
-	NaturalProducer = true,
+	    NaturalProducer = true,
         ProductionPerSecondEnergy = 1000,
-	MaintenanceConsumptionPerSecondEnergy = 450,
+	    MaintenanceConsumptionPerSecondEnergy = 450,
     },
     Footprint = {
 	MaxSlope = 0.625,
@@ -76,7 +76,6 @@ UnitBlueprint {
         SizeZ = 5,
     },
     General = {
-	---BuildAngle = 4096,
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
 	ToggleCaps = {
@@ -89,22 +88,15 @@ UnitBlueprint {
 	UnitName = 'Cloakable Fusion Reactor',
     },
     Intel = {
-        FreeIntel = false,
         VisionRadius = 14,
 	    Cloak = true,
-    },
-    Interface = {
-        HelpText = 'Produces Energy',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         SkirtSizeX = 5,
-        SkirtSizeZ = 4,
+        SkirtSizeZ = 5,
     },
     SelectionSizeX = 2.5,
     SelectionSizeZ = 2,

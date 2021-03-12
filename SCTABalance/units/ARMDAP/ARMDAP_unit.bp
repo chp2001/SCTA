@@ -42,7 +42,7 @@ UnitBlueprint {
         'AIR',
         'CONSTRUCTIONSORTDOWN',
 	    'ARM',
-        'PLANT',
+        'DEVELOPMENT',
 	    'SORTCONSTRUCTION',
 	    'LEVEL2',
     },
@@ -87,12 +87,11 @@ UnitBlueprint {
     BuildableCategory = {
         'VTOL LEVEL2 ARM',
         'VTOL LEVEL1 ARM',
+        'ALLTERRAIN LEVEL2 LAND ENGINEER ARM',
         'armadap', 
-        'armck',
-        'armfark',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = 5,
+	InitialRallyZ = 7,
     StorageMass = 50,
     StorageEnergy = 50,
     },
@@ -127,18 +126,11 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 10,
 	RadarRadius = 32,
-	FreeIntel = true,
-    },
-    Interface = {
-        HelpText = 'Produces Aircraft',
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 2,
     LifeBarSize = 7,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         FlattenSkirt = true,
         SkirtSizeX = 6,
         SkirtSizeZ = 6,

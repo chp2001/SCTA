@@ -23,7 +23,7 @@ UnitBlueprint {
         'BUILTBYT1KBOT',
         'BUILTBYT1VEHICLE',
         'BUILTBYT1HOVER',
-        'BUILTBYT1SHIP',
+        'BUILTBYT1NAVAL',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
@@ -84,9 +84,6 @@ UnitBlueprint {
         VisionRadius = 14,
         WaterVisionRadius = 6,
     },
-    Interface = {
-        HelpText = 'Increases Energy Storage',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.25,
     LifeBarSize = 1,
@@ -106,7 +103,7 @@ UnitBlueprint {
     StrategicIconSortPriority = 0,
     Weapon = {
         { #ESTOR_BUILDINGEX
-            Damage = 1200,
+            Damage = 1000,
             DamageFriendly = true,
             DamageRadius = 5,
             DamageType = 'Normal',

@@ -52,9 +52,7 @@ ProjectileBlueprint {
         Weapon = 'ARMYORK_GUN',
 	EdgeEffectiveness = 0.9,
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 56.25,

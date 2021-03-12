@@ -92,9 +92,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 22,
     },
-    Interface = {
-        HelpText = 'Plasma Battery',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
@@ -140,9 +137,6 @@ UnitBlueprint {
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 42,
-            EnergyChargeForFirstShot = true,
-            EnergyDrainPerSecond = 400,
-            EnergyRequired = 1200,
             ProjectileId = '/mods/SCTA-master/projectiles/CORFIXED_GUN/CORFIXED_GUN_proj.bp',
             RackBones = {
                 {

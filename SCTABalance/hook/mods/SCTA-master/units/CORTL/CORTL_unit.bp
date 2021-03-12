@@ -2,6 +2,7 @@ UnitBlueprint {
     Merge = true, 
     Categories = {
         'BUILTBYT1AIR',
+        'BUILTBYT1NAVAL',
         'BUILTBYT1HOVER',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
@@ -29,9 +30,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Water = true,
-        },
         SkirtSizeX = 1,
         SkirtSizeZ = 1,
     },

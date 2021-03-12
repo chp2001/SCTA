@@ -14,7 +14,7 @@ UnitBlueprint {
     Economy = {
     BuildCostEnergy = 150000,
     ProductionPerSecondEnergy = 2000,
-	MaintenanceConsumptionPerSecondEnergy = 100,
+	MaintenanceConsumptionPerSecondEnergy = 250,
     },
     LifeBarSize = 6,
     SelectionSizeX = 8,

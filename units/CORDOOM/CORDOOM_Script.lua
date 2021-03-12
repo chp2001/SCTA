@@ -33,17 +33,6 @@ CORDOOM = Class(TAStructure) {
 				TAPopLaser.PlayFxWeaponPackSequence(self)
 			end,	
 		},
-		CORE_LIGHTLASER = Class(TAPopLaser) {
-			PlayFxWeaponUnpackSequence = function(self)
-				while (not self.unit.Pack) do
-					WaitSeconds(0.2)
-				end
-				TAPopLaser.PlayFxWeaponUnpackSequence(self)
-                        end,
-                },
-	
-
-
 		CORE_LASERH1 = Class(TAPopLaser) {
 			PlayFxWeaponUnpackSequence = function(self)
 				while (not self.unit.Pack) do
@@ -52,8 +41,15 @@ CORDOOM = Class(TAStructure) {
 				TAPopLaser.PlayFxWeaponUnpackSequence(self)
                         end,
                 },
-
-	},
+		CORE_LIGHTLASER = Class(TAPopLaser) {
+			PlayFxWeaponUnpackSequence = function(self)
+				while (not self.unit.Pack) do
+					WaitSeconds(0.2)
+					end
+					TAPopLaser.PlayFxWeaponUnpackSequence(self)
+					end,
+					},		
+			},
 }
 
 TypeClass = CORDOOM

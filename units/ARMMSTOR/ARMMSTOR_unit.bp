@@ -22,7 +22,7 @@ UnitBlueprint {
         'BUILTBYT1KBOT',
         'BUILTBYT1VEHICLE',
         'BUILTBYT1HOVER',
-        'BUILTBYT1SHIP',
+        'BUILTBYT1NAVAL',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
@@ -83,9 +83,6 @@ TechLevel = 'RULEUTL_Basic',
     Intel = {
         VisionRadius = 14,
         WaterVisionRadius = 4, 
-    },
-    Interface = {
-        HelpText = 'Increases Metal Storage',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.25,

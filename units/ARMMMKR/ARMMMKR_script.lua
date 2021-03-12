@@ -82,13 +82,6 @@ ARMMMKR = Class(TACloser) {
 			--TURN mmakercore to y-axis <-90.00> SPEED <37.67>;
 			self.Spinners.core:SetGoal(-90.00)
 			self.Spinners.core:SetSpeed(37.67)
-
-			--SLEEP <775>;
-			WaitSeconds(0.75)
-
-			self:SetProductionActive(true)
-			self:SetMaintenanceConsumptionActive()
-
 			ChangeState(self, self.IdleOpenState)
 		end,
 	},
@@ -99,7 +92,6 @@ ARMMMKR = Class(TACloser) {
 			TACloser.Fold(self)
 			self:SetProductionActive(false)
 			self:PlayUnitSound('Activate')
-			self:SetMaintenanceConsumptionInactive()
 
 			--MOVE mmakercore to y-axis <5.05> SPEED <15.00>;
 			self.Sliders.core:SetGoal(0,5.05,0)
@@ -150,13 +142,6 @@ ARMMMKR = Class(TACloser) {
 			--TURN mmakercore to y-axis <0> SPEED <44.46>;
 			self.Spinners.core:SetGoal(0)
 			self.Spinners.core:SetSpeed(44.46)
-
-			--SLEEP <684>;
-			WaitSeconds(0.7)
-
-			--SLEEP <688>;
-			WaitSeconds(0.7)
-
 			ChangeState(self, self.IdleClosedState)
 			
 		end,

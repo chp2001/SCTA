@@ -11,10 +11,6 @@ CORSUMO = Class(TAWalking) {
 
 	Weapons = {
 		CORE_SUMOLASER = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				 #check flare time
-			end,
 		},
 	},
 }

@@ -15,92 +15,100 @@ TAunit = Class(Unit)
    ---end,
 
 	OnCreate = function(self)
-		local bp = self:GetBlueprint()
         --self._UnitName = bp.General.UnitName
         ---self:LOGDBG('TAUnit.OnCreate')
         Unit.OnCreate(self)
 		self:SetFireState(FireState.GROUND_FIRE)
-		self:HideFlares()
-		self.FxMovement = TrashBag()
         end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
         ---self:LOGDBG('TAUnit.OnStopBeingBuilt')
 		Unit.OnStopBeingBuilt(self,builder,layer)
 		self:SetDeathWeaponEnabled(true)
-		self:SetConsumptionActive(true)	
-	end,
-
-	MovementEffects = function(self, EffectsBag, TypeSuffix)
-		if not IsDestroyed(self) then
-		local bp = self:GetBlueprint()
-		if bp.Display.MovementEffects.TAMovement then
-			for k, v in bp.Display.MovementEffects.TAMovement.Bones do
-				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.TAMovement.Emitter ):ScaleEmitter(bp.Display.MovementEffects.TAMovement.Scale))
-			end
-		end
-		if not self:IsUnitState('Moving') and bp.Display.MovementEffects.TAMovement then
-			for k,v in self.FxMovement do
-			v:Destroy()
-			end
-		end
-		end
 	end,
 
 	OnDamage = function(self, instigator, amount, vector, damageType)
 		Unit.OnDamage(self, instigator, amount * (self.Pack or 1), vector, damageType)
 	end,
-	
+
 	OnIntelDisabled = function(self)
 		Unit.OnIntelDisabled()
-		if EntityCategoryContains(categories.TACLOAK, self) then
-		self.cloakOn = nil
-        if not self:IsIntelEnabled('Cloak') then
-        self:PlayUnitSound('Uncloak')
+		if EntityCategoryContains(categories.JAM, self) and (not self:IsIntelEnabled('Jammer') or not self:IsIntelEnabled('RadarStealth')) then
+			self.TAIntelOn = nil	
+		elseif EntityCategoryContains(categories.TACLOAK, self) and not self:IsIntelEnabled('Cloak') then
+		self:PlayUnitSound('Uncloak')
+		self.CloakOn = nil
 		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
 		end
-	end
+	end,
+
+	OnIntelEnabled = function(self)
+		Unit.OnIntelEnabled()
+		if not IsDestroyed(self) then
+			if EntityCategoryContains(categories.JAM, self) and (self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth')) then
+				self.TAIntelOn = true
+				ForkThread(self.TAIntelMotion, self)
+			elseif EntityCategoryContains(categories.TACLOAK, self) and self:IsIntelEnabled('Cloak') then
+			self.CloakOn = true
+			self:PlayUnitSound('Cloak')
+			self:SetMesh(self:GetBlueprint().Display.CloakMeshBlueprint, true)
+			ForkThread(self.CloakDetection, self)
+			end
+		end
+	end,
+
+	TAIntelMotion = function(self) 
+		while not self.Dead do
+            coroutine.yield(11)
+            if self.TAIntelOn and self:IsUnitState('Moving') then
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
+			elseif self.TAIntelOn then
+                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
+            end
+		end
     end,
 
-    OnIntelEnabled = function(self)
-		Unit.OnIntelEnabled()
-			if EntityCategoryContains(categories.TACLOAK, self) then
-       	 	if self:IsIntelEnabled('Cloak') then
-            self.cloakOn = true
-        	self:PlayUnitSound('Cloak')
-			self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
-			ForkThread(self.CloakDetection, self)
-        --end
+	CloakDetection = function(self)
+		local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
+		local brain = moho.entity_methods.GetAIBrain(self)
+		local cat = categories.SELECTABLE * categories.MOBILE
+		local getpos = moho.entity_methods.GetPosition
+		while not self.Dead do
+			coroutine.yield(11)
+			local bp = self:GetBlueprint()
+			if self.CloakOn and self:IsUnitState('Moving') then
+                self:SetConsumptionPerSecondEnergy(bp.Economy.TAConsumptionPerSecondEnergy)
+			elseif self.CloakOn then
+                self:SetConsumptionPerSecondEnergy(bp.Economy.MaintenanceConsumptionPerSecondEnergy)
+			local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
+			if self.CloakOn and self:IsUnitState('Building') then
+				self:DisableIntel('Cloak')
+				self:UpdateConsumptionValues()
+                self:SetMesh(bp.Display.MeshBlueprint, true)
+			elseif dudes[1] and self.CloakOn then
+				self:DisableIntel('Cloak')
+				self:SetMesh(bp.Display.MeshBlueprint, true)
+			elseif not dudes[1] and self.CloakOn then
+				self:EnableIntel('Cloak')
+				---self:UpdateConsumptionValues()
+				self:SetMesh(bp.Display.CloakMeshBlueprint, true)
+			end
 		end
 		end
 	end,
 
-	CloakDetection = function(self)
-        if not IsDestroyed(self) then
-		local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
-        local brain = moho.entity_methods.GetAIBrain(self)
-        local cat = categories.SELECTABLE * categories.MOBILE
-        local getpos = moho.entity_methods.GetPosition
-        while not self.Dead do
-            coroutine.yield(11)
-            local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
-            if dudes[1] and self.cloakOn then
-                self:DisableIntel('Cloak')
-                self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-			elseif self:IsUnitState('Building') and self.cloakOn then
-				self:DisableIntel('Cloak')
-                self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
-			elseif not dudes[1] and self.cloakOn then
-                self:EnableIntel('Cloak')
-                self:SetMesh(self:GetBlueprint().Display.CloakMesh, true)
-            end
-        end
-	end
-    end,
 
 	OnScriptBitSet = function(self, bit)
-		if bit == 8 then
-			self:DisableUnitIntel('ToggleBit8', 'Cloak')
+		if EntityCategoryContains(categories.JAM, self) and (bit == 2 or bit == 5) then
+			--self:SetMaintenanceConsumptionActive()
+			--self:DisableUnitIntel('ToggleBit2', 'Jammer')
+			--self:DisableUnitIntel('ToggleBit5', 'RadarStealth')
+            --self:DisableUnitIntel('ToggleBit5', 'RadarStealthField')
+			if self.TAIntelThread then KillThread(self.TAIntelThread) end
+			self.TAIntelThread = self:ForkThread(self.TAIntelMotion)	
+		end
+		if bit == 8 and EntityCategoryContains(categories.TACLOAK, self)then
+			--self:DisableUnitIntel('ToggleBit8', 'Cloak')
 			if self.CloakThread then KillThread(self.CloakThread) end
 			self.CloakThread = self:ForkThread(self.CloakDetection)	
 		end
@@ -108,37 +116,19 @@ TAunit = Class(Unit)
 	end,
 
 	OnScriptBitClear = function(self, bit)
-		if bit == 8 then
+		if EntityCategoryContains(categories.JAM, self) and (bit == 2 or bit == 5) then
+			--self:SetMaintenanceConsumptionInactive()
+			if self.TAIntelThread then
+				KillThread(self.TAIntelThread)
+				self.TAIntelOn = nil
+			end
+		end
+		if bit == 8 and EntityCategoryContains(categories.TACLOAK, self) then
 			if self.CloakThread then
 				KillThread(self.CloakThread)
-				self.cloakOn = nil
+				self.CloakOn = nil
 			end
 		end
 		Unit.OnScriptBitClear(self, bit)
 	end,
-
-    HideFlares = function(self, bp)
-        ---self:LOGDBG('TAUnit.HideFlares')
-        if not bp then bp = self:GetBlueprint().Weapon end
-        if bp then
-            for i, weapon in bp do
-                if weapon.RackBones then
-                    for j, rack in weapon.RackBones do
-                        if not rack.VisibleMuzzle then
-                            if rack.MuzzleBones[1] and not rack.MuzzleBones[2] and self:IsValidBone(rack.MuzzleBones[1]) then
-                                self:HideBone(rack.MuzzleBones[1], true)
-                            elseif rack.MuzzleBones[2] then
-                                for mi, muzzle in rack.MuzzleBones do
-                                    if self:IsValidBone(muzzle) then
-                                        self:HideBone(muzzle, true)
-                                    end
-                                end
-                            end    
-                        end
-                    end
-                end
-            end
-        end
-    end,
-
 }

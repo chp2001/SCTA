@@ -80,6 +80,7 @@ UnitBlueprint {
         'CORE',
         'HIGHALTAIR',
         'SNIPEMODE',
+        'OVERLAYRADAR',
     },
     Defense = {
         ArmorType = 'Light',
@@ -137,9 +138,6 @@ TechLevel = 'RULEUTL_Basic',
     Intel = {
         VisionRadius = 12,
         WaterVisionRadius = 4, 
-    },
-    Interface = {
-        HelpText = 'Bomber',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

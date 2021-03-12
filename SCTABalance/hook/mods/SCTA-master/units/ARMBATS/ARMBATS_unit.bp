@@ -23,10 +23,10 @@ UnitBlueprint {
         MaxHealth = 22000,
     },
     Display = {
-        UniformScale = 0.32,
+        UniformScale = 0.24,
     },
     Economy = {
-        BuildCostEnergy = 160000,
+        BuildCostEnergy = 120000,
         BuildCostMass = 10000,
         BuildTime = 80000,
     },
@@ -42,7 +42,7 @@ UnitBlueprint {
     StrategicIconName = 'icon_ship3_directfire',
     SelectionSizeX = 5,
     SelectionSizeZ = 10,
-    SizeX = 8,
-    SizeY = 7,
-    SizeZ = 16,
+    SizeX = 5,
+    SizeY = 4,
+    SizeZ = 12,
 }

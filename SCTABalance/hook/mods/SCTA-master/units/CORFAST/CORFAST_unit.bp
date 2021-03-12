@@ -5,21 +5,55 @@
 
 UnitBlueprint {
     Merge = true, 
+    BuildIconSortPriority = 1,
     Categories = {
         'SELECTABLE',
-        'LEVEL2',
-        'TECH2',
+        'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
+	    'LAND',
+        'KBOT',
+	    'LEVEL1',
+        'OVERLAYRADAR',
+        'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
+        'SCOUT',
     },
+    Display = {
+        Abilities = {
+            '<LOC ability_radar>Radar',
+        },
+    UniformScale = 0.1,
+    },
+    Defense = {
+        Health = 100,
+        MaxHealth = 100,
+    },
+    LifeBarSize = 1,
     Economy = {
-        BuildCostEnergy = 400,
-        BuildCostMass = 90,
-        BuildTime = 1000,
+        BuildCostEnergy = 220,
+        BuildCostMass = 22,
+        BuildTime = 800,
+    },
+    Intel = {
+        VisionRadius = 12,
+        RadarRadius = 50, 
+    },
+    SelectionSizeX = 0.8,
+    SelectionSizeZ = 0.8,
+    SizeX = 1.25,
+    SizeY = 2,
+    SizeZ = 1.25,
+    StrategicIconName = 'icon_bot1_intel',
+    Weapon = {
+        [1] = {
+            Damage = 3,
+            MaxRadius = 13,
+            RateOfFire = 1,
+        },
+        [2] = {
+        },
     },
 }

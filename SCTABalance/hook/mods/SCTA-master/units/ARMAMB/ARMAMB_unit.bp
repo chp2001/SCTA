@@ -5,25 +5,6 @@
 
 UnitBlueprint {
     Merge = true, 
-    Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
-        'BUILTBYT2VEHICLE',
-        'SELECTABLE',
-        'DRAGBUILD',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH3',
-        'LEVEL3',
-	    'STRUCTURE',
-	    'DEFENSE',
-	    'DIRECTFIRE',
-        'OVERLAYDIRECTFIRE',
-	    'ARM',
-	    'STRATEGIC',
-        'SORTDEFENSE',
-        'SNIPEMODE',
-    },
     Defense = {
         Health = 6000,
         MaxHealth = 6000,
@@ -42,8 +23,6 @@ UnitBlueprint {
     SizeZ = 2,
     Weapon = {
         [1] = {
-            RangeCategory = 'UWRC_DirectFire',
-            WeaponCategory = 'DirectFire',
             RateOfFire = 0.5,
         },
         [2] = {},

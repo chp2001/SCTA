@@ -6,37 +6,60 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
+        'BUILTBYT2AIR',
+        'BUILTBYT2KBOT',
         'SELECTABLE',
-        'TECH2',
+        'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
+	    'LAND',
         'ARM',
-	'LEVEL2',
-    'RADAR',
-    'OVERLAYRADAR',
+	    'LEVEL3',
+        'RADAR',
+        'OVERLAYRADAR',
+        'OVERLAYCOUNTERINTEL',
+        'NEEDMOBILEBUILD',
+        'JAM',
+        'SORTINTEL',
+        'SCOUT',
     },
+    Display = {
+        Abilities = {
+            '<LOC ability_radar>Radar',
+            '<LOC ability_stealthfield>Stealth Field',
+            },
+            UniformScale = 0.3,
+        },
     Economy = {
-        BuildCostEnergy = 600,
-        BuildCostMass = 80,
-        MaintenanceConsumptionPerSecondEnergy = 5,
+        BuildCostEnergy = 12000,
+        BuildCostMass = 800,
+        BuildTime = 6000,
         ProductionPerSecondEnergy = 0,
-        BuildTime = 1200,
+        TAConsumptionPerSecondEnergy = 500,
+        MaintenanceConsumptionPerSecondEnergy = 25,
     },
     General = {
-        OrderOverrides = {
-                RULEUTC_IntelToggle = {
-                bitmapId = 'radar',
-                helpText = 'toggle_radar',
-                     },
-                 },
-               ToggleCaps = {
-               RULEUTC_IntelToggle = true,
-            },
+    OrderOverrides = {
+        RULEUTC_StealthToggle = {
+            bitmapId = 'stealth-field',
+            helpText = 'toggle_stealth_field',
+        },
+    },
+    ToggleCaps = {
+    RULEUTC_IntelToggle = false,
+    RULEUTC_StealthToggle = true,
+        },
     },
     Intel = {
+        RadarStealth = true,
+        RadarStealthField = true,
         VisionRadius = 16,
         RadarRadius = 50, 
+        RadarStealthFieldRadius = 60,
     },
+    SizeX = 4,
+    SizeY = 4,
+    SizeZ = 4,
+    StrategicIconName = 'icon_structure3_counterintel',
 }

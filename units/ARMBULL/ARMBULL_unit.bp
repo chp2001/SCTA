@@ -92,9 +92,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 16,
     },
-    Interface = {
-        HelpText = 'Heavy Assault Tank',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
@@ -132,7 +129,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = false,
-            Damage = 147,
+            Damage = 100,
 	    DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'ARM_BULL',
@@ -143,7 +140,7 @@ UnitBlueprint {
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
             Label = 'ARM_BULL',
-            MaxRadius = 25,
+            MaxRadius = 36,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 25,

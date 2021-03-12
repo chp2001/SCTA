@@ -3,12 +3,12 @@
 #
 #Script created by Raevn
 
-local TAWalking = import('/mods/SCTA-master/lua/TAMotion.lua').TAWalking
+local TACounter = import('/mods/SCTA-master/lua/TAMotion.lua').TACounter
 
 
-CORSPEC = Class(TAWalking) {
+CORSPEC = Class(TACounter) {
 	OnCreate = function(self)
-		TAWalking.OnCreate(self)
+		TACounter.OnCreate(self)
 		self.Spinners = {
 			fork = CreateRotator(self, 'tongspivot', 'z', nil, 0, 0, 0),
 		}
@@ -24,25 +24,23 @@ CORSPEC = Class(TAWalking) {
 		--WaitFor(self.AnimManip)
 		--self.Spinners.fork:SetGoal(0)
 		--self.Spinners.fork:SetSpeed(0)
-		self:SetMaintenanceConsumptionInactive()
 	end,
 
 	Open = function(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 1))
-		self:SetMaintenanceConsumptionActive()
 		---WaitFor(self.AnimManip)
 		---self.Spinners.fork:SetSpeed(50)
 		self:PlayUnitSound('Activate')
 	end,
 
 	OnIntelDisabled = function(self)
-		TAWalking.OnIntelDisabled(self)
+		TACounter.OnIntelDisabled(self)
 		ForkThread(self.Close, self)
 	end,
 
 	OnIntelEnabled = function(self)
-		TAWalking.OnIntelEnabled(self)
+		TACounter.OnIntelEnabled(self)
 		ForkThread(self.Open, self)
 	end,
 }

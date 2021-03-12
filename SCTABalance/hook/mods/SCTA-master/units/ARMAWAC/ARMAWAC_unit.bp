@@ -1,23 +1,5 @@
 UnitBlueprint {
     Merge = true,
-    Categories = {
-        'SELECTABLE',
-        'TECH2',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'MOBILE',
-	    'AIR',
-        'VTOL',
-        'HIGHALTAIR',
-        'INTELLIGENCE',
-	    'RADAR',
-        'OVERLAYRADAR',
-        'OVERLAYOMNI',
-        'ARM',
-        'JAM',
-        'SCOUT',
-	    'LEVEL2',
-    },
     Defense = {
         Health = 800,
         MaxHealth = 800,
@@ -33,11 +15,14 @@ UnitBlueprint {
         BuildCostEnergy = 8000,
         BuildCostMass = 220,
         BuildTime = 5600,
-        MaintenanceConsumptionPerSecondEnergy = 40,
+        ProductionPerSecondEnergy = 0,
+        TAConsumptionPerSecondEnergy = 50,
+        MaintenanceConsumptionPerSecondEnergy = 25,
     },
     General = {
         ToggleCaps = {
             RULEUTC_JammingToggle = true,
+            RULEUTC_IntelToggle = false,
         },
     },
     Intel = {
@@ -45,7 +30,6 @@ UnitBlueprint {
             Omni = true,
             Radar = true,
         },
-	FreeIntel = false,
     RadarRadius = 100, 
     OmniRadius = 20,
     JamRadius = {

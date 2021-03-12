@@ -6,9 +6,9 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT1VEHICLE',
-        'BUILTBYT1KBOT',
         'BUILTBYT1AIR',
+        'BUILTBYT1KBOT',
+        'BUILTBYT1NAVAL',
         'BUILTBYT1HOVER',
         'SELECTABLE',
         'DRAGBUILD',
@@ -21,5 +21,15 @@ UnitBlueprint {
         'OVERLAYMISC',
         'ARM',
 	    'LEVEL1',
+        'SORTSTRATEGIC',
     },
+    Display = {
+        UniformScale = 0.2,
+    },
+    SelectionSizeX = 3,
+    SelectionSizeZ = 3,
+    SelectionThickness = 0.25,
+    SizeX = 5,
+    SizeY = 2,
+    SizeZ = 5,
 }

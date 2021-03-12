@@ -3,13 +3,13 @@
 #
 #Script created by Raevn
 
-local TAnoassistbuild = import('/mods/SCTA-master/lua/TAStructure.lua').TAnoassistbuild
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 local TAMInterceptorWeapon = import('/lua/terranweapons.lua').TAMInterceptorWeapon
 local nukeFiredOnGotTarget = false
 
-CORFMD = Class(TAnoassistbuild) {
+CORFMD = Class(TAStructure) {
 	OnCreate = function(self)
-		TAnoassistbuild.OnCreate(self)
+		TAStructure.OnCreate(self)
 		self.currentRound = 1
 		self.PackTime = 0
 	end,

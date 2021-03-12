@@ -24,6 +24,7 @@ end
 
 function CommanderThreadSCTA(cdr, platoon)
     --LOG('cdr is '..cdr.UnitId)
+    local WaitTaunt = 600 + Random(1, 600)
     local aiBrain = cdr:GetAIBrain()
     aiBrain:BuildScoutLocations()
     -- Added to ensure we know the start locations (thanks to Sorian).
@@ -35,7 +36,7 @@ function CommanderThreadSCTA(cdr, platoon)
         WaitTicks(1)
 
         -- Go back to base
-        if not cdr.Dead then CDRReturnHome(aiBrain, cdr) end
+        if not cdr.Dead then SCTACDRReturnHome(aiBrain, cdr) end
         WaitTicks(1)
 
         -- Call platoon resume building deal...
@@ -66,6 +67,10 @@ function CommanderThreadSCTA(cdr, platoon)
             end
         end
         WaitTicks(1)
+        if not cdr.Dead and GetGameTimeSeconds() > WaitTaunt and (not aiBrain.LastVocTaunt or GetGameTimeSeconds() - aiBrain.LastVocTaunt > WaitTaunt) then
+            SUtils.AIRandomizeTaunt(aiBrain)
+            WaitTaunt = 600 + Random(1, 900)
+        end
     end
 end
 
@@ -102,7 +107,7 @@ function CDRSCTADGun(aiBrain, cdr)
         and GetGameTimeSeconds() > 243
         and mapSizeX <= 512 and mapSizeZ <= 512
         then
-        maxRadius = 256
+        maxRadius = 250
     end
 
     -- Take away engineers too
@@ -230,5 +235,29 @@ function CDRSCTADGun(aiBrain, cdr)
             IssueRepair({cdr}, cdr.UnitBeingBuiltBehavior)
         end
         cdr.UnitBeingBuiltBehavior = false
+    end
+end
+
+function SCTACDRReturnHome(aiBrain, cdr)
+    -- This is a reference... so it will autoupdate
+    local cdrPos = cdr:GetPosition()
+    local distSqAway = 250
+    local loc = cdr.CDRHome
+    if not cdr.Dead and VDist2Sq(cdrPos[1], cdrPos[3], loc[1], loc[3]) > distSqAway then
+        local plat = aiBrain:MakePlatoon('', '')
+        aiBrain:AssignUnitsToPlatoon(plat, {cdr}, 'support', 'None')
+        repeat
+            CDRRevertPriorityChange(aiBrain, cdr)
+            if not aiBrain:PlatoonExists(plat) then
+                return
+            end
+            IssueStop({cdr})
+            IssueMove({cdr}, loc)
+            cdr.GoingHome = true
+            WaitSeconds(7)
+        until cdr.Dead or VDist2Sq(cdrPos[1], cdrPos[3], loc[1], loc[3]) <= distSqAway
+
+        cdr.GoingHome = false
+        IssueClearCommands({cdr})
     end
 end

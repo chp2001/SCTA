@@ -3,11 +3,11 @@
 #
 #Script created by Raevn
 
-local TAWalking = import('/mods/SCTA-master/lua/TAMotion.lua').TAWalking
+local TACounter = import('/mods/SCTA-master/lua/TAMotion.lua').TACounter
 
-ARMASER = Class(TAWalking) {
+ARMASER = Class(TACounter) {
 	OnCreate = function(self)
-		TAWalking.OnCreate(self)
+		TACounter.OnCreate(self)
 		self.Spinners = {
 			ltong = CreateRotator(self, 'LeftFork', 'y', nil, 0, 0, 0),
 			rtong = CreateRotator(self, 'RightFork', 'y', nil, 0, 0, 0),
@@ -110,12 +110,12 @@ ARMASER = Class(TAWalking) {
 	end,
 
 	OnIntelDisabled = function(self)
-		TAWalking.OnIntelDisabled(self)
+		TACounter.OnIntelDisabled(self)
 		ForkThread(self.Close, self)
 	end,
 
 	OnIntelEnabled = function(self)
-		TAWalking.OnIntelEnabled(self)
+		TACounter.OnIntelEnabled(self)
 		ForkThread(self.Open, self)
 		
 	end,

@@ -86,23 +86,20 @@ updateBuildRestrictions = function(self)
     ---Will require another rebalancing of Seaplanes and Hovers
     if EntityCategoryContains(categories.LEVEL1 * categories.CONSTRUCTION - categories.PLANT, self) then
         self:AddBuildRestriction(categories.LEVEL2)
-        self:AddBuildRestriction(categories.LEVEL3)
-        self.restrictions = true
-    elseif EntityCategoryContains(categories.COMMAND * categories.CONSTRUCTION - categories.PLANT, self) then
-        self:AddBuildRestriction(categories.LEVEL2)
-        self.restrictions = true      
-    elseif EntityCategoryContains(categories.LEVEL2 * categories.CONSTRUCTION - categories.PLANT, self) then
-        self:AddBuildRestriction(categories.LEVEL3)
+        self:AddBuildRestriction(categories.LEVEL3 - categories.GANTRY)
+        self.restrictions = true   
+    elseif EntityCategoryContains(categories.LEVEL2 * categories.CONSTRUCTION - categories.DEVELOPMENT, self) then
+        self:AddBuildRestriction(categories.LEVEL3 - categories.GANTRY)
         self.restrictions = true
     end
 
     if self.restrictions then
     local gtime = GetGameTimeSeconds()
-    local HQCategory = categories.PLANT
-        if self.FindHQType(aiBrain, HQCategory * categories.LEVEL3) or  gtime > 1080 then
+    local HQCategory = categories.DEVELOPMENT
+        if self.FindHQType(aiBrain, HQCategory * categories.LEVEL3) or  gtime > 1200 then
             self:RemoveBuildRestriction(categories.LEVEL2)
             self:RemoveBuildRestriction(categories.LEVEL3)
-        elseif self.FindHQType(aiBrain, HQCategory * categories.LEVEL2) or gtime > 600 then
+        elseif self.FindHQType(aiBrain, HQCategory * categories.LEVEL2) then
             self:RemoveBuildRestriction(categories.LEVEL2)
         end
     end
@@ -110,7 +107,7 @@ end
 
 --self.FindHQType(aiBrain, category)
 FindHQType = function(aiBrain, category)
-    for id, unit in aiBrain:GetListOfUnits(categories.PLANT) do
+    for id, unit in aiBrain:GetListOfUnits(categories.DEVELOPMENT) do
         if not unit:IsBeingBuilt() then
             return true
         end
@@ -140,4 +137,14 @@ end
 
 function ArmyHasTargetingFacility(army)
     return (targetingFacilityData[army] > 0 and GetArmyBrain(army):GetEconomyStored('ENERGY') > 0)
+end
+
+function TAGetEngineerFaction(engineer)
+    if EntityCategoryContains(categories.ARM, engineer) then
+        return 'Arm'
+    elseif EntityCategoryContains(categories.CORE, engineer) then
+        return 'Core'
+    else
+        return false
+    end
 end

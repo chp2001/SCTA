@@ -39,7 +39,6 @@ UnitBlueprint {
         'LAND',
         'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-        'RADAR',
         'OVERLAYRADAR',
         'ARM',
         'ALLTERRAIN',
@@ -55,6 +54,9 @@ UnitBlueprint {
     },
     Description = 'Fast Light Scout Kbot',
     Display = {
+        Abilities = {
+            '<LOC ability_radar>Radar',
+        },
         AnimationWalk = '/mods/SCTA-master/units/ARMFLEA/ARMFLEA_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Mesh = {
@@ -98,9 +100,6 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 16,
-    },
-    Interface = {
-        HelpText = 'Infantry Kbot',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

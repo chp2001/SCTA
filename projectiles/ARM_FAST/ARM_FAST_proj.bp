@@ -44,14 +44,12 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARM_FAST',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         DestroyOnWater = true,
-        InitialSpeed = 60,
+        InitialSpeed = 45,
         Lifetime = 3,
         TurnRate = 180,
-        UseGravity = true,
+        --UseGravity = true,
     },
 }

@@ -51,9 +51,7 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARM_BERTHACANNON',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 75,

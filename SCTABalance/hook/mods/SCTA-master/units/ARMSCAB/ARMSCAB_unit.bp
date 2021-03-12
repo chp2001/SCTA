@@ -14,13 +14,17 @@ UnitBlueprint {
         'BUILTBYT1HOVER',
 	    'LEVEL2',
         'OVERLAYDEFENSE',
-        'SORTDEFENSE',
+        'SORTSTRATEGIC',
         'NEEDMOBILEBUILD',
         'DEFENSE',
         'ANTIAIR',
     },
     Display = {
         UniformScale = 0.06,
+    },
+    Footprint = {
+        SizeX = 2,
+        SizeZ = 2,
     },
     Economy = {
         BuildCostEnergy = 12000,

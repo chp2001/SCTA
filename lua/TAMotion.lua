@@ -6,85 +6,40 @@ local Game = import('/lua/game.lua')
 local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 local util = import('/lua/utilities.lua')
 
-TATreads = Class(TAunit) 
+TASea = Class(TAunit) 
 {
+    OnCreate = function(self)
+        TAunit.OnCreate(self)
+		self.FxMovement = TrashBag()
+        end,
 
-MovementEffects = function( self, EffectsBag, TypeSuffix)
-    ---self:LOGDBG('TATreads.MovementEffects')
-    local layer = self:GetCurrentLayer()
-    local bpTable = self:GetBlueprint().Display.MovementEffects
-    TAunit.MovementEffects(self, EffectsBag, TypeSuffix)
-    if bpTable[layer] then
-        bpTable = bpTable[layer]
-        if bpTable.Treads then
-            self:CreateTreads( bpTable.Treads )
-        else
-            self:RemoveScroller()
-        end
-    end
-end,
+     
+	OnMotionHorzEventChange = function(self, new, old )
+		TAunit.OnMotionHorzEventChange(self, new, old)
+		self.CreateMovementEffects(self)
+	end,
+    
+    
+	CreateMovementEffects = function(self, EffectsBag, TypeSuffix)
+		if not IsDestroyed(self) then
+		TAunit.CreateMovementEffects(self, EffectsBag, TypeSuffix)
+		local bp = self:GetBlueprint()
+		if self:IsUnitState('Moving') and bp.Display.MovementEffects.TAMovement then
+			for k, v in bp.Display.MovementEffects.TAMovement.Bones do
+				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.TAMovement.Emitter ):ScaleEmitter(bp.Display.MovementEffects.TAMovement.Scale))
+			end
+			elseif not self:IsUnitState('Moving') then
+			for k,v in self.FxMovement do
+				v:Destroy()
+			end
+		end
+		end
+	end,
 
-CreateMotionChangeEffects = function( self, new, old )
-    ---self:LOGDBG('TATreads.CreateMotionChangeEffects')
-    local key = self:GetCurrentLayer()..old..new
-    local bpTable = self:GetBlueprint().Display.MotionChangeEffects[key]
-    TAunit.CreateMotionChangeEffects(self, new, old)
-    if bpTable then
-        self:CreateTerrainTypeEffects( bpTable.Effects, 'FXMotionChange', key )
-    end
-end,
 
-DestroyMovementEffects = function( self )
-    ---self:LOGDBG('TATreads.DestroyMovementEffects')
-    local bpTable = self:GetBlueprint().Display.MovementEffects
-    local layer = self:GetCurrentLayer()
-    TAunit.DestroyMovementEffects(self)
-    # Cleanup treads
-    if self.TreadThreads then
-        for k, v in self.TreadThreads do
-            KillThread(v)
-        end
-        self.TreadThreads = {}
-    end
-    if bpTable[layer].Treads.ScrollTreads then
-        self:RemoveScroller()
-    end
-end,
-
-CreateTreads = function(self, treads)
-    TAunit.CreateTreads(self, treads)
-    ---self:LOGDBG('TATreads.CreateTreads')
-    if treads.ScrollTreads then
-        self:AddThreadScroller(1.0, treads.ScrollMultiplier or 0.2)
-    end
-    self.TreadThreads = {}
-    if treads.TreadMarks then
-            for k, v in treads.TreadMarks do
-                table.insert( self.TreadThreads, self:ForkThread(self.CreateTreadsThread, v))
-        end
-    end
-end,
-
-CreateTreadsThread = function(self, treads)
-    --TAunit.CreateTreadsThead(self, treads)
-    ---self:LOGDBG('TATreads.CreateTreadsThread')
-    local sizeX = treads.TreadMarksSizeX
-    local sizeZ = treads.TreadMarksSizeZ
-    local interval = treads.TreadMarksInterval
-    local treadOffset = treads.TreadOffset
-    local treadBone = treads.BoneName or 0
-    local treadTexture = treads.TreadMarks
-    local duration = treads.TreadLifeTime or 10
-    local army = self:GetArmy()
-
-    while true do
-        CreateSplatOnBone(self, treadOffset, treadBone, treadTexture, sizeX, sizeZ, 130, duration, army)
-        WaitSeconds(interval)
-    end
-end,
 }
 
-TAWalking = Class(TATreads) 
+TAWalking = Class(TAunit) 
 {
     WalkingAnim = nil,
     WalkingAnimRate = 1,
@@ -95,8 +50,7 @@ TAWalking = Class(TATreads)
 
     OnMotionHorzEventChange = function( self, new, old )
         ---self:LOGDBG('TAWalking.OnMotionHorzEventChange')
-        TATreads.OnMotionHorzEventChange(self, new, old)
-       
+        TAunit.OnMotionHorzEventChange(self, new, old)
         if ( old == 'Stopped' ) then
             if (not self.Animator) then
                 self.Animator = CreateAnimator(self, true)
@@ -105,10 +59,8 @@ TAWalking = Class(TATreads)
             if bpDisplay.AnimationWalk then
                 self.Animator:PlayAnim(bpDisplay.AnimationWalk, true)
                 self.Animator:SetRate(bpDisplay.AnimationWalkRate or 1)
-                TATreads.MovementEffects(self)
             end
         elseif ( new == 'Stopped' ) then
-                TATreads.MovementEffects(self)
             if(self.IdleAnim and not self:IsDead()) then
                 self.Animator:PlayAnim(self.IdleAnim, true)
             elseif(not self.DeathAnim or not self:IsDead()) then
@@ -117,9 +69,19 @@ TAWalking = Class(TATreads)
             end
         end
     end,
+}
 
-    OnKilled = function(self, instigator, type, overkillRatio)
-        ---self:LOGDBG('TAWalking.OnKilled')
-		TATreads.OnKilled(self, instigator, type, overkillRatio)
+TACounter = Class(TAWalking) 
+{ 
+	OnStopBeingBuilt = function(self,builder,layer)
+		TAWalking.OnStopBeingBuilt(self,builder,layer)
+		local bp = self:GetBlueprint()
+		if bp.Intel.RadarStealth or bp.Intel.RadarRadius then
+			self:SetMaintenanceConsumptionActive()
+		end
+        self:SetScriptBit('RULEUTC_StealthToggle', false)
+		self:SetScriptBit('RULEUTC_JammingToggle', true)
+		self:SetScriptBit('RULEUTC_CloakToggle', true)
+		self:RequestRefreshUI()
 	end,
 }

@@ -53,9 +53,7 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORKBOT_MISSILE',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         Acceleration = 6.5,
         DestroyOnWater = true,

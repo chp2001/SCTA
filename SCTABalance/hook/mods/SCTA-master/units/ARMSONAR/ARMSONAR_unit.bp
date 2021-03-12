@@ -8,6 +8,7 @@ UnitBlueprint {
     Categories = {
         'BUILTBYT1HOVER',
         'BUILTBYT1AIR',
+        'BUILTBYT1NAVAL',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
@@ -16,10 +17,10 @@ UnitBlueprint {
         'TECH1',
 	    'STRUCTURE',
 	    'INTELLIGENCE',
-	    'SONAR',
 	    'NAVAL',
         'OVERLAYSONAR',
 	    'ARM',
+	    'SONAR',
 	    'LEVEL1',
 	    'SORTINTEL',
     },
@@ -34,12 +35,11 @@ UnitBlueprint {
         },
     },
     Economy = {
-	NaturalProducer = false,
     BuildCostEnergy = 1200,
     BuildTime = 2300,
     BuildRate = 40, 
     BuildCostMass = 120,
-    MaintenanceConsumptionPerSecondEnergy = 10,
+    MaintenanceConsumptionPerSecondEnergy = 25,
     ProductionPerSecondEnergy = 0,
     BuildableCategory = {
         'armason',
@@ -51,13 +51,9 @@ UnitBlueprint {
 	MinWaterDepth = 0.5,
     },
     General = {
-        ToggleCaps = {
-            RULEUTC_IntelToggle = true,
-        },
         UpgradesTo = 'armason',
     },
     Intel = {
-	FreeIntel = false,
     VisionRadius = 12,
 	SonarRadius = 140,
 	WaterVisionRadius = 12,
@@ -67,9 +63,6 @@ UnitBlueprint {
     Physics = {
         SkirtSizeX = 1, 
         SkirtSizeZ = 1, 
-        BuildOnLayerCaps = {
-            LAYER_Water = true,
-        },
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,

@@ -7,10 +7,8 @@ UnitBlueprint {
    Categories = {
     'SELECTABLE',
     'AIR',
-    'VTOL',
     'SELECTION', 
     'CORE',
-    'OCEAN',
     'LEVEL3',
     'TECH3',
     'ENGINEER',
@@ -30,7 +28,6 @@ UnitBlueprint {
     Display = {
         UniformScale = 0.12,
     },
-    Description = 'Tech Level 3',
     Economy = {
         BuildCostEnergy = 7200,
         BuildRate = 450,
@@ -48,7 +45,6 @@ UnitBlueprint {
         FuelRechargeRate = 888888,
         FuelUseTime = 888888,
     },
-    StrategicIconName = 'icon_bot3_engineer',
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
 }

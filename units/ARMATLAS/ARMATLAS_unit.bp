@@ -103,13 +103,13 @@ UnitBlueprint {
                 },
             },
         },
-	MovementEffects = {
-        TAMovement = {
-		Emitter = '/mods/SCTA-master/effects/emitters/fire_smoke_emit.bp',
-		Scale = 1,
-		Bones = {'Flame_01','Flame_02','Flame_03'},
+        MovementEffects = {
+            TAMovement = {
+            Emitter = '/mods/SCTA-master/effects/emitters/fire_smoke_emit.bp',
+            Scale = 1,
+            Bones = {'jet1','jet2','jet3'},
+            },
         },
-	},
         UniformScale = 0.16,
     },
     Footprint = {
@@ -150,9 +150,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 14,
         WaterVisionRadius = 6,
-    },
-    Interface = {
-        HelpText = 'Air Transport',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

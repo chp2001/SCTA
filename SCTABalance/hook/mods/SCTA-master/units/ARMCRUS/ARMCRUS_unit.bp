@@ -26,9 +26,6 @@ UnitBlueprint {
     SizeY = 3,
     SizeZ = 10,
     Description = 'Destroyer',
-    Interface = {
-        HelpText = 'Destroyer',
-    },
     Physics = {
             MaxAcceleration = 3,
             MaxBrake = 3,
@@ -40,8 +37,6 @@ UnitBlueprint {
             ArtilleryShieldBlocks = true,
             Damage = 200,
             MaxRadius = 80,
-        RangeCategory = 'UWRC_IndirectFire',
-        WeaponCategory = 'Artillery',
             MuzzleSalvoSize = 2,
             RackSalvoReloadTime = 1,
             RackSalvoSize = 2,
@@ -52,8 +47,6 @@ UnitBlueprint {
             RateOfFire = 0.5882352941,
         },
         [3] = {
-            Damage = 500,
-            DamageRadius = 3,
         }, 
     },
 }

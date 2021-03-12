@@ -53,16 +53,14 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARMSHIP_MISSILE',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
-        Acceleration = 7.5625,
+        Acceleration = 5,
         DestroyOnWater = true,
-        InitialSpeed = 26.875,
+        InitialSpeed = 20,
         LeadTarget = false,
         Lifetime = 10,
-        MaxSpeed = 28.125,
+        MaxSpeed = 40,
         TrackTarget = true,
         TurnRate = 165,
         UseGravity = true,

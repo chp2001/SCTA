@@ -13,13 +13,13 @@ UnitBlueprint {
         'MOBILE',
 	'LAND',
 	'INTELLIGENCE',
-	'RADAR',
         'OVERLAYRADAR',
         'ARM',
     'VEHICLE',
     'LEVEL3',
     'OVERLAYOMNI',
     'OVERLAYCOUNTERINTEL',
+    'JAM',
     },
     Display = {
     Abilities = {
@@ -29,18 +29,33 @@ UnitBlueprint {
         },
     },
     Economy = {
-        MaintenanceConsumptionPerSecondEnergy = 20,
+        ProductionPerSecondEnergy = 0,
+        TAConsumptionPerSecondEnergy = 60,
+        MaintenanceConsumptionPerSecondEnergy = 10,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
-    Intel = {
-        FreeIntel = false,
-        VisionRadius = 14,
-        OmniRadius = 40,
-        RadarStealthFieldRadius = 20,
-    },
+    General = {
+        OrderOverrides = {
+            RULEUTC_StealthToggle = {
+                bitmapId = 'stealth-field',
+                helpText = 'toggle_stealth_field',
+            },
+        },
+        ToggleCaps = {
+            RULEUTC_StealthToggle = true,
+            RULEUTC_IntelToggle = false,    
+            },
+        },
+        Intel = {
+            ActiveIntel = {
+                Omni = true,
+                Radar = true,
+            },
+            RadarStealth = true,
+            RadarStealthField = true,
+            VisionRadius = 14,
+            OmniRadius = 60,
+            RadarStealthFieldRadius = 30,
+        },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,
     SizeX = 2,

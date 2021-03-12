@@ -86,10 +86,8 @@ UnitBlueprint {
         'OVERLAYOMNI', 
         'OVERLAYSONAR',	
         'ARM',
-        'TACLOAK',
-	    'LEVEL10',
         'SNIPEMODE',
-        'ALLTERRAIN',
+        'TACLOAK',
     },
     Defense = {
         ArmorType = 'Commander',
@@ -111,9 +109,8 @@ UnitBlueprint {
             '<LOC ability_omni>Omni Sensor',
             '<LOC ability_cloak>Cloaking',
             'D-Gun',
-            'Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
-        CloakMesh = '/mods/SCTA-master/units/ARMCOM/ARMCOM_cloak_mesh',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -136,9 +133,10 @@ UnitBlueprint {
         },
         MaxBuildDistance = 3.75,
         NaturalProducer = true,
-        ProductionPerSecondEnergy = 25,
+        ProductionPerSecondEnergy = 20,
         ProductionPerSecondMass = 1,
-	MaintenanceConsumptionPerSecondEnergy = 200,
+        MaintenanceConsumptionPerSecondEnergy = 200,
+        TAConsumptionPerSecondEnergy = 1000,
         StorageEnergy = 1000,
         StorageMass = 1000,
     },
@@ -172,7 +170,7 @@ UnitBlueprint {
         OrderOverrides = {
             RULEUCC_Overcharge = {
                 bitmapId = 'activate-weapon',
-                helpText = 'DGun. Requires 600 Energy to Fire. Right-click turn on auto',
+                helpText = 'DGun. Requires 500 Energy to Fire. Right-click turn on auto',
             },
         },
         ToggleCaps = {
@@ -189,17 +187,14 @@ UnitBlueprint {
         ActiveIntel = {
             Omni = true,
             Sonar = true,
+            Radar = true,
         },    
-        FreeIntel = false,
         VisionRadius = 18,
         WaterVisionRadius = 18,
         RadarRadius = 25,
-	SonarRadius = 25,
-	Cloak = true,
-    OmniRadius = 3,
-    },
-    Interface = {
-        HelpText = 'Commander',
+	    SonarRadius = 25,
+	    Cloak = true,
+        OmniRadius = 3,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -333,8 +328,8 @@ UnitBlueprint {
             MuzzleVelocity = 18,
 	        NeedPrep = true,
             EnergyChargeForFirstShot = true,
-            EnergyRequired = 600,
-            EnergyDrainPerSecond = 600,
+            EnergyRequired = 500,
+            EnergyDrainPerSecond = 500,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_DISINTEGRATOR/ARM_DISINTEGRATOR_proj.bp',
             RackBones = {
                 {
@@ -388,7 +383,7 @@ UnitBlueprint {
                 Land = 'Land|Water|Seabed',
             },
 	        RangeCategory = 'UWRC_DirectFire',
-         WeaponCategory = 'DirectFire',
+            WeaponCategory = 'DirectFire',
             Label = 'AutoDGun',
             MaxRadius = 22,
             MuzzleSalvoDelay = 0,
@@ -396,8 +391,8 @@ UnitBlueprint {
             MuzzleVelocity = 18,
 	        NeedPrep = true,
             EnergyChargeForFirstShot = true,
-            EnergyRequired = 600,
-            EnergyDrainPerSecond = 600,
+            EnergyRequired = 500,
+            EnergyDrainPerSecond = 500,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_DISINTEGRATOR/ARM_DISINTEGRATOR_proj.bp',
             RackBones = {
                 {

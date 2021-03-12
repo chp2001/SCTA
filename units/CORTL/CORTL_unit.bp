@@ -18,8 +18,8 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 14,
     Categories = {
-        'BUILTBYT1SHIP',
         'BUILTBYT1HOVER',
+        'BUILTBYT1NAVAL',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
@@ -90,13 +90,9 @@ TechLevel = 'RULEUTL_Basic',
         UnitName = 'Torpedo Launcher',
     },
     Intel = {
-	FreeIntel = true,
         SonarRadius = 28,
         VisionRadius = 10,
         WaterVisionRadius = 10,
-    },
-    Interface = {
-        HelpText = 'Torpedo Launcher',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

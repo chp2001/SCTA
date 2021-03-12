@@ -1,3 +1,5 @@
+local WEIRD = categories.OCEANENGINEER - categories.COMMAND - categories.FIELDENGINEER
+
 PlatoonTemplate {
     Name = 'CommanderBuilderSCTA',
     Plan = 'EngineerBuildAISCTA',
@@ -18,7 +20,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTA123',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
-        { categories.ENGINEER * (categories.LEVEL1 + categories.LEVEL2 + categories.LEVEL3) - categories.ENGINEERSTATION , 1, 1, 'support', 'None' }
+        { categories.ENGINEER * (categories.LEVEL1 + categories.LEVEL2 + categories.LEVEL3) - WEIRD, 1, 1, 'support', 'None' }
     },
 }
 
@@ -27,7 +29,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTA23',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
-        { categories.ENGINEER * (categories.LEVEL2 + categories.LEVEL3) - categories.ENGINEERSTATION , 1, 1, 'support', 'None' }
+        { categories.ENGINEER * (categories.LEVEL2 + categories.LEVEL3) - WEIRD, 1, 1, 'support', 'None' }
     },
 }
 
@@ -35,7 +37,15 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTA12',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
-        { categories.ENGINEER * (categories.LEVEL1 + categories.LEVEL2) - categories.ENGINEERSTATION , 1, 1, 'support', 'None' }
+        { categories.ENGINEER * (categories.LEVEL1 + categories.LEVEL2) - WEIRD, 1, 1, 'support', 'None' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTAEco12',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        { categories.ENGINEER * categories.AIR * (categories.LEVEL1 + categories.LEVEL2), 1, 1, 'support', 'None' }
     },
 }
 
@@ -43,7 +53,23 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTA',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
-        { categories.ENGINEER * categories.LEVEL1 - categories.COMMAND, 1, 1, 'support', 'None' }
+        { categories.ENGINEER * categories.LEVEL1 - WEIRD, 1, 1, 'support', 'None' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTANaval',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        { categories.OCEANENGINEER * categories.LEVEL1, 1, 1, 'support', 'None' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTANaval12',
+    Plan = 'EngineerBuildAISCTA',
+    GlobalSquads = {
+        { categories.ENGINEER * (categories.OCEANENGINEER + categories.AIR), 1, 1, 'support', 'None' }
     },
 }
 
@@ -105,6 +131,18 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
+    Name = 'T1EngineerSCTANaval',
+    FactionSquads = {
+        Arm = {
+            { 'armcs', 1, 1, 'support', 'None' }
+        },
+        Core = {
+            { 'corcs', 1, 1, 'support', 'None' }
+        },
+    }
+}
+
+PlatoonTemplate {
     Name = 'T1BuildEngineerAirSCTA',
     FactionSquads = {
         Arm = {
@@ -151,19 +189,6 @@ PlatoonTemplate {
     }
 }
 
-
-
-PlatoonTemplate {
-    Name = 'T3BuildEngineerAirSCTA',
-    FactionSquads = {
-        Arm = {
-            { 'armcsa', 1, 1, 'support', 'None' }
-        },
-        Core = {
-            { 'corcsa', 1, 1, 'support', 'None' }
-        },
-    }
-}
 
 PlatoonTemplate {
     Name = 'T3BuildEngineerSCTA',

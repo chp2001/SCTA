@@ -40,6 +40,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'KBOT',
+        'ALLTERRAIN',
         'LEVEL2',
         'TECH2',
         'FIELDENGINEER',
@@ -51,8 +52,8 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
         'MOBILE',
-	'CONSTRUCTION',
-	'LAND',
+	    'CONSTRUCTION',
+	    'LAND',
         'CORE',
         'NECRO',
     },
@@ -67,8 +68,11 @@ UnitBlueprint {
     },
     Description = 'Resurrection Kbot',
     Display = {
-    --AnimationBuild = '/mods/SCTA-master/units/CORNECRO/CORNECRO_lod0_unpack.sca',
-    --AnimationBuildRate = 1,
+        Abilities = {
+             '<LOC ability_personalstealth>Personal Stealth',
+             'Resurrection',
+              '<LOC ability_engineeringsuite>Engineering Suite',
+    },
     AnimationWalk = '/mods/SCTA-master/units/CORNECRO/CORNECRO_lod0_Awalk.sca',
     AnimationWalkRate = 1,
         Mesh = {
@@ -93,8 +97,12 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 17,
     ProductionPerSecondMass = 1,
     BuildableCategory = {
-        'mas0001',
+        'BUILTBYT1MINELAYER CORE',
     },
+    },
+    Footprint = {
+        SizeX = 2,
+        SizeZ = 1,
     },
     General = {
         BuildBones = {
@@ -125,9 +133,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 12,
-    },
-    Interface = {
-        HelpText = 'Resurrection Kbot',
+        RadarStealth = true,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -139,7 +145,7 @@ UnitBlueprint {
         MaxAcceleration = 2,
         MaxBrake = 1.2,
         MaxSpeed = 1.2,
-        MotionType = 'RULEUMT_Land',
+        MotionType = 'RULEUMT_Amphibious',
         TurnRate = 166,
         MaxSteerForce = 10,
         StandUpright = true,
@@ -150,7 +156,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 1.5,
     SizeZ = 2,
-    StrategicIconName = 'icon_structure2_engineer',
+    StrategicIconName = 'icon_land2_engineer',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #BIG_UNITEX

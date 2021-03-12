@@ -7,7 +7,7 @@ UnitBlueprint {
     Merge = true,
     Categories = {
         'SELECTABLE',
-        'TECH1',
+        'TECH2',
         'ENGINEER',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -18,7 +18,7 @@ UnitBlueprint {
 	'LAND',
         'CORE',
 	'MINELAYER',
-    'LEVEL1',
+    'LEVEL2',
     'FIELDENGINEER',
     },
     Display = {

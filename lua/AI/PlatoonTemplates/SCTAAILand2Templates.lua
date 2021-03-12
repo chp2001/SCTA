@@ -29,7 +29,7 @@ PlatoonTemplate {
             { 'armfav', 1, 1, 'scout', 'none' }
         },
         Core = {
-            { 'corvoyr', 1, 1, 'scout', 'none' }
+            { 'corfast', 1, 1, 'scout', 'none' }
         },
     }
 }
@@ -54,7 +54,7 @@ PlatoonTemplate {
             { 'armsam', 1, 1, 'attack', 'none' }
         },
         Core = {
-            { 'corcrash', 1, 1, 'attack', 'none' }
+            { 'corstorm', 1, 1, 'attack', 'none' }
         },
     }
 }
@@ -63,10 +63,12 @@ PlatoonTemplate {
     Name = 'T1LandDFTankSCTA2',
     FactionSquads = {
         Arm = {
-            { 'armstump', 1, 2, 'attack', 'none' }
+            { 'armck', 1, 1, 'support', 'none' },
+            { 'armstump', 1, 6, 'attack', 'none' },
         },
         Core = {
-            { 'corcrash', 1, 2, 'attack', 'none' }
+            { 'corcv', 1, 1, 'support', 'none' },
+            { 'corstorm', 1, 6, 'attack', 'none' },
         },
     }
 }
@@ -86,10 +88,36 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
+    Name = 'T2LandMissileSCTA2',
+    FactionSquads = {
+        Arm = {
+            { 'armmerl', 1, 1, 'attack', 'none' }
+        },
+        Core = {
+            { 'corhrk', 1, 1, 'attack', 'none' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T2LandAASCTA2',
+    FactionSquads = {
+        Arm = {
+            { 'armyork', 1, 1, 'attack', 'none' }
+        },
+        Core = {
+            { 'corcrash', 1, 1, 'attack', 'none' }
+        },
+    }
+}
+
+
+PlatoonTemplate {
     Name = 'T2LandDFTank2SCTA',
     FactionSquads = {
         Arm = {
-            { 'armbull', 1, 4, 'attack', 'none' }
+            { 'armlatnk', 1, 2, 'attack', 'none' },
+            { 'armspid', 1, 1, 'attack', 'none' },
         },
         Core = {
             { 'corcan', 1, 2, 'attack', 'none' },
@@ -102,7 +130,7 @@ PlatoonTemplate {
     Name = 'T3LandDFTank2SCTA',
     FactionSquads = {
         Arm = {
-            { 'armmanni', 1, 2, 'attack', 'none' },
+            { 'armbull', 1, 2, 'attack', 'none' },
             { 'armmart', 1, 1, 'attack', 'none' },
         },
         Core = {

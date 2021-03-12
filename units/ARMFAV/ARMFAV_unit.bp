@@ -39,7 +39,6 @@ UnitBlueprint {
         'SCOUT',
         'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-        'RADAR',
         'OVERLAYRADAR',
         'ARM',
     },
@@ -54,6 +53,9 @@ UnitBlueprint {
     },
     Description = 'Fast Attack Vehicle',
     Display = {
+        Abilities = {
+            '<LOC ability_radar>Radar',
+        },
         MovementEffects = {
             Land = {
                 Treads = {
@@ -112,9 +114,6 @@ TechLevel = 'RULEUTL_Basic',
     },
     Intel = {
         VisionRadius = 18, 
-    },
-    Interface = {
-        HelpText = 'Fast Attack Vehicle',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

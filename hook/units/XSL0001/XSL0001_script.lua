@@ -7,21 +7,25 @@
 #**
 #**  Copyright � 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
-local oldXSL0001 = XSL0001
-XSL0001 = Class(oldXSL0001) {
-    PlayCommanderWarpInEffect = function(self)
-        self:HideBone(0, true)
-        self:SetUnSelectable(false)
-        self:SetBusy(true)
-        self:SetBlockCommandQueue(true)
-        self:ForkThread(self.WarpInEffectThread)
-    end,
-
+local taXSL0001 = XSL0001
+XSL0001 = Class(taXSL0001) {
     OnStopBeingBuilt = function(self, builder, layer)
-        oldXSL0001.OnStopBeingBuilt(self, builder, layer)
-        self:ForkThread(self.PlayCommanderWarpInEffect) --should only be used for testing out the drop animation
+        taXSL0001.OnStopBeingBuilt(self, builder, layer)
+        if __blueprints['eal0001'] then
+            ForkThread(self.BlackOps, self, builder, layer)
+            self:Destroy()
+        end
     end,
 
+    BlackOps = function (self, builder, layer)
+            local position = self:GetPosition()
+            local cdrUnit = CreateUnitHPR('esl0001', self:GetArmy(), (position.x), (position.y+1), (position.z), 0, 0, 0)  
+            cdrUnit:HideBone(0, true)
+            cdrUnit:SetUnSelectable(false)
+		    cdrUnit:SetBlockCommandQueue(true)
+            WaitSeconds(2)
+		    cdrUnit:ForkThread(cdrUnit.PlayCommanderWarpInEffect)
+    end,
 }
 
 TypeClass = XSL0001

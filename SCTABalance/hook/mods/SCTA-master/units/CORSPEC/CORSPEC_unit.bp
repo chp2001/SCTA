@@ -8,9 +8,10 @@ UnitBlueprint {
     Display = {
         UniformScale = 0.08,
     },
-    Footprint = {
-	SizeX = 1,
-	SizeZ = 1,
+    Economy = {
+        ProductionPerSecondEnergy = 0,
+        TAConsumptionPerSecondEnergy = 60,
+        MaintenanceConsumptionPerSecondEnergy = 10,
     },
     LifeBarSize = 1,
     LifeBarOffset = 0,

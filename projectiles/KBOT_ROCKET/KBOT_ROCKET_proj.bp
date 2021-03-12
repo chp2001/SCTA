@@ -51,9 +51,7 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'KBOT_ROCKET',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
 	    TurnRate = 30,
         DestroyOnWater = true,

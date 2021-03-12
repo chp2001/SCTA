@@ -10,9 +10,6 @@ ARMYORK = Class(TAunit) {
 
 	Weapons = {
 		ARMYORK_GUN = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-			end,
 		},
 	},
 }

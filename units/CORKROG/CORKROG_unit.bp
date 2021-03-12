@@ -36,11 +36,9 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 0,
     Categories = {
+        'BUILTBYGANTRY',
         'SELECTABLE',
-        'TECH4',
         'EXPERIMENTAL',
-        'KBOT',
-        'LEVEL4',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -50,7 +48,9 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',        
         'CORE',
+        'KBOT',
         'SNIPEMODE',
+        'LASER',
     },
     Defense = {
         AirThreatLevel = 0,
@@ -106,9 +106,6 @@ TechLevel = 'RULEUTL_Experimental',
     Intel = {
         VisionRadius = 16,
         WaterVisionRadius = 8,
-    },
-    Interface = {
-        HelpText = 'Experimental Kbot',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

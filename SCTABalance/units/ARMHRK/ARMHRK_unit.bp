@@ -94,9 +94,6 @@ TechLevel = 'RULEUTL_Advanced',
     Intel = {
         VisionRadius = 14,
     },
-    Interface = {
-        HelpText = 'Mobile Kbot Rocket Launcher',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 1,
@@ -149,8 +146,6 @@ TechLevel = 'RULEUTL_Advanced',
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 3,
-            EnergyDrainPerSecond = 5,
-            EnergyRequired = 25,
             ProjectileId = '/mods/SCTA-master/projectiles/HRK_ROCKET/HRK_ROCKET_proj.bp',
             RackBones = {
                 {

@@ -1,23 +1,5 @@
 UnitBlueprint {
     Merge = true, 
-    Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
-        'BUILTBYT2VEHICLE',
-        'SELECTABLE',
-        'DRAGBUILD',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH3',
-	'STRUCTURE',
-    'DEFENSE',
-	'INDIRECTFIRE',
-        'OVERLAYINDIRECTFIRE',
-	'ARM',
-	'LEVEL3',
-    'STRATEGIC',
-    'SORTSTRATEGIC',
-    },
     Defense = {
         Health = 9000,
         MaxHealth = 9000,
@@ -46,9 +28,9 @@ UnitBlueprint {
     StrategicIconName = 'icon_structure3_artillery',
     Weapon = {
         [1] = {
-    BallisticArc = 'RULEUBA_HighArc',        
-    MuzzleVelocityReduceDistance = 800,
-    FiringRandomness = 1,
+        BallisticArc = 'RULEUBA_HighArc',        
+        MuzzleVelocityReduceDistance = 800,
+        Damage = 1800,
         },
         [2] = {},
     },

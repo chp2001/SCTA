@@ -35,12 +35,11 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
+	    'LAND',
+	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
-	'KAMIKAZI',
-    'ALLTERRAIN',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -53,10 +52,10 @@ UnitBlueprint {
     },
     Description = 'Crawling Bomb',
     Display = {
-        AnimationWalk = '/mods/SCTA-master/units/ARMVADER/ARMVADER_lod0_Awalk.sca',
+        AnimationWalk = '/mods/SCTA-master/units/ARMVADER/ARMVADER_lod0_AWalk.sca',
         AnimationWalkRate = 2,
         Abilities = {
-            'Kamikazi',
+            '<LOC ability_suicideweapon>Suicide Weapon',
             'All-Terrain',
         },
         Mesh = {
@@ -69,8 +68,7 @@ UnitBlueprint {
                 },
             },
         },
-        ---SmokeBone = 'ARMVADER',
-        UniformScale = 0.16,
+        UniformScale = 0.08,
     },
     Economy = {
         BuildCostEnergy = 5473,
@@ -100,9 +98,6 @@ TechLevel = 'RULEUTL_Advanced',
     },
     Intel = {
         VisionRadius = 6,
-    },
-    Interface = {
-        HelpText = 'Crawling Bomb',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -142,6 +137,14 @@ TechLevel = 'RULEUTL_Advanced',
 	    DamageRadius = 3,
             FireOnSelfDestruct = true,
             DamageType = 'Normal',
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        0,
+                    },
+                    RackBone = 0,
+                },
+            },
             DisplayName = 'Suicide',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',

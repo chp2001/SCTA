@@ -23,8 +23,8 @@ local TAupgrades =
     ['cormex'] = 'cormass',
     ['armrad'] = 'armarad',
     ['corrad'] = 'corarad',
-    ['armarad'] = 'armtarg',
-    ['corarad'] = 'cortarg',
+    ['armarad'] = 'armxrad',
+    ['corarad'] = 'corxrad',
     ['armsonar'] = 'armason',
     ['corsonar'] = 'corason',
 }

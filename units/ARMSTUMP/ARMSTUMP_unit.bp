@@ -105,14 +105,11 @@ UnitBlueprint {
         },
         FactionName = 'ARM',
         Icon = 'land',
-TechLevel = 'RULEUTL_Advanced',
+        TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Stumpy',
     },
     Intel = {
         VisionRadius = 10,
-    },
-    Interface = {
-        HelpText = 'Medium Assault Tank',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

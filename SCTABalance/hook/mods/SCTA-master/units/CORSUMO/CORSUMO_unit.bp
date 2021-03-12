@@ -12,10 +12,11 @@ UnitBlueprint {
         'CORE',
         'KBOT',
 	    'LEVEL3',
+        'LASER',
     },
     Defense = {
-        Health = 14000,
-        MaxHealth = 14000,
+        Health = 10000,
+        MaxHealth = 10000,
     },
     Display = {
         UniformScale = 0.22,
@@ -39,4 +40,12 @@ UnitBlueprint {
     SizeZ = 2,
     SizeY = 3,
     StrategicIconName = 'icon_bot3_armored',
+    Weapon = {
+        [1] = {
+            EnergyDrainPerSecond = 40,
+            EnergyRequired = 40,
+        },
+        [2] = {
+        },
+    },
 }

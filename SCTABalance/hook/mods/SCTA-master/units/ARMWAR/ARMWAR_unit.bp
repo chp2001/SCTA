@@ -12,16 +12,11 @@ Economy = {
     BuildCostMass = 116,
     BuildTime = 2200,
 },
-Footprint = {
-    SizeX = 1,
-    SizeZ = 1,
-},
 Intel = {
     VisionRadius = 12,
 },
 SelectionSizeX = 0.8,
 SelectionSizeZ = 0.8,
-SelectionCenterOffsetZ = 0,
 SizeX = 1.5,
 SizeY = 1.7,
 SizeZ = 1.7,

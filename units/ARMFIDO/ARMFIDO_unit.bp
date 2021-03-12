@@ -94,9 +94,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 10,
     },
-    Interface = {
-        HelpText = 'Assault Kbot',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
@@ -117,7 +114,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeZ = 2,
     SizeY = 2,
-    StrategicIconName = 'icon_bot2_directfire',
+    StrategicIconName = 'icon_land2_directfire',
     StrategicIconSortPriority = 0,
     Transport = {
         TransportClass = 2,

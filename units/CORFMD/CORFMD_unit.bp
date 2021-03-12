@@ -102,18 +102,12 @@ TechLevel = 'RULEUTL_Secret',
     Intel = {
         VisionRadius = 10,
     },
-    Interface = {
-        HelpText = 'Anti Missile Defense System',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
         SkirtSizeX = 2, 
         SkirtSizeZ = 2,  
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,

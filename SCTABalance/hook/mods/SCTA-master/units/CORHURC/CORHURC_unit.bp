@@ -33,13 +33,13 @@ UnitBlueprint {
     StrategicIconName = 'icon_bomber2_directfire',
     Weapon = {
         [1] = {
-            Damage = 650,
-            MuzzleSalvoSize = 4,
+            Damage = 250,
+            RackReloadTimeout = 5,
             RateOfFire = 0.3333333333,
         },
         [2] = {
-        Damage = 50,
-	    MuzzleSalvoDelay = 0,
+        Damage = 75,
+        RateOfFire = 2,
         },
         [3] = {
         }, 

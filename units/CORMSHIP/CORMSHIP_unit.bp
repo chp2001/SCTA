@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 7,
+    BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
         'OCEAN',
@@ -86,7 +86,7 @@ UnitBlueprint {
         BuildTime = 22126,
     },
     Footprint = {
-        SizeX = 6,
+        SizeX = 2,
         SizeZ = 6,
 	MaxWaterDepth = 0.75,
     },
@@ -107,13 +107,9 @@ TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Hydra',
     },
     Intel = {
-	FreeIntel = true, 
         VisionRadius = 14,
         WaterVisionRadius = 4, 
 	    RadarRadius = 78,
-    },
-    Interface = {
-        HelpText = 'Missile Ship',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -157,7 +153,8 @@ TechLevel = 'RULEUTL_Advanced',
                 Water = 'Land|Water|Air',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
-     WeaponCategory = 'IndirectFire',
+        RenderFireClock = true,
+        WeaponCategory = 'MISSILE',
             Label = 'CORMSHIP_ROCKET',
 	    FiringTolerance = 10,
             MaxRadius = 150,
@@ -169,23 +166,32 @@ TechLevel = 'RULEUTL_Advanced',
                 {
                     MuzzleBones = {
                         'rocket1',
+                        'rocket6',
                     },
-		    VisibleMuzzle = true,
+		            VisibleMuzzle = true,
                     RackBone = 'silo1',
+                },
+                {
+                    MuzzleBones = {
+                        'rocket5',
+                    },
+		            VisibleMuzzle = true,
+                    RackBone = 'silo5',
                 },
                 {
                     MuzzleBones = {
                         'rocket2',
                     },
-		    VisibleMuzzle = true,
+		             VisibleMuzzle = true,
                     RackBone = 'silo2',
                 },
-                {
+                    {
                     MuzzleBones = {
+                        'rocket6',
                         'rocket3',
                     },
-		    VisibleMuzzle = true,
-                    RackBone = 'silo3',
+		            VisibleMuzzle = true,
+                    RackBone = 'silo6',
                 },
                 {
                     MuzzleBones = {
@@ -193,20 +199,6 @@ TechLevel = 'RULEUTL_Advanced',
                     },
 		    VisibleMuzzle = true,
                     RackBone = 'silo4',
-                },
-                {
-                    MuzzleBones = {
-                        'rocket5',
-                    },
-		    VisibleMuzzle = true,
-                    RackBone = 'silo5',
-                },
-                {
-                    MuzzleBones = {
-                        'rocket6',
-                    },
-		    VisibleMuzzle = true,
-                    RackBone = 'silo6',
                 },
             },
             RackFireTogether = false,
@@ -216,18 +208,18 @@ TechLevel = 'RULEUTL_Advanced',
             RackSalvoReloadTime = 2,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 3.33,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-	    WeaponUnpacks = true,
+            WeaponUnpacks = true,
+            WeaponUnpackTimeout = 1,
             WeaponRepackTimeout = 3,
             WeaponUnpackAnimation = '/mods/SCTA-master/units/CORMSHIP/CORMSHIP_lod0_runpack.sca',
             WeaponUnpackAnimationRate = 1,
-            WeaponUnpackTimeout = 1,
         },
         {
             Audio = {

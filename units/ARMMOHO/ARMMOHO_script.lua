@@ -11,7 +11,7 @@ ARMMOHO = Class(TAMass) {
 	OnCreate = function(self)
 		TAMass.OnCreate(self)
 		self.Spinners = {
-			arms = CreateRotator(self, 'sp', 'y', nil, 0, 91, 0),
+			arms = CreateRotator(self, 'blade', 'y', nil, 0, 91, 0),
 		}
 		self.Trash:Add(self.Spinners.arms)
 	end,
@@ -49,7 +49,6 @@ ARMMOHO = Class(TAMass) {
 		TAMass.OnProductionPaused(self)
 		self.Spinners.arms:SetAccel(182)
 		self.Spinners.arms:SetTargetSpeed(0)
-		self:SetMaintenanceConsumptionInactive()
 		self:PlayUnitSound('Deactivate')
 	end,
 
@@ -57,7 +56,6 @@ ARMMOHO = Class(TAMass) {
 		TAMass.OnProductionUnpaused(self)
 		self.Spinners.arms:SetAccel(91)
 		self.Spinners.arms:SetTargetSpeed(self:GetProductionPerSecondMass() * 17)
-		self:SetMaintenanceConsumptionActive()
 		self:PlayUnitSound('Activate')
 	end,
 }

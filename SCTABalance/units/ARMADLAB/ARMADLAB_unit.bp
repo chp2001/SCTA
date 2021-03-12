@@ -41,7 +41,7 @@ UnitBlueprint {
     'LAND', 
     'CONSTRUCTIONSORTDOWN',
 	'ARM',
-    'PLANT',
+    'DEVELOPMENT',
 	'SORTCONSTRUCTION',
 	'LEVEL3',
     },
@@ -78,7 +78,7 @@ UnitBlueprint {
         BuildCostEnergy = 54000,
         BuildCostMass = 6000, 
         BuildTime = 200000,
-        BuildRate = 240,
+        BuildRate = 360,
         DifferentialUpgradeCostCalculation = true,
         BuildableCategory = {
             'KBOT LEVEL1 ARM',
@@ -86,7 +86,7 @@ UnitBlueprint {
             'KBOT LEVEL3 ARM',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = -5,
+	InitialRallyZ = 7,
     StorageMass = 50,
     StorageEnergy = 50,
     },
@@ -121,16 +121,10 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 10,
     },
-    Interface = {
-        HelpText = 'Produces Kbots',
-    },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
     LifeBarSize = 7,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         FlattenSkirt = true,
         SkirtSizeX = 6,
         SkirtSizeZ = 6, 

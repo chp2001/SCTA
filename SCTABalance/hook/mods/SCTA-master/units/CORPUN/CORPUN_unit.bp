@@ -16,4 +16,12 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 3,
     SizeZ = 3,
+    Weapon = {
+        [1] = {
+            EnergyDrainPerSecond = 200,
+            EnergyRequired = 400,
+            EnergyChargeForFirstShot = true,
+        },
+        [2] = {}, 
+        },
 }

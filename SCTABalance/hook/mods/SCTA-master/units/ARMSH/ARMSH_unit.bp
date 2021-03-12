@@ -3,18 +3,18 @@ UnitBlueprint {
    Categories = {
     'SELECTABLE',
     'TECH3',
+    'LEVEL3',
     'VISIBLETORECON',
     'RECLAIMABLE',
     'MOBILE',
-'SCOUT',
-'DIRECTFIRE',
-    'OVERLAYDIRECTFIRE',
+    'SCOUT',
+    'INTELLIGENCE',
     'OVERLAYRADAR',
-    'OVERLAYOMNI',
+    'DIRECTFIRE',
+    'OVERLAYDIRECTFIRE',
     'LAND',
     'ARM',
-'HOVER',
-'LEVEL1',
+    'ALLTERRAIN',
 },
     Display = {
        Abilities = {
@@ -27,5 +27,4 @@ UnitBlueprint {
         VisionRadius = 14,
         OmniRadius = 25,
     },
-    StrategicIconName = 'icon_land3_intel',
 }

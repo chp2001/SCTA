@@ -85,7 +85,8 @@ UnitBlueprint {
         BuildCostEnergy = 1326,
         BuildCostMass = 73,
         BuildTime = 4937,
-	MaintenanceConsumptionPerSecondEnergy = 15,
+        ProductionPerSecondEnergy = 10,
+        MaintenanceConsumptionPerSecondEnergy = 10,
     },
     General = {
         Category = 'Utility',
@@ -97,8 +98,14 @@ UnitBlueprint {
             RULEUCC_Patrol = true,
             RULEUCC_Stop = true,
         },
+        OrderOverrides = {
+            RULEUTC_StealthToggle = {
+                bitmapId = 'stealth-field',
+                helpText = 'toggle_stealth_field',
+            },
+        },
         ToggleCaps = {
-            RULEUTC_StealthToggle = true,
+        RULEUTC_StealthToggle = true,
         },
         FactionName = 'ARM',
         Icon = 'land',
@@ -106,13 +113,10 @@ UnitBlueprint {
         UnitName = 'Eraser',
     },
     Intel = {
-	FreeIntel = false,
 	RadarStealth = true,
+    RadarStealthField = true,
     VisionRadius = 14,
 	RadarStealthFieldRadius = 31,
-    },
-    Interface = {
-        HelpText = 'Mobile Radar Jammer',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

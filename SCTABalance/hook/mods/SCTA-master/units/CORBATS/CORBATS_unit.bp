@@ -17,6 +17,7 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'SNIPEMODE',
+        'LASER',
     },
     Defense = {
         Health = 25000,
@@ -26,12 +27,9 @@ UnitBlueprint {
         UniformScale = 0.32,
     },
        Economy = {
-        BuildCostEnergy = 180000,
+        BuildCostEnergy = 110000,
         BuildCostMass = 11000,
         BuildTime = 80000,
-        NaturalProducer = true,
-        ProductionPerSecondEnergy = 0,
-        MaintenanceConsumptionPerSecondEnergy = 0,
     },
     Physics = {
         MaxAcceleration = 3,

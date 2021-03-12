@@ -22,7 +22,6 @@ ARMFAST = Class(TAWalking) {
 		ARM_FAST = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
-				
 				ForkThread(self.RecoilThread,self)
 			end,
 

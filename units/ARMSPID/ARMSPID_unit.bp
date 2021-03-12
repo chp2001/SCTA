@@ -10,7 +10,7 @@ UnitBlueprint {
            StopMove = Sound { Bank = 'TA_Sound', Cue = 'SPIDER',   LodCutoff = 'UnitMove_LodCutoff' },
           Destroyed = Sound { Bank = 'TA_Sound', Cue = 'XPLOLRG3', LodCutoff = 'UnitMove_LodCutoff' },
     },
-    BuildIconSortPriority = 1,
+    BuildIconSortPriority = 11,
     Categories = {
         'SELECTABLE',
         'VISIBLETORECON',
@@ -40,6 +40,16 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_stun>EMP Weapon',
             'All-Terrain',
+        },
+        MovementEffects = {
+            Land = {
+                Effects = {
+                    {
+                        Bones = { 'Leg_Tiptoe_001', 'Leg_Tiptoe_002', 'Leg_Tiptoe_003', 'Leg_Tiptoe_004', 'Leg_Tiptoe_005', 'Leg_Tiptoe_006' },
+                        Type = 'GroundKickup01',
+                    },
+                },
+            },
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -79,13 +89,6 @@ UnitBlueprint {
                 Weight = 100,
             },
         },
-        MovementEffects = {
-            TAMovement = {
-            Bones = { 'Origin'},
-            Emitter = '/mods/SCTA-master/effects/emitters/TAdust_emit.bp',
-            Scale = 0.4,
-            },
-        },
         TransportAnimation = { { Animation = '/mods/SCTA-master/units/ARMSPID/ARMSPID_ATransport.sca', Weight = 100 } },
         TransportDropAnimation = { { Animation = '/mods/SCTA-master/units/ARMSPID/ARMSPID_ATransportDetach.sca', Weight = 100 } },
 	    ---SmokeBone = 'Turret_Pitch',
@@ -118,7 +121,6 @@ UnitBlueprint {
         UnitName = 'Spider',
     },
     Intel = { VisionRadius = 21 },
-    Interface = { HelpText = 'Spider Assault Vehicle' },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

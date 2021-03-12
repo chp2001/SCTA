@@ -8,11 +8,11 @@ Defense = {
     MaxHealth = 250,
 },
   Economy = {
-    BuildTime = 4800,
-        BuildCostMass = 60,
-        BuildCostEnergy = 2700,
+    BuildTime = 4000,
+        BuildCostMass = 90,
+        BuildCostEnergy = 2800,
         ProductionPerSecondEnergyMin = 15,
-        ProductionPerSecondEnergyMax = 35,
+        ProductionPerSecondEnergyMax = 45,
     },
     Footprint = {
         SizeX = 2,

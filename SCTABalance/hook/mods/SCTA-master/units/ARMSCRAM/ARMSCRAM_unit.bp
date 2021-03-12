@@ -22,14 +22,21 @@ UnitBlueprint {
         BuildCostEnergy = 2100,
         BuildCostMass = 200,
         BuildTime = 3600,
+        TAConsumptionPerSecondEnergy = 60,
+        MaintenanceConsumptionPerSecondEnergy = 10,
     },
-    Footprint = {
-	SizeX = 2,
-	SizeZ = 3,
-	MaxSlope = 1,
+    General = {
+        OrderOverrides = {
+            RULEUTC_StealthToggle = {
+                bitmapId = 'stealth-field',
+                helpText = 'toggle_stealth_field',
+            },
+        },
+        ToggleCaps = {
+        RULEUTC_StealthToggle = true,
+    },
     },
     Intel = {
-    FreeIntel = false,
     VisionRadius = 14,
     },
     SelectionSizeX = 1.25,

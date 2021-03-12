@@ -88,8 +88,8 @@ UnitBlueprint {
         BuildTime = 42730,
     },
     Footprint = {
-        SizeX = 4,
-        SizeZ = 8,
+        SizeX = 2,
+        SizeZ = 6,
     },
     General = {
         Category = 'Ship',
@@ -117,9 +117,6 @@ UnitBlueprint {
         VisionRadius = 22, 
         WaterVisionRadius = 12,
         SonarRadius = 20,
-    },
-    Interface = {
-        HelpText = 'Battleship',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

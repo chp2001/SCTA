@@ -1,4 +1,5 @@
 local TAExtractBuildMeshBlueprint = ExtractBuildMeshBlueprint
+local TAExtractCloakMeshBlueprint = ExtractCloakMeshBlueprint
 
 function ExtractBuildMeshBlueprint(bp)
 	TAExtractBuildMeshBlueprint(bp)
@@ -26,6 +27,29 @@ function ExtractBuildMeshBlueprint(bp)
 	end
 end
 
+function ExtractCloakMeshBlueprint(bp)
+	TAExtractCloakMeshBlueprint(bp)
+	local meshid = bp.Display.MeshBlueprint
+    if not meshid then return end
+
+    local meshbp = original_blueprints.Mesh[meshid]
+    if not meshbp then return end
+
+    local cloakmeshbp = table.deepcopy(meshbp)
+    if cloakmeshbp.LODs then
+        for i, cat in bp.Categories do
+            if cat == 'ARM' or cat == 'CORE' then
+                for i, lod in cloakmeshbp.LODs do
+                    lod.ShaderName = 'TACloak'
+                end
+            end
+        end
+    end
+    cloakmeshbp.BlueprintId = meshid .. '_cloak'
+    bp.Display.CloakMeshBlueprint = cloakmeshbp.BlueprintId
+    MeshBlueprint(cloakmeshbp)
+end
+
 do
     local SCTAModBlueprints = ModBlueprints
 
@@ -47,7 +71,7 @@ do
 					mul = 2
 				elseif table.find(bp.Categories, 'LEVEL3') then
 					mul = 3
-				elseif table.find(bp.Categories, 'LEVEL4') then
+				elseif table.find(bp.Categories, 'EXPERIMENTAL') then
 					mul = 4
 				else
 					mul = 10

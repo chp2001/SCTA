@@ -3,13 +3,13 @@
 #
 #Script created by Raevn
 
-local TAair = import('/mods/SCTA-master/lua/TAair.lua').TAair
+local TAIntelAir = import('/mods/SCTA-master/lua/TAair.lua').TAIntelAir
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-ARMHAWK = Class(TAair) {
+ARMHAWK = Class(TAIntelAir) {
 
 	OnCreate = function(self)
-		TAair.OnCreate(self)
+		TAIntelAir.OnCreate(self)
 		self.Sliders = {
 			wing1 = CreateSlider(self, 'wing1'),
 			wing2 = CreateSlider(self, 'wing2'),
@@ -18,13 +18,7 @@ ARMHAWK = Class(TAair) {
 			self.Trash:Add(v)
 		end
 	end,
-
-	OnStopBeingBuilt = function(self,builder,layer)
-        TAair.OnStopBeingBuilt(self,builder,layer)
-        self:SetMaintenanceConsumptionActive()
-    end,
-
-
+	
 	OpenWings = function(self)
 		--MOVE wing1 to x-axis <1.99> SPEED <2>;
 		self.Sliders.wing1:SetGoal(-2,0,0)

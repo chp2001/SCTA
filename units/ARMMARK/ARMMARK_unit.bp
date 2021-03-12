@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 2,
+    BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -37,6 +37,9 @@ UnitBlueprint {
         'MOBILE',
 	    'LAND',
         'ARM',
+        'SCOUT',
+        'JAM',
+        'OVERLAYRADAR',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -50,7 +53,10 @@ UnitBlueprint {
     Description = 'Mobile Radar Kbot',
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/ARMMARK/ARMMARK_lod0_Awalk.sca',
-        AnimationWalkRate = 1,
+        AnimationWalkRate = 3,
+        Abilities = {
+            '<LOC ability_radar>Radar',
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -66,11 +72,10 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 1152,
         BuildCostMass = 95,
-        MaintenanceConsumptionPerSecondEnergy = 15,
-        ProductionPerSecondEnergy = 15,
         BuildTime = 3200,
+        ProductionPerSecondEnergy = 22,
+        MaintenanceConsumptionPerSecondEnergy = 22,
     },
-
     General = {
         Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -83,17 +88,17 @@ UnitBlueprint {
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
         },
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
+        },
         FactionName = 'ARM',
         Icon = 'land',
-TechLevel = 'RULEUTL_Advanced',
+        TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Marky',
     },
     Intel = {
         VisionRadius = 16,
         RadarRadius = 50, 
-    },
-    Interface = {
-        HelpText = 'Infantry Kbot',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

@@ -1,8 +1,10 @@
 UnitBlueprint {
-    Merge = true, 
+    Merge = true,
     Categories = {
         'SELECTABLE',
         'TECH2',
+        'LEVEL2',
+        'FIELDENGINEER',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -11,13 +13,13 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
         'MOBILE',
-	    'CONSTRUCTION',
+        'SELECTION',
+        'CONSTRUCTION',
         'LAND',
-        'FIELDENGINEER',
         'ARM',
         'KBOT',
         'VEHICLE',
-	    'LEVEL2',
+        'ALLTERRAIN',
     },
     Defense = {
         Health = 1200,

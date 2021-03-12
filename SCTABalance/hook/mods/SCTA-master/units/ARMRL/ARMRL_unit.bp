@@ -6,32 +6,11 @@
 UnitBlueprint {
     Merge = true, 
     BuildIconSortPriority = 13,
-    Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1HOVER',
-        'SELECTABLE',
-        'DRAGBUILD',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH1',
-        'LEVEL1',
-	    'STRUCTURE',
-	    'DEFENSE',
-	    'ANTIAIR',
-	    'OVERLAYANTIAIR',
-	    'ARM',
-        'SORTDEFENSE',
-        'ROCKET',
-    },
     Defense = {
         Health = 600,
         MaxHealth = 600,
     },
     Display = {
-        Abilities = {
-            '<LOC ability_aa>Anti-Air', 
-        },
         UniformScale = 0.08,
     },
     Economy = {

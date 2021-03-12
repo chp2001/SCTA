@@ -11,10 +11,7 @@ ARMFLEA = Class(TAWalking) {
 	
 	Weapons = {
 		ARMFLEA_WEAPON = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

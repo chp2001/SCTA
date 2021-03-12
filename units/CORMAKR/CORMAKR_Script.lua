@@ -42,8 +42,6 @@ CORMAKR = Class(TAStructure) {
 	OnProductionPaused = function(self)
 		#Close Animation		
 		TAStructure.OnProductionPaused(self)
-		self:SetMaintenanceConsumptionInactive()
-		
 		self:PlayUnitSound('Deactivate')
 		ForkThread(self.Close, self)
 	end,
@@ -56,8 +54,6 @@ CORMAKR = Class(TAStructure) {
 		WaitFor(self.Spinners.plug)
 
 		TAStructure.OnProductionUnpaused(self)
-		self:SetMaintenanceConsumptionActive()
-		
 	end,
 
 	WaterRise = function(self)

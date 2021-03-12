@@ -5,26 +5,6 @@
 
 UnitBlueprint {
     Merge = true, 
-    Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1HOVER',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1VEHICLE',
-        'BUILTBYCOMMANDER',
-        'SELECTABLE',
-        'DRAGBUILD',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH1',
-        'SORTSTRATEGIC',
-	    'STRUCTURE',
-	    'DEFENSE',
-	    'DIRECTFIRE',
-        'OVERLAYDIRECTFIRE',
-        'LEVEL2',
-        'LASER',
-	    'CORE',
-    },
     Display = {
         UniformScale = 0.08,
     },
@@ -48,18 +28,8 @@ UnitBlueprint {
     SizeZ = 2,
     Weapon = {
         [1] = {
-            Damage = 150,
-            DamageRadius = 1,
-            EnergyDrainPerSecond = 50,
-            EnergyRequired = 150,
-            FiringTolerance = 0,
+            Damage = 300,
             MaxRadius = 25,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
-            MuzzleVelocity = 25,
-            RackRecoilDistance = -3,
-            RackSalvoSize = 1,
-            RateOfFire = 1.666666667,
         },
         [2] = {
         },

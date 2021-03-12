@@ -69,13 +69,6 @@ UnitBlueprint {
                 },
             },
         },
-	MovementEffects = {
-        TAMovement = {
-		Emitter = '/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
-		Scale = 0.5,
-		Bones = {'wake'},
-        },
-	},
         UniformScale = 0.16,
     },
     Economy = {
@@ -101,30 +94,18 @@ UnitBlueprint {
         },
         FactionName = 'CORE',
         Icon = 'land',
-TechLevel = 'RULEUTL_Basic',
+        TechLevel = 'RULEUTL_Basic',
         UnitName = 'Snake',
     },
     Intel = {
-	FreeIntel = true,
         SonarRadius = 50,
         VisionRadius = 20,
         WaterVisionRadius = 12,
-    },
-    Interface = {
-        HelpText = 'Submarine',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Air = false,
-            LAYER_Land = false,
-            LAYER_Orbit = false,
-            LAYER_Seabed = false,
-            LAYER_Sub = true,
-            LAYER_Water = false,
-        },
         Elevation = -1.5,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,

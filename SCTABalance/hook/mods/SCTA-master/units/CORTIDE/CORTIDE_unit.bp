@@ -1,11 +1,12 @@
 UnitBlueprint {
     Merge = true, 
     Categories = {
+        'BUILTBYT1NAVAL',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH2',
+        'TECH1',
 	    'STRUCTURE',
         'ECONOMIC',
         'SORTECONOMY',
@@ -27,13 +28,12 @@ UnitBlueprint {
         SizeZ = 1,
     },
     Economy = {
-        BuildCostEnergy = 3600,
-        BuildCostMass = 400,
-        BuildTime = 3000,
-        ProductionPerSecondEnergy = 45,
-        ProductionPerSecondEnergyMin = 40,
-        ProductionPerSecondEnergyMax = 50,
-	    NaturalProducer = true,
+        BuildCostEnergy = 2400,
+        BuildCostMass = 200,
+        BuildTime = 6000,
+        ProductionPerSecondEnergy = 35,
+        ProductionPerSecondEnergyMin = 30,
+        ProductionPerSecondEnergyMax = 40,
     },
    Physics = {
         MeshExtentsX = 1.25,

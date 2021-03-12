@@ -9,9 +9,6 @@ local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 CORINT = Class(TAStructure) {
 	Weapons = {
 		CORE_INTIMIDATOR = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-			end,
 		},
 	},
 }

@@ -1,57 +1,62 @@
 #ARM Flea - Fast Light Scout Kbot
 #ARMMARK
-#
-#Blueprint created by Raevn
-
 UnitBlueprint {
     Merge = true,
     BuildIconSortPriority = 1,
     Categories = {
+        'BUILTBYT2AIR',
+        'BUILTBYT2KBOT',
         'SELECTABLE',
-        'TECH1',
+        'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
+	    'LAND',
         'CORE',
-        'KBOT',
-	'LEVEL1',
-    'RADAR',
-    'OVERLAYRADAR',
-    'SCOUT',
-    },
-    Defense = {
-        Health = 100,
-        MaxHealth = 100,
+        'NEEDMOBILEBUILD',
+	    'LEVEL3',
+        'OVERLAYRADAR',
+        'OVERLAYCOUNTERINTEL',
+        'JAM',
+        'SORTINTEL',
+        'SCOUT',
     },
     Display = {
-        UniformScale = 0.09,
+        Abilities = {
+                '<LOC ability_radar>Radar',
+                '<LOC ability_stealthfield>Stealth Field',
+            },
+        UniformScale = 0.3,
     },
     Economy = {
-        BuildCostEnergy = 220,
-        BuildCostMass = 22,
-        BuildTime = 800,
-        MaintenanceConsumptionPerSecondEnergy = 0,
         ProductionPerSecondEnergy = 0,
+        TAConsumptionPerSecondEnergy = 500,
+        MaintenanceConsumptionPerSecondEnergy = 25,
+        BuildCostEnergy = 12000,
+        BuildCostMass = 800,
+        BuildTime = 6000,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
-    StrategicIconName = 'icon_bot1_intel',
     General = {
-        ToggleCaps = {
-               RULEUTC_IntelToggle = false,
+        OrderOverrides = {
+            RULEUTC_StealthToggle = {
+                bitmapId = 'stealth-field',
+                helpText = 'toggle_stealth_field',
             },
+        },
+    ToggleCaps = {
+        RULEUTC_IntelToggle = false,
+        RULEUTC_StealthToggle = true,
+        },
     },
+    StrategicIconName = 'icon_structure3_counterintel',
     Intel = {
+        RadarStealth = true,
+        RadarStealthField = true,
         VisionRadius = 16,
         RadarRadius = 50, 
+        RadarStealthFieldRadius = 60,
     },
-    LifeBarSize = 1,
-    SelectionSizeX = 0.75,
-    SelectionSizeZ = 0.75,
-    SizeX = 1.5,
-    SizeY = 1.5,
-    SizeZ = 1.5,
+    SizeX = 4,
+    SizeY = 4,
+    SizeZ = 4,
 }

@@ -65,10 +65,6 @@ ProjectileBlueprint {
             'INDIRECTFIRE',
         },
         Faction = 'CORE',
-        Weapon = 'EMBMSSL',
-    },
-    Interface = {
-        HelpText = 0,
     },
     Physics = {
         Acceleration = 3,

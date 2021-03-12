@@ -32,7 +32,7 @@ UnitBlueprint {
         'BUILTBYT1KBOT',
         'BUILTBYT1VEHICLE',
         'BUILTBYT1HOVER',
-        'BUILTBYT1SHIP',
+        'BUILTBYT1NAVAL',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',        
@@ -111,12 +111,9 @@ UnitBlueprint {
         VisionRadius = 14,
         WaterVisionRadius = 4, 
     },
-    Interface = {
-        HelpText = 'Extracts Metal',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarSize = 1,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,

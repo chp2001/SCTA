@@ -5,18 +5,46 @@
 
 UnitBlueprint {
    Merge = true,
+   BuildIconSortPriority = 5,
+   Categories = {
+    'SELECTABLE',
+    'KBOT',
+    'LEVEL2',
+    'TECH2',
+    'VISIBLETORECON',
+    'RECLAIMABLE',
+    'MOBILE',
+    'LAND',
+    'ANTIAIR',
+    'OVERLAYANTAIR',
+    'CORE',
+    },
+    Defense = {
+        Health = 1200,
+        MaxHealth = 1200,
+    },
    Display = {
     UniformScale = 0.08,
     },
     Economy = {
-        BuildCostEnergy = 750,
+        BuildCostEnergy = 2600,
+        BuildCostMass = 400,
+        BuildTime = 5000,
     },
     Intel = {
         VisionRadius = 10,
     },
     SelectionSizeX = 0.8,
-SelectionSizeZ = 0.8,
+    SelectionSizeZ = 0.8,
     SizeX = 1,
     SizeY = 1,
     SizeZ = 1,
+    StrategicIconName = 'icon_bot2_antiair',
+    Weapon = {
+        [1] = {
+            Damage = 300,
+            RateOfFire = 0.5,
+        },
+        [2] = {}, 
+    },
 }

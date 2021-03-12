@@ -5,7 +5,9 @@ UnitBlueprint {
     UniformScale = 0.1,
     },
     Economy = {
-	MaintenanceConsumptionPerSecondEnergy = 15,
+        ProductionPerSecondEnergy = 0,
+        TAConsumptionPerSecondEnergy = 60,
+        MaintenanceConsumptionPerSecondEnergy = 10,
     },
     Intel = {
         RadarStealthFieldRadius = 20,

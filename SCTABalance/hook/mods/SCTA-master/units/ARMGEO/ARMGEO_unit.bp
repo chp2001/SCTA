@@ -1,33 +1,11 @@
 UnitBlueprint {
     Merge = true,
-    Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1VEHICLE',
-        'BUILTBYT1HOVER',
-        'BUILTBYT1SHIP',
-        'SELECTABLE',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH1',
-	    'STRUCTURE',
-        'ECONOMIC',
-        'SORTECONOMY',
-        'LEVEL1',
-	    'ENERGYPRODUCTION',
-	    'HYDROCARBON',
-	    'ARM',
-    },
     Display = {
         UniformScale = 0.24,
     },
     Defense = {
         Health = 2000,
         MaxHealth = 2000,
-    },
-   Footprint = {
-        SizeX = 3,
-        SizeZ = 3,
     },
     Intel = {
         VisionRadius = 10,
@@ -41,13 +19,6 @@ UnitBlueprint {
     LifeBarHeight = 0.075,
     LifeBarOffset = 1.2,
     LifeBarSize = 6,
- Physics = {
-        SkirtOffsetX = -1.5,
-        SkirtOffsetZ = -1.5,
-        SkirtSizeX = 6,
-        SkirtSizeZ = 6,
-        TurnRate = 0,
-    },
     SelectionSizeX = 3.8,
     SelectionSizeZ = 3.8,
     SelectionCenterOffsetZ = -0.1,

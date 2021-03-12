@@ -17,9 +17,9 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 9,
     Categories = {
+        'BUILTBYT1AIR',
         'BUILTBYT1KBOT',
         'BUILTBYT1VEHICLE',
-        'BUILTBYT1AIR',
         'BUILTBYT1HOVER',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
@@ -84,17 +84,9 @@ TechLevel = 'RULEUTL_Basic',
     Intel = {
         VisionRadius = 14,
     },
-    Interface = {
-        HelpText = 'Produces Energy',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
-    Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
-    },
     SelectionSizeX = 2.5,
     SelectionSizeZ = 2.5,
     SelectionThickness = 0.25,

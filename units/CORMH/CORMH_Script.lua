@@ -2,13 +2,12 @@
 #CORMH
 #
 #Script created by Raevn
+local TASea = import('/mods/SCTA-master/lua/TAMotion.lua').TASea
+local TARocket = import('/mods/SCTA-master/lua/TAweapon.lua').TARocket
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
-local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
-
-CORMH = Class(TAunit) {
+CORMH = Class(TASea) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TASea.OnCreate(self)
 		self.Spinners = {
 			box = CreateRotator(self, 'box', 'x', nil, 0, 0, 0),
 			base = CreateRotator(self, 'CORMH', 'x', nil, 0, 0, 0),
@@ -19,7 +18,7 @@ CORMH = Class(TAunit) {
 	end,
 
 	Weapons = {
-		CORMH_WEAPON = Class(TAweapon) {
+		CORMH_WEAPON = Class(TARocket) {
 
 			PlayFxWeaponUnpackSequence = function(self)
 
@@ -28,7 +27,7 @@ CORMH = Class(TAunit) {
 				self.unit.Spinners.base:SetSpeed(2.99)
 
 				--TURN box to x-axis <-20.39> SPEED <57.93>
-				self.unit.Spinners.box:SetGoal(-20.39)
+				self.unit.Spinners.box:SetGoal(19)
 				self.unit.Spinners.box:SetSpeed(57.93)
 
 				--SLEEP <352>
@@ -52,10 +51,7 @@ CORMH = Class(TAunit) {
 				--TURN box to x-axis <-93.15> SPEED <64.74>
 				self.unit.Spinners.box:SetGoal(-93.15)
 				self.unit.Spinners.box:SetSpeed(64.74)
-
-				--SLEEP <353>
-				WaitSeconds(0.35)
-
+				
 				WaitFor(self.unit.Spinners.box)
 
 				--TURN base to x-axis <0> SPEED <8.91>
@@ -65,15 +61,8 @@ CORMH = Class(TAunit) {
 				--TURN box to x-axis <-90.00> SPEED <8.91>
 				self.unit.Spinners.box:SetGoal(-90.00)
 				self.unit.Spinners.box:SetSpeed(8.91)
-
-				--SLEEP <355>
-				WaitSeconds(0.35)
-
 				WaitFor(self.unit.Spinners.box)
-
-				--SLEEP <16>
-
-				TAweapon.PlayFxWeaponUnpackSequence(self)
+				TARocket.PlayFxWeaponUnpackSequence(self)
 			end,
 
 			PlayFxWeaponPackSequence = function(self)
@@ -126,7 +115,7 @@ CORMH = Class(TAunit) {
 
 				--SLEEP <13>
 
-				TAweapon.PlayFxWeaponPackSequence(self)
+				TARocket.PlayFxWeaponPackSequence(self)
 			end,
 		},
 	},

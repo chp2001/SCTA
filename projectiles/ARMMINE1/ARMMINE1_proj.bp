@@ -46,9 +46,7 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARMMINE1',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 1,

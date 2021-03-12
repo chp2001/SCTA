@@ -4,6 +4,7 @@ local IBC = '/lua/editor/InstantBuildConditions.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local SBC = '/lua/editor/SorianBuildConditions.lua'
+local MIBC = '/lua/editor/MiscBuildConditions.lua'
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIAirFormers',
@@ -12,6 +13,16 @@ BuilderGroup {
         BuilderName = 'SCTAAI Air Scout',
         PlatoonTemplate = 'T1AirScoutFormSCTA',
         Priority = 100,
+        InstanceCount = 2,
+        BuilderType = 'Any',
+        BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AIR * categories.SCOUT } },
+         },
+    },
+    Builder {
+        BuilderName = 'SCTAAI Radar Scout',
+        PlatoonTemplate = 'SCTAT2AirScouting',
+        Priority = 125,
         InstanceCount = 2,
         BuilderType = 'Any',
         BuilderConditions = {
@@ -30,8 +41,29 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI Air Intercept',
-        PlatoonTemplate = 'AntiAirHunt',
+        PlatoonTemplate = 'IntieAISCTA',
         Priority = 100,
+        InstanceCount = 200,
+        BuilderType = 'Any',     
+        BuilderConditions = { 
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AIR * categories.ANTIAIR } },
+        },
+    },
+    Builder {
+        BuilderName = 'SCTAAI Air Hunt',
+        PlatoonTemplate = 'AirHuntAISCTA',
+        Priority = 125,
+        InstanceCount = 2,
+        BuilderType = 'Any',     
+        BuilderConditions = { 
+            { MIBC, 'LessThanGameTime', {300} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AIR * categories.ANTIAIR } },
+        },
+    },
+    Builder {
+        BuilderName = 'SCTAAI Stealth Intercept',
+        PlatoonTemplate = 'StealthFightersAISCTA',
+        Priority = 150,
         InstanceCount = 200,
         BuilderType = 'Any',     
         BuilderConditions = { 

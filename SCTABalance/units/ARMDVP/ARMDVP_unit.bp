@@ -41,7 +41,7 @@ UnitBlueprint {
 	    'CONSTRUCTION',
         'LAND', 
 	    'ARM',
-        'PLANT',
+        'DEVELOPMENT',
 	    'SORTCONSTRUCTION',
 	    'LEVEL2',
     },
@@ -75,7 +75,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.2,
+        UniformScale = 0.16,
     },
     Economy = {
         BuildCostEnergy = 38000,
@@ -86,10 +86,11 @@ UnitBlueprint {
         BuildableCategory = {
             'VEHICLE LEVEL1 ARM',
             'VEHICLE LEVEL2 ARM',
+            'ALLTERRAIN ENGINEER LEVEL2 LAND ARM',
             'armadvp',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = 5,
+	InitialRallyZ = 7,
         StorageMass = 50,
         StorageEnergy = 50,
     },
@@ -125,16 +126,10 @@ TechLevel = 'RULEUTL_Basic',
     Intel = {
         VisionRadius = 10,
     },
-    Interface = {
-        HelpText = 'Produces Vehicles',
-    },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
     LifeBarSize = 7,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         FlattenSkirt = true,
         SkirtSizeX = 6,
         SkirtSizeZ = 6,

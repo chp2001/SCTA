@@ -114,9 +114,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 10,
     },
-    Interface = {
-        HelpText = 'Fast Assault Tank',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
@@ -137,7 +134,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 1,
     SizeZ = 2,
-    StrategicIconName = 'icon_land1_directfire',
+    StrategicIconName = 'icon_bot1_directfire',
     StrategicIconSortPriority = 0,
     Weapon = {
         {

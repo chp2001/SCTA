@@ -10,10 +10,7 @@ CORGATOR = Class(TAunit) {
 
 	Weapons = {
 		GATOR_LASER = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

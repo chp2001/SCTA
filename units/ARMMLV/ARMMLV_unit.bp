@@ -40,8 +40,8 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'VEHICLE',
-        'LEVEL1',
-        'TECH1',
+        'LEVEL2',
+        'TECH2',
         'ENGINEER',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -67,7 +67,7 @@ UnitBlueprint {
         AnimationBuild = '/mods/SCTA-master/units/ARMMLV/ARMMLV_lod0_unpack.sca',
         AnimationBuildRate = 1, 
         Abilities = {
-            'Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -119,9 +119,6 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 10,
-    },
-    Interface = {
-        HelpText = 'Mine Layer Vehicle',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

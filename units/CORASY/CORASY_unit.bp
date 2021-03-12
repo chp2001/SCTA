@@ -28,7 +28,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 4,
     Categories = {
-        'BUILTBYT1SHIP',
+        'BUILTBYT1NAVAL',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -78,10 +78,8 @@ UnitBlueprint {
         BuildCostMass = 2460, 
         BuildTime = 13080,
 	BuildRate = 200,
-	NaturalProducer = true,
-	ProductionPerSecondMass = 1,
 	InitialRallyX = 0,
-	InitialRallyZ = 5,
+	InitialRallyZ = 10,
         BuildableCategory = {
             'OCEAN LEVEL2 CORE',
         },
@@ -115,11 +113,8 @@ UnitBlueprint {
 	UnitName = 'Adv. Shipyard',
     },
     Intel = {
-        VisionRadius = 14,
-        WaterVisionRadius = 4, 
-    },
-    Interface = {
-        HelpText = 'Produces Ships',
+        VisionRadius = 10,
+        WaterVisionRadius = 6,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -132,16 +127,16 @@ UnitBlueprint {
         SkirtSizeZ = 6,
         RollOffPoints = {
             {
-                UnitSpin = 0,
-                X = 0,
-                Y = 0,
-                Z = 3,
-            },
-            {
                 UnitSpin = 180,
                 X = 0,
                 Y = 0,
-                Z = -3,
+                Z = -10,
+            },
+            {
+                UnitSpin = 0,
+                X = 0,
+                Y = 0,
+                Z = 10,
             },
         },
     },

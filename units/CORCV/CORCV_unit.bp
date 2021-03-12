@@ -69,7 +69,7 @@ UnitBlueprint {
         AnimationBuild = '/mods/SCTA-master/units/CORCV/CORCV_lod0_Aopen.sca',
         AnimationBuildRate = 1, 
         Abilities = {
-            'Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
     MovementEffects = {
         Land = {
@@ -147,9 +147,6 @@ TechLevel = 'RULEUTL_Basic',
     },
     Intel = {
         VisionRadius = 12,
-    },
-    Interface = {
-        HelpText = 'Tech Level 1',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 1,

@@ -2,9 +2,8 @@ UnitBlueprint {
     Merge = true,
     BuildIconSortPriority = 10,
     Categories = {
-        'BUILTBYT2KBOT',
         'BUILTBYT2AIR',
-        'BUILTBYT1VEHICLE',
+        'BUILTBYT2KBOT',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -19,6 +18,7 @@ UnitBlueprint {
 	'LEVEL2',
 	'SORTINTEL',
 	'TARGETING',
+    'DEVELOPMENT',
     },
  Display = {
   Abilities = {
@@ -29,24 +29,22 @@ UnitBlueprint {
     UniformScale = 0.12,    
 }, 
      Economy = {
-        NaturalProducer = false,
         BuildCostEnergy = 6000,
         BuildTime = 9600,
         BuildCostMass = 400,
         BuildRate = 60, 
-        DifferentialUpgradeCostCalculation = true,
-        MaintenanceConsumptionPerSecondEnergy = 50,
         ProductionPerSecondEnergy = 0,
+        DifferentialUpgradeCostCalculation = true,
+        MaintenanceConsumptionPerSecondEnergy = 150,
         BuildableCategory = {
-            'cortarg',
+            'corxrad',
       },
     },
     General = {
     UpgradesFrom = 'corrad',
-    UpgradesTo = 'cortarg', 
+    UpgradesTo = 'corxrad', 
     },
     Intel = {
-	    FreeIntel = false,
         VisionRadius = 12, 
         RadarRadius = 240,
     },

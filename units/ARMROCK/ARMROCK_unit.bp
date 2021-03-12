@@ -92,9 +92,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 10,
     },
-    Interface = {
-        HelpText = 'Rocket Kbot',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 1,
@@ -174,7 +171,7 @@ UnitBlueprint {
             TurretBoneYaw = 'Torso',
             TurretPitch = 90,
             TurretPitchRange = 360,
-            TurretPitchSpeed = 95,
+            TurretPitchSpeed = 45,
             TurretYaw = 0,
             TurretYawRange = 360,
             TurretYawSpeed = 130,

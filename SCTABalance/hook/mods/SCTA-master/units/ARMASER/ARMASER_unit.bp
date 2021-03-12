@@ -15,7 +15,8 @@ UnitBlueprint {
 	    'JAM',
     },
     Economy = {
-	    MaintenanceConsumptionPerSecondEnergy = 20,
+        TAConsumptionPerSecondEnergy = 60,
+	    MaintenanceConsumptionPerSecondEnergy = 10,
     },
     Intel = {
         RadarStealthFieldRadius = 20,

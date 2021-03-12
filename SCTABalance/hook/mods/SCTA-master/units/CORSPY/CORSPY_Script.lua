@@ -2,15 +2,15 @@ local oldCORSPY = CORSPY
 CORSPY = Class(oldCORSPY) { 
 
 	OnIntelDisabled = function(self)
-		local bp = self:GetBlueprint()
 		oldCORSPY.OnIntelDisabled(self)
-		--self.SetJammerBlips(0) 
+		self:DisableIntel('RadarStealth')
+		self:EnableIntel('Jammer')
 	end,
 
 	OnIntelEnabled = function(self)
-		local bp = self:GetBlueprint()
 		oldCORSPY.OnIntelEnabled(self)
-		---self.SetJammerBlips(bp.Intel.JammerBlips * 5)
+		self:EnableIntel('RadarStealth')
+		self:DisableIntel('Jammer')
 	end,
 }
 

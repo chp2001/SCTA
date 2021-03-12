@@ -37,7 +37,6 @@ UnitBlueprint {
         'MOBILE',
 	'LAND',
 	'INTELLIGENCE',
-	'RADAR',
         'OVERLAYRADAR',
         'CORE',
     },
@@ -93,8 +92,9 @@ UnitBlueprint {
         BuildCostEnergy = 1209,
         BuildCostMass = 86,
         BuildTime = 4223,
+        ProductionPerSecondEnergy = 11,
+        MaintenanceConsumptionPerSecondEnergy = 11,
     },
-
     General = {
         Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -110,16 +110,12 @@ UnitBlueprint {
         },
         FactionName = 'CORE',
         Icon = 'land',
-TechLevel = 'RULEUTL_Advanced',
+        TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Informer',
     },
     Intel = {
-	FreeIntel = true,
         VisionRadius = 14,
 	    RadarRadius = 70,
-    },
-    Interface = {
-        HelpText = 'Mobile Radar',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

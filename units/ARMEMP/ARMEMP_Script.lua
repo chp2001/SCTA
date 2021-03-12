@@ -3,15 +3,11 @@
 #
 #Script created by Raevn
 
-local TAnoassistbuild = import('/mods/SCTA-master/lua/TAStructure.lua').TAnoassistbuild
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 local TIFStrategicMissileWeapon = import('/lua/terranweapons.lua').TIFStrategicMissileWeapon
-local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
-ARMEMP = Class(TAnoassistbuild) {
-	OnCreate = function(self)
-		TAnoassistbuild.OnCreate(self)
-	end,
 
+ARMEMP = Class(TAStructure) {
 	Weapons = {
 		EMBMSSL = Class(TIFStrategicMissileWeapon) {
 		},

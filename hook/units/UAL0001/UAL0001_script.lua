@@ -7,21 +7,26 @@
 #**
 #**  Copyright � 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
-local oldUAL0001 = UAL0001
-UAL0001 = Class(oldUAL0001) {
-    PlayCommanderWarpInEffect = function(self)
-        self:HideBone(0, true)
-        self:SetUnSelectable(false)
-        self:SetBusy(true)
-        self:SetBlockCommandQueue(true)
-        self:ForkThread(self.WarpInEffectThread)
-    end,
+local taUAL0001 = UAL0001
+UAL0001 = Class(taUAL0001) {
 
     OnStopBeingBuilt = function(self, builder, layer)
-        oldUAL0001.OnStopBeingBuilt(self, builder, layer)
-        self:ForkThread(self.PlayCommanderWarpInEffect) --should only be used for testing out the drop animation
+        taUAL0001.OnStopBeingBuilt(self, builder, layer)
+        if __blueprints['eal0001'] then
+            ForkThread(self.BlackOps, self, builder, layer)
+            self:Destroy()
+        end
     end,
 
+    BlackOps = function (self, builder, layer)
+            local position = self:GetPosition()
+            local cdrUnit = CreateUnitHPR('eal0001', self:Getarmy(), (position.x), (position.y+1), (position.z), 0, 0, 0)  
+            cdrUnit:HideBone(0, true)
+            cdrUnit:SetUnSelectable(false)
+		    cdrUnit:SetBlockCommandQueue(true)
+            WaitSeconds(2)
+		    cdrUnit:ForkThread(cdrUnit.PlayCommanderWarpInEffect)
+    end,
 }
 
 TypeClass = UAL0001

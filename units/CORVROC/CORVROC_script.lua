@@ -3,25 +3,25 @@
 #
 #Script created by Raevn
 
-local TATreads = import('/mods/SCTA-master/lua/TAMotion.lua').TATreads
-local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
+local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TARocket = import('/mods/SCTA-master/lua/TAweapon.lua').TARocket
 
-CORVROC = Class(TATreads) {
+CORVROC = Class(TAunit) {
 	Weapons = {
-		CORTRUCK_ROCKET = Class(TAweapon) {
+		CORTRUCK_ROCKET = Class(TARocket) {
 
     			PlayFxRackReloadSequence = function(self)
 				self.unit:ShowBone('dummy', true)
-				TAweapon.PlayFxRackReloadSequence(self)
+				TARocket.PlayFxRackReloadSequence(self)
 			end,
 
 			PlayFxWeaponUnpackSequence = function(self)
 				self.unit:ShowBone('dummy', true)
-				TAweapon.PlayFxWeaponUnpackSequence(self)
+				TARocket.PlayFxWeaponUnpackSequence(self)
 			end,
 
 			PlayFxWeaponPackSequence = function(self)
-				TAweapon.PlayFxWeaponPackSequence(self)
+				TARocket.PlayFxWeaponPackSequence(self)
 			end,
 		},
 	},

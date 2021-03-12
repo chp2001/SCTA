@@ -41,6 +41,7 @@ UnitBlueprint {
 	    'OVERLAYANTIAIR',
         'ARM',
         'VEHICLE',
+        'LASER',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -93,9 +94,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 16,
     },
-    Interface = {
-        HelpText = 'Lightning Tank',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
@@ -103,9 +101,9 @@ UnitBlueprint {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 1.2,
-        MaxBrake = 1.2,
-        MaxSpeed = 2.4375,
+        MaxAcceleration = 1.5,
+        MaxBrake = 1.5,
+        MaxSpeed = 3,
         MotionType = 'RULEUMT_Land',
 	TurnRate = 78,
         MaxSteerForce = 10,
@@ -193,8 +191,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 93,
-            DamageRadius = 1.5, 
+            Damage = 100,
+            DamageRadius = 1, 
             DamageType = 'LANDAir',
             DisplayName = 'ARMKBOT_MISSILE',
             FireTargetLayerCapsTable = {

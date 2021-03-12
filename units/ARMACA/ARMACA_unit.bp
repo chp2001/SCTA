@@ -74,7 +74,7 @@ UnitBlueprint {
         'TECH2',
         'AIR',
         'VTOL',
-	    'SELECTION', 
+        'SELECTION', 
         'ARM',
         'ENGINEER',
         'REPAIR',
@@ -84,7 +84,8 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
         'MOBILE',
-	    'CONSTRUCTION',
+        'CONSTRUCTION',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Light',
@@ -102,7 +103,7 @@ UnitBlueprint {
         AnimationWing = '/mods/SCTA-master/units/ARMACA/ARMACA_lod0_wings.sca',
         AnimationWingRate = 1, 
         Abilities = {
-            'Adv. Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -171,9 +172,6 @@ TechLevel = 'RULEUTL_Advanced',
         VisionRadius = 12,
         WaterVisionRadius = 6,
     },
-    Interface = {
-        HelpText = 'Tech Level 2',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.25,
     LifeBarSize = 1,
@@ -197,7 +195,7 @@ TechLevel = 'RULEUTL_Advanced',
     StrategicIconSortPriority = 0,
     Transport = {
         AirClass = true,
-        TransportClass = 2,
+        TransportClass = 1,
     },
     Weapon = {
         { #BIG_UNITEX

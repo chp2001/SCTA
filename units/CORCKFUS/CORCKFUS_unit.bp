@@ -28,12 +28,12 @@ UnitBlueprint {
         'TECH3',
         'LEVEL3',
         'STRUCTURE',
-        'TACLOAK',
         'ECONOMIC',
         'SORTECONOMY',
 	    'ENERGYPRODUCTION',
         'CORE',
         'FUSION',
+        'TACLOAK',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -49,7 +49,6 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_cloak>Cloaking',
         },
-		CloakMesh = '/mods/SCTA-master/units/CORCKFUS/CORCKFUS_cloak_mesh',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -89,20 +88,13 @@ TechLevel = 'RULEUTL_Secret',
 	UnitName = 'Cloakable Fusion Reactor',
     },
     Intel = {
-        FreeIntel = false,
         VisionRadius = 14,
-	Cloak = true,
-    },
-    Interface = {
-        HelpText = 'Produces Energy',
+	    Cloak = true,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         SkirtSizeX = 5,
         SkirtSizeZ = 5,
     },

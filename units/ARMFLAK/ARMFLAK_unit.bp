@@ -25,8 +25,8 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH3',
-        'LEVEL3',
+        'TECH2',
+        'LEVEL2',
 	'STRUCTURE',
 	'DEFENSE',
 	'ANTIAIR',
@@ -88,25 +88,17 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 22,
     },
-    Interface = {
-        HelpText = 'Anti-Air Flak Gun',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
-    Physics = { 
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
-    },
     SelectionCenterOffsetZ = -0.12,
     SelectionSizeX = 1,
     SelectionSizeZ = 1,
     SelectionThickness = 0.25,
     SizeX = 2,
-    SizeY = 2,
+    SizeY = 2.5,
     SizeZ = 2,
-    StrategicIconName = 'icon_structure3_antiair',
+    StrategicIconName = 'icon_structure2_antiair',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -120,8 +112,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 75,
-            DamageRadius = 4, 
+            Damage = 125,
             DamageType = 'Normal',
             DisplayName = 'ARMFLAK_GUN',
             FireTargetLayerCapsTable = {
@@ -133,7 +124,7 @@ UnitBlueprint {
             Label = 'ARMFLAK_GUN',
             MaxRadius = 50, 
             MuzzleSalvoDelay = 0, 
-            MuzzleSalvoSize = 2,
+            MuzzleSalvoSize = 1,
             MuzzleVelocity = 59.375,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMFLAK_GUN/ARMFLAK_GUN_proj.bp',
             RackBones = {

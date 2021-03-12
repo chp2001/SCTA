@@ -6,7 +6,12 @@
 UnitBlueprint {
    Merge = true,
     Display = {
-        UniformScale = 0.06,
+        UniformScale = 0.12,
+    },
+    Economy = {
+        ProductionPerSecondEnergy = 0,
+        TAConsumptionPerSecondEnergy = 60,
+        MaintenanceConsumptionPerSecondEnergy = 10,
     },
     Intel = {
         RadarStealthFieldRadius = 20,
@@ -14,7 +19,7 @@ UnitBlueprint {
     LifeBarSize = 1.5,
     SelectionSizeX = 0.8,
     SelectionSizeZ = 0.8,
-    SizeX = 1,
-    SizeY = 0.7,
-    SizeZ = 1,
+    SizeX = 2,
+    SizeY = 1.5,
+    SizeZ = 2,
 }

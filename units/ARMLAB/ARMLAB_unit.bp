@@ -30,10 +30,10 @@ UnitBlueprint {
     Categories = {
         'BUILTBYT1AIR',
         'BUILTBYT1KBOT',
-        'BUILTBYT2KBOT',
         'BUILTBYT1VEHICLE',
         'BUILTBYT1HOVER',
         'BUILTBYCOMMANDER',
+        'BUILTBYT2KBOT',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -85,7 +85,7 @@ UnitBlueprint {
             'KBOT LEVEL1 ARM',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = -5,
+	InitialRallyZ = 7,
         StorageMass = 50,
         StorageEnergy = 50,
     },
@@ -118,16 +118,10 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 14,
     },
-    Interface = {
-        HelpText = 'Produces Kbots',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         FlattenSkirt = true,
         SkirtSizeX = 6,
         SkirtSizeZ = 6,

@@ -86,7 +86,8 @@ UnitBlueprint {
         BuildCostEnergy = 1453,
         BuildCostMass = 70,
         BuildTime = 5439,
-	MaintenanceConsumptionPerSecondEnergy = 15,
+        ProductionPerSecondEnergy = 10,
+        MaintenanceConsumptionPerSecondEnergy = 10,
     },
     General = {
         Category = 'Utility',
@@ -98,22 +99,25 @@ UnitBlueprint {
             RULEUCC_Patrol = true,
             RULEUCC_Stop = true,
         },
+        OrderOverrides = {
+            RULEUTC_StealthToggle = {
+                bitmapId = 'stealth-field',
+                helpText = 'toggle_stealth_field',
+            },
+        },
         ToggleCaps = {
-            RULEUTC_StealthToggle = true,
+        RULEUTC_StealthToggle = true,
         },
         FactionName = 'CORE',
         Icon = 'land',
-TechLevel = 'RULEUTL_Advanced',
+        TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Spectre',
     },
     Intel = {
-	FreeIntel = false,
-	RadarStealth = false,
+	RadarStealth = true,
+    RadarStealthField = true,
     VisionRadius = 14,
 	RadarStealthFieldRadius = 31,
-    },
-    Interface = {
-        HelpText = 'Radar Jammer',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

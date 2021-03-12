@@ -39,9 +39,11 @@ UnitBlueprint {
     BuildIconSortPriority = 1,
     Categories = {
         'SELECTABLE',
-        'OCEAN',
-	    'LEVEL1',
         'TECH1',
+        'NAVAL',
+        'CORE',
+        'LEVEL1',
+        'OCEANENGINEER',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -53,8 +55,7 @@ UnitBlueprint {
         'MOBILE',
         'CONSTRUCTION',
         'DEFENSIVEBOAT',
-	    'NAVAL',
-        'CORE',
+        'OCEAN',
     },
     CollisionOffsetY = -0.25,
     Defense = {
@@ -71,7 +72,7 @@ UnitBlueprint {
         AnimationBuild = '/mods/SCTA-master/units/CORCS/CORCS_lod0_unpack.sca',
         AnimationBuildRate = 1, 
         Abilities = {
-            'Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
 	BuildBones = {'nano'},
         Mesh = {
@@ -98,7 +99,7 @@ UnitBlueprint {
         BuildRate = 125,
         BuildTime = 6200,
         BuildableCategory = {
-            'BUILTBYT1SHIP CORE',
+            'BUILTBYT1NAVAL CORE',
         },
         MaxBuildDistance = 3.75,
         StorageEnergy = 30,
@@ -107,7 +108,7 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 5,
     },
     Footprint = {
-        SizeX = 2,
+        SizeX = 1,
         SizeZ = 3,
     },
     General = {
@@ -139,9 +140,6 @@ TechLevel = 'RULEUTL_Basic',
     Intel = {
         VisionRadius = 14,
         WaterVisionRadius = 4, 
-    },
-    Interface = {
-        HelpText = 'Tech Level 1',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

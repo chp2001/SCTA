@@ -1,8 +1,8 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT2KBOT',
         'BUILTBYT1KBOT',
+        'BUILTBYT2KBOT',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -14,10 +14,10 @@ UnitBlueprint {
 	    'STRUCTURE',
         'CONSTRUCTION',
         'LAND', 
-        'LAB',
 	    'ARM',
         'SORTCONSTRUCTION',
 	    'LEVEL2',
+        'LAB',
     },
     Defense = {
         Health = 8200,
@@ -41,16 +41,11 @@ UnitBlueprint {
     LifeBarOffset = 3,
     LifeBarSize = 7,
     Footprint = {
-        MaxSlope = 0.625,
         SizeX = 8,
         SizeZ = 8,
     },
     Intel = {
         VisionRadius = 10,
-    },
-    Physics = {
-        SkirtSizeX = 6,
-        SkirtSizeZ = 6,
     },
     SelectionSizeX = 7,
     SelectionSizeZ = 5,

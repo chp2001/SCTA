@@ -44,9 +44,7 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORE_DOOMSDAY',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 62.5,

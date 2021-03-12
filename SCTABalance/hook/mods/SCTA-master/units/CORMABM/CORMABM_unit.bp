@@ -1,6 +1,9 @@
 UnitBlueprint {
     Merge = true, 
     Categories = {
+        'BUILTBYT1AIR',
+        'BUILTBYT1KBOT',
+        'BUILTBYT1HOVER',
         'SELECTABLE',
         'TECH2',
         'VISIBLETORECON',
@@ -9,18 +12,19 @@ UnitBlueprint {
 	    'LAND',
         'CORE',
         'ANTIMISSILE',
-        'BUILTBYT1VEHICLE',
-        'BUILTBYT1AIR',
-        'BUILTBYT1HOVER',
 	    'LEVEL2',
         'OVERLAYDEFENSE',
-        'SORTDEFENSE',
+        'SORTSTRATEGIC',
         'NEEDMOBILEBUILD',
         'DEFENSE',
         'ANTIAIR',
     },
     Display = {
         UniformScale = 0.20,
+    },
+    Footprint = {
+        SizeX = 2,
+        SizeZ = 2,
     },
     Economy = {
         BuildCostEnergy = 12000,

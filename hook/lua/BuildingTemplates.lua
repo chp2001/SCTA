@@ -37,7 +37,7 @@ BuildingTemplates[6] = {
                 'armmoho',
             },
             {
-                'T3Resource',
+                'T2UPResource',
                 'armmass',
             },
             {
@@ -169,6 +169,10 @@ BuildingTemplates[6] = {
                 'T2Sonar',
                 'armason',
             },
+            {
+                'T2RadarJammer',
+                'armmark',
+            },
     
             -- Artillery Structures
             {
@@ -178,6 +182,10 @@ BuildingTemplates[6] = {
             {
                 'T3Artillery',
                 'armbrtha',
+            },
+            {
+                'T4Artillery',
+                'armvulc',
             },
     
             -- Strategic Missile Structures
@@ -265,7 +273,7 @@ BuildingTemplates[6] = {
             'cormoho',
         },
         {
-            'T3Resource',
+            'T2UPResource',
             'cormass',
         },
         {
@@ -391,6 +399,10 @@ BuildingTemplates[6] = {
             'cortarg',
         },
         {
+            'T2RadarJammer',
+            'corvoyr',
+        },
+        {
             'T1Sonar',
             'corsonar',
         },
@@ -407,6 +419,10 @@ BuildingTemplates[6] = {
         {
             'T3Artillery',
             'corint',
+        },
+        {
+            'T4Artillery',
+            'corbuzz',
         },
 
         -- Strategic Missile Structures

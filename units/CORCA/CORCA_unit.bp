@@ -72,6 +72,10 @@ UnitBlueprint {
         'SELECTABLE',
         'TECH1',
         'LEVEL1',
+        'AIR',
+        'VTOL',
+        'SELECTION',
+        'CORE',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -80,11 +84,7 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
         'MOBILE',
-	    'CONSTRUCTION',
-        'AIR',
-        'VTOL',
-	    'SELECTION',
-        'CORE',      	
+	    'CONSTRUCTION',    	
     },
     Defense = {
         ArmorType = 'Light',
@@ -98,7 +98,7 @@ UnitBlueprint {
     Description = 'Tech Level 1',
     Display = {
         Abilities = {
-            'Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -160,9 +160,6 @@ TechLevel = 'RULEUTL_Basic',
     Intel = {
         VisionRadius = 18,
         WaterVisionRadius = 8,
-    },
-    Interface = {
-        HelpText = 'Tech Level 1',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.25,

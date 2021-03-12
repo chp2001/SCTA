@@ -29,22 +29,22 @@ UnitBlueprint {
     BuildIconSortPriority = 4,
     Categories = {
         'SELECTABLE',
-        'OCEAN',
-        'SNIPEMODE',
-	    'LEVEL1',
         'TECH1',
+        'LEVEL1',
+        'ARM',
+        'OCEAN',
+	    'ANTISUB',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
 	    'NAVAL',
 	    'DIRECTFIRE',
 	    'FRIGATE',
-        'SONAR',
         'OVERLAYANTINAVY',
         'OVERLAYDIRECTFIRE',
         'OVERLAYSONAR',
-        'ARM',
-	    'ANTISUB',
+        'OVERLAYRADAR',
+        'SNIPEMODE',
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -60,7 +60,8 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_depthcharge>Depth Charges',
-            '<LOC ability_sonar>Sonar',
+              '<LOC ability_sonar>Sonar',
+              '<LOC ability_radar>Radar',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -72,13 +73,6 @@ UnitBlueprint {
                 },
             },
         },
-	MovementEffects = {
-        TAMovement = {
-		Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
-		Scale = 0.5,
-		Bones = {'Wake_01'},
-        },
-	},
 	MovementEffects = {
         TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
@@ -117,9 +111,6 @@ TechLevel = 'RULEUTL_Basic',
         VisionRadius = 20, 
         WaterVisionRadius = 18, 
 	SonarRadius = 19,
-    },
-    Interface = {
-        HelpText = 'Destroyer',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

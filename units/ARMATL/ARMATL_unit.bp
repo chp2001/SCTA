@@ -23,7 +23,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH3',
+        'TECH2',
         'LEVEL2',
 	    'STRUCTURE',
 	    'ANTINAVY',
@@ -69,8 +69,8 @@ UnitBlueprint {
     },
     Footprint = {
         MinWaterDepth = 3,
-        SizeX = 4,
-        SizeZ = 4,
+        SizeX = 2,
+        SizeZ = 2,
     },
     General = {
         Category = 'Defense',
@@ -87,13 +87,9 @@ UnitBlueprint {
         UnitName = 'Advanced Torpedo Launcher',
     },
     Intel = {
-	FreeIntel = true,
         SonarRadius = 40,
         VisionRadius = 10,
         WaterVisionRadius = 10,
-    },
-    Interface = {
-        HelpText = 'Advanced Torpedo Launcher',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -103,8 +99,6 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Water = true,
         },
-        SkirtSizeX = 4,
-        SkirtSizeZ = 4,
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,
@@ -112,7 +106,7 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 2,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure3_antinavy',
+    StrategicIconName = 'icon_structure2_antinavy',
     StrategicIconSortPriority = 0,
     Weapon = {
         {

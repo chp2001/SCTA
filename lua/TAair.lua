@@ -64,8 +64,8 @@ TAair = Class(TAunit)
 }
 TASeaair = Class(TAair) 
 {
-	OnStopBeingBuilt = function(self,builder,layer)
-		TAair.OnStopBeingBuilt(self,builder,layer)
+	OnStopBeingBuilt = function(self)
+		TAair.OnStopBeingBuilt(self)
 		self:DisableIntel('RadarStealth')
     end,
 
@@ -106,4 +106,18 @@ TASeaair = Class(TAair)
 		end
     end,
 
+}
+
+TAIntelAir = Class(TAair) {
+
+	OnStopBeingBuilt = function(self,builder,layer)
+		TAair.OnStopBeingBuilt(self,builder,layer)
+		local bp = self:GetBlueprint()
+		if bp.Intel.RadarStealth or bp.Intel.RadarRadius then
+			self:SetMaintenanceConsumptionActive()
+		end
+		self:SetScriptBit('RULEUTC_StealthToggle', false)
+		self:SetScriptBit('RULEUTC_JammingToggle', true)
+		self:RequestRefreshUI()
+	end,
 }

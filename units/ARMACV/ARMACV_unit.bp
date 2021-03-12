@@ -67,7 +67,7 @@ UnitBlueprint {
     Description = 'Tech Level 2',
     Display = {
         Abilities = {
-            'Adv. Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
         AnimationBuild = '/mods/SCTA-master/units/ARMACV/ARMACV_lod0_unpack.sca',
         AnimationBuildRate = 1, 
@@ -131,9 +131,6 @@ TechLevel = 'RULEUTL_Advanced',
     },
     Intel = {
         VisionRadius = 14,
-    },
-    Interface = {
-        HelpText = 'Tech Level 2',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

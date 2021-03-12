@@ -9,7 +9,6 @@ local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 CORVENG = Class(TAair) {
 	OnCreate = function(self)
 		TAair.OnCreate(self)
-		---self:SetMaintenanceConsumptionActive()
 		self.Spinners = {
 			base = CreateRotator(self, 0, 'z', nil, 0, 0, 0),
 			winga = CreateRotator(self, 'winga', 'z', nil, 0, 0, 0),

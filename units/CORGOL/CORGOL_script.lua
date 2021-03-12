@@ -10,10 +10,7 @@ CORGOL = Class(TAunit) {
 
 	Weapons = {
 		COR_GOL = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

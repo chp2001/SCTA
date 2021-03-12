@@ -2,31 +2,26 @@ do
     Factions[1].IdleEngTextures.T1F = '/mods/SCTA-master/textures/ui/common/icons/units/armcs_icon.dds'
     Factions[1].IdleEngTextures.T1A = '/mods/SCTA-master/textures/ui/common/icons/units/armca_icon.dds'
     Factions[1].IdleEngTextures.T2A = '/mods/SCTA-master/textures/ui/common/icons/units/armaca_icon.dds'
-    Factions[1].IdleEngTextures.T3A = '/mods/SCTA-master/textures/ui/common/icons/units/armcsa_icon.dds'
     
     Factions[2].IdleEngTextures.T1F = '/mods/SCTA-master/textures/ui/common/icons/units/corcs_icon.dds'
     Factions[2].IdleEngTextures.T2F = '/mods/SCTA-master/textures/ui/common/icons/units/cornecro_icon.dds'
     Factions[2].IdleEngTextures.T1A = '/mods/SCTA-master/textures/ui/common/icons/units/corca_icon.dds'
     Factions[2].IdleEngTextures.T2A = '/mods/SCTA-master/textures/ui/common/icons/units/coraca_icon.dds'
-    Factions[2].IdleEngTextures.T3A = '/mods/SCTA-master/textures/ui/common/icons/units/corcsa_icon.dds'
     
     Factions[3].IdleEngTextures.T1F = '/mods/SCTA-master/textures/ui/common/icons/units/corcs_icon.dds'
     Factions[3].IdleEngTextures.T2F = '/mods/SCTA-master/textures/ui/common/icons/units/cornecro_icon.dds'
     Factions[3].IdleEngTextures.T1A = '/mods/SCTA-master/textures/ui/common/icons/units/corca_icon.dds'
     Factions[3].IdleEngTextures.T2A = '/mods/SCTA-master/textures/ui/common/icons/units/coraca_icon.dds'
-    Factions[3].IdleEngTextures.T3A = '/mods/SCTA-master/textures/ui/common/icons/units/corcsa_icon.dds'
 
     Factions[4].IdleEngTextures.T1F = '/mods/SCTA-master/textures/ui/common/icons/units/armcs_icon.dds'
     Factions[4].IdleEngTextures.T2F = '/mods/SCTA-master/textures/ui/common/icons/units/armfark_icon.dds'
     Factions[4].IdleEngTextures.T1A = '/mods/SCTA-master/textures/ui/common/icons/units/armca_icon.dds'
     Factions[4].IdleEngTextures.T2A = '/mods/SCTA-master/textures/ui/common/icons/units/armaca_icon.dds'
-    Factions[4].IdleEngTextures.T3A = '/mods/SCTA-master/textures/ui/common/icons/units/armcsa_icon.dds'
     
     if __blueprints['xnl0001'] then
-    Factions[5].IdleEngTextures.T1F = '/mods/SCTA-master/textures/ui/common/icons/units/armcs_icon.dds'
-    Factions[5].IdleEngTextures.T1A = '/mods/SCTA-master/textures/ui/common/icons/units/corca_icon.dds'
+    Factions[5].IdleEngTextures.T1F = '/mods/SCTA-master/textures/ui/common/icons/units/corcs_icon.dds'
+    Factions[5].IdleEngTextures.T1A = '/mods/SCTA-master/textures/ui/common/icons/units/armca_icon.dds'
     Factions[5].IdleEngTextures.T2A = '/mods/SCTA-master/textures/ui/common/icons/units/armaca_icon.dds'
-    Factions[5].IdleEngTextures.T3A = '/mods/SCTA-master/textures/ui/common/icons/units/corcsa_icon.dds'
     end
     
     TAFactions = {
@@ -38,7 +33,7 @@ do
         FactionInUnitBp = 'ARM',
         InitialUnit = 'armcom',
         CampaignFileDesignator = 'M',
-        TransmissionLogColor = 'ff0000ff',
+        TransmissionLogColor = 'ff00c1ff',
         Icon = "/mods/SCTA-master/textures/ui/common/widgets/faction-icons-alpha_bmp/arm_ico.dds",
         VeteranIcon = "/mods/SCTA-master/textures/ui/common/game/veteran-logo_bmp/arm-veteran_bmp.dds",
         SmallIcon = "/mods/SCTA-master/textures/ui/common/faction_icon-sm/arm_ico.dds",
@@ -57,7 +52,6 @@ do
             SCU = '/mods/SCTA-master/textures/ui/common/icons/units/armdecom_icon.dds',
             T1A = '/mods/SCTA-master/textures/ui/common/icons/units/armca_icon.dds',
             T2A = '/mods/SCTA-master/textures/ui/common/icons/units/armaca_icon.dds',
-            T3A = '/mods/SCTA-master/textures/ui/common/icons/units/armcsa_icon.dds',
         },
         IdleFactoryTextures = {
             LAND = {
@@ -104,7 +98,6 @@ do
             SCU = '/mods/SCTA-master/textures/ui/common/icons/units/cordecom_icon.dds',
             T1A = '/mods/SCTA-master/textures/ui/common/icons/units/corca_icon.dds',
             T2A = '/mods/SCTA-master/textures/ui/common/icons/units/coraca_icon.dds',
-            T3A = '/mods/SCTA-master/textures/ui/common/icons/units/corcsa_icon.dds',
         },
         IdleFactoryTextures = {
             LAND = {

@@ -3,12 +3,12 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TASea = import('/mods/SCTA-master/lua/TAMotion.lua').TASea
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-ARMAH = Class(TAunit) {
+ARMAH = Class(TASea) {
 	OnCreate = function(self)
-		TAunit.OnCreate(self)
+		TASea.OnCreate(self)
 		self.Sliders = {
 			box = CreateSlider(self, 'Box'),
 		}

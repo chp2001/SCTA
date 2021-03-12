@@ -28,9 +28,9 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 0,
     Categories = {
-        'BUILTBYT1VEHICLE',
-        'BUILTBYT1KBOT',
         'BUILTBYT1AIR',
+        'BUILTBYT1KBOT',
+        'BUILTBYT1VEHICLE',
         'BUILTBYT1HOVER',
         'SELECTABLE',
         'DRAGBUILD',
@@ -81,19 +81,19 @@ UnitBlueprint {
         BuildCostEnergy = 5277,
         BuildCostMass = 2007, 
         BuildTime = 18520,
-	BuildRate = 200,
+	    BuildRate = 200,
         BuildableCategory = {
-            'HOVER LEVEL1 ARM',
+            'HOVER LEVEL3 ARM',
         },
-	InitialRallyX = 0,
-	InitialRallyZ = 5,
+	    InitialRallyX = 0,
+	    InitialRallyZ = 7,
         StorageMass = 250,
         StorageEnergy = 250,
     },
     Footprint = {
-	MaxSlope = 0.625,
-        SizeX = 8,
-        SizeZ = 8,
+        MaxSlope = 0.625,
+        SizeX = 6,
+        SizeZ = 6,
     },
     General = {
         BuildBones = {
@@ -119,9 +119,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 14,
         WaterVisionRadius = 6,
-    },
-    Interface = {
-        HelpText = 'Builds Hovercraft',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -173,7 +170,7 @@ UnitBlueprint {
     SizeX = 8,
     SizeY = 2.5,
     SizeZ = 7,
-    StrategicIconName = 'icon_factory1_land',
+    StrategicIconName = 'icon_factory3_land',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX

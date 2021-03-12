@@ -3,12 +3,12 @@
 #
 #Script created by Raevn
 
-local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
+local TACloser = import('/mods/SCTA-master/lua/TAStructure.lua').TACloser
 
-ARMASON = Class(TAStructure) {
+ARMASON = Class(TACloser) {
 
 	OnCreate = function(self)
-		TAStructure.OnCreate(self)
+		TACloser.OnCreate(self)
 		self.Spinners = {
 			hinge1 = CreateRotator(self, 'hinge1', 'x', nil, 0, 0, 0),
 			hinge2 = CreateRotator(self, 'hinge2', 'x', nil, 0, 0, 0),
@@ -31,15 +31,12 @@ ARMASON = Class(TAStructure) {
 		end
 	end,
 
-	OnIntelDisabled = function(self)
-		self:Fold()
-		self:SetMaintenanceConsumptionInactive()
-		TAStructure.OnIntelDisabled(self)
-		self:PlayUnitSound('Deactivate')
-	end,
-
-	Fold = function(self)
-		TAStructure.Fold(self)
+	ClosingState = State {
+		Main = function(self)
+			self:DisableIntel('Sonar')
+			TACloser.Fold(self)
+			self:PlayUnitSound('Deactivate')
+			---self.intelIsActive = nil
 				--TURN hinge1 to x-axis <0> SPEED <68.78>;
 				self.Spinners.hinge1:SetGoal(0)
 				self.Spinners.hinge1:SetSpeed(68)
@@ -78,18 +75,18 @@ ARMASON = Class(TAStructure) {
 		
 				--STOP-SPIN wheel around y-axis;
 				self.Spinners.wheel:SetSpeed(0)
-	end,
+				ChangeState(self, self.IdleClosedState)
+			end,
+			},
+			
 		
 
-	OnIntelEnabled = function(self)	
-		self:Unfold()
-		self:SetMaintenanceConsumptionActive()
-		TAStructure.OnIntelEnabled(self)
-	self:PlayUnitSound('Activate')
-	end,
-
-	Unfold = function(self)
-		TAStructure.Unfold(self)
+	OpeningState = State {
+		Main = function(self)
+			TACloser.Unfold(self)
+			self:EnableIntel('Sonar')
+			self:PlayUnitSound('Activate')
+			---self.intelIsActive = true
 		--TURN hinge1 to x-axis <133.26> SPEED <68.74>;
 		self.Spinners.hinge1:SetGoal(130)
 		self.Spinners.hinge1:SetSpeed(68)
@@ -128,7 +125,9 @@ ARMASON = Class(TAStructure) {
 
 		--SPIN wheel around y-axis  SPEED <60.01>;
 		self.Spinners.wheel:SetSpeed(60)
+		ChangeState(self, self.IdleClosedState)
 	end,
+	},
 }
 
 TypeClass = ARMASON

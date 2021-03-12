@@ -36,8 +36,9 @@ UnitBlueprint {
         'RECLAIMABLE',
         'MOBILE',
         'LAND',
-        'TACLOAK',
         'ARM',
+        'TACLOAK',
+        'SCOUT',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -56,7 +57,6 @@ UnitBlueprint {
             '<LOC ability_cloak>Cloaking',
             '<LOC ability_radar>Radar',
         },
-        CloakMesh = '/mods/SCTA-master/units/ARMSPY/ARMSPY_cloak_mesh',
     Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -72,7 +72,8 @@ UnitBlueprint {
         BuildCostEnergy = 9000,
         BuildCostMass = 128,
         BuildTime = 22000,
-        MaintenanceConsumptionPerSecondEnergy = 10,
+        TAConsumptionPerSecondEnergy = 800,
+        MaintenanceConsumptionPerSecondEnergy = 210,
     },
     General = {
         Category = 'Utility',
@@ -91,16 +92,13 @@ UnitBlueprint {
         },
         FactionName = 'ARM',
         Icon = 'land',
-TechLevel = 'RULEUTL_Advanced',
+        TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Infiltrator',
     },
     Intel = {
         RadarRadius = 50,
         VisionRadius = 18,
         Cloak = true,
-    },
-    Interface = {
-        HelpText = 'Infantry Kbot',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -123,7 +121,7 @@ TechLevel = 'RULEUTL_Advanced',
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_land2_intel',
+    StrategicIconName = 'icon_bot2_intel',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_UNITEX

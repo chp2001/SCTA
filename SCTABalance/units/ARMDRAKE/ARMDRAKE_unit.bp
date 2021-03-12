@@ -46,8 +46,9 @@ UnitBlueprint {
         'OVERLAYANTIAIR',  
         'ARM',
         'KBOT',
-        'LEVEL4',  
+        'BUILTBYGANTRY',  
         'SNIPEMODE',
+        'LASER',
     },
     Defense = {
         AirThreatLevel = 0,
@@ -110,9 +111,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 16,
         WaterVisionRadius = 12,
-    },
-    Interface = {
-        HelpText = 'Experimental Kbot',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

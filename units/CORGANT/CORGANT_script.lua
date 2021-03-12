@@ -4,7 +4,7 @@
 #Script created by Raevn
 
 local TAGantry = import('/mods/SCTA-master/lua/TAFactory.lua').TAGantry
-local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+
 
 CORGANT = Class(TAGantry) {
 	

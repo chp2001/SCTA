@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 13,
+    BuildIconSortPriority = 2,
     Categories = {
         'SELECTABLE',
         'TECH2',
@@ -92,9 +92,6 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 14,
-    },
-    Interface = {
-        HelpText = 'Mobile Artillery',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

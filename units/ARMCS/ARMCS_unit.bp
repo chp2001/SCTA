@@ -40,8 +40,10 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
-        'OCEAN',
-	    'LEVEL1',
+        'NAVAL',
+        'ARM',
+        'LEVEL1',
+        'OCEANENGINEER',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -53,8 +55,7 @@ UnitBlueprint {
         'MOBILE',
         'CONSTRUCTION',
         'DEFENSIVEBOAT',
-	    'NAVAL',
-        'ARM',
+        'OCEAN',
     },
     CollisionOffsetY = -0.25,
     Defense = {
@@ -71,7 +72,7 @@ UnitBlueprint {
         AnimationBuild = '/mods/SCTA-master/units/ARMCS/ARMCS_lod0_unpack.sca',
         AnimationBuildRate = 1, 
         Abilities = {
-            'Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -97,7 +98,7 @@ UnitBlueprint {
         BuildRate = 125,
         BuildTime = 6200,
         BuildableCategory = {
-            'BUILTBYT1SHIP ARM',
+            'BUILTBYT1NAVAL ARM',
         },
         MaxBuildDistance = 3.75,
         StorageEnergy = 30,
@@ -106,7 +107,7 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 5,
     },
     Footprint = {
-        SizeX = 2,
+        SizeX = 1,
         SizeZ = 3,
     },
     General = {
@@ -138,9 +139,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 14,
         WaterVisionRadius = 4, 
-    },
-    Interface = {
-        HelpText = 'Tech Level 1',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

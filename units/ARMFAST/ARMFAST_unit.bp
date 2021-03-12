@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 11,
+    BuildIconSortPriority = 2,
     Categories = {
         'SELECTABLE',
         'KBOT',
@@ -94,9 +94,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 16,
     },
-    Interface = {
-        HelpText = 'Fast Attack Kbot',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
@@ -129,9 +126,10 @@ UnitBlueprint {
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
+            UseFiringSolutionInsteadOfAimBone = true,
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-	    DamageFriendly = false,
+	        DamageFriendly = false,
             Damage = 40,
 	    DamageRadius = 0.25,
             DamageType = 'Normal',
@@ -146,7 +144,7 @@ UnitBlueprint {
             MaxRadius = 20,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 60,
+	    MuzzleVelocity = 45,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_FAST/ARM_FAST_proj.bp',
             RackBones = {
                 {
@@ -174,7 +172,7 @@ UnitBlueprint {
             TurretBonePitch = 'RightLowerArm',
             TurretBoneYaw = 'Torso',
             TurretDualManipulators = false,
-            TurretPitch = 90,
+            TurretPitch = 30,
             TurretPitchRange = 360,
             TurretPitchSpeed = 200,
             TurretYaw = 0,

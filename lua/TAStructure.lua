@@ -8,6 +8,8 @@ local util = import('/lua/utilities.lua')
 TAStructure = Class(TAunit) 
 {
 	LandBuiltHiddenBones = {'Floatation'},
+	MinConsumptionPerSecondEnergy = 1,
+    MinWeaponRequiresEnergy = 0,
 	
 	DoTakeDamage = function(self, instigator, amount, vector, damageType)
 	    -- Handle incoming OC damage
@@ -16,6 +18,30 @@ TAStructure = Class(TAunit)
             amount = wep:GetBlueprint().Overcharge.structureDamage
         end
         TAunit.DoTakeDamage(self, instigator, amount, vector, damageType)
+    end,
+
+	OnStopBeingBuilt = function(self,builder,layer)
+        TAunit.OnStopBeingBuilt(self,builder,layer)
+        self:SetMaintenanceConsumptionActive()
+		if __blueprints['armgant'] then
+            local aiBrain = GetArmyBrain(self.Army)
+        	if EntityCategoryContains(categories.DEVELOPMENT, self) then
+            local buildRestrictionVictims = aiBrain:GetListOfUnits(categories.FACTORY + categories.ENGINEER, false)
+            for id, unit in buildRestrictionVictims do    
+        	TAutils.updateBuildRestrictions(unit)
+        	end
+        end
+    end
+    end,
+
+	OnPaused = function(self)
+        TAunit.OnPaused(self)
+		self:UpdateConsumptionValues()
+    end,
+
+    OnUnpaused = function(self)
+        TAunit.OnUnpaused(self)
+		self:UpdateConsumptionValues()
     end,
 
 	OnStopBuild = function(self, unitBeingBuilt, order)
@@ -63,12 +89,6 @@ TAMass = Class(TAStructure) {
         end
     end,
 
-    OnStopBeingBuilt = function(self,builder,layer)
-        TAStructure.OnStopBeingBuilt(self,builder,layer)
-        self:SetMaintenanceConsumptionActive()
-    end,
-
-
     OnStartBuild = function(self, unitbuilding, order)
         TAStructure.OnStartBuild(self, unitbuilding, order)
         self:AddCommandCap('RULEUCC_Stop')
@@ -85,32 +105,106 @@ TACloser = Class(TAStructure) {
 		TAStructure.OnStopBeingBuilt(self,builder,layer)
 		closeDueToDamage = nil,
 		ChangeState(self, self.OpeningState)
+		if EntityCategoryContains(categories.TARGETING, self) and (self:IsIntelEnabled('Radar') or self:IsIntelEnabled('Sonar')) then
+		TAutils.registerTargetingFacility(self:GetArmy())
+	end
+	end,
+
+	OnIntelEnabled = function(self)
+		TAStructure.OnIntelEnabled()
+			if EntityCategoryContains(categories.TARGETING, self) and (self:IsIntelEnabled('Radar') or self:IsIntelEnabled('Sonar')) then
+			TAutils.registerTargetingFacility(self:GetArmy())
+			end
+	end,
+
+	OnIntelDisabled = function(self)
+	TAStructure.OnIntelDisabled()
+			if EntityCategoryContains(categories.TARGETING, self) and (not self:IsIntelEnabled('Radar') or not self:IsIntelEnabled('Sonar')) then
+			TAutils.unregisterTargetingFacility(self:GetArmy())
+		end
+	end,
+
+	OnKilled = function(self, instigator, type, overkillRatio)
+		if EntityCategoryContains(categories.TARGETING, self) and (self:IsIntelEnabled('Radar') or self:IsIntelEnabled('Sonar')) then
+		TAutils.unregisterTargetingFacility(self:GetArmy())
+		end
+		TAStructure.OnKilled(self, instigator, type, overkillRatio)
+	end,
+
+	IdleClosedState = State {
+		Main = function(self)
+			if self.closeDueToDamage then 
+				while self.DamageSeconds > 0 do
+					WaitSeconds(1)
+					self.DamageSeconds = self.DamageSeconds - 1
+				end
+
+				self.closeDueToDamage = nil
+
+				if self.intelIsActive then 
+					ChangeState(self, self.OpeningState)
+				end
+			end
+		end,
+
+		OnDamage = function(self, instigator, amount, vector, damageType)
+			TAStructure.OnDamage(self, instigator, amount, vector, damageType) 
+
+			self.DamageSeconds = 8
+			ChangeState(self, self.ClosingState)
+		end,
+
+	},
+
+	IdleOpenState = State {
+		Main = function(self)
+		end,
+
+		OnDamage = function(self, instigator, amount, vector, damageType)
+			TAStructure.OnDamage(self, instigator, amount, vector, damageType)
+			self.DamageSeconds = 8
+			self.closeDueToDamage = true
+			ChangeState(self, self.ClosingState)
+		end,
+
+	},
+
+	OnScriptBitSet = function(self, bit)
+		if bit == 3 then
+			self.intelIsActive = nil
+			ChangeState(self, self.ClosingState)
+		end
+		TAStructure.OnScriptBitSet(self, bit)
+	end,
+
+
+	OnScriptBitClear = function(self, bit)
+		if bit == 3 then
+			self.intelIsActive = true
+			ChangeState(self, self.OpeningState)
+		end
+		TAStructure.OnScriptBitClear(self, bit)
 	end,
 }	
 	
-TAnoassistbuild = Class(TAStructure) {
-	OnCreate = function(self)
-		TAStructure.OnCreate(self)
+TACKFusion = Class(TAStructure) {
+	OnStopBeingBuilt = function(self,builder,layer)
+		TAStructure.OnStopBeingBuilt(self,builder,layer)
+		self:SetScriptBit('RULEUTC_CloakToggle', false)
+		self:RequestRefreshUI()
 	end,
+
+	
 }
 
-TAMine = Class(TAStructure) {
+TAMine = Class(TACKFusion) {
 
 	OnKilled = function(self, instigator, type, overkillRatio)
 		if self.unit.attacked then
 			instigator = self
 		end
-		TAStructure.OnKilled(self, instigator, type, overkillRatio)
+		TACKFusion.OnKilled(self, instigator, type, overkillRatio)
 		
-	end,
-	OnStopBeingBuilt = function(self,builder,layer)
-		TAStructure.OnStopBeingBuilt(self,builder,layer)
-		self:SetMaintenanceConsumptionActive()
-		self:SetScriptBit('RULEUTC_CloakToggle', false)
-		self:RequestRefreshUI()
-	end,
+	end,	
 
-
-	HideFlares = function(self, bp)
-	end,
 }

@@ -31,37 +31,38 @@ TAconstructor = Class(TAWalking) {
             end
         end
         self.BuildingUnit = false
-        if __blueprints['armmass'] then
+        if __blueprints['armgant'] then
             TAutils.updateBuildRestrictions(self)
         end
     end,
 
     OnPaused = function(self)
         self:StopUnitAmbientSound('Construct')
-        TAWalking.OnPaused(self)
         if self.BuildingUnit then
+            self:UpdateConsumptionValues()
             TAWalking.StopBuildingEffects(self, self.UnitBeingBuilt)
         end
+        TAWalking.OnPaused(self)
     end,
 
     OnUnpaused = function(self)
         if self.BuildingUnit then
             self:PlayUnitAmbientSound('Construct')
             TAWalking.StartBuildingEffects(self, self.UnitBeingBuilt, self.UnitBuildOrder)
+            self:UpdateConsumptionValues()
         end
         TAWalking.OnUnpaused(self)
     end,
     
     OnStartBuild = function(self, unitBeingBuilt, order ) 
-        TAWalking.OnStartBuild(self, unitBeingBuilt, order)
         self.UnitBeingBuilt = unitBeingBuilt
         self.UnitBuildOrder = order
         self.BuildingUnit = true
+        TAWalking.OnStartBuild(self, unitBeingBuilt, order)
     end,
 
 
     OnStopBuild = function(self, unitBeingBuilt)
-        TAWalking.OnStopBuild(self,unitBeingBuilt)
         self.UnitBeingBuilt = nil
         self.UnitBuildOrder = nil
 
@@ -72,9 +73,10 @@ TAconstructor = Class(TAWalking) {
         end
         self.BuildingUnit = false
         self:SetImmobile(false)
-        if __blueprints['armmass'] then
+        if __blueprints['armgant'] then
             TAutils.updateBuildRestrictions(self)
         end
+        TAWalking.OnStopBuild(self,unitBeingBuilt)
     end,
 
     WaitForBuildAnimation = function(self, enable)
@@ -109,7 +111,6 @@ TAconstructor = Class(TAWalking) {
 
     OnStopBuilderTracking = function(self)
         TAWalking.OnStopBuilderTracking(self)
-
         if self.StoppedBuilding then
             self.StoppedBuilding = false
             self.BuildArmManipulator:Disable()
@@ -137,6 +138,39 @@ TAconstructor = Class(TAWalking) {
     OnStartReclaim = function(self, target)
         TAWalking.OnStartReclaim(self, target)
     end,
+}
+
+TASeaConstructor = Class(TAconstructor) 
+{
+    OnCreate = function(self)
+        TAconstructor.OnCreate(self)
+		self.FxMovement = TrashBag()
+        end,
+
+     
+	OnMotionHorzEventChange = function(self, new, old )
+		TAconstructor.OnMotionHorzEventChange(self, new, old)
+		self.CreateMovementEffects(self)
+	end,
+    
+    
+	CreateMovementEffects = function(self, EffectsBag, TypeSuffix)
+		if not IsDestroyed(self) then
+		TAconstructor.CreateMovementEffects(self, EffectsBag, TypeSuffix)
+		local bp = self:GetBlueprint()
+		if self:IsUnitState('Moving') and bp.Display.MovementEffects.TAMovement then
+			for k, v in bp.Display.MovementEffects.TAMovement.Bones do
+				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.TAMovement.Emitter ):ScaleEmitter(bp.Display.MovementEffects.TAMovement.Scale))
+			end
+			elseif not self:IsUnitState('Moving') then
+			for k,v in self.FxMovement do
+				v:Destroy()
+			end
+		end
+		end
+	end,
+
+
 }
 
 
@@ -248,14 +282,28 @@ TACommander = Class(TAconstructor) {
         TAconstructor.DoTakeDamage(self, instigator, amount, vector, damageType)
     end,
 
+
+    OnStartReclaim = function(self, target)
+		TAconstructor.OnStartReclaim(self, target)
+		self:SetScriptBit('RULEUTC_CloakToggle', true)
+    end,
+
+    OnStartCapture = function(self, target)
+		TAconstructor.OnStartCapture(self, target)
+		self:SetScriptBit('RULEUTC_CloakToggle', true)
+    end,
+
+    OnStopBeingBuilt = function(self,builder,layer)
+		TAconstructor.OnStopBeingBuilt(self,builder,layer)
+		self:SetMaintenanceConsumptionInactive()
+		self:SetScriptBit('RULEUTC_CloakToggle', true)
+        self:RequestRefreshUI()
+	end,
+
+
 }
 
 TARealCommander = Class(TACommander) {
-    OnStartReclaim = function(self, target)
-		TACommander.OnStartReclaim(self, target)
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
-    end,
-    
     DeathThread = function(self)
         local army = self:GetArmy()
         local position = self:GetPosition()
@@ -305,27 +353,6 @@ TARealCommander = Class(TACommander) {
         end
     end,
 
-	OnStartCapture = function(self, target)
-		TACommander.OnStartCapture(self, target)
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
-    end,
-
-    OnMotionHorzEventChange = function(self, new, old )
-		TACommander.OnMotionHorzEventChange(self, new, old)
-        if self.cloakOn then
-            if  self:IsUnitState('Moving') then
-                self:SetConsumptionPerSecondEnergy(1000)
-            else
-                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
-            end
-        end
-    end,
-
-    OnStartBuild = function(self, unitBeingBuilt, order )
-        TACommander.OnStartBuild(self, unitBeingBuilt, order)
-        self:SetScriptBit('RULEUTC_CloakToggle', true)
-    end,
-
 
     OnKilled = function(self, instigator, type, overkillRatio)
         TACommander.OnKilled(self, instigator, type, overkillRatio)
@@ -357,5 +384,38 @@ TARealCommander = Class(TACommander) {
             ArmyBrains[self.Army]:SetUnitStat(self.UnitId, "lowest_health", self:GetHealth())
         end
         TACommander.DoTakeDamage(self, instigator, amount, vector, damageType)
+    end,
+
+    OnStopBeingBuilt = function(self,builder,layer)
+		TACommander.OnStopBeingBuilt(self,builder,layer)
+		ForkThread(self.GiveInitialResources, self)
+	end,
+
+	GiveInitialResources = function(self)
+		self:GetAIBrain():GiveResource('ENERGY', self:GetBlueprint().Economy.StorageEnergy)
+		self:GetAIBrain():GiveResource('MASS', self:GetBlueprint().Economy.StorageMass)
+	end,
+
+    PlayCommanderWarpInEffect = function(self)
+        self:SetCustomName( ArmyBrains[self:GetArmy()].Nickname )
+        self:SetUnSelectable(false)
+        self:SetBlockCommandQueue(true)
+        WaitSeconds(1)
+		self.PlayCommanderWarpInEffectFlag = true
+        self:ForkThread(self.ExplosionInEffectThread)
+    end,
+
+    ExplosionInEffectThread = function(self)
+		self:PlayUnitSound('CommanderArrival')
+		---self:CreateProjectile( '/effects/entities/UnitTeleport01/UnitTeleport01_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
+		self.PlayCommanderWarpInEffectFlag = false
+		self:SetMesh(self:GetBlueprint().Display.CloakMeshBlueprint, true)
+		self:ShowBone(0, true)
+        self:CreateProjectile( '/mods/SCTA-master/effects/entities/TAEntrance/TAEntrance_proj.bp', 0, 1.35, 0, nil, nil, nil):SetCollision(false)
+		WaitSeconds(4)
+		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
+        self:SetUnSelectable(false)
+		self:SetBusy(false)
+		self:SetBlockCommandQueue(false)
     end,
 }

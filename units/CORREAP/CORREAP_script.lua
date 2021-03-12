@@ -10,10 +10,7 @@ CORREAP = Class(TAunit) {
 
 	Weapons = {
 		CORE_REAP = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

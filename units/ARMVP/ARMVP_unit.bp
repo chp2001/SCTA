@@ -28,12 +28,12 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 2,
     Categories = {
-        'BUILTBYT2VEHICLE',
-        'BUILTBYT1VEHICLE',
-        'BUILTBYT1KBOT',
         'BUILTBYT1AIR',
+        'BUILTBYT1KBOT',
+        'BUILTBYT1VEHICLE',
         'BUILTBYT1HOVER',
         'BUILTBYCOMMANDER',
+        'BUILTBYT2VEHICLE',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -85,14 +85,14 @@ UnitBlueprint {
             'VEHICLE LEVEL1 ARM',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = 5,
+	InitialRallyZ = 7,
         StorageMass = 50,
         StorageEnergy = 50,
     },
     Footprint = {
-	MaxSlope = 0.625,
-        SizeX = 8,
-        SizeZ = 6,
+    MaxSlope = 0.625,
+    SizeX = 6,
+    SizeZ = 6,
     },
     General = {
         BuildBones = {
@@ -119,16 +119,10 @@ TechLevel = 'RULEUTL_Basic',
     Intel = {
         VisionRadius = 14,
     },
-    Interface = {
-        HelpText = 'Produces Vehicles',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         FlattenSkirt = true,
         SkirtSizeX = 6,
         SkirtSizeZ = 6,

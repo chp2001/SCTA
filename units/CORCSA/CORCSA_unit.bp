@@ -70,7 +70,7 @@ UnitBlueprint {
     BuildIconSortPriority = 0,
     Categories = {
         'SELECTABLE',
-        'TECH1',
+        'TECH3',
         'LEVEL3',
         'ENGINEER',
         'REPAIR',
@@ -95,12 +95,12 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },
-    Description = 'Tech Level 1',
+    Description = 'Tech Level 3',
     Display = {
         AnimationBuild = '/mods/SCTA-master/units/CORCSA/CORCSA_lod0_unpack.sca',
         AnimationBuildRate = 1,
         Abilities = {
-            'Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -163,9 +163,6 @@ TechLevel = 'RULEUTL_Advanced',
         VisionRadius = 12,
         WaterVisionRadius = 6,
     },
-    Interface = {
-        HelpText = 'Tech Level 1',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.25,
     LifeBarSize = 1,
@@ -184,7 +181,7 @@ TechLevel = 'RULEUTL_Advanced',
     SizeX = 2,
     SizeY = 1,
     SizeZ = 2,
-    StrategicIconName = 'icon_bot1_engineer',
+    StrategicIconName = 'icon_bot3_engineer',
     StrategicIconSortPriority = 0,
     Transport = {
         AirClass = true,

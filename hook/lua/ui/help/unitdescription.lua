@@ -264,10 +264,10 @@ Description = table.merged( Description, {
     ['corvroc'] = "<LOC corvroc_help>."         ,
     ['corvoyr'] = "<LOC corvoyr_help>."         ,
     ['corwin'] = "<LOC corwin_help>.CORE Power Generator, energy generated varies unpredictably"           ,
-    ['mine1'] = "<LOC mine1_help>."       ,
-    ['mine2'] = "<LOC mine2_help>."       ,
-    ['mine3'] = "<LOC mine3_help>."       ,
-    ['mine4'] = "<LOC mine4_help>."       ,
+    ['mine1'] = "<LOC mine1_help> Deals an additional 300 damage on death."       ,
+    ['mine2'] = "<LOC mine2_help> Deals an additional 1000 damage on death."       ,
+    ['mine3'] = "<LOC mine3_help> Deals an additional 500 damage on death."       ,
+    ['mine4'] = "<LOC mine4_help> Deals an additional 2500 damage on death."       ,
     ['mas0001'] = "<LOC mas0001_help>."         ,
     ['mss0001'] = "<LOC mss0001_help>."         ,
     ['mss0002'] = "<LOC mss0002_help>."         ,
@@ -290,6 +290,7 @@ Description = table.merged( Description, {
     ['armadlab'] = "<LOC armadlab_help>. For SCTABalance, an upgrade from ARMDLAB to access T3.",
     ['armhrk'] = "<LOC armhrk_help>."         ,
     ['armmass'] = "<LOC armmass_help>."         ,
+    ['armxrad'] = "<LOC armxrad_help>."         ,
     ['corsling'] = "<LOC corsling_help> For SCTABalance, Turtle KBot to help CORE Kbots defend against air threats",
     ['cordvp'] = "<LOC cordvp_help>. For SCTABalance, an upgrade from CORVP, to access T2",
     ['coradvp'] = "<LOC coradvp_help>. For SCTABalance, an upgrade from CORDVP to access T3.",
@@ -300,6 +301,7 @@ Description = table.merged( Description, {
     ['cordlab'] = "<LOC cordlab_help>. For SCTABalance, an upgrade from CORLAB, to access T2",
     ['coradlab'] = "<LOC coradlab_help>. For SCTABalance, an upgrade from CORDLAB to access T3.",
     ['cormass'] = "<LOC cormass_help>."         ,
+    ['corxrad'] = "<LOC corxrad_help>."         ,
 } )
 
 end

@@ -26,7 +26,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-        'LEVEL2',
+        'LEVEL3',
 	    'STRUCTURE',
 	    'DEFENSE',
 	    'DIRECTFIRE',
@@ -89,17 +89,9 @@ TechLevel = 'RULEUTL_Secret',
     Intel = {
         VisionRadius = 14,
     },
-    Interface = {
-        HelpText = 'Pop-up Heavy Cannon',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
-    Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
-    },
     SelectionSizeX = 2,
     SelectionCenterOffsetZ = -0.75,
     SelectionSizeZ = 2,

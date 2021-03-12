@@ -3,14 +3,13 @@
 #
 #Script created by Raevn
 
-local TAWalking = import('/mods/SCTA-master/lua/TAMotion.lua').TAWalking
-local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
+local TACounter = import('/mods/SCTA-master/lua/TAMotion.lua').TACounter
 
 
-CORVOYR = Class(TAWalking) {
+CORVOYR = Class(TACounter) {
 	
 	OnCreate = function(self)
-		TAWalking.OnCreate(self)
+		TACounter.OnCreate(self)
 		self.Spinners = {
 			dish1 = CreateRotator(self, 'dish1', 'y', nil, 0, 0, 0),
 		}
@@ -20,7 +19,7 @@ CORVOYR = Class(TAWalking) {
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAWalking.OnStopBeingBuilt(self,builder,layer)
+		TACounter.OnStopBeingBuilt(self,builder,layer)
 		self.Spinners.dish1:SetSpeed(90)
 	end,
 }

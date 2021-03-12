@@ -71,7 +71,7 @@ UnitBlueprint {
         AnimationWalk = '/mods/SCTA-master/units/ARMACK/ARMACK_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
-            'Adv. Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
 	        TransportAnimation = {
             {
@@ -134,9 +134,6 @@ TechLevel = 'RULEUTL_Advanced',
     },
     Intel = {
         VisionRadius = 16,
-    },
-    Interface = {
-        HelpText = 'Tech Level 2',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

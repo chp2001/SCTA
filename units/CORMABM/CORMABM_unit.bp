@@ -113,9 +113,6 @@ TechLevel = 'RULEUTL_Basic',
     Intel = {
         VisionRadius = 12, 
     },
-    Interface = {
-        HelpText = 'Missile Defense Vehicle',
-    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

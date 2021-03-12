@@ -1,6 +1,5 @@
 UnitBlueprint {
     Merge = true, 
-    BuildIconSortPriority = 12,
     Categories = {
         'SELECTABLE',
         'TECH3',
@@ -11,27 +10,30 @@ UnitBlueprint {
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
-        'TACLOAK',
         'KBOT',
         'LEVEL3',
         'SNIPER',
+        'TACLOAK',
     },
     Defense = {
-        Health = 2000,
-        MaxHealth = 2000,
+        Health = 1000,
+        MaxHealth = 1000,
     },
     Economy = {
         BuildCostEnergy = 21000,
         BuildCostMass = 2000,
         BuildTime = 24000,
+        TAConsumptionPerSecondEnergy = 300,
+        MaintenanceConsumptionPerSecondEnergy = 50,
     },
     StrategicIconName = 'icon_bot3_sniper',
     Weapon = {
         [1] = {
-            Damage = 1000,
+            Damage = 1500,
             MaxRadius = 60,
-            EnergyDrainPerSecond = 250,
-            EnergyRequired = 500,
+            RateOfFire = 0.1694915254,
+            EnergyDrainPerSecond = 100,
+            EnergyRequired = 200,
         },
         [2] = {
         },

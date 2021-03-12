@@ -67,13 +67,6 @@ UnitBlueprint {
                 },
             },
         },
-	MovementEffects = {
-        TAMovement = {
-		Emitter = '/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
-		Scale = 0.5,
-		Bones = {'wake'},
-        },
-	},
         UniformScale = 0.16,
     },
     Economy = {
@@ -105,10 +98,6 @@ TechLevel = 'RULEUTL_Advanced',
         SonarRadius = 28,
         VisionRadius = 10,
         WaterVisionRadius = 10,
-	FreeIntel = true,
-    },
-    Interface = {
-        HelpText = 'Submarine Killer',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

@@ -26,6 +26,11 @@ CORHUNT = Class(TASeaair) {
 		end
 	end,
 
+	OnStopBeingBuilt = function(self,builder,layer)
+		TASeaair.OnStopBeingBuilt(self,builder,layer)
+		self:SetMaintenanceConsumptionActive()
+	end,
+
 
 	OpenWings = function(self)
 

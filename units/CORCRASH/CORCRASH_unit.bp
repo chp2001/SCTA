@@ -74,7 +74,6 @@ UnitBlueprint {
         BuildCostMass = 112,
         BuildTime = 2636,
     },
-
     General = {
         Category = 'Anti Air',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -94,9 +93,6 @@ TechLevel = 'RULEUTL_Basic',
     },
     Intel = {
         VisionRadius = 18,
-    },
-    Interface = {
-        HelpText = 'Anti-Air Kbot',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

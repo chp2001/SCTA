@@ -3,13 +3,13 @@
 #
 #Script created by Raevn
 
-local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstructor
-local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+local TASeaConstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TASeaConstructor
 
-ARMCH = Class(TAconstructor) {
+
+ARMCH = Class(TASeaConstructor) {
     SetupBuildBones = function(self)
         local bp = self:GetBlueprint()
-        TAconstructor.SetupBuildBones(self)
+        TASeaConstructor.SetupBuildBones(self)
         local buildbones = bp.General.BuildBones
         if self.BuildArmManipulator then
             self.BuildArmManipulator:SetAimingArc(buildbones.YawMin or -180, buildbones.YawMax or 180, buildbones.YawSlew or 360, buildbones.PitchMin or -90, buildbones.PitchMax or 90, buildbones.PitchSlew or 360)

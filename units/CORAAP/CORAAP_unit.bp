@@ -35,7 +35,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH2',
         'LEVEL2',
-        'LAB',
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -45,6 +44,7 @@ UnitBlueprint {
 	'CORE',
 	'SORTCONSTRUCTION',
 	'AIR',
+    'LAB',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -83,13 +83,13 @@ UnitBlueprint {
             'VTOL LEVEL2 CORE',
         },
 	InitialRallyX = 0,
-	InitialRallyZ = 5,
+	InitialRallyZ = 7,
         StorageMass = 200,
         StorageEnergy = 200,
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 7,
+        SizeX = 6,
         SizeZ = 6,
     },
     General = {
@@ -117,20 +117,13 @@ TechLevel = 'RULEUTL_Advanced',
     Intel = {
         VisionRadius = 14,
 	RadarRadius = 72,
-	FreeIntel = true,
-    },
-    Interface = {
-        HelpText = 'Produces Aircraft',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         FlattenSkirt = true,
-        SkirtSizeX = 7,
+        SkirtSizeX = 6,
         SkirtSizeZ = 6,
         RollOffPoints = {
             {

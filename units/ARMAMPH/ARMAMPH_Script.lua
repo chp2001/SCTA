@@ -97,16 +97,10 @@ ARMAMPH = Class(TAWalking) {
 
 	Weapons = {
 		armamph_weapon1 = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 		armamph_weapon2 = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 

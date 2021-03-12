@@ -1,28 +1,6 @@
 UnitBlueprint {
     Merge = true,
     BuildIconSortPriority = 2,
-    Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1VEHICLE',
-        'BUILTBYT1HOVER',
-        'BUILTBYCOMMANDER',
-        'SELECTABLE',
-        'DRAGBUILD',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH1',
-	    'FACTORY',
-        'RALLYPOINT',
-        'SHOWQUEUE',
-	    'STRUCTURE',
-        'LAND', 
-	    'CONSTRUCTION',
-	    'CORE',
-		'PLANT',
-	    'SORTCONSTRUCTION',
-	    'LEVEL1',
-    },
     Defense = {
         Health = 2200,
         MaxHealth = 2200,
@@ -44,7 +22,6 @@ UnitBlueprint {
         },
     },
     Footprint = {
-        MaxSlope = 0.625,
         SizeX = 8,
         SizeZ = 8,
         },
@@ -53,10 +30,6 @@ UnitBlueprint {
     LifeBarSize = 7,
     General = {
         UpgradesTo = 'cordlab', 
-    },
-    Physics = {
-        SkirtSizeX = 6,
-        SkirtSizeZ = 6,
     },
     SelectionSizeX = 7,
     SelectionSizeZ = 5,

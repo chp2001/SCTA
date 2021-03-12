@@ -34,16 +34,14 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 18,
     Categories = {
-        'BUILTBYT1HOVER',
         'BUILTBYT2KBOT',
-        'BUILTBYT2AIR',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'FACTORY',
         'GATE',
-        'EXPERIMENTAL', 
+        'EXPERIMENTAL',
+        'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
         'STRUCTURE',
@@ -53,7 +51,8 @@ UnitBlueprint {
         'STRATEGIC',
         'SORTCONSTRUCTION',
         'LEVEL3',
-        'GANTRY',
+        'GANTRY', 
+        'DEVELOPMENT',
     },
     Defense = {
         ArmorType = 'ExperimentalStructure',
@@ -87,7 +86,7 @@ UnitBlueprint {
         BuildTime = 300000,
         BuildRate = 250,
         BuildableCategory = {
-            'LEVEL4 KBOT ARM',
+            'BUILTBYGANTRY ARM',
         },
         InitialRallyX = 0,
         InitialRallyZ = 8,
@@ -124,19 +123,13 @@ TechLevel = 'RULEUTL_Advanced',
     Intel = {
         VisionRadius = 14,
     },
-    Interface = {
-        HelpText = 'Builds Drake',
-    },
     LifeBarHeight = 0.3,
     LifeBarOffset = 7,
     LifeBarSize = 13,
     Physics = {
-        BuildOnLayerCaps = {
-            LAYER_Land = true,
-        },
         FlattenSkirt = true,
-        SkirtSizeX = 9,
-        SkirtSizeZ = 9,
+        SkirtSizeX = 12,
+        SkirtSizeZ = 12,
         RollOffPoints = {
             {
                 UnitSpin = 0,

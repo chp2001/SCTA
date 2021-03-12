@@ -44,12 +44,10 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORE_CANLASER',
     },
-    Interface = {
-        HelpText = 0,
-    },
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 30,
         Lifetime = 3,
+        UseGravity = true,
     },
 }

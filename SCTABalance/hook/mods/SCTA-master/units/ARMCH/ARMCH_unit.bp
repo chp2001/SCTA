@@ -3,6 +3,7 @@ UnitBlueprint {
         Categories = {
             'SELECTABLE',
             'TECH3',
+            'LEVEL3',
             'ENGINEER',
             'REPAIR',
             'RECLAIM',
@@ -12,16 +13,14 @@ UnitBlueprint {
             'SHOWQUEUE',
             'MOBILE',
             'SELECTION',
-        'CONSTRUCTION',
+            'CONSTRUCTION',
             'LAND',
             'ARM',
             'HOVER',
-            'PHIB',
             'KBOT',
             'VEHICLE',
-        'LEVEL3',
-        },
-        Description = 'Tech Level 3',
+            'ALLTERRAIN',
+    },
         Defense = {
             Health = 2000,
             MaxHealth = 2000,
@@ -29,18 +28,18 @@ UnitBlueprint {
         Physics = {
             TurnRate = 120,
             MaxSteerForce = 100,
-        RotateOnSpot = true,
-        TurnFacingRate = 120,
+            TurnFacingRate = 120,
         },
         Economy = {
             BuildCostEnergy = 3200,
-            BuildTime = 6000,
+            BuildTime = 9000,
             BuildRate = 300,
             ProductionPerSecondEnergy = 4,
-            MaxBuildDistance = 7,
+            MaxBuildDistance = 8,
             BuildableCategory = {
                 'BUILTBYT1HOVER ARM',
                 'BUILTBYT2KBOT ARM',
+                'BUILTBYT2AIR ARM',
             },
         },
         Intel = {
@@ -52,5 +51,4 @@ UnitBlueprint {
         SizeX = 1.5,
         SizeY = 1.2,
         SizeZ = 1.6,
-        StrategicIconName = 'icon_land3_engineer',
     }

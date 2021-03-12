@@ -3,17 +3,14 @@
 #
 #Script created by Raevn
 
-local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
+local TASea = import('/mods/SCTA-master/lua/TAMotion.lua').TASea
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
-CORSNAP = Class(TAunit) {
+CORSNAP = Class(TASea) {
 
 	Weapons = {
 		CORSNAP_WEAPON = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-			end,
+
 		},
 	},
 }

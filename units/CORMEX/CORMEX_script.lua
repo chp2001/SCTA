@@ -9,7 +9,6 @@ local ScenarioUtils = import('/lua/sim/ScenarioUtilities.lua')
 CORMEX = Class(TAMass) {
 	OnCreate = function(self)
 		TAMass.OnCreate(self)
-		---self:SetMaintenanceConsumptionActive()
 		self.Spinners = {
 			arms = CreateRotator(self, 'arms', 'y', nil, 0, 91, 0),
 		}
@@ -51,13 +50,11 @@ CORMEX = Class(TAMass) {
 	OnProductionPaused = function(self)
 		TAMass.OnProductionPaused(self)
 		self:PlayUnitSound('Deactivate')
-		self:SetMaintenanceConsumptionInactive()
 		ForkThread(self.StopSpin,self)
 	end,
 
 	OnProductionUnpaused = function(self)
 		TAMass.OnProductionUnpaused(self)
-		self:SetMaintenanceConsumptionActive()
 		self:PlayUnitSound('Activate')
 		ForkThread(self.StartSpin,self)
 	end,

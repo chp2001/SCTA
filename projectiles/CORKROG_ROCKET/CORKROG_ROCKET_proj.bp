@@ -57,9 +57,7 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORKROG_ROCKET',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         Acceleration = 5,
         DestroyOnWater = true,

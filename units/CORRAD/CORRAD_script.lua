@@ -42,15 +42,11 @@ CORRAD = Class(TAStructure) {
 	StartSpin = function(self)
 		--SPIN dish around y-axis SPEED <40>
 		self.Spinners.dish:SetSpeed(40)
-
-		self:SetMaintenanceConsumptionActive()
 	end,
 
 	StopSpin = function(self)
 		--SPIN dish around y-axis SPEED <0>
 		self.Spinners.dish:SetSpeed(0)
-
-		self:SetMaintenanceConsumptionInactive()
 	end,
 }
 

@@ -3,51 +3,23 @@ UnitBlueprint {
     Air = {
       BreakOffDistance = 17,
       BreakOffTrigger = 12,
-      CombatTurnSpeed = 1.5,
       MaxAirspeed = 18,
-      MinAirspeed = 8,
-      StartTurnDistance = 5,
-      TightTurnMultiplier = 1.02,
-      TurnSpeed = 1.5,
+      MinAirspeed = 9,
   },
-  Display = {
-    Abilities = {
-      '<LOC ability_aa>Anti-Air',
-      '<LOC ability_personalstealth>Personal Stealth',
-         },
-    },
     Defense = {
           Health = 2100,
           MaxHealth = 2100,
               },
     Economy = {
-          BuildCostMass = 480,
-          BuildCostEnergy = 28000,
-          MaintenanceConsumptionPerSecondEnergy = 15,
-        },
-    General = {
-          ToggleCaps = {
-               RULEUTC_StealthToggle = true,
-              },
-        },
-    Intel = {
-          VisionRadius =  24,
-	        RadarStealth = true,
-	        FreeIntel = false,
-    },
+        BuildCostMass = 480,
+        BuildCostEnergy = 42000,
+        BuildTime = 20000,
+        ProductionPerSecondEnergy = 0,
+        TAConsumptionPerSecondEnergy = 50,
+        MaintenanceConsumptionPerSecondEnergy = 10,
+      },
     Physics = {
           FuelRechargeRate = 666666,
           FuelUseTime = 666666,
     },
-    Weapon = {
-      [1] = {
-        EnergyDrainPerSecond = 60,
-        EnergyRequired = 60,
-      },
-      [2] = {
-        EnergyDrainPerSecond = 60,
-        EnergyRequired = 60,
-      },
-      [3] = {}, 
-  },
   }

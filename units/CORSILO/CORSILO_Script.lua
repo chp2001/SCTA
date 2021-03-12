@@ -3,25 +3,13 @@
 #
 #Script created by Raevn
 
-local TAnoassistbuild = import('/mods/SCTA-master/lua/TAStructure.lua').TAnoassistbuild
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 local TIFStrategicMissileWeapon = import('/lua/terranweapons.lua').TIFStrategicMissileWeapon
-local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
-CORSILO = Class(TAnoassistbuild) {
-	
-	OnCreate = function(self)
-		TAnoassistbuild.OnCreate(self)
-	end,
 
+CORSILO = Class(TAStructure) {
 	Weapons = {
 		CRBLMSSL = Class(TIFStrategicMissileWeapon) {
-			PlayFxWeaponUnpackSequence = function(self)
-				TIFStrategicMissileWeapon.PlayFxWeaponUnpackSequence(self)
-			end,
-
-			PlayFxWeaponPackSequence = function(self)
-				TIFStrategicMissileWeapon.PlayFxWeaponPackSequence(self)
-			end,
 		},
 	},
 }

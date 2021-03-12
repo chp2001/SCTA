@@ -28,20 +28,17 @@ UnitBlueprint {
         SizeZ = 8,
     },
         Display = {
-        UniformScale = 0.14,
+        UniformScale = 0.18,
     },
     Economy = {
         BuildCostEnergy = 60000,
         BuildCostMass = 3000, 
-        BuildRate = 240,
+        BuildRate = 360,
         BuildTime = 150000,
         BuildableCategory = {
-            'PHIB LEVEL3 ARM',
+            'HOVER LEVEL3 ARM',
+            'armcroc',
         },
-    },
-    Physics = {
-        SkirtSizeX = 6,
-        SkirtSizeZ = 6,
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
@@ -52,5 +49,4 @@ UnitBlueprint {
     SizeX = 9,
     SizeY = 1,
     SizeZ = 9,
-    StrategicIconName = 'icon_factory3_land',
 }

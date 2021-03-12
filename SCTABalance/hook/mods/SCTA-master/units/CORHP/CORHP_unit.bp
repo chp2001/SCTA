@@ -1,7 +1,6 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'PLATFORM',
         'BUILTBYT2KBOT',
         'SELECTABLE',
         'DRAGBUILD',
@@ -16,6 +15,7 @@ UnitBlueprint {
 	    'CONSTRUCTION',
         'LAND', 
         'CORE',
+        'PLATFORM',
 	    'SORTCONSTRUCTION',
     },
     Defense = {
@@ -35,15 +35,12 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 60000,
         BuildCostMass = 3000, 
-        BuildRate = 240,
+        BuildRate = 360,
         BuildTime = 150000,
         BuildableCategory = {
-            'PHIB LEVEL3 CORE',
+            'HOVER LEVEL3 CORE',
+            'coramph',
         },
-    },
-    Physics = {
-        SkirtSizeX = 6,
-        SkirtSizeZ = 6,
     },
     SelectionSizeX = 7,
     SelectionSizeZ = 7,
@@ -51,5 +48,4 @@ UnitBlueprint {
     SizeX = 9,
     SizeY = 1,
     SizeZ = 9,
-    StrategicIconName = 'icon_factory3_land',
  }

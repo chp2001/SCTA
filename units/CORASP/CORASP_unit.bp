@@ -30,17 +30,16 @@ UnitBlueprint {
         GuardScanRadius = 300,
         RefuelingMultiplier = 50,
         RefuelingRepairAmount = 500,
-        RepairConsumeEnergy = 5,
-        RepairConsumeMass = 0.5,
+        RepairConsumeEnergy = 30,
+        RepairConsumeMass = 0,
         ShowAssistRangeOnSelect = true,
         StagingPlatformScanRadius = 300,
     },
     BuildIconSortPriority = 15,
     Categories = {
-        'BUILTBYT2VEHICLE',
-        'BUILTBYT2KBOT',
         'BUILTBYT2AIR',
-        'BUILTBYT1HOVER',
+        'BUILTBYT2KBOT',
+        'BUILTBYT2VEHICLE',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -52,6 +51,7 @@ UnitBlueprint {
         'AIRSTAGINGPLATFORM',
         'OVERLAYMISC',
 	    'CORE',
+        'SORTSTRATEGIC',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -127,15 +127,13 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 12,
     },
-    Interface = {
-        HelpText = 'Automatically repairs aircraft',
-    },
     LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarOffset = 1,
+    LifeBarSize = 3,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
+            LAYER_Water = true,
         },
         SkirtSizeX = 2,
         SkirtSizeZ = 2,
@@ -151,9 +149,9 @@ UnitBlueprint {
     Transport = {
         Class2AttachSize = 2,
         Class3AttachSize = 4,
-        DockingSlots = 1,
+        DockingSlots = 4,
         RepairRate = 0.1,
-        StorageSlots = 5,
+        StorageSlots = 0,
     },
     Weapon = {
         { #BIG_UNITEX

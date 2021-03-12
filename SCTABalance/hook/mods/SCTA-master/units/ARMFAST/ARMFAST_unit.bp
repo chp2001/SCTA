@@ -5,21 +5,25 @@
 
 UnitBlueprint {
     Merge = true, 
-    Categories = {
-        'SELECTABLE',
-        'TECH2',
-        'LEVEL2',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
-        'OVERLAYDIRECTFIRE',
-        'ARM',
+    Defense = {
+        Health = 1100,
+        MaxHealth = 1100,
+        AirThreatLevel = 2,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 5,
     },
     Economy = {
-        BuildCostEnergy = 250,
-        BuildCostMass = 30,
-        BuildTime = 900,
+        BuildCostEnergy = 2500,
+        BuildCostMass = 250,
+        BuildTime = 4800,
+    },
+    Weapon = {
+        [1] = {
+            Damage = 45,
+            RateOfFire = 2,
+        },
+        [2] = {
+        },
     },
 }

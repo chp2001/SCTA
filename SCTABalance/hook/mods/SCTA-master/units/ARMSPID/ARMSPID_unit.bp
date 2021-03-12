@@ -5,24 +5,13 @@
 
 UnitBlueprint {
     Merge = true, 
-    BuildIconSortPriority = 10,
-    Categories = {
-        'SELECTABLE',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'TECH2',
-        'MOBILE',
-        'LAND',
-        'DIRECTFIRE',
-        'OVERLAYDIRECTFIRE',
-        'ARM',
-        'KBOT',
-        'LEVEL2',
-        'JAM',
-    },
     Defense = {
         Health = 2000,
         MaxHealth = 2000,
+    },
+    Economy = {
+        TAConsumptionPerSecondEnergy = 30,
+        MaintenanceConsumptionPerSecondEnergy = 5,
     },
     Display = {
         Abilities = {
@@ -31,14 +20,24 @@ UnitBlueprint {
             'All-Terrain',
         },
     },
+    General = {
+    ToggleCaps = {
+        RULEUTC_JammingToggle = true,
+        },
+    },
     Intel = {
-        FreeIntel = true,
         JamRadius = {
             Max = 20,
-            Min = 20,
+            Min = 5,
         },
         JammerBlips = 4,
         VisionRadius = 14,
     },
-    StrategicIconName = 'icon_land2_counterintel',
+    StrategicIconName = 'icon_land2_antishield',
+    Weapon = {
+    [1] = {
+        DamageToShields = 100,
+    },
+    [2] = {}, 
+    },
 }

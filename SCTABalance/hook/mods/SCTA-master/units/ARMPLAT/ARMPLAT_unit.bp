@@ -35,10 +35,10 @@ UnitBlueprint {
         BuildCostEnergy = 60000,
         BuildCostMass = 2400, 
         BuildTime = 64000,
-    ProductionPerSecondMass = 0,
     BuildRate = 240,
         BuildableCategory = {
             'VTOL LEVEL3 ARM',
+            'armch',
         },
     },
     Physics = {
@@ -46,9 +46,6 @@ UnitBlueprint {
             LAYER_Land = true,
             LAYER_Water = true,
         },
-        FlattenSkirt = true,
-        SkirtSizeX = 6,
-        SkirtSizeZ = 6,
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
@@ -59,5 +56,4 @@ UnitBlueprint {
     SizeX = 9,
     SizeY = 3,
     SizeZ = 9,
-    StrategicIconName = 'icon_factory3_air',
 }

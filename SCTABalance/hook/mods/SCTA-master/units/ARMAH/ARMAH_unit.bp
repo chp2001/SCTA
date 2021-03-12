@@ -5,32 +5,16 @@
 
 UnitBlueprint {
    Merge = true,
-   Categories = {
-    'SELECTABLE',
-    'TECH3',
-    'ARM',
-    'HOVER',
-    'PHIB',
-    'LEVEL3',
-    'VISIBLETORECON',
-    'RECLAIMABLE',
-    'MOBILE',
-    'ANTIAIR',
-    'ROCKET',
-    'OVERLAYANTIAIR',
-    'LAND',
-    },
     Defense = {
         Health = 2200,
         MaxHealth = 2200,
     },    
     Economy = {
-        BuildCostEnergy = 8000,
-        BuildCostMass = 540,
-        BuildTime = 8000,
+        BuildCostEnergy = 24000,
+        BuildCostMass = 1300,
+        BuildTime = 28000,
     },
     SizeY = 1.4,
-    StrategicIconName = 'icon_land3_antiair',
     Weapon = {
         [1] = {
             Damage = 60,  

@@ -18,8 +18,8 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 10,
     Categories = {
-        'BUILTBYT1SHIP',
         'BUILTBYT1HOVER',
+        'BUILTBYT1NAVAL',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
@@ -29,7 +29,7 @@ UnitBlueprint {
         'LEVEL1',
 	    'STRUCTURE',
         'ECONOMIC',
-        'SORTECONOMY',
+        'SORTSTRATEGIC',
 	    'ENERGYPRODUCTION',
 	    'NAVAL',
 	    'ARM',
@@ -86,9 +86,6 @@ TechLevel = 'RULEUTL_Basic',
     Intel = {
         VisionRadius = 6,
         WaterVisionRadius = 4, 
-    },
-    Interface = {
-        HelpText = 'Produces Energy',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

@@ -3,6 +3,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
+        'LEVEL1',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -10,14 +11,14 @@ UnitBlueprint {
         'RECLAIMABLE',
         'PATROLHELPER',
         'SHOWQUEUE',
-	'SELECTION',
+	    'SELECTION',
         'MOBILE',
-	'CONSTRUCTION',
-	'LAND',
+	    'CONSTRUCTION',
+        'LAND',
         'CORE',
         'KBOT',
         'VEHICLE',
-	'LEVEL1',
+        'VTOL',
     },
     Defense = {
         Health = 440,
@@ -38,7 +39,7 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 2,
         MaxBuildDistance = 6,
         BuildableCategory = {
-            'BUILTBYT1VEHICLE CORE',
+            'BUILTBYT1KBOT CORE',
         },
     },
     Intel = {

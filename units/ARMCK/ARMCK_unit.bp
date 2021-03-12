@@ -76,7 +76,7 @@ UnitBlueprint {
         AnimationWalk = '/mods/SCTA-master/units/ARMCK/ARMCK_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
-            'Construction Unit',
+             '<LOC ability_engineeringsuite>Engineering Suite',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -132,9 +132,6 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 14,
-    },
-    Interface = {
-        HelpText = 'Tech Level 1',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

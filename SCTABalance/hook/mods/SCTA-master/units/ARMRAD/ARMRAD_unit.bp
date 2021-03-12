@@ -10,8 +10,8 @@ UnitBlueprint {
         BuildCostEnergy = 1600,
         BuildTime = 2300,
         BuildRate = 40, 
-        MaintenanceConsumptionPerSecondEnergy = 10,
         ProductionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 25,
         BuildableCategory = {
             'armarad',
       },
@@ -20,7 +20,6 @@ UnitBlueprint {
 	UpgradesTo = 'armarad', 
   },
   Intel = {
-    FreeIntel = false,
       VisionRadius = 8,
       WaterVisionRadius = 8,
     },

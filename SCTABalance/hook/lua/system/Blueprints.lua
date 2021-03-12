@@ -129,7 +129,8 @@ do
                 BuildCostMass = 0.5,
                 BuildTime = 0.05,
                 BuildRate = 0.2,
-                MaintenanceConsumptionPerSecondEnergy = 3,
+                StorageEnergy = 0.2,
+                StorageMass = 0.5,
             },
         }
         local Struct_Singles = {

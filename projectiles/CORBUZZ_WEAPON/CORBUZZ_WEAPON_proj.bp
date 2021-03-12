@@ -47,9 +47,7 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORBUZZ_WEAPON',
     },
-    Interface = {
-        HelpText = 0,
-    },
+
     Physics = {
         DestroyOnWater = true,
         LeadTarget = false,

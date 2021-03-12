@@ -5,6 +5,25 @@
 
 UnitBlueprint {
     Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH3',
+        'LEVEL3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	    'NAVAL',
+	    'INDIRECTFIRE',
+	    'ANTIAIR',
+	    'ROCKET',
+        'SILO',
+	    'CRUISER',
+        'OVERLAYINDIRECTFIRE',
+	    'OVERLAYANTIAIR',
+	    'OVERLAYRADAR',
+        'CORE',
+        'OCEAN',
+    },
     Display = {
         Abilities = {
             '<LOC ability_tacmissiledef>Tactical Missile Defense',
@@ -12,13 +31,13 @@ UnitBlueprint {
         UniformScale = 0.2,
     },
     Defense = {
-        Health = 3000,
-        MaxHealth = 3000,
+        Health = 9500,
+        MaxHealth = 9500,
     },
     Economy = {
-        BuildCostEnergy = 7800,
-        BuildCostMass = 2300,
-        BuildTime = 36000,
+        BuildCostEnergy = 42000,
+        BuildCostMass = 12000,
+        BuildTime = 90000,
     },
     LifeBarSize = 4,
     SelectionSizeX = 3,
@@ -26,11 +45,9 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 3,
     SizeZ = 10,
+    StrategicIconName = 'icon_ship3_missile',
     Weapon = {
         [1] = {
-            EnergyDrainPerSecond = 100,
-            EnergyRequired = 300,
-            EnergyChargeForFirstShot = true,
         },
         [2] = {            
             AimsStraightOnDisable = false,

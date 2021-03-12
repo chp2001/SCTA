@@ -8,27 +8,8 @@ UnitBlueprint {
    Air = {
     BreakOffDistance = 17,
     BreakOffTrigger = 12,
-    CombatTurnSpeed = 1.5,
     MaxAirspeed = 24,
     MinAirspeed = 12,
-    StartTurnDistance = 5,
-    TightTurnMultiplier = 1.02,
-    TurnSpeed = 1.5,
-},
-    Categories = {
-        'SELECTABLE',
-        'TECH3',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'HIGHALTAIR',
-        'MOBILE',
-	    'ANTIAIR',
-        'AIR',
-        'VTOL',
-        'OVERLAYANTIAIR',
-        'CORE',
-        'LEVEL3',
-        'TRANSPORTATION',
     },
     Defense = {
         Health = 3300,
@@ -42,7 +23,6 @@ UnitBlueprint {
         FuelRechargeRate = 666666,
         FuelUseTime = 666666,
         },
-    StrategicIconName = 'icon_fighter3_missile',
     Weapon = {
         [1] = {
             Damage = 60,

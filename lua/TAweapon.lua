@@ -9,7 +9,7 @@ TAweapon = Class(DefaultWeapon) {
     StartEconomyDrain = function(self)
         DefaultWeapon.StartEconomyDrain(self)
     end,
-
+    
     OnGotTargetCheck = function(self)
         local army = self.unit:GetArmy()
         local canSee = true
@@ -79,6 +79,7 @@ TAweapon = Class(DefaultWeapon) {
     RackSalvoFireReadyState = State(DefaultWeapon.RackSalvoFireReadyState) {
         WeaponWantEnabled = true,
         WeaponAimWantEnabled = true,
+
         Main = function(self)
             local bp = self:GetBlueprint()
             if (bp.CountedProjectile == true and bp.WeaponUnpacks == true) then
@@ -94,6 +95,15 @@ TAweapon = Class(DefaultWeapon) {
                         WaitSeconds(1)
                 end
                 aiBrain:TakeResource('Energy', bp.EnergyRequired)
+                self.WeaponCanFire = true
+            end
+            if bp.MassRequired and bp.MassRequired > 0 then
+                self.WeaponCanFire = false
+                local aiBrain = self.unit:GetAIBrain()
+                while aiBrain:GetEconomyStored('MASS') < bp.MassRequired do
+                        WaitSeconds(1)
+                end
+                aiBrain:TakeResource('Mass', bp.MassRequired)
                 self.WeaponCanFire = true
             end
             if bp.CountedProjectile == true then
@@ -166,23 +176,79 @@ TAPopLaser = Class(TAweapon) {
     end,
 }
 
+TARocket = Class(TAweapon) {
+ -- Called when the weapon is created, almost always when the owning unit is created
+ OnCreate = function(self)
+    local bp = self:GetBlueprint()
+    self.MassRequired = bp.MassRequired
+    self.MassDrainPerSecond = bp.MassDrainPerSecond
+    if bp.MassChargeForFirstShot == false then
+        self.FirstShot = true
+    end
+    TAweapon.OnCreate(self)
+end,
+
+
+StartEconomyDrain = function(self)
+    TAweapon.StartEconomyDrain(self)
+    if self.FirstShot then return end
+    local bp = self:GetBlueprint()
+    if not self.MassDrain and bp.MassRequired and bp.MassDrainPerSecond then
+        local MsReq = self:GetWeaponMassRequired()
+        local MsDrain = self:GetWeaponMassDrain()
+        if MsReq > 0 and MsDrain > 0 then
+            local time = MsReq / MsDrain
+            if time < 0.1 then
+                time = 0.1
+            end
+            self.MassDrain = CreateEconomyEvent(self.unit, 0, MsReq, time)
+            self.FirstShot = true
+            self.unit:ForkThread(function()
+                WaitFor(self.MassDrain)
+                RemoveEconomyEvent(self.unit, self.MassDrain)
+                self.MassDrain = nil
+            end)
+        end
+    end
+end,
+
+GetWeaponMassRequired = function(self)
+    local bp = self:GetBlueprint()
+    local weapMass = (bp.MassRequired or 0)
+    if weapMass < 0 then
+        weapMass = 0
+    end
+    return weapMass
+end,
+
+GetWeaponMassDrain = function(self)
+    local bp = self:GetBlueprint()
+    local weapMass = (bp.MassDrainPerSecond or 0)
+    return weapMass
+end,
+}
+
 TAKami = Class(KamikazeWeapon){
-    FxMuzzleFlash = {
-        '/effects/emitters/default_muzzle_flash_01_emit.bp',
-        '/effects/emitters/default_muzzle_flash_02_emit.bp',
+    FxDeath = {
+        '/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp',
     },
 
+
     OnFire = function(self)
-		local army = self.unit:GetArmy()
+        local army = self.unit:GetArmy()
+        for k, v in self.FxDeath do
+            CreateEmitterAtBone(self.unit,-2,army,v):ScaleEmitter(3)
+        end 
+		local myBlueprint = self:GetBlueprint()
 		KamikazeWeapon.OnFire(self)
     end,
 }
 
 TABomb = Class(BareBonesWeapon) {
-    FxMuzzleFlash = {
-        '/effects/emitters/default_muzzle_flash_01_emit.bp',
-        '/effects/emitters/default_muzzle_flash_02_emit.bp',
+    FxDeath = {
+        '/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp',
     },
+
 
     OnCreate = function(self)
         BareBonesWeapon.OnCreate(self)
@@ -195,6 +261,9 @@ TABomb = Class(BareBonesWeapon) {
     
     Fire = function(self)
 		local army = self.unit:GetArmy()
+        for k, v in self.FxDeath do
+            CreateEmitterAtBone(self.unit,-2,army,v):ScaleEmitter(3)
+        end 
 		local myBlueprint = self:GetBlueprint()
         DamageArea(self.unit, self.unit:GetPosition(), myBlueprint.DamageRadius, myBlueprint.Damage, myBlueprint.DamageType or 'Normal', myBlueprint.DamageFriendly or false)
     end,    

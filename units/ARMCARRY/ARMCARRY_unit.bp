@@ -144,13 +144,9 @@ UnitBlueprint {
         UnitName = 'Colossus',
     },
     Intel = {
-	FreeIntel = false,
     VisionRadius = 22,
     WaterVisionRadius = 4, 
 	RadarRadius = 113,
-    },
-    Interface = {
-        HelpText = 'Light Carrier',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

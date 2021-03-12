@@ -16,7 +16,6 @@ UnitBlueprint {
         BuildableCategory = {
             'BUILTBYT1NAVAL CORE',
             'LEVEL1 PLANT CORE',
-            'coraap',
         },
     },
     Intel = {

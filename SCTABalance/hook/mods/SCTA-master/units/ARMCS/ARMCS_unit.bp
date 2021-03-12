@@ -16,7 +16,6 @@ UnitBlueprint {
         BuildableCategory = {
             'BUILTBYT1NAVAL ARM',
             'LEVEL1 PLANT ARM',
-            'armaap',
         },
     },
     Intel = {

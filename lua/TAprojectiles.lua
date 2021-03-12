@@ -24,6 +24,13 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
 		self:TrackTarget(false)
 		self.Smoke = nil
 	end,
+
+	OnImpact = function(self, targetType, targetEntity)
+		SinglePolyTrailProjectile.(self, targetType, targetEntity)
+		if targetType == 'Shield' and self.DamageData.DamageRadius > 0 and EntityCategoryContains(categories.DIRECTFIRE, self)  then
+			self.DamageData.DamageRadius = nil
+		end
+	end,
 }
 
 TANuclearProjectile = Class(NukeProjectile, TAProjectile) {
@@ -69,10 +76,10 @@ TANuclearProjectile = Class(NukeProjectile, TAProjectile) {
 
 }
 
-TAEMPNuclearProjectile = Class(TAProjectile) {
+TAEMPNuclearProjectile = Class(NukeProjectile, TAProjectile) {
 	OnCreate = function(self)
-		TAProjectile.OnCreate(self)
 		self.Smoke = true
+		TAProjectile.OnCreate(self)
 	end,
 
 	FxImpactAirUnit = {

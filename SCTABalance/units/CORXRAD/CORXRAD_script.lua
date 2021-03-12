@@ -1,11 +1,6 @@
-#CORE Advanced Radar Tower - Long Range Radar Tower
-#CORARAD
-#
-#Script created by Raevn
-
 local TACloser = import('/mods/SCTA-master/lua/TAStructure.lua').TACloser
 
-CORARAD = Class(TACloser) {
+CORXRAD = Class(TACloser) {
 	OnCreate = function(self)
 		TACloser.OnCreate(self)
 		self.Spinners = {
@@ -61,4 +56,4 @@ CORARAD = Class(TACloser) {
 	},
 }
 
-TypeClass = CORARAD
+TypeClass = CORXRAD

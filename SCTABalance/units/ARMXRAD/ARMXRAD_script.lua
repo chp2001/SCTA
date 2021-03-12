@@ -1,11 +1,6 @@
-#ARM Advanced Radar Tower - Long Range Radar Tower
-#ARMARAD
-#
-#Script created by Raevn
-
 local TACloser = import('/mods/SCTA-master/lua/TAStructure.lua').TACloser
 
-ARMARAD = Class(TACloser) {
+ARMXRAD = Class(TACloser) {
 	OnCreate = function(self)
 		TACloser.OnCreate(self)
 		self.Spinners = {
@@ -21,11 +16,6 @@ ARMARAD = Class(TACloser) {
 		for k, v in self.Sliders do
 			self.Trash:Add(v)
 		end
-	end,
-
-	OnDestroy = function(self)
-		TACloser.OnDestroy(self)
-		ChangeState(self, self.DeadState)
 	end,
 
 	OpeningState = State {
@@ -76,6 +66,9 @@ ARMARAD = Class(TACloser) {
 		end,
 
 	},
+
 }
 
-TypeClass = ARMARAD
+TypeClass = ARMXRAD
+
+	

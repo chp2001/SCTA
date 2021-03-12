@@ -290,6 +290,7 @@ Description = table.merged( Description, {
     ['armadlab'] = "<LOC armadlab_help>. For SCTABalance, an upgrade from ARMDLAB to access T3.",
     ['armhrk'] = "<LOC armhrk_help>."         ,
     ['armmass'] = "<LOC armmass_help>."         ,
+    ['armxrad'] = "<LOC armxrad_help>."         ,
     ['corsling'] = "<LOC corsling_help> For SCTABalance, Turtle KBot to help CORE Kbots defend against air threats",
     ['cordvp'] = "<LOC cordvp_help>. For SCTABalance, an upgrade from CORVP, to access T2",
     ['coradvp'] = "<LOC coradvp_help>. For SCTABalance, an upgrade from CORDVP to access T3.",
@@ -300,6 +301,7 @@ Description = table.merged( Description, {
     ['cordlab'] = "<LOC cordlab_help>. For SCTABalance, an upgrade from CORLAB, to access T2",
     ['coradlab'] = "<LOC coradlab_help>. For SCTABalance, an upgrade from CORDLAB to access T3.",
     ['cormass'] = "<LOC cormass_help>."         ,
+    ['corxrad'] = "<LOC corxrad_help>."         ,
 } )
 
 end

@@ -36,12 +36,12 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 150,
         DifferentialUpgradeCostCalculation = true,
         BuildableCategory = {
-            'armtarg',
+            'armxrad',
       },
     },
     General = {
     UpgradesFrom = 'armrad',
-    UpgradesTo = 'armtarg', 
+    UpgradesTo = 'armxrad', 
     },
     Intel = {
     VisionRadius = 12, 

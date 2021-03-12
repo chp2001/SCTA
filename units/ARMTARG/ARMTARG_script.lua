@@ -3,12 +3,11 @@
 #
 #Script created by Raevn
 
-local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
-local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+local TACloser = import('/mods/SCTA-master/lua/TAStructure.lua').TACloser
 
-ARMTARG = Class(TAStructure) {
+ARMTARG = Class(TACloser) {
 	OnCreate = function(self)
-		TAStructure.OnCreate(self)
+		TACloser.OnCreate(self)
 		self.Spinners = {
 			post1 = CreateRotator(self, 'post1', 'x', nil, 0, 0, 0),
 			post2 = CreateRotator(self, 'post2', 'x', nil, 0, 0, 0),
@@ -29,41 +28,17 @@ ARMTARG = Class(TAStructure) {
 		end
 	end,
 
-	OnKilled = function(self, instigator, type, overkillRatio)
-            if (self:GetScriptBit(3) == false) then
-	        TAutils.unregisterTargetingFacility(self:GetArmy())
-            end
-            TAStructure.OnKilled(self, instigator, type, overkillRatio)
-        end,
-
 	OnStopBeingBuilt = function(self,builder,layer)
-		TAStructure.OnStopBeingBuilt(self,builder,layer)
-		ForkThread(self.Open, self)
-		self:PlayUnitSound('Activate')
-		TAutils.registerTargetingFacility(self:GetArmy())
+		TACloser.OnStopBeingBuilt(self,builder,layer)
+		ForkThread(self.Unfold, self)
 	end,
 
-	OnScriptBitSet = function(self, bit)
-		if bit == 3 then
-			self:PlayUnitSound('Deactivate')
-    		        ForkThread(self.Close, self)
-			TAutils.unregisterTargetingFacility(self:GetArmy())
-		end
-		TAStructure.OnScriptBitSet(self, bit)
-	end,
-
-	OnScriptBitClear = function(self, bit)
-		if bit == 3 then
+	OpeningState = State {
+		Main = function(self)
+			TACloser.Unfold(self)
+			self:EnableIntel('Radar')
 			self:PlayUnitSound('Activate')
-			ForkThread(self.Open, self)
-			TAutils.registerTargetingFacility(self:GetArmy())
-		end
-		TAStructure.OnScriptBitClear(self, bit)
-	end,
-
-	Open = function(self)
-		TAStructure.Unfold(self)
-
+			self.intelIsActive = true
 		--TURN post1 to x-axis <-90.21> SPEED <82.32>;
 		self.Spinners.post1:SetGoal(-90)
 		self.Spinners.post1:SetSpeed(82)
@@ -101,10 +76,16 @@ ARMTARG = Class(TAStructure) {
 
 		--SLEEP <1109>;
 		--SLEEP <53>;
+		ChangeState(self, self.IdleOpenState)
 	end,
+},
 
-	Close = function(self)
-		TAStructure.Fold(self)
+ClosingState = State {
+	Main = function(self)
+		self:DisableIntel('Radar')
+		TACloser.Fold(self)
+		self:PlayUnitSound('Deactivate')
+		self.intelIsActive = nil
 		--MOVE light4 to x-axis <0> SPEED <1.00>;
 		self.Sliders.light4:SetGoal(0,0,0)
 		self.Sliders.light4:SetSpeed(1)
@@ -139,7 +120,8 @@ ARMTARG = Class(TAStructure) {
 		--TURN post4 to z-axis <0> SPEED <73.96>;
 		self.Spinners.post4:SetGoal(0)
 		self.Spinners.post4:SetSpeed(74)
+		ChangeState(self, self.IdleClosedState)
 	end,
+	},
 }
-
 TypeClass = ARMTARG

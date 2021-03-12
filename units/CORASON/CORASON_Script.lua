@@ -1,32 +1,40 @@
-local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
+local TACloser = import('/mods/SCTA-master/lua/TAStructure.lua').TACloser
 
-CORASON = Class(TAStructure) {
+CORASON = Class(TACloser) {
 	OnCreate = function(self)
-		TAStructure.OnCreate(self)
+		TACloser.OnCreate(self)
 		self.Spinners = {
 			dish = CreateRotator(self, 'dish', 'y', nil, 0, 0, 0),	
 		}
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
-		
 	end,
 
-	OnIntelDisabled = function(self)
-		TAStructure.Fold(self)
-		--STOP-SPIN dish around y-axis;
-		self.Spinners.dish:SetSpeed(0)
-		TAStructure.OnIntelDisabled(self)
-		self:PlayUnitSound('Deactivate')
-	end,
 
-	OnIntelEnabled = function(self)
-		TAStructure.Unfold(self)
-		--SPIN dish around y-axis  SPEED <60.01>;
-		self.Spinners.dish:SetSpeed(60)
-		TAStructure.OnIntelEnabled(self)
-		self:PlayUnitSound('Activate')
-	end,
+	OpeningState = State {
+		Main = function(self)
+			TACloser.Unfold(self)
+			self:EnableIntel('Sonar')
+			self:PlayUnitSound('Activate')
+			self.intelIsActive = true
+	--SPIN dish around y-axis  SPEED <60.01>;
+	self.Spinners.dish:SetSpeed(60)
+	ChangeState(self, self.IdleOpenState)
+end,
+},
+
+
+ClosingState = State {
+Main = function(self)
+	self:DisableIntel('Sonar')
+	TACloser.Fold(self)
+	self:PlayUnitSound('Deactivate')
+	self.intelIsActive = nil
+	self.Spinners.dish:SetSpeed(0)
+	ChangeState(self, self.IdleClosedState)
+end,
+},
 }
 
 TypeClass = CORASON

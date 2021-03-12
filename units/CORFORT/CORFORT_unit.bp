@@ -60,8 +60,6 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 2,
-        SizeX = 2,
-        SizeZ = 2,
     },
     General = {
 	---BuildAngle = 0,
@@ -81,10 +79,6 @@ TechLevel = 'RULEUTL_Secret',
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     LifeBarRender = false,
-    Physics = {
-        SkirtSizeX = 2,
-        SkirtSizeZ = 2,
-    },
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,

@@ -1,23 +1,18 @@
-#ARM Radar Tower - Radar Tower
-#ARMRAD
-#
-#Blueprint created by Raevn
-
 UnitBlueprint {
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'RADAR1',
+            Cue = 'RADADVN1',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         Activate = Sound {
             Bank = 'TA_Sound',
-            Cue = 'RADAR1',
+            Cue = 'RADADVN1',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         Deactivate = Sound {
             Bank = 'TA_Sound',
-            Cue = 'RADARDE1',
+            Cue = 'RADADDE1',
             LodCutoff = 'UnitMove_LodCutoff',
         },
 	Destroyed = Sound {
@@ -26,62 +21,67 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 15,
+    BuildIconSortPriority = 10,
     Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1VEHICLE',
-        'BUILTBYT1HOVER',
-	    'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH1',
-        'LEVEL1',
+        'TECH3',
+        'LEVEL3',
 	    'STRUCTURE',
 	    'INTELLIGENCE',
+        'OMNI',
         'RADAR',
-        'SHOWQUEUE',
         'OVERLAYRADAR',
+        'OVERLAYOMNI',
 	    'ARM',
 	    'SORTINTEL',
+        'TARGETING',
+        'DEVELOPMENT',
+        'CONSTRUCTIONSORTDOWN',
     },
     Defense = {
+        DamageModifier = 1,
         ArmorType = 'Structure',
         AirThreatLevel = 0,
-        EconomyThreatLevel = 2,
+        EconomyThreatLevel = 40,
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
-        Health = 51,
-        MaxHealth = 51,
+        Health = 120,
+        MaxHealth = 120,
     },
-    Description = 'Radar Tower',
+    Description = 'Development Radar Tower',
     Display = {
-        Abilities = {
-            '<LOC ability_radar>Radar',
+         Abilities = {
+        'Radar Targeting',
+        '<LOC ability_omni>Omni Sensor',
+        '<LOC ability_radar>Radar',
         },
         Mesh = {
             IconFadeInZoom = 130,
-            LODs = {
-                {
-                    LODCutoff = 230,
-                    ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
-                },
+        LODs = {
+            {
+            LODCutoff = 230,
+            SpecularName = '/mods/SCTA-master/units/ARMARAD/ARMARAD_SpecTeam.dds',
+            AlbedoName = '/mods/SCTA-master/units/ARMARAD/ARMARAD_Albedo.dds',
+            MeshName =   '/mods/SCTA-master/units/ARMARAD/ARMARAD_lod0.scm',
+            ShaderName = 'Unit', 
+            NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
             },
+        }, 
+     }, 
+     UniformScale = 0.1,   
+    },
+     Footprint = {
+        MaxSlope = 0.625,
         },
-        UniformScale = 0.12,
-    },
-    Economy = {
-        BuildCostEnergy = 750,
-        BuildCostMass = 49,
-        BuildTime = 1137,
-        ProductionPerSecondEnergy = 5,
-        MaintenanceConsumptionPerSecondEnergy = 5,
-    },
-    Footprint = {
-	MaxSlope = 0.625,
+     Economy = {
+        BuildCostEnergy = 50000,
+        BuildCostMass = 4000,
+        BuildTime = 22000,
+        MaintenanceConsumptionPerSecondEnergy = 2000,
+        DifferentialUpgradeCostCalculation = true,
     },
     General = {
         Category = 'Intelligence',
@@ -99,24 +99,26 @@ UnitBlueprint {
             RULEUCC_Reclaim = false,
             RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = false,
-            RULEUCC_Stop = false,
+            RULEUCC_Stop = true,
             RULEUCC_Transport = false,
         },
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
+        UpgradesFrom = 'armarad',
         ConstructionBar = true,
         FactionName = 'ARM',
         Icon = 'land',
-        TechLevel = 'RULEUTL_Basic',
-	    UnitName = 'Radar Tower',
+        TechLevel = 'RULEUTL_Secret',
+	    UnitName = 'Development Radar Tower',
     },
     Intel = {
-        VisionRadius = 22, 
-	RadarRadius = 90,
+        VisionRadius = 18, 
+        RadarRadius = 360,
+        OmniRadius = 120,
     },
     LifeBarHeight = 0.25,
-    LifeBarOffset = 0.25,
+    LifeBarOffset = 0.5,
     LifeBarSize = 1,
     Physics = {
         DragCoefficient = 0.2,
@@ -139,11 +141,11 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 3,
     SizeZ = 2,
-    StrategicIconName = 'icon_structure1_intel',
+    StrategicIconName = 'icon_structure3_intel',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_BUILDINGEX
-            Damage = 75,
+            Damage = 100,
             DamageFriendly = true,
             DamageRadius = 3,
             DamageType = 'Normal',
@@ -158,7 +160,7 @@ UnitBlueprint {
         HealthMult = 0.9,
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
-        --Blueprint = '/mods/SCTA-master/units/ARMRAD/ARMRAD_dead_prop.bp',
+        --Blueprint = '/mods/SCTA-master/units/ARMARAD/ARMARAD_dead_prop.bp',
         WreckageLayers = {
             Land = true,
         },

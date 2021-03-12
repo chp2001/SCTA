@@ -61,7 +61,7 @@ Platoon = Class(SCTAAIPlatoon) {
             if ents[1] and pos and not EntityCategoryContains(categories.COMMAND, eng) then
                 coroutine.yield(1)
                 return self:IdleEngineerSCTA()
-            elseif econ.MassStorageRatio > 0.5 and econ.EnergyStorageRatio > 0.5 and not EntityCategoryContains(categories.COMMAND, eng) then
+            elseif econ.MassStorageRatio > 0.5 and econ.EnergyStorageRatio > 0.5 then
                 coroutine.yield(1)
                 self:ForkThread(self.AssistBody)
                 WaitSeconds(self.PlatoonData.Assist.Time or 60)
@@ -673,7 +673,7 @@ Platoon = Class(SCTAAIPlatoon) {
 
             -- if we're using a transport, wait for a while
             if self.UsingTransport then
-                WaitSeconds(10)
+                WaitSeconds(4)
                 continue
             end
 

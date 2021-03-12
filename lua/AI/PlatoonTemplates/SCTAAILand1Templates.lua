@@ -124,11 +124,11 @@ PlatoonTemplate {
     Name = 'T3LandDFTankSCTA',
     FactionSquads = {
         Arm = {
+            { 'armzeus', 1, 3, 'attack', 'none' },
             { 'armsnipe', 1, 1, 'attack', 'none' },
-            { 'armzeus', 1, 4, 'attack', 'none' },
         },
         Core = {
-            { 'corgol', 1, 4, 'attack', 'none' },
+            { 'corgol', 1, 3, 'attack', 'none' },
             { 'cormart', 1, 1, 'attack', 'none' },
         },
     }

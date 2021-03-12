@@ -4,18 +4,14 @@
     Summary :
         Responsible for defining a mapping from AIBuilders keys -> Plans (Plans === platoon.lua functions)
 ]]
-local SPECIAL = categories.RAIDER - categories.EXPERIMENTAL - categories.ENGINEER
+local SPECIAL = categories.RAIDER - categories.EXPERIMENTAL - categories.ENGINEER - categories.COMMAND
 local GROUND = categories.MOBILE * categories.LAND
 
 PlatoonTemplate {
     Name = 'AntiAirSCTA',
     Plan = 'SCTAAntiAirAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND * categories.ANTIAIR, -- Type of units.
-          5, -- Min number of units.
-          10, -- Max number of units.
-          'attack', -- platoon types: 'support', 'attack', 'scout',
-          'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND * categories.ANTIAIR, 5, 10, 'attack', 'none' },
     },
 }
 
@@ -23,11 +19,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTA',
     Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND - SPECIAL - categories.LASER, -- Type of units.
-          5, -- Min number of units.
-          10, -- Max number of units.
-          'attack', -- platoon types: 'support', 'attack', 'scout',
-          'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND - SPECIAL - categories.LASER, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
 

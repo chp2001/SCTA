@@ -192,7 +192,6 @@ BuilderGroup {
         Priority = 275,
         InstanceCount = 8,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {1200} },
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT * categories.AIR}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB * categories.AIR} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.PLANT * categories.AIR} },
@@ -213,15 +212,15 @@ BuilderGroup {
         InstanceCount = 8,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1200} },
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT * categories.LAND}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB * categories.LAND} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.PLANT * categories.LAND} },
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.PLANT} },
             { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},    
         },
         BuilderData = {
             Location = 'LocationType',
             ReclaimTime = 30,
-            Reclaim = {'PLANT LAND'},
+            Reclaim = {'PLANT'},
         },
         BuilderType = 'Any',
     },

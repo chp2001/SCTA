@@ -11,9 +11,7 @@ TAunitkeygroups = {
     },
     ["Land_Factory"]= {
         "armlab",
-        "armvp",
         "corvp",
-        "corlab",
     },    
     ["Air_Factory"]= {
         "armap",
@@ -21,7 +19,9 @@ TAunitkeygroups = {
     },
     ["Naval_Factory"]= {
         "armsy",
+        "armvp",
         "corsy",
+        "corlab",
     },
     ["Power_Generator"]= {
         "armckfus",
@@ -34,10 +34,10 @@ TAunitkeygroups = {
         "corwin",
     },
     ["Hydrocarbon_Power_Plant"]= {
-        "armgeo",
         "armtide",
-        "corgeo",
+        "armgeo",
         "cortide", 
+        "corgeo",
     },    
     ["Mass_Extractor"]= {
         "armmoho",
@@ -100,12 +100,12 @@ TAunitkeygroups = {
         "cortron",
     },
     ["Radar_System"]= {
-        "armrad",
-        "armarad",
         "armtarg",
-        "corrad",
-        "corarad",
+        "armarad",
+        "armrad",
         "cortarg",
+        "corarad",
+        "corrad",
     },
     ["Sonar_System"]= {
         "armsonar",
@@ -125,9 +125,7 @@ TAunitkeygroups = {
     },
     ["T2_Support_Land_Factory"]= {
         "armalab",
-        "armavp",
         "coravp",
-        "coralab",
     },
     ["T2_Support_Air_Factory"]= {
         "armaap",
@@ -135,7 +133,9 @@ TAunitkeygroups = {
     },
     ["T2_Support_Naval_Factory"]= {
         "armasy",
+        "armavp",
         "corasy",
+        "coralab",
     },
     ["T3_Support_Land_Factory"] = {
         "armhp",

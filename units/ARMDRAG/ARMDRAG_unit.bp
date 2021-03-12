@@ -57,8 +57,6 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 2,
-        SizeX = 2,
-        SizeZ = 2,
     },
     General = {
         CapCost = 0.1,
@@ -82,9 +80,8 @@ UnitBlueprint {
             LAYER_Land = true,
             LAYER_Water = true,
         },
-        SkirtSizeX = 2,
-        SkirtSizeZ = 2,
     },
+    SelectionCenterOffsetX = 0.1,
     SizeX = 2,
     SizeY = 1,
     SizeZ = 2,

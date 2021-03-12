@@ -37,22 +37,14 @@ UnitBlueprint {
         BuildTime = 22000,
         MaintenanceConsumptionPerSecondEnergy = 1500,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
-    },
     Intel = {
             VisionRadius = 18, 
             RadarRadius = 360,
             OmniRadius = 120,
     },
-    Physics = {
-        SkirtSizeX = 2,
-        SkirtSizeZ = 2,
-    },
-    SelectionSizeX = 3,
-    SelectionSizeZ = 3,
-    SizeX = 4,
+    SelectionSizeX = 4,
+    SelectionSizeZ = 4,
+    SizeX = 5,
     SizeY = 3,
-    SizeZ = 4,
+    SizeZ = 5,
 }

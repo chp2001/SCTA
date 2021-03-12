@@ -57,8 +57,6 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 2,
-        SizeX = 2,
-        SizeZ = 2,
     },
     General = {
         CapCost = 0.1,
@@ -82,8 +80,6 @@ TechLevel = 'RULEUTL_Advanced',
             LAYER_Land = true,
             LAYER_Water = true,
         },
-        SkirtSizeX = 2,
-        SkirtSizeZ = 2,
     },
     SizeX = 2,
     SizeY = 1.25,

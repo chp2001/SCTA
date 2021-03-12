@@ -69,7 +69,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.2,
     },
     Economy = {
         BuildCostEnergy = 141148,
@@ -79,8 +79,6 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 5,
-        SizeZ = 4,
     },
     General = {
 	---BuildAngle = 4096,
@@ -123,10 +121,6 @@ TechLevel = 'RULEUTL_Basic',
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
-    Physics = {
-        SkirtSizeX = 5,
-        SkirtSizeZ = 5,
-    },
     SelectionSizeX = 2.5,
     SelectionSizeZ = 2.5,
     SelectionThickness = 0.25,

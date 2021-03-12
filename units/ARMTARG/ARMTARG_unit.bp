@@ -68,7 +68,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.2,
     },
     Economy = {
         BuildCostEnergy = 136058,
@@ -78,8 +78,6 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 5,
-        SizeZ = 5,
     },
     General = {
         CommandCaps = {
@@ -105,7 +103,7 @@ UnitBlueprint {
         OrderOverrides = {
             RULEUTC_IntelToggle = {
                 bitmapId = 'Sacrifice',
-                helpText = 'Radar Targeting. Enables shooting of Blips',
+                helpText = 'Radar Targeting. Enables shooting of blips',
             },
         },
         SelectionPriority = 5,
@@ -121,10 +119,6 @@ TechLevel = 'RULEUTL_Basic',
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
-    Physics = {
-        SkirtSizeX = 5,
-        SkirtSizeZ = 5,
-    },
     SelectionSizeX = 2.5,
     SelectionSizeZ = 2,
     SelectionThickness = 0.25,

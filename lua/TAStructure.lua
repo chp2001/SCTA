@@ -110,11 +110,6 @@ TACloser = Class(TAStructure) {
 	end
 	end,
 
-	OnDestroy = function(self)
-		TACloser.OnDestroy(self)
-		ChangeState(self, self.DeadState)
-	end,
-
 	OnIntelEnabled = function(self)
 		TAStructure.OnIntelEnabled()
 			if EntityCategoryContains(categories.TARGETING, self) and (self:IsIntelEnabled('Radar') or self:IsIntelEnabled('Sonar')) then
@@ -183,11 +178,6 @@ TACloser = Class(TAStructure) {
 		end
 		TAStructure.OnScriptBitClear(self, bit)
 	end,
-
-	DeadState = State {
-		Main = function(self)
-		end,
-	},
 }	
 	
 TACKFusion = Class(TAStructure) {

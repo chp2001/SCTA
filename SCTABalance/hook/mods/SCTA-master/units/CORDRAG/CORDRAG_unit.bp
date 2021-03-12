@@ -12,11 +12,6 @@ UnitBlueprint {
         BuildCostMass = 4,
         BuildTime = 565,
     },
-    Footprint = {
-	MaxSlope = 1,
-        SizeX = 1,
-        SizeZ = 1,
-    },
         LifeBarHeight = 0.075,
         LifeBarOffset = 0.5,
         LifeBarSize = 0.8,

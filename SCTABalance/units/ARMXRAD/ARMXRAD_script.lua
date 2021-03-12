@@ -48,7 +48,7 @@ ARMXRAD = Class(TACloser) {
 			self:DisableIntel('Radar')
 			TACloser.Fold(self)
 			self:PlayUnitSound('Deactivate')
-
+			self.intelIsActive = nil
 			--TURN dish1 to z-axis <0> SPEED <178.70>;
 			self.Spinners.arm1:SetGoal(0)
 

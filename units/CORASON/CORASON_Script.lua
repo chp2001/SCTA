@@ -9,7 +9,6 @@ CORASON = Class(TACloser) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
-		
 	end,
 
 
@@ -31,6 +30,7 @@ Main = function(self)
 	self:DisableIntel('Sonar')
 	TACloser.Fold(self)
 	self:PlayUnitSound('Deactivate')
+	self.intelIsActive = nil
 	self.Spinners.dish:SetSpeed(0)
 	ChangeState(self, self.IdleClosedState)
 end,

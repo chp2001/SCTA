@@ -16,12 +16,10 @@ ARMRAD = Class(TAStructure) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
-		self.intelIsActive = true
 	end,
 
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAStructure.OnStopBeingBuilt(self,builder,layer)
-		self.intelIsActive = true
 		self.StartSpin(self)
 		self:PlayUnitSound('Activate')
 	end,

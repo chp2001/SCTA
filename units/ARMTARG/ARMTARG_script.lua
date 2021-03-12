@@ -85,6 +85,7 @@ ClosingState = State {
 		self:DisableIntel('Radar')
 		TACloser.Fold(self)
 		self:PlayUnitSound('Deactivate')
+		self.intelIsActive = nil
 		--MOVE light4 to x-axis <0> SPEED <1.00>;
 		self.Sliders.light4:SetGoal(0,0,0)
 		self.Sliders.light4:SetSpeed(1)

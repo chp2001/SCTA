@@ -31,11 +31,10 @@ ClosingState = State {
 		self:DisableIntel('Radar')
 		TACloser.Fold(self)
 		self:PlayUnitSound('Deactivate')
-		if self.AnimManip then
+		self.intelIsActive = nil
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
 		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 		WaitFor(self.AnimManip)
-		end
 		ChangeState(self, self.IdleClosedState)
 	end,
 },

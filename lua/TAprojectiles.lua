@@ -4,18 +4,12 @@ local SinglePolyTrailProjectile = DefaultProjectileFile.SinglePolyTrailProjectil
 local NukeProjectile = DefaultProjectileFile.NukeProjectile
 
 TAProjectile = Class(SinglePolyTrailProjectile) {
-	FxSmoke = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
-	FxSmokeScale = 1,
-
 	PolyTrail =  '/effects/emitters/aeon_laser_trail_02_emit.bp',
 
 	OnCreate = function(self)
 		SinglePolyTrailProjectile.OnCreate(self)
 		if self.TrackTime then
 			self:ForkThread( self.TrackingThread, self )
-		end
-		if self.Smoke then
-			self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
 		end
 	end,
 
@@ -34,8 +28,11 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
 	}
 
 TANuclearProjectile = Class(NukeProjectile, TAProjectile) {
+	FxSmoke = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
+	FxSmokeScale = 1,
+
 	OnCreate = function(self)
-		self.Smoke = true
+	self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
 		TAProjectile.OnCreate(self)
 	end,
 
@@ -77,8 +74,11 @@ TANuclearProjectile = Class(NukeProjectile, TAProjectile) {
 }
 
 TAEMPNuclearProjectile = Class(NukeProjectile, TAProjectile) {
-	OnCreate = function(self)
-		self.Smoke = true
+		FxSmoke = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
+		FxSmokeScale = 1,
+	
+		OnCreate = function(self)
+		self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
 		TAProjectile.OnCreate(self)
 	end,
 
@@ -270,18 +270,19 @@ TALightCannonProjectile = Class(TAProjectile) {
     	FxWaterHitScale = 0.5,
 }
 TARocketProjectile = Class(TAMediumCannonProjectile) {
+	FxSmoke = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
+	FxSmokeScale = 1,
 
 	OnCreate = function(self)
-	self.Smoke = true
+	self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
 	TAMediumCannonProjectile.OnCreate(self)
 	end,
 }
 
-TAMissileProjectile = Class(TAMediumCannonProjectile) {
+TAMissileProjectile = Class(TARocketProjectile) {
 	OnCreate = function(self)
-	self.Smoke = true
 	self:SetCollisionShape('Sphere', 0, 0, 0, 1)
-	TAMediumCannonProjectile.OnCreate(self)
+	TARocketProjectile.OnCreate(self)
 	end,
 }
 

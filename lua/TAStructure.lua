@@ -105,7 +105,89 @@ TACloser = Class(TAStructure) {
 		TAStructure.OnStopBeingBuilt(self,builder,layer)
 		closeDueToDamage = nil,
 		ChangeState(self, self.OpeningState)
+		if EntityCategoryContains(categories.TARGETING, self) and (self:IsIntelEnabled('Radar') or self:IsIntelEnabled('Sonar')) then
+		TAutils.registerTargetingFacility(self:GetArmy())
+	end
 	end,
+
+	OnDestroy = function(self)
+		TACloser.OnDestroy(self)
+		ChangeState(self, self.DeadState)
+	end,
+
+	OnIntelEnabled = function(self)
+		TAStructure.OnIntelEnabled()
+			if EntityCategoryContains(categories.TARGETING, self) and (self:IsIntelEnabled('Radar') or self:IsIntelEnabled('Sonar')) then
+			TAutils.registerTargetingFacility(self:GetArmy())
+			end
+	end,
+
+	OnIntelDisabled = function(self)
+	TAStructure.OnIntelDisabled()
+			if EntityCategoryContains(categories.TARGETING, self) and (not self:IsIntelEnabled('Radar') or not self:IsIntelEnabled('Sonar')) then
+			TAutils.unregisterTargetingFacility(self:GetArmy())
+		end
+	end,
+
+	IdleClosedState = State {
+		Main = function(self)
+			if self.closeDueToDamage then 
+				while self.DamageSeconds > 0 do
+					WaitSeconds(1)
+					self.DamageSeconds = self.DamageSeconds - 1
+				end
+
+				self.closeDueToDamage = nil
+
+				if self.intelIsActive then 
+					ChangeState(self, self.OpeningState)
+				end
+			end
+		end,
+
+		OnDamage = function(self, instigator, amount, vector, damageType)
+			TAStructure.OnDamage(self, instigator, amount, vector, damageType) 
+
+			self.DamageSeconds = 8
+			ChangeState(self, self.ClosingState)
+		end,
+
+	},
+
+	IdleOpenState = State {
+		Main = function(self)
+		end,
+
+		OnDamage = function(self, instigator, amount, vector, damageType)
+			TAStructure.OnDamage(self, instigator, amount, vector, damageType)
+			self.DamageSeconds = 8
+			self.closeDueToDamage = true
+			ChangeState(self, self.ClosingState)
+		end,
+
+	},
+
+	OnScriptBitSet = function(self, bit)
+		if bit == 3 then
+			self.intelIsActive = nil
+			ChangeState(self, self.ClosingState)
+		end
+		TAStructure.OnScriptBitSet(self, bit)
+	end,
+
+
+	OnScriptBitClear = function(self, bit)
+		if bit == 3 then
+			self.intelIsActive = true
+			ChangeState(self, self.OpeningState)
+		end
+		TAStructure.OnScriptBitClear(self, bit)
+	end,
+
+	DeadState = State {
+		Main = function(self)
+		end,
+	},
 }	
 	
 TACKFusion = Class(TAStructure) {

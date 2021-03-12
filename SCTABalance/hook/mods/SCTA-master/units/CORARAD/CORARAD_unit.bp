@@ -37,12 +37,12 @@ UnitBlueprint {
         DifferentialUpgradeCostCalculation = true,
         MaintenanceConsumptionPerSecondEnergy = 150,
         BuildableCategory = {
-            'cortarg',
+            'corxrad',
       },
     },
     General = {
     UpgradesFrom = 'corrad',
-    UpgradesTo = 'cortarg', 
+    UpgradesTo = 'corxrad', 
     },
     Intel = {
         VisionRadius = 12, 

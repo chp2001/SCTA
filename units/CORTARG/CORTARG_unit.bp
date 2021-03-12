@@ -104,6 +104,12 @@ UnitBlueprint {
         ToggleCaps = {
             RULEUTC_IntelToggle = true,
         },
+        OrderOverrides = {
+            RULEUTC_IntelToggle = {
+                bitmapId = 'Sacrifice',
+                helpText = 'Radar Targeting. Enables shooting of Blips',
+            },
+        },
         SelectionPriority = 5,
         FactionName = 'CORE',
         Icon = 'land',
@@ -111,6 +117,7 @@ TechLevel = 'RULEUTL_Basic',
 	UnitName = 'Targeting Facility',
     },
     Intel = {
+        RadarRadius = 10,
         VisionRadius = 14,
     },
     LifeBarHeight = 0.25,

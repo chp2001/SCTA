@@ -22,6 +22,7 @@ UnitBlueprint {
         'BUILTBYT1KBOT',
         'BUILTBYT1VEHICLE',
         'BUILTBYT1HOVER',
+        'BUILTBYT1NAVAL',
         'SELECTABLE',
         'VISIBLETORECON',
         'RECLAIMABLE',

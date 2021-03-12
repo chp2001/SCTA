@@ -118,7 +118,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'ArmyNeedsTransports', {} },
             { UCBC, 'LocationFactoriesBuildingLess', { 'LocationType', 2, 'AIRTRANSPORT' } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 25, 'AIRTRANSPORT' } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, 'AIRTRANSPORT' } },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'AIRTRANSPORT' } },
             { IBC, 'BrainNotLowPowerMode', {} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},

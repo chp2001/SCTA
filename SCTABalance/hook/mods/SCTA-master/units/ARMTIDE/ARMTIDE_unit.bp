@@ -1,7 +1,7 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT1MINELAYER',
+        'BUILTBYT1NAVAL',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',

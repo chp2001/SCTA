@@ -17,7 +17,7 @@
     
         -- radar
         {'armrad', 'armarad'},
-        {'armarad', 'armtarg'},
+        {'armarad', 'armxrad'},
     
         -- sonar
         {'armsonar', 'armason'},
@@ -43,7 +43,7 @@
     
         -- radar
         {'corrad', 'corarad'},
-        {'corarad', 'cortarg'},
+        {'corarad', 'corxrad'},
     
         -- sonar
         {'corsonar', 'corason'},

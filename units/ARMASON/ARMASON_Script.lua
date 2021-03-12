@@ -36,7 +36,7 @@ ARMASON = Class(TACloser) {
 			self:DisableIntel('Sonar')
 			TACloser.Fold(self)
 			self:PlayUnitSound('Deactivate')
-			self.intelIsActive = nil
+			---self.intelIsActive = nil
 				--TURN hinge1 to x-axis <0> SPEED <68.78>;
 				self.Spinners.hinge1:SetGoal(0)
 				self.Spinners.hinge1:SetSpeed(68)
@@ -86,7 +86,7 @@ ARMASON = Class(TACloser) {
 			TACloser.Unfold(self)
 			self:EnableIntel('Sonar')
 			self:PlayUnitSound('Activate')
-			self.intelIsActive = true
+			---self.intelIsActive = true
 		--TURN hinge1 to x-axis <133.26> SPEED <68.74>;
 		self.Spinners.hinge1:SetGoal(130)
 		self.Spinners.hinge1:SetSpeed(68)

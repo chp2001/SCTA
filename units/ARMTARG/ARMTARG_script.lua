@@ -38,7 +38,7 @@ ARMTARG = Class(TACloser) {
 			TACloser.Unfold(self)
 			self:EnableIntel('Radar')
 			self:PlayUnitSound('Activate')
-			self.intelIsActive = true
+			---self.intelIsActive = true
 		--TURN post1 to x-axis <-90.21> SPEED <82.32>;
 		self.Spinners.post1:SetGoal(-90)
 		self.Spinners.post1:SetSpeed(82)
@@ -85,7 +85,7 @@ ClosingState = State {
 		self:DisableIntel('Radar')
 		TACloser.Fold(self)
 		self:PlayUnitSound('Deactivate')
-		self.intelIsActive = nil
+		---self.intelIsActive = nil
 		--MOVE light4 to x-axis <0> SPEED <1.00>;
 		self.Sliders.light4:SetGoal(0,0,0)
 		self.Sliders.light4:SetSpeed(1)

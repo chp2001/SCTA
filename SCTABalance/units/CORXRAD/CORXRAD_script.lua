@@ -22,7 +22,7 @@ CORXRAD = Class(TACloser) {
 			TACloser.Unfold(self)
 			self:EnableIntel('Radar')
 			self:PlayUnitSound('Activate')
-			self.intelIsActive = true
+			---self.intelIsActive = true
 			--SPIN turret around y-axis  SPEED <20.00>;
 			self.Spinners.turret:ClearGoal()
 			self.Spinners.turret:SetSpeed(20)
@@ -39,7 +39,7 @@ CORXRAD = Class(TACloser) {
 		Main = function(self)
 			TACloser.Fold(self)
 			self:DisableIntel('Radar')
-			self.intelIsActive = nil
+			---self.intelIsActive = nil
 			self:PlayUnitSound('Deactivate')
 
 			--SPIN turret around y-axis  SPEED <0.00>;

@@ -99,16 +99,16 @@ TAunit = Class(Unit)
 
 
 	OnScriptBitSet = function(self, bit)
-		if bit == 2 or bit == 5 and EntityCategoryContains(categories.JAM, self) then
+		if EntityCategoryContains(categories.JAM, self) and (bit == 2 or bit == 5) then
 			--self:SetMaintenanceConsumptionActive()
-			self:DisableUnitIntel('ToggleBit2', 'Jammer')
-			self:DisableUnitIntel('ToggleBit5', 'RadarStealth')
-            self:DisableUnitIntel('ToggleBit5', 'RadarStealthField')
+			--self:DisableUnitIntel('ToggleBit2', 'Jammer')
+			--self:DisableUnitIntel('ToggleBit5', 'RadarStealth')
+            --self:DisableUnitIntel('ToggleBit5', 'RadarStealthField')
 			if self.TAIntelThread then KillThread(self.TAIntelThread) end
 			self.TAIntelThread = self:ForkThread(self.TAIntelMotion)	
 		end
-		if bit == 8 then
-			self:DisableUnitIntel('ToggleBit8', 'Cloak')
+		if bit == 8 and EntityCategoryContains(categories.TACLOAK, self)then
+			--self:DisableUnitIntel('ToggleBit8', 'Cloak')
 			if self.CloakThread then KillThread(self.CloakThread) end
 			self.CloakThread = self:ForkThread(self.CloakDetection)	
 		end
@@ -116,14 +116,14 @@ TAunit = Class(Unit)
 	end,
 
 	OnScriptBitClear = function(self, bit)
-		if bit == 2 or bit == 5 and EntityCategoryContains(categories.JAM, self) then
+		if EntityCategoryContains(categories.JAM, self) and (bit == 2 or bit == 5) then
 			--self:SetMaintenanceConsumptionInactive()
 			if self.TAIntelThread then
 				KillThread(self.TAIntelThread)
 				self.TAIntelOn = nil
 			end
 		end
-		if bit == 8 then
+		if bit == 8 and EntityCategoryContains(categories.TACLOAK, self) then
 			if self.CloakThread then
 				KillThread(self.CloakThread)
 				self.CloakOn = nil

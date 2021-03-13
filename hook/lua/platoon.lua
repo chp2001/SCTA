@@ -562,7 +562,7 @@ Platoon = Class(SCTAAIPlatoon) {
                     end
                     movingToScout = false
                 elseif not movingToScout then
-                    self:SetPlatoonFormationOverride('AttackFormation')
+                    --self:SetPlatoonFormationOverride('AttackFormation')
                     movingToScout = true
                     self:Stop()
                     for k,v in AIUtils.AIGetSortedMassLocations(aiBrain, 10, nil, nil, nil, nil, self:GetPlatoonPosition()) do
@@ -572,7 +572,7 @@ Platoon = Class(SCTAAIPlatoon) {
                     end
                 end
             end
-            self:SetPlatoonFormationOverride('Attack')
+            --self:SetPlatoonFormationOverride('Attack')
             WaitSeconds( 7 )
         end
     end,
@@ -614,7 +614,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
                 target = self:FindPrioritizedUnit('Attack', 'Enemy', true, self:GetPlatoonPosition(), maxRadius)
                 if target then
-                    self:SetPlatoonFormationOverride('Attack')
+                    --self:SetPlatoonFormationOverride('Attack')
                     self:Stop()
                     if not data.UseMoveOrder then
                         self:AttackTarget( target )
@@ -632,7 +632,7 @@ Platoon = Class(SCTAAIPlatoon) {
                     end
                 end
             end
-            self:SetPlatoonFormationOverride('Attack')
+            --self:SetPlatoonFormationOverride('Attack')
             WaitSeconds( 7 )
         end
     end,
@@ -660,7 +660,7 @@ Platoon = Class(SCTAAIPlatoon) {
         -- maybe worth it if we micro
         --self:SetPlatoonFormationOverride('GrowthFormation')
         local PlatoonFormation = self.PlatoonData.UseFormation or 'NoFormation'
-        self:SetPlatoonFormationOverride(PlatoonFormation)
+        --self:SetPlatoonFormationOverride(PlatoonFormation)
 
         while aiBrain:PlatoonExists(self) do
             local pos = self:GetPlatoonPosition() -- update positions; prev position done at end of loop so not done first time

@@ -32,9 +32,10 @@ BuilderGroup {
         InstanceCount = 1,
         Priority = 150,
         BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', { 300 } },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.MASSEXTRACTION * categories.LEVEL2} },
-            { EBC, 'GreaterThanEconStorageCurrent', { 200, 2000 } },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 0.5 }},
+            { EBC, 'GreaterThanEconStorageCurrent', { 300, 1000 } },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 0.75 }},
             { IBC, 'BrainNotLowPowerMode', {} },
         },
         FormRadius = 500,

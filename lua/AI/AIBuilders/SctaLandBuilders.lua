@@ -59,14 +59,10 @@ BuilderGroup {
         BuilderType = 'All',
     },]]
     Builder {
-        BuilderName = 'SCTAAi Factory Tank Mid',
+        BuilderName = 'SCTAAi Factory Tank',
         PlatoonTemplate = 'T1LandDFTankSCTA',
         Priority = 95,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK,
-            '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.LAND } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageCurrent', { 200, 300 } },
         },
         BuilderType = 'All',
     },
@@ -87,10 +83,6 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandDFTankSCTA2',
         Priority = 95,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK,
-            '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.LAND } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageCurrent', { 200, 300 } },
         },
         BuilderType = 'All',
     },
@@ -185,9 +177,6 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandDFTank2SCTA',
         Priority = 105,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.LEVEL2 * categories.TANK,
-            '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.5}},
         },
         BuilderType = 'All',
     },

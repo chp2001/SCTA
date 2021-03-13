@@ -41,7 +41,7 @@ BuilderGroup {
             { MIBC, 'LessThanGameTime', {240} }, -- Don't make tanks if we have lots of them.
             { MIBC, 'GreaterThanGameTime', {90} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.PLANT} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.3}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.5 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -61,7 +61,7 @@ BuilderGroup {
         Priority = 950,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.SOLAR} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.SOLAR} },
             { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'Any',
@@ -83,7 +83,7 @@ BuilderGroup {
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.MASSEXTRACTION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.MASSEXTRACTION} },
         },
         BuilderType = 'Any',
         BuilderData = {

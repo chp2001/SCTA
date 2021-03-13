@@ -38,7 +38,6 @@ BuilderGroup {
         InstanceCount = 4,
         BuilderConditions = {
             { UCBC, 'BuildingGreaterAtLocation', { 'LocationType', 0, categories.MASSEXTRACTION * categories.LEVEL2}},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 0.5 } },
             { IBC, 'BrainNotLowPowerMode', {} },
         },
         BuilderType = 'Any',
@@ -134,12 +133,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Excess',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        PlatoonAIPlan = 'ReclaimAI',
-        Priority = 140,
-        InstanceCount = 15,
+        PlatoonAIPlan = 'SCTAReclaimAI',
+        Priority = 100,
+        InstanceCount = 10,
         BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', { 240 } },
             { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
-            { EBC, 'LessEconStorageCurrent', { 300, 8000 } },
+            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
             },
         BuilderData = {
             LocationType = 'LocationType',
@@ -149,12 +149,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Air',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
-        PlatoonAIPlan = 'ReclaimAI',
-        Priority = 140,
-        InstanceCount = 15,
+        PlatoonAIPlan = 'SCTAReclaimAI',
+        Priority = 200,
+        InstanceCount = 10,
         BuilderConditions = {
             { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
-            { EBC, 'LessEconStorageCurrent', { 300, 8000 } },
+            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
             },
         BuilderData = {
             LocationType = 'LocationType',
@@ -165,7 +165,7 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Excess PLANTS',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'ReclaimStructuresAI',
-        Priority = 200,
+        Priority = 100,
         InstanceCount = 5,
         BuilderConditions = {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT * categories.LAND}},
@@ -188,11 +188,11 @@ BuilderGroup {
         InstanceCount = 8,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
-            { EBC, 'LessEconStorageCurrent', { 100, 1000 } },
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 2, categories.LAB * categories.LAND}},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.LAB} },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 8, categories.LAB} },
             { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},    
+            { EBC, 'LessEconStorageCurrent', { 100, 1000 } },
         },
         BuilderData = {
             Location = 'LocationType',

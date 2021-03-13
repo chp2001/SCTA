@@ -134,9 +134,9 @@ PlatoonTemplate {
     Name = 'T1BuildEngineerSCTAEarly',
     FactionSquads = {
         Arm = {
-            { 'armck', 1, 3, 'support', 'None' },
-            { 'armwar', 1, 1, 'attack', 'none' },
-            { 'armck', 1, 3, 'support', 'None' },
+            { 'armck', 1, 1, 'support', 'None' },
+            { 'armpw', 1, 2, 'attack', 'none' },
+            { 'armck', 1, 5, 'support', 'None' },
             { 'armwar', 1, 1, 'attack', 'none' },
             { 'armck', 1, 3, 'support', 'None' },
             { 'armwar', 1, 1, 'attack', 'none' },

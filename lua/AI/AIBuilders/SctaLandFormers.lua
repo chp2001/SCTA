@@ -16,7 +16,7 @@ BuilderGroup {
         InstanceCount = 200,
         BuilderType = 'Any',
         BuilderData = {
-            NeverGuardBases = true,
+            NeverGuardBases = false,
             NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',
         },        
@@ -92,8 +92,8 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             ThreatSupport = 75,
-            NeverGuardBases = true,
-            NeverGuardEngineers = true,
+            NeverGuardBases = false,
+            NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',
             LocationType = 'LocationType',
             AggressiveMove = false,
@@ -137,8 +137,8 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             ThreatSupport = 75,
-            NeverGuardBases = true,
-            NeverGuardEngineers = true,
+            NeverGuardBases = false,
+            NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',
             LocationType = 'LocationType',
             AggressiveMove = false,

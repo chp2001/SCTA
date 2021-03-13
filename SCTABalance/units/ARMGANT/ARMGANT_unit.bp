@@ -83,7 +83,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 200000,
         BuildCostMass = 12000, 
-        BuildTime = 300000,
+        BuildTime = 150000,
         BuildRate = 250,
         BuildableCategory = {
             'BUILTBYGANTRY ARM',

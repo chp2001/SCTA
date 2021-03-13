@@ -31,14 +31,8 @@ TANuclearProjectile = Class(NukeProjectile) {
 	FxSmokeScale = 1,
 
 	OnCreate = function(self)
-	self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
 	NukeProjectile.OnCreate(self)
-	self:ForkThread( self.TrackingThread, self )
-	end,
-
-	TrackingThread = function(self)
-		WaitSeconds(self.TrackTime)
-		self:TrackTarget(false)
+	self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
 	end,
 
 	FxImpactAirUnit = {
@@ -83,14 +77,8 @@ TAEMPNuclearProjectile = Class(NukeProjectile) {
 		FxSmokeScale = 1,
 	
 		OnCreate = function(self)
-		self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
 		NukeProjectile.OnCreate(self)
-		self:ForkThread( self.TrackingThread, self )
-	end,
-
-	TrackingThread = function(self)
-		WaitSeconds(self.TrackTime)
-		self:TrackTarget(false)
+		self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
 	end,
 
 	FxImpactAirUnit = {
@@ -285,8 +273,8 @@ TARocketProjectile = Class(TAMediumCannonProjectile) {
 	FxSmokeScale = 1,
 
 	OnCreate = function(self)
-	self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
 	TAMediumCannonProjectile.OnCreate(self)
+	self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
 	end,
 }
 

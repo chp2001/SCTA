@@ -34,7 +34,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer LandFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 95,
+        Priority = 105,
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.LAND } }, 
@@ -56,12 +56,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer LandFac2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 90,
+        Priority = 110,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.LAND } }, -- Stop after 10 facs have been built.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.PLANT} }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.PLANT} }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -78,7 +78,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer AirFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 90,
+        Priority = 100,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  categories.PLANT } }, -- Don't build air fac immediately.

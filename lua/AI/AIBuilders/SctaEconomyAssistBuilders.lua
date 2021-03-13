@@ -135,10 +135,10 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Excess',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         PlatoonAIPlan = 'ReclaimAI',
-        Priority = 50,
-        InstanceCount = 10,
+        Priority = 100,
+        InstanceCount = 15,
         BuilderConditions = {
-            { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},
+            { EBC, 'LessThanEconStorageRatio', { 1.1, 1.1}},
             },
         BuilderData = {
             LocationType = 'LocationType',

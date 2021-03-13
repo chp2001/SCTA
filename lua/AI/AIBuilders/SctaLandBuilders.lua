@@ -9,7 +9,7 @@ local MIBC = '/lua/editor/MiscBuildConditions.lua'
 BuilderGroup {
     BuilderGroupName = 'SCTAAILandBuilder',
     BuildersType = 'FactoryBuilder',
-    Builder {
+    --[[Builder {
         BuilderName = 'SCTAAi Factory BOT',
         PlatoonTemplate = 'T1LandDFBotSCTA',
         Priority = 110,
@@ -17,8 +17,17 @@ BuilderGroup {
             { MIBC, 'LessThanGameTime', {90} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'All',
-    },
+    },]]
     Builder {
+        BuilderName = 'SCTAAi Factory Engineer Early',
+        PlatoonTemplate = 'T1BuildEngineerSCTAEarly',
+        Priority = 150, -- Top factory priority
+        BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
+        },
+        BuilderType = 'All',
+    },
+    --[[Builder {
         BuilderName = 'SCTAAi Factory Engineer',
         PlatoonTemplate = 'T1BuildEngineerSCTA',
         Priority = 100, -- Top factory priority
@@ -26,7 +35,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENGINEER - categories.COMMAND } }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'All',
-    },
+    },]]
     Builder {
         BuilderName = 'SCTAAi Factory Scout',
         PlatoonTemplate = 'T1LandScoutSCTA',
@@ -37,10 +46,10 @@ BuilderGroup {
         },
         BuilderType = 'All',
     },
-    Builder {
+    --[[Builder {
         BuilderName = 'SCTAAi Factory Tank',
         PlatoonTemplate = 'T1LandDFTankSCTAEarly',
-        Priority = 90,
+        Priority = 96,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK,
@@ -48,11 +57,11 @@ BuilderGroup {
             { EBC, 'GreaterThanEconStorageCurrent', { 200, 300 } },
         },
         BuilderType = 'All',
-    },
+    },]]
     Builder {
         BuilderName = 'SCTAAi Factory Tank Mid',
         PlatoonTemplate = 'T1LandDFTankSCTA',
-        Priority = 90,
+        Priority = 95,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
@@ -61,10 +70,10 @@ BuilderGroup {
         },
         BuilderType = 'All',
     },
-    Builder {
+    --[[Builder {
         BuilderName = 'SCTAAi Factory Tank2 Early',
         PlatoonTemplate = 'T1LandDFTankSCTA2Early',
-        Priority = 90,
+        Priority = 96,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK,
@@ -72,11 +81,11 @@ BuilderGroup {
             { EBC, 'GreaterThanEconStorageCurrent', { 200, 300 } },
         },
         BuilderType = 'All',
-    },
+    },]]
     Builder {
         BuilderName = 'SCTAAi Factory Tank2',
         PlatoonTemplate = 'T1LandDFTankSCTA2',
-        Priority = 90,
+        Priority = 95,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },

@@ -19,12 +19,12 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
 		self.Smoke = nil
 	end,
 
-	OnImpact = function(self, targetType, targetEntity)
-		if targetType == 'Shield' and self.DamageData.DamageRadius > 0 and EntityCategoryContains(categories.DIRECTFIRE, self)  then
-			self.DamageData.DamageRadius = nil
-		end
-		SinglePolyTrailProjectile.(self, targetType, targetEntity)
-	end,
+	---OnImpact = function(self, targetType, targetEntity)
+		--if targetType == 'Shield' and self.DamageData.DamageRadius > 0 and EntityCategoryContains(categories.DIRECTFIRE, self)  then
+			--self.DamageData.DamageRadius = nil
+		--end
+		--SinglePolyTrailProjectile.OnImpact.(self, targetType, targetEntity)
+	--end,
 	}
 
 TANuclearProjectile = Class(NukeProjectile, TAProjectile) {

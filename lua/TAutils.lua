@@ -4,46 +4,47 @@ local Entity = import('/lua/sim/Entity.lua').Entity
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 local Factions = import('/lua/factions.lua').GetFactions(true)
 
-CreateTABuildingEffects = function( self, unitBeingBuilt, order )
-    EffectUtil.CreateSeraphimUnitEngineerBuildingEffects( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
+CreateTABuildingEffects = function(builder, unitBeingBuilt, BuildEffectBones, BuildEffectsBag)
     WaitSeconds(0.75)
-	for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
-		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.1) )         
+    local selfPosition = builder:GetPosition()
+    local targetPosition = unitBeingBuilt:GetPosition()
+    local distance = util.GetDistanceBetweenTwoVectors(selfPosition, targetPosition)
+        for _, vBone in BuildEffectBones do
+        BuildEffectsBag:Add(CreateAttachedEmitter(builder, vBone, builder.Army, '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',distance,0))
+        end
     end
-end
+    
 
-CreateTAAirBuildingEffects = function( self, unitBeingBuilt, order )
+CreateTAAirBuildingEffects = function(builder, unitBeingBuilt, BuildEffectBones, BuildEffectsBag)
     WaitSeconds(0.75)
-	for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
-		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.1) )         
+    for _, vBone in BuildEffectBones do
+        BuildEffectsBag:Add(CreateAttachedEmitter(builder, vBone, builder.Army, '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.1))
+        end
     end
-    EffectUtil.CreateDefaultBuildBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
-end
 
 
-CreateTAFactBuildingEffects = function( self, unitBeingBuilt, order )  
-    WaitSeconds( 0.1 )
-    for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
-		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.05) )         
-    end
-    EffectUtil.CreateDefaultBuildBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
-end
 
-CreateTASeaFactBuildingEffects = function( self, unitBeingBuilt, order )
-    WaitSeconds( 0.1 )
-    for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
-		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.1) )         
+CreateTAFactBuildingEffects = function(builder, unitBeingBuilt, BuildEffectBones, BuildEffectsBag)
+    WaitSeconds(0.1)
+    for _, vBone in BuildEffectBones do
+        BuildEffectsBag:Add(CreateAttachedEmitter(builder, vBone, builder.Army, '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.05))
+        end
     end
-    EffectUtil.CreateDefaultBuildBeams( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones.BuildEffectBones, self.BuildEffectsBag )
-end
 
-CreateTAGantBuildingEffects = function(self, unitBeingBuilt, order)
-    WaitSeconds( 0.75 )
-	for k, v in self:GetBlueprint().General.BuildBones.BuildEffectBones do
-		self.BuildEffectsBag:Add( CreateAttachedEmitter( self, v, self:GetArmy(), '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.18):OffsetEmitter(0,0,-0.2))         
+CreateTASeaFactBuildingEffects = function(builder, unitBeingBuilt, BuildEffectBones, BuildEffectsBag)
+    WaitSeconds(0.1)
+    for _, vBone in BuildEffectBones do
+        BuildEffectsBag:Add(CreateAttachedEmitter(builder, vBone, builder.Army, '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',10,0))
+        end
     end
-    EffectUtil.CreateCybranFactoryBuildEffects( self, unitBeingBuilt, self:GetBlueprint().General.BuildBones, self.BuildEffectsBag )
-end
+
+CreateTAGantBuildingEffects = function(builder, unitBeingBuilt, BuildEffectBones, BuildEffectsBag)
+    WaitSeconds(0.75)
+    for _, vBone in BuildEffectBones do
+        BuildEffectsBag:Add( CreateAttachedEmitter( builder, vBone, builder.Army,  '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.18):OffsetEmitter(0,0,-0.2))
+        end
+    end
+
 
 TAReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, EffectsBag)
     EffectUtil.PlayReclaimEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )

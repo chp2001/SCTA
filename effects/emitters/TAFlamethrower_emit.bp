@@ -1,5 +1,5 @@
 EmitterBlueprint {
-	BlueprintId = 'flamethrower',
+	BlueprintId = 'TAFlamethrower',
 	Lifetime = -1,
 	Repeattime = 50.00,
 	TextureFramecount = 1.00,

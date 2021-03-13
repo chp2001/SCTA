@@ -46,41 +46,52 @@ CreateTAGantBuildingEffects = function(builder, unitBeingBuilt, BuildEffectBones
     end
 
 
-TAReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, EffectsBag)
+TAReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, ReclaimEffectsBag)
     --EffectUtil.PlayReclaimEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
     WaitSeconds(1)
     local selfPosition = reclaimer:GetPosition()
     local targetPosition = reclaimed:GetPosition()
     local distance = util.GetDistanceBetweenTwoVectors(selfPosition, targetPosition)
         for _, vBone in BuildEffectBones do
-            reclaimer.ReclaimEffectsBag:Add( CreateAttachedEmitter( reclaimer, vBone, reclaimer:GetArmy(),  '/mods/SCTA-master/effects/emitters/reclaimnanolathe.bp' ):ScaleEmitter(0.1):OffsetEmitter(0,0,3):SetEmitterCurveParam('LIFETIME_CURVE',distance,0):SetEmitterCurveParam('Z_POSITION_CURVE',distance,0))
+            ReclaimEffectsBag:Add( CreateAttachedEmitter( reclaimer, vBone, reclaimer:GetArmy(),  '/mods/SCTA-master/effects/emitters/reclaimnanolathe.bp' ):ScaleEmitter(0.05):OffsetEmitter(0,0,1.5):SetEmitterCurveParam('LIFETIME_CURVE',distance,0):SetEmitterCurveParam('Z_POSITION_CURVE',distance * 10,0))
         end
     end
 
+TACommanderReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, ReclaimEffectsBag)
+        --EffectUtil.PlayReclaimEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
+        WaitSeconds(1)
+        local selfPosition = reclaimer:GetPosition()
+        local targetPosition = reclaimed:GetPosition()
+        local distance = util.GetDistanceBetweenTwoVectors(selfPosition, targetPosition)
+            for _, vBone in BuildEffectBones do
+                ReclaimEffectsBag:Add( CreateAttachedEmitter( reclaimer, vBone, reclaimer:GetArmy(),  '/mods/SCTA-master/effects/emitters/reclaimnanolathe.bp' ):ScaleEmitter(0.1):OffsetEmitter(0,0,1):SetEmitterCurveParam('LIFETIME_CURVE',distance,0):SetEmitterCurveParam('Z_POSITION_CURVE',distance * 10,0))
+            end
+        end
 
 
-TAAirReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, EffectsBag)
+
+TAAirReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, ReclaimEffectsBag)
     ---EffectUtil.PlayReclaimEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
-    WaitSeconds(0.75)
+    WaitSeconds(1)
     local selfPosition = reclaimer:GetPosition()
     local targetPosition = reclaimed:GetPosition()
     local distance = util.GetDistanceBetweenTwoVectors(selfPosition, targetPosition)
         for _, vBone in BuildEffectBones do
-            reclaimer.ReclaimEffectsBag:Add( CreateAttachedEmitter( reclaimer, vBone, reclaimer:GetArmy(),  '/mods/SCTA-master/effects/emitters/reclaimnanolathe.bp' ):ScaleEmitter(0.2):OffsetEmitter(0.1,0,1):SetEmitterCurveParam('LIFETIME_CURVE',distance,0):SetEmitterCurveParam('Z_POSITION_CURVE',distance,0))
+            ReclaimEffectsBag:Add( CreateAttachedEmitter( reclaimer, vBone, reclaimer:GetArmy(), '/mods/SCTA-master/effects/emitters/reclaimnanolathe.bp' ):ScaleEmitter(0.05):OffsetEmitter(0.1,0,1):SetEmitterCurveParam('LIFETIME_CURVE',distance,0):SetEmitterCurveParam('Z_POSITION_CURVE',distance * 10,0))
         end
     end
 
 
-TACaptureEffect = function(capturer, captive, BuildEffectBones, EffectsBag)
+TACaptureEffect = function(capturer, captive, BuildEffectBones, CaptureEffectsBag)
     ---EffectUtil.PlayCaptureEffects(capturer, captive, BuildEffectBones, EffectsBag)    
     WaitSeconds(0.75)
     local selfPosition = capturer:GetPosition()
-    local targetPosition = capturer:GetPosition()
+    local targetPosition = captive:GetPosition()
     local distance = util.GetDistanceBetweenTwoVectors(selfPosition, targetPosition)
-        for _, vBone in BuildEffectBones do
-            capturer.CaptureEffectsBag:Add( CreateAttachedEmitter( capturer, vBone, capturer:GetArmy(),  '/mods/SCTA-master/effects/emitters/reclaimnanolathe.bp' ):ScaleEmitter(0.05):OffsetEmitter(0.1,0,1):SetEmitterCurveParam('LIFETIME_CURVE',distance,0):SetEmitterCurveParam('Z_POSITION_CURVE',distance * 10,0))
-        end
+    for _, vBone in BuildEffectBones do
+        CaptureEffectsBag:Add( CreateAttachedEmitter( capturer, vBone, capturer:GetArmy(),  '/mods/SCTA-master/effects/emitters/reclaimnanolathe.bp' ):ScaleEmitter(0.1):OffsetEmitter(0,0,1):SetEmitterCurveParam('LIFETIME_CURVE',distance,0):SetEmitterCurveParam('Z_POSITION_CURVE',distance * 10,0))
     end
+end
 
 
 

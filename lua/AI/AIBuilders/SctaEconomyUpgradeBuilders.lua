@@ -22,6 +22,7 @@ local PCBC = '/lua/editor/PlatoonCountBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local PlatoonFile = '/lua/platoon.lua'
+local TAutils = '/mods/SCTA-master/lua/TAutils.lua'
 
 BuilderGroup {
     BuilderGroupName = 'SCTAUpgrades',
@@ -29,11 +30,14 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Extractor Upgrade',
         PlatoonTemplate = 'SctaExtractorUpgrades',
+        DelayEqualBuildPlattons = {'Mexupgrade1', 7},
         InstanceCount = 1,
         Priority = 150,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.MASSEXTRACTION * categories.LEVEL2} },
-            { EBC, 'GreaterThanEconIncome',  { 6, 70}},
+            { UCBC, 'CheckBuildPlattonDelay', { 'Mexupgrade1' }},
+            { MIBC, 'GreaterThanGameTime', { 300 } },
+            { TAutils, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 1, categories.MASSEXTRACTION * categories.LEVEL1 } },  
+            { EBC, 'GreaterThanEconStorageCurrent', { 300, 1000 } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.75 }},
             { IBC, 'BrainNotLowPowerMode', {} },
         },
@@ -48,13 +52,14 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Extractor Upgrade Time Based',
         PlatoonTemplate = 'SctaExtractorUpgrades',
-        InstanceCount = 1,
+        InstanceCount = 2,
         Priority = 100,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 900 } },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.MASSEXTRACTION * categories.LEVEL2} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 1.2 }},
-            { EBC, 'GreaterThanEconStorageCurrent', { 1100, 2000 } },
+            { MIBC, 'GreaterThanGameTime', { 1200 } },
+            ---{ UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.MASSEXTRACTION * categories.LEVEL2} },
+            { TAutils, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.LEVEL1 } },  
+            { EBC, 'GreaterThanEconIncome',  { 6, 70}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.8, 0.75 }},
             { IBC, 'BrainNotLowPowerMode', {} },
         },
         FormRadius = 500,

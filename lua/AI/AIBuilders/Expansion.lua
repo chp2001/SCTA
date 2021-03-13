@@ -31,12 +31,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Start Marker',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 80,
+        Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'ExpansionBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
             { MIBC, 'LessThanGameTime', {600} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.2}},
+            { UCBC, 'StartLocationNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -62,13 +62,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Expansion Starter',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
-        Priority = 80,
-        InstanceCount = 2,
+        Priority = 200,
+        InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {900} },
             { UCBC, 'ExpansionBaseCheck', { } }, 
-            { UCBC, 'StartLocationNeedsEngineer', { 'LocationType', 1000, -1000, 100, 1, 'StructuresNotMex' } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.2}},
+            { UCBC, 'StartLocationNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -93,12 +92,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Start Marker Late',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 80,
+        Priority = 100,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {720} },
             { UCBC, 'ExpansionBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
-            { UCBC, 'StartLocationNeedsEngineer', { 'LocationType', 1000, -1000, 100, 1, 'StructuresNotMex' } },
+            { UCBC, 'StartLocationNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.2}},
         },
         BuilderType = 'Any',
@@ -129,7 +128,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {240} },
             { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
-            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 100, 1, 'AntiSurface' } },
+            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'AntiSurface' } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.2}},
         },
         BuilderType = 'Any',

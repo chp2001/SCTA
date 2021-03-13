@@ -13,6 +13,26 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
+    Name = 'T1LandDFTankSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armwar', 1, 2, 'attack', 'none' },
+            { 'armham', 1, 2, 'support', 'none' },
+            { 'armflea', 1, 1, 'scout', 'none' },
+            { 'armwar', 1, 2, 'attack', 'none' },
+            { 'armjeth', 1, 1, 'support', 'none' },
+        },
+        Core = {
+            { 'corraid', 1, 2, 'attack', 'none' },
+            { 'corlevlr', 1, 2, 'support', 'none' },
+            { 'corfav', 1, 1, 'scout', 'none' },
+            { 'corraid', 1, 2, 'attack', 'none' },
+            { 'cormist', 1, 1, 'support', 'none' },
+        },
+    }
+}
+
+PlatoonTemplate {
     Name = 'T1LandDFTankSCTAEarly',
     FactionSquads = {
         Arm = {
@@ -22,18 +42,6 @@ PlatoonTemplate {
         Core = {
             { 'corcv', 1, 1, 'support', 'None' },
             { 'corraid', 1, 4, 'attack', 'none' },
-        },
-    }
-}
-
-PlatoonTemplate {
-    Name = 'T1LandDFTankSCTA',
-    FactionSquads = {
-        Arm = {
-            { 'armwar', 1, 6, 'attack', 'none' },
-        },
-        Core = {
-            { 'corraid', 1, 6, 'attack', 'none' },
         },
     }
 }
@@ -120,14 +128,20 @@ PlatoonTemplate {
     Name = 'T2LandDFTankSCTA',
     FactionSquads = {
         Arm = {
+            { 'armfido', 1, 4, 'attack', 'none' },
             { 'armack', 1, 1, 'support', 'None' },
-            { 'armfido', 1, 6, 'attack', 'none' },
             { 'armfast', 1, 2, 'attack', 'none' },
+            { 'armfark', 1, 1, 'support', 'None' },
+            { 'armamph', 1, 2, 'attack', 'none' },
         },
         Core = {
-            { 'coracv', 1, 1, 'support', 'None' },
-            { 'correap', 1, 8, 'attack', 'none' },
+            { 'correap', 1, 3, 'attack', 'none' },
             { 'coreter', 1, 1, 'attack', 'none' },
+            { 'correap', 1, 3, 'attack', 'none' },
+            { 'coracv', 1, 1, 'support', 'None' },
+            { 'corsent', 1, 1, 'attack', 'none' },
+            { 'correap', 1, 2, 'attack', 'none' },
+            { 'cornecro', 1, 1, 'support', 'None' },
         },
     }
 }

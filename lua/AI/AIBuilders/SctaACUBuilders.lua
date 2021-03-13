@@ -41,7 +41,7 @@ BuilderGroup {
             { MIBC, 'LessThanGameTime', {240} }, -- Don't make tanks if we have lots of them.
             { MIBC, 'GreaterThanGameTime', {90} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.PLANT} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.3}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -61,7 +61,7 @@ BuilderGroup {
         Priority = 950,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.SOLAR} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.SOLAR} },
             { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'Any',
@@ -83,7 +83,7 @@ BuilderGroup {
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.MASSEXTRACTION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.MASSEXTRACTION} },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -143,7 +143,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.25}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -163,8 +163,8 @@ BuilderGroup {
         Priority = 95,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR } }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Any',
         BuilderData = {

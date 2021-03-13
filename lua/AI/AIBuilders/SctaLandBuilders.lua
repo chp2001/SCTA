@@ -41,7 +41,6 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandScoutSCTA',
         Priority = 90,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LAB * categories.LAND } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.SCOUT} },
         },
         BuilderType = 'All',

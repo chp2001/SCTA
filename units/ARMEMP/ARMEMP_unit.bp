@@ -28,8 +28,8 @@ UnitBlueprint {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
         'BUILTBYT2VEHICLE',
-        'TECH3',
-        'LEVEL3',
+        'TECH2',
+        'LEVEL2',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -116,7 +116,7 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 3,
     SizeZ = 4,
-    StrategicIconName = 'icon_land3_antishield',
+    StrategicIconName = 'icon_land2_antishield',
     StrategicIconSortPriority = 0,
     SpecialAbilities = {
         LaunchNuke = {

@@ -39,12 +39,36 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAi Factory Tank',
+        PlatoonTemplate = 'T1LandDFTankSCTAEarly',
+        Priority = 90,
+        BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK,
+            '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 200, 300 } },
+        },
+        BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAi Factory Tank Mid',
         PlatoonTemplate = 'T1LandDFTankSCTA',
         Priority = 90,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.LAND } }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconStorageCurrent', { 200, 300 } },
+        },
+        BuilderType = 'All',
+    },
+    Builder {
+        BuilderName = 'SCTAAi Factory Tank2 Early',
+        PlatoonTemplate = 'T1LandDFTankSCTA2Early',
+        Priority = 90,
+        BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK,
+            '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconStorageCurrent', { 200, 300 } },
         },
         BuilderType = 'All',

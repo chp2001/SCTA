@@ -6,11 +6,6 @@
 local TAUnderWaterProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TAUnderWaterProjectile
 
 CORAIR_TORPEDO = Class(TAUnderWaterProjectile) {
-	OnCreate = function(self)
-		TAUnderWaterProjectile.OnCreate(self)
-		self.TrackTime = 5
-	end,
-
 }
 
 TypeClass = CORAIR_TORPEDO

@@ -4,7 +4,7 @@
     Summary :
         Responsible for defining a mapping from AIBuilders keys -> Plans (Plans === platoon.lua functions)
 ]]
-local SPECIAL = categories.RAIDER - categories.EXPERIMENTAL - categories.ENGINEER - categories.COMMAND
+local SPECIAL = categories.RAIDER + categories.EXPERIMENTAL + categories.ENGINEER
 local GROUND = categories.MOBILE * categories.LAND
 
 PlatoonTemplate {

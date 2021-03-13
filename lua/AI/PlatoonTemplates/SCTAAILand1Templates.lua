@@ -129,18 +129,20 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armfido', 1, 4, 'attack', 'none' },
+            { 'armrock', 1, 2, 'attack', 'none' },
             { 'armack', 1, 1, 'support', 'None' },
             { 'armfast', 1, 2, 'attack', 'none' },
             { 'armfark', 1, 1, 'support', 'None' },
             { 'armamph', 1, 2, 'attack', 'none' },
         },
         Core = {
-            { 'correap', 1, 3, 'attack', 'none' },
+            { 'correap', 1, 4, 'attack', 'none' },
             { 'coreter', 1, 1, 'attack', 'none' },
-            { 'correap', 1, 3, 'attack', 'none' },
-            { 'coracv', 1, 1, 'support', 'None' },
-            { 'corsent', 1, 1, 'attack', 'none' },
             { 'correap', 1, 2, 'attack', 'none' },
+            { 'coracv', 1, 1, 'support', 'None' },
+            { 'correap', 1, 2, 'attack', 'none' },
+            { 'corsent', 1, 1, 'attack', 'none' },
+            { 'corvroc', 1, 2, 'attack', 'none' },
             { 'cornecro', 1, 1, 'support', 'None' },
         },
     }

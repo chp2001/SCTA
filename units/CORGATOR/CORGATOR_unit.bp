@@ -127,7 +127,6 @@ TechLevel = 'RULEUTL_Advanced',
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 35,
-	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'GATOR_LASER',
             FireTargetLayerCapsTable = {

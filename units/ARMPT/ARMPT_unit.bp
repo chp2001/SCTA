@@ -210,7 +210,6 @@ TechLevel = 'RULEUTL_Basic',
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 30,
-            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARMPT_LASER',
             FireTargetLayerCapsTable = {

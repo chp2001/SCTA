@@ -134,7 +134,6 @@ UnitBlueprint {
             CollideFriendly = false,
 	        DamageFriendly = true,
             Damage = 60,
-	        DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'LIGHTNING',
             FireTargetLayerCapsTable = {

@@ -175,7 +175,6 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 30,
-            DamageRadius = 0.25, 
             DamageType = 'Normal',
             DisplayName = 'VTOL_EMG',
             FireTargetLayerCapsTable = {

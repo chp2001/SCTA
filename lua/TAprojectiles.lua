@@ -16,24 +16,29 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
 	TrackingThread = function(self)
 		WaitSeconds(self.TrackTime)
 		self:TrackTarget(false)
-		self.Smoke = nil
 	end,
 
-	---OnImpact = function(self, targetType, targetEntity)
-		--if targetType == 'Shield' and self.DamageData.DamageRadius > 0 and EntityCategoryContains(categories.DIRECTFIRE, self)  then
-			--self.DamageData.DamageRadius = nil
-		--end
-		--SinglePolyTrailProjectile.OnImpact.(self, targetType, targetEntity)
-	--end,
+    OnImpact = function(self, TargetType, TargetEntity)
+		SinglePolyTrailProjectile.OnImpact(self, TargetType, TargetEntity)
+		if TargetType == 'Shield' and self.DamageData.DamageRadius > 0 then
+			self.DamageData.DamageRadius = nil
+		end
+	end,
 	}
 
-TANuclearProjectile = Class(NukeProjectile, TAProjectile) {
+TANuclearProjectile = Class(NukeProjectile) {
 	FxSmoke = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
 	FxSmokeScale = 1,
 
 	OnCreate = function(self)
 	self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
-		TAProjectile.OnCreate(self)
+	NukeProjectile.OnCreate(self)
+	self:ForkThread( self.TrackingThread, self )
+	end,
+
+	TrackingThread = function(self)
+		WaitSeconds(self.TrackTime)
+		self:TrackTarget(false)
 	end,
 
 	FxImpactAirUnit = {
@@ -73,13 +78,19 @@ TANuclearProjectile = Class(NukeProjectile, TAProjectile) {
 
 }
 
-TAEMPNuclearProjectile = Class(NukeProjectile, TAProjectile) {
+TAEMPNuclearProjectile = Class(NukeProjectile) {
 		FxSmoke = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
 		FxSmokeScale = 1,
 	
 		OnCreate = function(self)
 		self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
-		TAProjectile.OnCreate(self)
+		NukeProjectile.OnCreate(self)
+		self:ForkThread( self.TrackingThread, self )
+	end,
+
+	TrackingThread = function(self)
+		WaitSeconds(self.TrackTime)
+		self:TrackTarget(false)
 	end,
 
 	FxImpactAirUnit = {

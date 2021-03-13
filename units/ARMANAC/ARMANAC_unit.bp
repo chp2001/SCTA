@@ -141,8 +141,6 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 80,
-            DamageRadius = 0.5,
-            FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'ARMANAC_WEAPON',
             FireTargetLayerCapsTable = {

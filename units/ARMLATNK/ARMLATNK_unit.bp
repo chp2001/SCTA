@@ -131,8 +131,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 120,
-            DamageRadius = 0.25, 
+            Damage = 120, 
             DamageType = 'Normal',
             DisplayName = 'ARMLATNK_WEAPON',
             FireTargetLayerCapsTable = {

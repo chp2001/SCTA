@@ -140,7 +140,6 @@ TechLevel = 'RULEUTL_Advanced',
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 50,
-            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'armamph_weapon2',
             FireTargetLayerCapsTable = {

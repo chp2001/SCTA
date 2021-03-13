@@ -124,7 +124,6 @@ TechLevel = 'RULEUTL_Basic',
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             Damage = 150,
-            DamageRadius = 1,
             DamageType = 'AntiSub',
             DisplayName = 'COAX_TORPEDO',
             FireTargetLayerCapsTable = {

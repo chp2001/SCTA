@@ -122,7 +122,7 @@ TechLevel = 'RULEUTL_Advanced',
         { #LARGE_BUILDINGEX
             Damage = 300,
             DamageFriendly = true,
-            DamageRadius = 3.75,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

@@ -130,7 +130,6 @@ UnitBlueprint {
             CollideFriendly = false,
 	        DamageFriendly = true,
             Damage = 1000,
-            DamageRadius = 1,
             DamageType = 'AntiSub',
             DisplayName = 'ARMSMART_TORPEDO',
             FireTargetLayerCapsTable = {

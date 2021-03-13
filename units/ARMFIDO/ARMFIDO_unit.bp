@@ -132,7 +132,6 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = false,
             Damage = 240,
-	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'GAUSS',
             FireTargetLayerCapsTable = {

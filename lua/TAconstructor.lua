@@ -126,18 +126,14 @@ TAconstructor = Class(TAWalking) {
     CreateReclaimEffects = function( self, target )
         self.ReclaimEffectsBag:Add(TAutils.TAReclaimEffects(self, target, self.BuildEffectBones or {0, }, self.ReclaimEffectsBag))
     end,
-          
-    
+
     OnStopReclaim = function(self, target)
         TAWalking.OnStopReclaim(self, target)
         if self.BuildingOpenAnimManip then
             self.BuildingOpenAnimManip:SetRate(-1)
         end
     end,
-
-    OnStartReclaim = function(self, target)
-        TAWalking.OnStartReclaim(self, target)
-    end,
+        
 }
 
 TASeaConstructor = Class(TAconstructor) 
@@ -239,6 +235,10 @@ TANecro = Class(TAconstructor) {
 }
 
 TACommander = Class(TAconstructor) {
+
+    CreateReclaimEffects = function( self, target )
+        self.ReclaimEffectsBag:Add(TAutils.TACommanderReclaimEffects(self, target, self.BuildEffectBones or {0, }, self.ReclaimEffectsBag))
+    end,
 
     SetAutoOvercharge = function(self, auto)
         local wep = self:GetWeaponByLabel('AutoDGun')

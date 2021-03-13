@@ -177,7 +177,7 @@ TechLevel = 'RULEUTL_Advanced',
         { #CRAWL_BLAST
             Damage = 2500,
             DamageFriendly = true,
-            DamageRadius = 8.59375,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

@@ -12,7 +12,7 @@ CreateTABuildingEffects = function(builder, unitBeingBuilt, BuildEffectBones, Bu
         for _, vBone in BuildEffectBones do
         BuildEffectsBag:Add(CreateAttachedEmitter(builder, vBone, builder.Army, '/mods/SCTA-master/effects/emitters/nanolathe.bp' ):ScaleEmitter(0.1):SetEmitterCurveParam('LIFETIME_CURVE',distance,0))
         end
-    end
+end
     
 
 CreateTAAirBuildingEffects = function(builder, unitBeingBuilt, BuildEffectBones, BuildEffectsBag)

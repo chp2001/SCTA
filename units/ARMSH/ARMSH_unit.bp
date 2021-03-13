@@ -146,8 +146,6 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 45,
-            DamageRadius = 0.25,
-            FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'ARMSH_WEAPON',
             FireTargetLayerCapsTable = {

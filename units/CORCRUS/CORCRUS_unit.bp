@@ -211,7 +211,6 @@ TechLevel = 'RULEUTL_Advanced',
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 100,
-            DamageRadius = 0.5,
             DamageType = 'Normal',
             DisplayName = 'COREDEPTHCHARGE',
             FireTargetLayerCapsTable = {

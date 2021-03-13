@@ -149,7 +149,6 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 7,
-            DamageRadius = 0.25,
             FiringRandomness = 1,
             DamageType = 'Normal',
             DisplayName = 'EMG',

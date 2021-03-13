@@ -179,7 +179,6 @@ TechLevel = 'RULEUTL_Advanced',
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             Damage = 300,
-            DamageRadius = 1,
             DamageType = 'AntiSub',
             DisplayName = 'CORAIR_TORPEDO',
             FireTargetLayerCapsTable = {

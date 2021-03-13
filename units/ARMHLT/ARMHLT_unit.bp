@@ -128,7 +128,6 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 180,
-            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARM_LASERH1',
             FireTargetLayerCapsTable = {

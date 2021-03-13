@@ -129,7 +129,6 @@ TechLevel = 'RULEUTL_Advanced',
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 40,
-	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARM_FAST',
             FireTargetLayerCapsTable = {

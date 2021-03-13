@@ -202,7 +202,6 @@ TechLevel = 'RULEUTL_Basic',
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 20,
-            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'CORPT_LASER',
             FireTargetLayerCapsTable = {

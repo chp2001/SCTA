@@ -190,7 +190,7 @@ UnitBlueprint {
         { #ATOMIC_BLASTSML
             Damage = 1000,
             DamageFriendly = true,
-            DamageRadius = 16.25,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

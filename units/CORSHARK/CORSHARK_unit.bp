@@ -134,7 +134,6 @@ TechLevel = 'RULEUTL_Advanced',
             CollideFriendly = false,
 	        DamageFriendly = true,
             Damage = 200,
-            DamageRadius = 1,
             DamageType = 'AntiSub',
             DisplayName = 'CORSMART_TORPEDO',
             FireTargetLayerCapsTable = {

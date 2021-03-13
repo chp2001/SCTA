@@ -116,6 +116,7 @@ BuilderGroup {
         PlatoonTemplate = 'SCTATransport',
         Priority = 50,
         BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {900} },
             { MIBC, 'ArmyNeedsTransports', {} },
             { UCBC, 'LocationFactoriesBuildingLess', { 'LocationType', 2, 'AIRTRANSPORT' } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, 'AIRTRANSPORT' } },

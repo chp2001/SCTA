@@ -6,17 +6,6 @@ local NukeProjectile = DefaultProjectileFile.NukeProjectile
 TAProjectile = Class(SinglePolyTrailProjectile) {
 	PolyTrail =  '/effects/emitters/aeon_laser_trail_02_emit.bp',
 
-	OnCreate = function(self)
-		SinglePolyTrailProjectile.OnCreate(self)
-		if self.TrackTime then
-			self:ForkThread( self.TrackingThread, self )
-		end
-	end,
-
-	TrackingThread = function(self)
-		WaitSeconds(self.TrackTime)
-		self:TrackTarget(false)
-	end,
 
     OnImpact = function(self, TargetType, TargetEntity)
 		SinglePolyTrailProjectile.OnImpact(self, TargetType, TargetEntity)
@@ -302,13 +291,19 @@ TARocketProjectile = Class(TAMediumCannonProjectile) {
 	OnCreate = function(self)
 	TAMediumCannonProjectile.OnCreate(self)
 	self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
-	end,
+	self:ForkThread( self.TrackingThread, self )
+end,
+
+TrackingThread = function(self)
+	WaitSeconds(self.TrackTime)
+	self:TrackTarget(false)
+end,
 }
 
 TAMissileProjectile = Class(TARocketProjectile) {
 	OnCreate = function(self)
-	self:SetCollisionShape('Sphere', 0, 0, 0, 1)
 	TARocketProjectile.OnCreate(self)
+	self:SetCollisionShape('Sphere', 0, 0, 0, 1)
 	end,
 }
 
@@ -356,8 +351,8 @@ TAEMGProjectile = Class(TALaserProjectile ) {
 
 TAUnderWaterProjectile = Class(TAMediumCannonProjectile) {
 	OnCreate = function(self)
-		self:SetCollisionShape('Sphere', 0, 0, 0, 1)
 		TAMediumCannonProjectile.OnCreate(self)
+		self:SetCollisionShape('Sphere', 0, 0, 0, 1)
 		ForkThread(self.MovementThread, self)
 		end,
 

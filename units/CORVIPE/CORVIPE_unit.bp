@@ -49,9 +49,6 @@ UnitBlueprint {
     },
     Description = 'Pop-up Laser Cannon',
     Display = {
-        Abilities = {
-            'PopUp',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

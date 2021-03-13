@@ -48,9 +48,6 @@ UnitBlueprint {
     },
     Description = 'Pop-up Heavy Cannon',
     Display = {
-        Abilities = {
-            'Pop-Up',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

@@ -130,7 +130,7 @@ TechLevel = 'RULEUTL_Basic',
         BuildOnLayerCaps = {
             LAYER_Water = true,
         },
-        FlattenSkirt = true,
+        ---FlattenSkirt = true,
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
     RollOffPoints = {

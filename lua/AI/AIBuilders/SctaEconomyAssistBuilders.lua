@@ -135,11 +135,29 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         PlatoonAIPlan = 'ReclaimAI',
         Priority = 130,
-        InstanceCount = 5,
+        InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {600} }, 
             { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
-            },
+            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},    
+        },
+        BuilderData = {
+            LocationType = 'LocationType',
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim Excess Mid',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonAIPlan = 'ReclaimAI',
+        Priority = 115,
+        InstanceCount = 4,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', { 300 } },
+            { MIBC, 'LessThanGameTime', {900} }, 
+            { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
+            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},    
+        },
         BuilderData = {
             LocationType = 'LocationType',
         },
@@ -147,12 +165,28 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Excess Late',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'ReclaimAI',
         Priority = 150,
         InstanceCount = 10,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 600 } },
+            { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
+            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
+            },
+        BuilderData = {
+            LocationType = 'LocationType',
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim Excess EndGame',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonAIPlan = 'ReclaimAI',
+        Priority = 150,
+        InstanceCount = 20,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', { 900 } },
             { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
             { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
             },

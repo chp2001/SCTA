@@ -40,8 +40,9 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {240} }, -- Don't make tanks if we have lots of them.
             { MIBC, 'GreaterThanGameTime', {90} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.PLANT} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.PLANT} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.1}},
         },
         BuilderType = 'Any',
         BuilderData = {

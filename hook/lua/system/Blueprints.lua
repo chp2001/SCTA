@@ -71,7 +71,7 @@ do
 					mul = 2
 				elseif table.find(bp.Categories, 'LEVEL3') then
 					mul = 3
-				elseif table.find(bp.Categories, 'EXPERIMENTAL') then
+				elseif table.find(bp.Categories, 'BUILTBYGANTRY') then
 					mul = 4
 				else
 					mul = 10

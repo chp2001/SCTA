@@ -228,7 +228,7 @@ Builder {
     Priority = 50,
     InstanceCount = 1,
     BuilderConditions = {
-        { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.EXPERIMENTAL }},
+        { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYGANTRY }},
         { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.6, 0.5 } },
         { IBC, 'BrainNotLowPowerMode', {} },
     },
@@ -237,7 +237,7 @@ Builder {
         Assist = {
             AssistLocation = 'LocationType',
             AssisteeType = 'Factory',
-            BeingBuiltCategories = {'EXPERIMENTAL'},
+            BeingBuiltCategories = {'BUILTBYGANTRY'},
             Time = 20,
             },
         }

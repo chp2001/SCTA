@@ -99,7 +99,7 @@ BuilderGroup {
         Priority = 130,
         InstanceCount = 12,
         BuilderConditions = {
-            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.EXPERIMENTAL }},
+            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYGANTRY }},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.6, 0.5 } },
             { IBC, 'BrainNotLowPowerMode', {} },
         },
@@ -108,7 +108,7 @@ BuilderGroup {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Factory',
                 AssistRange = 120,
-                BeingBuiltCategories = {'EXPERIMENTAL'},                                                       
+                BeingBuiltCategories = {'BUILTBYGANTRY'},                                                       
                 AssistUntilFinished = true,
             },
         },

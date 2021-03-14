@@ -543,7 +543,7 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTAMissileTower Emergency',
+        BuilderName = 'SCTAMissileTower LazyEngie',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 10,
         InstanceCount = 30,

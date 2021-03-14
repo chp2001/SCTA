@@ -139,7 +139,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {600} }, 
             { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
-            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},    
+            { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},    
         },
         BuilderData = {
             LocationType = 'LocationType',

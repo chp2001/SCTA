@@ -260,10 +260,10 @@ TALightCannonProjectile = Class(TAProjectile) {
 
 FlameProjectile = Class(TALightCannonProjectile) {
 	FxFlame = '/mods/SCTA-master/effects/emitters/TAFlamethrower_emit.bp',
-	FxSmokeScale = 1,
+	FxFlameScale = 1,
 
 	OnCreate = function(self)
-		FlameProjectile.OnCreate(self)
+		TALightCannonProjectile.OnCreate(self)
 		ForkThread(self.MovementThread,self)
 		self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxFlame):ScaleEmitter(self.FxFlameScale))
 	end,

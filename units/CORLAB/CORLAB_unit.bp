@@ -126,8 +126,8 @@ TechLevel = 'RULEUTL_Basic',
     LifeBarSize = 2,
     Physics = {
         FlattenSkirt = true,
-        SkirtSizeX = 6,
-        SkirtSizeZ = 6,
+        SkirtSizeX = 8,
+        SkirtSizeZ = 8,
     RollOffPoints = {
     {
         UnitSpin = 0,
@@ -142,18 +142,6 @@ TechLevel = 'RULEUTL_Basic',
         Z = -2.5,
     }, 
 },
-        OccupyRects = {
-            # offsetX offsetZ  sizeX sizeZ, offset from center of unit
-            -3,
-            0,
-            0.5,
-            3,
-
-            2.5,
-            0,
-            0.5,
-            3,
-        },
     },
     SelectionSizeX = 3.25,
     SelectionSizeZ = 3,

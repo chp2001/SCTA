@@ -143,6 +143,7 @@ BuilderGroup {
         },
         BuilderData = {
             LocationType = 'LocationType',
+            ReclaimTime = 30,
         },
         BuilderType = 'Any',
     },
@@ -160,6 +161,7 @@ BuilderGroup {
         },
         BuilderData = {
             LocationType = 'LocationType',
+            ReclaimTime = 30,
         },
         BuilderType = 'Any',
     },
@@ -176,6 +178,7 @@ BuilderGroup {
             },
         BuilderData = {
             LocationType = 'LocationType',
+            ReclaimTime = 30,
         },
         BuilderType = 'Any',
     },
@@ -192,6 +195,7 @@ BuilderGroup {
             },
         BuilderData = {
             LocationType = 'LocationType',
+            ReclaimTime = 30,
         },
         BuilderType = 'Any',
     },
@@ -207,6 +211,7 @@ BuilderGroup {
             },
         BuilderData = {
             LocationType = 'LocationType',
+            ReclaimTime = 30,
         },
         BuilderType = 'Any',
     },

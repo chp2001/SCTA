@@ -118,26 +118,6 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTAAI ACU T1Pgen',
-        PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 60,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {600} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.WIND } }, -- Stop after 10 facs have been built.
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = false,
-            Construction = {
-                BuildStructures = {
-                    'T1EnergyProduction2',
-                }
-            }
-        }
-    },
-    Builder {
         BuilderName = 'SCTAAI T1Commander LandFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 90,

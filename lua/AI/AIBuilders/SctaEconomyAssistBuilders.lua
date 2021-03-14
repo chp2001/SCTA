@@ -6,6 +6,7 @@ local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local SBC = '/lua/editor/SorianBuildConditions.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local TAutils = '/mods/SCTA-master/lua/TAutils.lua'
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAssisters',
@@ -119,9 +120,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAField',
         PlatoonAIPlan = 'ReclaimAI',
         Priority = 75,
-        InstanceCount = 3,
+        InstanceCount = 10,
         BuilderConditions = {
-            { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},
         },
         BuilderData = {
@@ -138,7 +139,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {600} }, 
-            { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},    
         },
         BuilderData = {
@@ -156,7 +157,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 300 } },
             { MIBC, 'LessThanGameTime', {900} }, 
-            { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},    
         },
         BuilderData = {
@@ -169,11 +170,11 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Excess Late',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'ReclaimAI',
-        Priority = 150,
-        InstanceCount = 10,
+        Priority = 125,
+        InstanceCount = 5,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 600 } },
-            { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
             },
         BuilderData = {
@@ -186,11 +187,11 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Excess EndGame',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'ReclaimAI',
-        Priority = 150,
-        InstanceCount = 20,
+        Priority = 130,
+        InstanceCount = 10,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 900 } },
-            { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
             },
         BuilderData = {
@@ -206,7 +207,7 @@ BuilderGroup {
         Priority = 200,
         InstanceCount = 10,
         BuilderConditions = {
-            { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
             },
         BuilderData = {

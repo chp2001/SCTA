@@ -140,7 +140,6 @@ TechLevel = 'RULEUTL_Basic',
                 Z = -2.5,
             },
         },
-        ---OccupyRect=WhereAUnitCannotWalk
     },
     SelectionSizeX = 4,
     SelectionSizeZ = 3,

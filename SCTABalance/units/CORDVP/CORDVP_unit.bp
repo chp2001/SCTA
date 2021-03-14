@@ -95,9 +95,9 @@ UnitBlueprint {
         StorageEnergy = 50,
     },
     Footprint = {
-	MaxSlope = 0.625,
-        SizeX = 8,
-        SizeZ = 8,
+        MaxSlope = 0.625,
+        SizeX = 7,
+        SizeZ = 7,
     },
     General = {
         BuildBones = {

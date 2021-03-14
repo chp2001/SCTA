@@ -19,11 +19,11 @@ UnitBlueprint {
             'armdvp',
             'VEHICLE LEVEL1 ARM',
         },
-    },    
-    Footprint = {
-        SizeX = 8,
-        SizeZ = 8,
     },
+    Footprint = {
+        SizeX = 7,
+        SizeZ = 7,
+    },    
         LifeBarHeight = 0.22,
     LifeBarOffset = 3,
     LifeBarSize = 7,    

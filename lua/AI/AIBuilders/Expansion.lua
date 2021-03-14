@@ -54,7 +54,6 @@ BuilderGroup {
                 ThreatType = 'AntiSurface',
                 BuildStructures = {                    
                     'T1LandFactory2',
-                    'T1Radar',
                 }
             },
         }
@@ -83,7 +82,8 @@ BuilderGroup {
                 ThreatMax = 1000,
                 ThreatRings = 2,
                 ThreatType = 'AntiSurface',
-                BuildStructures = {                    
+                BuildStructures = {   
+                    'T1LandFactory2',                 
                     'T1Radar',
                 }
             },

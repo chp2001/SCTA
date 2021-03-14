@@ -261,10 +261,10 @@ function TAAIGetReclaimablesAroundLocation(aiBrain, locationType)
         return false
     end
 
-    local x1 = position[1] - radius
-    local x2 = position[1] + radius
-    local z1 = position[3] - radius * 2
-    local z2 = position[3] + radius * 2
+    local x1 = position[1] - radius * 3
+    local x2 = position[1] + radius * 3
+    local z1 = position[3] - radius * 3
+    local z2 = position[3] + radius * 3
     local rect = Rect(x1, z1, x2, z2)
 
     return AIUtils.GetReclaimablesInRect(rect)

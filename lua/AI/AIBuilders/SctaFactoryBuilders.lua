@@ -34,6 +34,31 @@ BuilderGroup {
         }
     },
     Builder {
+        BuilderName = 'SCTAAI T1Engineer AirFac Early',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 130,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2,  categories.PLANT } }, -- Don't build air fac immediately.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  categories.FACTORY * categories.AIR} },
+            { MIBC, 'LessThanGameTime', {300} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.6}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.6, 0.6 } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1AirFactory',
+                }
+            }
+        }
+    },
+    Builder {
         BuilderName = 'SCTAAI T1Engineer LandFac2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 105,

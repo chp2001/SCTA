@@ -31,8 +31,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Start Marker',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 150,
-        InstanceCount = 1,
+        Priority = 125,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'ExpansionBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
             { MIBC, 'LessThanGameTime', {600} },
@@ -93,7 +93,7 @@ BuilderGroup {
         BuilderName = 'SCTA Start Marker Late',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 100,
-        InstanceCount = 1,
+        InstanceCount = 3,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {720} },
             { UCBC, 'ExpansionBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed

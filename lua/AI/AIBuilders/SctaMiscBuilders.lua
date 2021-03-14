@@ -14,7 +14,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Mex 150',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 100,
+        Priority = 120,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 150, -500, 100, 0, 'AntiSurface', 1 }},
@@ -34,7 +34,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer 300 Mex',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 105,
+        Priority = 95,
         InstanceCount = 2,
         BuilderConditions = {
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 300, -500, 150, 0, 'AntiSurface', 1 }},
@@ -53,11 +53,31 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI T1Engineer 450 Mex',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 95,
         InstanceCount = 1,
         BuilderConditions = {
                 { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 450, -500, 200, 0, 'AntiSurface', 1 }},
+                { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
+            },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+                BuildStructures = {
+                    'T1Resource',
+                }
+            }
+        }
+    },  
+    Builder {
+        BuilderName = 'SCTAAI T1Engineer 750 Mex',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 95,
+        InstanceCount = 1,
+        BuilderConditions = {
+                { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 750, -500, 200, 0, 'AntiSurface', 1 }},
                 { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
             },
         BuilderType = 'Any',

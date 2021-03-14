@@ -215,9 +215,31 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTAAI T1Engineer Pgen2',
+        BuilderName = 'SCTAAI T1Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 90,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FUSION} },
+            { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.25 }},
+            { EBC, 'LessThanEconStorageRatio',  { 1.1, 0.5}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1EnergyProduction',
+                }
+            }
+        }
+    },  
+    Builder {
+        BuilderName = 'SCTAAI T1Engineer Pgen2',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        Priority = 50,
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FUSION} },
@@ -504,7 +526,7 @@ BuilderGroup {
         BuilderName = 'SCTAStaging',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 50,
-        InstanceCount = 3,
+        InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1200} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.AIRSTAGINGPLATFORM} },

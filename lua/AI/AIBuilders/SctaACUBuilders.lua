@@ -101,9 +101,9 @@ BuilderGroup {
         BuilderName = 'SCTA AI ACU T1Engineer Mex',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 100,
-        InstanceCount = 2, -- The max number concurrent instances of this builder.
+        InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {800} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 250, -500, 200, 0, 'AntiSurface', 1 }},
         },
         BuilderType = 'Any',
@@ -121,9 +121,9 @@ BuilderGroup {
         BuilderName = 'SCTAAI ACU T1Pgen',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 60,
-        InstanceCount = 2,
+        InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {800} },
+            { MIBC, 'GreaterThanGameTime', {600} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.WIND } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Any',
@@ -204,7 +204,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Commander Assist Gantry Construction',
         PlatoonTemplate = 'CommanderSCTAAssist',
-        Priority = 60,
+        Priority = 125,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GANTRY }},
@@ -225,7 +225,7 @@ BuilderGroup {
 Builder {
     BuilderName = 'SCTA Commander Assist Gantry',
     PlatoonTemplate = 'CommanderSCTAAssist',
-    Priority = 50,
+    Priority = 110,
     InstanceCount = 1,
     BuilderConditions = {
         { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYGANTRY }},
@@ -245,7 +245,7 @@ Builder {
     Builder {
         BuilderName = 'SCTA CDR Assist Fusion',
         PlatoonTemplate = 'CommanderSCTAAssist',
-        Priority = 75,
+        Priority = 120,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.FUSION }},

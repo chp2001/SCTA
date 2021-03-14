@@ -30,7 +30,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Extractor Upgrade',
         PlatoonTemplate = 'SctaExtractorUpgrades',
-        DelayEqualBuildPlattons = {'Mexupgrade1', 7},
+        DelayEqualBuildPlattons = {'Mexupgrade1', 1},
         InstanceCount = 1,
         Priority = 150,
         BuilderConditions = {

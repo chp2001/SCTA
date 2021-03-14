@@ -156,7 +156,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Hydro2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 100,
+        Priority = 120,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = { 
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 150}},
@@ -197,10 +197,11 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
         Priority = 130,
-        InstanceCount = 2,
+        InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
-            { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.25 }},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FUSION} },
+            { EBC, 'LessThanEconEfficiencyOverTime', { 0.9, 0.75 }},
+            { EBC, 'LessThanEconStorageRatio',  { 1.1, 0.75}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -217,12 +218,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 90,
-        InstanceCount = 2,
+        Priority = 120,
+        InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FUSION} },
-            { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.25 }},
-            { EBC, 'LessThanEconStorageRatio',  { 1.1, 0.5}},
+            { EBC, 'LessThanEconEfficiencyOverTime', { 0.9, 0.75 }},
+            { EBC, 'LessThanEconStorageRatio',  { 1.1, 0.75}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -240,7 +241,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer Pgen2',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 50,
-        InstanceCount = 2,
+        InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FUSION} },
             { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.25 }},

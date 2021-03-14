@@ -88,7 +88,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4,  categories.FACTORY * categories.AIR} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  categories.LAB * categories.AIR} }, -- Stop after 5 facs have been built.
             { MIBC, 'LessThanGameTime', {1200} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.1}}
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.1}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.9 } },
         },
         BuilderType = 'Any',

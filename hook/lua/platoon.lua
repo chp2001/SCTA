@@ -328,15 +328,13 @@ Platoon = Class(SCTAAIPlatoon) {
 
             local reclaim = {}
             local needEnergy = brain:GetEconomyStoredRatio('ENERGY') < 0.5
+            local needMass = brain:GetEconomyStoredRatio('MASS') < 0.5
 
             for k,v in ents do
-                local econ = AIUtils.AIGetEconomyNumbers(brain)
-                while econ.MassStorageRatio < 0.4 do
                 if not IsProp(v) or eng.BadReclaimables[v] then continue end
-                if not needEnergy or v.MaxEnergyReclaim then
+                if not needEnergy or not needMass or v.MaxEnergyReclaim then
                     local rpos = v:GetCachePosition()
                     table.insert(reclaim, {entity=v, pos=rpos, distance=VDist2(pos[1], pos[3], rpos[1], rpos[3])})
-                end
             end
             end
 

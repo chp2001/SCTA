@@ -16,7 +16,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderType = 'Any',
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AIR * categories.SCOUT } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0,  categories.SCOUT } },
          },
     },
     Builder {
@@ -26,7 +26,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderType = 'Any',
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AIR * categories.SCOUT } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.SCOUT } },
          },
     },
     Builder {

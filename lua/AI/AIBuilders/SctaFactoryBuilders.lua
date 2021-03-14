@@ -24,7 +24,7 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = false,
+            DesiresAssist = true,
             Construction = {
                 BuildClose = true,
                 BuildStructures = {

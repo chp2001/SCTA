@@ -4,7 +4,7 @@
     Summary :
         Responsible for defining a mapping from AIBuilders keys -> Plans (Plans === platoon.lua functions)
 ]]
-local SPECIAL = categories.RAIDER + categories.EXPERIMENTAL + categories.ENGINEER
+local SPECIAL = categories.RAIDER + categories.EXPERIMENTAL + categories.ENGINEER + categories.ALLTERRAIN
 local GROUND = categories.MOBILE * categories.LAND
 
 PlatoonTemplate {
@@ -13,6 +13,14 @@ PlatoonTemplate {
     GlobalSquads = {
         { GROUND * categories.ANTIAIR, 5, 10, 'attack', 'none' },
     },
+}
+
+PlatoonTemplate {
+    Name = 'T1LandScoutFormSCTA',
+    Plan = 'ScoutingAISorian',
+    GlobalSquads = {
+        { GROUND * categories.SCOUT * categories.LEVEL1, 1, 1, 'scout', 'None' },
+    }
 }
 
 PlatoonTemplate {
@@ -39,9 +47,9 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTATerrain',
     Plan = 'HuntAILABSCTA', -- The platoon function to use.
     GlobalSquads = {
-        { categories.ALLTERRAIN * categories.LAND  - SPECIAL - categories.SCOUT, -- Type of units.
-          5, -- Min number of units.
-          10, -- Max number of units.
+        { categories.ALLTERRAIN * categories.LAND - categories.ENGINEER - categories.SCOUT, -- Type of units.
+          3, -- Min number of units.
+          6, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
           'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
@@ -51,9 +59,9 @@ PlatoonTemplate {
     Name = 'LABSCTA',
     Plan = 'HuntAILABSCTA', -- The platoon function to use.
     GlobalSquads = {
-        { categories.MOBILE * categories.RAIDER, -- Type of units.
+        { GROUND * (categories.RAIDER + categories.SCOUT), -- Type of units.
           1, -- Min number of units.
-          3, -- Max number of units.
+          1, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
           'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
@@ -65,6 +73,14 @@ PlatoonTemplate {
     Plan = 'AttackSCTAForceAI',
     GlobalSquads = {
         { GROUND - SPECIAL, 5, 20, 'Attack', 'none' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'GaurdSCTA',
+    Plan = 'AttackSCTAForceAI',
+    GlobalSquads = {
+        { GROUND - SPECIAL, 1, 2, 'Attack', 'none' }
     },
 }
 

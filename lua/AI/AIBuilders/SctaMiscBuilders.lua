@@ -18,7 +18,6 @@ BuilderGroup {
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 150, -500, 100, 0, 'AntiSurface', 1 }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -42,7 +41,7 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
-            NeedGuard = false,
+            NeedGuard = true,
             DesiresAssist = false,
             Construction = {
                 BuildStructures = {
@@ -144,8 +143,8 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = false,
+            NeedGuard = true,
+            DesiresAssist = true,
             Construction = {
                 BuildStructures = {
                     'T1HydroCarbon',

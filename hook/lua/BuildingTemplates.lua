@@ -177,7 +177,7 @@ BuildingTemplates[6] = {
             -- Artillery Structures
             {
                 'T2Artillery',
-                'armgaurd',
+                'armguard',
             },
             {
                 'T3Artillery',

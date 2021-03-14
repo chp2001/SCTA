@@ -248,7 +248,7 @@ function TAAIGetReclaimablesAroundLocation(aiBrain, locationType)
         for _, v in aiBrain.PBM.Locations do
             if v.LocationType == locationType then
                 position = v.Location
-                radius = v.Radius * 2
+                radius = v.Radius
                 break
             end
         end
@@ -263,8 +263,8 @@ function TAAIGetReclaimablesAroundLocation(aiBrain, locationType)
 
     local x1 = position[1] - radius
     local x2 = position[1] + radius
-    local z1 = position[3] - radius
-    local z2 = position[3] + radius
+    local z1 = position[3] - radius * 2
+    local z2 = position[3] + radius * 2
     local rect = Rect(x1, z1, x2, z2)
 
     return AIUtils.GetReclaimablesInRect(rect)

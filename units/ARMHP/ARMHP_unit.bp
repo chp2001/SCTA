@@ -129,8 +129,8 @@ UnitBlueprint {
             LAYER_Water = true,
         },
         FlattenSkirt = true,
-        SkirtSizeX = 8,
-        SkirtSizeZ = 8,
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
     RollOffPoints = {
         {
             UnitSpin = 0,

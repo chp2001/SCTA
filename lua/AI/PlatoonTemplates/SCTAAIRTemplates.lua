@@ -34,7 +34,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'SCTAT2AirScouting',
-    Plan = 'ScoutingAI',
+    Plan = 'ScoutingAISorian',
     GlobalSquads = {
         { SKY * categories.SCOUT * (categories.LEVEL1 + categories.LEVEL2), 1, 1, 'scout', 'None' },
     }
@@ -42,7 +42,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'T1AirScoutFormSCTA',
-    Plan = 'ScoutingAI',
+    Plan = 'ScoutingAISorian',
     GlobalSquads = {
         { SKY * categories.SCOUT * categories.LEVEL1, 1, 1, 'scout', 'None' },
     }

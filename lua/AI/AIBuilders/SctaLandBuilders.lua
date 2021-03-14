@@ -50,7 +50,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandDFTankSCTAEarly',
         Priority = 90,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
@@ -62,7 +62,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandDFTankSCTA',
         Priority = 95,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {600} },
+            { MIBC, 'GreaterThanGameTime', {300} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'All',
@@ -72,7 +72,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandDFTankSCTA2Early',
         Priority = 90,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
@@ -84,7 +84,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandDFTankSCTA2',
         Priority = 95,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {600} },
+            { MIBC, 'GreaterThanGameTime', {300} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'All',

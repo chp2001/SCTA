@@ -118,7 +118,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Field',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
-        PlatoonAIPlan = 'ReclaimAI',
+        PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 75,
         InstanceCount = 10,
         BuilderConditions = {
@@ -134,7 +134,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Excess Early',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        PlatoonAIPlan = 'ReclaimAI',
+        PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 130,
         InstanceCount = 2,
         BuilderConditions = {
@@ -151,7 +151,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Excess Mid',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        PlatoonAIPlan = 'ReclaimAI',
+        PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 105,
         InstanceCount = 2,
         BuilderConditions = {
@@ -169,7 +169,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Excess Late',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        PlatoonAIPlan = 'ReclaimAI',
+        PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 125,
         InstanceCount = 5,
         BuilderConditions = {
@@ -186,7 +186,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Excess EndGame',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        PlatoonAIPlan = 'ReclaimAI',
+        PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 130,
         InstanceCount = 10,
         BuilderConditions = {
@@ -203,7 +203,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Air',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
-        PlatoonAIPlan = 'ReclaimAI',
+        PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 200,
         InstanceCount = 10,
         BuilderConditions = {

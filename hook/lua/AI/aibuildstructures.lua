@@ -49,8 +49,5 @@ function AIBuildAdjacency( aiBrain, builder, buildingType , closeToBuilder, rela
     if not aiBrain.SCTAAI then
         return TAAIBuildAdjacency( aiBrain, builder, buildingType , closeToBuilder, relative, buildingTemplate, baseTemplate, reference, NearMarkerType)
     end
-    if EntityCategoryContains(categories.COMMAND, builder) then
-        return TAAIBuildAdjacency( aiBrain, builder, buildingType , closeToBuilder, relative, buildingTemplate, baseTemplate, reference, NearMarkerType)
-    end
     AIExecuteBuildStructure( aiBrain, builder, buildingType, builder, true,  buildingTemplate, baseTemplate )
 end

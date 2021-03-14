@@ -110,9 +110,9 @@ BuilderGroup {
         Priority = 110,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LAB * categories.LAND } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LAB * categories.LAND } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}}
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -132,6 +132,7 @@ BuilderGroup {
         Priority = 105,
         InstanceCount = 1,
         BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LAB * categories.LAND } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },

@@ -354,7 +354,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTA Assist Production Lazy',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
         Priority = 5,
         InstanceCount = 30,
         BuilderConditions = {

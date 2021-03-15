@@ -4,7 +4,7 @@
     Summary :
         Responsible for defining a mapping from AIBuilders keys -> Plans (Plans === platoon.lua functions)
 ]]
-local SPECIAL = categories.RAIDER + categories.EXPERIMENTAL + categories.ENGINEER + categories.ALLTERRAIN
+local SPECIAL = categories.RAIDER + categories.EXPERIMENTAL + categories.ENGINEER
 local GROUND = categories.MOBILE * categories.LAND
 
 PlatoonTemplate {
@@ -45,7 +45,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'StrikeForceSCTATerrain',
-    Plan = 'HuntAILABSCTA', -- The platoon function to use.
+    Plan = 'AttackSCTAForceAI', -- The platoon function to use.
     GlobalSquads = {
         { categories.ALLTERRAIN * categories.LAND - categories.ENGINEER - categories.SCOUT, -- Type of units.
           3, -- Min number of units.
@@ -59,7 +59,7 @@ PlatoonTemplate {
     Name = 'LABSCTA',
     Plan = 'HuntAILABSCTA', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND * (categories.RAIDER + categories.SCOUT), -- Type of units.
+        { GROUND * (categories.RAIDER + categories.ALLTERRAIN) - categories.ENGINEER - categories.SCOUT, -- Type of units.
           1, -- Min number of units.
           1, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
@@ -77,10 +77,10 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
-    Name = 'GaurdSCTA',
-    Plan = 'AttackSCTAForceAI',
+    Name = 'GuardSCTA',
+    Plan = 'None',
     GlobalSquads = {
-        { GROUND - SPECIAL, 1, 2, 'Attack', 'none' }
+        { GROUND - SPECIAL, 1, 1, 'guard', 'none' }
     },
 }
 
@@ -94,7 +94,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'LandRocketAttackSCTA',
-    Plan = 'AttackSCTAForceAI',
+    Plan = 'ArtilleryAI',
     GlobalSquads = {
         { GROUND * (categories.ROCKET + categories.ARTILLERY) - SPECIAL, 5, 20, 'Attack', 'none' }
     },

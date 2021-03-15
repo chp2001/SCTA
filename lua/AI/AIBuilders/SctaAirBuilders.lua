@@ -10,23 +10,13 @@ BuilderGroup {
     BuilderGroupName = 'SCTAAIAirBuilder',
     BuildersType = 'FactoryBuilder',
     Builder {
-        BuilderName = 'SCTAAi Field Engineer2',
-        PlatoonTemplate = 'T2BuildFieldEngineerSCTA',
-        Priority = 80, 
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FIELDENGINEER * categories.LEVEL2} }, -- Build engies until we have 4 of them.
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4, categories.ENGINEER * (categories.LEVEL2 + categories.LEVEL3) - categories.FIELDENGINEER } }, -- Don't build air fac immediately.
-        },
-        BuilderType = 'All',
-    },
-    Builder {
         BuilderName = 'SCTAAI Factory Bomber',
         PlatoonTemplate = 'T1AirBomberSCTA',
         Priority = 85,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
         },
-        BuilderType = 'All',
+        BuilderType = 'Air',
     },
     Builder {
         BuilderName = 'SCTAAI Factory Strategic',
@@ -35,7 +25,7 @@ BuilderGroup {
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
         },
-        BuilderType = 'All',
+        BuilderType = 'Air',
     },
     Builder {
         BuilderName = 'SCTAAI Factory Intie',
@@ -46,7 +36,7 @@ BuilderGroup {
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.7}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.2, 0.5 }},
         },
-        BuilderType = 'All',
+        BuilderType = 'Air',
     },       
     Builder {
         BuilderName = 'SCTAAI T1 Scouts',
@@ -54,19 +44,10 @@ BuilderGroup {
         Priority = 200,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.MOBILE * categories.AIR * categories.SCOUT } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LAB * categories.AIR} },
         },
-        BuilderType = 'All',
+        BuilderType = 'Air',
     }, 
-    Builder {
-        BuilderName = 'SCTAAi AirFactory Engineer',
-        PlatoonTemplate = 'T1BuildEngineerAirSCTA',
-        Priority = 105,
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENGINEER * categories.AIR * categories.LEVEL1} }, -- Build engies until we have 4 of them.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}}, 
-        },
-        BuilderType = 'All',
-    },
     Builder {
         BuilderName = 'SCTAAI T2 Scouts',
         PlatoonTemplate = 'T2AirScoutSCTA',
@@ -74,7 +55,7 @@ BuilderGroup {
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.3}},
         },
-        BuilderType = 'All',
+        BuilderType = 'Air',
     },
     Builder {
         BuilderName = 'SCTAAI Factory Stealth',
@@ -82,31 +63,10 @@ BuilderGroup {
         Priority = 115,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
         { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FUSION} },
-        { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.7}},
-        { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.2, 0.33 }},
+        { IBC, 'BrainNotLowPowerMode', {} },
+        { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1.05 }},
     },
-        BuilderType = 'All',
-    },
-    Builder {
-        BuilderName = 'SCTAAi AirFactory Engineer2',
-        PlatoonTemplate = 'T2BuildEngineerAirSCTA',
-        Priority = 120,
-        BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FUSION} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.AIR * categories.LEVEL2} }, -- Build engies until we have 4 of them.
-        },
-        BuilderType = 'All',
-    }, 
-    Builder {
-        BuilderName = 'SCTAAi AirFactory Engineer3',
-        PlatoonTemplate = 'T3BuildEngineerSCTA',
-        Priority = 125,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {1500} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.LEVEL3} }, -- Build engies until we have 4 of them.
-        },
-        BuilderType = 'All',
+        BuilderType = 'Air',
     },
     Builder {
         BuilderName = 'SCTAAirTransport',
@@ -121,6 +81,6 @@ BuilderGroup {
             { IBC, 'BrainNotLowPowerMode', {} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
         },
-        BuilderType = 'All',
+        BuilderType = 'Air',
     },     
 }

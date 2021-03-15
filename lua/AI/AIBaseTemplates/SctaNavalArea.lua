@@ -7,6 +7,7 @@ BaseBuilderTemplate {
         'SCTAAICommanderBuilder',
 
         -- Unit Builders
+        'SCTAAIEngineerBuilder',
         'SCTAAIAirBuilder',
         'SCTAAIAirFormers',
         'SCTAAINavalBuilder',

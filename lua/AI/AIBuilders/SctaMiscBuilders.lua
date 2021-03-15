@@ -37,7 +37,6 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 300, -500, 150, 0, 'AntiSurface', 1 }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -57,7 +56,6 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
                 { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 450, -500, 200, 0, 'AntiSurface', 1 }},
-                { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
             },
         BuilderType = 'Any',
         BuilderData = {
@@ -79,6 +77,82 @@ BuilderGroup {
                 { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 750, -500, 200, 0, 'AntiSurface', 1 }},
                 { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
             },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+                BuildStructures = {
+                    'T1Resource',
+                }
+            }
+        }
+    },  
+    Builder {
+        BuilderName = 'SCTAAI T1Engineer Air Mex 250',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco',
+        Priority = 120,
+        InstanceCount = 2, -- The max number concurrent instances of this builder.
+        BuilderConditions = {
+            { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 150, -500, 100, 0, 'AntiAir', 1 }},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+                BuildStructures = {
+                    'T1Resource',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T1Engineer Air 400 Mex',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco',
+        Priority = 95,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 400, -500, 150, 0, 'AntiAir', 1 }},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = true,
+            DesiresAssist = false,
+            Construction = {
+                BuildStructures = {
+                    'T1Resource',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T1Engineer 550 Mex',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco',
+        Priority = 95,
+        InstanceCount = 1,
+        BuilderConditions = {
+                { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 550, -500, 200, 0, 'AntiAir', 1 }},
+            },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+                BuildStructures = {
+                    'T1Resource',
+                }
+            }
+        }
+    },  
+    Builder {
+        BuilderName = 'SCTAAI T1Engineer Air 850 Mex',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco',
+        Priority = 95,
+        InstanceCount = 1,
+        BuilderConditions = {
+                { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 850, -500, 200, 0, 'AntiAir', 1 }},
+        },
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
@@ -390,9 +464,11 @@ BuilderGroup {
         Priority = 70,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {1500} }, 
+            { MIBC, 'GreaterThanGameTime', {1500} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  categories.FUSION} },  
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.ANTIMISSILE * categories.LEVEL3} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.7}},
+            { IBC, 'BrainNotLowPowerMode', {} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1.05 }},
         },
         BuilderType = 'Any',
         BuilderData = {

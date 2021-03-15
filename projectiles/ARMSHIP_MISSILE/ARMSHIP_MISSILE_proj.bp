@@ -60,6 +60,7 @@ ProjectileBlueprint {
         InitialSpeed = 20,
         LeadTarget = false,
         Lifetime = 10,
+
         MaxSpeed = 40,
         TrackTarget = true,
         TurnRate = 165,

@@ -24,6 +24,15 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
+    Name = 'SCTAAirCarrier',
+    Plan = 'CarrierAI',
+    GlobalSquads = {
+        { categories.FACTORY * categories.OCEAN * categories.CARRIER, 1, 1, 'Attack', 'GrowthFormation' }
+    },
+}
+
+
+PlatoonTemplate {
     Name = 'SCTANavalAssaultT2',
     Plan = 'NavalForceAI',
     GlobalSquads = {
@@ -95,6 +104,18 @@ PlatoonTemplate {
         Core = {
             { 'corbats', 1, 1, 'Attack', 'GrowthFormation'},
             { 'corpt', 1, 2, 'Attack', 'GrowthFormation' },
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'CarrySCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armcarry', 1, 1, 'attack', 'GrowthFormation' }
+        },
+        Core = {
+            { 'corcarry', 1, 1, 'attack', 'GrowthFormation' }
         },
     }
 }

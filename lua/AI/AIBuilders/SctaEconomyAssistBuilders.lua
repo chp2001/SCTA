@@ -119,8 +119,8 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Field',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
         PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 75,
-        InstanceCount = 10,
+        Priority = 200,
+        InstanceCount = 15,
         BuilderConditions = {
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},
@@ -204,7 +204,7 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Air',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
         PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 200,
+        Priority = 100,
         InstanceCount = 10,
         BuilderConditions = {
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
@@ -224,9 +224,10 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT * categories.LAND}},
-            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB * categories.LAND} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.PLANT} },    
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.PLANT} },
+            { EBC, 'LessThanEconStorageRatio', { 0.1, 1.1}},
+            { EBC, 'LessEconStorageCurrent', { 100, 6000 } },    
             },
         BuilderData = {
             Location = 'LocationType',
@@ -246,8 +247,8 @@ BuilderGroup {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 2, categories.LAB * categories.LAND}},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.LAB} },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 8, categories.LAB} },
-            { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},    
-            { EBC, 'LessEconStorageCurrent', { 100, 1000 } },
+            { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},    
+            { EBC, 'LessEconStorageCurrent', { 100, 6000 } },
         },
         BuilderData = {
             Location = 'LocationType',
@@ -266,7 +267,8 @@ BuilderGroup {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT * categories.AIR}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB * categories.AIR} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.PLANT * categories.AIR} },
-            { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},    
+            { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
+            { EBC, 'LessEconStorageCurrent', { 100, 1000 } },    
         },
         BuilderData = {
             Location = 'LocationType',
@@ -286,7 +288,8 @@ BuilderGroup {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.PLANT} },
-            { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},    
+            { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
+            { EBC, 'LessEconStorageCurrent', { 100, 1000 } },    
         },
         BuilderData = {
             Location = 'LocationType',
@@ -348,26 +351,6 @@ BuilderGroup {
                 AssisteeType = 'Engineer',
                 BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
                 Time = 20,
-            },
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTA Assist Production Lazy',
-        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
-        Priority = 5,
-        InstanceCount = 30,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssistRange = 120,
-                BeingBuiltCategories = {'STRUCTURE'},                                        
-                AssistUntilFinished = true,
             },
         },
         BuilderType = 'Any',

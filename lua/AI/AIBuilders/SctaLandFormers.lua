@@ -42,11 +42,11 @@ BuilderGroup {
         InstanceCount = 4,
         BuilderType = 'Any',
         BuilderData = {
-            NeverGuardBases = false,
-            NeverGuardEngineers = false,
-            UseFormation = 'AttackFormation',
+            NeverGuardBases = true,
+            LocationType = 'LocationType',
         },        
         BuilderConditions = {
+            { UCBC, 'EngineersNeedGuard', { 'LocationType' } },
          },
     },
     Builder {

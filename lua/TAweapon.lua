@@ -128,6 +128,7 @@ TAweapon = Class(DefaultWeapon) {
         end,
 
         OnLostTarget = function(self)
+            DefaultWeapon.RackSalvoFireReadyState.OnLostTarget(self)
             local bp = self:GetBlueprint()
             if bp.WeaponUnpacks == true then
                 ChangeState(self, self.WeaponPackingState)

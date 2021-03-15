@@ -315,10 +315,8 @@ Platoon = Class(SCTAAIPlatoon) {
             return
         end
 
-        eng.BadReclaimables = eng.BadReclaimables or {}
-
         while brain:PlatoonExists(self) do
-            local ents = AIUtils.AIGetReclaimablesAroundLocation(brain, locationType) or {}
+            local ents = TAutils.TAAIGetReclaimablesAroundLocation(brain, locationType) or {}
             local pos = self:GetPlatoonPosition()
 
             if not ents[1] or not pos then
@@ -331,7 +329,7 @@ Platoon = Class(SCTAAIPlatoon) {
             local needMass = brain:GetEconomyStoredRatio('MASS') < 0.5
 
             for k,v in ents do
-                if not IsProp(v) or eng.BadReclaimables[v] then continue end
+                if not IsProp(v) then continue end
                 if not needEnergy or not needMass or v.MaxEnergyReclaim then
                     local rpos = v:GetCachePosition()
                     table.insert(reclaim, {entity=v, pos=rpos, distance=VDist2(pos[1], pos[3], rpos[1], rpos[3])})
@@ -347,11 +345,8 @@ Platoon = Class(SCTAAIPlatoon) {
                 -- This is slowing down the whole sim when engineers start's reclaiming, and every engi is pathing with CanPathTo (r.pos)
                 -- even if the engineer will run into walls, it is only reclaimig and don't justifies the huge CPU cost. (Simspeed droping from +9 to +3 !!!!)
                 -- eng.BadReclaimables[r.entity] = r.distance > 10 and not eng:CanPathTo (r.pos)
-                eng.BadReclaimables[r.entity] = r.distance > 20
-                if not eng.BadReclaimables[r.entity] then
                     IssueReclaim(units, r.entity)
                     if i > 10 then break end
-                end
             end
 
             local reclaiming = not eng:IsIdleState()
@@ -681,7 +676,7 @@ Platoon = Class(SCTAAIPlatoon) {
             end
             platoonUnits = self:GetPlatoonUnits()
             numberOfUnitsInPlatoon = table.getn(platoonUnits)
-            if aiBrain:PlatoonExists(self) then
+            if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 20 then
                 self:MergeWithNearbyPlatoonsSorian('AttackSCTAForceAI', 10)
             end
 
@@ -1127,7 +1122,7 @@ Platoon = Class(SCTAAIPlatoon) {
             --eng.BadReclaimables = eng.BadReclaimables or {}
     
             while brain:PlatoonExists(self) do
-                local ents = AIUtils.AIGetReclaimablesAroundLocation(brain, locationType) or {}
+                local ents = TAutils.TAAIGetReclaimablesAroundLocation(brain, locationType) or {}
                 local pos = self:GetPlatoonPosition()
     
                 if not ents[1] or not pos then

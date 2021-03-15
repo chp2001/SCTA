@@ -80,7 +80,7 @@ PlatoonTemplate {
     Name = 'GuardSCTA',
     Plan = 'None',
     GlobalSquads = {
-        { GROUND - SPECIAL, 1, 1, 'Guard', 'none' }
+        { GROUND - SPECIAL, 1, 1, 'guard', 'none' }
     },
 }
 
@@ -94,7 +94,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'LandRocketAttackSCTA',
-    Plan = 'AttackSCTAForceAI',
+    Plan = 'ArtilleryAI',
     GlobalSquads = {
         { GROUND * (categories.ROCKET + categories.ARTILLERY) - SPECIAL, 5, 20, 'Attack', 'none' }
     },

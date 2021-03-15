@@ -204,7 +204,7 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Air',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
         PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 200,
+        Priority = 100,
         InstanceCount = 10,
         BuilderConditions = {
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},

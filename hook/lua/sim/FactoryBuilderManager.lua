@@ -54,4 +54,50 @@ taFactoryBuilderManager = FactoryBuilderManager
             end
         end,
 
+        SetRallyPoint = function(self, factory)
+            if not self.Brain.SCTAAI then
+                return taFactoryBuilderManager.SetRallyPoint(self, factory)
+            end
+            local position = factory:GetPosition()
+            local rally = false
+    
+            if self.RallyPoint then
+                IssueFactoryRallyPoint({factory}, self.RallyPoint)
+                return true
+            end
+    
+            local rallyType = 'Rally Point'
+            if EntityCategoryContains(categories.NAVAL, factory) then
+                rallyType = 'Naval Rally Point'
+            end
+    
+            if not self.UseCenterPoint then
+                -- Find closest marker to averaged location
+                rally = AIUtils.AIGetClosestMarkerLocation(self, rallyType, position[1], position[3])
+            elseif self.UseCenterPoint then
+                -- use BuilderManager location
+                rally = AIUtils.AIGetClosestMarkerLocation(self, rallyType, position[1], position[3])
+                local expPoint = AIUtils.AIGetClosestMarkerLocation(self, 'Expansion Area', position[1], position[3])
+    
+                if expPoint and rally then
+                    local rallyPointDistance = VDist2(position[1], position[3], rally[1], rally[3])
+                    local expansionDistance = VDist2(position[1], position[3], expPoint[1], expPoint[3])
+    
+                    if expansionDistance < rallyPointDistance then
+                        rally = expPoint
+                    end
+                end
+            end
+    
+            -- Use factory location if no other rally or if rally point is far away
+            if not rally or VDist2(rally[1], rally[3], position[1], position[3]) > 75 then
+                -- DUNCAN - added to try and vary the rally points.
+                position = AIUtils.RandomLocation(position[1],position[3])
+                rally = position
+            end
+            IssueFactoryRallyPoint({factory}, rally)
+            self.RallyPoint = rally
+            return true
+        end,
+
     }

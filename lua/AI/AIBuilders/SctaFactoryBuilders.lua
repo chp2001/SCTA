@@ -155,10 +155,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2AirFactory',
         PlatoonTemplate = 'EngineerBuilderSCTAEco12',
-        Priority = 150,
+        Priority = 135,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, categories.FUSION} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FUSION} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LAB * categories.AIR } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },

@@ -464,9 +464,11 @@ BuilderGroup {
         Priority = 70,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {1500} }, 
+            { MIBC, 'GreaterThanGameTime', {1500} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  categories.FUSION} },  
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.ANTIMISSILE * categories.LEVEL3} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.7}},
+            { IBC, 'BrainNotLowPowerMode', {} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1.05 }},
         },
         BuilderType = 'Any',
         BuilderData = {

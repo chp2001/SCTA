@@ -16,6 +16,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'FACTORY',
+        'AIR',
         'NAVALCARRIER',
         'SHOWQUEUE',
         'OVERLAYRADAR',
@@ -23,7 +24,8 @@ UnitBlueprint {
         'OVERLAYMISC',
         'ARM',
         'OCEAN',
-	'LEVEL3',
+	    'LEVEL3',
+        'GATE',
     },
     Defense = {
         Health = 16000,

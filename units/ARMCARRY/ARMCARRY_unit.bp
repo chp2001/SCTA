@@ -56,6 +56,8 @@ UnitBlueprint {
         'OVERLAYMISC',
         'ARM',
         'OCEAN',
+        'AIR',
+        'GATE',
     },
     CollisionOffsetY = -0.5,
     Defense = {

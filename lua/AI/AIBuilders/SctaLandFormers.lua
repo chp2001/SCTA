@@ -105,7 +105,9 @@ BuilderGroup {
             NeverGuardEngineers = true,
             UseFormation = 'AttackFormation',
         },        
-        BuilderConditions = { },
+        BuilderConditions = { 
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.RAIDER + categories.SCOUT } },
+     },
     },
     Builder {
         BuilderName = 'SCTAAI Land Attack',

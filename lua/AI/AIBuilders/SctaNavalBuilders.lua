@@ -88,6 +88,13 @@ BuilderGroup {
             { SeaAttackCondition, { 'LocationType', 50 } }, 
         },
     },
+    Builder {
+        BuilderName = 'SCTA AI Carrier',
+        PlatoonTemplate = 'SCTAAirCarrier',
+        Priority = 1,
+        InstanceCount = 5,
+        BuilderType = 'Any',
+    },
 }
 
 
@@ -144,6 +151,16 @@ BuilderGroup {
         Priority = 100,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.BATTLESHIP } }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
+        },
+        BuilderType = 'Sea',
+    },
+    Builder {
+        BuilderName = 'SCTAAi Carrier',
+        PlatoonTemplate = 'CarrySCTA',
+        Priority = 100,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.CARRIER } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
         },
         BuilderType = 'Sea',

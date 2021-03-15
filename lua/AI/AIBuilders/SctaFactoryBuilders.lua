@@ -14,10 +14,9 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer LandFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 115,
-        InstanceCount = 1,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.LAND } }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.PLANT} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -65,8 +64,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 180 } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.LAND } }, -- Stop after 10 facs have been built.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.PLANT} }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.LAND } }, -- Stop after 10 facs have been built. -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -115,7 +113,6 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 480 } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LAB * categories.LAND } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
@@ -138,7 +135,6 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 600 } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LAB * categories.LAND } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },

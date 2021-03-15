@@ -77,10 +77,10 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
-    Name = 'GaurdSCTA',
-    Plan = 'AttackSCTAForceAI',
+    Name = 'GuardSCTA',
+    Plan = 'None',
     GlobalSquads = {
-        { GROUND - SPECIAL, 1, 2, 'Attack', 'none' }
+        { GROUND - SPECIAL, 1, 2, 'Guard', 'none' }
     },
 }
 

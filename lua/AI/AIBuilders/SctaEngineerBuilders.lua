@@ -19,15 +19,6 @@ BuilderGroup {
         BuilderType = 'Land',
     },
     Builder {
-        BuilderName = 'SCTAAi Factory Engineer',
-        PlatoonTemplate = 'T1BuildEngineerSCTA',
-        Priority = 100, -- Top factory priority
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.ENGINEER * categories.LAND * categories.LEVEL1 - categories.COMMAND } }, -- Don't make tanks if we have lots of them.
-        },
-        BuilderType = 'Land',
-    },
-    Builder {
         BuilderName = 'SCTAAi FactoryT2 Engineer',
         PlatoonTemplate = 'T2BuildEngineerSCTA',
         Priority = 110, -- Top factory priority
@@ -64,6 +55,15 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.OCEAN - categories.COMMAND } }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'Sea',
+    },
+    Builder {
+        BuilderName = 'SCTAAi Factory Engineer',
+        PlatoonTemplate = 'T1BuildEngineerSCTA',
+        Priority = 100, -- Top factory priority
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.ENGINEER * categories.LAND * categories.LEVEL1 - categories.COMMAND } }, -- Don't make tanks if we have lots of them.
+        },
+        BuilderType = 'All',
     },
     Builder {
         BuilderName = 'SCTAAi Field Engineer',

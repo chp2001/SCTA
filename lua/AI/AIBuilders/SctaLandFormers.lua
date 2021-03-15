@@ -35,9 +35,10 @@ BuilderGroup {
          },
     },
     Builder {
-        BuilderName = 'SCTAAI Gaurd',
-        PlatoonTemplate = 'GaurdSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 150,
+        BuilderName = 'SCTAAI Guard',
+        PlatoonTemplate = 'GuardSCTA',
+        PlatoonAIPlan = 'GuardEngineer', -- The platoon template tells the AI what units to include, and how to use them.
+        Priority = 100,
         InstanceCount = 4,
         BuilderType = 'Any',
         BuilderData = {

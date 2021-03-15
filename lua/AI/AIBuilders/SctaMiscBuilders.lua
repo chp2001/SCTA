@@ -542,22 +542,4 @@ BuilderGroup {
             }
         }
     },
-    Builder {
-        BuilderName = 'SCTAMissileTower LazyEngie',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 10,
-        InstanceCount = 30,
-        BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T1AADefense',
-                }
-            }
-        }
-    },
 }

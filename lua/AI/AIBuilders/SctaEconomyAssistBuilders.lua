@@ -352,4 +352,24 @@ BuilderGroup {
         },
         BuilderType = 'Any',
     },
+    Builder {
+        BuilderName = 'SCTA Assist Production Lazy',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        Priority = 5,
+        InstanceCount = 30,
+        BuilderConditions = {
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                AssistRange = 120,
+                BeingBuiltCategories = {'STRUCTURE'},                                        
+                AssistUntilFinished = true,
+            },
+        },
+        BuilderType = 'Any',
+    },
 }       

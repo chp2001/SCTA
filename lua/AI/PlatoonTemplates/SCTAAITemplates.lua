@@ -4,7 +4,7 @@
     Summary :
         Responsible for defining a mapping from AIBuilders keys -> Plans (Plans === platoon.lua functions)
 ]]
-local SPECIAL = categories.RAIDER + categories.EXPERIMENTAL + categories.ENGINEER + categories.ALLTERRAIN
+local SPECIAL = categories.RAIDER + categories.EXPERIMENTAL + categories.ENGINEER
 local GROUND = categories.MOBILE * categories.LAND
 
 PlatoonTemplate {
@@ -59,7 +59,7 @@ PlatoonTemplate {
     Name = 'LABSCTA',
     Plan = 'HuntAILABSCTA', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND * (categories.RAIDER + categories.SCOUT + categories.ALLTERRAIN) - categories.ENGINEER, -- Type of units.
+        { GROUND * (categories.RAIDER + categories.ALLTERRAIN) - categories.ENGINEER - categories.SCOUT, -- Type of units.
           1, -- Min number of units.
           1, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
@@ -80,7 +80,7 @@ PlatoonTemplate {
     Name = 'GuardSCTA',
     Plan = 'None',
     GlobalSquads = {
-        { GROUND - SPECIAL, 1, 2, 'Guard', 'none' }
+        { GROUND - SPECIAL, 1, 1, 'Guard', 'none' }
     },
 }
 

@@ -62,8 +62,8 @@ BuilderGroup {
         Priority = 115,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
         { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FUSION} },
-        { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.7}},
-        { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.2, 0.33 }},
+        { IBC, 'BrainNotLowPowerMode', {} },
+        { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1.05 }},
     },
         BuilderType = 'Air',
     },

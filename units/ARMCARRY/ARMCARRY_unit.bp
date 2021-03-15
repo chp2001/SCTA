@@ -99,7 +99,7 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 35,
         BuildRate = 200,
         BuildableCategory = {
-            'VTOL LEVEL1 ARM ENGINEER',
+            'VTOL LEVEL1 AIR ARM ENGINEER',
             'VTOL LEVEL1 ARM HIGHALTAIR', 
             'VTOL LEVEL2 ARM',
             'VTOL LEVEL3 ARM',

@@ -1,4 +1,5 @@
 local util = import('/lua/utilities.lua')
+local AIUtils = import('/lua/ai/AIUtilities.lua')
 local EffectUtil = import('/lua/EffectUtilities.lua')
 local Entity = import('/lua/sim/Entity.lua').Entity
 local EffectTemplate = import('/lua/EffectTemplates.lua')
@@ -220,4 +221,51 @@ function CompareBodySCTA(numOne, numTwo, compareType)
        return false
     end
     return false
+end
+
+function TAReclaimablesInArea(aiBrain, locType)
+    --DUNCAN - was .9. Reduced as dont need to reclaim yet if plenty of mass
+    if aiBrain:GetEconomyStoredRatio('MASS') > .5 then
+        return false
+    end
+
+    --DUNCAN - who cares about energy for reclaming?
+    --if aiBrain:GetEconomyStoredRatio('ENERGY') > .5 then
+        --return false
+    --end
+
+    local ents = TAAIGetReclaimablesAroundLocation(aiBrain, locType)
+    if ents and table.getn(ents) > 0 then
+        return true
+    end
+
+    return false
+end
+
+function TAAIGetReclaimablesAroundLocation(aiBrain, locationType)
+    local position, radius
+    if aiBrain.HasPlatoonList then
+        for _, v in aiBrain.PBM.Locations do
+            if v.LocationType == locationType then
+                position = v.Location
+                radius = v.Radius
+                break
+            end
+        end
+    elseif aiBrain.BuilderManagers[locationType] then
+        radius = aiBrain.BuilderManagers[locationType].FactoryManager.Radius
+        position = aiBrain.BuilderManagers[locationType].FactoryManager:GetLocationCoords()
+    end
+
+    if not position then
+        return false
+    end
+
+    local x1 = position[1] - radius * 3
+    local x2 = position[1] + radius * 3
+    local z1 = position[3] - radius * 3
+    local z2 = position[3] + radius * 3
+    local rect = Rect(x1, z1, x2, z2)
+
+    return AIUtils.GetReclaimablesInRect(rect)
 end

@@ -16,18 +16,16 @@ PlatoonTemplate {
     Name = 'T1LandDFTankSCTA',
     FactionSquads = {
         Arm = {
-            { 'armwar', 1, 2, 'attack', 'none' },
-            { 'armham', 1, 2, 'support', 'none' },
+            { 'armwar', 1, 3, 'attack', 'none' },
+            { 'armck', 1, 1, 'support', 'None' },
+            { 'armham', 1, 1, 'support', 'none' },
             { 'armflea', 1, 1, 'scout', 'none' },
-            { 'armwar', 1, 2, 'attack', 'none' },
-            { 'armjeth', 1, 1, 'support', 'none' },
         },
         Core = {
-            { 'corraid', 1, 2, 'attack', 'none' },
-            { 'corlevlr', 1, 2, 'support', 'none' },
+            { 'corraid', 1, 3, 'attack', 'none' },
+            { 'corcv', 1, 1, 'support', 'None' },
+            { 'corlevlr', 1, 1, 'support', 'none' },
             { 'corfav', 1, 1, 'scout', 'none' },
-            { 'corraid', 1, 2, 'attack', 'none' },
-            { 'cormist', 1, 1, 'support', 'none' },
         },
     }
 }

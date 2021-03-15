@@ -41,8 +41,8 @@ UnitBlueprint {
     LifeBarOffset = 3,
     LifeBarSize = 7,
     Footprint = {
-        SizeX = 8,
-        SizeZ = 8,
+        SizeX = 7,
+        SizeZ = 7,
     },
     Intel = {
         VisionRadius = 10,

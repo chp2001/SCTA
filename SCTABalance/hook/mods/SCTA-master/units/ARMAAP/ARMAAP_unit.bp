@@ -29,8 +29,8 @@ UnitBlueprint {
             MaxHealth = 9600,
         },
         Footprint = {
-            SizeX = 8,
-            SizeZ = 8,
+            SizeX = 7,
+            SizeZ = 7,
         },
     Economy = {
         BuildCostEnergy = 20000,

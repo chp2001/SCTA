@@ -26,9 +26,9 @@ UnitBlueprint {
             UniformScale = 0.17,
         },
         Footprint = {
-                SizeX = 8,
-                SizeZ = 8,
-            },
+            SizeX = 7,
+            SizeZ = 7,
+        },
             LifeBarHeight = 0.22,
             LifeBarOffset = 3,
             LifeBarSize = 7,

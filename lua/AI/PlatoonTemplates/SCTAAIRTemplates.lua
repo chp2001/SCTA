@@ -34,7 +34,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'SCTAT2AirScouting',
-    Plan = 'ScoutingAI',
+    Plan = 'ScoutingAISorian',
     GlobalSquads = {
         { SKY * categories.SCOUT * (categories.LEVEL1 + categories.LEVEL2), 1, 1, 'scout', 'None' },
     }
@@ -42,7 +42,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'T1AirScoutFormSCTA',
-    Plan = 'ScoutingAI',
+    Plan = 'ScoutingAISorian',
     GlobalSquads = {
         { SKY * categories.SCOUT * categories.LEVEL1, 1, 1, 'scout', 'None' },
     }
@@ -52,12 +52,10 @@ PlatoonTemplate {
     Name = 'T1AirScoutSCTA',
     FactionSquads = {
         Arm = {
-            { 'armpeep', 1, 2, 'scout', 'GrowthFormation' },
-            { 'armca', 1, 1, 'support', 'None' },
+            { 'armpeep', 1, 1, 'scout', 'GrowthFormation' },
         },
         Core = {
-            { 'corfink', 1, 2, 'scout', 'GrowthFormation' },
-            { 'corca', 1, 1, 'support', 'None' },
+            { 'corfink', 1, 1, 'scout', 'GrowthFormation' },
         },
     }
 }
@@ -80,10 +78,12 @@ PlatoonTemplate {
         Arm = {
             { 'armpeep', 1, 1, 'scout', 'GrowthFormation' },
             { 'armthund', 1, 2, 'attack', 'GrowthFormation' },
+            { 'armca', 1, 1, 'support', 'None' },
         },
         Core = {
             { 'corfink', 1, 1, 'scout', 'GrowthFormation' },
             { 'corshad', 1, 2, 'attack', 'GrowthFormation' },
+            { 'corca', 1, 1, 'support', 'None' },
         },
     }
 }

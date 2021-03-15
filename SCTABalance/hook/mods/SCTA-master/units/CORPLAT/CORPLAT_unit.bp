@@ -33,9 +33,8 @@ UnitBlueprint {
         UniformScale = 0.20,
     },
     Footprint = {
-        MinWaterDepth = 1.875,
-        SizeX = 8,
-        SizeZ = 8,
+        SizeX = 7,
+        SizeZ = 7,
     },
     Economy = {
         BuildCostEnergy = 60000,

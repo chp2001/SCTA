@@ -97,8 +97,8 @@ UnitBlueprint {
     },
     Footprint = {
         MaxSlope = 0.625,
-        SizeX = 8,
-        SizeZ = 8,
+        SizeX = 7,
+        SizeZ = 7,
     },
     General = {
         BuildBones = {
@@ -131,9 +131,9 @@ UnitBlueprint {
     LifeBarOffset = 2,
     LifeBarSize = 7,
     Physics = {
-        FlattenSkirt = true,
-        SkirtSizeX = 8,
-        SkirtSizeZ = 8,
+        ---FlattenSkirt = true,
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
         RollOffPoints = {
             {
                 UnitSpin = 180,

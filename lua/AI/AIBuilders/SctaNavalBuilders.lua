@@ -102,16 +102,7 @@ BuilderGroup {
             { UCBC, 'HaveUnitRatio', { 0.5, categories.OCEAN * categories.SCOUT,
             '<=', categories.OCEAN} },
         },
-        BuilderType = 'All',
-    },
-    Builder {
-        BuilderName = 'SCTAAi Factory Naval Engineer',
-        PlatoonTemplate = 'T1EngineerSCTANaval',
-        Priority = 120, -- Top factory priority
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.OCEAN - categories.COMMAND } }, -- Build engies until we have 4 of them.
-        },
-        BuilderType = 'All',
+        BuilderType = 'Sea',
     },
     Builder {
         BuilderName = 'SCTAAi Frigate Naval',
@@ -123,7 +114,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
         },
-        BuilderType = 'All',
+        BuilderType = 'Sea',
     },
     Builder {
         BuilderName = 'SCTAAi Destroyer Naval',
@@ -134,7 +125,7 @@ BuilderGroup {
             '<=', categories.OCEAN - categories.ENGINEER } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
         },
-        BuilderType = 'All',
+        BuilderType = 'Sea',
     },
     Builder {
         BuilderName = 'SCTAAi AntiAir Naval',
@@ -145,7 +136,7 @@ BuilderGroup {
             '<=', categories.OCEAN - categories.ENGINEER } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
         },
-        BuilderType = 'All',
+        BuilderType = 'Sea',
     },
     Builder {
         BuilderName = 'SCTAAi Battleship',
@@ -155,6 +146,6 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.BATTLESHIP } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
         },
-        BuilderType = 'All',
+        BuilderType = 'Sea',
     },
 }

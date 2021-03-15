@@ -46,8 +46,6 @@ UnitBlueprint {
         'RALLYPOINT',
         'SHOWQUEUE',
         'STRUCTURE',
-        'CONSTRUCTION',
-        'LAND',
         'CORE',
         'STRATEGIC',
         'SORTCONSTRUCTION',

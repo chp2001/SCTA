@@ -44,6 +44,7 @@ BuilderGroup {
         Priority = 200,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.MOBILE * categories.AIR * categories.SCOUT } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LAB * categories.AIR} },
         },
         BuilderType = 'Air',
     }, 

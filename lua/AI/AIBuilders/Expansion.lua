@@ -149,6 +149,7 @@ BuilderGroup {
                 ThreatType = 'AntiSurface',
                 BuildStructures = {                    
                     'T1SeaFactory',
+                    'T1Sonar',
                 }
             },
         }
@@ -215,10 +216,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Naval Expansion Air',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
-        Priority = 50,
+        Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {480} },
+            { MIBC, 'GreaterThanGameTime', {300} },
             { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
             { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'AntiSurface' } },
         },

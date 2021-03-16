@@ -14,11 +14,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA T1 Naval Factory Builder',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 125,
+        Priority = 95,
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.NAVAL } }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.PLANT * categories.NAVAL } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 5, categories.PLANT * categories.NAVAL} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Any',
@@ -36,11 +36,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Naval Factory',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 110,
+        Priority = 105,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Any',
@@ -105,7 +105,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Naval T1Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 60,
+        Priority = 100,
         InstanceCount = 2,
         BuilderConditions = { -- Stop after 10 facs have been built.
         { EBC, 'LessThanEconEfficiencyOverTime', { 0.9, 0.75 }},
@@ -207,4 +207,24 @@ BuilderGroup {
             }
         }
     },  
+    Builder {
+        BuilderName = 'SCTAT2Torpedo',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        Priority = 75,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.ANTISUB * categories.LEVEL2 - categories.MOBILE} }, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.75}}, 
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T2NavalDefense',
+                }
+            }
+        }
+    },
 }

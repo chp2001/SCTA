@@ -39,7 +39,7 @@ BuilderGroup {
         PlatoonTemplate = 'GuardSCTA',
         PlatoonAIPlan = 'GuardEngineer', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 100,
-        InstanceCount = 4,
+        InstanceCount = 6,
         BuilderType = 'Any',
         BuilderData = {
             NeverGuardBases = true,
@@ -144,7 +144,7 @@ BuilderGroup {
             NeverGuardEngineers = true,
             UseFormation = 'AttackFormation',
             LocationType = 'LocationType',
-            AggressiveMove = true,
+            AggressiveMove = false,
             ThreatWeights = {
             SecondaryTargetThreatType = 'StructuresNotMex',
             IgnoreStrongerTargetsRatio = 100.0,

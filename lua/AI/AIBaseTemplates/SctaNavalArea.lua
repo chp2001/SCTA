@@ -8,7 +8,6 @@ BaseBuilderTemplate {
 
         -- Buildings etc
         'SCTAAIEngineerNavalMiscBuilder',
-        'SCTAExpansionBuilders',
         'SCTAUpgrades',
     },
     BaseSettings = {

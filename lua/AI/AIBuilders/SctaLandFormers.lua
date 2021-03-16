@@ -52,7 +52,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Strike',
         PlatoonTemplate = 'StrikeForceSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 90,
+        Priority = 120,
         InstanceCount = 200,
         BuilderType = 'Any',
         BuilderData = {
@@ -68,8 +68,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Laser',
         PlatoonTemplate = 'StrikeForceSCTALaser', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 90,
-        InstanceCount = 200,
+        Priority = 150,
+        InstanceCount = 10,
         BuilderType = 'Any',
         BuilderData = {
             Laser = true,
@@ -113,7 +113,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Land Attack',
         PlatoonTemplate = 'LandAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 95,
+        Priority = 110,
         InstanceCount = 100,
         BuilderType = 'Any',
         BuilderData = {
@@ -129,7 +129,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 5, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
          },
     },
     Builder {

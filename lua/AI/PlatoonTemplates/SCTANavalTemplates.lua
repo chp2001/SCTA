@@ -57,11 +57,13 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armroy', 1, 1, 'Attack', 'GrowthFormation'},
-            { 'armpt', 1, 2, 'Attack', 'GrowthFormation' },
+            { 'armpt', 1, 3, 'Attack', 'GrowthFormation' },
+            { 'armcs', 1, 1, 'support', 'None' },
         },
         Core = {
             { 'corroy', 1, 1, 'Attack', 'GrowthFormation'},
-            { 'corpt', 1, 2, 'Attack', 'GrowthFormation' },
+            { 'corpt', 1, 3, 'Attack', 'GrowthFormation' },
+            { 'corcs', 1, 1, 'support', 'None' },
         },
     }
 }
@@ -71,11 +73,13 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armcrus', 1, 1, 'Attack', 'GrowthFormation'},
-            { 'armpt', 1, 2, 'Attack', 'GrowthFormation' },
+            { 'armpt', 1, 4, 'Attack', 'GrowthFormation' },
+            { 'armcs', 1, 1, 'support', 'None' },
         },
         Core = {
             { 'corcrus', 1, 1, 'Attack', 'GrowthFormation'},
-            { 'corpt', 1, 2, 'Attack', 'GrowthFormation' },
+            { 'corpt', 1, 4, 'Attack', 'GrowthFormation' },
+            { 'corcs', 1, 1, 'support', 'None' },
         },
     }
 }
@@ -99,11 +103,11 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armbats', 1, 1, 'Attack', 'GrowthFormation'},
-            { 'armpt', 1, 2, 'Attack', 'GrowthFormation' },
+            { 'armpt', 1, 4, 'Attack', 'GrowthFormation' },
         },
         Core = {
             { 'corbats', 1, 1, 'Attack', 'GrowthFormation'},
-            { 'corpt', 1, 2, 'Attack', 'GrowthFormation' },
+            { 'corpt', 1, 4, 'Attack', 'GrowthFormation' },
         },
     }
 }

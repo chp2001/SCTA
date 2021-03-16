@@ -126,13 +126,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA ACU Naval',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 100,
+        Priority = 500,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {240} },
             { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
             { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'AntiSurface' } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.2}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -163,7 +162,6 @@ BuilderGroup {
             { MIBC, 'GreaterThanGameTime', {240} },
             { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
             { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'AntiSurface' } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.2}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -192,8 +190,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
-            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 100, 1, 'AntiSurface' } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.2}},
+            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'AntiSurface' } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -223,8 +220,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {480} },
             { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
-            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 100, 1, 'AntiSurface' } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.2}},
+            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'AntiSurface' } },
         },
         BuilderType = 'Any',
         BuilderData = {

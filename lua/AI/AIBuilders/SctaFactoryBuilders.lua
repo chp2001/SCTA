@@ -16,7 +16,7 @@ BuilderGroup {
         Priority = 115,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 16, categories.PLANT * categories.LAND } }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 20, categories.PLANT} }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -65,7 +65,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 180 } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 16, categories.PLANT * categories.LAND } }, -- Stop after 10 facs have been built. -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 20, categories.PLANT} }, -- Stop after 10 facs have been built. -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -115,8 +115,8 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 480 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.5 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -137,7 +137,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 600 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Any',

@@ -15,10 +15,10 @@ BuilderGroup {
         BuilderName = 'SCTA T1 Naval Factory Builder',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         Priority = 125,
-        InstanceCount = 1,
+        InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LAB * categories.NAVAL } }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.PLANT * categories.NAVAL} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.NAVAL } }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.PLANT * categories.NAVAL } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Any',

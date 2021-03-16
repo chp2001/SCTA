@@ -56,7 +56,7 @@ Platoon = Class(SCTAAIPlatoon) {
         -- if we have nothing to build, disband!
         if not cons.BuildStructures then
             local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
-            local ents = AIUtils.AIGetReclaimablesAroundLocation(aiBrain, locationType) or {}
+            local ents = TAutils.TAAIGetReclaimablesAroundLocation(brain, locationType) or {}
             local pos = self:GetPlatoonPosition()
             if ents[1] and pos and not EntityCategoryContains(categories.COMMAND, eng) then
                 coroutine.yield(1)

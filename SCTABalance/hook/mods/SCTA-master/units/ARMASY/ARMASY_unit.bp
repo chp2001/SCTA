@@ -39,10 +39,6 @@ UnitBlueprint {
         },
         BuildRate = 360,
     },    
-    Footprint = {
-        SizeX = 10,
-        SizeZ = 10,
-    },
     LifeBarHeight = 0.22,
     LifeBarOffset = 5,
     LifeBarSize = 12,

@@ -2,20 +2,13 @@
 BaseBuilderTemplate {
     BaseTemplateName = 'SCTANavalExpansion',
     Builders = {
-        -- List all our builder grous here
-        -- ACU
-        'SCTAAICommanderBuilder',
-
-        -- Unit Builders
         'SCTAAIEngineerBuilder',
-        'SCTAAIAirBuilder',
-        'SCTAAIAirFormers',
         'SCTAAINavalBuilder',
         'SCTANavalFormer',
 
         -- Buildings etc
-        'SCTAAIEngineerMiscBuilder',
-        'SCTAAIFactoryBuilders',
+        'SCTAAIEngineerNavalMiscBuilder',
+        'SCTAExpansionBuilders',
         'SCTAUpgrades',
     },
     BaseSettings = {

@@ -44,6 +44,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1AirScoutSCTA',
         Priority = 200,
         BuilderConditions = {
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1.05 }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.MOBILE * categories.AIR * categories.SCOUT } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LAB * categories.AIR} },
         },

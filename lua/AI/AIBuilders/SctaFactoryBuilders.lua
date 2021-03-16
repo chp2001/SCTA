@@ -91,8 +91,8 @@ BuilderGroup {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 6,  categories.PLANT } }, -- Don't build air fac immediately.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4,  categories.FACTORY * categories.AIR} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  categories.LAB * categories.AIR} }, -- Stop after 5 facs have been built.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.9 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
         },
         BuilderType = 'Any',
         BuilderData = {

@@ -55,7 +55,6 @@ BuilderGroup {
                 ThreatType = 'AntiSurface',
                 BuildStructures = {                    
                     'T1LandFactory2',                 
-                    'T1Radar',
                 }
             },
         }

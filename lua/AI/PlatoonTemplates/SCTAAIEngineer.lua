@@ -2,7 +2,7 @@ local WEIRD = categories.OCEANENGINEER - categories.COMMAND - categories.FIELDEN
 
 PlatoonTemplate {
     Name = 'CommanderBuilderSCTA',
-    Plan = 'EngineerBuildAISCTA',
+    Plan = 'EngineerBuildAISCTACommand',
     GlobalSquads = {
         { categories.COMMAND, 1, 1, 'support', 'None' }
     },
@@ -43,7 +43,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'EngineerBuilderSCTAEco12',
-    Plan = 'EngineerBuildAISCTA',
+    Plan = 'EngineerBuildAISCTAAir',
     GlobalSquads = {
         { categories.ENGINEER * categories.AIR * (categories.LEVEL1 + categories.LEVEL2), 1, 1, 'support', 'None' }
     },
@@ -59,7 +59,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'EngineerBuilderSCTANaval',
-    Plan = 'EngineerBuildAISCTA',
+    Plan = 'EngineerBuildAISCTANaval',
     GlobalSquads = {
         { categories.OCEANENGINEER * categories.LEVEL1, 1, 1, 'support', 'None' }
     },
@@ -67,7 +67,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'EngineerBuilderSCTANaval12',
-    Plan = 'EngineerBuildAISCTA',
+    Plan = 'EngineerBuildAISCTANaval',
     GlobalSquads = {
         { categories.ENGINEER * (categories.OCEANENGINEER + categories.AIR), 1, 1, 'support', 'None' }
     },
@@ -76,7 +76,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'EngineerBuilderSCTAEco',
-    Plan = 'EngineerBuildAISCTA',
+    Plan = 'EngineerBuildAISCTAAir',
     GlobalSquads = {
         { categories.ENGINEER * categories.LEVEL1 * categories.AIR, 1, 1, 'support', 'None' }
     },

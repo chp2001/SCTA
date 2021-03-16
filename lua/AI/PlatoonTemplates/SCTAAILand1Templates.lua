@@ -7,7 +7,7 @@ PlatoonTemplate {
             { 'armjeth', 1, 1, 'attack', 'none' }
         },
         Core = {
-            { 'cormist', 1, 1, 'attack', 'none' }
+            { 'corstorm', 1, 1, 'attack', 'none' }
         },
     }
 }
@@ -23,11 +23,9 @@ PlatoonTemplate {
             { 'armjeth', 1, 2, 'attack', 'none' },
         },
         Core = {
-            { 'corraid', 1, 1, 'guard', 'none' },
+            { 'corstorm', 1, 3, 'attack', 'none' },
             { 'corcv', 1, 1, 'support', 'None' },
-            { 'corraid', 1, 4, 'attack', 'none' },
-            { 'corlevlr', 1, 1, 'attack', 'none' },
-            { 'cormist', 1, 2, 'attack', 'none' },
+            { 'corthud', 1, 1, 'attack', 'none' },
         },
     }
 }
@@ -41,9 +39,8 @@ PlatoonTemplate {
             { 'armflea', 1, 1, 'scout', 'none' },
         },
         Core = {
-            { 'corcv', 1, 1, 'support', 'None' },
-            { 'corraid', 1, 3, 'attack', 'none' },
-            { 'corfav', 1, 1, 'scout', 'none' },
+            { 'corcv', 1, 1, 'support', 'None'  },
+            { 'corstorm', 1, 4, 'attack', 'none' },
         },
     }
 }
@@ -57,7 +54,7 @@ PlatoonTemplate {
             { 'armflea', 1, 1, 'scout', 'none' }
         },
         Core = {
-            { 'corfav', 1, 1, 'scout', 'none' }
+            { 'corfast', 1, 1, 'scout', 'none' }
         },
     }
 }
@@ -71,7 +68,7 @@ PlatoonTemplate {
             },
             Core = {
                 { 'corcv', 1, 1, 'support', 'None' },
-                { 'corgator', 1, 2, 'attack', 'none' },
+                { 'corak', 1, 3, 'attack', 'none' },
             },
         }
     } 
@@ -84,7 +81,7 @@ PlatoonTemplate {
             { 'armham', 1, 1, 'attack', 'none' }
         },
         Core = {
-            { 'corlevlr', 1, 1, 'attack', 'none' }
+            { 'corthud', 1, 1, 'attack', 'none' }
         },
     }
 }
@@ -96,7 +93,7 @@ PlatoonTemplate {
             { 'armrock', 1, 1, 'attack', 'none' }
         },
         Core = {
-            { 'corvroc', 1, 1, 'attack', 'none' }
+            { 'corhrk', 1, 1, 'attack', 'none' }
         },
     }
 }
@@ -108,11 +105,10 @@ PlatoonTemplate {
             { 'armamph', 1, 1, 'attack', 'none' }
         },
         Core = {
-            { 'corsent', 1, 1, 'attack', 'none' }
+            { 'corcrash', 1, 1, 'attack', 'none' }
         },
     }
 }
-
 
 PlatoonTemplate {
     Name = 'T2LandAuxFact1',
@@ -130,22 +126,14 @@ PlatoonTemplate {
     Name = 'T2LandDFTankSCTA',
     FactionSquads = {
         Arm = {
-            { 'armfido', 1, 4, 'attack', 'none' },
-            { 'armrock', 1, 2, 'attack', 'none' },
-            { 'armack', 1, 1, 'support', 'None' },
             { 'armfast', 1, 2, 'attack', 'none' },
-            { 'armfark', 1, 1, 'support', 'None' },
-            { 'armamph', 1, 2, 'attack', 'none' },
+            { 'armfido', 1, 4, 'attack', 'none' },
+            { 'armamph', 1, 1, 'attack', 'none' },
+            { 'armrock', 1, 1, 'attack', 'none' },
         },
         Core = {
-            { 'correap', 1, 4, 'attack', 'none' },
-            { 'coreter', 1, 1, 'attack', 'none' },
-            { 'correap', 1, 2, 'attack', 'none' },
-            { 'coracv', 1, 1, 'support', 'None' },
-            { 'correap', 1, 2, 'attack', 'none' },
-            { 'corsent', 1, 1, 'attack', 'none' },
-            { 'corvroc', 1, 2, 'attack', 'none' },
-            { 'cornecro', 1, 1, 'support', 'None' },
+            { 'corcan', 1, 2, 'attack', 'none' },
+            { 'corpyro', 1, 1, 'attack', 'none' },
         },
     }
 }
@@ -154,12 +142,12 @@ PlatoonTemplate {
     Name = 'T3LandDFTankSCTA',
     FactionSquads = {
         Arm = {
-            { 'armzeus', 1, 3, 'attack', 'none' },
-            { 'armsnipe', 1, 1, 'attack', 'none' },
+            { 'armzeus', 1, 4, 'attack', 'none' },
+            { 'armmav', 1, 2, 'attack', 'none' },
         },
         Core = {
-            { 'corgol', 1, 3, 'attack', 'none' },
-            { 'cormart', 1, 1, 'attack', 'none' },
+            { 'corsumo', 1, 2, 'attack', 'none' },
+            { 'cormort', 1, 1, 'attack', 'none' },
         },
     }
 }

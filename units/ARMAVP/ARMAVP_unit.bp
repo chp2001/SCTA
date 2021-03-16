@@ -44,6 +44,7 @@ UnitBlueprint {
 	    'ARM',
 	    'SORTCONSTRUCTION',
         'LAB',
+        'VEHICLE',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -77,7 +78,7 @@ UnitBlueprint {
         BuildTime = 14950,
 	BuildRate = 200,
         BuildableCategory = {
-            'VEHICLE LEVEL2 ARM',
+            'VEHICLE MOBILE LEVEL2 ARM',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

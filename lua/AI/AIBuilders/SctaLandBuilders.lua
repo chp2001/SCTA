@@ -10,15 +10,6 @@ BuilderGroup {
     BuilderGroupName = 'SCTAAILandBuilder',
     BuildersType = 'FactoryBuilder',
     Builder {
-        BuilderName = 'SCTAAi Factory Engineer Early',
-        PlatoonTemplate = 'T1BuildEngineerSCTAEarly',
-        Priority = 150, -- Top factory priority
-        BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
-        },
-        BuilderType = 'Land',
-    },
-    Builder {
         BuilderName = 'SCTAAi Factory Scout',
         PlatoonTemplate = 'T1LandScoutSCTA',
         Priority = 90,
@@ -101,35 +92,6 @@ BuilderGroup {
         },
         BuilderType = 'Land',
     },
-    Builder {
-        BuilderName = 'SCTAAi FactoryT2 Engineer',
-        PlatoonTemplate = 'T2BuildEngineerSCTA',
-        Priority = 110, -- Top factory priority
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.LEVEL2 - categories.FIELDENGINEER } }, -- Build engies until we have 4 of them.
-        },
-        BuilderType = 'Land',
-    },
-    Builder {
-        BuilderName = 'SCTAAi Field Engineer',
-        PlatoonTemplate = 'T2BuildFieldEngineerSCTA',
-        Priority = 95, -- Top factory priority
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FIELDENGINEER * categories.LEVEL2} }, -- Build engies until we have 4 of them.
-        },
-        BuilderType = 'Land',
-    },
-
-    Builder {
-        BuilderName = 'SCTAAi FactoryT3 Engineer',
-        PlatoonTemplate = 'T3BuildEngineerSCTA',
-        Priority = 140, -- Top factory priority
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.LEVEL3 - categories.FIELDENGINEER } }, -- Build engies until we have 4 of them.
-        },
-        BuilderType = 'Land',
-    },
-
     Builder {
         BuilderName = 'SCTAAi FactoryT2 Tank',
         PlatoonTemplate = 'T2LandDFTankSCTA',

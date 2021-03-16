@@ -44,6 +44,7 @@ UnitBlueprint {
     'DEVELOPMENT',
 	'SORTCONSTRUCTION',
 	'LEVEL3',
+    'KBOT',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -81,9 +82,9 @@ UnitBlueprint {
         BuildRate = 360,
         DifferentialUpgradeCostCalculation = true,
         BuildableCategory = {
-            'KBOT LEVEL1 ARM',
-            'KBOT LEVEL2 ARM',
-            'KBOT LEVEL3 ARM',
+            'KBOT MOBILE LEVEL1 ARM',
+            'KBOT MOBILE LEVEL2 ARM',
+            'KBOT MOBILE LEVEL3 ARM',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

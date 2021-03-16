@@ -44,6 +44,7 @@ UnitBlueprint {
         'DEVELOPMENT',
 	    'SORTCONSTRUCTION',
 	    'LEVEL2',
+        'VEHICLE',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -86,8 +87,8 @@ UnitBlueprint {
         DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
         'coradvp',
-        'VEHICLE LEVEL1 CORE', 
-        'VEHICLE LEVEL2 CORE',
+        'VEHICLE MOBILE LEVEL1 CORE', 
+        'VEHICLE MOBILE LEVEL2 CORE',
     },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

@@ -63,7 +63,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.ENGINEER * categories.LAND * categories.LEVEL1 - categories.COMMAND } }, -- Don't make tanks if we have lots of them.
         },
-        BuilderType = 'All',
+        BuilderType = 'Land',
     },
     Builder {
         BuilderName = 'SCTAAi Field Engineer',

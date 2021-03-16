@@ -350,13 +350,13 @@ Platoon = Class(SCTAAIPlatoon) {
             end
 
             local reclaiming = not eng:IsIdleState()
-            local max_time = self.PlatoonData.ReclaimTime
 
             while reclaiming do
                 WaitSeconds(5)
 
-                if eng:IsIdleState() or (max_time and (GetGameTick() - createTick)*10 > max_time) then
+                if eng:IsIdleState() or ((GetGameTick() - createTick)*10 > 20) then
                     reclaiming = false
+                    return self:EngineerBuildAISCTA()
                 end
             end
 

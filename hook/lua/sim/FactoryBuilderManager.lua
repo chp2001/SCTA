@@ -1,9 +1,9 @@
-taFactoryBuilderManager = FactoryBuilderManager
-      
-    FactoryBuilderManager = Class(taFactoryBuilderManager) {
+SCTAFactoryBuilderManager = FactoryBuilderManager
+
+FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
         GetFactoryFaction = function(self, factory)
             if not self.Brain.SCTAAI then
-                return taFactoryBuilderManager.GetFactoryFaction(self, factory)
+                return SCTAFactoryBuilderManager.GetFactoryFaction(self, factory)
             end
             if EntityCategoryContains(categories.ARM, factory) then
                 return 'Arm'
@@ -15,7 +15,7 @@ taFactoryBuilderManager = FactoryBuilderManager
 
         RallyPointMonitor = function(self)
             if not self.Brain.SCTAAI then
-                return taFactoryBuilderManager.RallyPointMonitor(self)
+                return SCTAFactoryBuilderManager.RallyPointMonitor(self)
             end
             while true do
                 if self.LocationActive and self.RallyPoint then
@@ -56,7 +56,7 @@ taFactoryBuilderManager = FactoryBuilderManager
 
         SetRallyPoint = function(self, factory)
             if not self.Brain.SCTAAI then
-                return taFactoryBuilderManager.SetRallyPoint(self, factory)
+                return SCTAFactoryBuilderManager.SetRallyPoint(self, factory)
             end
             local position = factory:GetPosition()
             local rally = false

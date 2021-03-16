@@ -18,6 +18,7 @@ UnitBlueprint {
 	    'SORTCONSTRUCTION',
 	    'LEVEL2',
         'LAB',
+        'VEHICLE',
     },
     Defense = {
         Health = 11000,
@@ -36,9 +37,9 @@ UnitBlueprint {
         BuildRate = 180,
         BuildTime = 15000,
         BuildableCategory = {
-            'VEHICLE LEVEL1 CORE', 
-            'VEHICLE LEVEL2 CORE',
-            'VEHICLE LEVEL3 CORE',
+            'VEHICLE MOBILE LEVEL1 CORE', 
+            'VEHICLE MOBILE LEVEL2 CORE',
+            'VEHICLE MOBILE LEVEL3 CORE',
         },
     },
     LifeBarHeight = 0.22,

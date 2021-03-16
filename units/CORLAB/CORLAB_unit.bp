@@ -49,6 +49,7 @@ UnitBlueprint {
 		'PLANT',
 	    'SORTCONSTRUCTION',
         'LAND', 
+        'KBOT',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -84,7 +85,7 @@ UnitBlueprint {
         BuildTime = 7000,
 	BuildRate = 100,
         BuildableCategory = {
-            'KBOT LEVEL1 CORE',
+            'KBOT MOBILE LEVEL1 CORE',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

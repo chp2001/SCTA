@@ -1120,7 +1120,7 @@ Platoon = Class(SCTAAIPlatoon) {
 
             if not ents[1] or not pos then
                 WaitTicks(1)
-                return self:EngineerBuildAISCTA()
+                return self:SCTAEngineerTypeAI()
             end
 
             local reclaim = {}
@@ -1147,7 +1147,7 @@ Platoon = Class(SCTAAIPlatoon) {
                     IssueReclaim(units, r.entity)
                     if i > 10 then break end
             end
-            return self:EngineerBuildAISCTA()
+            return self:SCTAEngineerTypeAI()
         end
     end,
 
@@ -1886,6 +1886,18 @@ Platoon = Class(SCTAAIPlatoon) {
                 hadtarget = false
             end
             WaitSeconds(5) --DUNCAN - was 5
+        end
+    end,
+
+    SCTAEngineerTypeAI = function(self)
+        AIAttackUtils.GetMostRestrictiveLayer(self)
+        
+        if self.MovementLayer == 'Air' then 
+            return self:EngineerBuildAISCTAAir() 
+        elseif self.MovementLayer == 'Land' then
+            return self:EngineerBuildAISCTA()
+        else
+            return self:EngineerBuildAISCTANaval()
         end
     end,
 

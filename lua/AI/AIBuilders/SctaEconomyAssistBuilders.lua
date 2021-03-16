@@ -135,8 +135,8 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Excess Early',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 130,
-        InstanceCount = 1,
+        Priority = 120,
+        InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {600} }, 
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
@@ -153,30 +153,13 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 105,
-        InstanceCount = 3,
+        InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 360 } },
             { MIBC, 'LessThanGameTime', {900} }, 
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},    
         },
-        BuilderData = {
-            LocationType = 'LocationType',
-            ReclaimTime = 30,
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Reclaim Excess Late',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
-        PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 125,
-        InstanceCount = 5,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 600 } },
-            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
-            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
-            },
         BuilderData = {
             LocationType = 'LocationType',
             ReclaimTime = 30,

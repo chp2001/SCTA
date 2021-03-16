@@ -126,25 +126,29 @@ PlatoonTemplate {
     Name = 'T1BuildEngineerSCTAEarly',
     FactionSquads = {
         Arm = {
+            { 'armck', 1, 3, 'support', 'None' },
+            { 'armpw', 1, 2, 'attack', 'none' },
             { 'armck', 1, 2, 'support', 'None' },
             { 'armpw', 1, 1, 'attack', 'none' },
-            { 'armck', 1, 1, 'support', 'None' },
-            { 'armpw', 1, 1, 'attack', 'none' },
-            { 'armck', 1, 4, 'support', 'None' },
-            { 'armwar', 1, 2, 'guard', 'none' },
-            { 'armck', 1, 4, 'support', 'None' },
+            { 'armck', 1, 2, 'support', 'None' },
+            { 'armwar', 1, 1, 'guard', 'none' },
+            { 'armck', 1, 2, 'support', 'None'},
             { 'armwar', 1, 1, 'guard', 'none' },
             { 'armck', 1, 4, 'support', 'None' },
+            { 'armwar', 1, 1, 'guard', 'none' },
+            { 'armck', 1, 2, 'support', 'None' },
             { 'armwar', 1, 1, 'guard', 'none' },
             { 'armck', 1, 2, 'support', 'None' },
         },
         Core = {
+            { 'corcv', 1, 3, 'support', 'None' },
+            { 'corgator', 1, 2, 'attack', 'none' },
             { 'corcv', 1, 2, 'support', 'None' },
             { 'corgator', 1, 1, 'attack', 'none' },
-            { 'corcv', 1, 1, 'support', 'None' },
-            { 'corgator', 1, 1, 'attack', 'none' },
-            { 'corcv', 1, 4, 'support', 'None' },
-            { 'corraid', 1, 2, 'guard', 'none' },
+            { 'corcv', 1, 2, 'support', 'None' },
+            { 'corraid', 1, 1, 'guard', 'none' },
+            { 'corcv', 1, 2, 'support', 'None' },
+            { 'corraid', 1, 1, 'guard', 'none' },
             { 'corcv', 1, 4, 'support', 'None' },
             { 'corraid', 1, 1, 'guard', 'none' },
             { 'corcv', 1, 4, 'support', 'None' },
@@ -205,10 +209,10 @@ PlatoonTemplate {
     Name = 'T2BuildFieldEngineerSCTA',
     FactionSquads = {
         Arm = {
-            { 'armfark', 1, 1, 'support', 'None' }
+            { 'armfark', 1, 1, 'guard', 'None' }
         },
         Core = {
-            { 'cornecro', 1, 1, 'support', 'None' }
+            { 'cornecro', 1, 1, 'guard', 'None' }
         },
     }
 }

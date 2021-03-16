@@ -1299,7 +1299,7 @@ Platoon = Class(SCTAAIPlatoon) {
                     if not data.UseMoveOrder then
                         self:AttackTarget( target )
                     else
-                        self:SetPlatoonFormationOverride('Attack')
+                        --self:SetPlatoonFormationOverride('Attack')
                         self:MoveToLocation( table.copy( target:GetPosition() ), false)
                     end
                     movingToScout = false
@@ -1309,7 +1309,7 @@ Platoon = Class(SCTAAIPlatoon) {
                     for k,v in AIUtils.AIGetSortedMassLocations(aiBrain, 10, nil, nil, nil, nil, self:GetPlatoonPosition()) do
                         if v[1] < 0 or v[3] < 0 or v[1] > ScenarioInfo.size[1] or v[3] > ScenarioInfo.size[2] then
                         end
-                        self:SetPlatoonFormationOverride('Attack')
+                        --self:SetPlatoonFormationOverride('Attack')
                         self:MoveToLocation( (v), false )
                     end
                 end
@@ -1363,7 +1363,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
                 target = self:FindPrioritizedUnit('Attack', 'Enemy', true, self:GetPlatoonPosition(), maxRadius)
                 if target then
-                    self:SetPlatoonFormationOverride('Attack')
+                    --self:SetPlatoonFormationOverride('Attack')
                     self:Stop()
                     if not data.UseMoveOrder then
                         self:SetPlatoonFormationOverride('AttackFormation')

@@ -39,7 +39,6 @@ PlatoonTemplate {
             { 'armflea', 1, 1, 'scout', 'none' },
         },
         Core = {
-            { 'corcv', 1, 1, 'support', 'None'  },
             { 'corstorm', 1, 4, 'attack', 'none' },
         },
     }

@@ -111,6 +111,7 @@ BuilderGroup {
             { MIBC, 'LessThanGameTime', {360} }, -- Don't make tanks if we have lots of them.
             { UCBC, 'HaveUnitRatio', { 0.75, categories.OCEAN * categories.SCOUT,
             '<=', categories.OCEAN} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Sea',
@@ -122,6 +123,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.33, categories.OCEAN * categories.FRIGATE,
             '<=', categories.OCEAN} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.NAVAL } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } }, -- Stop after 10 facs have been built.
         },
@@ -134,6 +136,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.33, categories.OCEAN * categories.DESTROYER,
             '<=', categories.OCEAN} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Sea',
@@ -145,6 +148,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.1, categories.OCEAN * categories.CRUISER,
             '<=', categories.OCEAN} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Sea',

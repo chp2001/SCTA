@@ -14,6 +14,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1AirBomberSCTA',
         Priority = 85,
         BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.BOMBER } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
         },
         BuilderType = 'Air',
@@ -76,7 +77,7 @@ BuilderGroup {
             { MIBC, 'GreaterThanGameTime', {900} },
             { MIBC, 'ArmyNeedsTransports', {} },
             { UCBC, 'LocationFactoriesBuildingLess', { 'LocationType', 2, 'AIRTRANSPORT' } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, 'AIRTRANSPORT' } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, 'AIRTRANSPORT' } },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'AIRTRANSPORT' } },
             { IBC, 'BrainNotLowPowerMode', {} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},

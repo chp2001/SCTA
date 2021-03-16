@@ -136,7 +136,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 130,
-        InstanceCount = 2,
+        InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {600} }, 
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
@@ -153,9 +153,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 105,
-        InstanceCount = 2,
+        InstanceCount = 3,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 300 } },
+            { MIBC, 'GreaterThanGameTime', { 360 } },
             { MIBC, 'LessThanGameTime', {900} }, 
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},    
@@ -188,9 +188,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 130,
-        InstanceCount = 10,
+        InstanceCount = 5,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 900 } },
+            { MIBC, 'GreaterThanGameTime', { 1200 } },
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
             },
@@ -205,8 +205,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
         PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 100,
-        InstanceCount = 10,
+        InstanceCount = 5,
         BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', { 600 } },
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
             },

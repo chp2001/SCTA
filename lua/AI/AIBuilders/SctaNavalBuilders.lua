@@ -48,6 +48,7 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
             ThreatWeights = {
                 IgnoreStrongerTargetsRatio = 100.0,  #DUNCAN - uncommented, was 100
+                AggressiveMove = false,
                 PrimaryThreatTargetType = 'Naval',
                 SecondaryThreatTargetType = 'Economy',
                 SecondaryThreatWeight = 0.1,
@@ -75,6 +76,7 @@ BuilderGroup {
                 IgnoreStrongerTargetsRatio = 100.0,  #DUNCAN - uncommented, was 100
                 PrimaryThreatTargetType = 'Naval',
                 SecondaryThreatTargetType = 'Economy',
+                AggressiveMove = false,
                 SecondaryThreatWeight = 0.1,
                 WeakAttackThreatWeight = 1,
                 VeryNearThreatWeight = 10,
@@ -106,20 +108,24 @@ BuilderGroup {
         PlatoonTemplate = 'T1ScoutShipSCTA',
         Priority = 100,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.5, categories.OCEAN * categories.SCOUT,
+            { MIBC, 'LessThanGameTime', {360} }, -- Don't make tanks if we have lots of them.
+            { UCBC, 'HaveUnitRatio', { 0.75, categories.OCEAN * categories.SCOUT,
             '<=', categories.OCEAN} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Sea',
     },
     Builder {
         BuilderName = 'SCTAAi Frigate Naval',
         PlatoonTemplate = 'T1FrigateSCTA',
-        Priority = 90,
+        Priority = 100,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.33, categories.OCEAN * categories.FRIGATE,
-            '<=', categories.OCEAN - categories.ENGINEER } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
+            '<=', categories.OCEAN} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.NAVAL } },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Sea',
     },
@@ -129,8 +135,9 @@ BuilderGroup {
         Priority = 125,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.33, categories.OCEAN * categories.DESTROYER,
-            '<=', categories.OCEAN - categories.ENGINEER } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
+            '<=', categories.OCEAN} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Sea',
     },
@@ -140,28 +147,29 @@ BuilderGroup {
         Priority = 100,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.1, categories.OCEAN * categories.CRUISER,
-            '<=', categories.OCEAN - categories.ENGINEER } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
+            '<=', categories.OCEAN} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Sea',
     },
     Builder {
         BuilderName = 'SCTAAi Battleship',
         PlatoonTemplate = 'BattleshipSCTA',
-        Priority = 100,
+        Priority = 110,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.BATTLESHIP } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Sea',
     },
     Builder {
         BuilderName = 'SCTAAi Carrier',
         PlatoonTemplate = 'CarrySCTA',
-        Priority = 100,
+        Priority = 120,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.CARRIER } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Sea',
     },

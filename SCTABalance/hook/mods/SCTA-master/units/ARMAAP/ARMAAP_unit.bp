@@ -34,7 +34,7 @@ UnitBlueprint {
         },
     Economy = {
         BuildCostEnergy = 20000,
-        BuildCostMass = 1000,
+        BuildCostMass = 800,
         BuildTime = 16000,
         BuildableCategory = {
         'VTOL LEVEL1 ARM',

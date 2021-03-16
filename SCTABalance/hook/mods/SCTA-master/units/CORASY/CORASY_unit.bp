@@ -26,13 +26,9 @@ UnitBlueprint {
         Display = {
         UniformScale = 0.17,
     },
-    Footprint = {
-        SizeX = 10,
-        SizeZ = 10,
-    },
     Economy = {
         BuildCostEnergy = 12000,
-        BuildCostMass = 2000,
+        BuildCostMass = 1300,
         BuildTime = 32000,
         BuildableCategory = {
             'OCEAN LEVEL1 CORE',

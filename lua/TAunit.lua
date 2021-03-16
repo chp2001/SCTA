@@ -18,7 +18,12 @@ TAunit = Class(Unit)
         --self._UnitName = bp.General.UnitName
         ---self:LOGDBG('TAUnit.OnCreate')
         Unit.OnCreate(self)
-		self:SetFireState(FireState.GROUND_FIRE)
+		local aiBrain = self:GetAIBrain()
+		if aiBrain.SCTAAI then
+			self:SetFireState(FireState.RETURN_FIRE)
+			else
+			self:SetFireState(FireState.GROUND_FIRE)
+			end
         end,
 
 	OnStopBeingBuilt = function(self,builder,layer)

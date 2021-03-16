@@ -2,33 +2,26 @@
 BaseBuilderTemplate {
     BaseTemplateName = 'SCTANavalExpansion',
     Builders = {
-        -- List all our builder grous here
-        -- ACU
-        'SCTAAICommanderBuilder',
-
-        -- Unit Builders
         'SCTAAIEngineerBuilder',
-        'SCTAAIAirBuilder',
-        'SCTAAIAirFormers',
         'SCTAAINavalBuilder',
         'SCTANavalFormer',
 
         -- Buildings etc
-        'SCTAAIEngineerMiscBuilder',
-        'SCTAAIFactoryBuilders',
+        'SCTAExpansionBuilders',
+        'SCTAAIEngineerNavalMiscBuilder',
         'SCTAUpgrades',
     },
     BaseSettings = {
         EngineerCount = {
-            Tech1 = 2, 
-            Tech2 = 1, 
+            Tech1 = 6, 
+            Tech2 = 4, 
             Tech3 = 1, 
             SCU = 0,
         },
         FactoryCount = {
             Land = 0,
             Air = 0,
-            Sea = 4,
+            Sea = 8,
             Gate = 0,
         },
         MassToFactoryValues = {

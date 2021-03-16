@@ -12,14 +12,13 @@ BaseBuilderTemplate {
         'SCTAAIAirBuilder',
         'SCTAAILandFormers',
         'SCTAAIAirFormers',
-        'SCTAAINavalBuilder',
-        'SCTANavalFormer',
 
         -- Buildings etc
+        'SCTAExpansionBuilders',
         'SCTAAIEngineerMiscBuilder',
+        'SCTAAIEngineerEcoBuilder',
         'SCTAAIFactoryBuilders',
         'SCTAUpgrades',
-        'SCTAExpansionBuilders',
     },
     BaseSettings = {
         EngineerCount = {

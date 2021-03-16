@@ -1933,6 +1933,8 @@ ExpansionBaseTemplates[6] = {
                 'T1EnergyProduction',
                 'MassStorage',
                 'EnergyStorage',
+                'T1EnergyProduction3',
+                'T1EnergyProduction2',
                 'T1MassCreation',
                 'T1Resource',
                 'T1Radar',
@@ -4770,6 +4772,8 @@ ExpansionBaseTemplates[7] = {
     {
         {
             'T1EnergyProduction',
+            'T1EnergyProduction3',
+            'T1EnergyProduction2',
             'MassStorage',
             'EnergyStorage',
             'T1MassCreation',

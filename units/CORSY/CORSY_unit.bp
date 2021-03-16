@@ -94,9 +94,7 @@ UnitBlueprint {
         StorageEnergy = 50,
     },
     Footprint = {
-        SizeX = 12,
-        SizeZ = 12,
-	MinWaterDepth = 1.875,
+        MinWaterDepth = 1.5,
     },
     General = {
         BuildBones = {

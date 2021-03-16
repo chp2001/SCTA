@@ -39,7 +39,7 @@ BuilderGroup {
         PlatoonTemplate = 'GuardSCTA',
         PlatoonAIPlan = 'GuardEngineer', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 100,
-        InstanceCount = 4,
+        InstanceCount = 6,
         BuilderType = 'Any',
         BuilderData = {
             NeverGuardBases = true,
@@ -52,7 +52,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Strike',
         PlatoonTemplate = 'StrikeForceSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 90,
+        Priority = 120,
         InstanceCount = 200,
         BuilderType = 'Any',
         BuilderData = {
@@ -68,8 +68,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Laser',
         PlatoonTemplate = 'StrikeForceSCTALaser', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 90,
-        InstanceCount = 200,
+        Priority = 150,
+        InstanceCount = 10,
         BuilderType = 'Any',
         BuilderData = {
             Laser = true,
@@ -113,7 +113,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Land Attack',
         PlatoonTemplate = 'LandAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 95,
+        Priority = 110,
         InstanceCount = 100,
         BuilderType = 'Any',
         BuilderData = {
@@ -129,7 +129,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 5, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
          },
     },
     Builder {
@@ -144,7 +144,7 @@ BuilderGroup {
             NeverGuardEngineers = true,
             UseFormation = 'AttackFormation',
             LocationType = 'LocationType',
-            AggressiveMove = true,
+            AggressiveMove = false,
             ThreatWeights = {
             SecondaryTargetThreatType = 'StructuresNotMex',
             IgnoreStrongerTargetsRatio = 100.0,

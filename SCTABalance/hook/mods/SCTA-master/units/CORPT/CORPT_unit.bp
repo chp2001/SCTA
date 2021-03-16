@@ -17,6 +17,7 @@ UnitBlueprint {
         'OVERLAYANTIAIR',
         'OVERLAYRADAR',
         'OVERLAYSONAR',
+        'SCOUT',
     },
     Defense = {
         Health = 1000,

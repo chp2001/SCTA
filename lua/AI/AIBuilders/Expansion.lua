@@ -46,8 +46,8 @@ BuilderGroup {
                 BaseTemplate = ExBaseTmpl,
                 ExpansionBase = true,
                 NearMarkerType = 'Start Location',
-                ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
-                LocationRadius = 500,
+                --ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                LocationRadius = 1000,
                 LocationType = 'LocationType',
                 ThreatMin = -1000,
                 ThreatMax = 1000,
@@ -55,7 +55,6 @@ BuilderGroup {
                 ThreatType = 'AntiSurface',
                 BuildStructures = {                    
                     'T1LandFactory2',                 
-                    'T1Radar',
                 }
             },
         }
@@ -78,8 +77,8 @@ BuilderGroup {
                 BaseTemplate = ExBaseTmpl,
                 ExpansionBase = true,
                 NearMarkerType = 'Expansion Area',
-                ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
-                LocationRadius = 500,
+                --ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                LocationRadius = 1000,
                 LocationType = 'LocationType',
                 ThreatMin = -1000,
                 ThreatMax = 1000,
@@ -110,8 +109,8 @@ BuilderGroup {
                 BaseTemplate = ExBaseTmpl,
                 ExpansionBase = true,
                 NearMarkerType = 'Start Location',
-                ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
-                LocationRadius = 500,
+                --ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                LocationRadius = 1000,
                 LocationType = 'LocationType',
                 ThreatMin = -1000,
                 ThreatMax = 1000,
@@ -126,13 +125,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA ACU Naval',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 100,
+        Priority = 500,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {240} },
             { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
             { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'AntiSurface' } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.2}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -141,8 +139,8 @@ BuilderGroup {
                 BaseTemplate = ExBaseTmpl,
                 ExpansionBase = true,
                 NearMarkerType = 'Naval Area',
-                ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
-                LocationRadius = 500,
+                ExpansionRadius = 50, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                LocationRadius = 1000,
                 LocationType = 'LocationType',
                 ThreatMin = -1000,
                 ThreatMax = 1000,
@@ -150,6 +148,7 @@ BuilderGroup {
                 ThreatType = 'AntiSurface',
                 BuildStructures = {                    
                     'T1SeaFactory',
+                    'T1Sonar',
                 }
             },
         }
@@ -163,7 +162,6 @@ BuilderGroup {
             { MIBC, 'GreaterThanGameTime', {240} },
             { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
             { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'AntiSurface' } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.2}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -172,8 +170,8 @@ BuilderGroup {
                 BaseTemplate = ExBaseTmpl,
                 ExpansionBase = true,
                 NearMarkerType = 'Naval Area',
-                ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
-                LocationRadius = 500,
+                ExpansionRadius = 50, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                LocationRadius = 1000,
                 LocationType = 'LocationType',
                 ThreatMin = -1000,
                 ThreatMax = 1000,
@@ -192,8 +190,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
-            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 100, 1, 'AntiSurface' } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.2}},
+            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'AntiSurface' } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -202,8 +199,8 @@ BuilderGroup {
                 BaseTemplate = ExBaseTmpl,
                 ExpansionBase = true,
                 NearMarkerType = 'Naval Area',
-                ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
-                LocationRadius = 500,
+                ExpansionRadius = 50, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                LocationRadius = 1000,
                 LocationType = 'LocationType',
                 ThreatMin = -1000,
                 ThreatMax = 1000,
@@ -218,13 +215,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Naval Expansion Air',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
-        Priority = 50,
+        Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {480} },
+            { MIBC, 'GreaterThanGameTime', {300} },
             { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
-            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 100, 1, 'AntiSurface' } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.2}},
+            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'AntiSurface' } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -233,8 +229,8 @@ BuilderGroup {
                 BaseTemplate = ExBaseTmpl,
                 ExpansionBase = true,
                 NearMarkerType = 'Naval Area',
-                ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
-                LocationRadius = 500,
+                ExpansionRadius = 50, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                LocationRadius = 1000,
                 LocationType = 'LocationType',
                 ThreatMin = -1000,
                 ThreatMax = 1000,

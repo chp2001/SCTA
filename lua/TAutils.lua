@@ -114,7 +114,7 @@ updateBuildRestrictions = function(self)
     if self.restrictions then
     local gtime = GetGameTimeSeconds()
     local HQCategory = categories.DEVELOPMENT
-        if self.FindHQType(aiBrain, HQCategory * categories.LEVEL3) or  gtime > 1200 then
+        if self.FindHQType(aiBrain, HQCategory * categories.LEVEL3) or gtime > 1200 then
             self:RemoveBuildRestriction(categories.LEVEL2)
             self:RemoveBuildRestriction(categories.LEVEL3)
         elseif self.FindHQType(aiBrain, HQCategory * categories.LEVEL2) or  gtime > 600 then

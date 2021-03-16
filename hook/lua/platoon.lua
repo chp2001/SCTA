@@ -56,12 +56,8 @@ Platoon = Class(SCTAAIPlatoon) {
         -- if we have nothing to build, disband!
         if not cons.BuildStructures then
             local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
-            local ents = TAutils.TAAIGetReclaimablesAroundLocation(brain, locationType) or {}
             local pos = self:GetPlatoonPosition()
-            if ents[1] and pos and not EntityCategoryContains(categories.COMMAND, eng) then
-                coroutine.yield(1)
-                return self:IdleEngineerSCTA()
-            elseif econ.MassStorageRatio > 0.5 and econ.EnergyStorageRatio > 0.5 then
+        if econ.MassStorageRatio > 0.5 and econ.EnergyStorageRatio > 0.5 then
                 coroutine.yield(1)
                 self:ForkThread(self.AssistBody)
                 WaitSeconds(self.PlatoonData.Assist.Time or 60)

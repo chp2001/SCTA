@@ -51,7 +51,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2 Scouts',
         PlatoonTemplate = 'T2AirScoutSCTA',
-        Priority = 110,
+        Priority = 105,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.3}},
         },

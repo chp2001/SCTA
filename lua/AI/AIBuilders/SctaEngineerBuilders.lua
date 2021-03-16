@@ -40,7 +40,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi AirFactory Engineer2',
         PlatoonTemplate = 'T2BuildEngineerAirSCTA',
-        Priority = 115,
+        Priority = 120,
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FUSION} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.AIR * categories.LEVEL2} }, -- Build engies until we have 4 of them.

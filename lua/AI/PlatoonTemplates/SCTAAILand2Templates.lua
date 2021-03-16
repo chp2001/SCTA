@@ -66,10 +66,7 @@ PlatoonTemplate {
             { 'armstump', 1, 4, 'attack', 'none' },
         },
         Core = {
-            { 'corraid', 1, 2, 'attack', 'none' },
-            { 'corcv', 1, 1, 'support', 'None' },
-            { 'corraid', 1, 2, 'attack', 'none' },
-            { 'corfav', 1, 1, 'scout', 'none' },
+            { 'corraid', 1, 4, 'attack', 'none' },
         },
     }
 }

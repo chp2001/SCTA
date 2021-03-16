@@ -108,8 +108,8 @@ BuilderGroup {
         PlatoonTemplate = 'T1ScoutShipSCTA',
         Priority = 100,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {900} }, -- Don't make tanks if we have lots of them.
-            { UCBC, 'HaveUnitRatio', { 0.5, categories.OCEAN * categories.SCOUT,
+            { MIBC, 'LessThanGameTime', {360} }, -- Don't make tanks if we have lots of them.
+            { UCBC, 'HaveUnitRatio', { 0.75, categories.OCEAN * categories.SCOUT,
             '<=', categories.OCEAN} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
@@ -118,7 +118,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Frigate Naval',
         PlatoonTemplate = 'T1FrigateSCTA',
-        Priority = 90,
+        Priority = 100,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.33, categories.OCEAN * categories.FRIGATE,
             '<=', categories.OCEAN} },

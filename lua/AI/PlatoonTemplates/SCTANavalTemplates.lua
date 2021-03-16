@@ -56,14 +56,14 @@ PlatoonTemplate {
     Name = 'T1FrigateSCTA',
     FactionSquads = {
         Arm = {
+            { 'armpt', 1, 2, 'Attack', 'GrowthFormation' },
             { 'armroy', 1, 1, 'Attack', 'GrowthFormation'},
-            { 'armpt', 1, 3, 'Attack', 'GrowthFormation' },
-            { 'armcs', 1, 1, 'support', 'None' },
+            { 'armpt', 1, 2, 'Attack', 'GrowthFormation' },
         },
         Core = {
+            { 'corpt', 1, 2, 'Attack', 'GrowthFormation' },
             { 'corroy', 1, 1, 'Attack', 'GrowthFormation'},
-            { 'corpt', 1, 3, 'Attack', 'GrowthFormation' },
-            { 'corcs', 1, 1, 'support', 'None' },
+            { 'corpt', 1, 2, 'Attack', 'GrowthFormation' },
         },
     }
 }
@@ -74,12 +74,10 @@ PlatoonTemplate {
         Arm = {
             { 'armcrus', 1, 1, 'Attack', 'GrowthFormation'},
             { 'armpt', 1, 4, 'Attack', 'GrowthFormation' },
-            { 'armcs', 1, 1, 'support', 'None' },
         },
         Core = {
             { 'corcrus', 1, 1, 'Attack', 'GrowthFormation'},
             { 'corpt', 1, 4, 'Attack', 'GrowthFormation' },
-            { 'corcs', 1, 1, 'support', 'None' },
         },
     }
 }

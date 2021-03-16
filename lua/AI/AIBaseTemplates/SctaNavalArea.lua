@@ -7,6 +7,7 @@ BaseBuilderTemplate {
         'SCTANavalFormer',
 
         -- Buildings etc
+        'SCTAExpansionBuilders',
         'SCTAAIEngineerNavalMiscBuilder',
         'SCTAUpgrades',
     },

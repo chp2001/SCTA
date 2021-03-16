@@ -112,10 +112,9 @@ BuilderGroup {
         Priority = 110,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 480 } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10,  categories.LAB} },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.5 } },
+            { MIBC, 'GreaterThanGameTime', { 600 } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 10,  categories.LAB} },,
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -135,9 +134,8 @@ BuilderGroup {
         Priority = 105,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 600 } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  categories.LAB} },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
+            { MIBC, 'GreaterThanGameTime', { 750 } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  categories.LAB} },,
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Any',
@@ -180,7 +178,7 @@ BuilderGroup {
         Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {1800} },
+            { MIBC, 'GreaterThanGameTime', {1200} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.GANTRY} }, -- Stop after 10 facs have been built.
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.GANTRY} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },

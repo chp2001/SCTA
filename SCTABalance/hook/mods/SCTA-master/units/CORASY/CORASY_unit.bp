@@ -28,7 +28,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 12000,
-        BuildCostMass = 2000,
+        BuildCostMass = 1300,
         BuildTime = 32000,
         BuildableCategory = {
             'OCEAN LEVEL1 CORE',

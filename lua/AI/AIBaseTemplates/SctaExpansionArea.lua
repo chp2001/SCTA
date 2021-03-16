@@ -14,6 +14,7 @@ BaseBuilderTemplate {
         'SCTAAIAirFormers',
 
         -- Buildings etc
+        'SCTAExpansionBuilders',
         'SCTAAIEngineerMiscBuilder',
         'SCTAAIEngineerEcoBuilder',
         'SCTAAIFactoryBuilders',

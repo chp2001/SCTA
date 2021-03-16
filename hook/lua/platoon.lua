@@ -1459,8 +1459,8 @@ Platoon = Class(SCTAAIPlatoon) {
             end
             platoonUnits = self:GetPlatoonUnits()
             numberOfUnitsInPlatoon = table.getn(platoonUnits)
-            if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 20 then
-                self:MergeWithNearbyPlatoonsSorian('AttackSCTAForceAI', 10)
+            if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 10 then
+                self:MergeWithNearbyPlatoonsSorian('AttackSCTAForceAI', 5)
             end
 
             if (oldNumberOfUnitsInPlatoon != numberOfUnitsInPlatoon) then

@@ -85,7 +85,7 @@ BuilderGroup {
         },
         BuilderType = 'Any',
     },
-    Builder {
+    --[[Builder {
         BuilderName = 'SCTAUpgradeRadarT2',
         PlatoonTemplate = 'SctaRadar2Upgrades',
         Priority = 25,
@@ -99,7 +99,7 @@ BuilderGroup {
             { IBC, 'BrainNotLowPowerMode', {} },
         },
         BuilderType = 'Any',
-    },
+    },]]
     Builder {
         BuilderName = 'SCTAMetalMakr',
         PlatoonTemplate = 'FabricationSCTA',

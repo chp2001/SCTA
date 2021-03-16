@@ -88,7 +88,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTAEarly',
     Plan = 'SCTAStrikeForceAIEarly',
     GlobalSquads = {
-        { GROUND * categories.LEVEL1 - SPECIAL, 5, 5, 'Attack', 'none' }
+        { GROUND * categories.LEVEL1 - SPECIAL, 5, 20, 'Attack', 'none' }
     },
 }
 
@@ -114,6 +114,14 @@ PlatoonTemplate {
     Plan = 'PauseAI',
     GlobalSquads = {
         { categories.STRUCTURE * categories.MASSFABRICATION, 1, 1, 'support', 'none' },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'SCTAIntel',
+    Plan = 'PauseAI',
+    GlobalSquads = {
+        { categories.STRUCTURE * categories.TARGETING, 1, 1, 'support', 'none' },
     }
 }
 

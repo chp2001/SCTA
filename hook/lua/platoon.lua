@@ -1571,7 +1571,7 @@ Platoon = Class(SCTAAIPlatoon) {
             if table.getn(cmdQ) <= 1 and closestTarget and VDist3(closestTarget:GetPosition(), pos) < 20 and nearDest then
                 self:StopAttack()
                 if PlatoonFormation != 'No Formation' then
-                    self:SetPlatoonFormationOverride('AttackFormation')
+                    --self:SetPlatoonFormationOverride('AttackFormation')
                     IssueFormAttack(platoonUnits, closestTarget, PlatoonFormation, 0)
                 else
                     IssueAttack(platoonUnits, closestTarget)

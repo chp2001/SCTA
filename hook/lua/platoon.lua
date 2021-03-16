@@ -360,11 +360,48 @@ Platoon = Class(SCTAAIPlatoon) {
             relative = false
             buildFunction = AIBuildStructures.AIExecuteBuildStructure
             table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
-            if cons.NearMarkerType == 'Naval Area' then
+        elseif cons.Wall then
+            local pos = aiBrain:PBMGetLocationCoords(cons.LocationType) or cons.Position or self:GetPlatoonPosition()
+            local radius = cons.LocationRadius or aiBrain:PBMGetLocationRadius(cons.LocationType) or 100
+            relative = false
+            reference = AIUtils.GetLocationNeedingWalls(aiBrain, 200, 4, 'STRUCTURE - WALLS', cons.ThreatMin, cons.ThreatMax, cons.ThreatRings)
+            table.insert(baseTmplList, 'Blank')
+            buildFunction = AIBuildStructures.WallBuilder
+        elseif cons.NearBasePatrolPoints then
+            relative = false
+            reference = AIUtils.GetBasePatrolPoints(aiBrain, cons.Location or 'MAIN', cons.Radius or 100)
+            baseTmpl = baseTmplFile['ExpansionBaseTemplates'][factionIndex]
+            for k,v in reference do
+                table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, v))
+            end
+            -- Must use BuildBaseOrdered to start at the marker; otherwise it builds closest to the eng
+            buildFunction = AIBuildStructures.AIBuildBaseTemplateOrdered
+        elseif cons.FireBase and cons.FireBaseRange then
+            --DUNCAN - pulled out and uses alt finder
+            reference, refName = AIUtils.AIFindFirebaseLocation(aiBrain, cons.LocationType, cons.FireBaseRange, cons.NearMarkerType,
+                                                cons.ThreatMin, cons.ThreatMax, cons.ThreatRings, cons.ThreatType,
+                                                cons.MarkerUnitCount, cons.MarkerUnitCategory, cons.MarkerRadius)
+            if not reference or not refName then
+                self:PlatoonDisband()
+                return
+            end
+
+        elseif cons.NearMarkerType and cons.ExpansionBase then
+            local pos = aiBrain:PBMGetLocationCoords(cons.LocationType) or cons.Position or self:GetPlatoonPosition()
+            local radius = cons.LocationRadius or aiBrain:PBMGetLocationRadius(cons.LocationType) or 100
+
+            if cons.NearMarkerType == 'Expansion Area' then
+                reference, refName = AIUtils.AIFindExpansionAreaNeedsEngineer(aiBrain, cons.LocationType,
+                        (cons.LocationRadius or 100), cons.ThreatMin, cons.ThreatMax, cons.ThreatRings, cons.ThreatType)
+                -- didn't find a location to build at
+                if not reference or not refName then
+                    self:PlatoonDisband()
+                    return
+                end
+            elseif cons.NearMarkerType == 'Naval Area' then
                 reference, refName = AIUtils.AIFindNavalAreaNeedsEngineer(aiBrain, cons.LocationType,
                         (cons.LocationRadius or 100), cons.ThreatMin, cons.ThreatMax, cons.ThreatRings, cons.ThreatType)
                 -- didn't find a location to build at
-            end
                 if not reference or not refName then
                     self:PlatoonDisband()
                     return
@@ -390,7 +427,6 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
             end
 
-            -- If moving far from base, tell the assisting platoons to not go with
 
             if not cons.BaseTemplate and (cons.NearMarkerType == 'Naval Area' or cons.NearMarkerType == 'Defensive Point' or cons.NearMarkerType == 'Expansion Area') then
                 baseTmpl = baseTmplFile['ExpansionBaseTemplates'][factionIndex]
@@ -406,7 +442,7 @@ Platoon = Class(SCTAAIPlatoon) {
             -- Must use BuildBaseOrdered to start at the marker; otherwise it builds closest to the eng
             --buildFunction = AIBuildStructures.AIBuildBaseTemplateOrdered
             buildFunction = AIBuildStructures.AIBuildBaseTemplate
-        if cons.NearMarkerType and cons.NearMarkerType == 'Naval Defensive Point' then
+        elseif cons.NearMarkerType and cons.NearMarkerType == 'Naval Defensive Point' then
             baseTmpl = baseTmplFile['ExpansionBaseTemplates'][factionIndex]
 
             relative = false
@@ -434,8 +470,8 @@ Platoon = Class(SCTAAIPlatoon) {
             end
             table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
             buildFunction = AIBuildStructures.AIExecuteBuildStructure
-        elseif cons.NearMarkerType and (cons.NearMarkerType == 'Rally Point' or cons.NearMarkerType == 'Protected Experimental Construction') then
-            --DUNCAN - add so experimentals build on maps with no markers.
+        elseif cons.NearMarkerType then
+            --WARN('*Data weird for builder named - ' .. self.BuilderName)
             if not cons.ThreatMin or not cons.ThreatMax or not cons.ThreatRings then
                 cons.ThreatMin = -1000000
                 cons.ThreatMax = 1000000

@@ -65,14 +65,6 @@ PlatoonTemplate {
     },
 }
 
-PlatoonTemplate {
-    Name = 'EngineerBuilderSCTANaval12',
-    Plan = 'SCTAEngineerTypeAI',
-    GlobalSquads = {
-        { categories.ENGINEER * (categories.OCEANENGINEER + categories.AIR), 1, 1, 'support', 'None' }
-    },
-}
-
 
 PlatoonTemplate {
     Name = 'EngineerBuilderSCTAEco',

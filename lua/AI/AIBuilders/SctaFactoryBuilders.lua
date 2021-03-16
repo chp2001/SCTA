@@ -272,7 +272,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LAB * categories.NAVAL } }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.PLANT * categories.NAVAL} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.5}}, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -294,7 +294,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Any',
         BuilderData = {

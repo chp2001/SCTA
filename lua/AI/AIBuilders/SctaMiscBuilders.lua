@@ -75,7 +75,6 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
                 { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 750, -500, 200, 0, 'AntiSurface', 1 }},
-                { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
             },
         BuilderType = 'Any',
         BuilderData = {
@@ -166,7 +165,7 @@ BuilderGroup {
     },  
     Builder {
         BuilderName = 'SCTAAI T1Engineer MetalMaker',
-        PlatoonTemplate = 'EngineerBuilderSCTANaval12',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval',
         Priority = 90,
         InstanceCount = 2,
         BuilderConditions = {
@@ -213,7 +212,6 @@ BuilderGroup {
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = { 
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 50}},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -233,7 +231,6 @@ BuilderGroup {
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = { 
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 150}},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -253,7 +250,6 @@ BuilderGroup {
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = { 
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 300}},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -566,7 +562,7 @@ BuilderGroup {
         Priority = 50,
         InstanceCount = 3,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ROCKET - categories.MOBILE} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ANTINAVY - categories.MOBILE} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.5}},
         },
         BuilderType = 'Any',
@@ -585,7 +581,7 @@ BuilderGroup {
         Priority = 60,
         InstanceCount = 2,
         BuilderConditions = { -- Stop after 10 facs have been built.
-            { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.1 }},
+        { EBC, 'LessThanEconEfficiencyOverTime', { 0.9, 0.75 }},
         },
         BuilderType = 'Any',
         BuilderData = {

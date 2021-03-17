@@ -138,7 +138,8 @@ BuilderGroup {
         Priority = 120,
         InstanceCount = 2,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {600} }, 
+            { MIBC, 'GreaterThanGameTime', { 120 } },
+            { MIBC, 'LessThanGameTime', {900} }, 
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},    
         },

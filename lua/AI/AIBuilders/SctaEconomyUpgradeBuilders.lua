@@ -35,7 +35,7 @@ BuilderGroup {
         Priority = 150,
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Mexupgrade1' }},
-            { MIBC, 'GreaterThanGameTime', { 300 } },
+            { MIBC, 'GreaterThanGameTime', { 480 } },
             { TAutils, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 1, categories.MASSEXTRACTION * categories.LEVEL1 } },  
             { EBC, 'GreaterThanEconStorageCurrent', { 300, 1000 } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.75 }},

@@ -72,7 +72,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTA',
     Plan = 'AttackSCTAForceAI',
     GlobalSquads = {
-        { GROUND - SPECIAL, 5, 20, 'Attack', 'none' }
+        { GROUND - SPECIAL, 5, 10, 'Attack', 'none' }
     },
 }
 

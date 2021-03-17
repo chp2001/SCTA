@@ -208,7 +208,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI LandFac Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 500,
-        InstanceCount = 1,
+        InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.85, 0.5}},

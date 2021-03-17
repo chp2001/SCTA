@@ -127,6 +127,7 @@ PlatoonTemplate {
         },
         Core = {
             { 'corcan', 1, 2, 'attack', 'none' },
+            { 'coracv', 1, 1, 'support', 'None' },
             { 'corpyro', 1, 1, 'attack', 'none' },
         },
     }
@@ -137,6 +138,7 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armzeus', 1, 4, 'attack', 'none' },
+            { 'armch', 1, 1, 'support', 'None' },
             { 'armmav', 1, 2, 'attack', 'none' },
         },
         Core = {

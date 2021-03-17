@@ -15,12 +15,13 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         self.LocationType = lType
 
         self.ConsumptionUnits = {
-            Engineers = { Category = categories.ENGINEER + categories.FACTORY, Units = {}, UnitsList = {}, Count = 0, },
+            Engineers = { Category = categories.ENGINEER, Units = {}, UnitsList = {}, Count = 0, },
             Fabricators = { Category = categories.MASSFABRICATION * categories.STRUCTURE, Units = {}, UnitsList = {}, Count = 0, },
             ---Lasers = { Category = categories.LASER, Units = {}, UnitsList = {}, Count = 0, },
             Intel = { Category = categories.STRUCTURE * ( categories.SONAR + categories.RADAR + categories.OMNI + categories.TACLOAK), Units = {}, UnitsList = {}, Count = 0, },
             MobileIntel = { Category = categories.MOBILE - categories.ENGINEER, Units = {}, UnitsList = {}, Count = 0, },
         }
+        ---LOG(self.ConsumptionUnits)
 
         self:AddBuilderType('Any')
     end,

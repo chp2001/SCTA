@@ -55,7 +55,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Assist Gantry Production',
         PlatoonTemplate = 'EngineerBuilderSCTAAssist',
-        Priority = 120,
+        Priority = 200,
         InstanceCount = 12,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GANTRY }},
@@ -97,7 +97,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Assist Gantry',
         PlatoonTemplate = 'EngineerBuilderSCTAAssist',
-        Priority = 130,
+        Priority = 200,
         InstanceCount = 12,
         BuilderConditions = {
             { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYGANTRY }},

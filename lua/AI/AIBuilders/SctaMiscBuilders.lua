@@ -137,11 +137,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAMissileTower Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 110,
+        Priority = 50,
         InstanceCount = 15,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {480} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.75}},
         },
         BuilderType = 'Any',
         BuilderData = {

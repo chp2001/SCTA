@@ -14,10 +14,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Mex 150',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 120,
+        Priority = 110,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 150, -500, 100, 0, 'AntiSurface', 1 }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -34,9 +35,10 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer 300 Mex',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 95,
-        InstanceCount = 2,
+        InstanceCount = 1,
         BuilderConditions = {
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 300, -500, 150, 0, 'AntiSurface', 1 }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -56,6 +58,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
                 { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 450, -500, 200, 0, 'AntiSurface', 1 }},
+                { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},            
             },
         BuilderType = 'Any',
         BuilderData = {
@@ -75,6 +78,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
                 { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 750, -500, 200, 0, 'AntiSurface', 1 }},
+                { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
             },
         BuilderType = 'Any',
         BuilderData = {
@@ -91,9 +95,10 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer Air Mex 250',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
         Priority = 120,
-        InstanceCount = 2, -- The max number concurrent instances of this builder.
+        InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 150, -500, 100, 0, 'AntiAir', 1 }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -113,6 +118,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 400, -500, 150, 0, 'AntiAir', 1 }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -132,6 +138,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
                 { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 550, -500, 200, 0, 'AntiAir', 1 }},
+                { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
             },
         BuilderType = 'Any',
         BuilderData = {
@@ -151,7 +158,8 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
                 { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 850, -500, 200, 0, 'AntiAir', 1 }},
-        },
+                { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
+            },
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
@@ -247,8 +255,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FUSION} },
-            { EBC, 'LessThanEconEfficiencyOverTime', { 0.9, 0.75 }},
-            { EBC, 'LessThanEconStorageRatio',  { 1.1, 0.75}},
+            { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.25 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -269,8 +276,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FUSION} },
-            { EBC, 'LessThanEconEfficiencyOverTime', { 0.9, 0.75 }},
-            { EBC, 'LessThanEconStorageRatio',  { 1.1, 0.75}},
+            { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.25 }},
         },
         BuilderType = 'Any',
         BuilderData = {

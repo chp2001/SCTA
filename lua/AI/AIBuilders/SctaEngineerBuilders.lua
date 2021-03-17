@@ -70,7 +70,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2BuildFieldEngineerSCTA',
         Priority = 95, -- Top factory priority
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FIELDENGINEER * categories.LEVEL2} }, -- Build engies until we have 4 of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FIELDENGINEER * categories.LEVEL2} }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'All',
     },

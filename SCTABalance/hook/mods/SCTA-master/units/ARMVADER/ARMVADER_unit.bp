@@ -5,10 +5,35 @@
 
 UnitBlueprint {
     Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'KBOT',
+        'LEVEL2',
+        'TECH2',
+        'VISIBLETORECON',
+        'RECLAIMABLE',	
+        'MOBILE',
+	    'LAND',
+	    'DIRECTFIRE',
+        'OVERLAYDIRECTFIRE',
+	    'ARM',
+        'ALLTERRAIN',
+        'TACLOAK',
+    },
     Economy = {
         BuildCostEnergy = 8000,
         BuildCostMass = 500,
         BuildTime = 5000,
+        TAConsumptionPerSecondEnergy = 60,
+        MaintenanceConsumptionPerSecondEnergy = 10,
+    },
+    General = {
+        ToggleCaps = {
+            RULEUTC_CloakToggle = true,
+        },
+    },
+    Intel = {
+        Cloak = true,
     },
     LifeBarOffset = 0,
     LifeBarSize = 1,

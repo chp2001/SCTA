@@ -66,7 +66,8 @@ PlatoonTemplate {
             { 'armstump', 1, 4, 'attack', 'none' },
         },
         Core = {
-            { 'corraid', 1, 4, 'attack', 'none' },
+            { 'corcv', 1, 1, 'support', 'None' },
+            { 'corraid', 1, 3, 'attack', 'none' },
         },
     }
 }
@@ -80,8 +81,7 @@ PlatoonTemplate {
             { 'armsam', 1, 2, 'attack', 'none' },
         },
         Core = {
-            { 'corraid', 1, 6, 'attack', 'none' },
-            { 'corlevlr', 1, 1, 'attack', 'none' },
+            { 'corraid', 1, 4, 'attack', 'none' },
             { 'cormist', 1, 2, 'attack', 'none' },
         },
     }
@@ -132,8 +132,6 @@ PlatoonTemplate {
         },
         Core = {
             { 'correap', 1, 4, 'attack', 'none' },
-            { 'corsent', 1, 1, 'attack', 'none' },
-            { 'corvroc', 1, 1, 'attack', 'none' },
         },
     }
 }

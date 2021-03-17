@@ -14,6 +14,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandScoutSCTA',
         Priority = 90,
         BuilderConditions = {
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.SCOUT} },
         },
         BuilderType = 'Land',
@@ -27,7 +28,7 @@ BuilderGroup {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
         },
         BuilderType = 'Land',
     },
@@ -37,7 +38,7 @@ BuilderGroup {
         Priority = 95,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Land',
@@ -51,7 +52,7 @@ BuilderGroup {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
         },
         BuilderType = 'Land',
     },
@@ -62,7 +63,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
         },
         BuilderType = 'Land',
     },
@@ -104,7 +105,7 @@ BuilderGroup {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.LEVEL2 * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
         },
         BuilderType = 'Land',
     },
@@ -117,7 +118,7 @@ BuilderGroup {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.LEVEL2 * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
         },
         BuilderType = 'Land',
     },
@@ -128,7 +129,8 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.LEVEL2 * categories.ROCKET,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, 
-         },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
+        },
         BuilderType = 'Land',
     },
     Builder {
@@ -138,7 +140,8 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.LEVEL2 * categories.ROCKET,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
-         },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
+        },
         BuilderType = 'Land',
     },
     Builder {
@@ -146,7 +149,8 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandAuxFact1',
         Priority = 70,
         BuilderConditions = {   
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FIELDENGINEER * categories.LEVEL2 * categories.LAND} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.TACLOAK * categories.LAND} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
         }, 
         BuilderType = 'Land',
     },
@@ -155,7 +159,8 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandAuxFact2',
         Priority = 70,
         BuilderConditions = {   
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FIELDENGINEER * categories.LEVEL2 * categories.LAND} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.JAM * categories.LAND} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
         }, 
         BuilderType = 'Land',
     },

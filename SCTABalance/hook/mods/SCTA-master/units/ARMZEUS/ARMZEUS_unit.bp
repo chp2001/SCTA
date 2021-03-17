@@ -40,6 +40,7 @@ UnitBlueprint {
             EnergyChargeForFirstShot = true,
             Damage = 400,
             MaxRadius = 35,
+            DamageRadius = 2,
             RateOfFire = 1,
             MuzzleVelocity = 30,
             ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/PELTHUND/PELTHUND_proj.bp',

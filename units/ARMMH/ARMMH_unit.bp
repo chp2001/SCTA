@@ -148,7 +148,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 300,
-            DamageRadius = 2.5,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'ARMMH_WEAPON',
             FireTargetLayerCapsTable = {

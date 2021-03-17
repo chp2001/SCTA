@@ -9,7 +9,7 @@ UnitBlueprint {
         BuildTime = 700,
     },
     Intel = {
-        VisionRadius = 10,
+        VisionRadius = 12,
     },
     Defense = {
         Health = 140,

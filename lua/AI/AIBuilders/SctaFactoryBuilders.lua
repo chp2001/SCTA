@@ -15,9 +15,11 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 100,
         InstanceCount = 2,
+        DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 16, categories.PLANT} }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2,  categories.LAB} },
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.PLANT} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  categories.LAB} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -56,7 +58,6 @@ BuilderGroup {
                 BuildClose = true,
                 BuildStructures = {
                     'T1EnergyProduction',
-                    'T1EnergyProduction',
                     'T1AirFactory',
                 }
             }
@@ -67,10 +68,12 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 95,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { MIBC, 'GreaterThanGameTime', { 180 } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 16, categories.PLANT} }, -- Stop after 10 facs have been built. -- Stop after 10 facs have been built.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2,  categories.LAB} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.PLANT} }, -- Stop after 10 facs have been built. -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  categories.LAB} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -119,7 +122,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA12',
         Priority = 110,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { MIBC, 'GreaterThanGameTime', { 600 } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 10,  categories.LAB} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
@@ -143,7 +148,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA12',
         Priority = 105,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { MIBC, 'GreaterThanGameTime', { 750 } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 10,  categories.LAB} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
@@ -167,7 +174,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAEco12',
         Priority = 135,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LAB * categories.AIR } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.9 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -189,7 +198,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAEco12',
         Priority = 120,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FUSION} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LAB * categories.AIR } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.9 } },

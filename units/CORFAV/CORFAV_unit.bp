@@ -38,6 +38,7 @@ UnitBlueprint {
 	    'LAND',
 	    'SCOUT',
 	    'DIRECTFIRE',
+        'RADAR',
         'OVERLAYDIRECTFIRE',
         'CORE',
         'INTELLIGENCE',

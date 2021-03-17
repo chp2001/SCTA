@@ -12,16 +12,12 @@ UnitBlueprint {
     },
     Weapon = {
         [1] = {
-            Damage = 5,,
-            FiringTolerance = 5,
-            FiringRandomness = 0.05,
+            Damage = 5,
             RackSalvoSize = 1,
             RateOfFire = 5,
         },
         [2] = {
             Damage = 5,
-            FiringTolerance = 5,
-            FiringRandomness = 0.05,
             RackSalvoSize = 1,
             RateOfFire = 5,
         },

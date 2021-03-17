@@ -67,7 +67,11 @@ UnitBlueprint {
             },
         },
 	---SmokeBone = 'Torso',
-        UniformScale = 0.16,
+        UniformScale = 0.12,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
     },
     Economy = {
         BuildCostEnergy = 2221,
@@ -112,9 +116,9 @@ UnitBlueprint {
     SelectionSizeX = 1.0,
     SelectionSizeZ = 1.0,
     SelectionThickness = 0.25,
-    SizeX = 2,
-    SizeY = 2,
-    SizeZ = 2,
+    SizeX = 1.5,
+    SizeY = 1.5,
+    SizeZ = 1.5,
     StrategicIconName = 'icon_bot2_directfire',
     StrategicIconSortPriority = 0,
     Weapon = {

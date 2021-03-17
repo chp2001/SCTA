@@ -17,7 +17,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'T1LandScoutFormSCTA',
-    Plan = 'ScoutingAISorian',
+    Plan = 'ScoutingAI',
     GlobalSquads = {
         { GROUND * categories.SCOUT * categories.LEVEL1, 1, 1, 'scout', 'None' },
     }
@@ -72,7 +72,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTA',
     Plan = 'AttackSCTAForceAI',
     GlobalSquads = {
-        { GROUND - SPECIAL, 5, 10, 'Attack', 'none' }
+        { GROUND - SPECIAL, 5, 20, 'Attack', 'none' }
     },
 }
 

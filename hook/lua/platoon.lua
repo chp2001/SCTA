@@ -1632,7 +1632,7 @@ Platoon = Class(SCTAAIPlatoon) {
             if path then
                 local pathLength = table.getn(path)
                 for i=1, pathLength-1 do
-                    self:MoveToLocation(path[i], false)
+                    self:MoveToLocation(bestBase.Position, false)  
                 end 
             end
             self:MoveToLocation(bestBase.Position, false)  
@@ -1651,8 +1651,8 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
                 oldDistSq = distSq      
             end
-        end 
-        return self:AttackSCTAForceAI()
+        end
+        self:PlatoonDisband()
     end,
 
     

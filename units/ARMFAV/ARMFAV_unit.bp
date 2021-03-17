@@ -37,6 +37,7 @@ UnitBlueprint {
         'MOBILE',
         'LAND',
         'SCOUT',
+        'RADAR',
         'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'OVERLAYRADAR',

@@ -55,7 +55,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Assist Gantry Production',
         PlatoonTemplate = 'EngineerBuilderSCTAAssist',
-        Priority = 120,
+        Priority = 200,
         InstanceCount = 12,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GANTRY }},
@@ -97,7 +97,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Assist Gantry',
         PlatoonTemplate = 'EngineerBuilderSCTAAssist',
-        Priority = 130,
+        Priority = 200,
         InstanceCount = 12,
         BuilderConditions = {
             { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYGANTRY }},
@@ -135,7 +135,7 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Excess Early',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 120,
+        Priority = 130,
         InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 120 } },
@@ -210,7 +210,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT * categories.LAND}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB * categories.LAND} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.PLANT} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.PLANT * categories.LAND} },
             { EBC, 'LessThanEconStorageRatio', { 0.1, 1.1}},
             { EBC, 'LessEconStorageCurrent', { 100, 6000 } },    
             },

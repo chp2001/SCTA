@@ -38,6 +38,7 @@ UnitBlueprint {
         'MOBILE',
         'LAND',
         'DIRECTFIRE',
+        'RADAR',
         'OVERLAYDIRECTFIRE',
         'OVERLAYRADAR',
         'ARM',

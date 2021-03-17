@@ -81,6 +81,7 @@ UnitBlueprint {
         'OVERLAYANTIAIR',
         'ARM',
         'SEAPLA',
+        'RAIDER',
     },
     Defense = {
         ArmorType = 'Light',

@@ -261,11 +261,47 @@ function TAAIGetReclaimablesAroundLocation(aiBrain, locationType)
         return false
     end
 
-    local x1 = position[1] - radius * 3
-    local x2 = position[1] + radius * 3
-    local z1 = position[3] - radius * 3
-    local z2 = position[3] + radius * 3
+    local x1 = position[1] - radius * 2
+    local x2 = position[1] + radius * 2
+    local z1 = position[3] - radius * 2
+    local z2 = position[3] + radius * 2
     local rect = Rect(x1, z1, x2, z2)
 
     return AIUtils.GetReclaimablesInRect(rect)
+end
+
+
+function GetDirectionInDegrees( v1, v2 )
+    local SCTAACOS = math.acos
+    local PI = math.pi
+    local vec = GetDirectionVector( v1, v2)
+    
+    if vec[1] >= 0 then
+        return SCTACOS(vec[3]) * (360/(PI*2))
+    end
+    
+    return 360 - (SCTACOS(vec[3]) * (360/(PI*2)))
+end
+
+function GetMOARadii(bool)
+    -- Military area is slightly less than half the map size (10x10map) or maximal 200.
+    local BaseMilitaryArea = math.max( ScenarioInfo.size[1]-50, ScenarioInfo.size[2]-50 ) / 2.2
+    BaseMilitaryArea = math.max( 180, BaseMilitaryArea )
+    -- DMZ is half the map. Mainly used for air formers
+    local BaseDMZArea = math.max( ScenarioInfo.size[1]-40, ScenarioInfo.size[2]-40 ) / 2
+    -- Restricted Area is half the BaseMilitaryArea. That's a little less than 1/4 of a 10x10 map
+    local BaseRestrictedArea = BaseMilitaryArea / 2
+    -- Make sure the Restricted Area is not smaller than 50 or greater than 100
+    BaseRestrictedArea = math.max( 60, BaseRestrictedArea )
+    BaseRestrictedArea = math.min( 120, BaseRestrictedArea )
+    -- The rest of the map is enemy area
+    local BaseEnemyArea = math.max( ScenarioInfo.size[1], ScenarioInfo.size[2] ) * 1.5
+    -- "bool" is only true if called from "AIBuilders/Mobile Land.lua", so we only print this once.
+    if bool then
+        --LOG('* RNGAI: BaseRestrictedArea= '..math.floor( BaseRestrictedArea * 0.01953125 ) ..' Km - ('..BaseRestrictedArea..' units)' )
+        --LOG('* RNGAI: BaseMilitaryArea= '..math.floor( BaseMilitaryArea * 0.01953125 )..' Km - ('..BaseMilitaryArea..' units)' )
+        --LOG('* RNGAI: BaseDMZArea= '..math.floor( BaseDMZArea * 0.01953125 )..' Km - ('..BaseDMZArea..' units)' )
+        --LOG('* RNGAI: BaseEnemyArea= '..math.floor( BaseEnemyArea * 0.01953125 )..' Km - ('..BaseEnemyArea..' units)' )
+    end
+    return BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea
 end

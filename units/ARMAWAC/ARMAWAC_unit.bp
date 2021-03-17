@@ -76,6 +76,7 @@ UnitBlueprint {
         'ARM',
         'JAM',
         'SCOUT',
+        'RADAR',
     },
     Defense = {
         ArmorType = 'Light',

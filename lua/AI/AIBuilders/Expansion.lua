@@ -31,7 +31,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Start Marker',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 115,
+        Priority = 105,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'ExpansionBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
@@ -54,7 +54,7 @@ BuilderGroup {
                 ThreatRings = 2,
                 ThreatType = 'AntiSurface',
                 BuildStructures = {                    
-                    'T1LandFactory2',                 
+                    'T1LandFactory',                 
                 }
             },
         }
@@ -62,7 +62,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Expansion Starter',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 110,
+        Priority = 90,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'ExpansionBaseCheck', { } }, 
@@ -85,7 +85,7 @@ BuilderGroup {
                 ThreatRings = 2,
                 ThreatType = 'AntiSurface',
                 BuildStructures = {   
-                    'T1LandFactory2',                 
+                    'T1LandFactory',                 
                     'T1Radar',
                 }
             },

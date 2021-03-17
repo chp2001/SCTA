@@ -20,9 +20,6 @@ UnitBlueprint {
     'ARM',
     'LASER',
     },
-   Display = {
-    UniformScale = 0.12,
-    },
     Defense = {
     Health = 11000,
     MaxHealth = 11000,
@@ -35,9 +32,6 @@ UnitBlueprint {
     BuildCostMass = 2200,
     BuildTime = 29000,
     },
-    SizeX = 1.5,
-    SizeY = 1.5,
-    SizeZ = 1.5,
     StrategicIconName = 'icon_bot3_armored',
     Weapon = {
         [1] = {

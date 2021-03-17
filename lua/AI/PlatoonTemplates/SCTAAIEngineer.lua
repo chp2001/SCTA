@@ -127,8 +127,8 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armck', 1, 1, 'support', 'None' },
-            { 'armpw', 1, 3, 'attack', 'none' },
-            { 'armck', 1, 4, 'support', 'None' },
+            { 'armpw', 1, 2, 'attack', 'none' },
+            { 'armck', 1, 3, 'support', 'None' },
             { 'armpw', 1, 1, 'attack', 'none' },
             { 'armck', 1, 2, 'support', 'None' },
             { 'armwar', 1, 1, 'guard', 'none' },
@@ -142,8 +142,8 @@ PlatoonTemplate {
         },
         Core = {
             { 'corcv', 1, 1, 'support', 'None' },
-            { 'corgator', 1, 3, 'attack', 'none' },
-            { 'corcv', 1, 4, 'support', 'None' },
+            { 'corgator', 1, 2, 'attack', 'none' },
+            { 'corcv', 1, 3, 'support', 'None' },
             { 'corgator', 1, 1, 'attack', 'none' },
             { 'corcv', 1, 2, 'support', 'None' },
             { 'corraid', 1, 1, 'guard', 'none' },
@@ -209,10 +209,10 @@ PlatoonTemplate {
     Name = 'T2BuildFieldEngineerSCTA',
     FactionSquads = {
         Arm = {
-            { 'armfark', 1, 1, 'guard', 'None' }
+            { 'armfark', 1, 1, 'support', 'None' }
         },
         Core = {
-            { 'cornecro', 1, 1, 'guard', 'None' }
+            { 'cornecro', 1, 1, 'support', 'None' }
         },
     }
 }

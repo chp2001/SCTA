@@ -39,6 +39,7 @@ UnitBlueprint {
         'ARM',
         'SCOUT',
         'JAM',
+        'RADAR',
         'OVERLAYRADAR',
     },
     Defense = {

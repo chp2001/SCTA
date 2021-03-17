@@ -149,7 +149,7 @@ UnitBlueprint {
             MinRadius = 5, 
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 14,
+            MuzzleVelocity = 20,
             MuzzleVelocityReduceDistance = 28,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_HAM/ARM_HAM_proj.bp',
             RackBones = {

@@ -206,7 +206,7 @@ BuilderGroup {
 Builder {
     BuilderName = 'SCTA Commander Assist Gantry',
     PlatoonTemplate = 'CommanderSCTAAssist',
-    Priority = 110,
+    Priority = 130,
     InstanceCount = 1,
     BuilderConditions = {
         { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYGANTRY }},
@@ -219,7 +219,7 @@ Builder {
             AssistLocation = 'LocationType',
             AssisteeType = 'Factory',
             BeingBuiltCategories = {'BUILTBYGANTRY'},
-            Time = 20,
+            AssistUntilFinished = true,
             },
         }
     },
@@ -238,7 +238,7 @@ Builder {
                 AssisteeType = 'Engineer',
                 AssistLocation = 'LocationType',
                 BeingBuiltCategories = {'FUSION'},
-                Time = 20,
+                AssistUntilFinished = true,
             },
         }
     },

@@ -271,8 +271,8 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 120,
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 85,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FUSION} },

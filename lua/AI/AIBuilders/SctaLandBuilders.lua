@@ -14,8 +14,8 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandScoutSCTA',
         Priority = 90,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.SCOUT} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Land',
     },
@@ -25,8 +25,6 @@ BuilderGroup {
         Priority = 90,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK,
-            '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Land',
@@ -47,8 +45,6 @@ BuilderGroup {
         Priority = 90,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK,
-            '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Land',
@@ -68,6 +64,8 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandArtillerySCTA',
         Priority = 70,
         BuilderConditions = {
+            { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.MOBILE * categories.ARTILLERY,
+            '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
          },
         BuilderType = 'Land',
@@ -77,6 +75,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandAASCTA',
         Priority = 85,
         BuilderConditions = {
+            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LAB * categories.LAND } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},
             { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,
@@ -89,6 +88,8 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandArtillerySCTA2',
         Priority = 70,
         BuilderConditions = { 
+            { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.MOBILE * (categories.ARTILLERY + categories.ROCKET),
+                                       '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
         },
         BuilderType = 'Land',
@@ -100,8 +101,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.LEVEL2 * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.75 } },
         },
         BuilderType = 'Land',
     },
@@ -113,8 +113,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.LEVEL2 * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.75 } },
         },
         BuilderType = 'Land',
     },
@@ -165,8 +164,10 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandAASCTA',
         Priority = 95,
         BuilderConditions = {
+            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.ANTIAIR * categories.MOBILE,
             '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
         },
         BuilderType = 'Land',
     },
@@ -175,8 +176,10 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandAASCTA2',
         Priority = 85,
         BuilderConditions = {
+            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.ANTIAIR * categories.MOBILE,
             '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
         },
         BuilderType = 'Land',
     },
@@ -184,7 +187,10 @@ BuilderGroup {
         BuilderName = 'SCTAAi T2 Experimental',
         PlatoonTemplate = 'SCTAExperimental',
         Priority = 130,
-        BuilderConditions = {},
+        BuilderConditions = {
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.75 } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.75}},
+        },
         BuilderType = 'Gate',
     },
     Builder {

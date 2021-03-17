@@ -63,6 +63,8 @@ PlatoonTemplate {
     Name = 'T1LandDFTankSCTA2Early',
     FactionSquads = {
         Arm = {
+            { 'armstump', 1, 2, 'attack', 'none' },
+            { 'armck', 1, 1, 'support', 'None' },
             { 'armstump', 1, 4, 'attack', 'none' },
         },
         Core = {
@@ -76,7 +78,6 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armstump', 1, 4, 'attack', 'none' },
-            { 'armck', 1, 1, 'support', 'None' },
             { 'armsam', 1, 2, 'attack', 'none' },
         },
         Core = {

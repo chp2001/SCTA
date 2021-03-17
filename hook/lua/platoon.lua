@@ -1603,13 +1603,12 @@ Platoon = Class(SCTAAIPlatoon) {
     end,
 
     SCTAReturnToBaseAI = function(self)
-       
         local aiBrain = self:GetBrain()
-
-        if not PlatoonExists(aiBrain, self) or not GetPlatoonPosition(self) then
+        
+        if not aiBrain:PlatoonExists(self) or not self:GetPlatoonPosition() then
             return
         end
-
+        
         local bestBase = false
         local bestBaseName = ""
         local bestDistSq = 999999999
@@ -1624,50 +1623,35 @@ Platoon = Class(SCTAAIPlatoon) {
                 bestDistSq = distSq    
             end
         end
-        
+
         if bestBase then
-            if self.MovementLayer == 'Air' then
-                self:Stop()
-                self:MoveToLocation(bestBase.Position, false)
-                --LOG('Air Unit Return to base provided position :'..repr(bestBase.Position))
-                while PlatoonExists(aiBrain, self) do
-                    local currentPlatPos = self:GetPlatoonPosition()
-                    --LOG('Air Unit Distance from platoon to bestBase position for Air units is'..VDist2Sq(currentPlatPos[1], currentPlatPos[3], bestBase.Position[1], bestBase.Position[3]))
-                    --LOG('Air Unit Platoon Position is :'..repr(currentPlatPos))
-                    local distSq = VDist2Sq(currentPlatPos[1], currentPlatPos[3], bestBase.Position[1], bestBase.Position[3])
-                    if distSq < 6400 then
-                        break
-                    end
-                    WaitTicks(15)
+            AIAttackUtils.GetMostRestrictiveLayer(self)
+            local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, self.MovementLayer, self:GetPlatoonPosition(), bestBase.Position, 200)
+            IssueClearCommands(self)
+            
+            if path then
+                local pathLength = table.getn(path)
+                for i=1, pathLength-1 do
+                    self:MoveToLocation(bestBase.Position, false)  
+                end 
+            end
+            self:MoveToLocation(bestBase.Position, false)  
+
+            local oldDistSq = 0
+            while aiBrain:PlatoonExists(self) do
+                WaitSeconds(10)
+                platPos = self:GetPlatoonPosition()
+                local distSq = VDist2Sq(platPos[1], platPos[3], bestBase.Position[1], bestBase.Position[3])
+                if distSq < 10 then
+                    self:PlatoonDisband()
+                    return
                 end
-            else
-                local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, self.MovementLayer, GetPlatoonPosition(self), bestBase.Position, 200)
-                IssueClearCommands(self)
-                if path then
-                    local pathLength = table.getn(path)
-                    for i=1, pathLength-1 do
-                        TAutils.GetDirectionInDegrees( path[i], false)
-                        local oldDistSq = 0
-                        while PlatoonExists(aiBrain, self) do
-                            platPos = GetPlatoonPosition(self)
-                            local distSq = VDist2Sq(platPos[1], platPos[3], bestBase.Position[1], bestBase.Position[3])
-                            if distSq < 400 then
-                                self:PlatoonDisband()
-                                return
-                            end
-                            -- if we haven't moved in 10 seconds... go back to attacking
-                            if (distSq - oldDistSq) < 25 then
-                                break
-                            end
-                            oldDistSq = distSq
-                            WaitTicks(20)
-                        end
-                    end
+                if (distSq - oldDistSq) < 5 then
+                    break
                 end
-                self:MoveToLocation(bestBase.Position, false)
+                oldDistSq = distSq      
             end
         end
-        -- return 
         self:PlatoonDisband()
     end,
 

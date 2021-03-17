@@ -5,6 +5,8 @@ local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local SBC = '/lua/editor/SorianBuildConditions.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/TAutils.lua').GetMOARadii()
+
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAILandFormers',
@@ -61,7 +63,7 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {900} },
+            { MIBC, 'GreaterThanGameTime', {600} },
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
          },
     },
@@ -107,6 +109,7 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = { 
+            { UCBC, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.COMMAND }},	
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.RAIDER} },
      },
     },

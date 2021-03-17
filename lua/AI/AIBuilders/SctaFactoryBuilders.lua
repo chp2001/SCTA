@@ -16,7 +16,8 @@ BuilderGroup {
         Priority = 100,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 20, categories.PLANT} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 16, categories.PLANT} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2,  categories.LAB} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -54,6 +55,8 @@ BuilderGroup {
             Construction = {
                 BuildClose = true,
                 BuildStructures = {
+                    'T1EnergyProduction',
+                    'T1EnergyProduction',
                     'T1AirFactory',
                 }
             }
@@ -66,8 +69,8 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 180 } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 20, categories.PLANT} }, -- Stop after 10 facs have been built. -- Stop after 10 facs have been built.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4,  categories.LAB * categories.LAND} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 16, categories.PLANT} }, -- Stop after 10 facs have been built. -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2,  categories.LAB} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -80,6 +83,7 @@ BuilderGroup {
                 BuildClose = true,
                 BuildStructures = {
                     'T1LandFactory2',
+                    'T1EnergyProduction',
                 }
             }
         }
@@ -91,10 +95,9 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  categories.PLANT } }, -- Don't build air fac immediately.
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  categories.PLANT * categories.AIR} }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4,  categories.FACTORY * categories.AIR} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  categories.LAB * categories.AIR} }, -- Stop after 5 facs have been built.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.9 } },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.9 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
         },
         BuilderType = 'Any',
@@ -106,6 +109,7 @@ BuilderGroup {
                 BuildClose = true,
                 BuildStructures = {
                     'T1AirFactory',
+                    'T1EnergyProduction2',
                 }
             }
         }
@@ -127,6 +131,7 @@ BuilderGroup {
             DesiresAssist = true,
             NumAssistees = 2,
             Construction = {
+                BuildClose = true,
                 BuildStructures = {
                     'T2LandFactory',
                 }
@@ -150,6 +155,7 @@ BuilderGroup {
             DesiresAssist = true,
             NumAssistees = 2,
             Construction = {
+                BuildClose = true,
                 BuildStructures = {
                     'T2LandFactory2',
                 }
@@ -162,9 +168,31 @@ BuilderGroup {
         Priority = 135,
         InstanceCount = 1,
         BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LAB * categories.AIR } }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.9 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildStructures = {
+                    'T2AirFactory',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T2AirFactory2',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco12',
+        Priority = 120,
+        InstanceCount = 1,
+        BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FUSION} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LAB * categories.AIR } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.9 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
         BuilderType = 'Any',
@@ -228,7 +256,30 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTAAI LandFac2 Emergency',
+        BuilderName = 'SCTAAI LandFac Emergency2',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 500,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {300} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.85, 0.5}},
+            { MIBC, 'LessThanGameTime', {1200} },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1LandFactory2',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI LandFacT2 Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTA12',
         Priority = 600,
         InstanceCount = 1,
@@ -250,7 +301,7 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTAAI LandFac2 Emergency2',
+        BuilderName = 'SCTAAI LandFacT2 Emergency2',
         PlatoonTemplate = 'EngineerBuilderSCTA12',
         Priority = 600,
         InstanceCount = 1,

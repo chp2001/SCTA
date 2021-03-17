@@ -28,7 +28,6 @@ BuilderGroup {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
         },
         BuilderType = 'Land',
     },
@@ -38,7 +37,6 @@ BuilderGroup {
         Priority = 95,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Land',
@@ -52,7 +50,6 @@ BuilderGroup {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
         },
         BuilderType = 'Land',
     },
@@ -63,7 +60,6 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
         },
         BuilderType = 'Land',
     },
@@ -72,7 +68,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandArtillerySCTA',
         Priority = 70,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
          },
         BuilderType = 'Land',
     },
@@ -125,7 +121,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT2 Artillery',
         PlatoonTemplate = 'T2LandRocketSCTA',
-        Priority = 100,
+        Priority = 85,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.LEVEL2 * categories.ROCKET,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, 
@@ -136,7 +132,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT2 Artillery2',
         PlatoonTemplate = 'T2LandMissileSCTA2',
-        Priority = 100,
+        Priority = 85,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.LEVEL2 * categories.ROCKET,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.

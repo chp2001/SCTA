@@ -9,7 +9,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-
 	    'STRUCTURE',
 	    'INTELLIGENCE',
 	    'RADAR',
@@ -17,7 +16,6 @@ UnitBlueprint {
 	    'ARM',
 	    'SORTINTEL',
         'TARGETING',
-        'DEVELOPMENT',
     },
  Display = {
   Abilities = {

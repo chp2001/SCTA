@@ -1,6 +1,5 @@
 local util = import('/lua/utilities.lua')
 local AIUtils = import('/lua/ai/AIUtilities.lua')
-local EffectUtil = import('/lua/EffectUtilities.lua')
 local Entity = import('/lua/sim/Entity.lua').Entity
 local EffectTemplate = import('/lua/EffectTemplates.lua')
 local Factions = import('/lua/factions.lua').GetFactions(true)
@@ -48,7 +47,6 @@ CreateTAGantBuildingEffects = function(builder, unitBeingBuilt, BuildEffectBones
 
 
 TAReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, ReclaimEffectsBag)
-    --EffectUtil.PlayReclaimEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
     WaitSeconds(1)
     local selfPosition = reclaimer:GetPosition()
     local targetPosition = reclaimed:GetPosition()
@@ -59,7 +57,6 @@ TAReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, ReclaimEffec
     end
 
 TACommanderReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, ReclaimEffectsBag)
-        --EffectUtil.PlayReclaimEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
         WaitSeconds(1)
         local selfPosition = reclaimer:GetPosition()
         local targetPosition = reclaimed:GetPosition()
@@ -72,7 +69,6 @@ TACommanderReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, Rec
 
 
 TAAirReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, ReclaimEffectsBag)
-    ---EffectUtil.PlayReclaimEffects( reclaimer, reclaimed, BuildEffectBones, EffectsBag )
     WaitSeconds(1)
     local selfPosition = reclaimer:GetPosition()
     local targetPosition = reclaimed:GetPosition()
@@ -83,8 +79,7 @@ TAAirReclaimEffects = function(reclaimer, reclaimed, BuildEffectBones, ReclaimEf
     end
 
 
-TACaptureEffect = function(capturer, captive, BuildEffectBones, CaptureEffectsBag)
-    ---EffectUtil.PlayCaptureEffects(capturer, captive, BuildEffectBones, EffectsBag)    
+TACaptureEffect = function(capturer, captive, BuildEffectBones, CaptureEffectsBag)  
     WaitSeconds(0.75)
     local selfPosition = capturer:GetPosition()
     local targetPosition = captive:GetPosition()
@@ -113,7 +108,7 @@ updateBuildRestrictions = function(self)
     if self.restrictions then
     local gtime = GetGameTimeSeconds()
     local HQCategory = categories.DEVELOPMENT
-        if self.FindHQType(aiBrain, HQCategory * categories.TECH3) or gtime > 1200 then
+        if self.FindHQType(aiBrain, HQCategory * categories.TECH3 or categories.GANTRY) or gtime > 1200 then
             self:RemoveBuildRestriction(categories.TECH2)
             self:RemoveBuildRestriction(categories.TECH3)
         elseif self.FindHQType(aiBrain, HQCategory * categories.TECH2) or  gtime > 600 then

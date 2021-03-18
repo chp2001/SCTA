@@ -162,27 +162,6 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTA Mex Assist Commander',
-        PlatoonTemplate = 'CommanderSCTAAssist',
-        Priority = 25,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'BuildingGreaterAtLocation', { 'LocationType', 0, categories.MASSEXTRACTION * categories.TECH2}},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 0.5 } },
-            { IBC, 'BrainNotLowPowerMode', {} },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            Assist = {
-                AssistUntilFinished = true,
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Structure',
-                BeingBuiltCategories = {'MASSEXTRACTION'},
-                Time = 60,
-            },
-        }
-    },
-    Builder {
         BuilderName = 'SCTA Commander Assist Gantry Construction',
         PlatoonTemplate = 'CommanderSCTAAssist',
         Priority = 125,
@@ -202,26 +181,6 @@ BuilderGroup {
             },
         },
         BuilderType = 'Any',
-    },
-Builder {
-    BuilderName = 'SCTA Commander Assist Gantry',
-    PlatoonTemplate = 'CommanderSCTAAssist',
-    Priority = 130,
-    InstanceCount = 1,
-    BuilderConditions = {
-        { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYGANTRY }},
-        { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.6, 0.5 } },
-        { IBC, 'BrainNotLowPowerMode', {} },
-    },
-    BuilderType = 'Any',
-    BuilderData = {
-        Assist = {
-            AssistLocation = 'LocationType',
-            AssisteeType = 'Factory',
-            BeingBuiltCategories = {'BUILTBYGANTRY'},
-            AssistUntilFinished = true,
-            },
-        }
     },
     Builder {
         BuilderName = 'SCTA CDR Assist Fusion',

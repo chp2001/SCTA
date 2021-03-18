@@ -28,7 +28,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
 	    'STRUCTURE',
 	    'INTELLIGENCE',
         'OMNI',
@@ -38,7 +37,6 @@ UnitBlueprint {
 	    'ARM',
 	    'SORTINTEL',
         'TARGETING',
-        'DEVELOPMENT',
         'CONSTRUCTIONSORTDOWN',
     },
     Defense = {

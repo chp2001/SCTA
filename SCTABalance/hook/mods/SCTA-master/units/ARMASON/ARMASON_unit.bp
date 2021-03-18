@@ -14,10 +14,8 @@ UnitBlueprint {
 	    'NAVAL',
         'OVERLAYSONAR',
         'ARM',
-
 	    'SORTINTEL',
         'TARGETING',
-        'DEVELOPMENT',
     },
 	Defense = {
         Health = 1000,

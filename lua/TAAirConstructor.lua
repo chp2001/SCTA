@@ -1,7 +1,6 @@
 local TAair = import('/mods/SCTA-master/lua/TAair.lua').TAair
 local Unit = import('/lua/sim/Unit.lua').Unit
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
-local EffectUtil = import('/lua/EffectUtilities.lua')
 
 TAAirConstructor = Class(TAair) {
     OnCreate = function(self)

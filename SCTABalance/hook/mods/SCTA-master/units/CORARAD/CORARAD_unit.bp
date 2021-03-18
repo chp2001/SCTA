@@ -15,10 +15,8 @@ UnitBlueprint {
         'OVERLAYRADAR',
     'CORE',
     'SHOWQUEUE',
-
 	'SORTINTEL',
 	'TARGETING',
-    'DEVELOPMENT',
     },
  Display = {
   Abilities = {

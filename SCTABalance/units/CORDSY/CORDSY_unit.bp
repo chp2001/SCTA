@@ -43,7 +43,6 @@ UnitBlueprint {
 	    'CORE',
         'DEVELOPMENT',
 	    'SORTCONSTRUCTION',
-
     },
     CollisionOffsetY = -1,
     CollisionOffsetZ = 0,

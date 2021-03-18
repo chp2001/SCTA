@@ -43,7 +43,6 @@ UnitBlueprint {
 	    'CORE',
         'DEVELOPMENT',
 	    'SORTCONSTRUCTION',
-
         'KBOT',
     },
     Defense = {

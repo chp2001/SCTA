@@ -1,4 +1,3 @@
-local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local DefaultProjectileFile = import('/lua/sim/defaultprojectiles.lua')
 local SinglePolyTrailProjectile = DefaultProjectileFile.SinglePolyTrailProjectile
 local NukeProjectile = DefaultProjectileFile.NukeProjectile

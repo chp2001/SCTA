@@ -1,7 +1,6 @@
 local Unit = import('/lua/sim/Unit.lua').Unit
 local explosion = import('/lua/defaultexplosions.lua')
 local scenarioUtils = import('/lua/sim/ScenarioUtilities.lua')
-local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local Game = import('/lua/game.lua')
 local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 local util = import('/lua/utilities.lua')

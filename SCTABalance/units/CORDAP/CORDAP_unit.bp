@@ -44,7 +44,6 @@ UnitBlueprint {
 	'CORE',
     'DEVELOPMENT',
 	'SORTCONSTRUCTION',
-
     },
     Defense = {
         ArmorType = 'Structure',

@@ -49,7 +49,6 @@ UnitBlueprint {
         'CORE',
         'STRATEGIC',
         'SORTCONSTRUCTION',
-
         'GANTRY', 
         'DEVELOPMENT',
     },

@@ -42,5 +42,7 @@ Intel = {
             Damage = 1500,
 	    DamageRadius = 6,
         },
+        [2] = {
+        },
     },
 }

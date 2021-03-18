@@ -59,11 +59,7 @@ ARMPNIX = Class(TAair) {
 	end,
 
 	Weapons = {
-		ARMADVBOMB = Class(TAweapon) {},
-		ARMAIR2AIRLASER = Class(TAweapon) {
-
-		},
-		
+		WEAPON = Class(TAweapon) {},
 	},
 }
 

@@ -52,11 +52,6 @@ ARMANNI = Class(TAStructure) {
 
 	Weapons = {
 		ARM_TOTAL_ANNIHILATOR = Class(TAPopLaser) {
-			OnWeaponFired = function(self)
-				TAPopLaser.OnWeaponFired(self)
-
-			end,
-
 			PlayFxWeaponUnpackSequence = function(self)
 
 				--MOVE case5 to y-axis <-7.30> SPEED <14.00>;

@@ -12,11 +12,6 @@ CORTHUD = Class(TAWalking) {
 
 	Weapons = {
 		CORE_THUD = Class(TAweapon) {
-
-			OnWeaponFired = function(self)
-				
-				TAweapon.OnWeaponFired(self)
-			end,
 		},
 	},
 }

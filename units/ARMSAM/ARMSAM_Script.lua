@@ -8,9 +8,7 @@ local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 ARMSAM = Class(TAunit) {
 	Weapons = {
-		ARMTRUCK_MISSILE = Class(TAweapon) {
-
-		},
+		ARMTRUCK_MISSILE = Class(TAweapon) {},
 	},
 }
 

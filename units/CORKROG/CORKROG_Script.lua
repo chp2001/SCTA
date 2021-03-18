@@ -10,11 +10,8 @@ local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 CORKROG = Class(TAWalking) {
 	
 	Weapons = {
-		CORKROG_FIRE = Class(TAweapon) {
+		WEAPON = Class(TAweapon) {
 		},
-		CORKROG_HEAD = Class(TAweapon) {
-		},
-		CORKROG_ROCKET = Class(TAweapon) {},
 	},
 }
 

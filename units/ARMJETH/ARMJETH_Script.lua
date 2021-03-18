@@ -23,12 +23,6 @@ ARMJETH = Class(TAWalking) {
 
 	Weapons = {
 		ARMKBOT_MISSILE = Class(TAweapon) {
-
-			OnWeaponFired = function(self)
-				
-				TAweapon.OnWeaponFired(self)
-			end,
-
 			PlayFxWeaponUnpackSequence = function(self)
 
 				--TURN luparm to z-axis <-73.47> SPEED <212.40>
@@ -46,13 +40,8 @@ ARMJETH = Class(TAWalking) {
 				--TURN ruparm to z-axis <75.58> SPEED <218.50>
 				self.unit.Spinners.ruparm:SetGoal(-75.5)
 				self.unit.Spinners.ruparm:SetSpeed(218.50)
-
 				--SLEEP <346>
-				WaitSeconds(0.35)
-
-				--SLEEP <354>
-				WaitSeconds(0.35)
-
+				WaitSeconds(0.5)
 				TAweapon.PlayFxWeaponUnpackSequence(self)
 			end,
 

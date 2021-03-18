@@ -10,7 +10,6 @@ CORAK = Class(TAWalking) {
 	
 	Weapons = {
 		CORE_LASER = Class(TAweapon) {
-
 		},
 	},
 }

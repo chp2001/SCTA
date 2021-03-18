@@ -105,7 +105,7 @@ UnitBlueprint {
         MaxAcceleration = 2,
         MaxBrake = 1,
         MaxSpeed = 2,
-        MotionType = 'RULEUMT_Land',
+        MotionType = 'RULEUMT_Amphibious',
         TurnRate = 40,
         MaxSteerForce = 10,
     },

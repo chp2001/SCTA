@@ -41,8 +41,7 @@ CORVAMP = Class(TAIntelAir) {
 	end,
 
 	Weapons = {
-		CORVTOL_ADVMISSILE = Class(TAweapon) {},
-		CORVTOL_ADVMISSILE2 = Class(TAweapon) {},
+		WEAPON = Class(TAweapon) {},
 	},
 }
 

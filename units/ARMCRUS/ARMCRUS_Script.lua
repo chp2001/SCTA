@@ -8,10 +8,8 @@ local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 ARMCRUS = Class(TASea) {
 	Weapons = {
-		ARM_CRUS = Class(TAweapon) {
-
+		WEAPON = Class(TAweapon) {
 		},
-		ARMDEPTHCHARGE = Class(TAweapon) {},
 	},
 }
 

@@ -152,6 +152,25 @@ BuilderGroup {
                 }
             }
         }
+    },    
+    Builder {
+        BuilderName = 'SCTAMissileTower Emergency',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco12',
+        Priority = 50,
+        InstanceCount = 15,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {480} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.75}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1AADefense',
+                }
+            }
+        }
     },
     Builder {
         BuilderName = 'SCTAGameEnder',

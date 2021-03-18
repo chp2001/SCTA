@@ -19,7 +19,6 @@ UnitBlueprint {
     'OVERLAYDIRECTFIRE',
     'CORE',
     'STRATEGIC',
-
     'SNIPEMODE',
     'LASER',
     },

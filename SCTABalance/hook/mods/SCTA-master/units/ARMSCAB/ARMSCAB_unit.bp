@@ -48,7 +48,6 @@ UnitBlueprint {
                 Land = 'Air',
                 Water = 'Air',
             },
-            Label = 'Turret01',
             MaxRadius = 45,
             FiringTolerance = 360,
             MuzzleSalvoDelay = 0, 

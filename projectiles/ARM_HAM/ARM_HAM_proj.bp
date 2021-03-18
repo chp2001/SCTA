@@ -51,12 +51,10 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARM_HAM',
     },
-
     Physics = {
         DestroyOnWater = true,
-        InitialSpeed = 14.6,
-        InitialSpeedRange = 3,
-        InitialSpeedReduceDistance = 30,
+        InitialSpeed = 34,
+        InitialSpeedReduceDistance = 200,
         LeadTarget = false,
         VelocityAlign = true,
     },

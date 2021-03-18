@@ -27,7 +27,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTA',
     Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND - SPECIAL - categories.LASER, 5, 20, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND - SPECIAL - categories.LASER - categories.ALLTERRAIN, 5, 20, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
 
@@ -35,7 +35,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTALaser',
     Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND * categories.LASER - SPECIAL, -- Type of units.
+        { GROUND * categories.LASER - SPECIAL - categories.ALLTERRAIN, -- Type of units.
           5, -- Min number of units.
           10, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
@@ -45,9 +45,9 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'StrikeForceSCTATerrain',
-    Plan = 'AttackSCTAForceAI', -- The platoon function to use.
+    Plan = 'AllTerrainAISCTA', -- The platoon function to use.
     GlobalSquads = {
-        { categories.ALLTERRAIN * categories.LAND - categories.ENGINEER - categories.SCOUT, -- Type of units.
+        { categories.ALLTERRAIN * categories.LAND - SPECIAL, -- Type of units.
           3, -- Min number of units.
           6, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
@@ -59,7 +59,7 @@ PlatoonTemplate {
     Name = 'LABSCTA',
     Plan = 'HuntAILABSCTA', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND * (categories.RAIDER + categories.ALLTERRAIN) - categories.ENGINEER - categories.SCOUT, -- Type of units.
+        { GROUND * categories.RAIDER - categories.ENGINEER - categories.SCOUT, -- Type of units.
           1, -- Min number of units.
           1, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
@@ -72,7 +72,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTA',
     Plan = 'AttackSCTAForceAI',
     GlobalSquads = {
-        { GROUND - SPECIAL, 5, 20, 'Attack', 'none' }
+        { GROUND - SPECIAL - categories.ALLTERRAIN, 5, 20, 'Attack', 'none' }
     },
 }
 

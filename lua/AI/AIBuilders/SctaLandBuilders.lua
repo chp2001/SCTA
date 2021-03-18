@@ -190,9 +190,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi T2 Experimental',
         PlatoonTemplate = 'SCTAExperimental',
-        Priority = 130,
+        Priority = 160,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.75 } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.EXPERIMENTAL * categories.MOBILE} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.75}},
         },
         BuilderType = 'Gate',

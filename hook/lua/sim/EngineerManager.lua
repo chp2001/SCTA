@@ -15,7 +15,7 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         self.LocationType = lType
 
         self.ConsumptionUnits = {
-            Engineers = { Category = categories.ENGINEER, Units = {}, UnitsList = {}, Count = 0, },
+            Engineers = { Category = categories.ENGINEER + categories.GANTRY, Units = {}, UnitsList = {}, Count = 0, },
             Fabricators = { Category = categories.MASSFABRICATION * categories.STRUCTURE, Units = {}, UnitsList = {}, Count = 0, },
             ---Lasers = { Category = categories.LASER, Units = {}, UnitsList = {}, Count = 0, },
             Intel = { Category = categories.STRUCTURE * ( categories.SONAR + categories.RADAR + categories.OMNI + categories.TACLOAK), Units = {}, UnitsList = {}, Count = 0, },
@@ -47,7 +47,7 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.DEFENSE)
 
         if pauseVal != true then
-            pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.FACTORY * (categories.TECH2 + categories.TECH3 + categories.GATE))
+            pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.FACTORY * (categories.TECH2 + categories.TECH3 + categories.GANTRY))
         end
 
         if pauseVal != true then

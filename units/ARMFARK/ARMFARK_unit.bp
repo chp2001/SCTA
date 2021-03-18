@@ -40,7 +40,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'KBOT',
-        'ALLTERRAIN',
         'LEVEL2',
         'TECH2',
         'ENGINEER',
@@ -97,10 +96,6 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 17,
 	ProductionPerSecondMass = 1,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 1,
-    },
     General = {
         BuildBones = {
             AimBone = 'pelvis',
@@ -140,7 +135,7 @@ UnitBlueprint {
         MaxAcceleration = 3,
         MaxBrake = 3,
         MaxSpeed = 3,
-        MotionType = 'RULEUMT_Amphibious',
+        MotionType = 'RULEUMT_Land',
         TurnRate = 166,
         MaxSteerForce = 10,
         StandUpright = true,

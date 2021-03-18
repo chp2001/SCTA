@@ -40,7 +40,6 @@ UnitBlueprint {
         'OVERLAYANTIAIR',
         'LAND',
         'CORE',
-        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -79,10 +78,6 @@ UnitBlueprint {
         BuildCostEnergy = 1444,
         BuildCostMass = 120,
         BuildTime = 3747,
-    },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 1,
     },
     General = {
         Category = 'Anti Air',

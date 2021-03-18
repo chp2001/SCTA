@@ -35,14 +35,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'SCOUT',
-    'INTELLIGENCE',
+	    'SCOUT',
+        'INTELLIGENCE',
         'OVERLAYRADAR',
-    'DIRECTFIRE',
+        'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'LAND',
         'CORE',
-        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -81,10 +80,7 @@ UnitBlueprint {
         BuildCostMass = 76,
         BuildTime = 3388,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 1,
-    },
+
     General = {
         Category = 'Utility',
         Classification = 'RULEUC_MilitaryVehicle',

@@ -40,7 +40,6 @@ UnitBlueprint {
         'ARM',
         'HOVER',
         'TANK',
-        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -74,10 +73,7 @@ UnitBlueprint {
         BuildCostMass = 272,
         BuildTime = 8115,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 1,
-    },
+
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',

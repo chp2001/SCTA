@@ -19,7 +19,7 @@ UnitBlueprint {
         'ARM',
         'KBOT',
         'VEHICLE',
-        'ALLTERRAIN',
+        'VTOL',
     },
     Defense = {
         Health = 1200,

@@ -16,7 +16,7 @@ UnitBlueprint {
         'LAND', 
 	    'CORE',
 	    'SORTCONSTRUCTION',
-	    'LEVEL2',
+
         'LAB',
         'KBOT',
     },
@@ -37,9 +37,9 @@ UnitBlueprint {
         BuildRate = 150,
         BuildTime = 18000,
         BuildableCategory = {
-            'KBOT MOBILE LEVEL1 CORE', 
-            'KBOT MOBILE LEVEL2 CORE',
-            'KBOT MOBILE LEVEL3 CORE',
+            'KBOT MOBILE TECH1 CORE', 
+            'KBOT MOBILE TECH2 CORE',
+            'KBOT MOBILE TECH3 CORE',
         },
     },
     LifeBarHeight = 0.22,

@@ -38,7 +38,7 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 4,
         BuilderConditions = {
-            { UCBC, 'BuildingGreaterAtLocation', { 'LocationType', 0, categories.MASSEXTRACTION * categories.LEVEL2}},
+            { UCBC, 'BuildingGreaterAtLocation', { 'LocationType', 0, categories.MASSEXTRACTION * categories.TECH3}},
             { IBC, 'BrainNotLowPowerMode', {} },
         },
         BuilderType = 'Any',

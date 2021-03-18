@@ -18,7 +18,7 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'ARM',
         'VEHICLE',
-        'LEVEL2',
+
         'SNIPEMODE',
     },
     Display = {

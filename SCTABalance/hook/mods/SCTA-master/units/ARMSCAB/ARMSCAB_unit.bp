@@ -12,7 +12,7 @@ UnitBlueprint {
         'BUILTBYT1KBOT',
         'BUILTBYT1AIR',
         'BUILTBYT1HOVER',
-	    'LEVEL2',
+
         'OVERLAYDEFENSE',
         'SORTSTRATEGIC',
         'NEEDMOBILEBUILD',

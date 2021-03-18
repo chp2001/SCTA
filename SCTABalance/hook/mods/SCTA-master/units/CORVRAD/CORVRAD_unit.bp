@@ -17,7 +17,7 @@ UnitBlueprint {
         'COUNTERINTELLIGENCE',
         'OVERLAYRADAR',
         'CORE',
-	    'LEVEL3',
+
         'OVERLAYOMNI',
         'OVERLAYCOUNTERINTEL',
         'VEHICLE',

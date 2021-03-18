@@ -33,7 +33,7 @@ UnitBlueprint {
         'OVERLAYANTIAIR',
         'CORE',
         'COUNTERINTELLIGENCE',
-	    'LEVEL2',
+
         'ALLTERRAIN',
     },
     Defense = {

@@ -18,7 +18,7 @@ UnitBlueprint {
         BuildCostEnergy = 3600,
         BuildRate = 125,
         BuildableCategory = {
-            'OCEAN LEVEL1 ARM',
+            'OCEAN TECH1 ARM',
             'armdsy',
         },
         InitialRallyX = 0,

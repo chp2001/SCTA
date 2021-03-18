@@ -40,7 +40,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH1',
         'PLANT',
-	    'LEVEL1',
 	    'AIR',
 	    'FACTORY',
         'RALLYPOINT',
@@ -86,7 +85,7 @@ UnitBlueprint {
         BuildTime = 7240,
 	BuildRate = 100,
         BuildableCategory = {
-            'VTOL LEVEL1 ARM',
+            'VTOL TECH1 ARM',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

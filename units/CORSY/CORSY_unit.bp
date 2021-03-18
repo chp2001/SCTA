@@ -40,7 +40,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-        'LEVEL1',
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -86,7 +85,7 @@ UnitBlueprint {
         BuildTime = 6000,
 	BuildRate = 100,
         BuildableCategory = {
-            'OCEAN LEVEL1 CORE',
+            'OCEAN TECH1 CORE',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

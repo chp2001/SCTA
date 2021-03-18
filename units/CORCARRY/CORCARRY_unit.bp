@@ -43,7 +43,7 @@ UnitBlueprint {
         'MOBILE',
         'NAVAL',
         'TECH2',
-        'LEVEL2',
+
         'AIRSTAGINGPLATFORM',
         'CARRIER',
         'VISIBLETORECON',
@@ -99,10 +99,10 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 200,
         MaintenanceConsumptionPerSecondEnergy = 35,
         BuildableCategory = {
-            'VTOL LEVEL1 AIR CORE ENGINEER',
-            'VTOL LEVEL1 CORE HIGHALTAIR', 
-            'VTOL LEVEL2 CORE',
-            'VTOL LEVEL3 CORE',
+            'VTOL TECH1 AIR CORE ENGINEER',
+            'VTOL TECH1 CORE HIGHALTAIR', 
+            'VTOL TECH2 CORE',
+            'VTOL TECH3 CORE',
         },
     },
     Footprint = {

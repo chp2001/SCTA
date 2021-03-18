@@ -34,7 +34,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-        'LEVEL3',
+
 	    'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -82,7 +82,7 @@ UnitBlueprint {
     BuildRate = 200,
     BuildableCategory = {
         'SEAPLA ARM',
-        'VTOL LEVEL3 ARM',
+        'VTOL TECH3 ARM',
     },
 	InitialRallyX = 1,
 	InitialRallyZ = 7,

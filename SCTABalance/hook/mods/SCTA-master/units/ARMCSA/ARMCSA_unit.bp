@@ -9,7 +9,7 @@ UnitBlueprint {
         'AIR',
         'SELECTION', 
         'ARM',
-        'LEVEL3',
+
         'TECH3',
         'ENGINEER',
         'REPAIR',

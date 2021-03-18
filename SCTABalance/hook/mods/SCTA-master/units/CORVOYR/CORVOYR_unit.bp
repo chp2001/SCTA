@@ -14,7 +14,7 @@ UnitBlueprint {
 	    'LAND',
         'CORE',
         'NEEDMOBILEBUILD',
-	    'LEVEL3',
+
         'OVERLAYRADAR',
         'OVERLAYCOUNTERINTEL',
         'COUNTERINTELLIGENCE',

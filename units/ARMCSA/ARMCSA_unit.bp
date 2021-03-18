@@ -71,7 +71,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH3',
-        'LEVEL3',
+
         'ENGINEER',
         'REPAIR',
         'RECLAIM',

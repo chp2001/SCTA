@@ -15,7 +15,7 @@ UnitBlueprint {
         'ARM',
         'SUBMERSIBLE',
         'OCEAN',
-	    'LEVEL3',
+
     },
     Economy = {
         BuildCostEnergy = 2100,

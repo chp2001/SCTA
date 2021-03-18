@@ -48,7 +48,7 @@ UnitBlueprint {
         'ARM',
         'STRATEGIC',
         'SORTCONSTRUCTION',
-        'LEVEL3',
+
         'GANTRY', 
         'DEVELOPMENT',
     },

@@ -42,7 +42,6 @@ UnitBlueprint {
         'TECH1',
         'NAVAL',
         'ARM',
-        'LEVEL1',
         'OCEANENGINEER',
         'ENGINEER',
         'REPAIR',

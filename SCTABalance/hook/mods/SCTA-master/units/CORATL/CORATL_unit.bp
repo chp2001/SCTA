@@ -17,7 +17,7 @@ UnitBlueprint {
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',
         'CORE',
-        'LEVEL2',
+
         'SNIPEMODE',
     },
     Display = {

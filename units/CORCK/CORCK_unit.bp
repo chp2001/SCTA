@@ -45,7 +45,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'KBOT',
-        'LEVEL1',
         'TECH1',
         'ENGINEER',
         'REPAIR',

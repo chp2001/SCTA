@@ -31,7 +31,6 @@ UnitBlueprint {
         'SELECTABLE',
         'TECH1',
         'OCEAN',
-	    'LEVEL1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',

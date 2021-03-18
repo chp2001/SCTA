@@ -31,7 +31,6 @@ UnitBlueprint {
         'SELECTABLE',
         'TECH1',
         'KBOT',
-        'LEVEL1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',

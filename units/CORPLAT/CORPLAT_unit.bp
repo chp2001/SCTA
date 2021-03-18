@@ -33,7 +33,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'LEVEL3',
+
         'PLATFORM',
         'TECH2',
 	    'FACTORY',
@@ -82,7 +82,7 @@ UnitBlueprint {
     BuildRate = 200,
     BuildableCategory = {
         'SEAPLA CORE',
-        'VTOL LEVEL3 CORE',
+        'VTOL TECH3 CORE',
     },
 	InitialRallyX = 1,
 	InitialRallyZ = 7,

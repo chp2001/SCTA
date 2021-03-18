@@ -36,7 +36,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-        'LEVEL3',
+
 	'STRUCTURE',
 	'INTELLIGENCE',
 	'RADAR',

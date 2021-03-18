@@ -33,7 +33,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'LEVEL2',
+
         'LAND', 
         'TECH2',
 	    'FACTORY',
@@ -78,7 +78,7 @@ UnitBlueprint {
         BuildTime = 14950,
 	BuildRate = 200,
         BuildableCategory = {
-            'VEHICLE MOBILE LEVEL2 ARM',
+            'VEHICLE MOBILE TECH2 ARM',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

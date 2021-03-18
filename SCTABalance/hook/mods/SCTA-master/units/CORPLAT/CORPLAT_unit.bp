@@ -21,7 +21,7 @@ UnitBlueprint {
         'CORE',
         'AIR',
         'SORTCONSTRUCTION',
-	    'LEVEL3',
+
         'PLATFORM',
     },
     Defense = {
@@ -42,7 +42,7 @@ UnitBlueprint {
         BuildTime = 64000,
         BuildRate = 240,
         BuildableCategory = {
-            'VTOL LEVEL3 CORE',
+            'VTOL TECH3 CORE',
             'corch',
         },
     },

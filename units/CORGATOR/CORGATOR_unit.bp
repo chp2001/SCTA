@@ -31,7 +31,6 @@ UnitBlueprint {
         'SELECTABLE',
         'TECH1',
         'VEHICLE',
-        'LEVEL1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',

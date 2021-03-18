@@ -16,7 +16,7 @@ UnitBlueprint {
         'LAND', 
 	    'CORE',
 	    'SORTCONSTRUCTION',
-	    'LEVEL2',
+
         'LAB',
         'VEHICLE',
     },
@@ -37,9 +37,9 @@ UnitBlueprint {
         BuildRate = 180,
         BuildTime = 15000,
         BuildableCategory = {
-            'VEHICLE MOBILE LEVEL1 CORE', 
-            'VEHICLE MOBILE LEVEL2 CORE',
-            'VEHICLE MOBILE LEVEL3 CORE',
+            'VEHICLE MOBILE TECH1 CORE', 
+            'VEHICLE MOBILE TECH2 CORE',
+            'VEHICLE MOBILE TECH3 CORE',
         },
     },
     LifeBarHeight = 0.22,

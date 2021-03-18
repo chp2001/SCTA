@@ -44,7 +44,7 @@ UnitBlueprint {
 	'ARM',
     'DEVELOPMENT',
 	'SORTCONSTRUCTION',
-	'LEVEL3',
+
     },
     Defense = {
         ArmorType = 'Structure',
@@ -84,9 +84,9 @@ UnitBlueprint {
         BuildTime = 90000,
     BuildRate = 360,
     BuildableCategory = {
-        'VTOL LEVEL3 ARM',
-        'VTOL LEVEL2 ARM',
-        'VTOL LEVEL1 ARM', 
+        'VTOL TECH3 ARM',
+        'VTOL TECH2 ARM',
+        'VTOL TECH1 ARM', 
         'ALLTERRAIN LAND ENGINEER ARM',
         },
 	InitialRallyX = 0,

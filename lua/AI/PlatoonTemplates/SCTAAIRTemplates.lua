@@ -12,7 +12,7 @@ PlatoonTemplate {
     Name = 'AirHuntAISCTA',
     Plan = 'HuntAirAISCTA',
     GlobalSquads = {
-        { SKY * (categories.BOMBER + categories.ANTIAIR) * categories.LEVEL1, 2, 4, 'attack', 'none' },
+        { SKY * (categories.BOMBER + categories.ANTIAIR) * categories.TECH1, 2, 4, 'attack', 'none' },
     }
 }
 
@@ -20,7 +20,7 @@ PlatoonTemplate {
     Name = 'IntieAISCTA',
     Plan = 'InterceptorAISCTA',
     GlobalSquads = {
-        { SKY * categories.ANTIAIR * (categories.LEVEL1 + categories.LEVEL3) - categories.BOMBER - categories.TRANSPORTFOCUS, 2, 100, 'attack', 'none' },
+        { SKY * categories.ANTIAIR * (categories.TECH1 + categories.TECH3) - categories.BOMBER - categories.TRANSPORTFOCUS, 2, 100, 'attack', 'none' },
     }
 }
 
@@ -28,7 +28,7 @@ PlatoonTemplate {
     Name = 'StealthFightersAISCTA',
     Plan = 'StealthIntieAISCTA',
     GlobalSquads = {
-        { SKY * categories.ANTIAIR * categories.LEVEL2 - categories.BOMBER, 2, 100, 'attack', 'none' },
+        { SKY * categories.ANTIAIR * categories.TECH2 - categories.BOMBER, 2, 100, 'attack', 'none' },
     }
 }
 
@@ -36,7 +36,7 @@ PlatoonTemplate {
     Name = 'SCTAT2AirScouting',
     Plan = 'ScoutingAISorian',
     GlobalSquads = {
-        { SKY * categories.SCOUT * (categories.LEVEL1 + categories.LEVEL2), 1, 1, 'scout', 'None' },
+        { SKY * categories.SCOUT * (categories.TECH1 + categories.TECH2), 1, 1, 'scout', 'None' },
     }
 }
 
@@ -44,7 +44,7 @@ PlatoonTemplate {
     Name = 'T1AirScoutFormSCTA',
     Plan = 'ScoutingAISorian',
     GlobalSquads = {
-        { SKY * categories.SCOUT * categories.LEVEL1, 1, 1, 'scout', 'None' },
+        { SKY * categories.SCOUT * categories.TECH1, 1, 1, 'scout', 'None' },
     }
 }
 

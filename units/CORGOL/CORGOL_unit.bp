@@ -29,7 +29,7 @@ UnitBlueprint {
     BuildIconSortPriority = 11,
     Categories = {
         'SELECTABLE',
-        'LEVEL2',
+
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',

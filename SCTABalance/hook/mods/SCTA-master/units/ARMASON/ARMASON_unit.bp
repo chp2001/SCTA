@@ -14,7 +14,7 @@ UnitBlueprint {
 	    'NAVAL',
         'OVERLAYSONAR',
         'ARM',
-	    'LEVEL2',
+
 	    'SORTINTEL',
         'TARGETING',
         'DEVELOPMENT',

@@ -11,7 +11,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'ARM',
         'KBOT',
-        'LEVEL3',
+
         'SNIPER',
         'TACLOAK',
     },

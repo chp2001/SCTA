@@ -15,7 +15,7 @@ UnitBlueprint {
         BuildCostEnergy = 3600,
         BuildRate = 125,
         BuildableCategory = {
-            'OCEAN LEVEL1 CORE',
+            'OCEAN TECH1 CORE',
             'cordsy',
         },
         InitialRallyX = 0,

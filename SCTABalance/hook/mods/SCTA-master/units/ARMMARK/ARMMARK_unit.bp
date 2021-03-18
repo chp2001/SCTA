@@ -15,7 +15,7 @@ UnitBlueprint {
         'MOBILE',
 	    'LAND',
         'ARM',
-	    'LEVEL3',
+
         'RADAR',
         'OVERLAYRADAR',
         'OVERLAYCOUNTERINTEL',

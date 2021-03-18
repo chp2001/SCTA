@@ -23,7 +23,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2BuildEngineerSCTA',
         Priority = 110, -- Top factory priority
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.LEVEL2 - categories.FIELDENGINEER } }, -- Build engies until we have 4 of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.TECH2 - categories.FIELDENGINEER } }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'Land',
     },
@@ -32,7 +32,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1BuildEngineerAirSCTA',
         Priority = 105,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENGINEER * categories.AIR * categories.LEVEL1} }, -- Build engies until we have 4 of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENGINEER * categories.AIR * categories.TECH1} }, -- Build engies until we have 4 of them.
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}}, 
         },
         BuilderType = 'Air',
@@ -43,7 +43,7 @@ BuilderGroup {
         Priority = 120,
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FUSION} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.AIR * categories.LEVEL2} }, -- Build engies until we have 4 of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.AIR * categories.TECH2} }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'Air',
     }, 
@@ -61,7 +61,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1BuildEngineerSCTA',
         Priority = 100, -- Top factory priority
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.ENGINEER * categories.LAND * categories.LEVEL1 - categories.COMMAND } }, -- Don't make tanks if we have lots of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.ENGINEER * categories.LAND * categories.TECH1 - categories.COMMAND } }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'Land',
     },
@@ -70,7 +70,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2BuildFieldEngineerSCTA',
         Priority = 95, -- Top factory priority
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FIELDENGINEER * categories.LEVEL2} }, -- Build engies until we have 4 of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FIELDENGINEER * categories.TECH2} }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'All',
     },
@@ -79,7 +79,7 @@ BuilderGroup {
         PlatoonTemplate = 'T3BuildEngineerSCTA',
         Priority = 120, -- Top factory priority
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.LEVEL3 - categories.FIELDENGINEER } }, -- Build engies until we have 4 of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.TECH3 - categories.FIELDENGINEER } }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'All',
     },

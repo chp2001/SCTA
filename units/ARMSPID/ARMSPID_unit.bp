@@ -17,7 +17,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'VEHICLE',
         'COUNTERINTELLIGENCE',
-        'LEVEL2', 
+ 
         'TECH2',
         'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',

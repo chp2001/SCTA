@@ -36,7 +36,7 @@ UnitBlueprint {
         'TECH2',
         'NAVAL',
 	    'ARM',
-        'LEVEL2',
+
 	    'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -81,7 +81,7 @@ UnitBlueprint {
 	InitialRallyX = 0,
 	InitialRallyZ = 10,
         BuildableCategory = {
-            'OCEAN LEVEL2 ARM',
+            'OCEAN TECH2 ARM',
         },
         StorageMass = 200,
         StorageEnergy = 200,

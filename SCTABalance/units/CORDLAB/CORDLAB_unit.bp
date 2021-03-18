@@ -43,7 +43,7 @@ UnitBlueprint {
 	'CORE',
     'DEVELOPMENT',
 	'SORTCONSTRUCTION',
-	'LEVEL2',
+
     },
     Defense = {
         ArmorType = 'Structure',
@@ -88,8 +88,8 @@ UnitBlueprint {
     DifferentialUpgradeCostCalculation = true,
         BuildableCategory = {
             'coradlab',
-            'KBOT LEVEL2 CORE',
-            'KBOT LEVEL1 CORE',
+            'KBOT TECH2 CORE',
+            'KBOT TECH1 CORE',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

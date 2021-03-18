@@ -24,7 +24,7 @@ UnitBlueprint {
         'OVERLAYMISC',
         'ARM',
         'OCEAN',
-	    'LEVEL3',
+
         'GATE',
     },
     Defense = {

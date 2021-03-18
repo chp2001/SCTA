@@ -34,7 +34,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-        'LEVEL2',
+
 	    'STRUCTURE',
 	    'INTELLIGENCE',
 	    'SONAR',

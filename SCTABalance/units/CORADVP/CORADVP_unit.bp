@@ -43,7 +43,7 @@ UnitBlueprint {
 	    'CORE',
         'DEVELOPMENT',
 	    'SORTCONSTRUCTION',
-	    'LEVEL3',
+
         'VEHICLE',
     },
     Defense = {
@@ -83,9 +83,9 @@ UnitBlueprint {
         BuildRate = 360,
         DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
-        'VEHICLE MOBILE LEVEL1 CORE', 
-        'VEHICLE MOBILE LEVEL2 CORE',
-        'VEHICLE MOBILE LEVEL3 CORE',
+        'VEHICLE MOBILE TECH1 CORE', 
+        'VEHICLE MOBILE TECH2 CORE',
+        'VEHICLE MOBILE TECH3 CORE',
         'ALLTERRAIN LAND ENGINEER CORE',
     },
 	InitialRallyX = 0,

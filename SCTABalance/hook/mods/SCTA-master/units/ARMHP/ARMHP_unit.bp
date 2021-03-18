@@ -16,7 +16,7 @@ UnitBlueprint {
         'LAND', 
 	    'ARM',
 	    'SORTCONSTRUCTION',
-	    'LEVEL3',
+
         'PLATFORM',
     },
     Defense = {
@@ -36,7 +36,7 @@ UnitBlueprint {
         BuildRate = 360,
         BuildTime = 150000,
         BuildableCategory = {
-            'HOVER LEVEL3 ARM',
+            'HOVER TECH3 ARM',
             'armcroc',
         },
     },

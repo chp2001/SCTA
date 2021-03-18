@@ -4,7 +4,7 @@ UnitBlueprint {
     'SELECTABLE',
     'TECH2',
     'CORE',
-    'LEVEL2',
+
     'ENGINEER',
     'REPAIR',
     'RECLAIM',

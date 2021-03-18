@@ -4,7 +4,6 @@ UnitBlueprint {
         'SELECTABLE',
         'ARM',
         'OCEAN',
-	    'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',

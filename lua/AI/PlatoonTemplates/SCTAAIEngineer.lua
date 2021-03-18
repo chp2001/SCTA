@@ -20,7 +20,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTA123',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
-        { categories.ENGINEER * (categories.LEVEL1 + categories.LEVEL2 + categories.LEVEL3) - WEIRD, 1, 1, 'support', 'None' }
+        { categories.ENGINEER * (categories.TECH1 + categories.TECH2 + categories.TECH3) - WEIRD, 1, 1, 'support', 'None' }
     },
 }
 
@@ -29,7 +29,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTA23',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
-        { categories.ENGINEER * (categories.LEVEL2 + categories.LEVEL3) - WEIRD, 1, 1, 'support', 'None' }
+        { categories.ENGINEER * (categories.TECH2 + categories.TECH3) - WEIRD, 1, 1, 'support', 'None' }
     },
 }
 
@@ -37,7 +37,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTA12',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
-        { categories.ENGINEER * (categories.LEVEL1 + categories.LEVEL2) - WEIRD, 1, 1, 'support', 'None' }
+        { categories.ENGINEER * (categories.TECH1 + categories.TECH2) - WEIRD, 1, 1, 'support', 'None' }
     },
 }
 
@@ -45,7 +45,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTAEco12',
     Plan = 'EngineerBuildAISCTAAir',
     GlobalSquads = {
-        { categories.ENGINEER * categories.AIR * (categories.LEVEL1 + categories.LEVEL2), 1, 1, 'support', 'None' }
+        { categories.ENGINEER * categories.AIR * (categories.TECH1 + categories.TECH2), 1, 1, 'support', 'None' }
     },
 }
 
@@ -53,7 +53,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTA',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
-        { categories.ENGINEER * categories.LEVEL1 - WEIRD, 1, 1, 'support', 'None' }
+        { categories.ENGINEER * categories.TECH1 - WEIRD, 1, 1, 'support', 'None' }
     },
 }
 
@@ -61,7 +61,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTANaval',
     Plan = 'EngineerBuildAISCTANaval',
     GlobalSquads = {
-        { categories.OCEANENGINEER * categories.LEVEL1, 1, 1, 'support', 'None' }
+        { categories.OCEANENGINEER * categories.TECH1, 1, 1, 'support', 'None' }
     },
 }
 
@@ -70,7 +70,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTAEco',
     Plan = 'EngineerBuildAISCTAAir',
     GlobalSquads = {
-        { categories.ENGINEER * categories.LEVEL1 * categories.AIR, 1, 1, 'support', 'None' }
+        { categories.ENGINEER * categories.TECH1 * categories.AIR, 1, 1, 'support', 'None' }
     },
 }
 
@@ -98,7 +98,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTA2',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
-        { categories.ENGINEER * categories.LEVEL2, 1, 1, 'support', 'None' }
+        { categories.ENGINEER * categories.TECH2, 1, 1, 'support', 'None' }
     },
 }
 
@@ -106,7 +106,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTA3',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
-        { categories.ENGINEER * categories.LEVEL3, 1, 1, 'support', 'None' }
+        { categories.ENGINEER * categories.TECH3, 1, 1, 'support', 'None' }
     },
 }
 

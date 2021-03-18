@@ -30,7 +30,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'HOVER',
-        'LEVEL3',
+
         'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',

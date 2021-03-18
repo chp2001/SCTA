@@ -47,9 +47,11 @@ AIBrain = Class(SCTAAIBrainClass) {
         table.insert(assistFacs, factory[1])
         local facs = {T1 = 0, T2 = 0, T3 = 0}
         for _, v in assistFacs do
-            if EntityCategoryContains(categories.LEVEL3 * categories.FACTORY, v) then
+            if EntityCategoryContains(categories.GANTRY, v) then
+                facs.T3 = facs.T3 + 2
+            elseif EntityCategoryContains(categories.TECH3 * categories.FACTORY, v) then
                 facs.T3 = facs.T3 + 1
-            elseif EntityCategoryContains(categories.LEVEL2 * categories.FACTORY, v) then
+            elseif EntityCategoryContains(categories.TECH2 * categories.FACTORY, v) then
                 facs.T2 = facs.T2 + 1
             elseif EntityCategoryContains(categories.FACTORY, v) then
                 facs.T1 = facs.T1 + 1

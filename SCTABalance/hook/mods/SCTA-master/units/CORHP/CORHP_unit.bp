@@ -6,7 +6,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'LEVEL3',
+
         'TECH3',
 	    'FACTORY',
         'RALLYPOINT',
@@ -38,7 +38,7 @@ UnitBlueprint {
         BuildRate = 360,
         BuildTime = 150000,
         BuildableCategory = {
-            'HOVER LEVEL3 CORE',
+            'HOVER TECH3 CORE',
             'coramph',
         },
     },

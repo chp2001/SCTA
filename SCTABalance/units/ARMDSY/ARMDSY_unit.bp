@@ -43,7 +43,7 @@ UnitBlueprint {
 	'ARM',
     'DEVELOPMENT',
 	'SORTCONSTRUCTION',
-	'LEVEL2',
+
     },
     CollisionOffsetY = -1,
     CollisionOffsetZ = 0,
@@ -83,9 +83,9 @@ UnitBlueprint {
         DifferentialUpgradeCostCalculation = true,
 	BuildRate = 175,
     BuildableCategory = {
-        'OCEAN LEVEL1 ARM',
-        'OCEAN LEVEL2 ARM',
-        'ALLTERRAIN LEVEL2 ENGINEER ARM',
+        'OCEAN TECH1 ARM',
+        'OCEAN TECH2 ARM',
+        'ALLTERRAIN TECH2 ENGINEER ARM',
         'armadsy',
     },
 	InitialRallyX = 0,

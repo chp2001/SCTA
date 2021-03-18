@@ -65,13 +65,13 @@ end
 			if bp.Weapon and bp.Categories then
 				-- #9 CB Comment: we don't need to assign to 10 then reassign to 1-4. Only assign to 10 if there's not a match.
 				local mul
-				if table.find(bp.Categories, 'LEVEL1') then
+				if table.find(bp.Categories, 'TECH1') then
 					mul = 1
-				elseif table.find(bp.Categories, 'LEVEL2') then
+				elseif table.find(bp.Categories, 'TECH2') then
 					mul = 2
-				elseif table.find(bp.Categories, 'LEVEL3') then
+				elseif table.find(bp.Categories, 'TECH3') then
 					mul = 3
-				elseif table.find(bp.Categories, 'BUILTBYGANTRY') then
+				elseif table.find(bp.Categories, 'EXPERIMENTAL') then
 					mul = 4
 				else
 					mul = 10

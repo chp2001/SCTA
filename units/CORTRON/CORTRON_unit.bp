@@ -28,7 +28,7 @@ UnitBlueprint {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
         'BUILTBYT2VEHICLE',
-        'LEVEL3',
+
         'TECH2',
         'SELECTABLE',
         'DRAGBUILD',

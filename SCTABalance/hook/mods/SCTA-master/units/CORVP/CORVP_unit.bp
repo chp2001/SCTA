@@ -20,7 +20,7 @@ UnitBlueprint {
         BuildCostMass = 600, 
         BuildTime = 7600,
         BuildableCategory = {
-            'VEHICLE MOBILE LEVEL1 CORE',
+            'VEHICLE MOBILE TECH1 CORE',
             'cordvp', 
         },
     },

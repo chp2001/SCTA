@@ -32,7 +32,6 @@ UnitBlueprint {
         'TECH1',
         'CORE',
         'OCEAN',
-	    'LEVEL1',
 	    'ANTISUB',
         'VISIBLETORECON',
         'RECLAIMABLE',

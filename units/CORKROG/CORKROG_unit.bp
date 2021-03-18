@@ -38,7 +38,7 @@ UnitBlueprint {
     Categories = {
         'BUILTBYGANTRY',
         'SELECTABLE',
-        'TECH3',
+        'EXPERIMENTAL',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',

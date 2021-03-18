@@ -95,7 +95,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTALaser2Tower',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
@@ -120,7 +120,7 @@ BuilderGroup {
         Priority = 80,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.DEFENSE * categories.TECH3 - categories.MOBILE} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.DEFENSE * categories.TECH3 - categories.MOBILE - categories.ANTIAIR} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.4, 0.25}}, 
         },
         BuilderType = 'Any',
@@ -135,10 +135,30 @@ BuilderGroup {
         }
     },
     Builder {
+        BuilderName = 'SCTAANTIAIR3Tower',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        Priority = 80,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.ANTIAIR * categories.TECH2 - categories.MOBILE} }, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.4, 0.25}}, 
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T3AADefense',
+                }
+            }
+        }
+    },
+    Builder {
         BuilderName = 'SCTAMissileTower Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 50,
-        InstanceCount = 15,
+        Priority = 25,
+        InstanceCount = 10,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {480} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.75}},
@@ -154,10 +174,10 @@ BuilderGroup {
         }
     },    
     Builder {
-        BuilderName = 'SCTAMissileTower Emergency',
+        BuilderName = 'SCTAMissileTower Air Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTAEco12',
-        Priority = 50,
-        InstanceCount = 15,
+        Priority = 25,
+        InstanceCount = 10,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {480} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.75}},

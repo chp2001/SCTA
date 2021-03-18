@@ -189,8 +189,28 @@ BuilderGroup {
         }
     },
     Builder {
+        BuilderName = 'SCTAAI T2Engineer 250 Mex',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        Priority = 100,
+        InstanceCount = 1, -- The max number concurrent instances of this builder.
+        BuilderConditions = {
+            { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 250, -500, 100, 0, 'AntiSurface', 1 }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+                BuildStructures = {
+                    'T2Resource',
+                }
+            }
+        }
+    },
+    Builder {
         BuilderName = 'SCTAAI T1Engineer Hydro',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 170,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = { 

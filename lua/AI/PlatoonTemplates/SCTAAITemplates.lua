@@ -11,7 +11,7 @@ PlatoonTemplate {
     Name = 'AntiAirSCTA',
     Plan = 'SCTAAntiAirAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND * categories.ANTIAIR, 5, 10, 'attack', 'none' },
+        { GROUND * categories.ANTIAIR, 2, 10, 'attack', 'none' },
     },
 }
 
@@ -27,7 +27,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTA',
     Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND - SPECIAL - categories.LASER - categories.ALLTERRAIN, 5, 20, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND - SPECIAL - categories.LASER - categories.ALLTERRAIN, 2, 10, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
 
@@ -36,7 +36,7 @@ PlatoonTemplate {
     Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
         { GROUND * categories.LASER - SPECIAL - categories.ALLTERRAIN, -- Type of units.
-          5, -- Min number of units.
+          2, -- Min number of units.
           10, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
           'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
@@ -48,8 +48,8 @@ PlatoonTemplate {
     Plan = 'AllTerrainAISCTA', -- The platoon function to use.
     GlobalSquads = {
         { categories.ALLTERRAIN * categories.LAND - SPECIAL, -- Type of units.
-          3, -- Min number of units.
-          6, -- Max number of units.
+          2, -- Min number of units.
+          10, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
           'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
@@ -72,7 +72,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTA',
     Plan = 'AttackSCTAForceAI',
     GlobalSquads = {
-        { GROUND - SPECIAL - categories.ALLTERRAIN, 5, 20, 'Attack', 'none' }
+        { GROUND - SPECIAL - categories.ALLTERRAIN, 2, 20, 'Attack', 'none' }
     },
 }
 
@@ -88,7 +88,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTAEarly',
     Plan = 'SCTAStrikeForceAIEarly',
     GlobalSquads = {
-        { GROUND * categories.LEVEL1 - SPECIAL, 5, 20, 'Attack', 'none' }
+        { GROUND * categories.LEVEL1 - SPECIAL, 2, 10, 'Attack', 'none' }
     },
 }
 
@@ -96,7 +96,7 @@ PlatoonTemplate {
     Name = 'LandRocketAttackSCTA',
     Plan = 'AttackSCTAForceAI',
     GlobalSquads = {
-        { GROUND * (categories.ROCKET + categories.ARTILLERY) - SPECIAL, 5, 20, 'Attack', 'none' }
+        { GROUND * (categories.ROCKET + categories.ARTILLERY) - SPECIAL, 2, 20, 'Attack', 'none' }
     },
 }
 

@@ -88,6 +88,7 @@ UnitBlueprint {
         'ARM',
         'SNIPEMODE',
         'TACLOAK',
+        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Commander',

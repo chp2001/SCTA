@@ -42,7 +42,7 @@ UnitBlueprint {
         'LAND',
         'CORE',
         'AMPHIBIOUS',
-        'ALLTERRAIN',
+        'HOVER',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -76,10 +76,6 @@ UnitBlueprint {
         BuildCostEnergy = 2468,
         BuildCostMass = 255,
         BuildTime = 5982,
-    },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 1,
     },
     General = {
         Category = 'Direct Fire',

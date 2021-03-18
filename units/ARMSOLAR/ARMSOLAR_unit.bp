@@ -33,7 +33,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-        'LEVEL1',
 	    'STRUCTURE',
         'ECONOMIC',
         'SORTECONOMY',

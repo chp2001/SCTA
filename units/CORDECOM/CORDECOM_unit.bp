@@ -55,7 +55,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'LEVEL2',
+
         'VISIBLETORECON',
         'RECLAIMABLE',
         'PATROLHELPER',

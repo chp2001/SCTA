@@ -6,7 +6,7 @@ UnitBlueprint {
         'TECH3',
         'CORE',
         'OCEAN',
-        'LEVEL3',
+
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',

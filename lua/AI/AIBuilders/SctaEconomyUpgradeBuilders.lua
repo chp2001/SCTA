@@ -36,7 +36,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Mexupgrade1' }},
             { MIBC, 'GreaterThanGameTime', { 360 } },
-            { TAutils, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 1, categories.MASSEXTRACTION * categories.LEVEL1 } },  
+            { TAutils, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 1, categories.MASSEXTRACTION * categories.TECH1 } },  
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 }},
             { IBC, 'BrainNotLowPowerMode', {} },
         },
@@ -55,8 +55,7 @@ BuilderGroup {
         Priority = 100,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 1200 } },
-            ---{ UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.MASSEXTRACTION * categories.LEVEL2} },
-            { TAutils, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.LEVEL1 } },  
+            { TAutils, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.TECH1 } },  
             { EBC, 'GreaterThanEconIncome',  { 6, 70}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.8, 0.75 }},
             { IBC, 'BrainNotLowPowerMode', {} },
@@ -78,27 +77,12 @@ BuilderGroup {
             { MIBC, 'GreaterThanGameTime', {1200} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TARGETING} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.5 }},
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.RADAR * categories.STRUCTURE * categories.LEVEL2} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.RADAR * categories.STRUCTURE * categories.TECH2} },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, categories.FUSION} },
             { IBC, 'BrainNotLowPowerMode', {} },
         },
         BuilderType = 'Any',
     },
-    --[[Builder {
-        BuilderName = 'SCTAUpgradeRadarT2',
-        PlatoonTemplate = 'SctaRadar2Upgrades',
-        Priority = 25,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {1800} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.OMNI * categories.STRUCTURE} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.5 }},
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.OMNI * categories.STRUCTURE * categories.LEVEL3} },
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, categories.FUSION} },
-            { IBC, 'BrainNotLowPowerMode', {} },
-        },
-        BuilderType = 'Any',
-    },]]
     Builder {
         BuilderName = 'SCTAMetalMakr',
         PlatoonTemplate = 'FabricationSCTA',

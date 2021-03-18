@@ -17,7 +17,7 @@ UnitBlueprint {
         BuildTime = 8400,
         BuildableCategory = {
             'armdvp',
-            'VEHICLE MOBILE LEVEL1 ARM',
+            'VEHICLE MOBILE TECH1 ARM',
         },
     },
     Footprint = {

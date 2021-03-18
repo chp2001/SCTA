@@ -4,7 +4,6 @@ UnitBlueprint {
         'SELECTABLE',
         'ARM',
         'OCEAN',
-	    'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -35,7 +34,6 @@ UnitBlueprint {
     Weapon = {
         [1] = {
             Damage = 60,
-            DamageRadius = 1.5,
             RackSalvoSize = 2,
             RateOfFire = 1,
         },

@@ -69,7 +69,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'ARM',
-	    'LEVEL2',
+
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -79,7 +79,7 @@ UnitBlueprint {
         'VTOL',
         'OVERLAYANTIAIR',
         'HIGHALTAIR',
-        'JAM',
+        'COUNTERINTELLIGENCE',
     },
     Defense = {
         ArmorType = 'ASF',
@@ -206,7 +206,7 @@ UnitBlueprint {
             FiringTolerance = 4,
 	        HeadingArcCenter = 0,
     	    HeadingArcRange = 43.96,
-            Label = 'ARMVTOL_ADVMISSILE',
+            Label = 'WEAPON',
             MaxRadius = 42,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -264,7 +264,7 @@ UnitBlueprint {
             FiringTolerance = 4,
 	        HeadingArcCenter = 0,
     	    HeadingArcRange = 43.96,
-            Label = 'ARMVTOL_ADVMISSILE2',
+            Label = 'WEAPON',
             MaxRadius = 42,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,

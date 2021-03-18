@@ -34,7 +34,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-        'LEVEL2',
+
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -81,7 +81,7 @@ UnitBlueprint {
 	InitialRallyX = 0,
 	InitialRallyZ = 10,
         BuildableCategory = {
-            'OCEAN LEVEL2 CORE',
+            'OCEAN TECH2 CORE',
         },
         StorageMass = 200,
         StorageEnergy = 200,

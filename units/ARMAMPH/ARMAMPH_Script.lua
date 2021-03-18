@@ -96,11 +96,7 @@ ARMAMPH = Class(TAWalking) {
     end,
 
 	Weapons = {
-		armamph_weapon1 = Class(TAweapon) {
-
-		},
-		armamph_weapon2 = Class(TAweapon) {
-
+		WEAPON = Class(TAweapon) {
 		},
 	},
 

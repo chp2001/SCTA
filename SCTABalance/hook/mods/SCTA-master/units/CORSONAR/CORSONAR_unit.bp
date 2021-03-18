@@ -16,7 +16,6 @@ UnitBlueprint {
         'OVERLAYSONAR',
 	    'CORE',
 	    'SONAR',
-	    'LEVEL1',
 	    'SORTINTEL',
     },
     Defense = {

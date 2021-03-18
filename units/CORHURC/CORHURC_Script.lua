@@ -68,11 +68,7 @@ CORHURC = Class(TAair) {
 	end,
 
 	Weapons = {
-		CORADVBOMB = Class(TAweapon) {},
-		CORAIR2AIRLASER = Class(TAweapon) {
-
-		},
-		
+		WEAPON = Class(TAweapon) {},
 	},
 }
 

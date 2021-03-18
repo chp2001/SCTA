@@ -18,7 +18,7 @@ UnitBlueprint {
 	'LAND',
         'ARM',
 	'MINELAYER',
-    'LEVEL2',
+
     'FIELDENGINEER',
     },
     Display = {

@@ -39,7 +39,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-        'LEVEL1',
 	    'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -85,7 +84,7 @@ UnitBlueprint {
         BuildTime = 7000,
 	BuildRate = 100,
         BuildableCategory = {
-            'KBOT MOBILE LEVEL1 CORE',
+            'KBOT MOBILE TECH1 CORE',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

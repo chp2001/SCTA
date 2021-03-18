@@ -17,7 +17,7 @@ UnitBlueprint {
     'OVERLAYDIRECTFIRE',
     'ARM',
     'KBOT',
-    'LEVEL3',
+
    },
     Defense = {
         Health = 4800,

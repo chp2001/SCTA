@@ -7,7 +7,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'LEVEL2',
+
         'TECH2',
 	    'FACTORY',
         'RALLYPOINT',
@@ -37,9 +37,9 @@ UnitBlueprint {
         BuildRate = 180,
         BuildTime = 15000,
         BuildableCategory = {
-            'KBOT MOBILE LEVEL1 ARM',
-            'KBOT MOBILE LEVEL2 ARM',
-            'KBOT MOBILE LEVEL3 ARM',
+            'KBOT MOBILE TECH1 ARM',
+            'KBOT MOBILE TECH2 ARM',
+            'KBOT MOBILE TECH3 ARM',
         },
     },
     Intel = {

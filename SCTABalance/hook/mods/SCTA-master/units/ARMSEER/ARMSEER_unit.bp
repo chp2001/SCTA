@@ -16,10 +16,10 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'ARM',
     'VEHICLE',
-    'LEVEL3',
+
     'OVERLAYOMNI',
     'OVERLAYCOUNTERINTEL',
-    'JAM',
+    'COUNTERINTELLIGENCE',
     },
     Display = {
     Abilities = {

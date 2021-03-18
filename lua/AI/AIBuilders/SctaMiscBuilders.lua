@@ -37,7 +37,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {480} }, -- Don't make tanks if we have lots of them.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LASER * categories.LEVEL1 - categories.MOBILE } }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LASER * categories.TECH1 - categories.MOBILE } }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.7}},
         },
         BuilderType = 'Any',
@@ -57,7 +57,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ANTIMISSILE * categories.LEVEL2} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ANTIMISSILE * categories.TECH2} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.7}},
         },
         BuilderType = 'Any',
@@ -79,7 +79,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  categories.FUSION} },  
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.ANTIMISSILE * categories.LEVEL3} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.ANTIMISSILE * categories.TECH3} },
             { IBC, 'BrainNotLowPowerMode', {} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1.05 }},
         },
@@ -99,7 +99,7 @@ BuilderGroup {
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.LASER * categories.LEVEL2 - categories.MOBILE} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.LASER * categories.TECH2 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.75}}, 
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, categories.FUSION} }, 
         },
@@ -120,7 +120,7 @@ BuilderGroup {
         Priority = 80,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.DEFENSE * categories.LEVEL3 - categories.MOBILE} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.DEFENSE * categories.TECH3 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.4, 0.25}}, 
         },
         BuilderType = 'Any',
@@ -137,6 +137,25 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAMissileTower Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
+        Priority = 50,
+        InstanceCount = 15,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {480} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.75}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1AADefense',
+                }
+            }
+        }
+    },    
+    Builder {
+        BuilderName = 'SCTAMissileTower Emergency',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco12',
         Priority = 50,
         InstanceCount = 15,
         BuilderConditions = {

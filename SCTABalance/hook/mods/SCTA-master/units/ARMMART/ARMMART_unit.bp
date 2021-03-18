@@ -12,7 +12,7 @@ UnitBlueprint {
         'ARTILLERY',
         'ARM',
         'VEHICLE',	
-    'LEVEL3',
+
     'SNIPEMODE',
     },
     Display = {

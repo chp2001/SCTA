@@ -37,7 +37,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'LEVEL2',
+
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -162,7 +162,7 @@ UnitBlueprint {
         WeaponCategory = 'IndirectFire',
             FiringRandomness = 0.5,
             FiringTolerance = 0,
-            Label = 'ARM_BATSa',
+            Label = 'WEAPON',
             MaxRadius = 125,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -233,7 +233,7 @@ UnitBlueprint {
         WeaponCategory = 'IndirectFire',
             FiringRandomness = 0.5,
             FiringTolerance = 0,
-            Label = 'ARM_BATSb',
+            Label = 'WEAPON',
             MaxRadius = 125,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,

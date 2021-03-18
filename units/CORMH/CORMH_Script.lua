@@ -107,14 +107,7 @@ CORMH = Class(TASea) {
 				--TURN box to x-axis <0> SPEED <76.38>
 				self.unit.Spinners.box:SetGoal(0)
 				self.unit.Spinners.box:SetSpeed(76.38)
-
-				--SLEEP <267>
-				WaitSeconds(0.25)
-
 				WaitFor(self.unit.Spinners.box)
-
-				--SLEEP <13>
-
 				TARocket.PlayFxWeaponPackSequence(self)
 			end,
 		},

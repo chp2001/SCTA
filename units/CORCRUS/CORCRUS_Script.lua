@@ -7,10 +7,7 @@ local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 CORCRUS = Class(TASea) {
 	Weapons = {
-		COR_CRUS = Class(TAweapon) {
-
-		},
-		COREDEPTHCHARGE = Class(TAweapon) {},
+		WEAPON = Class(TAweapon) {},
 	},
 }
 

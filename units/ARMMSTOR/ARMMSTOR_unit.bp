@@ -29,7 +29,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-        'LEVEL1',
 	    'STRUCTURE',
         'MASSSTORAGE',
         'ECONOMIC',
@@ -99,7 +98,7 @@ TechLevel = 'RULEUTL_Basic',
     SizeX = 4,
     SizeY = 4,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure1_mass',
+    StrategicIconName = 'icon_structure_mass',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_BUILDINGEX

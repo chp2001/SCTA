@@ -15,7 +15,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'ARM',
         'OCEAN',
-    'LEVEL3',
+
     'SNIPEMODE',
     },
     Defense = {

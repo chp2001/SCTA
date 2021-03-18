@@ -41,7 +41,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'PLANT',
         'SORTCONSTRUCTION',
-        'LEVEL1',
         'TECH1',
 	    'FACTORY',
         'RALLYPOINT',
@@ -85,7 +84,7 @@ UnitBlueprint {
         BuildTime = 6050,
 	BuildRate = 100,
         BuildableCategory = {
-            'OCEAN LEVEL1 ARM',
+            'OCEAN TECH1 ARM',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

@@ -5,7 +5,7 @@ UnitBlueprint {
         'ARM',
         'KBOT',
         'VEHICLE',
-	    'LEVEL2',
+
         'TECH2',
         'ENGINEER',
         'REPAIR',

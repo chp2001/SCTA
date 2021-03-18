@@ -40,9 +40,6 @@ ARMDRAKE = Class(TAWalking) {
 				end,
 			},
 		CORKROG_HEAD = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-			end,
 		},
 		CORKROG_ROCKET = Class(TAweapon) {},
 	},

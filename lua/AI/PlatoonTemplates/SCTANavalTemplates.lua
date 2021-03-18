@@ -19,7 +19,7 @@ PlatoonTemplate {
     Name = 'SCTANavalAssault',
     Plan = 'NavalForceAI',
     GlobalSquads = {
-        { categories.LEVEL1 * categories.OCEAN - categories.ENGINEER, 4, 10, 'Attack', 'GrowthFormation' }
+        { categories.TECH1 * categories.OCEAN - categories.ENGINEER, 4, 10, 'Attack', 'GrowthFormation' }
     },
 }
 

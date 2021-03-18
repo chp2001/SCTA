@@ -30,7 +30,7 @@ StopMove = Sound {
     Categories = {
         'SELECTABLE',
         'VEHICLE',
-        'LEVEL2',
+
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',

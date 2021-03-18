@@ -65,7 +65,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'LEVEL2',
+
         'OVERLAYSONAR',
         'SEAPLA',
         'VISIBLETORECON',

@@ -13,7 +13,6 @@ UnitBlueprint {
 	    'ENERGYPRODUCTION',
 	    'NAVAL',
 	    'ARM',
-	    'LEVEL1',
         'TIDAL',
     },
     Defense = {

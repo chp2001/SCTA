@@ -12,7 +12,7 @@ UnitBlueprint {
 	    'LAND',
         'CORE',
         'ANTIMISSILE',
-	    'LEVEL2',
+
         'OVERLAYDEFENSE',
         'SORTSTRATEGIC',
         'NEEDMOBILEBUILD',

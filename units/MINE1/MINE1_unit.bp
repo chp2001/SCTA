@@ -30,7 +30,6 @@ UnitBlueprint {
         'CORE',
         'MINE',
         'STRUCTURE',
-	    'LEVEL1',
         'TACLOAK',
     },
     Defense = {

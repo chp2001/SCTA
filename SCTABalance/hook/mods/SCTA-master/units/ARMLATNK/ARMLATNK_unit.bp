@@ -30,7 +30,7 @@ UnitBlueprint {
     VisionRadius = 12,
     },
    SizeY = 1, 
-   StrategicIconName = 'icon_land2_directfire',
+   StrategicIconName = 'icon_bot2_directfire',
    Weapon = {
     [1] = {
         Damage = 80,

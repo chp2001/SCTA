@@ -38,7 +38,6 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'LEVEL1',
         'TECH1',
 	    'FACTORY',
         'RALLYPOINT',
@@ -84,7 +83,7 @@ UnitBlueprint {
         BuildTime = 6700,
 	BuildRate = 100,
         BuildableCategory = {
-            'VEHICLE MOBILE LEVEL1 CORE',
+            'VEHICLE MOBILE TECH1 CORE',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

@@ -43,7 +43,6 @@ UnitBlueprint {
 	'ARM',
     'DEVELOPMENT',
 	'SORTCONSTRUCTION',
-	'LEVEL3',
     'VEHICLE',
     },
     Defense = {
@@ -82,9 +81,9 @@ UnitBlueprint {
         DifferentialUpgradeCostCalculation = true,
 	BuildRate = 300,
         BuildableCategory = {
-            'VEHICLE MOBILE LEVEL1 ARM',
-            'VEHICLE MOBILE LEVEL2 ARM',
-            'VEHICLE MOBILE LEVEL3 ARM',
+            'VEHICLE MOBILE TECH1 ARM',
+            'VEHICLE MOBILE TECH2 ARM',
+            'VEHICLE MOBILE TECH3 ARM',
             'ALLTERRAIN ENGINEER LAND ARM',
         },
 	InitialRallyX = 0,

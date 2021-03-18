@@ -26,7 +26,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-        'LEVEL2',
+
 	'STRUCTURE',
 	'DEFENSE',
 	'ANTIAIR',

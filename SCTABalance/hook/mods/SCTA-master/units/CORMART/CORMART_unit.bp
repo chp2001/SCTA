@@ -12,7 +12,7 @@ UnitBlueprint {
         'ARTILLERY',
         'CORE',
         'VEHICLE',	
-        'LEVEL3',
+
         'SNIPEMODE',
     },
     Defense = {

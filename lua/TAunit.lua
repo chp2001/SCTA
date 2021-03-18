@@ -3,7 +3,6 @@ local Unit = import('/lua/sim/Unit.lua').Unit
 local FireState = import('/lua/game.lua').FireState
 local explosion = import('/lua/defaultexplosions.lua')
 local scenarioUtils = import('/lua/sim/ScenarioUtilities.lua')
-local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local Game = import('/lua/game.lua')
 local util = import('/lua/utilities.lua')
 
@@ -38,7 +37,7 @@ TAunit = Class(Unit)
 
 	OnIntelDisabled = function(self)
 		Unit.OnIntelDisabled()
-		if EntityCategoryContains(categories.JAM, self) and (not self:IsIntelEnabled('Jammer') or not self:IsIntelEnabled('RadarStealth')) then
+		if EntityCategoryContains(categories.COUNTERINTELLIGENCE, self) and (not self:IsIntelEnabled('Jammer') or not self:IsIntelEnabled('RadarStealth')) then
 			self.TAIntelOn = nil	
 		elseif EntityCategoryContains(categories.TACLOAK, self) and not self:IsIntelEnabled('Cloak') then
 		self:PlayUnitSound('Uncloak')
@@ -50,7 +49,7 @@ TAunit = Class(Unit)
 	OnIntelEnabled = function(self)
 		Unit.OnIntelEnabled()
 		if not IsDestroyed(self) then
-			if EntityCategoryContains(categories.JAM, self) and (self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth')) then
+			if EntityCategoryContains(categories.COUNTERINTELLIGENCE, self) and (self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth')) then
 				self.TAIntelOn = true
 				ForkThread(self.TAIntelMotion, self)
 			elseif EntityCategoryContains(categories.TACLOAK, self) and self:IsIntelEnabled('Cloak') then
@@ -104,7 +103,7 @@ TAunit = Class(Unit)
 
 
 	OnScriptBitSet = function(self, bit)
-		if EntityCategoryContains(categories.JAM, self) and (bit == 2 or bit == 5) then
+		if EntityCategoryContains(categories.COUNTERINTELLIGENCE, self) and (bit == 2 or bit == 5) then
 			--self:SetMaintenanceConsumptionActive()
 			--self:DisableUnitIntel('ToggleBit2', 'Jammer')
 			--self:DisableUnitIntel('ToggleBit5', 'RadarStealth')
@@ -121,7 +120,7 @@ TAunit = Class(Unit)
 	end,
 
 	OnScriptBitClear = function(self, bit)
-		if EntityCategoryContains(categories.JAM, self) and (bit == 2 or bit == 5) then
+		if EntityCategoryContains(categories.COUNTERINTELLIGENCE, self) and (bit == 2 or bit == 5) then
 			--self:SetMaintenanceConsumptionInactive()
 			if self.TAIntelThread then
 				KillThread(self.TAIntelThread)

@@ -13,7 +13,7 @@ UnitBlueprint {
         'MOBILE',
 	    'LAND',
         'ARM',
-	    'LEVEL2',
+
         'OVERLAYRADAR',
         'TACLOAK',
         'SCOUT',

@@ -337,7 +337,7 @@ BuilderGroup {
         Priority = 125,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LEVEL3 * categories.FUSION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TECH3 * categories.FUSION} },
             { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.15 }},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.FUSION} },
         },
@@ -359,7 +359,7 @@ BuilderGroup {
         Priority = 175,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LEVEL3 * categories.FUSION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.TECH3 * categories.FUSION} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.FUSION} },
             { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.15 }},
         },

@@ -40,8 +40,6 @@ UnitBlueprint {
         'ECONOMIC',
         'SORTECONOMY',
         'ARM',
-	    'LEVEL2',
-        'DEVELOPMENT',
     },
     Defense = {
         ArmorType = 'Structure',

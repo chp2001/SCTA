@@ -23,15 +23,6 @@ TAStructure = Class(TAunit)
 	OnStopBeingBuilt = function(self,builder,layer)
         TAunit.OnStopBeingBuilt(self,builder,layer)
         self:SetMaintenanceConsumptionActive()
-		if __blueprints['armgant'] then
-            local aiBrain = GetArmyBrain(self.Army)
-        	if EntityCategoryContains(categories.DEVELOPMENT, self) then
-            local buildRestrictionVictims = aiBrain:GetListOfUnits(categories.FACTORY + categories.ENGINEER, false)
-            for id, unit in buildRestrictionVictims do    
-        	TAutils.updateBuildRestrictions(unit)
-        	end
-        end
-    end
     end,
 
 	OnPaused = function(self)

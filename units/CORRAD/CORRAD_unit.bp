@@ -37,7 +37,6 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'LEVEL1',
         'TECH1',	
     'STRUCTURE',
     'SHOWQUEUE',

@@ -63,7 +63,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'LEVEL2',
+
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -74,7 +74,7 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'OVERLAYOMNI',
         'ARM',
-        'JAM',
+        'COUNTERINTELLIGENCE',
         'SCOUT',
         'RADAR',
     },

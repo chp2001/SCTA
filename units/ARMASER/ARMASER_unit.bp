@@ -40,7 +40,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'LEVEL2',
+
         'KBOT',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -50,7 +50,6 @@ UnitBlueprint {
         'COUNTERINTELLIGENCE',
         'OVERLAYCOUNTERINTEL',
         'ARM',
-	    'JAM',
     },
     Defense = {
         ArmorType = 'Normal',

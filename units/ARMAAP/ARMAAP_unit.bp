@@ -34,7 +34,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-        'LEVEL2',
+
         'AIR',
 	    'FACTORY',
         'RALLYPOINT',
@@ -81,7 +81,7 @@ UnitBlueprint {
         BuildTime = 17376,
 	BuildRate = 200,
         BuildableCategory = {
-            'VTOL LEVEL2 ARM',
+            'VTOL TECH2 ARM',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

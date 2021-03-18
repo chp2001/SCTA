@@ -14,10 +14,10 @@ UnitBlueprint {
 	    'LAND',
         'CORE',
         'NEEDMOBILEBUILD',
-	    'LEVEL3',
+
         'OVERLAYRADAR',
         'OVERLAYCOUNTERINTEL',
-        'JAM',
+        'COUNTERINTELLIGENCE',
         'SORTINTEL',
         'SCOUT',
     },

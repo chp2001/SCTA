@@ -16,7 +16,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-        'LEVEL1',
         'BENIGN',
         'SORTDEFENSE',
 	    'STRUCTURE',

@@ -8,10 +8,8 @@ local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 CORROY = Class(TASea) {
 	Weapons = {
-		CORE_ROY = Class(TAweapon) {
-
+		WEAPON = Class(TAweapon) {
 		},
-		COREDEPTHCHARGE = Class(TAweapon) {},
 	},
 }
 

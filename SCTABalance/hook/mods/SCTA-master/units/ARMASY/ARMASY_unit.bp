@@ -17,7 +17,7 @@ UnitBlueprint {
 	    'NAVAL',
 	    'ARM',
 	    'SORTCONSTRUCTION',
-	    'LEVEL2',
+
         'LAB',
     },
     Defense = {
@@ -32,9 +32,9 @@ UnitBlueprint {
         BuildCostMass = 1300,
         BuildTime = 32000,
         BuildableCategory = {
-            'OCEAN LEVEL1 ARM',
-            'OCEAN LEVEL2 ARM',
-            'OCEAN LEVEL3 ARM',
+            'OCEAN TECH1 ARM',
+            'OCEAN TECH2 ARM',
+            'OCEAN TECH3 ARM',
             'ALLTERRAIN ENGINEER ARM',
         },
         BuildRate = 360,

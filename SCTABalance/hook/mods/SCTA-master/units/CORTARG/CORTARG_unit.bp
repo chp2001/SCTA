@@ -16,7 +16,7 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'OVERLAYOMNI',
 	    'CORE',
-	    'LEVEL3',
+
 	    'SORTINTEL',
     },
     Defense = {

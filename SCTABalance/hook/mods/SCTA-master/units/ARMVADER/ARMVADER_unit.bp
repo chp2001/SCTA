@@ -8,7 +8,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'KBOT',
-        'LEVEL2',
+
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',	
@@ -41,6 +41,8 @@ UnitBlueprint {
         [1] = {
             Damage = 1500,
 	    DamageRadius = 6,
+        },
+        [2] = {
         },
      },
 }

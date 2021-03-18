@@ -37,7 +37,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-        'LEVEL2',
+
 	    'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -83,7 +83,7 @@ UnitBlueprint {
         BuildTime = 18520,
 	    BuildRate = 200,
         BuildableCategory = {
-            'HOVER LEVEL3 ARM',
+            'HOVER TECH3 ARM',
         },
 	    InitialRallyX = 0,
 	    InitialRallyZ = 7,

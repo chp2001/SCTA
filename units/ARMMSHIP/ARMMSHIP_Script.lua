@@ -29,9 +29,6 @@ ARMMSHIP = Class(TASea) {
 
 	Weapons = {
 		ARMMSHIP_ROCKET = Class(TARocket) {
-
-				
-
 			PlayFxRackReloadSequence = function(self)
 				self.unit.currentShot = self.unit.currentShot + 1
 				if self.unit.currentShot == 2 then

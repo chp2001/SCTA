@@ -30,7 +30,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'KBOT',
-        'LEVEL2',
+
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',	
@@ -162,5 +162,14 @@ TechLevel = 'RULEUTL_Advanced',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
         },
+        { #ARMMINE1
+        Damage = 100,
+        DamageFriendly = true,
+        DamageRadius = 6,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+    ---EdgeEffectiveness = 0.1,
+        Label = 'DeathWeapon',
+        }, 
     },
 }

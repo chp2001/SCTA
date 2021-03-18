@@ -52,8 +52,7 @@ ARMSEAP = Class(TASeaair) {
 	end,
 
 	Weapons = {
-		CORAIR_TORPEDO = Class(TAweapon) {},
-		ARMVTOL_MISSILE = Class(TAweapon) {},
+		WEAPON = Class(TAweapon) {},
 	},
 }
 

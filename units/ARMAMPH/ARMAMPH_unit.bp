@@ -30,7 +30,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'LEVEL2',
+
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -155,7 +155,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
             WeaponCategory = 'AntiAir',
             FiringTolerance = 10,
-            Label = 'armamph_weapon1',
+            Label = 'WEAPON',
             MaxRadius = 43.75,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -219,7 +219,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_DirectFire',
             WeaponCategory = 'DirectFire',
             FiringTolerance = 2.75,
-            Label = 'armamph_weapon2',
+            Label = 'WEAPON',
             MaxRadius = 18,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -259,7 +259,7 @@ UnitBlueprint {
             Turreted = true,
         },
         { #BIG_UNITEX
-            Damage = 100,
+            Damage = 50,
             DamageFriendly = true,
             DamageRadius = 3,
             DamageType = 'Normal',

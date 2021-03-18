@@ -9,7 +9,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-        'LEVEL2',
+
         'AIR',
 	    'FACTORY',
         'RALLYPOINT',
@@ -37,9 +37,9 @@ UnitBlueprint {
         BuildCostMass = 800,
         BuildTime = 16000,
         BuildableCategory = {
-        'VTOL LEVEL1 ARM',
-        'VTOL LEVEL2 ARM', 
-        'VTOL LEVEL3 ARM',
+        'VTOL TECH1 ARM',
+        'VTOL TECH2 ARM', 
+        'VTOL TECH3 ARM',
         'ALLTERRAIN ENGINEER LAND ARM',
         },
     },

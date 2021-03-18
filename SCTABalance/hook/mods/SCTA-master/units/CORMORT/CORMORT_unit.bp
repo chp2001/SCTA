@@ -17,7 +17,7 @@ UnitBlueprint {
         'ARTILLERY',
         'CORE',
         'KBOT',
-        'LEVEL3',
+
         'SNIPEMODE',
     },
     Display = {

@@ -13,7 +13,6 @@ UnitBlueprint {
 	    'ENERGYPRODUCTION',
 	    'NAVAL',
 	    'CORE',
-	    'LEVEL1',
         'TIDAL',
     },
     Display = {

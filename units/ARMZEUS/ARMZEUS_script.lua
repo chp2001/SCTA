@@ -11,8 +11,6 @@ ARMZEUS = Class(TAWalking) {
 
 	Weapons = {
 		LIGHTNING = Class(TAweapon) {
-
-
 			PlayFxWeaponUnpackSequence = function(self)
 				TAweapon.PlayFxWeaponUnpackSequence(self)
 			end,	

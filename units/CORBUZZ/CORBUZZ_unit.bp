@@ -21,7 +21,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'EXPERIMENTAL',
-        'LEVEL3',
+
 	    'STRUCTURE',
 	    'SORTSTRATEGIC',
         'OVERLAYDIRECTFIRE',

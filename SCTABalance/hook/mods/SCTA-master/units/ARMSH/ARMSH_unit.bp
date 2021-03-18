@@ -14,8 +14,7 @@ UnitBlueprint {
     'OVERLAYDIRECTFIRE',
     'LAND',
     'ARM',
-    'ALLTERRAIN',
-},
+    },
     Display = {
        Abilities = {
         '<LOC ability_radar>Radar',

@@ -15,7 +15,7 @@ UnitBlueprint {
     'LAND',
     'CORE',
     'AMPHIBIOUS',
-    'ALLTERRAIN',
+    'HOVER',
     },
    Defense = {
     Health = 10000,

@@ -22,6 +22,7 @@ UnitBlueprint {
     'SUBCOMMANDER',
     'SNIPEMODE',
     'TACLOAK',
+    'ALLTERRAIN',
     },
    Display = {
        UniformScale = 0.28,

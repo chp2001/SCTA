@@ -40,7 +40,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'KBOT',
-        'ALLTERRAIN',
         'LEVEL2',
         'TECH2',
         'FIELDENGINEER',
@@ -100,10 +99,6 @@ UnitBlueprint {
         'BUILTBYT1MINELAYER CORE',
     },
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 1,
-    },
     General = {
         BuildBones = {
             AimBone = 'nozzle1',
@@ -145,7 +140,7 @@ UnitBlueprint {
         MaxAcceleration = 2,
         MaxBrake = 1.2,
         MaxSpeed = 1.2,
-        MotionType = 'RULEUMT_Amphibious',
+        MotionType = 'RULEUMT_Land',
         TurnRate = 166,
         MaxSteerForce = 10,
         StandUpright = true,

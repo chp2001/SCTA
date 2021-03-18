@@ -1,3 +1,5 @@
+do
+
 local TAExtractBuildMeshBlueprint = ExtractBuildMeshBlueprint
 local TAExtractCloakMeshBlueprint = ExtractCloakMeshBlueprint
 
@@ -50,7 +52,6 @@ function ExtractCloakMeshBlueprint(bp)
     MeshBlueprint(cloakmeshbp)
 end
 
-do
     local SCTAModBlueprints = ModBlueprints
 
     function ModBlueprints(all_blueprints)
@@ -58,7 +59,6 @@ do
 	---SCTAFootprints(all_blueprints.Unit)
         TAGiveVet(all_blueprints.Unit)
     end
-	end
 
 	function TAGiveVet(all_bps)
 		for id, bp in all_bps do
@@ -100,3 +100,4 @@ do
 			end
 		end
 	end
+end

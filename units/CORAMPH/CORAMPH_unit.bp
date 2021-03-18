@@ -42,7 +42,7 @@ UnitBlueprint {
         'LAND',
         'CORE',
         'AMPHIBIOUS',
-        'ALLTERRAIN',
+        'HOVER',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -77,10 +77,6 @@ UnitBlueprint {
         BuildCostMass = 255,
         BuildTime = 5982,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 1,
-    },
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -111,7 +107,7 @@ TechLevel = 'RULEUTL_Advanced',
         MaxAcceleration = 2.4,
         MaxBrake = 2,
         MaxSpeed = 2.4,
-        MotionType = 'RULEUMT_Amphibious',
+        MotionType = 'RULEUMT_AmphibiousFloating',
         TurnRate = 66,
         MaxSteerForce = 100,
         RotateOnSpot = true,

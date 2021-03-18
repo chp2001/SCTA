@@ -50,7 +50,7 @@ TAunit = Class(Unit)
 	OnIntelEnabled = function(self)
 		Unit.OnIntelEnabled()
 		if not IsDestroyed(self) then
-			if EntityCategoryContains(categories.JAM, self) and (self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth')) then
+			if EntityCategoryContains(categories.COUNTERINTELLIGENCE, self) and (self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth')) then
 				self.TAIntelOn = true
 				ForkThread(self.TAIntelMotion, self)
 			elseif EntityCategoryContains(categories.TACLOAK, self) and self:IsIntelEnabled('Cloak') then
@@ -104,7 +104,7 @@ TAunit = Class(Unit)
 
 
 	OnScriptBitSet = function(self, bit)
-		if EntityCategoryContains(categories.JAM, self) and (bit == 2 or bit == 5) then
+		if EntityCategoryContains(categories.COUNTERINTELLIGENCE, self) and (bit == 2 or bit == 5) then
 			--self:SetMaintenanceConsumptionActive()
 			--self:DisableUnitIntel('ToggleBit2', 'Jammer')
 			--self:DisableUnitIntel('ToggleBit5', 'RadarStealth')
@@ -121,7 +121,7 @@ TAunit = Class(Unit)
 	end,
 
 	OnScriptBitClear = function(self, bit)
-		if EntityCategoryContains(categories.JAM, self) and (bit == 2 or bit == 5) then
+		if EntityCategoryContains(categories.COUNTERINTELLIGENCE, self) and (bit == 2 or bit == 5) then
 			--self:SetMaintenanceConsumptionInactive()
 			if self.TAIntelThread then
 				KillThread(self.TAIntelThread)

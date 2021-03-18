@@ -51,15 +51,11 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORE_THUD',
     },
-
-    Physics = {
-        DestroyOnWater = true,
-        DetonateBelowHeight = 3,
-        InitialSpeed = 14.6,
-        InitialSpeedRange = 3,
-        InitialSpeedReduceDistance = 30,
-        LeadTarget = false,
-        TurnRate = 360,
-        VelocityAlign = true,
+        Physics = {
+            DestroyOnWater = true,
+            InitialSpeed = 34,
+            InitialSpeedReduceDistance = 200,
+            LeadTarget = false,
+            VelocityAlign = true,
     },
 }

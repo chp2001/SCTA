@@ -143,9 +143,10 @@ UnitBlueprint {
             FiringTolerance = 0,
             Label = 'GAUSS',
             MaxRadius = 24,
+            DamageRadius = 1.5,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 28,
+	        MuzzleVelocity = 28,
             ProjectileId = '/mods/SCTA-master/projectiles/GAUSS/GAUSS_proj.bp',
             RackBones = {
                 {
@@ -182,7 +183,7 @@ UnitBlueprint {
             Turreted = true,
         },
         { #BIG_UNITEX
-            Damage = 100,
+            Damage = 50,
             DamageFriendly = true,
             DamageRadius = 3,
             DamageType = 'Normal',

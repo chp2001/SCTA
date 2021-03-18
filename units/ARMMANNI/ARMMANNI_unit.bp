@@ -53,10 +53,6 @@ UnitBlueprint {
     },
     Description = 'Mobile Energy Weapon',
     Display = {
-        Abilities = {
-            'Laser',
-            'Heavy Tank',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

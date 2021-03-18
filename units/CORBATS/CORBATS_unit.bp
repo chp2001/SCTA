@@ -154,6 +154,7 @@ TechLevel = 'RULEUTL_Advanced',
             DisplayName = 'COR_BATSLASER',
             EnergyDrainPerSecond = 100,
             EnergyRequired = 100,
+            DamageRadius = 2,
             EnergyChargeForFirstShot = true,
             FireTargetLayerCapsTable = {
                 Water = 'Air|Land|Water|Seabed',

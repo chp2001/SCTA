@@ -132,7 +132,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 450,
-	    DamageRadius = 2,
+	    DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'CORE_ARTILLERY',
             FireTargetLayerCapsTable = {

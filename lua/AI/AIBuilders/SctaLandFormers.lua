@@ -93,6 +93,7 @@ BuilderGroup {
         BuilderData = {
             NeverGuardBases = true,
             NeverGuardEngineers = true,
+            IgnorePathing = true,
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = { },

@@ -359,7 +359,6 @@ BuilderGroup {
         Priority = 175,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.TECH3 * categories.FUSION} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.FUSION} },
             { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.15 }},
         },
@@ -378,10 +377,32 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer MetalMaker',
         PlatoonTemplate = 'EngineerBuilderSCTA12',
-        Priority = 90,
-        InstanceCount = 1,
+        Priority = 120,
+        InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3,  categories.FUSION} }, 
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2,  categories.FUSION} }, 
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1MassCreation',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI Hover MetalMaker',
+        PlatoonTemplate = 'EngineerBuilderSCTA3',
+        Priority = 125,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1,  categories.FUSION} }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
         },
@@ -399,9 +420,9 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI T1Engineer Air MetalMaker',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco',
-        Priority = 90,
-        InstanceCount = 1,
+        PlatoonTemplate = 'EngineerBuilderSCTAEco12',
+        Priority = 110,
+        InstanceCount = 4,
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3,  categories.FUSION} }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},

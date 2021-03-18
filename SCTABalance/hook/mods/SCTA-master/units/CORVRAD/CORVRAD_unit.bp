@@ -18,7 +18,6 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'CORE',
 	    'LEVEL3',
-        'JAM',
         'OVERLAYOMNI',
         'OVERLAYCOUNTERINTEL',
         'VEHICLE',

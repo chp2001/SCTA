@@ -73,7 +73,7 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'OVERLAYOMNI',
         'CORE',
-        'JAM',
+        'COUNTERINTELLIGENCE',
         'SCOUT',
     },
     Defense = {

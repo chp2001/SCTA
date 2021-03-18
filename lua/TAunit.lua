@@ -38,7 +38,7 @@ TAunit = Class(Unit)
 
 	OnIntelDisabled = function(self)
 		Unit.OnIntelDisabled()
-		if EntityCategoryContains(categories.JAM, self) and (not self:IsIntelEnabled('Jammer') or not self:IsIntelEnabled('RadarStealth')) then
+		if EntityCategoryContains(categories.COUNTERINTELLIGENCE, self) and (not self:IsIntelEnabled('Jammer') or not self:IsIntelEnabled('RadarStealth')) then
 			self.TAIntelOn = nil	
 		elseif EntityCategoryContains(categories.TACLOAK, self) and not self:IsIntelEnabled('Cloak') then
 		self:PlayUnitSound('Uncloak')

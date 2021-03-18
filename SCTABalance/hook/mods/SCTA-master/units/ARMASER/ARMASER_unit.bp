@@ -12,7 +12,6 @@ UnitBlueprint {
         'COUNTERINTELLIGENCE',
         'OVERLAYCOUNTERINTEL',
         'ARM',
-	    'JAM',
     },
     Economy = {
         TAConsumptionPerSecondEnergy = 60,

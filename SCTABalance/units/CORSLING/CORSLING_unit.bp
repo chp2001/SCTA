@@ -32,7 +32,7 @@ UnitBlueprint {
 	    'ANTIAIR',
         'OVERLAYANTIAIR',
         'CORE',
-        'JAM',
+        'COUNTERINTELLIGENCE',
 	    'LEVEL2',
         'ALLTERRAIN',
     },

@@ -17,7 +17,7 @@ UnitBlueprint {
 	    'LEVEL3',
         'OVERLAYRADAR',
         'OVERLAYCOUNTERINTEL',
-        'JAM',
+        'COUNTERINTELLIGENCE',
         'SORTINTEL',
         'SCOUT',
     },

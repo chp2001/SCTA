@@ -20,7 +20,7 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'OVERLAYCOUNTERINTEL',
         'NEEDMOBILEBUILD',
-        'JAM',
+        'COUNTERINTELLIGENCE',
         'SORTINTEL',
         'SCOUT',
     },

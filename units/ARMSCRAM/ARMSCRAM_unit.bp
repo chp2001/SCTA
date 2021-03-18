@@ -51,7 +51,6 @@ UnitBlueprint {
         'DEFENSIVEBOAT',
         'ARM',
         'SUBMERSIBLE',
-        'JAM',
         'OCEAN',
     },
     Defense = {

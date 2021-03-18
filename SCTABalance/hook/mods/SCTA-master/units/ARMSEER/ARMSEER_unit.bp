@@ -19,7 +19,7 @@ UnitBlueprint {
     'LEVEL3',
     'OVERLAYOMNI',
     'OVERLAYCOUNTERINTEL',
-    'JAM',
+    'COUNTERINTELLIGENCE',
     },
     Display = {
     Abilities = {

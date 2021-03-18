@@ -40,7 +40,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'OCEAN',
-	    'JAM',
 	    'LEVEL2',
         'TECH2',
         'VISIBLETORECON',

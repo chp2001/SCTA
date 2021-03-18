@@ -50,7 +50,6 @@ UnitBlueprint {
         'COUNTERINTELLIGENCE',
         'OVERLAYCOUNTERINTEL',
         'ARM',
-	    'JAM',
     },
     Defense = {
         ArmorType = 'Normal',

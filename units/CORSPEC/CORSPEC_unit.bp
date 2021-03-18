@@ -50,7 +50,6 @@ UnitBlueprint {
         'OVERLAYCOUNTERINTEL',
         'CORE',
         'KBOT',
-	    'JAM',
     },
     Defense = {
         ArmorType = 'Normal',

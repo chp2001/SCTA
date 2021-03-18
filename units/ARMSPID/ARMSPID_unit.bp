@@ -16,7 +16,7 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'VEHICLE',
-        'JAM',
+        'COUNTERINTELLIGENCE',
         'LEVEL2', 
         'TECH2',
         'DIRECTFIRE',

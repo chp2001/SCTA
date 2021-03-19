@@ -69,7 +69,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FIELDENGINEER * categories.TECH2} }, -- Build engies until we have 4 of them.
         },
-        BuilderType = 'All',
+        BuilderType = 'Land',
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Engineer',
@@ -78,7 +78,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.TECH3 - categories.FIELDENGINEER } }, -- Build engies until we have 4 of them.
         },
-        BuilderType = 'All',
+        BuilderType = 'Land',
     },
 }
 

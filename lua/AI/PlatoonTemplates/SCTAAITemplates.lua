@@ -141,10 +141,12 @@ PlatoonTemplate {
     Name = 'T3LandHOVERSCTA',
     FactionSquads = {
         Arm = {
-            { 'armanac', 1, 3, 'attack', 'none' }
+            { 'armanac', 1, 4, 'attack', 'none' },
+            { 'armah', 1, 1, 'attack', 'none' },
         },
         Core = {
-            { 'corsnap', 1, 3, 'attack', 'none' }
+            { 'corsnap', 1, 4, 'attack', 'none' },
+            { 'corah', 1, 1, 'attack', 'none' },
         },
     }
 }

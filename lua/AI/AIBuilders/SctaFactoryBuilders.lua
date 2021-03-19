@@ -268,6 +268,31 @@ BuilderGroup {
         }
     },
     Builder {
+        BuilderName = 'SCTAAI T3LAND Hover Factory',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        Priority = 140,
+        InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
+        BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
+            { MIBC, 'GreaterThanGameTime', { 1500 } },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T3LandFactory',
+                }
+            }
+        }
+    },
+    Builder {
         BuilderName = 'SCTAAI T2AirFactory Hover',
         PlatoonTemplate = 'EngineerBuilderSCTA3',
         Priority = 125,

@@ -92,6 +92,7 @@ end
 
 updateBuildRestrictions = function(self)
     local aiBrain = self:GetAIBrain()
+    
     --Add build restrictions
     --EngiModFinalFORMTA
     ---Basicallys Stop Lower Tech from building UpperTech. Advanced Factories now full access to builds
@@ -118,7 +119,7 @@ end
 
 --self.FindHQType(aiBrain, category)
 FindHQType = function(aiBrain, category)
-    for id, unit in aiBrain:GetListOfUnits(categories.DEVELOPMENT) do
+    for id, unit in aiBrain:GetListOfUnits(categories.RESEARCH) do
         if not unit:IsBeingBuilt() then
             return true
         end

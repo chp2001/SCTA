@@ -14,7 +14,7 @@ TAFactory = Class(FactoryUnit) {
         FactoryUnit.OnStopBeingBuilt(self, builder, layer)
         if __blueprints['armgant'] then
             local aiBrain = GetArmyBrain(self.Army)
-        if EntityCategoryContains(categories.DEVELOPMENT, self) then
+        if EntityCategoryContains(categories.RESEARCH, self) then
             local buildRestrictionVictims = aiBrain:GetListOfUnits(categories.FACTORY + categories.ENGINEER, false)
             for id, unit in buildRestrictionVictims do    
         TAutils.updateBuildRestrictions(unit)
@@ -72,7 +72,7 @@ TAFactory = Class(FactoryUnit) {
             FactoryUnit.OnStopBeingBuilt(self, builder, layer)
             if __blueprints['armgant'] then
                 local aiBrain = GetArmyBrain(self.Army)
-            if EntityCategoryContains(categories.DEVELOPMENT, self) then
+            if EntityCategoryContains(categories.RESEARCH, self) then
                 local buildRestrictionVictims = aiBrain:GetListOfUnits(categories.FACTORY + categories.ENGINEER, false)
                 for id, unit in buildRestrictionVictims do    
             TAutils.updateBuildRestrictions(unit)

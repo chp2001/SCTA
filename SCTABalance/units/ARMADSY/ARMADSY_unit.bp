@@ -41,7 +41,7 @@ UnitBlueprint {
 	    'CONSTRUCTION',
 	    'NAVAL',
 	    'ARM',
-        'DEVELOPMENT',
+        'RESEARCH',
 	    'SORTCONSTRUCTION',
     },
     CollisionOffsetY = -1,

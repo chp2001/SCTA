@@ -13,9 +13,8 @@ UnitBlueprint {
         'MOBILE',
 	    'LAND',
         'CORE',
-
         'OVERLAYRADAR',
-        'KBOT',
+        'BOT',
         'TACLOAK',
         'SCOUT',
     },

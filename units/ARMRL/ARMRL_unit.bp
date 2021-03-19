@@ -34,7 +34,7 @@ UnitBlueprint {
 	    'ANTIAIR',
 	    'OVERLAYANTIAIR',
 	    'ARM',
-        'ROCKET',
+        'SILO',
     },
     CollisionOffsetY = -0.5,
     Defense = {

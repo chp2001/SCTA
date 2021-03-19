@@ -10,8 +10,7 @@ UnitBlueprint {
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
-        'KBOT',
-
+        'BOT',
         'SNIPER',
         'TACLOAK',
     },

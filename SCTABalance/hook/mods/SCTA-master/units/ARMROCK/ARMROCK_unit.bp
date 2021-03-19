@@ -3,8 +3,7 @@ UnitBlueprint {
    Categories = {
     'SELECTABLE',
     'TECH2',
-    'KBOT',
-
+    'BOT',
     'VISIBLETORECON',
     'RECLAIMABLE',
     'MOBILE',
@@ -12,7 +11,7 @@ UnitBlueprint {
     'INDIRECTFIRE',
     'OVERLAYINDIRECTFIRE',
     'ARM',
-    'ROCKET',
+    'SILO',
     },
    Defense = {
     Health = 1100,

@@ -35,10 +35,8 @@ UnitBlueprint {
         'MOBILE',
 	'LAND',
 	'INDIRECTFIRE',
-	'ROCKET',
         'OVERLAYINDIRECTFIRE',
         'ARM',
-
     'SILO',
     },
     Defense = {

@@ -60,7 +60,7 @@ UnitBlueprint {
         'MOBILE',
         'LAND',
         'DIRECTFIRE',
-        'KBOT',
+        'BOT',
         'OVERLAYDIRECTFIRE',
         'ARM',
         'CONSTRUCTION',

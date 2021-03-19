@@ -17,7 +17,7 @@ UnitBlueprint {
         'LAND',
         'CORE',
         'HOVER',
-        'KBOT',
+        'BOT',
         'VEHICLE',
         'ALLTERRAIN',
     },

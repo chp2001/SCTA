@@ -17,7 +17,7 @@ UnitBlueprint {
         BuildRate = 90,
         BuildTime = 8400,
         BuildableCategory = {
-            'KBOT MOBILE TECH1 CORE',
+            'BOT MOBILE TECH1 CORE',
             'cordlab', 
         },
     },

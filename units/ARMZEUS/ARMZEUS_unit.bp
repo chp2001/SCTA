@@ -37,8 +37,7 @@ UnitBlueprint {
         'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
-        'KBOT',
-
+        'BOT',
         'TANK',
         'LASER',
     },

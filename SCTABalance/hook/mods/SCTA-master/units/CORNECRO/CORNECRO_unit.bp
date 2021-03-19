@@ -18,7 +18,7 @@ UnitBlueprint {
         'LAND',
         'CORE',
         'NECRO',
-        'KBOT',
+        'BOT',
         'VEHICLE',
         'VTOL',
     },

@@ -88,7 +88,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandArtillerySCTA2',
         Priority = 70,
         BuilderConditions = { 
-            { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.MOBILE * (categories.ARTILLERY + categories.ROCKET),
+            { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.MOBILE * (categories.ARTILLERY + categories.SILO),
                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
         },
@@ -124,7 +124,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandRocketSCTA',
         Priority = 85,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.TECH2 * categories.ROCKET,
+            { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.TECH2 * categories.SILO,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
         },
@@ -135,7 +135,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandMissileSCTA2',
         Priority = 85,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.TECH2 * categories.ROCKET,
+            { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.TECH2 * categories.SILO * categories.MOBILE,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
         },
@@ -211,7 +211,7 @@ BuilderGroup {
         PlatoonTemplate = 'T3HOVERMISSILESCTA', 
         Priority = 110,
         BuilderConditions = {
-        { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.TECH3 * categories.ROCKET,
+        { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.TECH3 * categories.SILO * categories.MOBILE,
         '<=', categories.MOBILE * categories.LAND - categories.ENGINEER } }, -- Don't make tanks if we have lots of them. },
         },
         BuilderType = 'Land',

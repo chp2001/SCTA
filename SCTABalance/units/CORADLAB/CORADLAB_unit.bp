@@ -43,7 +43,7 @@ UnitBlueprint {
 	    'CORE',
         'DEVELOPMENT',
 	    'SORTCONSTRUCTION',
-        'KBOT',
+        'BOT',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -84,9 +84,9 @@ UnitBlueprint {
         DifferentialUpgradeCostCalculation = true,
 	BuildRate = 300,
         BuildableCategory = {
-            'KBOT MOBILE TECH3 CORE',
-            'KBOT MOBILE TECH2 CORE',
-            'KBOT MOBILE TECH1 CORE',
+            'BOT MOBILE TECH3 CORE',
+            'BOT MOBILE TECH2 CORE',
+            'BOT MOBILE TECH1 CORE',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

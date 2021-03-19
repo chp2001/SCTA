@@ -16,8 +16,8 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'ARTILLERY',
         'CORE',
-        'KBOT',
-
+        'BOT',
+        'ALLTERRAIN',
         'SNIPEMODE',
     },
     Display = {

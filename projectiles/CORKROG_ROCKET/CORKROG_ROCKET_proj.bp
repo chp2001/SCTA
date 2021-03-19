@@ -39,7 +39,8 @@ ProjectileBlueprint {
     Categories = {
         'CORE',
         'PROJECTILE',
-        'ROCKET',
+        'MISSILE',
+        'TACTICAL',
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/fmdmisl_mesh.bp',

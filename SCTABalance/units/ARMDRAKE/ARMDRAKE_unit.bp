@@ -45,7 +45,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',  
         'ARM',
-        'KBOT',
         'BUILTBYGANTRY',  
         'SNIPEMODE',
         'LASER',

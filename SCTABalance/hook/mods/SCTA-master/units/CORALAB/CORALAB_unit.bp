@@ -16,9 +16,8 @@ UnitBlueprint {
         'LAND', 
 	    'CORE',
 	    'SORTCONSTRUCTION',
-
         'LAB',
-        'KBOT',
+        'BOT',
     },
     Defense = {
         Health = 8200,
@@ -37,9 +36,9 @@ UnitBlueprint {
         BuildRate = 150,
         BuildTime = 18000,
         BuildableCategory = {
-            'KBOT MOBILE TECH1 CORE', 
-            'KBOT MOBILE TECH2 CORE',
-            'KBOT MOBILE TECH3 CORE',
+            'BOT MOBILE TECH1 CORE', 
+            'BOT MOBILE TECH2 CORE',
+            'BOT MOBILE TECH3 CORE',
         },
     },
     LifeBarHeight = 0.22,

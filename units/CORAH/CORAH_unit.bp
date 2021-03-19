@@ -30,13 +30,12 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'HOVER',
-
         'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
         'ANTIAIR',
-        'ROCKET',
+        'SILO',
         'OVERLAYANTIAIR',
         'LAND',
         'CORE',

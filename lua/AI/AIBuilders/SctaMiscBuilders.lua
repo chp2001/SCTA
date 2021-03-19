@@ -13,7 +13,7 @@ BuilderGroup {
         Priority = 50,
         InstanceCount = 3,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.ROCKET - categories.MOBILE} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.SILO - categories.MOBILE} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.5}},
         },
         BuilderType = 'Any',

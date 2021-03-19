@@ -14,7 +14,7 @@ UnitBlueprint {
     'LAND',
     'DIRECTFIRE',
     'BUILTBYGANTRY',
-    'KBOT',
+    'BOT',
     'OVERLAYDIRECTFIRE',
     'CORE',
     'CONSTRUCTION',

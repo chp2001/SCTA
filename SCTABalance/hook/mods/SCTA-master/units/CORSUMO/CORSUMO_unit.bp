@@ -10,8 +10,7 @@ UnitBlueprint {
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'KBOT',
-
+        'BOT',
         'LASER',
     },
     Defense = {

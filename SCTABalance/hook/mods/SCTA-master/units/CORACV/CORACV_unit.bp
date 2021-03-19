@@ -15,9 +15,8 @@ UnitBlueprint {
 	'LAND',
 	'SELECTION', 
         'CORE',
-        'KBOT',
+        'BOT',
         'VEHICLE',
-
     },
     Defense = {
         Health = 1200,

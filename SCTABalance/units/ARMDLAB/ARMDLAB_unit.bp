@@ -43,7 +43,7 @@ UnitBlueprint {
 	    'ARM',
         'DEVELOPMENT',
 	    'SORTCONSTRUCTION',
-        'KBOT',
+        'BOT',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -85,8 +85,8 @@ UnitBlueprint {
         DifferentialUpgradeCostCalculation = true,
         BuildableCategory = {
             'armadlab',
-            'KBOT MOBILE TECH1 ARM',
-            'KBOT MOBILE TECH2 ARM',
+            'BOT MOBILE TECH1 ARM',
+            'BOT MOBILE TECH2 ARM',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

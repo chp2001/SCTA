@@ -44,8 +44,7 @@ UnitBlueprint {
     BuildIconSortPriority = 0,
     Categories = {
         'SELECTABLE',
-        'KBOT',
-
+        'BOT',
         'TECH2',
         'ENGINEER',
         'REPAIR',

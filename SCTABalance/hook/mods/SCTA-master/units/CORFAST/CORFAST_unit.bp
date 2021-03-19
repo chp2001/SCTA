@@ -13,7 +13,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'MOBILE',
 	    'LAND',
-        'KBOT',
+        'BOT',
         'OVERLAYRADAR',
         'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',

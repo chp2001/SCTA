@@ -9,13 +9,12 @@ UnitBlueprint {
    Categories = {
     'SELECTABLE',
     'TECH3',
-
     'VISIBLETORECON',
     'RECLAIMABLE',
     'MOBILE',
     'DIRECTFIRE',
     'OVERLAYDIRECTFIRE',
-    'KBOT',
+    'BOT',
     'LAND',
     'ARM',
     'LASER',

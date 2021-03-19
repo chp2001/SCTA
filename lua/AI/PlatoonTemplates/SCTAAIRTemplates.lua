@@ -25,6 +25,14 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
+    Name = 'InceptorAISCTA',
+    Plan = 'InterceptorAISCTA',
+    GlobalSquads = {
+        { SKY * categories.ANTIAIR - categories.BOMBER - categories.TRANSPORTFOCUS, 2, 100, 'attack', 'none' },
+    }
+}
+
+PlatoonTemplate {
     Name = 'StealthFightersAISCTA',
     Plan = 'StealthIntieAISCTA',
     GlobalSquads = {

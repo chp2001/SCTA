@@ -46,6 +46,19 @@ BuilderGroup {
         },
     },
     Builder {
+        BuilderName = 'SCTAAI Air Intercept Omni',
+        PlatoonTemplate = 'InceptorAISCTA',
+        Priority = 100,
+        InstanceCount = 200,
+        BuilderType = 'Any',
+        BuilderData = {
+            Stealth = true,
+        },        
+        BuilderConditions = { 
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AIR * categories.ANTIAIR } },
+        },
+    },
+    Builder {
         BuilderName = 'SCTAAI Air Hunt',
         PlatoonTemplate = 'AirHuntAISCTA',
         Priority = 125,
@@ -61,7 +74,10 @@ BuilderGroup {
         PlatoonTemplate = 'StealthFightersAISCTA',
         Priority = 150,
         InstanceCount = 200,
-        BuilderType = 'Any',     
+        BuilderType = 'Any',  
+        BuilderData = {
+            Stealth = true,
+        },   
         BuilderConditions = { 
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AIR * categories.ANTIAIR } },
         },

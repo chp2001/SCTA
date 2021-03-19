@@ -432,4 +432,28 @@ BuilderGroup {
             }
         }
     },
+    Builder {
+        BuilderName = 'SCTAAI Gantry Emergency Factory',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        Priority = 750,
+        InstanceCount = 2,
+        DelayEqualBuildPlattons = {'Factories', 3},
+        BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
+            { MIBC, 'GreaterThanGameTime', {1500} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.85, 0.5}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T3QuantumGate',
+                }
+            }
+        }
+    },
 }

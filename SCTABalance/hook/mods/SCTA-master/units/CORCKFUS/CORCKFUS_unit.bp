@@ -2,7 +2,6 @@ UnitBlueprint {
     Merge = true,
     Categories = {
         'BUILTBYT1HOVER',
-        'TACLOAK',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',

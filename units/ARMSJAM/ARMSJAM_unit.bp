@@ -49,6 +49,7 @@ UnitBlueprint {
         'COUNTERINTELLIGENCE',
         'DEFENSIVEBOAT',
         'ARM',
+        'STEALTHFIELD',
     },
     CollisionOffsetY = -0.25,
     Defense = {

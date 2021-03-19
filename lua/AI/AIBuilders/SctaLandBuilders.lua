@@ -149,7 +149,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandAuxFact1',
         Priority = 70,
         BuilderConditions = {   
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.TACLOAK * categories.LAND} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.BOMB * categories.LAND} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
         }, 
         BuilderType = 'Land',

@@ -21,7 +21,7 @@ UnitBlueprint {
     'ENGINEER',
     'SUBCOMMANDER',
     'SNIPEMODE',
-    'TACLOAK',
+    'STEALTH',
     'ALLTERRAIN',
     },
    Display = {

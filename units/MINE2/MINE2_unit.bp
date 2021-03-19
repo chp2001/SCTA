@@ -29,7 +29,6 @@ UnitBlueprint {
         'CORE',
         'BOMB',
         'STRUCTURE',
-        'TACLOAK',
     },
     Defense = {
         ArmorType = 'Structure',

@@ -50,10 +50,10 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
         'MOBILE',
+        'STEALTH',
 	    'CONSTRUCTION',
 	    'LAND',
         'CORE',
-        'NECRO',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -72,7 +72,7 @@ UnitBlueprint {
               '<LOC ability_engineeringsuite>Engineering Suite',
     },
     AnimationWalk = '/mods/SCTA-master/units/CORNECRO/CORNECRO_lod0_Awalk.sca',
-    AnimationWalkRate = 1,
+    AnimationWalkRate = 2,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -91,9 +91,10 @@ UnitBlueprint {
         BuildRate = 180,
         BuildTime = 7931,
         MaxBuildDistance = 3.75,
-	NaturalProducer = true,
-	ProductionPerSecondEnergy = 17,
-    ProductionPerSecondMass = 1,
+        Necro = true,
+	    NaturalProducer = true,
+	    ProductionPerSecondEnergy = 17,
+        ProductionPerSecondMass = 1,
     BuildableCategory = {
         'BOMB STRUCTURE CORE',
     },

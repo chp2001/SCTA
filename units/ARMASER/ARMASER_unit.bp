@@ -45,6 +45,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'MOBILE',
 	    'LAND',
+        'STEALTHFIELD',
         'INTELLIGENCE',
         'COUNTERINTELLIGENCE',
         'OVERLAYCOUNTERINTEL',

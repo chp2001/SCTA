@@ -17,6 +17,7 @@ UnitBlueprint {
         'ARM',
         'VEHICLE',
     'OVERLAYOMNI',
+    'STEALTHFIELD',
     'OVERLAYCOUNTERINTEL',
     'COUNTERINTELLIGENCE',
     },

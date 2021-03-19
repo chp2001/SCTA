@@ -17,7 +17,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
 	    'CORE',
         'ALLTERRAIN',
-        'TACLOAK',
     },
     Economy = {
         BuildCostEnergy = 8000,

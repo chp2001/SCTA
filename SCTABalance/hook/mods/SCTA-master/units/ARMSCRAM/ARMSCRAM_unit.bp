@@ -9,6 +9,7 @@ UnitBlueprint {
         'MOBILE',
 	    'NAVAL',
 	    'INTELLIGENCE',
+        'STEALTHFIELD',
         'OVERLAYCOUNTERINTEL',
         'COUNTERINTELLIGENCE',
         'DEFENSIVEBOAT',

@@ -36,7 +36,6 @@ UnitBlueprint {
         'MOBILE',
         'LAND',
         'ARM',
-        'TACLOAK',
         'SCOUT',
     },
     Defense = {

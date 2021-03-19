@@ -13,8 +13,8 @@ UnitBlueprint {
         'MOBILE',
 	    'LAND',
         'ARM',
+        'STEALTH',
         'OVERLAYRADAR',
-        'TACLOAK',
         'SCOUT',
     },
     Economy = {

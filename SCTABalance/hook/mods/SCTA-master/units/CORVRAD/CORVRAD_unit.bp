@@ -17,6 +17,7 @@ UnitBlueprint {
         'COUNTERINTELLIGENCE',
         'OVERLAYRADAR',
         'CORE',
+        'STEALTHFIELD',
         'OVERLAYOMNI',
         'OVERLAYCOUNTERINTEL',
         'VEHICLE',

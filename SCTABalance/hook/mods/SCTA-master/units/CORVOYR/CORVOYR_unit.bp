@@ -15,6 +15,7 @@ UnitBlueprint {
         'RADAR',
         'NEEDMOBILEBUILD',
         'OVERLAYRADAR',
+        'STEALTHFIELD',
         'OVERLAYCOUNTERINTEL',
         'COUNTERINTELLIGENCE',
         'SORTINTEL',

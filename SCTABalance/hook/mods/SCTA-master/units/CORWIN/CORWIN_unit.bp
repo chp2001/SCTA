@@ -12,11 +12,7 @@ Defense = {
         BuildCostMass = 90,
         BuildCostEnergy = 2800,
         ProductionPerSecondEnergyMin = 15,
-        ProductionPerSecondEnergyMax = 45,
-    },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
+        ProductionPerSecondEnergyMax = 35,
     },
     Intel = {
         VisionRadius = 8,

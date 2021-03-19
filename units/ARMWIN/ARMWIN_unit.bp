@@ -53,6 +53,9 @@ UnitBlueprint {
         },
         UniformScale = 0.16,
     },
+    Footprint = {
+        MaxSlope = 0.625,
+    },
     Economy = {
         BuildCostEnergy = 509,
         BuildCostMass = 52,
@@ -62,11 +65,6 @@ UnitBlueprint {
         ProductionPerSecondEnergyMin = 10,
         ProductionPerSecondEnergyMax = 40,
     },
-    Footprint = {
-	MaxSlope = 0.625,
-        SizeX = 4,
-        SizeZ = 4,
-    },
     General = {
 	---BuildAngle = 8192,
         Category = 'Economy',
@@ -74,7 +72,7 @@ UnitBlueprint {
         SelectionPriority = 5,
         FactionName = 'ARM',
         Icon = 'land',
-TechLevel = 'RULEUTL_Basic',
+        TechLevel = 'RULEUTL_Basic',
         UnitName = 'Wind Generator',
     },
     Intel = {
@@ -82,7 +80,7 @@ TechLevel = 'RULEUTL_Basic',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 2,
+    LifeBarSize = 1,
     SelectionCenterOffsetX = -0.4,
     SelectionSizeX = 2.25,
     SelectionSizeZ = 2.25,

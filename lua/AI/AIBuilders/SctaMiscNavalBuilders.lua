@@ -6,6 +6,7 @@ local MABC = '/lua/editor/MarkerBuildConditions.lua'
 local PLANT = categories.FACTORY * categories.TECH1
 local LAB = categories.FACTORY * categories.TECH2
 local PLATFORM = categories.FACTORY * categories.TECH3
+local FUSION = categories.ENERGYPRODUCTION * categories.STRUCTURE * (categories.TECH2 + categories.TECH3)
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIEngineerNavalMiscBuilder',
@@ -62,7 +63,7 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3,  categories.FUSION} }, 
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3,  FUSION} }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
         },

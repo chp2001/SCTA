@@ -23,6 +23,7 @@ local SAI = '/lua/ScenarioPlatoonAI.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local PlatoonFile = '/lua/platoon.lua'
 local TAutils = '/mods/SCTA-master/lua/TAutils.lua'
+local FUSION = categories.ENERGYPRODUCTION * categories.STRUCTURE * (categories.TECH2 + categories.TECH3)
 
 BuilderGroup {
     BuilderGroupName = 'SCTAUpgrades',
@@ -78,7 +79,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.OPTICS} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.5 }},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.RADAR * categories.STRUCTURE * categories.TECH2} },
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, categories.FUSION} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
             { IBC, 'BrainNotLowPowerMode', {} },
         },
         BuilderType = 'Any',

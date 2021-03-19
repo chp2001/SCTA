@@ -27,13 +27,11 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-
 	    'STRUCTURE',
         'ECONOMIC',
         'SORTECONOMY',
 	    'ENERGYPRODUCTION',
 	    'CORE',
-	    'FUSION',
     },
     Defense = {
         ArmorType = 'Structure',

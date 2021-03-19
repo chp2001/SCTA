@@ -31,7 +31,6 @@ UnitBlueprint {
         'SORTECONOMY',
 	    'ENERGYPRODUCTION',
         'CORE',
-        'FUSION',
         'TACLOAK',
     },
     Defense = {

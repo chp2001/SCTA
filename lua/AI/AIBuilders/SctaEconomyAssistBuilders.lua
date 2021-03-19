@@ -8,6 +8,7 @@ local TAutils = '/mods/SCTA-master/lua/TAutils.lua'
 local PLANT = categories.FACTORY * categories.TECH1
 local LAB = categories.FACTORY * categories.TECH2
 local PLATFORM = categories.FACTORY * categories.TECH3
+local FUSION = categories.ENERGYPRODUCTION * categories.STRUCTURE * (categories.TECH2 + categories.TECH3)
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAssisters',
@@ -18,7 +19,7 @@ BuilderGroup {
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.FUSION }},
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, FUSION }},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
         },
         BuilderType = 'Any',
@@ -26,7 +27,7 @@ BuilderGroup {
             Assist = {
                 AssisteeType = 'Engineer',
                 AssistLocation = 'LocationType',
-                BeingBuiltCategories = {'FUSION'},
+                BeingBuiltCategories = {'TECH2 ENERGYPRODUCTION STRUCTURE, TECH3 ENERGYPRODUCTION STRUCTURE,'},
                 Time = 20,
                 AssistUntilFinished = true,
             },
@@ -267,13 +268,13 @@ BuilderGroup {
         InstanceCount = 8,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.SOLAR}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, categories.FUSION} },
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.ENERGYPRODUCTION * categories.TECH1 * categories.STRUCTURE}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
             { EBC, 'LessThanEconStorageRatio', { 0.25, 1}},
             },
         BuilderData = {
             Location = 'LocationType',
-            Reclaim = {'SOLAR'},
+            Reclaim = {'ENERGYPRODUCTION STRUCTURE TECH1'},
                 ReclaimTime = 30,
         },
         BuilderType = 'Any',

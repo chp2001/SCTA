@@ -3,6 +3,7 @@ local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MABC = '/lua/editor/MarkerBuildConditions.lua'
+local FUSION = categories.ENERGYPRODUCTION * categories.STRUCTURE * (categories.TECH2 + categories.TECH3)
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIEngineerEcoBuilder',
@@ -261,7 +262,7 @@ BuilderGroup {
         Priority = 130,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FUSION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
             { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.25 }},
         },
         BuilderType = 'Any',
@@ -282,7 +283,7 @@ BuilderGroup {
         Priority = 85,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FUSION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
             { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.25 }},
         },
         BuilderType = 'Any',
@@ -303,7 +304,7 @@ BuilderGroup {
         Priority = 50,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FUSION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
             { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.25 }},
         },
         BuilderType = 'Any',
@@ -324,9 +325,9 @@ BuilderGroup {
         Priority = 130,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FUSION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, FUSION} },
             { EBC, 'GreaterThanEconStorageCurrent', { 500, 1000 } },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.FUSION} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -346,9 +347,9 @@ BuilderGroup {
         Priority = 125,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TECH3 * categories.FUSION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TECH3 * categories.ENERGYPRODUCTION * categories.STRUCTURE} },
             { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.15 }},
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.FUSION} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -368,7 +369,7 @@ BuilderGroup {
         Priority = 175,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.FUSION} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
             { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.15 }},
         },
         BuilderType = 'Any',
@@ -389,7 +390,7 @@ BuilderGroup {
         Priority = 120,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2,  categories.FUSION} }, 
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2,  FUSION} }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
         },
@@ -411,7 +412,7 @@ BuilderGroup {
         Priority = 125,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1,  categories.FUSION} }, 
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1,  FUSION} }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
         },
@@ -433,7 +434,7 @@ BuilderGroup {
         Priority = 110,
         InstanceCount = 4,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3,  categories.FUSION} }, 
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3,  FUSION} }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
         },

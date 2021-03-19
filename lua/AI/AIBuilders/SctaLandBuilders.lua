@@ -37,7 +37,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            --{ EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.5}}
+            { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.5}}
         },
         BuilderType = 'Land',
     },
@@ -105,7 +105,7 @@ BuilderGroup {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH2 * categories.TANK,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.75 } },
-            --{ EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}}
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}}
         },
         BuilderType = 'Land',
     },

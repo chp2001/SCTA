@@ -31,7 +31,6 @@ UnitBlueprint {
         'SELECTABLE',
         'TECH1',
         'CORE',
-        'OCEAN',
 	    'ANTISUB',
         'VISIBLETORECON',
         'RECLAIMABLE',

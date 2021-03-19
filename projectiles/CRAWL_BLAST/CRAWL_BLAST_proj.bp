@@ -35,7 +35,6 @@ ProjectileBlueprint {
         'ARM',
         'PROJECTILE',
         'DIRECTFIRE',
-	'KAMIKAZI',
     },
     Display = {
         StrategicIconSize = 1,
@@ -46,7 +45,6 @@ ProjectileBlueprint {
             'ARM',
             'PROJECTILE',
             'DIRECTFIRE',
-	    'KAMIKAZI',
         },
         Faction = 'ARM',
         Weapon = 'CRAWL_BLAST',

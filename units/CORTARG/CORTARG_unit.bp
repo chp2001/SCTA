@@ -35,12 +35,11 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
         'TECH3',
         'SORTINTEL',
 	    'STRUCTURE',
 	    'INTELLIGENCE',
-	    'TARGETING',
+	    'OPTICS',
 	    'CORE',
     },
     Defense = {
@@ -111,8 +110,8 @@ UnitBlueprint {
         SelectionPriority = 5,
         FactionName = 'CORE',
         Icon = 'land',
-TechLevel = 'RULEUTL_Basic',
-	UnitName = 'Targeting Facility',
+        TechLevel = 'RULEUTL_Basic',
+	    UnitName = 'Targeting Facility',
     },
     Intel = {
         RadarRadius = 10,

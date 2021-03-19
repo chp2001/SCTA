@@ -45,10 +45,9 @@ UnitBlueprint {
 	    'STRUCTURE',
 	    'CONSTRUCTION',
 	    'ARM',
-		'PLANT',
 	    'SORTCONSTRUCTION',
         'LAND', 
-        'KBOT',
+        'BOT',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -82,7 +81,7 @@ UnitBlueprint {
         BuildTime = 6760,
 	    BuildRate = 100,
         BuildableCategory = {
-            'KBOT MOBILE TECH1 ARM',
+            'BOT MOBILE TECH1 ARM',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

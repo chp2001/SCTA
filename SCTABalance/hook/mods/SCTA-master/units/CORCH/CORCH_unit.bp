@@ -3,7 +3,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH3',
-
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -17,7 +16,7 @@ UnitBlueprint {
         'LAND',
         'CORE',
         'HOVER',
-        'KBOT',
+        'BOT',
         'VEHICLE',
         'ALLTERRAIN',
     },

@@ -42,7 +42,7 @@ UnitBlueprint {
         'AIR', 
         'CONSTRUCTIONSORTDOWN',
 	'CORE',
-    'DEVELOPMENT',
+    'RESEARCH',
 	'SORTCONSTRUCTION',
     },
     Defense = {

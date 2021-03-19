@@ -71,7 +71,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH3',
-
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -80,10 +79,10 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
         'MOBILE',
-	'CONSTRUCTION',
-    'AIR',
-    'VTOL',
-	'SELECTION', 
+	    'CONSTRUCTION',
+        'AIR',
+        'VTOL',
+	    'SELECTION', 
         'CORE',
     },
     Defense = {
@@ -156,7 +155,7 @@ UnitBlueprint {
         SelectionPriority = 3,
         FactionName = 'CORE',
         Icon = 'land',
-TechLevel = 'RULEUTL_Advanced',
+        TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Construction Seaplane',
     },
     Intel = {

@@ -41,7 +41,6 @@ UnitBlueprint {
         'SELECTABLE',
         'ARM',
         'VEHICLE',
-
         'TECH2',
         'ENGINEER',
         'REPAIR',

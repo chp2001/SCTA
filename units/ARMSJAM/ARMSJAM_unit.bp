@@ -39,8 +39,6 @@ UnitBlueprint {
     BuildIconSortPriority = 8,
     Categories = {
         'SELECTABLE',
-        'OCEAN',
-
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -51,6 +49,7 @@ UnitBlueprint {
         'COUNTERINTELLIGENCE',
         'DEFENSIVEBOAT',
         'ARM',
+        'STEALTHFIELD',
     },
     CollisionOffsetY = -0.25,
     Defense = {

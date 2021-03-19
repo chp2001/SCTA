@@ -48,9 +48,8 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',        
         'CORE',
-        'KBOT',
         'SNIPEMODE',
-        'LASER',
+        'ANTISHIELD',
     },
     Defense = {
         AirThreatLevel = 0,

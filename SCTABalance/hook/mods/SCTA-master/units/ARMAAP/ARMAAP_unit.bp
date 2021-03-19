@@ -9,7 +9,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-
         'AIR',
 	    'FACTORY',
         'RALLYPOINT',
@@ -19,7 +18,6 @@ UnitBlueprint {
         'OVERLAYRADAR',
 	    'ARM',
 	    'SORTCONSTRUCTION',
-        'LAB',
         },
         Display = {
         UniformScale = 0.23,

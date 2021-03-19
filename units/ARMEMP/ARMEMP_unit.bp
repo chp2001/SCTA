@@ -29,7 +29,6 @@ UnitBlueprint {
         'BUILTBYT2KBOT',
         'BUILTBYT2VEHICLE',
         'TECH2',
-
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',

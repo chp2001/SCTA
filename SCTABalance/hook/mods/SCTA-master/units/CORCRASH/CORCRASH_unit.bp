@@ -8,8 +8,7 @@ UnitBlueprint {
    BuildIconSortPriority = 5,
    Categories = {
     'SELECTABLE',
-    'KBOT',
-
+    'BOT',
     'TECH2',
     'VISIBLETORECON',
     'RECLAIMABLE',

@@ -35,7 +35,7 @@ UnitBlueprint {
 	    'CORE',
 	    'STRATEGIC',
         'SNIPEMODE',
-        'LASER',
+        'ANTISHIELD',
     },
     Defense = {
         DamageModifier = 0.5,

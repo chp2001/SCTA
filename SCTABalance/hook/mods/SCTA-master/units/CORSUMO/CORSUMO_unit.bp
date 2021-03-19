@@ -10,9 +10,8 @@ UnitBlueprint {
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'KBOT',
-
-        'LASER',
+        'BOT',
+        'ANTISHIELD',
     },
     Defense = {
         Health = 10000,

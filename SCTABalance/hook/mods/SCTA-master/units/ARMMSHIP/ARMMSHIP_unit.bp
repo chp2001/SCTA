@@ -8,21 +8,18 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH3',
-
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
 	    'NAVAL',
 	    'INDIRECTFIRE',
 	    'ANTIAIR',
-	    'ROCKET',
         'SILO',
 	    'CRUISER',
         'OVERLAYINDIRECTFIRE',
 	    'OVERLAYANTIAIR',
 	    'OVERLAYRADAR',
         'ARM',
-        'OCEAN',
     },
     Display = {
         Abilities = {

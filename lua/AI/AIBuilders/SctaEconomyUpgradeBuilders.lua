@@ -75,7 +75,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1200} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TARGETING} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.OPTICS} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.5 }},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.RADAR * categories.STRUCTURE * categories.TECH2} },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, categories.FUSION} },

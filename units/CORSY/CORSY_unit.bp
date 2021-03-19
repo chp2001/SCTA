@@ -47,7 +47,6 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'NAVAL',
 	'CORE',
-		'PLANT',
 	'SORTCONSTRUCTION',
     },
     CollisionOffsetY = -1,
@@ -85,7 +84,7 @@ UnitBlueprint {
         BuildTime = 6000,
 	BuildRate = 100,
         BuildableCategory = {
-            'OCEAN TECH1 CORE',
+            'NAVAL MOBILE TECH1 CORE',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

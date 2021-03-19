@@ -1,13 +1,15 @@
+--DISABLED
+
 UnitBlueprint {
     Merge = true, 
     Categories = {
         'SELECTABLE',
         'TECH2',
-
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
 	    'LAND',
+        'STEALTHFIELD',
         'INTELLIGENCE',
         'COUNTERINTELLIGENCE',
         'OVERLAYCOUNTERINTEL',

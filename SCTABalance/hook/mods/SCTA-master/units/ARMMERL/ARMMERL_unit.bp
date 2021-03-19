@@ -13,12 +13,10 @@ UnitBlueprint {
         'MOBILE',
 	    'LAND',
 	    'INDIRECTFIRE',
-	    'ROCKET',
         'SILO',
         'OVERLAYINDIRECTFIRE',
         'ARM',
         'VEHICLE',
-
         'SNIPEMODE',
     },
     Display = {

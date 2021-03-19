@@ -29,15 +29,13 @@ UnitBlueprint {
     BuildIconSortPriority = 7,
     Categories = {
         'SELECTABLE',
-        'KBOT',
-
+        'BOT',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
         'LAND',
         'ARM',
-        'TACLOAK',
         'SCOUT',
     },
     Defense = {

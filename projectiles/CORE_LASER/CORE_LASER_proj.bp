@@ -29,7 +29,7 @@ ProjectileBlueprint {
     Categories = {
         'CORE',
         'PROJECTILE',
-        'DIRECTFIRE'
+        'DIRECTFIRE',
     },
     Display = {
         StrategicIconSize = 1,

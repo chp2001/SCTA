@@ -54,7 +54,6 @@ UnitBlueprint {
         'MOBILE',
         'CONSTRUCTION',
         'DEFENSIVEBOAT',
-        'OCEAN',
     },
     CollisionOffsetY = -0.25,
     Defense = {

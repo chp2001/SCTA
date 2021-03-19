@@ -26,7 +26,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
 	    'STRUCTURE',
         'DEFENSE',
         'STRATEGIC',
@@ -34,7 +33,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
 	    'ARM',
 	    'SORTDEFENSE',
-        'LASER',
+        'ANTISHIELD',
         'SNIPEMODE',
         'OVERLAYRADAR',
     },

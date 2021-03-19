@@ -40,8 +40,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'VEHICLE',
-
-        'TECH2',
+        'TECH1',
         'ENGINEER',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -87,7 +86,7 @@ UnitBlueprint {
         BuildRate = 100,
         BuildTime = 1519,
         BuildableCategory = {
-            'BUILTBYT1MINELAYER ARM',
+            'BOMB STRUCTURE ARM',
         },
         MaxBuildDistance = 4.375,
     },

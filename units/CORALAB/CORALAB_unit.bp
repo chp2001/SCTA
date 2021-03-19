@@ -34,7 +34,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-
 	    'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -43,8 +42,7 @@ UnitBlueprint {
 	    'CORE',
 	    'SORTCONSTRUCTION',
         'LAND', 
-        'LAB',
-        'KBOT',
+        'BOT',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -77,7 +75,7 @@ UnitBlueprint {
         BuildTime = 14000,
 	BuildRate = 200,
         BuildableCategory = {
-            'KBOT MOBILE TECH2 CORE',
+            'BOT MOBILE TECH2 CORE',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

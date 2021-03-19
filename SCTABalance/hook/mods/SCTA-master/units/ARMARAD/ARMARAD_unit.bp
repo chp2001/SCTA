@@ -15,7 +15,7 @@ UnitBlueprint {
         'OVERLAYRADAR',
 	    'ARM',
 	    'SORTINTEL',
-        'TARGETING',
+	    'OPTICS',
     },
  Display = {
   Abilities = {

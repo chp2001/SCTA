@@ -30,7 +30,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -42,7 +41,6 @@ UnitBlueprint {
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',
         'ARM',
-        'OCEAN',
     'ANTISUB',
     'SNIPEMODE',
     },

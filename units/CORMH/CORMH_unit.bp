@@ -30,7 +30,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH3',
-
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -39,7 +38,6 @@ UnitBlueprint {
         'LAND',
         'CORE',
         'HOVER',
-        'ROCKET',
         'SILO',
     },
     Defense = {

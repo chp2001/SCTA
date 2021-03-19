@@ -39,17 +39,17 @@ UnitBlueprint {
     BuildIconSortPriority = 9,
     Categories = {
         'SELECTABLE',
-
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
 	    'LAND',
+        'STEALTHFIELD',
         'INTELLIGENCE',
         'COUNTERINTELLIGENCE',
         'OVERLAYCOUNTERINTEL',
         'CORE',
-        'KBOT',
+        'BOT',
     },
     Defense = {
         ArmorType = 'Normal',

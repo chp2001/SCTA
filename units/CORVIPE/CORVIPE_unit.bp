@@ -27,15 +27,14 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-        'TECH1',
+        'TECH2',
 	    'STRUCTURE',
 	    'DEFENSE',
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 	    'CORE',
         'SNIPEMODE',
-        'LASER',
+        'ANTISHIELD',
     },
     Defense = {
         DamageModifier = 0.28,

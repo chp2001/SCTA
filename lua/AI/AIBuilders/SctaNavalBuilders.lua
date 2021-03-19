@@ -2,6 +2,9 @@ local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local PLANT = categories.FACTORY * categories.TECH1
+local LAB = categories.FACTORY * categories.TECH2
+local PLATFORM = categories.FACTORY * categories.TECH3
 
 function SeaAttackCondition(aiBrain, locationType, targetNumber)
     local pool = aiBrain:GetPlatoonUniquelyNamed('ArmyPool')
@@ -106,8 +109,8 @@ BuilderGroup {
         Priority = 100,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {360} }, -- Don't make tanks if we have lots of them.
-            { UCBC, 'HaveUnitRatio', { 0.75, categories.OCEAN * categories.SCOUT,
-            '<=', categories.OCEAN} },
+            { UCBC, 'HaveUnitRatio', { 0.75, categories.NAVAL * categories.MOBILE * categories.SCOUT,
+            '<=', categories.NAVAL * categories.MOBILE} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
@@ -118,10 +121,10 @@ BuilderGroup {
         PlatoonTemplate = 'T1FrigateSCTA',
         Priority = 100,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.33, categories.OCEAN * categories.FRIGATE,
-            '<=', categories.OCEAN} },
+            { UCBC, 'HaveUnitRatio', { 0.33, categories.NAVAL * categories.MOBILE * categories.FRIGATE,
+            '<=', categories.NAVAL * categories.MOBILE} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB * categories.NAVAL } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, LAB * categories.NAVAL } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Sea',
@@ -131,8 +134,8 @@ BuilderGroup {
         PlatoonTemplate = 'T2DestroyerSCTA',
         Priority = 125,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.33, categories.OCEAN * categories.DESTROYER,
-            '<=', categories.OCEAN} },
+            { UCBC, 'HaveUnitRatio', { 0.33, categories.NAVAL * categories.MOBILE * categories.DESTROYER,
+            '<=', categories.NAVAL * categories.MOBILE} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
@@ -143,8 +146,8 @@ BuilderGroup {
         PlatoonTemplate = 'T2CrusSCTA',
         Priority = 100,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.1, categories.OCEAN * categories.CRUISER,
-            '<=', categories.OCEAN} },
+            { UCBC, 'HaveUnitRatio', { 0.1, categories.NAVAL * categories.MOBILE * categories.CRUISER,
+            '<=', categories.NAVAL * categories.MOBILE} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.15}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },

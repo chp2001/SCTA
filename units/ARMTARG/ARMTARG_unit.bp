@@ -35,11 +35,10 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
         'TECH3',
 	    'STRUCTURE',
 	    'INTELLIGENCE',
-	    'TARGETING',
+	    'OPTICS',
 	    'ARM',
 	    'SORTINTEL',
     },

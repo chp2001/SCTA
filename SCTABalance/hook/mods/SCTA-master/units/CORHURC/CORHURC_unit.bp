@@ -19,7 +19,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
 	    'OVERLAYANTIAIR',
         'CORE',
-
         'SNIPEMODE',
     },
     Defense = {

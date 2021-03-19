@@ -28,7 +28,7 @@ UnitBlueprint {
         'TECH1',
 	    'STRUCTURE',
         'ECONOMIC',
-        'SORTSTRATEGIC',
+        'SORTECONOMY',
 	    'ENERGYPRODUCTION',
 	    'NAVAL',
 	    'ARM',

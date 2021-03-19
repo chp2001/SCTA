@@ -36,7 +36,7 @@ UnitBlueprint {
         'OVERLAYOMNI',
 	    'CORE',
 	    'SORTINTEL',
-        'TARGETING',
+	    'OPTICS',
         'CONSTRUCTIONSORTDOWN',
     },
     Defense = {

@@ -15,7 +15,7 @@ UnitBlueprint {
         'OVERLAYSONAR',
         'ARM',
 	    'SORTINTEL',
-        'TARGETING',
+	    'OPTICS',
     },
 	Defense = {
         Health = 1000,

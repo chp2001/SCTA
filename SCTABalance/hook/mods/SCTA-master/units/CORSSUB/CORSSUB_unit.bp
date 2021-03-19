@@ -4,9 +4,7 @@ UnitBlueprint {
    Categories = {
     'SELECTABLE',
     'TECH3',
-    'OCEAN',
     'CORE',    
-
     'VISIBLETORECON',
     'RECLAIMABLE',
     'MOBILE',

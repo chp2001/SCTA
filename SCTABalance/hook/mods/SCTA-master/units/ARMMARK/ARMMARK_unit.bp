@@ -6,8 +6,7 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
+        'BUILTBYT1HOVER',
         'SELECTABLE',
         'TECH3',
         'VISIBLETORECON',
@@ -15,11 +14,11 @@ UnitBlueprint {
         'MOBILE',
 	    'LAND',
         'ARM',
-
         'RADAR',
         'OVERLAYRADAR',
         'OVERLAYCOUNTERINTEL',
         'NEEDMOBILEBUILD',
+        'STEALTHFIELD',
         'COUNTERINTELLIGENCE',
         'SORTINTEL',
         'SCOUT',

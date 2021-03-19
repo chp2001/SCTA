@@ -40,9 +40,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-
-        'ARM',
-        'OCEAN',	
+        'ARM',	
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -61,7 +59,7 @@ UnitBlueprint {
         'OCEANENGINEER',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Sub',
         Health = 360,
         MaxHealth = 360,
         AirThreatLevel = 0,

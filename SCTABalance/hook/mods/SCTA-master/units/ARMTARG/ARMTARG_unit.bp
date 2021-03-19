@@ -10,13 +10,12 @@ UnitBlueprint {
         'TECH3',
 	'STRUCTURE',
 	'INTELLIGENCE',
-    'TARGETING',
+    'OPTICS',
     'RADAR',
     'OMNI',
     'OVERLAYRADAR',
     'OVERLAYOMNI',
 	'ARM',
-
 	'SORTINTEL',
     },
     Defense = {

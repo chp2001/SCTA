@@ -13,11 +13,10 @@ UnitBlueprint {
         'MOBILE',
 	    'LAND',
         'CORE',
-
         'OVERLAYRADAR',
-        'KBOT',
-        'TACLOAK',
+        'BOT',
         'SCOUT',
+        'STEALTH',
     },
     Display = {
         UniformScale = 0.1,

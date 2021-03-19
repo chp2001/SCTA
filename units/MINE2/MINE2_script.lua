@@ -10,7 +10,7 @@ MINE2 = Class(TAMine) {
 
 
 	Weapons = {
-		ARMMINE5 = Class(Projectile) {
+		ARMMINE2 = Class(Projectile) {
 			OnWeaponFired = function(self)
 				self.unit.attacked = true
 				self.unit:Kill()

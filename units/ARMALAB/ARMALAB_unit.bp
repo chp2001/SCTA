@@ -33,7 +33,6 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
         'TECH2',
 	    'FACTORY',
         'RALLYPOINT',
@@ -43,8 +42,7 @@ UnitBlueprint {
         'ARM',
         'LAND', 
 	    'SORTCONSTRUCTION',
-        'LAB',
-        'KBOT',
+        'BOT',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -78,7 +76,7 @@ UnitBlueprint {
         BuildTime = 13520,
 	    BuildRate = 200,
         BuildableCategory = {
-            'KBOT MOBILE TECH2 ARM',
+            'BOT MOBILE TECH2 ARM',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

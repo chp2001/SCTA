@@ -12,7 +12,6 @@ UnitBlueprint {
         'ARTILLERY',
         'CORE',
         'VEHICLE',	
-
         'SNIPEMODE',
     },
     Defense = {

@@ -2,7 +2,7 @@
 #CORSPY
 #
 #Blueprint created by Raevn
-
+--DISABLED
 UnitBlueprint {
     Merge = true,
     Categories = {
@@ -13,9 +13,8 @@ UnitBlueprint {
         'MOBILE',
 	    'LAND',
         'ARM',
-
+        'STEALTH',
         'OVERLAYRADAR',
-        'TACLOAK',
         'SCOUT',
     },
     Economy = {

@@ -7,8 +7,7 @@ UnitBlueprint {
     Merge = true,
     Categories = {
         'SELECTABLE',
-        'KBOT',
-
+        'BOT',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',	
@@ -18,7 +17,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
 	    'ARM',
         'ALLTERRAIN',
-        'TACLOAK',
     },
     Economy = {
         BuildCostEnergy = 8000,

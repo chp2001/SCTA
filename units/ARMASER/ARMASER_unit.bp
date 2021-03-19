@@ -40,12 +40,12 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-
-        'KBOT',
+        'BOT',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
 	    'LAND',
+        'STEALTHFIELD',
         'INTELLIGENCE',
         'COUNTERINTELLIGENCE',
         'OVERLAYCOUNTERINTEL',

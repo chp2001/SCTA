@@ -16,16 +16,12 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'FACTORY',
-        'AIR',
         'NAVALCARRIER',
         'SHOWQUEUE',
         'OVERLAYRADAR',
         'OVERLAYSONAR',
         'OVERLAYMISC',
         'ARM',
-        'OCEAN',
-
-        'GATE',
     },
     Defense = {
         Health = 16000,

@@ -71,10 +71,10 @@ TAconstructor = Class(TAWalking) {
         end
         self.BuildingUnit = false
         self:SetImmobile(false)
-        if __blueprints['armgant'] then
+        if __blueprints['armgant'] and self.restrictions then
             TAutils.updateBuildRestrictions(self)
         end
-        TAWalking.OnStopBuild(self,unitBeingBuilt)
+        TAWalking.OnStopBuild(self, unitBeingBuilt)
     end,
 
     WaitForBuildAnimation = function(self, enable)
@@ -170,7 +170,7 @@ TASeaConstructor = Class(TAconstructor)
 
 TANecro = Class(TAconstructor) {
     OnStartReclaim = function(self, target, oldPosition)
-        if EntityCategoryContains(categories.NECRO, self) then
+        if self:GetBlueprint().Economy.Necro then
             if not target.ReclaimInProgress and not target.NecroingInProgress then
                 --LOG('* Necro: OnStartReclaim:  I am a necro! no ReclaimInProgress; starting Necroing')
                 target.NecroingInProgress = true
@@ -206,7 +206,7 @@ TANecro = Class(TAconstructor) {
     OnStopReclaim = function(self, target, oldPosition)
         TAconstructor.OnStopReclaim(self, target, oldPosition)
         if not target then
-            if self.RecBP and EntityCategoryContains(categories.NECRO, self) and oldPosition ~= self.RecPosition and self.spawnUnit then
+            if self.RecBP and self:GetBlueprint().Economy.Necro and oldPosition ~= self.RecPosition and self.spawnUnit then
                 --LOG('* Necro: OnStopReclaim:  I am a necro! and RecBP = true ')
                 oldPosition = self.RecPosition
                 self:ForkThread( self.RespawnUnit, self.RecBP, self:GetArmy(), self.RecPosition)
@@ -214,7 +214,7 @@ TANecro = Class(TAconstructor) {
                 --LOG('* Necro: OnStopReclaim: no necro or no RecBP')
             end
         else
-            if EntityCategoryContains(categories.NECRO, self) then
+            if self:GetBlueprint().Economy.Necro then
                 --LOG('* Necro: OnStopReclaim:  Wreck still exist. Removing target data from Necro')
                 self.RecBP = nil
                 self.RecPosition = nil

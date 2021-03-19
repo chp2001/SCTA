@@ -30,7 +30,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -39,7 +38,6 @@ UnitBlueprint {
 	    'CRUISER',
         'OVERLAYANTIAIR',
         'ARM',
-        'OCEAN',
     },
     CollisionOffsetY = -0.5,
     Defense = {

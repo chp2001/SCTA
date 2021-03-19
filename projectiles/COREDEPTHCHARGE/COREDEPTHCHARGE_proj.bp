@@ -29,8 +29,13 @@ ProjectileBlueprint {
     Categories = {
         'CORE',
         'PROJECTILE',
-        'DEPTHCHARGE',
-	'ANTINAVY',
+	    'ANTINAVY',
+    },
+    DoNotCollideList = {
+        'TORPEDO',
+    },
+    Defense = {
+        Health = 1,
     },
     Display = {
         CameraFollowTimeout = 3,
@@ -43,13 +48,11 @@ ProjectileBlueprint {
         EntityCategory = {
             'CORE',
             'PROJECTILE',
-            'DEPTHCHARGE',
-	    'ANTINAVY',
+	        'ANTINAVY',
         },
         Faction = 'CORE',
         Weapon = 'COREDEPTHCHARGE',
     },
-
     Physics = {
         DestroyOnWater = false,
         InitialSpeed = 5,

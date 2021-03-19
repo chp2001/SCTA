@@ -55,7 +55,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-
         'VISIBLETORECON',
         'RECLAIMABLE',
         'PATROLHELPER',
@@ -65,14 +64,13 @@ UnitBlueprint {
         'MOBILE',
         'LAND',
         'DIRECTFIRE',
-        'KBOT',
+        'BOT',
         'OVERLAYDIRECTFIRE',
         'CORE',
         'CONSTRUCTION',
         'ENGINEER',
         'SUBCOMMANDER',
         'SNIPEMODE',
-        'TACLOAK',
         'ALLTERRAIN',
     },
     Defense = {

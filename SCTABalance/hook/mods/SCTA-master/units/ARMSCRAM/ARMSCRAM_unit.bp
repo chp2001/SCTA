@@ -9,13 +9,12 @@ UnitBlueprint {
         'MOBILE',
 	    'NAVAL',
 	    'INTELLIGENCE',
+        'STEALTHFIELD',
         'OVERLAYCOUNTERINTEL',
         'COUNTERINTELLIGENCE',
         'DEFENSIVEBOAT',
         'ARM',
         'SUBMERSIBLE',
-        'OCEAN',
-
     },
     Economy = {
         BuildCostEnergy = 2100,

@@ -96,27 +96,27 @@ TACloser = Class(TAStructure) {
 		TAStructure.OnStopBeingBuilt(self,builder,layer)
 		closeDueToDamage = nil,
 		ChangeState(self, self.OpeningState)
-		if EntityCategoryContains(categories.TARGETING, self) and (self:IsIntelEnabled('Radar') or self:IsIntelEnabled('Sonar')) then
+		if EntityCategoryContains(categories.OPTICS, self) and (self:IsIntelEnabled('Radar') or self:IsIntelEnabled('Sonar')) then
 		TAutils.registerTargetingFacility(self:GetArmy())
 	end
 	end,
 
 	OnIntelEnabled = function(self)
 		TAStructure.OnIntelEnabled()
-			if EntityCategoryContains(categories.TARGETING, self) and (self:IsIntelEnabled('Radar') or self:IsIntelEnabled('Sonar')) then
+			if EntityCategoryContains(categories.OPTICS, self) and (self:IsIntelEnabled('Radar') or self:IsIntelEnabled('Sonar')) then
 			TAutils.registerTargetingFacility(self:GetArmy())
 			end
 	end,
 
 	OnIntelDisabled = function(self)
 	TAStructure.OnIntelDisabled()
-			if EntityCategoryContains(categories.TARGETING, self) and (not self:IsIntelEnabled('Radar') or not self:IsIntelEnabled('Sonar')) then
+			if EntityCategoryContains(categories.OPTICS, self) and (not self:IsIntelEnabled('Radar') or not self:IsIntelEnabled('Sonar')) then
 			TAutils.unregisterTargetingFacility(self:GetArmy())
 		end
 	end,
 
 	OnKilled = function(self, instigator, type, overkillRatio)
-		if EntityCategoryContains(categories.TARGETING, self) and (self:IsIntelEnabled('Radar') or self:IsIntelEnabled('Sonar')) then
+		if EntityCategoryContains(categories.OPTICS, self) and (self:IsIntelEnabled('Radar') or self:IsIntelEnabled('Sonar')) then
 		TAutils.unregisterTargetingFacility(self:GetArmy())
 		end
 		TAStructure.OnKilled(self, instigator, type, overkillRatio)

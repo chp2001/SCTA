@@ -15,7 +15,7 @@ UnitBlueprint {
 	    'CONSTRUCTION',
         'LAND',
         'CORE',
-        'KBOT',
+        'BOT',
         'VEHICLE',
         'VTOL',
     },

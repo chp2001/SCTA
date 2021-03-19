@@ -43,7 +43,6 @@ UnitBlueprint {
         'MOBILE',
         'NAVAL',
         'TECH2',
-
         'AIRSTAGINGPLATFORM',
         'CARRIER',
         'VISIBLETORECON',
@@ -55,9 +54,6 @@ UnitBlueprint {
         'OVERLAYSONAR',
         'OVERLAYMISC',
         'CORE',
-        'OCEAN',
-        'AIR',
-        'GATE',
     },
     CollisionOffsetY = -0.5,
     Defense = {

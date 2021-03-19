@@ -70,8 +70,7 @@ BuilderGroup {
         Priority = 95,
         InstanceCount = 1,
         BuilderConditions = {
-                { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 750, -500, 200, 0, 'AntiSurface', 1 }},
-                { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
+                { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 750, -500, 200, 0, 'AntiSurface', 1}},
             },
         BuilderType = 'Any',
         BuilderData = {
@@ -91,7 +90,6 @@ BuilderGroup {
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 150, -500, 100, 0, 'AntiAir', 1 }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -111,7 +109,6 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 400, -500, 150, 0, 'AntiAir', 1 }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -151,7 +148,6 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
                 { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 850, -500, 200, 0, 'AntiAir', 1 }},
-                { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
             },
         BuilderType = 'Any',
         BuilderData = {
@@ -171,7 +167,6 @@ BuilderGroup {
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 100, -500, 100, 0, 'AntiSurface', 1 }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -191,7 +186,6 @@ BuilderGroup {
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 250, -500, 100, 0, 'AntiSurface', 1 }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
         },
         BuilderType = 'Any',
         BuilderData = {

@@ -61,7 +61,7 @@ UnitBlueprint {
     Description = 'Produces Vehicles',
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/CORVP/CORVP_lod0_aopen.sca',
-        AnimationUnpackRate = 1.5, 
+        AnimationUnpackRate = 1, 
 	BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,

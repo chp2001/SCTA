@@ -60,7 +60,7 @@ UnitBlueprint {
             'Upgradeable',
         },
         AnimationUnpack = '/mods/SCTA-master/units/CORVP/CORVP_lod0_aopen.sca',
-        AnimationUnpackRate = 1.5, 
+        AnimationUnpackRate = 1, 
 	BuildAttachBone = 'pad',
     Mesh = {
         IconFadeInZoom = 130,
@@ -71,7 +71,7 @@ UnitBlueprint {
         AlbedoName = '/mods/SCTA-master/units/CORVP/CORVP_Albedo.dds',
         MeshName =   '/mods/SCTA-master/units/CORVP/CORVP_lod0.scm',
         ShaderName = 'Unit', 
-        NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+        NormalsName = '/mods/SCTA-master/units/CORVP/CORVP_NormalsTS.dds'
             },
         },
     },

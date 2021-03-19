@@ -57,10 +57,10 @@ Platoon = Class(SCTAAIPlatoon) {
         if not cons.BuildStructures then
             local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
             local pos = self:GetPlatoonPosition()
-        if econ.MassStorageRatio > 0.5 and econ.EnergyStorageRatio > 0.5 then
+            local ents = TAutils.TAAIGetReclaimablesAroundLocation(aiBrain, locationType) or {}
+        if ents and econ.MassStorageRatio < 0.5 then
                 coroutine.yield(1)
-                self:ForkThread(self.AssistBody)
-                WaitSeconds(self.PlatoonData.Assist.Time or 60)
+                return self:IdleEngineerSCTA()
             else
                 coroutine.yield(1)
                 self:PlatoonDisband()
@@ -333,10 +333,10 @@ Platoon = Class(SCTAAIPlatoon) {
         if not cons.BuildStructures then
             local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
             local pos = self:GetPlatoonPosition()
-        if econ.MassStorageRatio > 0.5 and econ.EnergyStorageRatio > 0.5 then
+            local ents = TAutils.TAAIGetReclaimablesAroundLocation(aiBrain, locationType) or {}
+            if ents and econ.MassStorageRatio < 0.5 then
                 coroutine.yield(1)
-                self:ForkThread(self.AssistBody)
-                WaitSeconds(self.PlatoonData.Assist.Time or 60)
+                return self:IdleEngineerSCTA()
             else
                 coroutine.yield(1)
                 self:PlatoonDisband()
@@ -608,10 +608,10 @@ Platoon = Class(SCTAAIPlatoon) {
         if not cons.BuildStructures then
             local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
             local pos = self:GetPlatoonPosition()
-        if econ.MassStorageRatio > 0.5 and econ.EnergyStorageRatio > 0.5 then
+            local ents = TAutils.TAAIGetReclaimablesAroundLocation(aiBrain, locationType) or {}
+        if ents and econ.MassStorageRatio < 0.5 then
                 coroutine.yield(1)
-                self:ForkThread(self.AssistBody)
-                WaitSeconds(self.PlatoonData.Assist.Time or 60)
+                return self:IdleEngineerSCTA()
             else
                 coroutine.yield(1)
                 self:PlatoonDisband()
@@ -1156,7 +1156,7 @@ Platoon = Class(SCTAAIPlatoon) {
 
             if not ents[1] or not pos then
                 WaitTicks(1)
-                return self:SCTAEngineerTypeAI()
+                return self:PlatoonDisband()
             end
 
             local reclaim = {}
@@ -1192,16 +1192,12 @@ Platoon = Class(SCTAAIPlatoon) {
         if not aiBrain.SCTAAI then
             return SCTAAIPlatoon.UnitUpgradeAI(self)
         end
+        if not EntityCategoryContains(categories.GANTRY, self) then
         local platoonUnits = self:GetPlatoonUnits()
         local FactionToIndex  = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, NOMADS = 5, ARM = 6, CORE = 7}
         local factionIndex = aiBrain:GetFactionIndex()
         local UnitBeingUpgradeFactionIndex = nil
         local upgradeIssued = false
-        if EntityCategoryContains(categories.GANTRY + categories.LAB + categories.PLATFORM, self) then
-            WARN('* SCTA UnitUpgradeAI: Upgrade canceled on Builder:'..repr(self.BuilderName))
-            self:PlatoonDisband()
-            return
-        end
         self:Stop()
         --LOG('* SCTA UnitUpgradeAI: PlatoonName:'..repr(self.BuilderName))
         for k, v in platoonUnits do
@@ -1256,6 +1252,7 @@ Platoon = Class(SCTAAIPlatoon) {
         end
         WaitTicks(1)
         self:PlatoonDisband()
+    end
     end,
 
     SCTAAntiAirAI = function(self)
@@ -2066,48 +2063,5 @@ Platoon = Class(SCTAAIPlatoon) {
                 WaitSeconds(10)
                 self:PlatoonDisband()
             end
-        end,
-
-        PlatoonDisband = function(self)
-            local aiBrain = self:GetBrain()
-            if not aiBrain.SCTAAI then
-                return SCTAAIPlatoon.PlatoonDisband(self)
-            end
-            if self.BuilderHandle then
-                self.BuilderHandle:RemoveHandle(self)
-            end
-            for k,v in self:GetPlatoonUnits() do
-                v.PlatoonHandle = nil
-                v.AssistSet = nil
-                v.AssistPlatoon = nil
-                v.UnitBeingAssist = nil
-                v.UnitBeingBuilt = nil
-                v.ReclaimInProgress = nil
-                v.CaptureInProgress = nil
-                if v:IsPaused() then
-                    v:SetPaused( false )
-                end
-                if not v.Dead and v.BuilderManagerData then
-                    if self.CreationTime == GetGameTimeSeconds() and v.BuilderManagerData.EngineerManager then
-                        if self.BuilderName then
-                            --LOG('*PlatoonDisband: ERROR - Platoon disbanded same tick as created - ' .. self.BuilderName .. ' - Army: ' .. aiBrain:GetArmyIndex() .. ' - Location: ' .. repr(v.BuilderManagerData.LocationType))
-                            v.BuilderManagerData.EngineerManager:AssignTimeout(v, self.BuilderName)
-                        else
-                            --LOG('*PlatoonDisband: ERROR - Platoon disbanded same tick as created - Army: ' .. aiBrain:GetArmyIndex() .. ' - Location: ' .. repr(v.BuilderManagerData.LocationType))
-                        end
-                        v.BuilderManagerData.EngineerManager:DelayAssign(v)
-                    elseif v.BuilderManagerData.EngineerManager then
-                        v.BuilderManagerData.EngineerManager:TaskFinished(v)
-                    end
-                end
-                if not v.Dead and not EntityCategoryContains(categories.GANTRY, v) then
-                    IssueStop({v})
-                    IssueClearCommands({v})
-                end
-            end
-            if self.AIThread then
-                self.AIThread:Destroy()
-            end
-            aiBrain:DisbandPlatoon(self)
         end,
 }

@@ -33,7 +33,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
 	    'STRUCTURE',
 	    'STRATEGIC',
 	    'INDIRECTFIRE',

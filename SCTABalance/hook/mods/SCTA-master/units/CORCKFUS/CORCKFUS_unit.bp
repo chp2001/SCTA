@@ -1,5 +1,20 @@
 UnitBlueprint {
-    Merge = true, 
+    Merge = true,
+    Categories = {
+        'BUILTBYT1HOVER',
+        'TACLOAK',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH3',
+        'STRUCTURE',
+        'ECONOMIC',
+        'SORTECONOMY',
+	    'ENERGYPRODUCTION',
+	    'CORE',
+	    'FUSION',
+    }, 
     Defense = {
         Health = 8000,
         MaxHealth = 8000,

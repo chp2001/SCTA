@@ -12,9 +12,8 @@ UnitBlueprint {
 	    'LAND',
         'CORE',
         'ANTIMISSILE',
-
         'OVERLAYDEFENSE',
-        'SORTSTRATEGIC',
+        'SORTDEFENSE',
         'NEEDMOBILEBUILD',
         'DEFENSE',
         'ANTIAIR',

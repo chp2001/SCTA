@@ -4,8 +4,7 @@ UnitBlueprint {
     Merge = true,
     BuildIconSortPriority = 1,
     Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
+        'BUILTBYT1HOVER',
         'SELECTABLE',
         'TECH3',
         'VISIBLETORECON',
@@ -13,8 +12,8 @@ UnitBlueprint {
         'MOBILE',
 	    'LAND',
         'CORE',
+        'RADAR',
         'NEEDMOBILEBUILD',
-
         'OVERLAYRADAR',
         'OVERLAYCOUNTERINTEL',
         'COUNTERINTELLIGENCE',

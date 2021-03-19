@@ -42,7 +42,7 @@ TAFactory = Class(FactoryUnit) {
         OnStopBuild = function(self, unitBuilding)
             FactoryUnit.OnStopBuild(self, unitBuilding)
             self:Close()
-            if __blueprints['armgant'] then
+            if __blueprints['armgant'] and self.restrictions then
                 TAutils.updateBuildRestrictions(self)
             end
 		end,

@@ -27,8 +27,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-        'TECH1',
+        'TECH2',
 	    'STRUCTURE',
 	    'DEFENSE',
 	    'DIRECTFIRE',

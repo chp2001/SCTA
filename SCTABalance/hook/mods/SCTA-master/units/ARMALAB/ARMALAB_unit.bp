@@ -16,7 +16,6 @@ UnitBlueprint {
         'ARM',
         'LAND', 
 	    'SORTCONSTRUCTION',
-        'LAB',
         'BOT',
     },
         Display = {

@@ -29,7 +29,6 @@ UnitBlueprint {
     BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
-        'OCEAN',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',

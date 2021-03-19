@@ -96,18 +96,18 @@ updateBuildRestrictions = function(self)
     --EngiModFinalFORMTA
     ---Basicallys Stop Lower Tech from building UpperTech. Advanced Factories now full access to builds
     ---Will require another rebalancing of Seaplanes and Hovers
-    if EntityCategoryContains(categories.TECH1 * categories.CONSTRUCTION - categories.PLANT, self) then
+    if EntityCategoryContains(categories.TECH1 * categories.CONSTRUCTION - categories.FACTORY, self) then
         self:AddBuildRestriction(categories.TECH2)
         self.restrictions = true   
-    elseif EntityCategoryContains(categories.TECH2 * categories.CONSTRUCTION - categories.DEVELOPMENT, self) then
+    elseif EntityCategoryContains(categories.TECH2 * categories.CONSTRUCTION - categories.RESEARCH, self) then
         self:AddBuildRestriction(categories.TECH3)
         self.restrictions = true
     end
 
     if self.restrictions then
     local gtime = GetGameTimeSeconds()
-    local HQCategory = categories.DEVELOPMENT
-        if self.FindHQType(aiBrain, HQCategory * categories.TECH3 or categories.GANTRY) or gtime > 1200 then
+    local HQCategory = categories.RESEARCH
+        if self.FindHQType(aiBrain, HQCategory * categories.TECH3) or gtime > 1200 then
             self:RemoveBuildRestriction(categories.TECH2)
             self:RemoveBuildRestriction(categories.TECH3)
         elseif self.FindHQType(aiBrain, HQCategory * categories.TECH2) or  gtime > 600 then

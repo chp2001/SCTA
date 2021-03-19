@@ -16,7 +16,6 @@ UnitBlueprint {
         'LAND', 
 	    'CORE',
 	    'SORTCONSTRUCTION',
-        'LAB',
         'BOT',
     },
     Defense = {

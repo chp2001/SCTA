@@ -33,9 +33,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
-        'PLATFORM',
-        'TECH2',
+        'TECH3',
 	    'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',

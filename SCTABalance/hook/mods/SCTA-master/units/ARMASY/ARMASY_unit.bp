@@ -17,8 +17,6 @@ UnitBlueprint {
 	    'NAVAL',
 	    'ARM',
 	    'SORTCONSTRUCTION',
-
-        'LAB',
     },
     Defense = {
         Health = 10000,
@@ -32,9 +30,9 @@ UnitBlueprint {
         BuildCostMass = 1300,
         BuildTime = 32000,
         BuildableCategory = {
-            'OCEAN TECH1 ARM',
-            'OCEAN TECH2 ARM',
-            'OCEAN TECH3 ARM',
+            'NAVAL MOBILE TECH1 ARM',
+            'NAVAL MOBILE TECH2 ARM',
+            'NAVAL MOBILE TECH3 ARM',
             'ALLTERRAIN ENGINEER ARM',
         },
         BuildRate = 360,

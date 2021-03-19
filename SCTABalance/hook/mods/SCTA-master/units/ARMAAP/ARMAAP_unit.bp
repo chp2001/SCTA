@@ -19,7 +19,6 @@ UnitBlueprint {
         'OVERLAYRADAR',
 	    'ARM',
 	    'SORTCONSTRUCTION',
-        'LAB',
         },
         Display = {
         UniformScale = 0.23,

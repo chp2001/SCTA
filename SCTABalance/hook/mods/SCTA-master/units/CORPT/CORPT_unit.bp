@@ -4,7 +4,6 @@ UnitBlueprint {
         'SELECTABLE',
         'TECH1',
         'CORE',
-        'OCEAN',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',

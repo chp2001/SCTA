@@ -34,7 +34,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -44,7 +43,6 @@ UnitBlueprint {
 	'CORE',
 	'SORTCONSTRUCTION',
 	'AIR',
-    'LAB',
     },
     Defense = {
         ArmorType = 'Structure',

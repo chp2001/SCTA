@@ -16,8 +16,6 @@ UnitBlueprint {
         'LAND', 
 	    'ARM',
 	    'SORTCONSTRUCTION',
-
-        'PLATFORM',
     },
     Defense = {
         Health = 30000,

@@ -1,11 +1,13 @@
 
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
-local IBC = '/lua/editor/InstantBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local SBC = '/lua/editor/SorianBuildConditions.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local TAutils = '/mods/SCTA-master/lua/TAutils.lua'
+local PLANT = categories.FACTORY * categories.TECH1
+local LAB = categories.FACTORY * categories.TECH2
+local PLATFORM = categories.FACTORY * categories.TECH3
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAssisters',
@@ -17,8 +19,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.FUSION }},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 0.5 } },
-            { IBC, 'BrainNotLowPowerMode', {} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -38,7 +39,7 @@ BuilderGroup {
         InstanceCount = 4,
         BuilderConditions = {
             { UCBC, 'BuildingGreaterAtLocation', { 'LocationType', 0, categories.MASSEXTRACTION * categories.TECH3}},
-            { IBC, 'BrainNotLowPowerMode', {} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -52,14 +53,13 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTA Assist Gantry Production',
+        BuilderName = 'SCTA Engineer Assist Gantry Production',
         PlatoonTemplate = 'EngineerBuilderSCTAAssist',
         Priority = 200,
         InstanceCount = 12,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GANTRY }},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 0.5 } },
-            { IBC, 'BrainNotLowPowerMode', {} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
         },
         BuilderData = {
             Assist = {
@@ -75,12 +75,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Assist Production',
         PlatoonTemplate = 'EngineerBuilderSCTAAssist',
-        Priority = 125,
-        InstanceCount = 4,
+        Priority = 25,
+        InstanceCount = 30,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.FACTORY }},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 0.5 } },
-            { IBC, 'BrainNotLowPowerMode', {} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
         },
         BuilderData = {
             Assist = {
@@ -94,14 +93,13 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'SCTA Assist Gantry',
+        BuilderName = 'SCTA Engineer Assist Gantry',
         PlatoonTemplate = 'EngineerBuilderSCTAAssist',
         Priority = 200,
         InstanceCount = 12,
         BuilderConditions = {
             { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYGANTRY }},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.6, 0.5 } },
-            { IBC, 'BrainNotLowPowerMode', {} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
         },
         BuilderData = {
             Assist = {
@@ -207,16 +205,16 @@ BuilderGroup {
         Priority = 100,
         InstanceCount = 5,
         BuilderConditions = {
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT * categories.LAND}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB * categories.LAND} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.PLANT * categories.LAND} },
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, PLANT * categories.LAND}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, LAB * categories.LAND} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT * categories.LAND} },
             { EBC, 'LessThanEconStorageRatio', { 0.1, 1.1}},
             { EBC, 'LessEconStorageCurrent', { 100, 6000 } },    
             },
         BuilderData = {
             Location = 'LocationType',
             ReclaimTime = 30,
-            Reclaim = {'PLANT LAND'},
+            Reclaim = {'TECH1 FACTORY LAND'},
         },
         BuilderType = 'Any',
     },
@@ -227,16 +225,16 @@ BuilderGroup {
         Priority = 275,
         InstanceCount = 8,
         BuilderConditions = {
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT * categories.AIR}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB * categories.AIR} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.PLANT * categories.AIR} },
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, PLANT * categories.AIR}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, LAB * categories.AIR} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT * categories.AIR} },
             { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
             { EBC, 'LessEconStorageCurrent', { 100, 1000 } },    
         },
         BuilderData = {
             Location = 'LocationType',
             ReclaimTime = 30,
-            Reclaim = {'PLANT AIR'},
+            Reclaim = {'TECH1 FACTORY AIR'},
         },
         BuilderType = 'Any',
     },
@@ -248,16 +246,16 @@ BuilderGroup {
         InstanceCount = 8,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1200} },
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.PLANT} },
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, PLANT}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, LAB} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT} },
             { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
             { EBC, 'LessEconStorageCurrent', { 100, 1000 } },    
         },
         BuilderData = {
             Location = 'LocationType',
             ReclaimTime = 30,
-            Reclaim = {'PLANT'},
+            Reclaim = {'TECH1 FACTORY'},
         },
         BuilderType = 'Any',
     },

@@ -82,9 +82,9 @@ UnitBlueprint {
     BuildRate = 360,
     DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
-        'OCEAN TECH1 CORE',
-        'OCEAN TECH2 CORE',
-        'OCEAN TECH3 CORE',
+        'NAVAL MOBILE TECH1 CORE',
+        'NAVAL MOBILE TECH2 CORE',
+        'NAVAL MOBILE TECH3 CORE',
         'ALLTERRAIN ENGINEER CORE',
     },
 	InitialRallyX = 0,

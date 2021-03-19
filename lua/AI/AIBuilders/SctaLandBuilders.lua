@@ -3,6 +3,9 @@ local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local PLANT = categories.FACTORY * categories.TECH1
+local LAB = categories.FACTORY * categories.TECH2
+local PLATFORM = categories.FACTORY * categories.TECH3
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAILandBuilder',
@@ -76,7 +79,7 @@ BuilderGroup {
         Priority = 85,
         BuilderConditions = {
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LAB * categories.LAND } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.LAND } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},
             { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,
                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },

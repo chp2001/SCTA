@@ -82,9 +82,9 @@ UnitBlueprint {
     BuildRate = 360,
     DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
-        'OCEAN TECH1 ARM',
-        'OCEAN TECH2 ARM',
-        'OCEAN TECH3 ARM',
+        'NAVAL MOBILE TECH1 ARM',
+        'NAVAL MOBILE TECH2 ARM',
+        'NAVAL MOBILE TECH3 ARM',
         'ALLTERRAIN ENGINEER ARM',
     },
 	InitialRallyX = 0,

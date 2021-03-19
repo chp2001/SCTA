@@ -30,7 +30,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
-        'OCEAN',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -38,6 +37,7 @@ UnitBlueprint {
 	    'DIRECTFIRE',
 	    'ANTIAIR',
 	    'LIGHTBOAT',
+        'SILO',
         'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',
         'ARM',

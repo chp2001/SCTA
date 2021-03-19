@@ -6,7 +6,6 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
         'TECH3',
 	    'FACTORY',
         'RALLYPOINT',
@@ -15,7 +14,6 @@ UnitBlueprint {
 	    'CONSTRUCTION',
         'LAND', 
         'CORE',
-        'PLATFORM',
 	    'SORTCONSTRUCTION',
     },
     Defense = {

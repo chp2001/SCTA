@@ -16,8 +16,6 @@ UnitBlueprint {
         'ARM',
         'AIR',
 	    'SORTCONSTRUCTION',
-
-        'PLATFORM',
     },
     Defense = {
         Health = 10000,

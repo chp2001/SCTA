@@ -6,12 +6,13 @@
 #**
 #**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
+NAVY = categories.NAVAL * categories.MOBILE
 
 PlatoonTemplate {
     Name = 'SCTAPatrolBoatAttack',
     Plan = 'NavalHuntAI',
     GlobalSquads = {
-        { categories.OCEAN * categories.SCOUT, 1, 2, 'Attack', 'GrowthFormation' },
+        { NAVY * categories.SCOUT, 1, 2, 'Attack', 'GrowthFormation' },
     }
 }
 
@@ -19,7 +20,7 @@ PlatoonTemplate {
     Name = 'SCTANavalAssault',
     Plan = 'NavalForceAI',
     GlobalSquads = {
-        { categories.TECH1 * categories.OCEAN - categories.ENGINEER, 4, 10, 'Attack', 'GrowthFormation' }
+        { categories.TECH1 * NAVY - categories.ENGINEER, 4, 10, 'Attack', 'GrowthFormation' }
     },
 }
 
@@ -27,7 +28,7 @@ PlatoonTemplate {
     Name = 'SCTAAirCarrier',
     Plan = 'CarrierAI',
     GlobalSquads = {
-        { categories.FACTORY * categories.OCEAN * categories.CARRIER, 1, 1, 'Attack', 'GrowthFormation' }
+        {categories.CARRIER, 1, 1, 'Attack', 'GrowthFormation' }
     },
 }
 
@@ -36,7 +37,7 @@ PlatoonTemplate {
     Name = 'SCTANavalAssaultT2',
     Plan = 'NavalForceAI',
     GlobalSquads = {
-        {categories.OCEAN - categories.ENGINEER, 10, 20, 'Attack', 'GrowthFormation' }
+        {NAVY - categories.ENGINEER, 10, 20, 'Attack', 'GrowthFormation' }
     },
 }
 

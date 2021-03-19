@@ -39,7 +39,6 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'PLANT',
         'SORTCONSTRUCTION',
         'TECH1',
 	    'FACTORY',
@@ -84,7 +83,7 @@ UnitBlueprint {
         BuildTime = 6050,
 	BuildRate = 100,
         BuildableCategory = {
-            'OCEAN TECH1 ARM',
+            'NAVAL MOBILE TECH1 ARM',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

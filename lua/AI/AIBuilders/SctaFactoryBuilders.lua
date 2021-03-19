@@ -3,6 +3,9 @@ local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local PLANT = categories.FACTORY * categories.TECH1
+local LAB = categories.FACTORY * categories.TECH2
+local PLATFORM = categories.FACTORY * categories.TECH3
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIFactoryBuilders',
@@ -15,8 +18,8 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.PLANT} }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  categories.LAB} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, PLANT} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  LAB} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -41,7 +44,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, categories.PLANT } }, -- Don't build air fac immediately.
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, PLANT } }, -- Don't build air fac immediately.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR} },
             { MIBC, 'LessThanGameTime', {600} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.6, 0.6 } },
@@ -69,8 +72,8 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { MIBC, 'GreaterThanGameTime', { 180 } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, categories.PLANT} }, -- Stop after 10 facs have been built. -- Stop after 10 facs have been built.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  categories.LAB} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, PLANT} }, -- Stop after 10 facs have been built. -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  LAB} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -94,9 +97,9 @@ BuilderGroup {
         Priority = 100,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  categories.PLANT } }, -- Don't build air fac immediately.
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  PLANT } }, -- Don't build air fac immediately.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4,  categories.FACTORY * categories.AIR} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  categories.LAB * categories.AIR} }, -- Stop after 5 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  LAB * categories.AIR} }, -- Stop after 5 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.9 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
         },
@@ -123,7 +126,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { MIBC, 'GreaterThanGameTime', { 600 } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10,  categories.LAB} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 10,  LAB} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -149,7 +152,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { MIBC, 'GreaterThanGameTime', { 750 } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10,  categories.LAB} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, LAB} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -174,7 +177,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.LAB * categories.AIR } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.9 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -199,7 +202,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FUSION} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LAB * categories.AIR } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.9 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -224,7 +227,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { MIBC, 'GreaterThanGameTime', { 600 } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10,  categories.LAB} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 10,  LAB} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -250,7 +253,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { MIBC, 'GreaterThanGameTime', { 750 } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10,  categories.LAB} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, LAB} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -301,7 +304,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FUSION} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LAB * categories.AIR } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.9 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },

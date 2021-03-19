@@ -39,7 +39,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-        'PLANT',
 	    'AIR',
 	    'FACTORY',
         'RALLYPOINT',

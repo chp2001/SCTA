@@ -23,9 +23,6 @@ UnitBlueprint {
         'OVERLAYSONAR',
         'OVERLAYMISC',
         'ARM',
-        'OCEAN',
-
-        'GATE',
     },
     Defense = {
         Health = 16000,

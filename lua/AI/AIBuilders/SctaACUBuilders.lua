@@ -6,7 +6,7 @@ local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local MABC = '/lua/editor/MarkerBuildConditions.lua'
 local PLANT = categories.FACTORY * categories.TECH1
 local LAB = categories.FACTORY * categories.TECH2
-
+local FUSION = categories.ENERGYPRODUCTION * categories.STRUCTURE * (categories.TECH2 + categories.TECH3)
 
 
 BuilderGroup {
@@ -64,7 +64,7 @@ BuilderGroup {
         Priority = 950,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.SOLAR} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENERGYPRODUCTION * categories.STRUCTURE} },
             { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'Any',
@@ -190,7 +190,7 @@ BuilderGroup {
         Priority = 120,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.FUSION }},
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, FUSION }},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
         },
         BuilderType = 'Any',
@@ -198,7 +198,7 @@ BuilderGroup {
             Assist = {
                 AssisteeType = 'Engineer',
                 AssistLocation = 'LocationType',
-                BeingBuiltCategories = {'FUSION'},
+                BeingBuiltCategories = {'TECH2 ENERGYPRODUCTION STRUCTURE, TECH3 ENERGYPRODUCTION STRUCTURE,'},
                 AssistUntilFinished = true,
             },
         }

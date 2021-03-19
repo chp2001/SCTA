@@ -3,6 +3,7 @@ local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local IBC = '/lua/editor/InstantBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local FUSION = categories.ENERGYPRODUCTION * categories.STRUCTURE * (categories.TECH2 + categories.TECH3)
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIEngineerMiscBuilder',
@@ -74,7 +75,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  categories.FUSION} },  
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  FUSION} },  
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.ANTIMISSILE * categories.TECH3} },
             { IBC, 'BrainNotLowPowerMode', {} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1.05 }},
@@ -97,7 +98,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.ANTISHIELD * categories.TECH2 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.75}}, 
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, categories.FUSION} }, 
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} }, 
         },
         BuilderType = 'Any',
         BuilderData = {

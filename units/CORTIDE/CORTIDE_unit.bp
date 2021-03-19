@@ -32,7 +32,6 @@ UnitBlueprint {
 	    'ENERGYPRODUCTION',
 	    'NAVAL',
 	    'CORE',
-	    'TIDAL',
     },
     CollisionOffsetY = -0.5,
     Defense = {

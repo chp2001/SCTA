@@ -5,6 +5,7 @@ local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local PLANT = categories.FACTORY * categories.TECH1
 local LAB = categories.FACTORY * categories.TECH2
 local PLATFORM = categories.FACTORY * categories.TECH3
+local FUSION = categories.ENERGYPRODUCTION * categories.STRUCTURE * (categories.TECH2 + categories.TECH3)
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIAirBuilder',
@@ -64,7 +65,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2AirFighterSCTA',
         Priority = 115,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
-        { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FUSION} },
+        { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, FUSION} },
         { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1.05 }},
     },
         BuilderType = 'Air',

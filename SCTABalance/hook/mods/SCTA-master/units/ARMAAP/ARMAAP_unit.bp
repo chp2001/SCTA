@@ -9,7 +9,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-
         'AIR',
 	    'FACTORY',
         'RALLYPOINT',

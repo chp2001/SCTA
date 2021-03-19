@@ -58,7 +58,6 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARMMSHIP_ROCKET',
     },
-
     Physics = {
         Acceleration = 5,
         DestroyOnWater = true,
@@ -66,7 +65,6 @@ ProjectileBlueprint {
         LeadTarget = false,
         Lifetime = 50,
         MaxSpeed = 50,
-
         TrackTarget = false,
         TurnRate = 60,
         UseGravity = false,

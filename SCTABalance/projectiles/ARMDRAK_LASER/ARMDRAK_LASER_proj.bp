@@ -34,7 +34,7 @@ ProjectileBlueprint {
     Categories = {
         'ARM',
         'PROJECTILE',
-        'DIRECTFIRE'
+        'DIRECTFIRE',
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/dgun_mesh.bp',
@@ -51,7 +51,6 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'CORKROG_FIRE',
     },
-
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 75,

@@ -40,8 +40,6 @@ UnitBlueprint {
             AimsStraightOnDisable = false,
             Damage = 1,
             DamageType = 'Normal',
-            DamageRadius = 0,
-            FiringRandomness = 0,
             DisplayName = 'SCABGUN',
             FireTargetLayerCapsTable = {
                 Land = 'Air',

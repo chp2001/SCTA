@@ -121,7 +121,6 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 30000,
-            EdgeEffectiveness = 1,
             DamageRadius = 10,
             DamageType = 'Normal',
             DisplayName = 'AMD_ROCKET',

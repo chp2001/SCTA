@@ -128,7 +128,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	        DamageFriendly = true,
             Damage = 1000,
-            DamageType = 'AntiSub',
+            DamageType = 'TASpec',
             DisplayName = 'ARMSMART_TORPEDO',
             FireTargetLayerCapsTable = {
                 Sub = 'Seabed|Sub|Water',

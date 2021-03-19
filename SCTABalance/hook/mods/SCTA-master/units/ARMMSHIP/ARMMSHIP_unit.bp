@@ -51,8 +51,6 @@ UnitBlueprint {
     [2] = {     
         Damage = 1,
         DamageType = 'Normal',
-        DamageRadius = 1,
-        FiringRandomness = 0,
         FireTargetLayerCapsTable = {
             Land = 'Air',
             Water = 'Air',

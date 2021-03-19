@@ -33,7 +33,6 @@ UnitBlueprint {
         'OVERLAYANTIAIR',
         'ARM',
         'COUNTERINTELLIGENCE',
-
         'ALLTERRAIN',
     },
     Defense = {
@@ -132,7 +131,7 @@ TechLevel = 'RULEUTL_Advanced',
                 Damage = 220,
                 DamageRadius = 1,
                 FiringRandomness = 0,
-                DamageType = 'LANDAir',
+                DamageType = 'TASpec',
                 DisplayName = 'ARMAH_WEAPON',
                 FireTargetLayerCapsTable = {
                     Land = 'Land|Water|Air',
@@ -196,7 +195,7 @@ TechLevel = 'RULEUTL_Advanced',
                 Damage = 220,
                 DamageRadius = 1,
                 FiringRandomness = 0,
-                DamageType = 'LANDAir',
+                DamageType = 'TASpec',
                 DisplayName = 'ARMAH_WEAPON',
                 FireTargetLayerCapsTable = {
                     Land = 'Land|Water|Air',

@@ -22,7 +22,6 @@ UnitBlueprint {
     Weapon = {
         [1] = {
             Damage = 900,
-            DamageRadius = 3,
 	        FiringTolerance = 7,
             MaxRadius = 65,
             RateOfFire = 0.303030303,

@@ -21,8 +21,6 @@ UnitBlueprint {
     Weapon = {
         [1] = {
             Damage = 100,
-            DamageRadius = 1.5,
-            MuzzleSalvoSize = 1,
             MuzzleVelocity = 70,
             ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/AH_WEAPON/AH_WEAPON_proj.bp',
             RackSalvoSize = 3,

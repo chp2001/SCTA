@@ -11,10 +11,6 @@ CORSOLAR = Class(TACloser) {
 		self.Trash:Add(self.AnimManip)
 	end,
 
-	OnStopBeingBuilt = function(self,builder,layer)
-		TACloser.OnStopBeingBuilt(self,builder,layer)
-		self.productionIsActive = true
-	end,
 
 	OpeningState = State {
 		Main = function(self)

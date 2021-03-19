@@ -194,7 +194,7 @@ UnitBlueprint {
             Damage = 100, 						
             DamageRadius = 1.5,
             FiringRandomness = 0,
-            DamageType = 'LANDAir',
+            DamageType = 'TASpec',
             DisplayName = 'CORVTOL_ADVMISSILE',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',
@@ -253,7 +253,7 @@ UnitBlueprint {
             Damage = 100, 						
             DamageRadius = 1.5,
             FiringRandomness = 0,
-            DamageType = 'LANDAir',
+            DamageType = 'TASpec',
             DisplayName = 'CORVTOL_ADVMISSILE2',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',

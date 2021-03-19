@@ -35,9 +35,6 @@ UnitBlueprint {
     Weapon = {
         [1] = {
             Damage = 140,
-            DamageRadius = 2,
-            FiringRandomness = 0,
-            FiringTolerance = 0,
             MaxRadius = 85,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,

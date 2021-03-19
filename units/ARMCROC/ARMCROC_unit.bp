@@ -185,9 +185,9 @@ UnitBlueprint {
             Turreted = true,
         },
         { #BIG_UNITEX
-            Damage = 100,
+            Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 5,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

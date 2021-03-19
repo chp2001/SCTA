@@ -33,9 +33,6 @@ UnitBlueprint {
     Weapon = {
         [1] = {
             Damage = 60,
-            DamageRadius = 1.5, 
-            MuzzleSalvoSize = 1,
-            RackSalvoSize = 1,
             RateOfFire = 1,
         },
         [2] = {

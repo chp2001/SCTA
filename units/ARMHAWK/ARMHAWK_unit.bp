@@ -195,7 +195,7 @@ UnitBlueprint {
             Damage = 180, 						
             DamageRadius = 1.5,
             FiringRandomness = 0,
-            DamageType = 'LANDAir',
+            DamageType = 'TASpec',
             DisplayName = 'ARMVTOL_ADVMISSILE',
             FireTargetLayerCapsTable = {
                 Air = 'Land|Water|Air',
@@ -253,7 +253,7 @@ UnitBlueprint {
             Damage = 180, 						
             DamageRadius = 1.5,
             FiringRandomness = 0,
-            DamageType = 'LANDAir',
+            DamageType = 'TASpec',
             DisplayName = 'ARMVTOL_ADVMISSILE2',
             FireTargetLayerCapsTable = {
                 Air = 'Land|Water|Air',

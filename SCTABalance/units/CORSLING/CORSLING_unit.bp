@@ -33,7 +33,6 @@ UnitBlueprint {
         'OVERLAYANTIAIR',
         'CORE',
         'COUNTERINTELLIGENCE',
-
         'ALLTERRAIN',
     },
     Defense = {
@@ -130,9 +129,9 @@ UnitBlueprint {
                 CollideFriendly = false,
                 DamageFriendly = true,
                 Damage = 140,
-                DamageRadius = 1,
+                DamageRadius = 1.5,
                 FiringRandomness = 0,
-                DamageType = 'LANDAir',
+                DamageType = 'TASpec',
                 DisplayName = 'ARMAH_WEAPON',
                 FireTargetLayerCapsTable = {
                     Land = 'Land|Water|Air',

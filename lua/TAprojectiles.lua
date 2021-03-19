@@ -4,14 +4,6 @@ local NukeProjectile = DefaultProjectileFile.NukeProjectile
 
 TAProjectile = Class(SinglePolyTrailProjectile) {
 	PolyTrail =  '/effects/emitters/aeon_laser_trail_02_emit.bp',
-
-
-    OnImpact = function(self, TargetType, TargetEntity)
-		SinglePolyTrailProjectile.OnImpact(self, TargetType, TargetEntity)
-		if TargetType == 'Shield' and self.DamageData.DamageRadius > 0 then
-			self.DamageData.DamageRadius = nil
-		end
-	end,
 	}
 
 TANuclearProjectile = Class(NukeProjectile) {

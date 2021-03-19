@@ -236,7 +236,7 @@ TechLevel = 'RULEUTL_Basic',
         { #LIGHTNING
             Damage = 80,
             DamageFriendly = true,
-            DamageRadius = 0.25,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

@@ -146,7 +146,6 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 44,
-	    DamageRadius = 1,
             DamageType = 'Normal',
             DisplayName = 'ARM_LIGHTCANNON',
             FireTargetLayerCapsTable = {

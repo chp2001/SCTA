@@ -142,7 +142,6 @@ UnitBlueprint {
             FiringTolerance = 0,
             Label = 'GAUSS',
             MaxRadius = 24,
-            DamageRadius = 1.5,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
 	        MuzzleVelocity = 28,

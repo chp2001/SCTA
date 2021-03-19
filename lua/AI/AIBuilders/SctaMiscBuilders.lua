@@ -33,7 +33,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {480} }, -- Don't make tanks if we have lots of them.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LASER * categories.TECH1 - categories.MOBILE } }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ANTISHIELD * categories.TECH1 - categories.MOBILE } }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.7}},
         },
         BuilderType = 'Any',
@@ -95,7 +95,7 @@ BuilderGroup {
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.LASER * categories.TECH2 - categories.MOBILE} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.ANTISHIELD * categories.TECH2 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.75}}, 
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, categories.FUSION} }, 
         },

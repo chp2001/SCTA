@@ -90,7 +90,7 @@ UnitBlueprint {
         MaxBuildDistance = 3.75,
     NaturalProducer = true,
     BuildableCategory = {
-        'BUILTBYT1MINELAYER ARM',
+        'BOMB STRUCTURE ARM',
     },
 	ProductionPerSecondEnergy = 17,
 	ProductionPerSecondMass = 1,

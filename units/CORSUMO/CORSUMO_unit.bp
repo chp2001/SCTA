@@ -39,7 +39,7 @@ UnitBlueprint {
         'CORE',
         'BOT',
         'TANK',
-        'LASER',
+        'ANTISHIELD',
     },
     Defense = {
         ArmorType = 'Normal',

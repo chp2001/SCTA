@@ -3,7 +3,7 @@ UnitBlueprint {
    Categories = {
     'SELECTABLE',
     'TECH3',
-    'LASER',
+    'ANTISHIELD',
     'VISIBLETORECON',
     'RECLAIMABLE',
     'MOBILE',
@@ -13,7 +13,6 @@ UnitBlueprint {
     'BOT',
     'LAND',
     'CORE',
-    'AMPHIBIOUS',
     'HOVER',
     },
    Defense = {

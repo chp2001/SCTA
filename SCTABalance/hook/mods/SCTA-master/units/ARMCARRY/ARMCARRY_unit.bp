@@ -16,7 +16,6 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'FACTORY',
-        'AIR',
         'NAVALCARRIER',
         'SHOWQUEUE',
         'OVERLAYRADAR',

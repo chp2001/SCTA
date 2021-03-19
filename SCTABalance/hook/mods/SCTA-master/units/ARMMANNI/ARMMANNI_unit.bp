@@ -17,7 +17,7 @@ UnitBlueprint {
         'ARM',
         'VEHICLE',	
         'SNIPER',
-        'LASER',
+        'ANTISHIELD',
     },
     BuildIconSortPriority = 10,
     Defense = {

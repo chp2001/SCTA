@@ -47,7 +47,7 @@ UnitBlueprint {
         'ARM',
         'BUILTBYGANTRY',  
         'SNIPEMODE',
-        'LASER',
+        'ANTISHIELD',
     },
     Defense = {
         AirThreatLevel = 0,

@@ -1,15 +1,16 @@
+---DISABLED
+
 UnitBlueprint {
    Merge = true,
    Air = {
     MaxAirspeed = 10,
     MinAirspeed = 3,
-},
+    },
    Categories = {
     'SELECTABLE',
     'AIR',
     'SELECTION', 
     'CORE',
-
     'TECH3',
     'ENGINEER',
     'REPAIR',

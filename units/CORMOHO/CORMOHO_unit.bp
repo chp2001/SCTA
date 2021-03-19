@@ -34,7 +34,6 @@ UnitBlueprint {
         'BUILTBYT2VEHICLE',
         'BUILTBYT2SUB',
         'TECH2',
-
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -90,7 +89,7 @@ UnitBlueprint {
             RULEUTC_ProductionToggle = true,
         },
         Icon = 'land',
-TechLevel = 'RULEUTL_Secret',
+        TechLevel = 'RULEUTL_Secret',
         UnitName = 'Moho Mine',
     },
     Intel = {

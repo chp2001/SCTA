@@ -34,7 +34,6 @@ UnitBlueprint {
         'BUILTBYT2VEHICLE',
         'BUILTBYT2SUB',
         'TECH2',
-
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',

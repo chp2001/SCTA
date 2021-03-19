@@ -95,7 +95,7 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 17,
     ProductionPerSecondMass = 1,
     BuildableCategory = {
-        'BUILTBYT1MINELAYER CORE',
+        'BOMB STRUCTURE CORE',
     },
     },
     General = {

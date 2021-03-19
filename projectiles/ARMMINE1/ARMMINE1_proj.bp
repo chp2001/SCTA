@@ -30,7 +30,7 @@ ProjectileBlueprint {
         'ARM',
         'PROJECTILE',
         'DIRECTFIRE',
-	'KAMIKAZI',
+	    'KAMIKAZI',
     },
     Display = {
         StrategicIconSize = 1,
@@ -41,7 +41,7 @@ ProjectileBlueprint {
             'ARM',
             'PROJECTILE',
             'DIRECTFIRE',
-	    'KAMIKAZI',
+	        'KAMIKAZI',
         },
         Faction = 'ARM',
         Weapon = 'ARMMINE1',

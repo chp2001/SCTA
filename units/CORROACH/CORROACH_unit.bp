@@ -39,6 +39,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
 	     'CORE',
         'ALLTERRAIN',
+        'BOMB',
     },
     Defense = {
         ArmorType = 'Normal',

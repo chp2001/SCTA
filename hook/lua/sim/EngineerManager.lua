@@ -17,7 +17,6 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         self.ConsumptionUnits = {
             Engineers = { Category = categories.ENGINEER, Units = {}, UnitsList = {}, Count = 0, },
             Fabricators = { Category = categories.MASSFABRICATION * categories.STRUCTURE, Units = {}, UnitsList = {}, Count = 0, },
-            ---Lasers = { Category = categories.LASER, Units = {}, UnitsList = {}, Count = 0, },
             Intel = { Category = categories.STRUCTURE * ( categories.SONAR + categories.RADAR + categories.OMNI + categories.TACLOAK), Units = {}, UnitsList = {}, Count = 0, },
             MobileIntel = { Category = categories.MOBILE - categories.ENGINEER, Units = {}, UnitsList = {}, Count = 0, },
         }

@@ -1,9 +1,10 @@
+---DISABLED
+
 UnitBlueprint {
     Merge = true,
     Categories = {
         'SELECTABLE',
         'TECH2',
-
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -11,10 +12,10 @@ UnitBlueprint {
         'RECLAIMABLE',
         'PATROLHELPER',
         'SHOWQUEUE',
-	'SELECTION',
+	    'SELECTION',
         'MOBILE',
-	'CONSTRUCTION',
-	'LAND',
+	    'CONSTRUCTION',
+	    'LAND',
         'CORE',
     },
     Defense = {

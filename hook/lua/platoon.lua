@@ -55,16 +55,19 @@ Platoon = Class(SCTAAIPlatoon) {
 
         -- if we have nothing to build, disband!
         if not cons.BuildStructures then
-            local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
             local pos = self:GetPlatoonPosition()
+            local gtime = GetGameTimeSeconds()
+        if gtime < 600 then
             local ents = TAutils.TAAIGetReclaimablesAroundLocation(aiBrain, locationType) or {}
-        if ents and econ.MassStorageRatio < 0.5 then
+            local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
+            if ents and econ.MassStorageRatio < 0.5 then
                 coroutine.yield(1)
                 return self:IdleEngineerSCTA()
+            end
             else
-                coroutine.yield(1)
-                self:PlatoonDisband()
-                return
+        coroutine.yield(1)
+        self:PlatoonDisband()
+        return
             end
         end
         if cons.NearUnitCategory then
@@ -331,16 +334,19 @@ Platoon = Class(SCTAAIPlatoon) {
 
         -- if we have nothing to build, disband!
         if not cons.BuildStructures then
-            local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
             local pos = self:GetPlatoonPosition()
+            local gtime = GetGameTimeSeconds()
+        if gtime < 600 then
             local ents = TAutils.TAAIGetReclaimablesAroundLocation(aiBrain, locationType) or {}
+            local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
             if ents and econ.MassStorageRatio < 0.5 then
                 coroutine.yield(1)
                 return self:IdleEngineerSCTA()
+            end
             else
-                coroutine.yield(1)
-                self:PlatoonDisband()
-                return
+        coroutine.yield(1)
+        self:PlatoonDisband()
+        return
             end
         end
         if cons.NearUnitCategory then
@@ -606,16 +612,19 @@ Platoon = Class(SCTAAIPlatoon) {
 
         -- if we have nothing to build, disband!
         if not cons.BuildStructures then
-            local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
             local pos = self:GetPlatoonPosition()
+            local gtime = GetGameTimeSeconds()
+        if gtime < 600 then
             local ents = TAutils.TAAIGetReclaimablesAroundLocation(aiBrain, locationType) or {}
-        if ents and econ.MassStorageRatio < 0.5 then
+            local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
+            if ents and econ.MassStorageRatio < 0.5 then
                 coroutine.yield(1)
                 return self:IdleEngineerSCTA()
+            end
             else
-                coroutine.yield(1)
-                self:PlatoonDisband()
-                return
+        coroutine.yield(1)
+        self:PlatoonDisband()
+        return
             end
         end
         if cons.NearUnitCategory then
@@ -1505,7 +1514,7 @@ Platoon = Class(SCTAAIPlatoon) {
             -- deal with lost-puppy transports
             local strayTransports = {}
             for k,v in platoonUnits do
-                if EntityCategoryContains(categories.AIRTRANSPORT, v) then
+                if EntityCategoryContains(categories.TRANSPORTATION, v) then
                     table.insert(strayTransports, v)
                 end
             end
@@ -1518,7 +1527,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 local strayTransports = {}
                 for k,v in platoonUnits do
                     local parent = v:GetParent()
-                    if parent and EntityCategoryContains(categories.AIRTRANSPORT, parent) then
+                    if parent and EntityCategoryContains(categories.TRANSPORTATION, parent) then
                         table.insert(strayTransports, parent)
                         break
                     end

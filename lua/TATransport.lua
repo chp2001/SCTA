@@ -70,7 +70,7 @@ TATransportAir = Class(AirTransport)
         --LOG('AirTransport.Kill ' .. self:GetBlueprint().General.UnitName)
 
         -- allow cargo to fire self destruct weapons (SelfDestructed flag is set in selfdestruct.lua)
-        if self.SelfDestructed and EntityCategoryContains(categories.AIRTRANSPORT, self) then
+        if self.SelfDestructed then
             --LOG('  yes self destruct:' .. self:GetBlueprint().General.UnitName)
             local cargo = self:GetCargo()
             --pcall(function() cargo = self:GetCargo() end)

@@ -29,7 +29,7 @@ ProjectileBlueprint {
     Categories = {
         'CORE',
         'PROJECTILE',
-        'ANTIAIR'
+        'ANTIAIR',
     },
     Display = {
         StrategicIconSize = 1,

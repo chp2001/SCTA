@@ -34,7 +34,7 @@ ProjectileBlueprint {
     Categories = {
         'CORE',
         'PROJECTILE',
-        'DIRECTFIRE'
+        'DIRECTFIRE',
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/Plasma_mesh.bp',

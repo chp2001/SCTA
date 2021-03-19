@@ -1,5 +1,4 @@
 local TAair = import('/mods/SCTA-master/lua/TAair.lua').TAair
-local Unit = import('/lua/sim/Unit.lua').Unit
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 TAAirConstructor = Class(TAair) {

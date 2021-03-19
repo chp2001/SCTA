@@ -1,6 +1,5 @@
 local FactoryUnit = import('/lua/defaultunits.lua').FactoryUnit
 local AircraftCarrier = import('/lua/defaultunits.lua').AircraftCarrier
-local Unit = import('/lua/sim/Unit.lua').Unit
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 TAFactory = Class(FactoryUnit) {

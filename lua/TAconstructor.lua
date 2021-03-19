@@ -1,5 +1,4 @@
 local TAWalking = import('/mods/SCTA-master/lua/TAMotion.lua').TAWalking
-local Unit = import('/lua/sim/Unit.lua').Unit
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local oldPosition={1,1,1}
 local Util = import('/lua/utilities.lua')

@@ -1,7 +1,6 @@
 local util = import('/lua/utilities.lua')
 local AIUtils = import('/lua/ai/AIUtilities.lua')
 local Entity = import('/lua/sim/Entity.lua').Entity
-local EffectTemplate = import('/lua/EffectTemplates.lua')
 local Factions = import('/lua/factions.lua').GetFactions(true)
 
 CreateTABuildingEffects = function(builder, unitBeingBuilt, BuildEffectBones, BuildEffectsBag)

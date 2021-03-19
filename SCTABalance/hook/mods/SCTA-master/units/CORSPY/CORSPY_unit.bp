@@ -17,6 +17,7 @@ UnitBlueprint {
         'BOT',
         'SCOUT',
         'STEALTH',
+        'TACLOAK',
     },
     Display = {
         UniformScale = 0.1,

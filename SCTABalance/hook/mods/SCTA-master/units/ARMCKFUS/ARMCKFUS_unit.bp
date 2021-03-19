@@ -12,6 +12,7 @@ UnitBlueprint {
         'SORTECONOMY',
 	    'ENERGYPRODUCTION',
 	    'ARM',
+        'TACLOAK',
 	    'FUSION',
     },
     Defense = {

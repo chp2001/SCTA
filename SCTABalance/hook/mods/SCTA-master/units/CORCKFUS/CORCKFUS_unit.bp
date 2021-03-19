@@ -13,6 +13,7 @@ UnitBlueprint {
 	    'ENERGYPRODUCTION',
 	    'CORE',
 	    'FUSION',
+        'TACLOAK',
     }, 
     Defense = {
         Health = 8000,

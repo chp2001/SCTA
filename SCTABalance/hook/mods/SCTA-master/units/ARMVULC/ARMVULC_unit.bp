@@ -12,7 +12,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'DIRECTFIRE',
         'ARM',
-
         'STRATEGIC',
         'ARTILLERY',
         'SHOWATTACKRETICLE',

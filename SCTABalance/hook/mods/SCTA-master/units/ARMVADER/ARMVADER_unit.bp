@@ -17,6 +17,8 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
 	    'ARM',
         'ALLTERRAIN',
+        'TACLOAK',
+        'BOMB',
     },
     Economy = {
         BuildCostEnergy = 8000,

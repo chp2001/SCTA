@@ -39,7 +39,7 @@ TAunit = Class(Unit)
 		Unit.OnIntelDisabled()
 		if EntityCategoryContains(categories.COUNTERINTELLIGENCE, self) and (not self:IsIntelEnabled('Jammer') or not self:IsIntelEnabled('RadarStealth')) then
 			self.TAIntelOn = nil	
-		elseif self:GetBlueprint().Intel.Cloak and not self:IsIntelEnabled('Cloak') then
+		elseif EntityCategoryContains(categories.TACLOAK, self) and not self:IsIntelEnabled('Cloak') then
 		self:PlayUnitSound('Uncloak')
 		self.CloakOn = nil
 		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
@@ -52,7 +52,7 @@ TAunit = Class(Unit)
 			if EntityCategoryContains(categories.COUNTERINTELLIGENCE, self) and (self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth')) then
 				self.TAIntelOn = true
 				ForkThread(self.TAIntelMotion, self)
-			elseif self:GetBlueprint().Intel.Cloak and self:IsIntelEnabled('Cloak') then
+			elseif EntityCategoryContains(categories.TACLOAK, self) and self:IsIntelEnabled('Cloak') then
 			self.CloakOn = true
 			self:PlayUnitSound('Cloak')
 			self:SetMesh(self:GetBlueprint().Display.CloakMeshBlueprint, true)
@@ -111,7 +111,7 @@ TAunit = Class(Unit)
 			if self.TAIntelThread then KillThread(self.TAIntelThread) end
 			self.TAIntelThread = self:ForkThread(self.TAIntelMotion)	
 		end
-		if bit == 8 and self:GetBlueprint().Intel.Cloak then
+		if bit == 8 and EntityCategoryContains(categories.TACLOAK, self) then
 			--self:DisableUnitIntel('ToggleBit8', 'Cloak')
 			if self.CloakThread then KillThread(self.CloakThread) end
 			self.CloakThread = self:ForkThread(self.CloakDetection)	
@@ -127,7 +127,7 @@ TAunit = Class(Unit)
 				self.TAIntelOn = nil
 			end
 		end
-		if bit == 8 and self:GetBlueprint().Intel.Cloak then
+		if bit == 8 and EntityCategoryContains(categories.TACLOAK, self) then
 			if self.CloakThread then
 				KillThread(self.CloakThread)
 				self.CloakOn = nil

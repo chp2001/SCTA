@@ -36,13 +36,12 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
-	'STRUCTURE',
-	'INTELLIGENCE',
-	'RADAR',
+	    'STRUCTURE',
+	    'INTELLIGENCE',
+	    'RADAR',
         'OVERLAYRADAR',
-	'ARM',
-	'SORTINTEL',
+	    'ARM',
+	    'SORTINTEL',
     },
     Defense = {
         DamageModifier = 1,

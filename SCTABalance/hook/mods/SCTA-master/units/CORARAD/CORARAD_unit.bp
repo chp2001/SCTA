@@ -16,7 +16,7 @@ UnitBlueprint {
     'CORE',
     'SHOWQUEUE',
 	'SORTINTEL',
-	'TARGETING',
+    'OPTICS',
     },
  Display = {
   Abilities = {

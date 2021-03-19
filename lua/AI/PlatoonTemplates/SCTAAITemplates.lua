@@ -121,7 +121,7 @@ PlatoonTemplate {
     Name = 'SCTAIntel',
     Plan = 'PauseAI',
     GlobalSquads = {
-        { categories.STRUCTURE * categories.TARGETING, 1, 1, 'support', 'none' },
+        { categories.STRUCTURE * categories.OPTICS, 1, 1, 'support', 'none' },
     }
 }
 

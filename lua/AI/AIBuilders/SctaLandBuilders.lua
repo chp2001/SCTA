@@ -102,7 +102,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandDFTankSCTA',
         Priority = 105,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH2 * categories.TANK,
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH2 * categories.DIRECTFIRE - categories.SCOUT,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.75 } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}}
@@ -115,7 +115,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandDFTank2SCTA',
         Priority = 105,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH2 * categories.TANK,
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH2 * categories.DIRECTFIRE - categories.SCOUT,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.75 } },
             --{ EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}}
@@ -203,7 +203,7 @@ BuilderGroup {
         PlatoonTemplate = 'T3LandHOVERSCTA',
         Priority = 140,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TANK * categories.TECH3,
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.DIRECTFIRE * categories.TECH3 - categories.SCOUT,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
@@ -236,7 +236,7 @@ BuilderGroup {
         PlatoonTemplate = 'T3LandDFTankSCTA',
         Priority = 130,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.TECH3 * categories.TANK,
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.TECH3 * categories.DIRECTFIRE - categories.SCOUT,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
@@ -247,7 +247,7 @@ BuilderGroup {
         PlatoonTemplate = 'T3LandDFTank2SCTA',
         Priority = 125,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH3 * categories.TANK,
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH3 * categories.DIRECTFIRE - categories.SCOUT,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },

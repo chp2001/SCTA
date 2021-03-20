@@ -16,7 +16,7 @@ UnitBlueprint {
 	'SELECTION', 
         'CORE',
         'BOT',
-        'VEHICLE',
+        'TANK',
     },
     Defense = {
         Health = 1200,

@@ -15,11 +15,11 @@ UnitBlueprint {
 	    'INTELLIGENCE',
         'OVERLAYRADAR',
         'ARM',
-        'VEHICLE',
-    'OVERLAYOMNI',
-    'STEALTHFIELD',
-    'OVERLAYCOUNTERINTEL',
-    'COUNTERINTELLIGENCE',
+        'TANK',
+        'OVERLAYOMNI',
+        'STEALTHFIELD',
+        'OVERLAYCOUNTERINTEL',
+        'COUNTERINTELLIGENCE',
     },
     Display = {
     Abilities = {
@@ -31,7 +31,7 @@ UnitBlueprint {
     Economy = {
         ProductionPerSecondEnergy = 0,
         TAConsumptionPerSecondEnergy = 60,
-        MaintenanceConsumptionPerSecondEnergy = 10,
+        MaintenanceConsumptionPerSecondEnergy = 15,
     },
     General = {
         OrderOverrides = {

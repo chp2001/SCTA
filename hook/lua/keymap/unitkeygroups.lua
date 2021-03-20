@@ -176,7 +176,7 @@ TAunitkeygroups = {
         "corca",
     },
     ["T2_Gatling_Bot"]= {
-        "corpyro",
+        "corfast",
         "armfast",
         "armspid",
     },
@@ -226,11 +226,12 @@ TAunitkeygroups = {
         "armsh",
         "corfav",
         "corsh", 
-        "corfast",
+        "corvoyr",
     },
     ["Stealth_Field_Generator"]= {
         "corvoyr",
         "armmark",
+        "armaser",
     },
     ["T1_Mobile_Light_Artillery"]= {
         "armham",
@@ -383,7 +384,9 @@ TAunitkeygroups = {
     },
     ["T3_Mobile_Shield_Generator"]= {
         "armseer",
+        "armspy",
         "corvrad",
+        "corspy",
     },
     ["Support_Armored_Command_Unit"] = {
         "armdecom",

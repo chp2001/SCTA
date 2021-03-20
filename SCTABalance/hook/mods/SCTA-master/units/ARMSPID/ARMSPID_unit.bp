@@ -11,7 +11,7 @@ UnitBlueprint {
     },
     Economy = {
         TAConsumptionPerSecondEnergy = 30,
-        MaintenanceConsumptionPerSecondEnergy = 5,
+        MaintenanceConsumptionPerSecondEnergy = 10,
     },
     Display = {
         Abilities = {

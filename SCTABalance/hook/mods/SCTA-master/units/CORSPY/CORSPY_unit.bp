@@ -5,6 +5,18 @@
 
 UnitBlueprint {
     Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'BOT',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+        'LAND',
+        'CORE',
+        'SCOUT',
+        'STEALTH',
+    },
     Display = {
         UniformScale = 0.1,
     },
@@ -12,7 +24,7 @@ UnitBlueprint {
         BuildCostEnergy = 1500,
         BuildTime = 3000,
         TAConsumptionPerSecondEnergy = 60,
-        MaintenanceConsumptionPerSecondEnergy = 10,
+        MaintenanceConsumptionPerSecondEnergy = 15,
     },
     Intel = {
         ActiveIntel = {
@@ -26,4 +38,5 @@ UnitBlueprint {
           OmniRadius = 15,
           RadarStealth = true,
     },
+    StrategicIconName = 'icon_land3_counterintel',
 }

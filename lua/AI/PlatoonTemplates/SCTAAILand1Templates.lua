@@ -50,7 +50,7 @@ PlatoonTemplate {
             { 'armflea', 1, 1, 'scout', 'none' }
         },
         Core = {
-            { 'corfast', 1, 1, 'scout', 'none' }
+            { 'corvoyr', 1, 1, 'scout', 'none' }
         },
     }
 }
@@ -126,9 +126,9 @@ PlatoonTemplate {
             { 'armfido', 1, 1, 'attack', 'none' },
         },
         Core = {
-            { 'corcan', 1, 2, 'attack', 'none' },
+            { 'corfast', 1, 2, 'attack', 'none' },
             { 'coracv', 1, 1, 'support', 'None' },
-            { 'corhrk', 1, 1, 'attack', 'none' },
+            { 'corcan', 1, 1, 'attack', 'none' },
         },
     }
 }

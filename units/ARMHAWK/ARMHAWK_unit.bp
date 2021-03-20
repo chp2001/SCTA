@@ -69,7 +69,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'ARM',
-        'STEALTH',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',

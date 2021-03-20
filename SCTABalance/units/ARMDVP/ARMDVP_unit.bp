@@ -43,7 +43,7 @@ UnitBlueprint {
 	    'ARM',
         'RESEARCH',
 	    'SORTCONSTRUCTION',
-        'VEHICLE',
+        'TANK',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -84,8 +84,8 @@ UnitBlueprint {
         DifferentialUpgradeCostCalculation = true,
 	BuildRate = 160,
         BuildableCategory = {
-            'VEHICLE MOBILE TECH1 ARM',
-            'VEHICLE MOBILE TECH2 ARM',
+            'TANK MOBILE TECH1 ARM',
+            'TANK MOBILE TECH2 ARM',
             'armadvp',
         },
 	InitialRallyX = 0,

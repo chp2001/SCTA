@@ -16,9 +16,8 @@ UnitBlueprint {
         'CONSTRUCTION',
         'LAND',
         'CORE',
-        'STEALTH',
         'BOT',
-        'VEHICLE',
+        'TANK',
     },
     Defense = {
         Health = 1300,

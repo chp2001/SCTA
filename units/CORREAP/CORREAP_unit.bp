@@ -30,7 +30,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'VEHICLE',
+        'TANK',
 
         'VISIBLETORECON',
         'RECLAIMABLE',

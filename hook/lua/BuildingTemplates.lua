@@ -173,7 +173,10 @@ BuildingTemplates[6] = {
                 'T2RadarJammer',
                 'armmark',
             },
-    
+            {
+                'T2ShieldDefense',
+                'armaser',
+            },
             -- Artillery Structures
             {
                 'T2Artillery',

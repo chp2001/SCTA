@@ -49,7 +49,7 @@ UnitBlueprint {
         'OVERLAYCOUNTERINTEL',
         'COUNTERINTELLIGENCE',
         'ARM',
-        'VEHICLE',
+        'TANK',
     },
     Defense = {
         ArmorType = 'Normal',

@@ -13,7 +13,7 @@ UnitBlueprint {
         'BOT',
         'SNIPER',
         'ANTISHIELD',
-        'TACLOAK',
+        'STEALTH',
     },
     Defense = {
         Health = 1000,
@@ -24,7 +24,7 @@ UnitBlueprint {
         BuildCostMass = 2000,
         BuildTime = 24000,
         TAConsumptionPerSecondEnergy = 300,
-        MaintenanceConsumptionPerSecondEnergy = 50,
+        MaintenanceConsumptionPerSecondEnergy = 75,
     },
     StrategicIconName = 'icon_bot3_sniper',
     Weapon = {

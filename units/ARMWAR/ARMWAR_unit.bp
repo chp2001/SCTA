@@ -40,7 +40,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
         'ARM',
-        'TANK',
     },
     Defense = {
         ArmorType = 'Normal',

@@ -17,7 +17,8 @@ UnitBlueprint {
         BuildCostMass = 680,
         BuildRate = 120,
         BuildableCategory = {
-            'VTOL TECH1 ARM',
+            'AIR MOBILE TECH1 ARM',
+            'armck',
             'armdap', 
         },
     }, 

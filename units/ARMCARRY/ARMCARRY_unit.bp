@@ -95,10 +95,10 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 35,
         BuildRate = 200,
         BuildableCategory = {
-            'VTOL TECH1 AIR ARM ENGINEER',
-            'VTOL TECH1 ARM HIGHALTAIR', 
-            'VTOL TECH2 ARM',
-            'VTOL TECH3 ARM',
+            'MOBILE TECH1 AIR ARM ENGINEER',
+            'AIR MOBILE TECH1 ARM HIGHALTAIR', 
+            'AIR MOBILE TECH2 ARM',
+            'AIR MOBILE TECH3 ARM',
             },
         },
         Footprint = {

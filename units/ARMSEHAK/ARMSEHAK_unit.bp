@@ -67,7 +67,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'MOBILE',
 	    'AIR',
-        'VTOL',
         'HIGHALTAIR',
         'INTELLIGENCE',
         'OVERLAYRADAR',

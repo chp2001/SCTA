@@ -82,7 +82,6 @@ UnitBlueprint {
         'MOBILE',
 	    'CONSTRUCTION',
         'AIR',
-        'VTOL',
 	    'SELECTION', 
         'ARM',
     },

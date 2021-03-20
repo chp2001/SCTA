@@ -34,7 +34,7 @@ UnitBlueprint {
         BuildTime = 64000,
     BuildRate = 240,
         BuildableCategory = {
-            'VTOL TECH3 ARM',
+            'AIR MOBILE TECH3 ARM',
         },
     },
     Physics = {

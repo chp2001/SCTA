@@ -18,7 +18,6 @@ UnitBlueprint {
     'SUBMERSIBLE',
     'T2SUBMARINE',
     'OVERLAYSONAR',
-    'OCEANENGINEER',
     },
     Display = {
         Abilities = {

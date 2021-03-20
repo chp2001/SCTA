@@ -76,7 +76,6 @@ UnitBlueprint {
         'MOBILE',
 	    'ANTIAIR',
         'AIR',
-        'VTOL',
         'OVERLAYANTIAIR',
         'ARM',
         'SCOUT',

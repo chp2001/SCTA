@@ -71,7 +71,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'MOBILE',
         'AIR',
-        'VTOL',
         'TRANSPORTATION',
         'TRANSPORTFOCUS',
         'CANTRANSPORTCOMMANDER',

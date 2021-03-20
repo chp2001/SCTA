@@ -18,7 +18,6 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
         'MOBILE',
-        'VTOL',
         'CONSTRUCTION',
     },
    Defense = {

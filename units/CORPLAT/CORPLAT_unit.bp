@@ -81,7 +81,7 @@ UnitBlueprint {
     BuildableCategory = {
         'corveng',
         'cortitan',
-        'VTOL TECH3 CORE',
+        'AIR MOBILE TECH3 CORE',
     },
 	InitialRallyX = 1,
 	InitialRallyZ = 7,

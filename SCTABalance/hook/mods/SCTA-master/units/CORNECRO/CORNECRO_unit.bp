@@ -19,7 +19,6 @@ UnitBlueprint {
         'STEALTH',
         'BOT',
         'VEHICLE',
-        'VTOL',
     },
     Defense = {
         Health = 1300,

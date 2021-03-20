@@ -81,7 +81,7 @@ UnitBlueprint {
     BuildableCategory = {
         'armfig',
         'armlance',
-        'VTOL TECH3 ARM',
+        'AIR MOBILE TECH3 ARM',
     },
 	InitialRallyX = 1,
 	InitialRallyZ = 7,

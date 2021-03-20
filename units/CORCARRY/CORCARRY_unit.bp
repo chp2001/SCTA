@@ -95,10 +95,10 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 200,
         MaintenanceConsumptionPerSecondEnergy = 35,
         BuildableCategory = {
-            'VTOL TECH1 AIR CORE ENGINEER',
-            'VTOL TECH1 CORE HIGHALTAIR', 
-            'VTOL TECH2 CORE',
-            'VTOL TECH3 CORE',
+            'MOBILE TECH1 AIR CORE ENGINEER',
+            'AIR MOBILE TECH1 CORE HIGHALTAIR', 
+            'AIR MOBILE TECH2 CORE',
+            'AIR MOBILE TECH3 CORE',
         },
     },
     Footprint = {

@@ -72,7 +72,6 @@ UnitBlueprint {
         'SELECTABLE',
         'TECH2',
         'AIR',
-        'VTOL',
         'SELECTION', 
         'ARM',
         'ENGINEER',

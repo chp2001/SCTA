@@ -1,4 +1,4 @@
-local WEIRD = categories.OCEANENGINEER - categories.COMMAND - categories.FIELDENGINEER
+local WEIRD = categories.NAVAL - categories.COMMAND - categories.FIELDENGINEER
 
 PlatoonTemplate {
     Name = 'CommanderBuilderSCTA',
@@ -61,7 +61,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTANaval',
     Plan = 'EngineerBuildAISCTANaval',
     GlobalSquads = {
-        { categories.OCEANENGINEER * categories.TECH1, 1, 1, 'support', 'None' }
+        { categories.NAVAL * categories.TECH1 * categories.ENGINEER, 1, 1, 'support', 'None' }
     },
 }
 

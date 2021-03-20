@@ -40,7 +40,7 @@ UnitBlueprint {
         BuildTime = 64000,
         BuildRate = 240,
         BuildableCategory = {
-            'VTOL TECH3 CORE',       
+            'AIR MOBILE TECH3 CORE',       
         },
     },
     Physics = {

@@ -17,7 +17,6 @@ UnitBlueprint {
         'ARM',
         'BOT',
         'VEHICLE',
-        'VTOL',
     },
     Defense = {
         Health = 400,

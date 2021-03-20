@@ -50,14 +50,14 @@ function CreateIdleTab(unitData, id, expandFunc)
         if self.id == 'engineer' then
             local sortedUnits = {}
             sortedUnits[9] = EntityCategoryFilterDown(categories.SUBCOMMANDER, self.allunits)
-            sortedUnits[8] = EntityCategoryFilterDown(categories.TECH3 - categories.SUBCOMMANDER, self.allunits)
+            sortedUnits[8] = EntityCategoryFilterDown(categories.TECH3 - categories.SUBCOMMANDER - categories.FIELDENGINEER, self.allunits)
             sortedUnits[7] = EntityCategoryFilterDown(categories.FIELDENGINEER, self.allunits)
-            sortedUnits[6] = EntityCategoryFilterDown(categories.OCEANENGINEER * categories.TECH2, self.allunits)
-            sortedUnits[5] = EntityCategoryFilterDown(categories.VTOL * categories.TECH2 * categories.AIR, self.allunits)
-            sortedUnits[4] = EntityCategoryFilterDown(categories.TECH2 * categories.LAND - categories.FIELDENGINEER - categories.OCEANENGINEER, self.allunits)
-            sortedUnits[3] = EntityCategoryFilterDown(categories.OCEANENGINEER * categories.TECH1, self.allunits)
-            sortedUnits[2] = EntityCategoryFilterDown(categories.VTOL * categories.TECH1 * categories.AIR, self.allunits)
-            sortedUnits[1] = EntityCategoryFilterDown(categories.TECH1 * categories.LAND - categories.FIELDENGINEER - categories.OCEANENGINEER, self.allunits)
+            sortedUnits[6] = EntityCategoryFilterDown(categories.NAVAL * categories.TECH2, self.allunits)
+            sortedUnits[5] = EntityCategoryFilterDown(categories.TECH2 * categories.AIR, self.allunits)
+            sortedUnits[4] = EntityCategoryFilterDown(categories.TECH2 * categories.LAND - categories.FIELDENGINEER, self.allunits)
+            sortedUnits[3] = EntityCategoryFilterDown(categories.NAVAL * categories.TECH1, self.allunits)
+            sortedUnits[2] = EntityCategoryFilterDown(categories.TECH1 * categories.AIR, self.allunits)
+            sortedUnits[1] = EntityCategoryFilterDown(categories.TECH1 * categories.LAND - categories.FIELDENGINEER, self.allunits)
 
             local keyToIcon = {'T1', 'T1A', 'T1O', 'T2', 'T2A', 'T2O', 'T2F', 'T3', 'SCU'}
 
@@ -217,14 +217,14 @@ function CreateIdleEngineerList(parent, units)
         end
         local engineers = {}
         engineers[9] = EntityCategoryFilterDown(categories.SUBCOMMANDER, unitData)
-        engineers[8] = EntityCategoryFilterDown(categories.TECH3 - categories.SUBCOMMANDER, unitData)
+        engineers[8] = EntityCategoryFilterDown(categories.TECH3 - categories.SUBCOMMANDER - categories.FIELDENGINEER, unitData)
         engineers[7] = EntityCategoryFilterDown(categories.FIELDENGINEER, unitData)
-        engineers[6] = EntityCategoryFilterDown(categories.OCEANENGINEER * categories.TECH2, unitData)
+        engineers[6] = EntityCategoryFilterDown(categories.NAVAL * categories.TECH2, unitData)
         engineers[5] = EntityCategoryFilterDown(categories.TECH2 * categories.AIR, unitData)
-        engineers[4] = EntityCategoryFilterDown(categories.TECH2 * categories.LAND - categories.FIELDENGINEER - categories.OCEANENGINEER, unitData)
-        engineers[3] = EntityCategoryFilterDown(categories.OCEANENGINEER * categories.TECH1, unitData)
+        engineers[4] = EntityCategoryFilterDown(categories.TECH2 * categories.LAND - categories.FIELDENGINEER, unitData)
+        engineers[3] = EntityCategoryFilterDown(categories.NAVAL * categories.TECH1, unitData)
         engineers[2] = EntityCategoryFilterDown(categories.TECH1 * categories.AIR, unitData)
-        engineers[1] = EntityCategoryFilterDown(categories.TECH1 * categories.LAND - categories.OCEANENGINEER - categories.FIELDENGINEER, unitData)
+        engineers[1] = EntityCategoryFilterDown(categories.TECH1 * categories.LAND - categories.FIELDENGINEER, unitData)
 
         local indexToIcon = {'1', '1', '1', '2', '2', '2', '2', '3', '3'}
         local keyToIcon = {'T1', 'T1A', 'T1O', 'T2', 'T2A', 'T2O', 'T2F', 'T3', 'SCU'}

@@ -5,6 +5,20 @@
 
 UnitBlueprint {
     Merge = true, 
+    Categories = {
+        'SELECTABLE',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	    'LAND',
+        'STEALTHFIELD',
+        'INTELLIGENCE',
+        'COUNTERINTELLIGENCE',
+        'OVERLAYCOUNTERINTEL',
+        'CORE',
+        'BOT',
+    },
     Display = {
         UniformScale = 0.08,
     },
@@ -13,6 +27,7 @@ UnitBlueprint {
         TAConsumptionPerSecondEnergy = 60,
         MaintenanceConsumptionPerSecondEnergy = 10,
     },
+    StrategicIconName = 'icon_bot3_intel',
     LifeBarSize = 1,
     LifeBarOffset = 0,
     SelectionSizeX = 0.6,

@@ -17,7 +17,7 @@ UnitBlueprint {
         'ARTILLERY',
         'CORE',
         'BOT',
-        'ALLTERRAIN',
+        'AMPHIBIOUS',
         'SNIPEMODE',
     },
     Display = {

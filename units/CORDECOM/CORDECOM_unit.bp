@@ -71,7 +71,7 @@ UnitBlueprint {
         'ENGINEER',
         'SUBCOMMANDER',
         'SNIPEMODE',
-        'ALLTERRAIN',
+        'AMPHIBIOUS',
         'TACLOAK',
     },
     Defense = {

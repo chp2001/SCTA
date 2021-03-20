@@ -2,7 +2,8 @@ local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
-local FUSION = categories.ENERGYPRODUCTION * categories.STRUCTURE * (categories.TECH2 + categories.TECH3)
+local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
+
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIEngineerBuilder',
@@ -50,7 +51,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1EngineerSCTANaval',
         Priority = 120, -- Top factory priority
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.OCEANENGINEER} }, -- Build engies until we have 4 of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.NAVAL * categories.ENGINEER} }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'Sea',
     },

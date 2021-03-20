@@ -42,7 +42,6 @@ UnitBlueprint {
         'TECH1',
         'NAVAL',
         'CORE',
-        'OCEANENGINEER',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',

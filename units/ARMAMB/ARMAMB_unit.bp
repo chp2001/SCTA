@@ -21,6 +21,7 @@ UnitBlueprint {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
         'BUILTBYT2VEHICLE',
+        'BUILTBYT2SUB',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -85,6 +86,12 @@ TechLevel = 'RULEUTL_Secret',
     Intel = {
         VisionRadius = 14,
     },
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
+    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
@@ -115,6 +122,7 @@ TechLevel = 'RULEUTL_Secret',
             DisplayName = 'ARMAMB_GUN',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
             },
             RangeCategory = 'UWRC_DirectFire',
             WeaponCategory = 'DirectFire',

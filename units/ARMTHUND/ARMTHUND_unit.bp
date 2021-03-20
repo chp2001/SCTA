@@ -73,7 +73,6 @@ UnitBlueprint {
         'MOBILE',
         'BOMBER',
         'AIR',
-        'VTOL',
         'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',

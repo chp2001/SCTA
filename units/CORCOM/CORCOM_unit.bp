@@ -86,7 +86,7 @@ UnitBlueprint {
         'OVERLAYSONAR',	
         'CORE',
         'SNIPEMODE',
-        'ALLTERRAIN',
+        'AMPHIBIOUS',
         'TACLOAK',
     },
     Defense = {

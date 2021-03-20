@@ -65,16 +65,13 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-
         'OVERLAYSONAR',
-        'SEAPLA',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
         'ANTINAVY',
         'SNIPEMODE',
         'AIR',
-        'VTOL',
         'HIGHALTAIR',
         'OVERLAYANTINAVY',
         'ARM',

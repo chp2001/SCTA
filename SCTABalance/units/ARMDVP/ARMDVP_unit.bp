@@ -86,7 +86,6 @@ UnitBlueprint {
         BuildableCategory = {
             'VEHICLE MOBILE TECH1 ARM',
             'VEHICLE MOBILE TECH2 ARM',
-            'ALLTERRAIN ENGINEER TECH2 LAND ARM',
             'armadvp',
         },
 	InitialRallyX = 0,

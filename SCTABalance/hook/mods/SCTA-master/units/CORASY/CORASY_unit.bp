@@ -2,6 +2,7 @@ UnitBlueprint {
     Merge = true,
     Categories = {
         'BUILTBYT1AIR',
+        'BUILTBYT1NAVAL',
         'BUILTBYT2AIR',
         'SELECTABLE',
         'DRAGBUILD',
@@ -26,13 +27,13 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 12000,
-        BuildCostMass = 1300,
+        BuildCostMass = 1500,
         BuildTime = 32000,
         BuildableCategory = {
             'NAVAL MOBILE TECH1 CORE',
             'NAVAL MOBILE TECH2 CORE',
             'NAVAL MOBILE TECH3 CORE',
-            'ALLTERRAIN ENGINEER CORE',
+            'corch',
         },
         BuildRate = 360,
     },

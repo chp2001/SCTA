@@ -84,9 +84,10 @@ UnitBlueprint {
     BuildRate = 180,
     DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
-        'VTOL TECH1 CORE', 
-        'VTOL TECH2 CORE',
-        'ALLTERRAIN LAND TECH2 ENGINEER CORE',
+        'AIR MOBILE TECH1 CORE', 
+        'AIR MOBILE TECH2 CORE',
+        'corcv',
+        'cornecro',
         'coradap', 
     },
 	InitialRallyX = 0,

@@ -17,7 +17,6 @@ UnitBlueprint {
         'RECLAIMABLE',
         'VEHICLE',
         'COUNTERINTELLIGENCE',
- 
         'TECH2',
         'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
@@ -25,7 +24,7 @@ UnitBlueprint {
         'MOBILE',
         'LAND',
         'ARM',
-        'ALLTERRAIN',
+        'AMPHIBIOUS',
     },
     Defense = {
         ArmorType = 'Normal',

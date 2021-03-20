@@ -45,7 +45,6 @@ UnitBlueprint {
     Categories = {
             'SELECTABLE',
             'TECH3',
-    
             'ENGINEER',
             'REPAIR',
             'RECLAIM',
@@ -59,7 +58,6 @@ UnitBlueprint {
             'LAND',
             'CORE',
             'HOVER',
-            'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',

@@ -13,8 +13,7 @@ UnitBlueprint {
     'MOBILE',
     'LAND',
     'DIRECTFIRE',
-    'BUILTBYGANTRY',
-    'BOT',
+    'BUILTBYQUANTUMGATE',
     'OVERLAYDIRECTFIRE',
     'CORE',
     'CONSTRUCTION',
@@ -22,7 +21,7 @@ UnitBlueprint {
     'SUBCOMMANDER',
     'SNIPEMODE',
     'STEALTH',
-    'ALLTERRAIN',
+    'AMPHIBIOUS',
     'TACLOAK',
     },
    Display = {

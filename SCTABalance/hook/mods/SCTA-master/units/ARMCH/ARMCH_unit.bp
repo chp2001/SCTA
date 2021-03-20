@@ -18,8 +18,7 @@ UnitBlueprint {
             'HOVER',
             'BOT',
             'VEHICLE',
-            'ALLTERRAIN',
-    },
+        },
         Defense = {
             Health = 2000,
             MaxHealth = 2000,

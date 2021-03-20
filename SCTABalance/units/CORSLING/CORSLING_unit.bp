@@ -33,7 +33,7 @@ UnitBlueprint {
         'OVERLAYANTIAIR',
         'CORE',
         'COUNTERINTELLIGENCE',
-        'ALLTERRAIN',
+        'AMPHIBIOUS',
     },
     Defense = {
         ArmorType = 'Normal',

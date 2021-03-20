@@ -1,4 +1,3 @@
----DISABLED
 UnitBlueprint {
     Merge = true,
     Categories = {
@@ -19,7 +18,6 @@ UnitBlueprint {
     'SUBMERSIBLE',
     'T2SUBMARINE',
     'OVERLAYSONAR',
-    'OCEANENGINEER',
     },
     Display = {
         Abilities = {
@@ -37,10 +35,13 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 1800,
         BuildCostMass = 400,
+        BuildRate = 250,
         BuildableCategory = {
-            'BUILTBYT1AIR CORE',
-            'BUILTBYT2AIR CORE',
+            'BUILTBYT1NAVAL CORE',
+            'TECH1 FACTORY CORE',
+            'BUILTBYT2SUB CORE',
         },
+        Necro = true,
         BuildTime = 5000,
         MaxBuildDistance = 9,
         ProductionPerSecondEnergy = 4,

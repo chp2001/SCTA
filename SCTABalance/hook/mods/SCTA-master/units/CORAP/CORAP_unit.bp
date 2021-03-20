@@ -21,7 +21,8 @@ UnitBlueprint {
         BuildCostMass = 680,
         BuildRate = 120,
         BuildableCategory = {
-            'VTOL TECH1 CORE',
+            'AIR MOBILE TECH1 CORE',
+            'corcv',
             'cordap', 
         },
     },

@@ -121,7 +121,7 @@ TechLevel = 'RULEUTL_Advanced',
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_land2_intel',
+    StrategicIconName = 'icon_land2_counterintel',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_UNITEX

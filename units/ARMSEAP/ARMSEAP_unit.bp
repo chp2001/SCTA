@@ -72,7 +72,6 @@ UnitBlueprint {
         'ANTINAVY',
         'SNIPEMODE',
         'AIR',
-        'VTOL',
         'HIGHALTAIR',
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',

@@ -3,7 +3,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-
         'FIELDENGINEER',
         'ENGINEER',
         'REPAIR',
@@ -19,7 +18,6 @@ UnitBlueprint {
         'ARM',
         'BOT',
         'VEHICLE',
-        'VTOL',
     },
     Defense = {
         Health = 1200,

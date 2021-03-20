@@ -26,11 +26,10 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 1,
+    BuildIconSortPriority = 4,
     Categories = {
         'SELECTABLE',
         'TECH2',
-
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -40,7 +39,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'ARM',
         'VEHICLE',
-        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',

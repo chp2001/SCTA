@@ -79,7 +79,7 @@ UnitBlueprint {
         BuildTime = 17376,
 	BuildRate = 200,
         BuildableCategory = {
-            'VTOL TECH2 ARM',
+            'AIR MOBILE TECH2 ARM',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

@@ -1201,7 +1201,7 @@ Platoon = Class(SCTAAIPlatoon) {
         if not aiBrain.SCTAAI then
             return SCTAAIPlatoon.UnitUpgradeAI(self)
         end
-        if not EntityCategoryContains(categories.GANTRY, self) then
+        if not EntityCategoryContains(categories.GATE, self) then
         local platoonUnits = self:GetPlatoonUnits()
         local FactionToIndex  = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, NOMADS = 5, ARM = 6, CORE = 7}
         local factionIndex = aiBrain:GetFactionIndex()
@@ -1330,12 +1330,11 @@ Platoon = Class(SCTAAIPlatoon) {
         local data = self.PlatoonData
         local categoryList = {}
         local atkPri = {}
-        if data.Laser then
-            local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
-            if econ.EnergyStorageRatio < 0.4 then
+        local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
+        if data.Laser and econ.EnergyStorageRatio < 0.4 then
                 WaitSeconds(5)
+                self:PlatoonDisband()
                 return
-            end
         end
         if data.PrioritizedCategories then
             for k,v in data.PrioritizedCategories do

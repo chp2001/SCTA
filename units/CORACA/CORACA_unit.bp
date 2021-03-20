@@ -71,10 +71,9 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'AIR',
-        'VTOL',
+        
         'SELECTION', 
         'CORE',
-
         'TECH2',
         'ENGINEER',
         'REPAIR',
@@ -85,7 +84,6 @@ UnitBlueprint {
         'SHOWQUEUE',
         'MOBILE',
         'CONSTRUCTION',
-        'ALLTERRAIN',
         },
     Defense = {
         ArmorType = 'Light',

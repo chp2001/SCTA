@@ -85,7 +85,7 @@ UnitBlueprint {
         BuildTime = 7180,
 	BuildRate = 100,
         BuildableCategory = {
-            'VTOL TECH1 CORE',
+            'AIR MOBILE TECH1 CORE',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

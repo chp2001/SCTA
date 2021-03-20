@@ -27,13 +27,13 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 12000,
-        BuildCostMass = 1300,
+        BuildCostMass = 1500,
         BuildTime = 32000,
         BuildableCategory = {
             'NAVAL MOBILE TECH1 ARM',
             'NAVAL MOBILE TECH2 ARM',
             'NAVAL MOBILE TECH3 ARM',
-            'ALLTERRAIN ENGINEER ARM',
+            'armch',
         },
         BuildRate = 360,
     },    

@@ -38,7 +38,7 @@ UnitBlueprint {
         'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
-        'RAIDER',
+        'SCOUT',
     },
     Defense = {
         ArmorType = 'Normal',

@@ -38,7 +38,7 @@ UnitBlueprint {
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 	     'CORE',
-        'ALLTERRAIN',
+        'AMPHIBIOUS',
         'BOMB',
     },
     Defense = {

@@ -71,8 +71,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
-        'AIR',
-        'VTOL',
+        'AIR',   
         'SELECTION',
         'CORE',
         'ENGINEER',

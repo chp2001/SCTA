@@ -1,25 +1,32 @@
---DISABLED
-
 UnitBlueprint {
     Merge = true, 
     Categories = {
         'SELECTABLE',
-        'TECH2',
+        'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
 	    'LAND',
+        'BOT',
         'STEALTHFIELD',
         'INTELLIGENCE',
         'COUNTERINTELLIGENCE',
         'OVERLAYCOUNTERINTEL',
         'ARM',
     },
+    Display = {
+    UniformScale = 0.12,
+    },
     Economy = {
+        BuildTime = 2000,
         TAConsumptionPerSecondEnergy = 60,
 	    MaintenanceConsumptionPerSecondEnergy = 10,
     },
     Intel = {
         RadarStealthFieldRadius = 20,
     },
+    SizeX = 1,
+    SizeY = 1,
+    SizeZ = 1,
+    StrategicIconName = 'icon_land1_counterintel',
 }

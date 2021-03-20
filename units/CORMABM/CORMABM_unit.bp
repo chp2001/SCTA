@@ -30,15 +30,14 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'VEHICLE',
-
+        'RADAR',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'ANTIAIR',
+	    'LAND',
         'CORE',
-	'OVERLAYDEFENSE',
+	    'OVERLAYDEFENSE',
     },
     Defense = {
         ArmorType = 'Normal',

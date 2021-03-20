@@ -84,9 +84,10 @@ UnitBlueprint {
     BuildRate = 180,
     DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
-        'VTOL TECH2 ARM',
-        'VTOL TECH1 ARM',
-        'ALLTERRAIN TECH2 LAND ENGINEER ARM',
+        'AIR MOBILE TECH2 ARM',
+        'AIR MOBILE TECH1 ARM',
+        'armck',
+        'armfark',
         'armadap', 
         },
 	InitialRallyX = 0,

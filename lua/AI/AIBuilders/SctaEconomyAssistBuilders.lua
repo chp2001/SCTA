@@ -60,7 +60,7 @@ BuilderGroup {
         Priority = 200,
         InstanceCount = 12,
         BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GANTRY }},
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
         },
         BuilderData = {
@@ -68,7 +68,7 @@ BuilderGroup {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Engineer',
                 AssistRange = 120,
-                BeingBuiltCategories = {'GANTRY'},                                                   
+                BeingBuiltCategories = {'GATE'},                                                   
                 AssistUntilFinished = true,
             },
         },
@@ -100,7 +100,7 @@ BuilderGroup {
         Priority = 200,
         InstanceCount = 12,
         BuilderConditions = {
-            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYGANTRY }},
+            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYQUANTUMGATE }},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
         },
         BuilderData = {
@@ -108,7 +108,7 @@ BuilderGroup {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Factory',
                 AssistRange = 120,
-                BeingBuiltCategories = {'BUILTBYGANTRY'},                                                       
+                BeingBuiltCategories = {'BUILTBYQUANTUMGATE'},                                                       
                 AssistUntilFinished = true,
             },
         },

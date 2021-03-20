@@ -48,8 +48,7 @@ UnitBlueprint {
         'STRUCTURE',
         'CORE',
         'STRATEGIC',
-        'SORTCONSTRUCTION',
-        'GANTRY', 
+        'SORTCONSTRUCTION', 
     },
     Defense = {
         ArmorType = 'ExperimentalStructure',
@@ -85,7 +84,7 @@ UnitBlueprint {
         BuildTime = 41937,
         BuildRate = 200,
         BuildableCategory = {
-            'BUILTBYGANTRY CORE',
+            'BUILTBYQUANTUMGATE CORE',
         },
         InitialRallyX = 0,
         InitialRallyZ = 8,

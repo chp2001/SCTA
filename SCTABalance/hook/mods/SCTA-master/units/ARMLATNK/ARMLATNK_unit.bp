@@ -1,20 +1,35 @@
 UnitBlueprint {
    Merge = true, 
+   Categories = {
+    'SELECTABLE',
+    'TECH3',
+    'VISIBLETORECON',
+    'RECLAIMABLE',
+    'MOBILE',
+    'LAND',
+    'DIRECTFIRE',
+    'ANTIAIR',
+    'OVERLAYDIRECTFIRE',
+    'OVERLAYANTIAIR',
+    'ARM',
+    'VEHICLE',
+    'ANTISHIELD',
+    },
    Display = {
     Abilities = {
         '<LOC ability_jamming>Jamming',
         },
     }, 
     Defense = {
-    Health = 2000,
-    MaxHealth = 2000,
+    Health = 12000,
+    MaxHealth = 12000,
     },
     Economy = {
-        TAConsumptionPerSecondEnergy = 30,
-        MaintenanceConsumptionPerSecondEnergy = 5,
-    BuildCostEnergy = 3000,
-    BuildCostMass = 450,
-    BuildTime = 6000,
+        TAConsumptionPerSecondEnergy = 60,
+        MaintenanceConsumptionPerSecondEnergy = 10,
+        BuildCostEnergy = 24000,
+        BuildCostMass = 1200,
+        BuildTime = 18000,
     },
     General = {
         ToggleCaps = {
@@ -30,15 +45,15 @@ UnitBlueprint {
     VisionRadius = 12,
     },
    SizeY = 1, 
-   StrategicIconName = 'icon_bot2_directfire',
+   StrategicIconName = 'icon_bot3_directfire',
    Weapon = {
     [1] = {
-        Damage = 80,
-        EnergyDrainPerSecond = 25,
-        EnergyRequired = 25,
+        Damage = 100,
+        EnergyDrainPerSecond = 50,
+        EnergyRequired = 50,
         DamageRadius = 2,
         EnergyChargeForFirstShot = true,
-        RateOfFire = 0.5,
+        RateOfFire = 2,
     },
     [2] = {
     },

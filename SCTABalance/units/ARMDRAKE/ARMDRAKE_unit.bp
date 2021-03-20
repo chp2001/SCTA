@@ -45,7 +45,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',  
         'ARM',
-        'BUILTBYGANTRY',  
+        'BUILTBYQUANTUMGATE',
         'SNIPEMODE',
         'ANTISHIELD',
     },

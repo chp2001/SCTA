@@ -35,11 +35,13 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 1800,
         BuildCostMass = 400,
+        BuildRate = 250,
         BuildableCategory = {
             'BUILTBYT1NAVAL CORE',
             'TECH1 FACTORY CORE',
-            'BUILTBYT2AIR CORE',
+            'BUILTBYT2SUB CORE',
         },
+        Necro = true,
         BuildTime = 5000,
         MaxBuildDistance = 9,
         ProductionPerSecondEnergy = 4,

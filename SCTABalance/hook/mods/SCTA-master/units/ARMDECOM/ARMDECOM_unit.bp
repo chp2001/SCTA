@@ -13,7 +13,7 @@ UnitBlueprint {
     'MOBILE',
     'LAND',
     'DIRECTFIRE',
-    'BUILTBYGANTRY',
+    'BUILTBYQUANTUMGATE',
     'OVERLAYDIRECTFIRE',
     'ARM',
     'CONSTRUCTION',

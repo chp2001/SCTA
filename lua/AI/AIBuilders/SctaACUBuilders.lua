@@ -170,7 +170,7 @@ BuilderGroup {
         Priority = 125,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GANTRY }},
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
         },
         BuilderData = {
@@ -178,7 +178,7 @@ BuilderGroup {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Engineer',
                 AssistRange = 120,
-                BeingBuiltCategories = {'GANTRY'},                                                   
+                BeingBuiltCategories = {'GATE'},                                                   
                 AssistUntilFinished = true,
             },
         },

@@ -242,10 +242,6 @@ TAunitkeygroups = {
         "armjeth",
         "cormist",
     },
-    ["Builders"] = {
-        "armdecom",
-        "cordecom",
-    },
     ["T1_Engineer"]= {
         "armck",
         "armcv",
@@ -277,11 +273,11 @@ TAunitkeygroups = {
         "corraid",
     },
     ["T2_Heavy_Tank"]= {
-        "armlatnk",
+        "armfido",
         "correap",
     },
     ["T2_Assault_Bot"]= {
-        "armfido",
+        "armbull",
         "corcan",
     },
     ["T2_Mobile_AA_Flak_Artillery"]= {
@@ -331,7 +327,9 @@ TAunitkeygroups = {
         "corsub",
     },
     ["T2_Amphibious_Tank"]= {
+        "armcroc",
         "corseal",
+        "coramph",
     },
     ["T1_Assault_Bot"]= {
         "armwar",
@@ -368,12 +366,11 @@ TAunitkeygroups = {
     ["T3_Armored_Assault_Bot"]= {   
         "corsumo",
         "corgol",
-        "armbull",
         "armzeus",
     },
     ["T3_Siege_Assault_Bot"]= {
-        "armcroc",
-        "coramph",
+        "armlatnk",
+        "corpyro",
     },
     ["T3_Mobile_Missile_Platform"]= {
         "armmh",
@@ -387,6 +384,10 @@ TAunitkeygroups = {
     ["T3_Mobile_Shield_Generator"]= {
         "armseer",
         "corvrad",
+    },
+    ["Support_Armored_Command_Unit"] = {
+        "armdecom",
+        "cordecom",
     },
 }
 

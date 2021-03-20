@@ -26,10 +26,11 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 1200,
         BuildCostMass = 300,
+        BuildRate = 300,
         BuildableCategory = {
             'BUILTBYT1NAVAL ARM',
             'TECH1 FACTORY ARM',
-            'BUILTBYT2AIR ARM',
+            'BUILTBYT2SUB ARM',
         },
         BuildTime = 5000,
         MaxBuildDistance = 9,

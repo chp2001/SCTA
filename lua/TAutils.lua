@@ -108,7 +108,7 @@ updateBuildRestrictions = function(self)
     if self.restrictions then
     local gtime = GetGameTimeSeconds()
     local HQCategory = categories.RESEARCH * (categories.ARM + categories.CORE) 
-        if self.FindHQType(aiBrain, (HQCategory * categories.TECH3) or categories.GANTRY) or gtime > 1200 then
+        if self.FindHQType(aiBrain, (HQCategory * categories.TECH3) or categories.GATE) or gtime > 1200 then
             if EntityCategoryContains(categories.TECH1, self) then
                 self:RemoveBuildRestriction(categories.TECH2)
                 self.restrictions = nil
@@ -127,7 +127,7 @@ end
 
 --self.FindHQType(aiBrain, category)
 FindHQType = function(aiBrain, category)
-    for id, unit in aiBrain:GetListOfUnits((categories.RESEARCH + categories.GANTRY) * (categories.ARM + categories.CORE)) do
+    for id, unit in aiBrain:GetListOfUnits((categories.RESEARCH + categories.GATE) * (categories.ARM + categories.CORE)) do
         if not unit:IsBeingBuilt() then
             return true
         end

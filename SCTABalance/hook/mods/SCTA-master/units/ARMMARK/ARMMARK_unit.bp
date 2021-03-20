@@ -6,9 +6,10 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT1HOVER',
+        'BUILTBYT2KBOT',
+        'BUILTBYT2AIR',
         'SELECTABLE',
-        'TECH3',
+        'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -31,11 +32,11 @@ UnitBlueprint {
             UniformScale = 0.3,
         },
     Economy = {
-        BuildCostEnergy = 12000,
-        BuildCostMass = 800,
-        BuildTime = 6000,
+        BuildCostEnergy = 6000,
+        BuildCostMass = 400,
+        BuildTime = 3000,
         ProductionPerSecondEnergy = 0,
-        TAConsumptionPerSecondEnergy = 500,
+        TAConsumptionPerSecondEnergy = 300,
         MaintenanceConsumptionPerSecondEnergy = 50,
     },
     General = {

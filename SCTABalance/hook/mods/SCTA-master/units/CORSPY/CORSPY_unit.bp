@@ -5,6 +5,18 @@
 
 UnitBlueprint {
     Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'BOT',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+        'LAND',
+        'CORE',
+        'SCOUT',
+        'STEALTH',
+    },
     Display = {
         UniformScale = 0.1,
     },
@@ -26,4 +38,5 @@ UnitBlueprint {
           OmniRadius = 15,
           RadarStealth = true,
     },
+    StrategicIconName = 'icon_land3_counterintel',
 }

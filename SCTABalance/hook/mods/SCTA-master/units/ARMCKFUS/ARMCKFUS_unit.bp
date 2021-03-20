@@ -12,7 +12,7 @@ UnitBlueprint {
         'SORTECONOMY',
 	    'ENERGYPRODUCTION',
 	    'ARM',
-        'TACLOAK',
+        'STEALTH',
     },
     Defense = {
         Health = 7000,

@@ -50,7 +50,6 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
         'MOBILE',
-        'STEALTH',
 	    'CONSTRUCTION',
 	    'LAND',
         'CORE',

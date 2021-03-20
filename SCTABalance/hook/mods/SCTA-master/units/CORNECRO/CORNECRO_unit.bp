@@ -16,7 +16,6 @@ UnitBlueprint {
         'CONSTRUCTION',
         'LAND',
         'CORE',
-        'STEALTH',
         'BOT',
         'TANK',
     },

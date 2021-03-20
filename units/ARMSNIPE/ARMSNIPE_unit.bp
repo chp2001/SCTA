@@ -40,7 +40,7 @@ UnitBlueprint {
         'ARM',
         'SNIPER',
         'ANTISHIELD',
-        'TACLOAK',
+        'STEALTH',
     },
     Defense = {
         ArmorType = 'Normal',

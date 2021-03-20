@@ -16,10 +16,10 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'ARM',
         'TANK',
-    'OVERLAYOMNI',
-    'STEALTHFIELD',
-    'OVERLAYCOUNTERINTEL',
-    'COUNTERINTELLIGENCE',
+        'OVERLAYOMNI',
+        'STEALTHFIELD',
+        'OVERLAYCOUNTERINTEL',
+        'COUNTERINTELLIGENCE',
     },
     Display = {
     Abilities = {

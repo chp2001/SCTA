@@ -87,7 +87,7 @@ UnitBlueprint {
         'CORE',
         'SNIPEMODE',
         'AMPHIBIOUS',
-        'TACLOAK',
+        'STEALTH',
     },
     Defense = {
         ArmorType = 'Commander',

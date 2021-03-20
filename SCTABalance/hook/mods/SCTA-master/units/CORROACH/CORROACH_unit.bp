@@ -17,7 +17,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
 	    'CORE',
         'AMPHIBIOUS',
-        'TACLOAK',
+        'STEALTH',
         'BOMB',
     },
     Economy = {

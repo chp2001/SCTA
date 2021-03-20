@@ -37,7 +37,7 @@ UnitBlueprint {
 	    'LAND',
         'CORE',
         'SCOUT',
-        'TACLOAK',
+        'STEALTH',
     },
     Defense = {
         ArmorType = 'Normal',

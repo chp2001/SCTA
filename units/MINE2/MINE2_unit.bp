@@ -28,7 +28,7 @@ UnitBlueprint {
         'ARM',
         'CORE',
         'BOMB',
-        'TACLOAK',
+        'STEALTH',
         'STRUCTURE',
     },
     Defense = {

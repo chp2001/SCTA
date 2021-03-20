@@ -30,13 +30,12 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'VEHICLE',
-
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
 	'LAND',
-	'ANTIAIR',
+	'RADAR',
         'ARM',
 	'OVERLAYDEFENSE',
     },

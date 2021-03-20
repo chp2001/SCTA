@@ -1,5 +1,3 @@
----DISABLED
-
 UnitBlueprint {
    Merge = true,
    Categories = {

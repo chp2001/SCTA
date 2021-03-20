@@ -21,6 +21,7 @@ UnitBlueprint {
         BuildTime = 2000,
         TAConsumptionPerSecondEnergy = 60,
 	    MaintenanceConsumptionPerSecondEnergy = 10,
+        ProductionPerSecondEnergy = 0,
     },
     Intel = {
         RadarStealthFieldRadius = 20,

@@ -14,8 +14,8 @@ ARMASER = Class(TACounter) {
 			tongpivot = CreateRotator(self, 'ForkPivot', 'z', nil, 0, 0, 0),
 		}
 		self.Sliders = {
-			ltong = CreateSlider(self, 'LeftFork'),
-			rtong = CreateSlider(self, 'RightFork'),
+			ltong = CreateSlider(self, 'LeftFork', 0, -3, 0, 6),
+			rtong = CreateSlider(self, 'RightFork', 0, -3, 0, 6),
 			tongend = CreateSlider(self, 'ForkEnd'),
 		}
 		for k, v in self.Spinners do
@@ -30,11 +30,6 @@ ARMASER = Class(TACounter) {
 
 		self:PlayUnitSound('Deactivate')
 
-		--TURN tongpivot to z-axis <0> SPEED <-100.02>;
-		self.Spinners.tongpivot:SetSpeed(100)
-		self.Spinners.tongpivot:SetGoal(0)
-		WaitFor(self.Spinners.tongpivot)
-
 		--TURN ltong to y-axis <0> SPEED <174.54>;
 		self.Spinners.ltong:SetGoal(0)
 		self.Spinners.ltong:SetSpeed(171)
@@ -43,40 +38,18 @@ ARMASER = Class(TACounter) {
 		self.Spinners.rtong:SetGoal(0)
 		self.Spinners.rtong:SetSpeed(171)
 
-		--SLEEP <683>;
 		WaitSeconds(0.7)
 
 		--MOVE tongend to y-axis <0> SPEED <4.00>;
 		self.Sliders.tongend:SetGoal(0,0,0)
 		self.Sliders.tongend:SetSpeed(4)
 
-		--MOVE ltong to y-axis <0> SPEED <4.00>;
-		self.Sliders.ltong:SetGoal(0,0,0)
-		self.Sliders.ltong:SetSpeed(4)
 
-		--MOVE rtong to y-axis <0> SPEED <4.00>;
-		self.Sliders.rtong:SetGoal(0,0,0)
-		self.Sliders.rtong:SetSpeed(4)
-
-		--TURN ltong to y-axis <0> SPEED <0.1>;
-		self.Spinners.ltong:SetGoal(0)
-		self.Spinners.ltong:SetSpeed(0.75)
-
-		--TURN rtong to y-axis <0> SPEED <0.5>;
-		self.Spinners.rtong:SetGoal(0)
-		self.Spinners.rtong:SetSpeed(0.75)
-
-		--SLEEP <689>;
-		WaitSeconds(0.7)
-
-		--SLEEP <21>;
 	end,
 
 	Open = function(self)
 
 		self:PlayUnitSound('Activate')
-
-		--MOVE tongend to y-axis <-2.99> SPEED <3.00>;
 		self.Sliders.tongend:SetGoal(0,-3,0)
 		self.Sliders.tongend:SetSpeed(3)
 
@@ -98,26 +71,27 @@ ARMASER = Class(TACounter) {
 		--TURN rtong to y-axis <116.71> SPEED <154.01>;
 		self.Spinners.rtong:SetGoal(118)
 		self.Spinners.rtong:SetSpeed(155)
-
-		--SLEEP <758>;
-		WaitSeconds(0.75)
-
-		--SLEEP <17>;
-
-		--SPIN tongpivot around z-axis  SPEED <100.02>
+				--SLEEP <758>;
+				WaitSeconds(0.75)
 		self.Spinners.tongpivot:SetSpeed(100)
 		self.Spinners.tongpivot:ClearGoal()
 	end,
 
 	OnIntelDisabled = function(self)
-		TACounter.OnIntelDisabled(self)
 		ForkThread(self.Close, self)
+		TACounter.OnIntelDisabled(self)
+		self.Sliders.ltong:SetGoal(0,0,0)
+		self.Sliders.ltong:SetSpeed(4)
+		--MOVE rtong to y-axis <0> SPEED <4.00>;
+		self.Sliders.rtong:SetGoal(0,0,0)
+		self.Sliders.rtong:SetSpeed(4)
+		self.Spinners.tongpivot:SetSpeed(100)
+		self.Spinners.tongpivot:SetGoal(0)
 	end,
 
 	OnIntelEnabled = function(self)
+		ForkThread(self.Open, self)		
 		TACounter.OnIntelEnabled(self)
-		ForkThread(self.Open, self)
-		
 	end,
 }
 TypeClass = ARMASER

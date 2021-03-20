@@ -4,19 +4,6 @@
 #Blueprint created by Raevn
 UnitBlueprint {
     Merge = true,
-    Categories = {
-        'SELECTABLE',
-        'TECH2',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'MOBILE',
-	    'LAND',
-        'ARM',
-        'STEALTH',
-        'OVERLAYRADAR',
-        'SCOUT',
-        'BOT',
-    },
     Display = {
         UniformScale = 0.12,
     },

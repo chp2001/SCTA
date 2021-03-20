@@ -27,7 +27,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI Air Attack',
-        PlatoonTemplate = 'BomberAttack',
+        PlatoonTemplate = 'SCTABomberAttack',
         Priority = 100,
         InstanceCount = 3,
         BuilderType = 'Any',        

@@ -86,7 +86,6 @@ UnitBlueprint {
     BuildableCategory = {
         'VTOL TECH1 CORE', 
         'VTOL TECH2 CORE',
-        'ALLTERRAIN LAND TECH2 ENGINEER CORE',
         'coradap', 
     },
 	InitialRallyX = 0,

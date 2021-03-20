@@ -84,7 +84,7 @@ UnitBlueprint {
     BuildableCategory = {
         'NAVAL MOBILE TECH1 CORE',
         'NAVAL MOBILE TECH2 CORE',
-        'ALLTERRAIN ENGINEER TECH2 CORE',
+        'coraca',
         'coradsy',
     },
 	InitialRallyX = 0,

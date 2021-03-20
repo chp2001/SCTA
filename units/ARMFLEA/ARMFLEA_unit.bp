@@ -41,7 +41,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'OVERLAYRADAR',
         'ARM',
-        'ALLTERRAIN',
+        'AMPHIBIOUS',
         },
     Defense = {
         ArmorType = 'Normal',

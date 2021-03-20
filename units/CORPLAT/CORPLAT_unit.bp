@@ -79,7 +79,8 @@ UnitBlueprint {
         BuildTime = 19248,
     BuildRate = 200,
     BuildableCategory = {
-        'SEAPLA CORE',
+        'corveng',
+        'cortitan',
         'VTOL TECH3 CORE',
     },
 	InitialRallyX = 1,

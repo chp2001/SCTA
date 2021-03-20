@@ -86,7 +86,6 @@ UnitBlueprint {
     BuildableCategory = {
         'VTOL TECH2 ARM',
         'VTOL TECH1 ARM',
-        'ALLTERRAIN TECH2 LAND ENGINEER ARM',
         'armadap', 
         },
 	InitialRallyX = 0,

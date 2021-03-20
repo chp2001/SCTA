@@ -86,7 +86,7 @@ UnitBlueprint {
         'VTOL TECH1 CORE', 
         'VTOL TECH2 CORE',
         'VTOL TECH3 CORE',
-        'ALLTERRAIN LAND ENGINEER CORE',
+        'corch',
     },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

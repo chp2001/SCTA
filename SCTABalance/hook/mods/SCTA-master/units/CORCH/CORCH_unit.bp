@@ -18,7 +18,7 @@ UnitBlueprint {
         'HOVER',
         'BOT',
         'VEHICLE',
-        'ALLTERRAIN',
+        'VTOL',
     },
     Defense = {
         Health = 2080,

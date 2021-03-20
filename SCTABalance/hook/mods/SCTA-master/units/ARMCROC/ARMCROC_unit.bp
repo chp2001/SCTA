@@ -12,7 +12,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'ARM',
         'VEHICLE',
-        'ALLTERRAIN',
     },
     Defense = {
         Health = 9000,

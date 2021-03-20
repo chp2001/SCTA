@@ -4,7 +4,8 @@
     Summary :
         Responsible for defining a mapping from AIBuilders keys -> Plans (Plans === platoon.lua functions)
 ]]
-local SPECIAL = categories.RAIDER + categories.EXPERIMENTAL + categories.ENGINEER
+local RAIDER = (categories.SCOUT * (categories.DIRECTFIRE + categories.ANTIAIR) - categories.OVERLAYRADAR)
+local SPECIAL = RAIDER + categories.EXPERIMENTAL + categories.ENGINEER
 local GROUND = categories.MOBILE * categories.LAND
 
 PlatoonTemplate {
@@ -19,7 +20,7 @@ PlatoonTemplate {
     Name = 'T1LandScoutFormSCTA',
     Plan = 'ScoutingAI',
     GlobalSquads = {
-        { GROUND * categories.SCOUT * categories.TECH1, 1, 1, 'scout', 'None' },
+        { GROUND * categories.SCOUT * categories.TECH1 * categories.OVERLAYRADAR, 1, 1, 'scout', 'None' },
     }
 }
 
@@ -27,7 +28,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTA',
     Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND - SPECIAL - categories.ANTISHIELD - categories.ALLTERRAIN, 2, 10, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND - SPECIAL - categories.ANTISHIELD - categories.AMPHIBIOUS, 2, 10, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
 
@@ -35,7 +36,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTALaser',
     Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND * categories.ANTISHIELD - SPECIAL - categories.ALLTERRAIN, -- Type of units.
+        { GROUND * categories.ANTISHIELD - SPECIAL - categories.AMPHIBIOUS, -- Type of units.
           2, -- Min number of units.
           10, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
@@ -47,7 +48,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTATerrain',
     Plan = 'AllTerrainAISCTA', -- The platoon function to use.
     GlobalSquads = {
-        { categories.ALLTERRAIN * categories.LAND - SPECIAL, -- Type of units.
+        { categories.AMPHIBIOUS * categories.LAND - SPECIAL, -- Type of units.
           2, -- Min number of units.
           10, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
@@ -59,7 +60,7 @@ PlatoonTemplate {
     Name = 'LABSCTA',
     Plan = 'HuntAILABSCTA', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND * categories.RAIDER - categories.ENGINEER - categories.SCOUT, -- Type of units.
+        {RAIDER - categories.NAVAL, -- Type of units.
           1, -- Min number of units.
           1, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
@@ -72,7 +73,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTA',
     Plan = 'AttackSCTAForceAI',
     GlobalSquads = {
-        { GROUND - SPECIAL - categories.ALLTERRAIN - categories.ANTISHIELD, 2, 20, 'Attack', 'none' }
+        { GROUND - SPECIAL - categories.AMPHIBIOUS - categories.ANTISHIELD, 2, 20, 'Attack', 'none' }
     },
 }
 

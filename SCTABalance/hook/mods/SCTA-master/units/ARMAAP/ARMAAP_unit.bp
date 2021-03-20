@@ -38,7 +38,6 @@ UnitBlueprint {
         'VTOL TECH1 ARM',
         'VTOL TECH2 ARM', 
         'VTOL TECH3 ARM',
-        'ALLTERRAIN ENGINEER LAND ARM',
         },
     },
     LifeBarHeight = 0.22,

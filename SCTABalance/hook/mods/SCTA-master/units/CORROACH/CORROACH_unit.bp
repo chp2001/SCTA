@@ -16,7 +16,7 @@ UnitBlueprint {
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 	    'CORE',
-        'ALLTERRAIN',
+        'AMPHIBIOUS',
         'TACLOAK',
         'BOMB',
     },

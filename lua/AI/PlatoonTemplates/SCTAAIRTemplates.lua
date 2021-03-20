@@ -17,6 +17,14 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
+    Name = 'SCTABomberAttack',
+    Plan = 'SCTAStrikeForceAI',
+    GlobalSquads = {
+        { SKY * categories.BOMBER - categories.EXPERIMENTAL - categories.ANTINAVY, 1, 100, 'Attack', 'GrowthFormation' },
+    }
+}
+
+PlatoonTemplate {
     Name = 'IntieAISCTA',
     Plan = 'InterceptorAISCTA',
     GlobalSquads = {
@@ -44,7 +52,7 @@ PlatoonTemplate {
     Name = 'SCTAT2AirScouting',
     Plan = 'ScoutingAISorian',
     GlobalSquads = {
-        { SKY * categories.SCOUT * (categories.TECH1 + categories.TECH2), 1, 1, 'scout', 'None' },
+        { SKY * categories.SCOUT * categories.OVERLAYRADAR * (categories.TECH1 + categories.TECH2), 1, 1, 'scout', 'None' },
     }
 }
 
@@ -52,7 +60,7 @@ PlatoonTemplate {
     Name = 'T1AirScoutFormSCTA',
     Plan = 'ScoutingAISorian',
     GlobalSquads = {
-        { SKY * categories.SCOUT * categories.TECH1, 1, 1, 'scout', 'None' },
+        { SKY * categories.SCOUT * categories.OVERLAYRADAR * categories.TECH1, 1, 1, 'scout', 'None' },
     }
 }
 

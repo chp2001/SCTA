@@ -79,8 +79,7 @@ UnitBlueprint {
         'VTOL',
         'OVERLAYANTIAIR',
         'ARM',
-        'SEAPLA',
-        'RAIDER',
+        'SCOUT',
     },
     Defense = {
         ArmorType = 'Light',

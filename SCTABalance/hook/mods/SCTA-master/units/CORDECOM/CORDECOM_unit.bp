@@ -14,7 +14,6 @@ UnitBlueprint {
     'LAND',
     'DIRECTFIRE',
     'BUILTBYGANTRY',
-    'BOT',
     'OVERLAYDIRECTFIRE',
     'CORE',
     'CONSTRUCTION',
@@ -22,7 +21,7 @@ UnitBlueprint {
     'SUBCOMMANDER',
     'SNIPEMODE',
     'STEALTH',
-    'ALLTERRAIN',
+    'AMPHIBIOUS',
     'TACLOAK',
     },
    Display = {

@@ -79,7 +79,8 @@ UnitBlueprint {
         BuildTime = 19248,
     BuildRate = 200,
     BuildableCategory = {
-        'SEAPLA ARM',
+        'armfig',
+        'armlance',
         'VTOL TECH3 ARM',
     },
 	InitialRallyX = 1,

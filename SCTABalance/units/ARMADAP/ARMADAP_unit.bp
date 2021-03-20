@@ -86,7 +86,6 @@ UnitBlueprint {
         'VTOL TECH3 ARM',
         'VTOL TECH2 ARM',
         'VTOL TECH1 ARM', 
-        'ALLTERRAIN LAND ENGINEER ARM',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

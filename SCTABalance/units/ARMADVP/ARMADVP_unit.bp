@@ -84,7 +84,6 @@ UnitBlueprint {
             'VEHICLE MOBILE TECH1 ARM',
             'VEHICLE MOBILE TECH2 ARM',
             'VEHICLE MOBILE TECH3 ARM',
-            'ALLTERRAIN ENGINEER LAND ARM',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

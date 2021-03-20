@@ -36,7 +36,7 @@ UnitBlueprint {
         BuildTime = 6000,
         ProductionPerSecondEnergy = 0,
         TAConsumptionPerSecondEnergy = 500,
-        MaintenanceConsumptionPerSecondEnergy = 25,
+        MaintenanceConsumptionPerSecondEnergy = 50,
     },
     General = {
     OrderOverrides = {

@@ -87,13 +87,16 @@ TAunit = Class(Unit)
 			local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
 			if self.CloakOn and self:IsUnitState('Building') then
 				self:DisableIntel('Cloak')
+				self:DisableIntel('CloakField')
 				self:UpdateConsumptionValues()
                 self:SetMesh(bp.Display.MeshBlueprint, true)
 			elseif dudes[1] and self.CloakOn then
 				self:DisableIntel('Cloak')
+				self:DisableIntel('CloakField')
 				self:SetMesh(bp.Display.MeshBlueprint, true)
 			elseif not dudes[1] and self.CloakOn then
 				self:EnableIntel('Cloak')
+				self:EnableIntel('CloakField')
 				---self:UpdateConsumptionValues()
 				self:SetMesh(bp.Display.CloakMeshBlueprint, true)
 			end

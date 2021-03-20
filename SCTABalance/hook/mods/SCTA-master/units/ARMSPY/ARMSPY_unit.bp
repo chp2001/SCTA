@@ -11,7 +11,7 @@ UnitBlueprint {
         BuildCostEnergy = 1500,
         BuildTime = 3000,
         TAConsumptionPerSecondEnergy = 60,
-        MaintenanceConsumptionPerSecondEnergy = 10,
+        MaintenanceConsumptionPerSecondEnergy = 15,
     },
     Intel = {
         JamRadius = {

@@ -25,7 +25,7 @@ do
                 BuildCostMass = 0.5,
                 BuildTime = 0.13,
                 BuildRate = 0.075,
-                MaintenanceConsumptionPerSecondEnergy = 3,
+                MaintenanceConsumptionPerSecondEnergy = 2,
             },
             Physics = {
                 MaxSpeed = 1.2,

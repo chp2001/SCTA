@@ -2,7 +2,7 @@ UnitBlueprint {
     Merge = true, 
     Categories = {
         'SELECTABLE',
-        'TECH1',
+        'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -10,7 +10,7 @@ UnitBlueprint {
         'BOT',
         'STEALTHFIELD',
         'INTELLIGENCE',
-        'COUNTERINTELLIGENCE',
+        'STEALTH',
         'OVERLAYCOUNTERINTEL',
         'ARM',
     },
@@ -19,15 +19,30 @@ UnitBlueprint {
     },
     Economy = {
         BuildTime = 2000,
-        TAConsumptionPerSecondEnergy = 60,
-	    MaintenanceConsumptionPerSecondEnergy = 10,
+        TAConsumptionPerSecondEnergy = 200,
+	    MaintenanceConsumptionPerSecondEnergy = 50,
         ProductionPerSecondEnergy = 0,
     },
+    General = {
+    OrderOverrides = {
+        RULEUTC_CloakToggle = {
+            bitmapId = 'stealth-field',
+            helpText = 'toggle_stealth_field',
+        },
+    },
+    ToggleCaps = {
+        RULEUTC_StealthToggle = false,
+        RULEUTC_CloakToggle = true,
+    },
+    },
     Intel = {
+        CloakField = true,
+        Cloak = true,
+        CloakFieldRadius = 10,
         RadarStealthFieldRadius = 20,
     },
     SizeX = 1,
     SizeY = 1,
     SizeZ = 1,
-    StrategicIconName = 'icon_land1_counterintel',
+    StrategicIconName = 'icon_land3_counterintel',
 }

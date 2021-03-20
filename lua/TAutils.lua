@@ -107,15 +107,11 @@ updateBuildRestrictions = function(self)
 
     if self.restrictions then
     local gtime = GetGameTimeSeconds()
-    local HQCategory = categories.RESEARCH * (categories.ARM + categories.CORE) 
-        if self.FindHQType(aiBrain, (HQCategory * categories.TECH3) or categories.GATE) or gtime > 1200 then
-            if EntityCategoryContains(categories.TECH1, self) then
+    local HQCategory = ((categories.RESEARCH + categories.GATE) * (categories.ARM + categories.CORE)) 
+        if self.FindHQType(aiBrain, HQCategory * (categories.TECH3 + categories.EXPERIMENTAL)) or gtime > 1200 then
                 self:RemoveBuildRestriction(categories.TECH2)
-                self.restrictions = nil
-            elseif EntityCategoryContains(categories.TECH2, self) then
                 self:RemoveBuildRestriction(categories.TECH3)
-                self.restrictions = nil
-            end
+                self.restrictions = nil     
         elseif self.FindHQType(aiBrain, HQCategory * categories.TECH2) or  gtime > 600 then
             if EntityCategoryContains(categories.TECH1, self) then
             self:RemoveBuildRestriction(categories.TECH2)    

@@ -21,12 +21,12 @@ UnitBlueprint {
         'BUILTBYT2AIR',
         'BUILTBYT2KBOT',
         'BUILTBYT2VEHICLE',
+        'BUILTBYT2SUB',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-
 	'STRUCTURE',
 	'DEFENSE',
 	'ANTIAIR',
@@ -88,6 +88,12 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 22,
     },
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
+    },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
@@ -117,6 +123,7 @@ UnitBlueprint {
             DisplayName = 'ARMFLAK_GUN',
             FireTargetLayerCapsTable = {
                 Land = 'Air',
+                Water = 'Air',
             },
 	        RangeCategory = 'UWRC_AntiAir',
             WeaponCategory = 'AntiAir',

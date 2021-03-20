@@ -1,5 +1,3 @@
----DISABLED
-
 UnitBlueprint {
     Merge = true,
     Categories = {
@@ -30,7 +28,8 @@ UnitBlueprint {
         BuildCostEnergy = 1200,
         BuildCostMass = 300,
         BuildableCategory = {
-            'BUILTBYT1AIR ARM',
+            'BUILTBYT1NAVAL ARM',
+            'TECH1 FACTORY ARM',
             'BUILTBYT2AIR ARM',
         },
         BuildTime = 5000,

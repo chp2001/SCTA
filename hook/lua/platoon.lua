@@ -1330,13 +1330,11 @@ Platoon = Class(SCTAAIPlatoon) {
         local data = self.PlatoonData
         local categoryList = {}
         local atkPri = {}
-        if data.Laser then
-            local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
-            if econ.EnergyStorageRatio < 0.4 then
+        local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
+        if data.Laser and econ.EnergyStorageRatio < 0.4 then
                 WaitSeconds(5)
                 self:PlatoonDisband()
                 return
-            end
         end
         if data.PrioritizedCategories then
             for k,v in data.PrioritizedCategories do

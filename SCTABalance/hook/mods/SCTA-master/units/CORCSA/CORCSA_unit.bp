@@ -1,5 +1,3 @@
----DISABLED
-
 UnitBlueprint {
    Merge = true,
    Air = {
@@ -20,6 +18,7 @@ UnitBlueprint {
     'PATROLHELPER',
     'SHOWQUEUE',
     'MOBILE',
+    'VTOL',
     'CONSTRUCTION',
     },
    Defense = {
@@ -37,6 +36,7 @@ UnitBlueprint {
         BuildableCategory = {
             'BUILTBYT1HOVER CORE',
             'BUILTBYT2AIR CORE',
+            'BUILTBYT2KBOT CORE',
         },
         MaxBuildDistance = 5,
         ProductionPerSecondEnergy = 3,

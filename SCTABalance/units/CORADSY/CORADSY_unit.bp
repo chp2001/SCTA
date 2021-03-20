@@ -86,7 +86,6 @@ UnitBlueprint {
         'NAVAL MOBILE TECH2 CORE',
         'NAVAL MOBILE TECH3 CORE',
         'corch',
-        'coraca',
     },
 	InitialRallyX = 0,
 	InitialRallyZ = 10,

@@ -84,7 +84,6 @@ UnitBlueprint {
     BuildableCategory = {
         'NAVAL MOBILE TECH1 ARM',
         'NAVAL MOBILE TECH2 ARM',
-        'armaca',
         'armadsy',
     },
 	InitialRallyX = 0,

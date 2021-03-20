@@ -26,7 +26,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 12000,
-        BuildCostMass = 1300,
+        BuildCostMass = 1500,
         BuildTime = 32000,
         BuildableCategory = {
             'NAVAL MOBILE TECH1 CORE',

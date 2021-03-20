@@ -36,12 +36,11 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 60000,
-        BuildCostMass = 1600, 
+        BuildCostMass = 2000, 
         BuildTime = 64000,
         BuildRate = 240,
         BuildableCategory = {
-            'VTOL TECH3 CORE',
-            'corch',
+            'VTOL TECH3 CORE',       
         },
     },
     Physics = {

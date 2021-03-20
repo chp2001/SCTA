@@ -32,7 +32,7 @@ UnitBlueprint {
             LifeBarSize = 7,
     Economy = {
         BuildCostEnergy = 60000,
-        BuildCostMass = 2000, 
+        BuildCostMass = 2400, 
         BuildRate = 360,
         BuildTime = 150000,
         BuildableCategory = {

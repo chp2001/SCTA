@@ -42,7 +42,7 @@ UnitBlueprint {
 	    'CONSTRUCTION',
 	    'ARM',
 	    'SORTCONSTRUCTION',
-        'VEHICLE',
+        'TANK',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -76,7 +76,7 @@ UnitBlueprint {
         BuildTime = 14950,
 	BuildRate = 200,
         BuildableCategory = {
-            'VEHICLE MOBILE TECH2 ARM',
+            'TANK MOBILE TECH2 ARM',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

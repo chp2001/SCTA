@@ -29,7 +29,7 @@ StopMove = Sound {
     BuildIconSortPriority = 5,
     Categories = {
         'SELECTABLE',
-        'VEHICLE',
+        'TANK',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',

@@ -39,7 +39,7 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'ARTILLERY',
         'CORE',
-        'VEHICLE',	
+        'TANK',	
      'SNIPEMODE',
     },
     Defense = {

@@ -43,7 +43,7 @@ UnitBlueprint {
 	    'CORE',
         'RESEARCH',
 	    'SORTCONSTRUCTION',
-        'VEHICLE',
+        'TANK',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -86,8 +86,8 @@ UnitBlueprint {
         DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
         'coradvp',
-        'VEHICLE MOBILE TECH1 CORE', 
-        'VEHICLE MOBILE TECH2 CORE',
+        'TANK MOBILE TECH1 CORE', 
+        'TANK MOBILE TECH2 CORE',
     },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

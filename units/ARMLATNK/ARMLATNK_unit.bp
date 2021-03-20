@@ -39,7 +39,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
 	    'OVERLAYANTIAIR',
         'ARM',
-        'VEHICLE',
+        'TANK',
         'ANTISHIELD',
     },
     Defense = {

@@ -40,7 +40,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'ARM',
-        'VEHICLE',
+        'TANK',
         'TECH2',
         'ENGINEER',
         'REPAIR',

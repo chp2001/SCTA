@@ -15,7 +15,7 @@ UnitBlueprint {
         'SELECTABLE',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'VEHICLE',
+        'TANK',
         'COUNTERINTELLIGENCE',
         'TECH2',
         'DIRECTFIRE',

@@ -16,7 +16,7 @@ UnitBlueprint {
         'LAND', 
 	    'ARM',
         'SORTCONSTRUCTION',
-        'VEHICLE',
+        'TANK',
     },
     Defense = {
         Health = 8200,
@@ -31,9 +31,9 @@ UnitBlueprint {
         BuildRate = 150,
         BuildTime = 18000,
         BuildableCategory = {
-            'VEHICLE MOBILE TECH2 ARM',
-            'VEHICLE MOBILE TECH1 ARM',
-            'VEHICLE MOBILE TECH3 ARM',
+            'TANK MOBILE TECH2 ARM',
+            'TANK MOBILE TECH1 ARM',
+            'TANK MOBILE TECH3 ARM',
         },
     },
     LifeBarHeight = 0.22,

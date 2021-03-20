@@ -10,7 +10,7 @@ UnitBlueprint {
     'DIRECTFIRE',
     'OVERLAYDIRECTFIRE',
     'CORE',
-    'VEHICLE',
+    'TANK',
 
 },
 Defense = {

@@ -15,7 +15,7 @@ UnitBlueprint {
 	    'INTELLIGENCE',
         'OVERLAYRADAR',
         'ARM',
-        'VEHICLE',
+        'TANK',
     'OVERLAYOMNI',
     'STEALTHFIELD',
     'OVERLAYCOUNTERINTEL',

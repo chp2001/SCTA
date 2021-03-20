@@ -16,7 +16,7 @@ UnitBlueprint {
         'LAND', 
 	    'CORE',
 	    'SORTCONSTRUCTION',
-        'VEHICLE',
+        'TANK',
     },
     Defense = {
         Health = 11000,
@@ -35,9 +35,9 @@ UnitBlueprint {
         BuildRate = 180,
         BuildTime = 15000,
         BuildableCategory = {
-            'VEHICLE MOBILE TECH1 CORE', 
-            'VEHICLE MOBILE TECH2 CORE',
-            'VEHICLE MOBILE TECH3 CORE',
+            'TANK MOBILE TECH1 CORE', 
+            'TANK MOBILE TECH2 CORE',
+            'TANK MOBILE TECH3 CORE',
         },
     },
     LifeBarHeight = 0.22,

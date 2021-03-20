@@ -39,7 +39,7 @@ UnitBlueprint {
     BuildIconSortPriority = 8,
     Categories = {
         'SELECTABLE',
-        'VEHICLE',
+        'TANK',
         'TECH1',
         'ENGINEER',
         'VISIBLETORECON',

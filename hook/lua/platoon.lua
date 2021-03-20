@@ -1334,6 +1334,7 @@ Platoon = Class(SCTAAIPlatoon) {
             local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
             if econ.EnergyStorageRatio < 0.4 then
                 WaitSeconds(5)
+                self:PlatoonDisband()
                 return
             end
         end

@@ -393,6 +393,7 @@ BuilderGroup {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2,  FUSION} }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
+            { EBC, 'LessThanEconStorageRatio', { 0.75, 1.1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -415,6 +416,7 @@ BuilderGroup {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1,  FUSION} }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
+            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -437,6 +439,7 @@ BuilderGroup {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3,  FUSION} }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
+            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
         },
         BuilderType = 'Any',
         BuilderData = {

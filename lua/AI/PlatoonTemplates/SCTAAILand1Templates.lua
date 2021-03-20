@@ -128,7 +128,7 @@ PlatoonTemplate {
         Core = {
             { 'corcan', 1, 2, 'attack', 'none' },
             { 'coracv', 1, 1, 'support', 'None' },
-            { 'corpyro', 1, 1, 'attack', 'none' },
+            { 'corhrk', 1, 1, 'attack', 'none' },
         },
     }
 }

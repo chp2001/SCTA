@@ -3,7 +3,7 @@ local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MABC = '/lua/editor/MarkerBuildConditions.lua'
-local FUSION = categories.ENERGYPRODUCTION * categories.STRUCTURE * (categories.TECH2 + categories.TECH3)
+local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIEngineerEcoBuilder',

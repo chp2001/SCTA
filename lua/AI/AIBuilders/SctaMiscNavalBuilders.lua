@@ -6,7 +6,7 @@ local MABC = '/lua/editor/MarkerBuildConditions.lua'
 local PLANT = categories.FACTORY * categories.TECH1
 local LAB = categories.FACTORY * categories.TECH2
 local PLATFORM = categories.FACTORY * categories.TECH3
-local FUSION = categories.ENERGYPRODUCTION * categories.STRUCTURE * (categories.TECH2 + categories.TECH3)
+local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIEngineerNavalMiscBuilder',

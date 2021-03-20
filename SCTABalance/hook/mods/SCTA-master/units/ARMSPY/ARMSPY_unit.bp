@@ -2,7 +2,6 @@
 #CORSPY
 #
 #Blueprint created by Raevn
---DISABLED
 UnitBlueprint {
     Merge = true,
     Categories = {
@@ -17,6 +16,10 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'SCOUT',
         'TACLOAK',
+        'BOT',
+    },
+    Display = {
+        UniformScale = 0.12,
     },
     Economy = {
         BuildCostEnergy = 1500,
@@ -32,4 +35,7 @@ UnitBlueprint {
           JammerBlips = 5,
           RadarStealth = true,
     },
+    SizeX = 1.2,
+    SizeY = 1.2,
+    SizeZ = 1.2,
 }

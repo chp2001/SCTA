@@ -24,7 +24,7 @@ UnitBlueprint {
     MaxHealth = 11000,
     },
     Display = {
-    UniformScale = 0.24,
+    UniformScale = 0.2,
     },
     Intel = {
         VisionRadius = 14,
@@ -34,18 +34,18 @@ UnitBlueprint {
     BuildCostMass = 2200,
     BuildTime = 29000,
     },
-    SelectionSizeX = 2,
-    SelectionSizeZ = 2,
-    SizeX = 3,
-    SizeY = 3,
-    SizeZ = 3,
+    SelectionSizeX = 1.6,
+    SelectionSizeZ = 1.6,
+    SizeX = 2.5,
+    SizeY = 2.5,
+    SizeZ = 2.5,
     StrategicIconName = 'icon_bot3_armored',
     Weapon = {
         [1] = {
             EnergyDrainPerSecond = 50,
             EnergyRequired = 50,
             EnergyChargeForFirstShot = true,
-            Damage = 400,
+            Damage = 250,
             MaxRadius = 35,
             DamageRadius = 2,
             RateOfFire = 1,

@@ -1,4 +1,4 @@
-local WEIRD = categories.NAVAL - categories.COMMAND - categories.FIELDENGINEER
+local WEIRD = (categories.NAVAL + categories.COMMAND + categories.FIELDENGINEER)
 
 PlatoonTemplate {
     Name = 'CommanderBuilderSCTA',

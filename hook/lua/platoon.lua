@@ -1330,6 +1330,8 @@ Platoon = Class(SCTAAIPlatoon) {
         local data = self.PlatoonData
         local categoryList = {}
         local atkPri = {}
+        local platoonUnits = self:GetPlatoonUnits()
+        local numberOfUnitsInPlatoon = table.getn(platoonUnits)
         local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
         if data.Laser and econ.EnergyStorageRatio < 0.4 then
                 WaitSeconds(5)
@@ -1350,7 +1352,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local maxRadius = data.SearchRadius or 50
         local movingToScout = false
         while aiBrain:PlatoonExists(self) do
-            self:SetPlatoonFormationOverride('Attack')
+            --self:SetPlatoonFormationOverride('Attack')
             if not target or target:IsDead() then
                 if aiBrain:GetCurrentEnemy() and aiBrain:GetCurrentEnemy():IsDefeated() then
                     aiBrain:PickEnemyLogic()
@@ -1371,11 +1373,15 @@ Platoon = Class(SCTAAIPlatoon) {
                     --self:SetPlatoonFormationOverride('Attack')
                     self:Stop()
                     if not data.UseMoveOrder then
+                        if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 10 then
                         self:SetPlatoonFormationOverride('AttackFormation')
                         self:AttackTarget( target )
+                        end
                     else
+                        if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 10 then
                         self:SetPlatoonFormationOverride('AttackFormation')
                         self:MoveToLocation( table.copy( target:GetPosition() ), false)
+                        end
                     end
                     movingToScout = false
                 elseif not movingToScout then
@@ -1477,7 +1483,9 @@ Platoon = Class(SCTAAIPlatoon) {
         -- maybe worth it if we micro
         --self:SetPlatoonFormationOverride('GrowthFormation')
         local PlatoonFormation = self.PlatoonData.UseFormation or 'NoFormation'
+        if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 10 then
         self:SetPlatoonFormationOverride(PlatoonFormation)
+        end
 
         while aiBrain:PlatoonExists(self) do
             local pos = self:GetPlatoonPosition() -- update positions; prev position done at end of loop so not done first time
@@ -1506,7 +1514,9 @@ Platoon = Class(SCTAAIPlatoon) {
 
             if (oldNumberOfUnitsInPlatoon != numberOfUnitsInPlatoon) then
                 self:StopAttack()
+                if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 20 then
                 self:SetPlatoonFormationOverride(PlatoonFormation)
+                end
             end
             oldNumberOfUnitsInPlatoon = numberOfUnitsInPlatoon
 

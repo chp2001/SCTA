@@ -1407,7 +1407,7 @@ Platoon = Class(SCTAAIPlatoon) {
             end
         end
         table.insert( atkPri, 'LAND' )
-        table.insert( categoryList, categories.ALLUNITS - categories.AIR - categories.COMMAND)
+        table.insert( categoryList, categories.ALLUNITS - categories.AIR - categories.COMMAND - categories.STRUCTURE)
         self:SetPrioritizedTargetList( 'Attack', categoryList )
         local target
         local blip = false

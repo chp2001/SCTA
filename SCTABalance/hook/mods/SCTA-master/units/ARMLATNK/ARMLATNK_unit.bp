@@ -19,6 +19,7 @@ UnitBlueprint {
     Abilities = {
         '<LOC ability_jamming>Jamming',
         },
+        UniformScale = 0.24,
     }, 
     Defense = {
     Health = 12000,
@@ -44,7 +45,11 @@ UnitBlueprint {
     JammerBlips = 5,
     VisionRadius = 12,
     },
-   SizeY = 1, 
+    SelectionSizeX = 2,
+    SelectionSizeZ = 2,
+    SizeX = 3,
+    SizeY = 1.6,
+    SizeZ = 3, 
    StrategicIconName = 'icon_bot3_directfire',
    Weapon = {
     [1] = {

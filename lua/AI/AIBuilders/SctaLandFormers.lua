@@ -3,7 +3,7 @@ local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/TAutils.lua').GetMOARadii()
-local RAIDER = (categories.SCOUT * (categories.DIRECTFIRE + categories.ANTIAIR) - categories.OVERLAYRADAR)
+local RAIDER = categories.SCOUT - categories.OVERLAYRADAR
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAILandFormers',

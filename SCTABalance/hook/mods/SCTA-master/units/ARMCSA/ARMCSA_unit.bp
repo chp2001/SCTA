@@ -33,9 +33,9 @@ UnitBlueprint {
         BuildTime = 6000,
         BuildCostMass = 400,    
         BuildableCategory = {
-            'BUILTBYT1HOVER ARM',
+            'BUILTBYTIER3ENGINEER ARM',
             'BUILTBYT2AIR ARM',
-            'BUILTBYT2KBOT ARM',
+            'BUILTBYTIER2ENGINEER ARM',
         },
         MaxBuildDistance = 5,
         ProductionPerSecondEnergy = 3,

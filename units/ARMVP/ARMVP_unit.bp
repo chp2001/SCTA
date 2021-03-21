@@ -29,11 +29,10 @@ UnitBlueprint {
     BuildIconSortPriority = 2,
     Categories = {
         'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1VEHICLE',
-        'BUILTBYT1HOVER',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYT1NAVAL',
+        'BUILTBYTIER3ENGINEER',
         'BUILTBYCOMMANDER',
-        'BUILTBYT2VEHICLE',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -73,7 +72,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.12,
     },
     Economy = {
         BuildCostEnergy = 1000,

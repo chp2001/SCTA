@@ -45,8 +45,8 @@ UnitBlueprint {
         MaxBuildDistance = 10,
         BuildRate = 600,
         BuildableCategory = {
-            'BUILTBYT1HOVER ARM',
-            'BUILTBYT2KBOT ARM',
+            'BUILTBYTIER3ENGINEER ARM',
+            'BUILTBYTIER2ENGINEER ARM',
             'BUILTBYT2AIR ARM',
         },
         ProductionPerSecondEnergy = 300,

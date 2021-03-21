@@ -1,5 +1,21 @@
 UnitBlueprint {
     Merge = true,
+    Categories = {
+        'BUILTBYTIER2ENGINEER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'GATE',
+        'EXPERIMENTAL',
+        'FACTORY',
+        'RALLYPOINT',
+        'SHOWQUEUE',
+        'STRUCTURE',
+        'CORE',
+        'STRATEGIC',
+        'SORTCONSTRUCTION',
+    },
     Defense = {
     Health = 48000,
     MaxHealth = 48000,

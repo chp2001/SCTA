@@ -28,7 +28,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 1,
     Categories = {
-        'BUILTBYT1KBOT',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',

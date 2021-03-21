@@ -1,7 +1,7 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT2KBOT',
+        'BUILTBYTIER2ENGINEER',
         'BUILTBYT2SUB',
         'SELECTABLE',
         'DRAGBUILD',
@@ -35,7 +35,7 @@ UnitBlueprint {
         BuildRate = 360,
         BuildTime = 150000,
         BuildableCategory = {
-            'HOVER TECH3 ARM',
+            'HOVER MOBILE TECH3 ARM',
         },
     },
     LifeBarHeight = 0.22,

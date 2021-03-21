@@ -7,8 +7,8 @@ UnitBlueprint {
     Merge = true,
     Categories = {
         'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1HOVER',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER3ENGINEER',
         'BUILTBYT1NAVAL',
         'SELECTABLE',
         'DRAGBUILD',

@@ -7,10 +7,9 @@ UnitBlueprint {
     },
     Categories = {
         'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1VEHICLE',
-        'BUILTBYT1HOVER',
+        'BUILTBYTIER1ENGINEER',
         'BUILTBYT1NAVAL',
+        'BUILTBYTIER3ENGINEER',
 	'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',

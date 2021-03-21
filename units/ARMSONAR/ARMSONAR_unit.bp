@@ -29,7 +29,7 @@ UnitBlueprint {
     BuildIconSortPriority = 16,
     Categories = {
         'BUILTBYT1NAVAL',
-        'BUILTBYT1HOVER',
+        'BUILTBYTIER3ENGINEER',
 	'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',

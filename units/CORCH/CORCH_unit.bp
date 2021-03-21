@@ -100,7 +100,7 @@ UnitBlueprint {
         BuildRate = 80,
         BuildTime = 10494,
         BuildableCategory = {
-            'BUILTBYT1HOVER CORE',
+            'BUILTBYTIER3ENGINEER CORE',
         },
         MaxBuildDistance = 4.375,
         StorageEnergy = 50,

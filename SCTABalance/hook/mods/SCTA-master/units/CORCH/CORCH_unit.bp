@@ -39,7 +39,7 @@ UnitBlueprint {
         MaxBuildDistance = 8,
         BuildableCategory = {
             'BUILTBYTIER3ENGINEER CORE',
-            'BUILTBYT2KBOT CORE',
+            'BUILTBYTIER2ENGINEER CORE',
             'BUILTBYT2AIR CORE',
         },
     },

@@ -32,7 +32,7 @@ UnitBlueprint {
         BuildRate = 180,
         BuildableCategory = {
             'BUILTBYTIER1ENGINEER ARM',
-            'BUILTBYT2KBOT ARM',
+            'BUILTBYTIER2ENGINEER ARM',
         },
         MaxBuildDistance = 7,
         ProductionPerSecondEnergy = 3,

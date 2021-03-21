@@ -35,7 +35,7 @@ UnitBlueprint {
         BuildableCategory = {
             'BUILTBYTIER3ENGINEER CORE',
             'BUILTBYT2AIR CORE',
-            'BUILTBYT2KBOT CORE',
+            'BUILTBYTIER2ENGINEER CORE',
         },
         MaxBuildDistance = 5,
         ProductionPerSecondEnergy = 3,

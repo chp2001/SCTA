@@ -2,7 +2,7 @@ UnitBlueprint {
     Merge = true,
     Categories = {
         'BUILTBYTIER1ENGINEER',
-        'BUILTBYT2KBOT',
+        'BUILTBYTIER2ENGINEER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -23,7 +23,7 @@ UnitBlueprint {
         MaxHealth = 8200,
     },
         Display = {      
-        UniformScale = 0.25,
+        UniformScale = 0.22,
     },
     Economy = {
         BuildCostEnergy = 15000,

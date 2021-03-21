@@ -34,7 +34,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 18,
     Categories = {
-        'BUILTBYT2KBOT',
+        'BUILTBYTIER2ENGINEER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',

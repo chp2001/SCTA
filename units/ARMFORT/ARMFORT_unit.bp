@@ -12,13 +12,11 @@ UnitBlueprint {
     },
     Categories = {
         'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
-        'BUILTBYT2VEHICLE',
+        'BUILTBYTIER2ENGINEER',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-
         'BENIGN',
         'SORTDEFENSE',
 	    'STRUCTURE',

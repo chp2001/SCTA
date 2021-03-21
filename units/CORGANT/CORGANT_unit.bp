@@ -35,7 +35,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 18,
     Categories = {
-        'BUILTBYT2KBOT',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -48,7 +47,7 @@ UnitBlueprint {
         'STRUCTURE',
         'CORE',
         'STRATEGIC',
-        'SORTCONSTRUCTION', 
+        'SORTCONSTRUCTION',
     },
     Defense = {
         ArmorType = 'ExperimentalStructure',

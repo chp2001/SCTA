@@ -5,25 +5,22 @@ UnitBlueprint {
         MaxHealth = 4500,
     },
     Display = {
-        UniformScale = 0.12,
+        UniformScale = 0.08,
     },
-    SelectionSizeX = 1.4,
-    SelectionSizeZ = 1.4,
-    SelectionCenterOffsetZ = 0,
-    SizeX = 1.8,
-    SizeY = 1,
-    SizeZ = 1.8,
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
+    SizeX = 1.2,
+    SizeY = 0.8,
+    SizeZ = 1.2,
     Economy = {
         BuildCostEnergy = 8000,
         BuildCostMass = 600,
         BuildTime = 9000,
     },
-    StrategicIconName = 'icon_land2_directfire',
-    StrategicIconSortPriority = 0,
     Weapon = {
         [1] = {
             Damage = 60,
-            MaxRadius = 32,
+            MaxRadius = 24,
             RateOfFire = 0.7692307692,
         },
         [2] = {

@@ -52,9 +52,6 @@ UnitBlueprint {
     },
     Description = 'Riot Tank',
     Display = {
-        Abilities = {
-            'Artillery',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

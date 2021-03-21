@@ -18,7 +18,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 27,
     Categories = {
-        'BUILTBYT2AIR',
+        'BUILTBYTIER2FACTORY',
         'BUILTBYTIER2ENGINEER',
         'SELECTABLE',
         'DRAGBUILD',
@@ -46,9 +46,6 @@ UnitBlueprint {
     },
     Description = 'Rapid Fire Plasma Cannon',
     Display = {
-        Abilities = {
-            'Game Ender',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

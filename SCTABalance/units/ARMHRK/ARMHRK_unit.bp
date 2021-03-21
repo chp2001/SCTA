@@ -52,10 +52,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/SCTABalance/units/ARMHRK/ARMHRK_lod0_AWalk.sca',
         AnimationWalkRate = 1,
-        Abilities = {
-            'Assault Bot',
-            'Missile',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

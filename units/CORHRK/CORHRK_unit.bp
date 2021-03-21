@@ -51,10 +51,6 @@ UnitBlueprint {
     },
     Description = 'Mobile Rocket Launcher',
     Display = {
-        Abilities = {
-            'Assault Bot',
-            'Missile',
-        },
         AnimationWalk = '/mods/SCTA-master/units/CORHRK/CORHRK_lod0_AWalk.sca',
         AnimationWalkRate = 1,
         Mesh = {

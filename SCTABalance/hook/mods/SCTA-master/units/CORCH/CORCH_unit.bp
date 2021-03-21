@@ -40,7 +40,7 @@ UnitBlueprint {
         BuildableCategory = {
             'BUILTBYTIER3ENGINEER CORE',
             'BUILTBYTIER2ENGINEER CORE',
-            'BUILTBYT2AIR CORE',
+            'BUILTBYTIER2FACTORY CORE',
         },
     },
     Intel = {

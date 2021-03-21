@@ -29,7 +29,7 @@ UnitBlueprint {
         '<LOC ability_cloak>Cloaking',
         '<LOC ability_personalstealth>Personal Stealth',
         '<LOC ability_amphibious>Amphibious',
-        'Decoy',
+        'D-Gun',
          '<LOC ability_engineeringsuite>Engineering Suite',
     },
     },
@@ -47,7 +47,7 @@ UnitBlueprint {
         BuildableCategory = {
             'BUILTBYTIER3ENGINEER CORE',
             'BUILTBYTIER2ENGINEER CORE',
-            'BUILTBYT2AIR CORE',
+            'BUILTBYTIER2FACTORY CORE',
         },
         ProductionPerSecondEnergy = 300,
         ProductionPerSecondMass = 5,

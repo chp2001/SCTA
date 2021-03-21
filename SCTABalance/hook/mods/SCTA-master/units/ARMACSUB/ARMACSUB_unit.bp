@@ -28,9 +28,9 @@ UnitBlueprint {
         BuildCostMass = 300,
         BuildRate = 300,
         BuildableCategory = {
-            'BUILTBYT1NAVAL ARM',
+            'BUILTBYTIER2COMMANDER ARM',
             'TECH1 FACTORY ARM',
-            'BUILTBYT2SUB ARM',
+            'BUILTBYTIER3COMMANDER ARM',
         },
         BuildTime = 5000,
         MaxBuildDistance = 9,

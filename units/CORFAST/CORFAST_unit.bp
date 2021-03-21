@@ -52,9 +52,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORFAST/CORFAST_lod0_Awalk.sca',
         AnimationWalkRate = 3,
-        Abilities = {
-            'Fast Bot',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

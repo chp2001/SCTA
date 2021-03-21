@@ -53,9 +53,6 @@ UnitBlueprint {
     },
     Description = 'Mobile Artillery',
     Display = {
-        Abilities = {
-            'Heavy Tank',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

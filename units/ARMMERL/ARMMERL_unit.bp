@@ -52,9 +52,6 @@ UnitBlueprint {
     },
     Description = 'Mobile Rocket Launcher',
     Display = {
-        Abilities = {
-            'Missile',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

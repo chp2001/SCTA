@@ -18,7 +18,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 1,
     Categories = {
-        'BUILTBYT1AIR',
+        'BUILTBYTIER1FACTORY',
         'BUILTBYTIER1ENGINEER',
         'BUILTBYTIER3ENGINEER',
         'SELECTABLE',
@@ -46,9 +46,6 @@ UnitBlueprint {
     },
     Description = 'Plasma Battery',
     Display = {
-        Abilities = {
-            'Defense',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

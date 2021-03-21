@@ -30,7 +30,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TANK',
-
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -51,9 +50,6 @@ UnitBlueprint {
     },
     Description = 'Heavy Assault Tank',
     Display = {
-        Abilities = {
-            'Heavy Tank',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

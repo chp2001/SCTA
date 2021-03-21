@@ -95,7 +95,7 @@ UnitBlueprint {
         BuildRate = 125,
         BuildTime = 6200,
         BuildableCategory = {
-            'BUILTBYT1NAVAL ARM',
+            'BUILTBYTIER2COMMANDER ARM',
         },
         MaxBuildDistance = 3.75,
         StorageEnergy = 30,
@@ -104,8 +104,8 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 5,
     },
     Footprint = {
-        SizeX = 1,
-        SizeZ = 3,
+        SizeX = 2,
+        SizeZ = 6,
     },
     General = {
         BuildBones = {

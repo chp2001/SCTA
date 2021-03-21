@@ -51,9 +51,6 @@ UnitBlueprint {
     },
     Description = 'Fast Assault Tank',
     Display = {
-        Abilities = {
-            'Assault Tank',
-        },
         MovementEffects = {
             Land = {
                 Treads = {

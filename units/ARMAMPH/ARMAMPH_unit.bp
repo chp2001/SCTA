@@ -61,7 +61,6 @@ UnitBlueprint {
         AnimationSwimRate = 1,
         Abilities = {
             '<LOC ability_hover>Hover',
-            'Assault Bot',
         },
         Mesh = {
             IconFadeInZoom = 130,

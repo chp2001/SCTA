@@ -21,7 +21,6 @@ UnitBlueprint {
     },
     Display = {
         Abilities = {
-             '<LOC ability_personalstealth>Personal Stealth',
               '<LOC ability_engineeringsuite>Engineering Suite',
         },
     },
@@ -37,9 +36,9 @@ UnitBlueprint {
         BuildCostMass = 400,
         BuildRate = 250,
         BuildableCategory = {
-            'BUILTBYT1NAVAL CORE',
+            'BUILTBYTIER2COMMANDER CORE',
             'TECH1 FACTORY CORE',
-            'BUILTBYT2SUB CORE',
+            'BUILTBYTIER3COMMANDER CORE',
         },
         Necro = true,
         BuildTime = 5000,
@@ -49,8 +48,6 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 12,
-        RadarStealth = true,
-        SonarStealth = true,
     },
     StrategicIconName = 'icon_structure2_engineer', 
 }

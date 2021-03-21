@@ -28,13 +28,12 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 16,
     Categories = {
-        'BUILTBYT2SUB',
+        'BUILTBYTIER3COMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-
 	    'STRUCTURE',
 	    'INTELLIGENCE',
 	    'SONAR',

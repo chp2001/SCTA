@@ -3,9 +3,9 @@ local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local MABC = '/lua/editor/MarkerBuildConditions.lua'
-local PLANT = categories.FACTORY * categories.TECH1
-local LAB = categories.FACTORY * categories.TECH2
-local PLATFORM = categories.FACTORY * categories.TECH3
+local PLANT = (categories.FACTORY * categories.TECH1)
+local LAB = (categories.FACTORY * categories.TECH2)
+local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
 
 BuilderGroup {
@@ -18,8 +18,9 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, LAB * categories.NAVAL } }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 5, PLANT * categories.NAVAL} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, PLANT * categories.NAVAL} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.5 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
         BuilderType = 'Any',
         BuilderData = {

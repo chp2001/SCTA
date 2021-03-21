@@ -13,8 +13,8 @@ UnitBlueprint {
         BuildRate = 225,
         BuildTime = 4000,    
         BuildableCategory = {
-            'BUILTBYT1AIR ARM',
-            'BUILTBYT2AIR ARM',
+            'BUILTBYTIER1FACTORY ARM',
+            'BUILTBYTIER2FACTORY ARM',
         },
         MaxBuildDistance = 5,
         ProductionPerSecondEnergy = 3,

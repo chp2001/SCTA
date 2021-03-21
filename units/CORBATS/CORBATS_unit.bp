@@ -62,9 +62,6 @@ UnitBlueprint {
     },
     Description = 'Battleship',
     Display = {
-        Abilities = {
-            'Battleship',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

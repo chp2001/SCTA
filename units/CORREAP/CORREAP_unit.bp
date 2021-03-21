@@ -51,9 +51,6 @@ UnitBlueprint {
     },
     Description = 'Heavy Assault Tank',
     Display = {
-        Abilities = {
-            'Heavy Tank',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

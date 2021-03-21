@@ -28,7 +28,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 4,
     Categories = {
-        'BUILTBYT1NAVAL',
+        'BUILTBYTIER2COMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',

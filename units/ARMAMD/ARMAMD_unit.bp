@@ -21,7 +21,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 18,
     Categories = {
-        'BUILTBYT2AIR',
+        'BUILTBYTIER2FACTORY',
         'BUILTBYTIER2ENGINEER',
         'SELECTABLE',
         'DRAGBUILD',
@@ -48,9 +48,6 @@ UnitBlueprint {
     },
     Description = 'Anti Missile Defense System',
     Display = {
-        Abilities = {
-            'Anti-Nuke',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

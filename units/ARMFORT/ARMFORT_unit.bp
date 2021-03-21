@@ -11,7 +11,7 @@ UnitBlueprint {
         },
     },
     Categories = {
-        'BUILTBYT2AIR',
+        'BUILTBYTIER2FACTORY',
         'BUILTBYTIER2ENGINEER',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -36,9 +36,6 @@ UnitBlueprint {
     },
     Description = 'Perimeter Defence',
     Display = {
-        Abilities = {
-            'Wall',
-        },
         Mesh = {
 	    IconFadeInZoom = 130,
             LODs = {

@@ -48,9 +48,6 @@ UnitBlueprint {
     },
     Description = 'Anti Missile Defense System',
     Display = {
-        Abilities = {
-            'Anti-Nuke',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

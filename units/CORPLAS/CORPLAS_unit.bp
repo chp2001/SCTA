@@ -46,9 +46,6 @@ UnitBlueprint {
     },
     Description = 'Plasma Tower',
     Display = {
-        Abilities = {
-            'Defense',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

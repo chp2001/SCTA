@@ -55,9 +55,6 @@ UnitBlueprint {
     },
     Description = 'Light Laser Tower',
     Display = {
-        Abilities = {
-            'Defense',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

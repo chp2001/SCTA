@@ -48,9 +48,6 @@ UnitBlueprint {
     },
     Description = 'Energy Weapon',
     Display = {
-        Abilities = {
-            'Defense',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

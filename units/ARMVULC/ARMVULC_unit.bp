@@ -46,9 +46,6 @@ UnitBlueprint {
     },
     Description = 'Rapid Fire Plasma Cannon',
     Display = {
-        Abilities = {
-            'Game Ender',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

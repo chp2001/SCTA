@@ -55,9 +55,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORTHUD/CORTHUD_lod0_Awalk.sca',
         AnimationWalkRate = 2,
-        Abilities = {
-            'Artillery',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

@@ -36,9 +36,6 @@ UnitBlueprint {
     },
     Description = 'Perimeter Defence',
     Display = {
-        Abilities = {
-            'Wall',
-        },
         Mesh = {
 	    IconFadeInZoom = 130,
             LODs = {

@@ -91,9 +91,6 @@ UnitBlueprint {
     },
     Description = 'Strategic Bomber',
     Display = {
-        Abilities = {
-            'Bomber',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

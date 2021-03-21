@@ -88,9 +88,6 @@ UnitBlueprint {
     },
     Description = 'Gunship',
     Display = {
-        Abilities = {
-            'Gunship',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

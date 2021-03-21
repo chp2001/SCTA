@@ -47,9 +47,6 @@ UnitBlueprint {
     },
     Description = 'Plasma Battery',
     Display = {
-        Abilities = {
-            'Defense',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

@@ -49,7 +49,6 @@ UnitBlueprint {
         AnimationWalk = '/mods/SCTA-master/SCTABalance/units/ARMSPDAA/ARMSPDAA_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
-            'All-Terrain',
             '<LOC ability_aa>Anti-Air',
         },
         Mesh = {

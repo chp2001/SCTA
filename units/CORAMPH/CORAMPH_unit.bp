@@ -56,8 +56,7 @@ UnitBlueprint {
         AnimationWalk = '/mods/SCTA-master/units/CORAMPH/CORAMPH_lod0_Awalk.sca',
         AnimationWalkRate = 1,
         Abilities = {
-            '<LOC ability_amphibious>Amphibious',
-            'Assault Bot',
+            '<LOC ability_hover>Hover',
         },
         Mesh = {
             IconFadeInZoom = 130,

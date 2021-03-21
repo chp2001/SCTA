@@ -86,7 +86,7 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_cloak>Cloaking',
             '<LOC ability_amphibious>Amphibious',
-            'Decoy',
+            'D-Gun',
              '<LOC ability_engineeringsuite>Engineering Suite',
         },
         Mesh = {

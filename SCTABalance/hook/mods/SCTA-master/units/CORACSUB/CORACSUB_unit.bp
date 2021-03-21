@@ -21,7 +21,6 @@ UnitBlueprint {
     },
     Display = {
         Abilities = {
-             '<LOC ability_personalstealth>Personal Stealth',
               '<LOC ability_engineeringsuite>Engineering Suite',
         },
     },
@@ -49,8 +48,6 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 12,
-        RadarStealth = true,
-        SonarStealth = true,
     },
     StrategicIconName = 'icon_structure2_engineer', 
 }

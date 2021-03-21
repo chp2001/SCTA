@@ -53,9 +53,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORSUMO/CORSUMO_lod0_Awalk.sca',
         AnimationWalkRate = 0.2,
-        Abilities = {
-            'Heavy Assault Bot',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

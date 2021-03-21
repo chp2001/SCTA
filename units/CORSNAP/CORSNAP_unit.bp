@@ -52,7 +52,6 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_hover>Hover',
-            'Heavy Tank',
         },
         Mesh = {
             IconFadeInZoom = 130,

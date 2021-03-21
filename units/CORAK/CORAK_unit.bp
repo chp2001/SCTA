@@ -51,9 +51,6 @@ UnitBlueprint {
     },
     Description = 'Infantry Kbot',
     Display = {
-        Abilities = {
-            'Infantry',
-        },
     AnimationWalk = '/mods/SCTA-master/units/CORAK/CORAK_lod0_Awalk.sca',
     AnimationWalkRate = 1,
         Mesh = {

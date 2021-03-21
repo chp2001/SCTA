@@ -44,9 +44,6 @@ UnitBlueprint {
     },
     Description = 'Produces Energy',
     Display = {
-        Abilities = {
-            'Geothermal',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

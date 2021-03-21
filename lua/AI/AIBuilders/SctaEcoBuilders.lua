@@ -221,7 +221,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Hydro2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 120,
+        Priority = 90,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = { 
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 150}},
@@ -240,7 +240,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Hydro3',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 80,
+        Priority = 75,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = { 
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 300}},
@@ -257,7 +257,7 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTAAI T1Engineer Pgen',
+        BuilderName = 'SCTAAI T1Engineer Air Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
         Priority = 130,
         InstanceCount = 1,

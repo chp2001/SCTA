@@ -102,7 +102,7 @@ UnitBlueprint {
     },
     Footprint = {
         SizeX = 2,
-        SizeZ = 4,
+        SizeZ = 6,
     },
     General = {
         BuildBones = {

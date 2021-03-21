@@ -2,9 +2,9 @@ local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
-local PLANT = categories.FACTORY * categories.TECH1
-local LAB = categories.FACTORY * categories.TECH2
-local PLATFORM = categories.FACTORY * categories.TECH3
+local PLANT = (categories.FACTORY * categories.TECH1)
+local LAB = (categories.FACTORY * categories.TECH2)
+local PLATFORM = (categories.FACTORY * categories.TECH3)
 
 function SeaAttackCondition(aiBrain, locationType, targetNumber)
     local pool = aiBrain:GetPlatoonUniquelyNamed('ArmyPool')

@@ -4,9 +4,9 @@ local IBC = '/lua/editor/InstantBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local MABC = '/lua/editor/MarkerBuildConditions.lua'
-local PLANT = categories.FACTORY * categories.TECH1
-local LAB = categories.FACTORY * categories.TECH2
-local FUSION = categories.ENERGYPRODUCTION * categories.STRUCTURE * (categories.TECH2 + categories.TECH3)
+local PLANT = (categories.FACTORY * categories.TECH1)
+local LAB = (categories.FACTORY * categories.TECH2)
+local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
 
 
 BuilderGroup {

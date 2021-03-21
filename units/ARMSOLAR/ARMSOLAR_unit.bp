@@ -24,8 +24,7 @@ UnitBlueprint {
     BuildIconSortPriority = 9,
     Categories = {
         'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1VEHICLE',
+        'BUILTBYTIER1ENGINEER',
         'BUILTBYTIER3ENGINEER',
         'BUILTBYCOMMANDER',
         'SELECTABLE',

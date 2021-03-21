@@ -19,8 +19,7 @@ UnitBlueprint {
     BuildIconSortPriority = 13,
     Categories = {
         'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1VEHICLE',
+        'BUILTBYTIER1ENGINEER',
         'BUILTBYT1NAVAL',
         'BUILTBYTIER3ENGINEER',
         'SELECTABLE',
@@ -45,9 +44,6 @@ UnitBlueprint {
     },
     Description = 'Produces Energy',
     Display = {
-        Abilities = {
-            'Geothermal',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

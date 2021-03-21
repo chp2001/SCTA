@@ -110,7 +110,8 @@ UnitBlueprint {
         BuildRate = 100,
         BuildTime = 6100,
         BuildableCategory = {
-            'BUILTBYT1VEHICLE ARM',
+            'BUILTBYTIER1ENGINEER ARM',
+            'armavp',
         },
         MaxBuildDistance = 2.5,
         StorageEnergy = 5,

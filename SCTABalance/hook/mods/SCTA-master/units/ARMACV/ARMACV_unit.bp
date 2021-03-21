@@ -26,7 +26,7 @@ UnitBlueprint {
         BuildTime = 6000,
         BuildRate = 320,
         BuildableCategory = {
-            'BUILTBYT1VEHICLE ARM',
+            'BUILTBYTIER1ENGINEER ARM',
             'BUILTBYT2VEHICLE ARM',
         },
         MaxBuildDistance = 7,

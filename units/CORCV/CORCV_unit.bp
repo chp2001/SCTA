@@ -110,7 +110,8 @@ UnitBlueprint {
         BuildRate = 100,
         BuildTime = 6100,
         BuildableCategory = {
-            'BUILTBYT1VEHICLE CORE',
+            'BUILTBYTIER1ENGINEER CORE',
+            'coravp',
         },
         MaxBuildDistance = 2.5,
         StorageEnergy = 5,

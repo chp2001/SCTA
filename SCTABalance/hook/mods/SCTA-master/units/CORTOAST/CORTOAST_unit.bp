@@ -15,8 +15,7 @@ UnitBlueprint {
     Intel = {
         FreeIntel = true,
         RadarStealth = true,
-        },
-    SelectionCenterOffsetZ = 0,
+    },
     Weapon = {
         [1] = {
             Damage = 240,

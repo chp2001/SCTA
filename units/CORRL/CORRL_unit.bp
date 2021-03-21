@@ -97,12 +97,11 @@ TechLevel = 'RULEUTL_Advanced',
     },
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
-    SelectionCenterOffsetZ = -0.125,
     SelectionThickness = 0.25,
     SizeX = 3,
     SizeY = 4,
     SizeZ = 3,
-    StrategicIconName = 'icon_structure2_antiair',
+    StrategicIconName = 'icon_structure1_antiair',
     StrategicIconSortPriority = 0,
     Weapon = { 				 				
         {

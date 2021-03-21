@@ -6,8 +6,8 @@
 UnitBlueprint {
    Merge = true,
     Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2SUB',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER3COMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',

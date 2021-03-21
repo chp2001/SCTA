@@ -14,7 +14,7 @@ UnitBlueprint {
         StorageEnergy = 10,
         StorageMass = 10,
         BuildableCategory = {
-            'BUILTBYT1NAVAL CORE',
+            'BUILTBYTIER2COMMANDER CORE',
             'TECH1 FACTORY CORE',
         },
     },

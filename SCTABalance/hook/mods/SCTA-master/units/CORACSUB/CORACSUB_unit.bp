@@ -36,9 +36,9 @@ UnitBlueprint {
         BuildCostMass = 400,
         BuildRate = 250,
         BuildableCategory = {
-            'BUILTBYT1NAVAL CORE',
+            'BUILTBYTIER2COMMANDER CORE',
             'TECH1 FACTORY CORE',
-            'BUILTBYT2SUB CORE',
+            'BUILTBYTIER3COMMANDER CORE',
         },
         Necro = true,
         BuildTime = 5000,

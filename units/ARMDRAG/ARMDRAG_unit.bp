@@ -6,9 +6,9 @@ UnitBlueprint {
         },
     },
     Categories = {
-        'BUILTBYT1AIR',
+        'BUILTBYTIER1FACTORY',
         'BUILTBYTIER1ENGINEER',
-        'BUILTBYT1NAVAL',
+        'BUILTBYTIER2COMMANDER',
         'BUILTBYTIER3ENGINEER',
 	    'SELECTABLE',
         'DRAGBUILD',

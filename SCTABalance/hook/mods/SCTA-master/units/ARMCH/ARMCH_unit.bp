@@ -37,7 +37,7 @@ UnitBlueprint {
             BuildableCategory = {
                 'BUILTBYTIER3ENGINEER ARM',
                 'BUILTBYTIER2ENGINEER ARM',
-                'BUILTBYT2AIR ARM',
+                'BUILTBYTIER2FACTORY ARM',
             },
         },
         Intel = {

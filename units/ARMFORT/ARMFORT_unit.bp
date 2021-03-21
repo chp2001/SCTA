@@ -11,7 +11,7 @@ UnitBlueprint {
         },
     },
     Categories = {
-        'BUILTBYT2AIR',
+        'BUILTBYTIER2FACTORY',
         'BUILTBYTIER2ENGINEER',
         'DRAGBUILD',
         'VISIBLETORECON',

@@ -96,7 +96,7 @@ UnitBlueprint {
         BuildRate = 125,
         BuildTime = 6200,
         BuildableCategory = {
-            'BUILTBYT1NAVAL CORE',
+            'BUILTBYTIER2COMMANDER CORE',
         },
         MaxBuildDistance = 3.75,
         StorageEnergy = 30,

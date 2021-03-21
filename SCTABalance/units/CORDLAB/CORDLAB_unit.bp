@@ -43,6 +43,7 @@ UnitBlueprint {
 	'CORE',
     'RESEARCH',
 	'SORTCONSTRUCTION',
+    'BOT',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -60,7 +61,7 @@ UnitBlueprint {
         AnimationPack = '/mods/SCTA-master/units/CORLAB/CORLAB_lod0_pack.sca',
         AnimationPackRate = 0.5,  
         Abilities = {
-            'Upgradeable',
+            '<LOC ability_upgradable>Upgradeable',
         },
 	BuildAttachBone = 'pad',
         Mesh = {
@@ -77,7 +78,7 @@ UnitBlueprint {
             },
         },
 	--TextureAnimationFrames = 6,
-        UniformScale = 0.26,
+        UniformScale = 0.22,
     },
     Economy = {
         BuildCostEnergy = 38000,
@@ -87,8 +88,8 @@ UnitBlueprint {
     DifferentialUpgradeCostCalculation = true,
         BuildableCategory = {
             'coradlab',
-            'KBOT TECH2 CORE',
-            'KBOT TECH1 CORE',
+            'BOT MOBILE TECH2 CORE',
+            'BOT MOBILE TECH1 CORE',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

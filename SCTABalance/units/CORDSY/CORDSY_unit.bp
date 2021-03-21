@@ -60,6 +60,9 @@ UnitBlueprint {
         BuildAttachBone = 'BuildBone',
         AnimationUnpack = '/mods/SCTA-master/units/CORSY/CORSY_lod0Action.sca',
         AnimationUnpackRate = 2,  
+        Abilities = {
+            '<LOC ability_upgradable>Upgradeable',
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

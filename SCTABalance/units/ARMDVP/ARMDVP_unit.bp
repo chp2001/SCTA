@@ -57,7 +57,7 @@ UnitBlueprint {
     Description = 'Produces Vehicles',
     Display = {
         Abilities = {
-            'Upgradeable',
+            '<LOC ability_upgradable>Upgradeable',
         },
         AnimationUnpack = '/mods/SCTA-master/units/ARMVP/ARMVP_lod0_unpack.sca',
         AnimationUnpackRate = 2, 

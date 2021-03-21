@@ -75,7 +75,7 @@ UnitBlueprint {
             },
         },
 	--TextureAnimationFrames = 6,
-        UniformScale = 0.26,
+        UniformScale = 0.22,
     },
     Economy = {
         BuildCostEnergy = 60000,

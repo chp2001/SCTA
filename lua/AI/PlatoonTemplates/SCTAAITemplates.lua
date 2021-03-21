@@ -28,7 +28,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTA',
     Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND - SPECIAL - categories.ANTISHIELD - categories.AMPHIBIOUS, 2, 10, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND - SPECIAL - categories.ANTISHIELD - categories.AMPHIBIOUS, 5, 20, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
 

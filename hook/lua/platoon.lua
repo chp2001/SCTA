@@ -1332,11 +1332,13 @@ Platoon = Class(SCTAAIPlatoon) {
         local atkPri = {}
         local platoonUnits = self:GetPlatoonUnits()
         local numberOfUnitsInPlatoon = table.getn(platoonUnits)
-        local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
-        if data.Laser and econ.EnergyStorageRatio < 0.4 then
+        if data.Laser then
+            local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
+            if econ.EnergyStorageRatio < 0.4 then
                 WaitSeconds(5)
                 self:PlatoonDisband()
                 return
+            end
         end
         if data.PrioritizedCategories then
             for k,v in data.PrioritizedCategories do
@@ -1349,7 +1351,7 @@ Platoon = Class(SCTAAIPlatoon) {
         self:SetPrioritizedTargetList( 'Attack', categoryList )
         local target
         local blip = false
-        local maxRadius = data.SearchRadius or 50
+        local maxRadius = data.SearchRadius or 200
         local movingToScout = false
         while aiBrain:PlatoonExists(self) do
             --self:SetPlatoonFormationOverride('Attack')

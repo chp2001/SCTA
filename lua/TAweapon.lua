@@ -15,7 +15,7 @@ TAweapon = Class(DefaultWeapon) {
         local canSee = true
         local target = self:GetCurrentTarget()
         local aiBrain = self.unit:GetAIBrain()
-        if aiBrain.SCTAAI then
+        if aiBrain.SCTAAI or (self.unit:IsUnitState('Patrolling') or self.unit:IsUnitState('MakingAttackRun')) then
             return true
         else
         if (target) then

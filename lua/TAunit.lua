@@ -64,7 +64,7 @@ TAunit = Class(Unit)
 	TAIntelMotion = function(self) 
 		while not self.Dead do
             coroutine.yield(11)
-            if self.TAIntelOn and self:IsUnitState('Moving') then
+            if self.TAIntelOn and (self:IsUnitState('Moving') or self:IsUnitState('Patrolling'))  then
                 self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
 			elseif self.TAIntelOn then
                 self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
@@ -80,7 +80,7 @@ TAunit = Class(Unit)
 		while not self.Dead do
 			coroutine.yield(11)
 			local bp = self:GetBlueprint()
-			if self.CloakOn and self:IsUnitState('Moving') then
+			if self.CloakOn and (self:IsUnitState('Moving') or self:IsUnitState('Patrolling')) then
                 self:SetConsumptionPerSecondEnergy(bp.Economy.TAConsumptionPerSecondEnergy)
 			elseif self.CloakOn then
                 self:SetConsumptionPerSecondEnergy(bp.Economy.MaintenanceConsumptionPerSecondEnergy)

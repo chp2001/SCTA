@@ -111,7 +111,7 @@ TechLevel = 'RULEUTL_Advanced',
     SizeX = 4,
     SizeY = 2.5,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure2_energy',
+    StrategicIconName = 'icon_structure1_energy',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX

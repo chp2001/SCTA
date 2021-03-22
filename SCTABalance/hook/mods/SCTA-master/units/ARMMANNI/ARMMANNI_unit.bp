@@ -29,7 +29,6 @@ UnitBlueprint {
         BuildCostMass = 1400,
         BuildTime = 28000,
     },
-    StrategicIconName = 'icon_bot3_sniper',
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
     SelectionThickness = 0.25,

@@ -45,5 +45,4 @@ SelectionSizeZ = 10,
 SizeX = 7,
 SizeY = 7,
 SizeZ = 18,
-StrategicIconName = 'icon_ship3_air',
 }

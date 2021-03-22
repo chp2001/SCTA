@@ -21,5 +21,4 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 10,
     },
-    StrategicIconName = 'icon_structure1_engineer', 
 }

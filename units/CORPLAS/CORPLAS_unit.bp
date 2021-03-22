@@ -98,7 +98,8 @@ TechLevel = 'RULEUTL_Basic',
     SizeX = 3,
     SizeY = 4,
     SizeZ = 3,
-    StrategicIconName = 'icon_structure1_artillery',
+    StrategicIconName = 'icon_structure1_directfire',
+    TAStrategicIconName = '1/bot_sniper',
     StrategicIconSortPriority = 0,
     Weapon = {
         {

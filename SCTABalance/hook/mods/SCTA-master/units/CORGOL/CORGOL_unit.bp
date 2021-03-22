@@ -26,5 +26,4 @@ Defense = {
         MaxAcceleration = 1.6,
         MaxSpeed = 2.2,
     },
-    StrategicIconName = 'icon_bot3_armored',
 }

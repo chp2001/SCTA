@@ -13,6 +13,7 @@ UnitBlueprint {
     'OVERLAYDIRECTFIRE',
     'LAND',
     'ARM',
+    'HOVER',
     },
     Display = {
        Abilities = {

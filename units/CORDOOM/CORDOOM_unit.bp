@@ -97,7 +97,7 @@ TechLevel = 'RULEUTL_Secret',
     SizeX = 3,
     SizeY = 3,
     SizeZ = 3,
-    StrategicIconName = 'icon_structure3_directfire',
+    StrategicIconName = 'icon_bot3_sniper',
     StrategicIconSortPriority = 0,
     Weapon = {
         {

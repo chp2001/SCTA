@@ -105,7 +105,7 @@ UnitBlueprint {
     SizeX = 5,
     SizeY = 3,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure3_energy',
+    StrategicIconName = 'icon_structure2_energy',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #ATOMIC_BLAST

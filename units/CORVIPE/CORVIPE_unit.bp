@@ -95,6 +95,7 @@ TechLevel = 'RULEUTL_Secret',
     SizeY = 2,
     SizeZ = 3,
     StrategicIconName = 'icon_structure2_directfire',
+    TAStrategicIconName = '2/bot_sniper',
     StrategicIconSortPriority = 0,
     Weapon = {
         {

@@ -21,7 +21,6 @@ UnitBlueprint {
     SizeY = 7,
     SizeX = 4,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure3_artillery',
     Weapon = {
         [1] = {
         BallisticArc = 'RULEUBA_HighArc',        

@@ -136,7 +136,7 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 3.5,
     SizeZ = 8,
-    StrategicIconName = 'icon_ship2_directfire',
+    StrategicIconName = 'icon_ship3_directfire',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #ARM_BATS

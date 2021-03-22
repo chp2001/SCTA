@@ -37,7 +37,6 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarSize = 6,
-    StrategicIconName = 'icon_ship3_directfire',
     SelectionSizeX = 5,
     SelectionSizeZ = 10,
     SizeX = 5,

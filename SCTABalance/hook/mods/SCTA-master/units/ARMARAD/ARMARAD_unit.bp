@@ -45,5 +45,4 @@ UnitBlueprint {
     VisionRadius = 12, 
     RadarRadius = 240,
     },
-    StrategicIconName = 'icon_structure2_intel',
 }

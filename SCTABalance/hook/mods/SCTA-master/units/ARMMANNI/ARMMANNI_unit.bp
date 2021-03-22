@@ -29,7 +29,6 @@ UnitBlueprint {
         BuildCostMass = 1400,
         BuildTime = 28000,
     },
-    StrategicIconName = 'icon_bot3_sniper',
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
     SelectionThickness = 0.25,
@@ -40,10 +39,10 @@ UnitBlueprint {
     Weapon = {
         [1] = {
             DamageToShields = 1500,
-            MaxRadius = 45,
+            MaxRadius = 80,
             RateOfFire = 0.2,
-            EnergyDrainPerSecond = 100,
-            EnergyRequired = 200,
+            EnergyDrainPerSecond = 500,
+            EnergyRequired = 1000,
         },
         [2] = {
         },

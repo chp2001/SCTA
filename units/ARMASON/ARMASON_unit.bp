@@ -78,8 +78,6 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 22,
     },
     Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
 	MinWaterDepth = 1.5,
     },
     General = {
@@ -135,7 +133,7 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 2.25,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure3_intel',
+    StrategicIconName = 'icon_structure2_intel',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_BUILDINGEX

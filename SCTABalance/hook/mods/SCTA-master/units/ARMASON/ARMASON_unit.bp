@@ -28,11 +28,6 @@ UnitBlueprint {
             'Radar Targeting',
         },
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-	MinWaterDepth = 1.5,
-    },
     General = {
         UpgradesFrom = 'armsonar',
     },
@@ -46,7 +41,21 @@ UnitBlueprint {
         Intel = {
             SonarRadius = 400,
         },
+        Physics = {
+            BankingSlope = 0,
+            DragCoefficient = 0.2,
+            MaxSteerForce = 0,
+            MeshExtentsX = 1.5,
+            MeshExtentsY = 1,
+            MeshExtentsZ = 1.5,
+            MinSpeedPercent = 0,
+            MotionType = 'RULEUMT_None',
+            SkirtOffsetX = 0,
+            SkirtOffsetZ = 0,
+            SkirtSizeX = 1,
+            SkirtSizeZ = 1,
+            TurnRate = 0,
+        },
     SizeX = 2,
     SizeZ = 2,    
-    StrategicIconName = 'icon_structure2_intel',
 }

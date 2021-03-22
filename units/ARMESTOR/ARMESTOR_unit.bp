@@ -66,8 +66,6 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 4,
-        SizeZ = 4,
     },
     General = {
         Category = 'Economy',
@@ -98,6 +96,7 @@ UnitBlueprint {
     SizeY = 4,
     SizeZ = 4,
     StrategicIconName = 'icon_structure_energy_storage',
+    TAStrategicIconName = '1/structure_energystorage',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #ESTOR_BUILDINGEX

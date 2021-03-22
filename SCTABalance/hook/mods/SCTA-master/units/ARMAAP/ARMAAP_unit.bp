@@ -38,8 +38,6 @@ UnitBlueprint {
         'AIR MOBILE TECH1 ARM',
         'AIR MOBILE TECH2 ARM', 
         'AIR MOBILE TECH3 ARM',
-        'armck',
-        'armfark',
         },
     },
     LifeBarHeight = 0.22,

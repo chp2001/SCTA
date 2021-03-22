@@ -170,10 +170,8 @@ TAunitkeygroups = {
     ["T2_Mobile_Stealth_Field_System"]= {
         "armaser",
         "armjam",
-        "armca",
         "coreter",
         "corspec",
-        "corca",
     },
     ["T2_Gatling_Bot"]= {
         "corfast",
@@ -247,9 +245,11 @@ TAunitkeygroups = {
         "armck",
         "armcv",
         "armcs",
+        "armca",
         "corck",
         "corcv",
         "corcs",
+        "corca",
     },
     ["T1_Light_Assault_Bot"]= {
         "armpw",

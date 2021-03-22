@@ -18,7 +18,6 @@ UnitBlueprint {
         BuildRate = 120,
         BuildableCategory = {
             'AIR MOBILE TECH1 ARM',
-            'armck',
             'armdap', 
         },
     }, 

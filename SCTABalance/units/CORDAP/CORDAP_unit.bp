@@ -87,8 +87,6 @@ UnitBlueprint {
     BuildableCategory = {
         'AIR MOBILE TECH1 CORE', 
         'AIR MOBILE TECH2 CORE',
-        'corcv',
-        'cornecro',
         'coradap', 
     },
 	InitialRallyX = 0,

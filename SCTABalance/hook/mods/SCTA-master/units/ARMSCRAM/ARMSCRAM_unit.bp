@@ -40,5 +40,4 @@ UnitBlueprint {
     SelectionSizeX = 1.25,
     SelectionSizeZ = 1.9,
     SizeZ = 4,
-    StrategicIconName = 'icon_sub3_intel',
 }

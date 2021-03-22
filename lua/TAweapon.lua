@@ -15,7 +15,7 @@ TAweapon = Class(DefaultWeapon) {
         local canSee = true
         local target = self:GetCurrentTarget()
         local aiBrain = self.unit:GetAIBrain()
-        if aiBrain.SCTAAI then
+        if aiBrain.SCTAAI or (self.unit:IsUnitState('Patrolling') or self.unit:IsUnitState('MakingAttackRun')) then
             return true
         else
         if (target) then
@@ -155,12 +155,18 @@ TAHide = Class(TAweapon) {
         self.unit.Pack = 1
         self.unit:DisableUnitIntel('RadarStealth')
         TAweapon.PlayFxWeaponUnpackSequence(self)
+        local bp = self.unit:GetBlueprint()
+        local scale = 0.5
+        self.unit:SetCollisionShape( 'Box', bp.CollisionOffsetX or 0, bp.CollisionOffsetY + 0.5, bp.CollisionOffsetZ or 0, bp.SizeX * scale, bp.SizeY * scale, bp.SizeZ * scale)
     end,
 
     PlayFxWeaponPackSequence = function(self)
         self.unit.Pack = 0.28
         self.unit:EnableUnitIntel('RadarStealth')
         TAweapon.PlayFxWeaponPackSequence(self)
+        local bp = self.unit:GetBlueprint()
+        local scale = 0.5
+        self.unit:SetCollisionShape( 'Box',  bp.CollisionOffsetX or 0, bp.CollisionOffsetY or 0, bp.CollisionOffsetZ or 0, bp.SizeX * scale, ((bp.SizeY/bp.SizeY) * scale), bp.SizeZ * scale)
     end,
 }
 

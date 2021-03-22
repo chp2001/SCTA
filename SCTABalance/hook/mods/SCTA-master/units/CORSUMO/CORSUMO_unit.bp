@@ -25,10 +25,6 @@ UnitBlueprint {
         BuildCostEnergy = 42000,
         BuildTime = 22500,
     },
-    Footprint = {
-	SizeX = 2,
-	SizeZ = 2,
-    },
     Intel = {
         VisionRadius = 18,
     },
@@ -38,7 +34,6 @@ UnitBlueprint {
     SizeX = 3,
     SizeZ = 2,
     SizeY = 3,
-    StrategicIconName = 'icon_bot3_armored',
     Weapon = {
         [1] = {
             EnergyDrainPerSecond = 40,

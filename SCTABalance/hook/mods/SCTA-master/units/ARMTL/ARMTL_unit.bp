@@ -28,10 +28,6 @@ UnitBlueprint {
         Health = 800,
         MaxHealth = 800,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
     Physics = {
         SkirtSizeX = 1,
         SkirtSizeZ = 1,

@@ -113,7 +113,7 @@ UnitBlueprint {
     SizeX = 6,
     SizeY = 2,
     SizeZ = 8,
-    StrategicIconName = 'icon_sub2_antinavy',
+    StrategicIconName = 'icon_sub3_antinavy',
     StrategicIconSortPriority = 0,
     Weapon = {
         {

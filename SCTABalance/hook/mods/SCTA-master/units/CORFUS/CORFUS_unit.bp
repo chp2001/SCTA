@@ -19,5 +19,4 @@ UnitBlueprint {
     SizeY = 4,
     SizeX = 6,
     SizeZ = 6,
-    StrategicIconName = 'icon_structure2_energy',
 }

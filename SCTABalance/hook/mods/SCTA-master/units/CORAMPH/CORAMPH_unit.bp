@@ -9,7 +9,6 @@ Economy = {
     BuildCostMass = 600,
     BuildTime = 9000,
 },
-    StrategicIconName = 'icon_bot2_directfire',
     Weapon = {
         [1] = {
             Damage = 50,

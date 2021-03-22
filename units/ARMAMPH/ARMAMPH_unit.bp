@@ -125,7 +125,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeZ = 2,
     SizeY = 2,
-    StrategicIconName = 'icon_bot2_directfire',
+    StrategicIconName = 'icon_bot2_antiair',
     StrategicIconSortPriority = 0,
     Transport = {
         TransportClass = 2,

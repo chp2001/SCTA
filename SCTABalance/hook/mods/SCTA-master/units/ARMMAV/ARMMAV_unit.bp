@@ -27,7 +27,6 @@ UnitBlueprint {
         BuildCostMass = 1200,
         BuildTime = 21000,
     },
-    StrategicIconName = 'icon_bot3_directfire',
     Weapon = {
         [1] = {
             Damage = 30,

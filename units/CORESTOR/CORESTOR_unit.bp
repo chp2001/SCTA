@@ -56,7 +56,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.1,
+        UniformScale = 0.07,
     },
     Economy = {
         BuildCostEnergy = 2490,
@@ -66,8 +66,6 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 4,
-        SizeZ = 4,
     },
     General = {
 	---BuildAngle = 8196,
@@ -99,6 +97,7 @@ TechLevel = 'RULEUTL_Basic',
     SizeY = 2.25,
     SizeZ = 4,
     StrategicIconName = 'icon_structure_energy_storage',
+    TAStrategicIconName = '1/structure_energystorage',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #ESTOR_BUILDINGEX

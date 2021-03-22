@@ -43,10 +43,9 @@ UnitBlueprint {
     LifeBarSize = 6,
     Weapon = {
         [1] = {
-	        FiringRandomness = 0.25,
             MaxRadius = 2500,
             MinRadius = 50,
-            Damage = 600,
+            Damage = 1350,
             MuzzleVelocity = 100,
             MuzzleSalvoSize = 4,
             MuzzleSalvoDelay = 0.2, 

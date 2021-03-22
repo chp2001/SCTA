@@ -87,8 +87,6 @@ UnitBlueprint {
         'AIR MOBILE TECH3 ARM',
         'AIR MOBILE TECH2 ARM',
         'AIR MOBILE TECH1 ARM', 
-        'armck',
-        'armfark',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

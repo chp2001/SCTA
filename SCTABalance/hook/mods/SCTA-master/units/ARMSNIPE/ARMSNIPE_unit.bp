@@ -26,7 +26,6 @@ UnitBlueprint {
         TAConsumptionPerSecondEnergy = 300,
         MaintenanceConsumptionPerSecondEnergy = 75,
     },
-    StrategicIconName = 'icon_bot3_sniper',
     Weapon = {
         [1] = {
             Damage = 1500,

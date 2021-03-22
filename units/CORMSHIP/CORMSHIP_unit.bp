@@ -127,7 +127,7 @@ TechLevel = 'RULEUTL_Advanced',
     SizeX = 3,
     SizeY = 2,
     SizeZ = 6.5,
-    StrategicIconName = 'icon_ship2_missile',
+    StrategicIconName = 'icon_ship3_missile',
     StrategicIconSortPriority = 0,
     Weapon = {
         {

@@ -111,6 +111,7 @@ TechLevel = 'RULEUTL_Advanced',
     SizeY = 1.5,
     SizeZ = 3,
     StrategicIconName = 'icon_land2_directfire',
+    TAStrategicIconName = '2/bot_armored',
     StrategicIconSortPriority = 0,
     Transport = {
         TransportClass = 3,

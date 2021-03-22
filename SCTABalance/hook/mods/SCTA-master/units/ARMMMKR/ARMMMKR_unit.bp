@@ -7,10 +7,6 @@ UnitBlueprint {
           Health = 6000,
           MaxHealth = 6000,
       },    
-    Footprint = {
-          SizeX = 3,
-          SizeZ = 3,
-      },
       Intel = {
         VisionRadius = 10,
     },

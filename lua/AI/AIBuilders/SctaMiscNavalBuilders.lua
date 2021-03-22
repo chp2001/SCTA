@@ -109,7 +109,7 @@ BuilderGroup {
         Priority = 100,
         InstanceCount = 2,
         BuilderConditions = { -- Stop after 10 facs have been built.
-        { EBC, 'LessThanEconEfficiencyOverTime', { 0.9, 0.75 }},
+        { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.15 }},
         },
         BuilderType = 'Any',
         BuilderData = {

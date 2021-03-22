@@ -35,7 +35,6 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-
         'TECH1',
 	'STRUCTURE',
 	'INTELLIGENCE',
@@ -45,7 +44,7 @@ UnitBlueprint {
 	'SONAR',
 	'SORTINTEL',
     },
-    CollisionOffsetY = -0.75,
+    CollisionOffsetY = -0.5,
     Defense = {
         ArmorType = 'Structure',
         Health = 52,
@@ -134,7 +133,7 @@ UnitBlueprint {
     SelectionSizeZ = 1.2,
     SelectionThickness = 0.25,
     SizeX = 2,
-    SizeY = 2,
+    SizeY = 2.25,
     SizeZ = 2,
     StrategicIconName = 'icon_structure1_intel',
     StrategicIconSortPriority = 0,

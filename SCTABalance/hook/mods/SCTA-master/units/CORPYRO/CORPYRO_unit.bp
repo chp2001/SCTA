@@ -26,5 +26,4 @@ UnitBlueprint {
         BuildCostMass = 1000,
        BuildTime = 9000,
     },
-    StrategicIconName = 'icon_bot3_directfire',
 }

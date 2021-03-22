@@ -87,8 +87,6 @@ UnitBlueprint {
     BuildableCategory = {
         'AIR MOBILE TECH2 ARM',
         'AIR MOBILE TECH1 ARM',
-        'armck',
-        'armfark',
         'armadap', 
         },
 	InitialRallyX = 0,

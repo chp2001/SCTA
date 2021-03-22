@@ -42,7 +42,6 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 3,
     SizeZ = 10,
-    StrategicIconName = 'icon_ship3_missile',
     Weapon = {
         [1] = {
         },

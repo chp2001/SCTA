@@ -87,8 +87,6 @@ UnitBlueprint {
         'AIR MOBILE TECH1 CORE', 
         'AIR MOBILE TECH2 CORE',
         'AIR MOBILE TECH3 CORE',
-        'corcv',
-        'cornecro',
     },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

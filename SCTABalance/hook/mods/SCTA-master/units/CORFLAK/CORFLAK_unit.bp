@@ -7,10 +7,6 @@ UnitBlueprint {
         Health = 7500,
         MaxHealth = 7500,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
     Economy = {
         BuildTime = 19000,
     },

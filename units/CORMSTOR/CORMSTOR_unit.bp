@@ -65,8 +65,6 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 5,
-        SizeZ = 5,
     },
     General = {
         Category = 'Economy',

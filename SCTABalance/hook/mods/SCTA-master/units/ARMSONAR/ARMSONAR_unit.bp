@@ -44,11 +44,6 @@ UnitBlueprint {
         'armason',
         },
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-	MinWaterDepth = 0.5,
-    },
     General = {
         UpgradesTo = 'armason',
     },

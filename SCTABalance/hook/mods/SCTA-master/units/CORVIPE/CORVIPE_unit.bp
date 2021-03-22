@@ -12,10 +12,6 @@ UnitBlueprint {
         BuildCostMass = 2400,
         BuildTime = 30000,
     },
-    Footprint = {
-            SizeX = 2,
-            SizeZ = 2,
-        },
     Intel = {
         FreeIntel = true,
         RadarStealth = true,

@@ -79,8 +79,6 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 8,
     },
     Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
 	MinWaterDepth = 0.5,
     },
     General = {

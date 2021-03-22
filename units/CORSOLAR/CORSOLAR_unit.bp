@@ -72,8 +72,6 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 5,
-        SizeZ = 5,
     },
     General = {
 	---BuildAngle = 32768,
@@ -94,10 +92,6 @@ TechLevel = 'RULEUTL_Basic',
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
-    Physics = {
-        SkirtSizeX = 5,
-        SkirtSizeZ = 5,
-    },
     SelectionSizeX = 2.5,
     SelectionSizeZ = 2.5,
     SelectionThickness = 0.25,

@@ -65,10 +65,6 @@ UnitBlueprint {
 	---SmokeBone = 'Torso',
         UniformScale = 0.12,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
     Economy = {
         BuildCostEnergy = 2221,
         BuildCostMass = 151,

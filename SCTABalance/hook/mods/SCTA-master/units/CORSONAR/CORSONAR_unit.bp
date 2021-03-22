@@ -28,11 +28,6 @@ UnitBlueprint {
             '<LOC ability_upgradable>Upgradeable',
         },
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-	MinWaterDepth = 0.5,
-    },
     Economy = {
         BuildCostEnergy = 1200,
         BuildTime = 2300,

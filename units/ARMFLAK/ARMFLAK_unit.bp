@@ -66,8 +66,6 @@ UnitBlueprint {
         BuildTime = 38010,
     },
     Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
 	MaxSlope = 0.625,
     },
     General = {

@@ -35,11 +35,6 @@ UnitBlueprint {
     DifferentialUpgradeCostCalculation = true,
 	MaintenanceConsumptionPerSecondEnergy = 150,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-	MinWaterDepth = 1.5,
-    },
     General = {
         UpgradesFrom = 'corsonar',
     },
@@ -48,5 +43,4 @@ UnitBlueprint {
     },
     SizeX = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_structure2_intel',    
 }

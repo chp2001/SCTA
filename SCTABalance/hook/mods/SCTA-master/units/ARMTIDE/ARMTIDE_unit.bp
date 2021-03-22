@@ -15,10 +15,6 @@ UnitBlueprint {
         ProductionPerSecondEnergyMin = 30,
         ProductionPerSecondEnergyMax = 40,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
    Physics = {
         MeshExtentsX = 1.25,
         MeshExtentsY = 1.25,

@@ -25,10 +25,6 @@ UnitBlueprint {
         BuildCostEnergy = 42000,
         BuildTime = 22500,
     },
-    Footprint = {
-	SizeX = 2,
-	SizeZ = 2,
-    },
     Intel = {
         VisionRadius = 18,
     },

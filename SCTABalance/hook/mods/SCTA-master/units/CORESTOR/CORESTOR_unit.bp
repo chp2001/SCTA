@@ -1,10 +1,6 @@
 
 UnitBlueprint {
     Merge = true, 
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
     LifeBarOffset = 0.4,
     SelectionSizeX = 2,
     SelectionSizeZ = 2,

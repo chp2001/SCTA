@@ -18,10 +18,6 @@ UnitBlueprint {
         BuildCostMass = 180,
         BuildTime = 4500,
     },
-Footprint = {
-    SizeX = 1,
-    SizeZ = 1,
-},
   Intel = {
     VisionRadius = 12,
     WaterVisionRadius = 4, 

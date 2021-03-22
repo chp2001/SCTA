@@ -28,11 +28,6 @@ UnitBlueprint {
             'Radar Targeting',
         },
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-	MinWaterDepth = 1.5,
-    },
     General = {
         UpgradesFrom = 'armsonar',
     },
@@ -48,5 +43,4 @@ UnitBlueprint {
         },
     SizeX = 2,
     SizeZ = 2,    
-    StrategicIconName = 'icon_structure2_intel',
 }

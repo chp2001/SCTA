@@ -4,9 +4,6 @@ UnitBlueprint {
         Health = 6000,
         MaxHealth = 6000,
     },
-    Display = {
-        UniformScale = 0.08,
-    },
     Economy = {
         BuildCostEnergy = 12000,
         BuildCostMass = 2400,
@@ -16,13 +13,13 @@ UnitBlueprint {
         FreeIntel = true,
         RadarStealth = true,
         },
-    SelectionSizeX = 2,
-    SelectionSizeZ = 2,
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
     SelectionCenterOffsetZ = -0.1,
-    SelectionThickness = 0.25,
-    SizeX = 2,
-    SizeY = 4,
-    SizeZ = 2,
+    SelectionThickness = 0.5,
+    SizeX = 1,
+    SizeY = 2,
+    SizeZ = 1,
     Weapon = {
         [1] = {
             Damage = 750,

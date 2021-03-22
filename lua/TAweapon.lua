@@ -157,7 +157,7 @@ TAHide = Class(TAweapon) {
         TAweapon.PlayFxWeaponUnpackSequence(self)
         local bp = self.unit:GetBlueprint()
         local scale = 0.5
-        self.unit:SetCollisionShape( 'Box', bp.CollisionOffsetX or 0, (bp.CollisionOffsetY + (bp.SizeY * 0.25)), bp.CollisionOffsetZ or 0, bp.SizeX * scale, bp.SizeY * scale, bp.SizeZ * scale)
+        self.unit:SetCollisionShape( 'Box', bp.CollisionOffsetX or 0, bp.CollisionOffsetY + 0.5, bp.CollisionOffsetZ or 0, bp.SizeX * scale, bp.SizeY * scale, bp.SizeZ * scale)
     end,
 
     PlayFxWeaponPackSequence = function(self)
@@ -166,7 +166,7 @@ TAHide = Class(TAweapon) {
         TAweapon.PlayFxWeaponPackSequence(self)
         local bp = self.unit:GetBlueprint()
         local scale = 0.5
-        self.unit:SetCollisionShape( 'Box',  bp.CollisionOffsetX or 0, (bp.CollisionOffsetY + (bp.SizeY * 0.5)), bp.CollisionOffsetZ or 0, bp.SizeX * scale, ((bp.SizeY/bp.SizeY) * scale), bp.SizeZ * scale)
+        self.unit:SetCollisionShape( 'Box',  bp.CollisionOffsetX or 0, bp.CollisionOffsetY or 0, bp.CollisionOffsetZ or 0, bp.SizeX * scale, ((bp.SizeY/bp.SizeY) * scale), bp.SizeZ * scale)
     end,
 }
 

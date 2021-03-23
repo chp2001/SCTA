@@ -83,7 +83,7 @@ TechLevel = 'RULEUTL_Secret',
         UnitName = 'Ambusher',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 16,
     },
     Physics = {
         BuildOnLayerCaps = {

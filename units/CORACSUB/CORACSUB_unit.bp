@@ -130,8 +130,8 @@ UnitBlueprint {
         UnitName = 'Advanced Construction Sub',
     },
     Intel = {
-        VisionRadius = 8,
-        WaterVisionRadius = 8,
+        VisionRadius = 14,
+        WaterVisionRadius = 10,
 	    SonarRadius = 25,
     },
     LifeBarHeight = 0.25,

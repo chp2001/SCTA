@@ -119,7 +119,7 @@ UnitBlueprint {
         TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Spider',
     },
-    Intel = { VisionRadius = 21 },
+    Intel = { VisionRadius = 20 },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,

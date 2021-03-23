@@ -40,9 +40,6 @@ UnitBlueprint {
             'BUILTBYTIER1ENGINEER CORE',
         },
     },
-    Intel = {
-        VisionRadius = 8,
-    },
     Physics = {
         MaxAcceleration = 1.4,
         MaxBrake = 1.25,

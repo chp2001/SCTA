@@ -118,8 +118,8 @@ UnitBlueprint {
         UpgradesFrom = 'armdlab',
     },
     Intel = {
-        VisionRadius = 10,
-    },
+        VisionRadius = 14,
+    },    
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
     LifeBarSize = 7,

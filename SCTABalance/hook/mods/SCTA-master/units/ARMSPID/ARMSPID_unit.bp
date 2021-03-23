@@ -31,7 +31,6 @@ UnitBlueprint {
             Min = 5,
         },
         JammerBlips = 4,
-        VisionRadius = 14,
     },
     Weapon = {
     [1] = {

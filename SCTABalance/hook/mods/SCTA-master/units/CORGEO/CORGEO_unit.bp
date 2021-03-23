@@ -7,9 +7,6 @@ Defense = {
     Health = 2000,
     MaxHealth = 2000,
 },
-Intel = {
-    VisionRadius = 10,
-},
 LifeBarHeight = 0.075,
 LifeBarOffset = 1.2,
 LifeBarSize = 6,

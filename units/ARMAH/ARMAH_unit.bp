@@ -98,7 +98,7 @@ TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Swatter',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 18,
         WaterVisionRadius = 6,
     },
     LifeBarHeight = 0.25,

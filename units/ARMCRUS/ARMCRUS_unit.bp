@@ -105,9 +105,9 @@ UnitBlueprint {
         UnitName = 'Conqueror',
     },
     Intel = {
-        VisionRadius = 14,
-        WaterVisionRadius = 14,
-	SonarRadius = 27, 
+        VisionRadius = 15,
+        WaterVisionRadius = 15,
+	SonarRadius = 30, 
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

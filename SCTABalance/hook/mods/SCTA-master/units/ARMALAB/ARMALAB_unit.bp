@@ -40,9 +40,6 @@ UnitBlueprint {
             'BOT MOBILE TECH3 ARM',
         },
     },
-    Intel = {
-        VisionRadius = 10,
-    },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
     LifeBarSize = 7,

@@ -112,10 +112,9 @@ UnitBlueprint {
         UnitName = 'Eraser',
     },
     Intel = {
-	RadarStealth = true,
     RadarStealthField = true,
-    VisionRadius = 14,
-	RadarStealthFieldRadius = 31,
+    VisionRadius = 12,
+	RadarStealthFieldRadius = 30,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

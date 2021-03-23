@@ -19,8 +19,7 @@ UnitBlueprint {
         BuildTime = 4500,
     },
   Intel = {
-    VisionRadius = 12,
-    WaterVisionRadius = 4, 
+    VisionRadius = 16, 
 },
 LifeBarSize = 1,
 SelectionSizeX = 1,

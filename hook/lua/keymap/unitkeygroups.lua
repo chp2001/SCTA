@@ -229,7 +229,6 @@ TAunitkeygroups = {
     ["Stealth_Field_Generator"]= {
         "corvoyr",
         "armmark",
-        "armaser",
     },
     ["T1_Mobile_Light_Artillery"]= {
         "armham",

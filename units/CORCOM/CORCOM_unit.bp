@@ -133,7 +133,7 @@ UnitBlueprint {
         },
         MaxBuildDistance = 3.75,
         NaturalProducer = true,
-        ProductionPerSecondEnergy = 20,
+        ProductionPerSecondEnergy = 25,
         ProductionPerSecondMass = 1,
         TAConsumptionPerSecondEnergy = 1000,
 	    MaintenanceConsumptionPerSecondEnergy = 200,

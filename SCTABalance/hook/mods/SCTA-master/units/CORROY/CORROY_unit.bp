@@ -7,12 +7,12 @@ UnitBlueprint {
     Display = {
         UniformScale = 0.18,
      },
-    Intel = {
-        VisionRadius = 20, 
+     Intel = {
+        VisionRadius = 15, 
         WaterVisionRadius = 8, 
-	    SonarRadius = 10,
-        RadarRadius = 10,
-    },
+        SonarRadius = 24,
+        RadarRadius = 24,
+        },
     Economy = {
         BuildCostEnergy = 6100,
         BuildCostMass = 580,

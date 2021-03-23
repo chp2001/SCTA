@@ -162,11 +162,11 @@ UnitBlueprint {
         SelectionPriority = 3,
         FactionName = 'ARM',
         Icon = 'land',
-TechLevel = 'RULEUTL_Advanced',
+        TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Adv. Construction Aircraft',
     },
     Intel = {
-        VisionRadius = 12,
+        VisionRadius = 14,
         WaterVisionRadius = 6,
     },
     LifeBarHeight = 0.25,

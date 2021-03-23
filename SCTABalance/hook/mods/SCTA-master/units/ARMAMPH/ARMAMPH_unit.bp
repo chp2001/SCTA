@@ -9,6 +9,9 @@ UnitBlueprint {
         BuildCostMass = 620,
         BuildTime = 6600,
     },
+    Intel = {
+        VisionRadius = 14,
+    },
     Weapon = {
         [1] = {
             Damage = 105,

@@ -18,7 +18,5 @@ UnitBlueprint {
             'TECH1 FACTORY CORE',
         },
     },
-    Intel = {
-        VisionRadius = 10,
-    },
+    
 }

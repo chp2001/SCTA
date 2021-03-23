@@ -7,9 +7,7 @@ UnitBlueprint {
           Health = 6000,
           MaxHealth = 6000,
       },    
-      Intel = {
-        VisionRadius = 10,
-    },
+      
       LifeBarSize = 4,
       Economy = {
         BuildCostEnergy = 600000,

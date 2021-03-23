@@ -22,4 +22,8 @@ UnitBlueprint {
     SizeX = 1.5,
     SizeY = 0.8,
     SizeZ = 1.5,
+    Intel = {
+        SonarRadius = 50,
+        VisionRadius = 15,
+    },
 }

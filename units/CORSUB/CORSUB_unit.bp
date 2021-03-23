@@ -96,9 +96,9 @@ UnitBlueprint {
         UnitName = 'Snake',
     },
     Intel = {
-        SonarRadius = 50,
-        VisionRadius = 20,
-        WaterVisionRadius = 12,
+        SonarRadius = 20,
+        VisionRadius = 8,
+        WaterVisionRadius = 8,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

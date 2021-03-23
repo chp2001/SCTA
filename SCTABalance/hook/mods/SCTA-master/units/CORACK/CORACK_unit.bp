@@ -34,7 +34,5 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 2,
         ProductionPerSecondMass = 0,
     },
-    Intel = {
-        VisionRadius = 10,
-    },
+    
 }

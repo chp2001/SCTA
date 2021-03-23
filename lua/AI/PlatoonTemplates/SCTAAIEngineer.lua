@@ -24,6 +24,14 @@ PlatoonTemplate {
     },
 }
 
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTA123Assist',
+    Plan = 'ManagerEngineerAssistAI',
+    GlobalSquads = {
+        { categories.ENGINEER * (categories.TECH1 + categories.TECH2 + categories.TECH3) - WEIRD, 1, 1, 'support', 'None' }
+    },
+}
+
 
 PlatoonTemplate {
     Name = 'EngineerBuilderSCTA23',

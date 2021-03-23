@@ -11,12 +11,14 @@ UnitBlueprint {
     'OVERLAYDIRECTFIRE',
     'CORE',
     'TANK',
-
-},
-Defense = {
+    },
+    Defense = {
     Health = 16000,
     MaxHealth = 16000,
-},
+    },
+    Display = {
+    UniformScale = 0.2,
+    },
     Economy = {
         BuildCostEnergy = 36000,
         BuildCostMass = 2450,
@@ -26,4 +28,10 @@ Defense = {
         MaxAcceleration = 1.6,
         MaxSpeed = 2.2,
     },
+    Weapon = {
+        [1] = {
+            MaxRadius = 32, 
+        },
+        [2] = {}, 
+        },
 }

@@ -17,6 +17,10 @@ UnitBlueprint {
     Physics = {
         MaxSpeed = 8.4,
     },
+    Intel = {
+        SonarRadius = 50,
+        VisionRadius = 15,
+    },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,
     SizeX = 1.5,

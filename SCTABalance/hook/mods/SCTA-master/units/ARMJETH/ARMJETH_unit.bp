@@ -11,9 +11,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 720,
     },
-    Intel = {
-        VisionRadius = 10,
-    },
+    
     SelectionSizeX = 0.8,
     SelectionSizeZ = 0.8,
     SizeX = 1.2,

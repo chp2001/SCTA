@@ -94,8 +94,8 @@ UnitBlueprint {
         UnitName = 'Metal Maker',
     },
     Intel = {
-        VisionRadius = 10,
-        WaterVisionRadius = 4, 
+        VisionRadius = 6,
+        WaterVisionRadius = 4,
         RadarStealth = true, 
     },
     LifeBarHeight = 0.25,

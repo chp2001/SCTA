@@ -4,9 +4,7 @@ UnitBlueprint {
     Display = {
         UniformScale = 0.06,
     },
-    Intel = {
-        VisionRadius = 10,
-    },
+    
     Physics = {
         BankingSlope = 0,
         DragCoefficient = 0.2,

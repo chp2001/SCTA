@@ -117,7 +117,7 @@ UnitBlueprint {
 	UnitName = 'Podger',
     },
     Intel = {
-        VisionRadius = 10,
+        VisionRadius = 14,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

@@ -70,7 +70,7 @@ TACounter = Class(TAWalking)
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAWalking.OnStopBeingBuilt(self,builder,layer)
 		local bp = self:GetBlueprint()
-		if bp.Intel.RadarStealth or bp.Intel.RadarRadius then
+		if bp.Intel.RadarStealthField or bp.Intel.RadarRadius then
 			self:SetMaintenanceConsumptionActive()
 		end
         self:SetScriptBit('RULEUTC_StealthToggle', false)

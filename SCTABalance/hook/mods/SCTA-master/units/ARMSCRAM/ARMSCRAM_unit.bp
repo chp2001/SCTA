@@ -32,10 +32,7 @@ UnitBlueprint {
         },
         ToggleCaps = {
         RULEUTC_StealthToggle = true,
-    },
-    },
-    Intel = {
-    VisionRadius = 14,
+        },
     },
     SelectionSizeX = 1.25,
     SelectionSizeZ = 1.9,

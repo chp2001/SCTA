@@ -132,10 +132,9 @@ UnitBlueprint {
         UnitWeight = 1,
     },
     Intel = {
-    VisionRadius = 14,
-	RadarStealth = true,
+    VisionRadius = 12,
     RadarStealthField = true,
-	RadarStealthFieldRadius = 26,
+	RadarStealthFieldRadius = 20,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

@@ -1,8 +1,5 @@
 UnitBlueprint {
     Merge = true, 
-    Intel = {
-        VisionRadius = 10, 
-    },
     Physics = {
         BankingSlope = 0,
         DragCoefficient = 0.2,

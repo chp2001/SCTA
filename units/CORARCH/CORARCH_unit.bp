@@ -94,11 +94,11 @@ UnitBlueprint {
         },
         FactionName = 'CORE',
         Icon = 'land',
-TechLevel = 'RULEUTL_Advanced',
+        TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Shredder',
     },
     Intel = {
-        VisionRadius = 10,
+        VisionRadius = 22,
         WaterVisionRadius = 12,
     },
     LifeBarHeight = 0.25,

@@ -31,9 +31,7 @@ UnitBlueprint {
     General = {
         UpgradesTo = 'armdap', 
     },
-    Intel = {
-        VisionRadius = 10,
-    },
+    
         SelectionSizeX = 7,
         SelectionSizeZ = 5,
         SelectionThickness = 0.25,

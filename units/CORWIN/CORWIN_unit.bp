@@ -50,6 +50,14 @@ UnitBlueprint {
                         LODCutoff = 215,
                         ShaderName = 'Unit',
                     },
+                    {
+                        LODCutoff = 315,
+                        ShaderName = 'Unit',
+                    },
+                    {
+                        LODCutoff = 415,
+                        ShaderName = 'Unit',
+                    },
                 },
             },
         UniformScale = 0.16,

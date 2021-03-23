@@ -145,7 +145,7 @@ UnitBlueprint {
         UnitName = 'Vamp',
     },
     Intel = {
-    VisionRadius = 22,
+    VisionRadius = 32,
     WaterVisionRadius = 4, 
 	RadarStealth = true,
     },

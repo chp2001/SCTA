@@ -23,7 +23,7 @@ UnitBlueprint {
         MaxHealth = 8200,
     },
         Display = {
-        UniformScale = 0.24,
+        UniformScale = 0.2,
     },
     Footprint = {
         SizeX = 7,
@@ -43,9 +43,7 @@ UnitBlueprint {
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
     LifeBarSize = 7,
-    Intel = {
-        VisionRadius = 10,
-    },
+    
     SelectionSizeX = 7,
     SelectionSizeZ = 5,
     SelectionThickness = 0.25,

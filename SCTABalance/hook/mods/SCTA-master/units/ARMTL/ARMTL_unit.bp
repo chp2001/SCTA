@@ -28,6 +28,11 @@ UnitBlueprint {
         Health = 800,
         MaxHealth = 800,
     },
+    Intel = {
+        SonarRadius = 30,
+        VisionRadius = 8,
+        WaterVisionRadius = 15,
+    },
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
     SelectionThickness = 0.5,

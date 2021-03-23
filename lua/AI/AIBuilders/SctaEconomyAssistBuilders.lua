@@ -30,6 +30,7 @@ BuilderGroup {
                 AssistLocation = 'LocationType',
                 BeingBuiltCategories = {'TECH2 ENERGYPRODUCTION STRUCTURE, TECH3 ENERGYPRODUCTION STRUCTURE,'},
                 Time = 20,
+                AssistRange = 120,
                 AssistUntilFinished = true,
             },
         }
@@ -41,7 +42,7 @@ BuilderGroup {
         InstanceCount = 4,
         BuilderConditions = {
             { UCBC, 'BuildingGreaterAtLocation', { 'LocationType', 0, categories.MASSEXTRACTION * categories.TECH3}},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -51,6 +52,7 @@ BuilderGroup {
                 AssisteeType = 'Structure',
                 BeingBuiltCategories = {'MASSEXTRACTION'},
                 Time = 60,
+                AssistRange = 120,
             },
         }
     },
@@ -61,7 +63,7 @@ BuilderGroup {
         InstanceCount = 12,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderData = {
             Assist = {
@@ -75,13 +77,13 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'SCTA Assist Production',
+        BuilderName = 'SCTA Assist Production Field',
         PlatoonTemplate = 'EngineerBuilderSCTAAssist',
         Priority = 25,
         InstanceCount = 30,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.FACTORY }},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderData = {
             Assist = {
@@ -95,13 +97,53 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
+        BuilderName = 'SCTA Assist Production Idle',
+        PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
+        Priority = 50,
+        InstanceCount = 30,
+        BuilderConditions = {
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                AssistRange = 120,
+                BeingBuiltCategories = {'STRUCTURE'},                                        
+                AssistUntilFinished = true,
+            },
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Assist Unit Production Idle',
+        PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
+        Priority = 45,
+        InstanceCount = 30,
+        BuilderConditions = {
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.MOBILE }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Factory',
+                AssistRange = 120,
+                BeingBuiltCategories = {'MOBILE'},                                        
+                AssistUntilFinished = true,
+            },
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
         BuilderName = 'SCTA Engineer Assist Gantry',
         PlatoonTemplate = 'EngineerBuilderSCTAAssist',
         Priority = 200,
         InstanceCount = 12,
         BuilderConditions = {
             { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYQUANTUMGATE }},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderData = {
             Assist = {

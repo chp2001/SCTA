@@ -88,7 +88,7 @@ TechLevel = 'RULEUTL_Advanced',
         UnitName = 'The Can',
     },
     Intel = {
-        VisionRadius = 12,
+        VisionRadius = 14,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

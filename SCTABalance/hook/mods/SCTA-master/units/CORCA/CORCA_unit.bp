@@ -18,9 +18,7 @@ UnitBlueprint {
         MaxBuildDistance = 5,
         BuildTime = 2000,
     },
-    Intel = {
-        VisionRadius = 10,
-    },
+    
     Physics = {
         FuelRechargeRate = 666666,
         FuelUseTime = 666666,

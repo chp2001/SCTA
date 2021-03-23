@@ -62,7 +62,7 @@ UnitBlueprint {
             },
         },
 	---SmokeBone = 'torso',
-        UniformScale = 0.12,
+        UniformScale = 0.16,
     },
     Economy = {
         BuildCostEnergy = 10914,
@@ -87,7 +87,7 @@ TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Maverick',
     },
     Intel = {
-        VisionRadius = 10,
+        VisionRadius = 14,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

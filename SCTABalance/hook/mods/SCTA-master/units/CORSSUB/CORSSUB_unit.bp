@@ -32,4 +32,8 @@ Display = {
     SizeX = 6,
     SizeY = 2,
     SizeZ = 6,
+    Intel = {
+        SonarRadius = 60,
+        VisionRadius = 15,
+    },
 }

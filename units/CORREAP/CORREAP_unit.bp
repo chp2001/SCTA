@@ -31,12 +31,11 @@ UnitBlueprint {
         'SELECTABLE',
         'TECH2',
         'TANK',
-
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
+	    'LAND',
+	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
     },
@@ -68,7 +67,6 @@ UnitBlueprint {
         BuildCostMass = 473,
         BuildTime = 8730,
     },
-
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',

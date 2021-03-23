@@ -1,20 +1,5 @@
 UnitBlueprint {
    Merge = true,
-   Categories = {
-    'SELECTABLE',
-    'TECH3',
-    'VISIBLETORECON',
-    'RECLAIMABLE',
-    'MOBILE',
-    'SCOUT',
-    'INTELLIGENCE',
-    'OVERLAYRADAR',
-    'DIRECTFIRE',
-    'OVERLAYDIRECTFIRE',
-    'LAND',
-    'ARM',
-    'HOVER',
-    },
     Display = {
        Abilities = {
         '<LOC ability_radar>Radar',
@@ -25,5 +10,12 @@ UnitBlueprint {
         RadarRadius = 80,
         VisionRadius = 14,
         OmniRadius = 25,
+    },
+    Weapon = {
+        [1] = {
+            Damage = 10,
+        },
+        [2] = {
+        }, 
     },
 }

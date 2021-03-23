@@ -241,7 +241,7 @@ Platoon = Class(SCTAAIPlatoon) {
         end
 
         --LOG("*AI DEBUG: Setting up Callbacks for " .. eng.Sync.id)
-        self.SetupEngineerCallbacks(eng)
+        self.SetupEngineerCallbacksSCTA(eng)
 
         -------- BUILD BUILDINGS HERE --------
         for baseNum, baseListData in baseTmplList do
@@ -519,7 +519,7 @@ Platoon = Class(SCTAAIPlatoon) {
         end
 
         --LOG("*AI DEBUG: Setting up Callbacks for " .. eng.Sync.id)
-        self.SetupEngineerCallbacks(eng)
+        self.SetupEngineerCallbacksSCTA(eng)
 
         -------- BUILD BUILDINGS HERE --------
         for baseNum, baseListData in baseTmplList do
@@ -818,7 +818,7 @@ Platoon = Class(SCTAAIPlatoon) {
         end
 
         --LOG("*AI DEBUG: Setting up Callbacks for " .. eng.Sync.id)
-        self.SetupEngineerCallbacks(eng)
+        self.SetupEngineerCallbacksSCTA(eng)
 
         -------- BUILD BUILDINGS HERE --------
         for baseNum, baseListData in baseTmplList do
@@ -1106,7 +1106,7 @@ Platoon = Class(SCTAAIPlatoon) {
         end
 
         --LOG("*AI DEBUG: Setting up Callbacks for " .. eng.Sync.id)
-        self.SetupEngineerCallbacks(eng)
+        self.SetupEngineerCallbacksSCTA(eng)
 
         -------- BUILD BUILDINGS HERE --------
         for baseNum, baseListData in baseTmplList do
@@ -1143,6 +1143,78 @@ Platoon = Class(SCTAAIPlatoon) {
 
         if not eng.Dead and not eng:IsUnitState('Building') then
             return self.SCTAProcessBuildCommand(eng, false)
+        end
+    end,
+
+    SetupEngineerCallbacksSCTA = function(eng)
+        if eng and not eng.Dead and not eng.BuildDoneCallbackSet and eng.PlatoonHandle and eng:GetAIBrain():PlatoonExists(eng.PlatoonHandle) then
+            import('/lua/ScenarioTriggers.lua').CreateUnitBuiltTrigger(eng.PlatoonHandle.EngineerBuildDoneSCTA, eng, categories.ALLUNITS)
+            eng.BuildDoneCallbackSet = true
+        end
+        if eng and not eng.Dead and not eng.CaptureDoneCallbackSet and eng.PlatoonHandle and eng:GetAIBrain():PlatoonExists(eng.PlatoonHandle) then
+            import('/lua/ScenarioTriggers.lua').CreateUnitStopCaptureTrigger(eng.PlatoonHandle.EngineerCaptureDoneSCTA, eng)
+            eng.CaptureDoneCallbackSet = true
+        end
+        if eng and not eng.Dead and not eng.ReclaimDoneCallbackSet and eng.PlatoonHandle and eng:GetAIBrain():PlatoonExists(eng.PlatoonHandle) then
+            import('/lua/ScenarioTriggers.lua').CreateUnitStopReclaimTrigger(eng.PlatoonHandle.EngineerReclaimDoneSCTA, eng)
+            eng.ReclaimDoneCallbackSet = true
+        end
+        if eng and not eng.Dead and not eng.FailedToBuildCallbackSet and eng.PlatoonHandle and eng:GetAIBrain():PlatoonExists(eng.PlatoonHandle) then
+            import('/lua/ScenarioTriggers.lua').CreateOnFailedToBuildTrigger(eng.PlatoonHandle.EngineerFailedToBuildSCTA, eng)
+            eng.FailedToBuildCallbackSet = true
+        end
+    end,
+
+    EngineerBuildDoneSCTA = function(unit, params)
+        if not unit.PlatoonHandle then return end
+        if not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTA' 
+        or not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTACommand'
+        or not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTANaval'
+        or not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTAAir'
+        then return end
+        --LOG("*AI DEBUG: Build done " .. unit.Sync.id)
+        if not unit.ProcessBuild then
+            unit.ProcessBuild = unit:ForkThread(unit.PlatoonHandle.SCTAProcessBuildCommand, true)
+            unit.ProcessBuildDone = true
+        end
+    end,
+    EngineerCaptureDoneSCTA = function(unit, params)
+        if not unit.PlatoonHandle then return end
+        if not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTA' 
+        or not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTACommand'
+        or not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTANaval'
+        or not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTAAir'
+        then return end
+        --LOG("*AI DEBUG: Capture done" .. unit.Sync.id)
+        if not unit.ProcessBuild then
+            unit.ProcessBuild = unit:ForkThread(unit.PlatoonHandle.SCTAProcessBuildCommand, false)
+        end
+    end,
+    EngineerReclaimDoneSCTA = function(unit, params)
+        if not unit.PlatoonHandle then return end
+        if not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTA' 
+        or not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTACommand'
+        or not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTANaval'
+        or not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTAAir'
+        then return end
+        --LOG("*AI DEBUG: Reclaim done" .. unit.Sync.id)
+        if not unit.ProcessBuild then
+            unit.ProcessBuild = unit:ForkThread(unit.PlatoonHandle.SCTAProcessBuildCommand, false)
+        end
+    end,
+    EngineerFailedToBuildSCTA = function(unit, params)
+        if not unit.PlatoonHandle then return end
+        if not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTA' 
+        or not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTACommand'
+        or not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTANaval'
+        or not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTAAir'
+        then return end
+        if unit.ProcessBuildDone and unit.ProcessBuild then
+            KillThread(unit.ProcessBuild)
+            unit.ProcessBuild = nil
+        end
+        if not unit.ProcessBuild then
+            unit.ProcessBuild = unit:ForkThread(unit.PlatoonHandle.SCTAProcessBuildCommand, true)  --DUNCAN - changed to true
         end
     end,
 

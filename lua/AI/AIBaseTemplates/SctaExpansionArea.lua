@@ -42,14 +42,14 @@ BaseBuilderTemplate {
     },
     ExpansionFunction = function(aiBrain, location, markerType)   
         local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
-        LOG('Ai Personality is '..per)
+        --LOG('Ai Personality is '..per)
         if not per == 'sctaaiarm' or per == 'sctaaicore' or per == 'sctaaiarmcheat' or per == 'sctaaicorecheat' then
             return -1
         end
         if markerType != 'Start Location' or markerType != 'Expansion Area' then
             return 10
         end
-        LOG('Return sctaai personality')
+        --LOG('Return sctaai personality')
         return 1000, 'SCTAAIExpansion'
     end,
 }

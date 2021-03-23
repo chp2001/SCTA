@@ -62,7 +62,7 @@ UnitBlueprint {
             },
         },
 	---SmokeBone = 'torso',
-        UniformScale = 0.12,
+        UniformScale = 0.16,
     },
     Economy = {
         BuildCostEnergy = 10914,

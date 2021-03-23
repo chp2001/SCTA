@@ -418,10 +418,10 @@ BuilderGroup {
         BuilderName = 'SCTAAI LandFacT2 Emergency2',
         PlatoonTemplate = 'EngineerBuilderSCTA12',
         Priority = 600,
-        InstanceCount = 1,
+        InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {750} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.85, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -445,7 +445,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { MIBC, 'GreaterThanGameTime', {1500} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.85, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {

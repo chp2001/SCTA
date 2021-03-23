@@ -20,8 +20,8 @@ UnitBlueprint {
     'ANTISHIELD',
     },
     Defense = {
-    Health = 11000,
-    MaxHealth = 11000,
+    Health = 13000,
+    MaxHealth = 13000,
     },
     Display = {
     UniformScale = 0.2,
@@ -33,7 +33,7 @@ UnitBlueprint {
     },
     SelectionSizeX = 1.2,
     SelectionSizeZ = 1.2,
-    SizeX = 2.5,
+    SizeX = 2,
     SizeY = 2.5,
     SizeZ = 2.5,
     Weapon = {
@@ -41,7 +41,7 @@ UnitBlueprint {
             EnergyDrainPerSecond = 50,
             EnergyRequired = 50,
             EnergyChargeForFirstShot = true,
-            Damage = 250,
+            Damage = 350,
             MaxRadius = 35,
             DamageRadius = 2,
             RateOfFire = 1,

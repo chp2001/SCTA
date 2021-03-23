@@ -19,9 +19,12 @@ UnitBlueprint {
     'BOT',
    },
     Defense = {
-        Health = 4800,
-        MaxHealth = 4800,
+        Health = 6000,
+        MaxHealth = 6000,
     },
+    SizeX = 1.8,
+    SizeY = 2.5,
+    SizeZ = 1.8,
     Economy = {
         BuildCostEnergy = 12000,
         BuildCostMass = 1200,

@@ -19,6 +19,7 @@ UnitBlueprint {
     BuildIconSortPriority = 7,
     Categories = {
         'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER2COMMANDER',
         'BUILTBYTIER1ENGINEER',
         'BUILTBYTIER3ENGINEER',
         'SORTSTRATEGIC',
@@ -79,11 +80,17 @@ UnitBlueprint {
         SelectionPriority = 5,
         FactionName = 'CORE',
         Icon = 'land',
-TechLevel = 'RULEUTL_Secret',
+        TechLevel = 'RULEUTL_Secret',
         UnitName = 'Viper',
     },
     Intel = {
         VisionRadius = 14,
+    },
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.25,
@@ -118,6 +125,7 @@ TechLevel = 'RULEUTL_Secret',
             EnergyChargeForFirstShot = true,
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
             },
 	    RangeCategory = 'UWRC_IndirectFire',
      WeaponCategory = 'IndirectFire',

@@ -26,6 +26,12 @@ UnitBlueprint {
         TAConsumptionPerSecondEnergy = 300,
         MaintenanceConsumptionPerSecondEnergy = 75,
     },
+    Intel = {
+        ActiveIntel = {
+            RadarStealth = true,
+        },
+        RadarStealth = true,
+    },
     Weapon = {
         [1] = {
             Damage = 1500,

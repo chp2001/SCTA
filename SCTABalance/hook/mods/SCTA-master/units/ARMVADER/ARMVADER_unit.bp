@@ -33,6 +33,10 @@ UnitBlueprint {
         },
     },
     Intel = {
+        ActiveIntel = {
+            RadarStealth = true,
+        },
+        RadarStealth = true,
         Cloak = true,
     },
     LifeBarOffset = 0,

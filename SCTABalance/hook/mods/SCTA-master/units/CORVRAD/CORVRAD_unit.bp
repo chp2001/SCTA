@@ -51,7 +51,6 @@ UnitBlueprint {
             Omni = true,
             Radar = true,
         },
-        RadarStealth = true,
         RadarStealthField = true,
         VisionRadius = 14,
         OmniRadius = 60,

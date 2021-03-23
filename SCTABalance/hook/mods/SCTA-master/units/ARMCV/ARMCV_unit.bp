@@ -35,9 +35,6 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 1,
         MaxBuildDistance = 6,
     },
-    Intel = {
-        VisionRadius = 8,
-    },
     LifeBarSize = 1.5,
     SelectionSizeX = 0.6,
     SelectionSizeZ = 0.6,

@@ -30,6 +30,12 @@ UnitBlueprint {
     ProductionPerSecondEnergy = 2000,
 	MaintenanceConsumptionPerSecondEnergy = 250,
     },
+    Intel = {
+    ActiveIntel = {
+        RadarStealth = true,
+    },
+    RadarStealth = true,
+    },
     LifeBarSize = 6,
     SelectionSizeX = 8,
     SelectionSizeZ = 6,

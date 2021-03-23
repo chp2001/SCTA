@@ -5,9 +5,6 @@ UnitBlueprint {
         BuildCostMass = 400,
         BuildTime = 12000,
     },
-    Intel = {
-        WaterVisionRadius = 4, 
-    },
     Weapon = {
         [1] = {
         Damage = 10,

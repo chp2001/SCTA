@@ -95,7 +95,6 @@ UnitBlueprint {
         BuildBones = {
             BuildEffectBones = {'Nozzle_01', 'Nozzle_02'},
         },    
-	---BuildAngle = 0,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {
@@ -111,7 +110,7 @@ UnitBlueprint {
         FactionName = 'ARM',
         Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
-	UnitName = 'Adv. Aircraft Plant',
+	    UnitName = 'Adv. Aircraft Plant',
     },
     Intel = {
     VisionRadius = 10,
@@ -121,7 +120,7 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        ---FlattenSkirt = true,
+        
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
         RollOffPoints = {

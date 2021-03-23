@@ -35,7 +35,7 @@ UnitBlueprint {
     SelectionSizeZ = 1.2,
     SizeX = 2,
     SizeY = 2.5,
-    SizeZ = 2.5,
+    SizeZ = 2,
     Weapon = {
         [1] = {
             EnergyDrainPerSecond = 50,

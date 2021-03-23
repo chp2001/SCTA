@@ -43,7 +43,7 @@ UnitBlueprint {
         Min = 10,
     },
     JammerBlips = 5,
-    VisionRadius = 12,
+    VisionRadius = 18,
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,

@@ -11,6 +11,9 @@ UnitBlueprint {
         BuildCostEnergy = 4200,
         BuildCostMass = 410,
     },
+    Intel = {
+        VisionRadius = 12,
+    },
     LifeBarSize = 1,
     SelectionSizeX = 0.6,
     SelectionSizeZ = 0.6,

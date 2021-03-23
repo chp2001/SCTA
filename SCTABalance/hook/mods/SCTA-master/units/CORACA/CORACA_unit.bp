@@ -23,9 +23,6 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 3,
         ProductionPerSecondMass = 0,
     },
-    Intel = {
-        VisionRadius = 12,
-    },
     Physics = {
         FuelRechargeRate = 777777,
         FuelUseTime = 777777,

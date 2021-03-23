@@ -89,7 +89,7 @@ UnitBlueprint {
         UnitName = 'Zeus',
     },
     Intel = {
-        VisionRadius = 16,
+        VisionRadius = 18,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

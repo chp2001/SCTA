@@ -134,8 +134,8 @@ UnitBlueprint {
         UnitName = 'Tornado',
     },
     Intel = {
-        VisionRadius = 22,
-        WaterVisionRadius = 4, 
+        VisionRadius = 30,
+        WaterVisionRadius = 10, 
         RadarStealth = true,
     },
     LifeBarHeight = 0.25,

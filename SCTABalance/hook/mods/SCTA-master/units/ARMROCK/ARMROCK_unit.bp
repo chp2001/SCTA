@@ -28,6 +28,9 @@ UnitBlueprint {
         BuildCostMass = 300,
         BuildTime = 6000,
     },
+    Intel = {
+        VisionRadius = 12,
+    },
     SelectionSizeX = 0.8,
     SelectionSizeZ = 0.8,
     SizeX = 1.3,

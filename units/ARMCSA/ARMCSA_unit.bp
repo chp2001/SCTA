@@ -71,7 +71,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH3',
-
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -162,8 +161,8 @@ UnitBlueprint {
         UnitName = 'Construction Seaplane',
     },
     Intel = {
-        VisionRadius = 12,
-        WaterVisionRadius = 6,
+        VisionRadius = 20,
+        WaterVisionRadius = 8,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.25,

@@ -17,7 +17,7 @@ UnitBlueprint {
         SizeZ = 1,
     },
     Intel = {
-        VisionRadius = 12,
+        VisionRadius = 18,
     },
     Physics = {
         SkirtSizeX = 1, 

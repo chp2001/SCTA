@@ -36,6 +36,7 @@ UnitBlueprint {
         ActiveIntel = {
             RadarStealth = true,
         },
+        VisionRadius = 16,
         RadarStealth = true,
         Cloak = true,
     },

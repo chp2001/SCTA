@@ -168,7 +168,7 @@ UnitBlueprint {
         VisionRadius = 18,
         RadarRadius = 25,
         SonarRadius = 25,
-        WaterVisionRadius = 4,
+        WaterVisionRadius = 10,
         Cloak = true,  
     },
     LifeBarHeight = 0.25,

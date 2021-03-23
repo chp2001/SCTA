@@ -17,7 +17,7 @@ UnitBlueprint {
     },
     SizeY = 1.4,
     Intel = {
-        VisionRadius = 18,
+        VisionRadius = 12,
     },
     Weapon = {
         [1] = {

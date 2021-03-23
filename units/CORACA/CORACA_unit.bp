@@ -70,8 +70,7 @@ UnitBlueprint {
     BuildIconSortPriority = 0,
     Categories = {
         'SELECTABLE',
-        'AIR',
-        
+        'AIR',      
         'SELECTION', 
         'CORE',
         'TECH2',

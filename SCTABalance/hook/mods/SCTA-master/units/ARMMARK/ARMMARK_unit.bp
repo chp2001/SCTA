@@ -53,7 +53,7 @@ UnitBlueprint {
     },
     Intel = {
         RadarStealthField = true,
-        VisionRadius = 16,
+        VisionRadius = 20,
         RadarRadius = 100, 
         RadarStealthFieldRadius = 50,
     },

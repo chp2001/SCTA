@@ -78,7 +78,7 @@ UnitBlueprint {
         UnitName = 'Toaster',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 16,
     },
     Physics = {
         BuildOnLayerCaps = {

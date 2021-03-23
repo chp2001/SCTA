@@ -126,7 +126,7 @@ UnitBlueprint {
 	UnitName = 'Necro',
     },
     Intel = {
-        VisionRadius = 12,
+        VisionRadius = 14,
         RadarStealth = true,
     },
     LifeBarHeight = 0.25,

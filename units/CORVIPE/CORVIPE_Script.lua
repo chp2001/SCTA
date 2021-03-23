@@ -35,6 +35,7 @@ CORVIPE = Class(TAPop) {
 
 			PlayFxWeaponPackSequence = function(self)
 				TAHide.PlayFxWeaponPackSequence(self)
+				self.unit.Pack = 0.13
 			end,	
 		},
 	},

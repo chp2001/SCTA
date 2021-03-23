@@ -36,7 +36,7 @@ UnitBlueprint {
         'ANTISHIELD',
     },
     Defense = {
-        DamageModifier = 0.28,
+        DamageModifier = 0.13,
         ArmorType = 'Structure',
         AirThreatLevel = 0,
         EconomyThreatLevel = 3,

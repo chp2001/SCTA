@@ -161,7 +161,6 @@ TAHide = Class(TAweapon) {
     end,
 
     PlayFxWeaponPackSequence = function(self)
-        self.unit.Pack = 0.28
         self.unit:EnableUnitIntel('RadarStealth')
         TAweapon.PlayFxWeaponPackSequence(self)
         local bp = self.unit:GetBlueprint()

@@ -38,9 +38,7 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 3,
         ProductionPerSecondMass = 0,
     },
-    Intel = {
-        VisionRadius = 10,
-    },
+    
     Physics = {
         MaxAcceleration = 1.4,
         MaxBrake = 1.25,

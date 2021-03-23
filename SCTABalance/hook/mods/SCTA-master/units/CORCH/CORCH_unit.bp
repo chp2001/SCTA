@@ -43,10 +43,6 @@ UnitBlueprint {
             'BUILTBYTIER2FACTORY CORE',
         },
     },
-    Intel = {
-        VisionRadius = 8,
-        WaterVisionRadius = 4, 
-    },
     SelectionSizeX = 1.25,
     SelectionSizeZ = 1.25,
     SizeX = 1.3,

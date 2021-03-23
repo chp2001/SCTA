@@ -26,9 +26,6 @@ UnitBlueprint {
     Display = {
     UniformScale = 0.2,
     },
-    Intel = {
-        VisionRadius = 14,
-    },
     Economy = {
     BuildCostEnergy = 45000,
     BuildCostMass = 2200,

@@ -121,7 +121,7 @@ UnitBlueprint {
 	UnitName = 'Development Shipyard',
     },
     Intel = {
-        VisionRadius = 10,
+        VisionRadius = 14,
         WaterVisionRadius = 8,
     },
     LifeBarHeight = 0.22,

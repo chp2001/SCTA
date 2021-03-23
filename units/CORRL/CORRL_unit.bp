@@ -83,7 +83,7 @@ TechLevel = 'RULEUTL_Advanced',
     },
     Intel = {
         VisionRadius = 22,
-        WaterVisionRadius = 9, 
+        WaterVisionRadius = 8, 
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.25,

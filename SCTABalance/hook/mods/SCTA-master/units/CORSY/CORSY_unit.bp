@@ -27,10 +27,6 @@ UnitBlueprint {
     General = {
         UpgradesTo = 'cordsy', 
     },
-    Intel = {
-        VisionRadius = 10,
-        WaterVisionRadius = 6,
-    },
     SelectionSizeX = 10,
     SelectionSizeZ = 10,
     SizeX = 14,

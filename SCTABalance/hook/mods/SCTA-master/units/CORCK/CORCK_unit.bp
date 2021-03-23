@@ -28,7 +28,4 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 1,
         MaxBuildDistance = 6,
     },
-    Intel = {
-        VisionRadius = 8,
-    },
 }

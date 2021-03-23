@@ -3,10 +3,6 @@ UnitBlueprint {
     Display = {
         UniformScale = 0.06,
     },
-    Intel = {
-        VisionRadius = 10,
-        WaterVisionRadius = 4, 
-    },
     Physics = {
         BankingSlope = 0,
         DragCoefficient = 0.2,

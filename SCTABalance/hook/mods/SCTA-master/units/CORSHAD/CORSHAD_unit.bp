@@ -13,6 +13,7 @@ UnitBlueprint {
         BuildTime = 6600,
     },
     Intel = {
+        VisionRadius = 32,
         RadarRadius = 38,
     },
     Weapon = {

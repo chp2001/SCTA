@@ -10,7 +10,7 @@ UnitBlueprint {
         MaxHealth = 400,
     },
     Intel = {
-    VisionRadius = 22,
+    VisionRadius = 28,
     }, 
     Economy = {
         BuildCostEnergy = 6000,

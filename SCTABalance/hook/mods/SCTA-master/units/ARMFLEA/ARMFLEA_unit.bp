@@ -9,8 +9,7 @@ UnitBlueprint {
         BuildTime = 700,
     },
     Intel = {
-    VisionRadius = 14,
-    RadarRadius = 40,
+    RadarRadius = 50,
     },
     Physics = {
         MaxAcceleration = 3,

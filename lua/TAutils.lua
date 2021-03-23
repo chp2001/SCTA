@@ -303,3 +303,37 @@ function GetMOARadii(bool)
     end
     return BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea
 end
+
+function SCTAEngineerTryReclaimCaptureArea(aiBrain, eng, pos)
+    if not pos then
+        return false
+    end
+    local Reclaiming = false
+    -- Check if enemy units are at location
+    local checkUnits = aiBrain:GetUnitsAroundPoint( (categories.STRUCTURE + categories.MOBILE) - categories.AIR, pos, 10, 'Enemy')
+    -- reclaim units near our building place.
+    if checkUnits and table.getn(checkUnits) > 0 then
+        for num, unit in checkUnits do
+            if unit.Dead or unit:BeenDestroyed() then
+                continue
+            end
+            if not IsEnemy( aiBrain:GetArmyIndex(), unit:GetAIBrain():GetArmyIndex() ) then
+                continue
+            end
+            unit.ReclaimInProgress = true
+            IssueReclaim({eng}, unit)
+            Reclaiming = true
+        end
+    end
+    -- reclaim rocks etc or we can't build mexes or hydros
+    local Reclaimables = GetReclaimablesInRect(Rect(pos[1], pos[3], pos[1], pos[3]))
+    if Reclaimables and table.getn( Reclaimables ) > 0 then
+        for k,v in Reclaimables do
+            if v.MaxMassReclaim > 0 or v.MaxEnergyReclaim > 0 then
+                IssueReclaim({eng}, v)
+                Reclaiming = true
+            end
+        end
+    end
+    return Reclaiming
+end

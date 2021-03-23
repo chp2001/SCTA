@@ -277,7 +277,7 @@ Platoon = Class(SCTAAIPlatoon) {
         end
 
         if not eng.Dead and not eng:IsUnitState('Building') then
-            return self.ProcessBuildCommand(eng, false)
+            return self.SCTAProcessBuildCommand(eng, false)
         end
     end,
 
@@ -555,7 +555,7 @@ Platoon = Class(SCTAAIPlatoon) {
         end
 
         if not eng.Dead and not eng:IsUnitState('Building') then
-            return self.ProcessBuildCommand(eng, false)
+            return self.SCTAProcessBuildCommand(eng, false)
         end
     end,
 
@@ -854,7 +854,7 @@ Platoon = Class(SCTAAIPlatoon) {
         end
 
         if not eng.Dead and not eng:IsUnitState('Building') then
-            return self.ProcessBuildCommand(eng, false)
+            return self.SCTAProcessBuildCommand(eng, false)
         end
     end,
 
@@ -1142,9 +1142,95 @@ Platoon = Class(SCTAAIPlatoon) {
         end
 
         if not eng.Dead and not eng:IsUnitState('Building') then
-            return self.ProcessBuildCommand(eng, false)
+            return self.SCTAProcessBuildCommand(eng, false)
         end
     end,
+
+    SCTAProcessBuildCommand = function(eng, removeLastBuild)
+        if not eng or eng.Dead or not eng.PlatoonHandle then
+            return
+        end
+        local aiBrain = eng.PlatoonHandle:GetBrain()
+
+        if not aiBrain or eng.Dead or not eng.EngineerBuildQueue or table.getn(eng.EngineerBuildQueue) == 0 then
+            if aiBrain:PlatoonExists(eng.PlatoonHandle) then
+                if not eng.AssistSet and not eng.AssistPlatoon and not eng.UnitBeingAssist then
+                    eng.PlatoonHandle:PlatoonDisband()
+                end
+            end
+            if eng then eng.ProcessBuild = nil end
+            return
+        end
+
+        -- it wasn't a failed build, so we just finished something
+        if removeLastBuild then
+            table.remove(eng.EngineerBuildQueue, 1)
+        end
+
+        eng.ProcessBuildDone = false
+        IssueClearCommands({eng})
+        local commandDone = false
+        local PlatoonPos
+        while not eng.Dead and not commandDone and table.getn(eng.EngineerBuildQueue) > 0  do
+            local whatToBuild = eng.EngineerBuildQueue[1][1]
+            local buildLocation = {eng.EngineerBuildQueue[1][2][1], 0, eng.EngineerBuildQueue[1][2][2]}
+            if GetTerrainHeight(buildLocation[1], buildLocation[3]) > GetSurfaceHeight(buildLocation[1], buildLocation[3]) then
+                --land
+                buildLocation[2] = GetTerrainHeight(buildLocation[1], buildLocation[3])
+            else
+                --water
+                buildLocation[2] = GetSurfaceHeight(buildLocation[1], buildLocation[3])
+            end
+            local buildRelative = eng.EngineerBuildQueue[1][3]
+            if not eng.NotBuildingThread then
+                eng.NotBuildingThread = eng:ForkThread(eng.PlatoonHandle.WatchForNotBuilding)
+            end
+            -- see if we can move there first
+            if AIUtils.EngineerMoveWithSafePath(aiBrain, eng, buildLocation) then
+                if not eng or eng.Dead or not eng.PlatoonHandle or not aiBrain:PlatoonExists(eng.PlatoonHandle) then
+                    return
+                end
+                -- issue buildcommand to block other engineers from caping mex/hydros or to reserve the buildplace
+                aiBrain:BuildStructure(eng, whatToBuild, {buildLocation[1], buildLocation[3], 0}, buildRelative)
+                -- wait until we are close to the buildplace so we have intel
+                while not eng.Dead do
+                    PlatoonPos = eng:GetPosition()
+                    if VDist2(PlatoonPos[1] or 0, PlatoonPos[3] or 0, buildLocation[1] or 0, buildLocation[3] or 0) < 12 then
+                        break
+                    end
+                    coroutine.yield(1)
+                end
+                if not eng or eng.Dead or not eng.PlatoonHandle or not aiBrain:PlatoonExists(eng.PlatoonHandle) then
+                    if eng then eng.ProcessBuild = nil end
+                    return
+                end
+                -- cancel all commands, also the buildcommand for blocking mex to check for reclaim or capture
+                eng.PlatoonHandle:Stop()
+                -- check to see if we need to reclaim or capture...
+                TAutils.SCTAEngineerTryReclaimCaptureArea(aiBrain, eng, buildLocation)
+                -- check to see if we can repair
+                AIUtils.EngineerTryRepair(aiBrain, eng, whatToBuild, buildLocation)
+                -- otherwise, go ahead and build the next structure there
+                aiBrain:BuildStructure(eng, whatToBuild, {buildLocation[1], buildLocation[3], 0}, buildRelative)
+                if not eng.NotBuildingThread then
+                    eng.NotBuildingThread = eng:ForkThread(eng.PlatoonHandle.WatchForNotBuilding)
+                end
+                commandDone = true
+            else
+                -- we can't move there, so remove it from our build queue
+                table.remove(eng.EngineerBuildQueue, 1)
+            end
+        end
+
+        -- final check for if we should disband
+        if not eng or eng.Dead or table.getn(eng.EngineerBuildQueue) <= 0 then
+            if eng.PlatoonHandle and aiBrain:PlatoonExists(eng.PlatoonHandle) and not eng.PlatoonHandle.UsingTransport then
+                eng.PlatoonHandle:PlatoonDisband()
+            end
+        end
+        if eng then eng.ProcessBuild = nil end
+    end,
+
 
     IdleEngineerSCTA = function(self)
         -- stop the platoon from endless assisting

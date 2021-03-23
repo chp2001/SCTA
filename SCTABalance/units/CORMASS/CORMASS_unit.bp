@@ -80,7 +80,6 @@ UnitBlueprint {
         SizeZ = 1,
     },
     General = {
-	---BuildAngle = 2048,
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,

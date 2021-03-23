@@ -79,7 +79,6 @@ UnitBlueprint {
 	MaxSlope = 0.625,
     },
     General = {
-	---BuildAngle = 8192,
         Category = 'Intelligence',
         Classification = 'RULEUC_Sensor',
         SelectionPriority = 5,

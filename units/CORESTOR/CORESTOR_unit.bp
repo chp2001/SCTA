@@ -68,7 +68,6 @@ UnitBlueprint {
 	MaxSlope = 0.625,
     },
     General = {
-	---BuildAngle = 8196,
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,

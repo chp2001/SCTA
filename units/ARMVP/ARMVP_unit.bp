@@ -96,7 +96,6 @@ UnitBlueprint {
         BuildBones = {
             BuildEffectBones = {'spray1','spray2', 'spray3', 'spray4', },
         },            
-	---BuildAngle = 1024,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

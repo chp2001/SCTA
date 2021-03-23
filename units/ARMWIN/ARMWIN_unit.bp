@@ -64,7 +64,6 @@ UnitBlueprint {
         ProductionPerSecondEnergyMax = 40,
     },
     General = {
-	---BuildAngle = 8192,
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,

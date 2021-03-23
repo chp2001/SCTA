@@ -94,7 +94,6 @@ UnitBlueprint {
         BuildBones = {
             BuildEffectBones = {'beam1', 'beam2'},
         },             
-	---BuildAngle = 0,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

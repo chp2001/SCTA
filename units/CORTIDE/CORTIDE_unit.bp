@@ -70,7 +70,6 @@ UnitBlueprint {
 	MinWaterDepth = 1.25,
     },
     General = {
-	---BuildAngle = 4096,
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,

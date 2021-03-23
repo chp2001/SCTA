@@ -79,8 +79,7 @@ UnitBlueprint {
         SizeZ = 5,
 	MaxSlope = 0.625,
     },
-    General = {
-	---BuildAngle = 2048,
+    General = {	
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,

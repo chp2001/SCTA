@@ -68,8 +68,7 @@ UnitBlueprint {
         SizeX = 3,
         SizeZ = 3,
     },
-    General = {
-	---BuildAngle = 2048,
+    General = {	
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,

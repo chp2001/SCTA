@@ -63,8 +63,7 @@ UnitBlueprint {
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/CORSY/CORSY_lod0Action.sca',
         AnimationUnpackRate = 2, 
-	BuildAttachBone = 'BuildBone',
-	--TextureAnimationFrames = 6,
+	    BuildAttachBone = 'BuildBone',	
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

@@ -55,7 +55,7 @@ Platoon = Class(SCTAAIPlatoon) {
 
         -- if we have nothing to build, disband!
         if not cons.BuildStructures then
-            local pos = self:GetPlatoonPosition()
+            --[[local pos = self:GetPlatoonPosition()
             local gtime = GetGameTimeSeconds()
         if gtime < 600 then
             local ents = TAutils.TAAIGetReclaimablesAroundLocation(aiBrain, locationType) or {}
@@ -64,11 +64,10 @@ Platoon = Class(SCTAAIPlatoon) {
                 coroutine.yield(1)
                 return self:IdleEngineerSCTA()
             end
-            else
+            else]]
         coroutine.yield(1)
         self:PlatoonDisband()
         return
-            end
         end
         if cons.NearUnitCategory then
             self:SetPrioritizedTargetList('support', {ParseEntityCategory(cons.NearUnitCategory)})
@@ -334,7 +333,7 @@ Platoon = Class(SCTAAIPlatoon) {
 
         -- if we have nothing to build, disband!
         if not cons.BuildStructures then
-            local pos = self:GetPlatoonPosition()
+            --[[local pos = self:GetPlatoonPosition()
             local gtime = GetGameTimeSeconds()
         if gtime < 600 then
             local ents = TAutils.TAAIGetReclaimablesAroundLocation(aiBrain, locationType) or {}
@@ -343,11 +342,10 @@ Platoon = Class(SCTAAIPlatoon) {
                 coroutine.yield(1)
                 return self:IdleEngineerSCTA()
             end
-            else
+            else]]
         coroutine.yield(1)
         self:PlatoonDisband()
         return
-            end
         end
         if cons.NearUnitCategory then
             self:SetPrioritizedTargetList('support', {ParseEntityCategory(cons.NearUnitCategory)})
@@ -612,7 +610,7 @@ Platoon = Class(SCTAAIPlatoon) {
 
         -- if we have nothing to build, disband!
         if not cons.BuildStructures then
-            local pos = self:GetPlatoonPosition()
+            --[[local pos = self:GetPlatoonPosition()
             local gtime = GetGameTimeSeconds()
         if gtime < 600 then
             local ents = TAutils.TAAIGetReclaimablesAroundLocation(aiBrain, locationType) or {}
@@ -621,11 +619,10 @@ Platoon = Class(SCTAAIPlatoon) {
                 coroutine.yield(1)
                 return self:IdleEngineerSCTA()
             end
-            else
+            else]]
         coroutine.yield(1)
         self:PlatoonDisband()
         return
-            end
         end
         if cons.NearUnitCategory then
             self:SetPrioritizedTargetList('support', {ParseEntityCategory(cons.NearUnitCategory)})
@@ -1304,7 +1301,7 @@ Platoon = Class(SCTAAIPlatoon) {
     end,
 
 
-    IdleEngineerSCTA = function(self)
+    --[[IdleEngineerSCTA = function(self)
         -- stop the platoon from endless assisting
         local brain = self:GetBrain()
         local locationType = self.PlatoonData.LocationType
@@ -1352,7 +1349,7 @@ Platoon = Class(SCTAAIPlatoon) {
             end
             return self:SCTAEngineerTypeAI()
         end
-    end,
+    end,]]
 
     UnitUpgradeAI = function(self)
         local aiBrain = self:GetBrain()

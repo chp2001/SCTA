@@ -75,9 +75,29 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'SCTA Assist Production',
+        BuilderName = 'SCTA Assist Production Field',
         PlatoonTemplate = 'EngineerBuilderSCTAAssist',
         Priority = 25,
+        InstanceCount = 30,
+        BuilderConditions = {
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.FACTORY }},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                AssistRange = 120,
+                BeingBuiltCategories = {'FACTORY'},                                        
+                AssistUntilFinished = true,
+            },
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Assist Production Idle',
+        PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
+        Priority = 50,
         InstanceCount = 30,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.FACTORY }},

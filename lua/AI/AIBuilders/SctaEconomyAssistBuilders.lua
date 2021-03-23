@@ -131,6 +131,23 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
+        BuilderName = 'SCTA Engineer Reclaim Idle',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonAIPlan = 'SCTAReclaimAI',
+        Priority = 20,
+        InstanceCount = 30,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', { 120 } },
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
+            { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},     
+        },
+        BuilderData = {
+            LocationType = 'LocationType',
+            ReclaimTime = 30,
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
         BuilderName = 'SCTA Engineer Reclaim Excess Early',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         PlatoonAIPlan = 'SCTAReclaimAI',

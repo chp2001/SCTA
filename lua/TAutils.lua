@@ -320,8 +320,15 @@ function SCTAEngineerTryReclaimCaptureArea(aiBrain, eng, pos)
             if not IsEnemy( aiBrain:GetArmyIndex(), unit:GetAIBrain():GetArmyIndex() ) then
                 continue
             end
-            unit.ReclaimInProgress = true
-            IssueReclaim({eng}, unit)
+            if (EntityCategoryContains(categories.MASSEXTRACTION * categories.TECH1, unit) and EntityCategoryContains(categories.COMMAND, eng)) and unit:IsCapturable() then 
+                -- reclaim if its a T1 mex and the engineer is a commander
+                unit.CaptureInProgress = true
+                IssueCapture({eng}, unit)
+            else
+                -- else reclaim
+                unit.ReclaimInProgress = true
+                IssueReclaim({eng}, unit)
+            end
             Reclaiming = true
         end
     end

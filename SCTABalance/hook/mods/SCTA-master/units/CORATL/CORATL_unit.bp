@@ -17,7 +17,6 @@ UnitBlueprint {
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',
         'CORE',
-
         'SNIPEMODE',
     },
     Display = {
@@ -29,6 +28,11 @@ UnitBlueprint {
     Defense = {
         Health = 2500,
         MaxHealth = 2500,
+    },
+    Intel = {
+        SonarRadius = 40,
+        VisionRadius = 14,
+        WaterVisionRadius = 15,
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,

@@ -27,6 +27,11 @@ UnitBlueprint {
     Economy = {
         BuildTime = 20000,
     },
+    Intel = {
+        SonarRadius = 40,
+        VisionRadius = 14,
+        WaterVisionRadius = 15,
+    },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,
     SelectionThickness = 0.5,

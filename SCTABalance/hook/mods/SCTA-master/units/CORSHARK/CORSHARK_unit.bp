@@ -4,4 +4,8 @@ UnitBlueprint {
         Health = 1500,
         MaxHealth = 1500,
     },
+    Intel = {
+        SonarRadius = 55,
+        VisionRadius = 15,
+    },
 }

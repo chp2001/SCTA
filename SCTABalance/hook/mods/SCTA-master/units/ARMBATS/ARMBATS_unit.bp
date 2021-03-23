@@ -32,9 +32,6 @@ UnitBlueprint {
         MaxAcceleration = 3,
         MaxSpeed = 4,
     },
-    Intel = {
-        VisionRadius = 12, 
-    },
     LifeBarHeight = 0.25,
     LifeBarSize = 6,
     SelectionSizeX = 5,

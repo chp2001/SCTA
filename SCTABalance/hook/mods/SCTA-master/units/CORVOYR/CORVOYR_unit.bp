@@ -30,6 +30,8 @@ UnitBlueprint {
         BuildCostEnergy = 220,
         BuildCostMass = 22,
         BuildTime = 800,
+        ProductionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 0,
     },
     StrategicIconName = 'icon_bot1_intel',
     Intel = {

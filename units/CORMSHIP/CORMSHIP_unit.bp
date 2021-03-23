@@ -104,7 +104,7 @@ TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Hydra',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 16,
         WaterVisionRadius = 4, 
 	    RadarRadius = 80,
     },

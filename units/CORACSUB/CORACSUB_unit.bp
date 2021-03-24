@@ -55,7 +55,6 @@ UnitBlueprint {
         'SUBMERSIBLE',
         'T2SUBMARINE',
         'OVERLAYSONAR',
-        'SELECTION',
         },
     Defense = {
         ArmorType = 'Sub',

@@ -53,12 +53,12 @@ UnitBlueprint {
         'SUBMERSIBLE',
     },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Sub',
         Health = 460,
         MaxHealth = 460,
         SurfaceThreatLevel = 9,
     },
-    Description = 'Mobile Radar Jammer',
+    Description = 'Submersible Mobile Radar Jammer',
     Display = {
         Abilities = {
             '<LOC ability_stealthfield>Stealth Field',
@@ -70,6 +70,13 @@ UnitBlueprint {
                     LODCutoff = 230,
                     ShaderName = 'AeonCZAR', 
                 },
+            },
+        },
+        MovementEffects = {
+            TAMovement = {
+            Emitter = '/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
+            Scale = 0.25,
+            Bones = {'prop'},
             },
         },
         UniformScale = 0.16,
@@ -103,6 +110,7 @@ UnitBlueprint {
     SonarRadius = 60,
     VisionRadius = 16,
     WaterVisionRadius = 12,
+    RadarStealth = true,
     RadarStealthField = true,
 	RadarStealthFieldRadius = 40,
     SonarStealthField = true,

@@ -61,7 +61,7 @@ UnitBlueprint {
         SubThreatLevel = 0,
         SurfaceThreatLevel = 9,
     },
-    Description = 'Mobile Radar Jammer',
+    Description = 'Mobile Radar Naval Jammer',
     Display = {
         Abilities = {
             '<LOC ability_stealthfield>Stealth Field',
@@ -73,6 +73,13 @@ UnitBlueprint {
                     LODCutoff = 230,
                     ShaderName = 'Unit', 
                 },
+            },
+        },
+        MovementEffects = {
+            TAMovement = {
+            Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
+            Scale = 0.25,
+            Bones = {'wake1'},
             },
         },
         UniformScale = 0.16,
@@ -114,6 +121,7 @@ UnitBlueprint {
             SonarRadius = 40,
             VisionRadius = 15,
             WaterVisionRadius = 15,
+            RadarStealth = true,
             RadarStealthFieldRadius = 25,
             SonarStealthField = true,
             SonarStealthFieldRadius = 25,

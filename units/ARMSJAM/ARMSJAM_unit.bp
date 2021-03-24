@@ -75,6 +75,13 @@ UnitBlueprint {
                 },
             },
         },
+        MovementEffects = {
+            TAMovement = {
+            Emitter = '/mods/SCTA-master/effects/emitters/wake_emit.bp',
+            Scale = 0.25,
+            Bones = {'wake1', 'wake2'},
+            },
+        },
         UniformScale = 0.16,
     },
     Economy = {
@@ -118,6 +125,7 @@ UnitBlueprint {
     SonarRadius = 40,
     VisionRadius = 15,
     WaterVisionRadius = 15,
+    RadarStealth = true,
 	RadarStealthFieldRadius = 25,
     SonarStealthField = true,
 	SonarStealthFieldRadius = 25,

@@ -7,7 +7,7 @@ UnitBlueprint {
     Merge = true, 
     Economy = {
         ProductionPerSecondEnergy = 0,
-        TAConsumptionPerSecondEnergy = 60,
+        TAConsumptionPerSecondEnergy = 120,
         MaintenanceConsumptionPerSecondEnergy = 20,
     },
     SelectionSizeX = 1.25,

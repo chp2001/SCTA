@@ -82,6 +82,13 @@ UnitBlueprint {
                 },
             },
         },
+        MovementEffects = {
+            TAMovement = {
+            Emitter = '/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
+            Scale = 0.25,
+            Bones = {'Wake_01', 'Wake_02'},
+            },
+        },
         UniformScale = 0.12,
     },
     Economy = {

@@ -21,7 +21,6 @@ UnitBlueprint {
         BuildCostEnergy = 12000,
         BuildCostMass = 800,
         BuildTime = 6000,
-        TAIntel = true,
         ProductionPerSecondEnergy = 0,
         MaintenanceConsumptionPerSecondEnergy = 50,
     },
@@ -40,6 +39,7 @@ UnitBlueprint {
     Intel = {
         CloakField = true,
         Cloak = true,
+        TAIntel = true,
         CloakFieldRadius = 15,
         RadarStealthFieldRadius = 15,
     },

@@ -18,7 +18,7 @@ TAunit = Class(Unit)
         ---self:LOGDBG('TAUnit.OnCreate')
         Unit.OnCreate(self)
 		local aiBrain = self:GetAIBrain()
-		self.TAIntel = self:GetBlueprint().Intel.TAIntel or nil
+		self.SpecIntel = self:GetBlueprint().Intel.TAIntel or nil
 		if aiBrain.SCTAAI then
 			self:SetFireState(FireState.RETURN_FIRE)
 			else
@@ -38,7 +38,7 @@ TAunit = Class(Unit)
 
 	OnIntelDisabled = function(self)
 		Unit.OnIntelDisabled()
-		if self.TAIntel then
+		if self.SpecIntel then
 			if (not self:IsIntelEnabled('Jammer') or not self:IsIntelEnabled('RadarStealth')) then
 				self.TAIntelOn = nil	
 			elseif not self:IsIntelEnabled('Cloak') then
@@ -51,14 +51,14 @@ TAunit = Class(Unit)
 
 	OnIntelEnabled = function(self)
 		Unit.OnIntelEnabled()
-		if not IsDestroyed(self) and self.TAIntel then
+		if not IsDestroyed(self) and self.SpecIntel then
 				self.MainCost = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
 			if self:IsIntelEnabled('Cloak') then
 					self.CloakOn = true
 					self:PlayUnitSound('Cloak')
 					self:SetMesh(self:GetBlueprint().Display.CloakMeshBlueprint, true)
 					ForkThread(self.CloakDetection, self)
-			elseif (self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth') and not self.CloakOn) then
+			elseif (self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth')) and not self.CloakOn then
 					self.TAIntelOn = true
 					ForkThread(self.TAIntelMotion, self)
 			end
@@ -110,7 +110,7 @@ TAunit = Class(Unit)
 
 
 	OnScriptBitSet = function(self, bit)
-		if self.TAIntel and (bit == 2 or bit == 5) then
+		if self.SpecIntel and (bit == 2 or bit == 5) then
 			--self:SetMaintenanceConsumptionActive()
 			--self:DisableUnitIntel('ToggleBit2', 'Jammer')
 			--self:DisableUnitIntel('ToggleBit5', 'RadarStealth')
@@ -118,7 +118,7 @@ TAunit = Class(Unit)
 			if self.TAIntelThread then KillThread(self.TAIntelThread) end
 			self.TAIntelThread = self:ForkThread(self.TAIntelMotion)	
 		end
-		if bit == 8 and self.TAIntel then
+		if bit == 8 and self.SpecIntel then
 			--self:DisableUnitIntel('ToggleBit8', 'Cloak')
 			if self.CloakThread then KillThread(self.CloakThread) end
 			self.CloakThread = self:ForkThread(self.CloakDetection)	
@@ -127,14 +127,14 @@ TAunit = Class(Unit)
 	end,
 
 	OnScriptBitClear = function(self, bit)
-		if self.TAIntel and (bit == 2 or bit == 5) then
+		if self.SpecIntel and (bit == 2 or bit == 5) then
 			--self:SetMaintenanceConsumptionInactive()
 			if self.TAIntelThread then
 				KillThread(self.TAIntelThread)
 				self.TAIntelOn = nil
 			end
 		end
-		if bit == 8 and self.TAIntel then
+		if bit == 8 and self.SpecIntel then
 			if self.CloakThread then
 				KillThread(self.CloakThread)
 				self.CloakOn = nil

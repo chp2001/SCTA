@@ -10,7 +10,6 @@ UnitBlueprint {
         MaxHealth = 2000,
     },
     Economy = {
-        TAConsumptionPerSecondEnergy = 30,
         MaintenanceConsumptionPerSecondEnergy = 10,
     },
     Display = {

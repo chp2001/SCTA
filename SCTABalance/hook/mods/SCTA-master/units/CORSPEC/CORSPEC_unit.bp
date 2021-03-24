@@ -37,7 +37,6 @@ UnitBlueprint {
         BuildCostMass = 400,
         BuildTime = 3000,
         ProductionPerSecondEnergy = 0,
-        TAConsumptionPerSecondEnergy = 300,
         MaintenanceConsumptionPerSecondEnergy = 50,
     },
     General = {
@@ -53,6 +52,7 @@ UnitBlueprint {
             },
         },
         Intel = {
+            RadarStealth = true,
             RadarStealthField = true,
             VisionRadius = 20,
             RadarRadius = 100, 

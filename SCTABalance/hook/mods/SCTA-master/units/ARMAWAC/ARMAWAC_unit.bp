@@ -16,7 +16,6 @@ UnitBlueprint {
         BuildCostMass = 220,
         BuildTime = 5600,
         ProductionPerSecondEnergy = 0,
-        TAConsumptionPerSecondEnergy = 50,
         MaintenanceConsumptionPerSecondEnergy = 25,
     },
     General = {

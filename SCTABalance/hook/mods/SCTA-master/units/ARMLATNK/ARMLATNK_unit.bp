@@ -26,7 +26,6 @@ UnitBlueprint {
     MaxHealth = 12000,
     },
     Economy = {
-        TAConsumptionPerSecondEnergy = 60,
         MaintenanceConsumptionPerSecondEnergy = 15,
         BuildCostEnergy = 24000,
         BuildCostMass = 1200,

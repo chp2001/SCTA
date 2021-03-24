@@ -111,7 +111,8 @@ UnitBlueprint {
         TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Eraser',
     },
-    Intel = {
+    Intel = {   
+    RadarStealth = true,
     RadarStealthField = true,
     VisionRadius = 12,
 	RadarStealthFieldRadius = 30,

@@ -110,6 +110,7 @@ UnitBlueprint {
         UnitWeight = 1,
     },
     Intel = {
+    RadarStealth = true,
     RadarStealthField = true,
     VisionRadius = 12,
 	RadarStealthFieldRadius = 20,

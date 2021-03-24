@@ -115,7 +115,6 @@ UnitBlueprint {
             'BUILTBYCOMMANDER ARM',
         },
         MaintenanceConsumptionPerSecondEnergy = 100,
-        TAConsumptionPerSecondEnergy = 500,
     },
     Footprint = {
         SizeX = 2,

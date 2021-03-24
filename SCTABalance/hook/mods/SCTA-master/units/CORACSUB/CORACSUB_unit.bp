@@ -1,24 +1,5 @@
 UnitBlueprint {
     Merge = true,
-    Categories = {
-    'SELECTABLE',
-    'TECH2',
-    'CORE',
-    'ENGINEER',
-    'REPAIR',
-    'RECLAIM',
-    'VISIBLETORECON',
-    'RECLAIMABLE',
-    'PATROLHELPER',
-    'SHOWQUEUE',
-    'MOBILE',
-    'SELECTION',
-    'CONSTRUCTION',
-    'NAVAL',
-    'SUBMERSIBLE',
-    'T2SUBMARINE',
-    'OVERLAYSONAR',
-    },
     Display = {
         Abilities = {
               '<LOC ability_engineeringsuite>Engineering Suite',
@@ -29,18 +10,17 @@ UnitBlueprint {
         MaxHealth = 940,
         },
         Display = {
-            UniformScale = 0.08,
+            UniformScale = 0.12,
         },
     Economy = {
         BuildCostEnergy = 1800,
         BuildCostMass = 400,
-        BuildRate = 250,
+        BuildRate = 300,
         BuildableCategory = {
             'BUILTBYTIER2COMMANDER CORE',
             'TECH1 FACTORY CORE',
             'BUILTBYTIER3COMMANDER CORE',
         },
-        Necro = true,
         BuildTime = 5000,
         MaxBuildDistance = 9,
         ProductionPerSecondEnergy = 4,

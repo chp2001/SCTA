@@ -129,7 +129,7 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
-    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
+    	'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
 	},
 	FxPropHitScale = 2,
 	FxImpactLand = {
@@ -376,7 +376,6 @@ TAUnderWaterProjectile = Class(OnWaterEntryEmitterProjectile) {
 
 	FxImpactUnderWater = {
     		'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
     		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
     		'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
 	},

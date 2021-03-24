@@ -135,7 +135,6 @@ UnitBlueprint {
         NaturalProducer = true,
         ProductionPerSecondEnergy = 25,
         ProductionPerSecondMass = 1,
-        TAConsumptionPerSecondEnergy = 1000,
 	    MaintenanceConsumptionPerSecondEnergy = 200,
         StorageEnergy = 1000,
         StorageMass = 1000,

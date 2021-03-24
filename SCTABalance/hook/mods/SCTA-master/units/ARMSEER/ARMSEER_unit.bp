@@ -30,7 +30,6 @@ UnitBlueprint {
     },
     Economy = {
         ProductionPerSecondEnergy = 0,
-        TAConsumptionPerSecondEnergy = 60,
         MaintenanceConsumptionPerSecondEnergy = 15,
     },
     General = {
@@ -50,6 +49,7 @@ UnitBlueprint {
                 Omni = true,
                 Radar = true,
             },
+            RadarStealth = true,
             RadarStealthField = true,
             VisionRadius = 14,
             OmniRadius = 60,

@@ -29,8 +29,6 @@ TASea = Class(TAunit)
 		end
 		end
 	end,
-
-
 }
 
 TAWalking = Class(TAunit) 
@@ -71,6 +69,21 @@ TACounter = Class(TAWalking)
 		TAWalking.OnStopBeingBuilt(self,builder,layer)
 		local bp = self:GetBlueprint()
 		if bp.Intel.RadarStealthField or bp.Intel.RadarRadius then
+			self:SetMaintenanceConsumptionActive()
+		end
+        self:SetScriptBit('RULEUTC_StealthToggle', false)
+		self:SetScriptBit('RULEUTC_JammingToggle', true)
+		self:SetScriptBit('RULEUTC_CloakToggle', true)
+		self:RequestRefreshUI()
+	end,
+}
+
+TASeaCounter = Class(TASea) 
+{ 
+	OnStopBeingBuilt = function(self,builder,layer)
+		TASea.OnStopBeingBuilt(self,builder,layer)
+		local bp = self:GetBlueprint()
+		if bp.Intel.SonarStealthField or bp.Intel.RadarRadius then
 			self:SetMaintenanceConsumptionActive()
 		end
         self:SetScriptBit('RULEUTC_StealthToggle', false)

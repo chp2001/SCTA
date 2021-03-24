@@ -23,7 +23,6 @@ UnitBlueprint {
         BuildCostEnergy = 21000,
         BuildCostMass = 2000,
         BuildTime = 24000,
-        TAConsumptionPerSecondEnergy = 300,
         MaintenanceConsumptionPerSecondEnergy = 75,
     },
     Intel = {

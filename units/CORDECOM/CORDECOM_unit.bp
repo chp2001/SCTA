@@ -120,7 +120,6 @@ UnitBlueprint {
             'BUILTBYCOMMANDER CORE',
         },
         MaintenanceConsumptionPerSecondEnergy = 100,
-        TAConsumptionPerSecondEnergy = 500,
     },
     Footprint = {
         SizeX = 2,

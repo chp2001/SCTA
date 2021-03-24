@@ -137,7 +137,6 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 25,
         ProductionPerSecondMass = 1,
         MaintenanceConsumptionPerSecondEnergy = 200,
-        TAConsumptionPerSecondEnergy = 1000,
         StorageEnergy = 1000,
         StorageMass = 1000,
     },

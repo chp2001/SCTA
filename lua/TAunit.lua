@@ -49,6 +49,7 @@ TAunit = Class(Unit)
 	OnIntelEnabled = function(self)
 		Unit.OnIntelEnabled()
 		if not IsDestroyed(self) then
+			self.MainCost = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
 			if EntityCategoryContains(categories.COUNTERINTELLIGENCE, self) and (self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth')) then
 				self.TAIntelOn = true
 				ForkThread(self.TAIntelMotion, self)
@@ -65,9 +66,9 @@ TAunit = Class(Unit)
 		while not self.Dead do
             coroutine.yield(11)
             if self.TAIntelOn and (self:IsUnitState('Moving') or self:IsUnitState('Patrolling'))  then
-                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.TAConsumptionPerSecondEnergy)
+                self:SetConsumptionPerSecondEnergy(self.MainCost * 2)
 			elseif self.TAIntelOn then
-                self:SetConsumptionPerSecondEnergy(self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy)
+                self:SetConsumptionPerSecondEnergy(self.MainCost)
             end
 		end
     end,
@@ -81,9 +82,9 @@ TAunit = Class(Unit)
 			coroutine.yield(11)
 			local bp = self:GetBlueprint()
 			if self.CloakOn and (self:IsUnitState('Moving') or self:IsUnitState('Patrolling')) then
-                self:SetConsumptionPerSecondEnergy(bp.Economy.TAConsumptionPerSecondEnergy)
+                self:SetConsumptionPerSecondEnergy(self.MainCost * 3)
 			elseif self.CloakOn then
-                self:SetConsumptionPerSecondEnergy(bp.Economy.MaintenanceConsumptionPerSecondEnergy)
+                self:SetConsumptionPerSecondEnergy(self.MainCost)
 			local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
 			if self.CloakOn and self:IsUnitState('Building') then
 				self:DisableIntel('Cloak')

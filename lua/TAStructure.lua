@@ -20,6 +20,55 @@ TAStructure = Class(TAunit)
         TAunit.DoTakeDamage(self, instigator, amount, vector, damageType)
     end,
 
+	RotateTowardsEnemy = function(self)
+        local bp = self:GetBlueprint()
+        local brain = self:GetAIBrain()
+        local pos = self:GetPosition()
+        local x, y = GetMapSize()
+        local threats = {{pos = {x / 2, 0, y / 2}, dist = VDist2(pos[1], pos[3], x, y), threat = -1}}
+        local cats = EntityCategoryContains(categories.ANTIAIR, self) and categories.AIR or (categories.STRUCTURE + categories.LAND + categories.NAVAL)
+        local units = brain:GetUnitsAroundPoint(cats, pos, 2 * (bp.AI.GuardScanRadius or 100), 'Enemy')
+        for _, u in units do
+            local blip = u:GetBlip(self.Army)
+            if blip then
+                local on_radar = blip:IsOnRadar(self.Army)
+                local seen = blip:IsSeenEver(self.Army)
+
+                if on_radar or seen then
+                    local epos = u:GetPosition()
+                    local threat = seen and (u:GetBlueprint().Defense.SurfaceThreatLevel or 0) or 1
+
+                    table.insert(threats, {pos = epos, threat = threat, dist = VDist2(pos[1], pos[3], epos[1], epos[3])})
+                end
+            end
+        end
+
+        table.sort(threats, function(a, b)
+            if a.threat <= 0 and b.threat <= 0 then
+                return a.threat == b.threat and a.dist < b.dist or a.threat > b.threat
+            elseif a.threat <= 0 then return false
+            elseif b.threat <= 0 then return true
+            else return a.dist < b.dist end
+        end)
+
+        local t = threats[1]
+        local rad = math.atan2(t.pos[1]-pos[1], t.pos[3]-pos[3])
+        local degrees = rad * (180 / math.pi)
+
+        if EntityCategoryContains(categories.ARTILLERY * (categories.TECH3 + categories.EXPERIMENTAL), self) then
+            degrees = math.floor((degrees + 45) / 90) * 90
+        end
+
+        self:SetRotation(degrees)
+    end,
+
+    OnStartBeingBuilt = function(self, builder, layer)
+		if EntityCategoryContains(categories.STRUCTURE * (categories.DIRECTFIRE + categories.INDIRECTFIRE) * (categories.DEFENSE + categories.ARTILLERY), self) then
+            self:RotateTowardsEnemy()
+        end
+        TAunit.OnStartBeingBuilt(self,builder,layer)
+	end,
+
 	OnStopBeingBuilt = function(self,builder,layer)
         TAunit.OnStopBeingBuilt(self,builder,layer)
         self:SetMaintenanceConsumptionActive()

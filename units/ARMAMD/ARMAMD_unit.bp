@@ -116,7 +116,6 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 30000,
-            DamageRadius = 10,
             DamageType = 'Normal',
             DisplayName = 'AMD_ROCKET',
             FireTargetLayerCapsTable = {

@@ -50,8 +50,7 @@ ProjectileBlueprint {
     },
 
     Physics = {
-        ---Acceleration = 5,
-        --CollideEntity = true,
+        TrackTime = 2,
         CollideSurface = true,
         DestroyOnWater = true,
         FlareRadius = 15,

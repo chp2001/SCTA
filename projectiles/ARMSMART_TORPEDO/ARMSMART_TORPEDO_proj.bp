@@ -54,6 +54,7 @@ ProjectileBlueprint {
         DestroyOnWater = false,
         InitialSpeed = 5,
         Lifetime = 7,
+        TrackTime = 3,
         MaxSpeed = 20,
         StayUnderwater = true,
         TrackTarget = true,

@@ -7,10 +7,6 @@ local TARocketProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TAR
 
 ARMAH_WEAPON = Class(TARocketProjectile) 
 {
-	OnCreate = function(self)
-		TARocketProjectile.OnCreate(self)
-		self.TrackTime = 2
-	end,
 }
 
 TypeClass = ARMAH_WEAPON

@@ -64,9 +64,9 @@ ProjectileBlueprint {
 	    InitialSpeed = 0,
         LeadTarget = false,
         Lifetime = 20,
-
+        TrackTime = 3,
         MaxSpeed = 25,
-        TrackTarget = false,
+        TrackTarget = true,
         TurnRate = 180,
         UseGravity = false,
         VelocityAlign = true,

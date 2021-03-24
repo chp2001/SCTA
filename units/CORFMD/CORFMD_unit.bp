@@ -128,7 +128,6 @@ TechLevel = 'RULEUTL_Secret',
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 30000,
-            DamageRadius = 10, 
             DamageType = 'Normal',
             DisplayName = 'FMD_ROCKET',
             FireTargetLayerCapsTable = {

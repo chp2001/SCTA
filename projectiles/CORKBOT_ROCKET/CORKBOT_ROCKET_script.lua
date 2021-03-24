@@ -13,9 +13,11 @@ CORKBOT_ROCKET = Class(TAMissileProjectile)
 	end,
 
 	MovementThread = function(self)
+		self:TrackTarget(false)
 		WaitSeconds(1)
 		self:TrackTarget(true)
 		WaitSeconds(1)
+		self:TrackTarget(false)
 	end,
 }
 

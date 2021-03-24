@@ -299,13 +299,21 @@ TAMissileProjectile = Class(TARocketProjectile) {
 }
 
 
-TAAntiNukeProjectile = Class(TAMissileProjectile) {
+TAAntiNukeProjectile = Class(SinglePolyTrailProjectile) {
 	FxImpactProjectile = {
     		'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
     		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
     		'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
 	},
 	FxProjectileHitScale = 1.5,
+
+	FxSmoke = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
+	FxSmokeScale = 1,
+
+	OnCreate = function(self)
+	SinglePolyTrailProjectile.OnCreate(self)
+	self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
+end,
 }
 
 TALaserProjectile = Class(TAProjectile) {

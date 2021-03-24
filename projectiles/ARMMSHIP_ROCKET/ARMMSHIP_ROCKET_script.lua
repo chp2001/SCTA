@@ -12,9 +12,11 @@ ARMMSHIP_ROCKET = Class(TAMissileProjectile) {
 	end,
 
 	MovementThread = function(self)
+		self:TrackTarget(false)
 		WaitSeconds(2)
 		self:TrackTarget(true)
 		WaitSeconds(2)
+		self:TrackTarget(false)
 	end,
 }
 TypeClass = ARMMSHIP_ROCKET

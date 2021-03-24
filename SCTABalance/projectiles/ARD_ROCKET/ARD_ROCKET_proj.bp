@@ -58,14 +58,14 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'AMD_ROCKET',
     },
-
+    DoNotCollideList = {
+        'AIR',
+    },
     Physics = {
         Acceleration = 30,
         DestroyOnWater = false,
         HitAssignedTarget = true,
-        InitialSpeed = 0,
         LeadTarget = true,
-        Lifetime = 100,
         MaxSpeed = 90,
         TrackTarget = true,
         TurnRate = 180,

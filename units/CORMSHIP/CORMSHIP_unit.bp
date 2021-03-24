@@ -143,7 +143,6 @@ TechLevel = 'RULEUTL_Advanced',
             DamagesFriendly = true,
             Damage = 750,
             DamageRadius = 3,
-            ProjectileLifetime = 300,
             DamageType = 'Normal',
             DisplayName = 'CORMSHIP_ROCKET',
             FireTargetLayerCapsTable = {

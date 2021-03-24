@@ -3,10 +3,10 @@
 #
 #Script created by Raevn
 
-local TANecro = import('/mods/SCTA-master/lua/TAconstructor.lua').TANecro
+local TASeaConstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TASeaConstructor
 
 
-CORACSUB = Class(TANecro) {
+CORACSUB = Class(TASeaConstructor) {
 }
 
 TypeClass = CORACSUB

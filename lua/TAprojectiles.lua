@@ -1,6 +1,7 @@
 local DefaultProjectileFile = import('/lua/sim/defaultprojectiles.lua')
 local SinglePolyTrailProjectile = DefaultProjectileFile.SinglePolyTrailProjectile
 local NukeProjectile = DefaultProjectileFile.NukeProjectile
+local OnWaterEntryEmitterProjectile = DefaultProjectileFile.OnWaterEntryEmitterProjectile
 
 TAProjectile = Class(SinglePolyTrailProjectile) {
 	PolyTrail =  '/effects/emitters/aeon_laser_trail_02_emit.bp',
@@ -281,12 +282,13 @@ TARocketProjectile = Class(TAMediumCannonProjectile) {
 
 	OnCreate = function(self)
 	TAMediumCannonProjectile.OnCreate(self)
+	self.TrackTime = self:GetBlueprint().Physics.TrackTime
 	self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
 	self:ForkThread( self.TrackingThread, self )
 end,
 
 TrackingThread = function(self)
-	WaitSeconds(self:GetBlueprint().Physics.TrackTime)
+	WaitSeconds(self.TrackTime)
 	self:TrackTarget(false)
 end,
 }
@@ -295,7 +297,15 @@ TAMissileProjectile = Class(TARocketProjectile) {
 	OnCreate = function(self)
 	TARocketProjectile.OnCreate(self)
 	self:SetCollisionShape('Sphere', 0, 0, 0, 1)
-	end,
+end,
+
+TrackingThread = function(self)
+	self:TrackTarget(false)
+	WaitSeconds(self.TrackTime/2)
+	self:TrackTarget(true)
+	WaitSeconds(self.TrackTime)
+	self:TrackTarget(false)
+end,
 }
 
 
@@ -348,30 +358,16 @@ TALaserProjectile = Class(TAProjectile) {
 TAEMGProjectile = Class(TALaserProjectile ) {
 }
 
-TAUnderWaterProjectile = Class(TAMediumCannonProjectile) {
-	OnCreate = function(self)
-		TAMediumCannonProjectile.OnCreate(self)
+TAUnderWaterProjectile = Class(OnWaterEntryEmitterProjectile) {
+	FxTrails = {
+	'/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
+	},
+    FxTrailScale = 0.1,
+	
+	OnCreate = function(self)	
+		OnWaterEntryEmitterProjectile.OnCreate(self)
 		self:SetCollisionShape('Sphere', 0, 0, 0, 1)
-		ForkThread(self.MovementThread, self)
 		end,
-
-		MovementThread = function(self)
-			self:TrackTarget(true)
-		end,
-
-		
-	OnEnterWater = function(self)
-		for k,v in self.FxImpactWater do
-			CreateEmitterAtEntity(self, self:GetArmy(), v):ScaleEmitter(self.FxWaterHitScale)
-		end
-	end,
-
-	OnExitWater = function(self)
-		for k,v in self.FxImpactWater do
-			CreateEmitterAtEntity(self, self:GetArmy(), v):ScaleEmitter(self.FxWaterHitScale)
-		end
-	end,
-
 	FxImpactLand = {
 		'/effects/emitters/destruction_water_splash_ripples_01_emit.bp',
 		'/effects/emitters/destruction_water_splash_wash_01_emit.bp',
@@ -385,8 +381,4 @@ TAUnderWaterProjectile = Class(TAMediumCannonProjectile) {
     		'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
 	},
 	FxUnderWaterHitScale = 0.35,
-	FxImpactWater = {
-		'/effects/emitters/destruction_water_splash_ripples_01_emit.bp',
-	},
-		FxWaterHitScale = 0.35,
 }

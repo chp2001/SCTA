@@ -8,7 +8,7 @@ local TAUnderWaterProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua')
 ARMSMART_TORPEDO = Class(TAUnderWaterProjectile) {
 	OnCreate = function(self)
 		TAUnderWaterProjectile.OnCreate(self)
-		self.TrackTime = 3
+		---self.TrackTime = 3
 	end,
 
 }

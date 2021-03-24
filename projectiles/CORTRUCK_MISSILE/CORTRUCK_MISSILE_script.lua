@@ -9,7 +9,7 @@ CORTRUCK_MISSILE = Class(TARocketProjectile)
 {
 	OnCreate = function(self)
 		TARocketProjectile.OnCreate(self)
-		self.TrackTime = 3
+		---self.TrackTime = 3
 	end,
 }
 

@@ -9,7 +9,7 @@ CORVTOL_MISSILE = Class(TARocketProjectile)
 {
 	OnCreate = function(self)
 		TARocketProjectile.OnCreate(self)
-		self.TrackTime = 2
+		---self.TrackTime = 2
 	end,
 }
 

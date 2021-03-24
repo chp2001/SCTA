@@ -9,7 +9,7 @@ ARMTRUCK_ROCKET = Class(TAMissileProjectile) {
 
 	OnCreate = function(self)
 		TAMissileProjectile.OnCreate(self)
-		self.TrackTime = 3
+		---self.TrackTime = 3
 		self:ForkThread( self.MovementThread )
 	end,
 

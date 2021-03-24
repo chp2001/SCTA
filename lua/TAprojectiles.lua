@@ -286,7 +286,7 @@ TARocketProjectile = Class(TAMediumCannonProjectile) {
 end,
 
 TrackingThread = function(self)
-	WaitSeconds(self.TrackTime)
+	WaitSeconds(self:GetBlueprint().Physics.TrackTime)
 	self:TrackTarget(false)
 end,
 }

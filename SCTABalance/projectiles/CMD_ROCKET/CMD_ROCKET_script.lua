@@ -14,7 +14,7 @@ CMD_ROCKET = Class(TAAntiNukeProjectile) {
 	end,
 
 	MovementThread = function(self)
-		#WaitSeconds(1.5)
+		WaitSeconds(1.5)
 		self:TrackTarget(true)
 	end,
 }

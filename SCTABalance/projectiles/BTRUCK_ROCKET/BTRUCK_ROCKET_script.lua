@@ -9,7 +9,6 @@ BTRUCK_ROCKET = Class(TAMissileProjectile) {
 	OnCreate = function(self)
 		TAMissileProjectile.OnCreate(self)
 		self:ForkThread( self.MovementThread )
-		self.TrackTime = 3
 	end,
 
 	MovementThread = function(self)

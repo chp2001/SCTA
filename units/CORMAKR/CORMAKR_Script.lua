@@ -36,25 +36,22 @@ CORMAKR = Class(TAStructure) {
 	OnProductionUnpaused = function(self)
 		#Open Animation
 		self:PlayUnitSound('Activate')	
-		ForkThread(self.Open, self)
+		TAStructure.OnProductionUnpaused(self)
+		ForkThread(self.WaterRise, self)
+		self.Spinners.plug:SetGoal(0)
+		self.Spinners.plug:SetSpeed(60)
 	end,
 
 	OnProductionPaused = function(self)
 		#Close Animation		
-		TAStructure.OnProductionPaused(self)
 		self:PlayUnitSound('Deactivate')
-		ForkThread(self.Close, self)
+		TAStructure.OnProductionPaused(self)
+		--TURN plug to z-axis <0> SPEED <50.01>
+		ForkThread(self.WaterFall, self)
+		self.Spinners.plug:SetGoal(180)
+		self.Spinners.plug:SetSpeed(60)
 	end,
 
-	Open = function(self)
-		--TURN plug to z-axis <180> SPEED <50.01> 
-		ForkThread(self.WaterRise, self)
-		self.Spinners.plug:SetGoal(0)
-		self.Spinners.plug:SetSpeed(50)
-		WaitFor(self.Spinners.plug)
-
-		TAStructure.OnProductionUnpaused(self)
-	end,
 
 	WaterRise = function(self)
 		local bp = self:GetBlueprint()
@@ -65,14 +62,6 @@ CORMAKR = Class(TAStructure) {
 			self:SetCollisionShape( 'Box', bp.CollisionOffsetX or 0,(bp.CollisionOffsetY + (bp.SizeY*0.5)) or 0,bp.CollisionOffsetZ or 0, bp.SizeX * scale, bp.SizeY * scale, bp.SizeZ * scale )
 			self:DisableIntel('RadarStealth')
 		end
-	end,
-
-	Close = function(self)
-		--TURN plug to z-axis <0> SPEED <50.01>
-		ForkThread(self.WaterFall, self)
-		self.Spinners.plug:SetGoal(180)
-		self.Spinners.plug:SetSpeed(50)
-		WaitFor(self.Spinners.plug)
 	end,
 
 	WaterFall = function(self)

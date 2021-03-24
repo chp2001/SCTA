@@ -96,7 +96,6 @@ UnitBlueprint {
         RadarRadius = 50,
         VisionRadius = 18,
         Cloak = true,
-        TAIntel = true,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

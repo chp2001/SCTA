@@ -99,7 +99,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 18,
         Cloak = true,
-        TAIntel = true,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

@@ -193,7 +193,6 @@ UnitBlueprint {
         RadarRadius = 25,
 	    SonarRadius = 25,
 	    Cloak = true,
-        TAIntel = true,
         OmniRadius = 3,
     },
     LifeBarHeight = 0.25,

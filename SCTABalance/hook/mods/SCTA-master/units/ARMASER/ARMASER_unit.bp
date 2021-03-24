@@ -39,7 +39,6 @@ UnitBlueprint {
     Intel = {
         CloakField = true,
         Cloak = true,
-        TAIntel = true,
         CloakFieldRadius = 15,
         RadarStealthFieldRadius = 15,
     },

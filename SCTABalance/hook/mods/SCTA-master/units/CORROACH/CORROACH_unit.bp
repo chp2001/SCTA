@@ -34,7 +34,6 @@ Intel = {
     ActiveIntel = {
         RadarStealth = true,
     },
-    TAIntel = true,
     VisionRadius = 16,
     RadarStealth = true,
     Cloak = true,

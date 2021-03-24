@@ -41,6 +41,7 @@ UnitBlueprint {
         Max = 10,
         Min = 10,
     },
+    TAIntel = true,
     JammerBlips = 5,
     VisionRadius = 18,
     },

@@ -77,6 +77,7 @@ TechLevel = 'RULEUTL_Advanced',
     Intel = {
         VisionRadius = 4,
         Cloak = true,
+        TAIntel = true,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.25,

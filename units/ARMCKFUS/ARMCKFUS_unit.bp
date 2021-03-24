@@ -82,11 +82,12 @@ UnitBlueprint {
         FactionName = 'ARM',
         Icon = 'land',
         TechLevel = 'RULEUTL_Secret',
-	UnitName = 'Cloakable Fusion Reactor',
+	    UnitName = 'Cloakable Fusion Reactor',
     },
     Intel = {
         VisionRadius = 14,
 	    Cloak = true,
+        TAIntel = true,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

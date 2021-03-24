@@ -13,6 +13,7 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 15,
     },
     Intel = {
+        TAIntel = true,
         RadarStealthFieldRadius = 20,
     },
     LifeBarSize = 1.5,

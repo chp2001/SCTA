@@ -164,6 +164,7 @@ UnitBlueprint {
             Sonar = true,
             Radar = true,
         }, 
+        TAIntel = true,
         VisionRadius = 18,
         RadarRadius = 25,
         SonarRadius = 25,

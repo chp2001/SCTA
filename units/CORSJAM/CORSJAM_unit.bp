@@ -45,8 +45,7 @@ UnitBlueprint {
         'MOBILE',
 	    'NAVAL',
         'STEALTHFIELD',
-        'INTELLIGENCE',
-        'COUNTERINTELLIGENCE',
+        'INTELLIGENCE',        
         'OVERLAYCOUNTERINTEL',
         'DEFENSIVEBOAT',
         'CORE',
@@ -118,6 +117,7 @@ UnitBlueprint {
     },
     Intel = {
             RadarStealthField = true,
+            TAIntel = true,
             SonarRadius = 40,
             VisionRadius = 15,
             WaterVisionRadius = 15,

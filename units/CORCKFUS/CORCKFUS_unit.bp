@@ -86,6 +86,7 @@ TechLevel = 'RULEUTL_Secret',
     Intel = {
         VisionRadius = 14,
 	    Cloak = true,
+        TAIntel = true,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

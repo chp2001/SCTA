@@ -46,8 +46,7 @@ UnitBlueprint {
         'MOBILE',
 	    'LAND',
 	    'INTELLIGENCE',
-        'OVERLAYCOUNTERINTEL',
-        'COUNTERINTELLIGENCE',
+        'OVERLAYCOUNTERINTEL',        
         'ARM',
         'TANK',
     },
@@ -112,6 +111,7 @@ UnitBlueprint {
     Intel = {
     RadarStealth = true,
     RadarStealthField = true,
+    TAIntel = true,
     VisionRadius = 12,
 	RadarStealthFieldRadius = 20,
     },

@@ -148,7 +148,6 @@ UnitBlueprint {
     VisionRadius = 32,
     WaterVisionRadius = 4, 
 	RadarStealth = true,
-    TAIntel = true,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

@@ -12,7 +12,6 @@ UnitBlueprint {
         'SORTECONOMY',
 	    'ENERGYPRODUCTION',
 	    'CORE',
-        'STEALTH',
     }, 
     Defense = {
         Health = 8000,

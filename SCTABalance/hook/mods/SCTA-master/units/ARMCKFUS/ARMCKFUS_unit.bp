@@ -12,7 +12,6 @@ UnitBlueprint {
         'SORTECONOMY',
 	    'ENERGYPRODUCTION',
 	    'ARM',
-        'STEALTH',
     },
     Defense = {
         Health = 7000,
@@ -34,7 +33,6 @@ UnitBlueprint {
     ActiveIntel = {
         RadarStealth = true,
     },
-    TAIntel = true,
     RadarStealth = true,
     },
     LifeBarSize = 6,

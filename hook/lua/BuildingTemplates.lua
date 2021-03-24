@@ -175,7 +175,7 @@ BuildingTemplates[6] = {
             },
             {
                 'T2ShieldDefense',
-                'armaser',
+                'armscram',
             },
             -- Artillery Structures
             {

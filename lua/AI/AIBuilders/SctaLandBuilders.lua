@@ -191,7 +191,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi T2 Experimental',
         PlatoonTemplate = 'SCTAExperimental',
-        Priority = 210,
+        Priority = 50,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.EXPERIMENTAL * categories.MOBILE} },
         },

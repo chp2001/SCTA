@@ -16,6 +16,7 @@ UnitBlueprint {
         'CORE',
         'SCOUT',
         'STEALTH',
+        'OVERLAYOMNI',
     },
     Display = {
         UniformScale = 0.1,
@@ -23,7 +24,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 1500,
         BuildTime = 3000,
-        MaintenanceConsumptionPerSecondEnergy = 15,
+        MaintenanceConsumptionPerSecondEnergy = 10,
     },
     Intel = {
         ActiveIntel = {
@@ -33,8 +34,9 @@ UnitBlueprint {
             Max = 20,
             Min = 10,
           },
+          VisionRadius = 10,
           JammerBlips = 5,
-          OmniRadius = 15,
+          OmniRadius = 30,
           RadarStealth = true,
     },
     StrategicIconName = 'icon_land3_counterintel',

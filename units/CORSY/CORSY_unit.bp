@@ -61,7 +61,7 @@ UnitBlueprint {
     },
     Description = 'Produces Ships',
     Display = {
-        AnimationUnpack = '/mods/SCTA-master/units/CORSY/CORSY_lod0Action.sca',
+        AnimationUnpack = '/mods/SCTA-master/units/CORSY/CORSY_lod0_unpack.sca',
         AnimationUnpackRate = 2, 
 	    BuildAttachBone = 'BuildBone',	
         Mesh = {
@@ -70,7 +70,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 400,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },

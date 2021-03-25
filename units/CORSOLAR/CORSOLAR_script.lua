@@ -35,56 +35,6 @@ CORSOLAR = Class(TACloser) {
 		end,
 
 	},
-
-	IdleClosedState = State {
-		Main = function(self)
-			if self.closeDueToDamage then 
-				while self.DamageSeconds > 0 do
-					WaitSeconds(1)
-					self.DamageSeconds = self.DamageSeconds - 1
-				end
-
-				self.closeDueToDamage = nil
-
-				if self.productionIsActive then 
-					ChangeState(self, self.OpeningState)
-				end
-			end
-		end,
-
-	},
-
-	IdleOpenState = State {
-		Main = function(self)
-		end,
-
-		OnDamage = function(self, instigator, amount, vector, damageType)
-			TACloser.OnDamage(self, instigator, amount, vector, damageType)
-			self.DamageSeconds = 8
-			self.closeDueToDamage = true
-			ChangeState(self, self.ClosingState)
-		end,
-
-	},
-		
-	OnProductionUnpaused = function(self)
-		TACloser.OnProductionUnpaused(self)
-		self.productionIsActive = true
-		ChangeState(self, self.OpeningState)
-	end,
-
-	OnProductionPaused = function(self)
-		TACloser.OnProductionPaused(self)
-		self.productionIsActive = nil
-		ChangeState(self, self.ClosingState)
-	end,
-
-
-
-	OnDamage = function(self, instigator, amount, vector, damageType)
-		TACloser.OnDamage(self, instigator, amount, vector, damageType) 
-		self.DamageSeconds = 8
-	end,
 }
 
 TypeClass = CORSOLAR

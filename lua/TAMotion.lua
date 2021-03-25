@@ -67,19 +67,19 @@ TACounter = Class(TAWalking)
 { 
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAWalking.OnStopBeingBuilt(self,builder,layer)
-		local bp = self:GetBlueprint()
 		self.MainCost = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
 		--if bp.Intel.RadarStealthField or bp.Intel.RadarRadius then
 		self:SetMaintenanceConsumptionActive()
         self:SetScriptBit('RULEUTC_StealthToggle', false)
-		self:SetScriptBit('RULEUTC_JammingToggle', true)
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
-		if bp.Intel.TAIntel then
+		if self:GetBlueprint().Intel.TAIntel then
+			self:SetScriptBit('RULEUTC_JammingToggle', true)
 			self.SpecIntel = true
-		elseif bp.Intel.Cloak then
+		elseif self:GetBlueprint().Intel.Cloak then
 			self.TACloak = true
+			self.Mesh = self:GetBlueprint().Display.MeshBlueprint
+			self:SetScriptBit('RULEUTC_CloakToggle', true)
 		end
-			TAWalking.OnIntelEnabled(self)
+		TAWalking.OnIntelEnabled(self)
 		self:RequestRefreshUI()
 	end,
 }

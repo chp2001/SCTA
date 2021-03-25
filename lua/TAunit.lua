@@ -40,7 +40,7 @@ TAunit = Class(Unit)
 		if self.TACloak and not self:IsIntelEnabled('Cloak') then
 			self:PlayUnitSound('Uncloak')
 			self.CloakOn = nil
-			self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
+			self:SetMesh(self.Mesh, true)
 		elseif self.SpecIntel and (not self:IsIntelEnabled('Jammer') or not self:IsIntelEnabled('RadarStealth')) then
 			self.TAIntelOn = nil	
 		end
@@ -79,17 +79,16 @@ TAunit = Class(Unit)
 		local getpos = moho.entity_methods.GetPosition
 		while not self.Dead do
 			coroutine.yield(11)
-			local bp = self:GetBlueprint()
 			local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
 			if self.CloakOn and self:IsUnitState('Building') then
 				self:DisableIntel('Cloak')
 				self:DisableIntel('CloakField')
 				self:UpdateConsumptionValues()
-                self:SetMesh(bp.Display.MeshBlueprint, true)
+                self:SetMesh(self.Mesh, true)
 			elseif dudes[1] and self.CloakOn then
 				self:DisableIntel('Cloak')
 				self:DisableIntel('CloakField')
-				self:SetMesh(bp.Display.MeshBlueprint, true)
+				self:SetMesh(self.Mesh, true)
 				if self.Structure then
 				self.TACloak = nil
 				self.CloakOn = nil
@@ -98,7 +97,7 @@ TAunit = Class(Unit)
 			elseif not dudes[1] and self.CloakOn then
 				self:EnableIntel('Cloak')
 				self:EnableIntel('CloakField')
-				self:SetMesh(bp.Display.CloakMeshBlueprint, true)
+				self:SetMesh(self:GetBlueprint().Display.CloakMeshBlueprint, true)
 				if self:IsIdleState() then
 					self:SetConsumptionPerSecondEnergy(self.MainCost)
 				else

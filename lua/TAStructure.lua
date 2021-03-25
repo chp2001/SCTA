@@ -242,6 +242,7 @@ TACKFusion = Class(TAStructure) {
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAStructure.OnStopBeingBuilt(self,builder,layer)
 		self.MainCost = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
+		self.Mesh = self:GetBlueprint().Display.MeshBlueprint
 		self.TACloak = true
 		self.Structure = true
 		self:SetScriptBit('RULEUTC_CloakToggle', false)

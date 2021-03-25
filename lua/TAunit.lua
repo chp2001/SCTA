@@ -83,7 +83,7 @@ TAunit = Class(Unit)
 		while not self.Dead do
 			coroutine.yield(11)
 			local bp = self:GetBlueprint()
-			if self.CloakOn and (self:IsUnitState('Building') or self:IsIdleState() == true) then
+			if self.CloakOn and (self:IsIdleState() == true) then
                 self:SetConsumptionPerSecondEnergy(self.MainCost)
 			elseif self.CloakOn then
                 self:SetConsumptionPerSecondEnergy(self.MainCost * 3)

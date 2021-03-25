@@ -11,8 +11,8 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'ARTILLERY',
         'ARM',
-        'VEHICLE',	
-    'LEVEL3',
+        'TANK',	
+
     'SNIPEMODE',
     },
     Display = {
@@ -32,7 +32,6 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 2,
     SizeZ = 3,
-    StrategicIconName = 'icon_land3_artillery',
     Weapon = {
         [1] = {
             Damage = 2000,

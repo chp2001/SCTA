@@ -10,10 +10,9 @@ UnitBlueprint {
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
-        'KBOT',
-        'LEVEL3',
+        'BOT',
         'SNIPER',
-        'TACLOAK',
+        'ANTISHIELD',
     },
     Defense = {
         Health = 1000,
@@ -23,10 +22,14 @@ UnitBlueprint {
         BuildCostEnergy = 21000,
         BuildCostMass = 2000,
         BuildTime = 24000,
-        TAConsumptionPerSecondEnergy = 300,
         MaintenanceConsumptionPerSecondEnergy = 50,
     },
-    StrategicIconName = 'icon_bot3_sniper',
+    Intel = {
+        ActiveIntel = {
+            RadarStealth = true,
+        },
+        RadarStealth = true,
+    },
     Weapon = {
         [1] = {
             Damage = 1500,

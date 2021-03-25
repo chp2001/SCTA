@@ -28,19 +28,17 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 2,
     Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
-        'BUILTBYT2VEHICLE',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'LEVEL3',
         'TECH3',
         'SORTINTEL',
 	    'STRUCTURE',
 	    'INTELLIGENCE',
-	    'TARGETING',
+	    'OPTICS',
 	    'CORE',
     },
     Defense = {
@@ -81,7 +79,6 @@ UnitBlueprint {
 	MaxSlope = 0.625,
     },
     General = {
-	---BuildAngle = 4096,
         Category = 'Intelligence',
         Classification = 'RULEUC_Sensor',
         CommandCaps = {
@@ -111,8 +108,8 @@ UnitBlueprint {
         SelectionPriority = 5,
         FactionName = 'CORE',
         Icon = 'land',
-TechLevel = 'RULEUTL_Basic',
-	UnitName = 'Targeting Facility',
+        TechLevel = 'RULEUTL_Basic',
+	    UnitName = 'Targeting Facility',
     },
     Intel = {
         RadarRadius = 10,

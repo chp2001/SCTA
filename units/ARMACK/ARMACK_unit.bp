@@ -40,8 +40,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'ARM',
-        'KBOT',
-	    'LEVEL2',
+        'BOT',
         'TECH2',
         'ENGINEER',
         'REPAIR',
@@ -97,7 +96,8 @@ UnitBlueprint {
         BuildRate = 160,
         BuildTime = 13432,
         BuildableCategory = {
-            'BUILTBYT2KBOT ARM',
+            'BUILTBYTIER2ENGINEER ARM',
+            'armlab',
         },
         MaxBuildDistance = 3.75,
         StorageEnergy = 25,
@@ -133,7 +133,7 @@ TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Adv. Construction Kbot',
     },
     Intel = {
-        VisionRadius = 16,
+        VisionRadius = 14,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

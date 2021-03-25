@@ -1,8 +1,6 @@
 local FactoryUnit = import('/lua/defaultunits.lua').FactoryUnit
 local AircraftCarrier = import('/lua/defaultunits.lua').AircraftCarrier
-local Unit = import('/lua/sim/Unit.lua').Unit
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
-local EffectUtil = import('/lua/EffectUtilities.lua')
 
 TAFactory = Class(FactoryUnit) {
     OnCreate = function(self)
@@ -16,7 +14,7 @@ TAFactory = Class(FactoryUnit) {
         FactoryUnit.OnStopBeingBuilt(self, builder, layer)
         if __blueprints['armgant'] then
             local aiBrain = GetArmyBrain(self.Army)
-        if EntityCategoryContains(categories.DEVELOPMENT, self) then
+        if EntityCategoryContains(categories.RESEARCH, self) then
             local buildRestrictionVictims = aiBrain:GetListOfUnits(categories.FACTORY + categories.ENGINEER, false)
             for id, unit in buildRestrictionVictims do    
         TAutils.updateBuildRestrictions(unit)
@@ -44,7 +42,7 @@ TAFactory = Class(FactoryUnit) {
         OnStopBuild = function(self, unitBuilding)
             FactoryUnit.OnStopBuild(self, unitBuilding)
             self:Close()
-            if __blueprints['armgant'] then
+            if __blueprints['armgant'] and self.restrictions then
                 TAutils.updateBuildRestrictions(self)
             end
 		end,
@@ -74,7 +72,7 @@ TAFactory = Class(FactoryUnit) {
             FactoryUnit.OnStopBeingBuilt(self, builder, layer)
             if __blueprints['armgant'] then
                 local aiBrain = GetArmyBrain(self.Army)
-            if EntityCategoryContains(categories.DEVELOPMENT, self) then
+            if EntityCategoryContains(categories.RESEARCH, self) then
                 local buildRestrictionVictims = aiBrain:GetListOfUnits(categories.FACTORY + categories.ENGINEER, false)
                 for id, unit in buildRestrictionVictims do    
             TAutils.updateBuildRestrictions(unit)

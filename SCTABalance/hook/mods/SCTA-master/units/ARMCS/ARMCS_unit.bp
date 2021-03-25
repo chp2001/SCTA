@@ -14,12 +14,9 @@ UnitBlueprint {
         StorageEnergy = 10,
         StorageMass = 10,
         BuildableCategory = {
-            'BUILTBYT1NAVAL ARM',
-            'LEVEL1 PLANT ARM',
+            'BUILTBYTIER2COMMANDER ARM',
+            'TECH1 FACTORY ARM',
         },
     },
-    Intel = {
-        VisionRadius = 10,
-    },
-    StrategicIconName = 'icon_structure1_engineer', 
+    
 }

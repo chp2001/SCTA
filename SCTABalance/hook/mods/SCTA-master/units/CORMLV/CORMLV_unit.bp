@@ -2,24 +2,22 @@
 #ARMMLV
 #
 #Blueprint created by Raevn
-
+---DISABLED
 UnitBlueprint {
     Merge = true,
     Categories = {
         'SELECTABLE',
-        'TECH2',
+        'TECH1',
         'ENGINEER',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'SHOWQUEUE',
-	'REPAIR',
+	    'REPAIR',
         'MOBILE',
-	'CONSTRUCTION',
-	'LAND',
+	    'CONSTRUCTION',
+	    'LAND',
         'CORE',
-	'MINELAYER',
-    'LEVEL2',
-    'FIELDENGINEER',
+        'FIELDENGINEER',
     },
     Display = {
         UniformScale = 0.12,

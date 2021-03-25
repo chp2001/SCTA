@@ -18,11 +18,9 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 14,
     Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
-        'BUILTBYT2VEHICLE',
-        'BUILTBYT2SUB',
-        'LEVEL2',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3COMMANDER',
         'TECH2',
         'SELECTABLE',
         'DRAGBUILD',
@@ -33,7 +31,6 @@ UnitBlueprint {
         'SORTECONOMY',
 	    'ENERGYPRODUCTION',
 	    'ARM',
-        'FUSION',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -78,7 +75,6 @@ UnitBlueprint {
         SizeZ = 5,
     },
     General = {
-	---BuildAngle = 4096,
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,
@@ -108,13 +104,13 @@ UnitBlueprint {
     SizeX = 5,
     SizeY = 3,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure3_energy',
+    StrategicIconName = 'icon_structure2_energy',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #ATOMIC_BLAST
             Damage = 2000,
             DamageFriendly = true,
-            DamageRadius = 12,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

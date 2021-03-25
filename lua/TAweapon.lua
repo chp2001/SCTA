@@ -3,19 +3,14 @@ local DefaultWeapon = WeaponFile.DefaultProjectileWeapon
 local KamikazeWeapon = WeaponFile.KamikazeWeapon
 local BareBonesWeapon = WeaponFile.BareBonesWeapon
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
-local EffectTemplate = import('/lua/EffectTemplates.lua')
 
 TAweapon = Class(DefaultWeapon) {
-    StartEconomyDrain = function(self)
-        DefaultWeapon.StartEconomyDrain(self)
-    end,
-    
     OnGotTargetCheck = function(self)
         local army = self.unit:GetArmy()
         local canSee = true
         local target = self:GetCurrentTarget()
         local aiBrain = self.unit:GetAIBrain()
-        if aiBrain.SCTAAI then
+        if aiBrain.SCTAAI or (self.unit:IsUnitState('Patrolling') or self.unit:IsUnitState('MakingAttackRun')) then
             return true
         else
         if (target) then
@@ -77,26 +72,9 @@ TAweapon = Class(DefaultWeapon) {
     },
 
     RackSalvoFireReadyState = State(DefaultWeapon.RackSalvoFireReadyState) {
-        WeaponWantEnabled = true,
-        WeaponAimWantEnabled = true,
 
         Main = function(self)
             local bp = self:GetBlueprint()
-            if (bp.CountedProjectile == true and bp.WeaponUnpacks == true) then
-                self.unit:SetBusy(true)
-            else
-                self.unit:SetBusy(false)
-            end
-            self.WeaponCanFire = true
-            if bp.EnergyRequired and bp.EnergyRequired > 0 then
-                self.WeaponCanFire = false
-                local aiBrain = self.unit:GetAIBrain()
-                while aiBrain:GetEconomyStored('ENERGY') < bp.EnergyRequired do
-                        WaitSeconds(1)
-                end
-                aiBrain:TakeResource('Energy', bp.EnergyRequired)
-                self.WeaponCanFire = true
-            end
             if bp.MassRequired and bp.MassRequired > 0 then
                 self.WeaponCanFire = false
                 local aiBrain = self.unit:GetAIBrain()
@@ -106,9 +84,7 @@ TAweapon = Class(DefaultWeapon) {
                 aiBrain:TakeResource('Mass', bp.MassRequired)
                 self.WeaponCanFire = true
             end
-            if bp.CountedProjectile == true then
-                ChangeState(self, self.RackSalvoFiringState)
-            end
+            DefaultWeapon.RackSalvoFireReadyState.Main(self)
 
         end,
 
@@ -118,19 +94,6 @@ TAweapon = Class(DefaultWeapon) {
             if (TAutils.ArmyHasTargetingFacility(army) or 
             self:OnGotTargetCheck() == true) then
                 DefaultWeapon.RackSalvoFireReadyState.OnGotTarget(self)
-            end
-        end,
-
-        OnFire = function(self)
-            if self.WeaponCanFire == true then
-                ChangeState(self, self.RackSalvoFiringState)
-            end
-        end,
-
-        OnLostTarget = function(self)
-            local bp = self:GetBlueprint()
-            if bp.WeaponUnpacks == true then
-                ChangeState(self, self.WeaponPackingState)
             end
         end,
 
@@ -154,12 +117,17 @@ TAHide = Class(TAweapon) {
         self.unit.Pack = 1
         self.unit:DisableUnitIntel('RadarStealth')
         TAweapon.PlayFxWeaponUnpackSequence(self)
+        local bp = self.unit:GetBlueprint()
+        local scale = 0.5
+        self.unit:SetCollisionShape( 'Box', bp.CollisionOffsetX or 0, bp.CollisionOffsetY + 0.5, bp.CollisionOffsetZ or 0, bp.SizeX * scale, bp.SizeY * scale, bp.SizeZ * scale)
     end,
 
     PlayFxWeaponPackSequence = function(self)
-        self.unit.Pack = 0.28
         self.unit:EnableUnitIntel('RadarStealth')
         TAweapon.PlayFxWeaponPackSequence(self)
+        local bp = self.unit:GetBlueprint()
+        local scale = 0.5
+        self.unit:SetCollisionShape( 'Box',  bp.CollisionOffsetX or 0, bp.CollisionOffsetY or 0, bp.CollisionOffsetZ or 0, bp.SizeX * scale, ((bp.SizeY/bp.SizeY) * scale), bp.SizeZ * scale)
     end,
 }
 
@@ -359,14 +327,14 @@ TADGun = Class(DefaultWeapon) {
                         while not self:CanOvercharge() do
                             WaitSeconds(0.1)
                         end
-                            self:OnGotTarget()
+                        DefaultWeapon.IdleState.OnGotTarget(self)
                     end)
                 end
             end,
     
             OnFire = function(self)
                 if self:CanOvercharge() then
-                    ChangeState(self, self.RackSalvoFiringState)
+                    ChangeState(self, DefaultWeapon.IdleState.RackSalvoFiringState(self))
                 else
                     self:ForkThread(self.WaitDGUN)
                 end

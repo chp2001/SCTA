@@ -24,7 +24,6 @@ UnitBlueprint {
     BuildIconSortPriority = 9,
     Categories = {
         'SELECTABLE',
-        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -35,7 +34,6 @@ UnitBlueprint {
     'SUBMERSIBLE',
         'OVERLAYANTINAVY',
         'CORE',
-        'OCEAN', 
     'SNIPEMODE',
     },
     Defense = {
@@ -61,6 +59,13 @@ UnitBlueprint {
                     ShaderName = 'Unit', 
 		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
+            },
+        },
+        MovementEffects = {
+            TAMovement = {
+            Emitter = '/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
+            Scale = 0.25,
+            Bones = {'wake1', 'wake2'},
             },
         },
         UniformScale = 0.16,
@@ -115,7 +120,7 @@ UnitBlueprint {
     SizeX = 6,
     SizeY = 2,
     SizeZ = 8,
-    StrategicIconName = 'icon_sub2_antinavy',
+    StrategicIconName = 'icon_sub3_antinavy',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -130,8 +135,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	        DamageFriendly = true,
             Damage = 1000,
-            DamageRadius = 1,
-            DamageType = 'AntiSub',
+            DamageType = 'TASpec',
             DisplayName = 'ARMSMART_TORPEDO',
             FireTargetLayerCapsTable = {
                 Sub = 'Seabed|Sub|Water',

@@ -24,18 +24,16 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 1,
     Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1VEHICLE',
-        'BUILTBYT1HOVER',
-        'BUILTBYT1NAVAL',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-        'LEVEL1',
 	'STRUCTURE',
 	'DEFENSE',
 	'DIRECTFIRE',
@@ -43,7 +41,7 @@ UnitBlueprint {
 	'CORE',
 	'SORTDEFENSE',
     'SNIPEMODE',
-    'LASER',
+    'ANTISHIELD',
     },
     CollisionOffsetY = -1,
     Defense = {
@@ -57,9 +55,6 @@ UnitBlueprint {
     },
     Description = 'Light Laser Tower',
     Display = {
-        Abilities = {
-            'Defense',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -118,7 +113,6 @@ TechLevel = 'RULEUTL_Basic',
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 60,
-            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'CORE_LIGHTLASER',
             FireTargetLayerCapsTable = {
@@ -136,6 +130,7 @@ TechLevel = 'RULEUTL_Basic',
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_LIGHTLASER/CORE_LIGHTLASER_proj.bp',
             EnergyDrainPerSecond = 10,
             EnergyRequired = 10,
+            DamageRadius = 2,
             EnergyChargeForFirstShot = true,
             RackBones = {
                 {
@@ -173,7 +168,7 @@ TechLevel = 'RULEUTL_Basic',
         { #MEDIUM_BUILDINGEX
             Damage = 100,
             DamageFriendly = true,
-            DamageRadius = 3.28,
+            DamageRadius = 3,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

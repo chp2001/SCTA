@@ -1,11 +1,13 @@
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local IBC = '/lua/editor/InstantBuildConditions.lua'
-local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
-local SBC = '/lua/editor/SorianBuildConditions.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local MABC = '/lua/editor/MarkerBuildConditions.lua'
+local PLANT = (categories.FACTORY * categories.TECH1)
+local LAB = (categories.FACTORY * categories.TECH2)
+local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
+
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAICommanderBuilder', -- Globally unique key that the AI base template file uses to add the contained builders to your AI.	
@@ -40,8 +42,9 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {240} }, -- Don't make tanks if we have lots of them.
             { MIBC, 'GreaterThanGameTime', {90} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.PLANT} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.3, 0.3}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, PLANT} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -61,7 +64,7 @@ BuilderGroup {
         Priority = 950,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.SOLAR} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENERGYPRODUCTION * categories.STRUCTURE} },
             { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'Any',
@@ -83,7 +86,7 @@ BuilderGroup {
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.MASSEXTRACTION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.MASSEXTRACTION} },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -100,9 +103,9 @@ BuilderGroup {
         BuilderName = 'SCTA AI ACU T1Engineer Mex',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 100,
-        InstanceCount = 2, -- The max number concurrent instances of this builder.
+        InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {800} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 250, -500, 200, 0, 'AntiSurface', 1 }},
         },
         BuilderType = 'Any',
@@ -117,33 +120,15 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTAAI ACU T1Pgen',
-        PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 60,
-        InstanceCount = 2,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {800} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.WIND } }, -- Stop after 10 facs have been built.
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = false,
-            Construction = {
-                BuildStructures = {
-                    'T1EnergyProduction2',
-                }
-            }
-        }
-    },
-    Builder {
         BuilderName = 'SCTAAI T1Commander LandFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 90,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.LAB } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.25}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, LAB } }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, PLANT} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -163,8 +148,8 @@ BuilderGroup {
         Priority = 95,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR } }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -180,83 +165,41 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTA Mex Assist Commander',
-        PlatoonTemplate = 'CommanderSCTAAssist',
-        Priority = 25,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'BuildingGreaterAtLocation', { 'LocationType', 0, categories.MASSEXTRACTION * categories.LEVEL2}},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 0.5 } },
-            { IBC, 'BrainNotLowPowerMode', {} },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            Assist = {
-                AssistUntilFinished = true,
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Structure',
-                BeingBuiltCategories = {'MASSEXTRACTION'},
-                Time = 60,
-            },
-        }
-    },
-    Builder {
         BuilderName = 'SCTA Commander Assist Gantry Construction',
         PlatoonTemplate = 'CommanderSCTAAssist',
-        Priority = 60,
+        Priority = 125,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GANTRY }},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 0.5 } },
-            { IBC, 'BrainNotLowPowerMode', {} },
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
         },
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Engineer',
                 AssistRange = 120,
-                BeingBuiltCategories = {'GANTRY'},                                                   
+                BeingBuiltCategories = {'GATE'},                                                   
                 AssistUntilFinished = true,
             },
         },
         BuilderType = 'Any',
     },
-Builder {
-    BuilderName = 'SCTA Commander Assist Gantry',
-    PlatoonTemplate = 'CommanderSCTAAssist',
-    Priority = 50,
-    InstanceCount = 1,
-    BuilderConditions = {
-        { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.EXPERIMENTAL }},
-        { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.6, 0.5 } },
-        { IBC, 'BrainNotLowPowerMode', {} },
-    },
-    BuilderType = 'Any',
-    BuilderData = {
-        Assist = {
-            AssistLocation = 'LocationType',
-            AssisteeType = 'Factory',
-            BeingBuiltCategories = {'EXPERIMENTAL'},
-            Time = 20,
-            },
-        }
-    },
     Builder {
         BuilderName = 'SCTA CDR Assist Fusion',
         PlatoonTemplate = 'CommanderSCTAAssist',
-        Priority = 75,
+        Priority = 120,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.FUSION }},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.6, 0.5 } },
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, FUSION }},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
         },
         BuilderType = 'Any',
         BuilderData = {
             Assist = {
                 AssisteeType = 'Engineer',
                 AssistLocation = 'LocationType',
-                BeingBuiltCategories = {'FUSION'},
-                Time = 20,
+                BeingBuiltCategories = {'TECH2 ENERGYPRODUCTION STRUCTURE, TECH3 ENERGYPRODUCTION STRUCTURE,'},
+                AssistUntilFinished = true,
             },
         }
     },

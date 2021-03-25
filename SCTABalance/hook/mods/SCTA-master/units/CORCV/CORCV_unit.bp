@@ -3,7 +3,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
-        'LEVEL1',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -16,9 +15,8 @@ UnitBlueprint {
 	    'CONSTRUCTION',
         'LAND',
         'CORE',
-        'KBOT',
-        'VEHICLE',
-        'VTOL',
+        'BOT',
+        'TANK',
     },
     Defense = {
         Health = 440,
@@ -39,11 +37,8 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 2,
         MaxBuildDistance = 6,
         BuildableCategory = {
-            'BUILTBYT1KBOT CORE',
+            'BUILTBYTIER1ENGINEER CORE',
         },
-    },
-    Intel = {
-        VisionRadius = 8,
     },
     Physics = {
         MaxAcceleration = 1.4,

@@ -1,8 +1,7 @@
 UnitBlueprint {
     Merge = true,
-    Air = {
-        MaxAirspeed = 15,
-        MinAirspeed = 10,
+    Display = {
+        UniformScale = 0.24,
     },
     Defense = {
         Health = 2000,
@@ -12,11 +11,9 @@ UnitBlueprint {
         BuildCostEnergy = 30000,
         BuildCostMass = 1200,
     },
-    StrategicIconName = 'icon_bomber2_directfire',
     Weapon = {
         [1] = {
             Damage = 400,
-            RateOfFire = 0.3333333333,
             RackReloadTimeout = 5,
         },
         [2] = {

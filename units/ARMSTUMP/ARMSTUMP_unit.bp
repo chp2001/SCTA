@@ -29,8 +29,7 @@ UnitBlueprint {
     BuildIconSortPriority = 4,
     Categories = {
         'SELECTABLE',
-        'VEHICLE',
-	    'LEVEL1',
+        'TANK',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -38,7 +37,6 @@ UnitBlueprint {
 	    'LAND',
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-        'TANK',
         'ARM',
     },
     Defense = {
@@ -109,7 +107,7 @@ UnitBlueprint {
         UnitName = 'Stumpy',
     },
     Intel = {
-        VisionRadius = 10,
+        VisionRadius = 14,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -133,6 +131,7 @@ UnitBlueprint {
     SizeZ = 2,
     SizeY = 1, 
     StrategicIconName = 'icon_land1_directfire',
+    TAStrategicIconName = '1/bot_armored',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -147,7 +146,6 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 44,
-	    DamageRadius = 1,
             DamageType = 'Normal',
             DisplayName = 'ARM_LIGHTCANNON',
             FireTargetLayerCapsTable = {

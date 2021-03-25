@@ -10,11 +10,9 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 750,
-        BuildTime = 2700,
+        BuildTime = 2300,
     },
-    Intel = {
-        VisionRadius = 10,
-    },
+    
     Physics = {
         MaxSpeed = 2.4,
     },

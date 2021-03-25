@@ -29,15 +29,13 @@ UnitBlueprint {
     BuildIconSortPriority = 7,
     Categories = {
         'SELECTABLE',
-        'KBOT',
-        'LEVEL2',
+        'BOT',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
         'LAND',
         'ARM',
-        'TACLOAK',
         'SCOUT',
     },
     Defense = {
@@ -72,7 +70,6 @@ UnitBlueprint {
         BuildCostEnergy = 9000,
         BuildCostMass = 128,
         BuildTime = 22000,
-        TAConsumptionPerSecondEnergy = 800,
         MaintenanceConsumptionPerSecondEnergy = 210,
     },
     General = {
@@ -115,13 +112,13 @@ UnitBlueprint {
         StandUpright = true,
         MaxSteerForce = 10,
     },
-    SelectionSizeX = 1.25,
-    SelectionSizeZ = 1.25,
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
     SelectionThickness = 0.25,
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_bot2_intel',
+    StrategicIconName = 'icon_land2_counterintel',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_UNITEX

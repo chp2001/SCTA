@@ -28,9 +28,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 3,
     Categories = {
-        'SELECTABLE',
-        'OCEAN', 
-        'LEVEL1',
+        'SELECTABLE', 
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -69,6 +67,13 @@ UnitBlueprint {
                 },
             },
         },
+        MovementEffects = {
+            TAMovement = {
+            Emitter = '/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
+            Scale = 0.25,
+            Bones = {'wake'},
+            },
+        },
         UniformScale = 0.16,
     },
     Economy = {
@@ -98,9 +103,9 @@ UnitBlueprint {
         UnitName = 'Snake',
     },
     Intel = {
-        SonarRadius = 50,
-        VisionRadius = 20,
-        WaterVisionRadius = 12,
+        SonarRadius = 20,
+        VisionRadius = 8,
+        WaterVisionRadius = 8,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -137,8 +142,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	        DamageFriendly = true,
             Damage = 240,
-            DamageRadius = 0.5,
-            DamageType = 'AntiSub',
+            DamageType = 'TASpec',
             DisplayName = 'CORE_TORPEDO',
             FireTargetLayerCapsTable = {
                 Sub = 'Seabed|Sub|Water',

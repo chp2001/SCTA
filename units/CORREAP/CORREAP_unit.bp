@@ -30,13 +30,12 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'VEHICLE',
-        'LEVEL2',
+        'TANK',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
+	    'LAND',
+	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
     },
@@ -51,9 +50,6 @@ UnitBlueprint {
     },
     Description = 'Heavy Assault Tank',
     Display = {
-        Abilities = {
-            'Heavy Tank',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -71,7 +67,6 @@ UnitBlueprint {
         BuildCostMass = 473,
         BuildTime = 8730,
     },
-
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -114,6 +109,7 @@ TechLevel = 'RULEUTL_Advanced',
     SizeY = 1.5,
     SizeZ = 3,
     StrategicIconName = 'icon_land2_directfire',
+    TAStrategicIconName = '2/bot_armored',
     StrategicIconSortPriority = 0,
     Transport = {
         TransportClass = 3,
@@ -129,17 +125,16 @@ TechLevel = 'RULEUTL_Advanced',
             },
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-	    DamageFriendly = true,
+	        DamageFriendly = true,
             Damage = 92,
-	    DamageRadius = 1.5,
             DamageType = 'Normal',
             DisplayName = 'CORE_REAP',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
                 Seabed = 'Land|Water|Seabed',
             },
-	    RangeCategory = 'UWRC_DirectFire',
-     WeaponCategory = 'DirectFire',
+	        RangeCategory = 'UWRC_DirectFire',
+            WeaponCategory = 'DirectFire',
             Label = 'CORE_REAP',
             MaxRadius = 24,
             MuzzleSalvoDelay = 0,

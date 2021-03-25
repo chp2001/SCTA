@@ -30,16 +30,15 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
-        'VEHICLE',
-        'LEVEL1',
+        'TANK',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
+	    'LAND',
+	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-    'RAIDER',
+        'SCOUT',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -52,9 +51,6 @@ UnitBlueprint {
     },
     Description = 'Assault Tank',
     Display = {
-        Abilities = {
-            'Assault Tank',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -127,7 +123,6 @@ TechLevel = 'RULEUTL_Advanced',
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 35,
-	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'GATOR_LASER',
             FireTargetLayerCapsTable = {

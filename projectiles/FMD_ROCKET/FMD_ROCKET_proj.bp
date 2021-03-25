@@ -47,6 +47,9 @@ ProjectileBlueprint {
         BuildCostMass = 3600,
         BuildTime = 259200,
     },
+    DoNotCollideList = {
+        'AIR',
+    },
     General = {
         Category = 'Anti Missile',
         EntityCategory = {
@@ -58,14 +61,11 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'FMD_ROCKET',
     },
-
     Physics = {
         Acceleration = 30,
         DestroyOnWater = false,
         HitAssignedTarget = true,
-        InitialSpeed = 0,
         LeadTarget = true,
-        Lifetime = 100,
         MaxSpeed = 90,
         TrackTarget = true,
         TurnRate = 180,

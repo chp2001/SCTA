@@ -34,7 +34,7 @@ ProjectileBlueprint {
     Categories = {
         'ARM',
         'PROJECTILE',
-        'ANTIAIR'
+        'ANTIAIR',
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/Plasma_mesh.bp',
@@ -42,22 +42,21 @@ ProjectileBlueprint {
         StrategicIconSize = 1,
     },
     General = {
-        Category = 'Direct Fire',
+        Category = 'AntiAir',
         EntityCategory = {
             'ARM',
             'PROJECTILE',
-            'ANTIAIR'
+            'ANTIAIR',
         },
         Faction = 'ARM',
         Weapon = 'ARMYORK_GUN',
-	EdgeEffectiveness = 0.9,
     },
 
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 56.25,
-        Lifetime = 10,
+        Lifetime = 5,
         UseGravity = false,
-        DetonateAboveHeight = 30,
+        DetonateAboveHeight = 10,
     },
 }

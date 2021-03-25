@@ -50,7 +50,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'PATROLHELPER',
@@ -60,14 +59,14 @@ UnitBlueprint {
         'MOBILE',
         'LAND',
         'DIRECTFIRE',
-        'KBOT',
+        'BOT',
         'OVERLAYDIRECTFIRE',
         'ARM',
         'CONSTRUCTION',
         'ENGINEER',
         'SUBCOMMANDER',
         'SNIPEMODE',
-        'TACLOAK',
+        'AMPHIBIOUS',
     },
     Defense = {
         ArmorType = 'Commander',
@@ -86,7 +85,7 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_cloak>Cloaking',
             '<LOC ability_amphibious>Amphibious',
-            'Decoy',
+            'D-Gun',
              '<LOC ability_engineeringsuite>Engineering Suite',
         },
         Mesh = {
@@ -115,7 +114,6 @@ UnitBlueprint {
             'BUILTBYCOMMANDER ARM',
         },
         MaintenanceConsumptionPerSecondEnergy = 100,
-        TAConsumptionPerSecondEnergy = 500,
     },
     Footprint = {
         SizeX = 2,
@@ -168,7 +166,7 @@ UnitBlueprint {
         VisionRadius = 18,
         RadarRadius = 25,
         SonarRadius = 25,
-        WaterVisionRadius = 4,
+        WaterVisionRadius = 10,
         Cloak = true,  
     },
     LifeBarHeight = 0.25,
@@ -209,7 +207,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 100,
-            DamageRadius = 0.5,
+            DamageRadius = 1,
             DamageType = 'Normal',
             DisplayName = 'COMLASER',
             FireTargetLayerCapsTable = {

@@ -45,10 +45,9 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',  
         'ARM',
-        'KBOT',
-        'BUILTBYGANTRY',  
+        'BUILTBYQUANTUMGATE',
         'SNIPEMODE',
-        'LASER',
+        'ANTISHIELD',
     },
     Defense = {
         AirThreatLevel = 0,
@@ -232,6 +231,7 @@ UnitBlueprint {
             EnergyChargeForFirstShot = true,
             EnergyDrainPerSecond = 750,
             EnergyRequired = 1500,
+            DamageRadius = 2,
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air|Seabed',
                 Seabed = 'Land|Water|Air|Seabed',
@@ -289,8 +289,8 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 300,
-            DamageRadius = 2.5,
-            DamageType = 'LANDAir',
+            DamageRadius = 1.5,
+            DamageType = 'TASpec',
             DisplayName = 'CORKROG_ROCKET',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air|Seabed',
@@ -362,7 +362,7 @@ UnitBlueprint {
         { #NUCLEAR_MISSILE
             Damage = 5500,
             DamageFriendly = true,
-            DamageRadius = 16,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

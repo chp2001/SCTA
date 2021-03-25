@@ -37,7 +37,6 @@ ProjectileBlueprint {
         'STRATEGIC',
         'TACTICAL',
         'MISSILE',
-        'PARALYSER',
         'INDIRECTFIRE',
     },
     Defense = {
@@ -63,7 +62,6 @@ ProjectileBlueprint {
             'STRATEGIC',
             'TACTICAL',
             'MISSILE',
-            'PARALYSER',
             'INDIRECTFIRE',
         },
         Faction = 'ARM',

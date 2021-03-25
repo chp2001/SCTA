@@ -12,7 +12,7 @@ UnitBlueprint {
         MaxHealth = 1500,
     },
     Intel = {
-        VisionRadius = 12,
+        VisionRadius = 16,
     },
     LifeBarSize = 1,
     SelectionSizeX = 0.8,

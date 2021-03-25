@@ -5,13 +5,25 @@
 
 UnitBlueprint {
     Merge = true, 
+    Categories = {
+        'SELECTABLE',
+        'BOT',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	    'LAND',
+	    'DIRECTFIRE',
+        'OVERLAYDIRECTFIRE',
+        'CORE',
+    },
     Defense = {
-        Health = 1500,
-        MaxHealth = 1500,
+        Health = 4800,
+        MaxHealth = 4800,
     },
     Economy = {
-        BuildCostEnergy = 3600,
-        BuildCostMass = 400,
-        BuildTime = 7000,
+        BuildCostEnergy = 22000,
+        BuildCostMass = 1000,
+       BuildTime = 9000,
     },
 }

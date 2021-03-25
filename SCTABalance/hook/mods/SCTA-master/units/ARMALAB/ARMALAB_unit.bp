@@ -1,13 +1,12 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT1KBOT',
-        'BUILTBYT2KBOT',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2ENGINEER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'LEVEL2',
         'TECH2',
 	    'FACTORY',
         'RALLYPOINT',
@@ -17,18 +16,18 @@ UnitBlueprint {
         'ARM',
         'LAND', 
 	    'SORTCONSTRUCTION',
-        'LAB',
+        'BOT',
     },
         Display = {
-        UniformScale = 0.28,
+        UniformScale = 0.24,
     },
     Defense = {
         Health = 10000,
         MaxHealth = 10000,
     },
-    Footprint = {	
-    SizeX = 8,
-    SizeZ = 8,
+    Footprint = {
+        SizeX = 7,
+        SizeZ = 7,
     },
     Economy = {
         BuildCostEnergy = 12000,
@@ -36,13 +35,10 @@ UnitBlueprint {
         BuildRate = 180,
         BuildTime = 15000,
         BuildableCategory = {
-            'KBOT LEVEL1 ARM',
-            'KBOT LEVEL2 ARM',
-            'KBOT LEVEL3 ARM',
+            'BOT MOBILE TECH1 ARM',
+            'BOT MOBILE TECH2 ARM',
+            'BOT MOBILE TECH3 ARM',
         },
-    },
-    Intel = {
-        VisionRadius = 10,
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,

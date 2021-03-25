@@ -26,11 +26,10 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 10,
+    BuildIconSortPriority = 2,
     Categories = {
         'SELECTABLE',
-        'KBOT',
-        'LEVEL2',
+        'BOT',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -53,9 +52,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORFAST/CORFAST_lod0_Awalk.sca',
         AnimationWalkRate = 3,
-        Abilities = {
-            'Fast Bot',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -129,7 +125,6 @@ TechLevel = 'RULEUTL_Advanced',
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 40,
-	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARM_FAST',
             FireTargetLayerCapsTable = {

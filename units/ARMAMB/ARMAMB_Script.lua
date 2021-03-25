@@ -129,8 +129,7 @@ ARMAMB = Class(TAPop) {
 	Weapons = {
 		ARMAMB_GUN = Class(TAHide) {
 			OnWeaponFired = function(self)
-				TAHide.OnWeaponFired(self)
-				
+				TAHide.OnWeaponFired(self)				
 			end,
 
 			PlayFxWeaponUnpackSequence = function(self)
@@ -298,6 +297,7 @@ ARMAMB = Class(TAPop) {
 				--SLEEP <17>;
 				
 				TAHide.PlayFxWeaponPackSequence(self)
+				self.unit.Pack = 0.28
 			end,	
 		},
 	},

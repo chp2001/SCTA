@@ -22,8 +22,6 @@ UnitBlueprint {
         'OVERLAYSONAR',
         'OVERLAYMISC',
         'CORE',
-        'OCEAN',
-	'LEVEL3',
     },
     Defense = {
         Health = 17000,
@@ -47,5 +45,4 @@ SelectionSizeZ = 10,
 SizeX = 7,
 SizeY = 7,
 SizeZ = 18,
-StrategicIconName = 'icon_ship3_air',
 }

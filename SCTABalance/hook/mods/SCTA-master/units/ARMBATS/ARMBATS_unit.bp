@@ -14,8 +14,6 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
-        'OCEAN',
-    'LEVEL3',
     'SNIPEMODE',
     },
     Defense = {
@@ -34,12 +32,8 @@ UnitBlueprint {
         MaxAcceleration = 3,
         MaxSpeed = 4,
     },
-    Intel = {
-        VisionRadius = 12, 
-    },
     LifeBarHeight = 0.25,
     LifeBarSize = 6,
-    StrategicIconName = 'icon_ship3_directfire',
     SelectionSizeX = 5,
     SelectionSizeZ = 10,
     SizeX = 5,

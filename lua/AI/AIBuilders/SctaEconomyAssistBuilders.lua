@@ -1,11 +1,15 @@
 
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
-local IBC = '/lua/editor/InstantBuildConditions.lua'
-local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local SBC = '/lua/editor/SorianBuildConditions.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local TAutils = '/mods/SCTA-master/lua/TAutils.lua'
+local PLANT = (categories.FACTORY * categories.TECH1)
+local LAB = (categories.FACTORY * categories.TECH2)
+local PLATFORM = (categories.FACTORY * categories.TECH3)
+local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
+
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAssisters',
@@ -16,17 +20,17 @@ BuilderGroup {
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.FUSION }},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 0.5 } },
-            { IBC, 'BrainNotLowPowerMode', {} },
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, FUSION }},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
         },
         BuilderType = 'Any',
         BuilderData = {
             Assist = {
                 AssisteeType = 'Engineer',
                 AssistLocation = 'LocationType',
-                BeingBuiltCategories = {'FUSION'},
+                BeingBuiltCategories = {'TECH2 ENERGYPRODUCTION STRUCTURE, TECH3 ENERGYPRODUCTION STRUCTURE,'},
                 Time = 20,
+                AssistRange = 120,
                 AssistUntilFinished = true,
             },
         }
@@ -37,9 +41,8 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 4,
         BuilderConditions = {
-            { UCBC, 'BuildingGreaterAtLocation', { 'LocationType', 0, categories.MASSEXTRACTION * categories.LEVEL2}},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 0.5 } },
-            { IBC, 'BrainNotLowPowerMode', {} },
+            { UCBC, 'BuildingGreaterAtLocation', { 'LocationType', 0, categories.MASSEXTRACTION * categories.TECH3}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -49,67 +52,105 @@ BuilderGroup {
                 AssisteeType = 'Structure',
                 BeingBuiltCategories = {'MASSEXTRACTION'},
                 Time = 60,
+                AssistRange = 120,
             },
         }
     },
     Builder {
-        BuilderName = 'SCTA Assist Gantry Production',
+        BuilderName = 'SCTA Engineer Assist Gantry Production',
         PlatoonTemplate = 'EngineerBuilderSCTAAssist',
-        Priority = 120,
+        Priority = 200,
         InstanceCount = 12,
         BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GANTRY }},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 0.5 } },
-            { IBC, 'BrainNotLowPowerMode', {} },
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Engineer',
                 AssistRange = 120,
-                BeingBuiltCategories = {'GANTRY'},                                                   
+                BeingBuiltCategories = {'GATE'},                                                   
                 AssistUntilFinished = true,
             },
         },
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'SCTA Assist LEVEL2 Production',
+        BuilderName = 'SCTA Assist Production Field',
         PlatoonTemplate = 'EngineerBuilderSCTAAssist',
-        Priority = 125,
-        InstanceCount = 4,
+        Priority = 25,
+        InstanceCount = 30,
         BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.LAB }},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.7, 0.5 } },
-            { IBC, 'BrainNotLowPowerMode', {} },
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.FACTORY }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Engineer',
                 AssistRange = 120,
-                BeingBuiltCategories = {'LAB'},                                        
+                BeingBuiltCategories = {'FACTORY'},                                        
                 AssistUntilFinished = true,
             },
         },
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'SCTA Assist Gantry',
-        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
-        Priority = 130,
-        InstanceCount = 12,
+        BuilderName = 'SCTA Assist Production Idle',
+        PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
+        Priority = 50,
+        InstanceCount = 30,
         BuilderConditions = {
-            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.EXPERIMENTAL }},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.6, 0.5 } },
-            { IBC, 'BrainNotLowPowerMode', {} },
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                AssistRange = 120,
+                BeingBuiltCategories = {'STRUCTURE'},                                        
+                AssistUntilFinished = true,
+            },
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Assist Unit Production Idle',
+        PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
+        Priority = 45,
+        InstanceCount = 30,
+        BuilderConditions = {
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.MOBILE }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Factory',
                 AssistRange = 120,
-                BeingBuiltCategories = {'EXPERIMENTAL'},                                                       
+                BeingBuiltCategories = {'MOBILE'},                                        
+                AssistUntilFinished = true,
+            },
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Assist Gantry',
+        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
+        Priority = 200,
+        InstanceCount = 12,
+        BuilderConditions = {
+            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYQUANTUMGATE }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Factory',
+                AssistRange = 120,
+                BeingBuiltCategories = {'BUILTBYQUANTUMGATE'},                                                       
                 AssistUntilFinished = true,
             },
         },
@@ -118,11 +159,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Field',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
-        PlatoonAIPlan = 'ReclaimAI',
-        Priority = 75,
-        InstanceCount = 3,
+        PlatoonAIPlan = 'SCTAReclaimAI',
+        Priority = 200,
+        InstanceCount = 15,
         BuilderConditions = {
-            { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},
         },
         BuilderData = {
@@ -132,16 +173,89 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'SCTA Engineer Reclaim Excess',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
-        PlatoonAIPlan = 'ReclaimAI',
-        Priority = 50,
-        InstanceCount = 10,
+        BuilderName = 'SCTA Engineer Reclaim Idle',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonAIPlan = 'SCTAReclaimAI',
+        Priority = 20,
+        InstanceCount = 30,
         BuilderConditions = {
-            { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},
+            { MIBC, 'GreaterThanGameTime', { 120 } },
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
+            { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},     
+        },
+        BuilderData = {
+            LocationType = 'LocationType',
+            ReclaimTime = 30,
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim Excess Early',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        PlatoonAIPlan = 'SCTAReclaimAI',
+        Priority = 115,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', { 120 } },
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
+            { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},    
+            { MIBC, 'LessThanGameTime', {900} }, 
+        },
+        BuilderData = {
+            LocationType = 'LocationType',
+            ReclaimTime = 30,
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim Excess Mid',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonAIPlan = 'SCTAReclaimAI',
+        Priority = 105,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', { 360 } },
+            { MIBC, 'LessThanGameTime', {900} }, 
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
+            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},    
+        },
+        BuilderData = {
+            LocationType = 'LocationType',
+            ReclaimTime = 30,
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim Excess EndGame',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonAIPlan = 'SCTAReclaimAI',
+        Priority = 130,
+        InstanceCount = 5,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', { 1200 } },
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
+            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
             },
         BuilderData = {
             LocationType = 'LocationType',
+            ReclaimTime = 30,
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim Air',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco',
+        PlatoonAIPlan = 'SCTAReclaimAI',
+        Priority = 100,
+        InstanceCount = 5,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', { 600 } },
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
+            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
+            },
+        BuilderData = {
+            LocationType = 'LocationType',
+            ReclaimTime = 30,
         },
         BuilderType = 'Any',
     },
@@ -149,39 +263,19 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Excess PLANTS',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'ReclaimStructuresAI',
-        Priority = 200,
+        Priority = 100,
         InstanceCount = 5,
         BuilderConditions = {
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT * categories.LAND}},
-            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB * categories.LAND} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.PLANT} },    
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, PLANT * categories.LAND}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, LAB * categories.LAND} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT * categories.LAND} },
+            { EBC, 'LessThanEconStorageRatio', { 0.1, 1.1}},
+            { EBC, 'LessEconStorageCurrent', { 100, 6000 } },    
             },
         BuilderData = {
             Location = 'LocationType',
             ReclaimTime = 30,
-            Reclaim = {'PLANT LAND'},
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Reclaim T2 LABS',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
-        PlatoonAIPlan = 'ReclaimStructuresAI',
-        Priority = 250,
-        InstanceCount = 8,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {1500} },
-            { EBC, 'LessEconStorageCurrent', { 100, 1000 } },
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 2, categories.LAB * categories.LAND}},
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.LAB} },
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 8, categories.LAB} },
-            { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},    
-        },
-        BuilderData = {
-            Location = 'LocationType',
-            ReclaimTime = 30,
-            Reclaim = {'LAB LAND'},
+            Reclaim = {'TECH1 FACTORY LAND'},
         },
         BuilderType = 'Any',
     },
@@ -192,15 +286,16 @@ BuilderGroup {
         Priority = 275,
         InstanceCount = 8,
         BuilderConditions = {
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT * categories.AIR}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB * categories.AIR} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.PLANT * categories.AIR} },
-            { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},    
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, PLANT * categories.AIR}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, LAB * categories.AIR} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT * categories.AIR} },
+            { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
+            { EBC, 'LessEconStorageCurrent', { 100, 1000 } },    
         },
         BuilderData = {
             Location = 'LocationType',
             ReclaimTime = 30,
-            Reclaim = {'PLANT AIR'},
+            Reclaim = {'TECH1 FACTORY AIR'},
         },
         BuilderType = 'Any',
     },
@@ -212,15 +307,16 @@ BuilderGroup {
         InstanceCount = 8,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1200} },
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.PLANT}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, categories.LAB} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.PLANT} },
-            { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},    
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, PLANT}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, LAB} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT} },
+            { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
+            { EBC, 'LessEconStorageCurrent', { 100, 1000 } },    
         },
         BuilderData = {
             Location = 'LocationType',
             ReclaimTime = 30,
-            Reclaim = {'PLANT'},
+            Reclaim = {'TECH1 FACTORY'},
         },
         BuilderType = 'Any',
     },
@@ -232,13 +328,13 @@ BuilderGroup {
         InstanceCount = 8,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.SOLAR}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, categories.FUSION} },
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.ENERGYPRODUCTION * categories.TECH1 * categories.STRUCTURE}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
             { EBC, 'LessThanEconStorageRatio', { 0.25, 1}},
             },
         BuilderData = {
             Location = 'LocationType',
-            Reclaim = {'SOLAR'},
+            Reclaim = {'ENERGYPRODUCTION STRUCTURE TECH1'},
                 ReclaimTime = 30,
         },
         BuilderType = 'Any',
@@ -246,6 +342,25 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Finish',
         PlatoonTemplate = 'EngineerBuilderSCTAEco12',
+        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
+        Priority = 125,
+        InstanceCount = 2,
+        BuilderConditions = {
+                { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
+            },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
+                Time = 20,
+            },
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Field Finish',
+        PlatoonTemplate = 'EngineerBuilderSCTAField',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
         Priority = 125,
         InstanceCount = 2,

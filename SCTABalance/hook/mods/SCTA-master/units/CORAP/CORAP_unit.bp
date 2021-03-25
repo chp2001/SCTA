@@ -6,11 +6,11 @@ UnitBlueprint {
                     '<LOC ability_upgradable>Upgradeable',
                     '<LOC ability_radar>Radar',
                 },
-        UniformScale = 0.25,
+        UniformScale = 0.22,
     },
     Footprint = {
-        SizeX = 8,
-        SizeZ = 8,
+        SizeX = 7,
+        SizeZ = 7,
     },   
     Defense = {
         Health = 2250,
@@ -21,7 +21,7 @@ UnitBlueprint {
         BuildCostMass = 680,
         BuildRate = 120,
         BuildableCategory = {
-            'VTOL LEVEL1 CORE',
+            'AIR MOBILE TECH1 CORE',
             'cordap', 
         },
     },
@@ -31,9 +31,7 @@ UnitBlueprint {
     General = {
         UpgradesTo = 'cordap', 
     },
-    Intel = {
-        VisionRadius = 10,
-    },
+    
     SelectionSizeX = 7,
     SelectionSizeZ = 5,
     SelectionThickness = 0.25,

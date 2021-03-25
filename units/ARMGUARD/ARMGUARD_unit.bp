@@ -18,16 +18,14 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 1,
     Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1VEHICLE',
-        'BUILTBYT1HOVER',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER3ENGINEER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-        'LEVEL2',
 	    'STRUCTURE',
 	    'DEFENSE',
         'INDIRECTFIRE',
@@ -48,9 +46,6 @@ UnitBlueprint {
     },
     Description = 'Plasma Battery',
     Display = {
-        Abilities = {
-            'Defense',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

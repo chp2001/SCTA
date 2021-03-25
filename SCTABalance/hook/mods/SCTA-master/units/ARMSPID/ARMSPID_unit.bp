@@ -10,8 +10,7 @@ UnitBlueprint {
         MaxHealth = 2000,
     },
     Economy = {
-        TAConsumptionPerSecondEnergy = 30,
-        MaintenanceConsumptionPerSecondEnergy = 5,
+        MaintenanceConsumptionPerSecondEnergy = 10,
     },
     Display = {
         Abilities = {
@@ -30,10 +29,9 @@ UnitBlueprint {
             Max = 20,
             Min = 5,
         },
+        TAIntel = true,
         JammerBlips = 4,
-        VisionRadius = 14,
     },
-    StrategicIconName = 'icon_land2_antishield',
     Weapon = {
     [1] = {
         DamageToShields = 100,

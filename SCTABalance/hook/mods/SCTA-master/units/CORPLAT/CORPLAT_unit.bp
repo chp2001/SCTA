@@ -6,7 +6,8 @@
 UnitBlueprint {
    Merge = true,
     Categories = {
-        'BUILTBYT2AIR',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER3COMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -21,8 +22,6 @@ UnitBlueprint {
         'CORE',
         'AIR',
         'SORTCONSTRUCTION',
-	    'LEVEL3',
-        'PLATFORM',
     },
     Defense = {
         Health = 14000,
@@ -33,18 +32,16 @@ UnitBlueprint {
         UniformScale = 0.20,
     },
     Footprint = {
-        MinWaterDepth = 1.875,
-        SizeX = 8,
-        SizeZ = 8,
+        SizeX = 7,
+        SizeZ = 7,
     },
     Economy = {
         BuildCostEnergy = 60000,
-        BuildCostMass = 2400, 
+        BuildCostMass = 2000, 
         BuildTime = 64000,
         BuildRate = 240,
         BuildableCategory = {
-            'VTOL LEVEL3 CORE',
-            'corch',
+            'AIR MOBILE TECH3 CORE',       
         },
     },
     Physics = {

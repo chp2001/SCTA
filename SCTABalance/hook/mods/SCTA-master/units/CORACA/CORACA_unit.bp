@@ -16,15 +16,12 @@ UnitBlueprint {
         BuildRate = 225,
         BuildTime = 4000, 
         BuildableCategory = {
-            'BUILTBYT1AIR CORE',
-            'BUILTBYT2AIR CORE',
+            'BUILTBYTIER1FACTORY CORE',
+            'BUILTBYTIER2FACTORY CORE',
         },
         MaxBuildDistance = 5,
         ProductionPerSecondEnergy = 3,
         ProductionPerSecondMass = 0,
-    },
-    Intel = {
-        VisionRadius = 12,
     },
     Physics = {
         FuelRechargeRate = 777777,

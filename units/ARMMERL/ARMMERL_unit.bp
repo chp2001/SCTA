@@ -29,15 +29,13 @@ UnitBlueprint {
     BuildIconSortPriority = 5,
     Categories = {
         'SELECTABLE',
-        'VEHICLE',	
-        'LEVEL2',
+        'TANK',	
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
 	'LAND',
 	'INDIRECTFIRE',
-	'ROCKET',
         'OVERLAYINDIRECTFIRE',
         'SILO',
         'ARM',
@@ -54,9 +52,6 @@ UnitBlueprint {
     },
     Description = 'Mobile Rocket Launcher',
     Display = {
-        Abilities = {
-            'Missile',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -92,7 +87,7 @@ TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Merl',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 18,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

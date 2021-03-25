@@ -1,8 +1,8 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT1KBOT',
-        'BUILTBYT2KBOT',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2ENGINEER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -16,37 +16,34 @@ UnitBlueprint {
         'LAND', 
 	    'CORE',
 	    'SORTCONSTRUCTION',
-	    'LEVEL2',
-        'LAB',
+        'BOT',
     },
     Defense = {
         Health = 8200,
         MaxHealth = 8200,
     },
         Display = {
-        UniformScale = 0.24,
+        UniformScale = 0.2,
     },
     Footprint = {
-        SizeX = 8,
-        SizeZ = 8,
-        },
+        SizeX = 7,
+        SizeZ = 7,
+    },
     Economy = {
         BuildCostEnergy = 15000,
         BuildCostMass = 1400, 
         BuildRate = 150,
         BuildTime = 18000,
         BuildableCategory = {
-            'KBOT LEVEL1 CORE', 
-            'KBOT LEVEL2 CORE',
-            'KBOT LEVEL3 CORE',
+            'BOT MOBILE TECH1 CORE', 
+            'BOT MOBILE TECH2 CORE',
+            'BOT MOBILE TECH3 CORE',
         },
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
     LifeBarSize = 7,
-    Intel = {
-        VisionRadius = 10,
-    },
+    
     SelectionSizeX = 7,
     SelectionSizeZ = 5,
     SelectionThickness = 0.25,

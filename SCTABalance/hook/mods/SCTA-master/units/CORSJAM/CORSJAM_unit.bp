@@ -7,11 +7,13 @@ UnitBlueprint {
     Merge = true, 
     Economy = {
         ProductionPerSecondEnergy = 0,
-        TAConsumptionPerSecondEnergy = 60,
         MaintenanceConsumptionPerSecondEnergy = 20,
         },
     SelectionSizeX = 1.25,
     SelectionSizeZ = 2.6,
     SizeY = 1.6,
     SizeZ = 4,
+    Intel = {
+        TAIntel = true,
+    },
 }

@@ -36,7 +36,6 @@ UnitBlueprint {
     BuildIconSortPriority = 10,
     Categories = {
         'SELECTABLE',
-        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -48,9 +47,8 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'OCEAN',
         'SNIPEMODE',
-        'LASER',
+        'ANTISHIELD',
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -64,9 +62,6 @@ UnitBlueprint {
     },
     Description = 'Battleship',
     Display = {
-        Abilities = {
-            'Battleship',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -135,7 +130,7 @@ TechLevel = 'RULEUTL_Advanced',
     SizeX = 4,
     SizeY = 3.5,
     SizeZ = 8,
-    StrategicIconName = 'icon_ship2_directfire',
+    StrategicIconName = 'icon_ship3_directfire',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -154,6 +149,7 @@ TechLevel = 'RULEUTL_Advanced',
             DisplayName = 'COR_BATSLASER',
             EnergyDrainPerSecond = 100,
             EnergyRequired = 100,
+            DamageRadius = 2,
             EnergyChargeForFirstShot = true,
             FireTargetLayerCapsTable = {
                 Water = 'Air|Land|Water|Seabed',

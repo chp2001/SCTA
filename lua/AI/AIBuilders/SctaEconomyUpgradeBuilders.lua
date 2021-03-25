@@ -22,6 +22,9 @@ local PCBC = '/lua/editor/PlatoonCountBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local PlatoonFile = '/lua/platoon.lua'
+local TAutils = '/mods/SCTA-master/lua/TAutils.lua'
+local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
+
 
 BuilderGroup {
     BuilderGroupName = 'SCTAUpgrades',
@@ -29,12 +32,14 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Extractor Upgrade',
         PlatoonTemplate = 'SctaExtractorUpgrades',
+        DelayEqualBuildPlattons = {'Mexupgrade1', 1},
         InstanceCount = 1,
-        Priority = 100,
+        Priority = 150,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.MASSEXTRACTION * categories.LEVEL2} },
-            { EBC, 'GreaterThanEconIncome',  { 6, 75}},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1.2 }},
+            { UCBC, 'CheckBuildPlattonDelay', { 'Mexupgrade1' }},
+            { MIBC, 'GreaterThanGameTime', { 360 } },
+            { TAutils, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 1, categories.MASSEXTRACTION * categories.TECH1 } },  
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 }},
             { IBC, 'BrainNotLowPowerMode', {} },
         },
         FormRadius = 500,
@@ -48,13 +53,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Extractor Upgrade Time Based',
         PlatoonTemplate = 'SctaExtractorUpgrades',
-        InstanceCount = 1,
-        Priority = 125,
+        InstanceCount = 2,
+        Priority = 100,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 900 } },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.MASSEXTRACTION * categories.LEVEL2} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 1.2 }},
-            { EBC, 'GreaterThanEconStorageCurrent', { 1100, 2000 } },
+            { MIBC, 'GreaterThanGameTime', { 1200 } },
+            { TAutils, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.TECH1 } },  
+            { EBC, 'GreaterThanEconIncome',  { 6, 70}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.8, 0.75 }},
             { IBC, 'BrainNotLowPowerMode', {} },
         },
         FormRadius = 500,
@@ -72,25 +77,10 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1200} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TARGETING} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.OPTICS} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.5 }},
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.RADAR * categories.STRUCTURE * categories.LEVEL2} },
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, categories.FUSION} },
-            { IBC, 'BrainNotLowPowerMode', {} },
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTAUpgradeRadarT2',
-        PlatoonTemplate = 'SctaRadar2Upgrades',
-        Priority = 25,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {1800} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.OMNI * categories.STRUCTURE} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.5 }},
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.OMNI * categories.STRUCTURE * categories.LEVEL3} },
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, categories.FUSION} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.RADAR * categories.STRUCTURE * categories.TECH2} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
             { IBC, 'BrainNotLowPowerMode', {} },
         },
         BuilderType = 'Any',

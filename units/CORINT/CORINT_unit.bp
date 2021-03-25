@@ -18,15 +18,13 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 1,
     Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
-        'BUILTBYT2VEHICLE',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-        'LEVEL3',
 	    'STRUCTURE',
         'DEFENSE',
 	    'STRATEGIC',
@@ -48,9 +46,6 @@ UnitBlueprint {
     },
     Description = 'Long Range Plasma Cannon',
     Display = {
-        Abilities = {
-            'Artillery',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -73,7 +68,6 @@ UnitBlueprint {
 	MaxSlope = 0.625,
     },
     General = {
-	---BuildAngle = 0,
         Category = 'Strategic',
         Classification = 'RULEUC_Weapon',
         CommandCaps = {
@@ -88,7 +82,7 @@ TechLevel = 'RULEUTL_Secret',
         UnitName = 'Intimidator',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 18,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

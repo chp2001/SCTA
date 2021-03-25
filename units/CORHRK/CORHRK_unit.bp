@@ -29,15 +29,13 @@ UnitBlueprint {
     BuildIconSortPriority = 6,
     Categories = {
         'SELECTABLE',
-        'KBOT', 
-	    'LEVEL2',
+        'BOT', 
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
 	    'LAND',
 	    'INDIRECTFIRE',
-	    'ROCKET',
         'SILO',
         'OVERLAYINDIRECTFIRE',
         'CORE',
@@ -53,10 +51,6 @@ UnitBlueprint {
     },
     Description = 'Mobile Rocket Launcher',
     Display = {
-        Abilities = {
-            'Assault Bot',
-            'Missile',
-        },
         AnimationWalk = '/mods/SCTA-master/units/CORHRK/CORHRK_lod0_AWalk.sca',
         AnimationWalkRate = 1,
         Mesh = {
@@ -93,7 +87,7 @@ TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Dominator',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 12,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

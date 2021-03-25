@@ -18,16 +18,14 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 13,
     Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1VEHICLE',
-        'BUILTBYT1HOVER',
-        'BUILTBYT1NAVAL',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
         'SELECTABLE',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-        'LEVEL1',
 	    'STRUCTURE',
         'ECONOMIC',
         'SORTECONOMY',
@@ -46,9 +44,6 @@ UnitBlueprint {
     },
     Description = 'Produces Energy',
     Display = {
-        Abilities = {
-            'Geothermal',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -73,8 +68,7 @@ UnitBlueprint {
         SizeX = 3,
         SizeZ = 3,
     },
-    General = {
-	---BuildAngle = 2048,
+    General = {	
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,
@@ -84,8 +78,8 @@ UnitBlueprint {
 	UnitName = 'Geothermal Powerplant',
     },
     Intel = {
-        VisionRadius = 14,
-        WaterVisionRadius = 6,
+        VisionRadius = 6,
+        WaterVisionRadius = 4,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -116,7 +110,7 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 2,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure2_energy',
+    StrategicIconName = 'icon_structure1_energy',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #LARGE_BUILDINGEX

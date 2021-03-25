@@ -3,13 +3,12 @@ UnitBlueprint {
    Air = {
     MaxAirspeed = 10,
     MinAirspeed = 3,
-},
+    },
    Categories = {
     'SELECTABLE',
     'AIR',
     'SELECTION', 
     'CORE',
-    'LEVEL3',
     'TECH3',
     'ENGINEER',
     'REPAIR',
@@ -34,8 +33,9 @@ UnitBlueprint {
         BuildTime = 6000, 
         BuildCostMass = 400,  
         BuildableCategory = {
-            'BUILTBYT1HOVER CORE',
-            'BUILTBYT2AIR CORE',
+            'BUILTBYTIER3ENGINEER CORE',
+            'BUILTBYTIER2FACTORY CORE',
+            'BUILTBYTIER2ENGINEER CORE',
         },
         MaxBuildDistance = 5,
         ProductionPerSecondEnergy = 3,

@@ -28,20 +28,17 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 3,
     Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1VEHICLE',
-        'BUILTBYT1HOVER',
-        'BUILTBYT1NAVAL',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
 	    'BUILTBYCOMMANDER',
-        'BUILTBYT2SUB',
+        'BUILTBYTIER3COMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'PLANT',
         'SORTCONSTRUCTION',
-        'LEVEL1',
         'TECH1',
 	    'FACTORY',
         'RALLYPOINT',
@@ -85,7 +82,7 @@ UnitBlueprint {
         BuildTime = 6050,
 	BuildRate = 100,
         BuildableCategory = {
-            'OCEAN LEVEL1 ARM',
+            'NAVAL MOBILE TECH1 ARM',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,
@@ -93,9 +90,7 @@ UnitBlueprint {
         StorageEnergy = 50,
     },
     Footprint = {
-        SizeX = 12,
-        SizeZ = 12,
-	MinWaterDepth = 1.875,
+        MinWaterDepth = 1.5,
     },
     General = {
         BuildBones = {
@@ -119,8 +114,8 @@ UnitBlueprint {
 	UnitName = 'Shipyard',
     },
     Intel = {
-        VisionRadius = 10,
-        WaterVisionRadius = 4, 
+        VisionRadius = 14,
+        WaterVisionRadius = 8,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -128,8 +123,7 @@ UnitBlueprint {
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Water = true,
-        },
-        FlattenSkirt = true,
+        },        
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
     RollOffPoints = {

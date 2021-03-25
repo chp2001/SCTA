@@ -29,8 +29,7 @@ UnitBlueprint {
     BuildIconSortPriority = 2,
     Categories = {
         'SELECTABLE',
-        'KBOT',
-	    'LEVEL2',
+        'BOT',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -53,9 +52,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/ARMFAST/ARMFAST_lod0_Awalk.sca',
         AnimationWalkRate = 3,
-        Abilities = {
-            'Fast Bot',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -67,7 +63,7 @@ UnitBlueprint {
             },
         },
 	---SmokeBone = 'Torso',
-        UniformScale = 0.16,
+        UniformScale = 0.12,
     },
     Economy = {
         BuildCostEnergy = 2221,
@@ -112,9 +108,9 @@ UnitBlueprint {
     SelectionSizeX = 1.0,
     SelectionSizeZ = 1.0,
     SelectionThickness = 0.25,
-    SizeX = 2,
-    SizeY = 2,
-    SizeZ = 2,
+    SizeX = 1.5,
+    SizeY = 1.5,
+    SizeZ = 1.5,
     StrategicIconName = 'icon_bot2_directfire',
     StrategicIconSortPriority = 0,
     Weapon = {
@@ -131,7 +127,6 @@ UnitBlueprint {
             CollideFriendly = false,
 	        DamageFriendly = false,
             Damage = 40,
-	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARM_FAST',
             FireTargetLayerCapsTable = {

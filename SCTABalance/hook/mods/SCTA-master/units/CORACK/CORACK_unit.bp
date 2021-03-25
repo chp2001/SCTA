@@ -1,9 +1,10 @@
+---DISABLED
+
 UnitBlueprint {
     Merge = true,
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'LEVEL2',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -11,10 +12,10 @@ UnitBlueprint {
         'RECLAIMABLE',
         'PATROLHELPER',
         'SHOWQUEUE',
-	'SELECTION',
+	    'SELECTION',
         'MOBILE',
-	'CONSTRUCTION',
-	'LAND',
+	    'CONSTRUCTION',
+	    'LAND',
         'CORE',
     },
     Defense = {
@@ -26,14 +27,12 @@ UnitBlueprint {
         BuildTime = 6000,
         BuildRate = 320,
         BuildableCategory = {
-            'BUILTBYT1KBOT CORE',
-            'BUILTBYT2KBOT CORE',
+            'BUILTBYTIER1ENGINEER CORE',
+            'BUILTBYTIER2ENGINEER CORE',
         },
         MaxBuildDistance = 7,
         ProductionPerSecondEnergy = 2,
         ProductionPerSecondMass = 0,
     },
-    Intel = {
-        VisionRadius = 10,
-    },
+    
 }

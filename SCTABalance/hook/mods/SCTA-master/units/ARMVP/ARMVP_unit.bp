@@ -17,22 +17,20 @@ UnitBlueprint {
         BuildTime = 8400,
         BuildableCategory = {
             'armdvp',
-            'VEHICLE LEVEL1 ARM',
+            'TANK MOBILE TECH1 ARM',
         },
-    },    
-    Footprint = {
-        SizeX = 8,
-        SizeZ = 8,
     },
+    Footprint = {
+        SizeX = 7,
+        SizeZ = 7,
+    },    
         LifeBarHeight = 0.22,
     LifeBarOffset = 3,
     LifeBarSize = 7,    
     General = {
         UpgradesTo = 'armdvp', 
     },
-    Intel = {
-        VisionRadius = 10,
-    },
+    
     SelectionSizeX = 7,
     SelectionSizeZ = 5,
     SelectionThickness = 0.25,

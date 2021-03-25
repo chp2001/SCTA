@@ -11,14 +11,12 @@ UnitBlueprint {
         },
     },
     Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
-        'BUILTBYT2VEHICLE',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-        'LEVEL2',
         'BENIGN',
         'SORTDEFENSE',
 	    'STRUCTURE',
@@ -38,9 +36,6 @@ UnitBlueprint {
     },
     Description = 'Perimeter Defence',
     Display = {
-        Abilities = {
-            'Wall',
-        },
         Mesh = {
 	    IconFadeInZoom = 130,
             LODs = {
@@ -62,7 +57,6 @@ UnitBlueprint {
 	MaxSlope = 2,
     },
     General = {
-	---BuildAngle = 0,
         CapCost = 0,
         Category = 'Defense',
         Classification = 'RULEUC_MiscSupport',
@@ -83,6 +77,7 @@ TechLevel = 'RULEUTL_Secret',
     SizeY = 2,
     SizeZ = 2,
     StrategicIconName = 'icon_structure_wall',
+    TAStrategicIconName = '2/structure_wall',
     StrategicIconSortPriority = 0,
         Wreckage = {
 	---UseCustomMesh = true,

@@ -34,7 +34,7 @@ ProjectileBlueprint {
     Categories = {
         'CORE',
         'PROJECTILE',
-        'INDIRECTFIRE'
+        'INDIRECTFIRE',
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/Plasma_mesh.bp',
@@ -51,12 +51,11 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORE_THUD',
     },
-
-    Physics = {
-        DestroyOnWater = true,
-        InitialSpeed = 34,
-        InitialSpeedReduceDistance = 200,
-        LeadTarget = false,
-        VelocityAlign = true,
+        Physics = {
+            DestroyOnWater = true,
+            InitialSpeed = 34,
+            InitialSpeedReduceDistance = 200,
+            LeadTarget = false,
+            VelocityAlign = true,
     },
 }

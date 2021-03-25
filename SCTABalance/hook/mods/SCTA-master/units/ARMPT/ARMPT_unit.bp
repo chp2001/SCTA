@@ -3,8 +3,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'ARM',
-        'OCEAN',
-	    'LEVEL1',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -17,6 +15,7 @@ UnitBlueprint {
         'OVERLAYANTIAIR',
         'OVERLAYRADAR',
         'OVERLAYSONAR',
+        'SCOUT',
     },
     Defense = {
         Health = 900,
@@ -34,7 +33,6 @@ UnitBlueprint {
     Weapon = {
         [1] = {
             Damage = 60,
-            DamageRadius = 1,
             RackSalvoSize = 2,
             RateOfFire = 1,
         },

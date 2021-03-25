@@ -1,4 +1,3 @@
-local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local oldARMARAD = ARMARAD
 
 ARMARAD = Class(oldARMARAD) {

@@ -7,9 +7,7 @@ UnitBlueprint {
         Health = 2000,
         MaxHealth = 2000,
     },
-    Intel = {
-        VisionRadius = 10,
-    },
+    
     Economy = {
         BuildCostEnergy = 1800,
         BuildCostMass = 520,
@@ -26,5 +24,4 @@ UnitBlueprint {
     SizeX = 8,
     SizeY = 5,
     SizeZ = 8,
-    StrategicIconName = 'icon_structure1_energy',
 }

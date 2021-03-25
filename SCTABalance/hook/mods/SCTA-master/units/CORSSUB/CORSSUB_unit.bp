@@ -4,9 +4,7 @@ UnitBlueprint {
    Categories = {
     'SELECTABLE',
     'TECH3',
-    'OCEAN',
     'CORE',    
-    'LEVEL3',
     'VISIBLETORECON',
     'RECLAIMABLE',
     'MOBILE',
@@ -34,5 +32,8 @@ Display = {
     SizeX = 6,
     SizeY = 2,
     SizeZ = 6,
-    StrategicIconName = 'icon_sub3_antinavy',
+    Intel = {
+        SonarRadius = 60,
+        VisionRadius = 15,
+    },
 }

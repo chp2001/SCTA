@@ -71,9 +71,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
-        'LEVEL1',
-        'AIR',
-        'VTOL',
+        'AIR',   
         'SELECTION',
         'CORE',
         'ENGINEER',
@@ -122,7 +120,7 @@ UnitBlueprint {
         BuildTime = 10000,        
 	    BuildRate = 75,
         BuildableCategory = {
-            'BUILTBYT1AIR CORE',
+            'BUILTBYTIER1FACTORY CORE',
         },
         MaxBuildDistance = 2.5,
         StorageEnergy = 5,
@@ -180,6 +178,7 @@ TechLevel = 'RULEUTL_Basic',
     SizeY = 1,
     SizeZ = 2,
     StrategicIconName = 'icon_bot1_engineer', --'icon_fighter1_engineer',
+    TAStrategicIconName = '1/land_engineer',
     StrategicIconSortPriority = 0,
     Transport = {
         AirClass = true,

@@ -29,17 +29,16 @@ UnitBlueprint {
     BuildIconSortPriority = 2,
     Categories = {
         'SELECTABLE',
-        'KBOT',
-        'LEVEL1',
+        'BOT',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
+	    'LAND',
+	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-	'RAIDER',
+	    'SCOUT',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -52,9 +51,6 @@ UnitBlueprint {
     },
     Description = 'Infantry Kbot',
     Display = {
-        Abilities = {
-            'Infantry',
-        },
     AnimationWalk = '/mods/SCTA-master/units/CORAK/CORAK_lod0_Awalk.sca',
     AnimationWalkRate = 1,
         Mesh = {
@@ -133,8 +129,6 @@ TechLevel = 'RULEUTL_Basic',
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 25,
-            DamageRadius = 0.25,
-            FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'CORE_LASER',
             FireTargetLayerCapsTable = {

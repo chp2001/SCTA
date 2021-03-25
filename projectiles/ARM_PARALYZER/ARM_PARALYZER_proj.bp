@@ -29,7 +29,7 @@ ProjectileBlueprint {
     Categories = {
         'ARM',
         'PROJECTILE',
-        'PARALYSER'
+        'DIRECTFIRE',
     },
     Display = {
         StrategicIconSize = 1,
@@ -39,7 +39,7 @@ ProjectileBlueprint {
         EntityCategory = {
             'ARM',
             'PROJECTILE',
-            'PARALYSER',
+            'DIRECTFIRE',
         },
         Faction = 'ARM',
         Weapon = 'ARM_PARALYSER',

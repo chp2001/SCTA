@@ -70,14 +70,12 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH3',
-        'LEVEL3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'HIGHALTAIR',
         'MOBILE',
 	    'ANTIAIR',
         'AIR',
-        'VTOL',
         'OVERLAYANTIAIR',
         'ARM',
         'TRANSPORTATION',
@@ -136,8 +134,8 @@ UnitBlueprint {
         UnitName = 'Tornado',
     },
     Intel = {
-        VisionRadius = 22,
-        WaterVisionRadius = 4, 
+        VisionRadius = 30,
+        WaterVisionRadius = 10, 
         RadarStealth = true,
     },
     LifeBarHeight = 0.25,
@@ -160,6 +158,7 @@ UnitBlueprint {
     SizeY = 0.3,
     SizeZ = 1.2,
     StrategicIconName = 'icon_fighter3_missile',
+    TAStrategicIconName = '3/fighter_directfire',
     StrategicIconSortPriority = 0,
     Transport = {
         AirClass = true,

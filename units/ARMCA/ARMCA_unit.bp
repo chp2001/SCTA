@@ -71,7 +71,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
-        'LEVEL1',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -82,7 +81,6 @@ UnitBlueprint {
         'MOBILE',
 	    'CONSTRUCTION',
         'AIR',
-        'VTOL',
         'SELECTION',
         'ARM',
     },
@@ -126,7 +124,7 @@ UnitBlueprint {
         BuildTime = 10000,        
 	    BuildRate = 75,
         BuildableCategory = {
-            'BUILTBYT1AIR ARM',
+            'BUILTBYTIER1FACTORY ARM',
         },
         MaxBuildDistance = 2.5,
         StorageEnergy = 5,
@@ -187,6 +185,7 @@ UnitBlueprint {
     SizeY = 0.2,
     SizeZ = 1,
     StrategicIconName = 'icon_bot1_engineer',
+    TAStrategicIconName = '1/land_engineer',
     StrategicIconSortPriority = 0,
     Transport = {
         AirClass = true,

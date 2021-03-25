@@ -41,9 +41,9 @@ UnitBlueprint {
     'LAND', 
         'CONSTRUCTIONSORTDOWN',
 	'CORE',
-    'DEVELOPMENT',
+    'RESEARCH',
 	'SORTCONSTRUCTION',
-	'LEVEL2',
+    'BOT',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -61,7 +61,7 @@ UnitBlueprint {
         AnimationPack = '/mods/SCTA-master/units/CORLAB/CORLAB_lod0_pack.sca',
         AnimationPackRate = 0.5,  
         Abilities = {
-            'Upgradeable',
+            '<LOC ability_upgradable>Upgradeable',
         },
 	BuildAttachBone = 'pad',
         Mesh = {
@@ -77,8 +77,7 @@ UnitBlueprint {
                 },
             },
         },
-	--TextureAnimationFrames = 6,
-        UniformScale = 0.26,
+        UniformScale = 0.22,
     },
     Economy = {
         BuildCostEnergy = 38000,
@@ -88,8 +87,8 @@ UnitBlueprint {
     DifferentialUpgradeCostCalculation = true,
         BuildableCategory = {
             'coradlab',
-            'KBOT LEVEL2 CORE',
-            'KBOT LEVEL1 CORE',
+            'BOT MOBILE TECH2 CORE',
+            'BOT MOBILE TECH1 CORE',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,
@@ -97,15 +96,14 @@ UnitBlueprint {
         StorageEnergy = 50,
     },
     Footprint = {
-	MaxSlope = 0.625,
-    SizeX = 8,
-    SizeZ = 8,
+        MaxSlope = 0.625,
+        SizeX = 7,
+        SizeZ = 7,
     },
     General = {
         BuildBones = {
             BuildEffectBones = {'muzzle1', 'muzzle2','muzzle3','muzzle4'},
         },     
-	---BuildAngle = 1024,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {
@@ -126,13 +124,12 @@ UnitBlueprint {
         UpgradesTo = 'coradlab', 
     },
     Intel = {
-        VisionRadius = 10,
-    },
+        VisionRadius = 14,
+    },    
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
     LifeBarSize = 7,
-    Physics = {
-        FlattenSkirt = true,
+    Physics = {        
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
     RollOffPoints = {
@@ -149,18 +146,6 @@ UnitBlueprint {
         Z = -2.5,
     }, 
 },
-        OccupyRects = {
-            # offsetX offsetZ  sizeX sizeZ, offset from center of unit
-            -3,
-            0,
-            0.5,
-            3,
-
-            2.5,
-            0,
-            0.5,
-            3,
-        },
     },
     SelectionSizeX = 7,
     SelectionSizeZ = 5,

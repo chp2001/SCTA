@@ -35,7 +35,6 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 18,
     Categories = {
-        'BUILTBYT2KBOT',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -46,14 +45,9 @@ UnitBlueprint {
         'RALLYPOINT',
         'SHOWQUEUE',
         'STRUCTURE',
-        'CONSTRUCTION',
-        'LAND',
         'CORE',
         'STRATEGIC',
         'SORTCONSTRUCTION',
-        'LEVEL3',
-        'GANTRY', 
-        'DEVELOPMENT',
     },
     Defense = {
         ArmorType = 'ExperimentalStructure',
@@ -89,7 +83,7 @@ UnitBlueprint {
         BuildTime = 41937,
         BuildRate = 200,
         BuildableCategory = {
-            'BUILTBYGANTRY CORE',
+            'BUILTBYQUANTUMGATE CORE',
         },
         InitialRallyX = 0,
         InitialRallyZ = 8,
@@ -129,8 +123,7 @@ TechLevel = 'RULEUTL_Advanced',
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
-    Physics = {
-        FlattenSkirt = true,
+    Physics = {        
         SkirtSizeX = 12,
         SkirtSizeZ = 12,
         RollOffPoints = {
@@ -140,23 +133,6 @@ TechLevel = 'RULEUTL_Advanced',
                 Y = 0,
                 Z = 2.5,
             },
-        },
-        OccupyRects = {
-            # offsetX offsetZ  sizeX sizeZ, offset from center of unit
-            0,
-            -4.5,
-            4.5,
-            1,
-
-            -4,
-            1,
-            1,
-            3.5,
-
-            4,
-            1,
-            1,
-            3.5,
         },
     },
     SelectionSizeX = 4.5,

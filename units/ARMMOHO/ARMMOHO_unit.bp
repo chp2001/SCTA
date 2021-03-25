@@ -29,12 +29,10 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 1,
     Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
-        'BUILTBYT2VEHICLE',
-        'BUILTBYT2SUB',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3COMMANDER',
         'TECH2',
-        'LEVEL2',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -81,8 +79,7 @@ UnitBlueprint {
         SizeZ = 5,
 	MaxSlope = 0.625,
     },
-    General = {
-	---BuildAngle = 2048,
+    General = {	
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
         SelectionPriority = 5,

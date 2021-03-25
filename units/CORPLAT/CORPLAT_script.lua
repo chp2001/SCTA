@@ -52,7 +52,7 @@ CORPLAT = Class(TAFactory) {
 		end
 	end,
 
-	OnStopBuild = function(self, unitBuilding)
+	--[[OnStopBuild = function(self, unitBuilding)
 		TAFactory.OnStopBuild(self, unitBuilding)
 		if not self.Water and EntityCategoryContains(categories.HOVER, unitBuilding) then
 			ForkThread(self.Rolling, self)
@@ -65,7 +65,7 @@ CORPLAT = Class(TAFactory) {
 			WaitSeconds(1)
 			self.Sliders.chassis:SetSpeed(10)
 			self.Sliders.chassis:SetGoal(0,0,0)
-	end,
+	end,]]
 
 
 

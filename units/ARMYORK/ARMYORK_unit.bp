@@ -29,8 +29,7 @@ UnitBlueprint {
     BuildIconSortPriority = 5,
     Categories = {
         'SELECTABLE',
-        'VEHICLE',
-        'LEVEL2',
+        'TANK',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -129,8 +128,6 @@ TechLevel = 'RULEUTL_Advanced',
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 85,
-            DamageRadius = 3,
-            FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'ARMYORK_GUN',
             FireTargetLayerCapsTable = {

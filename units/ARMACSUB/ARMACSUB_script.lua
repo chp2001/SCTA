@@ -3,10 +3,10 @@
 #
 #Script created by Raevn
 
-local TAconstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TAconstructor
+local TASeaConstructor = import('/mods/SCTA-master/lua/TAconstructor.lua').TASeaConstructor
 
 
-ARMACSUB = Class(TAconstructor) {
+ARMACSUB = Class(TASeaConstructor) {
 }
 
 TypeClass = ARMACSUB

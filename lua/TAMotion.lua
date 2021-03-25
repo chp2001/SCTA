@@ -1,10 +1,4 @@
-local Unit = import('/lua/sim/Unit.lua').Unit
-local explosion = import('/lua/defaultexplosions.lua')
-local scenarioUtils = import('/lua/sim/ScenarioUtilities.lua')
-local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
-local Game = import('/lua/game.lua')
 local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
-local util = import('/lua/utilities.lua')
 
 TASea = Class(TAunit) 
 {
@@ -35,8 +29,6 @@ TASea = Class(TAunit)
 		end
 		end
 	end,
-
-
 }
 
 TAWalking = Class(TAunit) 
@@ -76,7 +68,22 @@ TACounter = Class(TAWalking)
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAWalking.OnStopBeingBuilt(self,builder,layer)
 		local bp = self:GetBlueprint()
-		if bp.Intel.RadarStealth or bp.Intel.RadarRadius then
+		if bp.Intel.RadarStealthField or bp.Intel.RadarRadius then
+			self:SetMaintenanceConsumptionActive()
+		end
+        self:SetScriptBit('RULEUTC_StealthToggle', false)
+		self:SetScriptBit('RULEUTC_JammingToggle', true)
+		self:SetScriptBit('RULEUTC_CloakToggle', true)
+		self:RequestRefreshUI()
+	end,
+}
+
+TASeaCounter = Class(TASea) 
+{ 
+	OnStopBeingBuilt = function(self,builder,layer)
+		TASea.OnStopBeingBuilt(self,builder,layer)
+		local bp = self:GetBlueprint()
+		if bp.Intel.SonarStealthField or bp.Intel.RadarRadius then
 			self:SetMaintenanceConsumptionActive()
 		end
         self:SetScriptBit('RULEUTC_StealthToggle', false)

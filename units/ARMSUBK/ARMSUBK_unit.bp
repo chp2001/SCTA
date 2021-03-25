@@ -29,8 +29,6 @@ UnitBlueprint {
     BuildIconSortPriority = 2,
     Categories = {
         'SELECTABLE',
-        'OCEAN',   
-        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -66,6 +64,13 @@ UnitBlueprint {
                     ShaderName = 'AeonCZAR', 
 		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
+            },
+        },
+        MovementEffects = {
+            TAMovement = {
+            Emitter = '/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
+            Scale = 0.25,
+            Bones = {'wake1', 'wake2'},
             },
         },
         UniformScale = 0.1,
@@ -135,8 +140,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 300,
-        DamageRadius = 1,
-        DamageType = 'AntiSub',
+        DamageType = 'TASpec',
             DisplayName = 'ARMSMART_TORPEDO',
             FireTargetLayerCapsTable = {
                 Sub = 'Seabed|Sub|Water',

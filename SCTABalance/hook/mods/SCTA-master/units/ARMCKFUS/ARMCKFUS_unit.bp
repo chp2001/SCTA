@@ -1,5 +1,18 @@
 UnitBlueprint {
     Merge = true, 
+    Categories = {
+        'BUILTBYTIER3ENGINEER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH3',
+        'STRUCTURE',
+        'ECONOMIC',
+        'SORTECONOMY',
+	    'ENERGYPRODUCTION',
+	    'ARM',
+    },
     Defense = {
         Health = 7000,
         MaxHealth = 7000,
@@ -15,6 +28,12 @@ UnitBlueprint {
     BuildCostEnergy = 150000,
     ProductionPerSecondEnergy = 2000,
 	MaintenanceConsumptionPerSecondEnergy = 250,
+    },
+    Intel = {
+    ActiveIntel = {
+        RadarStealth = true,
+    },
+    RadarStealth = true,
     },
     LifeBarSize = 6,
     SelectionSizeX = 8,

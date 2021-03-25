@@ -7,9 +7,6 @@ Defense = {
     Health = 2000,
     MaxHealth = 2000,
 },
-Intel = {
-    VisionRadius = 10,
-},
 LifeBarHeight = 0.075,
 LifeBarOffset = 1.2,
 LifeBarSize = 6,
@@ -25,5 +22,4 @@ SelectionThickness = 0.72,
 SizeX = 8,
 SizeY = 5,
 SizeZ = 8,
-StrategicIconName = 'icon_structure1_energy',
 }

@@ -30,15 +30,14 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'LEVEL2',
-        'KBOT',
+        'BOT',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
 	    'LAND',
         'ARM',
-        'SCOUT',
-        'JAM',
+        'SCOUT',        
+        'RADAR',
         'OVERLAYRADAR',
     },
     Defense = {

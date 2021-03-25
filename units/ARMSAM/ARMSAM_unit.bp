@@ -29,8 +29,7 @@ UnitBlueprint {
     BuildIconSortPriority = 5,
     Categories = {
         'SELECTABLE',
-        'VEHICLE',
-        'LEVEL1',
+        'TANK',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -39,7 +38,7 @@ UnitBlueprint {
 	    'ANTIAIR',
         'OVERLAYANTIAIR',
         'ARM',
-        'ROCKET',
+        'SILO',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -129,7 +128,7 @@ TechLevel = 'RULEUTL_Basic',
             Damage = 90,
             DamageRadius = 1.5,
             FiringRandomness = 0,
-            DamageType = 'LANDAir',
+            DamageType = 'TASpec',
             DisplayName = 'ARMTRUCK_MISSILE',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',

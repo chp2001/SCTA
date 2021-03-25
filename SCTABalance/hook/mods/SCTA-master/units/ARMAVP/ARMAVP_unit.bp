@@ -1,8 +1,8 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT1KBOT',
-        'BUILTBYT2KBOT',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2ENGINEER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -16,15 +16,14 @@ UnitBlueprint {
         'LAND', 
 	    'ARM',
         'SORTCONSTRUCTION',
-	    'LEVEL2',
-        'LAB',
+        'TANK',
     },
     Defense = {
         Health = 8200,
         MaxHealth = 8200,
     },
         Display = {      
-        UniformScale = 0.25,
+        UniformScale = 0.22,
     },
     Economy = {
         BuildCostEnergy = 15000,
@@ -32,21 +31,19 @@ UnitBlueprint {
         BuildRate = 150,
         BuildTime = 18000,
         BuildableCategory = {
-            'VEHICLE LEVEL2 ARM',
-            'VEHICLE LEVEL1 ARM',
-            'VEHICLE LEVEL3 ARM',
+            'TANK MOBILE TECH2 ARM',
+            'TANK MOBILE TECH1 ARM',
+            'TANK MOBILE TECH3 ARM',
         },
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
     LifeBarSize = 7,
     Footprint = {
-        SizeX = 8,
-        SizeZ = 8,
+        SizeX = 7,
+        SizeZ = 7,
     },
-    Intel = {
-        VisionRadius = 10,
-    },
+    
     SelectionSizeX = 7,
     SelectionSizeZ = 5,
     SelectionThickness = 0.25,

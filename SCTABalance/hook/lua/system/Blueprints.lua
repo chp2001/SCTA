@@ -25,7 +25,7 @@ do
                 BuildCostMass = 0.5,
                 BuildTime = 0.13,
                 BuildRate = 0.075,
-                MaintenanceConsumptionPerSecondEnergy = 3,
+                MaintenanceConsumptionPerSecondEnergy = 2,
             },
             Physics = {
                 MaxSpeed = 1.2,
@@ -55,8 +55,8 @@ do
                 UniformScale = 0.5,
             },
             Intel = {
-                VisionRadius = 1.5, 
-                WaterVisionRadius = 3,
+                VisionRadius = 2, 
+                WaterVisionRadius = 4,
                 },
             Economy = {
                 BuildCostEnergy = 0.3,
@@ -67,7 +67,7 @@ do
             },
             Physics = {
                 MaxSpeed = 0.75,
-                TurnRate = 0.5,
+                TurnRate = 0.75,
             },
         }
         local Naval_Singles = {

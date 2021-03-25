@@ -30,8 +30,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
-        'KBOT',
-	    'LEVEL1',
+        'BOT',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -39,7 +38,7 @@ UnitBlueprint {
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
-        'ROCKET',
+        'SILO',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -90,7 +89,7 @@ UnitBlueprint {
         UnitName = 'Rocko',
     },
     Intel = {
-        VisionRadius = 10,
+        VisionRadius = 14,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -128,8 +127,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 105,
-            DamageRadius = 1, 
-            FiringRandomness = 0,
+            DamageRadius = 1.5, 
             DamageType = 'Normal',
             DisplayName = 'KBOT_ROCKET',
             FireTargetLayerCapsTable = {

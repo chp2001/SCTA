@@ -30,7 +30,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH3',
-        'LEVEL3',
         'HOVER',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -38,9 +37,8 @@ UnitBlueprint {
         'ANTIAIR',
         'OVERLAYANTIAIR',
         'LAND',
-        'ROCKET',
+        'SILO',
         'ARM',
-        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -76,10 +74,7 @@ UnitBlueprint {
 	},
         UniformScale = 0.16,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 1,
-    },
+
     Economy = {
         BuildCostEnergy = 1444,
         BuildCostMass = 120,
@@ -103,7 +98,7 @@ TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Swatter',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 18,
         WaterVisionRadius = 6,
     },
     LifeBarHeight = 0.25,
@@ -150,7 +145,7 @@ TechLevel = 'RULEUTL_Advanced',
             Damage = 150,
             DamageRadius = 1.5,
             FiringRandomness = 0,
-            DamageType = 'LANDAir',
+            DamageType = 'TASpec',
             DisplayName = 'ARMAH_WEAPON',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',

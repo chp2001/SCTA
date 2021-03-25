@@ -28,13 +28,12 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 0,
     Categories = {
-        'BUILTBYT2SUB',
+        'BUILTBYTIER3COMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH2',
-        'LEVEL3',
+        'TECH3',
 	    'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -44,7 +43,6 @@ UnitBlueprint {
         'ARM',
         'AIR',
 	    'SORTCONSTRUCTION',
-        'PLATFORM',	
     },
     Defense = {
         ArmorType = 'Structure',
@@ -81,8 +79,9 @@ UnitBlueprint {
         BuildTime = 19248,
     BuildRate = 200,
     BuildableCategory = {
-        'SEAPLA ARM',
-        'VTOL LEVEL3 ARM',
+        'armfig',
+        'armlance',
+        'AIR MOBILE TECH3 ARM',
     },
 	InitialRallyX = 1,
 	InitialRallyZ = 7,
@@ -117,7 +116,8 @@ UnitBlueprint {
     },
     Intel = {
     VisionRadius = 14,
-	RadarRadius = 30,
+	RadarRadius = 32,
+    WaterVisionRadius = 8,
     RadarStealth = true,
     },
     LifeBarHeight = 0.25,
@@ -126,8 +126,7 @@ UnitBlueprint {
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Water = true,
-        },
-        FlattenSkirt = true,
+        },        
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
     },

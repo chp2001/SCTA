@@ -14,15 +14,15 @@ BaseBuilderTemplate {
         'SCTAAICommanderBuilder',
         
         -- Unit Builders
+        'SCTAAIEngineerBuilder',
         'SCTAAILandBuilder',
         'SCTAAIAirBuilder',
         'SCTAAILandFormers',
         'SCTAAIAirFormers',
-        'SCTAAINavalBuilder',
-        'SCTANavalFormer',
         
         -- Buildings etc
         'SCTAAIEngineerMiscBuilder',
+        'SCTAAIEngineerEcoBuilder',
         'SCTAAIFactoryBuilders',
         'SCTAUpgrades',
         'SCTAExpansionBuilders',

@@ -67,12 +67,10 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
         'AIR',
-        'VTOL',
 	    'GROUNDATTACK',
         'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',	
@@ -90,9 +88,6 @@ UnitBlueprint {
     },
     Description = 'Gunship',
     Display = {
-        Abilities = {
-            'Gunship',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -134,7 +129,8 @@ UnitBlueprint {
         UnitName = 'Brawler',
     },
     Intel = {
-        VisionRadius = 22,
+        VisionRadius = 24,
+        WaterVisionRadius = 4, 
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -175,21 +171,20 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 30,
-            DamageRadius = 0.25, 
             DamageType = 'Normal',
             DisplayName = 'VTOL_EMG',
             FireTargetLayerCapsTable = {
                 Air = 'Land|Water|Air',
                 Land = 'Land|Water|Air',
             },
-        RangeCategory = 'UWRC_DirectFire',
-        WeaponCategory = 'DirectFire',
-        TargetCheckInterval = 1,
+            RangeCategory = 'UWRC_DirectFire',
+            WeaponCategory = 'DirectFire',
+            TargetCheckInterval = 1,
             Label = 'VTOL_EMG',
-            MaxRadius = 23.125,
+            MaxRadius = 23,
             MuzzleSalvoDelay = 0.2,
             MuzzleSalvoSize = 2,
-	    MuzzleVelocity = 30,
+	        MuzzleVelocity = 30,
             ProjectileId = '/mods/SCTA-master/projectiles/VTOL_EMG/VTOL_EMG_proj.bp',
             RackBones = {
                 {
@@ -222,6 +217,7 @@ UnitBlueprint {
             TurretBoneMuzzle = 'armbrawl',
             TurretBonePitch = 'armbrawl',
             TurretBoneYaw = 'armbrawl',
+            DamageRadius = 1.5,
             TurretPitch = -40,
             TurretPitchRange = 70,
             TurretPitchSpeed = 90,
@@ -238,6 +234,5 @@ UnitBlueprint {
             DummyWeapon = true,
             Label = 'DeathWeapon',
         }, 
-
     },
 }

@@ -3,8 +3,7 @@ UnitBlueprint {
    Categories = {
     'SELECTABLE',
     'TECH2',
-    'KBOT',
-    'LEVEL2',
+    'BOT',
     'VISIBLETORECON',
     'RECLAIMABLE',
     'MOBILE',
@@ -12,7 +11,7 @@ UnitBlueprint {
     'INDIRECTFIRE',
     'OVERLAYINDIRECTFIRE',
     'ARM',
-    'ROCKET',
+    'SILO',
     },
    Defense = {
     Health = 1100,
@@ -28,6 +27,9 @@ UnitBlueprint {
         BuildCostEnergy = 5000,
         BuildCostMass = 300,
         BuildTime = 6000,
+    },
+    Intel = {
+        VisionRadius = 12,
     },
     SelectionSizeX = 0.8,
     SelectionSizeZ = 0.8,

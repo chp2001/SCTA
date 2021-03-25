@@ -1,9 +1,9 @@
 UnitBlueprint {
     Merge = true, 
     Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1NAVAL',
-        'BUILTBYT1HOVER',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -18,7 +18,7 @@ UnitBlueprint {
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',
         'ARM',
-	    'LEVEL2',
+
     },
     Defense = {
         Health = 2000,
@@ -26,6 +26,11 @@ UnitBlueprint {
     },
     Economy = {
         BuildTime = 20000,
+    },
+    Intel = {
+        SonarRadius = 40,
+        VisionRadius = 14,
+        WaterVisionRadius = 15,
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,

@@ -19,18 +19,16 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 11,
     Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1VEHICLE',
-        'BUILTBYT1HOVER',
-        'BUILTBYT1NAVAL',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-        'LEVEL1',
 	    'STRUCTURE',
         'ENERGYSTORAGE',
         'ECONOMIC',
@@ -68,8 +66,6 @@ UnitBlueprint {
     },
     Footprint = {
 	MaxSlope = 0.625,
-        SizeX = 4,
-        SizeZ = 4,
     },
     General = {
         Category = 'Economy',
@@ -81,8 +77,8 @@ UnitBlueprint {
         UnitName = 'Energy Storage',
     },
     Intel = {
-        VisionRadius = 14,
-        WaterVisionRadius = 6,
+        VisionRadius = 6,
+        WaterVisionRadius = 4,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.25,
@@ -100,6 +96,7 @@ UnitBlueprint {
     SizeY = 4,
     SizeZ = 4,
     StrategicIconName = 'icon_structure_energy_storage',
+    TAStrategicIconName = '1/structure_energystorage',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #ESTOR_BUILDINGEX

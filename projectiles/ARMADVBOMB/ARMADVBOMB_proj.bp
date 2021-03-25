@@ -34,7 +34,7 @@ ProjectileBlueprint {
     Categories = {
         'ARM',
         'PROJECTILE',
-        'DIRECTFIRE',
+        'INDIRECTFIRE',
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/bomb_mesh.bp',
@@ -42,11 +42,11 @@ ProjectileBlueprint {
         StrategicIconSize = 1,
     },
     General = {
-        Category = 'Direct Fire',
+        Category = 'Bomb',
         EntityCategory = {
             'ARM',
             'PROJECTILE',
-            'DIRECTFIRE',
+            'INDIRECTFIRE',
         },
         Faction = 'ARM',
         Weapon = 'ARMADVBOMB',
@@ -55,7 +55,7 @@ ProjectileBlueprint {
     Physics = {
         DestroyOnWater = true,
         RealisticOrdinance = true,
-        Lifetime = 10,
+        Lifetime = 4,
         LeadTarget = false,
 	UseGravity = true,
         VelocityAlign = true,

@@ -39,8 +39,8 @@ UnitBlueprint {
     BuildIconSortPriority = 0,
     Categories = {
         'SELECTABLE',
-        'VEHICLE',	
-        'LEVEL2',
+        'TANK',	
+
         'TECH2',
         'ENGINEER',
         'REPAIR',
@@ -111,7 +111,8 @@ UnitBlueprint {
         BuildRate = 200,
         BuildTime = 10806,
         BuildableCategory = {
-            'BUILTBYT2VEHICLE CORE',
+            'BUILTBYTIER2ENGINEER CORE',
+            'corvp',
         },
         MaxBuildDistance = 3.75,
         StorageEnergy = 25,

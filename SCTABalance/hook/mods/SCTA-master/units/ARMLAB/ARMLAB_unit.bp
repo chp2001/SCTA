@@ -5,12 +5,12 @@ UnitBlueprint {
              Abilities = {
             '<LOC ability_upgradable>Upgradeable',
         },
-        UniformScale = 0.25,
+        UniformScale = 0.22,
     },
     Footprint = {
-            SizeX = 8,
-            SizeZ = 8,
-        },
+        SizeX = 7,
+        SizeZ = 7,
+    },
     Defense = {
         Health = 2400,
         MaxHealth = 2400,
@@ -21,7 +21,7 @@ UnitBlueprint {
         BuildTime = 7600,
         BuildableCategory = {
             'armdlab', 
-            'KBOT LEVEL1 ARM',
+            'BOT MOBILE TECH1 ARM',
         },
     },
     LifeBarHeight = 0.22,
@@ -30,9 +30,7 @@ UnitBlueprint {
     General = {
         UpgradesTo = 'armdlab', 
     },
-    Intel = {
-        VisionRadius = 10,
-    },
+    
     SelectionSizeX = 7,
     SelectionSizeZ = 5,
     SelectionThickness = 0.25,

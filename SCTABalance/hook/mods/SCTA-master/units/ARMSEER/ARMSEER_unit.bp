@@ -11,15 +11,14 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'INTELLIGENCE',
+	    'LAND',
+	    'INTELLIGENCE',
         'OVERLAYRADAR',
         'ARM',
-    'VEHICLE',
-    'LEVEL3',
-    'OVERLAYOMNI',
-    'OVERLAYCOUNTERINTEL',
-    'JAM',
+        'TANK',
+        'OVERLAYOMNI',
+        'STEALTHFIELD',
+        'OVERLAYCOUNTERINTEL',        
     },
     Display = {
     Abilities = {
@@ -30,8 +29,7 @@ UnitBlueprint {
     },
     Economy = {
         ProductionPerSecondEnergy = 0,
-        TAConsumptionPerSecondEnergy = 60,
-        MaintenanceConsumptionPerSecondEnergy = 10,
+        MaintenanceConsumptionPerSecondEnergy = 15,
     },
     General = {
         OrderOverrides = {
@@ -52,6 +50,7 @@ UnitBlueprint {
             },
             RadarStealth = true,
             RadarStealthField = true,
+            TAIntel = true,
             VisionRadius = 14,
             OmniRadius = 60,
             RadarStealthFieldRadius = 30,

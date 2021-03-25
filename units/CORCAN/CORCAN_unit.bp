@@ -29,8 +29,7 @@ UnitBlueprint {
     BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
-        'KBOT',
-        'LEVEL2',
+        'BOT',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -39,7 +38,7 @@ UnitBlueprint {
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'LASER',
+        'ANTISHIELD',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -54,9 +53,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORCAN/CORCAN_lod0_Awalk.sca',
         AnimationWalkRate = 1,
-        Abilities = {
-            'Assault Bot',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -92,7 +88,7 @@ TechLevel = 'RULEUTL_Advanced',
         UnitName = 'The Can',
     },
     Intel = {
-        VisionRadius = 12,
+        VisionRadius = 14,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -115,7 +111,7 @@ TechLevel = 'RULEUTL_Advanced',
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_bot2_directfire',
+    StrategicIconName = 'icon_land2_directfire',
     StrategicIconSortPriority = 0,
     Transport = {
         TransportClass = 2,

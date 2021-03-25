@@ -44,8 +44,7 @@ UnitBlueprint {
     BuildIconSortPriority = 0,
     Categories = {
         'SELECTABLE',
-        'KBOT',
-        'LEVEL2',
+        'BOT',
         'TECH2',
         'ENGINEER',
         'REPAIR',
@@ -96,7 +95,9 @@ UnitBlueprint {
         BuildRate = 160,
         BuildTime = 13963,
         BuildableCategory = {
-            'BUILTBYT2KBOT CORE',
+            'BUILTBYTIER2ENGINEER CORE',
+            'corlab',
+            'corgant',
         },
         MaxBuildDistance = 3.75,
         StorageEnergy = 25,

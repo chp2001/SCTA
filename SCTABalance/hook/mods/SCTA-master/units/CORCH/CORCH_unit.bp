@@ -3,7 +3,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH3',
-        'LEVEL3',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -17,9 +16,8 @@ UnitBlueprint {
         'LAND',
         'CORE',
         'HOVER',
-        'KBOT',
-        'VEHICLE',
-        'ALLTERRAIN',
+        'BOT',
+        'TANK',
     },
     Defense = {
         Health = 2080,
@@ -40,14 +38,10 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 4,
         MaxBuildDistance = 8,
         BuildableCategory = {
-            'BUILTBYT1HOVER CORE',
-            'BUILTBYT2KBOT CORE',
-            'BUILTBYT2AIR CORE',
+            'BUILTBYTIER3ENGINEER CORE',
+            'BUILTBYTIER2ENGINEER CORE',
+            'BUILTBYTIER2FACTORY CORE',
         },
-    },
-    Intel = {
-        VisionRadius = 8,
-        WaterVisionRadius = 4, 
     },
     SelectionSizeX = 1.25,
     SelectionSizeZ = 1.25,

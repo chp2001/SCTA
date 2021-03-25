@@ -1,8 +1,6 @@
 local TAWalking = import('/mods/SCTA-master/lua/TAMotion.lua').TAWalking
-local Unit = import('/lua/sim/Unit.lua').Unit
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 local oldPosition={1,1,1}
-local EffectUtil = import('/lua/EffectUtilities.lua')
 local Util = import('/lua/utilities.lua')
 local RandomFloat = Util.GetRandomFloat
 
@@ -73,10 +71,10 @@ TAconstructor = Class(TAWalking) {
         end
         self.BuildingUnit = false
         self:SetImmobile(false)
-        if __blueprints['armgant'] then
+        if __blueprints['armgant'] and self.restrictions then
             TAutils.updateBuildRestrictions(self)
         end
-        TAWalking.OnStopBuild(self,unitBeingBuilt)
+        TAWalking.OnStopBuild(self, unitBeingBuilt)
     end,
 
     WaitForBuildAnimation = function(self, enable)
@@ -126,18 +124,14 @@ TAconstructor = Class(TAWalking) {
     CreateReclaimEffects = function( self, target )
         self.ReclaimEffectsBag:Add(TAutils.TAReclaimEffects(self, target, self.BuildEffectBones or {0, }, self.ReclaimEffectsBag))
     end,
-          
-    
+
     OnStopReclaim = function(self, target)
         TAWalking.OnStopReclaim(self, target)
         if self.BuildingOpenAnimManip then
             self.BuildingOpenAnimManip:SetRate(-1)
         end
     end,
-
-    OnStartReclaim = function(self, target)
-        TAWalking.OnStartReclaim(self, target)
-    end,
+        
 }
 
 TASeaConstructor = Class(TAconstructor) 
@@ -176,7 +170,7 @@ TASeaConstructor = Class(TAconstructor)
 
 TANecro = Class(TAconstructor) {
     OnStartReclaim = function(self, target, oldPosition)
-        if EntityCategoryContains(categories.NECRO, self) then
+        if self:GetBlueprint().Economy.Necro then
             if not target.ReclaimInProgress and not target.NecroingInProgress then
                 --LOG('* Necro: OnStartReclaim:  I am a necro! no ReclaimInProgress; starting Necroing')
                 target.NecroingInProgress = true
@@ -212,7 +206,7 @@ TANecro = Class(TAconstructor) {
     OnStopReclaim = function(self, target, oldPosition)
         TAconstructor.OnStopReclaim(self, target, oldPosition)
         if not target then
-            if self.RecBP and EntityCategoryContains(categories.NECRO, self) and oldPosition ~= self.RecPosition and self.spawnUnit then
+            if self.RecBP and self:GetBlueprint().Economy.Necro and oldPosition ~= self.RecPosition and self.spawnUnit then
                 --LOG('* Necro: OnStopReclaim:  I am a necro! and RecBP = true ')
                 oldPosition = self.RecPosition
                 self:ForkThread( self.RespawnUnit, self.RecBP, self:GetArmy(), self.RecPosition)
@@ -220,7 +214,7 @@ TANecro = Class(TAconstructor) {
                 --LOG('* Necro: OnStopReclaim: no necro or no RecBP')
             end
         else
-            if EntityCategoryContains(categories.NECRO, self) then
+            if self:GetBlueprint().Economy.Necro then
                 --LOG('* Necro: OnStopReclaim:  Wreck still exist. Removing target data from Necro')
                 self.RecBP = nil
                 self.RecPosition = nil
@@ -239,6 +233,10 @@ TANecro = Class(TAconstructor) {
 }
 
 TACommander = Class(TAconstructor) {
+
+    CreateReclaimEffects = function( self, target )
+        self.ReclaimEffectsBag:Add(TAutils.TACommanderReclaimEffects(self, target, self.BuildEffectBones or {0, }, self.ReclaimEffectsBag))
+    end,
 
     SetAutoOvercharge = function(self, auto)
         local wep = self:GetWeaponByLabel('AutoDGun')

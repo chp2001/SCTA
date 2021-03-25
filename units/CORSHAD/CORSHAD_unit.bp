@@ -68,13 +68,11 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
-        'LEVEL1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
 	    'BOMBER',
-        'AIR',
-        'VTOL',
+        'AIR',        
         'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
@@ -93,9 +91,6 @@ UnitBlueprint {
     },
     Description = 'Bomber',
     Display = {
-        Abilities = {
-            'Bomber',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

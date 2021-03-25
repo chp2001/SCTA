@@ -2,34 +2,43 @@
 #CORSPY
 #
 #Blueprint created by Raevn
-
 UnitBlueprint {
     Merge = true,
     Categories = {
         'SELECTABLE',
-        'TECH2',
+        'BOT',
+        'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	    'LAND',
+        'LAND',
         'ARM',
-	    'LEVEL2',
-        'OVERLAYRADAR',
-        'TACLOAK',
         'SCOUT',
+        'OVERLAYOMNI',
+    },
+    Display = {
+        UniformScale = 0.12,
     },
     Economy = {
         BuildCostEnergy = 1500,
         BuildTime = 3000,
-        TAConsumptionPerSecondEnergy = 60,
         MaintenanceConsumptionPerSecondEnergy = 10,
     },
     Intel = {
+        ActiveIntel = {
+            Omni = true,
+        },    
         JamRadius = {
             Max = 10,
             Min = 5,
           },
+          VisionRadius = 10,
           JammerBlips = 5,
+          OmniRadius = 30,
           RadarStealth = true,
     },
+    StrategicIconName = 'icon_land3_counterintel',
+    SizeX = 1.2,
+    SizeY = 1.2,
+    SizeZ = 1.2,
 }

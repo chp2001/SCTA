@@ -10,13 +10,15 @@ UnitBlueprint {
     'DIRECTFIRE',
     'OVERLAYDIRECTFIRE',
     'CORE',
-    'VEHICLE',
-    'LEVEL3',
-},
-Defense = {
+    'TANK',
+    },
+    Defense = {
     Health = 16000,
     MaxHealth = 16000,
-},
+    },
+    Display = {
+    UniformScale = 0.2,
+    },
     Economy = {
         BuildCostEnergy = 36000,
         BuildCostMass = 2450,
@@ -26,5 +28,10 @@ Defense = {
         MaxAcceleration = 1.6,
         MaxSpeed = 2.2,
     },
-    StrategicIconName = 'icon_bot3_armored',
+    Weapon = {
+        [1] = {
+            MaxRadius = 32, 
+        },
+        [2] = {}, 
+        },
 }

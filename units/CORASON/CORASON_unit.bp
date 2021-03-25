@@ -23,12 +23,12 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 16,
     Categories = {
-        'BUILTBYT2SUB',
+        'BUILTBYTIER3COMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'LEVEL2',
+
         'TECH3',
 	'STRUCTURE',
 	'INTELLIGENCE',
@@ -74,12 +74,9 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 18,
     },
     Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
 	MinWaterDepth = 1.5,
     },
     General = {
-	---BuildAngle = 8192,
         Category = 'Intelligence',
         Classification = 'RULEUC_Sensor',
         CommandCaps = {
@@ -133,13 +130,13 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 2.25,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure3_intel',
+    StrategicIconName = 'icon_structure2_intel',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_BUILDINGEX
-            Damage = 40,
+            Damage = 50,
             DamageFriendly = true,
-            DamageRadius = 6.406,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

@@ -3,7 +3,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'LEVEL2',
         'ARM',
         'ENGINEER',
         'REPAIR',
@@ -19,7 +18,6 @@ UnitBlueprint {
         'SUBMERSIBLE',
         'T2SUBMARINE',
         'OVERLAYSONAR',
-        'OCEANENGINEER',
     },
     Defense = {
         Health = 900,
@@ -28,17 +26,15 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 1200,
         BuildCostMass = 300,
+        BuildRate = 300,
         BuildableCategory = {
-            'BUILTBYT1AIR ARM',
-            'BUILTBYT2AIR ARM',
+            'BUILTBYTIER2COMMANDER ARM',
+            'TECH1 FACTORY ARM',
+            'BUILTBYTIER3COMMANDER ARM',
         },
         BuildTime = 5000,
         MaxBuildDistance = 9,
         ProductionPerSecondEnergy = 4,
         ProductionPerSecondMass = 0,
     },
-    Intel = {
-        VisionRadius = 12,
-    },
-    StrategicIconName = 'icon_structure2_engineer', 
 }

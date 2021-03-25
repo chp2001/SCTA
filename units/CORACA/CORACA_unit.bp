@@ -70,11 +70,9 @@ UnitBlueprint {
     BuildIconSortPriority = 0,
     Categories = {
         'SELECTABLE',
-        'AIR',
-        'VTOL',
+        'AIR',      
         'SELECTION', 
         'CORE',
-        'LEVEL2',
         'TECH2',
         'ENGINEER',
         'REPAIR',
@@ -85,7 +83,6 @@ UnitBlueprint {
         'SHOWQUEUE',
         'MOBILE',
         'CONSTRUCTION',
-        'ALLTERRAIN',
         },
     Defense = {
         ArmorType = 'Light',
@@ -123,7 +120,7 @@ UnitBlueprint {
         BuildTime = 26001,        
 	BuildRate = 100,
         BuildableCategory = {
-            'BUILTBYT2AIR CORE',
+            'BUILTBYTIER2FACTORY CORE',
         },
         MaxBuildDistance = 3.75,
         StorageEnergy = 25,
@@ -182,6 +179,7 @@ TechLevel = 'RULEUTL_Advanced',
     SizeY = 1,
     SizeZ = 2,
     StrategicIconName = 'icon_bot2_engineer',
+    TAStrategicIconName = '2/land_engineer',
     StrategicIconSortPriority = 0,
     Transport = {
         AirClass = true,

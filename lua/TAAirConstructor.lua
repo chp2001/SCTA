@@ -1,7 +1,5 @@
 local TAair = import('/mods/SCTA-master/lua/TAair.lua').TAair
-local Unit = import('/lua/sim/Unit.lua').Unit
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
-local EffectUtil = import('/lua/EffectUtilities.lua')
 
 TAAirConstructor = Class(TAair) {
     OnCreate = function(self)
@@ -77,7 +75,7 @@ TAAirConstructor = Class(TAair) {
         end
         self.BuildingUnit = false
         self:SetImmobile(false)
-        if __blueprints['armgant'] then
+        if __blueprints['armgant'] and self.restrictions then
             TAutils.updateBuildRestrictions(self)
         end
         TAair.OnStopBuild(self,unitBeingBuilt)

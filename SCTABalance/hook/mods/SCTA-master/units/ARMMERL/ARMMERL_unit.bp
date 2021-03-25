@@ -13,12 +13,10 @@ UnitBlueprint {
         'MOBILE',
 	    'LAND',
 	    'INDIRECTFIRE',
-	    'ROCKET',
         'SILO',
         'OVERLAYINDIRECTFIRE',
         'ARM',
-        'VEHICLE',
-        'LEVEL2',
+        'TANK',
         'SNIPEMODE',
     },
     Display = {
@@ -31,6 +29,9 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 4500,
         BuildCostMass = 400,
+    },
+    Intel = {
+        VisionRadius = 12,
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,

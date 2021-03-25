@@ -34,7 +34,7 @@ ProjectileBlueprint {
     Categories = {
         'ARM',
         'PROJECTILE',
-        'DIRECTFIRE'
+        'INDIRECTFIRE',
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/Plasma_mesh.bp',
@@ -42,21 +42,22 @@ ProjectileBlueprint {
         StrategicIconSize = 1,
     },
     General = {
-        Category = 'Direct Fire',
+        Category = 'Indirect Fire',
         EntityCategory = {
             'ARM',
             'PROJECTILE',
-            'DIRECTFIRE',
+            'INDIRECTFIRE',
         },
         Faction = 'ARM',
         Weapon = 'ARM_HAM',
     },
-
     Physics = {
         DestroyOnWater = true,
-        InitialSpeed = 34,
-        InitialSpeedReduceDistance = 200,
+        InitialSpeed = 14.6,
+        InitialSpeedRange = 3,
+        InitialSpeedReduceDistance = 30,
         LeadTarget = false,
+        TurnRate = 360,
         VelocityAlign = true,
     },
 }

@@ -1,7 +1,8 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT2KBOT',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3COMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -16,28 +17,25 @@ UnitBlueprint {
         'LAND', 
 	    'ARM',
 	    'SORTCONSTRUCTION',
-	    'LEVEL3',
-        'PLATFORM',
     },
     Defense = {
         Health = 30000,
         MaxHealth = 30000,
     },
     Footprint = {
-        SizeX = 8,
-        SizeZ = 8,
+        SizeX = 7,
+        SizeZ = 7,
     },
         Display = {
-        UniformScale = 0.18,
+        UniformScale = 0.15,
     },
     Economy = {
         BuildCostEnergy = 60000,
-        BuildCostMass = 3000, 
+        BuildCostMass = 2400, 
         BuildRate = 360,
         BuildTime = 150000,
         BuildableCategory = {
-            'HOVER LEVEL3 ARM',
-            'armcroc',
+            'HOVER MOBILE TECH3 ARM',
         },
     },
     LifeBarHeight = 0.22,

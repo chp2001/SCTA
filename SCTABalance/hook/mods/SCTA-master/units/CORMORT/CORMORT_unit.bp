@@ -16,8 +16,8 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'ARTILLERY',
         'CORE',
-        'KBOT',
-        'LEVEL3',
+        'BOT',
+        'AMPHIBIOUS',
         'SNIPEMODE',
     },
     Display = {
@@ -32,7 +32,6 @@ UnitBlueprint {
         BuildCostMass = 1200,
         BuildTime = 21000,
     },
-    StrategicIconName = 'icon_bot3_artillery',
     SizeY = 3,
     Weapon = {
         [1] = {

@@ -29,8 +29,7 @@ UnitBlueprint {
     BuildIconSortPriority = 8,
     Categories = {
         'SELECTABLE',
-        'KBOT',
-	    'LEVEL1',
+        'BOT',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -55,9 +54,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/ARMHAM/ARMHAM_lod0_Awalk.sca',
         AnimationWalkRate = 0.5,
-        Abilities = {
-            'Artillery',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -95,7 +91,7 @@ UnitBlueprint {
         UnitName = 'Hammer',
     },
     Intel = {
-        VisionRadius = 16,
+        VisionRadius = 12,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -120,6 +116,7 @@ UnitBlueprint {
     SizeY = 2,
     SizeZ = 2,
     StrategicIconName = 'icon_bot1_artillery',
+    TAStrategicIconName = '1/land_artillery',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -135,7 +132,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 100,
-            DamageRadius = 1.25, 
+            DamageRadius = 2, 
             DamageType = 'Normal',
             DisplayName = 'ARM_HAM',
             FireTargetLayerCapsTable = {

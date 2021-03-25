@@ -30,7 +30,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -38,11 +37,10 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'ANTIAIR',
         'OVERLAYANTAIR',
-        'KBOT',
+        'BOT',
         'LAND',
         'ARM',
         'HOVER',
-        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -63,7 +61,6 @@ UnitBlueprint {
         AnimationSwimRate = 1,
         Abilities = {
             '<LOC ability_hover>Hover',
-            'Assault Bot',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -82,10 +79,7 @@ UnitBlueprint {
         BuildCostMass = 255,
         BuildTime = 5982,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 1,
-    },
+
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -131,7 +125,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeZ = 2,
     SizeY = 2,
-    StrategicIconName = 'icon_bot2_directfire',
+    StrategicIconName = 'icon_bot2_antiair',
     StrategicIconSortPriority = 0,
     Transport = {
         TransportClass = 2,
@@ -150,7 +144,7 @@ UnitBlueprint {
             DamageFriendly = false,
             Damage = 120,
             DamageRadius = 1.5,
-            DamageType = 'LANDAir',
+            DamageType = 'TASpec',
             DisplayName = 'armamph_weapon1',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',
@@ -159,7 +153,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_AntiAir',
             WeaponCategory = 'AntiAir',
             FiringTolerance = 10,
-            Label = 'armamph_weapon1',
+            Label = 'WEAPON',
             MaxRadius = 43.75,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -214,7 +208,6 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 60,
-            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'armamph_weapon2',
             FireTargetLayerCapsTable = {
@@ -224,7 +217,7 @@ UnitBlueprint {
             RangeCategory = 'UWRC_DirectFire',
             WeaponCategory = 'DirectFire',
             FiringTolerance = 2.75,
-            Label = 'armamph_weapon2',
+            Label = 'WEAPON',
             MaxRadius = 18,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -264,7 +257,7 @@ UnitBlueprint {
             Turreted = true,
         },
         { #BIG_UNITEX
-            Damage = 100,
+            Damage = 50,
             DamageFriendly = true,
             DamageRadius = 3,
             DamageType = 'Normal',

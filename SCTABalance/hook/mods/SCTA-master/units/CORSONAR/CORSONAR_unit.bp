@@ -1,9 +1,9 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1NAVAL',
-        'BUILTBYT1HOVER',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
@@ -16,7 +16,6 @@ UnitBlueprint {
         'OVERLAYSONAR',
 	    'CORE',
 	    'SONAR',
-	    'LEVEL1',
 	    'SORTINTEL',
     },
     Defense = {
@@ -28,11 +27,6 @@ UnitBlueprint {
             '<LOC ability_sonar>Sonar',
             '<LOC ability_upgradable>Upgradeable',
         },
-    },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-	MinWaterDepth = 0.5,
     },
     Economy = {
         BuildCostEnergy = 1200,
@@ -50,19 +44,27 @@ UnitBlueprint {
         },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    Physics = {
-        SkirtSizeX = 1, 
-        SkirtSizeZ = 1, 
-    },
     Intel = {
         VisionRadius = 12,
         WaterVisionRadius = 12,
         SonarRadius = 120,
     },
+    Physics = {
+        BankingSlope = 0,
+        DragCoefficient = 0.2,
+        MaxSteerForce = 0,
+        MeshExtentsX = 1.5,
+        MeshExtentsY = 1,
+        MeshExtentsZ = 1.5,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = 0,
+        SkirtOffsetZ = 0,
+        SkirtSizeX = 1,
+        SkirtSizeZ = 1,
+        TurnRate = 0,
+    },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,
     SelectionThickness = 0.25,
-    SizeX = 2,
-    SizeY = 2,
-    SizeZ = 2,
 }

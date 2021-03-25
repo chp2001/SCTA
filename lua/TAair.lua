@@ -1,6 +1,5 @@
 #Generic TA Air unit
 local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
-local FireSelfdestructWeapons = import('/lua/selfdestruct.lua').FireSelfdestructWeapons
 
 
 TAair = Class(TAunit) 

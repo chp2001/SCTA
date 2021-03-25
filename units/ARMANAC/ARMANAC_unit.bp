@@ -30,7 +30,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH3',
-        'LEVEL3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -39,8 +38,6 @@ UnitBlueprint {
         'LAND',
         'ARM',
         'HOVER',
-        'TANK',
-        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -55,7 +52,6 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_hover>Hover',
-            'Heavy Tank',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -74,10 +70,7 @@ UnitBlueprint {
         BuildCostMass = 272,
         BuildTime = 8115,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 1,
-    },
+
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -96,7 +89,7 @@ UnitBlueprint {
         UnitName = 'Anaconda',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 18,
         WaterVisionRadius = 6,
     },
     LifeBarHeight = 0.25,
@@ -141,8 +134,6 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 80,
-            DamageRadius = 0.5,
-            FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'ARMANAC_WEAPON',
             FireTargetLayerCapsTable = {

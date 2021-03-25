@@ -1,27 +1,5 @@
 UnitBlueprint {
     Merge = true,
-    Air = {
-        MaxAirspeed = 15,
-        MinAirspeed = 10,
-    },
-    Categories = {
-        'SELECTABLE',
-        'TECH2',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'HIGHALTAIR',
-        'MOBILE',
-	    'BOMBER',
-        'AIR',
-        'VTOL',
-        'DIRECTFIRE',
-        'ANTIAIR',
-        'OVERLAYDIRECTFIRE',
-	    'OVERLAYANTIAIR',
-        'CORE',
-        'LEVEL2',
-        'SNIPEMODE',
-    },
     Defense = {
         Health = 2200,
         MaxHealth = 2200,
@@ -30,12 +8,10 @@ UnitBlueprint {
         BuildCostEnergy = 28000,
         BuildCostMass = 1200,
     },
-    StrategicIconName = 'icon_bomber2_directfire',
     Weapon = {
         [1] = {
             Damage = 250,
             RackReloadTimeout = 5,
-            RateOfFire = 0.3333333333,
         },
         [2] = {
         Damage = 75,

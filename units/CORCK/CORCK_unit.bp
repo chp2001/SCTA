@@ -44,8 +44,7 @@ UnitBlueprint {
     BuildIconSortPriority = 1,
     Categories = {
         'SELECTABLE',
-        'KBOT',
-        'LEVEL1',
+        'BOT',
         'TECH1',
         'ENGINEER',
         'REPAIR',
@@ -96,7 +95,8 @@ UnitBlueprint {
         BuildRate = 80,
         BuildTime = 6800,
         BuildableCategory = {
-            'BUILTBYT1KBOT CORE',
+            'BUILTBYTIER1ENGINEER CORE',
+            'coralab',
         },
         MaxBuildDistance = 2.5,
         StorageEnergy = 5,

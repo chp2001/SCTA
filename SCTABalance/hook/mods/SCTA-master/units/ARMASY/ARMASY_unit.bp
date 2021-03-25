@@ -1,9 +1,9 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1NAVAL',
-        'BUILTBYT2AIR',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER2FACTORY',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -17,8 +17,6 @@ UnitBlueprint {
 	    'NAVAL',
 	    'ARM',
 	    'SORTCONSTRUCTION',
-	    'LEVEL2',
-        'LAB',
     },
     Defense = {
         Health = 10000,
@@ -29,20 +27,16 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 12000,
-        BuildCostMass = 2000,
+        BuildCostMass = 1500,
         BuildTime = 32000,
         BuildableCategory = {
-            'OCEAN LEVEL1 ARM',
-            'OCEAN LEVEL2 ARM',
-            'OCEAN LEVEL3 ARM',
-            'ALLTERRAIN ENGINEER ARM',
+            'NAVAL MOBILE TECH1 ARM',
+            'NAVAL MOBILE TECH2 ARM',
+            'NAVAL MOBILE TECH3 ARM',
+            'armch',
         },
         BuildRate = 360,
     },    
-    Footprint = {
-        SizeX = 10,
-        SizeZ = 10,
-    },
     LifeBarHeight = 0.22,
     LifeBarOffset = 5,
     LifeBarSize = 12,

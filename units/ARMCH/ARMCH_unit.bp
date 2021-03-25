@@ -45,7 +45,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH3',
-        'LEVEL3',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -59,7 +58,6 @@ UnitBlueprint {
         'LAND',
         'ARM',
         'HOVER',
-        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -102,17 +100,13 @@ UnitBlueprint {
         BuildRate = 80,
         BuildTime = 10494,
         BuildableCategory = {
-            'BUILTBYT1HOVER ARM',
+            'BUILTBYTIER3ENGINEER ARM',
         },
         MaxBuildDistance = 4.375,
         StorageEnergy = 50,
         StorageMass = 50,
 	ProductionPerSecondEnergy = 15,
 	NaturalProducer = true,
-    },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 1,
     },
     General = {
         BuildBones = {

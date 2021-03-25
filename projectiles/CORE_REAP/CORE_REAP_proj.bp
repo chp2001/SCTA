@@ -34,7 +34,7 @@ ProjectileBlueprint {
     Categories = {
         'CORE',
         'PROJECTILE',
-        'DIRECTFIRE'
+        'DIRECTFIRE',
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/Plasma_mesh.bp',
@@ -55,7 +55,7 @@ ProjectileBlueprint {
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 25,
-        Lifetime = 10,
+        Lifetime = 4,
         UseGravity = true,
     },
 }

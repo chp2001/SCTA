@@ -21,15 +21,13 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 18,
     Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
-        'BUILTBYT2VEHICLE',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-        'LEVEL3',
 	    'STRUCTURE',
 	    'DEFENSE',
         'ANTIMISSILE',
@@ -50,9 +48,6 @@ UnitBlueprint {
     },
     Description = 'Anti Missile Defense System',
     Display = {
-        Abilities = {
-            'Anti-Nuke',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -76,7 +71,6 @@ UnitBlueprint {
         SizeZ = 2,
     },
     General = {
-	---BuildAngle = 4096,
         Category = 'Defense',
         Classification = 'RULEUC_CounterMeasure',
         CommandCaps = {
@@ -122,8 +116,6 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 30000,
-            EdgeEffectiveness = 1,
-            DamageRadius = 10,
             DamageType = 'Normal',
             DisplayName = 'AMD_ROCKET',
             FireTargetLayerCapsTable = {

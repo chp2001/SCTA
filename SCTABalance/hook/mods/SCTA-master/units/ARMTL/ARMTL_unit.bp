@@ -6,9 +6,9 @@
 UnitBlueprint {
     Merge = true, 
     Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1NAVAL',
-        'BUILTBYT1HOVER',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
@@ -22,20 +22,16 @@ UnitBlueprint {
         'OVERLAYANTINAVY',
         'SORTDEFENSE',
 	    'ARM',
-        'LEVEL1',
         'SNIPEMODE',
     },
     Defense = {
         Health = 800,
         MaxHealth = 800,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
-    Physics = {
-        SkirtSizeX = 1,
-        SkirtSizeZ = 1,
+    Intel = {
+        SonarRadius = 30,
+        VisionRadius = 8,
+        WaterVisionRadius = 15,
     },
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,

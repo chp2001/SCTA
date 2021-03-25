@@ -29,8 +29,7 @@ ProjectileBlueprint {
     Categories = {
         'ARM',
         'PROJECTILE',
-        'DEPTHCHARGE',
-	'ANTINAVY',
+	    'ANTINAVY',
     },
     Display = {
         CameraFollowTimeout = 3,
@@ -43,17 +42,21 @@ ProjectileBlueprint {
         EntityCategory = {
             'ARM',
             'PROJECTILE',
-            'DEPTHCHARGE',
-	    'ANTINAVY',
+	        'ANTINAVY',
         },
         Faction = 'ARM',
         Weapon = 'ARMDEPTHCHARGE',
     },
-
+    DoNotCollideList = {
+        'TORPEDO',
+    },
+    Defense = {
+        Health = 1,
+    },
     Physics = {
         DestroyOnWater = false,
         InitialSpeed = 5,
-        Lifetime = 10,
+        Lifetime = 4,
         UseGravity = false,
         TrackTarget = true,
         TurnRate = 90,

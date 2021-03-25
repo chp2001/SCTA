@@ -12,9 +12,6 @@ Economy = {
     BuildCostMass = 116,
     BuildTime = 2200,
 },
-Intel = {
-    VisionRadius = 12,
-},
 SelectionSizeX = 0.8,
 SelectionSizeZ = 0.8,
 SizeX = 1.5,
@@ -27,14 +24,14 @@ Physics = {
     MaxSteerForce = 10,
     },
     Weapon = {
-        [1] = {
-            Damage = 15,
+	    [1] = {
+            Damage = 20,
+            MaxRadius = 13,
+        },
+        [2] = {
+            Damage = 5,
             MaxRadius = 18,
             RackSalvoSize = 1,
-            RateOfFire = 1,
-        },
-	    [2] = {
-            Damage = 20,
         },
         [3] = {
         },

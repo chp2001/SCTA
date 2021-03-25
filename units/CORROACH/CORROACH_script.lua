@@ -4,13 +4,13 @@
 #Script created by Raevn
 
 
-local TAWalking = import('/mods/SCTA-master/lua/TAMotion.lua').TAWalking
+local TACounter = import('/mods/SCTA-master/lua/TAMotion.lua').TACounter
 local TABomb = import('/mods/SCTA-master/lua/TAweapon.lua').TABomb
 local TAKami = import('/mods/SCTA-master/lua/TAweapon.lua').TAKami
 
-CORROACH = Class(TAWalking) {
+CORROACH = Class(TACounter) {
 	OnCreate = function(self)
-		TAWalking.OnCreate(self)
+		TACounter.OnCreate(self)
 		self.attacked = false
 	end,
 

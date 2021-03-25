@@ -28,13 +28,12 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 3,
     Categories = {
-        'BUILTBYT1AIR',
+        'BUILTBYTIER1FACTORY',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-        'LEVEL2',
 	'FACTORY',
         'RALLYPOINT',
         'SHOWQUEUE',
@@ -44,7 +43,6 @@ UnitBlueprint {
 	'CORE',
 	'SORTCONSTRUCTION',
 	'AIR',
-    'LAB',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -80,7 +78,7 @@ UnitBlueprint {
         BuildTime = 17232,
 	BuildRate = 200,
         BuildableCategory = {
-            'VTOL LEVEL2 CORE',
+            'AIR MOBILE TECH2 CORE',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,
@@ -96,7 +94,6 @@ UnitBlueprint {
         BuildBones = {
             BuildEffectBones = {'beam1', 'beam2'},
         },             
-	---BuildAngle = 0,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {
@@ -116,13 +113,12 @@ TechLevel = 'RULEUTL_Advanced',
     },
     Intel = {
         VisionRadius = 14,
-	RadarRadius = 72,
+	RadarRadius = 32,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
-    Physics = {
-        FlattenSkirt = true,
+    Physics = {        
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
         RollOffPoints = {

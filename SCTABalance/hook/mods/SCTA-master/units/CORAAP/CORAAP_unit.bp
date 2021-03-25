@@ -1,9 +1,9 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1NAVAL',
-        'BUILTBYT2AIR',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER2FACTORY',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -18,37 +18,32 @@ UnitBlueprint {
         'AIR', 
     	'CORE',
 	    'SORTCONSTRUCTION',
-	    'LEVEL2',
-        'LAB',
     },
     Defense = {
         Health = 10000,
         MaxHealth = 10000,
     },
     Footprint = {
-        SizeX = 8,
-        SizeZ = 8,
+        SizeX = 7,
+        SizeZ = 7,
     },
         Display = {
         UniformScale = 0.22,
     },
     Economy = {
         BuildCostEnergy = 20000,
-        BuildCostMass = 1000,
+        BuildCostMass = 1100,
         BuildTime = 16000,
         BuildableCategory = {
-            'VTOL LEVEL1 CORE', 
-            'VTOL LEVEL2 CORE',
-            'VTOL LEVEL3 CORE',
-            'ALLTERRAIN LAND ENGINEER CORE',
+            'AIR MOBILE TECH1 CORE', 
+            'AIR MOBILE TECH2 CORE',
+            'AIR MOBILE TECH3 CORE',
         },
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
     LifeBarSize = 7,
-    Intel = {
-        VisionRadius = 10,
-    },
+    
     SelectionSizeX = 7,
     SelectionSizeZ = 5,
     SelectionThickness = 0.25,

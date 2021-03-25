@@ -42,9 +42,8 @@ UnitBlueprint {
         'AIR',
         'CONSTRUCTIONSORTDOWN',
 	    'ARM',
-        'DEVELOPMENT',
+        'RESEARCH',
 	    'SORTCONSTRUCTION',
-	    'LEVEL2',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -62,6 +61,7 @@ UnitBlueprint {
         BuildAttachBone = 'buildpad',
         Abilities = {
             '<LOC ability_radar>Radar',
+            '<LOC ability_upgradable>Upgradeable',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -76,7 +76,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.25,
+        UniformScale = 0.22,
     },
     Economy = {
         BuildCostEnergy = 54000,
@@ -85,9 +85,8 @@ UnitBlueprint {
     BuildRate = 180,
     DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
-        'VTOL LEVEL2 ARM',
-        'VTOL LEVEL1 ARM',
-        'ALLTERRAIN LEVEL2 LAND ENGINEER ARM',
+        'AIR MOBILE TECH2 ARM',
+        'AIR MOBILE TECH1 ARM',
         'armadap', 
         },
 	InitialRallyX = 0,
@@ -97,8 +96,8 @@ UnitBlueprint {
     },
     Footprint = {
         MaxSlope = 0.625,
-        SizeX = 8,
-        SizeZ = 8,
+        SizeX = 7,
+        SizeZ = 7,
     },
     General = {
         BuildBones = {
@@ -130,8 +129,7 @@ UnitBlueprint {
     LifeBarHeight = 0.22,
     LifeBarOffset = 2,
     LifeBarSize = 7,
-    Physics = {
-        FlattenSkirt = true,
+    Physics = {        
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
         RollOffPoints = {

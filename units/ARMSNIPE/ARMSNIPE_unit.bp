@@ -30,8 +30,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'LEVEL2',
-        'KBOT',
+        'BOT',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -40,8 +39,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'ARM',
         'SNIPER',
-        'LASER',
-        'TACLOAK',
+        'ANTISHIELD',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -58,7 +56,6 @@ UnitBlueprint {
         AnimationWalkRate = 1,
         Abilities = {
             '<LOC ability_cloak>Cloaking',
-            'Assault Bot',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -76,8 +73,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 14727,
         BuildCostMass = 935,
-        TAConsumptionPerSecondEnergy = 1100,
-        MaintenanceConsumptionPerSecondEnergy = 800,
+        MaintenanceConsumptionPerSecondEnergy = 500,
         BuildTime = 28137,
     },
     General = {
@@ -101,7 +97,7 @@ UnitBlueprint {
         UnitName = 'Shooter',
     },
     Intel = {
-        VisionRadius = 16,
+        VisionRadius = 18,
         Cloak = true,
     },
     LifeBarHeight = 0.25,
@@ -126,7 +122,7 @@ UnitBlueprint {
     SizeY = 2.4,
     SizeZ = 1.5,
     SelectionCenterOffsetZ = -0.4,
-    StrategicIconName = 'icon_bot2_artillery',
+    StrategicIconName = 'icon_bot3_sniper',
     StrategicIconSortPriority = 0,
     Transport = {
         TransportClass = 2,
@@ -146,7 +142,7 @@ UnitBlueprint {
         WeaponUnpacks = true,
         WeaponRepackTimeout = 1,
             Damage = 1250,
-	    DamageRadius = 1,
+	    DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'ARM_FAST',
             FireTargetLayerCapsTable = {

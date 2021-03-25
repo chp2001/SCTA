@@ -1,12 +1,12 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT2KBOT',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3COMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'LEVEL3',
         'TECH3',
 	    'FACTORY',
         'RALLYPOINT',
@@ -15,7 +15,6 @@ UnitBlueprint {
 	    'CONSTRUCTION',
         'LAND', 
         'CORE',
-        'PLATFORM',
 	    'SORTCONSTRUCTION',
     },
     Defense = {
@@ -23,23 +22,22 @@ UnitBlueprint {
         MaxHealth = 22000,
         },
         Display = {
-            UniformScale = 0.17,
+            UniformScale = 0.14,
         },
         Footprint = {
-                SizeX = 8,
-                SizeZ = 8,
-            },
+            SizeX = 7,
+            SizeZ = 7,
+        },
             LifeBarHeight = 0.22,
             LifeBarOffset = 3,
             LifeBarSize = 7,
     Economy = {
         BuildCostEnergy = 60000,
-        BuildCostMass = 3000, 
+        BuildCostMass = 2400, 
         BuildRate = 360,
         BuildTime = 150000,
         BuildableCategory = {
-            'HOVER LEVEL3 CORE',
-            'coramph',
+            'HOVER MOBILE TECH3 CORE',
         },
     },
     SelectionSizeX = 7,

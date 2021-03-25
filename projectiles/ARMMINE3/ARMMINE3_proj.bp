@@ -30,7 +30,6 @@ ProjectileBlueprint {
         'ARM',
         'PROJECTILE',
         'DIRECTFIRE',
-	'KAMIKAZI',
     },
     Display = {
         StrategicIconSize = 1,

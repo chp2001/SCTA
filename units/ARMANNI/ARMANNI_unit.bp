@@ -18,15 +18,13 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 1,
     Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
-        'BUILTBYT2VEHICLE',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-        'LEVEL3',
 	    'STRUCTURE',
         'DEFENSE',
         'STRATEGIC',
@@ -34,7 +32,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
 	    'ARM',
 	    'SORTDEFENSE',
-        'LASER',
+        'ANTISHIELD',
         'SNIPEMODE',
         'OVERLAYRADAR',
     },
@@ -50,9 +48,6 @@ UnitBlueprint {
     },
     Description = 'Energy Weapon',
     Display = {
-        Abilities = {
-            'Defense',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -105,7 +100,7 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 3,
     SizeZ = 4,
-    StrategicIconName = 'icon_structure3_directfire',
+    StrategicIconName = 'icon_bot3_sniper',
     StrategicIconSortPriority = 5,
     Weapon = {
         {
@@ -122,7 +117,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 2500,
-            DamageRadius = 0.25,
+            DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'ARM_TOTAL_ANNIHILATOR',
             FireTargetLayerCapsTable = {
@@ -178,7 +173,7 @@ UnitBlueprint {
         { #ATOMIC_BLAST
             Damage = 2000,
             DamageFriendly = true,
-            DamageRadius = 12,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

@@ -1,10 +1,10 @@
+---DISABLED
 UnitBlueprint {
     Merge = true,
     Categories = {
         'SELECTABLE',
         'TECH2',
         'ARM',
-        'LEVEL2',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -26,14 +26,11 @@ UnitBlueprint {
         BuildTime = 6000,
         BuildRate = 320,
         BuildableCategory = {
-            'BUILTBYT1VEHICLE ARM',
-            'BUILTBYT2VEHICLE ARM',
+            'BUILTBYTIER1ENGINEER ARM',
+            'BUILTBYTIER2ENGINEER ARM',
         },
         MaxBuildDistance = 7,
         ProductionPerSecondEnergy = 2,
         ProductionPerSecondMass = 0,
-    },
-    Intel = {
-        VisionRadius = 12,
     },
 }

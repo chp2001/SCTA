@@ -1,7 +1,7 @@
 UnitBlueprint {
     Merge = true, 
     Categories = {
-        'BUILTBYT1HOVER',
+        'BUILTBYTIER3ENGINEER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -12,7 +12,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'DIRECTFIRE',
         'CORE',
-	    'LEVEL3',
         'STRATEGIC',
         'ARTILLERY',
         'SHOWATTACKRETICLE',
@@ -43,16 +42,12 @@ UnitBlueprint {
     LifeBarSize = 6,
     Weapon = {
         [1] = {
-            Damage = 1000,
-            FiringRandomness = 0.25,
+            Damage = 2000,
             ProjectileLifetime = 3000,
             MaxRadius = 2500,
             MinRadius = 100,
-            MuzzleSalvoSize = 3,
-            MuzzleSalvoDelay = 0.1, 
             ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/CORBUZA_WEAPON/CORBUZA_WEAPON_proj.bp',
-            MuzzleVelocity = 125,
-            RateOfFire = 1,                     
+            MuzzleVelocity = 125,                 
             TurretPitchSpeed = 10,
             TurretYawSpeed = 10,
         },

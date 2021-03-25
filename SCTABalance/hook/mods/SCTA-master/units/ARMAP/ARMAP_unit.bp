@@ -10,30 +10,28 @@ UnitBlueprint {
             '<LOC ability_radar>Radar',
             '<LOC ability_upgradable>Upgradeable',
         },
-        UniformScale = 0.25,
+        UniformScale = 0.22,
     },
     Economy = {
         BuildCostEnergy = 8000,
         BuildCostMass = 680,
         BuildRate = 120,
         BuildableCategory = {
-            'VTOL LEVEL1 ARM',
+            'AIR MOBILE TECH1 ARM',
             'armdap', 
         },
-    },
+    }, 
     Footprint = {
-        SizeX = 8,
-        SizeZ = 8,
-    },   
+        SizeX = 7,
+        SizeZ = 7,
+    },
     LifeBarHeight = 0.22,
     LifeBarOffset = 2,
     LifeBarSize = 7,
     General = {
         UpgradesTo = 'armdap', 
     },
-    Intel = {
-        VisionRadius = 10,
-    },
+    
         SelectionSizeX = 7,
         SelectionSizeZ = 5,
         SelectionThickness = 0.25,

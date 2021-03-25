@@ -9,7 +9,9 @@ UnitBlueprint {
         BuildCostMass = 620,
         BuildTime = 6600,
     },
-    StrategicIconName = 'icon_bot2_antiair',
+    Intel = {
+        VisionRadius = 14,
+    },
     Weapon = {
         [1] = {
             Damage = 105,

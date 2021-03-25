@@ -6,8 +6,7 @@
         # Armor Definition
         'Normal 1.0',
         'AntiAir 0.05',
-        'LANDAir 0.3',
-        'AntiSub 0.5',
+        'TASpec 0.3',
         'DGun 1.0',
     },
     {   # Armor Type Name
@@ -16,8 +15,7 @@
         # Armor Definition
         'Normal 1.0',
         'AntiAir 0.05',
-        'LANDAir 0.3',
-        'AntiSub 0.5',
+        'TASpec 0.3',
     },
     {   # Armor Type Name
         'Light',
@@ -25,7 +23,7 @@
         # Armor Definition
         'Normal 1.0',
         'AntiAir 1.0',
-        'LANDAir 1.0',
+        'TASpec 1.0',
     },
     {   # Armor Type Name
         'Commander',
@@ -35,8 +33,7 @@
         'Deathnuke 1.0',
         'DGun 0.45',
         'AntiAir 0.05',
-        'LANDAir 0.3',
-        'AntiSub 0.5',
+        'TASpec 0.3',
     },
     {   # Armor Type Name
         'Structure',
@@ -44,8 +41,7 @@
         # Armor Definition
         'Normal 1.0',
         'AntiAir 0.05',
-        'LANDAir 0.3',
-        'AntiSub 0.3',
+        'TASpec 0.3',
         'Overcharge 0.25',
         'DGun 0.33',
         'Deathnuke 0.032',
@@ -56,9 +52,7 @@
 
         # Armor Definition
         'AntiAir 1.0',
-        'LANDAir 1.0',
-        'AntiSub 1.0',
-        'DGun 2.0',
+        'TASpec 1.0',
         'ExperimentalFootfall 0.0',
     },
     {
@@ -68,8 +62,7 @@
         # Armor Definition
         'Normal 1.0',
         'AntiAir 1.0',
-        'LANDAir 1.0',
-        'AntiSub 1.0',
+        'TASpec 1.0',
         'Overcharge 0.25',
         'DGun 0.33',
         'Deathnuke 0.032',
@@ -82,7 +75,7 @@
         # Armor Definition
         'Normal 1.0',
         'AntiAir 1.0',
-        'LANDAir 1.0',
+        'TASpec 1.0',
         'CzarBeam 0.25',
         'OtheTacticalBomb 0.1',
     },
@@ -93,7 +86,7 @@
         # Armor Definition
         'Normal 1.0',
         'AntiAir 0.05',
-        'LANDAir 0.3',
+        'TASpec 0.3',
         'TacticalMissile 0.55',
     },
 
@@ -104,7 +97,6 @@
     # Armor Definition
     'Normal 1.0',
     'AntiAir 0.05',
-    'LANDAir 0.3',
-    'AntiSub 1.0',
+    'TASpec 1.0',
 },
 }

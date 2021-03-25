@@ -1,5 +1,22 @@
 UnitBlueprint {
     Merge = true,
+    Categories = {
+    'BUILTBYTIER3ENGINEER',
+    'SELECTABLE',
+    'DRAGBUILD',
+    'VISIBLETORECON',
+    'RECLAIMABLE',
+    'TECH3',
+    'STRUCTURE',
+    'STRATEGIC',
+    'INDIRECTFIRE',
+    'OVERLAYINDIRECTFIRE',
+    'NUKE',
+    'SILO',	
+    'CORE',
+    'SORTSTRATEGIC',
+    'SHOWATTACKRETICLE',
+    },
     Display = {
         UniformScale = 0.3,
     },

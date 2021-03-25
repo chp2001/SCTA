@@ -30,7 +30,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'LEVEL2',
+
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -39,7 +39,7 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'ARTILLERY',
         'ARM',
-        'VEHICLE',
+        'TANK',
     'SNIPEMODE',
     },
     Defense = {
@@ -53,9 +53,6 @@ UnitBlueprint {
     },
     Description = 'Mobile Artillery',
     Display = {
-        Abilities = {
-            'Heavy Tank',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -91,7 +88,7 @@ UnitBlueprint {
         UnitName = 'Luger',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 20,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -114,7 +111,7 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 1.5,
     SizeZ = 3,
-    StrategicIconName = 'icon_land2_artillery',
+    StrategicIconName = 'icon_land3_artillery',
     StrategicIconSortPriority = 0,
     Transport = {
         TransportClass = 3,
@@ -133,7 +130,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = true,
             Damage = 750,
-	    DamageRadius = 1.5,
+	    DamageRadius = 3,
             DamageType = 'Normal',
             DisplayName = 'ARM_ARTILLERY',
             FireTargetLayerCapsTable = {

@@ -28,13 +28,12 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 3,
     Categories = {
-        'BUILTBYT1AIR',
+        'BUILTBYTIER1FACTORY',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-        'LEVEL2',
         'AIR',
 	    'FACTORY',
         'RALLYPOINT',
@@ -44,7 +43,6 @@ UnitBlueprint {
         'OVERLAYRADAR',
 	    'ARM',
 	    'SORTCONSTRUCTION',
-        'LAB',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -81,7 +79,7 @@ UnitBlueprint {
         BuildTime = 17376,
 	BuildRate = 200,
         BuildableCategory = {
-            'VTOL LEVEL2 ARM',
+            'AIR MOBILE TECH2 ARM',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,
@@ -97,7 +95,6 @@ UnitBlueprint {
         BuildBones = {
             BuildEffectBones = {'Nozzle_01', 'Nozzle_02'},
         },    
-	---BuildAngle = 0,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {
@@ -113,17 +110,17 @@ UnitBlueprint {
         FactionName = 'ARM',
         Icon = 'land',
         TechLevel = 'RULEUTL_Advanced',
-	UnitName = 'Adv. Aircraft Plant',
+	    UnitName = 'Adv. Aircraft Plant',
     },
     Intel = {
-    VisionRadius = 10,
-	RadarRadius = 30,
+    VisionRadius = 14,
+	RadarRadius = 32,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        FlattenSkirt = true,
+        
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
         RollOffPoints = {

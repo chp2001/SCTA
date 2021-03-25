@@ -45,7 +45,6 @@ UnitBlueprint {
     Categories = {
             'SELECTABLE',
             'TECH3',
-            'LEVEL3',
             'ENGINEER',
             'REPAIR',
             'RECLAIM',
@@ -59,7 +58,6 @@ UnitBlueprint {
             'LAND',
             'CORE',
             'HOVER',
-            'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -96,17 +94,13 @@ UnitBlueprint {
 	},
         UniformScale = 0.16,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 1,
-    },
     Economy = {
         BuildCostEnergy = 4370,
         BuildCostMass = 396,
         BuildRate = 80,
         BuildTime = 10494,
         BuildableCategory = {
-            'BUILTBYT1HOVER CORE',
+            'BUILTBYTIER3ENGINEER CORE',
         },
         MaxBuildDistance = 4.375,
         StorageEnergy = 50,
@@ -142,7 +136,7 @@ TechLevel = 'RULEUTL_Advanced',
     },
     Intel = {
         VisionRadius = 18,
-        WaterVisionRadius = 4, 
+        WaterVisionRadius = 6, 
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

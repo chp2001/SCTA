@@ -29,8 +29,7 @@ UnitBlueprint {
     BuildIconSortPriority = 6,
     Categories = {
         'SELECTABLE',
-        'KBOT',
-	    'LEVEL1',
+        'BOT',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -92,7 +91,7 @@ UnitBlueprint {
         UnitName = 'Jethro',
     },
     Intel = {
-        VisionRadius = 18,
+        VisionRadius = 14,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -131,7 +130,7 @@ UnitBlueprint {
             DamageFriendly = false,
             Damage = 63,
             DamageRadius = 1.5, 
-            DamageType = 'LANDAir',
+            DamageType = 'TASpec',
             DisplayName = 'ARMKBOT_MISSILE',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',

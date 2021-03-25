@@ -21,10 +21,6 @@ ARMMAV = Class(TAWalking) {
 
 	Weapons = {
 		EMG = Class(TAweapon) {
-		OnWeaponFired = function(self)
-			TAweapon.OnWeaponFired(self)
-		end,
-
 		PlayFxWeaponUnpackSequence = function(self)
 			TAweapon.PlayFxWeaponUnpackSequence(self)
 			self.unit.Spinners.lgunbase:SetGoal(-90)
@@ -39,12 +35,11 @@ ARMMAV = Class(TAWalking) {
 			TAweapon.PlayFxWeaponPackSequence(self)
 			self.unit.Spinners.lgunbase:SetGoal(0)
 			self.unit.Spinners.lgunbase:SetSpeed(90)
-
 			--TURN door3 to x-axis <0> SPEED <227.09>;
 			self.unit.Spinners.rgunbase:SetGoal(0)
 			self.unit.Spinners.rgunbase:SetSpeed(90)
 		end,		
-	},
+		},
 	},
 }
 TypeClass = ARMMAV

@@ -6,13 +6,12 @@
 UnitBlueprint {
    Merge = true,
    Categories = {
-    'BUILTBYT1HOVER',
+    'BUILTBYTIER3ENGINEER',
     'SELECTABLE',
     'DRAGBUILD',
     'VISIBLETORECON',
     'RECLAIMABLE',
     'TECH3',
-    'LEVEL3',
     'STRUCTURE',
     'DEFENSE',
     'STRATEGIC',
@@ -20,7 +19,7 @@ UnitBlueprint {
     'OVERLAYDIRECTFIRE',
     'ARM',
     'SORTDEFENSE',
-    'LASER',
+    'ANTISHIELD',
     'SNIPEMODE',
     },
     Defense = {

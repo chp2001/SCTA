@@ -30,7 +30,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -38,7 +37,7 @@ UnitBlueprint {
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
-        'KBOT',
+        'BOT',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -53,9 +52,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/ARMMAV/ARMMAV_lod0_Awalk.sca',
         AnimationWalkRate = 1,
-        Abilities = {
-            'Assault Bot',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -66,7 +62,7 @@ UnitBlueprint {
             },
         },
 	---SmokeBone = 'torso',
-        UniformScale = 0.12,
+        UniformScale = 0.16,
     },
     Economy = {
         BuildCostEnergy = 10914,
@@ -91,7 +87,7 @@ TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Maverick',
     },
     Intel = {
-        VisionRadius = 10,
+        VisionRadius = 14,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -113,7 +109,7 @@ TechLevel = 'RULEUTL_Advanced',
     SizeX = 1.5,
     SizeY = 2,
     SizeZ = 1.5,
-    StrategicIconName = 'icon_bot2_directfire',
+    StrategicIconName = 'icon_bot3_directfire',
     StrategicIconSortPriority = 0,
     Transport = {
         TransportClass = 2,
@@ -131,7 +127,6 @@ TechLevel = 'RULEUTL_Advanced',
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 66,
-            DamageRadius = 0.25,
             FiringRandomness = 0.05,
             DamageType = 'Normal',
             DisplayName = 'EMG',

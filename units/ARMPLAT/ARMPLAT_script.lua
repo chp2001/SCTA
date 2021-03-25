@@ -40,7 +40,8 @@ ARMPLAT = Class(TAFactory) {
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 	end,
 
-	OnStopBuild = function(self, unitBuilding)
+	--[[
+		OnStopBuild = function(self, unitBuilding)
 		TAFactory.OnStopBuild(self, unitBuilding)
 		if not self.Water and EntityCategoryContains(categories.HOVER, unitBuilding) then
 			ForkThread(self.Rolling, self)
@@ -54,6 +55,7 @@ ARMPLAT = Class(TAFactory) {
 			self.Sliders.chassis:SetSpeed(10)
 			self.Sliders.chassis:SetGoal(0,0,0)
 	end,
+	]]
 
 	WaterRise = function(self)
 		local bp = self:GetBlueprint()

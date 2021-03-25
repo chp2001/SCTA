@@ -1,22 +1,3 @@
-do
-    local taEngineerManager = EngineerManager
-      
-    EngineerManager = Class(taEngineerManager) {
-    GetEngineerFactionIndex = function(self, engineer)
-        if not self.Brain.SCTAAI then
-            return taEngineerManager.GetEngineerFactionIndex(self, engineer)
-        end
-        if EntityCategoryContains(categories.ARM, engineer) then
-            return 6
-        elseif EntityCategoryContains(categories.CORE, engineer) then
-            return 7
-        end
-    end,
-}
-
-end
-
-
 SCTAEngineerManager = EngineerManager
 EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
     Create = function(self, brain, lType, location, radius)
@@ -36,12 +17,23 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         self.ConsumptionUnits = {
             Engineers = { Category = categories.ENGINEER, Units = {}, UnitsList = {}, Count = 0, },
             Fabricators = { Category = categories.MASSFABRICATION * categories.STRUCTURE, Units = {}, UnitsList = {}, Count = 0, },
-            ---Lasers = { Category = categories.LASER, Units = {}, UnitsList = {}, Count = 0, },
-            Intel = { Category = categories.STRUCTURE * ( categories.SONAR + categories.RADAR + categories.OMNI + categories.TACLOAK), Units = {}, UnitsList = {}, Count = 0, },
+            Intel = { Category = categories.STRUCTURE * ( categories.SONAR + categories.RADAR + categories.OMNI), Units = {}, UnitsList = {}, Count = 0, },
             MobileIntel = { Category = categories.MOBILE - categories.ENGINEER, Units = {}, UnitsList = {}, Count = 0, },
         }
+        ---LOG(self.ConsumptionUnits)
 
         self:AddBuilderType('Any')
+    end,
+
+    GetEngineerFactionIndex = function(self, engineer)
+        if not self.Brain.SCTAAI then
+            return SCTAEngineerManager.GetEngineerFactionIndex(self, engineer)
+        end
+        if EntityCategoryContains(categories.ARM, engineer) then
+            return 6
+        elseif EntityCategoryContains(categories.CORE, engineer) then
+            return 7
+        end
     end,
     
     LowMass = function(self)
@@ -54,11 +46,11 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.DEFENSE)
 
         if pauseVal != true then
-            pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.FACTORY * (categories.LEVEL2 + categories.LEVEL3))
+            pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.FACTORY * (categories.TECH2 + categories.TECH3 + categories.GATE))
         end
 
         if pauseVal != true then
-            --pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ExperimentalCheck )
+           ---pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ExperimentalCheck )
         end
 
         if pauseVal != true then
@@ -66,7 +58,7 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         end
 
         if pauseVal != true then
-            ---pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.STRUCTURE - categories.MASSEXTRACTION - categories.ENERGYPRODUCTION - categories.FACTORY - categories.EXPERIMENTAL )
+            --pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.STRUCTURE - categories.MASSEXTRACTION - categories.ENERGYPRODUCTION - categories.FACTORY - categories.EXPERIMENTAL )
         end
 
         self:ForkThread(self.LowMassRepeatThread)

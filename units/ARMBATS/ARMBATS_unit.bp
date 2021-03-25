@@ -37,7 +37,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -48,7 +47,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
         'ARM',
-        'OCEAN',
         'SNIPEMODE',
     },
     CollisionOffsetY = -0.5,
@@ -137,7 +135,7 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 3.5,
     SizeZ = 8,
-    StrategicIconName = 'icon_ship2_directfire',
+    StrategicIconName = 'icon_ship3_directfire',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #ARM_BATS
@@ -162,7 +160,7 @@ UnitBlueprint {
         WeaponCategory = 'IndirectFire',
             FiringRandomness = 0.5,
             FiringTolerance = 0,
-            Label = 'ARM_BATSa',
+            Label = 'WEAPON',
             MaxRadius = 125,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -233,7 +231,7 @@ UnitBlueprint {
         WeaponCategory = 'IndirectFire',
             FiringRandomness = 0.5,
             FiringTolerance = 0,
-            Label = 'ARM_BATSb',
+            Label = 'WEAPON',
             MaxRadius = 125,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,

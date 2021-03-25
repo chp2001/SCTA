@@ -43,7 +43,6 @@ UnitBlueprint {
         'MOBILE',
         'NAVAL',
         'TECH2',
-        'LEVEL2',
         'AIRSTAGINGPLATFORM',
         'CARRIER',
         'VISIBLETORECON',
@@ -55,7 +54,6 @@ UnitBlueprint {
         'OVERLAYSONAR',
         'OVERLAYMISC',
         'ARM',
-        'OCEAN',
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -97,10 +95,10 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 35,
         BuildRate = 200,
         BuildableCategory = {
-            'VTOL LEVEL1 ARM ENGINEER',
-            'VTOL LEVEL1 ARM HIGHALTAIR', 
-            'VTOL LEVEL2 ARM',
-            'VTOL LEVEL3 ARM',
+            'MOBILE TECH1 AIR ARM ENGINEER',
+            'AIR MOBILE TECH1 ARM HIGHALTAIR', 
+            'AIR MOBILE TECH2 ARM',
+            'AIR MOBILE TECH3 ARM',
             },
         },
         Footprint = {
@@ -146,7 +144,7 @@ UnitBlueprint {
     Intel = {
     VisionRadius = 22,
     WaterVisionRadius = 4, 
-	RadarRadius = 113,
+	RadarRadius = 100,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -167,7 +165,7 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 3,
     SizeZ = 9,
-    StrategicIconName = 'icon_ship2_air',
+    StrategicIconName = 'icon_ship3_air',
     StrategicIconSortPriority = 0,
     Transport = {
         ClassGenericUpTo = 3,
@@ -178,7 +176,7 @@ UnitBlueprint {
         { #ATOMIC_BLAST
             Damage = 2000,
             DamageFriendly = true,
-            DamageRadius = 12, 		
+            DamageRadius = 5, 		
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

@@ -25,11 +25,9 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 18,
     Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
-        'BUILTBYT2VEHICLE',
-        'TECH3',
-        'LEVEL3',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
+        'TECH2',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -116,7 +114,7 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 3,
     SizeZ = 4,
-    StrategicIconName = 'icon_land3_antishield',
+    StrategicIconName = 'icon_land2_antishield',
     StrategicIconSortPriority = 0,
     SpecialAbilities = {
         LaunchNuke = {
@@ -195,7 +193,8 @@ UnitBlueprint {
             NukeOuterRingRadius = 25,
             NukeOuterRingTicks = 20,
             NukeOuterRingTotalTime = 5,
-            NukeWeapon = true,            
+            NukeWeapon = true,  
+            RangeCategory = 'UWRC_IndirectFire',          
             WeaponCategory = 'Missile',
             WeaponUnpacks = true,
             WeaponUnpackAnimation = '/mods/SCTA-master/units/ARMEMP/ARMEMP_lod0_unpack.sca',
@@ -206,7 +205,7 @@ UnitBlueprint {
         { #ATOMIC_BLASTSML
             Damage = 1000,
             DamageFriendly = true,
-            DamageRadius = 12,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

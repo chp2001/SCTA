@@ -29,7 +29,6 @@ UnitBlueprint {
     BuildIconSortPriority = 13,
     Categories = {
         'SELECTABLE',
-        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -39,9 +38,9 @@ UnitBlueprint {
         'OVERLAYINDIRECTFIRE',
         'ARTILLERY',
         'CORE',
-        'KBOT',
+        'BOT',
         'SNIPEMODE',
-        'ALLTERRAIN', 
+        'AMPHIBIOUS', 
     },
     Defense = {
         ArmorType = 'Normal',
@@ -56,9 +55,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORMORT/CORMORT_lod0_Awalk.sca',
         AnimationWalkRate = 1,
-        Abilities = {
-            'Assault Bot',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -97,7 +93,7 @@ TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Morty',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 18,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -109,7 +105,7 @@ TechLevel = 'RULEUTL_Advanced',
         MaxAcceleration = 3.96,
         MaxBrake = 6.591796884,
         MaxSpeed = 2.11875,
-        MotionType = 'RULEUMT_Land',
+        MotionType = 'RULEUMT_Amphibious',
         TurnRate = 164,
         StandUpright = true,
         MaxSteerForce = 10,
@@ -120,7 +116,8 @@ TechLevel = 'RULEUTL_Advanced',
     SelectionThickness = 0.25,
     SizeX = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_bot2_artillery',
+    StrategicIconName = 'icon_bot3_artillery',
+    TAStrategicIconName = '3/land_artillery',
     StrategicIconSortPriority = 0,
     Transport = {
         TransportClass = 2,

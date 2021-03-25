@@ -16,19 +16,20 @@ UnitBlueprint {
     'DIRECTFIRE',
     'OVERLAYDIRECTFIRE',
     'ARM',
-    'KBOT',
-    'LEVEL3',
+    'BOT',
    },
     Defense = {
-        Health = 4800,
-        MaxHealth = 4800,
+        Health = 6000,
+        MaxHealth = 6000,
     },
+    SizeX = 1.8,
+    SizeY = 2.5,
+    SizeZ = 1.8,
     Economy = {
         BuildCostEnergy = 12000,
         BuildCostMass = 1200,
         BuildTime = 21000,
     },
-    StrategicIconName = 'icon_bot3_directfire',
     Weapon = {
         [1] = {
             Damage = 30,

@@ -70,17 +70,15 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH1',
-        'LEVEL1',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'HIGHALTAIR',
         'MOBILE',
 	    'ANTIAIR',
         'AIR',
-        'VTOL',
         'OVERLAYANTIAIR',
         'ARM',
-        'SEAPLA',
+        'SCOUT',
     },
     Defense = {
         ArmorType = 'Light',
@@ -159,6 +157,7 @@ UnitBlueprint {
     SizeY = 0.2,
     SizeZ = 1,
     StrategicIconName = 'icon_fighter1_missile',
+    TAStrategicIconName = '1/fighter_directfire',
     StrategicIconSortPriority = 0,
     Transport = {
         AirClass = true,

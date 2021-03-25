@@ -41,9 +41,8 @@ UnitBlueprint {
 	'NAVAL',
 	'CONSTRUCTIONSORTDOWN',
 	'ARM',
-    'DEVELOPMENT',
+    'RESEARCH',
 	'SORTCONSTRUCTION',
-	'LEVEL2',
     },
     CollisionOffsetY = -1,
     CollisionOffsetZ = 0,
@@ -61,6 +60,9 @@ UnitBlueprint {
         BuildAttachBone = 'BuildBone',
         AnimationUnpack = '/mods/SCTA-master/units/ARMSY/ARMSY_lod0_unpack.sca',
         AnimationUnpackRate = 2,  
+        Abilities = {
+            '<LOC ability_upgradable>Upgradeable',
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -83,9 +85,8 @@ UnitBlueprint {
         DifferentialUpgradeCostCalculation = true,
 	BuildRate = 175,
     BuildableCategory = {
-        'OCEAN LEVEL1 ARM',
-        'OCEAN LEVEL2 ARM',
-        'ALLTERRAIN LEVEL2 ENGINEER ARM',
+        'NAVAL MOBILE TECH1 ARM',
+        'NAVAL MOBILE TECH2 ARM',
         'armadsy',
     },
 	InitialRallyX = 0,
@@ -94,9 +95,7 @@ UnitBlueprint {
     StorageEnergy = 50,
     },
     Footprint = {
-        SizeX = 10,
-        SizeZ = 10,
-	MinWaterDepth = 1.875,
+        MinWaterDepth = 1.5,
     },
     General = {
         BuildBones = {
@@ -122,8 +121,8 @@ UnitBlueprint {
 	UnitName = 'Development Shipyard',
     },
     Intel = {
-        VisionRadius = 10,
-        WaterVisionRadius = 8, 
+        VisionRadius = 14,
+        WaterVisionRadius = 8,
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 5,
@@ -131,8 +130,7 @@ UnitBlueprint {
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Water = true,
-        },
-        FlattenSkirt = true,
+        },        
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
     RollOffPoints = {

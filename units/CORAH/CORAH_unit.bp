@@ -30,17 +30,15 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'HOVER',
-	    'LEVEL3',
         'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
         'ANTIAIR',
-        'ROCKET',
+        'SILO',
         'OVERLAYANTIAIR',
         'LAND',
         'CORE',
-        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -79,10 +77,6 @@ UnitBlueprint {
         BuildCostEnergy = 1444,
         BuildCostMass = 120,
         BuildTime = 3747,
-    },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 1,
     },
     General = {
         Category = 'Anti Air',
@@ -149,7 +143,7 @@ TechLevel = 'RULEUTL_Advanced',
             Damage = 150,
             DamageRadius = 1.5,
             FiringRandomness = 0,
-            DamageType = 'LANDAir',
+            DamageType = 'TASpec',
             DisplayName = 'CORAH_WEAPON',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Air',

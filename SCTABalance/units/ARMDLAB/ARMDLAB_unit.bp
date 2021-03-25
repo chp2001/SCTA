@@ -41,9 +41,9 @@ UnitBlueprint {
         'LAND', 
         'CONSTRUCTIONSORTDOWN',
 	    'ARM',
-        'DEVELOPMENT',
+        'RESEARCH',
 	    'SORTCONSTRUCTION',
-	    'LEVEL2',
+        'BOT',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -57,7 +57,7 @@ UnitBlueprint {
     Description = 'Produces Kbots',
     Display = {
         Abilities = {
-            'Upgradeable',
+            '<LOC ability_upgradable>Upgradeable',
         },
         BuildAttachBone = 'BasePlate',
         AnimationUnpack = '/mods/SCTA-master/units/ARMLAB/ARMLAB_lod0_aopen.sca',
@@ -75,7 +75,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.25,
+        UniformScale = 0.22,
     },
     Economy = {
         BuildCostEnergy = 36000,
@@ -85,8 +85,8 @@ UnitBlueprint {
         DifferentialUpgradeCostCalculation = true,
         BuildableCategory = {
             'armadlab',
-            'KBOT LEVEL1 ARM',
-            'KBOT LEVEL2 ARM',
+            'BOT MOBILE TECH1 ARM',
+            'BOT MOBILE TECH2 ARM',
         },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,
@@ -95,14 +95,13 @@ UnitBlueprint {
     },
     Footprint = {
         MaxSlope = 0.625,
-        SizeX = 8,
-        SizeZ = 8,
+        SizeX = 7,
+        SizeZ = 7,
     },
     General = {
         BuildBones = {
                 BuildEffectBones = {'Nozzle_01','Nozzle_02'},
             },
-	---BuildAngle = 4096,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {
@@ -123,13 +122,12 @@ TechLevel = 'RULEUTL_Basic',
         UpgradesTo = 'armadlab', 
     },
     Intel = {
-        VisionRadius = 10,
-    },
+        VisionRadius = 14,
+    },    
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
     LifeBarSize = 7,
-    Physics = {
-        FlattenSkirt = true,
+    Physics = {        
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
     RollOffPoints = {
@@ -145,18 +143,6 @@ TechLevel = 'RULEUTL_Basic',
         Y = 0,
         Z = 2.5,
     },
-},
-OccupyRects = {
-    # offsetX offsetZ  sizeX sizeZ, offset from center of unit
-    -2,
-    0,
-    0.5,
-    3,
-
-    2,
-    0,
-    0.5,
-    3,
 },
     },
     SelectionSizeX = 7,

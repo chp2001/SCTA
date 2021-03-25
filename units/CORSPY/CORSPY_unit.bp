@@ -29,15 +29,13 @@ UnitBlueprint {
     BuildIconSortPriority = 15,
     Categories = {
         'SELECTABLE',
-        'KBOT',
-        'LEVEL2',
+        'BOT',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
 	    'LAND',
         'CORE',
-        'TACLOAK',
         'SCOUT',
     },
     Defense = {
@@ -73,7 +71,6 @@ UnitBlueprint {
         BuildCostEnergy = 9000,
         BuildCostMass = 128,
         BuildTime = 22000,
-        TAConsumptionPerSecondEnergy = 900,
         MaintenanceConsumptionPerSecondEnergy = 350,
     },
     General = {
@@ -122,7 +119,7 @@ TechLevel = 'RULEUTL_Advanced',
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_land2_intel',
+    StrategicIconName = 'icon_land2_counterintel',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_UNITEX

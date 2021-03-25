@@ -30,7 +30,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'HOVER',
-	    'LEVEL3',
         'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -39,8 +38,6 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'LAND',
         'CORE',
-        'TANK',
-        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -55,7 +52,6 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_hover>Hover',
-            'Heavy Tank',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -80,10 +76,7 @@ UnitBlueprint {
         BuildCostMass = 272,
         BuildTime = 8115,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 1,
-    },
+
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -103,7 +96,7 @@ TechLevel = 'RULEUTL_Advanced',
     },
     Intel = {
         VisionRadius = 18,
-        WaterVisionRadius = 4, 
+        WaterVisionRadius = 6, 
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -147,8 +140,6 @@ TechLevel = 'RULEUTL_Advanced',
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 40,
-            DamageRadius = 0.5,
-            FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'CORSNAP_WEAPON',
             FireTargetLayerCapsTable = {

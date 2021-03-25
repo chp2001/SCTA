@@ -29,7 +29,6 @@ UnitBlueprint {
     BuildIconSortPriority = 14,
     Categories = {
         'SELECTABLE',
-        'LEVEL2',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -38,9 +37,8 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-        'KBOT',
-        'TANK',
-        'LASER',
+        'BOT',
+        'ANTISHIELD',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -55,9 +53,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORSUMO/CORSUMO_lod0_Awalk.sca',
         AnimationWalkRate = 0.2,
-        Abilities = {
-            'Heavy Assault Bot',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -117,7 +112,7 @@ TechLevel = 'RULEUTL_Advanced',
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_bot2_directfire',
+    StrategicIconName = 'icon_bot3_armored',
     StrategicIconSortPriority = 0,
     Transport = {
         TransportClass = 3,

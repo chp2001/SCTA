@@ -18,12 +18,12 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 3,
     Categories = {
-        'BUILTBYT2SUB',
+        'BUILTBYTIER3COMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'LEVEL2',
+
         'TECH2',
 	'STRUCTURE',
 	'DEFENSE',
@@ -120,11 +120,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             Damage = 600,
-            DamageRadius = 1,
-            DamageType = 'AntiSub',
+            DamageType = 'TASpec',
             DisplayName = 'ARMATL_TORPEDO',   
-            ProjectileLifetime = 12,
-            ProjectilesPerOnFire = 1,
             FireTargetLayerCapsTable = {
                 Water = 'Seabed|Sub|Water',
             },

@@ -18,15 +18,14 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 6,
     Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
-        'BUILTBYT2VEHICLE',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3COMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH3',
-        'LEVEL3',
 	    'STRUCTURE',
 	    'DEFENSE',
 	    'DIRECTFIRE',
@@ -48,9 +47,6 @@ UnitBlueprint {
     },
     Description = 'Pop-up Heavy Cannon',
     Display = {
-        Abilities = {
-            'PopUp',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -87,7 +83,13 @@ TechLevel = 'RULEUTL_Secret',
         UnitName = 'Ambusher',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 16,
+    },
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -114,11 +116,12 @@ TechLevel = 'RULEUTL_Secret',
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 400,
-            DamageRadius = 3.125, 
+            DamageRadius = 2, 
             DamageType = 'Normal',
             DisplayName = 'ARMAMB_GUN',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
             },
             RangeCategory = 'UWRC_DirectFire',
             WeaponCategory = 'DirectFire',

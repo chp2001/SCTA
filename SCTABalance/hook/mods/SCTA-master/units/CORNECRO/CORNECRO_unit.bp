@@ -3,7 +3,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'LEVEL2',
         'FIELDENGINEER',
         'ENGINEER',
         'REPAIR',
@@ -17,10 +16,8 @@ UnitBlueprint {
         'CONSTRUCTION',
         'LAND',
         'CORE',
-        'NECRO',
-        'KBOT',
-        'VEHICLE',
-        'ALLTERRAIN',
+        'BOT',
+        'TANK',
     },
     Defense = {
         Health = 1300,
@@ -37,9 +34,7 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 3,
 	ProductionPerSecondMass = 0,
     },
-    Intel = {
-        VisionRadius = 10,
-    },
+    
     LifeBarSize = 1,
     SelectionSizeX = 0.6,
     SelectionSizeZ = 0.6,

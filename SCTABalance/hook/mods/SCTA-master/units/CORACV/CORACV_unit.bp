@@ -15,9 +15,8 @@ UnitBlueprint {
 	'LAND',
 	'SELECTION', 
         'CORE',
-        'KBOT',
-        'VEHICLE',
-	'LEVEL2',
+        'BOT',
+        'TANK',
     },
     Defense = {
         Health = 1200,
@@ -32,16 +31,14 @@ UnitBlueprint {
         BuildTime = 5500,
         BuildRate = 180,
         BuildableCategory = {
-            'BUILTBYT1KBOT CORE',
-            'BUILTBYT2KBOT CORE',
+            'BUILTBYTIER1ENGINEER CORE',
+            'BUILTBYTIER2ENGINEER CORE',
         },
         MaxBuildDistance = 7,
         ProductionPerSecondEnergy = 3,
         ProductionPerSecondMass = 0,
     },
-    Intel = {
-        VisionRadius = 10,
-    },
+    
     Physics = {
         MaxAcceleration = 1.4,
         MaxBrake = 1.25,

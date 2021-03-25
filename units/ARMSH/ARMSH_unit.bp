@@ -30,19 +30,16 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH3',
-        'LEVEL3',
-        'HOVER',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
         'SCOUT',
-	    'INTELLIGENCE',
+        'HOVER',
         'OVERLAYRADAR',
-        'DIRECTFIRE',
+        'OVERLAYOMNI',
         'OVERLAYDIRECTFIRE',
         'LAND',
         'ARM',
-        'ALLTERRAIN',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -72,7 +69,7 @@ UnitBlueprint {
         TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'Wake_01'},
+		Bones = {'Wake1'},
         },
 	},
         UniformScale = 0.16,
@@ -81,10 +78,6 @@ UnitBlueprint {
         BuildCostEnergy = 1169,
         BuildCostMass = 76,
         BuildTime = 3388,
-    },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 1,
     },
     General = {
         Category = 'Utility',
@@ -106,6 +99,8 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 18,
         WaterVisionRadius = 4, 
+        RadarRadius = 10,
+        OmniRadius = 10, 
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -146,8 +141,6 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 45,
-            DamageRadius = 0.25,
-            FiringRandomness = 0,
             DamageType = 'Normal',
             DisplayName = 'ARMSH_WEAPON',
             FireTargetLayerCapsTable = {

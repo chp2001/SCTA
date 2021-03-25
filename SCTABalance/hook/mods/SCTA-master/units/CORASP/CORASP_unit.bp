@@ -6,10 +6,10 @@
 UnitBlueprint {
     Merge = true,
     Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1HOVER',
-        'BUILTBYT1NAVAL',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER2COMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -20,7 +20,6 @@ UnitBlueprint {
         'AIRSTAGINGPLATFORM',
         'OVERLAYMISC',
         'CORE',
-	    'LEVEL1',
         'SORTSTRATEGIC',
     },
     Display = {

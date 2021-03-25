@@ -39,7 +39,8 @@ ProjectileBlueprint {
     Categories = {
         'CORE',
         'PROJECTILE',
-        'ROCKET',
+        'MISSILE',
+        'TACTICAL',
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/fmdmisl_mesh.bp',
@@ -63,7 +64,8 @@ ProjectileBlueprint {
         DestroyOnWater = true,
 	InitialSpeed = 20,
         LeadTarget = false,
-        Lifetime = 25,
+        Lifetime = 5,
+        TrackTime = 3,
         MaxSpeed = 40,
         TrackTarget = true,
         TurnRate = 360,

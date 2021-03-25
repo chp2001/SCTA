@@ -40,9 +40,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'LEVEL2',
         'CORE',
-        'OCEAN',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -57,11 +55,9 @@ UnitBlueprint {
         'SUBMERSIBLE',
         'T2SUBMARINE',
         'OVERLAYSONAR',
-        'SELECTION',
-        'OCEANENGINEER',
         },
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Sub',
         Health = 360,
         MaxHealth = 360,
         AirThreatLevel = 0,
@@ -86,6 +82,13 @@ UnitBlueprint {
                 },
             },
         },
+    	MovementEffects = {
+            TAMovement = {
+            Emitter = '/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
+            Scale = 0.25,
+            Bones = {'Wake_01', 'Wake_02'},
+            },
+        },
         UniformScale = 0.16,
     },
     Economy = {
@@ -94,7 +97,7 @@ UnitBlueprint {
         BuildRate = 225,
         BuildTime = 16565,
         BuildableCategory = {
-            'BUILTBYT2SUB CORE',
+            'BUILTBYTIER3COMMANDER CORE',
         },
         MaxBuildDistance = 6.25,
         StorageEnergy = 50,
@@ -105,7 +108,7 @@ UnitBlueprint {
     },
     Footprint = {
         SizeX = 2,
-        SizeZ = 4,
+        SizeZ = 6,
     },
     General = {
         BuildBones = {
@@ -133,8 +136,8 @@ UnitBlueprint {
         UnitName = 'Advanced Construction Sub',
     },
     Intel = {
-        VisionRadius = 8,
-        WaterVisionRadius = 8,
+        VisionRadius = 14,
+        WaterVisionRadius = 10,
 	    SonarRadius = 25,
     },
     LifeBarHeight = 0.25,
@@ -157,7 +160,7 @@ UnitBlueprint {
     SizeX = 2.5,
     SizeY = 1.5,
     SizeZ = 4,
-    StrategicIconName = 'icon_bot2_engineer', --'icon_sub2_engineer',
+    StrategicIconName = 'icon_structure2_engineer',  --'icon_sub2_engineer',
     StrategicIconSortPriority = 0,
     Weapon = {
         { #SMALL_UNITEX

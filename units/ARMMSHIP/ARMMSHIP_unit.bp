@@ -30,21 +30,18 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-        'LEVEL2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
 	    'NAVAL',
 	    'INDIRECTFIRE',
 	    'ANTIAIR',
-	    'ROCKET',
         'SILO',
 	    'CRUISER',
         'OVERLAYINDIRECTFIRE',
 	    'OVERLAYANTIAIR',
 	    'OVERLAYRADAR',
         'ARM',
-        'OCEAN',
     },
     CollisionOffsetY = -0.5,
     Defense = {
@@ -108,9 +105,9 @@ UnitBlueprint {
         UnitName = 'Ranger',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 16,
         WaterVisionRadius = 4, 
-        RadarRadius = 78,
+        RadarRadius = 80,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -131,7 +128,7 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 2,
     SizeZ = 6.5,
-    StrategicIconName = 'icon_ship2_missile',
+    StrategicIconName = 'icon_ship3_missile',
     StrategicIconSortPriority = 0,
     Weapon = {
         {

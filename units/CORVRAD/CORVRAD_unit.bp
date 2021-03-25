@@ -29,8 +29,8 @@ UnitBlueprint {
     BuildIconSortPriority = 6,
     Categories = {
         'SELECTABLE',
-        'VEHICLE',
-        'LEVEL2',
+        'TANK',
+
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -115,7 +115,7 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 14,
-	    RadarRadius = 70,
+	    RadarRadius = 100,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

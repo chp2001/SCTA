@@ -18,15 +18,14 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 7,
     Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
-        'BUILTBYT2VEHICLE',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3COMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH2',
-        'LEVEL2',
 	'STRUCTURE',
 	'DEFENSE',
 	'ANTIAIR',
@@ -67,8 +66,6 @@ UnitBlueprint {
         BuildTime = 38010,
     },
     Footprint = {
-        SizeX = 2,
-        SizeZ = 2,
 	MaxSlope = 0.625,
     },
     General = {
@@ -87,6 +84,12 @@ UnitBlueprint {
     },
     Intel = {
         VisionRadius = 22,
+    },
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -117,6 +120,7 @@ UnitBlueprint {
             DisplayName = 'ARMFLAK_GUN',
             FireTargetLayerCapsTable = {
                 Land = 'Air',
+                Water = 'Air',
             },
 	        RangeCategory = 'UWRC_AntiAir',
             WeaponCategory = 'AntiAir',
@@ -170,7 +174,7 @@ UnitBlueprint {
         { #LARGE_BUILDINGEX
             Damage = 100,
             DamageFriendly = true,
-            DamageRadius = 4,
+            DamageRadius = 5,
             DamageType = 'Normal',
             DummyWeapon = true,
             Label = 'DeathWeapon',

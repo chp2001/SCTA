@@ -5,16 +5,9 @@ UnitBlueprint {
         BuildCostMass = 400,
         BuildTime = 12000,
     },
-    Intel = {
-        VisionRadius = 14,
-        WaterVisionRadius = 4, 
-    },
     Weapon = {
         [1] = {
-        Damage = 5,
-        MaxRadius = 25,
-        RackSalvoSize = 2,
-        RateOfFire = 3.33,
+        Damage = 10,
     },
     [2] = {
     },

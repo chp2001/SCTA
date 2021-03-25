@@ -41,9 +41,8 @@ UnitBlueprint {
 	'CONSTRUCTION',
 	'NAVAL',
 	'CORE',
-    'DEVELOPMENT',
+    'RESEARCH',
 	'SORTCONSTRUCTION',
-	'LEVEL3',
     },
     CollisionOffsetY = -1,
     CollisionOffsetZ = 0,
@@ -83,10 +82,10 @@ UnitBlueprint {
     BuildRate = 360,
     DifferentialUpgradeCostCalculation = true,
     BuildableCategory = {
-        'OCEAN LEVEL1 CORE',
-        'OCEAN LEVEL2 CORE',
-        'OCEAN LEVEL3 CORE',
-        'ALLTERRAIN ENGINEER CORE',
+        'NAVAL MOBILE TECH1 CORE',
+        'NAVAL MOBILE TECH2 CORE',
+        'NAVAL MOBILE TECH3 CORE',
+        'corch',
     },
 	InitialRallyX = 0,
 	InitialRallyZ = 10,
@@ -94,9 +93,7 @@ UnitBlueprint {
     StorageEnergy = 50,
     },
     Footprint = {
-        SizeX = 10,
-        SizeZ = 10,
-	MinWaterDepth = 1.875,
+        MinWaterDepth = 1.5,
     },
     General = {
         BuildBones = {
@@ -121,7 +118,7 @@ TechLevel = 'RULEUTL_Advanced',
 	UnitName = 'Advanced Development Shipyard',
     },
     Intel = {
-        VisionRadius = 10,
+        VisionRadius = 14,
         WaterVisionRadius = 8,
     },
     LifeBarHeight = 0.22,
@@ -130,8 +127,7 @@ TechLevel = 'RULEUTL_Advanced',
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Water = true,
-        },
-        FlattenSkirt = true,
+        },        
         SkirtSizeX = 6,
         SkirtSizeZ = 6,
     RollOffPoints = {

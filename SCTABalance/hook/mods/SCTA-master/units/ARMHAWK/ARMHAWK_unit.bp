@@ -15,11 +15,13 @@ UnitBlueprint {
         BuildCostEnergy = 42000,
         BuildTime = 20000,
         ProductionPerSecondEnergy = 0,
-        TAConsumptionPerSecondEnergy = 50,
-        MaintenanceConsumptionPerSecondEnergy = 10,
+        MaintenanceConsumptionPerSecondEnergy = 25,
       },
     Physics = {
           FuelRechargeRate = 666666,
           FuelUseTime = 666666,
     },
+    Intel = {
+      TAIntel = true,
+      },
   }

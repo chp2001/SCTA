@@ -24,18 +24,16 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 12,
     Categories = {
-        'BUILTBYT1AIR',
-        'BUILTBYT1KBOT',
-        'BUILTBYT1VEHICLE',
-        'BUILTBYT1HOVER',
-        'BUILTBYT1NAVAL',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
-        'LEVEL1',
 	    'STRUCTURE',
 	    'DEFENSE',
 	    'DIRECTFIRE',
@@ -43,7 +41,7 @@ UnitBlueprint {
 	    'ARM',
     	'SORTDEFENSE',
         'SNIPEMODE',
-        'LASER',
+        'ANTISHIELD',
     },
     CollisionOffsetY = -1,
     Defense = {
@@ -57,9 +55,6 @@ UnitBlueprint {
     },
     Description = 'Light Laser Tower',
     Display = {
-        Abilities = {
-            'Defense',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -123,7 +118,6 @@ UnitBlueprint {
             EnergyRequired = 10,
             EnergyChargeForFirstShot = true,
             Damage = 60,
-            DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'ARM_LIGHTLASER',
             FireTargetLayerCapsTable = {
@@ -155,6 +149,7 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RateOfFire = 1,
             TargetCheckInterval = 1,
+            DamageRadius = 2, 
             TargetPriorities = {
                 'ALLUNITS'
             },

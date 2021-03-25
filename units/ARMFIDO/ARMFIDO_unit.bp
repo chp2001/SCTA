@@ -37,8 +37,7 @@ UnitBlueprint {
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
-        'KBOT',
-	    'LEVEL2',
+        'BOT',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -53,9 +52,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/ARMFIDO/ARMFIDO_lod0_Awalk.sca',
         AnimationWalkRate = 1,
-        Abilities = {
-            'Assault Bot',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -92,7 +88,7 @@ UnitBlueprint {
         UnitName = 'Fido',
     },
     Intel = {
-        VisionRadius = 10,
+        VisionRadius = 14,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
@@ -132,7 +128,6 @@ UnitBlueprint {
             CollideFriendly = false,
 	    DamageFriendly = false,
             Damage = 240,
-	    DamageRadius = 0.25,
             DamageType = 'Normal',
             DisplayName = 'GAUSS',
             FireTargetLayerCapsTable = {
@@ -146,7 +141,7 @@ UnitBlueprint {
             MaxRadius = 24,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-	    MuzzleVelocity = 28,
+	        MuzzleVelocity = 28,
             ProjectileId = '/mods/SCTA-master/projectiles/GAUSS/GAUSS_proj.bp',
             RackBones = {
                 {
@@ -183,7 +178,7 @@ UnitBlueprint {
             Turreted = true,
         },
         { #BIG_UNITEX
-            Damage = 100,
+            Damage = 50,
             DamageFriendly = true,
             DamageRadius = 3,
             DamageType = 'Normal',

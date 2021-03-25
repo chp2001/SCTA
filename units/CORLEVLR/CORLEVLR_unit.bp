@@ -29,8 +29,7 @@ UnitBlueprint {
     BuildIconSortPriority = 6,
     Categories = {
         'SELECTABLE',
-        'VEHICLE',
-	    'LEVEL1',
+        'TANK',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -53,9 +52,6 @@ UnitBlueprint {
     },
     Description = 'Riot Tank',
     Display = {
-        Abilities = {
-            'Artillery',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -91,7 +87,7 @@ TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Leveler',
     },
     Intel = {
-        VisionRadius = 14,
+        VisionRadius = 12,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

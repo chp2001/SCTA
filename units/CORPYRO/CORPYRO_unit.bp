@@ -29,17 +29,15 @@ UnitBlueprint {
     BuildIconSortPriority = 3,
     Categories = {
         'SELECTABLE',
-        'KBOT',
-        'LEVEL2',
+        'BOT',
         'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'DIRECTFIRE',
+	    'LAND',
+	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-    'PYRO',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -54,9 +52,6 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORPYRO/CORPYRO_lod0_Awalk.sca',
         AnimationWalkRate = 1,
-        Abilities = {
-            'Assault Bot',
-        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -114,7 +109,7 @@ TechLevel = 'RULEUTL_Advanced',
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_bot2_directfire',
+    StrategicIconName = 'icon_bot3_directfire',
     StrategicIconSortPriority = 0,
     Transport = {
         TransportClass = 2,

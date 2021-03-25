@@ -1,8 +1,9 @@
 UnitBlueprint {
     Merge = true, 
     Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT1HOVER',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER3COMMANDER',
+        'BUILTBYTIER3ENGINEER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -14,10 +15,8 @@ UnitBlueprint {
 	    'NAVAL',
         'OVERLAYSONAR',
         'CORE',
-	    'LEVEL2',
 	    'SORTINTEL',
-        'TARGETING',
-        'DEVELOPMENT',
+	    'OPTICS',
     },
     Defense = {
         Health = 1200,
@@ -36,18 +35,27 @@ UnitBlueprint {
     DifferentialUpgradeCostCalculation = true,
 	MaintenanceConsumptionPerSecondEnergy = 150,
     },
-    Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-	MinWaterDepth = 1.5,
-    },
     General = {
         UpgradesFrom = 'corsonar',
     },
     Intel = {
         SonarRadius = 400,
     },
+    Physics = {
+        BankingSlope = 0,
+        DragCoefficient = 0.2,
+        MaxSteerForce = 0,
+        MeshExtentsX = 1.5,
+        MeshExtentsY = 1,
+        MeshExtentsZ = 1.5,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = 0,
+        SkirtOffsetZ = 0,
+        SkirtSizeX = 1,
+        SkirtSizeZ = 1,
+        TurnRate = 0,
+    },
     SizeX = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_structure2_intel',    
 }

@@ -40,8 +40,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'ARM',
-        'VEHICLE',
-	    'LEVEL2',
+        'TANK',
         'TECH2',
         'ENGINEER',
         'REPAIR',
@@ -89,7 +88,8 @@ UnitBlueprint {
         BuildRate = 200,
         BuildTime = 10397,
         BuildableCategory = {
-            'BUILTBYT2VEHICLE ARM',
+            'BUILTBYTIER2ENGINEER ARM',
+            'armvp',
         },
         MaxBuildDistance = 3.75,
         StorageEnergy = 25,

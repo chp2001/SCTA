@@ -5,6 +5,7 @@
 
 local TARocketProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TARocketProjectile
 
-VTOL_ROCKET2 = Class(TARocketProjectile) {}
+VTOL_ROCKET2 = Class(TARocketProjectile) {
+}
 
 TypeClass = VTOL_ROCKET2

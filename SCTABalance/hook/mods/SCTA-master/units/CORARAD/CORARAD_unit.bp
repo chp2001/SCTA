@@ -2,8 +2,8 @@ UnitBlueprint {
     Merge = true,
     BuildIconSortPriority = 10,
     Categories = {
-        'BUILTBYT2AIR',
-        'BUILTBYT2KBOT',
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
         'SELECTABLE',
         'DRAGBUILD',
         'VISIBLETORECON',
@@ -15,10 +15,8 @@ UnitBlueprint {
         'OVERLAYRADAR',
     'CORE',
     'SHOWQUEUE',
-	'LEVEL2',
 	'SORTINTEL',
-	'TARGETING',
-    'DEVELOPMENT',
+    'OPTICS',
     },
  Display = {
   Abilities = {
@@ -49,5 +47,4 @@ UnitBlueprint {
         RadarRadius = 240,
     },
     SizeY = 5,
-    StrategicIconName = 'icon_structure2_intel',
 }

@@ -39,8 +39,7 @@ UnitBlueprint {
     BuildIconSortPriority = 0,
     Categories = {
         'SELECTABLE',
-        'VEHICLE',	    
-        'LEVEL1',
+        'TANK',	    
         'TECH1',
         'ENGINEER',
         'REPAIR',
@@ -111,7 +110,8 @@ UnitBlueprint {
         BuildRate = 100,
         BuildTime = 6100,
         BuildableCategory = {
-            'BUILTBYT1VEHICLE CORE',
+            'BUILTBYTIER1ENGINEER CORE',
+            'coravp',
         },
         MaxBuildDistance = 2.5,
         StorageEnergy = 5,
@@ -146,7 +146,7 @@ TechLevel = 'RULEUTL_Basic',
         UnitName = 'Construction Vehicle',
     },
     Intel = {
-        VisionRadius = 12,
+        VisionRadius = 14,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 1,

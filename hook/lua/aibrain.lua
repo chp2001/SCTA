@@ -47,9 +47,9 @@ AIBrain = Class(SCTAAIBrainClass) {
         table.insert(assistFacs, factory[1])
         local facs = {T1 = 0, T2 = 0, T3 = 0}
         for _, v in assistFacs do
-            if EntityCategoryContains(categories.LEVEL3 * categories.FACTORY, v) then
+        if EntityCategoryContains(categories.FACTORY * (categories.TECH3 + categories.GATE), v) then
                 facs.T3 = facs.T3 + 1
-            elseif EntityCategoryContains(categories.LEVEL2 * categories.FACTORY, v) then
+            elseif EntityCategoryContains(categories.TECH2 * categories.FACTORY, v) then
                 facs.T2 = facs.T2 + 1
             elseif EntityCategoryContains(categories.FACTORY, v) then
                 facs.T1 = facs.T1 + 1
@@ -118,4 +118,59 @@ AIBrain = Class(SCTAAIBrainClass) {
         return retTemplate
     end,
 
+    PBMAssistGivenFactory = function( self, factories, primary )
+        if not self.SCTAAI then
+            return SCTAAIBrainClass.PBMAssistGivenFactory( self, factories, primary )
+        end
+        for k,v in factories do
+            if not v:IsDead() and not ( v:IsUnitState('Building') or v:IsUnitState('Upgrading') ) then
+                local guarded = v:GetGuardedUnit()
+                if not guarded or guarded:GetEntityId() ~= primary:GetEntityId() then
+                    IssueFactoryAssist( {v}, primary )
+                end
+            end
+        end
+    end,
+
+    PBMSetRallyPoint = function(self, factories, location, rallyLoc, markerType)
+        if not self.SCTAAI then
+            return SCTAAIBrainClass.PBMSetRallyPoint(self, factories, location, rallyLoc, markerType)
+        end
+        if table.getn(factories) > 0 then
+            local rally
+            local position = factories[1]:GetPosition()
+            for facNum, facData in factories do
+                if facNum > 1 then
+                    position[1] = position[1] + facData:GetPosition()[1]
+                    position[3] = position[3] + facData:GetPosition()[3]
+                end
+            end
+            position[1] = position[1] / table.getn(factories)
+            position[3] = position[3] / table.getn(factories)
+            if not rallyLoc and not location.UseCenterPoint then
+                local pnt
+                if not markerType then
+                    pnt = AIUtils.AIGetClosestMarkerLocation( self, 'Rally Point', position[1], position[3] )
+                else
+                    pnt = AIUtils.AIGetClosestMarkerLocation( self, markerType, position[1], position[3] )
+                end
+                if(pnt and table.getn(pnt) == 3) then
+                    rally = Vector(pnt[1], pnt[2], pnt[3])
+                end
+            elseif not rallyLoc and location.UseCenterPoint then
+                rally = location.Location
+            elseif rallyLoc then
+                rally = rallyLoc
+            else
+                error('*ERROR: PBMSetRallyPoint - Missing Rally Location and Marker Type', 2)
+                return false
+            end
+            if(rally) then
+                for k,v in factories do
+                    IssueFactoryRallyPoint({v}, rally)
+                end
+            end
+        end
+        return true
+    end,
 }

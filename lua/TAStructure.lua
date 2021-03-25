@@ -143,7 +143,7 @@ TAMass = Class(TAStructure) {
 TACloser = Class(TAStructure) {
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAStructure.OnStopBeingBuilt(self,builder,layer)
-		closeDueToDamage = nil,
+		self.closeDueToDamage = nil,
 		ChangeState(self, self.OpeningState)
 		if EntityCategoryContains(categories.OPTICS, self) and (self:IsIntelEnabled('Radar') or self:IsIntelEnabled('Sonar')) then
 		TAutils.registerTargetingFacility(self:GetArmy())
@@ -181,7 +181,7 @@ TACloser = Class(TAStructure) {
 
 				self.closeDueToDamage = nil
 
-				if self.intelIsActive then 
+				if self.intelIsActive or self.productionIsActive then 
 					ChangeState(self, self.OpeningState)
 				end
 			end
@@ -189,7 +189,6 @@ TACloser = Class(TAStructure) {
 
 		OnDamage = function(self, instigator, amount, vector, damageType)
 			TAStructure.OnDamage(self, instigator, amount, vector, damageType) 
-
 			self.DamageSeconds = 8
 			ChangeState(self, self.ClosingState)
 		end,
@@ -225,14 +224,29 @@ TACloser = Class(TAStructure) {
 		end
 		TAStructure.OnScriptBitClear(self, bit)
 	end,
+
+	OnProductionUnpaused = function(self)
+		TAStructure.OnProductionUnpaused(self)
+		self.productionIsActive = true
+		ChangeState(self, self.OpeningState)
+	end,
+
+	OnProductionPaused = function(self)
+		TAStructure.OnProductionPaused(self)
+		self.productionIsActive = nil
+		ChangeState(self, self.ClosingState)
+	end,
 }	
 	
 TACKFusion = Class(TAStructure) {
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAStructure.OnStopBeingBuilt(self,builder,layer)
 		self.MainCost = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
+		self.Mesh = self:GetBlueprint().Display.MeshBlueprint
 		self.TACloak = true
+		self.Structure = true
 		self:SetScriptBit('RULEUTC_CloakToggle', false)
+		TAStructure.OnIntelEnabled(self)
 		self:RequestRefreshUI()
     end,
 }

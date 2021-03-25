@@ -230,21 +230,10 @@ TACloser = Class(TAStructure) {
 TACKFusion = Class(TAStructure) {
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAStructure.OnStopBeingBuilt(self,builder,layer)
+		self.MainCost = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
+		self.TACloak = true
 		self:SetScriptBit('RULEUTC_CloakToggle', false)
 		self:RequestRefreshUI()
-        self.DelayedCloakThread = self:ForkThread(self.CloakDelayed)
-    end,
-
-    CloakDelayed = function(self)
-        if not self.Dead then
-            WaitSeconds(2)
-            self.IntelDisables['RadarStealth']['ToggleBit5'] = true
-            self.IntelDisables['CloakField']['ToggleBit8'] = true
-			self:EnableUnitIntel('ToggleBit5', 'RadarStealth')
-            self:EnableUnitIntel('ToggleBit8', 'Cloak')
-        end
-        KillThread(self.DelayedCloakThread)
-        self.DelayedCloakThread = nil
     end,
 }
 

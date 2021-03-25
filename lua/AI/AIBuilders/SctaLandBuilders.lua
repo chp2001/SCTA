@@ -159,7 +159,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandAuxFact2',
         Priority = 70,
         BuilderConditions = {   
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.COUNTERINTELLIGENCE * categories.LAND} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.STEALTHFIELD * categories.LAND} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
         }, 
         BuilderType = 'Land',

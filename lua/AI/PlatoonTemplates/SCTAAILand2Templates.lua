@@ -92,7 +92,7 @@ PlatoonTemplate {
     Name = 'T2LandAuxFact2',
     FactionSquads = {
         Arm = {
-            { 'armspid', 1, 1, 'attack', 'none' },
+            { 'armjam', 1, 1, 'attack', 'none' },
         },
         Core = {
             { 'coreter', 1, 1, 'attack', 'none' },

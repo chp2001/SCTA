@@ -18,8 +18,7 @@ UnitBlueprint {
         'TANK',
         'OVERLAYOMNI',
         'STEALTHFIELD',
-        'OVERLAYCOUNTERINTEL',
-        'COUNTERINTELLIGENCE',
+        'OVERLAYCOUNTERINTEL',        
     },
     Display = {
     Abilities = {
@@ -51,6 +50,7 @@ UnitBlueprint {
             },
             RadarStealth = true,
             RadarStealthField = true,
+            TAIntel = true,
             VisionRadius = 14,
             OmniRadius = 60,
             RadarStealthFieldRadius = 30,

@@ -76,8 +76,7 @@ UnitBlueprint {
 	    'ANTIAIR',
         'AIR',
         'OVERLAYANTIAIR',
-        'HIGHALTAIR',
-        'COUNTERINTELLIGENCE',
+        'HIGHALTAIR',        
     },
     Defense = {
         ArmorType = 'ASF',

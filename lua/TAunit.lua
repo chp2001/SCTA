@@ -18,6 +18,8 @@ TAunit = Class(Unit)
         ---self:LOGDBG('TAUnit.OnCreate')
         Unit.OnCreate(self)
 		local aiBrain = self:GetAIBrain()
+		self.SpecIntel = self:GetBlueprint().Intel.TAIntel or nil
+		self.CloakIntel = self:GetBlueprint().Intel.Cloak or nil
 		if aiBrain.SCTAAI then
 			self:SetFireState(FireState.RETURN_FIRE)
 			else
@@ -37,27 +39,27 @@ TAunit = Class(Unit)
 
 	OnIntelDisabled = function(self)
 		Unit.OnIntelDisabled()
-		if EntityCategoryContains(categories.COUNTERINTELLIGENCE, self) and (not self:IsIntelEnabled('Jammer') or not self:IsIntelEnabled('RadarStealth')) then
+		if self.CloakIntel and not self:IsIntelEnabled('Cloak') then
+			self:PlayUnitSound('Uncloak')
+			self.CloakOn = nil
+			self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
+		elseif self.SpecIntel and (not self:IsIntelEnabled('Jammer') or not self:IsIntelEnabled('RadarStealth')) then
 			self.TAIntelOn = nil	
-		elseif EntityCategoryContains(categories.STEALTH, self) and not self:IsIntelEnabled('Cloak') then
-		self:PlayUnitSound('Uncloak')
-		self.CloakOn = nil
-		self:SetMesh(self:GetBlueprint().Display.MeshBlueprint, true)
 		end
 	end,
 
 	OnIntelEnabled = function(self)
 		Unit.OnIntelEnabled()
 		if not IsDestroyed(self) then
-			self.MainCost = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
-			if EntityCategoryContains(categories.COUNTERINTELLIGENCE, self) and (self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth')) then
-				self.TAIntelOn = true
-				ForkThread(self.TAIntelMotion, self)
-			elseif EntityCategoryContains(categories.STEALTH, self) and self:IsIntelEnabled('Cloak') then
-			self.CloakOn = true
-			self:PlayUnitSound('Cloak')
-			self:SetMesh(self:GetBlueprint().Display.CloakMeshBlueprint, true)
-			ForkThread(self.CloakDetection, self)
+				self.MainCost = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
+			if self:IsIntelEnabled('Cloak') and self.CloakIntel then
+					self.CloakOn = true
+					self:PlayUnitSound('Cloak')
+					self:SetMesh(self:GetBlueprint().Display.CloakMeshBlueprint, true)
+					ForkThread(self.CloakDetection, self)
+			elseif (self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth')) and self.SpecIntel then
+					self.TAIntelOn = true
+					ForkThread(self.TAIntelMotion, self)
 			end
 		end
 	end,
@@ -65,11 +67,11 @@ TAunit = Class(Unit)
 	TAIntelMotion = function(self) 
 		while not self.Dead do
             coroutine.yield(11)
-            if self.TAIntelOn and (self:IsUnitState('Moving') or self:IsUnitState('Patrolling'))  then
-                self:SetConsumptionPerSecondEnergy(self.MainCost * 2)
-			elseif self.TAIntelOn then
+			if self.TAIntelOn and self:IsIdleState() == true then
                 self:SetConsumptionPerSecondEnergy(self.MainCost)
-            end
+			elseif self.TAIntelOn then
+                self:SetConsumptionPerSecondEnergy(self.MainCost * 2)
+			end
 		end
     end,
 
@@ -81,10 +83,10 @@ TAunit = Class(Unit)
 		while not self.Dead do
 			coroutine.yield(11)
 			local bp = self:GetBlueprint()
-			if self.CloakOn and (self:IsUnitState('Moving') or self:IsUnitState('Patrolling')) then
-                self:SetConsumptionPerSecondEnergy(self.MainCost * 3)
-			elseif self.CloakOn then
+			if self.CloakOn and (self:IsUnitState('Building') or self:IsIdleState() == true) then
                 self:SetConsumptionPerSecondEnergy(self.MainCost)
+			elseif self.CloakOn then
+                self:SetConsumptionPerSecondEnergy(self.MainCost * 3)
 			local dudes = GetUnitsAroundPoint(brain, cat, getpos(self), 4, 'Enemy')
 			if self.CloakOn and self:IsUnitState('Building') then
 				self:DisableIntel('Cloak')
@@ -107,7 +109,7 @@ TAunit = Class(Unit)
 
 
 	OnScriptBitSet = function(self, bit)
-		if EntityCategoryContains(categories.COUNTERINTELLIGENCE, self) and (bit == 2 or bit == 5) then
+		if self.SpecIntel and (bit == 2 or bit == 5) then
 			--self:SetMaintenanceConsumptionActive()
 			--self:DisableUnitIntel('ToggleBit2', 'Jammer')
 			--self:DisableUnitIntel('ToggleBit5', 'RadarStealth')
@@ -115,7 +117,7 @@ TAunit = Class(Unit)
 			if self.TAIntelThread then KillThread(self.TAIntelThread) end
 			self.TAIntelThread = self:ForkThread(self.TAIntelMotion)	
 		end
-		if bit == 8 and EntityCategoryContains(categories.STEALTH, self) then
+		if bit == 8 and self.CloakIntel then
 			--self:DisableUnitIntel('ToggleBit8', 'Cloak')
 			if self.CloakThread then KillThread(self.CloakThread) end
 			self.CloakThread = self:ForkThread(self.CloakDetection)	
@@ -124,14 +126,14 @@ TAunit = Class(Unit)
 	end,
 
 	OnScriptBitClear = function(self, bit)
-		if EntityCategoryContains(categories.COUNTERINTELLIGENCE, self) and (bit == 2 or bit == 5) then
+		if self.SpecIntel and (bit == 2 or bit == 5) then
 			--self:SetMaintenanceConsumptionInactive()
 			if self.TAIntelThread then
 				KillThread(self.TAIntelThread)
 				self.TAIntelOn = nil
 			end
 		end
-		if bit == 8 and EntityCategoryContains(categories.STEALTH, self) then
+		if bit == 8 and self.CloakIntel then
 			if self.CloakThread then
 				KillThread(self.CloakThread)
 				self.CloakOn = nil

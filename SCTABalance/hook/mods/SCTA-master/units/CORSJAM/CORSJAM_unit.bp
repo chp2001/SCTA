@@ -13,4 +13,7 @@ UnitBlueprint {
     SelectionSizeZ = 2.6,
     SizeY = 1.6,
     SizeZ = 4,
+    Intel = {
+        TAIntel = true,
+    },
 }

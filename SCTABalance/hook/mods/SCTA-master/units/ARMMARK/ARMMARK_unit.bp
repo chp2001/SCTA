@@ -19,8 +19,7 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'OVERLAYCOUNTERINTEL',
         'NEEDMOBILEBUILD',
-        'STEALTHFIELD',
-        'COUNTERINTELLIGENCE',
+        'STEALTHFIELD',        
         'SORTINTEL',
         'SCOUT',
     },
@@ -53,6 +52,7 @@ UnitBlueprint {
     Intel = {
         RadarStealth = true,
         RadarStealthField = true,
+        TAIntel = true,
         VisionRadius = 20,
         RadarRadius = 100, 
         RadarStealthFieldRadius = 50,

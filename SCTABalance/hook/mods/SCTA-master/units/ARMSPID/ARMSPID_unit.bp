@@ -29,6 +29,7 @@ UnitBlueprint {
             Max = 20,
             Min = 5,
         },
+        TAIntel = true,
         JammerBlips = 4,
     },
     Weapon = {

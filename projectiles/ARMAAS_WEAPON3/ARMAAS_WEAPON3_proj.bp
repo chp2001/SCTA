@@ -42,7 +42,7 @@ ProjectileBlueprint {
         StrategicIconSize = 1,
     },
     General = {
-        Category = 'Direct Fire',
+        Category = 'AntiAir',
         EntityCategory = {
             'ARM',
             'PROJECTILE',
@@ -51,10 +51,9 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARMAAS_WEAPON3',
     },
-
     Physics = {
         DestroyOnWater = true,
-        InitialSpeed = 60,
+        MuzzleVelocity = 100,
         Lifetime = 4,
         UseGravity = false,
         LeadTarget = true,

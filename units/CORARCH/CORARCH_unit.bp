@@ -314,7 +314,7 @@ UnitBlueprint {
             MaxRadius = 46.875, 
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 40,
+            MuzzleVelocity = 100,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMAAS_WEAPON3/ARMAAS_WEAPON3_proj.bp',
             RackBones = {
                 {

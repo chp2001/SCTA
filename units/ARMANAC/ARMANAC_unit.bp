@@ -63,6 +63,13 @@ UnitBlueprint {
                 },
             },
         },
+        MovementEffects = {
+            TAMovement = {
+            Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
+            Scale = 0.5,
+            Bones = {'counteraim'},
+            },
+        },
         UniformScale = 0.16,
     },
     Economy = {
@@ -70,7 +77,6 @@ UnitBlueprint {
         BuildCostMass = 272,
         BuildTime = 8115,
     },
-
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',

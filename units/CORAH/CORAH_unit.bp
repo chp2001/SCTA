@@ -155,24 +155,14 @@ TechLevel = 'RULEUTL_Advanced',
             Label = 'CORAH_WEAPON',
             MaxRadius = 40.625,
             MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
+            MuzzleSalvoSize = 3,
             MuzzleVelocity = 35,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMAH_WEAPON/ARMAH_WEAPON_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
                         'muzzle_01',
-                    },
-                    RackBone = 'turret',
-                },
-                {
-                    MuzzleBones = {
                         'muzzle_02',
-                    },
-                    RackBone = 'turret',
-                },
-                {
-                    MuzzleBones = {
                         'muzzle_03',
                     },
                     RackBone = 'turret',
@@ -187,7 +177,14 @@ TechLevel = 'RULEUTL_Advanced',
             RateOfFire = 0.4761904762,
             TargetCheckInterval = 1,
             TargetPriorities = {
-                'ALLUNITS',
+                'AIR MOBILE HIGHPRIAIR',
+                'AIR MOBILE EXPERIMENTAL',
+                'AIR MOBILE TECH3 BOMBER',
+                'AIR MOBILE BOMBER',
+                'AIR MOBILE GROUNDATTACK',
+                'AIR MOBILE TRANSPORTATION',
+                'AIR MOBILE',
+                '(ALLUNITS - SPECIALLOWPRI)',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,

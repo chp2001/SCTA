@@ -42,20 +42,18 @@ ProjectileBlueprint {
         StrategicIconSize = 1,
     },
     General = {
-        Category = 'Direct Fire',
+        Category = 'AntiAir',
         EntityCategory = {
             'ARM',
             'PROJECTILE',
-        'ANTIAIR'
+            'ANTIAIR'
         },
         Faction = 'ARM',
         Weapon = 'ARMFLAK_GUN',
-	EdgeEffectiveness = 0.9,
     },
-
     Physics = {
         DestroyOnWater = true,
-        InitialSpeed = 59.375,
+        MuzzleVelocity = 100,
         Lifetime = 4,
         UseGravity = false,
         LeadTarget = true,

@@ -129,7 +129,7 @@ UnitBlueprint {
             MaxRadius = 50, 
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 59.375,
+            MuzzleVelocity = 100,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMFLAK_GUN/ARMFLAK_GUN_proj.bp',
             RackBones = {
                 {

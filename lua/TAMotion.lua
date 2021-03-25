@@ -88,14 +88,12 @@ TASeaCounter = Class(TASea)
 { 
 	OnStopBeingBuilt = function(self,builder,layer)
 		TASea.OnStopBeingBuilt(self,builder,layer)
-		local bp = self:GetBlueprint()
-		self.MainCost = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
-		if bp.Intel.SonarStealthField or bp.Intel.RadarRadius then
-			self:SetMaintenanceConsumptionActive()
-		end
+		self:SetMaintenanceConsumptionActive()
         self:SetScriptBit('RULEUTC_StealthToggle', false)
-		if bp.Intel.TAIntel then
+		if self:GetBlueprint().Intel.TAIntel then
+			self.MainCost = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
 			self.SpecIntel = true
+			TASea.OnIntelEnabled(self)
 		end
 		self:RequestRefreshUI()
 	end,

@@ -90,6 +90,11 @@ TAunit = Class(Unit)
 				self:DisableIntel('Cloak')
 				self:DisableIntel('CloakField')
 				self:SetMesh(bp.Display.MeshBlueprint, true)
+				if self.Structure then
+				self.TACloak = nil
+				self.CloakOn = nil
+				self:SetMaintenanceConsumptionInactive()
+				end
 			elseif not dudes[1] and self.CloakOn then
 				self:EnableIntel('Cloak')
 				self:EnableIntel('CloakField')

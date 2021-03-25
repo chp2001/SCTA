@@ -1489,7 +1489,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local numberOfUnitsInPlatoon = table.getn(platoonUnits)
         if data.Laser then
             local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
-            if econ.EnergyStorageRatio < 0.4 then
+            if econ.EnergyStorageRatio < 0.15 then
                 WaitSeconds(5)
                 self:PlatoonDisband()
                 return

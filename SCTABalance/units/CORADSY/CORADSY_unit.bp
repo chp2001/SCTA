@@ -69,7 +69,7 @@ UnitBlueprint {
                     AlbedoName = '/mods/SCTA-master/units/CORSY/CORSY_Albedo.dds',
                     MeshName =   '/mods/SCTA-master/units/CORSY/CORSY_lod0.scm',
                     ShaderName = 'Unit', 
-                    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                    NormalsName = '/mods/SCTA-master/units/CORSY/CORSY_NormalsTS.dds',
                 },
             },
         },

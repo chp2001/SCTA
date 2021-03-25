@@ -12,7 +12,6 @@ CORSY = Class(TASeaFactory) {
 		TASeaFactory.OnCreate(self)
 	end,
 
-
 	Open = function(self)
 		TASeaFactory.Open(self)
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)

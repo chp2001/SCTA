@@ -18,7 +18,8 @@ UnitBlueprint {
    Display = {
     Abilities = {
         '<LOC ability_jamming>Jamming',
-        },
+        '<LOC ability_aa>Anti-Air',    
+    },
         UniformScale = 0.24,
     }, 
     Defense = {
@@ -61,6 +62,7 @@ UnitBlueprint {
         RateOfFire = 2,
     },
     [2] = {
+        Damage = 240,
     },
     [3] = {
     }, 

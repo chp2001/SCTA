@@ -1,7 +1,7 @@
 TrailEmitterBlueprint {
 	Lifetime = -1.00,
 	TrailLength = 3.5,
-	Size = 0.1,
+	Size = 0.08,
 	SortOrder = 0,
 	BlendMode = 0,
 	TextureRepeatRate = 1,

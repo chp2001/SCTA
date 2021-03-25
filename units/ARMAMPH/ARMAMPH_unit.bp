@@ -41,6 +41,7 @@ UnitBlueprint {
         'LAND',
         'ARM',
         'HOVER',
+        'ANTISHIELD',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -61,6 +62,7 @@ UnitBlueprint {
         AnimationSwimRate = 1,
         Abilities = {
             '<LOC ability_hover>Hover',
+            '<LOC ability_aa>Anti-Air',
         },
         Mesh = {
             IconFadeInZoom = 130,

@@ -3,7 +3,7 @@
 #
 #Script created by Raevn
 local TASea = import('/mods/SCTA-master/lua/TAMotion.lua').TASea
-local TARocket = import('/mods/SCTA-master/lua/TAweapon.lua').TARocket
+local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 CORMH = Class(TASea) {
 	OnCreate = function(self)
@@ -18,7 +18,7 @@ CORMH = Class(TASea) {
 	end,
 
 	Weapons = {
-		CORMH_WEAPON = Class(TARocket) {
+		CORMH_WEAPON = Class(TAweapon) {
 
 			PlayFxWeaponUnpackSequence = function(self)
 
@@ -62,7 +62,7 @@ CORMH = Class(TASea) {
 				self.unit.Spinners.box:SetGoal(-90.00)
 				self.unit.Spinners.box:SetSpeed(8.91)
 				WaitFor(self.unit.Spinners.box)
-				TARocket.PlayFxWeaponUnpackSequence(self)
+				TAweapon.PlayFxWeaponUnpackSequence(self)
 			end,
 
 			PlayFxWeaponPackSequence = function(self)
@@ -108,7 +108,7 @@ CORMH = Class(TASea) {
 				self.unit.Spinners.box:SetGoal(0)
 				self.unit.Spinners.box:SetSpeed(76.38)
 				WaitFor(self.unit.Spinners.box)
-				TARocket.PlayFxWeaponPackSequence(self)
+				TAweapon.PlayFxWeaponPackSequence(self)
 			end,
 		},
 	},

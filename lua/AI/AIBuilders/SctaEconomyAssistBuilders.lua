@@ -328,13 +328,13 @@ BuilderGroup {
         InstanceCount = 8,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.ENERGYPRODUCTION * categories.TECH1 * categories.STRUCTURE}},
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.ENERGYPRODUCTION * categories.TECH1 * categories.STRUCTURE * categories.LAND}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
             { EBC, 'LessThanEconStorageRatio', { 0.25, 1}},
             },
         BuilderData = {
             Location = 'LocationType',
-            Reclaim = {'ENERGYPRODUCTION STRUCTURE TECH1'},
+            Reclaim = {'ENERGYPRODUCTION STRUCTURE TECH1 LAND'},
                 ReclaimTime = 30,
         },
         BuilderType = 'Any',

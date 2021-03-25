@@ -4,7 +4,7 @@
 #Script created by Raevn
 
 local TASea = import('/mods/SCTA-master/lua/TAMotion.lua').TASea
-local TARocket = import('/mods/SCTA-master/lua/TAweapon.lua').TARocket
+local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 local TAMPhalanxWeapon = import('/lua/terranweapons.lua').TAMPhalanxWeapon
 
 ARMMSHIP = Class(TASea) {
@@ -28,7 +28,7 @@ ARMMSHIP = Class(TASea) {
 	end,
 
 	Weapons = {
-		ARMMSHIP_ROCKET = Class(TARocket) {
+		ARMMSHIP_ROCKET = Class(TAweapon) {
 			PlayFxRackReloadSequence = function(self)
 				self.unit.currentShot = self.unit.currentShot + 1
 				if self.unit.currentShot == 2 then
@@ -94,7 +94,7 @@ ARMMSHIP = Class(TASea) {
 					--SLEEP <10>;
 					self.unit.currentShot = 0	
 					end	
-				TARocket.PlayFxRackReloadSequence(self)
+				TAweapon.PlayFxRackReloadSequence(self)
 			end,
 
 			PlayFxWeaponUnpackSequence = function(self)
@@ -127,7 +127,7 @@ ARMMSHIP = Class(TASea) {
 
 				--SLEEP <10>;
 
-				TARocket.PlayFxWeaponUnpackSequence(self)
+				TAweapon.PlayFxWeaponUnpackSequence(self)
 			end,	
 
 			PlayFxWeaponPackSequence = function(self)
@@ -154,7 +154,7 @@ ARMMSHIP = Class(TASea) {
 				self.unit.Sliders.door2:SetSpeed(6)
 
 
-				TARocket.PlayFxWeaponPackSequence(self)
+				TAweapon.PlayFxWeaponPackSequence(self)
 			end,	
 		},
 		ARMSHIP_MISSILE = Class(TAMPhalanxWeapon) {},

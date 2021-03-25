@@ -4,7 +4,7 @@
 #Script created by Raevn
 
 local TASea = import('/mods/SCTA-master/lua/TAMotion.lua').TASea
-local TARocket = import('/mods/SCTA-master/lua/TAweapon.lua').TARocket
+local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 local AAMWillOWisp = import('/lua/aeonweapons.lua').AAMWillOWisp
 
 CORMSHIP = Class(TASea) {
@@ -21,7 +21,7 @@ CORMSHIP = Class(TASea) {
 	end,
 	
 	Weapons = {
-		CORMSHIP_ROCKET = Class(TARocket) {
+		CORMSHIP_ROCKET = Class(TAweapon) {
     			PlayFxRackReloadSequence = function(self)
 				self.unit.currentShot = self.unit.currentShot + 1
 				if self.unit.currentShot == 1 then
@@ -47,7 +47,7 @@ CORMSHIP = Class(TASea) {
 					self.unit:ShowBone('rocket6', true)	
 					self.unit.currentShot = 0
 				end	
-				TARocket.PlayFxRackReloadSequence(self)
+				TAweapon.PlayFxRackReloadSequence(self)
 			end,
 
 			PlayFxWeaponUnpackSequence = function(self)
@@ -57,12 +57,12 @@ CORMSHIP = Class(TASea) {
 				self.unit:ShowBone('rocket4', true)
 				self.unit:ShowBone('rocket5', true)
 				self.unit:ShowBone('rocket6', true)
-				TARocket.PlayFxWeaponUnpackSequence(self)
+				TAweapon.PlayFxWeaponUnpackSequence(self)
 			end,	
 
 			PlayFxWeaponPackSequence = function(self)
 				WaitSeconds(0.5)
-				TARocket.PlayFxWeaponPackSequence(self)
+				TAweapon.PlayFxWeaponPackSequence(self)
 			end,	
 		},
 		CORSHIP_MISSILE = Class(AAMWillOWisp) {},

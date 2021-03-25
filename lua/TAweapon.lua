@@ -10,7 +10,7 @@ TAweapon = Class(DefaultWeapon) {
         local canSee = true
         local target = self:GetCurrentTarget()
         local aiBrain = self.unit:GetAIBrain()
-        if aiBrain.SCTAAI or (self.unit:IsUnitState('Patrolling') or self.unit:IsUnitState('MakingAttackRun')) then
+        if aiBrain.SCTAAI or (self.unit:IsUnitState('Patrolling') or self.unit:IsUnitState('MakingAttackRun'))  then
             return true
         else
         if (target) then
@@ -72,22 +72,6 @@ TAweapon = Class(DefaultWeapon) {
     },
 
     RackSalvoFireReadyState = State(DefaultWeapon.RackSalvoFireReadyState) {
-
-        Main = function(self)
-            local bp = self:GetBlueprint()
-            if bp.MassRequired and bp.MassRequired > 0 then
-                self.WeaponCanFire = false
-                local aiBrain = self.unit:GetAIBrain()
-                while aiBrain:GetEconomyStored('MASS') < bp.MassRequired do
-                        WaitSeconds(1)
-                end
-                aiBrain:TakeResource('Mass', bp.MassRequired)
-                self.WeaponCanFire = true
-            end
-            DefaultWeapon.RackSalvoFireReadyState.Main(self)
-
-        end,
-
         OnGotTarget = function(self)      
             local army = self.unit:GetArmy()
             ---LOG('Resulting Table'..repr(TAutils.targetingFacilityData))
@@ -142,58 +126,6 @@ TAPopLaser = Class(TAweapon) {
         self.unit.Pack = 0.5
         TAweapon.PlayFxWeaponPackSequence(self)
     end,
-}
-
-TARocket = Class(TAweapon) {
- -- Called when the weapon is created, almost always when the owning unit is created
- OnCreate = function(self)
-    local bp = self:GetBlueprint()
-    self.MassRequired = bp.MassRequired
-    self.MassDrainPerSecond = bp.MassDrainPerSecond
-    if bp.MassChargeForFirstShot == false then
-        self.FirstShot = true
-    end
-    TAweapon.OnCreate(self)
-end,
-
-
-StartEconomyDrain = function(self)
-    TAweapon.StartEconomyDrain(self)
-    if self.FirstShot then return end
-    local bp = self:GetBlueprint()
-    if not self.MassDrain and bp.MassRequired and bp.MassDrainPerSecond then
-        local MsReq = self:GetWeaponMassRequired()
-        local MsDrain = self:GetWeaponMassDrain()
-        if MsReq > 0 and MsDrain > 0 then
-            local time = MsReq / MsDrain
-            if time < 0.1 then
-                time = 0.1
-            end
-            self.MassDrain = CreateEconomyEvent(self.unit, 0, MsReq, time)
-            self.FirstShot = true
-            self.unit:ForkThread(function()
-                WaitFor(self.MassDrain)
-                RemoveEconomyEvent(self.unit, self.MassDrain)
-                self.MassDrain = nil
-            end)
-        end
-    end
-end,
-
-GetWeaponMassRequired = function(self)
-    local bp = self:GetBlueprint()
-    local weapMass = (bp.MassRequired or 0)
-    if weapMass < 0 then
-        weapMass = 0
-    end
-    return weapMass
-end,
-
-GetWeaponMassDrain = function(self)
-    local bp = self:GetBlueprint()
-    local weapMass = (bp.MassDrainPerSecond or 0)
-    return weapMass
-end,
 }
 
 TAKami = Class(KamikazeWeapon){

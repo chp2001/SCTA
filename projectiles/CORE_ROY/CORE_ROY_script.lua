@@ -3,7 +3,7 @@
 #
 #Blueprint created by Raevn
 
-local TACannonProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TACannonProjectile
+local TACannonProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TACannonProjectile
 
 CORE_ROY = Class(TACannonProjectile) {
 }

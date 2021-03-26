@@ -3,7 +3,7 @@
 #
 #Script created by Raevn
 
-local TANuclearProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TANuclearProjectile
+local TANuclearProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TANuclearProjectile
 
 TASMSSL = Class(TANuclearProjectile) {
     

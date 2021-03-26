@@ -3,7 +3,7 @@
 #
 #Script created by Raevn
 
-local TAEMPNuclearProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TAEMPNuclearProjectile
+local TAEMPNuclearProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TAEMPNuclearProjectile
 
 EZBMSSL = Class(TAEMPNuclearProjectile) {
     InitialEffects = {'/effects/emitters/nuke_munition_launch_trail_02_emit.bp',},

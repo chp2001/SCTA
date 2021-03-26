@@ -3,7 +3,7 @@
 #
 #Script created by Raevn
 
-local TACannonProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TACannonProjectile
+local TACannonProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TACannonProjectile
 
 CORPLAS_WEAPON = Class(TACannonProjectile) {
 }

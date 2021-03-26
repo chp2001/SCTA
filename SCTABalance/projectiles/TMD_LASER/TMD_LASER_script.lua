@@ -1,4 +1,4 @@
-local TALaserProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TALaserProjectile
+local TALaserProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TALaserProjectile
 
 TMD_LASER = Class(TALaserProjectile) 
 {

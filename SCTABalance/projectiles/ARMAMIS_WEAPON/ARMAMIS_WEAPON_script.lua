@@ -1,6 +1,6 @@
 
 
-local TARocketProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TARocketProjectile
+local TARocketProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TARocketProjectile
 
 ARMAMIS_WEAPON = Class(TARocketProjectile) 
 {}

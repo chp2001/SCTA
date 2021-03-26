@@ -107,7 +107,7 @@ updateBuildRestrictions = function(self)
 
     if self.restrictions and (not self:IsUnitState('BeingBuilt') or self:IsUnitState('Upgrading')) then
     local HQCategory = ((categories.RESEARCH + categories.GATE) * (categories.ARM + categories.CORE))
-    local PlantsCat
+    local PlantsCat = categories.FACTORY * categories.FACTORY * (categories.ARM + categories.CORE)
         if self.FindHQType(aiBrain, HQCategory * (categories.TECH3 + categories.EXPERIMENTAL)) or 
         NumberOfPlantsT2(aiBrain, PlantsCat) > 12 then
                 self:RemoveBuildRestriction(categories.TECH2)
@@ -137,7 +137,7 @@ end
 
 --self.FindHQType(aiBrain, category)
 FindHQType = function(aiBrain, category)
-    for id, unit in aiBrain:GetListOfUnits((categories.RESEARCH + categories.GATE) * (categories.ARM + categories.CORE)) do
+    for id, unit in aiBrain:GetListOfUnits((categories.RESEARCH + categories.GATE) * (categories.ARM + categories.CORE), false, true) do
         if not unit:IsBeingBuilt() then
             return true
         end

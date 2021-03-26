@@ -106,19 +106,27 @@ updateBuildRestrictions = function(self)
     end
 
     if self.restrictions then
-    local gtime = GetGameTimeSeconds()
-    local HQCategory = ((categories.RESEARCH + categories.GATE) * (categories.ARM + categories.CORE)) 
-        if self.FindHQType(aiBrain, HQCategory * (categories.TECH3 + categories.EXPERIMENTAL)) or gtime > 1500 then
+    local HQCategory = ((categories.RESEARCH + categories.GATE) * (categories.ARM + categories.CORE))
+    local PlantsCat = categories.FACTORY
+        if self.FindHQType(aiBrain, HQCategory * (categories.TECH3 + categories.EXPERIMENTAL)) or 
+        NumberOfPlants(aiBrain, PlantsCat * categories.TECH2) > 6 then
                 self:RemoveBuildRestriction(categories.TECH2)
                 self:RemoveBuildRestriction(categories.TECH3)
                 self.restrictions = nil     
-        elseif self.FindHQType(aiBrain, HQCategory * categories.TECH2) or  gtime > 600 then
+        elseif self.FindHQType(aiBrain, HQCategory * categories.TECH2) or 
+        NumberOfPlants(aiBrain, PlantsCat * (categories.TECH1 + categories.TECH2)) > 12 then
             if EntityCategoryContains(categories.TECH1, self) then
             self:RemoveBuildRestriction(categories.TECH2)    
             self.restrictions = nil
             end
         end
     end
+end
+
+NumberOfPlants = function(aiBrain, category)
+    -- Returns number of extractors upgrading
+    local PlantCount = table.getn(aiBrain:GetListOfUnits(categories.FACTORY * (categories.ARM + categories.CORE), false, true))
+    return PlantCount
 end
 
 --self.FindHQType(aiBrain, category)
@@ -130,7 +138,6 @@ FindHQType = function(aiBrain, category)
     end
     return false
 end
-
 
 targetingFacilityData = {}
 

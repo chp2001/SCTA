@@ -60,7 +60,7 @@ ProjectileBlueprint {
     },
     Physics = {
         Acceleration = 5,
-        TrackTime = 5,
+        TrackTime = 4,
         DestroyOnWater = true,
 	    InitialSpeed = 0,
         LeadTarget = false,

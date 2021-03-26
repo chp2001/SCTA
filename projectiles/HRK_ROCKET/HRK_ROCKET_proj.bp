@@ -58,7 +58,6 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORTRUCK_ROCKET',
     },
-
     Physics = {
         Acceleration = 5,
         DestroyOnWater = true,
@@ -66,7 +65,7 @@ ProjectileBlueprint {
         LeadTarget = false,
         Lifetime = 4,
         MaxSpeed = 25,
-        TrackTime = 3,
+        TrackTime = 2,
         TrackTarget = true,
         TurnRate = 60,
         UseGravity = false,

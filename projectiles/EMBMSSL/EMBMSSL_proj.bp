@@ -67,7 +67,6 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'EMBMSSL',
     },
-
     Physics = {
         Acceleration = 3,
         CollideEntity = false,

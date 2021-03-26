@@ -359,15 +359,6 @@ TAEMGProjectile = Class(TALaserProjectile ) {
 }
 
 TAUnderWaterProjectile = Class(OnWaterEntryEmitterProjectile) {
-	FxTrails = {
-	'/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
-	},
-    FxTrailScale = 0.1,
-	
-	OnCreate = function(self)	
-		OnWaterEntryEmitterProjectile.OnCreate(self)
-		self:SetCollisionShape('Sphere', 0, 0, 0, 1)
-		end,
 	FxImpactLand = {
 		'/effects/emitters/destruction_water_splash_ripples_01_emit.bp',
 		'/effects/emitters/destruction_water_splash_wash_01_emit.bp',

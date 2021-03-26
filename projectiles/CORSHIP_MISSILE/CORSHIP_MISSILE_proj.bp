@@ -51,7 +51,6 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORSHIP_MISSILE',
     },
-
     Physics = {
         Acceleration = 7.5625,
         DestroyOnWater = true,
@@ -59,7 +58,7 @@ ProjectileBlueprint {
         LeadTarget = false,
         Lifetime = 4,
         MaxSpeed = 28.125,
-        TrackTime = 3,
+        TrackTime = 2,
         TrackTarget = true,
         TurnRate = 165,
         UseGravity = true,

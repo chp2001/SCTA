@@ -65,7 +65,6 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CRBLMSSL',
     },
-
     Physics = {
         Acceleration = 3,
         CollideEntity = false,

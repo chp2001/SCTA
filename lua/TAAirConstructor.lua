@@ -75,9 +75,6 @@ TAAirConstructor = Class(TAair) {
         end
         self.BuildingUnit = false
         self:SetImmobile(false)
-        if __blueprints['armgant'] and self.restrictions then
-            TAutils.updateBuildRestrictions(self)
-        end
         TAair.OnStopBuild(self,unitBeingBuilt)
     end,
 

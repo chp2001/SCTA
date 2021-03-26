@@ -43,6 +43,7 @@ UnitBlueprint {
         MaxBrake = 1.25,
         MaxSpeed = 1.6,
     },
+    LifeBarSize = 1,
     SelectionSizeX = 0.8,
     SelectionSizeZ = 0.8,
     SelectionThickness = 0.25,

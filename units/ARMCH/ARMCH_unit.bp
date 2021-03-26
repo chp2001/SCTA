@@ -145,7 +145,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 1.6,
+    LifeBarSize = 2.6,
     Physics = {
         Elevation = 0.2,
         BackUpDistance = 0,

@@ -32,6 +32,7 @@ UnitBlueprint {
         VisionRadius = 8,
         WaterVisionRadius = 8,
       },
+      LifeBarSize = 1,
     SelectionSizeX = 1.25,
     SelectionSizeZ = 1.25,
     SizeX = 2,

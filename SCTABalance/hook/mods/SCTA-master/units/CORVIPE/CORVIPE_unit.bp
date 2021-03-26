@@ -20,6 +20,7 @@ UnitBlueprint {
     SizeX = 1,
     SizeY = 2,
     SizeZ = 1,
+    LifeBarSize = 1,
     Weapon = {
         [1] = {
             Damage = 750,

@@ -32,6 +32,7 @@ UnitBlueprint {
     },
       SelectionSizeX = 1.5,
       SelectionSizeZ = 1.5,
+      LifeBarSize = 1,
       SelectionThickness = 0.6,
     SizeX = 2,
     SizeY = 2,

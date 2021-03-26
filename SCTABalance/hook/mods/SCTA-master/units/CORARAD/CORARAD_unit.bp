@@ -25,7 +25,7 @@ UnitBlueprint {
             'Radar Targeting',
         },
     UniformScale = 0.12,    
-}, 
+    }, 
      Economy = {
         BuildCostEnergy = 6000,
         BuildTime = 9600,
@@ -47,4 +47,5 @@ UnitBlueprint {
         RadarRadius = 240,
     },
     SizeY = 5,
+    LifeBarSize = 1,
 }

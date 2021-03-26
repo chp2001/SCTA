@@ -18,11 +18,11 @@ UnitBlueprint {
         MaxBuildDistance = 5,
         BuildTime = 2000,
     },
-    
     Physics = {
         FuelRechargeRate = 666666,
         FuelUseTime = 666666,
     },
     SelectionSizeX = 0.7,
     SelectionSizeZ = 0.7,
+    LifeBarSize = 1,
 }

@@ -18,6 +18,7 @@ UnitBlueprint {
         SkirtSizeZ = 2,
         TurnRate = 0,
     },
+      LifeBarSize = 1,
       SelectionSizeX = 1.5,
       SelectionSizeZ = 1.5,
       SelectionThickness = 0.6,

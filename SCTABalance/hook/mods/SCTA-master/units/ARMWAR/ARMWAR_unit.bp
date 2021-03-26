@@ -14,6 +14,7 @@ Economy = {
 },
 SelectionSizeX = 0.8,
 SelectionSizeZ = 0.8,
+LifeBarSize = 1,
 SizeX = 1.5,
 SizeY = 1.7,
 SizeZ = 1.7,

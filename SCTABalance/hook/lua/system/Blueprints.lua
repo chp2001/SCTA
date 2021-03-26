@@ -35,8 +35,7 @@ do
         local Land_Singles = {
             LifeBarHeight = 0.3,
             LifeBarOffset = 0.3,
-            LifeBarSize = 0.5,
-             
+            LifeBarSize = 0.4,
             SelectionSizeX = 0.5,
             SelectionSizeZ = 0.5,
             SelectionThickness = 2.5,
@@ -105,8 +104,7 @@ do
         local Air_Singles = {
             LifeBarHeight = 0.3,
             LifeBarOffset = 0.5,
-            LifeBarSize = 0.5,
-            
+            LifeBarSize = 0.5, 
             SelectionSizeX = 0.33,
             SelectionSizeZ = 0.33,
             SelectionThickness = 2,

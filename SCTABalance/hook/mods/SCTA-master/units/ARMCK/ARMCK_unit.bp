@@ -35,7 +35,7 @@ UnitBlueprint {
         },
         MaxBuildDistance = 6,
     },
-    
+    LifeBarSize = 1,
     Physics = {
         MaxAcceleration = 1.4,
         MaxBrake = 1.25,

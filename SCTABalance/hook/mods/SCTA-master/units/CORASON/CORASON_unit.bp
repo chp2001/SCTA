@@ -56,6 +56,7 @@ UnitBlueprint {
         SkirtSizeZ = 1,
         TurnRate = 0,
     },
+    LifeBarSize = 1,
     SizeX = 2,
     SizeZ = 2,
 }

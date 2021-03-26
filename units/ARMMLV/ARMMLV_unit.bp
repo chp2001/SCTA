@@ -94,7 +94,7 @@ UnitBlueprint {
         BuildBones = {
             AimBone = 'post',
             BuildEffectBones = {'Muzzle'},
-            PitchBone = 'Muzzle',
+            PitchBone = 'nanogun',
             YawBone = 'post',
         },
         Category = 'Construction',

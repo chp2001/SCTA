@@ -98,7 +98,7 @@ TechLevel = 'RULEUTL_Basic',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 1,
+    LifeBarSize = 2,
     Physics = {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,

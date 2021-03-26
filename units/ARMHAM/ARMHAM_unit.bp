@@ -65,7 +65,7 @@ UnitBlueprint {
             },
         },
 	---SmokeBone = 'torso',
-        UniformScale = 0.09,
+        UniformScale = 0.14,
     },
     Economy = {
         BuildCostEnergy = 1187,
@@ -95,7 +95,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 1.5,
+    LifeBarSize = 2,
     Physics = {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,

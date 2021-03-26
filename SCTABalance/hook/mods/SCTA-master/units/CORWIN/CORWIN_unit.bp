@@ -39,4 +39,5 @@ Defense = {
       SizeX = 2,
       SizeY = 3,
       SizeZ = 2,
+      LifeBarSize = 1,
 }

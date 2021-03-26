@@ -87,8 +87,7 @@ UnitBlueprint {
                 },
             },
         },
-	---SmokeBone = 'Torso',
-        UniformScale = 0.16,
+        UniformScale = 0.14,
     },
     Economy = {
         BuildCostEnergy = 5784,
@@ -137,7 +136,7 @@ TechLevel = 'RULEUTL_Advanced',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 1,
+    LifeBarSize = 2,
     Physics = {
         LayerChangeOffsetHeight = -2.00,
 	    BackUpDistance = 0,

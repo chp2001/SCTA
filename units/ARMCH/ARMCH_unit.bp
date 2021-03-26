@@ -89,10 +89,10 @@ UnitBlueprint {
         TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'wake1'},
+		Bones = {'ARMXCH'},
         },
 	},
-        UniformScale = 0.1,
+        UniformScale = 0.16,
     },
     Economy = {
         BuildCostEnergy = 4370,
@@ -145,7 +145,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 1.6,
+    LifeBarSize = 2.6,
     Physics = {
         Elevation = 0.2,
         BackUpDistance = 0,

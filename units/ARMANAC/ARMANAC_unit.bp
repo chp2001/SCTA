@@ -120,7 +120,7 @@ UnitBlueprint {
     SelectionSizeZ = 1.5,
     SelectionThickness = 0.25,
     SizeX = 3,
-    SizeZ = 3,
+    SizeY = 1,
     SizeZ = 3,
     StrategicIconName = 'icon_bot3_armored',
     StrategicIconSortPriority = 0,

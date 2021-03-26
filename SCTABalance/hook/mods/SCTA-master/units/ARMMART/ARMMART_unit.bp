@@ -6,17 +6,13 @@ UnitBlueprint {
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'INDIRECTFIRE',
+	    'LAND',
+        'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
         'ARTILLERY',
         'ARM',
         'TANK',	
-
-    'SNIPEMODE',
-    },
-    Display = {
-        UniformScale = 0.12,
+        'SNIPEMODE',
     },
     Defense = {
         Health = 1400,

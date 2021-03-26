@@ -4,22 +4,6 @@ UnitBlueprint {
     MaxAirspeed = 10,
     MinAirspeed = 3,
     },
-   Categories = {
-        'SELECTABLE',
-        'AIR',
-        'SELECTION', 
-        'ARM',
-        'TECH3',
-        'ENGINEER',
-        'REPAIR',
-        'RECLAIM',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'PATROLHELPER',
-        'SHOWQUEUE',
-        'MOBILE',
-        'CONSTRUCTION',
-    },
    Defense = {
     Health = 800,
     MaxHealth = 800,
@@ -47,4 +31,5 @@ UnitBlueprint {
     },
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
+    LifeBarSize = 1,
 }

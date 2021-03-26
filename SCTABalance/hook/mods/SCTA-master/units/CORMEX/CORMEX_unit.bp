@@ -8,7 +8,6 @@ UnitBlueprint {
     Abilities = {
         '<LOC ability_upgradable>Upgradeable',
     },
-    UniformScale = 0.1,
 }, 
       Economy = {
         BuildCostEnergy = 900,
@@ -33,8 +32,10 @@ UnitBlueprint {
         VisionRadius = 8,
         WaterVisionRadius = 8,
       },
+      LifeBarSize = 1,
     SelectionSizeX = 1.25,
     SelectionSizeZ = 1.25,
     SizeX = 2,
     SizeZ = 2,
+    SizeY = 1.4,
 }

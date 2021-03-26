@@ -23,6 +23,7 @@ UnitBlueprint {
         FuelRechargeRate = 666666,
         FuelUseTime = 666666,
     },
+    LifeBarSize = 1,
     SelectionSizeX = 0.6,
     SelectionSizeZ = 0.6,
 }

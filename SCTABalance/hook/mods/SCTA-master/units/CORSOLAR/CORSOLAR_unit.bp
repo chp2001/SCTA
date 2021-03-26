@@ -34,6 +34,7 @@ UnitBlueprint {
       SizeX = 2,
       SizeY = 1.2,
       SizeZ = 2,
+      LifeBarSize = 1,
     Intel = {
         VisionRadius = 8,
         WaterVisionRadius = 8,

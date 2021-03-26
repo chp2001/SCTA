@@ -107,14 +107,14 @@ updateBuildRestrictions = function(self)
 
     if self.restrictions and (not self:IsUnitState('BeingBuilt') or self:IsUnitState('Upgrading')) then
     local HQCategory = ((categories.RESEARCH + categories.GATE) * (categories.ARM + categories.CORE))
-    local PlantsCat = categories.FACTORY * categories.FACTORY * (categories.ARM + categories.CORE)
+    local PlantsCat = categories.FACTORY * (categories.ARM + categories.CORE)
         if self.FindHQType(aiBrain, HQCategory * (categories.TECH3 + categories.EXPERIMENTAL)) or 
-        NumberOfPlantsT2(aiBrain, PlantsCat) > 12 then
+        NumberOfPlantsT2(aiBrain, PlantsCat * categories.TECH2) > 12 then
                 self:RemoveBuildRestriction(categories.TECH2)
                 self:RemoveBuildRestriction(categories.TECH3)
                 self.restrictions = nil     
         elseif self.FindHQType(aiBrain, HQCategory * categories.TECH2) or 
-        NumberOfPlantsT1(aiBrain, PlantsCat) > 4 then
+        NumberOfPlantsT1(aiBrain, PlantsCat * categories.TECH1) > 4 then
             self:RemoveBuildRestriction(categories.TECH2)    
             self.restrictions = nil
         end

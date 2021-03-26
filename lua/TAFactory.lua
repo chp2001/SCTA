@@ -16,7 +16,7 @@ TAFactory = Class(FactoryUnit) {
             local aiBrain = GetArmyBrain(self.Army)
             local buildRestrictionVictims = aiBrain:GetListOfUnits(categories.FACTORY + categories.ENGINEER, false)
             for id, unit in buildRestrictionVictims do    
-            TAutils.updateBuildRestrictions(unit)
+            TAutils.TABuildRestrictions(unit)
             end
         end
     end,
@@ -69,7 +69,7 @@ TAFactory = Class(FactoryUnit) {
                 local aiBrain = GetArmyBrain(self.Army)
                 local buildRestrictionVictims = aiBrain:GetListOfUnits(categories.FACTORY + categories.ENGINEER, false)
                 for id, unit in buildRestrictionVictims do    
-                TAutils.updateBuildRestrictions(unit)
+                TAutils.TABuildRestrictions(unit)
             end
         end
         end,

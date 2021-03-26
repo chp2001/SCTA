@@ -92,7 +92,6 @@ end
 
 updateBuildRestrictions = function(self)
     local aiBrain = self:GetAIBrain()
-    
     --Add build restrictions
     --EngiModFinalFORMTA
     ---Basicallys Stop Lower Tech from building UpperTech. Advanced Factories now full access to builds
@@ -104,17 +103,20 @@ updateBuildRestrictions = function(self)
         self:AddBuildRestriction(categories.TECH3)
         self.restrictions = true
     end
+end
 
-    if self.restrictions and (not self:IsUnitState('BeingBuilt') or self:IsUnitState('Upgrading')) then
+    TABuildRestrictions = function(self)
+    local aiBrain = self:GetAIBrain()
+    if (self.restrictions or EntityCategoryContains(categories.FACTORY * categories.TECH1, self)) then
     local HQCategory = ((categories.RESEARCH + categories.GATE) * (categories.ARM + categories.CORE))
-    local PlantsCat = categories.FACTORY * (categories.ARM + categories.CORE)
+    local PlantsCat = (categories.FACTORY * (categories.ARM + categories.CORE))
         if self.FindHQType(aiBrain, HQCategory * (categories.TECH3 + categories.EXPERIMENTAL)) or 
-        NumberOfPlantsT2(aiBrain, PlantsCat * categories.TECH2) > 12 then
+        NumberOfPlantsT2(aiBrain, PlantsCat * (categories.TECH2)) > 4 then
                 self:RemoveBuildRestriction(categories.TECH2)
                 self:RemoveBuildRestriction(categories.TECH3)
                 self.restrictions = nil     
         elseif self.FindHQType(aiBrain, HQCategory * categories.TECH2) or 
-        NumberOfPlantsT1(aiBrain, PlantsCat * categories.TECH1) > 4 then
+        NumberOfPlantsT1(aiBrain, PlantsCat * (categories.TECH1)) > 12 then
             self:RemoveBuildRestriction(categories.TECH2)    
             self.restrictions = nil
         end
@@ -123,16 +125,36 @@ end
 
 NumberOfPlantsT2 = function(aiBrain, category)
     -- Returns number of extractors upgrading
-    local LabCount = table.getn(aiBrain:GetListOfUnits(categories.FACTORY * categories.TECH2 * (categories.ARM + categories.CORE), false, true))
-    local DevelopmentCount = table.getn(aiBrain:GetListOfUnits(categories.FACTORY * categories.TECH2 * categories.RESEARCH * (categories.ARM + categories.CORE), false, true))
-    local FactCount = (LabCount) + (DevelopmentCount * 2)
-    return FactCount
+    local DevelopmentCount = aiBrain:GetCurrentUnits(categories.FACTORY * categories.RESEARCH * categories.TECH2)
+    LOG('EXIST1')
+    LOG(DevelopmentCount)
+    local LabCount = aiBrain:GetCurrentUnits(categories.FACTORY * categories.TECH2)
+    LOG('EXIST2')
+    LOG(LabCount)
+    local LabBuilding = aiBrain:NumCurrentlyBuilding(categories.ENGINEER, categories.FACTORY * categories.TECH2)
+    LOG('EXIST3')
+    LOG(LabBuilding)
+    local DevelopmentBuilding = aiBrain:NumCurrentlyBuilding(categories.FACTORY, categories.FACTORY * categories.RESEARCH * categories.TECH2)
+    LOG('EXIST4')
+    LOG(DevelopmentBuilding)
+    local Labs = ((LabCount) + (DevelopmentCount * 2)) - LabBuilding - (DevelopmentBuilding * 2)
+    LOG('EXIST5')
+    LOG(Labs)
+    return Labs
 end
 
 NumberOfPlantsT1 = function(aiBrain, category)
     -- Returns number of extractors upgrading
-    local PlantCount = table.getn(aiBrain:GetListOfUnits(categories.FACTORY * categories.TECH1 * (categories.ARM + categories.CORE), false, true))
-    return PlantCount 
+    local PlantCount = aiBrain:GetCurrentUnits(categories.FACTORY * categories.TECH1)
+    --LOG('EXIST1')
+    --LOG(PlantCount)
+    local PlantBuilding = aiBrain:NumCurrentlyBuilding(categories.ENGINEER, categories.FACTORY * categories.TECH1)
+    --LOG('EXIST2')
+    --LOG(PlantBuilding)
+    local Plants = PlantCount - PlantBuilding
+    ---LOG('EXIST4')
+    --LOG(Plants)
+    return Plants
 end
 
 --self.FindHQType(aiBrain, category)

@@ -109,7 +109,7 @@ updateBuildRestrictions = function(self)
     local HQCategory = ((categories.RESEARCH + categories.GATE) * (categories.ARM + categories.CORE))
     local PlantsCat = categories.FACTORY
         if self.FindHQType(aiBrain, HQCategory * (categories.TECH3 + categories.EXPERIMENTAL)) or 
-        NumberOfPlants(aiBrain, PlantsCat * categories.TECH2) > 6 then
+        NumberOfPlants(aiBrain, PlantsCat * (categories.TECH1 + categories.TECH2)) > 60 then
                 self:RemoveBuildRestriction(categories.TECH2)
                 self:RemoveBuildRestriction(categories.TECH3)
                 self.restrictions = nil     
@@ -125,8 +125,11 @@ end
 
 NumberOfPlants = function(aiBrain, category)
     -- Returns number of extractors upgrading
-    local PlantCount = table.getn(aiBrain:GetListOfUnits(categories.FACTORY * (categories.ARM + categories.CORE), false, true))
-    return PlantCount
+    local PlantCount = table.getn(aiBrain:GetListOfUnits(categories.FACTORY * categories.TECH1 * (categories.ARM + categories.CORE), false, true))
+    local LabCount = table.getn(aiBrain:GetListOfUnits(categories.FACTORY * categories.TECH2 * (categories.ARM + categories.CORE), false, true))
+    local DevelopmentCount = table.getn(aiBrain:GetListOfUnits(categories.FACTORY * categories.TECH2 * categories.RESEARCH * (categories.ARM + categories.CORE), false, true))
+    local FactCount = PlantCount + (LabCount * 6) + (DevelopmentCount * 12)
+    return FactCount
 end
 
 --self.FindHQType(aiBrain, category)

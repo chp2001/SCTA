@@ -3,7 +3,7 @@
 #
 #Script created by Raevn
 
-local TAUnderWaterProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TAUnderWaterProjectile
+local TAUnderWaterProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TAUnderWaterProjectile
 
 ARM_TORPEDO = Class(TAUnderWaterProjectile) {
 }

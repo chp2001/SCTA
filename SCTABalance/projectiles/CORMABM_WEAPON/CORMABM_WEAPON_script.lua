@@ -1,8 +1,27 @@
+local Flare = import('/lua/defaultantiprojectile.lua').Flare
+local AIMFlareProjectile = import('/lua/aeonprojectiles.lua').AIMFlareProjectile
+
+CORMABM_WEAPON = Class(AIMFlareProjectile) 
+{
+
+    OnCreate = function(self)
+        AIMFlareProjectile.OnCreate(self)
+        self.MyShield = Flare {
+            Owner = self,
+            Radius = self:GetBlueprint().Physics.FlareRadius,
+        }
+        self.Trash:Add(self.MyShield)
+        self:TrackTarget(false)
+        self:SetVelocity(0, -1, 0)
+    end,
+
+    OnImpact = function(self,type,other)
+        if type == 'Terrain' or type == 'Water' then
+            AIMFlareProjectile.OnImpact(self,type,other)
+        end
+    end,
+}
 
 
-local TARocketProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TARocketProjectile
-
-CORMABM_WEAPON = Class(TARocketProjectile) 
-{}
 
 TypeClass = CORMABM_WEAPON

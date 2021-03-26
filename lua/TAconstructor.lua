@@ -71,9 +71,6 @@ TAconstructor = Class(TAWalking) {
         end
         self.BuildingUnit = false
         self:SetImmobile(false)
-        if __blueprints['armgant'] and self.restrictions then
-            TAutils.updateBuildRestrictions(self)
-        end
         TAWalking.OnStopBuild(self, unitBeingBuilt)
     end,
 

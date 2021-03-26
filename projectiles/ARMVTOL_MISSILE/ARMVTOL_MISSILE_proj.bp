@@ -47,13 +47,12 @@ ProjectileBlueprint {
         EntityCategory = {
        	    'ARM',
             'PROJECTILE',
-   	    'ANTIAIR',
+   	        'ANTIAIR',
        	    'MISSILE',
         },
         Faction = 'ARM',
         Weapon = 'ARMVTOL_MISSILE',
     },
-
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 60,

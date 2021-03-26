@@ -3,7 +3,7 @@
 #
 #Script created by Raevn
 
-local TANuclearProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TANuclearProjectile
+local TANuclearProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TANuclearProjectile
 
 CRBLMSSL = Class(TANuclearProjectile) {
     InitialEffects = {'/effects/emitters/nuke_munition_launch_trail_02_emit.bp',},

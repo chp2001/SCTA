@@ -48,10 +48,8 @@ ProjectileBlueprint {
         },
         Faction = 'CORE',
     },
-
     Physics = {
         Acceleration = 0,
-        TrackTime = 3,
         CollideSurface = true,
         DestroyOnWater = true,
         FlareRadius = 15,

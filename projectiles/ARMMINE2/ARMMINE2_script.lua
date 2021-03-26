@@ -3,7 +3,7 @@
 #
 #Script created by Raevn
 
-local TACannonProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TACannonProjectile
+local TACannonProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TACannonProjectile
 
 ARMMINE2 = Class(TACannonProjectile) {
 }

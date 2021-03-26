@@ -92,46 +92,69 @@ end
 
 updateBuildRestrictions = function(self)
     local aiBrain = self:GetAIBrain()
-    
     --Add build restrictions
     --EngiModFinalFORMTA
     ---Basicallys Stop Lower Tech from building UpperTech. Advanced Factories now full access to builds
     ---Will require another rebalancing of Seaplanes and Hovers
     if EntityCategoryContains(categories.TECH1 * categories.CONSTRUCTION - categories.FACTORY, self) then
-        self:AddBuildRestriction(categories.TECH2)
-        self.restrictions = true   
+        self:AddBuildRestriction(categories.TECH2) 
     elseif EntityCategoryContains(categories.TECH2 * categories.CONSTRUCTION - categories.RESEARCH, self) then
         self:AddBuildRestriction(categories.TECH3)
-        self.restrictions = true
-    end
-
-    if self.restrictions then
-    local HQCategory = ((categories.RESEARCH + categories.GATE) * (categories.ARM + categories.CORE))
-    local PlantsCat = categories.FACTORY
-        if self.FindHQType(aiBrain, HQCategory * (categories.TECH3 + categories.EXPERIMENTAL)) or 
-        NumberOfPlants(aiBrain, PlantsCat * categories.TECH2) > 6 then
-                self:RemoveBuildRestriction(categories.TECH2)
-                self:RemoveBuildRestriction(categories.TECH3)
-                self.restrictions = nil     
-        elseif self.FindHQType(aiBrain, HQCategory * categories.TECH2) or 
-        NumberOfPlants(aiBrain, PlantsCat * (categories.TECH1 + categories.TECH2)) > 12 then
-            if EntityCategoryContains(categories.TECH1, self) then
-            self:RemoveBuildRestriction(categories.TECH2)    
-            self.restrictions = nil
-            end
-        end
     end
 end
 
-NumberOfPlants = function(aiBrain, category)
+TABuildRestrictions = function(self)
+    local aiBrain = self:GetAIBrain()
+    ----BUGTheNumbers are 2 Greater than requiered Stat in Code. 6 and 12 are Correct.
+    local HQCategory = ((categories.RESEARCH + categories.GATE) * (categories.ARM + categories.CORE))
+    local PlantsCat = (categories.FACTORY * (categories.ARM + categories.CORE))
+        if self.FindHQType(aiBrain, HQCategory * (categories.TECH3 + categories.EXPERIMENTAL)) or 
+        NumberOfPlantsT2(aiBrain, PlantsCat * (categories.TECH2)) > 4 then
+                self:RemoveBuildRestriction(categories.TECH2)
+                self:RemoveBuildRestriction(categories.TECH3)  
+        elseif self.FindHQType(aiBrain, HQCategory * categories.TECH2) or 
+        NumberOfPlantsT1(aiBrain, PlantsCat * (categories.TECH1)) > 10 then
+            self:RemoveBuildRestriction(categories.TECH2)    
+    end
+end
+
+NumberOfPlantsT2 = function(aiBrain, category)
     -- Returns number of extractors upgrading
-    local PlantCount = table.getn(aiBrain:GetListOfUnits(categories.FACTORY * (categories.ARM + categories.CORE), false, true))
-    return PlantCount
+    local DevelopmentCount = aiBrain:GetCurrentUnits(categories.FACTORY * categories.RESEARCH * categories.TECH2)
+    --LOG('EXIST1')
+    --LOG(DevelopmentCount)
+    local LabCount = aiBrain:GetCurrentUnits(categories.FACTORY * categories.TECH2)
+    --LOG('EXIST2')
+    --LOG(LabCount)
+    local LabBuilding = aiBrain:NumCurrentlyBuilding(categories.ENGINEER, categories.FACTORY * categories.TECH2)
+    --LOG('EXIST3')
+    --LOG(LabBuilding)
+    local DevelopmentBuilding = aiBrain:NumCurrentlyBuilding(categories.FACTORY, categories.FACTORY * categories.RESEARCH * categories.TECH2)
+    --LOG('EXIST4')
+    --LOG(DevelopmentBuilding)
+    local Labs = ((LabCount) + (DevelopmentCount * 2)) - LabBuilding - (DevelopmentBuilding * 2)
+    --('EXIST5')
+    --LOG(Labs)
+    return Labs
+end
+
+NumberOfPlantsT1 = function(aiBrain, category)
+    -- Returns number of extractors upgrading
+    local PlantCount = aiBrain:GetCurrentUnits(categories.FACTORY * categories.TECH1)
+    --LOG('EXIST1')
+    --LOG(PlantCount)
+    local PlantBuilding = aiBrain:NumCurrentlyBuilding(categories.ENGINEER, categories.FACTORY * categories.TECH1)
+    --LOG('EXIST2')
+    --LOG(PlantBuilding)
+    local Plants = PlantCount - PlantBuilding
+    ---LOG('EXIST4')
+    --LOG(Plants)
+    return Plants
 end
 
 --self.FindHQType(aiBrain, category)
 FindHQType = function(aiBrain, category)
-    for id, unit in aiBrain:GetListOfUnits((categories.RESEARCH + categories.GATE) * (categories.ARM + categories.CORE)) do
+    for id, unit in aiBrain:GetListOfUnits((categories.RESEARCH + categories.GATE) * (categories.ARM + categories.CORE), false, true) do
         if not unit:IsBeingBuilt() then
             return true
         end

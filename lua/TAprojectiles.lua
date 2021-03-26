@@ -2,6 +2,7 @@ local DefaultProjectileFile = import('/lua/sim/defaultprojectiles.lua')
 local SinglePolyTrailProjectile = DefaultProjectileFile.SinglePolyTrailProjectile
 local NukeProjectile = DefaultProjectileFile.NukeProjectile
 local OnWaterEntryEmitterProjectile = DefaultProjectileFile.OnWaterEntryEmitterProjectile
+local DepthCharge = import('/lua/defaultantiprojectile.lua').DepthCharge
 
 TAProjectile = Class(SinglePolyTrailProjectile) {
 	PolyTrail =  '/effects/emitters/aeon_laser_trail_02_emit.bp',
@@ -358,16 +359,25 @@ TALaserProjectile = Class(TAProjectile) {
 TAEMGProjectile = Class(TALaserProjectile ) {
 }
 
-TAUnderWaterProjectile = Class(OnWaterEntryEmitterProjectile) {
-	FxTrails = {
-	'/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
-	},
-    FxTrailScale = 0.1,
-	
-	OnCreate = function(self)	
-		OnWaterEntryEmitterProjectile.OnCreate(self)
+
+TAUnderWaterProjectile = Class(TAMediumCannonProjectile) {
+	OnCreate = function(self)
+		TAMediumCannonProjectile.OnCreate(self)
 		self:SetCollisionShape('Sphere', 0, 0, 0, 1)
 		end,
+
+	OnEnterWater = function(self)
+		for k,v in self.FxImpactWater do
+			CreateEmitterAtEntity(self, self:GetArmy(), v):ScaleEmitter(self.FxWaterHitScale)
+		end
+	end,
+
+	OnExitWater = function(self)
+		for k,v in self.FxImpactWater do
+			CreateEmitterAtEntity(self, self:GetArmy(), v):ScaleEmitter(self.FxWaterHitScale)
+		end
+	end,
+
 	FxImpactLand = {
 		'/effects/emitters/destruction_water_splash_ripples_01_emit.bp',
 		'/effects/emitters/destruction_water_splash_wash_01_emit.bp',
@@ -375,9 +385,14 @@ TAUnderWaterProjectile = Class(OnWaterEntryEmitterProjectile) {
 	},
 
 	FxImpactUnderWater = {
-    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
+		'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
+		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
+		'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
 	},
 	FxUnderWaterHitScale = 0.35,
+	
+	FxImpactWater = {
+		'/effects/emitters/destruction_water_splash_ripples_01_emit.bp',
+	},
+		FxWaterHitScale = 0.35,
 }

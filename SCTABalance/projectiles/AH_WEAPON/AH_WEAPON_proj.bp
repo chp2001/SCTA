@@ -51,7 +51,6 @@ ProjectileBlueprint {
        	    'MISSILE',
         },
         Faction = 'ARM',
-        Weapon = 'ARMAH_WEAPON',
     },
     Physics = {
         Acceleration = 5,
@@ -59,7 +58,7 @@ ProjectileBlueprint {
         InitialSpeed = 50,
         LeadTarget = false,
         Lifetime = 10,
-        TrackTime = 3, 
+        TrackTime = 2, 
         MaxSpeed = 75,
         TrackTarget = true,
         TurnRate = 275,

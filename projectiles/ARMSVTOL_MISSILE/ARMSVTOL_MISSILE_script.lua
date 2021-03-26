@@ -1,4 +1,4 @@
-local TARocketProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TARocketProjectile
+local TARocketProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TARocketProjectile
 
 ARMSVTOL_MISSILE = Class(TARocketProjectile) 
 {

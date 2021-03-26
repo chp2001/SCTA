@@ -70,6 +70,9 @@ UnitBlueprint {
     BuildIconSortPriority = 0,
     Categories = {
         'SELECTABLE',
+        'AIR',
+        'SELECTION', 
+        'CORE',
         'TECH3',
         'ENGINEER',
         'REPAIR',
@@ -79,10 +82,7 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
         'MOBILE',
-	    'CONSTRUCTION',
-        'AIR',       
-	    'SELECTION', 
-        'CORE',
+        'CONSTRUCTION',
     },
     Defense = {
         ArmorType = 'Light',

@@ -89,10 +89,10 @@ UnitBlueprint {
         TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'wake1'},
+		Bones = {'ARMXCH'},
         },
 	},
-        UniformScale = 0.1,
+        UniformScale = 0.16,
     },
     Economy = {
         BuildCostEnergy = 4370,

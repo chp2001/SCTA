@@ -19,6 +19,9 @@ UnitBlueprint {
             'BOT',
             'TANK',
         },
+        Display = {
+        UniformScale = 0.1,
+        },
         Defense = {
             Health = 2000,
             MaxHealth = 2000,

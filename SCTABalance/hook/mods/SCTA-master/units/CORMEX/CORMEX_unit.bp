@@ -8,7 +8,6 @@ UnitBlueprint {
     Abilities = {
         '<LOC ability_upgradable>Upgradeable',
     },
-    UniformScale = 0.1,
 }, 
       Economy = {
         BuildCostEnergy = 900,
@@ -37,4 +36,5 @@ UnitBlueprint {
     SelectionSizeZ = 1.25,
     SizeX = 2,
     SizeZ = 2,
+    SizeY = 1.4,
 }

@@ -22,8 +22,7 @@ UnitBlueprint {
             '<LOC ability_radar>Radar',
             'Radar Targeting',
             '<LOC ability_upgradable>Upgradeable',
-        },
-        UniformScale = 0.1,    
+        },  
      }, 
      Economy = {
         BuildRate = 60, 

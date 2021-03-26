@@ -1,5 +1,8 @@
 UnitBlueprint {
     Merge = true, 
+    Display = {
+        UniformScale = 0.16,
+    },
     Physics = {
         BankingSlope = 0,
         DragCoefficient = 0.2,

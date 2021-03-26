@@ -67,7 +67,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.12,
     },
     Economy = {
         BuildCostEnergy = 521,
@@ -129,9 +129,9 @@ UnitBlueprint {
     SelectionSizeX = 0.65,
     SelectionSizeZ = 0.65,
     SelectionThickness = 0.6,
-    SizeX = 0.75,
-    SizeY = 1.4,
-    SizeZ = 0.75,
+    SizeX = 3,
+    SizeY = 2,
+    SizeZ = 3,
     StrategicIconName = 'icon_structure1_mass',
     StrategicIconSortPriority = 0,
     Weapon = {

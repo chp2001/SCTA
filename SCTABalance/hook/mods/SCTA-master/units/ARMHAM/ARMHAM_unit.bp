@@ -1,8 +1,8 @@
 UnitBlueprint {
     Merge = true,
     Display = {
-            UniformScale = 0.1,
-        },
+        UniformScale = 0.1,
+    },
         Economy = {
             BuildCostEnergy = 630,
             BuildCostMass = 80,

@@ -1680,7 +1680,7 @@ Platoon = Class(SCTAAIPlatoon) {
             -- deal with lost-puppy transports
             local strayTransports = {}
             for k,v in platoonUnits do
-                if EntityCategoryContains(categories.TRANSPORTATION, v) then
+                if EntityCategoryContains(categories.TRANSPORTFOCUS, v) then
                     table.insert(strayTransports, v)
                 end
             end
@@ -1693,7 +1693,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 local strayTransports = {}
                 for k,v in platoonUnits do
                     local parent = v:GetParent()
-                    if parent and EntityCategoryContains(categories.TRANSPORTATION, parent) then
+                    if parent and EntityCategoryContains(categories.TRANSPORTFOCUS, parent) then
                         table.insert(strayTransports, parent)
                         break
                     end

@@ -82,6 +82,15 @@ BuilderGroup {
         },
         BuilderType = 'Land',
     },
+    Builder {
+        BuilderName = 'SCTAAi FactoryT3 Engineer Air',
+        PlatoonTemplate = 'T3BuildEngineerAirSCTA',
+        Priority = 125, -- Top factory priority
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.TECH3 * categories.AIR - categories.FIELDENGINEER } }, -- Build engies until we have 4 of them.
+        },
+        BuilderType = 'Air',
+    },
 }
 
 ----needFigureOutMassEco and KnowingHowPauseFactoriesForAi

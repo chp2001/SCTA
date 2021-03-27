@@ -67,7 +67,17 @@ BuilderGroup {
         BuilderConditions = { -- Only make inties if the enemy air is strong.
         { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, FUSION} },
         { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1.05 }},
+        },
+        BuilderType = 'Air',
     },
+    Builder {
+        BuilderName = 'SCTAAI Factory Seaplane Fighter',
+        PlatoonTemplate = 'T3AirFighterSCTA',
+        Priority = 125,
+        BuilderConditions = { -- Only make inties if the enemy air is strong.
+        { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} },
+        { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1.05 }},
+        },
         BuilderType = 'Air',
     },
     Builder {

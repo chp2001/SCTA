@@ -72,7 +72,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
-            { MIBC, 'GreaterThanGameTime', { 180 } },
+            { MIBC, 'GreaterThanGameTime', { 120 } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 12, PLANT} }, -- Stop after 10 facs have been built. -- Stop after 10 facs have been built.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  LAB} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
@@ -287,6 +287,29 @@ BuilderGroup {
                 BuildClose = true,
                 BuildStructures = {
                     'T3LandFactory',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T3AirFactory',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco23',
+        Priority = 140,
+        InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
+        BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.9 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildStructures = {
+                    'T3AirFactory',
                 }
             }
         }

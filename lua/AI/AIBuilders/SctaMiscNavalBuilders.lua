@@ -3,6 +3,7 @@ local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local MABC = '/lua/editor/MarkerBuildConditions.lua'
+local TAutils = '/mods/SCTA-master/lua/TAutils.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
@@ -147,7 +148,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Naval 300 Mex',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 95,
+        Priority = 94,
         InstanceCount = 2,
         BuilderConditions = {
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 300, -500, 150, 0, 'AntiSurface', 1 }},
@@ -168,7 +169,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Naval Mex 450',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 95,
+        Priority = 96,
         InstanceCount = 1,
         BuilderConditions = {
                 { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 450, -500, 200, 0, 'AntiSurface', 1 }},
@@ -189,7 +190,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Naval Mex 750',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 95,
+        Priority = 97,
         InstanceCount = 1,
         BuilderConditions = {
                 { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 750, -500, 200, 0, 'AntiSurface', 1 }},
@@ -226,5 +227,23 @@ BuilderGroup {
                 }
             }
         }
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim Naval',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        PlatoonAIPlan = 'SCTAReclaimAI',
+        Priority = 100,
+        InstanceCount = 5,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', { 600 } },
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
+            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
+            },
+        BuilderData = {
+            LocationType = 'LocationType',
+            ReclaimTime = 30,
+            Terrain = true,
+        },
+        BuilderType = 'Any',
     },
 }

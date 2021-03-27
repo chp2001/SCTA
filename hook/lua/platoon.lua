@@ -1175,12 +1175,10 @@ Platoon = Class(SCTAAIPlatoon) {
             unit.ProcessBuildDone = true
         end
     end,
+
     EngineerCaptureDoneSCTA = function(unit, params)
         if not unit.PlatoonHandle then return end
-        if not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTA' 
-        or not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTACommand'
-        or not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTANaval'
-        or not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTAAir'
+        if not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTACommand'
         then return end
         --LOG("*AI DEBUG: Capture done" .. unit.Sync.id)
         if not unit.ProcessBuild then
@@ -1199,6 +1197,7 @@ Platoon = Class(SCTAAIPlatoon) {
             unit.ProcessBuild = unit:ForkThread(unit.PlatoonHandle.SCTAProcessBuildCommand, false)
         end
     end,
+
     EngineerFailedToBuildSCTA = function(unit, params)
         if not unit.PlatoonHandle then return end
         if not unit.PlatoonHandle.PlanName == 'EngineerBuildAISCTA' 
@@ -1425,6 +1424,14 @@ Platoon = Class(SCTAAIPlatoon) {
         local data = self.PlatoonData
         local categoryList = {}
         local atkPri = {}
+        if data.Laser then
+            local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
+            if econ.EnergyStorageRatio < 0.15 then
+                WaitSeconds(5)
+                self:PlatoonDisband()
+                return
+            end
+        end
         if data.PrioritizedCategories then
             for k,v in data.PrioritizedCategories do
                 table.insert( atkPri, v )
@@ -2176,6 +2183,7 @@ Platoon = Class(SCTAAIPlatoon) {
             self:Stop()
             local brain = self:GetBrain()
             local locationType = self.PlatoonData.LocationType
+            local data = self.PlatoonData
             local createTick = GetGameTick()
             local oldClosest
             local units = self:GetPlatoonUnits()
@@ -2213,12 +2221,11 @@ Platoon = Class(SCTAAIPlatoon) {
     
                 local recPos = nil
                 local closest = {}
-                for i, r in reclaim do
-                    -- This is slowing down the whole sim when engineers start's reclaiming, and every engi is pathing with CanPathTo (r.pos)
-                    -- even if the engineer will run into walls, it is only reclaimig and don't justifies the huge CPU cost. (Simspeed droping from +9 to +3 !!!!)
-                    -- eng.BadReclaimables[r.entity] = r.distance > 10 and not eng:CanPathTo (r.pos)
+                for i, r in reclaim  do
+                    if (eng:CanPathTo (r.pos) and data.Terrain) or not data.Terrain then
                         IssueReclaim(units, r.entity)
                         if i > 10 then break end
+                   end
                 end
     
                 local reclaiming = not eng:IsIdleState()

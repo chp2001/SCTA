@@ -5,22 +5,8 @@
 
 UnitBlueprint {
     Merge = true,
-    Categories = {
-        'SELECTABLE',
-        'TECH2',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'MOBILE',
-	    'LAND',
-	    'INDIRECTFIRE',
-        'SILO',
-        'OVERLAYINDIRECTFIRE',
-        'ARM',
-        'TANK',
-        'SNIPEMODE',
-    },
     Display = {
-        UniformScale = 0.08,
+        UniformScale = 0.11,
     },
     Defense = {
         Health = 1800,
@@ -33,11 +19,11 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 12,
     },
-    SelectionSizeX = 1,
-    SelectionSizeZ = 1,
-    SizeX = 1.8,
-    SizeY = 0.5,
-    SizeZ = 1.8,
+    SelectionSizeX = 1.25,
+    SelectionSizeZ = 1.25,
+    SizeX = 2.2,
+    SizeY = 1,
+    SizeZ = 2.2,
     Weapon = {
         [1] = {
         ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/BTRUCK_ROCKET/BTRUCK_ROCKET_proj.bp',

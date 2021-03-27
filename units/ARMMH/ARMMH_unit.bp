@@ -155,7 +155,7 @@ UnitBlueprint {
             MaxRadius = 80,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 0,
+            MuzzleVelocity = 5,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMMH_WEAPON/ARMMH_WEAPON_proj.bp',
             RackBones = {
                 {

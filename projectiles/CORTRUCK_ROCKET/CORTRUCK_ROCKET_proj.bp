@@ -59,11 +59,11 @@ ProjectileBlueprint {
         Weapon = 'CORTRUCK_ROCKET',
     },
     Physics = {
-        Acceleration = 2,
+        Acceleration = 5,
         DestroyOnWater = true,
 	    InitialSpeed = 5,
         LeadTarget = false,
-        Lifetime = 4,
+        Lifetime = 20,
         TrackTime = 4,
         MaxSpeed = 25,
         TrackTarget = true,

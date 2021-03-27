@@ -3,6 +3,7 @@ local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MABC = '/lua/editor/MarkerBuildConditions.lua'
+local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
 
 BuilderGroup {
@@ -10,7 +11,7 @@ BuilderGroup {
     BuildersType = 'EngineerBuilder',
     ---LandEco
     Builder {
-        BuilderName = 'SCTAAI T1Engineer Mex 50',
+        BuilderName = 'SCTAAI T1Engineer Mex 25',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 108,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
@@ -148,7 +149,8 @@ BuilderGroup {
         Priority = 171,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = { 
-            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 50}},
+            { MIBC, 'LessThanGameTime', {360} }, 
+            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 25}},
         },
         BuilderType = 'Any',
         BuilderData = {

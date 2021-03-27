@@ -12,7 +12,15 @@ PlatoonTemplate {
     Name = 'AntiAirSCTA',
     Plan = 'SCTAAntiAirAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND * categories.ANTIAIR, 2, 10, 'attack', 'none' },
+        { GROUND * categories.ANTIAIR - categories.ANTISHIELD, 2, 10, 'attack', 'none' },
+    },
+}
+
+PlatoonTemplate {
+    Name = 'AntiAirLaserSCTA',
+    Plan = 'SCTAAntiAirAI', -- The platoon function to use.
+    GlobalSquads = {
+        { GROUND * categories.ANTIAIR * categories.ANTISHIELD, 2, 10, 'attack', 'none' },
     },
 }
 
@@ -28,7 +36,15 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTA',
     Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND - SPECIAL - categories.ANTISHIELD - categories.AMPHIBIOUS, 5, 20, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND - SPECIAL - categories.ANTISHIELD - categories.AMPHIBIOUS - categories.SILO - categories.ARTILLERY, 5, 20, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+    },
+}
+
+PlatoonTemplate {
+    Name = 'StrikeForceSCTAMissiles',
+    Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
+    GlobalSquads = {
+        { GROUND * ( categories.SILO + categories.ARTILLERY) - categories.ANTISHIELD - categories.AMPHIBIOUS, 5, 20, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
 
@@ -36,7 +52,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTALaser',
     Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND * categories.ANTISHIELD - SPECIAL - categories.AMPHIBIOUS, -- Type of units.
+        { GROUND * categories.ANTISHIELD - categories.AMPHIBIOUS, -- Type of units.
           2, -- Min number of units.
           10, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',

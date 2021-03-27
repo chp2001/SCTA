@@ -13,7 +13,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1BuildEngineerSCTAEarly',
         Priority = 150, -- Top factory priority
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {60} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'Land',
     },

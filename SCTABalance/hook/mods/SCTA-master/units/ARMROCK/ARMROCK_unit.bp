@@ -46,7 +46,7 @@ UnitBlueprint {
             RateOfFire = 0.5,
             FiringTolerance = 360,
             MaxRadius = 60,
-            MuzzleVelocity = 3,
+            MuzzleVelocity = 5,
             TurretPitch = 105,
             TurretPitchRange = 0,
             TurretPitchSpeed = 35,

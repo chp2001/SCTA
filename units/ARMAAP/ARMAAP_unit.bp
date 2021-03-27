@@ -81,8 +81,8 @@ UnitBlueprint {
         BuildableCategory = {
             'AIR MOBILE TECH2 ARM',
         },
-	InitialRallyX = 0,
-	InitialRallyZ = 7,
+	---InitialRallyX = 0,
+	---InitialRallyZ = 7,
         StorageMass = 200,
         StorageEnergy = 200,
     },
@@ -128,7 +128,7 @@ UnitBlueprint {
                 UnitSpin = 0,
                 X = 0,
                 Y = 0,
-                Z = 2.5,
+                Z = 3,
             },
             {
                 UnitSpin = 90,

@@ -76,8 +76,8 @@ UnitBlueprint {
         BuildCostMass = 2524, 
         BuildTime = 13310,
 	BuildRate = 200,
-	InitialRallyX = 0,
-	InitialRallyZ = 10,
+	---InitialRallyX = 0,
+	---InitialRallyZ = 10,
         BuildableCategory = {
             'NAVAL MOBILE TECH2 ARM',
         },

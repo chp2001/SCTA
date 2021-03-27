@@ -82,8 +82,8 @@ UnitBlueprint {
         BuildableCategory = {
             'BOT MOBILE TECH1 ARM',
         },
-	InitialRallyX = 0,
-	InitialRallyZ = 7,
+	---InitialRallyX = 0,
+	---InitialRallyZ = 7,
         StorageMass = 50,
         StorageEnergy = 50,
     },
@@ -122,20 +122,20 @@ UnitBlueprint {
     Physics = {        
         SkirtSizeX = 7,
         SkirtSizeZ = 7,
-    RollOffPoints = {
-    {
-        UnitSpin = 0,
-        X = 0,
-        Y = 0,
-        Z = -2.5,
-    },
-    {
-        UnitSpin = 180,
-        X = 0,
-        Y = 0,
-        Z = 2.5,
-    }, 
-    },
+        RollOffPoints = {
+            {
+                UnitSpin = 0,
+                X = 0,
+                Y = 0,
+                Z = 3,
+            },
+            {
+                UnitSpin = 180,
+                X = 0,
+                Y = 0,
+                Z = -3,
+            },
+        },
     },
     SelectionSizeX = 3,
     SelectionSizeZ = 3,

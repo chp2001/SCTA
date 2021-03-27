@@ -48,6 +48,7 @@ UnitBlueprint {
         'OVERLAYCOUNTERINTEL',        
         'DEFENSIVEBOAT',
         'ARM',
+        'COUNTERINTELLIGENCE',
         'STEALTHFIELD',
     },
     CollisionOffsetY = -0.25,

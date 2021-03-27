@@ -11,7 +11,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAMissileTower',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 50,
+        Priority = 51,
         InstanceCount = 3,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.SILO - categories.MOBILE} },
@@ -30,7 +30,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTALaserTower',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 60,
+        Priority = 62,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {480} }, -- Don't make tanks if we have lots of them.
@@ -50,7 +50,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAMissileDefense',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 70,
+        Priority = 73,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} }, 
@@ -71,7 +71,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAMissileDefense2',
         PlatoonTemplate = 'EngineerBuilderSCTA3',
-        Priority = 70,
+        Priority = 74,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
@@ -93,7 +93,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTALaser2Tower',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 75,
+        Priority = 76,
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.ANTISHIELD * categories.TECH2 - categories.MOBILE} }, 
@@ -114,7 +114,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTALaser3Tower',
         PlatoonTemplate = 'EngineerBuilderSCTA23',
-        Priority = 80,
+        Priority = 81,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.DEFENSE * categories.TECH3 - categories.MOBILE - categories.ANTIAIR} }, 
@@ -134,7 +134,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAANTIAIR3Tower',
         PlatoonTemplate = 'EngineerBuilderSCTA23',
-        Priority = 80,
+        Priority = 84,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.ANTIAIR * categories.TECH2 - categories.MOBILE} }, 
@@ -154,7 +154,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAMissileTower Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 25,
+        Priority = 26,
         InstanceCount = 10,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {480} },
@@ -173,7 +173,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAMissileTower Air Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTAEco12',
-        Priority = 25,
+        Priority = 28,
         InstanceCount = 10,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {480} },
@@ -192,7 +192,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAGameEnder',
         PlatoonTemplate = 'EngineerBuilderSCTA3',
-        Priority = 70,
+        Priority = 160,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {2400} }, 
@@ -212,7 +212,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAStaging',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 50,
+        Priority = 57,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1200} },

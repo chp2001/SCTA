@@ -125,8 +125,8 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {        
-        SkirtSizeX = 6,
-        SkirtSizeZ = 6,
+        SkirtSizeX = 7,
+        SkirtSizeZ = 7,
         RollOffPoints = {
             {
                 UnitSpin = 180,

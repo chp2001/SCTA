@@ -254,7 +254,6 @@ TechLevel = 'RULEUTL_Advanced',
             DummyWeapon = true,
             Label = 'DeathWeapon',
         }, 
-
     },
     Wreckage = {
         ---UseCustomMesh = true,

@@ -121,8 +121,8 @@ TechLevel = 'RULEUTL_Advanced',
             LAYER_Land = true,
             LAYER_Water = true,
         },        
-        SkirtSizeX = 6,
-        SkirtSizeZ = 6,
+        SkirtSizeX = 7,
+        SkirtSizeZ = 7,
     RollOffPoints = {
         {
             UnitSpin = 0,

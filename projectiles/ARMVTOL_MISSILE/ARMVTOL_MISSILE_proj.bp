@@ -51,7 +51,6 @@ ProjectileBlueprint {
        	    'MISSILE',
         },
         Faction = 'ARM',
-        Weapon = 'ARMVTOL_MISSILE',
     },
     Physics = {
         DestroyOnWater = true,

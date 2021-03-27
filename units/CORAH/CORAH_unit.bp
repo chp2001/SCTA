@@ -163,6 +163,11 @@ TechLevel = 'RULEUTL_Advanced',
                     MuzzleBones = {
                         'muzzle_01',
                         'muzzle_02',
+                    },
+                    RackBone = 'turret',
+                },
+                    {
+                    MuzzleBones = {
                         'muzzle_03',
                     },
                     RackBone = 'turret',

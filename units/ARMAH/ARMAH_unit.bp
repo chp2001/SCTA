@@ -160,10 +160,15 @@ TechLevel = 'RULEUTL_Advanced',
             MuzzleVelocity = 35,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMAH_WEAPON/ARMAH_WEAPON_proj.bp',
             RackBones = {
-                {
+                    {
                     MuzzleBones = {
                         'Flare1',
                         'Flare2',
+                    },
+                    RackBone = 'Box',
+                },
+                {
+                    MuzzleBones = {
                         'Flare3',
                     },
                     RackBone = 'Box',

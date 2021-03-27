@@ -46,9 +46,7 @@ ProjectileBlueprint {
             'ARM',
         },
         Faction = 'CORE',
-        Weapon = 'CORAIR_TORPEDO',
     },
-
     Physics = {
         Acceleration = 0,
         DestroyOnWater = false,

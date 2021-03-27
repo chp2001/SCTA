@@ -44,9 +44,7 @@ ProjectileBlueprint {
             'DIRECTFIRE',
         },
         Faction = 'ARM',
-        Weapon = 'ARMWAR_EMG',
     },
-
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 25,

@@ -51,7 +51,6 @@ ProjectileBlueprint {
        	    'MISSILE',
         },
         Faction = 'ARM',
-        Weapon = 'ARMAAS_WEAPON1',
     },
     Physics = {
         Acceleration = 7,

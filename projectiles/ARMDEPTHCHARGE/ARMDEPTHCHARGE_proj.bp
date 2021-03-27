@@ -45,7 +45,6 @@ ProjectileBlueprint {
 	        'ANTINAVY',
         },
         Faction = 'ARM',
-        Weapon = 'ARMDEPTHCHARGE',
     },
     DoNotCollideList = {
         'TORPEDO',

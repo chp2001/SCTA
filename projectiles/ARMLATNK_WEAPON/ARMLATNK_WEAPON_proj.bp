@@ -42,9 +42,7 @@ ProjectileBlueprint {
             'DIRECTFIRE',
         },
         Faction = 'ARM',
-        Weapon = 'ARMLATNK_WEAPON',
     },
-
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 30,

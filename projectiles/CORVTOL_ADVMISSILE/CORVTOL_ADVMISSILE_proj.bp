@@ -51,7 +51,6 @@ ProjectileBlueprint {
        	    'MISSILE',
         },
         Faction = 'CORE',
-        Weapon = 'CORVTOL_ADVMISSILE',
     },
     Physics = {
         DestroyOnWater = true,

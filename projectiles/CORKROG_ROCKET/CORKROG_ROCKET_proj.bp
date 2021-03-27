@@ -56,7 +56,6 @@ ProjectileBlueprint {
             'TACTICAL',   
         },
         Faction = 'CORE',
-        Weapon = 'CORKROG_ROCKET',
     },
     Physics = {
         Acceleration = 5,

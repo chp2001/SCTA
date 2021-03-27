@@ -48,8 +48,7 @@ ProjectileBlueprint {
             'PROJECTILE',
             'DIRECTFIRE',
         },
-        Faction = 'ARM',
-        Weapon = 'ARM_BATS',
+        Faction = 'ARM',  
     },
     Physics = {
         DestroyOnWater = true,

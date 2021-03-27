@@ -49,7 +49,6 @@ ProjectileBlueprint {
        	    'MISSILE',
         },
         Faction = 'CORE',
-        Weapon = 'CORKBOT_ROCKET',
     },
     Physics = {
 	    TurnRate = 10,

@@ -42,9 +42,7 @@ ProjectileBlueprint {
             'DIRECTFIRE',
         },
         Faction = 'CORE',
-        Weapon = 'CORKROG_HEAD',
     },
-
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 62.5,

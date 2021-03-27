@@ -41,10 +41,8 @@ ProjectileBlueprint {
             'PROJECTILE',
             'DIRECTFIRE',
         },
-        Faction = 'ARM',
-        Weapon = 'ARMPT_LASER',
+        Faction = 'ARM',      
     },
-
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 25,

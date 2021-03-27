@@ -49,9 +49,7 @@ ProjectileBlueprint {
             'INDIRECTFIRE',
         },
         Faction = 'ARM',
-        Weapon = 'ARMADVBOMB',
     },
-
     Physics = {
         DestroyOnWater = true,
         RealisticOrdinance = true,

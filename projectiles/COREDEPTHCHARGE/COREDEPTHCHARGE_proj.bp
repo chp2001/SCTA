@@ -51,7 +51,6 @@ ProjectileBlueprint {
 	        'ANTINAVY',
         },
         Faction = 'CORE',
-        Weapon = 'COREDEPTHCHARGE',
     },
     Physics = {
         DestroyOnWater = false,

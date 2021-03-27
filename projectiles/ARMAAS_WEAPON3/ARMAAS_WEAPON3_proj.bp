@@ -49,7 +49,6 @@ ProjectileBlueprint {
         'ANTIAIR'
         },
         Faction = 'ARM',
-        Weapon = 'ARMAAS_WEAPON3',
     },
     Physics = {
         DestroyOnWater = true,

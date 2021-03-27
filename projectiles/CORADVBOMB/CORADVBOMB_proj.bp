@@ -49,9 +49,7 @@ ProjectileBlueprint {
             'INDIRECTFIRE',
         },
         Faction = 'CORE',
-        Weapon = 'CORADVBOMB',
     },
-
     Physics = {
         DestroyOnWater = true,
         RealisticOrdinance = true,

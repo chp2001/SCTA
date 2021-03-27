@@ -65,7 +65,7 @@ BuilderGroup {
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.ENERGYPRODUCTION * categories.STRUCTURE} },
-            { MIBC, 'LessThanGameTime', {150} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -85,7 +85,8 @@ BuilderGroup {
         Priority = 975,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {120} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
+            { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 50, -500, 100, 0, 'AntiSurface', 1 }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.MASSEXTRACTION} },
         },
         BuilderType = 'Any',

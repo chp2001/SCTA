@@ -371,7 +371,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.85, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
             { MIBC, 'LessThanGameTime', {1200} },
         },
         BuilderType = 'Any',
@@ -394,7 +394,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.85, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
             { MIBC, 'LessThanGameTime', {1200} },
         },
         BuilderType = 'Any',

@@ -20,7 +20,6 @@ BaseBuilderTemplate {
         'SCTAAIFactoryBuilders',
         'SCTAUpgrades',
         --Misc Function
-        'SCTAReclaimers',
         'SCTAAssisters',
     },
     BaseSettings = {

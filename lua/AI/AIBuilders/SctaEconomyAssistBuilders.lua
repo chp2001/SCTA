@@ -275,11 +275,6 @@ BuilderGroup {
         },
         BuilderType = 'Any',
     },
-}
-
-BuilderGroup {
-    BuilderGroupName = 'SCTAReclaimers',
-    BuildersType = 'EngineerBuilder',
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Field',
         PlatoonTemplate = 'EngineerBuilderSCTAField',

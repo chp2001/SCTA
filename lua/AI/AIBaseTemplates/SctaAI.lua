@@ -28,7 +28,6 @@ BaseBuilderTemplate {
         'SCTAExpansionBuilders',
         --MiscFunctions
         'SCTAAssisters',
-        'SCTAReclaimers',
     },
     NonCheatBuilders = {
         -- Specify builders that are _only_ used by non-cheating AI (e.g. scouting)

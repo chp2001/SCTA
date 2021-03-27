@@ -80,7 +80,6 @@ SurfaceThreatLevel = 24,
                 LODCutoff = 230,
                 Scrolling = true,
                 ShaderName = 'Unit', 
-    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
             },
         },
     },

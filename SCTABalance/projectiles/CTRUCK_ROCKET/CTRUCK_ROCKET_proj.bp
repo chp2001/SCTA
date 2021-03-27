@@ -32,7 +32,7 @@ ProjectileBlueprint {
         },
     },
     Categories = {
-        'ARM',
+        'CORE',
         'PROJECTILE',
         'TACTICAL',
         'MISSILE',
@@ -43,19 +43,19 @@ ProjectileBlueprint {
         MaxHealth = 1,
     },
     Display = {
-        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/rocket_mesh.bp',
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/corvrocket_mesh.bp',
         StrategicIconSize = 1,
-        UniformScale = 0.1,
+        UniformScale = 0.16,
     },
     General = {
         Category = 'Missile',
         EntityCategory = {
-            'ARM',
+            'CORE',
             'PROJECTILE',
             'TACTICAL',
             'MISSILE',   
         },
-        Faction = 'ARM',
+        Faction = 'CORE',
     },
     Physics = {
         Acceleration = 4,

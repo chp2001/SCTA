@@ -14,7 +14,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer LandFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 100,
+        Priority = 105,
         InstanceCount = 2,
         DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {

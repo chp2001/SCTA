@@ -14,7 +14,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 8000,
-        BuildCostMass = 680,
+        BuildCostMass = 500,
         BuildRate = 120,
         BuildableCategory = {
             'AIR MOBILE TECH1 ARM',

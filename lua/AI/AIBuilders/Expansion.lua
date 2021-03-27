@@ -27,7 +27,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Start Marker',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 105,
+        Priority = 100,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'ExpansionBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed

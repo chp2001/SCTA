@@ -23,7 +23,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Tank Early',
         PlatoonTemplate = 'T1LandDFTankSCTAEarly',
-        Priority = 90,
+        Priority = 92,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
@@ -44,7 +44,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Tank2 Early',
         PlatoonTemplate = 'T1LandDFTankSCTA2Early',
-        Priority = 90,
+        Priority = 92,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },

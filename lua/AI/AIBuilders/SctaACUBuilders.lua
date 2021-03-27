@@ -37,13 +37,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA AI ACU Factory',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 925,
+        Priority = 950,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {240} }, -- Don't make tanks if we have lots of them.
             { MIBC, 'GreaterThanGameTime', {90} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, PLANT} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, PLANT} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.1}},
         },
         BuilderType = 'Any',
@@ -61,11 +61,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA  ACU Energy',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 950,
+        Priority = 960,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.ENERGYPRODUCTION * categories.STRUCTURE} },
-            { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {150} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -85,8 +85,8 @@ BuilderGroup {
         Priority = 975,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.MASSEXTRACTION} },
+            { MIBC, 'LessThanGameTime', {120} }, -- Don't make tanks if we have lots of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.MASSEXTRACTION} },
         },
         BuilderType = 'Any',
         BuilderData = {

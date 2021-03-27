@@ -1,8 +1,9 @@
---SCTAGetTransports = GetTransports
+SCTAGetTransports = GetTransports
 function GetTransports(platoon, units)
-    --if not (EntityCategoryContains(categories.CORE, units) or EntityCategoryContains(categories.ARM, units)) then
-        --return SCTAGetTransports(platoon, units)
-    --end
+    local aiBrain = platoon:GetBrain()
+    if not aiBrain.SCTAAI then
+        return SCTAGetTransports(platoon, units)
+    end
     if not units then
         units = platoon:GetPlatoonUnits()
     end

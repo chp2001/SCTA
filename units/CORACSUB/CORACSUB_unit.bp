@@ -68,7 +68,7 @@ UnitBlueprint {
     Description = 'Tech Level 2',
     Display = {
         AnimationBuild = '/mods/SCTA-master/units/CORACSUB/CORACSUB_lod0_aopen.sca',
-        AnimationBuildRate = 0.2, 
+        AnimationBuildRate = 1, 
         Abilities = {
              '<LOC ability_engineeringsuite>Engineering Suite',
         },

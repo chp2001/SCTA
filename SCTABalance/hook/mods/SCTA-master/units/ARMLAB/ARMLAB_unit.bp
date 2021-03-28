@@ -30,7 +30,6 @@ UnitBlueprint {
     General = {
         UpgradesTo = 'armdlab', 
     },
-    
     SelectionSizeX = 7,
     SelectionSizeZ = 5,
     SelectionThickness = 0.25,

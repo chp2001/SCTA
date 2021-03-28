@@ -83,8 +83,6 @@ UnitBlueprint {
         'armlance',
         'AIR MOBILE TECH3 ARM',
     },
-	InitialRallyX = 1,
-	InitialRallyZ = 7,
 	StorageEnergy = 250,
 	StorageMass = 250,
     },
@@ -127,8 +125,20 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Water = true,
         },        
-        SkirtSizeX = 7,
-        SkirtSizeZ = 7,
+        RollOffPoints = {
+            {
+                UnitSpin = 0,
+                X = 0,
+                Y = 0,
+                Z = 3,
+            },
+            {
+                UnitSpin = 180,
+                X = 0,
+                Y = 0,
+                Z = -3,
+            },
+        },
     },
     SelectionSizeX = 4.45,
     SelectionSizeZ = 3.4,

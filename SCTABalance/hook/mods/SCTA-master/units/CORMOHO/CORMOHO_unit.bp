@@ -13,10 +13,6 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 25,
         BuildTime = 35000,
     },
-   Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
-    },
    Physics = {
         MeshExtentsX = 1.25,
         MeshExtentsY = 1.25,

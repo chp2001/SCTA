@@ -86,8 +86,6 @@ UnitBlueprint {
         BuildableCategory = {
             'AIR MOBILE TECH1 ARM',
         },
-	InitialRallyX = 0,
-	InitialRallyZ = 7,
         StorageMass = 50,
         StorageEnergy = 50,
     },
@@ -125,8 +123,8 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {        
-        SkirtSizeX = 7,
-        SkirtSizeZ = 7,
+        ---SkirtSizeX = 7,
+        ---SkirtSizeZ = 7,
         RollOffPoints = {
             {
                 UnitSpin = 180,
@@ -139,12 +137,6 @@ UnitBlueprint {
                 X = 0,
                 Y = 0,
                 Z = 3,
-            },
-            {
-                UnitSpin = -90,
-                X = -3,
-                Y = 0,
-                Z = 0,
             },
         },
     },

@@ -90,7 +90,7 @@ UnitBlueprint {
         'armadap', 
         },
 	InitialRallyX = 0,
-	InitialRallyZ = 7,
+InitialRallyZ = 7,
     StorageMass = 50,
     StorageEnergy = 50,
     },
@@ -130,8 +130,8 @@ UnitBlueprint {
     LifeBarOffset = 2,
     LifeBarSize = 7,
     Physics = {        
-        SkirtSizeX = 7,
-        SkirtSizeZ = 7,
+        ---SkirtSizeX = 7,
+        ---SkirtSizeZ = 7,
         RollOffPoints = {
             {
                 UnitSpin = 180,
@@ -144,12 +144,6 @@ UnitBlueprint {
                 X = 0,
                 Y = 0,
                 Z = 3,
-            },
-            {
-                UnitSpin = -90,
-                X = -3,
-                Y = 0,
-                Z = 0,
             },
         },
     },

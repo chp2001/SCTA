@@ -21,4 +21,14 @@ UnitBlueprint {
     SizeX = 1.5,
     SizeZ = 1.5,
     SizeY = 1,
+    Weapon = {
+	    [1] = {
+            Damage = 45,
+        },
+        [2] = {
+            Damage = 45,
+        },
+        [3] = {
+        },
+    },
 }

@@ -9,7 +9,6 @@ local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 CORSENT = Class(TAunit) {
 	Weapons = {
 		ARMYORK_GUN = Class(TAweapon) {
-
 		},
 	},
 }

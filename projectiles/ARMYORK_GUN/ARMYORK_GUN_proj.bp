@@ -51,12 +51,10 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARMYORK_GUN',
     },
-
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 56.25,
         Lifetime = 5,
         UseGravity = false,
-        DetonateAboveHeight = 10,
     },
 }

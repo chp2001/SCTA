@@ -2,16 +2,19 @@ UnitBlueprint {
     Merge = true, 
     Categories = {
         'SELECTABLE',
-        'TECH2',
+        'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
 	    'LAND',
         'ARM',
         'RADAR',
-        'BOT',
+        'BUILTBYTIER3ENGINEER',
+        'NEEDMOBILEBUILD',
+        'STEALTHFIELD',    
         'OVERLAYRADAR',
         'OVERLAYCOUNTERINTEL',
+        'SORTINTEL',
         'SCOUT',
     },
     Display = {
@@ -48,5 +51,4 @@ UnitBlueprint {
     SizeX = 4,
     SizeY = 4,
     SizeZ = 4,
-    StrategicIconName = 'icon_land2_counterintel',
 }

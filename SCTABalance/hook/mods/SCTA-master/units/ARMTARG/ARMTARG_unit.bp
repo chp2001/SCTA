@@ -1,6 +1,5 @@
 UnitBlueprint {
     Merge = true, 
-    BuildIconSortPriority = 20,
     Categories = {
         'BUILTBYTIER3ENGINEER',
         'SELECTABLE',

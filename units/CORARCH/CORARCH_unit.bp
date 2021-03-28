@@ -113,6 +113,7 @@ UnitBlueprint {
         TurnRate = 26,
         MotionType = 'RULEUMT_Water',
         MaxSteerForce = 10,
+        TurnRadius = 20,
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,

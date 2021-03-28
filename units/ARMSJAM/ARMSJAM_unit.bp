@@ -142,6 +142,7 @@ UnitBlueprint {
         MaxSpeed = 2.4,
         MotionType = 'RULEUMT_Water',
         TurnRate = 83,
+        TurnRadius = 5,
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,

@@ -133,6 +133,16 @@ UnitBlueprint {
         },        
         SkirtSizeX = 7,
         SkirtSizeZ = 7,
+        OccupyRects = {
+            -2.5,
+            0,
+            1,
+            3,
+            2.5,
+            0,
+            1,
+            3,
+        },
     RollOffPoints = {
         {
             UnitSpin = 0,

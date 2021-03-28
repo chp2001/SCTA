@@ -100,6 +100,7 @@ UnitBlueprint {
             RULEUCC_Move = true,
             RULEUCC_Patrol = true,
             RULEUCC_Stop = true,
+            RULEUCC_Dive = true,
         },
         FactionName = 'ARM',
         Icon = 'land',

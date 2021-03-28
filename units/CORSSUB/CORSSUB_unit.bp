@@ -89,6 +89,7 @@ UnitBlueprint {
             RULEUCC_Patrol = true,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
+            RULEUCC_Dive = true,
         },
         FactionName = 'CORE',
         Icon = 'land',

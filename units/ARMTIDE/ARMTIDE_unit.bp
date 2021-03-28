@@ -67,7 +67,7 @@ UnitBlueprint {
 	NaturalProducer = true,
     },
     Footprint = {
-	MinWaterDepth = 1.25,
+	MinWaterDepth = 1.5,
     },
     General = {
         Category = 'Economy',

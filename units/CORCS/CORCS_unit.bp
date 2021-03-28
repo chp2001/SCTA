@@ -104,10 +104,6 @@ UnitBlueprint {
 	NaturalProducer = true,
 	ProductionPerSecondEnergy = 5,
     },
-    Footprint = {
-        SizeX = 2,
-        SizeZ = 6,
-    },
     General = {
         BuildBones = {
             AimBone = 'turret',

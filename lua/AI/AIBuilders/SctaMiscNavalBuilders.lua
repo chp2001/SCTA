@@ -15,7 +15,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA T1 Naval Factory Builder',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 95,
+        Priority = 104,
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, LAB * categories.NAVAL } }, 
@@ -25,10 +25,10 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
+            BuildClose = true,
             Construction = {
-                Location = 'LocationType',
-                NearMarkerType = 'Naval Area',
-                BuildClose = true,
                 BuildStructures = {
                     'T1SeaFactory',
                 },
@@ -38,7 +38,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Naval Factory',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 105,
+        Priority = 108,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
@@ -46,12 +46,12 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
+            BuildClose = true,
+            DesiresAssist = true,
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
+            NumAssistees = 2,
             Construction = {
-                Location = 'LocationType',
-                NearMarkerType = 'Naval Area',
-                BuildClose = true,
-                DesiresAssist = true,
-                NumAssistees = 2,
                 BuildStructures = {
                     'T2SeaFactory',
                 }
@@ -72,10 +72,10 @@ BuilderGroup {
         BuilderData = {
             DesiresAssist = true,
             NumAssistees = 2,
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
+            BuildClose = true,
             Construction = {
-                Location = 'LocationType',
-                NearMarkerType = 'Naval Area',
-                BuildClose = true,
                 BuildStructures = {
                     'T1MassCreation',
                 }
@@ -93,10 +93,8 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
+            BuildClose = true,
             Construction = {
-                Location = 'LocationType',
-                NearMarkerType = 'Naval Area',
-                BuildClose = true,
                 BuildStructures = {
                     'T1NavalDefense',
                 }
@@ -106,8 +104,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Naval T1Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 100,
-        InstanceCount = 2,
+        Priority = 111,
+        InstanceCount = 1,
         BuilderConditions = { -- Stop after 10 facs have been built.
         { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.15 }},
         },
@@ -117,6 +115,7 @@ BuilderGroup {
             NearMarkerType = 'Naval Area',
             NeedGuard = false,
             DesiresAssist = false,
+            BuildClose = true,
             Construction = {
                 BuildStructures = {
                     'T1EnergyProduction3',
@@ -220,8 +219,8 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NumAssistees = 2,
+            BuildClose = true,
             Construction = {
-                BuildClose = true,
                 BuildStructures = {
                     'T2NavalDefense',
                 }
@@ -240,7 +239,8 @@ BuilderGroup {
             { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
             },
         BuilderData = {
-            LocationType = 'LocationType',
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
             ReclaimTime = 30,
             Terrain = true,
         },

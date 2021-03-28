@@ -75,9 +75,7 @@ UnitBlueprint {
         BuildCostEnergy = 2325,
         BuildCostMass = 2460, 
         BuildTime = 13080,
-	BuildRate = 200,
-	InitialRallyX = 0,
-InitialRallyZ = 10,
+	    BuildRate = 200,
         BuildableCategory = {
             'NAVAL MOBILE TECH2 CORE',
         },
@@ -118,18 +116,6 @@ InitialRallyZ = 10,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Water = true,
-        },
-        ---SkirtSizeX = 7,
-        ---SkirtSizeZ = 7,
-        OccupyRects = {
-            -2.5,
-            0,
-            1,
-            3,
-            2.5,
-            0,
-            1,
-            3,
         },
         RollOffPoints = {
             {

@@ -18,6 +18,19 @@ ARMASER= Class(oldARMASER) {
         KillThread(self.DelayedCloakThread)
         self.DelayedCloakThread = nil
     end,
+
+    OnIntelEnabled = function(self)
+        oldARMASER.OnIntelEnabled(self)
+        self:EnableUnitIntel('ToggleBit5', 'RadarStealth')
+        self:EnableUnitIntel('ToggleBit8', 'CloakField')
+    end,
+
+    OnIntelDisabled = function(self)
+        oldARMASER.OnIntelDisabled(self)
+        self:DisableUnitIntel('ToggleBit5', 'RadarStealth')
+        self:DisableUnitIntel('ToggleBit8', 'CloakField')
+    end,
+
 }
 
 TypeClass = ARMASER

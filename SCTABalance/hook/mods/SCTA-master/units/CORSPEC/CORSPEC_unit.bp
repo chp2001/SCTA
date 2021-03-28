@@ -58,6 +58,8 @@ UnitBlueprint {
             RadarRadius = 100, 
             RadarStealthFieldRadius = 50,
         },
+        SelectionSizeX = 2,
+        SelectionSizeZ = 2,
         SizeX = 4,
         SizeY = 4,
         SizeZ = 4,

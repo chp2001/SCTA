@@ -19,6 +19,18 @@ ARMSCRAM = Class(oldARMSCRAM) {
         KillThread(self.DelayedCloakThread)
         self.DelayedCloakThread = nil
     end,
+
+    OnIntelEnabled = function(self)
+        oldARMSCRAM.OnIntelEnabled(self)
+        self:EnableUnitIntel('ToggleBit5', 'RadarStealth')
+        self:EnableUnitIntel('ToggleBit8', 'CloakField')
+    end,
+
+    OnIntelDisabled = function(self)
+        oldARMSCRAM.OnIntelDisabled(self)
+        self:DisableUnitIntel('ToggleBit5', 'RadarStealth')
+        self:DisableUnitIntel('ToggleBit8', 'CloakField')
+    end,
 }
 
 TypeClass = ARMSCRAM

@@ -65,8 +65,8 @@ do
                 MaintenanceConsumptionPerSecondEnergy = 3,
             },
             Physics = {
-                MaxSpeed = 1.25,
-                TurnRate = 2,
+                MaxSpeed = 2,
+                TurnRate = 3,
             },
         }
         local Naval_Singles = {

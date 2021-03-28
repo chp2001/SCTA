@@ -66,13 +66,36 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_stealthfield>Stealth Field',
         },
+        MovementEffects = {
+            Land = {
+                Treads = {
+                    ScrollMultiplier = 0.75,
+                    ScrollTreads = true,
+                    TreadMarks = {
+                        {
+                            BoneName = 'ARMJAM',
+                            TreadMarks = 'tank_treads_albedo',
+                            TreadMarksInterval = 0.2,
+                            TreadMarksSizeX = 0.5,
+                            TreadMarksSizeZ = 0.5,
+                            TreadOffset = {
+                                0,
+                                0,
+                                0,
+                            },
+                        },
+                    },
+                },
+            },
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 230,
-                    ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                    Scrolling = true,
+                    ShaderName = 'Unit', 
+		            NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },

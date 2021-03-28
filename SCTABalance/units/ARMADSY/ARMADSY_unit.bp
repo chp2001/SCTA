@@ -97,7 +97,6 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildAttachBone = 'ARMDSY',
             BuildEffectBones = {'Nozzle_01','Nozzle_02'},
         },
         Category = 'Factory',

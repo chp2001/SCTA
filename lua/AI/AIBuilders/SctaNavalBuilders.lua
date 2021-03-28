@@ -106,7 +106,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory ScoutShip',
         PlatoonTemplate = 'T1ScoutShipSCTA',
-        Priority = 100,
+        Priority = 105,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {360} }, -- Don't make tanks if we have lots of them.
             { UCBC, 'HaveUnitRatio', { 0.75, categories.NAVAL * categories.MOBILE * categories.SCOUT,
@@ -156,19 +156,9 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Battleship',
         PlatoonTemplate = 'BattleshipSCTA',
-        Priority = 110,
+        Priority = 130,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.BATTLESHIP } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-        },
-        BuilderType = 'Sea',
-    },
-    Builder {
-        BuilderName = 'SCTAAi Carrier',
-        PlatoonTemplate = 'CarrySCTA',
-        Priority = 120,
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.CARRIER } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Sea',

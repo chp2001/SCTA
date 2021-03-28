@@ -88,13 +88,18 @@ TASeaCounter = Class(TASea)
 { 
 	OnStopBeingBuilt = function(self,builder,layer)
 		TASea.OnStopBeingBuilt(self,builder,layer)
+		self.MainCost = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
 		self:SetMaintenanceConsumptionActive()
         self:SetScriptBit('RULEUTC_StealthToggle', false)
 		if self:GetBlueprint().Intel.TAIntel then
-			self.MainCost = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
+			self:SetScriptBit('RULEUTC_JammingToggle', true)
 			self.SpecIntel = true
-			TASea.OnIntelEnabled(self)
+		elseif self:GetBlueprint().Intel.Cloak then
+			self.TACloak = true
+			self.Mesh = self:GetBlueprint().Display.MeshBlueprint
+			self:SetScriptBit('RULEUTC_CloakToggle', true)
 		end
+		TASea.OnIntelEnabled(self)
 		self:RequestRefreshUI()
 	end,
 }

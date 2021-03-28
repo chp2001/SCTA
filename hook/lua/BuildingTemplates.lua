@@ -170,12 +170,16 @@ BuildingTemplates[6] = {
                 'armason',
             },
             {
+                'T3Sonar',
+                'armscram',
+            },
+            {
                 'T2RadarJammer',
                 'armmark',
             },
             {
                 'T2ShieldDefense',
-                'armscram',
+                'armaser',
             },
             -- Artillery Structures
             {
@@ -218,13 +222,6 @@ BuildingTemplates[6] = {
                 'T2AirStagingPlatform',
                 'armasp',
             },
-            --Experimental Structures
-            {
-                'T4LandExperimental1',
-                'armdrake',
-            },
-    
-            -- UEF FA Specific
             {
                 'T3GroundDefense', 
                 'armamb',
@@ -360,10 +357,17 @@ BuildingTemplates[6] = {
             'corllt',
         },
         {
+            'T1GroundDefense2',
+            'corplas',
+        },
+        {
             'T2GroundDefense',
             'corfhlt',
         },
-
+        {
+            'T2GroundDefense2',
+            'corvipe',
+        },
         -- -Air Defense
         {
             'T1AADefense',
@@ -403,7 +407,7 @@ BuildingTemplates[6] = {
         },
         {
             'T2RadarJammer',
-            'corvoyr',
+            'corspec',
         },
         {
             'T1Sonar',
@@ -455,13 +459,6 @@ BuildingTemplates[6] = {
             'T2AirStagingPlatform',
             'corasp',
         },
-        --Experimental Structures
-        {
-            'T4LandExperimental1',
-            'corkrog',
-        },
-
-        -- UEF FA Specific
         {
             'T3GroundDefense',
             'cortoast',

@@ -74,7 +74,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.18,
     },
     Economy = {
         BuildCostEnergy = 775,
@@ -117,7 +117,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 3,
+    LifeBarSize = 2,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Water = true,
@@ -137,8 +137,8 @@ UnitBlueprint {
         },
     },
     },
-    SelectionSizeX = 4.25,
-    SelectionSizeZ = 4.25,
+    SelectionSizeX = 6,
+    SelectionSizeZ = 6,
     SelectionThickness = 0.25,
     SizeX = 8,
     SizeY = 3,

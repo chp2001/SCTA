@@ -1,7 +1,5 @@
 TAunitkeygroups = {
     ["Experimental"]= {
-        "corkrog",
-        "armdrake",
         "corbuzz",
         "armvulc",
     },
@@ -62,12 +60,18 @@ TAunitkeygroups = {
     ["Point_Defense"]= {
         "armllt",
         "corllt",
-        "armdrag",
-        "cordrag",
+        "armhlt",
+        "corfhlt",
         "mine1",
         "mine2",
         "mine3",
         "mine4",
+    },
+    ["Wall_Section"] = {
+        "armdrag",
+        "armfort",
+        "cordrag",
+        "corfort",
     },
     ["Anti_Air"]= {
         "armrl",
@@ -78,26 +82,29 @@ TAunitkeygroups = {
     ["Torpedo_Launcher"]= {
         "armatl",
         "armtl",
-        "armanni",
         "coratl",
         "cortl",
-        "corplas",
-        "cordoom",
     },
     ["Heavy_Artillery_Installation"]= {
         "armbrtha",
+        "armanni",
         "corint",
+        "cordoom",
     },
     ["Artillery_Installation"]= {
         "corpun",
+        "corplas",
         "armguard",
+    },
+    ["Tactical_Missile_Launcher"] = {
+        "armemp",
+        "cortron",
         "corvipe",
     },
     ["Strategic_Missile_Launcher"]= {
         "armsilo",
-        "armemp",
+   
         "corsilo",
-        "cortron",
     },
     ["Radar_System"]= {
         "armtarg",
@@ -119,9 +126,13 @@ TAunitkeygroups = {
         "armscab",
         "cormabm",
     },
-    ["Shield_Generator"]= {
+    ["Heavy_Point_Defense"] = {
         "armamb",
         "cortoast",
+    },
+    ["Heavy_Shield_Generator"] = {
+        "armscram",
+        "armaser",
     },
     ["T2_Support_Land_Factory"]= {
         "armalab",
@@ -157,21 +168,13 @@ TAunitkeygroups = {
         "armason",
         "corason",
     },    
-    ["Heavy_Point_Defense"]= {
-        "armhlt",
-        "armfort",
-        "corfhlt",
-        "corfort",
-    },
     ["T1_Air_Scout"]= {
         "armpeep",
         "corfink",
     },
     ["T2_Mobile_Stealth_Field_System"]= {
-        "armaser",
         "armjam",
         "coreter",
-        "corspec",
     },
     ["T2_Gatling_Bot"]= {
         "corfast",
@@ -227,9 +230,8 @@ TAunitkeygroups = {
         "corvoyr",
     },
     ["Stealth_Field_Generator"]= {
-        "corvoyr",
+        "corspec",
         "armmark",
-        "armscram",
     },
     ["T1_Mobile_Light_Artillery"]= {
         "armham",
@@ -368,6 +370,8 @@ TAunitkeygroups = {
         "corsumo",
         "corgol",
         "armzeus",
+        "corkrog",
+        "armdrake",
     },
     ["T3_Siege_Assault_Bot"]= {
         "armlatnk",

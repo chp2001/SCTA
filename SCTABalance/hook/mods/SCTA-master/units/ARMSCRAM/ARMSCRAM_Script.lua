@@ -1,9 +1,10 @@
-local oldARMASER = ARMASER
-ARMASER= Class(oldARMASER) { 
+local oldARMSCRAM = ARMSCRAM
+ARMSCRAM = Class(oldARMSCRAM) { 
 	OnStopBeingBuilt = function(self,builder,layer)
-		oldARMASER.OnStopBeingBuilt(self,builder,layer)
+		oldARMSCRAM.OnStopBeingBuilt(self,builder,layer)
 		self:SetScriptBit('RULEUTC_CloakToggle', false)
 		self:RequestRefreshUI()
+        IssueDive({self})
         self.DelayedCloakThread = self:ForkThread(self.CloakDelayed)
     end,
 
@@ -20,17 +21,16 @@ ARMASER= Class(oldARMASER) {
     end,
 
     OnIntelEnabled = function(self)
-        oldARMASER.OnIntelEnabled(self)
+        oldARMSCRAM.OnIntelEnabled(self)
         self:EnableUnitIntel('ToggleBit5', 'RadarStealth')
         self:EnableUnitIntel('ToggleBit8', 'CloakField')
     end,
 
     OnIntelDisabled = function(self)
-        oldARMASER.OnIntelDisabled(self)
+        oldARMSCRAM.OnIntelDisabled(self)
         self:DisableUnitIntel('ToggleBit5', 'RadarStealth')
         self:DisableUnitIntel('ToggleBit8', 'CloakField')
     end,
-
 }
 
-TypeClass = ARMASER
+TypeClass = ARMSCRAM

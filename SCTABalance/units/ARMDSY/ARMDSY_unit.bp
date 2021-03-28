@@ -76,7 +76,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.18,
+        UniformScale = 0.27,
     },
     Economy = {
         BuildCostEnergy = 40000,
@@ -129,29 +129,27 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Water = true,
         },        
-    RollOffPoints = {
-        {
-            UnitSpin = 0,
-            X = 0,
-            Y = 0,
-            Z = 3,
-        },   
-        {
-            UnitSpin = 180,
-            X = 0,
-            Y = 0,
-            Z = -3,
+        RollOffPoints = {
+            {
+                UnitSpin = 0,
+                X = 0,
+                Y = 0,
+                Z = 10,
+            }, 
+            {
+                UnitSpin = 180,
+                X = 0,
+                Y = 0,
+                Z = -10,
+            },
         },
     },
-    },
-    SelectionSizeX = 6,
-    SelectionSizeZ = 6,
-    SelectionThickness = 0.25,
-    SizeX = 8,
+    SelectionSizeX = 9,
+    SelectionSizeZ = 9,
+    SizeX = 12,
     SizeY = 3,
-    SizeZ = 8,
+    SizeZ = 12,
     SelectionThickness = 0.25,
-    ---CollisionOffsetX = -2,
     StrategicIconName = 'icon_factoryhq2_naval',
     StrategicIconSortPriority = 0,
     Weapon = {

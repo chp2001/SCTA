@@ -1,7 +1,7 @@
 do
 
 local TAExtractBuildMeshBlueprint = ExtractBuildMeshBlueprint
-local TAExtractCloakMeshBlueprint = ExtractCloakMeshBlueprint
+
 
 function ExtractBuildMeshBlueprint(bp)
 	TAExtractBuildMeshBlueprint(bp)
@@ -29,8 +29,12 @@ function ExtractBuildMeshBlueprint(bp)
 	end
 end
 
+local TAExtractCloakMeshBlueprint = ExtractCloakMeshBlueprint
+
 function ExtractCloakMeshBlueprint(bp)
 	TAExtractCloakMeshBlueprint(bp)
+	local FactionName = bp.General.FactionName
+	if FactionName == 'ARM' or FactionName == 'CORE' then 
 	local meshid = bp.Display.MeshBlueprint
     if not meshid then return end
 
@@ -50,6 +54,7 @@ function ExtractCloakMeshBlueprint(bp)
     cloakmeshbp.BlueprintId = meshid .. '_cloak'
     bp.Display.CloakMeshBlueprint = cloakmeshbp.BlueprintId
     MeshBlueprint(cloakmeshbp)
+	end
 end
 
     local SCTAModBlueprints = ModBlueprints

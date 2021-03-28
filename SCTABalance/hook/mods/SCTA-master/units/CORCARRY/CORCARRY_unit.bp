@@ -28,7 +28,7 @@ UnitBlueprint {
         MaxHealth = 17000,
     },
     Display = {
-    UniformScale = 0.32,
+    UniformScale = 0.24,
     },
     Economy = {
         BuildCostEnergy = 36000,
@@ -38,11 +38,11 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 300,
         MaintenanceConsumptionPerSecondEnergy = 35,
     },
-    LifeBarSize = 9,
+    LifeBarSize = 6,
     LifeBarOffset = 3,
-SelectionSizeX = 6,
-SelectionSizeZ = 10,
-SizeX = 7,
-SizeY = 7,
-SizeZ = 18,
+SelectionSizeX = 4,
+SelectionSizeZ = 6,
+SizeX = 4,
+SizeY = 4,
+SizeZ = 12,
 }

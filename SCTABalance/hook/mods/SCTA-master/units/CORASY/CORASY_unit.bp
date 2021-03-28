@@ -23,7 +23,7 @@ UnitBlueprint {
         MaxHealth = 12500,
     },
     Display = {
-        UniformScale = 0.12,
+        UniformScale = 0.2,
     },
     Economy = {
         BuildCostEnergy = 12000,
@@ -40,8 +40,9 @@ UnitBlueprint {
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
     LifeBarSize = 7,
-    SizeX = 8,
+    SelectionSizeX = 9,
+    SelectionSizeZ = 9,
+    SizeX = 12,
     SizeY = 3,
-    SizeZ = 8,
-    ---CollisionOffsetX = -2,
+    SizeZ = 12,
 }

@@ -9,6 +9,7 @@ UnitBlueprint {
             Abilities = {
                 '<LOC ability_upgradable>Upgradeable',
             },    
+            UniformScale = 0.27,
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
@@ -24,5 +25,9 @@ UnitBlueprint {
     General = {
         UpgradesTo = 'armdsy', 
     },
-    ---CollisionOffsetX = -2,
+    SelectionSizeX = 9,
+    SelectionSizeZ = 9,
+    SizeX = 12,
+    SizeY = 3,
+    SizeZ = 12,
 }

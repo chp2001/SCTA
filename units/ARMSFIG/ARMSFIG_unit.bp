@@ -144,7 +144,7 @@ UnitBlueprint {
     Physics = {
         Elevation = 18,
         MotionType = 'RULEUMT_Air',
-        GroundCollisionOffset = 1.6,
+        GroundCollisionOffset = 2,
         MaxSpeed = 0.5,
 	RotateOnSpot = true,
 	FuelRechargeRate = 444444,

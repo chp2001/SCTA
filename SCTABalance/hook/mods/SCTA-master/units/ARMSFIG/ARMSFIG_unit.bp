@@ -8,7 +8,7 @@ UnitBlueprint {
    Air = {
     BreakOffDistance = 17,
     BreakOffTrigger = 12,
-    MaxAirspeed = 24,
+    MaxAirspeed = 22,
     MinAirspeed = 12,
     },
     Defense = {

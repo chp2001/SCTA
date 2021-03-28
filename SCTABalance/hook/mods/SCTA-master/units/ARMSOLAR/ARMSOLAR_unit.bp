@@ -7,6 +7,11 @@ UnitBlueprint {
   Display = {
     UniformScale = 0.09,
 },
+Footprint = {
+  SizeZ = 2,
+  SizeX = 2,
+  MaxSlope = 0.625,
+  },
   Economy = {
         BuildCostMass = 240,
         BuildCostEnergy = 1500,

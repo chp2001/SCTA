@@ -71,8 +71,6 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 20,
     },
     Footprint = {
-    SizeZ = 2,
-    SizeX = 2,
 	MaxSlope = 0.625,
     },
     General = {

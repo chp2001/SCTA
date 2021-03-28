@@ -74,11 +74,6 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 15,
         ProductionPerSecondMass = 8,
     },
-    Footprint = {
-        SizeX = 5,
-        SizeZ = 5,
-	MaxSlope = 0.625,
-    },
     General = {	
         Category = 'Economy',
         Classification = 'RULEUC_Resource',

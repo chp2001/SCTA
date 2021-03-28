@@ -71,6 +71,8 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 20,
     },
     Footprint = {
+    SizeZ = 2,
+    SizeX = 2,
 	MaxSlope = 0.625,
     },
     General = {
@@ -94,7 +96,7 @@ TechLevel = 'RULEUTL_Basic',
     SelectionSizeX = 2.5,
     SelectionSizeZ = 2.5,
     SelectionThickness = 0.25,
-    SizeX = 5,
+    SizeX  = 5,
     SizeY = 2.5,
     SizeZ = 5,
     StrategicIconName = 'icon_structure1_energy',

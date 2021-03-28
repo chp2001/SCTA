@@ -83,8 +83,6 @@ UnitBlueprint {
         'cortitan',
         'AIR MOBILE TECH3 CORE',
     },
-	InitialRallyX = 1,
-	InitialRallyZ = 7,
 	StorageEnergy = 250,
 	StorageMass = 250,
     },
@@ -127,19 +125,8 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Water = true,
         },
-        --FlattenSkirt = true,
-        SkirtSizeX = 7,
-        SkirtSizeZ = 7,
-        OccupyRects = {
-            -2.5,
-            0,
-            1,
-            3,
-            2.5,
-            0,
-            1,
-            3,
-        },
+        ---SkirtSizeX = 7,
+        ---SkirtSizeZ = 7,
         RollOffPoints = {
             {
                 UnitSpin = 0,

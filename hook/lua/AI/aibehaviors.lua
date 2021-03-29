@@ -29,28 +29,28 @@ function CommanderThreadSCTA(cdr, platoon)
     aiBrain:BuildScoutLocations()
     -- Added to ensure we know the start locations (thanks to Sorian).
     SetCDRHome(cdr, platoon)
-
     while not cdr.Dead do
         -- Overcharge
+        if GetGameTimeSeconds() > 1200 then
+            cdr:EnableUnitIntel('Cloak')
+            end
         if not cdr.Dead then CDRSCTADGun(aiBrain, cdr) end
         WaitTicks(1)
 
         -- Go back to base
         if not cdr.Dead then SCTACDRReturnHome(aiBrain, cdr) end
         WaitTicks(1)
-
-        -- Call platoon resume building deal...
-        if not cdr.Dead and cdr:IsIdleState() and not cdr.GoingHome and not cdr:IsUnitState("Moving")
-        and not cdr:IsUnitState("Building") and not cdr:IsUnitState("Guarding")
-        and not cdr:IsUnitState("Attacking") and not cdr:IsUnitState("Repairing")
-        and not cdr:IsUnitState('BlockCommandQueue') then
-            if cdr.EngineerBuildQueue and table.getn(cdr.EngineerBuildQueue) ~= 0 then
+        if not cdr:IsDead() and cdr:IsIdleState() then
+            if not cdr.EngineerBuildQueue or table.getn(cdr.EngineerBuildQueue) == 0 then
+                local pool = aiBrain:GetPlatoonUniquelyNamed('ArmyPool')
+                aiBrain:AssignUnitsToPlatoon( pool, {cdr}, 'Unassigned', 'None' )
+            elseif cdr.EngineerBuildQueue and table.getn(cdr.EngineerBuildQueue) != 0 then
                 if not cdr.NotBuildingThread then
                     cdr.NotBuildingThread = cdr:ForkThread(platoon.WatchForNotBuilding)
-                end
+                end             
             end
         end
-        WaitTicks(1)
+        WaitTicks(1)        
         if not cdr.Dead and GetGameTimeSeconds() > WaitTaunt and (not aiBrain.LastVocTaunt or GetGameTimeSeconds() - aiBrain.LastVocTaunt > WaitTaunt) then
             SUtils.AIRandomizeTaunt(aiBrain)
             WaitTaunt = 600 + Random(1, 900)
@@ -240,7 +240,6 @@ function SCTACDRReturnHome(aiBrain, cdr)
             cdr.GoingHome = true
             WaitSeconds(7)
         until cdr.Dead or VDist2Sq(cdrPos[1], cdrPos[3], loc[1], loc[3]) <= distSqAway
-        cdr:EnableUnitIntel('Toggle', 'Cloak')
         cdr.GoingHome = false
         IssueClearCommands({cdr})
     end

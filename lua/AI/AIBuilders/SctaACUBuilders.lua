@@ -22,7 +22,7 @@ BuilderGroup {
             },	
         InstantCheck = true,	
         BuilderType = 'Any',	
-        ---PlatoonAddBehaviors = { 'CommanderBehaviorSCTA' }, -- Add a behaviour to the Commander unit once its done with it's BO.	
+        PlatoonAddBehaviors = { 'CommanderBehaviorSCTA' }, -- Add a behaviour to the Commander unit once its done with it's BO.	
         PlatoonAddFunctions = { {SAI, 'BuildOnce'}, }, -- Flag this builder to be only run once.	
         BuilderData = {	
             Construction = {
@@ -126,6 +126,7 @@ BuilderGroup {
         Priority = 91,
         InstanceCount = 1,
         BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {900} }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, LAB } }, -- Stop after 10 facs have been built.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 12, PLANT} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
@@ -149,6 +150,7 @@ BuilderGroup {
         Priority = 96,
         InstanceCount = 1,
         BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {480} }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
@@ -172,7 +174,6 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
         },
         BuilderData = {
             Assist = {
@@ -192,7 +193,6 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, FUSION }},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
         },
         BuilderType = 'Any',
         BuilderData = {

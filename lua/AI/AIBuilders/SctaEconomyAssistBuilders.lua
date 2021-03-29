@@ -280,7 +280,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAField',
         PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 200,
-        InstanceCount = 15,
+        InstanceCount = 5,
         BuilderConditions = {
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},
@@ -296,17 +296,17 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 10,
-        InstanceCount = 30,
+        Priority = 5,
+        InstanceCount = 20,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 480 } },
+            { MIBC, 'GreaterThanGameTime', { 360 } },
+            { EBC, 'LessThanEconStorageRatio', { 0.15, 1.1}},     
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
-            { EBC, 'LessThanEconStorageRatio', { 0.5, 1.1}},     
         },
         BuilderData = {
             Terrain = true,
             LocationType = 'LocationType',
-            ReclaimTime = 10,
+            ReclaimTime = 30,
         },
         BuilderType = 'Any',
     },
@@ -319,8 +319,8 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 120 } },
             { MIBC, 'LessThanGameTime', {480} }, 
-            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
-            { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},    
+            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},    
         },
         BuilderData = {
             Terrain = true,
@@ -333,12 +333,12 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Excess EndGame',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 130,
+        Priority = 102,
         InstanceCount = 5,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 1200 } },
-            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             },
         BuilderData = {
             Terrain = true,
@@ -356,8 +356,8 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 600 } },
-            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             },
         BuilderData = {
             LocationType = 'LocationType',
@@ -373,8 +373,8 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 600 } },
-            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             },
         BuilderData = {
             LocationType = 'LocationType',

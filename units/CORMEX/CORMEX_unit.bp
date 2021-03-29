@@ -35,7 +35,6 @@ UnitBlueprint {
         'BUILTBYTIER3ENGINEER',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
-        'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',

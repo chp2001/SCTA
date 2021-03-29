@@ -20,6 +20,7 @@ UnitBlueprint {
         Abilities = {
                 '<LOC ability_radar>Radar',
             },
+        UniformScale = 0.08,
     },
     Defense = {
         Health = 100,
@@ -37,4 +38,14 @@ UnitBlueprint {
     Intel = {
         RadarRadius = 50, 
     },
+    Physics = {
+        MaxAcceleration = 3,
+        MaxBrake = 3,
+        MaxSpeed = 4,
+    },
+    SelectionSizeX = 0.8,
+    SelectionSizeZ = 0.8,
+    SizeX = 1,
+    SizeY = 1.5,
+    SizeZ = 1,
 }

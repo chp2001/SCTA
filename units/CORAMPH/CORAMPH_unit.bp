@@ -5,19 +5,19 @@
 
 UnitBlueprint {
     Audio = {
-        UISelection = Sound {
+            UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'AMPHSEL1',
+            Cue = 'KBARMSEL',
             LodCutoff = 'UnitMove_LodCutoff',
-        },
+            },
         StartMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'AMPHOK1',
+            Cue = 'KBARMMOV',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StopMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'AMPHSTP1',
+            Cue = 'KBARMSTP',
             LodCutoff = 'UnitMove_LodCutoff',
         },
 	Destroyed = Sound {

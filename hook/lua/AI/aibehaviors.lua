@@ -31,9 +31,6 @@ function CommanderThreadSCTA(cdr, platoon)
     SetCDRHome(cdr, platoon)
     while not cdr.Dead do
         -- Overcharge
-        if GetGameTimeSeconds() > 1200 then
-            cdr:EnableUnitIntel('Cloak')
-            end
         if not cdr.Dead then CDRSCTADGun(aiBrain, cdr) end
         WaitTicks(1)
 

@@ -140,7 +140,7 @@ TechLevel = 'RULEUTL_Advanced',
             MaxRadius = 42.5,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 4,
-            MuzzleVelocity = 56.25,
+            MuzzleVelocity = 60,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMYORK_GUN/ARMYORK_GUN_proj.bp',
             RackBones = {
                 {
@@ -224,7 +224,7 @@ TechLevel = 'RULEUTL_Advanced',
             MaxRadius = 42.5,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 4,
-            MuzzleVelocity = 56.25,
+            MuzzleVelocity = 60,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMYORK_GUN/ARMYORK_GUN_proj.bp',
             RackBones = {
                 {

@@ -25,11 +25,6 @@ UnitBlueprint {
             Cue = 'NANLATH1',
             LodCutoff = 'UnitMove_LodCutoff',
 	},
-        ConstructStop = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'KCARMMOV',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
 	StartReclaim = Sound {
             Bank = 'TA_Sound',
             Cue = 'RECLAIM1',

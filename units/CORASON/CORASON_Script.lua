@@ -14,25 +14,19 @@ CORASON = Class(TACloser) {
 
 	OpeningState = State {
 		Main = function(self)
-			TACloser.Unfold(self)
 			self:EnableIntel('Sonar')
-			self:PlayUnitSound('Activate')
-			---self.intelIsActive = true
-	--SPIN dish around y-axis  SPEED <60.01>;
-	self.Spinners.dish:SetSpeed(60)
-	ChangeState(self, self.IdleOpenState)
-end,
-},
+			self.IsActive = true
+			self.Spinners.dish:SetSpeed(60)
+			TACloser.OpeningState.Main(self)
+	end,
+	},
 
 
 ClosingState = State {
 Main = function(self)
 	self:DisableIntel('Sonar')
-	TACloser.Fold(self)
-	self:PlayUnitSound('Deactivate')
-	---self.intelIsActive = nil
 	self.Spinners.dish:SetSpeed(0)
-	ChangeState(self, self.IdleClosedState)
+	TACloser.ClosingState.Main(self)
 end,
 },
 }

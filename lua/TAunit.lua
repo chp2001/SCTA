@@ -1,10 +1,7 @@
 #Generic TA unit
 local Unit = import('/lua/sim/Unit.lua').Unit
 local FireState = import('/lua/game.lua').FireState
---local explosion = import('/lua/defaultexplosions.lua')
----local scenarioUtils = import('/lua/sim/ScenarioUtilities.lua')
---local Game = import('/lua/game.lua')
---local util = import('/lua/utilities.lua')
+
 
 TAunit = Class(Unit) 
 {

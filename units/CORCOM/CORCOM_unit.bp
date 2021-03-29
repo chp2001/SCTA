@@ -25,11 +25,6 @@ UnitBlueprint {
             Cue = 'NANLATH2',
             LodCutoff = 'UnitMove_LodCutoff',
 	},
-        ConstructStop = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'KCORMOV',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
 	Cloak = Sound {
             Bank = 'TA_Sound',
             Cue = 'KLOAK2',

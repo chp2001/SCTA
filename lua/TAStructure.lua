@@ -208,7 +208,7 @@ TACloser = Class(TAStructure) {
 
 				self.closeDueToDamage = nil
 
-				if self.intelIsActive or self.productionIsActive then 
+				if self.IsActive then 
 					ChangeState(self, self.OpeningState)
 				end
 			end
@@ -235,9 +235,27 @@ TACloser = Class(TAStructure) {
 
 	},
 
+	OpeningState = State {
+		Main = function(self)
+			TAStructure.Unfold(self)
+			self:PlayUnitSound('Activate')
+			ChangeState(self, self.IdleOpenState)
+		end,
+	},
+
+
+	ClosingState = State {
+		Main = function(self)
+			TAStructure.Fold(self)
+			self:PlayUnitSound('Activate')
+			ChangeState(self, self.IdleClosedState)
+		end,
+
+	},
+
 	OnScriptBitSet = function(self, bit)
 		if bit == 3 then
-			self.intelIsActive = nil
+			self.IsActive = nil
 			ChangeState(self, self.ClosingState)
 		end
 		TAStructure.OnScriptBitSet(self, bit)
@@ -246,7 +264,7 @@ TACloser = Class(TAStructure) {
 
 	OnScriptBitClear = function(self, bit)
 		if bit == 3 then
-			self.intelIsActive = true
+			self.IsActive = true
 			ChangeState(self, self.OpeningState)
 		end
 		TAStructure.OnScriptBitClear(self, bit)
@@ -254,13 +272,13 @@ TACloser = Class(TAStructure) {
 
 	OnProductionUnpaused = function(self)
 		TAStructure.OnProductionUnpaused(self)
-		self.productionIsActive = true
+		self.IsActive = true
 		ChangeState(self, self.OpeningState)
 	end,
 
 	OnProductionPaused = function(self)
 		TAStructure.OnProductionPaused(self)
-		self.productionIsActive = nil
+		self.IsActive = nil
 		ChangeState(self, self.ClosingState)
 	end,
 }	

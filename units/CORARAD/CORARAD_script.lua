@@ -17,17 +17,11 @@ CORARAD = Class(TACloser) {
 		end
 	end,
 
-	OnDestroy = function(self)
-		TACloser.OnDestroy(self)
-		ChangeState(self, self.DeadState)
-	end,
 
 	OpeningState = State {
 		Main = function(self)
-			TACloser.Unfold(self)
 			self:EnableIntel('Radar')
-			self:PlayUnitSound('Activate')
-			---self.intelIsActive = true
+			self.IsActive = true
 			--SPIN turret around y-axis  SPEED <20.00>;
 			self.Spinners.turret:ClearGoal()
 			self.Spinners.turret:SetSpeed(20)
@@ -35,17 +29,14 @@ CORARAD = Class(TACloser) {
 			--SPIN dish around x-axis  SPEED <-200.04>;
 			self.Spinners.dish:ClearGoal()
 			self.Spinners.dish:SetSpeed(-200)
-			ChangeState(self, self.IdleOpenState)
+			TACloser.OpeningState.Main(self)
 		end,
 	},
 
 
 	ClosingState = State {
 		Main = function(self)
-			TACloser.Fold(self)
 			self:DisableIntel('Radar')
-			---self.intelIsActive = nil
-			self:PlayUnitSound('Deactivate')
 
 			--SPIN turret around y-axis  SPEED <0.00>;
 			self.Spinners.turret:ClearGoal()
@@ -55,7 +46,7 @@ CORARAD = Class(TACloser) {
 			self.Spinners.dish:ClearGoal()
 			self.Spinners.dish:SetSpeed(0)
 
-			ChangeState(self, self.IdleClosedState)
+			TACloser.ClosingState.Main(self)
 		end,
 
 	},

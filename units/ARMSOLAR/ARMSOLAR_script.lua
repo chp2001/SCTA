@@ -21,10 +21,8 @@ ARMSOLAR = Class(TACloser) {
 
 	OpeningState = State {
 		Main = function(self)
-			self.productionIsActive = true
-			self:PlayUnitSound('Activate')
-			TACloser.Unfold(self)
-			--TURN dish1 to x-axis <-90.00> SPEED <60.01>
+			self.IsActive = true
+			self:SetProductionActive(true)
 			self.Spinners.dish1:SetGoal(90)
 			self.Spinners.dish1:SetSpeed(60)
 
@@ -40,13 +38,7 @@ ARMSOLAR = Class(TACloser) {
 			self.Spinners.dish4:SetGoal(-90)
 			self.Spinners.dish4:SetSpeed(60)
 
-			for k, spinner in self.Spinners do
-				WaitFor(spinner)
-			end
-
-			self:SetProductionActive(true)
-
-			ChangeState(self, self.IdleOpenState)
+			TACloser.OpeningState.Main(self)
 		end,
 	},
 
@@ -54,8 +46,6 @@ ARMSOLAR = Class(TACloser) {
 	ClosingState = State {
 		Main = function(self)
 			self:SetProductionActive(false)
-			self:PlayUnitSound('Activate')
-
 			--TURN dish1 to x-axis <0> SPEED <120.02>
 			self.Spinners.dish1:SetGoal(0)
 			self.Spinners.dish1:SetSpeed(120)
@@ -72,11 +62,7 @@ ARMSOLAR = Class(TACloser) {
 			self.Spinners.dish4:SetGoal(0)
 			self.Spinners.dish4:SetSpeed(120)
 
-			for k, spinner in self.Spinners do
-				WaitFor(spinner)
-			end
-			TACloser.Fold(self)
-			ChangeState(self, self.IdleClosedState)
+			TACloser.ClosingState.Main(self)
 		end,
 
 	},

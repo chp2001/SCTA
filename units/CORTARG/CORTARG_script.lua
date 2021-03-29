@@ -15,13 +15,11 @@ CORTARG = Class(TACloser) {
 
 	OpeningState = State {
 		Main = function(self)
-			TACloser.Unfold(self)
-			self:PlayUnitSound('Activate')
+			self.IsActive = true
 			self:EnableIntel('Radar')
-			---self.intelIsActive = true
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
 		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
-		ChangeState(self, self.IdleOpenState)
+		TACloser.OpeningState.Main(self)
 	end,
 },
 
@@ -29,13 +27,9 @@ CORTARG = Class(TACloser) {
 ClosingState = State {
 	Main = function(self)
 		self:DisableIntel('Radar')
-		TACloser.Fold(self)
-		self:PlayUnitSound('Deactivate')
-		---self.intelIsActive = nil
 		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
 		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
-		WaitFor(self.AnimManip)
-		ChangeState(self, self.IdleClosedState)
+		TACloser.ClosingState.Main(self)
 	end,
 },
 }

@@ -2,7 +2,6 @@ local DefaultProjectileFile = import('/lua/sim/defaultprojectiles.lua')
 local SinglePolyTrailProjectile = DefaultProjectileFile.SinglePolyTrailProjectile
 local NukeProjectile = DefaultProjectileFile.NukeProjectile
 local OnWaterEntryEmitterProjectile = DefaultProjectileFile.OnWaterEntryEmitterProjectile
-local DepthCharge = import('/lua/defaultantiprojectile.lua').DepthCharge
 
 TAProjectile = Class(SinglePolyTrailProjectile) {
 	PolyTrail =  '/effects/emitters/aeon_laser_trail_02_emit.bp',

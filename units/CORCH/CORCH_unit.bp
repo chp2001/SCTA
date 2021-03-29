@@ -7,17 +7,17 @@ UnitBlueprint {
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'HOVMDSL1',
+            Cue = 'VCORSEL',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StartMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'HOVMDOK1',
+            Cue = 'VCORMOVE',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StopMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'HOVMDOF1',
+            Cue = 'VCORSTOP',
             LodCutoff = 'UnitMove_LodCutoff',
         },
 	Construct = Sound {

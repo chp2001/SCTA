@@ -28,12 +28,8 @@ ARMMMKR = Class(TACloser) {
 
 	OpeningState = State {
 		Main = function(self)
-			TACloser.Unfold(self)
-			self.productionIsActive = true
-			self:PlayUnitSound('Activate')
-			
-
-			--TURN lid2 to x-axis <30.40> SPEED <38.60>;
+			self.IsActive = true
+			self:SetProductionActive(true)
 			self.Spinners.lid2:SetGoal(30.40)
 			self.Spinners.lid2:SetSpeed(36.00)
 
@@ -45,8 +41,6 @@ ARMMMKR = Class(TACloser) {
 			self.Spinners.core:SetGoal(-30.40)
 			self.Spinners.core:SetSpeed(39.39)
 
-			--SLEEP <772>;
-			WaitSeconds(0.75)
 
 			--MOVE mmakercore to y-axis <5.05> SPEED <6.00>;
 			self.Sliders.core:SetGoal(0,5.05,0)
@@ -72,37 +66,27 @@ ARMMMKR = Class(TACloser) {
 			self.Spinners.core:SetGoal(-60.80)
 			self.Spinners.core:SetSpeed(39.39)
 
-			--SLEEP <774>;
-			WaitSeconds(0.75)
-
-			--MOVE mmakercore to y-axis <15.84> SPEED <13.00>;
 			self.Sliders.core:SetGoal(0,15.84,0)
 			self.Sliders.core:SetSpeed(13)
 
 			--TURN mmakercore to y-axis <-90.00> SPEED <37.67>;
 			self.Spinners.core:SetGoal(-90.00)
 			self.Spinners.core:SetSpeed(37.67)
-			ChangeState(self, self.IdleOpenState)
+
+			TACloser.OpeningState.Main(self)
 		end,
 	},
 
 
 	ClosingState = State {
 		Main = function(self)
-			TACloser.Fold(self)
 			self:SetProductionActive(false)
-			self:PlayUnitSound('Activate')
-
-			--MOVE mmakercore to y-axis <5.05> SPEED <15.00>;
 			self.Sliders.core:SetGoal(0,5.05,0)
 			self.Sliders.core:SetSpeed(15)
 
 			--TURN mmakercore to y-axis <-60.80> SPEED <42.74>;
 			self.Spinners.core:SetGoal(-60.80)
 			self.Spinners.core:SetSpeed(42.74)
-
-			--SLEEP <683>;
-			WaitSeconds(0.7)
 
 			--MOVE mmakercore to y-axis <0> SPEED <7.00>;
 			self.Sliders.core:SetGoal(0,0,0)
@@ -128,9 +112,6 @@ ARMMMKR = Class(TACloser) {
 			self.Spinners.core:SetGoal(-30.40)
 			self.Spinners.core:SetSpeed(44.26)
 
-			--SLEEP <687>;
-			WaitSeconds(0.7)
-
 			--TURN lid2 to x-axis <0.60> SPEED <43.57>;
 			self.Spinners.lid2:SetGoal(0)
 			self.Spinners.lid2:SetSpeed(43.57)
@@ -142,7 +123,7 @@ ARMMMKR = Class(TACloser) {
 			--TURN mmakercore to y-axis <0> SPEED <44.46>;
 			self.Spinners.core:SetGoal(0)
 			self.Spinners.core:SetSpeed(44.46)
-			ChangeState(self, self.IdleClosedState)
+			TACloser.ClosingState.Main(self)
 			
 		end,
 

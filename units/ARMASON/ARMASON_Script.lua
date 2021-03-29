@@ -34,9 +34,6 @@ ARMASON = Class(TACloser) {
 	ClosingState = State {
 		Main = function(self)
 			self:DisableIntel('Sonar')
-			TACloser.Fold(self)
-			self:PlayUnitSound('Deactivate')
-			---self.intelIsActive = nil
 				--TURN hinge1 to x-axis <0> SPEED <68.78>;
 				self.Spinners.hinge1:SetGoal(0)
 				self.Spinners.hinge1:SetSpeed(68)
@@ -75,7 +72,7 @@ ARMASON = Class(TACloser) {
 		
 				--STOP-SPIN wheel around y-axis;
 				self.Spinners.wheel:SetSpeed(0)
-				ChangeState(self, self.IdleClosedState)
+				TACloser.ClosingState.Main(self)
 			end,
 			},
 			
@@ -83,11 +80,8 @@ ARMASON = Class(TACloser) {
 
 	OpeningState = State {
 		Main = function(self)
-			TACloser.Unfold(self)
 			self:EnableIntel('Sonar')
-			self:PlayUnitSound('Activate')
-			---self.intelIsActive = true
-		--TURN hinge1 to x-axis <133.26> SPEED <68.74>;
+			self.IsActive = true
 		self.Spinners.hinge1:SetGoal(130)
 		self.Spinners.hinge1:SetSpeed(68)
 
@@ -125,7 +119,7 @@ ARMASON = Class(TACloser) {
 
 		--SPIN wheel around y-axis  SPEED <60.01>;
 		self.Spinners.wheel:SetSpeed(60)
-		ChangeState(self, self.IdleClosedState)
+		TACloser.OpeningState.Main(self)
 	end,
 	},
 }

@@ -37,7 +37,7 @@ UnitBlueprint {
         [1] = {
             Damage = 1200,
 	        DamageRadius = 3,
-            FiringRandomness = 1.25,
+            FiringRandomness = 0.5,
             FiringTolerance = 2,
             MinRadius = 20,
             MaxRadius = 110,

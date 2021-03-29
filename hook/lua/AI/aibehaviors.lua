@@ -44,23 +44,7 @@ function CommanderThreadSCTA(cdr, platoon)
         and not cdr:IsUnitState("Building") and not cdr:IsUnitState("Guarding")
         and not cdr:IsUnitState("Attacking") and not cdr:IsUnitState("Repairing")
         and not cdr:IsUnitState('BlockCommandQueue') then
-            -- if we have nothing to build...
-            if not cdr.EngineerBuildQueue or table.getn(cdr.EngineerBuildQueue) == 0 then
-                -- check if the we have still a platton assigned to the CDR
-                if cdr.PlatoonHandle then
-                    local platoonUnits = cdr.PlatoonHandle:GetPlatoonUnits() or 1
-                    -- only disband the platton if we have 1 unit, plan and buildername. (NEVER disband the armypool platoon!!!)
-                    if table.getn(platoonUnits) == 1 and cdr.PlatoonHandle.PlanName and cdr.PlatoonHandle.BuilderName then
-                        --SPEW('ACU PlatoonHandle found. Plan: '..cdr.PlatoonHandle.PlanName..' - Builder '..cdr.PlatoonHandle.BuilderName..'. Disbanding CDR platoon!')
-                        cdr.PlatoonHandle:PlatoonDisband()
-                    end
-                end
-                -- get the global armypool platoon
-                local pool = aiBrain:GetPlatoonUniquelyNamed('ArmyPool')
-                -- assing the CDR to the armypool
-                aiBrain:AssignUnitsToPlatoon(pool, {cdr}, 'Unassigned', 'None')
-            -- if we have a BuildQueue then continue building
-            elseif cdr.EngineerBuildQueue and table.getn(cdr.EngineerBuildQueue) ~= 0 then
+            if cdr.EngineerBuildQueue and table.getn(cdr.EngineerBuildQueue) ~= 0 then
                 if not cdr.NotBuildingThread then
                     cdr.NotBuildingThread = cdr:ForkThread(platoon.WatchForNotBuilding)
                 end
@@ -256,7 +240,7 @@ function SCTACDRReturnHome(aiBrain, cdr)
             cdr.GoingHome = true
             WaitSeconds(7)
         until cdr.Dead or VDist2Sq(cdrPos[1], cdrPos[3], loc[1], loc[3]) <= distSqAway
-
+        cdr:EnableUnitIntel('Toggle', 'Cloak')
         cdr.GoingHome = false
         IssueClearCommands({cdr})
     end

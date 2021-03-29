@@ -22,7 +22,7 @@ BuilderGroup {
             },	
         InstantCheck = true,	
         BuilderType = 'Any',	
-        PlatoonAddBehaviors = { 'CommanderBehaviorSCTA' }, -- Add a behaviour to the Commander unit once its done with it's BO.	
+        ---PlatoonAddBehaviors = { 'CommanderBehaviorSCTA' }, -- Add a behaviour to the Commander unit once its done with it's BO.	
         PlatoonAddFunctions = { {SAI, 'BuildOnce'}, }, -- Flag this builder to be only run once.	
         BuilderData = {	
             Construction = {
@@ -87,7 +87,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 25, -500, 100, 0, 'AntiSurface', 1 }},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.MASSEXTRACTION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.MASSEXTRACTION} },
         },
         BuilderType = 'Any',
         BuilderData = {

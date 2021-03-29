@@ -8,17 +8,17 @@ UnitBlueprint {
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'KCARMSEL',
+            Cue = 'KBARMSEL',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StartMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'KCARMMOV',
+            Cue = 'KBARMMOV',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StopMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'KCARMSTP',
+            Cue = 'KBARMSTP',
             LodCutoff = 'UnitMove_LodCutoff',
         },
 	Construct = Sound {
@@ -26,11 +26,6 @@ UnitBlueprint {
             Cue = 'NANLATH1',
             LodCutoff = 'UnitMove_LodCutoff',
 	},
-        ConstructStop = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'KCARMMOV',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
 	Cloak = Sound {
             Bank = 'TA_Sound',
             Cue = 'KLOAK1',

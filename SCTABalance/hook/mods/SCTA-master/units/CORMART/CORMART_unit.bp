@@ -26,7 +26,6 @@ UnitBlueprint {
         BuildCostMass = 1200,
         BuildTime = 26000,
     },
-    LifeBarSize = 1,
     SelectionSizeX = 2,
     SelectionSizeZ = 2,
     Weapon = {

@@ -28,18 +28,10 @@ ARMTARG = Class(TACloser) {
 		end
 	end,
 
-	OnStopBeingBuilt = function(self,builder,layer)
-		TACloser.OnStopBeingBuilt(self,builder,layer)
-		ForkThread(self.Unfold, self)
-	end,
-
 	OpeningState = State {
 		Main = function(self)
-			TACloser.Unfold(self)
 			self:EnableIntel('Radar')
-			self:PlayUnitSound('Activate')
-			---self.intelIsActive = true
-		--TURN post1 to x-axis <-90.21> SPEED <82.32>;
+			self.IsActive = true
 		self.Spinners.post1:SetGoal(-90)
 		self.Spinners.post1:SetSpeed(82)
 
@@ -54,9 +46,6 @@ ARMTARG = Class(TACloser) {
 		--TURN post4 to z-axis <90.21> SPEED <82.32>;
 		self.Spinners.post4:SetGoal(-90)
 		self.Spinners.post4:SetSpeed(82)
-
-		--SLEEP <1096>;
-                WaitSeconds(1.1)
 
 		--MOVE light4 to x-axis <1.90> SPEED <1.00>;
 		self.Sliders.light4:SetGoal(-1.9,0,0)
@@ -73,20 +62,13 @@ ARMTARG = Class(TACloser) {
 		--MOVE light1 to z-axis <2.00> SPEED <1.00>;
 		self.Sliders.light1:SetGoal(0,0,2)
 		self.Sliders.light1:SetSpeed(1)
-
-		--SLEEP <1109>;
-		--SLEEP <53>;
-		ChangeState(self, self.IdleOpenState)
+		TACloser.OpeningState.Main(self)
 	end,
 },
 
 ClosingState = State {
 	Main = function(self)
 		self:DisableIntel('Radar')
-		TACloser.Fold(self)
-		self:PlayUnitSound('Deactivate')
-		---self.intelIsActive = nil
-		--MOVE light4 to x-axis <0> SPEED <1.00>;
 		self.Sliders.light4:SetGoal(0,0,0)
 		self.Sliders.light4:SetSpeed(1)
 
@@ -101,9 +83,6 @@ ClosingState = State {
 		--MOVE light1 to z-axis <0> SPEED <1.00>;
 		self.Sliders.light1:SetGoal(0,0,0)
 		self.Sliders.light1:SetSpeed(1)
-
-		--SLEEP <1206>;
-                WaitSeconds(1.2)
 
 		--TURN post1 to x-axis <0> SPEED <73.96>;
 		self.Spinners.post1:SetGoal(0)
@@ -120,7 +99,7 @@ ClosingState = State {
 		--TURN post4 to z-axis <0> SPEED <73.96>;
 		self.Spinners.post4:SetGoal(0)
 		self.Spinners.post4:SetSpeed(74)
-		ChangeState(self, self.IdleClosedState)
+		TACloser.ClosingState.Main(self)
 	end,
 	},
 }

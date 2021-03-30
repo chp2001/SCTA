@@ -78,7 +78,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 200000,
         BuildCostMass = 12000, 
-        BuildTime = 150000,
+        BuildTime = 140000,
         BuildRate = 250,
         BuildableCategory = {
             'BUILTBYQUANTUMGATE ARM',

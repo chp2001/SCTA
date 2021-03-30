@@ -14,4 +14,12 @@ UnitBlueprint {
         BuildCostMass = 700,
         BuildTime = 10000,
     },
+    Weapon = {
+        [1] = {
+            Damage = 60,
+            RateOfFire = 2,
+        },
+        [2] = {
+        },
+    },
 }

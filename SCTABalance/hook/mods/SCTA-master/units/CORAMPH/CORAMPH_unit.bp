@@ -5,8 +5,8 @@ UnitBlueprint {
     MaxHealth = 3000,
 },
 Economy = {
-    BuildCostEnergy = 4000,
-    BuildCostMass = 600,
+    BuildCostEnergy = 5000,
+    BuildCostMass = 500,
     BuildTime = 9000,
 },
     Weapon = {

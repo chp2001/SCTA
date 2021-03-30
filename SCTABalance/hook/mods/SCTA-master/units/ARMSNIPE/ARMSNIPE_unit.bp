@@ -32,7 +32,7 @@ UnitBlueprint {
     },
     Weapon = {
         [1] = {
-            Damage = 1500,
+            Damage = 750,
             MaxRadius = 60,
             RateOfFire = 0.1694915254,
             EnergyDrainPerSecond = 100,

@@ -19,14 +19,12 @@ local TAPeaceCues = {
     Sound({Cue = 'Building', Bank = 'TA_Music'}),
 }
 
-local TABattleCueIndex = 1
-local TAPeaceCueIndex = 1
 function StartBattleMusic()
     local coinFlip = math.random(2)
     if coinFlip == 1 then
     PlayMusic(TABattleCues[TABattleCueIndex], 0)
-    TABattleCueIndex = math.mod(TABattleCueIndex,table.getn(TABattleCues))
-else
+    BattleCueIndex = math.mod(BattleCueIndex,table.getn(TABattleCues)) + 1
+    else
     TAStartBattleMusic()
     end
 end
@@ -34,8 +32,8 @@ end
 function StartPeaceMusic()
     local coinFlip = math.random(2)
     if coinFlip == 1 then
-    PlayMusic(TAPeaceCues[TAPeaceCueIndex], 1)
-    TAPeaceCueIndex = math.mod(TAPeaceCueIndex, table.getsize(TAPeaceCues))
+    PlayMusic(TAPeaceCues[TAPeaceCueIndex], 3)
+    PeaceCueIndex = math.mod(PeaceCueIndex, table.getsize(TAPeaceCues)) + 1
     else
     TAStartPeaceMusic()
     end

@@ -78,7 +78,7 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 775,
-        BuildCostMass = 615, 
+        BuildCostMass = 600, 
         BuildTime = 6050,
 	BuildRate = 100,
         BuildableCategory = {

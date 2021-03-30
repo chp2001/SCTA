@@ -30,7 +30,7 @@ UnitBlueprint {
     SizeZ = 3,
     Weapon = {
         [1] = {
-            Damage = 2000,
+            Damage = 800,
 	        DamageRadius = 3,
             FiringRandomness = 1.25,
             FiringTolerance = 2,

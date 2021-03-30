@@ -9,7 +9,7 @@
          },
      Economy = {
              BuildCostEnergy = 960,
-             BuildCostMass = 100,
+             BuildCostMass = 110,
          },
      SizeX = 1.6,
      SizeY = 1.4,

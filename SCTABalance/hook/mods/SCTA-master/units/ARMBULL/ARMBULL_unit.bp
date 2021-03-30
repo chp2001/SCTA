@@ -13,4 +13,12 @@ UnitBlueprint {
             BuildCostEnergy = 4500,
             BuildCostMass = 600,
         },
+        Weapon = {
+            [1] = {
+                Damage = 120,
+                MaxRadius = 25,
+            },
+            [2] = {
+                },
+    },
 }

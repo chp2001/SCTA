@@ -272,37 +272,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T3AirFactory',
         PlatoonTemplate = 'EngineerBuilderSCTAEco23',
-        Priority = 141,
+        Priority = 128,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.9 } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
-            Construction = {
-                BuildStructures = {
-                    'T3AirFactory',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTAAI T3AirFactory Hover',
-        PlatoonTemplate = 'EngineerBuilderSCTA3',
-        Priority = 126,
-        InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Factories', 3},
-        BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, FUSION} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.9 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
         BuilderType = 'Any',

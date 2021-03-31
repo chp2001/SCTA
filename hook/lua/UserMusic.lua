@@ -22,7 +22,7 @@ local TAPeaceCues = {
 function StartBattleMusic()
     local coinFlip = math.random(2)
     if coinFlip == 1 then
-    PlayMusic(TABattleCues[TABattleCueIndex], 0)
+    PlayMusic(TABattleCues[BattleCueIndex], 0)
     BattleCueIndex = math.mod(BattleCueIndex,table.getn(TABattleCues)) + 1
     else
     TAStartBattleMusic()
@@ -32,7 +32,7 @@ end
 function StartPeaceMusic()
     local coinFlip = math.random(2)
     if coinFlip == 1 then
-    PlayMusic(TAPeaceCues[TAPeaceCueIndex], 3)
+    PlayMusic(TAPeaceCues[PeaceCueIndex], 3)
     PeaceCueIndex = math.mod(PeaceCueIndex, table.getsize(TAPeaceCues)) + 1
     else
     TAStartPeaceMusic()

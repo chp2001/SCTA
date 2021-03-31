@@ -3,7 +3,9 @@ local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
-
+local PLANT = (categories.FACTORY * categories.TECH1)
+local LAB = (categories.FACTORY * categories.TECH2)
+local PLATFORM = (categories.FACTORY * categories.TECH3)
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIEngineerBuilder',
@@ -23,6 +25,7 @@ BuilderGroup {
         Priority = 110, -- Top factory priority
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.TECH2 - categories.FIELDENGINEER } }, -- Build engies until we have 4 of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3,  PLATFORM} },
         },
         BuilderType = 'Land',
     },
@@ -33,6 +36,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENGINEER * categories.AIR * categories.TECH1} }, -- Build engies until we have 4 of them.
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}}, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  LAB * categories.AIR} },
         },
         BuilderType = 'Air',
     },
@@ -43,6 +47,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, FUSION} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.AIR * categories.TECH2} }, -- Build engies until we have 4 of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  PLATFORM * categories.AIR} },
         },
         BuilderType = 'Air',
     }, 
@@ -61,13 +66,14 @@ BuilderGroup {
         Priority = 100, -- Top factory priority
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.ENGINEER * categories.LAND * categories.TECH1 - categories.COMMAND } }, -- Don't make tanks if we have lots of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2,  LAB} },
         },
         BuilderType = 'Land',
     },
     Builder {
         BuilderName = 'SCTAAi Field Engineer',
         PlatoonTemplate = 'T2BuildFieldEngineerSCTA',
-        Priority = 95, -- Top factory priority
+        Priority = 125, -- Top factory priority
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FIELDENGINEER * categories.TECH2} }, -- Build engies until we have 4 of them.
         },

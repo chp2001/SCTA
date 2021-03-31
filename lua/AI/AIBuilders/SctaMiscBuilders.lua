@@ -82,6 +82,9 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
             Construction = {
                 BuildStructures = {
                     'T3StrategicMissileDefense',
@@ -102,6 +105,8 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
             NumAssistees = 2,
             Construction = {
                 BuildClose = true,
@@ -122,6 +127,8 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
             NumAssistees = 2,
             Construction = {
                 BuildClose = true,
@@ -142,6 +149,8 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
             NumAssistees = 2,
             Construction = {
                 BuildClose = true,
@@ -201,6 +210,9 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 10,
             Construction = {
                 BuildStructures = {
                     'T4Artillery',
@@ -215,7 +227,6 @@ BuilderGroup {
         Priority = 57,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {1200} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.AIRSTAGINGPLATFORM} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
         },

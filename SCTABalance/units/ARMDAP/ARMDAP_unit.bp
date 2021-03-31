@@ -58,7 +58,7 @@ UnitBlueprint {
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/ARMAP/ARMAP_lod0_unpack.sca',
         AnimationUnpackRate = 1,   
-        BuildAttachBone = 'buildpad',
+        BuildAttachBone = 'BasePlate',
         Abilities = {
             '<LOC ability_radar>Radar',
             '<LOC ability_upgradable>Upgradeable',
@@ -76,7 +76,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.22,
+        UniformScale = 0.18,
     },
     Economy = {
         BuildCostEnergy = 54000,
@@ -89,8 +89,6 @@ UnitBlueprint {
         'AIR MOBILE TECH1 ARM',
         'armadap', 
         },
-	InitialRallyX = 0,
-InitialRallyZ = 7,
     StorageMass = 50,
     StorageEnergy = 50,
     },
@@ -101,7 +99,7 @@ InitialRallyZ = 7,
     },
     General = {
         BuildBones = {
-            BuildEffectBones = {'spray1', 'spray2'},
+            BuildEffectBones = {'Nozzle_01', 'Nozzle_02'},
         }, 
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
@@ -130,20 +128,18 @@ InitialRallyZ = 7,
     LifeBarOffset = 2,
     LifeBarSize = 7,
     Physics = {        
-        ---SkirtSizeX = 7,
-        ---SkirtSizeZ = 7,
         RollOffPoints = {
             {
-                UnitSpin = 180,
-                X = 0,
+                UnitSpin = 90,
+                X = 3,
                 Y = 0,
-                Z = -3,
+                Z = 0,
             },
-                {
-                UnitSpin = 0,
-                X = 0,
+            {
+                UnitSpin = -90,
+                X = -3,
                 Y = 0,
-                Z = 3,
+                Z = 0,
             },
         },
     },

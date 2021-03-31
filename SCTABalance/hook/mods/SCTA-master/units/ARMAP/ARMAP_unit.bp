@@ -10,7 +10,7 @@ UnitBlueprint {
             '<LOC ability_radar>Radar',
             '<LOC ability_upgradable>Upgradeable',
         },
-        UniformScale = 0.22,
+        UniformScale = 0.18,
     },
     Economy = {
         BuildCostEnergy = 8000,

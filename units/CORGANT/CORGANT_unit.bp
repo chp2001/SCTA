@@ -141,7 +141,7 @@ TechLevel = 'RULEUTL_Advanced',
     SizeX = 9,
     SizeY = 2.5,
     SizeZ = 9,
-    StrategicIconName = 'icon_experimental_generic',
+    StrategicIconName = 'icon_structure3_transport', --'icon_factory2_bot',
     StrategicIconSortPriority = 5,
     Weapon = {
         { #LARGE_BUILDINGEX

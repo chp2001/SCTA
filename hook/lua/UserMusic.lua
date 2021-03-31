@@ -6,35 +6,49 @@
 
 --#****************************************************************************
 --# Config options
---#****************************************************************************
-local TAStartBattleMusic = StartBattleMusic
-local TAStartPeaceMusic = StartPeaceMusic
--- List of battle cues to cycle through
+
 local TABattleCues = {
     Sound({Cue = 'Battle', Bank = 'TA_Music'}),
 }
-
--- List of peace cues to cycle through
 local TAPeaceCues = {
     Sound({Cue = 'Building', Bank = 'TA_Music'}),
 }
+local coinFlip = math.random(2)
 
 function StartBattleMusic()
-    local coinFlip = math.random(2)
+    BattleStart = GameTick()
+    --LOG('Battle...')
+    --LOG(coinFlip)
     if coinFlip == 1 then
+    PlayMusic(BattleCues[BattleCueIndex], 0) -- immediately
+    BattleCueIndex = math.mod(BattleCueIndex,table.getn(BattleCues)) + 1
+    else
     PlayMusic(TABattleCues[BattleCueIndex], 0)
     BattleCueIndex = math.mod(BattleCueIndex,table.getn(TABattleCues)) + 1
-    else
-    TAStartBattleMusic()
     end
+    if battleWatch then KillThread(battleWatch) end
+    battleWatch = ForkThread(
+        function ()
+            while GameTick() - LastBattleNotify < PeaceTimer do
+                WaitSeconds(1)
+            end
+
+            StartPeaceMusic()
+        end
+)
 end
 
 function StartPeaceMusic()
-    local coinFlip = math.random(2)
+    BattleStart = 0
+    BattleEventCounter = 0
+    LastBattleNotify = GameTick()
+    --LOG('Peace...') 
+    --LOG(coinFlip)
     if coinFlip == 1 then
     PlayMusic(TAPeaceCues[PeaceCueIndex], 3)
     PeaceCueIndex = math.mod(PeaceCueIndex, table.getsize(TAPeaceCues)) + 1
-    else
-    TAStartPeaceMusic()
+    else 
+    PlayMusic(PeaceCues[PeaceCueIndex], 3)
+    PeaceCueIndex = math.mod(PeaceCueIndex, table.getsize(PeaceCues)) + 1
     end
 end

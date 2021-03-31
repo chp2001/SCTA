@@ -36,27 +36,6 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTA Mex Assist',
-        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
-        Priority = 90,
-        InstanceCount = 4,
-        BuilderConditions = {
-            { UCBC, 'BuildingGreaterAtLocation', { 'LocationType', 0, categories.MASSEXTRACTION * categories.TECH3}},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            Assist = {
-                AssistUntilFinished = true,
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Structure',
-                BeingBuiltCategories = {'MASSEXTRACTION'},
-                Time = 60,
-                AssistRange = 120,
-            },
-        }
-    },
-    Builder {
         BuilderName = 'SCTA Engineer Assist Gantry Production',
         PlatoonTemplate = 'EngineerBuilderSCTAAssist',
         Priority = 200,
@@ -99,11 +78,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Assist Production Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
-        Priority = 50,
-        InstanceCount = 30,
+        Priority = 5,
+        InstanceCount = 10,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderData = {
             Assist = {
@@ -119,11 +97,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Assist Unit Production Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
-        Priority = 45,
-        InstanceCount = 30,
+        Priority = 5,
+        InstanceCount = 10,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.MOBILE }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderData = {
             Assist = {
@@ -296,10 +273,11 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 5,
-        InstanceCount = 20,
+        Priority = 25,
+        InstanceCount = 10,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 360 } },
+            { MIBC, 'LessThanGameTime', {1200} }, 
             { EBC, 'LessThanEconStorageRatio', { 0.15, 1.1}},     
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
         },

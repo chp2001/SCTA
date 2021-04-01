@@ -31,7 +31,7 @@
         # Armor Definition
         'Normal 1.0',
         'Deathnuke 1.0',
-        'DGun 0.45',
+        'DGun 0.5',
         'AntiAir 0.05',
         'TASpec 0.3',
     },

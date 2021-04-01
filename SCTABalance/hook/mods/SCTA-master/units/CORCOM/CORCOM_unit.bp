@@ -48,4 +48,14 @@ UnitBlueprint {
     SelectionSizeZ = 1.6,
    SizeY = 4.3,
    SizeX = 2.8,
+   Weapon = {
+    [1] = {},
+    [2] = {
+        DGun = 2500,
+    },
+    [3] = {
+    },
+    [4] = {
+    },
+},
 }

@@ -250,6 +250,30 @@ TALightCannonProjectile = Class(TAProjectile) {
     	FxWaterHitScale = 0.5,
 }
 
+Disintegrator = Class(TALightCannonProjectile) {
+	OnCreate = function(self)
+		TALightCannonProjectile.OnCreate(self)
+		self.launcher = self:GetLauncher()
+		self.damage = self.launcher:GetWeaponByLabel('DGun'):GetBlueprint().DGun
+		ForkThread(self.MovementThread, self, self.launcher, self.damage)
+	end,
+
+	MovementThread = function(self, launcher, damage)
+		while not IsDestroyed(self) do
+			local pos = self:GetPosition()
+		if pos.y < GetTerrainHeight(pos.x, pos.z) then
+			self:SetTurnRate(0)
+			pos.y = GetTerrainHeight(pos.x, pos.z)
+			DamageArea( launcher, pos, 1.5, damage, 'DGun', true)
+				self:SetPosition(pos, true)
+				self:PlaySound(Sound({Cue = 'XPLOMAS2', Bank = 'TA_Sound', LodCutoff = 'Weapon_LodCutoff'}))
+				CreateEmitterAtEntity(self, self:GetArmy(), '/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp' ):ScaleEmitter(0.5)
+			end
+			WaitSeconds(0.1)
+		end
+	end,
+}
+
 FlameProjectile = Class(TALightCannonProjectile) {
 	FxFlame = '/mods/SCTA-master/effects/emitters/TAFlamethrower_emit.bp',
 	FxFlameScale = 1,

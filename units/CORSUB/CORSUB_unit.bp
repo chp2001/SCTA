@@ -43,13 +43,10 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.1,
     Defense = {
-        ArmorType = 'Sub',
+        ArmorType = 'Normal',
         Health = 590,
         MaxHealth = 590,
-        AirThreatLevel = 0,
-        EconomyThreatLevel = 0,
         SubThreatLevel = 3,
-        SurfaceThreatLevel = 0,
     },
     Description = 'Submarine',
     Display = {

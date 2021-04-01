@@ -118,8 +118,8 @@ UnitBlueprint {
             },
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-            Damage = 900,
-            DamageType = 'TASpec',
+            Damage = 1000,
+            DamageType = 'Normal',
             DisplayName = 'ARMATL_TORPEDO',
             ProjectileLifetime = 12,
             FireTargetLayerCapsTable = {

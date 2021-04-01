@@ -53,7 +53,7 @@ UnitBlueprint {
         'SUBMERSIBLE',
     },
     Defense = {
-        ArmorType = 'Sub',
+        ArmorType = 'Normal',
         Health = 460,
         MaxHealth = 460,
         SurfaceThreatLevel = 9,

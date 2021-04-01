@@ -45,7 +45,7 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.25,
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Ship',
         Health = 570,
         MaxHealth = 570,
         AirThreatLevel = 1,

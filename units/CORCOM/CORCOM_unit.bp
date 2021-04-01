@@ -306,6 +306,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 50,
+            DGun = 99999,
             DamageRadius = 1,
             DamageType = 'DGun',
             DisplayName = 'DGun',

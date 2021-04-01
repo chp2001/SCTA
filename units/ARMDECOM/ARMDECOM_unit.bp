@@ -270,6 +270,7 @@ UnitBlueprint {
 	        RangeCategory = 'UWRC_DirectFire',
          WeaponCategory = 'DirectFire',
             Label = 'DGun',
+            DGun = 2000,
             MaxRadius = 22,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -278,7 +279,7 @@ UnitBlueprint {
             EnergyRequired = 1000,
             EnergyDrainPerSecond = 1000,
             EnergyChargeForFirstShot = true,
-            ProjectileId = '/mods/SCTA-master/projectiles/DARM_DISINTEGRATOR/DARM_DISINTEGRATOR_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARM_DISINTEGRATOR/ARM_DISINTEGRATOR_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

@@ -279,11 +279,12 @@ TechLevel = 'RULEUTL_Advanced',
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 18,
+            DGun = 2000,
             NeedPrep = true,
             EnergyChargeForFirstShot = true,
             EnergyRequired = 1000,
             EnergyDrainPerSecond = 1000,
-            ProjectileId = '/mods/SCTA-master/projectiles/DCORE_DISINTEGRATOR/DCORE_DISINTEGRATOR_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORE_DISINTEGRATOR/CORE_DISINTEGRATOR_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

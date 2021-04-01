@@ -29,9 +29,7 @@ ProjectileBlueprint {
             'DIRECTFIRE',
         },
         Faction = 'CORE',
-        Weapon = 'DGun',
     },
-
     Physics = {
         CollideSurface = false,
         CollideEntity = false,

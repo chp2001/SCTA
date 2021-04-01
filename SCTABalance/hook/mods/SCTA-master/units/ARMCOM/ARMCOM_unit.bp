@@ -52,6 +52,11 @@ UnitBlueprint {
     [1] = {},
     [2] = {
         DGun = 2500,
+        Overcharge = {
+            energyMult = 0.9,
+            commandDamage = 1000,
+            structureDamage = 1000,
+        },
     },
     [3] = {
     },

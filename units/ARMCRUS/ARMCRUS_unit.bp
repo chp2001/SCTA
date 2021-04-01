@@ -216,8 +216,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 105,
-            DamageType = 'Normal',
+            Damage = 300,
+            DamageType = 'TASpec',
             DisplayName = 'ARMDEPTHCHARGE',
             FireTargetLayerCapsTable = {
                 Water = 'Water|Sub|Seabed',

@@ -15,9 +15,9 @@ CORCOM = Class(TARealCommander) {
 	Weapons = {
 		COMLASER = Class(TAweapon) {
 		},
-		DGun = Class(TADGun) {
+		OverCharge = Class(TADGun) {
 		},		
-		AutoDGun = Class(TADGun) {
+		AutoOverCharge = Class(TADGun) {
 		},
 		DeathWeapon = Class(TACommanderDeathWeapon) {},
 	},

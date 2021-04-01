@@ -3,8 +3,8 @@
 -- Author(s):  John Comes, Gordon Duclos
 -- Summary  :  Default definitions of units
 -- Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
-local oldtaCommandUnit = CommandUnit 
-CommandUnit = Class(oldtaCommandUnit) {
+local oldtaACUUnit = ACUUnit
+ACUUnit = Class(oldtaACUUnit) {
     PlayCommanderWarpInEffect = function(self)
         self:SetCustomName( ArmyBrains[self:GetArmy()].Nickname )
         self:SetUnSelectable(false)

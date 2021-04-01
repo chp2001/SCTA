@@ -118,7 +118,7 @@ UnitBlueprint {
             },
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
-            Damage = 150,
+            Damage = 300,
             DamageType = 'TASpec',
             DisplayName = 'COAX_TORPEDO',
             FireTargetLayerCapsTable = {
@@ -146,7 +146,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.3846153846,
+            RateOfFire = 1,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

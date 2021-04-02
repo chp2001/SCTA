@@ -48,7 +48,9 @@ ProjectileBlueprint {
     },
     Physics = {
         DestroyOnWater = false,
-        InitialSpeed = 10,
+        Acceleration = 1,
+        InitialSpeed = 5,
+        MaxSpeed = 10,
         Lifetime = 4,
         UseGravity = true,
         TrackTarget = true,

@@ -231,7 +231,7 @@ TechLevel = 'RULEUTL_Basic',
             MaxRadius = 20,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 10,
+            MuzzleVelocity = 5,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMDEPTHCHARGE/ARMDEPTHCHARGE_proj.bp',
             RackBones = {
                 {

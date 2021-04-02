@@ -72,8 +72,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH2 * categories.DIRECTFIRE - categories.SCOUT,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.75 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}}
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Land',
     },
@@ -114,10 +113,12 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT3 Tank',
         PlatoonTemplate = 'T3LandDFTankSCTA',
         Priority = 139,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.TECH3 * categories.DIRECTFIRE - categories.SCOUT,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}}
         },
         BuilderType = 'Land',
     },
@@ -161,8 +162,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH2 * categories.DIRECTFIRE - categories.SCOUT,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.75 } },
-            --{ EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}}
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Land',
     },
@@ -226,10 +226,12 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT3 Tank2',
         PlatoonTemplate = 'T3LandDFTank2SCTA',
         Priority = 131,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH3 * categories.DIRECTFIRE - categories.SCOUT,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}}
         },
         BuilderType = 'Land',
     },
@@ -246,10 +248,12 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT3 HoverTank',
         PlatoonTemplate = 'T3LandHOVERSCTA',
         Priority = 138,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.DIRECTFIRE * categories.TECH3 - categories.SCOUT,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}}
         },
         BuilderType = 'Land',
     },

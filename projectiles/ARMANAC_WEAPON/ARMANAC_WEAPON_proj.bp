@@ -49,13 +49,11 @@ ProjectileBlueprint {
             'DIRECTFIRE',
         },
         Faction = 'ARM',
-        Weapon = 'ARMANAC_WEAPON',
     },
-
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 30,
-        Lifetime = 5,
+        Lifetime = 2,
         UseGravity = true,
     },
 }

@@ -99,11 +99,21 @@ TAStructure = Class(TAunit)
 }
 
 TAPop = Class(TAStructure) {
+	OnCreate = function(self)
+		TAStructure.OnCreate(self)
+		self:SetWeaponEnabledByLabel('ARMAMB_GUN', false)
+	end,
+	
 	Fold = function(self)
 		TAStructure.Fold(self)
 		self:EnableIntel('RadarStealth')
+		self:SetWeaponEnabledByLabel('ARMAMB_GUN', true)
 	end,
 
+	OnStopBeingBuilt = function(self,builder,layer)
+		TAStructure.OnStopBeingBuilt(self,builder,layer)
+		ForkThread(self.Fold, self)
+	end,
 }
 
 TAMass = Class(TAStructure) {

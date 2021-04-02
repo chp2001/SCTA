@@ -62,7 +62,7 @@ UnitBlueprint {
     Display = {
         BuildAttachBone = 'buildpad',
         AnimationUnpack = '/mods/SCTA-master/SCTABalance/units/ARMGANT/ARMGANT_lod0_unpack.sca',
-        AnimationUnpackRate = 1, 
+        AnimationUnpackRate = 2, 
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

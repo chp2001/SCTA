@@ -31,7 +31,7 @@ UnitBlueprint {
         'PRODUCTSC1',
         'SELECTABLE',
        	'COMMAND',
-        'AEON',
+        'CYBRAN',
         'MOBILE',
         'LAND',
         'TECH1',

@@ -17,8 +17,6 @@ ARMGANT = Class(TAGantry) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
-		self.AnimManip = CreateAnimator(self)
-		self.Trash:Add(self.AnimManip)
 		TAGantry.OnCreate(self)
 	end,
 
@@ -30,20 +28,6 @@ ARMGANT = Class(TAGantry) {
 		self.Spinners.nozzle2:SetSpeed(10)
 		self.Spinners.nozzle3:SetGoal(15)
 		self.Spinners.nozzle3:SetSpeed(15)
-	end,
-
-
-	Open = function(self)
-		TAGantry.Open(self)
-		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
-		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
-	end,
-
-
-	Close = function(self)
-		TAGantry.Close(self)
-		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
-		self.AnimManip:SetRate(-0.1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 	end,
 }
 

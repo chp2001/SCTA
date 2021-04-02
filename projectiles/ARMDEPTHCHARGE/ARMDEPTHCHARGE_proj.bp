@@ -46,17 +46,11 @@ ProjectileBlueprint {
         },
         Faction = 'ARM',
     },
-    DoNotCollideList = {
-        'TORPEDO',
-    },
-    Defense = {
-        Health = 1,
-    },
     Physics = {
         DestroyOnWater = false,
-        InitialSpeed = 5,
+        InitialSpeed = 10,
         Lifetime = 4,
-        UseGravity = false,
+        UseGravity = true,
         TrackTarget = true,
         TurnRate = 90,
         VelocityAlign = true,

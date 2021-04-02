@@ -3,9 +3,9 @@
 #
 #Script created by Raevn
 
-local TAUnderWaterProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TAUnderWaterProjectile
+local TADepthCharges = import('/mods/SCTA-master/lua/TAprojectiles.lua').TADepthCharges
 
-ARMDEPTHCHARGE = Class(TAUnderWaterProjectile) {
+ARMDEPTHCHARGE = Class(TADepthCharges) {
 }
 
 TypeClass = ARMDEPTHCHARGE

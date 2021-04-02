@@ -227,10 +227,10 @@ TechLevel = 'RULEUTL_Advanced',
             WeaponCategory = 'AntiNavy',
 	    FiringTolerance = 360,
             Label = 'WEAPON',
-            MaxRadius = 45,
+            MaxRadius = 20,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 5,
+            MuzzleVelocity = 10,
             ProjectileId = '/mods/SCTA-master/projectiles/COREDEPTHCHARGE/COREDEPTHCHARGE_proj.bp',
             RackBones = {
                 {

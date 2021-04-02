@@ -95,7 +95,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTANaval',
     Plan = 'EngineerBuildAISCTANaval',
     GlobalSquads = {
-        { categories.NAVAL * categories.TECH1 * categories.ENGINEER, 1, 1, 'support', 'None' }
+        { categories.NAVAL * categories.ENGINEER, 1, 1, 'support', 'None' }
     },
 }
 

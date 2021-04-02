@@ -31,12 +31,6 @@ ProjectileBlueprint {
         'PROJECTILE',
 	    'ANTINAVY',
     },
-    DoNotCollideList = {
-        'TORPEDO',
-    },
-    Defense = {
-        Health = 1,
-    },
     Display = {
         CameraFollowTimeout = 3,
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/DEPTHCHARGE_mesh.bp',
@@ -54,12 +48,12 @@ ProjectileBlueprint {
     },
     Physics = {
         DestroyOnWater = false,
-        InitialSpeed = 5,
+        InitialSpeed = 10,
         Lifetime = 4,
-        UseGravity = false,
+        UseGravity = true,
         TrackTarget = true,
         TurnRate = 90,
         VelocityAlign = true,
-	StayUnderwater = true
+	    StayUnderwater = true
     },
 }

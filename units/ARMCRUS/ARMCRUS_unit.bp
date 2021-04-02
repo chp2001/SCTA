@@ -226,10 +226,10 @@ UnitBlueprint {
             WeaponCategory = 'AntiNavy',
 	        FiringTolerance = 3,
             Label = 'WEAPON',
-            MaxRadius = 45,
+            MaxRadius = 20,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 5,
+            MuzzleVelocity = 10,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMDEPTHCHARGE/ARMDEPTHCHARGE_proj.bp',
             RackBones = {
                 {

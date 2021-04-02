@@ -17,10 +17,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         Priority = 131,
         InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, LAB * categories.NAVAL } }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, PLANT * categories.NAVAL} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.5 } },
+        BuilderConditions = { 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, PLANT * categories.NAVAL} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
         BuilderType = 'Any',
@@ -28,7 +27,6 @@ BuilderGroup {
             Construction = {
                 Location = 'LocationType',
                 NearMarkerType = 'Naval Area',
-                BuildClose = true,
                 BuildStructures = {
                     'T1SeaFactory',
                 },
@@ -41,6 +39,7 @@ BuilderGroup {
         Priority = 127,
         InstanceCount = 1,
         BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', { 900 } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
@@ -49,7 +48,6 @@ BuilderGroup {
                 Construction = {
                     Location = 'LocationType',
                     NearMarkerType = 'Naval Area',
-                    BuildClose = true,
                     BuildStructures = {
                     'T2SeaFactory',
                 }
@@ -120,7 +118,6 @@ BuilderGroup {
             Construction = {
                 Location = 'LocationType',
                 NearMarkerType = 'Naval Area',
-                BuildClose = true,
                 BuildStructures = {
                     'T1EnergyProduction3',
                 }

@@ -431,6 +431,15 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
             end
 
+            -- If moving far from base, tell the assisting platoons to not go with
+            if cons.FireBase or cons.ExpansionBase then
+                local guards = eng:GetGuards()
+                for k,v in guards do
+                    if not v.Dead and v.PlatoonHandle then
+                        v.PlatoonHandle:PlatoonDisband()
+                    end
+                end
+            end
 
             if not cons.BaseTemplate and (cons.NearMarkerType == 'Naval Area' or cons.NearMarkerType == 'Defensive Point' or cons.NearMarkerType == 'Expansion Area') then
                 baseTmpl = baseTmplFile['ExpansionBaseTemplates'][factionIndex]
@@ -446,6 +455,18 @@ Platoon = Class(SCTAAIPlatoon) {
             -- Must use BuildBaseOrdered to start at the marker; otherwise it builds closest to the eng
             --buildFunction = AIBuildStructures.AIBuildBaseTemplateOrdered
             buildFunction = AIBuildStructures.AIBuildBaseTemplate
+        elseif cons.NearMarkerType and cons.NearMarkerType == 'Defensive Point' then
+            baseTmpl = baseTmplFile['ExpansionBaseTemplates'][factionIndex]
+
+            relative = false
+            local pos = self:GetPlatoonPosition()
+            reference, refName = AIUtils.AIFindDefensivePointNeedsStructure(aiBrain, cons.LocationType, (cons.LocationRadius or 100),
+                            cons.MarkerUnitCategory, cons.MarkerRadius, cons.MarkerUnitCount, (cons.ThreatMin or 0), (cons.ThreatMax or 1),
+                            (cons.ThreatRings or 1), (cons.ThreatType or 'AntiSurface'))
+
+            table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
+
+            buildFunction = AIBuildStructures.AIExecuteBuildStructure
         elseif cons.NearMarkerType and cons.NearMarkerType == 'Naval Defensive Point' then
             baseTmpl = baseTmplFile['ExpansionBaseTemplates'][factionIndex]
 

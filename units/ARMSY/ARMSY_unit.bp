@@ -86,6 +86,8 @@ UnitBlueprint {
         },
         StorageMass = 50,
         StorageEnergy = 50,
+        InitialRallyX = 0,
+	    InitialRallyZ = 7,
     },
     Footprint = {
         MinWaterDepth = 1.5,

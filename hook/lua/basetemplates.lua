@@ -3,7 +3,6 @@ BaseTemplates[6] = {
         {
         'T1EnergyProduction',
         'T1EnergyProduction2',
-        'T1EnergyProduction3',
         'T1Radar',
         'MassStorage',
         'EnergyStorage',
@@ -958,6 +957,7 @@ BaseTemplates[6] = {
     },
     {
         {
+        'T1EnergyProduction3',
         'T2StrategicMissile',
         'T2ShieldDefense',
         'T3StrategicMissileDefense',
@@ -1932,7 +1932,6 @@ ExpansionBaseTemplates[6] = {
             {
                 'T1EnergyProduction',
                 'T1EnergyProduction2',
-                'T1EnergyProduction3',
                 'MassStorage',
                 'EnergyStorage',
                 'T1MassCreation',
@@ -2382,7 +2381,8 @@ ExpansionBaseTemplates[6] = {
             { -20, 19, 0 },
         },
         {
-            {
+            {        
+                'T1EnergyProduction3',
                 'T2StrategicMissile',
                 'T2ShieldDefense',
                 'T3StrategicMissileDefense',
@@ -2845,7 +2845,6 @@ BaseTemplates[7] = {
         {
         'T1EnergyProduction',
         'T1EnergyProduction2',
-        'T1EnergyProduction3',
         'T1Radar',
         'MassStorage',
         'EnergyStorage',
@@ -3800,6 +3799,7 @@ BaseTemplates[7] = {
     },
     {
         {
+        'T1EnergyProduction3',
         'T2StrategicMissile',
         'T2ShieldDefense',
         'T3StrategicMissileDefense',
@@ -4773,7 +4773,6 @@ ExpansionBaseTemplates[7] = {
         {
             'T1EnergyProduction',
             'T1EnergyProduction2',
-            'T1EnergyProduction3',
             'MassStorage',
             'EnergyStorage',
             'T1MassCreation',
@@ -5224,6 +5223,7 @@ ExpansionBaseTemplates[7] = {
     },
     {
         {
+            'T1EnergyProduction3',
             'T2StrategicMissile',
             'T2ShieldDefense',
             'T3StrategicMissileDefense',

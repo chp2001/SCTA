@@ -43,7 +43,6 @@ UnitBlueprint {
     'SNIPEMODE',
     'ANTISHIELD',
     },
-    CollisionOffsetY = -1,
     Defense = {
         ArmorType = 'Structure',
         AirThreatLevel = 0,

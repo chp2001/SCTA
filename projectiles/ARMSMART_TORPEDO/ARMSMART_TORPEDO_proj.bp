@@ -30,7 +30,10 @@ ProjectileBlueprint {
         'ARM',
         'PROJECTILE',
         'TORPEDO',
-	'ANTINAVY',
+	    'ANTINAVY',
+    },
+    Defense = {
+        Health = 1,
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/torpedo_mesh.bp',
@@ -43,14 +46,14 @@ ProjectileBlueprint {
             'ARM',
             'PROJECTILE',
             'TORPEDO',
-	    'ANTINAVY',
+	        'ANTINAVY',
         },
         Faction = 'ARM',
         Weapon = 'ARMSMART_TORPEDO',
     },
-
     Physics = {
         Acceleration = 5,
+        TrackTime = 2,
         DestroyOnWater = false,
         InitialSpeed = 5,
         Lifetime = 7,

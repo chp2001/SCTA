@@ -212,7 +212,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 180,
-            DamageType = 'Normal',
+            DamageType = 'TASpec',
             DisplayName = 'ARMSHIP_MISSILE',
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Air',
@@ -230,11 +230,6 @@ UnitBlueprint {
                 {
                     MuzzleBones = {
                         'flare1',
-                    },
-                    RackBone = 'launcher2',
-                },
-                {
-                    MuzzleBones = {
                         'flare2',
                     },
                     RackBone = 'launcher2',

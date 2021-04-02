@@ -37,6 +37,9 @@ ProjectileBlueprint {
         UniformScale = 0.16,
         StrategicIconSize = 1,
     },
+    Defense = {
+        Health = 1,
+    },
     General = {
         Category = 'AntiNavy',
         EntityCategory = {
@@ -48,13 +51,13 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORSMART_TORPEDO',
     },
-
     Physics = {
         Acceleration = 5,
         DestroyOnWater = false,
         InitialSpeed = 5,
         Lifetime = 7,
         MaxSpeed = 20,
+        TrackTime = 2,
         StayUnderwater = true,
         TrackTarget = true,
         TurnRate = 230,

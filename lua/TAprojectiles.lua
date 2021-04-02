@@ -4,8 +4,8 @@ local NukeProjectile = DefaultProjectileFile.NukeProjectile
 local OnWaterEntryEmitterProjectile = DefaultProjectileFile.OnWaterEntryEmitterProjectile
 
 TAProjectile = Class(SinglePolyTrailProjectile) {
-	PolyTrail =  '/effects/emitters/aeon_laser_trail_02_emit.bp',
-	}
+	PolyTrail = '',
+}
 
 TANuclearProjectile = Class(NukeProjectile) {
 	FxSmoke = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
@@ -113,7 +113,7 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
-    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
+    	'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
 	},
 	FxShieldHitScale = 2,
 	FxImpactUnit = {
@@ -381,20 +381,16 @@ TALaserProjectile = Class(TAProjectile) {
 TAEMGProjectile = Class(TALaserProjectile ) {
 }
 
-
-TAUnderWaterProjectile = Class(TAMediumCannonProjectile) {
-	OnCreate = function(self)
-		TAMediumCannonProjectile.OnCreate(self)
-		self:SetCollisionShape('Sphere', 0, 0, 0, 1)
-		end,
-
-	OnEnterWater = function(self)
+TADepthCharges = Class(OnWaterEntryEmitterProjectile) {
+    OnEnterWater = function(self)
+        OnWaterEntryEmitterProjectile.OnEnterWater(self)
 		for k,v in self.FxImpactWater do
 			CreateEmitterAtEntity(self, self:GetArmy(), v):ScaleEmitter(self.FxWaterHitScale)
 		end
-	end,
+    end,
 
 	OnExitWater = function(self)
+		OnWaterEntryEmitterProjectile.OnExitWater(self)
 		for k,v in self.FxImpactWater do
 			CreateEmitterAtEntity(self, self:GetArmy(), v):ScaleEmitter(self.FxWaterHitScale)
 		end
@@ -417,4 +413,22 @@ TAUnderWaterProjectile = Class(TAMediumCannonProjectile) {
 		'/effects/emitters/destruction_water_splash_ripples_01_emit.bp',
 	},
 		FxWaterHitScale = 0.35,
+}
+
+TAUnderWaterProjectile = Class(TADepthCharges) {
+
+    OnCreate = function(self, inWater)
+        TADepthCharges.OnCreate(self, inWater)
+		self:SetCollisionShape('Sphere', 0, 0, 0, 1)
+		self:ForkThread( self.TrackingThread, self )
+	end,
+
+
+	TrackingThread = function(self)
+		self:TrackTarget(false)
+		WaitSeconds(self.TrackTime/2)
+		self:TrackTarget(true)
+		WaitSeconds(self.TrackTime)
+		self:TrackTarget(false)
+	end,
 }

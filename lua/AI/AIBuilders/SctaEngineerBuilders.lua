@@ -54,9 +54,9 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Naval Engineer',
         PlatoonTemplate = 'T1EngineerSCTANaval',
-        Priority = 120, -- Top factory priority
+        Priority = 140, -- Top factory priority
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.NAVAL * categories.ENGINEER} }, -- Build engies until we have 4 of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.NAVAL * categories.ENGINEER} }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'Sea',
     },

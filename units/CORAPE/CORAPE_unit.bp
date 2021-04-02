@@ -189,7 +189,6 @@ TechLevel = 'RULEUTL_Advanced',
             ProjectileId = '/mods/SCTA-master/projectiles/VTOL_ROCKET/VTOL_ROCKET_proj.bp',
             RackBones = {
                 { MuzzleBones = { 'flare1'}, RackBone = 'gun1'},
-                { MuzzleBones = { 'flare2'}, RackBone = 'gun2'},
             },
             RackRecoilDistance = 0,
             RackReloadTimeout = 0,

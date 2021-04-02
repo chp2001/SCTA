@@ -32,6 +32,9 @@ ProjectileBlueprint {
         'TORPEDO',
         'CORE',
     },
+    Defense = {
+        Health = 1,
+    },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/torpedo_mesh.bp',
         StrategicIconSize = 1,
@@ -48,11 +51,12 @@ ProjectileBlueprint {
         Faction = 'CORE',
     },
     Physics = {
-        Acceleration = 0,
+        Acceleration = 5,
         DestroyOnWater = false,
         InitialSpeed = 15,
         Lifetime = 20,
-        MaxSpeed = 15,
+        MaxSpeed = 25,
+        TrackTime = 2,
         StayUnderwater = true,
         TrackTarget = true,
         TurnRate = 230,

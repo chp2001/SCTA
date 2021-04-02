@@ -29,8 +29,11 @@ ProjectileBlueprint {
     Categories = {
         'PROJECTILE',
         'TORPEDO',
-	'ANTINAVY',
-    'ARM',
+	    'ANTINAVY',
+        'ARM',
+    },
+    Defense = {
+        Health = 1,
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/AdvTorpedo_mesh.bp', #Change
@@ -42,15 +45,15 @@ ProjectileBlueprint {
         EntityCategory = {
             'PROJECTILE',
             'TORPEDO',
-	    'ANTINAVY',
-        'CORE',
+	        'ANTINAVY',
+            'CORE',
         },
         Faction = 'ARM',
         Weapon = 'ARMATL_TORPEDO',
     },
-
     Physics = {
         Acceleration = 5,
+        TrackTime = 2,
         DestroyOnWater = false,
         InitialSpeed = 3,
         Lifetime = 7,

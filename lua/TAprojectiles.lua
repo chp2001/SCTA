@@ -382,7 +382,6 @@ TAEMGProjectile = Class(TALaserProjectile ) {
 }
 
 TADepthCharges = Class(OnWaterEntryEmitterProjectile) {
-	
     OnEnterWater = function(self)
         OnWaterEntryEmitterProjectile.OnEnterWater(self)
 		for k,v in self.FxImpactWater do
@@ -419,7 +418,17 @@ TADepthCharges = Class(OnWaterEntryEmitterProjectile) {
 TAUnderWaterProjectile = Class(TADepthCharges) {
 
     OnCreate = function(self, inWater)
-        OnWaterEntryEmitterProjectile.OnCreate(self, inWater)
+        TADepthCharges.OnCreate(self, inWater)
 		self:SetCollisionShape('Sphere', 0, 0, 0, 1)
-    end,
+		self:ForkThread( self.TrackingThread, self )
+	end,
+
+
+	TrackingThread = function(self)
+		self:TrackTarget(false)
+		WaitSeconds(self.TrackTime/2)
+		self:TrackTarget(true)
+		WaitSeconds(self.TrackTime)
+		self:TrackTarget(false)
+	end,
 }

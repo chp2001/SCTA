@@ -32,6 +32,9 @@ ProjectileBlueprint {
         'ANTINAVY',
         'TORPEDO',
     },
+    Defense = {
+        Health = 1,
+    },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/torpedo_mesh.bp',
         StrategicIconSize = 1,
@@ -43,7 +46,7 @@ ProjectileBlueprint {
             'CORE',
             'PROJECTILE',
             'TORPEDO',
-	    'ANTINAVY',
+	        'ANTINAVY',
         },
         Faction = 'CORE',
         Weapon = 'CORAIR_TORPEDO',
@@ -54,6 +57,7 @@ ProjectileBlueprint {
         DestroyOnWater = false,
         InitialSpeed = 10,
         Lifetime = 20,
+        TrackTime = 2,
         MaxSpeed = 10,
         StayUnderwater = true,
         TrackTarget = true,

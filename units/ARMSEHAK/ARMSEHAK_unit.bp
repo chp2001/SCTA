@@ -168,7 +168,7 @@ UnitBlueprint {
     SelectionSizeZ = 1.5,
     SelectionThickness = 0.25,
     SizeSphere = 1.6,
-    SizeX = 2.3,
+    SizeX = 1,
     SizeY = 0.25,
     SizeZ = 1,
     StrategicIconName = 'icon_fighter3_intel',

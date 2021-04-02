@@ -5,6 +5,8 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 TAFactory = Class(FactoryUnit) {
     OnCreate = function(self)
     FactoryUnit.OnCreate(self)
+    self.AnimManip = CreateAnimator(self)
+    self.Trash:Add(self.AnimManip)
     if __blueprints['armgant'] then
         TAutils.updateBuildRestrictions(self)
     end
@@ -34,6 +36,8 @@ TAFactory = Class(FactoryUnit) {
         end,
 
 		Open = function(self)
+            self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
+            self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 		end,
 
 
@@ -44,6 +48,8 @@ TAFactory = Class(FactoryUnit) {
         
 
 		Close = function(self)
+            self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
+            self.AnimManip:SetRate(-0.1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 		end,
 
 		CreateBuildEffects = function(self, unitBeingBuilt, order)
@@ -55,42 +61,53 @@ TAFactory = Class(FactoryUnit) {
     CreateBuildEffects = function(self, unitBeingBuilt, order)
         TAutils.CreateTASeaFactBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
     end,
-    }    
-
-    TAGantry = Class(FactoryUnit) {	
-        OnStartBuild = function(self, unitBeingBuilt, order )
-            ForkThread(self.FactoryStartBuild, self, unitBeingBuilt, order )
-            self:Open()
-        end,
-
-        OnStopBeingBuilt = function(self, builder, layer)
-            FactoryUnit.OnStopBeingBuilt(self, builder, layer)
-            if __blueprints['armgant'] then
-                local aiBrain = GetArmyBrain(self.Army)
-                local buildRestrictionVictims = aiBrain:GetListOfUnits(categories.FACTORY + categories.ENGINEER, false)
-                for id, unit in buildRestrictionVictims do    
-                TAutils.TABuildRestrictions(unit)
-            end
+    }
+    
+    TASeaPlat = Class(TAFactory) {
+    OnStopBeingBuilt = function(self,builder,layer)
+        self.Sliders = {
+			chassis = CreateSlider(self, 0),
+		}
+		for k, v in self.Sliders do
+			self.Trash:Add(v)
+		end
+        TAFactory.OnStopBeingBuilt(self,builder,layer)
+        self:DisableIntel('RadarStealth')
+        if layer == 'Water' then
+            self.bp = self:GetBlueprint()
+            self.scale = 0.5
+            self.Water = true
+            self:WaterFall()
         end
-        end,
+    end,
     
-        FactoryStartBuild = function(self, unitBeingBuilt, order )
-            WaitFor(self.AnimManip)
-            if not self.Dead and not IsDestroyed(unitBeingBuilt) then
-            FactoryUnit.OnStartBuild(self, unitBeingBuilt, order ) 
-            end
-        end,
-    
-            Open = function(self)
-            end,
 
-            OnStopBuild = function(self, unitBuilding)
-                FactoryUnit.OnStopBuild(self, unitBuilding)
-                self:Close()
-            end,
-            
-            Close = function(self)
-            end,
+    Open = function(self)
+        if self.Water then
+			self.Sliders.chassis:SetSpeed(5)
+			self.Sliders.chassis:SetGoal(0,-5,0)
+			self:SetCollisionShape( 'Box', self.bp.CollisionOffsetX or 0,(self.bp.CollisionOffsetY + (self.bp.SizeY*0.5)) or 0,self.bp.CollisionOffsetZ or 0, self.bp.SizeX * self.scale, self.bp.SizeY * self.scale, self.bp.SizeZ * self.scale )
+			self:DisableIntel('RadarStealth')
+		end
+    TAFactory.Open(self)
+    end,
+
+    Close = function(self)
+		TAFactory.Close(self)
+		self:WaterFall()
+	end,
+
+    WaterFall = function(self)
+		if self.Water then
+			self.Sliders.chassis:SetSpeed(10)
+			self.Sliders.chassis:SetGoal(0,-20,0)
+			self:SetCollisionShape( 'Box', self.bp.CollisionOffsetX or -5,(self.bp.CollisionOffsetY + (self.bp.SizeY*-0.5)) or 0,self.bp.CollisionOffsetZ or -5, self.bp.SizeX * self.scale, self.bp.SizeY * self.scale, self.bp.SizeZ * self.scale )
+			self:EnableIntel('RadarStealth')
+		end
+	end,
+    }
+
+    TAGantry = Class(TAFactory) {	
     
             CreateBuildEffects = function(self, unitBeingBuilt, order)
                 TAutils.CreateTAGantBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )

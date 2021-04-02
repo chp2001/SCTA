@@ -3,9 +3,9 @@
 #
 #Script created by Raevn
 
-local TAFactory = import('/mods/SCTA-master/lua/TAFactory.lua').TAFactory
+local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 
-ARMASP = Class(TAFactory) {
+ARMASP = Class(TAStructure) {
 }
 
 TypeClass = ARMASP

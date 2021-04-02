@@ -42,6 +42,7 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'CORE',
         'AIR',
+        'SUBMERSIBLE',
 	    'SORTCONSTRUCTION',
     },
     Defense = {
@@ -55,8 +56,12 @@ UnitBlueprint {
     },
     Description = 'Builds Seaplanes',
     Display = {
-        AnimationUnpack = '/mods/SCTA-master/units/CORPLAT/CORPLAT_lod0_unpack.sca',
+        AnimationUnpack = '/mods/SCTA-master/units/CORPLAT/CORPLAT_lod0_uNPack.sca',
         AnimationUnpackRate = 1, 
+        AnimationWater = '/mods/SCTA-master/units/CORPLAT/CORPLAT_lod0_A_drop.sca',
+        AnimationWaterRate = 1, 
+        ----AnimationLand = '/mods/SCTA-master/units/CORPLAT/CORPLAT_lod0_B_drop.sca',
+        ---AnimationLandRate = 1, 
         Abilities = {
             '<LOC ability_aquatic>Aquatic',
         },

@@ -57,7 +57,7 @@ UnitBlueprint {
         'OVERLAYSONAR',
         },
     Defense = {
-        ArmorType = 'Sub',
+        ArmorType = 'Normal',
         Health = 360,
         MaxHealth = 360,
         AirThreatLevel = 0,

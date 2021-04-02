@@ -43,7 +43,7 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.1,
     Defense = {
-        ArmorType = 'Sub',
+        ArmorType = 'Normal',
         Health = 610,
         MaxHealth = 610,
         AirThreatLevel = 0,
@@ -141,7 +141,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	        DamageFriendly = true,
-            Damage = 240,
+            Damage = 350,
             DamageType = 'TASpec',
             DisplayName = 'ARM_TORPEDO',
             FireTargetLayerCapsTable = {
@@ -153,13 +153,62 @@ UnitBlueprint {
             Label = 'ARM_TORPEDO',
             MaxRadius = 30,
             MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 2,
+            MuzzleSalvoSize = 1,
             MuzzleVelocity = 5,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_TORPEDO/ARM_TORPEDO_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
                         'tube1',
+                    },
+                    RackBone = 'taw009',
+                },
+            },
+            RackFireTogether = false,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            TrackingRadius = 1.15,
+            RackSlavedToTurret = false,
+            RateOfFire = 0.2,
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'ALLUNITS',
+            },
+            FiringTolerance = 360,
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
+        },
+        {
+            Audio = {
+                Fire = Sound {
+                    Bank = 'TA_Sound',
+                    Cue = 'TORPEDO1',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+	        DamageFriendly = true,
+            Damage = 350,
+            DamageType = 'TASpec',
+            DisplayName = 'ARM_TORPEDO',
+            FireTargetLayerCapsTable = {
+                Sub = 'Seabed|Sub|Water',
+                Water = 'Seabed|Sub|Water',
+            },
+            RangeCategory = 'UWRC_AntiNavy',
+            WeaponCategory = 'AntiNavy',
+            Label = 'ARM_TORPEDO',
+            MaxRadius = 30,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 5,
+            ProjectileId = '/mods/SCTA-master/projectiles/ARM_TORPEDO/ARM_TORPEDO_proj.bp',
+            RackBones = {
+                {
+                    MuzzleBones = {
                         'tube2',
                     },
                     RackBone = 'taw009',
@@ -173,7 +222,7 @@ UnitBlueprint {
             RackSalvoSize = 1,
             TrackingRadius = 1.15,
             RackSlavedToTurret = false,
-            RateOfFire = 0.5,
+            RateOfFire = 0.2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

@@ -173,8 +173,8 @@ UnitBlueprint {
                 AutoInitiateAttackCommand = true,
                 BallisticArc = 'RULEUBA_None',
                 CollideFriendly = false,
-                Damage = 1500,
-                DamageType = 'TASpec',
+                Damage = 750,
+                DamageType = 'Normal',
                 DisplayName = 'ARMAIR_TORPEDO',
                 FireTargetLayerCapsTable = {
                     Air = 'Water|Seabed|Sub',

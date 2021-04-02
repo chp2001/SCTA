@@ -42,13 +42,11 @@ UnitBlueprint {
         'SNIPEMODE',
     },
     Defense = {
-        ArmorType = 'Sub',
+        ArmorType = 'Normal',
         Health = 290,
         MaxHealth = 290,
-        AirThreatLevel = 0,
         EconomyThreatLevel = 6,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
+        SubThreatLevel = 10,
     },
     Description = 'Submarine Killer ',
     Display = {
@@ -140,7 +138,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 900,
+            Damage = 600,
         DamageType = 'TASpec',
             DisplayName = 'ARMSMART_TORPEDO',
             FireTargetLayerCapsTable = {
@@ -170,7 +168,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 1,
+            RateOfFire = 0.5,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

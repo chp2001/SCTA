@@ -88,7 +88,7 @@
 
     { 
     # Armor Type Name
-    'Sub',
+    'Ship',
 
     # Armor Definition
     'Normal 1.0',

@@ -42,11 +42,9 @@ UnitBlueprint {
         'SNIPEMODE',
     },
     Defense = {
-        ArmorType = 'Sub',
+        ArmorType = 'Normal',
         Health = 276,
         MaxHealth = 276,
-        AirThreatLevel = 0,
-        EconomyThreatLevel = 0,
         SubThreatLevel = 10,
         SurfaceThreatLevel = 5,
     },

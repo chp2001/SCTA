@@ -46,7 +46,7 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.5,
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Ship',
         Health = 4050,
         MaxHealth = 4050,
         AirThreatLevel = 0,
@@ -216,8 +216,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 300,
-            DamageType = 'TASpec',
+            Damage = 70,
+            DamageType = 'Normal',
             DisplayName = 'ARMDEPTHCHARGE',
             FireTargetLayerCapsTable = {
                 Water = 'Water|Sub|Seabed',

@@ -1,8 +1,8 @@
 
 
-local TShellPhalanxProjectile = import('/lua/terranprojectiles.lua').TShellPhalanxProjectile
+local TAAntiRocketProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TAAntiRocketProjectile
 
-ARMSMIS_WEAPON = Class(TShellPhalanxProjectile) 
+ARMSMIS_WEAPON = Class(TAAntiRocketProjectile) 
 {}
 
 TypeClass = ARMSMIS_WEAPON

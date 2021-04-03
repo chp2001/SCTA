@@ -23,23 +23,13 @@ UnitBlueprint {
     SizeY = 3,
     SizeZ = 10,
     Description = 'Destroyer',
-    Physics = {
-            MaxAcceleration = 3,
-            MaxBrake = 3,
-            MaxSpeed = 4,
-            TurnRate = 80,
-        },
     Weapon = {
         [1] = {
-            ArtilleryShieldBlocks = true,
             Damage = 200,
-            MaxRadius = 80,
-            MuzzleSalvoSize = 2,
-            RackSalvoReloadTime = 1,
-            RackSalvoSize = 2,
             RateOfFire = 1,
         },
         [2] = {
+            Damage = 300,
         },
         [3] = {
         }, 

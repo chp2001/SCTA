@@ -26,15 +26,7 @@ UnitBlueprint {
     SizeZ = 6.6,
     Weapon = {
         [1] = {
-            Damage = 33,
-            FiringRandomness = 0,
-            FiringTolerance = 0,
             MaxRadius = 32,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
-            RackSalvoReloadTime = 1,
-            RackSalvoSize = 2,
-            RateOfFire = 2,
         },
         [2] = {
         },

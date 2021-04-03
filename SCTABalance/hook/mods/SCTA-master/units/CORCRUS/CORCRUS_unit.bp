@@ -31,14 +31,10 @@ UnitBlueprint {
     SizeZ = 9,
     Weapon = {
         [1] = {
-            Damage = 140,
-            MaxRadius = 85,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
-            RackSalvoSize = 1,
-            RateOfFire = 2,
+            RateOfFire = 1,
         },
         [2] = {
+            Damage = 300,
         },
         [3] = {
         },

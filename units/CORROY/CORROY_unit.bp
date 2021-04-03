@@ -77,7 +77,7 @@ UnitBlueprint {
 		Bones = {'wake1'},
         },
 	},
-        UniformScale = 0.16,
+        UniformScale = 0.18,
     },
     Economy = {
         BuildCostEnergy = 4505,

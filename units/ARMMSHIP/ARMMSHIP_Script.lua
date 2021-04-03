@@ -30,66 +30,15 @@ ARMMSHIP = Class(TASea) {
 		ARMMSHIP_ROCKET = Class(TAweapon) {
 			PlayFxRackReloadSequence = function(self)
 				self.unit.currentShot = self.unit.currentShot + 1
-				if self.unit.currentShot == 2 then
-					
+				if self.unit.currentShot == 1 then
 					self.unit:HideBone('rocket1', true)
+				else
 					self.unit:HideBone('rocket2', true)
-					--TURN launcher1 to x-axis <0> SPEED <120.02>;
-					self.unit.Spinners.launcher1:SetGoal(0)
-					self.unit.Spinners.launcher1:SetSpeed(120)
-
 					--SLEEP <750>;
-					WaitSeconds(0.75)
-
-					--MOVE plate to y-axis <0> SPEED <7.00>;
-					self.unit.Sliders.plate:SetGoal(0,0,0)
-					self.unit.Sliders.plate:SetSpeed(7)
-
-					--SLEEP <600>;
-					WaitSeconds(0.6)
-	
-					--MOVE door1 to x-axis <0> SPEED <6.00>;
-					self.unit.Sliders.door1:SetGoal(0,0,0)
-					self.unit.Sliders.door1:SetSpeed(6)
-
-					--MOVE door2 to x-axis <0> SPEED <7.00>;
-					self.unit.Sliders.door2:SetGoal(0,0,0)
-					self.unit.Sliders.door2:SetSpeed(6)
-
-					--SLEEP <600>;
-					WaitSeconds(1.5) #0.6 not long enough
-	
-					--SLEEP <10>;
+					WaitSeconds(0.5)
 
 					self.unit:ShowBone('rocket1', true)
 					self.unit:ShowBone('rocket2', true)
-	
-	
-					--MOVE door1 to x-axis <4.19> SPEED <6.00>;
-					self.unit.Sliders.door1:SetGoal(-4.19,0,0)
-					self.unit.Sliders.door1:SetSpeed(6)
-	
-					--MOVE door2 to x-axis <-4.35> SPEED <7.00>;
-					self.unit.Sliders.door2:SetGoal(4.19,0,0)
-					self.unit.Sliders.door2:SetSpeed(6)
-	
-					--SLEEP <600>;
-					WaitSeconds(0.6)
-	
-					--MOVE plate to y-axis <4.34> SPEED <7.00>;
-					self.unit.Sliders.plate:SetGoal(0,4.34,0)
-					self.unit.Sliders.plate:SetSpeed(7)
-	
-					--SLEEP <600>;
-					WaitSeconds(0.6)
-	
-					--TURN launcher1 to x-axis <-90.00> SPEED <120.02>;
-					self.unit.Spinners.launcher1:SetGoal(-90)
-					self.unit.Spinners.launcher1:SetSpeed(120)
-	
-					--SLEEP <750>;
-					WaitSeconds(0.75)
-	
 					--SLEEP <10>;
 					self.unit.currentShot = 0	
 					end	
@@ -105,8 +54,6 @@ ARMMSHIP = Class(TASea) {
 				self.unit.Sliders.door2:SetGoal(4.19,0,0)
 				self.unit.Sliders.door2:SetSpeed(6)
 
-				--SLEEP <600>;
-				WaitSeconds(0.6)
 
 				--MOVE plate to y-axis <4.34> SPEED <7.00>;
 				self.unit.Sliders.plate:SetGoal(0,4.34,0)
@@ -115,17 +62,14 @@ ARMMSHIP = Class(TASea) {
 				self.unit:ShowBone('rocket1', true)
 				self.unit:ShowBone('rocket2', true)
 				--SLEEP <600>;
-				WaitSeconds(0.6)
+				WaitSeconds(1)
 
 				--TURN launcher1 to x-axis <-90.00> SPEED <120.02>;
 				self.unit.Spinners.launcher1:SetGoal(-90)
 				self.unit.Spinners.launcher1:SetSpeed(120)
 
-				--SLEEP <750>;
-				WaitSeconds(1) #Not long enough, shot on an angle
-
-				--SLEEP <10>;
-
+				self.unit.currentShot = 0
+				WaitSeconds(1)
 				TAweapon.PlayFxWeaponUnpackSequence(self)
 			end,	
 
@@ -134,15 +78,12 @@ ARMMSHIP = Class(TASea) {
 				self.unit.Spinners.launcher1:SetGoal(0)
 				self.unit.Spinners.launcher1:SetSpeed(120)
 
-				--SLEEP <750>;
-				WaitSeconds(0.75)
-
 				--MOVE plate to y-axis <0> SPEED <7.00>;
 				self.unit.Sliders.plate:SetGoal(0,0,0)
 				self.unit.Sliders.plate:SetSpeed(7)
 
 				--SLEEP <600>;
-				WaitSeconds(0.6)
+				WaitSeconds(1)
 
 				--MOVE door1 to x-axis <0> SPEED <6.00>;
 				self.unit.Sliders.door1:SetGoal(0,0,0)

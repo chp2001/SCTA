@@ -8,11 +8,6 @@ local TAMInterceptorWeapon = import('/lua/terranweapons.lua').TAMInterceptorWeap
 local nukeFiredOnGotTarget = false
 
 CORFMD = Class(TAStructure) {
-	OnCreate = function(self)
-		TAStructure.OnCreate(self)
-		self.currentRound = 1
-		self.PackTime = 0
-	end,
 
 	Weapons = {
 		FMD_ROCKET = Class(TAMInterceptorWeapon) {

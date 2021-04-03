@@ -25,13 +25,14 @@ UnitBlueprint {
     },
     Weapon = {
         [1] = {
-            Damage = 75,
             MaxRadius = 35,
-            MuzzleSalvoDelay = 0.2,
-            MuzzleSalvoSize = 2,
-            RateOfFire = 1,
+            RateOfFire = 2,
         },
         [2] = {
+            MaxRadius = 35,
+            RateOfFire = 2,
+        },
+        [3] = {
         },
     },
 }

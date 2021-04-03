@@ -23,8 +23,8 @@ UnitBlueprint {
         UniformScale = 0.24,
     },
     Defense = {
-        Health = 2000,
-        MaxHealth = 2000,
+        Health = 6000,
+        MaxHealth = 6000,
     },
     Economy = {
         BuildCostEnergy = 450000,

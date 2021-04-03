@@ -20,8 +20,8 @@ UnitBlueprint {
         'STRATEGICBOMBER',
     },
     Defense = {
-        Health = 4000,
-        MaxHealth = 4000,
+        Health = 7000,
+        MaxHealth = 7000,
     },
     Economy = {
         BuildCostEnergy =  420000,

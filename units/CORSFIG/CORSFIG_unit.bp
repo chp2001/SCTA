@@ -193,19 +193,14 @@ TechLevel = 'RULEUTL_Basic',
     	    HeadingArcRange = 43.96,
             Label = 'CORVTOL_MISSILE',
             MaxRadius = 25,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
+            MuzzleSalvoDelay = 0.2,
+            MuzzleSalvoSize = 2,
             MuzzleVelocity = 70,
             ProjectileId = '/mods/SCTA-master/projectiles/CORSVTOL_MISSILE/CORSVTOL_MISSILE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
                         'missle1',
-                    },
-                    RackBone = 'body',
-                },
-                {
-                    MuzzleBones = {
                         'missle2',
                     },
                     RackBone = 'body',
@@ -216,7 +211,7 @@ TechLevel = 'RULEUTL_Basic',
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.5,
+            RateOfFire = 0.3,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',

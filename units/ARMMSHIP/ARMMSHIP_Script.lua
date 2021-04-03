@@ -5,7 +5,6 @@
 
 local TASea = import('/mods/SCTA-master/lua/TAMotion.lua').TASea
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
-local TAMPhalanxWeapon = import('/lua/terranweapons.lua').TAMPhalanxWeapon
 
 ARMMSHIP = Class(TASea) {
 	OnCreate = function(self)
@@ -157,7 +156,7 @@ ARMMSHIP = Class(TASea) {
 				TAweapon.PlayFxWeaponPackSequence(self)
 			end,	
 		},
-		ARMSHIP_MISSILE = Class(TAMPhalanxWeapon) {},
+		ARMSHIP_MISSILE = Class(TAweapon) {},
 	},
 }
 

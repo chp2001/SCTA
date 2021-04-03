@@ -37,7 +37,6 @@ UnitBlueprint {
             RateOfFire = 2,
         },
         [2] = {
-            RateOfFire = 0.3333333333, 
         },
         [3] = {
         }, 

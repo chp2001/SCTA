@@ -1,6 +1,6 @@
-local TALaserProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TALaserProjectile
+local TShellPhalanxProjectile = import('/lua/terranprojectiles.lua').TShellPhalanxProjectile
 
-TMD_LASER = Class(TALaserProjectile) 
+TMD_LASER = Class(TShellPhalanxProjectile) 
 {
 	PolyTrail = '/mods/SCTA-master/effects/emitters/GREEN_LASER_emit.bp',
 }

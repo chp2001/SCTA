@@ -5,7 +5,6 @@
 
 local TASea = import('/mods/SCTA-master/lua/TAMotion.lua').TASea
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
-local AAMWillOWisp = import('/lua/aeonweapons.lua').AAMWillOWisp
 
 CORMSHIP = Class(TASea) {
 	OnCreate = function(self)
@@ -65,7 +64,7 @@ CORMSHIP = Class(TASea) {
 				TAweapon.PlayFxWeaponPackSequence(self)
 			end,	
 		},
-		CORSHIP_MISSILE = Class(AAMWillOWisp) {},
+		CORSHIP_MISSILE = Class(TAweapon) {},
 	},
 }
 

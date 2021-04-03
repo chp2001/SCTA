@@ -161,6 +161,44 @@ BuilderGroup {
         }
     },
     Builder {
+        BuilderName = 'PGen Emergency',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        Priority = 27,
+        InstanceCount = 5,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {480} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.75}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1EnergyProduction2',
+                }
+            }
+        }
+    }, 
+    Builder {
+        BuilderName = 'PGen Air Emergency',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco12',
+        Priority = 30,
+        InstanceCount = 5,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {480} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.75}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1EnergyProduction2',
+                }
+            }
+        }
+    }, 
+    Builder {
         BuilderName = 'SCTAMissileTower Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 26,

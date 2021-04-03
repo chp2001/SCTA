@@ -25,10 +25,11 @@ UnitBlueprint {
     Description = 'Destroyer',
     Weapon = {
         [1] = {
-            Damage = 200,
+            Damage = 240,
             RateOfFire = 1,
         },
         [2] = {
+            Damage = 100,
         },
         [3] = {
         }, 

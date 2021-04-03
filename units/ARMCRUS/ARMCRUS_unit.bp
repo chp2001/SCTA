@@ -227,7 +227,7 @@ UnitBlueprint {
             WeaponCategory = 'AntiNavy',
 	        FiringTolerance = 360,
             Label = 'WEAPON',
-            MaxRadius = 20,
+            MaxRadius = 10,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 3,

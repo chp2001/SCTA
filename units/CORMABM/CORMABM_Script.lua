@@ -9,28 +9,25 @@ local DefaultWeapon = import('/lua/sim/DefaultWeapons.lua').DefaultProjectileWea
 CORMABM = Class(TAunit) {
 	OnCreate = function(self)
 		TAunit.OnCreate(self)
-		self.Spinners = {
-			barrel = CreateRotator(self, 'box', 'x', nil, 0, 0, 0),
-		}
-		for k, v in self.Spinners do
-			self.Trash:Add(v)
+		self.AnimManip = CreateAnimator(self)
+        self.Trash:Add(self.AnimManip)
+	end,
+
+	OnMotionHorzEventChange = function( self, new, old )
+		if new == 'Stopped' then
+            self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnfold)
+			self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnfoldRate or 0.2))
 		end
+		if old == 'Stopped' then
+            self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnfold)
+			self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationUnfoldRate or 0.2))
+        end
+		TAunit.OnMotionHorzEventChange(self, new, old)
 	end,
 
 	Weapons = {
 			Turret01 = Class(DefaultWeapon) {
-				PlayFxWeaponUnpackSequence = function(self)
-					self.unit.Spinners.barrel:SetGoal(-45)
-					self.unit.Spinners.barrel:SetSpeed(45)
-					DefaultWeapon.PlayFxWeaponUnpackSequence(self)
-				end,
-
-				PlayFxWeaponPackSequence = function(self)
-					self.unit.Spinners.barrel:SetGoal(0)
-					self.unit.Spinners.barrel:SetSpeed(45)
-					DefaultWeapon.PlayFxWeaponPackSequence(self)
-				end,
-			}
+		},
 	},
 }
 

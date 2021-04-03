@@ -4,6 +4,7 @@
 #Script created by Raevn
 
 local TASeaCounter = import('/mods/SCTA-master/lua/TAMotion.lua').TASeaCounter
+local DefaultWeapon = import('/lua/sim/DefaultWeapons.lua').DefaultProjectileWeapon
 
 CORSJAM = Class(TASeaCounter) {
 	OnCreate = function(self)
@@ -23,15 +24,18 @@ CORSJAM = Class(TASeaCounter) {
 
 	OnIntelDisabled = function(self)
 		self.Spinners.fork:SetSpeed(0)
-			self:PlayUnitSound('Deactivate')
 	TASeaCounter.OnIntelDisabled(self)
 end,
 
 
 OnIntelEnabled = function(self)
 	self.Spinners.fork:SetSpeed(100)
-	self:PlayUnitSound('Activate')
 	TASeaCounter.OnIntelEnabled(self)
 end,
+
+Weapons = {
+	Turret01 = Class(DefaultWeapon) {
+	},
+},
 }
 TypeClass = CORSJAM

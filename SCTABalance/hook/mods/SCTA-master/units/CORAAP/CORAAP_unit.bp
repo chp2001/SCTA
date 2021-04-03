@@ -28,7 +28,7 @@ UnitBlueprint {
         SizeZ = 7,
     },
         Display = {
-        UniformScale = 0.22,
+        UniformScale = 0.2,
     },
     Economy = {
         BuildCostEnergy = 20000,
@@ -37,13 +37,12 @@ UnitBlueprint {
         BuildableCategory = {
             'AIR MOBILE TECH1 CORE', 
             'AIR MOBILE TECH2 CORE',
-            'AIR MOBILE TECH3 CORE',
+            'ASF CORE',
         },
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
     LifeBarSize = 7,
-    
     SelectionSizeX = 7,
     SelectionSizeZ = 5,
     SelectionThickness = 0.25,

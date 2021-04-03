@@ -61,7 +61,7 @@ UnitBlueprint {
     Description = 'Produces Aircraft',
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/CORAP/CORAP_lod0Action.sca',
-        AnimationUnpackRate = 0.5,    
+        AnimationUnpackRate = 1,    
         BuildAttachBone = 'pad',
         Abilities = {
             '<LOC ability_radar>Radar',

@@ -1,19 +1,39 @@
 UnitBlueprint {
     Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'HIGHALTAIR',
+        'MOBILE',
+	    'BOMBER',
+        'AIR',
+        'DIRECTFIRE',
+        'ANTIAIR',
+        'OVERLAYDIRECTFIRE',
+        'OVERLAYANTIAIR',
+        'ARM',
+        'SNIPEMODE',
+        'NUKE',
+        'ASF',
+        'STRATEGICBOMBER',
+    },
     Display = {
         UniformScale = 0.24,
     },
     Defense = {
-        Health = 2000,
-        MaxHealth = 2000,
+        Health = 6000,
+        MaxHealth = 6000,
     },
     Economy = {
-        BuildCostEnergy = 30000,
-        BuildCostMass = 600,
+        BuildCostEnergy = 450000,
+        BuildTime = 40000,
+        BuildCostMass = 1800,
     },
     Weapon = {
         [1] = {
-            Damage = 400,
+            Damage = 800,
             RackReloadTimeout = 5,
         },
         [2] = {

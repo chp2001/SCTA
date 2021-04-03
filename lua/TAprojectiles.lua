@@ -299,14 +299,20 @@ FlameProjectile = Class(TALightCannonProjectile) {
 	FxImpactWater = {},
 }
 
-TARocketProjectile = Class(TAMediumCannonProjectile) {
+TAAntiRocketProjectile = Class(TAMediumCannonProjectile) {
 	FxSmoke = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
 	FxSmokeScale = 1,
 
 	OnCreate = function(self)
 	TAMediumCannonProjectile.OnCreate(self)
-	self.TrackTime = self:GetBlueprint().Physics.TrackTime
 	self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
+	end,
+}
+
+TARocketProjectile = Class(TAAntiRocketProjectile) {
+	OnCreate = function(self)
+	TAAntiRocketProjectile.OnCreate(self)
+	self.TrackTime = self:GetBlueprint().Physics.TrackTime
 	self:ForkThread( self.TrackingThread, self )
 end,
 

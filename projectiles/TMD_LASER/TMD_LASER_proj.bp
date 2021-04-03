@@ -1,4 +1,3 @@
-
 ProjectileBlueprint {
     Audio = {
         Impact = Sound {
@@ -28,36 +27,37 @@ ProjectileBlueprint {
         },
     },
     Categories = {
-        'CORE',
+        'ARM',
         'PROJECTILE',
-        'ANTIMISSILE',
+        'ANTINAVY',
     },
     Display = {
-        CameraFollowTimeout = 0,
-        CameraFollowsProjectile = false,
-        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/missile_mesh.bp',
+        CameraFollowTimeout = 1,
+        CameraFollowsProjectile = true,
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/DEPTHCHARGE_mesh.bp',
         StrategicIconSize = 1,
-        UniformScale = 0.16,
+        UniformScale = 0.22,
     },
     General = {
         Category = 'Defense',
         Categories = {
-            'CORE',
+            'ARM',
             'PROJECTILE',
-            'ANTIMISSILE',
+            'ANTINAVY',
         },
-        Faction = 'CORE',
+        Faction = 'ARM',
     },
     Physics = {
-        Acceleration = 0,
-        CollideEntity = true,
+        Acceleration = 1,
         CollideSurface = true,
-        DestroyOnWater = true,
-        FlareRadius = 15,
-        MaxSpeed = 10,
+        DestroyOnWater = false,
+        StayUnderwater = true,
+        InitialSpeed = 10,
+        LifeTime = 2, 
+        MaxSpeed = 15,
         TrackTarget = true,
         TurnRate = 360,
-        UseGravity = false,
+        UseGravity = true,
         VelocityAlign = true,
     },
 }

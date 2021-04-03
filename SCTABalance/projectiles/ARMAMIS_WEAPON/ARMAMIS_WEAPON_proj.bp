@@ -48,10 +48,8 @@ ProjectileBlueprint {
         },
         Faction = 'ARM',
     },
-
     Physics = {
         Acceleration = 10,
-        TrackTime = 2,
         CollideSurface = true,
         DestroyOnWater = true,
         InitialSpeed = 60,

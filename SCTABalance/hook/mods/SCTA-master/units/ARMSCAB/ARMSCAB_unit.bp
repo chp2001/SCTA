@@ -41,7 +41,6 @@ UnitBlueprint {
             },
             MaxRadius = 45,
             ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/ARMAMIS_WEAPON/ARMAMIS_WEAPON_proj.bp',
-            ProjectilesPerOnFire = 1,
             RackReloadTimeout = 2,
             TargetRestrictOnlyAllow = 'TACTICAL MISSILE',
             EffectiveRadius = 30,

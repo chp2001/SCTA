@@ -5,7 +5,6 @@
 
 local TASea = import('/mods/SCTA-master/lua/TAMotion.lua').TASea
 local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
-local AAMWillOWisp = import('/lua/aeonweapons.lua').AAMWillOWisp
 
 CORMSHIP = Class(TASea) {
 	OnCreate = function(self)
@@ -22,7 +21,7 @@ CORMSHIP = Class(TASea) {
 	
 	Weapons = {
 		CORMSHIP_ROCKET = Class(TAweapon) {
-    			PlayFxRackReloadSequence = function(self)
+			PlayFxRackReloadSequence = function(self)
 				self.unit.currentShot = self.unit.currentShot + 1
 				if self.unit.currentShot == 1 then
 					self.unit:HideBone('rocket1', true)
@@ -37,16 +36,16 @@ CORMSHIP = Class(TASea) {
 					self.unit:HideBone('rocket3', true)
 					self.unit:HideBone('rocket6', true)
 					self.unit:ShowBone('rocket5', true)
-				elseif self.unit.currentShot == 5 then
+				else
 					self.unit:HideBone('rocket4', true)
 					self.unit:ShowBone('rocket3', true)
 					WaitSeconds(0.5)
 					self.unit:ShowBone('rocket2', true)
 					WaitSeconds(0.5)
 					self.unit:ShowBone('rocket4', true)
-					self.unit:ShowBone('rocket6', true)	
-					self.unit.currentShot = 0
-				end	
+					self.unit:ShowBone('rocket6', true)
+					self.unit.currentShot = 0	
+				end
 				TAweapon.PlayFxRackReloadSequence(self)
 			end,
 
@@ -57,15 +56,11 @@ CORMSHIP = Class(TASea) {
 				self.unit:ShowBone('rocket4', true)
 				self.unit:ShowBone('rocket5', true)
 				self.unit:ShowBone('rocket6', true)
+				self.unit.currentShot = 0
 				TAweapon.PlayFxWeaponUnpackSequence(self)
-			end,	
-
-			PlayFxWeaponPackSequence = function(self)
-				WaitSeconds(0.5)
-				TAweapon.PlayFxWeaponPackSequence(self)
-			end,	
+			end,		
 		},
-		CORSHIP_MISSILE = Class(AAMWillOWisp) {},
+		CORSHIP_MISSILE = Class(TAweapon) {},
 	},
 }
 

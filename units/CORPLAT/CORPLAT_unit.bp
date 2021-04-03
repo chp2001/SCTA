@@ -58,8 +58,8 @@ UnitBlueprint {
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/CORPLAT/CORPLAT_lod0_uNPack.sca',
         AnimationUnpackRate = 1, 
-        AnimationWater = '/mods/SCTA-master/units/CORPLAT/CORPLAT_lod0_A_drop.sca',
-        AnimationWaterRate = 1, 
+        --AnimationWater = '/mods/SCTA-master/units/CORPLAT/CORPLAT_lod0_A_drop.sca',
+        --AnimationWaterRate = 1, 
         ----AnimationLand = '/mods/SCTA-master/units/CORPLAT/CORPLAT_lod0_B_drop.sca',
         ---AnimationLandRate = 1, 
         Abilities = {
@@ -85,7 +85,8 @@ UnitBlueprint {
     BuildableCategory = {
         'corveng',
         'cortitan',
-        'AIR MOBILE TECH3 CORE',
+        'corcsa',
+        'AIR MOBILE TRANSPORTATION TECH3 CORE',
     },
 	StorageEnergy = 250,
 	StorageMass = 250,

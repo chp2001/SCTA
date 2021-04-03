@@ -81,7 +81,8 @@ UnitBlueprint {
     BuildableCategory = {
         'armfig',
         'armlance',
-        'AIR MOBILE TECH3 ARM',
+        'armcsa',
+        'AIR MOBILE TRANSPORTATION TECH3 ARM',
     },
 	StorageEnergy = 250,
 	StorageMass = 250,

@@ -42,18 +42,11 @@ UnitBlueprint {
     SizeZ = 10,
     Weapon = {
         [1] = {
-            Damage = 500,
+            Damage = 300,
             DamageRadius = 2,
-            FiringRandomness = 0.5,
-            FiringTolerance = 0,
-            MaxRadius = 125,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
+            MaxRadius = 20,
             MuzzleVelocity = 35,
             ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/COR_BATL/COR_BATL_proj.bp',
-            RackRecoilDistance = -2.4,
-            RackSalvoSize = 1,
-            RateOfFire = 0.7692307692,
         },
         [2] = {
         },

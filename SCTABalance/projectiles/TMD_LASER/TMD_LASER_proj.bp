@@ -59,3 +59,25 @@ ProjectileBlueprint {
         VelocityAlign = true,
     },
 }
+
+--[[Damage = 1,
+DamageType = 'Normal',
+FireTargetLayerCapsTable = {
+    Land = 'Air',
+    Water = 'Air|Seabed|Sub|Water',
+},
+MaxRadius = 60,
+FiringTolerance = 360,
+MuzzleVelocity = 30,
+ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/TMD_LASER/TMD_LASER_proj.bp',
+ProjectileLifetimeUsesMultiplier = 1.1,
+ProjectilesPerOnFire = 1,
+RangeCategory = 'UWRC_Countermeasure',
+WeaponCategory = 'Defense',
+RateOfFire = 1,
+TargetCheckInterval = 0.5,
+TargetRestrictDisallow = 'UNTARGETABLE',
+TargetRestrictOnlyAllow = 'TACTICAL MISSILE, TORPEDO',
+TargetType = 'RULEWTT_Projectile',
+EffectiveRadius = 30,
+TrackingRadius = 20,]]

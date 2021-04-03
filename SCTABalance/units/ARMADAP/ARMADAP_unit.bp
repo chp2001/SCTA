@@ -75,7 +75,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.18,
+        UniformScale = 0.2,
     },
     Economy = {
         BuildCostEnergy = 45000,
@@ -84,7 +84,7 @@ UnitBlueprint {
         DifferentialUpgradeCostCalculation = true,
     BuildRate = 360,
     BuildableCategory = {
-        'AIR MOBILE TECH3 ARM',
+        'ASF ARM',
         'AIR MOBILE TECH2 ARM',
         'AIR MOBILE TECH1 ARM', 
         },

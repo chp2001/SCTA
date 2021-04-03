@@ -143,7 +143,7 @@ UnitBlueprint {
             DamagesFriendly = true,
             Damage = 180,
             DamageRadius = 1.5,
-            DamageType = 'Normal',
+            DamageType = 'TASpec',
             DisplayName = 'ARMAAS_WEAPON1',
 	        FiringTolerance = 10,
             FireTargetLayerCapsTable = {
@@ -234,8 +234,8 @@ UnitBlueprint {
             DamagesFriendly = true,
             Damage = 180,
             DamageRadius = 1.5,
-            DamageType = 'Normal',
-            DisplayName = 'ARMAAS_WEAPON2',
+            DamageType = 'TASpec',
+            DisplayName = 'ARMAAS_WEAPON1',
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Air',
             },

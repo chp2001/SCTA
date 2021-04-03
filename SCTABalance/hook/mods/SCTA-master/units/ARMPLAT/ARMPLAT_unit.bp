@@ -35,7 +35,8 @@ UnitBlueprint {
         BuildTime = 64000,
     BuildRate = 240,
         BuildableCategory = {
-            'AIR MOBILE TECH3 ARM',
+            'armcsa',
+            'AIR MOBILE TRANSPORTATION TECH3 ARM',
         },
     },
     Physics = {

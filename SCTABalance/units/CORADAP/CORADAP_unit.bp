@@ -60,7 +60,7 @@ UnitBlueprint {
             '<LOC ability_radar>Radar',
         },
         AnimationUnpack = '/mods/SCTA-master/units/CORAP/CORAP_lod0Action.sca',
-        AnimationUnpackRate = 0.5,
+        AnimationUnpackRate = 1,
 	BuildAttachBone = 'pad',
     Mesh = {
         IconFadeInZoom = 130,
@@ -75,7 +75,7 @@ UnitBlueprint {
             },
         },
     },
-        UniformScale = 0.22,
+        UniformScale = 0.2,
     },
     Economy = {
         BuildCostEnergy = 45000,
@@ -86,7 +86,7 @@ UnitBlueprint {
     BuildableCategory = {
         'AIR MOBILE TECH1 CORE', 
         'AIR MOBILE TECH2 CORE',
-        'AIR MOBILE TECH3 CORE',
+        'ASF CORE',
     },
     StorageMass = 50,
     StorageEnergy = 50,

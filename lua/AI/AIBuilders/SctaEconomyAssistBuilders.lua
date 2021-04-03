@@ -162,7 +162,7 @@ BuilderGroup {
         InstanceCount = 8,
         BuilderConditions = {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, PLANT * categories.AIR}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, LAB * categories.AIR} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, LAB * categories.AIR} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT * categories.AIR} },
             { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
             { EBC, 'LessEconStorageCurrent', { 100, 1000 } },    
@@ -181,7 +181,7 @@ BuilderGroup {
         Priority = 300,
         InstanceCount = 8,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {1200} },
+            { MIBC, 'GreaterThanGameTime', {900} },
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, PLANT}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, LAB} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT} },
@@ -197,18 +197,36 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Energy',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'ReclaimStructuresAI',
-        Priority = 22,
+        Priority = 88,
         InstanceCount = 8,
         BuilderConditions = {
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.ENERGYPRODUCTION * categories.STRUCTURE * categories.LAND}},
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.VOLATILE}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
             { EBC, 'LessThanEconStorageRatio', { 0.25, 1}},
             },
         BuilderData = {
             Location = 'LocationType',
-            Reclaim = {'ENERGYPRODUCTION TECH1 LAND'},
+            Reclaim = {'VOLATILE'},
+                ReclaimTime = 30,
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim Energy Air',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco123',
+        PlatoonAIPlan = 'ReclaimStructuresAI',
+        Priority = 97,
+        InstanceCount = 8,
+        BuilderConditions = {
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.VOLATILE}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
+            { EBC, 'LessThanEconStorageRatio', { 0.25, 1}},
+            },
+        BuilderData = {
+            Location = 'LocationType',
+            Reclaim = {'VOLATILE'},
                 ReclaimTime = 30,
         },
         BuilderType = 'Any',

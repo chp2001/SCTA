@@ -36,7 +36,7 @@ UnitBlueprint {
         'ECONOMIC',
         'SORTECONOMY',
 	    'ENERGYPRODUCTION',
-        'LAND',
+        'VOLATILE',
 	    'ARM',
     },
     Defense = {

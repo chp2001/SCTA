@@ -123,9 +123,9 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        MaxAcceleration = 3.05175782/2,
-        MaxBrake = 3.05175782/2,
-        MaxSpeed = 3.051757812/2,
+        MaxAcceleration = 2.5,   --3.05175782/2
+        MaxBrake = 2.5,   --3.05175782/2
+        MaxSpeed = 3,   ---3.051757812/2
         MotionType = 'RULEUMT_Amphibious',
         TurnRate = 102,
         MaxSteerForce = 10,

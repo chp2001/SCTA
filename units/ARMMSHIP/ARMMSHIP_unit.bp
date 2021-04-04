@@ -115,9 +115,9 @@ UnitBlueprint {
     Physics = {
         CatchUpAcc = 10,
         DragCoefficient = 0.2,
-        MaxAcceleration = 2,
+        MaxAcceleration = 1,
         MaxBrake = 2,
-        MaxSpeed = 3,
+        MaxSpeed = 2,
         BackUpDistance = 0,
         MaxSpeedReverse = 0,
         MaxSteerForce = 10,

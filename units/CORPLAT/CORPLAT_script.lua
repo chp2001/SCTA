@@ -7,21 +7,24 @@ local TASeaPlat = import('/mods/SCTA-master/lua/TAFactory.lua').TASeaPlat
 
 
 CORPLAT = Class(TASeaPlat) {
-
-	--[[OnStopBuild = function(self, unitBuilding)
-		TAFactory.OnStopBuild(self, unitBuilding)
-		if not self.Water and EntityCategoryContains(categories.HOVER, unitBuilding) then
-			ForkThread(self.Rolling, self)
+    Open = function(self)
+        if self.Water then
+			self.Sliders.chassis:SetSpeed(10)
+			self.Sliders.chassis:SetGoal(0,-5,0)
+			self:SetCollisionShape( 'Box', self.bp.CollisionOffsetX or 0,(self.bp.CollisionOffsetY + (self.bp.SizeY*0.5)) or 0,self.bp.CollisionOffsetZ or 0, self.bp.SizeX * self.scale, self.bp.SizeY * self.scale, self.bp.SizeZ * self.scale )
+			self:DisableIntel('RadarStealth')
+		end
+        TASeaPlat.Open(self)
+    end,
+	
+	WaterFall = function(self)
+		if self.Water then
+			self.Sliders.chassis:SetSpeed(10)
+			self.Sliders.chassis:SetGoal(0,-20,0)
+			self:SetCollisionShape( 'Box', self.bp.CollisionOffsetX or -5,(self.bp.CollisionOffsetY + (self.bp.SizeY*-0.5)) or 0,self.bp.CollisionOffsetZ or -5, self.bp.SizeX * self.scale, self.bp.SizeY * self.scale, self.bp.SizeZ * self.scale )
+			self:EnableIntel('RadarStealth')
 		end
 	end,
-
-	Rolling = function(self)
-		self.Sliders.chassis:SetSpeed(10)
-			self.Sliders.chassis:SetGoal(0,-10,0)
-			WaitSeconds(1)
-			self.Sliders.chassis:SetSpeed(10)
-			self.Sliders.chassis:SetGoal(0,0,0)
-	end,]]
 }
 
 TypeClass = CORPLAT

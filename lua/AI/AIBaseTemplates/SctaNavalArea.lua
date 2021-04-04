@@ -2,7 +2,6 @@
 BaseBuilderTemplate {
     BaseTemplateName = 'SCTANavalExpansion',
     Builders = {
-        'SCTAAIEngineerBuilder',
         'SCTAAINavalBuilder',
         'SCTANavalFormer',
 
@@ -21,7 +20,7 @@ BaseBuilderTemplate {
         FactoryCount = {
             Land = 0,
             Air = 0,
-            Sea = 8,
+            Sea = 4,
             Gate = 0,
         },
         MassToFactoryValues = {
@@ -40,7 +39,7 @@ BaseBuilderTemplate {
             return 10
         end
         --LOG('Return sctaai personality')
-        return 2000, 'SCTANavalExpansion'
+        return 1000, 'SCTANavalExpansion'
     end,
 }
 

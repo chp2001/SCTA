@@ -1272,7 +1272,7 @@ Platoon = Class(SCTAAIPlatoon) {
             end
             local buildRelative = eng.EngineerBuildQueue[1][3]
             if not eng.NotBuildingThread then
-                eng.NotBuildingThread = eng:ForkThread(eng.PlatoonHandle.WatchForNotBuilding)
+                eng.NotBuildingThread = eng:ForkThread(eng.PlatoonHandle.SCTAWatchForNotBuilding)
             end
             -- see if we can move there first
             if AIUtils.EngineerMoveWithSafePath(aiBrain, eng, buildLocation) then
@@ -1302,7 +1302,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 -- otherwise, go ahead and build the next structure there
                 aiBrain:BuildStructure(eng, whatToBuild, {buildLocation[1], buildLocation[3], 0}, buildRelative)
                 if not eng.NotBuildingThread then
-                    eng.NotBuildingThread = eng:ForkThread(eng.PlatoonHandle.WatchForNotBuilding)
+                    eng.NotBuildingThread = eng:ForkThread(eng.PlatoonHandle.SCTAWatchForNotBuilding)
                 end
                 commandDone = true
             else
@@ -1320,113 +1320,48 @@ Platoon = Class(SCTAAIPlatoon) {
         if eng then eng.ProcessBuild = nil end
     end,
 
-
-    --[[IdleEngineerSCTA = function(self)
-        -- stop the platoon from endless assisting
-        local brain = self:GetBrain()
-        local locationType = self.PlatoonData.LocationType
-        local createTick = GetGameTick()
-        local oldClosest
-        local units = self:GetPlatoonUnits()
-        local eng = units[1]
-        if not eng then
-            self:PlatoonDisband()
-            return
+    SCTAWatchForNotBuilding = function(eng)
+        WaitTicks(5)
+        local aiBrain = eng:GetAIBrain()
+        while not eng:IsDead() and eng.GoingHome or eng:IsUnitState("Building") or 
+                  eng:IsUnitState("Attacking") or eng:IsUnitState("Repairing") or 
+                  eng:IsUnitState("Reclaiming") or eng:IsUnitState("Capturing") or eng.ProcessBuild != nil do
+                  
+            WaitSeconds(3)
+            --if eng.CDRHome then eng:PrintCommandQueue() end
         end
-
-        while brain:PlatoonExists(self) do
-            local ents = TAutils.TAAIGetReclaimablesAroundLocation(brain, locationType) or {}
-            local pos = self:GetPlatoonPosition()
-
-            if not ents[1] or not pos then
-                WaitTicks(1)
-                return self:PlatoonDisband()
+        eng.NotBuildingThread = nil
+        if not eng:IsDead() and eng:IsIdleState() and table.getn(eng.EngineerBuildQueue) != 0 and eng.PlatoonHandle then
+            eng.PlatoonHandle.SetupEngineerCallbacksSCTA(eng)
+            if not eng.ProcessBuild then
+                eng.ProcessBuild = eng:ForkThread(eng.PlatoonHandle.SCTAProcessBuildCommand, true)
             end
-
-            local reclaim = {}
-            local needEnergy = brain:GetEconomyStoredRatio('ENERGY') < 0.5
-            local needMass = brain:GetEconomyStoredRatio('MASS') < 0.5
-
-            for k,v in ents do
-                if not IsProp(v) then continue end
-                if not needEnergy or not needMass or v.MaxEnergyReclaim then
-                    local rpos = v:GetCachePosition()
-                    table.insert(reclaim, {entity=v, pos=rpos, distance=VDist2(pos[1], pos[3], rpos[1], rpos[3])})
-            end
-            end
-
-            IssueClearCommands(units)
-            table.sort(reclaim, function(a, b) return a.distance < b.distance end)
-
-            local recPos = nil
-            local closest = {}
-            for i, r in reclaim do
-                -- This is slowing down the whole sim when engineers start's reclaiming, and every engi is pathing with CanPathTo (r.pos)
-                -- even if the engineer will run into walls, it is only reclaimig and don't justifies the huge CPU cost. (Simspeed droping from +9 to +3 !!!!)
-                -- eng.BadReclaimables[r.entity] = r.distance > 10 and not eng:CanPathTo (r.pos)
-                    IssueReclaim(units, r.entity)
-                    if i > 10 then break end
-            end
-            return self:SCTAEngineerTypeAI()
-        end
-    end,]]
+        end  
+    end,
 
     UnitUpgradeAI = function(self)
         local aiBrain = self:GetBrain()
         if not aiBrain.SCTAAI then
             return SCTAAIPlatoon.UnitUpgradeAI(self)
         end
-        if not EntityCategoryContains(categories.GATE, self) then
         local platoonUnits = self:GetPlatoonUnits()
         local FactionToIndex  = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, NOMADS = 5, ARM = 6, CORE = 7}
         local factionIndex = aiBrain:GetFactionIndex()
-        local UnitBeingUpgradeFactionIndex = nil
-        local upgradeIssued = false
         self:Stop()
-        --LOG('* SCTA UnitUpgradeAI: PlatoonName:'..repr(self.BuilderName))
         for k, v in platoonUnits do
-            --LOG('* SCTA UnitUpgradeAI: Upgrading unit '..v.UnitId..' ('..v.factionCategory..')')
             local upgradeID
-            -- Get the factionindex from the unit to get the right update (in case we have captured this unit from another faction)
             UnitBeingUpgradeFactionIndex = FactionToIndex[v.factionCategory] or factionIndex
-            --LOG('* SCTA UnitUpgradeAI: UnitBeingUpgradeFactionIndex '..UnitBeingUpgradeFactionIndex)
-            if not upgradeID and EntityCategoryContains(categories.MOBILE, v) then
-                upgradeID = aiBrain:FindUpgradeBP(v.UnitId, UnitUpgradeTemplates[UnitBeingUpgradeFactionIndex])
-                -- if we can't find a UnitUpgradeTemplate for this unit, warn the programmer
-                if not upgradeID then
-                    -- Output: WARNING: [platoon.lua, line:xxx] *SCTA UnitUpgradeAI ERROR: Can\'t find UnitUpgradeTemplate for mobile unit: ABC1234
-                    WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] *SCTA UnitUpgradeAI ERROR: Can\'t find UnitUpgradeTemplate for mobile unit: ' .. repr(v.UnitId) )
-                end
-            elseif not upgradeID then
-                upgradeID = aiBrain:FindUpgradeBP(v.UnitId, StructureUpgradeTemplates[UnitBeingUpgradeFactionIndex])
-                -- if we can't find a StructureUpgradeTemplate for this unit, warn the programmer
-                if not upgradeID then
-                    -- Output: WARNING: [platoon.lua, line:xxx] *SCTA UnitUpgradeAI ERROR: Can\'t find StructureUpgradeTemplate for structure: ABC1234
-                    WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] *SCTA UnitUpgradeAI ERROR: Can\'t find StructureUpgradeTemplate for structure: ' .. repr(v.UnitId) .. '  faction: ' .. repr(v.factionCategory) )
-                end
-            end
-            if upgradeID and EntityCategoryContains(categories.STRUCTURE, v) and not v:CanBuild(upgradeID) then
-                -- in case the unit can't upgrade with upgradeID, warn the programmer
-                -- Output: WARNING: [platoon.lua, line:xxx] *SCTA UnitUpgradeAI ERROR: ABC1234:CanBuild(upgradeID) failed!
-                WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] *SCTA UnitUpgradeAI ERROR: ' .. repr(v.UnitId) .. ':CanBuild( '..upgradeID..' ) failed!' )
-                continue
-            end
+                upgradeID = aiBrain:FindUpgradeBP(v:GetUnitId(), StructureUpgradeTemplates[UnitBeingUpgradeFactionIndex])
             if upgradeID then
-                upgradeIssued = true
                 IssueUpgrade({v}, upgradeID)
-                --LOG('-- Upgrading unit '..v.UnitId..' ('..v.factionCategory..') with '..upgradeID)
             end
-        end
-        if not upgradeIssued then
-            self:PlatoonDisband()
-            return
         end
         local upgrading = true
         while aiBrain:PlatoonExists(self) and upgrading do
             WaitSeconds(3)
             upgrading = false
             for k, v in platoonUnits do
-                if v and not v.Dead then
+                if v and not v:IsDead() then
                     upgrading = true
                 end
             end
@@ -1436,7 +1371,6 @@ Platoon = Class(SCTAAIPlatoon) {
         end
         WaitTicks(1)
         self:PlatoonDisband()
-    end
     end,
 
     SCTAAntiAirAI = function(self)
@@ -2083,6 +2017,7 @@ Platoon = Class(SCTAAIPlatoon) {
         end
     end,
 
+    ---Treating Spider and Climbing Kbots as Air Units
     AllTerrainAISCTA = function(self)
         self:Stop()
         local aiBrain = self:GetBrain()
@@ -2268,3 +2203,121 @@ Platoon = Class(SCTAAIPlatoon) {
             end
         end,
 }
+
+----Removed or Disabled Functions
+    --[[IdleEngineerSCTA = function(self)
+        -- stop the platoon from endless assisting
+        local brain = self:GetBrain()
+        local locationType = self.PlatoonData.LocationType
+        local createTick = GetGameTick()
+        local oldClosest
+        local units = self:GetPlatoonUnits()
+        local eng = units[1]
+        if not eng then
+            self:PlatoonDisband()
+            return
+        end
+
+        while brain:PlatoonExists(self) do
+            local ents = TAutils.TAAIGetReclaimablesAroundLocation(brain, locationType) or {}
+            local pos = self:GetPlatoonPosition()
+
+            if not ents[1] or not pos then
+                WaitTicks(1)
+                return self:PlatoonDisband()
+            end
+
+            local reclaim = {}
+            local needEnergy = brain:GetEconomyStoredRatio('ENERGY') < 0.5
+            local needMass = brain:GetEconomyStoredRatio('MASS') < 0.5
+
+            for k,v in ents do
+                if not IsProp(v) then continue end
+                if not needEnergy or not needMass or v.MaxEnergyReclaim then
+                    local rpos = v:GetCachePosition()
+                    table.insert(reclaim, {entity=v, pos=rpos, distance=VDist2(pos[1], pos[3], rpos[1], rpos[3])})
+            end
+            end
+
+            IssueClearCommands(units)
+            table.sort(reclaim, function(a, b) return a.distance < b.distance end)
+
+            local recPos = nil
+            local closest = {}
+            for i, r in reclaim do
+                -- This is slowing down the whole sim when engineers start's reclaiming, and every engi is pathing with CanPathTo (r.pos)
+                -- even if the engineer will run into walls, it is only reclaimig and don't justifies the huge CPU cost. (Simspeed droping from +9 to +3 !!!!)
+                -- eng.BadReclaimables[r.entity] = r.distance > 10 and not eng:CanPathTo (r.pos)
+                    IssueReclaim(units, r.entity)
+                    if i > 10 then break end
+            end
+            return self:SCTAEngineerTypeAI()
+        end
+    end,]]
+    --[[UnitUpgradeAI = function(self)
+        local aiBrain = self:GetBrain()
+        if not aiBrain.SCTAAI then
+            return SCTAAIPlatoon.UnitUpgradeAI(self)
+        end
+        if not EntityCategoryContains(categories.GATE, self) then
+        local platoonUnits = self:GetPlatoonUnits()
+        local FactionToIndex  = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, NOMADS = 5, ARM = 6, CORE = 7}
+        local factionIndex = aiBrain:GetFactionIndex()
+        local UnitBeingUpgradeFactionIndex = nil
+        local upgradeIssued = false
+        self:Stop()
+        --LOG('* SCTA UnitUpgradeAI: PlatoonName:'..repr(self.BuilderName))
+        for k, v in platoonUnits do
+            --LOG('* SCTA UnitUpgradeAI: Upgrading unit '..v.UnitId..' ('..v.factionCategory..')')
+            local upgradeID
+            -- Get the factionindex from the unit to get the right update (in case we have captured this unit from another faction)
+            UnitBeingUpgradeFactionIndex = FactionToIndex[v.factionCategory] or factionIndex
+            --LOG('* SCTA UnitUpgradeAI: UnitBeingUpgradeFactionIndex '..UnitBeingUpgradeFactionIndex)
+            if not upgradeID and EntityCategoryContains(categories.MOBILE, v) then
+                upgradeID = aiBrain:FindUpgradeBP(v.UnitId, UnitUpgradeTemplates[UnitBeingUpgradeFactionIndex])
+                -- if we can't find a UnitUpgradeTemplate for this unit, warn the programmer
+                 if not upgradeID then
+                   -- Output: WARNING: [platoon.lua, line:xxx] *SCTA UnitUpgradeAI ERROR: Can\'t find UnitUpgradeTemplate for mobile unit: ABC1234
+                    WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] *SCTA UnitUpgradeAI ERROR: Can\'t find UnitUpgradeTemplate for mobile unit: ' .. repr(v.UnitId) )
+                end
+            elseif not upgradeID then
+                upgradeID = aiBrain:FindUpgradeBP(v.UnitId, StructureUpgradeTemplates[UnitBeingUpgradeFactionIndex])
+                -- if we can't find a StructureUpgradeTemplate for this unit, warn the programmer
+                if not upgradeID then
+                    -- Output: WARNING: [platoon.lua, line:xxx] *SCTA UnitUpgradeAI ERROR: Can\'t find StructureUpgradeTemplate for structure: ABC1234
+                    WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] *SCTA UnitUpgradeAI ERROR: Can\'t find StructureUpgradeTemplate for structure: ' .. repr(v.UnitId) .. '  faction: ' .. repr(v.factionCategory) )
+                end
+            end
+            if upgradeID and EntityCategoryContains(categories.STRUCTURE, v) and not v:CanBuild(upgradeID) then
+                -- in case the unit can't upgrade with upgradeID, warn the programmer
+                -- Output: WARNING: [platoon.lua, line:xxx] *SCTA UnitUpgradeAI ERROR: ABC1234:CanBuild(upgradeID) failed!
+                WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] *SCTA UnitUpgradeAI ERROR: ' .. repr(v.UnitId) .. ':CanBuild( '..upgradeID..' ) failed!' )
+                continue
+            end
+            if upgradeID then
+                upgradeIssued = true
+                IssueUpgrade({v}, upgradeID)
+                --LOG('-- Upgrading unit '..v.UnitId..' ('..v.factionCategory..') with '..upgradeID)
+            end
+        end
+        if not upgradeIssued then
+            self:PlatoonDisband()
+            return
+        end
+        local upgrading = true
+        while aiBrain:PlatoonExists(self) and upgrading do
+            WaitSeconds(3)
+            upgrading = false
+            for k, v in platoonUnits do
+                if v and not v.Dead then
+                    upgrading = true
+                end
+            end
+        end
+        if not aiBrain:PlatoonExists(self) then
+            return
+        end
+        WaitTicks(1)
+        self:PlatoonDisband()
+    end
+    end,]]

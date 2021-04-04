@@ -52,7 +52,7 @@ PlatoonTemplate {
     Name = 'SCTAT2AirScouting',
     Plan = 'ScoutingAISorian',
     GlobalSquads = {
-        { SKY * categories.SCOUT * categories.OVERLAYRADAR * (categories.TECH1 + categories.TECH2), 1, 1, 'scout', 'None' },
+        { SKY * categories.SCOUT * categories.OVERLAYRADAR, 1, 1, 'scout', 'None' },
     }
 }
 
@@ -80,10 +80,12 @@ PlatoonTemplate {
     Name = 'T1AirFighterSCTA',
     FactionSquads = {
         Arm = {
-            { 'armfig', 1, 2, 'attack', 'GrowthFormation' }
+            { 'armfig', 1, 4, 'attack', 'GrowthFormation' },
+            { 'armpeep', 1, 1, 'scout', 'GrowthFormation' },
         },
         Core = {
-            { 'corveng', 1, 2, 'attack', 'GrowthFormation' }
+            { 'corveng', 1, 4, 'attack', 'GrowthFormation' },
+            { 'corfink', 1, 1, 'scout', 'GrowthFormation' },
         },
     }
 }
@@ -92,12 +94,10 @@ PlatoonTemplate {
     Name = 'T1AirBomberSCTA',
     FactionSquads = {
         Arm = {
-            { 'armpeep', 1, 1, 'scout', 'GrowthFormation' },
             { 'armthund', 1, 2, 'attack', 'GrowthFormation' },
             { 'armca', 1, 1, 'support', 'None' },
         },
         Core = {
-            { 'corfink', 1, 1, 'scout', 'GrowthFormation' },
             { 'corshad', 1, 2, 'attack', 'GrowthFormation' },
             { 'corca', 1, 1, 'support', 'None' },
         },
@@ -122,11 +122,9 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armpnix', 1, 2, 'attack', 'GrowthFormation' },
-            { 'armhawk', 1, 1, 'attack', 'GrowthFormation' },
         },
         Core = {
             { 'corhurc', 1, 2, 'attack', 'GrowthFormation' },
-            { 'corvamp', 1, 1, 'attack', 'GrowthFormation' },
         },
     }
 }
@@ -136,11 +134,9 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armawac', 1, 1, 'scout', 'GrowthFormation' },
-            { 'armpnix', 1, 1, 'attack', 'GrowthFormation' },
         },
         Core = {
             { 'corawac', 1, 1, 'scout', 'GrowthFormation' },
-            { 'corhurc', 1, 1, 'attack', 'GrowthFormation' },
         },
     }
 }

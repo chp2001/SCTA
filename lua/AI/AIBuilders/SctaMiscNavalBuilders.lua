@@ -18,7 +18,7 @@ BuilderGroup {
         Priority = 131,
         InstanceCount = 1,
         BuilderConditions = { 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, PLANT * categories.NAVAL} },
+            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Sea' } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },

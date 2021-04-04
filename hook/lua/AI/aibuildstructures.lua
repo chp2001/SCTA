@@ -5,6 +5,7 @@ function AIExecuteBuildStructure(aiBrain, builder, buildingType, closeToBuilder,
     if not aiBrain.SCTAAI then
         return TAExecuteBuildStructure(aiBrain, builder, buildingType, closeToBuilder, relative, buildingTemplate, baseTemplate, reference, NearMarkerType)
     end
+    local FactionToIndex  = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, NOMADS = 5, ARM = 6, CORE = 7}
     local factionIndex = aiBrain:GetFactionIndex()
     local whatToBuild = aiBrain:DecideWhatToBuild( builder, buildingType, buildingTemplate)
     if not whatToBuild then
@@ -27,7 +28,8 @@ function AIExecuteBuildStructure(aiBrain, builder, buildingType, closeToBuilder,
     end
     if not location and reference then
         for num,offsetCheck in RandomIter({1,2,3,4,5,6,7,8}) do
-            location = aiBrain:FindPlaceToBuild( buildingType, whatToBuild, BaseTmplFile['MovedTemplates'..offsetCheck][factionIndex], relative, closeToBuilder, nil, relativeTo[1], relativeTo[3])
+          Faction = FactionToIndex[builder.factionCategory] or factionIndex
+            location = aiBrain:FindPlaceToBuild( buildingType, whatToBuild, BaseTmplFile['MovedTemplates'..offsetCheck][Faction], relative, closeToBuilder, nil, relativeTo[1], relativeTo[3])
             if location then
                 break
             end

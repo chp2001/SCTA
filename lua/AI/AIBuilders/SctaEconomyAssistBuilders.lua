@@ -208,7 +208,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.VOLATILE}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
-            { EBC, 'LessThanEconStorageRatio', { 0.25, 1}},
+            { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},
             },
         BuilderData = {
             Location = 'LocationType',
@@ -226,7 +226,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.VOLATILE}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
-            { EBC, 'LessThanEconStorageRatio', { 0.25, 1}},
+            { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},
             },
         BuilderData = {
             Location = 'LocationType',

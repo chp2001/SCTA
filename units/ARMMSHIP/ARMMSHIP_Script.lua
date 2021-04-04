@@ -28,6 +28,7 @@ ARMMSHIP = Class(TASea) {
 	end,
 
 	Weapons = {
+		Turret01 = Class(DefaultWeapon) {},
 		ARMMSHIP_ROCKET = Class(TAweapon) {
 			PlayFxRackReloadSequence = function(self)
 				self.unit.currentShot = self.unit.currentShot + 1
@@ -98,7 +99,6 @@ ARMMSHIP = Class(TASea) {
 				TAweapon.PlayFxWeaponPackSequence(self)
 			end,	
 		},
-		Turret01 = Class(DefaultWeapon) {},
 	},
 }
 

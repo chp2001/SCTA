@@ -46,7 +46,7 @@ UnitBlueprint {
             },
             RackReloadTimeout = 2,
             MuzzleVelocity = 10,
-            ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/CORMABM_WEAPON/CORMABM_WEAPON_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/CORMABM_WEAPON/CORMABM_WEAPON_proj.bp',
             TargetRestrictOnlyAllow = 'TACTICAL MISSILE',
             EffectiveRadius = 30,
             TrackingRadius = 20,

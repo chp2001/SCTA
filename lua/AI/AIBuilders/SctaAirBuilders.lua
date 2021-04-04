@@ -40,26 +40,6 @@ BuilderGroup {
         BuilderType = 'Air',
     },       
     Builder {
-        BuilderName = 'SCTAAI T1 Scouts',
-        PlatoonTemplate = 'T1AirScoutSCTA',
-        Priority = 200,
-        BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {300} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1.05 }},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.MOBILE * categories.AIR * categories.SCOUT } },
-        },
-        BuilderType = 'Air',
-    }, 
-    Builder {
-        BuilderName = 'SCTAAI T2 Scouts',
-        PlatoonTemplate = 'T2AirScoutSCTA',
-        Priority = 105,
-        BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.3}},
-        },
-        BuilderType = 'Air',
-    },
-    Builder {
         BuilderName = 'SCTAAI Factory Stealth',
         PlatoonTemplate = 'T2AirFighterSCTA',
         Priority = 115,

@@ -11,6 +11,57 @@ BuilderGroup {
     BuilderGroupName = 'SCTAAIEngineerBuilder',
     BuildersType = 'FactoryBuilder',
     Builder {
+        BuilderName = 'SCTAAi Factory Scout',
+        PlatoonTemplate = 'T1LandScoutSCTA',
+        Priority = 91,
+        BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {600} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.SCOUT * categories.LAND * categories.MOBILE} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+        },
+        BuilderType = 'Land',
+    },
+    Builder {
+        BuilderName = 'SCTAAi Factory2 Scout',
+        PlatoonTemplate = 'T1LandScoutSCTA2',
+        Priority = 93,
+        BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {180} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.SCOUT * categories.LAND * categories.MOBILE} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+        },
+        BuilderType = 'Land',
+    },
+    Builder {
+        BuilderName = 'SCTAAI T1 Scouts',
+        PlatoonTemplate = 'T1AirScoutSCTA',
+        Priority = 200,
+        BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {300} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1.05 }},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.MOBILE * categories.AIR * categories.SCOUT } },
+        },
+        BuilderType = 'Air',
+    }, 
+    Builder {
+        BuilderName = 'SCTAAI T2 Scouts',
+        PlatoonTemplate = 'T2AirScoutSCTA',
+        Priority = 105,
+        BuilderConditions = {
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.3}},
+        },
+        BuilderType = 'Air',
+    },
+    Builder {
+        BuilderName = 'SCTAAi Field Engineer',
+        PlatoonTemplate = 'T2BuildFieldEngineerSCTA',
+        Priority = 125, -- Top factory priority
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FIELDENGINEER * categories.TECH2} }, -- Build engies until we have 4 of them.
+        },
+        BuilderType = 'Land',
+    },
+    Builder {
         BuilderName = 'SCTAAi Factory Engineer Early',
         PlatoonTemplate = 'T1BuildEngineerSCTAEarly',
         Priority = 150, -- Top factory priority

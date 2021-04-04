@@ -58,7 +58,7 @@ UnitBlueprint {
     Display = {
         BuildAttachBone = 'slip',
         AnimationUnpack = '/mods/SCTA-master/units/ARMASY/ARMASY_lod0_unpack.sca',
-        AnimationUnpackRate = 0.5,    
+        AnimationUnpackRate = 1,    
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

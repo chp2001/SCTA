@@ -103,10 +103,12 @@ PlatoonTemplate {
     Name = 'T2LandMissileSCTA2',
     FactionSquads = {
         Arm = {
-            { 'armmerl', 1, 1, 'attack', 'none' }
+            { 'armmerl', 1, 2, 'attack', 'none' },
+            { 'armack', 1, 1, 'support', 'None' },
         },
         Core = {
-            { 'corvroc', 1, 1, 'attack', 'none' }
+            { 'corvroc', 1, 2, 'attack', 'none' },
+            { 'cornecro', 1, 1, 'support', 'None' },
         },
     }
 }
@@ -128,12 +130,10 @@ PlatoonTemplate {
     Name = 'T2LandDFTank2SCTA',
     FactionSquads = {
         Arm = {
-            { 'armbull', 1, 2, 'attack', 'none' },
-            { 'armack', 1, 1, 'support', 'None' },
-            { 'armbull', 1, 2, 'attack', 'none' },
+            { 'armbull', 1, 3, 'attack', 'none' },
         },
         Core = {
-            { 'correap', 1, 4, 'attack', 'none' },
+            { 'correap', 1, 3, 'attack', 'none' },
         },
     }
 }

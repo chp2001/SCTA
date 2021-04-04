@@ -79,9 +79,11 @@ BuilderGroup {
         BuilderName = 'SCTA Assist Production Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
         Priority = 5,
-        InstanceCount = 10,
+        InstanceCount = 152,
         BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {300} },
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderData = {
             Assist = {
@@ -98,9 +100,11 @@ BuilderGroup {
         BuilderName = 'SCTA Assist Unit Production Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
         Priority = 5,
-        InstanceCount = 10,
+        InstanceCount = 151,
         BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {300} },
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.MOBILE }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderData = {
             Assist = {

@@ -1,9 +1,13 @@
 
 BaseBuilderTemplate {
-    BaseTemplateName = 'SCTAAIExpansion',
+    BaseTemplateName = 'SCTAAISTARTEXPANSION',
     Builders = {
+        -- List all our builder grous here
+        -- ACU
+        'SCTAAICommanderBuilder',
 
         -- Unit Builders
+        'SCTAAIEngineerBuilder',
         'SCTAAILandBuilder',
         'SCTAAIAirBuilder',
         'SCTAAILandFormers',
@@ -16,6 +20,7 @@ BaseBuilderTemplate {
         'SCTAAIFactoryBuilders',
         'SCTAUpgrades',
         --Misc Function
+        'SCTAAssisters',
     },
     BaseSettings = {
         EngineerCount = {
@@ -42,11 +47,11 @@ BaseBuilderTemplate {
         if not per == 'sctaaiarm' or per == 'sctaaicore' or per == 'sctaaiarmcheat' or per == 'sctaaicorecheat' then
             return -1
         end
-        if markerType != 'Expansion Area' then
+        if markerType != 'Start Location' then
             return 10
         end
         --LOG('Return sctaai personality')
-        return 1000, 'SCTAAIExpansion'
+        return 1500, 'SCTAAISTARTEXPANSION'
     end,
 }
 

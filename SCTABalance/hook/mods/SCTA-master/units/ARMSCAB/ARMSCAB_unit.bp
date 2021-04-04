@@ -35,12 +35,8 @@ UnitBlueprint {
     Weapon = {
         [1] = {
             Damage = 1,
-            FireTargetLayerCapsTable = {
-                Land = 'Air',
-                Water = 'Air',
-            },
             MaxRadius = 45,
-            ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/ARMAMIS_WEAPON/ARMAMIS_WEAPON_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMAMIS_WEAPON/ARMAMIS_WEAPON_proj.bp',
             RackReloadTimeout = 2,
             TargetRestrictOnlyAllow = 'TACTICAL MISSILE',
             EffectiveRadius = 30,

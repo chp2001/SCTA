@@ -55,7 +55,7 @@ UnitBlueprint {
     },
     Description = 'Builds Seaplanes',
     Display = {
-        AnimationUnpack = '/mods/SCTA-master/units/ARMPLAT/ARMPLAT_lod0_UnPaCk.sca',
+        AnimationUnpack = '/mods/SCTA-master/units/ARMPLAT/ARMPLAT_lod0_unpack.sca',
         AnimationUnpackRate = 0.5, 
         Abilities = {
             '<LOC ability_aquatic>Aquatic',
@@ -67,7 +67,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 400,
                     ShaderName = 'Unit', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },

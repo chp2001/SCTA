@@ -147,3 +147,15 @@ PlatoonTemplate {
         },
     }
 }
+
+PlatoonTemplate {
+    Name = 'T3LandDFBotSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armmav', 1, 1, 'attack', 'none' },
+        },
+        Core = {
+            { 'corpyro', 1, 1, 'attack', 'none' },
+        },
+    }
+}

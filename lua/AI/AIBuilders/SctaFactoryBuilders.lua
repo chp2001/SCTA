@@ -255,7 +255,7 @@ BuilderGroup {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, FUSION} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.9 } },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.9 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
         BuilderType = 'Any',

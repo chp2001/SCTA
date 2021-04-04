@@ -21,6 +21,15 @@ BuilderGroup {
         BuilderType = 'Land',
     },
     Builder {
+        BuilderName = 'SCTAAi Field Engineer',
+        PlatoonTemplate = 'T2BuildFieldEngineerSCTA',
+        Priority = 125, -- Top factory priority
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.FIELDENGINEER * categories.TECH2} }, -- Build engies until we have 4 of them.
+        },
+        BuilderType = 'Land',
+    },
+    Builder {
         BuilderName = 'SCTAAi Factory Tank Early',
         PlatoonTemplate = 'T1LandDFTankSCTAEarly',
         Priority = 92,

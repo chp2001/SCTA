@@ -6,103 +6,19 @@ local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
 
-function SeaAttackCondition(aiBrain, locationType, targetNumber)
-    local pool = aiBrain:GetPlatoonUniquelyNamed('ArmyPool')
-
-    local engineerManager = aiBrain.BuilderManagers[locationType].EngineerManager
-    if not engineerManager then
-        return false
-    end
-
-    local position = engineerManager:GetLocationCoords()
-    local radius = engineerManager.Radius
-
-    local surfaceThreat = pool:GetPlatoonThreat('AntiSurface', categories.MOBILE * categories.NAVAL, position, radius)
-    local subThreat = pool:GetPlatoonThreat('AntiSub', categories.MOBILE * categories.NAVAL, position, radius)
-    if (surfaceThreat + subThreat) > targetNumber then
-        return true
-    end
-    return false
-end
-
-BuilderGroup {
-    BuilderGroupName = 'SCTANavalFormer',
-    BuildersType = 'PlatoonFormBuilder',
-    Builder {
-        BuilderName = 'SCTA Scout Ships',
-        PlatoonTemplate = 'SCTAPatrolBoatAttack',
-        Priority = 100,
-        InstanceCount = 2,
-        BuilderType = 'Any',
-        BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.SCOUT } },
-         },
-    },
-    Builder {
-        BuilderName = 'SCTA T1 Naval Assault',
-        PlatoonTemplate = 'SCTANavalAssault',
-        Priority = 50,
-        InstanceCount = 10,
-        BuilderType = 'Any',
-        BuilderData = {
-            UseFormation = 'AttackFormation',
-            ThreatWeights = {
-                IgnoreStrongerTargetsRatio = 100.0,  #DUNCAN - uncommented, was 100
-                AggressiveMove = false,
-                PrimaryThreatTargetType = 'Naval',
-                SecondaryThreatTargetType = 'Economy',
-                SecondaryThreatWeight = 0.1,
-                WeakAttackThreatWeight = 1,
-                VeryNearThreatWeight = 10,
-                NearThreatWeight = 5,
-                MidThreatWeight = 1,
-                FarThreatWeight = 1,
-            },
-        },
-        BuilderConditions = {
-            { UCBC, 'UnitsLessAtLocation', { 'LocationType', 1, 'MOBILE TECH3 NAVAL' } },
-            { SeaAttackCondition, { 'LocationType', 50 } }, 
-        },
-    },
-    Builder {
-        BuilderName = 'SCTA HighTech',
-        PlatoonTemplate = 'SCTANavalAssaultT2',
-        Priority = 75,
-        InstanceCount = 10,
-        BuilderType = 'Any',
-        BuilderData = {
-            UseFormation = 'AttackFormation',
-            ThreatWeights = {
-                IgnoreStrongerTargetsRatio = 100.0,  #DUNCAN - uncommented, was 100
-                PrimaryThreatTargetType = 'Naval',
-                SecondaryThreatTargetType = 'Economy',
-                AggressiveMove = false,
-                SecondaryThreatWeight = 0.1,
-                WeakAttackThreatWeight = 1,
-                VeryNearThreatWeight = 10,
-                NearThreatWeight = 5,
-                MidThreatWeight = 1,
-                FarThreatWeight = 1,
-            },
-        },
-        BuilderConditions = {
-            { UCBC, 'UnitsLessAtLocation', { 'LocationType', 1, 'MOBILE TECH3 NAVAL' } },
-            { SeaAttackCondition, { 'LocationType', 50 } }, 
-        },
-    },
-    Builder {
-        BuilderName = 'SCTA AI Carrier',
-        PlatoonTemplate = 'SCTAAirCarrier',
-        Priority = 1,
-        InstanceCount = 5,
-        BuilderType = 'Any',
-    },
-}
-
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAINavalBuilder',
     BuildersType = 'FactoryBuilder',
+    Builder {
+        BuilderName = 'SCTAAi Factory Naval Engineer',
+        PlatoonTemplate = 'T1EngineerSCTANaval',
+        Priority = 140, -- Top factory priority
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.NAVAL * categories.ENGINEER} }, -- Build engies until we have 4 of them.
+        },
+        BuilderType = 'Sea',
+    },
     Builder {
         BuilderName = 'SCTAAi Factory ScoutShip',
         PlatoonTemplate = 'T1ScoutShipSCTA',

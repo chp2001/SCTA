@@ -7,16 +7,17 @@ BaseBuilderTemplate {
         'SCTAAICommanderBuilder',
 
         -- Unit Builders
+        'SCTAAIEngineerBuilder',
         'SCTAAILandBuilder',
         'SCTAAIAirBuilder',
         'SCTAAILandFormers',
         'SCTAAIAirFormers',
 
         -- Buildings etc
+        
         'SCTAExpansionBuilders',
-        'SCTAAIEngineerMiscBuilder',
         'SCTAAIEngineerEcoBuilder',
-        'SCTAAIFactoryBuilders',
+        'SCTAAIFactoryExpansions',
         'SCTAUpgrades',
         --Misc Function
         'SCTAAssisters',
@@ -29,8 +30,8 @@ BaseBuilderTemplate {
             SCU = 0,
         },
         FactoryCount = {
-            Land = 3,
-            Air = 1,
+            Land = 4,
+            Air = 2,
             Sea = 1,
             Gate = 0,
         },
@@ -50,7 +51,7 @@ BaseBuilderTemplate {
             return 10
         end
         --LOG('Return sctaai personality')
-        return 1500, 'SCTAAISTARTEXPANSION'
+        return 1000, 'SCTAAISTARTEXPANSION'
     end,
 }
 

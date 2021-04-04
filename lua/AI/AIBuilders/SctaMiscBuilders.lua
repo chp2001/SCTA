@@ -265,6 +265,7 @@ BuilderGroup {
         Priority = 57,
         InstanceCount = 1,
         BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {600} }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.AIRSTAGINGPLATFORM} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
         },

@@ -59,7 +59,7 @@ UnitBlueprint {
             '<LOC ability_radar>Radar',
         },
         AnimationUnpack = '/mods/SCTA-master/units/CORAAP/CORAAP_lod0_unpack.sca',
-        AnimationUnpackRate = 0.5,    
+        AnimationUnpackRate = 1,    
         BuildAttachBone = 'pad',
         Mesh = {
             IconFadeInZoom = 130,

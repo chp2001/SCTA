@@ -60,7 +60,7 @@ UnitBlueprint {
             '<LOC ability_upgradable>Upgradeable',
         },
         AnimationUnpack = '/mods/SCTA-master/units/CORVP/CORVP_lod0_aopen.sca',
-        AnimationUnpackRate = 1, 
+        AnimationUnpackRate = 1.5, 
 	BuildAttachBone = 'pad',
     Mesh = {
         IconFadeInZoom = 130,

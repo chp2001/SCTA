@@ -15,7 +15,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA T1 Naval Factory Builder',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 131,
+        Priority = 132,
         InstanceCount = 1,
         BuilderConditions = { 
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Sea' } },
@@ -36,7 +36,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Naval Factory',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 127,
+        Priority = 141,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 900 } },
@@ -60,7 +60,7 @@ BuilderGroup {
         Priority = 90,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3,  FUSION} }, 
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1,  FUSION} }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
         },
@@ -89,7 +89,7 @@ BuilderGroup {
         BuilderData = {
             Construction = {
                 BuildClose = false,
-                NearMarkerType = 'Naval Defensive Point',
+                NearMarkerType = 'Naval Area',
                 MarkerRadius = 20,
                 LocationRadius = 75,
                 LocationType = 'LocationType',
@@ -110,7 +110,8 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         Priority = 131,
         InstanceCount = 2,
-        BuilderConditions = { -- Stop after 10 facs have been built.
+        BuilderConditions = {
+        { UCBC, 'HaveLessThanUnitsWithCategory', { 2, FUSION } },  -- Stop after 10 facs have been built.
         { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.15 }},
         },
         BuilderType = 'Any',
@@ -213,7 +214,7 @@ BuilderGroup {
         BuilderData = {
             Construction = {
                 BuildClose = false,
-                NearMarkerType = 'Naval Defensive Point',
+                NearMarkerType = 'Naval Area',
                 MarkerRadius = 20,
                 LocationRadius = 75,
                 LocationType = 'LocationType',

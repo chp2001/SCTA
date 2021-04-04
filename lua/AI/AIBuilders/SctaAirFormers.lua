@@ -39,6 +39,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Air Intercept',
         PlatoonTemplate = 'IntieAISCTA',
         Priority = 100,
+        PlatoonAddBehaviors = { 'AirUnitRefit' },                               
         InstanceCount = 200,
         BuilderType = 'Any',     
         BuilderConditions = { 
@@ -50,6 +51,7 @@ BuilderGroup {
         PlatoonTemplate = 'InceptorAISCTA',
         Priority = 100,
         InstanceCount = 200,
+        PlatoonAddBehaviors = { 'AirUnitRefit' },                               
         BuilderType = 'Any',
         BuilderData = {
             Stealth = true,
@@ -74,6 +76,7 @@ BuilderGroup {
         PlatoonTemplate = 'StealthFightersAISCTA',
         Priority = 150,
         InstanceCount = 200,
+        PlatoonAddBehaviors = { 'AirUnitRefit' },                               
         BuilderType = 'Any',  
         BuilderData = {
             Stealth = true,

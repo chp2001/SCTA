@@ -139,7 +139,7 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armzeus', 1, 2, 'attack', 'none' },
-            { 'armmav', 1, 1, 'attack', 'none' },
+            { 'armsnipe', 1, 1, 'attack', 'none' },
         },
         Core = {
             { 'corsumo', 1, 2, 'attack', 'none' },

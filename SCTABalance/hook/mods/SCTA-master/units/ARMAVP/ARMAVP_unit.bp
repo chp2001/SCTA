@@ -17,6 +17,7 @@ UnitBlueprint {
 	    'ARM',
         'SORTCONSTRUCTION',
         'TANK',
+        'SUPPORTFACTORY',
     },
     Defense = {
         Health = 8200,

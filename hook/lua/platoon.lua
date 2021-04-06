@@ -1,4 +1,4 @@
-local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+local TAutils = import('/mods/SCTA-master/lua/TAAIutils.lua')
 
 SCTAAIPlatoon = Platoon
 Platoon = Class(SCTAAIPlatoon) {

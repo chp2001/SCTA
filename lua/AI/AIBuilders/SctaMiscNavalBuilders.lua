@@ -3,7 +3,7 @@ local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local MABC = '/lua/editor/MarkerBuildConditions.lua'
-local TAutils = '/mods/SCTA-master/lua/TAutils.lua'
+local TAutils = '/mods/SCTA-master/lua/TAAIutils.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
@@ -243,12 +243,12 @@ BuilderGroup {
         InstanceCount = 8,
         BuilderConditions = {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.ENERGYPRODUCTION * categories.NAVAL}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
-            { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} },
+            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
             },
         BuilderData = {
             Location = 'LocationType',
-            Reclaim = {'ENERGYPRODUCTION'},
+            Reclaim = {'ENERGYPRODUCTION NAVAL'},
                 ReclaimTime = 30,
         },
         BuilderType = 'Any',

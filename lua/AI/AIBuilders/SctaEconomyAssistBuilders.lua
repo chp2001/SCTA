@@ -4,7 +4,7 @@ local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local SBC = '/lua/editor/SorianBuildConditions.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
-local TAutils = '/mods/SCTA-master/lua/TAutils.lua'
+local TAutils = '/mods/SCTA-master/lua/TAAIutils.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
@@ -148,7 +148,7 @@ BuilderGroup {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, PLANT * categories.LAND}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, LAB * categories.LAND} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT * categories.LAND} },
-            { EBC, 'LessThanEconStorageRatio', { 0.1, 1.1}},
+            { TAutils, 'LessMassStorageMaxTA', { 0.1}},
             { EBC, 'LessEconStorageCurrent', { 100, 6000 } },    
             },
         BuilderData = {
@@ -168,7 +168,7 @@ BuilderGroup {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, PLANT * categories.AIR}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, LAB * categories.AIR} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT * categories.AIR} },
-            { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             { EBC, 'LessEconStorageCurrent', { 100, 1000 } },    
         },
         BuilderData = {
@@ -189,7 +189,7 @@ BuilderGroup {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, PLANT}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, LAB} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT} },
-            { EBC, 'LessThanEconStorageRatio', { 0.2, 1.1}},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             { EBC, 'LessEconStorageCurrent', { 100, 1000 } },    
         },
         BuilderData = {
@@ -207,8 +207,8 @@ BuilderGroup {
         InstanceCount = 8,
         BuilderConditions = {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.VOLATILE}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
-            { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} },
+            { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             },
         BuilderData = {
             Location = 'LocationType',
@@ -226,8 +226,8 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1200} },
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.SIZE4}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
-            { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} },
+            { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             },
         BuilderData = {
             Location = 'LocationType',
@@ -244,8 +244,8 @@ BuilderGroup {
         InstanceCount = 8,
         BuilderConditions = {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.VOLATILE}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
-            { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} },
+            { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             },
         BuilderData = {
             Location = 'LocationType',
@@ -318,7 +318,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 360 } },
             { MIBC, 'LessThanGameTime', {1200} }, 
-            { EBC, 'LessThanEconStorageRatio', { 0.15, 1.1}},     
+            { TAutils, 'LessMassStorageMaxTA',  { 0.15}},   
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
         },
         BuilderData = {
@@ -337,7 +337,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 120 } },
             { MIBC, 'LessThanGameTime', {480} }, 
-            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},    
         },
         BuilderData = {
@@ -355,7 +355,7 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 1200 } },
-            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             },
         BuilderData = {
@@ -374,7 +374,7 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 600 } },
-            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             },
         BuilderData = {
@@ -391,7 +391,7 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 600 } },
-            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             },
         BuilderData = {

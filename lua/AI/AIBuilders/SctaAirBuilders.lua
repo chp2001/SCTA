@@ -2,6 +2,7 @@ local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
@@ -33,6 +34,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1AirFighterSCTA',
         Priority = 95,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
+            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'AntiAir', 1 } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, LAB * categories.AIR } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.2, 0.5 }},
         },

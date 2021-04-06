@@ -17,7 +17,6 @@ UnitBlueprint {
             'ARM',
             'HOVER',
             'BOT',
-            'TANK',
         },
         Display = {
         UniformScale = 0.1,

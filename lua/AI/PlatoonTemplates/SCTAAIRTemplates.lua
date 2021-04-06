@@ -52,7 +52,7 @@ PlatoonTemplate {
     Name = 'SCTAT2AirScouting',
     Plan = 'ScoutingAISorian',
     GlobalSquads = {
-        { SKY * categories.SCOUT * categories.OVERLAYRADAR, 1, 1, 'scout', 'None' },
+        { SKY * categories.SCOUT * categories.OVERLAYOMNI, 1, 4, 'scout', 'None' },
     }
 }
 

@@ -84,6 +84,7 @@ UnitBlueprint {
         'TANK MOBILE TECH1 CORE', 
         'TANK MOBILE TECH2 CORE',
         'TANK MOBILE TECH3 CORE',
+        'BOT MOBILE ENGINEER CORE',
     },
 	InitialRallyX = 0,
 InitialRallyZ = 7,

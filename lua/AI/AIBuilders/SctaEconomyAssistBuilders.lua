@@ -218,6 +218,25 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
+        BuilderName = 'SCTA Engineer Reclaim Energy Wind',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonAIPlan = 'ReclaimStructuresAI',
+        Priority = 88,
+        InstanceCount = 8,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {1200} },
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.ENERGYPRODUCTION * categories.STRUCTURE * categories.TECH1}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
+            { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},
+            },
+        BuilderData = {
+            Location = 'LocationType',
+            Reclaim = {'ENERGYPRODUCTION STRUCTURE TECH1'},
+                ReclaimTime = 30,
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
         BuilderName = 'SCTA Engineer Reclaim Energy Air',
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
         PlatoonAIPlan = 'ReclaimStructuresAI',

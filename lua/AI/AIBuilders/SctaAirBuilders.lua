@@ -22,7 +22,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Factory Strategic',
         PlatoonTemplate = 'T2AirBomberSCTA',
-        Priority = 100,
+        Priority = 120,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
         },

@@ -17,6 +17,7 @@ UnitBlueprint {
         'LAND', 
 	    'SORTCONSTRUCTION',
         'BOT',
+        'SUPPORTFACTORY',
     },
         Display = {
         UniformScale = 0.24,

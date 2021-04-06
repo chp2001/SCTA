@@ -174,7 +174,7 @@ PlatoonTemplate {
             { 'corraid', 1, 1, 'guard', 'none' },
             { 'corcv', 1, 4, 'support', 'None' },
             { 'corraid', 1, 1, 'guard', 'none' },
-            { 'corcv', 1, 4, 'support', 'None' },
+            { 'corcv', 1, 2, 'support', 'None' },
             { 'corraid', 1, 1, 'guard', 'none' },
             { 'corcv', 1, 2, 'support', 'None' },
         },

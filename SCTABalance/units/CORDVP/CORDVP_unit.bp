@@ -87,6 +87,8 @@ UnitBlueprint {
         'coradvp',
         'TANK MOBILE TECH1 CORE', 
         'TANK MOBILE TECH2 CORE',
+        'BOT MOBILE ENGINEER TECH1 CORE',
+        'BOT MOBILE ENGINEER TECH2 CORE',
     },
 	InitialRallyX = 0,
 	InitialRallyZ = 7,

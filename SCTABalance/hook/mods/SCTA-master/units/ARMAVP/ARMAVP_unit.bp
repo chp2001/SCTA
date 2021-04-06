@@ -35,6 +35,7 @@ UnitBlueprint {
             'TANK MOBILE TECH2 ARM',
             'TANK MOBILE TECH1 ARM',
             'TANK MOBILE TECH3 ARM',
+            'BOT MOBILE ENGINEER ARM',
         },
     },
     LifeBarHeight = 0.22,

@@ -17,7 +17,6 @@ UnitBlueprint {
         'CORE',
         'HOVER',
         'BOT',
-        'TANK',
     },
     Defense = {
         Health = 2080,

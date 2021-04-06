@@ -1,6 +1,7 @@
 do
     Factions[1].IdleEngTextures.T1O = '/mods/SCTA-master/textures/ui/common/icons/units/armcs_icon.dds'
     Factions[1].IdleEngTextures.T1F = '/mods/SCTA-master/textures/ui/common/icons/units/armmlv_icon.dds'
+    Factions[1].IdleEngTextures.T3F = '/icons/units/xrb0304_icon.dds'
     Factions[1].IdleEngTextures.T2O = '/mods/SCTA-master/textures/ui/common/icons/units/armacsub_icon.dds'
     Factions[1].IdleEngTextures.T1A = '/mods/SCTA-master/textures/ui/common/icons/units/armca_icon.dds'
     Factions[1].IdleEngTextures.T2A = '/mods/SCTA-master/textures/ui/common/icons/units/armaca_icon.dds'
@@ -10,6 +11,7 @@ do
     Factions[2].IdleEngTextures.T1F = '/mods/SCTA-master/textures/ui/common/icons/units/cormlv_icon.dds'
     Factions[2].IdleEngTextures.T2O = '/mods/SCTA-master/textures/ui/common/icons/units/coracsub_icon.dds'
     Factions[2].IdleEngTextures.T2F = '/mods/SCTA-master/textures/ui/common/icons/units/cornecro_icon.dds'
+    Factions[2].IdleEngTextures.T3F = '/icons/units/xrb0304_icon.dds'
     Factions[2].IdleEngTextures.T1A = '/mods/SCTA-master/textures/ui/common/icons/units/corca_icon.dds'
     Factions[2].IdleEngTextures.T2A = '/mods/SCTA-master/textures/ui/common/icons/units/coraca_icon.dds'
     Factions[2].IdleEngTextures.T3A = '/mods/SCTA-master/textures/ui/common/icons/units/corcsa_icon.dds'
@@ -18,6 +20,7 @@ do
     Factions[3].IdleEngTextures.T1F = '/mods/SCTA-master/textures/ui/common/icons/units/cormlv_icon.dds'
     Factions[3].IdleEngTextures.T2O = '/mods/SCTA-master/textures/ui/common/icons/units/coracsub_icon.dds'
     Factions[3].IdleEngTextures.T2F = '/mods/SCTA-master/textures/ui/common/icons/units/cornecro_icon.dds'
+    Factions[3].IdleEngTextures.T3F = '/icons/units/xrb0304_icon.dds'
     Factions[3].IdleEngTextures.T1A = '/mods/SCTA-master/textures/ui/common/icons/units/corca_icon.dds'
     Factions[3].IdleEngTextures.T2A = '/mods/SCTA-master/textures/ui/common/icons/units/coraca_icon.dds'
     Factions[3].IdleEngTextures.T3A = '/mods/SCTA-master/textures/ui/common/icons/units/corcsa_icon.dds'
@@ -26,6 +29,7 @@ do
     Factions[4].IdleEngTextures.T2O = '/mods/SCTA-master/textures/ui/common/icons/units/armacsub_icon.dds'
     Factions[4].IdleEngTextures.T1F = '/mods/SCTA-master/textures/ui/common/icons/units/armmlv_icon.dds'
     Factions[4].IdleEngTextures.T2F = '/mods/SCTA-master/textures/ui/common/icons/units/armfark_icon.dds'
+    Factions[4].IdleEngTextures.T3F = '/icons/units/xrb0304_icon.dds'
     Factions[4].IdleEngTextures.T1A = '/mods/SCTA-master/textures/ui/common/icons/units/armca_icon.dds'
     Factions[4].IdleEngTextures.T2A = '/mods/SCTA-master/textures/ui/common/icons/units/armaca_icon.dds'
     Factions[4].IdleEngTextures.T3A = '/mods/SCTA-master/textures/ui/common/icons/units/armcsa_icon.dds'
@@ -34,6 +38,7 @@ do
     Factions[5].IdleEngTextures.T1O = '/mods/SCTA-master/textures/ui/common/icons/units/corcs_icon.dds'
     Factions[5].IdleEngTextures.T2O = '/mods/SCTA-master/textures/ui/common/icons/units/coracsub_icon.dds'
     Factions[5].IdleEngTextures.T1F = '/mods/SCTA-master/textures/ui/common/icons/units/cormlv_icon.dds'
+    Factions[5].IdleEngTextures.T3F = '/icons/units/xrb0304_icon.dds'
     Factions[5].IdleEngTextures.T1A = '/mods/SCTA-master/textures/ui/common/icons/units/armca_icon.dds'
     Factions[5].IdleEngTextures.T2A = '/mods/SCTA-master/textures/ui/common/icons/units/armaca_icon.dds'
     Factions[5].IdleEngTextures.T3A = '/mods/SCTA-master/textures/ui/common/icons/units/armcsa_icon.dds'
@@ -62,6 +67,7 @@ do
             T1 = '/mods/SCTA-master/textures/ui/common/icons/units/armck_icon.dds',
             T1O = '/mods/SCTA-master/textures/ui/common/icons/units/armcs_icon.dds',
             T2 = '/mods/SCTA-master/textures/ui/common/icons/units/armack_icon.dds',
+            T3F = '/icons/units/xrb0304_icon.dds',
             T2F = '/mods/SCTA-master/textures/ui/common/icons/units/armfark_icon.dds',
             T1F = '/mods/SCTA-master/textures/ui/common/icons/units/armmlv_icon.dds',
             T3 = '/mods/SCTA-master/textures/ui/common/icons/units/armch_icon.dds',
@@ -112,6 +118,7 @@ do
             T1O = '/mods/SCTA-master/textures/ui/common/icons/units/corcs_icon.dds',
             T2O = '/mods/SCTA-master/textures/ui/common/icons/units/coracsub_icon.dds',
             T2 = '/mods/SCTA-master/textures/ui/common/icons/units/coracv_icon.dds',
+            T3F = '/icons/units/xrb0304_icon.dds',
             T2F = '/mods/SCTA-master/textures/ui/common/icons/units/cornecro_icon.dds',
             T1F = '/mods/SCTA-master/textures/ui/common/icons/units/cormlv_icon.dds',
             T3 = '/mods/SCTA-master/textures/ui/common/icons/units/corch_icon.dds',

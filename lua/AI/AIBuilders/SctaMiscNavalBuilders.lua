@@ -4,6 +4,7 @@ local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local MABC = '/lua/editor/MarkerBuildConditions.lua'
 local TAutils = '/mods/SCTA-master/lua/TAutils.lua'
+local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
@@ -18,6 +19,7 @@ BuilderGroup {
         Priority = 132,
         InstanceCount = 1,
         BuilderConditions = { 
+            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Naval', 1 } },
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Sea' } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -39,6 +41,7 @@ BuilderGroup {
         Priority = 141,
         InstanceCount = 1,
         BuilderConditions = {
+            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Naval', 1 } },
             { MIBC, 'GreaterThanGameTime', { 900 } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
@@ -82,6 +85,7 @@ BuilderGroup {
         Priority = 50,
         InstanceCount = 1,
         BuilderConditions = {
+            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Naval', 1 } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ANTINAVY - categories.MOBILE} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.5}},
         },
@@ -207,6 +211,7 @@ BuilderGroup {
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
+            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Naval', 1 } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.ANTISUB * categories.TECH2 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.75}}, 
         },
@@ -229,5 +234,23 @@ BuilderGroup {
                 }
             }
         }
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim Energy Naval',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        PlatoonAIPlan = 'ReclaimStructuresAI',
+        Priority = 154,
+        InstanceCount = 8,
+        BuilderConditions = {
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.ENERGYPRODUCTION * categories.NAVAL}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
+            { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},
+            },
+        BuilderData = {
+            Location = 'LocationType',
+            Reclaim = {'ENERGYPRODUCTION'},
+                ReclaimTime = 30,
+        },
+        BuilderType = 'Any',
     },
 }

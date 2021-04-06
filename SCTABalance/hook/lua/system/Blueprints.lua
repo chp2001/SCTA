@@ -28,6 +28,7 @@ do
                 MaintenanceConsumptionPerSecondEnergy = 2,
             },
             Physics = {
+                MaxAcceleration = 1.33,
                 MaxSpeed = 1.2,
                 TurnRate = 0.75,
             }

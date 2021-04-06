@@ -1991,9 +1991,9 @@ Platoon = Class(SCTAAIPlatoon) {
         end
 
         while aiBrain:PlatoonExists(self) do
-            target = self:FindClosestUnit('Attack', 'Enemy', true, categories.EXPERIMENTAL * categories.AIR)
+            target = self:FindClosestUnit('Attack', 'Enemy', true, categories.AIR * categories.BOMBER)
             if not target then
-                target = self:FindClosestUnit('Attack', 'Enemy', true, categories.MOBILE * categories.AIR)
+                target = self:FindClosestUnit('Attack', 'Enemy', true, categories.AIR * categories.ANTIAIR * categories.MOBILE)
             end
             if target and target:GetFractionComplete() == 1 then
                 local airThreat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'Air')

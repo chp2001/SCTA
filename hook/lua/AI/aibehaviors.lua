@@ -84,11 +84,11 @@ function CDRSCTADGun(aiBrain, cdr)
     local maxRadius = weapon.MaxRadius + 10
     local mapSizeX, mapSizeZ = GetMapSize()
     if cdr:GetHealthPercent() > 0.8
-        and GetGameTimeSeconds() < 660
-        and GetGameTimeSeconds() > 243
+        and GetGameTimeSeconds() < 600
+        and GetGameTimeSeconds() > 240
         and mapSizeX <= 512 and mapSizeZ <= 512
         then
-        maxRadius = 250
+        maxRadius = 125
     end
 
     -- Take away engineers too
@@ -222,7 +222,7 @@ end
 function SCTACDRReturnHome(aiBrain, cdr)
     -- This is a reference... so it will autoupdate
     local cdrPos = cdr:GetPosition()
-    local distSqAway = 250
+    local distSqAway = 150
     local loc = cdr.CDRHome
     if not cdr.Dead and VDist2Sq(cdrPos[1], cdrPos[3], loc[1], loc[3]) > distSqAway then
         local plat = aiBrain:MakePlatoon('', '')

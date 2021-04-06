@@ -13,10 +13,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Scout',
         PlatoonTemplate = 'T1LandScoutSCTA',
-        Priority = 91,
+        Priority = 82,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {600} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.SCOUT * categories.LAND * categories.MOBILE} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.OVERLAYRADAR * categories.LAND * categories.MOBILE} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Land',
@@ -24,10 +24,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory2 Scout',
         PlatoonTemplate = 'T1LandScoutSCTA2',
-        Priority = 93,
+        Priority = 80,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {180} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.SCOUT * categories.LAND * categories.MOBILE} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.OVERLAYRADAR * categories.LAND * categories.MOBILE} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Land',
@@ -37,7 +37,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1AirScoutSCTA',
         Priority = 200,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {300} },
+            { MIBC, 'LessThanGameTime', {180} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1.05 }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.MOBILE * categories.AIR * categories.SCOUT } },
         },

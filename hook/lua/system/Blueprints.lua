@@ -60,6 +60,7 @@ end
 local TAExtractWreckageBlueprint = ExtractWreckageBlueprint
 
 function ExtractWreckageBlueprint(bp)
+	TAExtractWreckageBlueprint(bp)
 	local FactionName = bp.General.FactionName
 	if FactionName == 'ARM' or FactionName == 'CORE' then 
 		local meshid = bp.Display.MeshBlueprint
@@ -84,8 +85,6 @@ function ExtractWreckageBlueprint(bp)
 		wreckbp.BlueprintId = meshid .. '_wreck'
 		bp.Display.MeshBlueprintWrecked = wreckbp.BlueprintId
 		MeshBlueprint(wreckbp)
-		else
-		TAExtractWreckageBlueprint(bp)
 	end
 end
 

@@ -9,7 +9,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Air Scout',
         PlatoonTemplate = 'T1AirScoutFormSCTA',
         Priority = 100,
-        InstanceCount = 2,
+        InstanceCount = 10,
         BuilderType = 'Any',
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0,  categories.SCOUT } },
@@ -19,10 +19,10 @@ BuilderGroup {
         BuilderName = 'SCTAAI Radar Scout',
         PlatoonTemplate = 'SCTAT2AirScouting',
         Priority = 125,
-        InstanceCount = 2,
+        InstanceCount = 10,
         BuilderType = 'Any',
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.SCOUT } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.OVERLAYOMNI } },
          },
     },
     Builder {

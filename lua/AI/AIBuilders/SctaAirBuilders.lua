@@ -34,7 +34,6 @@ BuilderGroup {
         Priority = 95,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, LAB * categories.AIR } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.7}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.2, 0.5 }},
         },
         BuilderType = 'Air',
@@ -69,7 +68,8 @@ BuilderGroup {
             { UCBC, 'LocationFactoriesBuildingLess', { 'LocationType', 2, 'TRANSPORTATION' } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, 'TRANSPORTATION' } },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'TRANSPORTATION' } },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.05 }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.7}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.9 }},
         },
         BuilderType = 'Air',
     },     

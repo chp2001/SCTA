@@ -122,43 +122,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA ACU Naval',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 501,
+        Priority = 120,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {240} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.NAVAL} },
             { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
             { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'AntiSurface' } },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            Construction = {
-                BuildClose = false,
-                BaseTemplate = ExBaseTmpl,
-                ExpansionBase = true,
-                NearMarkerType = 'Naval Area',
-                --ExpansionRadius = 50, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
-                LocationRadius = 1000,
-                LocationType = 'LocationType',
-                ThreatMin = -1000,
-                ThreatMax = 1000,
-                ThreatRings = 2,
-                ThreatType = 'AntiSurface',
-                BuildStructures = {                    
-                    'T1SeaFactory',
-                    'T1Sonar',
-                }
-            },
-        }
-    },
-    Builder {
-        BuilderName = 'SCTA Air Naval',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco',
-        Priority = 202,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {240} },
-            { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
-            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'AntiAir' } },
         },
         BuilderType = 'Any',
         BuilderData = {

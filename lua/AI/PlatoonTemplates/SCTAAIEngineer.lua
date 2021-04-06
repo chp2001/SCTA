@@ -25,6 +25,7 @@ PlatoonTemplate {
     },
 }
 
+
 PlatoonTemplate {
     Name = 'EngineerBuilderSCTA123',
     Plan = 'EngineerBuildAISCTA',

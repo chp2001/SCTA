@@ -179,7 +179,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
 	        WeaponUnpacks = true,
-            WeaponRepackTimeout = 3,
+            WeaponRepackTimeout = 2,
             RenderFireClock = true,
             WeaponCategory = 'MISSILE',
         },

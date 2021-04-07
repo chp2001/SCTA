@@ -12,7 +12,7 @@ ARMFARK = Class(TAconstructor) {
         if not __blueprints['armgant'] then
         self:AddBuildRestriction(categories.ARM)
         end
-        end,
+    end,
 }
 
 TypeClass = ARMFARK

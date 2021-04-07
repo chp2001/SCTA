@@ -2,7 +2,6 @@
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
-local SBC = '/lua/editor/SorianBuildConditions.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local TAutils = '/mods/SCTA-master/lua/TAAIutils.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
@@ -79,7 +78,7 @@ BuilderGroup {
         BuilderName = 'SCTA Assist Production Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
         Priority = 5,
-        InstanceCount = 152,
+        InstanceCount = 11,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
@@ -100,7 +99,7 @@ BuilderGroup {
         BuilderName = 'SCTA Assist Unit Production Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
         Priority = 5,
-        InstanceCount = 151,
+        InstanceCount = 14,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.MOBILE }},
@@ -206,8 +205,8 @@ BuilderGroup {
         Priority = 89,
         InstanceCount = 8,
         BuilderConditions = {
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.VOLATILE}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} },
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.VOLATILE}},
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             },
         BuilderData = {
@@ -225,8 +224,8 @@ BuilderGroup {
         InstanceCount = 8,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1200} },
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.SIZE4}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} },
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.SIZE4}},
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             },
         BuilderData = {
@@ -243,8 +242,8 @@ BuilderGroup {
         Priority = 97,
         InstanceCount = 8,
         BuilderConditions = {
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.VOLATILE}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} },
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.VOLATILE}},
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             },
         BuilderData = {
@@ -300,7 +299,7 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
-            { EBC, 'LessThanEconStorageRatio', { 0.25, 1.1}},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
         },
         BuilderData = {
         Terrain = true,
@@ -318,8 +317,8 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 360 } },
             { MIBC, 'LessThanGameTime', {1200} }, 
-            { TAutils, 'LessMassStorageMaxTA',  { 0.15}},   
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},   
         },
         BuilderData = {
             Terrain = true,
@@ -337,8 +336,8 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 120 } },
             { MIBC, 'LessThanGameTime', {480} }, 
-            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
-            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},    
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},   
         },
         BuilderData = {
             Terrain = true,
@@ -355,8 +354,8 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 1200 } },
-            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},   
             },
         BuilderData = {
             Terrain = true,
@@ -368,31 +367,14 @@ BuilderGroup {
     ---AirReclaim
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Air',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco',
-        PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 100,
-        InstanceCount = 5,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 600 } },
-            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
-            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
-            },
-        BuilderData = {
-            LocationType = 'LocationType',
-            ReclaimTime = 30,
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Reclaim Air End',
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
         PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 100,
-        InstanceCount = 5,
+        Priority = 85,
+        InstanceCount = 8,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 600 } },
-            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},    
             },
         BuilderData = {
             LocationType = 'LocationType',
@@ -400,5 +382,4 @@ BuilderGroup {
         },
         BuilderType = 'Any',
     },
----NavyReclaim
 }

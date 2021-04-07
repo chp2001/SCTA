@@ -234,8 +234,6 @@ TechLevel = 'RULEUTL_Advanced',
             TurretDualManipulators = false,
             Turreted = false,
             WeaponCategory = 'Anti Navy',
-            WeaponRepackTimeout = 0,
-            WeaponUnpacks = false,
         },
         {
             Audio = {

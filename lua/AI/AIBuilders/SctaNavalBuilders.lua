@@ -26,7 +26,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1ScoutShipSCTA',
         Priority = 110,
         BuilderConditions = {
-            { TAutils, 'AttackNavalTargetSCTA', { true, 0, categories.FACTORY * categories.NAVAL, 'Enemy'}},
+            { TAutils,   'TAAttackNaval', {true}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'Sea',
@@ -36,7 +36,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1FrigateSCTA',
         Priority = 120,
         BuilderConditions = {
-            { TAutils, 'AttackNavalTargetSCTA', { true, 0, categories.FACTORY * categories.NAVAL, 'Enemy'}},
+            { TAutils,   'TAAttackNaval', {true}},
             { MIBC, 'GreaterThanGameTime', {900} },
             { UCBC, 'HaveUnitRatio', { 0.33, categories.NAVAL * categories.MOBILE * categories.FRIGATE,
             '<=', categories.NAVAL * categories.MOBILE} },
@@ -49,7 +49,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2DestroyerSCTA',
         Priority = 126,
         BuilderConditions = {
-            { TAutils, 'AttackNavalTargetSCTA', { true, 0, categories.FACTORY * categories.NAVAL, 'Enemy'}},
+            { TAutils,   'TAAttackNaval', {true}},
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Naval'} },
             { UCBC, 'HaveUnitRatio', { 0.33, categories.NAVAL * categories.DESTROYER,
             '<=', categories.NAVAL * categories.MOBILE} },
@@ -62,7 +62,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2CrusSCTA',
         Priority = 101,
         BuilderConditions = {
-            { TAutils, 'AttackNavalTargetSCTA', { true, 0, categories.FACTORY * categories.NAVAL, 'Enemy'}},
+            { TAutils,   'TAAttackNaval', {true}},
             { UCBC, 'HaveUnitRatio', { 0.1, categories.NAVAL * categories.MOBILE * categories.CRUISER,
             '<=', categories.NAVAL * categories.MOBILE} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
@@ -74,7 +74,7 @@ BuilderGroup {
         PlatoonTemplate = 'BattleshipSCTA',
         Priority = 131,
         BuilderConditions = {
-            { TAutils, 'AttackNavalTargetSCTA', { true, 0, categories.FACTORY * categories.NAVAL, 'Enemy'}},
+            { TAutils,   'TAAttackNaval', {true}},
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Naval'} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.BATTLESHIP } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },

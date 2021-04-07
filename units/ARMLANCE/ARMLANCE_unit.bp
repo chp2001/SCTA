@@ -221,8 +221,6 @@ UnitBlueprint {
                 Turreted = false,
                 RangeCategory = 'UWRC_AntiNavy',
                 WeaponCategory = 'AntiNavy',
-                WeaponRepackTimeout = 0,
-                WeaponUnpacks = false,
             },
         { #BIG_UNITEX
             Damage = 50,

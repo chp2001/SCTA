@@ -193,7 +193,7 @@ UnitBlueprint {
             TurretYawSpeed = 275.06,
             Turreted = true,
 	        WeaponUnpacks = true,
-            WeaponRepackTimeout = 3,
+            WeaponRepackTimeout = 2,
         },
         { #BIG_UNITEX
             Damage = 50,

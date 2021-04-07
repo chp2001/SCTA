@@ -298,7 +298,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI LandFac Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 510,
+        Priority = 53,
         InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
@@ -321,7 +321,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI LandFac Emergency2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 500,
+        Priority = 51,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
@@ -343,8 +343,8 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI LandFacT2 Emergency',
-        PlatoonTemplate = 'EngineerBuilderSCTA12',
-        Priority = 601,
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        Priority = 44,
         InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {750} },
@@ -366,7 +366,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI LandFacT2 Emergency2',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 599,
+        Priority = 31,
         InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {750} },
@@ -388,7 +388,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Hover Emergency Factory',
         PlatoonTemplate = 'EngineerBuilderSCTA3',
-        Priority = 752,
+        Priority = 27,
         InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },

@@ -11,16 +11,6 @@ BuilderGroup {
     BuilderGroupName = 'SCTAAILandBuilder',
     BuildersType = 'FactoryBuilder',
     Builder {
-        BuilderName = 'SCTAAi ENGINEER EMERGENCY',
-        PlatoonTemplate = 'T1BuildEngineerSCTA',
-        Priority = 412,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {600} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}}
-        },
-        BuilderType = 'Land',
-    },
-    Builder {
         BuilderName = 'SCTAAi Factory Tank Early',
         PlatoonTemplate = 'T1LandDFTankSCTAEarly',
         Priority = 92,

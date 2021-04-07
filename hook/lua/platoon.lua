@@ -15,7 +15,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local armyIndex = aiBrain:GetArmyIndex()
         local x,z = aiBrain:GetArmyStartPos()
         local cons = self.PlatoonData.Construction
-        local buildingTmpl, buildingTmplFile, baseTmpl, baseTmplFile
+        local buildingTmpl, buildingTmplFile, baseTmpl, baseTmplFile, baseTmplDefault
         local eng
         for k, v in platoonUnits do
             if not v.Dead and EntityCategoryContains(categories.ENGINEER - categories.STATIONASSISTPOD, v) then --DUNCAN - was construction
@@ -43,7 +43,7 @@ Platoon = Class(SCTAAIPlatoon) {
 
             buildingTmplFile = import(cons.BuildingTemplateFile or '/lua/BuildingTemplates.lua')
             baseTmplFile = import(cons.BaseTemplateFile or '/lua/BaseTemplates.lua')
-            --baseTmplDefault = import('/lua/BaseTemplates.lua')
+            baseTmplDefault = import('/lua/BaseTemplates.lua')
             buildingTmpl = buildingTmplFile[(cons.BuildingTemplate or 'BuildingTemplates')][factionIndex]
             baseTmpl = baseTmplFile[(cons.BaseTemplate or 'BaseTemplates')][factionIndex]
     
@@ -91,6 +91,19 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
             else
                 reference = table.copy(eng:GetPosition())
+            end
+            relative = false
+            buildFunction = AIBuildStructures.AIExecuteBuildStructure
+            table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
+        elseif cons.OrderedTemplate then
+            relativeTo = table.copy(eng:GetPosition())
+            --LOG('relativeTo is'..repr(relativeTo))
+            relative = true
+            local tmpReference = aiBrain:FindPlaceToBuild('T2EnergyProduction', 'uab1201', baseTmplDefault['BaseTemplates'][factionIndex], relative, eng, nil, relativeTo[1], relativeTo[3])
+            if tmpReference then
+                reference = eng:CalculateWorldPositionFromRelative(tmpReference)
+            else
+                return
             end
             relative = false
             buildFunction = AIBuildStructures.AIExecuteBuildStructure
@@ -295,7 +308,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local armyIndex = aiBrain:GetArmyIndex()
         local x,z = aiBrain:GetArmyStartPos()
         local cons = self.PlatoonData.Construction
-        local buildingTmpl, buildingTmplFile, baseTmpl, baseTmplFile
+        local buildingTmpl, buildingTmplFile, baseTmpl, baseTmplFile, baseTmplDefault
         local eng
         for k, v in platoonUnits do
             if not v.Dead and EntityCategoryContains(categories.ENGINEER - categories.STATIONASSISTPOD, v) then --DUNCAN - was construction
@@ -323,7 +336,7 @@ Platoon = Class(SCTAAIPlatoon) {
 
             buildingTmplFile = import(cons.BuildingTemplateFile or '/lua/BuildingTemplates.lua')
             baseTmplFile = import(cons.BaseTemplateFile or '/lua/BaseTemplates.lua')
-            --baseTmplDefault = import('/lua/BaseTemplates.lua')
+            baseTmplDefault = import('/lua/BaseTemplates.lua')
             buildingTmpl = buildingTmplFile[(cons.BuildingTemplate or 'BuildingTemplates')][factionIndex]
             baseTmpl = baseTmplFile[(cons.BaseTemplate or 'BaseTemplates')][factionIndex]
 
@@ -370,6 +383,19 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
             else
                 reference = table.copy(eng:GetPosition())
+            end
+            relative = false
+            buildFunction = AIBuildStructures.AIExecuteBuildStructure
+            table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
+        elseif cons.OrderedTemplate then
+            relativeTo = table.copy(eng:GetPosition())
+            --LOG('relativeTo is'..repr(relativeTo))
+            relative = true
+            local tmpReference = aiBrain:FindPlaceToBuild('T2EnergyProduction', 'uab1201', baseTmplDefault['BaseTemplates'][factionIndex], relative, eng, nil, relativeTo[1], relativeTo[3])
+            if tmpReference then
+                reference = eng:CalculateWorldPositionFromRelative(tmpReference)
+            else
+                return
             end
             relative = false
             buildFunction = AIBuildStructures.AIExecuteBuildStructure
@@ -556,7 +582,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local armyIndex = aiBrain:GetArmyIndex()
         local x,z = aiBrain:GetArmyStartPos()
         local cons = self.PlatoonData.Construction
-        local buildingTmpl, buildingTmplFile, baseTmpl, baseTmplFile
+        local buildingTmpl, buildingTmplFile, baseTmpl, baseTmplFile, baseTmplDefault
         local eng
         for k, v in platoonUnits do
             if not v.Dead and EntityCategoryContains(categories.ENGINEER - categories.STATIONASSISTPOD, v) then --DUNCAN - was construction
@@ -584,7 +610,7 @@ Platoon = Class(SCTAAIPlatoon) {
 
             buildingTmplFile = import(cons.BuildingTemplateFile or '/lua/BuildingTemplates.lua')
             baseTmplFile = import(cons.BaseTemplateFile or '/lua/BaseTemplates.lua')
-            --baseTmplDefault = import('/lua/BaseTemplates.lua')
+            baseTmplDefault = import('/lua/BaseTemplates.lua')
             buildingTmpl = buildingTmplFile[(cons.BuildingTemplate or 'BuildingTemplates')][factionIndex]
             baseTmpl = baseTmplFile[(cons.BaseTemplate or 'BaseTemplates')][factionIndex]
 
@@ -631,6 +657,19 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
             else
                 reference = table.copy(eng:GetPosition())
+            end
+            relative = false
+            buildFunction = AIBuildStructures.AIExecuteBuildStructure
+            table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
+        elseif cons.OrderedTemplate then
+            relativeTo = table.copy(eng:GetPosition())
+            --LOG('relativeTo is'..repr(relativeTo))
+            relative = true
+            local tmpReference = aiBrain:FindPlaceToBuild('T2EnergyProduction', 'uab1201', baseTmplDefault['BaseTemplates'][factionIndex], relative, eng, nil, relativeTo[1], relativeTo[3])
+            if tmpReference then
+                reference = eng:CalculateWorldPositionFromRelative(tmpReference)
+            else
+                return
             end
             relative = false
             buildFunction = AIBuildStructures.AIExecuteBuildStructure
@@ -855,7 +894,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local armyIndex = aiBrain:GetArmyIndex()
         local x,z = aiBrain:GetArmyStartPos()
         local cons = self.PlatoonData.Construction
-        local buildingTmpl, buildingTmplFile, baseTmpl, baseTmplFile
+        local buildingTmpl, buildingTmplFile, baseTmpl, baseTmplFile, baseTmplDefault
         local eng
         for k, v in platoonUnits do
             if not v.Dead and EntityCategoryContains(categories.ENGINEER - categories.STATIONASSISTPOD, v) then --DUNCAN - was construction
@@ -883,7 +922,7 @@ Platoon = Class(SCTAAIPlatoon) {
 
             buildingTmplFile = import(cons.BuildingTemplateFile or '/lua/BuildingTemplates.lua')
             baseTmplFile = import(cons.BaseTemplateFile or '/lua/BaseTemplates.lua')
-            --baseTmplDefault = import('/lua/BaseTemplates.lua')
+            baseTmplDefault = import('/lua/BaseTemplates.lua')
             buildingTmpl = buildingTmplFile[(cons.BuildingTemplate or 'BuildingTemplates')][factionIndex]
             baseTmpl = baseTmplFile[(cons.BaseTemplate or 'BaseTemplates')][factionIndex]
 
@@ -920,6 +959,19 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
             else
                 reference = table.copy(eng:GetPosition())
+            end
+            relative = false
+            buildFunction = AIBuildStructures.AIExecuteBuildStructure
+            table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
+        elseif cons.OrderedTemplate then
+            relativeTo = table.copy(eng:GetPosition())
+            --LOG('relativeTo is'..repr(relativeTo))
+            relative = true
+            local tmpReference = aiBrain:FindPlaceToBuild('T2EnergyProduction', 'uab1201', baseTmplDefault['BaseTemplates'][factionIndex], relative, eng, nil, relativeTo[1], relativeTo[3])
+            if tmpReference then
+                reference = eng:CalculateWorldPositionFromRelative(tmpReference)
+            else
+                return
             end
             relative = false
             buildFunction = AIBuildStructures.AIExecuteBuildStructure

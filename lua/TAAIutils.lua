@@ -1,6 +1,5 @@
 local AIUtils = import('/lua/ai/AIUtilities.lua')
 
-
 function TAGetEngineerFaction(engineer)
     if EntityCategoryContains(categories.ARM, engineer) then
         return 'Arm'
@@ -239,15 +238,20 @@ function LessMassStorageMaxTA(aiBrain, mStorageRatio)
     return false
 end
 
-function AttackNavalTargetSCTA(aiBrain, greater, numReq, category, alliance)
-    local testCat = category
-    if type(category) == 'string' then
-        testCat = ParseEntityCategory(category)
+
+function TAAttackNaval(aiBrain, bool)
+    local startX, startZ = aiBrain:GetArmyStartPos()
+    local AIAttackUtils = import('/lua/AI/aiattackutilities.lua')
+    local enemyX, enemyZ
+    if aiBrain:GetCurrentEnemy() then
+        enemyX, enemyZ = aiBrain:GetCurrentEnemy():GetArmyStartPos()
     end
-    local numUnits = aiBrain:GetNumUnitsAroundPoint(testCat, Vector(0,0,0), 100000, alliance)
-    if numUnits > numReq and greater then
-        return true
-    elseif numUnits < numReq and not greater then
+    local navalMarker = AIUtils.AIGetClosestMarkerLocation(aiBrain, 'Naval Area', startX, startZ)
+    local path, reason = false
+    if enemyX then
+        path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Water', {startX,0,startZ}, {enemyX,0,enemyZ}, 10)
+    end
+    if (navalMarker and path) and bool then
         return true
     end
     return false

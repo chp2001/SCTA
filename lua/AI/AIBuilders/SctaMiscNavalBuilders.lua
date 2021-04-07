@@ -189,7 +189,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Naval Mex 750',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 97,
+        Priority = 98,
         InstanceCount = 1,
         BuilderConditions = {
                 { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 750, -500, 200, 0, 'AntiSurface', 1 }},
@@ -218,7 +218,7 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             Construction = {
-                BuildClose = false,
+                BuildClose = true,
                 NearMarkerType = 'Naval Area',
                 MarkerRadius = 20,
                 LocationRadius = 75,
@@ -239,7 +239,7 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Energy Naval',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         PlatoonAIPlan = 'ReclaimStructuresAI',
-        Priority = 154,
+        Priority = 111,
         InstanceCount = 8,
         BuilderConditions = {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.ENERGYPRODUCTION * categories.NAVAL}},
@@ -247,9 +247,10 @@ BuilderGroup {
             { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
             },
         BuilderData = {
+            NearMarkerType = 'Naval Area',
             Location = 'LocationType',
             Reclaim = {'ENERGYPRODUCTION NAVAL'},
-                ReclaimTime = 30,
+            ReclaimTime = 30,
         },
         BuilderType = 'Any',
     },

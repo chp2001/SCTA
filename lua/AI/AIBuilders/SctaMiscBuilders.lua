@@ -243,8 +243,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {2400} }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.STRUCTURE * categories.EXPERIMENTAL * categories.ARTILLERY} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.STRUCTURE * categories.EXPERIMENTAL * categories.ARTILLERY} },        
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -255,7 +254,6 @@ BuilderGroup {
                 BuildStructures = {
                     'T4Artillery',
                 },
-                Location = 'LocationType',
             }
         }
     },

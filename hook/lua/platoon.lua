@@ -1,5 +1,12 @@
 local TAutils = import('/mods/SCTA-master/lua/TAAIutils.lua')
 
+--[[buildingTmplFile = import(cons.BuildingTemplateFile or '/lua/BuildingTemplates.lua')
+baseTmplFile = import(cons.BaseTemplateFile or '/lua/BaseTemplates.lua')
+baseTmplDefault = import('/lua/BaseTemplates.lua')
+buildingTmpl = buildingTmplFile[(cons.BuildingTemplate or 'BuildingTemplates')][factionIndex]
+baseTmpl = baseTmplFile[(cons.BaseTemplate or 'BaseTemplates')][factionIndex]]
+
+
 SCTAAIPlatoon = Platoon
 Platoon = Class(SCTAAIPlatoon) {
     EngineerBuildAISCTA = function(self)
@@ -8,7 +15,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local armyIndex = aiBrain:GetArmyIndex()
         local x,z = aiBrain:GetArmyStartPos()
         local cons = self.PlatoonData.Construction
-        local buildingTmpl, buildingTmplFile, baseTmpl, baseTmplFile
+        local buildingTmpl, buildingTmplFile, baseTmpl, baseTmplFile, baseTmplDefault
         local eng
         for k, v in platoonUnits do
             if not v.Dead and EntityCategoryContains(categories.ENGINEER - categories.STATIONASSISTPOD, v) then --DUNCAN - was construction
@@ -34,10 +41,12 @@ Platoon = Class(SCTAAIPlatoon) {
             local FactionToIndex  = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, NOMADS = 5, ARM = 6, CORE = 7}
             local factionIndex = cons.FactionIndex or FactionToIndex[eng.factionCategory]
 
-        buildingTmplFile = import(cons.BuildingTemplateFile or '/lua/BuildingTemplates.lua')
-        baseTmplFile = import(cons.BaseTemplateFile or '/lua/BaseTemplates.lua')
-        buildingTmpl = buildingTmplFile[(cons.BuildingTemplate or 'BuildingTemplates')][factionIndex]
-        baseTmpl = baseTmplFile[(cons.BaseTemplate or 'BaseTemplates')][factionIndex]
+            buildingTmplFile = import(cons.BuildingTemplateFile or '/lua/BuildingTemplates.lua')
+            baseTmplFile = import(cons.BaseTemplateFile or '/lua/BaseTemplates.lua')
+            baseTmplDefault = import('/lua/BaseTemplates.lua')
+            buildingTmpl = buildingTmplFile[(cons.BuildingTemplate or 'BuildingTemplates')][factionIndex]
+            baseTmpl = baseTmplFile[(cons.BaseTemplate or 'BaseTemplates')][factionIndex]
+    
 
         --LOG('*AI DEBUG: EngineerBuild AI ' .. eng.Sync.id)
 
@@ -82,6 +91,19 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
             else
                 reference = table.copy(eng:GetPosition())
+            end
+            relative = false
+            buildFunction = AIBuildStructures.AIExecuteBuildStructure
+            table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
+        elseif cons.OrderedTemplate then
+            relativeTo = table.copy(eng:GetPosition())
+            --LOG('relativeTo is'..repr(relativeTo))
+            relative = true
+            local tmpReference = aiBrain:FindPlaceToBuild('T2EnergyProduction', 'uab1201', baseTmplDefault['BaseTemplates'][factionIndex], relative, eng, nil, relativeTo[1], relativeTo[3])
+            if tmpReference then
+                reference = eng:CalculateWorldPositionFromRelative(tmpReference)
+            else
+                return
             end
             relative = false
             buildFunction = AIBuildStructures.AIExecuteBuildStructure
@@ -286,7 +308,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local armyIndex = aiBrain:GetArmyIndex()
         local x,z = aiBrain:GetArmyStartPos()
         local cons = self.PlatoonData.Construction
-        local buildingTmpl, buildingTmplFile, baseTmpl, baseTmplFile
+        local buildingTmpl, buildingTmplFile, baseTmpl, baseTmplFile, baseTmplDefault
         local eng
         for k, v in platoonUnits do
             if not v.Dead and EntityCategoryContains(categories.ENGINEER - categories.STATIONASSISTPOD, v) then --DUNCAN - was construction
@@ -312,10 +334,11 @@ Platoon = Class(SCTAAIPlatoon) {
             local FactionToIndex  = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, NOMADS = 5, ARM = 6, CORE = 7}
             local factionIndex = cons.FactionIndex or FactionToIndex[eng.factionCategory]
 
-        buildingTmplFile = import(cons.BuildingTemplateFile or '/lua/BuildingTemplates.lua')
-        baseTmplFile = import(cons.BaseTemplateFile or '/lua/BaseTemplates.lua')
-        buildingTmpl = buildingTmplFile[(cons.BuildingTemplate or 'BuildingTemplates')][factionIndex]
-        baseTmpl = baseTmplFile[(cons.BaseTemplate or 'BaseTemplates')][factionIndex]
+            buildingTmplFile = import(cons.BuildingTemplateFile or '/lua/BuildingTemplates.lua')
+            baseTmplFile = import(cons.BaseTemplateFile or '/lua/BaseTemplates.lua')
+            baseTmplDefault = import('/lua/BaseTemplates.lua')
+            buildingTmpl = buildingTmplFile[(cons.BuildingTemplate or 'BuildingTemplates')][factionIndex]
+            baseTmpl = baseTmplFile[(cons.BaseTemplate or 'BaseTemplates')][factionIndex]
 
         --LOG('*AI DEBUG: EngineerBuild AI ' .. eng.Sync.id)
 
@@ -364,6 +387,19 @@ Platoon = Class(SCTAAIPlatoon) {
             relative = false
             buildFunction = AIBuildStructures.AIExecuteBuildStructure
             table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
+        elseif cons.OrderedTemplate then
+            relativeTo = table.copy(eng:GetPosition())
+            --LOG('relativeTo is'..repr(relativeTo))
+            relative = true
+            local tmpReference = aiBrain:FindPlaceToBuild('T2EnergyProduction', 'uab1201', baseTmplDefault['BaseTemplates'][factionIndex], relative, eng, nil, relativeTo[1], relativeTo[3])
+            if tmpReference then
+                reference = eng:CalculateWorldPositionFromRelative(tmpReference)
+            else
+                return
+            end
+            relative = false
+            buildFunction = AIBuildStructures.AIExecuteBuildStructure
+            table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
         elseif cons.Wall then
             local pos = aiBrain:PBMGetLocationCoords(cons.LocationType) or cons.Position or self:GetPlatoonPosition()
             local radius = cons.LocationRadius or aiBrain:PBMGetLocationRadius(cons.LocationType) or 100
@@ -394,15 +430,7 @@ Platoon = Class(SCTAAIPlatoon) {
             local pos = aiBrain:PBMGetLocationCoords(cons.LocationType) or cons.Position or self:GetPlatoonPosition()
             local radius = cons.LocationRadius or aiBrain:PBMGetLocationRadius(cons.LocationType) or 100
 
-            if cons.NearMarkerType == 'Expansion Area' then
-                reference, refName = AIUtils.AIFindExpansionAreaNeedsEngineer(aiBrain, cons.LocationType,
-                        (cons.LocationRadius or 100), cons.ThreatMin, cons.ThreatMax, cons.ThreatRings, cons.ThreatType)
-                -- didn't find a location to build at
-                if not reference or not refName then
-                    self:PlatoonDisband()
-                    return
-                end
-            elseif cons.NearMarkerType == 'Naval Area' then
+        if cons.NearMarkerType == 'Naval Area' then
                 reference, refName = AIUtils.AIFindNavalAreaNeedsEngineer(aiBrain, cons.LocationType,
                         (cons.LocationRadius or 100), cons.ThreatMin, cons.ThreatMax, cons.ThreatRings, cons.ThreatType)
                 -- didn't find a location to build at
@@ -410,25 +438,7 @@ Platoon = Class(SCTAAIPlatoon) {
                     self:PlatoonDisband()
                     return
                 end
-            else
-                --DUNCAN - use my alternative expansion finder on large maps below a certain time
-                local mapSizeX, mapSizeZ = GetMapSize()
-                if GetGameTimeSeconds() <= 780 and mapSizeX > 512 and mapSizeZ > 512 then
-                    reference, refName = AIUtils.AIFindFurthestStartLocationNeedsEngineer(aiBrain, cons.LocationType,
-                        (cons.LocationRadius or 100), cons.ThreatMin, cons.ThreatMax, cons.ThreatRings, cons.ThreatType)
-                    if not reference or not refName then
-                        reference, refName = AIUtils.AIFindStartLocationNeedsEngineer(aiBrain, cons.LocationType,
-                            (cons.LocationRadius or 100), cons.ThreatMin, cons.ThreatMax, cons.ThreatRings, cons.ThreatType)
-                    end
-                else
-                    reference, refName = AIUtils.AIFindStartLocationNeedsEngineer(aiBrain, cons.LocationType,
-                        (cons.LocationRadius or 100), cons.ThreatMin, cons.ThreatMax, cons.ThreatRings, cons.ThreatType)
-                end
                 -- didn't find a location to build at
-                if not reference or not refName then
-                    self:PlatoonDisband()
-                    return
-                end
             end
 
             -- If moving far from base, tell the assisting platoons to not go with
@@ -441,7 +451,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
             end
 
-            if not cons.BaseTemplate and (cons.NearMarkerType == 'Naval Area' or cons.NearMarkerType == 'Defensive Point' or cons.NearMarkerType == 'Expansion Area') then
+            if not cons.BaseTemplate and (cons.NearMarkerType == 'Naval Area') then
                 baseTmpl = baseTmplFile['ExpansionBaseTemplates'][factionIndex]
             end
             if cons.ExpansionBase and refName then
@@ -455,18 +465,6 @@ Platoon = Class(SCTAAIPlatoon) {
             -- Must use BuildBaseOrdered to start at the marker; otherwise it builds closest to the eng
             --buildFunction = AIBuildStructures.AIBuildBaseTemplateOrdered
             buildFunction = AIBuildStructures.AIBuildBaseTemplate
-        elseif cons.NearMarkerType and cons.NearMarkerType == 'Defensive Point' then
-            baseTmpl = baseTmplFile['ExpansionBaseTemplates'][factionIndex]
-
-            relative = false
-            local pos = self:GetPlatoonPosition()
-            reference, refName = AIUtils.AIFindDefensivePointNeedsStructure(aiBrain, cons.LocationType, (cons.LocationRadius or 100),
-                            cons.MarkerUnitCategory, cons.MarkerRadius, cons.MarkerUnitCount, (cons.ThreatMin or 0), (cons.ThreatMax or 1),
-                            (cons.ThreatRings or 1), (cons.ThreatType or 'AntiSurface'))
-
-            table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
-
-            buildFunction = AIBuildStructures.AIExecuteBuildStructure
         elseif cons.NearMarkerType and cons.NearMarkerType == 'Naval Defensive Point' then
             baseTmpl = baseTmplFile['ExpansionBaseTemplates'][factionIndex]
 
@@ -584,7 +582,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local armyIndex = aiBrain:GetArmyIndex()
         local x,z = aiBrain:GetArmyStartPos()
         local cons = self.PlatoonData.Construction
-        local buildingTmpl, buildingTmplFile, baseTmpl, baseTmplFile
+        local buildingTmpl, buildingTmplFile, baseTmpl, baseTmplFile, baseTmplDefault
         local eng
         for k, v in platoonUnits do
             if not v.Dead and EntityCategoryContains(categories.ENGINEER - categories.STATIONASSISTPOD, v) then --DUNCAN - was construction
@@ -610,10 +608,11 @@ Platoon = Class(SCTAAIPlatoon) {
             local FactionToIndex  = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, NOMADS = 5, ARM = 6, CORE = 7}
             local factionIndex = cons.FactionIndex or FactionToIndex[eng.factionCategory]
 
-        buildingTmplFile = import(cons.BuildingTemplateFile or '/lua/BuildingTemplates.lua')
-        baseTmplFile = import(cons.BaseTemplateFile or '/lua/BaseTemplates.lua')
-        buildingTmpl = buildingTmplFile[(cons.BuildingTemplate or 'BuildingTemplates')][factionIndex]
-        baseTmpl = baseTmplFile[(cons.BaseTemplate or 'BaseTemplates')][factionIndex]
+            buildingTmplFile = import(cons.BuildingTemplateFile or '/lua/BuildingTemplates.lua')
+            baseTmplFile = import(cons.BaseTemplateFile or '/lua/BaseTemplates.lua')
+            baseTmplDefault = import('/lua/BaseTemplates.lua')
+            buildingTmpl = buildingTmplFile[(cons.BuildingTemplate or 'BuildingTemplates')][factionIndex]
+            baseTmpl = baseTmplFile[(cons.BaseTemplate or 'BaseTemplates')][factionIndex]
 
         --LOG('*AI DEBUG: EngineerBuild AI ' .. eng.Sync.id)
 
@@ -658,6 +657,19 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
             else
                 reference = table.copy(eng:GetPosition())
+            end
+            relative = false
+            buildFunction = AIBuildStructures.AIExecuteBuildStructure
+            table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
+        elseif cons.OrderedTemplate then
+            relativeTo = table.copy(eng:GetPosition())
+            --LOG('relativeTo is'..repr(relativeTo))
+            relative = true
+            local tmpReference = aiBrain:FindPlaceToBuild('T2EnergyProduction', 'uab1201', baseTmplDefault['BaseTemplates'][factionIndex], relative, eng, nil, relativeTo[1], relativeTo[3])
+            if tmpReference then
+                reference = eng:CalculateWorldPositionFromRelative(tmpReference)
+            else
+                return
             end
             relative = false
             buildFunction = AIBuildStructures.AIExecuteBuildStructure
@@ -882,7 +894,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local armyIndex = aiBrain:GetArmyIndex()
         local x,z = aiBrain:GetArmyStartPos()
         local cons = self.PlatoonData.Construction
-        local buildingTmpl, buildingTmplFile, baseTmpl, baseTmplFile
+        local buildingTmpl, buildingTmplFile, baseTmpl, baseTmplFile, baseTmplDefault
         local eng
         for k, v in platoonUnits do
             if not v.Dead and EntityCategoryContains(categories.ENGINEER - categories.STATIONASSISTPOD, v) then --DUNCAN - was construction
@@ -908,10 +920,11 @@ Platoon = Class(SCTAAIPlatoon) {
             local FactionToIndex  = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, NOMADS = 5, ARM = 6, CORE = 7}
             local factionIndex = cons.FactionIndex or FactionToIndex[eng.factionCategory]
 
-        buildingTmplFile = import(cons.BuildingTemplateFile or '/lua/BuildingTemplates.lua')
-        baseTmplFile = import(cons.BaseTemplateFile or '/lua/BaseTemplates.lua')
-        buildingTmpl = buildingTmplFile[(cons.BuildingTemplate or 'BuildingTemplates')][factionIndex]
-        baseTmpl = baseTmplFile[(cons.BaseTemplate or 'BaseTemplates')][factionIndex]
+            buildingTmplFile = import(cons.BuildingTemplateFile or '/lua/BuildingTemplates.lua')
+            baseTmplFile = import(cons.BaseTemplateFile or '/lua/BaseTemplates.lua')
+            baseTmplDefault = import('/lua/BaseTemplates.lua')
+            buildingTmpl = buildingTmplFile[(cons.BuildingTemplate or 'BuildingTemplates')][factionIndex]
+            baseTmpl = baseTmplFile[(cons.BaseTemplate or 'BaseTemplates')][factionIndex]
 
         --LOG('*AI DEBUG: EngineerBuild AI ' .. eng.Sync.id)
 
@@ -946,6 +959,19 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
             else
                 reference = table.copy(eng:GetPosition())
+            end
+            relative = false
+            buildFunction = AIBuildStructures.AIExecuteBuildStructure
+            table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
+        elseif cons.OrderedTemplate then
+            relativeTo = table.copy(eng:GetPosition())
+            --LOG('relativeTo is'..repr(relativeTo))
+            relative = true
+            local tmpReference = aiBrain:FindPlaceToBuild('T2EnergyProduction', 'uab1201', baseTmplDefault['BaseTemplates'][factionIndex], relative, eng, nil, relativeTo[1], relativeTo[3])
+            if tmpReference then
+                reference = eng:CalculateWorldPositionFromRelative(tmpReference)
+            else
+                return
             end
             relative = false
             buildFunction = AIBuildStructures.AIExecuteBuildStructure

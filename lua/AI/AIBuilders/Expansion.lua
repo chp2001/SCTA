@@ -126,15 +126,16 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {240} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.NAVAL} },
             { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
-            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
+            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'Naval' } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.NAVAL} },
         },
         BuilderType = 'Any',
         BuilderData = {
             Construction = {
                 BuildClose = false,
-                BaseTemplate = ExBaseTmpl,
+                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
+                BaseTemplate = 'NavalBaseTemplates',
                 ExpansionBase = true,
                 NearMarkerType = 'Naval Area',
                 --ExpansionRadius = 50, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
@@ -157,7 +158,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
-            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
+            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'Naval' } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
         },
@@ -165,7 +166,8 @@ BuilderGroup {
         BuilderData = {
             Construction = {
                 BuildClose = false,
-                BaseTemplate = ExBaseTmpl,
+                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
+                BaseTemplate = 'NavalBaseTemplates',
                 ExpansionBase = true,
                 NearMarkerType = 'Naval Area',
                 --ExpansionRadius = 50, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close

@@ -45,6 +45,7 @@ BuilderGroup {
             LocationType = 'LocationType',
         },        
         BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {300} },
             { UCBC, 'EngineersNeedGuard', { 'LocationType' } },
          },
     },
@@ -60,7 +61,7 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {600} },
+            { MIBC, 'GreaterThanGameTime', {540} },
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
          },
     },

@@ -221,8 +221,6 @@ TechLevel = 'RULEUTL_Basic',
             Turreted = false,
             FixBombTrajectory = true,
             WeaponCategory = 'Bomb',
-            WeaponRepackTimeout = 0,
-            WeaponUnpacks = false,
         },
         { #LIGHTNING
             Damage = 80,

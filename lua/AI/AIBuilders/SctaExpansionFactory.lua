@@ -134,10 +134,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI LandExpansion Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 511,
+        Priority = 41,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {1200} },
+            { MIBC, 'LessThanGameTime', {900} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderType = 'Any',
@@ -156,10 +156,9 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI LandExpansionT2 Emergency2',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 601,
+        Priority = 22,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {1500} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderType = 'Any',
@@ -175,48 +174,49 @@ BuilderGroup {
             }
         }
     },
-    Builder {
-        BuilderName = 'SCTAAI LandExpansion Emergency2',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 511,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {1200} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T1LandFactory2',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTAAI LandExpansionT2 Emergency',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 602,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {1500} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T2LandFactory',
-                }
-            }
-        }
-    },
 }
+
+--[[Builder {
+    BuilderName = 'SCTAAI LandExpansion Emergency2',
+    PlatoonTemplate = 'EngineerBuilderSCTA',
+    Priority = 511,
+    InstanceCount = 1,
+    BuilderConditions = {
+        { MIBC, 'LessThanGameTime', {1200} },
+        { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
+    },
+    BuilderType = 'Any',
+    BuilderData = {
+        NeedGuard = false,
+        DesiresAssist = true,
+        NumAssistees = 2,
+        Construction = {
+            BuildClose = true,
+            BuildStructures = {
+                'T1LandFactory2',
+            }
+        }
+    }
+},
+Builder {
+    BuilderName = 'SCTAAI LandExpansionT2 Emergency',
+    PlatoonTemplate = 'EngineerBuilderSCTA123',
+    Priority = 602,
+    InstanceCount = 1,
+    BuilderConditions = {
+        { MIBC, 'LessThanGameTime', {1500} },
+        { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
+    },
+    BuilderType = 'Any',
+    BuilderData = {
+        NeedGuard = false,
+        DesiresAssist = true,
+        NumAssistees = 2,
+        Construction = {
+            BuildClose = true,
+            BuildStructures = {
+                'T2LandFactory',
+            }
+        }
+    }
+},]]

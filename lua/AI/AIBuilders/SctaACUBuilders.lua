@@ -26,6 +26,8 @@ BuilderGroup {
         PlatoonAddFunctions = { {SAI, 'BuildOnce'}, }, -- Flag this builder to be only run once.	
         BuilderData = {	
             Construction = {
+                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/CommanderBaseTemplate.lua',
+                BaseTemplate = 'CommanderBaseTemplate',
                 BuildStructures = { -- The buildings to make	
                 'T1LandFactory',	
                 'T1EnergyProduction',

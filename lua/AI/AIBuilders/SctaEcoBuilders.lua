@@ -1,5 +1,6 @@
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
+local TAutils = '/mods/SCTA-master/lua/TAAIutils.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MABC = '/lua/editor/MarkerBuildConditions.lua'
@@ -164,51 +165,13 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTAAI T1Engineer Hydro2',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 92,
-        InstanceCount = 1, -- The max number concurrent instances of this builder.
-        BuilderConditions = { 
-            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 150}},
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = false,
-            Construction = {
-                BuildStructures = {
-                    'T1HydroCarbon',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTAAI T1Engineer Hydro3',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 72,
-        InstanceCount = 1, -- The max number concurrent instances of this builder.
-        BuilderConditions = { 
-            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 300}},
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = false,
-            Construction = {
-                BuildStructures = {
-                    'T1HydroCarbon',
-                }
-            }
-        }
-    },
-    Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 98,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
-            { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.25 }},
+            { EBC, 'LessThanEconEfficiencyOverTime', { 1.1, 1.15 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -229,7 +192,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
-            { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.25 }},
+            { EBC, 'LessThanEconEfficiencyOverTime', { 1.1, 1.15 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -294,7 +257,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
-            { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.15 }},
+            { EBC, 'LessThanEconEfficiencyOverTime', { 1.1, 1.15 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -317,7 +280,7 @@ BuilderGroup {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2,  FUSION} }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
-            { EBC, 'LessThanEconStorageRatio', { 0.75, 1.1}},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -340,7 +303,7 @@ BuilderGroup {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1,  FUSION} }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
-            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -538,7 +501,7 @@ BuilderGroup {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3,  FUSION} }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
-            { EBC, 'LessThanEconStorageRatio', { 0.3, 1.1}},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
         },
         BuilderType = 'Any',
         BuilderData = {

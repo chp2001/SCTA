@@ -217,9 +217,9 @@ UnitBlueprint {
             TurretYawSpeed = 255,
             Turreted = true,
             WeaponUnpacks = true,
-			WeaponRepackTimeout = 3,
+			WeaponRepackTimeout = 2,
 			WeaponUnpackAnimation = '/mods/SCTA-master/units/CORARCH/CORARCH_lod0_Aunpack.sca',
-            WeaponUnpackAnimationRate = 3,
+            WeaponUnpackAnimationRate = 2,
         },
         {
             Audio = {
@@ -308,9 +308,9 @@ UnitBlueprint {
             TurretYawSpeed = 255,
             Turreted = true,
             WeaponUnpacks = true,
-			WeaponRepackTimeout = 3,
+			WeaponRepackTimeout = 2,
 			WeaponUnpackAnimation = '/mods/SCTA-master/units/CORARCH/CORARCH_lod0_Bunpack.sca',
-            WeaponUnpackAnimationRate = 3,
+            WeaponUnpackAnimationRate = 2,
         },
         {
             Audio = {

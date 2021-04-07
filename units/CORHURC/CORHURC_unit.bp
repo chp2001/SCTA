@@ -223,8 +223,6 @@ TechLevel = 'RULEUTL_Advanced',
             Turreted = false,
             FixBombTrajectory = true,
             WeaponCategory = 'Bomb',
-            WeaponRepackTimeout = 0,
-            WeaponUnpacks = false,
         },
         {
             Audio = {

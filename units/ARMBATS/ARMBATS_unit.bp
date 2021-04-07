@@ -176,19 +176,19 @@ UnitBlueprint {
             RackBones = {
                 {    
                     MuzzleBones = {
-                        'flare2A',
+                        'barrel2A',
                     },
                     RackBone = 'barrel2A',
                 },
                 {
                     MuzzleBones = {
-                        'flare2B',
+                        'barrel2B',
                     },
                     RackBone = 'barrel2B',
                 },
                 {
                     MuzzleBones = {
-                        'flare2C',
+                        'barrel2C',
                     },
                     RackBone = 'barrel2C',
                 },
@@ -247,19 +247,19 @@ UnitBlueprint {
             RackBones = {
                 {    
                     MuzzleBones = {
-                        'flare1A',
+                        'barrel1A',
                     },
                     RackBone = 'barrel1A',
                 },
                 {
                     MuzzleBones = {
-                        'flare1B',
+                        'barrel1B',
                     },
                     RackBone = 'barrel1B',
                 },
                 {
                     MuzzleBones = {
-                        'flare1C',
+                        'barrel1C',
                     },
                     RackBone = 'barrel1C',
                 },

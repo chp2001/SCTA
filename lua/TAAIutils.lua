@@ -214,6 +214,7 @@ function TAAIGetEconomyNumbersMass(aiBrain)
     return econ
 end
 
+
 function GreaterThanMassStorageRatioTA(aiBrain, mStorageRatio)
     local econ = TAAIGetEconomyNumbersMass(aiBrain)
     if (econ.MassStorageRatio >= mStorageRatio) then
@@ -233,6 +234,20 @@ end
 function LessMassStorageMaxTA(aiBrain, mStorageRatio)
     local econ = TAAIGetEconomyNumbersMass(aiBrain)
     if (econ.MassStorageRatio < mStorageRatio) then
+        return true
+    end
+    return false
+end
+
+function AttackNavalTargetSCTA(aiBrain, greater, numReq, category, alliance)
+    local testCat = category
+    if type(category) == 'string' then
+        testCat = ParseEntityCategory(category)
+    end
+    local numUnits = aiBrain:GetNumUnitsAroundPoint(testCat, Vector(0,0,0), 100000, alliance)
+    if numUnits > numReq and greater then
+        return true
+    elseif numUnits < numReq and not greater then
         return true
     end
     return false

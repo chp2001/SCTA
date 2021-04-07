@@ -21,8 +21,8 @@ function AvatarUpdate()
     end
     local avatars = GetArmyAvatars()
     local engi = GetIdleEngineers()
-    local engineers = EntityCategoryFilterDown(categories.ENGINEER - categories.FIELDENGINEER - categories.AIR - categories.NAVAL, engi)
-    local fieldengineers = EntityCategoryFilterDown(categories.FIELDENGINEER, engi)
+    local engineers = EntityCategoryFilterDown(categories.ENGINEER * categories.LAND - categories.FIELDENGINEER - categories.SUBCOMMANDER, engi)
+    local fieldengineers = EntityCategoryFilterDown(categories.ENGINEER * (categories.FIELDENGINEER + categories.SUBCOMMANDER), engi)
     local terrainengineers = EntityCategoryFilterDown(categories.ENGINEER * (categories.AIR + categories.NAVAL), engi)
     local factories = GetIdleFactories()
     local needsAvatarLayout = false
@@ -60,7 +60,7 @@ function AvatarUpdate()
         end
     end
 
-    if engineers and table.getn(EntityCategoryFilterDown(categories.ALLUNITS - categories.FIELDENGINEER - categories.NAVAL - categories.AIR, engineers)) > 0 then
+    if engineers and table.getn(EntityCategoryFilterDown(categories.ENGINEER, engineers)) > 0 then
         if controls.idleEngineers then
             controls.idleEngineers:Update(engineers)
         else
@@ -77,7 +77,7 @@ function AvatarUpdate()
             needsAvatarLayout = true
         end
     end
-    if fieldengineers and table.getn(EntityCategoryFilterDown(categories.FIELDENGINEER, fieldengineers)) > 0 then
+    if fieldengineers and table.getn(EntityCategoryFilterDown(categories.ENGINEER, fieldengineers)) > 0 then
             if controls.idleFieldEngineers  then
                 controls.idleFieldEngineers:Update(fieldengineers)
             else
@@ -94,7 +94,7 @@ function AvatarUpdate()
             needsAvatarLayout = true
         end
     end
-    if terrainengineers and table.getn(EntityCategoryFilterDown(categories.ENGINEER * (categories.AIR + categories.NAVAL), terrainengineers)) > 0 then
+    if terrainengineers and table.getn(EntityCategoryFilterDown(categories.ENGINEER, terrainengineers)) > 0 then
         if controls.idleTerrainEngineers then
             controls.idleTerrainEngineers:Update(terrainengineers)
         else
@@ -187,12 +187,13 @@ function CreateIdleTab(unitData, id, expandFunc)
         self.units = {}
         if self.id == 'engineer' then
             local sortedUnits = {}
-            sortedUnits[4] = EntityCategoryFilterDown(categories.SUBCOMMANDER, self.allunits)
-            sortedUnits[3] = EntityCategoryFilterDown(categories.TECH3 - categories.SUBCOMMANDER, self.allunits)
-            sortedUnits[2] = EntityCategoryFilterDown(categories.TECH2, self.allunits)
-            sortedUnits[1] = EntityCategoryFilterDown(categories.TECH1, self.allunits)
+            sortedUnits[5] = EntityCategoryFilterDown(categories.TECH3, self.allunits)
+            sortedUnits[4] = EntityCategoryFilterDown(categories.TECH2 - categories.TANK, self.allunits)
+            sortedUnits[3] = EntityCategoryFilterDown(categories.TECH1 - categories.TANK, self.allunits)
+            sortedUnits[2] = EntityCategoryFilterDown(categories.TANK * categories.TECH2, self.allunits)
+            sortedUnits[1] = EntityCategoryFilterDown(categories.TANK * categories.TECH1, self.allunits)
 
-            local keyToIcon = {'T1', 'T2', 'T3', 'SCU'}
+            local keyToIcon = {'T1V', 'T2V', 'T1', 'T2', 'T3'}
 
             local i = table.getn(sortedUnits)
             local needIcon = true
@@ -217,12 +218,13 @@ function CreateIdleTab(unitData, id, expandFunc)
         elseif self.id == 'fieldengineer' then
         --LOG(self.id)
         local sortedUnits = {}
+        sortedUnits[4] = EntityCategoryFilterDown(categories.SUBCOMMANDER, self.allunits)
         sortedUnits[3] = EntityCategoryFilterDown(categories.FIELDENGINEER * categories.TECH3, self.allunits)
         sortedUnits[2] = EntityCategoryFilterDown(categories.FIELDENGINEER * categories.TECH2, self.allunits)
         sortedUnits[1] = EntityCategoryFilterDown(categories.FIELDENGINEER * categories.TECH1, self.allunits)
 
     
-        local keyToIcon = {'T1F', 'T2F', 'T3F'}
+        local keyToIcon = {'T1F', 'T2F', 'T3F', 'SCU'}
 
             local i = table.getn(sortedUnits)
             local needIcon = true
@@ -247,12 +249,12 @@ function CreateIdleTab(unitData, id, expandFunc)
             --LOG(self.id)
             local sortedUnits = {}
             sortedUnits[5] = EntityCategoryFilterDown(categories.TECH3 * categories.AIR, self.allunits)
-            sortedUnits[4] = EntityCategoryFilterDown(categories.NAVAL * categories.TECH2, self.allunits)
-            sortedUnits[3] = EntityCategoryFilterDown(categories.TECH2 * categories.AIR, self.allunits)
-            sortedUnits[2] = EntityCategoryFilterDown(categories.NAVAL * categories.TECH1, self.allunits)
-            sortedUnits[1] = EntityCategoryFilterDown(categories.TECH1 * categories.AIR, self.allunits)
+            sortedUnits[4] = EntityCategoryFilterDown(categories.TECH2 * categories.AIR, self.allunits)
+            sortedUnits[3] = EntityCategoryFilterDown(categories.TECH1 * categories.AIR, self.allunits)
+            sortedUnits[2] = EntityCategoryFilterDown(categories.NAVAL * categories.TECH2, self.allunits)
+            sortedUnits[1] = EntityCategoryFilterDown(categories.NAVAL * categories.TECH1, self.allunits)
         
-            local keyToIcon = {'T1A', 'T1O', 'T2A', 'T2O', 'T3A',}
+            local keyToIcon = {'T1O', 'T2O', 'T1A', 'T2A', 'T3A'}
 
             local i = table.getn(sortedUnits)
             local needIcon = true
@@ -409,11 +411,13 @@ function CreateIdleFieldEngineerList(parent, units)
             return entry
         end
         local fieldengineers = {}
+        fieldengineers[4] = EntityCategoryFilterDown(categories.SUBCOMMANDER, unitData)
         fieldengineers[3] = EntityCategoryFilterDown(categories.FIELDENGINEER * categories.TECH3, unitData)
         fieldengineers[2] = EntityCategoryFilterDown(categories.FIELDENGINEER * categories.TECH2, unitData)
         fieldengineers[1] = EntityCategoryFilterDown(categories.FIELDENGINEER * categories.TECH1, unitData)
-        local indexToIcon = { '1', '2', '3'}
-        local keyToIcon = {'T1F', 'T2F', 'T3F'}
+        
+        local indexToIcon = { '1', '2', '3', '3'}
+        local keyToIcon = {'T1F', 'T2F', 'T3F', 'SCU'}
         for index, units in fieldengineers do
             local i = index
             if false then
@@ -543,13 +547,13 @@ function CreateIdleTerrainEngineerList(parent, units)
         end
         local terrainengineers = {}
         terrainengineers[5] = EntityCategoryFilterDown(categories.TECH3 * categories.AIR, unitData)
-        terrainengineers[4] = EntityCategoryFilterDown(categories.NAVAL * categories.TECH2, unitData)
-        terrainengineers[3] = EntityCategoryFilterDown(categories.TECH2 * categories.AIR, unitData)
-        terrainengineers[2] = EntityCategoryFilterDown(categories.NAVAL * categories.TECH1, unitData)
-        terrainengineers[1] = EntityCategoryFilterDown(categories.TECH1 * categories.AIR, unitData)
+        terrainengineers[4] = EntityCategoryFilterDown(categories.TECH2 * categories.AIR, unitData)
+        terrainengineers[3] = EntityCategoryFilterDown(categories.TECH1 * categories.AIR, unitData)
+        terrainengineers[2] = EntityCategoryFilterDown(categories.NAVAL * categories.TECH2, unitData)
+        terrainengineers[1] = EntityCategoryFilterDown(categories.NAVAL * categories.TECH1, unitData)
         
-        local indexToIcon = {'1', '1', '2', '2', '3'}
-        local keyToIcon = {'T1A', 'T1O', 'T2A', 'T2O', 'T3A'}
+        local indexToIcon = {'1', '2', '1', '2', '3'}
+        local keyToIcon = {'T1O', 'T2O', 'T1A', 'T2A', 'T3A'}
         for index, units in terrainengineers do
             local i = index
             if false then
@@ -676,14 +680,15 @@ function CreateIdleEngineerList(parent, units)
 
             return entry
         end
-        local engineers = {}       
-        engineers[4] = EntityCategoryFilterDown(categories.SUBCOMMANDER, unitData)
-        engineers[3] = EntityCategoryFilterDown(categories.TECH3 - categories.SUBCOMMANDER, unitData)
-        engineers[2] = EntityCategoryFilterDown(categories.TECH2, unitData)
-        engineers[1] = EntityCategoryFilterDown(categories.TECH1, unitData)
+        local engineers = {}   
+        engineers[5] = EntityCategoryFilterDown(categories.TECH3, unitData)
+        engineers[4] = EntityCategoryFilterDown(categories.TECH2 - categories.TANK, unitData)
+        engineers[3] = EntityCategoryFilterDown(categories.TECH1 - categories.TANK, unitData)
+        engineers[2] = EntityCategoryFilterDown(categories.TANK * categories.TECH2, unitData)
+        engineers[1] = EntityCategoryFilterDown(categories.TANK * categories.TECH1, unitData)    
 
-        local indexToIcon = {'1', '2', '3', '3'}
-        local keyToIcon = {'T1', 'T2', 'T3', 'SCU'}
+        local indexToIcon = {'1', '2', '1', '2', '3'}
+        local keyToIcon = {'T1V', 'T2V', 'T1', 'T2', 'T3'}
         for index, units in engineers do
             local i = index
             if false then

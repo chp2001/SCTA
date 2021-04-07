@@ -19,7 +19,7 @@ BuilderGroup {
         Priority = 132,
         InstanceCount = 1,
         BuilderConditions = { 
-            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Naval', 1 } },
+            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Naval'} },
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Sea' } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -41,7 +41,7 @@ BuilderGroup {
         Priority = 141,
         InstanceCount = 1,
         BuilderConditions = {
-            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Naval', 1 } },
+            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Naval'} },
             { MIBC, 'GreaterThanGameTime', { 900 } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
@@ -85,7 +85,7 @@ BuilderGroup {
         Priority = 50,
         InstanceCount = 1,
         BuilderConditions = {
-            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Naval', 1 } },
+            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Naval'} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ANTINAVY - categories.MOBILE} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.5}},
         },

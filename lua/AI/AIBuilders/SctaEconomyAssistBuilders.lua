@@ -203,7 +203,7 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Energy',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'ReclaimStructuresAI',
-        Priority = 88,
+        Priority = 89,
         InstanceCount = 8,
         BuilderConditions = {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.VOLATILE}},
@@ -221,7 +221,7 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Energy Wind',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'ReclaimStructuresAI',
-        Priority = 89,
+        Priority = 88,
         InstanceCount = 8,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1200} },

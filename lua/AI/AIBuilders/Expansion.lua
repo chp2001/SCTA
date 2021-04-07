@@ -128,7 +128,7 @@ BuilderGroup {
             { MIBC, 'GreaterThanGameTime', {240} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.NAVAL} },
             { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
-            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'AntiSurface' } },
+            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -153,11 +153,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Naval Expansions',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 101,
-        InstanceCount = 1,
+        Priority = 251,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
-            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'AntiSurface' } },
+            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
         },
         BuilderType = 'Any',
         BuilderData = {

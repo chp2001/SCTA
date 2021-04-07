@@ -14,6 +14,21 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.SCOUT } },
          },
+         BuilderData = {
+            UseFormation = 'AttackFormation',
+            ThreatWeights = {
+                IgnoreStrongerTargetsRatio = 100.0,  #DUNCAN - uncommented, was 100
+                AggressiveMove = false,
+                PrimaryThreatTargetType = 'Naval',
+                SecondaryThreatTargetType = 'Economy',
+                SecondaryThreatWeight = 0.1,
+                WeakAttackThreatWeight = 1,
+                VeryNearThreatWeight = 10,
+                NearThreatWeight = 5,
+                MidThreatWeight = 1,
+                FarThreatWeight = 1,
+            },
+        },
     },
     Builder {
         BuilderName = 'SCTA T1 Naval Assault',

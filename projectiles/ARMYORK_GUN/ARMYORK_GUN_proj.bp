@@ -37,7 +37,7 @@ ProjectileBlueprint {
         'ANTIAIR',
     },
     Display = {
-        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/Plasma_mesh.bp',
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/emg_mesh.bp',
         UniformScale = 0.16,
         StrategicIconSize = 1,
     },
@@ -49,7 +49,6 @@ ProjectileBlueprint {
             'ANTIAIR',
         },
         Faction = 'ARM',
-        Weapon = 'ARMYORK_GUN',
     },
     Physics = {
         DestroyOnWater = true,

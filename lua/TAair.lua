@@ -1,9 +1,12 @@
 #Generic TA Air unit
 local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
-
+local explosion = import('/lua/defaultexplosions.lua')
 
 TAair = Class(TAunit) 
 {
+	ShowUnitDestructionDebris = false,
+    DestructionExplosionWaitDelayMax = 0,
+
 	OnCreate = function(self)
         TAunit.OnCreate(self)
         self.HasFuel = true
@@ -59,6 +62,17 @@ TAair = Class(TAunit)
         self:SetAccMult(1)
         self:SetTurnMult(1)
 	end,
+
+    CreateUnitAirDestructionEffects = function(self, scale)
+        explosion.CreateDefaultHitExplosion(self, 0.05)
+        explosion.CreateDebrisProjectiles(self, 0.05, {self:GetUnitSizes()})
+    end,
+
+    --- Called when the unit is killed, but before it falls out of the sky and blows up.
+    OnKilled = function(self, instigator, type, overkillRatio)
+            self.CreateUnitAirDestructionEffects(self, 0.05)
+			TAunit.OnKilled(self, instigator, type, overkillRatio)
+    end,
 
 }
 TASeaair = Class(TAair) 

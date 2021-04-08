@@ -63,7 +63,7 @@ ProjectileBlueprint {
         MaxSpeed = 40.625,
         TrackTarget = true,
         TurnRate = 181,
-        UseGravity = true,
+        UseGravity = false,
         VelocityAlign = true,
     },
 }

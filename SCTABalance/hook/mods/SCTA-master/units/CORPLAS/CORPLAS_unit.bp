@@ -17,21 +17,10 @@ UnitBlueprint {
         BuildCostMass = 800,
         BuildTime = 6200,
     },
-    Intel = {
-        VisionRadius = 14,
-    },
+    LifeBarSize = 1,
     SelectionSizeX = 1,
     SelectionSizeZ = 1,
-    SelectionCenterOffsetZ = -0.1,
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
-    Weapon = {
-        [1] = {
-            Damage = 300,
-            MaxRadius = 25,
-        },
-        [2] = {
-        },
-    },
 }

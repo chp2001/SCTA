@@ -18,7 +18,8 @@ UnitBlueprint {
     SizeZ = 0.8,
     Weapon = {
         [1] = {
-            Damage = 100,
+            EnergyDrainPerSecond = 20,
+            EnergyRequired = 20,
         },
         [2] = {
         },

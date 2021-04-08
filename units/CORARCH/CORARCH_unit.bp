@@ -161,11 +161,6 @@ UnitBlueprint {
                 {
                     MuzzleBones = {
                         'emitA1',
-                    },
-                    RackBone = 'boxA',
-                },
-                {
-                    MuzzleBones = {
                         'emitA2',
                     },
                     RackBone = 'boxA',
@@ -173,11 +168,6 @@ UnitBlueprint {
                 {
                     MuzzleBones = {
                         'emitA3',
-                    },
-                    RackBone = 'boxA',
-                },
-                {
-                    MuzzleBones = {
                         'emitA4',
                     },
                     RackBone = 'boxA',
@@ -205,7 +195,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'boxA',
+            TurretBoneMuzzle = 'emitA3',
             TurretBonePitch = 'boxA',
             TurretBoneYaw = 'turretA',
             TurretDualManipulators = false,
@@ -252,11 +242,6 @@ UnitBlueprint {
                 {
                     MuzzleBones = {
                         'emitB1',
-                    },
-                    RackBone = 'boxB',
-                },
-                {
-                    MuzzleBones = {
                         'emitB2',
                     },
                     RackBone = 'boxB',
@@ -264,11 +249,6 @@ UnitBlueprint {
                 {
                     MuzzleBones = {
                         'emitB3',
-                    },
-                    RackBone = 'boxB',
-                },
-                {
-                    MuzzleBones = {
                         'emitB4',
                     },
                     RackBone = 'boxB',
@@ -296,7 +276,7 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'boxB',
+            TurretBoneMuzzle = 'emitB3',
             TurretBonePitch = 'boxB',
             TurretBoneYaw = 'turretB',
             TurretDualManipulators = false,

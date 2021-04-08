@@ -1,7 +1,8 @@
 #Generic TA unit
 local Unit = import('/lua/sim/Unit.lua').Unit
 local FireState = import('/lua/game.lua').FireState
-
+local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+local Wreckage = import('/lua/wreckage.lua')
 
 TAunit = Class(Unit) 
 {
@@ -104,6 +105,58 @@ TAunit = Class(Unit)
 		end
 	end,
 
+	CreateWreckageProp = function(self, overkillRatio)
+		local bp = self:GetBlueprint()
+
+        local wreck = bp.Wreckage.Blueprint
+        if not wreck then
+            return nil
+        end
+
+        local mass = bp.Economy.BuildCostMass * (bp.Wreckage.MassMult or 0)
+        local energy = bp.Economy.BuildCostEnergy * (bp.Wreckage.EnergyMult or 0)
+        local time = (bp.Wreckage.ReclaimTimeMultiplier or 1)
+        local pos = self:GetPosition()
+        local layer = self:GetCurrentLayer()
+
+        -- Reduce the mass value of submerged wrecks
+        if layer == 'Water' or layer == 'Sub' then
+            mass = mass * 0.5
+            energy = energy * 0.5
+        end
+
+        local halfBuilt = self:GetFractionComplete() < 1
+
+        -- Make sure air / naval wrecks stick to ground / seabottom, unless they're in a factory.
+        if not halfBuilt and (layer == 'Air' or EntityCategoryContains(categories.NAVAL - categories.STRUCTURE, self)) then
+            pos[2] = GetTerrainHeight(pos[1], pos[3]) + GetTerrainTypeOffset(pos[1], pos[3])
+        end
+
+        local overkillMultiplier = 1 - (overkillRatio or 1)
+        mass = mass * overkillMultiplier * self:GetFractionComplete()
+        energy = energy * overkillMultiplier * self:GetFractionComplete()
+        time = time * overkillMultiplier
+
+        -- Now we adjust the global multiplier. This is used for balance purposes to adjust global reclaim rate.
+        local time  = time * 2
+		if overkillMultiplier < 0.5 then
+		local prop = TAutils.CreateHeap(bp, pos, self:GetOrientation(), mass, energy, time, self.DeathHitBox)
+		else
+        local prop = Wreckage.CreateWreckage(bp, pos, self:GetOrientation(), mass, energy, time, self.DeathHitBox)
+        -- Attempt to copy our animation pose to the prop. Only works if
+        -- the mesh and skeletons are the same, but will not produce an error if not.
+        if layer ~= 'Air' or (layer == "Air" and halfBuilt) then
+            TryCopyPose(self, prop, true)
+        end
+
+        -- Create some ambient wreckage smoke
+        if layer == 'Land' then
+            TAutils.CreateTAWreckageEffects(self, prop)
+        end
+
+        return prop
+		end
+	end,
 
 	OnScriptBitSet = function(self, bit)
 		if self.SpecIntel and (bit == 2 or bit == 5) then

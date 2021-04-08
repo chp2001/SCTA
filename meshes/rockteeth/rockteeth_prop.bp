@@ -1,0 +1,31 @@
+PropBlueprint {
+    Categories = {
+        'RECLAIMABLE',
+    },
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 50,
+            LODs = {
+                {
+                    LODCutoff = 100,
+		            NormalName = '/mods/SCTA-master/textures/common/normalsTS.dds',
+                    ShaderName = 'TMeshNoLighting',
+                },
+            },
+        },
+    },
+    UnitWreckage = true,
+    Economy = {
+        ReclaimEnergyMax = '',
+        ReclaimMassMax = 1,
+        ReclaimTime = 5,
+    },
+    Interface = {
+        HelpText = 'Wreckage',
+    },
+    SizeX = 0.3,
+    SizeY = 0.1,
+    SizeZ = 0.5,
+    ScriptClass = 'Wreckage',
+    ScriptModule = '/lua/wreckage.lua',
+}

@@ -127,7 +127,7 @@ TechLevel = 'RULEUTL_Advanced',
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 85,
+            Damage = 60,
             DamageType = 'Normal',
             DisplayName = 'ARMYORK_GUN',
             FireTargetLayerCapsTable = {
@@ -139,42 +139,46 @@ TechLevel = 'RULEUTL_Advanced',
             Label = 'ARMYORK_GUN',
             MaxRadius = 42.5,
             MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 4,
+            MuzzleSalvoSize = 1,
             MuzzleVelocity = 60,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMYORK_GUN/ARMYORK_GUN_proj.bp',
             RackBones = {
-                {
-                    MuzzleBones = {
-                        'fire1',
-                    },
-                    RackBone = 'barrel1',
+            {
+                MuzzleBones = {
+                'barrel1',
+                'barrel2',
                 },
-                {
-                    MuzzleBones = {
-                        'fire1',
-                    },
-                    RackBone = 'barrel2',
+            RackBone = 'fire1',
+            },
+            {
+                MuzzleBones = {
+                'barrel3',
+                'barrel4',
                 },
-                {
-                    MuzzleBones = {
-                        'fire1',
-                    },
-                    RackBone = 'barrel3',
-                },
-                {
-                    MuzzleBones = {
-                        'fire1',
-                    },
-                    RackBone = 'barrel4',
+            RackBone = 'fire1',
+            },
+            {
+            MuzzleBones = {
+                'barrel5',
+                'barrel6',
+            },
+            RackBone = 'fire2',
+            },            
+            {
+            MuzzleBones = {
+                'barrel7',
+                'barrel8',
+            },
+            RackBone = 'fire2',
                 },
             },
             RackRecoilDistance = -4,
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
-            RackSalvoSize = 4,
+            RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 1.666666667,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'SPECIALHIGHPRI',
@@ -188,94 +192,12 @@ TechLevel = 'RULEUTL_Advanced',
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TurretBoneMuzzle = 'fire1',
+            TurretBoneMuzzle = 'emit1',
             TurretBonePitch = 'pitchturret',
+            TurretBoneDualMuzzle = 'emit2',
+            TurretBoneDualPitch = 'pitchturret',
             TurretBoneYaw = 'turret',
-            TurretDualManipulators = false,
-            TurretPitch = 0,
-            TurretPitchRange = 90,
-            TurretPitchSpeed = 600,
-            TurretYaw = 0,
-            TurretYawRange = 180,
-            TurretYawSpeed = 650,
-            Turreted = true,
-        },
-        {
-            Audio = {
-                Fire = Sound {
-                    Bank = 'TA_Sound',
-                    Cue = 'CANLITE2',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
-            },
-            BallisticArc = 'RULEUBA_None',
-            CollideFriendly = false,
-            DamageFriendly = false,
-            Damage = 85,
-            DamageType = 'Normal',
-            DisplayName = 'ARMYORK_GUN',
-            FireTargetLayerCapsTable = {
-                Land = 'Air',
-            },
-	        RangeCategory = 'UWRC_AntiAir',
-            WeaponCategory = 'AntiAir',
-            FiringTolerance = 4.2,
-            Label = 'ARMYORK_GUN',
-            MaxRadius = 42.5,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 4,
-            MuzzleVelocity = 60,
-            ProjectileId = '/mods/SCTA-master/projectiles/ARMYORK_GUN/ARMYORK_GUN_proj.bp',
-            RackBones = {
-                {
-                    MuzzleBones = {
-                        'fire2',
-                    },
-                    RackBone = 'barrel5',
-                },
-                {
-                    MuzzleBones = {
-                        'fire2',
-                    },
-                    RackBone = 'barrel6',
-                },
-                {
-                    MuzzleBones = {
-                        'fire2',
-                    },
-                    RackBone = 'barrel7',
-                },
-                {
-                    MuzzleBones = {
-                        'fire2',
-                    },
-                    RackBone = 'barrel8',
-                },
-            },
-            RackRecoilDistance = -4,
-            RackReloadTimeout = 0,
-            RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 0,
-            RackSalvoSize = 4,
-            RackSlavedToTurret = false,
-            RateOfFire = 1.666666667,
-            TargetCheckInterval = 1,
-            TargetPriorities = {
-                'SPECIALHIGHPRI',
-                'AIR MOBILE HIGHPRIAIR',
-                'AIR MOBILE TECH3 BOMBER',
-                'AIR MOBILE BOMBER',
-                'AIR MOBILE GROUNDATTACK',
-                'AIR MOBILE TRANSPORTATION',
-                'AIR MOBILE',
-                'SPECIALLOWPRI',
-                'ALLUNITS',
-            },
-            TargetRestrictDisallow = 'UNTARGETABLE',
-            TurretBoneMuzzle = 'fire2',
-            TurretBonePitch = 'pitchturret',
-            TurretBoneYaw = 'turret',
-            TurretDualManipulators = false,
+            TurretDualManipulators = true,
             TurretPitch = 0,
             TurretPitchRange = 90,
             TurretPitchSpeed = 600,
@@ -308,3 +230,31 @@ TechLevel = 'RULEUTL_Advanced',
         },
     },
 }
+
+--[[{MuzzleBones = {'barrel1'}, RackBone = 'barrel1'},
+{MuzzleBones = {'barrel2'}, RackBone = 'barrel2'},
+{MuzzleBones = {'barrel3'}, RackBone = 'barrel3'},
+{MuzzleBones = {'barrel4'}, RackBone = 'barrel4'},
+{MuzzleBones = {'barrel5'}, RackBone = 'barrel5'},
+{MuzzleBones = {'barrel6'}, RackBone = 'barrel6'},
+{MuzzleBones = {'barrel7'}, RackBone = 'barrel7'},
+{MuzzleBones = {'barrel8'}, RackBone = 'barrel8'},]]
+
+--[[{
+    MuzzleBones = {
+        'barrel1',
+        'barrel2',
+        'barrel3',
+        'barrel4',
+    },
+    RackBone = 'fire1',
+},
+{
+    MuzzleBones = {
+        'barrel5',
+        'barrel6',
+        'barrel7',
+        'barrel8',
+    },
+    RackBone = 'fire2',
+},]]

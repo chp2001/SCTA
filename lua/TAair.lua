@@ -64,6 +64,7 @@ TAair = Class(TAunit)
 	end,
 
     CreateUnitAirDestructionEffects = function(self, scale)
+		CreateAttachedEmitter(self, 0, -1, '/mods/SCTA-master/effects/emitters/debrisfire_smoke_emit.bp' )
         explosion.CreateDefaultHitExplosion(self, 0.05)
         explosion.CreateDebrisProjectiles(self, 0.05, {self:GetUnitSizes()})
     end,

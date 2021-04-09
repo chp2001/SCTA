@@ -127,7 +127,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = false,
-            Damage = 240,
+            Damage = 120,
             DamageType = 'Normal',
             DisplayName = 'GAUSS',
             FireTargetLayerCapsTable = {

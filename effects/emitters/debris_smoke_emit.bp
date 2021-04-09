@@ -1,6 +1,6 @@
 EmitterBlueprint {
-	BlueprintId = 'smoke',
-	Lifetime = -1,
+	BlueprintId = 'smokedebris',
+	Lifetime = 10,
 	Repeattime = 50.00,
 	TextureFramecount = 1.00,
 	Blendmode = 0.00,

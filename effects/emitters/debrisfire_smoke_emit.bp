@@ -1,6 +1,6 @@
 EmitterBlueprint {
 	BlueprintId = 'fire_smoke',
-	Lifetime = -1,
+	Lifetime = 2,
 	Repeattime = 50.00,
 	TextureFramecount = 1.00,
 	Blendmode = 3.00,

@@ -130,7 +130,7 @@ CreateHeap = function(bp, position, orientation, mass, energy, time, deathHitBox
     prop:SetMaxHealth(bp.Defense.Health)
     prop:SetHealth(nil, bp.Defense.Health * (bp.Wreckage.HealthMult or 1))
     prop:SetMaxReclaimValues(time, mass, energy)
-
+    CreateAttachedEmitter(prop, 0, -1, '/mods/SCTA-master/effects/emitters/debris_smoke_emit.bp' )
     return prop
 end
 

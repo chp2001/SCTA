@@ -9,7 +9,7 @@
 
 
 local BBTmplFile = '/lua/basetemplates.lua'
-local TAutils = '/mods/SCTA-master/lua/TAAIutils.lua'
+local TASlow = '/mods/SCTA-master/lua/TAAISlow.lua'
 local BuildingTmpl = 'BuildingTemplates'
 local BaseTmpl = 'BaseTemplates'
 local ExBaseTmpl = 'ExpansionBaseTemplates'
@@ -31,7 +31,7 @@ BuilderGroup {
         Priority = 107,
         InstanceCount = 1,
         BuilderConditions = {
-            { TAutils, 'StartBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
+            { TASlow, 'StartBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
             { MIBC, 'GreaterThanGameTime', { 180 } },
             { UCBC, 'StartLocationNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
@@ -63,8 +63,8 @@ BuilderGroup {
         Priority = 93,
         InstanceCount = 1,
         BuilderConditions = {
-            { TAutils, 'ExpansionBaseCheck', { } }, 
-            { UCBC, 'StartLocationNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
+            { TASlow, 'ExpansionBaseCheck', { } }, 
+            { UCBC, 'ExpansionAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
         },
@@ -90,13 +90,46 @@ BuilderGroup {
         }
     },
     Builder {
+        BuilderName = 'SCTA Expansion Starter Late',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        Priority = 93,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { TASlow, 'ExpansionBaseCheck', { } }, 
+            { MIBC, 'GreaterThanGameTime', {720} },
+            { UCBC, 'ExpansionAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                    BuildClose = false,
+                    BaseTemplate = ExBaseTmpl,
+                    ExpansionBase = true,
+                    NearMarkerType = 'Expansion Area',
+                    ExpansionRadius = 25, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                    LocationRadius = 1000,
+                    LocationType = 'LocationType',
+                    ThreatMin = -1000,
+                    ThreatMax = 1000,
+                    ThreatRings = 2,
+                    ThreatType = 'AntiSurface',
+                    BuildStructures = {   
+                        'T2LandFactory',                 
+                        'T1Radar',
+                }
+            },
+        }
+    },
+    Builder {
         BuilderName = 'SCTA Start Marker Late',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 104,
-        InstanceCount = 3,
+        InstanceCount = 1,
         BuilderConditions = {
+            { TASlow, 'StartBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
             { MIBC, 'GreaterThanGameTime', {720} },
-            { TAutils, 'StartBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
             { UCBC, 'StartLocationNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.2}},
         },
@@ -126,8 +159,8 @@ BuilderGroup {
         Priority = 120,
         InstanceCount = 1,
         BuilderConditions = {
+            { UCBC, 'NavalBaseCheck', { } },
             { MIBC, 'GreaterThanGameTime', {240} },
-            { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
             { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'Naval' } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.NAVAL} },
         },

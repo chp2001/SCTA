@@ -2,6 +2,8 @@
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
+local TAutils = '/mods/SCTA-master/lua/TAAIutils.lua'
+local TASlow = '/mods/SCTA-master/lua/TAAISlow.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
@@ -20,7 +22,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, PLANT} }, 
+            { TASlow, 'TAFactoryCapCheck', { 'LocationType'} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  LAB} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -98,7 +100,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { MIBC, 'GreaterThanGameTime', { 120 } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 12, PLANT} }, -- Stop after 10 facs have been built. -- Stop after 10 facs have been built.
+            { TASlow, 'TAFactoryCapCheck', { 'LocationType'} }, -- Stop after 10 facs have been built. -- Stop after 10 facs have been built.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  LAB} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -325,8 +327,8 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
             { MIBC, 'LessThanGameTime', {1200} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -404,6 +406,46 @@ BuilderGroup {
                 BuildStructures = {
                     'T3LandFactory',
                 }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim Excess Early',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        PlatoonAIPlan = 'SCTAReclaimAI',
+        Priority = 99,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', { 120 } },
+            { MIBC, 'LessThanGameTime', {480} }, 
+            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},   
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
+        },
+        BuilderData = {
+            Terrain = true,
+            LocationType = 'LocationType',
+            ReclaimTime = 30,
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTAGameEnder',
+        PlatoonTemplate = 'EngineerBuilderSCTA3',
+        Priority = 160,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {2400} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.STRUCTURE * categories.EXPERIMENTAL * categories.ARTILLERY} },        
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 10,
+            Construction = {
+                BuildStructures = {
+                    'T4Artillery',
+                },
             }
         }
     },

@@ -7,22 +7,12 @@
 #**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 
-local BBTmplFile = '/lua/basetemplates.lua'
-local BuildingTmpl = 'BuildingTemplates'
-local BaseTmpl = 'BaseTemplates'
-local ExBaseTmpl = 'ExpansionBaseTemplates'
-local Adj2x2Tmpl = 'Adjacency2x2'
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
-local MABC = '/lua/editor/MarkerBuildConditions.lua'
 local IBC = '/lua/editor/InstantBuildConditions.lua'
-local OAUBC = '/lua/editor/OtherArmyUnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
-local PCBC = '/lua/editor/PlatoonCountBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
-local TBC = '/lua/editor/ThreatBuildConditions.lua'
-local PlatoonFile = '/lua/platoon.lua'
-local TAutils = '/mods/SCTA-master/lua/TAAIutils.lua'
+local TASlow = '/mods/SCTA-master/lua/TAAISlow.lua'
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
 
 
@@ -30,15 +20,15 @@ BuilderGroup {
     BuilderGroupName = 'SCTAUpgrades',
     BuildersType = 'PlatoonFormBuilder',
     Builder {
-        BuilderName = 'SCTA Extractor Upgrade',
+        BuilderName = 'SCTAExtractorUpgrade',
         PlatoonTemplate = 'SctaExtractorUpgrades',
-        DelayEqualBuildPlattons = {'Mexupgrade1', 1},
+        DelayEqualBuildPlatoons = {'SCTAExtractorUpgrade', 1},
         InstanceCount = 1,
         Priority = 150,
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Mexupgrade1' }},
+            { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'SCTAExtractorUpgrade' }},
             { MIBC, 'GreaterThanGameTime', { 360 } },
-            { TAutils, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 1, categories.MASSEXTRACTION * categories.TECH1 } },  
+            { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 1, categories.MASSEXTRACTION * categories.TECH1 } },  
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 }},
             { IBC, 'BrainNotLowPowerMode', {} },
         },
@@ -54,12 +44,12 @@ BuilderGroup {
         BuilderName = 'SCTA Extractor Upgrade Time Based',
         PlatoonTemplate = 'SctaExtractorUpgrades',
         InstanceCount = 2,
-        DelayEqualBuildPlattons = {'Mexupgrade1', 1},
+        DelayEqualBuildPlatoons = {'SCTAExtractorUpgrade', 1},
         Priority = 100,
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Mexupgrade1' }},
+            { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'SCTAExtractorUpgrade' }},
             { MIBC, 'GreaterThanGameTime', { 1200 } },
-            { TAutils, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.TECH1 } },  
+            { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.TECH1 } },  
             { EBC, 'GreaterThanEconIncome',  { 6, 70}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.8, 0.75 }},
             { IBC, 'BrainNotLowPowerMode', {} },
@@ -75,13 +65,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Extractor Emergency Upgrade',
         PlatoonTemplate = 'SctaExtractorUpgrades',
-        DelayEqualBuildPlattons = {'Mexupgrade1', 1},
+        DelayEqualBuildPlatoons = {'SCTAExtractorUpgrade', 1},
         InstanceCount = 2,
         Priority = 150,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 480 } },
-            { UCBC, 'CheckBuildPlattonDelay', { 'Mexupgrade1' }},
-            { TAutils, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.TECH1 } },  
+            { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'SCTAExtractorUpgrade' }},
+            { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.TECH1 } },  
             { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         FormRadius = 500,

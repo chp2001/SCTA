@@ -1,6 +1,7 @@
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local IBC = '/lua/editor/InstantBuildConditions.lua'
+local TAutils = '/mods/SCTA-master/lua/TAAIutils.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
@@ -162,7 +163,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'PGen Emergency',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonTemplate = 'EngineerBuilderSCTAALL',
         Priority = 27,
         InstanceCount = 5,
         BuilderConditions = {
@@ -180,27 +181,8 @@ BuilderGroup {
         }
     }, 
     Builder {
-        BuilderName = 'PGen Air Emergency',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco12',
-        Priority = 30,
-        InstanceCount = 5,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {480} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.75}},
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T1EnergyProduction2',
-                }
-            }
-        }
-    }, 
-    Builder {
         BuilderName = 'SCTAMissileTower Emergency',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonTemplate = 'EngineerBuilderSCTAALL',
         Priority = 26,
         InstanceCount = 10,
         BuilderConditions = {
@@ -216,47 +198,7 @@ BuilderGroup {
                 }
             }
         }
-    },    
-    Builder {
-        BuilderName = 'SCTAMissileTower Air Emergency',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco12',
-        Priority = 28,
-        InstanceCount = 10,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {480} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.75}},
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T1AADefense',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTAGameEnder',
-        PlatoonTemplate = 'EngineerBuilderSCTA3',
-        Priority = 160,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {2400} }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.STRUCTURE * categories.EXPERIMENTAL * categories.ARTILLERY} },        
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 10,
-            Construction = {
-                BuildStructures = {
-                    'T4Artillery',
-                },
-            }
-        }
-    },
+    },   
     Builder {
         BuilderName = 'SCTAStaging',
         PlatoonTemplate = 'EngineerBuilderSCTA',
@@ -265,7 +207,6 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {600} }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.AIRSTAGINGPLATFORM} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -275,6 +216,69 @@ BuilderGroup {
                     'T2AirStagingPlatform',
                 }
             }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTA Defense Point 1',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 93,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {240} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                BuildClose = false,
+                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TATowerTemplates.lua',
+                BaseTemplate = 'T1PDTemplate',
+                ExpansionBase = true,
+                NearMarkerType = 'Defensive Point',
+                BuildStructures = {
+                    'T1GroundDefense',
+                    'Wall',
+                    'Wall',
+                    'Wall',
+                    'Wall',
+                    'Wall',
+                    'Wall',
+                    'Wall',
+                    'Wall',
+                },
+            },
+        }
+    },
+    Builder {
+        BuilderName = 'SCTA Defensive Point 2',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        Priority = 93,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {900} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                BuildClose = true,
+                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TATowerTemplates.lua',
+                BaseTemplate = 'T2PDTemplate',
+                NearMarkerType = 'Defensive Point',
+                BuildStructures = {
+                    'T2GroundDefense',
+                    'Wall2',
+                    'Wall2',
+                    'Wall2',
+                    'Wall2',
+                    'Wall2',
+                    'Wall2',
+                    'Wall2',
+                    'Wall2',
+                },
+            },
         }
     },
 }

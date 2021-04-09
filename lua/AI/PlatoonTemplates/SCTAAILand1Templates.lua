@@ -8,7 +8,7 @@ PlatoonTemplate {
             { 'armck', 1, 1, 'support', 'None' },
         },
         Core = {
-            { 'corstorm', 1, 2, 'attack', 'none' },
+            { 'corstorm', 1, 1, 'attack', 'none' },
         },
     }
 }
@@ -18,11 +18,11 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armwar', 1, 4, 'attack', 'none' },
-            { 'armham', 1, 2, 'attack', 'none' },
+            { 'armham', 1, 1, 'attack', 'none' },
         },
         Core = {
             { 'corstorm', 1, 4, 'attack', 'none' },
-            { 'corthud', 1, 2, 'attack', 'none' },
+            { 'corthud', 1, 1, 'attack', 'none' },
         },
     }
 }

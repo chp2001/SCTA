@@ -37,6 +37,30 @@ BuilderGroup {
         }
     },
     Builder {
+        BuilderName = 'SCTAAI Expansion LandFac2',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 106,
+        InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
+        BuilderConditions = {
+            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.5 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1LandFactory2',
+                }
+            }
+        }
+    },
+    Builder {
         BuilderName = 'SCTAAI T2LAND Expansion',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 112,
@@ -60,30 +84,7 @@ BuilderGroup {
             }
         }
     },
-    ---VEHICLEFacts
-    Builder {
-        BuilderName = 'SCTAAI Expansion LandFac2',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 98,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T1LandFactory2',
-                }
-            }
-        }
-    },
+    ---VEHICLEFact
     ---AirFacts
     Builder {
         BuilderName = 'SCTAAI T1Expansion AirFac',

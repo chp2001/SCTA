@@ -41,10 +41,10 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTA Extractor Upgrade Time Based',
+        BuilderName = 'SCTAExtractorUpgradeTime',
         PlatoonTemplate = 'SctaExtractorUpgrades',
-        InstanceCount = 2,
-        DelayEqualBuildPlatoons = {'SCTAExtractorUpgrade', 1},
+        InstanceCount = 1,
+        DelayEqualBuildPlatoons = {'SCTAExtractorUpgrade', 2},
         Priority = 100,
         BuilderConditions = {
             { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'SCTAExtractorUpgrade' }},
@@ -65,12 +65,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Extractor Emergency Upgrade',
         PlatoonTemplate = 'SctaExtractorUpgrades',
-        DelayEqualBuildPlatoons = {'SCTAExtractorUpgrade', 1},
+        DelayEqualBuildPlatoons = {'SCTAExtractorUpgradeTime', 2},
         InstanceCount = 2,
         Priority = 150,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 480 } },
-            { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'SCTAExtractorUpgrade' }},
+            { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'SCTAExtractorUpgradeTime' }},
             { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.TECH1 } },  
             { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },

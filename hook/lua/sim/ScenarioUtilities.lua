@@ -1,4 +1,4 @@
-local TACreateInitialArmyGroup = CreateInitialArmyGroup
+---local TACreateInitialArmyGroup = CreateInitialArmyGroup
 
 function CreateInitialArmyGroup(strArmy, createCommander)
 	CreateWind()

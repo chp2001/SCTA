@@ -46,7 +46,6 @@ UnitBlueprint {
         [2] = {
             Damage = 300,
             DamageRadius = 2,
-            MaxRadius = 20,
             MuzzleVelocity = 35,
             ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/COR_BATL/COR_BATL_proj.bp',
         },

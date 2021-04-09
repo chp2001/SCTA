@@ -126,7 +126,7 @@ TAPopLaser = Class(TAweapon) {
 
 TAKami = Class(KamikazeWeapon){
     FxDeath = {
-        '/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp',
+        '/effects/emitters/napalm_fire_emit_2.bp',
     },
 
 
@@ -142,7 +142,7 @@ TAKami = Class(KamikazeWeapon){
 
 TABomb = Class(BareBonesWeapon) {
     FxDeath = {
-        '/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp',
+        '/effects/emitters/napalm_fire_emit_2.bp',
     },
 
 

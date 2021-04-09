@@ -58,7 +58,7 @@ BuilderGroup {
         BuilderName = 'SCTA Assist Production Field',
         PlatoonTemplate = 'EngineerBuilderSCTAAssist',
         Priority = 25,
-        InstanceCount = 30,
+        InstanceCount = 5,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.FACTORY }},
             { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
@@ -82,7 +82,6 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderData = {
             Assist = {
@@ -103,7 +102,6 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.MOBILE }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderData = {
             Assist = {
@@ -239,7 +237,7 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Energy Air',
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
         PlatoonAIPlan = 'ReclaimStructuresAI',
-        Priority = 97,
+        Priority = 50,
         InstanceCount = 8,
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} },
@@ -249,7 +247,7 @@ BuilderGroup {
         BuilderData = {
             Location = 'LocationType',
             Reclaim = {'VOLATILE'},
-                ReclaimTime = 30,
+            ReclaimTime = 30,
         },
         BuilderType = 'Any',
     },
@@ -316,7 +314,6 @@ BuilderGroup {
         InstanceCount = 10,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 360 } },
-            { MIBC, 'LessThanGameTime', {1200} }, 
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
             { TAutils, 'LessMassStorageMaxTA',  { 0.3}},   
         },
@@ -346,25 +343,6 @@ BuilderGroup {
         },
         BuilderType = 'Any',
     },
-    Builder {
-        BuilderName = 'SCTA Engineer Reclaim Excess EndGame',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
-        PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 102,
-        InstanceCount = 5,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 1200 } },
-            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
-            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},   
-            },
-        BuilderData = {
-            Terrain = true,
-            LocationType = 'LocationType',
-            ReclaimTime = 30,
-        },
-        BuilderType = 'Any',
-    },
-    ---AirReclaim
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Air',
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',

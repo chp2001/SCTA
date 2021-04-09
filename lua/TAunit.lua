@@ -1,7 +1,7 @@
 #Generic TA unit
 local Unit = import('/lua/sim/Unit.lua').Unit
 local FireState = import('/lua/game.lua').FireState
-local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
+local TADeath = import('/mods/SCTA-master/lua/TADeath.lua')
 local Wreckage = import('/lua/wreckage.lua')
 
 TAunit = Class(Unit) 
@@ -128,7 +128,7 @@ TAunit = Class(Unit)
         local halfBuilt = self:GetFractionComplete() < 1
 
         -- Make sure air / naval wrecks stick to ground / seabottom, unless they're in a factory.
-        if not halfBuilt and (layer == 'Air' or EntityCategoryContains(categories.NAVAL - categories.STRUCTURE, self)) then
+        if not halfBuilt and EntityCategoryContains(categories.NAVAL - categories.STRUCTURE, self) then
             pos[2] = GetTerrainHeight(pos[1], pos[3]) + GetTerrainTypeOffset(pos[1], pos[3])
         end
 
@@ -140,18 +140,13 @@ TAunit = Class(Unit)
         -- Now we adjust the global multiplier. This is used for balance purposes to adjust global reclaim rate.
         local time  = time * 2
 		if overkillMultiplier < 0.5 then
-		local prop = TAutils.CreateHeap(bp, pos, self:GetOrientation(), mass, energy, time, self.DeathHitBox)
+		local prop = TADeath.CreateHeap(bp, pos, self:GetOrientation(), mass, energy, time, self.DeathHitBox)
 		else
         local prop = Wreckage.CreateWreckage(bp, pos, self:GetOrientation(), mass, energy, time, self.DeathHitBox)
-        -- Attempt to copy our animation pose to the prop. Only works if
-        -- the mesh and skeletons are the same, but will not produce an error if not.
-        if layer ~= 'Air' or (layer == "Air" and halfBuilt) then
-            TryCopyPose(self, prop, true)
-        end
 
         -- Create some ambient wreckage smoke
         if layer == 'Land' then
-            TAutils.CreateTAWreckageEffects(self, prop)
+            TADeath.CreateTAWreckageEffects(self, prop)
         end
 
         return prop

@@ -235,7 +235,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TECH3 * categories.ENERGYPRODUCTION * categories.STRUCTURE} },
-            { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.15 }},
+            { EBC, 'LessThanEconEfficiencyOverTime', { 1.1, 1.15 }},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
         },
         BuilderType = 'Any',
@@ -277,9 +277,8 @@ BuilderGroup {
         Priority = 123,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2,  FUSION} }, 
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1,  FUSION} }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
             { TAutils, 'LessMassStorageMaxTA',  { 0.5}},
         },
         BuilderType = 'Any',
@@ -302,7 +301,6 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1,  FUSION} }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
             { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
         },
         BuilderType = 'Any',
@@ -344,7 +342,6 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
                 { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 550, -500, 200, 0, 'AntiAir', 1 }},
-                { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.1}},
             },
         BuilderType = 'Any',
         BuilderData = {
@@ -445,25 +442,6 @@ BuilderGroup {
         BuilderData = {
             NeedGuard = true,
             DesiresAssist = true,
-            Construction = {
-                BuildStructures = {
-                    'T1HydroCarbon',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTAAI T1Engineer Air Hydro2',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco',
-        Priority = 110,
-        InstanceCount = 1, -- The max number concurrent instances of this builder.
-        BuilderConditions = { 
-            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 300}},
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = false,
             Construction = {
                 BuildStructures = {
                     'T1HydroCarbon',

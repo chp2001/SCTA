@@ -54,7 +54,8 @@ PlatoonTemplate {
             { 'armsam', 1, 1, 'attack', 'none' }
         },
         Core = {
-            { 'cormist', 1, 1, 'attack', 'none' }
+            { 'cormist', 1, 2, 'attack', 'none' },
+            { 'corcv', 1, 1, 'support', 'None' },
         },
     }
 }
@@ -82,7 +83,6 @@ PlatoonTemplate {
         },
         Core = {
             { 'corraid', 1, 4, 'attack', 'none' },
-            { 'corcv', 1, 1, 'support', 'None' },
             { 'cormist', 1, 2, 'attack', 'none' },
         },
     }

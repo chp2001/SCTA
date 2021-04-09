@@ -69,9 +69,11 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armpeep', 1, 1, 'scout', 'GrowthFormation' },
+            { 'armca', 1, 1, 'support', 'None' },
         },
         Core = {
             { 'corfink', 1, 1, 'scout', 'GrowthFormation' },
+            { 'corca', 1, 1, 'support', 'None' },
         },
     }
 }
@@ -81,11 +83,9 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armfig', 1, 4, 'attack', 'GrowthFormation' },
-            { 'armpeep', 1, 1, 'scout', 'GrowthFormation' },
         },
         Core = {
             { 'corveng', 1, 4, 'attack', 'GrowthFormation' },
-            { 'corfink', 1, 1, 'scout', 'GrowthFormation' },
         },
     }
 }
@@ -94,12 +94,10 @@ PlatoonTemplate {
     Name = 'T1AirBomberSCTA',
     FactionSquads = {
         Arm = {
-            { 'armthund', 1, 2, 'attack', 'GrowthFormation' },
-            { 'armca', 1, 1, 'support', 'None' },
+            { 'armthund', 1, 2, 'attack', 'GrowthFormation' }
         },
         Core = {
-            { 'corshad', 1, 2, 'attack', 'GrowthFormation' },
-            { 'corca', 1, 1, 'support', 'None' },
+            { 'corshad', 1, 2, 'attack', 'GrowthFormation' }
         },
     }
 }

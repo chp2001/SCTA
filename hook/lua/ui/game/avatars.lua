@@ -60,7 +60,7 @@ function AvatarUpdate()
         end
     end
 
-    if engineers and table.getn(EntityCategoryFilterDown(categories.ENGINEER, engineers)) > 0 then
+    if engineers and table.getn(engineers) > 0 then
         if controls.idleEngineers then
             controls.idleEngineers:Update(engineers)
         else
@@ -77,7 +77,7 @@ function AvatarUpdate()
             needsAvatarLayout = true
         end
     end
-    if fieldengineers and table.getn(EntityCategoryFilterDown(categories.ENGINEER, fieldengineers)) > 0 then
+    if fieldengineers and table.getn(fieldengineers) > 0 then
             if controls.idleFieldEngineers  then
                 controls.idleFieldEngineers:Update(fieldengineers)
             else
@@ -94,7 +94,7 @@ function AvatarUpdate()
             needsAvatarLayout = true
         end
     end
-    if terrainengineers and table.getn(EntityCategoryFilterDown(categories.ENGINEER, terrainengineers)) > 0 then
+    if terrainengineers and table.getn(terrainengineers) > 0 then
         if controls.idleTerrainEngineers then
             controls.idleTerrainEngineers:Update(terrainengineers)
         else

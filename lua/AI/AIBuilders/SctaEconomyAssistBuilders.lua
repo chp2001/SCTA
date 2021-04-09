@@ -225,12 +225,12 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1200} },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} },
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.SIZE4}},
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.ENERGYPRODUCTION * categories.TECH1 * categories.STRUCTURE}},
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             },
         BuilderData = {
             Location = 'LocationType',
-            Reclaim = {'SIZE4'},
+            Reclaim = {'STRUCTURE ENERGYPRODUCTION TECH1'},
                 ReclaimTime = 30,
         },
         BuilderType = 'Any',

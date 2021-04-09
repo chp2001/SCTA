@@ -4,10 +4,11 @@ PlatoonTemplate {
     Name = 'T1LandAASCTA',
     FactionSquads = {
         Arm = {
-            { 'armjeth', 1, 1, 'attack', 'none' }
+            { 'armjeth', 1, 2, 'attack', 'none' },
+            { 'armck', 1, 1, 'support', 'None' },
         },
         Core = {
-            { 'corstorm', 1, 1, 'attack', 'none' }
+            { 'corstorm', 1, 2, 'attack', 'none' },
         },
     }
 }
@@ -17,12 +18,11 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armwar', 1, 4, 'attack', 'none' },
-            { 'armck', 1, 1, 'support', 'None' },
-            { 'armham', 1, 1, 'attack', 'none' },
+            { 'armham', 1, 2, 'attack', 'none' },
         },
         Core = {
             { 'corstorm', 1, 4, 'attack', 'none' },
-            { 'corthud', 1, 1, 'attack', 'none' },
+            { 'corthud', 1, 2, 'attack', 'none' },
         },
     }
 }
@@ -74,10 +74,10 @@ PlatoonTemplate {
     Name = 'T1LandArtillerySCTA',
     FactionSquads = {
         Arm = {
-            { 'armham', 1, 1, 'attack', 'none' }
+            { 'armham', 1, 2, 'attack', 'none' }
         },
         Core = {
-            { 'corthud', 1, 1, 'attack', 'none' }
+            { 'corthud', 1, 2, 'attack', 'none' }
         },
     }
 }

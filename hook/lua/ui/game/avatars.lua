@@ -202,9 +202,7 @@ function CreateIdleTab(unitData, id, expandFunc)
                     if needIcon then
                         -- Idle engineer icons
                         if Factions[currentFaction].IdleEngTextures[keyToIcon[i]] and UIUtil.UIFile(Factions[currentFaction].IdleEngTextures[keyToIcon[i]],true) then
-                            self.icon:SetTexture(UIUtil.UIFile(Factions[currentFaction].IdleEngTextures[keyToIcon[i]],true))
-                        else
-                            self.icon:SetTexture(Factions[currentFaction].IdleEngTextures[keyToIcon[i]])
+                            self.icon:SetTexture(UIUtil.UIFile(Factions[currentFaction].IdleEngTextures[keyToIcon[i]],true))      
                         end
                         needIcon = false
                     end
@@ -234,8 +232,6 @@ function CreateIdleTab(unitData, id, expandFunc)
                         -- Idle engineer icons
                         if Factions[currentFaction].IdleEngTextures[keyToIcon[i]] and UIUtil.UIFile(Factions[currentFaction].IdleEngTextures[keyToIcon[i]],true) then
                             self.icon:SetTexture(UIUtil.UIFile(Factions[currentFaction].IdleEngTextures[keyToIcon[i]],true))
-                        else
-                            self.icon:SetTexture(Factions[currentFaction].IdleEngTextures[keyToIcon[i]])
                         end
                         needIcon = false
                     end
@@ -264,8 +260,6 @@ function CreateIdleTab(unitData, id, expandFunc)
                         -- Idle engineer icons
                         if Factions[currentFaction].IdleEngTextures[keyToIcon[i]] and UIUtil.UIFile(Factions[currentFaction].IdleEngTextures[keyToIcon[i]],true) then
                             self.icon:SetTexture(UIUtil.UIFile(Factions[currentFaction].IdleEngTextures[keyToIcon[i]],true))
-                        else
-                            self.icon:SetTexture(Factions[currentFaction].IdleEngTextures[keyToIcon[i]])
                         end
                         needIcon = false
                     end

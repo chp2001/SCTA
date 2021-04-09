@@ -234,7 +234,6 @@ BuilderGroup {
                 BuildClose = true,
                 BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TATowerTemplates.lua',
                 BaseTemplate = 'T1PDTemplate',
-                ExpansionBase = true,
                 BuildStructures = {
                     'T1GroundDefense',
                     'Wall',

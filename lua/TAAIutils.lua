@@ -108,9 +108,9 @@ function TAAIGetReclaimablesAroundLocation(aiBrain, locationType)
     end
 
     local x1 = position[1] - radius * 2
-    local x2 = position[1] + radius
+    local x2 = position[1] + radius * 2
     local z1 = position[3] - radius * 2
-    local z2 = position[3] + radius
+    local z2 = position[3] + radius * 2
     local rect = Rect(x1, z1, x2, z2)
 
     return AIUtils.GetReclaimablesInRect(rect)
@@ -255,4 +255,30 @@ function TAAttackNaval(aiBrain, bool)
         return true
     end
     return false
+end
+
+function ExpansionBaseCheck(aiBrain)
+    -- Removed automatic setting of Land-Expasions-allowed. We have a Game-Option for this.
+    local checkNum = 2
+    return ExpansionBaseCount(aiBrain, '<', checkNum)
+end
+
+function ExpansionBaseCount(aiBrain, compareType, checkNum)
+       local expBaseCount = aiBrain:GetManagerCount('Expansion Area')
+        if expBaseCount > checkNum then
+       end
+       return CompareBodySCTA(expBaseCount, checkNum, compareType)
+end
+
+function StartBaseCheck(aiBrain)
+    -- Removed automatic setting of Land-Expasions-allowed. We have a Game-Option for this.
+    local checkNum = 1
+    return StartBaseCount(aiBrain, '<', checkNum)
+end
+
+function StartBaseCount(aiBrain, compareType, checkNum)
+       local expBaseCount = aiBrain:GetManagerCount('Start Location')
+       if expBaseCount > checkNum + 1 then
+       end
+       return CompareBodySCTA(expBaseCount, checkNum, compareType)
 end

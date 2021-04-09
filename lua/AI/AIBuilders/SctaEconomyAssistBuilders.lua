@@ -290,41 +290,6 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'SCTA Engineer Reclaim Field',
-        PlatoonTemplate = 'EngineerBuilderSCTAField',
-        PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 200,
-        InstanceCount = 5,
-        BuilderConditions = {
-            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
-            { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
-        },
-        BuilderData = {
-        Terrain = true,
-        LocationType = 'LocationType',
-        ReclaimTime = 30,
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Reclaim Idle',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
-        PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 25,
-        InstanceCount = 10,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 360 } },
-            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
-            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},   
-        },
-        BuilderData = {
-            Terrain = true,
-            LocationType = 'LocationType',
-            ReclaimTime = 30,
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
         BuilderName = 'SCTA Engineer Reclaim Excess Early',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         PlatoonAIPlan = 'SCTAReclaimAI',
@@ -333,7 +298,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 120 } },
             { MIBC, 'LessThanGameTime', {480} }, 
-            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
+            { MIBC, 'ReclaimablesInArea', { 'LocationType', }},
             { TAutils, 'LessMassStorageMaxTA',  { 0.3}},   
         },
         BuilderData = {

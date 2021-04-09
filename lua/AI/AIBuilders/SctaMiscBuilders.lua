@@ -231,11 +231,10 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             Construction = {
-                BuildClose = false,
+                BuildClose = true,
                 BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TATowerTemplates.lua',
                 BaseTemplate = 'T1PDTemplate',
                 ExpansionBase = true,
-                NearMarkerType = 'Defensive Point',
                 BuildStructures = {
                     'T1GroundDefense',
                     'Wall',
@@ -253,7 +252,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Defensive Point 2',
         PlatoonTemplate = 'EngineerBuilderSCTA23',
-        Priority = 93,
+        Priority = 94,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} },
@@ -266,7 +265,6 @@ BuilderGroup {
                 BuildClose = true,
                 BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TATowerTemplates.lua',
                 BaseTemplate = 'T2PDTemplate',
-                NearMarkerType = 'Defensive Point',
                 BuildStructures = {
                     'T2GroundDefense',
                     'Wall2',

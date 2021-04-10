@@ -34,7 +34,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1AirFighterSCTA',
         Priority = 95,
         BuilderConditions = { -- Only make inties if the enemy air is strong
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, LAB * categories.AIR } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.AIR } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.2, 0.5 }},
         },
         BuilderType = 'Air',
@@ -45,7 +45,7 @@ BuilderGroup {
         Priority = 115,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
         { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, FUSION} },
-        { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 1.05 }},
+        { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.2, 0.5 }},
         },
         BuilderType = 'Air',
     },
@@ -55,20 +55,20 @@ BuilderGroup {
         Priority = 125,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
         { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} },
-        { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1.05 }},
+        { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.2, 0.5 }},
         },
         BuilderType = 'Air',
     },
     Builder {
         BuilderName = 'SCTAAirTransport',
         PlatoonTemplate = 'SCTATransport',
-        Priority = 50,
+        Priority = 130,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} },
             { MIBC, 'ArmyNeedsTransports', {} },
-            { UCBC, 'LocationFactoriesBuildingLess', { 'LocationType', 2, 'TRANSPORTATION' } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, 'TRANSPORTATION' } },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, 'TRANSPORTATION' } },
+            { UCBC, 'LocationFactoriesBuildingLess', { 'LocationType', 2, 'TRANSPORTFOCUS' } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, 'TRANSPORTFOCUS' } },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, 'TRANSPORTFOCUS' } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.7}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.9 }},
         },

@@ -189,19 +189,20 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'SCTA CDR Assist Fusion',
+        BuilderName = 'SCTA CDR Assist Structure',
         PlatoonTemplate = 'CommanderSCTAAssist',
-        Priority = 132,
+        Priority = 111,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, FUSION }},
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
+            { MIBC, 'GreaterThanGameTime', {600} },
         },
         BuilderType = 'Any',
         BuilderData = {
             Assist = {
                 AssisteeType = 'Engineer',
                 AssistLocation = 'LocationType',
-                BeingBuiltCategories = {'TECH2 ENERGYPRODUCTION STRUCTURE, TECH3 ENERGYPRODUCTION STRUCTURE,'},
+                BeingBuiltCategories = {'STRUCTURE'},
                 AssistUntilFinished = true,
             },
         }

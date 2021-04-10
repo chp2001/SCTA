@@ -78,7 +78,7 @@ UnitBlueprint {
         'AIR',        
         'OVERLAYANTIAIR',
         'CORE',
-        'SCOUT',
+        'PRODUCTFA',
     },
     Defense = {
         ArmorType = 'Light',

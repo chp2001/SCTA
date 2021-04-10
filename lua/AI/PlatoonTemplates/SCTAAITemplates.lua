@@ -4,8 +4,7 @@
     Summary :
         Responsible for defining a mapping from AIBuilders keys -> Plans (Plans === platoon.lua functions)
 ]]
-local RAIDER = (categories.SCOUT * (categories.DIRECTFIRE + categories.ANTIAIR) - categories.OVERLAYRADAR)
-local SPECIAL = RAIDER + categories.EXPERIMENTAL + categories.ENGINEER
+local SPECIAL = categories.PRODUCTFA + categories.EXPERIMENTAL + categories.ENGINEER + categories.SCOUT
 local GROUND = categories.MOBILE * categories.LAND
 
 PlatoonTemplate {
@@ -76,7 +75,7 @@ PlatoonTemplate {
     Name = 'LABSCTA',
     Plan = 'HuntAILABSCTA', -- The platoon function to use.
     GlobalSquads = {
-        {RAIDER - categories.NAVAL, -- Type of units.
+        {categories.PRODUCTFA - categories.NAVAL, -- Type of units.
           1, -- Min number of units.
           1, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',

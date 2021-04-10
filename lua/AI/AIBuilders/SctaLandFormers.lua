@@ -3,7 +3,7 @@ local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').GetMOARadii()
-
+local RAIDER = categories.armfig + categories.corveng + categories.armpw + categories.corak + categories.armflash + categories.corgator
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAILandFormers',
@@ -143,7 +143,7 @@ BuilderGroup {
         },        
         BuilderConditions = { 
             { UCBC, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.COMMAND }},	
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.PRODUCTFA * categories.LAND} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, RAIDER * categories.LAND} },
         },
     },
     Builder {
@@ -159,7 +159,7 @@ BuilderGroup {
         },        
         BuilderConditions = { 
             { UCBC, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.ANTIAIR }},	
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.PRODUCTFA * categories.AIR} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, RAIDER * categories.AIR} },
         },
     },
     Builder {

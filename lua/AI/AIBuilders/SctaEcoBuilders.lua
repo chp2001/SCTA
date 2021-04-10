@@ -155,6 +155,26 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            Construction = {
+                BuildStructures = {
+                    'T1HydroCarbon',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T1Engineer Hydro2',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        Priority = 111,
+        InstanceCount = 1, -- The max number concurrent instances of this builder.
+        BuilderConditions = { 
+            { MIBC, 'LessThanGameTime', {360} }, 
+            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 150}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
             NeedGuard = true,
             DesiresAssist = true,
             Construction = {
@@ -171,7 +191,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
-            { EBC, 'LessThanEconEfficiencyOverTime', { 1.1, 1.15 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -192,7 +212,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
-            { EBC, 'LessThanEconEfficiencyOverTime', { 1.1, 1.15 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -235,7 +255,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TECH3 * categories.ENERGYPRODUCTION * categories.STRUCTURE} },
-            { EBC, 'LessThanEconEfficiencyOverTime', { 1.1, 1.15 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
         },
         BuilderType = 'Any',
@@ -257,7 +277,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
-            { EBC, 'LessThanEconEfficiencyOverTime', { 1.1, 1.15 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -278,7 +298,7 @@ BuilderGroup {
         InstanceCount = 3,
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1,  FUSION} }, 
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},
+            { TAutils, 'GreaterThanEconEnergyTAEfficiency', {1.05 }},
             { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
         },
         BuilderType = 'Any',
@@ -374,10 +394,10 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer Air Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
         Priority = 130,
-        InstanceCount = 1,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
-            { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.25 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.25 }},
         },
         BuilderType = 'Any',
         BuilderData = {

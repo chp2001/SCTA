@@ -155,6 +155,21 @@ function TAAIGetEconomyNumbersMass(aiBrain)
     return econ
 end
 
+function TAEnergyEfficiency(aiBrain)
+    local econ = {}
+    econ.EnergyIncome = aiBrain:GetEconomyIncome('ENERGY')
+    econ.EnergyRequested = aiBrain:GetEconomyRequested('ENERGY')
+    econ.EnergyEfficiency = math.min(econ.EnergyIncome / econ.EnergyRequested, 2)
+ 
+
+    if aiBrain.EconomyMonitorThread then
+        local econTime = aiBrain:GetEconomyOverTime()
+        econ.EnergyEfficiencyOverTime = math.min(econTime.EnergyIncome / econTime.EnergyRequested, 2)
+    end
+
+    return econ
+end
+
 function LessMassStorageMaxTA(aiBrain, mStorageRatio)
     local econ = TAAIGetEconomyNumbersMass(aiBrain)
     if (econ.MassStorageRatio < mStorageRatio) then
@@ -163,6 +178,21 @@ function LessMassStorageMaxTA(aiBrain, mStorageRatio)
     return false
 end
 
+function LessThanEconEnergyTAEfficiency(aiBrain, EnergyEfficiency)
+    local econ = TAEnergyEfficiency(aiBrain)
+    if (econ.EnergyEfficiency <= EnergyEfficiency) then
+        return true
+    end
+    return false
+end
+
+function GreaterThanEconEnergyTAEfficiency(aiBrain, EnergyEfficiency)
+    local econ = TAEnergyEfficiency(aiBrain)
+    if (econ.EnergyEfficiency >= EnergyEfficiency) then
+        return true
+    end
+    return false
+end
 
 function TAAttackNaval(aiBrain, bool)
     local startX, startZ = aiBrain:GetArmyStartPos()

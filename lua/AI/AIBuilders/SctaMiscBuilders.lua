@@ -58,8 +58,7 @@ BuilderGroup {
             { MIBC, 'GreaterThanGameTime', {1500} },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  FUSION} },  
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.ANTIMISSILE * categories.TECH3} },
-            { IBC, 'BrainNotLowPowerMode', {} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1.05 }},
+            { TAutils, 'GreaterThanEconEnergyTAEfficiency', {1.05 }},
         },
         BuilderType = 'Any',
         BuilderData = {

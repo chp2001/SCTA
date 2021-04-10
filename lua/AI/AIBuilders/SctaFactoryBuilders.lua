@@ -281,7 +281,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.AIR * PLATFORM} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.9 } },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 0.9 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
         BuilderType = 'Any',

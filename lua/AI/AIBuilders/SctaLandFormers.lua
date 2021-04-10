@@ -1,6 +1,7 @@
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
+local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').GetMOARadii()
 local RAIDER = categories.armfig + categories.corveng + categories.armpw + categories.corak + categories.armflash + categories.corgator
@@ -96,23 +97,6 @@ BuilderGroup {
         },        
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
-        },
-    },
-    Builder {
-        BuilderName = 'SCTAAI AntiAir Laser',
-        PlatoonTemplate = 'AntiAirLaserSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 150,
-        InstanceCount = 10,
-        BuilderType = 'Any',
-        BuilderData = {
-            Laser = true,
-            NeverGuardBases = false,
-            NeverGuardEngineers = true,
-            UseFormation = 'AttackFormation',
-        },        
-        BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * categories.ANTIAIR} },
-            { EBC, 'GreaterThanEconStorageCurrent', { 10, 500 } },
         },
     },
     Builder {
@@ -243,6 +227,40 @@ BuilderGroup {
             UseMoveOrder = true,
             PrioritizedCategories = { 'COMMAND', 'FACTORY -NAVAL', 'EXPERIMENTAL', 'MASSPRODUCTION', 'STRUCTURE -NAVAL' }, # list in order
         },
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim Field',
+        PlatoonTemplate = 'EngineerBuilderSCTAField',
+        Priority = 200,
+        InstanceCount = 5,
+        BuilderConditions = {
+            { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
+        },
+        BuilderData = {
+        Terrain = true,
+        LocationType = 'LocationType',
+        ReclaimTime = 30,
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Field Finish',
+        PlatoonTemplate = 'EngineerBuilderSCTAFieldFinish',
+        Priority = 125,
+        InstanceCount = 2,
+        BuilderConditions = {
+                { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
+            },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
+                Time = 20,
+            },
+        },
+        BuilderType = 'Any',
     },
 }
 

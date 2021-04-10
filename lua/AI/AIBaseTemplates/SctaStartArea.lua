@@ -5,8 +5,7 @@ BaseBuilderTemplate {
         -- List all our builder grous here
         -- ACU
         'SCTAAICommanderBuilder',
-        
-        'SCTAAIEngineerBuilder',
+       
         'SCTAAILandBuilder',
         'SCTAAIAirBuilder',
         'SCTAAILandFormers',
@@ -17,8 +16,6 @@ BaseBuilderTemplate {
         'SCTAExpansionBuilders',
         'SCTAAIEngineerEcoBuilder',
         'SCTAAIFactoryExpansions',
-        'SCTAUpgrades',
-        --Misc Function
         'SCTAAssisters',
     },
     BaseSettings = {

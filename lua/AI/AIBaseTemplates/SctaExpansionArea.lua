@@ -14,7 +14,6 @@ BaseBuilderTemplate {
         'SCTAExpansionBuilders',
         'SCTAAIEngineerMiscBuilder',
         'SCTAAIEngineerEcoBuilder',
-        'SCTAUpgrades',
         --Misc Function
     },
     BaseSettings = {
@@ -43,7 +42,7 @@ BaseBuilderTemplate {
             return -1
         end
         if markerType != 'Expansion Area' then
-            return 10
+            return 11
         end
         --LOG('Return sctaai personality')
         return 1000, 'SCTAAIExpansion'

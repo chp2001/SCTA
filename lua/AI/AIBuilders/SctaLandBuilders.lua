@@ -216,19 +216,6 @@ BuilderGroup {
         BuilderType = 'Land',
     },
     Builder {
-        BuilderName = 'SCTAAi FactoryT3 Tank',
-        PlatoonTemplate = 'T3LandDFTankSCTA',
-        Priority = 131,
-        InstanceCount = 2,
-        BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH3 * categories.DIRECTFIRE - categories.SCOUT,
-            '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}}
-        },
-        BuilderType = 'Land',
-    },
-    Builder {
         BuilderName = 'SCTAAi FactoryT3 Tank2',
         PlatoonTemplate = 'T3LandDFTank2SCTA',
         Priority = 132,

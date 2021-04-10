@@ -169,42 +169,4 @@ BuilderGroup {
             }
         }
     },
-    Builder {
-        BuilderName = 'SCTA Commander Assist Gantry Construction',
-        PlatoonTemplate = 'CommanderSCTAAssist',
-        Priority = 126,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssistRange = 120,
-                BeingBuiltCategories = {'GATE'},                                                   
-                AssistUntilFinished = true,
-            },
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTA CDR Assist Structure',
-        PlatoonTemplate = 'CommanderSCTAAssist',
-        Priority = 111,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
-            { MIBC, 'GreaterThanGameTime', {600} },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            Assist = {
-                AssisteeType = 'Engineer',
-                AssistLocation = 'LocationType',
-                BeingBuiltCategories = {'STRUCTURE'},
-                AssistUntilFinished = true,
-            },
-        }
-    },
 }

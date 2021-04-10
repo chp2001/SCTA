@@ -51,13 +51,6 @@ PlatoonTemplate {
     },
 }
 
-PlatoonTemplate {
-    Name = 'EngineerBuilderSCTA12',
-    Plan = 'EngineerBuildAISCTA',
-    GlobalSquads = {
-        { categories.ENGINEER * (categories.TECH1 + categories.TECH2) - WEIRD, 1, 1, 'support', 'None' }
-    },
-}
 
 PlatoonTemplate {
     Name = 'EngineerBuilderSCTA',
@@ -81,14 +74,6 @@ PlatoonTemplate {
     Plan = 'EngineerBuildAISCTAAir',
     GlobalSquads = {
         { categories.ENGINEER * categories.AIR * (categories.TECH2 + categories.TECH3), 1, 1, 'support', 'None' }
-    },
-}
-
-PlatoonTemplate {
-    Name = 'EngineerBuilderSCTAEco12',
-    Plan = 'EngineerBuildAISCTAAir',
-    GlobalSquads = {
-        { categories.ENGINEER * categories.AIR * (categories.TECH1 + categories.TECH2), 1, 1, 'support', 'None' }
     },
 }
 
@@ -120,17 +105,17 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'EngineerBuilderSCTAField',
-    Plan = 'EngineerBuildAISCTA',
+    Plan = 'SCTAReclaimAI',
     GlobalSquads = {
         {categories.FIELDENGINEER, 1, 1, 'support', 'None' }
     },
 }
 
 PlatoonTemplate {
-    Name = 'EngineerBuilderSCTA2',
-    Plan = 'EngineerBuildAISCTA',
+    Name = 'EngineerBuilderSCTAFieldFinish',
+    Plan = 'ManagerEngineerFindUnfinished',
     GlobalSquads = {
-        { categories.ENGINEER * categories.TECH2, 1, 1, 'support', 'None' }
+        {categories.FIELDENGINEER, 1, 1, 'support', 'None' }
     },
 }
 

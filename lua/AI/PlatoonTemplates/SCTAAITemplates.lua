@@ -17,14 +17,6 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
-    Name = 'AntiAirLaserSCTA',
-    Plan = 'SCTAAntiAirAI', -- The platoon function to use.
-    GlobalSquads = {
-        { GROUND * categories.ANTIAIR * categories.ANTISHIELD, 2, 10, 'attack', 'none' },
-    },
-}
-
-PlatoonTemplate {
     Name = 'T1LandScoutFormSCTA',
     Plan = 'ScoutingAI',
     GlobalSquads = {

@@ -12,7 +12,7 @@ BaseBuilderTemplate {
         -- List all our builder grous here
         -- ACU
         'SCTAAICommanderBuilder',
-        
+
         -- Unit Builders
         'SCTAAIEngineerBuilder',
         'SCTAAILandBuilder',
@@ -35,7 +35,7 @@ BaseBuilderTemplate {
     BaseSettings = { },
     ExpansionFunction = function(aiBrain, location, markerType)
         -- This is used if you want to make stuff outside of the starting location.
-        return 10
+        return 0
     end,
     
     FirstBaseFunction = function(aiBrain)

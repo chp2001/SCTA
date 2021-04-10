@@ -1,4 +1,4 @@
-local TAutils = import('/mods/SCTA-master/lua/TAAIutils.lua')
+local TAutils = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua')
 
 --[[buildingTmplFile = import(cons.BuildingTemplateFile or '/lua/BuildingTemplates.lua')
 baseTmplFile = import(cons.BaseTemplateFile or '/lua/BaseTemplates.lua')

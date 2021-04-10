@@ -9,7 +9,7 @@
 
 
 local BBTmplFile = '/lua/basetemplates.lua'
-local TASlow = '/mods/SCTA-master/lua/TAAISlow.lua'
+local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local BuildingTmpl = 'BuildingTemplates'
 local BaseTmpl = 'BaseTemplates'
 local ExBaseTmpl = 'ExpansionBaseTemplates'

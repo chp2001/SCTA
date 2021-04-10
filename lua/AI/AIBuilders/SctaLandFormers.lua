@@ -2,7 +2,7 @@ local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
-local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/TAAIutils.lua').GetMOARadii()
+local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').GetMOARadii()
 local RAIDER = categories.SCOUT - categories.OVERLAYRADAR
 
 BuilderGroup {

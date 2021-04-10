@@ -3,7 +3,7 @@ local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
-local TAutils = '/mods/SCTA-master/lua/TAAIutils.lua'
+local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
@@ -78,16 +78,17 @@ BuilderGroup {
         BuilderName = 'SCTA Assist Production Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
         Priority = 5,
-        InstanceCount = 11,
+        InstanceCount = 5,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
         },
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Engineer',
-                AssistRange = 120,
+                AssistRange = 20,
                 BeingBuiltCategories = {'STRUCTURE'},                                        
                 AssistUntilFinished = true,
             },
@@ -98,16 +99,17 @@ BuilderGroup {
         BuilderName = 'SCTA Assist Unit Production Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
         Priority = 5,
-        InstanceCount = 14,
+        InstanceCount = 5,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.MOBILE }},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
         },
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Factory',
-                AssistRange = 120,
+                AssistRange = 20,
                 BeingBuiltCategories = {'MOBILE'},                                        
                 AssistUntilFinished = true,
             },

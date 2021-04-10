@@ -12,7 +12,7 @@ local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local IBC = '/lua/editor/InstantBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
-local TASlow = '/mods/SCTA-master/lua/TAAISlow.lua'
+local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
 
 
@@ -20,17 +20,16 @@ BuilderGroup {
     BuilderGroupName = 'SCTAUpgrades',
     BuildersType = 'PlatoonFormBuilder',
     Builder {
-        BuilderName = 'SCTAExtractorUpgrade',
+        BuilderName = 'TAExtractorUpgrade',
         PlatoonTemplate = 'SctaExtractorUpgrades',
-        DelayEqualBuildPlatoons = {'SCTAExtractorUpgrade', 1},
+        DelayEqualBuildPlattons = {'TAExtractorUpgrade', 1},
         InstanceCount = 1,
         Priority = 150,
         BuilderConditions = {
-            { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'SCTAExtractorUpgrade' }},
+            { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'TAExtractors' }},
             { MIBC, 'GreaterThanGameTime', { 360 } },
             { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 1, categories.MASSEXTRACTION * categories.TECH1 } },  
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 }},
-            { IBC, 'BrainNotLowPowerMode', {} },
         },
         FormRadius = 500,
         BuilderType = 'Any',
@@ -44,15 +43,14 @@ BuilderGroup {
         BuilderName = 'SCTAExtractorUpgradeTime',
         PlatoonTemplate = 'SctaExtractorUpgrades',
         InstanceCount = 1,
-        DelayEqualBuildPlatoons = {'SCTAExtractorUpgrade', 2},
+        DelayEqualBuildPlattons = {'TAExtractorUpgrade', 1},
         Priority = 100,
         BuilderConditions = {
-            { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'SCTAExtractorUpgrade' }},
-            { MIBC, 'GreaterThanGameTime', { 1200 } },
+            { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'TAExtractors' }},
+            { MIBC, 'GreaterThanGameTime', { 900 } },
             { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.TECH1 } },  
             { EBC, 'GreaterThanEconIncome',  { 6, 70}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.8, 0.75 }},
-            { IBC, 'BrainNotLowPowerMode', {} },
         },
         FormRadius = 500,
         BuilderType = 'Any',
@@ -65,14 +63,15 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Extractor Emergency Upgrade',
         PlatoonTemplate = 'SctaExtractorUpgrades',
-        DelayEqualBuildPlatoons = {'SCTAExtractorUpgradeTime', 2},
+        DelayEqualBuildPlattons = {'TAExtractorUpgrade', 1},
         InstanceCount = 2,
         Priority = 150,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 480 } },
-            { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'SCTAExtractorUpgradeTime' }},
-            { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.TECH1 } },  
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
+            { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'TAExtractors' }},
+            { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 3, categories.MASSEXTRACTION * categories.TECH1 } },  
+            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+            { EBC, 'GreaterThanEconStorageCurrent', { 800, 1000 } },
         },
         FormRadius = 500,
         BuilderType = 'Any',

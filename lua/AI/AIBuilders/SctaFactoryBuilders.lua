@@ -2,8 +2,8 @@
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
-local TAutils = '/mods/SCTA-master/lua/TAAIutils.lua'
-local TASlow = '/mods/SCTA-master/lua/TAAISlow.lua'
+local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
+local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
@@ -22,7 +22,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
-            { TASlow, 'TAFactoryCapCheck', { 'LocationType'} },
+            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  LAB} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -48,7 +48,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10,  LAB} },
+            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -100,7 +100,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { MIBC, 'GreaterThanGameTime', { 120 } },
-            { TASlow, 'TAFactoryCapCheck', { 'LocationType'} }, -- Stop after 10 facs have been built. -- Stop after 10 facs have been built.
+            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  LAB} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -127,7 +127,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, LAB} },
+            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },

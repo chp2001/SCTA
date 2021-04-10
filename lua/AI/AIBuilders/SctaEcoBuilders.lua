@@ -1,6 +1,6 @@
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
-local TAutils = '/mods/SCTA-master/lua/TAAIutils.lua'
+local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MABC = '/lua/editor/MarkerBuildConditions.lua'

@@ -33,8 +33,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Factory Intie',
         PlatoonTemplate = 'T1AirFighterSCTA',
         Priority = 95,
-        BuilderConditions = { -- Only make inties if the enemy air is strong.
-            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'AntiAir', 1 } },
+        BuilderConditions = { -- Only make inties if the enemy air is strong
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, LAB * categories.AIR } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.2, 0.5 }},
         },

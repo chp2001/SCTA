@@ -10,7 +10,6 @@ function TAGetEngineerFaction(engineer)
     end
 end
 
-
 ------AIUTILITIES FUNCTIONS (RNG, NUTCTACKER, and RECLAIM MY OWN)
 function TAReclaimablesInArea(aiBrain, locType)
     --DUNCAN - was .9. Reduced as dont need to reclaim yet if plenty of mass

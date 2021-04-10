@@ -1,12 +1,11 @@
 local AIUtils = import('/lua/ai/AIUtilities.lua')
 
-------AIUTILITIES FUNCTIONS (RNG, NUTCTACKER, and RECLAIM MY OWN)
-
+------AIUTILITIES FUNCTIONS (RNG, NUTCTACKER, and RECLAIM MY OW
 function CheckBuildPlatoonDelaySCTA(aiBrain, PlatoonName)
-    if aiBrain.DelayEqualBuildPlatoons[PlatoonName] then
+    if aiBrain.DelayEqualBuildPlattons[PlatoonName] then
         --LOG('Delay Platoon Name exist' ..aiBrain.DelayEqualBuildPlattons[PlatoonName])
     end
-    if aiBrain.DelayEqualBuildPlatoons[PlatoonName] and aiBrain.DelayEqualBuildPlattons[PlatoonName] > GetGameTimeSeconds() then
+    if aiBrain.DelayEqualBuildPlattons[PlatoonName] and aiBrain.DelayEqualBuildPlattons[PlatoonName] > GetGameTimeSeconds() then
         --LOG('Builder Delay false')
         return false
     end
@@ -118,9 +117,9 @@ function StartBaseCount(aiBrain, compareType, checkNum)
        return CompareBodySCTA(expBaseCount, checkNum, compareType)
 end
 
-function TAFactoryCapCheck(aiBrain, locationType)
+function TAFactoryCapCheck(aiBrain, locationType, TECH)
     local catCheck = false
-    catCheck = categories.TECH1 * categories.FACTORY
+    catCheck = TECH * categories.FACTORY
     local factoryManager = aiBrain.BuilderManagers[locationType].FactoryManager
     if not factoryManager then
         WARN('*AI WARNING: FactoryCapCheck - Invalid location - ' .. locationType)

@@ -1,7 +1,7 @@
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local IBC = '/lua/editor/InstantBuildConditions.lua'
-local TAutils = '/mods/SCTA-master/lua/TAAIutils.lua'
+local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
@@ -24,26 +24,6 @@ BuilderGroup {
                 BuildClose = true,
                 BuildStructures = {
                     'T1AADefense',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTALaserTower',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 62,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {480} }, -- Don't make tanks if we have lots of them.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ANTISHIELD * categories.TECH1 - categories.MOBILE } }, 
-            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.7}},
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T1GroundDefense',
                 }
             }
         }
@@ -91,29 +71,6 @@ BuilderGroup {
                     'T3StrategicMissileDefense',
                 },
                 Location = 'LocationType',
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTALaser2Tower',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 76,
-        InstanceCount = 2,
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.ANTISHIELD * categories.TECH2 - categories.MOBILE} }, 
-            { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.75}}, 
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} }, 
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T2GroundDefense',
-                }
             }
         }
     },
@@ -221,12 +178,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Defense Point 1',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 93,
+        Priority = 62,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {240} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
+            { MIBC, 'LessThanGameTime', {480} }, -- Don't make tanks if we have lots of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ANTISHIELD * categories.TECH1 - categories.MOBILE } }, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.7}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -251,17 +208,19 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Defensive Point 2',
         PlatoonTemplate = 'EngineerBuilderSCTA23',
-        Priority = 94,
-        InstanceCount = 1,
+        Priority = 76,
+        InstanceCount = 2,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {900} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.ANTISHIELD * categories.TECH2 - categories.MOBILE} }, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.75}}, 
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} }, 
         },
         BuilderType = 'Any',
         BuilderData = {
             Construction = {
-                BuildClose = true,
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
                 BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TATowerTemplates.lua',
                 BaseTemplate = 'T2PDTemplate',
                 BuildStructures = {

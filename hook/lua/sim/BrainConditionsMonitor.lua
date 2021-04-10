@@ -46,7 +46,7 @@ BrainConditionsMonitor = Class (TABrainConditionsMonitor) {
         or cFilename == '/lua/editor/UnitCountBuildConditions.lua'
         or cFilename == '/lua/editor/EconomyBuildConditions.lua'
         or cFilename == '/lua/editor/SorianInstantBuildConditions.lua'
-        or cFilename == '/mods/SCTA-master/lua/TAAIutils.lua'
+        or cFilename == '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
         then
             newCondition = InstantImportCondition()
         else

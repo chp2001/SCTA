@@ -42,7 +42,7 @@ BaseBuilderTemplate {
             return -1
         end
         if markerType != 'Expansion Area' then
-            return 11
+            return 10
         end
         --LOG('Return sctaai personality')
         return 1000, 'SCTAAIExpansion'

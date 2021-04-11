@@ -169,6 +169,46 @@ BuilderGroup {
          },
     },
     Builder {
+        BuilderName = 'SCTAAI Land Attack Endgame',
+        PlatoonTemplate = 'LandAttackSCTAEndGame', -- The platoon template tells the AI what units to include, and how to use them.
+        Priority = 210,
+        InstanceCount = 10,
+        FormRadius = 500,
+        BuilderType = 'Any',
+        BuilderData = {
+            ThreatSupport = 75,
+            NeverGuardBases = false,
+            NeverGuardEngineers = false,
+            UseFormation = 'AttackFormation',
+            LocationType = 'LocationType',
+            AggressiveMove = false,
+            ThreatWeights = {
+            SecondaryTargetThreatType = 'StructuresNotMex',
+            IgnoreStrongerTargetsRatio = 100.0,
+            },
+        },        
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {1200} },
+         },
+    },
+    Builder {
+        BuilderName = 'SCTAAI Strike Endgame',
+        PlatoonTemplate = 'StrikeForceSCTAEndgame', -- The platoon template tells the AI what units to include, and how to use them.
+        Priority = 250,
+        InstanceCount = 10,
+        FormRadius = 500,
+        BuilderType = 'Any',
+        BuilderData = {
+            NeverGuardBases = false,
+            NeverGuardEngineers = false,
+            UseFormation = 'AttackFormation',
+        },        
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {1500} },
+         },
+    },
+
+    Builder {
         BuilderName = 'SCTAAI Land Attack Early',
         PlatoonTemplate = 'LandAttackSCTAEarly', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 100,

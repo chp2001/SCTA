@@ -136,7 +136,7 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'SCTA Engineer Reclaim Energy',
+        BuilderName = 'SCTA Engineer Reclaim Energy SOLAR',
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
         PlatoonAIPlan = 'ReclaimStructuresAI',
         Priority = 89,
@@ -149,6 +149,24 @@ BuilderGroup {
         BuilderData = {
             Location = 'LocationType',
             Reclaim = {'VOLATILE'},
+                ReclaimTime = 30,
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim Energy',
+        PlatoonTemplate = 'EngineerBuilderSCTAALL',
+        PlatoonAIPlan = 'ReclaimStructuresAI',
+        Priority = 89,
+        InstanceCount = 8,
+        BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} },
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.LAND * categories.ENERGYPRODUCTION * categories.TECH1}},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
+            },
+        BuilderData = {
+            Location = 'LocationType',
+            Reclaim = {'TECH1 ENERGYPRODUCTION LAND'},
                 ReclaimTime = 30,
         },
         BuilderType = 'Any',

@@ -175,4 +175,25 @@ BuilderGroup {
             }
         }
     },
+    Builder {
+        BuilderName = 'SCTAAI AirExpansionT2 Emergency',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco123',
+        Priority = 22,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.75}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T2AirFactory',
+                }
+            }
+        }
+    },
 }

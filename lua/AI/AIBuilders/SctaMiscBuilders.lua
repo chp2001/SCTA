@@ -125,6 +125,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {480} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.75}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, FUSION} },
         },
         BuilderType = 'Any',
         BuilderData = {

@@ -410,6 +410,28 @@ BuilderGroup {
         }
     },
     Builder {
+        BuilderName = 'SCTAAI AirFactoryT2 Emergency',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco123',
+        Priority = 22,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {750} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.75}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T2AirFactory',
+                }
+            }
+        }
+    },
+    Builder {
         BuilderName = 'SCTAGameEnder',
         PlatoonTemplate = 'EngineerBuilderSCTA3',
         Priority = 160,

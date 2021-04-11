@@ -98,7 +98,7 @@ UnitBlueprint {
             'MOBILE TECH1 AIR CORE ENGINEER',
             'AIR MOBILE TECH1 CORE HIGHALTAIR', 
             'AIR MOBILE TECH2 CORE',
-            'AIR MOBILE TECH3 CORE',
+            'ASF CORE',
         },
     },
     Footprint = {

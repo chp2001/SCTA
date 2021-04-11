@@ -98,7 +98,7 @@ UnitBlueprint {
             'MOBILE TECH1 AIR ARM ENGINEER',
             'AIR MOBILE TECH1 ARM HIGHALTAIR', 
             'AIR MOBILE TECH2 ARM',
-            'AIR MOBILE TECH3 ARM',
+            'ASF ARM',
             },
         },
         Footprint = {

@@ -21,7 +21,6 @@ UnitBlueprint {
             Damage = 80,
             MaxRadius = 24, 
             RateOfFire = 0.5,
-            MuzzleVelocity = 30,
         },
         [3] = {
         }, 

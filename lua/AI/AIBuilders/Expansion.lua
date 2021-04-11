@@ -30,7 +30,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 107,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'ExpansionStart', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'ExpansionStart' }},
             { TASlow, 'StartBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
             { MIBC, 'GreaterThanGameTime', { 180 } },
             { UCBC, 'StartLocationNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
@@ -62,7 +64,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 93,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Expansion', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Expansion' }},
             { TASlow, 'ExpansionBaseCheck', { } }, 
             { UCBC, 'ExpansionAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
@@ -94,7 +98,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 93,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'ExpansionStart', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'ExpansionStart' }},
             { TASlow, 'ExpansionBaseCheck', { } }, 
             { MIBC, 'GreaterThanGameTime', {720} },
             { UCBC, 'ExpansionAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
@@ -127,7 +133,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 104,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'ExpansionStart', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'ExpansionStart' }},
             { TASlow, 'StartBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
             { MIBC, 'GreaterThanGameTime', {720} },
             { UCBC, 'StartLocationNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
@@ -172,7 +180,7 @@ BuilderGroup {
                 BaseTemplate = 'NavalBaseTemplates',
                 ExpansionBase = true,
                 NearMarkerType = 'Naval Area',
-                ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                ExpansionRadius = 50, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
                 LocationRadius = 200,
                 LocationType = 'LocationType',
                 ThreatMin = -1000,
@@ -190,7 +198,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         Priority = 251,
         InstanceCount = 2,
+        DelayEqualBuildPlattons = {'NavalStart', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'NavalStart' }},
             { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
             { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'Naval' } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
@@ -204,13 +214,13 @@ BuilderGroup {
                 BaseTemplate = 'NavalBaseTemplates',
                 ExpansionBase = true,
                 NearMarkerType = 'Naval Area',
-                ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
-                LocationRadius = 200,
+                ExpansionRadius = 50, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                LocationRadius = 1000,
                 LocationType = 'LocationType',
                 ThreatMin = -1000,
                 ThreatMax = 1000,
                 ThreatRings = 2,
-                ThreatType = 'AntiSurface',
+                ThreatType = 'Naval',
                 BuildStructures = {                    
                     'T1SeaFactory',
                 }

@@ -27,7 +27,7 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
                 end
                 rally = AIUtils.AIGetClosestMarkerLocation(self, rallyType, position[1], position[3])   
                 if not rally or VDist3( rally, position ) > 100 then
-                    position = AIUtils.RandomLocation(position[1],position[3])
+                    position = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').TARandomLocation(position[1],position[3])
                     rally = position
                 end           
                 --IssueClearFactoryCommands( {factory} )

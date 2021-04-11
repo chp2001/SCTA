@@ -174,6 +174,20 @@ function TAAIGetEconomyNumbersMass(aiBrain)
     return econ
 end
 
+function TAAIGetEconomyNumbersEnergy(aiBrain)
+    local econ = {}
+    econ.EnergyStorageRatio = aiBrain:GetEconomyStoredRatio('ENERGY')
+    econ.EnergyStorage = aiBrain:GetEconomyStored('ENERGY')
+
+    if econ.EnergyStorageRatio ~= 0 then
+        econ.EnergyMaxStored = econ.EnergyStorage / econ.EnergyStorageRatio
+    else
+        econ.EnergyMaxStored = econ.EnergyStorage
+    end
+
+    return econ
+end
+
 function TAEnergyEfficiency(aiBrain)
     local econ = {}
     econ.EnergyIncome = aiBrain:GetEconomyIncome('ENERGY')
@@ -187,9 +201,18 @@ function TAEnergyEfficiency(aiBrain)
     return econ
 end
 
+
 function LessMassStorageMaxTA(aiBrain, mStorageRatio)
     local econ = TAAIGetEconomyNumbersMass(aiBrain)
     if (econ.MassStorageRatio < mStorageRatio) then
+        return true
+    end
+    return false
+end
+
+function GreaterEnergyStorageMaxTA(aiBrain, eStorageRatio)
+    local econ = TAAIGetEconomyNumbersEnergy(aiBrain)
+    if (econ.EnergyStorageRatio >= eStorageRatio) then
         return true
     end
     return false
@@ -210,6 +233,40 @@ function GreaterThanEconEnergyTAEfficiency(aiBrain, EnergyEfficiency)
     end
     return false
 end
+
+function TARandomLocation(x,z, value)
+	
+	local Random = Random
+	local r_value = value or 20
+
+    local finalX = x + Random(-r_value, r_value)
+	
+	-- there is potential here for a hung loop if the random value cannot overcome the map boundary
+    while finalX <= 0 or finalX >= ScenarioInfo.size[1] do
+	
+        finalX = x + Random(-r_value, r_value)
+		
+    end
+	
+    local finalZ = z + Random(-r_value, r_value)
+	
+    while finalZ <= 0 or finalZ >= ScenarioInfo.size[2] do
+	
+        finalZ = z + Random(-r_value, r_value)
+		
+    end
+	
+    local height = GetTerrainHeight( finalX, finalZ )
+	
+    if GetSurfaceHeight( finalX, finalZ ) > height then
+	
+        height = GetSurfaceHeight( finalX, finalZ )
+		
+    end
+	
+    return { finalX, height, finalZ }
+end
+
 
 function TAAttackNaval(aiBrain, bool)
     local startX, startZ = aiBrain:GetArmyStartPos()

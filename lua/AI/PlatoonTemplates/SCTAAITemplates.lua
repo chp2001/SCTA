@@ -34,8 +34,24 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
+    Name = 'LandAttackSCTAMid',
+    Plan = 'AttackSCTAForceAI',
+    GlobalSquads = {
+        { GROUND - SPECIAL, 10, 20, 'Attack', 'none' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'StrikeForceSCTAMid',
+    Plan = 'SCTAStrikeForceAI',
+    GlobalSquads = {
+        { GROUND - SPECIAL, 10, 20, 'Attack', 'none' }
+    },
+}
+
+PlatoonTemplate {
     Name = 'StrikeForceSCTAEndgame',
-    Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
+    Plan = 'SCTAStrikeForceAIEndgame', -- The platoon function to use.
     GlobalSquads = {
         { GROUND - SPECIAL, 25, 50, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
@@ -43,7 +59,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'LandAttackSCTAEndGame',
-    Plan = 'AttackSCTAForceAI',
+    Plan = 'AttackSCTAForceAIEndGame',
     GlobalSquads = {
         { GROUND - SPECIAL, 25, 50, 'Attack', 'none' }
     },
@@ -115,14 +131,6 @@ PlatoonTemplate {
     Plan = 'SCTAStrikeForceAIEarly',
     GlobalSquads = {
         { GROUND * categories.TECH1 - SPECIAL, 2, 10, 'Attack', 'none' }
-    },
-}
-
-PlatoonTemplate {
-    Name = 'LandAttackSCTAMid',
-    Plan = 'SCTAStrikeForceAI',
-    GlobalSquads = {
-        { GROUND - SPECIAL, 10, 20, 'Attack', 'none' }
     },
 }
 

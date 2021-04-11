@@ -182,48 +182,6 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTAAI T1Engineer Naval Mex 450',
-        PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 94,
-        InstanceCount = 1,
-        BuilderConditions = {
-                { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 450, -500, 200, 0, 'AntiSurface', 1 }},
-            },
-        BuilderType = 'Any',
-        BuilderData = {
-            Construction = {
-                Location = 'LocationType',
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
-                NearMarkerType = 'Naval Area',
-                BuildStructures = {
-                    'T1Resource',
-                }
-            }
-        }
-    },  
-    Builder {
-        BuilderName = 'SCTAAI T1Engineer Naval Mex 750',
-        PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 98,
-        InstanceCount = 1,
-        BuilderConditions = {
-                { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 750, -500, 200, 0, 'AntiSurface', 1 }},
-            },
-        BuilderType = 'Any',
-        BuilderData = {
-            Construction = {
-                Location = 'LocationType',
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
-                NearMarkerType = 'Naval Area',
-                BuildStructures = {
-                    'T1Resource',
-                }
-            }
-        }
-    },  
-    Builder {
         BuilderName = 'SCTAT2Torpedo',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         Priority = 75,

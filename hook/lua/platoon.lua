@@ -311,7 +311,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local cons = self.PlatoonData.Construction
         local buildingTmpl, buildingTmplFile, baseTmpl, baseTmplFile, baseTmplDefault
         local eng
-        LOG('*SCTAEXPANSIONTA', self.PlatoonData.LocationType)
+        --LOG('*SCTAEXPANSIONTA', self.PlatoonData.LocationType)
         for k, v in platoonUnits do
             if not v.Dead and EntityCategoryContains(categories.ENGINEER - categories.STATIONASSISTPOD, v) then --DUNCAN - was construction
                 IssueClearCommands({v})
@@ -1469,7 +1469,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local atkPri = {}
         local platoonUnits = self:GetPlatoonUnits()
         local numberOfUnitsInPlatoon = table.getn(platoonUnits)
-        LOG('*SCTAEXPANSIONTA', data.locationType)
+        --LOG('*SCTAEXPANSIONTA', data.locationType)
         if data.Laser then
             local econ = TAutils.TAAIGetEconomyNumbersEnergy(aiBrain)
             if econ.EnergyStorageRatio < 0.15 then
@@ -1546,7 +1546,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local data = self.PlatoonData
         local categoryList = {}
         local atkPri = {}
-        LOG('*SCTAEXPANSIONTA', data.locationType)
+        --LOG('*SCTAEXPANSIONTA', self.BuilderData.locationType)
         if data.PrioritizedCategories then
             for k,v in data.PrioritizedCategories do
                 table.insert( atkPri, v )
@@ -2128,7 +2128,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local basePosition = false
 
         if self.PlatoonData.LocationType and self.PlatoonData.LocationType != 'NOTMAIN' then
-            LOG('*SCTAEXPANSIONTA', locationType)
+            --LOG('*SCTAEXPANSIONTA', self.PlatoonData.LocationType)
             basePosition = aiBrain.BuilderManagers[self.PlatoonData.LocationType].Position
         else
             local platoonPosition = self:GetPlatoonPosition()

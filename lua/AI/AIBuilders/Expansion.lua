@@ -91,7 +91,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTA Expansion Starter Late',
-        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 93,
         InstanceCount = 1,
         BuilderConditions = {

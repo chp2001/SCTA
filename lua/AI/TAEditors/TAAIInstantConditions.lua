@@ -51,9 +51,9 @@ function TAAIGetReclaimablesAroundLocation(aiBrain, locationType)
     end
 
     local x1 = position[1] - radius * 2
-    local x2 = position[1] + radius
+    local x2 = position[1] + radius * 2
     local z1 = position[3] - radius * 2
-    local z2 = position[3] + radius
+    local z2 = position[3] + radius * 2
     local rect = Rect(x1, z1, x2, z2)
 
     return AIUtils.GetReclaimablesInRect(rect)
@@ -197,7 +197,7 @@ end
 
 function LessThanEconEnergyTAEfficiency(aiBrain, EnergyEfficiency)
     local econ = TAEnergyEfficiency(aiBrain)
-    if (econ.EnergyEfficiencyOverTime >= EnergyEfficiency) then
+    if (econ.EnergyEfficiencyOverTime <= EnergyEfficiency)  then
         return true
     end
     return false
@@ -205,7 +205,7 @@ end
 
 function GreaterThanEconEnergyTAEfficiency(aiBrain, EnergyEfficiency)
     local econ = TAEnergyEfficiency(aiBrain)
-    if (econ.EnergyEfficiencyOverTime <= EnergyEfficiency) then
+    if (econ.EnergyEfficiencyOverTime >= EnergyEfficiency) then
         return true
     end
     return false

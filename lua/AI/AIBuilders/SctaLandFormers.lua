@@ -39,6 +39,7 @@ BuilderGroup {
         InstanceCount = 25,
         BuilderType = 'Any',
         BuilderData = {
+            Small = true,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',
@@ -55,6 +56,7 @@ BuilderGroup {
         InstanceCount = 50,
         BuilderType = 'Any',
         BuilderData = {
+            Small = true,
             Laser = true,
             NeverGuardBases = false,
             NeverGuardEngineers = true,
@@ -73,6 +75,7 @@ BuilderGroup {
         InstanceCount = 50,
         BuilderType = 'Any',
         BuilderData = {
+            Small = true,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',

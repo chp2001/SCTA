@@ -1512,16 +1512,13 @@ Platoon = Class(SCTAAIPlatoon) {
                 if target then
                     --self:SetPlatoonFormationOverride('Attack')
                     self:Stop()
-                    if not data.UseMoveOrder then
-                        if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 10 then
+                    if aiBrain:PlatoonExists(self) and data.Small and not data.UseMoveOrder then
+                        if numberOfUnitsInPlatoon < 10 then
                         self:SetPlatoonFormationOverride('AttackFormation')
                         self:AttackTarget( target )
                         end
                     else
-                        if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 10 then
-                        self:SetPlatoonFormationOverride('AttackFormation')
                         self:MoveToLocation( table.copy( target:GetPosition() ), false)
-                        end
                     end
                     movingToScout = false
                 elseif not movingToScout then

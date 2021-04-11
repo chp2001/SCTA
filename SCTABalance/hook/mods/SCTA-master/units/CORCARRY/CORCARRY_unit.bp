@@ -35,7 +35,7 @@ UnitBlueprint {
         BuildCostMass = 3000,
         BuildTime = 60000,
         BuildRate = 600,
-        ProductionPerSecondEnergy = 300,
+        ProductionPerSecondEnergy = 1000,
         MaintenanceConsumptionPerSecondEnergy = 35,
     },
     LifeBarSize = 6,

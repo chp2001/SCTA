@@ -47,11 +47,11 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandAASCTA',
         Priority = 88,
         BuilderConditions = {
-            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.LAND } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},
             { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,
                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
+            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},                           
         },
         BuilderType = 'Land',
     },
@@ -73,7 +73,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.TECH2 * categories.SILO,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, 
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},
         },
         BuilderType = 'Land',
     },
@@ -82,10 +82,10 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandAASCTA',
         Priority = 105,
         BuilderConditions = {
-            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.ANTIAIR * categories.MOBILE,
             '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
+            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
         },
         BuilderType = 'Land',
     },
@@ -95,7 +95,7 @@ BuilderGroup {
         Priority = 77,
         BuilderConditions = {   
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.BOMB * categories.LAND} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
         }, 
         BuilderType = 'Land',
     },
@@ -161,11 +161,11 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandAASCTA2',
         Priority = 81,
         BuilderConditions = {
-            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.LAND } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},
             { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,
                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
+                                       { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},
+            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
         },
         BuilderType = 'Land',
     },
@@ -176,7 +176,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.TECH2 * categories.SILO * categories.MOBILE,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},
         },
         BuilderType = 'Land',
     },
@@ -186,7 +186,7 @@ BuilderGroup {
         Priority = 71,
         BuilderConditions = {   
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.STEALTHFIELD * categories.LAND} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         }, 
         BuilderType = 'Land',
     },
@@ -195,10 +195,10 @@ BuilderGroup {
         PlatoonTemplate = 'T2LandAASCTA2',
         Priority = 104,
         BuilderConditions = {
-            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.ANTIAIR * categories.MOBILE,
             '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
         },
         BuilderType = 'Land',
     },
@@ -256,7 +256,8 @@ BuilderGroup {
         BuilderConditions = {
         { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.TECH3 * categories.SILO * categories.MOBILE,
         '<=', categories.MOBILE * categories.LAND - categories.ENGINEER } }, -- Don't make tanks if we have lots of them. },
-        },
+        { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+    },
         BuilderType = 'Land',
     },
     Builder {
@@ -264,9 +265,10 @@ BuilderGroup {
         PlatoonTemplate = 'THOVERAASCTA',
         Priority = 133,
         BuilderConditions = {
-            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, -- Build AA if the enemy is threatening our base with air units.
             { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,
                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
+                                       { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},
+            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } },
         },
         BuilderType = 'Land',
     },

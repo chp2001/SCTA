@@ -88,25 +88,6 @@ BuilderGroup {
         }
     },  
     Builder {
-        BuilderName = 'SCTAAI T1Engineer 750 Mex',
-        PlatoonTemplate = 'EngineerBuilderSCTAALL',
-        Priority = 71,
-        InstanceCount = 2,
-        BuilderConditions = {
-                { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 750, -500, 200, 0, 'AntiSurface', 1}},
-            },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = false,
-            Construction = {
-                BuildStructures = {
-                    'T1Resource',
-                }
-            }
-        }
-    },  
-    Builder {
         BuilderName = 'SCTAAI T2Engineer Mex',
         PlatoonTemplate = 'EngineerBuilderSCTA23',
         Priority = 103,
@@ -169,8 +150,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 99,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
-        BuilderConditions = { 
-            { MIBC, 'LessThanGameTime', {360} }, 
+        BuilderConditions = {  
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 150}},
         },
         BuilderType = 'Any',
@@ -191,7 +171,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -208,11 +188,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen2',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 91,
+        Priority = 125,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -255,7 +235,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TECH3 * categories.ENERGYPRODUCTION * categories.STRUCTURE} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
         },
         BuilderType = 'Any',
@@ -320,7 +300,7 @@ BuilderGroup {
         Priority = 94,
         InstanceCount = 1,
         BuilderConditions = {
-                { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 850, -500, 200, 0, 'AntiAir', 1 }},
+                { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 250, -500, 200, 0, 'AntiAir', 1 }},
             },
         BuilderType = 'Any',
         BuilderData = {
@@ -397,7 +377,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
         },
         BuilderType = 'Any',
         BuilderData = {

@@ -16,12 +16,12 @@ PlatoonTemplate {
     Name = 'T1LandDFTankSCTA',
     FactionSquads = {
         Arm = {
-            { 'armwar', 1, 4, 'attack', 'none' },
-            { 'armham', 1, 1, 'attack', 'none' },
+            { 'armwar', 1, 2, 'attack', 'none' },
+            { 'armck', 1, 1, 'support', 'None' },
+            { 'armwar', 1, 2, 'attack', 'none' },
         },
         Core = {
             { 'corstorm', 1, 4, 'attack', 'none' },
-            { 'corthud', 1, 1, 'attack', 'none' },
         },
     }
 }
@@ -73,10 +73,10 @@ PlatoonTemplate {
     Name = 'T1LandArtillerySCTA',
     FactionSquads = {
         Arm = {
-            { 'armham', 1, 2, 'attack', 'none' }
+            { 'armham', 1, 1, 'attack', 'none' }
         },
         Core = {
-            { 'corthud', 1, 2, 'attack', 'none' }
+            { 'corthud', 1, 1, 'attack', 'none' }
         },
     }
 }
@@ -97,12 +97,10 @@ PlatoonTemplate {
     Name = 'T2LandAASCTA',
     FactionSquads = {
         Arm = {
-            { 'armamph', 1, 2, 'attack', 'none' },
-            { 'armfark', 1, 1, 'support', 'None' },
+            { 'armamph', 1, 1, 'attack', 'none' },
         },
         Core = {
-            { 'corcrash', 1, 2, 'attack', 'none'},
-            { 'coracv', 1, 1, 'support', 'None' },
+            { 'corcrash', 1, 1, 'attack', 'none'},
         },
     }
 }
@@ -111,10 +109,12 @@ PlatoonTemplate {
     Name = 'T2LandAuxFact1',
     FactionSquads = {
         Arm = {
-            { 'armvader', 1, 1, 'attack', 'none' }
+            { 'armvader', 1, 1, 'attack', 'none' },
+            { 'armfast', 1, 2, 'attack', 'none' },
         },
         Core = {
-            { 'corroach', 1, 1, 'attack', 'none' }
+            { 'corroach', 1, 1, 'attack', 'none' },
+            { 'corfast', 1, 2, 'attack', 'none' },
         },
     }
 }
@@ -123,12 +123,10 @@ PlatoonTemplate {
     Name = 'T2LandDFTankSCTA',
     FactionSquads = {
         Arm = {
-            { 'armfast', 1, 1, 'attack', 'none' },
-            { 'armfido', 1, 2, 'attack', 'none' },
+            { 'armfido', 1, 3, 'attack', 'none' },
         },
         Core = {
-            { 'corfast', 1, 1, 'attack', 'none' },
-            { 'corcan', 1, 2, 'attack', 'none' },
+            { 'corcan', 1, 3, 'attack', 'none' },
         },
     }
 }

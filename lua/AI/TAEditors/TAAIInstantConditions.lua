@@ -1,4 +1,5 @@
 local AIUtils = import('/lua/ai/AIUtilities.lua')
+--local Util = import('utilities.lua')
 
 function TAGetEngineerFaction(engineer)
     if EntityCategoryContains(categories.ARM, engineer) then
@@ -50,15 +51,33 @@ function TAAIGetReclaimablesAroundLocation(aiBrain, locationType)
     end
 
     local x1 = position[1] - radius * 2
-    local x2 = position[1] + radius
+    local x2 = position[1] + radius * 2
     local z1 = position[3] - radius * 2
-    local z2 = position[3] + radius
+    local z2 = position[3] + radius * 2
     local rect = Rect(x1, z1, x2, z2)
 
     return AIUtils.GetReclaimablesInRect(rect)
 end
 
+function NormalizeVector( v )
 
+	if v.x then
+		v = {v.x, v.y, v.z}
+	end
+	
+    local length = math.sqrt( math.pow( v[1], 2 ) + math.pow( v[2], 2 ) + math.pow(v[3], 2 ) )
+	
+    if length > 0 then
+        local invlength = 1 / length
+        return Vector( v[1] * invlength, v[2] * invlength, v[3] * invlength )
+    else
+        return Vector( 0,0,0 )
+    end
+end
+
+function GetDirectionVector( v1, v2 )
+    return NormalizeVector( Vector(v1[1] - v2[1], v1[2] - v2[2], v1[3] - v2[3]) )
+end
 -----locational things
 
 function GetDirectionInDegrees( v1, v2 )
@@ -67,10 +86,10 @@ function GetDirectionInDegrees( v1, v2 )
     local vec = GetDirectionVector( v1, v2)
     
     if vec[1] >= 0 then
-        return SCTACOS(vec[3]) * (360/(PI*2))
+        return SCTAACOS(vec[3]) * (360/(PI*2))
     end
     
-    return 360 - (SCTACOS(vec[3]) * (360/(PI*2)))
+    return 360 - (SCTAACOS(vec[3]) * (360/(PI*2)))
 end
 
 function GetMOARadii(bool)
@@ -155,6 +174,20 @@ function TAAIGetEconomyNumbersMass(aiBrain)
     return econ
 end
 
+function TAAIGetEconomyNumbersEnergy(aiBrain)
+    local econ = {}
+    econ.EnergyStorageRatio = aiBrain:GetEconomyStoredRatio('ENERGY')
+    econ.EnergyStorage = aiBrain:GetEconomyStored('ENERGY')
+
+    if econ.EnergyStorageRatio ~= 0 then
+        econ.EnergyMaxStored = econ.EnergyStorage / econ.EnergyStorageRatio
+    else
+        econ.EnergyMaxStored = econ.EnergyStorage
+    end
+
+    return econ
+end
+
 function TAEnergyEfficiency(aiBrain)
     local econ = {}
     econ.EnergyIncome = aiBrain:GetEconomyIncome('ENERGY')
@@ -168,6 +201,7 @@ function TAEnergyEfficiency(aiBrain)
     return econ
 end
 
+
 function LessMassStorageMaxTA(aiBrain, mStorageRatio)
     local econ = TAAIGetEconomyNumbersMass(aiBrain)
     if (econ.MassStorageRatio < mStorageRatio) then
@@ -176,9 +210,17 @@ function LessMassStorageMaxTA(aiBrain, mStorageRatio)
     return false
 end
 
+function GreaterEnergyStorageMaxTA(aiBrain, eStorageRatio)
+    local econ = TAAIGetEconomyNumbersEnergy(aiBrain)
+    if (econ.EnergyStorageRatio >= eStorageRatio) then
+        return true
+    end
+    return false
+end
+
 function LessThanEconEnergyTAEfficiency(aiBrain, EnergyEfficiency)
     local econ = TAEnergyEfficiency(aiBrain)
-    if (econ.EnergyEfficiencyOverTime >= EnergyEfficiency) then
+    if (econ.EnergyEfficiencyOverTime <= EnergyEfficiency)  then
         return true
     end
     return false
@@ -186,11 +228,45 @@ end
 
 function GreaterThanEconEnergyTAEfficiency(aiBrain, EnergyEfficiency)
     local econ = TAEnergyEfficiency(aiBrain)
-    if (econ.EnergyEfficiencyOverTime <= EnergyEfficiency) then
+    if (econ.EnergyEfficiencyOverTime >= EnergyEfficiency) then
         return true
     end
     return false
 end
+
+function TARandomLocation(x,z, value)
+	
+	local Random = Random
+	local r_value = value or 20
+
+    local finalX = x + Random(-r_value, r_value)
+	
+	-- there is potential here for a hung loop if the random value cannot overcome the map boundary
+    while finalX <= 0 or finalX >= ScenarioInfo.size[1] do
+	
+        finalX = x + Random(-r_value, r_value)
+		
+    end
+	
+    local finalZ = z + Random(-r_value, r_value)
+	
+    while finalZ <= 0 or finalZ >= ScenarioInfo.size[2] do
+	
+        finalZ = z + Random(-r_value, r_value)
+		
+    end
+	
+    local height = GetTerrainHeight( finalX, finalZ )
+	
+    if GetSurfaceHeight( finalX, finalZ ) > height then
+	
+        height = GetSurfaceHeight( finalX, finalZ )
+		
+    end
+	
+    return { finalX, height, finalZ }
+end
+
 
 function TAAttackNaval(aiBrain, bool)
     local startX, startZ = aiBrain:GetArmyStartPos()

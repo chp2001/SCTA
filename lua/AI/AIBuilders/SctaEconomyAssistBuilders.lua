@@ -55,26 +55,6 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'SCTA Assist Production Field',
-        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
-        Priority = 25,
-        InstanceCount = 5,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.FACTORY }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssistRange = 120,
-                BeingBuiltCategories = {'FACTORY'},                                        
-                AssistUntilFinished = true,
-            },
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
         BuilderName = 'SCTA Engineer Assist Gantry',
         PlatoonTemplate = 'EngineerBuilderSCTAAssist',
         Priority = 200,
@@ -195,6 +175,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
         PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 85,
+        FormRadius = 500,
         InstanceCount = 8,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 600 } },
@@ -211,6 +192,7 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Excess',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         PlatoonAIPlan = 'SCTAReclaimAI',
+        FormRadius = 500,
         Priority = 99,
         InstanceCount = 2,
         BuilderConditions = {
@@ -268,6 +250,7 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'SCTAReclaimAI',
+        FormRadius = 500,
         Priority = 25,
         InstanceCount = 10,
         BuilderConditions = {

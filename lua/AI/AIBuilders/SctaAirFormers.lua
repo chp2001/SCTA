@@ -39,11 +39,11 @@ BuilderGroup {
         BuilderName = 'SCTAAI Air Intercept',
         PlatoonTemplate = 'IntieAISCTA',
         Priority = 100,
+        FormRadius = 500,
         PlatoonAddBehaviors = { 'AirUnitRefit' },                              
         InstanceCount = 200,
         BuilderType = 'Any',     
         BuilderConditions = { 
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AIR * categories.ANTIAIR } },
         },
     },
     Builder {

@@ -13,7 +13,6 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         self.Location = location
         self.Radius = radius
         self.LocationType = lType
-
         self.ConsumptionUnits = {
             Engineers = { Category = categories.ENGINEER, Units = {}, UnitsList = {}, Count = 0, },
             Fabricators = { Category = categories.MASSFABRICATION * categories.STRUCTURE, Units = {}, UnitsList = {}, Count = 0, },

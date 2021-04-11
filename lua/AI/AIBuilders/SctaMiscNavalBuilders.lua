@@ -28,6 +28,8 @@ BuilderGroup {
         BuilderData = {
             Construction = {
                 Location = 'LocationType',
+                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
+                BaseTemplate = 'NavalBaseTemplates',
                 NearMarkerType = 'Naval Area',
                 BuildStructures = {
                     'T1SeaFactory',
@@ -50,6 +52,8 @@ BuilderGroup {
         BuilderData = {
                 Construction = {
                     Location = 'LocationType',
+                    BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
+                    BaseTemplate = 'NavalBaseTemplates',
                     NearMarkerType = 'Naval Area',
                     BuildStructures = {
                     'T2SeaFactory',
@@ -71,6 +75,8 @@ BuilderGroup {
         BuilderData = {
                 Construction = {
                     Location = 'LocationType',
+                    BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
+                    BaseTemplate = 'NavalBaseTemplates',
                     NearMarkerType = 'Naval Area',
                     BuildClose = true,
                     BuildStructures = {
@@ -93,6 +99,8 @@ BuilderGroup {
         BuilderData = {
             Construction = {
                 BuildClose = false,
+                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
+                BaseTemplate = 'NavalBaseTemplates',
                 NearMarkerType = 'Naval Area',
                 MarkerRadius = 20,
                 LocationRadius = 75,
@@ -122,6 +130,8 @@ BuilderGroup {
         BuilderData = {
             Construction = {
                 Location = 'LocationType',
+                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
+                BaseTemplate = 'NavalBaseTemplates',
                 NearMarkerType = 'Naval Area',
                 BuildStructures = {
                     'T1EnergyProduction3',
@@ -141,6 +151,8 @@ BuilderGroup {
         BuilderData = {
             Construction = {
                 Location = 'LocationType',
+                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
+                BaseTemplate = 'NavalBaseTemplates',
                 NearMarkerType = 'Naval Area',
                 BuildStructures = {
                     'T1Resource',
@@ -160,6 +172,8 @@ BuilderGroup {
         BuilderData = {
             Construction = {
                 Location = 'LocationType',
+                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
+                BaseTemplate = 'NavalBaseTemplates',
                 NearMarkerType = 'Naval Area',
                 BuildStructures = {
                     'T1Resource',
@@ -167,44 +181,6 @@ BuilderGroup {
             }
         }
     },
-    Builder {
-        BuilderName = 'SCTAAI T1Engineer Naval Mex 450',
-        PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 94,
-        InstanceCount = 1,
-        BuilderConditions = {
-                { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 450, -500, 200, 0, 'AntiSurface', 1 }},
-            },
-        BuilderType = 'Any',
-        BuilderData = {
-            Construction = {
-                Location = 'LocationType',
-                NearMarkerType = 'Naval Area',
-                BuildStructures = {
-                    'T1Resource',
-                }
-            }
-        }
-    },  
-    Builder {
-        BuilderName = 'SCTAAI T1Engineer Naval Mex 750',
-        PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 98,
-        InstanceCount = 1,
-        BuilderConditions = {
-                { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 750, -500, 200, 0, 'AntiSurface', 1 }},
-            },
-        BuilderType = 'Any',
-        BuilderData = {
-            Construction = {
-                Location = 'LocationType',
-                NearMarkerType = 'Naval Area',
-                BuildStructures = {
-                    'T1Resource',
-                }
-            }
-        }
-    },  
     Builder {
         BuilderName = 'SCTAT2Torpedo',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
@@ -220,6 +196,8 @@ BuilderGroup {
             Construction = {
                 BuildClose = true,
                 NearMarkerType = 'Naval Area',
+                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
+                BaseTemplate = 'NavalBaseTemplates',
                 MarkerRadius = 20,
                 LocationRadius = 75,
                 LocationType = 'LocationType',
@@ -248,8 +226,10 @@ BuilderGroup {
             },
         BuilderData = {
             NearMarkerType = 'Naval Area',
+            BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
+            BaseTemplate = 'NavalBaseTemplates',
             Location = 'LocationType',
-            Reclaim = {'ENERGYPRODUCTION NAVAL'},
+            Reclaim = {'ENERGYPRODUCTION NAVAL TECH1'},
             ReclaimTime = 30,
         },
         BuilderType = 'Any',

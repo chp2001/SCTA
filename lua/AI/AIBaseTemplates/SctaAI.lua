@@ -19,6 +19,7 @@ BaseBuilderTemplate {
         'SCTAAIAirBuilder',
         'SCTAAILandFormers',
         'SCTAAIAirFormers',
+        'SCTAAIUniversalFormers',
         
         -- Buildings etc
         'SCTAAIEngineerMiscBuilder',
@@ -34,15 +35,15 @@ BaseBuilderTemplate {
     },
     BaseSettings = { },
     ExpansionFunction = function(aiBrain, location, markerType)
-        -- This is used if you want to make stuff outside of the starting location.
-        return 10
+        --LOG('MAIN')
+        return -1
     end,
     
     FirstBaseFunction = function(aiBrain)
 
         local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
         --LOG('Ai Personality is '..per)
-        if per == 'sctaaiarm' or per == 'sctaaicore' then
+        if per == 'sctaaiarm' or per == 'sctaaicore' or per == 'sctaaiarmcheat' or per == 'sctaaicorecheat' then
             --LOG('Return sctaai personality')
             return 1000, 'SCTAAI'
         end

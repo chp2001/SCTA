@@ -7,12 +7,13 @@
 local RAIDER = categories.armfig + categories.corveng + categories.armpw + categories.corak + categories.armflash + categories.corgator
 local SPECIAL = RAIDER + categories.EXPERIMENTAL + categories.ENGINEER + categories.SCOUT
 local GROUND = categories.MOBILE * categories.LAND
+local TACATS = categories.ANTISHIELD + categories.AMPHIBIOUS
 
 PlatoonTemplate {
     Name = 'AntiAirSCTA',
     Plan = 'SCTAAntiAirAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND * categories.ANTIAIR - categories.ANTISHIELD, 2, 10, 'attack', 'none' },
+        { GROUND * categories.ANTIAIR, 2, 10, 'attack', 'none' },
     },
 }
 
@@ -28,7 +29,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTA',
     Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND - SPECIAL - categories.ANTISHIELD - categories.AMPHIBIOUS - categories.SILO - categories.ARTILLERY, 5, 20, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND - SPECIAL - TACATS - categories.ARTILLERY - categories.ANTIAIR, 5, 20, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
 
@@ -52,7 +53,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTAMissiles',
     Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND * ( categories.SILO + categories.ARTILLERY) - categories.ANTISHIELD - categories.AMPHIBIOUS, 5, 20, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND * ( categories.SILO + categories.ARTILLERY) - TACATS, 5, 20, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
 
@@ -97,7 +98,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTA',
     Plan = 'AttackSCTAForceAI',
     GlobalSquads = {
-        { GROUND - SPECIAL - categories.AMPHIBIOUS - categories.ANTISHIELD, 2, 20, 'Attack', 'none' }
+        { GROUND - SPECIAL - TACATS, 2, 20, 'Attack', 'none' }
     },
 }
 
@@ -114,6 +115,14 @@ PlatoonTemplate {
     Plan = 'SCTAStrikeForceAIEarly',
     GlobalSquads = {
         { GROUND * categories.TECH1 - SPECIAL, 2, 10, 'Attack', 'none' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'LandAttackSCTAMid',
+    Plan = 'SCTAStrikeForceAI',
+    GlobalSquads = {
+        { GROUND - SPECIAL, 10, 20, 'Attack', 'none' }
     },
 }
 

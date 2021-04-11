@@ -1,4 +1,5 @@
 local AIUtils = import('/lua/ai/AIUtilities.lua')
+--local Util = import('utilities.lua')
 
 function TAGetEngineerFaction(engineer)
     if EntityCategoryContains(categories.ARM, engineer) then
@@ -58,7 +59,25 @@ function TAAIGetReclaimablesAroundLocation(aiBrain, locationType)
     return AIUtils.GetReclaimablesInRect(rect)
 end
 
+function NormalizeVector( v )
 
+	if v.x then
+		v = {v.x, v.y, v.z}
+	end
+	
+    local length = math.sqrt( math.pow( v[1], 2 ) + math.pow( v[2], 2 ) + math.pow(v[3], 2 ) )
+	
+    if length > 0 then
+        local invlength = 1 / length
+        return Vector( v[1] * invlength, v[2] * invlength, v[3] * invlength )
+    else
+        return Vector( 0,0,0 )
+    end
+end
+
+function GetDirectionVector( v1, v2 )
+    return NormalizeVector( Vector(v1[1] - v2[1], v1[2] - v2[2], v1[3] - v2[3]) )
+end
 -----locational things
 
 function GetDirectionInDegrees( v1, v2 )
@@ -67,10 +86,10 @@ function GetDirectionInDegrees( v1, v2 )
     local vec = GetDirectionVector( v1, v2)
     
     if vec[1] >= 0 then
-        return SCTACOS(vec[3]) * (360/(PI*2))
+        return SCTAACOS(vec[3]) * (360/(PI*2))
     end
     
-    return 360 - (SCTACOS(vec[3]) * (360/(PI*2)))
+    return 360 - (SCTAACOS(vec[3]) * (360/(PI*2)))
 end
 
 function GetMOARadii(bool)

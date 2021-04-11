@@ -227,10 +227,12 @@ PlatoonTemplate {
     Name = 'T2BuildEngineerSCTA',
     FactionSquads = {
         Arm = {
-            { 'armack', 1, 1, 'support', 'None' }
+            { 'armack', 1, 2, 'support', 'None' },
+            { 'armfark', 1, 1, 'support', 'None' },
         },
         Core = {
-            { 'coracv', 1, 1, 'support', 'None' }
+            { 'coracv', 1, 2, 'support', 'None' },
+            { 'cornecro', 1, 1, 'support', 'None' },
         },
     }
 }

@@ -191,7 +191,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -208,11 +208,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen2',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 91,
+        Priority = 125,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -255,7 +255,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TECH3 * categories.ENERGYPRODUCTION * categories.STRUCTURE} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
         },
         BuilderType = 'Any',
@@ -397,7 +397,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
         },
         BuilderType = 'Any',
         BuilderData = {

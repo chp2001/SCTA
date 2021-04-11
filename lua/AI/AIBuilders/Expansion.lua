@@ -44,8 +44,8 @@ BuilderGroup {
                 BaseTemplate = ExBaseTmpl,
                 ExpansionBase = true,
                 NearMarkerType = 'Start Location',
-                ExpansionRadius = 50, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
-                LocationRadius = 500,
+                ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                LocationRadius = 1000,
                 LocationType = 'LocationType',
                 ThreatMin = -1000,
                 ThreatMax = 1000,
@@ -75,8 +75,8 @@ BuilderGroup {
                 BaseTemplate = ExBaseTmpl,
                 ExpansionBase = true,
                 NearMarkerType = 'Expansion Area',
-                ExpansionRadius = 25, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
-                LocationRadius = 250,
+                ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                LocationRadius = 1000,
                 LocationType = 'LocationType',
                 ThreatMin = -1000,
                 ThreatMax = 1000,
@@ -108,7 +108,7 @@ BuilderGroup {
                     BaseTemplate = ExBaseTmpl,
                     ExpansionBase = true,
                     NearMarkerType = 'Expansion Area',
-                    ExpansionRadius = 25, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                    ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
                     LocationRadius = 1000,
                     LocationType = 'LocationType',
                     ThreatMin = -1000,
@@ -219,7 +219,37 @@ BuilderGroup {
     },
 } 
 
---[[Builder {
+--[[
+    Builder {
+        BuilderName = 'SCTA Formation',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 90,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { TASlow, 'FormerBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
+            { MIBC, 'GreaterThanGameTime', { 180 } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                BuildClose = false,
+                BaseTemplate = ExBaseTmpl,
+                ExpansionBase = true,
+                NearMarkerType = 'Mass',
+                ExpansionRadius = 10, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                LocationRadius = 100,
+                LocationType = 'LocationType',
+                ThreatMin = -1000,
+                ThreatMax = 1000,
+                ThreatRings = 2,
+                ThreatType = 'AntiAir',
+                BuildStructures = {
+                    'T1Resource',
+                },
+            },
+        }
+    },    
+Builder {
     BuilderName = 'SCTA Formation',
     PlatoonTemplate = 'EngineerBuilderSCTAEco',
     Priority = 90,

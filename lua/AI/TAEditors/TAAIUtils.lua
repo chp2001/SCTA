@@ -106,7 +106,7 @@ end
 
 function StartBaseCheck(aiBrain)
     -- Removed automatic setting of Land-Expasions-allowed. We have a Game-Option for this.
-    local checkNum = 1
+    local checkNum = 2
     return StartBaseCount(aiBrain, '<', checkNum)
 end
 
@@ -116,6 +116,19 @@ function StartBaseCount(aiBrain, compareType, checkNum)
        end
        return CompareBodySCTA(expBaseCount, checkNum, compareType)
 end
+
+--[[function FormerBaseCheck(aiBrain)
+    -- Removed automatic setting of Land-Expasions-allowed. We have a Game-Option for this.
+    local checkNum = 5
+    return StartBaseCount(aiBrain, '<', checkNum)
+end
+
+function FormerBaseCheck(aiBrain, compareType, checkNum)
+       local expBaseCount = aiBrain:GetManagerCount('Mass')
+       if expBaseCount > checkNum then
+       end
+       return CompareBodySCTA(expBaseCount, checkNum, compareType)
+end]]
 
 function TAFactoryCapCheck(aiBrain, locationType, TECH)
     local catCheck = false

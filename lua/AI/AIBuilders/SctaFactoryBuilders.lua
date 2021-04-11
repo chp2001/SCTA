@@ -225,7 +225,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI T2AirFactory',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco12',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco123',
         Priority = 136,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factories', 3},
@@ -410,23 +410,26 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTA Engineer Reclaim Excess Early',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
-        PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 99,
+        BuilderName = 'SCTAAI AirFactoryT2 Emergency',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco123',
+        Priority = 22,
         InstanceCount = 2,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 120 } },
-            { MIBC, 'LessThanGameTime', {480} }, 
-            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},   
-            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
-        },
-        BuilderData = {
-            Terrain = true,
-            LocationType = 'LocationType',
-            ReclaimTime = 30,
+            { MIBC, 'GreaterThanGameTime', {750} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.75}},
         },
         BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T2AirFactory',
+                }
+            }
+        }
     },
     Builder {
         BuilderName = 'SCTAGameEnder',

@@ -41,7 +41,7 @@ function TAAIGetReclaimablesAroundLocation(aiBrain, locationType)
             end
         end
     elseif aiBrain.BuilderManagers[locationType] then
-        radius = aiBrain.BuilderManagers[locationType].FactoryManager.Radius
+        radius = 25
         position = aiBrain.BuilderManagers[locationType].FactoryManager:GetLocationCoords()
     end
 
@@ -159,8 +159,6 @@ function TAEnergyEfficiency(aiBrain)
     local econ = {}
     econ.EnergyIncome = aiBrain:GetEconomyIncome('ENERGY')
     econ.EnergyRequested = aiBrain:GetEconomyRequested('ENERGY')
-    econ.EnergyEfficiency = math.min(econ.EnergyIncome / econ.EnergyRequested, 2)
- 
 
     if aiBrain.EconomyMonitorThread then
         local econTime = aiBrain:GetEconomyOverTime()
@@ -180,7 +178,7 @@ end
 
 function LessThanEconEnergyTAEfficiency(aiBrain, EnergyEfficiency)
     local econ = TAEnergyEfficiency(aiBrain)
-    if (econ.EnergyEfficiency <= EnergyEfficiency) then
+    if (econ.EnergyEfficiencyOverTime >= EnergyEfficiency) then
         return true
     end
     return false
@@ -188,7 +186,7 @@ end
 
 function GreaterThanEconEnergyTAEfficiency(aiBrain, EnergyEfficiency)
     local econ = TAEnergyEfficiency(aiBrain)
-    if (econ.EnergyEfficiency >= EnergyEfficiency) then
+    if (econ.EnergyEfficiencyOverTime <= EnergyEfficiency) then
         return true
     end
     return false

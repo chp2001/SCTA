@@ -191,7 +191,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -208,11 +208,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen2',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 51,
+        Priority = 91,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -255,7 +255,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TECH3 * categories.ENERGYPRODUCTION * categories.STRUCTURE} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
         },
         BuilderType = 'Any',
@@ -277,7 +277,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.75 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -373,7 +373,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI T1Engineer Air Hydro',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco12',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco123',
         Priority = 170,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = { 
@@ -397,7 +397,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.25 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -410,41 +410,5 @@ BuilderGroup {
                 }
             }
         }
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Reclaim Field',
-        PlatoonTemplate = 'EngineerBuilderSCTAField',
-        PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 200,
-        InstanceCount = 5,
-        BuilderConditions = {
-            { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
-            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
-        },
-        BuilderData = {
-        Terrain = true,
-        LocationType = 'LocationType',
-        ReclaimTime = 30,
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Field Finish',
-        PlatoonTemplate = 'EngineerBuilderSCTAField',
-        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 125,
-        InstanceCount = 2,
-        BuilderConditions = {
-                { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
-            },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
-                Time = 20,
-            },
-        },
-        BuilderType = 'Any',
     },
 }

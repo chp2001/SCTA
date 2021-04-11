@@ -31,7 +31,7 @@ BuilderGroup {
             { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 1, categories.MASSEXTRACTION * categories.TECH1 } },  
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 }},
         },
-        FormRadius = 500,
+        FormRadius = 1000,
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,

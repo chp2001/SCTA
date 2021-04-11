@@ -8,7 +8,6 @@ BaseBuilderTemplate {
         -- Buildings etc
         'SCTAExpansionBuilders',
         'SCTAAIEngineerNavalMiscBuilder',
-        'SCTAUpgrades',
     },
     BaseSettings = {
         EngineerCount = {

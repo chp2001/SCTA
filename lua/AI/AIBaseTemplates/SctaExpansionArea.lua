@@ -14,7 +14,6 @@ BaseBuilderTemplate {
         'SCTAExpansionBuilders',
         'SCTAAIEngineerMiscBuilder',
         'SCTAAIEngineerEcoBuilder',
-        'SCTAUpgrades',
         --Misc Function
     },
     BaseSettings = {

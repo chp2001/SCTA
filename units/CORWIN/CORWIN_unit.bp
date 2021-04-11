@@ -31,7 +31,7 @@ UnitBlueprint {
         'SORTECONOMY',
 	    'ENERGYPRODUCTION',
 	    'CORE',
-        'SIZE4',
+        'LAND',
     },
     Defense = {
         ArmorType = 'Structure',

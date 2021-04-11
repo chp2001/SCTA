@@ -12,7 +12,7 @@ BaseBuilderTemplate {
         -- List all our builder grous here
         -- ACU
         'SCTAAICommanderBuilder',
-        
+
         -- Unit Builders
         'SCTAAIEngineerBuilder',
         'SCTAAILandBuilder',

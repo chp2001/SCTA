@@ -17,14 +17,6 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
-    Name = 'AntiAirLaserSCTA',
-    Plan = 'SCTAAntiAirAI', -- The platoon function to use.
-    GlobalSquads = {
-        { GROUND * categories.ANTIAIR * categories.ANTISHIELD, 2, 10, 'attack', 'none' },
-    },
-}
-
-PlatoonTemplate {
     Name = 'T1LandScoutFormSCTA',
     Plan = 'ScoutingAI',
     GlobalSquads = {
@@ -37,6 +29,22 @@ PlatoonTemplate {
     Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
         { GROUND - SPECIAL - categories.ANTISHIELD - categories.AMPHIBIOUS - categories.SILO - categories.ARTILLERY, 5, 20, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+    },
+}
+
+PlatoonTemplate {
+    Name = 'StrikeForceSCTAEndgame',
+    Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
+    GlobalSquads = {
+        { GROUND - SPECIAL, 25, 50, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+    },
+}
+
+PlatoonTemplate {
+    Name = 'LandAttackSCTAEndGame',
+    Plan = 'AttackSCTAForceAI',
+    GlobalSquads = {
+        { GROUND - SPECIAL, 25, 50, 'Attack', 'none' }
     },
 }
 

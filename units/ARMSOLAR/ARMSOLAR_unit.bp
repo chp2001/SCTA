@@ -38,6 +38,7 @@ UnitBlueprint {
 	    'ENERGYPRODUCTION',
         'VOLATILE',
 	    'ARM',
+        'LAND',
     },
     Defense = {
         DamageModifier = 0.33,

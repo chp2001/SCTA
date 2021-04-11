@@ -64,8 +64,8 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1,  FUSION} }, 
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.25, 1.05 }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}},
+            { TAutils, 'GreaterThanEconEnergyTAEfficiency', {1.05 }},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -115,8 +115,8 @@ BuilderGroup {
         Priority = 131,
         InstanceCount = 2,
         BuilderConditions = {
-        { UCBC, 'HaveLessThanUnitsWithCategory', { 2, FUSION } },  -- Stop after 10 facs have been built.
-        { EBC, 'LessThanEconEfficiencyOverTime', { 1.0, 1.15 }},
+        { UCBC, 'HaveLessThanUnitsWithCategory', { 4, FUSION } },  -- Stop after 10 facs have been built.
+        { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
         },
         BuilderType = 'Any',
         BuilderData = {

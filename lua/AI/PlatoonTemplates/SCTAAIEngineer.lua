@@ -158,7 +158,7 @@ PlatoonTemplate {
             { 'armck', 1, 2, 'support', 'None' },
         },
         Core = {
-            { 'corcv', 1, 2, 'support', 'None' },
+            { 'corcv', 1, 1, 'support', 'None' },
             { 'corgator', 1, 2, 'attack', 'none' },
             { 'corcv', 1, 4, 'support', 'None' },
             { 'corgator', 1, 1, 'attack', 'none' },

@@ -1,7 +1,7 @@
 EmitterBlueprint {
 	BlueprintId = 'smokewreckage',
-	Lifetime = 100,
-	Repeattime = 50.00,
+	Lifetime = 10,
+	Repeattime = 5.00,
 	TextureFramecount = 1.00,
 	Blendmode = 0.00,
 	LocalVelocity = true,

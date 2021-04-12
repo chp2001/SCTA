@@ -3,8 +3,8 @@ local explosion = import('/lua/defaultexplosions.lua')
 
 CreateTAWreckageEffects = function(obj, prop)
     if IsUnit(obj) then
-       CreateAttachedEmitter(prop, 0, -1, '/mods/SCTA-master/effects/emitters/wreckage_smoke_emit.bp' )
        explosion.CreateWreckageEffects(obj, prop)
+       CreateAttachedEmitter(obj, 0, -1, '/mods/SCTA-master/effects/emitters/wreckage_smoke_emit.bp' )
     end
 end
 
@@ -44,6 +44,6 @@ CreateHeap = function(bp, position, orientation, mass, energy, time, deathHitBox
     prop:SetMaxHealth(bp.Defense.Health)
     prop:SetHealth(nil, bp.Defense.Health * (bp.Wreckage.HealthMult or 1))
     prop:SetMaxReclaimValues(time, mass, energy)
-    CreateAttachedEmitter(prop, 0, -1, '/mods/SCTA-master/effects/emitters/debris_smoke_emit.bp' )
+    CreateAttachedEmitter(prop, 0, -1, '/mods/SCTA-master/effects/emitters/fire_smoke_emit.bp' )
     return prop
 end

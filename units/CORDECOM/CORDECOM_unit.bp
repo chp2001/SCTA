@@ -287,7 +287,7 @@ TechLevel = 'RULEUTL_Advanced',
             EnergyChargeForFirstShot = true,
             EnergyRequired = 1000,
             EnergyDrainPerSecond = 1000,
-            ProjectileId = '/mods/SCTA-master/projectiles/CORE_DISINTEGRATOR/CORE_DISINTEGRATOR_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARM_DISINTEGRATOR/ARM_DISINTEGRATOR_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -350,7 +350,7 @@ TechLevel = 'RULEUTL_Advanced',
             EnergyChargeForFirstShot = true,
             EnergyRequired = 1000,
             EnergyDrainPerSecond = 1000,
-            ProjectileId = '/mods/SCTA-master/projectiles/DCORE_DISINTEGRATOR/DCORE_DISINTEGRATOR_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARM_DISINTEGRATOR/ARM_DISINTEGRATOR_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

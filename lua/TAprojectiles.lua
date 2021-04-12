@@ -54,7 +54,7 @@ TANuclearProjectile = Class(NukeProjectile) {
 }
 
 TAEMPNuclearProjectile = Class(NukeProjectile) {
-		FxSmoke = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
+		FxSmoke = '/mods/SCTA-master/effects/emitters/damage_bad_smoke_emit.bp',
 		FxSmokeScale = 1,
 	
 		OnCreate = function(self)

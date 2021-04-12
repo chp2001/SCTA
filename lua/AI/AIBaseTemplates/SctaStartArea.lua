@@ -2,10 +2,7 @@
 BaseBuilderTemplate {
     BaseTemplateName = 'SCTAAISTARTEXPANSION',
     Builders = {
-        -- List all our builder grous here
-        -- ACU
         'SCTAAICommanderBuilder',
-       
         'SCTAAILandBuilder',
         'SCTAAIAirBuilder',
         'SCTAAILandFormers',
@@ -37,15 +34,22 @@ BaseBuilderTemplate {
             T3Value = 18
         },
     },
+
     ExpansionFunction = function(aiBrain, location, markerType)   
-        local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
+        --local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
         --LOG('Ai Personality is '..per)
-        if not per == 'SCTAAI' then
+        --LOG('*SCTAEXPANSIONTA', aiBrain.SCTAAI)
+        if not aiBrain.SCTAAI then
+            --LOG('*SCTAEXPANSIONTA2', aiBrain.SCTAAI)
+            --LOG('*Uveso', aiBrain.uvesorush)
             return -1
         end
+        --LOG('IEXIST')
         if markerType != 'Start Location' then
-            return 10, 'SCTAAISTARTEXPANSION'
+            LOG('IEXISTSTART')
+            return 1111, 'SCTAAISTARTEXPANSION'
         end
+        --LOG('IEXISTFAILSTART')
         --LOG('Return sctaai personality')
         return 1000, 'SCTAAI'
     end,

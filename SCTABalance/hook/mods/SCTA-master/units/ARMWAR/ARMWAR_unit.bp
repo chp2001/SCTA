@@ -26,13 +26,11 @@ Physics = {
     },
     Weapon = {
 	    [1] = {
-            Damage = 20,
+            Damage = 2,
             MaxRadius = 13,
         },
         [2] = {
-            Damage = 5,
-            MaxRadius = 18,
-            RackSalvoSize = 1,
+            Damage = 40,
         },
         [3] = {
         },

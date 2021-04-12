@@ -5,7 +5,7 @@ UnitBlueprint {
         MaxHealth = 200,
     },
     Display = {
-        UniformScale = 0.1,
+        UniformScale = 0.12,
     },
     Economy = {
         BuildCostEnergy = 450,
@@ -16,7 +16,6 @@ UnitBlueprint {
         VisionRadius = 12,
     },    
     LifeBarSize = 1,
-    SelectionCenterOffsetZ = -0.05,
     SelectionSizeX = 0.6,
     SelectionSizeZ = 0.6,
     SizeX = 1.2,
@@ -24,8 +23,8 @@ UnitBlueprint {
     SizeZ = 1.2,
     Weapon = {
         [1] = {
-            Damage = 24,
-            MaxRadius = 13,
+            Damage = 15,
+            RateOfFire = 2,
         },
         [2] = {
         },

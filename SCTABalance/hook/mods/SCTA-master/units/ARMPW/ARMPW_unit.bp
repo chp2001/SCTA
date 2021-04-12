@@ -19,9 +19,16 @@ UnitBlueprint {
         MaxSpeed = 3.375,
     },
     LifeBarSize = 1,
-    SelectionSizeX = 0.5,
-    SelectionSizeZ = 0.5,
-    SizeX = 1.15,
-    SizeY = 1.3,
-    SizeZ = 1.15,
+    SelectionSizeX = 0.6,
+    SelectionSizeZ = 0.6,
+    SizeX = 1.2,
+    SizeY = 1.2,
+    SizeZ = 1.2,
+    Weapon = {
+        [1] = {
+            Damage = 4,
+        },
+        [2] = {
+        },
+    },
 }

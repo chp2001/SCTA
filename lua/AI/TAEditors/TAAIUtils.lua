@@ -99,7 +99,7 @@ end
 
 function ExpansionBaseCount(aiBrain, compareType, checkNum)
     local expBaseCount = aiBrain:GetManagerCount('Expansion Area')
-       LOG('*SCTAEXPANSIONTA', expBaseCount)
+        ---LOG('*SCTAEXPANSIONTA', expBaseCount)
        if expBaseCount > checkNum then
        end
        return CompareBodySCTA(expBaseCount, checkNum, compareType)
@@ -113,7 +113,7 @@ end
 
 function StartBaseCount(aiBrain, compareType, checkNum2)
        local expBaseCount2 = aiBrain:GetManagerCount('Start Location')
-       LOG('*SCTAEXPANSIONTA2', expBaseCount2)
+       ----LOG('*SCTAEXPANSIONTA2', expBaseCount2)
        if expBaseCount2 > checkNum2 + 1 then
        end
        return CompareBodySCTA(expBaseCount2, checkNum2, compareType)

@@ -231,7 +231,7 @@ TechLevel = 'RULEUTL_Advanced',
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 3,
-            ProjectileId = '/mods/SCTA-master/projectiles/COREDEPTHCHARGE/COREDEPTHCHARGE_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMDEPTHCHARGE/ARMDEPTHCHARGE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

@@ -216,7 +216,7 @@ TechLevel = 'RULEUTL_Basic',
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 25,
-            ProjectileId = '/mods/SCTA-master/projectiles/CORPT_LASER/CORPT_LASER_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMPT_LASER/ARMPT_LASER_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -270,13 +270,11 @@ TechLevel = 'RULEUTL_Basic',
 
     },
         Wreckage = {
-	---UseCustomMesh = true,
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
-        --Blueprint = '/mods/SCTA-master/units/CORPT/CORPT_dead_prop.bp',
         WreckageLayers = {
             Water = true,
 	    Sub = true,

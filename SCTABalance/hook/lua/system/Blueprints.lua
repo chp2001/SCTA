@@ -28,7 +28,7 @@ do
                 MaintenanceConsumptionPerSecondEnergy = 2,
             },
             Physics = {
-                MaxAcceleration = 1.33,
+                MaxAcceleration = 1.2,
                 MaxSpeed = 1.2,
                 TurnRate = 0.75,
             }
@@ -128,7 +128,6 @@ do
                 BuildCostMass = 0.5,
                 BuildTime = 0.05,
                 BuildRate = 0.2,
-                StorageEnergy = 0.2,
                 StorageMass = 0.5,
             },
         }

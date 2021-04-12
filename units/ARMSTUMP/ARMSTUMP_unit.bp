@@ -176,7 +176,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.5,
+            RateOfFire = 0.66,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

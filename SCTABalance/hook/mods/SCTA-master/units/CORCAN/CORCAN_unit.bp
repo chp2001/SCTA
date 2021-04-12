@@ -17,10 +17,9 @@ UnitBlueprint {
     --SelectionCenterOffsetZ = -0.5,
     Weapon = {
         [1] = {
-            Damage = 45,
-            EnergyDrainPerSecond = 10,
-            EnergyRequired = 10,
-            RateOfFire = 2,
+            EnergyDrainPerSecond = 25,
+            EnergyRequired = 25,
+            RateOfFire = 0.5,
         },
         [2] = {},
     },

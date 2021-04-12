@@ -46,7 +46,7 @@ BaseBuilderTemplate {
         end
         --LOG('IEXIST')
         if markerType != 'Start Location' then
-            LOG('IEXISTSTART')
+            ---LOG('IEXISTSTART')
             return 1111, 'SCTAAISTARTEXPANSION'
         end
         --LOG('IEXISTFAILSTART')

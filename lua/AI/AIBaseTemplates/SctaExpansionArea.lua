@@ -43,7 +43,7 @@ BaseBuilderTemplate {
         end
         if markerType != 'Expansion Area' then
             --LOG('Ai Personality is '..per)
-            LOG('IEXISTEXPAND')
+            --LOG('IEXISTEXPAND')
             return 1234, 'SCTAAIExpansion'
         end
         --LOG('IEXISTEXPANDFAIL')

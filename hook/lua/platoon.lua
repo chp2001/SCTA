@@ -1668,7 +1668,6 @@ Platoon = Class(SCTAAIPlatoon) {
         -- maybe worth it if we micro
         --self:SetPlatoonFormationOverride('GrowthFormation')
         local PlatoonFormation = self.PlatoonData.UseFormation or 'NoFormation'
-
         while aiBrain:PlatoonExists(self) do
             local pos = self:GetPlatoonPosition() -- update positions; prev position done at end of loop so not done first time
 
@@ -1683,45 +1682,43 @@ Platoon = Class(SCTAAIPlatoon) {
                 WaitSeconds(4)
                 continue
             end
+        if aiBrain:GetCurrentEnemy() and aiBrain:GetCurrentEnemy().Result == "defeat" then
+            aiBrain:PickEnemyLogic()
+        end
 
-            -- pick out the enemy
-            if aiBrain:GetCurrentEnemy() and aiBrain:GetCurrentEnemy().Result == "defeat" then
-                aiBrain:PickEnemyLogic()
+        -- deal with lost-puppy transports
+        local strayTransports = {}
+        for k,v in platoonUnits do
+            if EntityCategoryContains(categories.TRANSPORTFOCUS, v) then
+                table.insert(strayTransports, v)
             end
-
-            -- deal with lost-puppy transports
+        end
+        if table.getn(strayTransports) > 0 then
+            local dropPoint = pos
+            dropPoint[1] = dropPoint[1] + Random(-3, 3)
+            dropPoint[3] = dropPoint[3] + Random(-3, 3)
+            IssueTransportUnload(strayTransports, dropPoint)
+            WaitSeconds(10)
             local strayTransports = {}
             for k,v in platoonUnits do
-                if EntityCategoryContains(categories.TRANSPORTFOCUS, v) then
-                    table.insert(strayTransports, v)
+                local parent = v:GetParent()
+                if parent and EntityCategoryContains(categories.TRANSPORTFOCUS, parent) then
+                    table.insert(strayTransports, parent)
+                    break
                 end
             end
             if table.getn(strayTransports) > 0 then
-                local dropPoint = pos
-                dropPoint[1] = dropPoint[1] + Random(-3, 3)
-                dropPoint[3] = dropPoint[3] + Random(-3, 3)
-                IssueTransportUnload(strayTransports, dropPoint)
-                WaitSeconds(10)
-                local strayTransports = {}
-                for k,v in platoonUnits do
-                    local parent = v:GetParent()
-                    if parent and EntityCategoryContains(categories.TRANSPORTFOCUS, parent) then
-                        table.insert(strayTransports, parent)
-                        break
-                    end
+                local MAIN = aiBrain.BuilderManagers.MAIN
+                if MAIN then
+                    dropPoint = MAIN.Position
+                    IssueTransportUnload(strayTransports, dropPoint)
+                    WaitSeconds(30)
                 end
-                if table.getn(strayTransports) > 0 then
-                    local MAIN = aiBrain.BuilderManagers.MAIN
-                    if MAIN then
-                        dropPoint = MAIN.Position
-                        IssueTransportUnload(strayTransports, dropPoint)
-                        WaitSeconds(30)
-                    end
-                end
-                self.UsingTransport = false
-                AIUtils.ReturnTransportsToPool(strayTransports, true)
-                platoonUnits = self:GetPlatoonUnits()
             end
+            self.UsingTransport = false
+            AIUtils.ReturnTransportsToPool(strayTransports, true)
+            platoonUnits = self:GetPlatoonUnits()
+        end
 
 
             --Disband platoon if it's all air units, so they can be picked up by another platoon
@@ -2407,7 +2404,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
     
                 local basePosition = brain.BuilderManagers[locationType].Position
-                local location = AIUtils.RandomLocation(basePosition[1],basePosition[3])
+                local location = TAutils.TARandomLocation(basePosition[1],basePosition[3])
                 self:MoveToLocation(location, false)
                 WaitSeconds(10)
                 self:PlatoonDisband()

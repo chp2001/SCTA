@@ -12,7 +12,7 @@ BaseBuilderTemplate {
         
         'SCTAExpansionBuilders',
         'SCTAAIEngineerEcoBuilder',
-        'SCTAAIFactoryExpansionsStart',
+        'SCTAAIFactoryExpansions',
         'SCTAAssisters',
     },
     BaseSettings = {
@@ -36,7 +36,7 @@ BaseBuilderTemplate {
     },
 
     ExpansionFunction = function(aiBrain, location, markerType)   
-        --local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
+        local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
         --LOG('Ai Personality is '..per)
         --LOG('*SCTAEXPANSIONTA', aiBrain.SCTAAI)
         if not aiBrain.SCTAAI then
@@ -47,7 +47,7 @@ BaseBuilderTemplate {
         --LOG('IEXIST')
         if markerType != 'Start Location' then
             ---LOG('IEXISTSTART')
-            return 1111, 'SCTAAISTARTEXPANSION'
+            return 1431, 'SCTAAISTARTEXPANSION'
         end
         --LOG('IEXISTFAILSTART')
         --LOG('Return sctaai personality')

@@ -24,7 +24,7 @@ BaseBuilderTemplate {
         },
         FactoryCount = {
             Land = 4,
-            Air = 1,
+            Air = 2,
             Sea = 1,
             Gate = 0,
         },
@@ -36,7 +36,7 @@ BaseBuilderTemplate {
     },
 
     ExpansionFunction = function(aiBrain, location, markerType)   
-        --local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
+        local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
         --LOG('Ai Personality is '..per)
         if not aiBrain.SCTAAI then
             return -1

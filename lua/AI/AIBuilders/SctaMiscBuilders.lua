@@ -221,7 +221,7 @@ BuilderGroup {
             NeedGuard = false,
             DesiresAssist = true,
             NumAssistees = 2,
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TATowerTemplates.lua',
+                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TA2TowerTemplates.lua',
                 BaseTemplate = 'T2TowerTemplate',
                 BuildStructures = {
                     'T2GroundDefense',

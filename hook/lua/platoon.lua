@@ -1978,7 +1978,7 @@ Platoon = Class(SCTAAIPlatoon) {
 
             local oldDistSq = 0
             while aiBrain:PlatoonExists(self) do
-                WaitSeconds(2)
+                WaitSeconds(10)
                 platPos = self:GetPlatoonPosition()
                 local distSq = VDist2Sq(platPos[1], platPos[3], bestBase.Position[1], bestBase.Position[3])
                 if distSq < 10 then
@@ -2216,7 +2216,7 @@ Platoon = Class(SCTAAIPlatoon) {
             target = self:FindClosestUnit('Attack', 'Enemy', true, categories.LAND * categories.MOBILE - categories.COMMAND)
             if target then
                 self:Stop()
-                self:AggressiveMoveToLocation(table.copy(target:GetPosition()))
+                self:AttackTarget(target)
             end
             WaitSeconds(5)
         end
@@ -2233,12 +2233,12 @@ Platoon = Class(SCTAAIPlatoon) {
             structure = self:FindClosestUnit('Attack', 'Enemy', true, categories.ENERGYPRODUCTION - categories.WALL - categories.MOBILE)
             if structure then
                 self:Stop()
-                self:AggressiveMoveToLocation(table.copy(structure:GetPosition()))
+                self:AttackTarget(structure)
             else
                 WaitSeconds(1)
                 return self:SCTALabAI()
             end
-            WaitSeconds(3)
+            WaitSeconds(5)
         end
     end,
 
@@ -2323,8 +2323,8 @@ Platoon = Class(SCTAAIPlatoon) {
                         reclaiming = false
                     end
                 end
-                WaitSeconds(5)
-                self:SCTAReturnToBaseAI()
+                WaitSeconds(10)
+                self:PlatoonDisband()
             end
         end,
 }

@@ -19,7 +19,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 102,
         InstanceCount = 2,
-        DelayEqualBuildPlattons = {'Factories', 3},
+        DelayEqualBuildPlattons = {'Factories', 2},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
@@ -45,7 +45,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 111,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Factories', 3},
+        DelayEqualBuildPlattons = {'Factories', 2},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
@@ -70,7 +70,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA23',
         Priority = 152,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Factories', 3},
+        DelayEqualBuildPlattons = {'Factories', 2},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { MIBC, 'GreaterThanGameTime', {1500} },
@@ -96,7 +96,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 96,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Factories', 3},
+        DelayEqualBuildPlattons = {'Factories', 2},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { MIBC, 'GreaterThanGameTime', { 120 } },
@@ -124,7 +124,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 108,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Factories', 3},
+        DelayEqualBuildPlattons = {'Factories', 2},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
@@ -149,7 +149,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA3',
         Priority = 143,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Factories', 3},
+        DelayEqualBuildPlattons = {'Factories', 2},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, PLATFORM} },
@@ -175,9 +175,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 128,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Factories', 3},
+        DelayEqualBuildPlattons = {'FactoriesAir', 2},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
+            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesAir' }},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, PLANT } }, -- Don't build air fac immediately.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR} },
             { MIBC, 'LessThanGameTime', {600} },
@@ -202,7 +202,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 103,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'FactoriesAir', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesAir' }},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  PLANT } }, -- Don't build air fac immediately.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4,  categories.FACTORY * categories.AIR} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  LAB * categories.AIR} }, -- Stop after 5 facs have been built.
@@ -228,9 +230,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
         Priority = 136,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Factories', 3},
+        DelayEqualBuildPlattons = {'FactoriesAir', 2},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
+            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesAir' }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.9 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -252,9 +254,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
         Priority = 119,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Factories', 3},
+        DelayEqualBuildPlattons = {'FactoriesAir', 2},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
+            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesAir' }},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, FUSION} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.9 } },

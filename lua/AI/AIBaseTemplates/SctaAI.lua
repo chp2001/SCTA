@@ -36,7 +36,7 @@ BaseBuilderTemplate {
     BaseSettings = { },
     ExpansionFunction = function(aiBrain, location, markerType)
         --LOG('MAIN')
-        return -1
+        return 10
     end,
     
     FirstBaseFunction = function(aiBrain)

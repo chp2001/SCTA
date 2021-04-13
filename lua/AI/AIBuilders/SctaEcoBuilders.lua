@@ -35,7 +35,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
         Priority = 99,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
+        DelayEqualBuildPlattons = {'MexLand2', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 150, -500, 100, 0, 'AntiSurface', 1 }},
         },
         BuilderType = 'Any',
@@ -54,7 +56,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
         Priority = 82,
         InstanceCount = 2,
+        DelayEqualBuildPlattons = {'MexLand2', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 300, -500, 150, 0, 'AntiSurface', 1 }},
         },
         BuilderType = 'Any',
@@ -73,7 +77,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
         Priority = 81,
         InstanceCount = 2,
+        DelayEqualBuildPlattons = {'MexLand2', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
                 { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 450, -500, 200, 0, 'AntiSurface', 1 }},         
             },
         BuilderType = 'Any',
@@ -92,7 +98,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA23',
         Priority = 103,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
+        DelayEqualBuildPlattons = {'Mex2Land', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Mex2Land' }},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 100, -500, 100, 0, 'AntiSurface', 1 }},
         },
         BuilderType = 'Any',
@@ -111,7 +119,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA23',
         Priority = 101,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
+        DelayEqualBuildPlattons = {'Mex2Land', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Mex2Land' }},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 250, -500, 100, 0, 'AntiSurface', 1 }},
         },
         BuilderType = 'Any',
@@ -150,7 +160,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 99,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
-        BuilderConditions = {  
+        DelayEqualBuildPlattons = {'HydroLand', 2},
+        BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'HydroLand' }},
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 150}},
             { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
@@ -300,7 +312,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
         Priority = 94,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'MexLand2', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
                 { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 250, -500, 200, 0, 'AntiAir', 1 }},
             },
         BuilderType = 'Any',
@@ -319,7 +333,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAEco23',
         Priority = 120,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
+        DelayEqualBuildPlattons = {'Mex2Land', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Mex2Land' }},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 75, -500, 100, 0, 'AntiAir', 1 }},
         },
         BuilderType = 'Any',
@@ -338,7 +354,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAEco23',
         Priority = 115,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
+        DelayEqualBuildPlattons = {'Mex2Air', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Mex2Air' }},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 200, -500, 100, 0, 'AntiAir', 1 }},
         },
         BuilderType = 'Any',

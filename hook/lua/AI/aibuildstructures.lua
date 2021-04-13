@@ -73,6 +73,7 @@ function AIBuildBaseTemplateOrderedSCTAAI(aiBrain, builder, buildingType , close
     end
     return 
 end
+    
 
 
 --[[local factionIndex = aiBrain:GetFactionIndex()

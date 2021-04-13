@@ -21,6 +21,7 @@ TAunit = Class(Unit)
 			else
 			self:SetFireState(FireState.GROUND_FIRE)
 			end
+		---LOG(self:GetBlueprint().Physics.MotionType)
         end,
 
 	OnStopBeingBuilt = function(self,builder,layer)

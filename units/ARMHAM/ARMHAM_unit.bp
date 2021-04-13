@@ -53,7 +53,7 @@ UnitBlueprint {
     Description = 'Artillery Kbot',
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/ARMHAM/ARMHAM_lod0_Awalk.sca',
-        AnimationWalkRate = 0.5,
+        AnimationWalkRate = 1,
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -103,7 +103,7 @@ UnitBlueprint {
         MaxAcceleration = 2.06,
         MaxBrake = 2.06,
         MaxSpeed = 2.0625,
-        MotionType = 'RULEUMT_Land',
+        MotionType = 'RULEUMT_Land', ---RULEUMT_BIPED is Functionally possibly useful for something in the future
         TurnRate = 164,
         StandUpright = true,
         MaxSteerForce = 10,

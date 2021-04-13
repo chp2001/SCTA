@@ -5240,7 +5240,7 @@ NavalBaseTemplates = {
                     'T1EnergyProduction3',
                     'MassStorage',
                     'EnergyStorage',
-                    'T2MassCreation',
+                    '2MassCreation',
                     'T1Resource',
                     'T2Resource',
                     'T2Resource',

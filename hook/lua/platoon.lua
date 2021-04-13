@@ -77,7 +77,7 @@ Platoon = Class(SCTAAIPlatoon) {
             end
             else]]
         coroutine.yield(1)
-        self:PlatoonDisband()
+        self:SCTAReturnToBaseAI()
         return
         end
         if cons.NearUnitCategory then
@@ -370,7 +370,7 @@ Platoon = Class(SCTAAIPlatoon) {
             end
             else]]
         coroutine.yield(1)
-        self:PlatoonDisband()
+        self:SCTAReturnToBaseAI()
         return
         end
         if cons.NearUnitCategory then
@@ -644,7 +644,7 @@ Platoon = Class(SCTAAIPlatoon) {
             end
             else]]
         coroutine.yield(1)
-        self:PlatoonDisband()
+        self:SCTAReturnToBaseAI()
         return
         end
         if cons.NearUnitCategory then
@@ -1472,7 +1472,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local numberOfUnitsInPlatoon = table.getn(platoonUnits)
         --LOG('*SCTAEXPANSIONTA', data.locationType)
         if data.Laser then
-            local econ = TAutils.TAAIGetEconomyNumbersEnergy(aiBrain)
+            local econ = aiBrain:GetEconomyStoredRatio('ENERGY')
             if econ.EnergyStorageRatio < 0.15 then
                 WaitSeconds(5)
                 self:PlatoonDisband()
@@ -2051,6 +2051,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local aiBrain = self:GetBrain()
         local scout = self:GetPlatoonUnits()[1]
         local target
+        local structure
         -- build scoutlocations if not already done.
         if not aiBrain.InterestList then
             aiBrain:BuildScoutLocations()
@@ -2101,10 +2102,14 @@ Platoon = Class(SCTAAIPlatoon) {
                 --Scout until we reach our destination
                 while not scout.Dead and not scout:IsIdleState() do
                     target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ENGINEER - categories.COMMAND)
-                    if target then
+                    structure = self:FindClosestUnit('Attack', 'Enemy', true, categories.ENERGYPRODUCTION - categories.WALL - categories.MOBILE)
+                    if target and self.PlatoonData.Lab then
                         WaitSeconds(1)
-                        return self:HuntAILABSCTA()
-                    elseif not target then
+                        return self:SCTALabType()
+                    elseif structure and self.PlatoonData.AllTerrain then
+                        WaitSeconds(1)
+                        return self:SCTAArtyHuntAI()
+                    else
                         WaitSeconds(2.5)
                     end
                 end
@@ -2137,16 +2142,17 @@ Platoon = Class(SCTAAIPlatoon) {
         end
 
         while aiBrain:PlatoonExists(self) do
-            target = self:FindClosestUnit('Attack', 'Enemy', true, categories.EXPERIMENTAL * categories.AIR)
-            if not target then
-                if EntityCategoryContains(categories.BOMBER, self) then
+            if EntityCategoryContains(categories.BOMBER, self) then
                 target = self:FindClosestUnit('Attack', 'Enemy', true, categories.MOBILE * categories.ENGINEER - categories.COMMAND)
                 else 
                 target = self:FindClosestUnit('Attack', 'Enemy', true, categories.MOBILE * (categories.AIR + categories.ENGINEER) - categories.COMMAND)
-                end
+            end
+            if not target then
+                WaitSeconds(1)
+                return self:SCTALabAI()
             end
             if target and target:GetFractionComplete() == 1 then
-                local airThreat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'Air')
+                local airThreat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'Economy')
                 --LOG("Air threat: " .. airThreat)
                 local antiAirThreat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'AntiAir') - airThreat
                 --LOG("AntiAir threat: " .. antiAirThreat)
@@ -2173,162 +2179,57 @@ Platoon = Class(SCTAAIPlatoon) {
         local armyIndex = aiBrain:GetArmyIndex()
         local data = self.PlatoonData
         local target
-        local blip
-        local hadtarget = false
-        local basePosition = false
         if data.Stealth then
-            local econ = TAutils.TAAIGetEconomyNumbersEnergy(aiBrain)
+            local econ = aiBrain:GetEconomyStoredRatio('ENERGY')
             if econ.EnergyStorageRatio < 0.2 then
                 WaitSeconds(5)
                 self:PlatoonDisband()
                 return
             end
         end
-        if self.PlatoonData.LocationType and self.PlatoonData.LocationType != 'NOTMAIN' then
-            --LOG('*SCTAEXPANSIONTA', locationType)
-            basePosition = aiBrain.BuilderManagers[self.PlatoonData.LocationType].Position
-        else
-            local platoonPosition = self:GetPlatoonPosition()
-            if platoonPosition then
-                basePosition = aiBrain:FindClosestBuilderManagerPosition(self:GetPlatoonPosition())
-            end
-        end
-
-        if not basePosition then
-            return
-        end
-
         while aiBrain:PlatoonExists(self) do
-            target = self:FindClosestUnit('Attack', 'Enemy', true, categories.AIR * categories.BOMBER)
-            if not target then
-                target = self:FindClosestUnit('Attack', 'Enemy', true, categories.AIR * categories.ANTIAIR * categories.MOBILE)
-            end
-            if target and target:GetFractionComplete() == 1 then
-                local airThreat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'Air')
-                --LOG("Air threat: " .. airThreat)
-                local antiAirThreat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'AntiAir') - airThreat
-                --LOG("AntiAir threat: " .. antiAirThreat)
-                if antiAirThreat < 1.5 then
-                    blip = target:GetBlip(armyIndex)
-                    self:Stop()
-                    self:AttackTarget(target)
-                    hadtarget = true
-                end
-           elseif not target and hadtarget then
-                --DUNCAN - move back to base
-                local position = AIUtils.RandomLocation(basePosition[1],basePosition[3])
+            target = self:FindClosestUnit('Attack', 'Enemy', true, categories.AIR * categories.MOBILE)
+            if target then
                 self:Stop()
-                self:MoveToLocation(position, false)
-                hadtarget = false
+                self:MoveToLocation( table.copy( target:GetPosition() ), false)
             end
-            WaitSeconds(5) --DUNCAN - was 5
+            WaitSeconds(5)
         end
     end,
 
-    ---Treating Spider and Climbing Kbots as Air Units
-    AllTerrainAISCTA = function(self)
+    BomberAISCTA = function(self)
         self:Stop()
         local aiBrain = self:GetBrain()
         local armyIndex = aiBrain:GetArmyIndex()
-        local target
-        local blip
-        local hadtarget = false
-        local basePosition = false
-
-        if self.PlatoonData.LocationType and self.PlatoonData.LocationType != 'NOTMAIN' then
-            basePosition = aiBrain.BuilderManagers[self.PlatoonData.LocationType].Position
-        else
-            local platoonPosition = self:GetPlatoonPosition()
-            if platoonPosition then
-                basePosition = aiBrain:FindClosestBuilderManagerPosition(self:GetPlatoonPosition())
-            end
-        end
-
-        if not basePosition then
-            return
-        end
-
-        while aiBrain:PlatoonExists(self) do
-            target = self:FindClosestUnit('Attack', 'Enemy', true, categories.STRUCTURE * (categories.ENERGYPRODUCTION + categories.MASSEXTRACTION))
-            if not target then
-                target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ENGINEER - categories.COMMAND)
-            end
-            if target and target:GetFractionComplete() == 1 then
-                local SurfaceThreat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'AntiSurface')
-                --LOG("Air threat: " .. airThreat)
-                local SurfaceAntiThreat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'AntiSurface') - SurfaceThreat
-                --LOG("AntiAir threat: " .. antiAirThreat)
-                if SurfaceAntiThreat < 1.5 then
-                    blip = target:GetBlip(armyIndex)
-                    self:Stop()
-                    self:AttackTarget(target)
-                    hadtarget = true
-                end
-           elseif not target and hadtarget then
-                --DUNCAN - move back to base
-                local position = AIUtils.RandomLocation(basePosition[1],basePosition[3])
-                self:Stop()
-                self:MoveToLocation(position, false)
-                hadtarget = false
-            end
-            WaitSeconds(5) --DUNCAN - was 5
-        end
-    end,
-
-    StealthIntieAISCTA = function(self)
-        self:Stop()
-        local aiBrain = self:GetBrain()
         local data = self.PlatoonData
-        local armyIndex = aiBrain:GetArmyIndex()
         local target
-        local blip
-        local hadtarget = false
-        local basePosition = false
-        if data.Stealth then
-            local econ = TAutils.TAAIGetEconomyNumbersEnergy(aiBrain)
-            if econ.EnergyStorageRatio < 0.15 then
-                WaitSeconds(5)
-                self:PlatoonDisband()
-                return
-            end
-        end
-        if self.PlatoonData.LocationType and self.PlatoonData.LocationType != 'NOTMAIN' then
-            basePosition = aiBrain.BuilderManagers[self.PlatoonData.LocationType].Position
-        else
-            local platoonPosition = self:GetPlatoonPosition()
-            if platoonPosition then
-                basePosition = aiBrain:FindClosestBuilderManagerPosition(self:GetPlatoonPosition())
-            end
-        end
-
-        if not basePosition then
-            return
-        end
-
         while aiBrain:PlatoonExists(self) do
-            target = self:FindClosestUnit('Attack', 'Enemy', true, categories.EXPERIMENTAL * categories.AIR)
-            if not target then
-                target = self:FindClosestUnit('Attack', 'Enemy', true, categories.MOBILE * (categories.HIGHALTAIR + categories.SNIPEMODE))
-            end
-            if target and target:GetFractionComplete() == 1 then
-                local airThreat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'Air')
-                --LOG("Air threat: " .. airThreat)
-                local antiAirThreat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'AntiAir') - airThreat
-                --LOG("AntiAir threat: " .. antiAirThreat)
-                if antiAirThreat < 1.5 then
-                    blip = target:GetBlip(armyIndex)
-                    self:Stop()
-                    self:AttackTarget(target)
-                    hadtarget = true
-                end
-           elseif not target and hadtarget then
-                --DUNCAN - move back to base
-                local position = AIUtils.RandomLocation(basePosition[1],basePosition[3])
+            target = self:FindClosestUnit('Attack', 'Enemy', true, categories.LAND * categories.MOBILE - categories.COMMAND)
+            if target then
                 self:Stop()
-                self:MoveToLocation(position, false)
-                hadtarget = false
+                self:AggressiveMoveToLocation(table.copy(target:GetPosition()))
             end
-            WaitSeconds(5) --DUNCAN - was 5
+            WaitSeconds(5)
+        end
+    end,
+
+    ---Treating Spider and Climbing Kbots as Air Unit
+    SCTAArtyHuntAI = function(self)
+        self:Stop()
+        local aiBrain = self:GetBrain()
+        local armyIndex = aiBrain:GetArmyIndex()
+        local structure
+        local blip
+        while aiBrain:PlatoonExists(self) do
+            structure = self:FindClosestUnit('Attack', 'Enemy', true, categories.ENERGYPRODUCTION - categories.WALL - categories.MOBILE)
+            if structure then
+                self:Stop()
+                self:AggressiveMoveToLocation(table.copy(structure:GetPosition()))
+            else
+                WaitSeconds(1)
+                return self:SCTALabAI()
+            end
+            WaitSeconds(3)
         end
     end,
 
@@ -2341,6 +2242,16 @@ Platoon = Class(SCTAAIPlatoon) {
             return self:EngineerBuildAISCTA()
         else
             return self:EngineerBuildAISCTANaval()
+        end
+    end,
+
+    SCTALabType = function(self)
+        AIAttackUtils.GetMostRestrictiveLayer(self)
+        
+        if self.MovementLayer == 'Air' then 
+            return self:HuntAirAISCTA() 
+        else
+            return self:HuntAILABSCTA()
         end
     end,
 
@@ -2403,7 +2314,7 @@ Platoon = Class(SCTAAIPlatoon) {
                         reclaiming = false
                     end
                 end
-                WaitSeconds(2)
+                WaitSeconds(5)
                 self:SCTAReturnToBaseAI()
             end
         end,

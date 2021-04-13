@@ -95,6 +95,7 @@ BuilderGroup {
             NeverGuardEngineers = true,
             IgnorePathing = true,
             UseMoveOrder = true,
+            AllTerrain = true,
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = { },

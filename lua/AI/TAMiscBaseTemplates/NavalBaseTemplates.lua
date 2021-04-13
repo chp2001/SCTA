@@ -3,10 +3,9 @@ NavalBaseTemplates = {
  {
     {
         {
-            'T1EnergyProduction3',
             'MassStorage',
             'EnergyStorage',
-            'T1MassCreation',
+            'T2MassCreation',
             'T1Resource',
             'T2Resource',
             'T2Resource',
@@ -445,7 +444,6 @@ NavalBaseTemplates = {
         },
     {
         {        
-            'T1EnergyProduction3',
             'T3LandFactory',
             'T3AirFactory',
             'T1SeaFactory',
@@ -877,10 +875,9 @@ NavalBaseTemplates = {
     {
         {
             {
-            'T1EnergyProduction3',
             'MassStorage',
             'EnergyStorage',
-            'T1MassCreation',
+            'T2MassCreation',
             'T1Resource',
             'T2Resource',
             'T2Resource',
@@ -1319,7 +1316,6 @@ NavalBaseTemplates = {
     },
     {
         {        
-            'T1EnergyProduction3',
             'T3LandFactory',
             'T3AirFactory',
             'T1SeaFactory',
@@ -1751,10 +1747,9 @@ NavalBaseTemplates = {
     {
         {
             {
-                'T1EnergyProduction3',
                 'MassStorage',
                 'EnergyStorage',
-                'T1MassCreation',
+                'T2MassCreation',
                 'T1Resource',
                 'T2Resource',
                 'T2Resource',
@@ -2193,7 +2188,6 @@ NavalBaseTemplates = {
             },
         {
             {        
-                'T1EnergyProduction3',
                 'T3LandFactory',
                 'T3AirFactory',
                 'T1SeaFactory',
@@ -2625,10 +2619,9 @@ NavalBaseTemplates = {
     {
         {
             {
-                'T1EnergyProduction3',
                 'MassStorage',
                 'EnergyStorage',
-                'T1MassCreation',
+                'T2MassCreation',
                 'T1Resource',
                 'T2Resource',
                 'T2Resource',
@@ -3067,7 +3060,6 @@ NavalBaseTemplates = {
         },
         {
             {        
-                'T1EnergyProduction3',
                 'T3LandFactory',
                 'T3AirFactory',
                 'T1SeaFactory',
@@ -3499,10 +3491,9 @@ NavalBaseTemplates = {
         {
             {
                 {
-                    'T1EnergyProduction3',
                     'MassStorage',
                     'EnergyStorage',
-                    'T1MassCreation',
+                    'T2MassCreation',
                     'T1Resource',
                     'T2Resource',
                     'T2Resource',
@@ -3941,7 +3932,6 @@ NavalBaseTemplates = {
                 },
             {
                 {        
-                    'T1EnergyProduction3',
                     'T3LandFactory',
                     'T3AirFactory',
                     'T1SeaFactory',
@@ -4376,7 +4366,7 @@ NavalBaseTemplates = {
                     'T1EnergyProduction3',
                     'MassStorage',
                     'EnergyStorage',
-                    'T1MassCreation',
+                    'T2MassCreation',
                     'T1Resource',
                     'T2Resource',
                     'T2Resource',
@@ -5250,7 +5240,7 @@ NavalBaseTemplates = {
                     'T1EnergyProduction3',
                     'MassStorage',
                     'EnergyStorage',
-                    'T1MassCreation',
+                    'T2MassCreation',
                     'T1Resource',
                     'T2Resource',
                     'T2Resource',

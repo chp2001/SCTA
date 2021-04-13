@@ -38,10 +38,7 @@ BaseBuilderTemplate {
     ExpansionFunction = function(aiBrain, location, markerType)   
         local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
         --LOG('Ai Personality is '..per)
-        --LOG('*SCTAEXPANSIONTA', aiBrain.SCTAAI)
-        if not aiBrain.SCTAAI then
-            --LOG('*SCTAEXPANSIONTA2', aiBrain.SCTAAI)
-            --LOG('*Uveso', aiBrain.uvesorush)
+        if not per == 'SCTAAI' then
             return -1
         end
         --LOG('IEXIST')

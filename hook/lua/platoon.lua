@@ -1,4 +1,5 @@
 local TAutils = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua')
+WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset platoon.lua' )
 
 --[[buildingTmplFile = import(cons.BuildingTemplateFile or '/lua/BuildingTemplates.lua')
 baseTmplFile = import(cons.BaseTemplateFile or '/lua/BaseTemplates.lua')
@@ -2404,7 +2405,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
     
                 local basePosition = brain.BuilderManagers[locationType].Position
-                local location = TAutils.TARandomLocation(basePosition[1],basePosition[3])
+                local location = AIUtils.RandomLocation(basePosition[1],basePosition[3])
                 self:MoveToLocation(location, false)
                 WaitSeconds(10)
                 self:PlatoonDisband()

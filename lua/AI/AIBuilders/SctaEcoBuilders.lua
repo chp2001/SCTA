@@ -289,7 +289,7 @@ BuilderGroup {
             Construction = {
                 BuildClose = true,
                 BuildStructures = {
-                    'T1MassCreation',
+                    'T2MassCreation',
                 }
             }
         }

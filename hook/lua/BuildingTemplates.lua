@@ -29,7 +29,7 @@ BuildingTemplates[6] = {
             'armmex',
         },
         {
-            'T1MassCreation',
+            'T2MassCreation',
             'armmakr',
         },
             {
@@ -265,7 +265,7 @@ BuildingTemplates[6] = {
             'cormex',
         },
         {
-            'T1MassCreation',
+            'T2MassCreation',
             'cormakr',
         },
         {

@@ -167,7 +167,7 @@ TechLevel = 'RULEUTL_Advanced',
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 30,
-            ProjectileId = '/mods/SCTA-master/projectiles/COR_BATS/COR_BATS_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARM_BATS/ARM_BATS_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

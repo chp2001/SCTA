@@ -15,7 +15,6 @@ UnitBlueprint {
         },
         Weapon = {
             [1] = {
-                Damage = 120,
                 MaxRadius = 25,
             },
             [2] = {

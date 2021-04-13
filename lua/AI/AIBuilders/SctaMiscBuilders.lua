@@ -190,7 +190,7 @@ BuilderGroup {
             Construction = {
                 BuildClose = true,
                 BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TATowerTemplates.lua',
-                BaseTemplate = 'T1PDTemplate',
+                BaseTemplate = 'T1TowerTemplate',
                 BuildStructures = {
                     'T1GroundDefense',
                     'Wall',
@@ -222,7 +222,7 @@ BuilderGroup {
             DesiresAssist = true,
             NumAssistees = 2,
                 BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TATowerTemplates.lua',
-                BaseTemplate = 'T2PDTemplate',
+                BaseTemplate = 'T2TowerTemplate',
                 BuildStructures = {
                     'T2GroundDefense',
                     'Wall2',

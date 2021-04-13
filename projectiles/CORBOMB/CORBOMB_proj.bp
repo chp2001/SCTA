@@ -49,16 +49,14 @@ ProjectileBlueprint {
             'INDIRECTFIRE',
         },
         Faction = 'CORE',
-        Weapon = 'COREBOMB',
     },
-
     Physics = {
         DestroyOnWater = true,
+        MaxSpeed = 20,
         RealisticOrdinance = true,
-        Lifetime = 4,
-        LeadTarget = false,
-	UseGravity = true,
+        RotationalVelocityRange = 0.25,
+        TrackTarget = false,
+        TurnRate = 360,
         VelocityAlign = true,
-        TurnRate = 30,
     },
 }

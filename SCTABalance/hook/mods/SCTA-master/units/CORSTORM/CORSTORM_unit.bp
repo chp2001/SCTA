@@ -16,8 +16,6 @@
      SizeZ = 1.4,
      Weapon = {
         [1] = {
-            Damage = 30,
-            RateOfFire = 1,
         },
         [2] = {
         },

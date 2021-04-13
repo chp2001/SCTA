@@ -93,28 +93,30 @@ end
 
 function ExpansionBaseCheck(aiBrain)
     -- Removed automatic setting of Land-Expasions-allowed. We have a Game-Option for this.
-    local checkNum = 2
+    local checkNum = tonumber(ScenarioInfo.Options.LandExpansionsAllowed)/5 or 1 
     return ExpansionBaseCount(aiBrain, '<', checkNum)
 end
 
 function ExpansionBaseCount(aiBrain, compareType, checkNum)
-       local expBaseCount = aiBrain:GetManagerCount('Expansion Area')
-        if expBaseCount > checkNum then
+    local expBaseCount = aiBrain:GetManagerCount('Expansion Area')
+        ---LOG('*SCTAEXPANSIONTA', expBaseCount)
+       if expBaseCount > checkNum then
        end
        return CompareBodySCTA(expBaseCount, checkNum, compareType)
 end
 
 function StartBaseCheck(aiBrain)
     -- Removed automatic setting of Land-Expasions-allowed. We have a Game-Option for this.
-    local checkNum = 2
-    return StartBaseCount(aiBrain, '<', checkNum)
+    local checkNum2 = tonumber(ScenarioInfo.Options.LandExpansionsAllowed)/3 or 2 
+    return StartBaseCount(aiBrain, '<', checkNum2)
 end
 
-function StartBaseCount(aiBrain, compareType, checkNum)
-       local expBaseCount = aiBrain:GetManagerCount('Start Location')
-       if expBaseCount > checkNum + 1 then
+function StartBaseCount(aiBrain, compareType, checkNum2)
+       local expBaseCount2 = aiBrain:GetManagerCount('Start Location')
+       ----LOG('*SCTAEXPANSIONTA2', expBaseCount2)
+       if expBaseCount2 > checkNum2 + 1 then
        end
-       return CompareBodySCTA(expBaseCount, checkNum, compareType)
+       return CompareBodySCTA(expBaseCount2, checkNum2, compareType)
 end
 
 --[[function FormerBaseCheck(aiBrain)

@@ -80,7 +80,7 @@ BuilderGroup {
                     NearMarkerType = 'Naval Area',
                     BuildClose = true,
                     BuildStructures = {
-                    'T1MassCreation',
+                    'T2MassCreation',
                 }
             }
         }

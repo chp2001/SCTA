@@ -33,9 +33,9 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'ExpansionStart', 2},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'ExpansionStart' }},
-            { TASlow, 'StartBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
             { MIBC, 'GreaterThanGameTime', { 180 } },
             { UCBC, 'StartLocationNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
+            { TASlow, 'StartBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
         },
@@ -46,7 +46,7 @@ BuilderGroup {
                 BaseTemplate = ExBaseTmpl,
                 ExpansionBase = true,
                 NearMarkerType = 'Start Location',
-                ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                ExpansionRadius = 50, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
                 LocationRadius = 1000,
                 LocationType = 'LocationType',
                 ThreatMin = -1000,
@@ -62,13 +62,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Expansion Starter',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 93,
+        Priority = 96,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Expansion', 2},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Expansion' }},
-            { TASlow, 'ExpansionBaseCheck', { } }, 
             { UCBC, 'ExpansionAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
+            { TASlow, 'ExpansionBaseCheck', { } }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
         },
@@ -79,7 +79,7 @@ BuilderGroup {
                 BaseTemplate = ExBaseTmpl,
                 ExpansionBase = true,
                 NearMarkerType = 'Expansion Area',
-                ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                ExpansionRadius = 50, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
                 LocationRadius = 1000,
                 LocationType = 'LocationType',
                 ThreatMin = -1000,
@@ -96,14 +96,14 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Expansion Starter Late',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 93,
+        Priority = 99,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'ExpansionStart', 2},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'ExpansionStart' }},
-            { TASlow, 'ExpansionBaseCheck', { } }, 
             { MIBC, 'GreaterThanGameTime', {720} },
             { UCBC, 'ExpansionAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
+            { TASlow, 'ExpansionBaseCheck', { } }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
         },
@@ -114,7 +114,7 @@ BuilderGroup {
                     BaseTemplate = ExBaseTmpl,
                     ExpansionBase = true,
                     NearMarkerType = 'Expansion Area',
-                    ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                    ExpansionRadius = 50, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
                     LocationRadius = 1000,
                     LocationType = 'LocationType',
                     ThreatMin = -1000,
@@ -135,10 +135,10 @@ BuilderGroup {
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'ExpansionStart', 2},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'ExpansionStart' }},
-            { TASlow, 'StartBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
             { MIBC, 'GreaterThanGameTime', {720} },
             { UCBC, 'StartLocationNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
+            { UCBC, 'CheckBuildPlattonDelay', { 'ExpansionStart' }},
+            { TASlow, 'StartBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.2}},
         },
         BuilderType = 'Any',
@@ -167,10 +167,10 @@ BuilderGroup {
         Priority = 120,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'NavalBaseCheck', { } },
             { MIBC, 'GreaterThanGameTime', {240} },
             { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'Naval' } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.NAVAL} },
+            { UCBC, 'NavalBaseCheck', { } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -336,4 +336,39 @@ Builder {
             },
         },
     }
-},]]
+},
+
+    Builder {
+        BuilderName = 'SCTA Expansion Starter',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 93,
+        InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Expansion', 2},
+        BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Expansion' }},
+            { UCBC, 'StartLocationNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
+            { TASlow, 'ExpansionBaseCheck', { } }, 
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                BuildClose = false,
+                BaseTemplate = ExBaseTmpl,
+                ExpansionBase = true,
+                NearMarkerType = 'Start Location',
+                ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                LocationRadius = 1000,
+                LocationType = 'LocationType',
+                ThreatMin = -1000,
+                ThreatMax = 1000,
+                ThreatRings = 2,
+                ThreatType = 'AntiSurface',
+                BuildStructures = {   
+                    'T1LandFactory2',                 
+                }
+            },
+        }
+    },
+    },]]

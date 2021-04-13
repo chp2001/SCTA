@@ -9,10 +9,9 @@ BaseBuilderTemplate {
         'SCTAAILandFormers',
         'SCTAAIAirFormers',
 
-        -- Buildings etc
-        'SCTAAIFactoryExpansions',
         'SCTAExpansionBuilders',
         'SCTAAIEngineerMiscBuilder',
+        'SCTAAIFactoryExpansions',
         'SCTAAIEngineerEcoBuilder',
         --Misc Function
     },
@@ -25,7 +24,7 @@ BaseBuilderTemplate {
         },
         FactoryCount = {
             Land = 4,
-            Air = 1,
+            Air = 2,
             Sea = 1,
             Gate = 0,
         },
@@ -35,6 +34,7 @@ BaseBuilderTemplate {
             T3Value = 18
         },
     },
+
     ExpansionFunction = function(aiBrain, location, markerType)   
         local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
         --LOG('Ai Personality is '..per)
@@ -42,9 +42,11 @@ BaseBuilderTemplate {
             return -1
         end
         if markerType != 'Expansion Area' then
-            LOG('Ai Personality is '..per)
-            return 10, 'SCTAAIExpansion'
+            --LOG('Ai Personality is '..per)
+            --LOG('IEXISTEXPAND')
+            return 1234, 'SCTAAIExpansion'
         end
+        --LOG('IEXISTEXPANDFAIL')
         --LOG('Return sctaai personality')
         return 1000, 'SCTAAI'
     end,

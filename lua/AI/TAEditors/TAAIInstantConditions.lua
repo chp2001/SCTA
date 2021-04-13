@@ -42,7 +42,7 @@ function TAAIGetReclaimablesAroundLocation(aiBrain, locationType)
             end
         end
     elseif aiBrain.BuilderManagers[locationType] then
-        radius = 25
+        radius = aiBrain.BuilderManagers[locationType].FactoryManager.Radius
         position = aiBrain.BuilderManagers[locationType].FactoryManager:GetLocationCoords()
     end
 

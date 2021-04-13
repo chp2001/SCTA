@@ -1,4 +1,5 @@
 local TAutils = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua')
+WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset platoon.lua' )
 
 --[[buildingTmplFile = import(cons.BuildingTemplateFile or '/lua/BuildingTemplates.lua')
 baseTmplFile = import(cons.BaseTemplateFile or '/lua/BaseTemplates.lua')
@@ -1668,7 +1669,6 @@ Platoon = Class(SCTAAIPlatoon) {
         -- maybe worth it if we micro
         --self:SetPlatoonFormationOverride('GrowthFormation')
         local PlatoonFormation = self.PlatoonData.UseFormation or 'NoFormation'
-
         while aiBrain:PlatoonExists(self) do
             local pos = self:GetPlatoonPosition() -- update positions; prev position done at end of loop so not done first time
 
@@ -1683,45 +1683,43 @@ Platoon = Class(SCTAAIPlatoon) {
                 WaitSeconds(4)
                 continue
             end
+        if aiBrain:GetCurrentEnemy() and aiBrain:GetCurrentEnemy().Result == "defeat" then
+            aiBrain:PickEnemyLogic()
+        end
 
-            -- pick out the enemy
-            if aiBrain:GetCurrentEnemy() and aiBrain:GetCurrentEnemy().Result == "defeat" then
-                aiBrain:PickEnemyLogic()
+        -- deal with lost-puppy transports
+        local strayTransports = {}
+        for k,v in platoonUnits do
+            if EntityCategoryContains(categories.TRANSPORTFOCUS, v) then
+                table.insert(strayTransports, v)
             end
-
-            -- deal with lost-puppy transports
+        end
+        if table.getn(strayTransports) > 0 then
+            local dropPoint = pos
+            dropPoint[1] = dropPoint[1] + Random(-3, 3)
+            dropPoint[3] = dropPoint[3] + Random(-3, 3)
+            IssueTransportUnload(strayTransports, dropPoint)
+            WaitSeconds(10)
             local strayTransports = {}
             for k,v in platoonUnits do
-                if EntityCategoryContains(categories.TRANSPORTFOCUS, v) then
-                    table.insert(strayTransports, v)
+                local parent = v:GetParent()
+                if parent and EntityCategoryContains(categories.TRANSPORTFOCUS, parent) then
+                    table.insert(strayTransports, parent)
+                    break
                 end
             end
             if table.getn(strayTransports) > 0 then
-                local dropPoint = pos
-                dropPoint[1] = dropPoint[1] + Random(-3, 3)
-                dropPoint[3] = dropPoint[3] + Random(-3, 3)
-                IssueTransportUnload(strayTransports, dropPoint)
-                WaitSeconds(10)
-                local strayTransports = {}
-                for k,v in platoonUnits do
-                    local parent = v:GetParent()
-                    if parent and EntityCategoryContains(categories.TRANSPORTFOCUS, parent) then
-                        table.insert(strayTransports, parent)
-                        break
-                    end
+                local MAIN = aiBrain.BuilderManagers.MAIN
+                if MAIN then
+                    dropPoint = MAIN.Position
+                    IssueTransportUnload(strayTransports, dropPoint)
+                    WaitSeconds(30)
                 end
-                if table.getn(strayTransports) > 0 then
-                    local MAIN = aiBrain.BuilderManagers.MAIN
-                    if MAIN then
-                        dropPoint = MAIN.Position
-                        IssueTransportUnload(strayTransports, dropPoint)
-                        WaitSeconds(30)
-                    end
-                end
-                self.UsingTransport = false
-                AIUtils.ReturnTransportsToPool(strayTransports, true)
-                platoonUnits = self:GetPlatoonUnits()
             end
+            self.UsingTransport = false
+            AIUtils.ReturnTransportsToPool(strayTransports, true)
+            platoonUnits = self:GetPlatoonUnits()
+        end
 
 
             --Disband platoon if it's all air units, so they can be picked up by another platoon

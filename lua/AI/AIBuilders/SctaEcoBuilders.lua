@@ -152,6 +152,7 @@ BuilderGroup {
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = {  
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 150}},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -171,7 +172,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -192,7 +193,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -235,7 +236,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TECH3 * categories.ENERGYPRODUCTION * categories.STRUCTURE} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
         },
         BuilderType = 'Any',
@@ -257,7 +258,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.75 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -288,7 +289,7 @@ BuilderGroup {
             Construction = {
                 BuildClose = true,
                 BuildStructures = {
-                    'T1MassCreation',
+                    'T2MassCreation',
                 }
             }
         }
@@ -358,6 +359,7 @@ BuilderGroup {
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = { 
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 150}},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -377,7 +379,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
         BuilderType = 'Any',
         BuilderData = {

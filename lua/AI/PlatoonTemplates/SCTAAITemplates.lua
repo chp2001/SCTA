@@ -114,7 +114,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTA',
     Plan = 'AttackSCTAForceAI',
     GlobalSquads = {
-        { GROUND - SPECIAL - TACATS, 2, 20, 'Attack', 'none' }
+        { GROUND - SPECIAL - TACATS - categories.AMPHIBIOUS, 2, 20, 'Attack', 'none' }
     },
 }
 
@@ -130,7 +130,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTAEarly',
     Plan = 'SCTAStrikeForceAIEarly',
     GlobalSquads = {
-        { GROUND * categories.TECH1 - SPECIAL, 2, 10, 'Attack', 'none' }
+        { GROUND * categories.TECH1 - SPECIAL - categories.AMPHIBIOUS, 2, 10, 'Attack', 'none' }
     },
 }
 
@@ -138,7 +138,7 @@ PlatoonTemplate {
     Name = 'LandRocketAttackSCTA',
     Plan = 'AttackSCTAForceAI',
     GlobalSquads = {
-        { GROUND * (categories.SILO + categories.ARTILLERY) - SPECIAL, 2, 20, 'Attack', 'none' }
+        { GROUND * (categories.SILO + categories.ARTILLERY) - SPECIAL - categories.AMPHIBIOUS, 2, 20, 'Attack', 'none' }
     },
 }
 

@@ -18,7 +18,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1EngineerSCTANaval',
         Priority = 140, -- Top factory priority
         BuilderConditions = {
-            --{ UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.NAVAL * categories.ENGINEER * categories.TECH1} }, -- Build engies until we have 4 of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.NAVAL * categories.ENGINEER * categories.TECH1} }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'Sea',
     },

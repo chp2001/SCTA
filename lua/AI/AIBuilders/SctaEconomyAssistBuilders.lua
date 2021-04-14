@@ -20,7 +20,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, FUSION }},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
+            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -41,7 +41,7 @@ BuilderGroup {
         InstanceCount = 12,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
+            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
         },
         BuilderData = {
             Assist = {
@@ -61,7 +61,7 @@ BuilderGroup {
         InstanceCount = 12,
         BuilderConditions = {
             { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYQUANTUMGATE }},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
+            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
         },
         BuilderData = {
             Assist = {
@@ -273,7 +273,7 @@ BuilderGroup {
     BuilderConditions = {
         { MIBC, 'GreaterThanGameTime', {300} },
         { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
-        { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+        { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
     },
     BuilderData = {
         Assist = {
@@ -294,7 +294,7 @@ Builder {
     BuilderConditions = {
         { MIBC, 'GreaterThanGameTime', {300} },
         { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.MOBILE }},
-        { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+        { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
     },
     BuilderData = {
         Assist = {

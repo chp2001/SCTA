@@ -26,6 +26,24 @@ BuilderGroup {
          },
     },
     Builder {
+        BuilderName = 'SCTAAI Terrain',
+        PlatoonTemplate = 'StrikeForceSCTATerrain', -- The platoon template tells the AI what units to include, and how to use them.
+        Priority = 300,
+        InstanceCount = 30,
+        BuilderType = 'Any',
+        BuilderData = {
+            NeverGuardBases = true,
+            NeverGuardEngineers = true,
+            IgnorePathing = true,
+            UseMoveOrder = true,
+            AllTerrain = true,
+            UseFormation = 'AttackFormation',
+        },        
+        BuilderConditions = {          
+        { UCBC, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.COMMAND }},	
+        { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AMPHIBIOUS - categories.SCOUT} }, },
+    },
+    Builder {
         BuilderName = 'SCTAAI LAB',
         PlatoonTemplate = 'LABSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 300,
@@ -63,7 +81,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Air Hunt',
         PlatoonTemplate = 'AirHuntAISCTA',
-        Priority = 125,
+        Priority = 300,
         InstanceCount = 2,
         BuilderType = 'Any', 
         BuilderData = {

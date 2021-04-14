@@ -2346,16 +2346,47 @@ Platoon = Class(SCTAAIPlatoon) {
         local armyIndex = aiBrain:GetArmyIndex()
         local structure
         local blip
+        local hadtarget = false
+        local basePosition = false
+
+        if self.PlatoonData.LocationType and self.PlatoonData.LocationType != 'NOTMAIN' then
+            basePosition = aiBrain.BuilderManagers[self.PlatoonData.LocationType].Position
+        else
+            local platoonPosition = self:GetPlatoonPosition()
+            if platoonPosition then
+                basePosition = aiBrain:FindClosestBuilderManagerPosition(self:GetPlatoonPosition())
+            end
+        end
+
+        if not basePosition then
+            return
+        end
+
         while aiBrain:PlatoonExists(self) do
             structure = self:FindClosestUnit('Attack', 'Enemy', true, categories.ENERGYPRODUCTION - categories.WALL - categories.MOBILE)
-            if structure then
-                self:Stop()
-                self:AttackTarget(structure)
-            else
+            if not structure then
                 WaitSeconds(1)
                 return self:SCTALabAI()
             end
-            WaitSeconds(5)
+            if structure and structure:GetFractionComplete() == 1 then
+                local EcoThreat = aiBrain:GetThreatAtPosition(table.copy(structure:GetPosition()), 1, true, 'Economy')
+                --LOG("Air threat: " .. airThreat)
+                local SurfaceThreat = aiBrain:GetThreatAtPosition(table.copy(structure:GetPosition()), 1, true, 'AntiSurface') - EcoThreat
+                --LOG("AntiAir threat: " .. antiAirThreat)
+                if SurfaceThreat < 1.5 then
+                    blip = structure:GetBlip(armyIndex)
+                    self:Stop()
+                    self:AttackTarget(structure)
+                    hadtarget = true
+                end
+           elseif not structure and hadtarget then
+                --DUNCAN - move back to base
+                local position = AIUtils.RandomLocation(basePosition[1],basePosition[3])
+                self:Stop()
+                self:MoveToLocation(position, false)
+                hadtarget = false
+            end
+            WaitSeconds(5) --DUNCAN - was 5
         end
     end,
 

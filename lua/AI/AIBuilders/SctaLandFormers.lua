@@ -85,22 +85,6 @@ BuilderGroup {
         },
     },
     Builder {
-        BuilderName = 'SCTAAI Terrain',
-        PlatoonTemplate = 'StrikeForceSCTATerrain', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 150,
-        InstanceCount = 30,
-        BuilderType = 'Any',
-        BuilderData = {
-            NeverGuardBases = true,
-            NeverGuardEngineers = true,
-            IgnorePathing = true,
-            UseMoveOrder = true,
-            AllTerrain = true,
-            UseFormation = 'AttackFormation',
-        },        
-        BuilderConditions = { },
-    },
-    Builder {
         BuilderName = 'SCTAAI Land Attack',
         PlatoonTemplate = 'LandAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 120,

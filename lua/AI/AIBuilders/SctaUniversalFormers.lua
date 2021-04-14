@@ -63,7 +63,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Air Hunt',
         PlatoonTemplate = 'AirHuntAISCTA',
-        Priority = 125,
+        Priority = 300,
         InstanceCount = 2,
         BuilderType = 'Any', 
         BuilderData = {

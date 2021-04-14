@@ -47,7 +47,7 @@ BuilderGroup {
         Priority = 120,
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},
-            { MIBC, 'GreaterThanGameTime', {900} },
+            { MIBC, 'GreaterThanGameTime', {600} },
             { UCBC, 'HaveUnitRatio', { 0.33, categories.NAVAL * categories.MOBILE * categories.FRIGATE,
             '<=', categories.NAVAL * categories.MOBILE} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } }, -- Stop after 10 facs have been built.
@@ -70,7 +70,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi AntiAir Naval',
         PlatoonTemplate = 'T2CrusSCTA',
-        Priority = 101,
+        Priority = 125,
         BuilderConditions = {
             { TASlow,    'TAAttackNaval', {true}},
             { UCBC, 'HaveUnitRatio', { 0.1, categories.NAVAL * categories.MOBILE * categories.CRUISER,
@@ -85,7 +85,6 @@ BuilderGroup {
         Priority = 131,
         BuilderConditions = {
             { TASlow,    'TAAttackNaval', {true}},
-            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Naval'} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.BATTLESHIP } }, -- Stop after 10 facs have been built.
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },

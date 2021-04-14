@@ -10,7 +10,7 @@ NAVY = categories.NAVAL * categories.MOBILE
 
 PlatoonTemplate {
     Name = 'SCTAPatrolBoatAttack',
-    Plan = 'NavalHuntAI',
+    Plan = 'NavalHuntSCTAAI',
     GlobalSquads = {
         { NAVY * categories.SCOUT, 1, 2, 'Attack', 'GrowthFormation' },
     }
@@ -18,7 +18,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'SCTANavalAssault',
-    Plan = 'NavalForceAI',
+    Plan = 'NavalForceAISorian',
     GlobalSquads = {
         { categories.TECH1 * NAVY - categories.ENGINEER, 4, 10, 'Attack', 'GrowthFormation' }
     },
@@ -35,7 +35,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'SCTANavalAssaultT2',
-    Plan = 'NavalForceAI',
+    Plan = 'NavalForceAISorian',
     GlobalSquads = {
         {NAVY - categories.ENGINEER, 10, 20, 'Attack', 'GrowthFormation' }
     },
@@ -59,12 +59,12 @@ PlatoonTemplate {
         Arm = {
             { 'armpt', 1, 2, 'Attack', 'GrowthFormation' },
             { 'armroy', 1, 1, 'Attack', 'GrowthFormation'},
-            { 'armpt', 1, 2, 'Attack', 'GrowthFormation' },
+            { 'armcs', 1, 1, 'support', 'None' }
         },
         Core = {
             { 'corpt', 1, 2, 'Attack', 'GrowthFormation' },
             { 'corroy', 1, 1, 'Attack', 'GrowthFormation'},
-            { 'corpt', 1, 2, 'Attack', 'GrowthFormation' },
+            { 'corcs', 1, 1, 'support', 'None' },
         },
     }
 }
@@ -74,11 +74,11 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armcrus', 1, 1, 'Attack', 'GrowthFormation'},
-            { 'armpt', 1, 4, 'Attack', 'GrowthFormation' },
+            { 'armpt', 1, 2, 'Attack', 'GrowthFormation' },
         },
         Core = {
             { 'corcrus', 1, 1, 'Attack', 'GrowthFormation'},
-            { 'corpt', 1, 4, 'Attack', 'GrowthFormation' },
+            { 'corpt', 1, 2, 'Attack', 'GrowthFormation' },
         },
     }
 }
@@ -103,10 +103,12 @@ PlatoonTemplate {
         Arm = {
             { 'armbats', 1, 1, 'Attack', 'GrowthFormation'},
             { 'armpt', 1, 4, 'Attack', 'GrowthFormation' },
+            { 'armacsub', 1, 1, 'support', 'None' },
         },
         Core = {
             { 'corbats', 1, 1, 'Attack', 'GrowthFormation'},
             { 'corpt', 1, 4, 'Attack', 'GrowthFormation' },
+            { 'coracsub', 1, 1, 'support', 'None' },
         },
     }
 }

@@ -30,8 +30,6 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             Construction = {
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
                 Location = 'LocationType',
                 NearMarkerType = 'Naval Area',
                 BuildStructures = {
@@ -53,8 +51,6 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
                 Construction = {
-                    BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                    BaseTemplate = 'NavalBaseTemplates',
                     Location = 'LocationType',
                     NearMarkerType = 'Naval Area',
                     BuildStructures = {
@@ -98,8 +94,6 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
                 Construction = {
-                    BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                    BaseTemplate = 'NavalBaseTemplates',
                     Location = 'LocationType',
                     NearMarkerType = 'Naval Area',
                     BuildStructures = {
@@ -111,7 +105,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Naval MetalMaker',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 90,
+        Priority = 102,
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1,  FUSION} }, 
@@ -121,8 +115,6 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
                 Construction = {
-                    BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                    BaseTemplate = 'NavalBaseTemplates',
                     Location = 'LocationType',
                     NearMarkerType = 'Naval Area',
                     BuildClose = true,
@@ -165,7 +157,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Naval T1Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 131,
+        Priority = 101,
         InstanceCount = 2,
         BuilderConditions = {
         { UCBC, 'HaveLessThanUnitsWithCategory', { 4, FUSION } },  -- Stop after 10 facs have been built.
@@ -176,8 +168,6 @@ BuilderGroup {
             Construction = {
                 Location = 'LocationType',
                 BuildClose = true,
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
                 NearMarkerType = 'Naval Area',
                 BuildStructures = {
                     'T1EnergyProduction3',
@@ -199,8 +189,6 @@ BuilderGroup {
         BuilderData = {
             Construction = {
                 Location = 'LocationType',
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
                 NearMarkerType = 'Naval Area',
                 BuildStructures = {
                     'T1Resource',

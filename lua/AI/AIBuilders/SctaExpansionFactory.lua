@@ -17,8 +17,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 104,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Factories', 3},
+        DelayEqualBuildPlattons = {'FactoryExpand', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesExpand' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -41,8 +42,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 106,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Factories', 3},
+        DelayEqualBuildPlattons = {'FactoryExpand', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesExpand' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -65,8 +67,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 112,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Factories', 3},
+        DelayEqualBuildPlattons = {'FactoryExpand', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesExpand' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -89,9 +92,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Expansion AirFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 103,
+        Priority = 91,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'FactoriesAirExpand', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesAirExpand' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.9 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
@@ -114,7 +119,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
         Priority = 111,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'FactoriesAirExpand', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesAirExpand' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.9 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },

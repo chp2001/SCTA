@@ -3,6 +3,7 @@ local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
@@ -16,7 +17,7 @@ BuilderGroup {
         Priority = 92,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.3, 0.5, } },
         },
         BuilderType = 'Land',
     },
@@ -26,8 +27,7 @@ BuilderGroup {
         Priority = 98,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.5}}
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.3, 0.5, } },
         },
         BuilderType = 'Land',
     },
@@ -38,7 +38,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.MOBILE * categories.ARTILLERY,
             '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.3, 0.5, } },
          },
         BuilderType = 'Land',
     },
@@ -62,7 +62,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH2 * categories.DIRECTFIRE - categories.SCOUT,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.3, 0.5, } },
         },
         BuilderType = 'Land',
     },
@@ -107,7 +107,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.TECH3 * categories.DIRECTFIRE - categories.SCOUT,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.3, 0.5, } },
         },
         BuilderType = 'Land',
     },
@@ -118,7 +118,7 @@ BuilderGroup {
         Priority = 92,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.3, 0.5, } },
         },
         BuilderType = 'Land',
     },
@@ -128,8 +128,7 @@ BuilderGroup {
         Priority = 98,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            --{ EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.5}}
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.3, 0.5, } },
         },
         BuilderType = 'Land',
     },
@@ -151,7 +150,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH2 * categories.DIRECTFIRE - categories.SCOUT,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.3, 0.5, } },
         },
         BuilderType = 'Land',
     },
@@ -196,7 +195,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.ANTIAIR * categories.MOBILE,
             '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.3, 0.5, } },
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
         },
         BuilderType = 'Land',
@@ -209,8 +208,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH3 * categories.DIRECTFIRE - categories.SCOUT,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}}
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.3, 0.5, } },
         },
         BuilderType = 'Land',
     },
@@ -222,7 +220,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH3 * categories.DIRECTFIRE - categories.SCOUT,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.3, 0.5, } },
         },
         BuilderType = 'Land',
     },
@@ -242,8 +240,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.DIRECTFIRE * categories.TECH3 - categories.SCOUT,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}}
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.3, 0.5, } },
         },
         BuilderType = 'Land',
     },
@@ -254,7 +251,7 @@ BuilderGroup {
         BuilderConditions = {
         { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.TECH3 * categories.SILO * categories.MOBILE,
         '<=', categories.MOBILE * categories.LAND - categories.ENGINEER } }, -- Don't make tanks if we have lots of them. },
-        { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+        { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.3, 0.5, } },
     },
         BuilderType = 'Land',
     },

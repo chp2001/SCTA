@@ -4,7 +4,7 @@
     Summary :
         Responsible for defining a mapping from AIBuilders keys -> Plans (Plans === platoon.lua functions)
 ]]
-local RAIDER = categories.armfig + categories.corveng + categories.armpw + categories.corak + categories.armflash + categories.corgator
+local RAIDER = categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea
 local SPECIAL = RAIDER + categories.EXPERIMENTAL + categories.ENGINEER + categories.SCOUT
 local GROUND = categories.MOBILE * categories.LAND
 local TACATS = categories.ANTISHIELD + categories.AMPHIBIOUS
@@ -87,7 +87,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'StrikeForceSCTATerrain',
-    Plan = 'AllTerrainAISCTA', -- The platoon function to use.
+    Plan = 'SCTAArtyHuntAI', -- The platoon function to use.
     GlobalSquads = {
         { categories.AMPHIBIOUS * categories.LAND - SPECIAL, -- Type of units.
           2, -- Min number of units.

@@ -7,18 +7,31 @@
 #**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 local SKY = categories.AIR * categories.MOBILE
+local RAIDAIR = categories.armfig + categories.corveng
 
 PlatoonTemplate {
     Name = 'AirHuntAISCTA',
     Plan = 'HuntAirAISCTA',
     GlobalSquads = {
-        { SKY * (categories.BOMBER + categories.ANTIAIR) * categories.TECH1, 2, 4, 'attack', 'none' },
+        { SKY * (categories.BOMBER + RAIDAIR) * categories.TECH1, 2, 4, 'attack', 'none' },
     }
 }
 
 PlatoonTemplate {
+    Name = 'LABAirSCTA',
+    Plan = 'HuntAILABSCTA', -- The platoon function to use.
+    GlobalSquads = {
+        {RAIDAIR, -- Type of units.
+          1, -- Min number of units.
+          1, -- Max number of units.
+          'attack', -- platoon types: 'support', 'attack', 'scout',
+          'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+    },
+}
+
+PlatoonTemplate {
     Name = 'SCTABomberAttack',
-    Plan = 'SCTAStrikeForceAI',
+    Plan = 'BomberAISCTA',
     GlobalSquads = {
         { SKY * categories.BOMBER - categories.EXPERIMENTAL - categories.ANTINAVY, 1, 100, 'Attack', 'GrowthFormation' },
     }
@@ -33,20 +46,13 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
-    Name = 'InceptorAISCTA',
+    Name = 'IntieAISCTAALL',
     Plan = 'InterceptorAISCTA',
     GlobalSquads = {
-        { SKY * categories.ANTIAIR - categories.BOMBER - categories.TRANSPORTFOCUS, 2, 100, 'attack', 'none' },
+        { SKY * categories.ANTIAIR - categories.BOMBER, 2, 100, 'attack', 'none' },
     }
 }
 
-PlatoonTemplate {
-    Name = 'StealthFightersAISCTA',
-    Plan = 'StealthIntieAISCTA',
-    GlobalSquads = {
-        { SKY * categories.ANTIAIR * categories.TECH2 - categories.BOMBER, 2, 100, 'attack', 'none' },
-    }
-}
 
 PlatoonTemplate {
     Name = 'SCTAT2AirScouting',
@@ -121,10 +127,12 @@ PlatoonTemplate {
     Name = 'T2AirBomberSCTA',
     FactionSquads = {
         Arm = {
-            { 'armpnix', 1, 2, 'attack', 'GrowthFormation' },
+            { 'armpnix', 1, 1, 'attack', 'GrowthFormation' },
+            { 'armhawk', 1, 2, 'attack', 'GrowthFormation' },
         },
         Core = {
-            { 'corhurc', 1, 2, 'attack', 'GrowthFormation' },
+            { 'corhurc', 1, 1, 'attack', 'GrowthFormation' },
+            { 'corvamp', 1, 2, 'attack', 'GrowthFormation' },
         },
     }
 }

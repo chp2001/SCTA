@@ -14,6 +14,7 @@ BaseBuilderTemplate {
         'SCTAAIEngineerEcoBuilder',
         'SCTAAIFactoryExpansions',
         'SCTAAssisters',
+        'SCTAAIEngineerMiscBuilder',
     },
     BaseSettings = {
         EngineerCount = {
@@ -44,11 +45,11 @@ BaseBuilderTemplate {
         --LOG('IEXIST')
         if markerType != 'Start Location' then
             ---LOG('IEXISTSTART')
-            return 1431, 'SCTAAISTARTEXPANSION'
+            return 20, 'SCTAAISTARTEXPANSION'
         end
         --LOG('IEXISTFAILSTART')
         --LOG('Return sctaai personality')
-        return 1000, 'SCTAAI'
+        return 10, 'SCTAAI'
     end,
 }
 

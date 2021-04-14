@@ -188,6 +188,39 @@ function TAAIGetEconomyNumbersEnergy(aiBrain)
     return econ
 end
 
+function TAAIEcoCondition(aiBrain)
+    local econ = {}
+    econ.MassStorageRatio = aiBrain:GetEconomyStoredRatio('MASS')
+    econ.EnergyStorageRatio = aiBrain:GetEconomyStoredRatio('ENERGY')
+    econ.EnergyIncome = aiBrain:GetEconomyIncome('ENERGY')
+    econ.MassIncome = aiBrain:GetEconomyIncome('MASS')
+    econ.EnergyRequested = aiBrain:GetEconomyRequested('ENERGY')
+    econ.MassRequested = aiBrain:GetEconomyRequested('MASS')
+    econ.EnergyStorage = aiBrain:GetEconomyStored('ENERGY')
+    econ.MassStorage = aiBrain:GetEconomyStored('MASS')
+
+    if aiBrain.EconomyMonitorThread then
+        local econTime = aiBrain:GetEconomyOverTime()
+
+        econ.EnergyEfficiencyOverTime = math.min(econTime.EnergyIncome / econTime.EnergyRequested, 2)
+        econ.MassEfficiencyOverTime = math.min(econTime.MassIncome / econTime.MassRequested, 2)
+    end
+
+    if econ.MassStorageRatio ~= 0 then
+        econ.MassMaxStored = econ.MassStorage / econ.MassStorageRatio
+    else
+        econ.MassMaxStored = econ.MassStorage
+    end
+
+    if econ.EnergyStorageRatio ~= 0 then
+        econ.EnergyMaxStored = econ.EnergyStorage / econ.EnergyStorageRatio
+    else
+        econ.EnergyMaxStored = econ.EnergyStorage
+    end
+
+    return econ
+end
+
 function TAEnergyEfficiency(aiBrain)
     local econ = {}
     econ.EnergyIncome = aiBrain:GetEconomyIncome('ENERGY')
@@ -201,6 +234,14 @@ function TAEnergyEfficiency(aiBrain)
     return econ
 end
 
+function EcoManagementTA(aiBrain, mStorageRatio, eStorageRatio, EnergyEfficiency, MassEfficiency)
+    local econ = TAAIEcoCondition(aiBrain)
+    if (econ.MassEfficiencyOverTime >= MassEfficiency and econ.EnergyEfficiencyOverTime >= EnergyEfficiency) 
+    or (econ.MassStorageRatio >= mStorageRatio and econ.EnergyStorageRatio >= eStorageRatio) then
+        return true
+    end
+    return false
+end
 
 function LessMassStorageMaxTA(aiBrain, mStorageRatio)
     local econ = TAAIGetEconomyNumbersMass(aiBrain)

@@ -3,6 +3,7 @@ local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
+local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
@@ -35,7 +36,7 @@ BuilderGroup {
         Priority = 95,
         BuilderConditions = { -- Only make inties if the enemy air is strong
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.AIR } },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.2, 0.5 }},
+            { TAutils, 'EcoManagementTA', { 0.2, 0.6, 0.5, 0.2, } },
         },
         BuilderType = 'Air',
     },       
@@ -45,7 +46,7 @@ BuilderGroup {
         Priority = 115,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
         { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, FUSION} },
-        { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.2, 0.5 }},
+        { TAutils, 'EcoManagementTA', { 0.2, 0.5, 0.5, 0.2, } },
         },
         BuilderType = 'Air',
     },
@@ -55,22 +56,23 @@ BuilderGroup {
         Priority = 125,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
         { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} },
-        { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.2, 0.5 }},
+        { TAutils, 'EcoManagementTA', { 0.2, 0.4, 0.5, 0.2, } },
         },
         BuilderType = 'Air',
     },
     Builder {
         BuilderName = 'SCTAAirTransport',
         PlatoonTemplate = 'SCTATransport',
-        Priority = 130,
+        Priority = 80,
+        DelayEqualBuildPlattons = {'Transport', 3},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Transport' }},
             { MIBC, 'GreaterThanGameTime', {900} },
             { MIBC, 'ArmyNeedsTransports', {} },
             { UCBC, 'LocationFactoriesBuildingLess', { 'LocationType', 2, 'TRANSPORTFOCUS' } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, 'TRANSPORTFOCUS' } },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, 'TRANSPORTFOCUS' } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.7}},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.9 }},
+            { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.2, } },
         },
         BuilderType = 'Air',
     },     

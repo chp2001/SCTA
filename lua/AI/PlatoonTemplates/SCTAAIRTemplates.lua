@@ -127,10 +127,12 @@ PlatoonTemplate {
     Name = 'T2AirBomberSCTA',
     FactionSquads = {
         Arm = {
-            { 'armpnix', 1, 2, 'attack', 'GrowthFormation' },
+            { 'armpnix', 1, 1, 'attack', 'GrowthFormation' },
+            { 'armhawk', 1, 2, 'attack', 'GrowthFormation' },
         },
         Core = {
-            { 'corhurc', 1, 2, 'attack', 'GrowthFormation' },
+            { 'corhurc', 1, 1, 'attack', 'GrowthFormation' },
+            { 'corvamp', 1, 2, 'attack', 'GrowthFormation' },
         },
     }
 }

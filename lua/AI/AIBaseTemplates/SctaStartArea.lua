@@ -14,6 +14,7 @@ BaseBuilderTemplate {
         'SCTAAIEngineerEcoBuilder',
         'SCTAAIFactoryExpansions',
         'SCTAAssisters',
+        'SCTAAIEngineerMiscBuilder',
     },
     BaseSettings = {
         EngineerCount = {

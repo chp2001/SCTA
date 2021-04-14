@@ -36,7 +36,7 @@ BuilderGroup {
         Priority = 95,
         BuilderConditions = { -- Only make inties if the enemy air is strong
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.AIR } },
-            { TAutils, 'EcoManagementTA', { 0.2, 0.5, 0.5, 0.2, } },
+            { TAutils, 'EcoManagementTA', { 0.2, 0.6, 0.5, 0.2, } },
         },
         BuilderType = 'Air',
     },       
@@ -56,14 +56,14 @@ BuilderGroup {
         Priority = 125,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
         { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} },
-        { TAutils, 'EcoManagementTA', { 0.2, 0.5, 0.5, 0.2, } },
+        { TAutils, 'EcoManagementTA', { 0.2, 0.4, 0.5, 0.2, } },
         },
         BuilderType = 'Air',
     },
     Builder {
         BuilderName = 'SCTAAirTransport',
         PlatoonTemplate = 'SCTATransport',
-        Priority = 130,
+        Priority = 80,
         DelayEqualBuildPlattons = {'Transport', 3},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Transport' }},

@@ -177,7 +177,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTA Defense Point 1',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
+        PlatoonTemplate = 'EngineerBuilderSCTAALL',
         Priority = 62,
         InstanceCount = 1,
         BuilderConditions = {
@@ -189,6 +189,8 @@ BuilderGroup {
         BuilderData = {
             Construction = {
                 BuildClose = true,
+                OrderedTemplate = true,
+                NearBasePatrolPoints = false,
                 BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TATowerTemplates.lua',
                 BaseTemplate = 'T1TowerTemplate',
                 BuildStructures = {
@@ -207,13 +209,13 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTA Defensive Point 2',
-        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        PlatoonTemplate = 'EngineerBuilderSCTAALL',
         Priority = 76,
         InstanceCount = 2,
         BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.ANTISHIELD * categories.TECH2 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.75}}, 
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} }, 
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -221,6 +223,9 @@ BuilderGroup {
             NeedGuard = false,
             DesiresAssist = true,
             NumAssistees = 2,
+            BuildClose = true,
+            OrderedTemplate = true,
+            NearBasePatrolPoints = false,
                 BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TA2TowerTemplates.lua',
                 BaseTemplate = 'T2TowerTemplate',
                 BuildStructures = {

@@ -26,13 +26,13 @@ BuilderGroup {
          },
     },
     Builder {
-        BuilderName = 'SCTAAI Air Attack',
+        BuilderName = 'SCTAAI Bomber Attack',
         PlatoonTemplate = 'SCTABomberAttack',
         Priority = 100,
-        InstanceCount = 3,
+        InstanceCount = 25,
         BuilderType = 'Any',        
         BuilderConditions = { 
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AIR * categories.BOMBER } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.BOMBER } },
         },
     },
     Builder {

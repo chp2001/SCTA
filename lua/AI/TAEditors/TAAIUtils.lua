@@ -148,3 +148,42 @@ function TAFactoryCapCheck(aiBrain, locationType, TECH)
     end
     return false
 end
+
+function HaveEnemyUnitAtLocationTA(aiBrain, radius, locationType, unitCount, categoryEnemy, compareType)
+    if not aiBrain.BuilderManagers[locationType] then
+        WARN('*AI WARNING: HaveEnemyUnitAtLocation - Invalid location - ' .. locationType)
+        return false
+    elseif not aiBrain.BuilderManagers[locationType].Position then
+        WARN('*AI WARNING: HaveEnemyUnitAtLocation - Invalid position - ' .. locationType)
+        return false
+    end
+    local numEnemyUnits = aiBrain:GetNumUnitsAroundPoint(categoryEnemy, aiBrain.BuilderManagers[locationType].Position, radius , 'Enemy')
+    return CompareBodySCTA(numEnemyUnits, unitCount, compareType)
+end
+--            { UCBC, 'EnemyUnitsGreaterAtLocationRadius', {  BasePanicZone, 'LocationType', 0, categories.MOBILE * categories.LAND }}, -- radius, LocationType, unitCount, categoryEnemy
+function TAEnemyUnitsGreaterAtLocationRadius(aiBrain, radius, locationType, unitCount, categoryEnemy)
+    return HaveEnemyUnitAtLocationTA(aiBrain, radius, locationType, unitCount, categoryEnemy, '>')
+end
+--            { UCBC, 'EnemyUnitsLessAtLocationRadius', {  BasePanicZone, 'LocationType', 1, categories.MOBILE * categories.LAND }}, -- radius, LocationType, unitCount, categoryEnemy
+function TAEnemyUnitsLessAtLocationRadius(aiBrain, radius, locationType, unitCount, categoryEnemy)
+    return HaveEnemyUnitAtLocationTA(aiBrain, radius, locationType, unitCount, categoryEnemy, '<')
+end
+
+
+function TAAttackNaval(aiBrain, bool)
+    local startX, startZ = aiBrain:GetArmyStartPos()
+    local AIAttackUtils = import('/lua/AI/aiattackutilities.lua')
+    local enemyX, enemyZ
+    if aiBrain:GetCurrentEnemy() then
+        enemyX, enemyZ = aiBrain:GetCurrentEnemy():GetArmyStartPos()
+    end
+    local navalMarker = AIUtils.AIGetClosestMarkerLocation(aiBrain, 'Naval Area', startX, startZ)
+    local path, reason = false
+    if enemyX then
+        path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Water', {startX,0,startZ}, {enemyX,0,enemyZ}, 10)
+    end
+    if (navalMarker and path) and bool then
+        return true
+    end
+    return false
+end

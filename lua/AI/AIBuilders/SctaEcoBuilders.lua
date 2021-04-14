@@ -168,7 +168,7 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
-            NeedGuard = true,
+            NeedGuard = false,
             DesiresAssist = true,
             Construction = {
                 BuildStructures = {

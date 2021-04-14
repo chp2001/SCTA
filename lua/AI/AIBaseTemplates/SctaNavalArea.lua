@@ -31,7 +31,7 @@ BaseBuilderTemplate {
     ExpansionFunction = function(aiBrain, location, markerType)   
         local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
         --LOG('Ai Personality is '..per)
-        if not aiBrain.SCTAAI then
+        if not per == 'SCTAAI' then
             return -1
         end
         if markerType != 'Naval Area' then

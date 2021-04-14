@@ -4,11 +4,14 @@ local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local MABC = '/lua/editor/MarkerBuildConditions.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
+local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
+local TIDAL = (categories.cortide + categories.armtide)
+local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').GetMOARadii()
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIEngineerNavalMiscBuilder',
@@ -19,17 +22,15 @@ BuilderGroup {
         Priority = 132,
         InstanceCount = 1,
         BuilderConditions = { 
-            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Naval'} },
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Sea' } },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { TASlow,   'TAAttackNaval', {true}},
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
         BuilderType = 'Any',
         BuilderData = {
             Construction = {
                 Location = 'LocationType',
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
                 NearMarkerType = 'Naval Area',
                 BuildStructures = {
                     'T1SeaFactory',
@@ -38,22 +39,62 @@ BuilderGroup {
         },
     },
     Builder {
-        BuilderName = 'SCTAAI T2Naval Factory',
+        BuilderName = 'SCTAAI T2NavalEarly Factory',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 141,
+        Priority = 151,
         InstanceCount = 1,
         BuilderConditions = {
-            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Naval'} },
             { MIBC, 'GreaterThanGameTime', { 900 } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
         BuilderData = {
                 Construction = {
                     Location = 'LocationType',
-                    BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                    BaseTemplate = 'NavalBaseTemplates',
+                    NearMarkerType = 'Naval Area',
+                    BuildStructures = {
+                    'T2SeaFactory',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T2Engineer Naval 250 Mex',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval2',
+        Priority = 101,
+        InstanceCount = 1, -- The max number concurrent instances of this builder.
+        DelayEqualBuildPlattons = {'Mex2Naval', 2},
+        BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Mex2Naval' }},
+            { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 250, -500, 100, 0, 'AntiSurface', 1 }},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
+            Construction = {
+                BuildStructures = {
+                    'T2Resource',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T2Naval Factory',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        Priority = 141,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', { 900 } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { TASlow,   'TAAttackNaval', {true}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+                Construction = {
+                    Location = 'LocationType',
                     NearMarkerType = 'Naval Area',
                     BuildStructures = {
                     'T2SeaFactory',
@@ -75,8 +116,6 @@ BuilderGroup {
         BuilderData = {
                 Construction = {
                     Location = 'LocationType',
-                    BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                    BaseTemplate = 'NavalBaseTemplates',
                     NearMarkerType = 'Naval Area',
                     BuildClose = true,
                     BuildStructures = {
@@ -91,7 +130,7 @@ BuilderGroup {
         Priority = 50,
         InstanceCount = 1,
         BuilderConditions = {
-            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Naval'} },
+            { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ANTINAVY - categories.MOBILE} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.5}},
         },
@@ -99,8 +138,6 @@ BuilderGroup {
         BuilderData = {
             Construction = {
                 BuildClose = false,
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
                 NearMarkerType = 'Naval Area',
                 MarkerRadius = 20,
                 LocationRadius = 75,
@@ -143,8 +180,10 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer Naval Mex 150',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         Priority = 121,
-        InstanceCount = 2, -- The max number concurrent instances of this builder.
+        InstanceCount = 1, -- The max number concurrent instances of this builder.
+        DelayEqualBuildPlattons = {'Mex1Naval', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Mex1Naval' }},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 150, -500, 100, 0, 'AntiSurface', 1 }},
         },
         BuilderType = 'Any',
@@ -164,16 +203,16 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer Naval 300 Mex',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         Priority = 97,
-        InstanceCount = 2,
+        InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Mex1Naval', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Mex1Naval' }},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 300, -500, 150, 0, 'AntiSurface', 1 }},
         },
         BuilderType = 'Any',
         BuilderData = {
             Construction = {
                 Location = 'LocationType',
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
                 NearMarkerType = 'Naval Area',
                 BuildStructures = {
                     'T1Resource',
@@ -187,7 +226,8 @@ BuilderGroup {
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
-            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Naval', 1 } },
+            --{ TASlow, 'TAEnemyUnitsGreaterAtLocationRadius', { BaseEnemyArea, 'LocationType', 0, categories.FACTORY * categories.NAVAL}},	
+            { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.ANTISUB * categories.TECH2 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.75}}, 
         },
@@ -196,8 +236,6 @@ BuilderGroup {
             Construction = {
                 BuildClose = true,
                 NearMarkerType = 'Naval Area',
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
                 MarkerRadius = 20,
                 LocationRadius = 75,
                 LocationType = 'LocationType',
@@ -214,22 +252,69 @@ BuilderGroup {
         }
     },
     Builder {
+        BuilderName = 'SCTAAI Naval Hydro2',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        Priority = 99,
+        InstanceCount = 1, -- The max number concurrent instances of this builder.
+        DelayEqualBuildPlattons = {'HydroLand', 2},
+        BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'HydroNavy' }},
+            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 150}},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
+            NeedGuard = false,
+            DesiresAssist = true,
+            Construction = {
+                BuildStructures = {
+                    'T1HydroCarbon',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T2 Naval PGen',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval2',
+        Priority = 127,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, FUSION} },
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Location = 'LocationType',
+            BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
+            BaseTemplate = 'NavalBaseTemplates',
+            NearMarkerType = 'Naval Area',
+            DesiresAssist = true,
+            NumAssistees = 2,
+            NeedGuard = false,
+            Construction = {
+                BuildStructures = {
+                    'T2EnergyProduction',
+                }
+            }
+        }
+    },
+    Builder {
         BuilderName = 'SCTA Engineer Reclaim Energy Naval',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         PlatoonAIPlan = 'ReclaimStructuresAI',
         Priority = 111,
         InstanceCount = 8,
         BuilderConditions = {
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.ENERGYPRODUCTION * categories.NAVAL}},
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, TIDAL}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} },
             { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
             },
         BuilderData = {
             NearMarkerType = 'Naval Area',
-            BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-            BaseTemplate = 'NavalBaseTemplates',
             Location = 'LocationType',
-            Reclaim = {'ENERGYPRODUCTION NAVAL TECH1'},
+            Reclaim = {'cortide, armtide,'},
             ReclaimTime = 30,
         },
         BuilderType = 'Any',

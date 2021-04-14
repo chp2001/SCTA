@@ -64,9 +64,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 96,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Expansion', 2},
+        DelayEqualBuildPlattons = {'ExpansionStart', 2},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Expansion' }},
+            { UCBC, 'CheckBuildPlattonDelay', { 'ExpansionStart' }},
             { UCBC, 'ExpansionAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
             { TASlow, 'ExpansionBaseCheck', { } }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
@@ -167,7 +167,7 @@ BuilderGroup {
         Priority = 120,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {240} },
+            { MIBC, 'GreaterThanGameTime', {180} },
             { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'Naval' } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.NAVAL} },
             { UCBC, 'NavalBaseCheck', { } },

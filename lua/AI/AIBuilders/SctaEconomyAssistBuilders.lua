@@ -239,12 +239,13 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             Assist = {
-                AssisteeType = 'Engineer',
                 AssistLocation = 'LocationType',
-                BeingBuiltCategories = {'STRUCTURE'},
+                AssisteeType = 'Engineer',
+                AssistRange = 20,
+                BeingBuiltCategories = {'STRUCTURE'},                                        
                 AssistUntilFinished = true,
             },
-        }
+        },
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Idle',

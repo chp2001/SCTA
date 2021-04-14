@@ -29,10 +29,10 @@ BuilderGroup {
         BuilderName = 'SCTAAI Bomber Attack',
         PlatoonTemplate = 'SCTABomberAttack',
         Priority = 100,
-        InstanceCount = 25,
+        FormRadius = 500,
+        InstanceCount = 50,
         BuilderType = 'Any',        
         BuilderConditions = { 
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.BOMBER } },
         },
     },
     Builder {
@@ -51,13 +51,13 @@ BuilderGroup {
         PlatoonTemplate = 'IntieAISCTAALL',
         Priority = 110,
         InstanceCount = 200,
+        FormRadius = 500,
         PlatoonAddBehaviors = { 'AirUnitRefit' },                              
         BuilderType = 'Any',
         BuilderData = {
             Stealth = true,
         },        
         BuilderConditions = { 
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AIR * categories.ANTIAIR } },
         },
     },
 }

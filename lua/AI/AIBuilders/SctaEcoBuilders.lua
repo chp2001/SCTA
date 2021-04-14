@@ -244,11 +244,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Engineer2 Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA23',
-        Priority = 124,
+        Priority = 127,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TECH3 * categories.ENERGYPRODUCTION * categories.STRUCTURE} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
         },
         BuilderType = 'Any',

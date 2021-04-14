@@ -7,7 +7,6 @@ UnitBlueprint {
     AI = {
         TargetBones = {
             'CORLLT',
-            'Stand',
         },
     },
     Audio = {

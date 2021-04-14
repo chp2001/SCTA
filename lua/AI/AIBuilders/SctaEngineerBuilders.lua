@@ -3,6 +3,7 @@ local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
+local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
@@ -17,7 +18,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {600} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.OVERLAYRADAR * categories.LAND * categories.MOBILE} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Land',
     },
@@ -28,7 +29,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {180} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.OVERLAYRADAR * categories.LAND * categories.MOBILE} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Land',
     },
@@ -38,7 +39,7 @@ BuilderGroup {
         Priority = 200,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {180} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1.05 }},
+            { TAutils, 'EcoManagementTA', { 0.75, 1.05, 0.5, 0.5, } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.MOBILE * categories.AIR * categories.SCOUT } },
         },
         BuilderType = 'Air',
@@ -49,7 +50,7 @@ BuilderGroup {
         Priority = 105,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.MOBILE * categories.AIR * categories.SCOUT } },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 1.05 }},
+            { TAutils, 'EcoManagementTA', { 0.5, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
     },

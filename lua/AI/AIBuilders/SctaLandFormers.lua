@@ -58,14 +58,13 @@ BuilderGroup {
         BuilderData = {
             Small = true,
             Laser = true,
+            FormRadius = 500,
             NeverGuardBases = false,
             NeverGuardEngineers = true,
             UseMoveOrder = true,
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
-            { EBC, 'GreaterThanEconStorageCurrent', { 10, 500 } },
         },
     },
     Builder {

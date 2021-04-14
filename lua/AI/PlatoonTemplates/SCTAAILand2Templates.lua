@@ -147,6 +147,7 @@ PlatoonTemplate {
         },
         Core = {
             { 'corgol', 1, 2, 'attack', 'none' },
+            { 'corch', 1, 1, 'attack', 'none' },
             { 'cormart', 1, 1, 'attack', 'none' },
         },
     }

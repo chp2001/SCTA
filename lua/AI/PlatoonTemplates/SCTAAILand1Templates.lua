@@ -138,11 +138,13 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armzeus', 1, 2, 'attack', 'none' },
-            { 'armsnipe', 1, 1, 'attack', 'none' },
+            { 'armch', 1, 1, 'support', 'None' },
+            { 'armmav', 1, 1, 'attack', 'none' },
+            
         },
         Core = {
-            { 'corsumo', 1, 2, 'attack', 'none' },
-            { 'cormort', 1, 1, 'attack', 'none' },
+            { 'corsumo', 1, 2, 'attack', 'none' },   
+            { 'corpyro', 1, 1, 'attack', 'none' },
         },
     }
 }
@@ -151,10 +153,10 @@ PlatoonTemplate {
     Name = 'T3LandDFBotSCTA',
     FactionSquads = {
         Arm = {
-            { 'armmav', 1, 1, 'attack', 'none' },
+            { 'armsnipe', 1, 1, 'attack', 'none' },
         },
         Core = {
-            { 'corpyro', 1, 1, 'attack', 'none' },
+            { 'cormort', 1, 1, 'attack', 'none' },
         },
     }
 }

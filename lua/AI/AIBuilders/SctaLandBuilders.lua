@@ -27,6 +27,8 @@ BuilderGroup {
         Priority = 98,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.DIRECTFIRE * categories.MOBILE,
+            '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Land',
@@ -128,6 +130,8 @@ BuilderGroup {
         Priority = 98,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
+            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.DIRECTFIRE * categories.MOBILE,
+            '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Land',

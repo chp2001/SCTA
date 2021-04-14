@@ -68,13 +68,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Gantry Factory',
         PlatoonTemplate = 'EngineerBuilderSCTA23',
-        Priority = 300,
+        Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1200} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.GATE} }, -- Stop after 10 facs have been built.
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.GATE} },
-            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -257,7 +257,7 @@ BuilderGroup {
             { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesAir' }},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, FUSION} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.9 } },
+            { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
         BuilderType = 'Any',
@@ -277,9 +277,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAEco23',
         Priority = 128,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Factories', 3},
+        DelayEqualBuildPlattons = {'FactoriesAir', 2},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
+            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesAir' }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.AIR * PLATFORM} },
             { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },

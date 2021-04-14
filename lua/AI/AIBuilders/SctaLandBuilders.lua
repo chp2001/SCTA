@@ -25,8 +25,10 @@ BuilderGroup {
         BuilderName = 'SCTAAi Factory Tank',
         PlatoonTemplate = 'T1LandDFTankSCTA',
         Priority = 98,
-        BuilderConditions = {
+        InstanceCount = 4,
+            BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.LAND } },    
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.DIRECTFIRE * categories.MOBILE,
             '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
@@ -37,6 +39,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi Factory Artillery',
         PlatoonTemplate = 'T1LandArtillerySCTA',
         Priority = 74,
+        InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.MOBILE * categories.ARTILLERY,
             '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
@@ -48,6 +51,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi Factory AntiAir',
         PlatoonTemplate = 'T1LandAASCTA',
         Priority = 88,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.LAND } },
             { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,
@@ -61,6 +65,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT2 Tank',
         PlatoonTemplate = 'T2LandDFTankSCTA',
         Priority = 121,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH2 * categories.DIRECTFIRE - categories.SCOUT,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
@@ -72,6 +77,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT2 Artillery',
         PlatoonTemplate = 'T2LandRocketSCTA',
         Priority = 102,
+        InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.TECH2 * categories.SILO,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, 
@@ -83,6 +89,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT2 AntiAir',
         PlatoonTemplate = 'T2LandAASCTA',
         Priority = 105,
+        InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.ANTIAIR * categories.MOBILE,
             '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
@@ -95,7 +102,8 @@ BuilderGroup {
         BuilderName = 'SCTAAi Factory Counter',
         PlatoonTemplate = 'T2LandAuxFact1',
         Priority = 77,
-        BuilderConditions = {   
+        InstanceCount = 1,
+        BuilderConditions = { 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.BOMB * categories.LAND} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
         }, 
@@ -128,8 +136,10 @@ BuilderGroup {
         BuilderName = 'SCTAAi Factory Tank2',
         PlatoonTemplate = 'T1LandDFTankSCTA2',
         Priority = 98,
+        InstanceCount = 4,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {300} },
+        { MIBC, 'GreaterThanGameTime', {300} },
+        { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.LAND } },    
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.DIRECTFIRE * categories.MOBILE,
             '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
@@ -140,6 +150,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi Factory2 Artillery',
         PlatoonTemplate = 'T1LandArtillerySCTA2',
         Priority = 78,
+        InstanceCount = 2,
         BuilderConditions = { 
             { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.MOBILE * (categories.ARTILLERY + categories.SILO),
                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
@@ -151,6 +162,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT2 Tank2',
         PlatoonTemplate = 'T2LandDFTank2SCTA',
         Priority = 120,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH2 * categories.DIRECTFIRE - categories.SCOUT,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
@@ -162,6 +174,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi Factory2 AntiAir',
         PlatoonTemplate = 'T1LandAASCTA2',
         Priority = 81,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.LAND } },
             { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,
@@ -175,6 +188,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT2 Artillery2',
         PlatoonTemplate = 'T2LandMissileSCTA2',
         Priority = 103,
+        InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.TECH2 * categories.SILO * categories.MOBILE,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
@@ -186,9 +200,10 @@ BuilderGroup {
         BuilderName = 'SCTAAi Factory Counter2',
         PlatoonTemplate = 'T2LandAuxFact2',
         Priority = 71,
+        InstanceCount = 1,
         BuilderConditions = {   
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.STEALTHFIELD * categories.LAND} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         }, 
         BuilderType = 'Land',
     },
@@ -196,6 +211,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT2 AntiAir2',
         PlatoonTemplate = 'T2LandAASCTA2',
         Priority = 104,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.ANTIAIR * categories.MOBILE,
             '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
@@ -252,6 +268,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT3 Artillery',
         PlatoonTemplate = 'T3HOVERMISSILESCTA', 
         Priority = 126,
+        InstanceCount = 1,
         BuilderConditions = {
         { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.TECH3 * categories.SILO * categories.MOBILE,
         '<=', categories.MOBILE * categories.LAND - categories.ENGINEER } }, -- Don't make tanks if we have lots of them. },
@@ -263,6 +280,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT3 AntiAir',
         PlatoonTemplate = 'THOVERAASCTA',
         Priority = 133,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,
                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },

@@ -3,11 +3,10 @@
 #
 #Script created by Raevn
 
-local TALaserProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TALaserProjectile
+local TABlueLaserProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TABlueLaserProjectile
 
-ARM_TOTAL_ANNIHILATOR = Class(TALaserProjectile) 
+ARM_TOTAL_ANNIHILATOR = Class(TABlueLaserProjectile) 
 {
-	PolyTrail = '/mods/SCTA-master/effects/emitters/BLUE_LASER_emit.bp',
 }
 
 TypeClass = ARM_TOTAL_ANNIHILATOR

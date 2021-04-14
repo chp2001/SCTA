@@ -3,11 +3,10 @@
 #
 #Script created by Raevn
 
-local TALaserProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TALaserProjectile
+local TABlueLaserProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TABlueLaserProjectile
 
-ARMMANNI_WEAPON = Class(TALaserProjectile) 
+ARMMANNI_WEAPON = Class(TABlueLaserProjectile) 
 {
-	PolyTrail = '/mods/SCTA-master/effects/emitters/BLUE_LASER_emit.bp',
 }
 
 TypeClass = ARMMANNI_WEAPON

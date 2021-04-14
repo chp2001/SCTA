@@ -3,11 +3,10 @@
 #
 #Script created by Raevn
 
-local TALaserProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TALaserProjectile
+local TARedLaserProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TARedLaserProjectile
 
-ARMSH_WEAPON = Class(TALaserProjectile) 
+ARMSH_WEAPON = Class(TARedLaserProjectile) 
 {
-	PolyTrail = '/mods/SCTA-master/effects/emitters/RED_LASER_emit.bp',
 }
 
 TypeClass = ARMSH_WEAPON

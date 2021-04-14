@@ -3,11 +3,10 @@
 #
 #Script created by Raevn
 
-local TALaserProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TALaserProjectile
+local TARedLaserProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TARedLaserProjectile
 
-CORE_LIGHTLASER = Class(TALaserProjectile) 
+CORE_LIGHTLASER = Class(TARedLaserProjectile) 
 {
-	PolyTrail = '/mods/SCTA-master/effects/emitters/RED_LASER_emit.bp',
 }
 
 TypeClass = CORE_LIGHTLASER

@@ -3,7 +3,9 @@ local SinglePolyTrailProjectile = DefaultProjectileFile.SinglePolyTrailProjectil
 local NukeProjectile = DefaultProjectileFile.NukeProjectile
 local OnWaterEntryEmitterProjectile = DefaultProjectileFile.OnWaterEntryEmitterProjectile
 
-TAProjectile = Class(SinglePolyTrailProjectile) {}
+TAProjectile = Class(SinglePolyTrailProjectile) {
+	PolyTrail =  '',
+}
 
 TANuclearProjectile = Class(NukeProjectile) {
 	FxTrails = { '/mods/SCTA-master/effects/emitters/smoke_emit.bp'},

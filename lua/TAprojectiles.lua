@@ -426,9 +426,7 @@ TAUnderWaterProjectile = Class(TADepthCharges) {
 
 	TrackingThread = function(self)
 		self:TrackTarget(false)
-		WaitSeconds(self.TrackTime/2)
-		self:TrackTarget(true)
 		WaitSeconds(self.TrackTime)
-		self:TrackTarget(false)
+		self:TrackTarget(true)
 	end,
 }

@@ -134,7 +134,7 @@ end]]
 
 function TAFactoryCapCheck(aiBrain, locationType, TECH)
     local catCheck = false
-    catCheck = TECH * categories.FACTORY
+    catCheck = TECH * categories.FACTORY - categories.NAVAL
     local factoryManager = aiBrain.BuilderManagers[locationType].FactoryManager
     if not factoryManager then
         WARN('*AI WARNING: FactoryCapCheck - Invalid location - ' .. locationType)

@@ -260,7 +260,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 1000,
-            DamageRadius = 1.5,
+            DamageRadius = 2,
             DamageType = 'OverCharge',
             Overcharge = {
                 energyMult = 0.9,
@@ -328,7 +328,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 1000,
-            DamageRadius = 1.5,
+            DamageRadius = 2,
             DamageType = 'Overcharge',
             DisplayName = 'AutoOverCharge',
             FireTargetLayerCapsTable = {

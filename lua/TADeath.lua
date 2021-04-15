@@ -4,7 +4,7 @@ local explosion = import('/lua/defaultexplosions.lua')
 CreateTAWreckageEffects = function(obj, prop)
     if IsUnit(obj) then
        explosion.CreateWreckageEffects(obj, prop)
-       CreateAttachedEmitter(obj, 0, -1, '/mods/SCTA-master/effects/emitters/wreckage_smoke_emit.bp' )
+       CreateAttachedEmitter(prop, 0, -1, '/mods/SCTA-master/effects/emitters/wreckage_smoke_emit.bp' )
     end
 end
 

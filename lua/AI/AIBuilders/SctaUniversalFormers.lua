@@ -1,6 +1,7 @@
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').GetMOARadii()
 local RAIDER = categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea
 local RAIDAIR = categories.armfig + categories.corveng 
@@ -40,7 +41,7 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {          
-        { UCBC, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.COMMAND }},	
+        { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.COMMAND }},	
         { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AMPHIBIOUS - categories.SCOUT} }, },
     },
     Builder {
@@ -56,7 +57,7 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = { 
-            { UCBC, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.COMMAND }},	
+            { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.COMMAND }},	
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, RAIDER} },
         },
     },
@@ -74,7 +75,7 @@ BuilderGroup {
         },        
         BuilderConditions = { 
             { MIBC, 'LessThanGameTime', {600} },
-            { UCBC, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.ANTIAIR }},	
+            { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.ANTIAIR }},	
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, RAIDAIR} },
         },
     },
@@ -92,7 +93,7 @@ BuilderGroup {
         },     
         BuilderConditions = { 
             { MIBC, 'LessThanGameTime', {900} },
-            { UCBC, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.ANTIAIR }},	
+            { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.ANTIAIR }},	
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.BOMBER + RAIDAIR} },
         },
     },

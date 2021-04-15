@@ -86,6 +86,13 @@ PlatoonTemplate {
     },
 }
 
+PlatoonTemplate {
+    Name = 'EngineerBuilderSCTANaval2',
+    Plan = 'EngineerBuildAISCTANaval',
+    GlobalSquads = {
+        { categories.NAVAL * categories.ENGINEER * categories.TECH2 * TA, 1, 1, 'support', 'None' }
+    },
+}
 
 PlatoonTemplate {
     Name = 'EngineerBuilderSCTANaval',
@@ -184,6 +191,18 @@ PlatoonTemplate {
         },
         Core = {
             { 'corcs', 1, 1, 'support', 'None' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T2EngineerSCTANaval',
+    FactionSquads = {
+        Arm = {
+            { 'armacsub', 1, 1, 'support', 'None' }
+        },
+        Core = {
+            { 'coracsub', 1, 1, 'support', 'None' }
         },
     }
 }

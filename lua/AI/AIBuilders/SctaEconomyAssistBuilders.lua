@@ -8,6 +8,7 @@ local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
+local WIND = (categories.armwin + categories.corwin)
 
 
 BuilderGroup {
@@ -120,7 +121,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
         PlatoonAIPlan = 'ReclaimStructuresAI',
         Priority = 89,
-        InstanceCount = 8,
+        InstanceCount = 4,
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} },
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.VOLATILE}},
@@ -137,22 +138,22 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Energy',
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
         PlatoonAIPlan = 'ReclaimStructuresAI',
-        Priority = 89,
-        InstanceCount = 8,
+        Priority = 88,
+        InstanceCount = 4,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} },
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.LAND * categories.ENERGYPRODUCTION * categories.TECH1}},
-            { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, WIND + categories.VOLATILE}},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.1}},
             },
         BuilderData = {
             Location = 'LocationType',
-            Reclaim = {'TECH1 ENERGYPRODUCTION LAND'},
+            Reclaim = {'VOLATILE, armwin, corwin,'},
                 ReclaimTime = 30,
         },
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'SCTA Engineer Finish',
+        BuilderName = 'SCTA Engineer Air Finish',
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
         Priority = 125,
@@ -164,7 +165,7 @@ BuilderGroup {
             Assist = {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Engineer',
-                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
+                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE,'},
                 Time = 20,
             },
         },

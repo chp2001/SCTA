@@ -1,4 +1,3 @@
-
 BaseBuilderTemplate {
     BaseTemplateName = 'SCTANavalExpansion',
     Builders = {
@@ -31,14 +30,14 @@ BaseBuilderTemplate {
     ExpansionFunction = function(aiBrain, location, markerType)   
         local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
         --LOG('Ai Personality is '..per)
-        if not aiBrain.SCTAAI then
+        if not per == 'SCTAAI' then
             return -1
         end
         if markerType != 'Naval Area' then
-            return 15, 'SCTANavalExpansion'
+            return 10, 'SCTANavalExpansion' 
         end
         --LOG('Return sctaai personality')
-        return 10, 'SCTAAI'
+        return 1000, 'SCTANavalExpansion'
     end,
 }
 

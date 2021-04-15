@@ -25,7 +25,6 @@ BuilderGroup {
         BuilderName = 'SCTAAi Factory Tank',
         PlatoonTemplate = 'T1LandDFTankSCTA',
         Priority = 98,
-        InstanceCount = 4,
             BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.LAND } },    
@@ -136,7 +135,6 @@ BuilderGroup {
         BuilderName = 'SCTAAi Factory Tank2',
         PlatoonTemplate = 'T1LandDFTankSCTA2',
         Priority = 98,
-        InstanceCount = 4,
         BuilderConditions = {
         { MIBC, 'GreaterThanGameTime', {300} },
         { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.LAND } },    

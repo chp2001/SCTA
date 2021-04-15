@@ -12,6 +12,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderType = 'Any',
         BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {600} },
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.SCOUT } },
          },
          BuilderData = {

@@ -64,9 +64,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 96,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Expansion', 2},
+        DelayEqualBuildPlattons = {'ExpansionStart', 2},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Expansion' }},
+            { UCBC, 'CheckBuildPlattonDelay', { 'ExpansionStart' }},
             { UCBC, 'ExpansionAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
             { TASlow, 'ExpansionBaseCheck', { } }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
@@ -167,7 +167,7 @@ BuilderGroup {
         Priority = 120,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {240} },
+            { MIBC, 'GreaterThanGameTime', {180} },
             { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'Naval' } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.NAVAL} },
             { UCBC, 'NavalBaseCheck', { } },
@@ -180,7 +180,7 @@ BuilderGroup {
                 BaseTemplate = 'NavalBaseTemplates',
                 ExpansionBase = true,
                 NearMarkerType = 'Naval Area',
-                ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                ExpansionRadius = 25, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
                 LocationRadius = 200,
                 LocationType = 'LocationType',
                 ThreatMin = -1000,
@@ -201,6 +201,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'NavalStart', 2},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'NavalStart' }},
+            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},
             { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
             { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'Naval' } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
@@ -214,7 +215,7 @@ BuilderGroup {
                 BaseTemplate = 'NavalBaseTemplates',
                 ExpansionBase = true,
                 NearMarkerType = 'Naval Area',
-                ExpansionRadius = 100, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                ExpansionRadius = 25, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
                 LocationRadius = 1000,
                 LocationType = 'LocationType',
                 ThreatMin = -1000,

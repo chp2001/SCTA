@@ -16,7 +16,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 108,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
+        DelayEqualBuildPlattons = {'MexLand2', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 25, -500, 100, 0, 'AntiSurface', 1 }},
         },
         BuilderType = 'Any',
@@ -140,7 +142,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 171,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
-        BuilderConditions = { 
+        DelayEqualBuildPlattons = {'HydroLand', 2},
+        BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'HydroLand' }},
             { MIBC, 'LessThanGameTime', {360} }, 
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 25}},
         },
@@ -168,7 +172,7 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
-            NeedGuard = true,
+            NeedGuard = false,
             DesiresAssist = true,
             Construction = {
                 BuildStructures = {

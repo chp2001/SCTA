@@ -2503,19 +2503,19 @@ Platoon = Class(SCTAAIPlatoon) {
             end
             WaitSeconds(5)
             while aiBrain:PlatoonExists(self) do
-                target = AIUtils.AIFindBrainTargetInRangeSorian(aiBrain, self, 'Attack', maxRadius, atkPri)
+                target = self:FindPrioritizedUnit('Attack', 'Enemy', true, self:GetPlatoonPosition(), maxRadius)
                 if target then
                     blip = target:GetBlip(armyIndex)
                     self:Stop()
-                    cmd = self:AttackTarget((target:GetPosition())
+                   cmd = self:AttackTarget( target )
                 end
                 WaitSeconds(1)
-                if (not cmd or not self:IsCommandsActive(cmd)) then
+                if (not cmd) then
                     target = self:FindClosestUnit('Attack', 'Enemy', true, (categories.NAVAL + categories.ENGINEER) - categories.WALL)
                     if target then
                         blip = target:GetBlip(armyIndex)
                         self:Stop()
-                        cmd = self:AttackTarget((target:GetPosition())
+                        cmd = self:AttackTarget( target )
                     else
                         local scoutPath = {}
                         scoutPath = AIUtils.AIGetSortedNavalLocations(self:GetBrain())

@@ -24,6 +24,7 @@ BuilderGroup {
         BuilderConditions = { 
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Sea' } },
             { TASlow,   'TAAttackNaval', {true}},
+            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},		
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -87,6 +88,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 900 } },
+            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},		
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
             { TASlow,   'TAAttackNaval', {true}},
@@ -131,6 +133,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},
+            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},		
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ANTINAVY - categories.MOBILE} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.5}},
         },
@@ -225,6 +228,7 @@ BuilderGroup {
         BuilderConditions = {
             --{ TASlow, 'TAEnemyUnitsGreaterAtLocationRadius', { BaseEnemyArea, 'LocationType', 0, categories.FACTORY * categories.NAVAL}},	
             { TASlow,   'TAAttackNaval', {true}},
+            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},	
             { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.ANTISUB * categories.TECH2 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.75}}, 
         },

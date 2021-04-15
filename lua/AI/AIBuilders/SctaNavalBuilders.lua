@@ -37,6 +37,7 @@ BuilderGroup {
         Priority = 110,
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.SCOUT * categories.NAVAL } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Sea',
@@ -48,6 +49,7 @@ BuilderGroup {
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},
             { MIBC, 'GreaterThanGameTime', {600} },
+            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},	
             { UCBC, 'HaveUnitRatio', { 0.33, categories.NAVAL * categories.MOBILE * categories.FRIGATE,
             '<=', categories.NAVAL * categories.MOBILE} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } }, -- Stop after 10 facs have been built.
@@ -60,7 +62,7 @@ BuilderGroup {
         Priority = 126,
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},
-            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Naval'} },
+            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},		
             { UCBC, 'HaveUnitRatio', { 0.33, categories.NAVAL * categories.DESTROYER,
             '<=', categories.NAVAL * categories.MOBILE} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
@@ -73,6 +75,7 @@ BuilderGroup {
         Priority = 125,
         BuilderConditions = {
             { TASlow,    'TAAttackNaval', {true}},
+            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},	
             { UCBC, 'HaveUnitRatio', { 0.1, categories.NAVAL * categories.MOBILE * categories.CRUISER,
             '<=', categories.NAVAL * categories.MOBILE} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },

@@ -41,10 +41,10 @@ BaseBuilderTemplate {
             return -1
         elseif markerType != 'Start Location' then
             ---LOG('IEXISTSTART')
-            return 20, 'SCTAAISTARTEXPANSION'
+            return 15, 'SCTAAISTARTEXPANSION'
         else
             --LOG('Return sctaai personality')
-        return -1
+            return 10, 'SCTAAI'
         end
     end,
 }

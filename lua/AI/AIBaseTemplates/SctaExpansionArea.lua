@@ -44,7 +44,7 @@ BaseBuilderTemplate {
             return 25, 'SCTAAIExpansion'
         else
             --LOG('Return sctaai personality')
-        return -1
+            return 10, 'SCTAAI'
         end
     end,
 

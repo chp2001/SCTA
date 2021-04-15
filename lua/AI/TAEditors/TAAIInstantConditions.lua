@@ -236,8 +236,9 @@ end
 
 function EcoManagementTA(aiBrain, mStorageRatio, eStorageRatio, EnergyEfficiency, MassEfficiency)
     local econ = TAAIEcoCondition(aiBrain)
-    if (econ.MassEfficiencyOverTime >= MassEfficiency and econ.EnergyEfficiencyOverTime >= EnergyEfficiency) 
-    or (econ.MassStorageRatio >= mStorageRatio and econ.EnergyStorageRatio >= eStorageRatio) then
+    if (econ.MassStorageRatio >= mStorageRatio and econ.EnergyStorageRatio >= eStorageRatio) then
+        return true
+    elseif (econ.MassEfficiencyOverTime >= MassEfficiency and econ.EnergyEfficiencyOverTime >= EnergyEfficiency) then
         return true
     end
     return false

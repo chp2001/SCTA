@@ -86,7 +86,9 @@ BuilderGroup {
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 975,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
+        DelayEqualBuildPlattons = {'MexLand2', 1},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
             { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 25, -500, 100, 0, 'AntiSurface', 1 }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.MASSEXTRACTION} },
@@ -107,7 +109,9 @@ BuilderGroup {
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 101,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
+        DelayEqualBuildPlattons = {'MexLand2', 1},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
             { MIBC, 'LessThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 125, -500, 25, 0, 'AntiSurface', 1 }},
         },

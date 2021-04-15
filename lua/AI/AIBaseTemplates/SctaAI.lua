@@ -33,10 +33,13 @@ BaseBuilderTemplate {
     },
     BaseSettings = { },
     ExpansionFunction = function(aiBrain, location, markerType)
-        --LOG('MAIN')
+        if not aiBrain.SCTAAI then  
+        return 10, 'SCTAAI'
+        else 
         return -1
+        end
     end,
-    
+
     FirstBaseFunction = function(aiBrain)
 
         local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality

@@ -16,8 +16,8 @@ BaseBuilderTemplate {
             SCU = 0,
         },
         FactoryCount = {
-            Land = 0,
-            Air = 0,
+            Land = 2,
+            Air = 1,
             Sea = 4,
             Gate = 0,
         },
@@ -32,10 +32,10 @@ BaseBuilderTemplate {
         if not aiBrain.SCTAAI then   
         return -1
         elseif markerType != 'Naval Area' or 'Naval Defensive Point' then
-            return 100, 'SCTANavalExpansion' 
+            return 35, 'SCTANavalExpansion' 
         else
             --LOG('Return sctaai personality')
-        return -1
+        return 10, 'SCTAAI'
         end
     end,
 }

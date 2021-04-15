@@ -1332,7 +1332,7 @@ Platoon = Class(SCTAAIPlatoon) {
                   eng:IsUnitState("Attacking") or eng:IsUnitState("Repairing") or 
                   eng:IsUnitState("Reclaiming") or eng:IsUnitState("Capturing") or eng.ProcessBuild != nil do
                   
-            WaitSeconds(3)
+            WaitSeconds(1)
             --if eng.CDRHome then eng:PrintCommandQueue() end
         end
         eng.NotBuildingThread = nil
@@ -2444,6 +2444,10 @@ Platoon = Class(SCTAAIPlatoon) {
                         reclaiming = false
                     end
                 end
+    
+                local basePosition = self:GetPlatoonPosition()
+                local location = AIUtils.RandomLocation(basePosition[1],basePosition[3])
+                self:MoveToLocation(location, false)
                 WaitSeconds(10)
                 self:PlatoonDisband()
             end

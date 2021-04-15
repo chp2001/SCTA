@@ -194,4 +194,23 @@ BuilderGroup {
             }
         }
     },
+    Builder {
+        BuilderName = 'SCTAStaging',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 57,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {600} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.AIRSTAGINGPLATFORM} },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T2AirStagingPlatform',
+                }
+            }
+        }
+    },
 }

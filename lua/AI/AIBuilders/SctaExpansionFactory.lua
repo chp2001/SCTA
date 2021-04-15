@@ -18,7 +18,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 104,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'FactoryExpand', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesExpand' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -41,7 +43,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 106,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'FactoryExpand', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesExpand' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -60,34 +64,13 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTAAI T1Expansion AirFac',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 91,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
-            { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T1AirFactory',
-                }
-            }
-        }
-    },
-    Builder {
         BuilderName = 'SCTAAI T2LAND Expansion',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 112,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'FactoryExpand', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesExpand' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -108,11 +91,38 @@ BuilderGroup {
     ---VEHICLEFact
     ---AirFacts
     Builder {
+        BuilderName = 'SCTAAI T1Expansion AirFac',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 91,
+        InstanceCount = 1,
+        DelayEqualBuildPlattons = {'FactoriesAirExpand', 2},
+        BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesAirExpand' }},
+            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
+            { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.5, 0.5, } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1AirFactory',
+                }
+            }
+        }
+    },
+    Builder {
         BuilderName = 'SCTAAI T2Air Expansion',
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
         Priority = 111,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'FactoriesAirExpand', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesAirExpand' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
             { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -190,25 +200,6 @@ BuilderGroup {
                 BuildClose = true,
                 BuildStructures = {
                     'T2AirFactory',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTAStaging',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 57,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {600} }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.AIRSTAGINGPLATFORM} },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T2AirStagingPlatform',
                 }
             }
         }

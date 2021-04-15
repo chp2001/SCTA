@@ -192,7 +192,7 @@ Platoon = Class(SCTAAIPlatoon) {
             table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
             -- Must use BuildBaseOrdered to start at the marker; otherwise it builds closest to the eng
             --buildFunction = AIBuildStructures.AIBuildBaseTemplateOrderedSCTAAI
-            buildFunction = AIBuildStructures.AIBuildBaseTemplateSCTAAI
+            buildFunction = AIBuildStructures.AIBuildBaseTemplate
         elseif cons.NearMarkerType and cons.NearMarkerType == 'Defensive Point' then
             baseTmpl = baseTmplFile['ExpansionBaseTemplates'][factionIndex]
 
@@ -467,7 +467,7 @@ Platoon = Class(SCTAAIPlatoon) {
             table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
             -- Must use BuildBaseOrdered to start at the marker; otherwise it builds closest to the eng
             --buildFunction = AIBuildStructures.AIBuildBaseTemplateOrdered
-            buildFunction = AIBuildStructures.AIBuildBaseTemplateSCTAAI
+            buildFunction = AIBuildStructures.AIBuildBaseTemplate
         elseif cons.NearMarkerType and cons.NearMarkerType == 'Naval Defensive Point' then
             baseTmpl = baseTmplFile['NavalBaseTemplates'][factionIndex]
 
@@ -768,7 +768,7 @@ Platoon = Class(SCTAAIPlatoon) {
             table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
             -- Must use BuildBaseOrdered to start at the marker; otherwise it builds closest to the eng
             --buildFunction = AIBuildStructures.AIBuildBaseTemplateOrderedSCTAAI
-            buildFunction = AIBuildStructures.AIBuildBaseTemplateSCTAAI
+            buildFunction = AIBuildStructures.AIBuildBaseTemplate
         elseif cons.NearMarkerType and cons.NearMarkerType == 'Defensive Point' then
             baseTmpl = baseTmplFile['ExpansionBaseTemplates'][factionIndex]
 
@@ -1070,7 +1070,7 @@ Platoon = Class(SCTAAIPlatoon) {
             table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
             -- Must use BuildBaseOrdered to start at the marker; otherwise it builds closest to the eng
             --buildFunction = AIBuildStructures.AIBuildBaseTemplateOrderedSCTAAI
-            buildFunction = AIBuildStructures.AIBuildBaseTemplateSCTAAI
+            buildFunction = AIBuildStructures.AIBuildBaseTemplate
         elseif cons.NearMarkerType and cons.NearMarkerType == 'Defensive Point' then
             baseTmpl = baseTmplFile['ExpansionBaseTemplates'][factionIndex]
 
@@ -2396,10 +2396,10 @@ Platoon = Class(SCTAAIPlatoon) {
         
         if self.MovementLayer == 'Air' then 
             return self:EngineerBuildAISCTAAir() 
-        elseif self.MovementLayer == 'Water'  then
-            return self:EngineerBuildAISCTANaval()
-        else
+        elseif self.MovementLayer == 'Land' then
             return self:EngineerBuildAISCTA()
+        else
+            return self:EngineerBuildAISCTANaval()
         end
     end,
 
@@ -2472,9 +2472,6 @@ Platoon = Class(SCTAAIPlatoon) {
                         reclaiming = false
                     end
                 end
-                local basePosition = self:GetPlatoonPosition()
-                local location = AIUtils.RandomLocation(basePosition[1],basePosition[3])
-                self:MoveToLocation(location, false)
                 WaitSeconds(10)
                 self:PlatoonDisband()
             end

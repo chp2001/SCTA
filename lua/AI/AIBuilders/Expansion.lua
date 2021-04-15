@@ -13,7 +13,6 @@ local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local BuildingTmpl = 'BuildingTemplates'
 local BaseTmpl = 'BaseTemplates'
 local ExBaseTmpl = 'ExpansionBaseTemplates'
-local NavalBaseTmpl = 'NavalBaseTemplates'
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
@@ -21,24 +20,6 @@ local SAI = '/lua/ScenarioPlatoonAI.lua'
 local PlatoonFile = '/lua/platoon.lua'
 
 local ExtractorToFactoryRatio = 3
-local NavalExpansionAdjust = function(self, aiBrain, builderManager)
-    if aiBrain.MapWaterRatio < 0.20 and not aiBrain.MassMarkersInWater then
-        --LOG('NavalExpansionAdjust return 0')
-        return 0
-    elseif aiBrain.MapWaterRatio < 0.30 then
-        --LOG('NavalExpansionAdjust return 200')
-        return 200
-    elseif aiBrain.MapWaterRatio < 0.40 then
-        --LOG('NavalExpansionAdjust return 400')
-        return 400
-    elseif aiBrain.MapWaterRatio < 0.60 then
-        --LOG('NavalExpansionAdjust return 650')
-        return 650
-    else
-        --LOG('NavalExpansionAdjust return 750')
-        return 750
-    end
-end
 
 
 BuilderGroup {
@@ -184,25 +165,23 @@ BuilderGroup {
         BuilderName = 'SCTA ACU Naval',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 120,
-        PriorityFunction = NavalExpansionAdjust,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {360} },
-            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'AntiSurface' } },
+            { MIBC, 'GreaterThanGameTime', {180} },
+            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'Naval' } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.NAVAL} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
             { UCBC, 'NavalBaseCheck', { } },
         },
         BuilderType = 'Any',
         BuilderData = {
             Construction = {
                 BuildClose = false,
-                BaseTemplate = NavalBaseTmpl,
+                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
+                BaseTemplate = 'NavalBaseTemplates',
                 ExpansionBase = true,
                 NearMarkerType = 'Naval Area',
-                ExpansionRadius = 50, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
-                LocationRadius = 500,
+                ExpansionRadius = 25, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                LocationRadius = 200,
                 LocationType = 'LocationType',
                 ThreatMin = -1000,
                 ThreatMax = 1000,
@@ -218,7 +197,6 @@ BuilderGroup {
         BuilderName = 'SCTA Naval Expansions',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         Priority = 251,
-        PriorityFunction = NavalExpansionAdjust,
         InstanceCount = 2,
         DelayEqualBuildPlattons = {'NavalStart', 2},
         BuilderConditions = {
@@ -233,10 +211,11 @@ BuilderGroup {
         BuilderData = {
             Construction = {
                 BuildClose = false,
-                BaseTemplate = NavalBaseTmpl,
+                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
+                BaseTemplate = 'NavalBaseTemplates',
                 ExpansionBase = true,
                 NearMarkerType = 'Naval Area',
-                ExpansionRadius = 200, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
+                ExpansionRadius = 25, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
                 LocationRadius = 1000,
                 LocationType = 'LocationType',
                 ThreatMin = -1000,

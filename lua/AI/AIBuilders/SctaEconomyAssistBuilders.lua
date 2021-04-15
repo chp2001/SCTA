@@ -190,26 +190,6 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'SCTA Engineer Reclaim Excess',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
-        PlatoonAIPlan = 'SCTAReclaimAI',
-        FormRadius = 500,
-        Priority = 99,
-        InstanceCount = 2,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 120 } },
-            { MIBC, 'LessThanGameTime', {480} }, 
-            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},   
-            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
-        },
-        BuilderData = {
-            Terrain = true,
-            LocationType = 'LocationType',
-            ReclaimTime = 30,
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
         BuilderName = 'SCTA Commander Assist Gantry Construction',
         PlatoonTemplate = 'CommanderSCTAAssist',
         Priority = 126,

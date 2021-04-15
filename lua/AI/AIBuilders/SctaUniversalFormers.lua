@@ -2,6 +2,7 @@ local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
+local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').GetMOARadii()
 local RAIDER = categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea
 local RAIDAIR = categories.armfig + categories.corveng 
@@ -111,6 +112,25 @@ BuilderGroup {
             UseMoveOrder = true,
             PrioritizedCategories = { 'COMMAND', 'FACTORY -NAVAL', 'EXPERIMENTAL', 'MASSPRODUCTION', 'STRUCTURE -NAVAL' }, # list in order
         },
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim Excess',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        PlatoonAIPlan = 'SCTAReclaimAI',
+        FormRadius = 500,
+        Priority = 153,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', { 120 } },
+            { MIBC, 'LessThanGameTime', {480} }, 
+            { TAutils, 'LessMassStorageMaxTA',  { 0.5}},   
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
+        },
+        BuilderData = {
+            LocationType = 'LocationType',
+            ReclaimTime = 30,
+        },
+        BuilderType = 'Any',
     },
 }
 

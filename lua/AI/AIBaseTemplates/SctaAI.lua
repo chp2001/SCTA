@@ -19,7 +19,8 @@ BaseBuilderTemplate {
         'SCTAAILandFormers',
         'SCTAAIAirFormers',
         'SCTAAIUniversalFormers',
-
+        
+        -- Buildings etc
         'SCTAAIEngineerMiscBuilder',
         'SCTAAIEngineerEcoBuilder',
         'SCTAAIFactoryBuilders',
@@ -33,16 +34,14 @@ BaseBuilderTemplate {
     },
     BaseSettings = { },
     ExpansionFunction = function(aiBrain, location, markerType)
-        if not aiBrain.SCTAAI then  
-        return 10, 'SCTAAI'
-        else 
-        return -1
-        end
+        --LOG('MAIN')
+        return 10
     end,
-
+    
     FirstBaseFunction = function(aiBrain)
 
         local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
+        --LOG('Ai Personality is '..per)
         if per == 'sctaaiarm' or per == 'sctaaicore' or per == 'sctaaiarmcheat' or per == 'sctaaicorecheat' then
             --LOG('Return sctaai personality')
             return 1000, 'SCTAAI'

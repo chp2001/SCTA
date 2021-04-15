@@ -35,21 +35,17 @@ BaseBuilderTemplate {
             T3Value = 18
         },
     },
-
-    ExpansionFunction = function(aiBrain, location, markerType)   
-        local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
-        --LOG('Ai Personality is '..per)
-        if not per == 'SCTAAI' then
+    
+    ExpansionFunction = function(aiBrain, location, markerType)           
+        if not aiBrain.SCTAAI then   
             return -1
-        end
-        --LOG('IEXIST')
-        if markerType != 'Start Location' then
+        elseif markerType != 'Start Location' then
             ---LOG('IEXISTSTART')
             return 20, 'SCTAAISTARTEXPANSION'
+        else
+            --LOG('Return sctaai personality')
+        return -1
         end
-        --LOG('IEXISTFAILSTART')
-        --LOG('Return sctaai personality')
-        return 10, 'SCTAAI'
     end,
 }
 

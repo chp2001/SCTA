@@ -90,7 +90,7 @@ TAEMPNuclearProjectile = Class(NukeProjectile) {
 
 TAHeavyCannonProjectile = Class(TAProjectile) {
 	FxImpactAirUnit = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
@@ -98,7 +98,7 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 	},
 	FxAirUnitHitScale = 2,
 	FxImpactShield = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
@@ -106,7 +106,7 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 	},
 	FxShieldHitScale = 2,
 	FxImpactUnit = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
@@ -114,7 +114,7 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 	},
 	FxUnitHitScale = 2,
 	FxImpactProp = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
@@ -122,7 +122,7 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 	},
 	FxPropHitScale = 2,
 	FxImpactLand = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
@@ -139,23 +139,23 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 
 TACannonProjectile = Class(TAProjectile) {
 	FxImpactAirUnit = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 	},
 	FxAirUnitHitScale = 1.25,
 	FxImpactShield = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 	},
 	FxShieldHitScale = 1.25,
 	FxImpactUnit = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 	},
 	FxUnitHitScale = 1.25,
 	FxImpactProp = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 	},
 	FxPropHitScale = 1.25,
 	FxImpactLand = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 	},
 	FxLandHitScale = 1.25,
 	FxImpactWater = {

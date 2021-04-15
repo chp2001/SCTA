@@ -1,6 +1,7 @@
 WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset aibuildstructures.lua' )
 
 TAAIBuildAdjacency = AIBuildAdjacency
+TAAIMaintainBuildList = AIMaintainBuildList
 
 function AIExecuteBuildStructureSCTAAI(aiBrain, builder, buildingType, closeToBuilder, relative, buildingTemplate, baseTemplate, reference, NearMarkerType)
     local factionIndex = aiBrain:GetFactionIndex()
@@ -41,6 +42,19 @@ function AIExecuteBuildStructureSCTAAI(aiBrain, builder, buildingType, closeToBu
     end
 end
 
+function AIBuildBaseTemplateSCTAAI(aiBrain, builder, buildingType , closeToBuilder, relative, buildingTemplate, baseTemplate, reference, NearMarkerType)
+    local whatToBuild = aiBrain:DecideWhatToBuild(builder, buildingType, buildingTemplate)
+    if whatToBuild then
+        for _,bType in baseTemplate do
+            for n,bString in bType[1] do
+                AIExecuteBuildStructureSCTAAI(aiBrain, builder, buildingType , closeToBuilder, relative, buildingTemplate, baseTemplate, reference)
+
+                return DoHackyLogic(buildingType, builder)
+            end
+        end
+    end
+end
+
 function AIBuildAdjacency( aiBrain, builder, buildingType , closeToBuilder, relative, buildingTemplate, baseTemplate, reference, NearMarkerType)
     if not aiBrain.SCTAAI then
         return TAAIBuildAdjacency( aiBrain, builder, buildingType , closeToBuilder, relative, buildingTemplate, baseTemplate, reference, NearMarkerType)
@@ -73,8 +87,44 @@ function AIBuildBaseTemplateOrderedSCTAAI(aiBrain, builder, buildingType , close
     end
     return 
 end
-    
 
+
+function AIMaintainBuildList(aiBrain, builder, buildingTemplate, brainBaseTemplate)
+    if not aiBrain.SCTAAI then
+        return TAAIMaintainBuildList(aiBrain, builder, buildingTemplate, brainBaseTemplate)
+    end
+    if not buildingTemplate then
+        buildingTemplate = BuildingTemplates[aiBrain:GetFactionIndex()]
+    end
+    for k,v in brainBaseTemplate.List do
+        if builder:CanBuild(v.StructureCategory) then
+            if v.StructureType == 'Resource' or v.StructureType == 'T1HydroCarbon' or v.StructureType == 'T1Resource'
+                or v.StructureType == 'T2Resource' or v.StructureType == 'T3Resource' then
+                for l,type in brainBaseTemplate.Template do
+                    if type[1][1] == v.StructureType then
+                        for m,location in type do
+                            if m > 1 then
+                                if aiBrain:CanBuildStructureAt(v.StructureCategory, BuildToNormalLocation(location)) then
+                                    IssueStop({builder})
+                                    IssueClearCommands({builder})
+                                    aiBrain:BuildStructure(builder, v.StructureCategory, location, false)
+                                    return true
+                                end
+                            end
+                        end
+                    end
+                end
+            elseif aiBrain:FindPlaceToBuild(v.StructureType, v.StructureCategory,  brainBaseTemplate.Template, false, v.CloseToBuilder) then
+                IssueStop({builder})
+                IssueClearCommands({builder})
+                if AIExecuteBuildStructureSCTAAI(aiBrain, builder, v.StructureType , v.CloseToBuilder, false, buildingTemplate, brainBaseTemplate.Template) then
+                    return true
+                end
+            end
+        end
+    end
+    return false
+end
 
 --[[local factionIndex = aiBrain:GetFactionIndex()
 local whatToBuild = aiBrain:DecideWhatToBuild(builder, buildingType, buildingTemplate)
@@ -200,4 +250,87 @@ if location then
 end
 -- At this point we're out of options, so move on to the next thing
 WARN('* SCTAAI: AIExecuteBuildStructureSCTAAI: c-function FindPlaceToBuild() failed! AI-faction: index('..factionIndex..') '..repr(AIFactionName)..', Building Type: '..repr(buildingType)..', engineer-faction: '..repr(builder.factionCategory))
-return false]]
+return false
+
+function AINewExpansionBase(aiBrain, baseName, position, builder, constructionData)
+    if not aiBrain.SCTAAI then
+        return TAAINewExpansionBase(aiBrain, baseName, position, builder, constructionData)
+    end
+    local radius = constructionData.ExpansionRadius or 100
+    if aiBrain.HasPlatoonList then
+        local expansionTypes = constructionData.ExpansionTypes
+    if not expansionTypes then
+        expansionTypes = { 'Air', 'Land', 'Sea', 'Gate' }
+    end
+
+        for k,v in aiBrain.PBM.Locations do
+            if v.LocationType == baseName then
+                return
+            end
+        end
+        aiBrain:PBMAddBuildLocation(position, radius, baseName, true)
+
+        for num, typeString in expansionTypes do
+            for bNum, builder in aiBrain.PBM.Platoons[typeString] do
+                if builder.LocationType == 'MAIN' and CheckExpansionType(typeString, ScenarioInfo.BuilderTable[typeString][builder.BuilderName].ExpansionExclude)  then
+                    local pltnTable = {}
+                    for dField, data in builder do
+                        if dField == 'LocationType' then
+                            pltnTable[dField] = baseName
+                        elseif dField == 'PlatoonHandle' then
+                            pltnTable[dField] = false
+                        elseif dField == 'PlatoonTimeOutThread' then
+                            pltnTable[dField] = nil
+                        else
+                            pltnTable[dField] = data
+                        end
+                    end
+                    table.insert(aiBrain.PBM.Platoons[typeString], pltnTable)
+                    aiBrain.PBM.NeedSort[typeString] = true
+                end
+            end
+        end
+
+    else
+        if not aiBrain.BuilderManagers or aiBrain.BuilderManagers[baseName] or not builder.BuilderManagerData then
+            #LOG('*AI DEBUG: ARMY ' .. aiBrain:GetArmyIndex() .. ': New Engineer for expansion base - ' .. baseName)
+            builder.BuilderManagerData.EngineerManager:RemoveUnit(builder)
+            aiBrain.BuilderManagers[baseName].EngineerManager:AddUnit(builder, true)
+            return
+        end
+
+        aiBrain:AddBuilderManagers(position, radius, baseName, true)
+
+        builder.BuilderManagerData.EngineerManager:RemoveUnit(builder)
+        aiBrain.BuilderManagers[baseName].EngineerManager:AddUnit(builder, true)
+        local baseValues = {}
+        local highPri = false
+        for templateName, baseData in BaseBuilderTemplates do
+            local baseValue = baseData.TAExpansionFunction(aiBrain, position, constructionData.NearMarkerType)
+            table.insert(baseValues, { Base = templateName, Value = baseValue })
+            --SPEW('*AI DEBUG: AINewExpansionBase(): Scann next Base. baseValue= ' .. repr(baseValue) .. ' ('..repr(templateName)..')')
+            if not highPri or baseValue > highPri then
+                --SPEW('*AI DEBUG: AINewExpansionBase(): Possible next Base. baseValue= ' .. repr(baseValue) .. ' ('..repr(templateName)..')')
+                highPri = baseValue
+            end
+        end
+
+        local validNames = {}
+        for k,v in baseValues do
+            if v.Value == highPri then
+                table.insert(validNames, v.Base)
+            end
+        end
+        --SPEW('*AI DEBUG: AINewExpansionBase(): validNames for Expansions ' .. repr(validNames))
+        local pick = validNames[ Random(1, table.getn(validNames)) ]
+
+        if not pick then
+            LOG('*AI DEBUG: ARMY ' .. aiBrain:GetArmyIndex() .. ': Layer Preference - ' .. per .. ' - yielded no base types at - ' .. locationType)
+        end
+
+        --SPEW('*AI DEBUG: AINewExpansionBase(): ARMY ' .. aiBrain:GetArmyIndex() .. ': Expanding using - ' .. pick .. ' at location ' .. baseName)
+        import('/lua/ai/AIAddBuilderTable.lua').AddGlobalBaseTemplate(aiBrain, baseName, pick)
+
+        
+    end
+end]]

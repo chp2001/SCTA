@@ -39,53 +39,6 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTAAI T2LAND Factory',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 111,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T2LandFactory',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTAAI Gantry Factory',
-        PlatoonTemplate = 'EngineerBuilderSCTA23',
-        Priority = 150,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {1200} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.GATE} }, -- Stop after 10 facs have been built.
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.GATE} },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
-            Construction = {
-                BuildStructures = {
-                    'T3QuantumGate',
-                }
-            }
-        }
-    },
-    ---VEHICLEFacts
-    Builder {
         BuilderName = 'SCTAAI T1Engineer LandFac2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 96,
@@ -94,7 +47,7 @@ BuilderGroup {
             { MIBC, 'GreaterThanGameTime', { 120 } },
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  LAB} },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
         BuilderType = 'Any',
@@ -111,53 +64,6 @@ BuilderGroup {
             }
         }
     },
-    Builder {
-        BuilderName = 'SCTAAI T2LAND2 Factory',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 108,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T2LandFactory2',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTAAI T3LAND Hover Factory',
-        PlatoonTemplate = 'EngineerBuilderSCTA3',
-        Priority = 143,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, PLATFORM} },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T3LandFactory',
-                }
-            }
-        }
-    },
-    ---AirFacts
     Builder {
         BuilderName = 'SCTAAI T1Engineer AirFac Early',
         PlatoonTemplate = 'EngineerBuilderSCTA',
@@ -254,6 +160,100 @@ BuilderGroup {
             }
         }
     },
+    Builder {
+        BuilderName = 'SCTAAI T2LAND2 Factory',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        Priority = 108,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T2LandFactory2',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T2LAND Factory',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        Priority = 111,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T2LandFactory',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI Gantry Factory',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        Priority = 150,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {1200} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.GATE} }, -- Stop after 10 facs have been built.
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.GATE} },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildStructures = {
+                    'T3QuantumGate',
+                }
+            }
+        }
+    },
+    ---VEHICLEFacts
+    Builder {
+        BuilderName = 'SCTAAI T3LAND Hover Factory',
+        PlatoonTemplate = 'EngineerBuilderSCTA3',
+        Priority = 143,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, PLATFORM} },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T3LandFactory',
+                }
+            }
+        }
+    },
+    ---AirFacts
     Builder {
         BuilderName = 'SCTAAI T3AirFactory',
         PlatoonTemplate = 'EngineerBuilderSCTAEco23',

@@ -301,13 +301,9 @@ TechLevel = 'RULEUTL_Experimental',
                 {
                     MuzzleBones = {
                         'lmissilemuzzle',
-                    },
-                    RackBone = 'lmissile',
-                },
-                {
-                    MuzzleBones = {
                         'rmissilemuzzle',
                     },
+                    RackBone = 'lmissile',
                     RackBone = 'rmissile',
                 },
             },

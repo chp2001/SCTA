@@ -169,44 +169,34 @@ TechLevel = 'RULEUTL_Advanced',
                 {
                     MuzzleBones = {
                         'rocket1',
-                        'rocket6',
+                        'rocket2',
                     },
 		            VisibleMuzzle = true,
                     RackBone = 'silo1',
+                    RackBone = 'silo2',
+                },
+                {
+                    MuzzleBones = {
+                        'rocket3',
+                        'rocket4',
+                    },
+		             VisibleMuzzle = true,
+                    RackBone = 'silo3',
+                    RackBone = 'silo4',
                 },
                 {
                     MuzzleBones = {
                         'rocket5',
+                        'rocket6',
                     },
 		            VisibleMuzzle = true,
                     RackBone = 'silo5',
-                },
-                {
-                    MuzzleBones = {
-                        'rocket2',
-                    },
-		             VisibleMuzzle = true,
-                    RackBone = 'silo2',
-                },
-                    {
-                    MuzzleBones = {
-                        'rocket6',
-                        'rocket3',
-                    },
-		            VisibleMuzzle = true,
                     RackBone = 'silo6',
-                },
-                {
-                    MuzzleBones = {
-                        'rocket4',
-                    },
-		    VisibleMuzzle = true,
-                    RackBone = 'silo4',
                 },
             },
             RackFireTogether = false,
             RackRecoilDistance = 0,
-            RackReloadTimeout = 0,
+            RackReloadTimeout = 2,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 2,
             RackSalvoSize = 1,

@@ -60,6 +60,29 @@ BuilderGroup {
         }
     },
     Builder {
+        BuilderName = 'SCTAAI T1Expansion AirFac',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        Priority = 91,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
+            { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.5, 0.5, } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1AirFactory',
+                }
+            }
+        }
+    },
+    Builder {
         BuilderName = 'SCTAAI T2LAND Expansion',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 112,
@@ -84,29 +107,6 @@ BuilderGroup {
     },
     ---VEHICLEFact
     ---AirFacts
-    Builder {
-        BuilderName = 'SCTAAI T1Expansion AirFac',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 91,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
-            { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T1AirFactory',
-                }
-            }
-        }
-    },
     Builder {
         BuilderName = 'SCTAAI T2Air Expansion',
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',

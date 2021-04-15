@@ -26,24 +26,19 @@ CORMSHIP = Class(TASea) {
 				self.unit.currentShot = self.unit.currentShot + 1
 				if self.unit.currentShot == 1 then
 					self.unit:HideBone('rocket1', true)
-					self.unit:HideBone('rocket6', true)
-				elseif self.unit.currentShot == 2 then
-					self.unit:ShowBone('rocket1', true)
-					self.unit:HideBone('rocket5', true)
-				elseif self.unit.currentShot == 3 then
-					self.unit:ShowBone('rocket6', true)
 					self.unit:HideBone('rocket2', true)
-				elseif self.unit.currentShot == 4 then
+				elseif self.unit.currentShot == 2 then
 					self.unit:HideBone('rocket3', true)
-					self.unit:HideBone('rocket6', true)
-					self.unit:ShowBone('rocket5', true)
-				else
 					self.unit:HideBone('rocket4', true)
-					self.unit:ShowBone('rocket3', true)
-					WaitSeconds(0.5)
+					self.unit:ShowBone('rocket1', true)
 					self.unit:ShowBone('rocket2', true)
-					WaitSeconds(0.5)
+				else
+					self.unit:HideBone('rocket5', true)
+					self.unit:HideBone('rocket6', true)
+					self.unit:ShowBone('rocket3', true)
 					self.unit:ShowBone('rocket4', true)
+				WaitSeconds(0.5)
+					self.unit:ShowBone('rocket5', true)
 					self.unit:ShowBone('rocket6', true)
 					self.unit.currentShot = 0	
 				end

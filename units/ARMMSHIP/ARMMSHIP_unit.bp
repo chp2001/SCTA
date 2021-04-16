@@ -173,11 +173,6 @@ UnitBlueprint {
                 {
                     MuzzleBones = {
                         'flare1',
-                    },
-                    RackBone = 'launcher2',
-                },
-                {
-                    MuzzleBones = {
                         'flare2',
                     },
                     RackBone = 'launcher2',
@@ -185,7 +180,7 @@ UnitBlueprint {
             },
             RackFireTogether = false,
             RackRecoilDistance = 0,
-            RackReloadTimeout = 2,
+            RackReloadTimeout = 1,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,

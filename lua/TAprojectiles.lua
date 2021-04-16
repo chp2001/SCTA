@@ -3,7 +3,9 @@ local SinglePolyTrailProjectile = DefaultProjectileFile.SinglePolyTrailProjectil
 local NukeProjectile = DefaultProjectileFile.NukeProjectile
 local OnWaterEntryEmitterProjectile = DefaultProjectileFile.OnWaterEntryEmitterProjectile
 
-TAProjectile = Class(SinglePolyTrailProjectile) {}
+TAProjectile = Class(SinglePolyTrailProjectile) {
+	PolyTrail =  '',
+}
 
 TANuclearProjectile = Class(NukeProjectile) {
 	FxTrails = { '/mods/SCTA-master/effects/emitters/smoke_emit.bp'},
@@ -88,7 +90,7 @@ TAEMPNuclearProjectile = Class(NukeProjectile) {
 
 TAHeavyCannonProjectile = Class(TAProjectile) {
 	FxImpactAirUnit = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
@@ -96,7 +98,7 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 	},
 	FxAirUnitHitScale = 2,
 	FxImpactShield = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
@@ -104,7 +106,7 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 	},
 	FxShieldHitScale = 2,
 	FxImpactUnit = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
@@ -112,7 +114,7 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 	},
 	FxUnitHitScale = 2,
 	FxImpactProp = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
@@ -120,7 +122,7 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 	},
 	FxPropHitScale = 2,
 	FxImpactLand = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
@@ -137,23 +139,23 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 
 TACannonProjectile = Class(TAProjectile) {
 	FxImpactAirUnit = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 	},
 	FxAirUnitHitScale = 1.25,
 	FxImpactShield = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 	},
 	FxShieldHitScale = 1.25,
 	FxImpactUnit = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 	},
 	FxUnitHitScale = 1.25,
 	FxImpactProp = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 	},
 	FxPropHitScale = 1.25,
 	FxImpactLand = {
-		'/effects/emitters/napalm_fire_emit_2.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 	},
 	FxLandHitScale = 1.25,
 	FxImpactWater = {
@@ -272,7 +274,7 @@ FlameProjectile = Class(TALightCannonProjectile) {
 	MovementThread = function(self)
 		while not IsDestroyed(self) do
 			local pos = self:GetPosition()
-			DamageArea(self.launcher, pos, self.DamageData.DamageRadius, self.DamageData.DamageAmount, self.DamageData.DamageType, self.DamageData.DamageFriendly)
+			DamageArea(self.launcher, pos, 1, self.DamageData.DamageAmount, self.DamageData.DamageType, self.DamageData.DamageFriendly)
 			WaitSeconds(0.1)
 		end
 	end,

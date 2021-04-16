@@ -29,22 +29,20 @@ ProjectileBlueprint {
     Categories = {
         'CORE',
         'PROJECTILE',
-        'ANTIAIR',
+        'DIRECTFIRE',
     },
     Display = {
         StrategicIconSize = 1,
     },
     General = {
-        Category = 'AntiAir',
+        Category = 'DIRECTFIRE',
         EntityCategory = {
             'CORE',
             'PROJECTILE',
-            'ANTIAIR',
+            'DIRECTFIRE',
         },
         Faction = 'CORE',
-        Weapon = 'COR_BATSLASER',
     },
-
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 43.75,

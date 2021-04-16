@@ -9,6 +9,7 @@ local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
 local WIND = (categories.armwin + categories.corwin)
+local SOLAR = (categories.armsolar + categories.corsolar)
 
 
 BuilderGroup {
@@ -124,12 +125,12 @@ BuilderGroup {
         InstanceCount = 4,
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} },
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, categories.VOLATILE}},
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, SOLAR}},
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             },
         BuilderData = {
             Location = 'LocationType',
-            Reclaim = {'VOLATILE'},
+            Reclaim = {'armsolar, corsolar,'},
                 ReclaimTime = 30,
         },
         BuilderType = 'Any',
@@ -142,7 +143,7 @@ BuilderGroup {
         InstanceCount = 4,
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, WIND + categories.VOLATILE}},
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, WIND + SOLAR}},
             { TAutils, 'LessMassStorageMaxTA',  { 0.1}},
             },
         BuilderData = {

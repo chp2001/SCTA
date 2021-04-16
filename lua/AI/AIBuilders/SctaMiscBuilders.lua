@@ -163,6 +163,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {600} }, 
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0,  categories.TECH2 * categories.FACTORY * categories.AIR} },  
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.AIRSTAGINGPLATFORM} },
         },
         BuilderType = 'Any',

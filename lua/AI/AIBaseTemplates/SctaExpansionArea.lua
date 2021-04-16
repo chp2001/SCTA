@@ -47,7 +47,7 @@ BaseBuilderTemplate {
             end
         --LOG('IEXISTEXPANDFAIL')
         --LOG('Return sctaai personality')
-        return 15, 'SCTAAIExpansion'
+        return 15
     end,
 }
 

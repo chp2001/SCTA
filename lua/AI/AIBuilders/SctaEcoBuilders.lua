@@ -44,7 +44,7 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
-            NeedGuard = false,
+            NeedGuard = true,
             DesiresAssist = false,
             Construction = {
                 BuildStructures = {
@@ -86,7 +86,7 @@ BuilderGroup {
             },
         BuilderType = 'Any',
         BuilderData = {
-            NeedGuard = false,
+            NeedGuard = true,
             DesiresAssist = false,
             Construction = {
                 BuildStructures = {
@@ -173,6 +173,7 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
+            NumAssistees = 2,
             DesiresAssist = true,
             Construction = {
                 BuildStructures = {
@@ -385,8 +386,9 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
-            NeedGuard = true,
+            NeedGuard = false,
             DesiresAssist = true,
+            NumAssistees = 2,
             Construction = {
                 BuildStructures = {
                     'T1HydroCarbon',

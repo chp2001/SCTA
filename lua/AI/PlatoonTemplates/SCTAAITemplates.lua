@@ -7,7 +7,7 @@
 local RAIDER = categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea
 local SPECIAL = RAIDER + categories.EXPERIMENTAL + categories.ENGINEER + categories.SCOUT
 local GROUND = categories.MOBILE * categories.LAND
-local TACATS = categories.ANTISHIELD + categories.AMPHIBIOUS
+local TACATS = categories.ANTISHIELD + categories.AMPHIBIOUS + categories.SILO
 
 PlatoonTemplate {
     Name = 'AntiAirSCTA',
@@ -23,6 +23,22 @@ PlatoonTemplate {
     GlobalSquads = {
         { GROUND * categories.SCOUT * categories.TECH1 * categories.OVERLAYRADAR, 1, 1, 'scout', 'None' },
     }
+}
+
+PlatoonTemplate {
+    Name = 'LandAttackSCTA',
+    Plan = 'AttackSCTAForceAI',
+    GlobalSquads = {
+        { GROUND - SPECIAL - TACATS - categories.AMPHIBIOUS, 2, 20, 'Attack', 'none' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'LandAttackSCTAEarly',
+    Plan = 'SCTAStrikeForceAIEarly',
+    GlobalSquads = {
+        { GROUND * categories.TECH1 - SPECIAL - TACATS, 2, 10, 'Attack', 'none' }
+    },
 }
 
 PlatoonTemplate {
@@ -69,9 +85,18 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTAMissiles',
     Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND * ( categories.SILO + categories.ARTILLERY) - TACATS, 5, 20, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND * ( categories.SILO + categories.ARTILLERY), 5, 20, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
+
+PlatoonTemplate {
+    Name = 'LandRocketAttackSCTA',
+    Plan = 'AttackSCTAForceAI',
+    GlobalSquads = {
+        { GROUND * (categories.SILO + categories.ARTILLERY) - SPECIAL - categories.AMPHIBIOUS, 2, 20, 'Attack', 'none' }
+    },
+}
+
 
 PlatoonTemplate {
     Name = 'StrikeForceSCTALaser',
@@ -90,8 +115,8 @@ PlatoonTemplate {
     Plan = 'SCTAArtyHuntAI', -- The platoon function to use.
     GlobalSquads = {
         { categories.AMPHIBIOUS * categories.LAND - SPECIAL, -- Type of units.
-          2, -- Min number of units.
-          10, -- Max number of units.
+          1, -- Min number of units.
+          5, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
           'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
@@ -110,35 +135,12 @@ PlatoonTemplate {
 }
 
 
-PlatoonTemplate {
-    Name = 'LandAttackSCTA',
-    Plan = 'AttackSCTAForceAI',
-    GlobalSquads = {
-        { GROUND - SPECIAL - TACATS - categories.AMPHIBIOUS, 2, 20, 'Attack', 'none' }
-    },
-}
 
 PlatoonTemplate {
     Name = 'GuardSCTA',
     Plan = 'None',
     GlobalSquads = {
-        { GROUND - SPECIAL, 1, 2, 'guard', 'none' }
-    },
-}
-
-PlatoonTemplate {
-    Name = 'LandAttackSCTAEarly',
-    Plan = 'SCTAStrikeForceAIEarly',
-    GlobalSquads = {
-        { GROUND * categories.TECH1 - SPECIAL - categories.AMPHIBIOUS, 2, 10, 'Attack', 'none' }
-    },
-}
-
-PlatoonTemplate {
-    Name = 'LandRocketAttackSCTA',
-    Plan = 'AttackSCTAForceAI',
-    GlobalSquads = {
-        { GROUND * (categories.SILO + categories.ARTILLERY) - SPECIAL - categories.AMPHIBIOUS, 2, 20, 'Attack', 'none' }
+        { GROUND - SPECIAL, 1, 1, 'guard', 'none' }
     },
 }
 

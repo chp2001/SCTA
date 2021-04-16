@@ -22,7 +22,7 @@ BuilderGroup {
         Priority = 132,
         InstanceCount = 1,
         BuilderConditions = { 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6,  PLANT * categories.NAVAL} },
+            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Sea' } },
             { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, (categories.NAVAL * categories.FACTORY) + categories.xsl0103 + categories.ual0201, 'Enemy'}},		
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
@@ -270,7 +270,7 @@ BuilderGroup {
             Location = 'LocationType',
             NearMarkerType = 'Naval Area',
             NeedGuard = false,
-            DesiresAssist = true,
+            DesiresAssist = false,
             Construction = {
                 BuildStructures = {
                     'T1HydroCarbon',
@@ -284,15 +284,14 @@ BuilderGroup {
         Priority = 127,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, FUSION} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
             { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
         BuilderType = 'Any',
         BuilderData = {
             Location = 'LocationType',
             NearMarkerType = 'Naval Area',
-            DesiresAssist = true,
-            NumAssistees = 2,
+            DesiresAssist = false,
             NeedGuard = false,
             Construction = {
                 BuildStructures = {
@@ -319,5 +318,39 @@ BuilderGroup {
             ReclaimTime = 30,
         },
         BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Defensive Point Naval',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval2',
+        Priority = 76,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, FUSION} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.ANTISHIELD * categories.TECH2 - categories.MOBILE} }, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.75}}, 
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Construction = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            BuildClose = true,
+            OrderedTemplate = true,
+            NearBasePatrolPoints = false,
+                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TA2TowerTemplates.lua',
+                BaseTemplate = 'T2TowerTemplate',
+                BuildStructures = {
+                    'T2GroundDefense',
+                    'Wall2',
+                    'Wall2',
+                    'Wall2',
+                    'Wall2',
+                    'Wall2',
+                    'Wall2',
+                    'Wall2',
+                    'Wall2',
+                },
+            },
+        }
     },
 }

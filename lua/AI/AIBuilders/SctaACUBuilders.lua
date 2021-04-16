@@ -37,14 +37,14 @@ BuilderGroup {
         }	
     },
     Builder {
-        BuilderName = 'SCTA AI ACU Factory',
+        BuilderName = 'SCTA AI ACU Alternate Factory',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 950,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {240} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
             { MIBC, 'GreaterThanGameTime', {90} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, PLANT} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, PLANT * ((categories.CORE * categories.BOT) + (categories.ARM * categories.TANK))} },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.1}},
         },
@@ -56,6 +56,30 @@ BuilderGroup {
                 BuildClose = true,
                 BuildStructures = {
                     'T1LandFactory2',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTA AI ACU Main Factory',
+        PlatoonTemplate = 'CommanderBuilderSCTA',
+        Priority = 960,
+        InstanceCount = 2, -- The max number concurrent instances of this builder.
+        BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {240} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'GreaterThanGameTime', {90} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, PLANT * ((categories.CORE * categories.TANK) + (categories.ARM * categories.BOT))} },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.5, 0.5 } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.1}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T1LandFactory',
                 }
             }
         }
@@ -151,7 +175,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Commander AirFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 96,
+        Priority = 955,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {480} }, 

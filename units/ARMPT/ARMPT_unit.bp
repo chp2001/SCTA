@@ -160,10 +160,10 @@ TechLevel = 'RULEUTL_Basic',
             FiringTolerance = 10,
             Label = 'WEAPON',
             MaxRadius = 38,
-            MuzzleSalvoDelay = 0,
+            MuzzleSalvoDelay = 0.1,
             MuzzleSalvoSize = 2,
-            MuzzleVelocity = 28.125,
-            ProjectileId = '/mods/SCTA-master/projectiles/ARMKBOT_MISSILE/ARMKBOT_MISSILE_proj.bp',
+            MuzzleVelocity = 20,
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMPSHIP_MISSILE/ARMPSHIP_MISSILE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

@@ -12,7 +12,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAMissileTower',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 51,
+        Priority = 22,
         InstanceCount = 3,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.SILO - categories.MOBILE} },
@@ -178,7 +178,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Defense Point 1',
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
-        Priority = 62,
+        Priority = 44,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {480} }, -- Don't make tanks if we have lots of them.
@@ -213,9 +213,9 @@ BuilderGroup {
         Priority = 76,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} }, 
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, FUSION} }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.ANTISHIELD * categories.TECH2 - categories.MOBILE} }, 
-            { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.75}}, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.75}}, 
         },
         BuilderType = 'Any',
         BuilderData = {

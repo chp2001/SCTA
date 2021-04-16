@@ -1524,6 +1524,9 @@ Platoon = Class(SCTAAIPlatoon) {
                         self:SetPlatoonFormationOverride('AttackFormation')
                         self:AttackTarget( target )
                         end
+                    elseif data.AggressiveMove then
+                        self:Stop()
+                        self:AggressiveMoveToLocation(table.copy(target:GetPosition()))
                     else
                         self:MoveToLocation( table.copy( target:GetPosition() ), false)
                     end
@@ -2000,6 +2003,9 @@ Platoon = Class(SCTAAIPlatoon) {
                 if PlatoonFormation != 'No Formation' then
                     --self:SetPlatoonFormationOverride('AttackFormation')
                     IssueFormAttack(platoonUnits, closestTarget, PlatoonFormation, 0)
+                elseif data.AggressiveMove then
+                    self:Stop()
+                    self:AggressiveMoveToLocation(table.copy(target:GetPosition()))
                 else
                     IssueAttack(platoonUnits, closestTarget)
                 end
@@ -2363,17 +2369,17 @@ Platoon = Class(SCTAAIPlatoon) {
         end
 
         while aiBrain:PlatoonExists(self) do
-            structure = self:FindClosestUnit('Attack', 'Enemy', true, categories.ENERGYPRODUCTION - categories.WALL - categories.MOBILE)
+            structure = self:FindClosestUnit('Attack', 'Enemy', true, categories.STRUCTURE * (categories.ENERGYPRODUCTION + categories.MASSEXTRACTION))
             if not structure then
                 WaitSeconds(1)
                 return self:SCTALabAI()
             end
             if structure and structure:GetFractionComplete() == 1 then
-                local EcoThreat = aiBrain:GetThreatAtPosition(table.copy(structure:GetPosition()), 1, true, 'Economy')
+                local SurfaceThreat = aiBrain:GetThreatAtPosition(table.copy(structure:GetPosition()), 1, true, 'AntiSurface')
                 --LOG("Air threat: " .. airThreat)
-                local SurfaceThreat = aiBrain:GetThreatAtPosition(table.copy(structure:GetPosition()), 1, true, 'AntiSurface') - EcoThreat
+                local SurfaceAntiThreat = aiBrain:GetThreatAtPosition(table.copy(structure:GetPosition()), 1, true, 'AntiSurface') - SurfaceThreat
                 --LOG("AntiAir threat: " .. antiAirThreat)
-                if SurfaceThreat < 1.5 then
+                if SurfaceAntiThreat < 1.5 then
                     blip = structure:GetBlip(armyIndex)
                     self:Stop()
                     self:AttackTarget(structure)
@@ -2478,52 +2484,84 @@ Platoon = Class(SCTAAIPlatoon) {
 
 
         NavalHuntSCTAAI = function(self)
-            self:Stop()
+  
             local aiBrain = self:GetBrain()
             local armyIndex = aiBrain:GetArmyIndex()
+            local data = self.PlatoonData
+            local categoryList = {}
+            local atkPri = {}
+            if data.PrioritizedCategories then
+                for k,v in data.PrioritizedCategories do
+                    table.insert( atkPri, v )
+                    table.insert( categoryList, ParseEntityCategory( v ) )
+                end
+            end
+            local atkPri = { 'ENGINEER', 'FACTORY NAVAL', 'NAVAL MOBILE', 'HOVER' }
+            table.insert( categoryList, categories.ALLUNITS - categories.COMMAND)
+            self:SetPrioritizedTargetList( 'Attack', categoryList )
             local target
-            local blip
-            local cmd = false
-            local platoonUnits = self:GetPlatoonUnits()
-            local PlatoonFormation = self.PlatoonData.UseFormation or 'NoFormation'
-            self:SetPlatoonFormationOverride(PlatoonFormation)
-            local atkPri = { 'ENGINEER', 'FACTORY NAVAL', 'NAVAL MOBILE' }
-            local atkPriTable = {}
-            for k,v in atkPri do
-                table.insert(atkPriTable, ParseEntityCategory(v))
-            end
-            self:SetPrioritizedTargetList('Attack', atkPriTable)
-            local maxRadius = 6000
-            for k,v in platoonUnits do
-    
-                if v.Dead then
-                    continue
-                end
-            end
-            WaitSeconds(5)
+            local blip = false
+            local maxRadius = data.SearchRadius or 50
+            local movingToScout = false
             while aiBrain:PlatoonExists(self) do
-                target = self:FindPrioritizedUnit('Attack', 'Enemy', true, self:GetPlatoonPosition(), maxRadius)
-                if target then
-                    blip = target:GetBlip(armyIndex)
-                    self:Stop()
-                   cmd = self:AttackTarget( target )
-                end
-                WaitSeconds(1)
-                if (not cmd) then
-                    target = self:FindClosestUnit('Attack', 'Enemy', true, (categories.NAVAL + categories.ENGINEER) - categories.WALL)
+                if not target or target:IsDead() then
+                    if aiBrain:GetCurrentEnemy() and aiBrain:GetCurrentEnemy():IsDefeated() then
+                        aiBrain:PickEnemyLogic()
+                    end
+                    local mult = { 1,10,25 }
+                    for _,i in mult do
+                        target = AIUtils.AIFindBrainTargetInRange( aiBrain, self, 'Attack', maxRadius * i, atkPri, aiBrain:GetCurrentEnemy() )
+                        if target then
+                            break
+                        end
+                        WaitSeconds(3)
+                        if not aiBrain:PlatoonExists(self) then
+                            return
+                        end
+                    end
+                    target = self:FindPrioritizedUnit('Attack', 'Enemy', true, self:GetPlatoonPosition(), maxRadius)
                     if target then
-                        blip = target:GetBlip(armyIndex)
                         self:Stop()
-                        cmd = self:AttackTarget( target )
-                    else
-                        local scoutPath = {}
-                        scoutPath = AIUtils.AIGetSortedNavalLocations(self:GetBrain())
-                        for k, v in scoutPath do
-                            self:Patrol(v)
+                        if not data.UseMoveOrder then
+                            self:AttackTarget( target )
+                        else
+                            --self:SetPlatoonFormationOverride('Attack')
+                            self:MoveToLocation( table.copy( target:GetPosition() ), false)
+                        end
+                        movingToScout = false
+                    elseif not movingToScout then
+                        movingToScout = true
+                        self:Stop()
+                        for k,v in AIUtils.AIGetSortedMassLocations(aiBrain, 10, nil, nil, nil, nil, self:GetPlatoonPosition()) do
+                            if v[1] < 0 or v[3] < 0 or v[1] > ScenarioInfo.size[1] or v[3] > ScenarioInfo.size[2] then
+                            end
+                            --self:SetPlatoonFormationOverride('Attack')
+                            self:MoveToLocation( (v), false )
                         end
                     end
                 end
-                WaitSeconds(5)
+                WaitSeconds( 7 )
             end
         end,
+
+        SubHuntSCTAAI = function(self)
+            self:Stop()
+            local aiBrain = self:GetBrain()
+            local armyIndex = aiBrain:GetArmyIndex()
+            local data = self.PlatoonData
+            local target
+            while aiBrain:PlatoonExists(self) do
+                target = self:FindClosestUnit('Attack', 'Enemy', true, categories.SUBMERSIBLE)
+                if target then
+                    blip = target:GetBlip(armyIndex)
+                    self:Stop()
+                    self:AttackTarget(target)
+                    --DUNCAN - added to try and stop AI getting stuck.
+                    local position = AIUtils.RandomLocation(target:GetPosition()[1],target:GetPosition()[3])
+                    self:MoveToLocation(position, false)
+                end
+                WaitSeconds(17)
+            end
+        end,
+
 }

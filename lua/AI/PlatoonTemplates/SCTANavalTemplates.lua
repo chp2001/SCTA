@@ -17,6 +17,14 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
+    Name = 'SCTASubHunter',
+    Plan = 'SubHuntSCTAAI',
+    GlobalSquads = {
+        { NAVY * categories.SUBMERSIBLE - categories.ENGINEER, 1, 2, 'Attack', 'GrowthFormation' },
+    }
+}
+
+PlatoonTemplate {
     Name = 'SCTANavalAssault',
     Plan = 'NavalForceAISorian',
     GlobalSquads = {
@@ -37,7 +45,7 @@ PlatoonTemplate {
     Name = 'SCTANavalAssaultT2',
     Plan = 'NavalForceAISorian',
     GlobalSquads = {
-        {NAVY - categories.ENGINEER, 10, 20, 'Attack', 'GrowthFormation' }
+        {NAVY - categories.ENGINEER, 1, 5, 'Attack', 'GrowthFormation' }
     },
 }
 
@@ -79,6 +87,30 @@ PlatoonTemplate {
         Core = {
             { 'corcrus', 1, 1, 'Attack', 'GrowthFormation'},
             { 'corpt', 1, 2, 'Attack', 'GrowthFormation' },
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T2SubSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armsubk', 1, 1, 'Attack', 'GrowthFormation'},
+        },
+        Core = {
+            { 'corshark', 1, 1, 'Attack', 'GrowthFormation'},
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T1SubSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armsub', 1, 1, 'Attack', 'GrowthFormation'},
+        },
+        Core = {
+            { 'corsub', 1, 1, 'Attack', 'GrowthFormation'},
         },
     }
 }

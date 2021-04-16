@@ -22,9 +22,9 @@ BuilderGroup {
         Priority = 132,
         InstanceCount = 1,
         BuilderConditions = { 
-            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Sea' } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6,  PLANT * categories.NAVAL} },
             { TASlow,   'TAAttackNaval', {true}},
-            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},		
+            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, (categories.NAVAL * categories.FACTORY) + categories.xsl0103 + categories.ual0201, 'Enemy'}},		
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },

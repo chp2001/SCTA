@@ -22,7 +22,8 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Factories', 2},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
-            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 12,  PLANT} },
+            --{ TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  LAB} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.2, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -48,7 +49,8 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Factories', 2},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
-            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 12,  LAB} },
+            --{ TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -98,7 +100,8 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
             { MIBC, 'GreaterThanGameTime', { 120 } },
-            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 12,  PLANT} },
+            --{ TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  LAB} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -125,7 +128,8 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Factories', 2},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factories' }},
-            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 12,  LAB} },
+            --{ TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },

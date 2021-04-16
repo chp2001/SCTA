@@ -66,9 +66,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 112,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'FactoryExpand', 2},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesExpand' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -118,9 +116,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
         Priority = 111,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'FactoriesAirExpand', 2},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesAirExpand' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
             { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },

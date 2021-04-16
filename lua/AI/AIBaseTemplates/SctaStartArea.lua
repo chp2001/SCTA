@@ -49,7 +49,7 @@ BaseBuilderTemplate {
         end
         --LOG('IEXISTFAILSTART')
         --LOG('Return sctaai personality')
-        return 20, 'SCTAAISTARTEXPANSION'
+        return 20
     end,
 }
 

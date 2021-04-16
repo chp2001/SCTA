@@ -32,6 +32,31 @@ BuilderGroup {
         },
     },
     Builder {
+        BuilderName = 'SCTA Sub Hunt Ships',
+        PlatoonTemplate = 'SCTASubHunter',
+        Priority = 100,
+        InstanceCount = 5,
+        BuilderType = 'Any',
+        BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.SUBMERSIBLE - categories.ENGINEER} },
+         },
+         BuilderData = {
+            UseFormation = 'AttackFormation',
+            ThreatWeights = {
+                IgnoreStrongerTargetsRatio = 100.0,  #DUNCAN - uncommented, was 100
+                AggressiveMove = false,
+                PrimaryThreatTargetType = 'AntiSub',
+                SecondaryThreatTargetType = 'Naval',
+                SecondaryThreatWeight = 0.1,
+                WeakAttackThreatWeight = 1,
+                VeryNearThreatWeight = 10,
+                NearThreatWeight = 5,
+                MidThreatWeight = 1,
+                FarThreatWeight = 1,
+            },
+        },
+    },
+    Builder {
         BuilderName = 'SCTA T1 Naval Assault',
         PlatoonTemplate = 'SCTANavalAssault',
         Priority = 50,
@@ -53,7 +78,7 @@ BuilderGroup {
             },
         },
         BuilderConditions = {
-            { UCBC, 'UnitsLessAtLocation', { 'LocationType', 1, 'MOBILE TECH3 NAVAL' } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.MOBILE - categories.ENGINEER } },
         },
     },
     Builder {
@@ -66,8 +91,8 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
             ThreatWeights = {
                 IgnoreStrongerTargetsRatio = 100.0,  #DUNCAN - uncommented, was 100
-                PrimaryThreatTargetType = 'Naval',
-                SecondaryThreatTargetType = 'Economy',
+                PrimaryThreatTargetType = 'Economy',
+                SecondaryThreatTargetType = 'Naval',
                 AggressiveMove = false,
                 SecondaryThreatWeight = 0.1,
                 WeakAttackThreatWeight = 1,
@@ -78,7 +103,7 @@ BuilderGroup {
             },
         },
         BuilderConditions = {
-            { UCBC, 'UnitsLessAtLocation', { 'LocationType', 1, 'MOBILE TECH3 NAVAL' } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.MOBILE - categories.ENGINEER} },
         },
     },
 }

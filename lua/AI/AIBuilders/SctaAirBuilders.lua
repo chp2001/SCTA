@@ -35,6 +35,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1AirFighterSCTA',
         Priority = 95,
         BuilderConditions = { -- Only make inties if the enemy air is strong
+        { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.AIR * categories.MOBILE, 'Enemy'}},		
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.AIR } },
             { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.2, 0.5, } },
         },

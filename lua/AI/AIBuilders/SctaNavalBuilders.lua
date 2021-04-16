@@ -43,13 +43,49 @@ BuilderGroup {
         BuilderType = 'Sea',
     },
     Builder {
+        BuilderName = 'SCTAAi Factory Hover',
+        PlatoonTemplate = 'T1ScoutShipSCTA',
+        Priority = 115,
+        BuilderConditions = {
+            { TASlow,   'TAAttackNaval', {true}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 15, categories.SCOUT * categories.NAVAL } },
+            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.xsl0103 + categories.ual0201, 'Enemy'}},	
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+        },
+        BuilderType = 'Sea',
+    },
+    Builder {
+        BuilderName = 'SCTAAi FactoryT1 AntiSub',
+        PlatoonTemplate = 'T1SubSCTA',
+        Priority = 120,
+        BuilderConditions = {
+            { TASlow,   'TAAttackNaval', {true}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.SUBMERSIBLE - categories.ENGINEER} },
+            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.SUBMERSIBLE * categories.MOBILE, 'Enemy'}},	
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+        },
+        BuilderType = 'Sea',
+    },
+    Builder {
+        BuilderName = 'SCTAAi FactoryT2 AntiSub',
+        PlatoonTemplate = 'T2SubSCTA',
+        Priority = 115,
+        BuilderConditions = {
+            { TASlow,   'TAAttackNaval', {true}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.SUBMERSIBLE - categories.ENGINEER} },
+            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.SUBMERSIBLE * categories.MOBILE, 'Enemy'}},	
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+        },
+        BuilderType = 'Sea',
+    },
+    Builder {
         BuilderName = 'SCTAAi Frigate Naval',
         PlatoonTemplate = 'T1FrigateSCTA',
         Priority = 120,
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},
             { MIBC, 'GreaterThanGameTime', {600} },
-            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, (categories.NAVAL * categories.FACTORY) + categories.xsl0103 + categories.ual0201, 'Enemy'}},	
+            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, (categories.NAVAL * categories.FACTORY), 'Enemy'}},	
             { UCBC, 'HaveUnitRatio', { 0.33, categories.NAVAL * categories.MOBILE * categories.FRIGATE,
             '<=', categories.NAVAL * categories.MOBILE} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } }, -- Stop after 10 facs have been built.

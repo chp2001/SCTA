@@ -1,28 +1,28 @@
-#CORE Hurricane Bomb Weapon
-#CORADVBOMB
+#ARM Jethro Missile
+#ARMKBOT_MISSILE
 #
-#Blueprint created by Raevn
+#Projectile created by Raevn
 
 ProjectileBlueprint {
     Audio = {
         Impact = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOMED2',
+            Cue = 'XPLOSML2',
             LodCutoff = 'Weapon_LodCutoff',
         },
         ImpactUnit = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOMED2',
+            Cue = 'XPLOSML2',
             LodCutoff = 'Weapon_LodCutoff',
         },
         ImpactShield = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOMED2',
+            Cue = 'XPLOSML2',
             LodCutoff = 'Weapon_LodCutoff',
         },
         ImpactTerrain = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOMED2',
+            Cue = 'XPLOSML2',
             LodCutoff = 'Weapon_LodCutoff',
         },
         ImpactWater = Sound {
@@ -32,31 +32,37 @@ ProjectileBlueprint {
         },
     },
     Categories = {
-        'CORE',
+        'ARM',
         'PROJECTILE',
-        'INDIRECTFIRE',
+        'ANTIAIR',
+        'MISSILE',
     },
     Display = {
-        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/bomb_mesh.bp',
-        UniformScale = 0.16,
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/missile_mesh.bp',
         StrategicIconSize = 1,
+        UniformScale = 0.16,
     },
     General = {
-        Category = 'Bomb',
+        Category = 'Anti Air',
         EntityCategory = {
-            'CORE',
+       	    'ARM',
             'PROJECTILE',
-            'INDIRECTFIRE',
+   	        'ANTIAIR',
+       	    'MISSILE',
         },
-        Faction = 'CORE',
+        Faction = 'ARM',
     },
     Physics = {
+        Acceleration = 2,
         DestroyOnWater = true,
-        RealisticOrdinance = true,
-        Lifetime = 30,
+        InitialSpeed = 20,
         LeadTarget = false,
-	UseGravity = true,
+        Lifetime = 4,
+        TrackTime = 1,
+        MaxSpeed = 30,
+        TrackTarget = true,
+        TurnRate = 181,
+        UseGravity = true,
         VelocityAlign = true,
-        TurnRate = 30,
     },
 }

@@ -160,14 +160,14 @@ TechLevel = 'RULEUTL_Basic',
             MaxRadius = 36.875,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 28.125,
-            ProjectileId = '/mods/SCTA-master/projectiles/CORKBOT_MISSILE/CORKBOT_MISSILE_proj.bp',
+            MuzzleVelocity = 20,
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMPSHIP_MISSILE/ARMPSHIP_MISSILE_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
                         'missile',
                     },
-                    RackBone = 'missile',
+                    RackBone = 'missileTurret',
                 },
             },
             RackRecoilDistance = 0,

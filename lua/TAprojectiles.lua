@@ -274,7 +274,7 @@ FlameProjectile = Class(TALightCannonProjectile) {
 	MovementThread = function(self)
 		while not IsDestroyed(self) do
 			local pos = self:GetPosition()
-			DamageArea(self.launcher, pos, self.DamageData.DamageRadius, self.DamageData.DamageAmount, self.DamageData.DamageType, self.DamageData.DamageFriendly)
+			DamageArea(self.launcher, pos, 1, self.DamageData.DamageAmount, self.DamageData.DamageType, self.DamageData.DamageFriendly)
 			WaitSeconds(0.1)
 		end
 	end,

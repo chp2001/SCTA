@@ -143,7 +143,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI LandExpansion Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 545,
+        Priority = 41,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {900} },
@@ -165,7 +165,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI LandExpansionT2 Emergency2',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 543,
+        Priority = 43,
         InstanceCount = 1,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
@@ -186,7 +186,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI AirExpansionT2 Emergency',
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
-        Priority = 453,
+        Priority = 53,
         InstanceCount = 1,
         BuilderConditions = {
             { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.75}},

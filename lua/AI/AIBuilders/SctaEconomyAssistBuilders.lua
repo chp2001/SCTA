@@ -154,8 +154,8 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'SCTA Engineer Air Finish',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco123',
+        BuilderName = 'SCTA Engineer Finish',
+        PlatoonTemplate = 'EngineerBuilderSCTAALL',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
         Priority = 125,
         InstanceCount = 2,
@@ -274,7 +274,7 @@ BuilderGroup {
     Priority = 5,
     InstanceCount = 5,
     BuilderConditions = {
-        { MIBC, 'GreaterThanGameTime', {300} },
+        { MIBC, 'GreaterThanGameTime', {900} },
         { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
         { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
     },
@@ -295,7 +295,7 @@ Builder {
     Priority = 5,
     InstanceCount = 5,
     BuilderConditions = {
-        { MIBC, 'GreaterThanGameTime', {300} },
+        { MIBC, 'GreaterThanGameTime', {900} },
         { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.MOBILE }},
         { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
     },

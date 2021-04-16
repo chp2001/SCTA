@@ -18,9 +18,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 104,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'FactoryExpand', 2},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesExpand' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -29,6 +27,7 @@ BuilderGroup {
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
+            LocationType = 'LocationType',
             NumAssistees = 2,
             Construction = {
                 BuildClose = true,
@@ -43,9 +42,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 106,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'FactoryExpand', 2},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesExpand' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -55,6 +52,7 @@ BuilderGroup {
             NeedGuard = false,
             DesiresAssist = true,
             NumAssistees = 2,
+            LocationType = 'LocationType',
             Construction = {
                 BuildClose = true,
                 BuildStructures = {
@@ -79,6 +77,7 @@ BuilderGroup {
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
+            LocationType = 'LocationType',
             NumAssistees = 2,
             Construction = {
                 BuildClose = true,
@@ -95,9 +94,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 91,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'FactoriesAirExpand', 2},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'FactoriesAirExpand' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
             { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
@@ -105,6 +102,7 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
+            LocationType = 'LocationType',
             DesiresAssist = true,
             NumAssistees = 2,
             Construction = {
@@ -130,6 +128,7 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
+            LocationType = 'LocationType',
             DesiresAssist = true,
             NumAssistees = 2,
             Construction = {

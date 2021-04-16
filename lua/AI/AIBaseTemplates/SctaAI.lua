@@ -35,15 +35,11 @@ BaseBuilderTemplate {
     BaseSettings = { },
     ExpansionFunction = function(aiBrain, location, markerType)
         --LOG('MAIN')
-        return 10
+        return -1
     end,
     
     FirstBaseFunction = function(aiBrain)
-
-        local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
-        --LOG('Ai Personality is '..per)
-        if per == 'sctaaiarm' or per == 'sctaaicore' or per == 'sctaaiarmcheat' or per == 'sctaaicorecheat' then
-            --LOG('Return sctaai personality')
+        if aiBrain.SCTAAI then
             return 1000, 'SCTAAI'
         end
         return -1

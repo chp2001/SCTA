@@ -45,7 +45,7 @@ BaseBuilderTemplate {
         --LOG('IEXIST')
         if markerType != 'Start Location' then
             ---LOG('IEXISTSTART')
-            return 20, 'SCTAAISTARTEXPANSION'
+            return -1
         end
         --LOG('IEXISTFAILSTART')
         --LOG('Return sctaai personality')

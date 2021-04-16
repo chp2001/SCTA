@@ -34,10 +34,10 @@ BaseBuilderTemplate {
             return -1
         end
         if markerType != 'Naval Area' then
-            return 10, 'SCTANavalExpansion' 
+            return -1
         end
         --LOG('Return sctaai personality')
-        return 1000, 'SCTANavalExpansion'
+        return 55, 'SCTANavalExpansion'
     end,
 }
 

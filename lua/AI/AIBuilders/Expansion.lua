@@ -177,8 +177,7 @@ BuilderGroup {
         BuilderData = {
             Construction = {
                 BuildClose = false,
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
+                BaseTemplate = ExBaseTmpl,
                 ExpansionBase = true,
                 NearMarkerType = 'Naval Area',
                 ExpansionRadius = 25, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
@@ -212,8 +211,7 @@ BuilderGroup {
         BuilderData = {
             Construction = {
                 BuildClose = false,
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
+                BaseTemplate = ExBaseTmpl,
                 ExpansionBase = true,
                 NearMarkerType = 'Naval Area',
                 ExpansionRadius = 25, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close

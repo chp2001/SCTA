@@ -32,8 +32,6 @@ BuilderGroup {
         BuilderData = {
             Construction = {
                 Location = 'LocationType',
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
                 NearMarkerType = 'Naval Area',
                 BuildStructures = {
                     'T1SeaFactory',
@@ -55,8 +53,6 @@ BuilderGroup {
         BuilderData = {
                 Construction = {
                     Location = 'LocationType',
-                    BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                    BaseTemplate = 'NavalBaseTemplates',
                     NearMarkerType = 'Naval Area',
                     BuildStructures = {
                     'T2SeaFactory',
@@ -101,8 +97,6 @@ BuilderGroup {
         BuilderData = {
                 Construction = {
                     Location = 'LocationType',
-                    BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                    BaseTemplate = 'NavalBaseTemplates',
                     NearMarkerType = 'Naval Area',
                     BuildStructures = {
                     'T2SeaFactory',
@@ -123,8 +117,6 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
                 Construction = {
-                    BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                    BaseTemplate = 'NavalBaseTemplates',
                     Location = 'LocationType',
                     NearMarkerType = 'Naval Area',
                     BuildClose = true,
@@ -150,8 +142,6 @@ BuilderGroup {
             Construction = {
                 BuildClose = false,
                 NearMarkerType = 'Naval Area',
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
                 MarkerRadius = 20,
                 LocationRadius = 75,
                 LocationType = 'LocationType',
@@ -247,8 +237,6 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             Construction = {
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
                 BuildClose = true,
                 NearMarkerType = 'Naval Area',
                 MarkerRadius = 20,
@@ -302,8 +290,6 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             Location = 'LocationType',
-            BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-            BaseTemplate = 'NavalBaseTemplates',
             NearMarkerType = 'Naval Area',
             DesiresAssist = true,
             NumAssistees = 2,

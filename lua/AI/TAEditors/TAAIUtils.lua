@@ -135,13 +135,12 @@ end]]
 function TAFactoryCapCheck(aiBrain, locationType, TECH)
     local catCheck = false
     catCheck = TECH * categories.FACTORY
-    local factoryManager = aiBrain.BuilderManagers['MAIN'].FactoryManager
+    local factoryManager = aiBrain.BuilderManagers['locationType'].FactoryManager
     if not factoryManager then
         WARN('*AI WARNING: FactoryCapCheck - Invalid location - ' .. locationType)
         return false
     end
     local numUnits = factoryManager:GetNumCategoryFactories(catCheck)
-    numUnits = numUnits + aiBrain:GetEngineerManagerUnitsBeingBuilt(catCheck)
 
     if numUnits < 12 then
         return true

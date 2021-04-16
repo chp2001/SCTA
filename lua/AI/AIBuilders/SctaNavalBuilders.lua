@@ -49,7 +49,7 @@ BuilderGroup {
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},
             { MIBC, 'GreaterThanGameTime', {600} },
-            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},	
+            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, (categories.NAVAL * categories.FACTORY) + categories.xsl0103 + categories.ual0201, 'Enemy'}},	
             { UCBC, 'HaveUnitRatio', { 0.33, categories.NAVAL * categories.MOBILE * categories.FRIGATE,
             '<=', categories.NAVAL * categories.MOBILE} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } }, -- Stop after 10 facs have been built.

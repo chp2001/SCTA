@@ -1,7 +1,7 @@
 EmitterBlueprint {
-	BlueprintId = 'ta_missile_hit_01',
-	Lifetime = 10.00,
-	Repeattime = 10.00,
+	BlueprintId = 'ta_empnuke_hit_01',
+	Lifetime = 30.00,
+	Repeattime = 15.00,
 	TextureFramecount = 1.00,
 	Blendmode = 3.00,
 	LocalVelocity = false,

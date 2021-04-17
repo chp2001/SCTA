@@ -11,6 +11,11 @@ TANuclearProjectile = Class(NukeProjectile) {
 	FxTrails = { '/mods/SCTA-master/effects/emitters/smoke_emit.bp'},
 
 
+	OnImpact = function(self, TargetType, TargetEntity)
+		NukeProjectile.OnImpact(self, TargetType, TargetEntity)
+		CreateEmitterAtEntity(self, self:GetArmy(), '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp'):ScaleEmitter(15)
+	end,
+
 	FxImpactAirUnit = {
 		'/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
 	},
@@ -50,6 +55,11 @@ TANuclearProjectile = Class(NukeProjectile) {
 
 TAEMPNuclearProjectile = Class(NukeProjectile) {
 	FxTrails = { '/mods/SCTA-master/effects/emitters/damage_bad_smoke_emit.bp'},
+    
+	OnImpact = function(self, TargetType, TargetEntity)
+		NukeProjectile.OnImpact(self, TargetType, TargetEntity)
+		CreateEmitterAtEntity(self, self:GetArmy(), '/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp'):ScaleEmitter(15)
+	end,
 
 	FxImpactAirUnit = {
 		'/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp',

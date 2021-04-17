@@ -115,6 +115,9 @@ TABuildRestrictions = function(self)
     end
 end
 
+--Labs = {}
+--Plants = {}
+
 NumberOfPlantsT2 = function(aiBrain, category)
     -- Returns number of extractors upgrading
     local DevelopmentCount = aiBrain:GetCurrentUnits(categories.RESEARCH * categories.TECH2)

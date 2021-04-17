@@ -30,7 +30,8 @@ Physics = {
             MaxRadius = 13,
         },
         [2] = {
-            Damage = 40,
+            RateOfFire = 1,
+            Damage = 20,
         },
         [3] = {
         },

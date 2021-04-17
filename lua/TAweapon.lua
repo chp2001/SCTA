@@ -11,8 +11,7 @@ TAweapon = Class(DefaultWeapon) {
     end,
     
         OnGotTargetCheck = function(self)
-        local aiBrain = self.unit:GetAIBrain()
-        if aiBrain.SCTAAI or (self.unit:IsUnitState('Patrolling') or self.unit:IsUnitState('MakingAttackRun'))  then
+        if self.unit:GetAIBrain().SCTAAI or (self.unit:IsUnitState('Patrolling') or self.unit:IsUnitState('MakingAttackRun'))  then
             return true
         else
             local canSee = true
@@ -131,9 +130,8 @@ TAKami = Class(KamikazeWeapon){
 
 
     OnFire = function(self)
-        local army = self.unit:GetArmy()
         for k, v in self.FxDeath do
-            CreateEmitterAtBone(self.unit,-2,army,v):ScaleEmitter(3)
+            CreateEmitterAtBone(self.unit,-2,self.unit:GetArmy(),v):ScaleEmitter(3)
         end 
 		local myBlueprint = self:GetBlueprint()
 		KamikazeWeapon.OnFire(self)
@@ -156,9 +154,8 @@ TABomb = Class(BareBonesWeapon) {
     end,
     
     Fire = function(self)
-		local army = self.unit:GetArmy()
         for k, v in self.FxDeath do
-            CreateEmitterAtBone(self.unit,-2,army,v):ScaleEmitter(3)
+            CreateEmitterAtBone(self.unit,-2, self.unit:GetArmy(), v):ScaleEmitter(3)
         end 
 		local myBlueprint = self:GetBlueprint()
         DamageArea(self.unit, self.unit:GetPosition(), myBlueprint.DamageRadius, myBlueprint.Damage, myBlueprint.DamageType or 'Normal', myBlueprint.DamageFriendly or false)

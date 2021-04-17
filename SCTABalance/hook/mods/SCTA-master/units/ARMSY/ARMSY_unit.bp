@@ -2,8 +2,8 @@ UnitBlueprint {
     Merge = true,
     BuildIconSortPriority = 4,
     Defense = {
-        Health = 8000,
-        MaxHealth = 8000,
+        Health = 4000,
+        MaxHealth = 4000,
     },
         Display = {
             Abilities = {

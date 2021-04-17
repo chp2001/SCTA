@@ -59,6 +59,12 @@ TAconstructor = Class(TAWalking) {
         TAWalking.OnStartBuild(self, unitBeingBuilt, order)
     end,
 
+    OnStopBeingBuilt = function(self, builder, layer)
+        TAWalking.OnStopBeingBuilt(self, builder, layer)
+        if __blueprints['armgant'] then
+            TAutils.TABuildRestrictions(self)
+        end
+    end,  
 
     OnStopBuild = function(self, unitBeingBuilt)
         self.UnitBeingBuilt = nil

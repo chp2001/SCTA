@@ -38,6 +38,13 @@ TAAirConstructor = Class(TAair) {
         self:SetImmobile(false)
     end,
 
+    OnStopBeingBuilt = function(self, builder, layer)
+        TAair.OnStopBeingBuilt(self, builder, layer)
+        if __blueprints['armgant'] then
+            TAutils.TABuildRestrictions(self)
+        end
+    end,  
+
     OnPaused = function(self)
         self:StopUnitAmbientSound('Construct')
         if self.BuildingUnit then

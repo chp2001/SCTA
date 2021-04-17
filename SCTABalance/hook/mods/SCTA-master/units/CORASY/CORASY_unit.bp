@@ -20,8 +20,8 @@ UnitBlueprint {
         'SUPPORTFACTORY',
     },
     Defense = {
-        Health = 12500,
-        MaxHealth = 12500,
+        Health = 7000,
+        MaxHealth = 7000,
     },
     Display = {
         UniformScale = 0.2,

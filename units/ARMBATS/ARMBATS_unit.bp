@@ -7,7 +7,7 @@ UnitBlueprint {
     AI = {
         TargetBones = {
             'turretb',
-            'guna',
+            'spot',
             'ARMBATS',
         },
     },
@@ -67,7 +67,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 360,
                     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -176,19 +175,19 @@ UnitBlueprint {
             RackBones = {
                 {    
                     MuzzleBones = {
-                        'barrel2A',
+                        'muzzle2A',
                     },
                     RackBone = 'barrel2A',
                 },
                 {
                     MuzzleBones = {
-                        'barrel2B',
+                        'muzzle2B',
                     },
                     RackBone = 'barrel2B',
                 },
                 {
                     MuzzleBones = {
-                        'barrel2C',
+                        'muzzle2C',
                     },
                     RackBone = 'barrel2C',
                 },
@@ -205,8 +204,8 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'flare2B',
-            TurretBonePitch = 'turret2',
+            TurretBoneMuzzle = 'muzzle2B',
+            TurretBonePitch = 'pitch2',
             TurretBoneYaw = 'turret2',
             TurretPitch = 0,
             TurretPitchRange = 360,
@@ -247,19 +246,19 @@ UnitBlueprint {
             RackBones = {
                 {    
                     MuzzleBones = {
-                        'barrel1A',
+                        'muzzle1A',
                     },
                     RackBone = 'barrel1A',
                 },
                 {
                     MuzzleBones = {
-                        'barrel1B',
+                        'muzzle1B',
                     },
                     RackBone = 'barrel1B',
                 },
                 {
                     MuzzleBones = {
-                        'barrel1C',
+                        'muzzle1C',
                     },
                     RackBone = 'barrel1C',
                 },
@@ -275,8 +274,8 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TurretBoneMuzzle = 'flare1B',
-            TurretBonePitch = 'turret1',
+            TurretBoneMuzzle = 'muzzle1B',
+            TurretBonePitch = 'pitch1',
             TurretBoneYaw = 'turret1',
             TurretPitch = 0,
             TurretPitchRange = 360,

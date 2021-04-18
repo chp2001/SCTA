@@ -9,7 +9,7 @@ local EffectTemplate = import('/lua/EffectTemplates.lua')
 local Util = import('/lua/utilities.lua')
 local RandomFloat = Util.GetRandomFloat
 
-TANuke01 = Class(NullShell) {
+TANuke02 = Class(NullShell) {
     EffectThread = function(self)
         local position = self:GetPosition()
 
@@ -24,10 +24,10 @@ TANuke01 = Class(NullShell) {
 
         -- Create projectile that controls plume effects
         local PlumeEffectYOffset = 1
-        self:CreateProjectile('/mods/SCTA-master/effects/entities/TANukeEffect01/TANukeEffect01_proj.bp',0,PlumeEffectYOffset,0,0,0,1)
+        self:CreateProjectile('/mods/SCTA-master/effects/entities/TANukeEffect02/TANukeEffect02_proj.bp',0,PlumeEffectYOffset,0,0,0,1)
 
     
-        CreateEmitterAtEntity(self, self.Army, '/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp')
+        CreateEmitterAtEntity(self, self.Army, '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp')
         
 
         --self:CreateInitialFireballSmokeRing()
@@ -149,7 +149,7 @@ TANuke01 = Class(NullShell) {
     end,
 
     CreateGroundPlumeConvectionEffects = function(self,army)
-        CreateEmitterAtEntity(self, army, '/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp'):ScaleEmitter(10)
+        CreateEmitterAtEntity(self, army, '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp'):ScaleEmitter(10)
 
         local sides = 10
         local angle = (2*math.pi) / sides
@@ -175,4 +175,4 @@ TANuke01 = Class(NullShell) {
     end,
 }
 
-TypeClass = TANuke01
+TypeClass = TANuke02

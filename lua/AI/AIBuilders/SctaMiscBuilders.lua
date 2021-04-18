@@ -75,7 +75,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTALaser3Tower',
-        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        PlatoonTemplate = 'EngineerBuilderSCTA23All',
         Priority = 81,
         InstanceCount = 1,
         BuilderConditions = {
@@ -97,7 +97,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAANTIAIR3Tower',
-        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        PlatoonTemplate = 'EngineerBuilderSCTA23All',
         Priority = 84,
         InstanceCount = 1,
         BuilderConditions = {

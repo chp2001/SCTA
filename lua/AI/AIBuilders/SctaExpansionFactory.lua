@@ -8,6 +8,22 @@ local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
+local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
+
+
+local UnitProduction = function(self, aiBrain, builderManager)
+    if Factory(aiBrain,  12, PLANT) then 
+        return 110
+    elseif Factory(aiBrain,  1, LAB) then
+        return 111
+    elseif Factory(aiBrain,  1, PLATFORM) then
+        return 100
+    else
+        return 0
+    end
+end
+
+
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIFactoryExpansions',
@@ -64,6 +80,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2LAND Expansion',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PriorityFunction = UnitProduction,
         Priority = 112,
         InstanceCount = 1,
         BuilderConditions = {
@@ -114,6 +131,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Air Expansion',
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
+        PriorityFunction = UnitProduction,
         Priority = 111,
         InstanceCount = 1,
         BuilderConditions = {
@@ -137,7 +155,7 @@ BuilderGroup {
     ---EmergencyFacts
     Builder {
         BuilderName = 'SCTAAI LandExpansion Emergency',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 41,
         InstanceCount = 1,
         BuilderConditions = {

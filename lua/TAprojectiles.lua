@@ -10,32 +10,16 @@ TAProjectile = Class(SinglePolyTrailProjectile) {
 TANuclearProjectile = Class(NukeProjectile) {
 	FxTrails = { '/mods/SCTA-master/effects/emitters/smoke_emit.bp'},
 
-	FxImpactAirUnit = {
-		'/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
-	},
-	FxAirUnitHitScale = 15,
-	FxImpactShield = {
-		'/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
-	},
-	FxShieldHitScale = 15,
-	FxImpactUnit = {
-		'/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
-	},
-	FxUnitHitScale = 15,
-	FxImpactProp = {
-		'/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
-	},
-	FxPropHitScale = 15,
-	FxImpactLand = {
-		'/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
-	},
-	FxLandHitScale = 15,
-	FxImpactWater = {
-		'/effects/emitters/destruction_water_splash_ripples_01_emit.bp',
-		'/effects/emitters/destruction_water_splash_wash_01_emit.bp',
-		'/effects/emitters/destruction_water_splash_plume_01_emit.bp',
-	},
-    	FxWaterHitScale = 15,
+    InitialEffects = {'/mods/SCTA-master/effects/emitters/damage_bad_smoke_emit.bp',},
+    LaunchEffects = {
+        '/effects/emitters/nuke_munition_launch_trail_03_emit.bp',
+        '/effects/emitters/nuke_munition_launch_trail_05_emit.bp',
+        '/effects/emitters/nuke_munition_launch_trail_07_emit.bp',
+    },
+    ThrustEffects = {
+        '/effects/emitters/nuke_munition_launch_trail_04_emit.bp',
+        '/effects/emitters/nuke_munition_launch_trail_06_emit.bp',
+    },
 	    FxImpactProjectile = {
     		'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
     		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
@@ -46,47 +30,6 @@ TANuclearProjectile = Class(NukeProjectile) {
     FxImpactTrajectoryAligned = false,
 
 }
-
-TAEMPNuclearProjectile = Class(NukeProjectile) {
-	FxTrails = { '/mods/SCTA-master/effects/emitters/damage_bad_smoke_emit.bp'},
-
-	FxImpactAirUnit = {
-		'/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp',
-	},
-	FxAirUnitHitScale = 15,
-	FxImpactShield = {
-		'/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp',
-	},
-	FxShieldHitScale = 15,
-	FxImpactUnit = {
-		'/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp',
-	},
-	FxUnitHitScale = 15,
-	FxImpactProp = {
-		'/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp',
-	},
-	FxPropHitScale = 15,
-	FxImpactLand = {
-		'/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp',
-	},
-	FxLandHitScale = 15,
-	FxImpactWater = {
-		'/effects/emitters/destruction_water_splash_ripples_01_emit.bp',
-		'/effects/emitters/destruction_water_splash_wash_01_emit.bp',
-		'/effects/emitters/destruction_water_splash_plume_01_emit.bp',
-	},
-    	FxWaterHitScale = 15,
-	    FxImpactProjectile = {
-    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-	},
-	FxProjectileHitScale = 1.5,
-    
-    FxImpactTrajectoryAligned = false,
-
-}
-
 TAHeavyCannonProjectile = Class(TAProjectile) {
 	FxImpactAirUnit = {
 		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',

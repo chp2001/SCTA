@@ -107,7 +107,6 @@ TechLevel = 'RULEUTL_Basic',
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 150,
-            DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'CORPLAS_WEAPON',
             FireTargetLayerCapsTable = {

@@ -1,9 +1,6 @@
 UnitBlueprint {
    Merge = true,
     Display = {
-        Abilities = {
-            '<LOC ability_radar>Radar',
-        },
         UniformScale = 0.12,
     },
     Economy = {
@@ -22,6 +19,7 @@ UnitBlueprint {
     SizeZ = 1.6,
     Weapon = {
     [1] = {
+        Damage = 3,
     SlavedToBody = true,
     SlavedToBodyArcRange = 45,
     },

@@ -151,7 +151,7 @@ UnitBlueprint {
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 1,
-            RackSalvoSize = 2,
+            RackSalvoSize = 1,
             RackSlavedToTurret = false,
             RateOfFire = 0.5,
             TargetCheckInterval = 1,

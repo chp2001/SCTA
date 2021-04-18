@@ -136,7 +136,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            Damage = 2,
+            Damage = 8,
             DamageType = 'Normal',
             DisplayName = 'ARMFLEA_WEAPON',
             FireTargetLayerCapsTable = {

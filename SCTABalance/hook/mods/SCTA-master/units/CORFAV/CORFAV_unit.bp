@@ -1,9 +1,6 @@
 UnitBlueprint {
    Merge = true,
     Display = {
-        Abilities = {
-            '<LOC ability_radar>Radar',
-        },
         UniformScale = 0.12,
     },
     Economy = {
@@ -14,6 +11,11 @@ UnitBlueprint {
     Intel = {
     RadarRadius = 40,
     },
+    Physics = {
+        MaxAcceleration = 3,
+        MaxBrake = 3,
+        MaxSpeed = 4,
+    },
     LifeBarSize = 1,
     SelectionSizeX = 1,
     SelectionSizeZ = 1,
@@ -22,6 +24,7 @@ UnitBlueprint {
     SizeZ = 1.6,
     Weapon = {
     [1] = {
+        Damage = 3,
     SlavedToBody = true,
     SlavedToBodyArcRange = 45,
     },

@@ -12,6 +12,21 @@ local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
 local TIDAL = (categories.cortide + categories.armtide)
 local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').GetMOARadii()
+local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
+
+
+local UnitProduction = function(self, aiBrain, builderManager)
+    if Factory(aiBrain,  12, PLANT) then 
+        return 110
+    elseif Factory(aiBrain,  1, LAB) then
+        return 111
+    elseif Factory(aiBrain,  1, PLATFORM) then
+        return 100
+    else
+        return 0
+    end
+end
+
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIEngineerNavalMiscBuilder',
@@ -19,7 +34,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA T1 Naval Factory Builder',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 132,
+        Priority = 115,
         InstanceCount = 1,
         BuilderConditions = { 
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Sea' } },
@@ -30,9 +45,9 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
             Construction = {
-                Location = 'LocationType',
-                NearMarkerType = 'Naval Area',
                 BuildStructures = {
                     'T1SeaFactory',
                 },
@@ -42,7 +57,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2NavalEarly Factory',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 151,
+        Priority = 125,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 900 } },
@@ -51,9 +66,9 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
                 Construction = {
-                    Location = 'LocationType',
-                    NearMarkerType = 'Naval Area',
                     BuildStructures = {
                     'T2SeaFactory',
                 }
@@ -84,6 +99,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Naval Factory',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        PriorityFunction = UnitProduction,
         Priority = 141,
         InstanceCount = 1,
         BuilderConditions = {
@@ -95,9 +111,9 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
                 Construction = {
-                    Location = 'LocationType',
-                    NearMarkerType = 'Naval Area',
                     BuildStructures = {
                     'T2SeaFactory',
                 }
@@ -111,14 +127,14 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1,  FUSION} }, 
-            { TAutils, 'GreaterThanEconEnergyTAEfficiency', {1.05 }},
+            { TAutils, 'GreaterThanEconEnergyTAEfficiency', {0.9 }},
             { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
         },
         BuilderType = 'Any',
         BuilderData = {
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
                 Construction = {
-                    Location = 'LocationType',
-                    NearMarkerType = 'Naval Area',
                     BuildClose = true,
                     BuildStructures = {
                     'T2MassCreation',
@@ -139,12 +155,12 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
             Construction = {
                 BuildClose = false,
-                NearMarkerType = 'Naval Area',
                 MarkerRadius = 20,
                 LocationRadius = 75,
-                LocationType = 'LocationType',
                 ThreatMin = 0,
                 ThreatMax = 1,
                 ThreatRings = 2,
@@ -168,12 +184,12 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
             Construction = {
-                Location = 'LocationType',
                 BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
                 BaseTemplate = 'NavalBaseTemplates',
                 BuildClose = true,
-                NearMarkerType = 'Naval Area',
                 BuildStructures = {
                     'T1EnergyProduction3',
                 }
@@ -192,9 +208,9 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
             Construction = {
-                Location = 'LocationType',
-                NearMarkerType = 'Naval Area',
                 BuildStructures = {
                     'T1Resource',
                 }
@@ -236,12 +252,12 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
+            LocationType = 'LocationType',
+            NearMarkerType = 'Naval Area',
             Construction = {
                 BuildClose = true,
-                NearMarkerType = 'Naval Area',
                 MarkerRadius = 20,
                 LocationRadius = 75,
-                LocationType = 'LocationType',
                 ThreatMin = 0,
                 ThreatMax = 1,
                 ThreatRings = 2,
@@ -331,9 +347,11 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
-            Construction = {
             NeedGuard = false,
             DesiresAssist = false,
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
+            Construction = {
             BuildClose = true,
             OrderedTemplate = true,
             NearBasePatrolPoints = false,

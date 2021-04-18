@@ -150,7 +150,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 208,
-            DamageRadius = 2,
+            DamageRadius = 1,
             DamageType = 'Normal',
             DisplayName = 'ARM_CRUS',
             FireTargetLayerCapsTable = {

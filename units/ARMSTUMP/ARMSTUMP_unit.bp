@@ -145,7 +145,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 44,
+            Damage = 60,
             DamageType = 'Normal',
             DisplayName = 'ARM_LIGHTCANNON',
             FireTargetLayerCapsTable = {
@@ -176,7 +176,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.66,
+            RateOfFire = 0.5,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

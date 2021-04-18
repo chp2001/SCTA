@@ -29,7 +29,7 @@ do
             },
             Physics = {
                 MaxAcceleration = 1.1,
-                MaxSpeed = 1.2,
+                MaxSpeed = 1.1,
                 TurnRate = 0.75,
             }
         }

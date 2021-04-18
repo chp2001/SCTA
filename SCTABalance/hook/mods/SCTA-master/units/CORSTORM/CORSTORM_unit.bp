@@ -4,16 +4,15 @@
      Health = 320,
      MaxHealth = 320,
      },
-    Display = {
-     UniformScale = 0.11,
-         },
      Economy = {
-             BuildCostEnergy = 960,
-             BuildCostMass = 110,
+             BuildCostMass = 120,
          },
-     SizeX = 1.6,
-     SizeY = 1.4,
-     SizeZ = 1.4,
+         SelectionSizeX = 0.8,
+         SelectionSizeZ = 0.8,
+         LifeBarSize = 1,
+         SizeX = 1.5,
+         SizeY = 1.7,
+         SizeZ = 1.7,
      Weapon = {
         [1] = {
         },

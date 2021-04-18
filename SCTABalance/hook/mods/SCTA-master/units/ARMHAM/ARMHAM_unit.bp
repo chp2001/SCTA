@@ -15,7 +15,7 @@ UnitBlueprint {
     SizeZ = 1.4,
     Weapon = {
         [1] = {
-            Damage = 500,
+            Damage = 250,
             RateOfFire = 0.25,
         },
         [2] = {}, 

@@ -237,6 +237,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2AirFactory',
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
+        PriorityFunction = UnitProduction,
         Priority = 120,
         InstanceCount = 1,
         BuilderConditions = {
@@ -284,7 +285,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI T3AirFactory',
-        PlatoonTemplate = 'EngineerBuilderSCTA3',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco23',
         Priority = 135,
         InstanceCount = 1,
         BuilderConditions = {

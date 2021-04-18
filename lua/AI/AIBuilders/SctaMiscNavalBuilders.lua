@@ -57,6 +57,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2NavalEarly Factory',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        PriorityFunction = UnitProduction,
         Priority = 125,
         InstanceCount = 1,
         BuilderConditions = {

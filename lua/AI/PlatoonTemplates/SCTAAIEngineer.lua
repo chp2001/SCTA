@@ -219,10 +219,12 @@ PlatoonTemplate {
     Name = 'T1BuildEngineerAirSCTA',
     FactionSquads = {
         Arm = {
-            { 'armca', 1, 1, 'support', 'None' }
+            { 'armca', 1, 1, 'support', 'None' },
+            { 'armfig', 1, 2, 'attack', 'GrowthFormation' },
         },
         Core = {
-            { 'corca', 1, 1, 'support', 'None' }
+            { 'corca', 1, 1, 'support', 'None' },
+            { 'corveng', 1, 2, 'attack', 'GrowthFormation' },
         },
     }
 }

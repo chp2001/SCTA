@@ -2335,7 +2335,6 @@ Platoon = Class(SCTAAIPlatoon) {
             target = self:FindClosestUnit('Attack', 'Enemy', true, categories.MOBILE * categories.LAND - categories.COMMAND)
             if target then
                 blip = target:GetBlip(armyIndex)
-                self:Stop()
                 self:AttackTarget(target)
                 --DUNCAN - added to try and stop AI getting stuck.
                 local position = AIUtils.RandomLocation(target:GetPosition()[1],target:GetPosition()[3])

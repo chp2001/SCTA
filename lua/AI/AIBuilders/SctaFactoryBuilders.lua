@@ -25,12 +25,14 @@ end
 
 local UnitProductionT1 = function(self, aiBrain, builderManager)
 
-    if Factory(aiBrain,  12, LAB) or Factory(aiBrain,  0, categories.GATE) then
+  if Factory(aiBrain,  0, categories.GATE) then
         return 0
-    elseif Factory(aiBrain,  1, LAB) then 
+  elseif Factory(aiBrain,  12, LAB) then
+            return 10
+  elseif Factory(aiBrain,  1, LAB) then 
             return 50
     else
-        return 120
+        return 101
     end
 end
 
@@ -47,6 +49,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             --{ UCBC, 'HaveLessThanUnitsWithCategory', { 12,  PLANT} },
+            { MIBC, 'GreaterThanGameTime', { 120 } },
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
@@ -199,7 +202,7 @@ BuilderGroup {
         Priority = 128,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, PLANT } }, -- Don't build air fac immediately.
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, PLANT } }, -- Don't build air fac immediately.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR} },
             { MIBC, 'LessThanGameTime', {600} },
             { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.25, 0.5, } },
@@ -227,7 +230,7 @@ BuilderGroup {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  PLANT } }, -- Don't build air fac immediately.
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4,  categories.FACTORY * categories.AIR} },
-            { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.25, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
         },
         BuilderType = 'Any',
@@ -239,7 +242,6 @@ BuilderGroup {
                 BuildClose = true,
                 BuildStructures = {
                     'T1AirFactory',
-                    'T1EnergyProduction2',
                 }
             }
         }

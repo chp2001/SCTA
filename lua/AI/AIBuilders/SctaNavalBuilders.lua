@@ -37,7 +37,8 @@ BuilderGroup {
         Priority = 110,
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.SCOUT * categories.NAVAL } },
+            { MIBC, 'LessThanGameTime', {900} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.SCOUT * categories.NAVAL } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Sea',

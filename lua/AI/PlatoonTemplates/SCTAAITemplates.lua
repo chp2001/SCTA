@@ -50,6 +50,14 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
+    Name = 'StrikeForceSCTAHover',
+    Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
+    GlobalSquads = {
+        { GROUND * categories.HOVER * categories.TECH3, 2, 10, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+    },
+}
+
+PlatoonTemplate {
     Name = 'LandAttackSCTAMid',
     Plan = 'AttackSCTAForceAI',
     GlobalSquads = {
@@ -212,10 +220,10 @@ PlatoonTemplate {
     Name = 'T3HOVERMISSILESCTA',
     FactionSquads = {
         Arm = {
-            { 'armmh', 1, 2, 'attack', 'none' }
+            { 'armmh', 1, 1, 'attack', 'none' }
         },
         Core = {
-            { 'cormh', 1, 2, 'attack', 'none' }
+            { 'cormh', 1, 1, 'attack', 'none' }
         },
     }
 }

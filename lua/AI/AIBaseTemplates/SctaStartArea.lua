@@ -7,6 +7,8 @@ BaseBuilderTemplate {
         'SCTAAIAirBuilder',
         'SCTAAILandFormers',
         'SCTAAIAirFormers',
+        'SCTAAIT3Formers',
+        'SCTAAIT3Builder',
 
         -- Buildings etc
         
@@ -24,7 +26,7 @@ BaseBuilderTemplate {
             SCU = 0,
         },
         FactoryCount = {
-            Land = 8,
+            Land = 4,
             Air = 2,
             Sea = 1,
             Gate = 0,

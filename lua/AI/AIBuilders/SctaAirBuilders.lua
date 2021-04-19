@@ -14,7 +14,7 @@ local AirProduction = function(self, aiBrain, builderManager)
     if Interception(aiBrain,  1, (LAB * categories.AIR)) then 
         return 100
     else
-        return 0
+        return 90
     end
 end
 
@@ -24,6 +24,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Factory Bomber',
         PlatoonTemplate = 'T1AirBomberSCTA',
+        PriorityFunction = AirProduction,
         Priority = 85,
         BuilderConditions = {
             { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.2, 0.5, } },
@@ -57,16 +58,6 @@ BuilderGroup {
         BuilderConditions = { -- Only make inties if the enemy air is strong.
         { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.AIR * categories.MOBILE, 'Enemy'}},
         { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.2, 0.5, } },
-        },
-        BuilderType = 'Air',
-    },
-    Builder {
-        BuilderName = 'SCTAAI Factory Seaplane Fighter',
-        PlatoonTemplate = 'T3AirFighterSCTA',
-        Priority = 100,
-        BuilderConditions = { -- Only make inties if the enemy air is strong.
-        { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.AIR * categories.MOBILE, 'Enemy'}},
-        { TAutils, 'EcoManagementTA', { 0.2, 0.7, 0.2, 0.5, } },
         },
         BuilderType = 'Air',
     },

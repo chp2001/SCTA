@@ -38,7 +38,7 @@ BuilderGroup {
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},
             { MIBC, 'LessThanGameTime', {900} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.SCOUT * categories.NAVAL } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.SCOUT * categories.NAVAL } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Sea',
@@ -49,7 +49,7 @@ BuilderGroup {
         Priority = 115,
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 15, categories.SCOUT * categories.NAVAL } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.SCOUT * categories.NAVAL } },
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.xsl0103 + categories.ual0201, 'Enemy'}},	
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
@@ -74,7 +74,7 @@ BuilderGroup {
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.SUBMERSIBLE - categories.ENGINEER} },
-            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.SUBMERSIBLE * categories.MOBILE, 'Enemy'}},	
+            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.SUBMERSIBLE * categories.MOBILE, 'Enemy'}},
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Sea',

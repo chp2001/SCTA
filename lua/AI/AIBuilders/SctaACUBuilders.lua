@@ -87,10 +87,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA  ACU Energy',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 960,
+        Priority = 965,
         InstanceCount = 2, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.ENERGYPRODUCTION * categories.STRUCTURE} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.ENERGYPRODUCTION * categories.STRUCTURE - categories.HYDROCARBON} },
             { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'Any',

@@ -11,24 +11,24 @@ local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
 local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
 
-
 local UnitProduction = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  12, PLANT) then 
-        return 110
-    elseif Factory(aiBrain,  1, LAB) then
+    if Factory(aiBrain,  1, LAB) then
         return 111
     elseif Factory(aiBrain,  1, PLATFORM) then
-        return 100
+        return 50
+    elseif Factory(aiBrain,  12, PLANT) then 
+            return 110
     else
         return 0
     end
 end
 
 local UnitProductionT1 = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  1, LAB) then 
-        return 50
-    elseif Factory(aiBrain,  12, LAB) or Factory(aiBrain,  0, categories.GATE) then
+
+    if Factory(aiBrain,  12, LAB) or Factory(aiBrain,  0, categories.GATE) then
         return 0
+    elseif Factory(aiBrain,  1, LAB) then 
+            return 50
     else
         return 120
     end
@@ -324,7 +324,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
-            { MIBC, 'LessThanGameTime', {1200} },
+            { MIBC, 'LessThanGameTime', {900} },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -346,7 +346,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
-            { MIBC, 'LessThanGameTime', {1200} },
+            { MIBC, 'LessThanGameTime', {900} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderType = 'Any',

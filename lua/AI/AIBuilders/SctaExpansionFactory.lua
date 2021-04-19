@@ -12,22 +12,22 @@ local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterTh
 
 
 local UnitProduction = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  12, PLANT) then 
-        return 110
-    elseif Factory(aiBrain,  1, LAB) then
+   if Factory(aiBrain,  1, LAB) then
         return 111
     elseif Factory(aiBrain,  1, PLATFORM) then
-        return 100
+        return 50
+    elseif Factory(aiBrain,  12, PLANT) then 
+            return 110
     else
         return 0
     end
 end
 
 local UnitProductionT1 = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  2, LAB) then 
-        return 50
-    elseif Factory(aiBrain,  12, LAB) or Factory(aiBrain,  0, categories.GATE) then
+    if Factory(aiBrain,  12, LAB) or Factory(aiBrain,  0, categories.GATE) then
         return 0
+    elseif Factory(aiBrain,  1, LAB) then 
+        return 50
     else
         return 100
     end

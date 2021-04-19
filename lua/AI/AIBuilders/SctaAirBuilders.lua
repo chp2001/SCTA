@@ -4,6 +4,7 @@ local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
+local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
@@ -15,7 +16,7 @@ local AirProduction = function(self, aiBrain, builderManager)
     if Interception(aiBrain,  1, LAB) then 
         return 100
     else
-        return 50
+        return 25
     end
 end
 
@@ -36,8 +37,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2AirFighterSCTA',
         Priority = 115,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
-        { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.FACTORY * categories.AIR, 'Enemy'}},		
-        { TAutils, 'EcoManagementTA', { 0.2, 0.75, 0.2, 0.5, } },
+        { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
     },
@@ -47,8 +47,7 @@ BuilderGroup {
         PriorityFunction = AirProduction,
         Priority = 95,
         BuilderConditions = { -- Only make inties if the enemy air is strong
-        { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.FACTORY * categories.AIR, 'Enemy'}},		
-        { TAutils, 'EcoManagementTA', { 0.2, 0.75, 0.2, 0.5, } },
+        { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
     },  
@@ -58,7 +57,8 @@ BuilderGroup {
         Priority = 110,
         PriorityFunction = AirProductionT3,
         BuilderConditions = {
-            { TAutils, 'EcoManagementTA', { 0.2, 0.75, 0.2, 0.5, } },
+            { TASlow, 'HaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
+            { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
     },
@@ -66,8 +66,10 @@ BuilderGroup {
         BuilderName = 'SCTAAI Factory Bomber',
         PlatoonTemplate = 'T1AirBomberSCTA',
         Priority = 85,
+        PriorityFunction = AirProduction,
         BuilderConditions = {
-            { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.2, 0.5, } },
+            { TASlow, 'HaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
+            { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
     },     
@@ -83,7 +85,7 @@ BuilderGroup {
             { UCBC, 'LocationFactoriesBuildingLess', { 'LocationType', 2, 'TRANSPORTFOCUS' } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, 'TRANSPORTFOCUS' } },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, 'TRANSPORTFOCUS' } },
-            { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.2, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
     },     

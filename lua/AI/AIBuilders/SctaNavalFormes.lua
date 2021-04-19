@@ -9,10 +9,9 @@ BuilderGroup {
         BuilderName = 'SCTA Scout Ships',
         PlatoonTemplate = 'SCTAPatrolBoatAttack',
         Priority = 100,
-        InstanceCount = 2,
+        InstanceCount = 20,
         BuilderType = 'Any',
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {600} },
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.SCOUT } },
          },
          BuilderData = {
@@ -59,7 +58,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA T1 Naval Assault',
         PlatoonTemplate = 'SCTANavalAssault',
-        Priority = 50,
+        Priority = 110,
         InstanceCount = 10,
         BuilderType = 'Any',
         BuilderData = {
@@ -84,7 +83,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA HighTech',
         PlatoonTemplate = 'SCTANavalAssaultT2',
-        Priority = 75,
+        Priority = 120,
         InstanceCount = 10,
         BuilderType = 'Any',
         BuilderData = {
@@ -105,5 +104,26 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.MOBILE - categories.ENGINEER} },
         },
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Finish Navy',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
+        Priority = 125,
+        InstanceCount = 2,
+        BuilderConditions = {
+                { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
+            },
+        BuilderData = {
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE,'},
+                Time = 20,
+            },
+        },
+        BuilderType = 'Any',
     },
 }

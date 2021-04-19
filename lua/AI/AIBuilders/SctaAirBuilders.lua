@@ -10,33 +10,34 @@ local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
 local Interception = import('/lua/editor/UnitCountBuildConditions.lua').HaveLessThanUnitsWithCategory
 
+
 local AirProduction = function(self, aiBrain, builderManager)
-    if Interception(aiBrain,  1, (LAB * categories.AIR)) then 
+    if Interception(aiBrain,  1, LAB) then 
         return 100
     else
-        return 90
+        return 50
     end
 end
+
+local AirProductionT3 = function(self, aiBrain, builderManager)
+    if Interception(aiBrain,  13, LAB) or Interception(aiBrain,  1, categories.GATE)  then 
+        return 0
+    else
+        return 105
+    end
+end
+
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIAirBuilder',
     BuildersType = 'FactoryBuilder',
     Builder {
-        BuilderName = 'SCTAAI Factory Bomber',
-        PlatoonTemplate = 'T1AirBomberSCTA',
-        PriorityFunction = AirProduction,
-        Priority = 85,
-        BuilderConditions = {
-            { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.2, 0.5, } },
-        },
-        BuilderType = 'Air',
-    },
-    Builder {
-        BuilderName = 'SCTAAI Factory Strategic',
-        PlatoonTemplate = 'T2AirBomberSCTA',
-        Priority = 110,
-        BuilderConditions = {
-            { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.2, 0.5, } },
+        BuilderName = 'SCTAAI Factory Stealth',
+        PlatoonTemplate = 'T2AirFighterSCTA',
+        Priority = 115,
+        BuilderConditions = { -- Only make inties if the enemy air is strong.
+        { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.FACTORY * categories.AIR, 'Enemy'}},		
+        { TAutils, 'EcoManagementTA', { 0.2, 0.75, 0.2, 0.5, } },
         },
         BuilderType = 'Air',
     },
@@ -46,21 +47,30 @@ BuilderGroup {
         PriorityFunction = AirProduction,
         Priority = 95,
         BuilderConditions = { -- Only make inties if the enemy air is strong
-        { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.AIR * categories.MOBILE, 'Enemy'}},		
-        { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.2, 0.5, } },
+        { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.FACTORY * categories.AIR, 'Enemy'}},		
+        { TAutils, 'EcoManagementTA', { 0.2, 0.75, 0.2, 0.5, } },
         },
         BuilderType = 'Air',
-    },       
+    },  
     Builder {
-        BuilderName = 'SCTAAI Factory Stealth',
-        PlatoonTemplate = 'T2AirFighterSCTA',
-        Priority = 115,
-        BuilderConditions = { -- Only make inties if the enemy air is strong.
-        { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.AIR * categories.MOBILE, 'Enemy'}},
-        { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.2, 0.5, } },
+        BuilderName = 'SCTAAI Factory Strategic',
+        PlatoonTemplate = 'T2AirBomberSCTA',
+        Priority = 110,
+        PriorityFunction = AirProductionT3,
+        BuilderConditions = {
+            { TAutils, 'EcoManagementTA', { 0.2, 0.75, 0.2, 0.5, } },
         },
         BuilderType = 'Air',
     },
+    Builder {
+        BuilderName = 'SCTAAI Factory Bomber',
+        PlatoonTemplate = 'T1AirBomberSCTA',
+        Priority = 85,
+        BuilderConditions = {
+            { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.2, 0.5, } },
+        },
+        BuilderType = 'Air',
+    },     
     Builder {
         BuilderName = 'SCTAAirTransport',
         PlatoonTemplate = 'SCTATransport',

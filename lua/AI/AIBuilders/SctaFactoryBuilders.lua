@@ -24,6 +24,16 @@ local UnitProduction = function(self, aiBrain, builderManager)
     end
 end
 
+local UnitProductionT1 = function(self, aiBrain, builderManager)
+    if Factory(aiBrain,  1, LAB) then 
+        return 50
+    elseif Factory(aiBrain,  12, LAB) or Factory(aiBrain,  0, categories.GATE) then
+        return 0
+    else
+        return 120
+    end
+end
+
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIFactoryBuilders',
@@ -32,12 +42,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer LandFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
+        PriorityFunction = UnitProductionT1,
         Priority = 102,
         InstanceCount = 1,
         BuilderConditions = {
             --{ UCBC, 'HaveLessThanUnitsWithCategory', { 12,  PLANT} },
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  LAB} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -58,13 +68,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer LandFac2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
+        PriorityFunction = UnitProductionT1,
         Priority = 96,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 120 } },
             --{ UCBC, 'HaveLessThanUnitsWithCategory', { 12,  PLANT} },
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  LAB} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -211,12 +221,12 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer AirFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 103,
+        PriorityFunction = UnitProductionT1,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  PLANT } }, -- Don't build air fac immediately.
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4,  categories.FACTORY * categories.AIR} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  LAB * categories.AIR} }, -- Stop after 5 facs have been built.
             { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.25, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
         },

@@ -12,7 +12,7 @@ local Interception = import('/lua/editor/UnitCountBuildConditions.lua').HaveLess
 
 local EngineerProduction = function(self, aiBrain, builderManager)
     if Interception(aiBrain,  1, LAB) then 
-        return 120
+        return 105
     else
         return 50
     end
@@ -22,7 +22,7 @@ local EngineerProductionT3 = function(self, aiBrain, builderManager)
     if Interception(aiBrain,  13, LAB) or Interception(aiBrain,  1, categories.GATE)  then 
         return 0
     else
-        return 130
+        return 141
     end
 end
 

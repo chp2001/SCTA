@@ -4,17 +4,19 @@ local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
-local Interception = import('/lua/editor/UnitCountBuildConditions.lua').HaveLessThanUnitsWithCategory
+local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
 
 
 local LandProductionT3 = function(self, aiBrain, builderManager)
-    if Interception(aiBrain,  13, LAB) or Interception(aiBrain,  1, categories.GATE)  then 
-        return 0
+    if Factory(aiBrain,  12, LAB)  then 
+        return 130
+    elseif Factory(aiBrain,  0, categories.GATE) then
+        return 135
     else
-        return 105
+        return 0
     end
 end
 

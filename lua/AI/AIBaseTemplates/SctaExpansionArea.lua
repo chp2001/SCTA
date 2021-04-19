@@ -8,7 +8,7 @@ BaseBuilderTemplate {
         'SCTAAIAirBuilder',
         'SCTAAILandFormers',
         'SCTAAIAirFormers',
-        'SCTAAIT3Formers',
+        'SCTAUpgrades',
         'SCTAAIT3Builder',
 
         'SCTAExpansionBuilders',

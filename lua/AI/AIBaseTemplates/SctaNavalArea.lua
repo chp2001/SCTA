@@ -3,6 +3,7 @@ BaseBuilderTemplate {
     Builders = {
         'SCTAAINavalBuilder',
         'SCTANavalFormer',
+        'SCTAUpgrades',
         'SCTAAIT3Formers',
         'SCTAAIT3Builder',
 

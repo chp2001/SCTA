@@ -73,6 +73,7 @@ UnitBlueprint {
         'OVERLAYSONAR',
         'OVERLAYOMNI',
         'CORE',
+        'SCOUT',
         'TRANSPORTATION',
     },
     Defense = {

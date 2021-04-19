@@ -152,6 +152,7 @@ BuilderGroup {
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
+            NumAssistees = 2,
             Construction = {
                 BuildStructures = {
                     'T1HydroCarbon',

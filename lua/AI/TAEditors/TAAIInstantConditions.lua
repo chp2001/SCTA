@@ -114,7 +114,7 @@ function GetMOARadii(bool)
     end
     return BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea
 end
- 
+
 ---TA Engis Engi Cannot Captur
 
 function SCTAEngineerTryReclaimCaptureArea(aiBrain, eng, pos)

@@ -132,6 +132,15 @@ function FormerBaseCheck(aiBrain, compareType, checkNum)
        return CompareBodySCTA(expBaseCount, checkNum, compareType)
 end]]
 
+function HaveUnitsWithCategoryAndAllianceFalse(aiBrain, numReq, category, alliance)
+    local numUnits = aiBrain:GetNumUnitsAroundPoint(category, Vector(0,0,0), 100000, alliance)
+    if numUnits > numReq then
+        return false
+    end
+    return true
+end
+
+
 function TAFactoryCapCheck(aiBrain, locationType, TECH)
     local catCheck = false
     catCheck = TECH * categories.FACTORY

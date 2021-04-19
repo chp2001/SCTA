@@ -122,6 +122,53 @@ BuilderGroup {
         }
     },
     Builder {
+        BuilderName = 'SCTAAI T3AirFactory Naval',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval2',
+        Priority = 135,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
+            { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.25, 0.5, } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
+            Construction = {
+                BuildStructures = {
+                    'T3AirFactory',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T3LAND Hover Factory Naval',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval2',
+        Priority = 143,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T3LandFactory',
+                }
+            }
+        }
+    },
+    Builder {
         BuilderName = 'SCTAAI T1Engineer Naval MetalMaker',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         Priority = 102,

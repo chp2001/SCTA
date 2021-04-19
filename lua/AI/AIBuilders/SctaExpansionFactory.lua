@@ -12,17 +12,26 @@ local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterTh
 
 
 local UnitProduction = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  12, PLANT) then 
-        return 110
-    elseif Factory(aiBrain,  1, LAB) then
+   if Factory(aiBrain,  1, LAB) then
         return 111
     elseif Factory(aiBrain,  1, PLATFORM) then
-        return 100
+        return 50
+    elseif Factory(aiBrain,  12, PLANT) then 
+            return 110
     else
         return 0
     end
 end
 
+local UnitProductionT1 = function(self, aiBrain, builderManager)
+    if Factory(aiBrain,  12, LAB) or Factory(aiBrain,  0, categories.GATE) then
+        return 0
+    elseif Factory(aiBrain,  1, LAB) then 
+        return 50
+    else
+        return 100
+    end
+end
 
 
 BuilderGroup {
@@ -33,6 +42,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Expansion LandFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 104,
+        PriorityFunction = UnitProductionT1,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
@@ -57,6 +67,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Expansion LandFac2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 106,
+        PriorityFunction = UnitProductionT1,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
@@ -108,6 +119,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Expansion AirFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 91,
+        PriorityFunction = UnitProductionT1,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },

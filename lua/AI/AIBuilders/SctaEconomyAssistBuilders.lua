@@ -36,46 +36,6 @@ BuilderGroup {
             },
         }
     },
-    Builder {
-        BuilderName = 'SCTA Engineer Assist Gantry Production',
-        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
-        Priority = 200,
-        InstanceCount = 12,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
-            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssistRange = 120,
-                BeingBuiltCategories = {'GATE'},                                                   
-                AssistUntilFinished = true,
-            },
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Assist Gantry',
-        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
-        Priority = 200,
-        InstanceCount = 12,
-        BuilderConditions = {
-            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYQUANTUMGATE }},
-            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Factory',
-                AssistRange = 120,
-                BeingBuiltCategories = {'BUILTBYQUANTUMGATE'},                                                       
-                AssistUntilFinished = true,
-            },
-        },
-        BuilderType = 'Any',
-    },
     ----Building Reclaim
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Excess PLANTS',
@@ -148,7 +108,7 @@ BuilderGroup {
             },
         BuilderData = {
             Location = 'LocationType',
-            Reclaim = {'VOLATILE, armwin, corwin,'},
+            Reclaim = {'armsolar, corsolar, armwin, corwin,'},
                 ReclaimTime = 30,
         },
         BuilderType = 'Any',
@@ -191,65 +151,6 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'SCTA Engineer Reclaim Excess',
-        PlatoonTemplate = 'EngineerBuilderSCTA',
-        PlatoonAIPlan = 'SCTAReclaimAI',
-        FormRadius = 500,
-        Priority = 99,
-        InstanceCount = 2,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 120 } },
-            { MIBC, 'LessThanGameTime', {480} }, 
-            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},   
-            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
-        },
-        BuilderData = {
-            Terrain = true,
-            LocationType = 'LocationType',
-            ReclaimTime = 30,
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTA Commander Assist Gantry Construction',
-        PlatoonTemplate = 'CommanderSCTAAssist',
-        Priority = 126,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssistRange = 120,
-                BeingBuiltCategories = {'GATE'},                                                   
-                AssistUntilFinished = true,
-            },
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTA CDR Assist Structure',
-        PlatoonTemplate = 'CommanderSCTAAssist',
-        Priority = 111,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
-            { MIBC, 'GreaterThanGameTime', {600} },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssistRange = 20,
-                BeingBuiltCategories = {'STRUCTURE'},                                        
-                AssistUntilFinished = true,
-            },
-        },
-    },
-    Builder {
         BuilderName = 'SCTA Engineer Reclaim Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'SCTAReclaimAI',
@@ -268,48 +169,6 @@ BuilderGroup {
         },
         BuilderType = 'Any',
     },
-    Builder {
-    BuilderName = 'SCTA Assist Production Idle',
-    PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
-    Priority = 5,
-    InstanceCount = 5,
-    BuilderConditions = {
-        { MIBC, 'GreaterThanGameTime', {900} },
-        { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
-        { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
-    },
-    BuilderData = {
-        Assist = {
-            AssistLocation = 'LocationType',
-            AssisteeType = 'Engineer',
-            AssistRange = 20,
-            BeingBuiltCategories = {'STRUCTURE'},                                        
-            AssistUntilFinished = true,
-        },
-    },
-    BuilderType = 'Any',
-},
-Builder {
-    BuilderName = 'SCTA Assist Unit Production Idle',
-    PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
-    Priority = 5,
-    InstanceCount = 5,
-    BuilderConditions = {
-        { MIBC, 'GreaterThanGameTime', {900} },
-        { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.MOBILE }},
-        { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
-    },
-    BuilderData = {
-        Assist = {
-            AssistLocation = 'LocationType',
-            AssisteeType = 'Factory',
-            AssistRange = 20,
-            BeingBuiltCategories = {'MOBILE'},                                        
-            AssistUntilFinished = true,
-        },
-    },
-    BuilderType = 'Any',
-},
 }
 
 --[[]]

@@ -8,11 +8,14 @@ BaseBuilderTemplate {
         'SCTAAIAirBuilder',
         'SCTAAILandFormers',
         'SCTAAIAirFormers',
+        'SCTAUpgrades',
+        'SCTAAIT3Builder',
 
         'SCTAExpansionBuilders',
         'SCTAAIEngineerMiscBuilder',
         'SCTAAIFactoryExpansions',
         'SCTAAIEngineerEcoBuilder',
+        'SCTAAssisters',
         --Misc Function
     },
     BaseSettings = {
@@ -23,7 +26,7 @@ BaseBuilderTemplate {
             SCU = 0,
         },
         FactoryCount = {
-            Land = 8,
+            Land = 4,
             Air = 2,
             Sea = 1,
             Gate = 0,

@@ -72,6 +72,7 @@ UnitBlueprint {
         'OVERLAYRADAR',
         'OVERLAYSONAR',
         'ARM',
+        'SCOUT',
         'OVERLAYOMNI',
         'TRANSPORTATION',
     },

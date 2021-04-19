@@ -11,16 +11,28 @@ local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
 local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
 
-
 local UnitProduction = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  12, PLANT) then 
-        return 110
-    elseif Factory(aiBrain,  1, LAB) then
+    if Factory(aiBrain,  1, LAB) then
         return 111
     elseif Factory(aiBrain,  1, PLATFORM) then
-        return 100
+        return 50
+    elseif Factory(aiBrain,  12, PLANT) then 
+            return 110
     else
         return 0
+    end
+end
+
+local UnitProductionT1 = function(self, aiBrain, builderManager)
+
+  if Factory(aiBrain,  0, categories.GATE) then
+        return 0
+  elseif Factory(aiBrain,  12, LAB) then
+            return 10
+  elseif Factory(aiBrain,  1, LAB) then 
+            return 50
+    else
+        return 101
     end
 end
 
@@ -32,12 +44,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer LandFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
+        PriorityFunction = UnitProductionT1,
         Priority = 102,
         InstanceCount = 1,
         BuilderConditions = {
             --{ UCBC, 'HaveLessThanUnitsWithCategory', { 12,  PLANT} },
+            { MIBC, 'GreaterThanGameTime', { 120 } },
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  LAB} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -58,13 +71,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer LandFac2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
+        PriorityFunction = UnitProductionT1,
         Priority = 96,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 120 } },
             --{ UCBC, 'HaveLessThanUnitsWithCategory', { 12,  PLANT} },
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  LAB} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -189,7 +202,7 @@ BuilderGroup {
         Priority = 128,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, PLANT } }, -- Don't build air fac immediately.
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, PLANT } }, -- Don't build air fac immediately.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR} },
             { MIBC, 'LessThanGameTime', {600} },
             { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.25, 0.5, } },
@@ -211,13 +224,13 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer AirFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 103,
+        PriorityFunction = UnitProductionT1,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  PLANT } }, -- Don't build air fac immediately.
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4,  categories.FACTORY * categories.AIR} },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1,  LAB * categories.AIR} }, -- Stop after 5 facs have been built.
-            { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.25, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
         },
         BuilderType = 'Any',
@@ -229,7 +242,6 @@ BuilderGroup {
                 BuildClose = true,
                 BuildStructures = {
                     'T1AirFactory',
-                    'T1EnergyProduction2',
                 }
             }
         }
@@ -314,7 +326,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
-            { MIBC, 'LessThanGameTime', {1200} },
+            { MIBC, 'LessThanGameTime', {900} },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -336,7 +348,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
-            { MIBC, 'LessThanGameTime', {1200} },
+            { MIBC, 'LessThanGameTime', {900} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
         },
         BuilderType = 'Any',

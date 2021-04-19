@@ -8,6 +8,15 @@ UnitBlueprint {
         MaxHealth = 7500,
     },
     Economy = {
-        BuildTime = 19000,
+        BuildTime = 12500,
+    },
+    LifeBarSize = 1,
+    Weapon = {
+        [1] = {
+            Damage = 45,
+            RateOfFire = 4,
+        },
+        [2] = {
+        },
     },
   }    

@@ -1,9 +1,8 @@
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
+local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
-local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/TAutils.lua').GetMOARadii()
-local RAIDER = categories.SCOUT - categories.OVERLAYRADAR
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAILandFormers',
@@ -34,33 +33,19 @@ BuilderGroup {
          },
     },
     Builder {
-        BuilderName = 'SCTAAI Guard',
-        PlatoonTemplate = 'GuardSCTA',
-        PlatoonAIPlan = 'GuardEngineer', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 100,
-        InstanceCount = 6,
-        BuilderType = 'Any',
-        BuilderData = {
-            NeverGuardBases = true,
-            LocationType = 'LocationType',
-        },        
-        BuilderConditions = {
-            { UCBC, 'EngineersNeedGuard', { 'LocationType' } },
-         },
-    },
-    Builder {
         BuilderName = 'SCTAAI Strike',
         PlatoonTemplate = 'StrikeForceSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 120,
         InstanceCount = 25,
         BuilderType = 'Any',
         BuilderData = {
+            Small = true,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {600} },
+            { MIBC, 'GreaterThanGameTime', {540} },
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
          },
     },
@@ -68,48 +53,19 @@ BuilderGroup {
         BuilderName = 'SCTAAI Laser',
         PlatoonTemplate = 'StrikeForceSCTALaser', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 150,
-        InstanceCount = 10,
+        InstanceCount = 50,
         BuilderType = 'Any',
         BuilderData = {
+            Small = true,
             Laser = true,
+            FormRadius = 500,
             NeverGuardBases = false,
             NeverGuardEngineers = true,
+            UseMoveOrder = true,
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
-            { EBC, 'GreaterThanEconStorageCurrent', { 10, 500 } },
         },
-    },
-    Builder {
-        BuilderName = 'SCTAAI Terrain',
-        PlatoonTemplate = 'StrikeForceSCTATerrain', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 150,
-        InstanceCount = 30,
-        BuilderType = 'Any',
-        BuilderData = {
-            NeverGuardBases = true,
-            NeverGuardEngineers = true,
-            IgnorePathing = true,
-            UseFormation = 'AttackFormation',
-        },        
-        BuilderConditions = { },
-    },
-    Builder {
-        BuilderName = 'SCTAAI LAB',
-        PlatoonTemplate = 'LABSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 300,
-        InstanceCount = 5,
-        BuilderType = 'Any',
-        BuilderData = {
-            NeverGuardBases = true,
-            NeverGuardEngineers = true,
-            UseFormation = 'AttackFormation',
-        },        
-        BuilderConditions = { 
-            { UCBC, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.COMMAND }},	
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, RAIDER - categories.NAVAL} },
-     },
     },
     Builder {
         BuilderName = 'SCTAAI Land Attack',
@@ -138,6 +94,7 @@ BuilderGroup {
         PlatoonTemplate = 'LandAttackSCTAEarly', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 100,
         InstanceCount = 30,
+        FormRadius = 1000,
         BuilderType = 'Any',
         BuilderData = {
             ThreatSupport = 75,
@@ -153,11 +110,10 @@ BuilderGroup {
         },        
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
          },
     },
     Builder {
-        BuilderName = 'SCTAAI Land2 Attack',
+        BuilderName = 'SCTAAI Missile Attack',
         PlatoonTemplate = 'LandRocketAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 105,
         InstanceCount = 30,
@@ -179,19 +135,158 @@ BuilderGroup {
          },
     },
     Builder {
-        BuilderName = 'LV4Kbot',
-        PlatoonTemplate = 'T4ExperimentalSCTA',
-        Priority = 10000,
-        FormRadius = 10000,
-        InstanceCount = 2,
+        BuilderName = 'SCTAAI Rocket Strike',
+        PlatoonTemplate = 'StrikeForceSCTAMissiles', -- The platoon template tells the AI what units to include, and how to use them.
+        Priority = 130,
+        InstanceCount = 50,
         BuilderType = 'Any',
         BuilderData = {
-            ThreatWeights = {
-                TargetThreatType = 'Commander',
-            },
-            UseMoveOrder = true,
-            PrioritizedCategories = { 'COMMAND', 'FACTORY -NAVAL', 'EXPERIMENTAL', 'MASSPRODUCTION', 'STRUCTURE -NAVAL' }, # list in order
+            Small = true,
+            NeverGuardBases = false,
+            NeverGuardEngineers = false,
+            UseFormation = 'AttackFormation',
+            AggressiveMove = true,
+        },        
+        BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
         },
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim Field',
+        PlatoonTemplate = 'EngineerBuilderSCTAField',
+        Priority = 200,
+        InstanceCount = 5,
+        BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.FIELDENGINEER} },
+            { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
+            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
+        },
+        BuilderData = {
+        Terrain = true,
+        LocationType = 'LocationType',
+        ReclaimTime = 30,
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Field Finish',
+        PlatoonTemplate = 'EngineerBuilderSCTAFieldFinish',
+        Priority = 125,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.FIELDENGINEER} },
+                { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
+            },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
+                Time = 20,
+            },
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Assist Production Field',
+        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
+        Priority = 25,
+        InstanceCount = 5,
+        BuilderConditions = {
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.FACTORY }},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.FIELDENGINEER} },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                AssistRange = 120,
+                BeingBuiltCategories = {'FACTORY'},                                        
+                AssistUntilFinished = true,
+            },
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTAAI Land Attack Mid',
+        PlatoonTemplate = 'LandAttackSCTAMid', -- The platoon template tells the AI what units to include, and how to use them.
+        Priority = 125,
+        InstanceCount = 10,
+        FormRadius = 1000,
+        BuilderType = 'Any',
+        BuilderData = {
+            ThreatSupport = 75,
+            NeverGuardBases = false,
+            NeverGuardEngineers = false,
+            UseFormation = 'AttackFormation',
+            LocationType = 'LocationType',
+            AggressiveMove = false,
+            ThreatWeights = {
+            SecondaryTargetThreatType = 'StructuresNotMex',
+            IgnoreStrongerTargetsRatio = 100.0,
+            },
+        },        
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {600} },
+            { MIBC, 'LessThanGameTime', {1200} },
+         },
+    },
+    Builder {
+        BuilderName = 'SCTAAI Strike Mid',
+        PlatoonTemplate = 'StrikeForceSCTAMid', -- The platoon template tells the AI what units to include, and how to use them.
+        Priority = 150,
+        InstanceCount = 10,
+        FormRadius = 1000,
+        BuilderType = 'Any',
+        BuilderData = {
+            NeverGuardBases = false,
+            NeverGuardEngineers = false,
+            UseFormation = 'AttackFormation',
+        },        
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {750} },
+            { MIBC, 'LessThanGameTime', {1500} },
+         },
+    },
+    Builder {
+        BuilderName = 'SCTAAI Land Attack Endgame',
+        PlatoonTemplate = 'LandAttackSCTAEndGame', -- The platoon template tells the AI what units to include, and how to use them.
+        Priority = 210,
+        InstanceCount = 10,
+        FormRadius = 1000,
+        BuilderType = 'Any',
+        BuilderData = {
+            ThreatSupport = 75,
+            NeverGuardBases = false,
+            NeverGuardEngineers = false,
+            UseFormation = 'AttackFormation',
+            LocationType = 'LocationType',
+            AggressiveMove = false,
+            ThreatWeights = {
+            SecondaryTargetThreatType = 'StructuresNotMex',
+            IgnoreStrongerTargetsRatio = 100.0,
+            },
+        },        
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {1200} },
+         },
+    },
+    Builder {
+        BuilderName = 'SCTAAI Strike Endgame',
+        PlatoonTemplate = 'StrikeForceSCTAEndgame', -- The platoon template tells the AI what units to include, and how to use them.
+        Priority = 250,
+        InstanceCount = 10,
+        FormRadius = 1000,
+        BuilderType = 'Any',
+        BuilderData = {
+            NeverGuardBases = false,
+            NeverGuardEngineers = false,
+            UseFormation = 'AttackFormation',
+        },        
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', {1500} },
+         },
     },
 }
 

@@ -3,11 +3,10 @@
 #
 #Script created by Raevn
 
-local TALaserProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TALaserProjectile
+local TABlueLaserProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TABlueLaserProjectile
 
-CORE_DOOMSDAY = Class(TALaserProjectile) 
+CORE_DOOMSDAY = Class(TABlueLaserProjectile) 
 {
-	PolyTrail = '/mods/SCTA-master/effects/emitters/BLUE_LASER_emit.bp',
 }
 
 TypeClass = CORE_DOOMSDAY

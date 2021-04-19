@@ -49,7 +49,6 @@ ProjectileBlueprint {
             'INDIRECTFIRE',
         },
         Faction = 'CORE',
-        Weapon = 'CORE_THUD',
     },
         Physics = {
             DestroyOnWater = true,

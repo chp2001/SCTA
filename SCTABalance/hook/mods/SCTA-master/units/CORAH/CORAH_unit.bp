@@ -14,17 +14,12 @@ UnitBlueprint {
         BuildCostMass = 1400,
         BuildTime = 24000,
     },
-    Intel = {
-        VisionRadius = 18,
-    },
     SizeY = 1.4,
     Weapon = {
         [1] = {
-            Damage = 100,
-            MuzzleVelocity = 70,
+            Damage = 200,
+            MuzzleVelocity = 75,
             ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/AH_WEAPON/AH_WEAPON_proj.bp',
-            RackSalvoSize = 3,
-            RateOfFire = 1,
         },
         [2] = {
         }, 

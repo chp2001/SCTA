@@ -17,17 +17,22 @@ UnitBlueprint {
 	    'NAVAL',
 	    'CORE',
 	    'SORTCONSTRUCTION',
+        'SUPPORTFACTORY',
     },
     Defense = {
-        Health = 12500,
-        MaxHealth = 12500,
+        Health = 7000,
+        MaxHealth = 7000,
     },
-        Display = {
-        UniformScale = 0.17,
+    Display = {
+        UniformScale = 0.2,
+    },
+    Footprint = {
+        SizeX = 7,
+        SizeZ = 7,
     },
     Economy = {
         BuildCostEnergy = 12000,
-        BuildCostMass = 1500,
+        BuildCostMass = 1300,
         BuildTime = 32000,
         BuildableCategory = {
             'NAVAL MOBILE TECH1 CORE',
@@ -38,12 +43,11 @@ UnitBlueprint {
         BuildRate = 360,
     },
     LifeBarHeight = 0.22,
-    LifeBarOffset = 5,
-    LifeBarSize = 12,
-    SelectionSizeX = 10,
-    SelectionSizeZ = 10,
-    SizeX = 14,
+    LifeBarOffset = 3,
+    LifeBarSize = 7,
+    SelectionSizeX = 9,
+    SelectionSizeZ = 9,
+    SizeX = 12,
     SizeY = 3,
-    SizeZ = 14,
-    ---CollisionOffsetX = -2,
+    SizeZ = 12,
 }

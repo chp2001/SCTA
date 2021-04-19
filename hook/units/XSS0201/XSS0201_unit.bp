@@ -1,0 +1,11 @@
+#ARM Torpedo Launcher - Torpedo Launcher
+#ARMTL
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true, 
+    Defense = {
+        ArmorType = 'Ship',
+    },
+}

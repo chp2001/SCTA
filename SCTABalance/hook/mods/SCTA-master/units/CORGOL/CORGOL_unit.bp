@@ -13,8 +13,8 @@ UnitBlueprint {
     'TANK',
     },
     Defense = {
-    Health = 16000,
-    MaxHealth = 16000,
+    Health = 12000,
+    MaxHealth = 12000,
     },
     Display = {
     UniformScale = 0.2,
@@ -30,6 +30,7 @@ UnitBlueprint {
     },
     Weapon = {
         [1] = {
+            Damage = 450,
             MaxRadius = 32, 
         },
         [2] = {}, 

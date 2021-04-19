@@ -35,7 +35,6 @@ UnitBlueprint {
         'BUILTBYTIER3ENGINEER',
         'BUILTBYCOMMANDER',
         'SELECTABLE',
-        'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'TECH1',
@@ -67,7 +66,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.1,
     },
     Economy = {
         BuildCostEnergy = 514,
@@ -110,7 +109,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 1,
+    LifeBarSize = 2,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,
@@ -129,9 +128,9 @@ UnitBlueprint {
     SelectionSizeX = 0.65,
     SelectionSizeZ = 0.65,
     SelectionThickness = 0.6,
-    SizeX = 0.75,
-    SizeY = 1.4,
-    SizeZ = 0.75,
+    SizeX = 2,
+    SizeY = 2,
+    SizeZ = 2,
     StrategicIconName = 'icon_structure1_mass',
     StrategicIconSortPriority = 0,
     Weapon = {

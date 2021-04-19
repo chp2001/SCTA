@@ -7,17 +7,17 @@ UnitBlueprint {
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'KCARMSEL',
+            Cue = 'KBARMSEL',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StartMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'KCARMMOV',
+            Cue = 'KBARMMOV',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StopMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'KCARMSTP',
+            Cue = 'KBARMSTP',
             LodCutoff = 'UnitMove_LodCutoff',
         },
 	Construct = Sound {
@@ -25,11 +25,6 @@ UnitBlueprint {
             Cue = 'NANLATH1',
             LodCutoff = 'UnitMove_LodCutoff',
 	},
-        ConstructStop = Sound {
-            Bank = 'TA_Sound',
-            Cue = 'KCARMMOV',
-            LodCutoff = 'UnitMove_LodCutoff',
-        },
 	StartReclaim = Sound {
             Bank = 'TA_Sound',
             Cue = 'RECLAIM1',
@@ -69,7 +64,7 @@ UnitBlueprint {
         'AMPHIBIOUS',
     },
     Defense = {
-        ArmorType = 'Commander',
+        ArmorType = 'Normal',
         Health = 3000,
         MaxHealth = 3000,
         RegenRate = 0,
@@ -264,17 +259,21 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 50,
-            DamageRadius = 1,
-            DamageType = 'DGun',
-            DisplayName = 'DGun',
+            Damage = 1000,
+            DamageRadius = 2,
+            DamageType = 'OverCharge',
+            Overcharge = {
+                energyMult = 0.9,
+                commandDamage = 500,
+                structureDamage = 500,
+            },
+            DisplayName = 'OverCharge',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
-                Seabed = 'Land|Water|Seabed',
             },
 	        RangeCategory = 'UWRC_DirectFire',
          WeaponCategory = 'DirectFire',
-            Label = 'DGun',
+            Label = 'OverCharge',
             MaxRadius = 22,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -283,7 +282,7 @@ UnitBlueprint {
             EnergyRequired = 1000,
             EnergyDrainPerSecond = 1000,
             EnergyChargeForFirstShot = true,
-            ProjectileId = '/mods/SCTA-master/projectiles/DARM_DISINTEGRATOR/DARM_DISINTEGRATOR_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARM_DISINTEGRATOR/ARM_DISINTEGRATOR_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {
@@ -328,17 +327,16 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 50,
-            DamageRadius = 1,
-            DamageType = 'DGun',
-            DisplayName = 'AutoDGun',
+            Damage = 1000,
+            DamageRadius = 2,
+            DamageType = 'Overcharge',
+            DisplayName = 'AutoOverCharge',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
-                Seabed = 'Land|Water|Seabed',
             },
 	        RangeCategory = 'UWRC_DirectFire',
          WeaponCategory = 'DirectFire',
-            Label = 'AutoDGun',
+            Label = 'AutoOverCharge',
             MaxRadius = 22,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
@@ -347,7 +345,7 @@ UnitBlueprint {
             EnergyRequired = 1000,
             EnergyDrainPerSecond = 1000,
             EnergyChargeForFirstShot = true,
-            ProjectileId = '/mods/SCTA-master/projectiles/DARM_DISINTEGRATOR/DARM_DISINTEGRATOR_proj.bp',
+            ProjectileId = '/mods/SCTA-master/projectiles/ARM_DISINTEGRATOR/ARM_DISINTEGRATOR_proj.bp',
             RackBones = {
                 {
                     MuzzleBones = {

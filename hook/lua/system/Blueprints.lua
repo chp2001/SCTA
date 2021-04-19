@@ -1,7 +1,7 @@
 do
 
 local TAExtractBuildMeshBlueprint = ExtractBuildMeshBlueprint
-local TAExtractCloakMeshBlueprint = ExtractCloakMeshBlueprint
+
 
 function ExtractBuildMeshBlueprint(bp)
 	TAExtractBuildMeshBlueprint(bp)
@@ -29,8 +29,12 @@ function ExtractBuildMeshBlueprint(bp)
 	end
 end
 
+local TAExtractCloakMeshBlueprint = ExtractCloakMeshBlueprint
+
 function ExtractCloakMeshBlueprint(bp)
 	TAExtractCloakMeshBlueprint(bp)
+	local FactionName = bp.General.FactionName
+	if FactionName == 'ARM' or FactionName == 'CORE' then 
 	local meshid = bp.Display.MeshBlueprint
     if not meshid then return end
 
@@ -50,7 +54,40 @@ function ExtractCloakMeshBlueprint(bp)
     cloakmeshbp.BlueprintId = meshid .. '_cloak'
     bp.Display.CloakMeshBlueprint = cloakmeshbp.BlueprintId
     MeshBlueprint(cloakmeshbp)
+	end
 end
+
+local TAExtractWreckageBlueprint = ExtractWreckageBlueprint
+
+function ExtractWreckageBlueprint(bp)
+	TAExtractWreckageBlueprint(bp)
+	local FactionName = bp.General.FactionName
+	if FactionName == 'ARM' or FactionName == 'CORE' then 
+		local meshid = bp.Display.MeshBlueprint
+		if not meshid then return end
+	
+		local meshbp = original_blueprints.Mesh[meshid]
+		if not meshbp then return end
+	
+		local wreckbp = table.deepcopy(meshbp)
+		if wreckbp.LODs then
+			for i,lod in wreckbp.LODs do
+				if lod.ShaderName == 'TMeshAlpha' or lod.ShaderName == 'NormalMappedAlpha' or lod.ShaderName == 'UndulatingNormalMappedAlpha' then
+					lod.ShaderName = 'BlackenedNormalMappedAlpha'
+				else
+					lod.ShaderName = 'Wreckage'
+					lod.SpecularName = '/env/common/props/wreckage_noise.dds'
+					lod.NormalName = '/mods/SCTA-master/meshes/Wreck_NormalsTS.dds'
+					lod.AlbedoName = '/mods/SCTA-master/meshes/Wreck_Albedo.dds'
+				end
+			end
+		end
+		wreckbp.BlueprintId = meshid .. '_wreck'
+		bp.Display.MeshBlueprintWrecked = wreckbp.BlueprintId
+		MeshBlueprint(wreckbp)
+	end
+end
+
 
     local SCTAModBlueprints = ModBlueprints
 

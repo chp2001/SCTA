@@ -7,17 +7,17 @@ UnitBlueprint {
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'HOVMDSL1',
+            Cue = 'TARMSEL',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StartMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'HOVMDOK1',
+            Cue = 'TARMMOVE',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StopMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'HOVMDOF1',
+            Cue = 'TARMST0P',
             LodCutoff = 'UnitMove_LodCutoff',
         },
 	Destroyed = Sound {
@@ -63,6 +63,13 @@ UnitBlueprint {
                 },
             },
         },
+        MovementEffects = {
+            TAMovement = {
+            Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
+            Scale = 0.5,
+            Bones = {'counteraim'},
+            },
+        },
         UniformScale = 0.16,
     },
     Economy = {
@@ -70,7 +77,6 @@ UnitBlueprint {
         BuildCostMass = 272,
         BuildTime = 8115,
     },
-
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -100,7 +106,7 @@ UnitBlueprint {
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
         MaxAcceleration = 1.5,
-        MaxBrake = 3,
+        MaxBrake = 2,
         MaxSpeed = 3,
         MotionType = 'RULEUMT_Hover',
         TurnRate = 82,
@@ -114,7 +120,7 @@ UnitBlueprint {
     SelectionSizeZ = 1.5,
     SelectionThickness = 0.25,
     SizeX = 3,
-    SizeZ = 3,
+    SizeY = 1,
     SizeZ = 3,
     StrategicIconName = 'icon_bot3_armored',
     StrategicIconSortPriority = 0,

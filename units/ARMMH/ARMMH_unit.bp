@@ -7,17 +7,17 @@ UnitBlueprint {
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'HOVMDSL1',
+            Cue = 'TARMSEL',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StartMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'HOVMDOK1',
+            Cue = 'TARMMOVE',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StopMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'HOVMDOF1',
+            Cue = 'TARMST0P',
             LodCutoff = 'UnitMove_LodCutoff',
         },
 	Destroyed = Sound {
@@ -107,9 +107,9 @@ UnitBlueprint {
         Elevation = 0.25,    
 	BackUpDistance = 0,
 	MaxSpeedReverse = 0,
-        MaxAcceleration = 3.24,
-        MaxBrake = 1.08,
-        MaxSpeed = 3,
+        MaxAcceleration = 1,
+        MaxBrake = 1,
+        MaxSpeed = 2,
         MotionType = 'RULEUMT_Hover',
         TurnRate = 78,
         MaxSteerForce = 100,
@@ -155,7 +155,7 @@ UnitBlueprint {
             MaxRadius = 80,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 0,
+            MuzzleVelocity = 5,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMMH_WEAPON/ARMMH_WEAPON_proj.bp',
             RackBones = {
                 {
@@ -179,7 +179,7 @@ UnitBlueprint {
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
 	        WeaponUnpacks = true,
-            WeaponRepackTimeout = 3,
+            WeaponRepackTimeout = 2,
             RenderFireClock = true,
             WeaponCategory = 'MISSILE',
         },

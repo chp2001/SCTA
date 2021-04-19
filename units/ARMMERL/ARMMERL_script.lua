@@ -4,7 +4,7 @@
 #Script created by Raevn
 
 local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
-local TARocket = import('/mods/SCTA-master/lua/TAweapon.lua').TARocket
+local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
 
 ARMMERL = Class(TAunit) {
 	
@@ -29,7 +29,7 @@ ARMMERL = Class(TAunit) {
 	end,
 
 	Weapons = {
-		ARMTRUCK_ROCKET = Class(TARocket) {
+		ARMTRUCK_ROCKET = Class(TAweapon) {
 
     			PlayFxRackReloadSequence = function(self)
 
@@ -108,7 +108,7 @@ ARMMERL = Class(TAunit) {
 				--SLEEP <628>;
 				WaitSeconds(0.65)
 
-				TARocket.PlayFxRackReloadSequence(self)
+				TAweapon.PlayFxRackReloadSequence(self)
 			end,
 
 			PlayFxWeaponUnpackSequence = function(self)
@@ -147,7 +147,7 @@ ARMMERL = Class(TAunit) {
 
 				--SLEEP <628>;
 				WaitSeconds(0.65)
-				TARocket.PlayFxWeaponUnpackSequence(self)
+				TAweapon.PlayFxWeaponUnpackSequence(self)
 			end,
 
 			PlayFxWeaponPackSequence = function(self)
@@ -189,7 +189,7 @@ ARMMERL = Class(TAunit) {
 
 				--SLEEP <25>;
 
-				TARocket.PlayFxWeaponPackSequence(self)
+				TAweapon.PlayFxWeaponPackSequence(self)
 			end,
 		},
 	},

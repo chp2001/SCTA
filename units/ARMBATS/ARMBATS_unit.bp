@@ -7,7 +7,7 @@ UnitBlueprint {
     AI = {
         TargetBones = {
             'turretb',
-            'guna',
+            'spot',
             'ARMBATS',
         },
     },
@@ -51,7 +51,7 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.5,
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Ship',
         Health = 5720,
         MaxHealth = 5720,
         AirThreatLevel = 0,
@@ -67,7 +67,6 @@ UnitBlueprint {
                 {
                     LODCutoff = 360,
                     ShaderName = 'AeonCZAR', 
-		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -120,14 +119,21 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+        BackUpDistance = 0,
+        MaxSpeedReverse = 0,
+        CatchUpAcc = 10,
+        DragCoefficient = 0.2,
         MaxAcceleration = 2,
         MaxBrake = 2,
-        MaxSpeed = 2.5,
-        TurnRate = 11,
-        MotionType = 'RULEUMT_Water',
+        MaxSpeed = 4,
         MaxSteerForce = 10,
+        MeshExtentsX = 3.25,
+        MeshExtentsY = 5,
+        MeshExtentsZ = 15,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Water',
+        TurnRadius = 25,
+        TurnRate = 11,
     },
     SelectionSizeX = 2.5,
     SelectionSizeZ = 5,
@@ -149,7 +155,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 400,
+            Damage = 80,
             DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'ARM_BATS',
@@ -158,7 +164,7 @@ UnitBlueprint {
             },
         RangeCategory = 'UWRC_IndirectFire',
         WeaponCategory = 'IndirectFire',
-            FiringRandomness = 0.5,
+            FiringRandomness = 0,
             FiringTolerance = 0,
             Label = 'WEAPON',
             MaxRadius = 125,
@@ -169,19 +175,19 @@ UnitBlueprint {
             RackBones = {
                 {    
                     MuzzleBones = {
-                        'flare2A',
+                        'muzzle2A',
                     },
                     RackBone = 'barrel2A',
                 },
                 {
                     MuzzleBones = {
-                        'flare2B',
+                        'muzzle2B',
                     },
                     RackBone = 'barrel2B',
                 },
                 {
                     MuzzleBones = {
-                        'flare2C',
+                        'muzzle2C',
                     },
                     RackBone = 'barrel2C',
                 },
@@ -191,15 +197,15 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.4545454545,
+            RateOfFire = 0.5,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'flare2B',
-            TurretBonePitch = 'turret2',
+            TurretBoneMuzzle = 'muzzle2B',
+            TurretBonePitch = 'pitch2',
             TurretBoneYaw = 'turret2',
             TurretPitch = 0,
             TurretPitchRange = 360,
@@ -220,7 +226,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_LowArc',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 750,
+            Damage = 80,
             DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'ARM_BATS',
@@ -229,7 +235,7 @@ UnitBlueprint {
             },
         RangeCategory = 'UWRC_IndirectFire',
         WeaponCategory = 'IndirectFire',
-            FiringRandomness = 0.5,
+            FiringRandomness = 0,
             FiringTolerance = 0,
             Label = 'WEAPON',
             MaxRadius = 125,
@@ -240,19 +246,19 @@ UnitBlueprint {
             RackBones = {
                 {    
                     MuzzleBones = {
-                        'flare1A',
+                        'muzzle1A',
                     },
                     RackBone = 'barrel1A',
                 },
                 {
                     MuzzleBones = {
-                        'flare1B',
+                        'muzzle1B',
                     },
                     RackBone = 'barrel1B',
                 },
                 {
                     MuzzleBones = {
-                        'flare1C',
+                        'muzzle1C',
                     },
                     RackBone = 'barrel1C',
                 },
@@ -262,14 +268,14 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 0.4545454545,
-            TargetCheckInterval = 2.2,
+            RateOfFire = 0.5,
+            TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TurretBoneMuzzle = 'flare1B',
-            TurretBonePitch = 'turret1',
+            TurretBoneMuzzle = 'muzzle1B',
+            TurretBonePitch = 'pitch1',
             TurretBoneYaw = 'turret1',
             TurretPitch = 0,
             TurretPitchRange = 360,

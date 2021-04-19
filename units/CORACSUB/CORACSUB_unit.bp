@@ -57,7 +57,7 @@ UnitBlueprint {
         'OVERLAYSONAR',
         },
     Defense = {
-        ArmorType = 'Sub',
+        ArmorType = 'Normal',
         Health = 360,
         MaxHealth = 360,
         AirThreatLevel = 0,
@@ -68,7 +68,7 @@ UnitBlueprint {
     Description = 'Tech Level 2',
     Display = {
         AnimationBuild = '/mods/SCTA-master/units/CORACSUB/CORACSUB_lod0_aopen.sca',
-        AnimationBuildRate = 0.2, 
+        AnimationBuildRate = 1, 
         Abilities = {
              '<LOC ability_engineeringsuite>Engineering Suite',
         },
@@ -127,6 +127,7 @@ UnitBlueprint {
             RULEUCC_Reclaim = true,
             RULEUCC_Repair = true,
             RULEUCC_Stop = true,
+            RULEUCC_Dive = true,
         },
         ConstructionBar = true,
         SelectionPriority = 3,

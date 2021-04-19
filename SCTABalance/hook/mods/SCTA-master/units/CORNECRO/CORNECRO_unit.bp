@@ -1,30 +1,8 @@
 UnitBlueprint {
     Merge = true, 
-    Categories = {
-        'SELECTABLE',
-        'TECH2',
-        'FIELDENGINEER',
-        'ENGINEER',
-        'REPAIR',
-        'RECLAIM',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'PATROLHELPER',
-        'SHOWQUEUE',
-        'MOBILE',
-        'SELECTION',
-        'CONSTRUCTION',
-        'LAND',
-        'CORE',
-        'BOT',
-        'TANK',
-    },
     Defense = {
         Health = 1300,
         MaxHealth = 1300,
-        },
-    Display = {
-        UniformScale = 0.06,
         },
     Economy = {
     BuildCostEnergy = 3800,
@@ -34,11 +12,9 @@ UnitBlueprint {
 	ProductionPerSecondEnergy = 3,
 	ProductionPerSecondMass = 0,
     },
-    
     LifeBarSize = 1,
     SelectionSizeX = 0.6,
     SelectionSizeZ = 0.6,
     SizeX = 1,
-    ---SizeY = 0.75,
     SizeZ = 1,
 }

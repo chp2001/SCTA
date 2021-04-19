@@ -49,9 +49,7 @@ ProjectileBlueprint {
             'DIRECTFIRE',
         },
         Faction = 'CORE',
-        Weapon = 'CORE_CRUS',
     },
-
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 30,

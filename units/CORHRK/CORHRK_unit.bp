@@ -140,7 +140,7 @@ TechLevel = 'RULEUTL_Advanced',
             MaxRadius = 60,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 3,
+            MuzzleVelocity = 5,
             ProjectileId = '/mods/SCTA-master/projectiles/HRK_ROCKET/HRK_ROCKET_proj.bp',
             RackBones = {
                 {

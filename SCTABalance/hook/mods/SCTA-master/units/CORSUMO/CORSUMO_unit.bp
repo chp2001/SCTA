@@ -28,7 +28,7 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 18,
     },
-    LifeBarSize = 2,
+    LifeBarSize = 3,
     SelectionSizeX = 2,
     SelectionSizeZ = 2,
     SizeX = 3,
@@ -36,8 +36,8 @@ UnitBlueprint {
     SizeY = 3,
     Weapon = {
         [1] = {
-            EnergyDrainPerSecond = 40,
-            EnergyRequired = 40,
+            EnergyDrainPerSecond = 50,
+            EnergyRequired = 50,
         },
         [2] = {
         },

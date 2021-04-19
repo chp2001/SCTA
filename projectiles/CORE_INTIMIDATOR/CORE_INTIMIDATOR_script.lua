@@ -3,7 +3,7 @@
 #
 #Script created by Raevn
 
-local TAHeavyCannonProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TAHeavyCannonProjectile
+local TAHeavyCannonProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TAHeavyCannonProjectile
 
 CORE_INTIMIDATOR = Class(TAHeavyCannonProjectile) {
 }

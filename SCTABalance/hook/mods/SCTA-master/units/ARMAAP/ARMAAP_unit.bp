@@ -18,9 +18,10 @@ UnitBlueprint {
         'OVERLAYRADAR',
 	    'ARM',
 	    'SORTCONSTRUCTION',
+        'SUPPORTFACTORY',
         },
         Display = {
-        UniformScale = 0.23,
+        UniformScale = 0.2,
         },
         Defense = {
             Health = 9600,
@@ -32,12 +33,12 @@ UnitBlueprint {
         },
     Economy = {
         BuildCostEnergy = 20000,
-        BuildCostMass = 1100,
+        BuildCostMass = 900,
         BuildTime = 16000,
         BuildableCategory = {
         'AIR MOBILE TECH1 ARM',
         'AIR MOBILE TECH2 ARM', 
-        'AIR MOBILE TECH3 ARM',
+        'ASF ARM',
         },
     },
     LifeBarHeight = 0.22,

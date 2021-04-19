@@ -28,15 +28,15 @@ do
                 MaintenanceConsumptionPerSecondEnergy = 2,
             },
             Physics = {
-                MaxSpeed = 1.2,
+                MaxAcceleration = 1.1,
+                MaxSpeed = 1.1,
                 TurnRate = 0.75,
             }
         }
         local Land_Singles = {
             LifeBarHeight = 0.3,
             LifeBarOffset = 0.3,
-            LifeBarSize = 0.5,
-             
+            LifeBarSize = 0.4,
             SelectionSizeX = 0.5,
             SelectionSizeZ = 0.5,
             SelectionThickness = 2.5,
@@ -66,8 +66,8 @@ do
                 MaintenanceConsumptionPerSecondEnergy = 3,
             },
             Physics = {
-                MaxSpeed = 0.75,
-                TurnRate = 0.75,
+                MaxSpeed = 1.5,
+                TurnRate = 3,
             },
         }
         local Naval_Singles = {
@@ -105,8 +105,7 @@ do
         local Air_Singles = {
             LifeBarHeight = 0.3,
             LifeBarOffset = 0.5,
-            LifeBarSize = 0.5,
-            
+            LifeBarSize = 0.5, 
             SelectionSizeX = 0.33,
             SelectionSizeZ = 0.33,
             SelectionThickness = 2,
@@ -129,7 +128,6 @@ do
                 BuildCostMass = 0.5,
                 BuildTime = 0.05,
                 BuildRate = 0.2,
-                StorageEnergy = 0.2,
                 StorageMass = 0.5,
             },
         }
@@ -155,9 +153,9 @@ do
         }
 
         for id, bp in all_blueprints.Unit do
-            if bp.Categories and table.find(bp.Categories, 'SUBMERSIBLE') and (table.find(bp.Categories, 'TECH1') or table.find(bp.Categories, 'TECH2') or table.find(bp.Categories, 'TECH3')) then
+            if bp.Categories and table.find(bp.Categories, 'NAVAL') and bp.Physics.MotionType == 'RULEUMT_Water' then
             if bp.Defense.ArmorType and type(bp.Defense.ArmorType) == 'string' then
-                bp.Defense.ArmorType = 'Sub'
+                bp.Defense.ArmorType = 'Ship'
             end
         end
             -- #2 CB Change: Check ARM/CORE in its own IF statement, then do if/else on land/navy/air/struct

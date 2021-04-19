@@ -5,17 +5,13 @@ UnitBlueprint {
         MaxHealth = 2500,
     },
     Display = {
-        UniformScale = 0.05,
+        UniformScale = 0.07,
     },
     Economy = {
         BuildCostMass = 2300,
         BuildCostEnergy = 24000,
         MaintenanceConsumptionPerSecondEnergy = 25,
         BuildTime = 35000,
-    },
-   Footprint = {
-        SizeX = 1,
-        SizeZ = 1,
     },
    Physics = {
         MeshExtentsX = 1.25,
@@ -27,6 +23,7 @@ UnitBlueprint {
         SkirtSizeX = 2,
         SkirtSizeZ = 2,
     },
+    LifeBarSize = 1,
     SelectionSizeX = 1.25,
     SelectionSizeZ = 1.25,
     SelectionThickness = 0.6,

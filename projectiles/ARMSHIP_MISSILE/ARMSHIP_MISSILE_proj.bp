@@ -47,20 +47,19 @@ ProjectileBlueprint {
         EntityCategory = {
        	    'ARM',
             'PROJECTILE',
-   	    'ANTIAIR',
+   	        'ANTIAIR',
        	    'MISSILE',
         },
         Faction = 'ARM',
         Weapon = 'ARMSHIP_MISSILE',
     },
-
     Physics = {
         Acceleration = 5,
         DestroyOnWater = true,
         InitialSpeed = 20,
         LeadTarget = false,
         Lifetime = 4,
-        TrackTime = 3,
+        TrackTime = 2,
         MaxSpeed = 40,
         TrackTarget = true,
         TurnRate = 165,

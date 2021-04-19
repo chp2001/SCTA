@@ -22,9 +22,6 @@ UnitBlueprint {
         Health = 1200,
         MaxHealth = 1200,
     },
-   Display = {
-    UniformScale = 0.08,
-    },
     Economy = {
         BuildCostEnergy = 2600,
         BuildCostMass = 400,
@@ -33,11 +30,6 @@ UnitBlueprint {
     Intel = {
         VisionRadius = 14,
     },
-    SelectionSizeX = 0.8,
-    SelectionSizeZ = 0.8,
-    SizeX = 1,
-    SizeY = 1,
-    SizeZ = 1,
     StrategicIconName = 'icon_bot2_antiair',
     Weapon = {
         [1] = {

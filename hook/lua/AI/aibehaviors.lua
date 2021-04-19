@@ -29,7 +29,6 @@ function CommanderThreadSCTA(cdr, platoon)
     aiBrain:BuildScoutLocations()
     -- Added to ensure we know the start locations (thanks to Sorian).
     SetCDRHome(cdr, platoon)
-
     while not cdr.Dead do
         -- Overcharge
         if not cdr.Dead then CDRSCTADGun(aiBrain, cdr) end
@@ -38,35 +37,17 @@ function CommanderThreadSCTA(cdr, platoon)
         -- Go back to base
         if not cdr.Dead then SCTACDRReturnHome(aiBrain, cdr) end
         WaitTicks(1)
-
-        -- Call platoon resume building deal...
-        if not cdr.Dead and cdr:IsIdleState() and not cdr.GoingHome and not cdr:IsUnitState("Moving")
-        and not cdr:IsUnitState("Building") and not cdr:IsUnitState("Guarding")
-        and not cdr:IsUnitState("Attacking") and not cdr:IsUnitState("Repairing")
-        and not cdr:IsUnitState('BlockCommandQueue') then
-            -- if we have nothing to build...
+        if not cdr:IsDead() and cdr:IsIdleState() then
             if not cdr.EngineerBuildQueue or table.getn(cdr.EngineerBuildQueue) == 0 then
-                -- check if the we have still a platton assigned to the CDR
-                if cdr.PlatoonHandle then
-                    local platoonUnits = cdr.PlatoonHandle:GetPlatoonUnits() or 1
-                    -- only disband the platton if we have 1 unit, plan and buildername. (NEVER disband the armypool platoon!!!)
-                    if table.getn(platoonUnits) == 1 and cdr.PlatoonHandle.PlanName and cdr.PlatoonHandle.BuilderName then
-                        --SPEW('ACU PlatoonHandle found. Plan: '..cdr.PlatoonHandle.PlanName..' - Builder '..cdr.PlatoonHandle.BuilderName..'. Disbanding CDR platoon!')
-                        cdr.PlatoonHandle:PlatoonDisband()
-                    end
-                end
-                -- get the global armypool platoon
                 local pool = aiBrain:GetPlatoonUniquelyNamed('ArmyPool')
-                -- assing the CDR to the armypool
-                aiBrain:AssignUnitsToPlatoon(pool, {cdr}, 'Unassigned', 'None')
-            -- if we have a BuildQueue then continue building
-            elseif cdr.EngineerBuildQueue and table.getn(cdr.EngineerBuildQueue) ~= 0 then
+                aiBrain:AssignUnitsToPlatoon( pool, {cdr}, 'Unassigned', 'None' )
+            elseif cdr.EngineerBuildQueue and table.getn(cdr.EngineerBuildQueue) != 0 then
                 if not cdr.NotBuildingThread then
                     cdr.NotBuildingThread = cdr:ForkThread(platoon.WatchForNotBuilding)
-                end
+                end             
             end
         end
-        WaitTicks(1)
+        WaitTicks(1)        
         if not cdr.Dead and GetGameTimeSeconds() > WaitTaunt and (not aiBrain.LastVocTaunt or GetGameTimeSeconds() - aiBrain.LastVocTaunt > WaitTaunt) then
             SUtils.AIRandomizeTaunt(aiBrain)
             WaitTaunt = 600 + Random(1, 900)
@@ -80,7 +61,7 @@ function CDRSCTADGun(aiBrain, cdr)
     local weapon
 
     for k, v in weapBPs do
-        if v.Label == 'DGun' then
+        if v.Label == 'OverCharge' then
             weapon = v
             break
         end
@@ -103,11 +84,11 @@ function CDRSCTADGun(aiBrain, cdr)
     local maxRadius = weapon.MaxRadius + 10
     local mapSizeX, mapSizeZ = GetMapSize()
     if cdr:GetHealthPercent() > 0.8
-        and GetGameTimeSeconds() < 660
-        and GetGameTimeSeconds() > 243
+        and GetGameTimeSeconds() < 600
+        and GetGameTimeSeconds() > 240
         and mapSizeX <= 512 and mapSizeZ <= 512
         then
-        maxRadius = 250
+        maxRadius = 125
     end
 
     -- Take away engineers too
@@ -241,7 +222,7 @@ end
 function SCTACDRReturnHome(aiBrain, cdr)
     -- This is a reference... so it will autoupdate
     local cdrPos = cdr:GetPosition()
-    local distSqAway = 250
+    local distSqAway = 150
     local loc = cdr.CDRHome
     if not cdr.Dead and VDist2Sq(cdrPos[1], cdrPos[3], loc[1], loc[3]) > distSqAway then
         local plat = aiBrain:MakePlatoon('', '')
@@ -256,7 +237,6 @@ function SCTACDRReturnHome(aiBrain, cdr)
             cdr.GoingHome = true
             WaitSeconds(7)
         until cdr.Dead or VDist2Sq(cdrPos[1], cdrPos[3], loc[1], loc[3]) <= distSqAway
-
         cdr.GoingHome = false
         IssueClearCommands({cdr})
     end

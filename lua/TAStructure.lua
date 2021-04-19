@@ -1,9 +1,5 @@
 #Generic TA unit
 local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
-local scenarioUtils = import('/lua/sim/ScenarioUtilities.lua')
-local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
-local Game = import('/lua/game.lua')
-local util = import('/lua/utilities.lua')
 
 TAStructure = Class(TAunit) 
 {
@@ -103,17 +99,27 @@ TAStructure = Class(TAunit)
 }
 
 TAPop = Class(TAStructure) {
+	OnCreate = function(self)
+		TAStructure.OnCreate(self)
+		self:SetWeaponEnabledByLabel('ARMAMB_GUN', false)
+	end,
+	
 	Fold = function(self)
 		TAStructure.Fold(self)
 		self:EnableIntel('RadarStealth')
+		self:SetWeaponEnabledByLabel('ARMAMB_GUN', true)
 	end,
 
+	OnStopBeingBuilt = function(self,builder,layer)
+		TAStructure.OnStopBeingBuilt(self,builder,layer)
+		ForkThread(self.Fold, self)
+	end,
 }
 
 TAMass = Class(TAStructure) {
     OnCreate = function(self)
         TAStructure.OnCreate(self)
-        local markers = scenarioUtils.GetMarkers()
+        local markers = import('/lua/sim/ScenarioUtilities.lua').GetMarkers()
         local unitPosition = self:GetPosition()
 
         for k, v in pairs(markers) do
@@ -129,6 +135,47 @@ TAMass = Class(TAStructure) {
         end
     end,
 
+	CreateWreckage = function( self, overkillRatio )
+		if not self.onMetalSpot then
+			TAStructure.CreateWreckageProp(self, overkillRatio)
+		else
+			return nil
+		end
+	end,
+
+	OnStopBeingBuilt = function(self, builder, layer)
+		TAStructure.OnStopBeingBuilt(self, builder, layer)
+		local markers = import('/lua/sim/ScenarioUtilities.lua').GetMarkers() 
+		local unitPosition = self:GetPosition()  
+		for k, v in pairs(markers) do 
+			if(v.type == 'Mass') then 
+                		local MassPosition = v.position 
+                		if (MassPosition[1] < unitPosition[1] + 1) and (MassPosition[1] > unitPosition[1] - 1) then 
+	                    		if (MassPosition[3] < unitPosition[3] + 1) and (MassPosition[3] > unitPosition[3] - 1) then
+						self.onMetalSpot = true
+	                    			break 
+								end
+	               		end 
+            	end 
+        	end		
+		self:PlayUnitSound('Activate')
+		self.Spinners.arms:SetTargetSpeed(self:GetProductionPerSecondMass() * 75)
+	end,
+
+	OnProductionPaused = function(self)
+		TAStructure.OnProductionPaused(self)
+		self.Spinners.arms:SetAccel(182)
+		self.Spinners.arms:SetTargetSpeed(0)
+		self:PlayUnitSound('Deactivate')
+	end,
+
+	OnProductionUnpaused = function(self)
+		TAStructure.OnProductionUnpaused(self)
+		self.Spinners.arms:SetAccel(91)
+		self.Spinners.arms:SetTargetSpeed(self:GetProductionPerSecondMass() * 75)
+		self:PlayUnitSound('Activate')
+	end,
+
     OnStartBuild = function(self, unitbuilding, order)
         TAStructure.OnStartBuild(self, unitbuilding, order)
         self:AddCommandCap('RULEUCC_Stop')
@@ -143,32 +190,22 @@ TAMass = Class(TAStructure) {
 TACloser = Class(TAStructure) {
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAStructure.OnStopBeingBuilt(self,builder,layer)
-		closeDueToDamage = nil,
+		self.closeDueToDamage = nil,
 		ChangeState(self, self.OpeningState)
-		if EntityCategoryContains(categories.OPTICS, self) and (self:IsIntelEnabled('Radar') or self:IsIntelEnabled('Sonar')) then
-		TAutils.registerTargetingFacility(self:GetArmy())
-	end
 	end,
 
 	OnIntelEnabled = function(self)
 		TAStructure.OnIntelEnabled()
 			if EntityCategoryContains(categories.OPTICS, self) and (self:IsIntelEnabled('Radar') or self:IsIntelEnabled('Sonar')) then
-			TAutils.registerTargetingFacility(self:GetArmy())
+				import('/mods/SCTA-master/lua/TAutils.lua').registerTargetingFacility(self:GetArmy())
 			end
 	end,
 
 	OnIntelDisabled = function(self)
 	TAStructure.OnIntelDisabled()
 			if EntityCategoryContains(categories.OPTICS, self) and (not self:IsIntelEnabled('Radar') or not self:IsIntelEnabled('Sonar')) then
-			TAutils.unregisterTargetingFacility(self:GetArmy())
+				import('/mods/SCTA-master/lua/TAutils.lua').unregisterTargetingFacility(self:GetArmy())
 		end
-	end,
-
-	OnKilled = function(self, instigator, type, overkillRatio)
-		if EntityCategoryContains(categories.OPTICS, self) and (self:IsIntelEnabled('Radar') or self:IsIntelEnabled('Sonar')) then
-		TAutils.unregisterTargetingFacility(self:GetArmy())
-		end
-		TAStructure.OnKilled(self, instigator, type, overkillRatio)
 	end,
 
 	IdleClosedState = State {
@@ -181,7 +218,7 @@ TACloser = Class(TAStructure) {
 
 				self.closeDueToDamage = nil
 
-				if self.intelIsActive then 
+				if self.IsActive then 
 					ChangeState(self, self.OpeningState)
 				end
 			end
@@ -189,7 +226,6 @@ TACloser = Class(TAStructure) {
 
 		OnDamage = function(self, instigator, amount, vector, damageType)
 			TAStructure.OnDamage(self, instigator, amount, vector, damageType) 
-
 			self.DamageSeconds = 8
 			ChangeState(self, self.ClosingState)
 		end,
@@ -209,9 +245,27 @@ TACloser = Class(TAStructure) {
 
 	},
 
+	OpeningState = State {
+		Main = function(self)
+			TAStructure.Unfold(self)
+			self:PlayUnitSound('Activate')
+			ChangeState(self, self.IdleOpenState)
+		end,
+	},
+
+
+	ClosingState = State {
+		Main = function(self)
+			TAStructure.Fold(self)
+			self:PlayUnitSound('Activate')
+			ChangeState(self, self.IdleClosedState)
+		end,
+
+	},
+
 	OnScriptBitSet = function(self, bit)
 		if bit == 3 then
-			self.intelIsActive = nil
+			self.IsActive = nil
 			ChangeState(self, self.ClosingState)
 		end
 		TAStructure.OnScriptBitSet(self, bit)
@@ -220,21 +274,36 @@ TACloser = Class(TAStructure) {
 
 	OnScriptBitClear = function(self, bit)
 		if bit == 3 then
-			self.intelIsActive = true
+			self.IsActive = true
 			ChangeState(self, self.OpeningState)
 		end
 		TAStructure.OnScriptBitClear(self, bit)
+	end,
+
+	OnProductionUnpaused = function(self)
+		TAStructure.OnProductionUnpaused(self)
+		self.IsActive = true
+		ChangeState(self, self.OpeningState)
+	end,
+
+	OnProductionPaused = function(self)
+		TAStructure.OnProductionPaused(self)
+		self.IsActive = nil
+		ChangeState(self, self.ClosingState)
 	end,
 }	
 	
 TACKFusion = Class(TAStructure) {
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAStructure.OnStopBeingBuilt(self,builder,layer)
+		self.MainCost = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
+		self.Mesh = self:GetBlueprint().Display.MeshBlueprint
+		self.TACloak = true
+		self.Structure = true
 		self:SetScriptBit('RULEUTC_CloakToggle', false)
+		TAStructure.OnIntelEnabled(self)
 		self:RequestRefreshUI()
-	end,
-
-	
+    end,
 }
 
 TAMine = Class(TACKFusion) {

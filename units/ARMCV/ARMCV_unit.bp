@@ -102,7 +102,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.32,
+        UniformScale = 0.48,
     },
     Economy = {
         BuildCostEnergy = 2030,

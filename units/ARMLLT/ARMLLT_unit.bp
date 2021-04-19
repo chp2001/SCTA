@@ -7,7 +7,6 @@ UnitBlueprint {
     AI = {
         TargetBones = {
             'socle',
-            'turret',
         },
     },
     Audio = {
@@ -43,7 +42,6 @@ UnitBlueprint {
         'SNIPEMODE',
         'ANTISHIELD',
     },
-    CollisionOffsetY = -1,
     Defense = {
         ArmorType = 'Structure',
         AirThreatLevel = 0,
@@ -65,7 +63,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.24,
+        UniformScale = 0.14,
     },
     Economy = {
         BuildCostEnergy = 2546,
@@ -128,9 +126,9 @@ UnitBlueprint {
             WeaponCategory = 'DirectFire',
             FiringTolerance = 2.75,
             Label = 'ARM_LIGHTLASER',
-            MaxRadius = 25,
+            MaxRadius = 26,
             MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 2,
+            MuzzleSalvoSize = 1,
             MuzzleVelocity = 56.25,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_LIGHTLASER/ARM_LIGHTLASER_proj.bp',
             RackBones = {
@@ -147,15 +145,15 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 1,
+            RateOfFire = 2,
             TargetCheckInterval = 1,
-            DamageRadius = 2, 
+            DamageRadius = 1, 
             TargetPriorities = {
                 'ALLUNITS'
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'barrel',
+            TurretBoneMuzzle = 'fire2',
             TurretBonePitch = 'pitchturret',
             TurretBoneYaw = 'turret',
             TurretDualManipulators = false,

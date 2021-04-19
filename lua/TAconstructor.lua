@@ -59,6 +59,12 @@ TAconstructor = Class(TAWalking) {
         TAWalking.OnStartBuild(self, unitBeingBuilt, order)
     end,
 
+    OnStopBeingBuilt = function(self, builder, layer)
+        TAWalking.OnStopBeingBuilt(self, builder, layer)
+        if __blueprints['armgant'] then
+            TAutils.TABuildRestrictions(self)
+        end
+    end,  
 
     OnStopBuild = function(self, unitBeingBuilt)
         self.UnitBeingBuilt = nil
@@ -71,9 +77,6 @@ TAconstructor = Class(TAWalking) {
         end
         self.BuildingUnit = false
         self:SetImmobile(false)
-        if __blueprints['armgant'] and self.restrictions then
-            TAutils.updateBuildRestrictions(self)
-        end
         TAWalking.OnStopBuild(self, unitBeingBuilt)
     end,
 
@@ -239,7 +242,7 @@ TACommander = Class(TAconstructor) {
     end,
 
     SetAutoOvercharge = function(self, auto)
-        local wep = self:GetWeaponByLabel('AutoDGun')
+        local wep = self:GetWeaponByLabel('AutoOverCharge')
         wep:SetAutoOvercharge(auto)
         self.Sync.AutoOvercharge = auto
     end,
@@ -247,7 +250,7 @@ TACommander = Class(TAconstructor) {
     OnCreate = function(self)
 		TAconstructor.OnCreate(self)
         self:SetCapturable(false)
-        self:SetWeaponEnabledByLabel('AutoDGun', false)
+        self:SetWeaponEnabledByLabel('AutoOverCharge', false)
 	end,
     
     CreateCaptureEffects = function( self, target )
@@ -270,16 +273,6 @@ TACommander = Class(TAconstructor) {
 		CreateAttachedEmitter( self, 0, army, '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp'):ScaleEmitter(10)
 		TAconstructor.DeathThread(self)
     end,
-    
-    DoTakeDamage = function(self, instigator, amount, vector, damageType)
-        -- Handle incoming OC damage
-        if damageType == 'Overcharge' then
-            local wep = instigator:GetWeaponByLabel('OverCharge')
-            amount = wep:GetBlueprint().Overcharge.commandDamage
-        end
-        TAconstructor.DoTakeDamage(self, instigator, amount, vector, damageType)
-    end,
-
 
     OnStartReclaim = function(self, target)
 		TAconstructor.OnStartReclaim(self, target)
@@ -293,6 +286,9 @@ TACommander = Class(TAconstructor) {
 
     OnStopBeingBuilt = function(self,builder,layer)
 		TAconstructor.OnStopBeingBuilt(self,builder,layer)
+        self.MainCost = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
+        self.Mesh = self:GetBlueprint().Display.MeshBlueprint
+        self.TACloak = true
 		self:SetMaintenanceConsumptionInactive()
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
         self:RequestRefreshUI()
@@ -374,6 +370,11 @@ TARealCommander = Class(TACommander) {
     end,
     
     DoTakeDamage = function(self, instigator, amount, vector, damageType)
+        if damageType == 'Overcharge' then
+            local wep = instigator:GetWeaponByLabel('OverCharge')
+            amount = wep:GetBlueprint().Overcharge.commandDamage
+        end
+        TACommander.DoTakeDamage(self, instigator, amount, vector, damageType)
         local aiBrain = self:GetAIBrain()
         if aiBrain then
             aiBrain:OnPlayCommanderUnderAttackVO()
@@ -381,7 +382,6 @@ TARealCommander = Class(TACommander) {
         if self:GetHealth() < ArmyBrains[self.Army]:GetUnitStat(self.UnitId, "lowest_health") then
             ArmyBrains[self.Army]:SetUnitStat(self.UnitId, "lowest_health", self:GetHealth())
         end
-        TACommander.DoTakeDamage(self, instigator, amount, vector, damageType)
     end,
 
     OnStopBeingBuilt = function(self,builder,layer)

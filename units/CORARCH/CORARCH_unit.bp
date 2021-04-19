@@ -41,7 +41,7 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.5,
     Defense = {
-        ArmorType = 'Normal',
+        ArmorType = 'Ship',
         Health = 2360,
         MaxHealth = 2360,
         AirThreatLevel = 10,
@@ -105,14 +105,21 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-	BackUpDistance = 0,
-	MaxSpeedReverse = 0,
+        BackUpDistance = 0,
+        MaxSpeedReverse = 0,
+        CatchUpAcc = 10,
+        DragCoefficient = 0.2,
         MaxAcceleration = 4.2,
         MaxBrake = 4,
         MaxSpeed = 4.8,
-        TurnRate = 26,
-        MotionType = 'RULEUMT_Water',
         MaxSteerForce = 10,
+        MeshExtentsX = 2,
+        MeshExtentsY = 2,
+        MeshExtentsZ = 6.25,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_Water',
+        TurnRadius = 20,
+        TurnRate = 26,
     },
     SelectionSizeX = 2,
     SelectionSizeZ = 2,
@@ -135,8 +142,8 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 180,
-            DamageRadius = 1.5,
-            DamageType = 'Normal',
+            DamageRadius = 1,
+            DamageType = 'TASpec',
             DisplayName = 'ARMAAS_WEAPON1',
 	        FiringTolerance = 10,
             FireTargetLayerCapsTable = {
@@ -154,11 +161,6 @@ UnitBlueprint {
                 {
                     MuzzleBones = {
                         'emitA1',
-                    },
-                    RackBone = 'boxA',
-                },
-                {
-                    MuzzleBones = {
                         'emitA2',
                     },
                     RackBone = 'boxA',
@@ -166,11 +168,6 @@ UnitBlueprint {
                 {
                     MuzzleBones = {
                         'emitA3',
-                    },
-                    RackBone = 'boxA',
-                },
-                {
-                    MuzzleBones = {
                         'emitA4',
                     },
                     RackBone = 'boxA',
@@ -186,11 +183,19 @@ UnitBlueprint {
             RateOfFire = 0.5,
             TargetCheckInterval = 1,
             TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'AIR MOBILE HIGHPRIAIR',
+                'AIR MOBILE TECH3 BOMBER',
+                'AIR MOBILE BOMBER',
+                'AIR MOBILE GROUNDATTACK',
+                'AIR MOBILE TRANSPORTATION',
+                'AIR MOBILE',
+                'SPECIALLOWPRI',
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'boxA',
+            TurretBoneMuzzle = 'emitA3',
             TurretBonePitch = 'boxA',
             TurretBoneYaw = 'turretA',
             TurretDualManipulators = false,
@@ -202,9 +207,9 @@ UnitBlueprint {
             TurretYawSpeed = 255,
             Turreted = true,
             WeaponUnpacks = true,
-			WeaponRepackTimeout = 3,
+			WeaponRepackTimeout = 2,
 			WeaponUnpackAnimation = '/mods/SCTA-master/units/CORARCH/CORARCH_lod0_Aunpack.sca',
-            WeaponUnpackAnimationRate = 3,
+            WeaponUnpackAnimationRate = 2,
         },
         {
             Audio = {
@@ -218,9 +223,9 @@ UnitBlueprint {
             CollideFriendly = false,
             DamagesFriendly = true,
             Damage = 180,
-            DamageRadius = 1.5,
-            DamageType = 'Normal',
-            DisplayName = 'ARMAAS_WEAPON2',
+            DamageRadius = 1,
+            DamageType = 'TASpec',
+            DisplayName = 'ARMAAS_WEAPON1',
             FireTargetLayerCapsTable = {
                 Water = 'Land|Water|Air',
             },
@@ -237,11 +242,6 @@ UnitBlueprint {
                 {
                     MuzzleBones = {
                         'emitB1',
-                    },
-                    RackBone = 'boxB',
-                },
-                {
-                    MuzzleBones = {
                         'emitB2',
                     },
                     RackBone = 'boxB',
@@ -249,11 +249,6 @@ UnitBlueprint {
                 {
                     MuzzleBones = {
                         'emitB3',
-                    },
-                    RackBone = 'boxB',
-                },
-                {
-                    MuzzleBones = {
                         'emitB4',
                     },
                     RackBone = 'boxB',
@@ -269,11 +264,19 @@ UnitBlueprint {
             RateOfFire = 0.5,
             TargetCheckInterval = 1,
             TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'AIR MOBILE HIGHPRIAIR',
+                'AIR MOBILE TECH3 BOMBER',
+                'AIR MOBILE BOMBER',
+                'AIR MOBILE GROUNDATTACK',
+                'AIR MOBILE TRANSPORTATION',
+                'AIR MOBILE',
+                'SPECIALLOWPRI',
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
-            TurretBoneMuzzle = 'boxB',
+            TurretBoneMuzzle = 'emitB3',
             TurretBonePitch = 'boxB',
             TurretBoneYaw = 'turretB',
             TurretDualManipulators = false,
@@ -285,9 +288,9 @@ UnitBlueprint {
             TurretYawSpeed = 255,
             Turreted = true,
             WeaponUnpacks = true,
-			WeaponRepackTimeout = 3,
+			WeaponRepackTimeout = 2,
 			WeaponUnpackAnimation = '/mods/SCTA-master/units/CORARCH/CORARCH_lod0_Bunpack.sca',
-            WeaponUnpackAnimationRate = 3,
+            WeaponUnpackAnimationRate = 2,
         },
         {
             Audio = {
@@ -314,7 +317,7 @@ UnitBlueprint {
             MaxRadius = 46.875, 
             MuzzleSalvoDelay = 0, 
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 40,
+            MuzzleVelocity = 100,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMAAS_WEAPON3/ARMAAS_WEAPON3_proj.bp',
             RackBones = {
                 {
@@ -339,6 +342,14 @@ UnitBlueprint {
             RateOfFire = 1.428571429,
             TargetCheckInterval = 1,
             TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'AIR MOBILE HIGHPRIAIR',
+                'AIR MOBILE TECH3 BOMBER',
+                'AIR MOBILE BOMBER',
+                'AIR MOBILE GROUNDATTACK',
+                'AIR MOBILE TRANSPORTATION',
+                'AIR MOBILE',
+                'SPECIALLOWPRI',
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',

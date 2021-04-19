@@ -62,7 +62,7 @@ UnitBlueprint {
     Display = {
         BuildAttachBone = 'buildpad',
         AnimationUnpack = '/mods/SCTA-master/SCTABalance/units/ARMGANT/ARMGANT_lod0_unpack.sca',
-        AnimationUnpackRate = 1, 
+        AnimationUnpackRate = 2, 
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -78,7 +78,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 200000,
         BuildCostMass = 12000, 
-        BuildTime = 150000,
+        BuildTime = 140000,
         BuildRate = 250,
         BuildableCategory = {
             'BUILTBYQUANTUMGATE ARM',
@@ -129,7 +129,7 @@ TechLevel = 'RULEUTL_Advanced',
                 UnitSpin = 0,
                 X = 0,
                 Y = 0,
-                Z = 2.5,
+                Z = 3,
             },
         },
     },

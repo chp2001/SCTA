@@ -13,8 +13,8 @@ UnitBlueprint {
     SizeY = 1.4,
     Weapon = {
         [1] = {
-            Damage = 120,
-            MaxRadius = 25,
+            Damage = 60,
+            MaxRadius = 30,
             MuzzleSalvoSize = 1,
             RackSalvoSize = 1,
             RateOfFire = 2,

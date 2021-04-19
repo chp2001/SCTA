@@ -18,8 +18,8 @@ UnitBlueprint {
         'SCOUT',
     },
     Defense = {
-        Health = 1000,
-        MaxHealth = 1000,
+        Health = 800,
+        MaxHealth = 800,
     },    
     Economy = {
         BuildCostEnergy = 1230,
@@ -27,18 +27,14 @@ UnitBlueprint {
         BuildTime = 4200,
     },
     Intel = {
-    RadarRadius = 100,
-    SonarRadius = 50,
+    RadarRadius = 50,
+    SonarRadius = 80,
     },
     Weapon = {
         [1] = {
-            Damage = 60,
-            RateOfFire = 1,
         },
         [2] = {
-            Damage = 30,
-            RackSalvoSize = 2,
-            RateOfFire = 2,
+            Damage = 20,
         },
         [3] = {
         },

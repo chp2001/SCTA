@@ -173,8 +173,8 @@ UnitBlueprint {
                 AutoInitiateAttackCommand = true,
                 BallisticArc = 'RULEUBA_None',
                 CollideFriendly = false,
-                Damage = 900,
-                DamageType = 'TASpec',
+                Damage = 750,
+                DamageType = 'Normal',
                 DisplayName = 'ARMAIR_TORPEDO',
                 FireTargetLayerCapsTable = {
                     Air = 'Water|Seabed|Sub',
@@ -221,8 +221,6 @@ UnitBlueprint {
                 Turreted = false,
                 RangeCategory = 'UWRC_AntiNavy',
                 WeaponCategory = 'AntiNavy',
-                WeaponRepackTimeout = 0,
-                WeaponUnpacks = false,
             },
         { #BIG_UNITEX
             Damage = 50,

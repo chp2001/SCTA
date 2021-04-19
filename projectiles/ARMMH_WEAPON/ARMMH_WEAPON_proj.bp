@@ -57,13 +57,13 @@ ProjectileBlueprint {
         },
         Faction = 'ARM',
     },
-
     Physics = {
-        Acceleration = 2.5,
+        Acceleration = 5,
         DestroyOnWater = true,
-	    InitialSpeed = 0,
+	    InitialSpeed = 5,
         LeadTarget = false,
-        TrackTime = 3,
+        Lifetime = 20,
+        TrackTime = 2,
         MaxSpeed = 25,
         TrackTarget = true,
         TurnRate = 60,

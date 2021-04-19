@@ -94,7 +94,7 @@ TechLevel = 'RULEUTL_Advanced',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 1,
+    LifeBarSize = 2,
     Physics = {  
         BuildOnLayerCaps = {
             LAYER_Land = true,
@@ -123,7 +123,7 @@ TechLevel = 'RULEUTL_Advanced',
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 100,
-            DamageRadius = 2,
+            DamageRadius = 1,
             DamageType = 'Normal',
             DisplayName = 'CORFHLT_LASER',
             FireTargetLayerCapsTable = {
@@ -142,7 +142,7 @@ TechLevel = 'RULEUTL_Advanced',
             EnergyDrainPerSecond = 50,
             EnergyRequired = 50,
             EnergyChargeForFirstShot = true,
-            UseFiringSolutionInsteadOfAimBone = true,
+            UseFiringSolutionInsteadOfAimBone = false,
             ---ProjectileLifetime = 1,
             RackBones = {
                 {

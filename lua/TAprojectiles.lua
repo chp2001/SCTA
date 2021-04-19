@@ -4,44 +4,22 @@ local NukeProjectile = DefaultProjectileFile.NukeProjectile
 local OnWaterEntryEmitterProjectile = DefaultProjectileFile.OnWaterEntryEmitterProjectile
 
 TAProjectile = Class(SinglePolyTrailProjectile) {
-	PolyTrail =  '/effects/emitters/aeon_laser_trail_02_emit.bp',
-	}
+	PolyTrail =  '',
+}
 
 TANuclearProjectile = Class(NukeProjectile) {
-	FxSmoke = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
-	FxSmokeScale = 1,
+	FxTrails = { '/mods/SCTA-master/effects/emitters/smoke_emit.bp'},
 
-	OnCreate = function(self)
-	NukeProjectile.OnCreate(self)
-	self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
-	end,
-
-	FxImpactAirUnit = {
-		'/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
-	},
-	FxAirUnitHitScale = 15,
-	FxImpactShield = {
-		'/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
-	},
-	FxShieldHitScale = 15,
-	FxImpactUnit = {
-		'/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
-	},
-	FxUnitHitScale = 15,
-	FxImpactProp = {
-		'/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
-	},
-	FxPropHitScale = 15,
-	FxImpactLand = {
-		'/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',
-	},
-	FxLandHitScale = 15,
-	FxImpactWater = {
-		'/effects/emitters/destruction_water_splash_ripples_01_emit.bp',
-		'/effects/emitters/destruction_water_splash_wash_01_emit.bp',
-		'/effects/emitters/destruction_water_splash_plume_01_emit.bp',
-	},
-    	FxWaterHitScale = 15,
+    InitialEffects = {'/mods/SCTA-master/effects/emitters/damage_bad_smoke_emit.bp',},
+    LaunchEffects = {
+        '/effects/emitters/nuke_munition_launch_trail_03_emit.bp',
+        '/effects/emitters/nuke_munition_launch_trail_05_emit.bp',
+        '/effects/emitters/nuke_munition_launch_trail_07_emit.bp',
+    },
+    ThrustEffects = {
+        '/effects/emitters/nuke_munition_launch_trail_04_emit.bp',
+        '/effects/emitters/nuke_munition_launch_trail_06_emit.bp',
+    },
 	    FxImpactProjectile = {
     		'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
     		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
@@ -52,56 +30,9 @@ TANuclearProjectile = Class(NukeProjectile) {
     FxImpactTrajectoryAligned = false,
 
 }
-
-TAEMPNuclearProjectile = Class(NukeProjectile) {
-		FxSmoke = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
-		FxSmokeScale = 1,
-	
-		OnCreate = function(self)
-		NukeProjectile.OnCreate(self)
-		self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
-	end,
-
-	FxImpactAirUnit = {
-		'/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp',
-	},
-	FxAirUnitHitScale = 15,
-	FxImpactShield = {
-		'/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp',
-	},
-	FxShieldHitScale = 15,
-	FxImpactUnit = {
-		'/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp',
-	},
-	FxUnitHitScale = 15,
-	FxImpactProp = {
-		'/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp',
-	},
-	FxPropHitScale = 15,
-	FxImpactLand = {
-		'/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp',
-	},
-	FxLandHitScale = 15,
-	FxImpactWater = {
-		'/effects/emitters/destruction_water_splash_ripples_01_emit.bp',
-		'/effects/emitters/destruction_water_splash_wash_01_emit.bp',
-		'/effects/emitters/destruction_water_splash_plume_01_emit.bp',
-	},
-    	FxWaterHitScale = 15,
-	    FxImpactProjectile = {
-    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
-	},
-	FxProjectileHitScale = 1.5,
-    
-    FxImpactTrajectoryAligned = false,
-
-}
-
 TAHeavyCannonProjectile = Class(TAProjectile) {
 	FxImpactAirUnit = {
-		'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
@@ -109,15 +40,15 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 	},
 	FxAirUnitHitScale = 2,
 	FxImpactShield = {
-		'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
-    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
+    	'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
 	},
 	FxShieldHitScale = 2,
 	FxImpactUnit = {
-		'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
@@ -125,7 +56,7 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 	},
 	FxUnitHitScale = 2,
 	FxImpactProp = {
-		'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
@@ -133,7 +64,7 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 	},
 	FxPropHitScale = 2,
 	FxImpactLand = {
-		'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
 		'/effects/emitters/napalm_03_emit.bp',
@@ -150,23 +81,23 @@ TAHeavyCannonProjectile = Class(TAProjectile) {
 
 TACannonProjectile = Class(TAProjectile) {
 	FxImpactAirUnit = {
-		'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 	},
 	FxAirUnitHitScale = 1.25,
 	FxImpactShield = {
-		'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 	},
 	FxShieldHitScale = 1.25,
 	FxImpactUnit = {
-		'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 	},
 	FxUnitHitScale = 1.25,
 	FxImpactProp = {
-		'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 	},
 	FxPropHitScale = 1.25,
 	FxImpactLand = {
-		'/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp',
+		'/mods/SCTA-master/effects/emitters/TANapalm_emit.bp',
 	},
 	FxLandHitScale = 1.25,
 	FxImpactWater = {
@@ -250,20 +181,42 @@ TALightCannonProjectile = Class(TAProjectile) {
     	FxWaterHitScale = 0.5,
 }
 
-FlameProjectile = Class(TALightCannonProjectile) {
-	FxFlame = '/mods/SCTA-master/effects/emitters/TAFlamethrower_emit.bp',
-	FxFlameScale = 1,
-
+Disintegrator = Class(TALightCannonProjectile) {
 	OnCreate = function(self)
 		TALightCannonProjectile.OnCreate(self)
-		ForkThread(self.MovementThread,self)
-		self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxFlame):ScaleEmitter(self.FxFlameScale))
+		self.launcher = self:GetLauncher()
+		ForkThread(self.MovementThread, self)
 	end,
 
 	MovementThread = function(self)
 		while not IsDestroyed(self) do
 			local pos = self:GetPosition()
-			DamageArea(self, pos, 1, 5, 'Normal', false)
+		if pos.y < GetTerrainHeight(pos.x, pos.z) then
+			self:SetTurnRate(0)
+			pos.y = GetTerrainHeight(pos.x, pos.z)
+			DamageArea( self.launcher, pos, self.DamageData.DamageRadius, self.DamageData.DamageAmount, self.DamageData.DamageType, self.DamageData.DamageFriendly)
+				self:SetPosition(pos, true)
+				self:PlaySound(Sound({Cue = 'XPLOMAS2', Bank = 'TA_Sound', LodCutoff = 'Weapon_LodCutoff'}))
+				CreateEmitterAtEntity(self, self:GetArmy(), '/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp' ):ScaleEmitter(0.5)
+			end
+			WaitSeconds(0.1)
+		end
+	end,
+}
+
+FlameProjectile = Class(TALightCannonProjectile) {
+	FxTrails = {'/mods/SCTA-master/effects/emitters/TAFlamethrower_emit.bp'},
+
+	OnCreate = function(self)
+		TALightCannonProjectile.OnCreate(self)
+		self.launcher = self:GetLauncher()
+		ForkThread(self.MovementThread, self)
+	end,
+
+	MovementThread = function(self)
+		while not IsDestroyed(self) do
+			local pos = self:GetPosition()
+			DamageArea(self.launcher, pos, 1, self.DamageData.DamageAmount, self.DamageData.DamageType, self.DamageData.DamageFriendly)
 			WaitSeconds(0.1)
 		end
 	end,
@@ -276,14 +229,14 @@ FlameProjectile = Class(TALightCannonProjectile) {
 	FxImpactWater = {},
 }
 
-TARocketProjectile = Class(TAMediumCannonProjectile) {
-	FxSmoke = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
-	FxSmokeScale = 1,
+TAAntiRocketProjectile = Class(TAMediumCannonProjectile) {
+	FxTrails = { '/mods/SCTA-master/effects/emitters/smoke_emit.bp'},
+}
 
+TARocketProjectile = Class(TAAntiRocketProjectile) {
 	OnCreate = function(self)
-	TAMediumCannonProjectile.OnCreate(self)
+	TAAntiRocketProjectile.OnCreate(self)
 	self.TrackTime = self:GetBlueprint().Physics.TrackTime
-	self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
 	self:ForkThread( self.TrackingThread, self )
 end,
 
@@ -317,17 +270,10 @@ TAAntiNukeProjectile = Class(SinglePolyTrailProjectile) {
 	},
 	FxProjectileHitScale = 1.5,
 
-	FxSmoke = '/mods/SCTA-master/effects/emitters/smoke_emit.bp',
-	FxSmokeScale = 1,
-
-	OnCreate = function(self)
-	SinglePolyTrailProjectile.OnCreate(self)
-	self.Trash:Add(CreateAttachedEmitter(self, 0, self:GetArmy(), self.FxSmoke):ScaleEmitter(self.FxSmokeScale))
-end,
+	FxTrails = { '/mods/SCTA-master/effects/emitters/smoke_emit.bp'},
 }
 
 TALaserProjectile = Class(TAProjectile) {
-
 	FxImpactAirUnit = {
     		'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
 	},
@@ -352,22 +298,47 @@ TALaserProjectile = Class(TAProjectile) {
 		'/effects/emitters/destruction_water_splash_ripples_01_emit.bp',
 		'/effects/emitters/destruction_water_splash_wash_01_emit.bp',
 	},
-    	FxWaterHitScale = 0.5,
+    FxWaterHitScale = 0.5,
 }
 
-TAEMGProjectile = Class(TALaserProjectile ) {
+TAEMGProjectile = Class(TALaserProjectile) {
 }
 
-TAUnderWaterProjectile = Class(OnWaterEntryEmitterProjectile) {
-	FxTrails = {
-	'/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
-	},
-    FxTrailScale = 0.1,
-	
-	OnCreate = function(self)	
-		OnWaterEntryEmitterProjectile.OnCreate(self)
-		self:SetCollisionShape('Sphere', 0, 0, 0, 1)
-		end,
+TAYellowLaserProjectile = Class(TALaserProjectile ) {
+	PolyTrail = '/mods/SCTA-master/effects/emitters/YELLOW_LASER_emit.bp',
+}
+
+TAGreenLaserProjectile = Class(TALaserProjectile ) {
+	PolyTrail = '/mods/SCTA-master/effects/emitters/GREEN_LASER_emit.bp',
+}
+
+TARedLaserProjectile = Class(TALaserProjectile ) {
+	PolyTrail = '/mods/SCTA-master/effects/emitters/RED_LASER_emit.bp',
+}
+
+TABlueLaserProjectile = Class(TALaserProjectile ) {
+	PolyTrail = '/mods/SCTA-master/effects/emitters/BLUE_LASER_emit.bp',
+}
+
+TALIGHTNING = Class(TALaserProjectile ) {
+	PolyTrail = '/mods/SCTA-master/effects/emitters/LIGHTNING_emit.bp',
+}
+
+TADepthCharges = Class(OnWaterEntryEmitterProjectile) {
+    OnEnterWater = function(self)
+        OnWaterEntryEmitterProjectile.OnEnterWater(self)
+		for k,v in self.FxImpactWater do
+			CreateEmitterAtEntity(self, self:GetArmy(), v):ScaleEmitter(self.FxWaterHitScale)
+		end
+    end,
+
+	OnExitWater = function(self)
+		OnWaterEntryEmitterProjectile.OnExitWater(self)
+		for k,v in self.FxImpactWater do
+			CreateEmitterAtEntity(self, self:GetArmy(), v):ScaleEmitter(self.FxWaterHitScale)
+		end
+	end,
+
 	FxImpactLand = {
 		'/effects/emitters/destruction_water_splash_ripples_01_emit.bp',
 		'/effects/emitters/destruction_water_splash_wash_01_emit.bp',
@@ -375,9 +346,31 @@ TAUnderWaterProjectile = Class(OnWaterEntryEmitterProjectile) {
 	},
 
 	FxImpactUnderWater = {
-    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
-    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
-    		'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
+		'/mods/SCTA-master/effects/emitters/ta_missile_hit_01_emit.bp',
+		'/mods/SCTA-master/effects/emitters/ta_missile_hit_03_emit.bp',
+		'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
 	},
 	FxUnderWaterHitScale = 0.35,
+	
+	FxImpactWater = {
+		'/effects/emitters/destruction_water_splash_ripples_01_emit.bp',
+	},
+		FxWaterHitScale = 0.35,
+}
+
+TAUnderWaterProjectile = Class(TADepthCharges) {
+
+    OnCreate = function(self, inWater)
+        TADepthCharges.OnCreate(self, inWater)
+		self.TrackTime = self:GetBlueprint().Physics.TrackTime
+		self:SetCollisionShape('Sphere', 0, 0, 0, 1)
+		self:ForkThread( self.TrackingThread, self )
+	end,
+
+
+	TrackingThread = function(self)
+		self:TrackTarget(false)
+		WaitSeconds(self.TrackTime)
+		self:TrackTarget(true)
+	end,
 }

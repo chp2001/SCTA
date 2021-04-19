@@ -51,7 +51,6 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'VTOL_ROCKET',
     },
-
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 25,

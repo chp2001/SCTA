@@ -1,7 +1,7 @@
 UnitBlueprint {
    Merge = true,
     Display = {
-        UniformScale = 0.09,
+        UniformScale = 0.12,
        },
     Economy = {
         BuildCostEnergy = 370,
@@ -11,10 +11,22 @@ UnitBlueprint {
     Intel = {
     RadarRadius = 40,
     },
+    Physics = {
+        MaxAcceleration = 3,
+        MaxBrake = 3,
+        MaxSpeed = 4,
+    },
         LifeBarSize = 1,
-        SelectionSizeX = 0.7,
-        SelectionSizeZ = 0.7,
-        SizeX = 1.25,
-        SizeY = 1.25,
-        SizeZ = 1.25,
+        SelectionSizeX = 1,
+        SelectionSizeZ = 1,
+        SizeX = 1.6,
+        SizeY = 1.6,
+        SizeZ = 1.6,
+    Weapon = {
+        [1] = {
+            Damage = 3,
+        },
+        [2] = {
+        },
+    },
 }

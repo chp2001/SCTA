@@ -40,6 +40,7 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TANK',
+        'COUNTERINTELLIGENCE',
         'STEALTHFIELD',
         'TECH2',
         'VISIBLETORECON',

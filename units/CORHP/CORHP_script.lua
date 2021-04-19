@@ -17,15 +17,11 @@ CORHP = Class(TAFactory) {
 				self.Trash:Add(v)
 			end
 		TAFactory.OnCreate(self)
-		self.AnimManip = CreateAnimator(self)
-		self.Trash:Add(self.AnimManip)
 	end,
 
 
 	Open = function(self)
 		TAFactory.Open(self)
-		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
-		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.5))
 		self.Spinners.beam1:SetGoal(90)
 		self.Spinners.beam1:SetSpeed(175)
 		
@@ -43,8 +39,6 @@ CORHP = Class(TAFactory) {
 
 	Close = function(self)
 		TAFactory.Close(self)
-		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
-		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 
 		self.Spinners.beam1:SetGoal(0)
 		self.Spinners.beam1:SetSpeed(175)
@@ -54,11 +48,11 @@ CORHP = Class(TAFactory) {
 		self.Spinners.beam2:SetSpeed(175)
 
 		self.Spinners.beam3:SetGoal(0)
-self.Spinners.beam3:SetSpeed(175)
+		self.Spinners.beam3:SetSpeed(175)
 
 --TURN door2 to z-axis <90.00> SPEED <175.13>;
-self.Spinners.beam4:SetGoal(0)
-self.Spinners.beam4:SetSpeed(175)
+		self.Spinners.beam4:SetGoal(0)
+		self.Spinners.beam4:SetSpeed(175)
 	end,
 }
 

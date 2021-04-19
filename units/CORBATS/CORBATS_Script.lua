@@ -20,6 +20,9 @@ CORBATS = Class(TASea) {
 	end,
 
 	Weapons = {
+		COR_BATS = Class(TAweapon) {
+
+		},
 		COR_BATSLASER = Class(TAweapon) {
 			OnWeaponFired = function(self)
 				TAweapon.OnWeaponFired(self)
@@ -32,10 +35,6 @@ CORBATS = Class(TASea) {
 				self.unit.Spinners.guna:SetGoal(-120 * self.unit.currentBarrel)
 				self.unit.Spinners.guna:SetSpeed(400)
 			end,
-		},
-
-		COR_BATS = Class(TAweapon) {
-
 		},
 
 	},

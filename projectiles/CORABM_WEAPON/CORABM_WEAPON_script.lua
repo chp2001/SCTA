@@ -1,9 +1,14 @@
 
+local TAAntiRocketProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TAAntiRocketProjectile
 
-local TARocketProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TARocketProjectile
-
-CORABM_WEAPON = Class(TARocketProjectile) 
+CORABM_WEAPON = Class(TAAntiRocketProjectile) 
 {
+    OnImpact = function(self,type,other)
+        if type == 'Terrain' or type == 'Water' then
+            TAAntiRocketProjectile.OnImpact(self,type,other)
+        end
+    end,
 }
+
 
 TypeClass = CORABM_WEAPON

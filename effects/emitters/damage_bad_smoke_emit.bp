@@ -1,7 +1,7 @@
 EmitterBlueprint {
-	BlueprintId = 'smoke',
-	Lifetime = 1,
-	Repeattime = 50.00,
+	BlueprintId = 'darksmoke',
+	Lifetime = 3,
+	Repeattime = 3.00,
 	TextureFramecount = 1.00,
 	Blendmode = 0.00,
 	LocalVelocity = true,

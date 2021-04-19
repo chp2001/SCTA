@@ -18,10 +18,8 @@ CORMMKR = Class(TACloser) {
 
 	OpeningState = State {
 		Main = function(self)
-			TACloser.Unfold(self)
-			self.productionIsActive = true
-			self:PlayUnitSound('Activate')
-
+			self.IsActive = true
+			self:SetProductionActive(true)
 			--TURN lid1 to x-axis <35.26> SPEED <45.57>;
 			self.Spinners.lid1:SetGoal(30.40)
 			self.Spinners.lid1:SetSpeed(45.57)
@@ -37,16 +35,14 @@ CORMMKR = Class(TACloser) {
 			--TURN lid3 to x-axis <-74.18> SPEED <61.29>;
 			self.Spinners.lid3:SetGoal(30.40)
 			self.Spinners.lid3:SetSpeed(39.29)
-			ChangeState(self, self.IdleOpenState)
+			TACloser.OpeningState.Main(self)
 		end,
 	},
 
 
 	ClosingState = State {
 		Main = function(self)
-			self:PlayUnitSound('Activate')
-			TACloser.Fold(self)
-			--TURN lid1 to x-axis <0> SPEED <51.35>;
+			self:SetProductionActive(false)
 			self.Spinners.lid1:SetGoal(0)
 			self.Spinners.lid1:SetSpeed(51.35)
 
@@ -61,59 +57,11 @@ CORMMKR = Class(TACloser) {
 			--TURN lid3 to x-axis <-26.75> SPEED <69.05>;
 			self.Spinners.lid3:SetGoal(0)
 			self.Spinners.lid3:SetSpeed(69.05)
-			ChangeState(self, self.IdleClosedState)
+			TACloser.ClosingState.Main(self)
 			
 		end,
 
 	},
-
-	IdleClosedState = State {
-		Main = function(self)
-			if self.closeDueToDamage then 
-				while self.DamageSeconds > 0 do
-					WaitSeconds(1)
-					self.DamageSeconds = self.DamageSeconds - 1
-				end
-				self.closeDueToDamage = nil
-				if self.productionIsActive then 
-					ChangeState(self, self.OpeningState)
-				end
-			end
-		end,
-
-	},
-
-	IdleOpenState = State {
-		Main = function(self)
-		end,
-
-		OnDamage = function(self, instigator, amount, vector, damageType)
-			TACloser.OnDamage(self, instigator, amount, vector, damageType)
-			self.DamageSeconds = 8
-			self.closeDueToDamage = true
-			ChangeState(self, self.ClosingState)
-		end,
-
-	},
-		
-	OnProductionUnpaused = function(self)
-		TACloser.OnProductionUnpaused(self)
-		self.productionIsActive = true
-		ChangeState(self, self.OpeningState)
-	end,
-
-	OnProductionPaused = function(self)
-		TACloser.OnProductionPaused(self)
-		self.productionIsActive = nil
-		ChangeState(self, self.ClosingState)
-	end,
-
-
-
-	OnDamage = function(self, instigator, amount, vector, damageType)
-		TACloser.OnDamage(self, instigator, amount, vector, damageType) 
-		self.DamageSeconds = 8
-	end,
 }
 
 TypeClass = CORMMKR

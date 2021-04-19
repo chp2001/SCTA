@@ -17,7 +17,9 @@ UnitBlueprint {
             'ARM',
             'HOVER',
             'BOT',
-            'TANK',
+        },
+        Display = {
+        UniformScale = 0.1,
         },
         Defense = {
             Health = 2000,
@@ -40,6 +42,7 @@ UnitBlueprint {
                 'BUILTBYTIER2FACTORY ARM',
             },
         },
+        LifeBarSize = 1.6,
         SelectionSizeX = 1.25,
         SelectionSizeZ = 1.25,
         SizeX = 1.5,

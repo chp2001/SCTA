@@ -65,7 +65,6 @@ UnitBlueprint {
                 },
             },
         },
-	---SmokeBone = 'Torso',
         UniformScale = 0.16,
     },
     Economy = {
@@ -95,7 +94,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 1,
+    LifeBarSize = 2,
     Physics = {
         LayerChangeOffsetHeight = -2.00,
 	BackUpDistance = 0,
@@ -129,7 +128,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 63,
-            DamageRadius = 1.5, 
+            DamageRadius = 1, 
             DamageType = 'TASpec',
             DisplayName = 'ARMKBOT_MISSILE',
             FireTargetLayerCapsTable = {
@@ -168,6 +167,14 @@ UnitBlueprint {
             RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'AIR MOBILE HIGHPRIAIR',
+                'AIR MOBILE TECH3 BOMBER',
+                'AIR MOBILE BOMBER',
+                'AIR MOBILE GROUNDATTACK',
+                'AIR MOBILE TRANSPORTATION',
+                'AIR MOBILE',
+                'SPECIALLOWPRI',
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
@@ -186,7 +193,7 @@ UnitBlueprint {
             TurretYawSpeed = 275.06,
             Turreted = true,
 	        WeaponUnpacks = true,
-            WeaponRepackTimeout = 3,
+            WeaponRepackTimeout = 2,
         },
         { #BIG_UNITEX
             Damage = 50,

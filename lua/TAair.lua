@@ -1,9 +1,9 @@
 #Generic TA Air unit
 local TAunit = import('/mods/SCTA-master/lua/TAunit.lua').TAunit
 
-
 TAair = Class(TAunit) 
 {
+
 	OnCreate = function(self)
         TAunit.OnCreate(self)
         self.HasFuel = true
@@ -60,6 +60,12 @@ TAair = Class(TAunit)
         self:SetTurnMult(1)
 	end,
 
+    --- Called when the unit is killed, but before it falls out of the sky and blows up.
+    OnKilled = function(self, instigator, type, overkillRatio)
+		CreateAttachedEmitter(self, 0, -1, '/mods/SCTA-master/effects/emitters/debrisfire_smoke_emit.bp' )
+		TAunit.OnKilled(self, instigator, type, overkillRatio)
+    end,
+
 }
 TASeaair = Class(TAair) 
 {
@@ -111,12 +117,15 @@ TAIntelAir = Class(TAair) {
 
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAair.OnStopBeingBuilt(self,builder,layer)
-		local bp = self:GetBlueprint()
-		if bp.Intel.RadarStealth or bp.Intel.RadarRadius then
-			self:SetMaintenanceConsumptionActive()
-		end
+		self:SetMaintenanceConsumptionActive()
+		---if bp.Intel.RadarStealth or bp.Intel.RadarRadius then
 		self:SetScriptBit('RULEUTC_StealthToggle', false)
-		self:SetScriptBit('RULEUTC_JammingToggle', true)
+		if self:GetBlueprint().Intel.TAIntel then
+			self:SetScriptBit('RULEUTC_JammingToggle', true)
+			self.MainCost = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
+			self.SpecIntel = true
+			TAair.OnIntelEnabled(self)
+		end
 		self:RequestRefreshUI()
 	end,
 }

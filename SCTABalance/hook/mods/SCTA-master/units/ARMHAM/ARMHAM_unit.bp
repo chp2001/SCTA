@@ -1,21 +1,21 @@
 UnitBlueprint {
     Merge = true,
     Display = {
-            UniformScale = 0.1,
-        },
+        UniformScale = 0.1,
+    },
         Economy = {
             BuildCostEnergy = 630,
             BuildCostMass = 80,
         },
     SelectionSizeX = 0.8,
     SelectionSizeZ = 0.8,
-    --SelectionCenterOffsetZ = 0.25,
+    LifeBarSize = 1.5,
     SizeX = 1.4,
     SizeY = 1.6,
     SizeZ = 1.4,
     Weapon = {
         [1] = {
-            Damage = 500,
+            Damage = 250,
             RateOfFire = 0.25,
         },
         [2] = {}, 

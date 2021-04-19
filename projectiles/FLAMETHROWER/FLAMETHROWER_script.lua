@@ -3,7 +3,7 @@
 #
 #Script created by Raevn
 
-local FlameProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').FlameProjectile
+local FlameProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').FlameProjectile
 
 FLAMETHROWER = Class(FlameProjectile) {
 }

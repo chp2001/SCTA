@@ -144,8 +144,7 @@ UnitBlueprint {
         Elevation = 15,
         MotionType = 'RULEUMT_Air',
         GroundCollisionOffset = 1.6,
-        MaxAcceleration = 10,
-        MaxSpeed = 10,
+        MaxSpeed = 0.5,
         MaxSteerForce = 100,
         MeshExtentsX = 0.65,
         MeshExtentsY = 0.25,
@@ -163,7 +162,7 @@ UnitBlueprint {
     SizeX = 2.3,
     SizeY = 0.25,
     SizeZ = 1,
-    StrategicIconName = 'icon_fighter2_intel',
+    StrategicIconName = 'icon_fighter3_intel',
     StrategicIconSortPriority = 0,
     Transport = {
         AirClass = true,

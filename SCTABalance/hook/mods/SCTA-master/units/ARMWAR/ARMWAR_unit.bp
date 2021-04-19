@@ -9,29 +9,29 @@ UnitBlueprint {
     },
 Economy = {
     BuildCostEnergy = 750,
-    BuildCostMass = 116,
+    BuildCostMass = 130,
     BuildTime = 2200,
 },
 SelectionSizeX = 0.8,
 SelectionSizeZ = 0.8,
+LifeBarSize = 1,
 SizeX = 1.5,
 SizeY = 1.7,
 SizeZ = 1.7,
 Physics = {
     MaxBrake = 2.4,
-    MaxSpeed = 3,
+    MaxSpeed = 3.6,
     TurnRate = 150,
     MaxSteerForce = 10,
     },
     Weapon = {
 	    [1] = {
-            Damage = 20,
+            Damage = 2,
             MaxRadius = 13,
         },
         [2] = {
-            Damage = 5,
-            MaxRadius = 18,
-            RackSalvoSize = 1,
+            RateOfFire = 1,
+            Damage = 20,
         },
         [3] = {
         },

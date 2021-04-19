@@ -18,7 +18,8 @@ UnitBlueprint {
    Display = {
     Abilities = {
         '<LOC ability_jamming>Jamming',
-        },
+        '<LOC ability_aa>Anti-Air',    
+    },
         UniformScale = 0.24,
     }, 
     Defense = {
@@ -26,9 +27,9 @@ UnitBlueprint {
     MaxHealth = 12000,
     },
     Economy = {
-        MaintenanceConsumptionPerSecondEnergy = 15,
-        BuildCostEnergy = 24000,
-        BuildCostMass = 1200,
+        MaintenanceConsumptionPerSecondEnergy = 12,
+        BuildCostEnergy = 48000,
+        BuildCostMass = 2400,
         BuildTime = 18000,
     },
     General = {
@@ -56,11 +57,14 @@ UnitBlueprint {
         Damage = 100,
         EnergyDrainPerSecond = 50,
         EnergyRequired = 50,
-        DamageRadius = 2,
+        DamageRadius = 1,
         EnergyChargeForFirstShot = true,
         RateOfFire = 2,
     },
     [2] = {
+        Damage = 240,
+        MuzzleVelocity = 75,
+        ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/AH_WEAPON/AH_WEAPON_proj.bp',
     },
     [3] = {
     }, 

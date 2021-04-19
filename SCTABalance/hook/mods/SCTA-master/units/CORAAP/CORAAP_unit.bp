@@ -18,6 +18,7 @@ UnitBlueprint {
         'AIR', 
     	'CORE',
 	    'SORTCONSTRUCTION',
+        'SUPPORTFACTORY',
     },
     Defense = {
         Health = 10000,
@@ -28,22 +29,21 @@ UnitBlueprint {
         SizeZ = 7,
     },
         Display = {
-        UniformScale = 0.22,
+        UniformScale = 0.2,
     },
     Economy = {
         BuildCostEnergy = 20000,
-        BuildCostMass = 1100,
+        BuildCostMass = 900,
         BuildTime = 16000,
         BuildableCategory = {
             'AIR MOBILE TECH1 CORE', 
             'AIR MOBILE TECH2 CORE',
-            'AIR MOBILE TECH3 CORE',
+            'ASF CORE',
         },
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,
     LifeBarSize = 7,
-    
     SelectionSizeX = 7,
     SelectionSizeZ = 5,
     SelectionThickness = 0.25,

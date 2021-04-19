@@ -82,7 +82,7 @@ UnitBlueprint {
             },
         },
 	---SmokeBone = 'torso',
-        UniformScale = 0.16,
+        UniformScale = 0.06,
     },
     Economy = {
         BuildCostEnergy = 3219,
@@ -138,7 +138,7 @@ UnitBlueprint {
 	MaxSpeedReverse = 0,
         MaxAcceleration = 2,
         MaxBrake = 1.2,
-        MaxSpeed = 1.2,
+        MaxSpeed = 2.5,
         MotionType = 'RULEUMT_Land',
         TurnRate = 166,
         MaxSteerForce = 10,

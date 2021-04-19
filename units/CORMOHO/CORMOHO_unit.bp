@@ -34,7 +34,6 @@ UnitBlueprint {
         'BUILTBYTIER3COMMANDER',
         'TECH2',
         'SELECTABLE',
-        'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
 	    'STRUCTURE',
@@ -73,11 +72,6 @@ UnitBlueprint {
         MaintenanceConsumptionPerSecondEnergy = 15,
         ProductionPerSecondMass = 8,
     },
-    Footprint = {
-        SizeX = 5,
-        SizeZ = 5,
-	MaxSlope = 0.625,
-    },
     General = {	
         Category = 'Economy',
         Classification = 'RULEUC_Resource',
@@ -96,7 +90,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 1,
+    LifeBarSize = 2,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Land = true,

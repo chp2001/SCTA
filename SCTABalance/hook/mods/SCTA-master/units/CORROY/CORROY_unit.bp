@@ -4,9 +4,6 @@ UnitBlueprint {
         Health = 2800,
         MaxHealth = 2800,
     },
-    Display = {
-        UniformScale = 0.18,
-     },
      Intel = {
         VisionRadius = 15, 
         WaterVisionRadius = 8, 
@@ -21,23 +18,12 @@ UnitBlueprint {
     Description = 'Frigate',
     SelectionSizeX = 2,
     SelectionSizeZ = 4,
-    SizeX = 2,
-    SizeY = 3,
-    SizeZ = 7,
     Weapon = {
         [1] = {
-            Damage = 30,
-            MaxRadius = 28,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 2,
-            RackSalvoSize = 2,
-            RateOfFire = 1,
+            Damage = 120,
+            MaxRadius = 32,
         },
         [2] = {
-            MaxRadius = 10,
-            RackSalvoSize = 1,
-            RateOfFire = 0.2,
-            TrackingRadius = 1.25,
         },
         [3] = {
         },

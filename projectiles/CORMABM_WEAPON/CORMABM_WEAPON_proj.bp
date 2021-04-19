@@ -1,0 +1,64 @@
+
+ProjectileBlueprint {
+    Audio = {
+        Impact = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactUnit = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactShield = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactTerrain = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactWater = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'SPLSSML',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+    },
+    Categories = {
+        'CORE',
+        'PROJECTILE',
+        'ANTIMISSILE',
+    },
+    Display = {
+        CameraFollowTimeout = 0,
+        CameraFollowsProjectile = false,
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/missile_mesh.bp',
+        StrategicIconSize = 1,
+        UniformScale = 0.16,
+    },
+    General = {
+        Category = 'Defense',
+        Categories = {
+            'CORE',
+            'PROJECTILE',
+            'ANTIMISSILE',
+        },
+        Faction = 'CORE',
+    },
+
+    Physics = {
+        Acceleration = 0,
+        CollideEntity = true,
+        CollideSurface = true,
+        DestroyOnWater = true,
+        FlareRadius = 15,
+        MaxSpeed = 10,
+        TrackTarget = true,
+        TurnRate = 360,
+        UseGravity = false,
+        VelocityAlign = true,
+    },
+}

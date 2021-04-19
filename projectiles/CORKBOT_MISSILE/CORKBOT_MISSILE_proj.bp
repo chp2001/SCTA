@@ -53,18 +53,17 @@ ProjectileBlueprint {
         Faction = 'CORE',
         Weapon = 'CORKBOT_MISSILE',
     },
-
     Physics = {
         Acceleration = 6.5,
         DestroyOnWater = true,
         InitialSpeed = 28.125,
         LeadTarget = false,
         Lifetime = 4,
-        TrackTime = 3,
+        TrackTime = 1,
         MaxSpeed = 40.625,
         TrackTarget = true,
         TurnRate = 181,
-        UseGravity = true,
+        UseGravity = false,
         VelocityAlign = true,
     },
 }

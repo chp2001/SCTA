@@ -36,4 +36,14 @@ Display = {
         SonarRadius = 60,
         VisionRadius = 15,
     },
+    Weapon = {
+        [1] = {
+            RateOfFire = 0.5,
+        },
+        [2] = {
+            RateOfFire = 0.5,
+        },
+        [3] = {
+        },
+    },
 }

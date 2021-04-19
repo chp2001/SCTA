@@ -58,7 +58,7 @@ UnitBlueprint {
     Display = {
         BuildAttachBone = 'slip',
         AnimationUnpack = '/mods/SCTA-master/units/ARMASY/ARMASY_lod0_unpack.sca',
-        AnimationUnpackRate = 0.5,    
+        AnimationUnpackRate = 1,    
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
@@ -75,14 +75,14 @@ UnitBlueprint {
         BuildCostEnergy = 2402,
         BuildCostMass = 2524, 
         BuildTime = 13310,
-	BuildRate = 200,
-	InitialRallyX = 0,
-	InitialRallyZ = 10,
+	    BuildRate = 200,
         BuildableCategory = {
             'NAVAL MOBILE TECH2 ARM',
         },
         StorageMass = 200,
         StorageEnergy = 200,
+        InitialRallyX = 0,
+	    InitialRallyZ = 7,
     },
     Footprint = {
         MinWaterDepth = 1.5,
@@ -119,8 +119,6 @@ UnitBlueprint {
         BuildOnLayerCaps = {
             LAYER_Water = true,
         },
-        SkirtSizeX = 6,
-        SkirtSizeZ = 6,
     RollOffPoints = {
         {
             UnitSpin = 180,

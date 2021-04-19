@@ -3,23 +3,12 @@
 #
 #Script created by Raevn
 
-local TAEMPNuclearProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TAEMPNuclearProjectile
+local TANuclearProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TANuclearProjectile
 
-EZBMSSL = Class(TAEMPNuclearProjectile) {
-    InitialEffects = {'/effects/emitters/nuke_munition_launch_trail_02_emit.bp',},
-    LaunchEffects = {
-        '/effects/emitters/nuke_munition_launch_trail_03_emit.bp',
-        '/effects/emitters/nuke_munition_launch_trail_05_emit.bp',
-        '/effects/emitters/nuke_munition_launch_trail_07_emit.bp',
-    },
-    ThrustEffects = {
-        '/effects/emitters/nuke_munition_launch_trail_04_emit.bp',
-        '/effects/emitters/nuke_munition_launch_trail_06_emit.bp',
-    },
-
+EZBMSSL = Class(TANuclearProjectile) {
     OnCreate = function(self)
-        TAEMPNuclearProjectile.OnCreate(self)
-        self.effectEntityPath = '/effects/Entities/UEFNukeEffectController01/UEFNukeEffectController01_proj.bp'
+        TANuclearProjectile.OnCreate(self)
+        self.effectEntityPath = '/mods/SCTA-master/effects/entities/TANuke01/TANuke01_proj.bp'
         self:LauncherCallbacks()
     end,
 

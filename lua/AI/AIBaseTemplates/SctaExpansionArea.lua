@@ -2,24 +2,21 @@
 BaseBuilderTemplate {
     BaseTemplateName = 'SCTAAIExpansion',
     Builders = {
-        -- List all our builder grous here
-        -- ACU
-        'SCTAAICommanderBuilder',
 
         -- Unit Builders
-        'SCTAAIEngineerBuilder',
         'SCTAAILandBuilder',
         'SCTAAIAirBuilder',
         'SCTAAILandFormers',
         'SCTAAIAirFormers',
+        'SCTAUpgrades',
+        'SCTAAIT3Builder',
 
-        -- Buildings etc
         'SCTAExpansionBuilders',
         'SCTAAIEngineerMiscBuilder',
+        'SCTAAIFactoryExpansions',
         'SCTAAIEngineerEcoBuilder',
-        'SCTAAIFactoryBuilders',
-        'SCTAUpgrades',
         'SCTAAssisters',
+        --Misc Function
     },
     BaseSettings = {
         EngineerCount = {
@@ -29,8 +26,8 @@ BaseBuilderTemplate {
             SCU = 0,
         },
         FactoryCount = {
-            Land = 3,
-            Air = 1,
+            Land = 4,
+            Air = 2,
             Sea = 1,
             Gate = 0,
         },
@@ -40,17 +37,20 @@ BaseBuilderTemplate {
             T3Value = 18
         },
     },
+
     ExpansionFunction = function(aiBrain, location, markerType)   
-        local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
+        --local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
         --LOG('Ai Personality is '..per)
-        if not per == 'sctaaiarm' or per == 'sctaaicore' or per == 'sctaaiarmcheat' or per == 'sctaaicorecheat' then
+        if not aiBrain.SCTAAI then
             return -1
         end
-        if markerType != 'Start Location' or markerType != 'Expansion Area' then
-            return 10
-        end
+        if markerType ~= 'Expansion Area' then
+                ---LOG('IEXISTSTART')
+                return -1
+            end
+        --LOG('IEXISTEXPANDFAIL')
         --LOG('Return sctaai personality')
-        return 1000, 'SCTAAIExpansion'
+        return 15
     end,
 }
 

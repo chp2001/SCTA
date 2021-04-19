@@ -1,23 +1,5 @@
 UnitBlueprint {
     Merge = true,
-    Categories = {
-        'SELECTABLE',
-        'TECH1',
-        'ENGINEER',
-        'REPAIR',
-        'RECLAIM',
-        'VISIBLETORECON',
-        'RECLAIMABLE',
-        'PATROLHELPER',
-        'SHOWQUEUE',
-	    'SELECTION',
-        'MOBILE',
-	    'CONSTRUCTION',
-	    'LAND',
-        'ARM',
-        'BOT',
-        'TANK',
-    },
     Defense = {
         Health = 400,
         MaxHealth = 400,
@@ -35,7 +17,7 @@ UnitBlueprint {
         },
         MaxBuildDistance = 6,
     },
-    
+    LifeBarSize = 1,
     Physics = {
         MaxAcceleration = 1.4,
         MaxBrake = 1.25,

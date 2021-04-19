@@ -110,7 +110,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 400,
-            DamageRadius = 2, 
+            DamageRadius = 1, 
             DamageType = 'Normal',
             DisplayName = 'ARMAMB_GUN',
             FireTargetLayerCapsTable = {
@@ -157,9 +157,10 @@ UnitBlueprint {
             TurretYawSpeed = 100,
             Turreted = true,
             WeaponUnpackAnimation = '/mods/SCTA-master/units/CORTOAST/CORTOAST_lod0_unpack.sca',
-            WeaponUnpackAnimationRate = 0.5,
+            WeaponUnpackAnimationRate = 1,
 	        WeaponUnpacks = true,
-            WeaponRepackTimeout = 3,
+            WeaponRepackTimeout = 2,
+            WeaponUnpackTimeout = 1,
         },
         { #LARGE_BUILDINGEX
             Damage = 300,

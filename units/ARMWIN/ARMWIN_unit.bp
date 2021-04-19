@@ -31,6 +31,7 @@ UnitBlueprint {
         'SORTECONOMY',
 	    'ENERGYPRODUCTION',
 	    'ARM',
+        'LAND',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -77,7 +78,7 @@ UnitBlueprint {
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 1,
+    LifeBarSize = 2,
     SelectionCenterOffsetX = -0.4,
     SelectionSizeX = 2.25,
     SelectionSizeZ = 2.25,

@@ -30,12 +30,4 @@ UnitBlueprint {
         BuildCostMass = 1200,
         BuildTime = 21000,
     },
-    Weapon = {
-        [1] = {
-            Damage = 30,
-            MaxRadius = 25,
-        },
-        [2] = {
-},
-    },
 }

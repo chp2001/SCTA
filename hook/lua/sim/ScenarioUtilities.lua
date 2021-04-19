@@ -1,5 +1,12 @@
+---local TACreateInitialArmyGroup = CreateInitialArmyGroup
+
 function CreateInitialArmyGroup(strArmy, createCommander)
 	CreateWind()
+	--[[for index, moddata in __active_mods do
+		if moddata.name == 'All factions FAF BlackOps Nomads' then
+			TACreateInitialArmyGroup(strArmy, createCommander)
+		end
+	end]] ---Need To Decide How I want compatibility to work
 	local tblGroup = CreateArmyGroup(strArmy, 'INITIAL')
 	local cdrUnit = false
 	local initialUnitName

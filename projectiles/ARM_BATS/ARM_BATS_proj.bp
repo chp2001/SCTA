@@ -48,13 +48,14 @@ ProjectileBlueprint {
             'PROJECTILE',
             'DIRECTFIRE',
         },
-        Faction = 'ARM',
-        Weapon = 'ARM_BATS',
+        Faction = 'ARM',  
     },
     Physics = {
         DestroyOnWater = true,
-        InitialSpeed = 30,
+        InitialSpeed = 28,
         Lifetime = 10,
         UseGravity = true,
+        TurnRate = 360,
+        VelocityAlign = true,
     },
 }

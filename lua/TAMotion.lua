@@ -67,13 +67,19 @@ TACounter = Class(TAWalking)
 { 
 	OnStopBeingBuilt = function(self,builder,layer)
 		TAWalking.OnStopBeingBuilt(self,builder,layer)
-		local bp = self:GetBlueprint()
-		if bp.Intel.RadarStealthField or bp.Intel.RadarRadius then
-			self:SetMaintenanceConsumptionActive()
-		end
+		self.MainCost = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
+		--if bp.Intel.RadarStealthField or bp.Intel.RadarRadius then
+		self:SetMaintenanceConsumptionActive()
         self:SetScriptBit('RULEUTC_StealthToggle', false)
-		self:SetScriptBit('RULEUTC_JammingToggle', true)
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
+		if self:GetBlueprint().Intel.TAIntel then
+			self:SetScriptBit('RULEUTC_JammingToggle', true)
+			self.SpecIntel = true
+		elseif self:GetBlueprint().Intel.Cloak then
+			self.TACloak = true
+			self.Mesh = self:GetBlueprint().Display.MeshBlueprint
+			self:SetScriptBit('RULEUTC_CloakToggle', true)
+		end
+		TAWalking.OnIntelEnabled(self)
 		self:RequestRefreshUI()
 	end,
 }
@@ -82,13 +88,18 @@ TASeaCounter = Class(TASea)
 { 
 	OnStopBeingBuilt = function(self,builder,layer)
 		TASea.OnStopBeingBuilt(self,builder,layer)
-		local bp = self:GetBlueprint()
-		if bp.Intel.SonarStealthField or bp.Intel.RadarRadius then
-			self:SetMaintenanceConsumptionActive()
-		end
+		self.MainCost = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
+		self:SetMaintenanceConsumptionActive()
         self:SetScriptBit('RULEUTC_StealthToggle', false)
-		self:SetScriptBit('RULEUTC_JammingToggle', true)
-		self:SetScriptBit('RULEUTC_CloakToggle', true)
+		if self:GetBlueprint().Intel.TAIntel then
+			self:SetScriptBit('RULEUTC_JammingToggle', true)
+			self.SpecIntel = true
+		elseif self:GetBlueprint().Intel.Cloak then
+			self.TACloak = true
+			self.Mesh = self:GetBlueprint().Display.MeshBlueprint
+			self:SetScriptBit('RULEUTC_CloakToggle', true)
+		end
+		TASea.OnIntelEnabled(self)
 		self:RequestRefreshUI()
 	end,
 }

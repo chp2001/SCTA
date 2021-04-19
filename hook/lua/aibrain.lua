@@ -61,7 +61,7 @@ AIBrain = Class(SCTAAIBrainClass) {
         while squad <= table.getn(retTemplate) do
             if retTemplate[squad][2] > 0 then
                 local bp = self:GetUnitBlueprint(retTemplate[squad][1])
-                local buildLevel = AIBuildUnits.UnitBuildCheck(bp)
+                local buildLevel = AIBuildUnits.SCTAUnitBuildCheck(bp)
                 local remaining = retTemplate[squad][3]
                 while buildLevel <= 3 do
                     if facs['T'..buildLevel] > 0 then
@@ -86,7 +86,7 @@ AIBrain = Class(SCTAAIBrainClass) {
         local remainingIds = {T1 = {}, T2 = {}, T3 = {}}
         while squad <= table.getn(retTemplate) do
             if retTemplate[squad][2] < 0 then
-                table.insert(remainingIds['T'..AIBuildUnits.UnitBuildCheck(self:GetUnitBlueprint(retTemplate[squad][1])) ], retTemplate[squad][1])
+                table.insert(remainingIds['T'..AIBuildUnits.SCTAUnitBuildCheck(self:GetUnitBlueprint(retTemplate[squad][1])) ], retTemplate[squad][1])
             end
             squad = squad + 1
         end
@@ -123,7 +123,7 @@ AIBrain = Class(SCTAAIBrainClass) {
             return SCTAAIBrainClass.PBMAssistGivenFactory( self, factories, primary )
         end
         for k,v in factories do
-            if not v:IsDead() and not ( v:IsUnitState('Building') or v:IsUnitState('Upgrading') ) then
+            if not v:IsDead() and not ( v:IsUnitState('Building')) then
                 local guarded = v:GetGuardedUnit()
                 if not guarded or guarded:GetEntityId() ~= primary:GetEntityId() then
                     IssueFactoryAssist( {v}, primary )

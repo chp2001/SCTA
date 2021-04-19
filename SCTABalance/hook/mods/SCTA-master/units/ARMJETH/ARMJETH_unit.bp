@@ -11,7 +11,7 @@ UnitBlueprint {
     Economy = {
         BuildCostEnergy = 720,
     },
-    
+    LifeBarSize = 1,
     SelectionSizeX = 0.8,
     SelectionSizeZ = 0.8,
     SizeX = 1.2,
@@ -19,7 +19,7 @@ UnitBlueprint {
     SizeZ = 1.2,
     Weapon = {
         [1] = {
-            Damage = 24,
+            Damage = 12,
             RateOfFire = 1.666666667,
         },
         [2] = {

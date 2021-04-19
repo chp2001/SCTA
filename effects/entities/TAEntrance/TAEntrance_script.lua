@@ -45,11 +45,11 @@ TAEntrance = Class(NullShell) {
         CreateDecal(self:GetPosition(), decalOrient, 'Crater05_normals', '', 'Normals', 28, 28, 500, 600, army)
         CreateDecal(self:GetPosition(), decalOrient, 'Crater05_normals', '', 'Normals', 12, 12, 500, 600, army)
 
-		WaitSeconds(.1)
+		WaitSeconds(0.1)
         DamageRing(self, pos, .1, 11, 100, 'Force', false, false)
         WaitSeconds(0.39)
         DamageRing(self, pos, 11, 20, 1, 'Force', false, false)
-        WaitSeconds(.1)
+        WaitSeconds(0.1)
         DamageRing(self, pos, 11, 20, 1, 'Force', false, false)
         WaitSeconds(0.5)
         WaitSeconds(0.3)
@@ -67,7 +67,7 @@ TAEntrance = Class(NullShell) {
     CreateFlares = function( self, army )
         local numFlares = 45
         local angle = (2*math.pi) / numFlares
-        local angleInitial = 0.0 #RandomFloat( 0, angle )
+        local angleInitial = 0.0
         local angleVariation = (2*math.pi) #0.0 #angle * 0.5
 
         local emit, x, y, z = nil
@@ -76,7 +76,7 @@ TAEntrance = Class(NullShell) {
 
         for i = 0, (numFlares - 1) do
             x = math.sin(angleInitial + (i*angle) + RandomFloat(-angleVariation, angleVariation))
-            y = 0.5 #RandomFloat(0.5, 1.5)
+            y = 0.5
             z = math.cos(angleInitial + (i*angle) + RandomFloat(-angleVariation, angleVariation))
 
             for k, v in EffectTemplate.CloudFlareEffects01 do

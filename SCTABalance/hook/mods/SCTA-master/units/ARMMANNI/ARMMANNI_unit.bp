@@ -19,26 +19,24 @@ UnitBlueprint {
         'SNIPER',
         'ANTISHIELD',
     },
-    BuildIconSortPriority = 10,
     Defense = {
         Health = 1500,
         MaxHealth = 1500,
+    },
+    Display = {
+    UniformScale = 0.12,
     },
     Economy = {
         BuildCostEnergy = 30000,
         BuildCostMass = 1400,
         BuildTime = 28000,
     },
-    SelectionSizeX = 1.5,
-    SelectionSizeZ = 1.5,
-    SelectionThickness = 0.25,
-    SizeX = 2,
-    SizeY = 2.35,
-    SizeZ = 2,
-    StrategicIconSortPriority = 0,
+    SizeX = 1.5,
+    SizeY = 2,
+    SizeZ = 1.5,
     Weapon = {
         [1] = {
-            DamageToShields = 1500,
+            DamageToShields = 800,
             MaxRadius = 80,
             RateOfFire = 0.2,
             EnergyDrainPerSecond = 500,

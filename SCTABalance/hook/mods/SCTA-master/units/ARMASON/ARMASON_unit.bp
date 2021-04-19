@@ -57,5 +57,6 @@ UnitBlueprint {
             TurnRate = 0,
         },
     SizeX = 2,
-    SizeZ = 2,    
+    SizeZ = 2,   
+    LifeBarSize = 1, 
 }

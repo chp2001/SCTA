@@ -52,8 +52,7 @@ UnitBlueprint {
 	SonarRadius = 140,
 	WaterVisionRadius = 12,
     },
-    LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
+    LifeBarSize = 1,
     Physics = {
         BankingSlope = 0,
         DragCoefficient = 0.2,

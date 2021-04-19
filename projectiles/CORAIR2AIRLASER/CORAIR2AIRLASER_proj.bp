@@ -42,9 +42,7 @@ ProjectileBlueprint {
             'ANTIAIR',
         },
         Faction = 'CORE',
-        Weapon = 'COREAIR2AIRLASER',
     },
-
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 56.25,

@@ -16,7 +16,6 @@ UnitBlueprint {
 	'SELECTION', 
         'CORE',
         'BOT',
-        'TANK',
     },
     Defense = {
         Health = 1200,
@@ -38,7 +37,7 @@ UnitBlueprint {
         ProductionPerSecondEnergy = 3,
         ProductionPerSecondMass = 0,
     },
-    
+    LifeBarSize = 1,
     Physics = {
         MaxAcceleration = 1.4,
         MaxBrake = 1.25,

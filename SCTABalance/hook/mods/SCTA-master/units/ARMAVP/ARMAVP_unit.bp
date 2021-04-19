@@ -17,6 +17,7 @@ UnitBlueprint {
 	    'ARM',
         'SORTCONSTRUCTION',
         'TANK',
+        'SUPPORTFACTORY',
     },
     Defense = {
         Health = 8200,
@@ -27,13 +28,14 @@ UnitBlueprint {
     },
     Economy = {
         BuildCostEnergy = 15000,
-        BuildCostMass = 1400, 
+        BuildCostMass = 1100, 
         BuildRate = 150,
         BuildTime = 18000,
         BuildableCategory = {
             'TANK MOBILE TECH2 ARM',
             'TANK MOBILE TECH1 ARM',
             'TANK MOBILE TECH3 ARM',
+            'BOT MOBILE ENGINEER ARM',
         },
     },
     LifeBarHeight = 0.22,

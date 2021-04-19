@@ -15,16 +15,12 @@ ARMAAP = Class(TAFactory) {
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
 		end
-		self.AnimManip = CreateAnimator(self)
-		self.Trash:Add(self.AnimManip)
 		TAFactory.OnCreate(self)
 	end,
 
 
 	Open = function(self)
 		TAFactory.Open(self)
-		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
-		self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 		
 		self.Spinners.nozzle1:SetGoal(45)
 		self.Spinners.nozzle1:SetSpeed(160.03)
@@ -36,8 +32,6 @@ ARMAAP = Class(TAFactory) {
 
 	Close = function(self)
 		TAFactory.Close(self)
-		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
-		self.AnimManip:SetRate(-0.1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
 
 		self.Spinners.nozzle1:SetGoal(0)
 		self.Spinners.nozzle1:SetSpeed(160.03)

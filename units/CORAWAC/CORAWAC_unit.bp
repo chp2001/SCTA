@@ -140,7 +140,7 @@ UnitBlueprint {
     Physics = {
         Elevation = 15,
         MotionType = 'RULEUMT_Air',
-        GroundCollisionOffset = 1.6,
+        GroundCollisionOffset = 2,
         MaxSpeed = 0.5,
         RotateOnSpot = true,
 	TurnRadius = 0,
@@ -150,11 +150,11 @@ UnitBlueprint {
     SelectionSizeX = 1.5,
     SelectionSizeZ = 1.5,
     SelectionThickness = 0.25,
-    SizeSphere = 1.6,
+    SizeSphere = 2,
     SizeX = 2.3,
     SizeY = 0.25,
     SizeZ = 1,
-    StrategicIconName = 'icon_fighter2_intel',
+    StrategicIconName = 'icon_fighter3_intel',
     StrategicIconSortPriority = 0,
     Transport = {
         AirClass = true,

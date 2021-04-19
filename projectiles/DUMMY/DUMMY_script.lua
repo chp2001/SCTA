@@ -3,7 +3,7 @@
 #
 #Blueprint created by Raevn
 
-local TAProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TAProjectile
+local TAProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TAProjectile
 
 DUMMY = Class(TAProjectile){
 }

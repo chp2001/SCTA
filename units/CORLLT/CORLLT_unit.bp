@@ -7,7 +7,6 @@ UnitBlueprint {
     AI = {
         TargetBones = {
             'CORLLT',
-            'Stand',
         },
     },
     Audio = {
@@ -43,7 +42,6 @@ UnitBlueprint {
     'SNIPEMODE',
     'ANTISHIELD',
     },
-    CollisionOffsetY = -1,
     Defense = {
         ArmorType = 'Structure',
         AirThreatLevel = 0,
@@ -64,7 +62,7 @@ UnitBlueprint {
                 },
             },
         },
-        UniformScale = 0.16,
+        UniformScale = 0.1,
     },
     Economy = {
         BuildCostEnergy = 2608,
@@ -123,21 +121,21 @@ TechLevel = 'RULEUTL_Basic',
      WeaponCategory = 'DirectFire',
             FiringTolerance = 3.846,
             Label = 'CORE_LIGHTLASER',
-            MaxRadius = 25,
+            MaxRadius = 26,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 50,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_LIGHTLASER/CORE_LIGHTLASER_proj.bp',
             EnergyDrainPerSecond = 10,
             EnergyRequired = 10,
-            DamageRadius = 2,
+            DamageRadius = 1,
             EnergyChargeForFirstShot = true,
             RackBones = {
                 {
                     MuzzleBones = {
                         'Muzzle',
                     },
-                    RackBone = 'Turret',
+                    RackBone = 'Muzzle',
                 },
             },
             RackRecoilDistance = 0,

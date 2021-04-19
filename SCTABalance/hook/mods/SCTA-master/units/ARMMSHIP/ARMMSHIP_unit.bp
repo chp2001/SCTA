@@ -25,7 +25,7 @@ UnitBlueprint {
         Abilities = {
             '<LOC ability_tacmissiledef>Tactical Missile Defense',
         },
-        UniformScale = 0.24,
+        UniformScale = 0.2,
     },
     Defense = {
         Health = 8000,
@@ -43,34 +43,11 @@ UnitBlueprint {
     SizeY = 3,
     SizeZ = 10,
     Weapon = {
-    [1] = {
+        [1] = {     
+        },
+    [2] = {
         Damage = 1000,
         ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/ARMBSHIP_ROCKET/ARMBSHIP_ROCKET_proj.bp',
-    },
-    [2] = {     
-        Damage = 1,
-        DamageType = 'Normal',
-        FireTargetLayerCapsTable = {
-            Land = 'Air',
-            Water = 'Air',
-        },
-        MaxRadius = 45,
-        FiringTolerance = 360,
-        MuzzleSalvoDelay = 0, 
-        MuzzleSalvoSize = 1,
-        MuzzleVelocity = 60,
-        ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/ARMAMIS_WEAPON/ARMAMIS_WEAPON_proj.bp',
-        ProjectileLifetimeUsesMultiplier = 1.1,
-        ProjectilesPerOnFire = 1,
-        RangeCategory = 'UWRC_Countermeasure',
-        WeaponCategory = 'Defense',
-        RateOfFire = 1,
-        TargetCheckInterval = 0.5,
-        TargetRestrictDisallow = 'UNTARGETABLE',
-        TargetRestrictOnlyAllow = 'TACTICAL MISSILE',
-        TargetType = 'RULEWTT_Projectile',
-        EffectiveRadius = 30,
-        TrackingRadius = 20,
     },
     [3] = {},
   },    

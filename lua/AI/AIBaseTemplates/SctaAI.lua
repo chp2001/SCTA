@@ -12,37 +12,40 @@ BaseBuilderTemplate {
         -- List all our builder grous here
         -- ACU
         'SCTAAICommanderBuilder',
-        
         -- Unit Builders
         'SCTAAIEngineerBuilder',
         'SCTAAILandBuilder',
         'SCTAAIAirBuilder',
         'SCTAAILandFormers',
         'SCTAAIAirFormers',
+        'SCTAAIUniversalFormers',
+        'SCTAAINavalBuilder',
+        'SCTANavalFormer',
         
         -- Buildings etc
-        'SCTAAIEngineerMiscBuilder',
         'SCTAAIEngineerEcoBuilder',
         'SCTAAIFactoryBuilders',
         'SCTAUpgrades',
-        'SCTAExpansionBuilders',
+
+        -- Buildings etc
+        'SCTAAIEngineerMiscBuilder',
+        'SCTAAIEngineerNavalMiscBuilder',
+       
+        --MiscFunctions
         'SCTAAssisters',
+        'SCTAExpansionBuilders',
     },
     NonCheatBuilders = {
         -- Specify builders that are _only_ used by non-cheating AI (e.g. scouting)
     },
     BaseSettings = { },
     ExpansionFunction = function(aiBrain, location, markerType)
-        -- This is used if you want to make stuff outside of the starting location.
-        return 10
+        --LOG('MAIN')
+        return -1
     end,
     
     FirstBaseFunction = function(aiBrain)
-
-        local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
-        --LOG('Ai Personality is '..per)
-        if per == 'sctaaiarm' or per == 'sctaaicore' then
-            --LOG('Return sctaai personality')
+        if aiBrain.SCTAAI then
             return 1000, 'SCTAAI'
         end
         return -1

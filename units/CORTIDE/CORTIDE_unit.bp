@@ -67,7 +67,7 @@ UnitBlueprint {
 	    NaturalProducer = true,
     },
     Footprint = {
-	MinWaterDepth = 1.25,
+	MinWaterDepth = 1.5,
     },
     General = {
         Category = 'Economy',
@@ -84,7 +84,7 @@ TechLevel = 'RULEUTL_Basic',
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,
-    LifeBarSize = 1,
+    LifeBarSize = 2,
     Physics = {
         BuildOnLayerCaps = {
             LAYER_Water = true,

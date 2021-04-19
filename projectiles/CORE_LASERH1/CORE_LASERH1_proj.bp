@@ -42,9 +42,7 @@ ProjectileBlueprint {
             'DIRECTFIRE',
         },
         Faction = 'CORE',
-        Weapon = 'CORE_LASERH1',
     },
-
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 43.75,

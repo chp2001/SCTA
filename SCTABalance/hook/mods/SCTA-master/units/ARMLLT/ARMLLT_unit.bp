@@ -1,9 +1,5 @@
 UnitBlueprint {
     Merge = true,
-    CollisionOffsetY = -0.4,
-    Display = {
-        UniformScale = 0.1,
-    },
     Economy = {
         BuildTime = 5500,
     },
@@ -15,14 +11,13 @@ UnitBlueprint {
         VisionRadius = 16,
     },
     LifeBarSize = 1,
-    SelectionSizeX = 0.8,
-    SelectionSizeZ = 0.8,
-    SizeX = 0.8,
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
+    SizeX = 1,
     SizeY = 2.2,
-    SizeZ = 0.8,
+    SizeZ = 1,
     Weapon = {
         [1] = {
-            Damage = 200,
             EnergyDrainPerSecond = 25,
             EnergyRequired = 25,
         },

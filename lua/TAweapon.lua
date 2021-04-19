@@ -5,17 +5,20 @@ local BareBonesWeapon = WeaponFile.BareBonesWeapon
 local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 
 TAweapon = Class(DefaultWeapon) {
-    OnGotTargetCheck = function(self)
-        local army = self.unit:GetArmy()
-        local canSee = true
-        local target = self:GetCurrentTarget()
-        local aiBrain = self.unit:GetAIBrain()
-        if aiBrain.SCTAAI or (self.unit:IsUnitState('Patrolling') or self.unit:IsUnitState('MakingAttackRun')) then
+    OnCreate = function(self)
+        DefaultWeapon.OnCreate(self)
+        self.army = self.unit:GetArmy()
+    end,
+    
+        OnGotTargetCheck = function(self)
+        if self.unit:GetAIBrain().SCTAAI or (self.unit:IsUnitState('Patrolling') or self.unit:IsUnitState('MakingAttackRun'))  then
             return true
         else
+            local canSee = true
+            local target = self:GetCurrentTarget()
         if (target) then
             if (IsUnit(target)) then
-                canSee = target:GetBlip(army):IsSeenNow(army)
+                canSee = target:GetBlip(self.army):IsSeenNow(self.army)
             end
             if (IsBlip(target)) then
                 target = target:GetSource()
@@ -40,9 +43,7 @@ TAweapon = Class(DefaultWeapon) {
 
     IdleState = State(DefaultWeapon.IdleState) {
         OnGotTarget = function(self) 
-            local army = self.unit:GetArmy()
-            ---LOG('Resulting Table'..repr(TAutils.targetingFacilityData))
-            if (TAutils.ArmyHasTargetingFacility(army) or 
+            if (TAutils.ArmyHasTargetingFacility(self.army) or 
             self:OnGotTargetCheck() == true) then
                 DefaultWeapon.IdleState.OnGotTarget(self)
             end
@@ -51,9 +52,8 @@ TAweapon = Class(DefaultWeapon) {
 
     WeaponUnpackingState = State(DefaultWeapon.WeaponUnpackingState) {
         Main = function(self)          
-            local army = self.unit:GetArmy()
             ---LOG('Resulting Table'..repr(TAutils.targetingFacilityData))
-            if (TAutils.ArmyHasTargetingFacility(army) or 
+            if (TAutils.ArmyHasTargetingFacility(self.army) or 
             self:OnGotTargetCheck() == true) then
                 DefaultWeapon.WeaponUnpackingState.Main(self)
             else
@@ -62,9 +62,7 @@ TAweapon = Class(DefaultWeapon) {
         end,
 
         OnGotTarget = function(self)         
-            local army = self.unit:GetArmy()
-            ---LOG('Resulting Table'..repr(TAutils.targetingFacilityData))
-            if (TAutils.ArmyHasTargetingFacility(army) or 
+            if (TAutils.ArmyHasTargetingFacility(self.army) or 
             self:OnGotTargetCheck() == true)  then
                 DefaultWeapon.WeaponUnpackingState.OnGotTarget(self)
             end
@@ -72,26 +70,8 @@ TAweapon = Class(DefaultWeapon) {
     },
 
     RackSalvoFireReadyState = State(DefaultWeapon.RackSalvoFireReadyState) {
-
-        Main = function(self)
-            local bp = self:GetBlueprint()
-            if bp.MassRequired and bp.MassRequired > 0 then
-                self.WeaponCanFire = false
-                local aiBrain = self.unit:GetAIBrain()
-                while aiBrain:GetEconomyStored('MASS') < bp.MassRequired do
-                        WaitSeconds(1)
-                end
-                aiBrain:TakeResource('Mass', bp.MassRequired)
-                self.WeaponCanFire = true
-            end
-            DefaultWeapon.RackSalvoFireReadyState.Main(self)
-
-        end,
-
         OnGotTarget = function(self)      
-            local army = self.unit:GetArmy()
-            ---LOG('Resulting Table'..repr(TAutils.targetingFacilityData))
-            if (TAutils.ArmyHasTargetingFacility(army) or 
+            if (TAutils.ArmyHasTargetingFacility(self.army) or 
             self:OnGotTargetCheck() == true) then
                 DefaultWeapon.RackSalvoFireReadyState.OnGotTarget(self)
             end
@@ -101,9 +81,7 @@ TAweapon = Class(DefaultWeapon) {
 
     WeaponPackingState = State(DefaultWeapon.WeaponPackingState) {
         OnGotTarget = function(self)
-            local army = self.unit:GetArmy()
-            ---LOG('Resulting Table'..repr(TAutils.targetingFacilityData))
-            if (TAutils.ArmyHasTargetingFacility(army) or 
+            if (TAutils.ArmyHasTargetingFacility(self.army) or 
             self:OnGotTargetCheck() == true)  then
                 DefaultWeapon.WeaponPackingState.OnGotTarget(self)
             end
@@ -112,22 +90,23 @@ TAweapon = Class(DefaultWeapon) {
 }
 
 TAHide = Class(TAweapon) {
+    OnCreate = function(self)
+        TAweapon.OnCreate(self)
+        self.bp = self.unit:GetBlueprint()
+        self.scale = 0.5
+    end,
 
     PlayFxWeaponUnpackSequence = function(self)
         self.unit.Pack = 1
         self.unit:DisableUnitIntel('RadarStealth')
         TAweapon.PlayFxWeaponUnpackSequence(self)
-        local bp = self.unit:GetBlueprint()
-        local scale = 0.5
-        self.unit:SetCollisionShape( 'Box', bp.CollisionOffsetX or 0, bp.CollisionOffsetY + 0.5, bp.CollisionOffsetZ or 0, bp.SizeX * scale, bp.SizeY * scale, bp.SizeZ * scale)
+        self.unit:SetCollisionShape( 'Box', self.bp.CollisionOffsetX or 0, self.bp.CollisionOffsetY + 0.5, self.bp.CollisionOffsetZ or 0, self.bp.SizeX * self.scale, self.bp.SizeY * self.scale, self.bp.SizeZ * self.scale)
     end,
 
     PlayFxWeaponPackSequence = function(self)
         self.unit:EnableUnitIntel('RadarStealth')
         TAweapon.PlayFxWeaponPackSequence(self)
-        local bp = self.unit:GetBlueprint()
-        local scale = 0.5
-        self.unit:SetCollisionShape( 'Box',  bp.CollisionOffsetX or 0, bp.CollisionOffsetY or 0, bp.CollisionOffsetZ or 0, bp.SizeX * scale, ((bp.SizeY/bp.SizeY) * scale), bp.SizeZ * scale)
+        self.unit:SetCollisionShape( 'Box',  self.bp.CollisionOffsetX or 0, self.bp.CollisionOffsetY or 0, self.bp.CollisionOffsetZ or 0, self.bp.SizeX * self.scale, ((self.bp.SizeY/self.bp.SizeY) * self.scale), self.bp.SizeZ * self.scale)
     end,
 }
 
@@ -144,68 +123,15 @@ TAPopLaser = Class(TAweapon) {
     end,
 }
 
-TARocket = Class(TAweapon) {
- -- Called when the weapon is created, almost always when the owning unit is created
- OnCreate = function(self)
-    local bp = self:GetBlueprint()
-    self.MassRequired = bp.MassRequired
-    self.MassDrainPerSecond = bp.MassDrainPerSecond
-    if bp.MassChargeForFirstShot == false then
-        self.FirstShot = true
-    end
-    TAweapon.OnCreate(self)
-end,
-
-
-StartEconomyDrain = function(self)
-    TAweapon.StartEconomyDrain(self)
-    if self.FirstShot then return end
-    local bp = self:GetBlueprint()
-    if not self.MassDrain and bp.MassRequired and bp.MassDrainPerSecond then
-        local MsReq = self:GetWeaponMassRequired()
-        local MsDrain = self:GetWeaponMassDrain()
-        if MsReq > 0 and MsDrain > 0 then
-            local time = MsReq / MsDrain
-            if time < 0.1 then
-                time = 0.1
-            end
-            self.MassDrain = CreateEconomyEvent(self.unit, 0, MsReq, time)
-            self.FirstShot = true
-            self.unit:ForkThread(function()
-                WaitFor(self.MassDrain)
-                RemoveEconomyEvent(self.unit, self.MassDrain)
-                self.MassDrain = nil
-            end)
-        end
-    end
-end,
-
-GetWeaponMassRequired = function(self)
-    local bp = self:GetBlueprint()
-    local weapMass = (bp.MassRequired or 0)
-    if weapMass < 0 then
-        weapMass = 0
-    end
-    return weapMass
-end,
-
-GetWeaponMassDrain = function(self)
-    local bp = self:GetBlueprint()
-    local weapMass = (bp.MassDrainPerSecond or 0)
-    return weapMass
-end,
-}
-
 TAKami = Class(KamikazeWeapon){
     FxDeath = {
-        '/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp',
+        '/effects/emitters/napalm_fire_emit_2.bp',
     },
 
 
     OnFire = function(self)
-        local army = self.unit:GetArmy()
         for k, v in self.FxDeath do
-            CreateEmitterAtBone(self.unit,-2,army,v):ScaleEmitter(3)
+            CreateEmitterAtBone(self.unit,-2,self.unit:GetArmy(),v):ScaleEmitter(3)
         end 
 		local myBlueprint = self:GetBlueprint()
 		KamikazeWeapon.OnFire(self)
@@ -214,7 +140,7 @@ TAKami = Class(KamikazeWeapon){
 
 TABomb = Class(BareBonesWeapon) {
     FxDeath = {
-        '/mods/SCTA-master/effects/emitters/napalm_fire_emit.bp',
+        '/effects/emitters/napalm_fire_emit_2.bp',
     },
 
 
@@ -228,9 +154,8 @@ TABomb = Class(BareBonesWeapon) {
     end,
     
     Fire = function(self)
-		local army = self.unit:GetArmy()
         for k, v in self.FxDeath do
-            CreateEmitterAtBone(self.unit,-2,army,v):ScaleEmitter(3)
+            CreateEmitterAtBone(self.unit,-2, self.unit:GetArmy(), v):ScaleEmitter(3)
         end 
 		local myBlueprint = self:GetBlueprint()
         DamageArea(self.unit, self.unit:GetPosition(), myBlueprint.DamageRadius, myBlueprint.Damage, myBlueprint.DamageType or 'Normal', myBlueprint.DamageFriendly or false)
@@ -283,7 +208,7 @@ TADGun = Class(DefaultWeapon) {
                 WaitSeconds(1)
             end
             if self.AutoMode then
-                self.unit:SetWeaponEnabledByLabel('AutoDGun', true)
+                self.unit:SetWeaponEnabledByLabel('AutoOverCharge', true)
             end
         end,
     
@@ -304,8 +229,8 @@ TADGun = Class(DefaultWeapon) {
         OnCreate = function(self)
             DefaultWeapon.OnCreate(self)
             self.EnergyRequired = self:GetBlueprint().EnergyRequired
-            self.unit:SetWeaponEnabledByLabel('DGun', true)
-            self.unit:SetWeaponEnabledByLabel('AutoDGun', false)
+            self.unit:SetWeaponEnabledByLabel('OverCharge', true)
+            self.unit:SetWeaponEnabledByLabel('AutoOverCharge', false)
             self.unit:SetOverchargePaused(false)
         end,
 

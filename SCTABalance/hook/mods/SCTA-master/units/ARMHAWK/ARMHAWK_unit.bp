@@ -12,10 +12,9 @@ UnitBlueprint {
               },
     Economy = {
         BuildCostMass = 480,
-        BuildCostEnergy = 42000,
+        BuildCostEnergy = 28000,
         BuildTime = 20000,
         ProductionPerSecondEnergy = 0,
-        MaintenanceConsumptionPerSecondEnergy = 25,
       },
     Physics = {
           FuelRechargeRate = 666666,
@@ -23,5 +22,15 @@ UnitBlueprint {
     },
     Intel = {
       TAIntel = true,
+      },
+      Weapon = {
+        [1] = {
+          RateOfFire = 1,
+        },
+        [2] = {
+          RateOfFire = 1,
+        },
+        [3] = {
+        },
       },
   }

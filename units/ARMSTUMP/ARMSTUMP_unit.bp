@@ -118,7 +118,7 @@ UnitBlueprint {
 	    MaxSpeedReverse = 0,
         MaxAcceleration = 1.2,
         MaxBrake = 1.1,
-        MaxSpeed = 2.4,
+        MaxSpeed = 3,
         MotionType = 'RULEUMT_Land',
         TurnRate = 74,
         MaxSteerForce = 10,
@@ -145,7 +145,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 44,
+            Damage = 60,
             DamageType = 'Normal',
             DisplayName = 'ARM_LIGHTCANNON',
             FireTargetLayerCapsTable = {

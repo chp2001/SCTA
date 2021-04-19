@@ -3,11 +3,10 @@
 #
 #Script created by Raevn
 
-local TALaserProjectile = import('/mods/SCTA-master/lua/TAProjectiles.lua').TALaserProjectile
+local TALIGHTNING = import('/mods/SCTA-master/lua/TAprojectiles.lua').TALIGHTNING
 
-LIGHTNING = Class(TALaserProjectile) 
+LIGHTNING = Class(TALIGHTNING) 
 {
-	PolyTrail = '/mods/SCTA-master/effects/emitters/LIGHTNING_emit.bp',
 }
 
 TypeClass = LIGHTNING

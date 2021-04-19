@@ -123,9 +123,9 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {
-        MaxAcceleration = 3.05175782/2,
-        MaxBrake = 3.05175782/2,
-        MaxSpeed = 3.051757812/2,
+        MaxAcceleration = 2.5,   --3.05175782/2
+        MaxBrake = 2.5,   --3.05175782/2
+        MaxSpeed = 3,   ---3.051757812/2
         MotionType = 'RULEUMT_Amphibious',
         TurnRate = 102,
         MaxSteerForce = 10,
@@ -173,8 +173,8 @@ UnitBlueprint {
             MuzzleVelocity = 37.5,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_PARALYZER/ARM_PARALYZER_proj.bp',
             RackBones = {
-                { MuzzleBones = { 'flare' }, RackBone = 'Turret_Barrel_R' },
-                { MuzzleBones = { 'flare2' }, RackBone = 'Turret_Barrel_L' },
+                { MuzzleBones = { 'Turret_Barrel_L' }, RackBone = 'Turret_Barrel_L' },
+                { MuzzleBones = { 'Turret_Barrel_R' }, RackBone = 'Turret_Barrel_R' },
             },
             RackFireTogether = false,
             RackRecoilDistance = -1.25,
@@ -186,12 +186,12 @@ UnitBlueprint {
             TargetCheckInterval = 1,
             TargetPriorities = { 'ALLUNITS' },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            TurretBoneMuzzle = 'Turret_Barrel_R',
+            TurretBoneMuzzle = 'flare',
             TurretBonePitch = 'Turret_Pitch',
-            TurretBoneDualMuzzle = 'Turret_Barrel_L',
-            TurretBoneDualPitch = 'Turret_Pitch',
+            --TurretBoneDualMuzzle = 'Turret_Barrel_L',
+            --TurretBoneDualPitch = 'Turret_Pitch',
             TurretBoneYaw = 'Turret_Yaw',
-            TurretDualManipulators = true,
+            TurretDualManipulators = false,
             TurretPitch = 0,
             TurretPitchRange = 360,
             TurretPitchSpeed = 90,

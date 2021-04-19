@@ -38,7 +38,7 @@ UnitBlueprint {
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'CORE',
-	    'SCOUT',
+	    'PRODUCTFA',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -91,7 +91,7 @@ TechLevel = 'RULEUTL_Basic',
         VisionRadius = 18,
     },
     LifeBarHeight = 0.25,
-    LifeBarOffset = 0.5,
+    LifeBarOffset = 0.25,
     LifeBarSize = 2,
     Physics = {
         LayerChangeOffsetHeight = -2.00,

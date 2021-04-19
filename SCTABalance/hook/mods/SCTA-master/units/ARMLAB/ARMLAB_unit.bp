@@ -16,7 +16,7 @@ UnitBlueprint {
         MaxHealth = 2400,
     },
     Economy = {
-        BuildCostMass = 600, 
+        BuildCostMass = 500, 
         BuildCostEnergy = 4500,
         BuildTime = 7600,
         BuildableCategory = {
@@ -30,7 +30,6 @@ UnitBlueprint {
     General = {
         UpgradesTo = 'armdlab', 
     },
-    
     SelectionSizeX = 7,
     SelectionSizeZ = 5,
     SelectionThickness = 0.25,

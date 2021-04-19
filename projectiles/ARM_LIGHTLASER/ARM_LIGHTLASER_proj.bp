@@ -42,9 +42,7 @@ ProjectileBlueprint {
             'DIRECTFIRE',
         },
         Faction = 'ARM',
-        Weapon = 'ARM_LIGHTLASER',
     },
-
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 56.25,

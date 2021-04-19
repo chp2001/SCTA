@@ -49,9 +49,7 @@ ProjectileBlueprint {
             'DIRECTFIRE',
         },
         Faction = 'ARM',
-        Weapon = 'ARM_ROY',
     },
-
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 22,

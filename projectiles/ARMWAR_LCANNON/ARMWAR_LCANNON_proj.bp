@@ -49,9 +49,7 @@ ProjectileBlueprint {
             'DIRECTFIRE',
         },
         Faction = 'ARM',
-        Weapon = 'ARMWAR_LCANNON',
     },
-
     Physics = {
         DestroyOnWater = true,
         InitialSpeed = 15,

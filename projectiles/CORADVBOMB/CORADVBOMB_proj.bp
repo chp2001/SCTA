@@ -49,13 +49,11 @@ ProjectileBlueprint {
             'INDIRECTFIRE',
         },
         Faction = 'CORE',
-        Weapon = 'CORADVBOMB',
     },
-
     Physics = {
         DestroyOnWater = true,
         RealisticOrdinance = true,
-        Lifetime = 4,
+        Lifetime = 30,
         LeadTarget = false,
 	UseGravity = true,
         VelocityAlign = true,

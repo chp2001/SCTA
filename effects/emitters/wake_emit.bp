@@ -1,5 +1,5 @@
 EmitterBlueprint {
-	BlueprintId = 'fire_smoke',
+	BlueprintId = 'boatemit',
 	Lifetime = -1,
 	Repeattime = 50.00,
 	TextureFramecount = 1.00,

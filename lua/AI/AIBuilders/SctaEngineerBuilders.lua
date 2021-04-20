@@ -102,15 +102,6 @@ BuilderGroup {
         BuilderType =  'KBot',
     },
     Builder {
-        BuilderName = 'SCTAAi FactoryT2 Engineer Vehicle',
-        PlatoonTemplate = 'T2BuildEngineerSCTA',
-        Priority = 110, -- Top factory priority
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.TECH2 * categories.LAND - categories.FIELDENGINEER } }, -- Build engies until we have 4 of them.
-        },
-        BuilderType =  'Vehicle',
-    },
-    Builder {
         BuilderName = 'SCTAAi AirFactory Engineer',
         PlatoonTemplate = 'T1BuildEngineerAirSCTA',
         Priority = 105,
@@ -131,16 +122,6 @@ BuilderGroup {
         },
         BuilderType = 'Air',
     }, 
-    Builder {
-        BuilderName = 'SCTAAi Factory Engineer KBot',
-        PlatoonTemplate = 'T1BuildEngineerSCTA',
-        Priority = 100, -- Top factory priority
-        PriorityFunction = EngineerProduction,
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.LAND * categories.TECH1 - categories.COMMAND } }, -- Don't make tanks if we have lots of them.
-        },
-        BuilderType =  'KBot',
-    },
     Builder {
         BuilderName = 'SCTAAi Factory Engineer Vehicle',
         PlatoonTemplate = 'T1BuildEngineerSCTA',

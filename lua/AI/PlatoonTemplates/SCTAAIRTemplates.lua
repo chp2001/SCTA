@@ -41,7 +41,7 @@ PlatoonTemplate {
     Name = 'IntieAISCTA',
     Plan = 'InterceptorAISCTA',
     GlobalSquads = {
-        { SKY * categories.ANTIAIR * (categories.TECH1 + categories.TECH3) - categories.BOMBER - categories.TRANSPORTFOCUS, 2, 100, 'attack', 'none' },
+        { SKY * categories.ANTIAIR * (categories.TECH1 + categories.TECH3) - categories.BOMBER, 2, 100, 'attack', 'none' },
     }
 }
 
@@ -95,8 +95,12 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armfig', 1, 1, 'attack', 'GrowthFormation' },
+            { 'armca', 1, 1, 'support', 'None' },
+            { 'armfig', 1, 1, 'attack', 'GrowthFormation' },
         },
         Core = {
+            { 'corveng', 1, 1, 'attack', 'GrowthFormation' },
+            { 'corca', 1, 1, 'support', 'None' },
             { 'corveng', 1, 1, 'attack', 'GrowthFormation' },
         },
     }

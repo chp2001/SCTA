@@ -182,7 +182,8 @@ BuilderGroup {
         Priority = 44,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {480} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'GreaterThanGameTime', {240} },
+            { MIBC, 'LessThanGameTime', {900} }, -- Don't make tanks if we have lots of them.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ANTISHIELD * categories.TECH1 - categories.MOBILE } }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.7}},
         },
@@ -210,7 +211,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTA Defensive Point 2',
-        PlatoonTemplate = 'EngineerBuilderSCTAALL',
+        PlatoonTemplate = 'EngineerBuilderSCTA23All',
         Priority = 76,
         InstanceCount = 2,
         BuilderConditions = {
@@ -221,12 +222,9 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             Construction = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
-            BuildClose = true,
-            OrderedTemplate = true,
-            NearBasePatrolPoints = false,
+                BuildClose = true,
+                OrderedTemplate = true,
+                NearBasePatrolPoints = false,
                 BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TA2TowerTemplates.lua',
                 BaseTemplate = 'T2TowerTemplate',
                 BuildStructures = {

@@ -24,15 +24,17 @@ local UnitProduction = function(self, aiBrain, builderManager)
 end
 
 local UnitProductionT1 = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  12, LAB) or Factory(aiBrain,  0, categories.GATE) then
-        return 0
+    if Factory(aiBrain,  0, categories.GATE) then
+          return 0
+    elseif Factory(aiBrain,  12, LAB) then
+              return 10
     elseif Factory(aiBrain,  1, LAB) then 
-        return 50
-    else
-        return 100
-    end
-end
-
+              return 50
+      else
+          return 101
+      end
+  end
+  
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIFactoryExpansions',
@@ -123,7 +125,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
-            { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.75, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
         },
         BuilderType = 'Any',
@@ -148,7 +150,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
-            { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.75, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
         BuilderType = 'Any',
@@ -172,13 +174,12 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {900} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.7, 0.7}},
         },
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
+            DesiresAssist = false,
             Construction = {
                 BuildClose = true,
                 BuildStructures = {
@@ -193,13 +194,12 @@ BuilderGroup {
         Priority = 43,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.7, 0.7}},
         },
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
+            DesiresAssist = false,
             Construction = {
                 BuildClose = true,
                 BuildStructures = {
@@ -214,13 +214,12 @@ BuilderGroup {
         Priority = 53,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.75}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.7, 0.7}},
         },
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
+            DesiresAssist = false,
             Construction = {
                 BuildClose = true,
                 BuildStructures = {

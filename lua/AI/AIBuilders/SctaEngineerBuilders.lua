@@ -7,22 +7,24 @@ local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
-local Interception = import('/lua/editor/UnitCountBuildConditions.lua').HaveLessThanUnitsWithCategory
+local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
 
 
 local EngineerProduction = function(self, aiBrain, builderManager)
-    if Interception(aiBrain,  1, LAB) then 
-        return 105
+    if Factory(aiBrain,  0, LAB) then 
+        return 10
     else
-        return 50
+        return 101
     end
 end
 
 local EngineerProductionT3 = function(self, aiBrain, builderManager)
-    if Interception(aiBrain,  13, LAB) or Interception(aiBrain,  1, categories.GATE)  then 
-        return 0
+    if Factory(aiBrain,  12, LAB)  then 
+        return 130
+    elseif Factory(aiBrain,  0, categories.GATE) then
+        return 135
     else
-        return 141
+        return 0
     end
 end
 
@@ -56,10 +58,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1 Scouts',
         PlatoonTemplate = 'T1AirScoutSCTA',
+        PriorityFunction = EngineerProduction,
         Priority = 110,
         BuilderConditions = {
-            { TAutils, 'EcoManagementTA', { 0.75, 1.05, 0.5, 0.5, } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.MOBILE * categories.AIR * categories.SCOUT } },
+            { TAutils, 'EcoManagementTA', { 0.75, 1.05, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
     }, 
@@ -70,7 +73,7 @@ BuilderGroup {
         PriorityFunction = EngineerProductionT3,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.MOBILE * categories.AIR * categories.SCOUT } },
-            { TAutils, 'EcoManagementTA', { 0.5, 0.75, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
     },
@@ -90,6 +93,7 @@ BuilderGroup {
         PriorityFunction = EngineerProduction,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.LAND * categories.TECH1 - categories.COMMAND } }, -- Don't make tanks if we have lots of them.
+            { EBC, 'GreaterThanEconStorageCurrent', { 300, 300 } },
         },
         BuilderType =  'Field',
     },
@@ -118,7 +122,7 @@ BuilderGroup {
         PriorityFunction = EngineerProduction,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENGINEER * categories.AIR * categories.TECH1} }, -- Build engies until we have 4 of them.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.5}}, 
+            { EBC, 'GreaterThanEconStorageCurrent', { 300, 300 } },
         },
         BuilderType = 'Air',
     },

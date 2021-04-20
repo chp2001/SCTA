@@ -1554,6 +1554,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local aiBrain = self:GetBrain()
         local armyIndex = aiBrain:GetArmyIndex()
         local data = self.PlatoonData
+        self.myThreat = self:CalculatePlatoonThreat('AntiSurface', categories.MOBILE)
         local target, engineer
         while aiBrain:PlatoonExists(self) do
             target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ALLUNITS - categories.AIR - categories.COMMAND - categories.STRUCTURE)
@@ -1563,11 +1564,13 @@ Platoon = Class(SCTAAIPlatoon) {
                 local position = AIUtils.RandomLocation(engineer:GetPosition()[1],engineer:GetPosition()[3])
                 self:MoveToLocation(position, false)
             elseif target then
-                blip = target:GetBlip(armyIndex)
+                local Threat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'AntiSurface')
+                if self.myThreat > Threat then
                 self:Stop()
                 self:AttackTarget(target)
+                end
             end
-            self:SetPlatoonFormationOverride('Attack')
+            --self:SetPlatoonFormationOverride('Attack')
             WaitSeconds(5)
         end
     end,
@@ -2426,7 +2429,10 @@ Platoon = Class(SCTAAIPlatoon) {
                 local recPos = nil
                 local closest = {}
                 for i, r in reclaim  do
-                    if (eng:CanPathTo (r.pos) and data.Terrain) or not data.Terrain then
+                    if data.Terrain and eng:CanPathTo (r.pos) then
+                        IssueReclaim(units, r.entity)
+                        if i > 10 then break end
+                    else
                         IssueReclaim(units, r.entity)
                         if i > 10 then break end
                    end

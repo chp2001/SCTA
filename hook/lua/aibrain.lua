@@ -183,7 +183,6 @@ AIBrain = Class(SCTAAIBrainClass) {
             v.FactoryManager:SortBuilderList('KBot')
             v.FactoryManager:SortBuilderList('Vehicle')
             v.FactoryManager:SortBuilderList('Hover')
-            v.FactoryManager:SortBuilderList('Land')
             v.FactoryManager:SortBuilderList('Air')
             v.FactoryManager:SortBuilderList('Sea')
             v.PlatoonFormManager:SortBuilderList('Any')

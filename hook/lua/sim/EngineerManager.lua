@@ -9,7 +9,7 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
             error('*PLATOOM FORM MANAGER ERROR: Invalid parameters; requires locationType, location, and radius')
             return false
         end
-        LOG('IEXIST')
+        ---LOG('IEXIST')
         self.Location = location
         self.Radius = radius
         self.LocationType = lType

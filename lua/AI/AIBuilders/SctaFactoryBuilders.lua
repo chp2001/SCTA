@@ -205,7 +205,7 @@ BuilderGroup {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, PLANT } }, -- Don't build air fac immediately.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR} },
             { MIBC, 'LessThanGameTime', {600} },
-            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.25, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.5, 0.75, 0.25, 0.5, } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -302,7 +302,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.AIR * PLATFORM} },
-            { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.25, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.25, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
         BuilderType = 'Any',

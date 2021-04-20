@@ -1,6 +1,4 @@
 SCTAFactoryBuilderManager = FactoryBuilderManager
-local CreateFactoryBuilder = import('/lua/sim/Builder.lua').CreateFactoryBuilder
-
 FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
     Create = function(self, brain, lType, location, radius, useCenterPoint)
         if not brain.SCTAAI then
@@ -11,8 +9,8 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
             error('*FACTORY BUILDER MANAGER ERROR: Invalid parameters; requires locationType, location, and radius')
             return false
         end
-        LOG('IEXISTFACT')
-        local builderTypes = { 'Land', 'Air', 'KBot', 'Vehicle', 'Hover', 'Sea', 'Gate', }
+        --LOG('IEXISTFACT')
+        local builderTypes = {'Air', 'KBot', 'Vehicle', 'Hover', 'Sea', 'Gate', }
         for _,v in builderTypes do
 			self:AddBuilderType(v)
 		end
@@ -54,8 +52,6 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
                     self:SetupNewFactory(unit, 'Vehicle')
                 elseif EntityCategoryContains(categories.HOVER, unit) then
                     self:SetupNewFactory(unit, 'Hover')
-                elseif EntityCategoryContains(categories.LAND, unit) then
-                    self:SetupNewFactory(unit, 'Land')
                 elseif EntityCategoryContains(categories.AIR, unit) then
                     self:SetupNewFactory(unit, 'Air')
                 elseif EntityCategoryContains(categories.NAVAL, unit) then

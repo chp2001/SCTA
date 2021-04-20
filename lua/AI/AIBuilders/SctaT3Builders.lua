@@ -49,7 +49,7 @@ BuilderGroup {
         Priority = 140,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
         { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.AIR * categories.MOBILE, 'Enemy'}},
-        { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.2, 0.5, } },
+        { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
     },

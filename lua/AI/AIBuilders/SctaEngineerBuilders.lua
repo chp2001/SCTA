@@ -122,7 +122,6 @@ BuilderGroup {
         PriorityFunction = EngineerProduction,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENGINEER * categories.AIR * categories.TECH1} }, -- Build engies until we have 4 of them.
-            { EBC, 'GreaterThanEconStorageCurrent', { 300, 300 } },
         },
         BuilderType = 'Air',
     },

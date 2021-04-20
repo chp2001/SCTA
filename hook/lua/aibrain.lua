@@ -173,4 +173,19 @@ AIBrain = Class(SCTAAIBrainClass) {
         end
         return true
     end,
+
+    ForceManagerSort = function(self)
+        if not self.SCTAAI then
+            return SCTAAIBrainClass.ForceManagerSort(self)
+        end
+        for _, v in self.BuilderManagers do
+            v.EngineerManager:SortBuilderList('Any')
+            v.FactoryManager:SortBuilderList('KBot')
+            v.FactoryManager:SortBuilderList('Vehicle')
+            v.FactoryManager:SortBuilderList('Hover')
+            v.FactoryManager:SortBuilderList('Air')
+            v.FactoryManager:SortBuilderList('Sea')
+            v.PlatoonFormManager:SortBuilderList('Any')
+        end
+    end,
 }

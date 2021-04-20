@@ -4,6 +4,7 @@ local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
+local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
@@ -134,38 +135,38 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Air',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco123',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco',
         PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 85,
         FormRadius = 500,
-        InstanceCount = 8,
+        InstanceCount = 5,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 600 } },
-            { TAutils, 'LessMassStorageMaxTA',  { 0.3}}, 
+            { TAutils, 'LessMassStorageMaxTA',  { 0.1}}, 
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},   
             },
         BuilderData = {
             LocationType = 'LocationType',
-            ReclaimTime = 30,
+            ReclaimTime = 10,
         },
         BuilderType = 'Any',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Idle',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
         PlatoonAIPlan = 'SCTAReclaimAI',
         FormRadius = 500,
         Priority = 25,
-        InstanceCount = 10,
+        InstanceCount = 5,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 360 } },
-            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},   
+            { TAutils, 'LessMassStorageMaxTA',  { 0.1}},   
             { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
         },
         BuilderData = {
             Terrain = true,
             LocationType = 'LocationType',
-            ReclaimTime = 30,
+            ReclaimTime = 10,
         },
         BuilderType = 'Any',
     },

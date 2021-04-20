@@ -1,7 +1,7 @@
 SCTAEngineerManager = EngineerManager
 EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
     Create = function(self, brain, lType, location, radius)
-        if not self.Brain.SCTAAI then
+        if not brain.SCTAAI then
             return SCTAEngineerManager.Create(self, brain, lType, location, radius)
         end
         BuilderManager.Create(self,brain)
@@ -9,7 +9,7 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
             error('*PLATOOM FORM MANAGER ERROR: Invalid parameters; requires locationType, location, and radius')
             return false
         end
-
+        ---LOG('IEXIST')
         self.Location = location
         self.Radius = radius
         self.LocationType = lType

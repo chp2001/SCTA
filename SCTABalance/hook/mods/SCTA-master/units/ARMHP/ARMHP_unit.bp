@@ -17,6 +17,7 @@ UnitBlueprint {
         'LAND', 
 	    'ARM',
 	    'SORTCONSTRUCTION',
+        'HOVER',
     },
     Defense = {
         Health = 30000,
@@ -34,9 +35,6 @@ UnitBlueprint {
         BuildCostMass = 2400, 
         BuildRate = 360,
         BuildTime = 150000,
-        BuildableCategory = {
-            'HOVER MOBILE TECH3 ARM',
-        },
     },
     LifeBarHeight = 0.22,
     LifeBarOffset = 3,

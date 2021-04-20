@@ -161,6 +161,10 @@ TAunitkeygroups = {
         "corasp",
     },
     ["Engineering_Station"]= {
+        "armca",
+        "corca",
+    },
+    ["T3_Strategic_Bomber"] = {
         "armpnix",
         "corhurc",
     },
@@ -247,11 +251,9 @@ TAunitkeygroups = {
         "armck",
         "armcv",
         "armcs",
-        "armca",
         "corck",
         "corcv",
         "corcs",
-        "corca",
     },
     ["T1_Light_Assault_Bot"]= {
         "armpw",

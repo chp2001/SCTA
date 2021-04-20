@@ -17,6 +17,7 @@ UnitBlueprint {
         BuildCostMass = 500,
         BuildRate = 120,
         BuildableCategory = {
+            'TECH1 BOT ENGINEER ARM',
             'AIR MOBILE TECH1 ARM',
             'armdap', 
         },

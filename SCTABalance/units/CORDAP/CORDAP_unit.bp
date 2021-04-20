@@ -87,6 +87,8 @@ UnitBlueprint {
     BuildableCategory = {
         'AIR MOBILE TECH1 CORE', 
         'AIR MOBILE TECH2 CORE',
+        'TECH1 BOT ENGINEER CORE',
+        'TECH2 FIELDENGINEER CORE',
         'coradap', 
     },
     StorageMass = 50,

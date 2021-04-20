@@ -46,7 +46,7 @@ UnitBlueprint {
         Health = 320,
         MaxHealth = 320,
         AirThreatLevel = 0,
-        EconomyThreatLevel = 2,
+        EconomyThreatLevel = 1,
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
     },

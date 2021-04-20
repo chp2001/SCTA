@@ -1407,6 +1407,51 @@ Platoon = Class(SCTAAIPlatoon) {
         self:PlatoonDisband()
     end,
 
+    SCTAAntiAirGaurd = function(self)
+        local aiBrain = self:GetBrain()
+        local armyIndex = aiBrain:GetArmyIndex()
+        local data = self.PlatoonData
+        local categoryList = {}
+        local atkPri = {}
+        if data.PrioritizedCategories then
+            for k,v in data.PrioritizedCategories do
+                table.insert( atkPri, v )
+                table.insert( categoryList, ParseEntityCategory( v ) )
+            end
+        end
+        table.insert( atkPri, 'AIR' )
+        table.insert( categoryList, categories.MOBILE * categories.BOMBER)
+        self:SetPrioritizedTargetList( 'Attack', categoryList )
+        local target
+        local maxRadius = data.SearchRadius or 50
+        while aiBrain:PlatoonExists(self) do
+            if not target or target:IsDead() then
+                if aiBrain:GetCurrentEnemy() and aiBrain:GetCurrentEnemy():IsDefeated() then
+                    aiBrain:PickEnemyLogic()
+                end
+                local mult = { 1,10,25 }
+                for _,i in mult do
+                    target = AIUtils.AIFindBrainTargetInRange( aiBrain, self, 'Attack', maxRadius * i, atkPri, aiBrain:GetCurrentEnemy() )
+                    if target then
+                        break
+                    end
+                    WaitSeconds(3)
+                    if not aiBrain:PlatoonExists(self) then
+                        return
+                    end
+                end
+                target = self:FindPrioritizedUnit('Attack', 'Enemy', true, self:GetPlatoonPosition(), maxRadius)
+                if target then
+                    self:Stop()
+                    self:AttackTarget( target )
+                end
+                WaitSeconds(120)
+                self:PlatoonDisband()
+            end
+        end
+    end,
+
+
     SCTAAntiAirAI = function(self)
         local aiBrain = self:GetBrain()
         local armyIndex = aiBrain:GetArmyIndex()
@@ -1564,14 +1609,20 @@ Platoon = Class(SCTAAIPlatoon) {
                 local position = AIUtils.RandomLocation(engineer:GetPosition()[1],engineer:GetPosition()[3])
                 self:MoveToLocation(position, false)
             elseif target then
+                if self.Loiter then 
+                    self.Loiter = nil
+                    WaitTicks(1)
+                    return self:SCTAStrikeForceAI()
+                end
                 local Threat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'AntiSurface')
                 if self.myThreat > Threat then
                 self:Stop()
                 self:AttackTarget(target)
+                self.Loiter = true
                 end
             end
             --self:SetPlatoonFormationOverride('Attack')
-            WaitSeconds(5)
+            WaitSeconds(10)
         end
     end,
 

@@ -28,6 +28,20 @@ BuilderGroup {
          },
     },
     Builder {
+        BuilderName = 'SCTAAI AntiAir Guard',
+        PlatoonTemplate = 'AntiAirGaurdSCTA',
+        Priority = 150,
+        InstanceCount = 2,
+        BuilderType = 'Any',
+        BuilderData = {
+            NeverGuardBases = true,
+            LocationType = 'LocationType',
+        },        
+        BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {300} },
+         },
+    },
+    Builder {
         BuilderName = 'SCTAAI Terrain',
         PlatoonTemplate = 'StrikeForceSCTATerrain', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 300,

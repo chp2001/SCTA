@@ -31,7 +31,7 @@ BuilderGroup {
             { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Land',
+        BuilderType = 'KBot',
     },
     Builder {
         BuilderName = 'SCTAAi Factory Tank',
@@ -43,7 +43,7 @@ BuilderGroup {
             '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Land',
+        BuilderType = 'KBot',
     },
     Builder {
         BuilderName = 'SCTAAi Factory Artillery',
@@ -54,7 +54,7 @@ BuilderGroup {
             '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
          },
-        BuilderType = 'Land',
+        BuilderType = 'KBot',
     },
     Builder {
         BuilderName = 'SCTAAi Factory AntiAir',
@@ -68,7 +68,7 @@ BuilderGroup {
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},                           
         },
-        BuilderType = 'Land',
+        BuilderType = 'KBot',
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT2 Tank',
@@ -80,7 +80,7 @@ BuilderGroup {
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Land',
+        BuilderType = 'KBot',
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT2 Artillery',
@@ -92,7 +92,7 @@ BuilderGroup {
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},
         },
-        BuilderType = 'Land',
+        BuilderType = 'KBot',
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT2 AntiAir',
@@ -105,7 +105,7 @@ BuilderGroup {
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
         },
-        BuilderType = 'Land',
+        BuilderType = 'KBot',
     },
     Builder {
         BuilderName = 'SCTAAi Factory Counter',
@@ -116,7 +116,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.BOMB * categories.LAND} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.1, 0.25}},
         }, 
-        BuilderType = 'Land',
+        BuilderType = 'KBot',
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Tank',
@@ -129,7 +129,7 @@ BuilderGroup {
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Land',
+        BuilderType = 'KBot',
     },
     ---VEHICLE
     Builder {
@@ -140,7 +140,7 @@ BuilderGroup {
             { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Land',
+        BuilderType = 'Vehicle',
     },
     Builder {
         BuilderName = 'SCTAAi Factory Tank2',
@@ -152,7 +152,7 @@ BuilderGroup {
             '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Land',
+        BuilderType = 'Vehicle',
     },
     Builder {
         BuilderName = 'SCTAAi Factory2 Artillery',
@@ -163,7 +163,7 @@ BuilderGroup {
                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
         },
-        BuilderType = 'Land',
+        BuilderType = 'Vehicle',
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT2 Tank2',
@@ -175,7 +175,7 @@ BuilderGroup {
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Land',
+        BuilderType = 'Vehicle',
     },
     Builder {
         BuilderName = 'SCTAAi Factory2 AntiAir',
@@ -189,7 +189,7 @@ BuilderGroup {
                                        { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
         },
-        BuilderType = 'Land',
+        BuilderType = 'Vehicle',
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT2 Artillery2',
@@ -201,7 +201,7 @@ BuilderGroup {
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},
         },
-        BuilderType = 'Land',
+        BuilderType = 'Vehicle',
     },
     Builder {
         BuilderName = 'SCTAAi Factory Counter2',
@@ -212,7 +212,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.STEALTHFIELD * categories.LAND} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         }, 
-        BuilderType = 'Land',
+        BuilderType = 'Vehicle',
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT2 AntiAir2',
@@ -225,7 +225,7 @@ BuilderGroup {
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.3, 0.5, } },
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
         },
-        BuilderType = 'Land',
+        BuilderType = 'Vehicle',
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Bot',
@@ -238,7 +238,7 @@ BuilderGroup {
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Land',
+        BuilderType = 'KBot',
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Tank2',
@@ -251,7 +251,7 @@ BuilderGroup {
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Land',
+        BuilderType = 'Vehicle',
     },
     Builder {
         BuilderName = 'SCTAAi T2 Experimental',

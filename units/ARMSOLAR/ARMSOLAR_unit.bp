@@ -44,7 +44,7 @@ UnitBlueprint {
         DamageModifier = 0.33,
         ArmorType = 'Structure',
         AirThreatLevel = 0,
-        EconomyThreatLevel = 1,
+        EconomyThreatLevel = 2,
         SubThreatLevel = 0,
         SurfaceThreatLevel = 0,
         Health = 326,

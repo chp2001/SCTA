@@ -39,7 +39,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.SCOUT * categories.LAND * categories.MOBILE} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Land',
+        BuilderType = 'KBot',
     },
     Builder {
         BuilderName = 'SCTAAi Factory2 Scout',
@@ -51,7 +51,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.SCOUT * categories.LAND * categories.MOBILE} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Land',
+        BuilderType = 'Vehicle',
     },
     Builder {
         BuilderName = 'SCTAAI T1 Scouts',
@@ -81,7 +81,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.FIELDENGINEER * categories.TECH2} }, -- Build engies until we have 4 of them.
         },
-        BuilderType = 'Land',
+        BuilderType =  {'KBot', 'Vehicle'},
     },
     Builder {
         BuilderName = 'SCTAAi Factory Engineer Early',
@@ -90,7 +90,7 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {60} }, -- Don't make tanks if we have lots of them.
         },
-        BuilderType = 'Land',
+        BuilderType =  {'KBot', 'Vehicle'},
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT2 Engineer',
@@ -99,7 +99,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.TECH2 * categories.LAND - categories.FIELDENGINEER } }, -- Build engies until we have 4 of them.
         },
-        BuilderType = 'Land',
+        BuilderType =  {'KBot', 'Vehicle'},
     },
     Builder {
         BuilderName = 'SCTAAi AirFactory Engineer',
@@ -130,7 +130,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.LAND * categories.TECH1 - categories.COMMAND } }, -- Don't make tanks if we have lots of them.
         },
-        BuilderType = 'Land',
+        BuilderType =  {'KBot', 'Vehicle'},
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Engineer',
@@ -140,7 +140,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.TECH3 * categories.HOVER} }, -- Build engies until we have 4 of them.
         },
-        BuilderType = 'Land',
+        BuilderType = {'KBot', 'Vehicle', 'Hover', 'Sea',}
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Engineer Air',

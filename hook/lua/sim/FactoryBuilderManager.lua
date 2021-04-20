@@ -1,7 +1,35 @@
 SCTAFactoryBuilderManager = FactoryBuilderManager
+local CreateFactoryBuilder = import('/lua/sim/Builder.lua').CreateFactoryBuilder
 
 FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
-        GetFactoryFaction = function(self, factory)
+    Create = function(self, brain, lType, location, radius, useCenterPoint)
+        if not brain.SCTAAI then
+            return SCTAFactoryBuilderManager.Create(self, brain, lType, location, radius, useCenterPoint)
+        end
+		BuilderManager.Create(self, brain)
+        if not lType or not location or not radius then
+            error('*FACTORY BUILDER MANAGER ERROR: Invalid parameters; requires locationType, location, and radius')
+            return false
+        end
+        LOG('IEXISTFACT')
+        local builderTypes = { 'Land', 'Air', 'KBot', 'Vehicle', 'Hover', 'Sea', 'Gate', }
+        for _,v in builderTypes do
+			self:AddBuilderType(v)
+		end
+        self.Location = location
+        self.Radius = radius
+        self.LocationType = lType
+        self.RallyPoint = false
+
+        self.FactoryList = {}
+
+        self.LocationActive = false
+
+        self.RandomSamePriority = true
+        self.PlatoonListEmpty = true
+	end,
+
+    GetFactoryFaction = function(self, factory)
             if not self.Brain.SCTAAI then
                 return SCTAFactoryBuilderManager.GetFactoryFaction(self, factory)
             end
@@ -11,6 +39,32 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
                 return 'Core'
             end
             return false
+        end,
+
+        AddFactory = function(self,unit)
+            if not self.Brain.SCTAAI then
+                return SCTAFactoryBuilderManager.AddFactory(self, unit)
+            end
+            if not self:FactoryAlreadyExists(unit) then
+                table.insert(self.FactoryList, unit)
+                unit.DesiresAssist = true
+                if EntityCategoryContains(categories.BOT, unit) then
+                    self:SetupNewFactory(unit, 'KBot')
+                elseif EntityCategoryContains(categories.TANK, unit) then
+                    self:SetupNewFactory(unit, 'Vehicle')
+                elseif EntityCategoryContains(categories.HOVER, unit) then
+                    self:SetupNewFactory(unit, 'Hover')
+                elseif EntityCategoryContains(categories.LAND, unit) then
+                    self:SetupNewFactory(unit, 'Land')
+                elseif EntityCategoryContains(categories.AIR, unit) then
+                    self:SetupNewFactory(unit, 'Air')
+                elseif EntityCategoryContains(categories.NAVAL, unit) then
+                    self:SetupNewFactory(unit, 'Sea')
+                else
+                    self:SetupNewFactory(unit, 'Gate')
+                end
+                self.LocationActive = true
+            end
         end,
 ----InitialVersion Below From LOUD
         SetRallyPoint = function(self, factory)

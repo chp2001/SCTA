@@ -45,7 +45,7 @@ BuilderGroup {
         PriorityFunction = UnitProductionT1,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
+            --{ UCBC, 'FactoryCapCheck', { 'LocationType', 'Kbot' } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -70,7 +70,7 @@ BuilderGroup {
         PriorityFunction = UnitProductionT1,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
+            --{ UCBC, 'FactoryCapCheck', { 'LocationType', 'Vehicle' } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
@@ -95,7 +95,7 @@ BuilderGroup {
         Priority = 112,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
+            --{ UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },

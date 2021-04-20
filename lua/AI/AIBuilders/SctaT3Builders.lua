@@ -16,7 +16,7 @@ BuilderGroup {
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Land',
+        BuilderType = 'Hover',
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Artillery',
@@ -28,7 +28,7 @@ BuilderGroup {
         '<=', categories.MOBILE * categories.LAND - categories.ENGINEER } }, -- Don't make tanks if we have lots of them. },
         { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
     },
-        BuilderType = 'Land',
+        BuilderType = 'Hover',
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT3 AntiAir',
@@ -41,7 +41,7 @@ BuilderGroup {
                                        { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } },
         },
-        BuilderType = 'Land',
+        BuilderType = 'Hover',
     },
     Builder {
         BuilderName = 'SCTAAI Factory Seaplane Fighter',

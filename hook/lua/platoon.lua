@@ -108,7 +108,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 return
             end
             relative = false
-            buildFunction = AIBuildStructures.AIExecuteBuildStructureSCTAAI
+            buildFunction = AIBuildStructures.AIBuildBaseTemplateOrderedSCTAAI
             table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
         elseif cons.Wall then
             local pos = aiBrain:PBMGetLocationCoords(cons.LocationType) or cons.Position or self:GetPlatoonPosition()
@@ -605,7 +605,7 @@ Platoon = Class(SCTAAIPlatoon) {
         end
 
         --DUNCAN - added
-        if eng:IsUnitState('Building') or eng:IsUnitState('Upgrading') then
+        if eng:IsUnitState('Building') then
            return
         end
             local FactionToIndex  = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, NOMADS = 5, ARM = 6, CORE = 7}
@@ -675,7 +675,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 return
             end
             relative = false
-            buildFunction = AIBuildStructures.AIExecuteBuildStructureSCTAAI
+            buildFunction = AIBuildStructures.AIBuildBaseTemplateOrderedSCTAAI
             table.insert(baseTmplList, AIBuildStructures.AIBuildBaseTemplateFromLocation(baseTmpl, reference))
         elseif cons.Wall then
             local pos = aiBrain:PBMGetLocationCoords(cons.LocationType) or cons.Position or self:GetPlatoonPosition()
@@ -1373,6 +1373,8 @@ Platoon = Class(SCTAAIPlatoon) {
 
     UnitUpgradeAI = function(self)
         local aiBrain = self:GetBrain()
+        --local Threat = self:CalculatePlatoonThreat('AntiSurface', categories.MASSEXTRACTION)
+        --LOG(Threat)
         if not aiBrain.SCTAAI then
             return SCTAAIPlatoon.UnitUpgradeAI(self)
         end

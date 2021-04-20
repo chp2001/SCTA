@@ -150,7 +150,7 @@ BuilderGroup {
         Priority = 143,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
+            --{ UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },

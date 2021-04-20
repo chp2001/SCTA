@@ -1,3 +1,5 @@
+WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset FactoryBuilderManager.lua' )
+
 SCTAFactoryBuilderManager = FactoryBuilderManager
 FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
     Create = function(self, brain, lType, location, radius, useCenterPoint)
@@ -26,6 +28,39 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
         self.RandomSamePriority = true
         self.PlatoonListEmpty = true
 	end,
+
+    AddBuilder = function(self, builderData, locationType)
+        if not self.Brain.SCTAAI then
+            return SCTAFactoryBuilderManager.AddBuilder(self, builderData, locationType)
+        end
+        local newBuilder = Builder.CreateFactoryBuilder(self.Brain, builderData, locationType)
+        if newBuilder:GetBuilderType() == 'All' then
+            for k,v in self.BuilderData do
+                self:AddInstancedBuilder(newBuilder, k)
+            end
+        elseif newBuilder:GetBuilderType() == 'Land' then
+            for __,v in self.BuilderData do
+                self:AddInstancedBuilder(newBuilder, 'KBot')
+                self:AddInstancedBuilder(newBuilder, 'Vehicle')
+            end
+        elseif newBuilder:GetBuilderType() == 'SpecHover' then
+            for __,v in self.BuilderData do
+                self:AddInstancedBuilder(newBuilder, 'KBot')
+                self:AddInstancedBuilder(newBuilder, 'Vehicle')
+                self:AddInstancedBuilder(newBuilder, 'Hover')
+                self:AddInstancedBuilder(newBuilder, 'Sea')
+            end
+        elseif newBuilder:GetBuilderType() == 'Field' then
+            for __,v in self.BuilderData do
+                self:AddInstancedBuilder(newBuilder, 'KBot')
+                self:AddInstancedBuilder(newBuilder, 'Vehicle')
+                self:AddInstancedBuilder(newBuilder, 'Air')
+            end
+        else
+            self:AddInstancedBuilder(newBuilder)
+        end
+        return newBuilder
+    end,
 
     GetFactoryFaction = function(self, factory)
             if not self.Brain.SCTAAI then

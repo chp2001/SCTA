@@ -21,6 +21,7 @@ UnitBlueprint {
         BuildCostMass = 500,
         BuildRate = 120,
         BuildableCategory = {
+            'TECH1 BOT ENGINEER CORE',
             'AIR MOBILE TECH1 CORE',
             'cordap', 
         },

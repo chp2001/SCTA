@@ -87,6 +87,8 @@ UnitBlueprint {
     BuildableCategory = {
         'AIR MOBILE TECH2 ARM',
         'AIR MOBILE TECH1 ARM',
+        'TECH1 BOT ENGINEER ARM',
+        'TECH2 FIELDENGINEER ARM',
         'armadap', 
         },
     StorageMass = 50,

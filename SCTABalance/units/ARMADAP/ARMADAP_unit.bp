@@ -85,6 +85,8 @@ UnitBlueprint {
     BuildRate = 360,
     BuildableCategory = {
         'ASF ARM',
+        'TECH1 BOT ENGINEER ARM',
+        'TECH2 FIELDENGINEER ARM',
         'AIR MOBILE TECH2 ARM',
         'AIR MOBILE TECH1 ARM', 
         },

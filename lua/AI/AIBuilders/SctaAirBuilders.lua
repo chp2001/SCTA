@@ -16,7 +16,7 @@ local AirProduction = function(self, aiBrain, builderManager)
     if Interception(aiBrain,  1, LAB) then 
         return 100
     else
-        return 25
+        return 60
     end
 end
 
@@ -82,7 +82,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAirTransport',
         PlatoonTemplate = 'SCTATransport',
-        Priority = 80,
+        Priority = 50,
         DelayEqualBuildPlattons = {'Transport', 3},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Transport' }},

@@ -52,7 +52,7 @@ BuilderGroup {
             { MIBC, 'GreaterThanGameTime', { 180 } },
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -79,7 +79,7 @@ BuilderGroup {
             --{ UCBC, 'HaveLessThanUnitsWithCategory', { 12,  PLANT} },
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -106,7 +106,7 @@ BuilderGroup {
             --{ UCBC, 'HaveLessThanUnitsWithCategory', { 12,  LAB} },
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -132,7 +132,7 @@ BuilderGroup {
             --{ UCBC, 'HaveLessThanUnitsWithCategory', { 12,  LAB} },
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -156,7 +156,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, PLATFORM} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -206,7 +206,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR} },
             { MIBC, 'LessThanGameTime', {600} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -257,7 +257,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.75, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -282,7 +282,7 @@ BuilderGroup {
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
             { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -304,7 +304,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.AIR * PLATFORM} },
             { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
         },
         BuilderType = 'Any',
         BuilderData = {

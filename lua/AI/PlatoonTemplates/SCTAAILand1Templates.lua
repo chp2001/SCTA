@@ -30,7 +30,8 @@ PlatoonTemplate {
     Name = 'T1LandDFTankSCTAEarly',
     FactionSquads = {
         Arm = {
-            { 'armwar', 1, 4, 'attack', 'none' },
+            { 'armwar', 1, 3, 'attack', 'none' },
+            { 'armjeth', 1, 1, 'attack', 'none' },
         },
         Core = {
             { 'corstorm', 1, 4, 'attack', 'none' },

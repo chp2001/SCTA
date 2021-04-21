@@ -44,6 +44,16 @@ BuilderGroup {
         BuilderType = 'Air',
     },
     Builder {
+        BuilderName = 'SCTAAI Factory Gunship',
+        PlatoonTemplate = 'T2GunshipSCTA',
+        Priority = 115,
+        BuilderConditions = {
+            { TASlow, 'HaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
+            { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
+        },
+        BuilderType = 'Air',
+    },
+    Builder {
         BuilderName = 'SCTAAI Factory Intie',
         PlatoonTemplate = 'T1AirFighterSCTA',
         PriorityFunction = AirProduction,
@@ -55,7 +65,7 @@ BuilderGroup {
     },  
     Builder {
         BuilderName = 'SCTAAI Factory Strategic',
-        PlatoonTemplate = 'T2AirBomberSCTA',
+        PlatoonTemplate = 'T3AirBomberSCTA',
         Priority = 110,
         PriorityFunction = AirProductionT3,
         BuilderConditions = {

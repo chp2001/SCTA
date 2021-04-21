@@ -1610,7 +1610,6 @@ Platoon = Class(SCTAAIPlatoon) {
                             end
                         end
                     end
-                self:MoveToLocation(bestMarker.Position, false)
             elseif engineer then
                 self:Stop()
                 local position = AIUtils.RandomLocation(engineer:GetPosition()[1],engineer:GetPosition()[3])
@@ -1744,10 +1743,10 @@ Platoon = Class(SCTAAIPlatoon) {
             end
         end
         if bMergedPlatoons then
-            LOG('IEXIST')
+            --LOG('IEXIST')
             if fullrestart then
                 self:Stop()
-                LOG('IEXIST2')
+                --LOG('IEXIST2')
                 self:SetAIPlan(newPlatoon)
             else
                 self:StopAttack()

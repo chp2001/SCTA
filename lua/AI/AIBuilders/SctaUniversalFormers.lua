@@ -240,7 +240,7 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} },
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.MOBILE }},
+            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.MOBILE }},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderData = {

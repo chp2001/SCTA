@@ -49,10 +49,10 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             --{ UCBC, 'HaveLessThanUnitsWithCategory', { 12,  PLANT} },
-            { MIBC, 'GreaterThanGameTime', { 180 } },
+            { MIBC, 'GreaterThanGameTime', { 90 } },
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -75,11 +75,11 @@ BuilderGroup {
         Priority = 96,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 180 } },
+            { MIBC, 'GreaterThanGameTime', { 120 } },
             --{ UCBC, 'HaveLessThanUnitsWithCategory', { 12,  PLANT} },
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -106,7 +106,7 @@ BuilderGroup {
             --{ UCBC, 'HaveLessThanUnitsWithCategory', { 12,  LAB} },
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -132,7 +132,7 @@ BuilderGroup {
             --{ UCBC, 'HaveLessThanUnitsWithCategory', { 12,  LAB} },
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -257,7 +257,6 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.75, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -282,7 +281,6 @@ BuilderGroup {
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
             { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -304,7 +302,6 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.AIR * PLATFORM} },
             { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
         },
         BuilderType = 'Any',
         BuilderData = {

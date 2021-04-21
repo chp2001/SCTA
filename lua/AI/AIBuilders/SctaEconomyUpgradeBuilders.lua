@@ -50,7 +50,7 @@ BuilderGroup {
             { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'TAExtractors' }},
             { MIBC, 'GreaterThanGameTime', { 900 } },
             { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.TECH1 } },  
-            { EBC, 'GreaterThanEconIncome',  { 6, 70}},
+            { EBC, 'GreaterThanEconIncome',  { 8, 70}},
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.8, 0.75 }},
         },
         FormRadius = 500,
@@ -68,7 +68,7 @@ BuilderGroup {
         InstanceCount = 2,
         Priority = 150,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 480 } },
+            { MIBC, 'GreaterThanGameTime', { 600 } },
             { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'TAExtractors' }},
             { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 3, categories.MASSEXTRACTION * categories.TECH1 } },  
             { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},

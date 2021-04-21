@@ -49,7 +49,6 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -74,7 +73,6 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -99,7 +97,6 @@ BuilderGroup {
         BuilderConditions = {
             --{ UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -151,7 +148,6 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.75, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
         },
         BuilderType = 'Any',
         BuilderData = {

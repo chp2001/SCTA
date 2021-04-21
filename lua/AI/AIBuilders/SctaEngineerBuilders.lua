@@ -93,7 +93,6 @@ BuilderGroup {
         PriorityFunction = EngineerProduction,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.LAND * categories.TECH1 - categories.COMMAND } }, -- Don't make tanks if we have lots of them.
-            { EBC, 'GreaterThanEconStorageCurrent', { 300, 300 } },
         },
         BuilderType =  'Field',
     },

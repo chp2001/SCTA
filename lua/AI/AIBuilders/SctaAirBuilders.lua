@@ -40,7 +40,6 @@ BuilderGroup {
         Priority = 115,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
         { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
-        { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
         BuilderType = 'Air',
     },
@@ -51,7 +50,6 @@ BuilderGroup {
         Priority = 95,
         BuilderConditions = { -- Only make inties if the enemy air is strong
         { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
-        { EBC, 'GreaterThanEconStorageCurrent', { 100, 100 } },
         },
         BuilderType = 'Air',
     },  
@@ -63,7 +61,6 @@ BuilderGroup {
         BuilderConditions = {
             { TASlow, 'HaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
             { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
         BuilderType = 'Air',
     },
@@ -75,7 +72,6 @@ BuilderGroup {
         BuilderConditions = {
             { TASlow, 'HaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
             { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 100 } },
         },
         BuilderType = 'Air',
     },     

@@ -1561,14 +1561,9 @@ Platoon = Class(SCTAAIPlatoon) {
         while aiBrain:PlatoonExists(self) do
             target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ALLUNITS - categories.AIR - categories.COMMAND - categories.STRUCTURE)
             engineer = self:FindClosestUnit('Attack', 'Ally', true, categories.ENGINEER * categories.LAND - categories.COMMAND)
-            if engineer then
-                self:Stop()
-                local position = AIUtils.RandomLocation(engineer:GetPosition()[1],engineer:GetPosition()[3])
-                self:MoveToLocation(position, false)
-            elseif target then
+            if target then
                 self.NewThreat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'AntiSurface')
-                if self.Loiter and self.NewThreat == self.Threat then 
-                    self.Loiter = nil
+                if self.NewThreat == self.Threat then 
                     WaitTicks(1)
                     return self:SCTAStrikeForceAI()
                 end
@@ -1576,11 +1571,14 @@ Platoon = Class(SCTAAIPlatoon) {
                 self:Stop()
                 self:AttackTarget(target)
                 self.Threat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'AntiSurface')
-                self.Loiter = true
                 end
+            elseif engineer then
+                self:Stop()
+                local position = AIUtils.RandomLocation(engineer:GetPosition()[1],engineer:GetPosition()[3])
+                self:MoveToLocation(position, false)
             end
             --self:SetPlatoonFormationOverride('Attack')
-            WaitSeconds(10)
+            WaitSeconds(5)
         end
     end,
 

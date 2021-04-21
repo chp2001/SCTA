@@ -146,7 +146,7 @@ TechLevel = 'RULEUTL_Experimental',
         {
             Damage = 9000,
             DamageFriendly = true,
-            DamageRadius = 1,
+            DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'Death Weapon',
             DummyWeapon = true,

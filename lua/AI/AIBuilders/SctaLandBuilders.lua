@@ -39,7 +39,7 @@ BuilderGroup {
         Priority = 98,
             BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.DIRECTFIRE * categories.MOBILE,
+            { UCBC, 'HaveUnitRatio', { 0.7, categories.LAND * categories.DIRECTFIRE * categories.MOBILE,
             '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
@@ -50,7 +50,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandArtillerySCTA',
         Priority = 74,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.MOBILE * categories.ARTILLERY,
+            { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.MOBILE * categories.ARTILLERY,
             '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
          },
@@ -63,7 +63,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.LAND } },
-            { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,
+            { UCBC, 'HaveUnitRatio', { 0.1, categories.LAND * categories.ANTIAIR * categories.MOBILE,
                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},                           
@@ -103,7 +103,6 @@ BuilderGroup {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.ANTIAIR * categories.MOBILE,
             '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
-            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
         },
         BuilderType = 'KBot',
     },
@@ -148,9 +147,9 @@ BuilderGroup {
         Priority = 98,
         BuilderConditions = {
         { MIBC, 'GreaterThanGameTime', {300} },
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.DIRECTFIRE * categories.MOBILE,
-            '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+        { UCBC, 'HaveUnitRatio', { 0.7, categories.LAND * categories.DIRECTFIRE * categories.MOBILE,
+        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
+        { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Vehicle',
     },
@@ -159,7 +158,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandArtillerySCTA2',
         Priority = 78,
         BuilderConditions = { 
-            { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.MOBILE * (categories.ARTILLERY + categories.SILO),
+            { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.MOBILE * (categories.ARTILLERY + categories.SILO),
                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
         },
@@ -184,10 +183,9 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.LAND } },
-            { UCBC, 'HaveUnitRatio', { 0.35, categories.LAND * categories.ANTIAIR * categories.MOBILE,
+            { UCBC, 'HaveUnitRatio', { 0.1, categories.LAND * categories.ANTIAIR * categories.MOBILE,
                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},
-            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
         },
         BuilderType = 'Vehicle',
     },

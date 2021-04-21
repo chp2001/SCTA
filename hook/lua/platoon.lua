@@ -1563,8 +1563,8 @@ Platoon = Class(SCTAAIPlatoon) {
             target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ALLUNITS - categories.AIR - categories.COMMAND - categories.STRUCTURE)
             engineer = self:FindClosestUnit('Attack', 'Ally', true, categories.ENGINEER * categories.LAND - categories.COMMAND)
             if target then
-                self.NewThreat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'AntiSurface')
-                if self.NewThreat == self.Threat then 
+                self.NewTarget = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'AntiSurface')
+                if target == self.OldTarget then 
                     WaitTicks(1)
                     self:PlatoonDisband()
                     return
@@ -1572,7 +1572,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 if self.myThreat > self.NewThreat then
                 self:Stop()
                 self:AttackTarget(target)
-                self.Threat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'AntiSurface')
+                self.OldTarget = target
                 end
             elseif engineer then
                 self:Stop()
@@ -1606,7 +1606,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local maxRadius = data.SearchRadius or 1000
         while aiBrain:PlatoonExists(self) do
             if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 25 then
-                self:MergeWithNearbyPlatoonsSCTA('SCTAStrikeForceAI', 'SCTAStrikeForceAIEndgame', 10)
+                self:MergeWithNearbyPlatoonsSCTA('SCTAStrikeForceAI', 'SCTAStrikeForceAIEndgame', 5)
             end
             if not target or target:IsDead() then
                 if aiBrain:GetCurrentEnemy() and aiBrain:GetCurrentEnemy():IsDefeated() then
@@ -1900,7 +1900,7 @@ Platoon = Class(SCTAAIPlatoon) {
             platoonUnits = self:GetPlatoonUnits()
             numberOfUnitsInPlatoon = table.getn(platoonUnits)
             if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 10 then
-                self:MergeWithNearbyPlatoonsSCTA('AttackSCTAForceAI', 'AttackSCTAForceAI', 10)
+                self:MergeWithNearbyPlatoonsSCTA('AttackSCTAForceAI', 'AttackSCTAForceAI', 5)
             end
 
             if (oldNumberOfUnitsInPlatoon != numberOfUnitsInPlatoon) then

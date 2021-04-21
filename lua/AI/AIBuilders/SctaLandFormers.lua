@@ -2,6 +2,7 @@ local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
+local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 
 BuilderGroup {
@@ -158,8 +159,8 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.FIELDENGINEER} },
+            { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
-            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
         },
         BuilderData = {
         Terrain = true,

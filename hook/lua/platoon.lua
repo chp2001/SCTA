@@ -1,4 +1,5 @@
 local TAutils = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua')
+local TAReclaim = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua')
 WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset platoon.lua' )
 
 --[[buildingTmplFile = import(cons.BuildingTemplateFile or '/lua/BuildingTemplates.lua')
@@ -2410,7 +2411,7 @@ Platoon = Class(SCTAAIPlatoon) {
             --eng.BadReclaimables = eng.BadReclaimables or {}
     
             while brain:PlatoonExists(self) do
-                local ents = TAutils.TAAIGetReclaimablesAroundLocation(brain, locationType) or {}
+                local ents = TAReclaim.TAAIGetReclaimablesAroundLocation(brain, locationType) or {}
                 local pos = self:GetPlatoonPosition()
     
                 if not ents[1] or not pos then

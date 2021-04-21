@@ -118,13 +118,13 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         PlatoonAIPlan = 'SCTAReclaimAI',
         FormRadius = 500,
-        Priority = 99,
+        Priority = 150,
         InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 120 } },
             { MIBC, 'LessThanGameTime', {480} }, 
-            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},   
-            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
+            { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.25}},   
         },
         BuilderData = {
             Terrain = true,

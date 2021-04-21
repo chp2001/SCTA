@@ -83,11 +83,9 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armpeep', 1, 1, 'scout', 'GrowthFormation' },
-            { 'armca', 1, 1, 'support', 'None' },
         },
         Core = {
             { 'corfink', 1, 1, 'scout', 'GrowthFormation' },
-            { 'corca', 1, 1, 'support', 'None' },
         },
     }
 }
@@ -109,9 +107,11 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armthund', 1, 1, 'attack', 'GrowthFormation' },
+            { 'armca', 1, 1, 'support', 'None' },
         },
         Core = {
             { 'corshad', 1, 1, 'attack', 'GrowthFormation' },
+            { 'corca', 1, 1, 'support', 'None' },
         },
     }
 }

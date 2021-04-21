@@ -1501,7 +1501,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local maxRadius = data.SearchRadius or 500
         local movingToScout = false
         while aiBrain:PlatoonExists(self) do
-            if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 15 then
+            if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 20 then
                 self:MergeWithNearbyPlatoonsSCTA('SCTAStrikeForceAIEarly', 'SCTAStrikeForceAI', 5, true)
             end
             --self:SetPlatoonFormationOverride('Attack')
@@ -1705,11 +1705,10 @@ Platoon = Class(SCTAAIPlatoon) {
             end
         end
         if bMergedPlatoons then
+            self:SetAIPlan(newPlatoon)
             if fullrestart then
                 self:Stop()
-                self:SetAIPlan(newPlatoon)
             else
-                self:SetAIPlan(newPlatoon)
                 self:StopAttack()
             end
         end

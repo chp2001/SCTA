@@ -47,8 +47,9 @@ BuilderGroup {
         PriorityFunction = UnitProductionT1,
         Priority = 102,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
-            --{ UCBC, 'HaveLessThanUnitsWithCategory', { 12,  PLANT} },
+            { TASlow, 'CheckBuildPlatoonDelay', { 'Factories' }},
             { MIBC, 'GreaterThanGameTime', { 90 } },
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
@@ -74,7 +75,9 @@ BuilderGroup {
         PriorityFunction = UnitProductionT1,
         Priority = 96,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
+            { TASlow, 'CheckBuildPlatoonDelay', { 'Factories' }},
             { MIBC, 'GreaterThanGameTime', { 120 } },
             --{ UCBC, 'HaveLessThanUnitsWithCategory', { 12,  PLANT} },
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
@@ -102,8 +105,9 @@ BuilderGroup {
         Priority = 108,
         PriorityFunction = UnitProduction,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
-            --{ UCBC, 'HaveLessThanUnitsWithCategory', { 12,  LAB} },
+            { TASlow, 'CheckBuildPlatoonDelay', { 'Factories' }},
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
@@ -128,8 +132,9 @@ BuilderGroup {
         Priority = 107,
         PriorityFunction = UnitProduction,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
-            --{ UCBC, 'HaveLessThanUnitsWithCategory', { 12,  LAB} },
+            { TASlow, 'CheckBuildPlatoonDelay', { 'Factories' }},
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
@@ -226,7 +231,9 @@ BuilderGroup {
         Priority = 103,
         PriorityFunction = UnitProductionT1,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
+            { TASlow, 'CheckBuildPlatoonDelay', { 'Factories' }},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  PLANT } }, -- Don't build air fac immediately.
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4,  categories.FACTORY * categories.AIR} },
@@ -252,7 +259,9 @@ BuilderGroup {
         PriorityFunction = UnitProduction,
         Priority = 120,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
+            { TASlow, 'CheckBuildPlatoonDelay', { 'Factories' }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.75, 0.5, 0.5, } },
@@ -275,7 +284,9 @@ BuilderGroup {
         Priority = 119,
         PriorityFunction = UnitProduction,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
+            { TASlow, 'CheckBuildPlatoonDelay', { 'Factories' }},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, FUSION} },
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, LAB * categories.AIR } }, -- Stop after 10 facs have been built.

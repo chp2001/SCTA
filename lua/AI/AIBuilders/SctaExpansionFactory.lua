@@ -3,6 +3,7 @@ local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
@@ -46,7 +47,9 @@ BuilderGroup {
         Priority = 104,
         PriorityFunction = UnitProductionT1,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
+            { TASlow, 'CheckBuildPlatoonDelay', { 'Factories' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
@@ -70,7 +73,9 @@ BuilderGroup {
         Priority = 106,
         PriorityFunction = UnitProductionT1,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
+            { TASlow, 'CheckBuildPlatoonDelay', { 'Factories' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
         },
@@ -94,8 +99,10 @@ BuilderGroup {
         PriorityFunction = UnitProduction,
         Priority = 112,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
-            --{ UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
+            { TASlow, 'CheckBuildPlatoonDelay', { 'Factories' }},
+            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
@@ -120,7 +127,9 @@ BuilderGroup {
         Priority = 91,
         PriorityFunction = UnitProductionT1,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
+            { TASlow, 'CheckBuildPlatoonDelay', { 'Factories' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.75, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 200, 1000 } },
@@ -145,7 +154,9 @@ BuilderGroup {
         PriorityFunction = UnitProduction,
         Priority = 111,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factories', 3},
         BuilderConditions = {
+            { TASlow, 'CheckBuildPlatoonDelay', { 'Factories' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.75, 0.5, 0.5, } },
         },

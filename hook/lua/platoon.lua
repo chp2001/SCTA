@@ -1569,14 +1569,16 @@ Platoon = Class(SCTAAIPlatoon) {
                     self:PlatoonDisband()
                     return
                 end
-                if self.myThreat > self.NewThreat then
+                if self.myThreat > self.NewTarget then
                 self:Stop()
                 self:AttackTarget(target)
+                WaitSeconds(5)
                 self.OldTarget = target
                 end
             elseif engineer then
                 self:Stop()
                 local position = AIUtils.RandomLocation(engineer:GetPosition()[1],engineer:GetPosition()[3])
+                WaitSeconds(5)
                 self:MoveToLocation(position, false)
             end
             --self:SetPlatoonFormationOverride('Attack')

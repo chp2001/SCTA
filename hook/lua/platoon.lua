@@ -1566,7 +1566,8 @@ Platoon = Class(SCTAAIPlatoon) {
                 self.NewThreat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'AntiSurface')
                 if self.NewThreat == self.Threat then 
                     WaitTicks(1)
-                    return self:SCTAStrikeForceAI()
+                    self:PlatoonDisband()
+                    return
                 end
                 if self.myThreat > self.NewThreat then
                 self:Stop()
@@ -1605,7 +1606,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local maxRadius = data.SearchRadius or 1000
         while aiBrain:PlatoonExists(self) do
             if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 25 then
-                self:MergeWithNearbyPlatoonsSCTA('SCTAStrikeForceAI', 'SCTAStrikeForceAIEndgame', 5)
+                self:MergeWithNearbyPlatoonsSCTA('SCTAStrikeForceAI', 'SCTAStrikeForceAIEndgame', 10)
             end
             if not target or target:IsDead() then
                 if aiBrain:GetCurrentEnemy() and aiBrain:GetCurrentEnemy():IsDefeated() then
@@ -1899,7 +1900,7 @@ Platoon = Class(SCTAAIPlatoon) {
             platoonUnits = self:GetPlatoonUnits()
             numberOfUnitsInPlatoon = table.getn(platoonUnits)
             if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 10 then
-                self:MergeWithNearbyPlatoonsSCTA('AttackSCTAForceAI', 'AttackSCTAForceAI', 5)
+                self:MergeWithNearbyPlatoonsSCTA('AttackSCTAForceAI', 'AttackSCTAForceAI', 10)
             end
 
             if (oldNumberOfUnitsInPlatoon != numberOfUnitsInPlatoon) then

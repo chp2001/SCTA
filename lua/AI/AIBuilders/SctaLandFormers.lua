@@ -254,7 +254,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Land Attack Endgame',
         PlatoonTemplate = 'LandAttackSCTAEndGame', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 210,
-        InstanceCount = 10,
+        InstanceCount = 50,
         FormRadius = 1000,
         BuilderType = 'Any',
         BuilderData = {
@@ -277,7 +277,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Strike Endgame',
         PlatoonTemplate = 'StrikeForceSCTAEndgame', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 250,
-        InstanceCount = 10,
+        InstanceCount = 50,
         FormRadius = 1000,
         BuilderType = 'Any',
         BuilderData = {

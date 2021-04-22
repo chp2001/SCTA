@@ -27,26 +27,10 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
-    Name = 'LandAttackSCTA',
-    Plan = 'AttackSCTAForceAI',
-    GlobalSquads = {
-        { GROUND - SPECIAL - TACATS - RANGE, 2, 20, 'Attack', 'none' }
-    },
-}
-
-PlatoonTemplate {
     Name = 'LandAttackSCTAEarly',
     Plan = 'SCTAStrikeForceAIEarly',
     GlobalSquads = {
         { GROUND * categories.TECH1 - SPECIAL - TACATS - RANGE, 5, 10, 'Attack', 'none' }
-    },
-}
-
-PlatoonTemplate {
-    Name = 'StrikeForceSCTA',
-    Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
-    GlobalSquads = {
-        { GROUND - SPECIAL - TACATS - RANGE, 5, 20, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
 

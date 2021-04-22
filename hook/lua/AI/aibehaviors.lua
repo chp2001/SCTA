@@ -204,7 +204,7 @@ function CDRSCTADGun(aiBrain, cdr)
                 continueFighting = false
             end
             -- If com is down to yellow then dont keep fighting
-            if (cdr:GetHealthPercent() < 0.75) and Utilities.XZDistanceTwoVectors(cdr.CDRHome, cdr:GetPosition()) > 15 then
+            if (cdr:GetHealthPercent() < 0.75) and Utilities.XZDistanceTwoVectors(cdr.CDRHome, cdr:GetPosition()) > 30 then
                 continueFighting = false
             end
         until not continueFighting or not aiBrain:PlatoonExists(plat)

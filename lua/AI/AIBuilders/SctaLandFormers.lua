@@ -35,24 +35,6 @@ BuilderGroup {
          },
     },
     Builder {
-        BuilderName = 'SCTAAI Strike',
-        PlatoonTemplate = 'StrikeForceSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 120,
-        InstanceCount = 25,
-        BuilderType = 'Any',
-        BuilderData = {
-            Small = true,
-            NeverGuardBases = false,
-            NeverGuardEngineers = false,
-            AggressiveMove = false,
-            UseFormation = 'AttackFormation',
-        },        
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {540} },
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
-         },
-    },
-    Builder {
         BuilderName = 'SCTAAI Laser',
         PlatoonTemplate = 'StrikeForceSCTALaser', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 150,
@@ -70,28 +52,6 @@ BuilderGroup {
         },        
         BuilderConditions = {
         },
-    },
-    Builder {
-        BuilderName = 'SCTAAI Land Attack',
-        PlatoonTemplate = 'LandAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 120,
-        InstanceCount = 100,
-        BuilderType = 'Any',
-        BuilderData = {
-            ThreatSupport = 75,
-            NeverGuardBases = false,
-            NeverGuardEngineers = false,
-            UseFormation = 'AttackFormation',
-            LocationType = 'LocationType',
-            AggressiveMove = false,
-            ThreatWeights = {
-            SecondaryTargetThreatType = 'StructuresNotMex',
-            IgnoreStrongerTargetsRatio = 100.0,
-            },
-        },        
-        BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 5, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
-         },
     },
     Builder {
         BuilderName = 'SCTAAI Land Attack Early',

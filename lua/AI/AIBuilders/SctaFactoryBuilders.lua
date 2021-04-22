@@ -28,7 +28,7 @@ local UnitProductionT1 = function(self, aiBrain, builderManager)
   if Factory(aiBrain,  0, categories.GATE) then
         return 0
   elseif Factory(aiBrain,  12, LAB) then
-            return 10
+            return 0
   elseif Factory(aiBrain,  1, LAB) then 
             return 50
     else
@@ -210,7 +210,8 @@ BuilderGroup {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, PLANT } }, -- Don't build air fac immediately.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR} },
             { MIBC, 'LessThanGameTime', {600} },
-            { TAutils, 'EcoManagementTA', { 0.5, 0.75, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -238,6 +239,7 @@ BuilderGroup {
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4,  categories.FACTORY * categories.AIR} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.9, 0.5, 0.5, } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -248,31 +250,6 @@ BuilderGroup {
                 BuildClose = true,
                 BuildStructures = {
                     'T1AirFactory',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTAAI T2AirFactory',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco123',
-        PriorityFunction = UnitProduction,
-        Priority = 120,
-        InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Factories', 3},
-        BuilderConditions = {
-            { TASlow, 'CheckBuildPlatoonDelay', { 'Factories' }},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
-            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.75, 0.5, 0.5, } },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
-            Construction = {
-                BuildStructures = {
-                    'T2AirFactory',
                 }
             }
         }
@@ -290,6 +267,7 @@ BuilderGroup {
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
             { TAutils, 'EcoManagementTA', { 0.9, 0.9, 0.5, 0.5, } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
         },
         BuilderType = 'Any',
         BuilderData = {

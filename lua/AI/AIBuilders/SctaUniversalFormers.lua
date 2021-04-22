@@ -198,16 +198,16 @@ BuilderGroup {
         Priority = 200,
         InstanceCount = 12,
         BuilderConditions = {
-            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYQUANTUMGATE }},
+            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, 'BUILTBYQUANTUMGATE' }},
             { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
         },
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Factory',
-                AssistRange = 120,
+                PermanentAssist = false,
                 BeingBuiltCategories = {'BUILTBYQUANTUMGATE'},                                                       
-                AssistUntilFinished = true,
+                Time = 60,
             },
         },
         BuilderType = 'Any',
@@ -219,7 +219,7 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} },
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'STRUCTURE' }},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderData = {
@@ -240,16 +240,16 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} },
-            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.MOBILE }},
+            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, 'MOBILE' }},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Factory',
-                AssistRange = 20,
+                PermanentAssist = false,
                 BeingBuiltCategories = {'MOBILE'},                                        
-                AssistUntilFinished = true,
+                Time = 60,
             },
         },
         BuilderType = 'Any',

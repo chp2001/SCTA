@@ -99,23 +99,6 @@ BuilderGroup {
          },
     },
     Builder {
-        BuilderName = 'SCTAAI Rocket Strike',
-        PlatoonTemplate = 'StrikeForceSCTAMissiles', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 130,
-        InstanceCount = 50,
-        BuilderType = 'Any',
-        BuilderData = {
-            Small = true,
-            NeverGuardBases = false,
-            NeverGuardEngineers = false,
-            UseFormation = 'AttackFormation',
-            AggressiveMove = true,
-        },        
-        BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.DIRECTFIRE + categories.INDIRECTFIRE)} },
-        },
-    },
-    Builder {
         BuilderName = 'SCTA Engineer Reclaim Field',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
         Priority = 200,

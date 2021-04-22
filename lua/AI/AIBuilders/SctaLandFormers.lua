@@ -19,7 +19,6 @@ BuilderGroup {
             NeverGuardEngineers = false,
             UseMoveOrder = true,
             UseFormation = 'AttackFormation',
-            Small = true,
             AntiAir = true,
         },        
         BuilderConditions = {
@@ -33,7 +32,6 @@ BuilderGroup {
         InstanceCount = 50,
         BuilderType = 'Any',
         BuilderData = {
-            Small = true,
             Laser = true,
             FormRadius = 500,
             NeverGuardBases = false,
@@ -119,12 +117,13 @@ BuilderGroup {
         FormRadius = 1000,
         BuilderType = 'Any',
         BuilderData = {
+            Small = true,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {750} },
+            { MIBC, 'GreaterThanGameTime', {720} },
             { MIBC, 'LessThanGameTime', {1500} },
          },
     },

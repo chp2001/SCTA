@@ -147,12 +147,12 @@ BuilderConditions = {
     },
     Builder {
         BuilderName = 'SCTAAI T3LAND Hover Factory',
-        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        PlatoonTemplate = 'EngineerBuilderSCTA3',
         Priority = 143,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, PLATFORM} },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, PLATFORM} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
         },
         BuilderType = 'Any',
@@ -255,7 +255,7 @@ BuilderConditions = {
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
             { TAutils, 'EcoManagementTA', { 0.9, 0.9, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -271,12 +271,13 @@ BuilderConditions = {
     },
     Builder {
         BuilderName = 'SCTAAI T3AirFactory',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco23',
-        Priority = 135,
+        PlatoonTemplate = 'EngineerBuilderSCTA3',
+        Priority = 140,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.AIR * PLATFORM} },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.9, 0.5, 0.5, } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, PLATFORM * categories.AIR} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
         },
         BuilderType = 'Any',
         BuilderData = {

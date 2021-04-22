@@ -161,7 +161,6 @@ function SCTAEngineerMoveWithSafePathAir(aiBrain, unit, destination)
 
     local result, bestPos = false
     result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Air')
-
     -- If we're here, we haven't used transports and we can path to the destination
     if result then
         local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Air', unit:GetPosition(), destination, 10)
@@ -232,7 +231,7 @@ function SCTAEngineerMoveWithSafePathLand(aiBrain, unit, destination)
             needTransports = true
         end
         -- Skip the last move... we want to return and do a build
-        bUsedTransports = AIAttackUtils.SendPlatoonWithTransportsSorian(aiBrain, unit.PlatoonHandle, destination, needTransports, true, needTransports)
+        bUsedTransports = AIAttackUtils.SendPlatoonWithTransportsNoCheck(aiBrain, unit.PlatoonHandle, destination, needTransports, true, false)
 
         if bUsedTransports then
             return true

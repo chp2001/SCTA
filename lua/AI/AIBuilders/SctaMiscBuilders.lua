@@ -245,7 +245,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA PGen Assist',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
-        Plan = 'ManagerEngineerAssistAI',
+        PlatoonAIPlan = 'ManagerEngineerAssistAI',
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
@@ -267,18 +267,15 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Field',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
-        Plan = 'SCTAReclaimAI',
+        PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 200,
         InstanceCount = 5,
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.FIELDENGINEER} },
             { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},
-            { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
         },
         BuilderData = {
-        Terrain = true,
-        LocationType = 'LocationType',
-        ReclaimTime = 30,
+            Terrain = true,
+            LocationType = 'LocationType',
         },
         BuilderType = 'Any',
     },
@@ -304,7 +301,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Assist Production Field',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
-        Plan = 'ManagerEngineerAssistAI',
+        PlatoonAIPlan = 'ManagerEngineerAssistAI',
         Priority = 100,
         InstanceCount = 5,
         BuilderConditions = {

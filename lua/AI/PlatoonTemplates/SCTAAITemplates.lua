@@ -5,10 +5,10 @@
         Responsible for defining a mapping from AIBuilders keys -> Plans (Plans === platoon.lua functions)
 ]]
 local RAIDER = (categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea)
-local SPECIAL = (RAIDER + categories.EXPERIMENTAL + categories.ENGINEER + categories.SCOUT + categories.ANTIAIR)
+local SPECIAL = (RAIDER + categories.EXPERIMENTAL + categories.ENGINEER + categories.SCOUT)
 local GROUND = categories.MOBILE * categories.LAND
 local TACATS = (categories.ANTISHIELD + categories.AMPHIBIOUS)
-local RANGE = (categories.ARTILLERY + categories.SILO)
+local RANGE = (categories.ARTILLERY + categories.SILO + categories.ANTIAIR)
 
 PlatoonTemplate {
     Name = 'AntiAirSCTA',

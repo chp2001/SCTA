@@ -17,6 +17,7 @@ BuilderGroup {
         BuilderData = {
             NeverGuardBases = false,
             NeverGuardEngineers = false,
+            AggressiveMove = false,
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
@@ -43,6 +44,7 @@ BuilderGroup {
             Small = true,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
+            AggressiveMove = false,
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
@@ -63,6 +65,7 @@ BuilderGroup {
             NeverGuardBases = false,
             NeverGuardEngineers = true,
             UseMoveOrder = true,
+            AggressiveMove = false,
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
@@ -243,6 +246,7 @@ BuilderGroup {
         BuilderData = {
             NeverGuardBases = false,
             NeverGuardEngineers = false,
+            AggressiveMove = false,
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
@@ -283,6 +287,7 @@ BuilderGroup {
         BuilderData = {
             NeverGuardBases = false,
             NeverGuardEngineers = false,
+            AggressiveMove = false,
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {

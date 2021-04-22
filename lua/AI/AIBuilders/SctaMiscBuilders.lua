@@ -183,18 +183,18 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {240} },
-            { MIBC, 'LessThanGameTime', {900} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ANTISHIELD * categories.TECH1 - categories.MOBILE } }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.7}},
         },
         BuilderType = 'Any',
         BuilderData = {
+            OrderedTemplate = true,
+            NearBasePatrolPoints = false,
+            BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TATowerTemplates.lua',
+            BaseTemplate = 'T1TowerTemplate',
             Construction = {
                 BuildClose = true,
-                OrderedTemplate = true,
-                NearBasePatrolPoints = false,
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TATowerTemplates.lua',
-                BaseTemplate = 'T1TowerTemplate',
                 BuildStructures = {
                     'T1GroundDefense',
                     'Wall',
@@ -221,12 +221,12 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
+            OrderedTemplate = true,
+            NearBasePatrolPoints = false,
+            BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TA2TowerTemplates.lua',
+            BaseTemplate = 'T2TowerTemplate',
             Construction = {
                 BuildClose = true,
-                OrderedTemplate = true,
-                NearBasePatrolPoints = false,
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TA2TowerTemplates.lua',
-                BaseTemplate = 'T2TowerTemplate',
                 BuildStructures = {
                     'T2GroundDefense',
                     'Wall2',

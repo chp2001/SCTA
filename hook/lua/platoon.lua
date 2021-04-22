@@ -1504,7 +1504,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local maxRadius = data.SearchRadius or 500
         local movingToScout = false
         while aiBrain:PlatoonExists(self) do
-            if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 20 then
+            if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 20 and data.AggressiveMove == false then
                 self:MergeWithNearbyPlatoonsSCTA('SCTAStrikeForceAIEarly', 'SCTAStrikeForceAI', 5)
             end
             --self:SetPlatoonFormationOverride('Attack')
@@ -1532,7 +1532,7 @@ Platoon = Class(SCTAAIPlatoon) {
                         self:SetPlatoonFormationOverride('AttackFormation')
                         self:AttackTarget( target )
                         end
-                    elseif data.AggressiveMove then
+                    elseif data.AggressiveMove == true then
                         self:Stop()
                         self:AggressiveMoveToLocation(table.copy(target:GetPosition()))
                     else
@@ -1911,7 +1911,7 @@ Platoon = Class(SCTAAIPlatoon) {
         -- Setup the formation based on platoon functionality
 
         local enemy = aiBrain:GetCurrentEnemy()
-
+        local data = self.PlatoonData
         local platoonUnits = self:GetPlatoonUnits()
         local numberOfUnitsInPlatoon = table.getn(platoonUnits)
         local oldNumberOfUnitsInPlatoon = numberOfUnitsInPlatoon
@@ -1947,8 +1947,8 @@ Platoon = Class(SCTAAIPlatoon) {
             end
             platoonUnits = self:GetPlatoonUnits()
             numberOfUnitsInPlatoon = table.getn(platoonUnits)
-            if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 10 then
-                self:MergeWithNearbyPlatoonsSCTA('AttackSCTAForceAI', 'AttackSCTAForceAI', 5)
+            if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 10 and data.AggressiveMove == false then
+                self:MergeWithNearbyPlatoonsSCTA('HuntAI', 'AttackSCTAForceAI', 5)
             end
 
             if (oldNumberOfUnitsInPlatoon != numberOfUnitsInPlatoon) then
@@ -2027,9 +2027,9 @@ Platoon = Class(SCTAAIPlatoon) {
                 if PlatoonFormation != 'No Formation' then
                     --self:SetPlatoonFormationOverride('AttackFormation')
                     IssueFormAttack(platoonUnits, closestTarget, PlatoonFormation, 0)
-                elseif data.AggressiveMove then
+                elseif data.AggressiveMove == true then
                     self:Stop()
-                    self:AggressiveMoveToLocation(table.copy(target:GetPosition()))
+                    self:AggressiveMoveToLocation(table.copy(closestTarget:GetPosition()))
                 else
                     IssueAttack(platoonUnits, closestTarget)
                 end
@@ -2423,15 +2423,12 @@ Platoon = Class(SCTAAIPlatoon) {
 
     SCTAEngineerTypeAI = function(self)
         AIAttackUtils.GetMostRestrictiveLayer(self)
-
-        if self.MovementLayer == 'Air' then 
-            return self:EngineerBuildAISCTAAir() 
-        elseif self.MovementLayer == 'Land' then
+       if self.MovementLayer == 'Land' then
             return self:EngineerBuildAISCTA()
         elseif self.MovementLayer == 'Water' then
             return self:EngineerBuildAISCTANaval()
-        else
-            return self.EngineerBuildAISCTACommand()
+        else 
+            return self:EngineerBuildAISCTAAir() 
         end
     end,
 
@@ -2514,7 +2511,6 @@ Platoon = Class(SCTAAIPlatoon) {
 
 
         NavalHuntSCTAAI = function(self)
-  
             local aiBrain = self:GetBrain()
             local armyIndex = aiBrain:GetArmyIndex()
             local data = self.PlatoonData
@@ -2595,47 +2591,3 @@ Platoon = Class(SCTAAIPlatoon) {
         end,
 
 }
-
-    --[[SCTAAntiAirGaurd = function(self)
-        local aiBrain = self:GetBrain()
-        local armyIndex = aiBrain:GetArmyIndex()
-        local data = self.PlatoonData
-        local categoryList = {}
-        local atkPri = {}
-        if data.PrioritizedCategories then
-            for k,v in data.PrioritizedCategories do
-                table.insert( atkPri, v )
-                table.insert( categoryList, ParseEntityCategory( v ) )
-            end
-        end
-        table.insert( atkPri, 'AIR' )
-        table.insert( categoryList, categories.MOBILE * categories.BOMBER)
-        self:SetPrioritizedTargetList( 'Attack', categoryList )
-        local target
-        local maxRadius = data.SearchRadius or 50
-        while aiBrain:PlatoonExists(self) do
-            if not target or target:IsDead() then
-                if aiBrain:GetCurrentEnemy() and aiBrain:GetCurrentEnemy():IsDefeated() then
-                    aiBrain:PickEnemyLogic()
-                end
-                local mult = { 1,10,25 }
-                for _,i in mult do
-                    target = AIUtils.AIFindBrainTargetInRange( aiBrain, self, 'Attack', maxRadius * i, atkPri, aiBrain:GetCurrentEnemy() )
-                    if target then
-                        break
-                    end
-                    WaitSeconds(3)
-                    if not aiBrain:PlatoonExists(self) then
-                        return
-                    end
-                end
-                target = self:FindPrioritizedUnit('Attack', 'Enemy', true, self:GetPlatoonPosition(), maxRadius)
-                if target then
-                    self:Stop()
-                    self:AttackTarget( target )
-                end
-                WaitSeconds(120)
-                self:PlatoonDisband()
-            end
-        end
-    end,]]

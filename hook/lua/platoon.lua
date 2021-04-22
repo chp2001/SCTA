@@ -1411,68 +1411,6 @@ Platoon = Class(SCTAAIPlatoon) {
         self:PlatoonDisband()
     end,
 
-
-
-    SCTAAntiAirAI = function(self)
-        local aiBrain = self:GetBrain()
-        local armyIndex = aiBrain:GetArmyIndex()
-        local data = self.PlatoonData
-        local categoryList = {}
-        local atkPri = {}
-        if data.PrioritizedCategories then
-            for k,v in data.PrioritizedCategories do
-                table.insert( atkPri, v )
-                table.insert( categoryList, ParseEntityCategory( v ) )
-            end
-        end
-        table.insert( atkPri, 'AIR' )
-        table.insert( categoryList, categories.MOBILE * categories.AIR)
-        self:SetPrioritizedTargetList( 'Attack', categoryList )
-        local target
-        local blip = false
-        local maxRadius = data.SearchRadius or 50
-        local movingToScout = false
-        while aiBrain:PlatoonExists(self) do
-            if not target or target:IsDead() then
-                if aiBrain:GetCurrentEnemy() and aiBrain:GetCurrentEnemy():IsDefeated() then
-                    aiBrain:PickEnemyLogic()
-                end
-                local mult = { 1,10,25 }
-                for _,i in mult do
-                    target = AIUtils.AIFindBrainTargetInRange( aiBrain, self, 'Attack', maxRadius * i, atkPri, aiBrain:GetCurrentEnemy() )
-                    if target then
-                        break
-                    end
-                    WaitSeconds(3)
-                    if not aiBrain:PlatoonExists(self) then
-                        return
-                    end
-                end
-                target = self:FindPrioritizedUnit('Attack', 'Enemy', true, self:GetPlatoonPosition(), maxRadius)
-                if target then
-                    self:Stop()
-                    if not data.UseMoveOrder then
-                        self:AttackTarget( target )
-                    else
-                        --self:SetPlatoonFormationOverride('Attack')
-                        self:MoveToLocation( table.copy( target:GetPosition() ), false)
-                    end
-                    movingToScout = false
-                elseif not movingToScout then
-                    movingToScout = true
-                    self:Stop()
-                    for k,v in AIUtils.AIGetSortedMassLocations(aiBrain, 10, nil, nil, nil, nil, self:GetPlatoonPosition()) do
-                        if v[1] < 0 or v[3] < 0 or v[1] > ScenarioInfo.size[1] or v[3] > ScenarioInfo.size[2] then
-                        end
-                        --self:SetPlatoonFormationOverride('Attack')
-                        self:MoveToLocation( (v), false )
-                    end
-                end
-            end
-            WaitSeconds( 7 )
-        end
-    end,
-
     SCTAStrikeForceAI = function(self)
         local aiBrain = self:GetBrain()
         local armyIndex = aiBrain:GetArmyIndex()
@@ -1480,7 +1418,6 @@ Platoon = Class(SCTAAIPlatoon) {
         local categoryList = {}
         local atkPri = {}
         local platoonUnits = self:GetPlatoonUnits()
-        local numberOfUnitsInPlatoon = table.getn(platoonUnits)
         --LOG('*SCTAEXPANSIONTA', data.locationType)
         if data.Laser then
             local econ = aiBrain:GetEconomyStoredRatio('ENERGY')
@@ -1495,16 +1432,22 @@ Platoon = Class(SCTAAIPlatoon) {
                 table.insert( atkPri, v )
                 table.insert( categoryList, ParseEntityCategory( v ) )
             end
-        end
+        end 
+        if data.AntiAir then
+            table.insert( atkPri, 'AIR' )
+            table.insert( categoryList, categories.MOBILE * categories.AIR)
+            self:SetPrioritizedTargetList( 'Attack', categoryList )
+        else
         table.insert( atkPri, 'LAND' )
-        table.insert( categoryList, categories.ALLUNITS - categories.AIR - categories.STRUCTURE )
+        table.insert( categoryList, categories.MOBILE * categories.LAND - categories.AIR - categories.STRUCTURE )
         self:SetPrioritizedTargetList( 'Attack', categoryList )
+        end
         local target
         local blip = false
         local maxRadius = data.SearchRadius or 500
-        local movingToScout = false
         while aiBrain:PlatoonExists(self) do
-            if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 20 and data.AggressiveMove == false then
+            local numberOfUnitsInPlatoon = table.getn(platoonUnits)
+            if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 20 and data.Small then
                 self:MergeWithNearbyPlatoonsSCTA('SCTAStrikeForceAIEarly', 'SCTAStrikeForceAI', 5)
             end
             --self:SetPlatoonFormationOverride('Attack')
@@ -1527,21 +1470,18 @@ Platoon = Class(SCTAAIPlatoon) {
                 if target then
                     --self:SetPlatoonFormationOverride('Attack')
                     self:Stop()
-                    if aiBrain:PlatoonExists(self) and data.Small and not data.UseMoveOrder then
-                        if numberOfUnitsInPlatoon < 20 then
+                    if aiBrain:PlatoonExists(self) then
+                        if numberOfUnitsInPlatoon < 20 and data.UseMoveOrder then
                         self:SetPlatoonFormationOverride('AttackFormation')
                         self:AttackTarget( target )
                         end
-                    elseif data.AggressiveMove == true then
+                    elseif data.AggressiveMove then
                         self:Stop()
                         self:AggressiveMoveToLocation(table.copy(target:GetPosition()))
                     else
                         self:MoveToLocation( table.copy( target:GetPosition() ), false)
                     end
-                    movingToScout = false
-                elseif not movingToScout then
-                    --self:SetPlatoonFormationOverride('AttackFormation')
-                    movingToScout = true
+                else
                     self:Stop()
                     for k,v in AIUtils.AIGetSortedMassLocations(aiBrain, 10, nil, nil, nil, nil, self:GetPlatoonPosition()) do
                         if v[1] < 0 or v[3] < 0 or v[1] > ScenarioInfo.size[1] or v[3] > ScenarioInfo.size[2] then
@@ -1947,7 +1887,7 @@ Platoon = Class(SCTAAIPlatoon) {
             end
             platoonUnits = self:GetPlatoonUnits()
             numberOfUnitsInPlatoon = table.getn(platoonUnits)
-            if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 10 and data.AggressiveMove == false then
+            if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 10 and not data.AggressiveMove then
                 self:MergeWithNearbyPlatoonsSCTA('HuntAI', 'AttackSCTAForceAI', 5)
             end
 
@@ -2027,7 +1967,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 if PlatoonFormation != 'No Formation' then
                     --self:SetPlatoonFormationOverride('AttackFormation')
                     IssueFormAttack(platoonUnits, closestTarget, PlatoonFormation, 0)
-                elseif data.AggressiveMove == true then
+                elseif data.AggressiveMove then
                     self:Stop()
                     self:AggressiveMoveToLocation(table.copy(closestTarget:GetPosition()))
                 else
@@ -2528,7 +2468,6 @@ Platoon = Class(SCTAAIPlatoon) {
             local target
             local blip = false
             local maxRadius = data.SearchRadius or 50
-            local movingToScout = false
             while aiBrain:PlatoonExists(self) do
                 if not target or target:IsDead() then
                     if aiBrain:GetCurrentEnemy() and aiBrain:GetCurrentEnemy():IsDefeated() then
@@ -2548,15 +2487,8 @@ Platoon = Class(SCTAAIPlatoon) {
                     target = self:FindPrioritizedUnit('Attack', 'Enemy', true, self:GetPlatoonPosition(), maxRadius)
                     if target then
                         self:Stop()
-                        if not data.UseMoveOrder then
-                            self:AttackTarget( target )
-                        else
-                            --self:SetPlatoonFormationOverride('Attack')
-                            self:MoveToLocation( table.copy( target:GetPosition() ), false)
-                        end
-                        movingToScout = false
-                    elseif not movingToScout then
-                        movingToScout = true
+                        self:AttackTarget( target )
+                    else
                         self:Stop()
                         for k,v in AIUtils.AIGetSortedMassLocations(aiBrain, 10, nil, nil, nil, nil, self:GetPlatoonPosition()) do
                             if v[1] < 0 or v[3] < 0 or v[1] > ScenarioInfo.size[1] or v[3] > ScenarioInfo.size[2] then

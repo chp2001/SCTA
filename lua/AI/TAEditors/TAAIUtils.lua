@@ -13,14 +13,6 @@ function CheckBuildPlatoonDelaySCTA(aiBrain, PlatoonName)
     return true
 end
 
-function CheckBuildPlatoonDelay(aiBrain, PlatoonName)
-    if aiBrain.DelayEqualBuildPlattons[PlatoonName] and aiBrain.DelayEqualBuildPlattons[PlatoonName] > GetGameTimeSeconds() then
-        --LOG('Platoon Delay is false')
-        return false
-    end
-    return true
-end
-
 function HaveUnitsInCategoryBeingUpgradeSCTA(aiBrain, numunits, category, compareType)
     -- get all units matching 'category'
     local unitsBuilding = aiBrain:GetListOfUnits(category, false)

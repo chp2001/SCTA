@@ -5,7 +5,7 @@ local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').GetMOARadii()
 local RAIDER = categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea
-local RAIDAIR = categories.armfig + categories.corveng 
+local RAIDAIR = categories.armfig + categories.corveng + categories.GROUNDATTACK
 
 
 BuilderGroup {
@@ -36,7 +36,6 @@ BuilderGroup {
         BuilderData = {
             NeverGuardBases = true,
             NeverGuardEngineers = true,
-            IgnorePathing = true,
             UseMoveOrder = true,
             AllTerrain = true,
             UseFormation = 'AttackFormation',
@@ -93,7 +92,6 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },     
         BuilderConditions = { 
-            { MIBC, 'LessThanGameTime', {900} },
             { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.ANTIAIR }},	
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.BOMBER + RAIDAIR} },
         },
@@ -140,6 +138,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderData = {
             Assist = {
@@ -160,6 +159,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
             { MIBC, 'GreaterThanGameTime', {600} },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -173,54 +173,14 @@ BuilderGroup {
         },
     },
     Builder {
-        BuilderName = 'SCTA Engineer Assist Gantry Production',
-        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
-        Priority = 200,
-        InstanceCount = 12,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
-            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssistRange = 120,
-                BeingBuiltCategories = {'GATE'},                                                   
-                AssistUntilFinished = true,
-            },
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Assist Gantry',
-        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
-        Priority = 200,
-        InstanceCount = 12,
-        BuilderConditions = {
-            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, 'BUILTBYQUANTUMGATE' }},
-            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Factory',
-                PermanentAssist = false,
-                BeingBuiltCategories = {'BUILTBYQUANTUMGATE'},                                                       
-                Time = 60,
-            },
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
         BuilderName = 'SCTA Assist Production Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
         Priority = 5,
         InstanceCount = 5,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} },
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, 'STRUCTURE' }},
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderData = {
             Assist = {
@@ -240,8 +200,8 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} },
-            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, 'MOBILE' }},
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.MOBILE }},
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderData = {
             Assist = {

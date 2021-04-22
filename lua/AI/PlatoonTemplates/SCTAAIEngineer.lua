@@ -102,26 +102,9 @@ PlatoonTemplate {
     },
 }
 
-
-PlatoonTemplate {
-    Name = 'EngineerBuilderSCTAAssist',
-    Plan = 'ManagerEngineerAssistAI',
-    GlobalSquads = {
-        {categories.FIELDENGINEER, 1, 1, 'support', 'None' }
-    },
-}
-
 PlatoonTemplate {
     Name = 'EngineerBuilderSCTAField',
-    Plan = 'SCTAReclaimAI',
-    GlobalSquads = {
-        {categories.FIELDENGINEER, 1, 1, 'support', 'None' }
-    },
-}
-
-PlatoonTemplate {
-    Name = 'EngineerBuilderSCTAFieldFinish',
-    Plan = 'ManagerEngineerFindUnfinished',
+    Plan = 'ManagerEngineerAssistAI',
     GlobalSquads = {
         {categories.FIELDENGINEER, 1, 1, 'support', 'None' }
     },

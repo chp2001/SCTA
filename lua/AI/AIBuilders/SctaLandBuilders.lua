@@ -11,7 +11,7 @@ local PLATFORM = (categories.FACTORY * categories.TECH3)
 
 
 local LandProductionT3 = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  12, LAB)  then 
+    if Factory(aiBrain,  6, LAB)  then 
         return 130
     elseif Factory(aiBrain,  0, categories.GATE) then
         return 135
@@ -63,7 +63,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.LAND } },
-            { UCBC, 'HaveUnitRatio', { 0.1, categories.LAND * categories.ANTIAIR * categories.MOBILE,
+            { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.ANTIAIR * categories.MOBILE,
                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},                           
@@ -76,7 +76,7 @@ BuilderGroup {
         Priority = 121,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH2 * categories.DIRECTFIRE - categories.SCOUT,
+            { UCBC, 'HaveUnitRatio', { 0.6, categories.LAND * categories.TECH2 * categories.DIRECTFIRE - categories.SCOUT,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
@@ -124,7 +124,7 @@ BuilderGroup {
         PriorityFunction = LandProductionT3,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.TECH3 * categories.DIRECTFIRE - categories.SCOUT,
+            { UCBC, 'HaveUnitRatio', { 0.6, categories.TECH3 * categories.DIRECTFIRE - categories.SCOUT,
                                        '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
@@ -165,25 +165,12 @@ BuilderGroup {
         BuilderType = 'Vehicle',
     },
     Builder {
-        BuilderName = 'SCTAAi FactoryT2 Tank2',
-        PlatoonTemplate = 'T2LandDFTank2SCTA',
-        Priority = 120,
-        InstanceCount = 2,
-        BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH2 * categories.DIRECTFIRE - categories.SCOUT,
-            '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
-        },
-        BuilderType = 'Vehicle',
-    },
-    Builder {
         BuilderName = 'SCTAAi Factory2 AntiAir',
         PlatoonTemplate = 'T1LandAASCTA2',
         Priority = 81,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.LAND } },
-            { UCBC, 'HaveUnitRatio', { 0.1, categories.LAND * categories.ANTIAIR * categories.MOBILE,
+            { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.ANTIAIR * categories.MOBILE,
                                        '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},
         },
@@ -198,6 +185,18 @@ BuilderGroup {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.TECH2 * categories.SILO * categories.MOBILE,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},
+        },
+        BuilderType = 'Vehicle',
+    },
+    Builder {
+        BuilderName = 'SCTAAi FactoryT2 Tank2',
+        PlatoonTemplate = 'T2LandDFTank2SCTA',
+        Priority = 120,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'HaveUnitRatio', { 0.6, categories.LAND * categories.TECH2 * categories.DIRECTFIRE - categories.SCOUT,
+            '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Vehicle',
     },
@@ -221,7 +220,6 @@ BuilderGroup {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.ANTIAIR * categories.MOBILE,
             '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.3, 0.5, } },
-            { TBC, 'EnemyThreatGreaterThanValueAtBase', { 'LocationType', 0, 'Air', 1 } }, 
         },
         BuilderType = 'Vehicle',
     },
@@ -232,7 +230,7 @@ BuilderGroup {
         PriorityFunction = LandProductionT3,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH3 * categories.DIRECTFIRE - categories.SCOUT,
+            { UCBC, 'HaveUnitRatio', { 0.6, categories.LAND * categories.TECH3 * categories.DIRECTFIRE - categories.SCOUT,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
@@ -245,20 +243,11 @@ BuilderGroup {
         PriorityFunction = LandProductionT3,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.65, categories.LAND * categories.TECH3 * categories.DIRECTFIRE - categories.SCOUT,
+            { UCBC, 'HaveUnitRatio', { 0.6, categories.LAND * categories.TECH3 * categories.DIRECTFIRE - categories.SCOUT,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Vehicle',
-    },
-    Builder {
-        BuilderName = 'SCTAAi T2 Experimental',
-        PlatoonTemplate = 'SCTAExperimental',
-        Priority = 50,
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.EXPERIMENTAL * categories.MOBILE} },
-        },
-        BuilderType = 'Gate',
     },
 }
 

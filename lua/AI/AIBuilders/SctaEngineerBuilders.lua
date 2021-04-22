@@ -11,7 +11,9 @@ local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterTh
 
 
 local EngineerProduction = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  0, LAB) then 
+    if Factory(aiBrain,  6, LAB) then 
+        return 0
+    elseif Factory(aiBrain,  0, LAB) then 
         return 10
     else
         return 101
@@ -154,6 +156,15 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.TECH3 * categories.AIR} }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'Air',
+    },
+    Builder {
+        BuilderName = 'SCTAAi T2 Experimental',
+        PlatoonTemplate = 'SCTAExperimental',
+        Priority = 50,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.EXPERIMENTAL * categories.MOBILE} },
+        },
+        BuilderType = 'Gate',
     },
 }
 

@@ -335,14 +335,14 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTAAI Naval Hydro2',
+        BuilderName = 'SCTAAI Naval Hydro',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         Priority = 99,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         DelayEqualBuildPlattons = {'Hydro', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Hydro' }},
-            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 150}},
+            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 300}},
             { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
         BuilderType = 'Any',

@@ -133,6 +133,9 @@ function SCTAEngineerMoveWithSafePath(aiBrain, unit, destination)
 
     -- If we're here, we haven't used transports and we can path to the destination
     if result then
+        if EntityCategoryContains(categories.AMPHIBIOUS, unit) then
+        local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Air', unit:GetPosition(), destination, 10)
+        else
         local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Amphibious', unit:GetPosition(), destination, 10)
         if path then
             local pathSize = table.getn(path)
@@ -143,11 +146,11 @@ function SCTAEngineerMoveWithSafePath(aiBrain, unit, destination)
                 end
             end
         end
+        end
         -- If there wasn't a *safe* path (but dest was pathable), then the last move would have been to go there directly
         -- so don't bother... the build/capture/reclaim command will take care of that after we return
         return true
     end
-
     return false
 end
 
@@ -186,7 +189,9 @@ function SCTAEngineerMoveWithSafePathNaval(aiBrain, unit, destination)
 
     local result, bestPos = false
     result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Water')
-
+    if not result and not SUtils.CheckForMapMarkers(aiBrain) then
+        result, bestPos = unit:CanPathTo(destination)
+    end
     -- If we're here, we haven't used transports and we can path to the destination
     if result then
         local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Water', unit:GetPosition(), destination, 10)
@@ -214,7 +219,9 @@ function SCTAEngineerMoveWithSafePathLand(aiBrain, unit, destination)
 
     local result, bestPos = false
     result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Land')
-
+    if not result and not SUtils.CheckForMapMarkers(aiBrain) then
+        result, bestPos = unit:CanPathTo(destination)
+    end
     local pos = unit:GetPosition()
     local bUsedTransports = false
     if not result or VDist2Sq(pos[1], pos[3], destination[1], destination[3]) > 65536 and unit.PlatoonHandle and not EntityCategoryContains(categories.COMMAND, unit) then

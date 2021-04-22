@@ -145,7 +145,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Hydro', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Hydro' }},
-            { MIBC, 'LessThanGameTime', {360} }, 
+            { MIBC, 'LessThanGameTime', {120} }, 
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 25}},
         },
         BuilderType = 'Any',
@@ -162,14 +162,13 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI T1Engineer Hydro2',
-        PlatoonTemplate = 'EngineerBuilderSCTAALL',
-        Priority = 150,
+        PlatoonTemplate = 'EngineerBuilderSCTAEco',
+        Priority = 171,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         DelayEqualBuildPlattons = {'Hydro', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Hydro' }},
-            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 150}},
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
+            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 1000}},
         },
         BuilderType = 'Any',
         BuilderData = {

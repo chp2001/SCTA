@@ -1608,11 +1608,11 @@ Platoon = Class(SCTAAIPlatoon) {
                     local success, bestGoalPos = AIAttackUtils.CheckPlatoonPathingEx(self, bestMarker.Position)
                     if path then
                     local pathLength = table.getn(path)
-                            for i=1, pathLength-1 do
-                                self:MoveToLocation(path[i], false)
-                            end
-                        end
+                    for i=1, pathLength-1 do
+                        self:MoveToLocation(path[i], false)
                     end
+                end
+            end
             elseif engineer then
                 self:Stop()
                 local position = AIUtils.RandomLocation(engineer:GetPosition()[1],engineer:GetPosition()[3])

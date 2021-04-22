@@ -343,7 +343,6 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Hydro' }},
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 300}},
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
         BuilderType = 'Any',
         BuilderData = {

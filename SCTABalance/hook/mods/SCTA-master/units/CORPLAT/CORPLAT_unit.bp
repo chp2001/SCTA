@@ -18,9 +18,10 @@ UnitBlueprint {
         'SHOWQUEUE',
 	    'STRUCTURE',
 	    'CONSTRUCTION',
-        'OVERLAYRADAR',
+        'OVERLAYSONAR',
         'CORE',
         'AIR',
+        'SUBMERSIBLE',
         'SORTCONSTRUCTION',
     },
     Defense = {

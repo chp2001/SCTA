@@ -150,7 +150,7 @@ PlatoonTemplate {
     Name = 'SCTAIntel',
     Plan = 'PauseAI',
     GlobalSquads = {
-        { categories.STRUCTURE * categories.OPTICS, 1, 1, 'support', 'none' },
+        { categories.STRUCTURE * (categories.OPTICS + categories.RADAR), 1, 1, 'support', 'none' },
     }
 }
 
@@ -162,6 +162,18 @@ PlatoonTemplate {
         },
         Core = {
             { 'corkrog', 1, 1, 'attack', 'none' },
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T1LandAntiArtySCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armjeth', 1, 1, 'attack', 'none' },
+        },
+        Core = {
+            { 'corlevlr', 1, 1, 'attack', 'none' },
         },
     }
 }

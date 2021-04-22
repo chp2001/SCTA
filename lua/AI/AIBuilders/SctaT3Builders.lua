@@ -13,7 +13,7 @@ BuilderGroup {
         Priority = 138,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.6, categories.LAND * categories.DIRECTFIRE * categories.TECH3 - categories.SCOUT,
-                                       '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
+            '<=', categories.LAND * categories.MOBILE * categories.TECH3 - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Hover',
@@ -24,9 +24,9 @@ BuilderGroup {
         Priority = 126,
         InstanceCount = 1,
         BuilderConditions = {
-        { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.TECH3 * categories.SILO * categories.MOBILE * categories.TECH3,
-        '<=', categories.MOBILE * categories.LAND - categories.ANTIAIR - categories.ENGINEER } }, -- Don't make tanks if we have lots of them. },
-        { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+        { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.TECH3 * categories.SILO * categories.MOBILE - categories.ANTIAIR,
+        '<=', categories.MOBILE * categories.LAND * categories.TECH3 - categories.ENGINEER } }, -- Don't make tanks if we have lots of them. },
+        { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
     },
         BuilderType = 'Hover',
     },
@@ -37,8 +37,8 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.ANTIAIR * categories.MOBILE * categories.TECH3,
-                                       '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
-                                       { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.15}},
+                                       '<', categories.LAND  * categories.MOBILE * categories.TECH3 - categories.ENGINEER } },
+         { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
         },
         BuilderType = 'Hover',
     },
@@ -49,6 +49,6 @@ BuilderGroup {
         BuilderConditions = { -- Only make inties if the enemy air is strong.
         { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
         },
-        BuilderType = 'Air',
+        BuilderType = 'Seaplane',
     },
 }

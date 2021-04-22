@@ -168,5 +168,15 @@ BuilderGroup {
             { MIBC, 'GreaterThanGameTime', {1500} },
          },
     },
+    Builder {
+        BuilderName = 'SCTAAI Land Scout',
+        PlatoonTemplate = 'T1LandScoutFormSCTA',
+        Priority = 125,
+        InstanceCount = 2,
+        BuilderType = 'Any',
+        BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.SCOUT } },
+         },
+    },
 }
 

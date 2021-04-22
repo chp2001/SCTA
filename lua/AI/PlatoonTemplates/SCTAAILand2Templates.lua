@@ -34,17 +34,6 @@ PlatoonTemplate {
     }
 }
 
-PlatoonTemplate {
-    Name = 'T1LandArtillerySCTA2',
-    FactionSquads = {
-        Arm = {
-            { 'armsam', 1, 1, 'attack', 'none' }
-        },
-        Core = {
-            { 'corlevlr', 1, 1, 'attack', 'none' }
-        },
-    }
-}
 
 
 PlatoonTemplate {
@@ -96,6 +85,7 @@ PlatoonTemplate {
         },
     }
 }
+
 PlatoonTemplate {
     Name = 'T2LandMissileSCTA2',
     FactionSquads = {
@@ -127,7 +117,7 @@ PlatoonTemplate {
         Arm = {
             { 'armbull', 1, 2, 'attack', 'none' },
             { 'armack', 1, 1, 'support', 'None' },
-            { 'armbull', 1, 1, 'attack', 'none' },
+            { 'armspid', 1, 1, 'attack', 'none' },
         },
         Core = {
             { 'correap', 1, 3, 'attack', 'none' },
@@ -139,12 +129,24 @@ PlatoonTemplate {
     Name = 'T3LandDFTank2SCTA',
     FactionSquads = {
         Arm = {
-            { 'armlatnk', 1, 2, 'attack', 'none' },
-            { 'armmart', 1, 1, 'attack', 'none' },
+            { 'armlatnk', 1, 3, 'attack', 'none' },
         },
         Core = {
             { 'corgol', 1, 2, 'attack', 'none' },
             { 'corch', 1, 1, 'attack', 'none' },
+            { 'corgol', 1, 1, 'attack', 'none' },
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T3LandDFVehicleSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armmanni', 1, 1, 'attack', 'none' },
+            { 'armmart', 1, 1, 'attack', 'none' },
+        },
+        Core = {
             { 'cormart', 1, 1, 'attack', 'none' },
         },
     }

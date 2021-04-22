@@ -3,12 +3,12 @@
 #
 #Script created by Raevn
 
-local TASeaair = import('/mods/SCTA-master/lua/TAair.lua').TASeaair
+local TAIntelSeaAir = import('/mods/SCTA-master/lua/TAair.lua').TAIntelSeaAir
 
-CORHUNT = Class(TASeaair) {
+CORHUNT = Class(TAIntelSeaAir) {
 
 	OnCreate = function(self)
-		TASeaair.OnCreate(self)
+		TAIntelSeaAir.OnCreate(self)
 		self.Sliders = {
 			chassis = CreateSlider(self, 0),
 		}
@@ -26,10 +26,6 @@ CORHUNT = Class(TASeaair) {
 		end
 	end,
 
-	OnStopBeingBuilt = function(self,builder,layer)
-		TASeaair.OnStopBeingBuilt(self,builder,layer)
-		self:SetMaintenanceConsumptionActive()
-	end,
 
 
 	OpenWings = function(self)

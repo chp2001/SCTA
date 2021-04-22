@@ -39,7 +39,7 @@ UnitBlueprint {
         'SHOWQUEUE',
 	    'STRUCTURE',
         'CONSTRUCTION',
-        'OVERLAYRADAR',
+        'OVERLAYSONAR',
         'CORE',
         'AIR',
         'SUBMERSIBLE',
@@ -119,7 +119,7 @@ UnitBlueprint {
     },
     Intel = {
     VisionRadius = 14,
-	RadarRadius = 32,
+	SonarRadius = 32,
     WaterVisionRadius = 8,
     RadarStealth = true,
     },

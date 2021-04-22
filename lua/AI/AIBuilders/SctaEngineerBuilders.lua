@@ -61,7 +61,8 @@ BuilderGroup {
         PriorityFunction = EngineerProduction,
         Priority = 110,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.MOBILE * categories.AIR * categories.SCOUT } },
+            { MIBC, 'LessThanGameTime', {900} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.MOBILE * categories.AIR * categories.SCOUT } },
             { TAutils, 'EcoManagementTA', { 0.75, 1.05, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
@@ -72,7 +73,7 @@ BuilderGroup {
         Priority = 120,
         PriorityFunction = EngineerProductionT3,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.MOBILE * categories.AIR * categories.SCOUT } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.MOBILE * categories.AIR * categories.SCOUT } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Air',

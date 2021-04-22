@@ -210,7 +210,7 @@ BuilderGroup {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, PLANT } }, -- Don't build air fac immediately.
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR} },
             { MIBC, 'LessThanGameTime', {600} },
-            { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.5, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -237,8 +237,7 @@ BuilderGroup {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  PLANT } }, -- Don't build air fac immediately.
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4,  categories.FACTORY * categories.AIR} },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.75, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -264,7 +263,7 @@ BuilderGroup {
             { TASlow, 'CheckBuildPlatoonDelay', { 'Factories' }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.75, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.5, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
         BuilderData = {

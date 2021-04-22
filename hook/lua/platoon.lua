@@ -11,15 +11,6 @@ baseTmpl = baseTmplFile[(cons.BaseTemplate or 'BaseTemplates')][factionIndex]]
 
 SCTAAIPlatoon = Platoon
 Platoon = Class(SCTAAIPlatoon) {
-    EngineerBuildAI = function(self)
-        local aiBrain = self:GetBrain()
-        --local Threat = self:CalculatePlatoonThreat('AntiSurface', categories.MASSEXTRACTION)
-        --LOG(Threat)
-        if not aiBrain.SCTAAI then
-            return SCTAAIPlatoon.EngineerBuildAI(self)
-        end
-        self:SCTAEngineerTypeAI()
-    end,
 
     EngineerBuildAISCTA = function(self)
         local aiBrain = self:GetBrain()
@@ -928,7 +919,7 @@ Platoon = Class(SCTAAIPlatoon) {
         end
 
         --DUNCAN - added
-        if eng:IsUnitState('Building') or eng:IsUnitState('Upgrading') then
+        if eng:IsUnitState('Building') then
            return
         end
             local FactionToIndex  = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, NOMADS = 5, ARM = 6, CORE = 7}
@@ -1317,8 +1308,10 @@ Platoon = Class(SCTAAIPlatoon) {
             if not eng.NotBuildingThread then
                 eng.NotBuildingThread = eng:ForkThread(eng.PlatoonHandle.SCTAWatchForNotBuilding)
             end
-            -- see if we can move there first
-            if AIUtils.EngineerMoveWithSafePath(aiBrain, eng, buildLocation) then
+            if eng.PlatoonHandle.PlanName == 'EngineerBuildAISCTACommand' and AIUtils.SCTAEngineerMoveWithSafePath(aiBrain, eng, buildLocation) or
+            eng.PlatoonHandle.PlanName == 'EngineerBuildAISCTA' and AIUtils.SCTAEngineerMoveWithSafePathLand(aiBrain, eng, buildLocation) or
+            eng.PlatoonHandle.PlanName == 'EngineerBuildAISCTANaval' and AIUtils.SCTAEngineerMoveWithSafePathNaval(aiBrain, eng, buildLocation) or
+            eng.PlatoonHandle.PlanName == 'EngineerBuildAISCTAAir' and AIUtils.SCTAEngineerMoveWithSafePathAir(aiBrain, eng, buildLocation) then   
                 if not eng or eng.Dead or not eng.PlatoonHandle or not aiBrain:PlatoonExists(eng.PlatoonHandle) then
                     return
                 end
@@ -2209,9 +2202,11 @@ Platoon = Class(SCTAAIPlatoon) {
 
             --Is there someplace we should scout?
             if targetData then
-                --Can we get there safely?
+                if EntityCategoryContains(categories.AMPHIBIOUS, self) then
+                local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Air', scout:GetPosition(), targetData.Position, 400)
+                else
                 local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, self.MovementLayer, scout:GetPosition(), targetData.Position, 400) --DUNCAN - Increase threatwieght from 100
-
+                
                 IssueClearCommands(self)
 
                 if path then
@@ -2220,7 +2215,7 @@ Platoon = Class(SCTAAIPlatoon) {
                         self:MoveToLocation(path[i], false)
                     end
                 end
-
+            end
                 self:MoveToLocation(targetData.Position, false)
 
                 --Scout until we reach our destination
@@ -2428,13 +2423,15 @@ Platoon = Class(SCTAAIPlatoon) {
 
     SCTAEngineerTypeAI = function(self)
         AIAttackUtils.GetMostRestrictiveLayer(self)
-        
+
         if self.MovementLayer == 'Air' then 
             return self:EngineerBuildAISCTAAir() 
         elseif self.MovementLayer == 'Land' then
             return self:EngineerBuildAISCTA()
-        else
+        elseif self.MovementLayer == 'Water' then
             return self:EngineerBuildAISCTANaval()
+        else
+            return self.EngineerBuildAISCTACommand()
         end
     end,
 

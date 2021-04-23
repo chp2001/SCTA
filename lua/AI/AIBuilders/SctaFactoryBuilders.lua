@@ -298,7 +298,7 @@ BuilderConditions = {
         Priority = 160,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {2400} }, 
+            { MIBC, 'GreaterThanGameTime', {3600} }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.STRUCTURE * categories.EXPERIMENTAL * categories.ARTILLERY} },        
         },
         BuilderType = 'Any',

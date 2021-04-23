@@ -255,3 +255,5 @@ BuilderGroup {
         BuilderType = 'Any',
     },
 }
+
+--{ SIBC, 'EngineerNeedsAssistance', { false, 'LocationType', {'STRUCTURE'} }},

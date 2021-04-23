@@ -133,7 +133,8 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTA Assist Production Idle',
-        PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonAIPlan = 'ManagerEngineerAssistAI',
         Priority = 5,
         InstanceCount = 5,
         BuilderConditions = {
@@ -154,7 +155,8 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTA Assist Unit Production Idle',
-        PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonAIPlan = 'ManagerEngineerAssistAI',
         Priority = 5,
         InstanceCount = 5,
         BuilderConditions = {

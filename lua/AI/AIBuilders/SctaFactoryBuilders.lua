@@ -16,7 +16,7 @@ local UnitProduction = function(self, aiBrain, builderManager)
         return 111
     elseif Factory(aiBrain,  1, PLATFORM) then
         return 50
-    elseif Factory(aiBrain,  6, PLANT) then 
+    elseif Factory(aiBrain,  12, PLANT) then 
             return 110
     else
         return 0

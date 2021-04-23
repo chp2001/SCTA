@@ -62,7 +62,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTAEndgame',
     Plan = 'SCTAStrikeForceAIEndgame', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND - SPECIAL, 25, 50, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND - SPECIAL, 25, 50, 'Attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
 

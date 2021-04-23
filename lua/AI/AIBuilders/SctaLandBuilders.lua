@@ -36,10 +36,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Tank',
         PlatoonTemplate = 'T1LandDFTankSCTA',
-        Priority = 98,
+        Priority = 100,
             BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
-            { UCBC, 'HaveUnitRatio', { 0.7, categories.LAND * categories.DIRECTFIRE * categories.MOBILE,
+            { UCBC, 'HaveUnitRatio', { 0.8, categories.LAND * categories.DIRECTFIRE * categories.MOBILE,
             '<', categories.LAND * categories.MOBILE - categories.ENGINEER } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
@@ -48,7 +48,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Artillery',
         PlatoonTemplate = 'T1LandArtillerySCTA',
-        Priority = 85,
+        Priority = 90,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.MOBILE * categories.ARTILLERY,
             '<', categories.LAND * categories.MOBILE - categories.ENGINEER } },
@@ -59,7 +59,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Artillery-AntiAir',
         PlatoonTemplate = 'T1LandAntiArtySCTA',
-        Priority = 85,
+        Priority = 90,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.MOBILE * ((categories.ARTILLERY * categories.CORE) + (categories.ANTIAIR * categories.ARM)),
             '<', categories.LAND * categories.MOBILE - categories.ENGINEER } },
@@ -70,7 +70,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT2 Tank',
         PlatoonTemplate = 'T2LandDFTankSCTA',
-        Priority = 121,
+        Priority = 120,
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.6, categories.LAND * categories.TECH2 * categories.DIRECTFIRE - categories.SCOUT,
@@ -82,7 +82,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT2 Artillery',
         PlatoonTemplate = 'T2LandRocketSCTA',
-        Priority = 102,
+        Priority = 100,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.TECH2 * categories.SILO,
@@ -128,10 +128,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Tank2',
         PlatoonTemplate = 'T1LandDFTankSCTA2',
-        Priority = 98,
+        Priority = 100,
         BuilderConditions = {
         { MIBC, 'GreaterThanGameTime', {300} },
-        { UCBC, 'HaveUnitRatio', { 0.6, categories.LAND * categories.DIRECTFIRE * categories.MOBILE,
+        { UCBC, 'HaveUnitRatio', { 0.8, categories.LAND * categories.DIRECTFIRE * categories.MOBILE,
         '<', categories.LAND * categories.MOBILE - categories.ENGINEER } },
         { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
@@ -140,7 +140,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory2 AntiAir',
         PlatoonTemplate = 'T1LandAASCTA2',
-        Priority = 81,
+        Priority = 90,
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.ANTIAIR * categories.MOBILE,
@@ -152,7 +152,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT2 Artillery2',
         PlatoonTemplate = 'T2LandMissileSCTA2',
-        Priority = 103,
+        Priority = 100,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.TECH2 * categories.SILO * categories.MOBILE - categories.ANTIAIR,
@@ -176,7 +176,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Counter2',
         PlatoonTemplate = 'T2LandAuxFact2',
-        Priority = 71,
+        Priority = 100,
         InstanceCount = 1,
         BuilderConditions = {   
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.STEALTHFIELD * categories.LAND * categories.TECH2} },
@@ -198,7 +198,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT2 AntiAir2',
         PlatoonTemplate = 'T2LandAASCTA2',
-        Priority = 104,
+        Priority = 100,
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.ANTIAIR * categories.MOBILE * categories.TECH2,
@@ -224,7 +224,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Bot',
         PlatoonTemplate = 'T3LandDFBotSCTA',
-        Priority = 128,
+        Priority = 130,
         PriorityFunction = LandProductionT3,
         InstanceCount = 2,
         BuilderConditions = {
@@ -237,7 +237,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Vehicle',
         PlatoonTemplate = 'T3LandDFVehicleSCTA',
-        Priority = 128,
+        Priority = 130,
         PriorityFunction = LandProductionT3,
         InstanceCount = 2,
         BuilderConditions = {
@@ -250,7 +250,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Tank2',
         PlatoonTemplate = 'T3LandDFTank2SCTA',
-        Priority = 132,
+        Priority = 130,
         PriorityFunction = LandProductionT3,
         InstanceCount = 2,
         BuilderConditions = {

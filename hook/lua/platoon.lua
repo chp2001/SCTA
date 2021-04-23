@@ -2163,7 +2163,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 --Scout until we reach our destination
                 while not scout.Dead and not scout:IsIdleState() do
                     target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ENGINEER - categories.COMMAND)
-                    structure = self:FindClosestUnit('Attack', 'Enemy', true, categories.ECONOMIC - categories.COMMAND)
+                    structure = self:FindClosestUnit('Attack', 'Enemy', true, categories.STRUCTURE * (categories.ENERGYPRODUCTION + categories.MASSEXTRACTION) )
                     if target and self.PlatoonData.Lab then
                         WaitSeconds(1)
                         return self:SCTALabType()
@@ -2303,11 +2303,8 @@ Platoon = Class(SCTAAIPlatoon) {
             if target then
                 self:Stop()
                 self:AttackTarget(target)
-                --DUNCAN - added to try and stop AI getting stuck.
-                local position = AIUtils.RandomLocation(target:GetPosition()[1],target:GetPosition()[3])
-                self:MoveToLocation(position, false)
             end
-            WaitSeconds(17)
+            WaitSeconds(5)
         end
     end,
 

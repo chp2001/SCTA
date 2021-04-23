@@ -1379,9 +1379,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local aiBrain = self:GetBrain()
         --local Threat = self:CalculatePlatoonThreat('AntiSurface', categories.MASSEXTRACTION)
         --LOG(Threat)
-        if not aiBrain.SCTAAI then
-            return SCTAAIPlatoon.UnitUpgradeAI(self)
-        end
+        if EntityCategoryContains(categories.ARM, self) or EntityCategoryContains(categories.CORE, self) or aiBrain.SCTAAI then
         local platoonUnits = self:GetPlatoonUnits()
         local FactionToIndex  = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, NOMADS = 5, ARM = 6, CORE = 7}
         local factionIndex = aiBrain:GetFactionIndex()
@@ -1409,6 +1407,9 @@ Platoon = Class(SCTAAIPlatoon) {
         end
         WaitTicks(1)
         self:PlatoonDisband()
+        else
+        SCTAAIPlatoon.UnitUpgradeAI(self)
+        end
     end,
 
     SCTAStrikeForceAI = function(self)

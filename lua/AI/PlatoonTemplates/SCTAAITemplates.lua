@@ -30,7 +30,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTAEarly',
     Plan = 'SCTAStrikeForceAIEarly',
     GlobalSquads = {
-        { GROUND * categories.TECH1 - SPECIAL - TACATS - RANGE, 5, 10, 'Attack', 'none' }
+        { GROUND * categories.TECH1 - SPECIAL - TACATS - RANGE, 5, 10, 'attack', 'none' }
     },
 }
 
@@ -46,7 +46,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTAMid',
     Plan = 'AttackSCTAForceAI',
     GlobalSquads = {
-        { GROUND - SPECIAL - TACATS, 5, 20, 'Attack', 'none' }
+        { GROUND - SPECIAL - TACATS, 5, 20, 'attack', 'none' }
     },
 }
 
@@ -54,7 +54,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTAMid',
     Plan = 'SCTAStrikeForceAI',
     GlobalSquads = {
-        { GROUND - SPECIAL - RANGE - TACATS, 10, 20, 'Attack', 'none' }
+        { GROUND - SPECIAL - RANGE - TACATS, 10, 20, 'attack', 'none' }
     },
 }
 
@@ -62,7 +62,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTAEndgame',
     Plan = 'SCTAStrikeForceAIEndgame', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND - SPECIAL, 25, 50, 'Attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND - SPECIAL, 25, 50, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
 
@@ -70,7 +70,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTAEndGame',
     Plan = 'AttackSCTAForceAIEndGame',
     GlobalSquads = {
-        { GROUND - SPECIAL - categories.BOMB, 25, 50, 'Attack', 'none' }
+        { GROUND - SPECIAL - categories.BOMB, 25, 50, 'attack', 'none' }
     },
 }
 
@@ -78,7 +78,7 @@ PlatoonTemplate {
     Name = 'LandRocketAttackSCTA',
     Plan = 'HuntAI',
     GlobalSquads = {
-        { GROUND * RANGE - SPECIAL - TACATS, 2, 20, 'Attack', 'none' }
+        { GROUND * RANGE - SPECIAL - TACATS, 2, 20, 'attack', 'none' }
     },
 }
 
@@ -118,7 +118,6 @@ PlatoonTemplate {
           'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
-
 
 
 PlatoonTemplate {
@@ -174,6 +173,18 @@ PlatoonTemplate {
         },
         Core = {
             { 'corlevlr', 1, 1, 'attack', 'none' },
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T2LandAuxTerrain',
+    FactionSquads = {
+        Arm = {
+            { 'armspid', 1, 1, 'attack', 'none' },
+        },
+        Core = {
+            { 'coramph', 1, 1, 'attack', 'none' },
         },
     }
 }

@@ -28,7 +28,7 @@ BuilderGroup {
         Priority = 150,
         BuilderConditions = {
             { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'TAExtractors' }},
-            { MIBC, 'GreaterThanGameTime', { 360 } },
+            { MIBC, 'GreaterThanGameTime', { 480 } },
             { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 1, categories.MASSEXTRACTION * categories.TECH1 } },  
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 }},
         },

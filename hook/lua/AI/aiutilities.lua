@@ -1,3 +1,5 @@
+WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset ATUtils.lua' )
+
 SCTAGetTransports = GetTransports
 function GetTransports(platoon, units)
     local aiBrain = platoon:GetBrain()
@@ -114,3 +116,203 @@ function GetTransports(platoon, units)
         return numTransports, 0, 0, 0
     end
 end
+
+function SCTAEngineerMoveWithSafePath(aiBrain, unit, destination)
+    if not destination then
+        return false
+    end
+
+    local result, bestPos = false
+    result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Land')
+    if not result then
+        result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Amphibious')
+        if not result and not SUtils.CheckForMapMarkers(aiBrain) then
+            result, bestPos = unit:CanPathTo(destination)
+        end
+    end
+
+    -- If we're here, we haven't used transports and we can path to the destination
+    if result then
+        if EntityCategoryContains(categories.AMPHIBIOUS, unit) then
+        local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Air', unit:GetPosition(), destination, 10)
+        else
+        local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Amphibious', unit:GetPosition(), destination, 10)
+        if path then
+            local pathSize = table.getn(path)
+            -- Move to way points (but not to destination... leave that for the final command)
+            for widx, waypointPath in path do
+                if pathSize ~= widx then
+                    IssueMove({unit}, waypointPath)
+                end
+            end
+        end
+        end
+        -- If there wasn't a *safe* path (but dest was pathable), then the last move would have been to go there directly
+        -- so don't bother... the build/capture/reclaim command will take care of that after we return
+        return true
+    end
+    return false
+end
+
+function SCTAEngineerMoveWithSafePathAir(aiBrain, unit, destination)
+    if not destination then
+        return false
+    end
+
+    local result, bestPos = false
+    result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Air')
+    -- If we're here, we haven't used transports and we can path to the destination
+    if result then
+        local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Air', unit:GetPosition(), destination, 10)
+        if path then
+            local pathSize = table.getn(path)
+            -- Move to way points (but not to destination... leave that for the final command)
+            for widx, waypointPath in path do
+                if pathSize ~= widx then
+                    IssueMove({unit}, waypointPath)
+                end
+            end
+        end
+        -- If there wasn't a *safe* path (but dest was pathable), then the last move would have been to go there directly
+        -- so don't bother... the build/capture/reclaim command will take care of that after we return
+        return true
+    end
+
+    return false
+end
+
+function SCTAEngineerMoveWithSafePathNaval(aiBrain, unit, destination)
+    if not destination then
+        return false
+    end
+
+    local result, bestPos = false
+    result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Water')
+    if not result and not SUtils.CheckForMapMarkers(aiBrain) then
+        result, bestPos = unit:CanPathTo(destination)
+    end
+    -- If we're here, we haven't used transports and we can path to the destination
+    if result then
+        local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Water', unit:GetPosition(), destination, 10)
+        if path then
+            local pathSize = table.getn(path)
+            -- Move to way points (but not to destination... leave that for the final command)
+            for widx, waypointPath in path do
+                if pathSize ~= widx then
+                    IssueMove({unit}, waypointPath)
+                end
+            end
+        end
+        -- If there wasn't a *safe* path (but dest was pathable), then the last move would have been to go there directly
+        -- so don't bother... the build/capture/reclaim command will take care of that after we return
+        return true
+    end
+
+    return false
+end
+
+function SCTAEngineerMoveWithSafePathLand(aiBrain, unit, destination)
+    if not destination then
+        return false
+    end
+
+    local result, bestPos = false
+    result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Land')
+    if not result and not SUtils.CheckForMapMarkers(aiBrain) then
+        result, bestPos = unit:CanPathTo(destination)
+    end
+    local pos = unit:GetPosition()
+    local bUsedTransports = false
+    if not result or VDist2Sq(pos[1], pos[3], destination[1], destination[3]) > 65536 and unit.PlatoonHandle and not EntityCategoryContains(categories.COMMAND, unit) then
+        -- If we can't path to our destination, we need, rather than want, transports
+        local needTransports = not result
+        -- If distance > 512
+        if VDist2Sq(pos[1], pos[3], destination[1], destination[3]) > 262144 then
+            needTransports = true
+        end
+        -- Skip the last move... we want to return and do a build
+        bUsedTransports = AIAttackUtils.SendPlatoonWithTransportsNoCheck(aiBrain, unit.PlatoonHandle, destination, needTransports, true, false)
+
+        if bUsedTransports then
+            return true
+        end
+    end
+
+    -- If we're here, we haven't used transports and we can path to the destination
+    if result then
+        local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Land', unit:GetPosition(), destination, 10)
+        if path then
+            local pathSize = table.getn(path)
+            -- Move to way points (but not to destination... leave that for the final command)
+            for widx, waypointPath in path do
+                if pathSize ~= widx then
+                    IssueMove({unit}, waypointPath)
+                end
+            end
+        end
+        -- If there wasn't a *safe* path (but dest was pathable), then the last move would have been to go there directly
+        -- so don't bother... the build/capture/reclaim command will take care of that after we return
+        return true
+    end
+
+    return false
+end
+
+--[[function SCTAEngineerMoveWithSafePath(aiBrain, unit, destination)
+    if not destination then
+        return false
+    end
+    local pos = unit:GetPosition()
+    -- don't check a path if we are in build range
+    if VDist2(pos[1], pos[3], destination[1], destination[3]) < 14 then
+        return true
+    end
+    local result, bestPos = unit:CanPathTo(destination)
+    if EntityCategoryContains(categories.LAND, unit) then
+        local bUsedTransports = false
+    -- Increase check to 300 for transports
+    if not result or VDist2Sq(pos[1], pos[3], destination[1], destination[3]) > 300 * 300
+    and unit.PlatoonHandle then
+        -- If we can't path to our destination, we need, rather than want, transports
+        local needTransports = not result
+        if VDist2Sq(pos[1], pos[3], destination[1], destination[3]) > 300 * 300 then
+            needTransports = true
+        end
+
+        -- Skip the last move... we want to return and do a build
+        bUsedTransports = AIAttackUtils.SendPlatoonWithTransportsNoCheck(aiBrain, unit.PlatoonHandle, destination, needTransports, true, false)
+
+        if bUsedTransports then
+            return true
+        elseif VDist2Sq(pos[1], pos[3], destination[1], destination[3]) > 512 * 512 then
+            -- If over 512 and no transports dont try and walk!
+            return false
+        end
+        end
+    end
+    -- If we're here, we haven't used transports and we can path to the destination
+    if result then
+        if EntityCategoryContains(categories.LAND, unit) then
+        local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Land', pos, destination)
+        elseif EntityCategoryContains(categories.NAVAL, unit) then
+        local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Water', pos, destination)
+        elseif EntityCategoryContains(categories.AIR, unit) then
+        local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Air', pos, destination)
+        else
+        local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Amphibious', pos, destination)
+        end
+        if path then
+            local pathSize = table.getn(path)
+            -- Move to way points (but not to destination... leave that for the final command)
+            for widx, waypointPath in path do
+                if pathSize ~= widx then
+                    IssueMove({unit}, waypointPath)
+                end
+            end
+        end
+        -- If there wasn't a *safe* path (but dest was pathable), then the last move would have been to go there directly
+        -- so don't bother... the build/capture/reclaim command will take care of that after we return
+        return true
+    end
+    return false
+end]]

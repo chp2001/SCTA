@@ -1,21 +1,28 @@
-UnitBlueprint {
-   Merge = true,
-    Display = {
-       Abilities = {
-        '<LOC ability_radar>Radar',
-        '<LOC ability_omni>Omni Sensor',
-        },
-    },
-    Intel = {
-        RadarRadius = 80,
-        VisionRadius = 14,
-        OmniRadius = 25,
-    },
-    Weapon = {
-        [1] = {
-            Damage = 10,
-        },
-        [2] = {
-        }, 
-    },
+   UnitBlueprint {
+    Merge = true,
+  Defense = {
+     Health = 700,
+     MaxHealth = 700,
+     },
+  Economy = {
+     BuildCostEnergy = 9000,
+     BuildCostMass = 500,
+     BuildTime = 10000,
+ },
+  Intel = {
+      RadarRadius = 80,
+      VisionRadius = 14,
+      OmniRadius = 25,
+     },
+     Physics = {
+         MaxAcceleration = 2,
+         MaxSpeed = 4,
+     },
+     Weapon = {
+         [1] = {
+             Damage = 80,
+         },
+         [2] = {
+         }, 
+     },
 }

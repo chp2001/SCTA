@@ -18,7 +18,6 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
             ThreatWeights = {
                 IgnoreStrongerTargetsRatio = 100.0,  #DUNCAN - uncommented, was 100
-                AggressiveMove = false,
                 PrimaryThreatTargetType = 'Naval',
                 SecondaryThreatTargetType = 'Economy',
                 SecondaryThreatWeight = 0.1,
@@ -43,7 +42,6 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
             ThreatWeights = {
                 IgnoreStrongerTargetsRatio = 100.0,  #DUNCAN - uncommented, was 100
-                AggressiveMove = false,
                 PrimaryThreatTargetType = 'AntiSub',
                 SecondaryThreatTargetType = 'Naval',
                 SecondaryThreatWeight = 0.1,
@@ -65,7 +63,6 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
             ThreatWeights = {
                 IgnoreStrongerTargetsRatio = 100.0,  #DUNCAN - uncommented, was 100
-                AggressiveMove = false,
                 PrimaryThreatTargetType = 'Naval',
                 SecondaryThreatTargetType = 'Economy',
                 SecondaryThreatWeight = 0.1,
@@ -92,7 +89,6 @@ BuilderGroup {
                 IgnoreStrongerTargetsRatio = 100.0,  #DUNCAN - uncommented, was 100
                 PrimaryThreatTargetType = 'Economy',
                 SecondaryThreatTargetType = 'Naval',
-                AggressiveMove = false,
                 SecondaryThreatWeight = 0.1,
                 WeakAttackThreatWeight = 1,
                 VeryNearThreatWeight = 10,

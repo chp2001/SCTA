@@ -1,5 +1,5 @@
 local oldARMASER = ARMASER
-ARMASER= Class(oldARMASER) { 
+ARMASER = Class(oldARMASER) { 
 	OnStopBeingBuilt = function(self,builder,layer)
 		oldARMASER.OnStopBeingBuilt(self,builder,layer)
 		self:SetScriptBit('RULEUTC_CloakToggle', false)

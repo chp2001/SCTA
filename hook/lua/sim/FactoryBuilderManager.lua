@@ -12,7 +12,7 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
             return false
         end
         --LOG('IEXISTFACT')
-        local builderTypes = {'Air', 'KBot', 'Vehicle', 'Hover', 'Sea', 'Gate', }
+        local builderTypes = {'Air', 'KBot', 'Vehicle', 'Hover', 'Sea', 'Seaplane', 'Gate', }
         for _,v in builderTypes do
 			self:AddBuilderType(v)
 		end
@@ -49,6 +49,11 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
                 self:AddInstancedBuilder(newBuilder, 'Vehicle')
                 self:AddInstancedBuilder(newBuilder, 'Hover')
                 self:AddInstancedBuilder(newBuilder, 'Sea')
+            end
+        elseif newBuilder:GetBuilderType() == 'SpecAir' then
+            for __,v in self.BuilderData do
+                self:AddInstancedBuilder(newBuilder, 'Air')
+                self:AddInstancedBuilder(newBuilder, 'Seaplane')
             end
         elseif newBuilder:GetBuilderType() == 'Field' then
             for __,v in self.BuilderData do
@@ -87,7 +92,9 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
                     self:SetupNewFactory(unit, 'Vehicle')
                 elseif EntityCategoryContains(categories.HOVER, unit) then
                     self:SetupNewFactory(unit, 'Hover')
-                elseif EntityCategoryContains(categories.AIR, unit) then
+                elseif EntityCategoryContains(categories.SUBMERSIBLE, unit) then
+                    self:SetupNewFactory(unit, 'Seaplane')
+                elseif EntityCategoryContains(categories.OVERLAYRADAR, unit) then
                     self:SetupNewFactory(unit, 'Air')
                 elseif EntityCategoryContains(categories.NAVAL, unit) then
                     self:SetupNewFactory(unit, 'Sea')
@@ -97,6 +104,35 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
                 self.LocationActive = true
             end
         end,
+
+        GetFactoriesBuildingCategory = function(self, category, facCategory)
+            if not self.Brain.SCTAAI then
+                return SCTAFactoryBuilderManager.GetFactoriesBuildingCategory(self, category, facCategory)
+            end
+            local units = {}
+            for k,v in EntityCategoryFilterDown(facCategory, self.FactoryList) do
+                if v.Dead then
+                    continue
+                end
+    
+                if not v:IsUnitState('Building') then
+                    continue
+                end
+    
+                local beingBuiltUnit = v.UnitBeingBuilt
+                if not beingBuiltUnit or beingBuiltUnit.Dead then
+                    continue
+                end
+    
+                if not EntityCategoryContains(category, beingBuiltUnit) then
+                    continue
+                end
+    
+                table.insert(units, v)
+            end
+            return units
+        end,
+        
 ----InitialVersion Below From LOUD
         SetRallyPoint = function(self, factory)
             if not self.Brain.SCTAAI then

@@ -11,7 +11,9 @@ local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterTh
 
 
 local EngineerProduction = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  0, LAB) then 
+    if Factory(aiBrain,  6, LAB) then 
+        return 0
+    elseif Factory(aiBrain,  0, LAB) then 
         return 10
     else
         return 101
@@ -61,7 +63,8 @@ BuilderGroup {
         PriorityFunction = EngineerProduction,
         Priority = 110,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.MOBILE * categories.AIR * categories.SCOUT } },
+            { MIBC, 'LessThanGameTime', {900} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.MOBILE * categories.AIR * categories.SCOUT } },
             { TAutils, 'EcoManagementTA', { 0.75, 1.05, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
@@ -72,7 +75,7 @@ BuilderGroup {
         Priority = 120,
         PriorityFunction = EngineerProductionT3,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.MOBILE * categories.AIR * categories.SCOUT } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.MOBILE * categories.AIR * categories.SCOUT } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
@@ -135,24 +138,13 @@ BuilderGroup {
         BuilderType = 'Air',
     }, 
     Builder {
-        BuilderName = 'SCTAAi FactoryT3 Engineer',
-        PlatoonTemplate = 'T3BuildEngineerSCTA',
-        Priority = 120, -- Top factory priority
-        PriorityFunction = EngineerProductionT3,
+        BuilderName = 'SCTAAi T2 Experimental',
+        PlatoonTemplate = 'SCTAExperimental',
+        Priority = 120,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.TECH3 * categories.HOVER} }, -- Build engies until we have 4 of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.EXPERIMENTAL * categories.MOBILE - categories.ENGINEER} },
         },
-        BuilderType = 'SpecHover',
-    },
-    Builder {
-        BuilderName = 'SCTAAi FactoryT3 Engineer Air',
-        PlatoonTemplate = 'T3BuildEngineerAirSCTA',
-        Priority = 125, -- Top factory priority
-        PriorityFunction = EngineerProductionT3,
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.TECH3 * categories.AIR} }, -- Build engies until we have 4 of them.
-        },
-        BuilderType = 'Air',
+        BuilderType = 'Gate',
     },
 }
 

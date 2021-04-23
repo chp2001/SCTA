@@ -7,14 +7,11 @@ BaseBuilderTemplate {
         'SCTAAIAirBuilder',
         'SCTAAILandFormers',
         'SCTAAIAirFormers',
-        'SCTAAIT3Builder',
-        'SCTAUpgrades',
         -- Buildings etc
         
         'SCTAExpansionBuilders',
         'SCTAAIEngineerEcoBuilder',
         'SCTAAIFactoryExpansions',
-        'SCTAAIEngineerMiscBuilder',
         'SCTAAssisters',
     },
     BaseSettings = {

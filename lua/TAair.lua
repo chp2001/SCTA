@@ -110,7 +110,22 @@ TASeaair = Class(TAair)
 			end
 		end
     end,
+}
 
+TAIntelSeaAir = Class(TASeaair) {
+
+	OnStopBeingBuilt = function(self)
+		TASeaair.OnStopBeingBuilt(self)
+		self.MainCost = self:GetBlueprint().Economy.MaintenanceConsumptionPerSecondEnergy
+		self:SetMaintenanceConsumptionActive()
+		if self:GetBlueprint().Intel.Cloak then
+		self.TACloak = true
+		self.Mesh = self:GetBlueprint().Display.MeshBlueprint
+		self:SetScriptBit('RULEUTC_CloakToggle', true)
+		TASeaair.OnIntelEnabled(self)
+		end
+		self:RequestRefreshUI()
+	end,
 }
 
 TAIntelAir = Class(TAair) {

@@ -30,7 +30,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 107,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'ExpansionStart', 2},
+        DelayEqualBuildPlattons = {'ExpansionStart', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'ExpansionStart' }},
             { MIBC, 'GreaterThanGameTime', { 180 } },
@@ -63,7 +63,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 96,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'ExpansionStart', 2},
+        DelayEqualBuildPlattons = {'ExpansionStart', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'ExpansionStart' }},
             { UCBC, 'ExpansionAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
@@ -96,7 +96,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 99,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'ExpansionStart', 2},
+        DelayEqualBuildPlattons = {'ExpansionStart', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'ExpansionStart' }},
             { MIBC, 'GreaterThanGameTime', {720} },
@@ -130,7 +130,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         Priority = 104,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'ExpansionStart', 2},
+        DelayEqualBuildPlattons = {'ExpansionStart', 1},
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {720} },
             { UCBC, 'StartLocationNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
@@ -195,7 +195,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         Priority = 251,
         InstanceCount = 2,
-        DelayEqualBuildPlattons = {'NavalStart', 2},
+        DelayEqualBuildPlattons = {'NavalStart', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'NavalStart' }},
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, (categories.NAVAL * categories.FACTORY), 'Enemy'}},

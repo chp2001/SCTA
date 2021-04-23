@@ -128,7 +128,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 63,
-            DamageRadius = 1, 
+            DamageRadius = 2, 
             DamageType = 'TASpec',
             DisplayName = 'ARMKBOT_MISSILE',
             FireTargetLayerCapsTable = {

@@ -114,7 +114,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 1250,
-            DamageRadius = 3, 
+            DamageRadius = 5, 
             DamageType = 'Normal',
             DisplayName = 'ARM_BERTHACANNON',
             FireTargetLayerCapsTable = {

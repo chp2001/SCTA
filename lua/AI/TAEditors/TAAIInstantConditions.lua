@@ -113,52 +113,10 @@ end
 
 --TA Build Conditions
 
-function TAAIGetEconomyNumbersMass(aiBrain)
-    local econ = {}
-    econ.MassStorageRatio = aiBrain:GetEconomyStoredRatio('MASS')
-    econ.MassStorage = aiBrain:GetEconomyStored('MASS')
-
-    if econ.MassStorageRatio ~= 0 then
-        econ.MassMaxStored = econ.MassStorage / econ.MassStorageRatio
-    else
-        econ.MassMaxStored = econ.MassStorage
-    end
-
-    return econ
-end
-
-function TAAIGetEconomyNumbersEnergy(aiBrain)
-    local econ = {}
-    econ.EnergyStorageRatio = aiBrain:GetEconomyStoredRatio('ENERGY')
-    econ.EnergyStorage = aiBrain:GetEconomyStored('ENERGY')
-
-    if econ.EnergyStorageRatio ~= 0 then
-        econ.EnergyMaxStored = econ.EnergyStorage / econ.EnergyStorageRatio
-    else
-        econ.EnergyMaxStored = econ.EnergyStorage
-    end
-
-    return econ
-end
-
 function TAAIEcoConditionStorage(aiBrain)
     local econStore = {}
     econStore.MassStorageRatio = aiBrain:GetEconomyStoredRatio('MASS')
     econStore.EnergyStorageRatio = aiBrain:GetEconomyStoredRatio('ENERGY')
-    econStore.EnergyStorage = aiBrain:GetEconomyStored('ENERGY')
-    econStore.MassStorage = aiBrain:GetEconomyStored('MASS')
-
-    if econStore.MassStorageRatio ~= 0 then
-        econStore.MassMaxStored = econStore.MassStorage / econStore.MassStorageRatio
-    else
-        econStore.MassMaxStored = econStore.MassStorage
-    end
-
-    if econStore.EnergyStorageRatio ~= 0 then
-        econStore.EnergyMaxStored = econStore.EnergyStorage / econStore.EnergyStorageRatio
-    else
-        econStore.EnergyMaxStored = econStore.EnergyStorage
-    end
 
     return econStore
 end
@@ -187,7 +145,7 @@ function TAEnergyEfficiency(aiBrain)
 
     if aiBrain.EconomyMonitorThread then
         local econTime = aiBrain:GetEconomyOverTime()
-        econ.EnergyEfficiencyOverTime = math.min(econTime.EnergyIncome / econTime.EnergyRequested, 2)
+        econ.EnergyEfficiencyOverTime = math.min(econTime.EnergyIncome / econTime.EnergyRequested, 4)
     end
 
     return econ
@@ -197,25 +155,22 @@ function EcoManagementTA(aiBrain, mStorageRatio, eStorageRatio, EnergyEfficiency
     local econEff = TAAIEcoConditionEfficiency(aiBrain)
     if (econEff.MassEfficiencyOverTime >= MassEfficiency and econEff.EnergyEfficiencyOverTime >= EnergyEfficiency) then
         return true
-    end
-    local econStore = TAAIEcoConditionStorage(aiBrain)
-    if (econStore.MassStorageRatio >= mStorageRatio and econStore.EnergyStorageRatio >= eStorageRatio) then
+    elseif (aiBrain:GetEconomyStoredRatio('Mass').MassStorageRatio >= mStorageRatio and aiBrain:GetEconomyStoredRatio('ENERGY').EnergyStorageRatio >= eStorageRatio) then
         return true
-    end
+    else
     return false
+    end
 end
 
 function LessMassStorageMaxTA(aiBrain, mStorageRatio)
-    local econ = TAAIGetEconomyNumbersMass(aiBrain)
-    if (econ.MassStorageRatio < mStorageRatio) then
+    if (aiBrain:GetEconomyStoredRatio('MASS').MassStorageRatio < mStorageRatio) then
         return true
     end
     return false
 end
 
 function GreaterEnergyStorageMaxTA(aiBrain, eStorageRatio)
-    local econ = TAAIGetEconomyNumbersEnergy(aiBrain)
-    if (econ.EnergyStorageRatio >= eStorageRatio) then
+    if (aiBrain:GetEconomyStoredRatio('ENERGY').EnergyStorageRatio >= eStorageRatio) then
         return true
     end
     return false

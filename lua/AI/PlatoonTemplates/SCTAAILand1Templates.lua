@@ -1,18 +1,6 @@
 
 
 PlatoonTemplate {
-    Name = 'T1LandAASCTA',
-    FactionSquads = {
-        Arm = {
-            { 'armjeth', 1, 1, 'attack', 'none' },
-        },
-        Core = {
-            { 'corstorm', 1, 1, 'attack', 'none' },
-        },
-    }
-}
-
-PlatoonTemplate {
     Name = 'T1LandDFTankSCTA',
     FactionSquads = {
         Arm = {
@@ -126,7 +114,7 @@ PlatoonTemplate {
         Core = {
             { 'corcan', 1, 2, 'attack', 'none' },
             { 'coracv', 1, 1, 'support', 'None' },
-            { 'corcan', 1, 1, 'attack', 'none' },
+            { 'coramph', 1, 1, 'attack', 'none' },
         },
     }
 }

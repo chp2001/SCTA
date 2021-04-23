@@ -5,15 +5,7 @@ PlatoonTemplate {
     Name = 'CommanderBuilderSCTA',
     Plan = 'EngineerBuildAISCTACommand',
     GlobalSquads = {
-        { categories.COMMAND * TA, 1, 1, 'support', 'None' }
-    },
-}
-
-PlatoonTemplate {
-    Name = 'CommanderSCTAAssist',
-    Plan = 'ManagerEngineerAssistAI',
-    GlobalSquads = {
-        { categories.COMMAND * TA, 1, 1, 'support', 'None' },
+        { categories.COMMAND + categories.SUBCOMMANDER * TA, 1, 1, 'support', 'None' }
     },
 }
 
@@ -102,26 +94,9 @@ PlatoonTemplate {
     },
 }
 
-
-PlatoonTemplate {
-    Name = 'EngineerBuilderSCTAAssist',
-    Plan = 'ManagerEngineerAssistAI',
-    GlobalSquads = {
-        {categories.FIELDENGINEER, 1, 1, 'support', 'None' }
-    },
-}
-
 PlatoonTemplate {
     Name = 'EngineerBuilderSCTAField',
-    Plan = 'SCTAReclaimAI',
-    GlobalSquads = {
-        {categories.FIELDENGINEER, 1, 1, 'support', 'None' }
-    },
-}
-
-PlatoonTemplate {
-    Name = 'EngineerBuilderSCTAFieldFinish',
-    Plan = 'ManagerEngineerFindUnfinished',
+    Plan = 'ManagerEngineerAssistAI',
     GlobalSquads = {
         {categories.FIELDENGINEER, 1, 1, 'support', 'None' }
     },
@@ -163,30 +138,30 @@ PlatoonTemplate {
             { 'armpw', 1, 1, 'attack', 'none' },
             { 'armck', 1, 1, 'support', 'None' },
             { 'armpw', 1, 1, 'attack', 'none' },
-            { 'armck', 1, 4, 'support', 'None' },
+            { 'armck', 1, 1, 'support', 'None' },
             { 'armjeth', 1, 1, 'guard', 'none' },
-            { 'armck', 1, 3, 'support', 'None'},
-            { 'armjeth', 1, 1, 'guard', 'none' },
-            { 'armck', 1, 3, 'support', 'None' },
-            { 'armjeth', 1, 1, 'guard', 'none' },
-            { 'armck', 1, 3, 'support', 'None' },
+            { 'armck', 1, 1, 'support', 'None'},
             { 'armjeth', 1, 1, 'guard', 'none' },
             { 'armck', 1, 2, 'support', 'None' },
+            { 'armjeth', 1, 1, 'guard', 'none' },
+            { 'armck', 1, 2, 'support', 'None' },
+            { 'armjeth', 1, 1, 'guard', 'none' },
+            { 'armck', 1, 5, 'support', 'None' },
         },
         Core = {
             { 'corcv', 1, 1, 'support', 'None' },
             { 'corgator', 1, 1, 'attack', 'none' },
             { 'corcv', 1, 1, 'support', 'None' },
             { 'corgator', 1, 1, 'attack', 'none' },
-            { 'corcv', 1, 4, 'support', 'None' },
+            { 'corcv', 1, 1, 'support', 'None' },
             { 'cormist', 1, 1, 'guard', 'none' },
-            { 'corcv', 1, 3, 'support', 'None' },
-            { 'cormist', 1, 1, 'guard', 'none' },
-            { 'corcv', 1, 3, 'support', 'None' },
-            { 'cormist', 1, 1, 'guard', 'none' },
-            { 'corcv', 1, 3, 'support', 'None' },
+            { 'corcv', 1, 1, 'support', 'None' },
             { 'cormist', 1, 1, 'guard', 'none' },
             { 'corcv', 1, 2, 'support', 'None' },
+            { 'cormist', 1, 1, 'guard', 'none' },
+            { 'corcv', 1, 2, 'support', 'None' },
+            { 'cormist', 1, 1, 'guard', 'none' },
+            { 'corcv', 1, 5, 'support', 'None' },
         },
     }
 }

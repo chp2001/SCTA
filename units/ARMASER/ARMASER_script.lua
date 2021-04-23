@@ -30,7 +30,6 @@ ARMASER = Class(TACounter) {
 
 	OnIntelDisabled = function(self)
 		TACounter.OnIntelDisabled(self)
-		self:PlayUnitSound('Deactivate')
 		self.Sliders.ltong:SetGoal(0,0,0)
 		self.Sliders.ltong:SetSpeed(4)
 		--MOVE rtong to y-axis <0> SPEED <4.00>;
@@ -52,7 +51,6 @@ ARMASER = Class(TACounter) {
 	end,
 
 	OnIntelEnabled = function(self)
-		self:PlayUnitSound('Activate')
 		self.Sliders.tongend:SetGoal(0,0,0)
 		self.Sliders.tongend:SetSpeed(3)
 

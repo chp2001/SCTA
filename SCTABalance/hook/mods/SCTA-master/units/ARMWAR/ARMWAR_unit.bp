@@ -26,12 +26,12 @@ Physics = {
     },
     Weapon = {
 	    [1] = {
-            Damage = 4,
-            MaxRadius = 13,
+            Damage = 5,
+            MaxRadius = 15,
         },
         [2] = {
             RateOfFire = 1,
-            Damage = 25,
+            Damage = 20,
         },
         [3] = {
         },

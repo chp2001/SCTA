@@ -155,7 +155,8 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {900} }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB } }, -- Stop after 10 facs have been built.
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -190,5 +191,67 @@ BuilderGroup {
                 }
             }
         }
+    },
+    Builder {
+        BuilderName = 'SCTA Commander Assist Gantry Construction',
+        PlatoonTemplate = 'CommanderBuilderSCTA',
+        PlatoonAIPlan = 'ManagerEngineerAssistAI',
+        Priority = 126,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                AssistRange = 120,
+                BeingBuiltCategories = {'GATE'},                                                   
+                AssistUntilFinished = true,
+            },
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA CDR Assist Structure',
+        PlatoonTemplate = 'CommanderBuilderSCTA',
+        PlatoonAIPlan = 'ManagerEngineerAssistAI',
+        Priority = 111,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
+            { MIBC, 'GreaterThanGameTime', {600} },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                AssistRange = 20,
+                BeingBuiltCategories = {'STRUCTURE'},                                        
+                AssistUntilFinished = true,
+            },
+        },
+    },
+    Builder {
+        BuilderName = 'SCTA CDR Finish Structure',
+        PlatoonTemplate = 'CommanderBuilderSCTA',
+        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
+        Priority = 125,
+        InstanceCount = 2,
+        BuilderConditions = {
+                { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
+            },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                BeingBuiltCategories = {'STRUCTURE,'},
+                Time = 20,
+            },
+        },
+        BuilderType = 'Any',
     },
 }

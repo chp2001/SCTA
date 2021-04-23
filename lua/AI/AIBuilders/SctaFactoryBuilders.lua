@@ -355,4 +355,27 @@ BuilderConditions = {
         },
         BuilderType = 'Any',
     },
+    Builder {
+        BuilderName = 'SCTAAI MetalMaker',
+        PlatoonTemplate = 'EngineerBuilderSCTAALL',
+        PriorityFunction = UnitProduction,
+        Priority = 120,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0,  FUSION} }, 
+            { TAutils, 'GreaterThanEconEnergyTAEfficiency', {1.05 }},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            DesiresAssist = false,
+            NeedGuard = false,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T2MassCreation',
+                }
+            }
+        }
+    },
 }

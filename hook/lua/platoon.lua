@@ -1500,7 +1500,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local aiBrain = self:GetBrain()
         local armyIndex = aiBrain:GetArmyIndex()
         local data = self.PlatoonData
-        self.myThreat = self:CalculatePlatoonThreat('AntiSurface', categories.MOBILE)
+        self.myThreat = self:CalculatePlatoonThreat('Surface', categories.MOBILE)
         local target, engineer
         while aiBrain:PlatoonExists(self) do
             target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ALLUNITS - categories.AIR - categories.COMMAND - categories.STRUCTURE)
@@ -1550,10 +1550,12 @@ Platoon = Class(SCTAAIPlatoon) {
                     local pathLength = table.getn(path)
                     for i=1, pathLength-1 do
                         self:MoveToLocation(path[i], false)
+                        self:SetPlatoonFormationOverride('Block')
                     end
                 end
             end
             elseif engineer then
+                self:SetPlatoonFormationOverride('Block')
                 self:Stop()
                 local position = AIUtils.RandomLocation(engineer:GetPosition()[1],engineer:GetPosition()[3])
                 WaitSeconds(3)
@@ -2300,11 +2302,7 @@ Platoon = Class(SCTAAIPlatoon) {
             target = self:FindClosestUnit('Attack', 'Enemy', true, categories.MOBILE * categories.LAND - categories.COMMAND)
             if target then
                 blip = target:GetBlip(armyIndex)
-                self:Stop()
-                self:AttackTarget(target)
-                --DUNCAN - added to try and stop AI getting stuck.
-                local position = AIUtils.RandomLocation(target:GetPosition()[1],target:GetPosition()[3])
-                self:MoveToLocation(position, false)
+                self:AggressiveMoveToLocation(table.copy(target:GetPosition()))
             end
             WaitSeconds(17)
         end

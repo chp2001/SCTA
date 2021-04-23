@@ -289,28 +289,6 @@ BuilderGroup {
             }
         }
     },
-    Builder {
-        BuilderName = 'SCTAAI MetalMaker',
-        PlatoonTemplate = 'EngineerBuilderSCTAALL',
-        Priority = 120,
-        InstanceCount = 2,
-        BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0,  FUSION} }, 
-            { TAutils, 'GreaterThanEconEnergyTAEfficiency', {0.75 }},
-            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            DesiresAssist = false,
-            NeedGuard = false,
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T2MassCreation',
-                }
-            }
-        }
-    },
     ---AIREco
     Builder {
         BuilderName = 'SCTAAI T1Engineer Air 850 Mex',

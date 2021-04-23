@@ -87,6 +87,18 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
+    Name = 'T2LandAuxTerrain2',
+    FactionSquads = {
+        Arm = {
+            { 'armcroc', 1, 1, 'attack', 'none' },
+        },
+        Core = {
+            { 'corseal', 1, 1, 'attack', 'none' },
+        },
+    }
+}
+
+PlatoonTemplate {
     Name = 'T2LandMissileSCTA2',
     FactionSquads = {
         Arm = {

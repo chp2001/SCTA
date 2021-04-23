@@ -5,15 +5,7 @@ PlatoonTemplate {
     Name = 'CommanderBuilderSCTA',
     Plan = 'EngineerBuildAISCTACommand',
     GlobalSquads = {
-        { categories.COMMAND * TA, 1, 1, 'support', 'None' }
-    },
-}
-
-PlatoonTemplate {
-    Name = 'CommanderSCTAAssist',
-    Plan = 'ManagerEngineerAssistAI',
-    GlobalSquads = {
-        { categories.COMMAND * TA, 1, 1, 'support', 'None' },
+        { categories.COMMAND + categories.SUBCOMMANDER * TA, 1, 1, 'support', 'None' }
     },
 }
 

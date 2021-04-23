@@ -12,7 +12,7 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
             return false
         end
         --LOG('IEXISTFACT')
-        local builderTypes = {'Air', 'KBot', 'Vehicle', 'Hover', 'Sea', 'Gate', }
+        local builderTypes = {'Air', 'KBot', 'Vehicle', 'Hover', 'Sea', 'Seaplane', 'Gate', }
         for _,v in builderTypes do
 			self:AddBuilderType(v)
 		end

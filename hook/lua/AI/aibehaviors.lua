@@ -154,8 +154,8 @@ function CDRSCTADGun(aiBrain, cdr)
                     if Utilities.XZDistanceTwoVectors(cdr.CDRHome, cdr:GetPosition()) > 45 then
                         enemyThreat = aiBrain:GetThreatAtPosition(targetPos, 1, true, 'AntiSurface')
                         enemyCdrThreat = aiBrain:GetThreatAtPosition(targetPos, 1, true, 'Commander')
-                        friendlyThreat = aiBrain:GetThreatAtPosition(targetPos, 1, true, 'AntiSurface', aiBrain:GetArmyIndex())
-                        if enemyThreat - enemyCdrThreat >= friendlyThreat + (cdrThreat / 1.5) then
+                        --friendlyThreat = aiBrain:GetThreatAtPosition(targetPos, 1, true, 'AntiSurface', aiBrain:GetArmyIndex())
+                        if enemyThreat - enemyCdrThreat >= (cdrThreat / 2) then
                             break
                         end
                     end
@@ -171,9 +171,9 @@ function CDRSCTADGun(aiBrain, cdr)
                     end
                 elseif distressLoc then
                     enemyThreat = aiBrain:GetThreatAtPosition(distressLoc, 1, true, 'AntiSurface')
-                    enemyCdrThreat = aiBrain:GetThreatAtPosition(distressLoc, 1, true, 'Commander')
+                    --enemyCdrThreat = aiBrain:GetThreatAtPosition(distressLoc, 1, true, 'Commander')
                     friendlyThreat = aiBrain:GetThreatAtPosition(distressLoc, 1, true, 'AntiSurface', aiBrain:GetArmyIndex())
-                    if enemyThreat - enemyCdrThreat >= friendlyThreat + (cdrThreat / 3) then
+                    if enemyThreat >= friendlyThreat + cdrThreat then
                         break
                     end
                     if distressLoc and (Utilities.XZDistanceTwoVectors(distressLoc, cdrPos) < distressRange) then
@@ -204,7 +204,7 @@ function CDRSCTADGun(aiBrain, cdr)
                 continueFighting = false
             end
             -- If com is down to yellow then dont keep fighting
-            if (cdr:GetHealthPercent() < 0.75) and Utilities.XZDistanceTwoVectors(cdr.CDRHome, cdr:GetPosition()) > 30 then
+            if (cdr:GetHealthPercent() < 0.9) and Utilities.XZDistanceTwoVectors(cdr.CDRHome, cdr:GetPosition()) > 20 then
                 continueFighting = false
             end
         until not continueFighting or not aiBrain:PlatoonExists(plat)

@@ -7,7 +7,7 @@
 local RAIDER = (categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea)
 local SPECIAL = (RAIDER + categories.EXPERIMENTAL + categories.ENGINEER + categories.SCOUT)
 local GROUND = categories.MOBILE * categories.LAND
-local TACATS = (categories.ANTISHIELD + categories.AMPHIBIOUS)
+local TACATS = (categories.ANTISHIELD + categories.AMPHIBIOUS + categories.BOMB)
 local RANGE = (categories.ARTILLERY + categories.SILO + categories.ANTIAIR)
 
 PlatoonTemplate {
@@ -22,7 +22,7 @@ PlatoonTemplate {
     Name = 'T1LandScoutFormSCTA',
     Plan = 'ScoutingAI',
     GlobalSquads = {
-        { GROUND * categories.SCOUT * categories.TECH1 * categories.OVERLAYRADAR, 1, 1, 'scout', 'None' },
+        { GROUND * categories.SCOUT * categories.OVERLAYRADAR, 1, 1, 'scout', 'None' },
     }
 }
 
@@ -70,7 +70,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTAEndGame',
     Plan = 'AttackSCTAForceAIEndGame',
     GlobalSquads = {
-        { GROUND - SPECIAL, 25, 50, 'Attack', 'none' }
+        { GROUND - SPECIAL - categories.BOMB, 25, 50, 'Attack', 'none' }
     },
 }
 
@@ -182,19 +182,19 @@ PlatoonTemplate {
     Name = 'T3LandHOVERSCTA',
     FactionSquads = {
         Arm = {
-            { 'armanac', 1, 2, 'attack', 'none' },
-            { 'armah', 1, 1, 'attack', 'none' },
+            { 'armanac', 1, 1, 'attack', 'none' },
+            { 'armsh', 1, 1, 'attack', 'none' },
         },
         Core = {
-            { 'corsnap', 1, 2, 'attack', 'none' },
-            { 'corah', 1, 1, 'attack', 'none' },
+            { 'corsnap', 1, 1, 'attack', 'none' },
+            { 'corsh', 1, 1, 'attack', 'none' },
         },
     }
 }
 
 
 PlatoonTemplate {
-    Name = 'THOVERAASCTA',
+    Name = 'T3HOVERAASCTA',
     FactionSquads = {
         Arm = {
             { 'armah', 1, 1, 'attack', 'none' }

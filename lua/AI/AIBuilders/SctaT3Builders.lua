@@ -3,6 +3,19 @@ local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
+local LAB = (categories.FACTORY * categories.TECH2)
+local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
+
+local EngineerProductionT3 = function(self, aiBrain, builderManager)
+    if Factory(aiBrain,  12, LAB)  then 
+        return 130
+    elseif Factory(aiBrain,  0, categories.GATE) then
+        return 135
+    else
+        return 0
+    end
+end
+
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIT3Builder',
@@ -32,7 +45,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT3 AntiAir',
-        PlatoonTemplate = 'THOVERAASCTA',
+        PlatoonTemplate = 'T3HOVERAASCTA',
         Priority = 133,
         InstanceCount = 2,
         BuilderConditions = {
@@ -50,5 +63,25 @@ BuilderGroup {
         { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Seaplane',
+    },
+    Builder {
+        BuilderName = 'SCTAAi FactoryT3 Engineer',
+        PlatoonTemplate = 'T3BuildEngineerSCTA',
+        Priority = 120, -- Top factory priority
+        PriorityFunction = EngineerProductionT3,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.TECH3 * categories.HOVER} }, -- Build engies until we have 4 of them.
+        },
+        BuilderType = 'SpecHover',
+    },
+    Builder {
+        BuilderName = 'SCTAAi FactoryT3 Engineer Air',
+        PlatoonTemplate = 'T3BuildEngineerAirSCTA',
+        Priority = 125, -- Top factory priority
+        PriorityFunction = EngineerProductionT3,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.TECH3 * categories.AIR} }, -- Build engies until we have 4 of them.
+        },
+        BuilderType = 'SpecAir',
     },
 }

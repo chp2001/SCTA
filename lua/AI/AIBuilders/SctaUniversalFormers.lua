@@ -132,47 +132,6 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'SCTA Commander Assist Gantry Construction',
-        PlatoonTemplate = 'CommanderSCTAAssist',
-        Priority = 126,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssistRange = 120,
-                BeingBuiltCategories = {'GATE'},                                                   
-                AssistUntilFinished = true,
-            },
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTA CDR Assist Structure',
-        PlatoonTemplate = 'CommanderSCTAAssist',
-        Priority = 111,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
-            { MIBC, 'GreaterThanGameTime', {600} },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssistRange = 20,
-                BeingBuiltCategories = {'STRUCTURE'},                                        
-                AssistUntilFinished = true,
-            },
-        },
-    },
-    Builder {
         BuilderName = 'SCTA Assist Production Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
         Priority = 5,

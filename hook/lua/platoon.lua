@@ -2301,8 +2301,11 @@ Platoon = Class(SCTAAIPlatoon) {
         while aiBrain:PlatoonExists(self) do
             target = self:FindClosestUnit('Attack', 'Enemy', true, categories.MOBILE * categories.LAND - categories.COMMAND)
             if target then
-                blip = target:GetBlip(armyIndex)
-                self:AggressiveMoveToLocation(table.copy(target:GetPosition()))
+                self:Stop()
+                self:AttackTarget(target)
+                --DUNCAN - added to try and stop AI getting stuck.
+                local position = AIUtils.RandomLocation(target:GetPosition()[1],target:GetPosition()[3])
+                self:MoveToLocation(position, false)
             end
             WaitSeconds(17)
         end

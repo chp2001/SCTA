@@ -36,8 +36,7 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
+            DesiresAssist = false,
         }
     },
     Builder {
@@ -57,8 +56,7 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
+            DesiresAssist = false,
         }
     },
     Builder {
@@ -78,8 +76,7 @@ BuilderGroup {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
+            DesiresAssist = false,
         }
     },
     Builder {

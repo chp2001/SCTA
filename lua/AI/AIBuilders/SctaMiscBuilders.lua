@@ -70,7 +70,6 @@ BuilderGroup {
                 BuildStructures = {
                     'T3StrategicMissileDefense',
                 },
-                Location = 'LocationType',
             }
         }
     },

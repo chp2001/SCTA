@@ -1308,10 +1308,12 @@ Platoon = Class(SCTAAIPlatoon) {
             if not eng.NotBuildingThread then
                 eng.NotBuildingThread = eng:ForkThread(eng.PlatoonHandle.SCTAWatchForNotBuilding)
             end
-            if eng.PlatoonHandle.PlanName == 'EngineerBuildAISCTA' and AIUtils.SCTAEngineerMoveWithSafePathLand(aiBrain, eng, buildLocation) or
-            eng.PlatoonHandle.PlanName == 'EngineerBuildAISCTAAir' and AIUtils.SCTAEngineerMoveWithSafePathAir(aiBrain, eng, buildLocation) or
-            eng.PlatoonHandle.PlanName == 'EngineerBuildAISCTANaval' and AIUtils.SCTAEngineerMoveWithSafePathNaval(aiBrain, eng, buildLocation) or
-            AIUtils.SCTAEngineerMoveWithSafePath(aiBrain, eng, buildLocation) then   
+            --local PlanName = eng.PlatoonHandle.PlanName
+    --LOG('*PlatoonName', PlanName)
+    if eng.PlatoonHandle.PlanName == 'EngineerBuildAISCTA' and AIUtils.SCTAEngineerMoveWithSafePathLand(aiBrain, eng, buildLocation) or
+    eng.PlatoonHandle.PlanName == 'EngineerBuildAISCTAAir' and AIUtils.SCTAEngineerMoveWithSafePathAir(aiBrain, eng, buildLocation) or
+    eng.PlatoonHandle.PlanName == 'EngineerBuildAISCTANaval' and AIUtils.SCTAEngineerMoveWithSafePathNaval(aiBrain, eng, buildLocation) or
+    eng.PlatoonHandle.PlanName == 'EngineerBuildAISCTACommand' and AIUtils.SCTAEngineerMoveWithSafePath(aiBrain, eng, buildLocation) then  
                 if not eng or eng.Dead or not eng.PlatoonHandle or not aiBrain:PlatoonExists(eng.PlatoonHandle) then
                     return
                 end
@@ -2362,12 +2364,21 @@ Platoon = Class(SCTAAIPlatoon) {
 
     SCTAEngineerTypeAI = function(self)
         AIAttackUtils.GetMostRestrictiveLayer(self)
-        if self.MovementLayer == 'Land' then
-            return self:EngineerBuildAISCTA()
+        --local PlanName = self.PlanName
+        if self.MovementLayer == 'Amphibious' then
+            --self.PlanName = 'EngineerBuildAISCTACommand'
+            self:SetAIPlan('EngineerBuildAISCTACommand')
         elseif self.MovementLayer == 'Water' then
-            return self:EngineerBuildAISCTANaval()
-        else 
-            return self:EngineerBuildAISCTAAir() 
+            --self.PlanName = 'EngineerBuildAISCTANaval'
+            self:SetAIPlan('EngineerBuildAISCTANaval')
+        elseif self.MovementLayer == 'Air' then
+            --self.PlanName = 'EngineerBuildAISCTAAir'
+            --LOG('*PlatoonNameOri', PlanName)
+            self:SetAIPlan('EngineerBuildAISCTAAir')
+        else
+            --self.PlanName = 'EngineerBuildAISCTA'
+            --LOG('*PlatoonNameOri2', PlanName)
+            self:SetAIPlan('EngineerBuildAISCTA')
         end
     end,
 

@@ -116,7 +116,7 @@ BuilderGroup {
             Assist = {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Engineer',
-                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE,'},
+                BeingBuiltCategories = {'STRUCTURE'},
                 Time = 20,
             },
         },

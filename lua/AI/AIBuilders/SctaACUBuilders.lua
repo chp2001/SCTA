@@ -8,6 +8,15 @@ local MABC = '/lua/editor/MarkerBuildConditions.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
+local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
+
+local UnitProduction = function(self, aiBrain, builderManager)
+    if Factory(aiBrain,  8, LAB) then
+        return 150
+    else
+        return 0
+    end
+end
 
 
 BuilderGroup {
@@ -197,6 +206,7 @@ BuilderGroup {
         PlatoonTemplate = 'CommanderBuilderSCTA',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
         Priority = 126,
+        PriorityFunction = UnitProduction,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
@@ -217,6 +227,7 @@ BuilderGroup {
         BuilderName = 'SCTA CDR Assist Structure',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
+        PriorityFunction = UnitProduction,
         Priority = 111,
         InstanceCount = 1,
         BuilderConditions = {
@@ -239,7 +250,7 @@ BuilderGroup {
         BuilderName = 'SCTA CDR Finish Structure',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 125,
+        Priority = 105,
         InstanceCount = 2,
         BuilderConditions = {
                 { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
@@ -253,6 +264,45 @@ BuilderGroup {
             },
         },
         BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'Decoy Commander Gateway', -- Names need to be GLOBALLY unique.  Prefixing the AI name will help avoid name collisions with other AIs.	
+        PlatoonTemplate = 'CommanderBuilderSCTADecoy', -- Specify what platoon template to use, see the PlatoonTemplates folder.	
+        Priority = 150, -- Make this super high priority.  The AI chooses the highest priority builder currently available.	
+        InstanceCount = 1,
+        BuilderConditions = { -- The build conditions determine if this builder is available to be used or not.	
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            },		
+        BuilderType = 'Any',	-- Add a behaviour to the Commander unit once its done with it's BO.	 -- Flag this builder to be only run once.	
+        BuilderData = {	
+            Construction = {
+                BuildStructures = { -- The buildings to make	
+                'T3QuantumGate',
+                }	
+            }	
+        }	
+    },
+    Builder {
+        BuilderName = 'Decoy Commander T3 Arty', -- Names need to be GLOBALLY unique.  Prefixing the AI name will help avoid name collisions with other AIs.	
+        PlatoonTemplate = 'CommanderBuilderSCTADecoy',
+        Priority = 210,
+        InstanceCount = 2,
+        PlatoonAddBehaviors = { 'CommanderBehaviorSCTA' }, 
+        BuilderConditions = {
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildStructures = {
+                    'T3Artillery',
+                }
+            }
+        }
     },
 }
 

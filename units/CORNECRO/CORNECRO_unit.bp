@@ -41,7 +41,6 @@ UnitBlueprint {
         'SELECTABLE',
         'BOT',
         'TECH2',
-        'FIELDENGINEER',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -51,7 +50,8 @@ UnitBlueprint {
         'SHOWQUEUE',
         'MOBILE',
 	    'CONSTRUCTION',
-	    'LAND',
+        'LAND',
+        'FIELDENGINEER',
         'CORE',
     },
     Defense = {
@@ -108,7 +108,6 @@ UnitBlueprint {
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {
-            RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,

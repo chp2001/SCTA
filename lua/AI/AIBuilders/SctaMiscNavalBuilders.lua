@@ -63,7 +63,6 @@ BuilderGroup {
         Priority = 125,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 900 } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
@@ -262,7 +261,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Naval Mex 50',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 121,
+        Priority = 75,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         DelayEqualBuildPlattons = {'MexLand2', 1},
         BuilderConditions = {
@@ -283,7 +282,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Naval 150 Mex',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 97,
+        Priority = 50,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'MexLand2', 1},
         BuilderConditions = {
@@ -338,7 +337,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Naval Hydro',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 99,
+        Priority = 30,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         DelayEqualBuildPlattons = {'Hydro', 1},
         BuilderConditions = {
@@ -361,7 +360,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2 Naval PGen',
         PlatoonTemplate = 'EngineerBuilderSCTANaval2',
-        Priority = 127,
+        Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },

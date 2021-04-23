@@ -101,25 +101,4 @@ BuilderGroup {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.MOBILE - categories.ENGINEER} },
         },
     },
-    Builder {
-        BuilderName = 'SCTA Engineer Finish Navy',
-        PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 125,
-        InstanceCount = 2,
-        BuilderConditions = {
-                { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
-            },
-        BuilderData = {
-            Location = 'LocationType',
-            NearMarkerType = 'Naval Area',
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                BeingBuiltCategories = {'STRUCTURE'},
-                Time = 20,
-            },
-        },
-        BuilderType = 'Any',
-    },
 }

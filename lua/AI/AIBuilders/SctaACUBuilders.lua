@@ -240,6 +240,7 @@ BuilderGroup {
             Assist = {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Engineer',
+                AssisteeCategory = 'Engineer',
                 AssistRange = 20,
                 BeingBuiltCategories = {'STRUCTURE'},                                        
                 AssistUntilFinished = true,
@@ -258,8 +259,8 @@ BuilderGroup {
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
+                AssistUntilFinished = true,
                 AssisteeType = 'Engineer',
-                BeingBuiltCategories = {'STRUCTURE,'},
                 Time = 20,
             },
         },

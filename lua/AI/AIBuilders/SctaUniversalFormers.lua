@@ -175,5 +175,25 @@ BuilderGroup {
         },
         BuilderType = 'Any',
     },
+    Builder {
+        BuilderName = 'SCTANukeAI',
+        PlatoonTemplate = 'NuclearMissileSCTA',
+        Priority = 300,
+        BuilderConditions = {
+                { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.NUKE * categories.STRUCTURE * categories.TECH3}},
+            },
+        BuilderType = 'Any',
+        FormRadius = 10000,
+    },
+    Builder {
+        BuilderName = 'SCTAAntiNukeAI',
+        PlatoonTemplate = 'AntiNuclearMissileSCTA',
+        Priority = 300,
+        BuilderConditions = {
+                { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.ANTIMISSILE * categories.STRUCTURE * categories.TECH3}},
+            },
+        BuilderType = 'Any',
+        FormRadius = 10000,
+    },
 }
 

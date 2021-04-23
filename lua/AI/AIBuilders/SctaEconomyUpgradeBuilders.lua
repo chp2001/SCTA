@@ -98,9 +98,28 @@ BuilderGroup {
         BuilderName = 'SCTAMetalMakr',
         PlatoonTemplate = 'FabricationSCTA',
         Priority = 300,
-        InstanceCount = 3,
         BuilderConditions = {
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.MASSFABRICATION}},
+            },
+        BuilderType = 'Any',
+        FormRadius = 10000,
+    },
+    Builder {
+        BuilderName = 'SCTAArtilleryAI',
+        PlatoonTemplate = 'ArtillerySCTA',
+        Priority = 300,
+        BuilderConditions = {
+                { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.ARTILLERY * categories.STRUCTURE}},
+            },
+        BuilderType = 'Any',
+        FormRadius = 10000,
+    },
+    Builder {
+        BuilderName = 'SCTAMiniNukeAI',
+        PlatoonTemplate = 'TacticalMissileSCTA',
+        Priority = 300,
+        BuilderConditions = {
+                { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.TACTICALMISSILEPLATFORM * categories.STRUCTURE}},
             },
         BuilderType = 'Any',
         FormRadius = 10000,

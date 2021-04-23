@@ -62,7 +62,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTAEndgame',
     Plan = 'SCTAStrikeForceAIEndgame', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND - SPECIAL, 25, 50, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND - SPECIAL, 10, 50, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
 
@@ -70,7 +70,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTAEndGame',
     Plan = 'AttackSCTAForceAIEndGame',
     GlobalSquads = {
-        { GROUND - SPECIAL - categories.BOMB, 25, 50, 'attack', 'none' }
+        { GROUND - SPECIAL - categories.BOMB, 10, 50, 'attack', 'none' }
     },
 }
 
@@ -78,7 +78,7 @@ PlatoonTemplate {
     Name = 'LandRocketAttackSCTA',
     Plan = 'HuntAI',
     GlobalSquads = {
-        { GROUND * RANGE - SPECIAL - TACATS, 2, 20, 'attack', 'none' }
+        { GROUND * RANGE - SPECIAL - TACATS, 2, 10, 'attack', 'none' }
     },
 }
 
@@ -135,22 +135,6 @@ PlatoonTemplate {
     GlobalSquads = {
         { categories.EXPERIMENTAL * categories.MOBILE - categories.SUBCOMMANDER, 1, 1, 'attack', 'none' }
     },
-}
-
-PlatoonTemplate {
-    Name = 'FabricationSCTA',
-    Plan = 'PauseAI',
-    GlobalSquads = {
-        { categories.STRUCTURE * categories.MASSFABRICATION, 1, 1, 'support', 'none' },
-    }
-}
-
-PlatoonTemplate {
-    Name = 'SCTAIntel',
-    Plan = 'PauseAI',
-    GlobalSquads = {
-        { categories.STRUCTURE * (categories.OPTICS + categories.RADAR), 1, 1, 'support', 'none' },
-    }
 }
 
 PlatoonTemplate {

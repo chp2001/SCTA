@@ -239,7 +239,7 @@ BuilderGroup {
         PlatoonTemplate = 'T3LandDFBotSCTA',
         Priority = 130,
         PriorityFunction = LandProductionT3,
-        InstanceCount = 2,
+        InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LAND * categories.TECH3 * 
             ((categories.SNIPER * categories.ARM) + (categories.ARTILLERY * categories.CORE))}}, -- Don't make tanks if we have lots of them.
@@ -251,10 +251,11 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT3 Vehicle',
         PlatoonTemplate = 'T3LandDFVehicleSCTA',
         Priority = 130,
+        InstanceCount = 1,
         PriorityFunction = LandProductionT3,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LAND * categories.TECH3 * 
-            (((categories.SNIPER + categories.ARTILLERY) * categories.ARM) + (categories.ARTILLERY * categories.CORE))}}, -- Don't make tanks if we have lots of them.
+            ((categories.SNIPER * categories.ARM) + (categories.ARTILLERY * categories.CORE))}}, -- Don't make tanks if we have lots of them.
             { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
         },
         BuilderType = 'Vehicle',

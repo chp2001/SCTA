@@ -407,6 +407,7 @@ BuilderGroup {
             Assist = {
                 AssistLocation = 'LocationType',
                 AssistUntilFinished = true,
+                AssisteeType = 'Engineer',
                 Time = 20,
             },
         },

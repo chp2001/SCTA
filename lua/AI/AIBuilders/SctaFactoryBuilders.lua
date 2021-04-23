@@ -252,9 +252,8 @@ BuilderConditions = {
         InstanceCount = 1,
 BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, FUSION} },
-            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
-            { TAutils, 'EcoManagementTA', { 0.9, 0.9, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
         },
         BuilderType = 'Any',
@@ -293,22 +292,22 @@ BuilderConditions = {
     },
     ---EmergencyFacts
     Builder {
-        BuilderName = 'SCTAGameEnder',
+        BuilderName = 'SCTAT3 Artillery',
         PlatoonTemplate = 'EngineerBuilderSCTA3',
         Priority = 160,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {3600} }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.STRUCTURE * categories.EXPERIMENTAL * categories.ARTILLERY} },        
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2,  PLATFORM } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
-            NumAssistees = 10,
+            NumAssistees = 4,
             Construction = {
                 BuildStructures = {
-                    'T4Artillery',
+                    'T3Artillery',
                 },
             }
         }
@@ -374,6 +373,71 @@ BuilderConditions = {
                 BuildClose = true,
                 BuildStructures = {
                     'T2MassCreation',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'Decoy Commander Gateway', -- Names need to be GLOBALLY unique.  Prefixing the AI name will help avoid name collisions with other AIs.	
+        PlatoonTemplate = 'CommanderBuilderSCTADecoy', -- Specify what platoon template to use, see the PlatoonTemplates folder.	
+        Priority = 150, -- Make this super high priority.  The AI chooses the highest priority builder currently available.	
+        InstanceCount = 1,
+        BuilderConditions = { -- The build conditions determine if this builder is available to be used or not.	
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            },		
+        BuilderType = 'Any',	-- Add a behaviour to the Commander unit once its done with it's BO.	 -- Flag this builder to be only run once.	
+        BuilderData = {	
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 4,
+            Construction = {
+                BuildStructures = { -- The buildings to make	
+                'T3QuantumGate',
+                }	
+            }	
+        }	
+    },
+    Builder {
+        BuilderName = 'Decoy Commander Game Ender SCTA', -- Names need to be GLOBALLY unique.  Prefixing the AI name will help avoid name collisions with other AIs.	
+        PlatoonTemplate = 'CommanderBuilderSCTADecoy',
+        Priority = 210,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 6,  PLATFORM } },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 6,  FUSION} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 10,
+            Construction = {
+                BuildStructures = {
+                    'T4Artillery',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'Nuclear Missile SCTA', -- Names need to be GLOBALLY unique.  Prefixing the AI name will help avoid name collisions with other AIs.	
+        PlatoonTemplate = 'CommanderBuilderSCTADecoy',
+        Priority = 210,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  PLATFORM } },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  FUSION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.NUKE * categories.STRUCTURE * categories.TECH3} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 10,
+            Construction = {
+                BuildStructures = {
+                    'T3StrategicMissile',
                 }
             }
         }

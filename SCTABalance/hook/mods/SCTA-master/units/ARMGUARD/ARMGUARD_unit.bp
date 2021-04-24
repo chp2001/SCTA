@@ -15,8 +15,9 @@ UnitBlueprint {
     SelectionSizeZ = 2,
     Weapon = {
     [1] = {
-        EnergyDrainPerSecond = 250,
-        EnergyRequired = 500,
+        EnergyDrainPerSecond = 100,
+        EnergyRequired = 1000,
+        RateOfFire = 0.05,
         EnergyChargeForFirstShot = true,
     },
     [2] = {}, 

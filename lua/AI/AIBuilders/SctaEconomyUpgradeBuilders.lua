@@ -15,7 +15,9 @@ local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
-
+local PLANT = (categories.FACTORY * categories.TECH1)
+local LAB = (categories.FACTORY * categories.TECH2)
+local PLATFORM = (categories.FACTORY * categories.TECH3)
 
 BuilderGroup {
     BuilderGroupName = 'SCTAUpgrades',
@@ -27,17 +29,16 @@ BuilderGroup {
         InstanceCount = 1,
         Priority = 150,
         BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0,  LAB } },
             { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'TAExtractors' }},
-            { MIBC, 'GreaterThanGameTime', { 480 } },
             { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 1, categories.MASSEXTRACTION * categories.TECH1 } },  
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 }},
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         FormRadius = 1000,
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
+            DesiresAssist = false,
         }
     },
     Builder {
@@ -48,17 +49,16 @@ BuilderGroup {
         Priority = 100,
         BuilderConditions = {
             { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'TAExtractors' }},
-            { MIBC, 'GreaterThanGameTime', { 900 } },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3,  LAB } },
             { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.TECH1 } },  
             { EBC, 'GreaterThanEconIncome',  { 8, 70}},
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.8, 0.75 }},
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         FormRadius = 500,
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
+            DesiresAssist = false,
         }
     },
     Builder {
@@ -68,18 +68,17 @@ BuilderGroup {
         InstanceCount = 2,
         Priority = 150,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 600 } },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0,  LAB } },
             { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'TAExtractors' }},
             { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 3, categories.MASSEXTRACTION * categories.TECH1 } },  
-            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.75, 0.75, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 800, 1000 } },
         },
         FormRadius = 500,
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
+            DesiresAssist = false,
         }
     },
     Builder {
@@ -88,12 +87,10 @@ BuilderGroup {
         Priority = 50,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {1200} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.OPTICS} },
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 1.5 }},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.RADAR * categories.STRUCTURE * categories.TECH2} },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
-            { IBC, 'BrainNotLowPowerMode', {} },
+            { TAutils, 'EcoManagementTA', { 0.75, 1.05, 0.5, 0.9, } },
         },
         BuilderType = 'Any',
     },
@@ -101,9 +98,28 @@ BuilderGroup {
         BuilderName = 'SCTAMetalMakr',
         PlatoonTemplate = 'FabricationSCTA',
         Priority = 300,
-        InstanceCount = 3,
         BuilderConditions = {
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.MASSFABRICATION}},
+            },
+        BuilderType = 'Any',
+        FormRadius = 10000,
+    },
+    Builder {
+        BuilderName = 'SCTAArtilleryAI',
+        PlatoonTemplate = 'ArtillerySCTA',
+        Priority = 300,
+        BuilderConditions = {
+                { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.ARTILLERY * categories.STRUCTURE}},
+            },
+        BuilderType = 'Any',
+        FormRadius = 10000,
+    },
+    Builder {
+        BuilderName = 'SCTAMiniNukeAI',
+        PlatoonTemplate = 'TacticalMissileSCTA',
+        Priority = 300,
+        BuilderConditions = {
+                { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.TACTICALMISSILEPLATFORM * categories.STRUCTURE}},
             },
         BuilderType = 'Any',
         FormRadius = 10000,

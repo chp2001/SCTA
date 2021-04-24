@@ -56,25 +56,6 @@ BuilderGroup {
         BuilderType = 'Any',
     },
     Builder {
-        BuilderName = 'SCTA Engineer Finish',
-        PlatoonTemplate = 'EngineerBuilderSCTAALL',
-        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 125,
-        InstanceCount = 2,
-        BuilderConditions = {
-                { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
-            },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                BeingBuiltCategories = {'STRUCTURE,'},
-                Time = 20,
-            },
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
         BuilderName = 'SCTA Engineer Reclaim Air',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
         PlatoonAIPlan = 'SCTAReclaimAI',

@@ -3,9 +3,8 @@
 #
 #Script created by Raevn
 
-local TAMediumCannonProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TAMediumCannonProjectile
+local TABombProjectile = import('/mods/SCTA-master/lua/TAprojectiles.lua').TABombProjectile
 
-CORBOMB = Class(TAMediumCannonProjectile) {
-}
+CORBOMB = Class(TABombProjectile) {}
 
 TypeClass = CORBOMB

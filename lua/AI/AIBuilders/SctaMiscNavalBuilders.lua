@@ -45,11 +45,9 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
-            Location = 'LocationType',
-            NearMarkerType = 'Naval Area',
             Construction = {
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
+                Location = 'LocationType',
+                NearMarkerType = 'Naval Area',
                 BuildStructures = {
                     'T1SeaFactory',
                 },
@@ -63,40 +61,16 @@ BuilderGroup {
         Priority = 125,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 900 } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
         BuilderData = {
-            Location = 'LocationType',
-            NearMarkerType = 'Naval Area',
-                Construction = {
-                    BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                    BaseTemplate = 'NavalBaseTemplates',
+            Construction = {
+                Location = 'LocationType',
+                NearMarkerType = 'Naval Area',
                     BuildStructures = {
                     'T2SeaFactory',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTAAI T2Engineer Naval 100 Mex',
-        PlatoonTemplate = 'EngineerBuilderSCTANaval2',
-        Priority = 101,
-        InstanceCount = 1, -- The max number concurrent instances of this builder.
-        DelayEqualBuildPlattons = {'Mex2', 1},
-        BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Mex2' }},
-            { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 100, -500, 100, 0, 'AntiSurface', 1 }},
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            Location = 'LocationType',
-            NearMarkerType = 'Naval Area',
-            Construction = {
-                BuildStructures = {
-                    'T2Resource',
                 }
             }
         }
@@ -116,11 +90,9 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
-            Location = 'LocationType',
-            NearMarkerType = 'Naval Area',
-                Construction = {
-                    BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                    BaseTemplate = 'NavalBaseTemplates',
+            Construction = {
+                Location = 'LocationType',
+                NearMarkerType = 'Naval Area',
                     BuildStructures = {
                     'T2SeaFactory',
                 }
@@ -141,11 +113,9 @@ BuilderGroup {
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
-            Location = 'LocationType',
-            NearMarkerType = 'Naval Area',
             Construction = {
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
+                Location = 'LocationType',
+                NearMarkerType = 'Naval Area',
                 BuildStructures = {
                     'T3AirFactory',
                 }
@@ -155,7 +125,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T3LAND Hover Factory Naval',
         PlatoonTemplate = 'EngineerBuilderSCTANaval2',
-        Priority = 143,
+        Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
@@ -166,11 +136,9 @@ BuilderGroup {
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
-            Location = 'LocationType',
-            NearMarkerType = 'Naval Area',
             Construction = {
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
+                Location = 'LocationType',
+                NearMarkerType = 'Naval Area',
                 BuildClose = true,
                 BuildStructures = {
                     'T3LandFactory',
@@ -191,11 +159,9 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
-            Location = 'LocationType',
-            NearMarkerType = 'Naval Area',
-                Construction = {
-                    BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                    BaseTemplate = 'NavalBaseTemplates',
+            Construction = {
+                Location = 'LocationType',
+                NearMarkerType = 'Naval Area',
                     BuildClose = true,
                     BuildStructures = {
                     'T2MassCreation',
@@ -216,11 +182,9 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
-            Location = 'LocationType',
-            NearMarkerType = 'Naval Area',
             Construction = {
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
+                Location = 'LocationType',
+                NearMarkerType = 'Naval Area',
                 BuildClose = false,
                 MarkerRadius = 20,
                 LocationRadius = 75,
@@ -247,11 +211,9 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
-            Location = 'LocationType',
-            NearMarkerType = 'Naval Area',
             Construction = {
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
+                Location = 'LocationType',
+                NearMarkerType = 'Naval Area',
                 BuildClose = true,
                 BuildStructures = {
                     'T1EnergyProduction3',
@@ -260,20 +222,20 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTAAI T1Engineer Naval Mex 50',
+        BuilderName = 'SCTAAI T1Engineer Naval Mex 30',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 121,
+        Priority = 75,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         DelayEqualBuildPlattons = {'MexLand2', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
-            { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 50, -500, 100, 0, 'AntiSurface', 1 }},
+            { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 20, -500, 100, 0, 'AntiSurface', 1 }},
         },
         BuilderType = 'Any',
         BuilderData = {
-            Location = 'LocationType',
-            NearMarkerType = 'Naval Area',
             Construction = {
+                Location = 'LocationType',
+                NearMarkerType = 'Naval Area',
                 BuildStructures = {
                     'T1Resource',
                 }
@@ -281,22 +243,22 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTAAI T1Engineer Naval 150 Mex',
-        PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 97,
+        BuilderName = 'SCTAAI T1Engineer Naval 30 T2',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval2',
+        Priority = 50,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'MexLand2', 1},
+        DelayEqualBuildPlattons = {'Mex2', 1},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
-            { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 150, -500, 150, 0, 'AntiSurface', 1 }},
+            { UCBC, 'CheckBuildPlattonDelay', { 'Mex2' }},
+            { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 30, -500, 150, 0, 'AntiSurface', 1 }},
         },
         BuilderType = 'Any',
         BuilderData = {
-            Location = 'LocationType',
-            NearMarkerType = 'Naval Area',
             Construction = {
+                Location = 'LocationType',
+                NearMarkerType = 'Naval Area',
                 BuildStructures = {
-                    'T1Resource',
+                    'T2Resource',
                 }
             }
         }
@@ -315,11 +277,9 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
-            Location = 'LocationType',
-            NearMarkerType = 'Naval Area',
             Construction = {
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
+                Location = 'LocationType',
+                NearMarkerType = 'Naval Area',
                 BuildClose = true,
                 MarkerRadius = 20,
                 LocationRadius = 75,
@@ -338,20 +298,20 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Naval Hydro',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        Priority = 99,
+        Priority = 30,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         DelayEqualBuildPlattons = {'Hydro', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Hydro' }},
-            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 300}},
+            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 30}},
         },
         BuilderType = 'Any',
         BuilderData = {
-            Location = 'LocationType',
-            NearMarkerType = 'Naval Area',
             NeedGuard = false,
             DesiresAssist = false,
             Construction = {
+                Location = 'LocationType',
+                NearMarkerType = 'Naval Area',
                 BuildStructures = {
                     'T1HydroCarbon',
                 }
@@ -361,7 +321,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2 Naval PGen',
         PlatoonTemplate = 'EngineerBuilderSCTANaval2',
-        Priority = 127,
+        Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
@@ -369,13 +329,11 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
-            Location = 'LocationType',
-            NearMarkerType = 'Naval Area',
             DesiresAssist = false,
             NeedGuard = false,
             Construction = {
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
+                Location = 'LocationType',
+                NearMarkerType = 'Naval Area',
                 BuildStructures = {
                     'T2EnergyProduction',
                 }
@@ -394,7 +352,6 @@ BuilderGroup {
             { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
             },
         BuilderData = {
-            NearMarkerType = 'Naval Area',
             Location = 'LocationType',
             Reclaim = {'cortide, armtide,'},
             ReclaimTime = 30,
@@ -415,9 +372,9 @@ BuilderGroup {
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
+            Construction = {
             Location = 'LocationType',
             NearMarkerType = 'Naval Area',
-            Construction = {
             BuildClose = true,
             OrderedTemplate = true,
             NearBasePatrolPoints = false,
@@ -436,5 +393,24 @@ BuilderGroup {
                 },
             },
         }
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Finish Navy',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
+        Priority = 125,
+        InstanceCount = 2,
+        BuilderConditions = {
+                { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
+            },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssistUntilFinished = true,
+                AssisteeType = 'Engineer',
+                Time = 20,
+            },
+        },
+        BuilderType = 'Any',
     },
 }

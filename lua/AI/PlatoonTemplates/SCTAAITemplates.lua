@@ -7,7 +7,7 @@
 local RAIDER = (categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea)
 local SPECIAL = (RAIDER + categories.EXPERIMENTAL + categories.ENGINEER + categories.SCOUT)
 local GROUND = categories.MOBILE * categories.LAND
-local TACATS = (categories.ANTISHIELD + categories.AMPHIBIOUS + categories.BOMB)
+local TACATS = (categories.ANTISHIELD + categories.AMPHIBIOUS)
 local RANGE = (categories.ARTILLERY + categories.SILO + categories.ANTIAIR)
 
 PlatoonTemplate {
@@ -62,7 +62,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTAEndgame',
     Plan = 'SCTAStrikeForceAIEndgame', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND - SPECIAL, 25, 50, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND - SPECIAL - categories.BOMB, 20, 50, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
 
@@ -70,24 +70,24 @@ PlatoonTemplate {
     Name = 'LandAttackSCTAEndGame',
     Plan = 'AttackSCTAForceAIEndGame',
     GlobalSquads = {
-        { GROUND - SPECIAL - categories.BOMB, 25, 50, 'attack', 'none' }
+        { GROUND - SPECIAL - categories.BOMB, 20, 50, 'attack', 'none' }
     },
 }
 
 PlatoonTemplate {
     Name = 'LandRocketAttackSCTA',
-    Plan = 'HuntAI',
+    Plan = 'HuntSCTAAI',
     GlobalSquads = {
-        { GROUND * RANGE - SPECIAL - TACATS, 2, 20, 'attack', 'none' }
+        { GROUND * (RANGE + categories.FIELDENGINEER) - TACATS, 2, 10, 'attack', 'none' }
     },
 }
 
 
 PlatoonTemplate {
     Name = 'StrikeForceSCTALaser',
-    Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
+    Plan = 'HuntSCTAAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND * categories.ANTISHIELD - categories.AMPHIBIOUS, -- Type of units.
+        { GROUND * (categories.ANTISHIELD + categories.FIELDENGINEER) - categories.AMPHIBIOUS, -- Type of units.
           2, -- Min number of units.
           10, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',
@@ -135,22 +135,6 @@ PlatoonTemplate {
     GlobalSquads = {
         { categories.EXPERIMENTAL * categories.MOBILE - categories.SUBCOMMANDER, 1, 1, 'attack', 'none' }
     },
-}
-
-PlatoonTemplate {
-    Name = 'FabricationSCTA',
-    Plan = 'PauseAI',
-    GlobalSquads = {
-        { categories.STRUCTURE * categories.MASSFABRICATION, 1, 1, 'support', 'none' },
-    }
-}
-
-PlatoonTemplate {
-    Name = 'SCTAIntel',
-    Plan = 'PauseAI',
-    GlobalSquads = {
-        { categories.STRUCTURE * (categories.OPTICS + categories.RADAR), 1, 1, 'support', 'none' },
-    }
 }
 
 PlatoonTemplate {

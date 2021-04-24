@@ -7,7 +7,25 @@ local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local MABC = '/lua/editor/MarkerBuildConditions.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
+local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
+local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
+
+local UnitProduction = function(self, aiBrain, builderManager)
+    if Factory(aiBrain,  6, LAB) then
+        return 150
+    else
+        return 0
+    end
+end
+
+local GantryProduction = function(self, aiBrain, builderManager)
+    if Factory(aiBrain,  0, categories.GATE) then
+        return 200
+    else
+        return 0
+    end
+end
 
 
 BuilderGroup {
@@ -197,6 +215,7 @@ BuilderGroup {
         PlatoonTemplate = 'CommanderBuilderSCTA',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
         Priority = 126,
+        PriorityFunction = GantryProduction,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
@@ -217,6 +236,7 @@ BuilderGroup {
         BuilderName = 'SCTA CDR Assist Structure',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
+        PriorityFunction = UnitProduction,
         Priority = 111,
         InstanceCount = 1,
         BuilderConditions = {
@@ -229,6 +249,7 @@ BuilderGroup {
             Assist = {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Engineer',
+                AssisteeCategory = 'Engineer',
                 AssistRange = 20,
                 BeingBuiltCategories = {'STRUCTURE'},                                        
                 AssistUntilFinished = true,
@@ -239,7 +260,7 @@ BuilderGroup {
         BuilderName = 'SCTA CDR Finish Structure',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 125,
+        Priority = 105,
         InstanceCount = 2,
         BuilderConditions = {
                 { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
@@ -247,11 +268,13 @@ BuilderGroup {
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
+                AssistUntilFinished = true,
                 AssisteeType = 'Engineer',
-                BeingBuiltCategories = {'STRUCTURE,'},
                 Time = 20,
             },
         },
         BuilderType = 'Any',
     },
 }
+
+--{ SIBC, 'EngineerNeedsAssistance', { false, 'LocationType', {'STRUCTURE'} }},

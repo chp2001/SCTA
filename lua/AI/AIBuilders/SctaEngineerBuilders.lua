@@ -146,6 +146,15 @@ BuilderGroup {
         },
         BuilderType = 'Gate',
     },
+    Builder {
+        BuilderName = 'Decoy Commander',
+        PlatoonTemplate = 'DecoyCommander',
+        Priority = 150,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.EXPERIMENTAL * categories.ENGINEER} },
+        },
+        BuilderType = 'Gate',
+    },
 }
 
 ----needFigureOutMassEco and KnowingHowPauseFactoriesForAi

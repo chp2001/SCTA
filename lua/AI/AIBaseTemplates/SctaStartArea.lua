@@ -12,6 +12,7 @@ BaseBuilderTemplate {
         'SCTAExpansionBuilders',
         'SCTAAIEngineerEcoBuilder',
         'SCTAAIFactoryExpansions',
+        'SCTAUpgrades',
         'SCTAAssisters',
     },
     BaseSettings = {
@@ -22,8 +23,8 @@ BaseBuilderTemplate {
             SCU = 0,
         },
         FactoryCount = {
-            Land = 4,
-            Air = 2,
+            Land = 8,
+            Air = 4,
             Sea = 1,
             Gate = 0,
         },

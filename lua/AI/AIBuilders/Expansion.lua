@@ -174,7 +174,8 @@ BuilderGroup {
         BuilderData = {
             Construction = {
                 BuildClose = false,
-                BaseTemplate = ExBaseTmpl,
+                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
+                BaseTemplate = 'NavalBaseTemplates',
                 ExpansionBase = true,
                 NearMarkerType = 'Naval Area',
                 ExpansionRadius = 25, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
@@ -183,7 +184,7 @@ BuilderGroup {
                 ThreatMin = -1000,
                 ThreatMax = 1000,
                 ThreatRings = 2,
-                ThreatType = 'AntiSurface',
+                ThreatType = 'Naval',
                 BuildStructures = {                    
                     'T1SeaFactory',
                 }
@@ -208,7 +209,8 @@ BuilderGroup {
         BuilderData = {
             Construction = {
                 BuildClose = false,
-                BaseTemplate = ExBaseTmpl,
+                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
+                BaseTemplate = 'NavalBaseTemplates',
                 ExpansionBase = true,
                 NearMarkerType = 'Naval Area',
                 ExpansionRadius = 25, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close

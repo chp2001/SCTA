@@ -13,8 +13,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAMissileTower',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 22,
-        InstanceCount = 3,
+        Priority = 75,
+        InstanceCount = 5,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.SILO - categories.MOBILE} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.5}},
@@ -32,7 +32,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAMissileDefense',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 73,
+        Priority = 75,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} }, 
@@ -57,7 +57,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  FUSION} },  
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2,  FUSION} },  
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.ANTIMISSILE * categories.TECH3} },
             { TAutils, 'GreaterThanEconEnergyTAEfficiency', {1.05 }},
         },
@@ -70,7 +70,6 @@ BuilderGroup {
                 BuildStructures = {
                     'T3StrategicMissileDefense',
                 },
-                Location = 'LocationType',
             }
         }
     },
@@ -117,45 +116,6 @@ BuilderGroup {
                 }
             }
         }
-    },
-    Builder {
-        BuilderName = 'PGen Emergency',
-        PlatoonTemplate = 'EngineerBuilderSCTAALL',
-        Priority = 27,
-        InstanceCount = 5,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {480} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.75}},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, FUSION} },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T1EnergyProduction2',
-                }
-            }
-        }
-    }, 
-    Builder {
-        BuilderName = 'SCTAMissileTower Emergency',
-        PlatoonTemplate = 'EngineerBuilderSCTAALL',
-        Priority = 26,
-        InstanceCount = 10,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {480} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.75}},
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T1AADefense',
-                }
-            }
-        }
     },   
     Builder {
         BuilderName = 'SCTAStaging',
@@ -190,11 +150,11 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
-            OrderedTemplate = true,
-            NearBasePatrolPoints = false,
-            BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TATowerTemplates.lua',
-            BaseTemplate = 'T1TowerTemplate',
             Construction = {
+                OrderedTemplate = true,
+                NearBasePatrolPoints = false,
+                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TATowerTemplates.lua',
+                BaseTemplate = 'T1TowerTemplate',
                 BuildClose = true,
                 BuildStructures = {
                     'T1GroundDefense',
@@ -222,11 +182,11 @@ BuilderGroup {
         },
         BuilderType = 'Any',
         BuilderData = {
-            OrderedTemplate = true,
-            NearBasePatrolPoints = false,
-            BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TA2TowerTemplates.lua',
-            BaseTemplate = 'T2TowerTemplate',
             Construction = {
+                OrderedTemplate = true,
+                NearBasePatrolPoints = false,
+                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/TA2TowerTemplates.lua',
+                BaseTemplate = 'T2TowerTemplate',
                 BuildClose = true,
                 BuildStructures = {
                     'T2GroundDefense',
@@ -291,8 +251,8 @@ BuilderGroup {
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
+                AssistUntilFinished = true,
                 AssisteeType = 'Engineer',
-                BeingBuiltCategories = {'STRUCTURE'},
                 Time = 20,
             },
         },

@@ -5,25 +5,23 @@ PlatoonTemplate {
     Name = 'CommanderBuilderSCTA',
     Plan = 'EngineerBuildAISCTACommand',
     GlobalSquads = {
-        { categories.COMMAND + categories.SUBCOMMANDER * TA, 1, 1, 'support', 'None' }
+        { (categories.COMMAND + categories.SUBCOMMANDER) * TA, 1, 1, 'support', 'None' }
     },
 }
-
 
 PlatoonTemplate {
-    Name = 'EngineerBuilderSCTA123Assist',
-    Plan = 'ManagerEngineerAssistAI',
+    Name = 'CommanderBuilderSCTADecoy',
+    Plan = 'EngineerBuildAISCTACommand',
     GlobalSquads = {
-        { categories.ENGINEER * (categories.TECH1 + categories.TECH2 + categories.TECH3) - categories.NAVAL, 1, 1, 'support', 'None' }
+        { categories.SUBCOMMANDER * TA, 1, 1, 'support', 'None' }
     },
 }
-
 
 PlatoonTemplate {
     Name = 'EngineerBuilderSCTA123',
     Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
-        { categories.ENGINEER * (categories.TECH1 + categories.TECH2 + categories.TECH3) * TA - WEIRD, 1, 1, 'support', 'None' }
+        { categories.ENGINEER * TA - WEIRD, 1, 1, 'support', 'None' }
     },
 }
 
@@ -31,7 +29,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTAALL',
     Plan = 'SCTAEngineerTypeAI',
     GlobalSquads = {
-        { categories.ENGINEER * (categories.TECH1 + categories.TECH2 + categories.TECH3) * TA - categories.NAVAL - categories.FIELDENGINEER, 1, 1, 'support', 'None' }
+        { categories.ENGINEER * TA - categories.NAVAL - categories.FIELDENGINEER, 1, 1, 'support', 'None' }
     },
 }
 
@@ -96,7 +94,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'EngineerBuilderSCTAField',
-    Plan = 'ManagerEngineerAssistAI',
+    Plan = 'EngineerBuildAISCTA',
     GlobalSquads = {
         {categories.FIELDENGINEER, 1, 1, 'support', 'None' }
     },
@@ -230,12 +228,10 @@ PlatoonTemplate {
     Name = 'T2BuildEngineerSCTA',
     FactionSquads = {
         Arm = {
-            { 'armack', 1, 2, 'support', 'None' },
-            { 'armfark', 1, 1, 'support', 'None' },
+            { 'armack', 1, 1, 'support', 'None' },
         },
         Core = {
-            { 'coracv', 1, 2, 'support', 'None' },
-            { 'cornecro', 1, 1, 'support', 'None' },
+            { 'coracv', 1, 1, 'support', 'None' },
         },
     }
 }
@@ -251,6 +247,17 @@ PlatoonTemplate {
     }
 }
 
+PlatoonTemplate {
+    Name = 'DecoyCommander',
+    FactionSquads = {
+        Arm = {
+            { 'armdecom', 1, 1, 'support', 'None' },
+        },
+        Core = {
+            { 'cordecom', 1, 1, 'support', 'None' },
+        },
+    }
+}
 
 PlatoonTemplate {
     Name = 'T3BuildEngineerSCTA',

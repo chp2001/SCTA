@@ -22,7 +22,6 @@ BuilderGroup {
             AntiAir = true,
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * categories.ANTIAIR} },
          },
     },
     Builder {
@@ -40,7 +39,6 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.ANTISHIELD} },
         },
     },
     Builder {
@@ -107,14 +105,13 @@ BuilderGroup {
         },        
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
-            { MIBC, 'LessThanGameTime', {1200} },
          },
     },
     Builder {
         BuilderName = 'SCTAAI Strike Mid',
         PlatoonTemplate = 'StrikeForceSCTAMid', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 150,
-        InstanceCount = 10,
+        InstanceCount = 50,
         FormRadius = 1000,
         BuilderType = 'Any',
         BuilderData = {
@@ -125,7 +122,6 @@ BuilderGroup {
         },        
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {720} },
-            { MIBC, 'LessThanGameTime', {1500} },
          },
     },
     Builder {

@@ -57,6 +57,11 @@ TAconstructor = Class(TAWalking) {
         self.UnitBuildOrder = order
         self.BuildingUnit = true
         TAWalking.OnStartBuild(self, unitBeingBuilt, order)
+        if not self:GetGuardedUnit() and unitBeingBuilt:GetFractionComplete() == 0 and not self:CanBuild(unitBeingBuilt:GetBlueprint().BlueprintId) then
+            IssueStop({self})
+            IssueClearCommands({self})
+            unitBeingBuilt:Destroy()
+        end
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
@@ -247,6 +252,22 @@ TACommander = Class(TAconstructor) {
         self.Sync.AutoOvercharge = auto
     end,
 
+    ResetRightArm = function(self)
+       self:SetImmobile(false)
+       self:SetWeaponEnabledByLabel('OverCharge', false)
+       self:SetWeaponEnabledByLabel('AutoOverCharge', false)
+
+        -- Ugly hack to re-initialise auto-OC once a task finishes
+        local wep = self:GetWeaponByLabel('AutoOverCharge')
+        wep:SetAutoOvercharge(wep.AutoMode)
+    end,
+
+    OnPrepareArmToBuild = function(self)
+        TAconstructor.OnPrepareArmToBuild(self)
+        self:SetWeaponEnabledByLabel('OverCharge', false)
+        self:SetWeaponEnabledByLabel('AutoOverCharge', false)
+    end,
+
     OnCreate = function(self)
 		TAconstructor.OnCreate(self)
         self:SetCapturable(false)
@@ -259,10 +280,14 @@ TACommander = Class(TAconstructor) {
 
 	OnStopCapture = function(self, target)
 		TAconstructor.OnStopCapture(self, target)
+        if self:BeenDestroyed() then return end
+        self:ResetRightArm()
 	end,
     
     OnFailedCapture = function(self, target)
 		TAconstructor.OnFailedCapture(self, target)
+        if self:BeenDestroyed() then return end
+        self:ResetRightArm()
     end,
 
 	DeathThread = function(self)
@@ -277,11 +302,21 @@ TACommander = Class(TAconstructor) {
     OnStartReclaim = function(self, target)
 		TAconstructor.OnStartReclaim(self, target)
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
+        if self:BeenDestroyed() then return end
+        self:ResetRightArm()
     end,
 
     OnStartCapture = function(self, target)
 		TAconstructor.OnStartCapture(self, target)
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
+        if self:BeenDestroyed() then return end
+        self:ResetRightArm()
+    end,
+
+    OnStopBuild = function(self, unitBeingBuilt)
+        TAconstructor.OnStopBuild(self, unitBeingBuilt)
+        if self:BeenDestroyed() then return end
+        self:ResetRightArm()
     end,
 
     OnStopBeingBuilt = function(self,builder,layer)

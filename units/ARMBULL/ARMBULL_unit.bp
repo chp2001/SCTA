@@ -67,7 +67,6 @@ UnitBlueprint {
         BuildCostMass = 560,
         BuildTime = 8675,
     },
-
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -109,7 +108,7 @@ UnitBlueprint {
     SizeY = 1.5,
     SizeZ = 3,
     StrategicIconName = 'icon_land2_directfire',
-    TAStrategicIconName = '2/bot_armored',
+    TAStrategicIconName = '3/bot_armored',
     StrategicIconSortPriority = 0,
     Transport = {
         TransportClass = 3,

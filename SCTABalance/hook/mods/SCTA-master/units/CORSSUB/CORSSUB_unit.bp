@@ -41,9 +41,6 @@ Display = {
             RateOfFire = 0.5,
         },
         [2] = {
-            RateOfFire = 0.5,
-        },
-        [3] = {
         },
     },
 }

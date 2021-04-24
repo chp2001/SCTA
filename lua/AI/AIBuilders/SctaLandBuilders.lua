@@ -238,7 +238,7 @@ BuilderGroup {
     Priority = 139,
     PriorityFunction = LandProductionT3Tank,
     BuilderConditions = {
-        { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+        { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
     },
     BuilderType = 'KBot',
     },
@@ -249,8 +249,8 @@ BuilderGroup {
         PriorityFunction = LandProductionT3,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LAND * categories.TECH3 * ((categories.SNIPER * categories.ARM) + (categories.ARTILLERY * categories.CORE))}}, -- Don't make tanks if we have lots of them.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LAND * categories.TECH3 * (categories.SNIPER+ categories.ARTILLERY)}}, -- Don't make tanks if we have lots of them.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
         },
         BuilderType = 'KBot',
     },
@@ -261,8 +261,8 @@ BuilderGroup {
         InstanceCount = 1,
         PriorityFunction = LandProductionT3,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LAND * categories.TECH3 * ((categories.SNIPER * categories.ARM) + (categories.ARTILLERY * categories.CORE))}}, -- Don't make tanks if we have lots of them.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LAND * categories.TECH3 * (categories.SNIPER+ categories.ARTILLERY)}}, -- Don't make tanks if we have lots of them.
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
         },
         BuilderType = 'Vehicle',
     },
@@ -272,7 +272,7 @@ BuilderGroup {
         Priority = 130,
         PriorityFunction = LandProductionT3Tank,
         BuilderConditions = {
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Vehicle',
     },

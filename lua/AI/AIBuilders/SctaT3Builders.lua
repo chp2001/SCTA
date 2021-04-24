@@ -8,7 +8,7 @@ local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterTh
 
 local EngineerProductionT3 = function(self, aiBrain, builderManager)
     if Factory(aiBrain,  12, LAB)  then 
-        return 130
+        return 150
     elseif Factory(aiBrain,  0, categories.GATE) then
         return 135
     else

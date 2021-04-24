@@ -1393,14 +1393,6 @@ Platoon = Class(SCTAAIPlatoon) {
         local atkPri = {}
         local platoonUnits = self:GetPlatoonUnits()
         --LOG('*SCTAEXPANSIONTA', data.locationType)
-        if data.Laser then
-            local econ = aiBrain:GetEconomyStoredRatio('ENERGY')
-            if econ.EnergyStorageRatio < 0.15 then
-                WaitSeconds(5)
-                self:PlatoonDisband()
-                return
-            end
-        end
         if data.PrioritizedCategories then
             for k,v in data.PrioritizedCategories do
                 table.insert( atkPri, v )
@@ -1864,7 +1856,7 @@ Platoon = Class(SCTAAIPlatoon) {
             platoonUnits = self:GetPlatoonUnits()
             numberOfUnitsInPlatoon = table.getn(platoonUnits)
             if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 10 and not data.AggressiveMove then
-                self:MergeWithNearbyPlatoonsSCTA('HuntAI', 'AttackSCTAForceAI', 5)
+                self:MergeWithNearbyPlatoonsSCTA('HuntSCTAAI', 'AttackSCTAForceAI', 5)
             end
 
             if (oldNumberOfUnitsInPlatoon != numberOfUnitsInPlatoon) then
@@ -2495,6 +2487,32 @@ Platoon = Class(SCTAAIPlatoon) {
                     blip = target:GetBlip(armyIndex)
                     self:Stop()
                     self:AttackTarget(target)
+                    --DUNCAN - added to try and stop AI getting stuck.
+                    local position = AIUtils.RandomLocation(target:GetPosition()[1],target:GetPosition()[3])
+                    self:MoveToLocation(position, false)
+                end
+                WaitSeconds(17)
+            end
+        end,
+
+        HuntSCTAAI = function(self)
+            self:Stop()
+            local aiBrain = self:GetBrain()
+            local armyIndex = aiBrain:GetArmyIndex()
+            local target
+            local blip
+            while aiBrain:PlatoonExists(self) do
+                if data.Laser then
+                    if aiBrain:GetEconomyStoredRatio('ENERGY').EnergyStorageRatio < 0.1 then
+                        WaitSeconds(2)
+                        self:PlatoonDisband()
+                    end
+                end
+                target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ALLUNITS - categories.WALL)
+                if target then
+                    blip = target:GetBlip(armyIndex)
+                    self:Stop()
+                    self:AggressiveMoveToLocation(table.copy(target:GetPosition()))
                     --DUNCAN - added to try and stop AI getting stuck.
                     local position = AIUtils.RandomLocation(target:GetPosition()[1],target:GetPosition()[3])
                     self:MoveToLocation(position, false)

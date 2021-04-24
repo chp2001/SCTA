@@ -171,7 +171,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Hydro', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Hydro' }},
-            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 1000}},
+            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 500}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -338,11 +338,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'Mini Nuke Launcher SCTA', -- Names need to be GLOBALLY unique.  Prefixing the AI name will help avoid name collisions with other AIs.	
         PlatoonTemplate = 'EngineerBuilderSCTA23All',
-        Priority = 130,
-        InstanceCount = 2,
+        Priority = 65,
+        InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2,  LAB } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.TACTICALMISSILEPLATFORM} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 6,  LAB } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.TACTICALMISSILEPLATFORM} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
@@ -363,7 +363,7 @@ BuilderGroup {
         Priority = 50,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2,  LAB } },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 8,  LAB } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ARTILLERY * categories.STRUCTURE * categories.TECH2} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },

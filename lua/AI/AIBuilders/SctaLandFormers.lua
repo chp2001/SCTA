@@ -11,7 +11,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI AntiAir',
         PlatoonTemplate = 'AntiAirSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 120,
+        Priority = 100,
         InstanceCount = 200,
         BuilderType = 'Any',
         BuilderData = {
@@ -28,7 +28,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Laser',
         PlatoonTemplate = 'StrikeForceSCTALaser', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 150,
+        Priority = 125,
         InstanceCount = 50,
         BuilderType = 'Any',
         BuilderData = {
@@ -40,6 +40,7 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.ANTISHIELD} },
         },
     },
     Builder {
@@ -67,7 +68,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Missile Hunt',
         PlatoonTemplate = 'LandRocketAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 105,
+        Priority = 125,
         InstanceCount = 30,
         BuilderType = 'Any',
         BuilderData = {
@@ -89,12 +90,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Land Attack Mid',
         PlatoonTemplate = 'LandAttackSCTAMid', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 125,
+        Priority = 150,
         InstanceCount = 100,
         FormRadius = 1000,
         BuilderType = 'Any',
         BuilderData = {
-            ThreatSupport = 10,
+            ThreatSupport = 75,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',
@@ -135,7 +136,7 @@ BuilderGroup {
         FormRadius = 1000,
         BuilderType = 'Any',
         BuilderData = {
-            ThreatSupport = 10,
+            ThreatSupport = 75,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',

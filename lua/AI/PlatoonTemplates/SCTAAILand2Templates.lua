@@ -132,7 +132,9 @@ PlatoonTemplate {
             { 'armbull', 1, 1, 'attack', 'none' },
         },
         Core = {
-            { 'correap', 1, 3, 'attack', 'none' },
+            { 'correap', 1, 2, 'attack', 'none' },
+            { 'cornecro', 1, 1, 'support', 'None' },
+            { 'correap', 1, 2, 'attack', 'none' },
         },
     }
 }

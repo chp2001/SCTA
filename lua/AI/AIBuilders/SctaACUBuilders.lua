@@ -19,6 +19,14 @@ local UnitProduction = function(self, aiBrain, builderManager)
     end
 end
 
+local GantryProduction = function(self, aiBrain, builderManager)
+    if Factory(aiBrain,  0, categories.GATE) then
+        return 200
+    else
+        return 0
+    end
+end
+
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAICommanderBuilder', -- Globally unique key that the AI base template file uses to add the contained builders to your AI.	
@@ -207,7 +215,7 @@ BuilderGroup {
         PlatoonTemplate = 'CommanderBuilderSCTA',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
         Priority = 126,
-        PriorityFunction = UnitProduction,
+        PriorityFunction = GantryProduction,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},

@@ -12,7 +12,7 @@ local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TEC
 local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
 
 local UnitProduction = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  8, LAB) then
+    if Factory(aiBrain,  6, LAB) then
         return 150
     else
         return 0

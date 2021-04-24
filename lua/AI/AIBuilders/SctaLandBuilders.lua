@@ -14,7 +14,7 @@ local LandProductionT3 = function(self, aiBrain, builderManager)
     if Factory(aiBrain,  12, LAB)  then 
         return 130
     elseif Factory(aiBrain,  0, categories.GATE) then
-        return 135
+        return 125
     else
         return 0
     end
@@ -22,9 +22,9 @@ end
 
 local LandProductionT3Tank = function(self, aiBrain, builderManager)
     if Factory(aiBrain,  12, LAB)  then 
-        return 130
-    elseif Factory(aiBrain,  0, categories.GATE) then
         return 135
+    elseif Factory(aiBrain,  0, categories.GATE) then
+        return 130
     else
         return 0
     end

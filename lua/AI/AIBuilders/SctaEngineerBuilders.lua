@@ -7,28 +7,8 @@ local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
-local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
-
-local EngineerProduction = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  6, LAB) then 
-        return 0
-    elseif Factory(aiBrain,  0, LAB) then 
-        return 10
-    else
-        return 101
-    end
-end
-
-local EngineerProductionT3 = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  12, LAB)  then 
-        return 130
-    elseif Factory(aiBrain,  0, categories.GATE) then
-        return 135
-    else
-        return 0
-    end
-end
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIEngineerBuilder',
@@ -37,7 +17,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi Factory Scout',
         PlatoonTemplate = 'T1LandScoutSCTA',
         Priority = 82,
-        PriorityFunction = EngineerProduction,
+        PriorityFunction = TAPrior.EngineerProduction,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {600} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.SCOUT * categories.LAND * categories.MOBILE} },
@@ -49,7 +29,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi Factory2 Scout',
         PlatoonTemplate = 'T1LandScoutSCTA2',
         Priority = 80,
-        PriorityFunction = EngineerProduction,
+        PriorityFunction = TAPrior.EngineerProduction,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {360} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.SCOUT * categories.LAND * categories.MOBILE} },
@@ -60,7 +40,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1 Scouts',
         PlatoonTemplate = 'T1AirScoutSCTA',
-        PriorityFunction = EngineerProduction,
+        PriorityFunction = TAPrior.EngineerProduction,
         Priority = 110,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {900} },
@@ -73,7 +53,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T2 Scouts',
         PlatoonTemplate = 'T2AirScoutSCTA',
         Priority = 120,
-        PriorityFunction = EngineerProductionT3,
+        PriorityFunction = TAPrior.EngineerProductionT3,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.MOBILE * categories.AIR * categories.SCOUT } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
@@ -93,7 +73,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi Factory Engineer',
         PlatoonTemplate = 'T1BuildEngineerSCTA',
         Priority = 100, -- Top factory priority
-        PriorityFunction = EngineerProduction,
+        PriorityFunction = TAPrior.EngineerProduction,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.LAND * categories.TECH1 - categories.COMMAND } }, -- Don't make tanks if we have lots of them.
         },
@@ -121,7 +101,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi AirFactory Engineer',
         PlatoonTemplate = 'T1BuildEngineerAirSCTA',
         Priority = 105,
-        PriorityFunction = EngineerProduction,
+        PriorityFunction = TAPrior.EngineerProduction,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENGINEER * categories.AIR * categories.TECH1} }, -- Build engies until we have 4 of them.
         },
@@ -140,18 +120,18 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi T2 Experimental',
         PlatoonTemplate = 'SCTAExperimental',
-        Priority = 120,
+        Priority = 175,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.EXPERIMENTAL * categories.MOBILE - categories.ENGINEER} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.EXPERIMENTAL * categories.MOBILE - categories.SUBCOMMANDER} },
         },
         BuilderType = 'Gate',
     },
     Builder {
-        BuilderName = 'Decoy Commander',
-        PlatoonTemplate = 'DecoyCommander',
+        BuilderName = 'SCTA Decoy Commander',
+        PlatoonTemplate = 'SCTADecoyCommander',
         Priority = 150,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.EXPERIMENTAL * categories.ENGINEER} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.SUBCOMMANDER} },
         },
         BuilderType = 'Gate',
     },

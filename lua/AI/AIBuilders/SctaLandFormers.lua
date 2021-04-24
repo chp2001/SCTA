@@ -22,6 +22,7 @@ BuilderGroup {
             AntiAir = true,
         },        
         BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.ANTIAIR} },
          },
     },
     Builder {
@@ -43,7 +44,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0,  categories.LASER} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0,  categories.LASER * categories.MOBILE} },
         },
     },
     Builder {
@@ -65,6 +66,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND - categories.ENGINEER}},
             { MIBC, 'LessThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
          },
     },
@@ -95,7 +97,6 @@ BuilderGroup {
         PlatoonTemplate = 'LandAttackSCTAMid', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 150,
         InstanceCount = 100,
-        FormRadius = 1000,
         BuilderType = 'Any',
         BuilderData = {
             ThreatSupport = 75,
@@ -109,6 +110,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND - categories.ENGINEER}},
             { MIBC, 'GreaterThanGameTime', {300} },
          },
     },
@@ -116,8 +118,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Strike Mid',
         PlatoonTemplate = 'StrikeForceSCTAMid', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 150,
-        InstanceCount = 50,
-        FormRadius = 1000,
+        InstanceCount = 100,
         BuilderType = 'Any',
         BuilderData = {
             Small = true,
@@ -126,6 +127,7 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND - categories.ENGINEER}},
             { MIBC, 'GreaterThanGameTime', {720} },
          },
     },
@@ -148,6 +150,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND - categories.ENGINEER}},
             { MIBC, 'GreaterThanGameTime', {1200} },
          },
     },
@@ -167,6 +170,7 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND - categories.ENGINEER}},
             { MIBC, 'GreaterThanGameTime', {1500} },
          },
     },

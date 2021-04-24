@@ -12,20 +12,7 @@ local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
 local TIDAL = (categories.cortide + categories.armtide)
 local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').GetMOARadii()
-local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
-
-
-local UnitProduction = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  12, PLANT) then 
-        return 110
-    elseif Factory(aiBrain,  1, LAB) then
-        return 111
-    elseif Factory(aiBrain,  1, PLATFORM) then
-        return 100
-    else
-        return 0
-    end
-end
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
 
 BuilderGroup {
@@ -57,7 +44,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2NavalEarly Factory',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        PriorityFunction = UnitProduction,
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 125,
         InstanceCount = 1,
         BuilderConditions = {
@@ -78,7 +65,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Naval Factory',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        PriorityFunction = UnitProduction,
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 141,
         InstanceCount = 1,
         BuilderConditions = {
@@ -150,7 +137,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer Naval MetalMaker',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         Priority = 120,
-        PriorityFunction = UnitProduction,
+        PriorityFunction = TAPrior.UnitProduction,
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0,  FUSION} }, 

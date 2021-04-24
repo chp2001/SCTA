@@ -9,23 +9,8 @@ local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
-local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
-local UnitProduction = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  6, LAB) then
-        return 150
-    else
-        return 0
-    end
-end
-
-local GantryProduction = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  0, categories.GATE) then
-        return 200
-    else
-        return 0
-    end
-end
 
 
 BuilderGroup {
@@ -215,7 +200,7 @@ BuilderGroup {
         PlatoonTemplate = 'CommanderBuilderSCTA',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
         Priority = 126,
-        PriorityFunction = GantryProduction,
+        PriorityFunction = TAPrior.GantryProduction,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
@@ -236,7 +221,7 @@ BuilderGroup {
         BuilderName = 'SCTA CDR Assist Structure',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
-        PriorityFunction = UnitProduction,
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 111,
         InstanceCount = 1,
         BuilderConditions = {

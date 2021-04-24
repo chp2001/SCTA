@@ -44,8 +44,9 @@ BuilderGroup {
         Priority = 85,
         InstanceCount = 4,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4, FUSION} },
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, WIND + SOLAR}},
+            { TAutils, 'GreaterThanEconEnergyTAEfficiency', {1.05 }},
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             },
         BuilderData = {

@@ -248,7 +248,7 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
-    Name = 'DecoyCommander',
+    Name = 'SCTADecoyCommander',
     FactionSquads = {
         Arm = {
             { 'armdecom', 1, 1, 'support', 'None' },

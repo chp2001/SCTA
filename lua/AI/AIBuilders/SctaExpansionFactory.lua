@@ -9,32 +9,7 @@ local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
-local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
-
-
-local UnitProduction = function(self, aiBrain, builderManager)
-   if Factory(aiBrain,  1, LAB) then
-        return 111
-    elseif Factory(aiBrain,  1, PLATFORM) then
-        return 50
-    elseif Factory(aiBrain,  12, PLANT) then 
-            return 110
-    else
-        return 0
-    end
-end
-
-local UnitProductionT1 = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  0, categories.GATE) then
-          return 0
-    elseif Factory(aiBrain,  12, LAB) then
-              return 10
-    elseif Factory(aiBrain,  1, LAB) then 
-              return 50
-      else
-          return 101
-      end
-  end
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
   
 
 BuilderGroup {
@@ -45,7 +20,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Expansion LandFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 104,
-        PriorityFunction = UnitProductionT1,
+        PriorityFunction = TAPrior.UnitProductionT1,
         InstanceCount = 1,
 BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
@@ -69,7 +44,7 @@ BuilderConditions = {
         BuilderName = 'SCTAAI Expansion LandFac2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 106,
-        PriorityFunction = UnitProductionT1,
+        PriorityFunction = TAPrior.UnitProductionT1,
         InstanceCount = 1,
 BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
@@ -92,7 +67,7 @@ BuilderConditions = {
     Builder {
         BuilderName = 'SCTAAI T2LAND Expansion',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        PriorityFunction = UnitProduction,
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 112,
         InstanceCount = 1,
 BuilderConditions = {
@@ -116,7 +91,7 @@ BuilderConditions = {
     Builder {
         BuilderName = 'SCTAAI T2LAND2 Expansion',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        PriorityFunction = UnitProduction,
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 112,
         InstanceCount = 1,
 BuilderConditions = {
@@ -143,7 +118,7 @@ BuilderConditions = {
         BuilderName = 'SCTAAI T1Expansion AirFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 91,
-        PriorityFunction = UnitProductionT1,
+        PriorityFunction = TAPrior.UnitProductionT1,
         InstanceCount = 1,
 BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
@@ -167,7 +142,7 @@ BuilderConditions = {
     Builder {
         BuilderName = 'SCTAAI T2Air Expansion',
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
-        PriorityFunction = UnitProduction,
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 111,
         InstanceCount = 1,
 BuilderConditions = {
@@ -190,7 +165,7 @@ BuilderConditions = {
     Builder {
         BuilderName = 'SCTAAI Expansion MetalMaker',
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
-        PriorityFunction = UnitProduction,
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 120,
         InstanceCount = 2,
         BuilderConditions = {

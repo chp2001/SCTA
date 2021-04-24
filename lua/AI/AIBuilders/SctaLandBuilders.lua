@@ -4,31 +4,10 @@ local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
-local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
-
-
-local LandProductionT3 = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  12, LAB)  then 
-        return 130
-    elseif Factory(aiBrain,  0, categories.GATE) then
-        return 125
-    else
-        return 0
-    end
-end
-
-local LandProductionT3Tank = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  12, LAB)  then 
-        return 135
-    elseif Factory(aiBrain,  0, categories.GATE) then
-        return 130
-    else
-        return 0
-    end
-end
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAILandBuilder',
@@ -236,7 +215,7 @@ BuilderGroup {
     BuilderName = 'SCTAAi FactoryT3 KBot',
     PlatoonTemplate = 'T3LandDFTankSCTA',
     Priority = 139,
-    PriorityFunction = LandProductionT3Tank,
+    PriorityFunction = TAPrior.LandProductionT3Tank,
     BuilderConditions = {
         { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
     },
@@ -246,7 +225,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT3 Bot Sniper',
         PlatoonTemplate = 'T3LandDFBotSCTA',
         Priority = 130,
-        PriorityFunction = LandProductionT3,
+        PriorityFunction = TAPrior.ProductionT3,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LAND * categories.TECH3 * (categories.SNIPER + categories.ARTILLERY)}}, -- Don't make tanks if we have lots of them.
@@ -259,7 +238,7 @@ BuilderGroup {
         PlatoonTemplate = 'T3LandDFVehicleSCTA',
         Priority = 130,
         InstanceCount = 1,
-        PriorityFunction = LandProductionT3,
+        PriorityFunction = TAPrior.ProductionT3,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LAND * categories.TECH3 * (categories.SNIPER + categories.ARTILLERY)}}, -- Don't make tanks if we have lots of them.
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
@@ -270,7 +249,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT3 Tank Vehicle',
         PlatoonTemplate = 'T3LandDFTank2SCTA',
         Priority = 130,
-        PriorityFunction = LandProductionT3Tank,
+        PriorityFunction = TAPrior.LandProductionT3Tank,
         BuilderConditions = {
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },

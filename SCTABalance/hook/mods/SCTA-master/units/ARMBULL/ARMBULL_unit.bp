@@ -29,7 +29,7 @@ UnitBlueprint {
         StrategicIconName = 'icon_land3_directfire',
         Weapon = {
             [1] = {
-                Damage = 100,
+                Damage = 350,
                 MaxRadius = 30,
             },
             [2] = {

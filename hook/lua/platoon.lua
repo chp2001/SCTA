@@ -2501,13 +2501,13 @@ Platoon = Class(SCTAAIPlatoon) {
             local armyIndex = aiBrain:GetArmyIndex()
             local target
             local blip
-            while aiBrain:PlatoonExists(self) do
-                if data.Laser then
-                    if aiBrain:GetEconomyStoredRatio('ENERGY').EnergyStorageRatio < 0.1 then
-                        WaitSeconds(2)
-                        self:PlatoonDisband()
-                    end
+            if self.PlatoonData.Laser then
+                if aiBrain:GetEconomyStoredRatio('ENERGY').EnergyStorageRatio < 0.1 then
+                    WaitSeconds(2)
+                    self:PlatoonDisband()
                 end
+            end
+            while aiBrain:PlatoonExists(self) do
                 target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ALLUNITS - categories.WALL)
                 if target then
                     blip = target:GetBlip(armyIndex)

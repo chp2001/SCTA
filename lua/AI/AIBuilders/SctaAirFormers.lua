@@ -55,7 +55,7 @@ BuilderGroup {
         PlatoonAddBehaviors = { 'AirUnitRefit' },                              
         BuilderType = 'Any',
         BuilderData = {
-            Stealth = true,
+            Energy = true,
         },        
         BuilderConditions = { 
         },

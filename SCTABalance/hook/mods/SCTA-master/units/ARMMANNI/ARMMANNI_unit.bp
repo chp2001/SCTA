@@ -17,7 +17,7 @@ UnitBlueprint {
         'ARM',
         'TANK',	
         'SNIPER',
-        'ANTISHIELD',
+        'LASER',
     },
     Defense = {
         Health = 1500,

@@ -27,18 +27,23 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Laser',
         PlatoonTemplate = 'StrikeForceSCTALaser', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 125,
+        Priority = 200,
         InstanceCount = 50,
         BuilderType = 'Any',
         BuilderData = {
-            Laser = true,
-            FormRadius = 500,
+            Energy = true,
             NeverGuardBases = false,
-            NeverGuardEngineers = true,
-            UseMoveOrder = true,
+            NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',
+            LocationType = 'LocationType',
+            AggressiveMove = true,
+            ThreatWeights = {
+            SecondaryTargetThreatType = 'StructuresNotMex',
+            IgnoreStrongerTargetsRatio = 100.0,
+            },
         },        
         BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0,  categories.LASER} },
         },
     },
     Builder {

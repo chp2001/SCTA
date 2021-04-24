@@ -2205,17 +2205,14 @@ Platoon = Class(SCTAAIPlatoon) {
         local aiBrain = self:GetBrain()
         local armyIndex = aiBrain:GetArmyIndex()
         local data = self.PlatoonData
+        self.EcoCheck = false
         local target
         local blip
         local hadtarget = false
         local basePosition = false
-        if data.Stealth then
-            local econ = aiBrain:GetEconomyStoredRatio('ENERGY')
-            if econ.EnergyStorageRatio < 0.2 then
-                WaitSeconds(5)
-                self:PlatoonDisband()
-                return
-            end
+        if self.PlatoonData.Energy and self.EcoCheck == false then
+            WaitSeconds(1)
+            self:CheckEnergySCTAEco()
         end
         if self.PlatoonData.LocationType and self.PlatoonData.LocationType != 'NOTMAIN' then
             --LOG('*SCTAEXPANSIONTA', locationType)
@@ -2253,6 +2250,9 @@ Platoon = Class(SCTAAIPlatoon) {
                 self:Stop()
                 self:MoveToLocation(position, false)
                 hadtarget = false
+            end 
+            if self.PlatoonData.Energy then
+                self.EcoCheck = false
             end
             WaitSeconds(5) --DUNCAN - was 5
         end
@@ -2495,17 +2495,30 @@ Platoon = Class(SCTAAIPlatoon) {
             end
         end,
 
+        CheckEnergySCTAEco = function(self)
+            AIAttackUtils.GetMostRestrictiveLayer(self)
+            self.EcoCheck = true
+            if self:GetBrain():GetEconomyStoredRatio('ENERGY').EnergyStorageRatio < 0.25 then
+                WaitSeconds(4)
+            else
+                if self.MovementLayer == 'Air' then 
+                return self:InterceptorAISCTA()
+                else
+                return self:HuntSCTAAI()
+                end
+            end
+        end,
+
         HuntSCTAAI = function(self)
             self:Stop()
+            self.EcoCheck = false
             local aiBrain = self:GetBrain()
             local armyIndex = aiBrain:GetArmyIndex()
             local target
             local blip
-            if self.PlatoonData.Laser then
-                if aiBrain:GetEconomyStoredRatio('ENERGY').EnergyStorageRatio < 0.1 then
-                    WaitSeconds(2)
-                    self:PlatoonDisband()
-                end
+            if self.PlatoonData.Energy and self.EcoCheck == false then
+                WaitSeconds(1)
+                self:CheckEnergySCTAEco()
             end
             while aiBrain:PlatoonExists(self) do
                 target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ALLUNITS - categories.WALL)
@@ -2518,6 +2531,9 @@ Platoon = Class(SCTAAIPlatoon) {
                     self:MoveToLocation(position, false)
                 end
                 WaitSeconds(17)
+            end
+            if self.PlatoonData.Energy then
+                self.EcoCheck = false
             end
         end,
 

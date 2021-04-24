@@ -32,7 +32,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
 	    'ARM',
 	    'SORTDEFENSE',
-        'ANTISHIELD',
+        'LASER',
         'SNIPEMODE',
         'OVERLAYRADAR',
     },

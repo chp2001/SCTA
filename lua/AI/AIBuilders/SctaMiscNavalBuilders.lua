@@ -14,7 +14,6 @@ local TIDAL = (categories.cortide + categories.armtide)
 local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').GetMOARadii()
 local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
-
 BuilderGroup {
     BuilderGroupName = 'SCTAAIEngineerNavalMiscBuilder',
     BuildersType = 'EngineerBuilder',
@@ -383,13 +382,14 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Finish Navy',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 125,
-        InstanceCount = 2,
+        Priority = 500,
+        InstanceCount = 1,
         BuilderConditions = {
                 { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
             },
         BuilderData = {
             Assist = {
+                BeingBuiltCategories = {'STRUCTURE'},
                 AssistLocation = 'LocationType',
                 AssistUntilFinished = true,
                 AssisteeType = 'Engineer',

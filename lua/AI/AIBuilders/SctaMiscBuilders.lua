@@ -8,7 +8,6 @@ local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
 local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
-
 BuilderGroup {
     BuilderGroupName = 'SCTAAIEngineerMiscBuilder',
     BuildersType = 'EngineerBuilder',
@@ -245,13 +244,14 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Field Finish',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 125,
-        InstanceCount = 2,
+        Priority = 500,
+        InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
+                { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
             },
         BuilderData = {
             Assist = {
+                BeingBuiltCategories = {'STRUCTURE'},
                 AssistLocation = 'LocationType',
                 AssistUntilFinished = true,
                 AssisteeType = 'Engineer',

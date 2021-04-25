@@ -12,7 +12,6 @@ local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TEC
 local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
 
-
 BuilderGroup {
     BuilderGroupName = 'SCTAAICommanderBuilder', -- Globally unique key that the AI base template file uses to add the contained builders to your AI.	
     BuildersType = 'EngineerBuilder',-- The kind of builder this is.  One of 'EngineerBuilder', 'PlatoonFormBuilder', or 'FactoryBuilder'.
@@ -134,13 +133,14 @@ BuilderGroup {
         Priority = 945,
         InstanceCount = 2,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {300} }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR } }, -- Stop after 10 facs have been built.
-            { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.AIR } }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.75 } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
         },
         BuilderType = 'Any',
         BuilderData = {
-            DesiresAssist = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
             NeedGuard = false,
             Construction = {
                 BuildClose = true,
@@ -250,6 +250,7 @@ BuilderGroup {
             },
         BuilderData = {
             Assist = {
+                BeingBuiltCategories = {'STRUCTURE'},
                 AssistLocation = 'LocationType',
                 AssistUntilFinished = true,
                 AssisteeType = 'Engineer',

@@ -7,7 +7,7 @@ local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TEC
 
 
 ---T3Production
-StructureProductionT3 = function(self, aiBrain, builderManager)
+StructureProductionT3 = function(self, aiBrain)
     if Factory(aiBrain,  4, PLATFORM)  then 
         return 150
     elseif Factory(aiBrain,  2, PLATFORM) then
@@ -18,17 +18,17 @@ StructureProductionT3 = function(self, aiBrain, builderManager)
 end
 
 
-ProductionT3 = function(self, aiBrain, builderManager)
+ProductionT3 = function(self, aiBrain)
     if Factory(aiBrain,  12, LAB)  then 
-        return 130
+        return 150
     elseif Factory(aiBrain,  0, categories.GATE) then
-        return 125
+        return 180
     else
         return 0
     end
 end
 
-LandProductionT3Tank = function(self, aiBrain, builderManager)
+LandProductionT3Tank = function(self, aiBrain)
     if Factory(aiBrain,  12, LAB)  then 
         return 135
     elseif Factory(aiBrain,  0, categories.GATE) then
@@ -38,7 +38,7 @@ LandProductionT3Tank = function(self, aiBrain, builderManager)
     end
 end
 
-EngineerProductionT3 = function(self, aiBrain, builderManager)
+EngineerProductionT3 = function(self, aiBrain)
     if Factory(aiBrain,  12, LAB)  then 
         return 150
     elseif Factory(aiBrain,  0, categories.GATE) then
@@ -49,7 +49,7 @@ EngineerProductionT3 = function(self, aiBrain, builderManager)
 end
 ---T2Production
 
-UnitProduction = function(self, aiBrain, builderManager)
+UnitProduction = function(self, aiBrain)
     if Factory(aiBrain,  1, LAB) then
         return 111
     elseif Factory(aiBrain,  1, PLATFORM) then
@@ -61,7 +61,7 @@ UnitProduction = function(self, aiBrain, builderManager)
     end
 end
 
-StructureProductionT2 = function(self, aiBrain, builderManager)
+StructureProductionT2 = function(self, aiBrain)
     if Factory(aiBrain,  4, LAB)  then 
         return 95
     elseif Factory(aiBrain,  2, LAB) then
@@ -71,7 +71,7 @@ StructureProductionT2 = function(self, aiBrain, builderManager)
     end
 end
 
-EngineerProduction = function(self, aiBrain, builderManager)
+EngineerProduction = function(self, aiBrain)
     if Factory(aiBrain,  6, LAB) then 
         return 0
     elseif Factory(aiBrain,  0, LAB) then 
@@ -83,7 +83,7 @@ end
 
 
 
-UnitProductionT1 = function(self, aiBrain, builderManager)
+UnitProductionT1 = function(self, aiBrain)
     if Factory(aiBrain,  0, categories.GATE) then
           return 0
     elseif Factory(aiBrain,  6, LAB) then
@@ -98,7 +98,7 @@ UnitProductionT1 = function(self, aiBrain, builderManager)
 
 
 ----GANTRYSPECIFIC
-AirProduction = function(self, aiBrain, builderManager)
+AirProduction = function(self, aiBrain)
     if Factory(aiBrain,  4, LAB) then 
         return 10
     elseif Factory(aiBrain,  0, categories.GATE) then
@@ -109,7 +109,7 @@ AirProduction = function(self, aiBrain, builderManager)
 end
 
 
-GantryConstruction = function(self, aiBrain, builderManager)
+GantryConstruction = function(self, aiBrain)
     if Factory(aiBrain,  2, PLATFORM)  then
         return 175
     elseif Factory(aiBrain,  4, LAB) then
@@ -119,7 +119,7 @@ GantryConstruction = function(self, aiBrain, builderManager)
     end
 end
 
-GantryProduction = function(self, aiBrain, builderManager)
+GantryProduction = function(self, aiBrain)
     if Factory(aiBrain,  0, categories.GATE) then
         return 200
     else
@@ -128,7 +128,7 @@ GantryProduction = function(self, aiBrain, builderManager)
 end
 
 
-HighTechEnergyProduction = function(self, aiBrain, builderManager)
+HighTechEnergyProduction = function(self, aiBrain)
     if Factory(aiBrain,  0, FUSION) then 
         return 5
     elseif Factory(aiBrain,  2, FUSION) then 
@@ -138,7 +138,7 @@ HighTechEnergyProduction = function(self, aiBrain, builderManager)
     end
 end
 
-TechEnergyExist = function(self, aiBrain, builderManager)
+TechEnergyExist = function(self, aiBrain)
     if Factory(aiBrain,  2, FUSION) then 
         return 110
     else
@@ -146,9 +146,9 @@ TechEnergyExist = function(self, aiBrain, builderManager)
     end
 end
 
-EnergyBeingBuilt = function(self, aiBrain, builderManager)
+EnergyBeingBuilt = function(self, aiBrain)
     if EnProduct(aiBrain,  1, FUSION) then 
-        return 110
+        return 150
     else
         return 0
     end

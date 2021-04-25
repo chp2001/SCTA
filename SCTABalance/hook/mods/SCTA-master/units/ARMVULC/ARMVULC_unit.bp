@@ -45,7 +45,9 @@ UnitBlueprint {
         [1] = {
             MaxRadius = 2500,
             MinRadius = 50,
-            Damage = 600,
+            Damage = 1200,
+            RackSalvoSize = 4,
+            RateOfFire = 2.5,
             MuzzleVelocity = 100,
             ProjectileLifetime = 2000,
             ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/ARMVULA_WEAPON/ARMVULA_WEAPON_proj.bp',

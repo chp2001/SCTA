@@ -243,20 +243,19 @@ BuilderGroup {
         BuilderName = 'SCTA CDR Finish Structure',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 500,
+        Priority = 125,
         InstanceCount = 1,
         BuilderConditions = {
-                { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
-            },
-        BuilderData = {
-            Assist = {
-                BeingBuiltCategories = {'STRUCTURE'},
-                AssistLocation = 'LocationType',
-                AssistUntilFinished = true,
-                AssisteeType = 'Engineer',
-                Time = 20,
-            },
+            { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
         },
+            BuilderData = {
+                Assist = {
+                    AssistLocation = 'LocationType',
+                    AssisteeType = 'Engineer',
+                    BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
+                    Time = 20,
+                },
+            },
         BuilderType = 'Any',
     },
 }

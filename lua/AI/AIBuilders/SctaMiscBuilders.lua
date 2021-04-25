@@ -246,17 +246,16 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Field Finish',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 500,
+        Priority = 125,
         InstanceCount = 1,
         BuilderConditions = {
-                { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
-            },
+            { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
+        },
         BuilderData = {
             Assist = {
-                BeingBuiltCategories = {'STRUCTURE'},
                 AssistLocation = 'LocationType',
-                AssistUntilFinished = true,
                 AssisteeType = 'Engineer',
+                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
                 Time = 20,
             },
         },

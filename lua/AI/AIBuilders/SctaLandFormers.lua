@@ -137,7 +137,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Land Attack Endgame',
         PlatoonTemplate = 'LandAttackSCTAEndGame', -- The platoon template tells the AI what units to include, and how to use them.
-        PriorityFunction = TAPrior.ProductionT3,
+        PriorityFunction = TAPrior.TechEnergyExist,
         Priority = 210,
         InstanceCount = 50,
         FormRadius = 1000,
@@ -160,7 +160,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Strike Endgame',
         PlatoonTemplate = 'StrikeForceSCTAEndgame', -- The platoon template tells the AI what units to include, and how to use them.
-        PriorityFunction = TAPrior.StructureProductionT3,
+        PriorityFunction = TAPrior.GantryConstruction,
         Priority = 250,
         InstanceCount = 50,
         FormRadius = 1000,

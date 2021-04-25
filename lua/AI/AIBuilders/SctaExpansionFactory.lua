@@ -190,4 +190,26 @@ BuilderConditions = {
             }
         }
     },
+    Builder {
+        BuilderName = 'T2ArtillerySCTA', -- Names need to be GLOBALLY unique.  Prefixing the AI name will help avoid name collisions with other AIs.	
+        PlatoonTemplate = 'EngineerBuilderSCTA23All',
+        Priority = 50,
+        PriorityFunction = TAPrior.StructureProductionT2,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ARTILLERY * categories.STRUCTURE * categories.TECH2} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildStructures = {
+                    'T2Artillery',
+                }
+            }
+        }
+    },
 }

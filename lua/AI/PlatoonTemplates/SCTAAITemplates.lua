@@ -14,7 +14,7 @@ PlatoonTemplate {
     Name = 'AntiAirSCTA',
     Plan = 'SCTAAntiAirAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND * categories.ANTIAIR, 2, 10, 'attack', 'none' },
+        { GROUND * categories.ANTIAIR - categories.LASER, 2, 10, 'attack', 'none' },
     },
 }
 

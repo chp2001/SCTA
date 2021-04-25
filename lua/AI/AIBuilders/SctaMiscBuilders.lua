@@ -205,13 +205,13 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTA PGen Assist',
+        BuilderName = 'SCTA PGen Field Assist',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
+        PriorityFunction = TAPrior.EnergyBeingBuilt,
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, FUSION }},
             { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
@@ -264,6 +264,7 @@ BuilderGroup {
         BuilderName = 'SCTA Assist Production Field',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 100,
         InstanceCount = 5,
         BuilderConditions = {

@@ -132,11 +132,11 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Commander AirFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 945,
-        InstanceCount = 1,
+        InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {300} }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR } }, -- Stop after 10 facs have been built.
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -198,6 +198,7 @@ BuilderGroup {
         BuilderName = 'SCTA Commander Assist Gantry Construction',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
+        PriorityFunction = TAPrior.GantryConstruction,
         Priority = 126,
         InstanceCount = 1,
         BuilderConditions = {
@@ -242,8 +243,8 @@ BuilderGroup {
         BuilderName = 'SCTA CDR Finish Structure',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 105,
-        InstanceCount = 2,
+        Priority = 500,
+        InstanceCount = 1,
         BuilderConditions = {
                 { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
             },

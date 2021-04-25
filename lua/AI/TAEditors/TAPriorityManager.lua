@@ -9,7 +9,7 @@ local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TEC
 
 ProductionT3 = function(self, aiBrain)
     if Factory(aiBrain,  12, LAB)  then 
-        return 135
+        return 130
     elseif Factory(aiBrain,  0, categories.GATE) then
         return 180
     else

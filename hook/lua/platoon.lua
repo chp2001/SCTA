@@ -2331,17 +2331,21 @@ Platoon = Class(SCTAAIPlatoon) {
         if self.MovementLayer == 'Amphibious' then
             --self.PlanName = 'EngineerBuildAISCTACommand'
             self:SetAIPlan('EngineerBuildAISCTACommand')
+            return
         elseif self.MovementLayer == 'Water' then
             --self.PlanName = 'EngineerBuildAISCTANaval'
             self:SetAIPlan('EngineerBuildAISCTANaval')
+            return
         elseif self.MovementLayer == 'Air' then
             --self.PlanName = 'EngineerBuildAISCTAAir'
             --LOG('*PlatoonNameOri', PlanName)
             self:SetAIPlan('EngineerBuildAISCTAAir')
+            return
         else
             --self.PlanName = 'EngineerBuildAISCTA'
             --LOG('*PlatoonNameOri2', PlanName)
             self:SetAIPlan('EngineerBuildAISCTA')
+            return
         end
     end,
 

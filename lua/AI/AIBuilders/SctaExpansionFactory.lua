@@ -169,28 +169,6 @@ BuilderConditions = {
         }
     },
     Builder {
-        BuilderName = 'SCTAAI Expansion MetalMaker',
-        PlatoonTemplate = 'EngineerBuilderSCTAALL',
-        PriorityFunction = TAPrior.TechEnergyExist,
-        Priority = 120,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { TAutils, 'GreaterThanEconEnergyTAEfficiency', {1.05 }},
-            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            DesiresAssist = false,
-            NeedGuard = false,
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T2MassCreation',
-                }
-            }
-        }
-    },
-    Builder {
         BuilderName = 'T2ArtillerySCTA', -- Names need to be GLOBALLY unique.  Prefixing the AI name will help avoid name collisions with other AIs.	
         PlatoonTemplate = 'EngineerBuilderSCTA23All',
         Priority = 50,

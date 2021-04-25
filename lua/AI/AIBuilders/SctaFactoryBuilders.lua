@@ -186,8 +186,7 @@ BuilderConditions = {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, PLATFORM * categories.AIR} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, PLATFORM} },
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 750 } },
+            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -211,8 +210,7 @@ BuilderConditions = {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, PLATFORM} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, PLATFORM} },
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 200, 400 } },
+            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -312,28 +310,6 @@ BuilderConditions = {
             Construction = {
                 BuildStructures = {
                     'T3QuantumGate',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTAAI MetalMaker',
-        PlatoonTemplate = 'EngineerBuilderSCTAALL',
-        PriorityFunction = TAPrior.TechEnergyExist,
-        Priority = 120,
-        InstanceCount = 2,
-        BuilderConditions = {
-            { TAutils, 'GreaterThanEconEnergyTAEfficiency', {1.05 }},
-            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            DesiresAssist = false,
-            NeedGuard = false,
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T2MassCreation',
                 }
             }
         }

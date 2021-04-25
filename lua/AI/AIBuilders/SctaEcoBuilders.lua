@@ -336,4 +336,26 @@ BuilderGroup {
         },
         BuilderType = 'Any',
     },
+    Builder {
+        BuilderName = 'SCTAAI MetalMaker',
+        PlatoonTemplate = 'EngineerBuilderSCTAALL',
+        PriorityFunction = TAPrior.TechEnergyExist,
+        Priority = 120,
+        InstanceCount = 4,
+        BuilderConditions = {
+            { TAutils, 'GreaterThanEconEnergyTAEfficiency', {1.05 }},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            DesiresAssist = false,
+            NeedGuard = false,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T2MassCreation',
+                }
+            }
+        }
+    },
 }

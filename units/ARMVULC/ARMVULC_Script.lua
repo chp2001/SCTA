@@ -25,10 +25,10 @@ ARMVULC = Class(TAStructure) {
 				self.unit.Spinners.spindle:SetGoal(-90 * (self.unit.currentBarrel + 1))
 				self.unit.Spinners.spindle:SetSpeed(720)
 				--self:Fire()
+				TAEndGameWeapon.OnWeaponFired(self)
 				if self.unit.currentBarrel == 4 then
 					self.unit.currentBarrel = 0
 				end
-				TAEndGameWeapon.OnWeaponFired(self)
 				self.unit:CreateProjectileAtBone('/mods/SCTA-master/effects/entities/Shells/ARMVULC_Shell/ARMVULC_Shell_proj.bp','Shell')
 			end,
 		},

@@ -181,7 +181,7 @@ TAEndGameWeapon = Class(TIFArtilleryWeapon) {
     end,
 
     PauseGun = function(self)
-        WaitSeconds(0.1)
+        WaitTicks(8)
         TIFArtilleryWeapon.StartEconomyDrain(self)
     end,
 }

@@ -21,10 +21,10 @@ CORBUZZ = Class(TAStructure) {
 				self.unit.currentBarrel = self.unit.currentBarrel + 1
 				self.unit.Spinners.Spindle:SetGoal(-60 * (self.unit.currentBarrel + 1))
 				self.unit.Spinners.Spindle:SetSpeed(840)
+				TAEndGameWeapon.OnWeaponFired(self)
 				if self.unit.currentBarrel == 6 then
 					self.unit.currentBarrel = 0
 				end
-				TAEndGameWeapon.OnWeaponFired(self)
 				self.unit:CreateProjectileAtBone('/mods/SCTA-master/effects/entities/Shells/ARMVULC_Shell/ARMVULC_Shell_proj.bp','Turret')
 			end,
 		},

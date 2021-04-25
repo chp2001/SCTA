@@ -305,7 +305,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2 Naval PGen',
         PlatoonTemplate = 'EngineerBuilderSCTANaval2',
-        PriorityFunction = TAPrior.EnergyBeingBuilt,
+        PriorityFunction = TAPrior.NothingBuilt,
         Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {

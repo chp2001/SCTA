@@ -198,7 +198,7 @@ BuilderGroup {
         BuilderName = 'SCTA Commander Assist Gantry Construction',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
-        PriorityFunction = TAPrior.GantryConstruction,
+        PriorityFunction = TAPrior.GateBeingBuilt,
         Priority = 126,
         InstanceCount = 1,
         BuilderConditions = {

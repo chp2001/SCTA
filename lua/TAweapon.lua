@@ -1,4 +1,5 @@
 local WeaponFile = import('/lua/sim/DefaultWeapons.lua')
+local TIFArtilleryWeapon = import('/lua/terranweapons.lua').TIFArtilleryWeapon
 local DefaultWeapon = WeaponFile.DefaultProjectileWeapon
 local KamikazeWeapon = WeaponFile.KamikazeWeapon
 local BareBonesWeapon = WeaponFile.BareBonesWeapon
@@ -161,6 +162,28 @@ TABomb = Class(BareBonesWeapon) {
         DamageArea(self.unit, self.unit:GetPosition(), myBlueprint.DamageRadius, myBlueprint.Damage, myBlueprint.DamageType or 'Normal', myBlueprint.DamageFriendly or false)
     end,    
 
+}
+
+TAEndGameWeapon = Class(TIFArtilleryWeapon) {
+    EnergyRequired = nil,
+    FxMuzzleFlashScale = 3,
+
+    OnWeaponFired = function(self)
+        self:ForkThread(self.PauseGun)
+    end,
+
+    OnCreate = function(self)
+        TIFArtilleryWeapon.OnCreate(self)
+        self.EnergyRequired = self:GetBlueprint().EnergyRequired
+    end,
+
+    StartEconomyDrain = function(self) -- OverchargeWeapon drains energy on impact
+    end,
+
+    PauseGun = function(self)
+        WaitSeconds(0.1)
+        TIFArtilleryWeapon.StartEconomyDrain(self)
+    end,
 }
 
 

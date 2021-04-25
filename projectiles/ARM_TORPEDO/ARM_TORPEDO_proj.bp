@@ -61,7 +61,7 @@ ProjectileBlueprint {
         StayUnderwater = true,
         TrackTarget = true,
         TurnRate = 230,
-        UseGravity = true,
+        UseGravity = false,
         VelocityAlign = true,
     },
 }

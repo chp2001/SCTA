@@ -4,7 +4,7 @@
 #Script created by Raevn
 
 local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
-local TIFArtilleryWeapon = import('/lua/terranweapons.lua').TIFArtilleryWeapon
+local TAEndGameWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAEndGameWeapon
 
 ARMVULC = Class(TAStructure) {
 	OnCreate = function(self)
@@ -19,17 +19,16 @@ ARMVULC = Class(TAStructure) {
 	end,
 
 	Weapons = {
-		ARMVULC_WEAPON = Class(TIFArtilleryWeapon) {
-			FxMuzzleFlashScale = 3,
+		ARMVULC_WEAPON = Class(TAEndGameWeapon) {
 			OnWeaponFired = function(self)
-				TIFArtilleryWeapon.OnWeaponFired(self)
-				
 				self.unit.currentBarrel = self.unit.currentBarrel + 1
 				self.unit.Spinners.spindle:SetGoal(-90 * (self.unit.currentBarrel + 1))
-				self.unit.Spinners.spindle:SetSpeed(480)
+				self.unit.Spinners.spindle:SetSpeed(720)
+				--self:Fire()
 				if self.unit.currentBarrel == 4 then
 					self.unit.currentBarrel = 0
 				end
+				TAEndGameWeapon.OnWeaponFired(self)
 				self.unit:CreateProjectileAtBone('/mods/SCTA-master/effects/entities/Shells/ARMVULC_Shell/ARMVULC_Shell_proj.bp','Shell')
 			end,
 		},

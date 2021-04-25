@@ -38,7 +38,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'ARM',
         'BOT',
-        'ANTISHIELD',
+        'LASER',
     },
     Defense = {
         ArmorType = 'Normal',

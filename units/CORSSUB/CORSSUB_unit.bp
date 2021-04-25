@@ -146,7 +146,7 @@ UnitBlueprint {
             MaxRadius = 40,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 5,
+            MuzzleVelocity = 3,
             ProjectileId = '/mods/SCTA-master/projectiles/CORSMART_TORPEDO/CORSMART_TORPEDO_proj.bp',
             RackBones = {
                 {
@@ -155,48 +155,6 @@ UnitBlueprint {
                     },
                     RackBone = 'torp1',
                 },
-            },
-            RackFireTogether = true,
-            RackRecoilDistance = 0,
-            RackReloadTimeout = 0,
-            RackSalvoChargeTime = 0,
-            RackSalvoReloadTime = 0,
-            RackSalvoSize = 1,
-            RackSlavedToTurret = false,
-            RateOfFire = 0.2,
-            TargetCheckInterval = 1,
-            TargetPriorities = {
-                'ALLUNITS',
-            },
-            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
-        },
-        {
-            Audio = {
-                Fire = Sound {
-                    Bank = 'TA_Sound',
-                    Cue = 'TORPEDO1',
-                    LodCutoff = 'Weapon_LodCutoff',
-                },
-            },
-            BallisticArc = 'RULEUBA_None',
-            CollideFriendly = false,
-	        DamageFriendly = true,
-            Damage = 400,
-            DamageType = 'TASpec',
-            DisplayName = 'ARMSMART_TORPEDO',
-            FireTargetLayerCapsTable = {
-                Sub = 'Seabed|Sub|Water',
-                Water = 'Seabed|Sub|Water',
-            },
-            RangeCategory = 'UWRC_AntiNavy',
-            WeaponCategory = 'AntiNavy',
-            Label = 'CORSMART_TORPEDO',
-            MaxRadius = 40,
-            MuzzleSalvoDelay = 0,
-            MuzzleSalvoSize = 1,
-            MuzzleVelocity = 5,
-            ProjectileId = '/mods/SCTA-master/projectiles/CORSMART_TORPEDO/CORSMART_TORPEDO_proj.bp',
-            RackBones = {
                 {
                     MuzzleBones = {
                         'torp2',
@@ -209,9 +167,9 @@ UnitBlueprint {
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
-            RackSalvoSize = 0.2,
+            RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 2,
+            RateOfFire = 0.2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

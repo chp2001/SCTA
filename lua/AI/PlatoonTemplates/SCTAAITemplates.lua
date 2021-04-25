@@ -7,14 +7,14 @@
 local RAIDER = (categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea)
 local SPECIAL = (RAIDER + categories.EXPERIMENTAL + categories.ENGINEER + categories.SCOUT)
 local GROUND = categories.MOBILE * categories.LAND
-local TACATS = (categories.ANTISHIELD + categories.AMPHIBIOUS)
+local TACATS = (categories.LASER + categories.AMPHIBIOUS)
 local RANGE = (categories.ARTILLERY + categories.SILO + categories.ANTIAIR)
 
 PlatoonTemplate {
     Name = 'AntiAirSCTA',
     Plan = 'SCTAAntiAirAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND * categories.ANTIAIR, 2, 10, 'attack', 'none' },
+        { GROUND * categories.ANTIAIR - categories.LASER, 2, 10, 'attack', 'none' },
     },
 }
 
@@ -62,7 +62,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTAEndgame',
     Plan = 'SCTAStrikeForceAIEndgame', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND - SPECIAL - categories.BOMB, 20, 50, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND - SPECIAL - categories.BOMB, 15, 30, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
 
@@ -70,7 +70,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTAEndGame',
     Plan = 'AttackSCTAForceAIEndGame',
     GlobalSquads = {
-        { GROUND - SPECIAL - categories.BOMB, 20, 50, 'attack', 'none' }
+        { GROUND - SPECIAL - categories.BOMB, 15, 30, 'attack', 'none' }
     },
 }
 
@@ -87,7 +87,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTALaser',
     Plan = 'HuntSCTAAI', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND * (categories.ANTISHIELD + categories.FIELDENGINEER) - categories.AMPHIBIOUS, -- Type of units.
+        { GROUND * (categories.LASER + categories.FIELDENGINEER) - categories.AMPHIBIOUS - categories.EXPERIMENTAL, -- Type of units.
           2, -- Min number of units.
           10, -- Max number of units.
           'attack', -- platoon types: 'support', 'attack', 'scout',

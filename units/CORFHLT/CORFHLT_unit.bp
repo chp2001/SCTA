@@ -40,7 +40,7 @@ UnitBlueprint {
         'CORE', 
         'SORTDEFENSE',
         'SNIPEMODE',
-        'ANTISHIELD',
+        'LASER',
     },
     CollisionOffsetY = -0.5,
     Defense = {

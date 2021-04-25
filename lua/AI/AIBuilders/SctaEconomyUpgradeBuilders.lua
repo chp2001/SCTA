@@ -18,6 +18,7 @@ local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TEC
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
 BuilderGroup {
     BuilderGroupName = 'SCTAUpgrades',
@@ -26,10 +27,10 @@ BuilderGroup {
         BuilderName = 'TAExtractorUpgrade',
         PlatoonTemplate = 'SctaExtractorUpgrades',
         DelayEqualBuildPlattons = {'TAExtractorUpgrade', 1},
+        PriorityFunction = TAPrior.UnitProduction,
         InstanceCount = 1,
         Priority = 150,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0,  LAB } },
             { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'TAExtractors' }},
             { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 1, categories.MASSEXTRACTION * categories.TECH1 } },  
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
@@ -46,10 +47,10 @@ BuilderGroup {
         PlatoonTemplate = 'SctaExtractorUpgrades',
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'TAExtractorUpgrade', 1},
+        PriorityFunction = TAPrior.StructureProductionT2,
         Priority = 100,
         BuilderConditions = {
             { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'TAExtractors' }},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3,  LAB } },
             { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.TECH1 } },  
             { EBC, 'GreaterThanEconIncome',  { 8, 70}},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
@@ -65,10 +66,10 @@ BuilderGroup {
         BuilderName = 'SCTA Extractor Emergency Upgrade',
         PlatoonTemplate = 'SctaExtractorUpgrades',
         DelayEqualBuildPlattons = {'TAExtractorUpgrade', 1},
+        PriorityFunction = TAPrior.UnitProduction,
         InstanceCount = 2,
         Priority = 150,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0,  LAB } },
             { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'TAExtractors' }},
             { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 3, categories.MASSEXTRACTION * categories.TECH1 } },  
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.75, 0.75, } },
@@ -84,12 +85,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAUpgradeIntel',
         PlatoonTemplate = 'SctaIntelUpgrades',
+        PriorityFunction = TAPrior.TechEnergyExist,
         Priority = 50,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.OPTICS} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.RADAR * categories.STRUCTURE * categories.TECH2} },
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
             { TAutils, 'EcoManagementTA', { 0.75, 1.05, 0.5, 0.9, } },
         },
         BuilderType = 'Any',

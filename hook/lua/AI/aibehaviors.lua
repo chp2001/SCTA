@@ -27,7 +27,6 @@ function CommanderThreadSCTA(cdr, platoon)
     local WaitTaunt = 600 + Random(1, 600)
     local aiBrain = cdr:GetAIBrain()
     aiBrain:BuildScoutLocations()
-    -- Added to ensure we know the start locations (thanks to Sorian).
     SetCDRHome(cdr, platoon)
     while not cdr.Dead do
         -- Overcharge
@@ -75,9 +74,9 @@ function CDRSCTADGun(aiBrain, cdr)
     end
 
     -- Increase distress on non-water maps
-    local distressRange = 60
+    local distressRange = 10
     if cdr:GetHealthPercent() > 0.8 and aiBrain:GetMapWaterRatio() < 0.4 then
-        distressRange = 100
+        distressRange = 30
     end
 
     -- Increase attack range for a few mins on small maps
@@ -88,12 +87,12 @@ function CDRSCTADGun(aiBrain, cdr)
         and GetGameTimeSeconds() > 240
         and mapSizeX <= 512 and mapSizeZ <= 512
         then
-        maxRadius = 125
+        maxRadius = 75
     end
 
     -- Take away engineers too
     local cdrPos = cdr.CDRHome
-    local numUnits = aiBrain:GetNumUnitsAroundPoint(categories.LAND - categories.SCOUT, cdrPos, (maxRadius), 'Enemy')
+    local numUnits = aiBrain:GetNumUnitsAroundPoint(categories.LAND * categories.MOBILE, cdrPos, (maxRadius), 'Enemy')
     local distressLoc = aiBrain:BaseMonitorDistressLocation(cdrPos)
     local overCharging = false
 
@@ -190,8 +189,8 @@ function CDRSCTADGun(aiBrain, cdr)
                     counter = counter + 0.5
                 end
             else
-                WaitSeconds(5)
-                counter = counter + 5
+                WaitSeconds(0.5)
+                counter = counter + 0.5
             end
 
             distressLoc = aiBrain:BaseMonitorDistressLocation(cdrPos)
@@ -199,7 +198,7 @@ function CDRSCTADGun(aiBrain, cdr)
                 return
             end
 
-            if aiBrain:GetNumUnitsAroundPoint(categories.LAND - categories.SCOUT, cdrPos, maxRadius, 'Enemy') <= 0
+            if aiBrain:GetNumUnitsAroundPoint(categories.LAND * categories.MOBILE, cdrPos, maxRadius, 'Enemy') <= 0
                 and (not distressLoc or Utilities.XZDistanceTwoVectors(distressLoc, cdrPos) > distressRange) then
                 continueFighting = false
             end
@@ -227,6 +226,7 @@ function SCTACDRReturnHome(aiBrain, cdr)
     if not cdr.Dead and VDist2Sq(cdrPos[1], cdrPos[3], loc[1], loc[3]) > distSqAway then
         local plat = aiBrain:MakePlatoon('', '')
         aiBrain:AssignUnitsToPlatoon(plat, {cdr}, 'support', 'None')
+        --cdr:SetScriptBit('RULEUTC_CloakToggle', false)
         repeat
             CDRRevertPriorityChange(aiBrain, cdr)
             if not aiBrain:PlatoonExists(plat) then

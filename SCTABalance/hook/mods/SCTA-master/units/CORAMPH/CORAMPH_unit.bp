@@ -14,8 +14,8 @@ Economy = {
             Damage = 50,
             MaxRadius = 24,
             RateOfFire = 1.25,
-            EnergyDrainPerSecond = 25,
-            EnergyRequired = 25,
+            EnergyDrainPerSecond = 10,
+            EnergyRequired = 10,
         },   
         [2] = {
             Damage = 100,

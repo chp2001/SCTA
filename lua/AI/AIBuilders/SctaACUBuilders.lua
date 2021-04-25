@@ -9,23 +9,7 @@ local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
-local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
-
-local UnitProduction = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  6, LAB) then
-        return 150
-    else
-        return 0
-    end
-end
-
-local GantryProduction = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  0, categories.GATE) then
-        return 200
-    else
-        return 0
-    end
-end
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
 
 BuilderGroup {
@@ -147,15 +131,16 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Commander AirFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 945,
-        InstanceCount = 1,
+        InstanceCount = 2,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {300} }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR } }, -- Stop after 10 facs have been built.
-            { TAutils, 'EcoManagementTA', { 0.75, 0.9, 0.5, 0.5, } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.AIR } }, -- Stop after 10 facs have been built.
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.75 } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
         },
         BuilderType = 'Any',
         BuilderData = {
-            DesiresAssist = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
             NeedGuard = false,
             Construction = {
                 BuildClose = true,
@@ -168,12 +153,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Commander LandFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
+        PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 91,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {900} }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
+            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.75 } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
         },
         BuilderType = 'Any',
@@ -214,12 +198,12 @@ BuilderGroup {
         BuilderName = 'SCTA Commander Assist Gantry Construction',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
+        PriorityFunction = TAPrior.GantryConstruction,
         Priority = 126,
-        PriorityFunction = GantryProduction,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderData = {
             Assist = {
@@ -236,13 +220,12 @@ BuilderGroup {
         BuilderName = 'SCTA CDR Assist Structure',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
-        PriorityFunction = UnitProduction,
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 111,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
-            { MIBC, 'GreaterThanGameTime', {600} },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -260,13 +243,14 @@ BuilderGroup {
         BuilderName = 'SCTA CDR Finish Structure',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 105,
-        InstanceCount = 2,
+        Priority = 500,
+        InstanceCount = 1,
         BuilderConditions = {
                 { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
             },
         BuilderData = {
             Assist = {
+                BeingBuiltCategories = {'STRUCTURE'},
                 AssistLocation = 'LocationType',
                 AssistUntilFinished = true,
                 AssisteeType = 'Engineer',

@@ -14,9 +14,6 @@ UnitBlueprint {
     },
     LifeBarOffset = 0.25,
     LifeBarSize = 1,
-    Physics = {
-        MaxSpeed = 8.4,
-    },
     Intel = {
         SonarRadius = 50,
         VisionRadius = 15,

@@ -132,7 +132,7 @@ UnitBlueprint {
             MaxRadius = 40.625,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 4,
+            MuzzleVelocity = 3,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMATL_TORPEDO/ARMATL_TORPEDO_proj.bp',
             RackBones = {
                 {
@@ -154,11 +154,11 @@ UnitBlueprint {
             },
             TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
             TurretBoneMuzzle = 'muzzle',
-            TurretBonePitch = 'turret',
+            TurretBonePitch = 'launcher',
             TurretBoneYaw = 'turret',
             TurretPitch = 0,
             TurretPitchRange = 360,
-            TurretPitchSpeed = 0,
+            TurretPitchSpeed = 60,
             TurretYaw = 0,
             TurretYawRange = 360,
             TurretYawSpeed = 80,

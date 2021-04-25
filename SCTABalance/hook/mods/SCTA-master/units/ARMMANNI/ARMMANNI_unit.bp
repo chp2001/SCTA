@@ -17,7 +17,7 @@ UnitBlueprint {
         'ARM',
         'TANK',	
         'SNIPER',
-        'ANTISHIELD',
+        'LASER',
     },
     Defense = {
         Health = 1500,
@@ -38,9 +38,9 @@ UnitBlueprint {
         [1] = {
             DamageToShields = 800,
             MaxRadius = 80,
-            RateOfFire = 0.2,
-            EnergyDrainPerSecond = 500,
-            EnergyRequired = 1000,
+            RateOfFire = 0.1,
+            EnergyDrainPerSecond = 100,
+            EnergyRequired = 500,
         },
         [2] = {
         },

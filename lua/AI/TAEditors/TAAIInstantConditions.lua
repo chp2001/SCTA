@@ -225,3 +225,36 @@ function TARandomLocation(x,z, value)
     return { finalX, height, finalZ }
 end
 
+--[[function TAUnfinishedUnits(aiBrain, locationType, category)
+    local engineerManager = aiBrain.BuilderManagers[locationType].EngineerManager
+    if not engineerManager then
+        return false
+    end
+    local unfinished = aiBrain:GetUnitsAroundPoint(category, engineerManager:GetLocationCoords(), engineerManager.Radius, 'Ally')
+    for num, unit in unfinished do
+        donePercent = unit:GetFractionComplete()
+        if donePercent < 1 and GetGuards(aiBrain, unit) < 2 then
+            return true
+        end
+    end
+    return false
+end
+
+function GetGuards(aiBrain, Unit)
+    local engs = aiBrain:GetUnitsAroundPoint(categories.ENGINEER, Unit:GetPosition(), 10, 'Ally')
+    local count = 0
+    local UpgradesFrom = Unit:GetBlueprint().General.UpgradesFrom
+    for k,v in engs do
+        if v.UnitBeingBuilt == Unit then
+            count = count + 1
+        end
+    end
+    if UpgradesFrom and UpgradesFrom != 'none' then -- Used to filter out upgrading units
+        local oldCat = ParseEntityCategory(UpgradesFrom)
+        local oldUnit = aiBrain:GetUnitsAroundPoint(oldCat, Unit:GetPosition(), 0, 'Ally')
+        if oldUnit then
+            count = count + 1
+        end
+    end
+    return count
+end]]

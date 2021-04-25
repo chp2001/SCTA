@@ -157,7 +157,7 @@ BuilderConditions = {
         BuilderName = 'SCTAAI T2AirFactory',
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
         Priority = 119,
-        PriorityFunction = TAPrior.TechEnergyExist,
+        TAPrior.UnitProduction,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, LAB * categories.AIR} },
@@ -179,7 +179,7 @@ BuilderConditions = {
     },
     Builder {
         BuilderName = 'SCTAAI T3AirFactory',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco23',
+        PlatoonTemplate = 'EngineerBuilderSCTA3',
         PriorityFunction = TAPrior.ProductionT3,
         Priority = 140,
         InstanceCount = 1,
@@ -203,7 +203,55 @@ BuilderConditions = {
     },
     Builder {
         BuilderName = 'SCTAAI T3LAND Hover Factory',
-        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        PlatoonTemplate = 'EngineerBuilderSCTA3',
+        PriorityFunction = TAPrior.ProductionT3,
+        Priority = 143,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, PLATFORM} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, PLATFORM} },
+            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T3LandFactory',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T3AirFactory T2',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco23',
+        PriorityFunction = TAPrior.ProductionT3,
+        Priority = 140,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, PLATFORM * categories.AIR} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, PLATFORM} },
+            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T3AirFactory',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T3LAND Hover Factory T2',
+        PlatoonTemplate = 'EngineerBuilderSCTA3',
         PriorityFunction = TAPrior.ProductionT3,
         Priority = 143,
         InstanceCount = 1,
@@ -251,7 +299,7 @@ BuilderConditions = {
         BuilderName = 'SCTA Engineer Assist Gantry Production',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
         Plan = 'ManagerEngineerAssistAI',
-        PriorityFunction = TAPrior.GantryConstruction,
+        PriorityFunction = TAPrior.GateBeingBuilt,
         Priority = 200,
         InstanceCount = 12,
         BuilderConditions = {

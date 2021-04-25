@@ -23,6 +23,7 @@ ARMMAV = Class(TAWalking) {
 		EMG = Class(TAweapon) {
 		PlayFxWeaponUnpackSequence = function(self)
 			TAweapon.PlayFxWeaponUnpackSequence(self)
+			self:PlaySound(Sound({Cue = 'MAVGUN2', Bank = 'TA_Sound', LodCutoff = 'Weapon_LodCutoff'}))
 			self.unit.Spinners.lgunbase:SetGoal(-90)
 			self.unit.Spinners.lgunbase:SetSpeed(90)
 

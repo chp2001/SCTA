@@ -157,7 +157,6 @@ PlatoonTemplate {
     Name = 'T3LandDFVehicleSCTA',
     FactionSquads = {
         Arm = {
-            { 'armmanni', 1, 1, 'attack', 'none' },
             { 'armmart', 1, 1, 'attack', 'none' },
         },
         Core = {

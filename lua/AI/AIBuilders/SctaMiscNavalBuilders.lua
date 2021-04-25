@@ -305,7 +305,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2 Naval PGen',
         PlatoonTemplate = 'EngineerBuilderSCTANaval2',
-        PriorityFunction = TAPrior.EnergyBeingBuilt,
+        PriorityFunction = TAPrior.NothingBuilt,
         Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
@@ -382,11 +382,11 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Finish Navy',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 500,
+        Priority = 85,
         InstanceCount = 1,
         BuilderConditions = {
-                { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
-            },
+            { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
+        },
         BuilderData = {
             Assist = {
                 BeingBuiltCategories = {'STRUCTURE'},

@@ -3,7 +3,6 @@ local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
-local LAB = (categories.FACTORY * categories.TECH2)
 local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
 BuilderGroup {
@@ -14,8 +13,8 @@ BuilderGroup {
         PlatoonTemplate = 'T3LandHOVERSCTA',
         Priority = 138,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.6, categories.LAND * categories.DIRECTFIRE * categories.TECH3 - categories.SCOUT,
-            '<=', categories.LAND * categories.MOBILE * categories.TECH3 - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
+            { UCBC, 'HaveUnitRatio', { 0.6, categories.LAND * categories.DIRECTFIRE - categories.SCOUT,
+            '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Hover',
@@ -26,8 +25,8 @@ BuilderGroup {
         Priority = 126,
         InstanceCount = 1,
         BuilderConditions = {
-        { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.TECH3 * categories.SILO * categories.MOBILE - categories.ANTIAIR,
-        '<=', categories.MOBILE * categories.LAND * categories.TECH3 - categories.ENGINEER } }, -- Don't make tanks if we have lots of them. },
+        { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.SILO * categories.MOBILE - categories.ANTIAIR,
+        '<=', categories.MOBILE * categories.LAND - categories.ENGINEER } }, -- Don't make tanks if we have lots of them. },
         { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
     },
         BuilderType = 'Hover',
@@ -38,8 +37,8 @@ BuilderGroup {
         Priority = 133,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.ANTIAIR * categories.MOBILE * categories.TECH3,
-                                       '<', categories.LAND  * categories.MOBILE * categories.TECH3 - categories.ENGINEER } },
+            { UCBC, 'HaveUnitRatio', { 0.2, categories.LAND * categories.ANTIAIR * categories.MOBILE,
+                                       '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
          { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
         },
         BuilderType = 'Hover',

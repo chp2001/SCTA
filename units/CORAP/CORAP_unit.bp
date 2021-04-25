@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 0,
+    BuildIconSortPriority = 4,
     Categories = {
         'BUILTBYTIER1FACTORY',
         'BUILTBYTIER1ENGINEER',
@@ -71,8 +71,6 @@ UnitBlueprint {
             LODs = {
                 {
                 LODCutoff = 400,
-                AlbedoName = 'CORAP_Albedo.dds',
-                SpecularName = 'CORAP_SpecTeam.dds',
                 ShaderName = 'Unit',
             },
         },
@@ -124,8 +122,6 @@ TechLevel = 'RULEUTL_Basic',
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {        
-        ---SkirtSizeX = 7,
-        ---SkirtSizeZ = 7,
         RollOffPoints = {
             {
                 UnitSpin = 90,
@@ -141,7 +137,7 @@ TechLevel = 'RULEUTL_Basic',
             },
         },
     },
-    SelectionSizeX = 4.5,
+    SelectionSizeX = 3.75,
     SelectionSizeZ = 3.5,
     SelectionThickness = 0.25,
     SizeX = 7,

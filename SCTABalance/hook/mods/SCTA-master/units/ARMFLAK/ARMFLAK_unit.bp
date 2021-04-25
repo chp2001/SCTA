@@ -10,7 +10,7 @@ UnitBlueprint {
     LifeBarSize = 1,
     Weapon = {
         [1] = {
-            Damage = 90,
+            Damage = 150,
         },
         [2] = {
         },

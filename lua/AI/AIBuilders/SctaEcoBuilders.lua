@@ -233,7 +233,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA23All',
-        PriorityFunction = TAPrior.EnergyBeingBuilt,
+        PriorityFunction = TAPrior.NothingBuilt,
         Priority = 125,
         InstanceCount = 1,
         BuilderConditions = {
@@ -256,10 +256,9 @@ BuilderGroup {
         BuilderName = 'SCTAAI T3Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA3',
         Priority = 175,
-        PriorityFunction = TAPrior.EnergyBeingBuilt,
+        PriorityFunction = TAPrior.NothingBuilt,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
             { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
         BuilderType = 'Any',
@@ -320,17 +319,16 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Finish',
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 500,
+        Priority = 85,
         InstanceCount = 1,
         BuilderConditions = {
-                { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
-            },
+            { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
+        },
         BuilderData = {
             Assist = {
-                BeingBuiltCategories = {'STRUCTURE'},
                 AssistLocation = 'LocationType',
-                AssistUntilFinished = true,
                 AssisteeType = 'Engineer',
+                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
                 Time = 20,
             },
         },

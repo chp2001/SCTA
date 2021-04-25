@@ -231,7 +231,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LAND * categories.TECH3 * (categories.SNIPER + categories.ARTILLERY)}}, -- Don't make tanks if we have lots of them.
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
         },
-        BuilderType = 'KBot',
+        BuilderType = 'Land',
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Vehicle Artillery',

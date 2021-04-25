@@ -1,26 +1,15 @@
 local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
-local EnProduct = import('/lua/editor/UnitCountBuildConditions.lua').HaveLessThanUnitsInCategoryBeingBuilt
+local MoreProduct = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsInCategoryBeingBuilt
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
 
-
----T3Production
-StructureProductionT3 = function(self, aiBrain)
-    if Factory(aiBrain,  4, PLATFORM)  then 
-        return 150
-    elseif Factory(aiBrain,  2, PLATFORM) then
-        return 85
-    else
-        return 0
-    end
-end
-
+---TECHUPPRoduction
 
 ProductionT3 = function(self, aiBrain)
     if Factory(aiBrain,  12, LAB)  then 
-        return 150
+        return 130
     elseif Factory(aiBrain,  0, categories.GATE) then
         return 180
     else
@@ -40,14 +29,13 @@ end
 
 EngineerProductionT3 = function(self, aiBrain)
     if Factory(aiBrain,  12, LAB)  then 
-        return 150
+        return 155
     elseif Factory(aiBrain,  0, categories.GATE) then
         return 135
     else
         return 0
     end
 end
----T2Production
 
 UnitProduction = function(self, aiBrain)
     if Factory(aiBrain,  1, LAB) then
@@ -56,6 +44,18 @@ UnitProduction = function(self, aiBrain)
         return 50
     elseif Factory(aiBrain,  12, PLANT) then 
             return 110
+    else
+        return 0
+    end
+end
+
+---WithinTechProduction
+
+StructureProductionT3 = function(self, aiBrain)
+    if Factory(aiBrain,  4, PLATFORM)  then 
+        return 155
+    elseif Factory(aiBrain,  12, LAB) then
+        return 10
     else
         return 0
     end
@@ -71,6 +71,16 @@ StructureProductionT2 = function(self, aiBrain)
     end
 end
 
+TechEnergyExist = function(self, aiBrain)
+    if Factory(aiBrain,  0, FUSION) then 
+        return 135
+    else
+        return 0
+    end
+end
+
+----TECH1 PRODUCTION
+
 EngineerProduction = function(self, aiBrain)
     if Factory(aiBrain,  6, LAB) then 
         return 0
@@ -80,8 +90,6 @@ EngineerProduction = function(self, aiBrain)
         return 101
     end
 end
-
-
 
 UnitProductionT1 = function(self, aiBrain)
     if Factory(aiBrain,  0, categories.GATE) then
@@ -95,10 +103,7 @@ UnitProductionT1 = function(self, aiBrain)
       end
   end
   
-
-
-----GANTRYSPECIFIC
-AirProduction = function(self, aiBrain)
+  AirProduction = function(self, aiBrain)
     if Factory(aiBrain,  4, LAB) then 
         return 10
     elseif Factory(aiBrain,  0, categories.GATE) then
@@ -108,11 +113,23 @@ AirProduction = function(self, aiBrain)
     end
 end
 
+HighTechEnergyProduction = function(self, aiBrain)
+    if Factory(aiBrain,  0, FUSION) then 
+        return 5
+    elseif Factory(aiBrain,  2, FUSION) then 
+        return 0
+    else
+        return 80
+    end
+end
+
+
+----GANTRYSPECIFIC
 
 GantryConstruction = function(self, aiBrain)
     if Factory(aiBrain,  2, PLATFORM)  then
         return 175
-    elseif Factory(aiBrain,  4, LAB) then
+    elseif Factory(aiBrain,  6, LAB) then
         return 75
     else
         return 0
@@ -127,29 +144,28 @@ GantryProduction = function(self, aiBrain)
     end
 end
 
-
-HighTechEnergyProduction = function(self, aiBrain)
-    if Factory(aiBrain,  0, FUSION) then 
-        return 5
-    elseif Factory(aiBrain,  2, FUSION) then 
-        return 0
-    else
-        return 80
-    end
-end
-
-TechEnergyExist = function(self, aiBrain)
-    if Factory(aiBrain,  2, FUSION) then 
-        return 110
-    else
-        return 0
-    end
-end
-
-EnergyBeingBuilt = function(self, aiBrain)
-    if EnProduct(aiBrain,  1, FUSION) then 
+GateBeingBuilt = function(self, aiBrain)
+    if MoreProduct(aiBrain,  0, categories.GATE) then 
         return 150
     else
         return 0
+    end
+end
+
+--ENERGYMIDTECH
+
+EnergyBeingBuilt = function(self, aiBrain)
+    if MoreProduct(aiBrain,  0, FUSION) then 
+        return 120
+    else
+        return 0
+    end
+end
+
+NothingBuilt = function(self, aiBrain)
+    if MoreProduct(aiBrain,  0, FUSION) then 
+        return 0
+    else
+        return 130
     end
 end

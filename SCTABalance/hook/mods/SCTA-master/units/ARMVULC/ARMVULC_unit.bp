@@ -45,10 +45,8 @@ UnitBlueprint {
         [1] = {
             MaxRadius = 2500,
             MinRadius = 50,
-            Damage = 1350,
+            Damage = 600,
             MuzzleVelocity = 100,
-            MuzzleSalvoSize = 4,
-            MuzzleSalvoDelay = 0.2, 
             ProjectileLifetime = 2000,
             ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/ARMVULA_WEAPON/ARMVULA_WEAPON_proj.bp',
             TurretPitch = 20,

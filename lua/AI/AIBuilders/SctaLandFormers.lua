@@ -4,6 +4,7 @@ local SAI = '/lua/ScenarioPlatoonAI.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAILandFormers',
@@ -29,6 +30,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Laser',
         PlatoonTemplate = 'StrikeForceSCTALaser', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 200,
+        PriorityFunction = TAPrior.UnitProduction,
         InstanceCount = 50,
         BuilderType = 'Any',
         BuilderData = {
@@ -53,6 +55,7 @@ BuilderGroup {
         PlatoonTemplate = 'LandAttackSCTAEarly', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 100,
         InstanceCount = 30,
+        PriorityFunction = TAPrior.UnitProductionT1,
         FormRadius = 1000,
         BuilderType = 'Any',
         BuilderData = {
@@ -68,7 +71,6 @@ BuilderGroup {
         },        
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND - categories.ENGINEER}},
-            { MIBC, 'LessThanGameTime', {600} },
         },
     },
     Builder {
@@ -118,6 +120,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Strike Mid',
         PlatoonTemplate = 'StrikeForceSCTAMid', -- The platoon template tells the AI what units to include, and how to use them.
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 150,
         InstanceCount = 100,
         BuilderType = 'Any',
@@ -129,12 +132,12 @@ BuilderGroup {
         },        
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND - categories.ENGINEER}},
-            { MIBC, 'GreaterThanGameTime', {720} },
         },
     },
     Builder {
         BuilderName = 'SCTAAI Land Attack Endgame',
         PlatoonTemplate = 'LandAttackSCTAEndGame', -- The platoon template tells the AI what units to include, and how to use them.
+        PriorityFunction = TAPrior.ProductionT3,
         Priority = 210,
         InstanceCount = 50,
         FormRadius = 1000,
@@ -152,12 +155,12 @@ BuilderGroup {
         },        
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND - categories.ENGINEER}},
-            { MIBC, 'GreaterThanGameTime', {1200} },
         },
     },
     Builder {
         BuilderName = 'SCTAAI Strike Endgame',
         PlatoonTemplate = 'StrikeForceSCTAEndgame', -- The platoon template tells the AI what units to include, and how to use them.
+        PriorityFunction = TAPrior.StructureProductionT3,
         Priority = 250,
         InstanceCount = 50,
         FormRadius = 1000,
@@ -172,7 +175,6 @@ BuilderGroup {
         },        
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND - categories.ENGINEER}},
-            { MIBC, 'GreaterThanGameTime', {1200} },
         },
     },
     Builder {

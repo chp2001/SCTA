@@ -11,6 +11,7 @@ local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
 local WIND = (categories.armwin + categories.corwin)
 local SOLAR = (categories.armsolar + categories.corsolar)
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAssisters',
@@ -20,11 +21,11 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Excess PLANTS',
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
         PlatoonAIPlan = 'ReclaimStructuresAI',
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 100,
         InstanceCount = 5,
         BuilderConditions = {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, PLANT}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, LAB * categories.LAND} },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, LAB * categories.AIR} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT} },
             { TAutils, 'LessMassStorageMaxTA', { 0.2}},    
@@ -40,10 +41,10 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Energy',
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
         PlatoonAIPlan = 'ReclaimStructuresAI',
+        PriorityFunction = TAPrior.TechEnergyExist,
         Priority = 85,
         InstanceCount = 4,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4, FUSION} },
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, WIND + SOLAR}},
             { TAutils, 'GreaterThanEconEnergyTAEfficiency', {1.05 }},
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},

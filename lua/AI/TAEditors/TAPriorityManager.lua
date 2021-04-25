@@ -64,7 +64,7 @@ end
 StructureProductionT2 = function(self, aiBrain, builderManager)
     if Factory(aiBrain,  4, LAB)  then 
         return 95
-    elseif Factory(aiBrain,  2, categories.LAB) then
+    elseif Factory(aiBrain,  2, LAB) then
         return 10
     else
         return 0
@@ -140,6 +140,14 @@ end
 
 TechEnergyExist = function(self, aiBrain, builderManager)
     if Factory(aiBrain,  2, FUSION) then 
+        return 110
+    else
+        return 0
+    end
+end
+
+EnergyBeingBuilt = function(self, aiBrain, builderManager)
+    if EnProduct(aiBrain,  1, FUSION) then 
         return 110
     else
         return 0

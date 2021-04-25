@@ -233,12 +233,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA23All',
-        PriorityFunction = TAPrior.UnitProduction,
+        PriorityFunction = TAPrior.EnergyBeingBuilt,
         Priority = 125,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TECH3 * categories.ENERGYPRODUCTION * categories.STRUCTURE} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
             { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
         BuilderType = 'Any',
@@ -257,7 +256,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T3Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA3',
         Priority = 175,
-        PriorityFunction = TAPrior.GantryConstruction,
+        PriorityFunction = TAPrior.EnergyBeingBuilt,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },

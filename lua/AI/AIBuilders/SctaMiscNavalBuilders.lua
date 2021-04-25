@@ -306,11 +306,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2 Naval PGen',
         PlatoonTemplate = 'EngineerBuilderSCTANaval2',
-        PriorityFunction = TAPrior.UnitProduction,
+        PriorityFunction = TAPrior.EnergyBeingBuilt,
         Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
             { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
         BuilderType = 'Any',

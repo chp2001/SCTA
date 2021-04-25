@@ -225,7 +225,7 @@ function TARandomLocation(x,z, value)
     return { finalX, height, finalZ }
 end
 
-function TAUnfinishedUnits(aiBrain, locationType, category)
+--[[function TAUnfinishedUnits(aiBrain, locationType, category)
     local engineerManager = aiBrain.BuilderManagers[locationType].EngineerManager
     if not engineerManager then
         return false
@@ -257,4 +257,4 @@ function GetGuards(aiBrain, Unit)
         end
     end
     return count
-end
+end]]

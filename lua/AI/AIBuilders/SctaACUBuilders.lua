@@ -133,9 +133,8 @@ BuilderGroup {
         Priority = 945,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.AIR } }, -- Stop after 10 facs have been built.
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.75 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR } }, -- Stop after 10 facs have been built.
+            { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -165,7 +164,6 @@ BuilderGroup {
             DesiresAssist = false,
             NeedGuard = false,
             Construction = {
-                BuildClose = true,
                 BuildStructures = {
                     'T1LandFactory2',
                 }
@@ -181,7 +179,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
             { MIBC, 'LessThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
-            { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 125, -500, 250, 0, 'StructuresNotMex', 1 }},
+            { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 125, -500, 100, 0, 'StructuresNotMex', 1 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -243,7 +241,7 @@ BuilderGroup {
         BuilderName = 'SCTA CDR Finish Structure',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 125,
+        Priority = 85,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},

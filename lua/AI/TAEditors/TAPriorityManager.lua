@@ -72,8 +72,8 @@ StructureProductionT2 = function(self, aiBrain)
 end
 
 TechEnergyExist = function(self, aiBrain)
-    if Factory(aiBrain,  2, FUSION) then 
-        return 115
+    if Factory(aiBrain,  0, FUSION) then 
+        return 135
     else
         return 0
     end

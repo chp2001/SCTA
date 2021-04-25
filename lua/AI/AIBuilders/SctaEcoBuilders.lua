@@ -319,7 +319,7 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Finish',
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 125,
+        Priority = 85,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},

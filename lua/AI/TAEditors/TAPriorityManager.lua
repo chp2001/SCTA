@@ -1,10 +1,22 @@
 local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
+local EnProduct = import('/lua/editor/UnitCountBuildConditions.lua').HaveLessThanUnitsInCategoryBeingBuilt
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
+local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
 
 
 ---T3Production
+StructureProductionT3 = function(self, aiBrain, builderManager)
+    if Factory(aiBrain,  4, PLATFORM)  then 
+        return 150
+    elseif Factory(aiBrain,  2, PLATFORM) then
+        return 85
+    else
+        return 0
+    end
+end
+
 
 ProductionT3 = function(self, aiBrain, builderManager)
     if Factory(aiBrain,  12, LAB)  then 
@@ -49,6 +61,16 @@ UnitProduction = function(self, aiBrain, builderManager)
     end
 end
 
+StructureProductionT2 = function(self, aiBrain, builderManager)
+    if Factory(aiBrain,  4, LAB)  then 
+        return 95
+    elseif Factory(aiBrain,  2, categories.LAB) then
+        return 10
+    else
+        return 0
+    end
+end
+
 EngineerProduction = function(self, aiBrain, builderManager)
     if Factory(aiBrain,  6, LAB) then 
         return 0
@@ -62,7 +84,6 @@ end
 
 
 UnitProductionT1 = function(self, aiBrain, builderManager)
-
     if Factory(aiBrain,  0, categories.GATE) then
           return 0
     elseif Factory(aiBrain,  6, LAB) then
@@ -70,7 +91,7 @@ UnitProductionT1 = function(self, aiBrain, builderManager)
     elseif Factory(aiBrain,  1, LAB) then 
               return 50
       else
-          return 101
+          return 110
       end
   end
   
@@ -107,4 +128,20 @@ GantryProduction = function(self, aiBrain, builderManager)
 end
 
 
+HighTechEnergyProduction = function(self, aiBrain, builderManager)
+    if Factory(aiBrain,  0, FUSION) then 
+        return 5
+    elseif Factory(aiBrain,  2, FUSION) then 
+        return 0
+    else
+        return 80
+    end
+end
 
+TechEnergyExist = function(self, aiBrain, builderManager)
+    if Factory(aiBrain,  2, FUSION) then 
+        return 110
+    else
+        return 0
+    end
+end

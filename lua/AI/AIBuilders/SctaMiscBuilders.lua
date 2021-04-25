@@ -6,6 +6,8 @@ local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
+
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIEngineerMiscBuilder',
@@ -16,8 +18,8 @@ BuilderGroup {
         Priority = 75,
         InstanceCount = 5,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.SILO - categories.MOBILE} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.5}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.ANTIAIR * categories.TECH1 - categories.MOBILE} }, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -32,12 +34,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAMissileDefense',
         PlatoonTemplate = 'EngineerBuilderSCTA',
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 75,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {900} }, 
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ANTIMISSILE * categories.TECH2} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.7}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.35, 0.35}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -53,11 +55,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAMissileDefense2',
         PlatoonTemplate = 'EngineerBuilderSCTA3',
+        PriorityFunction = TAPrior.TechEnergyExist,
         Priority = 74,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {1500} },
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2,  FUSION} },  
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.ANTIMISSILE * categories.TECH3} },
             { TAutils, 'GreaterThanEconEnergyTAEfficiency', {1.05 }},
         },
@@ -76,11 +78,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTALaser3Tower',
         PlatoonTemplate = 'EngineerBuilderSCTA23All',
+        PriorityFunction = TAPrior.ProductionT3,
         Priority = 81,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.DEFENSE * categories.TECH3 - categories.MOBILE - categories.ANTIAIR} }, 
-            { EBC, 'GreaterThanEconStorageRatio', { 0.4, 0.25}}, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}}, 
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -102,7 +105,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.ANTIAIR * categories.TECH2 - categories.MOBILE} }, 
-            { EBC, 'GreaterThanEconStorageRatio', { 0.4, 0.25}}, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}}, 
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -121,10 +124,9 @@ BuilderGroup {
         BuilderName = 'SCTAStaging',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 57,
+        PriorityFunction = TAPrior.UnitProduction,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {600} }, 
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0,  categories.TECH2 * categories.FACTORY * categories.AIR} },  
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.AIRSTAGINGPLATFORM} },
         },
         BuilderType = 'Any',
@@ -140,13 +142,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Defense Point 1',
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
-        Priority = 44,
+        Priority = 50,
         InstanceCount = 1,
         BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {600} }, 
             { MIBC, 'GreaterThanGameTime', {240} },
-            { MIBC, 'LessThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ANTISHIELD * categories.TECH1 - categories.MOBILE } }, 
-            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.7}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LASER * categories.TECH1 - categories.MOBILE } }, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -175,10 +177,10 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA23All',
         Priority = 76,
         InstanceCount = 2,
+        PriorityFunction = TAPrior.TechEnergyExist,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, FUSION} }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.ANTISHIELD * categories.TECH2 - categories.MOBILE} }, 
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.75}}, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.LASER * categories.TECH2 - categories.MOBILE} }, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}}, 
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -266,7 +268,6 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE * (categories.TECH2 + categories.TECH3)}},
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.FIELDENGINEER} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
         },
         BuilderData = {

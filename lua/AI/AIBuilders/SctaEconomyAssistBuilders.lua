@@ -12,7 +12,6 @@ local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TEC
 local WIND = (categories.armwin + categories.corwin)
 local SOLAR = (categories.armsolar + categories.corsolar)
 
-
 BuilderGroup {
     BuilderGroupName = 'SCTAAssisters',
     BuildersType = 'PlatoonFormBuilder',

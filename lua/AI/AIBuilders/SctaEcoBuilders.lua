@@ -9,6 +9,8 @@ local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
+local WIND = (categories.armwin + categories.corwin)
+local SOLAR = (categories.armsolar + categories.corsolar)
 local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
 BuilderGroup {
@@ -189,11 +191,11 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 75,
+        PriorityFunction = TAPrior.HighTechEnergyProduction,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 10, SOLAR} },
             { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9}},
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -211,9 +213,9 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer Pgen2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 100,
+        PriorityFunction = TAPrior.HighTechEnergyProduction,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
             { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
         },
         BuilderType = 'Any',
@@ -231,34 +233,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA23All',
-        Priority = 130,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
-            { EBC, 'GreaterThanEconStorageCurrent', { 500, 1000 } },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            DesiresAssist = true,
-            NumAssistees = 2,
-            NeedGuard = false,
-            Construction = {
-                BuildStructures = {
-                    'T2EnergyProduction',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTAAI T2Engineer2 Pgen',
-        PlatoonTemplate = 'EngineerBuilderSCTA23All',
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 125,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TECH3 * categories.ENERGYPRODUCTION * categories.STRUCTURE} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -339,10 +320,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'Mini Nuke Launcher SCTA', -- Names need to be GLOBALLY unique.  Prefixing the AI name will help avoid name collisions with other AIs.	
         PlatoonTemplate = 'EngineerBuilderSCTA23All',
+        PriorityFunction = TAPrior.StructureProductionT2,
         Priority = 65,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 6,  LAB } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.TACTICALMISSILEPLATFORM} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
@@ -362,9 +343,9 @@ BuilderGroup {
         BuilderName = 'T2ArtillerySCTA', -- Names need to be GLOBALLY unique.  Prefixing the AI name will help avoid name collisions with other AIs.	
         PlatoonTemplate = 'EngineerBuilderSCTA23All',
         Priority = 50,
+        PriorityFunction = TAPrior.StructureProductionT2,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 8,  LAB } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ARTILLERY * categories.STRUCTURE * categories.TECH2} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },

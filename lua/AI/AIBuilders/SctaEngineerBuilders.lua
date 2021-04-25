@@ -19,7 +19,7 @@ BuilderGroup {
         Priority = 82,
         PriorityFunction = TAPrior.EngineerProduction,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {600} },
+            { MIBC, 'LessThanGameTime', {180} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.SCOUT * categories.LAND * categories.MOBILE} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
@@ -31,7 +31,7 @@ BuilderGroup {
         Priority = 80,
         PriorityFunction = TAPrior.EngineerProduction,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {360} },
+            { MIBC, 'LessThanGameTime', {180} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.SCOUT * categories.LAND * categories.MOBILE} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
@@ -111,8 +111,8 @@ BuilderGroup {
         BuilderName = 'SCTAAi AirFactoryT2 Engineer',
         PlatoonTemplate = 'T2BuildEngineerAirSCTA',
         Priority = 110,
+        PriorityFunction = TAPrior.TechEnergyExist,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, FUSION} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.AIR * categories.TECH2} }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'Air',

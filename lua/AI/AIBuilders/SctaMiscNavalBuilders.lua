@@ -69,7 +69,6 @@ BuilderGroup {
         Priority = 141,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 900 } },
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},		
             { UCBC, 'HaveLessThanUnitsWithCategory', { 3, LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
@@ -137,10 +136,9 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Engineer Naval MetalMaker',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         Priority = 120,
-        PriorityFunction = TAPrior.UnitProduction,
+        PriorityFunction = TAPrior.TechEnergyExist,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0,  FUSION} }, 
             { TAutils, 'GreaterThanEconEnergyTAEfficiency', {0.9 }},
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
         },
@@ -190,10 +188,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Naval T1Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        PriorityFunction = TAPrior.HighTechEnergyProduction,
         Priority = 135,
         InstanceCount = 2,
         BuilderConditions = {
-        { UCBC, 'HaveLessThanUnitsWithCategory', { 4, FUSION } },  -- Stop after 10 facs have been built.
         { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
         },
         BuilderType = 'Any',
@@ -308,6 +306,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2 Naval PGen',
         PlatoonTemplate = 'EngineerBuilderSCTANaval2',
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
@@ -330,12 +329,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Energy Naval',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        PriorityFunction = TAPrior.TechEnergyExist,
         PlatoonAIPlan = 'ReclaimStructuresAI',
         Priority = 111,
         InstanceCount = 8,
         BuilderConditions = {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, TIDAL}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1, FUSION} },
             { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
             },
         BuilderData = {
@@ -349,11 +348,11 @@ BuilderGroup {
         BuilderName = 'SCTA Defensive Point Naval',
         PlatoonTemplate = 'EngineerBuilderSCTANaval2',
         Priority = 76,
+        PriorityFunction = TAPrior.TechEnergyExist,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, FUSION} }, 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.ANTISHIELD * categories.TECH2 - categories.MOBILE} }, 
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.75}}, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LASER * categories.TECH2 - categories.MOBILE} }, 
+            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}}, 
         },
         BuilderType = 'Any',
         BuilderData = {

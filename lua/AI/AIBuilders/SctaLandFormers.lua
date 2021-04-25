@@ -44,6 +44,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
+            { TAutils, 'GreaterEnergyStorageMaxTA', { 0.2 } },
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0,  categories.LASER * categories.MOBILE} },
         },
     },
@@ -67,13 +68,13 @@ BuilderGroup {
         },        
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND - categories.ENGINEER}},
-            { MIBC, 'LessThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
-         },
+            { MIBC, 'LessThanGameTime', {600} },
+        },
     },
     Builder {
         BuilderName = 'SCTAAI Missile Hunt',
         PlatoonTemplate = 'LandRocketAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 125,
+        Priority = 115,
         InstanceCount = 30,
         BuilderType = 'Any',
         BuilderData = {
@@ -89,13 +90,13 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.MOBILE * categories.LAND * ( categories.SILO + categories.ARTILLERY)} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND * ( categories.SILO + categories.ARTILLERY)} },
          },
     },
     Builder {
         BuilderName = 'SCTAAI Land Attack Mid',
         PlatoonTemplate = 'LandAttackSCTAMid', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 150,
+        Priority = 115,
         InstanceCount = 100,
         BuilderType = 'Any',
         BuilderData = {
@@ -129,7 +130,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND - categories.ENGINEER}},
             { MIBC, 'GreaterThanGameTime', {720} },
-         },
+        },
     },
     Builder {
         BuilderName = 'SCTAAI Land Attack Endgame',
@@ -152,7 +153,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND - categories.ENGINEER}},
             { MIBC, 'GreaterThanGameTime', {1200} },
-         },
+        },
     },
     Builder {
         BuilderName = 'SCTAAI Strike Endgame',
@@ -171,8 +172,8 @@ BuilderGroup {
         },        
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND - categories.ENGINEER}},
-            { MIBC, 'GreaterThanGameTime', {1500} },
-         },
+            { MIBC, 'GreaterThanGameTime', {1200} },
+        },
     },
     Builder {
         BuilderName = 'SCTAAI Land Scout',

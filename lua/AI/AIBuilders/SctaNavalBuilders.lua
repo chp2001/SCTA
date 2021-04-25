@@ -8,7 +8,7 @@ local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
-
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAINavalBuilder',
@@ -16,6 +16,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Naval Engineer',
         PlatoonTemplate = 'T1EngineerSCTANaval',
+        PriorityFunction = TAPrior.EngineerProduction,
         Priority = 140, -- Top factory priority
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.NAVAL * categories.ENGINEER * categories.TECH1} }, -- Build engies until we have 4 of them.
@@ -34,6 +35,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory ScoutShip',
         PlatoonTemplate = 'T1ScoutShipSCTA',
+        PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 110,
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},
@@ -58,6 +60,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT1 AntiSub',
         PlatoonTemplate = 'T1SubSCTA',
+        PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 120,
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},
@@ -85,7 +88,6 @@ BuilderGroup {
         Priority = 120,
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},
-            { MIBC, 'GreaterThanGameTime', {600} },
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, (categories.NAVAL * categories.FACTORY), 'Enemy'}},	
             { UCBC, 'HaveUnitRatio', { 0.33, categories.NAVAL * categories.MOBILE * categories.FRIGATE,
             '<=', categories.NAVAL * categories.MOBILE} },
@@ -122,6 +124,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Battleship',
         PlatoonTemplate = 'BattleshipSCTA',
+        PriorityFunction = TAPrior.ProductionT3,
         Priority = 131,
         BuilderConditions = {
             { TASlow,    'TAAttackNaval', {true}},

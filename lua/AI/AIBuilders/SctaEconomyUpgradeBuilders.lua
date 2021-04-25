@@ -48,8 +48,8 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'TAExtractorUpgrade', 1},
         Priority = 100,
         BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2,  LAB } },
             { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'TAExtractors' }},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3,  LAB } },
             { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.TECH1 } },  
             { EBC, 'GreaterThanEconIncome',  { 8, 70}},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },

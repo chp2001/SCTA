@@ -172,10 +172,6 @@ TAEndGameWeapon = Class(TIFArtilleryWeapon) {
         self:ForkThread(self.PauseGun)
     end,
 
-    OnCreate = function(self)
-        TIFArtilleryWeapon.OnCreate(self)
-        self.EnergyRequired = self:GetBlueprint().EnergyRequired
-    end,
 
     StartEconomyDrain = function(self) -- OverchargeWeapon drains energy on impact
     end,

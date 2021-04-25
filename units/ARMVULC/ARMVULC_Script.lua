@@ -24,7 +24,6 @@ ARMVULC = Class(TAStructure) {
 				self.unit.currentBarrel = self.unit.currentBarrel + 1
 				self.unit.Spinners.spindle:SetGoal(-90 * (self.unit.currentBarrel + 1))
 				self.unit.Spinners.spindle:SetSpeed(720)
-				--self:Fire()
 				TAEndGameWeapon.OnWeaponFired(self)
 				if self.unit.currentBarrel == 4 then
 					self.unit.currentBarrel = 0

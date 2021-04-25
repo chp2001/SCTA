@@ -42,6 +42,7 @@ UnitBlueprint {
     LifeBarSize = 6,
     Weapon = {
         [1] = {
+            Damage = 500,
             ProjectileLifetime = 3000,
             MaxRadius = 2500,
             MinRadius = 100,

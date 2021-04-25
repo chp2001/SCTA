@@ -317,28 +317,6 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'Mini Nuke Launcher SCTA', -- Names need to be GLOBALLY unique.  Prefixing the AI name will help avoid name collisions with other AIs.	
-        PlatoonTemplate = 'EngineerBuilderSCTA23All',
-        PriorityFunction = TAPrior.StructureProductionT2,
-        Priority = 65,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.TACTICALMISSILEPLATFORM} },
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
-            Construction = {
-                BuildStructures = {
-                    'T2StrategicMissile',
-                }
-            }
-        }
-    },
-    Builder {
         BuilderName = 'SCTA Engineer Finish',
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',

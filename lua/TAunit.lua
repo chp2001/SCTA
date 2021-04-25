@@ -40,8 +40,10 @@ TAunit = Class(Unit)
 			self:PlayUnitSound('Uncloak')
 			self.CloakOn = nil
 			self:SetMesh(self.Mesh, true)
+			return
 		elseif self.SpecIntel and (not self:IsIntelEnabled('Jammer') or not self:IsIntelEnabled('RadarStealth')) then
-			self.TAIntelOn = nil	
+			self.TAIntelOn = nil
+			return	
 		end
 	end,
 
@@ -53,9 +55,11 @@ TAunit = Class(Unit)
 					self:PlayUnitSound('Cloak')
 					self:SetMesh(self:GetBlueprint().Display.CloakMeshBlueprint, true)
 					ForkThread(self.CloakDetection, self)
+					return
 			elseif (self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth')) and self.SpecIntel then
 					self.TAIntelOn = true
 					ForkThread(self.TAIntelMotion, self)
+					return
 			end
 		end
 	end,

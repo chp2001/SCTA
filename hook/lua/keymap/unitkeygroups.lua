@@ -98,6 +98,7 @@ TAunitkeygroups = {
     },
     ["Tactical_Missile_Launcher"] = {
         "armemp",
+        "armsnipe",
         "cortron",
         "corvipe",
     },
@@ -362,7 +363,7 @@ TAunitkeygroups = {
         "corcarry",
     },
     ["T3_Sniper_Bot"]= {
-        "armsnipe",
+        "armmanni",
     },
     ["T3_Tank"] = {
         "armanac",

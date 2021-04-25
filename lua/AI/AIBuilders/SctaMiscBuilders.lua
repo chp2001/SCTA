@@ -14,8 +14,9 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAMissileTower',
         PlatoonTemplate = 'EngineerBuilderSCTA',
+        PriorityFunction = TAPrior.HighTechEnergyProduction,
         Priority = 75,
-        InstanceCount = 5,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.ANTIAIR * categories.TECH1 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
@@ -81,7 +82,7 @@ BuilderGroup {
         Priority = 81,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.DEFENSE * categories.TECH3 - categories.MOBILE - categories.ANTIAIR} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.STRUCTURE * categories.DIRECTFIRE * categories.TECH3 - categories.MOBILE - categories.ANTIAIR} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}}, 
         },
         BuilderType = 'Any',
@@ -100,6 +101,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAANTIAIR3Tower',
         PlatoonTemplate = 'EngineerBuilderSCTA23All',
+        PriorityFunction = TAPrior.ProductionT3,
         Priority = 84,
         InstanceCount = 1,
         BuilderConditions = {

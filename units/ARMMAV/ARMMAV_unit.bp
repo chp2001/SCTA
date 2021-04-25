@@ -7,12 +7,12 @@ UnitBlueprint {
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'KBARMSEL',
+            Cue = 'MAVBSEL1',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StartMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'KBARMMOV',
+            Cue = 'MAVBOT1',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StopMove = Sound {
@@ -22,7 +22,7 @@ UnitBlueprint {
         },
 	Destroyed = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOLRG3',
+            Cue = 'MAVBOK1',
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
@@ -119,7 +119,7 @@ TechLevel = 'RULEUTL_Advanced',
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
-                    Cue = 'ARMSML2',
+                    Cue = 'MAVGUN1',
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },

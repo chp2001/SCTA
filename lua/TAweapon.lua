@@ -148,6 +148,45 @@ TARotatingWeapon = Class(TAweapon) {
 end, 
 }
 
+
+TALightLaser = Class(TAweapon) {
+    OnCreate = function(self)
+        TAweapon.OnCreate(self)
+        self.EconDrain = true
+    end,
+
+    OnWeaponFired = function(self)
+        TAweapon.OnWeaponFired(self)
+        self:ForkThread(self.StartEconomyDrain)
+    end,
+
+    StartEconomyDrain = function(self)
+        if self.EconDrain then
+        self.LLT = self:GetWeaponEnergyRequired()
+        self.Eco = CreateEconomyEvent(self.unit, self.LLT, 0, 1)
+        WaitTicks(1)
+        RemoveEconomyEvent(self.unit, self.Eco)
+        end
+    end,
+
+    RackSalvoFireReadyState = State(TAweapon.RackSalvoFireReadyState) {
+    WeaponWantEnabled = true,
+    WeaponAimWantEnabled = true,
+
+    Main = function(self)
+        self.unit:SetBusy(false)
+        self.WeaponCanFire = true
+
+        -- To prevent weapon getting stuck targeting something out of fire range but withing tracking radius
+        WaitSeconds(2)
+        -- Check if there is a better target nearby
+        self:ResetTarget()
+    end,
+
+    },
+}
+
+
 TAKami = Class(KamikazeWeapon){
     FxDeath = {
         '/effects/emitters/napalm_fire_emit_2.bp',
@@ -226,11 +265,6 @@ end,
     WeaponAimWantEnabled = true,
 
     Main = function(self)
-        -- We change the state on counted projectiles because we won't get another OnFire call.
-        -- The second part is a hack for units with reload animations.  They have the same problem
-        -- they need a RackSalvoReloadTime that's 1/RateOfFire set to avoid firing twice on the first shot
-
-        local bp = self:GetBlueprint()
         self.unit:SetBusy(false)
         self.WeaponCanFire = true
 
@@ -278,9 +312,6 @@ TADGun = Class(DefaultWeapon) {
         if self.AutoMode then
             self.AutoThread = self:ForkThread(self.AutoEnable)
         end
-    end,
-
-    StartEconomyDrain = function(self) -- OverchargeWeapon drains energy on impact
     end,
 
         AutoEnable = function(self)

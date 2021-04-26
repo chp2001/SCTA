@@ -23,9 +23,7 @@ UnitBlueprint {
     LifeBarSize = 1,
     Weapon = {
         [1] = {
-            Damage = 750,
             MaxRadius = 45, 
-            RateOfFire = 0.25,
         },
         [2] = {
         },

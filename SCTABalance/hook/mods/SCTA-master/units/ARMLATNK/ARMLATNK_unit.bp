@@ -34,14 +34,13 @@ UnitBlueprint {
     SizeZ = 2, 
    Weapon = {
     [1] = {
-        EnergyDrainPerSecond = 20,
-        EnergyRequired = 20,
+        EnergyDrainPerSecond = 25,
+        EnergyRequired = 25,
+        Damage = 90, 
         DamageRadius = 2,
         EnergyChargeForFirstShot = true,
-        RateOfFire = 0.66,
     },
     [2] = {
-        Damage = 120,
         MuzzleVelocity = 75,
         ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/AH_WEAPON/AH_WEAPON_proj.bp',
     },

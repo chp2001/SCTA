@@ -19,7 +19,7 @@ UnitBlueprint {
         [1] = {
             EnergyDrainPerSecond = 20,
             EnergyRequired = 20,
-            RateOfFire = 0.5,
+            Damage = 115,
         },
         [2] = {},
     },

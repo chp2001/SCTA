@@ -24,8 +24,6 @@ UnitBlueprint {
     Weapon = {
         [1] = {
             Damage = 750,
-            EnergyDrainPerSecond = 25,
-            EnergyRequired = 25,
             MaxRadius = 45, 
             RateOfFire = 0.25,
         },

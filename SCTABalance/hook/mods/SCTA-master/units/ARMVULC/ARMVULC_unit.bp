@@ -47,6 +47,7 @@ UnitBlueprint {
             MinRadius = 50,
             Damage = 1200,
             RackSalvoSize = 4,
+            EnergyDrainPerSecond = 6000,
             RateOfFire = 2.5,
             MuzzleVelocity = 100,
             ProjectileLifetime = 2000,

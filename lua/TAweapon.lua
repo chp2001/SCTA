@@ -124,6 +124,27 @@ TAPopLaser = Class(TAweapon) {
     end,
 }
 
+TARotatingWeapon = Class(TAweapon) {
+    PlayRackRecoil = function(self, rackList)   
+    self.Rotator:SetSpeed(480)
+    if self.Rotator2 then
+        self.Rotator2:SetSpeed(480)
+    end
+    if not self.Goal then
+        self.Goal = 360
+    end
+    self.Goal = self.Goal - 120
+    if self.Goal <= 0 then
+        self.Goal = 360
+    end 
+    self.Rotator:SetGoal(self.Goal)
+    if self.Rotator2 then
+        self.Rotator2:SetGoal(self.Goal)
+    end
+    TAweapon.PlayRackRecoil(self, rackList)
+end, 
+}
+
 TAKami = Class(KamikazeWeapon){
     FxDeath = {
         '/effects/emitters/napalm_fire_emit_2.bp',
@@ -165,21 +186,21 @@ TABomb = Class(BareBonesWeapon) {
 }
 
 TAEndGameWeapon = Class(TIFArtilleryWeapon) {
-    EnergyRequired = nil,
+    
+
     FxMuzzleFlashScale = 3,
-
-    OnWeaponFired = function(self)
-        self:ForkThread(self.PauseGun)
-    end,
-
-
-    StartEconomyDrain = function(self) -- OverchargeWeapon drains energy on impact
-    end,
-
-    PauseGun = function(self)
-        WaitTicks(8)
-        TIFArtilleryWeapon.StartEconomyDrain(self)
-    end,
+    PlayRackRecoil = function(self, rackList)   
+    TIFArtilleryWeapon.PlayRackRecoil(self, rackList)
+    self.Rotator:SetSpeed(480)
+    if not self.Goal then
+        self.Goal = 360
+    end
+    self.Goal = self.Goal - 120
+    if self.Goal <= 0 then
+        self.Goal = 360
+    end 
+    self.Rotator:SetGoal(self.Goal)
+end, 
 }
 
 

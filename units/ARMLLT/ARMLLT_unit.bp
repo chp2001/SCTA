@@ -112,7 +112,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            EnergyDrainPerSecond = 10,
+            EnergyDrainPerSecond = 50,
             EnergyRequired = 10,
             EnergyChargeForFirstShot = true,
             Damage = 60,

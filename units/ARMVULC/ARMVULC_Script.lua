@@ -19,6 +19,9 @@ ARMVULC = Class(TAStructure) {
 				if not self.Rotator then
 					self.Rotator = CreateRotator(self.unit, 'Spindle', 'z')
 				end
+				self.MaxRound = 4
+				self.Rotation = -90
+				self.Speed = 720
 				TAEndGameWeapon.PlayRackRecoil(self, rackList)
 			end, 
 		},

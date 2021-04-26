@@ -17,7 +17,7 @@ TAair = Class(TAunit)
 		if (new == 'Down' or new == 'Bottom') then
 			self:CloseWings()
 			self:PlayUnitSound('Landing')
-			local vis = self:GetBlueprint().Intel.VisionRadius / 2
+			local vis = (self:GetBlueprint().Intel.VisionRadius / 2)
             self:SetIntelRadius('Vision', vis)
         elseif (new == 'Up' or new == 'Top') then
 			self:OpenWings()

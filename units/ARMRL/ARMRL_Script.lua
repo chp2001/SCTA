@@ -13,6 +13,9 @@ ARMRL = Class(TAStructure) {
 				if not self.Rotator then
 					self.Rotator = CreateRotator(self.unit, 'gun1', 'z')
 				end
+				self.MaxRound = 3
+				self.Rotation = -120
+				self.Speed = 120
 				TARotatingWeapon.PlayRackRecoil(self, rackList) 
 			end, 
 		},

@@ -13,6 +13,9 @@ CORBUZZ = Class(TAStructure) {
 				if not self.Rotator then
 					self.Rotator = CreateRotator(self.unit, 'Spindle', 'x')
 				end
+				self.MaxRound = 6
+				self.Rotation = -60
+				self.Speed = 840
 				TAEndGameWeapon.PlayRackRecoil(self, rackList)
 			end, 
 		},

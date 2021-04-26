@@ -160,7 +160,7 @@ UnitBlueprint {
             },
             RangeCategory = 'UWRC_DirectFire',
             WeaponCategory = 'DirectFire',
-            RackFireTogether = true,
+            RackFireTogether = false,
             FiringTolerance = 2.75,
             Label = 'CORKROG_FIRE',
             MaxRadius = 30,
@@ -186,7 +186,7 @@ UnitBlueprint {
             RackReloadTimeout = 0,
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
-            RackSalvoSize = 4,
+            RackSalvoSize = 1,
             RateOfFire = 2,
             TargetCheckInterval = 1,
             TargetPriorities = {

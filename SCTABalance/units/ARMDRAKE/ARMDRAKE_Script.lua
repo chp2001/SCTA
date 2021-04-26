@@ -16,6 +16,9 @@ ARMDRAKE = Class(TAWalking) {
 						self.Rotator = CreateRotator(self.unit, 'lbarrel', 'z')
 						self.Rotator2 = CreateRotator(self.unit, 'rbarrel', 'z')
 					end
+					self.MaxRound = 4
+					self.Rotation = -90
+					self.Speed = 480
 					TARotatingWeapon.PlayRackRecoil(self, rackList)
 				end, 
 			},

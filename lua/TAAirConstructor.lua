@@ -43,6 +43,7 @@ TAAirConstructor = Class(TAair) {
         if __blueprints['armgant'] then
             TAutils.TABuildRestrictions(self)
         end
+        self:OpenWings(self)
     end,  
 
     OnPaused = function(self)

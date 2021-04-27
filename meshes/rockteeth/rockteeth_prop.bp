@@ -2,6 +2,11 @@ PropBlueprint {
     Categories = {
         'RECLAIMABLE',
     },
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 100,
+        MaxHealth = 100,
+    },
     Display = {
         Mesh = {
             IconFadeInZoom = 50,

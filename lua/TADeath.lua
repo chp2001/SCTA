@@ -1,26 +1,38 @@
-local util = import('/lua/utilities.lua')
-local explosion = import('/lua/defaultexplosions.lua')
+local Wreckage = import('/lua/wreckage.lua').Wreckage
 
-CreateTAWreckageEffects = function(obj, prop)
-    if IsUnit(obj) then
-       CreateAttachedEmitter(prop, 0, -1, '/mods/SCTA-master/effects/emitters/wreckage_smoke_emit.bp' )
-    end
-end
+SCTAWreckage = Class(Wreckage) {
+
+    OnCreate = function(self)
+        Wreckage.OnCreate(self)
+        self.Scale = self:GetBlueprint().BlueprintId
+        LOG('*Scale', self.Scale)
+    end,
+
+    OnDestroy = function(self)
+        Wreckage.OnDestroy(self)
+        CreateHeapProp(self, 0)
+    end,
+        --- Create and return an identical wreckage prop. Useful for replacing this one when something
+        -- (a stupid engine bug) deleted it when we don't want it to.
+        -- This function has the handle the case when *this* unit has already been destroyed. Notably,
+        -- this means we have to calculate the health from the reclaim values, instead of going the
+        -- other way.
+    }
 
 CreateHeapProp = function(self, overkillRatio)
     local bp = self:GetBlueprint()
-
     local wreck = bp.Wreckage.Blueprint
     if not wreck then
         return nil
     end
-
+    --local RecBP = bp.Display.UniformScale
     --LOG('*MassWreck', mass)
     local mass = (bp.Economy.BuildCostMass * (bp.Wreckage.MassMult or 0))
     local energy = (bp.Economy.BuildCostEnergy * (bp.Wreckage.EnergyMult or 0))
-
     local time = (bp.Wreckage.ReclaimTimeMultiplier or 1)
-    LOG('*MassWreck2', mass)
+    --LOG('*MassWreck2', mass)
+    --LOG('*Associate', RecBP)
+    --LOG('*WreckBP', bp)
     local pos = self:GetPosition()
 
     time = time * 1
@@ -32,18 +44,18 @@ CreateHeapProp = function(self, overkillRatio)
     local time  = time * 2
 
     local prop = CreateHeap(bp, pos, self:GetOrientation(), mass, energy, time, self.DeathHitBox)
-    CreateTAWreckageEffects(self, prop)
+    CreateAttachedEmitter(self, 0, -1, '/mods/SCTA-master/effects/emitters/wreckage_smoke_emit.bp' )
 
     return prop
 end
 
 
 CreateHeap = function(bp, position, orientation, mass, energy, time, deathHitBox)
-
     local prop = CreateProp(position, '/mods/SCTA-master/meshes/rockteeth/rockteeth_prop.bp')
+    CreateAttachedEmitter(prop, 0, -1, '/mods/SCTA-master/effects/emitters/fire_smoke_emit.bp' )
     prop:SetOrientation(orientation, true)
     prop:SetScale(bp.Display.UniformScale)
-
+    LOG('*Scale', bp.Display.UniformScale)
     -- take the default center (cx, cy, cz) and size (sx, sy, sz)
     local cx, cy, cz, sx, sz;
     cx = bp.CollisionOffsetX
@@ -74,6 +86,14 @@ CreateHeap = function(bp, position, orientation, mass, energy, time, deathHitBox
     prop:SetMaxHealth(bp.Defense.Health)
     prop:SetHealth(nil, bp.Defense.Health * (bp.Wreckage.HealthMult or 1))
     prop:SetMaxReclaimValues(time, mass, energy)
-    CreateAttachedEmitter(prop, 0, -1, '/mods/SCTA-master/effects/emitters/fire_smoke_emit.bp' )
+
+    --FIXME: SetVizToNeurals('Intel') is correct here, so you can't see enemy wreckage appearing
+    -- under the fog. However the engine has a bug with prop intel that makes the wreckage
+    -- never appear at all, even when you drive up to it, so this is disabled for now.
+    --prop:SetVizToNeutrals('Intel')
+        prop:SetMesh(prop:GetBlueprint().Display.MeshBlueprint)
+
+    -- This field cannot be renamed or the magical native code that detects rebuild bonuses breaks.
+    prop.AssociatedBP = bp.Wreckage.IdHook or bp.BlueprintId
     return prop
 end

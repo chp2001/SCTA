@@ -2,6 +2,8 @@
 local Unit = import('/lua/sim/Unit.lua').Unit
 local FireState = import('/lua/game.lua').FireState
 local TADeath = import('/mods/SCTA-master/lua/TADeath.lua')
+local explosion = import('/lua/defaultexplosions.lua')
+local Wreckage = import('/lua/wreckage.lua')
 
 TAunit = Class(Unit) 
 {
@@ -110,6 +112,7 @@ TAunit = Class(Unit)
 	end,
 
 	CreateWreckage = function (self, overkillRatio)
+		self.Scale = self:GetBlueprint().Display.UniformScale
         if overkillRatio and overkillRatio > 1.0 then
             return
         end
@@ -117,9 +120,11 @@ TAunit = Class(Unit)
             return
         end
 		if overkillRatio and self:GetCurrentLayer() == 'Land' and (overkillRatio >= 5.0 or EntityCategoryContains(categories.ECONOMIC * categories.STRUCTURE, self) or EntityCategoryContains(categories.ENGINEER - categories.COMMAND - categories.SUBCOMMANDER, self)) then
-            return TADeath.CreateHeapProp(self, overkillRatio)
-        end 
-        return self:CreateWreckageProp(overkillRatio)
+    		LOG('*Scale', self.Scale)
+			return TADeath.CreateHeapProp(self, overkillRatio)
+        end
+		LOG('*Scale2', self.Scale) 
+        return Unit.CreateWreckageProp(self, overkillRatio)
     end,
 
 

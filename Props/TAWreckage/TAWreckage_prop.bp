@@ -3,7 +3,12 @@ PropBlueprint {
         'RECLAIMABLE',
     },
     UnitWreckage = true,
+    Display = {
+        UniformScale = 0.08,
+    },
     Economy = {
+        BuildCostEnergy = 0,
+        BuildCostMass = 25, 
         ReclaimEnergyMax = '',
         ReclaimMassMax = 1,
         ReclaimTime = 5,
@@ -20,10 +25,12 @@ PropBlueprint {
     SizeY = 0.1,
     SizeZ = 0.5,
     Wreckage = {
-        ---UseCustomMesh = true,
         Blueprint = '/mods/SCTA-master/meshes/rockteeth/rockteeth_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.5,
         MassMult = 0.5,
+        WreckageLayers = {
+            Land = true,
+        },
     },
 }

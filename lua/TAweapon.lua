@@ -133,7 +133,7 @@ TARotatingWeapon = Class(TAweapon) {
     PlayRackRecoil = function(self, rackList)  
     TAweapon.PlayRackRecoil(self, rackList) 
     self.CurrentRound = self.CurrentRound + 1
-    LOG('*RoundCount', self.CurrentRound)
+    --LOG('*RoundCount', self.CurrentRound)
     self.Rotator:SetSpeed(self.Speed)
     self.Goal = (self.CurrentRound + 1)
     self.Rotator:SetGoal(self.Goal * self.Rotation)
@@ -251,7 +251,7 @@ TAEndGameWeapon = Class(TIFArtilleryWeapon) {
     PlayRackRecoil = function(self, rackList)   
     TIFArtilleryWeapon.PlayRackRecoil(self, rackList)
     self.CurrentRound = self.CurrentRound + 1
-    LOG('*RoundCount', self.CurrentRound)
+    --LOG('*RoundCount', self.CurrentRound)
     self.Rotator:SetSpeed(self.Speed)
     self.Goal = (self.CurrentRound + 1)
     self.Rotator:SetGoal(self.Goal * self.Rotation)

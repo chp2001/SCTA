@@ -15,12 +15,19 @@ CreateHeapProp = function(self, overkillRatio)
         return nil
     end
 
-    local mass = 5
-    local energy = 0
-    local time = (bp.Wreckage.ReclaimTimeMultiplier or 1)
-    local pos = self:GetPosition()
-    time = time * overkillMultiplier
+    --LOG('*MassWreck', mass)
+    local mass = (bp.Economy.BuildCostMass * (bp.Wreckage.MassMult or 0))
+    local energy = (bp.Economy.BuildCostEnergy * (bp.Wreckage.EnergyMult or 0))
 
+    local time = (bp.Wreckage.ReclaimTimeMultiplier or 1)
+    LOG('*MassWreck2', mass)
+    local pos = self:GetPosition()
+
+    time = time * 1
+    local overkillMultiplier = 1 - (overkillRatio or 0.5)
+    mass = mass * overkillMultiplier
+    energy = energy * overkillMultiplier
+    time = time * overkillMultiplier
     -- Now we adjust the global multiplier. This is used for balance purposes to adjust global reclaim rate.
     local time  = time * 2
 
@@ -66,7 +73,7 @@ CreateHeap = function(bp, position, orientation, mass, energy, time, deathHitBox
 
     prop:SetMaxHealth(bp.Defense.Health)
     prop:SetHealth(nil, bp.Defense.Health * (bp.Wreckage.HealthMult or 1))
-    prop:SetMaxReclaimValues(time, mass * 0.5, energy)
+    prop:SetMaxReclaimValues(time, mass, energy)
     CreateAttachedEmitter(prop, 0, -1, '/mods/SCTA-master/effects/emitters/fire_smoke_emit.bp' )
     return prop
 end

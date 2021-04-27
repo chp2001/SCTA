@@ -6,15 +6,13 @@ SCTAWreckage = Class(Wreckage) {
         CreateHeapProp(self, 0)
         Wreckage.Destroy(self)
     end,
-        --- Create and return an identical wreckage prop. Useful for replacing this one when something
-        -- (a stupid engine bug) deleted it when we don't want it to.
-        -- This function has the handle the case when *this* unit has already been destroyed. Notably,
-        -- this means we have to calculate the health from the reclaim values, instead of going the
-        -- other way.
+        ---Is the Same as Basic code the only addition is the creation of HeapProps. The Heap Prop code is below
     }
 
 CreateHeapProp = function(self, overkillRatio)
     local bp = self:GetBlueprint()
+    LOG('*IAMCONFUSED2', self.AssociatedBPScale)
+    ---local scale = self.AssociatedBPScale
     local wreck = bp.Wreckage.Blueprint
     if not wreck then
         return nil
@@ -37,19 +35,19 @@ CreateHeapProp = function(self, overkillRatio)
     -- Now we adjust the global multiplier. This is used for balance purposes to adjust global reclaim rate.
     local time  = time * 2
 
-    local prop = CreateHeap(bp, pos, self:GetOrientation(), mass, energy, time, self.DeathHitBox)
+    local prop = CreateHeap(bp, pos, self:GetOrientation(), mass, energy, time, self.DeathHitBox, self.AssociatedBPScale)
     CreateAttachedEmitter(self, 0, -1, '/mods/SCTA-master/effects/emitters/wreckage_smoke_emit.bp' )
 
     return prop
 end
 
 
-CreateHeap = function(bp, position, orientation, mass, energy, time, deathHitBox)
+CreateHeap = function(bp, position, orientation, mass, energy, time, deathHitBox, scale)
     local prop = CreateProp(position, '/mods/SCTA-master/meshes/rockteeth/rockteeth_prop.bp')
     CreateAttachedEmitter(prop, 0, -1, '/mods/SCTA-master/effects/emitters/fire_smoke_emit.bp' )
     prop:SetOrientation(orientation, true)
-    prop:SetScale(bp.Display.UniformScale)
-    LOG('*Scale', bp.Display.UniformScale)
+    prop:SetScale((scale * 2) or bp.Display.UniformScale)
+    LOG('*Scale', scale)
     -- take the default center (cx, cy, cz) and size (sx, sy, sz)
     local cx, cy, cz, sx, sz;
     cx = bp.CollisionOffsetX

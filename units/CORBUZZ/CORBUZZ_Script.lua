@@ -2,31 +2,22 @@ local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 local TAEndGameWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAEndGameWeapon
 
 CORBUZZ = Class(TAStructure) {
-	
-
-	OnCreate = function(self)
-		TAStructure.OnCreate(self)
-		self.Spinners = {
-			Spindle = CreateRotator(self, 'Spindle', 'x', nil, 0, 0, 0),
-		}
-		for k, v in self.Spinners do
-			self.Trash:Add(v)
-		end
-		self.currentBarrel = 0
-	end,
-
 	Weapons = {
 		CORBUZZ_WEAPON = Class(TAEndGameWeapon) {
 			OnWeaponFired = function(self)
-				self.unit.currentBarrel = self.unit.currentBarrel + 1
-				self.unit.Spinners.Spindle:SetGoal(-60 * (self.unit.currentBarrel + 1))
-				self.unit.Spinners.Spindle:SetSpeed(840)
 				TAEndGameWeapon.OnWeaponFired(self)
-				if self.unit.currentBarrel == 6 then
-					self.unit.currentBarrel = 0
-				end
 				self.unit:CreateProjectileAtBone('/mods/SCTA-master/effects/entities/Shells/ARMVULC_Shell/ARMVULC_Shell_proj.bp','Turret')
 			end,
+
+			PlayRackRecoil = function(self, rackList) 
+				if not self.Rotator then
+					self.Rotator = CreateRotator(self.unit, 'Spindle', 'x')
+				end
+				self.MaxRound = 6
+				self.Rotation = -60
+				self.Speed = 840
+				TAEndGameWeapon.PlayRackRecoil(self, rackList)
+			end, 
 		},
 	},
 }

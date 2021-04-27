@@ -20,20 +20,6 @@ CORCA = Class(TAAirConstructor) {
 		end
 	end,
 
-	OnMotionVertEventChange = function(self, new, old )
-		if (new == 'Down' or new == 'Bottom') then
-                	self:PlayUnitSound('Landing')
-			self:CloseWings(self)
-		elseif (new == 'Up' or new == 'Top') then
-                	self:PlayUnitSound('TakeOff')
-			self:OpenWings(self)
-		end
-	end,
-
-	OnStopBeingBuilt = function(self,builder,layer)
-		TAAirConstructor.OnStopBeingBuilt(self,builder,layer)
-		self:OpenWings(self)
-	end,
 
 	OpenWings = function(self)
 		--TURN winga to z-axis <-90.12> SPEED <61.86>;

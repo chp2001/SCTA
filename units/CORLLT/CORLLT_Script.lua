@@ -4,11 +4,11 @@
 #Script created by Raevn
 
 local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
-local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
+local TALightLaser = import('/mods/SCTA-master/lua/TAweapon.lua').TALightLaser
 
 CORLLT = Class(TAStructure) {
 	Weapons = {
-		CORE_LIGHTLASER = Class(TAweapon) {
+		CORE_LIGHTLASER = Class(TALightLaser) {
 
 		},
 	},

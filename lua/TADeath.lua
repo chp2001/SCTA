@@ -3,10 +3,33 @@ local explosion = import('/lua/defaultexplosions.lua')
 
 CreateTAWreckageEffects = function(obj, prop)
     if IsUnit(obj) then
-       explosion.CreateWreckageEffects(obj, prop)
        CreateAttachedEmitter(prop, 0, -1, '/mods/SCTA-master/effects/emitters/wreckage_smoke_emit.bp' )
     end
 end
+
+CreateHeapProp = function(self, overkillRatio)
+    local bp = self:GetBlueprint()
+
+    local wreck = bp.Wreckage.Blueprint
+    if not wreck then
+        return nil
+    end
+
+    local mass = 5
+    local energy = 0
+    local time = (bp.Wreckage.ReclaimTimeMultiplier or 1)
+    local pos = self:GetPosition()
+    time = time * overkillMultiplier
+
+    -- Now we adjust the global multiplier. This is used for balance purposes to adjust global reclaim rate.
+    local time  = time * 2
+
+    local prop = CreateHeap(bp, pos, self:GetOrientation(), mass, energy, time, self.DeathHitBox)
+    CreateTAWreckageEffects(self, prop)
+
+    return prop
+end
+
 
 CreateHeap = function(bp, position, orientation, mass, energy, time, deathHitBox)
 
@@ -43,7 +66,7 @@ CreateHeap = function(bp, position, orientation, mass, energy, time, deathHitBox
 
     prop:SetMaxHealth(bp.Defense.Health)
     prop:SetHealth(nil, bp.Defense.Health * (bp.Wreckage.HealthMult or 1))
-    prop:SetMaxReclaimValues(time, mass, energy)
+    prop:SetMaxReclaimValues(time, mass * 0.5, energy)
     CreateAttachedEmitter(prop, 0, -1, '/mods/SCTA-master/effects/emitters/fire_smoke_emit.bp' )
     return prop
 end

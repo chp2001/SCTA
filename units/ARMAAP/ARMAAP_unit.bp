@@ -157,7 +157,7 @@ UnitBlueprint {
     },
         Wreckage = {
 	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        Blueprint = '/mods/SCTA-master/Props/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

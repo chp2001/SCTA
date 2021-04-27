@@ -128,7 +128,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	        DamageFriendly = true,
-            Damage = 60,
+            Damage = 180,
             DamageType = 'Normal',
             DisplayName = 'LIGHTNING',
             FireTargetLayerCapsTable = {
@@ -157,7 +157,7 @@ UnitBlueprint {
             RackSalvoChargeTime = 0,
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
-            RateOfFire = 1,
+            RateOfFire = 0.66,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

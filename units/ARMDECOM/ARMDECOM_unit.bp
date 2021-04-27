@@ -140,7 +140,7 @@ UnitBlueprint {
         OrderOverrides = {
             RULEUCC_Overcharge = {
                 bitmapId = 'activate-weapon',
-                helpText = 'Decoy DGun. Requires 1000 Energy to Fire. Right-click turn on auto',
+                helpText = 'Decoy DGun. Requires 500 Energy to Fire. Right-click turn on auto',
             },
         },
         ToggleCaps = {
@@ -259,13 +259,14 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 1000,
+            Damage = 50,
+            DGun = 50,
             DamageRadius = 2,
             DamageType = 'OverCharge',
             Overcharge = {
                 energyMult = 0.9,
-                commandDamage = 500,
-                structureDamage = 500,
+                commandDamage = 50,
+                structureDamage = 50,
             },
             DisplayName = 'OverCharge',
             FireTargetLayerCapsTable = {
@@ -279,8 +280,8 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 18,
 	        NeedPrep = true,
-            EnergyRequired = 1000,
-            EnergyDrainPerSecond = 1000,
+            EnergyRequired = 500,
+            EnergyDrainPerSecond = 500,
             EnergyChargeForFirstShot = true,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_DISINTEGRATOR/ARM_DISINTEGRATOR_proj.bp',
             RackBones = {
@@ -327,7 +328,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 1000,
+            Damage = 50,
+            DGun = 50,
             DamageRadius = 2,
             DamageType = 'Overcharge',
             DisplayName = 'AutoOverCharge',
@@ -342,8 +344,8 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 18,
 	        NeedPrep = true,
-            EnergyRequired = 1000,
-            EnergyDrainPerSecond = 1000,
+            EnergyRequired = 500,
+            EnergyDrainPerSecond = 500,
             EnergyChargeForFirstShot = true,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_DISINTEGRATOR/ARM_DISINTEGRATOR_proj.bp',
             RackBones = {

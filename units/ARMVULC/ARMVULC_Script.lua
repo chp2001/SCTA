@@ -7,29 +7,23 @@ local TAStructure = import('/mods/SCTA-master/lua/TAStructure.lua').TAStructure
 local TAEndGameWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAEndGameWeapon
 
 ARMVULC = Class(TAStructure) {
-	OnCreate = function(self)
-		TAStructure.OnCreate(self)
-		self.Spinners = {
-			spindle = CreateRotator(self, 'Spindle', 'z', nil, 0, 0, 0),
-		}
-		for k, v in self.Spinners do
-			self.Trash:Add(v)
-		end
-		self.currentBarrel = 0
-	end,
 
 	Weapons = {
 		ARMVULC_WEAPON = Class(TAEndGameWeapon) {
 			OnWeaponFired = function(self)
-				self.unit.currentBarrel = self.unit.currentBarrel + 1
-				self.unit.Spinners.spindle:SetGoal(-90 * (self.unit.currentBarrel + 1))
-				self.unit.Spinners.spindle:SetSpeed(720)
 				TAEndGameWeapon.OnWeaponFired(self)
-				if self.unit.currentBarrel == 4 then
-					self.unit.currentBarrel = 0
-				end
 				self.unit:CreateProjectileAtBone('/mods/SCTA-master/effects/entities/Shells/ARMVULC_Shell/ARMVULC_Shell_proj.bp','Shell')
 			end,
+
+			PlayRackRecoil = function(self, rackList) 
+				if not self.Rotator then
+					self.Rotator = CreateRotator(self.unit, 'Spindle', 'z')
+				end
+				self.MaxRound = 4
+				self.Rotation = -90
+				self.Speed = 720
+				TAEndGameWeapon.PlayRackRecoil(self, rackList)
+			end, 
 		},
 	},
 }

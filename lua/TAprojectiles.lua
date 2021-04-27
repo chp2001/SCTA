@@ -202,6 +202,13 @@ Disintegrator = Class(TALightCannonProjectile) {
 	OnCreate = function(self)
 		TALightCannonProjectile.OnCreate(self)
 		self.launcher = self:GetLauncher()
+		self.DGunDamage = self.launcher:GetWeaponByLabel('OverCharge'):GetBlueprint().DGun
+		self.launcher.EconDrain = CreateEconomyEvent(self.launcher, 500, 0, 0)
+		self.launcher:ForkThread(function()
+                WaitFor(self.launcher.EconDrain)
+                RemoveEconomyEvent(self.launcher, self.launcher.EconDrain)
+				self.launcher.EconDrain = nil
+			end)
 		ForkThread(self.MovementThread, self)
 	end,
 
@@ -211,13 +218,18 @@ Disintegrator = Class(TALightCannonProjectile) {
 		if pos.y < GetTerrainHeight(pos.x, pos.z) then
 			self:SetTurnRate(0)
 			pos.y = GetTerrainHeight(pos.x, pos.z)
-			DamageArea( self.launcher, pos, self.DamageData.DamageRadius, self.DamageData.DamageAmount, self.DamageData.DamageType, self.DamageData.DamageFriendly)
+			DamageArea( self.launcher, pos, self.DamageData.DamageRadius, self.DGunDamage, self.DamageData.DamageType, self.DamageData.DamageFriendly)
 				self:SetPosition(pos, true)
 				self:PlaySound(Sound({Cue = 'XPLOMAS2', Bank = 'TA_Sound', LodCutoff = 'Weapon_LodCutoff'}))
 				CreateEmitterAtEntity(self, self:GetArmy(), '/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp' ):ScaleEmitter(0.5)
 			end
 			WaitSeconds(0.1)
 		end
+	end,
+
+	OnImpact = function(self, targetType, targetEntity)
+		TALightCannonProjectile.OnImpact(self, targetType, targetEntity)
+        self.DamageData.DamageAmount = 0
 	end,
 }
 

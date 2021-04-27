@@ -307,6 +307,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 99999,
+            DGun = 99999,
             DamageRadius = 2,
             DamageType = 'Overcharge',
             Overcharge = {
@@ -375,6 +376,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 99999,
+            DGun = 99999,
             DamageRadius = 2,
             DamageType = 'Overcharge',
             DisplayName = 'AutoOverCharge',

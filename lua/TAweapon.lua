@@ -124,6 +124,69 @@ TAPopLaser = Class(TAweapon) {
     end,
 }
 
+TARotatingWeapon = Class(TAweapon) {
+    OnCreate = function(self)
+        TAweapon.OnCreate(self)
+        self.CurrentRound = 0
+    end,
+
+    PlayRackRecoil = function(self, rackList)  
+    TAweapon.PlayRackRecoil(self, rackList) 
+    self.CurrentRound = self.CurrentRound + 1
+    LOG('*RoundCount', self.CurrentRound)
+    self.Rotator:SetSpeed(self.Speed)
+    self.Goal = (self.CurrentRound + 1)
+    self.Rotator:SetGoal(self.Goal * self.Rotation)
+    if self.Rotator2 then
+        self.Rotator2:SetSpeed(self.Speed)
+        self.Goal2 = (self.CurrentRound + 1)
+        self.Rotator2:SetGoal(self.Goal2 * self.Rotation)
+    end
+    if self.CurrentRound == self.MaxRound then
+        self.CurrentRound = 0
+    end 
+end, 
+}
+
+
+TALightLaser = Class(TAweapon) {
+    OnCreate = function(self)
+        TAweapon.OnCreate(self)
+        self.EconDrain = true
+    end,
+
+    OnWeaponFired = function(self)
+        TAweapon.OnWeaponFired(self)
+        self:ForkThread(self.StartEconomyDrain)
+    end,
+
+    StartEconomyDrain = function(self)
+        if self.EconDrain then
+        self.LLT = self:GetWeaponEnergyRequired()
+        self.Eco = CreateEconomyEvent(self.unit, self.LLT, 0, 1)
+        WaitTicks(1)
+        RemoveEconomyEvent(self.unit, self.Eco)
+        end
+    end,
+
+    RackSalvoFireReadyState = State(TAweapon.RackSalvoFireReadyState) {
+    WeaponWantEnabled = true,
+    WeaponAimWantEnabled = true,
+
+    Main = function(self)
+        self.unit:SetBusy(false)
+        self.WeaponCanFire = true
+
+        -- To prevent weapon getting stuck targeting something out of fire range but withing tracking radius
+        WaitSeconds(2)
+        -- Check if there is a better target nearby
+        self:ResetTarget()
+    end,
+
+    },
+}
+
+
 TAKami = Class(KamikazeWeapon){
     FxDeath = {
         '/effects/emitters/napalm_fire_emit_2.bp',
@@ -165,21 +228,53 @@ TABomb = Class(BareBonesWeapon) {
 }
 
 TAEndGameWeapon = Class(TIFArtilleryWeapon) {
-    EnergyRequired = nil,
     FxMuzzleFlashScale = 3,
+    OnCreate = function(self)
+        TIFArtilleryWeapon.OnCreate(self)
+        self.CurrentRound = 0
+        self.EconDrain = true
+    end,
 
     OnWeaponFired = function(self)
-        self:ForkThread(self.PauseGun)
+        TIFArtilleryWeapon.OnWeaponFired(self)
+        self:ForkThread(self.StartEconomyDrain)
     end,
 
-
-    StartEconomyDrain = function(self) -- OverchargeWeapon drains energy on impact
+    StartEconomyDrain = function(self)
+        if self.EconDrain then
+        self.Eco = CreateEconomyEvent(self.unit, 2000, 0, 1)
+        WaitTicks(1)
+        RemoveEconomyEvent(self.unit, self.Eco)
+        end
     end,
 
-    PauseGun = function(self)
-        WaitTicks(8)
-        TIFArtilleryWeapon.StartEconomyDrain(self)
+    PlayRackRecoil = function(self, rackList)   
+    TIFArtilleryWeapon.PlayRackRecoil(self, rackList)
+    self.CurrentRound = self.CurrentRound + 1
+    LOG('*RoundCount', self.CurrentRound)
+    self.Rotator:SetSpeed(self.Speed)
+    self.Goal = (self.CurrentRound + 1)
+    self.Rotator:SetGoal(self.Goal * self.Rotation)
+    if self.CurrentRound == self.MaxRound then
+        self.CurrentRound = 0
+    end 
+end, 
+
+    RackSalvoFireReadyState = State(TIFArtilleryWeapon.RackSalvoFireReadyState) {
+    WeaponWantEnabled = true,
+    WeaponAimWantEnabled = true,
+
+    Main = function(self)
+        self.unit:SetBusy(false)
+        self.WeaponCanFire = true
+
+        -- To prevent weapon getting stuck targeting something out of fire range but withing tracking radius
+        WaitSeconds(2)
+        -- Check if there is a better target nearby
+        self:ResetTarget()
     end,
+
+    },
 }
 
 
@@ -190,6 +285,8 @@ TACommanderDeathWeapon = Class(BareBonesWeapon) {
 }
 
 TADGun = Class(DefaultWeapon) {
+    AutoMode = false,
+    AutoThread = nil,
     EnergyRequired = nil,
 
     HasEnergy = function(self)
@@ -219,9 +316,6 @@ TADGun = Class(DefaultWeapon) {
         end
     end,
 
-    StartEconomyDrain = function(self) -- OverchargeWeapon drains energy on impact
-    end,
-
         AutoEnable = function(self)
             while not self:CanOvercharge() do
                 WaitSeconds(1)
@@ -245,6 +339,9 @@ TADGun = Class(DefaultWeapon) {
             end
         end,
 
+        StartEconomyDrain = function(self) -- OverchargeWeapon drains energy on impact
+        end,
+
         OnCreate = function(self)
             DefaultWeapon.OnCreate(self)
             self.EnergyRequired = self:GetBlueprint().EnergyRequired
@@ -254,7 +351,7 @@ TADGun = Class(DefaultWeapon) {
         end,
 
         OnWeaponFired = function(self)
-            DefaultWeapon.StartEconomyDrain(self)
+            DefaultWeapon.OnWeaponFired(self)
             self:ForkThread(self.PauseOvercharge)
         end,
 

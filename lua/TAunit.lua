@@ -110,52 +110,19 @@ TAunit = Class(Unit)
 		end
 	end,
 
-	CreateWreckageProp = function(self, overkillRatio)
-		local bp = self:GetBlueprint()
-        local wreck = bp.Wreckage.Blueprint
-        if not wreck then
-            return nil
+	CreateWreckage = function (self, overkillRatio)
+        if overkillRatio and overkillRatio > 1.0 then
+            return
         end
-
-        local mass = bp.Economy.BuildCostMass * (bp.Wreckage.MassMult or 0)
-        local energy = bp.Economy.BuildCostEnergy * (bp.Wreckage.EnergyMult or 0)
-        local time = (bp.Wreckage.ReclaimTimeMultiplier or 1)
-        local pos = self:GetPosition()
-        local layer = self:GetCurrentLayer()
-
-        -- Reduce the mass value of submerged wrecks
-        if layer == 'Water' or layer == 'Sub' then
-            mass = mass * 0.5
-            energy = energy * 0.5
+        if self:GetFractionComplete() < 0.5 then
+            return
         end
+		if overkillRatio and self:GetCurrentLayer() == 'Land' and (overkillRatio >= 5.0 or EntityCategoryContains(categories.ECONOMIC * categories.STRUCTURE, self) or EntityCategoryContains(categories.ENGINEER - categories.COMMAND - categories.SUBCOMMANDER, self)) then
+            return TADeath.CreateHeapProp(self, overkillRatio)
+        end 
+        return self:CreateWreckageProp(overkillRatio)
+    end,
 
-        local halfBuilt = self:GetFractionComplete() < 1
-
-        -- Make sure air / naval wrecks stick to ground / seabottom, unless they're in a factory.
-        if not halfBuilt and EntityCategoryContains(categories.NAVAL - categories.STRUCTURE, self) then
-            pos[2] = GetTerrainHeight(pos[1], pos[3]) + GetTerrainTypeOffset(pos[1], pos[3])
-        end
-
-        local overkillMultiplier = 1 - (overkillRatio or 1)
-        mass = mass * overkillMultiplier * self:GetFractionComplete()
-        energy = energy * overkillMultiplier * self:GetFractionComplete()
-        time = time * overkillMultiplier
-
-        -- Now we adjust the global multiplier. This is used for balance purposes to adjust global reclaim rate.
-        local time  = time * 2
-		if overkillMultiplier >= 0.5 then
-		local prop = TADeath.CreateHeap(bp, pos, self:GetOrientation(), mass, energy, time, self.DeathHitBox)
-		return
-		else
-        local prop = Wreckage.CreateWreckage(bp, pos, self:GetOrientation(), mass, energy, time, self.DeathHitBox)
-        -- Create some ambient wreckage smoke
-        if layer == 'Land' then
-            TADeath.CreateTAWreckageEffects(self, prop)
-        end
-
-        return prop
-		end
-	end,
 
 	OnScriptBitSet = function(self, bit)
 		if self.SpecIntel and (bit == 2 or bit == 5) then

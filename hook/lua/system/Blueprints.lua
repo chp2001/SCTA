@@ -77,8 +77,8 @@ function ExtractWreckageBlueprint(bp)
 				else
 					lod.ShaderName = 'Wreckage'
 					lod.SpecularName = '/env/common/props/wreckage_noise.dds'
-					lod.NormalName = '/mods/SCTA-master/meshes/Wreck_NormalsTS.dds'
-					lod.AlbedoName = '/mods/SCTA-master/meshes/Wreck_Albedo.dds'
+					lod.NormalName = '/mods/SCTA-master/meshes/rockteeth/rockteeth_NormalsTS.dds'
+					lod.AlbedoName = '/mods/SCTA-master/meshes/rockteeth/rockteeth_Albedo.dds'
 				end
 			end
 		end

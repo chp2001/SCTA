@@ -285,6 +285,8 @@ TACommanderDeathWeapon = Class(BareBonesWeapon) {
 }
 
 TADGun = Class(DefaultWeapon) {
+    AutoMode = false,
+    AutoThread = nil,
     EnergyRequired = nil,
 
     HasEnergy = function(self)
@@ -337,6 +339,9 @@ TADGun = Class(DefaultWeapon) {
             end
         end,
 
+        StartEconomyDrain = function(self) -- OverchargeWeapon drains energy on impact
+        end,
+
         OnCreate = function(self)
             DefaultWeapon.OnCreate(self)
             self.EnergyRequired = self:GetBlueprint().EnergyRequired
@@ -346,7 +351,7 @@ TADGun = Class(DefaultWeapon) {
         end,
 
         OnWeaponFired = function(self)
-            DefaultWeapon.StartEconomyDrain(self)
+            DefaultWeapon.OnWeaponFired(self)
             self:ForkThread(self.PauseOvercharge)
         end,
 

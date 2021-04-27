@@ -186,7 +186,7 @@ BuilderConditions = {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, PLATFORM * categories.AIR} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, PLATFORM} },
-            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -208,9 +208,33 @@ BuilderConditions = {
         Priority = 143,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, PLATFORM} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, PLATFORM} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, PLATFORM} },
-            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T3LandFactory',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T3LAND Hover Factory T2',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        PriorityFunction = TAPrior.ProductionT3,
+        Priority = 143,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, PLATFORM * categories.LAND} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLATFORM} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -232,9 +256,9 @@ BuilderConditions = {
         Priority = 140,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, PLATFORM * categories.AIR} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, PLATFORM} },
-            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, PLATFORM * categories.AIR} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLATFORM} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
         BuilderData = {
@@ -245,30 +269,6 @@ BuilderConditions = {
                 BuildClose = true,
                 BuildStructures = {
                     'T3AirFactory',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTAAI T3LAND Hover Factory T2',
-        PlatoonTemplate = 'EngineerBuilderSCTA3',
-        PriorityFunction = TAPrior.ProductionT3,
-        Priority = 143,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, PLATFORM} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, PLATFORM} },
-            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T3LandFactory',
                 }
             }
         }

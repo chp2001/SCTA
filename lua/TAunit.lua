@@ -112,19 +112,12 @@ TAunit = Class(Unit)
 	end,
 
 	CreateWreckage = function (self, overkillRatio)
-		self.Scale = self:GetBlueprint().Display.UniformScale
-        if overkillRatio and overkillRatio > 1.0 then
-            return
-        end
-        if self:GetFractionComplete() < 0.5 then
-            return
-        end
 		if overkillRatio and self:GetCurrentLayer() == 'Land' and (overkillRatio >= 5.0 or EntityCategoryContains(categories.ECONOMIC * categories.STRUCTURE, self) or EntityCategoryContains(categories.ENGINEER - categories.COMMAND - categories.SUBCOMMANDER, self)) then
-    		LOG('*Scale', self.Scale)
+    		--LOG('*Scale', self.Scale)
 			return TADeath.CreateHeapProp(self, overkillRatio)
         end
-		LOG('*Scale2', self.Scale) 
-        return Unit.CreateWreckageProp(self, overkillRatio)
+		--LOG('*Scale2', self.Scale) 
+        return Unit.CreateWreckage(self, overkillRatio)
     end,
 
 

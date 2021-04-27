@@ -2,6 +2,11 @@ PropBlueprint {
     Categories = {
         'RECLAIMABLE',
     },
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 100,
+        MaxHealth = 100,
+    },
     UnitWreckage = true,
     Economy = {
         BuildCostEnergy = 0,
@@ -22,10 +27,10 @@ PropBlueprint {
     SizeY = 0.1,
     SizeZ = 0.5,
     Wreckage = {
-        Blueprint = '/mods/SCTA-master/meshes/rockteeth/rockteeth_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.5,
         MassMult = 0.5,
+        Blueprint = '/mods/SCTA-master/meshes/rockteeth/rockteeth_prop.bp',
         WreckageLayers = {
             Land = true,
         },

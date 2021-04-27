@@ -2,15 +2,9 @@ local Wreckage = import('/lua/wreckage.lua').Wreckage
 
 SCTAWreckage = Class(Wreckage) {
 
-    OnCreate = function(self)
-        Wreckage.OnCreate(self)
-        self.Scale = self:GetBlueprint().BlueprintId
-        LOG('*Scale', self.Scale)
-    end,
-
-    OnDestroy = function(self)
-        Wreckage.OnDestroy(self)
+    Destroy = function(self)
         CreateHeapProp(self, 0)
+        Wreckage.Destroy(self)
     end,
         --- Create and return an identical wreckage prop. Useful for replacing this one when something
         -- (a stupid engine bug) deleted it when we don't want it to.
@@ -91,7 +85,7 @@ CreateHeap = function(bp, position, orientation, mass, energy, time, deathHitBox
     -- under the fog. However the engine has a bug with prop intel that makes the wreckage
     -- never appear at all, even when you drive up to it, so this is disabled for now.
     --prop:SetVizToNeutrals('Intel')
-        prop:SetMesh(prop:GetBlueprint().Display.MeshBlueprint)
+    prop:SetMesh(prop:GetBlueprint().Display.MeshBlueprint)
 
     -- This field cannot be renamed or the magical native code that detects rebuild bonuses breaks.
     prop.AssociatedBP = bp.Wreckage.IdHook or bp.BlueprintId

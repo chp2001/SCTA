@@ -2,7 +2,6 @@
 local Unit = import('/lua/sim/Unit.lua').Unit
 local FireState = import('/lua/game.lua').FireState
 local TADeath = import('/mods/SCTA-master/lua/TADeath.lua')
-local Wreckage = import('/lua/wreckage.lua')
 
 TAunit = Class(Unit) 
 {

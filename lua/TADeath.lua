@@ -15,17 +15,10 @@ CreateHeapProp = function(self, overkillRatio)
         return nil
     end
 
-    local mass = bp.Economy.BuildCostMass * (bp.Wreckage.MassMult or 0)
-    local energy = bp.Economy.BuildCostEnergy * (bp.Wreckage.EnergyMult or 0)
+    local mass = 5
+    local energy = 0
     local time = (bp.Wreckage.ReclaimTimeMultiplier or 1)
     local pos = self:GetPosition()
-    local layer = self:GetCurrentLayer()
-
-    local halfBuilt = self:GetFractionComplete() < 1
-
-    local overkillMultiplier = 1 - (overkillRatio or 1)
-    mass = mass * overkillMultiplier * self:GetFractionComplete()
-    energy = energy * overkillMultiplier * self:GetFractionComplete()
     time = time * overkillMultiplier
 
     -- Now we adjust the global multiplier. This is used for balance purposes to adjust global reclaim rate.

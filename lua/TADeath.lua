@@ -60,7 +60,7 @@ CreateHeap = function(bp, position, orientation, mass, energy, time, deathHitBox
     else
     prop:SetScale(bp.Display.UniformScale)
     end
-    LOG('*Scale', scale)
+    --LOG('*Scale', scale)
     -- take the default center (cx, cy, cz) and size (sx, sy, sz)
     local cx, cy, cz, sx, sz;
     cx = bp.CollisionOffsetX

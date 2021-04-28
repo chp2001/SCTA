@@ -6,7 +6,7 @@
 UnitBlueprint {
     AI = {
         TargetBones = {
-            'gangplank',
+            'build',
             'CORGANT',
             'crane',
         },
@@ -64,14 +64,13 @@ UnitBlueprint {
         AnimationUnpackRate = 2, 
         AnimationPack = '/mods/SCTA-master/units/CORGANT/CORGANT_lod0_repack.sca',
         AnimationPackRate = 1,
-        BuildAttachBone = 'gangplank',
+        BuildAttachBone = 'build',
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {
                 {
                     LODCutoff = 400,
                     ShaderName = 'Unit', 
-                    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
                 },
             },
         },
@@ -97,8 +96,8 @@ UnitBlueprint {
     },
     General = {
         BuildBones = {
-            BuildAttachBone = 'gangplank',
-            BuildEffectBones = {'nano1','nano2','nano3','nano4'},
+            BuildAttachBone = 'build',
+            BuildEffectBones = {'nano1','nano2','nano3','nano4','nano5','nano6','nano7','nano8','nano9','nano10',},
         },  
         Category = 'Factory',
         Classification = 'RULEUC_Factory',

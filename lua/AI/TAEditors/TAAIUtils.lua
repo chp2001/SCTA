@@ -245,88 +245,30 @@ function TAAIGetReclaimablesAroundLocation(aiBrain, locationType)
     return AIUtils.GetReclaimablesInRect(rect)
 end
 
---[[TABuildScoutLocations = function(self)
-    local aiBrain = self
-    local opponentStarts = {}
-    local allyStarts = {}
 
-    if not aiBrain.InterestList then
-        aiBrain.InterestList = {}
-        aiBrain.IntelData.HiPriScouts = 0
-        aiBrain.IntelData.AirHiPriScouts = 0
-        aiBrain.IntelData.AirLowPriScouts = 0
+local AITaunts = {
+    {99, 100, 101, 102, 103}, -- Seraphim
+}
+local AIChatText = import('/lua/AI/sorianlang.lua').AIChatText
 
-        -- Add each enemy's start location to the InterestList as a new sub table
-        aiBrain.InterestList.HighPriority = {}
-        aiBrain.InterestList.LowPriority = {}
-        aiBrain.InterestList.MustScout = {}
+function TAAIRandomizeTaunt(aiBrain)
+    tauntid = Random(1,table.getn(AITaunts[1]))
+    AISendChat('all', aiBrain.Nickname, '/'..AITaunts[1][tauntid])
+end
 
-        local myArmy = ScenarioInfo.ArmySetup[self.Name]
-
-        if ScenarioInfo.Options.TeamSpawn == 'fixed' then
-            -- Spawn locations were fixed. We know exactly where our opponents are.
-            -- Don't scout areas owned by us or our allies.
-            local numOpponents = 0
-            for i = 1, 16 do
-                local army = ScenarioInfo.ArmySetup['ARMY_' .. i]
-                local startPos = ScenarioUtils.GetMarker('ARMY_' .. i).position
-                if army and startPos then
-                    if army.ArmyIndex ~= myArmy.ArmyIndex and (army.Team ~= myArmy.Team or army.Team == 1) then
-                    -- Add the army start location to the list of interesting spots.
-                    opponentStarts['ARMY_' .. i] = startPos
-                    numOpponents = numOpponents + 1
-                    table.insert(aiBrain.InterestList.HighPriority,
-                        {
-                            Position = startPos,
-                            LastScouted = 0,
-                        }
-                    )
-                    else
-                        allyStarts['ARMY_' .. i] = startPos
-                    end
-                end
+function AISendChat(aigroup, ainickname, aiaction, targetnickname, extrachat)
+        if aiaction and AIChatText[aiaction] then
+            local ranchat = Random(1, table.getn(AIChatText[aiaction]))
+            local chattext
+            if targetnickname then
+                chattext = string.gsub(AIChatText[aiaction][ranchat],'%[target%]', targetnickname)
+            elseif extrachat then
+                chattext = string.gsub(AIChatText[aiaction][ranchat],'%[extra%]', extrachat)
+            else
+                chattext = AIChatText[aiaction][ranchat]
             end
-
-            aiBrain.NumOpponents = numOpponents
-
-            -- For each vacant starting location, check if it is closer to allied or enemy start locations (within 100 ogrids)
-            -- If it is closer to enemy territory, flag it as high priority to scout.
-            local starts = AIUtils.AIGetMarkerLocations(aiBrain, 'Mass')
-            for _, loc in starts do
-                -- If vacant
-                if not opponentStarts[loc.Name] and not allyStarts[loc.Name] then
-                    local closestDistSq = 999999999
-                    local closeToEnemy = false
-
-                    for _, pos in opponentStarts do
-                        local distSq = VDist2Sq(pos[1], pos[3], loc.Position[1], loc.Position[3])
-                        -- Make sure to scout for bases that are near equidistant by giving the enemies 100 ogrids
-                        if distSq-10000 < closestDistSq then
-                            closestDistSq = distSq-10000
-                            closeToEnemy = true
-                        end
-                    end
-
-                    for _, pos in allyStarts do
-                        local distSq = VDist2Sq(pos[1], pos[3], loc.Position[1], loc.Position[3])
-                        if distSq < closestDistSq then
-                            closestDistSq = distSq
-                            closeToEnemy = false
-                            break
-                        end
-                    end
-
-                    if closeToEnemy then
-                        table.insert(aiBrain.InterestList.LowPriority,
-                            {
-                                Position = loc.Position,
-                                LastScouted = 0,
-                            }
-                        )
-                    end
-                end
-            end
+            table.insert(Sync.AIChat, {group=aigroup, text=chattext, sender=ainickname})
+        else
+            table.insert(Sync.AIChat, {group=aigroup, text=aiaction, sender=ainickname})
         end
-        aiBrain:ForkThread(self.ParseIntelThread)
-    end
-end,]]
+end

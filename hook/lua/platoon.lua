@@ -916,7 +916,6 @@ Platoon = Class(SCTAAIPlatoon) {
         local relative
         local baseTmplList = {}
 
-        -- if we have nothing to build, disband!
         if not cons.BuildStructures then
             coroutine.yield(1)
             self:PlatoonDisband()

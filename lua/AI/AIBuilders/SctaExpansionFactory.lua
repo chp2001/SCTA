@@ -31,7 +31,6 @@ BuilderGroup {
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
-            LocationType = 'LocationType',
             NumAssistees = 2,
             Construction = {
                 BuildClose = true,
@@ -57,7 +56,6 @@ BuilderConditions = {
             NeedGuard = false,
             DesiresAssist = true,
             NumAssistees = 2,
-            LocationType = 'LocationType',
             Construction = {
                 BuildClose = true,
                 BuildStructures = {
@@ -81,7 +79,6 @@ BuilderConditions = {
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
-            LocationType = 'LocationType',
             NumAssistees = 2,
             Construction = {
                 BuildClose = true,
@@ -106,7 +103,6 @@ BuilderConditions = {
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
-            LocationType = 'LocationType',
             NumAssistees = 2,
             Construction = {
                 BuildClose = true,
@@ -133,7 +129,6 @@ BuilderConditions = {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            LocationType = 'LocationType',
             DesiresAssist = true,
             NumAssistees = 2,
             Construction = {
@@ -158,7 +153,6 @@ BuilderConditions = {
         BuilderType = 'Any',
         BuilderData = {
             NeedGuard = false,
-            LocationType = 'LocationType',
             DesiresAssist = true,
             NumAssistees = 2,
             Construction = {
@@ -208,6 +202,52 @@ BuilderConditions = {
             Construction = {
                 BuildStructures = {
                     'T2StrategicMissile',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T3LAND Hover Factory T2 Expansion',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        PriorityFunction = TAPrior.ProductionT3,
+        Priority = 143,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, PLATFORM} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T3LandFactory',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T3AirFactory T2 Expansion',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco23',
+        PriorityFunction = TAPrior.ProductionT3,
+        Priority = 140,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, PLATFORM} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T3AirFactory',
                 }
             }
         }

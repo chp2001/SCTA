@@ -1,17 +1,6 @@
 WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset aibehaviors.lua' )
 
-
-local AIUtils = import('/lua/ai/aiutilities.lua')
-local Utilities = import('/lua/utilities.lua')
-local AIBuildStructures = import('/lua/ai/aibuildstructures.lua')
-local UnitUpgradeTemplates = import('/lua/upgradetemplates.lua').UnitUpgradeTemplates
-local StructureUpgradeTemplates = import('/lua/upgradetemplates.lua').StructureUpgradeTemplates
-local ScenarioFramework = import('/lua/ScenarioFramework.lua')
-local AIAttackUtils = import('/lua/ai/aiattackutilities.lua')
-local TriggerFile = import('/lua/scenariotriggers.lua')
-local UCBC = import('/lua/editor/UnitCountBuildConditions.lua')
-local SBC = import('/lua/editor/SorianBuildConditions.lua')
-local SUtils = import('/lua/AI/sorianutilities.lua')
+local TAReclaim = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua')
 
 function CommanderBehaviorSCTA(platoon)
     for _, v in platoon:GetPlatoonUnits() do
@@ -27,6 +16,7 @@ function CommanderThreadSCTA(cdr, platoon)
     local WaitTaunt = 600 + Random(1, 600)
     local aiBrain = cdr:GetAIBrain()
     aiBrain:BuildScoutLocations()
+    TAReclaim.TAAIRandomizeTaunt(aiBrain)
     SetCDRHome(cdr, platoon)
     while not cdr.Dead do
         -- Overcharge
@@ -74,17 +64,16 @@ function CDRSCTADGun(aiBrain, cdr)
     end
 
     -- Increase distress on non-water maps
-    local distressRange = 10
+    local distressRange = 60
     if cdr:GetHealthPercent() > 0.8 and aiBrain:GetMapWaterRatio() < 0.4 then
-        distressRange = 30
+        distressRange = 100
     end
 
     -- Increase attack range for a few mins on small maps
     local maxRadius = weapon.MaxRadius + 10
     local mapSizeX, mapSizeZ = GetMapSize()
     if cdr:GetHealthPercent() > 0.8
-        and GetGameTimeSeconds() < 600
-        and GetGameTimeSeconds() > 240
+        and GetGameTimeSeconds() < 300
         and mapSizeX <= 512 and mapSizeZ <= 512
         then
         maxRadius = 5
@@ -92,11 +81,9 @@ function CDRSCTADGun(aiBrain, cdr)
 
     -- Take away engineers too
     local cdrPos = cdr.CDRHome
-    local numUnits = aiBrain:GetNumUnitsAroundPoint(categories.LAND * categories.MOBILE, cdrPos, (maxRadius), 'Enemy')
+    local numUnits = aiBrain:GetNumUnitsAroundPoint(categories.LAND * categories.MOBILE - categories.SCOUT, cdrPos, (maxRadius), 'Enemy')
     local distressLoc = aiBrain:BaseMonitorDistressLocation(cdrPos)
     local overCharging = false
-
-    -- Don't move if upgrading
 
     if Utilities.XZDistanceTwoVectors(cdrPos, cdr:GetPosition()) > maxRadius then
         return
@@ -153,8 +140,8 @@ function CDRSCTADGun(aiBrain, cdr)
                     if Utilities.XZDistanceTwoVectors(cdr.CDRHome, cdr:GetPosition()) > 45 then
                         enemyThreat = aiBrain:GetThreatAtPosition(targetPos, 1, true, 'AntiSurface')
                         enemyCdrThreat = aiBrain:GetThreatAtPosition(targetPos, 1, true, 'Commander')
-                        --friendlyThreat = aiBrain:GetThreatAtPosition(targetPos, 1, true, 'AntiSurface', aiBrain:GetArmyIndex())
-                        if enemyThreat - enemyCdrThreat >= (cdrThreat / 2) then
+                        friendlyThreat = aiBrain:GetThreatAtPosition(targetPos, 1, true, 'AntiSurface', aiBrain:GetArmyIndex())
+                        if enemyThreat - enemyCdrThreat >= friendlyThreat + (cdrThreat / 1.5) then
                             break
                         end
                     end
@@ -162,6 +149,7 @@ function CDRSCTADGun(aiBrain, cdr)
                     if aiBrain:GetEconomyStored('ENERGY') >= weapon.EnergyRequired and target and not target.Dead then
                         overCharging = true
                         IssueClearCommands({cdr})
+                        TAReclaim.TAAIRandomizeTaunt(aiBrain)
                         IssueOverCharge({cdr}, target)
                     elseif target and not target.Dead then -- Commander attacks even if not enough energy for overcharge
                         IssueClearCommands({cdr})
@@ -170,9 +158,9 @@ function CDRSCTADGun(aiBrain, cdr)
                     end
                 elseif distressLoc then
                     enemyThreat = aiBrain:GetThreatAtPosition(distressLoc, 1, true, 'AntiSurface')
-                    --enemyCdrThreat = aiBrain:GetThreatAtPosition(distressLoc, 1, true, 'Commander')
+                    enemyCdrThreat = aiBrain:GetThreatAtPosition(distressLoc, 1, true, 'Commander')
                     friendlyThreat = aiBrain:GetThreatAtPosition(distressLoc, 1, true, 'AntiSurface', aiBrain:GetArmyIndex())
-                    if enemyThreat >= friendlyThreat + cdrThreat then
+                    if enemyThreat - enemyCdrThreat >= friendlyThreat + (cdrThreat / 3) then
                         break
                     end
                     if distressLoc and (Utilities.XZDistanceTwoVectors(distressLoc, cdrPos) < distressRange) then
@@ -189,8 +177,8 @@ function CDRSCTADGun(aiBrain, cdr)
                     counter = counter + 0.5
                 end
             else
-                WaitSeconds(0.5)
-                counter = counter + 0.5
+                WaitSeconds(5)
+                counter = counter + 5
             end
 
             distressLoc = aiBrain:BaseMonitorDistressLocation(cdrPos)
@@ -198,12 +186,12 @@ function CDRSCTADGun(aiBrain, cdr)
                 return
             end
 
-            if aiBrain:GetNumUnitsAroundPoint(categories.LAND * categories.MOBILE, cdrPos, maxRadius, 'Enemy') <= 0
+            if aiBrain:GetNumUnitsAroundPoint(categories.LAND * categories.MOBILE - categories.SCOUT, cdrPos, maxRadius, 'Enemy') <= 0
                 and (not distressLoc or Utilities.XZDistanceTwoVectors(distressLoc, cdrPos) > distressRange) then
                 continueFighting = false
             end
             -- If com is down to yellow then dont keep fighting
-            if (cdr:GetHealthPercent() < 0.9) and Utilities.XZDistanceTwoVectors(cdr.CDRHome, cdr:GetPosition()) > 20 then
+            if (cdr:GetHealthPercent() < 0.75) and Utilities.XZDistanceTwoVectors(cdr.CDRHome, cdr:GetPosition()) > 30 then
                 continueFighting = false
             end
         until not continueFighting or not aiBrain:PlatoonExists(plat)

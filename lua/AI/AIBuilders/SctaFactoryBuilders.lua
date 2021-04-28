@@ -185,7 +185,7 @@ BuilderConditions = {
         Priority = 140,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, PLATFORM * categories.AIR} },
+            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH3} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
@@ -208,7 +208,7 @@ BuilderConditions = {
         Priority = 143,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, PLATFORM} },
+            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH3} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Any',
@@ -231,7 +231,7 @@ BuilderConditions = {
         Priority = 143,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, PLATFORM * categories.LAND} },
+            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH3} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLATFORM} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
@@ -255,7 +255,7 @@ BuilderConditions = {
         Priority = 140,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, PLATFORM * categories.AIR} },
+            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH3} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLATFORM} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },

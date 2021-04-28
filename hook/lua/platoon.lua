@@ -2232,6 +2232,8 @@ Platoon = Class(SCTAAIPlatoon) {
             target = self:FindClosestUnit('Attack', 'Enemy', true, categories.AIR * categories.ANTIAIR)
             if not target then
                 target = self:FindClosestUnit('Attack', 'Enemy', true, categories.AIR * categories.MOBILE)
+            else
+                target = self:FindClosestUnit('Attack', 'Enemy', true, categories.LAND * categories.MOBILE - categories.ANTIAIR)
             end
             if target and target:GetFractionComplete() == 1 then
                 local airThreat = aiBrain:GetThreatAtPosition(table.copy(target:GetPosition()), 1, true, 'Air')

@@ -16,7 +16,6 @@ UnitBlueprint {
         'OVERLAYSONAR',
         'ARM',
         'AIR',
-        'SUBMERSIBLE',
 	    'SORTCONSTRUCTION',
     },
     Defense = {

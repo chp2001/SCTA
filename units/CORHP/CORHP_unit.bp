@@ -40,7 +40,6 @@ UnitBlueprint {
 	    'CORE',
 	    'SORTCONSTRUCTION',
         'LAND',
-        'HOVER',
     },
     Defense = {
         ArmorType = 'Structure',

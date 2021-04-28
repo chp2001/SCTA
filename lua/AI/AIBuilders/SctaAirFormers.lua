@@ -1,6 +1,7 @@
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIAirFormers',
@@ -12,17 +13,18 @@ BuilderGroup {
         InstanceCount = 10,
         BuilderType = 'Any',
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0,  categories.SCOUT } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0,  categories.SCOUT * categories.TECH1} },
          },
     },
     Builder {
-        BuilderName = 'SCTAAI Radar Scout',
-        PlatoonTemplate = 'SCTAT2AirScouting',
+        BuilderName = 'SCTAAI Radar T3 Scout',
+        PlatoonTemplate = 'SCTAT3AirScouting',
+        PriorityFunction = TAPrior.ProductionT3,
         Priority = 125,
         InstanceCount = 10,
         BuilderType = 'Any',
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.OVERLAYOMNI } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.OVERLAYOMNI * categories.AIR } },
          },
     },
     Builder {
@@ -43,6 +45,20 @@ BuilderGroup {
         PlatoonAddBehaviors = { 'AirUnitRefit' },                              
         InstanceCount = 200,
         BuilderType = 'Any',     
+        BuilderConditions = { 
+        },
+    },
+    Builder {
+        BuilderName = 'SCTAAI Air Intercept Stealth',
+        PlatoonTemplate = 'IntieAISCTAStealth',
+        Priority = 110,
+        InstanceCount = 200,
+        FormRadius = 500,
+        PlatoonAddBehaviors = { 'AirUnitRefit' },                              
+        BuilderType = 'Any',
+        BuilderData = {
+            Energy = true,
+        },        
         BuilderConditions = { 
         },
     },

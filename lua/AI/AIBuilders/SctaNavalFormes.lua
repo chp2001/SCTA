@@ -1,6 +1,7 @@
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
 BuilderGroup {
     BuilderGroupName = 'SCTANavalFormer',
@@ -78,8 +79,9 @@ BuilderGroup {
         },
     },
     Builder {
-        BuilderName = 'SCTA HighTech',
+        BuilderName = 'SCTA HighTech Naval',
         PlatoonTemplate = 'SCTANavalAssaultT2',
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 120,
         InstanceCount = 10,
         BuilderType = 'Any',
@@ -100,5 +102,33 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.MOBILE - categories.ENGINEER} },
         },
+    },
+    Builder {
+        BuilderName = 'SCTAAI Air Naval Intercept',
+        PlatoonTemplate = 'IntieAISCTA',
+        Priority = 100,
+        FormRadius = 500,
+        PlatoonAddBehaviors = { 'AirUnitRefit' },                              
+        InstanceCount = 200,
+        BuilderType = 'Any',     
+        BuilderConditions = { 
+        },
+    },
+    Builder {
+        BuilderName = 'SCTA Hover Strike',
+        PlatoonTemplate = 'StrikeForceSCTAHover', -- The platoon template tells the AI what units to include, and how to use them.
+        PriorityFunction = TAPrior.UnitProduction,
+        Priority = 120,
+        InstanceCount = 25,
+        BuilderType = 'Any',
+        BuilderData = {
+            Small = true,
+            NeverGuardBases = false,
+            NeverGuardEngineers = false,
+            UseFormation = 'AttackFormation',
+        },        
+        BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.HOVER} },
+         },
     },
 }

@@ -46,6 +46,14 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
+    Name = 'IntieAISCTAStealth',
+    Plan = 'InterceptorAISCTA',
+    GlobalSquads = {
+        { SKY * categories.ANTIAIR * categories.TECH2 - categories.BOMBER, 2, 100, 'attack', 'none' },
+    }
+}
+
+PlatoonTemplate {
     Name = 'IntieAISCTAALL',
     Plan = 'InterceptorAISCTA',
     GlobalSquads = {
@@ -53,20 +61,12 @@ PlatoonTemplate {
     }
 }
 
-PlatoonTemplate {
-    Name = 'IntieAISCTASeaplane',
-    Plan = 'InterceptorAISCTA',
-    GlobalSquads = {
-        { SKY * categories.ANTIAIR * categories.TRANSPORTATION, 2, 100, 'attack', 'none' },
-    }
-}
-
 
 PlatoonTemplate {
-    Name = 'SCTAT2AirScouting',
+    Name = 'SCTAT3AirScouting',
     Plan = 'ScoutingAISorian',
     GlobalSquads = {
-        { SKY * categories.SCOUT * categories.OVERLAYOMNI, 1, 4, 'scout', 'None' },
+        { SKY * categories.SCOUT * categories.OVERLAYOMNI, 1, 1, 'scout', 'None' },
     }
 }
 

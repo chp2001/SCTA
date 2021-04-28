@@ -1,5 +1,6 @@
 local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
 local MoreProduct = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsInCategoryBeingBuilt
+local LessProduct = import('/lua/editor/UnitCountBuildConditions.lua').HaveLessThanUnitsInCategoryBeingBuilt
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
@@ -38,18 +39,25 @@ EngineerProductionT3 = function(self, aiBrain)
 end
 
 UnitProduction = function(self, aiBrain)
-    if Factory(aiBrain,  1, LAB) then
+    if Factory(aiBrain,  1, PLATFORM) then
+        return 75
+    elseif Factory(aiBrain,  1, LAB) then
         return 111
-    elseif Factory(aiBrain,  1, PLATFORM) then
-        return 50
     elseif Factory(aiBrain,  12, PLANT) then 
-            return 110
+        return 110
     else
         return 0
     end
 end
 
 ---WithinTechProduction
+PlatformBeingBuilt = function(self, aiBrain)
+    if LessProduct(aiBrain,  3, PLATFORM) then 
+        return 140
+    else
+        return 0
+    end
+end
 
 StructureProductionT3 = function(self, aiBrain)
     if Factory(aiBrain,  4, PLATFORM)  then 
@@ -130,7 +138,7 @@ GantryConstruction = function(self, aiBrain)
     if Factory(aiBrain,  2, PLATFORM)  then
         return 175
     elseif Factory(aiBrain,  6, LAB) then
-        return 75
+        return 100
     else
         return 0
     end
@@ -146,7 +154,7 @@ end
 
 GateBeingBuilt = function(self, aiBrain)
     if MoreProduct(aiBrain,  0, categories.GATE) then 
-        return 150
+        return 125
     else
         return 0
     end

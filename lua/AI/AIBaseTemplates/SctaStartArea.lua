@@ -7,6 +7,7 @@ BaseBuilderTemplate {
         'SCTAAIAirBuilder',
         'SCTAAILandFormers',
         'SCTAAIAirFormers',
+        'SCTAAIT3Builder',
         -- Buildings etc
         
         'SCTAExpansionBuilders',

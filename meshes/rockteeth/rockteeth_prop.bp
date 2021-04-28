@@ -1,3 +1,6 @@
+----This is where Heap Blueprints are located among other things. Its the last major TA mechanic left to be recreated
+---While not perfect i.e. floating heaps circumstantially, it is acceptable enough. Properly need to make it cleaner.
+
 PropBlueprint {
     Categories = {
         'RECLAIMABLE',
@@ -9,10 +12,10 @@ PropBlueprint {
     },
     Display = {
         Mesh = {
-            IconFadeInZoom = 50,
+            IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 100,
+                    LODCutoff = 175,
                     ShaderName = 'TMeshNoLighting',
                 },
             },

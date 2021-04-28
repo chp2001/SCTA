@@ -3,7 +3,16 @@ local Wreckage = import('/lua/wreckage.lua').Wreckage
 SCTAWreckage = Class(Wreckage) {
 
     Destroy = function(self)
+        if self.WreckEaten == true then
+        return Wreckage.Destroy(self)
+        end
         CreateHeapProp(self, 0)
+        Wreckage.Destroy(self)
+    end,
+
+    OnReclaimed = function(self, entity)
+        self:DoPropCallbacks('OnReclaimed', entity)
+        self.CreateReclaimEndEffects(entity, self)
         Wreckage.Destroy(self)
     end,
         ---Is the Same as Basic code the only addition is the creation of HeapProps. The Heap Prop code is below
@@ -11,8 +20,8 @@ SCTAWreckage = Class(Wreckage) {
 
 CreateHeapProp = function(self, overkillRatio)
     local bp = self:GetBlueprint()
-    LOG('*IAMCONFUSED2', self.AssociatedBPScale)
-    ---local scale = self.AssociatedBPScale
+    ---LOG('*IAMCONFUSED2', self.AssociatedBPScale)
+    ---local scale = self.AssociatedBPScale or nil
     local wreck = bp.Wreckage.Blueprint
     if not wreck then
         return nil
@@ -46,7 +55,11 @@ CreateHeap = function(bp, position, orientation, mass, energy, time, deathHitBox
     local prop = CreateProp(position, '/mods/SCTA-master/meshes/rockteeth/rockteeth_prop.bp')
     CreateAttachedEmitter(prop, 0, -1, '/mods/SCTA-master/effects/emitters/fire_smoke_emit.bp' )
     prop:SetOrientation(orientation, true)
-    prop:SetScale((scale * 2) or bp.Display.UniformScale)
+    if scale then 
+    prop:SetScale(scale * 2) 
+    else
+    prop:SetScale(bp.Display.UniformScale)
+    end
     LOG('*Scale', scale)
     -- take the default center (cx, cy, cz) and size (sx, sy, sz)
     local cx, cy, cz, sx, sz;

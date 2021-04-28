@@ -8,10 +8,7 @@ PropBlueprint {
             LODs = {
                 {
                     LODCutoff = 175,
-		    NormalName = '/mods/SCTA/textures/common/normalsTS.dds',
-		    SpecularName = 'Dragon_SpecTeam.dds',
-		    AlbedoName = 'Dragon_Albedo.dds',
-		    MeshName = 'Dragon_lod0.scm',
+		            NormalName = '/mods/SCTA-master/textures/common/normalsTS.dds',
                     ShaderName = 'TMeshNoLighting',
                 },
             },

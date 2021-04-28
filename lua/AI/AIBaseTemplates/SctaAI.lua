@@ -19,7 +19,6 @@ BaseBuilderTemplate {
         'SCTAAILandFormers',
         'SCTAAIAirFormers',
         'SCTAAIUniversalFormers',
-        'SCTAAIT3Formers',
         'SCTAAIT3Builder',
         
         -- Buildings etc

@@ -18,8 +18,11 @@ PropBlueprint {
     Interface = {
         HelpText = 'Wreckage',
     },
+    Footprint = {
+        OccupancyCaps = 3,
+    },
     Physics = {
-        BlockPath = false,
+        BlockPath = true,
     },
     ScriptClass = 'SCTAWreckage',
     ScriptModule = '/mods/SCTA-master/lua/TADeath.lua',

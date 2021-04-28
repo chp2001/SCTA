@@ -3,9 +3,6 @@ local Wreckage = import('/lua/wreckage.lua').Wreckage
 SCTAWreckage = Class(Wreckage) {
 
     Destroy = function(self)
-        if self.WreckEaten == true then
-        return Wreckage.Destroy(self)
-        end
         CreateHeapProp(self, 0)
         Wreckage.Destroy(self)
     end,

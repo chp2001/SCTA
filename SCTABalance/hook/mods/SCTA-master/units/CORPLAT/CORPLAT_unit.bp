@@ -21,13 +21,11 @@ UnitBlueprint {
         'OVERLAYSONAR',
         'CORE',
         'AIR',
-        'SUBMERSIBLE',
         'SORTCONSTRUCTION',
     },
     Defense = {
         Health = 14000,
         MaxHealth = 14000,
-        EconomyThreatLevel = 11,
     },
     Display = {
         UniformScale = 0.20,

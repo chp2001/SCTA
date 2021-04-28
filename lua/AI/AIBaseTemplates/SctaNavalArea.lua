@@ -4,7 +4,6 @@ BaseBuilderTemplate {
         'SCTAAINavalBuilder',
         'SCTANavalFormer',
         'SCTAUpgrades',
-        'SCTAAIT3Formers',
         'SCTAAIT3Builder',
 
         -- Buildings etc

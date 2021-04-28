@@ -42,7 +42,6 @@ UnitBlueprint {
         'OVERLAYSONAR',
         'CORE',
         'AIR',
-        'SUBMERSIBLE',
 	    'SORTCONSTRUCTION',
     },
     Defense = {

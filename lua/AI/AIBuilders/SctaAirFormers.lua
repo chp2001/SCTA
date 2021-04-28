@@ -30,6 +30,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Bomber Attack',
         PlatoonTemplate = 'SCTABomberAttack',
+        PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 100,
         FormRadius = 500,
         InstanceCount = 50,
@@ -40,6 +41,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Air Intercept',
         PlatoonTemplate = 'IntieAISCTA',
+        PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 100,
         FormRadius = 500,
         PlatoonAddBehaviors = { 'AirUnitRefit' },                              
@@ -51,8 +53,9 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Air Intercept Stealth',
         PlatoonTemplate = 'IntieAISCTAStealth',
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 110,
-        InstanceCount = 200,
+        InstanceCount = 25,
         FormRadius = 500,
         PlatoonAddBehaviors = { 'AirUnitRefit' },                              
         BuilderType = 'Any',
@@ -65,6 +68,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Air Intercept Omni',
         PlatoonTemplate = 'IntieAISCTAALL',
+        PriorityFunction = TAPrior.GantryConstruction,
         Priority = 110,
         InstanceCount = 200,
         FormRadius = 500,

@@ -47,15 +47,15 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'IntieAISCTAStealth',
-    Plan = 'InterceptorAISCTA',
+    Plan = 'InterceptorAISCTAStealth',
     GlobalSquads = {
-        { SKY * categories.ANTIAIR * categories.TECH2 - categories.BOMBER, 2, 100, 'attack', 'none' },
+        { SKY * (((categories.ANTIAIR + categories.GROUNDATTACK) * categories.TECH2) + categories.BOMBER), 2, 100, 'attack', 'none' },
     }
 }
 
 PlatoonTemplate {
     Name = 'IntieAISCTAALL',
-    Plan = 'InterceptorAISCTA',
+    Plan = 'InterceptorAISCTAEnd',
     GlobalSquads = {
         { SKY * categories.ANTIAIR - categories.BOMBER - categories.GROUNDATTACK, 2, 100, 'attack', 'none' },
     }

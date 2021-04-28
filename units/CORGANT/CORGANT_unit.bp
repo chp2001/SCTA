@@ -61,7 +61,7 @@ UnitBlueprint {
     Description = 'Builds Krogoths',
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/CORGANT/CORGANT_lod0_unpack.sca',
-        AnimationUnpackRate = 2, 
+        AnimationUnpackRate = 1, 
         AnimationPack = '/mods/SCTA-master/units/CORGANT/CORGANT_lod0_repack.sca',
         AnimationPackRate = 1,
         BuildAttachBone = 'build',

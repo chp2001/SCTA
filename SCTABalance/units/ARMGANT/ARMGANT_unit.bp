@@ -61,8 +61,10 @@ UnitBlueprint {
     Description = 'Builds Drake',
     Display = {
         BuildAttachBone = 'buildpad',
+        AnimationPack = '/mods/SCTA-master/SCTABalance/units/ARMGANT/ARMGANT_lod0_repack.sca',
+        AnimationPackRate = 1,
         AnimationUnpack = '/mods/SCTA-master/SCTABalance/units/ARMGANT/ARMGANT_lod0_unpack.sca',
-        AnimationUnpackRate = 2, 
+        AnimationUnpackRate = 1, 
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

@@ -88,10 +88,30 @@ TAFactory = Class(FactoryUnit) {
     }
 
     TAGantry = Class(TAFactory) {	
-    
             CreateBuildEffects = function(self, unitBeingBuilt, order)
                 TAutils.CreateTAGantBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
             end,
+
+            OnStartBuild = function(self, unitBeingBuilt, order )
+                unitBeingBuilt:HideBone(0, true)
+                TAFactory.OnStartBuild(self, unitBeingBuilt, order )
+            end,
+    
+            FactoryStartBuild = function(self, unitBeingBuilt, order )
+                TAFactory.FactoryStartBuild(self, unitBeingBuilt, order )
+                unitBeingBuilt:ShowBone(0, true)
+            end,
+
+            Open = function(self)
+                self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
+                self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
+            end,
+            
+            Close = function(self)
+                self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationPack)
+                self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationPackRate or 0.2))
+            end,
+    
         }
 
 TACarrier = Class(AircraftCarrier) {

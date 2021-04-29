@@ -29,20 +29,6 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
         self.PlatoonListEmpty = true
 	end,
 
-    FactoryFinishBuilding = function(self,factory,finishedUnit)
-        if not self.Brain.SCTAAI then
-            return SCTAFactoryBuilderManager.FactoryFinishBuilding(self,factory,finishedUnit)
-        end
-        if EntityCategoryContains( categories.ENGINEER, finishedUnit ) then
-            self.Brain.BuilderManagers[self.LocationType].EngineerManager:EngineerConstructionFinished( finishedUnit )
-        elseif EntityCategoryContains( categories.FACTORY, finishedUnit ) then
-            self:AddFactory(finishedUnit)
-        end
-        self.Brain:RemoveConsumption(self.LocationType, factory)
-
-        self:AssignBuildOrder(factory, factory.BuilderManagerData.BuilderType)
-    end,
-
     AddBuilder = function(self, builderData, locationType)
         if not self.Brain.SCTAAI then
             return SCTAFactoryBuilderManager.AddBuilder(self, builderData, locationType)

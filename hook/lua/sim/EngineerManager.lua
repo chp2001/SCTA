@@ -157,30 +157,43 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         return newBuilder
     end,
 
-    AssignEngineerTask = function(self, unit, bType)
+    AssignEngineerTask = function(self, unit)
         LOG('*Brain', self.Brain.SCTAAI)
+        LOG('*Who', unit)
         if not self.Brain.SCTAAI then
             return SCTAEngineerManager.AssignEngineerTask(self, unit)
         end
-        if not self:EngineerAlreadyExists(unit) then
-                table.insert(self.EngineerList, unit)
                 if EntityCategoryContains(categories.LAND * (categories.TECH1 + categories.TECH2) - categories.FIELDENGINEER, unit) then
-                    self:GetEngineer({unit}, 'Land')
+                    self:TAAssignEngineerTask(unit, 'Land')
+                    return
                 elseif EntityCategoryContains(categories.AIR * (categories.TECH1 + categories.TECH2), unit) then
-                    self:GetEngineer({unit}, 'Air')
+                    self:TAAssignEngineerTask(unit, 'Air')
+                    return
                 elseif EntityCategoryContains(categories.NAVAL * (categories.TECH1 + categories.TECH2), unit) then
-                    self:GetEngineer({unit},'Sea')
+                    self:TAAssignEngineerTask(unit, 'Sea')
+                    return
                 elseif EntityCategoryContains(categories.TECH3 + categories.SUBCOMMANDER, unit) then
-                    self:GetEngineer({unit}, 'T3')
+                    self:TAAssignEngineerTask(unit, 'T3')
+                    return
                 elseif EntityCategoryContains(categories.FIELDENGINEER, unit) then
-                    self:GetEngineer({unit}, 'Field')
+                    self:TAAssignEngineerTask(unit, 'Field')
+                    return
                 else 
-                    self:GetEngineer({unit}, 'Command')
+                    self:TAAssignEngineerTask(unit, 'Command')
+                    return
                 end
-            end
         end,
     
+
         EngineerAlreadyExists = function(self, Engineer)
+            for k,v in self.EngineerList do
+                if v == Engineer then
+                    return true
+                end
+            end
+            return false
+        end,
+        --[[EngineerAlreadyExists = function(self, Engineer)
             for k,v in self.EngineerList do
                 if v == Engineer then
                     return true
@@ -191,11 +204,11 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
 
     GetEngineer = function(self, unit, bType)
         for k,v in unit do
-           LOG('*ThisWork2', bType)
-            v.BuilderManagerData = { EngineerManager = self, BuilderType = bType, }
+            LOG('*ThisWork2', bType)
+             v.BuilderManagerData = { EngineerManager = self, BuilderType = bType, }
             end
         self:TAAssignEngineerTask(unit, bType)
-    end,
+    end,]]
 
 
     TAAssignEngineerTask = function(self, unit, bType)
@@ -204,10 +217,13 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
             self:DelayAssign(unit, 50)
             return
         end
+        if not self:EngineerAlreadyExists(unit) then
+            table.insert(self.EngineerList, bType)
+        end
         unit.DesiresAssist = false
         unit.NumAssistees = nil
         unit.MinNumAssistees = nil
-    
+        unit.bType = bType
         if self.AssigningTask then
             self:DelayAssign(unit, 50)
             return
@@ -215,22 +231,22 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
             self.AssigningTask = true
         end
         LOG('*ThisWork2', unit)
-        LOG('*Builder', btype)
-        local builder = self:GetHighestBuilder(bType, {unit})
+        LOG('*Builder', bType)
+        local builder = self:GetHighestBuilder(unit.bType, {unit})
         if builder then
             -- Fork off the platoon here
             local template = self:GetEngineerPlatoonTemplate(builder:GetPlatoonTemplate())
             local hndl = self.Brain:MakePlatoon(template[1], template[2])
             self.Brain:AssignUnitsToPlatoon(hndl, {unit}, 'support', 'none')
             unit.PlatoonHandle = hndl
-    
+
             --if EntityCategoryContains(categories.COMMAND, unit) then
             --    LOG('*AI DEBUG: ARMY '..self.Brain.Nickname..': Engineer Manager Forming - '..builder.BuilderName..' - Priority: '..builder:GetPriority())
             --end
-    
+
             --LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Engineer Manager Forming - ',repr(builder.BuilderName),' - Priority: ', builder:GetPriority())
             hndl.PlanName = template[2]
-    
+
             --If we have specific AI, fork that AI thread
             if builder:GetPlatoonAIFunction() then
                 hndl:StopAI()
@@ -241,49 +257,45 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
                 hndl.PlanName = builder:GetPlatoonAIPlan()
                 hndl:SetAIPlan(hndl.PlanName)
             end
-    
+
             --If we have additional threads to fork on the platoon, do that as well.
             if builder:GetPlatoonAddPlans() then
                 for papk, papv in builder:GetPlatoonAddPlans() do
                     hndl:ForkThread(hndl[papv])
                 end
             end
-    
+
             if builder:GetPlatoonAddFunctions() then
                 for pafk, pafv in builder:GetPlatoonAddFunctions() do
                     hndl:ForkThread(import(pafv[1])[pafv[2]])
                 end
             end
-    
+
             if builder:GetPlatoonAddBehaviors() then
                 for pafk, pafv in builder:GetPlatoonAddBehaviors() do
                     hndl:ForkThread(import('/lua/ai/AIBehaviors.lua')[pafv])
                 end
             end
-    
+
             hndl.Priority = builder:GetPriority()
             hndl.BuilderName = builder:GetBuilderName()
-    
+
             hndl:SetPlatoonData(builder:GetBuilderData(self.LocationType))
-    
+
             if hndl.PlatoonData.DesiresAssist then
                 unit.DesiresAssist = hndl.PlatoonData.DesiresAssist
             else
                 unit.DesiresAssist = true
             end
-    
+
             if hndl.PlatoonData.NumAssistees then
                 unit.NumAssistees = hndl.PlatoonData.NumAssistees
             end
-    
+
             if hndl.PlatoonData.MinNumAssistees then
                 unit.MinNumAssistees = hndl.PlatoonData.MinNumAssistees
             end
-    
-            --[[if hndl.PlatoonData.BuilderType == unit.BuilderType then
-                unit.BuilderType = hndl.PlatoonData.BuilderType
-            end]]
-    
+
             builder:StoreHandle(hndl)
             self.AssigningTask = false
             return

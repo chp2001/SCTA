@@ -122,8 +122,7 @@ UnitBlueprint {
     SizeY = 2.4,
     SizeZ = 1.5,
     SelectionCenterOffsetZ = -0.4,
-    StrategicIconName = 'icon_land2_directfire',
-    TAStrategicIconName = '2/bot_sniper',
+    StrategicIconName = 'icon_bot3_sniper',
     StrategicIconSortPriority = 0,
     Transport = {
         TransportClass = 2,

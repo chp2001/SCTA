@@ -120,8 +120,6 @@ InitialRallyZ = 7,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {        
-        ---SkirtSizeX = 7,
-        ---SkirtSizeZ = 7,
         OccupyRects = {
             -2.5,
             0,

@@ -101,11 +101,6 @@ TAFactory = Class(FactoryUnit) {
                 TAFactory.FactoryStartBuild(self, unitBeingBuilt, order )
                 unitBeingBuilt:ShowBone(0, true)
             end,
-
-            Open = function(self)
-                self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
-                self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
-            end,
             
             Close = function(self)
                 self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationPack)

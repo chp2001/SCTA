@@ -2,7 +2,7 @@ UnitBlueprint {
     Merge = true, 
     Categories = {
         'SELECTABLE',
-        'TECH2',
+        'TECH3',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
@@ -10,23 +10,18 @@ UnitBlueprint {
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
         'ARM',
+        'BOT',	
         'SNIPER',
         'LASER',
-        'BUILTBYTIER1FACTORY',
-        'BUILTBYTIER2COMMANDER',
-        'BUILTBYTIER1ENGINEER',
-        'BUILTBYTIER3ENGINEER',
-        'SORTSTRATEGIC',
-        'NEEDMOBILEBUILD',
     },
     Defense = {
         Health = 1000,
         MaxHealth = 1000,
     },
     Economy = {
-        BuildCostEnergy = 21000,
-        BuildCostMass = 2000,
-        BuildTime = 24000,
+        BuildCostEnergy = 30000,
+        BuildCostMass = 1400,
+        BuildTime = 28000,
         MaintenanceConsumptionPerSecondEnergy = 50,
     },
     Intel = {
@@ -37,10 +32,10 @@ UnitBlueprint {
     },
     Weapon = {
         [1] = {
-            Damage = 750,
-            MaxRadius = 60,
-            RateOfFire = 0.2,
-            EnergyDrainPerSecond = 250,
+            DamageToShields = 800,
+            MaxRadius = 80,
+            RateOfFire = 0.1,
+            EnergyDrainPerSecond = 100,
             EnergyRequired = 500,
         },
         [2] = {

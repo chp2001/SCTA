@@ -177,7 +177,7 @@ PlatoonTemplate {
     Name = 'T3LandDFBotSCTA',
     FactionSquads = {
         Arm = {
-            { 'armmanni', 1, 1, 'attack', 'none' },
+            { 'armsnipe', 1, 1, 'attack', 'none' },
         },
         Core = {
             { 'cormort', 1, 1, 'attack', 'none' },

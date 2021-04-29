@@ -125,7 +125,7 @@ BuildingTemplates[6] = {
             },
             {
                 'T2GroundDefense2',
-                'armsnipe',
+                'armmanni',
             },
             -- -Air Defense
             {

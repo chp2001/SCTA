@@ -21,7 +21,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.ANTIAIR * categories.TECH1 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
         },
-        BuilderType = 'Any',
+        BuilderType = 'Land',
         BuilderData = {
             Construction = {
                 BuildClose = true,
@@ -41,7 +41,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ANTIMISSILE * categories.TECH2} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.35, 0.35}},
         },
-        BuilderType = 'Any',
+        BuilderType = 'Land',
         BuilderData = {
             Construction = {
                 BuildClose = true,
@@ -63,7 +63,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.ANTIMISSILE * categories.TECH3} },
             { TAutils, 'GreaterThanEconEnergyTAEfficiency', {1.05 }},
         },
-        BuilderType = 'Any',
+        BuilderType = 'T3',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -85,7 +85,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.STRUCTURE * categories.DIRECTFIRE * categories.TECH3 - categories.MOBILE - categories.ANTIAIR} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}}, 
         },
-        BuilderType = 'Any',
+        BuilderType = 'NotACU',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -108,7 +108,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.ANTIAIR * categories.TECH2 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}}, 
         },
-        BuilderType = 'Any',
+        BuilderType = 'NotACU',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -130,7 +130,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.AIRSTAGINGPLATFORM} },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Land',
         BuilderData = {
             Construction = {
                 BuildClose = true,
@@ -146,12 +146,11 @@ BuilderGroup {
         Priority = 50,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {600} }, 
-            { MIBC, 'GreaterThanGameTime', {240} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LASER * categories.TECH1 - categories.MOBILE } }, 
+            { MIBC, 'GreaterThanGameTime', {240} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
         },
-        BuilderType = 'Any',
+        BuilderType = 'NotACU',
         BuilderData = {
             Construction = {
                 OrderedTemplate = true,
@@ -183,7 +182,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.LASER * categories.TECH2 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}}, 
         },
-        BuilderType = 'Any',
+        BuilderType = 'NotACU',
         BuilderData = {
             Construction = {
                 OrderedTemplate = true,
@@ -215,7 +214,7 @@ BuilderGroup {
         BuilderConditions = {
             { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Field',
         BuilderData = {
             Assist = {
                 AssisteeType = 'Engineer',
@@ -240,7 +239,7 @@ BuilderGroup {
             Terrain = true,
             LocationType = 'LocationType',
         },
-        BuilderType = 'Any',
+        BuilderType = 'Field',
     },
     Builder {
         BuilderName = 'SCTA Engineer Field Finish',
@@ -259,7 +258,7 @@ BuilderGroup {
                 Time = 20,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Field',
     },
     Builder {
         BuilderName = 'SCTA Assist Production Field',
@@ -281,6 +280,6 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Field',
     },
 }

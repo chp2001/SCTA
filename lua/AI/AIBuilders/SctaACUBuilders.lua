@@ -24,7 +24,7 @@ BuilderGroup {
                 { IBC, 'NotPreBuilt', {}},
             },	
         InstantCheck = true,	
-        BuilderType = 'Any',	
+        BuilderType = 'Command',	
         PlatoonAddBehaviors = { 'CommanderBehaviorSCTA' }, -- Add a behaviour to the Commander unit once its done with it's BO.	
         PlatoonAddFunctions = { {SAI, 'BuildOnce'}, }, -- Flag this builder to be only run once.	
         BuilderData = {	
@@ -50,7 +50,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, PLANT * ((categories.CORE * categories.BOT) + (categories.ARM * categories.TANK))} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Command',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -73,7 +73,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, PLANT * ((categories.CORE * categories.TANK) + (categories.ARM * categories.BOT))} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Command',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -94,7 +94,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENERGYPRODUCTION * categories.STRUCTURE} },
             { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
         },
-        BuilderType = 'Any',
+        BuilderType = 'Command',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -116,7 +116,7 @@ BuilderGroup {
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 25, -500, 100, 0, 'AntiSurface', 1 }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.MASSEXTRACTION} },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Command',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -136,7 +136,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR } }, -- Stop after 10 facs have been built.
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Command',
         BuilderData = {
             DesiresAssist = true,
             NumAssistees = 2,
@@ -159,7 +159,7 @@ BuilderGroup {
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.75 } },
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
         },
-        BuilderType = 'Any',
+        BuilderType = 'Command',
         BuilderData = {
             DesiresAssist = false,
             NeedGuard = false,
@@ -181,7 +181,7 @@ BuilderGroup {
             { MIBC, 'LessThanGameTime', {600} }, -- Don't make tanks if we have lots of them.
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 125, -500, 100, 0, 'StructuresNotMex', 1 }},
         },
-        BuilderType = 'Any',
+        BuilderType = 'Command',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -198,7 +198,7 @@ BuilderGroup {
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
         PriorityFunction = TAPrior.GateBeingBuilt,
         Priority = 126,
-        InstanceCount = 1,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
@@ -212,7 +212,7 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'ACU',
     },
     Builder {
         BuilderName = 'SCTA CDR Assist Structure',
@@ -220,12 +220,12 @@ BuilderGroup {
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
         PriorityFunction = TAPrior.UnitProduction,
         Priority = 111,
-        InstanceCount = 1,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'ACU',
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
@@ -241,8 +241,8 @@ BuilderGroup {
         BuilderName = 'SCTA CDR Finish Structure',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 85,
-        InstanceCount = 1,
+        Priority = 100,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
         },
@@ -254,7 +254,7 @@ BuilderGroup {
                     Time = 20,
                 },
             },
-        BuilderType = 'Any',
+        BuilderType = 'ACU',
     },
 }
 

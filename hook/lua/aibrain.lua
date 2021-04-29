@@ -179,7 +179,12 @@ AIBrain = Class(SCTAAIBrainClass) {
             return SCTAAIBrainClass.ForceManagerSort(self)
         end
         for _, v in self.BuilderManagers do
-            v.EngineerManager:SortBuilderList('Any')
+            v.EngineerManager:SortBuilderList('Land')
+            v.EngineerManager:SortBuilderList('Air')
+            v.EngineerManager:SortBuilderList('Sea')
+            v.EngineerManager:SortBuilderList('T3')
+            v.EngineerManager:SortBuilderList('Field')
+            v.EngineerManager:SortBuilderList('Command')
             v.FactoryManager:SortBuilderList('KBot')
             v.FactoryManager:SortBuilderList('Vehicle')
             v.FactoryManager:SortBuilderList('Hover')

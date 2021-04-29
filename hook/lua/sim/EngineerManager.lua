@@ -176,51 +176,19 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
                 v.BuilderManagerData = { EngineerManager = self, BuilderType = bType, }
                 unit.BuilderManagerData.EngineerManager = self
                 unit.BuilderManagerData.LocationType = self.LocationType
-
-                if not unit.BuilderManagerData.CallbacksSetup then
-                    unit.BuilderManagerData.CallbacksSetup = true
-                    -- Callbacks here
-                    local deathFunction = function(unit)
-                        unit.BuilderManagerData.EngineerManager:RemoveUnit(unit)
-                    end
-
-
-                local unitConstructionFinished = function(unit, engineer)
-                                    -- Call function on builder manager; let it handle the finish of work
-                                    local aiBrain = unit:GetAIBrain()
-                                    local engManager = aiBrain.BuilderManagers[unit.BuilderManagerData.LocationType].EngineerManager
-                                    if engManager then
-                                        engManager:UnitConstructionFinished(unit, engineer)
-                                    end
-                                end
-                import('/lua/ScenarioTriggers.lua').CreateUnitBuiltTrigger(unitConstructionFinished, unit, categories.ALLUNITS)
-
-                local unitConstructionStarted = function(unit, unitBeingBuilt)
-                                    local aiBrain = unit:GetAIBrain()
-                                    local engManager = aiBrain.BuilderManagers[unit.BuilderManagerData.LocationType].EngineerManager
-                                    if engManager then
-                                        engManager:UnitConstructionStarted(unit, unitBeingBuilt)
-                                    end
-                                end
-                import('/lua/ScenarioTriggers.lua').CreateStartBuildTrigger(unitConstructionStarted, unit, categories.ALLUNITS)
-            end
-            end
+              end
+              self:AssignEngineerTask(unit, bType)
         end
     end,
 
-    DelayAssign = function(self, unit, bType)
-        if not self.Brain.SCTAAI then
-            return SCTAEngineerManager.DelayAssign(self, unit)
+    TADelayAssign = function(manager, unit, bType)
+        if unit.TAForkedEngineerTask then
+            KillThread(unit.TAForkedEngineerTask)
         end
-        if not unit.DelayThread then
-            unit.DelayThread = unit:ForkThread( self.DelayAssignBody, self, bType)
-        end
+        unit.TAForkedEngineerTask = unit:ForkThread(manager.TAWait, manager, delaytime or 10)
     end,
 
-    DelayAssignBody = function( unit, manager, bType)
-        if not unit.Brain.SCTAAI then
-            return SCTAEngineerManager.DelayAssignBody( unit, manager )
-        end
+    TADelayAssignBody = function( unit, manager, bType)
         WaitSeconds(1)
         if not unit:IsDead() then
             manager:AssignEngineerTask(unit, bType)
@@ -251,13 +219,34 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
                     local deathFunction = function(unit)
                         unit.BuilderManagerData.EngineerManager:RemoveUnit(unit)
                     end
+
                     import('/lua/scenariotriggers.lua').CreateUnitDestroyedTrigger(deathFunction, unit)
+
+                    if EntityCategoryContains(categories.ENGINEER - categories.STATIONASSISTPOD, unit) then
+                        local unitConstructionFinished = function(unit, finishedUnit)
+                                                    -- Call function on builder manager; let it handle the finish of work
+                                                    local aiBrain = unit:GetAIBrain()
+                                                    local engManager = aiBrain.BuilderManagers[unit.BuilderManagerData.LocationType].EngineerManager
+                                                    if engManager then
+                                                        engManager:UnitConstructionFinished(unit, finishedUnit)
+                                                    end
+                        end
+                        import('/lua/ScenarioTriggers.lua').CreateUnitBuiltTrigger(unitConstructionFinished, unit, categories.ALLUNITS)
+
+                        local unitConstructionStarted = function(unit, unitBeingBuilt)
+                                                    local aiBrain = unit:GetAIBrain()
+                                                    local engManager = aiBrain.BuilderManagers[unit.BuilderManagerData.LocationType].EngineerManager
+                                                    if engManager then
+                                                        engManager:UnitConstructionStarted(unit, unitBeingBuilt)
+                                                    end
+                        end
+                        import('/lua/ScenarioTriggers.lua').CreateStartBuildTrigger(unitConstructionStarted, unit, categories.ALLUNITS)
+                    end
                 end
+                return
             end
-            return
         end
     end,
-
     EngineerConstructionFinished = function(self, unit)
         if not self:EngineerAlreadyExists(unit) then
             table.insert(self.EngineerList, unit)
@@ -277,26 +266,20 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         end
     end,
 
-    Wait = function(unit, manager, ticks, bType)
-        if not unit.Brain.SCTAAI then
-            return SCTAEngineerManager.Wait(unit, manager, ticks)
-        end
+    TAWait = function(unit, manager, ticks, bType)
+        LOG('*ThisWork2', bType)
         coroutine.yield(ticks)
         if not unit.Dead then
             manager:AssignEngineerTask(unit, bType)
         end
     end,
 
-    EngineerWaiting = function(manager, unit, bType)
-        if not unit.Brain.SCTAAI then
-            return SCTAEngineerManager.EngineerWaiting(manager, unit)
-        end
+    TAEngineerWaiting = function(manager, unit, bType)
         coroutine.yield(50)
         if not unit.Dead then
             manager:AssignEngineerTask(unit, bType)
         end
     end,
-
     EngineerAlreadyExists = function(self, finishedUnit)
         for k,v in self.EngineerList do
             if v == Engineer then
@@ -314,7 +297,7 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
             self.Brain.BuilderManagers[self.LocationType].FactoryManager:AddFactory(finishedUnit)
         end
         if EntityCategoryContains( categories.ENGINEER, unit ) then
-            self:EngineerConstructionFinished(finishedUnit)
+            self.Brain.BuilderManagers[self.LocationType].EngineerManager:EngineerConstructionFinished(finishedUnit)
         end
         self:AddUnit(finishedUnit)
         local guards = unit:GetGuards()
@@ -366,26 +349,20 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         return newBuilder
     end,
 
-    ForkEngineerTask = function(manager, unit, bType)
-        if not unit.Brain.SCTAAI then
-            return SCTAEngineerManager.ForkEngineerTask(manager, unit)
-        end
-        if unit.ForkedEngineerTask then
-            KillThread(unit.ForkedEngineerTask)
-            unit.ForkedEngineerTask = unit:ForkThread(manager.Wait, manager, 3, bType)
+    TAForkEngineerTask = function(manager, unit, bType)
+        if unit.TAForkedEngineerTask then
+            KillThread(unit.TAForkedEngineerTask)
+            unit.TAForkedEngineerTask = unit:ForkThread(manager.TAWait, manager, 3, bType)
         else
-            unit.ForkedEngineerTask = unit:ForkThread(manager.Wait, manager, 20, bType)
+            unit.TAForkedEngineerTask = unit:ForkThread(manager.TAWait, manager, 20, bType)
         end
     end,
     
-    TaskFinished = function(manager, unit, bType)
-        if not unit.Brain.SCTAAI then
-            return SCTAEngineerManager.TaskFinished(manager, unit)
-        end
+    TATaskFinished = function(manager, unit, bType)
         if VDist3(manager.Location, unit:GetPosition()) > manager.Radius and not EntityCategoryContains(categories.COMMAND, unit) then
             manager:ReassignUnit(unit)
         else
-            manager:ForkEngineerTask(unit, bType)
+            manager:TAForkEngineerTask(unit, bType)
         end
     end,
 
@@ -395,7 +372,7 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
             return SCTAEngineerManager.AssignEngineerTask(self, unit)
         end
         if unit.UnitBeingAssist or unit.UnitBeingBuilt then
-            self:DelayAssign(unit, 50)
+            self:TADelayAssign(unit, 50, bType)
             return
         end
     
@@ -483,6 +460,6 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
             return
         end
         self.AssigningTask = false
-        self:DelayAssign(unit, 50)
+        self:TADelayAssign(unit, 50, bType)
     end,
 }

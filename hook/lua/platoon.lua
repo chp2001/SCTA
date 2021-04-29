@@ -11,6 +11,49 @@ baseTmpl = baseTmplFile[(cons.BaseTemplate or 'BaseTemplates')][factionIndex]]
 
 SCTAAIPlatoon = Platoon
 Platoon = Class(SCTAAIPlatoon) {
+    PlatoonDisband = function(self)
+        local aiBrain = self:GetBrain()
+        if not aiBrain.SCTAAI then
+            return SCTAAIPlatoon.PlatoonDisband(self)
+        end
+        if self.BuilderHandle then
+            self.BuilderHandle:RemoveHandle(self)
+        end
+        for k,v in self:GetPlatoonUnits() do
+            v.PlatoonHandle = nil
+            v.AssistSet = nil
+            v.AssistPlatoon = nil
+            v.UnitBeingAssist = nil
+            v.UnitBeingBuilt = nil
+            v.ReclaimInProgress = nil
+            v.CaptureInProgress = nil
+            if v:IsPaused() then
+                v:SetPaused( false )
+            end
+            if not v.Dead and v.BuilderManagerData then
+                if self.CreationTime == GetGameTimeSeconds() and v.BuilderManagerData.EngineerManager then
+                    if self.BuilderName then
+                        --LOG('*PlatoonDisband: ERROR - Platoon disbanded same tick as created - ' .. self.BuilderName .. ' - Army: ' .. aiBrain:GetArmyIndex() .. ' - Location: ' .. repr(v.BuilderManagerData.LocationType))
+                        v.BuilderManagerData.EngineerManager:AssignTimeout(v, self.BuilderName)
+                    else
+                        --LOG('*PlatoonDisband: ERROR - Platoon disbanded same tick as created - Army: ' .. aiBrain:GetArmyIndex() .. ' - Location: ' .. repr(v.BuilderManagerData.LocationType))
+                    end
+                    v.BuilderManagerData.EngineerManager:TADelayAssign(v, bType)
+                elseif v.BuilderManagerData.EngineerManager then
+                    v.BuilderManagerData.EngineerManager:TATaskFinished(v, bType)
+                end
+            end
+            if not v.Dead then
+                IssueStop({v})
+                IssueClearCommands({v})
+            end
+        end
+        if self.AIThread then
+            self.AIThread:Destroy()
+        end
+        aiBrain:DisbandPlatoon(self)
+    end,
+
 
     EngineerBuildAISCTA = function(self)
         local aiBrain = self:GetBrain()

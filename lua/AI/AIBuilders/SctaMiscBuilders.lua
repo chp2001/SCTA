@@ -21,7 +21,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 10, categories.ANTIAIR * categories.TECH1 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
         },
-        BuilderType = 'Land',
+        BuilderType = 'LandTA',
         BuilderData = {
             Construction = {
                 BuildClose = true,
@@ -41,7 +41,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ANTIMISSILE * categories.TECH2} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.35, 0.35}},
         },
-        BuilderType = 'Land',
+        BuilderType = 'LandTA',
         BuilderData = {
             Construction = {
                 BuildClose = true,
@@ -63,7 +63,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.ANTIMISSILE * categories.TECH3} },
             { TAutils, 'GreaterThanEconEnergyTAEfficiency', {1.05 }},
         },
-        BuilderType = 'T3',
+        BuilderType = 'T3TA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -130,7 +130,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.AIRSTAGINGPLATFORM} },
         },
-        BuilderType = 'Land',
+        BuilderType = 'LandTA',
         BuilderData = {
             Construction = {
                 BuildClose = true,
@@ -214,7 +214,7 @@ BuilderGroup {
         BuilderConditions = {
             { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Field',
+        BuilderType = 'FieldTA',
         BuilderData = {
             Assist = {
                 AssisteeType = 'Engineer',
@@ -239,7 +239,7 @@ BuilderGroup {
             Terrain = true,
             LocationType = 'LocationType',
         },
-        BuilderType = 'Field',
+        BuilderType = 'FieldTA',
     },
     Builder {
         BuilderName = 'SCTA Engineer Field Finish',
@@ -258,7 +258,7 @@ BuilderGroup {
                 Time = 20,
             },
         },
-        BuilderType = 'Field',
+        BuilderType = 'FieldTA',
     },
     Builder {
         BuilderName = 'SCTA Assist Production Field',
@@ -280,6 +280,6 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'Field',
+        BuilderType = 'FieldTA',
     },
 }

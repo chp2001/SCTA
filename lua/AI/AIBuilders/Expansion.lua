@@ -35,7 +35,7 @@ BuilderGroup {
             { TASlow, 'StartBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'LandTA',
         BuilderData = {
             Construction = {
                 BuildClose = false,
@@ -67,7 +67,7 @@ BuilderGroup {
             { TASlow, 'ExpansionBaseCheck', { } }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'LandTA',
         BuilderData = {
             Construction = {
                 BuildClose = false,
@@ -101,7 +101,7 @@ BuilderGroup {
             { TASlow, 'ExpansionBaseCheck', { } }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'OmniLand',
         BuilderData = {
             Construction = {
                     BuildClose = false,
@@ -135,7 +135,7 @@ BuilderGroup {
             { TASlow, 'StartBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.2}},
         },
-        BuilderType = 'Any',
+        BuilderType = 'OmniLand',
         BuilderData = {
             Construction = {
                 BuildClose = false,
@@ -167,7 +167,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.NAVAL} },
             { UCBC, 'NavalBaseCheck', { } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Command',
         BuilderData = {
             Construction = {
                 BuildClose = false,
@@ -202,7 +202,7 @@ BuilderGroup {
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 500 } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'SeaTA',
         BuilderData = {
             Construction = {
                 BuildClose = false,

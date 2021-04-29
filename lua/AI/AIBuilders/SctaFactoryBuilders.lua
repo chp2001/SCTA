@@ -30,7 +30,7 @@ BuilderConditions = {
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
         },
-        BuilderType = 'Land',
+        BuilderType = 'LandTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -57,7 +57,7 @@ BuilderConditions = {
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
         },
-        BuilderType = 'Land',
+        BuilderType = 'LandTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -140,7 +140,7 @@ BuilderConditions = {
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
         },
-        BuilderType = 'Land',
+        BuilderType = 'LandTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -188,7 +188,7 @@ BuilderConditions = {
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH3} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'T3',
+        BuilderType = 'T3TA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -211,7 +211,7 @@ BuilderConditions = {
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH3} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'T3',
+        BuilderType = 'T3TA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -282,7 +282,7 @@ BuilderConditions = {
         BuilderConditions = {
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'T3',
+        BuilderType = 'T3TA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -314,7 +314,7 @@ BuilderConditions = {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'Field',
+        BuilderType = 'FieldTA',
     },
     Builder {
         BuilderName = 'SCTA Engineer Assist Gantry',
@@ -336,7 +336,7 @@ BuilderConditions = {
                 Time = 60,
             },
         },
-        BuilderType = 'Field',
+        BuilderType = 'FieldTA',
     },
     Builder {
         BuilderName = 'SCTAAI Gantry Factory',
@@ -372,7 +372,7 @@ BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.GATE} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
             },		
-        BuilderType = 'T3',	-- Add a behaviour to the Commander unit once its done with it's BO.	 -- Flag this builder to be only run once.	
+        BuilderType = 'T3TA',	-- Add a behaviour to the Commander unit once its done with it's BO.	 -- Flag this builder to be only run once.	
         BuilderData = {	
             NeedGuard = false,
             DesiresAssist = true,
@@ -395,7 +395,7 @@ BuilderConditions = {
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 6,  FUSION} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'T3',
+        BuilderType = 'T3TA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -418,7 +418,7 @@ BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.NUKE * categories.STRUCTURE * categories.TECH3} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'T3',
+        BuilderType = 'T3TA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,

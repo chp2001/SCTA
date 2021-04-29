@@ -23,7 +23,7 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         }
         self.EngineerList = {}
         ---LOG(self.ConsumptionUnits)
-        local builderTypes = { 'Air', 'Land', 'Sea', 'T3', 'Field', 'Command', }
+        local builderTypes = { 'AirTA', 'LandTA', 'SeaTA', 'T3TA', 'FieldTA', 'Command', }
         for k,v in builderTypes do
             self:AddBuilderType(v)
         end
@@ -133,28 +133,28 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
             elseif newBuilder:GetBuilderType() == 'ACU' then
             for __,v in self.BuilderData do
                 self:AddInstancedBuilder(newBuilder, 'Command')
-                self:AddInstancedBuilder(newBuilder, 'T3')
+                self:AddInstancedBuilder(newBuilder, 'T3TA')
             end
             elseif newBuilder:GetBuilderType() == 'NotACU' then
             for __,v in self.BuilderData do
-                self:AddInstancedBuilder(newBuilder, 'T3')
-                self:AddInstancedBuilder(newBuilder, 'Air')
-                self:AddInstancedBuilder(newBuilder, 'Land')
+                self:AddInstancedBuilder(newBuilder, 'T3TA')
+                self:AddInstancedBuilder(newBuilder, 'AirTA')
+                self:AddInstancedBuilder(newBuilder, 'LandTA')
             end
             elseif newBuilder:GetBuilderType() == 'OmniLand' then
             for __,v in self.BuilderData do
-                self:AddInstancedBuilder(newBuilder, 'T3')
-                self:AddInstancedBuilder(newBuilder, 'Land')
+                self:AddInstancedBuilder(newBuilder, 'T3TA')
+                self:AddInstancedBuilder(newBuilder, 'LandTA')
             end
             elseif newBuilder:GetBuilderType() == 'OmniAir' then
             for __,v in self.BuilderData do
-                self:AddInstancedBuilder(newBuilder, 'T3')
-                self:AddInstancedBuilder(newBuilder, 'Air')
+                self:AddInstancedBuilder(newBuilder, 'T3TA')
+                self:AddInstancedBuilder(newBuilder, 'AirTA')
             end
             elseif newBuilder:GetBuilderType() == 'OmniNaval' then
             for __,v in self.BuilderData do
-                self:AddInstancedBuilder(newBuilder, 'Sea')
-                self:AddInstancedBuilder(newBuilder, 'T3')
+                self:AddInstancedBuilder(newBuilder, 'SeaTA')
+                self:AddInstancedBuilder(newBuilder, 'T3TA')
             end
         else
             self:AddInstancedBuilder(newBuilder)
@@ -169,22 +169,22 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
             return SCTAEngineerManager.AssignEngineerTask(self, unit)
         end
                 if EntityCategoryContains(categories.LAND - categories.TECH3 - categories.FIELDENGINEER - categories.COMMAND, unit) then
-                    self:TAAssignEngineerTask(unit, 'Land')
+                    self:TAAssignEngineerTask(unit, 'LandTA')
                     return
                 elseif EntityCategoryContains(categories.AIR - categories.TECH3, unit) then
-                    self:TAAssignEngineerTask(unit, 'Air')
+                    self:TAAssignEngineerTask(unit, 'AirTA')
                     return
                 elseif EntityCategoryContains(categories.NAVAL, unit) then
-                    self:TAAssignEngineerTask(unit, 'Sea')
+                    self:TAAssignEngineerTask(unit, 'SeaTA')
                     return
                 elseif EntityCategoryContains( categories.MOBILE * (categories.TECH3 + categories.SUBCOMMANDER), unit) then
-                    self:TAAssignEngineerTask(unit, 'T3')
+                    self:TAAssignEngineerTask(unit, 'T3TA')
                     return
                 elseif EntityCategoryContains(categories.COMMAND, unit) then
                     self:TAAssignEngineerTask(unit, 'Command')
                     return
                 else 
-                    self:TAAssignEngineerTask(unit, 'Field')
+                    self:TAAssignEngineerTask(unit, 'FieldTA')
                     return
                 end
         end,

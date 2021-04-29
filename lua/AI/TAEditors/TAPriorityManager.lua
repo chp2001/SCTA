@@ -71,7 +71,7 @@ end
 
 StructureProductionT2 = function(self, aiBrain)
     if Factory(aiBrain,  4, LAB)  then 
-        return 95
+        return 120
     elseif Factory(aiBrain,  2, LAB) then
         return 10
     else

@@ -151,6 +151,11 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
                 self:AddInstancedBuilder(newBuilder, 'T3')
                 self:AddInstancedBuilder(newBuilder, 'Air')
             end
+            elseif newBuilder:GetBuilderType() == 'OmniNaval' then
+            for __,v in self.BuilderData do
+                self:AddInstancedBuilder(newBuilder, 'Sea')
+                self:AddInstancedBuilder(newBuilder, 'T3')
+            end
         else
             self:AddInstancedBuilder(newBuilder)
         end
@@ -163,23 +168,23 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         if not self.Brain.SCTAAI then
             return SCTAEngineerManager.AssignEngineerTask(self, unit)
         end
-                if EntityCategoryContains(categories.LAND * (categories.TECH1 + categories.TECH2) - categories.FIELDENGINEER, unit) then
+                if EntityCategoryContains(categories.LAND - categories.TECH3 - categories.FIELDENGINEER - categories.COMMAND, unit) then
                     self:TAAssignEngineerTask(unit, 'Land')
                     return
-                elseif EntityCategoryContains(categories.AIR * (categories.TECH1 + categories.TECH2), unit) then
+                elseif EntityCategoryContains(categories.AIR - categories.TECH3, unit) then
                     self:TAAssignEngineerTask(unit, 'Air')
                     return
-                elseif EntityCategoryContains(categories.NAVAL * (categories.TECH1 + categories.TECH2), unit) then
+                elseif EntityCategoryContains(categories.NAVAL, unit) then
                     self:TAAssignEngineerTask(unit, 'Sea')
                     return
-                elseif EntityCategoryContains(categories.TECH3 + categories.SUBCOMMANDER, unit) then
+                elseif EntityCategoryContains( categories.MOBILE * (categories.TECH3 + categories.SUBCOMMANDER), unit) then
                     self:TAAssignEngineerTask(unit, 'T3')
                     return
-                elseif EntityCategoryContains(categories.FIELDENGINEER, unit) then
-                    self:TAAssignEngineerTask(unit, 'Field')
+                elseif EntityCategoryContains(categories.COMMAND, unit) then
+                    self:TAAssignEngineerTask(unit, 'Command')
                     return
                 else 
-                    self:TAAssignEngineerTask(unit, 'Command')
+                    self:TAAssignEngineerTask(unit, 'Field')
                     return
                 end
         end,
@@ -217,9 +222,9 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
             self:DelayAssign(unit, 50)
             return
         end
-        if not self:EngineerAlreadyExists(unit) then
+        --[[if not self:EngineerAlreadyExists(unit) then
             table.insert(self.EngineerList, bType)
-        end
+        end]]
         unit.DesiresAssist = false
         unit.NumAssistees = nil
         unit.MinNumAssistees = nil

@@ -83,7 +83,7 @@ do
             T2F = '/mods/SCTA-master/textures/ui/common/icons/units/armfark_icon.dds',
             T1F = '/mods/SCTA-master/textures/ui/common/icons/units/armmlv_icon.dds',
             T3 = '/mods/SCTA-master/textures/ui/common/icons/units/armch_icon.dds',
-            SCU = '/mods/SCTA-master/textures/ui/common/icons/units/armdecom_icon.dds',
+            SCU = '/mods/SCTA-master/textures/ui/common/faction_icon-lg/arm_ico.dds',
             T1A = '/mods/SCTA-master/textures/ui/common/icons/units/armca_icon.dds',
             T2A = '/mods/SCTA-master/textures/ui/common/icons/units/armaca_icon.dds',
             T3A = '/mods/SCTA-master/textures/ui/common/icons/units/armcsa_icon.dds',
@@ -93,7 +93,7 @@ do
             LAND = {
                 '/mods/SCTA-master/textures/ui/common/icons/units/armlab_icon.dds',
                 '/mods/SCTA-master/textures/ui/common/icons/units/armalab_icon.dds',
-                '/mods/SCTA-master/textures/ui/common/icons/units/armgant_icon.dds',
+                '/mods/SCTA-master/textures/ui/common/icons/units/armhp_icon.dds',
             },
             AIR = {
                 '/mods/SCTA-master/textures/ui/common/icons/units/armap_icon.dds',
@@ -103,7 +103,7 @@ do
             NAVAL = {
                 '/mods/SCTA-master/textures/ui/common/icons/units/armsy_icon.dds',
                 '/mods/SCTA-master/textures/ui/common/icons/units/armasy_icon.dds',
-                '/mods/SCTA-master/textures/ui/common/icons/units/armhp_icon.dds',
+                '/icons/units/ueb0303_icon.dds',
             },
         },
     },
@@ -136,7 +136,7 @@ do
             T2F = '/mods/SCTA-master/textures/ui/common/icons/units/cornecro_icon.dds',
             T1F = '/mods/SCTA-master/textures/ui/common/icons/units/cormlv_icon.dds',
             T3 = '/mods/SCTA-master/textures/ui/common/icons/units/corch_icon.dds',
-            SCU = '/mods/SCTA-master/textures/ui/common/icons/units/cordecom_icon.dds',
+            SCU = '/mods/SCTA-master/textures/ui/common/faction_icon-lg/core_ico.dds',
             T1A = '/mods/SCTA-master/textures/ui/common/icons/units/corca_icon.dds',
             T2A = '/mods/SCTA-master/textures/ui/common/icons/units/coraca_icon.dds',
             T3A = '/mods/SCTA-master/textures/ui/common/icons/units/corcsa_icon.dds',
@@ -145,7 +145,7 @@ do
             LAND = {
                 '/mods/SCTA-master/textures/ui/common/icons/units/corvp_icon.dds',
                 '/mods/SCTA-master/textures/ui/common/icons/units/coravp_icon.dds',
-                '/mods/SCTA-master/textures/ui/common/icons/units/corgant_icon.dds',
+                '/mods/SCTA-master/textures/ui/common/icons/units/corhp_icon.dds',
             },
             AIR = {
                 '/mods/SCTA-master/textures/ui/common/icons/units/corap_icon.dds',
@@ -155,7 +155,7 @@ do
             NAVAL = {
                 '/mods/SCTA-master/textures/ui/common/icons/units/corsy_icon.dds',
                 '/mods/SCTA-master/textures/ui/common/icons/units/corasy_icon.dds',
-                '/mods/SCTA-master/textures/ui/common/icons/units/corhp_icon.dds',
+                '/icons/units/urb0303_icon.dds',
             },
         },
     },

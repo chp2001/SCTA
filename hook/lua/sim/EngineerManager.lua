@@ -163,8 +163,8 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
     end,
 
     AssignEngineerTask = function(self, unit)
-        LOG('*Brain', self.Brain.SCTAAI)
-        LOG('*Who', unit)
+        --LOG('*Brain', self.Brain.SCTAAI)
+        --LOG('*Who', unit)
         if not self.Brain.SCTAAI then
             return SCTAEngineerManager.AssignEngineerTask(self, unit)
         end
@@ -192,14 +192,7 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
 
         EngineerAlreadyExists = function(self, Engineer)
             for k,v in self.EngineerList do
-                if v == Engineer then
-                    return true
-                end
-            end
-            return false
-        end,
-        --[[EngineerAlreadyExists = function(self, Engineer)
-            for k,v in self.EngineerList do
+                LOG('*Engis', Engineer)
                 if v == Engineer then
                     return true
                 end
@@ -213,7 +206,7 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
              v.BuilderManagerData = { EngineerManager = self, BuilderType = bType, }
             end
         self:TAAssignEngineerTask(unit, bType)
-    end,]]
+    end,
 
 
     TAAssignEngineerTask = function(self, unit, bType)
@@ -235,8 +228,8 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         else
             self.AssigningTask = true
         end
-        LOG('*ThisWork2', unit)
-        LOG('*Builder', bType)
+        --LOG('*ThisWork2', unit)
+        --LOG('*Builder', bType)
         local builder = self:GetHighestBuilder(unit.bType, {unit})
         if builder then
             -- Fork off the platoon here

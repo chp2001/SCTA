@@ -18,7 +18,7 @@ BuilderGroup {
         Priority = 95,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'KBot',
     },
@@ -31,7 +31,7 @@ BuilderGroup {
             { MIBC, 'GreaterThanGameTime', {300} },
             { UCBC, 'HaveUnitRatio', { 0.75, categories.LAND * categories.DIRECTFIRE * categories.MOBILE,
             '<', categories.LAND * categories.MOBILE - categories.ENGINEER } },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'KBot',
     },
@@ -54,7 +54,7 @@ BuilderGroup {
         Priority = 95,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', {  0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Vehicle',
     },
@@ -67,7 +67,7 @@ BuilderGroup {
         { MIBC, 'GreaterThanGameTime', {300} },
         { UCBC, 'HaveUnitRatio', { 0.75, categories.LAND * categories.DIRECTFIRE * categories.MOBILE - categories.SCOUT,
         '<', categories.LAND * categories.MOBILE - categories.ENGINEER } },
-        { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+        { TAutils, 'EcoManagementTA', {  0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Vehicle',
     },
@@ -93,7 +93,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.75, categories.LAND * categories.DIRECTFIRE - categories.SCOUT,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', {  0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'KBot',
     },
@@ -141,7 +141,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.75, categories.LAND * categories.DIRECTFIRE - categories.SCOUT,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', {  0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Vehicle',
     },
@@ -245,7 +245,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.ProductionT3,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LAND * categories.TECH3 * (categories.SNIPER + categories.ARTILLERY)}}, -- Don't make tanks if we have lots of them.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.35}},
         },
         BuilderType = 'Vehicle',
     },

@@ -133,12 +133,12 @@ BuilderConditions = {
         PriorityFunction = TAPrior.FactoryProductionT1,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  PLANT } }, -- Don't build air fac immediately.
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2,  PLANT } }, -- Don't build air fac immediately.
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH1} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.AIR * PLANT} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4,  categories.FACTORY * categories.AIR} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
         },
         BuilderType = 'LandTA',
         BuilderData = {
@@ -164,7 +164,7 @@ BuilderConditions = {
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 750 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
         },
         BuilderType = 'OmniAir',
         BuilderData = {
@@ -232,7 +232,6 @@ BuilderConditions = {
         InstanceCount = 1,
         BuilderConditions = {
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH3} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLATFORM} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'OmniLand',
@@ -256,7 +255,6 @@ BuilderConditions = {
         InstanceCount = 1,
         BuilderConditions = {
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH3} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLATFORM} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'OmniAir',
@@ -300,7 +298,7 @@ BuilderConditions = {
         Plan = 'ManagerEngineerAssistAI',
         PriorityFunction = TAPrior.GateBeingBuilt,
         Priority = 200,
-        InstanceCount = 12,
+        InstanceCount = 4,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
             { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
@@ -322,7 +320,7 @@ BuilderConditions = {
         Plan = 'ManagerEngineerAssistAI',
         PriorityFunction = TAPrior.GantryProduction,
         Priority = 200,
-        InstanceCount = 12,
+        InstanceCount = 4,
         BuilderConditions = {
             { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYQUANTUMGATE}},
             { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
@@ -414,7 +412,6 @@ BuilderConditions = {
         Priority = 210,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4,  FUSION} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.NUKE * categories.STRUCTURE * categories.TECH3} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },

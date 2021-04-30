@@ -17,8 +17,10 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
 			self:AddBuilderType(v)
 		end
         self.Location = location
+        LOG('*Location', self.Location)
         self.Radius = radius
         self.LocationType = lType
+        LOG('*Location', self.LocationType)
         self.RallyPoint = false
 
         self.FactoryList = {}
@@ -195,6 +197,26 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
                         IssueFormMove( unitlist, rallypoint, 'BlockFormation', Direction )
                     end
                 end
+            end
+        end,
+
+        AssignBuildOrder = function(self,factory,bType)
+            if not self.Brain.SCTAAI then
+                return SCTAFactoryBuilderManager.AssignBuildOrder(self,factory,bType)
+            end
+            if factory.Dead or factory.unitBuilding then
+                return
+            end
+            local builder = self:GetHighestBuilder(bType,{factory})
+            if builder then
+                --LOG('*Canceling', self)
+                local template = self:GetFactoryTemplate(builder:GetPlatoonTemplate(), factory)
+                -- LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Factory Builder Manager Building - ',repr(builder.BuilderName))
+                --LOG('*Building', template)
+                self.Brain:BuildPlatoon(template, {factory}, 1)
+            else
+                -- No builder found setup way to check again
+                self:ForkThread(self.DelayBuildOrder, factory, bType, 2)
             end
         end,
 

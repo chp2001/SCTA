@@ -243,7 +243,9 @@ BuilderGroup {
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
         Priority = 500,
         InstanceCount = 2,
+        DelayEqualBuildPlattons = {'Unfinished', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Unfinished' }},
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
         },
             BuilderData = {

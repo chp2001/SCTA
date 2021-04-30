@@ -193,9 +193,9 @@ EnergyBeingBuilt = function(self, aiBrain)
 end
 
 NothingBuilt = function(self, aiBrain)
-    if MoreProduct(aiBrain,  0, FUSION) then 
+    if MoreProduct(aiBrain,  1, FUSION) then 
         return 0
     else
-        return 130
+        return 150
     end
 end

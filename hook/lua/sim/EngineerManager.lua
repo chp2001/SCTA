@@ -46,7 +46,7 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
             return SCTAEngineerManager.LowMass(self)
         end
         local econ = AIUtils.AIGetEconomyNumbers(self.Brain)
-        local pauseVal = 0
+        local pauseVal = 1
         self.Brain.LowMassMode = true
         pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.DEFENSE)
 
@@ -55,15 +55,15 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         end
 
         if pauseVal != true then
-           ---pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ExperimentalCheck )
+           pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ExperimentalCheck )
         end
 
         if pauseVal != true then
-            --pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.MOBILE - categories.EXPERIMENTAL )
+            pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.MOBILE - categories.EXPERIMENTAL )
         end
 
         if pauseVal != true then
-            --pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.STRUCTURE - categories.MASSEXTRACTION - categories.ENERGYPRODUCTION - categories.FACTORY - categories.EXPERIMENTAL )
+            pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.STRUCTURE - categories.MASSEXTRACTION - categories.ENERGYPRODUCTION - categories.FACTORY - categories.EXPERIMENTAL )
         end
 
         self:ForkThread(self.LowMassRepeatThread)
@@ -74,7 +74,7 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
             return SCTAEngineerManager.LowEnergy(self)
         end
         local econ = AIUtils.AIGetEconomyNumbers(self.Brain)
-        local pauseVal = 0
+        local pauseVal = 1
         
         self.Brain.LowEnergyMode = true
         
@@ -192,8 +192,7 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
 
     TAAssignEngineerTask = function(self, unit, bType)
         ---LOG('*Brain', self.Brain.SCTAAI)   
-        if unit.UnitBeingAssist or unit.UnitBeingBuilt then
-            self:DelayAssign(unit, 50)
+        if unit.UnitBeingBuilt or unit.unitBuilding then
             return
         end
 
@@ -202,13 +201,11 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         unit.MinNumAssistees = nil
         unit.bType = bType
         if self.AssigningTask then
-            self:DelayAssign(unit, 50)
             return
-        else
-            self.AssigningTask = true
         end
         local builder = self:GetHighestBuilder(unit.bType, {unit})
         if builder then
+            self.AssigningTask = true
             -- Fork off the platoon here
             local template = self:GetEngineerPlatoonTemplate(builder:GetPlatoonTemplate())
             local hndl = self.Brain:MakePlatoon(template[1], template[2])
@@ -259,23 +256,18 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
 
             if hndl.PlatoonData.DesiresAssist then
                 unit.DesiresAssist = hndl.PlatoonData.DesiresAssist
-            else
-                unit.DesiresAssist = true
             end
 
             if hndl.PlatoonData.NumAssistees then
                 unit.NumAssistees = hndl.PlatoonData.NumAssistees
             end
 
-            if hndl.PlatoonData.MinNumAssistees then
-                unit.MinNumAssistees = hndl.PlatoonData.MinNumAssistees
-            end
 
             builder:StoreHandle(hndl)
-            self.AssigningTask = false
+            self.AssigningTask = nil
             return
         end
-        self.AssigningTask = false
-        self:DelayAssign(unit, 50)
+        self.AssigningTask = nil
+        self:DelayAssign(unit, 10)
     end,
 }

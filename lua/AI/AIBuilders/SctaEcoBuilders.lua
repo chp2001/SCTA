@@ -216,7 +216,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.HighTechEnergyProduction,
         InstanceCount = 1,
         BuilderConditions = {
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
         BuilderType = 'LandTA',
         BuilderData = {
@@ -298,7 +298,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Air Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
-        Priority = 125,
+        Priority = 150,
         InstanceCount = 2,
         BuilderConditions = {
             { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
@@ -320,8 +320,10 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
         Priority = 85,
-        InstanceCount = 1,
+        InstanceCount = 2,
+        DelayEqualBuildPlattons = {'Unfinished', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Unfinished' }},
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
         },
         BuilderData = {

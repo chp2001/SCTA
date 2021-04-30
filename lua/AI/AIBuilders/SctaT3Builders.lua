@@ -15,7 +15,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.8, categories.LAND * categories.DIRECTFIRE - categories.SCOUT,
             '<', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Hover',
     },
@@ -46,7 +46,7 @@ BuilderGroup {
         PlatoonTemplate = 'T3AirFighterSCTA',
         Priority = 140,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
-        { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
+        { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Seaplane',
     },

@@ -91,6 +91,7 @@ UnitBlueprint {
         UniformScale = 0.16,
     },
     Economy = {
+        Naval = true,
         BuildCostEnergy = 2375,
         BuildCostMass = 260,
         BuildRate = 125,

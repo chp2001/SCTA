@@ -125,6 +125,7 @@ UnitBlueprint {
         BuildableCategory = {
             'BUILTBYCOMMANDER CORE',
         },
+        Command = true,
         MaxBuildDistance = 3.75,
         NaturalProducer = true,
         ProductionPerSecondEnergy = 25,

@@ -32,6 +32,7 @@ TAconstructor = Class(TAWalking) {
         if __blueprints['armgant'] then
             TAutils.updateBuildRestrictions(self)
         end
+        --LOG('*Who', self:GetBlueprint().General.FactionName)
     end,
 
     OnPaused = function(self)

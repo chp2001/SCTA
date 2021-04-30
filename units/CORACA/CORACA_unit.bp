@@ -115,10 +115,11 @@ UnitBlueprint {
         SizeZ = 1,
     },
     Economy = {
+        Air = true,
         BuildCostEnergy = 12824,
         BuildCostMass = 231,
         BuildTime = 26001,        
-	BuildRate = 100,
+	    BuildRate = 100,
         BuildableCategory = {
             'BUILTBYTIER2FACTORY CORE',
         },

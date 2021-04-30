@@ -11,6 +11,10 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
             error('*PLATOOM FORM MANAGER ERROR: Invalid parameters; requires locationType, location, and radius')
             return false
         end
+        local builderTypes = { 'AirTA', 'LandTA', 'SeaTA', 'T3TA', 'FieldTA', 'Command', }
+        for k,v in builderTypes do
+            self:AddBuilderType(v)
+        end
         ---LOG('IEXIST')
         self.Location = location
         self.Radius = radius
@@ -23,10 +27,6 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         }
         self.EngineerList = {}
         ---LOG(self.ConsumptionUnits)
-        local builderTypes = { 'AirTA', 'LandTA', 'SeaTA', 'T3TA', 'FieldTA', 'Command', }
-        for k,v in builderTypes do
-            self:AddBuilderType(v)
-        end
 
     end,
 
@@ -168,21 +168,19 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         if not self.Brain.SCTAAI then
             return SCTAEngineerManager.AssignEngineerTask(self, unit)
         end      
-        --if not self:EngineerAlreadyExists(unit) then
-            --table.insert(self.EngineerList, unit)
-                if EntityCategoryContains(categories.LAND - categories.TECH3 - categories.FIELDENGINEER - categories.COMMAND, unit) then
+                if unit:GetBlueprint().Economy.Land then
                     self:TAAssignEngineerTask(unit, 'LandTA')
                     return
-                elseif EntityCategoryContains(categories.AIR - categories.TECH3, unit) then
+                elseif unit:GetBlueprint().Economy.Air then
                     self:TAAssignEngineerTask(unit, 'AirTA')
                     return
-                elseif EntityCategoryContains(categories.NAVAL, unit) then
+                elseif unit:GetBlueprint().Economy.Naval then
                     self:TAAssignEngineerTask(unit, 'SeaTA')
                     return
-                elseif EntityCategoryContains( categories.MOBILE * (categories.TECH3 + categories.SUBCOMMANDER), unit) then
+                elseif unit:GetBlueprint().Economy.TECH3 then
                     self:TAAssignEngineerTask(unit, 'T3TA')
                     return
-                elseif EntityCategoryContains(categories.COMMAND, unit) then
+                elseif unit:GetBlueprint().Economy.Command then
                     self:TAAssignEngineerTask(unit, 'Command')
                     return
                 else 
@@ -193,23 +191,22 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
 
 
     TAAssignEngineerTask = function(self, unit, bType)
+        ---LOG('*Brain', self.Brain.SCTAAI)   
         if unit.UnitBeingAssist or unit.UnitBeingBuilt then
             self:DelayAssign(unit, 50)
             return
         end
+
         unit.DesiresAssist = false
         unit.NumAssistees = nil
-        unit.MinNumAssistees = nil  
-        unit.bType = bType      
+        unit.MinNumAssistees = nil
+        unit.bType = bType
         if self.AssigningTask then
             self:DelayAssign(unit, 50)
             return
         else
             self.AssigningTask = true
         end
-        
-        --LOG('*ThisWork2', unit)
-        --LOG('*Builder', bType)
         local builder = self:GetHighestBuilder(unit.bType, {unit})
         if builder then
             -- Fork off the platoon here

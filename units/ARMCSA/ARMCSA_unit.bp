@@ -120,6 +120,7 @@ UnitBlueprint {
         SizeZ = 1,
     },
     Economy = {
+        TECH3 = true,
         BuildCostEnergy = 5368,
         BuildCostMass = 115,
         BuildTime = 24763,        

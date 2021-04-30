@@ -1,23 +1,38 @@
 WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset aibrain.lua' )
-
 SCTAAIBrainClass = AIBrain
 AIBrain = Class(SCTAAIBrainClass) {
 
     OnSpawnPreBuiltUnits = function(self)
-        if not self.SCTAAI then
-            return SCTAAIBrainClass.OnSpawnPreBuiltUnit(self)
-        end
         local per = ScenarioInfo.ArmySetup[self.Name].AIPersonality
+        LOG('*AIBrain1', per)
         local resourceStructures = nil
         local initialUnits = nil
         local posX, posY = self:GetArmyStartPos()
+        local factionIndex = self:GetFactionIndex()
 
         if string.find(per, 'arm') then
+            LOG('*AIBrain2', per)
             resourceStructures = {'armmex', 'armmex', 'armmex', 'armmex'}
             initialUnits = {'armlab', 'armsolar', 'armsolar', 'armsolar', 'armsolar'}
-        else
+        elseif string.find(per, 'core') then
+            LOG('*AIBrain3', per)
             resourceStructures = {'cormex', 'cormex', 'cormex', 'cormex'}
             initialUnits = {'corvp', 'corsolar', 'corsolar', 'corsolar', 'corsolar'}
+        elseif factionIndex == 1 then
+                resourceStructures = {'UEB1103', 'UEB1103', 'UEB1103', 'UEB1103'}
+                initialUnits = {'UEB0101', 'UEB1101', 'UEB1101', 'UEB1101', 'UEB1101'}
+            elseif factionIndex == 2 then
+                resourceStructures = {'UAB1103', 'UAB1103', 'UAB1103', 'UAB1103'}
+                initialUnits = {'UAB0101', 'UAB1101', 'UAB1101', 'UAB1101', 'UAB1101'}
+            elseif factionIndex == 3 then
+                resourceStructures = {'URB1103', 'URB1103', 'URB1103', 'URB1103'}
+                initialUnits = {'URB0101', 'URB1101', 'URB1101', 'URB1101', 'URB1101'}
+            elseif factionIndex == 4 then
+                resourceStructures = {'XSB1103', 'XSB1103', 'XSB1103', 'XSB1103'}
+                initialUnits = {'XSB0101', 'XSB1101', 'XSB1101', 'XSB1101', 'XSB1101'}
+            elseif factionIndex == 5 then
+                resourceStructures = {'XNB1103', 'XNB1103', 'XNB1103', 'XNB1103'}
+                initialUnits = {'XNB0101', 'XNB1101', 'XNB1101', 'XNB1101', 'XNB1101'}
         end
 
         if resourceStructures then
@@ -33,7 +48,6 @@ AIBrain = Class(SCTAAIBrainClass) {
                 local unit = self:CreateUnitNearSpot(v, posX, posY)
             end
         end
-
         self.PreBuilt = true
     end,
 

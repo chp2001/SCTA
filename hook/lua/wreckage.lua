@@ -62,8 +62,8 @@ function CreateWreckage(bp, position, orientation, mass, energy, time, deathHitB
     if string.find(prop.AssociatedBP, 'arm') or string.find(prop.AssociatedBP, 'cor') then
     ---Hopefully this will save some system memory limiting the amount of wrecks the game has to rememeber 
     prop.AssociatedBPScale = bp.Display.UniformScale
-    LOG('*MassWreckSca', prop.AssociatedBPScale)
-    LOG('*MassWreckName', prop.AssociatedBP)
+    ---LOG('*MassWreckSca', prop.AssociatedBPScale)
+    ---LOG('*MassWreckName', prop.AssociatedBP)
     end
     return prop
 end

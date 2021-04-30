@@ -168,6 +168,8 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         if not self.Brain.SCTAAI then
             return SCTAEngineerManager.AssignEngineerTask(self, unit)
         end      
+        --if not self:EngineerAlreadyExists(unit) then
+            --table.insert(self.EngineerList, unit)
                 if EntityCategoryContains(categories.LAND - categories.TECH3 - categories.FIELDENGINEER - categories.COMMAND, unit) then
                     self:TAAssignEngineerTask(unit, 'LandTA')
                     return
@@ -188,16 +190,8 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
                     return
                 end
         end,
-    
-        --[[EngineerAlreadyExists = function(self, Engineer)
-            for k,v in self.EngineerList do
-                LOG('*Engis', Engineer)
-                if v == Engineer then
-                    return true
-                end
-            end
-            return false
-        end,]]
+
+
     TAAssignEngineerTask = function(self, unit, bType)
         if unit.UnitBeingAssist or unit.UnitBeingBuilt then
             self:DelayAssign(unit, 50)
@@ -207,9 +201,6 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         unit.NumAssistees = nil
         unit.MinNumAssistees = nil  
         unit.bType = bType      
-        --[[if not self:EngineerAlreadyExists(unit) then
-            table.insert(self.EngineerList, unit)
-        end]]
         if self.AssigningTask then
             self:DelayAssign(unit, 50)
             return

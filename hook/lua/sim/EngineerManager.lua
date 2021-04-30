@@ -167,7 +167,7 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         --LOG('*Who', unit)
         if not self.Brain.SCTAAI then
             return SCTAEngineerManager.AssignEngineerTask(self, unit)
-        end
+        end      
                 if EntityCategoryContains(categories.LAND - categories.TECH3 - categories.FIELDENGINEER - categories.COMMAND, unit) then
                     self:TAAssignEngineerTask(unit, 'LandTA')
                     return
@@ -189,8 +189,7 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
                 end
         end,
     
-
-        EngineerAlreadyExists = function(self, Engineer)
+        --[[EngineerAlreadyExists = function(self, Engineer)
             for k,v in self.EngineerList do
                 LOG('*Engis', Engineer)
                 if v == Engineer then
@@ -198,36 +197,26 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
                 end
             end
             return false
-        end,
-
-    GetEngineer = function(self, unit, bType)
-        for k,v in unit do
-            LOG('*ThisWork2', bType)
-             v.BuilderManagerData = { EngineerManager = self, BuilderType = bType, }
-            end
-        self:TAAssignEngineerTask(unit, bType)
-    end,
-
-
+        end,]]
     TAAssignEngineerTask = function(self, unit, bType)
-        --LOG('+ AssignEngineerTask')
         if unit.UnitBeingAssist or unit.UnitBeingBuilt then
             self:DelayAssign(unit, 50)
             return
         end
-        --[[if not self:EngineerAlreadyExists(unit) then
-            table.insert(self.EngineerList, bType)
-        end]]
         unit.DesiresAssist = false
         unit.NumAssistees = nil
-        unit.MinNumAssistees = nil
-        unit.bType = bType
+        unit.MinNumAssistees = nil  
+        unit.bType = bType      
+        --[[if not self:EngineerAlreadyExists(unit) then
+            table.insert(self.EngineerList, unit)
+        end]]
         if self.AssigningTask then
             self:DelayAssign(unit, 50)
             return
         else
             self.AssigningTask = true
         end
+        
         --LOG('*ThisWork2', unit)
         --LOG('*Builder', bType)
         local builder = self:GetHighestBuilder(unit.bType, {unit})

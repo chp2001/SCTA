@@ -29,7 +29,7 @@ BuilderGroup {
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'SeaTA',
         BuilderData = {
             Construction = {
                 Location = 'LocationType',
@@ -50,7 +50,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'SeaTA',
         BuilderData = {
             Construction = {
                 Location = 'LocationType',
@@ -73,7 +73,7 @@ BuilderGroup {
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
             { TASlow,   'TAAttackNaval', {true}},
         },
-        BuilderType = 'Any',
+        BuilderType = 'SeaTA',
         BuilderData = {
             Construction = {
                 Location = 'LocationType',
@@ -94,7 +94,7 @@ BuilderGroup {
             { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'SeaTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -117,7 +117,7 @@ BuilderGroup {
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'SeaTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -141,7 +141,7 @@ BuilderGroup {
             { TAutils, 'GreaterThanEconEnergyTAEfficiency', {0.9 }},
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
         },
-        BuilderType = 'Any',
+        BuilderType = 'SeaTA',
         BuilderData = {
             Construction = {
                 Location = 'LocationType',
@@ -164,7 +164,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ANTINAVY - categories.MOBILE} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.5}},
         },
-        BuilderType = 'Any',
+        BuilderType = 'SeaTA',
         BuilderData = {
             Construction = {
                 Location = 'LocationType',
@@ -193,7 +193,7 @@ BuilderGroup {
         BuilderConditions = {
         { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
         },
-        BuilderType = 'Any',
+        BuilderType = 'SeaTA',
         BuilderData = {
             Construction = {
                 Location = 'LocationType',
@@ -215,7 +215,7 @@ BuilderGroup {
             { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 20, -500, 100, 0, 'AntiSurface', 1 }},
         },
-        BuilderType = 'Any',
+        BuilderType = 'SeaTA',
         BuilderData = {
             Construction = {
                 Location = 'LocationType',
@@ -236,7 +236,7 @@ BuilderGroup {
             { UCBC, 'CheckBuildPlattonDelay', { 'Mex2' }},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 30, -500, 150, 0, 'AntiSurface', 1 }},
         },
-        BuilderType = 'Any',
+        BuilderType = 'SeaTA',
         BuilderData = {
             Construction = {
                 Location = 'LocationType',
@@ -259,7 +259,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.ANTISUB * categories.TECH2 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.75}}, 
         },
-        BuilderType = 'Any',
+        BuilderType = 'SeaTA',
         BuilderData = {
             Construction = {
                 Location = 'LocationType',
@@ -289,7 +289,7 @@ BuilderGroup {
             { UCBC, 'CheckBuildPlattonDelay', { 'Hydro' }},
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 30}},
         },
-        BuilderType = 'Any',
+        BuilderType = 'SeaTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -311,7 +311,7 @@ BuilderGroup {
         BuilderConditions = {
             { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
-        BuilderType = 'Any',
+        BuilderType = 'SeaTA',
         BuilderData = {
             DesiresAssist = false,
             NeedGuard = false,
@@ -340,7 +340,7 @@ BuilderGroup {
             Reclaim = {'cortide, armtide,'},
             ReclaimTime = 30,
         },
-        BuilderType = 'Any',
+        BuilderType = 'SeaTA',
     },
     Builder {
         BuilderName = 'SCTA Defensive Point Naval',
@@ -352,7 +352,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LASER * categories.TECH2 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}}, 
         },
-        BuilderType = 'Any',
+        BuilderType = 'SeaTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -396,6 +396,6 @@ BuilderGroup {
                 Time = 20,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'SeaTA',
     },
 }

@@ -23,6 +23,7 @@ PropBlueprint {
     },
     UnitWreckage = true,
     Economy = {
+        Heap = true,
         BuildCostEnergy = 0,
         BuildCostMass = 25, 
         ReclaimEnergyMax = '',

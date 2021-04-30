@@ -53,7 +53,8 @@ CreateHeap = function(bp, position, orientation, mass, energy, time, deathHitBox
     CreateAttachedEmitter(prop, 0, -1, '/mods/SCTA-master/effects/emitters/fire_smoke_emit.bp' )
     prop:SetOrientation(orientation, true)
     if scale then 
-    prop:SetScale(scale * 2) 
+    --LOG('*MassWreckNec', scale)
+    prop:SetScale(scale) 
     else
     prop:SetScale(bp.Display.UniformScale)
     end

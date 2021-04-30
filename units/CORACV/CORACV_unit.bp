@@ -40,7 +40,6 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TANK',	
-
         'TECH2',
         'ENGINEER',
         'REPAIR',
@@ -50,9 +49,9 @@ UnitBlueprint {
         'PATROLHELPER',
         'SHOWQUEUE',
         'MOBILE',
-	'CONSTRUCTION',
-	'LAND',
-	'SELECTION',
+	    'CONSTRUCTION',
+	    'LAND',
+	    'SELECTION',
         'CORE',
     },
     Defense = {
@@ -106,6 +105,7 @@ UnitBlueprint {
         UniformScale = 0.16,
     },
     Economy = {
+        Land = true,
         BuildCostEnergy = 4504,
         BuildCostMass = 455,
         BuildRate = 200,

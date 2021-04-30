@@ -119,6 +119,7 @@ UnitBlueprint {
         SizeZ = 1,
     },
     Economy = {
+        Air = true,
         BuildCostEnergy = 4320,
         BuildCostMass = 105,
         BuildTime = 10000,        

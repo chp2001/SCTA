@@ -83,6 +83,7 @@ UnitBlueprint {
         UniformScale = 0.16,
     },
     Economy = {
+        Land = true,
         BuildCostEnergy = 4263,
         BuildCostMass = 481,
         BuildRate = 200,

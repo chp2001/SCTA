@@ -59,7 +59,7 @@ BuilderGroup {
         FormRadius = 1000,
         BuilderType = 'Any',
         BuilderData = {
-            ThreatSupport = 10,
+            ThreatSupport = 75,
             NeverGuardBases = true,
             NeverGuardEngineers = true,
             UseFormation = 'AttackFormation',
@@ -76,7 +76,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Missile Hunt',
         PlatoonTemplate = 'LandRocketAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 115,
+        Priority = 105,
         InstanceCount = 30,
         BuilderType = 'Any',
         BuilderData = {
@@ -97,7 +97,8 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI Land Attack Mid',
-        PlatoonTemplate = 'LandAttackSCTAMid', -- The platoon template tells the AI what units to include, and how to use them.
+        PlatoonTemplate = 'LandAttackSCTAMid',
+        PriorityFunction = TAPrior.UnitProductionT1, -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 115,
         InstanceCount = 100,
         BuilderType = 'Any',
@@ -160,7 +161,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Strike Endgame',
         PlatoonTemplate = 'StrikeForceSCTAEndgame', -- The platoon template tells the AI what units to include, and how to use them.
-        PriorityFunction = TAPrior.GantryConstruction,
+        PriorityFunction = TAPrior.StructureProductionT2,
         Priority = 250,
         InstanceCount = 50,
         FormRadius = 1000,

@@ -32,6 +32,7 @@ TAconstructor = Class(TAWalking) {
         if __blueprints['armgant'] then
             TAutils.updateBuildRestrictions(self)
         end
+        --LOG('*Who', self:GetBlueprint().General.FactionName)
     end,
 
     OnPaused = function(self)
@@ -179,7 +180,7 @@ TASeaConstructor = Class(TAconstructor)
 TANecro = Class(TAconstructor) {
     OnStartReclaim = function(self, target, oldPosition)
         if self:GetBlueprint().Economy.Necro then
-            if not target.ReclaimInProgress and not target.NecroingInProgress then
+            if not target.ReclaimInProgress and not target.NecroingInProgress and not target:GetBlueprint().Economy.Heap then
                 --LOG('* Necro: OnStartReclaim:  I am a necro! no ReclaimInProgress; starting Necroing')
                 target.NecroingInProgress = true
 				self.spawnUnit = true

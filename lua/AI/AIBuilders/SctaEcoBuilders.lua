@@ -27,7 +27,7 @@ BuilderGroup {
             { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 25, -500, 1000, 0, 'StructuresNotMex', 1 }},
         },
-        BuilderType = 'Any',
+        BuilderType = 'LandTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -48,7 +48,7 @@ BuilderGroup {
             { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 150, -500, 1000, 0, 'StructuresNotMex', 1 }},
         },
-        BuilderType = 'Any',
+        BuilderType = 'LandTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -69,7 +69,7 @@ BuilderGroup {
             { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 300, -500, 500, 0, 'StructuresNotMex', 1 }},
         },
-        BuilderType = 'Any',
+        BuilderType = 'LandTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -90,7 +90,7 @@ BuilderGroup {
             { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
                 { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 450, -500, 250, 0, 'StructuresNotMex', 1 }},         
             },
-        BuilderType = 'Any',
+        BuilderType = 'LandTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -111,7 +111,7 @@ BuilderGroup {
             { UCBC, 'CheckBuildPlattonDelay', { 'Mex2' }},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 100, -500, 500, 0, 'StructuresNotMex', 1 }},
         },
-        BuilderType = 'Any',
+        BuilderType = 'NotACU',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -132,7 +132,7 @@ BuilderGroup {
             { UCBC, 'CheckBuildPlattonDelay', { 'Mex2' }},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 250, -500, 500, 0, 'StructuresNotMex', 1 }},
         },
-        BuilderType = 'Any',
+        BuilderType = 'NotACU',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -154,7 +154,7 @@ BuilderGroup {
             { MIBC, 'LessThanGameTime', {120} }, 
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 50}},
         },
-        BuilderType = 'Any',
+        BuilderType = 'NotACU',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -176,7 +176,7 @@ BuilderGroup {
             { UCBC, 'CheckBuildPlattonDelay', { 'Hydro' }},
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 500}},
         },
-        BuilderType = 'Any',
+        BuilderType = 'AirTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -197,7 +197,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 10, SOLAR} },
             { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9}},
         },
-        BuilderType = 'Any',
+        BuilderType = 'LandTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -218,7 +218,7 @@ BuilderGroup {
         BuilderConditions = {
             { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
         },
-        BuilderType = 'Any',
+        BuilderType = 'LandTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -240,7 +240,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TECH3 * categories.ENERGYPRODUCTION * categories.STRUCTURE} },
             { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
-        BuilderType = 'Any',
+        BuilderType = 'NotACU',
         BuilderData = {
             DesiresAssist = true,
             NumAssistees = 2,
@@ -261,7 +261,7 @@ BuilderGroup {
         BuilderConditions = {
             { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
-        BuilderType = 'Any',
+        BuilderType = 'T3TA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -284,7 +284,7 @@ BuilderGroup {
             { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
                 { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 1000, -500, 500, 0, 'AntiAir', 1 }},
             },
-        BuilderType = 'Any',
+        BuilderType = 'AirTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -303,7 +303,7 @@ BuilderGroup {
         BuilderConditions = {
             { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
-        BuilderType = 'Any',
+        BuilderType = 'AirTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -332,7 +332,7 @@ BuilderGroup {
                 Time = 20,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'NotACU',
     },
     Builder {
         BuilderName = 'SCTAAI MetalMaker',
@@ -344,7 +344,7 @@ BuilderGroup {
             { TAutils, 'GreaterThanEconEnergyTAEfficiency', {1.05 }},
             { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
         },
-        BuilderType = 'Any',
+        BuilderType = 'NotACU',
         BuilderData = {
             DesiresAssist = false,
             NeedGuard = false,

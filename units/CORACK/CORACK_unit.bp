@@ -55,8 +55,8 @@ UnitBlueprint {
         'SHOWQUEUE',
         'SELECTION',
         'MOBILE',
-	'CONSTRUCTION',
-	'LAND',
+	    'CONSTRUCTION',
+	    'LAND',
         'CORE',
     },
     Defense = {
@@ -90,6 +90,7 @@ UnitBlueprint {
         UniformScale = 0.16,
     },
     Economy = {
+        Land = true,
         BuildCostEnergy = 6096,
         BuildCostMass = 325,
         BuildRate = 160,

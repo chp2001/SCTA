@@ -11,7 +11,6 @@ baseTmpl = baseTmplFile[(cons.BaseTemplate or 'BaseTemplates')][factionIndex]]
 
 SCTAAIPlatoon = Platoon
 Platoon = Class(SCTAAIPlatoon) {
-
     EngineerBuildAISCTA = function(self)
         local aiBrain = self:GetBrain()
         local platoonUnits = self:GetPlatoonUnits()

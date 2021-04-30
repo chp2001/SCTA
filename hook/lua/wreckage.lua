@@ -59,9 +59,11 @@ function CreateWreckage(bp, position, orientation, mass, energy, time, deathHitB
     prop.AssociatedBP = bp.Wreckage.IdHook or bp.BlueprintId
     ---THIS is the Code for determining Associated Scale. Called and Used by CreateHeaps. 
     ---Everything else is the basic vanilla FAF code. Except for a disabled log. And removed write space. 
-    if string.find(prop.AssociatedBP, 'arm' or 'cor') then
+    if string.find(prop.AssociatedBP, 'arm') or string.find(prop.AssociatedBP, 'cor') then
     ---Hopefully this will save some system memory limiting the amount of wrecks the game has to rememeber 
     prop.AssociatedBPScale = bp.Display.UniformScale
+    ---LOG('*MassWreckSca', prop.AssociatedBPScale)
+    ---LOG('*MassWreckName', prop.AssociatedBP)
     end
     return prop
 end

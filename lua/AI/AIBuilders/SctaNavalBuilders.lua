@@ -55,11 +55,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory ScoutShip',
         PlatoonTemplate = 'T1ScoutShipSCTA',
-        PriorityFunction = TAPrior.UnitProductionT1,
+        PriorityFunction = TAPrior.AirProduction,
         Priority = 110,
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},
-            { MIBC, 'LessThanGameTime', {900} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.SCOUT * categories.NAVAL } },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },

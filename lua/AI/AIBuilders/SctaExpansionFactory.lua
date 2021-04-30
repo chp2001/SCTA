@@ -27,7 +27,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, PLANT} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'LandTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -51,7 +51,7 @@ BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, PLANT} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'LandTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -75,7 +75,7 @@ BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, LAB} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'OmniLand',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -99,7 +99,7 @@ BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, LAB} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'OmniLand',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -126,7 +126,7 @@ BuilderConditions = {
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 200, 1000 } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'AirTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -150,7 +150,7 @@ BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, LAB * categories.AIR} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'OmniAir',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -172,7 +172,7 @@ BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ARTILLERY * categories.STRUCTURE * categories.TECH2} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'NotACU',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -194,7 +194,7 @@ BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TACTICALMISSILEPLATFORM} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'NotACU',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -216,7 +216,7 @@ BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, PLATFORM} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'OmniLand',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -239,7 +239,7 @@ BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, PLATFORM} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'OmniAir',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,

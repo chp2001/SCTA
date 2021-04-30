@@ -86,10 +86,10 @@ UnitBlueprint {
 		        },
             },
         },
-	---SmokeBone = 'Torso',
         UniformScale = 0.16,
     },
     Economy = {
+        Land = true,
         BuildCostEnergy = 2410,
         BuildCostMass = 120,
         BuildRate = 80,

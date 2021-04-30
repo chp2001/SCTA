@@ -96,10 +96,10 @@ UnitBlueprint {
                 },
             },
         },
-	---SmokeBone = 'Torso',
         UniformScale = 0.032,
     },
     Economy = {
+        TECH3 = true,
         BuildCostEnergy = 11561,
         BuildCostMass = 721,
         BuildRate = 30,

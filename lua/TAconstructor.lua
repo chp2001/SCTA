@@ -451,5 +451,15 @@ TARealCommander = Class(TACommander) {
         self:SetUnSelectable(false)
 		self:SetBusy(false)
 		self:SetBlockCommandQueue(false)
+        local rotateOpt = ScenarioInfo.Options['RotateACU']
+        if not rotateOpt or rotateOpt == 'On' then
+            self:RotateTowardsMid()
+        elseif rotateOpt == 'Marker' then
+            local marker = GetMarker(strArmy) or {}
+            if marker['orientation'] then
+                local o = EulerToQuaternion(unpack(marker['orientation']))
+                self:SetOrientation(o, true)
+            end
+        end
     end,
 }

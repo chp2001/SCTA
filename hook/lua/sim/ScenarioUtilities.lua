@@ -19,7 +19,6 @@ function CreateInitialArmyGroup(strArmy, createCommander)
 			cdrUnit:SetBusy(true)
 			cdrUnit:SetBlockCommandQueue(true)
 			ForkThread(ControlDelay, cdrUnit, 8.75)
-			ABrain.PreBuilt = true
 		else
 			local tblGroup = CreateArmyGroup( strArmy, 'INITIAL')
 			local cdrUnit = false
@@ -36,10 +35,8 @@ function CreateInitialArmyGroup(strArmy, createCommander)
 				end
 				cdrUnit = CreateInitialArmyUnit(strArmy, initialUnitName)
 				if EntityCategoryContains(categories.COMMAND, cdrUnit) then
-					if ScenarioInfo.Options['PrebuiltUnits'] == 'Off' then
 						cdrUnit:HideBone(0, true)
 						ForkThread(CommanderWarpDelay, cdrUnit, 3)
-					end
 				end
 			end
 		end

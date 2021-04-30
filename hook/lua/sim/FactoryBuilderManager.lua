@@ -94,7 +94,7 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
                     self:SetupNewFactory(unit, 'Hover')
                 elseif EntityCategoryContains(categories.AIR * categories.TECH3 - categories.MOBILE, unit) then
                     self:SetupNewFactory(unit, 'Seaplane')
-                elseif EntityCategoryContains(categories.AIR - (categories.TECH3 - categories.MOBILE), unit) then
+                elseif EntityCategoryContains(categories.AIR - categories.SUBMERSIBLE, unit) then
                     self:SetupNewFactory(unit, 'Air')
                 elseif EntityCategoryContains(categories.NAVAL * categories.STRUCTURE, unit) then
                     self:SetupNewFactory(unit, 'Sea')

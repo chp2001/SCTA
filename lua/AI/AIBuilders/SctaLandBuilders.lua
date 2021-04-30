@@ -25,6 +25,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Kbot',
         PlatoonTemplate = 'T1LandDFTankSCTA',
+        PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 100,
             BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
@@ -37,6 +38,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Kbot Artillery',
         PlatoonTemplate = 'T1LandArtillerySCTA',
+        PriorityFunction = TAPrior.UnitProductionT1Aux,
         Priority = 90,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.75, categories.LAND * categories.MOBILE * categories.ARTILLERY,
@@ -59,6 +61,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Tank',
         PlatoonTemplate = 'T1LandDFTankSCTA2',
+        PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 100,
         BuilderConditions = {
         { MIBC, 'GreaterThanGameTime', {300} },
@@ -71,6 +74,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Tank AntiAir',
         PlatoonTemplate = 'T1LandAASCTA2',
+        PriorityFunction = TAPrior.UnitProductionT1Aux,
         Priority = 90,
         InstanceCount = 2,
         BuilderConditions = {

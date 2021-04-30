@@ -39,6 +39,7 @@ UnitBlueprint {
         'SHOWQUEUE',
 	    'STRUCTURE',
         'CONSTRUCTION',
+        'SUBMERSIBLE',
         'OVERLAYSONAR',
         'CORE',
         'AIR',

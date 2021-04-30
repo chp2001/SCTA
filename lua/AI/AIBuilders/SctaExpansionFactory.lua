@@ -20,7 +20,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Expansion LandFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 104,
-        PriorityFunction = TAPrior.UnitProductionT1,
+        PriorityFunction = TAPrior.FactoryProductionT1,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
@@ -44,7 +44,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Expansion Vehicle LandFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 106,
-        PriorityFunction = TAPrior.UnitProductionT1,
+        PriorityFunction = TAPrior.FactoryProductionT1,
         InstanceCount = 1,
 BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
@@ -118,7 +118,7 @@ BuilderConditions = {
         BuilderName = 'SCTAAI T1Expansion AirFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 91,
-        PriorityFunction = TAPrior.UnitProductionT1,
+        PriorityFunction = TAPrior.FactoryProductionT1,
         InstanceCount = 1,
 BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },

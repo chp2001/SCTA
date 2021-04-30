@@ -107,7 +107,29 @@ UnitProductionT1 = function(self, aiBrain)
     elseif Factory(aiBrain,  1, LAB) then 
               return 50
       else
-          return 110
+          return 100
+      end
+  end
+
+  UnitProductionT1Aux = function(self, aiBrain)
+    if Factory(aiBrain,  0, categories.GATE) then
+          return 0
+    elseif Factory(aiBrain,  6, LAB) then
+              return 5
+    elseif Factory(aiBrain,  1, LAB) then 
+              return 45
+      else
+          return 90
+      end
+  end
+
+  FactoryProductionT1 = function(self, aiBrain)
+    if Factory(aiBrain,  3, LAB) then
+              return 0
+    elseif Factory(aiBrain,  1, LAB) then 
+              return 25
+    else
+             return 110
       end
   end
   

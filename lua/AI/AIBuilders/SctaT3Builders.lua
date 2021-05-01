@@ -22,7 +22,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT3 Hover Artillery',
         PlatoonTemplate = 'T3HOVERMISSILESCTA', 
         Priority = 126,
-        PriorityFunction = TAPrior.LandProductionT3,
+        PriorityFunction = TAPrior.ProductionT3,
         BuilderConditions = {
         { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
     },
@@ -32,7 +32,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT3 Hover AntiAir',
         PlatoonTemplate = 'T3HOVERAASCTA',
         Priority = 133,
-        PriorityFunction = TAPrior.LandProductionT3,
+        PriorityFunction = TAPrior.ProductionT3,
         BuilderConditions = {
          { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
         },

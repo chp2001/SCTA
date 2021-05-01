@@ -25,6 +25,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Kbot',
         PlatoonTemplate = 'T1LandDFTankSCTA',
+        PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 100,
             BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
@@ -37,6 +38,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Kbot Artillery',
         PlatoonTemplate = 'T1LandArtillerySCTA',
+        PriorityFunction = TAPrior.UnitProductionT1Aux,
         Priority = 90,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.75, categories.LAND * categories.MOBILE * categories.ARTILLERY,
@@ -59,6 +61,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Tank',
         PlatoonTemplate = 'T1LandDFTankSCTA2',
+        PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 100,
         BuilderConditions = {
         { MIBC, 'GreaterThanGameTime', {300} },
@@ -71,6 +74,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Tank AntiAir',
         PlatoonTemplate = 'T1LandAASCTA2',
+        PriorityFunction = TAPrior.UnitProductionT1Aux,
         Priority = 90,
         InstanceCount = 2,
         BuilderConditions = {
@@ -216,8 +220,9 @@ BuilderGroup {
     PlatoonTemplate = 'T3LandDFTankSCTA',
     Priority = 139,
     PriorityFunction = TAPrior.LandProductionT3Tank,
+    InstanceCount = 2,
     BuilderConditions = {
-        { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+        { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
     },
     BuilderType = 'KBot',
     },
@@ -241,7 +246,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.ProductionT3,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LAND * categories.TECH3 * (categories.SNIPER + categories.ARTILLERY)}}, -- Don't make tanks if we have lots of them.
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.35}},
         },
         BuilderType = 'Vehicle',
     },
@@ -250,8 +255,9 @@ BuilderGroup {
         PlatoonTemplate = 'T3LandDFTank2SCTA',
         Priority = 130,
         PriorityFunction = TAPrior.LandProductionT3Tank,
+        InstanceCount = 2,
         BuilderConditions = {
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Vehicle',
     },

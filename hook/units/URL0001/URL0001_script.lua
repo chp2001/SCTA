@@ -24,7 +24,7 @@ URL0001 = Class(taURL0001) {
             cdrUnit:SetUnSelectable(false)
 		    cdrUnit:SetBlockCommandQueue(true)
 		    WaitSeconds(2)
-		    cdrUnit:ForkThread(cdrUnit.PlayCommanderWarpInEffect)
+		    cdrUnit:ForkThread(cdrUnit.PlayCommanderWarpInEffect, bones)
     end,
 
 }

@@ -15,6 +15,7 @@ UnitBlueprint {
         'TECH3',
 	    'FACTORY',
         'RALLYPOINT',
+        'SUBMERSIBLE',
         'SHOWQUEUE',
 	    'STRUCTURE',
 	    'CONSTRUCTION',

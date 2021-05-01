@@ -12,6 +12,7 @@ local TACommanderDeathWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TACo
 #ARM Commander - Commander
 
 ARMCOM = Class(TARealCommander) {
+
 	Weapons = {
 		COMLASER = Class(TAweapon) {
 		},

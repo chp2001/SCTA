@@ -73,10 +73,11 @@ function CDRSCTADGun(aiBrain, cdr)
     local maxRadius = weapon.MaxRadius + 10
     local mapSizeX, mapSizeZ = GetMapSize()
     if cdr:GetHealthPercent() > 0.8
-        and GetGameTimeSeconds() < 300
+        and GetGameTimeSeconds() < 360
+        and GetGameTimeSeconds() > 120
         and mapSizeX <= 512 and mapSizeZ <= 512
         then
-        maxRadius = 5
+        maxRadius = 256
     end
 
     -- Take away engineers too
@@ -149,7 +150,7 @@ function CDRSCTADGun(aiBrain, cdr)
                     if aiBrain:GetEconomyStored('ENERGY') >= weapon.EnergyRequired and target and not target.Dead then
                         overCharging = true
                         IssueClearCommands({cdr})
-                        TAReclaim.TAAIRandomizeTaunt(aiBrain)
+                        ---TAReclaim.TAAIRandomizeTaunt(aiBrain)
                         IssueOverCharge({cdr}, target)
                     elseif target and not target.Dead then -- Commander attacks even if not enough energy for overcharge
                         IssueClearCommands({cdr})

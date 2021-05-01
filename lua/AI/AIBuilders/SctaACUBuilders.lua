@@ -152,7 +152,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Commander LandFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        PriorityFunction = TAPrior.UnitProductionT1,
+        PriorityFunction = TAPrior.FactoryProductionT1,
         Priority = 91,
         InstanceCount = 1,
         BuilderConditions = {
@@ -241,9 +241,11 @@ BuilderGroup {
         BuilderName = 'SCTA CDR Finish Structure',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 100,
+        Priority = 500,
         InstanceCount = 2,
+        DelayEqualBuildPlattons = {'Unfinished', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Unfinished' }},
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
         },
             BuilderData = {

@@ -13,6 +13,7 @@ TAweapon = Class(DefaultWeapon) {
     
         OnGotTargetCheck = function(self)
         if self.unit:GetAIBrain().SCTAAI or (self.unit:IsUnitState('Patrolling') or self.unit:IsUnitState('MakingAttackRun'))  then
+            --LOG('*AIBrain', self.unit:GetAIBrain().SCTAAI)
             return true
         else
             local canSee = true

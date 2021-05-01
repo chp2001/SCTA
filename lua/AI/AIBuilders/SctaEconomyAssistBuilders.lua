@@ -15,7 +15,7 @@ local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAssisters',
-    BuildersType = 'PlatoonFormBuilder',
+    BuildersType = 'EngineerBuilder',
     ----Building Reclaim
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Excess PLANTS',
@@ -35,7 +35,7 @@ BuilderGroup {
             ReclaimTime = 30,
             Reclaim = {'TECH1 FACTORY,'},
         },
-        BuilderType = 'Any',
+        BuilderType = 'NotACU',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Energy',
@@ -54,7 +54,7 @@ BuilderGroup {
             Reclaim = {'armsolar, corsolar, armwin, corwin,'},
                 ReclaimTime = 30,
         },
-        BuilderType = 'Any',
+        BuilderType = 'NotACU',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Air',
@@ -69,7 +69,7 @@ BuilderGroup {
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
-        BuilderType = 'Any',
+        BuilderType = 'AirTA',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Idle',
@@ -86,7 +86,7 @@ BuilderGroup {
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
-        BuilderType = 'Any',
+        BuilderType = 'LandTA',
     },
 }
 

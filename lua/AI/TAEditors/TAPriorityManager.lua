@@ -10,7 +10,7 @@ local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TEC
 
 ProductionT3 = function(self, aiBrain)
     if Factory(aiBrain,  12, LAB)  then 
-        return 130
+        return 150
     elseif Factory(aiBrain,  0, categories.GATE) then
         return 180
     else
@@ -52,8 +52,10 @@ end
 
 ---WithinTechProduction
 PlatformBeingBuilt = function(self, aiBrain)
-    if LessProduct(aiBrain,  3, PLATFORM) then 
-        return 140
+    if LessProduct(aiBrain,  2, PLATFORM) then 
+        return 150
+    elseif Factory(aiBrain,  12, LAB)  then 
+        return 10
     else
         return 0
     end
@@ -80,7 +82,7 @@ StructureProductionT2 = function(self, aiBrain)
 end
 
 TechEnergyExist = function(self, aiBrain)
-    if Factory(aiBrain,  2, FUSION) then 
+    if Factory(aiBrain,  1, FUSION) then 
         return 135
     else
         return 0
@@ -107,7 +109,29 @@ UnitProductionT1 = function(self, aiBrain)
     elseif Factory(aiBrain,  1, LAB) then 
               return 50
       else
-          return 110
+          return 100
+      end
+  end
+
+  UnitProductionT1Aux = function(self, aiBrain)
+    if Factory(aiBrain,  0, categories.GATE) then
+          return 0
+    elseif Factory(aiBrain,  6, LAB) then
+              return 5
+    elseif Factory(aiBrain,  1, LAB) then 
+              return 45
+      else
+          return 90
+      end
+  end
+
+  FactoryProductionT1 = function(self, aiBrain)
+    if Factory(aiBrain,  3, LAB) then
+              return 0
+    elseif Factory(aiBrain,  1, LAB) then 
+              return 25
+    else
+             return 110
       end
   end
   
@@ -171,9 +195,11 @@ EnergyBeingBuilt = function(self, aiBrain)
 end
 
 NothingBuilt = function(self, aiBrain)
-    if MoreProduct(aiBrain,  0, FUSION) then 
+    if MoreProduct(aiBrain,  2, FUSION) then 
         return 0
+    elseif MoreProduct(aiBrain,  0, FUSION) then 
+        return 125
     else
-        return 130
+        return 150
     end
 end

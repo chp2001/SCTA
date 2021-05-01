@@ -383,8 +383,10 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
         Priority = 85,
-        InstanceCount = 1,
+        InstanceCount = 2,
+        DelayEqualBuildPlattons = {'Unfinished', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Unfinished' }},
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
         },
         BuilderData = {

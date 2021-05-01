@@ -1354,7 +1354,6 @@ Platoon = Class(SCTAAIPlatoon) {
         local platoonUnits = self:GetPlatoonUnits()
         local FactionToIndex  = { UEF = 1, AEON = 2, CYBRAN = 3, SERAPHIM = 4, NOMADS = 5, ARM = 6, CORE = 7}
         local factionIndex = aiBrain:GetFactionIndex()
-        self:Stop()
         for k, v in platoonUnits do
             local upgradeID
             UnitBeingUpgradeFactionIndex = FactionToIndex[v.factionCategory] or factionIndex

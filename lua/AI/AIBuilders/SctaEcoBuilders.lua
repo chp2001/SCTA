@@ -216,7 +216,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.HighTechEnergyProduction,
         InstanceCount = 1,
         BuilderConditions = {
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
         BuilderType = 'LandTA',
         BuilderData = {
@@ -235,7 +235,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA23All',
         PriorityFunction = TAPrior.NothingBuilt,
         Priority = 125,
-        InstanceCount = 1,
+        InstanceCount = 4,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TECH3 * categories.ENERGYPRODUCTION * categories.STRUCTURE} },
             { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
@@ -259,7 +259,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.NothingBuilt,
         InstanceCount = 1,
         BuilderConditions = {
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
         },
         BuilderType = 'T3TA',
         BuilderData = {
@@ -298,7 +298,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Air Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
-        Priority = 125,
+        Priority = 150,
         InstanceCount = 2,
         BuilderConditions = {
             { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
@@ -320,8 +320,10 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
         Priority = 85,
-        InstanceCount = 1,
+        InstanceCount = 2,
+        DelayEqualBuildPlattons = {'Unfinished', 2},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Unfinished' }},
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
         },
         BuilderData = {
@@ -339,15 +341,16 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
         PriorityFunction = TAPrior.TechEnergyExist,
         Priority = 120,
-        InstanceCount = 4,
+        InstanceCount = 2,
         BuilderConditions = {
             { TAutils, 'GreaterThanEconEnergyTAEfficiency', {1.05 }},
             { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
         },
         BuilderType = 'NotACU',
         BuilderData = {
-            DesiresAssist = false,
+            DesiresAssist = true,
             NeedGuard = false,
+            NumAssistees = 2,
             Construction = {
                 BuildClose = true,
                 BuildStructures = {

@@ -19,7 +19,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2AirFighterSCTA',
         Priority = 115,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
-        { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+        { TAutils, 'EcoManagementTA', { 0.75, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
     },
@@ -29,7 +29,7 @@ BuilderGroup {
         Priority = 115,
         BuilderConditions = {
             { TASlow, 'HaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
     },
@@ -39,7 +39,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.AirProduction,
         Priority = 95,
         BuilderConditions = { -- Only make inties if the enemy air is strong
-        { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+        { TAutils, 'EcoManagementTA', { 0.75, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
     },  
@@ -50,7 +50,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.ProductionT3,
         BuilderConditions = {
             { TASlow, 'HaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
     },
@@ -61,7 +61,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.AirProduction,
         BuilderConditions = {
             { TASlow, 'HaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
     },     

@@ -235,7 +235,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA23All',
         PriorityFunction = TAPrior.NothingBuilt,
         Priority = 125,
-        InstanceCount = 1,
+        InstanceCount = 4,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TECH3 * categories.ENERGYPRODUCTION * categories.STRUCTURE} },
             { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
@@ -259,7 +259,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.NothingBuilt,
         InstanceCount = 1,
         BuilderConditions = {
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
         },
         BuilderType = 'T3TA',
         BuilderData = {
@@ -341,15 +341,16 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
         PriorityFunction = TAPrior.TechEnergyExist,
         Priority = 120,
-        InstanceCount = 4,
+        InstanceCount = 2,
         BuilderConditions = {
             { TAutils, 'GreaterThanEconEnergyTAEfficiency', {1.05 }},
             { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
         },
         BuilderType = 'NotACU',
         BuilderData = {
-            DesiresAssist = false,
+            DesiresAssist = true,
             NeedGuard = false,
+            NumAssistees = 2,
             Construction = {
                 BuildClose = true,
                 BuildStructures = {

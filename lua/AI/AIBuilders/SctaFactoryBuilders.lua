@@ -298,10 +298,10 @@ BuilderConditions = {
         Plan = 'ManagerEngineerAssistAI',
         PriorityFunction = TAPrior.GateBeingBuilt,
         Priority = 200,
-        InstanceCount = 4,
+        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
-            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderData = {
             Assist = {
@@ -323,7 +323,7 @@ BuilderConditions = {
         InstanceCount = 4,
         BuilderConditions = {
             { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYQUANTUMGATE}},
-            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderData = {
             Assist = {
@@ -397,7 +397,7 @@ BuilderConditions = {
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
-            NumAssistees = 10,
+            NumAssistees = 4,
             Construction = {
                 BuildStructures = {
                     'T4Artillery',
@@ -419,7 +419,7 @@ BuilderConditions = {
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
-            NumAssistees = 10,
+            NumAssistees = 4,
             Construction = {
                 BuildStructures = {
                     'T3StrategicMissile',

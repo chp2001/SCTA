@@ -729,9 +729,10 @@ end
 
 function SetSkinTA(unit)
     local bp = unit:GetBlueprint().General
-    if bp.FactionName == 'Cybran' then
+    if unit:GetBlueprint().BlueprintId == 'mas0001' then
+        return
+    elseif bp.FactionName == 'Cybran' then
         return ConExecute('UI_SetSkin cybran')
-
     elseif bp.FactionName == 'Seraphim' then
        return ConExecute('UI_SetSkin seraphim')
     elseif bp.FactionName == 'Nomads' then

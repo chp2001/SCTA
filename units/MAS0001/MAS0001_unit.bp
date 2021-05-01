@@ -100,7 +100,7 @@ UnitBlueprint {
             RULEUCC_Stop = false,
             RULEUCC_Transport = false,
         },
-        FactionName = 'DropPod',
+        FactionName = 'Cybran',
         Icon = 'land',
         QuickSelectPriority = 1,
         SelectionPriority = 3,

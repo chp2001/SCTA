@@ -69,7 +69,7 @@ do
         SmallIcon = "/mods/SCTA-master/textures/ui/common/faction_icon-sm/arm_ico.dds",
         LargeIcon = "/mods/SCTA-master/textures/ui/common/faction_icon-lg/arm_ico.dds",
         TooltipID = 'lob_arm',
-        DefaultSkin = 'uef',
+        DefaultSkin = 'arm',
         loadingMovie = '/movies/UEF_load.sfd',
         loadingColor = 'FFbadbdb',
         loadingTexture = '/UEF_load.dds',
@@ -121,7 +121,7 @@ do
         SmallIcon = "/mods/SCTA-master/textures/ui/common/faction_icon-sm/core_ico.dds",
         LargeIcon = "/mods/SCTA-master/textures/ui/common/faction_icon-lg/core_ico.dds",
         TooltipID = 'lob_core',
-        DefaultSkin = 'cybran',
+        DefaultSkin = 'core',
         loadingMovie = '/movies/cybran_load.sfd',
         loadingColor = 'FFe24f2d',
         loadingTexture = '/cybran_load.dds',
@@ -159,7 +159,7 @@ do
             },
         },
     },
-                }
+}
 
 Factions = table.cat(Factions, TAFactions)
 

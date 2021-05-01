@@ -1,4 +1,5 @@
 ---local WEIRD = categories.SUBCOMMANDER + categories.AIR + categories.NAVAL + categories.FIELDENGINEER
+local TACreateAvater = CreateAvatar
 
 function GetCheck(id)
     if id == 'engineer' and controls.idleEngineers then
@@ -725,4 +726,124 @@ function CreateIdleEngineerList(parent, units)
     group:Update(units)
 
     return group
+end
+
+function CreateAvatar(unit)
+    local bg = Bitmap(controls.avatarGroup, UIUtil.SkinnableFile('/game/avatar/avatar_bmp.dds'))
+    bg.ID = unit:GetEntityId()
+    bg.Blueprint = unit:GetBlueprint()
+    bg.tooltipKey = 'avatar_Avatar_ACU'
+    _ALERT('UnitID', bg.Blueprint.General.FactionName)
+    bg.units = {unit}
+
+    bg.icon = Bitmap(bg)
+    LayoutHelpers.AtLeftTopIn(bg.icon, bg, 5, 5)
+    if not bg.Blueprint.BlueprintId == 'mas0001' then
+        if bg.Blueprint.General.FactionName == 'Nomads' then
+        ConExecute('UI_SetSkin nomads')
+        elseif bg.Blueprint.General.FactionName == 'Seraphim' then
+        ConExecute('UI_SetSkin seraphim')
+        elseif bg.Blueprint.General.FactionName == 'Cybran' then
+        ConExecute('UI_SetSkin cybran')
+        elseif bg.Blueprint.General.FactionName == 'CORE' then
+        ConExecute('UI_SetSkin core')
+        elseif bg.Blueprint.General.FactionName == 'Aeon' then
+        ConExecute('UI_SetSkin aeon')
+        elseif bg.Blueprint.General.FactionName == 'ARM' then
+        ConExecute('UI_SetSkin arm')
+        elseif bg.Blueprint.General.FactionName == 'UEF' then
+        ConExecute('UI_SetSkin uef')
+        end
+    end
+    -- Commander icon
+    if UIUtil.UIFile('/icons/units/'..bg.Blueprint.BlueprintId..'_icon.dds', true) then
+        bg.icon:SetTexture(UIUtil.UIFile('/icons/units/'..bg.Blueprint.BlueprintId..'_icon.dds', true))
+    else
+        bg.icon:SetTexture(UIUtil.UIFile('/icons/units/default_icon.dds'))
+    end
+    LayoutHelpers.SetDimensions(bg.icon, 44, 44)
+    bg.icon:DisableHitTest()
+
+    bg.healthbar = StatusBar(bg, 0, 1, false, false,
+        UIUtil.SkinnableFile('/game/avatar/health-bar-back_bmp.dds'),
+        UIUtil.SkinnableFile('/game/avatar/health-bar-green.dds'),		
+        true, "avatar RO Health Status Bar")
+		
+    bg.shieldbar = StatusBar(bg, 0, 1, false, false,
+        UIUtil.SkinnableFile('/game/avatar/health-bar-back_bmp.dds'),
+        UIUtil.SkinnableFile('/game/avatar/shield-bar-blue.dds'),
+        true, "avatar RO Shield Status Bar")
+	
+
+    LayoutHelpers.AtLeftIn(bg.healthbar, bg, 8)
+    LayoutHelpers.AtRightBottomIn(bg.healthbar, bg, 14, 5)
+    LayoutHelpers.AnchorToBottom(bg.healthbar, bg.healthbar, -10)
+    bg.healthbar.Height:Set(function() return bg.healthbar.Bottom() - bg.healthbar.Top() end)
+    bg.healthbar.Width:Set(function() return bg.healthbar.Right() - bg.healthbar.Left() end)
+    bg.healthbar:DisableHitTest(true)
+	
+    LayoutHelpers.CenteredBelow(bg.shieldbar, bg.healthbar, -5)
+    bg.shieldbar.Height:Set(function() return bg.healthbar.Bottom() - bg.healthbar.Top() end)
+    bg.shieldbar.Width:Set(function() return  bg.healthbar.Right() - bg.healthbar.Left() end)
+    bg.shieldbar:DisableHitTest(true)
+	
+    bg.curIndex = 1
+    bg.HandleEvent = ClickFunc
+    bg.idleAnnounced = true
+    bg.lastAlert = 0
+
+    bg.Update = function(self)
+        if bg.units[1]:IsIdle() and not bg.idle then
+            if not bg.idle then
+                bg.idle = Bitmap(bg.icon, UIUtil.SkinnableFile('/game/idle_mini_icon/idle_icon.dds'))
+                LayoutHelpers.AtLeftTopIn(bg.idle, bg.icon, -2, -2)
+                bg.idle:DisableHitTest()
+                bg.idle.cycles = 0
+                bg.idle.dir = 1
+                bg.idle:SetNeedsFrameUpdate(true)
+                bg.idle:SetAlpha(0)
+                bg.idle.OnFrame = function(self, delta)
+                    local newAlpha = self:GetAlpha() + (delta * 3 * self.dir)
+                    if newAlpha > 1 then
+                        newAlpha = 1
+                        self.dir = -1
+                        self.cycles = self.cycles + 1
+                        if self.cycles >= 5 then
+                            self:SetNeedsFrameUpdate(false)
+                        end
+                    elseif newAlpha < 0 then
+                        newAlpha = 0
+                        self.dir = 1
+                    end
+                    self:SetAlpha(newAlpha)
+                end
+            end
+        elseif not bg.units[1]:IsIdle() then
+            if bg.idle then
+                bg.idle:Destroy()
+                bg.idle = false
+            end
+        end
+
+        local tempPrevHealth = bg.healthbar._value()
+        local tempHealth = self.units[1]:GetHealth()
+        local shieldRatio = self.units[1]:GetShieldRatio()
+        bg.healthbar:SetRange(0, self.units[1]:GetMaxHealth())
+        bg.healthbar:SetValue(tempHealth)
+        bg.shieldbar:SetValue(shieldRatio)
+		
+        if not GameMain.gameUIHidden then
+           if shieldRatio > 0 and self.units[1]:IsInCategory('COMMAND') then          
+              bg.shieldbar:Show()
+           else
+              bg.shieldbar:Hide()
+           end
+        end
+		
+        if tempPrevHealth ~= tempHealth then
+            SetHealthbarColor(bg.healthbar, self.units[1]:GetHealth() / self.units[1]:GetMaxHealth())
+        end
+    end
+
+    return bg
 end

@@ -16,6 +16,7 @@ PropBlueprint {
             LODs = {
                 {
                     LODCutoff = 175,
+                    SpecularName = '/mods/SCTA-master/meshes/Dragon/Dragon_SpecTeam.dds',
                     ShaderName = 'TMeshNoLighting',
                 },
             },

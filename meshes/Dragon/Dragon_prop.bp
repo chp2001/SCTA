@@ -8,7 +8,6 @@ PropBlueprint {
             LODs = {
                 {
                     LODCutoff = 175,
-		            NormalName = '/mods/SCTA-master/textures/common/normalsTS.dds',
                     ShaderName = 'TMeshNoLighting',
                 },
             },

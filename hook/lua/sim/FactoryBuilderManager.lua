@@ -17,10 +17,10 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
 			self:AddBuilderType(v)
 		end
         self.Location = location
-        LOG('*Location', self.Location)
+        --LOG('*Location', self.Location)
         self.Radius = radius
         self.LocationType = lType
-        LOG('*Location', self.LocationType)
+        --LOG('*Location', self.LocationType)
         self.RallyPoint = false
 
         self.FactoryList = {}

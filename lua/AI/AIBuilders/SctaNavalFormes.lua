@@ -1,7 +1,10 @@
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
+local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
+local TIDAL = (categories.cortide + categories.armtide)
 
 BuilderGroup {
     BuilderGroupName = 'SCTANavalFormer',
@@ -164,7 +167,7 @@ BuilderGroup {
         InstanceCount = 2,
         DelayEqualBuildPlattons = {'Unfinished', 2},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Unfinished' }},
+            { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'Unfinished' }},
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
         },
         BuilderData = {
@@ -175,6 +178,24 @@ BuilderGroup {
                 AssisteeType = 'Engineer',
                 Time = 20,
             },
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim Energy Naval',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        PriorityFunction = TAPrior.TechEnergyExist,
+        PlatoonAIPlan = 'ReclaimStructuresAI',
+        Priority = 111,
+        InstanceCount = 8,
+        BuilderConditions = {
+            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, TIDAL}},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
+            },
+        BuilderData = {
+            Location = 'LocationType',
+            Reclaim = {'cortide, armtide,'},
+            ReclaimTime = 30,
         },
         BuilderType = 'Any',
     },

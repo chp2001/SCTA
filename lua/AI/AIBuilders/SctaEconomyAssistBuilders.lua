@@ -163,7 +163,7 @@ BuilderGroup {
         InstanceCount = 2,
         DelayEqualBuildPlattons = {'Unfinished', 2},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Unfinished' }},
+            { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'Unfinished' }},
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
         },
         BuilderData = {
@@ -176,6 +176,12 @@ BuilderGroup {
         },
         BuilderType = 'Any',
     },
+
+}
+
+BuilderGroup {
+    BuilderGroupName = 'SCTAFieldEngineers',
+    BuildersType = 'PlatoonFormBuilder',
     Builder {
         BuilderName = 'SCTA Engineer Assist Gantry Production',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
@@ -220,6 +226,84 @@ BuilderGroup {
         },
         BuilderType = 'Any',
     },
+    Builder {
+        BuilderName = 'SCTA PGen Field Assist',
+        PlatoonTemplate = 'EngineerBuilderSCTAField',
+        PlatoonAIPlan = 'ManagerEngineerAssistAI',
+        PriorityFunction = TAPrior.EnergyBeingBuilt,
+        Priority = 75,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
+        },
+        BuilderType = 'Any',
+        BuilderData = {
+            Assist = {
+                AssisteeType = 'Engineer',
+                AssistLocation = 'LocationType',
+                BeingBuiltCategories = {'TECH2 ENERGYPRODUCTION STRUCTURE, TECH3 ENERGYPRODUCTION STRUCTURE,'},
+                Time = 20,
+                AssistRange = 120,
+                AssistUntilFinished = true,
+            },
+        }
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim Field',
+        PlatoonTemplate = 'EngineerBuilderSCTAField',
+        PlatoonAIPlan = 'SCTAReclaimAI',
+        Priority = 200,
+        InstanceCount = 5,
+        BuilderConditions = {
+            { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},
+        },
+        BuilderData = {
+            Terrain = true,
+            LocationType = 'LocationType',
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Field Finish',
+        PlatoonTemplate = 'EngineerBuilderSCTAField',
+        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
+        Priority = 125,
+        InstanceCount = 2,
+        DelayEqualBuildPlattons = {'Unfinished', 2},
+        BuilderConditions = {
+            { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'Unfinished' }},
+            { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
+                Time = 20,
+            },
+        },
+        BuilderType = 'Any',
+    },
+    Builder {
+        BuilderName = 'SCTA Assist Production Field',
+        PlatoonTemplate = 'EngineerBuilderSCTAField',
+        PlatoonAIPlan = 'ManagerEngineerAssistAI',
+        PriorityFunction = TAPrior.UnitProduction,
+        Priority = 100,
+        InstanceCount = 5,
+        BuilderConditions = {
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE * (categories.TECH2 + categories.TECH3)}},
+            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                AssistRange = 120,
+                BeingBuiltCategories = {'STRUCTURE TECH2, STRUCTURE TECH3,'},                                        
+                AssistUntilFinished = true,
+            },
+        },
+        BuilderType = 'Any',
+    },
 }
-
---[[]]

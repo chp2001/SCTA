@@ -10,7 +10,6 @@ local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
-local TIDAL = (categories.cortide + categories.armtide)
 local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').GetMOARadii()
 local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
@@ -261,24 +260,6 @@ BuilderGroup {
                 }
             }
         }
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Reclaim Energy Naval',
-        PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        PriorityFunction = TAPrior.TechEnergyExist,
-        PlatoonAIPlan = 'ReclaimStructuresAI',
-        Priority = 111,
-        InstanceCount = 8,
-        BuilderConditions = {
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, TIDAL}},
-            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
-            },
-        BuilderData = {
-            Location = 'LocationType',
-            Reclaim = {'cortide, armtide,'},
-            ReclaimTime = 30,
-        },
-        BuilderType = 'SeaTA',
     },
     Builder {
         BuilderName = 'SCTA Defensive Point Naval',

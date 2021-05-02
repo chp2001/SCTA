@@ -11,6 +11,8 @@ local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TEC
 ProductionT3 = function(self, aiBrain)
     if Factory(aiBrain,  12, LAB)  then 
         return 150
+    elseif Factory(aiBrain,  0, PLATFORM) then
+        return 140
     elseif Factory(aiBrain,  0, categories.GATE) then
         return 180
     else
@@ -20,6 +22,8 @@ end
 
 LandProductionT3Tank = function(self, aiBrain)
     if Factory(aiBrain,  12, LAB)  then 
+        return 140
+    elseif Factory(aiBrain,  0, PLATFORM) then
         return 135
     elseif Factory(aiBrain,  0, categories.GATE) then
         return 130
@@ -97,7 +101,7 @@ EngineerProduction = function(self, aiBrain)
     elseif Factory(aiBrain,  0, LAB) then 
         return 10
     else
-        return 101
+        return 120
     end
 end
 
@@ -179,6 +183,22 @@ end
 GateBeingBuilt = function(self, aiBrain)
     if MoreProduct(aiBrain,  0, categories.GATE) then 
         return 125
+    else
+        return 0
+    end
+end
+
+HydroBeingBuilt = function(self, aiBrain)
+    if MoreProduct(aiBrain,  0, categories.HYDROCARBON) then 
+        return 300
+    else
+        return 0
+    end
+end
+
+HydroBeingBuiltACU = function(self, aiBrain)
+    if MoreProduct(aiBrain,  0, categories.HYDROCARBON) then 
+        return 975
     else
         return 0
     end

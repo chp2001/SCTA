@@ -29,7 +29,7 @@ PlatoonTemplate {
     Name = 'EngineerBuilderSCTAALL',
     Plan = 'SCTAEngineerTypeAI',
     GlobalSquads = {
-        { categories.ENGINEER * TA - categories.NAVAL - categories.FIELDENGINEER, 1, 1, 'support', 'None' }
+        { categories.ENGINEER * TA - categories.NAVAL - categories.FIELDENGINEER - categories.COMMAND, 1, 1, 'support', 'None' }
     },
 }
 

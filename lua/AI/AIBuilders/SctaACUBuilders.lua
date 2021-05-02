@@ -43,12 +43,12 @@ BuilderGroup {
         BuilderName = 'SCTA AI ACU Alternate Factory',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 950,
-        InstanceCount = 2, -- The max number concurrent instances of this builder.
+        InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {360} }, -- Don't make tanks if we have lots of them.
             { MIBC, 'GreaterThanGameTime', {90} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, PLANT * ((categories.CORE * categories.BOT) + (categories.ARM * categories.TANK))} },
-            { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Command',
         BuilderData = {
@@ -66,12 +66,12 @@ BuilderGroup {
         BuilderName = 'SCTA AI ACU Main Factory',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 960,
-        InstanceCount = 2, -- The max number concurrent instances of this builder.
+        InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {240} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
             { MIBC, 'GreaterThanGameTime', {90} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, PLANT * ((categories.CORE * categories.TANK) + (categories.ARM * categories.BOT))} },
-            { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Command',
         BuilderData = {
@@ -89,10 +89,10 @@ BuilderGroup {
         BuilderName = 'SCTA  ACU Energy',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 965,
-        InstanceCount = 2, -- The max number concurrent instances of this builder.
+        InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ENERGYPRODUCTION * categories.STRUCTURE} },
-            { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, categories.ENERGYPRODUCTION * categories.STRUCTURE} },
+            { MIBC, 'LessThanGameTime', {240} }, -- Don't make tanks if we have lots of them.
         },
         BuilderType = 'Command',
         BuilderData = {
@@ -110,9 +110,9 @@ BuilderGroup {
         BuilderName = 'SCTA AI ACU Mex',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 975,
-        InstanceCount = 2, -- The max number concurrent instances of this builder.
+        InstanceCount = 1, -- The max number concurrent instances of this builder.
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {180} }, -- Don't make tanks if we have lots of them.
+            { MIBC, 'LessThanGameTime', {240} }, -- Don't make tanks if we have lots of them.
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 25, -500, 100, 0, 'AntiSurface', 1 }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.MASSEXTRACTION} },
         },
@@ -131,10 +131,10 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Commander AirFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 945,
-        InstanceCount = 2,
+        InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR } }, -- Stop after 10 facs have been built.
-            { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Command',
         BuilderData = {
@@ -191,72 +191,6 @@ BuilderGroup {
                 }
             }
         }
-    },
-    Builder {
-        BuilderName = 'SCTA Commander Assist Gantry Construction',
-        PlatoonTemplate = 'CommanderBuilderSCTA',
-        PlatoonAIPlan = 'ManagerEngineerAssistAI',
-        PriorityFunction = TAPrior.GateBeingBuilt,
-        Priority = 126,
-        InstanceCount = 2,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssistRange = 120,
-                BeingBuiltCategories = {'GATE'},                                                   
-                AssistUntilFinished = true,
-            },
-        },
-        BuilderType = 'ACU',
-    },
-    Builder {
-        BuilderName = 'SCTA CDR Assist Structure',
-        PlatoonTemplate = 'CommanderBuilderSCTA',
-        PlatoonAIPlan = 'ManagerEngineerAssistAI',
-        PriorityFunction = TAPrior.UnitProduction,
-        Priority = 111,
-        InstanceCount = 2,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-        },
-        BuilderType = 'ACU',
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssisteeCategory = 'Engineer',
-                AssistRange = 20,
-                BeingBuiltCategories = {'STRUCTURE'},                                        
-                AssistUntilFinished = true,
-            },
-        },
-    },
-    Builder {
-        BuilderName = 'SCTA CDR Finish Structure',
-        PlatoonTemplate = 'CommanderBuilderSCTA',
-        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 500,
-        InstanceCount = 2,
-        DelayEqualBuildPlattons = {'Unfinished', 2},
-        BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Unfinished' }},
-            { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
-        },
-            BuilderData = {
-                Assist = {
-                    AssistLocation = 'LocationType',
-                    AssisteeType = 'Engineer',
-                    BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
-                    Time = 20,
-                },
-            },
-        BuilderType = 'ACU',
     },
 }
 

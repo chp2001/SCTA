@@ -158,11 +158,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA ACU Naval',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 200,
+        Priority = 400,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {420} },
-            --{ UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},
+            { MIBC, 'GreaterThanGameTime', {300} },
             { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.NAVAL} },
             { UCBC, 'NavalBaseCheck', { } },
@@ -175,39 +174,6 @@ BuilderGroup {
                 BaseTemplate = 'NavalBaseTemplates',
                 ExpansionBase = true,
                 NearMarkerType = 'Naval Area',
-                ExpansionRadius = 25, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
-                LocationRadius = 200,
-                LocationType = 'LocationType',
-                ThreatMin = -1000,
-                ThreatMax = 1000,
-                ThreatRings = 2,
-                ThreatType = 'Naval',
-                BuildStructures = {                    
-                    'T1SeaFactory',
-                }
-            },
-        }
-    },
-    Builder {
-        BuilderName = 'SCTA ACU Defense Naval',
-        PlatoonTemplate = 'CommanderBuilderSCTA',
-        Priority = 200,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {420} },
-            --{ UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},
-            { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.NAVAL} },
-            { UCBC, 'NavalBaseCheck', { } },
-        },
-        BuilderType = 'Command',
-        BuilderData = {
-            Construction = {
-                BuildClose = false,
-                BaseTemplateFile = '/mods/SCTA-master/lua/AI/TAMiscBaseTemplates/NavalBaseTemplates.lua',
-                BaseTemplate = 'NavalBaseTemplates',
-                ExpansionBase = true,
-                NearMarkerType = 'Naval Defensive Point',
                 ExpansionRadius = 25, -- Defines the radius of the builder managers to avoid them intruding on another base if the expansion marker is too close
                 LocationRadius = 200,
                 LocationType = 'LocationType',

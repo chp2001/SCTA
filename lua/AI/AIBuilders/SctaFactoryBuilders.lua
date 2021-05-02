@@ -293,50 +293,6 @@ BuilderConditions = {
         }
     },
     Builder {
-        BuilderName = 'SCTA Engineer Assist Gantry Production',
-        PlatoonTemplate = 'EngineerBuilderSCTAField',
-        Plan = 'ManagerEngineerAssistAI',
-        PriorityFunction = TAPrior.GateBeingBuilt,
-        Priority = 200,
-        InstanceCount = 2,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssistRange = 120,
-                BeingBuiltCategories = {'GATE'},                                                   
-                AssistUntilFinished = true,
-            },
-        },
-        BuilderType = 'FieldTA',
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Assist Gantry',
-        PlatoonTemplate = 'EngineerBuilderSCTAField',
-        Plan = 'ManagerEngineerAssistAI',
-        PriorityFunction = TAPrior.GantryProduction,
-        Priority = 200,
-        InstanceCount = 4,
-        BuilderConditions = {
-            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYQUANTUMGATE}},
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Factory',
-                PermanentAssist = false,
-                BeingBuiltCategories = {'BUILTBYQUANTUMGATE'},                                                       
-                Time = 60,
-            },
-        },
-        BuilderType = 'FieldTA',
-    },
-    Builder {
         BuilderName = 'SCTAAI Gantry Factory',
         PlatoonTemplate = 'EngineerBuilderSCTA23',
         Priority = 150,

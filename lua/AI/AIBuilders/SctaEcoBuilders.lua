@@ -158,7 +158,7 @@ BuilderGroup {
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
-            NumAssistees = 2,
+            NumAssistees = 4,
             Construction = {
                 BuildStructures = {
                     'T1HydroCarbon',
@@ -179,7 +179,8 @@ BuilderGroup {
         BuilderType = 'AirTA',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = false,
+            DesiresAssist = true,
+            NumAssistees = 4,
             Construction = {
                 BuildStructures = {
                     'T1HydroCarbon',
@@ -314,27 +315,6 @@ BuilderGroup {
                 }
             }
         }
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Finish',
-        PlatoonTemplate = 'EngineerBuilderSCTAALL',
-        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 85,
-        InstanceCount = 2,
-        DelayEqualBuildPlattons = {'Unfinished', 2},
-        BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Unfinished' }},
-            { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
-                Time = 20,
-            },
-        },
-        BuilderType = 'NotACU',
     },
     Builder {
         BuilderName = 'SCTAAI MetalMaker',

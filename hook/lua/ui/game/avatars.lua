@@ -726,3 +726,30 @@ function CreateIdleEngineerList(parent, units)
 
     return group
 end
+
+function SetSkinTA(unit)
+    local bp = unit:GetBlueprint().General
+    if unit:GetBlueprint().BlueprintId == 'mas0001' then
+        return
+    elseif bp.FactionName == 'Cybran' then
+        return ConExecute('UI_SetSkin cybran')
+    elseif bp.FactionName == 'Seraphim' then
+       return ConExecute('UI_SetSkin seraphim')
+    elseif bp.FactionName == 'Nomads' then
+        return ConExecute('UI_SetSkin nomads')
+    elseif bp.FactionName == 'CORE' then
+       return ConExecute('UI_SetSkin core')
+    elseif bp.FactionName == 'Aeon' then
+       return ConExecute('UI_SetSkin aeon')
+    elseif bp.FactionName == 'ARM' then
+        return ConExecute('UI_SetSkin arm')
+    else
+        return ConExecute('UI_SetSkin uef')
+    end
+end
+
+TACreateAvater = CreateAvatar
+function CreateAvatar(unit)
+    SetSkinTA(unit)
+   return TACreateAvater(unit)
+end

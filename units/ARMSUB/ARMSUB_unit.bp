@@ -142,7 +142,7 @@ UnitBlueprint {
             CollideFriendly = false,
 	        DamageFriendly = true,
             Damage = 350,
-            DamageType = 'TASpec',
+            DamageType = 'Normal',
             DisplayName = 'ARM_TORPEDO',
             FireTargetLayerCapsTable = {
                 Sub = 'Seabed|Sub|Water',
@@ -173,7 +173,7 @@ UnitBlueprint {
             RackSalvoSize = 1,
             TrackingRadius = 1.15,
             RackSlavedToTurret = false,
-            RateOfFire = 0.2,
+            RateOfFire = 0.33,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

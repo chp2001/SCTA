@@ -64,10 +64,6 @@ UnitBlueprint {
         BuildCostMass = 2200,
         BuildTime = 20172,
     },
-    Footprint = {
-            SizeX = 3,
-            SizeZ = 3,
-        },
     General = {
         Category = 'Defense',
         Classification = 'RULEUC_Weapon',

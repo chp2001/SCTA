@@ -58,7 +58,6 @@ BuilderGroup {
         PriorityFunction = TAPrior.AirProduction,
         Priority = 110,
         BuilderConditions = {
-            { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.SCOUT * categories.NAVAL } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },

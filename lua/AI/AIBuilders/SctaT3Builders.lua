@@ -12,10 +12,9 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT3 HoverTank',
         PlatoonTemplate = 'T3LandHOVERSCTA',
         Priority = 138,
+        PriorityFunction = TAPrior.LandProductionT3Tank,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.8, categories.LAND * categories.DIRECTFIRE - categories.SCOUT,
-            '<', categories.LAND * categories.MOBILE - categories.ENGINEER } }, -- Don't make tanks if we have lots of them.
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Hover',
     },
@@ -23,9 +22,8 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT3 Hover Artillery',
         PlatoonTemplate = 'T3HOVERMISSILESCTA', 
         Priority = 126,
+        PriorityFunction = TAPrior.ProductionT3,
         BuilderConditions = {
-        { UCBC, 'HaveUnitRatio', { 0.33, categories.LAND * categories.SILO * categories.MOBILE - categories.ANTIAIR,
-        '<', categories.MOBILE * categories.LAND - categories.ENGINEER } }, -- Don't make tanks if we have lots of them. },
         { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
     },
         BuilderType = 'Hover',
@@ -34,9 +32,8 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT3 Hover AntiAir',
         PlatoonTemplate = 'T3HOVERAASCTA',
         Priority = 133,
+        PriorityFunction = TAPrior.ProductionT3,
         BuilderConditions = {
-            { UCBC, 'HaveUnitRatio', { 0.33, categories.LAND * categories.ANTIAIR * categories.MOBILE,
-                                       '<', categories.LAND  * categories.MOBILE - categories.ENGINEER } },
          { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
         },
         BuilderType = 'Hover',
@@ -46,7 +43,7 @@ BuilderGroup {
         PlatoonTemplate = 'T3AirFighterSCTA',
         Priority = 140,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
-        { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+        { TAutils, 'EcoManagementTA', { 0.75, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Seaplane',
     },

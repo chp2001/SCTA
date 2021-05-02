@@ -213,7 +213,7 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
             unit.PlatoonHandle = hndl
 
             --if EntityCategoryContains(categories.COMMAND, unit) then
-            --    LOG('*AI DEBUG: ARMY '..self.Brain.Nickname..': Engineer Manager Forming - '..builder.BuilderName..' - Priority: '..builder:GetPriority())
+            --LOG('*AI DEBUG: ARMY '..self.Brain.Nickname..': Engineer Manager Forming - '..builder.BuilderName..' - Priority: '..builder:GetPriority())
             --end
 
             --LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Engineer Manager Forming - ',repr(builder.BuilderName),' - Priority: ', builder:GetPriority())

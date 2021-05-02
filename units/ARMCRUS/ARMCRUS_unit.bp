@@ -229,7 +229,7 @@ UnitBlueprint {
             WeaponCategory = 'AntiNavy',
 	        FiringTolerance = 360,
             Label = 'WEAPON',
-            MaxRadius = 15,
+            MaxRadius = 25,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 3,
@@ -249,7 +249,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.5,
+            RateOfFire = 0.3571428571,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

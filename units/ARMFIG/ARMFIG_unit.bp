@@ -180,7 +180,7 @@ UnitBlueprint {
             TrackingRadius = 1.15,
             Damage = 75,
             DamageRadius = 2,
-            DamageType = 'AntiAir',
+            DamageType = 'TASpec',
             DisplayName = 'ARMVTOL_MISSILE',
             FireTargetLayerCapsTable = {
                 Air = 'Land|Water|Air',
@@ -237,7 +237,7 @@ UnitBlueprint {
             TrackingRadius = 1.15,
             Damage = 75,
             DamageRadius = 2,
-            DamageType = 'AntiAir',
+            DamageType = 'TASpec',
             DisplayName = 'ARMVTOL_MISSILE',
             FireTargetLayerCapsTable = {
                 Air = 'Land|Water|Air',

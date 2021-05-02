@@ -16,4 +16,13 @@ UnitBlueprint {
         BuildCostEnergy = 30000,
         BuildCostMass = 2000,
     },
+    Weapon = {
+        [1] = {
+        },
+        [2] = {
+            DamageType = 'AntiAir',
+        },
+        [3] = {
+        }, 
+    },
 }

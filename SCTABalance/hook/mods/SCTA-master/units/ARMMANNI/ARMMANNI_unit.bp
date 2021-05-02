@@ -23,6 +23,7 @@ UnitBlueprint {
         'BUILTBYTIER3ENGINEER',
         'SORTSTRATEGIC',
         'NEEDMOBILEBUILD',
+        'CQUEMOV',
     },
     Defense = {
         Health = 1500,

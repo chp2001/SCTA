@@ -28,6 +28,7 @@ UnitBlueprint {
         'RECLAIMABLE',
         'TECH1',
         'SORTDEFENSE',
+        'CQUEMOV',
 	    'STRUCTURE',
 	    'DEFENSE',
 	    'DIRECTFIRE',

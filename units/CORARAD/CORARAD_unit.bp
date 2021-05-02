@@ -41,6 +41,7 @@ UnitBlueprint {
         'OVERLAYRADAR',
 	    'CORE',
 	    'SORTINTEL',
+        'CQUEMOV',
     },
     Defense = {
         DamageReduction = 1,   

@@ -32,7 +32,8 @@ UnitBlueprint {
         'OVERLAYANTIAIR',
     'CORE',
 	'STRATEGIC',
-	'SORTDEFENSE',
+    'SORTDEFENSE',
+    'CQUEMOV',
     },
     Defense = {
         ArmorType = 'Structure',

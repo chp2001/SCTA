@@ -33,6 +33,7 @@ UnitBlueprint {
         'OVERLAYSONAR',
         'OVERLAYANTINAVY',
         'SORTDEFENSE',
+        'CQUEMOV',
 	    'ARM',
         'SNIPEMODE',
     },

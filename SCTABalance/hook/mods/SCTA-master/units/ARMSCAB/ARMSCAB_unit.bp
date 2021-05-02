@@ -14,6 +14,7 @@ UnitBlueprint {
         'BUILTBYTIER3ENGINEER',
         'OVERLAYDEFENSE',
         'SORTDEFENSE',
+        'CQUEMOV',
         'NEEDMOBILEBUILD',
         'DEFENSE',
         'RADAR',

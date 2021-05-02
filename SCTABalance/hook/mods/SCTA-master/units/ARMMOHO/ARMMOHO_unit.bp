@@ -5,7 +5,7 @@ UnitBlueprint {
         MaxHealth = 2300,
     },
     Display = {
-        UniformScale = 0.05,
+        UniformScale = 0.06,
     },
     Economy = {
         BuildCostMass = 2300,
@@ -28,6 +28,6 @@ UnitBlueprint {
     SelectionSizeZ = 1.25,
     SelectionThickness = 0.6,
     SizeX = 2,
-    SizeY = 1.4,
+    SizeY = 1.8,
     SizeZ = 2,
 }

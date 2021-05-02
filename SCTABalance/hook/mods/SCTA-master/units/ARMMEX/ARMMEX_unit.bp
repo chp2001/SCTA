@@ -8,12 +8,14 @@ UnitBlueprint {
     Abilities = {
         '<LOC ability_upgradable>Upgradeable',
     },
-  },  
+    UniformScale = 0.14,
+    }, 
       Economy = {
         BuildCostEnergy = 900,
         BuildRate = 60,
         BuildCostMass = 50,
         MaintenanceConsumptionPerSecondEnergy = 2,
+        ProductionPerSecondMass = 2,
         BuildableCategory = {
                'armmass',
         },
@@ -28,7 +30,5 @@ UnitBlueprint {
       LifeBarSize = 1,
     SelectionSizeX = 1.25,
     SelectionSizeZ = 1.25,
-    SizeX = 2,
-    SizeZ = 2,
     SizeY = 1.4,
 }

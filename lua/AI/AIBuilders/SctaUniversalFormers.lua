@@ -4,9 +4,9 @@ local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').GetMOARadii()
-local RAIDER = categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea
 local RAIDAIR = categories.armfig + categories.corveng + categories.GROUNDATTACK
-
+local RAIDER = RAIDAIR + categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIUniversalFormers',
@@ -14,7 +14,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Guard',
         PlatoonTemplate = 'GuardSCTA',
-        PlatoonAIPlan = 'GuardEngineer', -- The platoon template tells the AI what units to include, and how to use them.
+        PlatoonAIPlan = 'GuardEngineer',
+        PriorityFunction = TAPrior.LessThanTime,
         Priority = 100,
         InstanceCount = 6,
         BuilderType = 'Any',
@@ -23,8 +24,8 @@ BuilderGroup {
             LocationType = 'LocationType',
         },        
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {300} },
             { UCBC, 'EngineersNeedGuard', { 'LocationType' } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.MOBILE * categories.ANTIAIR} },
          },
     },
     Builder {
@@ -64,6 +65,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI LAB Interceptor',
         PlatoonTemplate = 'LABAirSCTA', -- The platoon template tells the AI what units to include, and how to use them.
+        PriorityFunction = TAPrior.LessThanTime,
         Priority = 300,
         InstanceCount = 5,
         BuilderType = 'Any',
@@ -74,7 +76,6 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = { 
-            { MIBC, 'LessThanGameTime', {600} },
             { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.ANTIAIR }},	
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, RAIDAIR} },
         },
@@ -93,34 +94,38 @@ BuilderGroup {
         },     
         BuilderConditions = { 
             { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.ANTIAIR }},	
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.BOMBER + RAIDAIR} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.BOMBER + RAIDAIR} },
         },
     },
     Builder {
         BuilderName = 'LV4Kbot',
         PlatoonTemplate = 'T4ExperimentalSCTA',
+        PriorityFunction = TAPrior.GantryProduction,
         Priority = 10000,
         FormRadius = 10000,
         InstanceCount = 2,
         BuilderType = 'Any',
+        BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.EXPERIMENTAL * categories.MOBILE - categories.ENGINEER } },
+         },
         BuilderData = {
             ThreatWeights = {
                 TargetThreatType = 'Commander',
             },
             UseMoveOrder = true,
-            PrioritizedCategories = { 'COMMAND', 'FACTORY -NAVAL', 'EXPERIMENTAL', 'MASSPRODUCTION', 'STRUCTURE -NAVAL' }, # list in order
+            PrioritizedCategories = { 'COMMAND', 'FACTORY -NAVAL', 'EXPERIMENTAL', 'MASSPRODUCTION', 'STRUCTURE -NAVAL' },
         },
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Excess',
         PlatoonTemplate = 'EngineerBuilderSCTA',
+        PriorityFunction = TAPrior.LessThanTime,
         PlatoonAIPlan = 'SCTAReclaimAI',
         FormRadius = 500,
         Priority = 150,
         InstanceCount = 2,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 120 } },
-            { MIBC, 'LessThanGameTime', {480} }, 
+            { MIBC, 'GreaterThanGameTime', { 120 } }, 
             { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},
             { TAutils, 'LessMassStorageMaxTA',  { 0.25}},   
         },
@@ -135,10 +140,10 @@ BuilderGroup {
         BuilderName = 'SCTA Assist Production Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
+        PriorityFunction = TAPrior.AssistProduction,
         Priority = 5,
         InstanceCount = 5,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {600} },
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
@@ -157,10 +162,10 @@ BuilderGroup {
         BuilderName = 'SCTA Assist Unit Production Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
+        PriorityFunction = TAPrior.AssistProduction,
         Priority = 5,
         InstanceCount = 5,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {600} },
             { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.MOBILE }},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
@@ -178,6 +183,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTANukeAI',
         PlatoonTemplate = 'NuclearMissileSCTA',
+        PriorityFunction = TAPrior.GantryProduction,
         Priority = 300,
         BuilderConditions = {
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.NUKE * categories.STRUCTURE * categories.TECH3}},
@@ -188,6 +194,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAntiNukeAI',
         PlatoonTemplate = 'AntiNuclearMissileSCTA',
+        PriorityFunction = TAPrior.GantryProduction,
         Priority = 300,
         BuilderConditions = {
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.ANTIMISSILE * categories.STRUCTURE * categories.TECH3}},

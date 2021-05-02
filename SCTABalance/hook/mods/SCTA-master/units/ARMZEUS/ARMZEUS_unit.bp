@@ -17,7 +17,7 @@ UnitBlueprint {
     'BOT',
     'LAND',
     'ARM',
-    'LASER',
+    'ANTISHIELD',
     },
     Defense = {
     Health = 13000,

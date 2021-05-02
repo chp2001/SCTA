@@ -34,7 +34,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
 	    'CORE',
         'SNIPEMODE',
-        'LASER',
+        'ANTISHIELD',
     },
     Defense = {
         DamageModifier = 0.13,

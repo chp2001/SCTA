@@ -49,7 +49,6 @@ UnitBlueprint {
         'OVERLAYANTIAIR',        
         'CORE',
         'SNIPEMODE',
-        'LASER',
     },
     Defense = {
         AirThreatLevel = 0,

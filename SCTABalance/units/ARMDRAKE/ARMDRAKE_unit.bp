@@ -47,7 +47,6 @@ UnitBlueprint {
         'ARM',
         'BUILTBYQUANTUMGATE',
         'SNIPEMODE',
-        'LASER',
     },
     Defense = {
         AirThreatLevel = 0,

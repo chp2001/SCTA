@@ -1,6 +1,7 @@
 local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
 local MoreProduct = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsInCategoryBeingBuilt
 local LessProduct = import('/lua/editor/UnitCountBuildConditions.lua').HaveLessThanUnitsInCategoryBeingBuilt
+local LessTime = import('/lua/editor/MiscBuildConditions.lua').LessThanGameTime
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
@@ -49,6 +50,16 @@ UnitProduction = function(self, aiBrain)
         return 111
     elseif Factory(aiBrain,  12, PLANT) then 
         return 110
+    else
+        return 0
+    end
+end
+
+AssistProduction = function(self, aiBrain)
+    if Factory(aiBrain,  12, PLANT) then 
+        return 15
+    elseif Factory(aiBrain,  0, LAB) then 
+        return 10
     else
         return 0
     end
@@ -221,5 +232,13 @@ NothingBuilt = function(self, aiBrain)
         return 125
     else
         return 150
+    end
+end
+
+LessThanTime = function(self, aiBrain)
+    if LessTime(aiBrain,  480) then 
+        return 250
+    else
+        return 0
     end
 end

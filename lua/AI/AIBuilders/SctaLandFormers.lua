@@ -23,7 +23,7 @@ BuilderGroup {
             AntiAir = true,
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.ANTIAIR} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.MOBILE * categories.ANTIAIR} },
          },
     },
     Builder {
@@ -47,12 +47,13 @@ BuilderGroup {
         },        
         BuilderConditions = {
             { TAutils, 'GreaterEnergyStorageMaxTA', { 0.2 } },
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0,  categories.LASER * categories.MOBILE} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1,  categories.ANTISHIELD * categories.MOBILE} },
         },
     },
+---Defensive/MidGame Platoons
     Builder {
-        BuilderName = 'SCTAAI Land Attack Early',
-        PlatoonTemplate = 'LandAttackSCTAEarly', -- The platoon template tells the AI what units to include, and how to use them.
+        BuilderName = 'SCTAAI Strike Force Early',
+        PlatoonTemplate = 'StrikeForceSCTAEarly', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 100,
         InstanceCount = 30,
         PriorityFunction = TAPrior.UnitProductionT1,
@@ -70,9 +71,47 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND - categories.ENGINEER}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4, categories.MOBILE * categories.LAND - categories.ENGINEER}},
         },
     },
+    Builder {
+        BuilderName = 'SCTAAI Strike Mid',
+        PlatoonTemplate = 'StrikeForceSCTAMid', -- The platoon template tells the AI what units to include, and how to use them.
+        PriorityFunction = TAPrior.UnitProduction,
+        Priority = 150,
+        InstanceCount = 100,
+        BuilderType = 'Any',
+        BuilderData = {
+            Small = true,
+            NeverGuardBases = false,
+            NeverGuardEngineers = false,
+            UseFormation = 'AttackFormation',
+        },        
+        BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 9, categories.MOBILE * categories.LAND - categories.ENGINEER}},
+        },
+    },
+    Builder {
+        BuilderName = 'SCTAAI Strike Endgame',
+        PlatoonTemplate = 'StrikeForceSCTAEndgame', -- The platoon template tells the AI what units to include, and how to use them.
+        PriorityFunction = TAPrior.StructureProductionT2,
+        Priority = 250,
+        InstanceCount = 50,
+        FormRadius = 1000,
+        BuilderType = 'Any',
+        BuilderData = {
+            ThreatSupport = 75,
+            NeverGuardBases = false,
+            NeverGuardEngineers = false,
+            UseFormation = 'AttackFormation',
+            LocationType = 'LocationType',
+            UseFormation = 'AttackFormation',
+        },        
+        BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 14, categories.MOBILE * categories.LAND - categories.ENGINEER}},
+        },
+    },
+    ----AggressivePlatoons
     Builder {
         BuilderName = 'SCTAAI Missile Hunt',
         PlatoonTemplate = 'LandRocketAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
@@ -92,7 +131,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND * ( categories.SILO + categories.ARTILLERY)} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.MOBILE * categories.LAND * ( categories.SILO + categories.ARTILLERY)} },
          },
     },
     Builder {
@@ -114,26 +153,9 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND - categories.ENGINEER}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4, categories.MOBILE * categories.LAND - categories.ENGINEER}},
             { MIBC, 'GreaterThanGameTime', {300} },
          },
-    },
-    Builder {
-        BuilderName = 'SCTAAI Strike Mid',
-        PlatoonTemplate = 'StrikeForceSCTAMid', -- The platoon template tells the AI what units to include, and how to use them.
-        PriorityFunction = TAPrior.UnitProduction,
-        Priority = 150,
-        InstanceCount = 100,
-        BuilderType = 'Any',
-        BuilderData = {
-            Small = true,
-            NeverGuardBases = false,
-            NeverGuardEngineers = false,
-            UseFormation = 'AttackFormation',
-        },        
-        BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND - categories.ENGINEER}},
-        },
     },
     Builder {
         BuilderName = 'SCTAAI Land Attack Endgame',
@@ -155,27 +177,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND - categories.ENGINEER}},
-        },
-    },
-    Builder {
-        BuilderName = 'SCTAAI Strike Endgame',
-        PlatoonTemplate = 'StrikeForceSCTAEndgame', -- The platoon template tells the AI what units to include, and how to use them.
-        PriorityFunction = TAPrior.StructureProductionT2,
-        Priority = 250,
-        InstanceCount = 50,
-        FormRadius = 1000,
-        BuilderType = 'Any',
-        BuilderData = {
-            ThreatSupport = 75,
-            NeverGuardBases = false,
-            NeverGuardEngineers = false,
-            UseFormation = 'AttackFormation',
-            LocationType = 'LocationType',
-            UseFormation = 'AttackFormation',
-        },        
-        BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND - categories.ENGINEER}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 14, categories.MOBILE * categories.LAND - categories.ENGINEER}},
         },
     },
     Builder {

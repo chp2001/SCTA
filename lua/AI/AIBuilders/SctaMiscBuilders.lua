@@ -146,7 +146,7 @@ BuilderGroup {
         Priority = 50,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LASER * categories.TECH1 - categories.MOBILE } }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ANTISHIELD * categories.TECH1 - categories.MOBILE } }, 
             { MIBC, 'GreaterThanGameTime', {240} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
         },
@@ -179,7 +179,7 @@ BuilderGroup {
         InstanceCount = 2,
         PriorityFunction = TAPrior.TechEnergyExist,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.LASER * categories.TECH2 - categories.MOBILE} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.ANTISHIELD * categories.TECH2 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}}, 
         },
         BuilderType = 'NotACU',
@@ -203,85 +203,5 @@ BuilderGroup {
                 },
             },
         }
-    },
-    Builder {
-        BuilderName = 'SCTA PGen Field Assist',
-        PlatoonTemplate = 'EngineerBuilderSCTAField',
-        PlatoonAIPlan = 'ManagerEngineerAssistAI',
-        PriorityFunction = TAPrior.EnergyBeingBuilt,
-        Priority = 75,
-        InstanceCount = 2,
-        BuilderConditions = {
-            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
-        },
-        BuilderType = 'FieldTA',
-        BuilderData = {
-            Assist = {
-                AssisteeType = 'Engineer',
-                AssistLocation = 'LocationType',
-                BeingBuiltCategories = {'TECH2 ENERGYPRODUCTION STRUCTURE, TECH3 ENERGYPRODUCTION STRUCTURE,'},
-                Time = 20,
-                AssistRange = 120,
-                AssistUntilFinished = true,
-            },
-        }
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Reclaim Field',
-        PlatoonTemplate = 'EngineerBuilderSCTAField',
-        PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 200,
-        InstanceCount = 5,
-        BuilderConditions = {
-            { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},
-        },
-        BuilderData = {
-            Terrain = true,
-            LocationType = 'LocationType',
-        },
-        BuilderType = 'FieldTA',
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Field Finish',
-        PlatoonTemplate = 'EngineerBuilderSCTAField',
-        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 125,
-        InstanceCount = 2,
-        DelayEqualBuildPlattons = {'Unfinished', 2},
-        BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Unfinished' }},
-            { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
-                Time = 20,
-            },
-        },
-        BuilderType = 'FieldTA',
-    },
-    Builder {
-        BuilderName = 'SCTA Assist Production Field',
-        PlatoonTemplate = 'EngineerBuilderSCTAField',
-        PlatoonAIPlan = 'ManagerEngineerAssistAI',
-        PriorityFunction = TAPrior.UnitProduction,
-        Priority = 100,
-        InstanceCount = 5,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE * (categories.TECH2 + categories.TECH3)}},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssistRange = 120,
-                BeingBuiltCategories = {'STRUCTURE TECH2, STRUCTURE TECH3,'},                                        
-                AssistUntilFinished = true,
-            },
-        },
-        BuilderType = 'FieldTA',
     },
 }

@@ -18,7 +18,6 @@ UnitBlueprint {
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',
         'ARM',
-
     },
     Defense = {
         Health = 2000,

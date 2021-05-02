@@ -16,7 +16,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'ARM',
         'SNIPER',
-        'LASER',
+        'ANTISHIELD',
         'BUILTBYTIER1FACTORY',
         'BUILTBYTIER2COMMANDER',
         'BUILTBYTIER1ENGINEER',

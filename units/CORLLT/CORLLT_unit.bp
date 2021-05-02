@@ -40,7 +40,7 @@ UnitBlueprint {
 	'CORE',
 	'SORTDEFENSE',
     'SNIPEMODE',
-    'LASER',
+    'ANTISHIELD',
     },
     Defense = {
         ArmorType = 'Structure',

@@ -139,7 +139,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	        DamageFriendly = true,
-            Damage = 150,
+            Damage = 360,
             DamageType = 'Normal',
             DisplayName = 'CORE_TORPEDO',
             FireTargetLayerCapsTable = {
@@ -176,7 +176,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.5,
+            RateOfFire = 0.33,
             TrackingRadius = 1.15,
             TargetCheckInterval = 1,
             TargetPriorities = {

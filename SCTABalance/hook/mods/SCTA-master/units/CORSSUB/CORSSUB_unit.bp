@@ -36,7 +36,7 @@ Display = {
     Economy = {
         BuildCostEnergy = 20000,
         BuildCostMass = 4000,
-        MaintenanceConsumptionPerSecondEnergy = 10,
+        MaintenanceConsumptionPerSecondEnergy = 5,
     },
     SelectionSizeX = 3,
     SelectionSizeZ = 3,

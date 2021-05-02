@@ -85,14 +85,4 @@
         'TASpec 0.3',
         'TacticalMissile 0.55',
     },
-
-    { 
-    # Armor Type Name
-    'Ship',
-
-    # Armor Definition
-    'Normal 1.0',
-    'AntiAir 0.05',
-    'TASpec 1.0',
-},
 }

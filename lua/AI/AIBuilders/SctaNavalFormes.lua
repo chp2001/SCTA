@@ -139,7 +139,6 @@ BuilderGroup {
         InstanceCount = 200,
         BuilderType = 'Any',     
         BuilderConditions = { 
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.AIR * categories.ANTIAIR * (categories.TECH1 + categories.TECH3) - categories.BOMBER} },
         },
     },
     Builder {

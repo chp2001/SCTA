@@ -49,7 +49,6 @@ BuilderGroup {
         InstanceCount = 200,
         BuilderType = 'Any',     
         BuilderConditions = { 
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.AIR * categories.ANTIAIR * (categories.TECH1 + categories.TECH3) - categories.BOMBER} },
         },
     },
     Builder {
@@ -81,7 +80,6 @@ BuilderGroup {
             Energy = true,
         },        
         BuilderConditions = { 
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.AIR * categories.ANTIAIR - categories.BOMBER - categories.GROUNDATTACK} }
         },
     },
 }

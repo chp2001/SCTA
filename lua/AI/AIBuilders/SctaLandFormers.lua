@@ -108,7 +108,6 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 14, categories.MOBILE * categories.LAND - categories.ENGINEER}},
         },
     },
     ----AggressivePlatoons
@@ -177,7 +176,6 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 14, categories.MOBILE * categories.LAND - categories.ENGINEER}},
         },
     },
     Builder {

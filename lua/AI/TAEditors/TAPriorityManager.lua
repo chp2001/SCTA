@@ -101,7 +101,7 @@ EngineerProduction = function(self, aiBrain)
     elseif Factory(aiBrain,  0, LAB) then 
         return 10
     else
-        return 101
+        return 120
     end
 end
 
@@ -183,6 +183,22 @@ end
 GateBeingBuilt = function(self, aiBrain)
     if MoreProduct(aiBrain,  0, categories.GATE) then 
         return 125
+    else
+        return 0
+    end
+end
+
+HydroBeingBuilt = function(self, aiBrain)
+    if MoreProduct(aiBrain,  0, categories.HYDROCARBON) then 
+        return 300
+    else
+        return 0
+    end
+end
+
+HydroBeingBuiltACU = function(self, aiBrain)
+    if MoreProduct(aiBrain,  0, categories.HYDROCARBON) then 
+        return 975
     else
         return 0
     end

@@ -391,15 +391,7 @@ TAUnderWaterProjectile = Class(TADepthCharges) {
 
     OnCreate = function(self, inWater)
         TADepthCharges.OnCreate(self, inWater)
-		self.TrackTime = self:GetBlueprint().Physics.TrackTime
 		self:SetCollisionShape('Sphere', 0, 0, 0, 1)
-		self:ForkThread( self.TrackingThread, self )
 	end,
 
-
-	TrackingThread = function(self)
-		self:TrackTarget(false)
-		WaitSeconds(self.TrackTime)
-		self:TrackTarget(true)
-	end,
 }

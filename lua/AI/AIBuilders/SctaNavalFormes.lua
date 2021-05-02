@@ -9,11 +9,35 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Scout Ships',
         PlatoonTemplate = 'SCTAPatrolBoatAttack',
-        Priority = 100,
-        InstanceCount = 20,
+        Priority = 150,
+        InstanceCount = 4,
         BuilderType = 'Any',
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.SCOUT } },
+         },
+         BuilderData = {
+            UseFormation = 'AttackFormation',
+            ThreatWeights = {
+                IgnoreStrongerTargetsRatio = 100.0,  #DUNCAN - uncommented, was 100
+                PrimaryThreatTargetType = 'Naval',
+                SecondaryThreatTargetType = 'Economy',
+                SecondaryThreatWeight = 0.1,
+                WeakAttackThreatWeight = 1,
+                VeryNearThreatWeight = 10,
+                NearThreatWeight = 5,
+                MidThreatWeight = 1,
+                FarThreatWeight = 1,
+            },
+        },
+    },
+    Builder {
+        BuilderName = 'SCTA Hunt Ships',
+        PlatoonTemplate = 'SCTAPatrolBoatHunt',
+        Priority = 100,
+        InstanceCount = 25,
+        BuilderType = 'Any',
+        BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.NAVAL * categories.SCOUT } },
          },
          BuilderData = {
             UseFormation = 'AttackFormation',
@@ -75,7 +99,7 @@ BuilderGroup {
             },
         },
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.MOBILE - categories.ENGINEER } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.NAVAL * categories.MOBILE - categories.ENGINEER } },
         },
     },
     Builder {
@@ -100,7 +124,7 @@ BuilderGroup {
             },
         },
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.MOBILE - categories.ENGINEER} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.MOBILE * (categories.TECH2 + categories.TECH3) - categories.ENGINEER} },
         },
     },
     Builder {

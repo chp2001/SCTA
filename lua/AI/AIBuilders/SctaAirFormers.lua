@@ -13,7 +13,7 @@ BuilderGroup {
         InstanceCount = 10,
         BuilderType = 'Any',
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0,  categories.SCOUT * categories.TECH1} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0,  categories.SCOUT * categories.TECH1 * categories.AIR} },
          },
     },
     Builder {
@@ -24,7 +24,7 @@ BuilderGroup {
         InstanceCount = 10,
         BuilderType = 'Any',
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.OVERLAYOMNI * categories.AIR } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.OVERLAYOMNI * categories.AIR * categories.MOBILE} },
          },
     },
     Builder {
@@ -36,6 +36,7 @@ BuilderGroup {
         InstanceCount = 50,
         BuilderType = 'Any',        
         BuilderConditions = { 
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.BOMBER} },
         },
     },
     Builder {
@@ -48,6 +49,7 @@ BuilderGroup {
         InstanceCount = 200,
         BuilderType = 'Any',     
         BuilderConditions = { 
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.AIR * categories.ANTIAIR * (categories.TECH1 + categories.TECH3) - categories.BOMBER} },
         },
     },
     Builder {
@@ -63,6 +65,7 @@ BuilderGroup {
             Energy = true,
         },        
         BuilderConditions = { 
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.AIR * (((categories.ANTIAIR + categories.GROUNDATTACK) * categories.TECH2) + categories.BOMBER)} },
         },
     },
     Builder {
@@ -78,6 +81,7 @@ BuilderGroup {
             Energy = true,
         },        
         BuilderConditions = { 
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.AIR * categories.ANTIAIR - categories.BOMBER - categories.GROUNDATTACK} }
         },
     },
 }

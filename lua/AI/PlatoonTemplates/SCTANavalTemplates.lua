@@ -10,9 +10,17 @@ NAVY = categories.NAVAL * categories.MOBILE
 
 PlatoonTemplate {
     Name = 'SCTAPatrolBoatAttack',
+    Plan = 'ScoutingAI',
+    GlobalSquads = {
+        { NAVY * categories.SCOUT, 1, 1, 'Attack', 'GrowthFormation' },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'SCTAPatrolBoatHunt',
     Plan = 'NavalHuntSCTAAI',
     GlobalSquads = {
-        { NAVY * categories.SCOUT, 1, 2, 'Attack', 'GrowthFormation' },
+        { NAVY * categories.SCOUT, 2, 10, 'Attack', 'GrowthFormation' },
     }
 }
 

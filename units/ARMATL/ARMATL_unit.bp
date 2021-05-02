@@ -119,7 +119,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             Damage = 1000,
-            DamageType = 'TASpec',
+            DamageType = 'Normal',
             DisplayName = 'ARMATL_TORPEDO',
             FireTargetLayerCapsTable = {
                 Water = 'Seabed|Sub|Water',

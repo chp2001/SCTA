@@ -22,9 +22,21 @@ Display = {
         Health = 4500,
         MaxHealth = 4500,
     },
+    General = {
+        OrderOverrides = {
+            RULEUTC_StealthToggle = {
+                bitmapId = 'stealth-personal',
+                helpText = 'toggle_stealth_personal',
+            },
+        },
+    ToggleCaps = {
+        RULEUTC_StealthToggle = true, 
+        },
+    },
     Economy = {
         BuildCostEnergy = 20000,
         BuildCostMass = 4000,
+        MaintenanceConsumptionPerSecondEnergy = 10,
     },
     SelectionSizeX = 3,
     SelectionSizeZ = 3,
@@ -33,6 +45,9 @@ Display = {
     SizeY = 2,
     SizeZ = 6,
     Intel = {
+        SonarStealth = true,
+        RadarStealth = true,
+        TAIntel = true,
         SonarRadius = 60,
         VisionRadius = 15,
     },

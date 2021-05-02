@@ -18,14 +18,12 @@ ARMSCRAM = Class(TASeaCounter) {
 
 	OnIntelDisabled = function(self)
 		self.Spinners.fork:SetSpeed(0)
-		self:PlayUnitSound('Deactivate')
 	TASeaCounter.OnIntelDisabled(self)
 end,
 
 
 OnIntelEnabled = function(self)
 	self.Spinners.fork:SetSpeed(100)
-	self:PlayUnitSound('Activate')
 	TASeaCounter.OnIntelEnabled(self)
 end,
 }

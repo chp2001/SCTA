@@ -217,7 +217,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamagesFriendly = true,
-            Damage = 70,
+            Damage = 100,
             DamageType = 'Normal',
             DisplayName = 'ARMDEPTHCHARGE',
             FireTargetLayerCapsTable = {
@@ -227,7 +227,7 @@ UnitBlueprint {
             WeaponCategory = 'AntiNavy',
 	        FiringTolerance = 360,
             Label = 'WEAPON',
-            MaxRadius = 10,
+            MaxRadius = 15,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 3,
@@ -247,7 +247,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.3571428571,
+            RateOfFire = 0.5,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',

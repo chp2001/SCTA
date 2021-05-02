@@ -32,7 +32,6 @@ UnitBlueprint {
 	    'DEFENSE',
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
-        'LASER',
 	    'CORE',
     },
     Defense = {

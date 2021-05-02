@@ -4,8 +4,8 @@ local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').GetMOARadii()
-local RAIDER = categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea + RAIDAIR
 local RAIDAIR = categories.armfig + categories.corveng + categories.GROUNDATTACK
+local RAIDER = RAIDAIR + categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea
 local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
 BuilderGroup {
@@ -113,7 +113,7 @@ BuilderGroup {
                 TargetThreatType = 'Commander',
             },
             UseMoveOrder = true,
-            PrioritizedCategories = { 'COMMAND', 'FACTORY -NAVAL', 'EXPERIMENTAL', 'MASSPRODUCTION', 'STRUCTURE -NAVAL' }, # list in order
+            PrioritizedCategories = { 'COMMAND', 'FACTORY -NAVAL', 'EXPERIMENTAL', 'MASSPRODUCTION', 'STRUCTURE -NAVAL' },
         },
     },
     Builder {
@@ -140,7 +140,7 @@ BuilderGroup {
         BuilderName = 'SCTA Assist Production Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
-        PriorityFunction = TAPrior.Assisting,
+        PriorityFunction = TAPrior.AssistProduction,
         Priority = 5,
         InstanceCount = 5,
         BuilderConditions = {

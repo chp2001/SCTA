@@ -19,7 +19,7 @@ UnitBlueprint {
     'OVERLAYDIRECTFIRE',
     'ARM',
     'SORTDEFENSE',
-    'LASER',
+    'ANTISHIELD',
     'SNIPEMODE',
     },
     Defense = {

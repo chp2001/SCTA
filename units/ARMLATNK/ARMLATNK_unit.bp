@@ -40,7 +40,7 @@ UnitBlueprint {
 	    'OVERLAYANTIAIR',
         'ARM',
         'TANK',
-        'LASER',
+        'ANTISHIELD',
     },
     Defense = {
         ArmorType = 'Normal',

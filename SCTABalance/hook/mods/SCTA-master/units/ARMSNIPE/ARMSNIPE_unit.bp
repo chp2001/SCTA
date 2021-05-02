@@ -12,7 +12,7 @@ UnitBlueprint {
         'ARM',
         'BOT',	
         'SNIPER',
-        'LASER',
+        'ANTISHIELD',
     },
     Defense = {
         Health = 1000,

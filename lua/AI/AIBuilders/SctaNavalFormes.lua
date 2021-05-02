@@ -136,6 +136,7 @@ BuilderGroup {
         InstanceCount = 200,
         BuilderType = 'Any',     
         BuilderConditions = { 
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.AIR * categories.ANTIAIR * (categories.TECH1 + categories.TECH3) - categories.BOMBER} },
         },
     },
     Builder {
@@ -154,5 +155,27 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.HOVER} },
          },
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Finish Navy',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
+        Priority = 85,
+        InstanceCount = 2,
+        DelayEqualBuildPlattons = {'Unfinished', 2},
+        BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Unfinished' }},
+            { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
+        },
+        BuilderData = {
+            Assist = {
+                BeingBuiltCategories = {'STRUCTURE'},
+                AssistLocation = 'LocationType',
+                AssistUntilFinished = true,
+                AssisteeType = 'Engineer',
+                Time = 20,
+            },
+        },
+        BuilderType = 'Any',
     },
 }

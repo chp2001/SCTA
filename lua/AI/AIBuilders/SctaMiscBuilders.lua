@@ -146,7 +146,7 @@ BuilderGroup {
         Priority = 50,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LASER * categories.TECH1 - categories.MOBILE } }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ANTISHIELD * categories.TECH1 - categories.MOBILE } }, 
             { MIBC, 'GreaterThanGameTime', {240} },
             { EBC, 'GreaterThanEconStorageRatio', { 0.25, 0.5}},
         },
@@ -179,7 +179,7 @@ BuilderGroup {
         InstanceCount = 2,
         PriorityFunction = TAPrior.TechEnergyExist,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.LASER * categories.TECH2 - categories.MOBILE} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.ANTISHIELD * categories.TECH2 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}}, 
         },
         BuilderType = 'NotACU',

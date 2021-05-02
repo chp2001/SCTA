@@ -47,7 +47,7 @@ BuilderGroup {
         },        
         BuilderConditions = {
             { TAutils, 'GreaterEnergyStorageMaxTA', { 0.2 } },
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1,  categories.LASER * categories.MOBILE} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1,  categories.ANTISHIELD * categories.MOBILE} },
         },
     },
 ---Defensive/MidGame Platoons

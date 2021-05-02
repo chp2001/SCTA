@@ -20,6 +20,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA T1 Naval Factory Builder',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        PriorityFunction = TAPrior.FactoryProductionT1,
         Priority = 115,
         InstanceCount = 1,
         BuilderConditions = { 
@@ -68,10 +69,10 @@ BuilderGroup {
         Priority = 141,
         InstanceCount = 1,
         BuilderConditions = {
+            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Sea' } },
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},		
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
             { TASlow,   'TAAttackNaval', {true}},
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'SeaTA',
         BuilderData = {
@@ -88,6 +89,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T3AirFactory Naval',
         PlatoonTemplate = 'EngineerBuilderSCTANaval2',
         Priority = 135,
+        PriorityFunction = TAPrior.ProductionT3,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
@@ -111,6 +113,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T3LAND Hover Factory Naval',
         PlatoonTemplate = 'EngineerBuilderSCTANaval2',
         Priority = 150,
+        PriorityFunction = TAPrior.ProductionT3,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
@@ -284,7 +287,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.TechEnergyExist,
         InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LASER * categories.TECH2 - categories.MOBILE} }, 
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ANTISHIELD * categories.TECH2 - categories.MOBILE} }, 
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}}, 
         },
         BuilderType = 'SeaTA',
@@ -312,27 +315,5 @@ BuilderGroup {
                 },
             },
         }
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Finish Navy',
-        PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
-        Priority = 85,
-        InstanceCount = 2,
-        DelayEqualBuildPlattons = {'Unfinished', 2},
-        BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Unfinished' }},
-            { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
-        },
-        BuilderData = {
-            Assist = {
-                BeingBuiltCategories = {'STRUCTURE'},
-                AssistLocation = 'LocationType',
-                AssistUntilFinished = true,
-                AssisteeType = 'Engineer',
-                Time = 20,
-            },
-        },
-        BuilderType = 'SeaTA',
     },
 }

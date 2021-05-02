@@ -44,6 +44,7 @@ UnitBlueprint {
         'OVERLAYRADAR',
 	    'ARM',
 	    'SORTINTEL',
+        'CQUEMOV',
     },
     Defense = {
         ArmorType = 'Structure',

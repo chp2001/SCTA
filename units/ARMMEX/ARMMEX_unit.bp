@@ -44,6 +44,7 @@ UnitBlueprint {
         'ECONOMIC',
         'SORTECONOMY',
 	    'ARM',
+        'CQUEMOV',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -70,8 +71,12 @@ UnitBlueprint {
         BuildCostEnergy = 521,
         BuildCostMass = 50,
         BuildTime = 1800,
-        MaintenanceConsumptionPerSecondEnergy = 3,
-        ProductionPerSecondMass = 2.2,
+        MaintenanceConsumptionPerSecondEnergy = 2,
+        ProductionPerSecondMass = 1,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
     },
     General = {
         Category = 'Economy',

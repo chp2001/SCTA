@@ -13,6 +13,7 @@ UnitBlueprint {
         'STEALTHFIELD',
         'OVERLAYCOUNTERINTEL',        
         'NEEDMOBILEBUILD',
+        'CQUEMOV',
         'DEFENSIVEBOAT',
         'SORTINTEL',
         'ARM',

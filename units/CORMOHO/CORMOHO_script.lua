@@ -31,6 +31,9 @@ CORMOHO = Class(TAMass) {
 		TAMass.OnProductionPaused(self)			
 		self.Spinners.dingle1:SetGoal(0)
 		self.Spinners.dingle1:SetSpeed(120)
+
+		self.Spinners.arms:SetGoal(0)
+		self.Spinners.arms:SetSpeed(120)
 		--TURN dingle2 to y-axis <0> SPEED <120.02>;
 		self.Spinners.dingle2:SetGoal(0)
 		self.Spinners.dingle2:SetSpeed(120)
@@ -50,7 +53,8 @@ CORMOHO = Class(TAMass) {
 				--SPIN dingle1 around y-axis  SPEED spinspeed;
 		self.Spinners.dingle1:ClearGoal()
 		self.Spinners.dingle1:SetSpeed(self:GetProductionPerSecondMass() * 27)
-		
+		self.Spinners.arms:ClearGoal()
+		self.Spinners.arms:SetSpeed(self:GetProductionPerSecondMass() * 27)
 				--SPIN dingle2 around y-axis  SPEED spinspeed;
 		self.Spinners.dingle2:ClearGoal()
 		self.Spinners.dingle2:SetSpeed(self:GetProductionPerSecondMass() * 27)

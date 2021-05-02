@@ -33,6 +33,7 @@ UnitBlueprint {
 	    'CORE',
 	    'STRATEGIC',
         'SORTDEFENSE',
+        'CQUEMOV',
         'SNIPEMODE',
     },
     Defense = {

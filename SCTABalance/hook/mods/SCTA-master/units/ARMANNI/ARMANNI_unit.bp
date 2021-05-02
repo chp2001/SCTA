@@ -19,6 +19,7 @@ UnitBlueprint {
     'OVERLAYDIRECTFIRE',
     'ARM',
     'SORTDEFENSE',
+    'CQUEMOV',
     'ANTISHIELD',
     'SNIPEMODE',
     },

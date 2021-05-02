@@ -17,6 +17,7 @@ UnitBlueprint {
 	    'CORE',
 	    'SONAR',
 	    'SORTINTEL',
+        'CQUEMOV',
     },
     Defense = {
         Health = 150,

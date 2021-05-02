@@ -14,6 +14,7 @@ UnitBlueprint {
         'ANTIMISSILE',
         'OVERLAYDEFENSE',
         'SORTDEFENSE',
+        'CQUEMOV',
         'NEEDMOBILEBUILD',
         'DEFENSE',
         'RADAR',

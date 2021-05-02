@@ -11,6 +11,7 @@ UnitBlueprint {
         'RADAR',
         'BUILTBYTIER3ENGINEER',
         'NEEDMOBILEBUILD',
+        'CQUEMOV',
         'STEALTHFIELD',    
         'OVERLAYRADAR',
         'OVERLAYCOUNTERINTEL',

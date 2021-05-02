@@ -33,6 +33,7 @@ UnitBlueprint {
 	'ARM',
     'STRATEGIC',
     'SORTDEFENSE',
+    'CQUEMOV',
     },
     Defense = {
         ArmorType = 'Structure',

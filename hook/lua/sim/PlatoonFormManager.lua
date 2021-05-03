@@ -21,7 +21,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager, BuilderManager) {
         for _,v in builderTypes do
 			self:AddBuilderType(v)
 		end]]
-        local builderTypes = {'Air', 'Land', 'Sea', 'Structure', 'Engineer'}
+        local builderTypes = {'Air', 'Land', 'Sea', 'Raid',  'RaidAir', 'Scout', 'Structure', 'Engineer', 'Command', 'Field'}
         for _,v in builderTypes do
 			self:AddBuilderType(v)
 		end

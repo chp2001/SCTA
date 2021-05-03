@@ -137,17 +137,17 @@ BuilderGroup {
         FormRadius = 500,
         PlatoonAddBehaviors = { 'AirUnitRefit' },                              
         InstanceCount = 200,
-        BuilderType = 'Sea',     
+        BuilderType = 'Air',     
         BuilderConditions = { 
         },
     },
     Builder {
         BuilderName = 'SCTA Hover Strike',
         PlatoonTemplate = 'StrikeForceSCTAHover', -- The platoon template tells the AI what units to include, and how to use them.
-        PriorityFunction = TAPrior.UnitProduction,
+        PriorityFunction = TAPrior.ProductionT3,
         Priority = 120,
         InstanceCount = 25,
-        BuilderType = 'Sea',
+        BuilderType = 'Land',
         BuilderData = {
             Small = true,
             NeverGuardBases = false,
@@ -178,7 +178,7 @@ BuilderGroup {
                 Time = 20,
             },
         },
-        BuilderType = 'Sea',
+        BuilderType = 'Engineer',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Energy Naval',
@@ -196,6 +196,6 @@ BuilderGroup {
             Reclaim = {'cortide, armtide,'},
             ReclaimTime = 30,
         },
-        BuilderType = 'Sea',
+        BuilderType = 'Engineer',
     },
 }

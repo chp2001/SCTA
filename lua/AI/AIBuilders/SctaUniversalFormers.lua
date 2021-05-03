@@ -18,7 +18,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.LessThanTime,
         Priority = 100,
         InstanceCount = 6,
-        BuilderType = 'Land',
+        BuilderType = 'Scout',
         BuilderData = {
             NeverGuardBases = true,
             LocationType = 'LocationType',
@@ -33,7 +33,7 @@ BuilderGroup {
         PlatoonTemplate = 'StrikeForceSCTATerrain', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 200,
         InstanceCount = 2,
-        BuilderType = 'Land',
+        BuilderType = 'Scout',
         BuilderData = {
             NeverGuardBases = true,
             NeverGuardEngineers = true,
@@ -50,7 +50,7 @@ BuilderGroup {
         PlatoonTemplate = 'LABSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 300,
         InstanceCount = 5,
-        BuilderType = 'Land',
+        BuilderType = 'Raid',
         BuilderData = {
             Lab = true,
             NeverGuardBases = true,
@@ -68,7 +68,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.LessThanTime,
         Priority = 300,
         InstanceCount = 5,
-        BuilderType = 'Air',
+        BuilderType = 'RaidAir',
         BuilderData = {
             Lab = true,
             NeverGuardBases = true,
@@ -85,7 +85,7 @@ BuilderGroup {
         PlatoonTemplate = 'AirHuntAISCTA',
         Priority = 300,
         InstanceCount = 2,
-        BuilderType = 'Air', 
+        BuilderType = 'RaidAir', 
         BuilderData = {
             Lab = true,
             NeverGuardBases = true,
@@ -104,7 +104,7 @@ BuilderGroup {
         Priority = 10000,
         FormRadius = 10000,
         InstanceCount = 2,
-        BuilderType = 'Land',
+        BuilderType = 'Raid',
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.EXPERIMENTAL * categories.MOBILE - categories.ENGINEER } },
          },

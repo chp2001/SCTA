@@ -11,7 +11,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1AirScoutFormSCTA',
         Priority = 100,
         InstanceCount = 10,
-        BuilderType = 'Air',
+        BuilderType = 'Scout',
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0,  categories.SCOUT * categories.TECH1 * categories.AIR} },
          },
@@ -22,7 +22,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.ProductionT3,
         Priority = 125,
         InstanceCount = 10,
-        BuilderType = 'Air',
+        BuilderType = 'Scout',
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.OVERLAYOMNI * categories.AIR * categories.MOBILE} },
          },
@@ -34,7 +34,7 @@ BuilderGroup {
         Priority = 100,
         FormRadius = 500,
         InstanceCount = 50,
-        BuilderType = 'Air',        
+        BuilderType = 'RaidAir',        
         BuilderConditions = { 
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.BOMBER} },
         },
@@ -59,7 +59,7 @@ BuilderGroup {
         InstanceCount = 25,
         FormRadius = 500,
         PlatoonAddBehaviors = { 'AirUnitRefit' },                              
-        BuilderType = 'Air',
+        BuilderType = 'RaidAir',
         BuilderData = {
             Energy = true,
         },        

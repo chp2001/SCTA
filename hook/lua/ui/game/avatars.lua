@@ -189,8 +189,8 @@ function CreateIdleTab(unitData, id, expandFunc)
             local sortedUnits = {}
             sortedUnits[5] = EntityCategoryFilterDown(categories.TECH3, self.allunits)
             sortedUnits[4] = EntityCategoryFilterDown(categories.TECH2 - categories.TANK, self.allunits)
-            sortedUnits[2] = EntityCategoryFilterDown(categories.TANK * categories.TECH2, self.allunits)
-            sortedUnits[3] = EntityCategoryFilterDown(categories.TECH1 - categories.TANK, self.allunits)
+            sortedUnits[3] = EntityCategoryFilterDown(categories.TANK * categories.TECH2, self.allunits)
+            sortedUnits[2] = EntityCategoryFilterDown(categories.TECH1 - categories.TANK, self.allunits)
             sortedUnits[1] = EntityCategoryFilterDown(categories.TANK * categories.TECH1, self.allunits)
 
             local keyToIcon = {'T1V', 'T1', 'T2V', 'T2', 'T3'}
@@ -677,8 +677,8 @@ function CreateIdleEngineerList(parent, units)
         local engineers = {}   
         engineers[5] = EntityCategoryFilterDown(categories.TECH3, unitData)
         engineers[4] = EntityCategoryFilterDown(categories.TECH2 - categories.TANK, unitData)
-        engineers[2] = EntityCategoryFilterDown(categories.TANK * categories.TECH2, unitData)
-        engineers[3] = EntityCategoryFilterDown(categories.TECH1 - categories.TANK, unitData)
+        engineers[3] = EntityCategoryFilterDown(categories.TANK * categories.TECH2, unitData)
+        engineers[2] = EntityCategoryFilterDown(categories.TECH1 - categories.TANK, unitData)
         engineers[1] = EntityCategoryFilterDown(categories.TANK * categories.TECH1, unitData)    
 
         local indexToIcon = {'1', '1', '2', '2', '3'}

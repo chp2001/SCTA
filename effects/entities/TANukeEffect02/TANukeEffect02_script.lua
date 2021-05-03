@@ -22,7 +22,7 @@ TANukeEffect02 = Class(NullShell) {
 		
 		
 		WaitSeconds(4)
-		CreateEmitterAtEntity(self, army, '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp',):ScaleEmitter(20)
+		CreateEmitterAtEntity(self, army, '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp'):ScaleEmitter(20)
 
 		self:SetVelocity(0,3,0)
     end,      

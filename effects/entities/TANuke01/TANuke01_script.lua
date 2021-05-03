@@ -49,20 +49,6 @@ TANuke01 = Class(NullShell) {
         self:CreateGroundPlumeConvectionEffects(self.Army)
     end,
 
-    CreateInitialFireballSmokeRing = function(self)
-        local sides = 12
-        local angle = (2*math.pi) / sides
-        local velocity = 5
-        local OffsetMod = 8
-
-        for i = 0, (sides-1) do
-            local X = math.sin(i*angle)
-            local Z = math.cos(i*angle)
-            self:CreateProjectile('/effects/entities/UEFNukeShockwave01/UEFNukeShockwave01_proj.bp', X * OffsetMod , 1.5, Z * OffsetMod, X, 0, Z)
-                :SetVelocity(velocity):SetAcceleration(-0.5)
-        end
-    end,
-
     CreateOuterRingWaveSmokeRing = function(self)
         local sides = 32
         local angle = (2*math.pi) / sides
@@ -73,7 +59,7 @@ TANuke01 = Class(NullShell) {
         for i = 0, (sides-1) do
             local X = math.sin(i*angle)
             local Z = math.cos(i*angle)
-            local proj =  self:CreateProjectile('/effects/entities/UEFNukeShockwave02/UEFNukeShockwave02_proj.bp', X * OffsetMod , 2.5, Z * OffsetMod, X, 0, Z)
+            local proj = self:CreateProjectile('/effects/EMPFluxWarhead/EMPFluxWarheadEffect01_proj.bp')
                 :SetVelocity(velocity)
             table.insert(projectiles, proj)
         end
@@ -86,67 +72,6 @@ TANuke01 = Class(NullShell) {
         end
     end,
 
-    CreateFlavorPlumes = function(self)
-        local numProjectiles = 8
-        local angle = (2*math.pi) / numProjectiles
-        local angleInitial = RandomFloat(0, angle)
-        local angleVariation = angle * 0.75
-        local projectiles = {}
-
-        local xVec = 0
-        local yVec = 0
-        local zVec = 0
-        local velocity = 0
-
-        -- yVec -0.2, requires 2 initial velocity to start
-        -- yVec 0.3, requires 3 initial velocity to start
-        -- yVec 1.8, requires 8.5 initial velocity to start
-
-        -- Launch projectiles at semi-random angles away from the sphere, with enough
-        -- initial velocity to escape sphere core
-        for i = 0, (numProjectiles -1) do
-            xVec = math.sin(angleInitial + (i*angle) + RandomFloat(-angleVariation, angleVariation))
-            yVec = RandomFloat(0.2, 1)
-            zVec = math.cos(angleInitial + (i*angle) + RandomFloat(-angleVariation, angleVariation))
-            velocity = 3.4 + (yVec * RandomFloat(2,5))
-            table.insert(projectiles, self:CreateProjectile('/effects/entities/UEFNukeFlavorPlume01/UEFNukeFlavorPlume01_proj.bp', 0, 0, 0, xVec, yVec, zVec):SetVelocity(velocity))
-        end
-
-        WaitSeconds(3)
-
-        -- Slow projectiles down to normal speed
-        for k, v in projectiles do
-            v:SetVelocity(2):SetBallisticAcceleration(-0.15)
-        end
-    end,
-
-    CreateHeadConvectionSpinners = function(self)
-        local sides = 10
-        local angle = (2*math.pi) / sides
-        local HeightOffset = -5
-        local velocity = 1
-        local OffsetMod = 10
-        local projectiles = {}
-
-        for i = 0, (sides-1) do
-            local x = math.sin(i*angle) * OffsetMod
-            local z = math.cos(i*angle) * OffsetMod
-            local proj = self:CreateProjectile('/effects/entities/UEFNukeEffect03/UEFNukeEffect03_proj.bp', x, HeightOffset, z, x, 0, z)
-                :SetVelocity(velocity)
-            table.insert(projectiles, proj)
-        end
-
-        WaitSeconds(1)
-        for i = 0, (sides-1) do
-            local x = math.sin(i*angle)
-            local z = math.cos(i*angle)
-            local proj = projectiles[i+1]
-            proj:SetVelocityAlign(false)
-            proj:SetOrientation(OrientFromDir(Util.Cross(Vector(x,0,z), Vector(0,1,0))),true)
-            proj:SetVelocity(0,3,0)
-            proj:SetBallisticAcceleration(-0.05)
-        end
-    end,
 
     CreateGroundPlumeConvectionEffects = function(self,army)
         CreateEmitterAtEntity(self, army, '/mods/SCTA-master/effects/emitters/EMPBOOM_emit.bp'):ScaleEmitter(10)

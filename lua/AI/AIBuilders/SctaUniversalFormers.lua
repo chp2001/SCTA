@@ -18,7 +18,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.LessThanTime,
         Priority = 100,
         InstanceCount = 6,
-        BuilderType = 'Any',
+        BuilderType = 'Land',
         BuilderData = {
             NeverGuardBases = true,
             LocationType = 'LocationType',
@@ -33,7 +33,7 @@ BuilderGroup {
         PlatoonTemplate = 'StrikeForceSCTATerrain', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 200,
         InstanceCount = 2,
-        BuilderType = 'Any',
+        BuilderType = 'Land',
         BuilderData = {
             NeverGuardBases = true,
             NeverGuardEngineers = true,
@@ -50,7 +50,7 @@ BuilderGroup {
         PlatoonTemplate = 'LABSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 300,
         InstanceCount = 5,
-        BuilderType = 'Any',
+        BuilderType = 'Land',
         BuilderData = {
             Lab = true,
             NeverGuardBases = true,
@@ -68,7 +68,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.LessThanTime,
         Priority = 300,
         InstanceCount = 5,
-        BuilderType = 'Any',
+        BuilderType = 'Air',
         BuilderData = {
             Lab = true,
             NeverGuardBases = true,
@@ -85,7 +85,7 @@ BuilderGroup {
         PlatoonTemplate = 'AirHuntAISCTA',
         Priority = 300,
         InstanceCount = 2,
-        BuilderType = 'Any', 
+        BuilderType = 'Air', 
         BuilderData = {
             Lab = true,
             NeverGuardBases = true,
@@ -104,7 +104,7 @@ BuilderGroup {
         Priority = 10000,
         FormRadius = 10000,
         InstanceCount = 2,
-        BuilderType = 'Any',
+        BuilderType = 'Land',
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.EXPERIMENTAL * categories.MOBILE - categories.ENGINEER } },
          },
@@ -134,7 +134,7 @@ BuilderGroup {
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
-        BuilderType = 'Any',
+        BuilderType = 'Engineer',
     },
     Builder {
         BuilderName = 'SCTA Assist Production Idle',
@@ -156,7 +156,7 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Engineer',
     },
     Builder {
         BuilderName = 'SCTA Assist Unit Production Idle',
@@ -178,7 +178,7 @@ BuilderGroup {
                 Time = 60,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Engineer',
     },
     Builder {
         BuilderName = 'SCTANukeAI',
@@ -188,7 +188,7 @@ BuilderGroup {
         BuilderConditions = {
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.NUKE * categories.STRUCTURE * categories.TECH3}},
             },
-        BuilderType = 'Any',
+        BuilderType = 'Structure',
         FormRadius = 10000,
     },
     Builder {
@@ -199,7 +199,7 @@ BuilderGroup {
         BuilderConditions = {
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.ANTIMISSILE * categories.STRUCTURE * categories.TECH3}},
             },
-        BuilderType = 'Any',
+        BuilderType = 'Structure',
         FormRadius = 10000,
     },
 }

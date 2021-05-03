@@ -36,7 +36,7 @@ BuilderGroup {
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         FormRadius = 1000,
-        BuilderType = 'Any',
+        BuilderType = 'Structure',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -56,7 +56,7 @@ BuilderGroup {
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         FormRadius = 500,
-        BuilderType = 'Any',
+        BuilderType = 'Structure',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -76,7 +76,7 @@ BuilderGroup {
             { EBC, 'GreaterThanEconStorageCurrent', { 800, 1000 } },
         },
         FormRadius = 500,
-        BuilderType = 'Any',
+        BuilderType = 'Structure',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = false,
@@ -93,7 +93,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.RADAR * categories.STRUCTURE * categories.TECH2} },
             { TAutils, 'EcoManagementTA', { 0.75, 1.05, 0.5, 0.9, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Structure',
     },
     Builder {
         BuilderName = 'SCTAMetalMakr',
@@ -102,7 +102,7 @@ BuilderGroup {
         BuilderConditions = {
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.MASSFABRICATION}},
             },
-        BuilderType = 'Any',
+        BuilderType = 'Structure',
         FormRadius = 10000,
     },
     Builder {
@@ -112,7 +112,7 @@ BuilderGroup {
         BuilderConditions = {
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.ARTILLERY * categories.STRUCTURE}},
             },
-        BuilderType = 'Any',
+        BuilderType = 'Structure',
         FormRadius = 10000,
     },
     Builder {
@@ -122,7 +122,7 @@ BuilderGroup {
         BuilderConditions = {
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.TACTICALMISSILEPLATFORM * categories.STRUCTURE}},
             },
-        BuilderType = 'Any',
+        BuilderType = 'Structure',
         FormRadius = 10000,
     },
 }

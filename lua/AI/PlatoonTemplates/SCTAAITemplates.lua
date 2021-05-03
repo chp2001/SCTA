@@ -86,6 +86,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'LandAttackSCTAMid',
     Plan = 'AttackSCTAForceAI',
+    Type = 'Land',
     GlobalSquads = {
         { GROUND - SPECIAL - TACATS, 5, 20, 'attack', 'none' }
     },
@@ -94,6 +95,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'LandAttackSCTAEndGame',
     Plan = 'AttackSCTAForceAIEndGame',
+    Type = 'Land',
     GlobalSquads = {
         { GROUND - SPECIAL - categories.BOMB, 15, 30, 'attack', 'none' }
     },
@@ -104,6 +106,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'StrikeForceSCTAEarly',
     Plan = 'SCTAStrikeForceAIEarly',
+    Type = 'Land',
     GlobalSquads = {
         { GROUND * categories.TECH1 - SPECIAL - TACATS - RANGE, 5, 10, 'attack', 'none' }
     },
@@ -112,6 +115,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'StrikeForceSCTAMid',
     Plan = 'SCTAStrikeForceAI',
+    Type = 'Land',
     GlobalSquads = {
         { GROUND - SPECIAL - RANGE - TACATS, 10, 20, 'attack', 'none' }
     },
@@ -119,7 +123,8 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'StrikeForceSCTAEndgame',
-    Plan = 'SCTAStrikeForceAIEndgame', -- The platoon function to use.
+    Plan = 'SCTAStrikeForceAIEndgame', 
+    Type = 'Land',-- The platoon function to use.
     GlobalSquads = {
         { GROUND - SPECIAL - categories.BOMB, 15, 30, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
@@ -129,6 +134,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'GuardSCTA',
     Plan = 'None',
+    Type = 'Land',
     GlobalSquads = {
         { GROUND - SPECIAL, 1, 1, 'guard', 'none' }
     },
@@ -138,6 +144,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'T4ExperimentalSCTA',
     Plan = 'ExperimentalAIHubSorian', 
+    Type = 'Land',
     GlobalSquads = {
         { categories.EXPERIMENTAL * categories.MOBILE - categories.SUBCOMMANDER, 1, 1, 'attack', 'none' }
     },

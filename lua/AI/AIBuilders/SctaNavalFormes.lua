@@ -14,7 +14,7 @@ BuilderGroup {
         PlatoonTemplate = 'SCTAPatrolBoatAttack',
         Priority = 150,
         InstanceCount = 4,
-        BuilderType = 'Any',
+        BuilderType = 'Sea',
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.SCOUT } },
          },
@@ -38,7 +38,7 @@ BuilderGroup {
         PlatoonTemplate = 'SCTAPatrolBoatHunt',
         Priority = 100,
         InstanceCount = 25,
-        BuilderType = 'Any',
+        BuilderType = 'Sea',
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.NAVAL * categories.SCOUT } },
          },
@@ -62,7 +62,7 @@ BuilderGroup {
         PlatoonTemplate = 'SCTASubHunter',
         Priority = 100,
         InstanceCount = 5,
-        BuilderType = 'Any',
+        BuilderType = 'Sea',
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.SUBMERSIBLE - categories.ENGINEER} },
          },
@@ -86,7 +86,7 @@ BuilderGroup {
         PlatoonTemplate = 'SCTANavalAssault',
         Priority = 110,
         InstanceCount = 10,
-        BuilderType = 'Any',
+        BuilderType = 'Sea',
         BuilderData = {
             UseFormation = 'AttackFormation',
             ThreatWeights = {
@@ -111,7 +111,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.UnitProduction,
         Priority = 120,
         InstanceCount = 10,
-        BuilderType = 'Any',
+        BuilderType = 'Sea',
         BuilderData = {
             UseFormation = 'AttackFormation',
             ThreatWeights = {
@@ -137,7 +137,7 @@ BuilderGroup {
         FormRadius = 500,
         PlatoonAddBehaviors = { 'AirUnitRefit' },                              
         InstanceCount = 200,
-        BuilderType = 'Any',     
+        BuilderType = 'Sea',     
         BuilderConditions = { 
         },
     },
@@ -147,7 +147,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.UnitProduction,
         Priority = 120,
         InstanceCount = 25,
-        BuilderType = 'Any',
+        BuilderType = 'Sea',
         BuilderData = {
             Small = true,
             NeverGuardBases = false,
@@ -178,7 +178,7 @@ BuilderGroup {
                 Time = 20,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Sea',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Energy Naval',
@@ -196,6 +196,6 @@ BuilderGroup {
             Reclaim = {'cortide, armtide,'},
             ReclaimTime = 30,
         },
-        BuilderType = 'Any',
+        BuilderType = 'Sea',
     },
 }

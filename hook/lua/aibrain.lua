@@ -59,6 +59,7 @@ AIBrain = Class(SCTAAIBrainClass) {
              BaseType = Scenario.MasterChain._MASTERCHAIN_.Markers[baseName].type or 'MAIN',
          }
          self.NumBases = self.NumBases + 1
+         --self:InitializePlatoonBuildManager()
      end,
 
     OnCreateAI = function(self, planName)
@@ -228,7 +229,12 @@ AIBrain = Class(SCTAAIBrainClass) {
             v.FactoryManager:SortBuilderList('Seaplane')
             v.FactoryManager:SortBuilderList('Sea')
             v.FactoryManager:SortBuilderList('Gate')
-            v.PlatoonFormManager:SortBuilderList('Any')
+            ---TAPlatoonFormers
+            v.PlatoonFormManager:SortBuilderList('Land')
+            v.PlatoonFormManager:SortBuilderList('Air')
+            v.PlatoonFormManager:SortBuilderList('Sea')
+            v.PlatoonFormManager:SortBuilderList('Engineer')
+            v.PlatoonFormManager:SortBuilderList('Structure')
         end
     end,
 
@@ -278,6 +284,7 @@ AIBrain = Class(SCTAAIBrainClass) {
             if poolPlatoon then
                 poolPlatoon:TurnOffPoolAI()
             end
+            --LOG('IEXIST')
             self.HasPlatoonList = false
             self:PBMSetEnabled(true)
         end

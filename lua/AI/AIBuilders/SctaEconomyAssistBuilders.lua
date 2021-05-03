@@ -35,7 +35,7 @@ BuilderGroup {
             ReclaimTime = 30,
             Reclaim = {'TECH1 FACTORY,'},
         },
-        BuilderType = 'Any',
+        BuilderType = 'Engineer',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Energy',
@@ -54,7 +54,7 @@ BuilderGroup {
             Reclaim = {'armsolar, corsolar, armwin, corwin,'},
                 ReclaimTime = 30,
         },
-        BuilderType = 'Any',
+        BuilderType = 'Engineer',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Air',
@@ -69,7 +69,7 @@ BuilderGroup {
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
-        BuilderType = 'Any',
+        BuilderType = 'Engineer',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Idle',
@@ -86,7 +86,7 @@ BuilderGroup {
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
-        BuilderType = 'Any',
+        BuilderType = 'Engineer',
     },
     Builder {
         BuilderName = 'SCTA Commander Assist Gantry Construction',
@@ -108,7 +108,7 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Engineer',
     },
     Builder {
         BuilderName = 'SCTA CDR Assist Structure',
@@ -121,7 +121,7 @@ BuilderGroup {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Engineer',
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
@@ -153,7 +153,7 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Engineer',
     },
     Builder {
         BuilderName = 'SCTA Engineer Finish',
@@ -174,7 +174,7 @@ BuilderGroup {
                 Time = 20,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Engineer',
     },
 
 }
@@ -202,7 +202,7 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Engineer',
     },
     Builder {
         BuilderName = 'SCTA Engineer Assist Gantry',
@@ -224,7 +224,7 @@ BuilderGroup {
                 Time = 60,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Engineer',
     },
     Builder {
         BuilderName = 'SCTA PGen Field Assist',
@@ -236,7 +236,7 @@ BuilderGroup {
         BuilderConditions = {
             { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Engineer',
         BuilderData = {
             Assist = {
                 AssisteeType = 'Engineer',
@@ -261,7 +261,7 @@ BuilderGroup {
             Terrain = true,
             LocationType = 'LocationType',
         },
-        BuilderType = 'Any',
+        BuilderType = 'Engineer',
     },
     Builder {
         BuilderName = 'SCTA Engineer Field Finish',
@@ -282,7 +282,7 @@ BuilderGroup {
                 Time = 20,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Engineer',
     },
     Builder {
         BuilderName = 'SCTA Assist Production Field',
@@ -304,6 +304,6 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Engineer',
     },
 }

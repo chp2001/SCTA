@@ -4,10 +4,11 @@ SCTAPlatoonFormManager = PlatoonFormManager
 PlatoonFormManager = Class(SCTAPlatoonFormManager, BuilderManager) {
     Create = function(self, brain, lType, location, radius)
         if not brain.SCTAAI then
+            LOG('*template2', brain.SCTAAI)
             return SCTAPlatoonFormManager.Create(self, brain, lType, location, radius)
         end
         BuilderManager.Create(self,brain)
-        LOG('IEXIST2')
+        --LOG('IEXIST2')
         if not lType or not location or not radius then
             error('*PLATOOM FORM MANAGER ERROR: Invalid parameters; requires locationType, location, and radius')
             return false
@@ -21,14 +22,14 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager, BuilderManager) {
         for _,v in builderTypes do
 			self:AddBuilderType(v)
 		end]]
-        local builderTypes = {'Air', 'Land', 'Sea', 'Raid',  'RaidAir', 'Scout', 'Structure', 'Engineer', 'Command', 'Field'}
+        local builderTypes = {'Air', 'Land', 'Sea', 'Scout', 'Structure', 'Engineer', 'Other'}
         for _,v in builderTypes do
 			self:AddBuilderType(v)
 		end
         self.BuilderCheckInterval = 5
     end,
 
-    AddBuilder = function(self, builderData, locationType, builderType)
+   AddBuilder = function(self, builderData, locationType, builderType)
         if not self.Brain.SCTAAI then
             return SCTAPlatoonFormManager.AddBuilder(self, builderData, locationType, builderType)
         end
@@ -45,6 +46,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager, BuilderManager) {
 
     GetPlatoonTemplate = function(self, templateName)
         if not self.Brain.SCTAAI then
+            --LOG('*template3', self.Brain.SCTAAI)
             return SCTAPlatoonFormManager.GetPlatoonTemplate(self, templateName)
         end
         local templateData = PlatoonTemplates[templateName]
@@ -56,14 +58,13 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager, BuilderManager) {
             template = {
                 templateData.Name,
                 templateData.Plan,
-                templateData.Type,
+                templateData.BuilderType,
                 unpack(templateData.GlobalSquads)
             }
         else
             template = {
                 templateData.Name,
                 templateData.Plan,
-                templateData.Type,
             }
             for k,v in templateData.FactionSquads do
                 table.insert(template, unpack(v))
@@ -74,19 +75,17 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager, BuilderManager) {
 
     ManagerLoopBody = function(self,builder,bType)
         if not self.Brain.SCTAAI then
+            --LOG('*template3', self.Brain.SCTAAI)
             return SCTAPlatoonFormManager.ManagerLoopBody(self,builder,bType)
         end
         BuilderManager.ManagerLoopBody(self,builder,bType)
         --LOG('*template', template[1])
-            if self.Brain.BuilderManagers[self.LocationType] and builder.Priority >= 1 and builder:CheckInstanceCount() then
+        local template = self:GetPlatoonTemplate(builder:GetPlatoonTemplate())
+            if self:GetHighestBuilder(template[3], {template}) and self.Brain.BuilderManagers[self.LocationType] and builder.Priority >= 1 and builder:CheckInstanceCount() then
             ---LOG('*builder', self.Brain.SCTAAI)
             local personality = self.Brain:GetPersonality()
             local poolPlatoon = self.Brain:GetPlatoonUniquelyNamed('ArmyPool')
-            bType = builder.BuilderType
-            local template = self:GetPlatoonTemplate(builder:GetPlatoonTemplate())
-            LOG('*template1', template[1])
-            if template[3] == bType then
-            LOG('*template2', template[1])
+            --LOG('*template1', template[1])
             builder:FormDebug()
             local radius = self.Radius
             if builder:GetFormRadius() then radius = builder:GetFormRadius() end
@@ -100,8 +99,9 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager, BuilderManager) {
             end
             local formIt = poolPlatoon:CanFormPlatoon(template, personality:GetPlatoonSize(), self.Location, radius) 
             if formIt and builder:GetBuilderStatus() then
+                --LOG('*templatetype', template[3])
+                --LOG('*template2', template[1])
                 local hndl = poolPlatoon:FormPlatoon(template, personality:GetPlatoonSize(), self.Location, radius)
-
                 #LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Platoon Form Manager Forming - ',repr(builder.BuilderName),': Location = ',self.LocationType)
                 #LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Platoon Form Manager - Platoon Size = ', table.getn(hndl:GetPlatoonUnits()))
                 hndl.PlanName = template[2]
@@ -148,6 +148,5 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager, BuilderManager) {
                 builder:StoreHandle(hndl)
                 end
             end
-        end
-    end,
+        end,
 }

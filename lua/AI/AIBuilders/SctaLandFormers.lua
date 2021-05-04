@@ -32,7 +32,7 @@ BuilderGroup {
         Priority = 200,
         PriorityFunction = TAPrior.UnitProduction,
         InstanceCount = 50,
-        BuilderType = 'Raid',
+        BuilderType = 'Land',
         BuilderData = {
             Energy = true,
             NeverGuardBases = false,
@@ -116,7 +116,7 @@ BuilderGroup {
         PlatoonTemplate = 'LandRocketAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 105,
         InstanceCount = 30,
-        BuilderType = 'Raid',
+        BuilderType = 'Land',
         BuilderData = {
             ThreatSupport = 10,
             NeverGuardBases = false,
@@ -139,7 +139,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.UnitProductionT1, -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 115,
         InstanceCount = 100,
-        BuilderType = 'Raid',
+        BuilderType = 'Land',
         BuilderData = {
             ThreatSupport = 75,
             NeverGuardBases = false,
@@ -163,7 +163,7 @@ BuilderGroup {
         Priority = 210,
         InstanceCount = 50,
         FormRadius = 1000,
-        BuilderType = 'Raid',
+        BuilderType = 'Land',
         BuilderData = {
             ThreatSupport = 75,
             NeverGuardBases = false,

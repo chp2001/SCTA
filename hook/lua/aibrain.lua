@@ -231,14 +231,11 @@ AIBrain = Class(SCTAAIBrainClass) {
             v.FactoryManager:SortBuilderList('Gate')
             ---TAPlatoonFormers
             v.PlatoonFormManager:SortBuilderList('Land')
-            v.PlatoonFormManager:SortBuilderList('Raid')
             v.PlatoonFormManager:SortBuilderList('Air')
-            v.PlatoonFormManager:SortBuilderList('RaidAir')
             v.PlatoonFormManager:SortBuilderList('Sea')
             v.PlatoonFormManager:SortBuilderList('Scout')
             v.PlatoonFormManager:SortBuilderList('Engineer')
-            v.PlatoonFormManager:SortBuilderList('Command')
-            v.PlatoonFormManager:SortBuilderList('Field')
+            v.PlatoonFormManager:SortBuilderList('Other')
             v.PlatoonFormManager:SortBuilderList('Structure')
         end
     end,

@@ -135,7 +135,7 @@ BuilderGroup {
         PlatoonTemplate = 'IntieAISCTA',
         Priority = 100,
         FormRadius = 500,
-        PlatoonAddBehaviors = { 'AirUnitRefit' },                              
+        PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
         InstanceCount = 200,
         BuilderType = 'Air',     
         BuilderConditions = { 

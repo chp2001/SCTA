@@ -12,7 +12,7 @@ local RAIDAIR = categories.armfig + categories.corveng
 PlatoonTemplate {
     Name = 'AirHuntAISCTA',
     Plan = 'HuntAirAISCTA',
-    Type = 'RaidAir',
+    BuilderType = 'Scout',
     GlobalSquads = {
         { SKY * (categories.BOMBER + RAIDAIR) * categories.TECH1, 2, 4, 'attack', 'none' },
     }
@@ -21,12 +21,12 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'LABAirSCTA',
     Plan = 'HuntAILABSCTA',
-    Type = 'RaidAir', -- The platoon function to use.
+    BuilderType = 'Air', -- The platoon function to use.
     GlobalSquads = {
-        {RAIDAIR, -- Type of units.
+        {RAIDAIR, -- BuilderType of units.
           1, -- Min number of units.
           1, -- Max number of units.
-          'attack', -- platoon types: 'support', 'attack', 'scout',
+          'attack', -- platoon BuilderTypes: 'support', 'attack', 'scout',
           'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
@@ -34,7 +34,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'SCTABomberAttack',
     Plan = 'BomberAISCTA',
-    Type = 'RaidAir',
+    BuilderType = 'Scout',
     GlobalSquads = {
         { SKY * (categories.BOMBER + categories.GROUNDATTACK) - categories.EXPERIMENTAL - categories.ANTINAVY, 1, 100, 'Attack', 'GrowthFormation' },
     }
@@ -43,7 +43,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'IntieAISCTA',
     Plan = 'InterceptorAISCTA',
-    Type = 'Air',
+    BuilderType = 'Air',
     GlobalSquads = {
         { SKY * categories.ANTIAIR * (categories.TECH1 + categories.TECH3) - categories.BOMBER, 2, 100, 'attack', 'none' },
     }
@@ -52,7 +52,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'IntieAISCTAStealth',
     Plan = 'InterceptorAISCTAStealth',
-    Type = 'RaidAir',
+    BuilderType = 'Air',
     GlobalSquads = {
         { SKY * (((categories.ANTIAIR + categories.GROUNDATTACK) * categories.TECH2) + categories.BOMBER), 2, 100, 'attack', 'none' },
     }
@@ -61,7 +61,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'IntieAISCTAALL',
     Plan = 'InterceptorAISCTAEnd',
-    Type = 'Air',
+    BuilderType = 'Air',
     GlobalSquads = {
         { SKY * categories.ANTIAIR - categories.BOMBER - categories.GROUNDATTACK, 2, 100, 'attack', 'none' },
     }
@@ -71,7 +71,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'SCTAT3AirScouting',
     Plan = 'ScoutingAISorian',
-    Type = 'Scout',
+    BuilderType = 'Scout',
     GlobalSquads = {
         { SKY * categories.SCOUT * categories.OVERLAYOMNI, 1, 1, 'scout', 'None' },
     }
@@ -80,7 +80,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'T1AirScoutFormSCTA',
     Plan = 'ScoutingAISorian',
-    Type = 'Scout',
+    BuilderType = 'Scout',
     GlobalSquads = {
         { SKY * categories.SCOUT * categories.OVERLAYRADAR * categories.TECH1, 1, 1, 'scout', 'None' },
     }

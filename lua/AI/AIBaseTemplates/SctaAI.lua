@@ -31,7 +31,6 @@ BaseBuilderTemplate {
        
         --MiscFunctions
         'SCTAAssisters',
-        'SCTAFieldEngineers',
         'SCTAExpansionBuilders',
     },
     NonCheatBuilders = {

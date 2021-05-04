@@ -9,6 +9,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Air Scout',
         PlatoonTemplate = 'T1AirScoutFormSCTA',
+        PriorityFunction = TAPrior.UnitProductionT1AIR,
         Priority = 100,
         InstanceCount = 10,
         BuilderType = 'Scout',
@@ -30,11 +31,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Bomber Attack',
         PlatoonTemplate = 'SCTABomberAttack',
-        PriorityFunction = TAPrior.UnitProductionT1,
+        PriorityFunction = TAPrior.UnitProductionT1AIR,
         Priority = 100,
         FormRadius = 500,
         InstanceCount = 50,
-        BuilderType = 'RaidAir',        
+        BuilderType = 'Scout',        
         BuilderConditions = { 
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.BOMBER} },
         },
@@ -42,10 +43,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Air Intercept',
         PlatoonTemplate = 'IntieAISCTA',
-        PriorityFunction = TAPrior.UnitProductionT1,
+        PriorityFunction = TAPrior.UnitProductionT1AIR,
         Priority = 100,
         FormRadius = 500,
-        PlatoonAddBehaviors = { 'AirUnitRefit' },                              
+        PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
         InstanceCount = 200,
         BuilderType = 'Air',     
         BuilderConditions = { 
@@ -58,8 +59,8 @@ BuilderGroup {
         Priority = 110,
         InstanceCount = 25,
         FormRadius = 500,
-        PlatoonAddBehaviors = { 'AirUnitRefit' },                              
-        BuilderType = 'RaidAir',
+        PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
+        BuilderType = 'Air',
         BuilderData = {
             Energy = true,
         },        
@@ -74,7 +75,7 @@ BuilderGroup {
         Priority = 110,
         InstanceCount = 200,
         FormRadius = 500,
-        PlatoonAddBehaviors = { 'AirUnitRefit' },                              
+        PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
         BuilderType = 'Air',
         BuilderData = {
             Energy = true,

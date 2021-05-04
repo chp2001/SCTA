@@ -108,7 +108,7 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'Other',
+        BuilderType = 'Command',
     },
     Builder {
         BuilderName = 'SCTA CDR Assist Structure',
@@ -121,7 +121,7 @@ BuilderGroup {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Other',
+        BuilderType = 'Command',
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
@@ -179,6 +179,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Field',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
+        PriorityFunction = TAPrior.UnitProductionField,
         PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 200,
         InstanceCount = 5,
@@ -194,6 +195,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Field Finish',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
+        PriorityFunction = TAPrior.UnitProductionField,
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
         Priority = 125,
         InstanceCount = 2,
@@ -216,7 +218,7 @@ BuilderGroup {
         BuilderName = 'SCTA Assist Production Field',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
-        PriorityFunction = TAPrior.UnitProduction,
+        PriorityFunction = TAPrior.UnitProductionField,
         Priority = 100,
         InstanceCount = 5,
         BuilderConditions = {

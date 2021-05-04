@@ -4,7 +4,7 @@ local TA = (categories.ARM + categories.CORE)
 PlatoonTemplate {
     Name = 'CommanderBuilderSCTA',
     Plan = 'EngineerBuildAISCTACommand',
-    BuilderType = 'Other',
+    BuilderType = 'Command',
     GlobalSquads = {
         { (categories.COMMAND + categories.SUBCOMMANDER) * TA, 1, 1, 'support', 'None' }
     },
@@ -13,7 +13,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'CommanderBuilderSCTADecoy',
     Plan = 'EngineerBuildAISCTACommand',
-    BuilderType = 'Other',
+    BuilderType = 'Command',
     GlobalSquads = {
         { categories.SUBCOMMANDER * TA, 1, 1, 'support', 'None' }
     },

@@ -205,7 +205,6 @@ TechLevel = 'RULEUTL_Advanced',
             TurretYawSpeed = 250,
             Turreted = false,
 	        WeaponUnpacks = true,
-            WeaponRepackTimeout = 2,
         },
         { #BIG_UNITEX
             Damage = 100,

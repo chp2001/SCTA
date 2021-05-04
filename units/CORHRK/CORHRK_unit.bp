@@ -171,7 +171,6 @@ TechLevel = 'RULEUTL_Advanced',
             AboveWaterTargetsOnly = true,
             WeaponCategory = 'MISSILE',
 	        WeaponUnpacks = true,
-            WeaponRepackTimeout = 3,
             RenderFireClock = true,
         },
         { #BIG_UNITEX

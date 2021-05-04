@@ -42,6 +42,7 @@ AIBrain = Class(SCTAAIBrainClass) {
          if not self.SCTAAI then
              return SCTAAIBrainClass.AddBuilderManagers(self, position, radius, baseName, useCenter)
          end
+         --LOG('*templateManager', self.SCTAAI)
          self.BuilderManagers[baseName] = {
              FactoryManager = FactoryManager.CreateFactoryBuilderManager(self, baseName, position, radius, useCenter),
              PlatoonFormManager = PlatoonFormManager.CreatePlatoonFormManager(self, baseName, position, radius, useCenter),
@@ -69,11 +70,11 @@ AIBrain = Class(SCTAAIBrainClass) {
         if string.find(per, 'scta') then
             --LOG('* AI-SCTA: This is SCTA')
             self.SCTAAI = true
-
         end
     end,
 
     PBMBuildNumFactories = function (self, template, location, pType, factory)
+        --LOG('*template2', self.SCTAAI)
         if not self.SCTAAI then
             return SCTAAIBrainClass.PBMBuildNumFactories(self, template, location, pType, factory)
         end
@@ -235,6 +236,7 @@ AIBrain = Class(SCTAAIBrainClass) {
             v.PlatoonFormManager:SortBuilderList('SeaForm')
             v.PlatoonFormManager:SortBuilderList('Scout')
             v.PlatoonFormManager:SortBuilderList('EngineerForm')
+            v.PlatoonFormManager:SortBuilderList('Command')
             v.PlatoonFormManager:SortBuilderList('Other')
             v.PlatoonFormManager:SortBuilderList('StructureForm')
         end

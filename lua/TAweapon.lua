@@ -82,6 +82,12 @@ TAweapon = Class(DefaultWeapon) {
     },
 
     WeaponPackingState = State(DefaultWeapon.WeaponPackingState) {
+        Main = function(self)
+            if not self.unit.Dead then 
+            DefaultWeapon.WeaponPackingState.Main(self)
+            end
+        end,
+        
         OnGotTarget = function(self)
             if (TAutils.ArmyHasTargetingFacility(self.army) or 
             self:OnGotTargetCheck() == true)  then

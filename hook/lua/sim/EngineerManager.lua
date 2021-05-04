@@ -45,64 +45,12 @@ EngineerManager = Class(SCTAEngineerManager, BuilderManager) {
         if not self.Brain.SCTAAI then
             return SCTAEngineerManager.LowMass(self)
         end
-        local econ = AIUtils.AIGetEconomyNumbers(self.Brain)
-        local pauseVal = 1
-        self.Brain.LowMassMode = true
-        pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.DEFENSE)
-
-        if pauseVal != true then
-            pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.FACTORY * (categories.TECH2 + categories.TECH3 + categories.GATE))
-        end
-
-        if pauseVal != true then
-           pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ExperimentalCheck )
-        end
-
-        if pauseVal != true then
-            pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.MOBILE - categories.EXPERIMENTAL )
-        end
-
-        if pauseVal != true then
-            pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.STRUCTURE - categories.MASSEXTRACTION - categories.ENERGYPRODUCTION - categories.FACTORY - categories.EXPERIMENTAL )
-        end
-
-        self:ForkThread(self.LowMassRepeatThread)
     end,
 
     LowEnergy = function(self)
         if not self.Brain.SCTAAI then
             return SCTAEngineerManager.LowEnergy(self)
         end
-        local econ = AIUtils.AIGetEconomyNumbers(self.Brain)
-        local pauseVal = 1
-        
-        self.Brain.LowEnergyMode = true
-        
-        if pauseVal != true then
-            pauseVal = self:DisableEnergyGroup(self.ConsumptionUnits.Fabricators, econ, pauseVal, self.MassDrainCheck)
-        end
-        
-        if pauseVal != true then
-            pauseVal = self:DisableEnergyGroup(self.ConsumptionUnits.MobileIntel, econ, pauseVal)
-        end
-
-        if pauseVal != true then
-            pauseVal = self:DisableEnergyGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.ALLUNITS - categories.ENERGYPRODUCTION - categories.MASSPRODUCTION)
-        end
-
-        if pauseVal != true then
-            pauseVal = self:DisableEnergyGroup(self.ConsumptionUnits.Intel, econ, pauseVal)
-        end
-
-        if pauseVal != true then
-            pauseVal = self:DisableEnergyGroup(self.ConsumptionUnits.Fabricators, econ, pauseVal)
-        end
-
-       if pauseVal != true then
-            pauseVal = self:DisableEnergyGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.ALLUNITS - categories.ENERGYPRODUCTION)
-        end 
-        
-        self:ForkThread( self.LowEnergyRepeatThread )
     end,
 
     RestoreEnergy = function(self)

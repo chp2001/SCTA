@@ -49,8 +49,9 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI LAB',
         PlatoonTemplate = 'LABSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 300,
+        Priority = 150,
         InstanceCount = 5,
+        PriorityFunction = TAPrior.UnitProductionLab,
         BuilderType = 'Scout',
         BuilderData = {
             Lab = true,
@@ -59,8 +60,8 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = { 
-            { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.COMMAND }},	
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, RAIDER} },
+            { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.COMMAND }},	
         },
     },
     Builder {
@@ -267,7 +268,7 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'Other',
+        BuilderType = 'Command',
     },
 }
 

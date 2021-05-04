@@ -86,7 +86,7 @@ BuilderGroup {
         PlatoonTemplate = 'AirHuntAISCTA',
         Priority = 300,
         InstanceCount = 2,
-        BuilderType = 'Air', 
+        BuilderType = 'AirForm', 
         BuilderData = {
             Lab = true,
             NeverGuardBases = true,
@@ -135,7 +135,7 @@ BuilderGroup {
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
-        BuilderType = 'Engineer',
+        BuilderType = 'EngineerForm',
     },
     Builder {
         BuilderName = 'SCTA Assist Production Idle',
@@ -157,7 +157,7 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'Engineer',
+        BuilderType = 'EngineerForm',
     },
     Builder {
         BuilderName = 'SCTA Assist Unit Production Idle',
@@ -179,7 +179,7 @@ BuilderGroup {
                 Time = 60,
             },
         },
-        BuilderType = 'Engineer',
+        BuilderType = 'EngineerForm',
     },
     Builder {
         BuilderName = 'SCTANukeAI',
@@ -189,7 +189,7 @@ BuilderGroup {
         BuilderConditions = {
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.NUKE * categories.STRUCTURE * categories.TECH3}},
             },
-        BuilderType = 'Structure',
+        BuilderType = 'StructureForm',
         FormRadius = 10000,
     },
     Builder {
@@ -200,7 +200,7 @@ BuilderGroup {
         BuilderConditions = {
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.ANTIMISSILE * categories.STRUCTURE * categories.TECH3}},
             },
-        BuilderType = 'Structure',
+        BuilderType = 'StructureForm',
         FormRadius = 10000,
     },
     Builder {

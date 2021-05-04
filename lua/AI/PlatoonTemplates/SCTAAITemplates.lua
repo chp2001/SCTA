@@ -44,7 +44,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'StrikeForceSCTALaser',
     Plan = 'HuntSCTAAI', -- The platoon function to use.
-    BuilderType = 'Land',
+    BuilderType = 'LandForm',
     GlobalSquads = {
         { GROUND * (categories.ANTISHIELD + categories.FIELDENGINEER) - categories.AMPHIBIOUS - categories.EXPERIMENTAL, -- BuilderType of units.
           2, -- Min number of units.
@@ -72,7 +72,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'LandRocketAttackSCTA',
     Plan = 'HuntSCTAAI',
-    BuilderType = 'Land',
+    BuilderType = 'LandForm',
     GlobalSquads = {
         { GROUND * (RANGE + categories.FIELDENGINEER) - TACATS, 2, 10, 'attack', 'none' }
     },
@@ -82,7 +82,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'LandAttackSCTAMid',
     Plan = 'AttackSCTAForceAI',
-    BuilderType = 'Land',
+    BuilderType = 'LandForm',
     GlobalSquads = {
         { GROUND - SPECIAL - TACATS, 5, 20, 'attack', 'none' }
     },
@@ -91,7 +91,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'LandAttackSCTAEndGame',
     Plan = 'AttackSCTAForceAIEndGame',
-    BuilderType = 'Land',
+    BuilderType = 'LandForm',
     GlobalSquads = {
         { GROUND - SPECIAL - categories.BOMB, 15, 30, 'attack', 'none' }
     },
@@ -101,7 +101,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'AntiAirSCTA',
     Plan = 'SCTAAntiAirAI', -- The platoon function to use.
-    BuilderType = 'Land',
+    BuilderType = 'LandForm',
     GlobalSquads = {
         { GROUND * categories.ANTIAIR - categories.ANTISHIELD, 2, 10, 'attack', 'none' },
     },
@@ -112,7 +112,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'StrikeForceSCTAHover',
     Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
-    BuilderType = 'Land',
+    BuilderType = 'LandForm',
     GlobalSquads = {
         { GROUND * (categories.HOVER + categories.AMPHIBIOUS) - SPECIAL, 2, 10, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
@@ -123,7 +123,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'StrikeForceSCTAEarly',
     Plan = 'SCTAStrikeForceAIEarly',
-    BuilderType = 'Land',
+    BuilderType = 'LandForm',
     GlobalSquads = {
         { GROUND * categories.TECH1 - SPECIAL - TACATS - RANGE, 5, 10, 'attack', 'none' }
     },
@@ -132,7 +132,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'StrikeForceSCTAMid',
     Plan = 'SCTAStrikeForceAI',
-    BuilderType = 'Land',
+    BuilderType = 'LandForm',
     GlobalSquads = {
         { GROUND - SPECIAL - RANGE - TACATS, 10, 20, 'attack', 'none' }
     },
@@ -141,7 +141,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'StrikeForceSCTAEndgame',
     Plan = 'SCTAStrikeForceAIEndgame', 
-    BuilderType = 'Land',-- The platoon function to use.
+    BuilderType = 'LandForm',-- The platoon function to use.
     GlobalSquads = {
         { GROUND - SPECIAL - categories.BOMB, 15, 30, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },

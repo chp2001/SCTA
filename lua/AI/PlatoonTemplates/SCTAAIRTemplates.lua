@@ -21,7 +21,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'LABAirSCTA',
     Plan = 'HuntAILABSCTA',
-    BuilderType = 'Air', -- The platoon function to use.
+    BuilderType = 'AirForm', -- The platoon function to use.
     GlobalSquads = {
         {RAIDAIR, -- BuilderType of units.
           1, -- Min number of units.
@@ -43,7 +43,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'IntieAISCTA',
     Plan = 'InterceptorAISCTA',
-    BuilderType = 'Air',
+    BuilderType = 'AirForm',
     GlobalSquads = {
         { SKY * categories.ANTIAIR * (categories.TECH1 + categories.TECH3) - categories.BOMBER, 2, 100, 'attack', 'none' },
     }
@@ -52,7 +52,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'IntieAISCTAStealth',
     Plan = 'InterceptorAISCTAStealth',
-    BuilderType = 'Air',
+    BuilderType = 'AirForm',
     GlobalSquads = {
         { SKY * (((categories.ANTIAIR + categories.GROUNDATTACK) * categories.TECH2) + categories.BOMBER), 2, 100, 'attack', 'none' },
     }
@@ -61,7 +61,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'IntieAISCTAALL',
     Plan = 'InterceptorAISCTAEnd',
-    BuilderType = 'Air',
+    BuilderType = 'AirForm',
     GlobalSquads = {
         { SKY * categories.ANTIAIR - categories.BOMBER - categories.GROUNDATTACK, 2, 100, 'attack', 'none' },
     }

@@ -18,11 +18,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager, BuilderManager) {
         self.Radius = radius
         self.LocationType= lType
         
-        --[[local builderTypes = {'Land', 'Air', 'Sea', 'Engineer', 'Structure'}
-        for _,v in builderTypes do
-			self:AddBuilderType(v)
-		end]]
-        local builderTypes = {'Air', 'Land', 'Sea', 'Scout', 'Structure', 'Engineer', 'Other'}
+        local builderTypes = {'AirForm', 'LandForm', 'SeaForm', 'Scout', 'StructureForm', 'EngineerForm', 'Other'}
         for _,v in builderTypes do
 			self:AddBuilderType(v)
 		end
@@ -78,11 +74,18 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager, BuilderManager) {
             --LOG('*template3', self.Brain.SCTAAI)
             return SCTAPlatoonFormManager.ManagerLoopBody(self,builder,bType)
         end
-        BuilderManager.ManagerLoopBody(self,builder,bType)
         --LOG('*template', template[1])
+        BuilderManager.ManagerLoopBody(self,builder,bType)
+        ----Builder.Btype = Nil, Btype alone = buildertypes
+        --LOG('*template', builder.bType)
+         if self.Brain.BuilderManagers[self.LocationType] and builder.Priority >= 1 and builder:CheckInstanceCount() then
+        ---LOG('*template2', builder.bType)
         local template = self:GetPlatoonTemplate(builder:GetPlatoonTemplate())
-            if self:GetHighestBuilder(template[3], {template}) and self.Brain.BuilderManagers[self.LocationType] and builder.Priority >= 1 and builder:CheckInstanceCount() then
-            ---LOG('*builder', self.Brain.SCTAAI)
+        --LOG('*templateP', template[3])
+        if self:GetHighestBuilder(bType, {template}) and bType == template[3] then
+        --LOG('*templateP2', template[3])
+                ---LOG('*builder', self.Brain.SCTAAI)
+ 
             local personality = self.Brain:GetPersonality()
             local poolPlatoon = self.Brain:GetPlatoonUniquelyNamed('ArmyPool')
             --LOG('*template1', template[1])
@@ -148,5 +151,6 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager, BuilderManager) {
                 builder:StoreHandle(hndl)
                 end
             end
-        end,
+        end
+    end,
 }

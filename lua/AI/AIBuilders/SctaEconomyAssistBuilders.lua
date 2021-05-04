@@ -35,7 +35,7 @@ BuilderGroup {
             ReclaimTime = 30,
             Reclaim = {'TECH1 FACTORY,'},
         },
-        BuilderType = 'Engineer',
+        BuilderType = 'EngineerForm',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Energy',
@@ -54,7 +54,7 @@ BuilderGroup {
             Reclaim = {'armsolar, corsolar, armwin, corwin,'},
                 ReclaimTime = 30,
         },
-        BuilderType = 'Engineer',
+        BuilderType = 'EngineerForm',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Air',
@@ -69,7 +69,7 @@ BuilderGroup {
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
-        BuilderType = 'Engineer',
+        BuilderType = 'EngineerForm',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Idle',
@@ -86,7 +86,7 @@ BuilderGroup {
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
-        BuilderType = 'Engineer',
+        BuilderType = 'EngineerForm',
     },
     Builder {
         BuilderName = 'SCTA Commander Assist Gantry Construction',
@@ -152,7 +152,7 @@ BuilderGroup {
                 Time = 20,
             },
         },
-        BuilderType = 'Engineer',
+        BuilderType = 'EngineerForm',
     },
     Builder {
         BuilderName = 'SCTA PGen Field Assist',

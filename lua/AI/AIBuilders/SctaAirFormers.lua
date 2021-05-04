@@ -48,7 +48,7 @@ BuilderGroup {
         FormRadius = 500,
         PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
         InstanceCount = 200,
-        BuilderType = 'Air',     
+        BuilderType = 'AirForm',     
         BuilderConditions = { 
         },
     },
@@ -60,7 +60,7 @@ BuilderGroup {
         InstanceCount = 25,
         FormRadius = 500,
         PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
-        BuilderType = 'Air',
+        BuilderType = 'AirForm',
         BuilderData = {
             Energy = true,
         },        
@@ -76,7 +76,7 @@ BuilderGroup {
         InstanceCount = 200,
         FormRadius = 500,
         PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
-        BuilderType = 'Air',
+        BuilderType = 'AirForm',
         BuilderData = {
             Energy = true,
         },        

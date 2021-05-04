@@ -11,7 +11,7 @@ NAVY = categories.NAVAL * categories.MOBILE
 PlatoonTemplate {
     Name = 'SCTAPatrolBoatAttack',
     Plan = 'ScoutingAI',
-    Type = 'Sea',
+    Type = 'SeaForm',
     GlobalSquads = {
         { NAVY * categories.SCOUT, 1, 1, 'Attack', 'GrowthFormation' },
     }
@@ -20,7 +20,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'SCTAPatrolBoatHunt',
     Plan = 'NavalHuntSCTAAI',
-    Type = 'Sea',
+    Type = 'SeaForm',
     GlobalSquads = {
         { NAVY * categories.SCOUT, 2, 10, 'Attack', 'GrowthFormation' },
     }
@@ -29,7 +29,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'SCTASubHunter',
     Plan = 'SubHuntSCTAAI',
-    Type = 'Sea',
+    Type = 'SeaForm',
     GlobalSquads = {
         { NAVY * categories.SUBMERSIBLE - categories.ENGINEER, 1, 2, 'Attack', 'GrowthFormation' },
     }
@@ -38,7 +38,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'SCTANavalAssault',
     Plan = 'NavalForceAISorian',
-    Type = 'Sea',
+    Type = 'SeaForm',
     GlobalSquads = {
         { categories.TECH1 * NAVY - categories.ENGINEER, 4, 10, 'Attack', 'GrowthFormation' }
     },
@@ -47,7 +47,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'SCTAAirCarrier',
     Plan = 'CarrierAI',
-    Type = 'Sea',
+    Type = 'SeaForm',
     GlobalSquads = {
         {categories.CARRIER, 1, 1, 'Attack', 'GrowthFormation' }
     },
@@ -57,7 +57,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'SCTANavalAssaultT2',
     Plan = 'NavalForceAISorian',
-    Type = 'Sea',
+    Type = 'SeaForm',
     GlobalSquads = {
         {NAVY - categories.ENGINEER, 1, 5, 'Attack', 'GrowthFormation' }
     },

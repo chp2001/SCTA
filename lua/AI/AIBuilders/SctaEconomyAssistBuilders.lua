@@ -35,7 +35,7 @@ BuilderGroup {
             ReclaimTime = 30,
             Reclaim = {'TECH1 FACTORY,'},
         },
-        BuilderType = 'Any',
+        BuilderType = 'EngineerForm',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Energy',
@@ -54,7 +54,7 @@ BuilderGroup {
             Reclaim = {'armsolar, corsolar, armwin, corwin,'},
                 ReclaimTime = 30,
         },
-        BuilderType = 'Any',
+        BuilderType = 'EngineerForm',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Air',
@@ -69,7 +69,7 @@ BuilderGroup {
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
-        BuilderType = 'Any',
+        BuilderType = 'EngineerForm',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Idle',
@@ -86,7 +86,7 @@ BuilderGroup {
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
-        BuilderType = 'Any',
+        BuilderType = 'EngineerForm',
     },
     Builder {
         BuilderName = 'SCTA Commander Assist Gantry Construction',
@@ -108,7 +108,7 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Other',
     },
     Builder {
         BuilderName = 'SCTA CDR Assist Structure',
@@ -121,7 +121,7 @@ BuilderGroup {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Other',
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
@@ -132,28 +132,6 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-    },
-    Builder {
-        BuilderName = 'SCTA Commander Assist Hydro',
-        PlatoonTemplate = 'CommanderBuilderSCTA',
-        Plan = 'ManagerEngineerAssistAI',
-        PriorityFunction = TAPrior.HydroBeingBuilt,
-        Priority = 960,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {120} },
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.HYDROCARBON }},
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssistRange = 120,
-                BeingBuiltCategories = {'HYDROCARBON'},                                                   
-                AssistUntilFinished = true,
-            },
-        },
-        BuilderType = 'Any',
     },
     Builder {
         BuilderName = 'SCTA Engineer Finish',
@@ -174,57 +152,7 @@ BuilderGroup {
                 Time = 20,
             },
         },
-        BuilderType = 'Any',
-    },
-
-}
-
-BuilderGroup {
-    BuilderGroupName = 'SCTAFieldEngineers',
-    BuildersType = 'PlatoonFormBuilder',
-    Builder {
-        BuilderName = 'SCTA Engineer Assist Gantry Production',
-        PlatoonTemplate = 'EngineerBuilderSCTAField',
-        Plan = 'ManagerEngineerAssistAI',
-        PriorityFunction = TAPrior.GateBeingBuilt,
-        Priority = 200,
-        InstanceCount = 2,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssistRange = 120,
-                BeingBuiltCategories = {'GATE'},                                                   
-                AssistUntilFinished = true,
-            },
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Assist Gantry',
-        PlatoonTemplate = 'EngineerBuilderSCTAField',
-        Plan = 'ManagerEngineerAssistAI',
-        PriorityFunction = TAPrior.GantryProduction,
-        Priority = 200,
-        InstanceCount = 4,
-        BuilderConditions = {
-            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYQUANTUMGATE}},
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Factory',
-                PermanentAssist = false,
-                BeingBuiltCategories = {'BUILTBYQUANTUMGATE'},                                                       
-                Time = 60,
-            },
-        },
-        BuilderType = 'Any',
+        BuilderType = 'EngineerForm',
     },
     Builder {
         BuilderName = 'SCTA PGen Field Assist',
@@ -236,7 +164,7 @@ BuilderGroup {
         BuilderConditions = {
             { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Other',
         BuilderData = {
             Assist = {
                 AssisteeType = 'Engineer',
@@ -261,7 +189,7 @@ BuilderGroup {
             Terrain = true,
             LocationType = 'LocationType',
         },
-        BuilderType = 'Any',
+        BuilderType = 'Other',
     },
     Builder {
         BuilderName = 'SCTA Engineer Field Finish',
@@ -282,7 +210,7 @@ BuilderGroup {
                 Time = 20,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Other',
     },
     Builder {
         BuilderName = 'SCTA Assist Production Field',
@@ -304,6 +232,6 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Other',
     },
 }

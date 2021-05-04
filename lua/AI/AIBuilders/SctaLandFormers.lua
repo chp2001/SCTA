@@ -14,7 +14,7 @@ BuilderGroup {
         PlatoonTemplate = 'AntiAirSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 100,
         InstanceCount = 200,
-        BuilderType = 'Any',
+        BuilderType = 'LandForm',
         BuilderData = {
             NeverGuardBases = false,
             NeverGuardEngineers = false,
@@ -32,7 +32,7 @@ BuilderGroup {
         Priority = 200,
         PriorityFunction = TAPrior.UnitProduction,
         InstanceCount = 50,
-        BuilderType = 'Any',
+        BuilderType = 'LandForm',
         BuilderData = {
             Energy = true,
             NeverGuardBases = false,
@@ -58,7 +58,7 @@ BuilderGroup {
         InstanceCount = 30,
         PriorityFunction = TAPrior.UnitProductionT1,
         FormRadius = 1000,
-        BuilderType = 'Any',
+        BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 75,
             NeverGuardBases = true,
@@ -80,7 +80,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.UnitProduction,
         Priority = 150,
         InstanceCount = 100,
-        BuilderType = 'Any',
+        BuilderType = 'LandForm',
         BuilderData = {
             Small = true,
             NeverGuardBases = false,
@@ -98,7 +98,7 @@ BuilderGroup {
         Priority = 250,
         InstanceCount = 50,
         FormRadius = 1000,
-        BuilderType = 'Any',
+        BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 75,
             NeverGuardBases = false,
@@ -116,7 +116,7 @@ BuilderGroup {
         PlatoonTemplate = 'LandRocketAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 105,
         InstanceCount = 30,
-        BuilderType = 'Any',
+        BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 10,
             NeverGuardBases = false,
@@ -139,7 +139,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.UnitProductionT1, -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 115,
         InstanceCount = 100,
-        BuilderType = 'Any',
+        BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 75,
             NeverGuardBases = false,
@@ -163,7 +163,7 @@ BuilderGroup {
         Priority = 210,
         InstanceCount = 50,
         FormRadius = 1000,
-        BuilderType = 'Any',
+        BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 75,
             NeverGuardBases = false,
@@ -183,7 +183,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandScoutFormSCTA',
         Priority = 125,
         InstanceCount = 2,
-        BuilderType = 'Any',
+        BuilderType = 'Scout',
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.SCOUT } },
          },

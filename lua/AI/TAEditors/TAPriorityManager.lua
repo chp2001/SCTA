@@ -128,6 +128,20 @@ UnitProductionT1 = function(self, aiBrain)
       end
   end
 
+  UnitProductionT1AIR = function(self, aiBrain)
+    if Factory(aiBrain,  0, categories.GATE) then
+          return 0
+    elseif Factory(aiBrain,  6, LAB) then
+          return 5
+    elseif Factory(aiBrain,  1, LAB) then 
+          return 50
+    elseif Factory(aiBrain,  0, PLANT * categories.AIR) then 
+          return 100
+    else
+          return 0
+      end
+  end
+
   UnitProductionT1Aux = function(self, aiBrain)
     if Factory(aiBrain,  0, categories.GATE) then
           return 0

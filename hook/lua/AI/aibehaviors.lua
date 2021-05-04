@@ -230,3 +230,105 @@ function SCTACDRReturnHome(aiBrain, cdr)
         IssueClearCommands({cdr})
     end
 end
+
+function SCTAAirUnitRefit(self)
+    for k, v in self:GetPlatoonUnits() do
+        if not v.Dead and not v.RefitThread then
+            v.RefitThreat = v:ForkThread(SCTAAirUnitRefitThread, self:GetPlan(), self.PlatoonData)
+        end
+    end
+end
+
+function SCTAAirUnitRefitThread(unit, plan, data)
+    unit.PlanName = plan
+    if data then
+        unit.PlatoonData = data
+    end
+
+    local aiBrain = unit:GetAIBrain()
+    while not unit.Dead do
+        local fuel = unit:GetFuelRatio()
+        local health = unit:GetHealthPercent()
+        if not unit.Loading and (fuel < 0.2 or health < 0.4) then
+            -- Find air stage
+            if aiBrain:GetCurrentUnits(categories.AIRSTAGINGPLATFORM) > 0 then
+                local unitPos = unit:GetPosition()
+                local plats = AIUtils.GetOwnUnitsAroundPoint(aiBrain, categories.AIRSTAGINGPLATFORM, unitPos, 400)
+                if table.getn(plats) > 0 then
+                    local closest, distance
+                    for _, v in plats do
+                        if not v.Dead then
+                            local roomAvailable = false
+                            if not EntityCategoryContains(categories.CARRIER, v) then
+                                roomAvailable = v:TransportHasSpaceFor(unit)
+                            end
+                            if roomAvailable then
+                                local platPos = v:GetPosition()
+                                local tempDist = VDist2(unitPos[1], unitPos[3], platPos[1], platPos[3])
+                                if not closest or tempDist < distance then
+                                    closest = v
+                                    distance = tempDist
+                                end
+                            end
+                        end
+                    end
+                    if closest then
+                        local plat = aiBrain:MakePlatoon('', '')
+                        aiBrain:AssignUnitsToPlatoon(plat, {unit}, 'Attack', 'None')
+                        IssueStop({unit})
+                        IssueClearCommands({unit})
+                        IssueTransportLoad({unit}, closest)
+                        if EntityCategoryContains(categories.AIRSTAGINGPLATFORM, closest) and not closest.AirStaging then
+                            closest.AirStaging = closest:ForkThread(SCTAAirStagingThread)
+                            closest.Refueling = {}
+                        elseif EntityCategoryContains(categories.CARRIER, closest) and not closest.CarrierStaging then
+                            closest.CarrierStaging = closest:ForkThread(CarrierStagingThread)
+                            closest.Refueling = {}
+                        end
+                        table.insert(closest.Refueling, unit)
+                        unit.Loading = true
+                    end
+                end
+            end
+        end
+        WaitSeconds(1)
+    end
+end
+
+function SCTAAirStagingThread(unit)
+    local aiBrain = unit:GetAIBrain()
+    while not unit.Dead do
+        local ready = true
+        local numUnits = 0
+        for _, v in unit.Refueling do
+            if not v.Dead and (v:GetFuelRatio() < 0.9 or v:GetHealthPercent() < 0.9) then
+                ready = false
+            elseif not v.Dead then
+                numUnits = numUnits + 1
+            end
+        end
+        if ready and numUnits > 0 then
+            local pos = unit:GetPosition()
+            IssueClearCommands({unit})
+            IssueTransportUnload({unit}, {pos[1] + 5, pos[2], pos[3] + 5})
+            WaitSeconds(2)
+            for _, v in unit.Refueling do
+                if not v.Dead then
+                    v.Loading = false
+                    local plat
+                    if not v.PlanName then
+                        plat = aiBrain:MakePlatoon('', 'InterceptorAISCTA')
+                    else
+                        plat = aiBrain:MakePlatoon('', v.PlanName)
+                    end
+                    if v.PlatoonData then
+                        plat.PlatoonData = {}
+                        plat.PlatoonData = v.PlatoonData
+                    end
+                    aiBrain:AssignUnitsToPlatoon(plat, {v}, 'Attack', 'GrowthFormation')
+                end
+            end
+        end
+        WaitSeconds(10)
+    end
+end

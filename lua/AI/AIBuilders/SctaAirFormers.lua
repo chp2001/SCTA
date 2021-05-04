@@ -9,9 +9,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Air Scout',
         PlatoonTemplate = 'T1AirScoutFormSCTA',
+        PriorityFunction = TAPrior.UnitProductionT1AIR,
         Priority = 100,
         InstanceCount = 10,
-        BuilderType = 'Any',
+        BuilderType = 'Scout',
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0,  categories.SCOUT * categories.TECH1 * categories.AIR} },
          },
@@ -22,7 +23,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.ProductionT3,
         Priority = 125,
         InstanceCount = 10,
-        BuilderType = 'Any',
+        BuilderType = 'Scout',
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.OVERLAYOMNI * categories.AIR * categories.MOBILE} },
          },
@@ -30,11 +31,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Bomber Attack',
         PlatoonTemplate = 'SCTABomberAttack',
-        PriorityFunction = TAPrior.UnitProductionT1,
+        PriorityFunction = TAPrior.UnitProductionT1AIR,
         Priority = 100,
         FormRadius = 500,
         InstanceCount = 50,
-        BuilderType = 'Any',        
+        BuilderType = 'Scout',        
         BuilderConditions = { 
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.BOMBER} },
         },
@@ -42,12 +43,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Air Intercept',
         PlatoonTemplate = 'IntieAISCTA',
-        PriorityFunction = TAPrior.UnitProductionT1,
+        PriorityFunction = TAPrior.UnitProductionT1AIR,
         Priority = 100,
         FormRadius = 500,
-        PlatoonAddBehaviors = { 'AirUnitRefit' },                              
+        PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
         InstanceCount = 200,
-        BuilderType = 'Any',     
+        BuilderType = 'AirForm',     
         BuilderConditions = { 
         },
     },
@@ -58,8 +59,8 @@ BuilderGroup {
         Priority = 110,
         InstanceCount = 25,
         FormRadius = 500,
-        PlatoonAddBehaviors = { 'AirUnitRefit' },                              
-        BuilderType = 'Any',
+        PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
+        BuilderType = 'AirForm',
         BuilderData = {
             Energy = true,
         },        
@@ -74,8 +75,8 @@ BuilderGroup {
         Priority = 110,
         InstanceCount = 200,
         FormRadius = 500,
-        PlatoonAddBehaviors = { 'AirUnitRefit' },                              
-        BuilderType = 'Any',
+        PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
+        BuilderType = 'AirForm',
         BuilderData = {
             Energy = true,
         },        

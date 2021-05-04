@@ -90,7 +90,8 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.OPTICS} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.RADAR * categories.STRUCTURE * categories.TECH2} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.RADAR * categories.STRUCTURE * categories.TECH2 - categories.FACTORY} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.RADAR * categories.STRUCTURE * categories.TECH1 - categories.FACTORY} },
             { TAutils, 'EcoManagementTA', { 0.75, 1.05, 0.5, 0.9, } },
         },
         BuilderType = 'StructureForm',

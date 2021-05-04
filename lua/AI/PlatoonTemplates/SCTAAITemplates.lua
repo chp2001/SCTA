@@ -44,7 +44,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'StrikeForceSCTALaser',
     Plan = 'HuntSCTAAI', -- The platoon function to use.
-    BuilderType = 'LandForm',
+    BuilderType = 'Scout',
     GlobalSquads = {
         { GROUND * (categories.ANTISHIELD + categories.FIELDENGINEER) - categories.AMPHIBIOUS - categories.EXPERIMENTAL, -- BuilderType of units.
           2, -- Min number of units.
@@ -93,7 +93,7 @@ PlatoonTemplate {
     Plan = 'AttackSCTAForceAIEndGame',
     BuilderType = 'LandForm',
     GlobalSquads = {
-        { GROUND - SPECIAL - categories.BOMB, 15, 30, 'attack', 'none' }
+        { GROUND - SPECIAL - categories.BOMB, 5, 30, 'attack', 'none' }
     },
 }
 
@@ -143,7 +143,7 @@ PlatoonTemplate {
     Plan = 'SCTAStrikeForceAIEndgame', 
     BuilderType = 'LandForm',-- The platoon function to use.
     GlobalSquads = {
-        { GROUND - SPECIAL - categories.BOMB, 15, 30, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND - SPECIAL - categories.BOMB, 5, 30, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
 

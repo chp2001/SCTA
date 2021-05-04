@@ -88,8 +88,6 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager, BuilderManager) {
             return self:SCTAManagerLoopBody(builder, 'SeaForm')
         elseif self.template[3] == 'EngineerForm' then
             return self:SCTAManagerLoopBody(builder, 'EngineerForm')
-        elseif self.template[3] == 'Command' then
-            return self:SCTAManagerLoopBody(builder, 'Command')    
         elseif self.template[3] == 'Other' then      
             return self:SCTAManagerLoopBody(builder, 'Other')
         elseif self.template[3] == 'StructureForm' then      
@@ -171,6 +169,9 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager, BuilderManager) {
                     end
                 end
                 builder:StoreHandle(hndl)
+            else 
+                LOG('IEXIST FAILS', self.template[1])
+                LOG('IEXIST FAILS2', self.template[3])
             end
         end
     end,

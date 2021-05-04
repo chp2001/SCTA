@@ -1,5 +1,6 @@
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
+local MABC = '/lua/editor/MarkerBuildConditions.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
@@ -144,6 +145,7 @@ BuilderGroup {
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
         PriorityFunction = TAPrior.AssistProduction,
         Priority = 5,
+        FormRadius = 100,
         InstanceCount = 5,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
@@ -166,6 +168,7 @@ BuilderGroup {
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
         PriorityFunction = TAPrior.AssistProduction,
         Priority = 5,
+        FormRadius = 100,
         InstanceCount = 5,
         BuilderConditions = {
             { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.MOBILE }},
@@ -213,6 +216,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.FIELDENGINEER} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderData = {
@@ -235,6 +239,7 @@ BuilderGroup {
         InstanceCount = 4,
         BuilderConditions = {
             { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYQUANTUMGATE}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.FIELDENGINEER} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderData = {
@@ -256,7 +261,9 @@ BuilderGroup {
         Priority = 980,
         InstanceCount = 1,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {120} },
+            { MIBC, 'LessThanGameTime', {180} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.COMMANDER} },
+            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 50}},
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.HYDROCARBON }},
         },
         BuilderData = {
@@ -268,7 +275,7 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'Command',
+        BuilderType = 'Other',
     },
 }
 

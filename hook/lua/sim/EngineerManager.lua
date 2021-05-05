@@ -50,7 +50,11 @@ EngineerManager = Class(SCTAEngineerManager) {
 
         self.Brain.LowMassMode = true
 
+        pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.DEFENSE)
+
+        if pauseVal != true then
         pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.FACTORY * (categories.TECH2 + categories.TECH3 + categories.GATE))
+        end
 
         -- Disable those building mobile units (through assist or experimental)
         if pauseVal != true then

@@ -4,7 +4,7 @@ SCTAPlatoonFormManager = PlatoonFormManager
 PlatoonFormManager = Class(SCTAPlatoonFormManager) {
     Create = function(self, brain, lType, location, radius)
         if not brain.SCTAAI then
-            --LOG('*template2', brain.SCTAAI)
+            --LOG('*self.template2', brain.SCTAAI)
             return SCTAPlatoonFormManager.Create(self, brain, lType, location, radius)
         end
         BuilderManager.Create(self,brain)
@@ -31,7 +31,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         self.BuilderCheckInterval = 5
     end,
 
-   AddBuilder = function(self, builderData, locationType, builderType)
+   --[[AddBuilder = function(self, builderData, locationType, builderType)
         if not self.Brain.SCTAAI then
             return SCTAPlatoonFormManager.AddBuilder(self, builderData, locationType, builderType)
         end
@@ -44,26 +44,31 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
             self:AddInstancedBuilder(newBuilder)
         end
         return newBuilder
-    end,
+    end,]]
 
     ManagerLoopBody = function(self,builder,bType)
         if not self.Brain.SCTAAI then
-            --LOG('*template3', self.Brain.SCTAAI)
+            --LOG('*self.template3', self.Brain.SCTAAI)
             return SCTAPlatoonFormManager.ManagerLoopBody(self,builder,bType)
         end
         --('*TAbtype', bType)
         --LOG('*TALtype', self.Naval)
         BuilderManager.ManagerLoopBody(self,builder,bType)
-        builder = self:GetHighestBuilder(bType, {builder})
-        LOG('*TAPrior', builder.Priority)
+        local builder = self:GetHighestBuilder(bType, {builder})
+        ---LOG('*TAPrior', builder.Priority)
         if builder and self.Brain.BuilderManagers[self.LocationType] and builder.Priority >= 1 and builder:CheckInstanceCount() then
-        --template = self:GetPlatoontemplate(builder:GetPlatoontemplate())
-        --bType = template[3]
+            self.personality = self.Brain:GetPersonality()
+            self.poolPlatoon = self.Brain:GetPlatoonUniquelyNamed('ArmyPool')
+            self.template = self:GetPlatoonTemplate(builder:GetPlatoonTemplate())
+            ----if builder:CheckBuilderConditions(self.Brain) then
+            --self.template = self:GetPlatoonself.template(builder:GetPlatoonself.template())
+        --bType = self.template[3]
         --LOG('*TAbtype2', bType)
-        --LOG('*TAbtype3', template[3])
+        --LOG('*TAbtype3', self.template[3])
          --return
         builder:FormDebug()
             if not self.Naval then
+            --if EntityCategoryContains(categories.MOBILE * categories.LAND, self.poolPlatoon) then
                 if bType == 'LandForm' or bType == 'Scout' then
                 return ForkThread(self.SCTAManagerLoopBodyLand, self, builder, bType)
                 elseif bType == 'EngineerForm' or bType == 'Other' then
@@ -81,31 +86,28 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
     ----return self:ForkThread(self.SCTAManagerLoopBody
 
     SCTAManagerLoopBody = function(self,builder,bType)
-        --LOG('*TAtemplate2', builder)
-        --LOG('*TAtemplateP2', bType)
-        local personality = self.Brain:GetPersonality()
-        local poolPlatoon = self.Brain:GetPlatoonUniquelyNamed('ArmyPool')
-        local template = self:GetPlatoonTemplate(builder:GetPlatoonTemplate())
+        --LOG('*TAself.template2', builder)
+        --LOG('*TAself.templateP2', bType)
                 ---LOG('*builder', self.Brain.SCTAAI)
-            --LOG('*template1', template[1])
+            --LOG('*self.template1', self.template[1])
             local radius = 100
             if builder:GetFormRadius() then radius = builder:GetFormRadius() end
-            if not template or not self.Location or not radius then
-                if type(template) != 'table' or type(template[1]) != 'string' or type(template[2]) != 'string' then
-                    WARN('*Platoon Form: Could not find template named: ' .. builder:GetPlatoontemplate())
+            if not self.template or not self.Location or not radius then
+                if type(self.template) != 'table' or type(self.template[1]) != 'string' or type(self.template[2]) != 'string' then
+                    WARN('*Platoon Form: Could not find self.template named: ' .. builder:GetPlatoontemplate())
                     return
                 end
-                WARN('*Platoon Form: Could not find template named: ' .. builder:GetPlatoontemplate())
+                WARN('*Platoon Form: Could not find self.template named: ' .. builder:GetPlatoontemplate())
                 return
             end
-            local formIt = poolPlatoon:CanFormPlatoon(template, personality:GetPlatoonSize(), self.Location, radius) 
-            if formIt and builder:GetBuilderStatus() then
-                --LOG('*templatetype', template[3])
-                --LOG('*template2', template[1])
-                local hndl = poolPlatoon:FormPlatoon(template, personality:GetPlatoonSize(), self.Location, radius)
+            local formIt = self.poolPlatoon:CanFormPlatoon(self.template, self.personality:GetPlatoonSize(), self.Location, radius) 
+            if builder:GetBuilderStatus() then
+                --LOG('*self.templatetype', self.template[3])
+                --LOG('*self.template2', self.template[1])
+                local hndl = self.poolPlatoon:FormPlatoon(self.template, self.personality:GetPlatoonSize(), self.Location, radius)
                 #LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Platoon Form Manager Forming - ',repr(builder.BuilderName),': Location = ',self.LocationType)
                 #LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Platoon Form Manager - Platoon Size = ', table.getn(hndl:GetPlatoonUnits()))
-                hndl.PlanName = template[2]
+                hndl.PlanName = self.template[2]
                 #If we have specific AI, fork that AI thread
                 if builder:GetPlatoonAIFunction() then
                     hndl:StopAI()
@@ -146,37 +148,34 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                 end
                 builder:StoreHandle(hndl)
             else 
-                LOG('*TAIEXIST FAILS', template[1])
-                --LOG('*TAIEXIST FAILS2', template[3])
+                LOG('*TAIEXIST FAILS', self.template[1])
+                --LOG('*TAIEXIST FAILS2', self.template[3])
         end
     end,
 
     SCTAManagerLoopBodyEngineer = function(self,builder,bType)
-        --LOG('*TAtemplate2', builder)
-        --LOG('*TAtemplateP3', bType)
-        local personality = self.Brain:GetPersonality()
-        local poolPlatoon = self.Brain:GetPlatoonUniquelyNamed('ArmyPool')
-        local template = self:GetPlatoonTemplate(builder:GetPlatoonTemplate())
+        --LOG('*TAself.template2', builder)
+        --LOG('*TAself.templateP3', bType)
                 ---LOG('*builder', self.Brain.SCTAAI)
-            --LOG('*template1', template[1])
+            --LOG('*self.template1', self.template[1])
             local radius = self.Radius
             if builder:GetFormRadius() then radius = builder:GetFormRadius() end
-            if not template or not self.Location or not radius then
-                if type(template) != 'table' or type(template[1]) != 'string' or type(template[2]) != 'string' then
-                    WARN('*Platoon Form: Could not find template named: ' .. builder:GetPlatoontemplate())
+            if not self.template or not self.Location or not radius then
+                if type(self.template) != 'table' or type(self.template[1]) != 'string' or type(self.template[2]) != 'string' then
+                    WARN('*Platoon Form: Could not find self.template named: ' .. builder:GetPlatoontemplate())
                     return
                 end
-                WARN('*Platoon Form: Could not find template named: ' .. builder:GetPlatoontemplate())
+                WARN('*Platoon Form: Could not find self.template named: ' .. builder:GetPlatoontemplate())
                 return
             end
-            local formIt = poolPlatoon:CanFormPlatoon(template, personality:GetPlatoonSize(), self.Location, radius) 
+            local formIt = self.poolPlatoon:CanFormPlatoon(self.template, self.personality:GetPlatoonSize(), self.Location, radius) 
             if formIt and builder:GetBuilderStatus() then
-                --LOG('*templatetype', template[3])
-                --LOG('*template2', template[1])
-                local hndl = poolPlatoon:FormPlatoon(template, personality:GetPlatoonSize(), self.Location, radius)
+                --LOG('*self.templatetype', self.template[3])
+                --LOG('*self.template2', self.template[1])
+                local hndl = self.poolPlatoon:FormPlatoon(self.template, self.personality:GetPlatoonSize(), self.Location, radius)
                 #LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Platoon Form Manager Forming - ',repr(builder.BuilderName),': Location = ',self.LocationType)
                 #LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Platoon Form Manager - Platoon Size = ', table.getn(hndl:GetPlatoonUnits()))
-                hndl.PlanName = template[2]
+                hndl.PlanName = self.template[2]
                 #If we have specific AI, fork that AI thread
                 if builder:GetPlatoonAIFunction() then
                     hndl:StopAI()
@@ -216,38 +215,35 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                     end
                 end
                 builder:StoreHandle(hndl)
-            else 
-                LOG('*TAIEXIST FAILS', template[1])
+            --else 
+                ---LOG('*TAIEXIST FAILS', template[1])
                 ----('*TAIEXIST FAILS2', template[3])
             end
     end,
 
     SCTAManagerLoopBodyLand = function(self,builder,bType)
-        --LOG('*TAtemplate2', builder)
-        --LOG('*TAtemplateP3', bType)
-        local personality = self.Brain:GetPersonality()
-        local poolPlatoon = self.Brain:GetPlatoonUniquelyNamed('ArmyPool')
-        local template = self:GetPlatoonTemplate(builder:GetPlatoonTemplate())
+        --LOG('*TAself.template2', builder)
+        --LOG('*TAself.templateP3', bType)
                 ---LOG('*builder', self.Brain.SCTAAI)
-            --LOG('*template1', template[1])
+            --LOG('*self.template1', self.template[1])
             local radius = 100
             if builder:GetFormRadius() then radius = builder:GetFormRadius() end
-            if not template or not self.Location or not radius then
-                if type(template) != 'table' or type(template[1]) != 'string' or type(template[2]) != 'string' then
-                    WARN('*Platoon Form: Could not find template named: ' .. builder:GetPlatoontemplate())
+            if not self.template or not self.Location or not radius then
+                if type(self.template) != 'table' or type(self.template[1]) != 'string' or type(self.template[2]) != 'string' then
+                    WARN('*Platoon Form: Could not find self.template named: ' .. builder:GetPlatoontemplate())
                     return
                 end
-                WARN('*Platoon Form: Could not find template named: ' .. builder:GetPlatoontemplate())
+                WARN('*Platoon Form: Could not find self.template named: ' .. builder:GetPlatoontemplate())
                 return
             end
-            local formIt = poolPlatoon:CanFormPlatoon(template, personality:GetPlatoonSize(), self.Location, radius) 
+            local formIt = self.poolPlatoon:CanFormPlatoon(self.template, self.personality:GetPlatoonSize(), self.Location, radius) 
             if formIt and builder:GetBuilderStatus() then
-                --LOG('*templatetype', template[3])
-                --LOG('*template2', template[1])
-                local hndl = poolPlatoon:FormPlatoon(template, personality:GetPlatoonSize(), self.Location, radius)
+                --LOG('*self.templatetype', self.template[3])
+                --LOG('*self.template2', self.template[1])
+                local hndl = self.poolPlatoon:FormPlatoon(self.template, self.personality:GetPlatoonSize(), self.Location, radius)
                 #LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Platoon Form Manager Forming - ',repr(builder.BuilderName),': Location = ',self.LocationType)
                 #LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Platoon Form Manager - Platoon Size = ', table.getn(hndl:GetPlatoonUnits()))
-                hndl.PlanName = template[2]
+                hndl.PlanName = self.template[2]
                 #If we have specific AI, fork that AI thread
                 if builder:GetPlatoonAIFunction() then
                     hndl:StopAI()
@@ -287,38 +283,32 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                     end
                 end
                 builder:StoreHandle(hndl)
-            else 
-                LOG('*TAIEXIST FAILS', template[1])
-                ----('*TAIEXIST FAILS2', template[3])
             end
     end,
 
     SCTAManagerLoopBodySea = function(self,builder,bType)
-        --LOG('*TAtemplate2', builder)
-        --LOG('*TAtemplateP3', bType)
-        local personality = self.Brain:GetPersonality()
-        local poolPlatoon = self.Brain:GetPlatoonUniquelyNamed('ArmyPool')
-        local template = self:GetPlatoonTemplate(builder:GetPlatoonTemplate())
+        --LOG('*TAself.template2', builder)
+        --LOG('*TAself.templateP3', bType
             ---LOG('*builder', self.Brain.SCTAAI)
-            --LOG('*template1', template[1])
+            --LOG('*self.template1', self.template[1])
             local radius = 50
             if builder:GetFormRadius() then radius = builder:GetFormRadius() end
-            if not template or not self.Location or not radius then
-                if type(template) != 'table' or type(template[1]) != 'string' or type(template[2]) != 'string' then
+            if not self.template or not self.Location or not radius then
+                if type(self.template) != 'table' or type(self.template[1]) != 'string' or type(self.template[2]) != 'string' then
                     WARN('*Platoon Form: Could not find template named: ' .. builder:GetPlatoontemplate())
                     return
                 end
                 WARN('*Platoon Form: Could not find template named: ' .. builder:GetPlatoontemplate())
                 return
             end
-            local formIt = poolPlatoon:CanFormPlatoon(template, personality:GetPlatoonSize(), self.Location, radius) 
+            local formIt = self.poolPlatoon:CanFormPlatoon(self.template, self.personality:GetPlatoonSize(), self.Location, radius) 
             if formIt and builder:GetBuilderStatus() then
-                --LOG('*templatetype', template[3])
-                --LOG('*template2', template[1])
-                local hndl = poolPlatoon:FormPlatoon(template, personality:GetPlatoonSize(), self.Location, radius)
+                --LOG('*self.templatetype', self.template[3])
+                --LOG('*self.template2', self.template[1])
+                local hndl = self.poolPlatoon:FormPlatoon(self.template, self.personality:GetPlatoonSize(), self.Location, radius)
                 #LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Platoon Form Manager Forming - ',repr(builder.BuilderName),': Location = ',self.LocationType)
                 #LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Platoon Form Manager - Platoon Size = ', table.getn(hndl:GetPlatoonUnits()))
-                hndl.PlanName = template[2]
+                hndl.PlanName = self.template[2]
                 #If we have specific AI, fork that AI thread
                 if builder:GetPlatoonAIFunction() then
                     hndl:StopAI()
@@ -358,9 +348,6 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                     end
                 end
                 builder:StoreHandle(hndl)
-            else 
-                LOG('*TAIEXIST FAILS', template[1])
-                ----('*TAIEXIST FAILS2', template[3])
             end
     end,
 }

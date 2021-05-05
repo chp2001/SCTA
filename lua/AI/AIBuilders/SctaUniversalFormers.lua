@@ -62,7 +62,6 @@ BuilderGroup {
         },        
         BuilderConditions = { 
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, RAIDER} },
-            { MIBC, 'LessThanGameTime', {180} },
             { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.COMMAND }},	
         },
     },

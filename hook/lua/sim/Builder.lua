@@ -31,7 +31,7 @@ end,
     --LOG('*TAAlter1', builder)
     --LOG('*TAAlter1C', self.Brain.SCTAAI)
     ---LOG('*TAAlter1Brain', self.Brain.SCTAAI)
-    self.Value = (self.OriginalPriority/10)
+    self.Value = (self.OriginalPriority/5)
     self.PriorityAltered = false
     --LOG('*TAAlter1Plat', self.BuilderData.Value)
     --LOG('*TAAlter2Plat', self.Value)
@@ -42,7 +42,7 @@ end,
         --LOG('*TAAlter', newPri)
         if newPri != self.Priority then
                 if newPri > 0 then
-                    self.Priority = newPri + (self.Value or 0)
+                    self.Priority = newPri + self.Value
                     --LOG('*TAAlterHuzzah', self.Priority)
                 else 
                     self.Priority = 0
@@ -111,7 +111,7 @@ FactoryBuilder = Class(TAFactoryBuilder) {
         return TAFactoryBuilder.CalculatePriority(self, builderManager)
     end
     --LOG('*TAAlter1', builder)
-    self.Value = (self.OriginalPriority/10)
+    self.Value = (self.OriginalPriority/5)
     --LOG('*TAAlter1C', self.Brain.SCTAAI)
     ---LOG('*TAAlter1Brain', self.Brain.SCTAAI)
     self.PriorityAltered = false
@@ -124,7 +124,7 @@ FactoryBuilder = Class(TAFactoryBuilder) {
         --LOG('*TAAlterFact', newPri)
         if newPri != self.Priority then
                 if newPri > 0 then
-                    self.Priority = newPri + (self.Value or 0)
+                    self.Priority = newPri + self.Value
                     ---LOG('*TAAlterHuzzah1', self.Priority)
                 else 
                     self.Priority = 0

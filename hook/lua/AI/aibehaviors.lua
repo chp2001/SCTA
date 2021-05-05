@@ -55,11 +55,9 @@ function CDRSCTADGun(aiBrain, cdr)
             break
         end
     end
-
-    cdr.UnitBeingBuiltBehavior = false
-
+    
     -- Added for ACUs starting near each other
-    if GetGameTimeSeconds() < 60 then
+    if GetGameTimeSeconds() < 240 then
         return
     end
 
@@ -85,7 +83,7 @@ function CDRSCTADGun(aiBrain, cdr)
     local numUnits = aiBrain:GetNumUnitsAroundPoint(categories.LAND * categories.MOBILE - categories.SCOUT, cdrPos, (maxRadius), 'Enemy')
     local distressLoc = aiBrain:BaseMonitorDistressLocation(cdrPos)
     local overCharging = false
-
+    cdr.UnitBeingBuiltBehavior = false
     if Utilities.XZDistanceTwoVectors(cdrPos, cdr:GetPosition()) > maxRadius then
         return
     end

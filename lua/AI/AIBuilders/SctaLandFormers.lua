@@ -196,7 +196,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Land Scout',
         PlatoonTemplate = 'T1LandScoutFormSCTA',
         Priority = 125,
-        InstanceCount = 1,
+        InstanceCount = 2,
         BuilderType = 'Scout',
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.SCOUT * categories.LAND * categories.MOBILE } },

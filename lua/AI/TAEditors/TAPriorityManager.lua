@@ -57,6 +57,19 @@ UnitProduction = function(self, aiBrain)
     end
 end
 
+FactoryReclaim = function(self, aiBrain)
+    if Factory(aiBrain,  1, PLATFORM) then
+        return 150
+    elseif Factory(aiBrain,  1, LAB) then
+        return 125
+    elseif Factory(aiBrain,  12, PLANT) then 
+        return 50
+    else
+        return 0
+    end
+end
+
+
 UnitProductionField = function(self, aiBrain)
     if Factory(aiBrain,  0, categories.FIELDENGINEER) then
         return 200

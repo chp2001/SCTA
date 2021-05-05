@@ -13,7 +13,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI AntiAir',
         PlatoonTemplate = 'AntiAirSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 100,
-        InstanceCount = 10,
+        InstanceCount = 25,
         BuilderType = 'Scout',
         BuilderData = {
             NeverGuardBases = false,
@@ -46,8 +46,8 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { TAutils, 'GreaterEnergyStorageMaxTA', { 0.2 } },
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2,  categories.ANTISHIELD * categories.MOBILE} },
+            { TAutils, 'GreaterEnergyStorageMaxTA', { 0.2 } },
         },
     },
 ---Defensive/MidGame Platoons
@@ -71,7 +71,6 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 5, categories.MOBILE * categories.LAND - categories.ENGINEER}},
         },
     },
     Builder {
@@ -115,7 +114,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Missile Hunt',
         PlatoonTemplate = 'LandRocketAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 105,
-        InstanceCount = 10,
+        InstanceCount = 25,
         BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 10,
@@ -138,7 +137,7 @@ BuilderGroup {
         PlatoonTemplate = 'LandAttackSCTAMid',
         PriorityFunction = TAPrior.UnitProductionT1, -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 115,
-        InstanceCount = 15,
+        InstanceCount = 25,
         BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 75,
@@ -161,7 +160,7 @@ BuilderGroup {
         PlatoonTemplate = 'LandAttackSCTAEndGame', -- The platoon template tells the AI what units to include, and how to use them.
         PriorityFunction = TAPrior.TechEnergyExist,
         Priority = 210,
-        InstanceCount = 20,
+        InstanceCount = 30,
         FormRadius = 1000,
         BuilderType = 'LandForm',
         BuilderData = {

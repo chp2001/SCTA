@@ -270,3 +270,31 @@ function SCTAEngineerMoveWithSafePathLand(aiBrain, unit, destination)
     end
     return false
 end
+
+function SetupCheat(aiBrain, cheatBool)
+    if not aiBrain.SCTAAI then
+        return SetupCheat(aiBrain, cheatBool)
+    end
+
+    if cheatBool then
+        aiBrain.CheatEnabled = true
+
+        local buffDef = Buffs['CheatBuildRate']
+        local buffAffects = buffDef.Affects
+        buffAffects.BuildRate.Mult = tonumber(ScenarioInfo.Options.BuildMult)
+
+        buffDef = Buffs['CheatIncome']
+        buffAffects = buffDef.Affects
+        buffAffects.EnergyProduction.Mult = tonumber(ScenarioInfo.Options.CheatMult)
+        buffAffects.MassProduction.Mult = tonumber(ScenarioInfo.Options.CheatMult)
+        buffAffects.ProductionPerSecondEnergyMax.Mult = tonumber(ScenarioInfo.Options.CheatMult)
+        buffAffects.ProductionPerSecondEnergyMin.Mult = tonumber(ScenarioInfo.Options.CheatMult)
+
+        local pool = aiBrain:GetPlatoonUniquelyNamed('ArmyPool')
+        for _, v in pool:GetPlatoonUnits() do
+            -- Apply build rate and income buffs
+            ApplyCheatBuffs(v)
+        end
+
+    end
+end

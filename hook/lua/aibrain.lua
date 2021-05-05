@@ -236,7 +236,7 @@ AIBrain = Class(SCTAAIBrainClass) {
             v.PlatoonFormManager:SortBuilderList('SeaForm')
             v.PlatoonFormManager:SortBuilderList('Scout')
             v.PlatoonFormManager:SortBuilderList('EngineerForm')
-            v.PlatoonFormManager:SortBuilderList('Command')
+            v.PlatoonFormManager:SortBuilderList('CommandTA')
             v.PlatoonFormManager:SortBuilderList('Other')
             v.PlatoonFormManager:SortBuilderList('StructureForm')
         end

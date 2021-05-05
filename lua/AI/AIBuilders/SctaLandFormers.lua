@@ -87,7 +87,7 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4, categories.MOBILE * categories.LAND - categories.ENGINEER}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4, categories.MOBILE * categories.LAND * categories.DIRECTFIRE - categories.ENGINEER}},
         },
     },
     Builder {
@@ -96,6 +96,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.StructureProductionT2,
         Priority = 250,
         InstanceCount = 50,
+        FormRadius = 1000,
         BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 75,
@@ -106,7 +107,6 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4, categories.MOBILE * categories.LAND - categories.ENGINEER}},
             { MIBC, 'GreaterThanGameTime', {900} },
         },
     },
@@ -162,6 +162,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.TechEnergyExist,
         Priority = 210,
         InstanceCount = 50,
+        FormRadius = 1000,
         BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 75,
@@ -175,7 +176,6 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4, categories.MOBILE * categories.LAND - categories.ENGINEER}},
             { MIBC, 'GreaterThanGameTime', {900} },
         },
     },
@@ -186,7 +186,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderType = 'Scout',
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.SCOUT } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.SCOUT * categories.LAND * categories.MOBILE } },
          },
     },
 }

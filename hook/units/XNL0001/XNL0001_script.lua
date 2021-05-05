@@ -8,6 +8,19 @@ XNL0001 = Class(taXNL0001) {
         self:ForkThread(self.DoMeteorAnim)
     end,
 
+    DoMeteorAnim = function(self)
+    taXNL0001.DoMeteorAnim(self)
+    local rotateOpt = ScenarioInfo.Options['RotateACU']
+    if not rotateOpt or rotateOpt == 'On' then
+        self:RotateTowardsMid()
+    elseif rotateOpt == 'Marker' then
+        local marker = GetMarker(strArmy) or {}
+        if marker['orientation'] then
+            local o = EulerToQuaternion(unpack(marker['orientation']))
+            self:SetOrientation(o, true)
+        end
+        end
+    end,
 }
 
 TypeClass = XNL0001

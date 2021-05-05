@@ -32,6 +32,7 @@ TAconstructor = Class(TAWalking) {
         if __blueprints['armgant'] then
             TAutils.updateBuildRestrictions(self)
         end
+        --LOG('*Who', self:GetBlueprint().General.FactionName)
     end,
 
     OnPaused = function(self)
@@ -57,6 +58,11 @@ TAconstructor = Class(TAWalking) {
         self.UnitBuildOrder = order
         self.BuildingUnit = true
         TAWalking.OnStartBuild(self, unitBeingBuilt, order)
+        if not self:GetGuardedUnit() and unitBeingBuilt:GetFractionComplete() == 0 and not self:CanBuild(unitBeingBuilt:GetBlueprint().BlueprintId) then
+            IssueStop({self})
+            IssueClearCommands({self})
+            unitBeingBuilt:Destroy()
+        end
     end,
 
     OnStopBeingBuilt = function(self, builder, layer)
@@ -174,7 +180,7 @@ TASeaConstructor = Class(TAconstructor)
 TANecro = Class(TAconstructor) {
     OnStartReclaim = function(self, target, oldPosition)
         if self:GetBlueprint().Economy.Necro then
-            if not target.ReclaimInProgress and not target.NecroingInProgress then
+            if not target.ReclaimInProgress and not target.NecroingInProgress and not target:GetBlueprint().Economy.Heap then
                 --LOG('* Necro: OnStartReclaim:  I am a necro! no ReclaimInProgress; starting Necroing')
                 target.NecroingInProgress = true
 				self.spawnUnit = true
@@ -247,6 +253,22 @@ TACommander = Class(TAconstructor) {
         self.Sync.AutoOvercharge = auto
     end,
 
+    ResetRightArm = function(self)
+       self:SetImmobile(false)
+       self:SetWeaponEnabledByLabel('OverCharge', false)
+       self:SetWeaponEnabledByLabel('AutoOverCharge', false)
+
+        -- Ugly hack to re-initialise auto-OC once a task finishes
+        local wep = self:GetWeaponByLabel('AutoOverCharge')
+        wep:SetAutoOvercharge(wep.AutoMode)
+    end,
+
+    OnPrepareArmToBuild = function(self)
+        TAconstructor.OnPrepareArmToBuild(self)
+        self:SetWeaponEnabledByLabel('OverCharge', false)
+        self:SetWeaponEnabledByLabel('AutoOverCharge', false)
+    end,
+
     OnCreate = function(self)
 		TAconstructor.OnCreate(self)
         self:SetCapturable(false)
@@ -259,10 +281,14 @@ TACommander = Class(TAconstructor) {
 
 	OnStopCapture = function(self, target)
 		TAconstructor.OnStopCapture(self, target)
+        if self:BeenDestroyed() then return end
+        self:ResetRightArm()
 	end,
     
     OnFailedCapture = function(self, target)
 		TAconstructor.OnFailedCapture(self, target)
+        if self:BeenDestroyed() then return end
+        self:ResetRightArm()
     end,
 
 	DeathThread = function(self)
@@ -277,11 +303,21 @@ TACommander = Class(TAconstructor) {
     OnStartReclaim = function(self, target)
 		TAconstructor.OnStartReclaim(self, target)
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
+        if self:BeenDestroyed() then return end
+        self:ResetRightArm()
     end,
 
     OnStartCapture = function(self, target)
 		TAconstructor.OnStartCapture(self, target)
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
+        if self:BeenDestroyed() then return end
+        self:ResetRightArm()
+    end,
+
+    OnStopBuild = function(self, unitBeingBuilt)
+        TAconstructor.OnStopBuild(self, unitBeingBuilt)
+        if self:BeenDestroyed() then return end
+        self:ResetRightArm()
     end,
 
     OnStopBeingBuilt = function(self,builder,layer)
@@ -415,5 +451,15 @@ TARealCommander = Class(TACommander) {
         self:SetUnSelectable(false)
 		self:SetBusy(false)
 		self:SetBlockCommandQueue(false)
+        local rotateOpt = ScenarioInfo.Options['RotateACU']
+        if not rotateOpt or rotateOpt == 'On' then
+            self:RotateTowardsMid()
+        elseif rotateOpt == 'Marker' then
+            local marker = GetMarker(strArmy) or {}
+            if marker['orientation'] then
+                local o = EulerToQuaternion(unpack(marker['orientation']))
+                self:SetOrientation(o, true)
+            end
+        end
     end,
 }

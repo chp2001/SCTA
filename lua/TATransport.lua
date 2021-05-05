@@ -62,6 +62,35 @@ TATransportAir = Class(AirTransport)
         self:SetTurnMult(1)
 	end,
 	
+    OnKilled = function(self, instigator, type, overkillRatio)
+        local layer = self:GetCurrentLayer()
+        self.Dead = true
+
+
+        local bp = self:GetBlueprint()
+        self:PlayUnitSound('Killed')
+        -- apply death animation on half built units (do not apply for ML and meg
+        self:DoUnitCallbacks('OnKilled')
+        ArmyBrains[self:GetArmy()].LastUnitKilledBy = (instigator or self):GetArmy()
+
+        if self.DeathWeaponEnabled ~= false then
+            self:DoDeathWeapon()
+        end
+
+        -- Notify instigator of kill and spread veterancy
+        -- We prevent any vet spreading if the instigator isn't part of the vet system (EG - Self destruct)
+        -- This is so that you can bring a damaged Experimental back to base, kill, and rebuild, without granting
+        -- instant vet to the enemy army, as well as other obscure reasons
+        if self.totalDamageTaken > 0 and not self.veterancyDispersed then
+            self:VeterancyDispersal(not instigator or not IsUnit(instigator))
+        end
+
+        self:DisableUnitIntel('Killed')
+        self:ForkThread(self.DeathThread, overkillRatio , instigator)
+
+        ArmyBrains[self.Army]:AddUnitStat(self.UnitId, "lost", 1)   
+    end,
+
     Kill = function(self)
         if self.Dead or self.KillingInProgress then
             return

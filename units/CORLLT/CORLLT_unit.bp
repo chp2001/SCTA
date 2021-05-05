@@ -38,7 +38,8 @@ UnitBlueprint {
 	'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 	'CORE',
-	'SORTDEFENSE',
+    'SORTDEFENSE',
+    'CQUEMOV',
     'SNIPEMODE',
     'ANTISHIELD',
     },
@@ -128,7 +129,7 @@ TechLevel = 'RULEUTL_Basic',
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_LIGHTLASER/CORE_LIGHTLASER_proj.bp',
             EnergyDrainPerSecond = 10,
             EnergyRequired = 10,
-            DamageRadius = 1,
+            DamageRadius = 2,
             EnergyChargeForFirstShot = true,
             RackBones = {
                 {
@@ -174,8 +175,7 @@ TechLevel = 'RULEUTL_Basic',
         
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

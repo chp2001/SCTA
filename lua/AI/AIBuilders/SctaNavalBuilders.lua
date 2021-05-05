@@ -8,7 +8,7 @@ local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
-
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAINavalBuilder',
@@ -16,6 +16,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Naval Engineer',
         PlatoonTemplate = 'T1EngineerSCTANaval',
+        PriorityFunction = TAPrior.EngineerProduction,
         Priority = 140, -- Top factory priority
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.NAVAL * categories.ENGINEER * categories.TECH1} }, -- Build engies until we have 4 of them.
@@ -32,14 +33,33 @@ BuilderGroup {
         BuilderType = 'Sea',
     },
     Builder {
+        BuilderName = 'SCTAAi FactoryT3 Hover Naval Engineer',
+        PlatoonTemplate = 'T3BuildEngineerSCTA',
+        Priority = 120, -- Top factory priority
+        PriorityFunction = TAPrior.EngineerProductionT3,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.TECH3 * categories.HOVER} }, -- Build engies until we have 4 of them.
+        },
+        BuilderType = 'SpecHover',
+    },
+    Builder {
+        BuilderName = 'SCTAAi FactoryT3 Engineer Naval Air',
+        PlatoonTemplate = 'T3BuildEngineerAirSCTA',
+        Priority = 125, -- Top factory priority
+        PriorityFunction = TAPrior.EngineerProductionT3,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.TECH3 * categories.AIR} }, -- Build engies until we have 4 of them.
+        },
+        BuilderType = 'SpecAir',
+    },
+    Builder {
         BuilderName = 'SCTAAi Factory ScoutShip',
         PlatoonTemplate = 'T1ScoutShipSCTA',
+        PriorityFunction = TAPrior.AirProduction,
         Priority = 110,
         BuilderConditions = {
-            { TASlow,   'TAAttackNaval', {true}},
-            { MIBC, 'LessThanGameTime', {900} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.SCOUT * categories.NAVAL } },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Sea',
     },
@@ -51,19 +71,20 @@ BuilderGroup {
             { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.SCOUT * categories.NAVAL } },
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.xsl0103 + categories.ual0201, 'Enemy'}},	
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Sea',
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT1 AntiSub',
         PlatoonTemplate = 'T1SubSCTA',
+        PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 120,
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.SUBMERSIBLE - categories.ENGINEER} },
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.SUBMERSIBLE * categories.MOBILE, 'Enemy'}},	
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Sea',
     },
@@ -75,7 +96,7 @@ BuilderGroup {
             { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.SUBMERSIBLE - categories.ENGINEER} },
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.SUBMERSIBLE * categories.MOBILE, 'Enemy'}},
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Sea',
     },
@@ -85,11 +106,10 @@ BuilderGroup {
         Priority = 120,
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},
-            { MIBC, 'GreaterThanGameTime', {600} },
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, (categories.NAVAL * categories.FACTORY), 'Enemy'}},	
             { UCBC, 'HaveUnitRatio', { 0.33, categories.NAVAL * categories.MOBILE * categories.FRIGATE,
             '<=', categories.NAVAL * categories.MOBILE} },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } }, -- Stop after 10 facs have been built.
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Sea',
     },
@@ -102,7 +122,7 @@ BuilderGroup {
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},		
             { UCBC, 'HaveUnitRatio', { 0.33, categories.NAVAL * categories.DESTROYER,
             '<=', categories.NAVAL * categories.MOBILE} },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Sea',
     },
@@ -113,20 +133,21 @@ BuilderGroup {
         BuilderConditions = {
             { TASlow,    'TAAttackNaval', {true}},
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},	
-            { UCBC, 'HaveUnitRatio', { 0.1, categories.NAVAL * categories.MOBILE * categories.CRUISER,
+            { UCBC, 'HaveUnitRatio', { 0.25, categories.NAVAL * categories.MOBILE * categories.CRUISER,
             '<=', categories.NAVAL * categories.MOBILE} },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Sea',
     },
     Builder {
         BuilderName = 'SCTAAi Battleship',
         PlatoonTemplate = 'BattleshipSCTA',
+        PriorityFunction = TAPrior.ProductionT3,
         Priority = 131,
         BuilderConditions = {
             { TASlow,    'TAAttackNaval', {true}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.BATTLESHIP } }, -- Stop after 10 facs have been built.
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Sea',
     },

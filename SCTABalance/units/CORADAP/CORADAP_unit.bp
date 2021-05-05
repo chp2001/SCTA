@@ -86,6 +86,8 @@ UnitBlueprint {
     BuildableCategory = {
         'AIR MOBILE TECH1 CORE', 
         'AIR MOBILE TECH2 CORE',
+        'TECH1 BOT ENGINEER CORE',
+        'TECH2 FIELDENGINEER CORE',
         'ASF CORE',
     },
     StorageMass = 50,
@@ -163,8 +165,7 @@ TechLevel = 'RULEUTL_Advanced',
 
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

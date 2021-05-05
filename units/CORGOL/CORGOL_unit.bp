@@ -125,7 +125,7 @@ TechLevel = 'RULEUTL_Advanced',
             CollideFriendly = false,
 	        DamageFriendly = true,
             Damage = 360,
-	        DamageRadius = 1,
+	        DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'COR_GOL',
             FireTargetLayerCapsTable = {
@@ -186,8 +186,7 @@ TechLevel = 'RULEUTL_Advanced',
     },
 
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

@@ -87,6 +87,8 @@ UnitBlueprint {
     BuildableCategory = {
         'AIR MOBILE TECH2 ARM',
         'AIR MOBILE TECH1 ARM',
+        'TECH1 BOT ENGINEER ARM',
+        'TECH2 FIELDENGINEER ARM',
         'armadap', 
         },
     StorageMass = 50,
@@ -163,8 +165,7 @@ UnitBlueprint {
 
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

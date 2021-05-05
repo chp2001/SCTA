@@ -21,6 +21,7 @@ UnitBlueprint {
 	    'NAVAL',
         'OVERLAYANTINAVY',
         'SORTDEFENSE',
+        'CQUEMOV',
 	    'ARM',
         'SNIPEMODE',
     },
@@ -39,4 +40,12 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 4,
     SizeZ = 2,
+    Weapon = {
+        [1] = {
+            Damage = 150,
+            MaxRadius = 50,
+        },
+        [2] = {
+        },
+    },
 }

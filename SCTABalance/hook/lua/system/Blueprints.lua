@@ -153,11 +153,6 @@ do
         }
 
         for id, bp in all_blueprints.Unit do
-            if bp.Categories and table.find(bp.Categories, 'NAVAL') and bp.Physics.MotionType == 'RULEUMT_Water' then
-            if bp.Defense.ArmorType and type(bp.Defense.ArmorType) == 'string' then
-                bp.Defense.ArmorType = 'Ship'
-            end
-        end
             -- #2 CB Change: Check ARM/CORE in its own IF statement, then do if/else on land/navy/air/struct
             if bp.Categories and table.find(bp.Categories, 'ARM') or table.find(bp.Categories, 'CORE') then
                 if table.find(bp.Categories, 'STRUCTURE') then
@@ -205,3 +200,10 @@ function UpdateStat_NoCheck(bp, mults, singles)
         end
     end
 end
+
+----RemoveTASpecialityCodeForNavalTargets
+--if bp.Categories and table.find(bp.Categories, 'NAVAL') and bp.Physics.MotionType == 'RULEUMT_Water' then
+    --if bp.Defense.ArmorType and type(bp.Defense.ArmorType) == 'string' then
+        --bp.Defense.ArmorType = 'Ship'
+   --end
+--end

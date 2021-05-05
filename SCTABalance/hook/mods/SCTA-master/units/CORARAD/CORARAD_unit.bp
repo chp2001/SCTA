@@ -17,6 +17,7 @@ UnitBlueprint {
     'SHOWQUEUE',
 	'SORTINTEL',
     'OPTICS',
+    'CQUEMOV',
     },
  Display = {
   Abilities = {

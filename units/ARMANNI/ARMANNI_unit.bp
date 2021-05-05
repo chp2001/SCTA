@@ -31,7 +31,8 @@ UnitBlueprint {
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 	    'ARM',
-	    'SORTDEFENSE',
+        'SORTDEFENSE',
+        'CQUEMOV',
         'ANTISHIELD',
         'SNIPEMODE',
         'OVERLAYRADAR',
@@ -117,7 +118,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 2500,
-            DamageRadius = 1,
+            DamageRadius = 2,
             DamageType = 'Normal',
             DisplayName = 'ARM_TOTAL_ANNIHILATOR',
             FireTargetLayerCapsTable = {
@@ -168,7 +169,7 @@ UnitBlueprint {
             TurretYawSpeed = 60,
             Turreted = true,
 	        WeaponUnpacks = true,
-            WeaponRepackTimeout = 2,
+            WeaponRepackTimeout = 1,
         },
         { #ATOMIC_BLAST
             Damage = 2000,
@@ -181,8 +182,7 @@ UnitBlueprint {
 
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

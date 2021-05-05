@@ -98,7 +98,7 @@ UnitBlueprint {
     SelectionCenterOffsetZ = -0.25,
     SelectionThickness = 0.25,
     SizeX = 3,
-    SizeY = 2,
+    SizeY = 3,
     SizeZ = 3,
     StrategicIconName = 'icon_structure2_artillery',
     StrategicIconSortPriority = 0,
@@ -184,8 +184,7 @@ UnitBlueprint {
 
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

@@ -139,8 +139,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	        DamageFriendly = true,
-            Damage = 150,
-            DamageType = 'TASpec',
+            Damage = 360,
+            DamageType = 'Normal',
             DisplayName = 'CORE_TORPEDO',
             FireTargetLayerCapsTable = {
                 Sub = 'Seabed|Sub|Water',
@@ -153,7 +153,7 @@ UnitBlueprint {
             FiringTolerance = 360,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 5,
+            MuzzleVelocity = 3,
             ProjectileId = '/mods/SCTA-master/projectiles/CORE_TORPEDO/CORE_TORPEDO_proj.bp',
             RackBones = {
                 {
@@ -176,7 +176,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 0,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.5,
+            RateOfFire = 0.33,
             TrackingRadius = 1.15,
             TargetCheckInterval = 1,
             TargetPriorities = {

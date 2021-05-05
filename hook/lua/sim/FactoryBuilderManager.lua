@@ -1,7 +1,75 @@
-SCTAFactoryBuilderManager = FactoryBuilderManager
+WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset FactoryBuilderManager.lua' )
 
-FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
-        GetFactoryFaction = function(self, factory)
+SCTAFactoryBuilderManager = FactoryBuilderManager
+FactoryBuilderManager = Class(SCTAFactoryBuilderManager) {
+    Create = function(self, brain, lType, location, radius, useCenterPoint)
+        if not brain.SCTAAI then
+            return SCTAFactoryBuilderManager.Create(self, brain, lType, location, radius, useCenterPoint)
+        end
+		BuilderManager.Create(self, brain)
+        if not lType or not location or not radius then
+            error('*FACTORY BUILDER MANAGER ERROR: Invalid parameters; requires locationType, location, and radius')
+            return false
+        end
+        --LOG('IEXISTFACT')
+        local builderTypes = {'Air', 'KBot', 'Vehicle', 'Hover', 'Sea', 'Seaplane', 'Gate', }
+        for _,v in builderTypes do
+			self:AddBuilderType(v)
+		end
+        self.Location = location
+        --LOG('*Location', self.Location)
+        self.Radius = radius
+        self.LocationType = lType
+        --LOG('*Location', self.LocationType)
+        self.RallyPoint = false
+
+        self.FactoryList = {}
+
+        self.LocationActive = false
+
+        self.RandomSamePriority = true
+        self.PlatoonListEmpty = true
+	end,
+
+    AddBuilder = function(self, builderData, locationType)
+        if not self.Brain.SCTAAI then
+            return SCTAFactoryBuilderManager.AddBuilder(self, builderData, locationType)
+        end
+        local newBuilder = Builder.CreateFactoryBuilder(self.Brain, builderData, locationType)
+        if newBuilder:GetBuilderType() == 'All' then
+            for k,v in self.BuilderData do
+                self:AddInstancedBuilder(newBuilder, k)
+            end
+        elseif newBuilder:GetBuilderType() == 'Land' then
+            for __,v in self.BuilderData do
+                self:AddInstancedBuilder(newBuilder, 'KBot')
+                self:AddInstancedBuilder(newBuilder, 'Vehicle')
+            end
+        elseif newBuilder:GetBuilderType() == 'SpecHover' then
+            for __,v in self.BuilderData do
+                self:AddInstancedBuilder(newBuilder, 'KBot')
+                self:AddInstancedBuilder(newBuilder, 'Vehicle')
+                self:AddInstancedBuilder(newBuilder, 'Hover')
+                self:AddInstancedBuilder(newBuilder, 'Sea')
+            end
+        elseif newBuilder:GetBuilderType() == 'SpecAir' then
+            for __,v in self.BuilderData do
+                self:AddInstancedBuilder(newBuilder, 'Air')
+                self:AddInstancedBuilder(newBuilder, 'Seaplane')
+            end
+        elseif newBuilder:GetBuilderType() == 'Field' then
+            for __,v in self.BuilderData do
+                self:AddInstancedBuilder(newBuilder, 'KBot')
+                self:AddInstancedBuilder(newBuilder, 'Vehicle')
+                self:AddInstancedBuilder(newBuilder, 'Air')
+            end
+        else
+            self:AddInstancedBuilder(newBuilder)
+        end
+        return newBuilder
+    end,
+
+    GetFactoryFaction = function(self, factory)
             if not self.Brain.SCTAAI then
                 return SCTAFactoryBuilderManager.GetFactoryFaction(self, factory)
             end
@@ -12,6 +80,61 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
             end
             return false
         end,
+
+        AddFactory = function(self,unit)
+            if not self.Brain.SCTAAI then
+                return SCTAFactoryBuilderManager.AddFactory(self, unit)
+            end
+            if not self:FactoryAlreadyExists(unit) then
+                table.insert(self.FactoryList, unit)
+                unit.DesiresAssist = true
+                if EntityCategoryContains(categories.BOT, unit) then
+                    self:SetupNewFactory(unit, 'KBot')
+                elseif EntityCategoryContains(categories.TANK, unit) then
+                    self:SetupNewFactory(unit, 'Vehicle')
+                elseif EntityCategoryContains(categories.HOVER, unit) then
+                    self:SetupNewFactory(unit, 'Hover')
+                elseif EntityCategoryContains(categories.SUBMERSIBLE, unit) then
+                    self:SetupNewFactory(unit, 'Seaplane')
+                elseif EntityCategoryContains(categories.AIR - categories.SUBMERSIBLE, unit) then
+                    self:SetupNewFactory(unit, 'Air')
+                elseif EntityCategoryContains(categories.NAVAL * categories.STRUCTURE, unit) then
+                    self:SetupNewFactory(unit, 'Sea')
+                else
+                    self:SetupNewFactory(unit, 'Gate')
+                end
+                self.LocationActive = true
+            end
+        end,
+
+        GetFactoriesBuildingCategory = function(self, category, facCategory)
+            if not self.Brain.SCTAAI then
+                return SCTAFactoryBuilderManager.GetFactoriesBuildingCategory(self, category, facCategory)
+            end
+            local units = {}
+            for k,v in EntityCategoryFilterDown(facCategory, self.FactoryList) do
+                if v.Dead then
+                    continue
+                end
+    
+                if not v:IsUnitState('Building') then
+                    continue
+                end
+    
+                local beingBuiltUnit = v.UnitBeingBuilt
+                if not beingBuiltUnit or beingBuiltUnit.Dead then
+                    continue
+                end
+    
+                if not EntityCategoryContains(category, beingBuiltUnit) then
+                    continue
+                end
+    
+                table.insert(units, v)
+            end
+            return units
+        end,
+        
 ----InitialVersion Below From LOUD
         SetRallyPoint = function(self, factory)
             if not self.Brain.SCTAAI then
@@ -74,6 +197,26 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
                         IssueFormMove( unitlist, rallypoint, 'BlockFormation', Direction )
                     end
                 end
+            end
+        end,
+
+        AssignBuildOrder = function(self,factory,bType)
+            if not self.Brain.SCTAAI then
+                return SCTAFactoryBuilderManager.AssignBuildOrder(self,factory,bType)
+            end
+            if factory.Dead or factory.unitBuilding then
+                return
+            end
+            local builder = self:GetHighestBuilder(bType,{factory})
+            if builder then
+                --LOG('*Canceling', self)
+                local template = self:GetFactoryTemplate(builder:GetPlatoonTemplate(), factory)
+                -- LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Factory Builder Manager Building - ',repr(builder.BuilderName))
+                --LOG('*Building', template)
+                self.Brain:BuildPlatoon(template, {factory}, 1)
+            else
+                -- No builder found setup way to check again
+                self:ForkThread(self.DelayBuildOrder, factory, bType, 2)
             end
         end,
 

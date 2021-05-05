@@ -33,7 +33,6 @@ UnitBlueprint {
         'SORTSTRATEGIC',
         'SNIPEMODE',
         'ARTILLERY',
-        'ANTISHIELD',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -114,7 +113,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 1250,
-            DamageRadius = 3, 
+            DamageRadius = 5, 
             DamageType = 'Normal',
             DisplayName = 'ARM_BERTHACANNON',
             FireTargetLayerCapsTable = {
@@ -132,7 +131,7 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 75,
             EnergyChargeForFirstShot = true,
-            EnergyDrainPerSecond = 750,
+            EnergyDrainPerSecond = 1500,
             EnergyRequired = 1500,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_BERTHACANNON/ARM_BERTHACANNON_proj.bp',
             RackBones = {
@@ -149,7 +148,7 @@ UnitBlueprint {
             RackSalvoReloadTime = 3,
             RackSalvoSize = 1,
             RackSlavedToTurret = false,
-            RateOfFire = 0.5,
+            RateOfFire = 0.2,
             TargetCheckInterval = 1,
             TargetPriorities = {
                 'ALLUNITS',
@@ -178,8 +177,7 @@ UnitBlueprint {
         
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

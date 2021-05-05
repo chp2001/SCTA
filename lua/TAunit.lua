@@ -2,6 +2,7 @@
 local Unit = import('/lua/sim/Unit.lua').Unit
 local FireState = import('/lua/game.lua').FireState
 local TADeath = import('/mods/SCTA-master/lua/TADeath.lua')
+local explosion = import('/lua/defaultexplosions.lua')
 local Wreckage = import('/lua/wreckage.lua')
 
 TAunit = Class(Unit) 
@@ -40,8 +41,10 @@ TAunit = Class(Unit)
 			self:PlayUnitSound('Uncloak')
 			self.CloakOn = nil
 			self:SetMesh(self.Mesh, true)
+			return
 		elseif self.SpecIntel and (not self:IsIntelEnabled('Jammer') or not self:IsIntelEnabled('RadarStealth')) then
-			self.TAIntelOn = nil	
+			self.TAIntelOn = nil
+			return	
 		end
 	end,
 
@@ -53,9 +56,11 @@ TAunit = Class(Unit)
 					self:PlayUnitSound('Cloak')
 					self:SetMesh(self:GetBlueprint().Display.CloakMeshBlueprint, true)
 					ForkThread(self.CloakDetection, self)
+					return
 			elseif (self:IsIntelEnabled('Jammer') or self:IsIntelEnabled('RadarStealth')) and self.SpecIntel then
 					self.TAIntelOn = true
 					ForkThread(self.TAIntelMotion, self)
+					return
 			end
 		end
 	end,
@@ -106,53 +111,21 @@ TAunit = Class(Unit)
 		end
 	end,
 
-	CreateWreckageProp = function(self, overkillRatio)
-		local bp = self:GetBlueprint()
-
-        local wreck = bp.Wreckage.Blueprint
-        if not wreck then
-            return nil
+	CreateWreckage = function (self, overkillRatio)
+		if overkillRatio and overkillRatio > 1.0 then
+            return
         end
-
-        local mass = bp.Economy.BuildCostMass * (bp.Wreckage.MassMult or 0)
-        local energy = bp.Economy.BuildCostEnergy * (bp.Wreckage.EnergyMult or 0)
-        local time = (bp.Wreckage.ReclaimTimeMultiplier or 1)
-        local pos = self:GetPosition()
-        local layer = self:GetCurrentLayer()
-
-        -- Reduce the mass value of submerged wrecks
-        if layer == 'Water' or layer == 'Sub' then
-            mass = mass * 0.5
-            energy = energy * 0.5
+        if self:GetFractionComplete() < 0.5 then
+            return
         end
-
-        local halfBuilt = self:GetFractionComplete() < 1
-
-        -- Make sure air / naval wrecks stick to ground / seabottom, unless they're in a factory.
-        if not halfBuilt and EntityCategoryContains(categories.NAVAL - categories.STRUCTURE, self) then
-            pos[2] = GetTerrainHeight(pos[1], pos[3]) + GetTerrainTypeOffset(pos[1], pos[3])
+		if overkillRatio and self:GetCurrentLayer() == 'Land' and overkillRatio >= 0.5 then
+    		--LOG('*Scale', self.Scale)
+			return TADeath.CreateHeapProp(self, overkillRatio)
         end
+		--LOG('*Scale2', self.Scale) 
+        return self:CreateWreckageProp(overkillRatio)
+    end,
 
-        local overkillMultiplier = 1 - (overkillRatio or 1)
-        mass = mass * overkillMultiplier * self:GetFractionComplete()
-        energy = energy * overkillMultiplier * self:GetFractionComplete()
-        time = time * overkillMultiplier
-
-        -- Now we adjust the global multiplier. This is used for balance purposes to adjust global reclaim rate.
-        local time  = time * 2
-		if overkillMultiplier < 0.5 then
-		local prop = TADeath.CreateHeap(bp, pos, self:GetOrientation(), mass, energy, time, self.DeathHitBox)
-		else
-        local prop = Wreckage.CreateWreckage(bp, pos, self:GetOrientation(), mass, energy, time, self.DeathHitBox)
-
-        -- Create some ambient wreckage smoke
-        if layer == 'Land' then
-            TADeath.CreateTAWreckageEffects(self, prop)
-        end
-
-        return prop
-		end
-	end,
 
 	OnScriptBitSet = function(self, bit)
 		if self.SpecIntel and (bit == 2 or bit == 5) then

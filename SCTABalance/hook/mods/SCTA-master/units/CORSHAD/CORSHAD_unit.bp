@@ -18,7 +18,8 @@ UnitBlueprint {
     },
     Weapon = {
         [1] = {
-            Damage = 120,
+            MuzzleSalvoSize = 5,
+            Damage = 90,
             RackReloadTimeout = 5,
         },
         [2] = {

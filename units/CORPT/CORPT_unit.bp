@@ -45,7 +45,7 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.25,
     Defense = {
-        ArmorType = 'Ship',
+        ArmorType = 'Normal',
         Health = 570,
         MaxHealth = 570,
         AirThreatLevel = 1,
@@ -147,7 +147,7 @@ TechLevel = 'RULEUTL_Basic',
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 90,
-            DamageRadius = 1, 
+            DamageRadius = 2, 
             DamageType = 'TASpec',
             DisplayName = 'CORKBOT_MISSILE',
             FireTargetLayerCapsTable = {

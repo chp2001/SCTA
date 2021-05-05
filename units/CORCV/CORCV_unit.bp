@@ -105,6 +105,7 @@ UnitBlueprint {
         UniformScale = 0.16,
     },
     Economy = {
+        Land = true,
         BuildCostEnergy = 2145,
         BuildCostMass = 175,
         BuildRate = 100,
@@ -182,8 +183,7 @@ TechLevel = 'RULEUTL_Basic',
 
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

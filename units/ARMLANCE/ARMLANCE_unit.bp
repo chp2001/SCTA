@@ -180,17 +180,16 @@ UnitBlueprint {
                     Air = 'Water|Seabed|Sub',
                     Land = 'Water|Seabed|Sub',
                 },
-                FiringTolerance = 2,
+                FiringTolerance = 6,
                 HeadingArcCenter = 0,
                 HeadingArcRange = 30,
                 Label = 'ARMAIR_TORPEDO',
                 MaxRadius = 42,
                 MinRadius = 4,
-                MuzzleSalvoDelay = 1.8,
+                MuzzleSalvoDelay = 0,
                 MuzzleSalvoSize = 1,
-                MuzzleVelocity = 10,
+                MuzzleVelocity = 14,
                 ProjectileId = '/mods/SCTA-master/projectiles/ARMAIR_TORPEDO/ARMAIR_TORPEDO_proj.bp',
-                ProjectileLifetime = 20,
                 RackBones = {
                     {
                         MuzzleBones = {

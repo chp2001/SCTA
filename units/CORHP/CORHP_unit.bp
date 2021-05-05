@@ -40,6 +40,7 @@ UnitBlueprint {
 	    'CORE',
 	    'SORTCONSTRUCTION',
         'LAND',
+        'HOVER',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -76,7 +77,7 @@ UnitBlueprint {
         BuildTime = 18520,
 	BuildRate = 200,
         BuildableCategory = {
-            'HOVER TECH3 CORE',
+            'HOVER MOBILE TECH3 CORE',
         },
 	InitialRallyX = 0,
 InitialRallyZ = 7,
@@ -168,8 +169,7 @@ TechLevel = 'RULEUTL_Advanced',
 
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

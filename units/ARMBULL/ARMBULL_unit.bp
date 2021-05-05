@@ -67,7 +67,6 @@ UnitBlueprint {
         BuildCostMass = 560,
         BuildTime = 8675,
     },
-
     General = {
         Category = 'Direct Fire',
         Classification = 'RULEUC_MilitaryVehicle',
@@ -109,7 +108,7 @@ UnitBlueprint {
     SizeY = 1.5,
     SizeZ = 3,
     StrategicIconName = 'icon_land2_directfire',
-    TAStrategicIconName = '2/bot_armored',
+    TAStrategicIconName = '3/bot_armored',
     StrategicIconSortPriority = 0,
     Transport = {
         TransportClass = 3,
@@ -139,7 +138,7 @@ UnitBlueprint {
             MaxRadius = 36,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            DamageRadius = 1,
+            DamageRadius = 2,
             MuzzleVelocity = 25,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_BULL/ARM_BULL_proj.bp',
             RackBones = {
@@ -194,8 +193,7 @@ UnitBlueprint {
         
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

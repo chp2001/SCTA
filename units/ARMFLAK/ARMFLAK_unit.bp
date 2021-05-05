@@ -25,7 +25,7 @@ UnitBlueprint {
         'DRAGBUILD',
         'VISIBLETORECON',
         'RECLAIMABLE',
-        'TECH2',
+        'TECH3',
 	'STRUCTURE',
 	'DEFENSE',
 	'ANTIAIR',
@@ -33,6 +33,7 @@ UnitBlueprint {
 	'ARM',
     'STRATEGIC',
     'SORTDEFENSE',
+    'CQUEMOV',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -101,7 +102,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 2.5,
     SizeZ = 2,
-    StrategicIconName = 'icon_structure2_antiair',
+    StrategicIconName = 'icon_structure3_antiair',
     StrategicIconSortPriority = 0,
     Weapon = {
         {
@@ -190,8 +191,7 @@ UnitBlueprint {
 
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

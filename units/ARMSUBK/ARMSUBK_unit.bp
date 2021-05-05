@@ -138,8 +138,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
 	    DamageFriendly = true,
-            Damage = 300,
-        DamageType = 'TASpec',
+            Damage = 400,
+        DamageType = 'Normal',
             DisplayName = 'ARMSMART_TORPEDO',
             FireTargetLayerCapsTable = {
                 Sub = 'Seabed|Sub|Water',
@@ -151,7 +151,7 @@ UnitBlueprint {
             MaxRadius = 40,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,
-            MuzzleVelocity = 5,
+            MuzzleVelocity = 3,
             ProjectileId = '/mods/SCTA-master/projectiles/ARMSMART_TORPEDO/ARMSMART_TORPEDO_proj.bp',
             RackBones = {
                 {

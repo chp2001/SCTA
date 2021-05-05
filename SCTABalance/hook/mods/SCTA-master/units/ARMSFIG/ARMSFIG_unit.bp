@@ -26,10 +26,12 @@ UnitBlueprint {
     Weapon = {
         [1] = {
             MaxRadius = 35,
+            DamageType = 'AntiAir',
             RateOfFire = 2,
         },
         [2] = {
             MaxRadius = 35,
+            DamageType = 'AntiAir',
             RateOfFire = 2,
         },
         [3] = {

@@ -56,7 +56,7 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.25,
     Defense = {
-        ArmorType = 'Ship',
+        ArmorType = 'Normal',
         Health = 1105,
         MaxHealth = 1105,
         AirThreatLevel = 0,
@@ -90,6 +90,7 @@ UnitBlueprint {
         UniformScale = 0.16,
     },
     Economy = {
+        Naval = true,
         BuildCostEnergy = 2130,
         BuildCostMass = 255,
         BuildRate = 125,

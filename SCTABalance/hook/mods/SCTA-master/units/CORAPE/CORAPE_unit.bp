@@ -13,8 +13,6 @@ UnitBlueprint {
     Weapon = {
         [1] = {
             Damage = 10,
-            RackSalvoSize = 1,
-            RateOfFire = 5,
         },
         [2] = {
         }, 

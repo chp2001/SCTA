@@ -5,14 +5,27 @@
 
 UnitBlueprint {
    Merge = true,
-    Economy = {
-        ProductionPerSecondEnergy = 0,
-        MaintenanceConsumptionPerSecondEnergy = 0,
-        BuildCostMass = 300,
-    },
-    General = {
-        ToggleCaps = {
-            RULEUTC_IntelToggle = false,
+   Economy = {
+    ProductionPerSecondEnergy = 0,
+    MaintenanceConsumptionPerSecondEnergy = 1000,
+    BuildCostMass = 300,
+},
+General = {
+    OrderOverrides = {
+        RULEUTC_CloakToggle = {
+            bitmapId = 'stealth-field',
+            helpText = 'toggle_cloak_field',
         },
+    },
+    ToggleCaps = {
+        RULEUTC_StealthToggle = false,
+        RULEUTC_CloakToggle = true,
+        RULEUTC_IntelToggle = false,
+    },
+    },
+    Intel = {
+        CloakField = true,
+        Cloak = true,
+        CloakFieldRadius = 15,
     },
 }

@@ -95,8 +95,10 @@ updateBuildRestrictions = function(self)
     ---Will require another rebalancing of Seaplanes and Hovers
     if EntityCategoryContains(categories.TECH1 * categories.CONSTRUCTION - categories.FACTORY, self) then
         self:AddBuildRestriction(categories.TECH2) 
+        return
     elseif EntityCategoryContains(categories.TECH2 * categories.CONSTRUCTION - categories.RESEARCH, self) then
         self:AddBuildRestriction(categories.TECH3)
+        return
     end
 end
 
@@ -104,14 +106,16 @@ TABuildRestrictions = function(self)
     local aiBrain = self:GetAIBrain()
     ----BUGTheNumbers are 2 Greater than requiered Stat in Code. 6 and 12 are Correct.
     local HQCategory = ((categories.RESEARCH + categories.GATE) * (categories.ARM + categories.CORE))
-    local PlantsCat = (categories.FACTORY * (categories.ARM + categories.CORE))
+    local PlantsCat = ((categories.FACTORY + categories.GATE) * (categories.ARM + categories.CORE))
         if self.FindHQType(aiBrain, HQCategory * (categories.TECH3 + categories.EXPERIMENTAL)) or 
         NumberOfPlantsT2(aiBrain, PlantsCat * (categories.TECH2)) > 10 then
                 self:RemoveBuildRestriction(categories.TECH2)
-                self:RemoveBuildRestriction(categories.TECH3)  
-        elseif self.FindHQType(aiBrain, HQCategory * categories.TECH2) or 
+                self:RemoveBuildRestriction(categories.TECH3)
+            return  
+        elseif self.FindHQType(aiBrain, PlantsCat * (categories.TECH2 + categories.EXPERIMENTAL)) or 
         NumberOfPlantsT1(aiBrain, PlantsCat * (categories.TECH1)) > 10 then
-            self:RemoveBuildRestriction(categories.TECH2)    
+                self:RemoveBuildRestriction(categories.TECH2)
+            return    
     end
 end
 

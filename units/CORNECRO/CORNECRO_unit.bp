@@ -41,7 +41,6 @@ UnitBlueprint {
         'SELECTABLE',
         'BOT',
         'TECH2',
-        'FIELDENGINEER',
         'ENGINEER',
         'REPAIR',
         'RECLAIM',
@@ -51,7 +50,8 @@ UnitBlueprint {
         'SHOWQUEUE',
         'MOBILE',
 	    'CONSTRUCTION',
-	    'LAND',
+        'LAND',
+        'FIELDENGINEER',
         'CORE',
     },
     Defense = {
@@ -81,7 +81,6 @@ UnitBlueprint {
                 },
             },
         },
-	---SmokeBone = 'torso',
         UniformScale = 0.06,
     },
     Economy = {
@@ -108,7 +107,6 @@ UnitBlueprint {
         Category = 'Construction',
         Classification = 'RULEUC_Engineer',
         CommandCaps = {
-            RULEUCC_Attack = true,
             RULEUCC_CallTransport = true,
             RULEUCC_Guard = true,
             RULEUCC_Move = true,
@@ -164,8 +162,7 @@ UnitBlueprint {
 
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

@@ -39,7 +39,8 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
 	    'ARM',
 		'ANTISHIELD',
-	    'SORTDEFENSE',
+        'SORTDEFENSE',
+        'CQUEMOV',
         'SNIPEMODE',
     },
     CollisionOffsetY = -0.5,
@@ -141,10 +142,10 @@ UnitBlueprint {
             MuzzleSalvoSize = 1,
             MuzzleVelocity = 50,
             ProjectileId = '/mods/SCTA-master/projectiles/ARM_LASERH1/ARM_LASERH1_proj.bp',
-            EnergyDrainPerSecond = 50,
-            EnergyRequired = 50,
+            EnergyDrainPerSecond = 75,
+            EnergyRequired = 75,
             EnergyChargeForFirstShot = true,
-            DamageRadius = 1, 
+            DamageRadius = 2, 
             RackBones = {
                 {
                     MuzzleBones = {
@@ -197,8 +198,7 @@ UnitBlueprint {
 
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

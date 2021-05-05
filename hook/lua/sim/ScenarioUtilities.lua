@@ -19,7 +19,6 @@ function CreateInitialArmyGroup(strArmy, createCommander)
 			cdrUnit:SetBusy(true)
 			cdrUnit:SetBlockCommandQueue(true)
 			ForkThread(ControlDelay, cdrUnit, 8.75)
-			ABrain.PreBuilt = true
 		else
 			local tblGroup = CreateArmyGroup( strArmy, 'INITIAL')
 			local cdrUnit = false

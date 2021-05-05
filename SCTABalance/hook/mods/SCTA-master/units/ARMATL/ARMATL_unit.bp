@@ -14,11 +14,11 @@ UnitBlueprint {
         'ANTINAVY',
         'SNIPEMODE',
 	    'NAVAL',
-	    'SORTDEFENSE',
+        'SORTDEFENSE',
+        'CQUEMOV',
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',
         'ARM',
-
     },
     Defense = {
         Health = 2000,
@@ -38,4 +38,11 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 4,
     SizeZ = 3,
+    Weapon = {
+        [1] = {
+            MaxRadius = 60,
+        },
+        [2] = {
+        },
+    },
 }

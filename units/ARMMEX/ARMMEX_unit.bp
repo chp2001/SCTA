@@ -44,6 +44,7 @@ UnitBlueprint {
         'ECONOMIC',
         'SORTECONOMY',
 	    'ARM',
+        'CQUEMOV',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -51,8 +52,6 @@ UnitBlueprint {
         MaxHealth = 170,
         AirThreatLevel = 0,
         EconomyThreatLevel = 1000,
-        SubThreatLevel = 0,
-        SurfaceThreatLevel = 0,
     },
     Description = 'Extracts Metal',
     Display = {
@@ -72,8 +71,12 @@ UnitBlueprint {
         BuildCostEnergy = 521,
         BuildCostMass = 50,
         BuildTime = 1800,
-        MaintenanceConsumptionPerSecondEnergy = 3,
-        ProductionPerSecondMass = 2.2,
+        MaintenanceConsumptionPerSecondEnergy = 2,
+        ProductionPerSecondMass = 1,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
     },
     General = {
         Category = 'Economy',
@@ -91,7 +94,7 @@ UnitBlueprint {
             RULEUCC_Reclaim = false,
             RULEUCC_Repair = false,
             RULEUCC_RetaliateToggle = false,
-            RULEUCC_Stop = false,
+            RULEUCC_Stop = true,
             RULEUCC_Transport = false,
         },
         ConstructionBar = true,
@@ -145,8 +148,7 @@ UnitBlueprint {
          
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

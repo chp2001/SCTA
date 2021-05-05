@@ -144,7 +144,7 @@ UnitBlueprint {
         RadarStealth = true,
         RadarRadius = 100, 
         SonarRadius = 70,
-        OmniRadius = 20,
+        OmniRadius = 15,
     },
     LifeBarHeight = 0.25,
     LifeBarOffset = 0.5,

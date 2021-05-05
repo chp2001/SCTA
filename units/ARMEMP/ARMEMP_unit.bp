@@ -20,7 +20,7 @@ UnitBlueprint {
     },
     NuclearLaunchDetected = Sound {
         Bank = 'XGG',
-        Cue = 'Computer_Computer_MissileLaunch_01351',
+        Cue = 'Computer_Computer_MissileLaunch_01358',
     },
     },
     BuildIconSortPriority = 18,
@@ -213,8 +213,7 @@ UnitBlueprint {
 
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

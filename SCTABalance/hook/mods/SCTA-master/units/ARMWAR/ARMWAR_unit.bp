@@ -1,8 +1,8 @@
 UnitBlueprint {
    Merge = true, 
    Defense = {
-    Health = 580,
-    MaxHealth = 580,
+    Health = 600,
+    MaxHealth = 600,
     },
     Display = {
         UniformScale = 0.12,
@@ -26,12 +26,12 @@ Physics = {
     },
     Weapon = {
 	    [1] = {
-            Damage = 2,
-            MaxRadius = 13,
+            Damage = 4,
+            MaxRadius = 15,
         },
         [2] = {
             RateOfFire = 1,
-            Damage = 20,
+            Damage = 15,
         },
         [3] = {
         },

@@ -48,17 +48,19 @@ ProjectileBlueprint {
         Faction = 'ARM',
         Weapon = 'ARM_TORPEDO',
     },
-
+    Defense = {
+        Health = 1,
+    },
     Physics = {
         Acceleration = 5,
         DestroyOnWater = false,
-        InitialSpeed = 5,
+        InitialSpeed = 3,
         Lifetime = 7,
-        MaxSpeed = 20,
-        TrackTime = 2,
+        MaxSpeed = 18,
         StayUnderwater = true,
         TrackTarget = true,
         TurnRate = 230,
+        UseGravity = false,
         VelocityAlign = true,
     },
 }

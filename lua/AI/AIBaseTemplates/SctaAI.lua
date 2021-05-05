@@ -19,8 +19,7 @@ BaseBuilderTemplate {
         'SCTAAILandFormers',
         'SCTAAIAirFormers',
         'SCTAAIUniversalFormers',
-        'SCTAAINavalBuilder',
-        'SCTANavalFormer',
+        'SCTAAIT3Builder',
         
         -- Buildings etc
         'SCTAAIEngineerEcoBuilder',
@@ -29,7 +28,6 @@ BaseBuilderTemplate {
 
         -- Buildings etc
         'SCTAAIEngineerMiscBuilder',
-        'SCTAAIEngineerNavalMiscBuilder',
        
         --MiscFunctions
         'SCTAAssisters',

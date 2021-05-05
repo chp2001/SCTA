@@ -1,12 +1,14 @@
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
+local MABC = '/lua/editor/MarkerBuildConditions.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').GetMOARadii()
-local RAIDER = categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea
-local RAIDAIR = categories.armfig + categories.corveng 
-
+local RAIDAIR = categories.armfig + categories.corveng + categories.GROUNDATTACK
+local RAIDER = RAIDAIR + categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
+local EBC = '/lua/editor/EconomyBuildConditions.lua'
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIUniversalFormers',
@@ -14,29 +16,29 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Guard',
         PlatoonTemplate = 'GuardSCTA',
-        PlatoonAIPlan = 'GuardEngineer', -- The platoon template tells the AI what units to include, and how to use them.
+        PlatoonAIPlan = 'GuardEngineer',
+        PriorityFunction = TAPrior.LessThanTime,
         Priority = 100,
         InstanceCount = 6,
-        BuilderType = 'Any',
+        BuilderType = 'Scout',
         BuilderData = {
             NeverGuardBases = true,
             LocationType = 'LocationType',
         },        
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {300} },
             { UCBC, 'EngineersNeedGuard', { 'LocationType' } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.MOBILE * categories.ANTIAIR} },
          },
     },
     Builder {
         BuilderName = 'SCTAAI Terrain',
         PlatoonTemplate = 'StrikeForceSCTATerrain', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 300,
-        InstanceCount = 30,
-        BuilderType = 'Any',
+        Priority = 200,
+        InstanceCount = 2,
+        BuilderType = 'Scout',
         BuilderData = {
             NeverGuardBases = true,
             NeverGuardEngineers = true,
-            IgnorePathing = true,
             UseMoveOrder = true,
             AllTerrain = true,
             UseFormation = 'AttackFormation',
@@ -48,9 +50,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI LAB',
         PlatoonTemplate = 'LABSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 300,
+        Priority = 150,
         InstanceCount = 5,
-        BuilderType = 'Any',
+        PriorityFunction = TAPrior.UnitProductionLab,
+        BuilderType = 'Scout',
         BuilderData = {
             Lab = true,
             NeverGuardBases = true,
@@ -58,16 +61,17 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = { 
-            { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.COMMAND }},	
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, RAIDER} },
+            { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.COMMAND }},	
         },
     },
     Builder {
         BuilderName = 'SCTAAI LAB Interceptor',
         PlatoonTemplate = 'LABAirSCTA', -- The platoon template tells the AI what units to include, and how to use them.
+        PriorityFunction = TAPrior.LessThanTime,
         Priority = 300,
         InstanceCount = 5,
-        BuilderType = 'Any',
+        BuilderType = 'Scout',
         BuilderData = {
             Lab = true,
             NeverGuardBases = true,
@@ -75,7 +79,6 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = { 
-            { MIBC, 'LessThanGameTime', {600} },
             { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.ANTIAIR }},	
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, RAIDAIR} },
         },
@@ -85,7 +88,7 @@ BuilderGroup {
         PlatoonTemplate = 'AirHuntAISCTA',
         Priority = 300,
         InstanceCount = 2,
-        BuilderType = 'Any', 
+        BuilderType = 'AirForm', 
         BuilderData = {
             Lab = true,
             NeverGuardBases = true,
@@ -93,134 +96,60 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },     
         BuilderConditions = { 
-            { MIBC, 'LessThanGameTime', {900} },
             { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.ANTIAIR }},	
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.BOMBER + RAIDAIR} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.BOMBER + RAIDAIR} },
         },
     },
     Builder {
         BuilderName = 'LV4Kbot',
         PlatoonTemplate = 'T4ExperimentalSCTA',
+        PriorityFunction = TAPrior.GantryProduction,
         Priority = 10000,
         FormRadius = 10000,
         InstanceCount = 2,
-        BuilderType = 'Any',
+        BuilderType = 'CommandTA',
+        BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.EXPERIMENTAL * categories.MOBILE - categories.ENGINEER } },
+         },
         BuilderData = {
             ThreatWeights = {
                 TargetThreatType = 'Commander',
             },
             UseMoveOrder = true,
-            PrioritizedCategories = { 'COMMAND', 'FACTORY -NAVAL', 'EXPERIMENTAL', 'MASSPRODUCTION', 'STRUCTURE -NAVAL' }, # list in order
+            PrioritizedCategories = { 'COMMAND', 'FACTORY -NAVAL', 'EXPERIMENTAL', 'MASSPRODUCTION', 'STRUCTURE -NAVAL' },
         },
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Excess',
         PlatoonTemplate = 'EngineerBuilderSCTA',
+        PriorityFunction = TAPrior.LessThanTime,
         PlatoonAIPlan = 'SCTAReclaimAI',
-        FormRadius = 500,
-        Priority = 99,
+        Priority = 150,
         InstanceCount = 2,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', { 120 } },
-            { MIBC, 'LessThanGameTime', {480} }, 
-            { TAutils, 'LessMassStorageMaxTA',  { 0.3}},   
-            { TAutils, 'TAReclaimablesInArea', { 'LocationType', }},
+            { MIBC, 'GreaterThanGameTime', { 120 } }, 
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER - categories.COMMAND} },
+            { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.25}},   
         },
         BuilderData = {
             Terrain = true,
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTA Commander Assist Gantry Construction',
-        PlatoonTemplate = 'CommanderSCTAAssist',
-        Priority = 126,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssistRange = 120,
-                BeingBuiltCategories = {'GATE'},                                                   
-                AssistUntilFinished = true,
-            },
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTA CDR Assist Structure',
-        PlatoonTemplate = 'CommanderSCTAAssist',
-        Priority = 111,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
-            { MIBC, 'GreaterThanGameTime', {600} },
-        },
-        BuilderType = 'Any',
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssistRange = 20,
-                BeingBuiltCategories = {'STRUCTURE'},                                        
-                AssistUntilFinished = true,
-            },
-        },
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Assist Gantry Production',
-        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
-        Priority = 200,
-        InstanceCount = 12,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
-            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssistRange = 120,
-                BeingBuiltCategories = {'GATE'},                                                   
-                AssistUntilFinished = true,
-            },
-        },
-        BuilderType = 'Any',
-    },
-    Builder {
-        BuilderName = 'SCTA Engineer Assist Gantry',
-        PlatoonTemplate = 'EngineerBuilderSCTAAssist',
-        Priority = 200,
-        InstanceCount = 12,
-        BuilderConditions = {
-            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYQUANTUMGATE }},
-            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Factory',
-                AssistRange = 120,
-                BeingBuiltCategories = {'BUILTBYQUANTUMGATE'},                                                       
-                AssistUntilFinished = true,
-            },
-        },
-        BuilderType = 'Any',
+        BuilderType = 'EngineerForm',
     },
     Builder {
         BuilderName = 'SCTA Assist Production Idle',
-        PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonAIPlan = 'ManagerEngineerAssistAI',
+        PriorityFunction = TAPrior.AssistProduction,
         Priority = 5,
         InstanceCount = 5,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {900} },
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER - categories.COMMAND} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderData = {
             Assist = {
@@ -231,28 +160,169 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'EngineerForm',
     },
     Builder {
         BuilderName = 'SCTA Assist Unit Production Idle',
-        PlatoonTemplate = 'EngineerBuilderSCTA123Assist',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonAIPlan = 'ManagerEngineerAssistAI',
+        PriorityFunction = TAPrior.AssistProduction,
         Priority = 5,
         InstanceCount = 5,
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {900} },
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.MOBILE }},
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.MOBILE }},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER - categories.COMMAND} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Factory',
-                AssistRange = 20,
+                PermanentAssist = false,
                 BeingBuiltCategories = {'MOBILE'},                                        
+                Time = 60,
+            },
+        },
+        BuilderType = 'EngineerForm',
+    },
+    Builder {
+        BuilderName = 'SCTANukeAI',
+        PlatoonTemplate = 'NuclearMissileSCTA',
+        PriorityFunction = TAPrior.GantryProduction,
+        Priority = 300,
+        BuilderConditions = {
+                { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.NUKE * categories.STRUCTURE * categories.TECH3}},
+            },
+        BuilderType = 'CommandTA',
+        FormRadius = 10000,
+    },
+    Builder {
+        BuilderName = 'SCTAAntiNukeAI',
+        PlatoonTemplate = 'AntiNuclearMissileSCTA',
+        PriorityFunction = TAPrior.GantryProduction,
+        Priority = 300,
+        BuilderConditions = {
+                { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.ANTIMISSILE * categories.STRUCTURE * categories.TECH3}},
+            },
+        BuilderType = 'CommandTA',
+        FormRadius = 10000,
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Assist Gantry Production',
+        PlatoonTemplate = 'EngineerBuilderSCTAField',
+        Plan = 'ManagerEngineerAssistAI',
+        PriorityFunction = TAPrior.GateBeingBuilt,
+        Priority = 200,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.FIELDENGINEER} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                AssistRange = 120,
+                BeingBuiltCategories = {'GATE'},                                                   
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'Any',
+        BuilderType = 'Other',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Assist Gantry',
+        PlatoonTemplate = 'EngineerBuilderSCTAField',
+        Plan = 'ManagerEngineerAssistAI',
+        PriorityFunction = TAPrior.GantryProduction,
+        Priority = 200,
+        InstanceCount = 4,
+        BuilderConditions = {
+            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.BUILTBYQUANTUMGATE}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.FIELDENGINEER} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Factory',
+                PermanentAssist = false,
+                BeingBuiltCategories = {'BUILTBYQUANTUMGATE'},                                                       
+                Time = 60,
+            },
+        },
+        BuilderType = 'Other',
+    },
+    Builder {
+        BuilderName = 'SCTA Commander Assist Hydro',
+        PlatoonTemplate = 'CommanderBuilderSCTA',
+        Plan = 'ManagerEngineerAssistAI',
+        PriorityFunction = TAPrior.HydroBeingBuiltACU,
+        Priority = 980,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {180} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.COMMAND} },
+            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 50}},
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.HYDROCARBON }},
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                AssistRange = 120,
+                BeingBuiltCategories = {'HYDROCARBON'},                                                   
+                AssistUntilFinished = true,
+            },
+        },
+        BuilderType = 'CommandTA',
+    },
+    Builder {
+        BuilderName = 'SCTA Commander Assist Gantry Construction',
+        PlatoonTemplate = 'CommanderBuilderSCTA',
+        PlatoonAIPlan = 'ManagerEngineerAssistAI',
+        PriorityFunction = TAPrior.GateBeingBuilt,
+        Priority = 126,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.ENGINEER * (categories.COMMAND + categories.SUBCOMMANDER)} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                AssistRange = 120,
+                BeingBuiltCategories = {'GATE'},                                                   
+                AssistUntilFinished = true,
+            },
+        },
+        BuilderType = 'CommandTA',
+    },
+    Builder {
+        BuilderName = 'SCTA CDR Assist Structure',
+        PlatoonTemplate = 'CommanderBuilderSCTA',
+        PlatoonAIPlan = 'ManagerEngineerAssistAI',
+        PriorityFunction = TAPrior.UnitProduction,
+        Priority = 111,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.ENGINEER * (categories.COMMAND + categories.SUBCOMMANDER)} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+        },
+        BuilderType = 'CommandTA',
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                AssisteeCategory = 'Engineer',
+                AssistRange = 20,
+                BeingBuiltCategories = {'STRUCTURE'},                                        
+                AssistUntilFinished = true,
+            },
+        },
     },
 }
 

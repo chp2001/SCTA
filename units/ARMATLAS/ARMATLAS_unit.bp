@@ -180,11 +180,8 @@ UnitBlueprint {
         DamageFriendly = true,
         DamageRadius = 3,
         DamageType = 'Normal',
-        DisplayName = 'Air Crash',
         DummyWeapon = true,
-        FiringTolerance = 2,
-        Label = 'DeathImpact',
-        WeaponCategory = 'Death',
+        Label = 'DeathWeapon',
         },
     },
 }

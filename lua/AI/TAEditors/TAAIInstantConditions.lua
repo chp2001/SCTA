@@ -12,53 +12,6 @@ function TAGetEngineerFaction(engineer)
 end
 
 ------AIUTILITIES FUNCTIONS (RNG, NUTCTACKER, and RECLAIM MY OWN)
-function TAReclaimablesInArea(aiBrain, locType)
-    --DUNCAN - was .9. Reduced as dont need to reclaim yet if plenty of mass
-    if aiBrain:GetEconomyStoredRatio('MASS') > .5 then
-        return false
-    end
-
-    --DUNCAN - who cares about energy for reclaming?
-    --if aiBrain:GetEconomyStoredRatio('ENERGY') > .5 then
-        --return false
-    --end
-
-    local ents = TAAIGetReclaimablesAroundLocation(aiBrain, locType)
-    if ents and table.getn(ents) > 0 then
-        return true
-    end
-
-    return false
-end
-
-function TAAIGetReclaimablesAroundLocation(aiBrain, locationType)
-    local position, radius
-    if aiBrain.HasPlatoonList then
-        for _, v in aiBrain.PBM.Locations do
-            if v.LocationType == locationType then
-                position = v.Location
-                radius = v.Radius
-                break
-            end
-        end
-    elseif aiBrain.BuilderManagers[locationType] then
-        radius = aiBrain.BuilderManagers[locationType].FactoryManager.Radius
-        position = aiBrain.BuilderManagers[locationType].FactoryManager:GetLocationCoords()
-    end
-
-    if not position then
-        return false
-    end
-
-    local x1 = position[1] - radius * 2
-    local x2 = position[1] + radius * 2
-    local z1 = position[3] - radius * 2
-    local z2 = position[3] + radius * 2
-    local rect = Rect(x1, z1, x2, z2)
-
-    return AIUtils.GetReclaimablesInRect(rect)
-end
-
 function NormalizeVector( v )
 
 	if v.x then
@@ -160,52 +113,10 @@ end
 
 --TA Build Conditions
 
-function TAAIGetEconomyNumbersMass(aiBrain)
-    local econ = {}
-    econ.MassStorageRatio = aiBrain:GetEconomyStoredRatio('MASS')
-    econ.MassStorage = aiBrain:GetEconomyStored('MASS')
-
-    if econ.MassStorageRatio ~= 0 then
-        econ.MassMaxStored = econ.MassStorage / econ.MassStorageRatio
-    else
-        econ.MassMaxStored = econ.MassStorage
-    end
-
-    return econ
-end
-
-function TAAIGetEconomyNumbersEnergy(aiBrain)
-    local econ = {}
-    econ.EnergyStorageRatio = aiBrain:GetEconomyStoredRatio('ENERGY')
-    econ.EnergyStorage = aiBrain:GetEconomyStored('ENERGY')
-
-    if econ.EnergyStorageRatio ~= 0 then
-        econ.EnergyMaxStored = econ.EnergyStorage / econ.EnergyStorageRatio
-    else
-        econ.EnergyMaxStored = econ.EnergyStorage
-    end
-
-    return econ
-end
-
 function TAAIEcoConditionStorage(aiBrain)
     local econStore = {}
     econStore.MassStorageRatio = aiBrain:GetEconomyStoredRatio('MASS')
     econStore.EnergyStorageRatio = aiBrain:GetEconomyStoredRatio('ENERGY')
-    econStore.EnergyStorage = aiBrain:GetEconomyStored('ENERGY')
-    econStore.MassStorage = aiBrain:GetEconomyStored('MASS')
-
-    if econStore.MassStorageRatio ~= 0 then
-        econStore.MassMaxStored = econStore.MassStorage / econStore.MassStorageRatio
-    else
-        econStore.MassMaxStored = econStore.MassStorage
-    end
-
-    if econStore.EnergyStorageRatio ~= 0 then
-        econStore.EnergyMaxStored = econStore.EnergyStorage / econStore.EnergyStorageRatio
-    else
-        econStore.EnergyMaxStored = econStore.EnergyStorage
-    end
 
     return econStore
 end
@@ -234,7 +145,7 @@ function TAEnergyEfficiency(aiBrain)
 
     if aiBrain.EconomyMonitorThread then
         local econTime = aiBrain:GetEconomyOverTime()
-        econ.EnergyEfficiencyOverTime = math.min(econTime.EnergyIncome / econTime.EnergyRequested, 2)
+        econ.EnergyEfficiencyOverTime = math.min(econTime.EnergyIncome / econTime.EnergyRequested, 4)
     end
 
     return econ
@@ -244,25 +155,22 @@ function EcoManagementTA(aiBrain, mStorageRatio, eStorageRatio, EnergyEfficiency
     local econEff = TAAIEcoConditionEfficiency(aiBrain)
     if (econEff.MassEfficiencyOverTime >= MassEfficiency and econEff.EnergyEfficiencyOverTime >= EnergyEfficiency) then
         return true
-    end
-    local econStore = TAAIEcoConditionStorage(aiBrain)
-    if (econStore.MassStorageRatio >= mStorageRatio and econStore.EnergyStorageRatio >= eStorageRatio) then
+    elseif (aiBrain:GetEconomyStoredRatio('Mass').MassStorageRatio >= mStorageRatio and aiBrain:GetEconomyStoredRatio('ENERGY').EnergyStorageRatio >= eStorageRatio) then
         return true
-    end
+    else
     return false
+    end
 end
 
 function LessMassStorageMaxTA(aiBrain, mStorageRatio)
-    local econ = TAAIGetEconomyNumbersMass(aiBrain)
-    if (econ.MassStorageRatio < mStorageRatio) then
+    if (aiBrain:GetEconomyStoredRatio('MASS').MassStorageRatio < mStorageRatio) then
         return true
     end
     return false
 end
 
 function GreaterEnergyStorageMaxTA(aiBrain, eStorageRatio)
-    local econ = TAAIGetEconomyNumbersEnergy(aiBrain)
-    if (econ.EnergyStorageRatio >= eStorageRatio) then
+    if (aiBrain:GetEconomyStoredRatio('ENERGY').EnergyStorageRatio >= eStorageRatio) then
         return true
     end
     return false
@@ -317,3 +225,36 @@ function TARandomLocation(x,z, value)
     return { finalX, height, finalZ }
 end
 
+--[[function TAUnfinishedUnits(aiBrain, locationType, category)
+    local engineerManager = aiBrain.BuilderManagers[locationType].EngineerManager
+    if not engineerManager then
+        return false
+    end
+    local unfinished = aiBrain:GetUnitsAroundPoint(category, engineerManager:GetLocationCoords(), engineerManager.Radius, 'Ally')
+    for num, unit in unfinished do
+        donePercent = unit:GetFractionComplete()
+        if donePercent < 1 and GetGuards(aiBrain, unit) < 2 then
+            return true
+        end
+    end
+    return false
+end
+
+function GetGuards(aiBrain, Unit)
+    local engs = aiBrain:GetUnitsAroundPoint(categories.ENGINEER, Unit:GetPosition(), 10, 'Ally')
+    local count = 0
+    local UpgradesFrom = Unit:GetBlueprint().General.UpgradesFrom
+    for k,v in engs do
+        if v.UnitBeingBuilt == Unit then
+            count = count + 1
+        end
+    end
+    if UpgradesFrom and UpgradesFrom != 'none' then -- Used to filter out upgrading units
+        local oldCat = ParseEntityCategory(UpgradesFrom)
+        local oldUnit = aiBrain:GetUnitsAroundPoint(oldCat, Unit:GetPosition(), 0, 'Ally')
+        if oldUnit then
+            count = count + 1
+        end
+    end
+    return count
+end]]

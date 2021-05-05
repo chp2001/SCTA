@@ -36,8 +36,8 @@ UnitBlueprint {
     SizeY = 3,
     Weapon = {
         [1] = {
-            EnergyDrainPerSecond = 50,
-            EnergyRequired = 50,
+            EnergyDrainPerSecond = 40,
+            EnergyRequired = 40,
         },
         [2] = {
         },

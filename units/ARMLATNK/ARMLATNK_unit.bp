@@ -113,7 +113,7 @@ UnitBlueprint {
     SizeX = 2,
     SizeY = 2,
     SizeZ = 2,
-    StrategicIconName = 'icon_land2_antiair',
+    StrategicIconName = 'icon_land2_directfire',
     StrategicIconSortPriority = 0,
     Transport = {
         TransportClass = 2,
@@ -190,7 +190,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = false,
             Damage = 100,
-            DamageRadius = 1, 
+            DamageRadius = 2, 
             DamageType = 'TASpec',
             DisplayName = 'ARMKBOT_MISSILE',
             FireTargetLayerCapsTable = {
@@ -258,8 +258,7 @@ UnitBlueprint {
 
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

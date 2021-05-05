@@ -41,8 +41,8 @@ ProjectileBlueprint {
     },
     Defense = {
         ArmorType = 'Normal',
-        Health = 5,
-        MaxHealth = 5,
+        Health = 4,
+        MaxHealth = 4,
     },
     Display = {
         MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/crblmssl_mesh.bp',

@@ -8,6 +8,11 @@ local CLandUnit = import('/lua/cybranunits.lua').CLandUnit
 
 MSS0007 = Class(CLandUnit) {
    OnStopBeingBuilt = function(self, builder, layer)
+	if __blueprints['xnl0001'] then
+		SetArmyFactionIndex(self:GetArmy(), 6)
+		else
+		SetArmyFactionIndex(self:GetArmy(), 5)
+	end
 	ForkThread(self.Delay, self, builder, layer)
 	self:Destroy()
  end,

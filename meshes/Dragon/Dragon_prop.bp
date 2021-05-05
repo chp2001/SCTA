@@ -1,0 +1,36 @@
+PropBlueprint {
+    Categories = {
+    'RECLAIMABLE',
+    },
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 175,
+                    ShaderName = 'TMeshNoLighting',
+                },
+            },
+        },
+        UniformScale = 0.1,
+    },
+    Economy = {
+        ReclaimEnergyMax = '',
+        ReclaimMassMax = 0,
+        ReclaimTime = 5,
+    },
+    Interface = {
+        HelpText = 'Wreckage',
+    },
+    Footprint = {
+        OccupancyCaps = 3,
+    },
+    Physics = {
+        BlockPath = true,
+    },
+    ScriptClass = 'Wreckage',
+    ScriptModule = '/lua/wreckage.lua',
+    SizeX = 0.3,
+    SizeY = 0.15,
+    SizeZ = 0.5,
+}

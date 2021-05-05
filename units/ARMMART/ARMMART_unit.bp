@@ -30,17 +30,16 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'TECH2',
-
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
-	'LAND',
-	'INDIRECTFIRE',
+	    'LAND',
+	    'INDIRECTFIRE',
         'OVERLAYINDIRECTFIRE',
         'ARTILLERY',
         'ARM',
         'TANK',
-    'SNIPEMODE',
+        'SNIPEMODE',
     },
     Defense = {
         ArmorType = 'Normal',
@@ -111,7 +110,7 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 1.5,
     SizeZ = 3,
-    StrategicIconName = 'icon_land3_artillery',
+    StrategicIconName = 'icon_land2_artillery',
     StrategicIconSortPriority = 0,
     Transport = {
         TransportClass = 3,
@@ -191,8 +190,7 @@ UnitBlueprint {
 
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

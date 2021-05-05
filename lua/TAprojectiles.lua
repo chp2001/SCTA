@@ -153,6 +153,23 @@ TAMediumCannonProjectile = Class(TAProjectile) {
     	FxWaterHitScale = 0.5,
 }
 
+TABombProjectile = Class(TAMediumCannonProjectile) {
+	OnImpact = function(self, targetType, targetEntity)
+        if targetType ~= 'Shield' and targetType ~= 'Water' and targetType ~= 'Air' and targetType ~= 'UnitAir' and targetType ~= 'Projectile' then
+            local RandomFloat = import('/lua/utilities.lua').GetRandomFloat
+            local rotation = RandomFloat(0,2*math.pi)
+            local radius = self.DamageData.DamageRadius
+            local size = radius + RandomFloat(0.75,2.0)
+            local pos = self:GetPosition()
+            local army = self.Army
+
+            DamageArea(self, pos, radius, 1, 'Force', true)
+            DamageArea(self, pos, radius, 1, 'Force', true)
+ 			CreateDecal(pos, rotation, 'scorch_001_albedo', '', 'Albedo', size, size, 150, 30, army)
+		end	 
+		TAMediumCannonProjectile.OnImpact( self, targetType, targetEntity )
+    end,
+}
 TALightCannonProjectile = Class(TAProjectile) {
 	FxImpactAirUnit = {
     		'/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp',
@@ -185,6 +202,13 @@ Disintegrator = Class(TALightCannonProjectile) {
 	OnCreate = function(self)
 		TALightCannonProjectile.OnCreate(self)
 		self.launcher = self:GetLauncher()
+		self.DGunDamage = self.launcher:GetWeaponByLabel('OverCharge'):GetBlueprint().DGun
+		self.launcher.EconDrain = CreateEconomyEvent(self.launcher, 500, 0, 0)
+		self.launcher:ForkThread(function()
+                WaitFor(self.launcher.EconDrain)
+                RemoveEconomyEvent(self.launcher, self.launcher.EconDrain)
+				self.launcher.EconDrain = nil
+			end)
 		ForkThread(self.MovementThread, self)
 	end,
 
@@ -194,13 +218,18 @@ Disintegrator = Class(TALightCannonProjectile) {
 		if pos.y < GetTerrainHeight(pos.x, pos.z) then
 			self:SetTurnRate(0)
 			pos.y = GetTerrainHeight(pos.x, pos.z)
-			DamageArea( self.launcher, pos, self.DamageData.DamageRadius, self.DamageData.DamageAmount, self.DamageData.DamageType, self.DamageData.DamageFriendly)
+			DamageArea( self.launcher, pos, self.DamageData.DamageRadius, self.DGunDamage, self.DamageData.DamageType, self.DamageData.DamageFriendly)
 				self:SetPosition(pos, true)
 				self:PlaySound(Sound({Cue = 'XPLOMAS2', Bank = 'TA_Sound', LodCutoff = 'Weapon_LodCutoff'}))
 				CreateEmitterAtEntity(self, self:GetArmy(), '/mods/SCTA-master/effects/emitters/ta_missile_hit_04_emit.bp' ):ScaleEmitter(0.5)
 			end
 			WaitSeconds(0.1)
 		end
+	end,
+
+	OnImpact = function(self, targetType, targetEntity)
+		TALightCannonProjectile.OnImpact(self, targetType, targetEntity)
+        self.DamageData.DamageAmount = 0
 	end,
 }
 
@@ -362,15 +391,7 @@ TAUnderWaterProjectile = Class(TADepthCharges) {
 
     OnCreate = function(self, inWater)
         TADepthCharges.OnCreate(self, inWater)
-		self.TrackTime = self:GetBlueprint().Physics.TrackTime
 		self:SetCollisionShape('Sphere', 0, 0, 0, 1)
-		self:ForkThread( self.TrackingThread, self )
 	end,
 
-
-	TrackingThread = function(self)
-		self:TrackTarget(false)
-		WaitSeconds(self.TrackTime)
-		self:TrackTarget(true)
-	end,
 }

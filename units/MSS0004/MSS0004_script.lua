@@ -15,6 +15,7 @@ local CLandUnit = import('/lua/cybranunits.lua').CLandUnit
 MSS0004 = Class(CLandUnit) {
 
 	OnStopBeingBuilt = function(self, builder, layer)
+		SetArmyFactionIndex(self:GetArmy(), 1)
 		ForkThread(self.Delay, self, builder, layer)
 		self:Destroy()
 	 end,

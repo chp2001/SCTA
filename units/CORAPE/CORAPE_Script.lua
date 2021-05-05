@@ -4,7 +4,7 @@
 #Script created by Raevn
 
 local TAair = import('/mods/SCTA-master/lua/TAair.lua').TAair
-local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
+local TARotatingWeapon = import('/mods/SCTA-master/lua/TAweapon.lua').TARotatingWeapon
 
 CORAPE = Class(TAair) {
 	OnCreate = function(self)
@@ -12,23 +12,9 @@ CORAPE = Class(TAair) {
 		self.Spinners = {
 			winga = CreateRotator(self, 'winga', 'z', nil, 0, 0, 0),
 			wingb = CreateRotator(self, 'wingb', 'z', nil, 0, 0, 0),
-			gun1 = CreateRotator(self, 'gun1', 'z', nil, 0, 0, 0),
-			gun2 = CreateRotator(self, 'gun2', 'z', nil, 0, 0, 0),
 		}
 		for k, v in self.Spinners do
 			self.Trash:Add(v)
-		end
-		self.currentBarrel = 0
-		self.currentBarrel2 = 0
-	end,
-
-	OnMotionVertEventChange = function(self, new, old )
-		if (new == 'Down' or new == 'Bottom') then
-                	self:PlayUnitSound('Landing')
-			self:CloseWings(self)
-		elseif (new == 'Up' or new == 'Top') then
-                	self:PlayUnitSound('TakeOff')
-			self:OpenWings(self)
 		end
 	end,
 
@@ -53,35 +39,18 @@ CORAPE = Class(TAair) {
 	end,
 
 	Weapons = {
-		VTOL_ROCKET = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-
-				self.unit.currentBarrel = self.unit.currentBarrel + 1
-				if self.unit.currentBarrel == 3 then
-					self.unit.currentBarrel = 0
-				end
-
-				self.unit.Spinners.gun1:SetGoal(-120 * self.unit.currentBarrel)
-				self.unit.Spinners.gun1:SetSpeed(200)
-			end,
+		VTOL_ROCKET = Class(TARotatingWeapon) {
+			PlayRackRecoil = function(self, rackList)
+			if not self.Rotator then
+				self.Rotator = CreateRotator(self.unit, 'gun1', 'z')
+				self.Rotator2 = CreateRotator(self.unit, 'gun2', 'z')
+			end
+			self.MaxRound = 3
+			self.Rotation = -120
+			self.Speed = 1000
+			TARotatingWeapon.PlayRackRecoil(self, rackList)
+		end,
 		},
-		VTOL_ROCKET2 = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				
-
-				self.unit.currentBarrel2 = self.unit.currentBarrel2 + 1
-				if self.unit.currentBarrel2 == 3 then
-					self.unit.currentBarrel2 = 0
-				end
-
-				self.unit.Spinners.gun2:SetGoal(-120 * self.unit.currentBarrel2)
-				self.unit.Spinners.gun2:SetSpeed(200)
-			end,
-		},
-		
 	},
 }
 

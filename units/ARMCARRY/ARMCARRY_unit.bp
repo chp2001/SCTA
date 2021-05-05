@@ -57,7 +57,7 @@ UnitBlueprint {
     },
     CollisionOffsetY = -0.5,
     Defense = {
-        ArmorType = 'Ship',
+        ArmorType = 'Normal',
         Health = 3390,
         MaxHealth = 3390,
         AirThreatLevel = 20,
@@ -190,13 +190,11 @@ UnitBlueprint {
         },
     },
         Wreckage = {
-	---UseCustomMesh = true,
         Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,
         ReclaimTimeMultiplier = 1,
-        --Blueprint = '/mods/SCTA-master/units/ARMCARRY/ARMCARRY_dead_prop.bp',
         WreckageLayers = {
             Water = true,
 	    Sub = true,

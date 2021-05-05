@@ -4,7 +4,6 @@ BaseBuilderTemplate {
         'SCTAAINavalBuilder',
         'SCTANavalFormer',
         'SCTAUpgrades',
-        'SCTAAIT3Formers',
         'SCTAAIT3Builder',
 
         -- Buildings etc
@@ -19,8 +18,8 @@ BaseBuilderTemplate {
             SCU = 0,
         },
         FactoryCount = {
-            Land = 1,
-            Air = 1,
+            Land = 2,
+            Air = 2,
             Sea = 4,
             Gate = 0,
         },

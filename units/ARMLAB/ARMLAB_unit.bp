@@ -120,8 +120,6 @@ InitialRallyZ = 7,
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     Physics = {        
-        ---SkirtSizeX = 7,
-        ---SkirtSizeZ = 7,
         OccupyRects = {
             -2.5,
             0,
@@ -167,8 +165,7 @@ InitialRallyZ = 7,
 
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

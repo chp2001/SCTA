@@ -19,16 +19,6 @@ CORTITAN = Class(TAair) {
 		end
 	end,
 
-	OnMotionVertEventChange = function(self, new, old )
-		if (new == 'Down' or new == 'Bottom') then
-                	self:PlayUnitSound('Landing')
-			self:CloseWings(self)
-		elseif (new == 'Up' or new == 'Top') then
-                	self:PlayUnitSound('TakeOff')
-			self:OpenWings(self)
-		end
-	end,
-
 	OpenWings = function(self)
 		--TURN wing1 to z-axis <-90.00> SPEED <60.69>;
 		self.Spinners.wing1:SetGoal(90)

@@ -13,7 +13,8 @@ UnitBlueprint {
 	    'DEFENSE',
 	    'ANTINAVY',
 	    'NAVAL',
-	    'SORTDEFENSE',
+        'SORTDEFENSE',
+        'CQUEMOV',
         'OVERLAYANTINAVY',
         'OVERLAYSONAR',
         'CORE',
@@ -40,4 +41,11 @@ UnitBlueprint {
     SizeX = 3,
     SizeY = 4,
     SizeZ = 3,
+    Weapon = {
+        [1] = {
+            MaxRadius = 60,
+        },
+        [2] = {
+        },
+    },
 }

@@ -17,6 +17,7 @@ UnitBlueprint {
 	    'LAND',
         'CORE',
         'RADAR',
+        'CQUEMOV',
         'NEEDMOBILEBUILD',
         'OVERLAYRADAR',
         'STEALTHFIELD',

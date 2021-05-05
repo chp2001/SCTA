@@ -14,11 +14,4 @@ UnitBlueprint {
     Economy = {
         BuildTime = 7000,
     },
-    Weapon = {
-        [1] = {
-            MaxRadius = 24,
-        },
-        [2] = {
-        },
-    },
 }

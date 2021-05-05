@@ -9,27 +9,7 @@ local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
-local Interception = import('/lua/editor/UnitCountBuildConditions.lua').HaveLessThanUnitsWithCategory
-local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
-
-local AirProduction = function(self, aiBrain, builderManager)
-    if Interception(aiBrain,  1, LAB) then 
-        return 100
-    else
-        return 25
-    end
-end
-
-local AirProductionT3 = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  12, LAB)  then 
-        return 130
-    elseif Factory(aiBrain,  0, categories.GATE) then
-        return 135
-    else
-        return 0
-    end
-end
-
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIAirBuilder',
@@ -39,28 +19,38 @@ BuilderGroup {
         PlatoonTemplate = 'T2AirFighterSCTA',
         Priority = 115,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
-        { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
+        { TAutils, 'EcoManagementTA', { 0.75, 0.9, 0.5, 0.5, } },
+        },
+        BuilderType = 'Air',
+    },
+    Builder {
+        BuilderName = 'SCTAAI Factory Gunship',
+        PlatoonTemplate = 'T2GunshipSCTA',
+        Priority = 115,
+        BuilderConditions = {
+            { TASlow, 'HaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
+            { TAutils, 'EcoManagementTA', { 0.75, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
     },
     Builder {
         BuilderName = 'SCTAAI Factory Intie',
         PlatoonTemplate = 'T1AirFighterSCTA',
-        PriorityFunction = AirProduction,
+        PriorityFunction = TAPrior.AirProduction,
         Priority = 95,
         BuilderConditions = { -- Only make inties if the enemy air is strong
-        { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
+        { TAutils, 'EcoManagementTA', { 0.75, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
     },  
     Builder {
         BuilderName = 'SCTAAI Factory Strategic',
-        PlatoonTemplate = 'T2AirBomberSCTA',
+        PlatoonTemplate = 'T3AirBomberSCTA',
         Priority = 110,
-        PriorityFunction = AirProductionT3,
+        PriorityFunction = TAPrior.ProductionT3,
         BuilderConditions = {
             { TASlow, 'HaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
-            { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
     },
@@ -68,26 +58,22 @@ BuilderGroup {
         BuilderName = 'SCTAAI Factory Bomber',
         PlatoonTemplate = 'T1AirBomberSCTA',
         Priority = 85,
-        PriorityFunction = AirProduction,
+        PriorityFunction = TAPrior.AirProduction,
         BuilderConditions = {
             { TASlow, 'HaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
-            { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
     },     
     Builder {
         BuilderName = 'SCTAAirTransport',
         PlatoonTemplate = 'SCTATransport',
-        Priority = 80,
-        DelayEqualBuildPlattons = {'Transport', 3},
+        Priority = 50,
+        InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Transport' }},
-            { MIBC, 'GreaterThanGameTime', {900} },
             { MIBC, 'ArmyNeedsTransports', {} },
-            { UCBC, 'LocationFactoriesBuildingLess', { 'LocationType', 2, 'TRANSPORTFOCUS' } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, 'TRANSPORTFOCUS' } },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, 'TRANSPORTFOCUS' } },
-            { TAutils, 'EcoManagementTA', { 0.5, 0.9, 0.5, 0.5, } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.TRANSPORTFOCUS} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
     },     

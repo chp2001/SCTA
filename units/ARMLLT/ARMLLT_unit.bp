@@ -38,7 +38,8 @@ UnitBlueprint {
 	    'DIRECTFIRE',
         'OVERLAYDIRECTFIRE',
 	    'ARM',
-    	'SORTDEFENSE',
+        'SORTDEFENSE',
+        'CQUEMOV',
         'SNIPEMODE',
         'ANTISHIELD',
     },
@@ -112,7 +113,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = false,
-            EnergyDrainPerSecond = 10,
+            EnergyDrainPerSecond = 50,
             EnergyRequired = 10,
             EnergyChargeForFirstShot = true,
             Damage = 60,
@@ -147,7 +148,7 @@ UnitBlueprint {
             RackSlavedToTurret = false,
             RateOfFire = 2,
             TargetCheckInterval = 1,
-            DamageRadius = 1, 
+            DamageRadius = 2, 
             TargetPriorities = {
                 'ALLUNITS'
             },
@@ -176,8 +177,7 @@ UnitBlueprint {
         
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

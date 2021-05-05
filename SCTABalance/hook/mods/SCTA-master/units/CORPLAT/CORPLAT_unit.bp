@@ -15,10 +15,11 @@ UnitBlueprint {
         'TECH3',
 	    'FACTORY',
         'RALLYPOINT',
+        'SUBMERSIBLE',
         'SHOWQUEUE',
 	    'STRUCTURE',
 	    'CONSTRUCTION',
-        'OVERLAYRADAR',
+        'OVERLAYSONAR',
         'CORE',
         'AIR',
         'SORTCONSTRUCTION',
@@ -26,7 +27,6 @@ UnitBlueprint {
     Defense = {
         Health = 14000,
         MaxHealth = 14000,
-        EconomyThreatLevel = 11,
     },
     Display = {
         UniformScale = 0.20,

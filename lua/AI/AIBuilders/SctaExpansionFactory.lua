@@ -3,36 +3,14 @@ local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
+local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
-local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
-
-
-local UnitProduction = function(self, aiBrain, builderManager)
-   if Factory(aiBrain,  1, LAB) then
-        return 111
-    elseif Factory(aiBrain,  1, PLATFORM) then
-        return 50
-    elseif Factory(aiBrain,  12, PLANT) then 
-            return 110
-    else
-        return 0
-    end
-end
-
-local UnitProductionT1 = function(self, aiBrain, builderManager)
-    if Factory(aiBrain,  12, LAB) or Factory(aiBrain,  0, categories.GATE) then
-        return 0
-    elseif Factory(aiBrain,  1, LAB) then 
-        return 50
-    else
-        return 100
-    end
-end
-
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
+  
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAIFactoryExpansions',
@@ -42,18 +20,17 @@ BuilderGroup {
         BuilderName = 'SCTAAI Expansion LandFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 104,
-        PriorityFunction = UnitProductionT1,
+        PriorityFunction = TAPrior.FactoryProductionT1,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
-            { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, PLANT} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'LandTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
-            LocationType = 'LocationType',
             NumAssistees = 2,
             Construction = {
                 BuildClose = true,
@@ -64,22 +41,21 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTAAI Expansion LandFac2',
+        BuilderName = 'SCTAAI Expansion Vehicle LandFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 106,
-        PriorityFunction = UnitProductionT1,
+        PriorityFunction = TAPrior.FactoryProductionT1,
         InstanceCount = 1,
-        BuilderConditions = {
+BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
-            { TAutils, 'EcoManagementTA', { 0.75, 0.5, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, PLANT} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'LandTA',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
             NumAssistees = 2,
-            LocationType = 'LocationType',
             Construction = {
                 BuildClose = true,
                 BuildStructures = {
@@ -91,19 +67,42 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2LAND Expansion',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        PriorityFunction = UnitProduction,
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 112,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, LAB} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'OmniLand',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
-            LocationType = 'LocationType',
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T2LandFactory',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T2LAND Vehicle Expansion',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PriorityFunction = TAPrior.UnitProduction,
+        Priority = 112,
+        InstanceCount = 1,
+BuilderConditions = {
+            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, LAB} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+        },
+        BuilderType = 'OmniLand',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
             NumAssistees = 2,
             Construction = {
                 BuildClose = true,
@@ -119,17 +118,17 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1Expansion AirFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         Priority = 91,
-        PriorityFunction = UnitProductionT1,
+        PriorityFunction = TAPrior.FactoryProductionT1,
         InstanceCount = 1,
-        BuilderConditions = {
+BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
-            { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 1000 } },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, PLANT * categories.AIR} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 200, 1000 } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'AirTA',
         BuilderData = {
             NeedGuard = false,
-            LocationType = 'LocationType',
             DesiresAssist = true,
             NumAssistees = 2,
             Construction = {
@@ -143,18 +142,17 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Air Expansion',
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
-        PriorityFunction = UnitProduction,
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 111,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
-            { TAutils, 'EcoManagementTA', { 0.2, 0.9, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, LAB * categories.AIR} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'OmniAir',
         BuilderData = {
             NeedGuard = false,
-            LocationType = 'LocationType',
             DesiresAssist = true,
             NumAssistees = 2,
             Construction = {
@@ -164,59 +162,61 @@ BuilderGroup {
             }
         }
     },
-    ---EmergencyFacts
     Builder {
-        BuilderName = 'SCTAAI LandExpansion Emergency',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 41,
-        InstanceCount = 1,
+        BuilderName = 'T2ArtillerySCTA', -- Names need to be GLOBALLY unique.  Prefixing the AI name will help avoid name collisions with other AIs.	
+        PlatoonTemplate = 'EngineerBuilderSCTA23All',
+        Priority = 50,
+        PriorityFunction = TAPrior.StructureProductionT2,
+        InstanceCount = 2,
         BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {900} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ARTILLERY * categories.STRUCTURE * categories.TECH2} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'NotACU',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
             NumAssistees = 2,
             Construction = {
-                BuildClose = true,
                 BuildStructures = {
-                    'T1LandFactory',
+                    'T2Artillery',
                 }
             }
         }
     },
     Builder {
-        BuilderName = 'SCTAAI LandExpansionT2 Emergency2',
-        PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 43,
+        BuilderName = 'Mini Nuke Launcher SCTA', -- Names need to be GLOBALLY unique.  Prefixing the AI name will help avoid name collisions with other AIs.	
+        PlatoonTemplate = 'EngineerBuilderSCTA23All',
+        PriorityFunction = TAPrior.StructureProductionT2,
+        Priority = 65,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.75, 0.5}},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TACTICALMISSILEPLATFORM} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'NotACU',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
             NumAssistees = 2,
             Construction = {
-                BuildClose = true,
                 BuildStructures = {
-                    'T2LandFactory2',
+                    'T2StrategicMissile',
                 }
             }
         }
     },
     Builder {
-        BuilderName = 'SCTAAI AirExpansionT2 Emergency',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco123',
-        Priority = 53,
-        InstanceCount = 1,
+        BuilderName = 'SCTAAI T3LAND Hover Factory T2 Expansion',
+        PlatoonTemplate = 'EngineerBuilderSCTA23',
+        PriorityFunction = TAPrior.ProductionT3,
+        Priority = 143,
+        InstanceCount = 2,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.75}},
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, PLATFORM} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'Any',
+        BuilderType = 'OmniLand',
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
@@ -224,7 +224,30 @@ BuilderGroup {
             Construction = {
                 BuildClose = true,
                 BuildStructures = {
-                    'T2AirFactory',
+                    'T3LandFactory',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T3AirFactory T2 Expansion',
+        PlatoonTemplate = 'EngineerBuilderSCTAEco23',
+        PriorityFunction = TAPrior.ProductionT3,
+        Priority = 140,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, PLATFORM} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+        },
+        BuilderType = 'OmniAir',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = true,
+            NumAssistees = 2,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T3AirFactory',
                 }
             }
         }

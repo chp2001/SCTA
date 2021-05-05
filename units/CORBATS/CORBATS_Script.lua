@@ -4,37 +4,25 @@
 #Script created by Raevn
 
 local TASea = import('/mods/SCTA-master/lua/TAMotion.lua').TASea
-local TAweapon = import('/mods/SCTA-master/lua/TAweapon.lua').TAweapon
+local TAWeaponFile = import('/mods/SCTA-master/lua/TAweapon.lua')
+local TAweapon = TAWeaponFile.TAweapon
+local TARotatingWeapon = TAWeaponFile.TARotatingWeapon
 
 CORBATS = Class(TASea) {
-
-	OnCreate = function(self)
-		TASea.OnCreate(self)
-		self.Spinners = {
-			guna = CreateRotator(self, 'guna', 'z', nil, 0, 0, 0),
-		}
-		for k, v in self.Spinners do
-			self.Trash:Add(v)
-		end
-		self.currentBarrel = 0
-	end,
-
 	Weapons = {
 		COR_BATS = Class(TAweapon) {
 
 		},
-		COR_BATSLASER = Class(TAweapon) {
-			OnWeaponFired = function(self)
-				TAweapon.OnWeaponFired(self)
-				self.unit.currentBarrel = self.unit.currentBarrel + 1
-				if self.unit.currentBarrel == 3 then
-					self.unit.currentBarrel = 0
+		COR_BATSLASER = Class(TARotatingWeapon) {
+			PlayRackRecoil = function(self, rackList)
+				if not self.Rotator then
+					self.Rotator = CreateRotator(self.unit, 'guna', 'z')
 				end
-
-				--TURN barrel to z-axis <119.99> SPEED <400.09>; (for each turn)
-				self.unit.Spinners.guna:SetGoal(-120 * self.unit.currentBarrel)
-				self.unit.Spinners.guna:SetSpeed(400)
-			end,
+				self.MaxRound = 3
+				self.Rotation = -120
+				self.Speed = 120
+				TARotatingWeapon.PlayRackRecoil(self, rackList) 
+			end, 
 		},
 
 	},

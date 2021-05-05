@@ -7,12 +7,12 @@ UnitBlueprint {
     Audio = {
         UISelection = Sound {
             Bank = 'TA_Sound',
-            Cue = 'KBARMSEL',
+            Cue = 'MAVBSEL1',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StartMove = Sound {
             Bank = 'TA_Sound',
-            Cue = 'KBARMMOV',
+            Cue = 'MAVBOT1',
             LodCutoff = 'UnitMove_LodCutoff',
         },
         StopMove = Sound {
@@ -22,7 +22,7 @@ UnitBlueprint {
         },
 	Destroyed = Sound {
             Bank = 'TA_Sound',
-            Cue = 'XPLOLRG3',
+            Cue = 'MAVBOK1',
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
@@ -119,7 +119,7 @@ TechLevel = 'RULEUTL_Advanced',
             Audio = {
                 Fire = Sound {
                     Bank = 'TA_Sound',
-                    Cue = 'ARMSML2',
+                    Cue = 'MAVGUN1',
                     LodCutoff = 'Weapon_LodCutoff',
                 },
             },
@@ -170,7 +170,7 @@ TechLevel = 'RULEUTL_Advanced',
             TargetRestrictDisallow = 'UNTARGETABLE',
             AboveWaterTargetsOnly = true,
             WeaponUnpacks = true,
-            WeaponRepackTimeout = 1,
+            WeaponRepackTimeout = 0,
             TurretBoneMuzzle = 'flare1',
             TurretBonePitch = 'rarm',
             TurretBoneDualMuzzle = 'flare2',
@@ -196,8 +196,7 @@ TechLevel = 'RULEUTL_Advanced',
 },
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

@@ -34,17 +34,6 @@ PlatoonTemplate {
     }
 }
 
-PlatoonTemplate {
-    Name = 'T1LandArtillerySCTA2',
-    FactionSquads = {
-        Arm = {
-            { 'armsam', 1, 1, 'attack', 'none' }
-        },
-        Core = {
-            { 'corlevlr', 1, 1, 'attack', 'none' }
-        },
-    }
-}
 
 
 PlatoonTemplate {
@@ -89,13 +78,26 @@ PlatoonTemplate {
     Name = 'T2LandAuxFact2',
     FactionSquads = {
         Arm = {
-            { 'armjam', 1, 1, 'attack', 'none' },
+            { 'armjam', 1, 1, 'support', 'none' },
         },
         Core = {
-            { 'coreter', 1, 1, 'attack', 'none' },
+            { 'coreter', 1, 1, 'support', 'none' },
         },
     }
 }
+
+PlatoonTemplate {
+    Name = 'T2LandAuxTerrain2',
+    FactionSquads = {
+        Arm = {
+            { 'armcroc', 1, 1, 'attack', 'none' },
+        },
+        Core = {
+            { 'corseal', 1, 1, 'attack', 'none' },
+        },
+    }
+}
+
 PlatoonTemplate {
     Name = 'T2LandMissileSCTA2',
     FactionSquads = {
@@ -125,12 +127,14 @@ PlatoonTemplate {
     Name = 'T2LandDFTank2SCTA',
     FactionSquads = {
         Arm = {
-            { 'armbull', 1, 2, 'attack', 'none' },
+            { 'armlatnk', 1, 2, 'attack', 'none' },
             { 'armack', 1, 1, 'support', 'None' },
-            { 'armbull', 1, 1, 'attack', 'none' },
+            { 'armlatnk', 1, 1, 'attack', 'none' },
         },
         Core = {
-            { 'correap', 1, 3, 'attack', 'none' },
+            { 'correap', 1, 2, 'attack', 'none' },
+            { 'cornecro', 1, 1, 'support', 'None' },
+            { 'correap', 1, 2, 'attack', 'none' },
         },
     }
 }
@@ -139,12 +143,23 @@ PlatoonTemplate {
     Name = 'T3LandDFTank2SCTA',
     FactionSquads = {
         Arm = {
-            { 'armlatnk', 1, 2, 'attack', 'none' },
-            { 'armmart', 1, 1, 'attack', 'none' },
+            { 'armbull', 1, 3, 'attack', 'none' },
         },
         Core = {
             { 'corgol', 1, 2, 'attack', 'none' },
             { 'corch', 1, 1, 'attack', 'none' },
+            { 'corgol', 1, 1, 'attack', 'none' },
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'T3LandDFVehicleSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armmart', 1, 1, 'attack', 'none' },
+        },
+        Core = {
             { 'cormart', 1, 1, 'attack', 'none' },
         },
     }

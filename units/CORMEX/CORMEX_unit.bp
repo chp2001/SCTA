@@ -20,7 +20,6 @@ UnitBlueprint {
             Cue = 'MEXOFF2',
             LodCutoff = 'UnitMove_LodCutoff',
         },
-
 	Destroyed = Sound {
             Bank = 'TA_Sound',
             Cue = 'XPLOSML3',
@@ -41,10 +40,11 @@ UnitBlueprint {
 	    'STRUCTURE',
         'MASSPRODUCTION',
         'MASSEXTRACTION',
-                'ECONOMIC',
+        'ECONOMIC',
         'SORTECONOMY',
-    'CORE',        
-    'SHOWQUEUE',
+        'CORE',        
+        'SHOWQUEUE',
+        'CQUEMOV',
     },
     Defense = {
         ArmorType = 'Structure',
@@ -72,8 +72,12 @@ UnitBlueprint {
         BuildCostEnergy = 514,
         BuildCostMass = 51,
         BuildTime = 1874,
-        MaintenanceConsumptionPerSecondEnergy = 3,
-        ProductionPerSecondMass = 2.2,
+        MaintenanceConsumptionPerSecondEnergy = 2,
+        ProductionPerSecondMass = 1,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
     },
     General = {
         Category = 'Economy',
@@ -145,8 +149,7 @@ UnitBlueprint {
          
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

@@ -39,7 +39,8 @@ UnitBlueprint {
         'SHOWQUEUE',
 	    'STRUCTURE',
 	    'CONSTRUCTION',
-        'OVERLAYRADAR',
+        'SUBMERSIBLE',
+        'OVERLAYSONAR',
         'ARM',
         'AIR',
 	    'SORTCONSTRUCTION',
@@ -114,7 +115,7 @@ UnitBlueprint {
     },
     Intel = {
     VisionRadius = 14,
-	RadarRadius = 32,
+	SonarRadius = 32,
     WaterVisionRadius = 8,
     RadarStealth = true,
     },
@@ -161,8 +162,7 @@ UnitBlueprint {
 
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

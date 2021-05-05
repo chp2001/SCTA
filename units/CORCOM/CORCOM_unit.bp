@@ -125,6 +125,7 @@ UnitBlueprint {
         BuildableCategory = {
             'BUILTBYCOMMANDER CORE',
         },
+        Command = true,
         MaxBuildDistance = 3.75,
         NaturalProducer = true,
         ProductionPerSecondEnergy = 25,
@@ -305,8 +306,8 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_None',
             CollideFriendly = false,
             DamageFriendly = true,
-            Damage = 50,
             Damage = 99999,
+            DGun = 99999,
             DamageRadius = 2,
             DamageType = 'Overcharge',
             Overcharge = {
@@ -375,6 +376,7 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 99999,
+            DGun = 99999,
             DamageRadius = 2,
             DamageType = 'Overcharge',
             DisplayName = 'AutoOverCharge',

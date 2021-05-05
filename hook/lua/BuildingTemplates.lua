@@ -123,7 +123,10 @@ BuildingTemplates[6] = {
                 'T2GroundDefense',
                 'armhlt',
             },
-    
+            {
+                'T2GroundDefense2',
+                'armmanni',
+            },
             -- -Air Defense
             {
                 'T1AADefense',
@@ -227,7 +230,7 @@ BuildingTemplates[6] = {
                 'armamb',
             },
             {
-                'T3GroundDefense2',
+                'T3RapidArtillery',
                 'armanni', 
             },
     }
@@ -464,7 +467,7 @@ BuildingTemplates[6] = {
             'cortoast',
         },
         {
-            'T3GroundDefense2',
+            'T3RapidArtillery',
             'cordoom', 
         },
 } 

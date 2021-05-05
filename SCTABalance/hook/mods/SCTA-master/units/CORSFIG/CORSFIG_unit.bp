@@ -27,6 +27,7 @@ UnitBlueprint {
         [1] = {
             Damage = 200,
             MaxRadius = 35,
+            DamageType = 'AntiAir',
             RateOfFire = 1,
         },
         [2] = {

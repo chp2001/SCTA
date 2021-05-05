@@ -197,3 +197,78 @@ function TAAttackNaval(aiBrain, bool)
     end
     return false
 end
+
+function TAReclaimablesInArea(aiBrain, locType)
+    --DUNCAN - was .9. Reduced as dont need to reclaim yet if plenty of mass
+    if aiBrain:GetEconomyStoredRatio('MASS') > .5 then
+        return false
+    end
+
+    --DUNCAN - who cares about energy for reclaming?
+    --if aiBrain:GetEconomyStoredRatio('ENERGY') > .5 then
+        --return false
+    --end
+
+    local ents = TAAIGetReclaimablesAroundLocation(aiBrain, locType)
+    if ents and table.getn(ents) > 0 then
+        return true
+    end
+
+    return false
+end
+
+function TAAIGetReclaimablesAroundLocation(aiBrain, locationType)
+    local position, radius
+    if aiBrain.HasPlatoonList then
+        for _, v in aiBrain.PBM.Locations do
+            if v.LocationType == locationType then
+                position = v.Location
+                radius = v.Radius
+                break
+            end
+        end
+    elseif aiBrain.BuilderManagers[locationType] then
+        radius = aiBrain.BuilderManagers[locationType].FactoryManager.Radius
+        position = aiBrain.BuilderManagers[locationType].FactoryManager:GetLocationCoords()
+    end
+
+    if not position then
+        return false
+    end
+
+    local x1 = position[1] - radius * 2
+    local x2 = position[1] + radius * 2
+    local z1 = position[3] - radius * 2
+    local z2 = position[3] + radius * 2
+    local rect = Rect(x1, z1, x2, z2)
+
+    return AIUtils.GetReclaimablesInRect(rect)
+end
+
+
+local AITaunts = {
+    {99, 100, 101, 102, 103}, -- Seraphim
+}
+local AIChatText = import('/lua/AI/sorianlang.lua').AIChatText
+
+function TAAIRandomizeTaunt(aiBrain)
+    tauntid = Random(1,table.getn(AITaunts[1]))
+    AISendChat('all', aiBrain.Nickname, '/'..AITaunts[1][tauntid])
+end
+
+function AISendChat(aigroup, ainickname, aiaction, targetnickname, extrachat)
+        if aiaction and AIChatText[aiaction] then
+            local ranchat = Random(1, table.getn(AIChatText[aiaction]))
+            local chattext
+            if targetnickname then
+                chattext = string.gsub(AIChatText[aiaction][ranchat],'%[target%]', targetnickname)
+            elseif extrachat then
+                chattext = string.gsub(AIChatText[aiaction][ranchat],'%[extra%]', extrachat)
+            else
+                chattext = AIChatText[aiaction][ranchat]
+            end
+            table.insert(Sync.AIChat, {group=aigroup, text=chattext, sender=ainickname})
+        else
+            table.insert(Sync.AIChat, {group=aigroup, text=aiaction, sender=ainickname})
+        end
+end

@@ -43,7 +43,7 @@ ProjectileBlueprint {
         StrategicIconSize = 3,
     },
     General = {
-        Category = 'Direct Fire',
+        Category = 'DirectFire',
         EntityCategory = {
             'CORE',
             'PROJECTILE',

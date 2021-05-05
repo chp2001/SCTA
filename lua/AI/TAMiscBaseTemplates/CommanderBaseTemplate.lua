@@ -2761,7 +2761,6 @@ CommanderBaseTemplate =
         {
             {
             'T1LandFactory',
-            'T1EnergyProduction',
             'T1AirFactory',
             'T1Resource',
             },
@@ -3987,7 +3986,6 @@ CommanderBaseTemplate =
         {
             {
             'T1LandFactory',
-            'T1EnergyProduction',
             'T1AirFactory',
             'T1Resource',
             },
@@ -7662,7 +7660,6 @@ CommanderBaseTemplate =
         {
             {
             'T1LandFactory',
-            'T1EnergyProduction',
             'T1AirFactory',
             'T1Resource',
             },

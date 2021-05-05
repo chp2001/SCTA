@@ -35,6 +35,10 @@ UnitBlueprint {
     },
     Defense = {
         ArmorType = 'Structure',
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 3,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
         Health = 176,
         MaxHealth = 176,
     },
@@ -80,8 +84,8 @@ UnitBlueprint {
     LifeBarOffset = 0.5,
     LifeBarSize = 2,
     SelectionCenterOffsetX = -0.4,
-    SelectionSizeX = 2.25,
-    SelectionSizeZ = 2.25,
+    SelectionSizeX = 2.5,
+    SelectionSizeZ = 2.5,
     SelectionThickness = 0.25,
     SizeX = 4,
     SizeY = 6,
@@ -100,8 +104,7 @@ UnitBlueprint {
          
     },
         Wreckage = {
-	---UseCustomMesh = true,
-        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
         EnergyMult = 0,
         HealthMult = 0.9,
         MassMult = 0.9,

@@ -16,6 +16,7 @@ UnitBlueprint {
         'LAND', 
         'CORE',
 	    'SORTCONSTRUCTION',
+        'HOVER',
     },
     Defense = {
         Health = 22000,
@@ -36,12 +37,9 @@ UnitBlueprint {
         BuildCostMass = 2400, 
         BuildRate = 360,
         BuildTime = 150000,
-        BuildableCategory = {
-            'HOVER MOBILE TECH3 CORE',
-        },
     },
     SelectionSizeX = 7,
-    SelectionSizeZ = 7,
+    SelectionSizeZ = 5,
     SelectionThickness = 0.25,
     SizeX = 9,
     SizeY = 1,

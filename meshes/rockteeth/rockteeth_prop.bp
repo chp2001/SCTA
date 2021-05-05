@@ -1,14 +1,22 @@
+----This is where Heap Blueprints are located among other things. Its the last major TA mechanic left to be recreated
+---While not perfect i.e. floating heaps circumstantially, it is acceptable enough. Properly need to make it cleaner.
+
 PropBlueprint {
     Categories = {
         'RECLAIMABLE',
     },
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 100,
+        MaxHealth = 100,
+    },
     Display = {
         Mesh = {
-            IconFadeInZoom = 50,
+            IconFadeInZoom = 130,
             LODs = {
                 {
-                    LODCutoff = 100,
-		            NormalName = '/mods/SCTA-master/textures/common/normalsTS.dds',
+                    LODCutoff = 175,
+                    SpecularName = '/mods/SCTA-master/meshes/Dragon/Dragon_SpecTeam.dds',
                     ShaderName = 'TMeshNoLighting',
                 },
             },
@@ -16,6 +24,9 @@ PropBlueprint {
     },
     UnitWreckage = true,
     Economy = {
+        Heap = true,
+        BuildCostEnergy = 0,
+        BuildCostMass = 25, 
         ReclaimEnergyMax = '',
         ReclaimMassMax = 1,
         ReclaimTime = 5,

@@ -20,7 +20,7 @@ function CommanderThreadSCTA(cdr, platoon)
     SetCDRHome(cdr, platoon)
     while not cdr.Dead do
         -- Overcharge
-        if not cdr.Dead and table.getn(cdr.EngineerBuildQueue) == 0 then CDRSCTADGun(aiBrain, cdr) end
+        if not cdr.Dead and table.getn(cdr.EngineerBuildQueue) == 0 and cdr.BuildingUnit == false then CDRSCTADGun(aiBrain, cdr) end
         WaitTicks(1)
 
         -- Go back to base

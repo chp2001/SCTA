@@ -180,7 +180,7 @@ BuilderGroup {
                 Time = 20,
             },
         },
-        BuilderType = 'EngineerForm',
+        BuilderType = 'SeaForm',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Energy Naval',
@@ -199,6 +199,6 @@ BuilderGroup {
             Reclaim = {'cortide, armtide,'},
             ReclaimTime = 30,
         },
-        BuilderType = 'EngineerForm',
+        BuilderType = 'SeaForm',
     },
 }

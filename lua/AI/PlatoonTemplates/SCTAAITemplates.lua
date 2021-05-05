@@ -125,7 +125,7 @@ PlatoonTemplate {
     Plan = 'SCTAStrikeForceAIEarly',
     PlatoonType = 'LandForm',
     GlobalSquads = {
-        { GROUND * categories.TECH1 - SPECIAL - TACATS - RANGE, 5, 10, 'attack', 'none' }
+        { GROUND * categories.TECH1 - SPECIAL - TACATS - RANGE, 2, 10, 'attack', 'none' }
     },
 }
 
@@ -134,7 +134,7 @@ PlatoonTemplate {
     Plan = 'SCTAStrikeForceAI',
     PlatoonType = 'LandForm',
     GlobalSquads = {
-        { GROUND - SPECIAL - RANGE - TACATS, 10, 20, 'attack', 'none' }
+        { GROUND - SPECIAL - RANGE - TACATS, 5, 20, 'attack', 'none' }
     },
 }
 

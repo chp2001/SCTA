@@ -103,6 +103,7 @@ BuilderGroup {
         InstanceCount = 2,
         DelayEqualBuildPlattons = {'Unfinished', 2},
         BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FIELDENGINEER}},
             { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'Unfinished' }},
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
         },
@@ -125,6 +126,7 @@ BuilderGroup {
         InstanceCount = 2,
         FormRadius = 100,
         BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FIELDENGINEER}},
             { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Other',

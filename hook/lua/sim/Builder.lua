@@ -7,7 +7,7 @@ PlatoonBuilder = Class(TAPlatoonBuilder) {
         end
         Builder.Create(self,brain,data,locationType)
         --self.Value = data.DelayEqualBuildPlattons
-        LOG('*TAAlterPlease', self.Value)
+        --LOG('*TAAlterPlease', self.Value)
         if data.PriorityFunction then
         self:CalculatePriority()
         end
@@ -29,20 +29,21 @@ end,
         return TAPlatoonBuilder.CalculatePriority(self, builderManager)
     end
     --LOG('*TAAlter1', builder)
-    LOG('*TAAlter1C', self.Brain.SCTAAI)
+    --LOG('*TAAlter1C', self.Brain.SCTAAI)
     ---LOG('*TAAlter1Brain', self.Brain.SCTAAI)
-    self.Value = self.BuilderData.Value or 0
+    self.Value = (self.OriginalPriority/10)
     self.PriorityAltered = false
     --LOG('*TAAlter1Plat', self.BuilderData.Value)
-    LOG('*TAAlter2Plat', self.Value)
+    --LOG('*TAAlter2Plat', self.Value)
     if Builders[self.BuilderName].PriorityFunction then
         --LOG('Calculate new Priority '..self.BuilderName..' - '..self.Priority)
         local newPri = Builders[self.BuilderName]:PriorityFunction(self.Brain)
         ---local Val = Builders[self.BuilderName].Value 
-        LOG('*TAAlter', self.Value)
+        --LOG('*TAAlter', newPri)
         if newPri != self.Priority then
                 if newPri > 0 then
                     self.Priority = newPri + (self.Value or 0)
+                    --LOG('*TAAlterHuzzah', self.Priority)
                 else 
                     self.Priority = 0
                 end    
@@ -110,8 +111,8 @@ FactoryBuilder = Class(TAFactoryBuilder) {
         return TAFactoryBuilder.CalculatePriority(self, builderManager)
     end
     --LOG('*TAAlter1', builder)
-    self.Value = self.BuilderData.Value or 0 
-    LOG('*TAAlter1C', self.Brain.SCTAAI)
+    self.Value = (self.OriginalPriority/10)
+    --LOG('*TAAlter1C', self.Brain.SCTAAI)
     ---LOG('*TAAlter1Brain', self.Brain.SCTAAI)
     self.PriorityAltered = false
     --LOG('*TAAlter1', self.BuilderData.Value)
@@ -120,12 +121,14 @@ FactoryBuilder = Class(TAFactoryBuilder) {
         --LOG('Calculate new Priority '..self.BuilderName..' - '..self.Priority)
         local newPri = Builders[self.BuilderName]:PriorityFunction(self.Brain)
         ---local Val = Builders[self.BuilderName].Value 
-        LOG('*TAAlterFact', self.Value)
+        --LOG('*TAAlterFact', newPri)
         if newPri != self.Priority then
                 if newPri > 0 then
                     self.Priority = newPri + (self.Value or 0)
+                    ---LOG('*TAAlterHuzzah1', self.Priority)
                 else 
                     self.Priority = 0
+                    --LOG('*TAAlterHuzzah2', self.Priority)
                 end    
             self.PriorityAltered = true
         end

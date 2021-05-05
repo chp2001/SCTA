@@ -145,9 +145,9 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                     end
                 end
                 builder:StoreHandle(hndl)
-            --else 
-                --LOG('*TAIEXIST FAILS', template[1])
-                ----('*TAIEXIST FAILS2', template[3])
+            else 
+                LOG('*TAIEXIST FAILS', template[1])
+                --LOG('*TAIEXIST FAILS2', template[3])
         end
     end,
 
@@ -216,8 +216,8 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                     end
                 end
                 builder:StoreHandle(hndl)
-            --else 
-                --LOG('*TAIEXIST FAILS', template[1])
+            else 
+                LOG('*TAIEXIST FAILS', template[1])
                 ----('*TAIEXIST FAILS2', template[3])
             end
     end,
@@ -287,8 +287,8 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                     end
                 end
                 builder:StoreHandle(hndl)
-            --else 
-                --LOG('*TAIEXIST FAILS', template[1])
+            else 
+                LOG('*TAIEXIST FAILS', template[1])
                 ----('*TAIEXIST FAILS2', template[3])
             end
     end,
@@ -358,8 +358,8 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                     end
                 end
                 builder:StoreHandle(hndl)
-            --else 
-                --LOG('*TAIEXIST FAILS', template[1])
+            else 
+                LOG('*TAIEXIST FAILS', template[1])
                 ----('*TAIEXIST FAILS2', template[3])
             end
     end,

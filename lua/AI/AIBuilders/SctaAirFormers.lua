@@ -13,7 +13,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Air Scout',
         PlatoonTemplate = 'T1AirScoutFormSCTA',
         Priority = 150,
-        InstanceCount = 10,
+        InstanceCount = 5,
         BuilderType = 'Scout',
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, SKY * categories.SCOUT * categories.OVERLAYRADAR} },
@@ -24,9 +24,8 @@ BuilderGroup {
         PlatoonTemplate = 'SCTABomberAttack',
         PlatoonAIPlan = 'BomberAISCTA',
         PriorityFunction = TAPrior.UnitProductionT1AIR,
-        DelayEqualBuildPlattons = 5,
         Priority = 100,
-        InstanceCount = 5,
+        InstanceCount = 20,
         BuilderType = 'AirForm',        
         BuilderConditions = { 
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, SKY * categories.BOMBER} },
@@ -36,10 +35,9 @@ BuilderGroup {
         BuilderName = 'SCTAAI Air Intercept',
         PlatoonTemplate = 'IntieAISCTA',
         PriorityFunction = TAPrior.UnitProductionT1AIR,
-        DelayEqualBuildPlattons = 1, 
         Priority = 100,
         PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
-        InstanceCount = 5,
+        InstanceCount = 20,
         BuilderType = 'AirForm',     
         BuilderConditions = { 
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, SKY * categories.ANTIAIR * categories.TECH1} },
@@ -51,7 +49,7 @@ BuilderGroup {
         PlatoonAIPlan = 'InterceptorAISCTAStealth',
         PriorityFunction = TAPrior.UnitProduction,
         Priority = 110,
-        InstanceCount = 5,
+        InstanceCount = 20,
         PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
         BuilderType = 'AirForm',
         BuilderData = {
@@ -67,7 +65,7 @@ BuilderGroup {
         PlatoonAIPlan = 'InterceptorAISCTAEnd',
         PriorityFunction = TAPrior.GantryConstruction,
         Priority = 110,
-        InstanceCount = 10,
+        InstanceCount = 20,
         PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
         BuilderType = 'AirForm',
         BuilderData = {

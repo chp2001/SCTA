@@ -27,7 +27,7 @@ BuilderGroup {
         },        
         BuilderConditions = {
             { UCBC, 'EngineersNeedGuard', { 'LocationType' } },
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.MOBILE * categories.ANTIAIR} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.MOBILE * categories.ANTIAIR * categories.LAND} },
          },
     },
     Builder {
@@ -45,13 +45,13 @@ BuilderGroup {
         },        
         BuilderConditions = {          
         { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.COMMAND }},	
-        { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AMPHIBIOUS - categories.SCOUT} }, },
+        { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AMPHIBIOUS - categories.SCOUT - categories.COMMAND - categories.ENGINEER} }, },
     },
     Builder {
         BuilderName = 'SCTAAI LAB',
         PlatoonTemplate = 'LABSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 150,
-        InstanceCount = 5,
+        InstanceCount = 2,
         PriorityFunction = TAPrior.UnitProductionLab,
         BuilderType = 'Scout',
         BuilderData = {
@@ -62,6 +62,7 @@ BuilderGroup {
         },        
         BuilderConditions = { 
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, RAIDER} },
+            { MIBC, 'LessThanGameTime', {180} },
             { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.COMMAND }},	
         },
     },

@@ -94,7 +94,7 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1,  GROUND - SPECIAL - RANGE - TACATS}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1,  GROUND - SPECIAL}},
         },
     },
     Builder {
@@ -139,7 +139,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1,  GROUND * (RANGE + categories.FIELDENGINEER) - TACATS} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1,  GROUND * (RANGE + categories.FIELDENGINEER)} },
          },
     },
     Builder {
@@ -162,7 +162,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1,  GROUND * (RANGE + categories.FIELDENGINEER) - TACATS}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1,  GROUND * (RANGE + categories.FIELDENGINEER)}},
             { MIBC, 'GreaterThanGameTime', {300} },
          },
     },

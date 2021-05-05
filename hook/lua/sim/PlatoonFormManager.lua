@@ -58,15 +58,20 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         --bType = template[3]
         --LOG('*TAbtype2', bType)
         --LOG('*TAbtype3', template[3])
-        builder = self:GetHighestBuilder(bType, {builder})
-        if self.Naval and bType == 'SeaForm' then
+        builder = self:GetHighestBuilder(bType, {builder}) --return
+        if not self.Naval then
+            if bType == 'LandForm' or bType == 'Scout' then
+            return ForkThread(self.SCTAManagerLoopBodyLand, self, builder, bType)
+            elseif bType == 'EngineerForm' or bType == 'Other' then
+            return ForkThread(self.SCTAManagerLoopBodyEngineer, self, builder, bType)
+            --return
+            --return
+            else
+            return self:SCTAManagerLoopBody(builder, bType)
+            end
+        else
             return self:SCTAManagerLoopBodySea(builder, bType)
-        elseif bType == 'EngineerForm' or bType == 'Other' then
-          return self:SCTAManagerLoopBodyEngineer(builder, bType)
-        elseif bType == 'LandForm' or bType == 'Scout' then
-          return self:SCTAManagerLoopBodyLand(builder, bType)
-        elseif bType == 'StructureForm' or bType == 'AirForm' or bType == 'CommandTA' then
-          return self:SCTAManagerLoopBody(builder, bType)
+            --return
         end
     end,
 
@@ -83,7 +88,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
             local template = self:GetPlatoonTemplate(builder:GetPlatoonTemplate())
             --LOG('*template1', template[1])
             builder:FormDebug()
-            local radius = 150
+            local radius = 100
             if builder:GetFormRadius() then radius = builder:GetFormRadius() end
             if not template or not self.Location or not radius then
                 if type(template) != 'table' or type(template[1]) != 'string' or type(template[2]) != 'string' then

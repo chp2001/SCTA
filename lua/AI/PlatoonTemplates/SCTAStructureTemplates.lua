@@ -75,7 +75,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'NuclearMissileSCTA',
     Plan = 'NukeAI',
-    PlatoonType = 'StructureForm',
+    PlatoonType = 'CommandTA',
     GlobalSquads = {
         { categories.NUKE * categories.STRUCTURE * categories.TECH3, 1, 1, 'attack', 'None' }
     },
@@ -84,7 +84,7 @@ PlatoonTemplate {
 PlatoonTemplate {
     Name = 'AntiNuclearMissileSCTA',
     Plan = 'AntiNukeAI',
-    PlatoonType = 'StructureForm',
+    PlatoonType = 'CommandTA',
     GlobalSquads = {
         { categories.ANTIMISSILE * categories.STRUCTURE * categories.TECH3, 1, 1, 'attack', 'None' }
     },

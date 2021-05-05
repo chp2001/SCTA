@@ -1,7 +1,7 @@
 WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset FactoryBuilderManager.lua' )
 
 SCTAFactoryBuilderManager = FactoryBuilderManager
-FactoryBuilderManager = Class(SCTAFactoryBuilderManager, BuilderManager) {
+FactoryBuilderManager = Class(SCTAFactoryBuilderManager) {
     Create = function(self, brain, lType, location, radius, useCenterPoint)
         if not brain.SCTAAI then
             return SCTAFactoryBuilderManager.Create(self, brain, lType, location, radius, useCenterPoint)

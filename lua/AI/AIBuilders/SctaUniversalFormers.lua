@@ -193,7 +193,7 @@ BuilderGroup {
         BuilderConditions = {
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.NUKE * categories.STRUCTURE * categories.TECH3}},
             },
-        BuilderType = 'Command',
+        BuilderType = 'CommandTA',
         FormRadius = 10000,
     },
     Builder {
@@ -204,7 +204,7 @@ BuilderGroup {
         BuilderConditions = {
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.ANTIMISSILE * categories.STRUCTURE * categories.TECH3}},
             },
-        BuilderType = 'Command',
+        BuilderType = 'CommandTA',
         FormRadius = 10000,
     },
     Builder {
@@ -262,7 +262,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {180} },
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.COMMANDER} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.COMMAND} },
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 50}},
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.HYDROCARBON }},
         },

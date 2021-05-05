@@ -88,7 +88,7 @@ end
 
 AssistProduction = function(self, aiBrain)
     if Factory(aiBrain,  12, PLANT) then 
-        return 15
+        return 50
     elseif Factory(aiBrain,  0, LAB) then 
         return 10
     else

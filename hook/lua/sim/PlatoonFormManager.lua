@@ -1,7 +1,7 @@
 WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset PlatoonForm.lua' )
 
 SCTAPlatoonFormManager = PlatoonFormManager
-PlatoonFormManager = Class(SCTAPlatoonFormManager, BuilderManager) {
+PlatoonFormManager = Class(SCTAPlatoonFormManager) {
     Create = function(self, brain, lType, location, radius)
         if not brain.SCTAAI then
             --LOG('*template2', brain.SCTAAI)
@@ -75,32 +75,40 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager, BuilderManager) {
             return SCTAPlatoonFormManager.ManagerLoopBody(self,builder,bType)
         end
         self.template = self:GetPlatoonTemplate(builder:GetPlatoonTemplate())
-        BuilderManager.ManagerLoopBody(self, builder, self.template[3])
-        --LOG('*TALocation', self.LocationType)
         bType = self.template[3]
+        BuilderManager.ManagerLoopBody(self, builder, bType)
+        --LOG('*TALocation', self.LocationType)
         if bType == 'Scout' then
             builder = self:GetHighestBuilder('Scout', {self.template})
+            self:SCTAManagerLoopBody(builder, 'Scout')
             return
         elseif bType == 'LandForm' then
             builder = self:GetHighestBuilder('LandForm', {self.template})
+            self:SCTAManagerLoopBody(builder, 'LandForm')
             return
         elseif bType == 'AirForm' then
             builder = self:GetHighestBuilder('AirForm', {self.template})
+            self:SCTAManagerLoopBody(builder, 'AirForm')
             return
-        elseif bType == 'SeaForm' and self.LocationType == 'Naval Area' then
+        elseif bType == 'SeaForm' then
             builder = self:GetHighestBuilder('SeaForm', {self.template})
+            self:SCTAManagerLoopBody(builder, 'SeaForm')
             return
         elseif bType == 'EngineerForm' then
             builder = self:GetHighestBuilder('EngineerForm', {self.template})
+            self:SCTAManagerLoopBody(builder, 'EngineerForm')
             return
         elseif bType == 'Other' then
             builder = self:GetHighestBuilder('Other', {self.template})     
+            self:SCTAManagerLoopBody(builder, 'Other')
             return
-        elseif bType == 'CommandTA' and self.LocationType == 'MAIN' then
+        elseif bType == 'CommandTA' then
             builder = self:GetHighestBuilder('CommandTA', {self.template})     
+            self:SCTAManagerLoopBody(builder, 'CommandTA')
             return
         elseif bType == 'StructureForm' then
             builder = self:GetHighestBuilder('StructureForm', {self.template})
+            self:SCTAManagerLoopBody(builder, 'StructureForm')
             return
         end
     end,

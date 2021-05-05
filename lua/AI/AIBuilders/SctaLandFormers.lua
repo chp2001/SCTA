@@ -55,7 +55,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Strike Force Early',
         PlatoonTemplate = 'StrikeForceSCTAEarly', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 100,
-        InstanceCount = 20,
+        InstanceCount = 30,
         PriorityFunction = TAPrior.UnitProductionT1,
         FormRadius = 1000,
         BuilderType = 'LandForm',
@@ -113,7 +113,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Missile Hunt',
         PlatoonTemplate = 'LandRocketAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 105,
+        Priority = 125,
         InstanceCount = 25,
         BuilderType = 'LandForm',
         BuilderData = {
@@ -129,7 +129,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 5, categories.MOBILE * categories.LAND * ( categories.SILO + categories.ARTILLERY)} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND * ( categories.SILO + categories.ARTILLERY)} },
          },
     },
     Builder {
@@ -151,7 +151,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 5, categories.MOBILE * categories.LAND - categories.ENGINEER}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.LAND - categories.ENGINEER}},
             { MIBC, 'GreaterThanGameTime', {300} },
          },
     },

@@ -69,38 +69,22 @@ PlatoonTemplate {
 
 ----Aggressive Platoons.
 
-PlatoonTemplate {
-    Name = 'LandRocketAttackSCTA',
-    Plan = 'HuntSCTAAI',
-    ---PlatoonType = 'LandForm',
-    GlobalSquads = {
-        { GROUND * (RANGE + categories.FIELDENGINEER) - TACATS, 2, 10, 'attack', 'none' }
-    },
-}
+
 
 
 PlatoonTemplate {
-    Name = 'LandAttackSCTAMid',
+    Name = 'LandAttackSCTA',
     Plan = 'AttackSCTAForceAI',
     ---PlatoonType = 'LandForm',
     GlobalSquads = {
-        { GROUND - SPECIAL - TACATS, 5, 20, 'attack', 'none' }
-    },
-}
-
-PlatoonTemplate {
-    Name = 'LandAttackSCTAEndGame',
-    Plan = 'AttackSCTAForceAIEndGame',
-    ---PlatoonType = 'LandForm',
-    GlobalSquads = {
-        { GROUND - SPECIAL - categories.BOMB, 5, 30, 'attack', 'none' }
+        { GROUND * (RANGE + categories.FIELDENGINEER) - TACATS, 2, 30, 'attack', 'none' }
     },
 }
 
 ----Primary 'Defense' Platoon Protect Bases and Scout Around Mexes
 PlatoonTemplate {
     Name = 'AntiAirSCTA',
-    Plan = 'SCTAAntiAirAI', -- The platoon function to use.
+    Plan = 'SCTAStrikeForceAIEarly', -- The platoon function to use.
     ---PlatoonType = 'LandForm',
     GlobalSquads = {
         { GROUND * categories.ANTIAIR - categories.ANTISHIELD, 2, 10, 'attack', 'none' },
@@ -121,29 +105,11 @@ PlatoonTemplate {
 
 
 PlatoonTemplate {
-    Name = 'StrikeForceSCTAEarly',
-    Plan = 'SCTAStrikeForceAIEarly',
-    ---PlatoonType = 'LandForm',
-    GlobalSquads = {
-        { GROUND * categories.TECH1 - SPECIAL - TACATS - RANGE, 2, 10, 'attack', 'none' }
-    },
-}
-
-PlatoonTemplate {
-    Name = 'StrikeForceSCTAMid',
+    Name = 'StrikeForceSCTA',
     Plan = 'SCTAStrikeForceAI',
     ---PlatoonType = 'LandForm',
     GlobalSquads = {
-        { GROUND - SPECIAL - RANGE - TACATS, 5, 20, 'attack', 'none' }
-    },
-}
-
-PlatoonTemplate {
-    Name = 'StrikeForceSCTAEndgame',
-    Plan = 'SCTAStrikeForceAIEndgame', 
-    ---PlatoonType = 'LandForm',-- The platoon function to use.
-    GlobalSquads = {
-        { GROUND - SPECIAL - categories.BOMB, 5, 30, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND - SPECIAL - RANGE - TACATS, 2, 40, 'attack', 'none' }
     },
 }
 

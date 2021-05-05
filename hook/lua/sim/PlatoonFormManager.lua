@@ -21,7 +21,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         if string.find(lType, 'Naval') then
         self.Naval = true
         end
-        LOG('*TATerrain', self.Naval)
+        --LOG('*TATerrain', self.Naval)
         --LOG('*TATerrain2', self.Radius)
         --LOG('*TATerrain3', self.LocationType)
         local builderTypes = {'AirForm', 'LandForm', 'SeaForm', 'Scout', 'StructureForm', 'EngineerForm', 'CommandTA', 'Other'}
@@ -81,7 +81,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
             return SCTAPlatoonFormManager.ManagerLoopBody(self,builder,bType)
         end
         --('*TAbtype', bType)
-        LOG('*TALtype', self.Naval)
+        --LOG('*TALtype', self.Naval)
         BuilderManager.ManagerLoopBody(self, builder, bType)
         --template = self:GetPlatoonTemplate(builder:GetPlatoonTemplate())
         --bType = template[3]

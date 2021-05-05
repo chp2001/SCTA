@@ -105,7 +105,6 @@ BuilderGroup {
         PlatoonTemplate = 'T4ExperimentalSCTA',
         PriorityFunction = TAPrior.GantryProduction,
         Priority = 10000,
-        FormRadius = 10000,
         InstanceCount = 2,
         BuilderType = 'CommandTA',
         BuilderConditions = {
@@ -191,10 +190,10 @@ BuilderGroup {
         PriorityFunction = TAPrior.GantryProduction,
         Priority = 300,
         BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NUKE * categories.STRUCTURE * categories.TECH3} },
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.NUKE * categories.STRUCTURE * categories.TECH3}},
             },
         BuilderType = 'CommandTA',
-        FormRadius = 10000,
     },
     Builder {
         BuilderName = 'SCTAAntiNukeAI',
@@ -202,10 +201,10 @@ BuilderGroup {
         PriorityFunction = TAPrior.GantryProduction,
         Priority = 300,
         BuilderConditions = {
-                { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.ANTIMISSILE * categories.STRUCTURE * categories.TECH3}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.ANTIMISSILE * categories.STRUCTURE * categories.TECH3} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.ANTIMISSILE * categories.STRUCTURE * categories.TECH3}},
             },
         BuilderType = 'CommandTA',
-        FormRadius = 10000,
     },
     Builder {
         BuilderName = 'SCTA Engineer Assist Gantry Production',

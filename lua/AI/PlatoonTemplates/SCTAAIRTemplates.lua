@@ -36,7 +36,7 @@ PlatoonTemplate {
     Plan = 'BomberAISCTA',
     ---PlatoonType = 'Scout',
     GlobalSquads = {
-        { SKY * (categories.BOMBER + categories.GROUNDATTACK) - categories.EXPERIMENTAL - categories.ANTINAVY, 1, 100, 'Attack', 'GrowthFormation' },
+        { SKY * (((categories.ANTIAIR + categories.GROUNDATTACK) * categories.TECH2) + categories.BOMBER), 1, 100, 'Attack', 'GrowthFormation' },
     }
 }
 
@@ -49,40 +49,13 @@ PlatoonTemplate {
     }
 }
 
-PlatoonTemplate {
-    Name = 'IntieAISCTAStealth',
-    Plan = 'InterceptorAISCTAStealth',
-    ---PlatoonType = 'AirForm',
-    GlobalSquads = {
-        { SKY * (((categories.ANTIAIR + categories.GROUNDATTACK) * categories.TECH2) + categories.BOMBER), 2, 100, 'attack', 'none' },
-    }
-}
-
-PlatoonTemplate {
-    Name = 'IntieAISCTAALL',
-    Plan = 'InterceptorAISCTAEnd',
-    ---PlatoonType = 'AirForm',
-    GlobalSquads = {
-        { SKY * categories.ANTIAIR - categories.BOMBER - categories.GROUNDATTACK, 2, 100, 'attack', 'none' },
-    }
-}
-
-
-PlatoonTemplate {
-    Name = 'SCTAT3AirScouting',
-    Plan = 'ScoutingAISorian',
-    ---PlatoonType = 'Scout',
-    GlobalSquads = {
-        { SKY * categories.SCOUT * categories.OVERLAYOMNI, 1, 1, 'scout', 'None' },
-    }
-}
 
 PlatoonTemplate {
     Name = 'T1AirScoutFormSCTA',
     Plan = 'ScoutingAISorian',
     ---PlatoonType = 'Scout',
     GlobalSquads = {
-        { SKY * categories.SCOUT * categories.OVERLAYRADAR * categories.TECH1, 1, 1, 'scout', 'None' },
+        { SKY * categories.SCOUT * categories.OVERLAYRADAR, 1, 1, 'scout', 'None' },
     }
 }
 

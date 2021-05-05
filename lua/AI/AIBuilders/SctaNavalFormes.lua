@@ -133,13 +133,17 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Air Naval Intercept',
         PlatoonTemplate = 'IntieAISCTA',
-        Priority = 100,
-        FormRadius = 500,
+        PlatoonAIPlan = 'InterceptorAISCTAEnd',
+        PriorityFunction = TAPrior.GantryConstruction,
+        Priority = 110,
+        InstanceCount = 10,
         PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
-        InstanceCount = 200,
-        BuilderType = 'AirForm',     
+        BuilderType = 'SeaForm',
+        BuilderData = {
+            Energy = true,
+        },        
         BuilderConditions = { 
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4, categories.ANTIAIR * categories.MOBILE * categories.AIR - categories.BOMBER } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.ANTIAIR * categories.MOBILE * categories.AIR - categories.BOMBER - categories.GROUNDATTACK} },
         },
     },
     Builder {
@@ -148,7 +152,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.ProductionT3,
         Priority = 120,
         InstanceCount = 25,
-        BuilderType = 'LandForm',
+        BuilderType = 'SeaForm',
         BuilderData = {
             Small = true,
             NeverGuardBases = false,

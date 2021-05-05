@@ -46,35 +46,6 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         return newBuilder
     end,
 
-    GetPlatoonTemplate = function(self, templateName)
-        if not self.Brain.SCTAAI then
-            --LOG('*template3', self.Brain.SCTAAI)
-            return SCTAPlatoonFormManager.GetPlatoonTemplate(self, templateName)
-        end
-        local templateData = PlatoonTemplates[templateName]
-        if not templateData then
-            error('*AI ERROR: Invalid platoon template named - ' .. templateName)
-        end
-        local template = {}
-        if templateData.GlobalSquads then
-            template = {
-                templateData.Name,
-                templateData.Plan,
-                --templateData.PlatoonType,
-                unpack(templateData.GlobalSquads)
-            }
-        else
-            template = {
-                templateData.Name,
-                templateData.Plan,
-            }
-            for k,v in templateData.FactionSquads do
-                table.insert(template, unpack(v))
-            end
-        end
-        return template
-    end,
-
     ManagerLoopBody = function(self,builder,bType)
         if not self.Brain.SCTAAI then
             --LOG('*template3', self.Brain.SCTAAI)
@@ -88,16 +59,18 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         --LOG('*TAbtype2', bType)
         --LOG('*TAbtype3', template[3])
         builder = self:GetHighestBuilder(bType, {builder})
-        if bType == 'Scout' or bType == 'AirForm' then
-          return self:ForkThread(self.SCTAManagerLoopBody, builder, bType)
-        elseif bType == 'EngineerForm' or bType == 'Other' or bType == 'CommandTA' then
-          return self:ForkThread(self.SCTAManagerLoopBodyEngineer, builder, bType)
-        elseif bType == 'LandForm' or bType == 'StructureForm' then
-          return self:ForkThread(self.SCTAManagerLoopBodyLand, builder, bType)
-        elseif self.Naval and bType == 'SeaForm' then
-          return  self:ForkThread(self.SCTAManagerLoopBodySea, builder, bType)
+        if self.Naval and bType == 'SeaForm' then
+            return self:SCTAManagerLoopBodySea(builder, bType)
+        elseif bType == 'EngineerForm' or bType == 'Other' then
+          return self:SCTAManagerLoopBodyEngineer(builder, bType)
+        elseif bType == 'LandForm' or bType == 'Scout' then
+          return self:SCTAManagerLoopBodyLand(builder, bType)
+        elseif bType == 'StructureForm' or bType == 'AirForm' or bType == 'CommandTA' then
+          return self:SCTAManagerLoopBody(builder, bType)
         end
     end,
+
+    ----return self:ForkThread(self.SCTAManagerLoopBody
 
     SCTAManagerLoopBody = function(self,builder,bType)
         if builder and self.Brain.BuilderManagers[self.LocationType] and builder.Priority >= 1 and builder:CheckInstanceCount() then
@@ -110,7 +83,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
             local template = self:GetPlatoonTemplate(builder:GetPlatoonTemplate())
             --LOG('*template1', template[1])
             builder:FormDebug()
-            local radius = 200
+            local radius = 150
             if builder:GetFormRadius() then radius = builder:GetFormRadius() end
             if not template or not self.Location or not radius then
                 if type(template) != 'table' or type(template[1]) != 'string' or type(template[2]) != 'string' then

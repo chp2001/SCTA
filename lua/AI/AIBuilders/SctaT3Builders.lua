@@ -23,6 +23,8 @@ BuilderGroup {
         PlatoonTemplate = 'T3HOVERMISSILESCTA', 
         Priority = 126,
         PriorityFunction = TAPrior.ProductionT3,
+        InstanceCount = 1,
+        --DelayEqualBuildPlattons = 3,
         BuilderConditions = {
         { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
     },

@@ -37,6 +37,7 @@ BuilderGroup {
         Priority = 200,
         PriorityFunction = TAPrior.UnitProduction,
         InstanceCount = 25,
+        --DelayEqualBuildPlattons = 5,
         BuilderType = 'Scout',
         BuilderData = {
             Energy = true,
@@ -61,7 +62,7 @@ BuilderGroup {
         PlatoonTemplate = 'StrikeForceSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         PlatoonAIPlan = 'SCTAStrikeForceAIEarly',
         Priority = 100,
-        InstanceCount = 50,
+        InstanceCount = 25,
         PriorityFunction = TAPrior.UnitProductionT1,
         BuilderType = 'LandForm',
         BuilderData = {
@@ -148,7 +149,8 @@ BuilderGroup {
         PlatoonAIPlan = 'AttackSCTAForceAI',
         PriorityFunction = TAPrior.UnitProductionT1, -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 115,
-        InstanceCount = 50,
+        InstanceCount = 10,
+        --DelayEqualBuildPlattons = 5,
         BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 75,

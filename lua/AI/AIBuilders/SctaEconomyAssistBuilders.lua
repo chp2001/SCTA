@@ -21,8 +21,9 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Excess PLANTS',
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
         PlatoonAIPlan = 'ReclaimStructuresAI',
-        PriorityFunction = TAPrior.UnitProduction,
+        PriorityFunction = TAPrior.FactoryReclaim,
         Priority = 100,
+        FormRadius = 100,
         InstanceCount = 5,
         BuilderConditions = {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, PLANT}},
@@ -43,6 +44,7 @@ BuilderGroup {
         PlatoonAIPlan = 'ReclaimStructuresAI',
         PriorityFunction = TAPrior.TechEnergyExist,
         Priority = 85,
+        FormRadius = 100,
         InstanceCount = 4,
         BuilderConditions = {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, WIND + SOLAR}},
@@ -61,9 +63,12 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
         PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 125,
+        FormRadius = 100,
         InstanceCount = 5,
         BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.AIR * categories.ENGINEER}},
             { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             },
         BuilderData = {
             LocationType = 'LocationType',
@@ -75,11 +80,13 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         PlatoonAIPlan = 'SCTAReclaimAI',
+        FormRadius = 100,
         Priority = 125,
         InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 240 } },
             { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},  
+            { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
         },
         BuilderData = {
             Terrain = true,
@@ -87,51 +94,6 @@ BuilderGroup {
             ReclaimTime = 30,
         },
         BuilderType = 'EngineerForm',
-    },
-    Builder {
-        BuilderName = 'SCTA Commander Assist Gantry Construction',
-        PlatoonTemplate = 'CommanderBuilderSCTA',
-        PlatoonAIPlan = 'ManagerEngineerAssistAI',
-        PriorityFunction = TAPrior.GateBeingBuilt,
-        Priority = 126,
-        InstanceCount = 2,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.GATE }},
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssistRange = 120,
-                BeingBuiltCategories = {'GATE'},                                                   
-                AssistUntilFinished = true,
-            },
-        },
-        BuilderType = 'Other',
-    },
-    Builder {
-        BuilderName = 'SCTA CDR Assist Structure',
-        PlatoonTemplate = 'CommanderBuilderSCTA',
-        PlatoonAIPlan = 'ManagerEngineerAssistAI',
-        PriorityFunction = TAPrior.UnitProduction,
-        Priority = 111,
-        InstanceCount = 2,
-        BuilderConditions = {
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE }},
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-        },
-        BuilderType = 'Other',
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssisteeCategory = 'Engineer',
-                AssistRange = 20,
-                BeingBuiltCategories = {'STRUCTURE'},                                        
-                AssistUntilFinished = true,
-            },
-        },
     },
     Builder {
         BuilderName = 'SCTA Engineer Finish',
@@ -142,6 +104,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Unfinished', 2},
         BuilderConditions = {
             { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'Unfinished' }},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.FIELDENGINEER} },
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
         },
         BuilderData = {
@@ -161,6 +124,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.EnergyBeingBuilt,
         Priority = 75,
         InstanceCount = 2,
+        FormRadius = 100,
         BuilderConditions = {
             { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
         },
@@ -179,10 +143,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Field',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
+        PriorityFunction = TAPrior.UnitProductionField,
         PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 200,
+        FormRadius = 100,
         InstanceCount = 5,
         BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.AIR * categories.ENGINEER}},
             { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},
         },
         BuilderData = {
@@ -194,6 +161,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Field Finish',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
+        PriorityFunction = TAPrior.UnitProductionField,
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
         Priority = 125,
         InstanceCount = 2,
@@ -201,6 +169,7 @@ BuilderGroup {
         BuilderConditions = {
             { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'Unfinished' }},
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.FIELDENGINEER} },
         },
         BuilderData = {
             Assist = {
@@ -216,7 +185,7 @@ BuilderGroup {
         BuilderName = 'SCTA Assist Production Field',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
-        PriorityFunction = TAPrior.UnitProduction,
+        PriorityFunction = TAPrior.UnitProductionField,
         Priority = 100,
         InstanceCount = 5,
         BuilderConditions = {

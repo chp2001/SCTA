@@ -139,6 +139,7 @@ BuilderGroup {
         InstanceCount = 200,
         BuilderType = 'AirForm',     
         BuilderConditions = { 
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4, categories.ANTIAIR * categories.MOBILE * categories.AIR - categories.BOMBER } },
         },
     },
     Builder {
@@ -167,6 +168,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Unfinished', 2},
         BuilderConditions = {
             { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'Unfinished' }},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.ENGINEER * categories.NAVAL} },
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
         },
         BuilderData = {
@@ -189,6 +191,7 @@ BuilderGroup {
         InstanceCount = 8,
         BuilderConditions = {
             { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, TIDAL}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.ENGINEER * categories.NAVAL} },
             { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
             },
         BuilderData = {

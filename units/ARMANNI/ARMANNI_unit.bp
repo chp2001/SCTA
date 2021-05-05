@@ -169,7 +169,7 @@ UnitBlueprint {
             TurretYawSpeed = 60,
             Turreted = true,
 	        WeaponUnpacks = true,
-            WeaponRepackTimeout = 2,
+            WeaponRepackTimeout = 1,
         },
         { #ATOMIC_BLAST
             Damage = 2000,

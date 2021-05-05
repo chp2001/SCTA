@@ -160,7 +160,7 @@ TechLevel = 'RULEUTL_Secret',
             TurretYawSpeed = 100,
             Turreted = true,
 	        WeaponUnpacks = true,
-            WeaponRepackTimeout = 2,
+            WeaponRepackTimeout = 1,
         },
         { #LARGE_BUILDINGEX
             Damage = 150,

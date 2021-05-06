@@ -63,7 +63,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         --self.PriorityFunction = builder.PriorityFunction or 1
         --LOG('*TAPrior', builder.PriorityFunction)
         --LOG('*TAbtypeBui', builder)
-        --builder = self:GetHighestBuilder(bType, {builder})
+        builder = self:GetHighestBuilder(bType, {builder})
         if self.Brain.BuilderManagers[self.LocationType] and builder.Priority >= 1 and builder:CheckInstanceCount() then
             LOG('*TAbtypePrior1', builder.BuilderName, builder.Priority)
             self.personality = self.Brain:GetPersonality()
@@ -119,6 +119,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                 ---LOG('*builder', self.Brain.SCTAAI)
             --LOG('*self.template1', self.template[1])
         --builder = self:GetHighestBuilder(bType, {builder})
+        BuilderManager.ManagerLoopBody(self,builder,bType)
         if bType == 'AirForm' then
             self.TRadius = 500
         elseif bType == 'StructureForm' then
@@ -195,6 +196,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                 ---LOG('*builder', self.Brain.SCTAAI)
             --LOG('*self.template1', self.template[1])
             --builder = self:GetHighestBuilder(bType, {builder})
+            BuilderManager.ManagerLoopBody(self,builder,bType)
             local radius = self.Radius
             if builder:GetFormRadius() then radius = builder:GetFormRadius() end
             if not self.template or not self.Location or not radius then
@@ -261,6 +263,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                 ---LOG('*builder', self.Brain.SCTAAI)
             --LOG('*self.template1', self.template[1])
             --builder = self:GetHighestBuilder('LandForm', {builder})
+            BuilderManager.ManagerLoopBody(self,builder,bType)
             local radius = 100
             if builder:GetFormRadius() then radius = builder:GetFormRadius() end
             if not self.template or not self.Location or not radius then
@@ -327,6 +330,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
             ---LOG('*builder', self.Brain.SCTAAI)
             --LOG('*self.template1', self.template[1])
             --builder = self:GetHighestBuilder('SeaForm', {builder})
+            BuilderManager.ManagerLoopBody(self,builder,bType)
             local radius = 50
             if builder:GetFormRadius() then radius = builder:GetFormRadius() end
             if not self.template or not self.Location or not radius then

@@ -35,6 +35,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Air Intercept',
         PlatoonTemplate = 'IntieAISCTA',
+        PlatoonAIPlan = 'InterceptorAISCTA',
         PriorityFunction = TAPrior.UnitProductionT1AIR,
         Priority = 100,
         PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
@@ -59,7 +60,7 @@ BuilderGroup {
         BuilderConditions = { 
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, SKY * (categories.BOMBER + categories.GROUNDATTACK) + STEALTH} },
             },
-        },
+        },   
     Builder {
         BuilderName = 'SCTAAI Air Intercept Omni',
         PlatoonTemplate = 'IntieAISCTA',

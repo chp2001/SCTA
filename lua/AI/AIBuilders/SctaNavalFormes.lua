@@ -16,7 +16,7 @@ BuilderGroup {
         InstanceCount = 4,
         BuilderType = 'SeaForm',
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.SCOUT } },
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, categories.NAVAL * categories.SCOUT } },
          },
          BuilderData = {
             UseFormation = 'AttackFormation',
@@ -36,7 +36,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Hunt Ships',
         PlatoonTemplate = 'SCTAPatrolBoatHunt',
-        Priority = 100,
+        Priority = 125,
         InstanceCount = 25,
         BuilderType = 'SeaForm',
         BuilderConditions = {
@@ -60,7 +60,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Sub Hunt Ships',
         PlatoonTemplate = 'SCTASubHunter',
-        Priority = 100,
+        Priority = 120,
         InstanceCount = 5,
         BuilderType = 'SeaForm',
         BuilderConditions = {
@@ -85,7 +85,7 @@ BuilderGroup {
         BuilderName = 'SCTA T1 Naval Assault',
         PlatoonTemplate = 'SCTANavalAssault',
         Priority = 110,
-        InstanceCount = 10,
+        InstanceCount = 20,
         BuilderType = 'SeaForm',
         BuilderData = {
             UseFormation = 'AttackFormation',
@@ -110,7 +110,7 @@ BuilderGroup {
         PlatoonTemplate = 'SCTANavalAssaultT2',
         PriorityFunction = TAPrior.UnitProduction,
         Priority = 120,
-        InstanceCount = 10,
+        InstanceCount = 25,
         BuilderType = 'SeaForm',
         BuilderData = {
             UseFormation = 'AttackFormation',
@@ -127,7 +127,7 @@ BuilderGroup {
             },
         },
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.MOBILE * (categories.TECH2 + categories.TECH3) - categories.ENGINEER} },
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1,  categories.NAVAL * categories.MOBILE * (categories.TECH2 + categories.TECH3) - categories.ENGINEER} },
         },
     },
     Builder {
@@ -143,7 +143,7 @@ BuilderGroup {
             Energy = true,
         },        
         BuilderConditions = { 
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.ANTIAIR * categories.MOBILE * categories.AIR - categories.BOMBER - categories.GROUNDATTACK} },
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1,  categories.ANTIAIR * categories.MOBILE * categories.AIR - categories.BOMBER - categories.GROUNDATTACK} },
         },
     },
     Builder {
@@ -160,7 +160,7 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.MOBILE * categories.HOVER} },
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 2,  categories.MOBILE * categories.HOVER} },
          },
     },
     Builder {
@@ -172,7 +172,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Unfinished', 2},
         BuilderConditions = {
             { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'Unfinished' }},
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.ENGINEER * categories.NAVAL} },
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, categories.ENGINEER * categories.NAVAL} },
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
         },
         BuilderData = {
@@ -194,8 +194,8 @@ BuilderGroup {
         Priority = 111,
         InstanceCount = 8,
         BuilderConditions = {
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, TIDAL}},
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.ENGINEER * categories.NAVAL} },
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1,  TIDAL}},
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1,  categories.ENGINEER * categories.NAVAL} },
             { TAutils, 'LessMassStorageMaxTA',  { 0.3}},
             },
         BuilderData = {

@@ -80,7 +80,7 @@ end
 
 UnitProductionLab = function(self, aiBrain)
     if Factory(aiBrain,  0, RAIDER) then
-        return 200
+        return 125
     else
         return 0
     end

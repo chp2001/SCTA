@@ -39,6 +39,7 @@ BaseBuilderTemplate {
             return -1
         end
         --LOG('Return sctaai personality')
+        --LOG('*TALtype2', location)
         return 55, 'SCTANavalExpansion'
     end,
 }

@@ -32,10 +32,10 @@ BuilderGroup {
         Priority = 150,
         BuilderConditions = {
             { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'TAExtractors' }},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.MASSEXTRACTION * categories.TECH1 } },
             { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 1, categories.MASSEXTRACTION * categories.TECH1 } },  
             { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
         },
-        FormRadius = 1000,
         BuilderType = 'StructureForm',
         BuilderData = {
             NeedGuard = false,
@@ -51,11 +51,11 @@ BuilderGroup {
         Priority = 100,
         BuilderConditions = {
             { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'TAExtractors' }},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.MASSEXTRACTION * categories.TECH1 } },
             { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.TECH1 } },  
             { EBC, 'GreaterThanEconIncome',  { 8, 70}},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        FormRadius = 500,
         BuilderType = 'StructureForm',
         BuilderData = {
             NeedGuard = false,
@@ -71,11 +71,11 @@ BuilderGroup {
         Priority = 150,
         BuilderConditions = {
             { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'TAExtractors' }},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.MASSEXTRACTION * categories.TECH1 } },
             { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 3, categories.MASSEXTRACTION * categories.TECH1 } },  
             { TAutils, 'EcoManagementTA', { 0.9, 0.9, 0.75, 0.75, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 800, 1000 } },
         },
-        FormRadius = 500,
         BuilderType = 'StructureForm',
         BuilderData = {
             NeedGuard = false,
@@ -101,29 +101,29 @@ BuilderGroup {
         PlatoonTemplate = 'FabricationSCTA',
         Priority = 300,
         BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.MASSFABRICATION} },
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.MASSFABRICATION}},
             },
         BuilderType = 'StructureForm',
-        FormRadius = 10000,
     },
     Builder {
         BuilderName = 'SCTAArtilleryAI',
         PlatoonTemplate = 'ArtillerySCTA',
         Priority = 300,
         BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.ARTILLERY * categories.STRUCTURE} },
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.ARTILLERY * categories.STRUCTURE}},
             },
         BuilderType = 'StructureForm',
-        FormRadius = 10000,
     },
     Builder {
         BuilderName = 'SCTAMiniNukeAI',
         PlatoonTemplate = 'TacticalMissileSCTA',
         Priority = 300,
         BuilderConditions = {
-                { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.TACTICALMISSILEPLATFORM * categories.STRUCTURE}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.TACTICALMISSILEPLATFORM * categories.STRUCTURE} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.TACTICALMISSILEPLATFORM * categories.STRUCTURE}},
             },
         BuilderType = 'StructureForm',
-        FormRadius = 10000,
     },
 }

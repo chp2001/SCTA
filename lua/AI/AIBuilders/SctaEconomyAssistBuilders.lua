@@ -103,6 +103,7 @@ BuilderGroup {
         InstanceCount = 2,
         DelayEqualBuildPlattons = {'Unfinished', 2},
         BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FIELDENGINEER}},
             { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'Unfinished' }},
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
         },
@@ -125,6 +126,7 @@ BuilderGroup {
         InstanceCount = 2,
         FormRadius = 100,
         BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FIELDENGINEER}},
             { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Other',
@@ -143,12 +145,13 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Field',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
         PriorityFunction = TAPrior.UnitProductionField,
+        --DelayEqualBuildPlattons = 10,
         PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 200,
         FormRadius = 100,
         InstanceCount = 5,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.AIR * categories.ENGINEER}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FIELDENGINEER}},
             { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},
         },
         BuilderData = {
@@ -161,14 +164,15 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Field Finish',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
         PriorityFunction = TAPrior.UnitProductionField,
+        --DelayEqualBuildPlattons = 3,
         PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
         Priority = 125,
         InstanceCount = 2,
         DelayEqualBuildPlattons = {'Unfinished', 2},
         BuilderConditions = {
             { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'Unfinished' }},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FIELDENGINEER}},
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.FIELDENGINEER} },
         },
         BuilderData = {
             Assist = {
@@ -185,10 +189,12 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAField',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
         PriorityFunction = TAPrior.UnitProductionField,
+        --DelayEqualBuildPlattons = 2,
         Priority = 100,
         InstanceCount = 5,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE * (categories.TECH2 + categories.TECH3)}},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FIELDENGINEER}},
             { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
         },
         BuilderData = {

@@ -12,7 +12,7 @@ function TAGetEngineerFaction(engineer)
 end
 
 ------AIUTILITIES FUNCTIONS (RNG, NUTCTACKER, and RECLAIM MY OWN)
-function NormalizeVector( v )
+function TANormalizeVector( v )
 
 	if v.x then
 		v = {v.x, v.y, v.z}
@@ -28,15 +28,15 @@ function NormalizeVector( v )
     end
 end
 
-function GetDirectionVector( v1, v2 )
-    return NormalizeVector( Vector(v1[1] - v2[1], v1[2] - v2[2], v1[3] - v2[3]) )
+function TAGetDirectionVector( v1, v2 )
+    return TANormalizeVector( Vector(v1[1] - v2[1], v1[2] - v2[2], v1[3] - v2[3]) )
 end
 -----locational things
 
-function GetDirectionInDegrees( v1, v2 )
+function TAGetDirectionInDegrees( v1, v2 )
     local SCTAACOS = math.acos
     local PI = math.pi
-    local vec = GetDirectionVector( v1, v2)
+    local vec = TAGetDirectionVector( v1, v2)
     
     if vec[1] >= 0 then
         return SCTAACOS(vec[3]) * (360/(PI*2))
@@ -45,7 +45,7 @@ function GetDirectionInDegrees( v1, v2 )
     return 360 - (SCTAACOS(vec[3]) * (360/(PI*2)))
 end
 
-function GetMOARadii(bool)
+function TAGetMOARadii(bool)
     -- Military area is slightly less than half the map size (10x10map) or maximal 200.
     local BaseMilitaryArea = math.max( ScenarioInfo.size[1]-50, ScenarioInfo.size[2]-50 ) / 2.2
     BaseMilitaryArea = math.max( 180, BaseMilitaryArea )

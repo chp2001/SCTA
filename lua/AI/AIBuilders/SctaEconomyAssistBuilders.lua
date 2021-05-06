@@ -26,7 +26,7 @@ BuilderGroup {
         FormRadius = 100,
         InstanceCount = 5,
         BuilderConditions = {
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, PLANT}},
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, PLANT}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, LAB * categories.AIR} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT} },
             { TAutils, 'LessMassStorageMaxTA', { 0.2}},    
@@ -36,7 +36,7 @@ BuilderGroup {
             ReclaimTime = 30,
             Reclaim = {'TECH1 FACTORY,'},
         },
-        BuilderType = 'EngineerForm',
+        BuilderType = 'Other',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Energy',
@@ -47,7 +47,7 @@ BuilderGroup {
         FormRadius = 100,
         InstanceCount = 4,
         BuilderConditions = {
-            { UCBC, 'UnitsGreaterAtLocation', { 'LocationType', 0, WIND + SOLAR}},
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, WIND + SOLAR}},
             { TAutils, 'GreaterThanEconEnergyTAEfficiency', {1.05 }},
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             },
@@ -56,7 +56,7 @@ BuilderGroup {
             Reclaim = {'armsolar, corsolar, armwin, corwin,'},
                 ReclaimTime = 30,
         },
-        BuilderType = 'EngineerForm',
+        BuilderType = 'Other',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Air',
@@ -66,7 +66,7 @@ BuilderGroup {
         FormRadius = 100,
         InstanceCount = 5,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.AIR * categories.ENGINEER}},
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.AIR * categories.ENGINEER}},
             { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             },
@@ -103,8 +103,8 @@ BuilderGroup {
         InstanceCount = 2,
         DelayEqualBuildPlattons = {'Unfinished', 2},
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FIELDENGINEER}},
             { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'Unfinished' }},
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.ENGINEER}},
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
         },
         BuilderData = {
@@ -126,7 +126,7 @@ BuilderGroup {
         InstanceCount = 2,
         FormRadius = 100,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FIELDENGINEER}},
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.FIELDENGINEER}},
             { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
         },
         BuilderType = 'Other',
@@ -148,10 +148,10 @@ BuilderGroup {
         --DelayEqualBuildPlattons = 10,
         PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 200,
-        FormRadius = 100,
+        --FormRadius = 100,
         InstanceCount = 5,
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FIELDENGINEER}},
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1,  categories.FIELDENGINEER}},
             { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},
         },
         BuilderData = {
@@ -171,7 +171,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Unfinished', 2},
         BuilderConditions = {
             { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'Unfinished' }},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FIELDENGINEER}},
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1,  categories.FIELDENGINEER}},
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
         },
         BuilderData = {
@@ -194,7 +194,7 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE * (categories.TECH2 + categories.TECH3)}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.FIELDENGINEER}},
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.FIELDENGINEER}},
             { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
         },
         BuilderData = {

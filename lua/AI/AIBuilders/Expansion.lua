@@ -32,7 +32,7 @@ BuilderGroup {
             { UCBC, 'CheckBuildPlattonDelay', { 'ExpansionStart' }},
             { MIBC, 'GreaterThanGameTime', { 180 } },
             { UCBC, 'StartLocationNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
-            { TASlow, 'StartBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
+            { TASlow, 'TAStartBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'LandTA',
@@ -64,7 +64,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'ExpansionStart' }},
             { UCBC, 'ExpansionAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
-            { TASlow, 'ExpansionBaseCheck', { } }, 
+            { TASlow, 'TAExpansionBaseCheck', { } }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'LandTA',
@@ -98,7 +98,7 @@ BuilderGroup {
             { UCBC, 'CheckBuildPlattonDelay', { 'ExpansionStart' }},
             { MIBC, 'GreaterThanGameTime', {720} },
             { UCBC, 'ExpansionAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
-            { TASlow, 'ExpansionBaseCheck', { } }, 
+            { TASlow, 'TAExpansionBaseCheck', { } }, 
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },
         },
         BuilderType = 'OmniLand',
@@ -132,7 +132,7 @@ BuilderGroup {
             { MIBC, 'GreaterThanGameTime', {720} },
             { UCBC, 'StartLocationNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
             { UCBC, 'CheckBuildPlattonDelay', { 'ExpansionStart' }},
-            { TASlow, 'StartBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
+            { TASlow, 'TAStartBaseCheck', { } }, -- related to ScenarioInfo.Options.LandExpansionsAllowed
             { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.2}},
         },
         BuilderType = 'OmniLand',

@@ -41,14 +41,14 @@ end,
         ---local Val = Builders[self.BuilderName].Value 
         --LOG('*TAAlter', newPri)
         if newPri != self.Priority then
-                if newPri > 0 then
+                if newPri == 0 then
+                    self.Priority = 0
+                else
                     self.Priority = newPri + self.Value
                     --LOG('*TAAlterHuzzah', self.Priority)
-                else 
-                    self.Priority = 0
                 end    
             self.PriorityAltered = true
-        end
+            end
         --LOG('New Priority '..self.BuilderName..' - '..self.Priority)
     end
     return self.PriorityAltered
@@ -115,23 +115,22 @@ FactoryBuilder = Class(TAFactoryBuilder) {
     --LOG('*TAAlter1C', self.Brain.SCTAAI)
     ---LOG('*TAAlter1Brain', self.Brain.SCTAAI)
     self.PriorityAltered = false
-    --LOG('*TAAlter1', self.BuilderData.Value)
-    --LOG('*TAAlter2', self.Value)
+    --LOG('*TAAlter1Plat', self.BuilderData.Value)
+    --LOG('*TAAlter2Plat', self.Value)
     if Builders[self.BuilderName].PriorityFunction then
         --LOG('Calculate new Priority '..self.BuilderName..' - '..self.Priority)
         local newPri = Builders[self.BuilderName]:PriorityFunction(self.Brain)
         ---local Val = Builders[self.BuilderName].Value 
-        --LOG('*TAAlterFact', newPri)
+        --LOG('*TAAlter', newPri)
         if newPri != self.Priority then
-                if newPri > 0 then
-                    self.Priority = newPri + self.Value
-                    ---LOG('*TAAlterHuzzah1', self.Priority)
-                else 
+                if newPri == 0 then
                     self.Priority = 0
-                    --LOG('*TAAlterHuzzah2', self.Priority)
+                else
+                    self.Priority = newPri + self.Value
+                    --LOG('*TAAlterHuzzah', self.Priority)
                 end    
             self.PriorityAltered = true
-        end
+            end
         --LOG('New Priority '..self.BuilderName..' - '..self.Priority)
     end
     return self.PriorityAltered

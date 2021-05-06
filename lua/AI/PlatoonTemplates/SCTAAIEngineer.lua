@@ -105,7 +105,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'EngineerBuilderSCTAField',
-    Plan = 'EngineerBuildAISCTA',
+    Plan = 'None',
     ---PlatoonType = 'Other',
     GlobalSquads = {
         {categories.FIELDENGINEER, 1, 1, 'support', 'None' }

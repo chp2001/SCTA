@@ -1,5 +1,5 @@
 WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset PlatoonForm.lua' )
-
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 SCTAPlatoonFormManager = PlatoonFormManager
 PlatoonFormManager = Class(SCTAPlatoonFormManager) {
     Create = function(self, brain, lType, location, radius)
@@ -18,11 +18,13 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         self.Location = location
         self.Radius = radius
         self.LocationType = lType
+        --LOG('*TALocation', lType)
         if string.find(lType, 'Naval') then
         self.Naval = true
-        end
-        if lType == 'Main' then
+        --LOG('*TALocation3', self.LocationType)
+        elseif lType == 'MAIN' then
         self.Main = true
+        --LOG('*TALocation2', self.Main)
         end
         --LOG('*TATerrain', self.Naval)
         --LOG('*TATerrain2', self.Radius)
@@ -34,7 +36,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         self.BuilderCheckInterval = 5
     end,
 
-   --[[AddBuilder = function(self, builderData, locationType, builderType)
+   AddBuilder = function(self, builderData, locationType, builderType)
         if not self.Brain.SCTAAI then
             return SCTAPlatoonFormManager.AddBuilder(self, builderData, locationType, builderType)
         end
@@ -47,7 +49,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
             self:AddInstancedBuilder(newBuilder)
         end
         return newBuilder
-    end,]]
+    end,
 
     ManagerLoopBody = function(self,builder,bType)
         if not self.Brain.SCTAAI then
@@ -56,35 +58,55 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         end
         --('*TAbtype', bType)
         --LOG('*TALtype', self.Naval)
+        --builder = self:GetHighestBuilder(bType, {builder})
         BuilderManager.ManagerLoopBody(self,builder,bType)
-        local builder = self:GetHighestBuilder(bType, {builder})
-        ---LOG('*TAPrior', builder.Priority)
-        if builder and self.Brain.BuilderManagers[self.LocationType] and builder.Priority >= 1 and builder:CheckInstanceCount() then
+        --self.PriorityFunction = builder.PriorityFunction or 1
+        --LOG('*TAPrior', builder.PriorityFunction)
+        --LOG('*TAbtypeBui', builder)
+        builder = self:GetHighestBuilder(bType, {builder})
+        if self.Brain.BuilderManagers[self.LocationType] and builder.Priority >= 1 and builder:CheckInstanceCount() then
+            --LOG('*TAbtypePrior1', builder.BuilderName, builder.Priority)
             self.personality = self.Brain:GetPersonality()
             self.poolPlatoon = self.Brain:GetPlatoonUniquelyNamed('ArmyPool')
-            self.template = self:GetPlatoonTemplate(builder:GetPlatoonTemplate())
+            self.template = self:GetPlatoonTemplate(builder:GetPlatoonTemplate())            
+            --_ALERT('*TAbtypePrior2', builder.Priority)
             ----if builder:CheckBuilderConditions(self.Brain) then
             --self.template = self:GetPlatoonself.template(builder:GetPlatoonself.template())
         --bType = self.template[3]
-        --LOG('*TAbtype2', bType)
+        --_ALERT('*TAbtype2', bType)
         --LOG('*TAbtype3', self.template[3])
          --return
         builder:FormDebug()
-            if not self.Naval then
+        if self.Main and (bType == 'CommandTA' or bType == 'Scout') then
+            --LOG('*TAbtype2', self.Main)
+                if bType == 'CommandTA' then
+                    --LOG('*TATtype2', bType)
+                    return ForkThread(self.SCTAManagerLoopBody, self, builder, 'CommandTA')
+                elseif bType == 'Scout' and TAPrior.LessThanTime >= 125 then
+                    --LOG('*TATtype2MS', bType)
+                    return ForkThread(self.SCTAManagerLoopBodyLand, self, builder, 'Scout')
+                end  
+        elseif not self.Naval then
+            --_ALERT('*TAbtype3', self.Main)
             --if EntityCategoryContains(categories.MOBILE * categories.LAND, self.poolPlatoon) then
-                if bType == 'LandForm' or bType == 'Scout' then
-                return ForkThread(self.SCTAManagerLoopBodyLand, self, builder, bType)
+                if bType == 'LandForm' then
+                    return ForkThread(self.SCTAManagerLoopBodyLand, self, builder, 'LandForm')
                 elseif bType == 'EngineerForm' then
-                return ForkThread(self.SCTAManagerLoopBodyEngineer, self, builder, 'EngineerForm')
-                elseif self.Main then
-                return ForkThread(self.SCTAManagerLoopBody, self, builder, 'CommandTA')
-                elseif bType == 'Other' then
-                return self:SCTAManagerLoopBodyEngineer(builder, 'Other')
-                else
-                return self:SCTAManagerLoopBody(builder, bType)  
+                    return ForkThread(self.SCTAManagerLoopBodyEngineer, self, builder, 'EngineerForm')
+                elseif bType == 'AirForm' then
+                    return ForkThread(self.SCTAManagerLoopBody, self, builder, 'AirForm')
+                elseif bType == 'Other' and TAPrior.UnitProductionField >= 200 then
+                    return self:SCTAManagerLoopBodyEngineer(builder, 'Other')
+                elseif bType == 'Scout' and not self.Main then
+                    --LOG('*TATtype2ES', self.Main)
+                    return self:SCTAManagerLoopBodyLand(builder, 'Scout')
+                elseif bType == 'StructureForm' and TAPrior.UnitProduction >= 75 then
+                    return self:SCTAManagerLoopBody(builder, 'StructureForm') 
                 end
-            else
+        elseif self.Naval and bType == 'SeaForm' then
                 return self:SCTAManagerLoopBodySea(builder, 'SeaForm')
+            --else 
+                --LOG('*TAIEXIST FAILS', self.template[1])
             end
         end
     end,
@@ -96,13 +118,16 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         --LOG('*TAself.templateP2', bType)
                 ---LOG('*builder', self.Brain.SCTAAI)
             --LOG('*self.template1', self.template[1])
-        if bType == 'AirForm' then
-            self.radius = 1000
-            else
-            self.radius = 50
-        end
+        --builder = self:GetHighestBuilder(bType, {builder})
+        BuilderManager.ManagerLoopBody(self,builder,bType)
+        --[[if bType == 'AirForm' then
+            self.Radius = 500
+        elseif bType == 'StructureForm' then
+            self.Radius = 1000
+        end]]
+            local radius = self.Radius
             if builder:GetFormRadius() then self.radius = builder:GetFormRadius() end
-            if not self.template or not self.Location or not self.radius then
+            if not self.template or not self.Location or not radius then
                 if type(self.template) != 'table' or type(self.template[1]) != 'string' or type(self.template[2]) != 'string' then
                     WARN('*Platoon Form: Could not find self.template named: ' .. builder:GetPlatoontemplate())
                     return
@@ -110,11 +135,11 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                 WARN('*Platoon Form: Could not find self.template named: ' .. builder:GetPlatoontemplate())
                 return
             end
-            local formIt = self.poolPlatoon:CanFormPlatoon(self.template, self.personality:GetPlatoonSize(), self.Location, self.radius) 
+            local formIt = self.poolPlatoon:CanFormPlatoon(self.template, self.personality:GetPlatoonSize(), self.Location, radius) 
             if builder:GetBuilderStatus() then
                 --LOG('*self.templatetype', self.template[3])
                 --LOG('*self.template2', self.template[1])
-                local hndl = self.poolPlatoon:FormPlatoon(self.template, self.personality:GetPlatoonSize(), self.Location, self.radius)
+                local hndl = self.poolPlatoon:FormPlatoon(self.template, self.personality:GetPlatoonSize(), self.Location, radius)
                 #LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Platoon Form Manager Forming - ',repr(builder.BuilderName),': Location = ',self.LocationType)
                 #LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Platoon Form Manager - Platoon Size = ', table.getn(hndl:GetPlatoonUnits()))
                 hndl.PlanName = self.template[2]
@@ -157,8 +182,8 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                     end
                 end
                 builder:StoreHandle(hndl)
-            else 
-                LOG('*TAIEXIST FAILS', self.template[1])
+            --else 
+                --LOG('*TAIEXIST FAILS1', builder.BuilderName)
                 --LOG('*TAIEXIST FAILS2', self.template[3])
         end
     end,
@@ -168,6 +193,8 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         --LOG('*TAself.templateP3', bType)
                 ---LOG('*builder', self.Brain.SCTAAI)
             --LOG('*self.template1', self.template[1])
+            --builder = self:GetHighestBuilder(bType, {builder})
+            BuilderManager.ManagerLoopBody(self,builder,bType)
             local radius = self.Radius
             if builder:GetFormRadius() then radius = builder:GetFormRadius() end
             if not self.template or not self.Location or not radius then
@@ -225,9 +252,6 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                     end
                 end
                 builder:StoreHandle(hndl)
-            --else 
-                ---LOG('*TAIEXIST FAILS', template[1])
-                ----('*TAIEXIST FAILS2', template[3])
             end
     end,
 
@@ -236,7 +260,9 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         --LOG('*TAself.templateP3', bType)
                 ---LOG('*builder', self.Brain.SCTAAI)
             --LOG('*self.template1', self.template[1])
-            local radius = 100
+            --builder = self:GetHighestBuilder('LandForm', {builder})
+            BuilderManager.ManagerLoopBody(self,builder,bType)
+            local radius = self.Radius
             if builder:GetFormRadius() then radius = builder:GetFormRadius() end
             if not self.template or not self.Location or not radius then
                 if type(self.template) != 'table' or type(self.template[1]) != 'string' or type(self.template[2]) != 'string' then
@@ -301,7 +327,9 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         --LOG('*TAself.templateP3', bType
             ---LOG('*builder', self.Brain.SCTAAI)
             --LOG('*self.template1', self.template[1])
-            local radius = 50
+            --builder = self:GetHighestBuilder('SeaForm', {builder})
+            BuilderManager.ManagerLoopBody(self,builder,bType)
+            local radius = self.Radius
             if builder:GetFormRadius() then radius = builder:GetFormRadius() end
             if not self.template or not self.Location or not radius then
                 if type(self.template) != 'table' or type(self.template[1]) != 'string' or type(self.template[2]) != 'string' then

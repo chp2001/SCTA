@@ -1668,9 +1668,6 @@ Platoon = Class(SCTAAIPlatoon) {
         local aiBrain = self:GetBrain()
 
         -- get units together
-        if not self:GatherUnits() then
-            return
-        end
 
         -- Setup the formation based on platoon functionality
 
@@ -1807,9 +1804,6 @@ Platoon = Class(SCTAAIPlatoon) {
         local aiBrain = self:GetBrain()
 
         -- get units together
-        if not self:GatherUnits() then
-            return
-        end
 
         -- Setup the formation based on platoon functionality
 
@@ -2126,7 +2120,7 @@ Platoon = Class(SCTAAIPlatoon) {
                     if target and self.PlatoonData.Lab then
                         WaitSeconds(1)
                         return self:SCTALabType()
-                    elseif structure and self.PlatoonData.AllTerrain then
+                    elseif structure and EntityCategoryContains(categories.AMPHIBIOUS, self) then
                         WaitSeconds(1)
                         return self:SCTAArtyHuntAI()
                     else

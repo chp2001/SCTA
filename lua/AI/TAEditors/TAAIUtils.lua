@@ -58,6 +58,20 @@ function CompareBodySCTA(numOne, numTwo, compareType)
 end
 
 
+function TAHavePoolUnitInArmy(aiBrain, unitCount, unitCategory, compareType)
+    local poolPlatoon = aiBrain:GetPlatoonUniquelyNamed('ArmyPool')
+    local numUnits = poolPlatoon:GetNumCategoryUnits(unitCategory)
+    --LOG('* HavePoolUnitInArmy: numUnits= '..numUnits) 
+    return CompareBodySCTA(numUnits, unitCount, compareType)
+end
+
+function TAHaveLessThanArmyPoolWithCategory(aiBrain, unitCount, unitCategory)
+    return TAHavePoolUnitInArmy(aiBrain, unitCount, unitCategory, '<=')
+end
+function TAHaveGreaterThanArmyPoolWithCategory(aiBrain, unitCount, unitCategory)
+    return TAHavePoolUnitInArmy(aiBrain, unitCount, unitCategory, '>=')
+end
+
 --TA Build Conditions
 
 function TAAIGetEconomyNumbersStorageRatio(aiBrain)
@@ -91,13 +105,13 @@ function GreaterThanStorageRatioTA(aiBrain, mStorageRatio, eStorageRatio)
     return false
 end
 
-function ExpansionBaseCheck(aiBrain)
+function TAExpansionBaseCheck(aiBrain)
     -- Removed automatic setting of Land-Expasions-allowed. We have a Game-Option for this.
     local checkNum = tonumber(ScenarioInfo.Options.LandExpansionsAllowed)/5 or 1 
-    return ExpansionBaseCount(aiBrain, '<', checkNum)
+    return TAExpansionBaseCount(aiBrain, '<', checkNum)
 end
 
-function ExpansionBaseCount(aiBrain, compareType, checkNum)
+function TAExpansionBaseCount(aiBrain, compareType, checkNum)
     local expBaseCount = aiBrain:GetManagerCount('Expansion Area')
         ---LOG('*SCTAEXPANSIONTA', expBaseCount)
        if expBaseCount > checkNum then
@@ -105,13 +119,13 @@ function ExpansionBaseCount(aiBrain, compareType, checkNum)
        return CompareBodySCTA(expBaseCount, checkNum, compareType)
 end
 
-function StartBaseCheck(aiBrain)
+function TAStartBaseCheck(aiBrain)
     -- Removed automatic setting of Land-Expasions-allowed. We have a Game-Option for this.
     local checkNum2 = tonumber(ScenarioInfo.Options.LandExpansionsAllowed)/3 or 2 
-    return StartBaseCount(aiBrain, '<', checkNum2)
+    return TAStartBaseCount(aiBrain, '<', checkNum2)
 end
 
-function StartBaseCount(aiBrain, compareType, checkNum2)
+function TAStartBaseCount(aiBrain, compareType, checkNum2)
        local expBaseCount2 = aiBrain:GetManagerCount('Start Location')
        ----LOG('*SCTAEXPANSIONTA2', expBaseCount2)
        if expBaseCount2 > checkNum2 + 1 then
@@ -132,7 +146,7 @@ function FormerBaseCheck(aiBrain, compareType, checkNum)
        return CompareBodySCTA(expBaseCount, checkNum, compareType)
 end]]
 
-function HaveUnitsWithCategoryAndAllianceFalse(aiBrain, numReq, category, alliance)
+function TAHaveUnitsWithCategoryAndAllianceFalse(aiBrain, numReq, category, alliance)
     local numUnits = aiBrain:GetNumUnitsAroundPoint(category, Vector(0,0,0), 100000, alliance)
     if numUnits > numReq then
         return false
@@ -158,7 +172,7 @@ function TAFactoryCapCheck(aiBrain, locationType, TECH)
     return false
 end
 
-function HaveEnemyUnitAtLocation(aiBrain, radius, locationType, unitCount, categoryEnemy, compareType)
+function TAHaveEnemyUnitAtLocation(aiBrain, radius, locationType, unitCount, categoryEnemy, compareType)
     if not aiBrain.BuilderManagers[locationType] then
         WARN('*AI WARNING: HaveEnemyUnitAtLocation - Invalid location - ' .. locationType)
         return false
@@ -171,12 +185,12 @@ function HaveEnemyUnitAtLocation(aiBrain, radius, locationType, unitCount, categ
     return CompareBodySCTA(numEnemyUnits, unitCount, compareType)
 end
 --            { UCBC, 'EnemyUnitsGreaterAtLocationRadius', {  BasePanicZone, 'LocationType', 0, categories.MOBILE * categories.LAND }}, -- radius, LocationType, unitCount, categoryEnemy
-function EnemyUnitsGreaterAtLocationRadius(aiBrain, radius, locationType, unitCount, categoryEnemy)
-    return HaveEnemyUnitAtLocation(aiBrain, radius, locationType, unitCount, categoryEnemy, '>')
+function TAEnemyUnitsGreaterAtLocationRadius(aiBrain, radius, locationType, unitCount, categoryEnemy)
+    return TAHaveEnemyUnitAtLocation(aiBrain, radius, locationType, unitCount, categoryEnemy, '>')
 end
 --            { UCBC, 'EnemyUnitsLessAtLocationRadius', {  BasePanicZone, 'LocationType', 1, categories.MOBILE * categories.LAND }}, -- radius, LocationType, unitCount, categoryEnemy
-function EnemyUnitsLessAtLocationRadius(aiBrain, radius, locationType, unitCount, categoryEnemy)
-    return HaveEnemyUnitAtLocation(aiBrain, radius, locationType, unitCount, categoryEnemy, '<')
+function TAEnemyUnitsLessAtLocationRadius(aiBrain, radius, locationType, unitCount, categoryEnemy)
+    return TAHaveEnemyUnitAtLocation(aiBrain, radius, locationType, unitCount, categoryEnemy, '<')
 end
 
 
@@ -246,17 +260,17 @@ function TAAIGetReclaimablesAroundLocation(aiBrain, locationType)
 end
 
 
-local AITaunts = {
+local TAAITaunts = {
     {99, 100, 101, 102, 103}, -- Seraphim
 }
 local AIChatText = import('/lua/AI/sorianlang.lua').AIChatText
 
 function TAAIRandomizeTaunt(aiBrain)
-    tauntid = Random(1,table.getn(AITaunts[1]))
-    AISendChat('all', aiBrain.Nickname, '/'..AITaunts[1][tauntid])
+    tauntid = Random(1,table.getn(TAAITaunts[1]))
+    TAAISendChat('all', aiBrain.Nickname, '/'..TAAITaunts[1][tauntid])
 end
 
-function AISendChat(aigroup, ainickname, aiaction, targetnickname, extrachat)
+function TAAISendChat(aigroup, ainickname, aiaction, targetnickname, extrachat)
         if aiaction and AIChatText[aiaction] then
             local ranchat = Random(1, table.getn(AIChatText[aiaction]))
             local chattext

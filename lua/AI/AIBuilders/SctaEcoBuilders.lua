@@ -1,6 +1,7 @@
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
+local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local MABC = '/lua/editor/MarkerBuildConditions.lua'
@@ -236,9 +237,9 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA23All',
         PriorityFunction = TAPrior.NothingBuilt,
         Priority = 125,
-        InstanceCount = 4,
+        InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.TECH3 * categories.ENERGYPRODUCTION * categories.STRUCTURE} },
+            { TASlow, 'TAHaveLessThanArmyPoolWithCategory', { 1, categories.TECH3 * categories.ENERGYPRODUCTION * categories.STRUCTURE} },
             { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
         },
         BuilderType = 'NotACU',

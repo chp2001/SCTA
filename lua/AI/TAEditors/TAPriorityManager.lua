@@ -281,7 +281,7 @@ NothingBuilt = function(self, aiBrain)
 end
 
 LessThanTime = function(self, aiBrain)
-    if LessTime(aiBrain,  480) then 
+    if LessTime(aiBrain,  240) then 
         return 125
     else
         return 0

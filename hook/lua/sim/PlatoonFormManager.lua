@@ -121,13 +121,11 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         --builder = self:GetHighestBuilder(bType, {builder})
         BuilderManager.ManagerLoopBody(self,builder,bType)
         if bType == 'AirForm' then
-            self.TRadius = 500
+            self.Radius = 500
         elseif bType == 'StructureForm' then
-            self.TRadius = 1000
-        else
-            self.TRadius = 100
+            self.Radius = 1000
         end
-            local radius = self.TRadius
+            local radius = self.Radius
             if builder:GetFormRadius() then self.radius = builder:GetFormRadius() end
             if not self.template or not self.Location or not radius then
                 if type(self.template) != 'table' or type(self.template[1]) != 'string' or type(self.template[2]) != 'string' then

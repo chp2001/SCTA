@@ -1668,9 +1668,6 @@ Platoon = Class(SCTAAIPlatoon) {
         local aiBrain = self:GetBrain()
 
         -- get units together
-        if not self:GatherUnits() then
-            return
-        end
 
         -- Setup the formation based on platoon functionality
 
@@ -1807,9 +1804,6 @@ Platoon = Class(SCTAAIPlatoon) {
         local aiBrain = self:GetBrain()
 
         -- get units together
-        if not self:GatherUnits() then
-            return
-        end
 
         -- Setup the formation based on platoon functionality
 

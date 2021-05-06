@@ -17,6 +17,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI AntiAir',
         PlatoonTemplate = 'AntiAirSCTA', -- The platoon template tells the AI what units to include, and how to use them.
+        PlatoonAIPlan = 'SCTAStrikeForceAIEarly',
         Priority = 100,
         InstanceCount = 50,
         BuilderType = 'Scout',
@@ -70,7 +71,7 @@ BuilderGroup {
 ---Defensive/MidGame Platoons
     Builder {
         BuilderName = 'SCTAAI Strike Force Early',
-        PlatoonTemplate = 'StrikeForceSCTA', -- The platoon template tells the AI what units to include, and how to use them.
+        PlatoonTemplate = 'StrikeForceSCTAEarly', -- The platoon template tells the AI what units to include, and how to use them.
         PlatoonAIPlan = 'SCTAStrikeForceAIEarly',
         Priority = 100,
         InstanceCount = 50,
@@ -88,16 +89,16 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, GROUND * categories.TECH1 - SPECIAL - RANGE - TACATS}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, GROUND * categories.TECH1 - SPECIAL - RANGE - TACATS}},
         },
     },
     Builder {
         BuilderName = 'SCTAAI Strike Mid',
-        PlatoonTemplate = 'StrikeForceSCTA', -- The platoon template tells the AI what units to include, and how to use them.
+        PlatoonTemplate = 'StrikeForceSCTAMid', -- The platoon template tells the AI what units to include, and how to use them.
         PlatoonAIPlan = 'SCTAStrikeForceAI', -- The platoon template tells the AI what units to include, and how to use them.
         PriorityFunction = TAPrior.UnitProduction,
         Priority = 150,
-        InstanceCount = 50,
+        InstanceCount = 25,
         BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 75,
@@ -108,16 +109,16 @@ BuilderGroup {
             LocationType = 'LocationType',
         },        
         BuilderConditions = {
-            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 4, GROUND - SPECIAL}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4, GROUND - SPECIAL}},
         },
     },
     Builder {
         BuilderName = 'SCTAAI Strike Endgame',
-        PlatoonTemplate = 'StrikeForceSCTA', -- The platoon template tells the AI what units to include, and how to use them.
+        PlatoonTemplate = 'StrikeForceSCTAEndgame', -- The platoon template tells the AI what units to include, and how to use them.
         PlatoonAIPlan = 'SCTAStrikeForceAIEndgame', -- The platoon template tells the AI what units to include, and how to use them.
         PriorityFunction = TAPrior.StructureProductionT2,
         Priority = 250,
-        InstanceCount = 50,
+        InstanceCount = 10,
         BuilderType = 'AirForm',
         BuilderData = {
             ThreatSupport = 75,
@@ -127,14 +128,13 @@ BuilderGroup {
             LocationType = 'LocationType',
         },        
         BuilderConditions = {
-            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 9, GROUND - SPECIAL}},
-            { MIBC, 'GreaterThanGameTime', {900} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 9, GROUND - SPECIAL}},
         },
     },
     ----AggressivePlatoons
     Builder {
         BuilderName = 'SCTAAI Missile Hunt',
-        PlatoonTemplate = 'LandAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
+        PlatoonTemplate = 'LandRocketAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         PlatoonAIPlan = 'HuntSCTAAI',
         Priority = 125,
         InstanceCount = 50,
@@ -152,16 +152,16 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 2, GROUND * (RANGE + categories.FIELDENGINEER)} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, GROUND * (RANGE + categories.FIELDENGINEER)} },
          },
     },
     Builder {
         BuilderName = 'SCTAAI Land Attack Mid',
-        PlatoonTemplate = 'LandAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
+        PlatoonTemplate = 'LandAttackSCTAMid', -- The platoon template tells the AI what units to include, and how to use them.
         PlatoonAIPlan = 'AttackSCTAForceAI',
         PriorityFunction = TAPrior.UnitProductionT1, -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 115,
-        InstanceCount = 50,
+        InstanceCount = 25,
         --DelayEqualBuildPlattons = 5,
         BuilderType = 'LandForm',
         BuilderData = {
@@ -176,13 +176,13 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 4, GROUND * (RANGE + categories.FIELDENGINEER)}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4, GROUND * (RANGE + categories.FIELDENGINEER)}},
             { MIBC, 'GreaterThanGameTime', {300} },
          },
     },
     Builder {
         BuilderName = 'SCTAAI Land Attack Endgame',
-        PlatoonTemplate = 'LandAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
+        PlatoonTemplate = 'LandAttackSCTAEndGame', -- The platoon template tells the AI what units to include, and how to use them.
         PlatoonAIPlan = 'AttackSCTAForceAIEndGame', -- The platoon template tells the AI what units to include, and how to use them.
         PriorityFunction = TAPrior.TechEnergyExist,
         Priority = 210,
@@ -201,8 +201,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 9,  GROUND * (RANGE + categories.FIELDENGINEER)} },
-            { MIBC, 'GreaterThanGameTime', {900} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 9, GROUND * (RANGE + categories.FIELDENGINEER)} },
         },
     },
 }

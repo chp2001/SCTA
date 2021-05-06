@@ -57,7 +57,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'LABSCTA',
-    Plan = 'None', -- The platoon function to use.
+    Plan = 'HuntAILABSCTA', -- The platoon function to use.
     ---PlatoonType = 'Scout',
     GlobalSquads = {
         {RAIDER + RAIDAIR, -- ---PlatoonType of units.
@@ -69,19 +69,6 @@ PlatoonTemplate {
 }
 
 ----Aggressive Platoons.
-
-
-
-
-PlatoonTemplate {
-    Name = 'LandAttackSCTA',
-    Plan = 'None',
-    ---PlatoonType = 'LandForm',
-    GlobalSquads = {
-        { GROUND * (RANGE + categories.FIELDENGINEER) - TACATS, 2, 30, 'attack', 'none' }
-    },
-}
-
 ----Primary 'Defense' Platoon Protect Bases and Scout Around Mexes
 PlatoonTemplate {
     Name = 'AntiAirSCTA',
@@ -103,14 +90,54 @@ PlatoonTemplate {
     },
 }
 
+PlatoonTemplate {
+    Name = 'LandRocketAttackSCTA',
+    Plan = 'HuntSCTAAI',
+    GlobalSquads = {
+        { GROUND * (RANGE + categories.FIELDENGINEER) - TACATS, 2, 10, 'attack', 'none' }
+    },
+}
 
 
 PlatoonTemplate {
-    Name = 'StrikeForceSCTA',
-    Plan = 'None',
-    ---PlatoonType = 'LandForm',
+    Name = 'LandAttackSCTAMid',
+    Plan = 'AttackSCTAForceAI',
     GlobalSquads = {
-        { GROUND - SPECIAL - RANGE - TACATS, 2, 40, 'attack', 'none' }
+        { GROUND * (RANGE + categories.FIELDENGINEER) - TACATS, 5, 20, 'attack', 'none' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'LandAttackSCTAEndGame',
+    Plan = 'AttackSCTAForceAIEndGame',
+    GlobalSquads = {
+        { GROUND * (RANGE + categories.FIELDENGINEER) - TACATS, 10, 50, 'attack', 'none' }
+    },
+}
+
+
+
+PlatoonTemplate {
+    Name = 'StrikeForceSCTAEarly',
+    Plan = 'SCTAStrikeForceAIEarly',
+    GlobalSquads = {
+        { GROUND * categories.TECH1 - SPECIAL - TACATS - RANGE, 2, 10, 'attack', 'none' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'StrikeForceSCTAMid',
+    Plan = 'SCTAStrikeForceAI',
+    GlobalSquads = {
+        { GROUND - SPECIAL - RANGE - TACATS, 5, 20, 'attack', 'none' }
+    },
+}
+
+PlatoonTemplate {
+    Name = 'StrikeForceSCTAEndgame',
+    Plan = 'SCTAStrikeForceAIEndgame', -- The platoon function to use.
+    GlobalSquads = {
+        { GROUND - SPECIAL - categories.BOMB, 10, 50, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
 

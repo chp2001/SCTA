@@ -1,6 +1,7 @@
 WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset ATUtils.lua' )
 
 SCTAGetTransports = GetTransports
+TASetupCheat = SetupCheat
 function GetTransports(platoon, units)
     local aiBrain = platoon:GetBrain()
     if not aiBrain.SCTAAI then
@@ -273,7 +274,7 @@ end
 
 function SetupCheat(aiBrain, cheatBool)
     if not aiBrain.SCTAAI then
-        return SetupCheat(aiBrain, cheatBool)
+        return TASetupCheat(aiBrain, cheatBool)
     end
 
     if cheatBool then

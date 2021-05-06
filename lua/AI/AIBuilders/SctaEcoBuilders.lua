@@ -237,7 +237,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA23All',
         PriorityFunction = TAPrior.NothingBuilt,
         Priority = 125,
-        InstanceCount = 4,
+        InstanceCount = 1,
         BuilderConditions = {
             { TASlow, 'TAHaveLessThanArmyPoolWithCategory', { 1, categories.TECH3 * categories.ENERGYPRODUCTION * categories.STRUCTURE} },
             { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},

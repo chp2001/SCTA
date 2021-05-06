@@ -120,11 +120,11 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
             --LOG('*self.template1', self.template[1])
         --builder = self:GetHighestBuilder(bType, {builder})
         BuilderManager.ManagerLoopBody(self,builder,bType)
-        if bType == 'AirForm' then
+        --[[if bType == 'AirForm' then
             self.Radius = 500
         elseif bType == 'StructureForm' then
             self.Radius = 1000
-        end
+        end]]
             local radius = self.Radius
             if builder:GetFormRadius() then self.radius = builder:GetFormRadius() end
             if not self.template or not self.Location or not radius then
@@ -262,7 +262,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
             --LOG('*self.template1', self.template[1])
             --builder = self:GetHighestBuilder('LandForm', {builder})
             BuilderManager.ManagerLoopBody(self,builder,bType)
-            local radius = 100
+            local radius = self.Radius
             if builder:GetFormRadius() then radius = builder:GetFormRadius() end
             if not self.template or not self.Location or not radius then
                 if type(self.template) != 'table' or type(self.template[1]) != 'string' or type(self.template[2]) != 'string' then
@@ -329,7 +329,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
             --LOG('*self.template1', self.template[1])
             --builder = self:GetHighestBuilder('SeaForm', {builder})
             BuilderManager.ManagerLoopBody(self,builder,bType)
-            local radius = 50
+            local radius = self.Radius
             if builder:GetFormRadius() then radius = builder:GetFormRadius() end
             if not self.template or not self.Location or not radius then
                 if type(self.template) != 'table' or type(self.template[1]) != 'string' or type(self.template[2]) != 'string' then

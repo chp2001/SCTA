@@ -71,7 +71,7 @@ BuilderGroup {
         Priority = 150,
         BuilderConditions = {
             { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'TAExtractors' }},
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.MASSEXTRACTION * categories.TECH1 } },
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.MASSEXTRACTION * categories.TECH1 } },
             { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 3, categories.MASSEXTRACTION * categories.TECH1 } },  
             { TAutils, 'EcoManagementTA', { 0.9, 0.9, 0.75, 0.75, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 800, 1000 } },
@@ -91,7 +91,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.OPTICS} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.RADAR * categories.STRUCTURE * categories.TECH2 - categories.FACTORY} },
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.RADAR * categories.STRUCTURE * categories.TECH1 - categories.FACTORY} },
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.RADAR * categories.STRUCTURE * categories.TECH1 - categories.FACTORY} },
             { TAutils, 'EcoManagementTA', { 0.75, 1.05, 0.5, 0.9, } },
         },
         BuilderType = 'StructureForm',
@@ -101,7 +101,7 @@ BuilderGroup {
         PlatoonTemplate = 'FabricationSCTA',
         Priority = 300,
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.MASSFABRICATION} },
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.MASSFABRICATION} },
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.MASSFABRICATION}},
             },
         BuilderType = 'StructureForm',
@@ -111,7 +111,7 @@ BuilderGroup {
         PlatoonTemplate = 'ArtillerySCTA',
         Priority = 300,
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.ARTILLERY * categories.STRUCTURE} },
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.ARTILLERY * categories.STRUCTURE} },
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.ARTILLERY * categories.STRUCTURE}},
             },
         BuilderType = 'StructureForm',
@@ -121,7 +121,7 @@ BuilderGroup {
         PlatoonTemplate = 'TacticalMissileSCTA',
         Priority = 300,
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.TACTICALMISSILEPLATFORM * categories.STRUCTURE} },
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.TACTICALMISSILEPLATFORM * categories.STRUCTURE} },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.TACTICALMISSILEPLATFORM * categories.STRUCTURE}},
             },
         BuilderType = 'StructureForm',

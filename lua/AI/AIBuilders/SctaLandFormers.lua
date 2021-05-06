@@ -28,7 +28,17 @@ BuilderGroup {
             AntiAir = true,
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1,  GROUND * categories.ANTIAIR - categories.ANTISHIELD} },
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 2,  GROUND * categories.ANTIAIR - categories.ANTISHIELD} },
+         },
+    },
+    Builder {
+        BuilderName = 'SCTAAI Land Scout',
+        PlatoonTemplate = 'T1LandScoutFormSCTA',
+        Priority = 125,
+        InstanceCount = 2,
+        BuilderType = 'Scout',
+        BuilderConditions = {
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, categories.SCOUT * categories.LAND * categories.MOBILE } },
          },
     },
     Builder {
@@ -38,8 +48,9 @@ BuilderGroup {
         PriorityFunction = TAPrior.UnitProduction,
         InstanceCount = 25,
         --DelayEqualBuildPlattons = 5,
-        BuilderType = 'Scout',
+        BuilderType = 'LandForm',
         BuilderData = {
+            ThreatSupport = 75,
             Energy = true,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
@@ -52,7 +63,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, GROUND * (categories.ANTISHIELD + categories.FIELDENGINEER) - categories.AMPHIBIOUS - categories.EXPERIMENTAL} },
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 2, GROUND * (categories.ANTISHIELD + categories.FIELDENGINEER) - categories.AMPHIBIOUS - categories.EXPERIMENTAL} },
             { TAutils, 'GreaterEnergyStorageMaxTA', { 0.2 } },
         },
     },
@@ -64,7 +75,7 @@ BuilderGroup {
         Priority = 100,
         InstanceCount = 50,
         PriorityFunction = TAPrior.UnitProductionT1,
-        BuilderType = 'LandForm',
+        BuilderType = 'Scout',
         BuilderData = {
             ThreatSupport = 75,
             NeverGuardBases = true,
@@ -77,7 +88,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1,  GROUND * categories.TECH1 - SPECIAL - RANGE - TACATS}},
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, GROUND * categories.TECH1 - SPECIAL - RANGE - TACATS}},
         },
     },
     Builder {
@@ -89,13 +100,15 @@ BuilderGroup {
         InstanceCount = 50,
         BuilderType = 'LandForm',
         BuilderData = {
+            ThreatSupport = 75,
             Small = true,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',
+            LocationType = 'LocationType',
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1,  GROUND - SPECIAL}},
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 4, GROUND - SPECIAL}},
         },
     },
     Builder {
@@ -105,17 +118,16 @@ BuilderGroup {
         PriorityFunction = TAPrior.StructureProductionT2,
         Priority = 250,
         InstanceCount = 50,
-        FormRadius = 1000,
-        BuilderType = 'LandForm',
+        BuilderType = 'AirForm',
         BuilderData = {
             ThreatSupport = 75,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',
             LocationType = 'LocationType',
-            UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 9, GROUND - SPECIAL}},
             { MIBC, 'GreaterThanGameTime', {900} },
         },
     },
@@ -126,7 +138,7 @@ BuilderGroup {
         PlatoonAIPlan = 'HuntSCTAAI',
         Priority = 125,
         InstanceCount = 50,
-        BuilderType = 'LandForm',
+        BuilderType = 'Scout',
         BuilderData = {
             ThreatSupport = 10,
             NeverGuardBases = false,
@@ -140,7 +152,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1,  GROUND * (RANGE + categories.FIELDENGINEER)} },
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 2, GROUND * (RANGE + categories.FIELDENGINEER)} },
          },
     },
     Builder {
@@ -164,7 +176,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1,  GROUND * (RANGE + categories.FIELDENGINEER)}},
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 4, GROUND * (RANGE + categories.FIELDENGINEER)}},
             { MIBC, 'GreaterThanGameTime', {300} },
          },
     },
@@ -176,7 +188,7 @@ BuilderGroup {
         Priority = 210,
         InstanceCount = 50,
         FormRadius = 1000,
-        BuilderType = 'LandForm',
+        BuilderType = 'AirForm',
         BuilderData = {
             ThreatSupport = 75,
             NeverGuardBases = false,
@@ -189,18 +201,9 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 9,  GROUND * (RANGE + categories.FIELDENGINEER)} },
             { MIBC, 'GreaterThanGameTime', {900} },
         },
-    },
-    Builder {
-        BuilderName = 'SCTAAI Land Scout',
-        PlatoonTemplate = 'T1LandScoutFormSCTA',
-        Priority = 125,
-        InstanceCount = 2,
-        BuilderType = 'Scout',
-        BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.SCOUT * categories.LAND * categories.MOBILE } },
-         },
     },
 }
 

@@ -2126,7 +2126,7 @@ Platoon = Class(SCTAAIPlatoon) {
                     if target and self.PlatoonData.Lab then
                         WaitSeconds(1)
                         return self:SCTALabType()
-                    elseif structure and self.PlatoonData.AllTerrain then
+                    elseif structure and EntityCategoryContains(categories.AMPHIBIOUS, self) then
                         WaitSeconds(1)
                         return self:SCTAArtyHuntAI()
                     else

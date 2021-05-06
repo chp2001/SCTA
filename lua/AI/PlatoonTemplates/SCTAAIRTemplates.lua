@@ -7,29 +7,6 @@
 #**  Copyright © 2005 Gas Powered Games, Inc.  All rights reserved.
 #****************************************************************************
 local SKY = categories.AIR * categories.MOBILE
-local RAIDAIR = categories.armfig + categories.corveng
-
-PlatoonTemplate {
-    Name = 'AirHuntAISCTA',
-    Plan = 'HuntAirAISCTA',
-    ---PlatoonType = 'Scout',
-    GlobalSquads = {
-        { SKY * (categories.BOMBER + RAIDAIR) * categories.TECH1, 2, 4, 'attack', 'none' },
-    }
-}
-
-PlatoonTemplate {
-    Name = 'LABAirSCTA',
-    Plan = 'HuntAILABSCTA',
-    ---PlatoonType = 'AirForm', -- The platoon function to use.
-    GlobalSquads = {
-        {RAIDAIR, -- ---PlatoonType of units.
-          1, -- Min number of units.
-          1, -- Max number of units.
-          'attack', -- platoon ---PlatoonTypes: 'support', 'attack', 'scout',
-          'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
-    },
-}
 
 PlatoonTemplate {
     Name = 'SCTABomberAttack',

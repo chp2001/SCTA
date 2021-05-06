@@ -58,6 +58,20 @@ function CompareBodySCTA(numOne, numTwo, compareType)
 end
 
 
+function HavePoolUnitInArmy(aiBrain, unitCount, unitCategory, compareType)
+    local poolPlatoon = aiBrain:GetPlatoonUniquelyNamed('ArmyPool')
+    local numUnits = poolPlatoon:GetNumCategoryUnits(unitCategory)
+    --LOG('* HavePoolUnitInArmy: numUnits= '..numUnits) 
+    return CompareBodySCTA(numUnits, unitCount, compareType)
+end
+
+function TAHaveLessThanArmyPoolWithCategory(aiBrain, unitCount, unitCategory)
+    return HavePoolUnitInArmy(aiBrain, unitCount, unitCategory, '<=')
+end
+function TAHaveGreaterThanArmyPoolWithCategory(aiBrain, unitCount, unitCategory)
+    return HavePoolUnitInArmy(aiBrain, unitCount, unitCategory, '>=')
+end
+
 --TA Build Conditions
 
 function TAAIGetEconomyNumbersStorageRatio(aiBrain)

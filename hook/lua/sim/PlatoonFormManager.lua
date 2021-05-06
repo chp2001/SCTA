@@ -65,7 +65,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         --LOG('*TAbtypeBui', builder)
         builder = self:GetHighestBuilder(bType, {builder})
         if self.Brain.BuilderManagers[self.LocationType] and builder.Priority >= 1 and builder:CheckInstanceCount() then
-            LOG('*TAbtypePrior1', builder.BuilderName, builder.Priority)
+            --LOG('*TAbtypePrior1', builder.BuilderName, builder.Priority)
             self.personality = self.Brain:GetPersonality()
             self.poolPlatoon = self.Brain:GetPlatoonUniquelyNamed('ArmyPool')
             self.template = self:GetPlatoonTemplate(builder:GetPlatoonTemplate())            
@@ -87,7 +87,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                     return ForkThread(self.SCTAManagerLoopBodyLand, self, builder, 'Scout')
                 end  
         elseif not self.Naval then
-            _ALERT('*TAbtype3', self.Main)
+            --_ALERT('*TAbtype3', self.Main)
             --if EntityCategoryContains(categories.MOBILE * categories.LAND, self.poolPlatoon) then
                 if bType == 'LandForm' then
                     return ForkThread(self.SCTAManagerLoopBodyLand, self, builder, 'LandForm')
@@ -98,15 +98,15 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                 elseif bType == 'Other' and TAPrior.UnitProductionField >= 200 then
                     return self:SCTAManagerLoopBodyEngineer(builder, 'Other')
                 elseif bType == 'Scout' and not self.Main then
-                    LOG('*TATtype2ES', self.Main)
+                    --LOG('*TATtype2ES', self.Main)
                     return self:SCTAManagerLoopBodyLand(builder, 'Scout')
                 elseif bType == 'StructureForm' and TAPrior.UnitProduction >= 75 then
                     return self:SCTAManagerLoopBody(builder, 'StructureForm') 
                 end
         elseif self.Naval and bType == 'SeaForm' then
                 return self:SCTAManagerLoopBodySea(builder, 'SeaForm')
-            else 
-                LOG('*TAIEXIST FAILS', self.template[1])
+            --else 
+                --LOG('*TAIEXIST FAILS', self.template[1])
             end
         end
     end,
@@ -184,8 +184,8 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                     end
                 end
                 builder:StoreHandle(hndl)
-            else 
-                LOG('*TAIEXIST FAILS1', builder.BuilderName)
+            --else 
+                --LOG('*TAIEXIST FAILS1', builder.BuilderName)
                 --LOG('*TAIEXIST FAILS2', self.template[3])
         end
     end,

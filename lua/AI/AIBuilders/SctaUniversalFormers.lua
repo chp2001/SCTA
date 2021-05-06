@@ -4,7 +4,7 @@ local MABC = '/lua/editor/MarkerBuildConditions.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
-local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').GetMOARadii()
+local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').TAGetMOARadii()
 local RAIDAIR = categories.armfig + categories.corveng + categories.GROUNDATTACK
 local RAIDER = categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea
 local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
@@ -26,7 +26,7 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {          
-        { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.COMMAND }},	
+        { TASlow, 'TAEnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.COMMAND }},	
         { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.AMPHIBIOUS - categories.SCOUT - categories.COMMAND - categories.ENGINEER} }, },
     },
     Builder {
@@ -44,7 +44,7 @@ BuilderGroup {
         },        
         BuilderConditions = { 
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, RAIDER} },
-            { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.COMMAND }},	
+            { TASlow, 'TAEnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.COMMAND }},	
         },
     },
     Builder {
@@ -61,7 +61,7 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = { 
-            { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.ANTIAIR }},	
+            { TASlow, 'TAEnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.ANTIAIR }},	
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, RAIDAIR} },
         },
     },
@@ -138,7 +138,7 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },     
         BuilderConditions = { 
-            { TASlow, 'EnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.ANTIAIR }},	
+            { TASlow, 'TAEnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.ANTIAIR }},	
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.TECH1 * (categories.BOMBER + RAIDAIR)} },
         },
     },

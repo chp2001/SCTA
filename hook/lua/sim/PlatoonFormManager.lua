@@ -1,5 +1,5 @@
 WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset PlatoonForm.lua' )
-
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 SCTAPlatoonFormManager = PlatoonFormManager
 PlatoonFormManager = Class(SCTAPlatoonFormManager) {
     Create = function(self, brain, lType, location, radius)
@@ -58,16 +58,18 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         end
         --('*TAbtype', bType)
         --LOG('*TALtype', self.Naval)
-        local builder = self:GetHighestBuilder(bType, {builder})
+        --builder = self:GetHighestBuilder(bType, {builder})
         BuilderManager.ManagerLoopBody(self,builder,bType)
-        local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
-        ---LOG('*TAPrior', builder.Priority)
+        --self.PriorityFunction = builder.PriorityFunction or 1
+        --LOG('*TAPrior', builder.PriorityFunction)
         --LOG('*TAbtypeBui', builder)
+        
         if self.Brain.BuilderManagers[self.LocationType] and builder.Priority >= 1 and builder:CheckInstanceCount() then
-            --LOG('*TAbtypePrior1', builder.Priority)
+            LOG('*TAbtypePrior1', builder.BuilderName, builder.Priority)
             self.personality = self.Brain:GetPersonality()
             self.poolPlatoon = self.Brain:GetPlatoonUniquelyNamed('ArmyPool')
             self.template = self:GetPlatoonTemplate(builder:GetPlatoonTemplate())
+            builder = self:GetHighestBuilder(bType, {builder})
             --_ALERT('*TAbtypePrior2', builder.Priority)
             ----if builder:CheckBuilderConditions(self.Brain) then
             --self.template = self:GetPlatoonself.template(builder:GetPlatoonself.template())

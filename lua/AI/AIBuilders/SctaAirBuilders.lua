@@ -28,7 +28,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2GunshipSCTA',
         Priority = 115,
         BuilderConditions = {
-            { TASlow, 'HaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
+            { TASlow, 'TAHaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
             { TAutils, 'EcoManagementTA', { 0.75, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
@@ -49,7 +49,7 @@ BuilderGroup {
         Priority = 110,
         PriorityFunction = TAPrior.ProductionT3,
         BuilderConditions = {
-            { TASlow, 'HaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
+            { TASlow, 'TAHaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
             { TAutils, 'EcoManagementTA', { 0.75, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Air',
@@ -60,7 +60,7 @@ BuilderGroup {
         Priority = 85,
         PriorityFunction = TAPrior.AirProduction,
         BuilderConditions = {
-            { TASlow, 'HaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
+            { TASlow, 'TAHaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
             { TAutils, 'EcoManagementTA', { 0.75, 0.9, 0.5, 0.5, } },
         },
         BuilderType = 'Air',

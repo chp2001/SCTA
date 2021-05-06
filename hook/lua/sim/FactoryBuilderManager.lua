@@ -168,7 +168,7 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager) {
             local category = categories.MOBILE - categories.EXPERIMENTAL - categories.AIR - categories.ENGINEER
             local rallypoint = { rally[1],rally[2],rally[3] }
             local factorypoint = { factoryposition[1], factoryposition[2], factoryposition[3] }       
-            local Direction = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').GetDirectionInDegrees( rallypoint, factorypoint )
+            local Direction = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').TAGetDirectionInDegrees( rallypoint, factorypoint )
             if Direction < 45 then 
                 Direction = 0		-- South        
             elseif Direction < 135 then   

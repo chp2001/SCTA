@@ -10,7 +10,7 @@ local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
-local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').GetMOARadii()
+local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').TAGetMOARadii()
 local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
 BuilderGroup {

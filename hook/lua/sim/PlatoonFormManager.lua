@@ -63,13 +63,12 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         --self.PriorityFunction = builder.PriorityFunction or 1
         --LOG('*TAPrior', builder.PriorityFunction)
         --LOG('*TAbtypeBui', builder)
-        
+        --builder = self:GetHighestBuilder(bType, {builder})
         if self.Brain.BuilderManagers[self.LocationType] and builder.Priority >= 1 and builder:CheckInstanceCount() then
             LOG('*TAbtypePrior1', builder.BuilderName, builder.Priority)
             self.personality = self.Brain:GetPersonality()
             self.poolPlatoon = self.Brain:GetPlatoonUniquelyNamed('ArmyPool')
-            self.template = self:GetPlatoonTemplate(builder:GetPlatoonTemplate())
-            builder = self:GetHighestBuilder(bType, {builder})
+            self.template = self:GetPlatoonTemplate(builder:GetPlatoonTemplate())            
             --_ALERT('*TAbtypePrior2', builder.Priority)
             ----if builder:CheckBuilderConditions(self.Brain) then
             --self.template = self:GetPlatoonself.template(builder:GetPlatoonself.template())
@@ -253,9 +252,6 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                     end
                 end
                 builder:StoreHandle(hndl)
-            else 
-                LOG('*TAIEXIST FAILS2', builder.BuilderName)
-                ----('*TAIEXIST FAILS2', template[3])
             end
     end,
 
@@ -322,8 +318,6 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                     end
                 end
                 builder:StoreHandle(hndl)
-            else 
-                LOG('*TAIEXIST FAILS3', builder.BuilderName)
             end
     end,
 
@@ -390,8 +384,6 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                     end
                 end
                 builder:StoreHandle(hndl)
-            else 
-                LOG('*TAIEXIST FAILS4', builder.BuilderName)
             end
     end,
 }

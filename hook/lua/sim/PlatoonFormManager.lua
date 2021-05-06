@@ -21,6 +21,9 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         if string.find(lType, 'Naval') then
         self.Naval = true
         end
+        if lType == 'Main' then
+        self.Main = true
+        end
         --LOG('*TATerrain', self.Naval)
         --LOG('*TATerrain2', self.Radius)
         --LOG('*TATerrain3', self.LocationType)
@@ -71,14 +74,17 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
             --if EntityCategoryContains(categories.MOBILE * categories.LAND, self.poolPlatoon) then
                 if bType == 'LandForm' or bType == 'Scout' then
                 return ForkThread(self.SCTAManagerLoopBodyLand, self, builder, bType)
-                elseif bType == 'EngineerForm' or bType == 'Other' then
-                return ForkThread(self.SCTAManagerLoopBodyEngineer, self, builder, bType)
+                elseif bType == 'EngineerForm' then
+                return ForkThread(self.SCTAManagerLoopBodyEngineer, self, builder, 'EngineerForm')
+                elseif self.Main then
+                return ForkThread(self.SCTAManagerLoopBody, self, builder, 'CommandTA')
+                elseif bType == 'Other' then
+                return self:SCTAManagerLoopBodyEngineer(builder, 'Other')
                 else
-                return self:SCTAManagerLoopBody(builder, bType)
+                return self:SCTAManagerLoopBody(builder, bType)  
                 end
             else
-                return self:SCTAManagerLoopBodySea(builder, bType)
-            --return
+                return self:SCTAManagerLoopBodySea(builder, 'SeaForm')
             end
         end
     end,
@@ -90,9 +96,13 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         --LOG('*TAself.templateP2', bType)
                 ---LOG('*builder', self.Brain.SCTAAI)
             --LOG('*self.template1', self.template[1])
-            local radius = 100
-            if builder:GetFormRadius() then radius = builder:GetFormRadius() end
-            if not self.template or not self.Location or not radius then
+        if bType == 'AirForm' then
+            self.radius = 1000
+            else
+            self.radius = 50
+        end
+            if builder:GetFormRadius() then self.radius = builder:GetFormRadius() end
+            if not self.template or not self.Location or not self.radius then
                 if type(self.template) != 'table' or type(self.template[1]) != 'string' or type(self.template[2]) != 'string' then
                     WARN('*Platoon Form: Could not find self.template named: ' .. builder:GetPlatoontemplate())
                     return
@@ -100,11 +110,11 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                 WARN('*Platoon Form: Could not find self.template named: ' .. builder:GetPlatoontemplate())
                 return
             end
-            local formIt = self.poolPlatoon:CanFormPlatoon(self.template, self.personality:GetPlatoonSize(), self.Location, radius) 
+            local formIt = self.poolPlatoon:CanFormPlatoon(self.template, self.personality:GetPlatoonSize(), self.Location, self.radius) 
             if builder:GetBuilderStatus() then
                 --LOG('*self.templatetype', self.template[3])
                 --LOG('*self.template2', self.template[1])
-                local hndl = self.poolPlatoon:FormPlatoon(self.template, self.personality:GetPlatoonSize(), self.Location, radius)
+                local hndl = self.poolPlatoon:FormPlatoon(self.template, self.personality:GetPlatoonSize(), self.Location, self.radius)
                 #LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Platoon Form Manager Forming - ',repr(builder.BuilderName),': Location = ',self.LocationType)
                 #LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Platoon Form Manager - Platoon Size = ', table.getn(hndl:GetPlatoonUnits()))
                 hndl.PlanName = self.template[2]

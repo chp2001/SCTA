@@ -4,7 +4,7 @@
     Summary :
         Responsible for defining a mapping from AIBuilders keys -> Plans (Plans === platoon.lua functions)
 ]]
-local RAIDER = (categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea)
+local RAIDER = (categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea + categories.armfig + categories.corveng + categories.GROUNDATTACK)
 local SPECIAL = (RAIDER + categories.EXPERIMENTAL + categories.ENGINEER + categories.SCOUT)
 local GROUND = categories.MOBILE * categories.LAND
 local TACATS = (categories.ANTISHIELD + categories.AMPHIBIOUS)

@@ -6,7 +6,7 @@ local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').GetMOARadii()
 local RAIDAIR = categories.armfig + categories.corveng + categories.GROUNDATTACK
-local RAIDER = RAIDAIR + categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea
+local RAIDER = categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea
 local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 
@@ -20,7 +20,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.LessThanTime,
         Priority = 100,
         InstanceCount = 6,
-        BuilderType = 'Scout',
+        BuilderType = 'CommandTA',
         BuilderData = {
             NeverGuardBases = true,
             LocationType = 'LocationType',
@@ -35,7 +35,7 @@ BuilderGroup {
         PlatoonTemplate = 'StrikeForceSCTATerrain', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 200,
         InstanceCount = 2,
-        BuilderType = 'Scout',
+        BuilderType = 'CommandTA',
         BuilderData = {
             NeverGuardBases = true,
             NeverGuardEngineers = true,
@@ -51,9 +51,9 @@ BuilderGroup {
         BuilderName = 'SCTAAI LAB',
         PlatoonTemplate = 'LABSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 150,
-        InstanceCount = 2,
+        InstanceCount = 5,
         PriorityFunction = TAPrior.UnitProductionLab,
-        BuilderType = 'Scout',
+        BuilderType = 'CommandTA',
         BuilderData = {
             Lab = true,
             NeverGuardBases = true,
@@ -67,11 +67,11 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI LAB Interceptor',
-        PlatoonTemplate = 'LABAirSCTA', -- The platoon template tells the AI what units to include, and how to use them.
+        PlatoonTemplate = 'LABSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         PriorityFunction = TAPrior.LessThanTime,
         Priority = 300,
         InstanceCount = 5,
-        BuilderType = 'Scout',
+        BuilderType = 'CommandTA',
         BuilderData = {
             Lab = true,
             NeverGuardBases = true,
@@ -227,7 +227,7 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'Other',
+        BuilderType = 'CommandTA',
     },
     Builder {
         BuilderName = 'SCTA Engineer Assist Gantry',
@@ -250,7 +250,7 @@ BuilderGroup {
                 Time = 60,
             },
         },
-        BuilderType = 'Other',
+        BuilderType = 'CommandTA',
     },
     Builder {
         BuilderName = 'SCTA Commander Assist Hydro',

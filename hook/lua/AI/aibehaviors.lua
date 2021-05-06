@@ -57,7 +57,7 @@ function CDRSCTADGun(aiBrain, cdr)
     end
     
     -- Added for ACUs starting near each other
-    if GetGameTimeSeconds() < 240 then
+    if GetGameTimeSeconds() < 180 then
         return
     end
 

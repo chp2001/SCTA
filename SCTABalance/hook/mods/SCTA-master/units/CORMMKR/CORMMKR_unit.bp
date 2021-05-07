@@ -15,6 +15,6 @@ UnitBlueprint {
       MaintenanceConsumptionPerSecondEnergy = 1500,
       BuildTime = 105000,
   },
-  SelectionSizeX = 4,
-  SelectionSizeZ = 4,
+  SelectionSizeX = 3,
+  SelectionSizeZ = 3,
 }

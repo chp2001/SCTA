@@ -12,6 +12,10 @@ UnitBlueprint {
         BuildCostMass = 60000,
         BuildTime = 150000,
     },
+    Physics = {
+        SkirtSizeX = 4, 
+        SkirtSizeZ = 4,  
+    },
     SelectionSizeX = 3,
     SelectionSizeZ = 3,
     LifeBarSize = 4,

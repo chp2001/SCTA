@@ -5,6 +5,9 @@ local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local BaseRestrictedArea, BaseMilitaryArea, BaseDMZArea, BaseEnemyArea = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua').TAGetMOARadii()
+local PLANT = (categories.FACTORY * categories.TECH1)
+local LAB = (categories.FACTORY * categories.TECH2)
+local PLATFORM = (categories.FACTORY * categories.TECH3)
 local RAIDAIR = categories.armfig + categories.corveng + categories.GROUNDATTACK
 local RAIDER = categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea
 local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
@@ -111,9 +114,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {180} },
-            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.COMMAND} },
             { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 50}},
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.HYDROCARBON }},
         },
         BuilderData = {
             Assist = {
@@ -125,6 +126,27 @@ BuilderGroup {
             },
         },
         BuilderType = 'Scout',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Factory Assist',
+        PlatoonTemplate = 'EngineerBuilderSCTAALL',
+        PlatoonAIPlan = 'ManagerEngineerAssistAI',
+        PriorityFunction = TAPrior.UnitProduction,
+        Priority = 500,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER - categories.COMMAND}},
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, LAB + PLATFORM}},
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                BeingBuiltCategories = {'STRUCTURE FACTORY TECH2, STRUCTURE FACTORY TECH3'},
+                Time = 20,
+            },
+        },
+        BuilderType = 'StructureForm',
     },
     Builder {
         BuilderName = 'SCTAAI Air Hunt',

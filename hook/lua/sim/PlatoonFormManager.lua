@@ -65,34 +65,30 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         local Engineer = poolPlatoon:GetNumCategoryUnits(categories.ENGINEER * categories.MOBILE - categories.COMMAND - categories.FIELDENGINEER - categories.SUBCOMMANDER)
         local Command = poolPlatoon:GetNumCategoryUnits(categories.COMMAND + categories.SUBCOMMANDER)
         local Other = poolPlatoon:GetNumCategoryUnits(categories.FIELDENGINEER + categories.EXPERIMENTAL)
-        local Structure = poolPlatoon:GetNumCategoryUnits(categories.STRUCTURE + categories.CQUEMOV)
-
-        if Sea > 1 and self.Naval then 
-            self:SCTAManagerLoopBody(builder, 'SeaForm')
-        elseif self.Main and bType == 'CommandTA' or bType == 'Scout' then
-            if Command > 0 and TAPrior.UnitProduction >= 75 then 
-               self:SCTAManagerLoopBody(builder, 'CommandTA') 
-            elseif Scout > 0 and TAPrior.UnitProductionT1 >= 100 then 
-               self:SCTAManagerLoopBody(builder, 'Scout')
-            end
-        elseif not self.Naval then 
-            if Other > 0 and TAPrior.UnitProductionField >= 200 then 
-                self:SCTAManagerLoopBody(builder, 'Other')
-            elseif Scout > 0 and not self.Main then 
-                self:SCTAManagerLoopBody(builder, 'Scout')
-            elseif Engineer > 4 and TAPrior.UnitProduction >= 75 then 
-                self:SCTAManagerLoopBody(builder, 'EngineerForm')
-            elseif Structure > 1 and TAPrior.UnitProduction >= 75 then 
-                self:SCTAManagerLoopBody(builder, 'StructureForm')
-            elseif Land > 2 then 
-                self:SCTAManagerLoopBody(builder, 'LandForm')    
-            elseif Air > 0 then 
-                self:SCTAManagerLoopBody(builder, 'AirForm') 
+        local Structure = poolPlatoon:GetNumCategoryUnits(categories.STRUCTURE * categories.CQUEMOV)
+        if Command > 0 and TAPrior.UnitProduction >= 75 and self.Main and bType == 'CommandTA' then 
+            self:SCTAManagerLoopBody(builder, 'CommandTA')
+        elseif bType == 'Scout' and Scout > 0 and self.Main and TAPrior.UnitProductionT1 >= 100 then
+            self:SCTAManagerLoopBody(builder, 'Scout')
+        elseif bType == 'Scout' and Scout > 0 and not self.Main then
+            self:SCTAManagerLoopBody(builder, 'Scout')    
+        elseif bType == 'LandForm' and Land > 0 then
+            self:SCTAManagerLoopBody(builder, 'LandForm')
+        elseif bType == 'Other' and Other > 0 and TAPrior.UnitProductionField >= 200 then
+            self:SCTAManagerLoopBody(builder, 'Other')
+        elseif Engineer > 4 and TAPrior.UnitProduction >= 75 and bType == 'EngineerForm' then 
+            self:SCTAManagerLoopBody(builder, 'EngineerForm')
+        elseif Structure > 1 and TAPrior.UnitProduction >= 75 and bType == 'StructureForm' then 
+            self:SCTAManagerLoopBody(builder, 'StructureForm')
+        elseif Air > 0 and bType == 'AirForm' then 
+            self:SCTAManagerLoopBody(builder, 'AirForm') 
+        elseif Sea > 1 and self.Naval and bType == 'SeaForm' then 
+                self:SCTAManagerLoopBody(builder, 'SeaForm')    
             end
         end
     end,
-        
-    ----return self:ForkThread(self.SCTAManagerLoopBody
+    
+    ----return self:ForkThread(self.SCTAManagerLoopBody, self
 
     SCTAManagerLoopBody = function(self,builder,bType)
         --BuilderManager.ManagerLoopBody(self,builder,bType)

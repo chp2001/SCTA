@@ -23,11 +23,10 @@ BuilderGroup {
         PlatoonAIPlan = 'ReclaimStructuresAI',
         PriorityFunction = TAPrior.FactoryReclaim,
         Priority = 100,
-        FormRadius = 100,
         InstanceCount = 5,
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, PLANT}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, LAB * categories.AIR} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, LAB} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT} },
             { TAutils, 'LessMassStorageMaxTA', { 0.2}},    
             },
@@ -44,7 +43,6 @@ BuilderGroup {
         PlatoonAIPlan = 'ReclaimStructuresAI',
         PriorityFunction = TAPrior.TechEnergyExist,
         Priority = 85,
-        FormRadius = 100,
         InstanceCount = 4,
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, WIND + SOLAR}},
@@ -63,7 +61,6 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
         PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 125,
-        FormRadius = 100,
         InstanceCount = 5,
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AIR * categories.ENGINEER}},
@@ -80,7 +77,6 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         PlatoonAIPlan = 'SCTAReclaimAI',
-        FormRadius = 100,
         Priority = 125,
         InstanceCount = 2,
         BuilderConditions = {
@@ -124,7 +120,6 @@ BuilderGroup {
         PriorityFunction = TAPrior.EnergyBeingBuilt,
         Priority = 75,
         InstanceCount = 2,
-        FormRadius = 100,
         BuilderConditions = {
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.FIELDENGINEER}},
             { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },

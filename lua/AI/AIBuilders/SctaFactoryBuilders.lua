@@ -179,54 +179,6 @@ BuilderConditions = {
         }
     },
     Builder {
-        BuilderName = 'SCTAAI T3AirFactory',
-        PlatoonTemplate = 'EngineerBuilderSCTA3',
-        PriorityFunction = TAPrior.PlatformBeingBuilt,
-        Priority = 140,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH3} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.AIR * PLATFORM} },
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-        },
-        BuilderType = 'T3TA',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T3AirFactory',
-                }
-            }
-        }
-    },
-    Builder {
-        BuilderName = 'SCTAAI T3LAND Hover Factory',
-        PlatoonTemplate = 'EngineerBuilderSCTA3',
-        PriorityFunction = TAPrior.PlatformBeingBuilt,
-        Priority = 143,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH3} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.HOVER * PLATFORM} },
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-        },
-        BuilderType = 'T3TA',
-        BuilderData = {
-            NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 2,
-            Construction = {
-                BuildClose = true,
-                BuildStructures = {
-                    'T3LandFactory',
-                }
-            }
-        }
-    },
-    Builder {
         BuilderName = 'SCTAAI T3LAND Hover Factory T2',
         PlatoonTemplate = 'EngineerBuilderSCTA23',
         PriorityFunction = TAPrior.ProductionT3,
@@ -282,6 +234,7 @@ BuilderConditions = {
         Priority = 160,
         InstanceCount = 1,
         BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.ARTILLERY * categories.STRUCTURE} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'T3TA',

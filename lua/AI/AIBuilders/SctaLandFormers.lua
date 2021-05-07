@@ -20,7 +20,7 @@ BuilderGroup {
         PlatoonAIPlan = 'SCTAStrikeForceAIEarly',
         Priority = 100,
         InstanceCount = 50,
-        BuilderType = 'Scout',
+        BuilderType = 'LandForm',
         BuilderData = {
             NeverGuardBases = false,
             NeverGuardEngineers = false,
@@ -38,6 +38,9 @@ BuilderGroup {
         Priority = 125,
         InstanceCount = 2,
         BuilderType = 'Scout',
+        BuilderData = {
+        LocationType = 'LocationType',
+        },
         BuilderConditions = {
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, categories.SCOUT * categories.LAND * categories.MOBILE } },
          },
@@ -76,7 +79,7 @@ BuilderGroup {
         Priority = 100,
         InstanceCount = 50,
         PriorityFunction = TAPrior.UnitProductionT1,
-        BuilderType = 'Scout',
+        BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 75,
             NeverGuardBases = true,
@@ -98,7 +101,7 @@ BuilderGroup {
         PlatoonAIPlan = 'SCTAStrikeForceAI', -- The platoon template tells the AI what units to include, and how to use them.
         PriorityFunction = TAPrior.UnitProduction,
         Priority = 150,
-        InstanceCount = 25,
+        InstanceCount = 50,
         BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 75,
@@ -118,7 +121,7 @@ BuilderGroup {
         PlatoonAIPlan = 'SCTAStrikeForceAIEndgame', -- The platoon template tells the AI what units to include, and how to use them.
         PriorityFunction = TAPrior.StructureProductionT2,
         Priority = 250,
-        InstanceCount = 10,
+        InstanceCount = 50,
         BuilderType = 'AirForm',
         BuilderData = {
             ThreatSupport = 75,
@@ -128,7 +131,7 @@ BuilderGroup {
             LocationType = 'LocationType',
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 9, GROUND - SPECIAL}},
+            --{ UCBC, 'PoolGreaterAtLocation', { 'LocationType', 9, GROUND - SPECIAL}},
         },
     },
     ----AggressivePlatoons
@@ -138,7 +141,7 @@ BuilderGroup {
         PlatoonAIPlan = 'HuntSCTAAI',
         Priority = 125,
         InstanceCount = 50,
-        BuilderType = 'Scout',
+        BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 10,
             NeverGuardBases = false,
@@ -187,7 +190,6 @@ BuilderGroup {
         PriorityFunction = TAPrior.TechEnergyExist,
         Priority = 210,
         InstanceCount = 50,
-        FormRadius = 1000,
         BuilderType = 'AirForm',
         BuilderData = {
             ThreatSupport = 75,
@@ -201,7 +203,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 9, GROUND * (RANGE + categories.FIELDENGINEER)} },
+            --{ UCBC, 'PoolGreaterAtLocation', { 'LocationType', 9, GROUND * (RANGE + categories.FIELDENGINEER)} },
         },
     },
 }

@@ -29,7 +29,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'T1AirScoutFormSCTA',
-    Plan = 'ScoutingAISorian',
+    Plan = 'ScoutingAISCTA',
     ---PlatoonType = 'Scout',
     GlobalSquads = {
         { SKY * categories.SCOUT * categories.OVERLAYRADAR, 1, 1, 'scout', 'None' },

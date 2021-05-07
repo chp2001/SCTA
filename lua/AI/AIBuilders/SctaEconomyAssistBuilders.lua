@@ -26,7 +26,7 @@ BuilderGroup {
         FormRadius = 100,
         InstanceCount = 5,
         BuilderConditions = {
-            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, PLANT}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, PLANT}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, LAB * categories.AIR} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT} },
             { TAutils, 'LessMassStorageMaxTA', { 0.2}},    
@@ -47,7 +47,7 @@ BuilderGroup {
         FormRadius = 100,
         InstanceCount = 4,
         BuilderConditions = {
-            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, WIND + SOLAR}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, WIND + SOLAR}},
             { TAutils, 'GreaterThanEconEnergyTAEfficiency', {1.05 }},
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             },
@@ -66,7 +66,7 @@ BuilderGroup {
         FormRadius = 100,
         InstanceCount = 5,
         BuilderConditions = {
-            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.AIR * categories.ENGINEER}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AIR * categories.ENGINEER}},
             { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             },
@@ -93,7 +93,7 @@ BuilderGroup {
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
-        BuilderType = 'EngineerForm',
+        BuilderType = 'Other',
     },
     Builder {
         BuilderName = 'SCTA Engineer Finish',

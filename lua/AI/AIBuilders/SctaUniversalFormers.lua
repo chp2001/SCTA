@@ -18,7 +18,7 @@ BuilderGroup {
         PlatoonTemplate = 'StrikeForceSCTATerrain', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 200,
         InstanceCount = 2,
-        BuilderType = 'Other',
+        BuilderType = 'LandForm',
         BuilderData = {
             NeverGuardBases = true,
             NeverGuardEngineers = true,
@@ -34,9 +34,10 @@ BuilderGroup {
         PlatoonTemplate = 'LABSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         PlatoonAIPlan = 'HuntAILABSCTA',
         Priority = 150,
-        InstanceCount = 1,
-        BuilderType = 'Scout',
+        InstanceCount = 3,
+        BuilderType = 'LandForm',
         BuilderData = {
+            LocationType = 'LocationType',
             Lab = true,
             NeverGuardBases = true,
             NeverGuardEngineers = true,
@@ -52,9 +53,10 @@ BuilderGroup {
         PlatoonTemplate = 'LABSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         PlatoonAIPlan = 'HuntAILABSCTA',
         Priority = 300,
-        InstanceCount = 1,
-        BuilderType = 'Scout',
+        InstanceCount = 3,
+        BuilderType = 'AirForm',
         BuilderData = {
+            LocationType = 'LocationType',
             Lab = true,
             NeverGuardBases = true,
             NeverGuardEngineers = true,
@@ -70,8 +72,8 @@ BuilderGroup {
         PlatoonTemplate = 'GuardSCTA',
         PlatoonAIPlan = 'GuardEngineer',
         Priority = 100,
-        InstanceCount = 6,
-        BuilderType = 'Scout',
+        InstanceCount = 5,
+        BuilderType = 'LandForm',
         BuilderData = {
             NeverGuardBases = true,
             LocationType = 'LocationType',
@@ -215,7 +217,7 @@ BuilderGroup {
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.NUKE * categories.STRUCTURE * categories.TECH3} },
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.NUKE * categories.STRUCTURE * categories.TECH3}},
             },
-        BuilderType = 'CommandTA',
+        BuilderType = 'StructureForm',
     },
     Builder {
         BuilderName = 'SCTAAntiNukeAI',
@@ -226,7 +228,7 @@ BuilderGroup {
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.ANTIMISSILE * categories.STRUCTURE * categories.TECH3} },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.ANTIMISSILE * categories.STRUCTURE * categories.TECH3}},
             },
-        BuilderType = 'CommandTA',
+        BuilderType = 'StructureForm',
     },
     Builder {
         BuilderName = 'SCTA Engineer Assist Gantry Field Production',
@@ -295,7 +297,7 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'CommandTA',
+        BuilderType = 'Other',
     },
     Builder {
         BuilderName = 'SCTA CDR Assist Structure',
@@ -309,7 +311,7 @@ BuilderGroup {
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.ENGINEER * (categories.COMMAND + categories.SUBCOMMANDER)} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
-        BuilderType = 'CommandTA',
+        BuilderType = 'Other',
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',

@@ -108,12 +108,12 @@ TABuildRestrictions = function(self)
     local HQCategory = ((categories.RESEARCH + categories.GATE) * (categories.ARM + categories.CORE))
     local PlantsCat = ((categories.FACTORY + categories.GATE) * (categories.ARM + categories.CORE))
         if self.FindHQType(aiBrain, HQCategory * (categories.TECH3 + categories.EXPERIMENTAL)) or 
-        NumberOfPlantsT2(aiBrain, PlantsCat * (categories.TECH2)) > 10 then
+        NumberOfPlantsT2(aiBrain, PlantsCat * (categories.TECH2)) > 4 then
                 self:RemoveBuildRestriction(categories.TECH2)
                 self:RemoveBuildRestriction(categories.TECH3)
             return  
         elseif self.FindHQType(aiBrain, PlantsCat * (categories.TECH2 + categories.EXPERIMENTAL)) or 
-        NumberOfPlantsT1(aiBrain, PlantsCat * (categories.TECH1)) > 4 then
+        NumberOfPlantsT1(aiBrain, PlantsCat * (categories.TECH1)) > 10 then
                 self:RemoveBuildRestriction(categories.TECH2)
             return    
     end

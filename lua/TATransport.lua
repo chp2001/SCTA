@@ -10,17 +10,11 @@ TATransport = Class(AirTransport)
         self.FxMovement = TrashBag()
 	end,
 	
-
-
-	
-	
 	OnStopBeingBuilt = function(self,builder,layer)
 		AirTransport.OnStopBeingBuilt(self,builder,layer)
 		self.KillingInProgress = nil
 	end,
 
-
-	
     OnKilled = function(self, instigator, type, overkillRatio)
         local layer = self:GetCurrentLayer()
         self.Dead = true

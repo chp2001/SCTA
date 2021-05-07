@@ -70,7 +70,7 @@ UnitBlueprint {
         TAMovement = {
 		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
 		Scale = 0.5,
-		Bones = {'wake01', 'wake02', 'wake03', 'wake04',},
+		Bones = {'wake01', 'wake02'},
         },
 	},
         UniformScale = 0.16,

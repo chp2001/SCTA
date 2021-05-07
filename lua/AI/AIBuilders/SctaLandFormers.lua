@@ -38,6 +38,9 @@ BuilderGroup {
         Priority = 125,
         InstanceCount = 2,
         BuilderType = 'Scout',
+        BuilderData = {
+        LocationType = 'LocationType',
+        },
         BuilderConditions = {
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, categories.SCOUT * categories.LAND * categories.MOBILE } },
          },

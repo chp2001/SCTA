@@ -13,10 +13,10 @@ local RANGE = (categories.ARTILLERY + categories.SILO + categories.ANTIAIR)
 
 PlatoonTemplate {
     Name = 'T1LandScoutFormSCTA',
-    Plan = 'ScoutingAI',
+    Plan = 'ScoutingAISCTA',
     ---PlatoonType = 'Scout',
     GlobalSquads = {
-        { GROUND * categories.SCOUT, 1, 1, 'scout', 'None' },
+        { GROUND * categories.SCOUT, 1, 1, 'scout', 'none' },
     }
 }
 

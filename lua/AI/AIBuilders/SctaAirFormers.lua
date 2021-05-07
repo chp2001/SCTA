@@ -16,6 +16,9 @@ BuilderGroup {
         Priority = 150,
         InstanceCount = 5,
         BuilderType = 'Scout',
+        BuilderData = {
+            LocationType = 'LocationType',
+        }, 
         BuilderConditions = {
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, SKY * categories.SCOUT * categories.OVERLAYRADAR} },
          },
@@ -27,7 +30,10 @@ BuilderGroup {
         PriorityFunction = TAPrior.UnitProductionT1AIR,
         Priority = 100,
         InstanceCount = 20,
-        BuilderType = 'AirForm',        
+        BuilderType = 'AirForm',
+        BuilderData = {
+            LocationType = 'LocationType',
+        },        
         BuilderConditions = { 
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, SKY * categories.BOMBER} },
             },
@@ -40,7 +46,10 @@ BuilderGroup {
         Priority = 100,
         PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
         InstanceCount = 20,
-        BuilderType = 'AirForm',     
+        BuilderType = 'AirForm', 
+        BuilderData = {
+            LocationType = 'LocationType',
+        },     
         BuilderConditions = { 
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, SKY * categories.ANTIAIR * categories.TECH1} },
         },
@@ -55,6 +64,7 @@ BuilderGroup {
         PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
         BuilderType = 'AirForm',
         BuilderData = {
+            LocationType = 'LocationType',
             Energy = true,
         },        
         BuilderConditions = { 
@@ -71,8 +81,9 @@ BuilderGroup {
         PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
         BuilderType = 'AirForm',
         BuilderData = {
+            LocationType = 'LocationType',
             Energy = true,
-        },        
+        },         
         BuilderConditions = { 
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, SKY * categories.ANTIAIR - categories.BOMBER - categories.GROUNDATTACK} },
         },

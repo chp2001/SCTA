@@ -19,6 +19,7 @@ BuilderGroup {
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, categories.NAVAL * categories.SCOUT } },
          },
          BuilderData = {
+            LocationType = 'LocationType',
             UseFormation = 'AttackFormation',
             ThreatWeights = {
                 IgnoreStrongerTargetsRatio = 100.0,  #DUNCAN - uncommented, was 100
@@ -43,6 +44,7 @@ BuilderGroup {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.NAVAL * categories.SCOUT } },
          },
          BuilderData = {
+            LocationType = 'LocationType',
             UseFormation = 'AttackFormation',
             ThreatWeights = {
                 IgnoreStrongerTargetsRatio = 100.0,  #DUNCAN - uncommented, was 100
@@ -67,6 +69,7 @@ BuilderGroup {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.SUBMERSIBLE - categories.ENGINEER} },
          },
          BuilderData = {
+            LocationType = 'LocationType',
             UseFormation = 'AttackFormation',
             ThreatWeights = {
                 IgnoreStrongerTargetsRatio = 100.0,  #DUNCAN - uncommented, was 100
@@ -88,6 +91,7 @@ BuilderGroup {
         InstanceCount = 20,
         BuilderType = 'SeaForm',
         BuilderData = {
+            LocationType = 'LocationType',
             UseFormation = 'AttackFormation',
             ThreatWeights = {
                 IgnoreStrongerTargetsRatio = 100.0,  #DUNCAN - uncommented, was 100
@@ -113,6 +117,7 @@ BuilderGroup {
         InstanceCount = 25,
         BuilderType = 'SeaForm',
         BuilderData = {
+            LocationType = 'LocationType',
             UseFormation = 'AttackFormation',
             ThreatWeights = {
                 IgnoreStrongerTargetsRatio = 100.0,  #DUNCAN - uncommented, was 100
@@ -140,6 +145,7 @@ BuilderGroup {
         PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
         BuilderType = 'SeaForm',
         BuilderData = {
+            LocationType = 'LocationType',
             Energy = true,
         },        
         BuilderConditions = { 
@@ -154,6 +160,7 @@ BuilderGroup {
         InstanceCount = 25,
         BuilderType = 'SeaForm',
         BuilderData = {
+            LocationType = 'LocationType',
             Small = true,
             NeverGuardBases = false,
             NeverGuardEngineers = false,

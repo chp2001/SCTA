@@ -34,9 +34,10 @@ BuilderGroup {
         PlatoonTemplate = 'LABSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         PlatoonAIPlan = 'HuntAILABSCTA',
         Priority = 150,
-        InstanceCount = 1,
+        InstanceCount = 3,
         BuilderType = 'Scout',
         BuilderData = {
+            LocationType = 'LocationType',
             Lab = true,
             NeverGuardBases = true,
             NeverGuardEngineers = true,
@@ -52,9 +53,10 @@ BuilderGroup {
         PlatoonTemplate = 'LABSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         PlatoonAIPlan = 'HuntAILABSCTA',
         Priority = 300,
-        InstanceCount = 1,
+        InstanceCount = 3,
         BuilderType = 'Scout',
         BuilderData = {
+            LocationType = 'LocationType',
             Lab = true,
             NeverGuardBases = true,
             NeverGuardEngineers = true,
@@ -70,7 +72,7 @@ BuilderGroup {
         PlatoonTemplate = 'GuardSCTA',
         PlatoonAIPlan = 'GuardEngineer',
         Priority = 100,
-        InstanceCount = 6,
+        InstanceCount = 5,
         BuilderType = 'Scout',
         BuilderData = {
             NeverGuardBases = true,

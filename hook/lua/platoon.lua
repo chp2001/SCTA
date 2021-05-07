@@ -1551,7 +1551,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local maxRadius = data.SearchRadius or 1000
         while aiBrain:PlatoonExists(self) do
             if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 25 then
-                self:MergeWithNearbyPlatoonsSCTA('SCTAStrikeForceAI', 'SCTAStrikeForceAIEndgame', 5, true)
+                self:MergeWithNearbyPlatoonsSCTA('SCTAStrikeForceAI', 'SCTAStrikeForceAIEndgame', 5)
             end
             if not target or target:IsDead() then
                 if aiBrain:GetCurrentEnemy() and aiBrain:GetCurrentEnemy():IsDefeated() then
@@ -1700,7 +1700,7 @@ Platoon = Class(SCTAAIPlatoon) {
             aiBrain:PickEnemyLogic()
         end
         if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 20 then
-            self:MergeWithNearbyPlatoonsSCTA('AttackSCTAForceAI', 'AttackSCTAForceAIEndGame', 5, true)
+            self:MergeWithNearbyPlatoonsSCTA('AttackSCTAForceAI', 'AttackSCTAForceAIEndGame', 5)
         end
 
         -- deal with lost-puppy transports
@@ -1848,8 +1848,7 @@ Platoon = Class(SCTAAIPlatoon) {
             end
 
             if (oldNumberOfUnitsInPlatoon != numberOfUnitsInPlatoon) then
-                self:StopAttack()
-                if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 15 then
+                if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 10 then
                 self:SetPlatoonFormationOverride(PlatoonFormation)
                 end
             end

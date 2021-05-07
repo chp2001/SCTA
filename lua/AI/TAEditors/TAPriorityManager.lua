@@ -222,7 +222,7 @@ GantryConstruction = function(self, aiBrain)
     if Factory(aiBrain,  2, PLATFORM)  then
         return 175
     elseif Factory(aiBrain,  6, LAB) then
-        return 100
+        return 25
     else
         return 0
     end

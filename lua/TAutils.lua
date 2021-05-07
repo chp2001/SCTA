@@ -113,7 +113,7 @@ TABuildRestrictions = function(self)
                 self:RemoveBuildRestriction(categories.TECH3)
             return  
         elseif self.FindHQType(aiBrain, PlantsCat * (categories.TECH2 + categories.EXPERIMENTAL)) or 
-        NumberOfPlantsT1(aiBrain, PlantsCat * (categories.TECH1)) > 10 then
+        NumberOfPlantsT1(aiBrain, PlantsCat * (categories.TECH1)) > 4 then
                 self:RemoveBuildRestriction(categories.TECH2)
             return    
     end

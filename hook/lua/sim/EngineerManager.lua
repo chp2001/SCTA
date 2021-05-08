@@ -45,67 +45,12 @@ EngineerManager = Class(SCTAEngineerManager) {
         if not self.Brain.SCTAAI then
             return SCTAEngineerManager.LowMass(self)
         end
-        local econ = AIUtils.AIGetEconomyNumbers(self.Brain)
-        local pauseVal = 0
-
-        self.Brain.LowMassMode = true
-        --LOG('*TACanceling2E', self)
-        pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.DEFENSE)
-
-        if pauseVal != true then
-            --LOG('*TACanceling1E', self)
-        pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.FACTORY)
-        end
-
-        -- Disable those building mobile units (through assist or experimental)
-        if pauseVal != true then
-            pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ExperimentalCheck)
-        end
-
-        -- Disable those building mobile units (through assist or experimental)
-        if pauseVal != true then
-            --pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.MOBILE - categories.EXPERIMENTAL)
-        end
-
-        -- Disable those building mobile units (through assist or experimental)
-        if pauseVal != true then
-            --pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.STRUCTURE - categories.MASSEXTRACTION - categories.ENERGYPRODUCTION - categories.FACTORY - categories.EXPERIMENTAL)
-        end
-
-        self:ForkThread(self.LowMassRepeatThread)
     end,
 
     LowEnergy = function(self)
         if not self.Brain.SCTAAI then
             return SCTAEngineerManager.LowEnergy(self)
         end
-        local econ = AIUtils.AIGetEconomyNumbers(self.Brain)
-        local pauseVal = 0
-
-        self.Brain.LowEnergyMode = true
-
-        --LOG('*AI DEBUG: Shutting down units for energy needs')
-
-        -- Disable fabricators if mass in > mass out until 10% under
-        if pauseVal != true then
-            pauseVal = self:DisableEnergyGroup(self.ConsumptionUnits.Fabricators, econ, pauseVal, self.MassDrainCheck)
-        end
-
-        if pauseVal != true then
-            pauseVal = self:DisableEnergyGroup(self.ConsumptionUnits.MobileIntel, econ, pauseVal)
-        end
-
-        -- Disable engineers assisting non-econ until 10% under
-        if pauseVal != true then
-            pauseVal = self:DisableEnergyGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.STRUCTURE - categories.ENERGYPRODUCTION - categories.MASSPRODUCTION)
-        end
-
-        -- Disable Intel if mass in > mass out until 10% under
-        if pauseVal != true then
-            pauseVal = self:DisableEnergyGroup(self.ConsumptionUnits.Intel, econ, pauseVal)
-        end
-
-        self:ForkThread(self.LowEnergyRepeatThread)
     end,
 
 

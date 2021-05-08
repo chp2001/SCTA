@@ -38,7 +38,7 @@ AIBrain = Class(SCTAAIBrainClass) {
        
 
     AddBuilderManagers = function(self, position, radius, baseName, useCenter)
-        -- Only use this with AI-Uveso
+        -- Only use this with AI-SCTAAI
          if not self.SCTAAI then
              return SCTAAIBrainClass.AddBuilderManagers(self, position, radius, baseName, useCenter)
          end
@@ -240,111 +240,6 @@ AIBrain = Class(SCTAAIBrainClass) {
             v.PlatoonFormManager:SortBuilderList('Other')
             v.PlatoonFormManager:SortBuilderList('StructureForm')
         end
-    end,
-
-
-    UnderEnergyThreshold = function(self)
-        if not self.Brain.SCTAAI then
-            return SCTAAIBrainClass.UnderEnergyThreshold(self)
-        end
-        LOG('IEXIST')
-        self:SetupOverEnergyStatTrigger(250)
-        for k, v in self.BuilderManagers do
-           v.EngineerManager:LowEnergy()
-        end
-    end,
-
-    OverEnergyThreshold = function(self)
-        if not self.Brain.SCTAAI then
-            return SCTAAIBrainClass.OverEnergyThreshold(self)
-        end
-        LOG('IEXIST2')
-        self:SetupUnderEnergyStatTrigger(200)
-        for k, v in self.BuilderManagers do
-            v.EngineerManager:RestoreEnergy()
-        end
-    end,
-
-    UnderMassThreshold = function(self)
-        if not self.Brain.SCTAAI then
-            return SCTAAIBrainClass.UnderMassThreshold(self)
-        end
-        LOG('IEXIST3')
-        self:SetupOverMassStatTrigger(125)
-        for k, v in self.BuilderManagers do
-            v.EngineerManager:LowMass()
-        end
-    end,
-
-    OverMassThreshold = function(self)
-        if not self.Brain.SCTAAI then
-            return SCTAAIBrainClass.OverMassThreshold(self)
-        end
-        LOG('IEXIST4')
-        self:SetupUnderMassStatTrigger(100)
-        for k, v in self.BuilderManagers do
-            v.EngineerManager:RestoreMass()
-        end
-    end,
-
-    SetupUnderEnergyStatTrigger = function(self, threshold)
-        if not self.Brain.SCTAAI then
-            return SCTAAIBrainClass.SetupUnderEnergyStatTrigger(self, threshold)
-        end
-        import('/lua/scenariotriggers.lua').CreateArmyStatTrigger(self.UnderEnergyThreshold, self, 'SkirmishUnderEnergyThreshold',
-            {
-                {
-                    StatType = 'Economy_Stored_Energy',
-                    CompareType = 'LessThanOrEqual',
-                    Value = threshold,
-                },
-            }
-        )
-    end,
-
-    SetupOverEnergyStatTrigger = function(self, threshold)
-        if not self.Brain.SCTAAI then
-            return SCTAAIBrainClass.SetupOverEnergyStatTrigger(self, threshold)
-        end
-        import('/lua/scenariotriggers.lua').CreateArmyStatTrigger(self.OverEnergyThreshold, self, 'SkirmishOverEnergyThreshold',
-            {
-                {
-                    StatType = 'Economy_Stored_Energy',
-                    CompareType = 'GreaterThanOrEqual',
-                    Value = threshold,
-                },
-            }
-        )
-    end,
-
-    SetupUnderMassStatTrigger = function(self, threshold)
-        if not self.Brain.SCTAAI then
-            return SCTAAIBrainClass.SetupUnderMassStatTrigger(self, threshold)
-        end
-        import('/lua/scenariotriggers.lua').CreateArmyStatTrigger(self.UnderMassThreshold, self, 'SkirmishUnderMassThreshold',
-            {
-                {
-                    StatType = 'Economy_Stored_Mass',
-                    CompareType = 'LessThanOrEqual',
-                    Value = threshold,
-                },
-            }
-        )
-    end,
-
-    SetupOverMassStatTrigger = function(self, threshold)
-        if not self.Brain.SCTAAI then
-            return SCTAAIBrainClass.SetupOverMassStatTrigger(self, threshold)
-        end
-        import('/lua/scenariotriggers.lua').CreateArmyStatTrigger(self.OverMassThreshold, self, 'SkirmishOverMassThreshold',
-            {
-                {
-                    StatType = 'Economy_Stored_Mass',
-                    CompareType = 'GreaterThanOrEqual',
-                    Value = threshold,
-                },
-            }
-        )
     end,
 
     InitializePlatoonBuildManager = function(self)
@@ -842,4 +737,32 @@ AIBrain = Class(SCTAAIBrainClass) {
 
         return numFactories
     end,
+ 
+     EconomyMonitor = function(self)
+         -- Only use this with AI-SCTAAI
+         if not self.SCTAAI then
+             return SCTAAIBrainClass.EconomyMonitor(self)
+         end
+         coroutine.yield(10)
+         -- We are leaving this forked thread here because we don't need it.
+         KillThread(self.EconomyMonitorThread)
+         self.EconomyMonitorThread = nil
+     end,
+ 
+    ExpansionHelpThread = function(self)
+        -- Only use this with AI-SCTAAI
+         if not self.SCTAAI then
+             return SCTAAIBrainClass.ExpansionHelpThread(self)
+         end
+         coroutine.yield(10)
+         -- We are leaving this forked thread here because we don't need it.
+         KillThread(CurrentThread())
+     end,
+ 
+     InitializeEconomyState = function(self)
+         -- Only use this with AI-SCTAAI
+         if not self.SCTAAI then
+             return SCTAAIBrainClass.InitializeEconomyState(self)
+         end
+     end,
 }

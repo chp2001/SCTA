@@ -17,14 +17,15 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
 
         self.Location = location
         self.Radius = radius
+        self.OriginalRadius = self.Radius
         self.LocationType = lType
         --LOG('*TALocation', lType)
         if string.find(lType, 'Naval') then
-        self.Naval = true
-        --LOG('*TALocation3', self.LocationType)
-        elseif lType == 'MAIN' then
-        self.Main = true
-        --LOG('*TALocation2', self.Main)
+            self.Naval = true
+            LOG('*TALocation3', self.LocationType)
+            elseif lType == 'MAIN' then
+            self.Main = true
+            LOG('*TALocation2', self.Main)
         end
         --LOG('*TATerrain', self.Naval)
         --LOG('*TATerrain2', self.Radius)
@@ -57,38 +58,63 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
             return SCTAPlatoonFormManager.ManagerLoopBody(self,builder,bType)
         end
         BuilderManager.ManagerLoopBody(self,builder,bType)
-        local poolPlatoon = self.Brain:GetPlatoonUniquelyNamed('ArmyPool')
-        local Sea = poolPlatoon:GetNumCategoryUnits(categories.NAVAL * categories.MOBILE)
-        local Scout = poolPlatoon:GetNumCategoryUnits( categories.armpw + categories.corgator + ((categories.SCOUT + categories.AMPHIBIOUS) * categories.MOBILE) - categories.ENGINEER - categories.NAVAL)
-        local Land = poolPlatoon:GetNumCategoryUnits(categories.LAND * categories.MOBILE - categories.ENGINEER - categories.SCOUT)
-        local Air = poolPlatoon:GetNumCategoryUnits(categories.AIR * categories.MOBILE - categories.ENGINEER - categories.SCOUT)  
-        local Engineer = poolPlatoon:GetNumCategoryUnits(categories.ENGINEER * categories.MOBILE - categories.COMMAND - categories.FIELDENGINEER - categories.SUBCOMMANDER)
-        local Command = poolPlatoon:GetNumCategoryUnits(categories.COMMAND + categories.SUBCOMMANDER)
-        local Other = poolPlatoon:GetNumCategoryUnits(categories.FIELDENGINEER + categories.EXPERIMENTAL)
-        local Structure = poolPlatoon:GetNumCategoryUnits(categories.STRUCTURE * categories.CQUEMOV)
-        if Command > 0 and TAPrior.UnitProduction >= 75 and self.Main and bType == 'CommandTA' then 
-            self:SCTAManagerLoopBody(builder, 'CommandTA')
-        elseif bType == 'Scout' and Scout > 0 and self.Main and TAPrior.UnitProductionT1 >= 100 then
-            self:SCTAManagerLoopBody(builder, 'Scout')
-        elseif bType == 'Scout' and Scout > 0 and not self.Main then
-            self:SCTAManagerLoopBody(builder, 'Scout')    
-        elseif bType == 'LandForm' and Land > 0 then
-            self:SCTAManagerLoopBody(builder, 'LandForm')
-        elseif bType == 'Other' and Other > 0 and TAPrior.UnitProductionField >= 200 then
-            self:SCTAManagerLoopBody(builder, 'Other')
-        elseif Engineer > 4 and TAPrior.UnitProduction >= 75 and bType == 'EngineerForm' then 
-            self:SCTAManagerLoopBody(builder, 'EngineerForm')
-        elseif Structure > 1 and TAPrior.UnitProduction >= 75 and bType == 'StructureForm' then 
-            self:SCTAManagerLoopBody(builder, 'StructureForm')
-        elseif Air > 0 and bType == 'AirForm' then 
-            self:SCTAManagerLoopBody(builder, 'AirForm') 
-        elseif Sea > 1 and self.Naval and bType == 'SeaForm' then 
-                self:SCTAManagerLoopBody(builder, 'SeaForm')    
-            end
+        ---local builder = self:GetHighestBuilder(bType, {builder})
+            --local pool = self.Brain:GetPlatoonUniquelyNamed('ArmyPool')
+            local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
+        if not self.Naval then
+            if TAPrior.UnitProduction >= 75 and (bType == 'EngineerForm' or bType == 'StructureForm' or self.Main and bType == 'CommandTA' or TAPrior.UnitProductionField >= 200 and bType == 'Other') then
+                if bType == 'EngineerForm' then
+                    self.EngineerForm = GetUnitsAroundPoint(self.Brain, categories.ENGINEER - categories.COMMAND - categories.FIELDENGINEER - categories.SUBCOMMANDER, self.Location, self.Radius, 'Ally')
+                    if self.EngineerForm > 4 then
+                        self:SCTAManagerLoopBody(builder, bType)
+                    end
+                elseif bType == 'StructureForm' then
+                    self.StructureForm = GetUnitsAroundPoint(self.Brain, categories.STRUCTURE * categories.CQUEMOV, self.Location, self.Radius, 'Ally')
+                    if self.StructureForm > 2 then 
+                        self:SCTAManagerLoopBody(builder, bType)
+                    end
+                elseif bType == 'Other' and TAPrior.UnitProductionField >= 200 then
+                    self.Other = GetUnitsAroundPoint(self.Brain, categories.FIELDENGINEER + categories.EXPERIMENTAL, self.Location, self.Radius, 'Ally')
+                    if self.Other > 0 then 
+                        self:SCTAManagerLoopBody(builder, bType)
+                    end
+                elseif self.Main and bType == 'CommandTA' then
+                    self.CommandTA = GetUnitsAroundPoint(self.Brain, categories.COMMAND + categories.EXPERIMENTAL, self.Location, self.Radius, 'Ally')
+                    if self.CommandTA > 0 then
+                        self:SCTAManagerLoopBody(builder, bType)
+                    end
+                end 
+                LOG('*TATerrain3', self.Main)
+            elseif bType == 'LandForm' then 
+                    self.LandForm = GetUnitsAroundPoint(self.Brain, categories.LAND * categories.MOBILE - categories.ENGINEER - categories.SCOUT, self.Location, self.Radius, 'Ally')
+                    if self.LandForm > 2 then
+                        self:SCTAManagerLoopBody(builder, bType)
+                    end    
+            elseif bType == 'AirForm' then 
+                    self.AirForm = GetUnitsAroundPoint(self.Brain, categories.AIR * categories.MOBILE - categories.ENGINEER - categories.SCOUT, self.Location, self.Radius, 'Ally')
+                    if self.AirForm > 0 then
+                        self:SCTAManagerLoopBody(builder, bType)
+                    end
+            elseif bType == 'Scout' then
+                    self.Scout = GetUnitsAroundPoint(self.Brain, (categories.armpw + categories.corgator + categories.SCOUT + categories.AMPHIBIOUS) - categories.ENGINEER, self.Location, self.Radius, 'Ally')
+                    if self.Scout > 0 then
+                        if not self.Main then
+                            self:SCTAManagerLoopBody(builder, bType)
+                        elseif self.Main and TAPrior.UnitProductionT1 >= 100 then 
+                            self:SCTAManagerLoopBody(builder, bType)
+                        end
+                    end
+            end    
+            elseif self.Naval and bType == 'SeaForm' then 
+                self.SeaForm = GetUnitsAroundPoint(self.Brain, categories.NAVAL * categories.MOBILE, self.Location, self.Radius, 'Ally')
+                LOG('*TATerrain', self.LocationType)
+                    if self.SeaForm > 0 then
+                        self:SCTAManagerLoopBody(builder, 'SeaForm')
+                    end
         end
     end,
-    
-    ----return self:ForkThread(self.SCTAManagerLoopBody, self
+        
+    ----return self:ForkThread(self.SCTAManagerLoopBody
 
     SCTAManagerLoopBody = function(self,builder,bType)
         --BuilderManager.ManagerLoopBody(self,builder,bType)
@@ -156,8 +182,8 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                         v.PlatoonHandle = hndl
                     end
                 end
-
-                builder:StoreHandle(hndl)
+            self.Radius = self.OriginalRadius
+            builder:StoreHandle(hndl)
             end
         end
     end,

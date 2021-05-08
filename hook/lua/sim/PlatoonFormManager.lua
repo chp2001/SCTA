@@ -22,10 +22,10 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         --LOG('*TALocation', lType)
         if string.find(lType, 'Naval') then
             self.Naval = true
-            LOG('*TALocation3', self.LocationType)
+            --LOG('*TALocation3', self.LocationType)
             elseif lType == 'MAIN' then
             self.Main = true
-            LOG('*TALocation2', self.Main)
+            --LOG('*TALocation2', self.Main)
         end
         --LOG('*TATerrain', self.Naval)
         --LOG('*TATerrain2', self.Radius)
@@ -84,7 +84,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                         self:SCTAManagerLoopBody(builder, bType)
                     end
                 end 
-                LOG('*TATerrain3', self.Main)
+                --LOG('*TATerrain3', self.Main)
             elseif bType == 'LandForm' then 
                     self.LandForm = GetUnitsAroundPoint(self.Brain, categories.LAND * categories.MOBILE - categories.ENGINEER - categories.SCOUT, self.Location, self.Radius, 'Ally')
                     if self.LandForm > 2 then
@@ -107,7 +107,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
             end    
             elseif self.Naval and bType == 'SeaForm' then 
                 self.SeaForm = GetUnitsAroundPoint(self.Brain, categories.NAVAL * categories.MOBILE, self.Location, self.Radius, 'Ally')
-                LOG('*TATerrain', self.LocationType)
+                --LOG('*TATerrain', self.LocationType)
                     if self.SeaForm > 0 then
                         self:SCTAManagerLoopBody(builder, 'SeaForm')
                     end
@@ -182,9 +182,9 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                         v.PlatoonHandle = hndl
                     end
                 end
-            self.Radius = self.OriginalRadius
             builder:StoreHandle(hndl)
             end
+            self.Radius = self.OriginalRadius
         end
     end,
 

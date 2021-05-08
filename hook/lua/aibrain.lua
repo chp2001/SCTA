@@ -242,6 +242,51 @@ AIBrain = Class(SCTAAIBrainClass) {
         end
     end,
 
+
+    UnderEnergyThreshold = function(self)
+        if not self.Brain.SCTAAI then
+            return SCTAAIBrainClass.UnderEnergyThreshold(self)
+        end
+        LOG('IEXIST')
+        self:SetupOverEnergyStatTrigger(0.175)
+        for k, v in self.BuilderManagers do
+           v.EngineerManager:LowEnergy()
+        end
+    end,
+
+    OverEnergyThreshold = function(self)
+        if not self.Brain.SCTAAI then
+            return SCTAAIBrainClass.OverEnergyThreshold(self)
+        end
+        LOG('IEXIST2')
+        self:SetupUnderEnergyStatTrigger(0.15)
+        for k, v in self.BuilderManagers do
+            v.EngineerManager:RestoreEnergy()
+        end
+    end,
+
+    UnderMassThreshold = function(self)
+        if not self.Brain.SCTAAI then
+            return SCTAAIBrainClass.UnderMassThreshold(self)
+        end
+        LOG('IEXIST3')
+        self:SetupOverMassStatTrigger(0.125)
+        for k, v in self.BuilderManagers do
+            v.EngineerManager:LowMass()
+        end
+    end,
+
+    OverMassThreshold = function(self)
+        if not self.Brain.SCTAAI then
+            return SCTAAIBrainClass.OverMassThreshold(self)
+        end
+        LOG('IEXIST4')
+        self:SetupUnderMassStatTrigger(0.1)
+        for k, v in self.BuilderManagers do
+            v.EngineerManager:RestoreMass()
+        end
+    end,
+
     InitializePlatoonBuildManager = function(self)
         if not self.SCTAAI then
             return SCTAAIBrainClass.InitializePlatoonBuildManager(self)

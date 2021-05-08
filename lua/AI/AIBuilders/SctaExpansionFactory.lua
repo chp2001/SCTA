@@ -24,7 +24,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, PLANT} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.FACTORY} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'LandTA',
@@ -48,7 +48,7 @@ BuilderGroup {
         InstanceCount = 1,
 BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, PLANT} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.FACTORY} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'LandTA',
@@ -72,7 +72,7 @@ BuilderConditions = {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, LAB} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, LAB} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'OmniLand',
@@ -96,7 +96,7 @@ BuilderConditions = {
         InstanceCount = 1,
 BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, LAB} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, LAB} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'OmniLand',
@@ -122,7 +122,7 @@ BuilderConditions = {
         InstanceCount = 1,
 BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, PLANT * categories.AIR} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.FACTORY} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
             { EBC, 'GreaterThanEconStorageCurrent', { 200, 1000 } },
         },
@@ -147,7 +147,7 @@ BuilderConditions = {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, LAB * categories.AIR} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, LAB * categories.AIR} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'OmniAir',

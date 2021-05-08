@@ -43,7 +43,7 @@ PlatoonTemplate {
     Plan = 'EngineerBuildAISCTA',
     ---PlatoonType = 'EngineerForm',
     GlobalSquads = {
-        { categories.ENGINEER * (categories.TECH2 + categories.TECH3) * TA - WEIRD, 1, 1, 'support', 'None' }
+        { categories.ENGINEER * TA * (categories.TECH3 + (categories.TECH2 - WEIRD)), 1, 1, 'support', 'None' }
     },
 }
 
@@ -62,7 +62,7 @@ PlatoonTemplate {
     Plan = 'EngineerBuildAISCTAAir',
     ---PlatoonType = 'EngineerForm',
     GlobalSquads = {
-        { categories.ENGINEER * categories.AIR * (categories.TECH1 + categories.TECH2 + categories.TECH3) * TA, 1, 1, 'support', 'None' }
+        { categories.ENGINEER * ((categories.AIR * (categories.TECH1 + categories.TECH2)) + categories.TECH3) * TA, 1, 1, 'support', 'None' }
     },
 }
 
@@ -72,7 +72,7 @@ PlatoonTemplate {
     Plan = 'EngineerBuildAISCTAAir',
     ---PlatoonType = 'EngineerForm',
     GlobalSquads = {
-        { categories.ENGINEER * categories.AIR * (categories.TECH2 + categories.TECH3) * TA, 1, 1, 'support', 'None' }
+        { categories.ENGINEER * ((categories.AIR * categories.TECH2) + categories.TECH3) * TA, 1, 1, 'support', 'None' }
     },
 }
 

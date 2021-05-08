@@ -25,9 +25,10 @@ BuilderGroup {
         BuilderConditions = { 
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Sea' } },
             { TASlow,   'TAAttackNaval', {true}},
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.FACTORY} },
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, (categories.NAVAL * categories.FACTORY) + categories.xsl0103 + categories.ual0201, 'Enemy'}},	
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
         },
         BuilderType = 'SeaTA',
         BuilderData = {
@@ -49,6 +50,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
         },
         BuilderType = 'SeaTA',
         BuilderData = {
@@ -71,7 +73,10 @@ BuilderGroup {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Sea' } },
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},		
             { TASlow,   'TAAttackNaval', {true}},
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, LAB * categories.NAVAL } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, LAB * categories.NAVAL } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
         },
         BuilderType = 'SeaTA',
         BuilderData = {
@@ -93,7 +98,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
         },
         BuilderType = 'SeaTA',
         BuilderData = {
@@ -117,7 +122,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 300 } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
         },
         BuilderType = 'SeaTA',
         BuilderData = {

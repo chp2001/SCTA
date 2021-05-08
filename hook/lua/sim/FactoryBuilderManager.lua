@@ -208,18 +208,19 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager) {
                 return
             end
             local builder = self:GetHighestBuilder(bType,{factory})
-            if builder then
+            if builder and not factory.unitBuilding then
                 --LOG('*Canceling', self)
                 local template = self:GetFactoryTemplate(builder:GetPlatoonTemplate(), factory)
-                -- LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Factory Builder Manager Building - ',repr(builder.BuilderName))
+                LOG('*TAAI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Factory Builder Manager Building - ',repr(builder.BuilderName))
                 --LOG('*Building', template)
                 self.Brain:BuildPlatoon(template, {factory}, 1)
+                --LOG('*TACanceling2', template)
             else
                 -- No builder found setup way to check again
-                self:ForkThread(self.DelayBuildOrder, factory, bType, 2)
+                self:ForkThread(self.DelayBuildOrder, factory, bType, 1)
+                --LOG('*TACanceling1', factory)
             end
         end,
-
     }
 
 

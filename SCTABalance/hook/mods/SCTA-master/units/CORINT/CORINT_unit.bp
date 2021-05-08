@@ -12,6 +12,10 @@ UnitBlueprint {
     Display = {
         UniformScale = 0.5,
     },
+    Physics = {
+        SkirtSizeX = 4, 
+        SkirtSizeZ = 4,  
+    },
     LifeBarSize = 6,
     SelectionSizeX = 6,
     SelectionSizeZ = 6,

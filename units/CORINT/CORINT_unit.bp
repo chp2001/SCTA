@@ -63,9 +63,7 @@ UnitBlueprint {
         BuildTime = 93237,
     },
     Footprint = {
-        SizeX = 3,
-        SizeZ = 3,
-	MaxSlope = 0.625,
+    MaxSlope = 0.625,
     },
     General = {
         Category = 'Strategic',

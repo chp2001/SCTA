@@ -60,6 +60,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.SCOUT * categories.NAVAL } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
         },
         BuilderType = 'Sea',
     },
@@ -72,6 +73,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.SCOUT * categories.NAVAL } },
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.xsl0103 + categories.ual0201, 'Enemy'}},	
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
         },
         BuilderType = 'Sea',
     },
@@ -120,9 +122,9 @@ BuilderGroup {
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},		
-            { UCBC, 'HaveUnitRatio', { 0.33, categories.NAVAL * categories.DESTROYER,
-            '<=', categories.NAVAL * categories.MOBILE} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.DESTROYER} }, -- Build engies until we have 4 of them.
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+            { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
         },
         BuilderType = 'Sea',
     },
@@ -133,8 +135,7 @@ BuilderGroup {
         BuilderConditions = {
             { TASlow,    'TAAttackNaval', {true}},
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},	
-            { UCBC, 'HaveUnitRatio', { 0.25, categories.NAVAL * categories.MOBILE * categories.CRUISER,
-            '<=', categories.NAVAL * categories.MOBILE} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.CRUISER} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
         },
         BuilderType = 'Sea',
@@ -148,6 +149,7 @@ BuilderGroup {
             { TASlow,    'TAAttackNaval', {true}},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.BATTLESHIP } }, -- Stop after 10 facs have been built.
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
+            { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
         },
         BuilderType = 'Sea',
     },

@@ -89,7 +89,6 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT2 Kbot',
         PlatoonTemplate = 'T2LandDFTankSCTA',
         Priority = 120,
-        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.75, categories.LAND * categories.DIRECTFIRE - categories.SCOUT,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },
@@ -137,7 +136,6 @@ BuilderGroup {
         BuilderName = 'SCTAAi FactoryT2 Tank',
         PlatoonTemplate = 'T2LandDFTank2SCTA',
         Priority = 120,
-        InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveUnitRatio', { 0.75, categories.LAND * categories.DIRECTFIRE - categories.SCOUT,
             '<=', categories.LAND * categories.MOBILE - categories.ENGINEER } },

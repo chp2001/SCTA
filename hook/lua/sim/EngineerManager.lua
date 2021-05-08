@@ -22,7 +22,7 @@ EngineerManager = Class(SCTAEngineerManager) {
         self.ConsumptionUnits = {
             Engineers = { Category = categories.ENGINEER, Units = {}, UnitsList = {}, Count = 0, },
             Fabricators = { Category = categories.MASSFABRICATION * categories.STRUCTURE, Units = {}, UnitsList = {}, Count = 0, },
-            Intel = { Category = categories.STRUCTURE * ( categories.SONAR + categories.RADAR + categories.OMNI), Units = {}, UnitsList = {}, Count = 0, },
+            Intel = { Category = categories.STRUCTURE * ( categories.SONAR + categories.RADAR + categories.OMNI) - categories.FACTORY, Units = {}, UnitsList = {}, Count = 0, },
             MobileIntel = { Category = categories.MOBILE - categories.ENGINEER, Units = {}, UnitsList = {}, Count = 0, },
         }
         self.EngineerList = {}
@@ -49,16 +49,17 @@ EngineerManager = Class(SCTAEngineerManager) {
         local pauseVal = 0
 
         self.Brain.LowMassMode = true
-
+        --LOG('*TACanceling2E', self)
         pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.DEFENSE)
 
         if pauseVal != true then
-        pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.FACTORY * (categories.TECH2 + categories.TECH3 + categories.GATE))
+            --LOG('*TACanceling1E', self)
+        pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.FACTORY)
         end
 
         -- Disable those building mobile units (through assist or experimental)
         if pauseVal != true then
-            --pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ExperimentalCheck)
+            pauseVal = self:DisableMassGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ExperimentalCheck)
         end
 
         -- Disable those building mobile units (through assist or experimental)
@@ -96,7 +97,7 @@ EngineerManager = Class(SCTAEngineerManager) {
 
         -- Disable engineers assisting non-econ until 10% under
         if pauseVal != true then
-            pauseVal = self:DisableEnergyGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.ALLUNITS - categories.ENERGYPRODUCTION - categories.MASSPRODUCTION)
+            pauseVal = self:DisableEnergyGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.STRUCTURE - categories.ENERGYPRODUCTION - categories.MASSPRODUCTION)
         end
 
         -- Disable Intel if mass in > mass out until 10% under
@@ -104,33 +105,9 @@ EngineerManager = Class(SCTAEngineerManager) {
             pauseVal = self:DisableEnergyGroup(self.ConsumptionUnits.Intel, econ, pauseVal)
         end
 
-        -- Disable fabricators until 10% under
-        if pauseVal != true then
-            pauseVal = self:DisableEnergyGroup(self.ConsumptionUnits.Fabricators, econ, pauseVal)
-        end
-
-        -- Disable engineers until 10% under
-        if pauseVal != true then
-            pauseVal = self:DisableEnergyGroup(self.ConsumptionUnits.Engineers, econ, pauseVal, self.ProductionCheck, categories.ALLUNITS - categories.ENERGYPRODUCTION)
-        end
-
         self:ForkThread(self.LowEnergyRepeatThread)
     end,
 
-    RestoreEnergy = function(self)
-        if not self.Brain.SCTAAI then
-            return SCTAEngineerManager.RestoreEnergy(self)
-        end
-        self.Brain.LowEnergyMode = false
-
-        self:EnableGroup(self.ConsumptionUnits.Intel)
-
-        self:EnableGroup(self.ConsumptionUnits.MobileIntel)
-        
-        self:EnableGroup(self.ConsumptionUnits.Fabricators)
-
-        self:EnableGroup(self.ConsumptionUnits.Engineers)
-    end,
 
 
     AddBuilder = function(self, builderData, locationType)

@@ -212,4 +212,15 @@ BuilderGroup {
         },
         BuilderType = 'SeaForm',
     },
+    Builder {
+        BuilderName = 'SCTA Aircraft Carrier',
+        PlatoonTemplate = 'SCTAAirCarrier',
+        PriorityFunction = TAPrior.AirCarrierExist,
+        Priority = 111,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, categories.NAVALCARRIER} },
+            },
+        BuilderType = 'SeaForm',
+    },
 }

@@ -49,7 +49,7 @@ PlatoonTemplate {
     Plan = 'CarrierAI',
     --Type = 'SeaForm',
     GlobalSquads = {
-        {categories.CARRIER, 1, 1, 'Attack', 'GrowthFormation' }
+        {categories.NAVALCARRIER, 1, 1, 'Attack', 'GrowthFormation' }
     },
 }
 
@@ -79,14 +79,10 @@ PlatoonTemplate {
     Name = 'T1FrigateSCTA',
     FactionSquads = {
         Arm = {
-            { 'armpt', 1, 2, 'Attack', 'GrowthFormation' },
             { 'armroy', 1, 1, 'Attack', 'GrowthFormation'},
-            { 'armcs', 1, 1, 'support', 'None' }
         },
         Core = {
-            { 'corpt', 1, 2, 'Attack', 'GrowthFormation' },
             { 'corroy', 1, 1, 'Attack', 'GrowthFormation'},
-            { 'corcs', 1, 1, 'support', 'None' },
         },
     }
 }
@@ -155,6 +151,18 @@ PlatoonTemplate {
             { 'corbats', 1, 1, 'Attack', 'GrowthFormation'},
             { 'corpt', 1, 4, 'Attack', 'GrowthFormation' },
             { 'coracsub', 1, 1, 'support', 'None' },
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'MissileshipSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armmship', 1, 1, 'Attack', 'GrowthFormation'},
+        },
+        Core = {
+            { 'cormship', 1, 1, 'Attack', 'GrowthFormation'},
         },
     }
 }

@@ -12,7 +12,7 @@ local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TEC
 ---TECHUPPRoduction
 
 ProductionT3 = function(self, aiBrain)
-    if Factory(aiBrain,  12, LAB)  then 
+    if Factory(aiBrain,  6, LAB)  then 
         return 150
     elseif Factory(aiBrain,  0, PLATFORM) then
         return 140
@@ -24,7 +24,7 @@ ProductionT3 = function(self, aiBrain)
 end
 
 LandProductionT3Tank = function(self, aiBrain)
-    if Factory(aiBrain,  12, LAB)  then 
+    if Factory(aiBrain,  6, LAB)  then 
         return 140
     elseif Factory(aiBrain,  0, PLATFORM) then
         return 135
@@ -36,7 +36,7 @@ LandProductionT3Tank = function(self, aiBrain)
 end
 
 EngineerProductionT3 = function(self, aiBrain)
-    if Factory(aiBrain,  12, LAB)  then 
+    if Factory(aiBrain,  6, LAB)  then 
         return 155
     elseif Factory(aiBrain,  0, categories.GATE) then
         return 135
@@ -98,9 +98,9 @@ end
 
 ---WithinTechProduction
 PlatformBeingBuilt = function(self, aiBrain)
-    if LessProduct(aiBrain,  2, PLATFORM) then 
+    if LessProduct(aiBrain,  1, PLATFORM) then 
         return 150
-    elseif Factory(aiBrain,  12, LAB)  then 
+    elseif Factory(aiBrain,  6, LAB)  then 
         return 10
     else
         return 0
@@ -108,9 +108,9 @@ PlatformBeingBuilt = function(self, aiBrain)
 end
 
 StructureProductionT3 = function(self, aiBrain)
-    if Factory(aiBrain,  4, PLATFORM)  then 
+    if Factory(aiBrain,  2, PLATFORM)  then 
         return 155
-    elseif Factory(aiBrain,  12, LAB) then
+    elseif Factory(aiBrain,  6, LAB) then
         return 10
     else
         return 0
@@ -118,9 +118,9 @@ StructureProductionT3 = function(self, aiBrain)
 end
 
 StructureProductionT2 = function(self, aiBrain)
-    if Factory(aiBrain,  4, LAB)  then 
+    if Factory(aiBrain,  3, LAB)  then 
         return 120
-    elseif Factory(aiBrain,  2, LAB) then
+    elseif Factory(aiBrain,  1, LAB) then
         return 10
     else
         return 0
@@ -129,6 +129,14 @@ end
 
 TechEnergyExist = function(self, aiBrain)
     if Factory(aiBrain,  1, FUSION) then 
+        return 135
+    else
+        return 0
+    end
+end
+
+AirCarrierExist = function(self, aiBrain)
+    if Factory(aiBrain,  0, categories.NAVALCARRIER) then 
         return 135
     else
         return 0
@@ -219,8 +227,6 @@ end
 GantryConstruction = function(self, aiBrain)
     if Factory(aiBrain,  2, PLATFORM)  then
         return 175
-    elseif Factory(aiBrain,  6, LAB) then
-        return 25
     else
         return 0
     end

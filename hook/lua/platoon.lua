@@ -253,7 +253,7 @@ Platoon = Class(SCTAAIPlatoon) {
         if cons.BuildClose then
             closeToBuilder = eng
         end
-        if cons.BuildStructures[1] == 'T1Resource' or cons.BuildStructures[1] == 'T2Resource' or cons.BuildStructures[1] == 'T3Resource' then
+        if cons.BuildStructures[1] == 'T1Resource' or cons.BuildStructures[1] == 'T2Resource' or cons.BuildStructures[1] == 'T1HydroCarbon' then
             relative = true
             closeToBuilder = eng
             local guards = eng:GetGuards()
@@ -498,7 +498,7 @@ Platoon = Class(SCTAAIPlatoon) {
         if cons.BuildClose then
             closeToBuilder = eng
         end
-        if cons.BuildStructures[1] == 'T1Resource' or cons.BuildStructures[1] == 'T2Resource' or cons.BuildStructures[1] == 'T3Resource' then
+        if cons.BuildStructures[1] == 'T1Resource' or cons.BuildStructures[1] == 'T2Resource' or cons.BuildStructures[1] == 'T1HydroCarbon' then
             relative = true
             closeToBuilder = eng
             local guards = eng:GetGuards()
@@ -811,7 +811,7 @@ Platoon = Class(SCTAAIPlatoon) {
         if cons.BuildClose then
             closeToBuilder = eng
         end
-        if cons.BuildStructures[1] == 'T1Resource' or cons.BuildStructures[1] == 'T2Resource' or cons.BuildStructures[1] == 'T3Resource' then
+        if cons.BuildStructures[1] == 'T1Resource' or cons.BuildStructures[1] == 'T2Resource' or cons.BuildStructures[1] == 'T1HydroCarbon' then
             relative = true
             closeToBuilder = eng
             local guards = eng:GetGuards()
@@ -1112,7 +1112,7 @@ Platoon = Class(SCTAAIPlatoon) {
         if cons.BuildClose then
             closeToBuilder = eng
         end
-        if cons.BuildStructures[1] == 'T1Resource' or cons.BuildStructures[1] == 'T2Resource' or cons.BuildStructures[1] == 'T3Resource' then
+        if cons.BuildStructures[1] == 'T1Resource' or cons.BuildStructures[1] == 'T2Resource' or cons.BuildStructures[1] == 'T1HydroCarbon' then
             relative = true
             closeToBuilder = eng
             local guards = eng:GetGuards()

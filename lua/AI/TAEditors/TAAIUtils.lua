@@ -105,6 +105,8 @@ function GreaterThanStorageRatioTA(aiBrain, mStorageRatio, eStorageRatio)
     return false
 end
 
+-----TAExpansion
+
 function TAExpansionBaseCheck(aiBrain)
     -- Removed automatic setting of Land-Expasions-allowed. We have a Game-Option for this.
     local checkNum = tonumber(ScenarioInfo.Options.LandExpansionsAllowed)/5 or 1 
@@ -154,6 +156,7 @@ function TAHaveUnitsWithCategoryAndAllianceFalse(aiBrain, numReq, category, alli
     return true
 end
 
+---TAUnit Building
 
 function TAFactoryCapCheck(aiBrain, locationType, TECH)
     local catCheck = false
@@ -211,6 +214,43 @@ function TAAttackNaval(aiBrain, bool)
     end
     return false
 end
+
+function TAHaveUnitRatioGreaterThanLand(aiBrain, Land)
+    local numOne = aiBrain:GetCurrentUnits((Land) * categories.LAND * categories.MOBILE - categories.ENGINEER)
+    local numTwo = aiBrain:GetCurrentUnits(categories.LAND * categories.MOBILE - categories.ENGINEER)
+    if ((numOne + 1) / (numTwo + 1)) < 0.33 then
+        return true
+    end
+    return false
+end
+
+function TAHaveUnitRatioGreaterThanNavalT1(aiBrain, Naval)
+    local numOne = aiBrain:GetCurrentUnits(Naval)
+    local numTwo = aiBrain:GetCurrentUnits(categories.SCOUT * categories.NAVAL)
+    if ((numOne + 1) / (numTwo + 1)) < 0.2 then
+        return true
+    end
+    return false
+end
+
+function TAHaveUnitRatioGreaterThanNaval(aiBrain, Naval)
+    local numOne = aiBrain:GetCurrentUnits(Naval)
+    local numTwo = aiBrain:GetCurrentUnits(categories.FACTORY * categories.NAVAL * categories.TECH2)
+    if ((numOne + 1) / (numTwo + 1)) < 2 then
+        return true
+    end
+    return false
+end
+
+function TAHaveUnitRatioGreaterThanNavalT3(aiBrain, Naval)
+    local numOne = aiBrain:GetCurrentUnits(Naval)
+    local numTwo = aiBrain:GetCurrentUnits(categories.FACTORY * categories.NAVAL * categories.TECH2)
+    if ((numOne + 1) / (numTwo + 2)) < 1 then
+        return true
+    end
+    return false
+end
+----TAReclaim
 
 function TAReclaimablesInArea(aiBrain, locType)
     --DUNCAN - was .9. Reduced as dont need to reclaim yet if plenty of mass
@@ -285,4 +325,18 @@ function TAAISendChat(aigroup, ainickname, aiaction, targetnickname, extrachat)
         else
             table.insert(Sync.AIChat, {group=aigroup, text=aiaction, sender=ainickname})
         end
+end
+
+function TACanBuildOnMassLessThanDistanceLand(aiBrain, locationType, distance, threatMin, threatMax, threatRings, threatType, maxNum )
+    local engineerManager = aiBrain.BuilderManagers[locationType].EngineerManager
+    if not engineerManager or locationType == 'Naval Area' then
+        return false
+    end
+    local position = engineerManager:GetLocationCoords()
+    local markerTable = AIUtils.AIGetSortedMassLocations(aiBrain, maxNum, threatMin, threatMax, threatRings, threatType, position)
+    if markerTable[1] and VDist3( markerTable[1], position ) < distance then
+        local dist = VDist3( markerTable[1], position )
+        return true
+    end
+    return false
 end

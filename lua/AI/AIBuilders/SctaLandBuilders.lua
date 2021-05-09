@@ -27,6 +27,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandDFTankSCTA',
         PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 20,
+        InstanceCount = 4,
             BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, } },
@@ -60,6 +61,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1LandDFTankSCTA2',
         PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 30,
+        InstanceCount = 4,
         BuilderConditions = {
         { MIBC, 'GreaterThanGameTime', {300} },
         { TAutils, 'EcoManagementTA', { 0.75, 0.5, } },

@@ -161,7 +161,7 @@ BuilderGroup {
         BuilderData = {
             NeedGuard = false,
             DesiresAssist = true,
-            NumAssistees = 4,
+            NumAssistees = 2,
             Construction = {
                 BuildStructures = {
                     'T1HydroCarbon',
@@ -182,8 +182,7 @@ BuilderGroup {
         BuilderType = 'AirTA',
         BuilderData = {
             NeedGuard = false,
-            DesiresAssist = true,
-            NumAssistees = 4,
+            DesiresAssist = false,
             Construction = {
                 BuildStructures = {
                     'T1HydroCarbon',

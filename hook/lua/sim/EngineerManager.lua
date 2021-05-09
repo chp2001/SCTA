@@ -101,7 +101,12 @@ EngineerManager = Class(SCTAEngineerManager) {
         --LOG('*Who', unit)
         if not self.Brain.SCTAAI then
             return SCTAEngineerManager.AssignEngineerTask(self, unit)
-        end      
+        end
+        if self.AssigningTask and unit:IsIdleState() then
+            self.AssigningTask = nil
+        elseif self.AssigningTask and not unit:IsIdleState() then
+            return
+        else
                 if unit:GetBlueprint().Economy.Land then
                     self:TAAssignEngineerTask(unit, 'LandTA')
                     return
@@ -121,6 +126,7 @@ EngineerManager = Class(SCTAEngineerManager) {
                     self:TAAssignEngineerTask(unit, 'FieldTA')
                     return
                 end
+            end
         end,
 
 
@@ -134,9 +140,6 @@ EngineerManager = Class(SCTAEngineerManager) {
         unit.NumAssistees = nil
         unit.MinNumAssistees = nil
         unit.bType = bType
-        if self.AssigningTask then
-            return
-        end
         local builder = self:GetHighestBuilder(unit.bType, {unit})
         if builder then
             self.AssigningTask = true

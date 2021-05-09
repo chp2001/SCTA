@@ -122,7 +122,8 @@ BuilderGroup {
         PriorityFunction = TAPrior.StructureProductionT2,
         Priority = 250,
         InstanceCount = 50,
-        BuilderType = 'StructureForm',
+        FormRadius = 1000,
+        BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 75,
             NeverGuardBases = false,
@@ -190,7 +191,8 @@ BuilderGroup {
         PriorityFunction = TAPrior.TechEnergyExist,
         Priority = 210,
         InstanceCount = 50,
-        BuilderType = 'StructureForm',
+        FormRadius = 1000,
+        BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 75,
             NeverGuardBases = false,

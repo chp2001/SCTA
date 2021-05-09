@@ -11,7 +11,7 @@ local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TEC
 
 AirCarrierExist = function(self, aiBrain)
     if Factory(aiBrain,  0, categories.NAVALCARRIER) then 
-        return 135
+        return 200
     else
         return 0
     end
@@ -104,9 +104,9 @@ end
 UnitProductionT1 = function(self, aiBrain)
     if Factory(aiBrain,  0, categories.GATE) then
           return 0
-    elseif Factory(aiBrain,  6, LAB) then
+    elseif Factory(aiBrain,  4, LAB) then
               return 5
-    elseif Factory(aiBrain,  1, LAB) then 
+    elseif Factory(aiBrain,  0, LAB) then 
               return 50
       else
           return 100
@@ -136,14 +136,6 @@ GateBeingBuilt = function(self, aiBrain)
     end
 end
 
-HydroBeingBuilt = function(self, aiBrain)
-    if MoreProduct(aiBrain,  0, categories.HYDROCARBON) then 
-        return 300
-    else
-        return 0
-    end
-end
-
 HydroBeingBuiltACU = function(self, aiBrain)
     if MoreProduct(aiBrain,  0, categories.HYDROCARBON) then 
         return 975
@@ -162,19 +154,9 @@ NothingBuilt = function(self, aiBrain)
     end
 end
 
-LessThanTime = function(self, aiBrain)
-    if LessTime(aiBrain,  240) then 
-        return 125
-    else
-        return 0
-    end
-end
-
 PlatformBeingBuilt = function(self, aiBrain)
-    if LessProduct(aiBrain,  1, PLATFORM) then 
-        return 125
-    elseif Factory(aiBrain,  6, LAB)  then 
-        return 10
+    if LessProduct(aiBrain,  1, PLATFORM) and Factory(aiBrain,  6, LAB) then 
+        return 200
     else
         return 0
     end

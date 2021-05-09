@@ -15,7 +15,7 @@ local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAssisters',
-    BuildersType = 'PlatoonFormBuilder',
+    BuildersType = 'EngineerBuilder',
     ----Building Reclaim
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Excess PLANTS',
@@ -35,7 +35,7 @@ BuilderGroup {
             ReclaimTime = 30,
             Reclaim = {'TECH1 FACTORY,'},
         },
-        BuilderType = 'Other',
+        BuilderType = 'NotACU',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Energy',
@@ -54,7 +54,7 @@ BuilderGroup {
             Reclaim = {'armsolar, corsolar, armwin, corwin,'},
                 ReclaimTime = 30,
         },
-        BuilderType = 'Other',
+        BuilderType = 'NotACU',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Air',
@@ -71,7 +71,7 @@ BuilderGroup {
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
-        BuilderType = 'EngineerForm',
+        BuilderType = 'OmniAir',
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Idle',
@@ -89,7 +89,7 @@ BuilderGroup {
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
-        BuilderType = 'Other',
+        BuilderType = 'NotACU',
     },
     Builder {
         BuilderName = 'SCTA Engineer Finish',
@@ -111,7 +111,7 @@ BuilderGroup {
                 Time = 20,
             },
         },
-        BuilderType = 'EngineerForm',
+        BuilderType = 'NotACU',
     },
     Builder {
         BuilderName = 'SCTA PGen Field Assist',
@@ -124,7 +124,7 @@ BuilderGroup {
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.FIELDENGINEER}},
             { TAutils, 'EcoManagementTA', { 0.5, 0.5, } },
         },
-        BuilderType = 'Other',
+        BuilderType = 'FieldTA',
         BuilderData = {
             Assist = {
                 AssisteeType = 'Engineer',
@@ -153,7 +153,7 @@ BuilderGroup {
             Terrain = true,
             LocationType = 'LocationType',
         },
-        BuilderType = 'Other',
+        BuilderType = 'FieldTA',
     },
     Builder {
         BuilderName = 'SCTA Engineer Field Finish',
@@ -177,7 +177,7 @@ BuilderGroup {
                 Time = 20,
             },
         },
-        BuilderType = 'Other',
+        BuilderType = 'FieldTA',
     },
     Builder {
         BuilderName = 'SCTA Assist Production Field',
@@ -201,6 +201,6 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'Other',
+        BuilderType = 'FieldTA',
     },
 }

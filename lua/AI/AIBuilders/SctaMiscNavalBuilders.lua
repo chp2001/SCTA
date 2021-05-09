@@ -23,7 +23,7 @@ BuilderGroup {
         Priority = 115,
         InstanceCount = 1,
         BuilderConditions = { 
-            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Sea' } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.NAVAL * PLANT} }, 
             { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.FACTORY} },
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, (categories.NAVAL * categories.FACTORY) + categories.xsl0103 + categories.ual0201, 'Enemy'}},	
@@ -68,11 +68,10 @@ BuilderGroup {
         Priority = 141,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Sea' } },
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},		
             { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, LAB * categories.NAVAL } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, LAB * categories.NAVAL } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, LAB * categories.NAVAL } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
         BuilderType = 'SeaTA',

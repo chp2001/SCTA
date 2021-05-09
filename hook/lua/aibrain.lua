@@ -38,7 +38,7 @@ AIBrain = Class(SCTAAIBrainClass) {
        
 
     AddBuilderManagers = function(self, position, radius, baseName, useCenter)
-        -- Only use this with AI-Uveso
+        -- Only use this with AI-SCTAAI
          if not self.SCTAAI then
              return SCTAAIBrainClass.AddBuilderManagers(self, position, radius, baseName, useCenter)
          end
@@ -73,7 +73,78 @@ AIBrain = Class(SCTAAIBrainClass) {
         end
     end,
 
-    PBMBuildNumFactories = function (self, template, location, pType, factory)
+    ForceManagerSort = function(self)
+        if not self.SCTAAI then
+            return SCTAAIBrainClass.ForceManagerSort(self)
+        end
+        for _, v in self.BuilderManagers do
+            ----TAEngineerType
+            v.EngineerManager:SortBuilderList('LandTA')
+            v.EngineerManager:SortBuilderList('AirTA')
+            v.EngineerManager:SortBuilderList('SeaTA')
+            v.EngineerManager:SortBuilderList('T3TA')
+            v.EngineerManager:SortBuilderList('FieldTA')
+            v.EngineerManager:SortBuilderList('Command')
+            ---TAFactoryType
+            v.FactoryManager:SortBuilderList('KBot')
+            v.FactoryManager:SortBuilderList('Vehicle')
+            v.FactoryManager:SortBuilderList('Hover')
+            v.FactoryManager:SortBuilderList('Air')
+            v.FactoryManager:SortBuilderList('Seaplane')
+            v.FactoryManager:SortBuilderList('Sea')
+            v.FactoryManager:SortBuilderList('Gate')
+            ---TAPlatoonFormers
+            v.PlatoonFormManager:SortBuilderList('LandForm')
+            v.PlatoonFormManager:SortBuilderList('AirForm')
+            v.PlatoonFormManager:SortBuilderList('SeaForm')
+            v.PlatoonFormManager:SortBuilderList('Scout')
+            v.PlatoonFormManager:SortBuilderList('EngineerForm')
+            v.PlatoonFormManager:SortBuilderList('CommandTA')
+            v.PlatoonFormManager:SortBuilderList('Other')
+            v.PlatoonFormManager:SortBuilderList('StructureForm')
+        end
+    end,
+
+    --[[EconomyMonitor = function(self)
+        -- Only use this with AI-SCTAAI
+        if not self.SCTAAI then
+            return SCTAAIBrainClass.EconomyMonitor(self)
+        end
+    end,]]
+
+    UnderEnergyThreshold = function(self)
+        if not self.SCTAAI then
+            return SCTAAIBrainClass.UnderEnergyThreshold(self)
+        end
+    end,
+
+    OverEnergyThreshold = function(self)
+        if not self.SCTAAI then
+            return SCTAAIBrainClass.OverEnergyThreshold(self)
+        end
+    end,
+
+    UnderMassThreshold = function(self)
+        if not self.SCTAAI then
+            return SCTAAIBrainClass.UnderMassThreshold(self)
+        end
+    end,
+
+    OverMassThreshold = function(self)
+        if not self.SCTAAI then
+            return SCTAAIBrainClass.OverMassThreshold(self)
+        end
+    end,
+
+
+    InitializeEconomyState = function(self)
+        -- Only use this with AI-SCTAAI
+        if not self.SCTAAI then
+            return SCTAAIBrainClass.InitializeEconomyState(self)
+        end
+    end,
+
+    --[[PBMBuildNumFactories = function (self, template, location, pType, factory)
         --LOG('*template2', self.SCTAAI)
         if not self.SCTAAI then
             return SCTAAIBrainClass.PBMBuildNumFactories(self, template, location, pType, factory)
@@ -208,146 +279,9 @@ AIBrain = Class(SCTAAIBrainClass) {
             end
         end
         return true
-    end,
+    end,]]
 
-    ForceManagerSort = function(self)
-        if not self.SCTAAI then
-            return SCTAAIBrainClass.ForceManagerSort(self)
-        end
-        for _, v in self.BuilderManagers do
-            ----TAEngineerType
-            v.EngineerManager:SortBuilderList('LandTA')
-            v.EngineerManager:SortBuilderList('AirTA')
-            v.EngineerManager:SortBuilderList('SeaTA')
-            v.EngineerManager:SortBuilderList('T3TA')
-            v.EngineerManager:SortBuilderList('FieldTA')
-            v.EngineerManager:SortBuilderList('Command')
-            ---TAFactoryType
-            v.FactoryManager:SortBuilderList('KBot')
-            v.FactoryManager:SortBuilderList('Vehicle')
-            v.FactoryManager:SortBuilderList('Hover')
-            v.FactoryManager:SortBuilderList('Air')
-            v.FactoryManager:SortBuilderList('Seaplane')
-            v.FactoryManager:SortBuilderList('Sea')
-            v.FactoryManager:SortBuilderList('Gate')
-            ---TAPlatoonFormers
-            v.PlatoonFormManager:SortBuilderList('LandForm')
-            v.PlatoonFormManager:SortBuilderList('AirForm')
-            v.PlatoonFormManager:SortBuilderList('SeaForm')
-            v.PlatoonFormManager:SortBuilderList('Scout')
-            v.PlatoonFormManager:SortBuilderList('EngineerForm')
-            v.PlatoonFormManager:SortBuilderList('CommandTA')
-            v.PlatoonFormManager:SortBuilderList('Other')
-            v.PlatoonFormManager:SortBuilderList('StructureForm')
-        end
-    end,
-
-
-    UnderEnergyThreshold = function(self)
-        if not self.Brain.SCTAAI then
-            return SCTAAIBrainClass.UnderEnergyThreshold(self)
-        end
-        LOG('IEXIST')
-        self:SetupOverEnergyStatTrigger(250)
-        for k, v in self.BuilderManagers do
-           v.EngineerManager:LowEnergy()
-        end
-    end,
-
-    OverEnergyThreshold = function(self)
-        if not self.Brain.SCTAAI then
-            return SCTAAIBrainClass.OverEnergyThreshold(self)
-        end
-        LOG('IEXIST2')
-        self:SetupUnderEnergyStatTrigger(200)
-        for k, v in self.BuilderManagers do
-            v.EngineerManager:RestoreEnergy()
-        end
-    end,
-
-    UnderMassThreshold = function(self)
-        if not self.Brain.SCTAAI then
-            return SCTAAIBrainClass.UnderMassThreshold(self)
-        end
-        LOG('IEXIST3')
-        self:SetupOverMassStatTrigger(125)
-        for k, v in self.BuilderManagers do
-            v.EngineerManager:LowMass()
-        end
-    end,
-
-    OverMassThreshold = function(self)
-        if not self.Brain.SCTAAI then
-            return SCTAAIBrainClass.OverMassThreshold(self)
-        end
-        LOG('IEXIST4')
-        self:SetupUnderMassStatTrigger(100)
-        for k, v in self.BuilderManagers do
-            v.EngineerManager:RestoreMass()
-        end
-    end,
-
-    SetupUnderEnergyStatTrigger = function(self, threshold)
-        if not self.Brain.SCTAAI then
-            return SCTAAIBrainClass.SetupUnderEnergyStatTrigger(self, threshold)
-        end
-        import('/lua/scenariotriggers.lua').CreateArmyStatTrigger(self.UnderEnergyThreshold, self, 'SkirmishUnderEnergyThreshold',
-            {
-                {
-                    StatType = 'Economy_Stored_Energy',
-                    CompareType = 'LessThanOrEqual',
-                    Value = threshold,
-                },
-            }
-        )
-    end,
-
-    SetupOverEnergyStatTrigger = function(self, threshold)
-        if not self.Brain.SCTAAI then
-            return SCTAAIBrainClass.SetupOverEnergyStatTrigger(self, threshold)
-        end
-        import('/lua/scenariotriggers.lua').CreateArmyStatTrigger(self.OverEnergyThreshold, self, 'SkirmishOverEnergyThreshold',
-            {
-                {
-                    StatType = 'Economy_Stored_Energy',
-                    CompareType = 'GreaterThanOrEqual',
-                    Value = threshold,
-                },
-            }
-        )
-    end,
-
-    SetupUnderMassStatTrigger = function(self, threshold)
-        if not self.Brain.SCTAAI then
-            return SCTAAIBrainClass.SetupUnderMassStatTrigger(self, threshold)
-        end
-        import('/lua/scenariotriggers.lua').CreateArmyStatTrigger(self.UnderMassThreshold, self, 'SkirmishUnderMassThreshold',
-            {
-                {
-                    StatType = 'Economy_Stored_Mass',
-                    CompareType = 'LessThanOrEqual',
-                    Value = threshold,
-                },
-            }
-        )
-    end,
-
-    SetupOverMassStatTrigger = function(self, threshold)
-        if not self.Brain.SCTAAI then
-            return SCTAAIBrainClass.SetupOverMassStatTrigger(self, threshold)
-        end
-        import('/lua/scenariotriggers.lua').CreateArmyStatTrigger(self.OverMassThreshold, self, 'SkirmishOverMassThreshold',
-            {
-                {
-                    StatType = 'Economy_Stored_Mass',
-                    CompareType = 'GreaterThanOrEqual',
-                    Value = threshold,
-                },
-            }
-        )
-    end,
-
-    InitializePlatoonBuildManager = function(self)
+    --[[InitializePlatoonBuildManager = function(self)
         if not self.SCTAAI then
             return SCTAAIBrainClass.InitializePlatoonBuildManager(self)
         end
@@ -841,5 +775,17 @@ AIBrain = Class(SCTAAIBrainClass) {
         end
 
         return numFactories
-    end,
+    end,]]
+ 
+     --[[
+ 
+    ExpansionHelpThread = function(self)
+        -- Only use this with AI-SCTAAI
+         if not self.SCTAAI then
+             return SCTAAIBrainClass.ExpansionHelpThread(self)
+         end
+         coroutine.yield(10)
+         -- We are leaving this forked thread here because we don't need it.
+         KillThread(CurrentThread())
+     end,]]
 }

@@ -89,8 +89,8 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'MexLand2', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
-                { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 450, -500, 250, 0, 'StructuresNotMex', 1 }},         
-            },
+            { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 450, -500, 250, 0, 'StructuresNotMex', 1 }},
+        },
         BuilderType = 'LandTA',
         BuilderData = {
             NeedGuard = false,
@@ -111,6 +111,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Mex2' }},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 100, -500, 500, 0, 'StructuresNotMex', 1 }},
+            { EBC, 'GreaterThanEconStorageCurrent', { 300, 500 } },
         },
         BuilderType = 'NotACU',
         BuilderData = {
@@ -132,6 +133,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Mex2' }},
             { MABC, 'CanBuildOnMassLessThanDistance', { 'LocationType', 250, -500, 500, 0, 'StructuresNotMex', 1 }},
+            { EBC, 'GreaterThanEconStorageCurrent', { 300, 500 } },
         },
         BuilderType = 'NotACU',
         BuilderData = {
@@ -147,7 +149,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Hydro',
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
-        Priority = 190,
+        Priority = 500,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         DelayEqualBuildPlattons = {'Hydro', 1},
         BuilderConditions = {
@@ -192,7 +194,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 75,
+        Priority = 50,
         PriorityFunction = TAPrior.HighTechEnergyProduction,
         InstanceCount = 1,
         BuilderConditions = {
@@ -214,11 +216,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Pgen2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 100,
+        Priority = 50,
         PriorityFunction = TAPrior.HighTechEnergyProduction,
         InstanceCount = 1,
         BuilderConditions = {
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
         },
         BuilderType = 'LandTA',
         BuilderData = {
@@ -236,11 +238,11 @@ BuilderGroup {
         BuilderName = 'SCTAAI T2Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA23All',
         PriorityFunction = TAPrior.NothingBuilt,
-        Priority = 125,
+        Priority = 50,
         InstanceCount = 1,
         BuilderConditions = {
             { TASlow, 'TAHaveLessThanArmyPoolWithCategory', { 1, categories.TECH3 * categories.ENERGYPRODUCTION * categories.STRUCTURE} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
         },
         BuilderType = 'NotACU',
         BuilderData = {
@@ -261,7 +263,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.NothingBuilt,
         InstanceCount = 1,
         BuilderConditions = {
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
         },
         BuilderType = 'T3TA',
         BuilderData = {
@@ -303,7 +305,7 @@ BuilderGroup {
         Priority = 150,
         InstanceCount = 2,
         BuilderConditions = {
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9}},
         },
         BuilderType = 'AirTA',
         BuilderData = {

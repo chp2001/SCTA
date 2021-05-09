@@ -27,8 +27,7 @@ BuilderGroup {
             { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.FACTORY} },
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, (categories.NAVAL * categories.FACTORY) + categories.xsl0103 + categories.ual0201, 'Enemy'}},	
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
         BuilderType = 'SeaTA',
         BuilderData = {
@@ -49,8 +48,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
         BuilderType = 'SeaTA',
         BuilderData = {
@@ -75,8 +73,7 @@ BuilderGroup {
             { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, LAB * categories.NAVAL } },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, LAB * categories.NAVAL } },
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
         BuilderType = 'SeaTA',
         BuilderData = {
@@ -97,8 +94,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
         BuilderType = 'SeaTA',
         BuilderData = {
@@ -121,8 +117,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75, 0.5, 0.5, } },
-            { EBC, 'GreaterThanEconStorageCurrent', { 100, 200 } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
         BuilderType = 'SeaTA',
         BuilderData = {
@@ -169,7 +164,7 @@ BuilderGroup {
             { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},		
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ANTINAVY - categories.MOBILE} },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.5}},
+            { TAutils, 'GreaterTAStorageRatio', { 0.33, 0.5}},
         },
         BuilderType = 'SeaTA',
         BuilderData = {
@@ -198,7 +193,7 @@ BuilderGroup {
         Priority = 135,
         InstanceCount = 2,
         BuilderConditions = {
-        { TAutils , 'LessThanEconEnergyTAEfficiency', {1.15 }},
+        { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9}},
         },
         BuilderType = 'SeaTA',
         BuilderData = {
@@ -222,7 +217,7 @@ BuilderGroup {
             { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},	
             { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.ANTISUB * categories.TECH2 - categories.MOBILE} }, 
-            { EBC, 'GreaterThanEconStorageRatio', { 0.33, 0.75}}, 
+            { TAutils, 'GreaterTAStorageRatio', { 0.33, 0.75}}, 
         },
         BuilderType = 'SeaTA',
         BuilderData = {
@@ -251,7 +246,7 @@ BuilderGroup {
         Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9}},
         },
         BuilderType = 'SeaTA',
         BuilderData = {
@@ -274,7 +269,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ANTISHIELD * categories.TECH2 - categories.MOBILE} }, 
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.5}}, 
+            { TAutils, 'GreaterTAStorageRatio', { 0.2, 0.5}}, 
         },
         BuilderType = 'SeaTA',
         BuilderData = {

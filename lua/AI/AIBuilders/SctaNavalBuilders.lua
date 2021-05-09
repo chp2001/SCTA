@@ -107,8 +107,7 @@ BuilderGroup {
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, (categories.NAVAL * categories.FACTORY), 'Enemy'}},	
-            { UCBC, 'HaveUnitRatio', { 0.33, categories.NAVAL * categories.MOBILE * categories.FRIGATE,
-            '<=', categories.NAVAL * categories.MOBILE} },
+            { UCBC, 'HaveUnitRatioGreaterThan', { 0.33, categories.NAVAL * categories.MOBILE * categories.FRIGATE, categories.NAVAL * categories.MOBILE} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.9} }, -- Stop after 10 facs have been built.
         },
         BuilderType = 'Sea',

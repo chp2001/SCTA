@@ -16,8 +16,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Scout',
         PlatoonTemplate = 'T1LandScoutSCTA',
-        Priority = 82,
-        PriorityFunction = TAPrior.EngineerProduction,
+        Priority = 120,
+        PriorityFunction = TAPrior.UnitProductionT1,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Scout', 1},
         BuilderConditions = {
@@ -31,9 +31,9 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory2 Scout',
         PlatoonTemplate = 'T1LandScoutSCTA2',
-        Priority = 80,
+        Priority = 120,
         InstanceCount = 1,
-        PriorityFunction = TAPrior.EngineerProduction,
+        PriorityFunction = TAPrior.UnitProductionT1,
         DelayEqualBuildPlattons = {'Scout', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Scout' }},
@@ -59,9 +59,9 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2 Scouts',
         PlatoonTemplate = 'T2AirScoutSCTA',
-        Priority = 120,
+        Priority = 200,
         InstanceCount = 1,
-        PriorityFunction = TAPrior.EngineerProductionT3,
+        PriorityFunction = TAPrior.ProductionT3,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.MOBILE * categories.AIR * categories.SCOUT } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, } },
@@ -83,8 +83,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Engineer',
         PlatoonTemplate = 'T1BuildEngineerSCTA',
-        Priority = 100, -- Top factory priority
-        PriorityFunction = TAPrior.EngineerProduction,
+        Priority = 150, -- Top factory priority
+        PriorityFunction = TAPrior.UnitProductionT1,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Field', 1},
         BuilderConditions = {
@@ -96,7 +96,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Engineer Early',
         PlatoonTemplate = 'T1BuildEngineerSCTAEarly',
-        Priority = 150, -- Top factory priority
+        Priority = 200, -- Top factory priority
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {60} }, -- Don't make tanks if we have lots of them.
         },
@@ -117,8 +117,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi AirFactory Engineer',
         PlatoonTemplate = 'T1BuildEngineerAirSCTA',
-        Priority = 105,
-        PriorityFunction = TAPrior.EngineerProduction,
+        Priority = 150,
+        PriorityFunction = TAPrior.UnitProductionT1,
         DelayEqualBuildPlattons = {'AirEngineer', 1},
         InstanceCount = 1,
         BuilderConditions = {
@@ -144,8 +144,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Engineer',
         PlatoonTemplate = 'T3BuildEngineerSCTA',
-        Priority = 120, -- Top factory priority
-        PriorityFunction = TAPrior.EngineerProductionT3,
+        Priority = 200, -- Top factory priority
+        PriorityFunction = TAPrior.ProductionT3,
         DelayEqualBuildPlattons = {'T3Engineer', 1},
         InstanceCount = 1,
         BuilderConditions = {
@@ -157,8 +157,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Engineer Air',
         PlatoonTemplate = 'T3BuildEngineerAirSCTA',
-        Priority = 125, -- Top factory priority
-        PriorityFunction = TAPrior.EngineerProductionT3,
+        Priority = 200, -- Top factory priority
+        PriorityFunction = TAPrior.ProductionT3,
         DelayEqualBuildPlattons = {'T3Engineer', 1},
         InstanceCount = 1,
         BuilderConditions = {

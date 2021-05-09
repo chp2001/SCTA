@@ -117,7 +117,7 @@ BuilderGroup {
         BuilderName = 'SCTA PGen Field Assist',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
-        PriorityFunction = TAPrior.EnergyBeingBuilt,
+        PriorityFunction = TAPrior.NothingBuilt,
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {

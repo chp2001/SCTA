@@ -11,8 +11,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT3 HoverTank',
         PlatoonTemplate = 'T3LandHOVERSCTA',
-        Priority = 138,
-        PriorityFunction = TAPrior.LandProductionT3Tank,
+        Priority = 150,
+        PriorityFunction = TAPrior.ProductionT3,
         BuilderConditions = {
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
         },
@@ -21,31 +21,32 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Hover Artillery',
         PlatoonTemplate = 'T3HOVERMISSILESCTA', 
-        Priority = 126,
+        Priority = 120,
         PriorityFunction = TAPrior.ProductionT3,
         InstanceCount = 1,
         --DelayEqualBuildPlattons = 3,
         BuilderConditions = {
-        { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
+            { TAutils, 'EcoManagementTA', { 0.75, 0.9} },
     },
         BuilderType = 'Hover',
     },
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Hover AntiAir',
         PlatoonTemplate = 'T3HOVERAASCTA',
-        Priority = 133,
+        Priority = 130,
         PriorityFunction = TAPrior.ProductionT3,
         BuilderConditions = {
-         { EBC, 'GreaterThanEconStorageRatio', { 0.15, 0.25}},
+            { TAutils, 'EcoManagementTA', { 0.75, 0.9} },
         },
         BuilderType = 'Hover',
     },
     Builder {
         BuilderName = 'SCTAAI Factory Seaplane Fighter',
         PlatoonTemplate = 'T3AirFighterSCTA',
+        PriorityFunction = TAPrior.ProductionT3,
         Priority = 140,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
-        { TAutils, 'EcoManagementTA', { 0.75, 0.9, 0.5, 0.5, } },
+        { TAutils, 'EcoManagementTA', { 0.75, 0.9} },
         },
         BuilderType = 'Seaplane',
     },

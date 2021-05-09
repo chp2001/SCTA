@@ -52,16 +52,6 @@ ProductionT3 = function(self, aiBrain)
     end
 end
 
-EngineerProductionT3 = function(self, aiBrain)
-    if Factory(aiBrain,  6, LAB)  then 
-        return 155
-    elseif Factory(aiBrain,  0, categories.GATE) then
-        return 135
-    else
-        return 0
-    end
-end
-
 UnitProduction = function(self, aiBrain)
     if Factory(aiBrain,  1, PLATFORM) then
         return 80
@@ -165,12 +155,10 @@ end
 --ENERGYMIDTECH
 
 NothingBuilt = function(self, aiBrain)
-    if MoreProduct(aiBrain,  1, FUSION) then 
-        return 10
-    elseif MoreProduct(aiBrain,  0, FUSION) then 
-        return 125
+    if MoreProduct(aiBrain,  0, FUSION) then 
+        return 200
     else
-        return 25
+        return 0
     end
 end
 

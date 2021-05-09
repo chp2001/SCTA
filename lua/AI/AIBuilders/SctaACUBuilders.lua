@@ -153,7 +153,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1ACU Pgen2',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 50,
-        PriorityFunction = TAPrior.FactoryProductionT1,
+        PriorityFunction = TAPrior.UnitProductionT1,
         InstanceCount = 1,
         BuilderConditions = {
             { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
@@ -173,7 +173,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Commander LandFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        PriorityFunction = TAPrior.FactoryProductionT1,
+        PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 60,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory', 1},

@@ -16,7 +16,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Naval Engineer',
         PlatoonTemplate = 'T1EngineerSCTANaval',
-        PriorityFunction = TAPrior.EngineerProduction,
+        PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 140, -- Top factory priority
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.NAVAL * categories.ENGINEER * categories.TECH1} }, -- Build engies until we have 4 of them.
@@ -35,8 +35,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Hover Naval Engineer',
         PlatoonTemplate = 'T3BuildEngineerSCTA',
-        Priority = 120, -- Top factory priority
-        PriorityFunction = TAPrior.EngineerProductionT3,
+        Priority = 200, -- Top factory priority
+        PriorityFunction = TAPrior.ProductionT3,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.TECH3 * categories.HOVER} }, -- Build engies until we have 4 of them.
         },
@@ -45,8 +45,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Engineer Naval Air',
         PlatoonTemplate = 'T3BuildEngineerAirSCTA',
-        Priority = 125, -- Top factory priority
-        PriorityFunction = TAPrior.EngineerProductionT3,
+        Priority = 200, -- Top factory priority
+        PriorityFunction = TAPrior.ProductionT3,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.TECH3 * categories.AIR} }, -- Build engies until we have 4 of them.
         },

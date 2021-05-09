@@ -20,8 +20,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer LandFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        PriorityFunction = TAPrior.FactoryProductionT1,
-        Priority = 102,
+        PriorityFunction = TAPrior.UnitProductionT1,
+        Priority = 110,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
@@ -48,8 +48,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer LandFac2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        PriorityFunction = TAPrior.FactoryProductionT1,
-        Priority = 96,
+        PriorityFunction = TAPrior.UnitProductionT1,
+        Priority = 90,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
@@ -133,8 +133,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer AirFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        Priority = 103,
-        PriorityFunction = TAPrior.FactoryProductionT1,
+        Priority = 100,
+        PriorityFunction = TAPrior.UnitProductionT1,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
@@ -241,7 +241,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAT3 Artillery',
         PlatoonTemplate = 'EngineerBuilderSCTA3',
-        PriorityFunction = TAPrior.StructureProductionT3,
+        PriorityFunction = TAPrior.GantryConstruction,
         Priority = 160,
         InstanceCount = 1,
         BuilderConditions = {
@@ -334,7 +334,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'Nuclear Missile SCTA', -- Names need to be GLOBALLY unique.  Prefixing the AI name will help avoid name collisions with other AIs.	
         PlatoonTemplate = 'CommanderBuilderSCTADecoy',
-        PriorityFunction = TAPrior.StructureProductionT3,
+        PriorityFunction = TAPrior.GantryConstruction,
         Priority = 210,
         InstanceCount = 1,
         BuilderConditions = {

@@ -16,7 +16,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Kbot Early',
         PlatoonTemplate = 'T1LandDFTankSCTAEarly',
-        Priority = 95,
+        Priority = 130,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, } },
@@ -27,7 +27,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi Factory Kbot',
         PlatoonTemplate = 'T1LandDFTankSCTA',
         PriorityFunction = TAPrior.UnitProductionT1,
-        Priority = 20,
+        Priority = 120,
             BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {300} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, } },
@@ -37,9 +37,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Kbot Artillery',
         PlatoonTemplate = 'T1LandArtillerySCTA',
-        PriorityFunction = TAPrior.UnitProductionT1Aux,
-        Priority = 80,
-        InstanceCount = 2,
+        Priority = 100,
         BuilderConditions = {
             { TASlow, 'TAHaveUnitRatioGreaterThanLand', {categories.ARTILLERY} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, } },
@@ -50,7 +48,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Tank Early',
         PlatoonTemplate = 'T1LandDFTankSCTA2Early',
-        Priority = 95,
+        Priority = 130,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, } },
@@ -61,7 +59,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi Factory Tank',
         PlatoonTemplate = 'T1LandDFTankSCTA2',
         PriorityFunction = TAPrior.UnitProductionT1,
-        Priority = 30,
+        Priority = 120,
         BuilderConditions = {
         { MIBC, 'GreaterThanGameTime', {300} },
         { TAutils, 'EcoManagementTA', { 0.75, 0.5, } },
@@ -71,7 +69,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Tank AntiAir',
         PlatoonTemplate = 'T1LandAASCTA2',
-        Priority = 80,
+        Priority = 100,
         InstanceCount = 2,
         BuilderConditions = {
             { TASlow, 'TAHaveUnitRatioGreaterThanLand', {categories.ANTIAIR} },
@@ -202,8 +200,8 @@ BuilderGroup {
     Builder {
     BuilderName = 'SCTAAi FactoryT3 KBot',
     PlatoonTemplate = 'T3LandDFTankSCTA',
-    Priority = 139,
-    PriorityFunction = TAPrior.LandProductionT3Tank,
+    Priority = 150,
+    PriorityFunction = TAPrior.ProductionT3,
     InstanceCount = 1,
     BuilderConditions = {
         { TAutils, 'EcoManagementTA', { 0.75, 0.5, } },
@@ -213,7 +211,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Bot Sniper',
         PlatoonTemplate = 'T3LandDFBotSCTA',
-        Priority = 130,
+        Priority = 100,
         PriorityFunction = TAPrior.ProductionT3,
         InstanceCount = 1,
         BuilderConditions = {
@@ -225,7 +223,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Vehicle Artillery',
         PlatoonTemplate = 'T3LandDFVehicleSCTA',
-        Priority = 130,
+        Priority = 100,
         InstanceCount = 1,
         PriorityFunction = TAPrior.ProductionT3,
         BuilderConditions = {
@@ -237,8 +235,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT3 Tank Vehicle',
         PlatoonTemplate = 'T3LandDFTank2SCTA',
-        Priority = 130,
-        PriorityFunction = TAPrior.LandProductionT3Tank,
+        Priority = 150,
+        PriorityFunction = TAPrior.ProductionT3,
         InstanceCount = 1,
         BuilderConditions = {
             { TAutils, 'EcoManagementTA', { 0.75, 0.5} },

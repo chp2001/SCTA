@@ -3,7 +3,7 @@ local MoreProduct = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreat
 local LessProduct = import('/lua/editor/UnitCountBuildConditions.lua').HaveLessThanUnitsInCategoryBeingBuilt
 local LessTime = import('/lua/editor/MiscBuildConditions.lua').LessThanGameTime
 local RAIDAIR = categories.armfig + categories.corveng + categories.GROUNDATTACK
-local RAIDER =  categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea
+local RAIDER =  categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.AMPHIBIOUS - categories.COMMAND
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
@@ -194,8 +194,10 @@ UnitProductionT1 = function(self, aiBrain)
   end
 
   FactoryProductionT1 = function(self, aiBrain)
-        if Factory(aiBrain,  12, PLANT) then
+        if Factory(aiBrain,  0, LAB) then 
             return 0
+        elseif Factory(aiBrain,  12, PLANT) then
+            return 10
         else
             return 110
       end

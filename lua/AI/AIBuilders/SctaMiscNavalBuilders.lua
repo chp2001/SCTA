@@ -98,7 +98,9 @@ BuilderGroup {
         Priority = 135,
         PriorityFunction = TAPrior.ProductionT3,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
@@ -121,7 +123,9 @@ BuilderGroup {
         Priority = 150,
         PriorityFunction = TAPrior.ProductionT3,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },

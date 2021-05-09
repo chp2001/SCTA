@@ -132,7 +132,7 @@ BuilderGroup {
             { TASlow,    'TAAttackNaval', {true}},
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},	
             { TASlow, 'TAHaveUnitRatioGreaterThanNaval', {categories.CRUISER} },
-            { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.9} },
         },
         BuilderType = 'Sea',
     },

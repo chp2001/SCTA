@@ -84,7 +84,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, LAB} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, LAB} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
         BuilderType = 'OmniLand',
@@ -111,7 +111,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, LAB} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, LAB} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
         BuilderType = 'OmniLand',

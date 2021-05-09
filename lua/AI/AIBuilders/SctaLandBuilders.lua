@@ -149,7 +149,7 @@ BuilderGroup {
         Priority = 125,
         InstanceCount = 1,
         BuilderConditions = {   
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.AMPHIBIOUS * categories.TANK * categories.DIRECTFIRE - categories.SCOUT} },
+            { TASlow, 'TAHaveUnitRatioGreaterThanLand', {categories.TANK * categories.AMPHIBIOUS - categories.SCOUT} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, } },
         }, 
         BuilderType = 'Vehicle',
@@ -180,10 +180,10 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory All Terrain Other',
         PlatoonTemplate = 'T2LandAuxTerrain',
-        Priority = 11,
+        Priority = 125,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.LAND * categories.TECH2 * (categories.ARTILLERY + categories.SCOUT)} },   
+            { TASlow, 'TAHaveUnitRatioGreaterThanLand', {(categories.SCOUT + categories.ARTILLERY) * (categories.HOVER + categories.AMPHIBIOUS)} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, } },
         }, 
         BuilderType = 'Land',
@@ -204,7 +204,7 @@ BuilderGroup {
     PlatoonTemplate = 'T3LandDFTankSCTA',
     Priority = 139,
     PriorityFunction = TAPrior.LandProductionT3Tank,
-    InstanceCount = 2,
+    InstanceCount = 1,
     BuilderConditions = {
         { TAutils, 'EcoManagementTA', { 0.75, 0.5, } },
     },
@@ -217,7 +217,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.ProductionT3,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LAND * categories.TECH3 * (categories.SNIPER + categories.ARTILLERY)}}, -- Don't make tanks if we have lots of them.
+            { TASlow, 'TAHaveUnitRatioGreaterThanLand', {categories.SNIPER + categories.ARTILLERY} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, } },
         },
         BuilderType = 'KBot',
@@ -229,7 +229,7 @@ BuilderGroup {
         InstanceCount = 1,
         PriorityFunction = TAPrior.ProductionT3,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.LAND * categories.TECH3 * (categories.SNIPER + categories.ARTILLERY)}}, -- Don't make tanks if we have lots of them.
+            { TASlow, 'TAHaveUnitRatioGreaterThanLand', {categories.SNIPER + categories.ARTILLERY} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, } },
         },
         BuilderType = 'Vehicle',
@@ -239,7 +239,7 @@ BuilderGroup {
         PlatoonTemplate = 'T3LandDFTank2SCTA',
         Priority = 130,
         PriorityFunction = TAPrior.LandProductionT3Tank,
-        InstanceCount = 2,
+        InstanceCount = 1,
         BuilderConditions = {
             { TAutils, 'EcoManagementTA', { 0.75, 0.5} },
         },

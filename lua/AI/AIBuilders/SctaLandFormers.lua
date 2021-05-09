@@ -5,11 +5,11 @@ local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
-local RAIDER = (categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea)
+local RAIDER = (categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.AMPHIBIOUS - categories.COMMAND)
 local SPECIAL = (RAIDER + categories.EXPERIMENTAL + categories.ENGINEER + categories.SCOUT)
 local GROUND = categories.MOBILE * categories.LAND
 local TACATS = (categories.ANTISHIELD + categories.AMPHIBIOUS)
-local RANGE = (categories.ARTILLERY + categories.SILO + categories.ANTIAIR)
+local RANGE = (categories.ARTILLERY + categories.SILO + categories.ANTIAIR + categories.SNIPER)
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAILandFormers',

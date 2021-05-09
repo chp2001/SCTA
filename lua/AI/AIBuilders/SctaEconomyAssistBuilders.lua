@@ -26,7 +26,7 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, PLANT}},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3, LAB} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4, LAB} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT} },
             { TAutils, 'LessMassStorageMaxTA', { 0.2}},    
             },

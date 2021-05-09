@@ -122,7 +122,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.FIELDENGINEER}},
-            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.5, 0.5, } },
         },
         BuilderType = 'Other',
         BuilderData = {
@@ -190,7 +190,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.STRUCTURE * (categories.TECH2 + categories.TECH3)}},
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.FIELDENGINEER}},
-            { EBC, 'GreaterThanEconStorageRatio', { 0.5, 0.5}},
+            { TAutils, 'GreaterTAStorageRatio', { 0.5, 0.5}},
         },
         BuilderData = {
             Assist = {

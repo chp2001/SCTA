@@ -100,7 +100,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                     if self.Scout > 0 then
                         if not self.Main then
                             self:SCTAManagerLoopBody(builder, bType)
-                        elseif self.Main and TAPrior.UnitProductionT1 >= 100 then 
+                        elseif self.Main and TAPrior.UnitProductionT1 >= 90 then 
                             self:SCTAManagerLoopBody(builder, bType)
                         end
                     end

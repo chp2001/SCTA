@@ -155,7 +155,7 @@ UnitProductionT1 = function(self, aiBrain)
     elseif Factory(aiBrain,  1, LAB) then 
               return 50
       else
-          return 100
+          return 90
       end
   end
 
@@ -181,17 +181,15 @@ UnitProductionT1 = function(self, aiBrain)
     elseif Factory(aiBrain,  1, LAB) then 
               return 45
       else
-          return 90
+          return 100
       end
   end
 
   FactoryProductionT1 = function(self, aiBrain)
-    if Factory(aiBrain,  3, LAB) then
-              return 0
-    elseif Factory(aiBrain,  1, LAB) then 
-              return 25
-    else
-             return 110
+        if Factory(aiBrain,  12, PLANT) then
+            return 0
+        else
+            return 110
       end
   end
   

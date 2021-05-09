@@ -73,7 +73,78 @@ AIBrain = Class(SCTAAIBrainClass) {
         end
     end,
 
-    PBMBuildNumFactories = function (self, template, location, pType, factory)
+    ForceManagerSort = function(self)
+        if not self.SCTAAI then
+            return SCTAAIBrainClass.ForceManagerSort(self)
+        end
+        for _, v in self.BuilderManagers do
+            ----TAEngineerType
+            v.EngineerManager:SortBuilderList('LandTA')
+            v.EngineerManager:SortBuilderList('AirTA')
+            v.EngineerManager:SortBuilderList('SeaTA')
+            v.EngineerManager:SortBuilderList('T3TA')
+            v.EngineerManager:SortBuilderList('FieldTA')
+            v.EngineerManager:SortBuilderList('Command')
+            ---TAFactoryType
+            v.FactoryManager:SortBuilderList('KBot')
+            v.FactoryManager:SortBuilderList('Vehicle')
+            v.FactoryManager:SortBuilderList('Hover')
+            v.FactoryManager:SortBuilderList('Air')
+            v.FactoryManager:SortBuilderList('Seaplane')
+            v.FactoryManager:SortBuilderList('Sea')
+            v.FactoryManager:SortBuilderList('Gate')
+            ---TAPlatoonFormers
+            v.PlatoonFormManager:SortBuilderList('LandForm')
+            v.PlatoonFormManager:SortBuilderList('AirForm')
+            v.PlatoonFormManager:SortBuilderList('SeaForm')
+            v.PlatoonFormManager:SortBuilderList('Scout')
+            v.PlatoonFormManager:SortBuilderList('EngineerForm')
+            v.PlatoonFormManager:SortBuilderList('CommandTA')
+            v.PlatoonFormManager:SortBuilderList('Other')
+            v.PlatoonFormManager:SortBuilderList('StructureForm')
+        end
+    end,
+
+    --[[EconomyMonitor = function(self)
+        -- Only use this with AI-SCTAAI
+        if not self.SCTAAI then
+            return SCTAAIBrainClass.EconomyMonitor(self)
+        end
+    end,]]
+
+    UnderEnergyThreshold = function(self)
+        if not self.SCTAAI then
+            return SCTAAIBrainClass.UnderEnergyThreshold(self)
+        end
+    end,
+
+    OverEnergyThreshold = function(self)
+        if not self.SCTAAI then
+            return SCTAAIBrainClass.OverEnergyThreshold(self)
+        end
+    end,
+
+    UnderMassThreshold = function(self)
+        if not self.SCTAAI then
+            return SCTAAIBrainClass.UnderMassThreshold(self)
+        end
+    end,
+
+    OverMassThreshold = function(self)
+        if not self.SCTAAI then
+            return SCTAAIBrainClass.OverMassThreshold(self)
+        end
+    end,
+
+
+    InitializeEconomyState = function(self)
+        -- Only use this with AI-SCTAAI
+        if not self.SCTAAI then
+            return SCTAAIBrainClass.InitializeEconomyState(self)
+        end
+    end,
+
+    --[[PBMBuildNumFactories = function (self, template, location, pType, factory)
         --LOG('*template2', self.SCTAAI)
         if not self.SCTAAI then
             return SCTAAIBrainClass.PBMBuildNumFactories(self, template, location, pType, factory)
@@ -208,41 +279,9 @@ AIBrain = Class(SCTAAIBrainClass) {
             end
         end
         return true
-    end,
+    end,]]
 
-    ForceManagerSort = function(self)
-        if not self.SCTAAI then
-            return SCTAAIBrainClass.ForceManagerSort(self)
-        end
-        for _, v in self.BuilderManagers do
-            ----TAEngineerType
-            v.EngineerManager:SortBuilderList('LandTA')
-            v.EngineerManager:SortBuilderList('AirTA')
-            v.EngineerManager:SortBuilderList('SeaTA')
-            v.EngineerManager:SortBuilderList('T3TA')
-            v.EngineerManager:SortBuilderList('FieldTA')
-            v.EngineerManager:SortBuilderList('Command')
-            ---TAFactoryType
-            v.FactoryManager:SortBuilderList('KBot')
-            v.FactoryManager:SortBuilderList('Vehicle')
-            v.FactoryManager:SortBuilderList('Hover')
-            v.FactoryManager:SortBuilderList('Air')
-            v.FactoryManager:SortBuilderList('Seaplane')
-            v.FactoryManager:SortBuilderList('Sea')
-            v.FactoryManager:SortBuilderList('Gate')
-            ---TAPlatoonFormers
-            v.PlatoonFormManager:SortBuilderList('LandForm')
-            v.PlatoonFormManager:SortBuilderList('AirForm')
-            v.PlatoonFormManager:SortBuilderList('SeaForm')
-            v.PlatoonFormManager:SortBuilderList('Scout')
-            v.PlatoonFormManager:SortBuilderList('EngineerForm')
-            v.PlatoonFormManager:SortBuilderList('CommandTA')
-            v.PlatoonFormManager:SortBuilderList('Other')
-            v.PlatoonFormManager:SortBuilderList('StructureForm')
-        end
-    end,
-
-    InitializePlatoonBuildManager = function(self)
+    --[[InitializePlatoonBuildManager = function(self)
         if not self.SCTAAI then
             return SCTAAIBrainClass.InitializePlatoonBuildManager(self)
         end
@@ -736,18 +775,9 @@ AIBrain = Class(SCTAAIBrainClass) {
         end
 
         return numFactories
-    end,
+    end,]]
  
-     EconomyMonitor = function(self)
-         -- Only use this with AI-SCTAAI
-         if not self.SCTAAI then
-             return SCTAAIBrainClass.EconomyMonitor(self)
-         end
-         coroutine.yield(10)
-         -- We are leaving this forked thread here because we don't need it.
-         KillThread(self.EconomyMonitorThread)
-         self.EconomyMonitorThread = nil
-     end,
+     --[[
  
     ExpansionHelpThread = function(self)
         -- Only use this with AI-SCTAAI
@@ -757,12 +787,5 @@ AIBrain = Class(SCTAAIBrainClass) {
          coroutine.yield(10)
          -- We are leaving this forked thread here because we don't need it.
          KillThread(CurrentThread())
-     end,
- 
-     InitializeEconomyState = function(self)
-         -- Only use this with AI-SCTAAI
-         if not self.SCTAAI then
-             return SCTAAIBrainClass.InitializeEconomyState(self)
-         end
-     end,
+     end,]]
 }

@@ -48,7 +48,7 @@ BuilderGroup {
             { MIBC, 'LessThanGameTime', {360} }, -- Don't make tanks if we have lots of them.
             { MIBC, 'GreaterThanGameTime', {90} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, PLANT * ((categories.CORE * categories.BOT) + (categories.ARM * categories.TANK))} },
-            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, } },
         },
         BuilderType = 'Command',
         BuilderData = {
@@ -71,7 +71,7 @@ BuilderGroup {
             { MIBC, 'LessThanGameTime', {300} }, -- Don't make tanks if we have lots of them.
             { MIBC, 'GreaterThanGameTime', {90} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, PLANT * ((categories.CORE * categories.TANK) + (categories.ARM * categories.BOT))} },
-            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, } },
         },
         BuilderType = 'Command',
         BuilderData = {
@@ -134,7 +134,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.FACTORY * categories.AIR } }, -- Stop after 10 facs have been built.
-            { TAutils, 'EcoManagementTA', { 0.5, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.5, 0.5, } },
         },
         BuilderType = 'Command',
         BuilderData = {
@@ -156,7 +156,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.FactoryProductionT1,
         InstanceCount = 1,
         BuilderConditions = {
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
         },
         BuilderType = 'Command',
         BuilderData = {
@@ -177,8 +177,7 @@ BuilderGroup {
         Priority = 60,
         InstanceCount = 1,
         BuilderConditions = {
-            { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.75, 0.75 } },
-            { EBC, 'GreaterThanEconStorageRatio', { 0.2, 0.25}},
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75, } },
         },
         BuilderType = 'Command',
         BuilderData = {

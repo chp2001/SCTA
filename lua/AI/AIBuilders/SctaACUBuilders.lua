@@ -217,27 +217,6 @@ BuilderGroup {
         }
     },
     Builder {
-        BuilderName = 'SCTA Engineer Finish Commander',
-        PlatoonTemplate = 'CommanderBuilderSCTA',
-        PlatoonAIPlan = 'ManagerEngineerFindUnfinishedSCTA',
-        Priority = 500,
-        InstanceCount = 2,
-        DelayEqualBuildPlattons = {'Unfinished', 2},
-        BuilderConditions = {
-            { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'Unfinished' }},
-            { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
-                Time = 20,
-            },
-        },
-        BuilderType = 'Command',
-    },
-    Builder {
         BuilderName = 'SCTA Engineer Reclaim Excess',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         PlatoonAIPlan = 'SCTAReclaimAI',
@@ -254,29 +233,6 @@ BuilderGroup {
             ReclaimTime = 30,
         },
         BuilderType = 'LandTA',
-    },
-    Builder {
-        BuilderName = 'SCTA Commander Assist Hydro',
-        PlatoonTemplate = 'CommanderBuilderSCTA',
-        Plan = 'ManagerEngineerAssistAISCTA',
-        PriorityFunction = TAPrior.HydroBeingBuiltACU,
-        Priority = 10,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { MIBC, 'LessThanGameTime', {180} },
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.HYDROCARBON}},
-            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 15}},
-        },
-        BuilderData = {
-            Assist = {
-                AssistLocation = 'LocationType',
-                AssisteeType = 'Engineer',
-                AssistRange = 120,
-                BeingBuiltCategories = {'HYDROCARBON'},                                                   
-                AssistUntilFinished = true,
-            },
-        },
-        BuilderType = 'Command',
     },
     Builder {
         BuilderName = 'SCTA Engineer Factory Assist',

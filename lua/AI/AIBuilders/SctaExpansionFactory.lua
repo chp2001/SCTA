@@ -102,7 +102,7 @@ BuilderGroup {
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory2', 1},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Factory2' }},,
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factory2' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, LAB} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },

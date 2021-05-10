@@ -47,12 +47,11 @@ BuilderGroup {
         PlatoonTemplate = 'SctaExtractorUpgrades',
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'TAExtractorUpgrade', 1},
-        PriorityFunction = TAPrior.StructureProductionT2,
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 100,
         BuilderConditions = {
             { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'TAExtractors' }},
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.MASSEXTRACTION * categories.TECH1 } },
-            { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 1, categories.MASSEXTRACTION * categories.TECH1 } },  
+            { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.TECH1 } },  
             { EBC, 'GreaterThanEconIncome',  { 8, 70}},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
@@ -66,7 +65,7 @@ BuilderGroup {
         BuilderName = 'SCTA Extractor Emergency Upgrade',
         PlatoonTemplate = 'SctaExtractorUpgrades',
         DelayEqualBuildPlattons = {'TAExtractorUpgrade', 1},
-        PriorityFunction = TAPrior.FactoryReclaim,
+        PriorityFunction = TAPrior.UnitProduction,
         InstanceCount = 2,
         Priority = 150,
         BuilderConditions = {

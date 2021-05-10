@@ -16,7 +16,7 @@ BuilderGroup {
         InstanceCount = 4,
         BuilderType = 'SeaForm',
         BuilderConditions = {
-            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, categories.NAVAL * categories.SCOUT } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.NAVAL * categories.SCOUT } },
          },
          BuilderData = {
             LocationType = 'LocationType',
@@ -110,32 +110,6 @@ BuilderGroup {
         },
     },
     Builder {
-        BuilderName = 'SCTA HighTech Naval',
-        PlatoonTemplate = 'SCTANavalAssaultT2',
-        PriorityFunction = TAPrior.UnitProduction,
-        Priority = 120,
-        InstanceCount = 25,
-        BuilderType = 'SeaForm',
-        BuilderData = {
-            LocationType = 'LocationType',
-            UseFormation = 'AttackFormation',
-            ThreatWeights = {
-                IgnoreStrongerTargetsRatio = 100.0,  #DUNCAN - uncommented, was 100
-                PrimaryThreatTargetType = 'Economy',
-                SecondaryThreatTargetType = 'Naval',
-                SecondaryThreatWeight = 0.1,
-                WeakAttackThreatWeight = 1,
-                VeryNearThreatWeight = 10,
-                NearThreatWeight = 5,
-                MidThreatWeight = 1,
-                FarThreatWeight = 1,
-            },
-        },
-        BuilderConditions = {
-            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1,  categories.NAVAL * categories.MOBILE * (categories.TECH2 + categories.TECH3) - categories.ENGINEER} },
-        },
-    },
-    Builder {
         BuilderName = 'SCTAAI Air Naval Intercept',
         PlatoonTemplate = 'IntieAISCTA',
         PlatoonAIPlan = 'InterceptorAISCTAEnd',
@@ -149,7 +123,7 @@ BuilderGroup {
             Energy = true,
         },        
         BuilderConditions = { 
-            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1,  categories.ANTIAIR * categories.MOBILE * categories.AIR - categories.BOMBER - categories.GROUNDATTACK} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1,  (categories.ANTIAIR * categories.MOBILE * categories.AIR) - categories.BOMBER - categories.GROUNDATTACK} },
         },
     },
     Builder {
@@ -219,7 +193,7 @@ BuilderGroup {
         Priority = 111,
         InstanceCount = 2,
         BuilderConditions = {
-            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, categories.NAVALCARRIER} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVALCARRIER} },
             },
         BuilderType = 'SeaForm',
     },

@@ -40,7 +40,7 @@ PlatoonTemplate {
     Plan = 'NavalForceAISorian',
     --Type = 'SeaForm',
     GlobalSquads = {
-        { categories.TECH1 * NAVY - categories.ENGINEER, 4, 10, 'Attack', 'GrowthFormation' }
+        {NAVY - categories.ENGINEER, 4, 10, 'Attack', 'GrowthFormation' },
     },
 }
 
@@ -50,16 +50,6 @@ PlatoonTemplate {
     --Type = 'SeaForm',
     GlobalSquads = {
         {categories.NAVALCARRIER, 1, 1, 'Attack', 'GrowthFormation' }
-    },
-}
-
-
-PlatoonTemplate {
-    Name = 'SCTANavalAssaultT2',
-    Plan = 'NavalForceAISorian',
-    --Type = 'SeaForm',
-    GlobalSquads = {
-        {NAVY - categories.ENGINEER, 1, 5, 'Attack', 'GrowthFormation' }
     },
 }
 

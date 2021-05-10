@@ -101,8 +101,6 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
             if self.SeaForm > 0 then
                 self:SCTAManagerLoopBody(builder, 'SeaForm')
             end
-        else
-            self:SCTAManagerLoopBody(builder, bType)
         end
     end,
         
@@ -115,14 +113,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                 local poolPlatoon = self.Brain:GetPlatoonUniquelyNamed('ArmyPool')
                 local template = self:GetPlatoonTemplate(builder:GetPlatoonTemplate())
                 builder:FormDebug()
-                if bType == 'AirForm' or bType == 'StructureForm' then 
-                    self.Radius = 1000
-                elseif bType == 'LandForm' or bType == 'Scout' then 
-                    self.Radius = 100 
-                else
-                    self.Radius = self.OriginalRadius
-                end
-                local radius = self.Radius
+                local radius = 500
                 if builder:GetFormRadius() then radius = builder:GetFormRadius() end
             if not template or not self.Location or not radius then
                 if type(template) != 'table' or type(template[1]) != 'string' or type(template[2]) != 'string' then

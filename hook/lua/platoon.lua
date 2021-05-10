@@ -1496,10 +1496,10 @@ Platoon = Class(SCTAAIPlatoon) {
         local data = self.PlatoonData
         self.myThreat = self:CalculatePlatoonThreat('Surface', categories.MOBILE)
         local platoonUnits = self:GetPlatoonUnits()
-        for _,v in platoonUnits do
+        --[[for _,v in platoonUnits do
             if v.Dead then continue end
-            v:SetCustomName('StrikeForceEarly')
-        end
+            v:SetCustomName('AttackHuntSCTA')
+        end]]
         while aiBrain:PlatoonExists(self) do
           local target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ALLUNITS - categories.AIR - categories.COMMAND - categories.STRUCTURE)
             if target then
@@ -1567,10 +1567,10 @@ Platoon = Class(SCTAAIPlatoon) {
         local categoryList = {}
         local atkPri = {}
         local platoonUnits = self:GetPlatoonUnits()
-        for _,v in platoonUnits do
+        --[[for _,v in platoonUnits do
             if v.Dead then continue end
-            v:SetCustomName('StrikeForceMid')
-        end
+            v:SetCustomName('AttackHuntSCTA')
+        end]]
         if data.AntiAir then
             table.insert( atkPri, 'AIR' )
             table.insert( categoryList, categories.MOBILE * categories.AIR)
@@ -1770,10 +1770,10 @@ Platoon = Class(SCTAAIPlatoon) {
         local aiBrain = self:GetBrain()
         local armyIndex = aiBrain:GetArmyIndex()
         local platoonUnits = self:GetPlatoonUnits()
-        for _,v in platoonUnits do
+        --[[for _,v in platoonUnits do
             if v.Dead then continue end
             v:SetCustomName('AttackHuntSCTA')
-        end
+        end]]
         local target
         local blip
         while aiBrain:PlatoonExists(self) do
@@ -1807,10 +1807,10 @@ Platoon = Class(SCTAAIPlatoon) {
         local enemy = aiBrain:GetCurrentEnemy()
         local data = self.PlatoonData
         local platoonUnits = self:GetPlatoonUnits()
-        for _,v in platoonUnits do
+        --[[for _,v in platoonUnits do
             if v.Dead then continue end
-            v:SetCustomName('AttackForceMid')
-        end
+            v:SetCustomName('AttackHuntSCTA')
+        end]]
         local numberOfUnitsInPlatoon = table.getn(platoonUnits)
         local oldNumberOfUnitsInPlatoon = numberOfUnitsInPlatoon
         local stuckCount = 0
@@ -1969,10 +1969,10 @@ Platoon = Class(SCTAAIPlatoon) {
         local enemy = aiBrain:GetCurrentEnemy()
 
         local platoonUnits = self:GetPlatoonUnits()
-        for _,v in platoonUnits do
+        --[[for _,v in platoonUnits do
             if v.Dead then continue end
-            v:SetCustomName('AttackForceEnd')
-        end
+            v:SetCustomName('AttackHuntSCTA')
+        end]]
         local numberOfUnitsInPlatoon = table.getn(platoonUnits)
         local stuckCount = 0
 

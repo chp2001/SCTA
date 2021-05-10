@@ -173,7 +173,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Finish Navy',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
+        PlatoonAIPlan = 'ManagerEngineerFindUnfinishedSCTA',
         Priority = 500,
         InstanceCount = 2,
         DelayEqualBuildPlattons = {'Unfinished', 2},

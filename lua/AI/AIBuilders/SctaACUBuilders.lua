@@ -154,7 +154,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1ACU Pgen2',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 50,
-        PriorityFunction = TAPrior.UnitProductionT1,
+       PriorityFunction = TAPrior.UnitProductionT1,
         InstanceCount = 1,
         BuilderConditions = {
             { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
@@ -174,7 +174,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Commander LandFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        PriorityFunction = TAPrior.UnitProductionT1,
+       PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 60,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory', 1},
@@ -219,7 +219,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Finish Commander',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
+        PlatoonAIPlan = 'ManagerEngineerFindUnfinishedSCTA',
         Priority = 500,
         InstanceCount = 2,
         DelayEqualBuildPlattons = {'Unfinished', 2},
@@ -258,14 +258,14 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Commander Assist Hydro',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        Plan = 'ManagerEngineerAssistAI',
+        Plan = 'ManagerEngineerAssistAISCTA',
         PriorityFunction = TAPrior.HydroBeingBuiltACU,
-        Priority = 980,
+        Priority = 10,
         InstanceCount = 1,
         BuilderConditions = {
             { MIBC, 'LessThanGameTime', {180} },
             { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.HYDROCARBON}},
-            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 50}},
+            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 15}},
         },
         BuilderData = {
             Assist = {
@@ -281,7 +281,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Factory Assist',
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
-        PlatoonAIPlan = 'ManagerEngineerAssistAI',
+        PlatoonAIPlan = 'ManagerEngineerAssistAISCTA',
         PriorityFunction = TAPrior.UnitProduction,
         Priority = 500,
         InstanceCount = 2,
@@ -302,7 +302,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Assist Unit Production Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        PlatoonAIPlan = 'ManagerEngineerAssistAI',
+        PlatoonAIPlan = 'ManagerEngineerAssistAISCTA',
         PriorityFunction = TAPrior.AssistProduction,
         Priority = 5,
         InstanceCount = 5,

@@ -77,8 +77,6 @@ end
 FactoryReclaim = function(self, aiBrain)
     if Factory(aiBrain,  1, PLATFORM) then
         return 100
-    elseif Factory(aiBrain,  6, LAB) then
-        return 75
     elseif Factory(aiBrain,  12, PLANT) then 
         return 10
     else
@@ -138,7 +136,7 @@ end
 
 HydroBeingBuiltACU = function(self, aiBrain)
     if MoreProduct(aiBrain,  0, categories.HYDROCARBON) then 
-        return 975
+        return 950
     else
         return 0
     end

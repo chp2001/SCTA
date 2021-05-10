@@ -16,7 +16,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi Factory Naval Engineer',
         PlatoonTemplate = 'T1EngineerSCTANaval',
-        PriorityFunction = TAPrior.UnitProductionT1,
+       ---PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 140, -- Top factory priority
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.NAVAL * categories.ENGINEER * categories.TECH1} }, -- Build engies until we have 4 of them.
@@ -78,7 +78,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT1 AntiSub',
         PlatoonTemplate = 'T1SubSCTA',
-        PriorityFunction = TAPrior.UnitProductionT1,
+       ---PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 120,
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},

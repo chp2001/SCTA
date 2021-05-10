@@ -52,7 +52,7 @@ BuilderGroup {
         BuilderConditions = {
             { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'TAExtractors' }},
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.MASSEXTRACTION * categories.TECH1 } },
-            { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.TECH1 } },  
+            { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 1, categories.MASSEXTRACTION * categories.TECH1 } },  
             { EBC, 'GreaterThanEconIncome',  { 8, 70}},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },

@@ -28,7 +28,7 @@ BuilderConditions = {
     Builder {
         BuilderName = 'SCTAAi Factory Kbot',
         PlatoonTemplate = 'T1LandDFTankSCTA',
-        PriorityFunction = TAPrior.UnitProductionT1,
+       PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 120,
         DelayEqualBuildPlattons = {'FactoryProduction', 1},
         BuilderConditions = {
@@ -66,7 +66,7 @@ BuilderConditions = {
     Builder {
         BuilderName = 'SCTAAi Factory Tank',
         PlatoonTemplate = 'T1LandDFTankSCTA2',
-        PriorityFunction = TAPrior.UnitProductionT1,
+       PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 120,
         DelayEqualBuildPlattons = {'FactoryProduction', 1},
         BuilderConditions = {

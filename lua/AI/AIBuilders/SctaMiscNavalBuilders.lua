@@ -19,7 +19,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA T1 Naval Factory Builder',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        PriorityFunction = TAPrior.UnitProductionT1,
+       ---PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 100,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory', 1},

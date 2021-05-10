@@ -64,7 +64,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         if not self.Naval then
             if TAPrior.UnitProduction >= 75 and (bType == 'StructureForm' or TAPrior.GantryProduction >= 200 and bType == 'Other') then
                if bType == 'StructureForm' then
-                    self.StructureForm = GetUnitsAroundPoint(self.Brain, categories.STRUCTURE * categories.CQUEMOV, self.Location, self.Radius, 'Ally')
+                    self.StructureForm = GetUnitsAroundPoint(self.Brain, categories.STRUCTURE * categories.CQUEMOV, self.Location, 1000, 'Ally')
                     if self.StructureForm > 2 then 
                         self:SCTAManagerLoopBody(builder, bType)
                     end
@@ -76,12 +76,12 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                 end 
                 --LOG('*TATerrain3', self.Main)
             elseif bType == 'LandForm' then 
-                    self.LandForm = GetUnitsAroundPoint(self.Brain, categories.LAND * categories.MOBILE - categories.ENGINEER - categories.SCOUT, self.Location, self.Radius, 'Ally')
+                    self.LandForm = GetUnitsAroundPoint(self.Brain, categories.LAND * categories.MOBILE - categories.ENGINEER - categories.SCOUT, self.Location, 100, 'Ally')
                     if self.LandForm > 2 then
                         self:SCTAManagerLoopBody(builder, bType)
                     end    
             elseif bType == 'AirForm' then 
-                    self.AirForm = GetUnitsAroundPoint(self.Brain, categories.AIR * categories.MOBILE - categories.ENGINEER - categories.SCOUT, self.Location, self.Radius, 'Ally')
+                    self.AirForm = GetUnitsAroundPoint(self.Brain, categories.AIR * categories.MOBILE - categories.ENGINEER - categories.SCOUT, self.Location, 1000, 'Ally')
                     if self.AirForm > 0 then
                         self:SCTAManagerLoopBody(builder, bType)
                     end
@@ -90,7 +90,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
                     if self.Scout > 0 then
                         if not self.Main then
                             self:SCTAManagerLoopBody(builder, bType)
-                        elseif self.Main and TAPrior.UnitProductionT1 >= 90 then 
+                        elseif self.Main and TAPrior.UnitProductionT1 >= 75 then 
                             self:SCTAManagerLoopBody(builder, bType)
                         end
                     end
@@ -98,9 +98,9 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
             elseif self.Naval and bType == 'SeaForm' then 
                 self.SeaForm = GetUnitsAroundPoint(self.Brain, categories.NAVAL * categories.MOBILE, self.Location, self.Radius, 'Ally')
                 --LOG('*TATerrain', self.LocationType)
-                    if self.SeaForm > 0 then
-                        self:SCTAManagerLoopBody(builder, 'SeaForm')
-                    end
+            if self.SeaForm > 0 then
+                self:SCTAManagerLoopBody(builder, 'SeaForm')
+            end
         end
     end,
         

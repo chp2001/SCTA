@@ -28,7 +28,7 @@ BuilderGroup {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, PLANT}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4, LAB} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT} },
-            { TAutils, 'LessMassStorageMaxTA', { 0.2}},    
+            { TAutils, 'LessMassStorageMaxTA', { 0.05}},    
             },
         BuilderData = {
             Location = 'LocationType',
@@ -94,7 +94,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Finish',
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
-        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
+        PlatoonAIPlan = 'ManagerEngineerFindUnfinishedSCTA',
         Priority = 500,
         InstanceCount = 2,
         DelayEqualBuildPlattons = {'Unfinished', 2},

@@ -5,11 +5,9 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armwar', 1, 2, 'attack', 'none' },
-            { 'armck', 1, 1, 'support', 'None' },
-            { 'armwar', 1, 2, 'attack', 'none' },
         },
         Core = {
-            { 'corstorm', 1, 4, 'attack', 'none' },
+            { 'corstorm', 1, 2, 'attack', 'none' },
         },
     }
 }
@@ -18,10 +16,10 @@ PlatoonTemplate {
     Name = 'T1LandDFTankSCTAEarly',
     FactionSquads = {
         Arm = {
-            { 'armwar', 1, 4, 'attack', 'none' },
+            { 'armwar', 1, 2, 'attack', 'none' },
         },
         Core = {
-            { 'corstorm', 1, 4, 'attack', 'none' },
+            { 'corstorm', 1, 2, 'attack', 'none' },
         },
     }
 }
@@ -32,7 +30,8 @@ PlatoonTemplate {
     Name = 'T1LandScoutSCTA',
     FactionSquads = {
         Arm = {
-            { 'armflea', 1, 1, 'scout', 'none' }
+            { 'armflea', 1, 1, 'scout', 'none' },
+            { 'armck', 1, 1, 'support', 'None' },
         },
         Core = {
             { 'corvoyr', 1, 1, 'scout', 'none' }

@@ -3,6 +3,7 @@ local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local IBC = '/lua/editor/InstantBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
+local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local MABC = '/lua/editor/MarkerBuildConditions.lua'
 local PLANT = (categories.FACTORY * categories.TECH1)
@@ -153,7 +154,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1ACU Pgen2',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 50,
-        PriorityFunction = TAPrior.FactoryProductionT1,
+       PriorityFunction = TAPrior.UnitProductionT1,
         InstanceCount = 1,
         BuilderConditions = {
             { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
@@ -173,10 +174,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Commander LandFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-        PriorityFunction = TAPrior.FactoryProductionT1,
+       PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 60,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.FACTORY} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75, } },
         },
         BuilderType = 'Command',
@@ -212,6 +216,113 @@ BuilderGroup {
             }
         }
     },
+    Builder {
+        BuilderName = 'SCTA Engineer Finish Commander',
+        PlatoonTemplate = 'CommanderBuilderSCTA',
+        PlatoonAIPlan = 'ManagerEngineerFindUnfinishedSCTA',
+        Priority = 500,
+        InstanceCount = 2,
+        DelayEqualBuildPlattons = {'Unfinished', 2},
+        BuilderConditions = {
+            { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'Unfinished' }},
+            { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                BeingBuiltCategories = {'STRUCTURE STRATEGIC, STRUCTURE ECONOMIC, STRUCTURE'},
+                Time = 20,
+            },
+        },
+        BuilderType = 'Command',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Reclaim Excess',
+        PlatoonTemplate = 'EngineerBuilderSCTA',
+        PlatoonAIPlan = 'SCTAReclaimAI',
+        Priority = 150,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { MIBC, 'GreaterThanGameTime', { 120 } }, 
+            { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.25}},   
+        },
+        BuilderData = {
+            Terrain = true,
+            LocationType = 'LocationType',
+            ReclaimTime = 30,
+        },
+        BuilderType = 'LandTA',
+    },
+    Builder {
+        BuilderName = 'SCTA Commander Assist Hydro',
+        PlatoonTemplate = 'CommanderBuilderSCTA',
+        Plan = 'ManagerEngineerAssistAISCTA',
+        PriorityFunction = TAPrior.HydroBeingBuiltACU,
+        Priority = 10,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {180} },
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.HYDROCARBON}},
+            { MABC, 'MarkerLessThanDistance',  { 'Hydrocarbon', 15}},
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                AssistRange = 120,
+                BeingBuiltCategories = {'HYDROCARBON'},                                                   
+                AssistUntilFinished = true,
+            },
+        },
+        BuilderType = 'Command',
+    },
+    Builder {
+        BuilderName = 'SCTA Engineer Factory Assist',
+        PlatoonTemplate = 'EngineerBuilderSCTAALL',
+        PlatoonAIPlan = 'ManagerEngineerAssistAISCTA',
+        PriorityFunction = TAPrior.UnitProduction,
+        Priority = 500,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER - categories.COMMAND}},
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, LAB + PLATFORM}},
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Engineer',
+                BeingBuiltCategories = {'STRUCTURE FACTORY TECH2, STRUCTURE FACTORY TECH3'},
+                Time = 20,
+            },
+        },
+        BuilderType = 'NotACU',
+    },
+    Builder {
+        BuilderName = 'SCTA Assist Unit Production Idle',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PlatoonAIPlan = 'ManagerEngineerAssistAISCTA',
+        PriorityFunction = TAPrior.AssistProduction,
+        Priority = 5,
+        InstanceCount = 5,
+        BuilderConditions = {
+            { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.MOBILE }},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER - categories.COMMAND} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
+        },
+        BuilderData = {
+            Assist = {
+                AssistLocation = 'LocationType',
+                AssisteeType = 'Factory',
+                PermanentAssist = false,
+                BeingBuiltCategories = {'MOBILE'},                                        
+                Time = 60,
+            },
+        },
+        BuilderType = 'NotACU',
+    },
 }
 
 --{ SIBC, 'EngineerNeedsAssistance', { false, 'LocationType', {'STRUCTURE'} }},
+

@@ -237,21 +237,6 @@ function SCTAEngineerMoveWithSafePathLand(aiBrain, unit, destination)
     end
     local pos = unit:GetPosition()
     local result, bestPos = unit:CanPathTo(destination)
-    local bUsedTransports = false
-    if not result or VDist2Sq(pos[1], pos[3], destination[1], destination[3]) > 65536 and unit.PlatoonHandle and not EntityCategoryContains(categories.COMMAND, unit) then
-        -- If we can't path to our destination, we need, rather than want, transports
-        local needTransports = not result
-        -- If distance > 512
-        if VDist2Sq(pos[1], pos[3], destination[1], destination[3]) > 262144 then
-            needTransports = true
-        end
-        -- Skip the last move... we want to return and do a build
-        bUsedTransports = AIAttackUtils.SendPlatoonWithTransportsNoCheck(aiBrain, unit.PlatoonHandle, destination, needTransports, true, false)
-
-        if bUsedTransports then
-            return true
-        end
-    end
 
     -- If we're here, we haven't used transports and we can path to the destination
     if result then

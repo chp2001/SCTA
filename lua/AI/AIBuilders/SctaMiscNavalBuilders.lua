@@ -19,11 +19,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA T1 Naval Factory Builder',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        PriorityFunction = TAPrior.FactoryProductionT1,
-        Priority = 115,
+       ---PriorityFunction = TAPrior.UnitProductionT1,
+        Priority = 100,
         InstanceCount = 1,
-        BuilderConditions = { 
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.NAVAL * PLANT} }, 
+        DelayEqualBuildPlattons = {'Factory', 1},
+        BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
+            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Sea' } },
             { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.FACTORY} },
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, (categories.NAVAL * categories.FACTORY) + categories.xsl0103 + categories.ual0201, 'Enemy'}},	
@@ -46,7 +48,10 @@ BuilderGroup {
         PriorityFunction = TAPrior.UnitProduction,
         Priority = 125,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, LAB} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
@@ -67,11 +72,13 @@ BuilderGroup {
         PriorityFunction = TAPrior.UnitProduction,
         Priority = 141,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
             { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},		
             { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, LAB * categories.NAVAL } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 3, LAB * categories.NAVAL } },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, LAB * categories.NAVAL } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
         BuilderType = 'SeaTA',
@@ -91,7 +98,9 @@ BuilderGroup {
         Priority = 135,
         PriorityFunction = TAPrior.ProductionT3,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Air' } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
@@ -114,7 +123,9 @@ BuilderGroup {
         Priority = 150,
         PriorityFunction = TAPrior.ProductionT3,
         InstanceCount = 1,
+        DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
@@ -241,7 +252,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2 Naval PGen',
         PlatoonTemplate = 'EngineerBuilderSCTANaval2',
-        PriorityFunction = TAPrior.NothingBuilt,
+        PriorityFunction = TAPrior.StructureProductionT2,
         Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
@@ -296,4 +307,96 @@ BuilderGroup {
             },
         }
     },
+    Builder {
+        BuilderName = 'SCTAAI T1Engineer Naval Mex 25',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        Priority = 105,
+        InstanceCount = 1, -- The max number concurrent instances of this builder.
+        DelayEqualBuildPlattons = {'MexLand2', 1},
+        BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
+            { MABC, 'CanBuildOnMassLessThanDistance', { 'Naval Area', 25, -500, 1000, 0, 'StructuresNotMex', 1 }},
+        },
+        BuilderType = 'SeaTA',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
+                BuildStructures = {
+                    'T1Resource',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T1Engineer Naval Mex 150',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        Priority = 150,
+        InstanceCount = 1, -- The max number concurrent instances of this builder.
+        DelayEqualBuildPlattons = {'MexLand2', 1},
+        BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
+            { MABC, 'CanBuildOnMassLessThanDistance', { 'Naval Area', 150, -500, 1000, 0, 'StructuresNotMex', 1 }},
+        },
+        BuilderType = 'SeaTA',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
+                BuildStructures = {
+                    'T1Resource',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T1Engineer 300 Mex Naval',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        Priority = 125,
+        InstanceCount = 1,
+        DelayEqualBuildPlattons = {'MexLand2', 1},
+        BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
+            { MABC, 'CanBuildOnMassLessThanDistance', { 'Naval Area', 300, -500, 500, 0, 'StructuresNotMex', 1 }},
+        },
+        BuilderType = 'SeaTA',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
+                BuildStructures = {
+                    'T1Resource',
+                    }
+                }
+            }
+        },
+    Builder {
+        BuilderName = 'SCTAAI T2Engineer 300 Mex Naval',
+        PlatoonTemplate = 'EngineerBuilderSCTANaval2',
+        Priority = 125,
+        InstanceCount = 1,
+        DelayEqualBuildPlattons = {'MexLand2', 1},
+        BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'MexLand2' }},
+            { MABC, 'CanBuildOnMassLessThanDistance', { 'Naval Area', 300, -500, 500, 0, 'StructuresNotMex', 1 }},
+        },
+        BuilderType = 'SeaTA',
+        BuilderData = {
+            NeedGuard = false,
+            DesiresAssist = false,
+            Construction = {
+            Location = 'LocationType',
+            NearMarkerType = 'Naval Area',
+                BuildStructures = {
+                    'T2Resource',
+                    }
+                }
+            }
+        },
 }

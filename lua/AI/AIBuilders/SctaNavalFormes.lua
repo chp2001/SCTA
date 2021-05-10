@@ -173,7 +173,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Engineer Finish Navy',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        PlatoonAIPlan = 'ManagerEngineerFindUnfinished',
+        PlatoonAIPlan = 'ManagerEngineerFindUnfinishedSCTA',
         Priority = 500,
         InstanceCount = 2,
         DelayEqualBuildPlattons = {'Unfinished', 2},
@@ -210,6 +210,17 @@ BuilderGroup {
             Reclaim = {'cortide, armtide,'},
             ReclaimTime = 30,
         },
+        BuilderType = 'SeaForm',
+    },
+    Builder {
+        BuilderName = 'SCTA Aircraft Carrier',
+        PlatoonTemplate = 'SCTAAirCarrier',
+        PriorityFunction = TAPrior.AirCarrierExist,
+        Priority = 111,
+        InstanceCount = 2,
+        BuilderConditions = {
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, categories.NAVALCARRIER} },
+            },
         BuilderType = 'SeaForm',
     },
 }

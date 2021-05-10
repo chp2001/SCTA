@@ -4,6 +4,9 @@ UnitBlueprint {
         Health = 1500,
         MaxHealth = 1500,
     },
+    Economy = {
+        BuildCostEnergy = 20000,
+        },
     Intel = {
         SonarRadius = 55,
         VisionRadius = 15,

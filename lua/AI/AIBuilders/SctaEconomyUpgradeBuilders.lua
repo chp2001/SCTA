@@ -52,7 +52,7 @@ BuilderGroup {
         BuilderConditions = {
             { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'TAExtractors' }},
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.MASSEXTRACTION * categories.TECH1 } },
-            { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.TECH1 } },  
+            { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 1, categories.MASSEXTRACTION * categories.TECH1 } },  
             { EBC, 'GreaterThanEconIncome',  { 8, 70}},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
@@ -72,7 +72,7 @@ BuilderGroup {
         BuilderConditions = {
             { TASlow, 'CheckBuildPlatoonDelaySCTA',  { 'TAExtractors' }},
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.MASSEXTRACTION * categories.TECH1 } },
-            { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 3, categories.MASSEXTRACTION * categories.TECH1 } },  
+            { TASlow, 'HaveLessThanUnitsInCategoryBeingUpgradeSCTA', { 2, categories.MASSEXTRACTION * categories.TECH1 } },  
             { TAutils, 'EcoManagementTA', { 0.9, 0.9} },
             { EBC, 'GreaterThanEconStorageCurrent', { 800, 1000 } },
         },

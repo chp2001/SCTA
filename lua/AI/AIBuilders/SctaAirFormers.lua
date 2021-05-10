@@ -27,9 +27,9 @@ BuilderGroup {
         BuilderName = 'SCTAAI Bomber Attack',
         PlatoonTemplate = 'SCTABomberAttack',
         PlatoonAIPlan = 'BomberAISCTA',
-        PriorityFunction = TAPrior.UnitProductionT1AIR,
+        PriorityFunction = TAPrior.AirProduction,
         Priority = 100,
-        InstanceCount = 20,
+        InstanceCount = 50,
         BuilderType = 'AirForm',
         BuilderData = {
             LocationType = 'LocationType',
@@ -42,10 +42,10 @@ BuilderGroup {
         BuilderName = 'SCTAAI Air Intercept',
         PlatoonTemplate = 'IntieAISCTA',
         PlatoonAIPlan = 'InterceptorAISCTA',
-        PriorityFunction = TAPrior.UnitProductionT1AIR,
+        PriorityFunction = TAPrior.AirProduction,
         Priority = 100,
         PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
-        InstanceCount = 20,
+        InstanceCount = 50,
         BuilderType = 'AirForm', 
         BuilderData = {
             LocationType = 'LocationType',
@@ -60,7 +60,7 @@ BuilderGroup {
         PlatoonAIPlan = 'InterceptorAISCTAStealth',
         PriorityFunction = TAPrior.UnitProduction,
         Priority = 110,
-        InstanceCount = 20,
+        InstanceCount = 50,
         PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
         BuilderType = 'AirForm',
         BuilderData = {
@@ -77,7 +77,8 @@ BuilderGroup {
         PlatoonAIPlan = 'InterceptorAISCTAEnd',
         PriorityFunction = TAPrior.GantryConstruction,
         Priority = 110,
-        InstanceCount = 20,
+        FormRadius = 1000,
+        InstanceCount = 50,
         PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
         BuilderType = 'AirForm',
         BuilderData = {

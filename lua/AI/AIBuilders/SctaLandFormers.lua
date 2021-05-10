@@ -5,11 +5,11 @@ local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
-local RAIDER = (categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.armspid + categories.armflea)
+local RAIDER = (categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.AMPHIBIOUS - categories.COMMAND)
 local SPECIAL = (RAIDER + categories.EXPERIMENTAL + categories.ENGINEER + categories.SCOUT)
 local GROUND = categories.MOBILE * categories.LAND
 local TACATS = (categories.ANTISHIELD + categories.AMPHIBIOUS)
-local RANGE = (categories.ARTILLERY + categories.SILO + categories.ANTIAIR)
+local RANGE = (categories.ARTILLERY + categories.SILO + categories.ANTIAIR + categories.SNIPER)
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAILandFormers',
@@ -22,11 +22,18 @@ BuilderGroup {
         InstanceCount = 50,
         BuilderType = 'LandForm',
         BuilderData = {
+            ThreatSupport = 75,
+            Small = true,
+            UseMoveOrder = true,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
-            UseMoveOrder = true,
             UseFormation = 'AttackFormation',
+            LocationType = 'LocationType',
             AntiAir = true,
+            ThreatWeights = {
+                SecondaryTargetThreatType = 'StructuresNotMex',
+                IgnoreStrongerTargetsRatio = 100.0,
+            },
         },        
         BuilderConditions = {
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 2,  GROUND * categories.ANTIAIR - categories.ANTISHIELD} },
@@ -84,6 +91,7 @@ BuilderGroup {
             ThreatSupport = 75,
             NeverGuardBases = true,
             NeverGuardEngineers = true,
+            UseMoveOrder = true,
             UseFormation = 'AttackFormation',
             LocationType = 'LocationType',
             ThreatWeights = {
@@ -106,13 +114,14 @@ BuilderGroup {
         BuilderData = {
             ThreatSupport = 75,
             Small = true,
+            UseMoveOrder = true,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',
             LocationType = 'LocationType',
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4, GROUND - SPECIAL}},
+          { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4, GROUND - SPECIAL}},
         },
     },
     Builder {
@@ -122,16 +131,18 @@ BuilderGroup {
         PriorityFunction = TAPrior.StructureProductionT2,
         Priority = 250,
         InstanceCount = 50,
-        BuilderType = 'StructureForm',
+        FormRadius = 1000,
+        BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 75,
+            UseMoveOrder = true,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',
             LocationType = 'LocationType',
         },        
         BuilderConditions = {
-            --{ UCBC, 'PoolGreaterAtLocation', { 'LocationType', 9, GROUND - SPECIAL}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 9, GROUND - SPECIAL}},
         },
     },
     ----AggressivePlatoons
@@ -173,6 +184,7 @@ BuilderGroup {
             NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',
             LocationType = 'LocationType',
+            AggressiveMove = true,
             ThreatWeights = {
             SecondaryTargetThreatType = 'StructuresNotMex',
             IgnoreStrongerTargetsRatio = 100.0,
@@ -190,13 +202,15 @@ BuilderGroup {
         PriorityFunction = TAPrior.TechEnergyExist,
         Priority = 210,
         InstanceCount = 50,
-        BuilderType = 'StructureForm',
+        FormRadius = 1000,
+        BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 75,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',
             LocationType = 'LocationType',
+            AggressiveMove = true,
             ThreatWeights = {
             SecondaryTargetThreatType = 'StructuresNotMex',
             IgnoreStrongerTargetsRatio = 100.0,

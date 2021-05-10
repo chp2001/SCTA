@@ -238,6 +238,10 @@ TAunitkeygroups = {
         "corspec",
         "armmark",
     },
+    ["T2_Air_Transport"] = {
+        "armthovr",
+        "corthovr",
+    },
     ["T1_Mobile_Light_Artillery"]= {
         "armham",
         "corthud",

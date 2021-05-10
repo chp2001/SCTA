@@ -10,7 +10,7 @@ local SKY = categories.AIR * categories.MOBILE
 
 PlatoonTemplate {
     Name = 'SCTABomberAttack',
-    Plan = 'None',
+    Plan = 'BomberAISCTA',
     ---PlatoonType = 'Scout',
     GlobalSquads = {
         { SKY * (((categories.ANTIAIR + categories.GROUNDATTACK) * categories.TECH2) + categories.BOMBER), 1, 100, 'Attack', 'GrowthFormation' },
@@ -19,13 +19,21 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'IntieAISCTA',
-    Plan = 'None',
+    Plan = 'InterceptorAISCTA',
     ---PlatoonType = 'AirForm',
     GlobalSquads = {
         { SKY * categories.ANTIAIR * (categories.TECH1 + categories.TECH3) - categories.BOMBER, 2, 100, 'attack', 'none' },
     }
 }
 
+PlatoonTemplate {
+    Name = 'IntieAIStealthSCTA',
+    Plan = 'InterceptorAISCTAStealth',
+    ---PlatoonType = 'AirForm',
+    GlobalSquads = {
+        { SKY * (((categories.ANTIAIR + categories.GROUNDATTACK) * categories.TECH2) + categories.BOMBER), 1, 100, 'Attack', 'GrowthFormation' },
+    }
+}
 
 PlatoonTemplate {
     Name = 'T1AirScoutFormSCTA',

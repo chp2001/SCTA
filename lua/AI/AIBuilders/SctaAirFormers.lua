@@ -17,7 +17,6 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderType = 'Scout',
         BuilderData = {
-            LocationType = 'LocationType',
         }, 
         BuilderConditions = {
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, SKY * categories.SCOUT * categories.OVERLAYRADAR} },
@@ -26,29 +25,23 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Bomber Attack',
         PlatoonTemplate = 'SCTABomberAttack',
-        PlatoonAIPlan = 'BomberAISCTA',
-        PriorityFunction = TAPrior.AirProduction,
-        Priority = 100,
+        Priority = 200,
         InstanceCount = 50,
         BuilderType = 'AirForm',
         BuilderData = {
-            LocationType = 'LocationType',
         },        
         BuilderConditions = { 
-            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, SKY * categories.BOMBER} },
+            --{ TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, SKY * categories.BOMBER} },
             },
         },
     Builder {
         BuilderName = 'SCTAAI Air Intercept',
         PlatoonTemplate = 'IntieAISCTA',
-        PlatoonAIPlan = 'InterceptorAISCTA',
-        PriorityFunction = TAPrior.AirProduction,
         Priority = 100,
         PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
         InstanceCount = 50,
         BuilderType = 'AirForm', 
         BuilderData = {
-            LocationType = 'LocationType',
         },     
         BuilderConditions = { 
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, SKY * categories.ANTIAIR * categories.TECH1} },
@@ -56,19 +49,17 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTAAI Air Intercept Stealth',
-        PlatoonTemplate = 'SCTABomberAttack',
-        PlatoonAIPlan = 'InterceptorAISCTAStealth',
+        PlatoonTemplate = 'IntieAIStealthSCTA',
         PriorityFunction = TAPrior.UnitProduction,
         Priority = 110,
-        InstanceCount = 50,
-        PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
+        InstanceCount = 50,                          
         BuilderType = 'AirForm',
         BuilderData = {
-            LocationType = 'LocationType',
             Energy = true,
+            Stealth = true,
         },        
         BuilderConditions = { 
-            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, SKY * (categories.BOMBER + categories.GROUNDATTACK) + STEALTH} },
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, (SKY * (categories.GROUNDATTACK + categories.BOMBER)) + STEALTH} },
             },
         },   
     Builder {
@@ -77,13 +68,12 @@ BuilderGroup {
         PlatoonAIPlan = 'InterceptorAISCTAEnd',
         PriorityFunction = TAPrior.GantryConstruction,
         Priority = 110,
-        FormRadius = 1000,
         InstanceCount = 50,
         PlatoonAddBehaviors = { 'SCTAAirUnitRefit' },                              
         BuilderType = 'AirForm',
         BuilderData = {
-            LocationType = 'LocationType',
             Energy = true,
+            Interceptor = true,
         },         
         BuilderConditions = { 
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, SKY * categories.ANTIAIR - categories.BOMBER - categories.GROUNDATTACK} },

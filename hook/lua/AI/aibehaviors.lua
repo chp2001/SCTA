@@ -299,7 +299,7 @@ function SCTAAirStagingThread(unit)
         local ready = true
         local numUnits = 0
         for _, v in unit.Refueling do
-            if not v.Dead and (v:GetFuelRatio() < 0.9 or v:GetHealthPercent() < 0.9) then
+            if not v.Dead and (v:GetFuelRatio() < 0.5 or v:GetHealthPercent() < 0.5) then
                 ready = false
             elseif not v.Dead then
                 numUnits = numUnits + 1

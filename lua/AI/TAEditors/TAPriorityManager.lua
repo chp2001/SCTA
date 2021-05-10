@@ -162,7 +162,7 @@ end
 
 
 TechEnergyExist = function(self, aiBrain)
-    if Factory(aiBrain,  1, FUSION) then 
+    if Factory(aiBrain,  0, FUSION) then 
         return 125
     else
         return 0

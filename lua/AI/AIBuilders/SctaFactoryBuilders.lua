@@ -80,9 +80,9 @@ BuilderGroup {
         Priority = 108,
         PriorityFunction = TAPrior.UnitProduction,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Factory', 1},
+        DelayEqualBuildPlattons = {'Factory2', 1},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factory2' }},
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, LAB} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
@@ -107,9 +107,9 @@ BuilderGroup {
         Priority = 107,
         PriorityFunction = TAPrior.UnitProduction,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Factory', 1},
+        DelayEqualBuildPlattons = {'Factory2', 1},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factory2' }},
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, LAB} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
@@ -161,14 +161,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2AirFactory',
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
-        Priority = 119,
+        Priority = 180,
         TAPrior.UnitProduction,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Factory', 1},
+        DelayEqualBuildPlattons = {'Factory2', 1},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2,  LAB } },
-            { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH2} },
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factory2' }},
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 1,  LAB } },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, LAB * categories.AIR} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, LAB * categories.AIR } }, -- Stop after 10 facs have been built.
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },

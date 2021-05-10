@@ -77,7 +77,7 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Idle',
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
         PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 150,
+        Priority = 75,
         InstanceCount = 10,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 240 } },

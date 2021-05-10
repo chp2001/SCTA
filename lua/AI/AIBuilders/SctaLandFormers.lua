@@ -85,7 +85,6 @@ BuilderGroup {
         PlatoonAIPlan = 'SCTAStrikeForceAIEarly',
         Priority = 100,
         InstanceCount = 50,
-        PriorityFunction = TAPrior.UnitProductionT1,
         BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 75,
@@ -100,6 +99,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {600} },
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, GROUND * categories.TECH1 - SPECIAL - RANGE - TACATS}},
         },
     },
@@ -109,6 +109,7 @@ BuilderGroup {
         PlatoonAIPlan = 'SCTAStrikeForceAI', -- The platoon template tells the AI what units to include, and how to use them.
         PriorityFunction = TAPrior.UnitProduction,
         Priority = 150,
+        FormRadius = 1000,
         InstanceCount = 50,
         BuilderType = 'LandForm',
         BuilderData = {
@@ -121,7 +122,8 @@ BuilderGroup {
             LocationType = 'LocationType',
         },        
         BuilderConditions = {
-          { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4, GROUND - SPECIAL}},
+        { MIBC, 'GreaterThanGameTime', {600} },
+        { MIBC, 'LessThanGameTime', {1200} },
         },
     },
     Builder {
@@ -132,7 +134,7 @@ BuilderGroup {
         Priority = 250,
         InstanceCount = 50,
         FormRadius = 1000,
-        BuilderType = 'LandForm',
+        BuilderType = 'StructureForm',
         BuilderData = {
             ThreatSupport = 75,
             UseMoveOrder = true,
@@ -142,7 +144,7 @@ BuilderGroup {
             LocationType = 'LocationType',
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 9, GROUND - SPECIAL}},
+            { MIBC, 'GreaterThanGameTime', {1200} },
         },
     },
     ----AggressivePlatoons
@@ -166,6 +168,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
+            { MIBC, 'LessThanGameTime', {600} },
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, GROUND * (RANGE + categories.FIELDENGINEER)} },
          },
     },
@@ -175,6 +178,7 @@ BuilderGroup {
         PlatoonAIPlan = 'AttackSCTAForceAI',
         PriorityFunction = TAPrior.UnitProductionT1, -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 115,
+        FormRadius = 1000,
         InstanceCount = 25,
         --DelayEqualBuildPlattons = 5,
         BuilderType = 'LandForm',
@@ -191,7 +195,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4, GROUND * (RANGE + categories.FIELDENGINEER)}},
+            { MIBC, 'LessThanGameTime', {900} },
             { MIBC, 'GreaterThanGameTime', {300} },
          },
     },
@@ -203,7 +207,7 @@ BuilderGroup {
         Priority = 210,
         InstanceCount = 50,
         FormRadius = 1000,
-        BuilderType = 'LandForm',
+        BuilderType = 'StructureForm',
         BuilderData = {
             ThreatSupport = 75,
             NeverGuardBases = false,
@@ -217,7 +221,7 @@ BuilderGroup {
             },
         },        
         BuilderConditions = {
-            --{ UCBC, 'PoolGreaterAtLocation', { 'LocationType', 9, GROUND * (RANGE + categories.FIELDENGINEER)} },
+            { MIBC, 'GreaterThanGameTime', {900} },
         },
     },
 }

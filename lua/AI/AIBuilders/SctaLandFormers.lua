@@ -117,7 +117,7 @@ BuilderGroup {
         },        
         BuilderConditions = {
         { MIBC, 'GreaterThanGameTime', {600} },
-        { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4,  GROUND - SPECIAL - categories.BOMB}},
+        --{ UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4,  GROUND - SPECIAL - categories.BOMB}},
         },
     },
     Builder {
@@ -137,7 +137,7 @@ BuilderGroup {
         },        
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', {900} },
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4,  GROUND - SPECIAL - categories.BOMB}},
+            --{ UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4,  GROUND - SPECIAL - categories.BOMB}},
         },
     },
     ----AggressivePlatoons

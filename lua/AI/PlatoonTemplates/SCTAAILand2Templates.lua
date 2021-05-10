@@ -57,6 +57,7 @@ PlatoonTemplate {
         },
         Core = {
             { 'corraid', 1, 2, 'attack', 'none' },
+            { 'corcv', 1, 1, 'support', 'None' },
         },
     }
 }
@@ -66,6 +67,7 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armstump', 1, 2, 'attack', 'none' },
+            { 'armck', 1, 1, 'support', 'None' },
         },
         Core = {
             { 'corraid', 1, 2, 'attack', 'none' },

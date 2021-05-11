@@ -63,7 +63,7 @@ TAweapon = Class(DefaultWeapon) {
             end
         end,
 
-        OnGotTarget = function(self)         
+        OnGotTarget = function(self)
             if (TAutils.ArmyHasTargetingFacility(self.army) or 
             self:OnGotTargetCheck() == true)  then
                 DefaultWeapon.WeaponUnpackingState.OnGotTarget(self)

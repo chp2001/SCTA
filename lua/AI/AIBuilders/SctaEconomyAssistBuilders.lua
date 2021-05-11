@@ -75,7 +75,7 @@ BuilderGroup {
     },
     Builder {
         BuilderName = 'SCTA Engineer Reclaim Idle',
-        PlatoonTemplate = 'EngineerBuilderSCTAALL',
+        PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 75,
         InstanceCount = 10,
@@ -89,7 +89,7 @@ BuilderGroup {
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
-        BuilderType = 'NotACU',
+        BuilderType = 'OmniLand',
     },
     Builder {
         BuilderName = 'SCTA Engineer Finish',

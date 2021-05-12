@@ -228,7 +228,7 @@ BuilderGroup {
             UseFormation = 'AttackFormation',
         },        
         BuilderConditions = {
-            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 2,  categories.MOBILE * (categories.HOVER + categories.AMPHIBIOUS)} },
+            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 2,  categories.MOBILE * (categories.HOVER + categories.AMPHIBIOUS) - categories.COMMAND} },
          },
     },
 }

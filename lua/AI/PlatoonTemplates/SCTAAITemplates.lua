@@ -86,7 +86,7 @@ PlatoonTemplate {
     Plan = 'TAHunt', -- The platoon function to use.
     ---PlatoonType = 'LandForm',
     GlobalSquads = {
-        { GROUND * (categories.HOVER + categories.AMPHIBIOUS), 2, 10, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND * (categories.HOVER + categories.AMPHIBIOUS) - categories.COMMAND, 2, 10, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
 

@@ -179,7 +179,9 @@ BuilderGroup {
         Priority = 50,
         PriorityFunction = TAPrior.StructureProductionT2,
         InstanceCount = 2,
+        DelayEqualBuildPlattons = {'Artillery', 1},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Artillery' }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ARTILLERY * categories.STRUCTURE * categories.TECH2} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },

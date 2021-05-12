@@ -198,7 +198,7 @@ BuilderGroup {
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 10, SOLAR} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9}},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05}},
         },
         BuilderType = 'LandTA',
         BuilderData = {
@@ -219,7 +219,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.HighTechEnergyProduction,
         InstanceCount = 1,
         BuilderConditions = {
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05}},
         },
         BuilderType = 'LandTA',
         BuilderData = {
@@ -242,7 +242,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
             { TASlow, 'TAHaveLessThanArmyPoolWithCategory', { 1, categories.TECH3 * categories.ENERGYPRODUCTION * categories.STRUCTURE} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05}},
         },
         BuilderType = 'NotACU',
         BuilderData = {
@@ -259,12 +259,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T3Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA3',
-        Priority = 150,
+        Priority = 250,
         PriorityFunction = TAPrior.GantryConstruction,
         InstanceCount = 1,
         BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, FUSION} },
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05}},
         },
         BuilderType = 'T3TA',
         BuilderData = {
@@ -306,7 +306,7 @@ BuilderGroup {
         Priority = 150,
         InstanceCount = 2,
         BuilderConditions = {
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9}},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05}},
         },
         BuilderType = 'AirTA',
         BuilderData = {

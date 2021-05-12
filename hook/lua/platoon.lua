@@ -1674,15 +1674,11 @@ Platoon = Class(SCTAAIPlatoon) {
                     self:AggressiveMoveToLocation(table.copy(target:GetPosition()))
                 end
             else
-                self:Stop()
-                for k,v in AIUtils.AIGetSortedMassLocations(aiBrain, 10, nil, nil, nil, nil, self:GetPlatoonPosition()) do
-                    if v[1] < 0 or v[3] < 0 or v[1] > ScenarioInfo.size[1] or v[3] > ScenarioInfo.size[2] then
-                    end
-                    self:MoveToLocation( (v), false )
+                if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 20 then
+                    self:SetPlatoonFormationOverride('Block')
                 end
             end
-            --self:SetPlatoonFormationOverride('Attack')
-            WaitSeconds( 7 )
+            WaitSeconds(5)
         end
     end,
 

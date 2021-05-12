@@ -203,7 +203,7 @@ BuilderGroup {
         Priority = 135,
         InstanceCount = 2,
         BuilderConditions = {
-        { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9}},
+        { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05}},
         },
         BuilderType = 'SeaTA',
         BuilderData = {
@@ -256,7 +256,7 @@ BuilderGroup {
         Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
-            { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9}},
+            { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05}},
         },
         BuilderType = 'SeaTA',
         BuilderData = {

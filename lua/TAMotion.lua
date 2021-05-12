@@ -81,6 +81,21 @@ TACounter = Class(TAWalking)
 		end
 		TAWalking.OnIntelEnabled(self)
 		self:RequestRefreshUI()
+	end,  
+
+	OnIntelDisabled = function(self)
+		TAWalking.OnIntelDisabled(self)
+		if self.Spinners then
+			self.Spinners.fork:SetTargetSpeed(0)
+		end
+	end,
+
+
+	OnIntelEnabled = function(self)
+		TAWalking.OnIntelEnabled(self)
+		if self.Spinners then
+			self.Spinners.fork:SetTargetSpeed(100)
+	 	end
 	end,
 }
 
@@ -102,4 +117,19 @@ TASeaCounter = Class(TASea)
 		TASea.OnIntelEnabled(self)
 		self:RequestRefreshUI()
 	end,
+
+	OnIntelDisabled = function(self)
+		TASea.OnIntelDisabled(self)
+			if self.Spinners.fork then
+				self.Spinners.fork:SetTargetSpeed(0)
+			end
+		end,
+	
+	
+		OnIntelEnabled = function(self)
+			TASea.OnIntelEnabled(self)
+			if self.Spinners.fork then
+				self.Spinners.fork:SetTargetSpeed(100)
+			 end
+		end,
 }

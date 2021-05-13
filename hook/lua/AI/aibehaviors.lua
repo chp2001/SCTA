@@ -313,12 +313,7 @@ function SCTAAirStagingThread(unit)
             for _, v in unit.Refueling do
                 if not v.Dead then
                     v.Loading = false
-                    local plat
-                    if not v.PlanName then
-                        plat = aiBrain:MakePlatoon('', 'InterceptorAISCTA')
-                    else
-                        plat = aiBrain:MakePlatoon('', v.PlanName)
-                    end
+                    local plat = aiBrain:MakePlatoon('IntieAISCTA', 'InterceptorAISCTA')
                     if v.PlatoonData then
                         plat.PlatoonData = {}
                         plat.PlatoonData = v.PlatoonData

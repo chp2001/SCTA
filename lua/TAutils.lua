@@ -107,12 +107,12 @@ TABuildRestrictions = function(self)
     ----BUGTheNumbers are 2 Greater than requiered Stat in Code. 6 and 12 are Correct.
     local PlantsCat = ((categories.FACTORY + categories.GATE) * (categories.ARM + categories.CORE))
         if self.FindHQType(aiBrain, PlantsCat * (categories.TECH3 + categories.EXPERIMENTAL)) or 
-        NumberOfPlantsT2(aiBrain, PlantsCat * (categories.TECH2)) > 4 then
+        NumberOfPlantsT2(self, aiBrain, PlantsCat * (categories.TECH2)) > 4 then
                 self:RemoveBuildRestriction(categories.TECH2)
                 self:RemoveBuildRestriction(categories.TECH3)
             return  
         elseif self.FindHQType(aiBrain, PlantsCat * (categories.TECH2 + categories.EXPERIMENTAL)) or 
-        NumberOfPlantsT1(aiBrain, PlantsCat * (categories.TECH1)) > 10 then
+        NumberOfPlantsT1(self, aiBrain, PlantsCat * (categories.TECH1)) > 10 then
                 self:RemoveBuildRestriction(categories.TECH2)
             return    
     end
@@ -121,38 +121,38 @@ end
 --Labs = {}
 --Plants = {}
 
-NumberOfPlantsT2 = function(aiBrain, category)
+NumberOfPlantsT2 = function(self, aiBrain, category)
     -- Returns number of extractors upgrading
-    local DevelopmentCount = aiBrain:GetCurrentUnits(categories.RESEARCH * categories.TECH2 * (categories.ARM + categories.CORE))
+    self.DevelopmentCount = aiBrain:GetCurrentUnits(categories.RESEARCH * categories.TECH2 * (categories.ARM + categories.CORE))
     --LOG('EXIST1')
     --LOG(DevelopmentCount)
-    local LabCount = aiBrain:GetCurrentUnits(categories.SUPPORTFACTORY * categories.TECH2 * (categories.ARM + categories.CORE))
+    self.LabCount = aiBrain:GetCurrentUnits(categories.SUPPORTFACTORY * categories.TECH2 * (categories.ARM + categories.CORE))
     --LOG('EXIST2')
     --LOG(LabCount)
-    local LabBuilding = aiBrain:NumCurrentlyBuilding(categories.ENGINEER, categories.SUPPORTFACTORY * categories.TECH2 * (categories.ARM + categories.CORE))
+    self.LabBuilding = aiBrain:NumCurrentlyBuilding(categories.ENGINEER, categories.SUPPORTFACTORY * categories.TECH2 * (categories.ARM + categories.CORE))
     --LOG('EXIST3')
     --LOG(LabBuilding)
-    local DevelopmentBuilding = aiBrain:NumCurrentlyBuilding(categories.FACTORY, categories.RESEARCH * categories.TECH2 * (categories.ARM + categories.CORE))
+    self.DevelopmentBuilding = aiBrain:NumCurrentlyBuilding(categories.FACTORY, categories.RESEARCH * categories.TECH2 * (categories.ARM + categories.CORE))
     --LOG('EXIST4')
     --LOG(DevelopmentBuilding)
-    local Labs = ((LabCount) + (DevelopmentCount * 2)) - LabBuilding - (DevelopmentBuilding * 2)
+    self.Labs = ((self.LabCount) + (self.DevelopmentCount * 2)) - self.LabBuilding - (self.DevelopmentBuilding * 2)
     --('EXIST5')
     --LOG(Labs)
-    return Labs
+    return self.Labs
 end
 
-NumberOfPlantsT1 = function(aiBrain, category)
+NumberOfPlantsT1 = function(self, aiBrain, category)
     -- Returns number of extractors upgrading
-    local PlantCount = aiBrain:GetCurrentUnits(categories.FACTORY * categories.TECH1 * (categories.ARM + categories.CORE))
+    self.PlantCount = aiBrain:GetCurrentUnits(categories.FACTORY * categories.TECH1 * (categories.ARM + categories.CORE))
     --LOG('EXIST1')
     --LOG(PlantCount)
-    local PlantBuilding = aiBrain:NumCurrentlyBuilding(categories.ENGINEER, categories.FACTORY * categories.TECH1 * (categories.ARM + categories.CORE))
+    self.PlantBuilding = aiBrain:NumCurrentlyBuilding(categories.ENGINEER, categories.FACTORY * categories.TECH1 * (categories.ARM + categories.CORE))
     --LOG('EXIST2')
     --LOG(PlantBuilding)
-    local Plants = PlantCount - PlantBuilding
+    self.Plants = self.PlantCount - self.PlantBuilding
     ---LOG('EXIST4')
     --LOG(Plants)
-    return Plants
+    return self.Plants
 end
 
 --self.FindHQType(aiBrain, category)

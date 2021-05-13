@@ -85,7 +85,7 @@ BuilderGroup {
         InstanceCount = 50,
         BuilderType = 'LandForm',
         BuilderData = {
-            ThreatSupport = 25,
+            ThreatSupport = 50,
             NeverGuardBases = true,
             NeverGuardEngineers = true,
             UseMoveOrder = true,
@@ -104,11 +104,11 @@ BuilderGroup {
         BuilderName = 'SCTAAI Strike Mid',
         PlatoonTemplate = 'StrikeForceSCTAMid', -- The platoon template tells the AI what units to include, and how to use them.
         PriorityFunction = TAPrior.UnitProduction,
-        Priority = 150,
-        InstanceCount = 100,
+        Priority = 200,
+        InstanceCount = 50,
         BuilderType = 'LandForm',
         BuilderData = {
-            ThreatSupport = 50,
+            ThreatSupport = 75,
             UseMoveOrder = true,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
@@ -124,11 +124,11 @@ BuilderGroup {
         BuilderName = 'SCTAAI Strike Endgame',
         PlatoonTemplate = 'StrikeForceSCTAEndgame', -- The platoon template tells the AI what units to include, and how to use them.
         PriorityFunction = TAPrior.StructureProductionT2,
-        Priority = 250,
-        InstanceCount = 200,
+        Priority = 260,
+        InstanceCount = 50,
         BuilderType = 'LandForm',
         BuilderData = {
-            ThreatSupport = 75,
+            ThreatSupport = 100,
             UseMoveOrder = true,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
@@ -144,7 +144,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Missile Hunt',
         PlatoonTemplate = 'LandRocketAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 125,
+        Priority = 100,
         InstanceCount = 50,
         BuilderType = 'LandForm',
         BuilderData = {
@@ -166,8 +166,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Land Attack Mid',
         PlatoonTemplate = 'LandAttackSCTAMid', -- The platoon template tells the AI what units to include, and how to use them.
-        PriorityFunction = TAPrior.UnitProductionT1, -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 150,
+        PriorityFunction = TAPrior.UnitProduction,
+        Priority = 200,-- The platoon template tells the AI what units to include, and how to use them.
         InstanceCount = 50,
         --DelayEqualBuildPlattons = 5,
         BuilderType = 'LandForm',
@@ -191,13 +191,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Land Attack Endgame',
         PlatoonTemplate = 'LandAttackSCTAEndGame', -- The platoon template tells the AI what units to include, and how to use them.
-        PlatoonAIPlan = 'AttackSCTAForceAIEndGame', -- The platoon template tells the AI what units to include, and how to use them.
-        PriorityFunction = TAPrior.TechEnergyExist,
-        Priority = 210,
+        PriorityFunction = TAPrior.StructureProductionT2,
+        Priority = 260,
         InstanceCount = 50,
         BuilderType = 'LandForm',
         BuilderData = {
-            ThreatSupport = 75,
+            ThreatSupport = 100,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',

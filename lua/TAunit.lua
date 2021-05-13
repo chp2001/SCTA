@@ -16,8 +16,7 @@ TAunit = Class(Unit)
         --self._UnitName = bp.General.UnitName
         ---self:LOGDBG('TAUnit.OnCreate')
         Unit.OnCreate(self)
-		local aiBrain = self:GetAIBrain()
-		if aiBrain.SCTAAI then
+		if self:GetAIBrain().SCTAAI then
 			self:SetFireState(FireState.RETURN_FIRE)
 			else
 			self:SetFireState(FireState.GROUND_FIRE)

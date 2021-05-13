@@ -169,6 +169,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi T2 Experimental',
         PlatoonTemplate = 'SCTAExperimental',
         Priority = 175,
+        PriorityFunction = TAPrior.GantryUnitBuilding,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.EXPERIMENTAL * categories.MOBILE - categories.SUBCOMMANDER} },
@@ -178,6 +179,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Decoy Commander',
         PlatoonTemplate = 'SCTADecoyCommander',
+        PriorityFunction = TAPrior.GantryUnitBuilding,
         Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {

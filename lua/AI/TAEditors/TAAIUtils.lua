@@ -152,8 +152,9 @@ function TAHaveUnitsWithCategoryAndAllianceFalse(aiBrain, numReq, category, alli
     local numUnits = aiBrain:GetNumUnitsAroundPoint(category, Vector(0,0,0), 100000, alliance)
     if numUnits > numReq then
         return false
-    end
+    else
     return true
+    end
 end
 
 ---TAUnit Building
@@ -171,8 +172,9 @@ function TAFactoryCapCheck(aiBrain, locationType, TECH)
 
     if numUnits < 12 then
         return true
+    else
+        return false
     end
-    return false
 end
 
 function TAHaveEnemyUnitAtLocation(aiBrain, radius, locationType, unitCount, categoryEnemy, compareType)
@@ -218,10 +220,11 @@ end
 function TAHaveUnitRatioGreaterThanLand(aiBrain, Land)
     local numOne = aiBrain:GetCurrentUnits((Land) * categories.LAND * categories.MOBILE - categories.ENGINEER)
     local numTwo = aiBrain:GetCurrentUnits(categories.LAND * categories.MOBILE - categories.ENGINEER)
-    if ((numOne + 1) / (numTwo + 1)) < 0.33 then
+    if ((numOne + 1) / (numTwo + 1)) < 0.15 then
         return true
+    else
+        return false
     end
-    return false
 end
 
 function TAHaveUnitRatioGreaterThanNavalT1(aiBrain, Naval)
@@ -229,8 +232,9 @@ function TAHaveUnitRatioGreaterThanNavalT1(aiBrain, Naval)
     local numTwo = aiBrain:GetCurrentUnits(categories.SCOUT * categories.NAVAL)
     if ((numOne + 1) / (numTwo + 1)) < 0.2 then
         return true
+    else
+        return false
     end
-    return false
 end
 
 function TAHaveUnitRatioGreaterThanNaval(aiBrain, Naval)
@@ -238,8 +242,9 @@ function TAHaveUnitRatioGreaterThanNaval(aiBrain, Naval)
     local numTwo = aiBrain:GetCurrentUnits(categories.FACTORY * categories.NAVAL * categories.TECH2)
     if ((numOne + 1) / (numTwo + 1)) < 2 then
         return true
+    else
+        return false
     end
-    return false
 end
 
 function TAHaveUnitRatioGreaterThanNavalT3(aiBrain, Naval)
@@ -247,14 +252,15 @@ function TAHaveUnitRatioGreaterThanNavalT3(aiBrain, Naval)
     local numTwo = aiBrain:GetCurrentUnits(categories.FACTORY * categories.NAVAL * categories.TECH2)
     if ((numOne + 1) / (numTwo + 2)) < 1 then
         return true
+    else
+        return false
     end
-    return false
 end
 ----TAReclaim
 
 function TAReclaimablesInArea(aiBrain, locType)
     --DUNCAN - was .9. Reduced as dont need to reclaim yet if plenty of mass
-    if aiBrain:GetEconomyStoredRatio('MASS') > .5 then
+    if aiBrain:GetEconomyStoredRatio('MASS') > 0.5 then
         return false
     end
 

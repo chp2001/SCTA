@@ -87,7 +87,14 @@ TAFactory = Class(FactoryUnit) {
 	end,
     }
 
-    TAGantry = Class(TAFactory) {	
+    TAGantry = Class(TAFactory) {
+        OnCreate = function(self)
+            TAFactory.OnCreate(self)
+            if self:GetAIBrain().SCTAAI then
+            self:RemoveCommandCap('RULEUCC_Stop')
+            end
+        end,
+
             CreateBuildEffects = function(self, unitBeingBuilt, order)
                 TAutils.CreateTAGantBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
             end,

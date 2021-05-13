@@ -87,21 +87,25 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager) {
             end
             if not self:FactoryAlreadyExists(unit) then
                 table.insert(self.FactoryList, unit)
+              if not EntityCategoryContains(categories.TECH1, unit) then
                 unit.DesiresAssist = true
+                else
+                unit.DesiresAssist = false
+              end
                 if EntityCategoryContains(categories.BOT, unit) then
                     self:SetupNewFactory(unit, 'KBot')
                 elseif EntityCategoryContains(categories.TANK, unit) then
                     self:SetupNewFactory(unit, 'Vehicle')
-                elseif EntityCategoryContains(categories.HOVER, unit) then
-                    self:SetupNewFactory(unit, 'Hover')
+                elseif EntityCategoryContains(categories.GATE, unit) then
+                    self:SetupNewFactory(unit, 'Gate')
                 elseif EntityCategoryContains(categories.SUBMERSIBLE, unit) then
                     self:SetupNewFactory(unit, 'Seaplane')
                 elseif EntityCategoryContains(categories.AIR - categories.SUBMERSIBLE, unit) then
                     self:SetupNewFactory(unit, 'Air')
-                elseif EntityCategoryContains(categories.NAVAL * categories.STRUCTURE, unit) then
+                elseif EntityCategoryContains(categories.NAVAL, unit) then
                     self:SetupNewFactory(unit, 'Sea')
                 else
-                    self:SetupNewFactory(unit, 'Gate')
+                    self:SetupNewFactory(unit, 'Hover')
                 end
                 self.LocationActive = true
             end
@@ -217,7 +221,7 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager) {
                 --LOG('*TACanceling2', template)
             else
                 -- No builder found setup way to check again
-                self:ForkThread(self.DelayBuildOrder, factory, bType, 1)
+                self:ForkThread(self.DelayBuildOrder, factory, bType, 2)
                 --LOG('*TACanceling1', factory)
             end
         end,

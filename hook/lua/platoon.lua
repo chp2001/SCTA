@@ -1469,9 +1469,12 @@ Platoon = Class(SCTAAIPlatoon) {
         local target
         local blip
         while aiBrain:PlatoonExists(self) do
-            if self.PlatoonData.Energy and not self.EcoCheck then
-                WaitSeconds(1)
-                self:CheckEnergySCTAEco()
+            if self.PlatoonData.Energy then
+                local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
+                while econ.EnergyStorageRatio < 0.1 do
+                    WaitSeconds(2)
+                    econ = AIUtils.AIGetEconomyNumbers(aiBrain)
+                end
             end
             target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ALLUNITS - categories.WALL)
             if target then
@@ -1483,10 +1486,25 @@ Platoon = Class(SCTAAIPlatoon) {
                 self:MoveToLocation(position, false)
             end
             WaitSeconds(17)
-            if self.PlatoonData.Energy then
-                self.EcoCheck = nil
-            end
         end
+    end,
+
+
+    TAPauseAI = function(self)
+        local platoonUnits = self:GetPlatoonUnits()
+        local aiBrain = self:GetBrain()
+        for k, v in platoonUnits do
+            v:SetScriptBit('RULEUTC_ProductionToggle', true)
+        end
+        local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
+        while econ.EnergyStorageRatio < 0.4 or econ.MassStorageRatio > 0.8 do
+            WaitSeconds(2)
+            econ = AIUtils.AIGetEconomyNumbers(aiBrain)
+        end
+        for k, v in platoonUnits do
+            v:SetScriptBit('RULEUTC_ProductionToggle', false)
+        end
+        self:PlatoonDisband()
     end,
 
     SCTAStrikeForceAIEarly = function(self)
@@ -2331,9 +2349,12 @@ Platoon = Class(SCTAAIPlatoon) {
         local data = self.PlatoonData
         local target
         while aiBrain:PlatoonExists(self) do
-        if self.PlatoonData.Energy and not self.EcoCheck then
-            WaitSeconds(1)
-            self:CheckEnergySCTAEco()
+        if self.PlatoonData.Energy then
+            local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
+            while econ.EnergyStorageRatio < 0.1 do
+                WaitSeconds(2)
+                econ = AIUtils.AIGetEconomyNumbers(aiBrain)
+            end
         end
             target = self:FindClosestUnit('Attack', 'Enemy', true, categories.MOBILE * categories.COMMAND)
             if not target then
@@ -2346,9 +2367,6 @@ Platoon = Class(SCTAAIPlatoon) {
                 self:AttackTarget(target)
             end
             WaitSeconds(5)
-            if self.PlatoonData.Energy then
-                self.EcoCheck = nil
-            end
         end
     end,
 
@@ -2411,9 +2429,12 @@ Platoon = Class(SCTAAIPlatoon) {
         local blip
         local hadtarget = false
         local basePosition = false
-        if self.PlatoonData.Energy and not self.EcoCheck then
-            WaitSeconds(1)
-            self:CheckEnergySCTAEco()
+        if self.PlatoonData.Energy then
+            local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
+            while econ.EnergyStorageRatio < 0.1 do
+                WaitSeconds(2)
+                econ = AIUtils.AIGetEconomyNumbers(aiBrain)
+            end
         end
         if self.PlatoonData.LocationType and self.PlatoonData.LocationType != 'NOTMAIN' then
             --LOG('*SCTAEXPANSIONTA', locationType)
@@ -2454,9 +2475,6 @@ Platoon = Class(SCTAAIPlatoon) {
                 --[[if aiBrain:PlatoonExists(self) and table.getn(self:GetPlatoonUnits()) < 20 then
                     self:MergeWithNearbyPlatoonsSCTA('InterceptorAISCTA', 'InterceptorAISCTAEnd', 5)
                 end]]
-            end
-            if self.PlatoonData.Energy then
-                self.EcoCheck = nil
             end
             WaitSeconds(5) --DUNCAN - was 5
         end
@@ -2703,7 +2721,7 @@ Platoon = Class(SCTAAIPlatoon) {
             end
         end,
 
-        CheckEnergySCTAEco = function(self)
+        --[[CheckEnergySCTAEco = function(self)
             self.EcoCheck = true
             if self:GetBrain():GetEconomyStoredRatio('ENERGY').EnergyStorageRatio < 0.1 then
                 WaitSeconds(4)
@@ -2716,7 +2734,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 else
                     return self:TAHunt()
                 end
-        end,
+        end]]
 
 
         ScoutingAISCTA = function(self)

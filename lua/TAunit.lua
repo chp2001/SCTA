@@ -36,7 +36,7 @@ TAunit = Class(Unit)
 	end,
 
 	OnIntelDisabled = function(self)
-		Unit.OnIntelDisabled()
+		Unit.OnIntelDisabled(self)
 		if self.TACloak and not self:IsIntelEnabled('Cloak') then
 			self:PlayUnitSound('Uncloak')
 			self.CloakOn = nil
@@ -49,7 +49,7 @@ TAunit = Class(Unit)
 	end,
 
 	OnIntelEnabled = function(self)
-		Unit.OnIntelEnabled()
+		Unit.OnIntelEnabled(self)
 		if not IsDestroyed(self) then
 			if self:IsIntelEnabled('Cloak') and self.TACloak then
 					self.CloakOn = true

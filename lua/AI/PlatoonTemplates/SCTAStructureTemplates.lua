@@ -38,7 +38,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'FabricationSCTA',
-    Plan = 'PauseAI',
+    Plan = 'TAPauseAI',
     ---PlatoonType = 'StructureForm',
     GlobalSquads = {
         { categories.STRUCTURE * categories.MASSFABRICATION, 1, 1, 'support', 'none' },
@@ -65,7 +65,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'TacticalMissileSCTA',
-    Plan = 'TacticalAI',
+    Plan = 'NukeAISAI',
     ---PlatoonType = 'StructureForm',
     GlobalSquads = {
         { categories.TACTICALMISSILEPLATFORM * categories.STRUCTURE, 1, 1, 'attack', 'None' }
@@ -74,7 +74,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'NuclearMissileSCTA',
-    Plan = 'NukeAI',
+    Plan = 'NukeAISAI',
     ---PlatoonType = 'CommandTA',
     GlobalSquads = {
         { categories.NUKE * categories.STRUCTURE * categories.TECH3, 1, 1, 'attack', 'None' }

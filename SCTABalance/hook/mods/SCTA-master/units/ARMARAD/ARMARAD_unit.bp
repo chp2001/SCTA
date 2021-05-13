@@ -46,4 +46,6 @@ UnitBlueprint {
     RadarRadius = 240,
     },
     LifeBarSize = 1,
+    SizeX = 1,
+    SizeZ = 1,
 }

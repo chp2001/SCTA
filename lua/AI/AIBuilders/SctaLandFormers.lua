@@ -148,7 +148,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Missile Hunt',
         PlatoonTemplate = 'LandRocketAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
         PlatoonAddPlans = { 'HighlightSCTAHuntAI' },
-        Priority = 100,
+        Priority = 125,
         InstanceCount = 50,
         BuilderType = 'LandForm',
         BuilderData = {

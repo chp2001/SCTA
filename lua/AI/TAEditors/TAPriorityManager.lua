@@ -76,13 +76,14 @@ end
 
 ----TECH1 PRODUCTION
 
+
 ProductionT3 = function(self, aiBrain)
     if Factory(aiBrain,  6, LAB)  then 
-        return 140
+        return 90
     elseif Factory(aiBrain,  0, PLATFORM) then
-        return 135
+        return 95
     elseif Factory(aiBrain,  0, categories.GATE) then
-        return 130
+        return 105
     else
         return 0
     end
@@ -90,11 +91,11 @@ end
 
 UnitProduction = function(self, aiBrain)
     if Factory(aiBrain,  1, PLATFORM) then
-        return 100
+        return 80
     elseif Factory(aiBrain,  1, LAB) then
         return 125
     elseif Factory(aiBrain,  12, PLANT) then 
-        return 120
+        return 110
     else
         return 0
     end

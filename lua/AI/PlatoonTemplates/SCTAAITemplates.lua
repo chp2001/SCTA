@@ -9,7 +9,7 @@ local RAIDER = (categories.armpw + categories.corak + categories.armflash + cate
 local SPECIAL = (RAIDER + categories.EXPERIMENTAL + categories.ENGINEER + categories.SCOUT)
 local GROUND = categories.MOBILE * categories.LAND
 local TACATS = (categories.ANTISHIELD + (categories.AMPHIBIOUS - categories.BOMB))
-local RANGE = (categories.ARTILLERY + categories.SILO + categories.ANTIAIR + categories.SNIPER)
+local RANGE = (categories.ARTILLERY + categories.SILO + categories.ANTIAIR + categories.SNIPER + categories.BOMB)
 
 PlatoonTemplate {
     Name = 'T1LandScoutFormSCTA',
@@ -25,7 +25,7 @@ PlatoonTemplate {
     Plan = 'None',
     ---PlatoonType = 'Scout',
     GlobalSquads = {
-        { GROUND * categories.ANTIAIR, 1, 1, 'guard', 'none' }
+        { GROUND - SPECIAL, 1, 1, 'guard', 'none' }
     },
 }
 
@@ -111,7 +111,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTAEndGame',
     Plan = 'AttackSCTAForceAIEndGame',
     GlobalSquads = {
-        { (GROUND * RANGE) + categories.FIELDENGINEER, 10, 30, 'attack', 'none' }
+        { (GROUND * RANGE) + categories.FIELDENGINEER, 5, 30, 'attack', 'none' }
     },
 }
 
@@ -121,7 +121,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTAEarly',
     Plan = 'SCTAStrikeForceAIEarly',
     GlobalSquads = {
-        { GROUND * categories.TECH1 - SPECIAL - RANGE, 2, 10, 'attack', 'none' }
+        { GROUND * categories.TECH1 - SPECIAL, 2, 10, 'attack', 'none' }
     },
 }
 
@@ -129,7 +129,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTAMid',
     Plan = 'SCTAStrikeForceAI',
     GlobalSquads = {
-        { GROUND - SPECIAL - categories.BOMB - RANGE, 5, 20, 'attack', 'none' }
+        { GROUND - SPECIAL, 5, 20, 'attack', 'none' }
     },
 }
 
@@ -137,7 +137,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTAEndgame',
     Plan = 'SCTAStrikeForceAIEndgame', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND - SPECIAL - categories.BOMB - RANGE, 10, 30, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND - SPECIAL, 5, 30, 'attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
 

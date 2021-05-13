@@ -61,6 +61,7 @@ BuilderGroup {
         --DelayEqualBuildPlattons = 5,
         BuilderType = 'LandForm',
         BuilderData = {
+            TAWeaponRange = 30,
             ThreatSupport = 75,
             Energy = true,
             NeverGuardBases = false,
@@ -146,10 +147,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Missile Hunt',
         PlatoonTemplate = 'LandRocketAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
+        PlatoonAddPlans = { 'HighlightSCTAHuntAI' },
         Priority = 100,
         InstanceCount = 50,
         BuilderType = 'LandForm',
         BuilderData = {
+            TAWeaponRange = 56, 
             ThreatSupport = 50,
             NeverGuardBases = true,
             NeverGuardEngineers = true,
@@ -169,12 +172,14 @@ BuilderGroup {
         BuilderName = 'SCTAAI Land Attack Mid',
         PlatoonTemplate = 'LandAttackSCTAMid', -- The platoon template tells the AI what units to include, and how to use them.
         PriorityFunction = TAPrior.UnitProductionT1, -- The platoon template tells the AI what units to include, and how to use them.
+        PlatoonAddPlans = { 'HighlightSCTAHuntAI' },
         Priority = 150,
         InstanceCount = 50,
         --DelayEqualBuildPlattons = 5,
         BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 75,
+            TAWeaponRange = 60,
             NeverGuardBases = true,
             NeverGuardEngineers = true,
             UseFormation = 'AttackFormation',
@@ -187,23 +192,27 @@ BuilderGroup {
         },        
         BuilderConditions = {
             --{ UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4, GROUND * RANGE } },
-            { MIBC, 'GreaterThanGameTime', {300} },
+            { MIBC, 'GreaterThanGameTime', {480} },
          },
     },
     Builder {
         BuilderName = 'SCTAAI Land Attack Endgame',
         PlatoonTemplate = 'LandAttackSCTAEndGame', -- The platoon template tells the AI what units to include, and how to use them.
         PriorityFunction = TAPrior.TechEnergyExist,
+        PlatoonAddPlans = { 'HighlightSCTAHuntAI' },
         Priority = 210,
         InstanceCount = 50,
         BuilderType = 'LandForm',
         BuilderData = {
+            TAWeaponRange = 80,
             ThreatSupport = 75,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',
             LocationType = 'LocationType',
             AggressiveMove = true,
+            Energy = true,
+            Sniper = true,
         ThreatWeights = {
             SecondaryTargetThreatType = 'StructuresNotMex',
             IgnoreStrongerTargetsRatio = 100.0,
@@ -222,6 +231,7 @@ BuilderGroup {
         InstanceCount = 25,
         BuilderType = 'LandForm',
         BuilderData = {
+            TAWeaponRange = 30,
             LocationType = 'LocationType',
             Small = true,
             NeverGuardBases = false,

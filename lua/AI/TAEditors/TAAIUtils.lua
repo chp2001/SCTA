@@ -346,3 +346,14 @@ function TACanBuildOnMassLessThanDistanceLand(aiBrain, locationType, distance, t
     end
     return false
 end
+
+function TAKite(vec1, vec2, distance)
+    -- Courtesy of chp2001
+    -- note the distance param is {distance, distance - weapon range}
+    -- vec1 is friendly unit, vec2 is enemy unit
+    distanceFrac = distance[2] / distance[1]
+    x = vec1[1] * (1 - distanceFrac) + vec2[1] * distanceFrac
+    y = vec1[2] * (1 - distanceFrac) + vec2[2] * distanceFrac
+    z = vec1[3] * (1 - distanceFrac) + vec2[3] * distanceFrac
+    return {x,y,z}
+end

@@ -38,7 +38,8 @@ TAFactory = Class(FactoryUnit) {
 		Open = function(self)
             self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
             self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
-		end,
+            self.TABuildingUnit = true
+        end,
 
 
         OnStopBuild = function(self, unitBuilding)
@@ -50,7 +51,8 @@ TAFactory = Class(FactoryUnit) {
 		Close = function(self)
             self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
             self.AnimManip:SetRate(-0.1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
-		end,
+            self.TABuildingUnit = nil
+        end,
 
 		CreateBuildEffects = function(self, unitBeingBuilt, order)
 			TAutils.CreateTAFactBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
@@ -88,12 +90,6 @@ TAFactory = Class(FactoryUnit) {
     }
 
     TAGantry = Class(TAFactory) {
-        OnCreate = function(self)
-            TAFactory.OnCreate(self)
-            if self:GetAIBrain().SCTAAI then
-            self:RemoveCommandCap('RULEUCC_Stop')
-            end
-        end,
 
             CreateBuildEffects = function(self, unitBeingBuilt, order)
                 TAutils.CreateTAGantBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )
@@ -112,6 +108,7 @@ TAFactory = Class(FactoryUnit) {
             Close = function(self)
                 self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationPack)
                 self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationPackRate or 0.2))
+                self.TABuildingUnit = nil
             end,
     
         }
@@ -148,7 +145,8 @@ TACarrier = Class(AircraftCarrier) {
 		Open = function(self)
 			self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationBuild)
 			self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationBuildRate or 0.2))
-		end,
+            self.TABuildingUnit = true
+        end,
 	
     },
 
@@ -173,7 +171,8 @@ TACarrier = Class(AircraftCarrier) {
 			self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationBuildRate or 0.2))
 			self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationPower)
 			self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationPowerRate or 0.2))
-		end,
+            self.TABuildingUnit = nil
+        end,
     },
 
     FinishedBuildingState = State {

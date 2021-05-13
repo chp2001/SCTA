@@ -1470,7 +1470,7 @@ Platoon = Class(SCTAAIPlatoon) {
         self.data = self.PlatoonData
         for _,v in platoonUnits do
             if v.Dead then continue end
-            v:SetCustomName('TAHuntSCTA')
+            --v:SetCustomName('TAHuntSCTA')
             v.dest = nil
         end
         self.target = nil
@@ -1503,19 +1503,19 @@ Platoon = Class(SCTAAIPlatoon) {
                         IssueMove(v, smartPos)
                     end
                     WaitTicks(25)
-                elseif targetDist < self.data.TAWeaponRange*2 then
+                elseif targetDist < self.data.TAWeaponRange * 2 then
                     local Coward = {target[1]+math.random (-4,4), target[2], target[3] + math.random(-4,4)}
                     IssueClearCommands(platoonUnits)
-                    self.dest=Coward
+                    self.dest = Coward
                     IssueMove(platoonUnits, Coward)
                     WaitTicks(30)
-                end
+                    end
                 else
                 local position = AIUtils.RandomLocation(Center[1],Center[3])
                 self.dest = position
                 self:MoveToLocation(position, false)
             end
-            WaitSeconds(5)
+            WaitTicks(5)
             if self.PlatoonData.Energy then
                 self.EcoCheck = nil
             end
@@ -1827,7 +1827,7 @@ Platoon = Class(SCTAAIPlatoon) {
         self.data = self.PlatoonData
         for _,v in platoonUnits do
             if v.Dead then continue end
-            v:SetCustomName('AttackHuntSCTA')
+            --v:SetCustomName('AttackHuntSCTA')
             v.dest = nil
         end
         self.target = nil
@@ -1846,7 +1846,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 target = table.copy(target:GetPosition())
                 self.target = target
                 self.dest = target
-                self:AggressiveMoveToLocation(table.copy(target))
+                self:AggressiveMoveToLocation(table.copy(target:GetPosition()))
                 --DUNCAN - added to try and stop AI getting stuck.
                 local targetDist = VDist2(target[1],target[3],Center[1],Center[3])
                 if targetDist < self.data.TAWeaponRange then
@@ -1871,7 +1871,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 self.dest = position
                 self:MoveToLocation(position, false)
             end
-            WaitSeconds(5)
+            WaitTicks(10)
         end
     end,
 
@@ -1883,14 +1883,16 @@ Platoon = Class(SCTAAIPlatoon) {
             local center = self:GetPlatoonPosition()
             self.data = self.PlatoonData
             LOG('TAIEXIST', self.data.TAWeaponRange)
-            while aiBrain:PlatoonExists(self) do
+            while aiBrain:PlatoonExists(self) and not self.Dead do
                 center = self:GetPlatoonPosition()
                 platoonUnits = self:GetPlatoonUnits()
                 if self.target then
-                    DrawLinePop(center,self.target,'bfFF1155')
+                    LOG('TAIEXIST2', self.target)
+                    DrawLinePop(center, self.target, 'bfFF1155')
                 end
                 if self.dest then
-                    DrawLinePop(center,self.dest,'bf00aaFF')
+                    LOG('TAIEXIST3', self.dest)
+                    DrawLinePop(center, self.dest, 'bf00aaFF')
                 end
                 if self.data.TAWeaponRange then
                     DrawCircle(center,self.data.TAWeaponRange,'8a808080')
@@ -1924,7 +1926,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local platoonUnits = self:GetPlatoonUnits()
         for _,v in platoonUnits do
             if v.Dead then continue end
-            v:SetCustomName('AttackHuntSCTAMid')
+            --v:SetCustomName('AttackHuntSCTAMid')
             v.dest = nil
         end
         self.target = nil
@@ -2055,17 +2057,17 @@ Platoon = Class(SCTAAIPlatoon) {
                     if targetDist < self.data.TAWeaponRange then
                     for _,v in platoonUnits do
                         local unitpos=v:GetPosition()
-                        local smartPos = TAReclaim.TAKite({unitpos[1]+math.random(-2,2),unitpos[2],unitpos[3]+math.random(-2,2)},closestTarget, {targetDist, targetDist - ((self.data.TAWeaponRange)/2)})
+                        local smartPos = TAReclaim.TAKite({unitpos[1]+math.random(-2,2),unitpos[2],unitpos[3]+math.random(-2,2)},closestTarget, {targetDist, targetDist - self.data.TAWeaponRange})
                         smartPos = {smartPos[1]+math.random(-1,1),smartPos[2],smartPos[3]+math.random(-1,1)}
                         v.dest=smartPos
                         IssueClearCommands(v)
                         IssueMove(v, smartPos)
                     end
                     WaitTicks(25)
-                    elseif targetDist < self.data.TAWeaponRange * 2 then
-                    local Coward = {closestTarget[1]+math.random (-4,4), closestTarget[2], closestTarget[3] + math.random(-4,4)}
+                elseif targetDist < self.data.TAWeaponRange * 2 then
+                    local Coward = {target[1]+math.random (-4,4), target[2], target[3] + math.random(-4,4)}
                     IssueClearCommands(platoonUnits)
-                    self.dest=Coward
+                    self.dest = Coward
                     IssueMove(platoonUnits, Coward)
                     WaitTicks(30)
                     end
@@ -2209,27 +2211,27 @@ Platoon = Class(SCTAAIPlatoon) {
                     IssueFormAttack(platoonUnits, closestTarget, PlatoonFormation, 0)
                 else
                     IssueAttack(platoonUnits, closestTarget)
-                end
-                closestTarget = table.copy(closestTarget:GetPosition())
-                self.target = closestTarget
-                self.dest = closestTarget
-                local targetDist = VDist2(closestTarget[1],closestTarget[3],Center[1],Center[3])
-                if targetDist < self.data.TAWeaponRange then
-                for _,v in platoonUnits do
-                    local unitpos=v:GetPosition()
-                    local smartPos = TAReclaim.TAKite({unitpos[1]+math.random(-2,2),unitpos[2],unitpos[3]+math.random(-2,2)},closestTarget, {targetDist, targetDist - ((self.data.TAWeaponRange)/2)})
-                    smartPos = {smartPos[1]+math.random(-1,1),smartPos[2],smartPos[3]+math.random(-1,1)}
-                    v.dest=smartPos
-                    IssueClearCommands(v)
-                    IssueMove(v, smartPos)
-                end
-                WaitTicks(25)
-                elseif targetDist < self.data.TAWeaponRange * 2 then
-                local Coward = {closestTarget[1]+math.random (-4,4), closestTarget[2], closestTarget[3] + math.random(-4,4)}
-                IssueClearCommands(platoonUnits)
-                self.dest = Coward
-                IssueMove(platoonUnits, Coward)
-                WaitTicks(30)
+                    closestTarget = table.copy(closestTarget:GetPosition())
+                    self.target = closestTarget
+                    self.dest = closestTarget
+                    local targetDist = VDist2(closestTarget[1],closestTarget[3],Center[1],Center[3])
+                    if targetDist < self.data.TAWeaponRange then
+                    for _,v in platoonUnits do
+                        local unitpos=v:GetPosition()
+                        local smartPos = TAReclaim.TAKite({unitpos[1]+math.random(-2,2),unitpos[2],unitpos[3]+math.random(-2,2)},closestTarget, {targetDist, targetDist - ((self.data.TAWeaponRange)/2)})
+                        smartPos = {smartPos[1]+math.random(-1,1),smartPos[2],smartPos[3]+math.random(-1,1)}
+                        v.dest=smartPos
+                        IssueClearCommands(v)
+                        IssueMove(v, smartPos)
+                    end
+                    WaitTicks(25)
+                    elseif targetDist < self.data.TAWeaponRange * 2 then
+                    local Coward = {closestTarget[1]+math.random (-4,4), closestTarget[2], closestTarget[3] + math.random(-4,4)}
+                    IssueClearCommands(platoonUnits)
+                    self.dest = Coward
+                    IssueMove(platoonUnits, Coward)
+                    WaitTicks(30)
+                    end
                 end
                 cmdQ = {1}
             -- if we have nothing to do, try finding something to do

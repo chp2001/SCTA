@@ -147,12 +147,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Missile Hunt',
         PlatoonTemplate = 'LandRocketAttackSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        PlatoonAddPlans = { 'HighlightSCTAHuntAI' },
+        --PlatoonAddPlans = { 'HighlightSCTAHuntAI' },
         Priority = 125,
         InstanceCount = 50,
         BuilderType = 'LandForm',
         BuilderData = {
-            TAWeaponRange = 56, 
+            TAWeaponRange = 30, 
             ThreatSupport = 50,
             NeverGuardBases = true,
             NeverGuardEngineers = true,
@@ -172,14 +172,14 @@ BuilderGroup {
         BuilderName = 'SCTAAI Land Attack Mid',
         PlatoonTemplate = 'LandAttackSCTAMid', -- The platoon template tells the AI what units to include, and how to use them.
         PriorityFunction = TAPrior.UnitProductionT1, -- The platoon template tells the AI what units to include, and how to use them.
-        PlatoonAddPlans = { 'HighlightSCTAHuntAI' },
+        --PlatoonAddPlans = { 'HighlightSCTAHuntAI' },
         Priority = 150,
         InstanceCount = 50,
         --DelayEqualBuildPlattons = 5,
         BuilderType = 'LandForm',
         BuilderData = {
             ThreatSupport = 75,
-            TAWeaponRange = 60,
+            TAWeaponRange = 30,
             NeverGuardBases = true,
             NeverGuardEngineers = true,
             UseFormation = 'AttackFormation',
@@ -199,12 +199,12 @@ BuilderGroup {
         BuilderName = 'SCTAAI Land Attack Endgame',
         PlatoonTemplate = 'LandAttackSCTAEndGame', -- The platoon template tells the AI what units to include, and how to use them.
         PriorityFunction = TAPrior.TechEnergyExist,
-        PlatoonAddPlans = { 'HighlightSCTAHuntAI' },
+        --PlatoonAddPlans = { 'HighlightSCTAHuntAI' },
         Priority = 210,
         InstanceCount = 50,
         BuilderType = 'LandForm',
         BuilderData = {
-            TAWeaponRange = 80,
+            TAWeaponRange = 30,
             ThreatSupport = 75,
             NeverGuardBases = false,
             NeverGuardEngineers = false,

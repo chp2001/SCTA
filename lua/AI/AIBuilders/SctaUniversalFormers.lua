@@ -20,9 +20,11 @@ BuilderGroup {
         BuilderName = 'SCTAAI Terrain',
         PlatoonTemplate = 'StrikeForceSCTATerrain', -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 200,
+        ---PlatoonAddPlans = { 'HighlightSCTAHuntAI' },
         InstanceCount = 2,
         BuilderType = 'LandForm',
         BuilderData = {
+            TAWeaponRange = 30,
             NeverGuardBases = true,
             NeverGuardEngineers = true,
             UseMoveOrder = true,

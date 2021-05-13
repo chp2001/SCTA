@@ -5,11 +5,12 @@ local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
 local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
-local RAIDER = (categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.AMPHIBIOUS - categories.COMMAND)
+local RAIDER = (categories.armpw + categories.corak + categories.armflash + categories.corgator)
 local SPECIAL = (RAIDER + categories.EXPERIMENTAL + categories.ENGINEER + categories.SCOUT)
 local GROUND = categories.MOBILE * categories.LAND
 local TACATS = (categories.ANTISHIELD + categories.AMPHIBIOUS)
 local RANGE = (categories.ARTILLERY + categories.SILO + categories.ANTIAIR + categories.SNIPER)
+
 
 BuilderGroup {
     BuilderGroupName = 'SCTAAILandFormers',
@@ -80,12 +81,13 @@ BuilderGroup {
 ---Defensive/MidGame Platoons
     Builder {
         BuilderName = 'SCTAAI Strike Force Early',
-        PlatoonTemplate = 'StrikeForceSCTAEarly', -- The platoon template tells the AI what units to include, and how to use them.
+        PlatoonTemplate = 'StrikeForceSCTAEarly',
+        PriorityFunction = TAPrior.UnitProductionT1, -- The platoon template tells the AI what units to include, and how to use them.
         Priority = 100,
         InstanceCount = 50,
         BuilderType = 'LandForm',
         BuilderData = {
-            ThreatSupport = 50,
+            ThreatSupport = 25,
             NeverGuardBases = true,
             NeverGuardEngineers = true,
             UseMoveOrder = true,
@@ -104,11 +106,11 @@ BuilderGroup {
         BuilderName = 'SCTAAI Strike Mid',
         PlatoonTemplate = 'StrikeForceSCTAMid', -- The platoon template tells the AI what units to include, and how to use them.
         PriorityFunction = TAPrior.UnitProduction,
-        Priority = 200,
-        InstanceCount = 50,
+        Priority = 150,
+        InstanceCount = 100,
         BuilderType = 'LandForm',
         BuilderData = {
-            ThreatSupport = 75,
+            ThreatSupport = 50,
             UseMoveOrder = true,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
@@ -124,11 +126,11 @@ BuilderGroup {
         BuilderName = 'SCTAAI Strike Endgame',
         PlatoonTemplate = 'StrikeForceSCTAEndgame', -- The platoon template tells the AI what units to include, and how to use them.
         PriorityFunction = TAPrior.StructureProductionT2,
-        Priority = 260,
-        InstanceCount = 50,
+        Priority = 250,
+        InstanceCount = 200,
         BuilderType = 'LandForm',
         BuilderData = {
-            ThreatSupport = 100,
+            ThreatSupport = 75,
             UseMoveOrder = true,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
@@ -166,8 +168,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Land Attack Mid',
         PlatoonTemplate = 'LandAttackSCTAMid', -- The platoon template tells the AI what units to include, and how to use them.
-        PriorityFunction = TAPrior.UnitProduction,
-        Priority = 200,-- The platoon template tells the AI what units to include, and how to use them.
+        PriorityFunction = TAPrior.UnitProductionT1, -- The platoon template tells the AI what units to include, and how to use them.
+        Priority = 150,
         InstanceCount = 50,
         --DelayEqualBuildPlattons = 5,
         BuilderType = 'LandForm',
@@ -191,12 +193,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Land Attack Endgame',
         PlatoonTemplate = 'LandAttackSCTAEndGame', -- The platoon template tells the AI what units to include, and how to use them.
-        PriorityFunction = TAPrior.StructureProductionT2,
-        Priority = 260,
+        PriorityFunction = TAPrior.TechEnergyExist,
+        Priority = 210,
         InstanceCount = 50,
         BuilderType = 'LandForm',
         BuilderData = {
-            ThreatSupport = 100,
+            ThreatSupport = 75,
             NeverGuardBases = false,
             NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',
@@ -231,4 +233,3 @@ BuilderGroup {
          },
     },
 }
-

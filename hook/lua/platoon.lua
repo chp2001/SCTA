@@ -1843,16 +1843,16 @@ Platoon = Class(SCTAAIPlatoon) {
             if target then
                 blip = target:GetBlip(armyIndex)
                 self:Stop()
-                target = table.copy(target:GetPosition())
+                target = target:GetPosition()
                 self.target = target
                 self.dest = target
-                self:AggressiveMoveToLocation(table.copy(target:GetPosition()))
+                self:AggressiveMoveToLocation(table.copy(target))
                 --DUNCAN - added to try and stop AI getting stuck.
                 local targetDist = VDist2(target[1],target[3],Center[1],Center[3])
                 if targetDist < self.data.TAWeaponRange then
                     for _,v in platoonUnits do
                         local unitpos=v:GetPosition()
-                        local smartPos = TAReclaim.TAKite({unitpos[1]+math.random(-2,2),unitpos[2],unitpos[3]+math.random(-2,2)},target, {targetDist, targetDist - ((self.data.TAWeaponRange)/2)})
+                        local smartPos = TAReclaim.TAKite({unitpos[1]+math.random(-2,2),unitpos[2],unitpos[3]+math.random(-2,2)},target, {targetDist, targetDist - self.data.TAWeaponRange})
                         smartPos = {smartPos[1]+math.random(-1,1),smartPos[2],smartPos[3]+math.random(-1,1)}
                         v.dest=smartPos
                         IssueClearCommands(v)
@@ -1866,8 +1866,8 @@ Platoon = Class(SCTAAIPlatoon) {
                     IssueMove(platoonUnits, Coward)
                     WaitTicks(30)
                 end
-                else
-                local position = AIUtils.RandomLocation(Center[1],Center[3])
+                WaitSeconds(3)
+                local position = AIUtils.RandomLocation(target[1],target[3])
                 self.dest = position
                 self:MoveToLocation(position, false)
             end
@@ -2031,7 +2031,7 @@ Platoon = Class(SCTAAIPlatoon) {
 
             -- if we're on our final push through to the destination, and we find a unit close to our destination
             local closestTarget = self:FindClosestUnit('attack', 'enemy', true, categories.ALLUNITS)
-            local Center = self:GetPlatoonPosition()
+            --local Center = self:GetPlatoonPosition()
             local nearDest = false
             local oldPathSize = table.getn(self.LastAttackDestination)
             if self.LastAttackDestination then
@@ -2053,7 +2053,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 else
                     IssueAttack(platoonUnits, closestTarget)
                 end
-                local targetDist = VDist2(closestTarget[1],closestTarget[3],Center[1],Center[3])
+                --[[local targetDist = VDist2(closestTarget[1],closestTarget[3],Center[1],Center[3])
                     if targetDist < self.data.TAWeaponRange then
                     for _,v in platoonUnits do
                         local unitpos=v:GetPosition()
@@ -2070,7 +2070,7 @@ Platoon = Class(SCTAAIPlatoon) {
                     self.dest = Coward
                     IssueMove(platoonUnits, Coward)
                     WaitTicks(30)
-                    end
+                    end]]
                 cmdQ = {1}
             -- if we have nothing to do, try finding something to do
             elseif table.getn(cmdQ) == 0 then
@@ -2196,7 +2196,7 @@ Platoon = Class(SCTAAIPlatoon) {
 
             -- if we're on our final push through to the destination, and we find a unit close to our destination
             local closestTarget = self:FindClosestUnit('attack', 'enemy', true, categories.ALLUNITS)
-            local Center = self:GetPlatoonPosition()
+            --local Center = self:GetPlatoonPosition()
             local nearDest = false
             local oldPathSize = table.getn(self.LastAttackDestination)
             if self.LastAttackDestination then
@@ -2211,7 +2211,8 @@ Platoon = Class(SCTAAIPlatoon) {
                     IssueFormAttack(platoonUnits, closestTarget, PlatoonFormation, 0)
                 else
                     IssueAttack(platoonUnits, closestTarget)
-                    closestTarget = table.copy(closestTarget:GetPosition())
+                end
+                    --[[closestTarget = table.copy(closestTarget:GetPosition())
                     self.target = closestTarget
                     self.dest = closestTarget
                     local targetDist = VDist2(closestTarget[1],closestTarget[3],Center[1],Center[3])
@@ -2232,7 +2233,7 @@ Platoon = Class(SCTAAIPlatoon) {
                     IssueMove(platoonUnits, Coward)
                     WaitTicks(30)
                     end
-                end
+                end]]
                 cmdQ = {1}
             -- if we have nothing to do, try finding something to do
             elseif table.getn(cmdQ) == 0 then

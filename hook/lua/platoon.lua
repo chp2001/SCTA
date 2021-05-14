@@ -1493,8 +1493,6 @@ Platoon = Class(SCTAAIPlatoon) {
                         IssueClearCommands(v)
                         IssueMove(v, smartPos)
                     end
-                    WaitSeconds(1)
-                    self:AttackTarget(target)
                 end
             else
             WaitSeconds(2)
@@ -1959,8 +1957,6 @@ Platoon = Class(SCTAAIPlatoon) {
                         IssueClearCommands(v)
                         IssueMove(v, smartPos)
                     end
-                    WaitSeconds(1)
-                    self:AttackTarget(target)
                 end
             else
                 WaitSeconds(2)

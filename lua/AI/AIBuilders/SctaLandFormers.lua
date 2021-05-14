@@ -137,9 +137,11 @@ BuilderGroup {
             NeverGuardEngineers = false,
             UseFormation = 'AttackFormation',
             LocationType = 'LocationType',
+            Energy = true,
+            Sniper = true,
         },        
         BuilderConditions = {
-            { MIBC, 'GreaterThanGameTime', {900} },
+            { MIBC, 'GreaterThanGameTime', {1200} },
             --{ UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4,  GROUND - SPECIAL - categories.BOMB}},
         },
     },
@@ -194,34 +196,6 @@ BuilderGroup {
             --{ UCBC, 'PoolGreaterAtLocation', { 'LocationType', 4, GROUND * RANGE } },
             { MIBC, 'GreaterThanGameTime', {480} },
          },
-    },
-    Builder {
-        BuilderName = 'SCTAAI Land Attack Endgame',
-        PlatoonTemplate = 'LandAttackSCTAEndGame', -- The platoon template tells the AI what units to include, and how to use them.
-        PriorityFunction = TAPrior.TechEnergyExist,
-        --PlatoonAddPlans = { 'HighlightSCTAHuntAI' },
-        Priority = 210,
-        InstanceCount = 50,
-        BuilderType = 'LandForm',
-        BuilderData = {
-            TAWeaponRange = 30,
-            ThreatSupport = 75,
-            NeverGuardBases = false,
-            NeverGuardEngineers = false,
-            UseFormation = 'AttackFormation',
-            LocationType = 'LocationType',
-            AggressiveMove = true,
-            Energy = true,
-            Sniper = true,
-        ThreatWeights = {
-            SecondaryTargetThreatType = 'StructuresNotMex',
-            IgnoreStrongerTargetsRatio = 100.0,
-            },
-        },        
-        BuilderConditions = {
-            ---{ UCBC, 'PoolGreaterAtLocation', { 'LocationType', 9, GROUND * RANGE} },
-            { MIBC, 'GreaterThanGameTime', {900} },
-        },
     },
     Builder {
         BuilderName = 'SCTA Hover Strike Land',

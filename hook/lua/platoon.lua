@@ -48,8 +48,9 @@ Platoon = Class(SCTAAIPlatoon) {
         eng.AssistPlatoon = nil
         eng.UnitBeingAssist = nil
         self:Stop()
-        coroutine.yield(1)
-       return self:SCTAEngineerTypeAI()
+        self:PlatoonDisband()
+        --[[coroutine.yield(1)
+       return self:SCTAEngineerTypeAI()]]
     end,
 
     ManagerEngineerAssistAISCTA = function(self)
@@ -87,8 +88,9 @@ Platoon = Class(SCTAAIPlatoon) {
         self.AssistPlatoon = nil
         eng.UnitBeingAssist = nil
         self:Stop()
-        coroutine.yield(1)
-        return self:SCTAEngineerTypeAI()
+        self:PlatoonDisband()
+        --[[coroutine.yield(1)
+       return self:SCTAEngineerTypeAI()]]
     end,
 
     EngineerBuildAISCTA = function(self)
@@ -1468,13 +1470,6 @@ Platoon = Class(SCTAAIPlatoon) {
         local armyIndex = aiBrain:GetArmyIndex()
         local platoonUnits = self:GetPlatoonUnits()
         self.data = self.PlatoonData
-        for _,v in platoonUnits do
-            if v.Dead then continue end
-            --v:SetCustomName('TAHuntSCTA')
-            v.dest = nil
-        end
-        self.target = nil
-        self.dest = nil
         local target
         local blip
         while aiBrain:PlatoonExists(self) do
@@ -1483,42 +1478,35 @@ Platoon = Class(SCTAAIPlatoon) {
                 self:CheckEnergySCTAEco()
             end
             target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ALLUNITS - categories.WALL)
-            local Center = self:GetPlatoonPosition()
+            self.Center = self:GetPlatoonPosition()
             if target then
                 blip = target:GetBlip(armyIndex)
                 self:Stop()
-                target = table.copy(target:GetPosition())
-                self.target = target
-                self.dest = target
-                self:AggressiveMoveToLocation(table.copy(target))
+                target = target:GetPosition()
+                self:AggressiveMoveToLocation(table.copy(target:GetPosition()))
                 --DUNCAN - added to try and stop AI getting stuck.
-                local targetDist = VDist2(target[1],target[3],Center[1],Center[3])
+                local targetDist = VDist2(target[1],target[3], self.Center[1], self.Center[3])
                 if targetDist < self.data.TAWeaponRange then
+                    WaitSeconds(2)
                     for _,v in platoonUnits do
-                        local unitpos=v:GetPosition()
+                        local unitpos = v:GetPosition()
                         local smartPos = TAReclaim.TAKite({unitpos[1]+math.random(-2,2),unitpos[2],unitpos[3]+math.random(-2,2)},target, {targetDist, targetDist - self.data.TAWeaponRange})
                         smartPos = {smartPos[1]+math.random(-1,1),smartPos[2],smartPos[3]+math.random(-1,1)}
                         v.dest=smartPos
                         IssueClearCommands(v)
                         IssueMove(v, smartPos)
                     end
-                    WaitTicks(25)
-                elseif targetDist < self.data.TAWeaponRange * 2 then
-                    local Coward = {target[1]+math.random (-4,4), target[2], target[3] + math.random(-4,4)}
-                    IssueClearCommands(platoonUnits)
-                    self.dest = Coward
-                    IssueMove(platoonUnits, Coward)
-                    WaitTicks(30)
-                    end
-                else
-                local position = AIUtils.RandomLocation(Center[1],Center[3])
-                self.dest = position
-                self:MoveToLocation(position, false)
+                    WaitSeconds(1)
+                    self:AttackTarget(table.copy(target))
+                end 
+            else
+            WaitSeconds(1)
+            self.EcoCheck = nil
+            local position = AIUtils.RandomLocation(self.Center[1],self.Center[3])
+            self.dest = position
+            self:MoveToLocation(position, false)
             end
-            WaitTicks(5)
-            if self.PlatoonData.Energy then
-                self.EcoCheck = nil
-            end
+            WaitSeconds(1)
         end
     end,
 
@@ -1656,18 +1644,21 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
                 target = self:FindPrioritizedUnit('Attack', 'Enemy', true, self:GetPlatoonPosition(), maxRadius)
                 if target then
+                   local threat = table.copy(target:GetPosition())
                     --self:SetPlatoonFormationOverride('Attack')
                     self:Stop()
                     if aiBrain:PlatoonExists(self) then
-                        if numberOfUnitsInPlatoon < 20 and self.data.UseMoveOrder then
+                        if numberOfUnitsInPlatoon < 20 then
                         self:SetPlatoonFormationOverride('AttackFormation')
-                        self:AttackTarget( target )
                         end
-                    elseif self.data.AggressiveMove then
-                        self:Stop()
-                        self:AggressiveMoveToLocation(table.copy(target:GetPosition()))
-                    else
-                        self:MoveToLocation( table.copy( target:GetPosition() ), false)
+                        self.Artillery = self:GetSquadUnits('Artillery')
+                        self.Direct = self:GetSquadUnits('Attack')
+                            if self.Direct > 0 then
+                                self.Direct:AttackTarget(threat)
+                            end
+                            if self.Artillery > 0 then
+                                self.Artillery:AggressiveMoveToLocation(threat)
+                            end
                     end
                 else
                     self:Stop()
@@ -1726,7 +1717,15 @@ Platoon = Class(SCTAAIPlatoon) {
                 target = self:FindPrioritizedUnit('Attack', 'Enemy', true, self:GetPlatoonPosition(), maxRadius)
                 if target then
                     self:Stop()
-                    self:AggressiveMoveToLocation(table.copy(target:GetPosition()))
+                    local threat = table.copy(target:GetPosition())
+                    self.Artillery = self:GetSquadUnits('Artillery')
+                    self.Direct = self:GetSquadUnits('Attack')
+                        if self.Direct > 0 then
+                            self.Direct:AttackTarget(threat)
+                    end
+                        if self.Artillery > 0 then
+                            self.Artillery:AggressiveMoveToLocation(threat)
+                    end
                 end
             else
                 if aiBrain:PlatoonExists(self) and numberOfUnitsInPlatoon < 20 then
@@ -1816,8 +1815,6 @@ Platoon = Class(SCTAAIPlatoon) {
                 self:SetAIPlan(newPlatoon)
         end
     end,
-
-        
     
     HuntSCTAAI = function(self)
         self:Stop()
@@ -1825,13 +1822,11 @@ Platoon = Class(SCTAAIPlatoon) {
         local armyIndex = aiBrain:GetArmyIndex()
         local platoonUnits = self:GetPlatoonUnits()
         self.data = self.PlatoonData
-        for _,v in platoonUnits do
+        --[[for _,v in platoonUnits do
             if v.Dead then continue end
             --v:SetCustomName('AttackHuntSCTA')
             v.dest = nil
-        end
-        self.target = nil
-        self.dest = nil
+        end]]
         local target
         local blip
         while aiBrain:PlatoonExists(self) do
@@ -1839,39 +1834,91 @@ Platoon = Class(SCTAAIPlatoon) {
                 self:MergeWithNearbyPlatoonsSCTA('HuntSCTAAI', 'AttackSCTAForceAI', 5, true)
             end
             target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ALLUNITS - categories.WALL)
-            local Center = self:GetPlatoonPosition()
+            self.Center = self:GetPlatoonPosition()
             if target then
                 blip = target:GetBlip(armyIndex)
                 self:Stop()
-                target = target:GetPosition()
-                self.target = target
-                self.dest = target
-                self:AggressiveMoveToLocation(table.copy(target))
+                target = table.copy(target:GetPosition())
+                self:IssueAggressiveMove(table.copy(target))
                 --DUNCAN - added to try and stop AI getting stuck.
-                local targetDist = VDist2(target[1],target[3],Center[1],Center[3])
+                local targetDist = VDist2(target[1],target[3], self.Center[1], self.Center[3])
                 if targetDist < self.data.TAWeaponRange then
+                    WaitSeconds(2)
                     for _,v in platoonUnits do
-                        local unitpos=v:GetPosition()
+                        local unitpos = v:GetPosition()
                         local smartPos = TAReclaim.TAKite({unitpos[1]+math.random(-2,2),unitpos[2],unitpos[3]+math.random(-2,2)},target, {targetDist, targetDist - self.data.TAWeaponRange})
                         smartPos = {smartPos[1]+math.random(-1,1),smartPos[2],smartPos[3]+math.random(-1,1)}
                         v.dest=smartPos
                         IssueClearCommands(v)
                         IssueMove(v, smartPos)
                     end
-                    WaitTicks(25)
-                elseif targetDist < self.data.TAWeaponRange * 2 then
-                    local Coward = {target[1]+math.random (-4,4), target[2], target[3] + math.random(-4,4)}
-                    IssueClearCommands(platoonUnits)
-                    self.dest=Coward
-                    IssueMove(platoonUnits, Coward)
-                    WaitTicks(30)
-                end
-                WaitSeconds(3)
-                local position = AIUtils.RandomLocation(target[1],target[3])
-                self.dest = position
+                    WaitSeconds(1)
+                    self:AttackTarget(table.copy(target))
+                end 
+            else
+                WaitSeconds(2)
+                local position = AIUtils.RandomLocation(self.Center[1],self.Center[3])
                 self:MoveToLocation(position, false)
             end
+            WaitSeconds(2)
+        end
+    end,
+
+
+    SCTAGuardUnit = function(self)
+        --LOG('GuardUnit AI started...')
+        local aiBrain = self:GetBrain()
+        if not aiBrain:PlatoonExists(self) or not self:GetPlatoonPosition() then
+            return
+        end
+        AIAttackUtils.GetMostRestrictiveLayer(self)
+        local unitToGuard = false
+        local units = aiBrain:GetListOfUnits(categories.ENGINEER * categories.LAND - categories.COMMAND, false)
+
+        for k,v in units do
+            if VDist3(v:GetPosition(), self:GetPlatoonPosition()) < 10 then
+                if not v.BeingLandGuarded and (self.MovementLayer == 'Land' or self.MovementLayer == 'Amphibious') then
+                    unitToGuard = v
+                    v.BeingLandGuarded = true
+                end
+            end
+        end
+
+        if not unitToGuard then
+            --Dont know if this works...
+            --unitToGuard = self:FindClosestUnit('Attack', 'Ally', true, self.PlatoonData.GuardCategory)
+            local units = aiBrain:GetListOfUnits(categories.ENGINEER * categories.LAND - categories.COMMAND, false)
+            for k,v in units do
+                if VDist3(v:GetPosition(), self:GetPlatoonPosition()) < 10 then
+                    unitToGuard = v
+                end
+            end
+        end
+
+        local guardTime = 0
+        if unitToGuard and not unitToGuard.Dead then
+            IssueGuard(self:GetPlatoonUnits(), unitToGuard)
+
+            while aiBrain:PlatoonExists(self) and not unitToGuard.Dead do
+                guardTime = guardTime + 5
+                WaitSeconds(5)
+                if  guardTime >= 30
+                or (not unitToGuard.Dead and unitToGuard:GetCurrentLayer() == 'Seabed' and self.MovementLayer == 'Land') then
+                    break
+                end
+            end
+            if not unitToGuard.Dead and (self.MovementLayer == 'Land' or self.MovementLayer == 'Amphibious') then
+                unitToGuard.BeingLandGuarded = false
+            end
+        else
+            if self.PlatoonData.Energy then 
             WaitTicks(10)
+            return self:TAHunt()
+            else
+            WaitTicks(10)
+            return self:HuntSCTAAI()
+            end
+            WaitSeconds(1)
         end
     end,
 
@@ -1965,7 +2012,7 @@ Platoon = Class(SCTAAIPlatoon) {
             end
             numberOfUnitsInPlatoon = table.getn(platoonUnits)
             if aiBrain:PlatoonExists(self) and TAPrior.TechEnergyExist >= 80 and numberOfUnitsInPlatoon < 20 then
-                self:MergeWithNearbyPlatoonsSCTA('AttackSCTAForceAI', 'AttackSCTAForceAIEndGame', 20, true)
+                self:MergeWithNearbyPlatoonsSCTA('AttackSCTAForceAI', 'SCTAStrikeForceAIEndgame', 20, true)
             end
 
             if (oldNumberOfUnitsInPlatoon != numberOfUnitsInPlatoon) then
@@ -2071,169 +2118,6 @@ Platoon = Class(SCTAAIPlatoon) {
                     IssueMove(platoonUnits, Coward)
                     WaitTicks(30)
                     end]]
-                cmdQ = {1}
-            -- if we have nothing to do, try finding something to do
-            elseif table.getn(cmdQ) == 0 then
-                self:StopAttack()
-                cmdQ = AIAttackUtils.AIPlatoonSquadAttackVector(aiBrain, self)
-                stuckCount = 0
-            -- if we've been stuck and unable to reach next marker? Ignore nearby stuff and pick another target
-        elseif self.LastPosition and VDist2Sq(self.LastPosition[1], self.LastPosition[3], pos[1], pos[3]) < (self.PlatoonData.StuckDistance or 8) then
-            stuckCount = stuckCount + 1
-            if stuckCount >= 2 then
-                self:StopAttack()
-                self.LastAttackDestination = {}
-                cmdQ = AIAttackUtils.AIPlatoonSquadAttackVector( aiBrain, self )
-                stuckCount = 0
-            end
-        else
-            stuckCount = 0
-        end
-
-        self.LastPosition = pos
-            --else
-                -- wait a little longer if we're stuck so that we have a better chance to move
-                WaitSeconds(Random(5,11) + 2 * stuckCount)
-        end
-    end,
-
-    AttackSCTAForceAIEndGame = function(self)
-        self:Stop()
-        local aiBrain = self:GetBrain()
-
-        -- get units together
-        if not self:GatherUnits() then
-            return
-        end
-
-        -- Setup the formation based on platoon functionality
-
-        local enemy = aiBrain:GetCurrentEnemy()
-        self.data = self.PlatoonData
-        local platoonUnits = self:GetPlatoonUnits()
-        for _,v in platoonUnits do
-            if v.Dead then continue end
-            v:SetCustomName('AttackHuntEndSCTA')
-            v.dest = nil
-        end
-        self.target = nil
-        self.dest = nil
-        local numberOfUnitsInPlatoon = table.getn(platoonUnits)
-        local stuckCount = 0
-
-        self.PlatoonAttackForce = true       
-        local PlatoonFormation = self.PlatoonData.UseFormation or 'NoFormation'
-        while aiBrain:PlatoonExists(self) do
-            local pos = self:GetPlatoonPosition() -- update positions; prev position done at end of loop so not done first time
-
-            -- if we can't get a position, then we must be dead
-            if not pos then
-                break
-            end
-
-
-            -- if we're using a transport, wait for a while
-            if self.UsingTransport then
-                WaitSeconds(4)
-                continue
-            end
-        if aiBrain:GetCurrentEnemy() and aiBrain:GetCurrentEnemy().Result == "defeat" then
-            aiBrain:PickEnemyLogic()
-        end
-
-        -- deal with lost-puppy transports
-        local strayTransports = {}
-        for k,v in platoonUnits do
-            if EntityCategoryContains(categories.TRANSPORTFOCUS, v) then
-                table.insert(strayTransports, v)
-            end
-        end
-        if table.getn(strayTransports) > 0 then
-            local dropPoint = pos
-            dropPoint[1] = dropPoint[1] + Random(-3, 3)
-            dropPoint[3] = dropPoint[3] + Random(-3, 3)
-            IssueTransportUnload(strayTransports, dropPoint)
-            WaitSeconds(10)
-            local strayTransports = {}
-            for k,v in platoonUnits do
-                local parent = v:GetParent()
-                if parent and EntityCategoryContains(categories.TRANSPORTFOCUS, parent) then
-                    table.insert(strayTransports, parent)
-                    break
-                end
-            end
-            if table.getn(strayTransports) > 0 then
-                local MAIN = aiBrain.BuilderManagers.MAIN
-                if MAIN then
-                    dropPoint = MAIN.Position
-                    IssueTransportUnload(strayTransports, dropPoint)
-                    WaitSeconds(30)
-                end
-            end
-            self.UsingTransport = false
-            AIUtils.ReturnTransportsToPool(strayTransports, true)
-        end
-
-
-            --Disband platoon if it's all air units, so they can be picked up by another platoon
-            local mySurfaceThreat = AIAttackUtils.GetSurfaceThreatOfUnits(self)
-            if mySurfaceThreat == 0 and AIAttackUtils.GetAirThreatOfUnits(self) > 0 then
-                self:PlatoonDisband()
-                return
-            end
-
-            local cmdQ = {}
-            -- fill cmdQ with current command queue for each unit
-            for k,v in platoonUnits do
-                if not v.Dead then
-                    local unitCmdQ = v:GetCommandQueue()
-                    for cmdIdx,cmdVal in unitCmdQ do
-                        table.insert(cmdQ, cmdVal)
-                        break
-                    end
-                end
-            end
-
-            -- if we're on our final push through to the destination, and we find a unit close to our destination
-            local closestTarget = self:FindClosestUnit('attack', 'enemy', true, categories.ALLUNITS)
-            --local Center = self:GetPlatoonPosition()
-            local nearDest = false
-            local oldPathSize = table.getn(self.LastAttackDestination)
-            if self.LastAttackDestination then
-                nearDest = oldPathSize == 0 or VDist3(self.LastAttackDestination[oldPathSize], pos) < 20
-            end
-
-            -- if we're near our destination and we have a unit closeby to kill, kill it
-            if table.getn(cmdQ) <= 1 and closestTarget and VDist3(closestTarget:GetPosition(), pos) < 20 and nearDest then
-                self:StopAttack()
-                if PlatoonFormation != 'No Formation' then
-                    --self:SetPlatoonFormationOverride('AttackFormation')
-                    IssueFormAttack(platoonUnits, closestTarget, PlatoonFormation, 0)
-                else
-                    IssueAttack(platoonUnits, closestTarget)
-                end
-                    --[[closestTarget = table.copy(closestTarget:GetPosition())
-                    self.target = closestTarget
-                    self.dest = closestTarget
-                    local targetDist = VDist2(closestTarget[1],closestTarget[3],Center[1],Center[3])
-                    if targetDist < self.data.TAWeaponRange then
-                    for _,v in platoonUnits do
-                        local unitpos=v:GetPosition()
-                        local smartPos = TAReclaim.TAKite({unitpos[1]+math.random(-2,2),unitpos[2],unitpos[3]+math.random(-2,2)},closestTarget, {targetDist, targetDist - ((self.data.TAWeaponRange)/2)})
-                        smartPos = {smartPos[1]+math.random(-1,1),smartPos[2],smartPos[3]+math.random(-1,1)}
-                        v.dest=smartPos
-                        IssueClearCommands(v)
-                        IssueMove(v, smartPos)
-                    end
-                    WaitTicks(25)
-                    elseif targetDist < self.data.TAWeaponRange * 2 then
-                    local Coward = {closestTarget[1]+math.random (-4,4), closestTarget[2], closestTarget[3] + math.random(-4,4)}
-                    IssueClearCommands(platoonUnits)
-                    self.dest = Coward
-                    IssueMove(platoonUnits, Coward)
-                    WaitTicks(30)
-                    end
-                end]]
                 cmdQ = {1}
             -- if we have nothing to do, try finding something to do
             elseif table.getn(cmdQ) == 0 then
@@ -2728,8 +2612,10 @@ Platoon = Class(SCTAAIPlatoon) {
         AIAttackUtils.GetMostRestrictiveLayer(self)
         
         if self.MovementLayer == 'Air' then 
+            WaitTicks(1)
             return self:HuntAirAISCTA() 
         else
+            WaitTicks(1)
             return self:HuntAILABSCTA()
         end
     end,
@@ -2885,7 +2771,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 elseif self.PlatoonData.Stealth then
                     return self:InterceptorAISCTAStealth()
                 elseif self.PlatoonData.Sniper then 
-                    return self:AttackSCTAForceAIEndGame()
+                    return self:SCTAStrikeForceAIEndgame()
                 else
                     return self:TAHunt()
                 end

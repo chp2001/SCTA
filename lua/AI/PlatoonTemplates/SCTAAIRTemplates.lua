@@ -22,7 +22,7 @@ PlatoonTemplate {
     Plan = 'InterceptorAISCTA',
     ---PlatoonType = 'AirForm',
     GlobalSquads = {
-        { SKY * categories.ANTIAIR * (categories.TECH1 + categories.TECH3) - categories.BOMBER, 2, 100, 'attack', 'none' },
+        { SKY * categories.ANTIAIR - categories.BOMBER - categories.GROUNDATTACK, 2, 100, 'attack', 'none' },
     }
 }
 
@@ -31,7 +31,7 @@ PlatoonTemplate {
     Plan = 'InterceptorAISCTAStealth',
     ---PlatoonType = 'AirForm',
     GlobalSquads = {
-        { SKY * (((categories.ANTIAIR + categories.GROUNDATTACK) * categories.TECH2) + categories.BOMBER), 1, 100, 'Attack', 'GrowthFormation' },
+        { SKY * ((categories.ANTIAIR * categories.TECH2) + categories.BOMBER + categories.GROUNDATTACK), 1, 100, 'Attack', 'GrowthFormation' },
     }
 }
 

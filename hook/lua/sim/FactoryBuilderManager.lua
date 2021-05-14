@@ -87,21 +87,25 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager) {
             end
             if not self:FactoryAlreadyExists(unit) then
                 table.insert(self.FactoryList, unit)
+              if not EntityCategoryContains(categories.TECH1, unit) then
                 unit.DesiresAssist = true
+                else
+                unit.DesiresAssist = false
+              end
                 if EntityCategoryContains(categories.BOT, unit) then
                     self:SetupNewFactory(unit, 'KBot')
                 elseif EntityCategoryContains(categories.TANK, unit) then
                     self:SetupNewFactory(unit, 'Vehicle')
-                elseif EntityCategoryContains(categories.HOVER, unit) then
-                    self:SetupNewFactory(unit, 'Hover')
+                elseif EntityCategoryContains(categories.GATE, unit) then
+                    self:SetupNewFactory(unit, 'Gate')
                 elseif EntityCategoryContains(categories.SUBMERSIBLE, unit) then
                     self:SetupNewFactory(unit, 'Seaplane')
                 elseif EntityCategoryContains(categories.AIR - categories.SUBMERSIBLE, unit) then
                     self:SetupNewFactory(unit, 'Air')
-                elseif EntityCategoryContains(categories.NAVAL * categories.STRUCTURE, unit) then
+                elseif EntityCategoryContains(categories.NAVAL, unit) then
                     self:SetupNewFactory(unit, 'Sea')
                 else
-                    self:SetupNewFactory(unit, 'Gate')
+                    self:SetupNewFactory(unit, 'Hover')
                 end
                 self.LocationActive = true
             end
@@ -200,24 +204,63 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager) {
             end
         end,
 
-        AssignBuildOrder = function(self,factory,bType)
+        DelayBuildOrder = function(self,factory,bType,time)
             if not self.Brain.SCTAAI then
-                return SCTAFactoryBuilderManager.AssignBuildOrder(self,factory,bType)
+                return SCTAFactoryBuilderManager.DelayBuildOrder(self,factory,bType,time)
             end
-            if factory.Dead or factory.unitBuilding then
+            local guards = factory:GetGuards()
+            for k,v in guards do
+                if not v.Dead and v.AssistPlatoon then
+                    if self.Brain:PlatoonExists(v.AssistPlatoon) then
+                        v.AssistPlatoon:ForkThread(v.AssistPlatoon.EconAssistBody)
+                    else
+                        v.AssistPlatoon = nil
+                    end
+                end
+            end
+            if factory.DelayThread then
                 return
             end
+            factory.DelayThread = true
+            WaitSeconds(time)
+            factory.DelayThread = false
+            self:TAAssignBuildOrder(factory,bType)
+        end,
+
+        FactoryFinishBuilding = function(self,factory,finishedUnit)
+            if not self.Brain.SCTAAI then
+                return SCTAFactoryBuilderManager.FactoryFinishBuilding(self,factory,finishedUnit)
+            end
+            if EntityCategoryContains(categories.ENGINEER, finishedUnit) then
+                self.Brain.BuilderManagers[self.LocationType].EngineerManager:AddUnit(finishedUnit)
+            elseif EntityCategoryContains(categories.FACTORY, finishedUnit) then
+                self:AddFactory(finishedUnit)
+            end
+            self.Brain:RemoveConsumption(self.LocationType, factory)
+    
+            self:TAAssignBuildOrder(factory, factory.BuilderManagerData.BuilderType)
+        end,
+
+        TAAssignBuildOrder = function(self,factory,bType)
+            --LOG('*TAIEXIST3', factory.TABuildingUnit)
+            if factory.Dead then
+                return
+            end
+            --LOG('*TAIEXIST2', factory.TABuildingUnit)
             local builder = self:GetHighestBuilder(bType,{factory})
-            if builder and not factory.unitBuilding then
-                --LOG('*Canceling', self)
+            --LOG('*TAIEXIST2', factory)
+            --LOG('*TAIEXIST', factory.TABuildingUnit)
+                if builder and not factory.TABuildingUnit then
+                ---LOG('*TAIEXIST3', factory)
                 local template = self:GetFactoryTemplate(builder:GetPlatoonTemplate(), factory)
                 LOG('*TAAI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Factory Builder Manager Building - ',repr(builder.BuilderName))
                 --LOG('*Building', template)
                 self.Brain:BuildPlatoon(template, {factory}, 1)
                 --LOG('*TACanceling2', template)
-            else
+                else
+                    --LOG('*TAIEXIST4', factory.TABuildingUnit)
                 -- No builder found setup way to check again
-                self:ForkThread(self.DelayBuildOrder, factory, bType, 1)
+                self:ForkThread(self.DelayBuildOrder, factory, bType, 2)
                 --LOG('*TACanceling1', factory)
             end
         end,

@@ -152,8 +152,9 @@ function TAHaveUnitsWithCategoryAndAllianceFalse(aiBrain, numReq, category, alli
     local numUnits = aiBrain:GetNumUnitsAroundPoint(category, Vector(0,0,0), 100000, alliance)
     if numUnits > numReq then
         return false
-    end
+    else
     return true
+    end
 end
 
 ---TAUnit Building
@@ -168,11 +169,18 @@ function TAFactoryCapCheck(aiBrain, locationType, TECH)
     end
     local numUnits = factoryManager:GetNumCategoryFactories(catCheck)
     numUnits = numUnits + aiBrain:GetEngineerManagerUnitsBeingBuilt(catCheck)
-
-    if numUnits < 12 then
-        return true
+    if TECH == categories.TECH1 then
+        numUnits = numUnits 
+    elseif TECH == categories.TECH2 then
+        numUnits = numUnits * 2 
+    else 
+        numUnits = numUnits * 4 
     end
-    return false
+    if numUnits < 16 then
+        return true
+    else
+        return false
+    end
 end
 
 function TAHaveEnemyUnitAtLocation(aiBrain, radius, locationType, unitCount, categoryEnemy, compareType)
@@ -218,10 +226,11 @@ end
 function TAHaveUnitRatioGreaterThanLand(aiBrain, Land)
     local numOne = aiBrain:GetCurrentUnits((Land) * categories.LAND * categories.MOBILE - categories.ENGINEER)
     local numTwo = aiBrain:GetCurrentUnits(categories.LAND * categories.MOBILE - categories.ENGINEER)
-    if ((numOne + 1) / (numTwo + 1)) < 0.33 then
+    if ((numOne + 1) / (numTwo + 1)) < 0.15 then
         return true
+    else
+        return false
     end
-    return false
 end
 
 function TAHaveUnitRatioGreaterThanNavalT1(aiBrain, Naval)
@@ -229,8 +238,9 @@ function TAHaveUnitRatioGreaterThanNavalT1(aiBrain, Naval)
     local numTwo = aiBrain:GetCurrentUnits(categories.SCOUT * categories.NAVAL)
     if ((numOne + 1) / (numTwo + 1)) < 0.2 then
         return true
+    else
+        return false
     end
-    return false
 end
 
 function TAHaveUnitRatioGreaterThanNaval(aiBrain, Naval)
@@ -238,8 +248,9 @@ function TAHaveUnitRatioGreaterThanNaval(aiBrain, Naval)
     local numTwo = aiBrain:GetCurrentUnits(categories.FACTORY * categories.NAVAL * categories.TECH2)
     if ((numOne + 1) / (numTwo + 1)) < 2 then
         return true
+    else
+        return false
     end
-    return false
 end
 
 function TAHaveUnitRatioGreaterThanNavalT3(aiBrain, Naval)
@@ -247,14 +258,15 @@ function TAHaveUnitRatioGreaterThanNavalT3(aiBrain, Naval)
     local numTwo = aiBrain:GetCurrentUnits(categories.FACTORY * categories.NAVAL * categories.TECH2)
     if ((numOne + 1) / (numTwo + 2)) < 1 then
         return true
+    else
+        return false
     end
-    return false
 end
 ----TAReclaim
 
 function TAReclaimablesInArea(aiBrain, locType)
     --DUNCAN - was .9. Reduced as dont need to reclaim yet if plenty of mass
-    if aiBrain:GetEconomyStoredRatio('MASS') > .5 then
+    if aiBrain:GetEconomyStoredRatio('MASS') > 0.5 then
         return false
     end
 
@@ -339,4 +351,15 @@ function TACanBuildOnMassLessThanDistanceLand(aiBrain, locationType, distance, t
         return true
     end
     return false
+end
+
+function TAKite(vec1, vec2, distance)
+    -- Courtesy of chp2001
+    -- note the distance param is {distance, distance - weapon range}
+    -- vec1 is friendly unit, vec2 is enemy unit
+    distanceFrac = distance[2] / distance[1]
+    x = vec1[1] * (1 - distanceFrac) + vec2[1] * distanceFrac
+    y = vec1[2] * (1 - distanceFrac) + vec2[2] * distanceFrac
+    z = vec1[3] * (1 - distanceFrac) + vec2[3] * distanceFrac
+    return {x,y,z}
 end

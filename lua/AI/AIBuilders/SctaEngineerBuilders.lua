@@ -44,6 +44,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1 Scouts',
         PlatoonTemplate = 'T1AirScoutSCTA',
+        PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 110,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Scout', 1},
@@ -169,20 +170,18 @@ BuilderGroup {
         BuilderName = 'SCTAAi T2 Experimental',
         PlatoonTemplate = 'SCTAExperimental',
         Priority = 175,
+        PriorityFunction = TAPrior.GantryUnitBuilding,
         InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.EXPERIMENTAL * categories.MOBILE - categories.SUBCOMMANDER} },
-        },
+        BuilderConditions = {},
         BuilderType = 'Gate',
     },
     Builder {
         BuilderName = 'SCTA Decoy Commander',
         PlatoonTemplate = 'SCTADecoyCommander',
+        PriorityFunction = TAPrior.GantryUnitBuilding,
         Priority = 150,
         InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.SUBCOMMANDER} },
-        },
+        BuilderConditions = {},
         BuilderType = 'Gate',
     },
 }

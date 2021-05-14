@@ -40,29 +40,6 @@ end
 
 ---TECHUPPRoduction
 
-ProductionT3 = function(self, aiBrain)
-    if Factory(aiBrain,  6, LAB)  then 
-        return 90
-    elseif Factory(aiBrain,  0, PLATFORM) then
-        return 95
-    elseif Factory(aiBrain,  0, categories.GATE) then
-        return 105
-    else
-        return 0
-    end
-end
-
-UnitProduction = function(self, aiBrain)
-    if Factory(aiBrain,  1, PLATFORM) then
-        return 80
-    elseif Factory(aiBrain,  1, LAB) then
-        return 125
-    elseif Factory(aiBrain,  12, PLANT) then 
-        return 110
-    else
-        return 0
-    end
-end
 
 StructureProductionT2 = function(self, aiBrain)
     if Factory(aiBrain,  2, LAB)  then 
@@ -98,6 +75,31 @@ end
 
 
 ----TECH1 PRODUCTION
+
+
+ProductionT3 = function(self, aiBrain)
+    if Factory(aiBrain,  6, LAB)  then 
+        return 90
+    elseif Factory(aiBrain,  0, PLATFORM) then
+        return 95
+    elseif Factory(aiBrain,  0, categories.GATE) then
+        return 105
+    else
+        return 0
+    end
+end
+
+UnitProduction = function(self, aiBrain)
+    if Factory(aiBrain,  1, PLATFORM) then
+        return 80
+    elseif Factory(aiBrain,  1, LAB) then
+        return 125
+    elseif Factory(aiBrain,  12, PLANT) then 
+        return 110
+    else
+        return 0
+    end
+end
 
 UnitProductionT1 = function(self, aiBrain)
     if Factory(aiBrain,  0, categories.GATE) then
@@ -146,6 +148,14 @@ end
 
 NothingBuilt = function(self, aiBrain)
     if MoreProduct(aiBrain,  0, FUSION) then 
+        return 200
+    else
+        return 0
+    end
+end
+
+GantryUnitBuilding = function(self, aiBrain)
+    if LessProduct(aiBrain,  1, categories.EXPERIMENTAL * categories.MOBILE) and Factory(aiBrain,  0, categories.GATE) then 
         return 200
     else
         return 0

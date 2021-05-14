@@ -131,7 +131,7 @@ function TAAIEcoConditionEfficiency(aiBrain)
     if aiBrain.EconomyMonitorThread then
         local econTime = aiBrain:GetEconomyOverTime()
 
-        econEff.EnergyEfficiencyOverTime = math.min(econTime.EnergyIncome / econTime.EnergyRequested, 4)
+        econEff.EnergyEfficiencyOverTime = math.min(econTime.EnergyIncome / econTime.EnergyRequested, 2)
         econEff.MassEfficiencyOverTime = math.min(econTime.MassIncome / econTime.MassRequested, 2)
     end
 
@@ -155,14 +155,15 @@ end
 
 function EcoManagementTA(aiBrain, MassEfficiency, EnergyEfficiency)
     local econEff = TAAIEcoConditionEfficiency(aiBrain)
-    if (aiBrain:GetEconomyStored('MASS') >= 125 and aiBrain:GetEconomyStored('ENERGY') >= 350) then
-        if (econEff.MassEfficiencyOverTime >= MassEfficiency and econEff.EnergyEfficiencyOverTime >= EnergyEfficiency) then
-            return true
-        elseif (aiBrain:GetEconomyStoredRatio('Mass').MassStorageRatio >= 0.5 and aiBrain:GetEconomyStoredRatio('ENERGY').EnergyStorageRatio >= 0.5) then
+    if ((aiBrain:GetEconomyStored('MASS') >= 125) and (aiBrain:GetEconomyStored('ENERGY') >= 350)) then
+        if (econEff.MassEfficiencyOverTime >= MassEfficiency and econEff.EnergyEfficiencyOverTime >= EnergyEfficiency) or
+        (aiBrain:GetEconomyStoredRatio('Mass').MassStorageRatio >= 0.5 and aiBrain:GetEconomyStoredRatio('ENERGY').EnergyStorageRatio >= 0.5) then
             return true
         else
-    return false
+            return false
         end
+    else
+    return false
     end
 end
 
@@ -170,7 +171,7 @@ function LessMassStorageMaxTA(aiBrain, mStorageRatio)
     if (aiBrain:GetEconomyStoredRatio('MASS').MassStorageRatio <= mStorageRatio) then
         return true
     else
-    return false
+        return false
     end
 end
 
@@ -187,10 +188,12 @@ function GreaterTAStorageRatio(aiBrain, mStorageRatio, eStorageRatio)
     local econ = TAEnergyEfficiency(aiBrain)
     if (econ.EnergyEfficiencyOverTime >= 0.5 and econ.MassEfficiencyOverTime >= 0.3) then
         if (aiBrain:GetEconomyStoredRatio('ENERGY').EnergyStorageRatio >= eStorageRatio and aiBrain:GetEconomyStoredRatio('MASS').MassStorageRatio >= mStorageRatio) then
-        return true
-    else
-    return false
+            return true
+        else
+            return false
         end
+    else
+        return false
     end
 end
 

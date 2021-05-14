@@ -50,7 +50,7 @@ PlatoonTemplate {
         { (GROUND * categories.ANTISHIELD - categories.AMPHIBIOUS - categories.EXPERIMENTAL) + categories.FIELDENGINEER, -- ---PlatoonType of units.
           2, -- Min number of units.
           10, -- Max number of units.
-          'Attack', -- platoon ---PlatoonTypes: 'support', 'Attack', 'scout',
+          'Artillery', -- platoon ---PlatoonTypes: 'support', 'Attack', 'scout',
           'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
@@ -75,7 +75,7 @@ PlatoonTemplate {
     Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
     ---PlatoonType = 'LandForm',
     GlobalSquads = {
-        { GROUND * categories.ANTIAIR - categories.ANTISHIELD, 2, 20, 'Artillery', 'none' },
+        { GROUND * categories.ANTIAIR - categories.ANTISHIELD, 2, 20, 'Attack', 'none' },
     },
 }
 
@@ -86,7 +86,7 @@ PlatoonTemplate {
     Plan = 'TAHunt', -- The platoon function to use.
     ---PlatoonType = 'LandForm',
     GlobalSquads = {
-        { GROUND * (categories.HOVER + categories.AMPHIBIOUS) - categories.COMMAND, 2, 10, 'Attack', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND * (categories.HOVER + categories.AMPHIBIOUS) - categories.COMMAND, 2, 10, 'Artillery', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
     },
 }
 

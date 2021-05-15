@@ -255,7 +255,7 @@ TACommander = Class(TAconstructor) {
 
     ResetRightArm = function(self)
        self:SetImmobile(false)
-       self:SetWeaponEnabledByLabel('OverCharge', false)
+       self:SetWeaponEnabledByLabel('OverCharge', true)
        self:SetWeaponEnabledByLabel('AutoOverCharge', false)
 
         -- Ugly hack to re-initialise auto-OC once a task finishes

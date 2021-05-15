@@ -62,9 +62,9 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
             --local pool = self.Brain:GetPlatoonUniquelyNamed('ArmyPool')
             local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
         if not self.Naval then
-            if TAPrior.UnitProduction >= 75 and (bType == 'StructureForm' or TAPrior.GantryProduction >= 200 and bType == 'Other') then
+            if TAPrior.TechEnergyExist >= 75 and (bType == 'StructureForm' or TAPrior.GantryProduction >= 200 and bType == 'Other') then
                if bType == 'StructureForm' then
-                    self.StructureForm = GetUnitsAroundPoint(self.Brain, categories.STRUCTURE * categories.CQUEMOV, self.Location, self.Radius, 'Ally')
+                    self.StructureForm = GetUnitsAroundPoint(self.Brain, categories.STRUCTURE * (categories.CQUEMOV + categories.MASSFABRICATION), self.Location, self.Radius, 'Ally')
                     if self.StructureForm > 0 then 
                         self:SCTAManagerLoopBody(builder, bType)
                     end

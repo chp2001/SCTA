@@ -1,5 +1,71 @@
+WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset attackutil.lua' )
 
+function TAPlatoonAttackVector(aiBrain, platoon, bAggro)
+    --Engine handles whether or not we can occupy our vector now, so this should always be a valid, occupiable spot.
+    local attackPos = GetBestThreatTarget(aiBrain, platoon)
+    local bNeedTransports = false
+    if not attackPos then
+        attackPos = GetBestThreatTarget(aiBrain, platoon, true)
+        bNeedTransports = true
+        if not attackPos then
+            platoon:StopAttack()
+            return {}
+        end
+    end
+    GetMostRestrictiveLayer(platoon)
+    local oldPathSize = table.getn(platoon.LastAttackDestination)
+    if oldPathSize == 0 or attackPos[1] != platoon.LastAttackDestination[oldPathSize][1] or
+    attackPos[3] != platoon.LastAttackDestination[oldPathSize][3] then
 
+        GetMostRestrictiveLayer(platoon)
+        local path, reason = PlatoonGenerateSafePathToSCTAAI(aiBrain, platoon.MovementLayer, platoon:GetPlatoonPosition(), attackPos, platoon.PlatoonData.NodeWeight or 10)
+        platoon:Stop()
+
+        local usedTransports = false
+        local position = platoon:GetPlatoonPosition()
+        if (not path and reason == 'NoPath') or bNeedTransports then
+            usedTransports = SendPlatoonWithTransportsNoCheck(aiBrain, platoon, attackPos, true)
+        elseif VDist2Sq(position[1], position[3], attackPos[1], attackPos[3]) > 512*512 then
+            usedTransports = SendPlatoonWithTransportsNoCheck(aiBrain, platoon, attackPos, true)
+        elseif VDist2Sq(position[1], position[3], attackPos[1], attackPos[3]) > 256*256 then
+            usedTransports = SendPlatoonWithTransportsNoCheck(aiBrain, platoon, attackPos, false)
+        end
+
+        if not usedTransports then
+            if not path then
+                if reason == 'NoStartNode' or reason == 'NoEndNode' then
+                    --Couldn't find a valid pathing node. Just use shortest path.
+                    platoon:AggressiveMoveToLocation(attackPos)
+                end
+                # force reevaluation
+                platoon.LastAttackDestination = {attackPos}
+            else
+                local pathSize = table.getn(path)
+                platoon.LastAttackDestination = path
+                # move to new location
+                for wpidx,waypointPath in path do
+                    if wpidx == pathSize or bAggro then
+                        platoon:AggressiveMoveToLocation(waypointPath)
+                    else
+                        platoon:MoveToLocation(waypointPath, false)
+                    end
+                end
+            end
+        end
+    end
+
+    local cmd = {}
+    for k,v in platoon:GetPlatoonUnits() do
+        if not v.Dead then
+            local unitCmdQ = v:GetCommandQueue()
+            for cmdIdx,cmdVal in unitCmdQ do
+                table.insert(cmd, cmdVal)
+                break
+            end
+        end
+    end
+    return cmd
+end
 
 function TAAISquadAttackVector(aiBrain, squad, bAggro)
     --Engine handles whether or not we can occupy our vector now, so this should always be a valid, occupiable spot.
@@ -7,7 +73,6 @@ function TAAISquadAttackVector(aiBrain, squad, bAggro)
         local attackPos = GetBestThreatTarget(aiBrain, squad)
         local bNeedTransports = false
         if not attackPos then
-            # try skipping pathability
             attackPos = GetBestThreatTarget(aiBrain, squad, true)
             bNeedTransports = true
             if not attackPos then
@@ -16,16 +81,13 @@ function TAAISquadAttackVector(aiBrain, squad, bAggro)
             end
         end
     
-        GetMostRestrictiveLayer(platoon)
+        GetMostRestrictiveLayer(squad)
+        local oldPathSize = table.getn(squad.LastAttackDestination)
+        if oldPathSize == 0 or attackPos[1] != squad.LastAttackDestination[oldPathSize][1] or
+        attackPos[3] != squad.LastAttackDestination[oldPathSize][3] then
     
-        local oldPathSize = table.getn(platoon.LastAttackDestination)
-    
-        if oldPathSize == 0 or attackPos[1] != platoon.LastAttackDestination[oldPathSize][1] or
-        attackPos[3] != platoon.LastAttackDestination[oldPathSize][3] then
-    
-            GetMostRestrictiveLayer(platoon)
-            # check if we can path to here safely... give a large threat weight to sort by threat first
-            local path, reason = PlatoonGenerateSafePathToSCTAAI(aiBrain, platoon.MovementLayer, platoon:GetSquadPosition('Artillery'), attackPos, platoon.PlatoonData.NodeWeight or 10)
+            GetMostRestrictiveLayer(squad)
+            local path, reason = PlatoonGenerateSafePathToSCTAAI(aiBrain, squad.MovementLayer, squad:GetSquadPosition('Artillery'), attackPos, squad.PlatoonData.NodeWeight or 10)
             squad:Stop('Artillery')
         local position = squad:GetSquadPosition('Artillery')
         if not path then
@@ -33,13 +95,10 @@ function TAAISquadAttackVector(aiBrain, squad, bAggro)
                     --Couldn't find a valid pathing node. Just use shortest path.
                     squad:AggressiveMoveToLocation(attackPos, 'Artillery')
                 end
-                # force reevaluation
                 squad.LastAttackDestination = {attackPos, 'Artillery'}
             else
                 local pathSize = table.getn(path)
-                # store path
                 squad.LastAttackDestination = path
-                # move to new location
                 for wpidx,waypointPath in path do
                     if wpidx == pathSize or bAggro then
                         squad:AggressiveMoveToLocation(waypointPath, 'Artillery')
@@ -54,7 +113,7 @@ function TAAISquadAttackVector(aiBrain, squad, bAggro)
         if not v.Dead then
             local unitCmdQ = v:GetCommandQueue()
             for cmdIdx,cmdVal in unitCmdQ do
-                table.insert(cmdQ, cmdVal)
+                table.insert(cmd, cmdVal)
                 break
             end
         end
@@ -83,7 +142,6 @@ function PlatoonGenerateSafePathToSCTAAI(aiBrain, platoonLayer, start, destinati
 
     --Get the closest path node at the platoon's position
     local startNode
-
     startNode = GetClosestPathNodeInRadiusByLayerSorian(location, destination, optMaxMarkerDist, platoonLayer)
     if not startNode then return false, 'NoStartNode' end
 
@@ -94,8 +152,9 @@ function PlatoonGenerateSafePathToSCTAAI(aiBrain, platoonLayer, start, destinati
 
     --Generate the safest path between the start and destination
     local path
-        -- Sorian and Duncans AI are using a strong modified pathfinding with path shortcuts, range checks and path caching for better performance.
-        path = GeneratePathTA(aiBrain, startNode, endNode, ThreatTable[platoonLayer], optThreatWeight, destination, location)
+
+        -- The original AI is using the vanilla version of GeneratePath. No cache, ugly (AStarLoopBody) code, but reacts faster on new situations.
+    path = GeneratePathTA(aiBrain, startNode, endNode, ThreatTable[platoonLayer], optThreatWeight, destination, location)
     if not path then return false, 'NoPath' end
 
     -- Insert the path nodes (minus the start node and end nodes, which are close enough to our start and destination) into our command queue.
@@ -129,6 +188,7 @@ function GeneratePathTA(aiBrain, startNode, endNode, threatType, threatWeight, d
         local GameTime = GetGameTimeSeconds()
         for StartNode, EndNodeCache in aiBrain.PathCache do
             for EndNode, Path in EndNodeCache do
+                if not Path.settime then continue end
                 if Path.settime + 60 < GameTime then
                     aiBrain.PathCache[StartNode][EndNode] = nil
                 end
@@ -183,11 +243,8 @@ function GeneratePathTA(aiBrain, startNode, endNode, threatType, threatWeight, d
                 return queue
             end
 
-            #local dist = math.sqrt(VDist2Sq(newNode.position[1], newNode.position[3], endNode.position[1], endNode.position[3]))
             local dist = VDist2Sq(newNode.position[1], newNode.position[3], endNode.position[1], endNode.position[3])
 
-            # this brings the dist value from 0 to 100% of the maximum length with can travel on a map
-            #dist = 100 * dist / math.sqrt((mapSizeX * mapSizeX) + (mapSizeZ * mapSizeZ))
             dist = 100 * dist / (mapSizeX + mapSizeZ)
 
             --get threat from current node to adjacent node

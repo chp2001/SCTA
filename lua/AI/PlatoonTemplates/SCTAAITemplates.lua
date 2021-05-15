@@ -70,14 +70,7 @@ PlatoonTemplate {
 
 ----Aggressive Platoons.
 ----Primary 'Defense' Platoon Protect Bases and Scout Around Mexes
-PlatoonTemplate {
-    Name = 'AntiAirSCTA',
-    Plan = 'SCTAStrikeForceAI', -- The platoon function to use.
-    ---PlatoonType = 'LandForm',
-    GlobalSquads = {
-        { GROUND * categories.ANTIAIR - categories.ANTISHIELD, 2, 20, 'Attack', 'none' },
-    },
-}
+
 
 ---SCTA "Unique" Formations
 
@@ -123,6 +116,7 @@ PlatoonTemplate {
     GlobalSquads = {
         { GROUND - SPECIAL, 5, 20, 'Attack', 'none' },
         { (GROUND * RANGE) + categories.FIELDENGINEER, 0, 10, 'Artillery', 'none' },
+        { GROUND * categories.ANTIAIR - categories.ANTISHIELD, 0, 10, 'Scout', 'none' },
     },
 }
 
@@ -132,6 +126,7 @@ PlatoonTemplate {
     GlobalSquads = {
         { GROUND - SPECIAL, 5, 30, 'Attack', 'none' },
         { (GROUND * RANGE) + categories.FIELDENGINEER, 0, 15, 'Artillery', 'none' },
+        { GROUND * categories.ANTIAIR - categories.ANTISHIELD, 0, 15, 'Scout', 'none' },
     },
 }
 

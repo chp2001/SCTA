@@ -1572,7 +1572,7 @@ Platoon = Class(SCTAAIPlatoon) {
                     self.LastMarker[2] = self.LastMarker[1]
                     self.LastMarker[1] = bestMarker.Position
                     --LOG("GuardMarker: Attacking " .. bestMarker.Name)
-                    local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, self.MovementLayer, self:GetPlatoonPosition(), bestMarker.Position, 200)
+                    local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, self.MovementLayer, self:GetPlatoonPosition(), bestMarker.Position, 200)
                     local success, bestGoalPos = AIAttackUtils.CheckPlatoonPathingEx(self, bestMarker.Position)
                     if path then
                     local pathLength = table.getn(path)
@@ -1664,7 +1664,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
             end
             --self:SetPlatoonFormationOverride('Attack')
-            WaitSeconds( 7 )
+            WaitSeconds(7)
         end
     end,
 
@@ -1776,7 +1776,7 @@ Platoon = Class(SCTAAIPlatoon) {
     elseif table.getn(cmdQ) == 0 then
     self:Stop('Artillery')
     WaitSeconds(3)
-        cmdQ = AIAttackUtils.AIPlatoonSquadAttackVector(self.aiBrain, 'Artillery')
+        cmdQ = AIAttackUtils.TAAISquadAttackVector(self.aiBrain, self)
     end
     self.LastPosition = self.
     WaitSeconds(7)
@@ -2144,7 +2144,7 @@ end,
 
         if bestBase then
             AIAttackUtils.GetMostRestrictiveLayer(self)
-            local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, self.MovementLayer, self:GetPlatoonPosition(), bestBase.Position, 200)
+            local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, self.MovementLayer, self:GetPlatoonPosition(), bestBase.Position, 200)
             IssueClearCommands(self)
             
             if path then
@@ -2264,9 +2264,9 @@ end,
             --Is there someplace we should scout?
             if targetData then
                 if EntityCategoryContains(categories.AMPHIBIOUS, self) then
-                local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Air', scout:GetPosition(), targetData.Position, 400)
+                local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Air', scout:GetPosition(), targetData.Position, 400)
                 else
-                local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, self.MovementLayer, scout:GetPosition(), targetData.Position, 400) --DUNCAN - Increase threatwieght from 100
+                local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, self.MovementLayer, scout:GetPosition(), targetData.Position, 400) --DUNCAN - Increase threatwieght from 100
                 
                 IssueClearCommands(self)
 
@@ -2888,9 +2888,9 @@ end,
                 if targetData then
                     --Can we get there safely?
                     if EntityCategoryContains(categories.AMPHIBIOUS, self) then
-                        local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Air', scout:GetPosition(), targetData.Position, 400)
+                        local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Air', scout:GetPosition(), targetData.Position, 400)
                         else
-                        local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, self.MovementLayer, scout:GetPosition(), targetData.Position, 400) --DUNCAN - Increase threatwieght from 100                    IssueClearCommands(self)
+                        local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, self.MovementLayer, scout:GetPosition(), targetData.Position, 400) --DUNCAN - Increase threatwieght from 100                    IssueClearCommands(self)
     
                     if path then
                         local pathLength = table.getn(path)

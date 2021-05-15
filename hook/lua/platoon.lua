@@ -1704,6 +1704,9 @@ Platoon = Class(SCTAAIPlatoon) {
         self.Artillery = self:GetSquadUnits('Artillery')
         self.Direct = self:GetSquadUnits('Attack')
         while self.aiBrain:PlatoonExists(self) do
+            if self.Artillery > 0 then
+                ForkThread(self.TAArtilleryEnd, self)    
+            end
             if self.Direct > 0 then
                 table.insert( atkPri, 'LAND' )
                 table.insert( categoryList, categories.ALLUNITS - categories.AIR - categories.STRUCTURE )
@@ -1761,11 +1764,8 @@ Platoon = Class(SCTAAIPlatoon) {
                 end
             end
         end
-        if self.Artillery > 0 then
-            ForkThread(self.TAArtilleryEnd, self)    
-        end
         WaitSeconds(7)
-        end
+        end        
     end,
 
     TAArtilleryEnd = function(self)
@@ -1781,15 +1781,15 @@ Platoon = Class(SCTAAIPlatoon) {
         -- if we can't get a position, then we must be dead
         if not pos then
             break
+        end  
+        -- pick out the enemy
+        if self.aiBrain:GetCurrentEnemy() and self.aiBrain:GetCurrentEnemy().Result == "defeat" then
+            self.aiBrain:PickEnemyLogic()
         end
-        if self.PlatoonData.Energy and not self.EcoCheck and EntityCategoryContains(categories.ANTISHIELD, self.Artillery) then
-            WaitSeconds(1)
-            self:CheckEnergySCTAEco()
-        end    
 
     local cmdQ = {}
     -- fill cmdQ with current command queue for each unit
-    for k,v in self.Artillery do
+    for k,v in self:GetSquadUnits('Artillery') do
         if not v.Dead then
             local unitCmdQ = v:GetCommandQueue()
             for cmdIdx,cmdVal in unitCmdQ do
@@ -1799,16 +1799,21 @@ Platoon = Class(SCTAAIPlatoon) {
         end
     end
     -- if we're on our final push through to the destination, and we find a unit close to our destination
-    local closestTarget = self:FindClosestUnit('Artillery', 'enemy', true, categories.ALLUNITS)
-    local nearDest = false
-    local oldPathSize = table.getn(self.LastAttackDestination)
-    if self.LastAttackDestination then
-        nearDest = oldPathSize == 0 or VDist3(self.LastAttackDestination[oldPathSize], pos) < 20
-    end
+    local closestTarget = self:FindClosestUnit('Artillery', 'Enemy', true, categories.ALLUNITS)
+            local nearDest = false
+            local oldPathSize = table.getn(self.LastAttackDestination)
+            if self.LastAttackDestination then
+                nearDest = oldPathSize == 0 or VDist3(self.LastAttackDestination[oldPathSize], self:GetSquadPosition('Artillery')) < 20
+            end
 
-    -- if we're near our destination and we have a unit closeby to kill, kill it
-    if table.getn(cmdQ) <= 1 and closestTarget and VDist3(closestTarget:GetPosition(), pos) < 20 and nearDest then
+            -- if we're near our destination and we have a unit closeby to kill, kill it
+    if table.getn(cmdQ) <= 1 and closestTarget and VDist3(closestTarget:GetPosition(), self:GetSquadPosition('Artillery')) < 20 and nearDest then
+        LOG(pos)
         self:Stop('Artillery')
+        if self.PlatoonData.Energy and not self.EcoCheck and EntityCategoryContains(categories.ANTISHIELD, self.Artillery) then
+            WaitSeconds(1)
+            self:CheckEnergySCTAEco()
+        end 
             if PlatoonFormation != 'No Formation' then
             --self:SetPlatoonFormationOverride('AttackFormation')
             IssueFormAttack('Artillery', closestTarget, 'AttackFormation', 0)
@@ -2116,35 +2121,15 @@ end,
             if table.getn(cmdQ) <= 1 and closestTarget and VDist3(closestTarget:GetPosition(), pos) < 20 and nearDest then
                 self:StopAttack()
                 closestTarget = table.copy(closestTarget:GetPosition())
-                self.target = closestTarget
-                self.dest = closestTarget
                 if PlatoonFormation != 'No Formation' then
                     --self:SetPlatoonFormationOverride('AttackFormation')
                     IssueFormAttack(platoonUnits, closestTarget, PlatoonFormation, 0)
                 elseif self.PlatoonData.AggressiveMove then
                     self:Stop()
-                    self:AggressiveMoveToLocation(table.copy(closestTarget:GetPosition()))
+                    self:AggressiveMoveToLocation(closestTarget)
                 else
                     IssueAttack(platoonUnits, closestTarget)
                 end
-                --[[local targetDist = VDist2(closestTarget[1],closestTarget[3],Center[1],Center[3])
-                    if targetDist < self.PlatoonData.TAWeaponRange then
-                    for _,v in platoonUnits do
-                        local unitpos=v:GetPosition()
-                        local smartPos = TAReclaim.TAKite({unitpos[1]+math.random(-2,2),unitpos[2],unitpos[3]+math.random(-2,2)},closestTarget, {targetDist, targetDist - self.PlatoonData.TAWeaponRange})
-                        smartPos = {smartPos[1]+math.random(-1,1),smartPos[2],smartPos[3]+math.random(-1,1)}
-                        v.dest=smartPos
-                        IssueClearCommands(v)
-                        IssueMove(v, smartPos)
-                    end
-                    WaitTicks(25)
-                elseif targetDist < self.PlatoonData.TAWeaponRange * 2 then
-                    local Coward = {target[1]+math.random (-4,4), target[2], target[3] + math.random(-4,4)}
-                    IssueClearCommands(platoonUnits)
-                    self.dest = Coward
-                    IssueMove(platoonUnits, Coward)
-                    WaitTicks(30)
-                    end]]
                 cmdQ = {1}
             -- if we have nothing to do, try finding something to do
             elseif table.getn(cmdQ) == 0 then

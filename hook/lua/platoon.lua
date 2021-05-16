@@ -1477,13 +1477,12 @@ Platoon = Class(SCTAAIPlatoon) {
                 self:CheckEnergySCTAEco()
             end
             target = self:FindClosestUnit('Artillery', 'Enemy', true, categories.ALLUNITS - categories.WALL)
-            self.Center = self:GetPlatoonPosition()
             if target then
                 blip = target:GetBlip(armyIndex)
                 local threat = target:GetPosition() 
                 self:AggressiveMoveToLocation(table.copy(threat))
                 --DUNCAN - added to try and stop AI getting stuck.
-                local targetDist = VDist2(threat[1],threat[3], self.Center[1], self.Center[3])
+                --[[local targetDist = VDist2(threat[1],threat[3], self.Center[1], self.Center[3])
                 if targetDist < self.PlatoonData.TAWeaponRange then
                     WaitSeconds(2)
                     for _,v in platoonUnits do
@@ -1492,8 +1491,9 @@ Platoon = Class(SCTAAIPlatoon) {
                         IssueClearCommands(v)
                         IssueMove(v, smartPos)
                     end
-                end
+                end]]
             else
+                self.Center = self:GetPlatoonPosition()
             WaitSeconds(2)
             self.EcoCheck = nil
             local position = AIUtils.RandomLocation(self.Center[1],self.Center[3])
@@ -1918,14 +1918,14 @@ Platoon = Class(SCTAAIPlatoon) {
                 self:MergeWithNearbyPlatoonsSCTA('HuntSCTAAI', 'AttackSCTAForceAI', 5)
             end
             target = self:FindClosestUnit('Artillery', 'Enemy', true, categories.ALLUNITS - categories.WALL)
-            self.Center = self:GetPlatoonPosition()
+            ---self.Center = self:GetPlatoonPosition()
             if target then
                 blip = target:GetBlip(armyIndex)
                 self:Stop()
                 local threat = target:GetPosition() 
                 self:AggressiveMoveToLocation(table.copy(threat))
                 --DUNCAN - added to try and stop AI getting stuck.
-                local targetDist = VDist2(threat[1],threat[3], self.Center[1], self.Center[3])
+                --[[local targetDist = VDist2(threat[1],threat[3], self.Center[1], self.Center[3])
                 if targetDist < self.PlatoonData.TAWeaponRange then
                     WaitSeconds(2)
                     for _,v in platoonUnits do
@@ -1934,8 +1934,9 @@ Platoon = Class(SCTAAIPlatoon) {
                         IssueClearCommands(v)
                         IssueMove(v, smartPos)
                     end
-                end
+                end]]
             else
+                self.Center = self:GetPlatoonPosition()
                 WaitSeconds(2)
                 local position = AIUtils.RandomLocation(self.Center[1],self.Center[3])
                 self:MoveToLocation(position, false)

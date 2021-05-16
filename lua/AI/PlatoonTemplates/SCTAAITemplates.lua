@@ -78,7 +78,8 @@ PlatoonTemplate {
     Plan = 'TAHunt', -- The platoon function to use.
     ---PlatoonType = 'LandForm',
     GlobalSquads = {
-        { GROUND * (categories.HOVER + categories.AMPHIBIOUS) - categories.COMMAND, 2, 10, 'Artillery', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { GROUND * (categories.HOVER + categories.AMPHIBIOUS) - categories.COMMAND - categories.BOMB, 2, 10, 'Artillery', 'none' }, -- platoon move formations: 'None', 'AttackFormation', 'GrowthFormation',
+        { categories.BOMB, 0, 2, 'Attack', 'none' },
     },
 }
 
@@ -86,7 +87,8 @@ PlatoonTemplate {
     Name = 'LandRocketAttackSCTA',
     Plan = 'HuntSCTAAI',
     GlobalSquads = {
-        { (GROUND * RANGE * categories.TECH1) + categories.FIELDENGINEER, 2, 10, 'Artillery', 'none' }
+        { (GROUND * RANGE * categories.TECH1 - categories.AMPHIBIOUS), 2, 10, 'Artillery', 'none' },
+        { categories.FIELDENGINEER, 0, 2, 'Attack', 'none' },
     },
 }
 
@@ -95,7 +97,7 @@ PlatoonTemplate {
     Name = 'LandAttackSCTAMid',
     Plan = 'AttackSCTAForceAI',
     GlobalSquads = {
-        { (GROUND * RANGE) + categories.FIELDENGINEER, 5, 20, 'Artillery', 'none' }
+        { (GROUND * RANGE - categories.AMPHIBIOUS) + categories.FIELDENGINEER, 5, 20, 'Artillery', 'none' }
     },
 }
 

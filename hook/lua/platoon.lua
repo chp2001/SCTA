@@ -1467,39 +1467,40 @@ Platoon = Class(SCTAAIPlatoon) {
     TAHunt = function(self)
         self:Stop()
         local aiBrain = self:GetBrain()
-        local armyIndex = aiBrain:GetArmyIndex()
         local platoonUnits = self:GetPlatoonUnits()
+        local Squad = self:GetSquadUnits('Artillery')
         local target
-        local blip
         while aiBrain:PlatoonExists(self) do
+            if aiBrain:PlatoonExists(self) and table.getn(platoonUnits) < 10 then
+            self:MergeWithNearbyPlatoonsSCTA('TAHunt', 'TAHunt', 5)
+            end
             if self.PlatoonData.Energy and not self.EcoCheck and EntityCategoryContains(categories.ANTISHIELD, platoonUnits) then
                 WaitSeconds(1)
                 self:CheckEnergySCTAEco()
             end
             target = self:FindClosestUnit('Artillery', 'Enemy', true, categories.ALLUNITS - categories.WALL)
+            self.Center = self:GetPlatoonPosition()
             if target then
-                blip = target:GetBlip(armyIndex)
+                self:Stop()
                 local threat = target:GetPosition() 
                 self:AggressiveMoveToLocation(table.copy(threat))
                 --DUNCAN - added to try and stop AI getting stuck.
-                --[[local targetDist = VDist2(threat[1],threat[3], self.Center[1], self.Center[3])
+                local targetDist = VDist2(threat[1],threat[3], self.Center[1], self.Center[3])
                 if targetDist < self.PlatoonData.TAWeaponRange then
                     WaitSeconds(2)
-                    for _,v in platoonUnits do
+                    for _,v in Squad do
                         local smartPos = TAReclaim.TAKite({self.Center[1] + math.random(-2,2), self.Center[2], self.Center[3] + math.random(-2,2)}, threat, {targetDist, targetDist - self.PlatoonData.TAWeaponRange})
                         smartPos = {smartPos[1] + math.random(-1,1), smartPos[2], smartPos[3] + math.random(-1,1)}
                         IssueClearCommands(v)
                         IssueMove(v, smartPos)
                     end
-                end]]
-            else
-                self.Center = self:GetPlatoonPosition()
-            WaitSeconds(2)
+                end 
+            end
+            WaitSeconds(5)
             self.EcoCheck = nil
             local position = AIUtils.RandomLocation(self.Center[1],self.Center[3])
             self:MoveToLocation(position, false)
-            end
-            WaitSeconds(10)
+            WaitSeconds(5)
         end
     end,
 
@@ -1627,7 +1628,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local maxRadius = self.PlatoonData.SearchRadius or 500
         while aiBrain:PlatoonExists(self) do
             local numberOfUnitsInPlatoon = table.getn(platoonUnits)
-            if TAPrior.ProductionT3 >= 80 and numberOfUnitsInPlatoon < 20 then
+            if aiBrain:PlatoonExists(self) and TAPrior.ProductionT3 >= 80 and numberOfUnitsInPlatoon < 20 then
                 self:MergeWithNearbyPlatoonsSCTA('SCTAStrikeForceAI', 'SCTAStrikeForceAIEndgame', 10)
             end
             --self:SetPlatoonFormationOverride('Attack')
@@ -1904,44 +1905,33 @@ Platoon = Class(SCTAAIPlatoon) {
     HuntSCTAAI = function(self)
         self:Stop()
         local aiBrain = self:GetBrain()
-        local armyIndex = aiBrain:GetArmyIndex()
-        local platoonUnits = self:GetPlatoonUnits()
-        --[[for _,v in platoonUnits do
-            if v.Dead then continue end
-            --v:SetCustomName('AttackHuntSCTA')
-            v.dest = nil
-        end]]
+        local Squad = self:GetSquadUnits('Artillery')
         local target
-        local blip
         while aiBrain:PlatoonExists(self) do
-            if TAPrior.UnitProduction >= 80 then
+            if TAPrior.UnitProduction >= 80 and aiBrain:PlatoonExists(self) then
                 self:MergeWithNearbyPlatoonsSCTA('HuntSCTAAI', 'AttackSCTAForceAI', 5)
             end
             target = self:FindClosestUnit('Artillery', 'Enemy', true, categories.ALLUNITS - categories.WALL)
-            ---self.Center = self:GetPlatoonPosition()
+            self.Center = self:GetPlatoonPosition()
             if target then
-                blip = target:GetBlip(armyIndex)
                 self:Stop()
                 local threat = target:GetPosition() 
                 self:AggressiveMoveToLocation(table.copy(threat))
-                --DUNCAN - added to try and stop AI getting stuck.
-                --[[local targetDist = VDist2(threat[1],threat[3], self.Center[1], self.Center[3])
+                local targetDist = VDist2(threat[1],threat[3], self.Center[1], self.Center[3])
                 if targetDist < self.PlatoonData.TAWeaponRange then
                     WaitSeconds(2)
-                    for _,v in platoonUnits do
+                    for _,v in Squad do
                         local smartPos = TAReclaim.TAKite({self.Center[1] + math.random(-2,2), self.Center[2], self.Center[3] + math.random(-2,2)}, threat, {targetDist, targetDist - self.PlatoonData.TAWeaponRange})
                         smartPos = {smartPos[1] + math.random(-1,1), smartPos[2], smartPos[3] + math.random(-1,1)}
                         IssueClearCommands(v)
                         IssueMove(v, smartPos)
                     end
-                end]]
-            else
-                self.Center = self:GetPlatoonPosition()
-                WaitSeconds(2)
-                local position = AIUtils.RandomLocation(self.Center[1],self.Center[3])
-                self:MoveToLocation(position, false)
+                end
             end
-            WaitSeconds(10)
+            WaitSeconds(5)
+            local position = AIUtils.RandomLocation(self.Center[1],self.Center[3])
+            self:MoveToLocation(position, false)
+            WaitSeconds(5)
         end
     end,
 

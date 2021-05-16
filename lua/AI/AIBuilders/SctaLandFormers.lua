@@ -176,8 +176,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Hover Strike Land',
         PlatoonTemplate = 'StrikeForceSCTAHover', -- The platoon template tells the AI what units to include, and how to use them.
-        PriorityFunction = TAPrior.UnitProduction,
-        Priority = 120,
+        Priority = 200,
         InstanceCount = 25,
         BuilderType = 'LandForm',
         BuilderData = {

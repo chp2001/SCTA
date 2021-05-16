@@ -252,7 +252,7 @@ function SCTAAirUnitRefitThread(unit, plan, data)
             if aiBrain:GetCurrentUnits(categories.AIRSTAGINGPLATFORM) > 0 then
                 local unitPos = unit:GetPosition()
                 local plats = AIUtils.GetOwnUnitsAroundPoint(aiBrain, categories.AIRSTAGINGPLATFORM, unitPos, 400)
-                if table.getn(plats) > 0 then
+                if not table.empty(plats) then
                     local closest, distance
                     for _, v in plats do
                         if not v.Dead then

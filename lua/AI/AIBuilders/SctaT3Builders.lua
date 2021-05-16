@@ -1,5 +1,6 @@
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
+local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
@@ -14,7 +15,7 @@ BuilderGroup {
         Priority = 150,
         PriorityFunction = TAPrior.ProductionT3,
         BuilderConditions = {
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, 0.5, 0.5, } },
+            { TAutils, 'EcoManagementTA', { 0.9, 0.5, } },
         },
         BuilderType = 'Hover',
     },
@@ -26,6 +27,7 @@ BuilderGroup {
         InstanceCount = 1,
         --DelayEqualBuildPlattons = 3,
         BuilderConditions = {
+            { TASlow, 'TAHaveUnitRatioGreaterThanLand', {categories.SILO - categories.ANTIAIR} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.9} },
     },
         BuilderType = 'Hover',
@@ -36,6 +38,7 @@ BuilderGroup {
         Priority = 130,
         PriorityFunction = TAPrior.ProductionT3,
         BuilderConditions = {
+            { TASlow, 'TAHaveUnitRatioGreaterThanLand', {categories.ANTIAIR} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.9} },
         },
         BuilderType = 'Hover',

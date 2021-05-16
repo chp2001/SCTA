@@ -239,7 +239,7 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
         PlatoonAIPlan = 'ManagerEngineerAssistAISCTA',
         PriorityFunction = TAPrior.AssistProduction,
-        Priority = 500,
+        Priority = 250,
         InstanceCount = 10,
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER - categories.COMMAND}},
@@ -261,12 +261,11 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'ManagerEngineerAssistAISCTA',
         PriorityFunction = TAPrior.AssistProduction,
-        Priority = 500,
+        Priority = 250,
         InstanceCount = 10,
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER - categories.COMMAND}},
             { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.MOBILE }},
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER - categories.COMMAND} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
         BuilderData = {

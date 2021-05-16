@@ -193,11 +193,9 @@ PlatoonTemplate {
     FactionSquads = {
         Arm = {
             { 'armanac', 1, 1, 'Attack', 'none' },
-            { 'armsh', 1, 1, 'Attack', 'none' },
         },
         Core = {
             { 'corsnap', 1, 1, 'Attack', 'none' },
-            { 'corsh', 1, 1, 'Attack', 'none' },
         },
     }
 }
@@ -219,10 +217,12 @@ PlatoonTemplate {
     Name = 'T3HOVERMISSILESCTA',
     FactionSquads = {
         Arm = {
-            { 'armmh', 1, 1, 'Attack', 'none' }
+            { 'armmh', 1, 1, 'Attack', 'none' },
+            { 'armsh', 1, 1, 'Attack', 'none' },
         },
         Core = {
-            { 'cormh', 1, 1, 'Attack', 'none' }
+            { 'cormh', 1, 1, 'Attack', 'none' },
+            { 'corsh', 1, 1, 'Attack', 'none' },
         },
     }
 }

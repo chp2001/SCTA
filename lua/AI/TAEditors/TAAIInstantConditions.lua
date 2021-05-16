@@ -78,7 +78,7 @@ function SCTAEngineerTryReclaimCaptureArea(aiBrain, eng, pos)
     -- Check if enemy units are at location
     local checkUnits = aiBrain:GetUnitsAroundPoint( (categories.STRUCTURE + categories.MOBILE) - categories.AIR, pos, 10, 'Enemy')
     -- reclaim units near our building place.
-    if checkUnits and table.getn(checkUnits) > 0 then
+    if checkUnits and not table.empty(checkUnits) then
         for num, unit in checkUnits do
             if unit.Dead or unit:BeenDestroyed() then
                 continue
@@ -100,7 +100,7 @@ function SCTAEngineerTryReclaimCaptureArea(aiBrain, eng, pos)
     end
     -- reclaim rocks etc or we can't build mexes or hydros
     local Reclaimables = GetReclaimablesInRect(Rect(pos[1], pos[3], pos[1], pos[3]))
-    if Reclaimables and table.getn( Reclaimables ) > 0 then
+    if Reclaimables and not table.empty( Reclaimables ) then
         for k,v in Reclaimables do
             if v.MaxMassReclaim > 0 or v.MaxEnergyReclaim > 0 then
                 IssueReclaim({eng}, v)

@@ -79,11 +79,11 @@ end
 
 ProductionT3 = function(self, aiBrain)
     if Factory(aiBrain,  6, LAB)  then 
-        return 90
+        return 100
     elseif Factory(aiBrain,  0, PLATFORM) then
-        return 95
-    elseif Factory(aiBrain,  0, categories.GATE) then
         return 105
+    elseif Factory(aiBrain,  0, categories.GATE) then
+        return 125
     else
         return 0
     end

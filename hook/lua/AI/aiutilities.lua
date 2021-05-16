@@ -55,7 +55,7 @@ function GetTransports(platoon, units)
 
     local numTransports = 0
     local transSlotTable = {}
-    if table.getn(transports) > 0 then
+    if not table.empty(transports) then
         local sortedList = {}
         -- Sort distances
         for k = 1, table.getn(transports) do

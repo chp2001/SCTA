@@ -67,61 +67,6 @@ function TAPlatoonAttackVector(aiBrain, platoon, bAggro)
     return cmd
 end
 
-function TAAISquadAttackVector(aiBrain, squad, bAggro)
-    --Engine handles whether or not we can occupy our vector now, so this should always be a valid, occupiable spot.
-        --Engine handles whether or not we can occupy our vector now, so this should always be a valid, occupiable spot.
-        local attackPos = GetBestThreatTarget(aiBrain, squad)
-        local bNeedTransports = false
-        if not attackPos then
-            attackPos = GetBestThreatTarget(aiBrain, squad, true)
-            bNeedTransports = true
-            if not attackPos then
-                squad:StopAttack('Artillery')
-                return {}
-            end
-        end
-    
-        GetMostRestrictiveLayer(squad)
-        local oldPathSize = table.getn(squad.LastAttackDestination)
-        if oldPathSize == 0 or attackPos[1] != squad.LastAttackDestination[oldPathSize][1] or
-        attackPos[3] != squad.LastAttackDestination[oldPathSize][3] then
-    
-            GetMostRestrictiveLayer(squad)
-            local path, reason = PlatoonGenerateSafePathToSCTAAI(aiBrain, squad.MovementLayer, squad:GetSquadPosition('Artillery'), attackPos, squad.PlatoonData.NodeWeight or 10)
-            squad:Stop('Artillery')
-        local position = squad:GetSquadPosition('Artillery')
-        if not path then
-                if reason == 'NoStartNode' or reason == 'NoEndNode' then
-                    --Couldn't find a valid pathing node. Just use shortest path.
-                    squad:AggressiveMoveToLocation(attackPos, 'Artillery')
-                end
-                squad.LastAttackDestination = {attackPos, 'Artillery'}
-            else
-                local pathSize = table.getn(path)
-                squad.LastAttackDestination = path
-                for wpidx,waypointPath in path do
-                    if wpidx == pathSize or bAggro then
-                        squad:AggressiveMoveToLocation(waypointPath, 'Artillery')
-                    else
-                        squad:MoveToLocation(waypointPath, false, 'Artillery')
-                    end
-                end
-            end
-        end
-    local cmd = {}
-    for k,v in squad:GetSquadUnits('Artillery') do
-        if not v.Dead then
-            local unitCmdQ = v:GetCommandQueue()
-            for cmdIdx,cmdVal in unitCmdQ do
-                table.insert(cmd, cmdVal)
-                break
-            end
-        end
-    end
-    return cmd
-end
-
-
 
 
 function PlatoonGenerateSafePathToSCTAAI(aiBrain, platoonLayer, start, destination, optThreatWeight, optMaxMarkerDist, testPathDist)
@@ -142,12 +87,12 @@ function PlatoonGenerateSafePathToSCTAAI(aiBrain, platoonLayer, start, destinati
 
     --Get the closest path node at the platoon's position
     local startNode
-    startNode = GetClosestPathNodeInRadiusByLayerSorian(location, destination, optMaxMarkerDist, platoonLayer)
+    startNode = GetClosestPathNodeInRadiusByLayer(location, optMaxMarkerDist, platoonLayer)
     if not startNode then return false, 'NoStartNode' end
 
     --Get the matching path node at the destiantion
     local endNode
-        endNode = GetClosestPathNodeInRadiusByLayerSorian(destination, destination, optMaxMarkerDist, platoonLayer)
+    endNode = GetClosestPathNodeInRadiusByGraph(destination, optMaxMarkerDist, startNode.graphName)
     if not endNode then return false, 'NoEndNode' end
 
     --Generate the safest path between the start and destination

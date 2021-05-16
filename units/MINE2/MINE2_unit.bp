@@ -18,6 +18,7 @@ UnitBlueprint {
     },
     BuildIconSortPriority = 2,
     Categories = {
+        'DRAGBUILD',
         'SELECTABLE',
         'TECH2',
         'VISIBLETORECON',
@@ -65,12 +66,13 @@ UnitBlueprint {
         CommandCaps = {
         	RULEUCC_RetaliateToggle = true,
         },
-	ToggleCaps = {
+	    ToggleCaps = {
 		RULEUTC_CloakToggle = true,
-	},
+	    },
         FactionName = 'CORE',
         Icon = 'land',
-TechLevel = 'RULEUTL_Advanced',
+        SelectionPriority = 5,
+        TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Area Mine',
     },
     Intel = {

@@ -105,7 +105,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Engineer Mex',
         PlatoonTemplate = 'EngineerBuilderSCTA23All',
-        Priority = 110,
+        Priority = 200,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         DelayEqualBuildPlattons = {'Mex2', 1},
         BuilderConditions = {
@@ -127,7 +127,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Engineer 250 Mex',
         PlatoonTemplate = 'EngineerBuilderSCTAEco23',
-        Priority = 106,
+        Priority = 200,
         InstanceCount = 1, -- The max number concurrent instances of this builder.
         DelayEqualBuildPlattons = {'Mex2', 1},
         BuilderConditions = {
@@ -303,6 +303,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer Air Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTAEco',
+        PriorityFunction = TAPrior.HighTechEnergyProduction,
         Priority = 150,
         InstanceCount = 2,
         BuilderConditions = {

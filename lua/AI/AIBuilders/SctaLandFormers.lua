@@ -16,30 +16,6 @@ BuilderGroup {
     BuilderGroupName = 'SCTAAILandFormers',
     BuildersType = 'PlatoonFormBuilder', -- A PlatoonFormBuilder is for builder groups of units.
     Builder {
-        BuilderName = 'SCTAAI AntiAir',
-        PlatoonTemplate = 'AntiAirSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 100,
-        InstanceCount = 50,
-        BuilderType = 'LandForm',
-        BuilderData = {
-            ThreatSupport = 75,
-            Small = true,
-            UseMoveOrder = true,
-            NeverGuardBases = false,
-            NeverGuardEngineers = false,
-            UseFormation = 'AttackFormation',
-            LocationType = 'LocationType',
-            AntiAir = true,
-            ThreatWeights = {
-                SecondaryTargetThreatType = 'StructuresNotMex',
-                IgnoreStrongerTargetsRatio = 100.0,
-            },
-        },        
-        BuilderConditions = {
-            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 2,  GROUND * categories.ANTIAIR - categories.ANTISHIELD} },
-         },
-    },
-    Builder {
         BuilderName = 'SCTAAI Land Scout',
         PlatoonTemplate = 'T1LandScoutFormSCTA',
         Priority = 125,

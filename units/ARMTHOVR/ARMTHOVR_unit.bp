@@ -26,7 +26,7 @@ UnitBlueprint {
             LodCutoff = 'UnitMove_LodCutoff',
 	},
     },
-    BuildIconSortPriority = 5,
+    BuildIconSortPriority = 30,
     Categories = {
         'SELECTABLE',
         'HOVER',

@@ -8,7 +8,6 @@ local RAIDAIR = (categories.armfig + categories.corveng + categories.GROUNDATTAC
 local RAIDER = (categories.armpw + categories.corak + categories.armflash + categories.corgator)
 local SPECIAL = (RAIDER + categories.EXPERIMENTAL + categories.ENGINEER + categories.SCOUT)
 local GROUND = categories.MOBILE * categories.LAND
-local TACATS = (categories.ANTISHIELD + (categories.AMPHIBIOUS - categories.BOMB))
 local RANGE = (categories.ARTILLERY + categories.SILO + categories.ANTIAIR + categories.SNIPER + categories.BOMB)
 
 PlatoonTemplate {
@@ -16,7 +15,7 @@ PlatoonTemplate {
     Plan = 'ScoutingAISCTA',
     ---PlatoonType = 'Scout',
     GlobalSquads = {
-        { GROUND * categories.SCOUT, 1, 1, 'scout', 'none' },
+        { GROUND * categories.SCOUT, 1, 1, 'Scout', 'none' },
     }
 }
 
@@ -25,7 +24,7 @@ PlatoonTemplate {
     Plan = 'None',
     ---PlatoonType = 'Scout',
     GlobalSquads = {
-        { GROUND - SPECIAL, 1, 1, 'guard', 'none' }
+        { GROUND - SPECIAL, 1, 1, 'Guard', 'none' }
     },
 }
 
@@ -34,7 +33,7 @@ PlatoonTemplate {
     Plan = 'SCTAArtyHuntAI', -- The platoon function to use.
     ---PlatoonType = 'Scout',
     GlobalSquads = {
-        { categories.AMPHIBIOUS * categories.LAND - SPECIAL, -- ---PlatoonType of units.
+        { (categories.AMPHIBIOUS + categories.HOVER) * GROUND - SPECIAL, -- ---PlatoonType of units.
           1, -- Min number of units.
           5, -- Max number of units.
           'Attack', -- platoon ---PlatoonTypes: 'support', 'Attack', 'scout',
@@ -60,7 +59,7 @@ PlatoonTemplate {
     Plan = 'HuntAILABSCTA', -- The platoon function to use.
     ---PlatoonType = 'Scout',
     GlobalSquads = {
-        {RAIDER + RAIDAIR + (categories.AMPHIBIOUS - categories.COMMAND), -- ---PlatoonType of units.
+        {RAIDER + RAIDAIR + ((categories.AMPHIBIOUS + categories.HOVER) - categories.COMMAND), -- ---PlatoonType of units.
           1, -- Min number of units.
           1, -- Max number of units.
           'Attack', -- platoon ---PlatoonTypes: 'support', 'Attack', 'scout',
@@ -106,7 +105,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTAEarly',
     Plan = 'SCTAStrikeForceAIEarly',
     GlobalSquads = {
-        { GROUND * categories.TECH1 - SPECIAL, 2, 10, 'Attack', 'none' }
+        { GROUND * categories.TECH1 - SPECIAL - RANGE, 2, 10, 'Attack', 'none' }
     },
 }
 
@@ -114,9 +113,9 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTAMid',
     Plan = 'SCTAStrikeForceAI',
     GlobalSquads = {
-        { GROUND - SPECIAL, 5, 20, 'Attack', 'none' },
-        { (GROUND * RANGE) + categories.FIELDENGINEER, 0, 10, 'Artillery', 'none' },
-        { GROUND * categories.ANTIAIR - categories.ANTISHIELD, 0, 10, 'Scout', 'none' },
+        { GROUND - SPECIAL - RANGE, 5, 20, 'Attack', 'none' },
+        { (GROUND * RANGE - categories.ANTIAIR) + categories.FIELDENGINEER, 0, 10, 'Artillery', 'none' },
+        { GROUND * categories.ANTIAIR - categories.ANTISHIELD, 0, 10, 'Guard', 'none' },
     },
 }
 
@@ -124,9 +123,9 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTAEndgame',
     Plan = 'SCTAStrikeForceAIEndgame', -- The platoon function to use.
     GlobalSquads = {
-        { GROUND - SPECIAL, 5, 30, 'Attack', 'none' },
-        { (GROUND * RANGE) + categories.FIELDENGINEER, 0, 15, 'Artillery', 'none' },
-        { GROUND * categories.ANTIAIR - categories.ANTISHIELD, 0, 15, 'Scout', 'none' },
+        { GROUND - SPECIAL - RANGE, 5, 30, 'Attack', 'none' },
+        { (GROUND * RANGE - categories.ANTIAIR) + categories.FIELDENGINEER, 0, 15, 'Artillery', 'none' },
+        { GROUND * categories.ANTIAIR - categories.ANTISHIELD, 0, 15, 'Guard', 'none' },
     },
 }
 

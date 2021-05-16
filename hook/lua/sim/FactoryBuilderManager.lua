@@ -254,11 +254,25 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager) {
                 ---LOG('*TAIEXIST3', factory)
                 local template = self:GetFactoryTemplate(builder:GetPlatoonTemplate(), factory)
                 LOG('*TAAI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Factory Builder Manager Building - ',repr(builder.BuilderName))
+
+                -- rename factory to actual build-platoon name
+                if self.Brain[ScenarioInfo.Options.AIPLatoonNameDebug] or ScenarioInfo.Options.AIPLatoonNameDebug == 'all' then
+                    factory:SetCustomName(builder.BuilderName)
+                end
+
                 --LOG('*Building', template)
                 self.Brain:BuildPlatoon(template, {factory}, 1)
                 --LOG('*TACanceling2', template)
                 else
                     --LOG('*TAIEXIST4', factory.TABuildingUnit)
+                -- rename factory
+                if self.Brain[ScenarioInfo.Options.AIPLatoonNameDebug] or ScenarioInfo.Options.AIPLatoonNameDebug == 'all' then
+                    if factory:IsUnitState('Upgrading') and factory.PlatoonHandle.BuilderName then
+                        factory:SetCustomName(factory.PlatoonHandle.BuilderName)
+                    elseif factory:IsIdleState() then
+                        factory:SetCustomName('')
+                    end
+                end
                 -- No builder found setup way to check again
                 self:ForkThread(self.DelayBuildOrder, factory, bType, 2)
                 --LOG('*TACanceling1', factory)

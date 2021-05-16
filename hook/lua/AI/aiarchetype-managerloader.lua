@@ -17,6 +17,12 @@ function ExecutePlan(aiBrain)
     local behaviors = import('/lua/ai/AIBehaviors.lua')
     WaitSeconds(1)
     if not aiBrain.BuilderManagers.MAIN.FactoryManager:HasBuilderList() then
+
+        -- Debug for Platoon names. Option can only be true if AI uveso is active. Without AI-Uveso this if-then does nothing.
+        if (aiBrain[ScenarioInfo.Options.AIPLatoonNameDebug] or ScenarioInfo.Options.AIPLatoonNameDebug == 'all') and not aiBrain.BuilderManagers.MAIN.FactoryManager:HasBuilderList() then
+            aiBrain:ForkThread(LocationRangeManagerThread, aiBrain)
+        end
+
         aiBrain:SetResourceSharing(true)
 
 

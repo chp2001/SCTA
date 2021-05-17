@@ -251,7 +251,7 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager) {
                 if builder and not factory.TABuildingUnit then
                 ---LOG('*TAIEXIST3', factory)
                 local template = self:GetFactoryTemplate(builder:GetPlatoonTemplate(), factory)
-                LOG('*TAAI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Factory Builder Manager Building - ',repr(builder.BuilderName))
+                --LOG('*TAAI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Factory Builder Manager Building - ',repr(builder.BuilderName))
 
                 -- rename factory to actual build-platoon name
                 if self.Brain[ScenarioInfo.Options.AIPLatoonNameDebug] or ScenarioInfo.Options.AIPLatoonNameDebug == 'all' then
@@ -265,7 +265,7 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager) {
                     --LOG('*TAIEXIST4', factory.TABuildingUnit)
                 -- rename factory
                 if self.Brain[ScenarioInfo.Options.AIPLatoonNameDebug] or ScenarioInfo.Options.AIPLatoonNameDebug == 'all' then
-                    if factory:IsUnitState('Upgrading') and factory.PlatoonHandle.BuilderName then
+                    if factory.PlatoonHandle.BuilderName then
                         factory:SetCustomName(factory.PlatoonHandle.BuilderName)
                     elseif factory:IsIdleState() then
                         factory:SetCustomName('')

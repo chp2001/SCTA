@@ -81,6 +81,7 @@ BuilderGroup {
         InstanceCount = 10,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 240 } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER - categories.COMMAND}},
             { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},  
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
         },
@@ -95,11 +96,12 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Finish',
         PlatoonTemplate = 'EngineerBuilderSCTAALL',
         PlatoonAIPlan = 'ManagerEngineerFindUnfinishedSCTA',
-        Priority = 500,
+        Priority = 150,
         InstanceCount = 5,
         DelayEqualBuildPlattons = {'Unfinished', 2},
         BuilderConditions = {
             { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'Unfinished' }},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER - categories.COMMAND}},
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
         },
         BuilderData = {

@@ -88,7 +88,6 @@ PlatoonTemplate {
     Plan = 'HuntSCTAAI',
     GlobalSquads = {
         { (GROUND * RANGE * categories.TECH1 - categories.AMPHIBIOUS), 2, 10, 'Artillery', 'none' },
-        { categories.FIELDENGINEER, 0, 2, 'Attack', 'none' },
     },
 }
 
@@ -117,7 +116,7 @@ PlatoonTemplate {
     GlobalSquads = {
         { GROUND - SPECIAL - RANGE, 5, 20, 'Attack', 'none' },
         { (GROUND * RANGE - categories.ANTIAIR) + categories.FIELDENGINEER, 0, 10, 'Artillery', 'none' },
-        { GROUND * categories.ANTIAIR - categories.ANTISHIELD, 0, 10, 'Guard', 'none' },
+        { GROUND * categories.ANTIAIR - categories.ANTISHIELD, 0, 10, 'Scout', 'none' },
     },
 }
 
@@ -127,7 +126,7 @@ PlatoonTemplate {
     GlobalSquads = {
         { GROUND - SPECIAL - RANGE, 5, 30, 'Attack', 'none' },
         { (GROUND * RANGE - categories.ANTIAIR) + categories.FIELDENGINEER, 0, 15, 'Artillery', 'none' },
-        { GROUND * categories.ANTIAIR - categories.ANTISHIELD, 0, 15, 'Guard', 'none' },
+        { GROUND * categories.ANTIAIR - categories.ANTISHIELD, 0, 15, 'Scout', 'none' },
     },
 }
 

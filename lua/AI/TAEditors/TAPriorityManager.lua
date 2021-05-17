@@ -28,10 +28,10 @@ AirProduction = function(self, aiBrain)
 end
 
 AssistProduction = function(self, aiBrain)
-    if Factory(aiBrain,  12, PLANT) then 
+    if Factory(aiBrain,  0, LAB) then 
         return 100
-    elseif Factory(aiBrain,  0, LAB) then 
-        return 50
+    elseif Factory(aiBrain,  6, PLANT) then 
+            return 50
     else
         return 0
     end

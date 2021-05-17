@@ -1485,7 +1485,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 local threat = target:GetPosition() 
                 self:AggressiveMoveToLocation(table.copy(threat))
                 --DUNCAN - added to try and stop AI getting stuck.
-                local targetDist = VDist2(threat[1],threat[3], self.Center[1], self.Center[3])
+                local targetDist = VDist2Sq(threat[1],threat[3], self.Center[1], self.Center[3])
                 if targetDist < self.PlatoonData.TAWeaponRange then
                     WaitSeconds(2)
                     for _,v in Squad do
@@ -1605,13 +1605,13 @@ Platoon = Class(SCTAAIPlatoon) {
         --[[for _,v in platoonUnits do
             if v.Dead then continue end
             v:SetCustomName('AttackHuntSCTA')
-        end]]
+        end]] 
         self.Artillery = self:GetSquadUnits('Artillery')
-        self.AntiAir = self:GetSquadUnits('Guard')
+        self.AntiAir = self:GetSquadUnits('Scout')
         if self.AntiAir > 0 then
             table.insert( atkPriA, 'AIR' )
             table.insert( categoryListA, categories.MOBILE * categories.AIR)
-            self:SetPrioritizedTargetList( 'Guard', categoryListA)
+            self:SetPrioritizedTargetList( 'Scout', categoryListA)
         end
         if self.Artillery > 0 then
             table.insert( atkPriArt, 'LAND' )
@@ -1642,8 +1642,8 @@ Platoon = Class(SCTAAIPlatoon) {
                     if self:GetSquadUnits('Artillery') > 0 then
                     targetArt = AIUtils.AIFindBrainTargetInRange( aiBrain, self, 'Artillery', 100, atkPriArt, aiBrain:GetCurrentEnemy())
                     end
-                    if self:GetSquadUnits('Guard') > 0 then
-                    targetAir = AIUtils.AIFindBrainTargetInRange( aiBrain, self, 'Guard', 50, atkPriA, aiBrain:GetCurrentEnemy())
+                    if self:GetSquadUnits('Scout') > 0 then
+                    targetAir = AIUtils.AIFindBrainTargetInRange( aiBrain, self, 'Scout', 50, atkPriA, aiBrain:GetCurrentEnemy())
                     end
                     if target then
                         break
@@ -1654,8 +1654,8 @@ Platoon = Class(SCTAAIPlatoon) {
                     end
                 end
                 target = self:FindPrioritizedUnit('Attack', 'Enemy', true, self:GetPlatoonPosition(), maxRadius)
-                if self:GetSquadUnits('Guard') > 0 then
-                targetAir = self:FindPrioritizedUnit('Guard', 'Enemy', true, self:GetSquadPosition('Guard'), 25)
+                if self:GetSquadUnits('Scout') > 0 then
+                targetAir = self:FindPrioritizedUnit('Scout', 'Enemy', true, self:GetSquadPosition('Scout'), 25)
                 end
                 if self:GetSquadUnits('Artillery') > 0 then
                 targetArt = self:FindPrioritizedUnit('Artillery', 'Enemy', true, self:GetSquadPosition('Artillery'), 50)
@@ -1665,8 +1665,8 @@ Platoon = Class(SCTAAIPlatoon) {
                         if numberOfUnitsInPlatoon < 20 then
                             self:SetPlatoonFormationOverride('AttackFormation')
                             end
-                            if self:GetSquadUnits('Guard') > 0 and targetAir then
-                                self:AttackTarget(targetAir, 'Guard')
+                            if self:GetSquadUnits('Scout') > 0 and targetAir then
+                                self:AttackTarget(targetAir, 'Scout')
                             end
                             if self:GetSquadUnits('Artillery') > 0 and targetArt then
                             self:AggressiveMoveToLocation(table.copy(targetArt:GetPosition()), 'Artillery')
@@ -1706,11 +1706,11 @@ Platoon = Class(SCTAAIPlatoon) {
             v:SetCustomName('AttackHuntSCTA')
         end]]
         self.Artillery = self:GetSquadUnits('Artillery')
-        self.AntiAir = self:GetSquadUnits('Guard')
+        self.AntiAir = self:GetSquadUnits('Scout')
         if self.AntiAir > 0 then
             table.insert( atkPriA, 'AIR' )
             table.insert( categoryListA, categories.MOBILE * categories.AIR)
-            self:SetPrioritizedTargetList( 'Guard', categoryListA)
+            self:SetPrioritizedTargetList( 'Scout', categoryListA)
         end
         if self.Artillery > 0 then
             table.insert( atkPriArt, 'LAND' )
@@ -1740,8 +1740,8 @@ Platoon = Class(SCTAAIPlatoon) {
                     if self:GetSquadUnits('Artillery') > 0 then
                     targetArt = AIUtils.AIFindBrainTargetInRange( aiBrain, self, 'Artillery', 100, atkPriArt, aiBrain:GetCurrentEnemy())
                     end
-                    if self:GetSquadUnits('Guard') > 0 then
-                    targetAir = AIUtils.AIFindBrainTargetInRange( aiBrain, self, 'Guard', 50, atkPriA, aiBrain:GetCurrentEnemy())
+                    if self:GetSquadUnits('Scout') > 0 then
+                    targetAir = AIUtils.AIFindBrainTargetInRange( aiBrain, self, 'Scout', 50, atkPriA, aiBrain:GetCurrentEnemy())
                     end
                     if target then
                         break
@@ -1752,8 +1752,8 @@ Platoon = Class(SCTAAIPlatoon) {
                     end
                 end
                 target = self:FindPrioritizedUnit('Attack', 'Enemy', true, self:GetPlatoonPosition(), maxRadius)
-                if self:GetSquadUnits('Guard') > 0 then
-                targetAir = self:FindPrioritizedUnit('Guard', 'Enemy', true, self:GetSquadPosition('Guard'), 25)
+                if self:GetSquadUnits('Scout') > 0 then
+                targetAir = self:FindPrioritizedUnit('Scout', 'Enemy', true, self:GetSquadPosition('Scout'), 25)
                 end
                 if self:GetSquadUnits('Artillery') > 0 then
                 targetArt = self:FindPrioritizedUnit('Artillery', 'Enemy', true, self:GetSquadPosition('Artillery'), 50)
@@ -1763,8 +1763,8 @@ Platoon = Class(SCTAAIPlatoon) {
                         if numberOfUnitsInPlatoon < 20 then
                             self:SetPlatoonFormationOverride('AttackFormation')
                             end
-                            if self:GetSquadUnits('Guard') > 0 and targetAir then
-                                self:AttackTarget(targetAir, 'Guard')
+                            if self:GetSquadUnits('Scout') > 0 and targetAir then
+                                self:AttackTarget(targetAir, 'Scout')
                             end
                             if self:GetSquadUnits('Artillery') > 0 and targetArt then
                             self:AggressiveMoveToLocation(table.copy(targetArt:GetPosition()), 'Artillery')
@@ -1843,7 +1843,7 @@ Platoon = Class(SCTAAIPlatoon) {
             end
 
             if  VDist2Sq(platPos[1], platPos[3], allyPlatPos[1], allyPlatPos[3]) <= radiusSq then
-                local unitsAntiAir = aPlat:GetSquadUnits('Guard')
+                local unitsAntiAir = aPlat:GetSquadUnits('Scout')
                 local units = aPlat:GetSquadUnits('Attack')
                 local unitsArtillery = aPlat:GetSquadUnits('Artillery')
             if unitsAntiAir > 0 then
@@ -1859,7 +1859,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 if not AirValidUnits then
                     continue
                 end
-                aiBrain:AssignUnitsToPlatoon(self, validUnitsAir, 'Guard', 'GrowthFormation')
+                aiBrain:AssignUnitsToPlatoon(self, validUnitsAir, 'Scout', 'GrowthFormation')
             end
             
              if unitsArtillery > 0 then
@@ -1917,7 +1917,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 self:Stop()
                 local threat = target:GetPosition() 
                 self:AggressiveMoveToLocation(table.copy(threat))
-                local targetDist = VDist2(threat[1],threat[3], self.Center[1], self.Center[3])
+                local targetDist = VDist2Sq(threat[1],threat[3], self.Center[1], self.Center[3])
                 if targetDist < self.PlatoonData.TAWeaponRange then
                     WaitSeconds(2)
                     for _,v in Squad do

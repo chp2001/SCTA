@@ -154,7 +154,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T1ACU Pgen2',
         PlatoonTemplate = 'CommanderBuilderSCTA',
         Priority = 50,
-       PriorityFunction = TAPrior.UnitProductionT1,
+        PriorityFunction = TAPrior.HighTechEnergyProduction,
         InstanceCount = 1,
         BuilderConditions = {
             { TAutils , 'LessThanEconEnergyTAEfficiency', {0.9 }},
@@ -224,9 +224,9 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 120 } }, 
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER - categories.COMMAND}},
+            { UCBC, 'EngineerGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER * categories.LAND - categories.COMMAND}},
             { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},
-            { TAutils, 'LessMassStorageMaxTA',  { 0.25}},   
+            { TAutils, 'LessMassStorageMaxTA',  { 0.2}},   
         },
         BuilderData = {
             Terrain = true,
@@ -243,15 +243,16 @@ BuilderGroup {
         Priority = 50,
         InstanceCount = 10,
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER - categories.COMMAND}},
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, LAB + PLATFORM}},
+            { UCBC, 'EngineerGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER * categories.LAND - categories.COMMAND}},
+            { UCBC, 'HaveGreaterThanUnitsInCategoryBeingBuilt', { 0, LAB + PLATFORM + categories.GATE, 'LocationType', }},
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, LAB + PLATFORM + categories.GATE}},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
                 AssisteeType = 'Engineer',
-                BeingBuiltCategories = {'STRUCTURE FACTORY TECH2, STRUCTURE FACTORY TECH3'},
+                BeingBuiltCategories = {'STRUCTURE FACTORY TECH2, STRUCTURE FACTORY TECH3, GATE'},
                 Time = 20,
             },
         },
@@ -265,7 +266,9 @@ BuilderGroup {
         Priority = 50,
         InstanceCount = 10,
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER - categories.COMMAND}},
+            { UCBC, 'EngineerGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER * categories.LAND - categories.COMMAND}},
+            { UCBC, 'FactoryGreaterAtLocation', { 'LocationType', 2, LAB + PLATFORM + categories.GATE } },
+            { UCBC, 'HaveGreaterThanUnitsInCategoryBeingBuilt', { 0, categories.MOBILE, 'LocationType', }},
             { UCBC, 'LocationFactoriesBuildingGreater', { 'LocationType', 0, categories.MOBILE }},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
@@ -283,4 +286,3 @@ BuilderGroup {
 }
 
 --{ SIBC, 'EngineerNeedsAssistance', { false, 'LocationType', {'STRUCTURE'} }},
-

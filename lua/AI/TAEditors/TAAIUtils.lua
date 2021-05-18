@@ -278,9 +278,9 @@ function TAReclaimablesInArea(aiBrain, locType)
     local ents = TAAIGetReclaimablesAroundLocation(aiBrain, locType)
     if ents and not table.empty(ents) then
         return true
-    end
-
+    else
     return false
+    end
 end
 
 function TAAIGetReclaimablesAroundLocation(aiBrain, locationType)

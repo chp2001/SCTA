@@ -2885,4 +2885,17 @@ Platoon = Class(SCTAAIPlatoon) {
             end
         end,
 
+        ExperimentalAIHubTA = function(self)
+            local experimental = self:GetPlatoonUnits()
+            if not experimental or experimental.Dead then
+                return
+            end
+            local behaviors = import('/lua/ai/AIBehaviors.lua')
+            if EntityCategoryContains(categories.EXPERIMENTAL * categories.MOBILE - categories.SUBCOMMANDER, experimental) then
+                return behaviors.BehemothBehaviorTotal(self)
+            else
+                return behaviors.CommanderThreadSCTADecoy(self)
+            end
+        end,
+
 }

@@ -63,7 +63,7 @@ BuilderGroup {
         Priority = 125,
         InstanceCount = 5,
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.AIR * categories.ENGINEER}},
+            { UCBC, 'EngineerGreaterAtLocation', { 'LocationType', 0, categories.AIR * categories.ENGINEER}},
             { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             },
@@ -81,7 +81,7 @@ BuilderGroup {
         InstanceCount = 10,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 240 } },
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER - categories.COMMAND}},
+            { UCBC, 'EngineerGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER * categories.LAND - categories.COMMAND}},
             { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},  
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
         },
@@ -98,10 +98,10 @@ BuilderGroup {
         PlatoonAIPlan = 'ManagerEngineerFindUnfinishedSCTA',
         Priority = 150,
         InstanceCount = 5,
-        DelayEqualBuildPlattons = {'Unfinished', 2},
+        DelayEqualBuildPlattons = {'Unfinished', 1},
         BuilderConditions = {
-            { TASlow, 'CheckBuildPlatoonDelaySCTA', { 'Unfinished' }},
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER - categories.COMMAND}},
+            { UCBC, 'CheckBuildPlattonDelay', { 'Unfinished' }},
+            { UCBC, 'EngineerGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER * categories.LAND - categories.COMMAND}},
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
         },
         BuilderData = {

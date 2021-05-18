@@ -360,7 +360,7 @@ BuildingTemplates[6] = {
             'corllt',
         },
         {
-            'T1GroundDefense2',
+            'T2ShieldDefense',
             'corplas',
         },
         {

@@ -308,14 +308,8 @@ UnitBlueprint {
             CollideFriendly = false,
             DamageFriendly = true,
             Damage = 99999,
-            DGun = 99999,
             DamageRadius = 2,
-            DamageType = 'Overcharge',
-            Overcharge = {
-                energyMult = 0.9,
-                commandDamage = 99999,
-                structureDamage = 99999,
-            },
+            DamageType = 'DGun',
             DisplayName = 'OverCharge',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
@@ -379,7 +373,7 @@ UnitBlueprint {
             Damage = 99999,
             DGun = 99999,
             DamageRadius = 2,
-            DamageType = 'Overcharge',
+            DamageType = 'DGun',
             DisplayName = 'AutoOverCharge',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',

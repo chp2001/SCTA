@@ -30,14 +30,13 @@ BaseBuilderTemplate {
         },
     },
     ExpansionFunction = function(aiBrain, location, markerType)   
-        local per = ScenarioInfo.ArmySetup[aiBrain.Name].AIPersonality
-        --LOG('Ai Personality is '..per)
-        if not per == 'SCTAAI' then
+        if not aiBrain.SCTAAI then
             return -1
         end
-        if markerType != 'Naval Area' then
-            return -1
-        end
+        if markerType ~= 'Naval Area' then
+                ---LOG('IEXISTSTART')
+                return -1
+            end
         --LOG('Return sctaai personality')
         --LOG('*TALtype2', location)
         return 55, 'SCTANavalExpansion'

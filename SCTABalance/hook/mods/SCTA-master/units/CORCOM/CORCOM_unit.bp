@@ -52,10 +52,6 @@ UnitBlueprint {
     [1] = {},
     [2] = {
         Damage = 2500,
-        Overcharge = {
-            commandDamage = 1000,
-            structureDamage = 1000,
-        },
     },
     [3] = {
         Damage = 2500,

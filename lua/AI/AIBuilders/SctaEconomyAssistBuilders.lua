@@ -63,7 +63,7 @@ BuilderGroup {
         Priority = 125,
         InstanceCount = 5,
         BuilderConditions = {
-            { UCBC, 'EngineerGreaterAtLocation', { 'LocationType', 0, categories.AIR * categories.ENGINEER}},
+            { UCBC, 'EngineerGreaterAtLocation', { 'LocationType', 1, categories.AIR * categories.ENGINEER}},
             { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             },

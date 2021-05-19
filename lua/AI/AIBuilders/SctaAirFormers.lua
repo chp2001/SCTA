@@ -64,8 +64,7 @@ BuilderGroup {
         },   
     Builder {
         BuilderName = 'SCTAAI Air Intercept Omni',
-        PlatoonTemplate = 'IntieAISCTA',
-        PlatoonAIPlan = 'InterceptorAISCTAEnd',
+        PlatoonTemplate = 'IntieAISCTAEnd',
         PriorityFunction = TAPrior.GantryConstruction,
         Priority = 110,
         InstanceCount = 50,

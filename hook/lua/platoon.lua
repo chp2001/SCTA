@@ -2337,24 +2337,35 @@ Platoon = Class(SCTAAIPlatoon) {
         local armyIndex = aiBrain:GetArmyIndex()
         local platoonUnits = self:GetPlatoonUnits()
         local target
+        local Snipe
+        local command
         while aiBrain:PlatoonExists(self) do
-        if self.PlatoonData.Energy and not self.EcoCheck and (EntityCategoryContains(categories.armhawk, platoonUnits) or EntityCategoryContains(categories.corvamp, platoonUnits)) then
+        if self.PlatoonData.Energy and not self.EcoCheck and (EntityCategoryContains(categories.armhawk, self:GetSquadUnits('Attack')) or EntityCategoryContains(categories.corvamp, self:GetSquadUnits('Attack'))) then
             WaitSeconds(1)
             self:CheckEnergySCTAEco()
         end
-            target = self:FindClosestUnit('Attack', 'Enemy', true, categories.MOBILE * categories.COMMAND)
-            if not target then
-                target = self:FindClosestUnit('Attack', 'Enemy', true, categories.LAND * categories.MOBILE - categories.SCOUT)
-            elseif not EntityCategoryContains(categories.BOMBER, self) then
+            command = self:FindClosestUnit('Attack', 'Enemy', true, categories.MOBILE * categories.COMMAND)
+            if not command then
                 target = self:FindClosestUnit('Attack', 'Enemy', true, categories.AIR * categories.MOBILE)
+                Snipe = self:FindClosestUnit('Artillery', 'Enemy', true, categories.LAND * categories.MOBILE - categories.SCOUT)
             end
-            if target then
+            if command then
                 self:Stop()
-                self:AttackTarget(target)
-            end
+                self:AttackTarget(command)
+            else
+                if target then 
+                    self:Stop('Attack')
+                    self:AttackTarget(target, 'Attack')
+                end
+                if Snipe then
+                    self:Stop('Artillery')
+                    self:AttackTarget(Snipe, 'Artillery')
+                    if not target then
+                        self:Stop('Attack')
+                        self:AttackTarget(Snipe, 'Attack')
+                    end
+                end
             WaitSeconds(5)
-            if self.PlatoonData.Energy then
-                self.EcoCheck = nil
             end
         end
     end,
@@ -2460,9 +2471,6 @@ Platoon = Class(SCTAAIPlatoon) {
                 --[[if aiBrain:PlatoonExists(self) and table.getn(self:GetPlatoonUnits()) < 20 then
                     self:MergeWithNearbyPlatoonsSCTA('InterceptorAISCTA', 'InterceptorAISCTAEnd', 5)
                 end]]
-            end
-            if self.PlatoonData.Energy then
-                self.EcoCheck = nil
             end
             WaitSeconds(5) --DUNCAN - was 5
         end
@@ -2611,8 +2619,8 @@ Platoon = Class(SCTAAIPlatoon) {
     
                 local recPos = nil
                 local closest = {}
-                for i, r in reclaim  do
-                    if self.PlatoonData.Terrain and eng:CanPathTo (r.pos) then
+                for i, r in reclaim do
+                    if self.PlatoonData.Terrain and AIAttackUtils.CanGraphTo(eng, r.pos, 'Land') then
                         IssueReclaim(units, r.entity)
                         if i > 10 then break end
                     elseif not self.PlatoonData.Terrain then

@@ -1496,11 +1496,11 @@ Platoon = Class(SCTAAIPlatoon) {
                     end
                 end 
             end
-            WaitSeconds(5)
+            WaitSeconds(2)
             self.EcoCheck = nil
             local position = AIUtils.RandomLocation(self.Center[1],self.Center[3])
             self:MoveToLocation(position, false)
-            WaitSeconds(5)
+            WaitSeconds(2)
         end
     end,
 
@@ -1936,10 +1936,10 @@ Platoon = Class(SCTAAIPlatoon) {
                     end
                 end
             end
-            WaitSeconds(5)
+            WaitSeconds(2)
             local position = AIUtils.RandomLocation(self.Center[1],self.Center[3])
             self:MoveToLocation(position, false)
-            WaitSeconds(5)
+            WaitSeconds(2)
         end
     end,
 

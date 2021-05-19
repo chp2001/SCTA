@@ -329,7 +329,7 @@ TADGun = Class(DefaultWeapon) {
                 WaitSeconds(1)
             end
             if self.AutoMode then
-                self.unit:SetWeaponEnabledByLabel('AutoOverCharge', true)
+                self.unit:SetWeaponEnabledByLabel('AutoDGun', true)
             end
         end,
     
@@ -353,8 +353,8 @@ TADGun = Class(DefaultWeapon) {
         OnCreate = function(self)
             DefaultWeapon.OnCreate(self)
             self.EnergyRequired = self:GetBlueprint().EnergyRequired
-            self.unit:SetWeaponEnabledByLabel('OverCharge', true)
-            self.unit:SetWeaponEnabledByLabel('AutoOverCharge', false)
+            self.unit:SetWeaponEnabledByLabel('DGun', true)
+            self.unit:SetWeaponEnabledByLabel('AutoDGun', false)
             self.unit:SetOverchargePaused(false)
         end,
 

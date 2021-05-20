@@ -58,7 +58,7 @@ function CDRSCTADGunDecoy(aiBrain, cdr)
     local weapon
 
     for k, v in weapBPs do
-        if v.Label == 'DGun' then
+        if v.Label == 'OverCharge' then
             weapon = v
             break
         end
@@ -352,7 +352,7 @@ function CDRSCTADGun(aiBrain, cdr)
     local weapon
 
     for k, v in weapBPs do
-        if v.Label == 'DGun' then
+        if v.Label == 'OverCharge' then
             weapon = v
             break
         end

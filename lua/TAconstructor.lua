@@ -248,31 +248,30 @@ TACommander = Class(TAconstructor) {
     end,
 
     SetAutoOvercharge = function(self, auto)
-        local wep = self:GetWeaponByLabel('AutoDGun')
+        local wep = self:GetWeaponByLabel('AutoOverCharge')
         wep:SetAutoOvercharge(auto)
         self.Sync.AutoOvercharge = auto
     end,
 
     ResetRightArm = function(self)
        self:SetImmobile(false)
-       self:SetWeaponEnabledByLabel('DGun', true)
-       self:SetWeaponEnabledByLabel('AutoDGun', false)
+       self:SetWeaponEnabledByLabel('OverCharge', true)
 
         -- Ugly hack to re-initialise auto-OC once a task finishes
-        local wep = self:GetWeaponByLabel('AutoDGun')
+        local wep = self:GetWeaponByLabel('AutoOverCharge')
         wep:SetAutoOvercharge(wep.AutoMode)
     end,
 
     OnPrepareArmToBuild = function(self)
         TAconstructor.OnPrepareArmToBuild(self)
-        self:SetWeaponEnabledByLabel('DGun', false)
-        self:SetWeaponEnabledByLabel('AutoDGun', false)
+        self:SetWeaponEnabledByLabel('OverCharge', false)
+        self:SetWeaponEnabledByLabel('AutoOverCharge', false)
     end,
 
     OnCreate = function(self)
 		TAconstructor.OnCreate(self)
         self:SetCapturable(false)
-        self:SetWeaponEnabledByLabel('AutoDGun', false)
+        self:SetWeaponEnabledByLabel('AutoOverCharge', false)
 	end,
     
     CreateCaptureEffects = function( self, target )

@@ -2337,38 +2337,28 @@ Platoon = Class(SCTAAIPlatoon) {
         local armyIndex = aiBrain:GetArmyIndex()
         local platoonUnits = self:GetPlatoonUnits()
         local target
-        local Snipe
-        local command
         while aiBrain:PlatoonExists(self) do
-        if self.PlatoonData.Energy and not self.EcoCheck and (EntityCategoryContains(categories.armhawk, self:GetSquadUnits('Attack')) or EntityCategoryContains(categories.corvamp, self:GetSquadUnits('Attack'))) then
+        if self.PlatoonData.Energy and not self.EcoCheck and EntityCategoryContains(categories.STEALTH, platoonUnits) then
             WaitSeconds(1)
             self:CheckEnergySCTAEco()
         end
-            command = self:FindClosestUnit('Attack', 'Enemy', true, categories.MOBILE * categories.COMMAND)
-            if not command then
+            target = self:FindClosestUnit('Attack', 'Enemy', true, categories.MOBILE * categories.COMMAND)
+            if not target then
+                target = self:FindClosestUnit('Attack', 'Enemy', true, categories.LAND * categories.MOBILE - categories.SCOUT)
+            elseif not EntityCategoryContains(categories.BOMBER + categories.GROUNDATTACK, platoonUnits) then
                 target = self:FindClosestUnit('Attack', 'Enemy', true, categories.AIR * categories.MOBILE)
-                Snipe = self:FindClosestUnit('Artillery', 'Enemy', true, categories.LAND * categories.MOBILE - categories.SCOUT)
             end
-            if command then
+            if target then
                 self:Stop()
-                self:AttackTarget(command)
-            else
-                if target then 
-                    self:Stop('Attack')
-                    self:AttackTarget(target, 'Attack')
-                end
-                if Snipe then
-                    self:Stop('Artillery')
-                    self:AttackTarget(Snipe, 'Artillery')
-                    if not target then
-                        self:Stop('Attack')
-                        self:AttackTarget(Snipe, 'Attack')
-                    end
-                end
+                self:AttackTarget(target)
+            end
             WaitSeconds(5)
+            if self.PlatoonData.Energy then
+                self.EcoCheck = nil
             end
         end
     end,
+
 
     InterceptorAISCTA = function(self)
         self:Stop()

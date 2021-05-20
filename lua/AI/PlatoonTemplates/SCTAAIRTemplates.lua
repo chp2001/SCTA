@@ -41,9 +41,7 @@ PlatoonTemplate {
     Plan = 'InterceptorAISCTAStealth',
     ---PlatoonType = 'AirForm',
     GlobalSquads = {
-        { STEALTH, 1, 100, 'Attack', 'GrowthFormation' },
-        { SKY * (categories.BOMBER + categories.GROUNDATTACK), 0, 100, 'Artillery', 'GrowthFormation' },
-        
+        { SKY * (categories.BOMBER + categories.GROUNDATTACK + categories.STEALTH), 1, 100, 'Attack', 'GrowthFormation' },
     }
 }
 

@@ -103,7 +103,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local eng
         --LOG('*SCTAEXPANSIONTA', self.PlatoonData.LocationType)
         for k, v in platoonUnits do
-            if not v.Dead and EntityCategoryContains(categories.ENGINEER - categories.STATIONASSISTPOD, v) then --DUNCAN - was construction
+            if not v.Dead then --DUNCAN - was construction
                 IssueClearCommands({v})
                 if not eng then
                     eng = v
@@ -397,7 +397,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local eng
         --LOG('*SCTAEXPANSIONTA', self.PlatoonData.LocationType)
         for k, v in platoonUnits do
-            if not v.Dead and EntityCategoryContains(categories.ENGINEER - categories.STATIONASSISTPOD, v) then --DUNCAN - was construction
+            if not v.Dead then --DUNCAN - was construction
                 IssueClearCommands({v})
                 if not eng then
                     eng = v
@@ -642,7 +642,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local buildingTmpl, buildingTmplFile, baseTmpl, baseTmplFile, baseTmplDefault
         local eng
         for k, v in platoonUnits do
-            if not v.Dead and EntityCategoryContains(categories.ENGINEER - categories.STATIONASSISTPOD, v) then --DUNCAN - was construction
+            if not v.Dead then --DUNCAN - was construction
                 IssueClearCommands({v})
                 if not eng then
                     eng = v
@@ -954,7 +954,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local buildingTmpl, buildingTmplFile, baseTmpl, baseTmplFile, baseTmplDefault
         local eng
         for k, v in platoonUnits do
-            if not v.Dead and EntityCategoryContains(categories.ENGINEER - categories.STATIONASSISTPOD, v) then --DUNCAN - was construction
+            if not v.Dead then --DUNCAN - was construction
                 IssueClearCommands({v})
                 if not eng then
                     eng = v
@@ -1471,10 +1471,10 @@ Platoon = Class(SCTAAIPlatoon) {
         local Squad = self:GetSquadUnits('Artillery')
         local target
         while aiBrain:PlatoonExists(self) do
-            if aiBrain:PlatoonExists(self) and table.getn(platoonUnits) < 10 then
+        --[[if aiBrain:PlatoonExists(self) and table.getn(platoonUnits) < 10 then
             self:MergeWithNearbyPlatoonsSCTA('TAHunt', 'TAHunt', 5)
-            end
-            if self.PlatoonData.Energy and not self.EcoCheck and EntityCategoryContains(categories.ANTISHIELD, platoonUnits) then
+            end]]
+            if self.PlatoonData.Energy and not self.EcoCheck then
                 WaitSeconds(1)
                 self:CheckEnergySCTAEco()
             end
@@ -1485,7 +1485,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 local threat = target:GetPosition() 
                 self:AggressiveMoveToLocation(table.copy(threat))
                 --DUNCAN - added to try and stop AI getting stuck.
-                local targetDist = VDist2Sq(threat[1],threat[3], self.Center[1], self.Center[3])
+                --[[local targetDist = VDist2Sq(threat[1],threat[3], self.Center[1], self.Center[3])
                 if targetDist < self.PlatoonData.TAWeaponRange then
                     WaitSeconds(2)
                     for _,v in Squad do
@@ -1494,7 +1494,7 @@ Platoon = Class(SCTAAIPlatoon) {
                         IssueClearCommands(v)
                         IssueMove(v, smartPos)
                     end
-                end 
+                end ]]
             end
             WaitSeconds(2)
             self.EcoCheck = nil
@@ -1729,7 +1729,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local blip = false
         local maxRadius = self.PlatoonData.SearchRadius or 100
         while aiBrain:PlatoonExists(self) do
-                if self.PlatoonData.Energy and not self.EcoCheck and EntityCategoryContains(categories.ANTISHIELD, 'Artillery') then
+                if self.PlatoonData.Energy and not self.EcoCheck then
                     WaitSeconds(1)
                     self:CheckEnergySCTAEco()
                 end
@@ -1925,8 +1925,8 @@ Platoon = Class(SCTAAIPlatoon) {
                 self:Stop()
                 local threat = target:GetPosition() 
                 self:AggressiveMoveToLocation(table.copy(threat))
-                local targetDist = VDist2Sq(threat[1],threat[3], self.Center[1], self.Center[3])
-                if targetDist < self.PlatoonData.TAWeaponRange then
+                --local targetDist = VDist2Sq(threat[1],threat[3], self.Center[1], self.Center[3])
+                --[[if targetDist < self.PlatoonData.TAWeaponRange then
                     WaitSeconds(2)
                     for _,v in Squad do
                         local smartPos = TAReclaim.TAKite({self.Center[1] + math.random(-2,2), self.Center[2], self.Center[3] + math.random(-2,2)}, threat, {targetDist, targetDist - self.PlatoonData.TAWeaponRange})
@@ -1934,7 +1934,7 @@ Platoon = Class(SCTAAIPlatoon) {
                         IssueClearCommands(v)
                         IssueMove(v, smartPos)
                     end
-                end
+                end]]
             end
             WaitSeconds(2)
             local position = AIUtils.RandomLocation(self.Center[1],self.Center[3])
@@ -2338,7 +2338,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local platoonUnits = self:GetPlatoonUnits()
         local target
         while aiBrain:PlatoonExists(self) do
-        if self.PlatoonData.Energy and not self.EcoCheck and EntityCategoryContains(categories.STEALTH, platoonUnits) then
+        if self.PlatoonData.Energy and not self.EcoCheck then
             WaitSeconds(1)
             self:CheckEnergySCTAEco()
         end
@@ -2418,7 +2418,7 @@ Platoon = Class(SCTAAIPlatoon) {
         local hadtarget = false
         local basePosition = false
         local platoonUnits = self:GetPlatoonUnits()
-        if self.PlatoonData.Energy and not self.EcoCheck and (EntityCategoryContains(categories.armhawk, platoonUnits) or EntityCategoryContains(categories.corvamp, platoonUnits)) then
+        if self.PlatoonData.Energy and not self.EcoCheck then
             WaitSeconds(1)
             self:CheckEnergySCTAEco()
         end
@@ -2610,7 +2610,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 local recPos = nil
                 local closest = {}
                 for i, r in reclaim do
-                    if self.PlatoonData.Terrain and AIAttackUtils.CanGraphTo(eng, r.pos, 'Land') then
+                    if self.PlatoonData.Terrain and eng:CanPathTo(r.pos) then
                         IssueReclaim(units, r.entity)
                         if i > 10 then break end
                     elseif not self.PlatoonData.Terrain then

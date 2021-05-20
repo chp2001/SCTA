@@ -126,15 +126,11 @@ function SCTAEngineerMoveWithSafePath(aiBrain, unit, destination)
     local result, bestPos = false
     result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Land')
     if not result then
-        if EntityCategoryContains(categories.AMPHIBIOUS, unit) then
-            result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Air')
-        else
             result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Amphibious')
             if not result and not SUtils.CheckForMapMarkers(aiBrain) then
                 result, bestPos = unit:CanPathTo(destination)
             end
         end
-    end
 
     local pos = unit:GetPosition()
     -- If we're here, we haven't used transports and we can path to the destination

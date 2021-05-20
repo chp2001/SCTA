@@ -1485,7 +1485,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 local threat = target:GetPosition() 
                 self:AggressiveMoveToLocation(table.copy(threat))
                 --DUNCAN - added to try and stop AI getting stuck.
-                --[[local targetDist = VDist2Sq(threat[1],threat[3], self.Center[1], self.Center[3])
+                local targetDist = VDist2Sq(threat[1],threat[3], self.Center[1], self.Center[3])
                 if targetDist < self.PlatoonData.TAWeaponRange then
                     WaitSeconds(2)
                     for _,v in Squad do
@@ -1494,7 +1494,7 @@ Platoon = Class(SCTAAIPlatoon) {
                         IssueClearCommands(v)
                         IssueMove(v, smartPos)
                     end
-                end ]]
+                end
             end
             WaitSeconds(2)
             self.EcoCheck = nil
@@ -1925,8 +1925,8 @@ Platoon = Class(SCTAAIPlatoon) {
                 self:Stop()
                 local threat = target:GetPosition() 
                 self:AggressiveMoveToLocation(table.copy(threat))
-                --local targetDist = VDist2Sq(threat[1],threat[3], self.Center[1], self.Center[3])
-                --[[if targetDist < self.PlatoonData.TAWeaponRange then
+                local targetDist = VDist2Sq(threat[1],threat[3], self.Center[1], self.Center[3])
+                if targetDist < self.PlatoonData.TAWeaponRange then
                     WaitSeconds(2)
                     for _,v in Squad do
                         local smartPos = TAReclaim.TAKite({self.Center[1] + math.random(-2,2), self.Center[2], self.Center[3] + math.random(-2,2)}, threat, {targetDist, targetDist - self.PlatoonData.TAWeaponRange})
@@ -1934,7 +1934,7 @@ Platoon = Class(SCTAAIPlatoon) {
                         IssueClearCommands(v)
                         IssueMove(v, smartPos)
                     end
-                end]]
+                end
             end
             WaitSeconds(2)
             local position = AIUtils.RandomLocation(self.Center[1],self.Center[3])

@@ -118,6 +118,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.GantryConstruction,
         DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3,  PLATFORM} },
             { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.GATE} }, -- Stop after 10 facs have been built.
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.GATE} },

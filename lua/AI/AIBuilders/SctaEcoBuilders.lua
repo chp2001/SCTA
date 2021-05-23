@@ -237,7 +237,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T2Engineer Pgen',
         PlatoonTemplate = 'EngineerBuilderSCTA23All',
         PriorityFunction = TAPrior.StructureProductionT2,
-        Priority = 200,
+        Priority = 300,
         InstanceCount = 1,
         BuilderConditions = {
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
@@ -247,7 +247,7 @@ BuilderGroup {
         BuilderType = 'NotACU',
         BuilderData = {
             DesiresAssist = true,
-            NumAssistees = 2,
+            NumAssistees = 6,
             NeedGuard = false,
             Construction = {
                 BuildStructures = {
@@ -263,6 +263,7 @@ BuilderGroup {
         PriorityFunction = TAPrior.GantryConstruction,
         InstanceCount = 1,
         BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 2, FUSION} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, FUSION} },
             { TAutils , 'LessThanEconEnergyTAEfficiency', {1.05}},
         },

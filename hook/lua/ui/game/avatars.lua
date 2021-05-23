@@ -729,7 +729,9 @@ end
 
 function SetSkinTA(unit)
     local bp = unit:GetBlueprint().General
+    unit.TASkin = true
     if unit:GetBlueprint().BlueprintId == 'mas0001' then
+        unit.TASkin = nil
         return
     elseif bp.FactionName == 'Cybran' then
         return ConExecute('UI_SetSkin cybran')
@@ -750,6 +752,8 @@ end
 
 TACreateAvater = CreateAvatar
 function CreateAvatar(unit)
+    if not unit.TASkin then
     SetSkinTA(unit)
+    end
    return TACreateAvater(unit)
 end

@@ -1512,7 +1512,7 @@ Platoon = Class(SCTAAIPlatoon) {
             v:SetScriptBit('RULEUTC_ProductionToggle', true)
         end
         local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
-        while econ.EnergyStorageRatio < 0.4 or econ.MassStorageRatio > 0.6 do
+        while (econ.EnergyStorageRatio < 0.4 or econ.MassStorageRatio > 0.8) do
             WaitSeconds(2)
             econ = AIUtils.AIGetEconomyNumbers(aiBrain)
         end

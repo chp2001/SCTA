@@ -93,35 +93,34 @@ updateBuildRestrictions = function(self)
     --EngiModFinalFORMTA
     ---Basicallys Stop Lower Tech from building UpperTech. Advanced Factories now full access to builds
     ---Will require another rebalancing of Seaplanes and Hovers
-    if EntityCategoryContains(categories.TECH1 * categories.CONSTRUCTION - categories.FACTORY, self) then
+    if EntityCategoryContains(categories.TECH1 * categories.CONSTRUCTION - categories.FACTORY, self) and aiBrain.Plants < 10 then
         self:AddBuildRestriction(categories.TECH2) 
         return
-    elseif EntityCategoryContains(categories.TECH2 * categories.CONSTRUCTION - categories.RESEARCH, self) then
+    elseif EntityCategoryContains(categories.TECH2 * categories.CONSTRUCTION - categories.RESEARCH, self) and aiBrain.Labs < 4 then
         self:AddBuildRestriction(categories.TECH3)
         return
+    --[[else
+        return]]
     end
 end
 
 TABuildRestrictions = function(self)
     local aiBrain = self:GetAIBrain()
-    ----BUGTheNumbers are 2 Greater than requiered Stat in Code. 6 and 12 are Correct.
     local PlantsCat = ((categories.FACTORY + categories.GATE) * (categories.ARM + categories.CORE))
-        if self.FindHQType(aiBrain, PlantsCat * (categories.TECH3 + categories.EXPERIMENTAL)) or 
-        NumberOfPlantsT2(aiBrain, PlantsCat * (categories.TECH2)) > 4 then
+        if (aiBrain.Labs > 4) or NumberOfPlantsT2(aiBrain) or self.FindHQType(aiBrain, PlantsCat * (categories.TECH3 + categories.EXPERIMENTAL)) then
                 self:RemoveBuildRestriction(categories.TECH2)
                 self:RemoveBuildRestriction(categories.TECH3)
-            return  
-        elseif self.FindHQType(aiBrain, PlantsCat * (categories.TECH2 + categories.EXPERIMENTAL)) or 
-        NumberOfPlantsT1(aiBrain, PlantsCat * (categories.TECH1)) > 10 then
+        return  
+        elseif (aiBrain.Plants > 10) or self.FindHQType(aiBrain, PlantsCat * (categories.TECH2 + categories.EXPERIMENTAL)) or
+        NumberOfPlantsT1(aiBrain) then
                 self:RemoveBuildRestriction(categories.TECH2)
-            return    
+        return    
     end
 end
 
---Labs = {}
---Plants = {}
 
-NumberOfPlantsT2 = function(aiBrain, category)
+
+NumberOfPlantsT2 = function(aiBrain)
     -- Returns number of extractors upgrading
     aiBrain.DevelopmentCount = aiBrain:GetCurrentUnits(categories.RESEARCH * categories.TECH2 * (categories.ARM + categories.CORE))
     --LOG('EXIST1')
@@ -138,10 +137,10 @@ NumberOfPlantsT2 = function(aiBrain, category)
     aiBrain.Labs = ((aiBrain.LabCount) + (aiBrain.DevelopmentCount * 2)) - aiBrain.LabBuilding - (aiBrain.DevelopmentBuilding * 2)
     --('EXIST5')
     --LOG(Labs)
-    return aiBrain.Labs
+    return (aiBrain.Labs > 4)
 end
 
-NumberOfPlantsT1 = function(aiBrain, category)
+NumberOfPlantsT1 = function(aiBrain)
     -- Returns number of extractors upgrading
     aiBrain.PlantCount = aiBrain:GetCurrentUnits(categories.FACTORY * categories.TECH1 * (categories.ARM + categories.CORE))
     --LOG('EXIST1')
@@ -152,7 +151,7 @@ NumberOfPlantsT1 = function(aiBrain, category)
     aiBrain.Plants = aiBrain.PlantCount - aiBrain.PlantBuilding
     ---LOG('EXIST4')
     --LOG(Plants)
-    return aiBrain.Plants
+    return (aiBrain.Plants > 10)
 end
 
 --self.FindHQType(aiBrain, category)

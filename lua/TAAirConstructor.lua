@@ -28,7 +28,7 @@ TAAirConstructor = Class(TAair) {
             end
         end
         self.BuildingUnit = false
-        if __blueprints['armgant'] then
+        if __blueprints['armgant'] and not EntityCategoryContains(categories.TECH3, self) then
             TAutils.updateBuildRestrictions(self)
         end
     end,

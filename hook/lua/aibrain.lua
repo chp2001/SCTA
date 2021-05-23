@@ -1,4 +1,5 @@
 WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'..debug.getinfo(1).currentline..'] * SCTAAI: offset aibrain.lua' )
+--local TAReclaim = import('/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua')
 
 SCTAAIBrainClass = AIBrain
 AIBrain = Class(SCTAAIBrainClass) {
@@ -62,6 +63,7 @@ AIBrain = Class(SCTAAIBrainClass) {
         if string.find(per, 'scta') then
             --LOG('* AI-SCTA: This is SCTA')
             self.SCTAAI = true
+            --self.ForkThread(TAReclaim.MassFabManagerThreadSCTAI, self)
         end
     end,
 

@@ -11,7 +11,7 @@ local PLATFORM = (categories.FACTORY * categories.TECH3)
 local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
 local CLOAKREACT = categories.ENERGYPRODUCTION * categories.TECH3 * categories.STRUCTURE
 
-AirCarrierExist = function(aiBrain)
+AirCarrierExist = function(self, aiBrain)
     if Factory(aiBrain,  0, categories.NAVALCARRIER) then 
         return 200
     else
@@ -19,7 +19,7 @@ AirCarrierExist = function(aiBrain)
     end
 end
 
-AirProduction = function(aiBrain)
+AirProduction = function(self, aiBrain)
     if Factory(aiBrain,  4, LAB) then 
         return 10
     elseif Factory(aiBrain,  0, categories.GATE) then
@@ -29,7 +29,7 @@ AirProduction = function(aiBrain)
     end
 end
 
-AssistProduction = function(aiBrain)
+AssistProduction = function(self, aiBrain)
     if Factory(aiBrain,  0, LAB) then 
         return 100
     elseif Factory(aiBrain,  6, PLANT) then 
@@ -43,7 +43,7 @@ end
 ---TECHUPPRoduction
 
 
-StructureProductionT2 = function(aiBrain)
+StructureProductionT2 = function(self, aiBrain)
     if Factory(aiBrain,  2, LAB)  then 
         return 120
     elseif Factory(aiBrain,  0, LAB) then
@@ -53,7 +53,7 @@ StructureProductionT2 = function(aiBrain)
     end
 end
 
-StructureProductionT2Energy = function(aiBrain)
+StructureProductionT2Energy = function(self, aiBrain)
     if Factory(aiBrain,  2, LAB) and PowerGeneration(aiBrain,  1, CLOAKREACT) then 
         return 150
     elseif Factory(aiBrain,  0, LAB) and PowerGeneration(aiBrain,  1, CLOAKREACT) then
@@ -63,7 +63,7 @@ StructureProductionT2Energy = function(aiBrain)
     end
 end
 
-ProductionT3Air = function(aiBrain)
+ProductionT3Air = function(self, aiBrain)
     if Factory(aiBrain,  6, LAB) and Factory(aiBrain,  0, CLOAKREACT) then 
         return 100
     elseif Factory(aiBrain,  0, PLATFORM) and Factory(aiBrain,  0, CLOAKREACT) then
@@ -75,7 +75,7 @@ ProductionT3Air = function(aiBrain)
     end
 end
 
-UnitProductionAir = function(aiBrain)
+UnitProductionAir = function(self, aiBrain)
     if Factory(aiBrain,  1, PLATFORM) and Factory(aiBrain,  0, FUSION) then
         return 75
     elseif Factory(aiBrain,  1, LAB) and Factory(aiBrain,  0, FUSION) then
@@ -87,7 +87,7 @@ UnitProductionAir = function(aiBrain)
     end
 end
 
-FactoryReclaim = function(aiBrain)
+FactoryReclaim = function(self, aiBrain)
     if Factory(aiBrain,  1, PLATFORM) then
         return 100
     elseif Factory(aiBrain,  12, PLANT) then 
@@ -113,7 +113,7 @@ end
 ----TECH1 PRODUCTION
 
 
-ProductionT3 = function(aiBrain)
+ProductionT3 = function(self, aiBrain)
     if Factory(aiBrain,  6, LAB)  then 
         return 100
     elseif Factory(aiBrain,  0, PLATFORM) then
@@ -125,7 +125,7 @@ ProductionT3 = function(aiBrain)
     end
 end
 
-UnitProduction = function(aiBrain)
+UnitProduction = function(self, aiBrain)
     if Factory(aiBrain,  1, PLATFORM) then
         return 80
     elseif Factory(aiBrain,  1, LAB) then
@@ -137,7 +137,7 @@ UnitProduction = function(aiBrain)
     end
 end
 
-UnitProductionT1 = function(aiBrain)
+UnitProductionT1 = function(self, aiBrain)
     if Factory(aiBrain,  0, categories.GATE) then
           return 0
     elseif Factory(aiBrain,  4, LAB) then
@@ -150,7 +150,7 @@ UnitProductionT1 = function(aiBrain)
   end
 
 
-HighTechEnergyProduction = function(aiBrain)
+HighTechEnergyProduction = function(self, aiBrain)
     if Factory(aiBrain,  2, FUSION) then 
         return 0
     else
@@ -164,7 +164,7 @@ end
 
 
 
-GateBeingBuilt = function(aiBrain)
+GateBeingBuilt = function(self, aiBrain)
     if MoreProduct(aiBrain,  0, categories.GATE) then 
         return 125
     else
@@ -172,7 +172,7 @@ GateBeingBuilt = function(aiBrain)
     end
 end
 
-HydroBeingBuiltACU = function(aiBrain)
+HydroBeingBuiltACU = function(self, aiBrain)
     if MoreProduct(aiBrain,  0, categories.HYDROCARBON) then 
         return 950
     else
@@ -182,7 +182,7 @@ end
 
 --ENERGYMIDTECH
 
-NothingBuilt = function(aiBrain)
+NothingBuilt = function(self, aiBrain)
     if MoreProduct(aiBrain,  0, FUSION) then 
         return 200
     else
@@ -190,7 +190,7 @@ NothingBuilt = function(aiBrain)
     end
 end
 
-GantryUnitBuilding = function(aiBrain)
+GantryUnitBuilding = function(self, aiBrain)
     if LessProduct(aiBrain,  1, categories.EXPERIMENTAL * categories.MOBILE) and Factory(aiBrain,  0, categories.GATE) then 
         return 200
     else
@@ -198,7 +198,7 @@ GantryUnitBuilding = function(aiBrain)
     end
 end
 
-TechEnergyExist = function(aiBrain)
+TechEnergyExist = function(self, aiBrain)
     if Factory(aiBrain,  1, FUSION) then 
         return 125
     else
@@ -206,7 +206,7 @@ TechEnergyExist = function(aiBrain)
     end
 end
 
-GantryConstruction = function(aiBrain)
+GantryConstruction = function(self, aiBrain)
     if Factory(aiBrain,  2, PLATFORM)  then
         return 125
     elseif Factory(aiBrain,  6, LAB) then
@@ -217,7 +217,7 @@ GantryConstruction = function(aiBrain)
 end
 
 
-UnitProductionField = function(aiBrain)
+UnitProductionField = function(self, aiBrain)
     if Factory(aiBrain,  0, categories.FIELDENGINEER) then
         return 200
     else
@@ -225,7 +225,7 @@ UnitProductionField = function(aiBrain)
     end
 end
 
-UnitProductionLab = function(aiBrain)
+UnitProductionLab = function(self, aiBrain)
     if Factory(aiBrain,  0, RAIDER) then
         return 200
     else
@@ -233,7 +233,7 @@ UnitProductionLab = function(aiBrain)
     end
 end
 
-GantryProduction = function(aiBrain)
+GantryProduction = function(self, aiBrain)
     if Factory(aiBrain,  0, categories.GATE) then
         return 200
     else

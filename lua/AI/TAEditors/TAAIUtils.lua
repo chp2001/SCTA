@@ -169,14 +169,7 @@ function TAFactoryCapCheck(aiBrain, locationType, TECH)
     end
     local numUnits = factoryManager:GetNumCategoryFactories(catCheck)
     numUnits = numUnits + aiBrain:GetEngineerManagerUnitsBeingBuilt(catCheck)
-    if TECH == categories.TECH1 then
-        numUnits = numUnits 
-    elseif TECH == categories.TECH2 then
-        numUnits = numUnits * 2 
-    else 
-        numUnits = numUnits * 4 
-    end
-    if numUnits < 16 then
+    if numUnits < 12 then
         return true
     else
         return false

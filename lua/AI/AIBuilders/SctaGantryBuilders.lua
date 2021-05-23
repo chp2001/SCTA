@@ -84,7 +84,7 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'FieldTA',
+        BuilderType = 'Command',
     },
     Builder {
         BuilderName = 'SCTA CDR Assist Structure',
@@ -98,7 +98,7 @@ BuilderGroup {
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.ENGINEER * (categories.COMMAND + categories.SUBCOMMANDER)} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
-        BuilderType = 'FieldTA',
+        BuilderType = 'Command',
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
@@ -118,7 +118,6 @@ BuilderGroup {
         PriorityFunction = TAPrior.GantryConstruction,
         DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
-            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 3,  PLATFORM} },
             { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.GATE} }, -- Stop after 10 facs have been built.
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.GATE} },

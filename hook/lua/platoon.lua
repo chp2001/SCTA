@@ -1469,12 +1469,16 @@ Platoon = Class(SCTAAIPlatoon) {
         local aiBrain = self:GetBrain()
         local platoonUnits = self:GetPlatoonUnits()
         local Squad = self:GetSquadUnits('Artillery')
+        --local Attack = self:GetSquadUnits('Attack')
         local target
+        if self.PlatoonData.Energy and EntityCategoryContains(categories.ANTISHIELD, Squad) then
+            self.EDrain = true
+        end
         while aiBrain:PlatoonExists(self) do
-        --[[if aiBrain:PlatoonExists(self) and table.getn(platoonUnits) < 10 then
+            --[[if aiBrain:PlatoonExists(self) and table.getn(platoonUnits) < 5 then
             self:MergeWithNearbyPlatoonsSCTA('TAHunt', 'TAHunt', 5)
             end]]
-            if self.PlatoonData.Energy and not self.EcoCheck then
+            if self.EDrain and not self.EcoCheck then
                 WaitSeconds(1)
                 self:CheckEnergySCTAEco()
             end
@@ -1484,6 +1488,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 self:Stop()
                 local threat = target:GetPosition() 
                 self:AggressiveMoveToLocation(table.copy(threat))
+                --self:AttackTarget(target, 'Attack')
                 --DUNCAN - added to try and stop AI getting stuck.
                 local targetDist = VDist2Sq(threat[1],threat[3], self.Center[1], self.Center[3])
                 if targetDist < self.PlatoonData.TAWeaponRange then
@@ -1533,6 +1538,9 @@ Platoon = Class(SCTAAIPlatoon) {
             v:SetCustomName('AttackHuntSCTA')
         end]]
         while aiBrain:PlatoonExists(self) do
+            if aiBrain:PlatoonExists(self) and TAPrior.UnitProduction >= 80 then
+                self:MergeWithNearbyPlatoonsSCTA('SCTAStrikeForceAIEarly', 'SCTAStrikeForceAI', 5)
+            end
           local target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ALLUNITS - categories.AIR - categories.COMMAND - categories.STRUCTURE)
             if target then
                 local platLoc = self:GetPlatoonPosition()
@@ -1586,9 +1594,6 @@ Platoon = Class(SCTAAIPlatoon) {
             end
             self:SetPlatoonFormationOverride('Attack')
             WaitSeconds(5)
-            if aiBrain:PlatoonExists(self) and TAPrior.UnitProduction >= 80 then
-                self:MergeWithNearbyPlatoonsSCTA('SCTAStrikeForceAIEarly', 'SCTAStrikeForceAI', 5)
-            end
         end
     end,
 
@@ -1728,8 +1733,11 @@ Platoon = Class(SCTAAIPlatoon) {
         local AntiAir = self:GetSquadUnits('Scout')
         local blip = false
         local maxRadius = self.PlatoonData.SearchRadius or 100
+        if self.PlatoonData.Energy and EntityCategoryContains(categories.ANTISHIELD, Artillery) then
+            self.EDrain = true
+        end
         while aiBrain:PlatoonExists(self) do
-                if self.PlatoonData.Energy and not self.EcoCheck then
+                if self.EDrain and not self.EcoCheck then
                     WaitSeconds(1)
                     self:CheckEnergySCTAEco()
                 end
@@ -2337,8 +2345,11 @@ Platoon = Class(SCTAAIPlatoon) {
         local armyIndex = aiBrain:GetArmyIndex()
         local platoonUnits = self:GetPlatoonUnits()
         local target
+        if self.PlatoonData.Energy and EntityCategoryContains(categories.armhawk + categories.corvamp, platoonUnits) then
+            self.EDrain = true
+        end
         while aiBrain:PlatoonExists(self) do
-        if self.PlatoonData.Energy and not self.EcoCheck then
+            if self.EDrain and not self.EcoCheck then
             WaitSeconds(1)
             self:CheckEnergySCTAEco()
         end
@@ -2353,9 +2364,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 self:AttackTarget(target)
             end
             WaitSeconds(5)
-            if self.PlatoonData.Energy then
-                self.EcoCheck = nil
-            end
+            self.EcoCheck = nil
         end
     end,
 
@@ -2418,9 +2427,8 @@ Platoon = Class(SCTAAIPlatoon) {
         local hadtarget = false
         local basePosition = false
         local platoonUnits = self:GetPlatoonUnits()
-        if self.PlatoonData.Energy and not self.EcoCheck then
-            WaitSeconds(1)
-            self:CheckEnergySCTAEco()
+        if self.PlatoonData.Energy and EntityCategoryContains(categories.armhawk + categories.corvamp, platoonUnits) then
+            self.EDrain = true
         end
         if self.PlatoonData.LocationType and self.PlatoonData.LocationType != 'NOTMAIN' then
             --LOG('*SCTAEXPANSIONTA', locationType)
@@ -2437,6 +2445,10 @@ Platoon = Class(SCTAAIPlatoon) {
         end
 
         while aiBrain:PlatoonExists(self) do
+            if self.EDrain and not self.EcoCheck then
+                WaitSeconds(1)
+                self:CheckEnergySCTAEco()
+            end
             target = self:FindClosestUnit('Attack', 'Enemy', true, categories.AIR * categories.ANTIAIR)
             if not target then
                 target = self:FindClosestUnit('Attack', 'Enemy', true, categories.AIR * categories.MOBILE)

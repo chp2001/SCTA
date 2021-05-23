@@ -96,7 +96,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T3AirFactory Naval',
         PlatoonTemplate = 'EngineerBuilderSCTANaval2',
         Priority = 135,
-        PriorityFunction = TAPrior.ProductionT3,
+        PriorityFunction = TAPrior.ProductionT3Air,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
@@ -252,7 +252,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2 Naval PGen',
         PlatoonTemplate = 'EngineerBuilderSCTANaval2',
-        PriorityFunction = TAPrior.StructureProductionT2,
+        PriorityFunction = TAPrior.StructureProductionT2Energy,
         Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {

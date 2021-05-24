@@ -28,7 +28,7 @@ BuilderGroup {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Sea' } },
             { TASlow,   'TAAttackNaval', {true}},
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.FACTORY} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.FACTORY * categories.NAVAL} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
         BuilderType = 'SeaTA',
@@ -45,13 +45,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2NavalEarly Factory',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        PriorityFunction = TAPrior.StructureProductionT2,
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 125,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, LAB} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, LAB * categories.NAVAL} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },

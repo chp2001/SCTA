@@ -69,10 +69,12 @@ PlatoonTemplate {
     Name = 'T1FrigateSCTA',
     FactionSquads = {
         Arm = {
-            { 'armroy', 1, 1, 'Attack', 'GrowthFormation'},
+            { 'armroy', 1, 2, 'Attack', 'GrowthFormation'},
+            { 'armpt', 1, 1, 'Attack', 'GrowthFormation'},
         },
         Core = {
-            { 'corroy', 1, 1, 'Attack', 'GrowthFormation'},
+            { 'corroy', 1, 2, 'Attack', 'GrowthFormation'},
+            { 'corpt', 1, 1, 'Attack', 'GrowthFormation' },
         },
     }
 }

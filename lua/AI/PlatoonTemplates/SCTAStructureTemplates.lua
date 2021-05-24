@@ -41,7 +41,7 @@ PlatoonTemplate {
     Plan = 'TAPauseAI',
     ---PlatoonType = 'StructureForm',
     GlobalSquads = {
-        { categories.STRUCTURE * categories.MASSFABRICATION, 1, 1, 'support', 'none' },
+        { categories.STRUCTURE * categories.MASSFABRICATION, 1, 100, 'support', 'none' },
     }
 }
 

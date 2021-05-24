@@ -218,7 +218,7 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager) {
                     end
                 end
             end
-            if factory.DelayThread then
+            if factory.DelayThread or factory.TABuildingUnit then
                 return
             end
             factory.DelayThread = true
@@ -254,9 +254,9 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager) {
                 --LOG('*TAAI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Factory Builder Manager Building - ',repr(builder.BuilderName))
 
                 -- rename factory to actual build-platoon name
-                if self.Brain[ScenarioInfo.Options.AIPLatoonNameDebug] or ScenarioInfo.Options.AIPLatoonNameDebug == 'all' then
+                    if self.Brain[ScenarioInfo.Options.AIPLatoonNameDebug] or ScenarioInfo.Options.AIPLatoonNameDebug == 'all' then
                     factory:SetCustomName(builder.BuilderName)
-                end
+                    end
 
                 --LOG('*Building', template)
                 self.Brain:BuildPlatoon(template, {factory}, 1)

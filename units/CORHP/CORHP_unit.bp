@@ -92,6 +92,7 @@ InitialRallyZ = 7,
         BuildBones = {
             BuildEffectBones = {'beam1','beam2', 'beam3', 'beam4'},
         },  
+                ---RolloffDelay = 1,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

@@ -106,7 +106,7 @@ BuilderGroup {
         BuilderName = 'SCTAAi Frigate Naval',
         PlatoonTemplate = 'T1FrigateSCTA',
         PriorityFunction = TAPrior.NavalProduction,
-        Priority = 120,
+        Priority = 130,
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},	
             { TASlow, 'TAHaveUnitRatioGreaterThanNavalT1', {categories.FRIGATE} }, 

@@ -101,6 +101,7 @@ InitialRallyZ = 7,
             BuildEffectBones = {'muzzle1', 'muzzle2'},
         },       
 	
+                ---RolloffDelay = 1,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

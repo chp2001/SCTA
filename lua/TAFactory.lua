@@ -30,7 +30,8 @@ TAFactory = Class(FactoryUnit) {
 
         FactoryStartBuild = function(self, unitBeingBuilt, order )
             WaitFor(self.AnimManip)
-            if not self.Dead and not IsDestroyed(unitBeingBuilt) then  
+            if not self.Dead and not IsDestroyed(unitBeingBuilt) then
+            self.TABuildingUnit = true      
             FactoryUnit.OnStartBuild(self, unitBeingBuilt, order )
             end
         end,
@@ -38,11 +39,11 @@ TAFactory = Class(FactoryUnit) {
 		Open = function(self)
             self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
             self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
-            self.TABuildingUnit = true
         end,
 
 
         OnStopBuild = function(self, unitBuilding)
+            self.TABuildingUnit = nil
             FactoryUnit.OnStopBuild(self, unitBuilding)
             self:Close()
 		end,
@@ -51,7 +52,6 @@ TAFactory = Class(FactoryUnit) {
 		Close = function(self)
             self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
             self.AnimManip:SetRate(-0.1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
-            self.TABuildingUnit = nil
         end,
 
 		CreateBuildEffects = function(self, unitBeingBuilt, order)
@@ -108,7 +108,6 @@ TAFactory = Class(FactoryUnit) {
             Close = function(self)
                 self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationPack)
                 self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationPackRate or 0.2))
-                self.TABuildingUnit = nil
             end,
     
         }

@@ -52,16 +52,16 @@ end
 
 ---TECHUPPRoduction
 NavalProduction = function(self, aiBrain)
-    if Numbers(aiBrain, true, 0, categories.NAVAL * categories.FACTORY, 'Enemy') and Factory(aiBrain,  0, categories.NAVAL * categories.FACTORY) then
-        return 150
+    if Numbers(aiBrain, true, 0, categories.NAVAL * categories.FACTORY, 'Enemy') and Factory(aiBrain,  0, categories.NAVAL * categories.FACTORY) or Numbers(aiBrain, true, 0, categories.NAVAL * categories.MOBILE, 'Enemy') then
+        return 125
     else
         return 0
     end
 end
 
 NavalProductionT2 = function(self, aiBrain)
-    if Numbers(aiBrain, true, 0, categories.NAVAL * categories.FACTORY, 'Enemy') and Factory(aiBrain,  0, categories.NAVAL * LAB) then
-        return 150
+    if Numbers(aiBrain, true, 0, categories.NAVAL * categories.FACTORY, 'Enemy') and Factory(aiBrain,  0, categories.NAVAL * LAB) or Numbers(aiBrain, true, 0, categories.NAVAL * categories.MOBILE, 'Enemy') then
+        return 160
     else
         return 0
     end

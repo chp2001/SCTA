@@ -100,6 +100,7 @@ UnitBlueprint {
             BuildAttachBone = 'buildpad',
             BuildEffectBones = {'flashy', 'nano1', 'nano2'},
         },    
+                ---RolloffDelay = 1,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

@@ -119,7 +119,7 @@ BuilderGroup {
         PlatoonTemplate = 'T1ScoutShipSCTA',
         PriorityFunction = TAPrior.NavalProduction,
         Priority = 120,
-        InstanceCount = 3,
+        ---InstanceCount = 3,
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},	
             { TAutils, 'EcoManagementTA', { 0.9, 0.9} }, -- Stop after 10 facs have been built.
@@ -131,7 +131,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2DestroyerSCTA',
         PriorityFunction = TAPrior.NavalProductionT2,
         Priority = 130,
-        InstanceCount = 1,
+        ------InstanceCount = 1,
         BuilderConditions = {
             { TASlow,   'TAAttackNaval', {true}},		
             { TASlow, 'TAHaveUnitRatioGreaterThanNaval', {categories.DESTROYER} }, -- Build engies until we have 4 of them.
@@ -144,7 +144,7 @@ BuilderGroup {
         PlatoonTemplate = 'T2CrusSCTA',
         PriorityFunction = TAPrior.NavalProductionT2,
         Priority = 120,
-        InstanceCount = 1,
+        ---InstanceCount = 1,
         BuilderConditions = {
             { TASlow,    'TAAttackNaval', {true}},	
             { TASlow, 'TAHaveUnitRatioGreaterThanNaval', {categories.CRUISER} },

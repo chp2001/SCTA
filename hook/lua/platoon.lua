@@ -1875,6 +1875,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 if not AirValidUnits then
                     continue
                 end
+                WaitSeconds(1)
                 aiBrain:AssignUnitsToPlatoon(self, validUnitsAir, 'Scout', 'GrowthFormation')
             end
             
@@ -1890,6 +1891,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 if not ArtValidUnits then
                     continue
                 end
+                WaitSeconds(1)
                 aiBrain:AssignUnitsToPlatoon(self, validUnitsArt, 'Artillery', 'GrowthFormation')
             end
                 --LOG("*AI DEBUG: Merging platoons " .. self.BuilderName .. ": (" .. platPos[1] .. ", " .. platPos[3] .. ") and " .. aPlat.BuilderName .. ": (" .. allyPlatPos[1] .. ", " .. allyPlatPos[3] .. ")")
@@ -1906,6 +1908,7 @@ Platoon = Class(SCTAAIPlatoon) {
                     if not bValidUnits then
                         continue
                     end        
+                    WaitSeconds(1)
                 aiBrain:AssignUnitsToPlatoon(self, validUnits, 'Attack', 'GrowthFormation')
                 end        
                 bMergedPlatoons = true

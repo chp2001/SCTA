@@ -96,6 +96,7 @@ UnitBlueprint {
         BuildBones = {
             BuildEffectBones = {'beam1', 'beam2'},
         },   
+                ---RolloffDelay = 1,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

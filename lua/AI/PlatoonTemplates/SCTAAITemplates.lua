@@ -214,6 +214,18 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
+    Name = 'T3HOVERTransportSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armthovr', 1, 1, 'support', 'GrowthFormation' }
+        },
+        Core = {
+            { 'corthovr', 1, 1, 'support', 'GrowthFormation' }
+        },
+    }
+}
+
+PlatoonTemplate {
     Name = 'T3HOVERMISSILESCTA',
     FactionSquads = {
         Arm = {

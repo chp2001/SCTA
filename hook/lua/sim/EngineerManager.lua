@@ -104,7 +104,7 @@ EngineerManager = Class(SCTAEngineerManager) {
         end
         if self.AssigningTask and unit:IsIdleState() then
             self.AssigningTask = nil
-        elseif self.AssigningTask and not unit:IsIdleState() or unit.UnitBeingBuilt or unit.unitBuilding then
+        elseif self.AssigningTask and not unit:IsIdleState() then
             return
         else
                 if unit:GetBlueprint().Economy.Land then
@@ -126,7 +126,9 @@ EngineerManager = Class(SCTAEngineerManager) {
 
     TAAssignEngineerTask = function(self, unit, bType)
         ---LOG('*Brain', self.Brain.SCTAAI)   
-
+        if unit.UnitBeingBuilt or unit.unitBuilding then
+            return
+        end
         unit.DesiresAssist = false
         unit.NumAssistees = nil
         unit.MinNumAssistees = nil

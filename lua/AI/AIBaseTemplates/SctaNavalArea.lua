@@ -20,7 +20,7 @@ BaseBuilderTemplate {
         FactoryCount = {
             Land = 1,
             Air = 1,
-            Sea = 2,
+            Sea = 3,
             Gate = 0,
         },
         MassToFactoryValues = {

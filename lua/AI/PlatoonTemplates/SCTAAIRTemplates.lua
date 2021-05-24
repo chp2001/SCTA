@@ -10,11 +10,20 @@ local SKY = categories.AIR * categories.MOBILE
 local STEALTH = categories.armhawk + categories.corvamp
 
 PlatoonTemplate {
+    Name = 'SCTATorpedosBombers',
+    Plan = 'BomberAISCTANaval',
+    --Type = 'SeaForm',
+    GlobalSquads = {
+        { SKY * categories.ANTINAVY, 1, 10, 'Attack', 'GrowthFormation' },
+    }
+}
+
+PlatoonTemplate {
     Name = 'SCTABomberAttack',
     Plan = 'BomberAISCTA',
     ---PlatoonType = 'Scout',
     GlobalSquads = {
-        { SKY * (categories.GROUNDATTACK + categories.BOMBER), 1, 100, 'Attack', 'GrowthFormation' },
+        { SKY * (categories.GROUNDATTACK + categories.BOMBER) - categories.ANTINAVY, 1, 100, 'Attack', 'GrowthFormation' },
     }
 }
 
@@ -41,7 +50,7 @@ PlatoonTemplate {
     Plan = 'InterceptorAISCTAStealth',
     ---PlatoonType = 'AirForm',
     GlobalSquads = {
-        { SKY * (categories.BOMBER + categories.GROUNDATTACK + categories.STEALTH), 1, 100, 'Attack', 'GrowthFormation' },
+        { SKY * (categories.BOMBER + categories.GROUNDATTACK) + STEALTH - categories.ANTINAVY, 1, 100, 'Attack', 'GrowthFormation' },
     }
 }
 
@@ -163,6 +172,30 @@ PlatoonTemplate {
         },
         Core = {
             { 'corvalk', 1, 1, 'support', 'GrowthFormation' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'SCTATorpedosBomber',
+    FactionSquads = {
+        Arm = {
+            { 'armlance', 1, 1, 'attack', 'GrowthFormation' }
+        },
+        Core = {
+            { 'cortitan', 1, 1, 'attack', 'GrowthFormation' }
+        },
+    }
+}
+
+PlatoonTemplate {
+    Name = 'SCTATorpedosBomberT3',
+    FactionSquads = {
+        Arm = {
+            { 'armseap', 1, 1, 'attack', 'GrowthFormation' }
+        },
+        Core = {
+            { 'corseap', 1, 1, 'attack', 'GrowthFormation' }
         },
     }
 }

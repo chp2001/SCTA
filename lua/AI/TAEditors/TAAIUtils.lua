@@ -228,8 +228,8 @@ end
 
 function TAHaveUnitRatioGreaterThanNavalT1(aiBrain, Naval)
     local numOne = aiBrain:GetCurrentUnits(Naval)
-    local numTwo = aiBrain:GetCurrentUnits(categories.SCOUT * categories.NAVAL)
-    if ((numOne + 1) / (numTwo + 1)) < 0.2 then
+    local numTwo = aiBrain:GetCurrentUnits(categories.LIGHTBOAT)
+    if (numOne < (numTwo + 1) * 2) then
         return true
     else
         return false
@@ -239,7 +239,7 @@ end
 function TAHaveUnitRatioGreaterThanNaval(aiBrain, Naval)
     local numOne = aiBrain:GetCurrentUnits(Naval)
     local numTwo = aiBrain:GetCurrentUnits(categories.FACTORY * categories.NAVAL * categories.TECH2)
-    if ((numOne + 1) / (numTwo + 1)) < 2 then
+    if (numOne < (numTwo + 1) * 2) then
         return true
     else
         return false
@@ -249,7 +249,7 @@ end
 function TAHaveUnitRatioGreaterThanNavalT3(aiBrain, Naval)
     local numOne = aiBrain:GetCurrentUnits(Naval)
     local numTwo = aiBrain:GetCurrentUnits(categories.FACTORY * categories.NAVAL * categories.TECH2)
-    if ((numOne + 1) / (numTwo + 2)) < 1 then
+    if (numOne < numTwo) then
         return true
     else
         return false

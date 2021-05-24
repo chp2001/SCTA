@@ -2498,6 +2498,21 @@ Platoon = Class(SCTAAIPlatoon) {
         end
     end,
 
+    BomberAISCTANaval = function(self)
+        self:Stop()
+        local aiBrain = self:GetBrain()
+        local armyIndex = aiBrain:GetArmyIndex()
+        local target
+        while aiBrain:PlatoonExists(self) do
+            target = self:FindClosestUnit('Attack', 'Enemy', true, categories.MOBILE * categories.NAVAL)
+            if target then
+                self:Stop()
+                self:AttackTarget(target)
+            end
+            WaitSeconds(5)
+        end
+    end,
+
     ---Treating Spider and Climbing Kbots as Air Unit
     SCTAArtyHuntAI = function(self)
         self:Stop()

@@ -97,6 +97,7 @@ UnitBlueprint {
         BuildBones = {
             BuildEffectBones = {'muzzlea','muzzleb'},
         },      
+                ---RolloffDelay = 1,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

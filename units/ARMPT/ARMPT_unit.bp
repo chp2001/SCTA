@@ -29,6 +29,7 @@ UnitBlueprint {
     BuildIconSortPriority = 2,
     Categories = {
         'SELECTABLE',
+        'ARM',
         'TECH1',
         'VISIBLETORECON',
         'RECLAIMABLE',
@@ -36,12 +37,12 @@ UnitBlueprint {
 	    'NAVAL',
 	    'DIRECTFIRE',
 	    'ANTIAIR',
-	    'LIGHTBOAT',
         'SILO',
+	    'LIGHTBOAT',
         'OVERLAYDIRECTFIRE',
         'OVERLAYANTIAIR',
-        'ARM',
-        'SCOUT',
+        'OVERLAYRADAR',
+        'OVERLAYSONAR',
     },
     CollisionOffsetY = -0.25,
     Defense = {

@@ -7,7 +7,7 @@ TAFactory = Class(FactoryUnit) {
     FactoryUnit.OnCreate(self)
     self.AnimManip = CreateAnimator(self)
     self.Trash:Add(self.AnimManip)
-    if __blueprints['armgant'] then
+    if __blueprints['armgant'] and not EntityCategoryContains(categories.TECH3 + categories.GATE, self) then
         TAutils.updateBuildRestrictions(self)
     end
     end,
@@ -30,7 +30,7 @@ TAFactory = Class(FactoryUnit) {
 
         FactoryStartBuild = function(self, unitBeingBuilt, order )
             WaitFor(self.AnimManip)
-            if not self.Dead and not IsDestroyed(unitBeingBuilt) then
+            if not self.Dead and not IsDestroyed(unitBeingBuilt) then  
             FactoryUnit.OnStartBuild(self, unitBeingBuilt, order )
             end
         end,

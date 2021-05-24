@@ -29,7 +29,7 @@ TAconstructor = Class(TAWalking) {
             end
         end
         self.BuildingUnit = false
-        if __blueprints['armgant'] then
+        if __blueprints['armgant'] and not EntityCategoryContains(categories.TECH3, self) then
             TAutils.updateBuildRestrictions(self)
         end
         --LOG('*Who', self:GetBlueprint().General.FactionName)
@@ -248,18 +248,16 @@ TACommander = Class(TAconstructor) {
     end,
 
     SetAutoOvercharge = function(self, auto)
-        local wep = self:GetWeaponByLabel('AutoOverCharge')
-        wep:SetAutoOvercharge(auto)
+        self:GetWeaponByLabel('AutoOverCharge'):SetAutoOvercharge(auto)
         self.Sync.AutoOvercharge = auto
     end,
 
     ResetRightArm = function(self)
        self:SetImmobile(false)
        self:SetWeaponEnabledByLabel('OverCharge', true)
-
-        -- Ugly hack to re-initialise auto-OC once a task finishes
-        local wep = self:GetWeaponByLabel('AutoOverCharge')
-        wep:SetAutoOvercharge(wep.AutoMode)
+        if self.Sync.AutoOvercharge then
+        self:GetWeaponByLabel('AutoOverCharge'):SetAutoOvercharge(wep.AutoMode)
+        end
     end,
 
     OnPrepareArmToBuild = function(self)

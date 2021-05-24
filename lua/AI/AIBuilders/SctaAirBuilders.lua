@@ -18,6 +18,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Factory Stealth',
         PlatoonTemplate = 'T2AirFighterSCTA',
         Priority = 115,
+        PriorityFunction = TAPrior.TechEnergyExist,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
         { TAutils, 'EcoManagementTA', { 0.75, 0.9} },
         },
@@ -27,6 +28,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Factory Gunship',
         PlatoonTemplate = 'T2GunshipSCTA',
         Priority = 115,
+        PriorityFunction = TAPrior.TechEnergyExist,
         BuilderConditions = {
             { TASlow, 'TAHaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
             { TAutils, 'EcoManagementTA', { 0.75, 0.9} },
@@ -48,7 +50,7 @@ BuilderGroup {
         PlatoonTemplate = 'T3AirBomberSCTA',
         Priority = 150,
         InstanceCount = 1,
-        PriorityFunction = TAPrior.ProductionT3,
+        PriorityFunction = TAPrior.ProductionT3Air,
         BuilderConditions = {
             { TASlow, 'TAHaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
             { TAutils, 'EcoManagementTA', { 0.75, 0.9} },

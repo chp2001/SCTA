@@ -84,7 +84,7 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'FieldTA',
+        BuilderType = 'Command',
     },
     Builder {
         BuilderName = 'SCTA CDR Assist Structure',
@@ -98,7 +98,7 @@ BuilderGroup {
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.ENGINEER * (categories.COMMAND + categories.SUBCOMMANDER)} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
-        BuilderType = 'FieldTA',
+        BuilderType = 'Command',
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',

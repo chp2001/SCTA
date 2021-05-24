@@ -169,14 +169,7 @@ function TAFactoryCapCheck(aiBrain, locationType, TECH)
     end
     local numUnits = factoryManager:GetNumCategoryFactories(catCheck)
     numUnits = numUnits + aiBrain:GetEngineerManagerUnitsBeingBuilt(catCheck)
-    if TECH == categories.TECH1 then
-        numUnits = numUnits 
-    elseif TECH == categories.TECH2 then
-        numUnits = numUnits * 2 
-    else 
-        numUnits = numUnits * 4 
-    end
-    if numUnits < 16 then
+    if numUnits < 12 then
         return true
     else
         return false
@@ -363,3 +356,62 @@ function TAKite(vec1, vec2, distance)
     z = vec1[3] * (1 - distanceFrac) + vec2[3] * distanceFrac
     return {x,y,z}
 end
+
+--[[function MassFabManagerThreadSCTAI(aiBrain)
+    while aiBrain.Result ~= "defeat" do
+        while math.abs(aiBrain:GetEconomyIncome('ENERGY')-aiBrain:GetEconomyUsage('ENERGY'))<150 and not aiBrain:GetEconomyStoredRatio('ENERGY')<0.9 do
+            WaitSeconds(2)
+        end
+        local fabs = aiBrain:GetListOfUnits(categories.MASSFABRICATION * categories.STRUCTURE,false,false)
+        if table.getn(fabs)<1 then 
+            WaitSeconds(20) 
+            continue 
+        end
+        for k, v in fabs do
+            if v:GetScriptBit('RULEUTC_ProductionToggle') then
+                if aiBrain:GetEconomyIncome('ENERGY')-aiBrain:GetEconomyUsage('ENERGY')<0 or aiBrain:GetEconomyStoredRatio('ENERGY')<0.9 then
+                    v:SetScriptBit('RULEUTC_ProductionToggle', false)
+                    WaitTicks(1)
+                end
+            else
+                if aiBrain:GetEconomyIncome('ENERGY')-aiBrain:GetEconomyUsage('ENERGY')>150 then
+                    v:SetScriptBit('RULEUTC_ProductionToggle', true)
+                    WaitTicks(1)
+                end
+            end
+        end
+        WaitSeconds(2)
+    end
+end
+
+function MexManagerThreadSCTAI(aiBrain)
+    while aiBrain.Result ~= "defeat" do
+        local mex = aiBrain:GetListOfUnits(categories.MASSEXTRACTION * categories.STRUCTURE, false,false)
+        if table.getn(mex) < 1 then 
+            WaitSeconds(20) 
+            continue 
+        end
+        for k, v in mex do
+            if not v:GetFractionComplete == 1 then continue end
+            if not v:IsUnitState('Upgrading') then
+                if aiBrain:GetEconomyIncome('ENERGY').8 - aiBrain:GetEconomyUsage('ENERGY') < 0 or aiBrain:GetEconomyStoredRatio('ENERGY') < 0.9 then --do we want to upgrade
+                    IssueUpgrade({v}, self:GetBlueprint().General.UpgradesTo)
+                    WaitSeconds(2)
+                end
+            else
+                if not v:IsPaused() then
+                    if aiBrain:GetEconomyIncome('ENERGY') - aiBrain:GetEconomyUsage('ENERGY') > 150 then--if power stalling or mass stalling bad then pause
+                        v:SetPaused(true)
+                        WaitTicks(1)
+                    end
+                else
+                    if aiBrain:GetEconomyIncome('ENERGY') - aiBrain:GetEconomyUsage('ENERGY') > 150 then--if not power stalling or mass stalling bad then unpause
+                        v:SetPaused(false)
+                        WaitTicks(1)
+                    end
+                end
+            end
+        end
+        WaitSeconds(4)--do the loop every 4 seconds
+    end
+end]]

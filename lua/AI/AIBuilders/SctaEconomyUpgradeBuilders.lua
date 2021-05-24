@@ -99,6 +99,8 @@ BuilderGroup {
         BuilderName = 'SCTAMetalMakr',
         PlatoonTemplate = 'FabricationSCTA',
         Priority = 300,
+        FormRadius = 1000,
+        PriorityFunction = TAPrior.TechEnergyExist,
         BuilderConditions = {
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.MASSFABRICATION} },
                 { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.MASSFABRICATION}},
@@ -109,6 +111,8 @@ BuilderGroup {
         BuilderName = 'SCTAArtilleryAI',
         PlatoonTemplate = 'ArtillerySCTA',
         Priority = 300,
+        FormRadius = 1000,
+        PriorityFunction = TAPrior.TechEnergyExist,
         BuilderConditions = {
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.ARTILLERY * categories.STRUCTURE} },
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, categories.ARTILLERY * categories.STRUCTURE}},

@@ -104,27 +104,21 @@ EngineerManager = Class(SCTAEngineerManager) {
         end
         if self.AssigningTask and unit:IsIdleState() then
             self.AssigningTask = nil
-        elseif self.AssigningTask and not unit:IsIdleState() then
+        elseif self.AssigningTask and not unit:IsIdleState() or unit.UnitBeingBuilt or unit.unitBuilding then
             return
         else
                 if unit:GetBlueprint().Economy.Land then
-                    self:TAAssignEngineerTask(unit, 'LandTA')
-                    return
+                    return self:TAAssignEngineerTask(unit, 'LandTA')
                 elseif unit:GetBlueprint().Economy.Air then
-                    self:TAAssignEngineerTask(unit, 'AirTA')
-                    return
+                    return self:TAAssignEngineerTask(unit, 'AirTA')
                 elseif unit:GetBlueprint().Economy.Naval then
-                    self:TAAssignEngineerTask(unit, 'SeaTA')
-                    return
+                    return self:TAAssignEngineerTask(unit, 'SeaTA')
                 elseif unit:GetBlueprint().Economy.TECH3 then
-                    self:TAAssignEngineerTask(unit, 'T3TA')
-                    return
+                    return self:TAAssignEngineerTask(unit, 'T3TA')
                 elseif unit:GetBlueprint().Economy.Command then
-                    self:TAAssignEngineerTask(unit, 'Command')
-                    return
+                    return self:TAAssignEngineerTask(unit, 'Command')
                 else 
-                    self:TAAssignEngineerTask(unit, 'FieldTA')
-                    return
+                    return self:TAAssignEngineerTask(unit, 'FieldTA')                
                 end
             end
         end,
@@ -132,9 +126,6 @@ EngineerManager = Class(SCTAEngineerManager) {
 
     TAAssignEngineerTask = function(self, unit, bType)
         ---LOG('*Brain', self.Brain.SCTAAI)   
-        if unit.UnitBeingBuilt or unit.unitBuilding then
-            return
-        end
 
         unit.DesiresAssist = false
         unit.NumAssistees = nil

@@ -151,8 +151,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Air Expansion',
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
-        PriorityFunction = TAPrior.UnitProduction,
-        Priority = 111,
+        PriorityFunction = TAPrior.UnitProductionAir,
+        Priority = 120,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory2', 1},
         BuilderConditions = {
@@ -191,6 +191,7 @@ BuilderGroup {
             DesiresAssist = true,
             NumAssistees = 2,
             Construction = {
+                BuildClose = true,
                 BuildStructures = {
                     'T2Artillery',
                 }
@@ -245,7 +246,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T3AirFactory T2 Expansion',
         PlatoonTemplate = 'EngineerBuilderSCTAEco23',
-        PriorityFunction = TAPrior.ProductionT3,
+        PriorityFunction = TAPrior.ProductionT3Air,
         Priority = 140,
         InstanceCount = 2,
         BuilderConditions = {

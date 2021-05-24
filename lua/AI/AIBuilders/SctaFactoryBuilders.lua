@@ -162,7 +162,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T2AirFactory',
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
         Priority = 180,
-        TAPrior.UnitProduction,
+        PriorityFunction = TAPrior.UnitProductionAir,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory2', 1},
         BuilderConditions = {
@@ -194,7 +194,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
             { TASlow, 'TAFactoryCapCheck', { 'LocationType', categories.TECH3} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.HOVER * PLATFORM} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.LAND * PLATFORM} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
         BuilderType = 'OmniLand',
@@ -213,7 +213,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T3AirFactory T2',
         PlatoonTemplate = 'EngineerBuilderSCTAEco23',
-        PriorityFunction = TAPrior.ProductionT3,
+        PriorityFunction = TAPrior.ProductionT3Air,
         Priority = 140,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory', 1},

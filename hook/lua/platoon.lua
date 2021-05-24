@@ -1862,38 +1862,21 @@ Platoon = Class(SCTAAIPlatoon) {
                 local unitsAntiAir = aPlat:GetSquadUnits('Scout')
                 local units = aPlat:GetSquadUnits('Attack')
                 local unitsArtillery = aPlat:GetSquadUnits('Artillery')
-            if unitsAntiAir > 0 then
-                local validUnitsAir = {}
-                local AirValidUnits = false
-                
-                for _,u in unitsAntiAir do
-                    if not u.Dead and not u:IsUnitState('Attached') then
-                        table.insert(validUnitsAir, u)
-                        AirValidUnits = true
-                    end
-                end
-                if not AirValidUnits then
-                    continue
-                end
-                --WaitSeconds(1)
-                aiBrain:AssignUnitsToPlatoon(self, validUnitsAir, 'Scout', 'GrowthFormation')
-            end
-            
-             if unitsArtillery > 0 then
-                local validUnitsArt = {}
-                local ArtValidUnits = false
-                for _,u in unitsArtillery do
-                    if not u.Dead and not u:IsUnitState('Attached') then
+                if unitsArtillery > 0 then
+                    local validUnitsArt = {}
+                    local ArtValidUnits = false
+                    for _,u in unitsArtillery do
+                        if not u.Dead and not u:IsUnitState('Attached') then
                         table.insert(validUnitsArt, u)
                         ArtValidUnits = true
+                        end
                     end
-                end
-                if not ArtValidUnits then
-                    continue
-                end
-                ---WaitSeconds(1)
+                    if not ArtValidUnits then
+                        continue
+                    end
+                --WaitSeconds(1)
                 aiBrain:AssignUnitsToPlatoon(self, validUnitsArt, 'Artillery', 'GrowthFormation')
-            end
+                end
                 --LOG("*AI DEBUG: Merging platoons " .. self.BuilderName .. ": (" .. platPos[1] .. ", " .. platPos[3] .. ") and " .. aPlat.BuilderName .. ": (" .. allyPlatPos[1] .. ", " .. allyPlatPos[3] .. ")")
                             
                 if units > 0 then        
@@ -1908,9 +1891,25 @@ Platoon = Class(SCTAAIPlatoon) {
                     if not bValidUnits then
                         continue
                     end        
-                    WaitSeconds(1)
+                    --WaitSeconds(1)
                 aiBrain:AssignUnitsToPlatoon(self, validUnits, 'Attack', 'GrowthFormation')
-                end        
+                end
+                if unitsAntiAir > 0 then
+                    local validUnitsAir = {}
+                    local AirValidUnits = false
+                
+                    for _,u in unitsAntiAir do
+                        if not u.Dead and not u:IsUnitState('Attached') then
+                        table.insert(validUnitsAir, u)
+                        AirValidUnits = true
+                        end
+                    end
+                    if not AirValidUnits then
+                    continue
+                    end
+                --WaitSeconds(1)
+                aiBrain:AssignUnitsToPlatoon(self, validUnitsAir, 'Scout', 'GrowthFormation')
+                end                    
                 bMergedPlatoons = true
             end
         end

@@ -44,7 +44,7 @@ UnitBlueprint {
         MaxBrake = 1.25,
         MaxSpeed = 1.8,
         TurnRadius = 0,
-        TurnRate = 160,
+        TurnRate = 120,
     },
     SelectionSizeX = 1,
     SelectionSizeZ = 1,

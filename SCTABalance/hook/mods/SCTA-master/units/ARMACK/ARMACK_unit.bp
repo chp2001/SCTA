@@ -25,7 +25,7 @@ UnitBlueprint {
         MaxBrake = 1.25,
         MaxSpeed = 1.8,
         TurnRadius = 0,
-        TurnRate = 160,
+        TurnRate = 120,
     },
     LifeBarSize = 1,
     SelectionSizeX = 0.8,

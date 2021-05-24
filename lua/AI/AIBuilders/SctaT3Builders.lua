@@ -1,6 +1,7 @@
 local UCBC = '/lua/editor/UnitCountBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local TASlow = '/mods/SCTA-master/lua/AI/TAEditors/TAAIUtils.lua'
+local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local TBC = '/lua/editor/ThreatBuildConditions.lua'
 local TAutils = '/mods/SCTA-master/lua/AI/TAEditors/TAAIInstantConditions.lua'
@@ -44,9 +45,31 @@ BuilderGroup {
         BuilderType = 'Hover',
     },
     Builder {
+        BuilderName = 'SCTAAi FactoryT3 Hover Transport',
+        PlatoonTemplate = 'T3HOVERTransportSCTA',
+        Priority = 50,
+        PriorityFunction = TAPrior.ProductionT3,
+        BuilderConditions = {
+            { MIBC, 'ArmyNeedsTransports', {} },
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.TRANSPORTFOCUS} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.9} },
+        },
+        BuilderType = 'Hover',
+    },
+    Builder {
         BuilderName = 'SCTAAI Factory Seaplane Fighter',
         PlatoonTemplate = 'T3AirFighterSCTA',
         PriorityFunction = TAPrior.ProductionT3,
+        Priority = 140,
+        BuilderConditions = { -- Only make inties if the enemy air is strong.
+        { TAutils, 'EcoManagementTA', { 0.75, 0.9} },
+        },
+        BuilderType = 'Seaplane',
+    },
+    Builder {
+        BuilderName = 'SCTAAI Factory Seaplane Torpedo',
+        PlatoonTemplate = 'SCTATorpedosBomberT3',
+        PriorityFunction = TAPrior.NavalProductionT2,
         Priority = 140,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
         { TAutils, 'EcoManagementTA', { 0.75, 0.9} },

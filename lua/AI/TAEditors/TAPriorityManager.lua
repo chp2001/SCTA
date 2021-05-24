@@ -1,5 +1,6 @@
 local Factory = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsWithCategory
 local PowerGeneration = import('/lua/editor/UnitCountBuildConditions.lua').HaveLessThanUnitsWithCategory
+local Numbers = import('/lua/editor/UnitCountBuildConditions.lua').HaveUnitsWithCategoryAndAlliance
 local MoreProduct = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsInCategoryBeingBuilt
 local LessProduct = import('/lua/editor/UnitCountBuildConditions.lua').HaveLessThanUnitsInCategoryBeingBuilt
 local LessTime = import('/lua/editor/MiscBuildConditions.lua').LessThanGameTime
@@ -41,7 +42,21 @@ end
 
 
 ---TECHUPPRoduction
+NavalProduction = function(self, aiBrain)
+    if Numbers(aiBrain, true, 0, categories.NAVAL * categories.FACTORY, 'Enemy') and Factory(aiBrain,  0, categories.NAVAL * categories.FACTORY) then
+        return 150
+    else
+        return 0
+    end
+end
 
+NavalProductionT2 = function(self, aiBrain)
+    if Numbers(aiBrain, true, 0, categories.NAVAL * categories.FACTORY, 'Enemy') and Factory(aiBrain,  0, categories.NAVAL * LAB) then
+        return 150
+    else
+        return 0
+    end
+end
 
 StructureProductionT2 = function(self, aiBrain)
     if Factory(aiBrain,  2, LAB)  then 
@@ -160,13 +175,6 @@ GateBeingBuilt = function(self, aiBrain)
     end
 end
 
-HydroBeingBuiltACU = function(self, aiBrain)
-    if MoreProduct(aiBrain,  0, categories.HYDROCARBON) then 
-        return 950
-    else
-        return 0
-    end
-end
 
 --ENERGYMIDTECH
 

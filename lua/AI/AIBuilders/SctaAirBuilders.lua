@@ -67,7 +67,7 @@ BuilderGroup {
             { TAutils, 'EcoManagementTA', { 0.75, 0.9} },
         },
         BuilderType = 'Air',
-    },     
+    },
     Builder {
         BuilderName = 'SCTAAirTransport',
         PlatoonTemplate = 'SCTATransport',
@@ -76,6 +76,17 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'ArmyNeedsTransports', {} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.TRANSPORTFOCUS} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.9} },
+        },
+        BuilderType = 'Air',
+    },     
+    Builder {
+        BuilderName = 'SCTA Torpedos Bomber T2',
+        PlatoonTemplate = 'SCTATorpedosBomber',
+        PriorityFunction = TAPrior.NavalProduction,
+        Priority = 50,
+        InstanceCount = 2,
+        BuilderConditions = {
             { TAutils, 'EcoManagementTA', { 0.75, 0.9} },
         },
         BuilderType = 'Air',

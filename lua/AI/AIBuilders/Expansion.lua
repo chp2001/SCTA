@@ -19,6 +19,7 @@ local MIBC = '/lua/editor/MiscBuildConditions.lua'
 local EBC = '/lua/editor/EconomyBuildConditions.lua'
 local SAI = '/lua/ScenarioPlatoonAI.lua'
 local PlatoonFile = '/lua/platoon.lua'
+local TAPrior = import('/mods/SCTA-master/lua/AI/TAEditors/TAPriorityManager.lua')
 
 BuilderGroup {
     BuilderGroupName = 'SCTAExpansionBuilders',
@@ -92,6 +93,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Expansion Starter Late',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 99,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'ExpansionStart', 1},
@@ -126,6 +128,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Start Marker Late',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 104,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'ExpansionStart', 1},
@@ -192,11 +195,11 @@ BuilderGroup {
         BuilderName = 'SCTA Naval Expansions',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
         Priority = 251,
+        PriorityFunction = TAPrior.NavalProduction,
         InstanceCount = 2,
         DelayEqualBuildPlattons = {'NavalStart', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'NavalStart' }},
-            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, (categories.NAVAL * categories.FACTORY), 'Enemy'}},
             { UCBC, 'NavalBaseCheck', { } }, -- related to ScenarioInfo.Options.NavalExpansionsAllowed
             { UCBC, 'NavalAreaNeedsEngineer', { 'LocationType', 1000, -1000, 1000, 1, 'StructuresNotMex' } },
             { EBC, 'GreaterThanEconEfficiencyOverTime', { 0.9, 0.5 } },

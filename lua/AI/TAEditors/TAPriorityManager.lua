@@ -75,18 +75,6 @@ ProductionT3Air = function(self, aiBrain)
     end
 end
 
-UnitProductionAir = function(self, aiBrain)
-    if Factory(aiBrain,  1, PLATFORM) and Factory(aiBrain,  0, FUSION) then
-        return 75
-    elseif Factory(aiBrain,  1, LAB) and Factory(aiBrain,  0, FUSION) then
-        return 120
-    elseif Factory(aiBrain,  12, PLANT) and Factory(aiBrain,  0, FUSION) then 
-        return 100
-    else
-        return 0
-    end
-end
-
 FactoryReclaim = function(self, aiBrain)
     if Factory(aiBrain,  1, PLATFORM) then
         return 100

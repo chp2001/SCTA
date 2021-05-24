@@ -151,7 +151,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Air Expansion',
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
-        PriorityFunction = TAPrior.UnitProductionAir,
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 120,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory2', 1},
@@ -167,6 +167,7 @@ BuilderGroup {
             DesiresAssist = true,
             NumAssistees = 2,
             Construction = {
+                BuildClose = true,
                 BuildStructures = {
                     'T2AirFactory',
                 }

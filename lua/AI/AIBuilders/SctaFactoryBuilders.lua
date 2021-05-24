@@ -161,8 +161,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2AirFactory',
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
-        Priority = 180,
-        PriorityFunction = TAPrior.UnitProductionAir,
+        Priority = 120,
+        PriorityFunction = TAPrior.UnitProduction,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory2', 1},
         BuilderConditions = {
@@ -178,6 +178,7 @@ BuilderGroup {
             DesiresAssist = true,
             NumAssistees = 2,
             Construction = {
+                BuildClose = true,
                 BuildStructures = {
                     'T2AirFactory',
                 }
@@ -277,6 +278,29 @@ BuilderGroup {
             Construction = {
                 BuildStructures = {
                     'T3StrategicMissile',
+                }
+            }
+        }
+    },
+    Builder {
+        BuilderName = 'SCTAAI T2Engineer Home Pgen',
+        PlatoonTemplate = 'EngineerBuilderSCTA23All',
+        PriorityFunction = TAPrior.UnitProduction,
+        Priority = 500,
+        InstanceCount = 1,
+        BuilderConditions = {
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, FUSION} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, FUSION} },
+        },
+        BuilderType = 'NotACU',
+        BuilderData = {
+            DesiresAssist = true,
+            NumAssistees = 6,
+            NeedGuard = false,
+            Construction = {
+                BuildClose = true,
+                BuildStructures = {
+                    'T2EnergyProduction',
                 }
             }
         }

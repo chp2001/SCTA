@@ -45,7 +45,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2NavalEarly Factory',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        PriorityFunction = TAPrior.UnitProduction,
+        PriorityFunction = TAPrior.StructureProductionT2,
         Priority = 125,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory', 1},
@@ -77,7 +77,7 @@ BuilderGroup {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},		
             { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, LAB * categories.NAVAL } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, LAB * categories.NAVAL } },
+            { UCBC, 'PoolLessAtLocation', { 'LocationType', 1, LAB * categories.NAVAL}},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
         BuilderType = 'SeaTA',

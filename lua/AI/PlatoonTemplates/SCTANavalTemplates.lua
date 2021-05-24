@@ -13,7 +13,7 @@ PlatoonTemplate {
     Plan = 'ScoutingAISCTA',
     ---Type = 'SeaForm',
     GlobalSquads = {
-        { NAVY * categories.SCOUT, 1, 1, 'Attack', 'GrowthFormation' },
+        { NAVY * categories.LIGHTBOAT, 1, 1, 'Attack', 'GrowthFormation' },
     }
 }
 
@@ -22,7 +22,7 @@ PlatoonTemplate {
     Plan = 'NavalHuntSCTAAI',
     --Type = 'SeaForm',
     GlobalSquads = {
-        { NAVY * categories.SCOUT, 2, 10, 'Attack', 'GrowthFormation' },
+        { NAVY * categories.LIGHTBOAT, 2, 10, 'Attack', 'GrowthFormation' },
     }
 }
 

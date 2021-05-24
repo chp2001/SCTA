@@ -22,7 +22,8 @@ TASea = Class(TAunit)
 			for k, v in bp.Display.MovementEffects.TAMovement.Bones do
 				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.TAMovement.Emitter ):ScaleEmitter(bp.Display.MovementEffects.TAMovement.Scale))
 			end
-			elseif not self:IsUnitState('Moving') then
+		end
+		if not self:IsUnitState('Moving') then
 			for k,v in self.FxMovement do
 				v:Destroy()
 			end
@@ -121,7 +122,8 @@ TASeaWalking = Class(TAWalking)
 			for k, v in bp.Display.MovementEffects.TAMovement.Bones do
 				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.TAMovement.Emitter ):ScaleEmitter(bp.Display.MovementEffects.TAMovement.Scale))
 			end
-			elseif not self:IsUnitState('Moving') then
+		end
+			if not self:IsUnitState('Moving') then
 			for k,v in self.FxMovement do
 				v:Destroy()
 			end

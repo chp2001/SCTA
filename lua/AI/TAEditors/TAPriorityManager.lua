@@ -30,6 +30,15 @@ AirProduction = function(self, aiBrain)
     end
 end
 
+ScoutShipProduction = function(self, aiBrain)
+    if Factory(aiBrain,  0, categories.NAVAL * categories.FACTORY) and PowerGeneration(aiBrain,  1, categories.GATE) then 
+        return 110
+    else
+        return 0
+    end
+end
+
+
 AssistProduction = function(self, aiBrain)
     if Factory(aiBrain,  0, LAB) then 
         return 100

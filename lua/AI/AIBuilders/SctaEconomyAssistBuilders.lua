@@ -25,15 +25,15 @@ BuilderGroup {
         Priority = 100,
         InstanceCount = 5,
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, PLANT}},
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, PLANT * (categories.LAND + categories.AIR)}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4, LAB} },
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT * (categories.LAND + categories.AIR)} },
             { TAutils, 'LessMassStorageMaxTA', { 0.05}},    
             },
         BuilderData = {
             Location = 'LocationType',
             ReclaimTime = 30,
-            Reclaim = {'TECH1 FACTORY,'},
+            Reclaim = {'TECH1 FACTORY AIR, TECH1 FACTORY LAND,'},
         },
         BuilderType = 'NotACU',
     },

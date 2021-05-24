@@ -16,7 +16,7 @@ BuilderGroup {
         InstanceCount = 4,
         BuilderType = 'SeaForm',
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.NAVAL * categories.SCOUT } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.LIGHTBOAT } },
          },
          BuilderData = {
             LocationType = 'LocationType',
@@ -42,7 +42,7 @@ BuilderGroup {
         InstanceCount = 25,
         BuilderType = 'SeaForm',
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.NAVAL * categories.SCOUT } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.LIGHTBOAT } },
          },
          BuilderData = {
             LocationType = 'LocationType',
@@ -68,7 +68,7 @@ BuilderGroup {
         InstanceCount = 5,
         BuilderType = 'SeaForm',
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.SUBMERSIBLE - categories.ENGINEER} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.NAVAL * categories.SUBMERSIBLE * categories.MOBILE - categories.ENGINEER} },
          },
          BuilderData = {
             LocationType = 'LocationType',
@@ -109,7 +109,7 @@ BuilderGroup {
             },
         },
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.NAVAL * categories.MOBILE - categories.ENGINEER } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.NAVAL * categories.MOBILE * categories.MOBILE - categories.ENGINEER } },
         },
     },
     Builder {

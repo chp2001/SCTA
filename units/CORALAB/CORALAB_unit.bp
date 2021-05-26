@@ -72,7 +72,8 @@ UnitBlueprint {
         BuildCostEnergy = 3625,
         BuildCostMass = 1972, 
         BuildTime = 14000,
-	BuildRate = 200,
+        KBot = true,
+	    BuildRate = 200,
         BuildableCategory = {
             'BOT MOBILE TECH2 CORE',
         },

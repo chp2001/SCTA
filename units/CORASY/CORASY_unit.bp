@@ -76,6 +76,7 @@ UnitBlueprint {
         BuildCostMass = 2460, 
         BuildTime = 13080,
 	    BuildRate = 200,
+        NavalFactory = true,
         BuildableCategory = {
             'NAVAL MOBILE TECH2 CORE',
         },

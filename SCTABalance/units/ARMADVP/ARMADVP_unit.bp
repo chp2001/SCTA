@@ -75,6 +75,7 @@ UnitBlueprint {
         UniformScale = 0.16,
     },
     Economy = {
+        Vehicle = true,
         BuildCostEnergy = 60000,
         BuildCostMass = 6300, 
         BuildTime = 220000,

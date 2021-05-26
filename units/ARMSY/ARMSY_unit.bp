@@ -80,7 +80,8 @@ UnitBlueprint {
         BuildCostEnergy = 775,
         BuildCostMass = 600, 
         BuildTime = 6050,
-	BuildRate = 100,
+	    BuildRate = 100,
+        NavalFactory = true,
         BuildableCategory = {
             'NAVAL MOBILE TECH1 ARM',
         },

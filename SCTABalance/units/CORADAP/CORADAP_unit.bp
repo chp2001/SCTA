@@ -81,6 +81,7 @@ UnitBlueprint {
         BuildCostEnergy = 45000,
         BuildCostMass = 2000, 
         BuildTime = 90000,
+        AirFactory = true,
         DifferentialUpgradeCostCalculation = true,
     BuildRate = 360,
     BuildableCategory = {

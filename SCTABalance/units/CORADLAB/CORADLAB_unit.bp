@@ -78,6 +78,7 @@ UnitBlueprint {
         BuildCostEnergy = 60000,
         BuildCostMass = 6300, 
         BuildTime = 220000,
+        KBot = true,
         DifferentialUpgradeCostCalculation = true,
 	BuildRate = 300,
         BuildableCategory = {

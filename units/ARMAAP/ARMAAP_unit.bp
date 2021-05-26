@@ -78,6 +78,7 @@ UnitBlueprint {
         BuildCostMass = 2210, 
         BuildTime = 17376,
 	BuildRate = 200,
+    AirFactory = true,
         BuildableCategory = {
             'AIR MOBILE TECH2 ARM',
         },

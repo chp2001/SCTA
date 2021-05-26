@@ -92,17 +92,17 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager) {
                 else
                 unit.DesiresAssist = false
               end
-                if EntityCategoryContains(categories.BOT, unit) then
+                if unit:GetBlueprint().Economy.KBot then
                     self:SetupNewFactory(unit, 'KBot')
-                elseif EntityCategoryContains(categories.TANK, unit) then
+                elseif unit:GetBlueprint().Economy.Vehicle then
                     self:SetupNewFactory(unit, 'Vehicle')
-                elseif EntityCategoryContains(categories.GATE, unit) then
+                elseif unit:GetBlueprint().Economy.Gantry then
                     self:SetupNewFactory(unit, 'Gate')
-                elseif EntityCategoryContains(categories.SUBMERSIBLE, unit) then
+                elseif unit:GetBlueprint().Economy.Seaplane then
                     self:SetupNewFactory(unit, 'Seaplane')
-                elseif EntityCategoryContains(categories.AIR - categories.SUBMERSIBLE, unit) then
+                elseif unit:GetBlueprint().Economy.AirFactory then
                     self:SetupNewFactory(unit, 'Air')
-                elseif EntityCategoryContains(categories.NAVAL, unit) then
+                elseif unit:GetBlueprint().Economy.NavalFactory then
                     self:SetupNewFactory(unit, 'Sea')
                 else
                     self:SetupNewFactory(unit, 'Hover')

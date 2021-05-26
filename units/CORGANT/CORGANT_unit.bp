@@ -81,6 +81,7 @@ UnitBlueprint {
         BuildCostMass = 6587, 
         BuildTime = 41937,
         BuildRate = 200,
+        Gantry = true,
         BuildableCategory = {
             'BUILTBYQUANTUMGATE CORE',
         },

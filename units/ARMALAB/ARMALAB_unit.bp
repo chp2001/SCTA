@@ -77,6 +77,7 @@ UnitBlueprint {
         BuildableCategory = {
             'BOT MOBILE TECH2 ARM',
         },
+        KBot = true,
 	InitialRallyX = 0,
     InitialRallyZ = 7,
         StorageMass = 200,
@@ -91,7 +92,6 @@ UnitBlueprint {
         BuildBones = {
             BuildEffectBones = {'Nozzle_01','Nozzle_02'},
         },   
-        ---RolloffDelay = 1,
         Category = 'Factory',
         Classification = 'RULEUC_Factory',
         CommandCaps = {

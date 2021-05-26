@@ -85,6 +85,7 @@ UnitBlueprint {
         BuildableCategory = {
             'BUILTBYQUANTUMGATE ARM',
         },
+        Gantry = true,
         InitialRallyX = 0,
         InitialRallyZ = 8,
         StorageMass = 500,

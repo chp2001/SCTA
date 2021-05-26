@@ -71,6 +71,7 @@ UnitBlueprint {
         UniformScale = 0.12,
     },
     Economy = {
+        Hover = true,
         BuildCostEnergy = 5277,
         BuildCostMass = 2007, 
         BuildTime = 18520,

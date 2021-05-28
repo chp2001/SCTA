@@ -79,6 +79,7 @@ UnitBlueprint {
         BuildCostMass = 6000, 
         BuildTime = 200000,
         BuildRate = 360,
+        KBot = true,
         DifferentialUpgradeCostCalculation = true,
         BuildableCategory = {
             'BOT MOBILE TECH1 ARM',

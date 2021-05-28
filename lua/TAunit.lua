@@ -101,7 +101,7 @@ TAunit = Class(Unit)
 				self:EnableIntel('Cloak')
 				self:EnableIntel('CloakField')
 				self:SetMesh(self:GetBlueprint().Display.CloakMeshBlueprint, true)
-				if self:IsIdleState() then
+				if self:IsIdleState() or self:IsUnitState('Attacking') or self.unit:IsUnitState('MakingAttackRun') then
 					self:SetConsumptionPerSecondEnergy(self.MainCost)
 				else
 					self:SetConsumptionPerSecondEnergy(self.MainCost * 3)

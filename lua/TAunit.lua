@@ -67,7 +67,7 @@ TAunit = Class(Unit)
 	TAIntelMotion = function(self) 
 		while not self.Dead do
             coroutine.yield(11)
-			if self.TAIntelOn and self:IsIdleState() then
+			if self.TAIntelOn and (self:IsIdleState() or self:IsUnitState('Attacking')) then
                 self:SetConsumptionPerSecondEnergy(self.MainCost)
 			elseif self.TAIntelOn then
                 self:SetConsumptionPerSecondEnergy(self.MainCost * 2)
@@ -101,7 +101,7 @@ TAunit = Class(Unit)
 				self:EnableIntel('Cloak')
 				self:EnableIntel('CloakField')
 				self:SetMesh(self:GetBlueprint().Display.CloakMeshBlueprint, true)
-				if self:IsIdleState() or self:IsUnitState('Attacking') or self.unit:IsUnitState('MakingAttackRun') then
+				if self:IsIdleState() or self:IsUnitState('Attacking') then
 					self:SetConsumptionPerSecondEnergy(self.MainCost)
 				else
 					self:SetConsumptionPerSecondEnergy(self.MainCost * 3)

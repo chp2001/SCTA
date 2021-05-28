@@ -76,8 +76,8 @@ UnitBlueprint {
     },
     Economy = {
         Vehicle = true,
-        BuildCostEnergy = 60000,
-        BuildCostMass = 6300, 
+        BuildCostEnergy = 180000,
+        BuildCostMass = 10600, 
         BuildTime = 220000,
         DifferentialUpgradeCostCalculation = true,
 	BuildRate = 300,

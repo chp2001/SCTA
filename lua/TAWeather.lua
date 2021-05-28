@@ -87,9 +87,6 @@ TATidal = Class(TAStructure)
         self:SetProductionPerSecondEnergy( power )
     end,
 
-    OnKilled = function(self, instigator, type, overKillRatio)
-        TAStructure.OnKilled(self, instigator, type, overKillRatio)
-    end,
 }
 
 -----------------------
@@ -122,9 +119,7 @@ TAWin = Class(TAStructure)
     ------------------------------------------------------------------------
     -- Run the thread
     ------------------------------------------------------------------------
-    self:ForkThread(SyncroniseThread,30,self.OnWeatherInterval,self)
-    self.Spinners.post:SetSpeed(35)
-    self.Spinners.blades:SetSpeed(50)
+        self:ForkThread(SyncroniseThread,30,self.OnWeatherInterval,self)
     end,
 
     OnWeatherInterval = function(self)
@@ -132,5 +127,9 @@ TAWin = Class(TAStructure)
     self:SetProductionPerSecondEnergy (
         (WindEnergyMin + WindEnergyRange * ScenarioInfo.WindStats.Power)
     )
+    local Wind = self:GetProductionPerSecondEnergy()
+    ---LOG(Wind)
+    self.Spinners.post:SetSpeed(Wind)
+    self.Spinners.blades:SetSpeed(Wind * 2)
     end,
     }

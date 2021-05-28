@@ -160,12 +160,13 @@ TASeaConstructor = Class(TAconstructor)
 	CreateMovementEffects = function(self, EffectsBag, TypeSuffix)
 		if not IsDestroyed(self) then
 		TAconstructor.CreateMovementEffects(self, EffectsBag, TypeSuffix)
-		local bp = self:GetBlueprint()
+        local bp = self:GetBlueprint()
 		if self:IsUnitState('Moving') and bp.Display.MovementEffects.TAMovement then
 			for k, v in bp.Display.MovementEffects.TAMovement.Bones do
 				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.TAMovement.Emitter ):ScaleEmitter(bp.Display.MovementEffects.TAMovement.Scale))
 			end
-			elseif not self:IsUnitState('Moving') then
+		end
+		if not self:IsUnitState('Moving') then
 			for k,v in self.FxMovement do
 				v:Destroy()
 			end
@@ -300,6 +301,10 @@ TACommander = Class(TAconstructor) {
     OnStartReclaim = function(self, target)
 		TAconstructor.OnStartReclaim(self, target)
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
+    end,
+
+    OnStopReclaim = function(self, target)
+        TAconstructor.OnStopReclaim(self, target)
         if self:BeenDestroyed() then return end
         self:ResetRightArm()
     end,
@@ -307,8 +312,6 @@ TACommander = Class(TAconstructor) {
     OnStartCapture = function(self, target)
 		TAconstructor.OnStartCapture(self, target)
 		self:SetScriptBit('RULEUTC_CloakToggle', true)
-        if self:BeenDestroyed() then return end
-        self:ResetRightArm()
     end,
 
     OnStopBuild = function(self, unitBeingBuilt)

@@ -45,6 +45,7 @@ TAFactory = Class(FactoryUnit) {
         OnStopBuild = function(self, unitBuilding)
             self.TABuildingUnit = nil
             FactoryUnit.OnStopBuild(self, unitBuilding)
+            FactoryUnit.StopBuildingEffects(self, self.UnitBeingBuilt)
             self:Close()
 		end,
         

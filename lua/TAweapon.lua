@@ -8,7 +8,7 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 TAweapon = Class(DefaultWeapon) {
     OnCreate = function(self)
         DefaultWeapon.OnCreate(self)
-        self.army = self.unit:GetArmy()
+        self.TAArmy = self.unit:GetArmy()
     end,
     
         OnGotTargetCheck = function(self)
@@ -20,8 +20,8 @@ TAweapon = Class(DefaultWeapon) {
             local target = self:GetCurrentTarget()
         if (target) then
             if (IsUnit(target)) then
-                if target:GetBlip(self.army) ~= nil and target:GetBlip(self.army):IsSeenNow(self.army) then 
-                canSee = target:GetBlip(self.army):IsSeenNow(self.army)
+                if target:GetBlip(self.TAArmy) ~= nil and target:GetBlip(self.TAArmy):IsSeenNow(self.TAArmy) then 
+                canSee = target:GetBlip(self.TAArmy):IsSeenNow(self.TAArmy)
                 else 
                 canSee = false
                 end
@@ -49,7 +49,7 @@ TAweapon = Class(DefaultWeapon) {
 
     IdleState = State(DefaultWeapon.IdleState) {
         OnGotTarget = function(self) 
-            if (TAutils.ArmyHasTargetingFacility(self.army) or 
+            if (TAutils.ArmyHasTargetingFacility(self.TAArmy) or 
             self.unit:GetAIBrain().SCTAAI or
             self:OnGotTargetCheck() == true)  then
                 DefaultWeapon.IdleState.OnGotTarget(self)
@@ -60,7 +60,7 @@ TAweapon = Class(DefaultWeapon) {
     WeaponUnpackingState = State(DefaultWeapon.WeaponUnpackingState) {
         Main = function(self)          
             ---LOG('Resulting Table'..repr(TAutils.targetingFacilityData))
-            if (TAutils.ArmyHasTargetingFacility(self.army) or 
+            if (TAutils.ArmyHasTargetingFacility(self.TAArmy) or 
             self.unit:GetAIBrain().SCTAAI or
             self:OnGotTargetCheck() == true) then
                 DefaultWeapon.WeaponUnpackingState.Main(self)
@@ -68,7 +68,7 @@ TAweapon = Class(DefaultWeapon) {
         end,
 
         OnGotTarget = function(self)
-            if (TAutils.ArmyHasTargetingFacility(self.army) or 
+            if (TAutils.ArmyHasTargetingFacility(self.TAArmy) or 
             self.unit:GetAIBrain().SCTAAI or
             self:OnGotTargetCheck() == true) then
                 DefaultWeapon.WeaponUnpackingState.OnGotTarget(self)
@@ -78,7 +78,7 @@ TAweapon = Class(DefaultWeapon) {
 
     RackSalvoFireReadyState = State(DefaultWeapon.RackSalvoFireReadyState) {
         OnGotTarget = function(self)      
-            if (TAutils.ArmyHasTargetingFacility(self.army) or 
+            if (TAutils.ArmyHasTargetingFacility(self.TAArmy) or 
             self.unit:GetAIBrain().SCTAAI or
             self:OnGotTargetCheck() == true) then
                 DefaultWeapon.RackSalvoFireReadyState.OnGotTarget(self)
@@ -89,7 +89,7 @@ TAweapon = Class(DefaultWeapon) {
 
     WeaponPackingState = State(DefaultWeapon.WeaponPackingState) {        
         OnGotTarget = function(self)
-            if (TAutils.ArmyHasTargetingFacility(self.army) or 
+            if (TAutils.ArmyHasTargetingFacility(self.TAArmy) or 
             self.unit:GetAIBrain().SCTAAI or
             self:OnGotTargetCheck() == true) then
                 DefaultWeapon.WeaponPackingState.OnGotTarget(self)

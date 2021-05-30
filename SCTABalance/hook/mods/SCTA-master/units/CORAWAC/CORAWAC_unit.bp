@@ -46,6 +46,7 @@ UnitBlueprint {
                 Radar = true,
             },
             TAIntel = true,
+        VisionRadius = 40,
         RadarRadius = 100, 
         OmniRadius = 20,
         JamRadius = {

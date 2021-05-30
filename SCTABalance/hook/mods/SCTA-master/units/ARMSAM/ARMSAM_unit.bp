@@ -6,7 +6,7 @@ UnitBlueprint {
     Economy = {
         BuildCostMass = 110,
         BuildCostEnergy = 750,
-        BuildTime = 2300,
+        BuildTime = 2000,
     },
     Physics = {
         MaxSpeed = 2.4,

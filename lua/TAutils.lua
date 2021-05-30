@@ -1,5 +1,4 @@
 local util = import('/lua/utilities.lua')
-local explosion = import('/lua/defaultexplosions.lua')
 
 CreateTABuildingEffects = function(builder, unitBeingBuilt, BuildEffectBones, BuildEffectsBag)
     WaitSeconds(0.75)

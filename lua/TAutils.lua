@@ -107,13 +107,13 @@ end
 TABuildRestrictions = function(self)
     local aiBrain = GetArmyBrain(self.Army)
     local PlantsCat = ((categories.FACTORY + categories.GATE) * (categories.ARM + categories.CORE))
-    if self.FindHQType(aiBrain, PlantsCat * (categories.TECH3 + categories.EXPERIMENTAL)) or 
-        NumberOfPlantsT2(aiBrain, PlantsCat * (categories.TECH2)) > 4 then
+    if self.FindHQType(aiBrain, PlantsCat * (categories.TECH3 + categories.EXPERIMENTAL)) or aiBrain.Labs > 4
+       or NumberOfPlantsT2(aiBrain, PlantsCat * (categories.TECH2)) > 4 then
                 self:RemoveBuildRestriction(categories.TECH2)
                 self:RemoveBuildRestriction(categories.TECH3)
         return  
-    elseif self.FindHQType(aiBrain, PlantsCat * (categories.TECH2 + categories.EXPERIMENTAL)) or
-        NumberOfPlantsT1(aiBrain, PlantsCat * (categories.TECH1)) > 10 then
+    elseif self.FindHQType(aiBrain, PlantsCat * (categories.TECH2 + categories.EXPERIMENTAL)) or aiBrain.Plants > 10
+       or NumberOfPlantsT1(aiBrain, PlantsCat * (categories.TECH1)) > 10 then
                 self:RemoveBuildRestriction(categories.TECH2)
         return    
     end

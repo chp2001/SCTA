@@ -127,9 +127,9 @@ TAWin = Class(TAStructure)
     self:SetProductionPerSecondEnergy (
         (WindEnergyMin + WindEnergyRange * ScenarioInfo.WindStats.Power)
     )
-    local Wind = self:GetProductionPerSecondEnergy()
+    ---local Wind = 
     ---LOG(Wind)
-    self.Spinners.post:SetSpeed(Wind)
-    self.Spinners.blades:SetSpeed(Wind * 2)
+    self.Spinners.post:SetSpeed(self:GetProductionPerSecondEnergy())
+    self.Spinners.blades:SetSpeed((self:GetProductionPerSecondEnergy()) * 2)
     end,
     }

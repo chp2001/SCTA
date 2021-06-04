@@ -20,7 +20,7 @@ SizeY = 1.7,
 SizeZ = 1.7,
 Physics = {
     MaxBrake = 2.4,
-    MaxSpeed = 3.6,
+    MaxSpeed = 3.4,
     TurnRate = 150,
     MaxSteerForce = 10,
     },

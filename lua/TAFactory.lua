@@ -135,14 +135,14 @@ end,
                     self.TABuildingUnit = true
                     return
                 end
-                TAFactory.OnStartBuild(self, unitBeingBuilt, order )
+                FactoryUnit.OnStartBuild(self, unitBeingBuilt, order )
             end,
     
             FactoryStartBuild = function(self, unitBeingBuilt, order )
                 WaitFor(self.AnimManip)
                 if not self.Dead and not IsDestroyed(unitBeingBuilt) then   
                 unitBeingBuilt:ShowBone(0, true)     
-                TAFactory.OnStartBuild(self, unitBeingBuilt, order )
+                FactoryUnit.OnStartBuild(self, unitBeingBuilt, order )
                 end
             end,
             

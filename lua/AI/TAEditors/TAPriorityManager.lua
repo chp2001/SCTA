@@ -4,13 +4,13 @@ local Numbers = import('/lua/editor/UnitCountBuildConditions.lua').HaveUnitsWith
 local MoreProduct = import('/lua/editor/UnitCountBuildConditions.lua').HaveGreaterThanUnitsInCategoryBeingBuilt
 local LessProduct = import('/lua/editor/UnitCountBuildConditions.lua').HaveLessThanUnitsInCategoryBeingBuilt
 local LessTime = import('/lua/editor/MiscBuildConditions.lua').LessThanGameTime
-local RAIDAIR = categories.armfig + categories.corveng + categories.GROUNDATTACK
-local RAIDER =  categories.armpw + categories.corak + categories.armflash + categories.corgator + categories.AMPHIBIOUS - categories.COMMAND
+local RAIDAIR = (categories.armfig + categories.corveng + categories.GROUNDATTACK)
+local RAIDER =  (categories.armpw + categories.corak + categories.armflash + categories.corgator + (categories.AMPHIBIOUS - categories.COMMAND))
 local PLANT = (categories.FACTORY * categories.TECH1)
 local LAB = (categories.FACTORY * categories.TECH2)
 local PLATFORM = (categories.FACTORY * categories.TECH3)
-local FUSION = (categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE
-local CLOAKREACT = categories.ENERGYPRODUCTION * categories.TECH3 * categories.STRUCTURE
+local FUSION = ((categories.ENERGYPRODUCTION * (categories.TECH2 + categories.TECH3)) * categories.STRUCTURE)
+local CLOAKREACT = (categories.ENERGYPRODUCTION * categories.TECH3 * categories.STRUCTURE)
 
 AirCarrierExist = function(self, aiBrain)
     if Factory(aiBrain,  0, categories.NAVALCARRIER) then 
@@ -78,9 +78,9 @@ StructureProductionT2 = function(self, aiBrain)
 end
 
 StructureProductionT2Energy = function(self, aiBrain)
-    if Factory(aiBrain,  2, LAB) and PowerGeneration(aiBrain,  1, CLOAKREACT) then 
+    if Factory(aiBrain,  2, LAB) and PowerGeneration(aiBrain,  2, CLOAKREACT) then 
         return 150
-    elseif Factory(aiBrain,  0, LAB) and PowerGeneration(aiBrain,  1, CLOAKREACT) then
+    elseif Factory(aiBrain,  0, LAB) and PowerGeneration(aiBrain,  2, CLOAKREACT) then
         return 100
     else
         return 0

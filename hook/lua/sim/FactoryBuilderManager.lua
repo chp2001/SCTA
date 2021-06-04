@@ -244,9 +244,9 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager) {
             if factory.Dead then
                 return
             end
-            if factory.TABuildingUnit then
+            --[[if factory.TABuildingUnit then
                 return self:ForkThread(self.DelayBuildOrder, factory, bType, 2)
-            end
+            end]]
             --LOG('*TAIEXIST2', factory.TABuildingUnit)
             local builder = self:GetHighestBuilder(bType,{factory})
             --LOG('*TAIEXIST2', factory)

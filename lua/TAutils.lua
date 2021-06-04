@@ -1,5 +1,4 @@
 local util = import('/lua/utilities.lua')
-local explosion = import('/lua/defaultexplosions.lua')
 
 CreateTABuildingEffects = function(builder, unitBeingBuilt, BuildEffectBones, BuildEffectsBag)
     WaitSeconds(0.75)
@@ -88,7 +87,7 @@ end
 
 
 updateBuildRestrictions = function(self)
-    local aiBrain = GetArmyBrain(self.Army)
+    local aiBrain = self:GetAIBrain()
     --Add build restrictions
     --EngiModFinalFORMTA
     ---Basicallys Stop Lower Tech from building UpperTech. Advanced Factories now full access to builds
@@ -105,7 +104,7 @@ updateBuildRestrictions = function(self)
 end
 
 TABuildRestrictions = function(self)
-    local aiBrain = GetArmyBrain(self.Army)
+    local aiBrain = self:GetAIBrain()
     local PlantsCat = ((categories.FACTORY + categories.GATE) * (categories.ARM + categories.CORE))
     if self.FindHQType(aiBrain, PlantsCat * (categories.TECH3 + categories.EXPERIMENTAL)) or aiBrain.Labs > 4
        or NumberOfPlantsT2(aiBrain, PlantsCat * (categories.TECH2)) > 4 then

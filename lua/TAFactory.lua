@@ -27,6 +27,7 @@ end,
             if not self.TABuildingUnit then
             self:Open()
             ForkThread(self.FactoryStartBuild, self, unitBeingBuilt, order )
+            self.TABuildingUnit = true
             return
             end
             FactoryUnit.OnStartBuild(self, unitBeingBuilt, order )
@@ -41,18 +42,19 @@ end,
 
 		Open = function(self)
             self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
-            self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
-            self.TABuildingUnit = true  
+            self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))  
         end,
 
 
         --[[OnStopBuild = function(self, unitBuilding)
             FactoryUnit.OnStopBuild(self, unitBuilding)
             FactoryUnit.StopBuildingEffects(self, unitBuilding)
-            local Commands = self:GetCommandQueue()
-            LOG('TACommands', Commands)
-            if table.empty(Commands) then
-            self:Close()
+            if table.getn(self:GetCommandQueue()) <= 1 then
+                ForkThread(function()
+                WaitTicks(30)
+                self:Close()
+                self.TABuildingUnit = nil
+                end)
             end
 		end,]]
 
@@ -65,15 +67,16 @@ end,
             end
             self:DetachAll(bp.Display.BuildAttachBone or 0)
             self:DestroyBuildRotator()
-            if table.getn(self:GetCommandQueue()) <= 1 then
-                WaitTicks(30)
-                self:Close()
-            end
             if order ~= 'Upgrade' then
                 ChangeState(self, self.RollingOffState)
             else
                 self:SetBusy(false)
                 self:SetBlockCommandQueue(false)
+            end
+            if table.getn(self:GetCommandQueue()) <= 1 then
+                WaitTicks(20)
+                self:Close()
+                self.TABuildingUnit = nil
             end
         end,
         
@@ -81,7 +84,6 @@ end,
 		Close = function(self)
             self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
             self.AnimManip:SetRate(-0.01)
-            self.TABuildingUnit = nil
         end,
 
 		CreateBuildEffects = function(self, unitBeingBuilt, order)
@@ -127,20 +129,26 @@ end,
 
             OnStartBuild = function(self, unitBeingBuilt, order )
                 if not self.TABuildingUnit then
-                unitBeingBuilt:HideBone(0, true)
+                    unitBeingBuilt:HideBone(0, true)
+                    self:Open()
+                    ForkThread(self.FactoryStartBuild, self, unitBeingBuilt, order )
+                    self.TABuildingUnit = true
+                    return
                 end
                 TAFactory.OnStartBuild(self, unitBeingBuilt, order )
             end,
     
             FactoryStartBuild = function(self, unitBeingBuilt, order )
-                TAFactory.FactoryStartBuild(self, unitBeingBuilt, order )
-                unitBeingBuilt:ShowBone(0, true)
+                WaitFor(self.AnimManip)
+                if not self.Dead and not IsDestroyed(unitBeingBuilt) then   
+                unitBeingBuilt:ShowBone(0, true)     
+                TAFactory.OnStartBuild(self, unitBeingBuilt, order )
+                end
             end,
             
             Close = function(self)
                 self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationPack)
                 self.AnimManip:SetRate(1 * (self:GetBlueprint().Display.AnimationPackRate or 0.2))
-                self.TABuildingUnit = nil
             end,
     
         }

@@ -218,7 +218,7 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager) {
                     end
                 end
             end
-            if factory.DelayThread or factory.TABuildingUnit then
+            if factory.DelayThread then
                 return
             end
             factory.DelayThread = true

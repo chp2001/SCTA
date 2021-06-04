@@ -129,14 +129,21 @@ end,
 
             OnStartBuild = function(self, unitBeingBuilt, order )
                 if not self.TABuildingUnit then
-                unitBeingBuilt:HideBone(0, true)
+                    unitBeingBuilt:HideBone(0, true)
+                    self:Open()
+                    ForkThread(self.FactoryStartBuild, self, unitBeingBuilt, order )
+                    self.TABuildingUnit = true
+                    return
                 end
                 TAFactory.OnStartBuild(self, unitBeingBuilt, order )
             end,
     
             FactoryStartBuild = function(self, unitBeingBuilt, order )
-                TAFactory.FactoryStartBuild(self, unitBeingBuilt, order )
-                unitBeingBuilt:ShowBone(0, true)
+                WaitFor(self.AnimManip)
+                if not self.Dead and not IsDestroyed(unitBeingBuilt) then   
+                unitBeingBuilt:ShowBone(0, true)     
+                TAFactory.OnStartBuild(self, unitBeingBuilt, order )
+                end
             end,
             
             Close = function(self)

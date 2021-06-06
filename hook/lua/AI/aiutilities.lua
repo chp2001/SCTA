@@ -124,9 +124,9 @@ function SCTAEngineerMoveWithSafePath(aiBrain, unit, destination)
     end
 
     local result, bestPos = false
-    result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Land')
+    result, bestPos = AIAttackUtils.CanGraphAreaToSCTA(unit, destination, 'Land')
     if not result then
-            result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Amphibious')
+            result, bestPos = AIAttackUtils.CanGraphAreaToSCTA(unit, destination, 'Amphibious')
             if not result and not SUtils.CheckForMapMarkers(aiBrain) then
                 result, bestPos = unit:CanPathTo(destination)
             end
@@ -175,7 +175,7 @@ function SCTAEngineerMoveWithSafePathAir(aiBrain, unit, destination)
     --local PlanName = unit.PlatoonHandle.PlanName
     --LOG('*PlatoonName3', PlanName)
     local result, bestPos = false
-    result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Air')
+    result, bestPos = AIAttackUtils.CanGraphAreaToSCTA(unit, destination, 'Air')
     -- If we're here, we haven't used transports and we can path to the destination
     if result then
         local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Air', unit:GetPosition(), destination, 10)
@@ -201,7 +201,7 @@ function SCTAEngineerMoveWithSafePathNaval(aiBrain, unit, destination)
         return false
     end
     local result, bestPos = false
-    result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Water')
+    result, bestPos = AIAttackUtils.CanGraphAreaToSCTA(unit, destination, 'Water')
     if not result and not SUtils.CheckForMapMarkers(aiBrain) then
         result, bestPos = unit:CanPathTo(destination)
     end
@@ -231,7 +231,7 @@ function SCTAEngineerMoveWithSafePathLand(aiBrain, unit, destination)
     --local PlanName = unit.PlatoonHandle.PlanName
     --LOG('*PlatoonName2', PlanName)
     local result, bestPos = false
-    result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Land')
+    result, bestPos = AIAttackUtils.CanGraphAreaToSCTA(unit, destination, 'Land')
     if not result and not SUtils.CheckForMapMarkers(aiBrain) then
         result, bestPos = unit:CanPathTo(destination)
     end

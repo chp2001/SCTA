@@ -11,7 +11,7 @@
 # ==== Extractor Upgrades === #
 PlatoonTemplate {
     Name = 'SctaExtractorUpgrades',
-    Plan = 'UnitUpgradeAI',
+    Plan = 'UnitUpgradeAISCTA',
     ---PlatoonType = 'StructureForm',
     GlobalSquads = {
         { categories.MASSEXTRACTION * categories.STRUCTURE * categories.TECH1, 1, 1, 'support', 'none' }
@@ -20,7 +20,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'SctaIntelUpgrades',
-    Plan = 'UnitUpgradeAI',
+    Plan = 'UnitUpgradeAISCTA',
     ---PlatoonType = 'StructureForm',
     GlobalSquads = {
         { categories.INTELLIGENCE * categories.STRUCTURE * categories.TECH1, 1, 1, 'support', 'none' }
@@ -29,7 +29,7 @@ PlatoonTemplate {
 
 PlatoonTemplate {
     Name = 'SctaRadar2Upgrades',
-    Plan = 'UnitUpgradeAI',
+    Plan = 'UnitUpgradeAISCTA',
     ---PlatoonType = 'StructureForm',
     GlobalSquads = {
         { categories.RADAR * categories.STRUCTURE * categories.TECH2, 1, 1, 'support', 'none' }

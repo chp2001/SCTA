@@ -212,10 +212,10 @@ TechEnergyExist = function(self, aiBrain)
 end
 
 GantryConstruction = function(self, aiBrain)
-    if Factory(aiBrain,  2, PLATFORM)  then
+    if Factory(aiBrain,  1, PLATFORM)  then
         return 150
     elseif Factory(aiBrain,  6, LAB) then
-        return 10
+        return 100
     else
         return 0
     end

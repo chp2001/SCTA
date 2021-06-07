@@ -119,10 +119,11 @@ BuilderGroup {
         BuilderName = 'SCTA PGen Field Assist',
         PlatoonTemplate = 'EngineerBuilderSCTAField',
         PlatoonAIPlan = 'ManagerEngineerAssistAI',
-        PriorityFunction = TAPrior.NothingBuilt,
+        PriorityFunction = TAPrior.UnitProductionField,
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
+            { UCBC, 'HaveGreaterThanUnitsInCategoryBeingBuilt', { 0, FUSION, 'LocationType', }},
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.FIELDENGINEER}},
             { TAutils, 'EcoManagementTA', { 0.5, 0.5, } },
         },

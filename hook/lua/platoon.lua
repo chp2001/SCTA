@@ -2716,7 +2716,7 @@ Platoon = Class(SCTAAIPlatoon) {
                 local recPos = nil
                 local closest = {}
                 for i, r in reclaim do
-                    if self.PlatoonData.Terrain and eng:CanPathTo(r.pos) then
+                    if self.PlatoonData.Terrain and AIAttackUtils.CanGraphAreaToSCTA(eng, r.pos, 'Land') then
                         IssueReclaim(units, r.entity)
                         if i > 10 then break end
                     elseif not self.PlatoonData.Terrain then

@@ -106,7 +106,7 @@ PlatoonTemplate {
     Name = 'StrikeForceSCTAEarly',
     Plan = 'SCTAStrikeForceAIEarly',
     GlobalSquads = {
-        { GROUND * categories.TECH1 - SPECIAL - RANGE, 2, 10, 'Attack', 'none' }
+        { (GROUND * categories.TECH1) - SPECIAL - RANGE, 2, 10, 'Attack', 'none' }
     },
 }
 

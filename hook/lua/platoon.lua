@@ -1612,9 +1612,6 @@ Platoon = Class(SCTAAIPlatoon) {
             v:SetCustomName('AttackHuntSCTA')
         end]]
         while aiBrain:PlatoonExists(self) do
-            if aiBrain:PlatoonExists(self) and TAPrior.UnitProduction >= 80 then
-                self:MergeWithNearbyPlatoonsSCTA('SCTAStrikeForceAIEarly', 'SCTAStrikeForceAI', 5)
-            end
           local target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ALLUNITS - categories.AIR - categories.COMMAND - categories.STRUCTURE)
             if target then
                 local platLoc = self:GetPlatoonPosition()
@@ -1668,6 +1665,9 @@ Platoon = Class(SCTAAIPlatoon) {
             end
             self:SetPlatoonFormationOverride('Attack')
             WaitSeconds(5)
+            if aiBrain:PlatoonExists(self) and TAPrior.UnitProduction >= 80 then
+                self:MergeWithNearbyPlatoonsSCTA('SCTAStrikeForceAIEarly', 'SCTAStrikeForceAI', 5)
+            end
         end
     end,
 
@@ -1707,9 +1707,6 @@ Platoon = Class(SCTAAIPlatoon) {
         local maxRadius = self.PlatoonData.SearchRadius or 100
         while aiBrain:PlatoonExists(self) do
             local numberOfUnitsInPlatoon = table.getn(platoonUnits)
-            if aiBrain:PlatoonExists(self) and TAPrior.ProductionT3 >= 80 and numberOfUnitsInPlatoon < 20 then
-                self:MergeWithNearbyPlatoonsSCTA('SCTAStrikeForceAI', 'SCTAStrikeForceAIEndgame', 10)
-            end
             --self:SetPlatoonFormationOverride('Attack')
             if not target or target:IsDead() then
                 if aiBrain:GetCurrentEnemy() and aiBrain:GetCurrentEnemy():IsDefeated() then
@@ -1766,6 +1763,9 @@ Platoon = Class(SCTAAIPlatoon) {
                         self:MoveToLocation( (v), false )
                     end
                 end
+            end
+            if aiBrain:PlatoonExists(self) and TAPrior.ProductionT3 >= 80 and numberOfUnitsInPlatoon < 20 then
+                self:MergeWithNearbyPlatoonsSCTA('SCTAStrikeForceAI', 'SCTAStrikeForceAIEndgame', 10)
             end
             --self:SetPlatoonFormationOverride('Attack')
             WaitSeconds(7)
@@ -2003,9 +2003,6 @@ Platoon = Class(SCTAAIPlatoon) {
         local Squad = self:GetSquadUnits('Artillery')
         local target
         while aiBrain:PlatoonExists(self) do
-            if TAPrior.UnitProduction >= 80 and aiBrain:PlatoonExists(self) then
-                self:MergeWithNearbyPlatoonsSCTA('HuntSCTAAI', 'AttackSCTAForceAI', 5)
-            end
             target = self:FindClosestUnit('Artillery', 'Enemy', true, categories.ALLUNITS - categories.WALL)
             self.Center = self:GetPlatoonPosition()
             if target then
@@ -2027,6 +2024,9 @@ Platoon = Class(SCTAAIPlatoon) {
             local position = AIUtils.RandomLocation(self.Center[1],self.Center[3])
             self:MoveToLocation(position, false)
             WaitSeconds(2)
+            if TAPrior.UnitProduction >= 80 and aiBrain:PlatoonExists(self) then
+                self:MergeWithNearbyPlatoonsSCTA('HuntSCTAAI', 'AttackSCTAForceAI', 5)
+            end
         end
     end,
 

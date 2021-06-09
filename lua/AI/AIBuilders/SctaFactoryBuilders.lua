@@ -77,7 +77,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2LAND Vehicle Factory',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 108,
+        Priority = 150,
         PriorityFunction = TAPrior.UnitProduction,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory2', 1},
@@ -104,7 +104,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2LAND KBot Factory',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
-        Priority = 107,
+        Priority = 140,
         PriorityFunction = TAPrior.UnitProduction,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory2', 1},
@@ -161,7 +161,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2AirFactory',
         PlatoonTemplate = 'EngineerBuilderSCTAEco123',
-        Priority = 120,
+        Priority = 160,
         PriorityFunction = TAPrior.UnitProduction,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory2', 1},
@@ -189,7 +189,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T3LAND Hover Factory T2',
         PlatoonTemplate = 'EngineerBuilderSCTA23',
         PriorityFunction = TAPrior.ProductionT3,
-        Priority = 143,
+        Priority = 140,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
@@ -215,7 +215,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T3AirFactory T2',
         PlatoonTemplate = 'EngineerBuilderSCTAEco23',
         PriorityFunction = TAPrior.ProductionT3Air,
-        Priority = 140,
+        Priority = 130,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {

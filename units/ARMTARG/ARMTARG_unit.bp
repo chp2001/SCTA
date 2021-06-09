@@ -55,6 +55,8 @@ UnitBlueprint {
     Display = {
         AnimationUnpack = '/mods/SCTA-master/units/ARMTARG/ARMTARG_Aopen.sca',
         AnimationUnpackRate = 0.5, 
+        AnimationRepack = '/mods/SCTA-master/units/ARMTARG/ARMTARG_Aclose.sca',
+        AnimationRepackRate = 0.5, 
         Abilities = {
             'Radar Targeting',
         },

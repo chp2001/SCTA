@@ -27,8 +27,8 @@ ARMTARG = Class(TACloser) {
 ClosingState = State {
 	Main = function(self)
 		self:DisableIntel('Radar')
-		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationUnpack)
-		self.AnimManip:SetRate(-1 * (self:GetBlueprint().Display.AnimationUnpackRate or 0.2))
+		self.AnimManip:PlayAnim(self:GetBlueprint().Display.AnimationRepack)
+		self.AnimManip:SetRate(self:GetBlueprint().Display.AnimationRepackRate)
 		TACloser.ClosingState.Main(self)
 	end,
 	},

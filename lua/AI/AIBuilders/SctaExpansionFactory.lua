@@ -25,7 +25,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
-            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
+            { TASlow, 'TAFactoryCapCheckT1', {}},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, categories.FACTORY} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
@@ -51,7 +51,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
-            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
+            { TASlow, 'TAFactoryCapCheckT1', {}},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, categories.FACTORY} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
@@ -77,7 +77,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Factory2', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factory2' }},
-            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
+            { TASlow, 'TAFactoryCapCheckT2', {}},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, LAB} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
@@ -103,7 +103,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Factory2', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factory2' }},
-            { UCBC, 'FactoryCapCheck', { 'LocationType', 'Land' } },
+            { TASlow, 'TAFactoryCapCheckT2', {}},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 3, LAB} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },

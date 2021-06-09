@@ -57,10 +57,9 @@ AIBrain = Class(SCTAAIBrainClass) {
      end,
 
     OnCreateAI = function(self, planName)
-        SCTAAIBrainClass.OnCreateAI(self, planName)
-        local per = ScenarioInfo.ArmySetup[self.Name].AIPersonality
+        SCTAAIBrainClass.OnCreateAI(self, planName) 
         --LOG('Oncreate')
-        if string.find(per, 'scta') then
+        if string.find(ScenarioInfo.ArmySetup[self.Name].AIPersonality, 'scta') then
             --LOG('* AI-SCTA: This is SCTA')
             self.SCTAAI = true
             --self.ForkThread(TAReclaim.MassFabManagerThreadSCTAI, self)

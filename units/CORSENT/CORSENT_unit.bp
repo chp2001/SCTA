@@ -155,6 +155,7 @@ TechLevel = 'RULEUTL_Advanced',
             DisplayName = 'ARMYORK_GUN',
             FireTargetLayerCapsTable = {
                 Land = 'Air',
+                Seabed = 'Air',
             },
 	        RangeCategory = 'UWRC_AntiAir',
             WeaponCategory = 'AntiAir',

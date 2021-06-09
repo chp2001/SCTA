@@ -151,6 +151,7 @@ BuilderGroup {
         BuilderConditions = {
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1,  categories.FIELDENGINEER}},
             { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},
+            { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
         },
         BuilderData = {
             Terrain = true,

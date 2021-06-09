@@ -122,35 +122,27 @@ end
 
 NumberOfPlantsT2 = function(aiBrain, category)
     -- Returns number of extractors upgrading
-    aiBrain.DevelopmentCount = aiBrain:GetCurrentUnits(categories.RESEARCH * categories.TECH2 * category)
-    --LOG('EXIST1')
-    --LOG(DevelopmentCount)
-    aiBrain.LabCount = aiBrain:GetCurrentUnits(categories.SUPPORTFACTORY * categories.TECH2 * category)
-    --LOG('EXIST2')
-    --LOG(LabCount)
-    aiBrain.LabBuilding = aiBrain:NumCurrentlyBuilding(categories.ENGINEER, categories.SUPPORTFACTORY * categories.TECH2 * category)
-    --LOG('EXIST3')
-    --LOG(LabBuilding)
-    aiBrain.DevelopmentBuilding = aiBrain:NumCurrentlyBuilding(categories.FACTORY, categories.RESEARCH * categories.TECH2 * category)
-    --LOG('EXIST4')
-    --LOG(DevelopmentBuilding)
+    aiBrain.DevelopmentCount = aiBrain:GetCurrentUnits(categories.RESEARCH * category)
+    --LOG('*SCTADeveloment', aiBrain.DevelopmentCount)
+    aiBrain.LabCount = aiBrain:GetCurrentUnits(categories.SUPPORTFACTORY * category)
+    --LOG('*SCTALabsCount', aiBrain.LabCount)
+    aiBrain.LabBuilding = aiBrain:NumCurrentlyBuilding(categories.ENGINEER, categories.SUPPORTFACTORY * category)
+    --LOG('*SCTALabuilding', aiBrain.LabBuilding)
+    aiBrain.DevelopmentBuilding = aiBrain:NumCurrentlyBuilding(categories.FACTORY, categories.RESEARCH * category)
+    --LOG('*SCTADevelomentBuilding', aiBrain.DevelopmentBuilding)
     aiBrain.Labs = ((aiBrain.LabCount) + (aiBrain.DevelopmentCount * 2)) - aiBrain.LabBuilding - (aiBrain.DevelopmentBuilding * 2)
-    --('EXIST5')
-    --LOG(Labs)
+    --LOG('*SCTALabsOG', aiBrain.Labs)
     return aiBrain.Labs
 end
 
 NumberOfPlantsT1 = function(aiBrain, category)
     -- Returns number of extractors upgrading
-    aiBrain.PlantCount = aiBrain:GetCurrentUnits(categories.TECH1 * category)
-    --LOG('EXIST1')
-    --LOG(PlantCount)
-    aiBrain.PlantBuilding = aiBrain:NumCurrentlyBuilding(categories.ENGINEER, categories.TECH1 * category)
-    --LOG('EXIST2')
-    --LOG(PlantBuilding)
+    aiBrain.PlantCount = aiBrain:GetCurrentUnits(category)
+    --LOG('*SCTAPlantCount', aiBrain.PlantCount)
+    aiBrain.PlantBuilding = aiBrain:NumCurrentlyBuilding(categories.ENGINEER, category)
+    --LOG('*SCTAPlantBuilding', aiBrain.PlantBuilding)
     aiBrain.Plants = aiBrain.PlantCount - aiBrain.PlantBuilding
-    ---LOG('EXIST4')
-    --LOG(Plants)
+    --LOG('*SCTAPlants', aiBrain.Plants)
     return aiBrain.Plants
 end
 

@@ -21,10 +21,10 @@ AirCarrierExist = function(self, aiBrain)
 end
 
 AirProduction = function(self, aiBrain)
-    if Factory(aiBrain,  4, LAB) then 
-        return 10
-    elseif Factory(aiBrain,  0, categories.GATE) then
+    if Factory(aiBrain,  0, categories.GATE) then
         return 0
+    elseif aiBrain.Labs > 4 then 
+        return 10
     else
         return 105
     end
@@ -40,9 +40,9 @@ end
 
 
 AssistProduction = function(self, aiBrain)
-    if Factory(aiBrain,  0, LAB) then 
+    if aiBrain.Plant > 12 then 
         return 100
-    elseif Factory(aiBrain,  6, PLANT) then 
+    elseif aiBrain.Plant > 4 then 
             return 50
     else
         return 0
@@ -52,7 +52,7 @@ end
 
 ---TECHUPPRoduction
 NavalProduction = function(self, aiBrain)
-    if Numbers(aiBrain, true, 0, categories.NAVAL * categories.FACTORY, 'Enemy') and Factory(aiBrain,  0, categories.NAVAL * categories.FACTORY) or Numbers(aiBrain, true, 0, categories.NAVAL * categories.MOBILE, 'Enemy') then
+    if (Numbers(aiBrain, true, 0, categories.NAVAL * categories.FACTORY, 'Enemy') and Factory(aiBrain,  0, categories.NAVAL * categories.FACTORY)) or Numbers(aiBrain, true, 0, categories.NAVAL * categories.MOBILE, 'Enemy') then
         return 125
     else
         return 0
@@ -60,7 +60,7 @@ NavalProduction = function(self, aiBrain)
 end
 
 NavalProductionT2 = function(self, aiBrain)
-    if Numbers(aiBrain, true, 0, categories.NAVAL * categories.FACTORY, 'Enemy') and Factory(aiBrain,  0, categories.NAVAL * LAB) or Numbers(aiBrain, true, 0, categories.NAVAL * categories.MOBILE, 'Enemy') then
+    if (Numbers(aiBrain, true, 0, categories.NAVAL * categories.FACTORY, 'Enemy') and Factory(aiBrain,  0, categories.NAVAL * LAB)) or Numbers(aiBrain, true, 0, categories.NAVAL * categories.MOBILE, 'Enemy') then
         return 160
     else
         return 0
@@ -68,9 +68,9 @@ NavalProductionT2 = function(self, aiBrain)
 end
 
 StructureProductionT2 = function(self, aiBrain)
-    if Factory(aiBrain,  2, LAB)  then 
+    if aiBrain.Labs > 0  then 
         return 120
-    elseif Factory(aiBrain,  0, LAB) then
+    elseif Factory(aiBrain,  0, categories.STRUCTURE * categories.TECH2) then
         return 10
     else
         return 0
@@ -78,9 +78,9 @@ StructureProductionT2 = function(self, aiBrain)
 end
 
 StructureProductionT2Energy = function(self, aiBrain)
-    if Factory(aiBrain,  2, LAB) and PowerGeneration(aiBrain,  2, CLOAKREACT) then 
+    if aiBrain.Labs > 2 and PowerGeneration(aiBrain,  2, CLOAKREACT) then 
         return 150
-    elseif Factory(aiBrain,  0, LAB) and PowerGeneration(aiBrain,  2, CLOAKREACT) then
+    elseif aiBrain.Labs > 0 and PowerGeneration(aiBrain,  2, CLOAKREACT) then
         return 100
     else
         return 0
@@ -88,12 +88,12 @@ StructureProductionT2Energy = function(self, aiBrain)
 end
 
 ProductionT3Air = function(self, aiBrain)
-    if Factory(aiBrain,  6, LAB) and Factory(aiBrain,  0, CLOAKREACT) then 
-        return 100
-    elseif Factory(aiBrain,  0, PLATFORM) and Factory(aiBrain,  0, CLOAKREACT) then
+    if Factory(aiBrain,  0, PLATFORM) and Factory(aiBrain,  0, CLOAKREACT) then
         return 105
     elseif Factory(aiBrain,  0, categories.GATE) and Factory(aiBrain,  0, CLOAKREACT) then
         return 125
+    elseif aiBrain.Labs > 4 and Factory(aiBrain,  0, CLOAKREACT) then 
+        return 100
     else
         return 0
     end
@@ -102,7 +102,7 @@ end
 FactoryReclaim = function(self, aiBrain)
     if Factory(aiBrain,  1, PLATFORM) then
         return 100
-    elseif Factory(aiBrain,  12, PLANT) then 
+    elseif aiBrain.Plants > 10 then 
         return 10
     else
         return 0
@@ -126,12 +126,12 @@ end
 
 
 ProductionT3 = function(self, aiBrain)
-    if Factory(aiBrain,  6, LAB)  then 
-        return 100
-    elseif Factory(aiBrain,  0, PLATFORM) then
-        return 105
-    elseif Factory(aiBrain,  0, categories.GATE) then
+    if Factory(aiBrain,  0, categories.GATE) then
         return 125
+    elseif Factory(aiBrain,  0, PLATFORM) then
+        return 105    
+    elseif aiBrain.Labs > 4 then
+        return 100
     else
         return 0
     end
@@ -140,9 +140,9 @@ end
 UnitProduction = function(self, aiBrain)
     if Factory(aiBrain,  1, PLATFORM) then
         return 80
-    elseif Factory(aiBrain,  1, LAB) then
+    elseif Factory(aiBrain,  1, categories.STRUCTURE * categories.TECH2) then
         return 125
-    elseif Factory(aiBrain,  12, PLANT) then 
+    elseif aiBrain.Plants > 10 then 
         return 110
     else
         return 0
@@ -152,9 +152,9 @@ end
 UnitProductionT1 = function(self, aiBrain)
     if Factory(aiBrain,  0, categories.GATE) then
           return 0
-    elseif Factory(aiBrain,  4, LAB) then
+    elseif aiBrain.Labs > 2 then
               return 5
-    elseif Factory(aiBrain,  0, LAB) then 
+    elseif Factory(aiBrain,  0, categories.STRUCTURE * categories.TECH2) then 
               return 50
       else
           return 100
@@ -214,7 +214,7 @@ end
 GantryConstruction = function(self, aiBrain)
     if Factory(aiBrain,  1, PLATFORM)  then
         return 150
-    elseif Factory(aiBrain,  6, LAB) then
+    elseif aiBrain.Labs > 4 then
         return 100
     else
         return 0

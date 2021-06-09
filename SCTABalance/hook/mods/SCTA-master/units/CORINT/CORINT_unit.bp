@@ -31,7 +31,7 @@ UnitBlueprint {
             BallisticArc = 'RULEUBA_HighArc',        
             MuzzleVelocityReduceDistance = 800,
             Damage = 4500,
-            EnergyDrainPerSecond = 500,
+            EnergyDrainPerSecond = 400,
             EnergyRequired = 2000,
             RateOfFire = 0.1,
         },

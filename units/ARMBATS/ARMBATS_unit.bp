@@ -231,7 +231,7 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'ARM_BATS',
             FireTargetLayerCapsTable = {
-                Water = 'Land|Water',
+                Water = 'Land|Water|Seabed',
             },
         RangeCategory = 'UWRC_IndirectFire',
         WeaponCategory = 'IndirectFire',

@@ -49,9 +49,9 @@ TAweapon = Class(DefaultWeapon) {
 
     IdleState = State(DefaultWeapon.IdleState) {
         OnGotTarget = function(self) 
-            if (TAutils.ArmyHasTargetingFacility(self.TAArmy) or 
-            self.unit:GetAIBrain().SCTAAI or
-            self:OnGotTargetCheck() == true)  then
+            if (self.unit:GetAIBrain().SCTAAI or
+            TAutils.ArmyHasTargetingFacility(self.TAArmy) or 
+            self:OnGotTargetCheck() == true) then
                 DefaultWeapon.IdleState.OnGotTarget(self)
             end
         end,
@@ -68,8 +68,8 @@ TAweapon = Class(DefaultWeapon) {
         end,
 
         OnGotTarget = function(self)
-            if (TAutils.ArmyHasTargetingFacility(self.TAArmy) or 
-            self.unit:GetAIBrain().SCTAAI or
+            if (self.unit:GetAIBrain().SCTAAI or
+            TAutils.ArmyHasTargetingFacility(self.TAArmy) or 
             self:OnGotTargetCheck() == true) then
                 DefaultWeapon.WeaponUnpackingState.OnGotTarget(self)
             end
@@ -78,8 +78,8 @@ TAweapon = Class(DefaultWeapon) {
 
     RackSalvoFireReadyState = State(DefaultWeapon.RackSalvoFireReadyState) {
         OnGotTarget = function(self)      
-            if (TAutils.ArmyHasTargetingFacility(self.TAArmy) or 
-            self.unit:GetAIBrain().SCTAAI or
+            if (self.unit:GetAIBrain().SCTAAI or
+            TAutils.ArmyHasTargetingFacility(self.TAArmy) or 
             self:OnGotTargetCheck() == true) then
                 DefaultWeapon.RackSalvoFireReadyState.OnGotTarget(self)
             end
@@ -89,8 +89,8 @@ TAweapon = Class(DefaultWeapon) {
 
     WeaponPackingState = State(DefaultWeapon.WeaponPackingState) {        
         OnGotTarget = function(self)
-            if (TAutils.ArmyHasTargetingFacility(self.TAArmy) or 
-            self.unit:GetAIBrain().SCTAAI or
+            if (self.unit:GetAIBrain().SCTAAI or
+            TAutils.ArmyHasTargetingFacility(self.TAArmy) or 
             self:OnGotTargetCheck() == true) then
                 DefaultWeapon.WeaponPackingState.OnGotTarget(self)
             end
@@ -257,12 +257,12 @@ TAEndGameWeapon = Class(TIFArtilleryWeapon) {
     end,
 
     PlayRackRecoil = function(self, rackList)   
-    TIFArtilleryWeapon.PlayRackRecoil(self, rackList)
-    self.CurrentRound = self.CurrentRound + 1
+        TIFArtilleryWeapon.PlayRackRecoil(self, rackList)
+        self.CurrentRound = self.CurrentRound + 1
     --LOG('*RoundCount', self.CurrentRound)
-    self.Rotator:SetSpeed(self.Speed)
-    self.Goal = (self.CurrentRound + 1)
-    self.Rotator:SetGoal(self.Goal * self.Rotation)
+        self.Rotator:SetSpeed(self.Speed)
+        self.Goal = (self.CurrentRound + 1)
+        self.Rotator:SetGoal(self.Goal * self.Rotation)
     if self.CurrentRound == self.MaxRound then
         self.CurrentRound = 0
     end 

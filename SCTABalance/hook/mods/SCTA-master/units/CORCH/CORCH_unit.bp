@@ -36,6 +36,7 @@ UnitBlueprint {
         BuildTime = 9000,
         BuildRate = 300,
         ProductionPerSecondEnergy = 4,
+        ProductionPerSecondMass = 1,
         MaxBuildDistance = 8,
         BuildableCategory = {
             'BUILTBYTIER3ENGINEER CORE',

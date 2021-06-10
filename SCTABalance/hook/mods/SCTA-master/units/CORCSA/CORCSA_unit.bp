@@ -23,7 +23,7 @@ UnitBlueprint {
         },
         MaxBuildDistance = 5,
         ProductionPerSecondEnergy = 4,
-        ProductionPerSecondMass = 0,
+        ProductionPerSecondMass = 1,
     },
     Physics = {
         FuelRechargeRate = 888888,

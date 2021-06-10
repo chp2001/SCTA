@@ -131,8 +131,8 @@ function TAAIEcoConditionEfficiency(aiBrain)
     if aiBrain.EconomyMonitorThread then
         local econTime = aiBrain:GetEconomyOverTime()
 
-        econEff.EnergyEfficiencyOverTime = math.min(econTime.EnergyIncome / econTime.EnergyRequested, 2)
-        econEff.MassEfficiencyOverTime = math.min(econTime.MassIncome / econTime.MassRequested, 2)
+        econEff.EnergyEfficiencyOverTime = math.min(econTime.EnergyIncome / econTime.EnergyRequested, 20)
+        econEff.MassEfficiencyOverTime = math.min(econTime.MassIncome / econTime.MassRequested, 10)
     end
 
     return econEff
@@ -146,8 +146,8 @@ function TAEnergyEfficiency(aiBrain)
     econ.MassRequested = aiBrain:GetEconomyRequested('MASS')
     if aiBrain.EconomyMonitorThread then
         local econTime = aiBrain:GetEconomyOverTime()
-        econ.EnergyEfficiencyOverTime = math.min(econTime.EnergyIncome / econTime.EnergyRequested, 4)
-        econ.MassEfficiencyOverTime = math.min(econTime.MassIncome / econTime.MassRequested, 2)
+        econ.EnergyEfficiencyOverTime = math.min(econTime.EnergyIncome / econTime.EnergyRequested, 40)
+        econ.MassEfficiencyOverTime = math.min(econTime.MassIncome / econTime.MassRequested, 10)
     end
 
     return econ

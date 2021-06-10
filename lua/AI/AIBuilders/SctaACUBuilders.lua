@@ -174,7 +174,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Commander LandFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-       PriorityFunction = TAPrior.UnitProductionT1,
+       PriorityFunction = TAPrior.UnitProductionT1Fac,
         Priority = 60,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory', 1},
@@ -220,7 +220,7 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Excess',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 150,
+        Priority = 120,
         InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 120 } }, 

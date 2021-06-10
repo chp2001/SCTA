@@ -40,7 +40,7 @@ end
 
 
 AssistProduction = function(self, aiBrain)
-    if aiBrain.Plant > 12 then 
+    if aiBrain.Plant > 10 then 
         return 100
     elseif aiBrain.Plant > 4 then 
             return 50
@@ -80,7 +80,7 @@ end
 StructureProductionT2Energy = function(self, aiBrain)
     if aiBrain.Labs > 2 and PowerGeneration(aiBrain,  2, CLOAKREACT) then 
         return 150
-    elseif aiBrain.Labs > 0 and PowerGeneration(aiBrain,  2, CLOAKREACT) then
+    elseif aiBrain.Plant > 10  and PowerGeneration(aiBrain,  2, CLOAKREACT) then
         return 100
     else
         return 0
@@ -88,10 +88,10 @@ StructureProductionT2Energy = function(self, aiBrain)
 end
 
 ProductionT3Air = function(self, aiBrain)
-    if Factory(aiBrain,  0, PLATFORM) and Factory(aiBrain,  0, CLOAKREACT) then
-        return 105
-    elseif Factory(aiBrain,  0, categories.GATE) and Factory(aiBrain,  0, CLOAKREACT) then
+    if Factory(aiBrain,  0, categories.GATE) and Factory(aiBrain,  0, CLOAKREACT) then
         return 125
+    elseif Factory(aiBrain,  0, PLATFORM) and Factory(aiBrain,  0, CLOAKREACT) then
+        return 105
     elseif aiBrain.Labs > 4 and Factory(aiBrain,  0, CLOAKREACT) then 
         return 100
     else
@@ -101,7 +101,9 @@ end
 
 FactoryReclaim = function(self, aiBrain)
     if Factory(aiBrain,  1, PLATFORM) then
-        return 100
+        return 200
+    elseif aiBrain.Labs > 2 then 
+        return 150
     elseif aiBrain.Plants > 10 then 
         return 10
     else
@@ -154,6 +156,16 @@ UnitProductionT1 = function(self, aiBrain)
           return 0
     elseif aiBrain.Labs > 2 then
               return 5
+    elseif Factory(aiBrain,  0, categories.STRUCTURE * categories.TECH2) then 
+              return 50
+      else
+          return 100
+      end
+  end
+
+  UnitProductionT1Fac = function(self, aiBrain)
+    if aiBrain.Labs > 0 then
+              return 0
     elseif Factory(aiBrain,  0, categories.STRUCTURE * categories.TECH2) then 
               return 50
       else

@@ -58,8 +58,8 @@ TAAirConstructor = Class(TAair) {
     OnUnpaused = function(self)
         if self.BuildingUnit then
             self:PlayUnitAmbientSound('Construct')
-            self:UpdateConsumptionValues()
             TAair.StartBuildingEffects(self, self.UnitBeingBuilt, self.UnitBuildOrder)
+            self:UpdateConsumptionValues()
         end
         TAair.OnUnpaused(self)
     end,
@@ -69,6 +69,11 @@ TAAirConstructor = Class(TAair) {
         self.UnitBuildOrder = order
         self.BuildingUnit = true
         TAair.OnStartBuild(self,unitBeingBuilt, order)
+        if not self:GetGuardedUnit() and unitBeingBuilt:GetFractionComplete() == 0 and not self:CanBuild(unitBeingBuilt:GetBlueprint().BlueprintId) then
+            IssueStop({self})
+            IssueClearCommands({self})
+            unitBeingBuilt:Destroy()
+        end
     end,
 
 

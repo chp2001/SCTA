@@ -173,10 +173,6 @@ BuildingTemplates[6] = {
                 'armason',
             },
             {
-                'T3Sonar',
-                'armscram',
-            },
-            {
                 'T2RadarJammer',
                 'armmark',
             },

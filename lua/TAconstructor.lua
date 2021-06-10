@@ -290,11 +290,8 @@ TACommander = Class(TAconstructor) {
     end,
 
 	DeathThread = function(self)
-        local army = self:GetArmy()
-        local position = self:GetPosition()
-        local PlumeEffectYOffset = 1
-        self:CreateProjectile('/effects/entities/UEFNukeEffect02/UEFNukeEffect02_proj.bp',0,PlumeEffectYOffset,0,0,0,1)
-		CreateAttachedEmitter( self, 0, army, '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp'):ScaleEmitter(10)
+        self:CreateProjectile('/effects/entities/UEFNukeEffect02/UEFNukeEffect02_proj.bp',0,1,0,0,0,1)
+		CreateAttachedEmitter( self, 0, self:GetArmy(), '/mods/SCTA-master/effects/emitters/COMBOOM_emit.bp'):ScaleEmitter(10)
 		TAconstructor.DeathThread(self)
     end,
 
@@ -335,15 +332,12 @@ TACommander = Class(TAconstructor) {
 
 TARealCommander = Class(TACommander) {
     DeathThread = function(self)
-        local army = self:GetArmy()
-        local position = self:GetPosition()
         TACommander.DeathThread(self)
         self:CreateInitialFireballSmokeRing()
         self:ForkThread(self.CreateOuterRingWaveSmokeRing)
-        local orientation = RandomFloat(0,2*math.pi)
-        CreateDecal(position, orientation, 'Crater01_albedo', '', 'Albedo', 50, 50, 1200, 0, self.Army)
-        CreateDecal(position, orientation, 'Crater01_normals', '', 'Normals', 50, 50, 1200, 0, self.Army)
-        CreateDecal(position, orientation, 'nuke_scorch_003_albedo', '', 'Albedo', 60, 60, 1200, 0, self.Army)
+        CreateDecal(self:GetPosition(), RandomFloat(0,2*math.pi), 'Crater01_albedo', '', 'Albedo', 50, 50, 1200, 0, self.Army)
+        CreateDecal(self:GetPosition(), RandomFloat(0,2*math.pi), 'Crater01_normals', '', 'Normals', 50, 50, 1200, 0, self.Army)
+        CreateDecal(self:GetPosition(), RandomFloat(0,2*math.pi), 'nuke_scorch_003_albedo', '', 'Albedo', 60, 60, 1200, 0, self.Army)
     end,  
 
     CreateInitialFireballSmokeRing = function(self)

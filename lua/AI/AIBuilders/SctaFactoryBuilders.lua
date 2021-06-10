@@ -20,7 +20,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer LandFac',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        PriorityFunction = TAPrior.UnitProductionT1,
+        PriorityFunction = TAPrior.UnitProductionT1Fac,
         Priority = 110,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory', 1},
@@ -48,7 +48,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Engineer LandFac2',
         PlatoonTemplate = 'EngineerBuilderSCTA',
-        PriorityFunction = TAPrior.UnitProductionT1,
+        PriorityFunction = TAPrior.UnitProductionT1Fac,
         Priority = 90,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory', 1},

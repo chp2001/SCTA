@@ -101,7 +101,9 @@ end
 
 FactoryReclaim = function(self, aiBrain)
     if Factory(aiBrain,  1, PLATFORM) then
-        return 100
+        return 200
+    elseif aiBrain.Labs > 2 then 
+        return 150
     elseif aiBrain.Plants > 10 then 
         return 10
     else
@@ -154,6 +156,16 @@ UnitProductionT1 = function(self, aiBrain)
           return 0
     elseif aiBrain.Labs > 2 then
               return 5
+    elseif Factory(aiBrain,  0, categories.STRUCTURE * categories.TECH2) then 
+              return 50
+      else
+          return 100
+      end
+  end
+
+  UnitProductionT1Fac = function(self, aiBrain)
+    if aiBrain.Labs > 0 then
+              return 0
     elseif Factory(aiBrain,  0, categories.STRUCTURE * categories.TECH2) then 
               return 50
       else

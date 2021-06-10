@@ -174,7 +174,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Commander LandFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
-       PriorityFunction = TAPrior.UnitProductionT1,
+       PriorityFunction = TAPrior.UnitProductionT1Fac,
         Priority = 60,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory', 1},

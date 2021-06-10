@@ -30,11 +30,11 @@ UnitBlueprint {
         UniformScale = 0.2,
     },
     Defense = {
-        Health = 9500,
-        MaxHealth = 9500,
+        Health = 20000,
+        MaxHealth = 20000,
     },
     Economy = {
-        BuildCostEnergy = 42000,
+        BuildCostEnergy = 160000,
         BuildCostMass = 12000,
         BuildTime = 90000,
     },
@@ -46,6 +46,7 @@ UnitBlueprint {
     SizeZ = 10,
     Weapon = {
         [1] = {
+            Damage = 500,
         },
         [2] = {            
         },

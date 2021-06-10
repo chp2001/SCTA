@@ -132,7 +132,6 @@ TAunitkeygroups = {
         "cortoast",
     },
     ["Heavy_Shield_Generator"] = {
-        "armscram",
         "armaser",
     },
     ["T2_Support_Land_Factory"]= {
@@ -402,6 +401,10 @@ TAunitkeygroups = {
     ["Support_Armored_Command_Unit"] = {
         "armdecom",
         "cordecom",
+    },
+    ["T3_Strategic_Missile_Submarine"] = {
+        "corssub",
+        "armscram",
     },
 }
 

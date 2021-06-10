@@ -58,10 +58,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2 Scouts',
         PlatoonTemplate = 'T2AirScoutSCTA',
-        Priority = 200,
+        Priority = 110,
         InstanceCount = 1,
         PriorityFunction = TAPrior.ProductionT3,
+        DelayEqualBuildPlattons = {'Scout', 1},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Scout' }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.MOBILE * categories.AIR * categories.SCOUT } },
             { TAutils, 'EcoManagementTA', { 0.75, 1.05, } },
         },

@@ -31,7 +31,8 @@ UnitBlueprint {
 	TurnFacingRate = 100,
     },
     Economy = {
-        BuildCostEnergy = 3200,
+        BuildCostEnergy = 4800,
+        BuildCostMass = 700,
         BuildTime = 9000,
         BuildRate = 300,
         ProductionPerSecondEnergy = 4,

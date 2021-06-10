@@ -220,7 +220,7 @@ BuilderGroup {
         BuilderName = 'SCTA Engineer Reclaim Excess',
         PlatoonTemplate = 'EngineerBuilderSCTA',
         PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 150,
+        Priority = 120,
         InstanceCount = 2,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 120 } }, 

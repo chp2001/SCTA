@@ -2335,7 +2335,7 @@ Platoon = Class(SCTAAIPlatoon) {
     SCTALabAI = function(self)
         AIAttackUtils.GetMostRestrictiveLayer(self)
         local aiBrain = self:GetBrain()
-        local scout = self:GetPlatoonUnits()
+        local scout = self:GetPlatoonUnits()[1]
         local target
         local structure
         -- build scoutlocations if not already done.
@@ -2372,9 +2372,9 @@ Platoon = Class(SCTAAIPlatoon) {
             --Is there someplace we should scout?
             if targetData then
                 if EntityCategoryContains(categories.AMPHIBIOUS, self) then
-                local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Air', scout:GetPosition(), targetData.Position, 400)
+                local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Air', scout:GetPosition() or self:GetPlatoonPosition(), targetData.Position, 400)
                 else
-                local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, self.MovementLayer, scout:GetPosition(), targetData.Position, 400) --DUNCAN - Increase threatwieght from 100
+                local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, self.MovementLayer, scout:GetPosition() or self:GetPlatoonPosition(), targetData.Position, 400) --DUNCAN - Increase threatwieght from 100
                 
                 IssueClearCommands(self)
 

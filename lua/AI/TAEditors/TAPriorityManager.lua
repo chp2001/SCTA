@@ -43,7 +43,7 @@ AssistProduction = function(self, aiBrain)
     if aiBrain.Plant > 10 then 
         return 100
     elseif aiBrain.Plant > 4 then 
-            return 50
+        return 50
     else
         return 0
     end
@@ -92,7 +92,7 @@ ProductionT3Air = function(self, aiBrain)
         return 125
     elseif Factory(aiBrain,  0, PLATFORM) and Factory(aiBrain,  0, CLOAKREACT) then
         return 105
-    elseif aiBrain.Labs > 4 and Factory(aiBrain,  0, CLOAKREACT) then 
+    elseif aiBrain.Labs > 4 and Factory(aiBrain,  4, FUSION) then 
         return 100
     else
         return 0
@@ -142,7 +142,7 @@ end
 UnitProduction = function(self, aiBrain)
     if Factory(aiBrain,  1, PLATFORM) then
         return 80
-    elseif Factory(aiBrain,  1, categories.STRUCTURE * categories.TECH2) then
+    elseif aiBrain.Labs > 0 then
         return 125
     elseif aiBrain.Plants > 10 then 
         return 110

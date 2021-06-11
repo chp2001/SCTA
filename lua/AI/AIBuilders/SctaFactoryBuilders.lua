@@ -191,9 +191,9 @@ BuilderGroup {
         PriorityFunction = TAPrior.ProductionT3,
         Priority = 140,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Factory', 1},
+        DelayEqualBuildPlattons = {'Factory3', 1},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factory3' }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, PLATFORM * categories.LAND } },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.LAND * PLATFORM} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
@@ -217,9 +217,9 @@ BuilderGroup {
         PriorityFunction = TAPrior.ProductionT3Air,
         Priority = 130,
         InstanceCount = 1,
-        DelayEqualBuildPlattons = {'Factory', 1},
+        DelayEqualBuildPlattons = {'Factory3', 1},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factory3' }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, PLATFORM * categories.AIR} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.AIR * PLATFORM} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },

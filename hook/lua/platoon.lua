@@ -2335,7 +2335,7 @@ Platoon = Class(SCTAAIPlatoon) {
     SCTALabAI = function(self)
         AIAttackUtils.GetMostRestrictiveLayer(self)
         local aiBrain = self:GetBrain()
-        local scout = self:GetPlatoonUnits()[1]
+        local scout = self:GetPlatoonUnits()
         local target
         local structure
         -- build scoutlocations if not already done.

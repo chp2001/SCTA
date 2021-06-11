@@ -161,7 +161,7 @@ end
 
 function TAFactoryCapCheckT1(aiBrain)
     --LOG('*SCTALABs', aiBrain.Plants)
-    if aiBrain.Plants < 14 then
+    if aiBrain.Plants < 10 then
         return true
     end
     return false
@@ -169,7 +169,7 @@ end
 
 function TAFactoryCapCheckT2(aiBrain)
     --LOG('*SCTALABs', aiBrain.Plants)
-    if aiBrain.Labs < 6 then
+    if aiBrain.Labs < 4 then
         return true
     end
     return false

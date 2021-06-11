@@ -57,8 +57,7 @@ EngineerManager = Class(SCTAEngineerManager) {
         if unit.ForkedEngineerTask then
             KillThread(unit.ForkedEngineerTask)
         end
-        local delay = math.random(9,29)
-        unit.ForkedEngineerTask = unit:ForkThread(manager.Wait, manager, delaytime or delay)
+        unit.ForkedEngineerTask = unit:ForkThread(manager.Wait, manager, delaytime or (math.random(10,30)))
     end,
 
     AddBuilder = function(self, builderData, locationType)

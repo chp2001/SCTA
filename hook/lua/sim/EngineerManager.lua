@@ -53,7 +53,13 @@ EngineerManager = Class(SCTAEngineerManager) {
         end
     end,
 
-
+    TADelayAssign = function(manager, unit, delaytime)
+        if unit.ForkedEngineerTask then
+            KillThread(unit.ForkedEngineerTask)
+        end
+        local delay = math.random(9,29)
+        unit.ForkedEngineerTask = unit:ForkThread(manager.Wait, manager, delaytime or delay)
+    end,
 
     AddBuilder = function(self, builderData, locationType)
         if not self.Brain.SCTAAI then
@@ -133,6 +139,20 @@ EngineerManager = Class(SCTAEngineerManager) {
         unit.NumAssistees = nil
         unit.MinNumAssistees = nil
         unit.bType = bType
+        
+        if unit.UnitBeingAssist or unit.UnitBeingBuilt then
+            self:TADelayAssign(unit, 50)
+            return
+        end
+
+        unit.DesiresAssist = false
+        unit.NumAssistees = nil
+        unit.MinNumAssistees = nil
+
+        if self.AssigningTask then
+            self:TADelayAssign(unit, 50)
+            return
+        end
         local builder = self:GetHighestBuilder(unit.bType, {unit})
         if builder then
             self.AssigningTask = true
@@ -198,6 +218,6 @@ EngineerManager = Class(SCTAEngineerManager) {
             return
         end
         self.AssigningTask = nil
-        self:DelayAssign(unit, 10)
+        self:TADelayAssign(unit)
     end,
 }

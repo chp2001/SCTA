@@ -204,10 +204,30 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager) {
             end
         end,
 
-        DelayBuildOrder = function(self,factory,bType,time)
+        SetupFactoryCallbacks = function(self,factories,bType)
             if not self.Brain.SCTAAI then
-                return SCTAFactoryBuilderManager.DelayBuildOrder(self,factory,bType,time)
+                return SCTAFactoryBuilderManager.SetupFactoryCallbacks(self,factories,bType)
             end
+            for k,v in factories do
+                if not v.BuilderManagerData then
+                    v.BuilderManagerData = { FactoryBuildManager = self, BuilderType = bType, }
+    
+                    local factoryDestroyed = function(v)
+                                                -- Call function on builder manager; let it handle death of factory
+                                                self:FactoryDestroyed(v)
+                                            end
+                    import('/lua/ScenarioTriggers.lua').CreateUnitDestroyedTrigger(factoryDestroyed, v)
+                    local factoryWorkFinish = function(v, finishedUnit)
+                                                -- Call function on builder manager; let it handle the finish of work
+                                                self:FactoryFinishBuilding(v, finishedUnit)
+                                            end
+                    import('/lua/ScenarioTriggers.lua').CreateUnitBuiltTrigger(factoryWorkFinish, v, categories.ALLUNITS)
+                end
+                self:ForkThread(self.TADelayBuildOrder, v, bType)
+            end
+        end,
+
+        TADelayBuildOrder = function(self,factory,bType, delay)
             local guards = factory:GetGuards()
             for k,v in guards do
                 if not v.Dead and v.AssistPlatoon then
@@ -222,7 +242,10 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager) {
                 return
             end
             factory.DelayThread = true
-            WaitSeconds(time)
+            if delay then
+            WaitTicks(math.random(9,29))
+            end
+            WaitTicks(1)
             factory.DelayThread = false
             self:TAAssignBuildOrder(factory,bType)
         end,
@@ -275,7 +298,7 @@ FactoryBuilderManager = Class(SCTAFactoryBuilderManager) {
                     end
                 end
                 -- No builder found setup way to check again
-                self:ForkThread(self.DelayBuildOrder, factory, bType, 2)
+                self:ForkThread(self.TADelayBuildOrder, factory, bType, true)
                 --LOG('*TACanceling1', factory)
             end
         end,

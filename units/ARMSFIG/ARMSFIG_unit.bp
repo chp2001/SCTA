@@ -81,7 +81,7 @@ UnitBlueprint {
         'TRANSPORTATION',
     },
     Defense = {
-        ArmorType = 'Light',
+        ArmorType = 'ASF',
         Health = 150,
         MaxHealth = 150,
         AirThreatLevel = 0.33,

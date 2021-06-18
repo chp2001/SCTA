@@ -202,10 +202,11 @@ TAKami = Class(KamikazeWeapon){
 
 
     OnFire = function(self)
+        self.unit:SetDeathWeaponEnabled(false)
         for k, v in self.FxDeath do
-            CreateEmitterAtBone(self.unit,-2,self.unit:GetArmy(),v):ScaleEmitter(3)
+            CreateEmitterAtBone(self.unit,-2,self.unit:GetArmy(),v):ScaleEmitter(0.5)
         end 
-		local myBlueprint = self:GetBlueprint()
+        self.unit.attacked = true
 		KamikazeWeapon.OnFire(self)
     end,
 }
@@ -227,7 +228,7 @@ TABomb = Class(BareBonesWeapon) {
     
     Fire = function(self)
         for k, v in self.FxDeath do
-            CreateEmitterAtBone(self.unit,-2, self.unit:GetArmy(), v):ScaleEmitter(3)
+            CreateEmitterAtBone(self.unit,-2, self.unit:GetArmy(), v):ScaleEmitter(1)
         end 
 		local myBlueprint = self:GetBlueprint()
         DamageArea(self.unit, self.unit:GetPosition(), myBlueprint.DamageRadius, myBlueprint.Damage, myBlueprint.DamageType or 'Normal', myBlueprint.DamageFriendly or false)
@@ -287,9 +288,6 @@ end,
 
 
 TACommanderDeathWeapon = Class(BareBonesWeapon) {
-    OnCreate = function(self)
-        BareBonesWeapon.OnCreate(self)
-    end,
 }
 
 TADGun = Class(DefaultWeapon) {

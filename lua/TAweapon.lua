@@ -286,10 +286,6 @@ end,
     },
 }
 
-
-TACommanderDeathWeapon = Class(BareBonesWeapon) {
-}
-
 TADGun = Class(DefaultWeapon) {
     AutoMode = false,
     AutoThread = nil,

@@ -35,8 +35,7 @@ UnitBlueprint {
             BuildCostMass = 700,
             BuildTime = 9000,
             BuildRate = 300,
-            ProductionPerSecondMass = 1,
-            ProductionPerSecondEnergy = 4,
+            ProductionPerSecondEnergy = 5,
             MaxBuildDistance = 8,
             BuildableCategory = {
                 'BUILTBYTIER3ENGINEER ARM',

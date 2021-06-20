@@ -307,13 +307,15 @@ TACKFusion = Class(TAStructure) {
 }
 
 TAMine = Class(TACKFusion) {
+	EnableShield = function(self)
+		self:DisableUnitIntel('ToggleBit8', 'Cloak')
+		self:GetWeaponByLabel('MINE'):FireWeapon()
+	end,
 
 	OnKilled = function(self, instigator, type, overkillRatio)
-		if self.unit.attacked then
+		if self.attacked then
 			instigator = self
 		end
 		TACKFusion.OnKilled(self, instigator, type, overkillRatio)
-		
-	end,	
-
+	end,
 }

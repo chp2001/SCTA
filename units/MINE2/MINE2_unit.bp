@@ -66,7 +66,16 @@ UnitBlueprint {
         CommandCaps = {
         	RULEUCC_RetaliateToggle = true,
         },
-	    ToggleCaps = {
+        InstantDeathOnSelfDestruct = true,
+        OrderOverrides = {
+            RULEUTC_ShieldToggle = {
+                --  more options in textures.scd\textures\ui\common\game\orders
+                bitmapId = 'toggle-weapon',
+                helpText = 'Detonate',
+            },
+        },
+        ToggleCaps = {
+        RULEUTC_ShieldToggle = true,
 		RULEUTC_CloakToggle = true,
 	    },
         FactionName = 'CORE',
@@ -108,14 +117,14 @@ UnitBlueprint {
             Damage = 500, #Doubles up with death, so death damage subtracted
 	    DamageRadius = 3,
             DamageType = 'Normal',
-            DisplayName = 'ARMMINE2',
+            DisplayName = 'MINE',
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water',
             },
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
             FiringTolerance = 360,
-            Label = 'ARMMINE2',
+            Label = 'MINE',
             MaxRadius = 2,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,

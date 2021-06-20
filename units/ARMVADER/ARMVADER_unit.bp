@@ -93,7 +93,18 @@ UnitBlueprint {
         },
         FactionName = 'ARM',
         Icon = 'land',
-TechLevel = 'RULEUTL_Advanced',
+        InstantDeathOnSelfDestruct = true,
+        OrderOverrides = {
+            RULEUTC_ShieldToggle = {
+                --  more options in textures.scd\textures\ui\common\game\orders
+                bitmapId = 'toggle-weapon',
+                helpText = 'Detonate',
+            },
+        },
+        ToggleCaps = {
+            RULEUTC_ShieldToggle = true,
+	    },
+        TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Invader',
     },
     Intel = {

@@ -132,6 +132,20 @@ TASeaWalking = Class(TAWalking)
 	end,
 }
 
+TAKamiCounter = Class(TACounter) { 
+	EnableShield = function(self)
+		self:DisableUnitIntel('ToggleBit8', 'Cloak')
+		self:GetWeaponByLabel('Suicide'):FireWeapon()
+	end,
+
+	OnKilled = function(self, instigator, type, overkillRatio)
+		if self.attacked then
+			instigator = self
+		end
+		TACounter.OnKilled(self, instigator, type, overkillRatio)
+	end,
+}
+
 TASeaCounter = Class(TASea) 
 { 
 	OnStopBeingBuilt = function(self,builder,layer)

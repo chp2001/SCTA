@@ -43,6 +43,7 @@ UnitBlueprint {
         'OVERLAYANTIAIR',
         'OVERLAYRADAR',
         'OVERLAYSONAR',
+        'SCOUT',
     },
     CollisionOffsetY = -0.25,
     Defense = {

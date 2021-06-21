@@ -154,6 +154,10 @@ end,
         }
 
 TACarrier = Class(AircraftCarrier) {
+    OnCreate = function(self)
+        AircraftCarrier.OnCreate(self)
+        self.BuildEffectBones = self:GetBlueprint().General.BuildBones.BuildEffectBones
+    end,
 
     CreateBuildEffects = function(self, unitBeingBuilt, order)
         TAutils.CreateTAFactBuildingEffects( self, unitBeingBuilt, self.BuildEffectBones, self.BuildEffectsBag )

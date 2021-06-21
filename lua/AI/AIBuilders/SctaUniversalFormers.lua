@@ -24,6 +24,7 @@ BuilderGroup {
         InstanceCount = 2,
         BuilderType = 'LandForm',
         BuilderData = {
+            AllTerrain = true,
             TAWeaponRange = 30,
             NeverGuardBases = true,
             NeverGuardEngineers = true,

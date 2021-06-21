@@ -1634,7 +1634,7 @@ Platoon = Class(SCTAAIPlatoon) {
             v:SetScriptBit('RULEUTC_ProductionToggle', true)
         end
         local econ = AIUtils.AIGetEconomyNumbers(aiBrain)
-        while (econ.EnergyStorageRatio < 0.4 or econ.MassStorageRatio > 0.8) do
+        while ((econ.EnergyStorageRatio < 0.4) or (econ.MassStorageRatio > 0.8)) do
             WaitSeconds(2)
             econ = AIUtils.AIGetEconomyNumbers(aiBrain)
         end
@@ -2372,9 +2372,9 @@ Platoon = Class(SCTAAIPlatoon) {
             --Is there someplace we should scout?
             if targetData then
                 if EntityCategoryContains(categories.AMPHIBIOUS, self) then
-                local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Air', scout:GetPosition() or self:GetPlatoonPosition(), targetData.Position, 400)
+                local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Air', scout:GetPosition(), targetData.Position, 400)
                 else
-                local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, self.MovementLayer, scout:GetPosition() or self:GetPlatoonPosition(), targetData.Position, 400) --DUNCAN - Increase threatwieght from 100
+                local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, self.MovementLayer, scout:GetPosition(), targetData.Position, 400) --DUNCAN - Increase threatwieght from 100
                 
                 IssueClearCommands(self)
 
@@ -2759,11 +2759,11 @@ Platoon = Class(SCTAAIPlatoon) {
                 local recPos = nil
                 local closest = {}
                 for i, r in reclaim do
-                    if self.PlatoonData.Terrain and AIAttackUtils.CanGraphAreaToSCTA(eng, r.pos, 'Land') then
+                    if self.PlatoonData.AllTerrain then
                         IssueReclaim(units, r.entity)
                         if i > 10 then break end
-                    elseif not self.PlatoonData.Terrain then
-                        IssueReclaim(units, r.entity)
+                    elseif self.PlatoonData.Terrain and AIAttackUtils.CanGraphAreaToSCTA(eng, r.pos, 'Land') then
+                            IssueReclaim(units, r.entity)
                         if i > 10 then break end
                     end
                 end

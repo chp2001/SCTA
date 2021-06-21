@@ -166,7 +166,7 @@ TASeaConstructor = Class(TAconstructor)
 				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.TAMovement.Emitter ):ScaleEmitter(bp.Display.MovementEffects.TAMovement.Scale))
 			end
 		end
-		if not self:IsUnitState('Moving') then
+		if (not self:IsUnitState('Moving')) or self:IsUnitState('Building') then
 			for k,v in self.FxMovement do
 				v:Destroy()
 			end

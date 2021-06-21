@@ -68,6 +68,7 @@ BuilderGroup {
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             },
         BuilderData = {
+            AllTerrain = true,
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
@@ -78,10 +79,10 @@ BuilderGroup {
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 75,
-        InstanceCount = 10,
+        InstanceCount = 5,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 240 } },
-            { UCBC, 'EngineerGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER * categories.LAND - categories.COMMAND}},
+            { UCBC, 'EngineerGreaterAtLocation', { 'LocationType', 2, (categories.ENGINEER * categories.LAND) - categories.COMMAND}},
             { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},  
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
         },
@@ -101,7 +102,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Unfinished', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Unfinished' }},
-            { UCBC, 'EngineerGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER * categories.LAND - categories.COMMAND}},
+            { UCBC, 'EngineerGreaterAtLocation', { 'LocationType', 2, (categories.ENGINEER * categories.LAND) - categories.COMMAND}},
             { UCBC, 'UnfinishedUnits', { 'LocationType', categories.STRUCTURE}},
         },
         BuilderData = {

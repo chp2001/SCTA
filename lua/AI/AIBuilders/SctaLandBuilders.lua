@@ -194,17 +194,6 @@ BuilderConditions = {
     },
 ---GENERIC KBOT/VEHICLE
     Builder {
-        BuilderName = 'SCTAAi Factory All Terrain Other',
-        PlatoonTemplate = 'T2LandAuxTerrain',
-        Priority = 125,
-        InstanceCount = 1,
-        BuilderConditions = {
-            { TASlow, 'TAHaveUnitRatioGreaterThanLand', {(categories.SCOUT + categories.ARTILLERY) * (categories.HOVER + categories.AMPHIBIOUS)} },
-            { TAutils, 'EcoManagementTA', { 0.75, 0.5, } },
-        }, 
-        BuilderType = 'Land',
-    },
-    Builder {
         BuilderName = 'SCTAAi Factory Artillery-AntiAir',
         PlatoonTemplate = 'T2LandAntiArtySCTA',
         Priority = 125,
@@ -212,7 +201,7 @@ BuilderConditions = {
             { TASlow, 'TAHaveUnitRatioGreaterThanLand', {categories.ARTILLERY + categories.ANTIAIR} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.5, } },
          },
-        BuilderType = 'Land',
+        BuilderType = 'KBot',
     },
 ----TECH3Things
     Builder {

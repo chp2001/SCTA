@@ -109,9 +109,9 @@ BuilderConditions = {
         BuilderType = 'KBot',
     },
     Builder {
-        BuilderName = 'SCTAAi FactoryT2 Kbot AntiAir',
-        PlatoonTemplate = 'T2LandAASCTA',
-        Priority = 125,
+        BuilderName = 'SCTAAi FactoryT1 Kbot AntiAir',
+        PlatoonTemplate = 'T1LandAASCTABot',
+        Priority = 120,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'AntiAirSCTA', 1},
         BuilderConditions = {
@@ -206,7 +206,7 @@ BuilderConditions = {
     },
     Builder {
         BuilderName = 'SCTAAi Factory Artillery-AntiAir',
-        PlatoonTemplate = 'T1LandAntiArtySCTA',
+        PlatoonTemplate = 'T2LandAntiArtySCTA',
         Priority = 125,
         BuilderConditions = {
             { TASlow, 'TAHaveUnitRatioGreaterThanLand', {categories.ARTILLERY + categories.ANTIAIR} },

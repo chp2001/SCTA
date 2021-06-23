@@ -153,22 +153,10 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
-    Name = 'T1LandAntiArtySCTA',
+    Name = 'T2LandAntiArtySCTA',
     FactionSquads = {
         Arm = {
-            { 'armjeth', 1, 1, 'Attack', 'none' },
-        },
-        Core = {
-            { 'corlevlr', 1, 1, 'Attack', 'none' },
-        },
-    }
-}
-
-PlatoonTemplate {
-    Name = 'T2LandAuxTerrain',
-    FactionSquads = {
-        Arm = {
-            { 'armspid', 1, 1, 'Attack', 'none' },
+            { 'armamph', 1, 1, 'Attack', 'none' },
         },
         Core = {
             { 'coramph', 1, 1, 'Attack', 'none' },
@@ -177,13 +165,15 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
-    Name = 'T3LandDFBotSCTA',
+    Name = 'T1LandScoutSCTA',
     FactionSquads = {
         Arm = {
-            { 'armsnipe', 1, 1, 'Attack', 'none' },
+            { 'armflea', 1, 1, 'scout', 'none' },
+            { 'armck', 1, 1, 'support', 'None' },
         },
         Core = {
-            { 'cormort', 1, 1, 'Attack', 'none' },
+            { 'corcv', 1, 1, 'support', 'None' },
+            { 'corfav', 1, 1, 'scout', 'none' },
         },
     }
 }

@@ -25,21 +25,7 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.SCOUT * categories.LAND * categories.MOBILE} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, } },
         },
-        BuilderType = 'KBot',
-    },
-    Builder {
-        BuilderName = 'SCTAAi Factory2 Scout',
-        PlatoonTemplate = 'T1LandScoutSCTA2',
-        Priority = 100,
-        InstanceCount = 1,
-        PriorityFunction = TAPrior.UnitProductionT1,
-        DelayEqualBuildPlattons = {'Scout', 1},
-        BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Scout' }},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.SCOUT * categories.LAND * categories.MOBILE} },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, } },
-        },
-        BuilderType = 'Vehicle',
+        BuilderType = 'Land',
     },
     Builder {
         BuilderName = 'SCTAAI T1 Scouts',

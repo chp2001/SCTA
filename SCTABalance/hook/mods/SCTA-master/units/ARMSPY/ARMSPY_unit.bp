@@ -7,14 +7,15 @@ UnitBlueprint {
     Categories = {
         'SELECTABLE',
         'BOT',
-        'TECH3',
+        'TECH2',
         'VISIBLETORECON',
         'RECLAIMABLE',
         'MOBILE',
         'LAND',
         'ARM',
         'SCOUT',
-        'OVERLAYOMNI',
+        'RADAR',
+        'OVERLAYRADAR',
     },
     Display = {
         UniformScale = 0.12,
@@ -26,7 +27,7 @@ UnitBlueprint {
     },
     Intel = {
         ActiveIntel = {
-            Omni = true,
+            Radar = true,
         },    
         JamRadius = {
             Max = 10,
@@ -34,10 +35,10 @@ UnitBlueprint {
           },
           VisionRadius = 10,
           JammerBlips = 5,
-          OmniRadius = 30,
+          RadarRadius = 30,
           RadarStealth = true,
     },
-    StrategicIconName = 'icon_land3_counterintel',
+    StrategicIconName = 'icon_land2_counterintel',
     SizeX = 1.2,
     SizeY = 1.2,
     SizeZ = 1.2,

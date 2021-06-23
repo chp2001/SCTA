@@ -132,7 +132,8 @@ TAunitkeygroups = {
         "cortoast",
     },
     ["Heavy_Shield_Generator"] = {
-        "armaser",
+        "armmark",
+        "corvoyr",
     },
     ["T2_Support_Land_Factory"]= {
         "armalab",
@@ -231,11 +232,10 @@ TAunitkeygroups = {
         "armsh",
         "corfav",
         "corsh", 
-        "corvoyr",
     },
     ["Stealth_Field_Generator"]= {
         "corspec",
-        "armmark",
+        "armaser",
     },
     ["T2_Air_Transport"] = {
         "armthovr",

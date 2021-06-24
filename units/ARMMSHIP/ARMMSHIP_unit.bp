@@ -210,7 +210,7 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'ARMMSHIP_ROCKET',
             FireTargetLayerCapsTable = {
-                Water = 'Land|Water|Air',
+                Water = 'Land|Water|Air|Seabed',
             },
 	        RangeCategory = 'UWRC_IndirectFire',
             RenderFireClock = true,

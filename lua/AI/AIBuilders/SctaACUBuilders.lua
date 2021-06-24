@@ -229,7 +229,7 @@ BuilderGroup {
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},   
         },
         BuilderData = {
-            Terrain = true,
+            LandEngineer = true,
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
@@ -244,8 +244,8 @@ BuilderGroup {
         InstanceCount = 10,
         BuilderConditions = {
             { UCBC, 'EngineerGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER * categories.LAND - categories.COMMAND}},
-            { UCBC, 'HaveGreaterThanUnitsInCategoryBeingBuilt', { 0, LAB + PLATFORM + categories.GATE, 'LocationType', }},
-            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, LAB + PLATFORM + categories.GATE}},
+            { UCBC, 'HaveGreaterThanUnitsInCategoryBeingBuilt', { 0, categories.FACTORY - categories.TECH1, 'LocationType', }},
+            { UCBC, 'LocationEngineersBuildingAssistanceGreater', { 'LocationType', 0, categories.FACTORY - categories.TECH1}},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
         BuilderData = {

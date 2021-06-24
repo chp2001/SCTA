@@ -131,8 +131,8 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'GAUSS',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Seabed',
-                Seabed = 'Land|Water|Seabed',
+                Land = 'Land|Water|Seabed|Air',
+                Seabed = 'Land|Water|Seabed|Air',
             },
             AboveWaterTargetsOnly = true,
 	    RangeCategory = 'UWRC_DirectFire',

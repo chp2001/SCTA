@@ -134,7 +134,10 @@ UnitBlueprint {
             DamageType = 'Nuke',
             DisplayName = 'CRBLMSSL',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water',
+                Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
+                Sub = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
             },
             Label = 'CRBLMSSL',
             ProjectileId = '/mods/SCTA-master/projectiles/CRBLMSSL/CRBLMSSL_proj.bp',

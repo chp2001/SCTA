@@ -1603,8 +1603,8 @@ Platoon = Class(SCTAAIPlatoon) {
             self.Center = self:GetPlatoonPosition()
             if target then
                 self:Stop()
-                local threat = target:GetPosition() 
-                self:AggressiveMoveToLocation(table.copy(threat))
+                --local threat = target:GetPosition() 
+                self:AggressiveMoveToLocation(table.copy(target:GetPosition()))
                 --self:AttackTarget(target, 'Attack')
                 --DUNCAN - added to try and stop AI getting stuck.
                 --[[local targetDist = VDist2Sq(threat[1],threat[3], self.Center[1], self.Center[3])
@@ -2372,11 +2372,11 @@ Platoon = Class(SCTAAIPlatoon) {
             --Is there someplace we should scout?
             if targetData then
                 if EntityCategoryContains(categories.AMPHIBIOUS, self) then
-                local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Air', scout:GetPosition(), targetData.Position, 400)
+                    local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Air', scout:GetPosition(), targetData.Position, 400)
                 else
-                local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, self.MovementLayer, scout:GetPosition(), targetData.Position, 400) --DUNCAN - Increase threatwieght from 100
-                
-                IssueClearCommands(self)
+                    path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, self.MovementLayer, scout:GetPosition(), targetData.Position, 400) --DUNCAN - Increase threatwieght from 100
+                end
+                    IssueClearCommands(self)
 
                 if path then
                     local pathLength = table.getn(path)
@@ -2399,7 +2399,6 @@ Platoon = Class(SCTAAIPlatoon) {
                         return self:SCTAArtyHuntAI()
                     else
                         WaitSeconds(2.5)
-                    end
                 end
             end
                 WaitSeconds(1)
@@ -2720,11 +2719,9 @@ Platoon = Class(SCTAAIPlatoon) {
     SCTAReclaimAI = function(self)
             self:Stop()
             local brain = self:GetBrain()
-            local locationType = self.PlatoonData.LocationType
             local createTick = GetGameTick()
             local oldClosest
-            local units = self:GetPlatoonUnits()
-            local eng = units[1]
+            local eng = self:GetPlatoonUnits()[1]
             if not eng then
                 self:PlatoonDisband()
                 return
@@ -2733,51 +2730,39 @@ Platoon = Class(SCTAAIPlatoon) {
             --eng.BadReclaimables = eng.BadReclaimables or {}
     
             while brain:PlatoonExists(self) do
-                local ents = TAReclaim.TAAIGetReclaimablesAroundLocation(brain, locationType) or {}
-                local pos = self:GetPlatoonPosition()
-    
-                if not ents[1] or not pos then
+                local ents = TAReclaim.TAAIGetReclaimablesAroundLocation(brain, self.PlatoonData.LocationType) or {}
+                if not ents[1] or not self:GetPlatoonPosition() then
                     WaitTicks(1)
                     self:PlatoonDisband()
                     return
                 end
     
                 local reclaim = {}
-                local needEnergy = brain:GetEconomyStoredRatio('ENERGY') < 0.5
-    
-                for k,v in ents do
-                    if not IsProp(v) then continue end
-                    if not needEnergy or v.MaxEnergyReclaim then
-                        local rpos = v:GetCachePosition()
-                        table.insert(reclaim, {entity=v, pos=rpos, distance=VDist2(pos[1], pos[3], rpos[1], rpos[3])})
-                    end
-                end
-    
-                --IssueClearCommands(units)
+                --IssueClearCommands(eng)
                 table.sort(reclaim, function(a, b) return a.distance < b.distance end)
     
                 local recPos = nil
                 local closest = {}
-                for i, r in reclaim do
-                    if self.PlatoonData.AllTerrain then
-                        IssueReclaim(units, r.entity)
-                        if i > 10 then break end
-                    elseif self.PlatoonData.Terrain and AIAttackUtils.CanGraphAreaToSCTA(eng, r.pos, 'Land') then
-                            IssueReclaim(units, r.entity)
-                        if i > 10 then break end
+                    for i, r in reclaim do
+                        if self.PlatoonData.AirEngineer then
+                            IssueReclaim(eng, r.entity)
+                            if i > 10 then break end
+                        elseif self.PlatoonData.LandEngineer then
+                            IssueAggressiveMove(eng, r:GetPosition())
+                            if i > 10 then break end
+                        end
                     end
-                end
-    
                 local reclaiming = not eng:IsIdleState()
-                local max_time = self.PlatoonData.ReclaimTime
     
                 while reclaiming do
                     WaitSeconds(5)
     
-                    if eng:IsIdleState() or (max_time and (GetGameTick() - createTick)*10 > max_time) then
+                    if eng:IsIdleState() or (self.PlatoonData.ReclaimTime and (GetGameTick() - createTick)*10 > self.PlatoonData.ReclaimTime) then
                         reclaiming = false
                     end
                 end
+                --local basePosition = brain.BuilderManagers[self.PlatoonData.LocationType].Position
+                --self:MoveToLocation(AIUtils.RandomLocation(basePosition[1],basePosition[3]), false)
                 WaitSeconds(10)
                 self:PlatoonDisband()
             end

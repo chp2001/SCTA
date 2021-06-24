@@ -131,8 +131,6 @@ function SCTAEngineerMoveWithSafePath(aiBrain, unit, destination)
                 result, bestPos = unit:CanPathTo(destination)
             end
         end
-
-    local pos = unit:GetPosition()
     -- If we're here, we haven't used transports and we can path to the destination
     if result then
         if EntityCategoryContains(categories.AMPHIBIOUS, unit) then
@@ -235,12 +233,10 @@ function SCTAEngineerMoveWithSafePathLand(aiBrain, unit, destination)
     if not result and not SUtils.CheckForMapMarkers(aiBrain) then
         result, bestPos = unit:CanPathTo(destination)
     end
-    local pos = unit:GetPosition()
-    local result, bestPos = unit:CanPathTo(destination)
 
     -- If we're here, we haven't used transports and we can path to the destination
     if result then
-        local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Land', pos, destination)
+        local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Land', unit:GetPosition(), destination)
         if path then
             local pathSize = table.getn(path)
             -- Move to way points (but not to destination... leave that for the final command)

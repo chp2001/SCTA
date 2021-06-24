@@ -27,6 +27,7 @@ BuilderGroup {
         BuilderConditions = {
             { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, PLANT * (categories.LAND + categories.AIR)}},
             { UCBC, 'HaveGreaterThanUnitsWithCategory', { 4, LAB} },
+            { UCBC, 'HaveGreaterThanUnitsWithCategory', { 0, LAB * categories.AIR} },
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, PLANT * (categories.LAND + categories.AIR)} },
             { TAutils, 'LessMassStorageMaxTA', { 0.05}},    
             },
@@ -68,7 +69,7 @@ BuilderGroup {
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
             },
         BuilderData = {
-            AllTerrain = true,
+            AirEngineer = true,
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
@@ -87,7 +88,7 @@ BuilderGroup {
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
         },
         BuilderData = {
-            Terrain = true,
+            LandEngineer = true,
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
@@ -155,7 +156,8 @@ BuilderGroup {
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
         },
         BuilderData = {
-            Terrain = true,
+            LandEngineer = true,
+            ReclaimTime = 30, 
             LocationType = 'LocationType',
         },
         BuilderType = 'FieldTA',

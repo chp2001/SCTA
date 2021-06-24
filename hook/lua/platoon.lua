@@ -2375,7 +2375,8 @@ Platoon = Class(SCTAAIPlatoon) {
                     local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Air', scout:GetPosition(), targetData.Position, 400)
                 else
                     path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, self.MovementLayer, scout:GetPosition(), targetData.Position, 400) --DUNCAN - Increase threatwieght from 100
-                IssueClearCommands(self)
+                end
+                    IssueClearCommands(self)
 
                 if path then
                     local pathLength = table.getn(path)
@@ -2398,7 +2399,6 @@ Platoon = Class(SCTAAIPlatoon) {
                         return self:SCTAArtyHuntAI()
                     else
                         WaitSeconds(2.5)
-                    end
                 end
             end
                 WaitSeconds(1)

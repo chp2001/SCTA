@@ -2370,15 +2370,15 @@ Platoon = Class(SCTAAIPlatoon) {
             end
 
             --Is there someplace we should scout?
-            if targetData then
+            if targetData and not scout.Dead then
                 if EntityCategoryContains(categories.AMPHIBIOUS, self) then
-                    local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Air', scout:GetPosition(), targetData.Position, 400)
+                    local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Air', scout:GetPosition() or self:GetPlatoonPosition(), targetData.Position, 400)
                 else
-                    path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, self.MovementLayer, scout:GetPosition(), targetData.Position, 400) --DUNCAN - Increase threatwieght from 100
+                    path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, self.MovementLayer, scout:GetPosition() or self:GetPlatoonPosition(), targetData.Position, 400) --DUNCAN - Increase threatwieght from 100
                 end
                     IssueClearCommands(self)
 
-                if path then
+                if path and not scout.Dead then
                     local pathLength = table.getn(path)
                     for i=1, pathLength-1 do
                         self:MoveToLocation(path[i], false)
@@ -2392,16 +2392,16 @@ Platoon = Class(SCTAAIPlatoon) {
                     target = self:FindClosestUnit('Attack', 'Enemy', true, categories.ENGINEER - categories.COMMAND)
                     structure = self:FindClosestUnit('Attack', 'Enemy', true, categories.STRUCTURE * (categories.ENERGYPRODUCTION + categories.MASSEXTRACTION) )
                     if target and self.PlatoonData.Lab then
-                        WaitSeconds(1)
+                        WaitTicks(1)
                         return self:SCTALabType()
                     elseif structure and self.PlatoonData.AllTerrain then
-                        WaitSeconds(1)
+                        WaitTicks(1)
                         return self:SCTAArtyHuntAI()
                     else
-                        WaitSeconds(2.5)
+                        WaitTicks(1)
                 end
             end
-                WaitSeconds(1)
+                WaitTicks(1)
             end
         end,
 
@@ -2719,9 +2719,8 @@ Platoon = Class(SCTAAIPlatoon) {
     SCTAReclaimAI = function(self)
             self:Stop()
             local brain = self:GetBrain()
-            local createTick = GetGameTick()
-            local oldClosest
             local eng = self:GetPlatoonUnits()[1]
+            local createTick = GetGameTick()
             if not eng then
                 self:PlatoonDisband()
                 return
@@ -2736,24 +2735,8 @@ Platoon = Class(SCTAAIPlatoon) {
                     self:PlatoonDisband()
                     return
                 end
-    
-                local reclaim = {}
-                --IssueClearCommands(eng)
-                table.sort(reclaim, function(a, b) return a.distance < b.distance end)
-    
-                local recPos = nil
-                local closest = {}
-                    for i, r in reclaim do
-                        if self.PlatoonData.AirEngineer then
-                            IssueReclaim(eng, r.entity)
-                            if i > 10 then break end
-                        elseif self.PlatoonData.LandEngineer then
-                            IssueAggressiveMove(eng, r:GetPosition())
-                            if i > 10 then break end
-                        end
-                    end
+                self:AggressiveMoveToLocation(ents[1]:GetPosition())
                 local reclaiming = not eng:IsIdleState()
-    
                 while reclaiming do
                     WaitSeconds(5)
     
@@ -2761,9 +2744,9 @@ Platoon = Class(SCTAAIPlatoon) {
                         reclaiming = false
                     end
                 end
-                --local basePosition = brain.BuilderManagers[self.PlatoonData.LocationType].Position
-                --self:MoveToLocation(AIUtils.RandomLocation(basePosition[1],basePosition[3]), false)
-                WaitSeconds(10)
+                local basePosition = brain.BuilderManagers[self.PlatoonData.LocationType].Position
+                self:MoveToLocation(AIUtils.RandomLocation(basePosition[1],basePosition[3]), false)
+                WaitSeconds(1)
                 self:PlatoonDisband()
             end
         end,

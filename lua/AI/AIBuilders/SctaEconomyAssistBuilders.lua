@@ -58,41 +58,22 @@ BuilderGroup {
         BuilderType = 'NotACU',
     },
     Builder {
-        BuilderName = 'SCTA Engineer Reclaim Air',
-        PlatoonTemplate = 'EngineerBuilderSCTAEco',
-        PlatoonAIPlan = 'SCTAReclaimAI',
-        Priority = 125,
-        InstanceCount = 5,
-        BuilderConditions = {
-            { UCBC, 'EngineerGreaterAtLocation', { 'LocationType', 1, categories.AIR * categories.ENGINEER}},
-            { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},
-            { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
-            },
-        BuilderData = {
-            AirEngineer = true,
-            LocationType = 'LocationType',
-            ReclaimTime = 30,
-        },
-        BuilderType = 'OmniAir',
-    },
-    Builder {
         BuilderName = 'SCTA Engineer Reclaim Idle',
         PlatoonTemplate = 'EngineerBuilderSCTA123',
         PlatoonAIPlan = 'SCTAReclaimAI',
         Priority = 75,
-        InstanceCount = 5,
+        InstanceCount = 10,
         BuilderConditions = {
             { MIBC, 'GreaterThanGameTime', { 240 } },
-            { UCBC, 'EngineerGreaterAtLocation', { 'LocationType', 2, (categories.ENGINEER * categories.LAND) - categories.COMMAND}},
+            { UCBC, 'EngineerGreaterAtLocation', { 'LocationType', 2, categories.ENGINEER - categories.COMMAND - categories.NAVAL}},
             { TASlow, 'TAReclaimablesInArea', { 'LocationType', }},  
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
         },
         BuilderData = {
-            LandEngineer = true,
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },
-        BuilderType = 'OmniLand',
+        BuilderType = 'NotACU',
     },
     Builder {
         BuilderName = 'SCTA Engineer Finish',
@@ -156,7 +137,6 @@ BuilderGroup {
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},
         },
         BuilderData = {
-            LandEngineer = true,
             ReclaimTime = 30, 
             LocationType = 'LocationType',
         },

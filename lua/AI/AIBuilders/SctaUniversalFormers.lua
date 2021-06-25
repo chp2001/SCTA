@@ -54,24 +54,6 @@ BuilderGroup {
         },
     },
     Builder {
-        BuilderName = 'SCTAAI LAB Interceptor',
-        PlatoonTemplate = 'LABSCTA', -- The platoon template tells the AI what units to include, and how to use them.
-        Priority = 300,
-        InstanceCount = 3,
-        BuilderType = 'Scout',
-        BuilderData = {
-            LocationType = 'LocationType',
-            Lab = true,
-            NeverGuardBases = true,
-            NeverGuardEngineers = true,
-            UseFormation = 'AttackFormation',
-        },        
-        BuilderConditions = { 
-            { TASlow, 'TAEnemyUnitsLessAtLocationRadius', { BaseEnemyArea, 'LocationType', 1, categories.ANTIAIR }},	
-            { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, RAIDAIR} },
-        },
-    },
-    Builder {
         BuilderName = 'SCTAAI Guard',
         PlatoonTemplate = 'GuardSCTA',
         PlatoonAIPlan = 'GuardEngineer',
@@ -91,6 +73,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI Air Hunt',
         PlatoonTemplate = 'LABSCTA',
         PlatoonAIPlan = 'HuntAirAISCTA',
+        PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 150,
         InstanceCount = 10,
         BuilderType = 'AirForm', 

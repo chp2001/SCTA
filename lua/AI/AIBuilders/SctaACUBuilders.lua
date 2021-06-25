@@ -131,6 +131,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T1Commander AirFac',
         PlatoonTemplate = 'CommanderBuilderSCTA',
+        PriorityFunction = TAPrior.UnitProductionT1Fac,
         Priority = 945,
         InstanceCount = 1,
         BuilderConditions = {
@@ -229,7 +230,6 @@ BuilderGroup {
             { TAutils, 'LessMassStorageMaxTA',  { 0.2}},   
         },
         BuilderData = {
-            LandEngineer = true,
             LocationType = 'LocationType',
             ReclaimTime = 30,
         },

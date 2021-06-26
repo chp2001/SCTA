@@ -7,7 +7,7 @@
 local RAIDAIR = (categories.armfig + categories.corveng + categories.GROUNDATTACK)
 local RAIDER = (categories.armpw + categories.corak + categories.armflash + categories.corgator)
 local SPECIAL = (RAIDER + categories.EXPERIMENTAL + categories.ENGINEER + categories.SCOUT)
-local GROUND = categories.MOBILE * categories.LAND
+local GROUND = (categories.MOBILE * categories.LAND)
 local RANGE = (categories.ARTILLERY + categories.SILO + categories.ANTIAIR + categories.SNIPER + categories.BOMB)
 
 PlatoonTemplate {

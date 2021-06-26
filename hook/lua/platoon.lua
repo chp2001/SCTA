@@ -2371,17 +2371,25 @@ Platoon = Class(SCTAAIPlatoon) {
 
             --Is there someplace we should scout?
             if targetData and not scout.Dead then
-                if EntityCategoryContains(categories.AMPHIBIOUS, self) then
-                    local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Air', scout:GetPosition() or self:GetPlatoonPosition(), targetData.Position, 400)
-                else
-                    path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, self.MovementLayer, scout:GetPosition() or self:GetPlatoonPosition(), targetData.Position, 400) --DUNCAN - Increase threatwieght from 100
-                end
+                if self.PlatoonData.AllTerrain then
+                    local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Air', scout:GetPosition(), targetData.Position, 400)
                     IssueClearCommands(self)
 
-                if path and not scout.Dead then
-                    local pathLength = table.getn(path)
-                    for i=1, pathLength-1 do
-                        self:MoveToLocation(path[i], false)
+                    if path and not scout.Dead then
+                        local pathLength = table.getn(path)
+                        for i=1, pathLength-1 do
+                            self:MoveToLocation(path[i], false)
+                        end
+                    end
+                else
+                    local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, self.MovementLayer, scout:GetPosition(), targetData.Position, 400) --DUNCAN - Increase threatwieght from 100
+                    IssueClearCommands(self)
+
+                    if path and not scout.Dead then
+                        local pathLength = table.getn(path)
+                        for i=1, pathLength-1 do
+                            self:MoveToLocation(path[i], false)
+                        end
                     end
                 end
             end

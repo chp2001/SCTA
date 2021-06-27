@@ -25,7 +25,6 @@ BuilderGroup {
         BuilderType = 'LandForm',
         BuilderData = {
             AllTerrain = true,
-            TAWeaponRange = 30,
             NeverGuardBases = true,
             NeverGuardEngineers = true,
             UseMoveOrder = true,

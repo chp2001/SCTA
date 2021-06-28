@@ -49,6 +49,14 @@ AIBrain = Class(SCTAAIBrainClass) {
              PlatoonFormManager = PlatoonFormManager.CreatePlatoonFormManager(self, baseName, position, radius, useCenter),
              EngineerManager = EngineerManager.CreateEngineerManager(self, baseName, position, radius),
              BuilderHandles = {},
+             MassConsumption = {
+                Resources = {Units = {}, Drain = 0, },
+                Units = {Units = {}, Drain = 0, },
+                Defenses = {Units = {}, Drain = 0, },
+                Upgrades = {Units = {}, Drain = 0, },
+                Engineers = {Units = {}, Drain = 0, },
+                TotalDrain = 0,
+            },
              Position = position,
              BaseType = Scenario.MasterChain._MASTERCHAIN_.Markers[baseName].type or 'MAIN',
          }

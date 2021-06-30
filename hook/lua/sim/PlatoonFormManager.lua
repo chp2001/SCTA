@@ -17,7 +17,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
 
         self.Location = location
         self.Radius = radius
-        self.OriginalRadius = self.Radius
+        ---self.OriginalRadius = self.Radius
         self.LocationType = lType
         --LOG('*TALocation', lType)
         if string.find(lType, 'Naval') then
@@ -60,49 +60,63 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         BuilderManager.ManagerLoopBody(self,builder,bType)
         ---local builder = self:GetHighestBuilder(bType, {builder})
             --local pool = self.Brain:GetPlatoonUniquelyNamed('ArmyPool')
-            local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
-        if not self.Naval then
-            if TAPrior.TechEnergyExist >= 75 and (bType == 'StructureForm' or TAPrior.GantryProduction >= 200 and bType == 'Other') then
-               if bType == 'StructureForm' then
-                    self.StructureForm = GetUnitsAroundPoint(self.Brain, categories.STRUCTURE * (categories.CQUEMOV + categories.MASSFABRICATION), self.Location, self.Radius, 'Ally')
-                    if self.StructureForm > 0 then 
-                        self:SCTAManagerLoopBody(builder, bType)
-                    end
-                elseif self.Main and bType == 'Other' then
-                    self.Other = GetUnitsAroundPoint(self.Brain, categories.EXPERIMENTAL, self.Location, self.Radius, 'Ally')
-                    if self.Other > 0 then
-                        self:SCTAManagerLoopBody(builder, bType)
-                    end
-                end 
-                --LOG('*TATerrain3', self.Main)
-            elseif bType == 'LandForm' then 
-                    self.LandForm = GetUnitsAroundPoint(self.Brain, categories.LAND * categories.MOBILE - categories.ENGINEER - categories.SCOUT, self.Location, self.Radius, 'Ally')
-                    if self.LandForm > 0 then
-                        self:SCTAManagerLoopBody(builder, bType)
-                    end    
-            elseif bType == 'AirForm' then 
-                    self.AirForm = GetUnitsAroundPoint(self.Brain, categories.AIR * categories.MOBILE - categories.ENGINEER - categories.SCOUT, self.Location, self.Radius, 'Ally')
-                    if self.AirForm > 0 then
-                        self:SCTAManagerLoopBody(builder, bType)
-                    end
-            elseif bType == 'Scout' then
-                    self.Scout = GetUnitsAroundPoint(self.Brain, (categories.armpw + categories.corgator + categories.SCOUT + categories.AMPHIBIOUS) - categories.ENGINEER, self.Location, self.Radius, 'Ally')
-                    if self.Scout > 0 then
-                        if not self.Main then
-                            self:SCTAManagerLoopBody(builder, bType)
-                        elseif self.Main and TAPrior.UnitProductionT1 >= 75 then 
-                            self:SCTAManagerLoopBody(builder, bType)
+            local GetCurrentUnits = moho.aibrain_methods.GetCurrentUnits
+            if builder then
+                if not self.Naval then
+                    if TAPrior.TechEnergyExist >= 75 and (bType == 'StructureForm' or TAPrior.GantryProduction >= 200 and bType == 'Other') then
+                        if bType == 'StructureForm' then
+                        if self.StructureForm > 3 then
+                        self.StructureForm = GetCurrentUnits(self.Brain, categories.STRUCTURE * (categories.CQUEMOV + categories.MASSFABRICATION))
                         end
+                        if self.StructureForm < 2 then 
+                            return self:SCTAManagerLoopBody(builder, bType)
+                        end
+                    elseif self.Main and bType == 'Other' then
+                        if self.Other < 1 then
+                        self.Other = GetCurrentUnits(self.Brain, categories.EXPERIMENTAL * categories.MOBILE)
+                        end
+                        if self.Other > 0 then
+                            return self:SCTAManagerLoopBody(builder, bType)
+                        end
+                    end 
+                    --LOG('*TATerrain3', self.Main)
+                elseif bType == 'LandForm' then 
+                        if self.LandForm < 1 then
+                        self.LandForm = GetCurrentUnits(self.Brain, (categories.LAND * categories.MOBILE) - categories.ENGINEER - categories.SCOUT)
+                        end
+                        if self.LandForm > 0 then
+                            return self:SCTAManagerLoopBody(builder, bType)
+                        end    
+                elseif bType == 'AirForm' then 
+                        if self.AirForm < 1 then
+                        self.AirForm = GetCurrentUnits(self.Brain, (categories.AIR * categories.MOBILE) - categories.ENGINEER - categories.SCOUT)
+                        end
+                        if self.AirForm > 0 then
+                           return self:SCTAManagerLoopBody(builder, bType)
+                        end
+                elseif bType == 'Scout' then
+                    if self.Scout < 1 then
+                        self.Scout = GetCurrentUnits(self.Brain, (categories.armpw + categories.corgator + (categories.SCOUT + categories.AMPHIBIOUS) - categories.ENGINEER - categories.EXPERIMENTAL))
                     end
-            end    
-            elseif self.Naval and bType == 'SeaForm' then 
-                self.SeaForm = GetUnitsAroundPoint(self.Brain, categories.NAVAL * categories.MOBILE, self.Location, self.Radius, 'Ally')
-                --LOG('*TATerrain', self.LocationType)
-            if self.SeaForm > 0 then
-                self:SCTAManagerLoopBody(builder, 'SeaForm')
+                        if self.Scout > 0 then
+                            if not self.Main then
+                                return self:SCTAManagerLoopBody(builder, bType)
+                            elseif self.Main and TAPrior.UnitProductionT1 >= 75 then 
+                                return self:SCTAManagerLoopBody(builder, bType)
+                            end
+                        end
+                end    
+                elseif self.Naval and bType == 'SeaForm' then 
+                    if self.SeaForm < 1 then
+                    self.SeaForm = GetCurrentUnits(self.Brain, (categories.NAVAL * categories.MOBILE) - categories.ENGINEER)
+                    end
+                    --LOG('*TATerrain', self.LocationType)
+                    if self.SeaForm > 0 then
+                       return self:SCTAManagerLoopBody(builder, 'SeaForm')
+                    end
+                end
             end
-        end
-    end,
+        end,
         
     ----return self:ForkThread(self.SCTAManagerLoopBody
 
@@ -174,3 +188,62 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
     end,
 
 }
+
+--[[            local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
+        if builder then
+            if not self.Naval then
+                if TAPrior.TechEnergyExist >= 75 and (bType == 'StructureForm' or TAPrior.GantryProduction >= 200 and bType == 'Other') then
+                    if bType == 'StructureForm' then
+                    if self.StructureForm > 3 then
+                    self.StructureForm = GetUnitsAroundPoint(self.Brain, categories.STRUCTURE * (categories.CQUEMOV + categories.MASSFABRICATION), self.Location, self.Radius, 'Ally')
+                    end
+                    if self.StructureForm < 2 then 
+                        return self:SCTAManagerLoopBody(builder, bType)
+                    end
+                elseif self.Main and bType == 'Other' then
+                    if self.Other < 1 then
+                    self.Other = GetUnitsAroundPoint(self.Brain, categories.EXPERIMENTAL * categories.MOBILE, self.Location, self.Radius, 'Ally')
+                    end
+                    if self.Other > 0 then
+                        return self:SCTAManagerLoopBody(builder, bType)
+                    end
+                end 
+                --LOG('*TATerrain3', self.Main)
+            elseif bType == 'LandForm' then 
+                    if self.LandForm < 1 then
+                    self.LandForm = GetUnitsAroundPoint(self.Brain, (categories.LAND * categories.MOBILE) - categories.ENGINEER - categories.SCOUT, self.Location, self.Radius, 'Ally')
+                    end
+                    if self.LandForm > 0 then
+                        return self:SCTAManagerLoopBody(builder, bType)
+                    end    
+            elseif bType == 'AirForm' then 
+                    if self.AirForm < 1 then
+                    self.AirForm = GetUnitsAroundPoint(self.Brain, (categories.AIR * categories.MOBILE) - categories.ENGINEER - categories.SCOUT, self.Location, self.Radius, 'Ally')
+                    end
+                    if self.AirForm > 0 then
+                       return self:SCTAManagerLoopBody(builder, bType)
+                    end
+            elseif bType == 'Scout' then
+                if self.Scout < 1 then
+                    self.Scout = GetUnitsAroundPoint(self.Brain, categories.armpw + categories.corgator + ((categories.SCOUT + categories.AMPHIBIOUS) - categories.ENGINEER - categories.EXPERIMENTAL), self.Location, self.Radius, 'Ally')
+                end
+                    if self.Scout > 0 then
+                        if not self.Main then
+                            return self:SCTAManagerLoopBody(builder, bType)
+                        elseif self.Main and TAPrior.UnitProductionT1 >= 75 then 
+                            return self:SCTAManagerLoopBody(builder, bType)
+                        end
+                    end
+            end    
+            elseif self.Naval and bType == 'SeaForm' then 
+                if self.SeaForm < 1 then
+                self.SeaForm = GetUnitsAroundPoint(self.Brain, (categories.NAVAL * categories.MOBILE) - categories.ENGINEER, self.Location, self.Radius, 'Ally')
+                end
+                --LOG('*TATerrain', self.LocationType)
+                if self.SeaForm > 0 then
+                   return self:SCTAManagerLoopBody(builder, 'SeaForm')
+                end
+            end
+        end
+    end,
+    ]]

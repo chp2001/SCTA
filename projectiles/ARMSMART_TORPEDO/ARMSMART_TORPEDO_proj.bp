@@ -1,0 +1,65 @@
+#ARM Pirahna Torpedo Weapon
+#ARMSMART_TORPEDO
+#
+#Blueprint created by Raevn
+
+ProjectileBlueprint {
+    Audio = {
+        Impact = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP1',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactUnit = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP1',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactShield = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP1',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactTerrain = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP1',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+    },
+    Categories = {
+        'ARM',
+        'PROJECTILE',
+        'TORPEDO',
+	    'ANTINAVY',
+    },
+    Defense = {
+        Health = 1,
+    },
+    Display = {
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/torpedo_mesh.bp',
+        UniformScale = 0.16,
+        StrategicIconSize = 1,
+    },
+    General = {
+        Category = 'Anti Navy',
+        EntityCategory = {
+            'ARM',
+            'PROJECTILE',
+            'TORPEDO',
+	        'ANTINAVY',
+        },
+        Faction = 'ARM',
+        Weapon = 'ARMSMART_TORPEDO',
+    },
+    Physics = {
+        Acceleration = 5,
+        DestroyOnWater = false,
+        InitialSpeed = 3,
+        Lifetime = 7,
+        MaxSpeed = 18,
+        StayUnderwater = true,
+        TrackTarget = true,
+        TurnRate = 230,
+        VelocityAlign = true,
+    },
+}

@@ -1,0 +1,231 @@
+#ARM Phalanx - Mobile Flak Vehicle
+#ARMYORK
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'VARMSEL',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StartMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'VARMMOVE',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StopMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'VARMSTOP',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG3',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 5,
+    Categories = {
+        'SELECTABLE',
+        'TECH2',
+        'TANK',
+
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	    'LAND',
+	    'ANTIAIR',
+        'OVERLAYANTIAIR',
+        'CORE',
+    },
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 621,
+        MaxHealth = 621,
+        AirThreatLevel = 20,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 4,
+    },
+    Description = 'Mobile Flak Vehicle',
+    Display = {
+        Abilities = {
+            '<LOC ability_aa>Anti-Air',
+        },
+    MovementEffects = {
+        Land = {
+            Treads = {
+                ScrollMultiplier = 0.75,
+                ScrollTreads = true,
+                TreadMarks = {
+                    {
+                        BoneName = 'CORSENT',
+                        TreadMarks = 'tank_treads_albedo',
+                        TreadMarksInterval = 0.2,
+                        TreadMarksSizeX = 0.5,
+                        TreadMarksSizeZ = 0.5,
+                        TreadOffset = {
+                            0,
+                            0,
+                            0,
+                        },
+                    },
+                },
+            },
+        },
+    },
+    Mesh = {
+        IconFadeInZoom = 130,
+        LODs = {
+            {
+                LODCutoff = 230,
+                Scrolling = true,
+                ShaderName = 'Unit', 
+                },
+            },
+        },
+        UniformScale = 0.1,
+    },
+    Economy = {
+        BuildCostEnergy = 10500,
+        BuildCostMass = 830,
+        BuildTime = 20380,
+    },
+    General = {
+        Category = 'Anti Air',
+        Classification = 'RULEUC_MilitaryVehicle',
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'CORE',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
+        UnitName = 'Copperhead',
+    },
+    Intel = {
+        VisionRadius = 18,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        LayerChangeOffsetHeight = -2.00,
+	BackUpDistance = 0,
+	MaxSpeedReverse = 0,
+        MaxAcceleration = 1.1,
+        MaxBrake = 1.1,
+        MaxSpeed = 2.1,
+        MotionType = 'RULEUMT_Land',
+        TurnRate = 84,
+        MaxSteerForce = 10,
+    },
+    SelectionSizeX = 1.25,
+    SelectionSizeZ = 1.5,
+    SelectionThickness = 0.25,
+    SizeX = 2,
+    SizeZ = 2,
+    SizeX = 2,
+    StrategicIconName = 'icon_land2_antiair',
+    StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
+    Weapon = {
+        {
+            Audio = {
+                Fire = Sound {
+                    Bank = 'TA_Sound',
+                    Cue = 'CANLITE2',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+            DamageFriendly = false,
+            Damage = 65,
+            DamageType = 'Normal',
+            DisplayName = 'ARMYORK_GUN',
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+            },
+	        RangeCategory = 'UWRC_AntiAir',
+            WeaponCategory = 'AntiAir',
+            FiringTolerance = 4.2,
+            Label = 'ARMYORK_GUN',
+            MaxRadius = 42.5,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 60,
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMYORK_GUN/ARMYORK_GUN_proj.bp',
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Flare',
+                        'Flare2',
+                    },
+                    RackBone = 'Guns',
+                },
+            },
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            RateOfFire = 1,
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'SPECIALHIGHPRI',
+                'AIR MOBILE HIGHPRIAIR',
+                'AIR MOBILE TECH3 BOMBER',
+                'AIR MOBILE BOMBER',
+                'AIR MOBILE GROUNDATTACK',
+                'AIR MOBILE TRANSPORTATION',
+                'AIR MOBILE',
+                'SPECIALLOWPRI',
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TurretBoneMuzzle = 'Flare',
+            TurretBonePitch = 'Guns',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+            TurretPitch = 0,
+            TurretPitchRange = 90,
+            TurretPitchSpeed = 600,
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 650,
+            Turreted = true,
+        },
+        { #BIG_UNITEX
+            Damage = 50,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        }, 
+
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORSENT/CORSENT_heap_prop.bp',
+        WreckageLayers = {
+            Land = true,
+            Seabed = true,
+        },
+    },
+}

@@ -1,0 +1,126 @@
+#ARM Tidal Generator - Produces Energy
+#ARMTIDE
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'TIDEGEN1',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOSML3',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 10,
+    Categories = {
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYCOMMANDER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH1',
+	    'STRUCTURE',
+        'ECONOMIC',
+        'SORTECONOMY',
+	    'ENERGYPRODUCTION',
+	    'NAVAL',
+	    'ARM',
+    },
+    CollisionOffsetY = -0.5,
+    Defense = {
+        ArmorType = 'Structure',
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 3,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+        Health = 256,
+        MaxHealth = 256,
+    },
+    Description = 'Produces Energy',
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'AeonCZAR', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 768,
+        BuildCostMass = 82,
+        BuildTime = 2188,
+        ProductionPerSecondEnergy = 20,
+        ProductionPerSecondEnergyMin = 15,
+        ProductionPerSecondEnergyMax = 25,
+	NaturalProducer = true,
+    },
+    Footprint = {
+	MinWaterDepth = 1.5,
+    },
+    General = {
+        Category = 'Economy',
+        Classification = 'RULEUC_Resource',
+        SelectionPriority = 5,
+        FactionName = 'ARM',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
+        UnitName = 'Tidal Generator',
+    },
+    Intel = {
+        VisionRadius = 6,
+        WaterVisionRadius = 4, 
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = { 
+        BuildOnLayerCaps = {
+            LAYER_Water = true,
+        },
+    },
+    SelectionSizeX = 1.5,
+    SelectionSizeZ = 1.5,
+    SelectionThickness = 0.25,
+    SizeX = 3,
+    SizeY = 1,
+    SizeZ = 3,
+    StrategicIconName = 'icon_structure1_energy',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #SMALL_BUILDINGEX
+            Damage = 50,
+            DamageFriendly = true,
+            DamageRadius = 5,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+         
+    },
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMTIDE/ARMTIDE_dead_prop.bp',
+        WreckageLayers = {
+            Water = true,
+            Seabed = true,
+            Sub = true,
+        },
+    },
+}

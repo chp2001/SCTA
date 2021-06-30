@@ -1,0 +1,23 @@
+UnitBlueprint {
+    Merge = true,
+    Defense = {
+        Health = 1200,
+        MaxHealth = 1200,
+        },
+    Economy = {
+    BuildCostEnergy = 3800,
+    BuildCostMass = 360,
+    BuildRate = 300,
+    MaxBuildDistance = 7,
+	ProductionPerSecondEnergy = 3,
+	ProductionPerSecondMass = 0,
+    },
+    
+    LifeBarSize = 1,
+    ---SelectionCenterOffsetZ = 0.1,
+    SelectionSizeX = 0.6,
+    SelectionSizeZ = 0.6,
+    SizeX = 1,
+    ---SizeY = 0.75,
+    SizeZ = 1,
+}

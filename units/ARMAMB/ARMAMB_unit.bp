@@ -1,0 +1,191 @@
+#ARM Ambusher - Pop-up Heavy Cannon
+#ARMAMB
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'TWRTURN3',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED1',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 6,
+    Categories = {
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3COMMANDER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH3',
+	    'STRUCTURE',
+	    'DEFENSE',
+	    'DIRECTFIRE',
+        'OVERLAYDIRECTFIRE',
+        'ARM',
+	    'STRATEGIC',
+        'SORTDEFENSE',
+        'CQUEMOV',
+        'SNIPEMODE',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        DamageModifier = 0.28,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 3,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 6,
+        Health = 1658,
+        MaxHealth = 1658,
+    },
+    Description = 'Pop-up Heavy Cannon',
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'AeonCZAR', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 17000,
+        BuildCostMass = 2200,
+        BuildTime = 20172,
+    },
+    Footprint = {
+        MaxSlope = 0.625,
+            SizeX = 2,
+            SizeZ = 2,
+        },
+    General = {
+        Category = 'Defense',
+        Classification = 'RULEUC_Weapon',
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        SelectionPriority = 5,
+        FactionName = 'ARM',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Secret',
+        UnitName = 'Ambusher',
+    },
+    Intel = {
+        VisionRadius = 16,
+    },
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    SelectionSizeX = 2,
+    SelectionCenterOffsetZ = -0.75,
+    SelectionSizeZ = 2,
+    SelectionThickness = 0.25,
+    SizeX = 3,
+    SizeY = 2,
+    SizeZ = 3,
+    StrategicIconName = 'icon_structure3_directfire',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        {
+            Audio = {
+                Fire = Sound {
+                    Bank = 'TA_Sound',
+                    Cue = 'CANNHVY5',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+            DamageFriendly = false,
+            Damage = 400,
+            DamageRadius = 2, 
+            DamageType = 'Normal',
+            DisplayName = 'ARMAMB_GUN',
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+            RangeCategory = 'UWRC_DirectFire',
+            WeaponCategory = 'DirectFire',
+            Label = 'ARMAMB_GUN',
+            MaxRadius = 60, 
+            MuzzleSalvoDelay = 0, 
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 30,
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMAMB_GUN/ARMAMB_GUN_proj.bp',
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'flare',
+                    },
+                    RackBone = 'barrel',
+                },
+            },
+            RackRecoilDistance = -5,
+            RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            RateOfFire = 0.3225806452,
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
+            TurretBoneMuzzle = 'flare',
+            TurretBonePitch = 'gun',
+            TurretBoneYaw = 'turret',
+            TurretPitch = 0,
+            TurretPitchRange = 360,
+            TurretPitchSpeed = 50,
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 100,
+            Turreted = true,
+	        WeaponUnpacks = true,
+            WeaponRepackTimeout = 1,
+        },
+        { #LARGE_BUILDINGEX
+            Damage = 150,
+            DamageFriendly = true,
+            DamageRadius = 4,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMAMB/ARMAMB_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

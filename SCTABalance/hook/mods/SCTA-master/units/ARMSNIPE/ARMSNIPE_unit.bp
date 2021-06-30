@@ -1,0 +1,44 @@
+UnitBlueprint {
+    Merge = true, 
+    Categories = {
+        'SELECTABLE',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	    'LAND',
+	    'DIRECTFIRE',
+        'OVERLAYDIRECTFIRE',
+        'ARM',
+        'BOT',	
+        'SNIPER',
+        'ANTISHIELD',
+    },
+    Defense = {
+        Health = 1000,
+        MaxHealth = 1000,
+    },
+    Economy = {
+        BuildCostEnergy = 30000,
+        BuildCostMass = 1400,
+        BuildTime = 28000,
+        MaintenanceConsumptionPerSecondEnergy = 50,
+    },
+    Intel = {
+        ActiveIntel = {
+            RadarStealth = true,
+        },
+        RadarStealth = true,
+    },
+    Weapon = {
+        [1] = {
+            DamageToShields = 800,
+            MaxRadius = 80,
+            RateOfFire = 0.1,
+            EnergyDrainPerSecond = 100,
+            EnergyRequired = 500,
+        },
+        [2] = {
+        },
+    },
+}

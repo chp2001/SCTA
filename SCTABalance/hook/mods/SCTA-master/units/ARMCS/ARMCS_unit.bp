@@ -1,0 +1,22 @@
+UnitBlueprint {
+    Merge = true,
+    Defense = {
+        Health = 800,
+        MaxHealth = 800,
+        },
+    Economy = {
+        BuildRate = 120,
+        BuildCostMass = 120,
+        BuildCostEnergy = 1200,
+        BuildTime = 2000,
+        ProductionPerSecondEnergy = 3,
+        MaxBuildDistance = 7,
+        StorageEnergy = 10,
+        StorageMass = 10,
+        BuildableCategory = {
+            'BUILTBYTIER2COMMANDER ARM',
+            'TECH1 FACTORY ARM',
+        },
+    },
+    
+}

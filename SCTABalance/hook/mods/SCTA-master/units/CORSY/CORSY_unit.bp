@@ -1,0 +1,37 @@
+UnitBlueprint {
+    Merge = true,
+    BuildIconSortPriority = 4,
+    Defense = {
+        Health = 5000,
+        MaxHealth = 5000,
+    },
+        Display = {
+                Abilities = {
+                    '<LOC ability_upgradable>Upgradeable',
+                },
+                UniformScale = 0.27,
+    },
+    Economy = {
+        BuildCostEnergy = 3600,
+        BuildRate = 100,
+        BuildableCategory = {
+            'NAVAL MOBILE TECH1 CORE',
+            'cordsy',
+        },
+    },
+    Footprint = {
+        SizeX = 7,
+        SizeZ = 7,
+    },
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 3,
+    LifeBarSize = 7,
+    General = {
+        UpgradesTo = 'cordsy', 
+    },
+    SelectionSizeX = 9,
+    SelectionSizeZ = 9,
+    SizeX = 12,
+    SizeY = 3,
+    SizeZ = 12,
+}

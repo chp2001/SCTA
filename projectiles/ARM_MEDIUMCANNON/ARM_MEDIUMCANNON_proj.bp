@@ -1,0 +1,61 @@
+#ARM Triton Cannon
+#ARM_MEDIUMCANNON
+#
+#Blueprint created by Raevn
+
+ProjectileBlueprint {
+    Audio = {
+        Impact = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED4',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactUnit = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED4',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactShield = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED4',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactTerrain = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED4',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactWater = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'SPLSMED',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+    },
+    Categories = {
+        'ARM',
+        'PROJECTILE',
+        'DIRECTFIRE',
+    },
+    Display = {
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/Plasma_mesh.bp',
+        UniformScale = 0.16,
+        StrategicIconSize = 1,
+    },
+    General = {
+        Category = 'Direct Fire',
+        EntityCategory = {
+            'ARM',
+            'PROJECTILE',
+            'DIRECTFIRE',
+        },
+        Faction = 'ARM',
+        Weapon = 'ARM_MEDIUMCANNON',
+    },
+
+    Physics = {
+        DestroyOnWater = true,
+        InitialSpeed = 24,
+        Lifetime = 4,
+        UseGravity = true,
+    },
+}

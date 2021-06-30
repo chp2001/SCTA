@@ -1,0 +1,28 @@
+UnitBlueprint {
+    Merge = true,
+    Air = {
+        BankFactor = 2.5,
+        CombatTurnSpeed = 0.8,
+        EngageDistance = 50,
+        KRollDamping = 2,
+        MaxAirspeed = 20,
+        MinAirspeed = 10,
+    },
+    Defense = {
+        Health = 2000,
+        MaxHealth = 2000,
+    },
+    Economy = {
+        BuildCostEnergy = 20000,
+        BuildCostMass = 1200,
+    },
+    Weapon = {
+        [1] = {
+        },
+        [2] = {
+            DamageType = 'AntiAir',
+        },
+        [3] = {
+        }, 
+    },
+}

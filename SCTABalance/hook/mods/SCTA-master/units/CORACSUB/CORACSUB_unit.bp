@@ -1,0 +1,29 @@
+UnitBlueprint {
+    Merge = true,
+    Display = {
+        Abilities = {
+              '<LOC ability_engineeringsuite>Engineering Suite',
+        },
+    },
+    Defense = {
+        Health = 940,
+        MaxHealth = 940,
+        },
+        Display = {
+            UniformScale = 0.12,
+        },
+    Economy = {
+        BuildCostEnergy = 1800,
+        BuildCostMass = 400,
+        BuildRate = 300,
+        BuildableCategory = {
+            'BUILTBYTIER2COMMANDER CORE',
+            'TECH1 FACTORY CORE',
+            'BUILTBYTIER3COMMANDER CORE',
+        },
+        BuildTime = 5000,
+        MaxBuildDistance = 9,
+        ProductionPerSecondEnergy = 4,
+        ProductionPerSecondMass = 0,
+    },
+}

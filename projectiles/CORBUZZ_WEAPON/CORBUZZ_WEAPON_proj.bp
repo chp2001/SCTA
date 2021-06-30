@@ -1,0 +1,59 @@
+
+ProjectileBlueprint {
+    Audio = {
+        Impact = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLONUK1',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactUnit = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLONUK1',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactShield = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLONUK1',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactTerrain = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLONUK1',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactWater = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'SPLSLRG',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+    },
+    Categories = {
+        'CORE',
+        'PROJECTILE',
+        'INDIRECTFIRE',
+    },
+    Display = {
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/Plasma_mesh.bp',
+        UniformScale = 0.20,
+        StrategicIconSize = 1,
+    },
+    General = {
+        Category = 'Indirect Fire',
+        EntityCategory = {
+            'CORE',
+            'PROJECTILE',
+            'INDIRECTFIRE',
+        },
+        Faction = 'CORE',
+        Weapon = 'CORBUZZ_WEAPON',
+    },
+
+    Physics = {
+        DestroyOnWater = true,
+        LeadTarget = false,
+        TurnRate = 360,
+        InitialSpeed = 50,
+        VelocityAlign = false,
+        UseGravity = true,
+    },
+}

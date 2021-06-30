@@ -1,0 +1,58 @@
+UnitBlueprint {
+   Merge = true,
+    Categories = {
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER3COMMANDER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH3',
+	    'FACTORY',
+        'SUBMERSIBLE',
+        'RALLYPOINT',
+        'SHOWQUEUE',
+	    'STRUCTURE',
+	    'CONSTRUCTION',
+        'OVERLAYSONAR',
+        'ARM',
+        'AIR',
+	    'SORTCONSTRUCTION',
+    },
+    Defense = {
+        Health = 10000,
+        MaxHealth = 10000,
+    },
+    Display = {
+        UniformScale = 0.20,
+    },
+    Footprint = {
+        SizeX = 7,
+        SizeZ = 7,
+    },
+    Economy = {
+        BuildCostEnergy = 60000,
+        BuildCostMass = 2000, 
+        BuildTime = 64000,
+    BuildRate = 240,
+        BuildableCategory = {
+            'armcsa',
+            'AIR MOBILE TRANSPORTATION TECH3 ARM',
+        },
+    },
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
+    },
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 3,
+    LifeBarSize = 7,
+    SelectionSizeX = 7,
+    SelectionSizeZ = 5,
+    SelectionThickness = 0.25,
+    SizeX = 9,
+    SizeY = 3,
+    SizeZ = 9,
+}

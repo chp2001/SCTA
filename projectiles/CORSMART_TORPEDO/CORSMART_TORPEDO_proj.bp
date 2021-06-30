@@ -1,0 +1,65 @@
+#CORE Shark Torpedo Weapon
+#CORSMART_TORPEDO
+#
+#Blueprint created by Raevn
+
+ProjectileBlueprint {
+    Audio = {
+        Impact = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP3',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactUnit = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP3',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactShield = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP3',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactTerrain = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP3',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+    },
+    Categories = {
+        'CORE',
+        'PROJECTILE',
+        'TORPEDO',
+	    'ANTINAVY',
+    },
+    Display = {
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/torpedo_mesh.bp',
+        UniformScale = 0.16,
+        StrategicIconSize = 1,
+    },
+    Defense = {
+        Health = 1,
+    },
+    General = {
+        Category = 'AntiNavy',
+        EntityCategory = {
+            'CORE',
+            'PROJECTILE',
+            'TORPEDO',
+	    'ANTINAVY',
+        },
+        Faction = 'CORE',
+        Weapon = 'CORSMART_TORPEDO',
+    },
+    Physics = {
+        Acceleration = 5,
+        DestroyOnWater = false,
+        InitialSpeed = 3,
+        Lifetime = 7,
+        MaxSpeed = 18,
+        StayUnderwater = true,
+        TrackTarget = true,
+        TurnRate = 230,
+        VelocityAlign = true,
+    },
+}

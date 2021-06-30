@@ -1,0 +1,27 @@
+#ARM Ambusher - Pop-up Heavy Cannon
+#ARMAMB
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true, 
+    Display = {
+        UniformScale = 0.12,
+    },
+    Defense = {
+        Health = 6200,
+        MaxHealth = 6200,
+    },
+    Intel = {
+        FreeIntel = true,
+        RadarStealth = true,
+    },
+    Weapon = {
+        [1] = {
+            Damage = 240,
+            RateOfFire = 1,
+        },
+        [2] = {
+        },
+    },
+}

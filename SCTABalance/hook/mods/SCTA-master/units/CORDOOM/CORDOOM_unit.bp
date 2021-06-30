@@ -1,0 +1,67 @@
+#CORE Doomsday Machine - Energy Weapon
+#CORDOOM
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+   Merge = true,
+   Categories = {
+    'BUILTBYTIER3ENGINEER',
+    'SELECTABLE',
+    'DRAGBUILD',
+    'VISIBLETORECON',
+    'RECLAIMABLE',
+    'TECH3',
+    'SORTDEFENSE',
+    'CQUEMOV',
+    'STRUCTURE',
+    'DEFENSE',
+    'DIRECTFIRE',
+    'OVERLAYDIRECTFIRE',
+    'CORE',
+    'STRATEGIC',
+    'SNIPEMODE',
+    'ANTISHIELD',
+    },
+    Defense = {
+        Health = 22000,
+        MaxHealth = 22000,
+    },
+    Display = {
+        UniformScale = 0.18,
+    },
+    Economy = {
+        BuildCostEnergy = 30000,
+        BuildCostMass = 5000,
+        BuildTime = 60000,
+    },
+    Physics = {
+        SkirtSizeX = 1, 
+        SkirtSizeZ = 1,  
+    },
+    LifeBarSize = 3,
+    SelectionSizeX = 2,
+    SelectionSizeZ = 2,
+    SelectionThickness = 0.25,
+    SizeX = 4,
+    SizeY = 5,
+    SizeZ = 4,
+    Weapon = {
+        [1] = {
+            MaxRadius = 90,
+        },
+        [2] = {
+            Damage = 300,
+            MaxRadius = 50,
+            EnergyDrainPerSecond = 40,
+            EnergyRequired = 40,
+        },
+        [3] = {
+            Damage = 100,
+            EnergyDrainPerSecond = 30,
+            EnergyRequired = 30,
+        },
+        [4] = {
+        },
+    },
+}

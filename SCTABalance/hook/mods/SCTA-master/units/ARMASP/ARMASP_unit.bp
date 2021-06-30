@@ -1,0 +1,34 @@
+#ARM Air Repair Pad - Automatically repairs aircraft
+#ARMASP
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Categories = {
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH1',
+	    'STRUCTURE',
+	    'STRATEGIC',
+        'AIRSTAGINGPLATFORM',
+        'OVERLAYMISC',
+        'ARM',
+        'SORTSTRATEGIC',
+    },
+    Display = {
+        UniformScale = 0.2,
+    },
+    SelectionSizeX = 3,
+    SelectionSizeZ = 3,
+    SelectionThickness = 0.25,
+    SizeX = 5,
+    SizeY = 2,
+    SizeZ = 5,
+}

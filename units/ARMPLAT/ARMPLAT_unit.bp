@@ -1,0 +1,175 @@
+#ARM Adv. Aircraft Plant - Produces Aircraft
+#ARMAAP
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PAIRACTV',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Construct = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PLABWORK',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	ConstructStop = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'UNITDONE',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG4',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 0,
+    Categories = {
+        'BUILTBYTIER3COMMANDER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH3',
+	    'FACTORY',
+        'RALLYPOINT',
+        'SHOWQUEUE',
+	    'STRUCTURE',
+	    'CONSTRUCTION',
+        'SUBMERSIBLE',
+        'OVERLAYSONAR',
+        'ARM',
+        'AIR',
+	    'SORTCONSTRUCTION',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 2100,
+        MaxHealth = 2100,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 11,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Builds Seaplanes',
+    Display = {
+        AnimationUnpack = '/mods/SCTA-master/units/ARMPLAT/ARMPLAT_lod0_unpack.sca',
+        AnimationUnpackRate = 1, 
+        Abilities = {
+            '<LOC ability_aquatic>Aquatic',
+        },
+	BuildAttachBone = 'pad',
+        Mesh = {
+            IconFadeInZoom = 400,
+            LODs = {
+                {
+                    LODCutoff = 400,
+                    ShaderName = 'Unit', 
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 5396,
+        BuildCostMass = 2223,
+        BuildTime = 19248,
+    BuildRate = 200,
+    BuildableCategory = {
+        'armfig',
+        'armlance',
+        'armcsa',
+        'AIR MOBILE TRANSPORTATION TECH3 ARM',
+    },
+	StorageEnergy = 250,
+	StorageMass = 250,
+    },
+    Footprint = {
+        MinWaterDepth = 1.875,
+        SizeX = 6,
+        SizeZ = 6,
+    },
+    General = {
+        BuildBones = {
+            BuildEffectBones = {'beam1', 'beam2'},
+        },   
+        Category = 'Factory',
+        Classification = 'RULEUC_Factory',
+        CommandCaps = {
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        ConstructionBar = true,
+        SelectionPriority = 5,
+        FactionName = 'ARM',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Advanced',
+	UnitName = 'Seaplane Platform',
+    },
+    Intel = {
+    VisionRadius = 14,
+	SonarRadius = 32,
+    WaterVisionRadius = 8,
+    RadarStealth = true,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Water = true,
+        },        
+        RollOffPoints = {
+            {
+                UnitSpin = 0,
+                X = 0,
+                Y = 0,
+                Z = 3,
+            },
+            {
+                UnitSpin = 180,
+                X = 0,
+                Y = 0,
+                Z = -3,
+            },
+        },
+    },
+    SelectionSizeX = 4.45,
+    SelectionSizeZ = 3.4,
+    SelectionCenterOffsetZ = 0.25,
+    SelectionThickness = 0.25,
+    SizeX = 7,
+    SizeY = 4,
+    SizeZ = 7,
+    StrategicIconName = 'icon_factory3_air',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #LARGE_BUILDINGEX
+        Damage = 200,
+        DamageFriendly = true,
+        DamageRadius = 5,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMPLAT/ARMPLAT_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

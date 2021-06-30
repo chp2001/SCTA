@@ -1,0 +1,48 @@
+UnitBlueprint {
+    Merge = true, 
+    Categories = {
+        'BUILTBYTIER3ENGINEER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH3',
+	    'STRUCTURE',
+	    'INTELLIGENCE',
+	    'OPTICS',
+        'RADAR',
+        'OMNI',
+        'OVERLAYRADAR',
+        'OVERLAYOMNI',
+	    'CORE',
+	    'SORTINTEL',
+    },
+    Defense = {
+        Health = 3000,
+        MaxHealth = 3000,
+    },
+    Description = 'Automatic Radar Targeting and Omni',
+    Display = {
+        Abilities = {
+            'Radar Targeting',
+            '<LOC ability_omni>Omni Sensor',
+            '<LOC ability_radar>Radar',
+        },
+    },
+    Economy = {
+        BuildCostEnergy = 50000,
+        BuildCostMass = 4000,
+        BuildTime = 25000,
+        MaintenanceConsumptionPerSecondEnergy = 1500,
+    },
+        Intel = {
+            VisionRadius = 16, 
+            RadarRadius = 360,
+            OmniRadius = 120,
+        },
+        SelectionSizeX = 3,
+        SelectionSizeZ = 3,
+        SizeX = 5,
+        SizeY = 3,
+        SizeZ = 5,
+}

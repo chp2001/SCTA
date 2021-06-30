@@ -1,0 +1,55 @@
+UnitBlueprint {
+    Merge = true, 
+    Categories = {
+        'SELECTABLE',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	    'LAND',
+        'ARM',
+        'RADAR',
+        'BUILTBYTIER3ENGINEER',
+        'NEEDMOBILEBUILD',
+        'CQUEMOV',
+        'STEALTHFIELD',    
+        'OVERLAYRADAR',
+        'OVERLAYCOUNTERINTEL',
+        'SORTINTEL',
+        'SCOUT',
+    },
+    Display = {
+        UniformScale = 0.3,
+    },
+    Economy = {
+        BuildCostEnergy = 12000,
+        BuildCostMass = 800,
+        BuildTime = 6000,
+        ProductionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 75,
+    },
+    General = {
+    OrderOverrides = {
+        RULEUTC_CloakToggle = {
+            bitmapId = 'stealth-field',
+            helpText = 'toggle_stealth_field',
+        },
+    },
+    ToggleCaps = {
+        RULEUTC_StealthToggle = false,
+        RULEUTC_CloakToggle = true,
+    },
+    },
+    Intel = {
+        CloakField = true,
+        Cloak = true,
+        CloakFieldRadius = 15,
+        RadarStealthFieldRadius = 15,
+    },
+    LifeBarSize = 3,
+    SelectionSizeX = 2,
+    SelectionSizeZ = 2,
+    SizeX = 4,
+    SizeY = 4,
+    SizeZ = 4,
+}

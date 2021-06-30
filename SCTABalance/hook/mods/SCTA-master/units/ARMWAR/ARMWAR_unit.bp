@@ -1,0 +1,39 @@
+UnitBlueprint {
+   Merge = true, 
+   Defense = {
+    Health = 600,
+    MaxHealth = 600,
+    },
+    Display = {
+        UniformScale = 0.12,
+    },
+Economy = {
+    BuildCostEnergy = 750,
+    BuildCostMass = 120,
+    BuildTime = 2200,
+},
+SelectionSizeX = 0.8,
+SelectionSizeZ = 0.8,
+LifeBarSize = 1,
+SizeX = 1.5,
+SizeY = 1.7,
+SizeZ = 1.7,
+Physics = {
+    MaxBrake = 2.4,
+    MaxSpeed = 3.6,
+    TurnRate = 150,
+    MaxSteerForce = 10,
+    },
+    Weapon = {
+	    [1] = {
+            Damage = 4,
+            MaxRadius = 15,
+        },
+        [2] = {
+            RateOfFire = 1,
+            Damage = 15,
+        },
+        [3] = {
+        },
+    },
+}

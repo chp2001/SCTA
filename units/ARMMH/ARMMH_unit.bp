@@ -1,0 +1,208 @@
+#ARM Wombat - Hovercraft Rocket Launcher
+#ARMMH
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'TARMSEL',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StartMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'TARMMOVE',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StopMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'TARMST0P',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG3',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 12,
+    Categories = {
+        'SELECTABLE',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	    'INDIRECTFIRE',
+        'OVERLAYINDIRECTFIRE',
+        'SILO',
+        'LAND',
+        'ARM',
+        'HOVER',
+    },
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 450,
+        MaxHealth = 450,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 20,
+    },
+    Description = 'Hovercraft Rocket Launcher',
+    Display = {
+        Abilities = {
+            '<LOC ability_hover>Hover',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'AeonCZAR', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+	MovementEffects = {
+        TAMovement = {
+		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
+		Scale = 0.5,
+		Bones = {'Wake1'},
+        },
+	},
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 3131,
+        BuildCostMass = 325,
+        BuildTime = 17933,
+    },
+
+    General = {
+        Category = 'Indirect Fire',
+        Classification = 'RULEUC_MilitaryVehicle',
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'ARM',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Advanced',
+        UnitName = 'Wombat',
+    },
+    Intel = {
+        VisionRadius = 18,
+        WaterVisionRadius = 4, 
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        Elevation = 0.25,    
+	BackUpDistance = 0,
+	MaxSpeedReverse = 0,
+        MaxAcceleration = 1,
+        MaxBrake = 1,
+        MaxSpeed = 2,
+        MotionType = 'RULEUMT_Hover',
+        TurnRate = 78,
+        MaxSteerForce = 100,
+	RotateOnSpot = true,
+	TurnFacingRate = 78,
+	WobbleFactor = 0.02,
+	WobbleSpeed = 0.05,
+    },
+    SelectionSizeX = 1.25,
+    SelectionSizeZ = 1.5,
+    SelectionThickness = 0.25,
+    SizeX = 3,
+    SizeZ = 2.5,
+    SizeZ = 3,
+    StrategicIconName = 'icon_land3_missile',
+    StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
+    Weapon = {
+        {
+            Audio = {
+                Fire = Sound {
+                    Bank = 'TA_Sound',
+                    Cue = 'ROCKHVY1',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+            BallisticArc = 'RULEUBA_HighArc',
+            CollideFriendly = false,
+            DamageFriendly = false,
+            Damage = 300,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+            DisplayName = 'ARMMH_WEAPON',
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Air',
+                Water = 'Land|Water|Air',
+            },
+	        RangeCategory = 'UWRC_IndirectFire',
+	        FiringTolerance = 7,
+            Label = 'ARMMH_WEAPON',
+            MaxRadius = 80,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 5,
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMMH_WEAPON/ARMMH_WEAPON_proj.bp',
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Flare',
+                    },
+                    RackBone = 'Box',
+                },
+            },
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            RateOfFire = 0.1111111111,
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
+	        WeaponUnpacks = true,
+            WeaponRepackTimeout = 2,
+            RenderFireClock = true,
+            WeaponCategory = 'MISSILE',
+        },
+        { #BIG_UNITEX
+            Damage = 100,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        }, 
+
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMMH/ARMMH_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+            Water = true,
+        },
+    },
+}

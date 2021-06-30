@@ -1,0 +1,183 @@
+#ARM Air Repair Pad - Automatically repairs aircraft
+#ARMASP
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PAIRACTV',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Construct = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PLABWORK',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	ConstructStop = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'UNITDONE',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG4',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    AI = {
+        GuardScanRadius = 300,
+        RefuelingMultiplier = 50,
+        RefuelingRepairAmount = 500,
+        RepairConsumeEnergy = 30,
+        RepairConsumeMass = 0,
+        ShowAssistRangeOnSelect = true,
+        StagingPlatformScanRadius = 300,
+    },
+    BuildIconSortPriority = 15,
+    Categories = {
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH3',
+	    'STRUCTURE',
+	    'STRATEGIC',
+        'AIRSTAGINGPLATFORM',
+        'OVERLAYMISC',
+	    'ARM',
+        'SORTSTRATEGIC',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 680,
+        MaxHealth = 680,
+        AirThreatLevel = 1,
+        EconomyThreatLevel = 5,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Automatically repairs aircraft',
+    Display = {
+        Abilities = {
+            '<LOC ability_airstaging>Air Staging',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'AeonCZAR', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 8510,
+        BuildCostMass = 425,
+        BuildTime = 21953,
+	BuildRate = 200,
+	NaturalProducer = true,
+    ProductionPerSecondEnergy = 10,
+	StorageEnergy = 100,
+    },
+    General = {
+        BuildBones = {
+            BuildEffectBones = {'Build_Nozzle_01','Build_Nozzle_02'},
+        },             
+        Category = 'Strategic',
+        Classification = 'RULEUC_MiscSupport',
+        CommandCaps = {
+            RULEUCC_Attack = false,
+            RULEUCC_CallTransport = false,
+            RULEUCC_Capture = false,
+            RULEUCC_Guard = false,
+            RULEUCC_Move = false,
+            RULEUCC_Nuke = false,
+            RULEUCC_Patrol = false,
+            RULEUCC_Reclaim = false,
+            RULEUCC_Repair = false,
+            RULEUCC_RetaliateToggle = false,
+            RULEUCC_Stop = false,
+            RULEUCC_Transport = true,
+        },
+        SelectionPriority = 5,
+        FactionName = 'ARM',
+        OrderOverrides = {
+            RULEUCC_Transport = {
+                bitmapId = 'deploy',
+                helpText = 'Deploy',
+            },
+        },
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Secret',
+        UnitName = 'Air Repair Pad',
+    },
+    Intel = {
+        VisionRadius = 12,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 1,
+    LifeBarSize = 3,
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MeshExtentsX = 3,
+        MeshExtentsY = 1.25,
+        MeshExtentsZ = 3,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = -1.5,
+        SkirtOffsetZ = -1.5,
+        SkirtSizeX = 6,
+        SkirtSizeZ = 6,
+        TurnRate = 0,
+    },
+    SelectionSizeX = 3,
+    SelectionSizeZ = 3,
+    SelectionThickness = 0.25,
+    SizeX = 4,
+    SizeY = 2,
+    SizeZ = 4,
+    StrategicIconName = 'icon_structure1_air',
+    StrategicIconSortPriority = 0,
+    Transport = {
+        Class2AttachSize = 2,
+        Class3AttachSize = 4,
+        DockingSlots = 4,
+        RepairRate = 0.1,
+        StorageSlots = 0,
+    },
+    Weapon = {
+        { #BIG_UNITEX
+            Damage = 100,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        }, 
+
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMASP/ARMASP_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

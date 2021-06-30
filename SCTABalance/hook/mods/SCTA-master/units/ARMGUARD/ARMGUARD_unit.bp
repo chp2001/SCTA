@@ -1,0 +1,26 @@
+UnitBlueprint {
+    Merge = true, 
+    Display = {
+        UniformScale = 0.24,
+    },
+    Economy = {
+        BuildCostEnergy = 45000,
+        BuildCostMass = 3000,
+        BuildTime = 40000,
+    },
+    Intel = {
+        VisionRadius = 18,
+    },
+    SelectionSizeX = 2,
+    SelectionSizeZ = 2,
+    Weapon = {
+    [1] = {
+        Damage = 250,
+        EnergyDrainPerSecond = 250,
+        EnergyRequired = 500,
+        RateOfFire = 0.4,
+        EnergyChargeForFirstShot = true,
+    },
+    [2] = {}, 
+    },
+}

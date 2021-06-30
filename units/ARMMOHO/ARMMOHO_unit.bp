@@ -1,0 +1,135 @@
+#ARM Moho Mine - Advanced Metal Extractor
+#ARMMOHO
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'MOHOON1',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Activate = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'MOHORUN1',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Deactivate = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'MOHOOFF1',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOSML3',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 1,
+    Categories = {
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3COMMANDER',
+        'TECH2',
+        'SELECTABLE',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+	    'STRUCTURE',
+        'MASSPRODUCTION',
+        'MASSEXTRACTION',
+        'ECONOMIC',
+        'SORTECONOMY',
+	    'ARM',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 2000,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+        Health = 1573,
+        MaxHealth = 1573,
+    },
+    Description = 'Advanced Metal Extractor',
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'AeonCZAR', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.1,
+    },
+    Economy = {
+        BuildCostEnergy = 8700,
+        BuildCostMass = 1508,
+        BuildTime = 35750,
+        MaintenanceConsumptionPerSecondEnergy = 15,
+        ProductionPerSecondMass = 8,
+    },
+    General = {	
+        Category = 'Economy',
+        Classification = 'RULEUC_Resource',
+        SelectionPriority = 5,
+        FactionName = 'ARM',
+        ToggleCaps = {
+            RULEUTC_ProductionToggle = true,
+        },
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Secret',
+        UnitName = 'Moho Mine',
+    },
+    Intel = {
+        VisionRadius = 14,
+        WaterVisionRadius = 4, 
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+        FlattenSkirt = true,
+        SkirtSizeX = 5,
+        SkirtSizeZ = 5,
+        BuildRestriction = 'RULEUBR_OnMassDeposit',
+    },
+    SelectionSizeX = 2.5,
+    SelectionSizeZ = 2.5,
+    SelectionThickness = 0.25,
+    SizeX = 5,
+    SizeY = 3,
+    SizeZ = 5,
+    StrategicIconName = 'icon_structure2_mass',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #SMALL_BUILDINGEX
+            Damage = 100,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+         
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMMOHO/ARMMOHO_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

@@ -1,0 +1,32 @@
+UnitBlueprint {
+    Merge = true, 
+    Defense = {
+        Health = 2800,
+        MaxHealth = 2800,
+    },
+     Intel = {
+        VisionRadius = 15, 
+        WaterVisionRadius = 8, 
+        SonarRadius = 24,
+        RadarRadius = 24,
+        },
+    Economy = {
+        BuildCostEnergy = 6100,
+        BuildCostMass = 580,
+        BuildTime = 11000,
+    },
+    Description = 'Frigate',
+    SelectionSizeX = 2,
+    SelectionSizeZ = 4,
+    Weapon = {
+        [1] = {
+            Damage = 120,
+            MaxRadius = 32,
+        },
+        [2] = {
+            Damage = 50,
+        },
+        [3] = {
+        },
+    },
+}

@@ -1,0 +1,167 @@
+#ARM Mine Layer Vehicle - Tech Level 1
+#ARMMLV
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'VARMSEL',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StartMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'VARMMOVE',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StopMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'VARMSTOP',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Construct = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'NANLATH1',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	StartReclaim = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'RECLAIM1',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG3',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 6,
+    Categories = {
+        'SELECTABLE',
+        'TANK',
+        'TECH1',
+        'ENGINEER',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SHOWQUEUE',
+	    'REPAIR',
+        'MOBILE',
+	    'CONSTRUCTION',
+        'LAND',
+        'FIELDENGINEER',
+        'ARM',
+    },
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 1200,
+        MaxHealth = 1200,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 4,
+    },
+    Description = 'Mine Layer Vehicle',
+    Display = {
+        AnimationBuild = '/mods/SCTA-master/units/ARMMLV/ARMMLV_lod0_unpack.sca',
+        AnimationBuildRate = 1, 
+        Abilities = {
+             '<LOC ability_engineeringsuite>Engineering Suite',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'AeonCZAR', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 1031,
+        BuildCostMass = 173,
+        BuildRate = 100,
+        BuildTime = 1519,
+        BuildableCategory = {
+            'BOMB STRUCTURE ARM',
+        },
+        MaxBuildDistance = 4.375,
+    },
+    General = {
+        BuildBones = {
+            AimBone = 'post',
+            BuildEffectBones = {'Muzzle'},
+            PitchBone = 'nanogun',
+            YawBone = 'post',
+        },
+        Category = 'Construction',
+        Classification = 'RULEUC_Engineer',
+        CommandCaps = {
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_Stop = true,
+            RULEUCC_Reclaim = true,
+            RULEUCC_Repair = true,
+        },
+        ConstructionBar = true,
+        SelectionPriority = 3,
+        FactionName = 'ARM',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Basic',
+	UnitName = 'Podger',
+    },
+    Intel = {
+        VisionRadius = 14,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        LayerChangeOffsetHeight = -2.00,
+	BackUpDistance = 0,
+	MaxSpeedReverse = 0,
+        MaxAcceleration = 1,
+        MaxBrake = 1,
+        MaxSpeed = 2,
+        MotionType = 'RULEUMT_Land',
+        TurnRate = 41,
+        MaxSteerForce = 10,
+    },
+    SelectionSizeX = 1.5,
+    SelectionSizeZ = 1.85,
+    SelectionThickness = 0.25,
+    SizeX = 3,
+    SizeY = 1.25,
+    SizeZ = 3,
+    StrategicIconName = 'icon_land1_engineer',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #BIG_UNITEX
+            Damage = 50,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        }, 
+
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMMLV/ARMMLV_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+            Seabed = true,
+        },
+    },
+}

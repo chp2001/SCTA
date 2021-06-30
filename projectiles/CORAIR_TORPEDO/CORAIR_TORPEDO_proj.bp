@@ -1,0 +1,66 @@
+#CORE Titan Torpedo Weapon
+#CORAIR_TORPEDO
+#
+#Blueprint created by Raevn
+
+ProjectileBlueprint {
+    Audio = {
+        Impact = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactUnit = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactShield = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactTerrain = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+    },
+    Categories = {
+        'CORE',
+        'PROJECTILE',
+        'ANTINAVY',
+        'TORPEDO',
+    },
+    Defense = {
+        Health = 1,
+    },
+    Display = {
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/torpedo_mesh.bp',
+        StrategicIconSize = 1,
+        UniformScale = 0.22,
+    },
+    General = {
+        Category = 'Anti Navy',
+        EntityCategory = {
+            'CORE',
+            'PROJECTILE',
+            'TORPEDO',
+	        'ANTINAVY',
+        },
+        Faction = 'CORE',
+        Weapon = 'CORAIR_TORPEDO',
+    },
+
+    Physics = {
+        Acceleration = 0,
+        DestroyOnWater = false,
+        InitialSpeed = 14,
+        Lifetime = 20,
+        MaxSpeed = 14,
+        StayUnderwater = true,
+        TrackTarget = true,
+        TurnRate = 230,
+        VelocityAlign = true,
+    },
+}

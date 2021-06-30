@@ -1,0 +1,142 @@
+#ARM Metal Maker - Converts Energy into Metal
+#ARMMAKR
+#
+#Blueprint created by Raevn
+
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'METLON1',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Activate = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'METLON1',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Deactivate = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'METLOFF1',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOSML3',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 5,
+    Categories = {
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYCOMMANDER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH1',
+	    'STRUCTURE',
+        'MASSPRODUCTION',
+        'MASSFABRICATION',
+        'ECONOMIC',
+        'SORTECONOMY',
+	    'ARM',
+    },
+    CollisionOffsetY = -0.3,
+    CollisionOffsetX = 0.1,
+    Defense = {
+        DamageModifier = 0.5,
+        ArmorType = 'Structure',
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 2,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+        Health = 144,
+        MaxHealth = 144,
+    },
+    Description = 'Converts Energy into Metal',
+    Display = {
+        Abilities = {
+            '<LOC ability_aquatic>Aquatic',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'AeonCZAR', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.14,
+    },
+    Economy = {
+        BuildCostEnergy = 687,
+        BuildCostMass = 1,
+        BuildTime = 2605,
+        ProductionPerSecondMass = 1,
+	MaintenanceConsumptionPerSecondEnergy = 60,
+    },
+    General = {
+        Category = 'Economy',
+        Classification = 'RULEUC_Resource',
+        ToggleCaps = {
+            RULEUTC_ProductionToggle = true,
+        },
+        SelectionPriority = 5,
+        FactionName = 'ARM',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Basic',
+        UnitName = 'Metal Maker',
+    },
+    Intel = {
+        VisionRadius = 6,
+        WaterVisionRadius = 4,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
+    },
+    SelectionSizeX = 2,
+    SelectionSizeZ = 2,
+    SelectionThickness = 0.25,
+    SizeX = 2.5,
+    SizeY = 2,
+    SizeZ = 2.5,
+    StrategicIconName = 'icon_structure2_mass',
+    TAStrategicIconName = '2/structure_massfab',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #SMALL_BUILDINGEX
+            Damage = 750,
+            DamageFriendly = true,
+            DamageRadius = 6,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+         
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMMAKR/ARMMAKR_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

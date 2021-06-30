@@ -1,0 +1,40 @@
+UnitBlueprint {
+    Merge = true,
+    BuildIconSortPriority = 1,
+    Defense = {
+        Health = 2600,
+        MaxHealth = 2600,
+    },
+        Display = {
+            Abilities = {
+                '<LOC ability_upgradable>Upgradeable',
+            },
+        UniformScale = 0.22,
+    },
+    Footprint = {
+        SizeX = 7,
+        SizeZ = 7,
+    },
+    Economy = {
+        BuildCostEnergy = 4500,
+        BuildCostMass = 500, 
+        BuildTime = 7600,
+        BuildableCategory = {
+            'TANK MOBILE TECH1 CORE',
+            'BOT MOBILE ENGINEER TECH1 CORE',
+            'cordvp', 
+        },
+    },
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 3,
+    LifeBarSize = 7,
+    General = {
+        UpgradesTo = 'cordvp', 
+    },   
+    SelectionSizeX = 7,
+    SelectionSizeZ = 5,
+    SelectionThickness = 0.25,
+    SizeX = 9,
+    SizeY = 1,
+    SizeZ = 9,
+}

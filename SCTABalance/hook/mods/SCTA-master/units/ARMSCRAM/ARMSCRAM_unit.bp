@@ -1,0 +1,53 @@
+UnitBlueprint {
+    Merge = true, 
+    Categories = {
+        'SELECTABLE',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	    'MOBILESONAR',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER3COMMANDER',
+	    'INTELLIGENCE',
+        'STEALTHFIELD',
+        'OVERLAYCOUNTERINTEL',        
+        'NEEDMOBILEBUILD',
+        'CQUEMOV',
+        'DEFENSIVEBOAT',
+        'SORTINTEL',
+        'ARM',
+        'SUBMERSIBLE',
+    },
+    Economy = {
+        BuildCostEnergy = 10000,
+        BuildCostMass = 700,
+        BuildTime = 3600,
+        MaintenanceConsumptionPerSecondEnergy = 200,
+    },
+    General = {
+        OrderOverrides = {
+            RULEUTC_CloakToggle = {
+                bitmapId = 'stealth-field',
+                helpText = 'toggle_stealth_field',
+            },
+        },
+        ToggleCaps = {
+            RULEUTC_StealthToggle = false,
+            RULEUTC_CloakToggle = true,
+        },
+        },
+        Physics = {
+            Elevation = -3,
+        },
+        Intel = {
+            CloakField = true,
+            Cloak = true,
+            CloakFieldRadius = 20,
+            RadarStealthFieldRadius = 20,
+            SonarStealthFieldRadius = 20,
+        },
+    SelectionSizeX = 1.25,
+    SelectionSizeZ = 1.9,
+    SizeZ = 4,
+}

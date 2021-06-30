@@ -1,0 +1,30 @@
+UnitBlueprint {
+    Merge = true,
+    Display = {
+      Abilities = {
+      '<LOC ability_radar>Radar',
+      '<LOC ability_upgradable>Upgradeable',
+    },
+  }, 
+    Economy = {
+        BuildCostEnergy = 1600,
+        BuildTime = 2300,
+        BuildRate = 40, 
+        ProductionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 25,
+        BuildableCategory = {
+            'armarad',
+      },
+    },
+    General = {
+	UpgradesTo = 'armarad', 
+  },
+  Intel = {
+      VisionRadius = 8,
+      WaterVisionRadius = 8,
+    },
+    LifeBarSize = 1,
+    SizeX = 1,
+    SizeY = 2,
+    SizeZ = 1,
+}

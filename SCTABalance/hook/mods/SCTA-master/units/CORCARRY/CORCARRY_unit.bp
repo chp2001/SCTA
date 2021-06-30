@@ -1,0 +1,49 @@
+#CORE Hive - Light Carrier
+#CORCARRY
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true, 
+    BuildIconSortPriority = 4,
+    Categories = {
+        'SELECTABLE',
+        'MOBILE',
+        'NAVAL',
+        'TECH3',
+        'AIRSTAGINGPLATFORM',
+        'CARRIER',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'FACTORY',
+        'NAVALCARRIER',
+        'SHOWQUEUE',
+        'OVERLAYRADAR',
+        'OVERLAYSONAR',
+        'OVERLAYMISC',
+        'CORE',
+        'AIR',
+    },
+    Defense = {
+        Health = 17000,
+        MaxHealth = 17000,
+    },
+    Display = {
+    UniformScale = 0.24,
+    },
+    Economy = {
+        BuildCostEnergy = 36000,
+        BuildCostMass = 3000,
+        BuildTime = 60000,
+        BuildRate = 600,
+        ProductionPerSecondEnergy = 1000,
+        MaintenanceConsumptionPerSecondEnergy = 35,
+    },
+    LifeBarSize = 6,
+    LifeBarOffset = 3,
+SelectionSizeX = 4,
+SelectionSizeZ = 6,
+SizeX = 4,
+SizeY = 4,
+SizeZ = 12,
+}

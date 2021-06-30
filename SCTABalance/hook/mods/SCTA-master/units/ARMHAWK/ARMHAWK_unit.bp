@@ -1,0 +1,36 @@
+UnitBlueprint {
+    Merge = true, 
+    Air = {
+      BreakOffDistance = 17,
+      BreakOffTrigger = 12,
+      MaxAirspeed = 18,
+      MinAirspeed = 9,
+  },
+    Defense = {
+          Health = 2100,
+          MaxHealth = 2100,
+              },
+    Economy = {
+        BuildCostMass = 480,
+        BuildCostEnergy = 28000,
+        BuildTime = 20000,
+        ProductionPerSecondEnergy = 0,
+      },
+    Physics = {
+          FuelRechargeRate = 666666,
+          FuelUseTime = 666666,
+    },
+    Intel = {
+      TAIntel = true,
+      },
+      Weapon = {
+        [1] = {
+          RateOfFire = 1,
+        },
+        [2] = {
+          RateOfFire = 1,
+        },
+        [3] = {
+        },
+      },
+  }

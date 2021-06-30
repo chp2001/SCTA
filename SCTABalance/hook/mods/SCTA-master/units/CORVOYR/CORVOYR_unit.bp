@@ -1,0 +1,52 @@
+#ARM Flea - Fast Light Scout Kbot
+#ARMMARK
+UnitBlueprint {
+    Merge = true,
+    BuildIconSortPriority = 1,
+    Categories = {
+        'SELECTABLE',
+        'TECH1',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	    'LAND',
+        'RADAR',
+        'INTELLIGENCE',
+        'OVERLAYRADAR',
+        'SCOUT',
+        'CORE',
+        'BOT',
+    },
+    Display = {
+        Abilities = {
+                '<LOC ability_radar>Radar',
+            },
+        UniformScale = 0.1,
+    },
+    Defense = {
+        Health = 100,
+        MaxHealth = 100,
+    },
+    LifeBarSize = 1,
+    Economy = {
+        BuildCostEnergy = 220,
+        BuildCostMass = 22,
+        BuildTime = 800,
+        ProductionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 0,
+    },
+    StrategicIconName = 'icon_bot1_intel',
+    Intel = {
+        RadarRadius = 50, 
+    },
+    Physics = {
+        MaxAcceleration = 3,
+        MaxBrake = 3,
+        MaxSpeed = 4,
+    },
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
+    SizeX = 1.6,
+    SizeY = 1.6,
+    SizeZ = 1.6,
+}

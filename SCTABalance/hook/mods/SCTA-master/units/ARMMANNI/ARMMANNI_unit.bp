@@ -1,0 +1,48 @@
+#ARM Penetrator - Mobile Energy Weapon
+#ARMMANNI
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH2',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	    'LAND',
+	    'DIRECTFIRE',
+        'OVERLAYDIRECTFIRE',
+        'ARM',
+        'SNIPER',
+        'ANTISHIELD',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER3ENGINEER',
+        'SORTSTRATEGIC',
+        'NEEDMOBILEBUILD',
+        'CQUEMOV',
+    },
+    Defense = {
+        Health = 1500,
+        MaxHealth = 1500,
+    },
+    Economy = {
+    BuildCostEnergy = 21000,
+    BuildCostMass = 2000,
+    BuildTime = 24000,
+    },
+    Weapon = {
+        [1] = {
+            Damage = 1000,
+            MaxRadius = 60,
+            RateOfFire = 0.33,
+            EnergyDrainPerSecond = 500,
+            EnergyRequired = 1000,
+        },
+        [2] = {
+        },
+    },
+}

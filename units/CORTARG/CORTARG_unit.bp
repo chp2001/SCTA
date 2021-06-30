@@ -1,0 +1,151 @@
+#CORE Targeting Facility - Automatic Radar Targeting
+#CORTARG
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'TARGSEL2',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Activate = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'TARGON2',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Deactivate = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'TARGOFF2',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG4',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 2,
+    Categories = {
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH3',
+        'SORTINTEL',
+	    'STRUCTURE',
+	    'INTELLIGENCE',
+	    'OPTICS',
+	    'CORE',
+    },
+    Defense = {
+        DamageModifier = 0.7,
+        ArmorType = 'Structure',
+        Health = 1800,
+        MaxHealth = 1800,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 100,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Automatic Radar Targeting',
+    Display = {
+        AnimationUnpack = '/mods/SCTA-master/units/CORTARG/CORTARG_lod0_aopen.sca',
+        AnimationUnpackRate = 0.2, 
+        Abilities = {
+            'Radar Targeting',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'Unit', 
+                },
+            },
+        },
+        UniformScale = 0.2,
+    },
+    Economy = {
+        BuildCostEnergy = 141148,
+        BuildCostMass = 14982,
+        BuildTime = 161287,
+        MaintenanceConsumptionPerSecondEnergy = 700,
+    },
+    Footprint = {
+	MaxSlope = 0.625,
+    },
+    General = {
+        Category = 'Intelligence',
+        Classification = 'RULEUC_Sensor',
+        CommandCaps = {
+            RULEUCC_Attack = false,
+            RULEUCC_CallTransport = false,
+            RULEUCC_Capture = false,
+            RULEUCC_Guard = false,
+            RULEUCC_Move = false,
+            RULEUCC_Nuke = false,
+            RULEUCC_Patrol = false,
+            RULEUCC_Pause = true,
+            RULEUCC_Reclaim = false,
+            RULEUCC_Repair = false,
+            RULEUCC_RetaliateToggle = false,
+            RULEUCC_Stop = true,
+            RULEUCC_Transport = false,
+        },
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
+        },
+        OrderOverrides = {
+            RULEUTC_IntelToggle = {
+                bitmapId = 'Sacrifice',
+                helpText = 'Radar Targeting. Enables shooting of Blips',
+            },
+        },
+        SelectionPriority = 5,
+        FactionName = 'CORE',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Basic',
+	    UnitName = 'Targeting Facility',
+    },
+    Intel = {
+        RadarRadius = 10,
+        VisionRadius = 14,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 3,
+    SelectionSizeX = 2.5,
+    SelectionSizeZ = 2.5,
+    SelectionThickness = 0.25,
+    SizeX = 5,
+    SizeY = 4,
+    SizeZ = 4,
+    StrategicIconName = 'icon_structure3_intel',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #LARGE_BUILDINGEX
+        Damage = 750,
+        DamageFriendly = true,
+        DamageRadius = 5,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORTARG/CORTARG_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

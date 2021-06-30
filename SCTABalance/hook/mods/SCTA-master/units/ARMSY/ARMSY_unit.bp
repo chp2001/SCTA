@@ -1,0 +1,37 @@
+UnitBlueprint {
+    Merge = true,
+    BuildIconSortPriority = 4,
+    Defense = {
+        Health = 4000,
+        MaxHealth = 4000,
+    },
+        Display = {
+            Abilities = {
+                '<LOC ability_upgradable>Upgradeable',
+            },    
+            UniformScale = 0.27,
+    },
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 3,
+    LifeBarSize = 7,
+    Footprint = {
+        SizeX = 7,
+        SizeZ = 7,
+    },
+    Economy = {
+        BuildCostEnergy = 3600,
+        BuildRate = 100,
+        BuildableCategory = {
+            'NAVAL MOBILE TECH1 ARM',
+            'armdsy',
+        },
+    },
+    General = {
+        UpgradesTo = 'armdsy', 
+    },
+    SelectionSizeX = 9,
+    SelectionSizeZ = 9,
+    SizeX = 12,
+    SizeY = 3,
+    SizeZ = 12,
+}

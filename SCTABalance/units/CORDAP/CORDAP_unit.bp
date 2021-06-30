@@ -1,0 +1,180 @@
+#CORE Aircraft Plant - Produces Aircraft
+#CORDAP
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PAIRACTV',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Construct = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PLABWORK',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	ConstructStop = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'UNITDONE',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG4',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 0,
+    Categories = {
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH2',
+	'FACTORY',
+        'RALLYPOINT',
+        'SHOWQUEUE',
+	'STRUCTURE',
+	'CONSTRUCTION',
+        'OVERLAYRADAR',
+        'AIR', 
+        'CONSTRUCTIONSORTDOWN',
+	'CORE',
+    'RESEARCH',
+	'SORTCONSTRUCTION',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 3900,
+        MaxHealth = 3900,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 3,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Produces Aircraft',
+    Display = {
+        Abilities = {
+            '<LOC ability_upgradable>Upgradeable',
+            '<LOC ability_radar>Radar',
+        },
+        AnimationUnpack = '/mods/SCTA-master/units/CORAP/CORAP_lod0Action.sca',
+        AnimationUnpackRate = 1,    
+	    BuildAttachBone = 'pad',
+    Mesh = {
+        IconFadeInZoom = 130,
+        LODs = {
+            {
+                LODCutoff = 400,
+        NormalName = '/mods/SCTA-master/units/CORAP/CORAP_normalsTS.dds',
+        SpecularName = '/mods/SCTA-master/units/CORAP/CORAP_SpecTeam.dds',
+        AlbedoName = '/mods/SCTA-master/units/CORAP/CORAP_Albedo.dds',
+        MeshName =   '/mods/SCTA-master/units/CORAP/CORAP_lod0.scm',
+        ShaderName = 'Unit', 
+            },
+        },
+    },
+        UniformScale = 0.2,
+    },
+    Economy = {
+        BuildCostEnergy = 54000,
+        BuildCostMass = 2700, 
+        BuildTime = 40000,
+    BuildRate = 180,
+    DifferentialUpgradeCostCalculation = true,
+    BuildableCategory = {
+        'AIR MOBILE TECH1 CORE', 
+        'AIR MOBILE TECH2 CORE',
+        'TECH1 BOT ENGINEER CORE',
+        'TECH2 FIELDENGINEER CORE',
+        'coradap', 
+    },
+    StorageMass = 50,
+    StorageEnergy = 50,
+    },
+    Footprint = {
+        MaxSlope = 0.625,
+        SizeX = 7,
+        SizeZ = 7,
+    },
+    General = {
+        BuildBones = {
+            BuildEffectBones = {'muzzlea','muzzleb'},
+        },      
+        Category = 'Factory',
+        Classification = 'RULEUC_Factory',
+        CommandCaps = {
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        SelectionPriority = 5,
+        ConstructionBar = true,
+        FactionName = 'CORE',
+        UpgradesFrom = 'corap',
+        UpgradesTo = 'coradap', 
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
+	UnitName = 'Aircraft Development Plant',
+    },
+    Intel = {
+        VisionRadius = 10,
+	RadarRadius = 32,
+    },
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 3,
+    LifeBarSize = 7,
+    Physics = {        
+        ---SkirtSizeX = 7,
+        ---SkirtSizeZ = 7,
+        RollOffPoints = {
+            {
+                UnitSpin = 90,
+                X = 3,
+                Y = 0,
+                Z = 0,
+            },
+            {
+                UnitSpin = -90,
+                X = -3,
+                Y = 0,
+                Z = 0,
+            },
+        },
+    },
+    SelectionSizeX = 7,
+    SelectionSizeZ = 5,
+    SelectionThickness = 0.25,
+    SizeX = 9,
+    SizeY = 1,
+    SizeZ = 9,
+    StrategicIconName = 'icon_factoryhq2_air',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #LARGE_BUILDINGEX
+        Damage = 200,
+        DamageFriendly = true,
+        DamageRadius = 5,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/SCTABalance/units/CORDAP/CORDAP_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

@@ -1,0 +1,32 @@
+UnitBlueprint {
+    Merge = true,
+    Defense = {
+        Health = 400,
+        MaxHealth = 400,
+        },
+        Display = {
+            UniformScale = 0.08,
+        },
+        Economy = {
+        BuildCostEnergy = 1000,
+        BuildCostMass = 116,
+        BuildTime = 2450,
+        ProductionPerSecondEnergy = 2,
+        BuildableCategory = {
+            'BUILTBYTIER1ENGINEER ARM',
+        },
+        MaxBuildDistance = 6,
+    },
+    LifeBarSize = 1,
+    Physics = {
+        MaxAcceleration = 1.4,
+        MaxBrake = 1.25,
+        MaxSpeed = 1.7,
+    },
+    SelectionSizeX = 0.6,
+    SelectionSizeZ = 0.6,
+    SelectionThickness = 0.25,
+    SizeX = 1.2,
+    SizeY = 1.1,
+    SizeZ = 1.2,
+}

@@ -1,0 +1,130 @@
+#ARM Fusion Reactor - Produces Energy
+#ARMFUS
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'FUSION1',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLONUK3',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 14,
+    Categories = {
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3COMMANDER',
+        'TECH2',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+	    'STRUCTURE',
+        'ECONOMIC',
+        'SORTECONOMY',
+	    'ENERGYPRODUCTION',
+	    'ARM',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 3100,
+        MaxHealth = 3100,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 34,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Produces Energy',
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 100,
+                    ShaderName = 'Unit',
+                },
+                {
+                    LODCutoff = 215,
+                    ShaderName = 'Unit',
+                },
+                {
+                    LODCutoff = 330,
+                    ShaderName = 'Unit',
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 36058,
+        BuildCostMass = 5130,
+        BuildTime = 93768,
+	    NaturalProducer = true,
+        ProductionPerSecondEnergy = 1000,
+    },
+    Footprint = {
+	MaxSlope = 0.625,
+        SizeX = 5,
+        SizeZ = 5,
+    },
+    General = {
+        Category = 'Economy',
+        Classification = 'RULEUC_Resource',
+        SelectionPriority = 5,
+        FactionName = 'ARM',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Secret',
+	UnitName = 'Fusion Reactor',
+    },
+    Intel = {
+        VisionRadius = 14,
+        WaterVisionRadius = 4, 
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+        SkirtSizeX = 5,
+        SkirtSizeZ = 5,
+    },
+    SelectionSizeX = 2.5,
+    SelectionSizeZ = 2,
+    SelectionThickness = 0.25,
+    SizeX = 5,
+    SizeY = 3,
+    SizeZ = 4,
+    StrategicIconName = 'icon_structure2_energy',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #ATOMIC_BLAST
+            Damage = 2000,
+            DamageFriendly = true,
+            DamageRadius = 5,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMFUS/ARMFUS_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

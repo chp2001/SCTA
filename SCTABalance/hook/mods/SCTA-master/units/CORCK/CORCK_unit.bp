@@ -1,0 +1,31 @@
+---DISABLED
+
+UnitBlueprint {
+    Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH1',
+        'ENGINEER',
+        'REPAIR',
+        'RECLAIM',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'PATROLHELPER',
+        'SHOWQUEUE',
+	    'SELECTION',
+        'MOBILE',
+	    'CONSTRUCTION',
+	    'LAND',
+        'CORE',
+    },
+    Defense = {
+        Health = 410,
+        MaxHealth = 410,
+        },
+    Economy = {
+        BuildCostEnergy = 1600,
+        BuildTime = 3800,
+        ProductionPerSecondEnergy = 1,
+        MaxBuildDistance = 6,
+    },
+}

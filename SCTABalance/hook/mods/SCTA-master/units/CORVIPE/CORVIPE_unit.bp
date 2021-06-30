@@ -1,0 +1,24 @@
+UnitBlueprint {
+    Merge = true, 
+    Defense = {
+        Health = 6000,
+        MaxHealth = 6000,
+    },
+    Economy = {
+        BuildCostEnergy = 12000,
+        BuildCostMass = 2400,
+        BuildTime = 30000,
+    },
+    Intel = {
+        FreeIntel = true,
+        RadarStealth = true,
+        },
+    LifeBarSize = 1,
+    Weapon = {
+        [1] = {
+            MaxRadius = 45, 
+        },
+        [2] = {
+        },
+    },
+}

@@ -1,0 +1,68 @@
+#CORE Spectre - Radar Jammer
+#CORESPEC
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true, 
+    BuildIconSortPriority = 1,
+    Categories = {
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER2FACTORY',
+        'SELECTABLE',
+        'TECH2',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	    'LAND',
+        'CORE',
+        'RADAR',
+        'CQUEMOV',
+        'NEEDMOBILEBUILD',
+        'OVERLAYRADAR',
+        'STEALTHFIELD',
+        'OVERLAYCOUNTERINTEL',        
+        'SORTINTEL',
+        'SCOUT',
+    },
+    Display = {
+        Abilities = {
+            '<LOC ability_radar>Radar',
+            '<LOC ability_stealthfield>Stealth Field',
+        },
+    UniformScale = 0.3,
+    },
+    Economy = {
+        BuildCostEnergy = 6000,
+        BuildCostMass = 400,
+        BuildTime = 3000,
+        ProductionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 50,
+    },
+    General = {
+        OrderOverrides = {
+            RULEUTC_StealthToggle = {
+                bitmapId = 'stealth-field',
+                helpText = 'toggle_stealth_field',
+            },
+        },
+        ToggleCaps = {
+        RULEUTC_IntelToggle = false,
+        RULEUTC_StealthToggle = true,
+            },
+        },
+        Intel = {
+            RadarStealth = true,
+            RadarStealthField = true,
+            TAIntel = true,
+            VisionRadius = 20,
+            RadarRadius = 100, 
+            RadarStealthFieldRadius = 50,
+        },
+        SelectionSizeX = 2,
+        SelectionSizeZ = 2,
+        SizeX = 4,
+        SizeY = 4,
+        SizeZ = 4,
+        StrategicIconName = 'icon_structure2_counterintel',
+}

@@ -1,0 +1,33 @@
+#ARM Merl - Mobile Rocket Launcher
+#ARMMERL
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Display = {
+        UniformScale = 0.11,
+    },
+    Defense = {
+        Health = 1800,
+        MaxHealth = 1800,
+    },
+    Economy = {
+        BuildCostEnergy = 4500,
+        BuildCostMass = 400,
+    },
+    Intel = {
+        VisionRadius = 12,
+    },
+    SelectionSizeX = 1.25,
+    SelectionSizeZ = 1.25,
+    SizeX = 2.2,
+    SizeY = 1,
+    SizeZ = 2.2,
+    Weapon = {
+        [1] = {
+        ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/BTRUCK_ROCKET/BTRUCK_ROCKET_proj.bp',
+        },
+        [2] = {},
+    },
+}

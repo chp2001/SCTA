@@ -1,0 +1,33 @@
+#ARM Fido - Assault Kbot
+#ARMFIDO
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+   Merge = true, 
+   BuildIconSortPriority = 1,
+   Categories = {
+    'SELECTABLE',
+    'TECH3',
+    'VISIBLETORECON',
+    'RECLAIMABLE',
+    'MOBILE',
+    'LAND',
+    'DIRECTFIRE',
+    'OVERLAYDIRECTFIRE',
+    'ARM',
+    'BOT',
+   },
+    Defense = {
+        Health = 6000,
+        MaxHealth = 6000,
+    },
+    SizeX = 1.8,
+    SizeY = 2.5,
+    SizeZ = 1.8,
+    Economy = {
+        BuildCostEnergy = 12000,
+        BuildCostMass = 1200,
+        BuildTime = 21000,
+    },
+}

@@ -1,0 +1,65 @@
+#ARM Torpedo Launcher Torpedo Weapon
+#COAX_TORPEDO
+#
+#Blueprint created by Raevn
+
+ProjectileBlueprint {
+    Audio = {
+        Impact = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactUnit = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactShield = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactTerrain = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLODEP2',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+    },
+    Categories = {
+        'PROJECTILE',
+        'TORPEDO',
+	    'ANTINAVY',
+        'CORE',
+    },
+    Defense = {
+        Health = 1,
+    },
+    Display = {
+        MeshBlueprint = '/mods/SCTA-master/meshes/projectiles/torpedo_mesh.bp',
+        UniformScale = 0.16,
+        StrategicIconSize = 1,
+    },
+    General = {
+        Category = 'AntiNavy',
+        EntityCategory = {
+            'PROJECTILE',
+            'TORPEDO',
+	        'ANTINAVY',
+            'ARM',
+        },
+        Faction = 'CORE',
+        Weapon = 'COAX_TORPEDO',
+    },
+    Physics = {
+        Acceleration = 5,
+        DestroyOnWater = false,
+        InitialSpeed = 3,
+        Lifetime = 7,
+        MaxSpeed = 18,
+        StayUnderwater = true,
+        TrackTarget = true,
+        TurnRate = 230,
+        VelocityAlign = true,
+    },
+}

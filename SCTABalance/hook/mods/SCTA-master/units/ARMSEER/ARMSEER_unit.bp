@@ -1,0 +1,64 @@
+#ARM Seer - Mobile Radar
+#ARMSEER
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	    'LAND',
+	    'INTELLIGENCE',
+        'OVERLAYRADAR',
+        'ARM',
+        'TANK',
+        'OVERLAYOMNI',
+        'STEALTHFIELD',
+        'OVERLAYCOUNTERINTEL',        
+    },
+    Display = {
+    Abilities = {
+        '<LOC ability_radar>Radar',
+        '<LOC ability_omni>Omni Sensor',
+        '<LOC ability_stealthfield>Stealth Field',
+        },
+    },
+    Economy = {
+        ProductionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 15,
+    },
+    General = {
+        OrderOverrides = {
+            RULEUTC_StealthToggle = {
+                bitmapId = 'stealth-field',
+                helpText = 'toggle_stealth_field',
+            },
+        },
+        ToggleCaps = {
+            RULEUTC_StealthToggle = true,
+            RULEUTC_IntelToggle = false,    
+            },
+        },
+        Intel = {
+            ActiveIntel = {
+                Omni = true,
+                Radar = true,
+            },
+            RadarStealth = true,
+            RadarStealthField = true,
+            TAIntel = true,
+            VisionRadius = 14,
+            OmniRadius = 60,
+            RadarStealthFieldRadius = 30,
+        },
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
+    SizeX = 2,
+    SizeY = 1,
+    SizeZ = 2,
+    StrategicIconName = 'icon_land3_intel',
+}

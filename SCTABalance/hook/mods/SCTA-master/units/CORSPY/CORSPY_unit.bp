@@ -1,0 +1,42 @@
+#ARM SPY - Fast Light Scout Kbot
+#CORSPY
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'BOT',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+        'LAND',
+        'CORE',
+        'SCOUT',
+        'OVERLAYOMNI',
+    },
+    Display = {
+        UniformScale = 0.1,
+    },
+    Economy = {
+        BuildCostEnergy = 1500,
+        BuildTime = 3000,
+        MaintenanceConsumptionPerSecondEnergy = 10,
+    },
+    Intel = {
+        ActiveIntel = {
+            Omni = true,
+        },    
+        JamRadius = {
+            Max = 20,
+            Min = 10,
+          },
+          VisionRadius = 10,
+          JammerBlips = 5,
+          OmniRadius = 30,
+          RadarStealth = true,
+    },
+    StrategicIconName = 'icon_land3_counterintel',
+}

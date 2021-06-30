@@ -1,0 +1,211 @@
+#ARM Stingray - Floating Heavy Laser Tower
+#ARMFHLT
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    AI = {
+        TargetBones = {
+            'turret',
+            'CORFHLT',
+        },
+    },
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'TWRACTV3',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG4',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 2,
+    Categories = {
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH2',
+	    'STRUCTURE',
+	    'DEFENSE',
+	    'DIRECTFIRE',
+        'OVERLAYDIRECTFIRE',
+        'CORE', 
+        'SORTDEFENSE',
+        'CQUEMOV',
+        'SNIPEMODE',
+        'ANTISHIELD',
+    },
+    CollisionOffsetY = -0.5,
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 1325,
+        MaxHealth = 1325,
+    },
+    Description = 'Heavy Laser Tower',
+    Display = {
+        Abilities = {
+            '<LOC ability_aquatic>Aquatic',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 220,
+                    ShaderName = 'Unit',
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 5796,
+        BuildCostMass = 524,
+        BuildTime = 10178,
+        StorageEnergy = 150,
+    },
+    Footprint = {
+        SizeX = 2,
+        SizeZ = 2,
+    },
+    General = {
+        Category = 'Defense',
+        Classification = 'RULEUC_Weapon',
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        SelectionPriority = 5,
+        FactionName = 'CORE',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
+        UnitName = 'Thunderbolt',
+    },
+    Intel = {
+        VisionRadius = 24,
+        WaterVisionRadius = 10, 
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {  
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
+    },
+    SelectionCenterOffsetZ = -0.3,
+    SelectionSizeX = 2,
+    SelectionSizeZ = 2,
+    SelectionThickness = 0.25,
+    SizeX = 3.5,
+    SizeY = 3.5,
+    SizeZ = 3.5,
+    StrategicIconName = 'icon_structure2_directfire',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        {
+            Audio = {
+                Fire = Sound {
+                    Bank = 'TA_Sound',
+                    Cue = 'LASRMAS2',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+            DamageFriendly = false,
+            Damage = 180,
+            DamageRadius = 2,
+            DamageType = 'Normal',
+            DisplayName = 'CORFHLT_LASER',
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Air',
+                Water = 'Land|Water|Air',
+            },
+	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
+            FiringTolerance = 3,
+            Label = 'CORFHLT_LASER',
+            MaxRadius = 48,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 50,
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMFHLT_LASER/ARMFHLT_LASER_proj.bp',
+            EnergyDrainPerSecond = 75,
+            EnergyRequired = 75,
+            EnergyChargeForFirstShot = true,
+            UseFiringSolutionInsteadOfAimBone = false,
+            ---ProjectileLifetime = 1,
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'muzzle1',
+                    },
+                    RackBone = 'barrel1',
+                },
+                {
+                    MuzzleBones = {
+                        'muzzle2',
+                    },
+                    RackBone = 'barrel2',
+                },
+            },
+            RackRecoilDistance = -3,
+            RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            RateOfFire = 1,
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'ALLUNITS'
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
+            RackSlavedToTurret = false,
+            TurretBoneMuzzle = 'muzzle2',
+            TurretBonePitch = 'barrel2',
+            TurretBoneDualMuzzle = 'muzzle1',
+            TurretBoneDualPitch = 'barrel1',
+            TurretBoneYaw = 'turret',
+            TurretDualManipulators = true,
+            TurretPitch = 0,
+            TurretPitchRange = 360,
+            TurretPitchSpeed = 150,
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 150,
+            Turreted = true,
+        },
+        { #LARGE_BUILDINGEX
+            Damage = 100,
+            DamageFriendly = true,
+            DamageRadius = 5,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORFHLT/CORFHLT_dead_prop.bp',
+        WreckageLayers = {
+            Water = true,
+        },
+    },
+}

@@ -1,0 +1,172 @@
+#ARM Jammer - Mobile Radar Jammer
+#ARMSCRAM
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'RADJAM1',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StartMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'VARMMOVE',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StopMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'VARMSTOP',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	    Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG3',
+            LodCutoff = 'UnitMove_LodCutoff',
+	    },
+        Activate = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'RADJAM1',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Deactivate = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'RADJAM1',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+    },
+    BuildIconSortPriority = 8,
+    Categories = {
+        'SELECTABLE',
+        'TECH2',
+        'STEALTHFIELD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	    'NAVAL',
+	    'INTELLIGENCE',
+        'OVERLAYCOUNTERINTEL',   
+        'COUNTERINTELLIGENCE',  
+        'DEFENSIVEBOAT',
+        'ARM',
+        'SUBMERSIBLE',
+    },
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 460,
+        MaxHealth = 460,
+        SurfaceThreatLevel = 9,
+    },
+    Description = 'Submersible Mobile Radar Jammer',
+    Display = {
+        Abilities = {
+            '<LOC ability_stealthfield>Stealth Field',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'AeonCZAR', 
+                },
+            },
+        },
+        MovementEffects = {
+            TAMovement = {
+            Emitter = '/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
+            Scale = 0.25,
+            Bones = {'prop'},
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 3000,
+        BuildCostMass = 295,
+        BuildTime = 11000,
+    },
+    Footprint = {
+	SizeX = 2,
+	SizeZ = 4,
+    MinWaterDepth = 1.5,
+    },
+    General = {
+        Category = 'Submarine',
+        Classification = 'RULEUC_MilitaryShip',
+        CommandCaps = {
+            RULEUCC_Guard = true,
+            RULEUCC_CallTransport = false,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Stop = true,
+            RULEUCC_Dive = true,
+        },
+        FactionName = 'ARM',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Advanced',
+        UnitName = 'Fibber',
+        UnitWeight = 1,
+    },
+    Intel = {
+    SonarRadius = 60,
+    VisionRadius = 16,
+    WaterVisionRadius = 12,
+    RadarStealthField = true,
+	RadarStealthFieldRadius = 40,
+    SonarStealthField = true,
+	SonarStealthFieldRadius = 40,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        Elevation = -1.25,
+        LayerChangeOffsetHeight = -2.00,
+	BackUpDistance = 0,
+	MaxSpeedReverse = 0,
+    BuildOnLayerCaps = {
+        LAYER_Sub = true,
+        LAYER_Water = true,
+        },
+        MaxAcceleration = 3,
+        MaxBrake = 3,
+        MaxSpeed = 5,
+        MotionType = 'RULEUMT_SurfacingSub',
+        TurnRate = 83,
+    },
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
+    SelectionThickness = 0.25,
+    CollisionOffsetY = -0.5,
+    SizeX = 2,
+    SizeY = 1,
+    SizeZ = 2,
+    StrategicIconName = 'icon_sub3_intel',
+    TAStrategicIconName = '3/ship_counterintel',
+    StrategicIconSortPriority = 20,
+    Weapon = {
+        { #BIG_UNITEX
+            Damage = 50,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        }, 
+    },
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMSCRAM/ARMSCRAM_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+            Seabed = true,
+            Sub = true, 
+        },
+    },
+}

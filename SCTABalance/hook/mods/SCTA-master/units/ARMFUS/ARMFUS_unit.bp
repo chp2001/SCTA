@@ -1,0 +1,26 @@
+UnitBlueprint {
+    Merge = true, 
+    Defense = {
+        Health = 2200,
+        MaxHealth = 2200,
+    },
+    Display = {
+    UniformScale = 0.3,
+    },
+    Economy = {
+        BuildCostEnergy = 38000,
+        BuildCostMass = 1900,
+        BuildTime = 60000,
+        ProductionPerSecondEnergy = 500,
+    },
+    LifeBarSize = 4,
+    Physics = {
+        SkirtSizeX = 4,
+        SkirtSizeZ = 4,
+    },
+    SelectionSizeX = 6,
+    SelectionSizeZ = 6,
+    SizeY = 6,
+    SizeX = 8,
+    SizeZ = 8, 
+}

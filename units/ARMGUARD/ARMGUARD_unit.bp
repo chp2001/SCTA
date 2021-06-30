@@ -1,0 +1,197 @@
+#ARM Guardian - Plasma Battery
+#ARMGUARD
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'TWRTURN3',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED1',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 1,
+    Categories = {
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER3ENGINEER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH2',
+	    'STRUCTURE',
+	    'DEFENSE',
+        'INDIRECTFIRE',
+        'ARTILLERY',
+        'OVERLAYINDIRECTFIRE',
+	    'ARM',
+	    'SORTSTRATEGIC',
+        'SNIPEMODE',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 6,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 20,
+        Health = 2477,
+        MaxHealth = 2477,
+    },
+    Description = 'Plasma Battery',
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'AeonCZAR', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 7687,
+        BuildCostMass = 1477,
+        BuildTime = 13377,
+	StorageEnergy = 200,
+    },
+    Footprint = {
+	MaxSlope = 0.625,
+        SizeX = 2,
+        SizeZ = 2,
+    },
+    General = {
+    Category = 'Strategic',
+    Classification = 'RULEUC_Weapon',
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        SelectionPriority = 5,
+        FactionName = 'ARM',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Advanced',
+        UnitName = 'Guardian',
+    },
+    Intel = {
+        VisionRadius = 22,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        SkirtSizeX = 1, 
+        SkirtSizeZ = 1,  
+    },
+    SelectionSizeX = 1.5,
+    SelectionSizeZ = 1.5,
+    SelectionCenterOffsetZ = -0.25,
+    SelectionThickness = 0.25,
+    SizeX = 3,
+    SizeY = 3,
+    SizeZ = 3,
+    StrategicIconName = 'icon_structure2_artillery',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        {
+            ArtilleryShieldBlocks = true,
+            RenderFireClock = true,
+            Audio = {
+                Fire = Sound {
+                    Bank = 'TA_Sound',
+                    Cue = 'CANNHVY5',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+            BallisticArc = 'RULEUBA_LowArc',
+            CollideFriendly = false,
+            DamageFriendly = false,
+            Damage = 125,
+            DamageRadius = 2, 
+            DamageType = 'Normal',
+            DisplayName = 'ARMFIXED_GUN',
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed',
+            },
+	        RangeCategory = 'UWRC_IndirectFire',
+            WeaponCategory = 'Artillery',
+            Label = 'ARMFIXED_GUN',
+            MaxRadius = 120, 
+            MuzzleSalvoDelay = 0, 
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 42,
+            RenderFireClock = true,
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMFIXED_GUN/ARMFIXED_GUN_proj.bp',
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'flare1',
+                    },
+                    RackBone = 'barrel1',
+                },
+                {
+                    MuzzleBones = {
+                        'flare2',
+                    },
+                    RackBone = 'barrel2',
+                },
+            },
+            RackRecoilDistance = -2.5,
+            RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 1,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            RateOfFire = 0.5,
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TurretBoneMuzzle = 'flare2',
+            TurretBonePitch = 'sleeves',
+            --TurretBoneDualMuzzle = 'flare1',
+            --TurretBoneDualPitch = 'sleeves',
+            TurretBoneYaw = 'turret',
+            TurretDualManipulators = false,
+            TurretPitch = 0,
+            TurretPitchRange = 360,
+            TurretPitchSpeed = 45,
+            TurretYaw = 0,
+            TurretYawRange = 180,
+            TurretYawSpeed = 30,
+            Turreted = true,
+        },
+        { #MEDIUM_BUILDINGEX
+            Damage = 500,
+            DamageFriendly = true,
+            DamageRadius = 5,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMGUARD/ARMGUARD_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

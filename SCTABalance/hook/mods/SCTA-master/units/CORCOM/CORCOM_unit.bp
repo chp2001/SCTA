@@ -1,0 +1,66 @@
+UnitBlueprint {
+    Merge = true,
+    Defense = {
+        Health = 19000,
+        MaxHealth = 19000,
+        RegenRate = 10,
+    },
+        Display = {
+            Abilities = {
+                '<LOC ability_amphibious>Amphibious',
+                '<LOC ability_notcap>Not Capturable',
+                '<LOC ability_omni>Omni Sensor',
+                '<LOC ability_personalstealth>Personal Stealth',
+                '<LOC ability_cloak>Cloaking',
+                'D-Gun',
+                 '<LOC ability_engineeringsuite>Engineering Suite',
+            },
+        UniformScale = 0.28,
+    },
+    Intel = {
+        ActiveIntel = {
+            Omni = true,
+            Sonar = true,
+            Radar = true,
+            RadarStealth = true,
+            SonarStealth = true,
+        },
+          VisionRadius = 12,
+          WaterVisionRadius = 10,
+          RadarRadius = 40,
+          SonarRadius = 40,
+          RadarStealth = true,
+          SonarStealth = true,
+          OmniRadius = 30,
+    },
+    Physics = {
+        MaxAcceleration = 1,
+        MaxBrake = 1.4,
+        MaxSpeed = 1.42,
+    },
+    Economy = {
+        MaxBuildDistance = 10,
+        BuildRate = 200,
+	    MaintenanceConsumptionPerSecondEnergy = 150,
+        StorageEnergy = 2500,
+    },
+    SelectionSizeX = 1.6,
+    SelectionSizeZ = 1.6,
+   SizeY = 4.3,
+   SizeX = 2.8,
+   Weapon = {
+    [1] = {},
+    [2] = {
+        Damage = 2500,
+        Overcharge = {
+            commandDamage = 1000,
+            structureDamage = 1000,
+        },
+    },
+    [3] = {
+        Damage = 2500,
+    },
+    [4] = {
+    },
+},
+}

@@ -1,0 +1,212 @@
+#ARM Sentinel - Heavy Laser Tower
+#ARMHLT
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    AI = {
+        TargetBones = {
+            'Barrels',
+            'ARMHLT',
+        },
+    },
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'TWRACTV3',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED1',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 1,
+    Categories = {
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH2',
+	    'STRUCTURE',
+	    'DEFENSE',
+	    'DIRECTFIRE',
+        'OVERLAYDIRECTFIRE',
+	    'ARM',
+		'ANTISHIELD',
+        'SORTDEFENSE',
+        'CQUEMOV',
+        'SNIPEMODE',
+    },
+    CollisionOffsetY = -0.5,
+    Defense = {
+        ArmorType = 'Structure',
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 6,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 12,
+        Health = 1230,
+        MaxHealth = 1230,
+    },
+    Description = 'Heavy Laser Tower',
+    Display = {
+        Abilities = {
+            '<LOC ability_aquatic>Aquatic',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'AeonCZAR', 
+                },
+            },
+        },
+        UniformScale = 0.07,
+    },
+    Economy = {
+        BuildCostEnergy = 5398,
+        BuildCostMass = 584,
+        BuildTime = 9575,
+        StorageEnergy = 150,
+    },
+    Footprint = {
+        SizeX = 2,
+        SizeZ = 2,
+    },
+    General = {
+        Category = 'Defense',
+        Classification = 'RULEUC_Weapon',
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        SelectionPriority = 5,
+        FactionName = 'ARM',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Advanced',
+        UnitName = 'Sentinel',
+    },
+    Intel = {
+        VisionRadius = 24,
+        WaterVisionRadius = 8, 
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = { 
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
+    },
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
+    SelectionThickness = 0.25,
+    SizeX = 2,
+    SizeY = 3,
+    SizeZ = 2,
+    StrategicIconName = 'icon_structure2_directfire',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        {
+            Audio = {
+                Fire = Sound {
+                    Bank = 'TA_Sound',
+                    Cue = 'LASRMAS2',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+            DamageFriendly = false,
+            Damage = 180,
+            DamageType = 'Normal',
+            DisplayName = 'ARM_LASERH1',
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Air',
+                Water = 'Land|Water|Air',
+            },
+	    RangeCategory = 'UWRC_DirectFire',
+     WeaponCategory = 'DirectFire',
+            FiringTolerance = 1,
+            Label = 'ARM_LASERH1',
+            MaxRadius = 50,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 50,
+            ProjectileId = '/mods/SCTA-master/projectiles/ARM_LASERH1/ARM_LASERH1_proj.bp',
+            EnergyDrainPerSecond = 75,
+            EnergyRequired = 75,
+            EnergyChargeForFirstShot = true,
+            DamageRadius = 2, 
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'Muzzle_01',
+                    },
+                    RackBone = 'Barrels',
+                },
+                {
+                    MuzzleBones = {
+                        'Muzzle_02',
+                    },
+                    RackBone = 'Barrels',
+                },
+            },
+            RackRecoilDistance = -0.1,
+            RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            RateOfFire = 1,
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'ALLUNITS'
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
+            TurretBoneMuzzle = 'Muzzle_01',
+            TurretBonePitch = 'Barrels',
+            --TurretBoneDualMuzzle = 'Muzzle_02',
+            --TurretBoneDualPitch = 'Barrels',
+            TurretBoneYaw = 'Turret',
+            TurretDualManipulators = false,
+            TurretPitch = 0,
+            TurretPitchRange = 360,
+            TurretPitchSpeed = 200,
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 200,
+            Turreted = true,
+        },
+        { #MEDIUM_BUILDINGEX
+            Damage = 300,
+            DamageFriendly = true,
+            DamageRadius = 5,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMHLT/ARMHLT_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+            Water = true,
+        },
+    },
+}

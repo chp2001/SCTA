@@ -1,0 +1,57 @@
+UnitBlueprint {
+    Merge = true, 
+    Categories = {
+        'BUILTBYTIER3ENGINEER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'EXPERIMENTAL',
+        'STRUCTURE',
+	    'SORTSTRATEGIC',
+        'OVERLAYDIRECTFIRE',
+        'DIRECTFIRE',
+        'CORE',
+        'STRATEGIC',
+        'ARTILLERY',
+        'SHOWATTACKRETICLE',
+        'SNIPEMODE',
+    },
+    Defense = {
+        Health = 18000,
+        MaxHealth = 18000,
+    },
+    Economy = {
+        BuildCostEnergy = 16500000,
+        BuildCostMass = 420000,
+        BuildTime = 4000000,
+    },
+    Footprint = {
+        SizeX = 8,
+        SizeZ = 8,
+    },
+        Display = {
+        UniformScale = 0.30,
+    },
+    SelectionThickness = 0.3,
+    SelectionSizeX = 5,
+    SelectionSizeZ = 5,
+    SizeX = 6,
+    SizeY = 10,
+    SizeZ = 6,
+    LifeBarSize = 6,
+    Weapon = {
+        [1] = {
+            Damage = 1500,
+            ProjectileLifetime = 3000,
+            MaxRadius = 2500,
+            MinRadius = 100,
+            ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/CORBUZA_WEAPON/CORBUZA_WEAPON_proj.bp',
+            MuzzleVelocity = 125,                 
+            TurretPitchSpeed = 10,
+            TurretYawSpeed = 10,
+        },
+        [2] = {
+        },
+    },
+}

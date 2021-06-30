@@ -1,0 +1,34 @@
+#ARM Defender - Missile Tower
+#ARMRL
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true, 
+    BuildIconSortPriority = 13,
+    Defense = {
+        Health = 700,
+        MaxHealth = 700,
+    },
+    Economy = {
+        BuildCostEnergy = 1500,
+        BuildCostMass = 180,
+        BuildTime = 4500,
+    },
+    Display = {
+        UniformScale = 0.08,
+    },
+    Footprint = {
+    SizeX = 1,
+    SizeZ = 1
+},
+  Intel = {
+    VisionRadius = 16,
+},
+LifeBarSize = 1,
+SelectionSizeX = 1,
+SelectionSizeZ = 1,
+SizeX = 1.2,
+SizeY = 3,
+SizeZ = 1.2,
+}

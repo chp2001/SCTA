@@ -1,0 +1,29 @@
+#ARM Freedom Fighter - Fighter
+#ARMFIG
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true, 
+    Defense = {
+        Health = 400,
+        MaxHealth = 400,
+    },
+    Intel = {
+    VisionRadius = 28,
+    }, 
+    Economy = {
+        BuildCostEnergy = 6000,
+        BuildTime = 4500,
+    },
+    Weapon = {
+        [1] = {
+            DamageType = 'AntiAir',
+        },
+        [2] = {
+            DamageType = 'AntiAir',
+        },
+        [3] = {
+        }, 
+    },
+}

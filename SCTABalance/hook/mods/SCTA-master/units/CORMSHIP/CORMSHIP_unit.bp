@@ -1,0 +1,54 @@
+#CORE Hydra - Missile Ship
+#CORMSHIP
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	    'NAVAL',
+	    'INDIRECTFIRE',
+	    'ANTIAIR',
+        'SILO',
+	    'BATTLESHIP',
+        'OVERLAYINDIRECTFIRE',
+	    'OVERLAYANTIAIR',
+	    'OVERLAYRADAR',
+        'CORE',
+    },
+    Display = {
+        Abilities = {
+            '<LOC ability_aa>Anti-Air',
+            '<LOC ability_radar>Radar',
+            '<LOC ability_tacmissiledef>Tactical Missile Defense',
+        },
+        UniformScale = 0.2,
+    },
+    Defense = {
+        Health = 9500,
+        MaxHealth = 9500,
+    },
+    Economy = {
+        BuildCostEnergy = 42000,
+        BuildCostMass = 12000,
+        BuildTime = 90000,
+    },
+    LifeBarSize = 4,
+    SelectionSizeX = 3,
+    SelectionSizeZ = 5,
+    SizeX = 3,
+    SizeY = 3,
+    SizeZ = 10,
+    Weapon = {
+        [1] = {
+        },
+        [2] = {            
+        },
+        [3] = {},
+    },
+}

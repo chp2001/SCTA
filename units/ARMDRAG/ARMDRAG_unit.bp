@@ -1,0 +1,100 @@
+UnitBlueprint {
+    BuildIconSortPriority = 25,
+    AI = {
+        TargetBones = {
+            0,
+        },
+    },
+    Categories = {
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
+	    'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH1',
+        'BENIGN',
+        'SORTDEFENSE',
+	    'STRUCTURE',
+        'DEFENSE',
+        'WALL',
+	    'ARM',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 3500,
+        MaxHealth = 3500,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Perimeter Defence',
+    Display = {
+        Abilities = {
+            '<LOC ability_aquatic>Aquatic',
+        },
+        Mesh = {
+	    IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'AeonCZAR', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 250,
+        BuildCostMass = 10,
+        BuildTime = 520,
+    },
+    Footprint = {
+	MaxSlope = 2,
+    },
+    General = {
+        CapCost = 0.1,
+        Category = 'Defense',
+        Classification = 'RULEUC_MiscSupport',
+        SelectionPriority = 5,
+        FactionName = 'ARM',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Advanced',
+        UnitName = 'Dragons Teeth',
+    },
+    Intel = {
+        VisionRadius = 0,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    LifeBarRender = false,
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Water = true,
+        },
+    },
+    SelectionCenterOffsetX = 0.1,
+    SizeX = 2,
+    SizeY = 1,
+    SizeZ = 2,
+    StrategicIconName = 'icon_structure_wall',
+    StrategicIconSortPriority = 0,
+        Wreckage = {
+	    UseCustomMesh = true,
+        --Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        Blueprint = '/mods/SCTA-master/meshes/DRAGON/DRAGON_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

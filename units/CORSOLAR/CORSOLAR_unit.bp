@@ -1,0 +1,125 @@
+#CORE Solar Collector - Produces Energy
+#CORSOLAR
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'SOLAR2',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Activate = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'SOLAR2',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOSML3',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 9,
+    Categories = {
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYCOMMANDER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH1',
+		'STRUCTURE',
+        'ECONOMIC',
+        'SORTECONOMY',
+	    'ENERGYPRODUCTION',
+        'VOLATILE',
+	    'CORE',
+        'LAND',
+    },
+    Defense = {
+        DamageModifier = 0.33,
+        ArmorType = 'Structure',
+        Health = 320,
+        MaxHealth = 320,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 1,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Produces Energy',
+    Display = {
+        AnimationOpen = '/mods/SCTA-master/units/CORSOLAR/CORSOLAR_Aopen.sca',
+        AnimationOpenRate = 1,
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'Unit', 
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 790,
+        BuildCostMass = 141,
+        BuildTime = 2416,
+		NaturalProducer = true,
+        ProductionPerSecondEnergy = 20,
+    },
+    Footprint = {
+	MaxSlope = 0.625,
+    },
+    General = {
+        Category = 'Economy',
+        Classification = 'RULEUC_Resource',
+        ToggleCaps = {
+            RULEUTC_ProductionToggle = true,
+        },
+        SelectionPriority = 5,
+        FactionName = 'CORE',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
+		UnitName = 'Solar Collector',
+    },
+    Intel = {
+        VisionRadius = 14,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    SelectionSizeX = 2.5,
+    SelectionSizeZ = 2.5,
+    SelectionThickness = 0.25,
+    SizeX  = 5,
+    SizeY = 2.5,
+    SizeZ = 5,
+    StrategicIconName = 'icon_structure1_energy',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #SMALL_BUILDINGEX
+            Damage = 50,
+            DamageFriendly = true,
+            DamageRadius = 5,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+         
+    },
+	Wreckage = {
+        Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+		EnergyMult = 0,
+		HealthMult = 0.9,
+		MassMult = 0.9,
+		ReclaimTimeMultiplier = 1,
+		WreckageLayers = {
+			Land = true,
+		},
+    },
+}

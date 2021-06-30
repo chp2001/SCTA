@@ -1,0 +1,75 @@
+#ARM Sonar Station - Locates Water Units
+#ARMSONAR
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Categories = {
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYCOMMANDER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH1',
+	    'STRUCTURE',
+	    'INTELLIGENCE',
+	    'NAVAL',
+        'OVERLAYSONAR',
+	    'ARM',
+	    'SONAR',
+	    'SORTINTEL',
+        'CQUEMOV',
+    },
+    Defense = {
+        Health = 150,
+        MaxHealth = 150,
+    },
+    Display = {
+        Abilities = {
+            '<LOC ability_sonar>Sonar',
+            '<LOC ability_upgradable>Upgradeable',
+        },
+    },
+    Economy = {
+    BuildCostEnergy = 1200,
+    BuildTime = 2300,
+    BuildRate = 40, 
+    BuildCostMass = 120,
+    MaintenanceConsumptionPerSecondEnergy = 25,
+    ProductionPerSecondEnergy = 0,
+    BuildableCategory = {
+        'armason',
+        },
+    },
+    General = {
+        UpgradesTo = 'armason',
+    },
+    Intel = {
+    VisionRadius = 12,
+	SonarRadius = 140,
+	WaterVisionRadius = 12,
+    },
+    LifeBarSize = 1,
+    Physics = {
+        BankingSlope = 0,
+        DragCoefficient = 0.2,
+        MaxSteerForce = 0,
+        MeshExtentsX = 1.5,
+        MeshExtentsY = 1,
+        MeshExtentsZ = 1.5,
+        MinSpeedPercent = 0,
+        MotionType = 'RULEUMT_None',
+        SkirtOffsetX = 0,
+        SkirtOffsetZ = 0,
+        SkirtSizeX = 1,
+        SkirtSizeZ = 1,
+        TurnRate = 0,
+    },
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
+    SelectionThickness = 0.25,
+}

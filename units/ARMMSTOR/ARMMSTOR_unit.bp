@@ -1,0 +1,122 @@
+#ARM Metal Storage - Increases Metal Storage
+#ARMMSTOR
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'STORMTL1',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOSML3',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 7,
+    Categories = {
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYCOMMANDER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH1',
+	    'STRUCTURE',
+        'MASSSTORAGE',
+        'ECONOMIC',
+        'SORTECONOMY',
+	    'ARM',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 2,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+        Health = 1329,
+        MaxHealth = 1329,
+    },
+    Description = 'Increases Metal Storage',
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'AeonCZAR', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 535,
+        BuildCostMass = 305,
+        BuildTime = 2925,
+        StorageMass = 1000,
+    },
+    Footprint = {
+	MaxSlope = 0.625,
+    },
+    General = {
+        Category = 'Economy',
+        Classification = 'RULEUC_Resource',
+        SelectionPriority = 5,
+        FactionName = 'ARM',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Basic',
+        UnitName = 'Metal Storage',
+    },
+    Intel = {
+        VisionRadius = 6,
+        WaterVisionRadius = 4,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.25,
+    LifeBarSize = 2,
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+    },
+    SelectionSizeX = 2,
+    SelectionSizeZ = 2,
+    SelectionThickness = 0.25,
+    SizeX = 4,
+    SizeY = 4,
+    SizeZ = 4,
+    StrategicIconName = 'icon_structure1_mass',
+    TAStrategicIconName = '1/structure_massstorage',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #SMALL_BUILDINGEX
+            Damage = 50,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+         
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMMSTOR/ARMMSTOR_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

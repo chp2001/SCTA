@@ -1,0 +1,51 @@
+UnitBlueprint {
+    Merge = true,
+    BuildIconSortPriority = 10,
+    Categories = {
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH2',
+	    'STRUCTURE',
+	    'INTELLIGENCE',
+	    'RADAR',
+        'OVERLAYRADAR',
+	    'ARM',
+	    'SORTINTEL',
+	    'OPTICS',
+        'CQUEMOV',
+    },
+ Display = {
+  Abilities = {
+            '<LOC ability_radar>Radar',
+            'Radar Targeting',
+            '<LOC ability_upgradable>Upgradeable',
+        },  
+     }, 
+     Economy = {
+        BuildRate = 60, 
+        BuildCostEnergy = 6000,
+        BuildTime = 9600,
+        BuildCostMass = 400,
+        ProductionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 150,
+        DifferentialUpgradeCostCalculation = true,
+        BuildableCategory = {
+            'armxrad',
+      },
+    },
+    General = {
+    UpgradesFrom = 'armrad',
+    UpgradesTo = 'armxrad', 
+    },
+    Intel = {
+    VisionRadius = 12, 
+    RadarRadius = 240,
+    },
+    LifeBarSize = 1,
+    SizeX = 1,
+    SizeZ = 1,
+}

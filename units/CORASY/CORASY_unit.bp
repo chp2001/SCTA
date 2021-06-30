@@ -1,0 +1,170 @@
+#CORE Adv. Shipyard - Produces Ships
+#CORASY
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PSHPACTV',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Construct = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PSHPWORK',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	ConstructStop = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'UNITDONE',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG4',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 4,
+    Categories = {
+        'BUILTBYTIER2COMMANDER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH2',
+	    'FACTORY',
+        'RALLYPOINT',
+        'SHOWQUEUE',
+	    'STRUCTURE',
+	    'CONSTRUCTION',
+	    'NAVAL',
+	    'CORE',
+	    'SORTCONSTRUCTION',
+    },
+    CollisionOffsetY = -1,
+    CollisionOffsetZ = 0,
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 2325,
+        MaxHealth = 2325,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 11,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Produces Ships',
+    Display = {
+        AnimationUnpack = '/mods/SCTA-master/units/CORASY/CORASY_lod0_unpack.sca',
+        AnimationUnpackRate = 1, 
+	BuildAttachBone = 'nano',
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 400,
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.1,
+    },
+    Economy = {
+        BuildCostEnergy = 2325,
+        BuildCostMass = 2460, 
+        BuildTime = 13080,
+	    BuildRate = 200,
+        BuildableCategory = {
+            'NAVAL MOBILE TECH2 CORE',
+        },
+        StorageMass = 200,
+        StorageEnergy = 200,
+        InitialRallyX = 0,
+	    InitialRallyZ = 7,
+    },
+    Footprint = {
+        MinWaterDepth = 1.5,
+    },
+    General = {
+        BuildBones = {
+            BuildEffectBones = {'beam1','beam2', 'beam3', 'beam4'},
+        }, 
+        Category = 'Factory',
+        Classification = 'RULEUC_Factory',
+        CommandCaps = {
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        SelectionPriority = 5,
+        ConstructionBar = true,
+        FactionName = 'CORE',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Advanced',
+	UnitName = 'Adv. Shipyard',
+    },
+    Intel = {
+        VisionRadius = 14,
+        WaterVisionRadius = 8,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 3,
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Water = true,
+        },
+        RollOffPoints = {
+            {
+                UnitSpin = 180,
+                X = 0,
+                Y = 0,
+                Z = -10,
+            },
+            {
+                UnitSpin = 0,
+                X = 0,
+                Y = 0,
+                Z = 10,
+            },
+        },
+    },
+    SelectionSizeX = 4.75,
+    SelectionSizeZ = 4.75,
+    SelectionThickness = 0.25,
+    SizeX = 8,
+    SizeY = 2.5,
+    SizeZ = 8,
+    StrategicIconName = 'icon_factory2_naval',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #LARGE_BUILDINGEX
+        Damage = 200,
+        DamageFriendly = true,
+        DamageRadius = 5,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORASY/CORASY_dead_prop.bp',
+        WreckageLayers = {
+            Water = true,
+            Seabed = true,
+            Sub = true,
+        },
+    },
+}

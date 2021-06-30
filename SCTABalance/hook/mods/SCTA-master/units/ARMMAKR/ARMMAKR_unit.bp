@@ -1,0 +1,31 @@
+UnitBlueprint {
+    Merge = true,
+    Categories = {
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH2',
+	    'STRUCTURE',
+        'MASSPRODUCTION',
+        'MASSFABRICATION',
+        'ECONOMIC',
+        'SORTECONOMY',
+	    'ARM',
+    },
+    Defense = {
+        Health = 500,
+        MaxHealth = 500,
+        },
+    Economy = {
+        BuildCostEnergy = 14000,
+        BuildCostMass = 500,
+        BuildTime = 30000,
+        ProductionPerSecondMass = 3,
+	MaintenanceConsumptionPerSecondEnergy = 150,
+    },
+}

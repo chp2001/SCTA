@@ -1,0 +1,61 @@
+UnitBlueprint {
+    Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	    'AIR',
+        'HIGHALTAIR',
+        'INTELLIGENCE',
+        'OVERLAYRADAR',
+        'OVERLAYOMNI',
+        'ARM',        
+        'SCOUT',
+        'RADAR',
+        'ASF',
+    },
+    Defense = {
+        Health = 800,
+        MaxHealth = 800,
+    },
+    Display = {
+        Abilities = {
+            '<LOC ability_omni>Omni Sensor',
+            '<LOC ability_radar>Radar',
+            '<LOC ability_jamming>Jamming',
+        },
+    },
+    Economy = {
+        BuildCostEnergy = 8000,
+        BuildCostMass = 220,
+        BuildTime = 5600,
+        ProductionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 25,
+    },
+    General = {
+        ToggleCaps = {
+            RULEUTC_JammingToggle = true,
+            RULEUTC_IntelToggle = false,
+        },
+    },
+    Intel = {
+        ActiveIntel = {
+            Omni = true,
+            Radar = true,
+        },
+    TAIntel = true,
+    RadarRadius = 100, 
+    OmniRadius = 20,
+    JamRadius = {
+        Max = 18,
+        Min = 12,
+      },
+      JammerBlips = 5,
+    },
+    Physics = {
+        FuelRechargeRate = 999999,
+        FuelUseTime = 999999,
+    },
+}

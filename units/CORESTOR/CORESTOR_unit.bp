@@ -1,0 +1,122 @@
+#CORE Energy Storage - Increases Energy Storage
+#CORESTOR
+#
+#Blueprint created by Raevn
+
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'STORNGY2',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLONUK3',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 11,
+    Categories = {
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYCOMMANDER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH1',
+	    'STRUCTURE',
+        'ENERGYSTORAGE',
+        'ECONOMIC',
+        'SORTECONOMY',
+	    'CORE',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 2,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+        Health = 1070,
+        MaxHealth = 1070,
+    },
+    Description = 'Increases Energy Storage',
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.07,
+    },
+    Economy = {
+        BuildCostEnergy = 2490,
+        BuildCostMass = 250,
+        BuildTime = 12750,
+        StorageEnergy = 3000,
+    },
+    Footprint = {
+	MaxSlope = 0.625,
+    },
+    General = {
+        Category = 'Economy',
+        Classification = 'RULEUC_Resource',
+        SelectionPriority = 5,
+        FactionName = 'CORE',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
+        UnitName = 'Energy Storage',
+    },
+    Intel = {
+        VisionRadius = 6,
+        WaterVisionRadius = 4,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.25,
+    LifeBarSize = 2,
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+    },
+    SelectionSizeX = 2.5,
+    SelectionSizeZ = 2.5,
+    SelectionThickness = 0.25,
+    SizeX = 4,
+    SizeY = 2.25,
+    SizeZ = 4,
+    StrategicIconName = 'icon_structure_energy_storage',
+    TAStrategicIconName = '1/structure_energystorage',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #ESTOR_BUILDINGEX
+            Damage = 1000,
+            DamageFriendly = true,
+            DamageRadius = 5,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORESTOR/CORESTOR_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

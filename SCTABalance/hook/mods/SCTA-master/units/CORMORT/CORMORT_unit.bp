@@ -1,0 +1,49 @@
+#CORE Morty - Mobile Mortar Kbot
+#CORMORT
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+        'LAND',
+        'INDIRECTFIRE',
+        'OVERLAYINDIRECTFIRE',
+        'ARTILLERY',
+        'CORE',
+        'BOT',
+        'AMPHIBIOUS',
+        'SNIPEMODE',
+    },
+    Display = {
+        UniformScale = 0.2,
+    },
+    Defense = {
+        Health = 1300,
+        MaxHealth = 1300,
+    },
+    Economy = {
+        BuildCostEnergy = 14000,
+        BuildCostMass = 1200,
+        BuildTime = 21000,
+    },
+    SizeY = 3,
+    Weapon = {
+        [1] = {
+            Damage = 800,
+	        DamageRadius = 3,
+            FiringRandomness = 0.5,
+            FiringTolerance = 2,
+            MinRadius = 20,
+            MaxRadius = 110,
+            RackRecoilDistance = -2.4,
+            RateOfFire = 0.1,
+        },
+        [2] = {},
+    },
+}

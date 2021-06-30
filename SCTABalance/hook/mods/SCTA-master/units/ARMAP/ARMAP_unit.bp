@@ -1,0 +1,42 @@
+UnitBlueprint {
+    Merge = true,
+    BuildIconSortPriority = 3,
+    Defense = {
+        Health = 2200,
+        MaxHealth = 2200,
+    },
+        Display = {
+             Abilities = {
+            '<LOC ability_radar>Radar',
+            '<LOC ability_upgradable>Upgradeable',
+        },
+        UniformScale = 0.2,
+    },
+    Economy = {
+        BuildCostEnergy = 8000,
+        BuildCostMass = 500,
+        BuildRate = 120,
+        BuildableCategory = {
+            'TECH1 BOT ENGINEER ARM',
+            'AIR MOBILE TECH1 ARM',
+            'armdap', 
+        },
+    }, 
+    Footprint = {
+        SizeX = 7,
+        SizeZ = 7,
+    },
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 2,
+    LifeBarSize = 7,
+    General = {
+        UpgradesTo = 'armdap', 
+    },
+    
+        SelectionSizeX = 7,
+        SelectionSizeZ = 5,
+        SelectionThickness = 0.25,
+        SizeX = 9,
+        SizeY = 1,
+        SizeZ = 9,
+}

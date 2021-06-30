@@ -1,0 +1,41 @@
+#ARM Jethro - Anti-Air Kbot
+#ARMJETH
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+   Merge = true,
+   BuildIconSortPriority = 5,
+   Categories = {
+    'SELECTABLE',
+    'BOT',
+    'TECH2',
+    'VISIBLETORECON',
+    'RECLAIMABLE',
+    'MOBILE',
+    'LAND',
+    'ANTIAIR',
+    'OVERLAYANTAIR',
+    'CORE',
+    },
+    Defense = {
+        Health = 1200,
+        MaxHealth = 1200,
+    },
+    Economy = {
+        BuildCostEnergy = 2600,
+        BuildCostMass = 400,
+        BuildTime = 5000,
+    },
+    Intel = {
+        VisionRadius = 14,
+    },
+    StrategicIconName = 'icon_bot2_antiair',
+    Weapon = {
+        [1] = {
+            Damage = 300,
+            RateOfFire = 0.5,
+        },
+        [2] = {}, 
+    },
+}

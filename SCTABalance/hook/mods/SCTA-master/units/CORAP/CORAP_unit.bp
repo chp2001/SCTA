@@ -1,0 +1,42 @@
+UnitBlueprint {
+    Merge = true,
+    BuildIconSortPriority = 3,
+        Display = {
+                Abilities = {
+                    '<LOC ability_upgradable>Upgradeable',
+                    '<LOC ability_radar>Radar',
+                },
+        UniformScale = 0.2,
+    },
+    Footprint = {
+        SizeX = 7,
+        SizeZ = 7,
+    },   
+    Defense = {
+        Health = 2250,
+        MaxHealth = 2250,
+    },
+    Economy = {
+        BuildCostEnergy = 8000,
+        BuildCostMass = 500,
+        BuildRate = 120,
+        BuildableCategory = {
+            'TECH1 BOT ENGINEER CORE',
+            'AIR MOBILE TECH1 CORE',
+            'cordap', 
+        },
+    },
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 3,
+    LifeBarSize = 7,
+    General = {
+        UpgradesTo = 'cordap', 
+    },
+    
+    SelectionSizeX = 7,
+    SelectionSizeZ = 5,
+    SelectionThickness = 0.25,
+    SizeX = 9,
+    SizeY = 1,
+    SizeZ = 9,
+}

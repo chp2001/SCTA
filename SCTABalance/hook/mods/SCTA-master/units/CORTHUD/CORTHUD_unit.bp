@@ -1,0 +1,22 @@
+UnitBlueprint {
+    Merge = true,
+    Display = {
+        UniformScale = 0.10,
+    },
+    Economy = {
+        BuildTime = 2200,
+        BuildCostEnergy = 660,
+        BuildCostMass = 60,
+    },
+    SizeX = 1,
+    SizeY = 1,
+    SizeZ = 1,
+    LifeBarSize = 1,
+    Weapon = {
+        [1] = {
+            Damage = 200,
+            RateOfFire = 0.33,
+        },
+        [2] = {}, 
+    },
+}

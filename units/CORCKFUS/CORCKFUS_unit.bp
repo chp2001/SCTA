@@ -1,0 +1,126 @@
+#ARM Cloakable Fusion Reactor - Produces Energy
+#CORCKFUS
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'FUSION1',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLONUK3',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 3,
+    Categories = {
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH3',
+        'STRUCTURE',
+        'ECONOMIC',
+        'SORTECONOMY',
+	    'ENERGYPRODUCTION',
+        'CORE',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 2200,
+        MaxHealth = 2200,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 60,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Produces Energy',
+    Display = {
+        Abilities = {
+            '<LOC ability_cloak>Cloaking',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 300,
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 42058,
+        BuildCostMass = 4800,
+        BuildTime = 105487,
+	NaturalProducer = true,
+        ProductionPerSecondEnergy = 1000,
+	MaintenanceConsumptionPerSecondEnergy = 450,
+    },
+    Footprint = {
+	MaxSlope = 0.625,
+        SizeX = 5,
+        SizeZ = 5,
+    },
+    General = {
+        Category = 'Economy',
+        Classification = 'RULEUC_Resource',
+	ToggleCaps = {
+		RULEUTC_CloakToggle = true,
+	},
+        SelectionPriority = 5,
+        FactionName = 'CORE',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Secret',
+	UnitName = 'Cloakable Fusion Reactor',
+    },
+    Intel = {
+        VisionRadius = 14,
+	    Cloak = true,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        SkirtSizeX = 5,
+        SkirtSizeZ = 5,
+    },
+    SelectionSizeX = 2.5,
+    SelectionSizeZ = 2,
+    SelectionThickness = 0.25,
+    SizeX = 5,
+    SizeY = 3,
+    SizeZ = 4,
+    StrategicIconName = 'icon_structure3_energy',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #ATOMIC_BLAST
+            Damage = 2000,
+            DamageFriendly = true,
+            DamageRadius = 5,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORCKFUS/CORCKFUS_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

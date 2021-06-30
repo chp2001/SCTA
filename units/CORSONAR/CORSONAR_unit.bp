@@ -1,0 +1,165 @@
+#CORE Sonar Station - Sonar Station
+#CORSONAR
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'SONAR2',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Activate = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'RADAR1',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Deactivate = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'SONARDE2',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOSML3',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 16,
+    Categories = {
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
+	'BUILTBYCOMMANDER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH1',
+	'STRUCTURE',
+	'INTELLIGENCE',
+	'NAVAL',
+        'OVERLAYSONAR',
+	'CORE',
+	'SONAR',
+	'SORTINTEL',
+    },
+    CollisionOffsetY = -0.5,
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 52,
+        MaxHealth = 52,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 3,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Sonar Station',
+    Display = {
+        Abilities = {
+            '<LOC ability_sonar>Sonar',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                  LODCutoff = 230,
+                    ShaderName = 'Unit', 
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 399,
+        BuildCostMass = 20,
+        BuildTime = 900,
+        ProductionPerSecondEnergy = 8,
+        MaintenanceConsumptionPerSecondEnergy = 8,
+    },
+    Footprint = {
+	MinWaterDepth = 0.5,
+    },
+    General = {
+        Category = 'Intelligence',
+        Classification = 'RULEUC_Sensor',
+        ConstructionBar = true,
+        CommandCaps = {
+            RULEUCC_Attack = false,
+            RULEUCC_CallTransport = false,
+            RULEUCC_Capture = false,
+            RULEUCC_Guard = false,
+            RULEUCC_Move = false,
+            RULEUCC_Nuke = false,
+            RULEUCC_Patrol = false,
+            RULEUCC_Pause = true,
+            RULEUCC_Reclaim = false,
+            RULEUCC_Repair = false,
+            RULEUCC_RetaliateToggle = false,
+            RULEUCC_Stop = true,
+            RULEUCC_Transport = false,
+        },
+        OrderOverrides = {
+            RULEUTC_IntelToggle = {
+                bitmapId = 'sonar',
+                helpText = 'toggle_sonar',
+            },
+        },
+        ToggleCaps = {
+            RULEUTC_IntelToggle = true,
+        },
+        SelectionPriority = 5,
+        FactionName = 'CORE',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Basic',
+        UnitName = 'Sonar Station',
+    },
+    Intel = {
+    VisionRadius = 12,
+	SonarRadius = 76,
+	WaterVisionRadius = 12,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        SkirtSizeX = 2, 
+        SkirtSizeZ = 2, 
+        BuildOnLayerCaps = {
+            LAYER_Water = true,
+        },
+    },
+    SelectionSizeX = 1.4,
+    SelectionSizeZ = 1.2,
+    SelectionThickness = 0.25,
+    SizeX = 2,
+    SizeY = 2.25,
+    SizeZ = 2,
+    StrategicIconName = 'icon_structure1_intel',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #SMALL_BUILDINGEX
+            Damage = 50,
+            DamageFriendly = true,
+            DamageRadius = 5,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+         
+    },
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORSONAR/CORSONAR_dead_prop.bp',
+        WreckageLayers = {
+            Water = true,
+            Seabed = true,
+            Sub = true,
+        },
+    },
+}

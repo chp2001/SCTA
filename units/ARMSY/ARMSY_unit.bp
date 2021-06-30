@@ -1,0 +1,175 @@
+#ARM Shipyard - Produces Ships
+#ARMSY
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PSHPACTV',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Construct = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PSHPWORK',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	ConstructStop = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'UNITDONE',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG4',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 3,
+    Categories = {
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
+	    'BUILTBYCOMMANDER',
+        'BUILTBYTIER3COMMANDER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'SORTCONSTRUCTION',
+        'TECH1',
+	    'FACTORY',
+        'RALLYPOINT',
+        'SHOWQUEUE',
+	    'STRUCTURE',
+	    'CONSTRUCTION',
+	    'NAVAL',
+	    'ARM',	
+    },
+    CollisionOffsetY = -1,
+    CollisionOffsetZ = 0,
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 2490,
+        MaxHealth = 2490,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 3,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Produces Ships',
+    Display = {
+        BuildAttachBone = 'BuildBone',
+        AnimationUnpack = '/mods/SCTA-master/units/ARMSY/ARMSY_lod0_unpack.sca',
+        AnimationUnpackRate = 2,  
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 400,
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.18,
+    },
+    Economy = {
+        BuildCostEnergy = 775,
+        BuildCostMass = 600, 
+        BuildTime = 6050,
+	BuildRate = 100,
+        BuildableCategory = {
+            'NAVAL MOBILE TECH1 ARM',
+        },
+        StorageMass = 50,
+        StorageEnergy = 50,
+        InitialRallyX = 0,
+	    InitialRallyZ = 7,
+    },
+    Footprint = {
+        MinWaterDepth = 1.5,
+    },
+    General = {
+        BuildBones = {
+            BuildEffectBones = {'Nozzle_01','Nozzle_02'},
+        },      
+        Category = 'Factory',
+        Classification = 'RULEUC_Factory',
+        CommandCaps = {
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        SelectionPriority = 5,
+        ConstructionBar = true,
+        FactionName = 'ARM',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Basic',
+	UnitName = 'Shipyard',
+    },
+    Intel = {
+        VisionRadius = 14,
+        WaterVisionRadius = 8,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Water = true,
+        },        
+    RollOffPoints = {
+        {
+            UnitSpin = 0,
+            X = 0,
+            Y = 0,
+            Z = 10,
+        }, 
+        {
+            UnitSpin = 180,
+            X = 0,
+            Y = 0,
+            Z = -10,
+        },
+    },
+    },
+    SelectionSizeX = 6,
+    SelectionSizeZ = 6,
+    SelectionThickness = 0.25,
+    SizeX = 8,
+    SizeY = 3,
+    SizeZ = 8,
+    StrategicIconName = 'icon_factory1_naval',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #LARGE_BUILDINGEX
+            Damage = 200,
+            DamageFriendly = true,
+            DamageRadius = 5,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMSY/ARMSY_dead_prop.bp',
+        WreckageLayers = {
+            Water = true,
+            Seabed = true,
+            Sub = true,
+        },
+    },
+}

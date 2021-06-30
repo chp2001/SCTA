@@ -1,0 +1,22 @@
+UnitBlueprint {
+    Merge = true,
+    Display = {
+        UniformScale = 0.06,
+    },
+    Defense = {
+        Health = 7500,
+        MaxHealth = 7500,
+    },
+    Economy = {
+        BuildTime = 12500,
+    },
+    LifeBarSize = 1,
+    Weapon = {
+        [1] = {
+            Damage = 60,
+            RateOfFire = 4,
+        },
+        [2] = {
+        },
+    },
+  }    

@@ -1,0 +1,28 @@
+UnitBlueprint {
+    Merge = true,
+    Air = {
+        MaxAirspeed = 8,
+        MinAirspeed = 3,
+    },    
+    Defense = {
+        Health = 380,
+        MaxHealth = 380,
+        },
+        Display = {
+            UniformScale = 0.09,
+        },
+    Economy = {
+        BuildCostMass = 60,
+        BuildCostEnergy = 2800,
+        ProductionPerSecondEnergy = 2,
+        MaxBuildDistance = 5,
+        BuildTime = 2000,
+    },
+    Physics = {
+        FuelRechargeRate = 666666,
+        FuelUseTime = 666666,
+    },
+    SelectionSizeX = 0.7,
+    SelectionSizeZ = 0.7,
+    LifeBarSize = 1,
+}

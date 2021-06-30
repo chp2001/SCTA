@@ -1,0 +1,28 @@
+UnitBlueprint {
+   Merge = true,
+   Defense = {
+    Health = 360,
+    MaxHealth = 360,
+    },    
+    Display = {
+        UniformScale = 0.12,
+    },
+    Economy = {
+        BuildCostEnergy = 6000,
+        BuildCostMass = 200,
+        BuildTime = 6600,
+    },
+    Intel = {
+        VisionRadius = 32,
+        RadarRadius = 38,
+    },
+    Weapon = {
+        [1] = {
+            MuzzleSalvoSize = 5,
+            Damage = 90,
+            RackReloadTimeout = 5,
+        },
+        [2] = {
+        }, 
+    },
+}

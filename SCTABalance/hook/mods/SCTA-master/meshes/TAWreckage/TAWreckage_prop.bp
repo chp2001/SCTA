@@ -1,0 +1,9 @@
+PropBlueprint {
+    Merge = true,
+    Footprint = {
+        OccupancyCaps = 0,
+    },
+    Physics = {
+        BlockPath = false,
+    },
+}

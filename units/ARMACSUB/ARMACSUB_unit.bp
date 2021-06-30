@@ -1,0 +1,188 @@
+#ARM Adv Construction Sub - Tech Level 2
+#ARMACSUB
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'SUARMSEL',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StartMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'SUARMMOV',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StopMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'SUARMSTP',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Construct = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'NANLATH1',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	StartReclaim = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'RECLAIM1',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED2',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 1,
+    Categories = {
+        'SELECTABLE',
+        'TECH2',
+        'ARM',	
+        'ENGINEER',
+        'REPAIR',
+        'RECLAIM',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'PATROLHELPER',
+        'SHOWQUEUE',
+        'MOBILE',
+        'SELECTION',
+	    'CONSTRUCTION',
+        'NAVAL',
+        'SUBMERSIBLE',
+        'T2SUBMARINE',
+        'OVERLAYSONAR',
+        'SELECTION',
+    },
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 360,
+        MaxHealth = 360,
+    },
+    Description = 'Tech Level 2',
+    Display = {
+        AnimationBuild = '/mods/SCTA-master/units/ARMACSUB/ARMACSUB_lod0_unpack.sca',
+        AnimationBuildRate = 1, 
+        Abilities = {
+             '<LOC ability_engineeringsuite>Engineering Suite',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'AeonCZAR', 
+                },
+            },
+        },
+        MovementEffects = {
+            TAMovement = {
+            Emitter = '/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
+            Scale = 0.25,
+            Bones = {'Wake_01', 'Wake_02'},
+            },
+        },
+        UniformScale = 0.12,
+    },
+    Economy = {
+        Naval = true,
+        BuildCostEnergy = 7568,
+        BuildCostMass = 695,
+        BuildRate = 225,
+        BuildTime = 16565,
+        BuildableCategory = {
+            'BUILTBYTIER3COMMANDER ARM',
+        },
+        MaxBuildDistance = 6.25,
+        StorageEnergy = 50,
+        StorageMass = 50,
+	NaturalProducer = true,
+	ProductionPerSecondEnergy = 15,
+	ProductionPerSecondMass = 1,
+    },
+    Footprint = {
+        SizeX = 2,
+        SizeZ = 6,
+    },
+    General = {
+        BuildBones = {
+            AimBone = 'muzzle',
+            BuildEffectBones = {'muzzle'},
+            PitchBone = 'muzzle',
+            YawBone = 'turret',
+        },
+        Category = 'Construction',
+        Classification = 'RULEUC_Engineer',
+        CommandCaps = {
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_Reclaim = true,
+            RULEUCC_Repair = true,
+            RULEUCC_Stop = true,
+            RULEUCC_Dive = true,
+        },
+        ConstructionBar = true,
+        SelectionPriority = 3,
+        FactionName = 'ARM',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Advanced',
+        UnitName = 'Advanced Construction Sub',
+    },
+    Intel = {
+        VisionRadius = 14,
+        WaterVisionRadius = 10,
+	    SonarRadius = 30,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        Elevation = -2.5,
+	BackUpDistance = 0,
+	MaxSpeedReverse = 0,
+        MaxAcceleration = 2,
+        MaxBrake = 7.2,
+        MaxSpeed = 3,
+        MotionType = 'RULEUMT_SurfacingSub',
+        TurnRate = 42,
+        MaxSteerForce = 10,
+    },
+    SelectionSizeX = 2,
+    SelectionSizeZ = 2,
+    SelectionThickness = 0.25,
+    SizeX = 2.5,
+    SizeY = 1.5,
+    SizeZ = 4,
+    StrategicIconName = 'icon_structure2_engineer', 
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #SMALL_UNITEX
+            Damage = 50,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMACSUB/ARMACSUB_dead_prop.bp',
+        WreckageLayers = {
+            Water = true,
+	    Sub = true,
+	    Seabed = true,
+        },
+    },
+}

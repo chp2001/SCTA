@@ -1,0 +1,170 @@
+#CORE Aircraft Plant - Produces Aircraft
+#CORAP
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PAIRACTV',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Construct = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PLABWORK',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	ConstructStop = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'UNITDONE',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG4',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 4,
+    Categories = {
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYCOMMANDER',
+        'BUILTBYTIER2FACTORY',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH1',
+	    'FACTORY',
+        'RALLYPOINT',
+        'SHOWQUEUE',
+	    'STRUCTURE',
+	    'CONSTRUCTION',
+        'OVERLAYRADAR',
+	    'CORE',
+	    'SORTCONSTRUCTION',
+        'AIR',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 1925,
+        MaxHealth = 1925,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 3,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Produces Aircraft',
+    Display = {
+        AnimationUnpack = '/mods/SCTA-master/units/CORAP/CORAP_lod0Action.sca',
+        AnimationUnpackRate = 1,    
+        BuildAttachBone = 'pad',
+        Abilities = {
+            '<LOC ability_radar>Radar',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                LODCutoff = 400,
+                ShaderName = 'Unit',
+            },
+        },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 1340,
+        BuildCostMass = 830, 
+        BuildTime = 7180,
+	BuildRate = 100,
+        BuildableCategory = {
+            'AIR MOBILE TECH1 CORE',
+        },
+        StorageMass = 50,
+        StorageEnergy = 50,
+    },
+    Footprint = {
+	MaxSlope = 0.625,
+        SizeX = 6,
+        SizeZ = 6,
+    },
+    General = {
+        BuildBones = {
+            BuildEffectBones = {'muzzlea','muzzleb'},
+        },      
+        Category = 'Factory',
+        Classification = 'RULEUC_Factory',
+        CommandCaps = {
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        SelectionPriority = 5,
+        ConstructionBar = true,
+        FactionName = 'CORE',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
+	UnitName = 'Aircraft Plant',
+    },
+    Intel = {
+        VisionRadius = 14,
+	    RadarRadius = 32,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {        
+        RollOffPoints = {
+            {
+                UnitSpin = 90,
+                X = 3,
+                Y = 0,
+                Z = 0,
+            },
+            {
+                UnitSpin = -90,
+                X = -3,
+                Y = 0,
+                Z = 0,
+            },
+        },
+    },
+    SelectionSizeX = 3.75,
+    SelectionSizeZ = 3.5,
+    SelectionThickness = 0.25,
+    SizeX = 7,
+    SizeY = 2.5,
+    SizeZ = 6,
+    StrategicIconName = 'icon_factory1_air',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #LARGE_BUILDINGEX
+        Damage = 200,
+        DamageFriendly = true,
+        DamageRadius = 5,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORAP/CORAP_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

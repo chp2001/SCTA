@@ -1,0 +1,42 @@
+UnitBlueprint {
+    Merge = true, 
+    Categories = {
+        'SELECTABLE',
+        'TECH1',
+        'CORE',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	    'NAVAL',
+	    'DIRECTFIRE',
+	    'ANTIAIR',
+	    'LIGHTBOAT',
+        'OVERLAYDIRECTFIRE',
+        'OVERLAYANTIAIR',
+        'OVERLAYRADAR',
+        'OVERLAYSONAR',
+        'SCOUT',
+    },
+    Defense = {
+        Health = 800,
+        MaxHealth = 800,
+    },    
+    Economy = {
+        BuildCostEnergy = 1230,
+        BuildCostMass = 180,
+        BuildTime = 4200,
+    },
+    Intel = {
+    RadarRadius = 50,
+    SonarRadius = 80,
+    },
+    Weapon = {
+        [1] = {
+        },
+        [2] = {
+            Damage = 20,
+        },
+        [3] = {
+        },
+    },
+}

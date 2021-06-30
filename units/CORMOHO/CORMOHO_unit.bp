@@ -1,0 +1,134 @@
+#CORE Moho Mine - Advanced Metal Extractor
+#CORMOHO
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'MOHOON2',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Activate = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'MOHORUN2',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        Deactivate = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'MOHOOFF2',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOSML3',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 1,
+    Categories = {
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
+        'BUILTBYTIER3COMMANDER',
+        'TECH2',
+        'SELECTABLE',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+	    'STRUCTURE',
+        'MASSPRODUCTION',
+        'MASSEXTRACTION',
+        'ECONOMIC',
+	    'CORE',
+	    'SORTECONOMY',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 2000,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+        Health = 1465,
+        MaxHealth = 1465,
+    },
+    Description = 'Advanced Metal Extractor',
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'Unit', 
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 9121,
+        BuildCostMass = 1450,
+        BuildTime = 32500,
+        MaintenanceConsumptionPerSecondEnergy = 15,
+        ProductionPerSecondMass = 8,
+    },
+    General = {	
+        Category = 'Economy',
+        Classification = 'RULEUC_Resource',
+        SelectionPriority = 5,
+        FactionName = 'CORE',
+        ToggleCaps = {
+            RULEUTC_ProductionToggle = true,
+        },
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Secret',
+        UnitName = 'Moho Mine',
+    },
+    Intel = {
+        VisionRadius = 14,
+        WaterVisionRadius = 4, 
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Land = true,
+            LAYER_Seabed = true,
+        },
+        FlattenSkirt = true,
+        SkirtSizeX = 5,
+        SkirtSizeZ = 5,
+        BuildRestriction = 'RULEUBR_OnMassDeposit',
+    },
+    SelectionSizeX = 3,
+    SelectionSizeZ = 3,
+    SelectionThickness = 0.25,
+    SizeX = 5,
+    SizeY = 3,
+    SizeZ = 5,
+    StrategicIconName = 'icon_structure2_mass',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #SMALL_BUILDINGEX
+            Damage = 100,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+         
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORMOHO/CORMOHO_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

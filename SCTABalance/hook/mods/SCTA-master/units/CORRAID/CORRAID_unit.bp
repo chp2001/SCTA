@@ -1,0 +1,24 @@
+#CORE Raider - Medium Assault Tank
+#CORRAID
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Economy = {
+        BuildCostEnergy = 810,
+        BuildCostMass = 120,
+    },
+    LifeBarSize = 1.4,
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
+    SizeX = 1.7,
+	SizeZ = 1.7,
+    SizeY = 1, 
+    Weapon = {
+        [1] = {
+            Damage = 45,  
+        },
+        [2] = {}, 
+    },
+}

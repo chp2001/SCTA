@@ -1,0 +1,206 @@
+#CORE Shark - Submarine Killer
+#CORSHARK
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'SUCORSEL',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StartMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'SUCORMOV',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StopMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'SUCORSTP',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED2',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 2,
+    Categories = {
+        'SELECTABLE',
+        'TECH2',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	    'NAVAL',
+        'T2SUBMARINE',
+	    'ANTINAVY',
+        'SUBMERSIBLE',
+        'OVERLAYANTINAVY',
+        'CORE',
+        'SNIPEMODE',
+    },
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 276,
+        MaxHealth = 276,
+        SubThreatLevel = 10,
+        SurfaceThreatLevel = 5,
+    },
+    Description = 'Submarine Killer ',
+    Display = {
+        Abilities = {
+            '<LOC ability_torpedo>Torpedoes',
+            '<LOC ability_sonar>Sonar',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'Unit', 
+                },
+            },
+        },
+        MovementEffects = {
+            TAMovement = {
+            Emitter = '/mods/SCTA-master/effects/emitters/sub_wake_emit.bp',
+            Scale = 0.25,
+            Bones = {'wake'},
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 5245,
+        BuildCostMass = 1356,
+        BuildTime = 17529,
+    },
+    Footprint = {
+        SizeX = 2,
+        SizeZ = 6,
+    },
+    General = {
+        Category = 'Submarine',
+        Classification = 'RULEUC_MilitaryShip',
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+            RULEUCC_Dive = true,
+        },
+        FactionName = 'CORE',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Advanced',
+        UnitName = 'Shark',
+    },
+    Intel = {
+        SonarRadius = 30,
+        VisionRadius = 10,
+        WaterVisionRadius = 10,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        Elevation = -1.25,
+	BackUpDistance = 0,
+	MaxSpeedReverse = 0,
+        MaxAcceleration = 3,
+        MaxBrake = 3,
+        MaxSpeed = 4.5,
+        TurnRate = 50,
+        MotionType = 'RULEUMT_SurfacingSub',
+        MaxSteerForce = 10,
+    },
+    SelectionSizeX = 1,
+    SelectionSizeZ = 2,
+    SelectionThickness = 0.25,
+    SizeX = 1.5,
+    SizeY = 1.25,
+    SizeZ = 3.5,
+    StrategicIconName = 'icon_sub2_antinavy',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        {
+            Audio = {
+                Fire = Sound {
+                    Bank = 'TA_Sound',
+                    Cue = 'TORPEDO2',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+	        DamageFriendly = true,
+            Damage = 400,
+            DamageType = 'Normal',
+            DisplayName = 'CORSMART_TORPEDO',
+            FireTargetLayerCapsTable = {
+                Sub = 'Seabed|Sub|Water',
+            },
+            RangeCategory = 'UWRC_AntiNavy',
+            WeaponCategory = 'AntiNavy',
+            Label = 'CORSMART_TORPEDO',
+            MaxRadius = 30,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 3,
+            ProjectileId = '/mods/SCTA-master/projectiles/CORSMART_TORPEDO/CORSMART_TORPEDO_proj.bp',
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'muzzle',
+                    },
+                    RackBone = 'muzzle',
+                },
+                {
+					MuzzleBones = {
+                        'muzzle2',
+                    },
+                    RackBone = 'muzzle2',
+                },
+            },
+            RackFireTogether = false,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            RateOfFire = 0.5,
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
+        },
+        { #SMALL_UNITEX
+            Damage = 50,
+            DamageFriendly = true,
+            DamageRadius = 5,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORSHARK/CORSHARK_dead_prop.bp',
+        WreckageLayers = {
+            Water = true,
+	    Sub = true,
+	    Seabed = true,
+        },
+    },
+}

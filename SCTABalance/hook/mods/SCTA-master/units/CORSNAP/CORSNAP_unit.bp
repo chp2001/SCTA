@@ -1,0 +1,25 @@
+UnitBlueprint {
+    Merge = true,
+    Defense = {
+        Health = 9000,
+        MaxHealth = 9000,
+        SurfaceThreatLevel = 12,
+    },
+    Economy = {
+        BuildCostEnergy = 18000,
+        BuildCostMass = 1700,
+        BuildTime = 28000,
+    },
+    SizeY = 1.4,
+    Weapon = {
+        [1] = {
+            Damage = 60,
+            MaxRadius = 30,
+            MuzzleSalvoSize = 1,
+            RackSalvoSize = 1,
+            RateOfFire = 2,
+        },
+        [2] = {
+        }, 
+    },
+}

@@ -1,0 +1,53 @@
+#ARM Pheonix Laser
+#ARMAIR2AIRLASER
+#
+#Blueprint created by Raevn
+
+ProjectileBlueprint {
+    Audio = {
+        Impact = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'LASHIT',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactUnit = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'LASHIT',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactShield = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'LASHIT',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+        ImpactTerrain = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'LASHIT',
+            LodCutoff = 'Weapon_LodCutoff',
+        },
+    },
+    Categories = {
+        'ARM',
+        'PROJECTILE',
+        'ANTIAIR',
+    },
+    Display = {
+        StrategicIconSize = 1,
+    },
+    General = {
+        Category = 'AntiAir',
+        EntityCategory = {
+            'ARM',
+            'PROJECTILE',
+            'ANTIAIR',
+        },
+        Faction = 'ARM',
+        Weapon = 'ARMAIR2AIRLASER',
+    },
+
+    Physics = {
+        DestroyOnWater = true,
+        InitialSpeed = 56.25,
+        Lifetime = 3,
+    },
+}

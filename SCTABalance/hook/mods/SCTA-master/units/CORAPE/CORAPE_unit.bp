@@ -1,0 +1,20 @@
+#CORE Rapier - Gunship
+#CORAPE
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Economy = {
+        BuildCostEnergy = 8500,
+        BuildCostMass = 400,
+        BuildTime = 12000,
+    },
+    Weapon = {
+        [1] = {
+            Damage = 10,
+        },
+        [2] = {
+        }, 
+    },
+}

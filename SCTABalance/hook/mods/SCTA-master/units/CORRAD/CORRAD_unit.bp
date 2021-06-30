@@ -1,0 +1,31 @@
+UnitBlueprint {
+    Merge = true,
+    Display = {
+         Abilities = {
+      '<LOC ability_radar>Radar',
+      '<LOC ability_upgradable>Upgradeable',
+  },
+  UniformScale = 0.10,
+}, 
+    Economy = {
+        BuildRate = 40, 
+        BuildCostEnergy = 1600,
+        BuildTime = 2300,
+        ProductionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 25,
+        BuildableCategory = {
+            'corarad',
+      },
+    },
+    General = {
+	UpgradesTo = 'corarad', 
+  },
+  Intel = {
+      VisionRadius = 8,
+      WaterVisionRadius = 8,
+    },
+    LifeBarSize = 1,
+  SizeX = 1,
+  SizeY = 3,
+  SizeZ = 1,
+}

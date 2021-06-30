@@ -1,0 +1,51 @@
+#ARM Torpedo Launcher - Torpedo Launcher
+#ARMTL
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true, 
+    Categories = {
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYCOMMANDER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH1',
+	    'STRUCTURE',
+	    'DEFENSE',
+	    'ANTINAVY',
+	    'NAVAL',
+        'OVERLAYANTINAVY',
+        'SORTDEFENSE',
+        'CQUEMOV',
+	    'ARM',
+        'SNIPEMODE',
+    },
+    Defense = {
+        Health = 800,
+        MaxHealth = 800,
+    },
+    Intel = {
+        SonarRadius = 30,
+        VisionRadius = 8,
+        WaterVisionRadius = 15,
+    },
+    SelectionSizeX = 1.5,
+    SelectionSizeZ = 1.5,
+    SelectionThickness = 0.5,
+    SizeX = 2,
+    SizeY = 4,
+    SizeZ = 2,
+    Weapon = {
+        [1] = {
+            Damage = 150,
+            MaxRadius = 50,
+        },
+        [2] = {
+        },
+    },
+}

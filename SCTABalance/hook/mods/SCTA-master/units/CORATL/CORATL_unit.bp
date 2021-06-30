@@ -1,0 +1,51 @@
+UnitBlueprint {
+    Merge = true, 
+    Categories = {
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH2',
+	    'STRUCTURE',
+	    'DEFENSE',
+	    'ANTINAVY',
+	    'NAVAL',
+        'SORTDEFENSE',
+        'CQUEMOV',
+        'OVERLAYANTINAVY',
+        'OVERLAYSONAR',
+        'CORE',
+        'SNIPEMODE',
+    },
+    Display = {
+        UniformScale = 0.12,
+    },
+    Economy = {
+        BuildTime = 20000,
+    },
+    Defense = {
+        Health = 2500,
+        MaxHealth = 2500,
+    },
+    Intel = {
+        SonarRadius = 40,
+        VisionRadius = 14,
+        WaterVisionRadius = 15,
+    },
+    SelectionSizeX = 2,
+    SelectionSizeZ = 2,
+    SelectionThickness = 0.5,
+    SizeX = 3,
+    SizeY = 4,
+    SizeZ = 3,
+    Weapon = {
+        [1] = {
+            MaxRadius = 60,
+        },
+        [2] = {
+        },
+    },
+}

@@ -1,0 +1,215 @@
+#CORE Diplomat - Mobile Rocket Launcher
+#CORVROC
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+UISelection = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'TARMSEL',
+    LodCutoff = 'UnitMove_LodCutoff',
+},
+StartMove = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'TARMMOVE',
+    LodCutoff = 'UnitMove_LodCutoff',
+},
+StopMove = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'TARMST0P',
+    LodCutoff = 'UnitMove_LodCutoff',
+},
+    Destroyed = Sound {
+    Bank = 'TA_Sound',
+    Cue = 'XPLOLRG3',
+    LodCutoff = 'UnitMove_LodCutoff',
+    },
+    },
+    BuildIconSortPriority = 5,
+    Categories = {
+        'SELECTABLE',
+        'TANK',
+        'TECH2',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+        'LAND',
+        'INDIRECTFIRE',
+        'SILO',
+        'OVERLAYINDIRECTFIRE',
+        'CORE',
+    },
+    Defense = {
+ArmorType = 'Normal',
+Health = 602,
+MaxHealth = 602,
+AirThreatLevel = 0,
+EconomyThreatLevel = 0,
+SubThreatLevel = 0,
+SurfaceThreatLevel = 24,
+    },
+    Description = 'Mobile Rocket Launcher',
+    Display = {
+    MovementEffects = {
+    Land = {
+        Treads = {
+        ScrollMultiplier = 0.75,
+        ScrollTreads = true,
+        TreadMarks = {
+            {
+            BoneName = 'CORVROC',
+            TreadMarks = 'tank_treads_albedo',
+            TreadMarksInterval = 0.2,
+            TreadMarksSizeX = 0.5,
+            TreadMarksSizeZ = 0.5,
+            TreadOffset = {
+            0,
+            0,
+            0,
+                        },
+                    },
+                },
+            },
+        },
+    },
+    Mesh = {
+        IconFadeInZoom = 130,
+        LODs = {
+            {
+                LODCutoff = 230,
+                Scrolling = true,
+                ShaderName = 'Unit', 
+            },
+        },
+    },
+    UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 2470,
+        BuildCostMass = 427,
+        BuildTime = 9002,
+    },
+    General = {
+        Category = 'Indirect Fire',
+        Classification = 'RULEUC_MilitaryVehicle',
+    CommandCaps = {
+        RULEUCC_Attack = true,
+        RULEUCC_CallTransport = true,
+        RULEUCC_Guard = true,
+        RULEUCC_Move = true,
+        RULEUCC_Patrol = true,
+        RULEUCC_RetaliateToggle = true,
+        RULEUCC_Stop = true,
+    },
+        FactionName = 'CORE',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Advanced',
+        UnitName = 'Diplomat',
+    },
+    Intel = {
+        VisionRadius = 14,
+    },
+        LifeBarHeight = 0.25,
+        LifeBarOffset = 0.5,
+        LifeBarSize = 2,
+    Physics = {
+        LayerChangeOffsetHeight = -2.00,
+        BackUpDistance = 0,
+        MaxSpeedReverse = 0,
+        MaxAcceleration = 1.4,
+        MaxBrake = 1.08,
+        MaxSpeed = 2.0625,
+        MotionType = 'RULEUMT_Land',
+        TurnRate = 71,
+        MaxSteerForce = 10,
+    },
+        SelectionSizeX = 1.75,
+        SelectionSizeZ = 1.75,
+        SelectionThickness = 0.25,
+        SizeX = 3,
+        SizeY = 1.5,
+        SizeZ = 3,
+        StrategicIconName = 'icon_land2_missile',
+        StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 2,
+    },
+    Weapon = {
+        {
+        Audio = {
+        Fire = Sound {
+        Bank = 'TA_Sound',
+        Cue = 'ROCKHVY1',
+        LodCutoff = 'Weapon_LodCutoff',
+        },
+        },
+        BallisticArc = 'RULEUBA_HighArc',
+        CollideFriendly = false,
+        DamageFriendly = true,
+        Damage = 330,
+        DamageRadius = 3,
+        DamageType = 'Normal',
+        DisplayName = 'CORTRUCK_ROCKET',
+        FireTargetLayerCapsTable = {
+        Land = 'Land|Water|Air',
+        Seabed = 'Land|Water|Air',
+        },
+        RangeCategory = 'UWRC_IndirectFire',
+        RenderFireClock = true,
+        WeaponCategory = 'MISSILE',
+        FiringTolerance = 8,
+        Label = 'CORTRUCK_ROCKET',
+        MaxRadius = 55,
+        MuzzleSalvoDelay = 0,
+        MuzzleSalvoSize = 1,
+        MuzzleVelocity = 5,
+        ProjectileId = '/mods/SCTA-master/projectiles/CORTRUCK_ROCKET/CORTRUCK_ROCKET_proj.bp',
+    RackBones = {
+        {
+            MuzzleBones = {
+            'dummy',
+        },
+            VisibleMuzzle = true,
+        RackBone = 'tube',
+        },
+    },
+        RackRecoilDistance = 0,
+        RackReloadTimeout = 0,
+        RackSalvoChargeTime = 0,
+        RackSalvoReloadTime = 0,
+        RackSalvoSize = 1,
+        RateOfFire = 0.1785714286,
+        TargetCheckInterval = 1,
+        TargetPriorities = {
+            'ALLUNITS',
+        },
+        TargetRestrictDisallow = 'UNTARGETABLE',
+        AboveWaterTargetsOnly = true,
+        WeaponUnpacks = true,
+        WeaponUnpackAnimation = '/mods/SCTA-master/units/CORVROC/CORVROC_lod0_unpack.sca',
+        WeaponUnpackAnimationRate = 1,
+        WeaponRepackTimeout = 2,
+        RenderFireClock = true,
+    },
+        { #BIG_UNITEX
+        Damage = 50,
+        DamageFriendly = true,
+        DamageRadius = 3,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
+        },
+    },
+    Wreckage = {
+        Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+    WreckageLayers = {
+        Land = true,
+        Seabed = true,
+        },
+    },
+}

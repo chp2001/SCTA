@@ -1,0 +1,27 @@
+
+UnitBlueprint {
+    Merge = true, 
+    Footprint = {
+        SizeZ = 2,
+        SizeX = 2,
+        },
+    LifeBarOffset = 0.4,
+    Physics = {
+        BankingSlope = 0,
+        DragCoefficient = 0.2,
+        FlattenSkirt = true,
+        MaxSteerForce = 0,
+        MeshExtentsX = 1,
+        MeshExtentsY = 0.75,
+        MeshExtentsZ = 1,
+        MinSpeedPercent = 0,
+        TurnRate = 0,
+    },
+    LifeBarSize = 1,
+      SelectionSizeX = 1.5,
+      SelectionSizeZ = 1.5,
+      SelectionThickness = 0.6,
+      SizeX = 2,
+      SizeY = 1.2,
+      SizeZ = 2,
+}

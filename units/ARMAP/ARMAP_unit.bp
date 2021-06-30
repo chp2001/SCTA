@@ -1,0 +1,171 @@
+#ARM Aircraft Plant - Produces Aircraft
+#ARMAP
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PAIRACTV',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Construct = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PLABWORK',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	ConstructStop = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'UNITDONE',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG4',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 4,
+    Categories = {
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYCOMMANDER',
+        'BUILTBYTIER2FACTORY',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH1',
+	    'AIR',
+	    'FACTORY',
+        'RALLYPOINT',
+        'SHOWQUEUE',
+	    'STRUCTURE',
+	    'CONSTRUCTION',
+        'SORTCONSTRUCTION',
+        'OVERLAYRADAR',
+	    'ARM',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 1850,
+        MaxHealth = 1850,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 3,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Produces Aircraft',
+    Display = {
+        AnimationUnpack = '/mods/SCTA-master/units/ARMAP/ARMAP_lod0_unpack.sca',
+        AnimationUnpackRate = 1,
+        BuildAttachBone = 'BasePlate',
+        Abilities = {
+            '<LOC ability_radar>Radar',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 400,
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 1370,
+        BuildCostMass = 850, 
+        BuildTime = 7240,
+	BuildRate = 100,
+        BuildableCategory = {
+            'AIR MOBILE TECH1 ARM',
+        },
+        StorageMass = 50,
+        StorageEnergy = 50,
+    },
+    Footprint = {
+	MaxSlope = 0.625,
+        SizeX = 6,
+        SizeZ = 6,
+    },
+    General = {
+        BuildBones = {
+            BuildEffectBones = {'Nozzle_01', 'Nozzle_02'},
+        }, 
+        Category = 'Factory',
+        Classification = 'RULEUC_Factory',
+        CommandCaps = {
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        ConstructionBar = true,
+        SelectionPriority = 5,
+        FactionName = 'ARM',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Basic',
+	UnitName = 'Aircraft Plant',
+    },
+    Intel = {
+        VisionRadius = 14,
+	RadarRadius = 32,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {        
+        RollOffPoints = {
+            {
+                UnitSpin = 90,
+                X = 3,
+                Y = 0,
+                Z = 0,
+            },
+            {
+                UnitSpin = -90,
+                X = -3,
+                Y = 0,
+                Z = 0,
+            },
+        },
+    },
+    SelectionSizeX = 3.75,
+    SelectionSizeZ = 3.5,
+    SelectionThickness = 0.25,
+    SizeX = 7,
+    SizeY = 2.5,
+    SizeZ = 6,
+    StrategicIconName = 'icon_factory1_air',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #LARGE_BUILDINGEX
+        Damage = 200,
+        DamageFriendly = true,
+        DamageRadius = 5,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMAP/ARMAP_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

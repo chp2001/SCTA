@@ -1,0 +1,94 @@
+#ARM Fortification Wall - Perimeter Defence
+#ARMFORT
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    BuildIconSortPriority = 20,
+    AI = {
+        TargetBones = {
+            0,
+        },
+    },
+    Categories = {
+        'BUILTBYTIER2FACTORY',
+        'BUILTBYTIER2ENGINEER',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH2',
+        'BENIGN',
+        'SORTDEFENSE',
+	    'STRUCTURE',
+        'DEFENSE',
+        'WALL',
+	    'CORE',
+        'SELECTABLE',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 6000,
+        MaxHealth = 6000,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Perimeter Defence',
+    Display = {
+        Mesh = {
+	    IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 675,
+        BuildCostMass = 27,
+        BuildTime = 965,
+    },
+    Footprint = {
+	MaxSlope = 2,
+    },
+    General = {
+        CapCost = 0,
+        Category = 'Defense',
+        Classification = 'RULEUC_MiscSupport',
+        SelectionPriority = 5,
+        FactionName = 'CORE',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Secret',
+        UnitName = 'Fortification Wall',
+    },
+    Intel = {
+        VisionRadius = 0,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    LifeBarRender = false,
+    SizeX = 2,
+    SizeY = 2,
+    SizeZ = 2,
+    StrategicIconName = 'icon_structure_wall',
+    TAStrategicIconName = '2/structure_wall',
+    StrategicIconSortPriority = 0,
+        Wreckage = {
+            UseCustomMesh = true,
+            --Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+            EnergyMult = 0,
+            HealthMult = 0.9,
+            MassMult = 0.9,
+            ReclaimTimeMultiplier = 1,
+            Blueprint = '/mods/SCTA-master/meshes/DRAGON/DRAGON_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

@@ -1,0 +1,186 @@
+#CORE Immolator - Plasma Tower
+#CORPLAS
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'KBCORSEL',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED1',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 12,
+    Categories = {
+        'BUILTBYTIER1FACTORY',
+        'BUILTBYTIER1ENGINEER',
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYCOMMANDER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH1',
+        'SORTDEFENSE',
+        'CQUEMOV',
+	    'STRUCTURE',
+	    'DEFENSE',
+	    'DIRECTFIRE',
+        'OVERLAYDIRECTFIRE',
+	    'CORE',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 3,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 6,
+        Health = 842,
+        MaxHealth = 842,
+    },
+    Description = 'Plasma Tower',
+    Display = {
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'Unit', 
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 1790,
+        BuildCostMass = 321,
+        BuildTime = 4094,
+    },
+    Footprint = {
+	MaxSlope = 0.625,
+    },
+    General = {
+        Category = 'Defense',
+        Classification = 'RULEUC_Weapon',
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        SelectionPriority = 5,
+        FactionName = 'CORE',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
+        UnitName = 'Immolator',
+    },
+    Intel = {
+        VisionRadius = 14,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.25,
+    LifeBarSize = 2,
+    SelectionSizeX = 1.6,
+    SelectionSizeZ = 1.6,
+    SelectionCenterOffsetZ = -0.2,
+    SelectionThickness = 0.25,
+    SizeX = 3,
+    SizeY = 4,
+    SizeZ = 3,
+    StrategicIconName = 'icon_structure1_artillery',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        {
+            Audio = {
+                Fire = Sound {
+                    Bank = 'TA_Sound',
+                    Cue = 'CANNON3',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+            DamageFriendly = true,
+            Damage = 150,
+            DamageType = 'Normal',
+            DisplayName = 'CORPLAS_WEAPON',
+            FireTargetLayerCapsTable = {
+                Land = 'Land|Water|Air',
+            },
+	        RangeCategory = 'UWRC_DirectFire',
+            WeaponCategory = 'DirectFire',
+            FiringTolerance = 0,
+            Label = 'CORPLAS_WEAPON',
+            MaxRadius = 30,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 25,
+            ProjectileId = '/mods/SCTA-master/projectiles/CORPLAS_WEAPON/CORPLAS_WEAPON_proj.bp',
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'muzzle1',
+                    },
+                    RackBone = 'barrel1',
+                },
+                {
+                    MuzzleBones = {
+                        'muzzle2',
+                    },
+                    RackBone = 'barrel2',
+                },
+            },
+            RackRecoilDistance = -3,
+            RackReloadTimeout = 1,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RackSlavedToTurret = false,
+            RateOfFire = 2,
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'ALLUNITS'
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            AboveWaterTargetsOnly = true,
+            TurretBoneMuzzle = 'muzzle1',
+            TurretBonePitch = 'turret',
+            --TurretBoneDualMuzzle = 'muzzle2',
+            --TurretBoneDualPitch = 'barrel2',
+            TurretBoneYaw = 'turret',
+            TurretDualManipulators = false,
+            TurretPitch = 0,
+            TurretPitchRange = 360,
+            TurretPitchSpeed = 200,
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 400,
+            Turreted = true,
+        },
+        { #MEDIUM_BUILDINGEX
+            Damage = 100,
+            DamageFriendly = true,
+            DamageRadius = 3.28,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORPLAS/CORPLAS_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

@@ -1,0 +1,56 @@
+#ARM Ranger - Missile Ship
+#ARMMSHIP
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	    'NAVAL',
+	    'INDIRECTFIRE',
+	    'ANTIAIR',
+        'SILO',
+	    'BATTLESHIP',
+        'OVERLAYINDIRECTFIRE',
+	    'OVERLAYANTIAIR',
+	    'OVERLAYRADAR',
+        'ARM',
+    },
+    Display = {
+        Abilities = {
+            '<LOC ability_aa>Anti-Air',
+            '<LOC ability_radar>Radar',
+            '<LOC ability_tacmissiledef>Tactical Missile Defense',
+        },
+        UniformScale = 0.2,
+    },
+    Defense = {
+        Health = 8000,
+        MaxHealth = 8000,
+    },
+    Economy = {
+        BuildCostEnergy = 46000,
+        BuildCostMass = 12000,
+        BuildTime = 90000,
+    },
+    LifeBarSize = 4,
+    SelectionSizeX = 3,
+    SelectionSizeZ = 7,
+    SizeX = 4,
+    SizeY = 3,
+    SizeZ = 10,
+    Weapon = {
+        [1] = {     
+        },
+    [2] = {
+        Damage = 1000,
+        ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/ARMBSHIP_ROCKET/ARMBSHIP_ROCKET_proj.bp',
+    },
+    [3] = {},
+  },    
+}

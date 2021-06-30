@@ -1,0 +1,42 @@
+UnitBlueprint {
+    Merge = true,
+    BuildIconSortPriority = 2,
+    Categories = {
+        'SELECTABLE',
+        'TECH3',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	'NAVAL',
+	'DIRECTFIRE',
+    'INDIRECTFIRE',
+	'BATTLESHIP',
+        'OVERLAYINDIRECTFIRE',
+        'OVERLAYDIRECTFIRE',
+        'ARM',
+    'SNIPEMODE',
+    },
+    Defense = {
+        Health = 22000,
+        MaxHealth = 22000,
+    },
+    Display = {
+        UniformScale = 0.24,
+    },
+    Economy = {
+        BuildCostEnergy = 120000,
+        BuildCostMass = 10000,
+        BuildTime = 80000,
+    },
+    Physics = {
+        MaxAcceleration = 3,
+        MaxSpeed = 4,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarSize = 4,
+    SelectionSizeX = 4,
+    SelectionSizeZ = 9,
+    SizeX = 6,
+    SizeY = 6,
+    SizeZ = 10,
+}

@@ -1,0 +1,198 @@
+#ARM Construction Vehicle - Tech Level 1
+#ARMCV
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'VARMSEL',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StartMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'VARMMOVE',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StopMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'VARMSTOP',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Construct = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'NANLATH1',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	StartReclaim = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'RECLAIM1',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG3',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 1,
+    Categories = {
+        'SELECTABLE',
+        'TANK',
+        'TECH1',
+        'ENGINEER',
+        'REPAIR',
+        'RECLAIM',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'PATROLHELPER',
+        'SHOWQUEUE',
+        'SELECTION',
+        'MOBILE',
+	'CONSTRUCTION',
+	'LAND',
+        'ARM',
+    },
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 870,
+        MaxHealth = 870,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Tech Level 1',
+    Display = {
+        AnimationBuild = '/mods/SCTA-master/units/ARMCV/ARMCV_lod0_unpack.sca',
+        AnimationBuildRate = 1, 
+        Abilities = {
+             '<LOC ability_engineeringsuite>Engineering Suite',
+        },
+        MovementEffects = {
+        Land = {
+            Treads = {
+                ---ScrollMultiplier = 0.75,
+                ScrollTreads = true,
+                TreadMarks = {
+                    {
+                        BoneName = 'ARMCV',
+                        TreadMarks = 'tank_treads_albedo',
+                        TreadMarksInterval = 0.2,
+                        TreadMarksSizeX = 0.5,
+                        TreadMarksSizeZ = 0.5,
+                        TreadOffset = {
+                            0,
+                            0,
+                            0,
+                        },
+                    },
+                },
+            },
+        },
+    },
+    Mesh = {
+        IconFadeInZoom = 130,
+        LODs = {
+            {
+                LODCutoff = 230,
+                Scrolling = true,
+                ShaderName = 'Unit', 
+                },
+            },
+        },
+        UniformScale = 0.48,
+    },
+    Economy = {
+        Land = true,
+        BuildCostEnergy = 2030,
+        BuildCostMass = 185,
+        BuildRate = 100,
+        BuildTime = 6100,
+        BuildableCategory = {
+            'BUILTBYTIER1ENGINEER ARM',
+            'armavp',
+        },
+        MaxBuildDistance = 2.5,
+        StorageEnergy = 5,
+        StorageMass = 5,
+	ProductionPerSecondEnergy = 5,
+	NaturalProducer = true,
+    },
+    General = {
+        BuildBones = {
+            AimBone = 'Turret_Barrel',
+            BuildEffectBones = {'Turret_Muzzle'},
+            PitchBone = 'Turret_Hinge',
+            YawBone = 'Turret',
+        },
+        Category = 'Construction',
+        Classification = 'RULEUC_Engineer',
+        CommandCaps = {
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_Reclaim = true,
+            RULEUCC_Repair = true,
+            RULEUCC_Stop = true,
+        },
+        ConstructionBar = true,
+        SelectionPriority = 3,
+        FactionName = 'ARM',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Basic',
+        UnitName = 'Construction Vehicle',
+    },
+    Intel = {
+        VisionRadius = 12,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        LayerChangeOffsetHeight = -2.00,
+	BackUpDistance = 0,
+	MaxSpeedReverse = 0,
+        MaxAcceleration = 1.3,
+        MaxBrake = 1.3,
+        MaxSpeed = 2.6,
+        MotionType = 'RULEUMT_Land',
+        TurnRate = 41,
+        MaxSteerForce = 10,
+    },
+    SelectionCenterOffsetZ = 0,
+    SelectionSizeX = 1.75,
+    SelectionSizeZ = 1.5,
+    SelectionThickness = 0.25,
+    SizeX = 3,
+    SizeY = 2,
+    SizeZ = 3,
+    StrategicIconName = 'icon_land1_engineer',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #BIG_UNITEX
+            Damage = 50,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        }, 
+
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMCV/ARMCV_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+            Seabed = true,
+        },
+    },
+}

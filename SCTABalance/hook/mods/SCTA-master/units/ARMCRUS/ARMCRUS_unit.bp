@@ -1,0 +1,39 @@
+#ARM Conqueror - Cruiser
+#ARMCRUS
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Display = {
+        UniformScale = 0.2,
+    },
+    Defense = {
+        Health = 8000,
+        MaxHealth = 8000,
+    },
+    Economy = {
+        BuildCostEnergy = 40000,
+        BuildCostMass = 4000,
+        BuildTime = 56000,
+    },
+    LifeBarSize = 4,
+    SelectionSizeX = 3,
+    SelectionSizeZ = 6,
+    SizeX = 3,
+    SizeY = 3,
+    SizeZ = 10,
+    Description = 'Destroyer',
+    Weapon = {
+        [1] = {
+            RateOfFire = 1,
+        },
+        [2] = {
+            Damage = 150,
+        },
+        [3] = {
+        }, 
+        [4] = {
+        }, 
+    },
+}

@@ -1,0 +1,184 @@
+#CORE Shipyard - Produces Ships
+#CORDSY
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PSHPACTV',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Construct = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PSHPWORK',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	ConstructStop = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'UNITDONE',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG4',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 0,
+    Categories = {
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH2',
+	    'FACTORY',
+        'RALLYPOINT',
+        'SHOWQUEUE',
+        'CONSTRUCTIONSORTDOWN',
+        'STRUCTURE',
+	    'CONSTRUCTION',
+	    'NAVAL',
+	    'CORE',
+        'RESEARCH',
+	    'SORTCONSTRUCTION',
+    },
+    CollisionOffsetY = -1,
+    CollisionOffsetZ = 0,
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 6000,
+        MaxHealth = 6000,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 3,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Produces Ships',
+    Display = {
+        BuildAttachBone = 'BuildBone',
+        AnimationUnpack = '/mods/SCTA-master/units/CORSY/CORSY_lod0_unpack.sca',
+        AnimationUnpackRate = 2,  
+        Abilities = {
+            '<LOC ability_upgradable>Upgradeable',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 400, 
+                    SpecularName = '/mods/SCTA-master/units/CORSY/CORSY_SpecTeam.dds',
+                    AlbedoName = '/mods/SCTA-master/units/CORSY/CORSY_Albedo.dds',
+                    MeshName =   '/mods/SCTA-master/units/CORSY/CORSY_lod0.scm',
+                    ShaderName = 'Unit', 
+                    NormalsName = '/mods/SCTA-master/units/CORSY/CORSY_NormalsTS.dds',
+                },
+            },
+        },
+        UniformScale = 0.27,
+    },
+    Economy = {
+        BuildCostEnergy = 40000,
+        BuildCostMass = 4000, 
+        BuildTime = 80000,
+    BuildRate = 175,
+    DifferentialUpgradeCostCalculation = true,
+    BuildableCategory = {
+        'NAVAL MOBILE TECH1 CORE',
+        'NAVAL MOBILE TECH2 CORE',
+        'coradsy',
+    },
+    StorageMass = 50,
+    StorageEnergy = 50,
+    InitialRallyX = 0,
+    InitialRallyZ = 7,
+    },
+    Footprint = {
+        MinWaterDepth = 1.5,
+        SizeX = 7,
+        SizeZ = 7,
+    },
+    General = {
+        BuildBones = {
+            BuildEffectBones = {'muzzlea', 'muzzleb'},
+        },     
+        Category = 'Factory',
+        Classification = 'RULEUC_Factory',
+        CommandCaps = {
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        SelectionPriority = 5,
+        ConstructionBar = true,
+        FactionName = 'CORE',
+        UpgradesFrom = 'corsy', 
+        UpgradesTo = 'coradsy',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Advanced',
+	UnitName = 'Development Shipyard',
+    },
+    Intel = {
+        VisionRadius = 14,
+        WaterVisionRadius = 8,
+    },
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 3,
+    LifeBarSize = 7,
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Water = true,
+        },        
+        RollOffPoints = {
+            {
+                UnitSpin = 0,
+                X = 0,
+                Y = 0,
+                Z = 10,
+            }, 
+            {
+                UnitSpin = 180,
+                X = 0,
+                Y = 0,
+                Z = -10,
+            },
+        },
+    },
+    SelectionSizeX = 9,
+    SelectionSizeZ = 9,
+    SizeX = 12,
+    SizeY = 3,
+    SizeZ = 12,
+    SelectionThickness = 0.25,
+    StrategicIconName = 'icon_factoryhq2_naval',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #LARGE_BUILDINGEX
+        Damage = 200,
+        DamageFriendly = true,
+        DamageRadius = 5,
+        DamageType = 'Normal',
+        DummyWeapon = true,
+        Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/SCTABalance/units/CORDSY/CORDSY_dead_prop.bp',
+        WreckageLayers = {
+            Water = true,
+            Seabed = true,
+            Sub = true,
+        },
+    },
+}

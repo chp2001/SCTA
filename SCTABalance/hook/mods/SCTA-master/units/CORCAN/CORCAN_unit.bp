@@ -1,0 +1,26 @@
+#CORE The Can - Armored Assault Kbot
+#CORCAN
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true, 
+    Defense = {
+        Health = 4200,
+        MaxHealth = 4200,
+    },
+    Economy = {
+        BuildCostEnergy = 4200,
+        BuildCostMass = 580,
+        BuildTime = 9300,
+    },
+    --SelectionCenterOffsetZ = -0.5,
+    Weapon = {
+        [1] = {
+            EnergyDrainPerSecond = 20,
+            EnergyRequired = 20,
+            Damage = 115,
+        },
+        [2] = {},
+    },
+}

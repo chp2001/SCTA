@@ -1,0 +1,38 @@
+---DISABLED
+
+UnitBlueprint {
+    Merge = true,
+    Categories = {
+        'SELECTABLE',
+        'TECH2',
+        'ENGINEER',
+        'REPAIR',
+        'RECLAIM',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'PATROLHELPER',
+        'SHOWQUEUE',
+	    'SELECTION',
+        'MOBILE',
+	    'CONSTRUCTION',
+	    'LAND',
+        'CORE',
+    },
+    Defense = {
+        Health = 1000,
+        MaxHealth = 1000,
+        },
+    Economy = {
+        BuildCostEnergy = 4800,
+        BuildTime = 6000,
+        BuildRate = 320,
+        BuildableCategory = {
+            'BUILTBYTIER1ENGINEER CORE',
+            'BUILTBYTIER2ENGINEER CORE',
+        },
+        MaxBuildDistance = 7,
+        ProductionPerSecondEnergy = 2,
+        ProductionPerSecondMass = 0,
+    },
+    
+}

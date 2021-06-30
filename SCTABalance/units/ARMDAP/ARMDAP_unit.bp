@@ -1,0 +1,178 @@
+#ARM Aircraft Plant - Produces Aircraft
+#ARMDAP
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PAIRACTV',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Construct = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'PLABWORK',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	ConstructStop = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'UNITDONE',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG4',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 0,
+    Categories = {
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH2',
+	    'FACTORY',
+        'RALLYPOINT',
+        'SHOWQUEUE',
+	    'STRUCTURE',
+	    'CONSTRUCTION',
+        'OVERLAYRADAR',
+        'AIR',
+        'CONSTRUCTIONSORTDOWN',
+	    'ARM',
+        'RESEARCH',
+	    'SORTCONSTRUCTION',
+    },
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 3700,
+        MaxHealth = 3700,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 3,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Produces Aircraft',
+    Display = {
+        AnimationUnpack = '/mods/SCTA-master/units/ARMAP/ARMAP_lod0_unpack.sca',
+        AnimationUnpackRate = 1,   
+        BuildAttachBone = 'BasePlate',
+        Abilities = {
+            '<LOC ability_radar>Radar',
+            '<LOC ability_upgradable>Upgradeable',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                LODCutoff = 400, 
+                SpecularName = '/mods/SCTA-master/units/ARMAP/ARMAP_SpecTeam.dds',
+                AlbedoName = '/mods/SCTA-master/units/ARMAP/ARMAP_Albedo.dds',
+                MeshName =   '/mods/SCTA-master/units/ARMAP/ARMAP_lod0.scm',
+                ShaderName = 'Unit', 
+                NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.2,
+    },
+    Economy = {
+        BuildCostEnergy = 54000,
+        BuildCostMass = 2700, 
+        BuildTime = 40000,
+    BuildRate = 180,
+    DifferentialUpgradeCostCalculation = true,
+    BuildableCategory = {
+        'AIR MOBILE TECH2 ARM',
+        'AIR MOBILE TECH1 ARM',
+        'TECH1 BOT ENGINEER ARM',
+        'TECH2 FIELDENGINEER ARM',
+        'armadap', 
+        },
+    StorageMass = 50,
+    StorageEnergy = 50,
+    },
+    Footprint = {
+        MaxSlope = 0.625,
+        SizeX = 7,
+        SizeZ = 7,
+    },
+    General = {
+        BuildBones = {
+            BuildEffectBones = {'Nozzle_01', 'Nozzle_02'},
+        }, 
+        Category = 'Factory',
+        Classification = 'RULEUC_Factory',
+        CommandCaps = {
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        ConstructionBar = true,
+        SelectionPriority = 5,
+        FactionName = 'ARM',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Advanced',
+        UpgradesFrom = 'armap',
+        UpgradesTo = 'armadap', 
+	UnitName = 'Aircraft Development Plant',
+    },
+    Intel = {
+        VisionRadius = 10,
+	RadarRadius = 32,
+    },
+    LifeBarHeight = 0.22,
+    LifeBarOffset = 2,
+    LifeBarSize = 7,
+    Physics = {        
+        RollOffPoints = {
+            {
+                UnitSpin = 90,
+                X = 3,
+                Y = 0,
+                Z = 0,
+            },
+            {
+                UnitSpin = -90,
+                X = -3,
+                Y = 0,
+                Z = 0,
+            },
+        },
+    },
+    SelectionSizeX = 7,
+    SelectionSizeZ = 5,
+    SelectionThickness = 0.25,
+    SizeX = 9,
+    SizeY = 1,
+    SizeZ = 9,
+    StrategicIconName = 'icon_factoryhq2_air',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        { #LARGE_BUILDINGEX
+            Damage = 200,
+            DamageFriendly = true,
+            DamageRadius = 5,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/SCTABalance/units/ARMDAP/ARMDAP_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+        },
+    },
+}

@@ -1,0 +1,40 @@
+UnitBlueprint {
+    Merge = true, 
+    Defense = {
+        Health = 12000,
+        MaxHealth = 12000,
+    },
+    Economy = {
+        BuildCostEnergy = 800000,
+        BuildCostMass = 60000,
+        BuildTime = 150000,
+    },
+    Display = {
+        UniformScale = 0.5,
+    },
+    Footprint = {
+        SizeZ = 5,
+        SizeX = 5,
+    },
+    Physics = {
+        SkirtSizeX = 5, 
+        SkirtSizeZ = 5,  
+    },
+    LifeBarSize = 6,
+    SelectionSizeX = 6,
+    SelectionSizeZ = 6,
+    SizeY = 10,
+    SizeX = 8,
+    SizeZ = 8,
+    Weapon = {
+        [1] = {
+            BallisticArc = 'RULEUBA_HighArc',        
+            MuzzleVelocityReduceDistance = 800,
+            Damage = 4500,
+            EnergyDrainPerSecond = 500,
+            EnergyRequired = 2000,
+            RateOfFire = 0.1,
+        },
+        [2] = {},
+    },
+}

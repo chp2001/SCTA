@@ -1,0 +1,20 @@
+#ARM Stumpy - Medium Assault Tank
+#ARMSTUMP
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+   Merge = true, 
+   Display = {
+    UniformScale = 0.28,
+},
+   Economy = {
+    BuildCostEnergy = 800,   
+    BuildCostMass = 120,
+},
+    LifeBarSize = 1.4,
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
+    SizeX = 1.5,
+	SizeZ = 1.5,
+}

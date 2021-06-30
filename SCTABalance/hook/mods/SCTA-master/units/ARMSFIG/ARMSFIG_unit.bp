@@ -1,0 +1,40 @@
+#CORE Avenger - Fighter
+#ARMSFIG
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+   Merge = true,
+   Air = {
+    BreakOffDistance = 17,
+    BreakOffTrigger = 12,
+    MaxAirspeed = 22,
+    MinAirspeed = 12,
+    },
+    Defense = {
+        Health = 3000,
+        MaxHealth = 3000,
+    },
+    Economy = {
+        BuildCostEnergy = 36000,
+        BuildCostMass = 600,
+    },
+    Physics = {
+	FuelRechargeRate = 666666,
+	FuelUseTime = 666666,
+    },
+    Weapon = {
+        [1] = {
+            MaxRadius = 35,
+            DamageType = 'AntiAir',
+            RateOfFire = 2,
+        },
+        [2] = {
+            MaxRadius = 35,
+            DamageType = 'AntiAir',
+            RateOfFire = 2,
+        },
+        [3] = {
+        },
+    },
+}

@@ -1,0 +1,19 @@
+#ARM Jammer - Mobile Radar Jammer
+#ARMSJAM
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true, 
+    Economy = {
+        ProductionPerSecondEnergy = 0,
+        MaintenanceConsumptionPerSecondEnergy = 20,
+    },
+    SelectionSizeX = 1.25,
+    SelectionSizeZ = 2.6,
+    SizeY = 2,
+    SizeZ = 4,
+    Intel = {
+    TAIntel = true,
+    },
+}

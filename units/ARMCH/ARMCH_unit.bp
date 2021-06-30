@@ -1,0 +1,199 @@
+#ARM Construction Hovercraft - Tech Level 1
+#ARMCH
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'KBARMSEL',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StartMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'KBARMMOV',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StopMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'KBARMSTP',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Construct = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'NANLATH1',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	StartReclaim = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'RECLAIM1',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG3',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+	DeathExplosion = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOLRG3',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 0,
+    Categories = {
+        'SELECTABLE',
+        'TECH3',
+        'ENGINEER',
+        'REPAIR',
+        'RECLAIM',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'PATROLHELPER',
+        'SHOWQUEUE',
+        'MOBILE',
+        'SELECTION',
+        'CONSTRUCTION',
+        'LAND',
+        'ARM',
+        'HOVER',
+    },
+    Defense = {
+        ArmorType = 'Normal',
+        Health = 723,
+        MaxHealth = 723,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Tech Level 3',
+    Display = {
+        AnimationBuild = '/mods/SCTA-master/units/ARMCH/ARMCH_lod0_unpack.sca',
+        AnimationBuildRate = 2, 
+        Abilities = {
+             '<LOC ability_engineeringsuite>Engineering Suite',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'AeonCZAR', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+	MovementEffects = {
+        TAMovement = {
+		Emitter = '/mods/SCTA-master/effects/emitters/hover_wake_emit.bp',
+		Scale = 0.5,
+		Bones = {'ARMXCH'},
+        },
+	},
+        UniformScale = 0.16,
+    },
+    Economy = {
+        TECH3 = true,
+        BuildCostEnergy = 4370,
+        BuildCostMass = 396,
+        BuildRate = 80,
+        BuildTime = 10494,
+        BuildableCategory = {
+            'BUILTBYTIER3ENGINEER ARM',
+        },
+        MaxBuildDistance = 4.375,
+        StorageEnergy = 50,
+        StorageMass = 50,
+	ProductionPerSecondEnergy = 15,
+	NaturalProducer = true,
+    },
+    General = {
+        BuildBones = {
+            AimBone = 'nanogun',
+            BuildEffectBones = {'beam', 'beam2'},
+            PitchBone = 'nanogun',
+            YawBone = 'turret',
+        },
+        BuildBonesAlt1 = {
+            AimBone = 'nanogun2',
+            PitchBone = 'nanogun2',
+            YawBone = 'turret2',
+        },
+        Category = 'Construction',
+        Classification = 'RULEUC_Engineer',
+        CommandCaps = {
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_Pause = true,
+            RULEUCC_Reclaim = true,
+            RULEUCC_Repair = true,
+            RULEUCC_Stop = true,
+        },
+        ConstructionBar = true,
+        SelectionPriority = 3,
+        FactionName = 'ARM',
+        Icon = 'land',
+        TechLevel = 'RULEUTL_Advanced',
+        UnitName = 'Construction Hovercraft',
+    },
+    Intel = {
+        VisionRadius = 18,
+        WaterVisionRadius = 6,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2.6,
+    Physics = {
+        Elevation = 0.2,
+        BackUpDistance = 0,
+	    MaxSpeedReverse = 0,
+        MaxAcceleration = 2,
+        MaxBrake = 1,
+        MaxSpeed = 4,
+        MotionType = 'RULEUMT_Hover',
+        TurnRate = 80,
+        MaxSteerForce = 100,
+	    RotateOnSpot = true,
+        TurnFacingRate = 80,
+	    WobbleFactor = 0.01,
+	    WobbleSpeed = 0.03,
+    },
+    SelectionSizeX = 1.5,
+    SelectionSizeZ = 1.5,
+    SelectionThickness = 0.25,
+    SizeX = 3,
+    SizeY = 2,
+    SizeZ = 3,
+    StrategicIconName = 'icon_land3_engineer',
+    StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 3,
+    },
+    Weapon = {
+        { #BIG_UNITEX
+            Damage = 50,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        }, 
+
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/ARMCH/ARMCH_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+            Water = true,
+        },
+    },
+}

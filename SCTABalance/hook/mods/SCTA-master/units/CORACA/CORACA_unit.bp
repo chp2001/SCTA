@@ -1,0 +1,33 @@
+UnitBlueprint {
+   Merge = true,
+   Air = {
+    MaxAirspeed = 9,
+    MinAirspeed = 3,
+    },
+   Defense = {
+    Health = 600,
+    MaxHealth = 600,
+    },
+    Display = {
+        UniformScale = 0.1,
+    },
+    Economy = {
+        BuildCostEnergy = 6000,
+        BuildRate = 225,
+        BuildTime = 4000, 
+        BuildableCategory = {
+            'BUILTBYTIER1FACTORY CORE',
+            'BUILTBYTIER2FACTORY CORE',
+        },
+        MaxBuildDistance = 5,
+        ProductionPerSecondEnergy = 3,
+        ProductionPerSecondMass = 0,
+    },
+    Physics = {
+        FuelRechargeRate = 777777,
+        FuelUseTime = 777777,
+    },
+    SelectionSizeX = 1,
+    SelectionSizeZ = 1,
+    LifeBarSize = 1,
+}

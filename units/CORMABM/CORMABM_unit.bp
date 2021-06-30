@@ -1,0 +1,219 @@
+#ARM Jeffy - Fast Attack Vehicle
+#CORMABM
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'VARMSEL',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StartMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'VARMMOVE',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+        StopMove = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'VARMSTOP',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOMED2',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 19,
+    Categories = {
+        'SELECTABLE',
+        'TANK',
+        'RADAR',
+        'TECH2',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'MOBILE',
+	    'LAND',
+        'CORE',
+	    'OVERLAYDEFENSE',
+    },
+    Defense = {
+        ArmorType = 'TMD',
+        Health = 1400,
+        MaxHealth = 1400,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 0,
+        SubThreatLevel = 0,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Missile Defense',
+    Display = {
+        Abilities = {
+        '<LOC ability_tacmissiledef>Tactical Missile Defense',
+        },
+        AnimationUnfold = '/mods/SCTA-master/units/CORMABM/CORMABM_lod0_Aunpack.sca',
+        AnimationUnfoldRate = 1,
+        MovementEffects = {
+            Land = {
+                Treads = {
+                    ScrollMultiplier = 1,
+                    ScrollTreads = true,
+                    TreadMarks = {
+                        {
+                            BoneName = 'CORMABM',
+                            TreadMarks = 'tank_treads_albedo',
+                            TreadMarksInterval = 0.2,
+                            TreadMarksSizeX = 1,
+                            TreadMarksSizeZ = 0.5,
+                            TreadOffset = {
+                                0,
+                                0,
+                                0,
+                            },
+                        },
+                    },
+                },
+            },
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    Scrolling = true,
+                    ShaderName = 'Unit', 
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 88000,
+        BuildCostMass = 1437,
+        BuildTime = 95678,
+    },
+    General = {
+        Category = 'Utility',
+        Classification = 'RULEUC_MilitaryVehicle',
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_CallTransport = true,
+            RULEUCC_Guard = true,
+            RULEUCC_Move = true,
+            RULEUCC_Patrol = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        FactionName = 'CORE',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
+        UnitName = 'Hedgehog',
+    },
+    Intel = {
+        VisionRadius = 12, 
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        LayerChangeOffsetHeight = -2.00,
+	BackUpDistance = 0,
+	MaxSpeedReverse = 0,
+        MaxAcceleration = 1,
+        MaxBrake = 1,
+        MaxSpeed = 1.1,
+        MotionType = 'RULEUMT_Land',
+        TurnRate = 82,
+    },
+    SelectionSizeX = 3,
+    SelectionSizeZ = 3,
+    SelectionThickness = 0.25,
+    SizeX = 4,
+    SizeY = 3,
+    SizeZ = 4,
+    StrategicIconName = 'icon_structure2_antimissile',
+    StrategicIconSortPriority = 0,
+    Transport = {
+        TransportClass = 3,
+    },
+    Weapon = {
+        {
+            AimsStraightOnDisable = false,
+            Audio = {
+                Fire = Sound {
+                    Bank = 'TA_Sound',
+                    Cue = 'ROCKHVY2',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+            Damage = 20,
+            DamageType = 'Normal',
+            FiringRandomness = 0,
+            DisplayName = 'SCABGUN',
+            FireTargetLayerCapsTable = {
+                Land = 'Air',
+                Water = 'Air',
+            },
+            Label = 'Turret01',
+            MaxRadius = 30,
+            FiringTolerance = 360,
+            MuzzleSalvoDelay = 0, 
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 60,
+            ProjectileId = '/mods/SCTA-master/projectiles/ARMSMIS_WEAPON/ARMSMIS_WEAPON_proj.bp',
+            ProjectileLifetimeUsesMultiplier = 1.1,
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'fire',
+                    },
+                    RackBone = 'box',
+                },
+            },
+            RackFireTogether = false,
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 5,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            WeaponCategory = 'Defense',
+            RangeCategory = 'UWRC_Countermeasure',
+            RateOfFire = 1,
+            TargetCheckInterval = 0.5,
+            TargetRestrictDisallow = 'UNTARGETABLE',
+            TargetType = 'RULEWTT_Projectile',
+            EffectiveRadius = 30,
+            TrackingRadius = 15,
+            WeaponUnpackLocksMotion = true,
+            WeaponUnpackAnimation = '/mods/SCTA-master/units/CORMABM/CORMABM_lod0_fire.sca',
+            WeaponUnpackAnimationRate = 5,
+            WeaponRepackTimeout = 1,
+            WeaponUnpacks = true,
+        },
+        { #SMALL_UNITEX
+            Damage = 100,
+            DamageFriendly = true,
+            DamageRadius = 5,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+Blueprint = '/mods/SCTA-master/meshes/TAWreckage/TAWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORMABM/CORMABM_dead_prop.bp',
+        WreckageLayers = {
+            Land = true,
+            Seabed = true,
+        },
+    },
+}

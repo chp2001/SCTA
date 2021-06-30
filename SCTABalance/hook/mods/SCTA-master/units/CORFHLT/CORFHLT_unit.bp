@@ -1,0 +1,42 @@
+UnitBlueprint {
+    Merge = true, 
+    Defense = {
+        Health = 2000,
+        MaxHealth = 2000,
+    },
+    Display = {
+        UniformScale = 0.08,
+    },
+    Economy = {
+        BuildCostEnergy = 10000,
+        BuildCostMass = 800,
+        BuildTime = 12000,
+    },
+    Footprint = {
+        SizeX = 1,
+        SizeZ = 1,
+    },
+    Intel = {
+        VisionRadius = 18,
+    },
+    Physics = {
+        SkirtSizeX = 1, 
+        SkirtSizeZ = 1,  
+    },
+    LifeBarSize = 1,
+    SelectionSizeX = 1.5,
+    SelectionSizeZ = 1.5,
+    SelectionThickness = 0.25,
+    SizeX = 1.5,
+    SizeY = 3,
+    SizeZ = 1.5,
+    Weapon = {
+        [1] = {
+            EnergyDrainPerSecond = 40,
+            EnergyRequired = 40,
+            MaxRadius = 50,
+        },
+        [2] = {
+        },
+    },
+}

@@ -1,0 +1,33 @@
+#ARM Wombat - Hovercraft Rocket Launcher
+#ARMMH
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Merge = true,
+    Defense = {
+        Health = 2400,
+        MaxHealth = 2400,
+        SurfaceThreatLevel = 40,
+    },
+    Economy = {
+        BuildCostEnergy = 7000,
+        BuildCostMass = 900,
+        BuildTime = 14000,
+    },
+    SizeY = 1.4,
+    Intel = {
+        VisionRadius = 12,
+    },
+    Weapon = {
+        [1] = {
+            Damage = 900,
+	        FiringTolerance = 7,
+            MaxRadius = 65,
+            RateOfFire = 0.303030303,
+            ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/MA_ROCKET/MA_ROCKET_proj.bp',
+        },
+        [2] = {
+        }, 
+    },
+}

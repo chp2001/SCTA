@@ -1,0 +1,189 @@
+#CORE Torpedo Launcher - Torpedo Launcher
+#CORTL
+#
+#Blueprint created by Raevn
+
+UnitBlueprint {
+    Audio = {
+        UISelection = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'SHCORSEL',
+            LodCutoff = 'UnitMove_LodCutoff',
+        },
+	Destroyed = Sound {
+            Bank = 'TA_Sound',
+            Cue = 'XPLOSML3',
+            LodCutoff = 'UnitMove_LodCutoff',
+	},
+    },
+    BuildIconSortPriority = 14,
+    Categories = {
+        'BUILTBYTIER3ENGINEER',
+        'BUILTBYTIER2COMMANDER',
+        'BUILTBYCOMMANDER',
+        'SELECTABLE',
+        'DRAGBUILD',
+        'VISIBLETORECON',
+        'RECLAIMABLE',
+        'TECH1',
+	    'STRUCTURE',
+        'DEFENSE',
+	    'ANTINAVY',
+	    'NAVAL',
+        'OVERLAYANTINAVY',
+        'SORTDEFENSE',
+        'CQUEMOV',
+	    'CORE',
+        'SNIPEMODE',
+    },
+    CollisionOffsetY = -1,
+    Defense = {
+        ArmorType = 'Structure',
+        Health = 800,
+        MaxHealth = 800,
+        AirThreatLevel = 0,
+        EconomyThreatLevel = 10,
+        SubThreatLevel = 20,
+        SurfaceThreatLevel = 0,
+    },
+    Description = 'Torpedo Launcher',
+    Display = {
+        Abilities = {
+            '<LOC ability_torpedo>Torpedoes',
+            '<LOC ability_sonar>Sonar',
+        },
+        Mesh = {
+            IconFadeInZoom = 130,
+            LODs = {
+                {
+                    LODCutoff = 230,
+                    ShaderName = 'Unit', 
+		    NormalsName = '/mods/SCTA-master/textures/common/normalsTS.dds'
+                },
+            },
+        },
+        UniformScale = 0.16,
+    },
+    Economy = {
+        BuildCostEnergy = 3058,
+        BuildCostMass = 831,
+        BuildTime = 4233,
+    },
+    Footprint = {
+        MinWaterDepth = 1.25,
+    },
+    General = {
+        Category = 'Defense',
+        Classification = 'RULEUC_Weapon',
+        CommandCaps = {
+            RULEUCC_Attack = true,
+            RULEUCC_RetaliateToggle = true,
+            RULEUCC_Stop = true,
+        },
+        SelectionPriority = 5,
+        FactionName = 'CORE',
+        Icon = 'land',
+TechLevel = 'RULEUTL_Basic',
+        UnitName = 'Torpedo Launcher',
+    },
+    Intel = {
+        SonarRadius = 28,
+        VisionRadius = 10,
+        WaterVisionRadius = 10,
+    },
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 2,
+    Physics = {
+        BuildOnLayerCaps = {
+            LAYER_Water = true,
+        },
+    },
+    SelectionSizeX = 1.25,
+    SelectionSizeZ = 1.25,
+    SelectionThickness = 0.5,
+    SizeX = 3,
+    SizeY = 2,
+    SizeZ = 3,
+    StrategicIconName = 'icon_structure1_antinavy',
+    StrategicIconSortPriority = 0,
+    Weapon = {
+        {
+            Audio = {
+                Fire = Sound {
+                    Bank = 'TA_Sound',
+                    Cue = 'TORPEDO1',
+                    LodCutoff = 'Weapon_LodCutoff',
+                },
+            },
+            BallisticArc = 'RULEUBA_None',
+            CollideFriendly = false,
+            Damage = 300,
+            DamageType = 'Normal',
+            DisplayName = 'COAX_TORPEDO',
+            FireTargetLayerCapsTable = {
+                Water = 'Seabed|Sub|Water',
+            },
+            RangeCategory = 'UWRC_AntiNavy',
+            WeaponCategory = 'AntiNavy',
+            Label = 'COAX_TORPEDO',
+            MaxRadius = 25,
+            MuzzleSalvoDelay = 0,
+            MuzzleSalvoSize = 1,
+            MuzzleVelocity = 3,
+            ProjectileId = '/mods/SCTA-master/projectiles/COAX_TORPEDO/COAX_TORPEDO_proj.bp',
+            RackBones = {
+                {
+                    MuzzleBones = {
+                        'muzzle',
+                    },
+                    RackBone = 'gun',
+                },
+            },
+            RackRecoilDistance = 0,
+            RackReloadTimeout = 0,
+            RackSalvoChargeTime = 0,
+            RackSalvoReloadTime = 0,
+            RackSalvoSize = 1,
+            RateOfFire = 0.5,
+            TargetCheckInterval = 1,
+            TargetPriorities = {
+                'ALLUNITS',
+            },
+            TargetRestrictDisallow = 'UNTARGETABLE, HOVER',
+            TurretBoneMuzzle = 'muzzle',
+            TurretBonePitch = 'gun',
+            TurretBoneYaw = 'gun',
+            TurretPitch = 0,
+            TurretPitchRange = 360,
+            TurretPitchSpeed = 80,
+            TurretYaw = 0,
+            TurretYawRange = 360,
+            TurretYawSpeed = 80,
+	    Turreted = true,
+        },
+        { #SMALL_UNITEX
+            Damage = 75,
+            DamageFriendly = true,
+            DamageRadius = 3,
+            DamageType = 'Normal',
+            DummyWeapon = true,
+            Label = 'DeathWeapon',
+        },
+
+    },
+        Wreckage = {
+	---UseCustomMesh = true,
+        Blueprint = '/props/DefaultWreckage/DefaultWreckage_prop.bp',
+        EnergyMult = 0,
+        HealthMult = 0.9,
+        MassMult = 0.9,
+        ReclaimTimeMultiplier = 1,
+        --Blueprint = '/mods/SCTA-master/units/CORTL/CORTL_dead_prop.bp',
+        WreckageLayers = {
+            Water = true,
+            Seabed = true,
+            Sub = true,
+        },
+    },
+}

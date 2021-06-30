@@ -1,0 +1,39 @@
+UnitBlueprint {
+   Merge = true, 
+   Categories = {
+    'SELECTABLE',
+    'TECH3',
+    'VISIBLETORECON',
+    'RECLAIMABLE',
+    'MOBILE',
+    'LAND',
+    'DIRECTFIRE',
+    'OVERLAYDIRECTFIRE',
+    'CORE',
+    'TANK',
+    },
+    Defense = {
+    Health = 12000,
+    MaxHealth = 12000,
+    },
+    Display = {
+    UniformScale = 0.2,
+    },
+    Economy = {
+        BuildCostEnergy = 36000,
+        BuildCostMass = 2450,
+        BuildTime = 28000,
+    },
+    Physics = {
+        MaxAcceleration = 1.6,
+        MaxSpeed = 2.2,
+    },
+    Weapon = {
+        [1] = {
+            Damage = 600,
+            MaxRadius = 32, 
+            RateOfFire = 0.5,
+        },
+        [2] = {}, 
+        },
+}

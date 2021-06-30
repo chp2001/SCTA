@@ -1,0 +1,37 @@
+UnitBlueprint {
+    Merge = true,
+    Defense = {
+        Health = 150000,
+        MaxHealth = 150000,
+    },
+    Display = {
+        UniformScale = 0.35,
+    },
+    Economy = {
+        BuildCostEnergy = 990000,
+        BuildCostMass = 50000,
+        BuildTime = 500000,
+    },
+    SelectionSizeX = 4,
+    SelectionSizeZ = 4,
+    LifeBarHeight = 0.25,
+    LifeBarOffset = 0.5,
+    LifeBarSize = 10,
+    SizeX = 6,
+    SizeY = 12,
+    SizeZ = 6,
+Weapon = {
+    [1] = {
+    MaxRadius = 45,    
+    MuzzleVelocity = 40,
+    ProjectileId = '/mods/SCTA-master/SCTABalance/projectiles/CORKROG_BALA/CORKROG_BALA_proj.bp',
+    },
+    [2] = {
+    MaxRadius = 40,    
+    },
+    [3] = {
+    MaxRadius = 35,
+    },
+    [4] = {},
+},
+}

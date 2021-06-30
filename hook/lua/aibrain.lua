@@ -2,39 +2,74 @@ WARN('['..string.gsub(debug.getinfo(1).source, ".*\\(.*.lua)", "%1")..', line:'.
 
 SCTAAIBrainClass = AIBrain
 AIBrain = Class(SCTAAIBrainClass) {
-        OnSpawnPreBuiltUnits = function(self)
-            if not self.SCTAAI then
-                return SCTAAIBrainClass.OnSpawnPreBuiltUnits(self)
+    FormManagerSCTA = function(self)
+        local aiBrain=self
+        LOG('BEGINNING SCTA FORMMANAGER')
+        if aiBrain.FormManagerSCTAI then return end
+        aiBrain.FormManagerSCTAI=CurrentThread()
+        local GetCurrentUnits = moho.aibrain_methods.GetCurrentUnits
+        if not aiBrain.SeaForm then
+            aiBrain.SeaForm=0
+            aiBrain.StructureForm=0
+            aiBrain.Other=0
+            aiBrain.LandForm=0
+            aiBrain.AirForm=0
+            aiBrain.Scout=0
+        end
+        local checks={
+            SeaForm=0,
+            StructureForm=0,
+            Other=0,
+            LandForm=0,
+            AirForm=0,
+            Scout=0,
+        }
+        while (aiBrain.Result~='defeat') do
+            if aiBrain.SeaForm < 1 and checks.SeaForm<1 then
+                aiBrain.SeaForm = GetCurrentUnits(aiBrain, (categories.NAVAL * categories.MOBILE) - categories.ENGINEER)
+                WaitTicks(1)
+                checks.SeaForm=checks.SeaForm+3
             end
-            local per = ScenarioInfo.ArmySetup[self.Name].AIPersonality
-            local resourceStructures = nil
-            local initialUnits = nil
-            local posX, posY = self:GetArmyStartPos()
-    
-            if string.find(per, 'arm') then
-                resourceStructures = {'armmex', 'armmex', 'armmex', 'armmex'}
-                initialUnits = {'armlab', 'armsolar', 'armsolar', 'armsolar', 'armsolar'}
-            else
-                resourceStructures = {'cormex', 'cormex', 'cormex', 'cormex'}
-                initialUnits = {'corvp', 'corsolar', 'corsolar', 'corsolar', 'corsolar'}
+            if aiBrain.StructureForm > 3 and checks.StructureForm<1 then
+                aiBrain.StructureForm = GetCurrentUnits(aiBrain, categories.STRUCTURE * (categories.CQUEMOV + categories.MASSFABRICATION))
+                WaitTicks(1)
+                checks.StructureForm=checks.StructureForm+2
             end
-    
-            if resourceStructures then
-                -- Place resource structures down
-                for k, v in resourceStructures do
-                    local unit = self:CreateResourceBuildingNearest(v, posX, posY)
-                end
+            if aiBrain.Other < 1 and checks.Other<1 then
+                aiBrain.Other = GetCurrentUnits(aiBrain, categories.EXPERIMENTAL * categories.MOBILE)
+                WaitTicks(1)
+                checks.Other=checks.Other+10
             end
-    
-            if initialUnits then
-                -- Place initial units down
-                for k, v in initialUnits do
-                    local unit = self:CreateUnitNearSpot(v, posX, posY)
-                end
+            if aiBrain.LandForm < 1 and checks.LandForm<1 then
+                aiBrain.LandForm = GetCurrentUnits(aiBrain, (categories.LAND * categories.MOBILE) - categories.ENGINEER - categories.SCOUT)
+                WaitTicks(1)
+                checks.LandForm=checks.LandForm+2
             end
-    
-            self.PreBuilt = true
-        end,
+            if aiBrain.AirForm < 1 and checks.AirForm<1 then
+                aiBrain.AirForm = GetCurrentUnits(aiBrain, (categories.AIR * categories.MOBILE) - categories.ENGINEER - categories.SCOUT)
+                WaitTicks(1)
+                checks.AirForm=checks.AirForm+3
+            end
+            if aiBrain.Scout < 1 and checks.Scout<1 then
+                aiBrain.Scout = GetCurrentUnits(aiBrain, (categories.armpw + categories.corgator + (categories.SCOUT + categories.AMPHIBIOUS) - categories.ENGINEER - categories.EXPERIMENTAL))
+                WaitTicks(1)
+                checks.Scout=checks.Scout+2
+            end
+            --[[LOG('formmanagerdata')
+            LOG(repr(aiBrain.SeaForm))
+            LOG(repr(aiBrain.StructureForm))
+            LOG(repr(aiBrain.Other))
+            LOG(repr(aiBrain.LandForm))
+            LOG(repr(aiBrain.AirForm))
+            LOG(repr(aiBrain.Scout))
+            LOG('checks '..repr(checks))]]
+            for k,v in checks do
+                checks[k]=checks[k]-1
+            end
+            --LOG('checks '..repr(checks))
+            WaitTicks(5)
+        end
+    end,
        
 
     AddBuilderManagers = function(self, position, radius, baseName, useCenter)

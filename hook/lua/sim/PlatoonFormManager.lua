@@ -7,6 +7,9 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
             --LOG('*self.template2', brain.SCTAAI)
             return SCTAPlatoonFormManager.Create(self, brain, lType, location, radius)
         end
+        if not brain.FormManagerSCTAI then
+            ForkThread(brain.FormManagerSCTA,brain)
+        end
         BuilderManager.Create(self,brain)
         --LOG('IEXIST2')
         if not lType or not location or not radius then
@@ -17,7 +20,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
 
         self.Location = location
         self.Radius = radius
-        self.OriginalRadius = self.Radius
+        ---self.OriginalRadius = self.Radius
         self.LocationType = lType
         --LOG('*TALocation', lType)
         if string.find(lType, 'Naval') then
@@ -51,6 +54,7 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         end
         return newBuilder
     end,
+    
 
     ManagerLoopBody = function(self,builder,bType)
         if not self.Brain.SCTAAI then
@@ -60,46 +64,47 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
         BuilderManager.ManagerLoopBody(self,builder,bType)
         ---local builder = self:GetHighestBuilder(bType, {builder})
             --local pool = self.Brain:GetPlatoonUniquelyNamed('ArmyPool')
-            local GetUnitsAroundPoint = moho.aibrain_methods.GetUnitsAroundPoint
-        if not self.Naval then
-            if TAPrior.UnitProduction >= 75 and (bType == 'StructureForm' or TAPrior.GantryProduction >= 200 and bType == 'Other') then
-               if bType == 'StructureForm' then
-                    self.StructureForm = GetUnitsAroundPoint(self.Brain, categories.STRUCTURE * categories.CQUEMOV, self.Location, self.Radius, 'Ally')
-                    if self.StructureForm > 0 then 
-                        self:SCTAManagerLoopBody(builder, bType)
-                    end
+        local aiBrain=self.Brain
+        if builder then
+            if aiBrain.Naval and bType == 'SeaForm' then 
+                
+                --LOG('*TATerrain', self.LocationType)
+                if aiBrain.SeaForm > 0 then
+                    return self:SCTAManagerLoopBody(builder, 'SeaForm')
+                end
+            end
+            if TAPrior.TechEnergyExist >= 75 and (bType == 'StructureForm' or TAPrior.GantryProduction >= 200 and bType == 'Other') then
+                if bType == 'StructureForm' then
+                
+                if aiBrain.StructureForm < 2 then 
+                    return self:SCTAManagerLoopBody(builder, bType)
+                end
                 elseif self.Main and bType == 'Other' then
-                    self.Other = GetUnitsAroundPoint(self.Brain, categories.EXPERIMENTAL, self.Location, self.Radius, 'Ally')
-                    if self.Other > 0 then
-                        self:SCTAManagerLoopBody(builder, bType)
+                    
+                    if aiBrain.Other > 0 then
+                        return self:SCTAManagerLoopBody(builder, bType)
                     end
                 end 
-                --LOG('*TATerrain3', self.Main)
+            --LOG('*TATerrain3', self.Main)
             elseif bType == 'LandForm' then 
-                    self.LandForm = GetUnitsAroundPoint(self.Brain, categories.LAND * categories.MOBILE - categories.ENGINEER - categories.SCOUT, self.Location, self.Radius, 'Ally')
-                    if self.LandForm > 0 then
-                        self:SCTAManagerLoopBody(builder, bType)
-                    end    
+                
+                if aiBrain.LandForm > 0 then
+                    return self:SCTAManagerLoopBody(builder, bType)
+                end    
             elseif bType == 'AirForm' then 
-                    self.AirForm = GetUnitsAroundPoint(self.Brain, categories.AIR * categories.MOBILE - categories.ENGINEER - categories.SCOUT, self.Location, self.Radius, 'Ally')
-                    if self.AirForm > 0 then
-                        self:SCTAManagerLoopBody(builder, bType)
-                    end
+                
+                if aiBrain.AirForm > 0 then
+                    return self:SCTAManagerLoopBody(builder, bType)
+                end
             elseif bType == 'Scout' then
-                    self.Scout = GetUnitsAroundPoint(self.Brain, (categories.armpw + categories.corgator + categories.SCOUT + categories.AMPHIBIOUS) - categories.ENGINEER, self.Location, self.Radius, 'Ally')
-                    if self.Scout > 0 then
-                        if not self.Main then
-                            self:SCTAManagerLoopBody(builder, bType)
-                        elseif self.Main and TAPrior.UnitProductionT1 >= 75 then 
-                            self:SCTAManagerLoopBody(builder, bType)
-                        end
+                
+                if aiBrain.Scout > 0 then
+                    if not self.Main then
+                        return self:SCTAManagerLoopBody(builder, bType)
+                    elseif self.Main and TAPrior.UnitProductionT1 >= 75 then 
+                        return self:SCTAManagerLoopBody(builder, bType)
                     end
-            end    
-            elseif self.Naval and bType == 'SeaForm' then 
-                self.SeaForm = GetUnitsAroundPoint(self.Brain, categories.NAVAL * categories.MOBILE, self.Location, self.Radius, 'Ally')
-                --LOG('*TATerrain', self.LocationType)
-            if self.SeaForm > 0 then
-                self:SCTAManagerLoopBody(builder, 'SeaForm')
+                end
             end
         end
     end,
@@ -127,8 +132,8 @@ PlatoonFormManager = Class(SCTAPlatoonFormManager) {
             if formIt and builder:GetBuilderStatus() then
                 local hndl = poolPlatoon:FormPlatoon(template, personality:GetPlatoonSize(), self.Location, radius)
 
-                #LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Platoon Form Manager Forming - ',repr(builder.BuilderName),': Location = ',self.LocationType)
-                #LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Platoon Form Manager - Platoon Size = ', table.getn(hndl:GetPlatoonUnits()))
+                --LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Platoon Form Manager Forming - ',repr(builder.BuilderName),': Location = ',self.LocationType)
+                --LOG('*AI DEBUG: ARMY ', repr(self.Brain:GetArmyIndex()),': Platoon Form Manager - Platoon Size = ', table.getn(hndl:GetPlatoonUnits()))
                 hndl.PlanName = template[2]
                 if builder:GetPlatoonAIFunction() then
                     hndl:StopAI()

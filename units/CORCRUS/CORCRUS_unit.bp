@@ -152,7 +152,7 @@ TechLevel = 'RULEUTL_Advanced',
             DamageType = 'Normal',
             DisplayName = 'COR_CRUS',
             FireTargetLayerCapsTable = {
-                Water = 'Land|Water|Seabed',
+                Water = 'Land|Water|Seabed|Air',
             },
 	        RangeCategory = 'UWRC_DirectFire',
             WeaponCategory = 'DirectFire',

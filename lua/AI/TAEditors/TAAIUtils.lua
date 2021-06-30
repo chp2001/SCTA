@@ -152,24 +152,24 @@ function TAHaveUnitsWithCategoryAndAllianceFalse(aiBrain, numReq, category, alli
     local numUnits = aiBrain:GetNumUnitsAroundPoint(category, Vector(0,0,0), 100000, alliance)
     if numUnits > numReq then
         return false
-    end
+    else
     return true
+    end
 end
 
 ---TAUnit Building
 
-function TAFactoryCapCheck(aiBrain, locationType, TECH)
-    local catCheck = false
-    catCheck = TECH * categories.FACTORY
-    local factoryManager = aiBrain.BuilderManagers[locationType].FactoryManager
-    if not factoryManager then
-        WARN('*AI WARNING: FactoryCapCheck - Invalid location - ' .. locationType)
-        return false
+function TAFactoryCapCheckT1(aiBrain)
+    --LOG('*SCTALABs', aiBrain.Plants)
+    if aiBrain.Plants < 10 then
+        return true
     end
-    local numUnits = factoryManager:GetNumCategoryFactories(catCheck)
-    numUnits = numUnits + aiBrain:GetEngineerManagerUnitsBeingBuilt(catCheck)
+    return false
+end
 
-    if numUnits < 12 then
+function TAFactoryCapCheckT2(aiBrain)
+    --LOG('*SCTALABs', aiBrain.Plants)
+    if aiBrain.Labs < 4 then
         return true
     end
     return false
@@ -218,43 +218,47 @@ end
 function TAHaveUnitRatioGreaterThanLand(aiBrain, Land)
     local numOne = aiBrain:GetCurrentUnits((Land) * categories.LAND * categories.MOBILE - categories.ENGINEER)
     local numTwo = aiBrain:GetCurrentUnits(categories.LAND * categories.MOBILE - categories.ENGINEER)
-    if ((numOne + 1) / (numTwo + 1)) < 0.33 then
+    if ((numOne + 1) / (numTwo + 1)) < 0.15 then
         return true
+    else
+        return false
     end
-    return false
 end
 
 function TAHaveUnitRatioGreaterThanNavalT1(aiBrain, Naval)
     local numOne = aiBrain:GetCurrentUnits(Naval)
-    local numTwo = aiBrain:GetCurrentUnits(categories.SCOUT * categories.NAVAL)
-    if ((numOne + 1) / (numTwo + 1)) < 0.2 then
+    local numTwo = aiBrain:GetCurrentUnits(categories.LIGHTBOAT)
+    if (numOne < (numTwo + 1) * 2) then
         return true
+    else
+        return false
     end
-    return false
 end
 
 function TAHaveUnitRatioGreaterThanNaval(aiBrain, Naval)
     local numOne = aiBrain:GetCurrentUnits(Naval)
     local numTwo = aiBrain:GetCurrentUnits(categories.FACTORY * categories.NAVAL * categories.TECH2)
-    if ((numOne + 1) / (numTwo + 1)) < 2 then
+    if (numOne < (numTwo + 1) * 2) then
         return true
+    else
+        return false
     end
-    return false
 end
 
 function TAHaveUnitRatioGreaterThanNavalT3(aiBrain, Naval)
     local numOne = aiBrain:GetCurrentUnits(Naval)
     local numTwo = aiBrain:GetCurrentUnits(categories.FACTORY * categories.NAVAL * categories.TECH2)
-    if ((numOne + 1) / (numTwo + 2)) < 1 then
+    if (numOne < numTwo) then
         return true
+    else
+        return false
     end
-    return false
 end
 ----TAReclaim
 
 function TAReclaimablesInArea(aiBrain, locType)
     --DUNCAN - was .9. Reduced as dont need to reclaim yet if plenty of mass
-    if aiBrain:GetEconomyStoredRatio('MASS') > .5 then
+    if aiBrain:GetEconomyStoredRatio('MASS') > 0.5 then
         return false
     end
 
@@ -264,11 +268,11 @@ function TAReclaimablesInArea(aiBrain, locType)
     --end
 
     local ents = TAAIGetReclaimablesAroundLocation(aiBrain, locType)
-    if ents and table.getn(ents) > 0 then
+    if ents and not table.empty(ents) then
         return true
-    end
-
+    else
     return false
+    end
 end
 
 function TAAIGetReclaimablesAroundLocation(aiBrain, locationType)
@@ -340,3 +344,73 @@ function TACanBuildOnMassLessThanDistanceLand(aiBrain, locationType, distance, t
     end
     return false
 end
+
+function TAKite(vec1, vec2, distance)
+    -- Courtesy of chp2001
+    -- note the distance param is {distance, distance - weapon range}
+    -- vec1 is friendly unit, vec2 is enemy unit
+    distanceFrac = distance[2] / distance[1]
+    x = vec1[1] * (1 - distanceFrac) + vec2[1] * distanceFrac
+    y = vec1[2] * (1 - distanceFrac) + vec2[2] * distanceFrac
+    z = vec1[3] * (1 - distanceFrac) + vec2[3] * distanceFrac
+    return {x,y,z}
+end
+
+--[[function MassFabManagerThreadSCTAI(aiBrain)
+    while aiBrain.Result ~= "defeat" do
+        while math.abs(aiBrain:GetEconomyIncome('ENERGY')-aiBrain:GetEconomyUsage('ENERGY'))<150 and not aiBrain:GetEconomyStoredRatio('ENERGY')<0.9 do
+            WaitSeconds(2)
+        end
+        local fabs = aiBrain:GetListOfUnits(categories.MASSFABRICATION * categories.STRUCTURE,false,false)
+        if table.getn(fabs)<1 then 
+            WaitSeconds(20) 
+            continue 
+        end
+        for k, v in fabs do
+            if v:GetScriptBit('RULEUTC_ProductionToggle') then
+                if aiBrain:GetEconomyIncome('ENERGY')-aiBrain:GetEconomyUsage('ENERGY')<0 or aiBrain:GetEconomyStoredRatio('ENERGY')<0.9 then
+                    v:SetScriptBit('RULEUTC_ProductionToggle', false)
+                    WaitTicks(1)
+                end
+            else
+                if aiBrain:GetEconomyIncome('ENERGY')-aiBrain:GetEconomyUsage('ENERGY')>150 then
+                    v:SetScriptBit('RULEUTC_ProductionToggle', true)
+                    WaitTicks(1)
+                end
+            end
+        end
+        WaitSeconds(2)
+    end
+end
+
+function MexManagerThreadSCTAI(aiBrain)
+    while aiBrain.Result ~= "defeat" do
+        local mex = aiBrain:GetListOfUnits(categories.MASSEXTRACTION * categories.STRUCTURE, false,false)
+        if table.getn(mex) < 1 then 
+            WaitSeconds(20) 
+            continue 
+        end
+        for k, v in mex do
+            if not v:GetFractionComplete == 1 then continue end
+            if not v:IsUnitState('Upgrading') then
+                if aiBrain:GetEconomyIncome('ENERGY').8 - aiBrain:GetEconomyUsage('ENERGY') < 0 or aiBrain:GetEconomyStoredRatio('ENERGY') < 0.9 then --do we want to upgrade
+                    IssueUpgrade({v}, self:GetBlueprint().General.UpgradesTo)
+                    WaitSeconds(2)
+                end
+            else
+                if not v:IsPaused() then
+                    if aiBrain:GetEconomyIncome('ENERGY') - aiBrain:GetEconomyUsage('ENERGY') > 150 then--if power stalling or mass stalling bad then pause
+                        v:SetPaused(true)
+                        WaitTicks(1)
+                    end
+                else
+                    if aiBrain:GetEconomyIncome('ENERGY') - aiBrain:GetEconomyUsage('ENERGY') > 150 then--if not power stalling or mass stalling bad then unpause
+                        v:SetPaused(false)
+                        WaitTicks(1)
+                    end
+                end
+            end
+        end
+        WaitSeconds(4)--do the loop every 4 seconds
+    end
+end]]

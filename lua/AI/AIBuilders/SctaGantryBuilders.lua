@@ -84,7 +84,7 @@ BuilderGroup {
                 AssistUntilFinished = true,
             },
         },
-        BuilderType = 'FieldTA',
+        BuilderType = 'Command',
     },
     Builder {
         BuilderName = 'SCTA CDR Assist Structure',
@@ -98,7 +98,7 @@ BuilderGroup {
             { TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', {1, categories.ENGINEER * (categories.COMMAND + categories.SUBCOMMANDER)} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
-        BuilderType = 'FieldTA',
+        BuilderType = 'Command',
         BuilderData = {
             Assist = {
                 AssistLocation = 'LocationType',
@@ -138,7 +138,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'Decoy Commander Gateway', -- Names need to be GLOBALLY unique.  Prefixing the AI name will help avoid name collisions with other AIs.	
         PlatoonTemplate = 'CommanderBuilderSCTADecoy', -- Specify what platoon template to use, see the PlatoonTemplates folder.	
-        PlatoonAddBehaviors = { 'CommanderBehaviorSCTA' },
+        PlatoonAddBehaviors = { 'CommanderBehaviorSCTADecoy' },
+        PriorityFunction = TAPrior.GantryProduction,
         Priority = 150, -- Make this super high priority.  The AI chooses the highest priority builder currently available.	
         InstanceCount = 1,
         BuilderConditions = { 
@@ -161,6 +162,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'Decoy Commander Game Ender SCTA', -- Names need to be GLOBALLY unique.  Prefixing the AI name will help avoid name collisions with other AIs.	
         PlatoonTemplate = 'CommanderBuilderSCTADecoy',
+        PriorityFunction = TAPrior.GantryProduction,
         Priority = 210,
         InstanceCount = 1,
         BuilderConditions = {

@@ -17,7 +17,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Factory Stealth',
         PlatoonTemplate = 'T2AirFighterSCTA',
-        Priority = 105,
+        Priority = 115,
+        PriorityFunction = TAPrior.TechEnergyExist,
         BuilderConditions = { -- Only make inties if the enemy air is strong.
         { TAutils, 'EcoManagementTA', { 0.75, 0.9} },
         },
@@ -26,7 +27,8 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI Factory Gunship',
         PlatoonTemplate = 'T2GunshipSCTA',
-        Priority = 105,
+        Priority = 115,
+        PriorityFunction = TAPrior.TechEnergyExist,
         BuilderConditions = {
             { TASlow, 'TAHaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
             { TAutils, 'EcoManagementTA', { 0.75, 0.9} },
@@ -48,7 +50,7 @@ BuilderGroup {
         PlatoonTemplate = 'T3AirBomberSCTA',
         Priority = 150,
         InstanceCount = 1,
-        PriorityFunction = TAPrior.ProductionT3,
+        PriorityFunction = TAPrior.ProductionT3Air,
         BuilderConditions = {
             { TASlow, 'TAHaveUnitsWithCategoryAndAllianceFalse', {0, categories.MOBILE * categories.AIR - categories.SCOUT - categories.BOMBER, 'Enemy'}},
             { TAutils, 'EcoManagementTA', { 0.75, 0.9} },
@@ -65,7 +67,7 @@ BuilderGroup {
             { TAutils, 'EcoManagementTA', { 0.75, 0.9} },
         },
         BuilderType = 'Air',
-    },     
+    },
     Builder {
         BuilderName = 'SCTAAirTransport',
         PlatoonTemplate = 'SCTATransport',
@@ -74,6 +76,17 @@ BuilderGroup {
         BuilderConditions = {
             { MIBC, 'ArmyNeedsTransports', {} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 6, categories.TRANSPORTFOCUS} },
+            { TAutils, 'EcoManagementTA', { 0.75, 0.9} },
+        },
+        BuilderType = 'Air',
+    },     
+    Builder {
+        BuilderName = 'SCTA Torpedos Bomber T2',
+        PlatoonTemplate = 'SCTATorpedosBomber',
+        PriorityFunction = TAPrior.NavalProduction,
+        Priority = 50,
+        InstanceCount = 2,
+        BuilderConditions = {
             { TAutils, 'EcoManagementTA', { 0.75, 0.9} },
         },
         BuilderType = 'Air',

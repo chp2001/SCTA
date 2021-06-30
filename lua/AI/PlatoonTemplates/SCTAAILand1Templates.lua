@@ -27,20 +27,6 @@ PlatoonTemplate {
 }
 
 
-
-PlatoonTemplate {
-    Name = 'T1LandScoutSCTA',
-    FactionSquads = {
-        Arm = {
-            { 'armflea', 1, 1, 'scout', 'none' },
-            { 'armck', 1, 1, 'support', 'None' },
-        },
-        Core = {
-            { 'corvoyr', 1, 1, 'scout', 'none' }
-        },
-    }
-}
-
 PlatoonTemplate {
     Name = 'T1LandDFBotSCTA',
         FactionSquads = {
@@ -83,15 +69,13 @@ PlatoonTemplate {
 }
 
 PlatoonTemplate {
-    Name = 'T2LandAASCTA',
+    Name = 'T1LandAASCTABot',
     FactionSquads = {
         Arm = {
-            { 'armamph', 1, 1, 'attack', 'none' },
-            { 'armfark', 1, 1, 'support', 'None' },
+            { 'armjeth', 1, 1, 'attack', 'none' },
         },
         Core = {
             { 'corcrash', 1, 1, 'attack', 'none'},
-            { 'coracv', 1, 1, 'support', 'None' },
         },
     }
 }
@@ -104,6 +88,19 @@ PlatoonTemplate {
         },
         Core = {
             { 'corroach', 1, 1, 'attack', 'none' },
+        },
+    }
+}
+
+
+PlatoonTemplate {
+    Name = 'T3LandDFBotSCTA',
+    FactionSquads = {
+        Arm = {
+            { 'armsnipe', 1, 1, 'Attack', 'none' },
+        },
+        Core = {
+            { 'cormort', 1, 1, 'Attack', 'none' },
         },
     }
 }

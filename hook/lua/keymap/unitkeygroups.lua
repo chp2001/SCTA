@@ -132,8 +132,8 @@ TAunitkeygroups = {
         "cortoast",
     },
     ["Heavy_Shield_Generator"] = {
-        "armscram",
-        "armaser",
+        "armmark",
+        "corvoyr",
     },
     ["T2_Support_Land_Factory"]= {
         "armalab",
@@ -232,11 +232,10 @@ TAunitkeygroups = {
         "armsh",
         "corfav",
         "corsh", 
-        "corvoyr",
     },
     ["Stealth_Field_Generator"]= {
         "corspec",
-        "armmark",
+        "armaser",
     },
     ["T2_Air_Transport"] = {
         "armthovr",
@@ -402,6 +401,10 @@ TAunitkeygroups = {
     ["Support_Armored_Command_Unit"] = {
         "armdecom",
         "cordecom",
+    },
+    ["T3_Strategic_Missile_Submarine"] = {
+        "corssub",
+        "armscram",
     },
 }
 

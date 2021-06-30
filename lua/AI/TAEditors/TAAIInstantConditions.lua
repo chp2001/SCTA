@@ -78,7 +78,7 @@ function SCTAEngineerTryReclaimCaptureArea(aiBrain, eng, pos)
     -- Check if enemy units are at location
     local checkUnits = aiBrain:GetUnitsAroundPoint( (categories.STRUCTURE + categories.MOBILE) - categories.AIR, pos, 10, 'Enemy')
     -- reclaim units near our building place.
-    if checkUnits and table.getn(checkUnits) > 0 then
+    if checkUnits and not table.empty(checkUnits) then
         for num, unit in checkUnits do
             if unit.Dead or unit:BeenDestroyed() then
                 continue
@@ -100,7 +100,7 @@ function SCTAEngineerTryReclaimCaptureArea(aiBrain, eng, pos)
     end
     -- reclaim rocks etc or we can't build mexes or hydros
     local Reclaimables = GetReclaimablesInRect(Rect(pos[1], pos[3], pos[1], pos[3]))
-    if Reclaimables and table.getn( Reclaimables ) > 0 then
+    if Reclaimables and not table.empty( Reclaimables ) then
         for k,v in Reclaimables do
             if v.MaxMassReclaim > 0 or v.MaxEnergyReclaim > 0 then
                 IssueReclaim({eng}, v)
@@ -131,8 +131,8 @@ function TAAIEcoConditionEfficiency(aiBrain)
     if aiBrain.EconomyMonitorThread then
         local econTime = aiBrain:GetEconomyOverTime()
 
-        econEff.EnergyEfficiencyOverTime = math.min(econTime.EnergyIncome / econTime.EnergyRequested, 4)
-        econEff.MassEfficiencyOverTime = math.min(econTime.MassIncome / econTime.MassRequested, 2)
+        econEff.EnergyEfficiencyOverTime = math.min(econTime.EnergyIncome / econTime.EnergyRequested, 30)
+        econEff.MassEfficiencyOverTime = math.min(econTime.MassIncome / econTime.MassRequested, 10)
     end
 
     return econEff
@@ -146,8 +146,8 @@ function TAEnergyEfficiency(aiBrain)
     econ.MassRequested = aiBrain:GetEconomyRequested('MASS')
     if aiBrain.EconomyMonitorThread then
         local econTime = aiBrain:GetEconomyOverTime()
-        econ.EnergyEfficiencyOverTime = math.min(econTime.EnergyIncome / econTime.EnergyRequested, 4)
-        econ.MassEfficiencyOverTime = math.min(econTime.MassIncome / econTime.MassRequested, 2)
+        econ.EnergyEfficiencyOverTime = math.min(econTime.EnergyIncome / econTime.EnergyRequested, 40)
+        econ.MassEfficiencyOverTime = math.min(econTime.MassIncome / econTime.MassRequested, 10)
     end
 
     return econ
@@ -155,14 +155,15 @@ end
 
 function EcoManagementTA(aiBrain, MassEfficiency, EnergyEfficiency)
     local econEff = TAAIEcoConditionEfficiency(aiBrain)
-    if (aiBrain:GetEconomyStored('MASS') >= 125 and aiBrain:GetEconomyStored('ENERGY') >= 350) then
-        if (econEff.MassEfficiencyOverTime >= MassEfficiency and econEff.EnergyEfficiencyOverTime >= EnergyEfficiency) then
-            return true
-        elseif (aiBrain:GetEconomyStoredRatio('Mass').MassStorageRatio >= 0.5 and aiBrain:GetEconomyStoredRatio('ENERGY').EnergyStorageRatio >= 0.5) then
+    if ((aiBrain:GetEconomyStored('MASS') >= 125) and (aiBrain:GetEconomyStored('ENERGY') >= 350)) then
+        if ((econEff.MassEfficiencyOverTime >= MassEfficiency and econEff.EnergyEfficiencyOverTime >= EnergyEfficiency) or
+        (aiBrain:GetEconomyStoredRatio('Mass').MassStorageRatio >= 0.5 and aiBrain:GetEconomyStoredRatio('ENERGY').EnergyStorageRatio >= 0.5)) then
             return true
         else
-    return false
+            return false
         end
+    else
+    return false
     end
 end
 
@@ -170,7 +171,7 @@ function LessMassStorageMaxTA(aiBrain, mStorageRatio)
     if (aiBrain:GetEconomyStoredRatio('MASS').MassStorageRatio <= mStorageRatio) then
         return true
     else
-    return false
+        return false
     end
 end
 
@@ -187,10 +188,12 @@ function GreaterTAStorageRatio(aiBrain, mStorageRatio, eStorageRatio)
     local econ = TAEnergyEfficiency(aiBrain)
     if (econ.EnergyEfficiencyOverTime >= 0.5 and econ.MassEfficiencyOverTime >= 0.3) then
         if (aiBrain:GetEconomyStoredRatio('ENERGY').EnergyStorageRatio >= eStorageRatio and aiBrain:GetEconomyStoredRatio('MASS').MassStorageRatio >= mStorageRatio) then
-        return true
-    else
-    return false
+            return true
+        else
+            return false
         end
+    else
+        return false
     end
 end
 

@@ -22,7 +22,8 @@ TASea = Class(TAunit)
 			for k, v in bp.Display.MovementEffects.TAMovement.Bones do
 				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.TAMovement.Emitter ):ScaleEmitter(bp.Display.MovementEffects.TAMovement.Scale))
 			end
-			elseif not self:IsUnitState('Moving') then
+		end
+		if not self:IsUnitState('Moving') then
 			for k,v in self.FxMovement do
 				v:Destroy()
 			end
@@ -121,12 +122,27 @@ TASeaWalking = Class(TAWalking)
 			for k, v in bp.Display.MovementEffects.TAMovement.Bones do
 				self.FxMovement:Add(CreateAttachedEmitter(self, v, self:GetArmy(), bp.Display.MovementEffects.TAMovement.Emitter ):ScaleEmitter(bp.Display.MovementEffects.TAMovement.Scale))
 			end
-			elseif not self:IsUnitState('Moving') then
+		end
+			if not self:IsUnitState('Moving') then
 			for k,v in self.FxMovement do
 				v:Destroy()
 			end
 		end
 		end
+	end,
+}
+
+TAKamiCounter = Class(TACounter) { 
+	EnableShield = function(self)
+		self:DisableUnitIntel('ToggleBit8', 'Cloak')
+		self:GetWeaponByLabel('Suicide'):FireWeapon()
+	end,
+
+	OnKilled = function(self, instigator, type, overkillRatio)
+		if self.attacked then
+			instigator = self
+		end
+		TACounter.OnKilled(self, instigator, type, overkillRatio)
 	end,
 }
 

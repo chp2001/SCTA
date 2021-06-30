@@ -8,7 +8,7 @@ local TAutils = import('/mods/SCTA-master/lua/TAutils.lua')
 TAweapon = Class(DefaultWeapon) {
     OnCreate = function(self)
         DefaultWeapon.OnCreate(self)
-        self.army = self.unit:GetArmy()
+        self.TAArmy = self.unit:GetArmy()
     end,
     
         OnGotTargetCheck = function(self)
@@ -20,8 +20,8 @@ TAweapon = Class(DefaultWeapon) {
             local target = self:GetCurrentTarget()
         if (target) then
             if (IsUnit(target)) then
-                if target:GetBlip(self.army) ~= nil and target:GetBlip(self.army):IsSeenNow(self.army) then 
-                canSee = target:GetBlip(self.army):IsSeenNow(self.army)
+                if target:GetBlip(self.TAArmy) ~= nil and target:GetBlip(self.TAArmy):IsSeenNow(self.TAArmy) then 
+                canSee = target:GetBlip(self.TAArmy):IsSeenNow(self.TAArmy)
                 else 
                 canSee = false
                 end
@@ -49,9 +49,9 @@ TAweapon = Class(DefaultWeapon) {
 
     IdleState = State(DefaultWeapon.IdleState) {
         OnGotTarget = function(self) 
-            if (TAutils.ArmyHasTargetingFacility(self.army) or 
-            self.unit:GetAIBrain().SCTAAI or
-            self:OnGotTargetCheck() == true)  then
+            if (self.unit:GetAIBrain().SCTAAI or
+            TAutils.ArmyHasTargetingFacility(self.TAArmy) or 
+            self:OnGotTargetCheck() == true) then
                 DefaultWeapon.IdleState.OnGotTarget(self)
             end
         end,
@@ -60,7 +60,7 @@ TAweapon = Class(DefaultWeapon) {
     WeaponUnpackingState = State(DefaultWeapon.WeaponUnpackingState) {
         Main = function(self)          
             ---LOG('Resulting Table'..repr(TAutils.targetingFacilityData))
-            if (TAutils.ArmyHasTargetingFacility(self.army) or 
+            if (TAutils.ArmyHasTargetingFacility(self.TAArmy) or 
             self.unit:GetAIBrain().SCTAAI or
             self:OnGotTargetCheck() == true) then
                 DefaultWeapon.WeaponUnpackingState.Main(self)
@@ -68,8 +68,8 @@ TAweapon = Class(DefaultWeapon) {
         end,
 
         OnGotTarget = function(self)
-            if (TAutils.ArmyHasTargetingFacility(self.army) or 
-            self.unit:GetAIBrain().SCTAAI or
+            if (self.unit:GetAIBrain().SCTAAI or
+            TAutils.ArmyHasTargetingFacility(self.TAArmy) or 
             self:OnGotTargetCheck() == true) then
                 DefaultWeapon.WeaponUnpackingState.OnGotTarget(self)
             end
@@ -78,8 +78,8 @@ TAweapon = Class(DefaultWeapon) {
 
     RackSalvoFireReadyState = State(DefaultWeapon.RackSalvoFireReadyState) {
         OnGotTarget = function(self)      
-            if (TAutils.ArmyHasTargetingFacility(self.army) or 
-            self.unit:GetAIBrain().SCTAAI or
+            if (self.unit:GetAIBrain().SCTAAI or
+            TAutils.ArmyHasTargetingFacility(self.TAArmy) or 
             self:OnGotTargetCheck() == true) then
                 DefaultWeapon.RackSalvoFireReadyState.OnGotTarget(self)
             end
@@ -89,8 +89,8 @@ TAweapon = Class(DefaultWeapon) {
 
     WeaponPackingState = State(DefaultWeapon.WeaponPackingState) {        
         OnGotTarget = function(self)
-            if (TAutils.ArmyHasTargetingFacility(self.army) or 
-            self.unit:GetAIBrain().SCTAAI or
+            if (self.unit:GetAIBrain().SCTAAI or
+            TAutils.ArmyHasTargetingFacility(self.TAArmy) or 
             self:OnGotTargetCheck() == true) then
                 DefaultWeapon.WeaponPackingState.OnGotTarget(self)
             end
@@ -202,10 +202,11 @@ TAKami = Class(KamikazeWeapon){
 
 
     OnFire = function(self)
+        self.unit:SetDeathWeaponEnabled(false)
         for k, v in self.FxDeath do
-            CreateEmitterAtBone(self.unit,-2,self.unit:GetArmy(),v):ScaleEmitter(3)
+            CreateEmitterAtBone(self.unit,-2,self.unit:GetArmy(),v):ScaleEmitter(0.5)
         end 
-		local myBlueprint = self:GetBlueprint()
+        self.unit.attacked = true
 		KamikazeWeapon.OnFire(self)
     end,
 }
@@ -227,7 +228,7 @@ TABomb = Class(BareBonesWeapon) {
     
     Fire = function(self)
         for k, v in self.FxDeath do
-            CreateEmitterAtBone(self.unit,-2, self.unit:GetArmy(), v):ScaleEmitter(3)
+            CreateEmitterAtBone(self.unit,-2, self.unit:GetArmy(), v):ScaleEmitter(1)
         end 
 		local myBlueprint = self:GetBlueprint()
         DamageArea(self.unit, self.unit:GetPosition(), myBlueprint.DamageRadius, myBlueprint.Damage, myBlueprint.DamageType or 'Normal', myBlueprint.DamageFriendly or false)
@@ -257,12 +258,12 @@ TAEndGameWeapon = Class(TIFArtilleryWeapon) {
     end,
 
     PlayRackRecoil = function(self, rackList)   
-    TIFArtilleryWeapon.PlayRackRecoil(self, rackList)
-    self.CurrentRound = self.CurrentRound + 1
+        TIFArtilleryWeapon.PlayRackRecoil(self, rackList)
+        self.CurrentRound = self.CurrentRound + 1
     --LOG('*RoundCount', self.CurrentRound)
-    self.Rotator:SetSpeed(self.Speed)
-    self.Goal = (self.CurrentRound + 1)
-    self.Rotator:SetGoal(self.Goal * self.Rotation)
+        self.Rotator:SetSpeed(self.Speed)
+        self.Goal = (self.CurrentRound + 1)
+        self.Rotator:SetGoal(self.Goal * self.Rotation)
     if self.CurrentRound == self.MaxRound then
         self.CurrentRound = 0
     end 
@@ -283,13 +284,6 @@ end,
     end,
 
     },
-}
-
-
-TACommanderDeathWeapon = Class(BareBonesWeapon) {
-    OnCreate = function(self)
-        BareBonesWeapon.OnCreate(self)
-    end,
 }
 
 TADGun = Class(DefaultWeapon) {

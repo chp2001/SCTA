@@ -77,6 +77,7 @@ UnitBlueprint {
         'AIR',        
         'OVERLAYANTIAIR',
         'CORE', 
+        'STEALTH',
     },
     Defense = {
         ArmorType = 'ASF',
@@ -194,8 +195,8 @@ UnitBlueprint {
             DamageType = 'TASpec',
             DisplayName = 'CORVTOL_ADVMISSILE',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Air',
-                Air = 'Land|Water|Air',
+                Land = 'Land|Water|Air|Seabed',
+                Air = 'Land|Water|Air|Seabed',
             },
 	        RangeCategory = 'UWRC_AntiAir',
             WeaponCategory = 'AntiAir',
@@ -253,8 +254,8 @@ UnitBlueprint {
             DamageType = 'TASpec',
             DisplayName = 'CORVTOL_ADVMISSILE',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Air',
-                Air = 'Land|Water|Air',
+                Land = 'Land|Water|Air|Seabed',
+                Air = 'Land|Water|Air|Seabed',
             },
             RangeCategory = 'UWRC_AntiAir',
             WeaponCategory = 'AntiAir',

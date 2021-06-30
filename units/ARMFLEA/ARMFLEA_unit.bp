@@ -56,6 +56,7 @@ UnitBlueprint {
     Display = {
         Abilities = {
             '<LOC ability_radar>Radar',
+            '<LOC ability_amphibious>Amphibious',
         },
         AnimationWalk = '/mods/SCTA-master/units/ARMFLEA/ARMFLEA_lod0_Awalk.sca',
         AnimationWalkRate = 1,
@@ -140,9 +141,10 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'ARMFLEA_WEAPON',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Air',
-                Seabed = 'Land|Water|Air',
+                Land = 'Land|Water|Seabed|Air',
+                Seabed = 'Land|Water|Seabed|Air',
             },
+            AboveWaterTargetsOnly = true,
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
             FiringTolerance = 0,
@@ -171,7 +173,6 @@ UnitBlueprint {
                 'ALLUNITS',
             },
             TargetRestrictDisallow = 'UNTARGETABLE',
-            AboveWaterTargetsOnly = true,
             TurretBoneMuzzle = 'flare',
             TurretBonePitch = 'barrel',
             TurretBoneYaw = 'turret',

@@ -6,16 +6,17 @@
 UnitBlueprint {
     Merge = true, 
     Display = {
-        UniformScale = 0.1,
+        UniformScale = 0.09,
     },
     Economy = {
         BuildCostMass = 110,
         BuildCostEnergy = 750,
-        BuildTime = 2300,
+        BuildTime = 2000,
     },
     Physics = {
         MaxSpeed = 2.4,
     },
+    LifeBarSize = 1.6,
     SelectionSizeX = 1,
     SelectionSizeZ = 1,
     SizeX = 1,

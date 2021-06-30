@@ -27,6 +27,7 @@ UnitBlueprint {
         'OVERLAYDIRECTFIRE',
         'ARM',
         'CORE',
+        'DRAGBUILD',
         'BOMB',
         'STRUCTURE',
     },
@@ -69,12 +70,22 @@ UnitBlueprint {
         CommandCaps = {
         	RULEUCC_RetaliateToggle = true,
         },
-	ToggleCaps = {
+        InstantDeathOnSelfDestruct = true,
+        OrderOverrides = {
+            RULEUTC_ShieldToggle = {
+                --  more options in textures.scd\textures\ui\common\game\orders
+                bitmapId = 'toggle-weapon',
+                helpText = 'Detonate',
+            },
+        },
+        ToggleCaps = {
+        RULEUTC_ShieldToggle = true,
 		RULEUTC_CloakToggle = true,
-	},
+	    },
         FactionName = 'ARM',
         Icon = 'land',
-TechLevel = 'RULEUTL_Advanced',
+        TechLevel = 'RULEUTL_Advanced',
+        SelectionPriority = 5,
         UnitName = 'Precision Mine',
     },
     Intel = {
@@ -110,7 +121,7 @@ TechLevel = 'RULEUTL_Advanced',
             Damage = 1000, #Doubles up with death, so death damage subtracted
 	    DamageRadius = 3,
             DamageType = 'Normal',
-            DisplayName = 'ARMMINE5',
+            DisplayName = 'MINE',
 	    ---EdgeEffectiveness = 0.1,
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water',
@@ -118,7 +129,7 @@ TechLevel = 'RULEUTL_Advanced',
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
             FiringTolerance = 360,
-            Label = 'ARMMINE5',
+            Label = 'MINE',
             MaxRadius = 2,
             MuzzleSalvoDelay = 0,
             MuzzleSalvoSize = 1,

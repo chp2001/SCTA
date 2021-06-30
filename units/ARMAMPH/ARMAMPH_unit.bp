@@ -155,8 +155,8 @@ UnitBlueprint {
             DamageType = 'TASpec',
             DisplayName = 'armamph_weapon1',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Air',
-                Water = 'Land|Water|Air',
+                Land = 'Land|Water|Air|Seabed',
+                Water = 'Land|Water|Air|Seabed',
             },
             RangeCategory = 'UWRC_AntiAir',
             WeaponCategory = 'AntiAir',
@@ -218,8 +218,8 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'armamph_weapon2',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Air',
-                Water = 'Land|Water|Air',
+                Land = 'Land|Water|Air|Seabed',
+                Water = 'Land|Water|Air|Seabed',
             },
             RangeCategory = 'UWRC_DirectFire',
             WeaponCategory = 'DirectFire',

@@ -180,6 +180,7 @@ UnitBlueprint {
                     Air = 'Water|Seabed|Sub',
                     Land = 'Water|Seabed|Sub',
                 },
+                FiringRandomness = 0,
                 FiringTolerance = 6,
                 HeadingArcCenter = 0,
                 HeadingArcRange = 30,

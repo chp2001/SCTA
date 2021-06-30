@@ -16,7 +16,7 @@ BuilderGroup {
         InstanceCount = 4,
         BuilderType = 'SeaForm',
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.NAVAL * categories.SCOUT } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.LIGHTBOAT } },
          },
          BuilderData = {
             LocationType = 'LocationType',
@@ -37,11 +37,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Hunt Ships',
         PlatoonTemplate = 'SCTAPatrolBoatHunt',
+        PriorityFunction = TAPrior.NavalProduction,
         Priority = 125,
         InstanceCount = 25,
         BuilderType = 'SeaForm',
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.NAVAL * categories.SCOUT } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.LIGHTBOAT } },
          },
          BuilderData = {
             LocationType = 'LocationType',
@@ -62,11 +63,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA Sub Hunt Ships',
         PlatoonTemplate = 'SCTASubHunter',
+        PriorityFunction = TAPrior.NavalProduction,
         Priority = 120,
         InstanceCount = 5,
         BuilderType = 'SeaForm',
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 0, categories.NAVAL * categories.SUBMERSIBLE - categories.ENGINEER} },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 1, categories.NAVAL * categories.SUBMERSIBLE * categories.MOBILE - categories.ENGINEER} },
          },
          BuilderData = {
             LocationType = 'LocationType',
@@ -87,6 +89,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA T1 Naval Assault',
         PlatoonTemplate = 'SCTANavalAssault',
+        PriorityFunction = TAPrior.NavalProduction,
         Priority = 110,
         InstanceCount = 20,
         BuilderType = 'SeaForm',
@@ -106,13 +109,25 @@ BuilderGroup {
             },
         },
         BuilderConditions = {
-            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 3, categories.NAVAL * categories.MOBILE - categories.ENGINEER } },
+            { UCBC, 'PoolGreaterAtLocation', { 'LocationType', 2, categories.NAVAL * categories.MOBILE * categories.MOBILE - categories.ENGINEER } },
         },
     },
     Builder {
+        BuilderName = 'SCTAAI Bomber Attack Torpedo',
+        PlatoonTemplate = 'SCTATorpedosBombers',
+        PriorityFunction = TAPrior.NavalProduction,
+        Priority = 200,
+        InstanceCount = 50,
+        BuilderType = 'SeaForm',
+        BuilderData = {
+        },        
+        BuilderConditions = { 
+            --{ TASlow, 'TAHaveGreaterThanArmyPoolWithCategory', { 1, SKY * categories.BOMBER} },
+            },
+        },
+    Builder {
         BuilderName = 'SCTAAI Air Naval Intercept',
-        PlatoonTemplate = 'IntieAISCTA',
-        PlatoonAIPlan = 'InterceptorAISCTAEnd',
+        PlatoonTemplate = 'IntieAISCTAEnd',
         PriorityFunction = TAPrior.GantryConstruction,
         Priority = 110,
         InstanceCount = 10,
@@ -127,7 +142,7 @@ BuilderGroup {
         },
     },
     Builder {
-        BuilderName = 'SCTA Hover Strike',
+        BuilderName = 'SCTA Hover Naval Strike',
         PlatoonTemplate = 'StrikeForceSCTAHover', -- The platoon template tells the AI what units to include, and how to use them.
         PriorityFunction = TAPrior.ProductionT3,
         Priority = 120,

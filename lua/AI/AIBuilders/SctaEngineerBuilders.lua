@@ -25,25 +25,12 @@ BuilderGroup {
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.SCOUT * categories.LAND * categories.MOBILE} },
             { TAutils, 'EcoManagementTA', { 0.9, 0.5, } },
         },
-        BuilderType = 'KBot',
-    },
-    Builder {
-        BuilderName = 'SCTAAi Factory2 Scout',
-        PlatoonTemplate = 'T1LandScoutSCTA2',
-        Priority = 100,
-        InstanceCount = 1,
-        PriorityFunction = TAPrior.UnitProductionT1,
-        DelayEqualBuildPlattons = {'Scout', 1},
-        BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Scout' }},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.SCOUT * categories.LAND * categories.MOBILE} },
-            { TAutils, 'EcoManagementTA', { 0.9, 0.5, } },
-        },
-        BuilderType = 'Vehicle',
+        BuilderType = 'Land',
     },
     Builder {
         BuilderName = 'SCTAAI T1 Scouts',
         PlatoonTemplate = 'T1AirScoutSCTA',
+        PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 110,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Scout', 1},
@@ -57,10 +44,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2 Scouts',
         PlatoonTemplate = 'T2AirScoutSCTA',
-        Priority = 200,
+        Priority = 110,
         InstanceCount = 1,
         PriorityFunction = TAPrior.ProductionT3,
+        DelayEqualBuildPlattons = {'Scout', 1},
         BuilderConditions = {
+            { UCBC, 'CheckBuildPlattonDelay', { 'Scout' }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.MOBILE * categories.AIR * categories.SCOUT } },
             { TAutils, 'EcoManagementTA', { 0.75, 1.05, } },
         },
@@ -103,12 +92,13 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi FactoryT2 Engineer',
         PlatoonTemplate = 'T2BuildEngineerSCTA',
-        Priority = 110, -- Top factory priority
-        DelayEqualBuildPlattons = {'T2Engineer', 1},
-        InstanceCount = 1,
+        Priority = 180, -- Top factory priority
+        PriorityFunction = TAPrior.UnitProduction,
+        --DelayEqualBuildPlattons = {'T2Engineer', 1},
+        InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'T2Engineer' }},
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.TECH2 * categories.LAND - categories.FIELDENGINEER } }, -- Build engies until we have 4 of them.
+            --{ UCBC, 'CheckBuildPlattonDelay', { 'T2Engineer' }},
+            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, (categories.ENGINEER * categories.TECH2 * categories.LAND) - categories.FIELDENGINEER } }, -- Build engies until we have 4 of them.
         },
         BuilderType =  'Land',
     },
@@ -128,11 +118,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAi AirFactoryT2 Engineer',
         PlatoonTemplate = 'T2BuildEngineerAirSCTA',
-        Priority = 110,
-        DelayEqualBuildPlattons = {'T2AirEngineer', 1},
-        InstanceCount = 1,
+        Priority = 180,
+        PriorityFunction = TAPrior.UnitProduction,
+        --DelayEqualBuildPlattons = {'T2AirEngineer', 1},
+        InstanceCount = 2,
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'T2AirEngineer' }},
+            --{ UCBC, 'CheckBuildPlattonDelay', { 'T2AirEngineer' }},
             { UCBC, 'HaveLessThanUnitsWithCategory', { 2, categories.ENGINEER * categories.AIR * categories.TECH2} }, -- Build engies until we have 4 of them.
         },
         BuilderType = 'Air',
@@ -169,20 +160,18 @@ BuilderGroup {
         BuilderName = 'SCTAAi T2 Experimental',
         PlatoonTemplate = 'SCTAExperimental',
         Priority = 175,
+        PriorityFunction = TAPrior.GantryUnitBuilding,
         InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.EXPERIMENTAL * categories.MOBILE - categories.SUBCOMMANDER} },
-        },
+        BuilderConditions = {},
         BuilderType = 'Gate',
     },
     Builder {
         BuilderName = 'SCTA Decoy Commander',
         PlatoonTemplate = 'SCTADecoyCommander',
+        PriorityFunction = TAPrior.GantryUnitBuilding,
         Priority = 150,
         InstanceCount = 1,
-        BuilderConditions = {
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 1, categories.SUBCOMMANDER} },
-        },
+        BuilderConditions = {},
         BuilderType = 'Gate',
     },
 }

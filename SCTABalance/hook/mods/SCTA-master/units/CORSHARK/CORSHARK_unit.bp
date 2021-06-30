@@ -5,10 +5,18 @@ UnitBlueprint {
         MaxHealth = 1500,
     },
     Economy = {
-        BuildCostEnergy = 20000,
+        BuildCostEnergy = 30000,
+        BuildCostMass = 3000,
         },
     Intel = {
         SonarRadius = 55,
         VisionRadius = 15,
+    },
+    Weapon = {
+        [1] = {
+            RateOfFire = 0.5,
+        },
+        [2] = {
+        },
     },
 }

@@ -155,7 +155,7 @@ TechLevel = 'RULEUTL_Basic',
             DamageType = 'Normal',
             DisplayName = 'ARM_ROY',
             FireTargetLayerCapsTable = {
-                Water = 'Land|Water|Seabed',
+                Water = 'Land|Water|Air|Seabed',
             },
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',

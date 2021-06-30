@@ -56,7 +56,7 @@ UnitBlueprint {
         AnimationWalkRate = 2,
         Abilities = {
             '<LOC ability_suicideweapon>Suicide Weapon',
-            'All-Terrain',
+            '<LOC ability_amphibious>Amphibious',
         },
         Mesh = {
             IconFadeInZoom = 130,
@@ -90,10 +90,18 @@ UnitBlueprint {
             RULEUCC_Patrol = true,
             RULEUCC_RetaliateToggle = true,
             RULEUCC_Stop = true,
+            RULEUCC_Dive = true,
         },
         FactionName = 'CORE',
         Icon = 'land',
-TechLevel = 'RULEUTL_Advanced',
+        OrderOverrides = {
+            RULEUCC_Dive = {
+                --  more options in textures.scd\textures\ui\common\game\orders
+                bitmapId = 'toggle-weapon',
+                helpText = 'Detonate',
+            },
+        },
+        TechLevel = 'RULEUTL_Advanced',
         UnitName = 'Roach',
     },
     Intel = {
@@ -148,7 +156,9 @@ TechLevel = 'RULEUTL_Advanced',
             },
             FireTargetLayerCapsTable = {
                 Land = 'Land|Water|Seabed',
+                Seabed = 'Land|Water|Seabed',
             },
+            AboveWaterTargetsOnly = true,
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',
             FiringTolerance = 999999,

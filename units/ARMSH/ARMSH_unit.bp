@@ -146,8 +146,8 @@ UnitBlueprint {
             DamageType = 'Normal',
             DisplayName = 'ARMSH_WEAPON',
             FireTargetLayerCapsTable = {
-                Land = 'Land|Water|Seabed',
-                Water = 'Land|Water|Seabed',
+                Land = 'Land|Water|Seabed|Air',
+                Water = 'Land|Water|Seabed|Air',
             },
 	    RangeCategory = 'UWRC_DirectFire',
      WeaponCategory = 'DirectFire',

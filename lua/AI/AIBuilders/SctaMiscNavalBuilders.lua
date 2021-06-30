@@ -19,6 +19,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTA T1 Naval Factory Builder',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        PriorityFunction = TAPrior.NavalProduction,
        ---PriorityFunction = TAPrior.UnitProductionT1,
         Priority = 100,
         InstanceCount = 1,
@@ -27,8 +28,7 @@ BuilderGroup {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
             { UCBC, 'FactoryCapCheck', { 'LocationType', 'Sea' } },
             { TASlow,   'TAAttackNaval', {true}},
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 2, categories.FACTORY} },
-            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, (categories.NAVAL * categories.FACTORY) + categories.xsl0103 + categories.ual0201, 'Enemy'}},	
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, categories.FACTORY * categories.NAVAL} },
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
         BuilderType = 'SeaTA',
@@ -51,7 +51,7 @@ BuilderGroup {
         DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
             { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
-            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, LAB} },
+            { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, LAB * categories.NAVAL} },
             { UCBC, 'HaveLessThanUnitsWithCategory', { 1, LAB * categories.NAVAL } }, -- Stop after 10 facs have been built.
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
@@ -69,16 +69,15 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Naval Factory',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
-        PriorityFunction = TAPrior.UnitProduction,
+        PriorityFunction = TAPrior.NavalProductionT2,
         Priority = 141,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
-            { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},
-            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},		
+            { UCBC, 'CheckBuildPlattonDelay', { 'Factory' }},		
             { TASlow,   'TAAttackNaval', {true}},
             { UCBC, 'HaveLessThanUnitsInCategoryBeingBuilt', { 1, LAB * categories.NAVAL } },
-            { UCBC, 'HaveLessThanUnitsWithCategory', { 2, LAB * categories.NAVAL } },
+            { UCBC, 'PoolLessAtLocation', { 'LocationType', 1, LAB * categories.NAVAL}},
             { TAutils, 'EcoManagementTA', { 0.75, 0.75} },
         },
         BuilderType = 'SeaTA',
@@ -96,7 +95,7 @@ BuilderGroup {
         BuilderName = 'SCTAAI T3AirFactory Naval',
         PlatoonTemplate = 'EngineerBuilderSCTANaval2',
         Priority = 135,
-        PriorityFunction = TAPrior.ProductionT3,
+        PriorityFunction = TAPrior.ProductionT3Air,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'Factory', 1},
         BuilderConditions = {
@@ -168,11 +167,11 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTATorpedo',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        PriorityFunction = TAPrior.NavalProduction,
         Priority = 50,
         InstanceCount = 1,
         BuilderConditions = {
-            { TASlow,   'TAAttackNaval', {true}},
-            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},		
+            { TASlow,   'TAAttackNaval', {true}},		
             { UCBC, 'HaveLessThanUnitsWithCategory', { 4, categories.ANTINAVY - categories.MOBILE} },
             { TAutils, 'GreaterTAStorageRatio', { 0.33, 0.5}},
         },
@@ -220,12 +219,12 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAT2Torpedo',
         PlatoonTemplate = 'EngineerBuilderSCTANaval',
+        PriorityFunction = TAPrior.NavalProductionT2,
         Priority = 75,
         InstanceCount = 2,
         BuilderConditions = {
             --{ TASlow, 'TAEnemyUnitsGreaterAtLocationRadius', { BaseEnemyArea, 'LocationType', 0, categories.FACTORY * categories.NAVAL}},	
-            { TASlow,   'TAAttackNaval', {true}},
-            { UCBC, 'HaveUnitsWithCategoryAndAlliance', { true, 0, categories.NAVAL * categories.FACTORY, 'Enemy'}},	
+            { TASlow,   'TAAttackNaval', {true}},	
             { UCBC, 'HaveLessThanUnitsWithCategory', { 8, categories.ANTISUB * categories.TECH2 - categories.MOBILE} }, 
             { TAutils, 'GreaterTAStorageRatio', { 0.33, 0.75}}, 
         },
@@ -252,7 +251,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2 Naval PGen',
         PlatoonTemplate = 'EngineerBuilderSCTANaval2',
-        PriorityFunction = TAPrior.StructureProductionT2,
+        PriorityFunction = TAPrior.StructureProductionT2Energy,
         Priority = 150,
         InstanceCount = 1,
         BuilderConditions = {
@@ -379,6 +378,7 @@ BuilderGroup {
     Builder {
         BuilderName = 'SCTAAI T2Engineer 300 Mex Naval',
         PlatoonTemplate = 'EngineerBuilderSCTANaval2',
+        PriorityFunction = TAPrior.UnitProduction,
         Priority = 125,
         InstanceCount = 1,
         DelayEqualBuildPlattons = {'MexLand2', 1},

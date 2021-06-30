@@ -55,6 +55,9 @@ UnitBlueprint {
     Display = {
         AnimationWalk = '/mods/SCTA-master/units/CORTHUD/CORTHUD_lod0_Awalk.sca',
         AnimationWalkRate = 2,
+        Abilities = {
+            '<LOC ability_amphibious>Amphibious',
+        },
         Mesh = {
             IconFadeInZoom = 130,
             LODs = {

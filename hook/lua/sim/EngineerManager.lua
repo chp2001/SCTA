@@ -11,10 +11,6 @@ EngineerManager = Class(SCTAEngineerManager) {
             error('*PLATOOM FORM MANAGER ERROR: Invalid parameters; requires locationType, location, and radius')
             return false
         end
-        local builderTypes = { 'AirTA', 'LandTA', 'SeaTA', 'T3TA', 'FieldTA', 'Command', }
-        for k,v in builderTypes do
-            self:AddBuilderType(v)
-        end
         ---LOG('IEXIST')
         self.Location = location
         self.Radius = radius
@@ -26,6 +22,10 @@ EngineerManager = Class(SCTAEngineerManager) {
             MobileIntel = { Category = categories.MOBILE - categories.ENGINEER, Units = {}, UnitsList = {}, Count = 0, },
         }
         self.EngineerList = {}
+        local builderTypes = { 'AirTA', 'LandTA', 'SeaTA', 'T3TA', 'FieldTA', 'Command', }
+        for k,v in builderTypes do
+            self:AddBuilderType(v)
+        end
         ---LOG(self.ConsumptionUnits)
 
     end,
@@ -53,7 +53,12 @@ EngineerManager = Class(SCTAEngineerManager) {
         end
     end,
 
-
+    TADelayAssign = function(manager, unit, delaytime)
+        if unit.ForkedEngineerTask then
+            KillThread(unit.ForkedEngineerTask)
+        end
+        unit.ForkedEngineerTask = unit:ForkThread(manager.Wait, manager, delaytime or (math.random(10,30)))
+    end,
 
     AddBuilder = function(self, builderData, locationType)
         if not self.Brain.SCTAAI then
@@ -102,29 +107,31 @@ EngineerManager = Class(SCTAEngineerManager) {
         if not self.Brain.SCTAAI then
             return SCTAEngineerManager.AssignEngineerTask(self, unit)
         end
+        unit.DesiresAssist = false
+        unit.NumAssistees = nil
+        unit.MinNumAssistees = nil
+        if unit.UnitBeingAssist or unit.UnitBeingBuilt or unit.unitBuilding then
+            self:TADelayAssign(unit, 50)
+            return
+        end
         if self.AssigningTask and unit:IsIdleState() then
             self.AssigningTask = nil
         elseif self.AssigningTask and not unit:IsIdleState() then
             return
         else
-                if unit:GetBlueprint().Economy.Land then
-                    self:TAAssignEngineerTask(unit, 'LandTA')
-                    return
-                elseif unit:GetBlueprint().Economy.Air then
-                    self:TAAssignEngineerTask(unit, 'AirTA')
-                    return
-                elseif unit:GetBlueprint().Economy.Naval then
-                    self:TAAssignEngineerTask(unit, 'SeaTA')
-                    return
-                elseif unit:GetBlueprint().Economy.TECH3 then
-                    self:TAAssignEngineerTask(unit, 'T3TA')
-                    return
-                elseif unit:GetBlueprint().Economy.Command then
-                    self:TAAssignEngineerTask(unit, 'Command')
-                    return
-                else 
-                    self:TAAssignEngineerTask(unit, 'FieldTA')
-                    return
+            local bp = unit:GetBlueprint().Economy
+                if bp.Land then
+                    return self:TAAssignEngineerTask(unit, 'LandTA')
+                elseif bp.Air then
+                    return self:TAAssignEngineerTask(unit, 'AirTA')
+                elseif bp.Naval then
+                    return self:TAAssignEngineerTask(unit, 'SeaTA')
+                elseif bp.TECH3 then
+                    return self:TAAssignEngineerTask(unit, 'T3TA')
+                elseif bp.Command then
+                    return self:TAAssignEngineerTask(unit, 'Command')
+                else
+                    return self:TAAssignEngineerTask(unit, 'FieldTA')                
                 end
             end
         end,
@@ -132,13 +139,6 @@ EngineerManager = Class(SCTAEngineerManager) {
 
     TAAssignEngineerTask = function(self, unit, bType)
         ---LOG('*Brain', self.Brain.SCTAAI)   
-        if unit.UnitBeingBuilt or unit.unitBuilding then
-            return
-        end
-
-        unit.DesiresAssist = false
-        unit.NumAssistees = nil
-        unit.MinNumAssistees = nil
         unit.bType = bType
         local builder = self:GetHighestBuilder(unit.bType, {unit})
         if builder then
@@ -205,6 +205,6 @@ EngineerManager = Class(SCTAEngineerManager) {
             return
         end
         self.AssigningTask = nil
-        self:DelayAssign(unit, 10)
+        self:TADelayAssign(unit)
     end,
 }

@@ -55,7 +55,7 @@ function GetTransports(platoon, units)
 
     local numTransports = 0
     local transSlotTable = {}
-    if table.getn(transports) > 0 then
+    if not table.empty(transports) then
         local sortedList = {}
         -- Sort distances
         for k = 1, table.getn(transports) do
@@ -124,19 +124,17 @@ function SCTAEngineerMoveWithSafePath(aiBrain, unit, destination)
     end
 
     local result, bestPos = false
-    result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Land')
+    result, bestPos = AIAttackUtils.CanGraphAreaToSCTA(unit, destination, 'Land')
     if not result then
-        result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Amphibious')
-        if not result and not SUtils.CheckForMapMarkers(aiBrain) then
-            result, bestPos = unit:CanPathTo(destination)
+            result, bestPos = AIAttackUtils.CanGraphAreaToSCTA(unit, destination, 'Amphibious')
+            if not result and not SUtils.CheckForMapMarkers(aiBrain) then
+                result, bestPos = unit:CanPathTo(destination)
+            end
         end
-    end
-
-    local pos = unit:GetPosition()
     -- If we're here, we haven't used transports and we can path to the destination
     if result then
         if EntityCategoryContains(categories.AMPHIBIOUS, unit) then
-        local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Air', unit:GetPosition(), destination, 10)
+        local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Air', unit:GetPosition(), destination, 10)
         if path then
             local pathSize = table.getn(path)
             -- Move to way points (but not to destination... leave that for the final command)
@@ -151,7 +149,7 @@ function SCTAEngineerMoveWithSafePath(aiBrain, unit, destination)
         return true
         end
     else
-        local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Amphibious', unit:GetPosition(), destination, 10)
+        local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Amphibious', unit:GetPosition(), destination, 10)
         if path then
             local pathSize = table.getn(path)
             -- Move to way points (but not to destination... leave that for the final command)
@@ -175,10 +173,10 @@ function SCTAEngineerMoveWithSafePathAir(aiBrain, unit, destination)
     --local PlanName = unit.PlatoonHandle.PlanName
     --LOG('*PlatoonName3', PlanName)
     local result, bestPos = false
-    result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Air')
+    result, bestPos = AIAttackUtils.CanGraphAreaToSCTA(unit, destination, 'Air')
     -- If we're here, we haven't used transports and we can path to the destination
     if result then
-        local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Air', unit:GetPosition(), destination, 10)
+        local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Air', unit:GetPosition(), destination, 10)
         if path then
             local pathSize = table.getn(path)
             -- Move to way points (but not to destination... leave that for the final command)
@@ -201,13 +199,13 @@ function SCTAEngineerMoveWithSafePathNaval(aiBrain, unit, destination)
         return false
     end
     local result, bestPos = false
-    result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Water')
+    result, bestPos = AIAttackUtils.CanGraphAreaToSCTA(unit, destination, 'Water')
     if not result and not SUtils.CheckForMapMarkers(aiBrain) then
         result, bestPos = unit:CanPathTo(destination)
     end
     -- If we're here, we haven't used transports and we can path to the destination
     if result then
-        local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Water', unit:GetPosition(), destination, 10)
+        local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Water', unit:GetPosition(), destination, 10)
         if path then
             local pathSize = table.getn(path)
             -- Move to way points (but not to destination... leave that for the final command)
@@ -231,16 +229,14 @@ function SCTAEngineerMoveWithSafePathLand(aiBrain, unit, destination)
     --local PlanName = unit.PlatoonHandle.PlanName
     --LOG('*PlatoonName2', PlanName)
     local result, bestPos = false
-    result, bestPos = AIAttackUtils.CanGraphTo(unit, destination, 'Land')
+    result, bestPos = AIAttackUtils.CanGraphAreaToSCTA(unit, destination, 'Land')
     if not result and not SUtils.CheckForMapMarkers(aiBrain) then
         result, bestPos = unit:CanPathTo(destination)
     end
-    local pos = unit:GetPosition()
-    local result, bestPos = unit:CanPathTo(destination)
 
     -- If we're here, we haven't used transports and we can path to the destination
     if result then
-        local path, reason = AIAttackUtils.PlatoonGenerateSafePathTo(aiBrain, 'Land', pos, destination)
+        local path, reason = AIAttackUtils.PlatoonGenerateSafePathToSCTAAI(aiBrain, 'Land', unit:GetPosition(), destination)
         if path then
             local pathSize = table.getn(path)
             -- Move to way points (but not to destination... leave that for the final command)
